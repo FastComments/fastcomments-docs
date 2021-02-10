@@ -63,12 +63,13 @@ function addContentToIndex(content) {
         if (word.includes('...')) {
             continue;
         }
-        if (index[word] === undefined) {
-            index[word] = [];
-        }
         const wordPosition = text.indexOf(word);
+        const wordClean = word.replace(/(,|\\.)/g, '').toLowerCase();
+        if (index[wordClean] === undefined) {
+            index[wordClean] = [];
+        }
 
-        index[word].push({
+        index[wordClean].push({
             url: content.fullUrl,
             // TODO contain all instances of the word
             aroundText: text.substring(wordPosition - 100, wordPosition) + '...' + text.substring(wordPosition, wordPosition + 100)
