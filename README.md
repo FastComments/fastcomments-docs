@@ -1,2 +1,2 @@
 # fastcomments-docs
-Documentation and Tutorials
+Documentation and Tutorials that lives at https://docs.fastcomments.com
