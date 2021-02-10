@@ -1,0 +1,18 @@
+{
+	"name": "fastcomments-docs",
+	"dependencies": {
+		"handlebars": "^4.1.2",
+		"marked": "^0.6.2",
+		"byte-size": "^6.2.0",
+		"pretty-bytes": "^5.3.0",
+		"reading-time": "^1.2.0",
+		"uglify-js": "^3.7.3",
+		"lozad": "^1.14.0"
+	},
+	"scripts": {
+		"serve": "serve src/static/generated"
+	},
+	"devDependencies": {
+		"serve": "^11.2.0"
+	}
+}
