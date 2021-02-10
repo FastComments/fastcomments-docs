@@ -72,7 +72,7 @@ function addContentToIndex(content) {
         index[wordClean].push({
             url: content.fullUrl,
             // TODO contain all instances of the word
-            aroundText: text.substring(wordPosition - 100, wordPosition) + '...' + text.substring(wordPosition, wordPosition + 100)
+            aroundText: text.substring(wordPosition - 50, wordPosition) + '...' + text.substring(wordPosition, wordPosition + 50)
         });
     }
 }
