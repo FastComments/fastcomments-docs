@@ -41,7 +41,7 @@
         lastSearchedWords = wordIds;
         searchResults.innerHTML = '';
 
-=        wordIds.forEach(function (id) {
+        wordIds.forEach(function (id) {
             getContent('/index-' + id + '.json', function cb(responseText) {
                 try {
                     const json = JSON.parse(responseText);
