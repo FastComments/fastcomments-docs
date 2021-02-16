@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p src/static/generated
 npm install
 node src/app
 mkdir src/static/generated/
