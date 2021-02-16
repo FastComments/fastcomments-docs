@@ -62,7 +62,7 @@
     const input = document.getElementById('search');
     input.addEventListener('input', function () {
         const wordIdsToSearch = [];
-        input.value.split(' ').forEach(function (word) {
+        input.value.toLowerCase().split(' ').forEach(function (word) {
             const indexEntry = window.docIndex[word];
             if (indexEntry) {
                 wordIdsToSearch.push(indexEntry);
