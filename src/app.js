@@ -59,8 +59,8 @@ function addContentToIndex(content) {
             'h4': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
             'h5': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
             'h6': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'hr': { format: 'horizontalLine', options: { leadingLineBreaks: 0, length: undefined, trailingLineBreaks: 0 } },
-            'p': { format: 'paragraph', options: { leadingLineBreaks: 0, trailingLineBreaks: 0 } },
+            'hr': {format: 'horizontalLine', options: {leadingLineBreaks: 0, length: undefined, trailingLineBreaks: 0}},
+            'p': {format: 'paragraph', options: {leadingLineBreaks: 0, trailingLineBreaks: 0}},
         }
     }).replace(/\n\n/g, '...');
     const words = text.replace(/\n/g, '').split(' ');
@@ -92,7 +92,7 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     const meta = JSON.parse(fs.readFileSync(path.join(CATEGORIES_DIR, category, 'meta.json'), 'utf8'));
     meta.itemsOrdered.forEach((item) => {
         const title = item.name;
-        const urlId = title.toLowerCase().replace(/ /g, '-') + '.html';
+        const urlId = item.file.replace('md', 'html');
         const fullUrl = 'https://docs.fastcomments.com/' + urlId;
 
         const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
@@ -121,9 +121,22 @@ for (const word in index) {
 const indexRootJSON = JSON.stringify(indexRoot);
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
 
+// Find guides.
+const guides = [];
+fs.readdirSync(GUIDES_DIR).forEach((guide) => {
+    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
+    if (meta.itemsOrdered.length > 0) {
+        guides.push({
+            url: 'guides/' + meta.itemsOrdered[0].file.replace('md', 'html'),
+            name: meta.name
+        });
+    }
+});
+
 // Create the homepage.
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate('index.html', {
-    indexJSON: indexRootJSON
+    indexJSON: indexRootJSON,
+    guides: guides
 }), 'utf8');
 
 // fs.readdirSync(TEMPLATE_DIR).forEach(function (item) {

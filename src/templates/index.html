@@ -22,6 +22,11 @@
             <noscript>This search feature requires JavaScript.</noscript>
             <div id="search-results"></div>
         </div>
+        <div class="guides">
+            {{#each guides}}
+                <a class="guide" href="{{url}}">{{name}}<div class="left-right-art-small"></div></a>
+            {{/each}}
+        </div>
     </div>
 </div>
 <script>
