@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
 const handlebars = require('handlebars');
+const shortid = require('shortid');
 const {htmlToText} = require('html-to-text');
 
 const CONTENT_DIR = path.join(__dirname, 'content');
@@ -102,7 +103,13 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     });
 });
 
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), JSON.stringify(index), 'utf8');
+const indexRoot = {};
+for (const word in index) {
+    const id = shortid.generate();
+    indexRoot[word] = id;
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
+}
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), JSON.stringify(indexRoot), 'utf8');
 
 // fs.readdirSync(TEMPLATE_DIR).forEach(function (item) {
 //     if (item === 'index.html') {

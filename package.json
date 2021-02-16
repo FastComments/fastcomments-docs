@@ -4,6 +4,7 @@
 		"handlebars": "^4.1.2",
 		"marked": "^0.6.2",
 		"uglify-js": "^3.7.3",
+		"shortid": "^2.2.16",
 		"html-to-text": "^6.0.0"
 	},
 	"scripts": {
