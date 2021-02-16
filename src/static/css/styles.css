@@ -80,3 +80,22 @@ input:focus {
         z-index: -1;
     }
 }
+
+.search-result {
+    display: block;
+    padding: 5px;
+    margin: 3px 0;
+    text-align: left;
+    text-decoration: none;
+    color: #201600;
+    border: 1px solid #ccc;
+}
+
+.search-result .context-title {
+    color: blue;
+    font-size: 18px;
+}
+
+.search-result .context-link {
+    font-size: 11px;
+}

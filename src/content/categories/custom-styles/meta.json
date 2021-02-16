@@ -1,6 +1,9 @@
 {
   "name": "Custom Styles",
   "itemsOrdered": [
-    "custom-css.md"
+    {
+      "name": "Custom Styles",
+      "file": "custom-css.md"
+    }
   ]
 }

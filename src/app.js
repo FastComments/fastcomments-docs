@@ -16,6 +16,7 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 /**
  * @typedef {Object} IndexEntry
  * @property {string} url - URL to the index entry.
+ * @property {string} title - Title of the target entry.
  * @property {string} aroundText - Text around the searched word.
  */
 
@@ -34,9 +35,15 @@ const index = {};
  */
 
 /**
+ * @typedef {Object} MetaItem
+ * @property {string} file
+ * @property {string} name
+ */
+
+/**
  * @typedef {Object} Meta
  * @property {string} name
- * @property {Array.<string>} itemsOrdered
+ * @property {Array.<MetaItem>} itemsOrdered
  */
 
 /**
@@ -72,6 +79,7 @@ function addContentToIndex(content) {
 
         index[wordClean].push({
             url: content.fullUrl,
+            title: content.title,
             // TODO contain all instances of the word
             aroundText: text.substring(wordPosition - 50, wordPosition) + '...' + text.substring(wordPosition, wordPosition + 50)
         });
@@ -83,11 +91,11 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     /** @type {Meta} **/
     const meta = JSON.parse(fs.readFileSync(path.join(CATEGORIES_DIR, category, 'meta.json'), 'utf8'));
     meta.itemsOrdered.forEach((item) => {
-        const title = item.replace('\.md', '');
+        const title = item.name;
         const urlId = title.toLowerCase().replace(/ /g, '-') + '.html';
         const fullUrl = 'https://docs.fastcomments.com/' + urlId;
 
-        const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item), 'utf8');
+        const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
         const html = marked(fileContent);
 
         const entry = {
@@ -99,7 +107,7 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
 
         addContentToIndex(entry);
 
-        content[`categories/${category}/${item}`] = entry;
+        content[`categories/${category}/${item.file}`] = entry;
     });
 });
 

@@ -29,8 +29,8 @@
     }
 
     let lastSearchedWords = [];
+
     function fetchAndRenderResults(wordIds) {
-        console.log('fetchAndRenderResults', wordIds);
         if (wordIds.length === 0) {
             searchResults.innerHTML = '';
             return;
@@ -41,14 +41,18 @@
         lastSearchedWords = wordIds;
         searchResults.innerHTML = '';
 
+        let resultingPages = [];
         wordIds.forEach(function (id) {
             getContent('/index-' + id + '.json', function cb(responseText) {
                 try {
                     const json = JSON.parse(responseText);
-                    searchResults.innerHTML += json.map(function (entry) {
-                        return '<div class="search-result">' + entry.aroundText + '</div>';
+                    json.forEach(function (entry) {
+                        if (!resultingPages.includes(entry.url)) {
+                            searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + entry.aroundText + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
+                            resultingPages.push(entry.url);
+                        }
                     });
-                } catch(e) {
+                } catch (e) {
                     console.error('Failure to parse index entry', e);
                 }
             });
