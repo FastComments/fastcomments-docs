@@ -103,6 +103,7 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     });
 });
 
+// Create the index.
 const indexRoot = {};
 for (const word in index) {
     const id = shortid.generate();
@@ -110,6 +111,9 @@ for (const word in index) {
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
 }
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), JSON.stringify(indexRoot), 'utf8');
+
+// Create the homepage.
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), fs.readFileSync(path.join(TEMPLATE_DIR, 'index.html')), 'utf8');
 
 // fs.readdirSync(TEMPLATE_DIR).forEach(function (item) {
 //     if (item === 'index.html') {

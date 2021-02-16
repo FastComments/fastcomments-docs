@@ -8,6 +8,7 @@
 		"html-to-text": "^6.0.0"
 	},
 	"scripts": {
+		"build": "node src/app",
 		"serve": "serve src/static/generated"
 	},
 	"devDependencies": {
