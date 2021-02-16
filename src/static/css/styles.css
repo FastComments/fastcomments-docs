@@ -81,6 +81,10 @@ input:focus {
     }
 }
 
+.search-results .no-results {
+    font-size: 12px;
+}
+
 .search-result {
     display: block;
     padding: 5px;
