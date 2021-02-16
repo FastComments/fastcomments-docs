@@ -122,7 +122,7 @@ input:focus {
     border-radius: 4px;
 }
 
-@media (min-width: 786px) {
+@media (max-width: 786px) {
     .guides .guide {
         display: block;
         width: 100%;
