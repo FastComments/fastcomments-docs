@@ -110,10 +110,13 @@ for (const word in index) {
     indexRoot[word] = id;
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
 }
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), JSON.stringify(indexRoot), 'utf8');
+const indexRootJSON = JSON.stringify(indexRoot);
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
 
 // Create the homepage.
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), fs.readFileSync(path.join(TEMPLATE_DIR, 'index.html')), 'utf8');
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate('index.html', {
+    indexJSON: indexRootJSON
+}), 'utf8');
 
 // fs.readdirSync(TEMPLATE_DIR).forEach(function (item) {
 //     if (item === 'index.html') {
@@ -133,8 +136,8 @@ fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), fs.readFileSync(
 //     }
 // });
 //
-// function getCompiledTemplate(templateName, data) {
-//     return handlebars.compile(fs.readFileSync(path.join(TEMPLATE_DIR, templateName), 'utf8'))(data);
-// }
+function getCompiledTemplate(templatePath, data) {
+    return handlebars.compile(fs.readFileSync(path.join(TEMPLATE_DIR, templatePath), 'utf8'))(data);
+}
 
 console.log(`Execution Time: ${Date.now() - startTime}ms`);
