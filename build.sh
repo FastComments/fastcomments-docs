@@ -1,6 +1,9 @@
 #!/bin/bash
 
 mkdir -p src/static/generated
+mkdir src/static/css
+mkdir src/static/images
+mkdir src/static/js
 npm install
 node src/app
 cp -rv src/static/css src/static/generated/
