@@ -5,6 +5,7 @@ mkdir src/static/css
 mkdir src/static/images
 mkdir src/static/js
 npm install
+rm src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time
 node src/app
 cp -rv src/static/css src/static/generated/
 cp -rv src/static/images src/static/generated/

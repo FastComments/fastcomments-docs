@@ -93,7 +93,7 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     meta.itemsOrdered.forEach((item) => {
         const title = item.name;
         const urlId = item.file.replace('md', 'html');
-        const fullUrl = 'https://docs.fastcomments.com/' + urlId;
+        const fullUrl = '/' + urlId;
 
         const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
         const html = marked(fileContent);
@@ -111,6 +111,62 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
     });
 });
 
+// Find guides.
+const guides = [];
+fs.readdirSync(GUIDES_DIR).forEach((guide) => {
+    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
+    if (meta.itemsOrdered.length > 0) {
+        guides.push({
+            id: guide,
+            source: path.join(GUIDES_DIR, guide, 'items', guide),
+            url: `guide-${guide}.html`,
+            icon: `images/guide-icons/${meta.icon}`,
+            name: meta.name
+        });
+    }
+});
+
+// Create a page for each guide.
+guides.forEach((guide) => {
+    /** @type {Meta} **/
+    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
+    const items = [];
+    meta.itemsOrdered.forEach((item) => {
+        const title = item.name;
+        const id = item.file.replace('.md', '');
+        const urlId = item.file.replace('md', 'html');
+
+        // We add this guide item to the index, but its url is an anchor to the element on the guide page. This way we
+        // can have all the content on one page, but still deep link to it from search nicely.
+        const fullUrl = `/${guide.url}#${id}`;
+
+        const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
+        const html = marked(markdown);
+
+        items.push({
+            title,
+            id,
+            content: html
+        });
+
+        const entry = {
+            html,
+            title,
+            urlId,
+            fullUrl,
+        };
+
+        addContentToIndex(entry);
+    });
+    const guideContentHTML = handlebars.compile(marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'index.md.html'), 'utf8')))({
+        items
+    });
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+        title: meta.name,
+        content: guideContentHTML
+    }), 'utf8');
+});
+
 // Create the index.
 const indexRoot = {};
 for (const word in index) {
@@ -121,45 +177,14 @@ for (const word in index) {
 const indexRootJSON = JSON.stringify(indexRoot);
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
 
-// Find guides.
-const guides = [];
-fs.readdirSync(GUIDES_DIR).forEach((guide) => {
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
-    if (meta.itemsOrdered.length > 0) {
-        guides.push({
-            url: 'guides/' + meta.itemsOrdered[0].file.replace('md', 'html'),
-            icon: `images/guide-icons/${meta.icon}`,
-            name: meta.name
-        });
-    }
-});
-
 // Create the homepage.
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate('index.html', {
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
     indexJSON: indexRootJSON,
     guides: guides
 }), 'utf8');
 
-// fs.readdirSync(TEMPLATE_DIR).forEach(function (item) {
-//     if (item === 'index.html') {
-//         fs.writeFileSync(path.join(STATIC_GENERATED_DIR, item), getCompiledTemplate(item, {
-//             posts: posts,
-//             footerYears: footerYears
-//         }), 'utf8');
-//     } else if (item === 'page.html') {
-//         posts.forEach(function (page) {
-//             const html = getCompiledTemplate(item, {
-//                 page: page,
-//                 posts: posts,
-//                 footerYears: footerYears
-//             });
-//             fs.writeFileSync(path.join(STATIC_GENERATED_DIR, page.urlId), html, 'utf8');
-//         });
-//     }
-// });
-//
 function getCompiledTemplate(templatePath, data) {
-    return handlebars.compile(fs.readFileSync(path.join(TEMPLATE_DIR, templatePath), 'utf8'))(data);
+    return handlebars.compile(fs.readFileSync(templatePath, 'utf8'))(data);
 }
 
 console.log(`Execution Time: ${Date.now() - startTime}ms`);
