@@ -128,6 +128,7 @@ fs.readdirSync(GUIDES_DIR).forEach((guide) => {
     if (meta.itemsOrdered.length > 0) {
         guides.push({
             url: 'guides/' + meta.itemsOrdered[0].file.replace('md', 'html'),
+            icon: `images/guide-icons/${meta.icon}`,
             name: meta.name
         });
     }
