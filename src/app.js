@@ -115,15 +115,14 @@ fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
 const guides = [];
 fs.readdirSync(GUIDES_DIR).forEach((guide) => {
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
-    if (meta.itemsOrdered.length > 0) {
-        guides.push({
-            id: guide,
-            source: path.join(GUIDES_DIR, guide, 'items', guide),
-            url: `guide-${guide}.html`,
-            icon: `images/guide-icons/${meta.icon}`,
-            name: meta.name
-        });
-    }
+    const hasItems = meta.itemsOrdered.length > 0;
+    guides.push({
+        id: guide,
+        url: hasItems ? `guide-${guide}.html` : '#',
+        icon: `images/guide-icons/${meta.icon}`,
+        name: meta.name,
+        hasItems
+    });
 });
 
 // Create a page for each guide.
@@ -158,13 +157,16 @@ guides.forEach((guide) => {
 
         addContentToIndex(entry);
     });
-    const guideContentHTML = handlebars.compile(marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'index.md.html'), 'utf8')))({
-        items
-    });
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
-        title: meta.name,
-        content: guideContentHTML
-    }), 'utf8');
+    const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
+    if (fs.existsSync(guideIndexPath)) {
+        const guideContentHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
+            items
+        });
+        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+            title: meta.name,
+            content: guideContentHTML
+        }), 'utf8');
+    }
 });
 
 // Create the index.

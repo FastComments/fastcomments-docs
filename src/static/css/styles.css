@@ -110,8 +110,6 @@ input:focus {
 
 .guides .guide {
     position: relative;
-    display: inline-block;
-    width: 40%;
     padding: 15px;
     overflow: hidden;
     text-decoration: none;
@@ -120,13 +118,6 @@ input:focus {
     box-sizing: border-box;
     text-align: left;
     border-radius: 4px;
-}
-
-@media (max-width: 786px) {
-    .guides .guide {
-        display: block;
-        width: 100%;
-    }
 }
 
 .guides .guide .icon-container {
@@ -139,6 +130,7 @@ input:focus {
 
 .guides .guide .icon-container img {
     width: 45px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .guides .guide .name,
@@ -151,4 +143,33 @@ input:focus {
     position: absolute;
     right: 12px;
     top: calc(50% - 8px);
+}
+
+.guides .guide .coming-soon {
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.guides .guide-items {
+    display: grid;
+    justify-items: stretch;
+    gap: 10px;
+    grid-template-columns: repeat(2, calc(50% - 5px));
+}
+
+@media (max-width: 786px) {
+    .guides .guide-items {
+        display: block;
+    }
+
+    .guides .guide {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
 }
