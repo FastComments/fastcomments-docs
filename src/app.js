@@ -6,6 +6,7 @@ const marked = require('marked');
 const handlebars = require('handlebars');
 const shortid = require('shortid');
 const {htmlToText} = require('html-to-text');
+const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 
 const CONTENT_DIR = path.join(__dirname, 'content');
 const CATEGORIES_DIR = path.join(__dirname, 'content', 'categories');
@@ -86,107 +87,110 @@ function addContentToIndex(content) {
     }
 }
 
-const content = {}; // full path like "categories/custom-styles/custom-css.md" to
-fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
-    /** @type {Meta} **/
-    const meta = JSON.parse(fs.readFileSync(path.join(CATEGORIES_DIR, category, 'meta.json'), 'utf8'));
-    meta.itemsOrdered.forEach((item) => {
-        const title = item.name;
-        const urlId = item.file.replace('md', 'html');
-        const fullUrl = '/' + urlId;
+(async function main() {
+    const content = {}; // full path like "categories/custom-styles/custom-css.md" to
+    fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
+        /** @type {Meta} **/
+        const meta = JSON.parse(fs.readFileSync(path.join(CATEGORIES_DIR, category, 'meta.json'), 'utf8'));
+        meta.itemsOrdered.forEach((item) => {
+            const title = item.name;
+            const urlId = item.file.replace('md', 'html');
+            const fullUrl = '/' + urlId;
 
-        const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
-        const html = marked(fileContent);
+            const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
+            const html = marked(fileContent);
 
-        const entry = {
-            html,
-            title,
-            urlId,
-            fullUrl,
-        };
+            const entry = {
+                html,
+                title,
+                urlId,
+                fullUrl,
+            };
 
-        addContentToIndex(entry);
+            addContentToIndex(entry);
 
-        content[`categories/${category}/${item.file}`] = entry;
-    });
-});
-
-// Find guides.
-const guides = [];
-fs.readdirSync(GUIDES_DIR).forEach((guide) => {
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
-    const hasItems = meta.itemsOrdered.length > 0;
-    guides.push({
-        id: guide,
-        url: hasItems ? `guide-${guide}.html` : '#',
-        icon: `images/guide-icons/${meta.icon}`,
-        name: meta.name,
-        hasItems
-    });
-});
-
-// Create a page for each guide.
-guides.forEach((guide) => {
-    /** @type {Meta} **/
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const items = [];
-    meta.itemsOrdered.forEach((item) => {
-        const title = item.name;
-        const id = item.file.replace('.md', '');
-        const urlId = item.file.replace('md', 'html');
-
-        // We add this guide item to the index, but its url is an anchor to the element on the guide page. This way we
-        // can have all the content on one page, but still deep link to it from search nicely.
-        const fullUrl = `/${guide.url}#${id}`;
-
-        const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
-        const html = marked(markdown);
-
-        items.push({
-            title,
-            id,
-            content: html
+            content[`categories/${category}/${item.file}`] = entry;
         });
-
-        const entry = {
-            html,
-            title,
-            urlId,
-            fullUrl,
-        };
-
-        addContentToIndex(entry);
     });
-    const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
-    if (fs.existsSync(guideIndexPath)) {
-        const guideContentHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
-            items
+
+    // Find guides.
+    const guides = [];
+    fs.readdirSync(GUIDES_DIR).forEach((guide) => {
+        const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
+        const hasItems = meta.itemsOrdered.length > 0;
+        guides.push({
+            id: guide,
+            url: hasItems ? `guide-${guide}.html` : '#',
+            icon: `images/guide-icons/${meta.icon}`,
+            name: meta.name,
+            hasItems
         });
-        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
-            title: meta.name,
-            content: guideContentHTML
-        }), 'utf8');
+    });
+
+    // Create a page for each guide.
+    for (const guide of guides) {
+        /** @type {Meta} **/
+        const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
+        const items = [];
+        for (const item of meta.itemsOrdered) {
+            const title = item.name;
+            const id = item.file.replace('.md', '');
+            const urlId = item.file.replace('md', 'html');
+
+            // We add this guide item to the index, but its url is an anchor to the element on the guide page. This way we
+            // can have all the content on one page, but still deep link to it from search nicely.
+            const fullUrl = `/${guide.url}#${id}`;
+
+            const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
+            const html = marked(await processDynamicContent(markdown));
+
+            items.push({
+                title,
+                id,
+                content: html
+            });
+
+            const entry = {
+                html,
+                title,
+                urlId,
+                fullUrl,
+            };
+
+            addContentToIndex(entry);
+        }
+        const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
+        if (fs.existsSync(guideIndexPath)) {
+            const guideContentHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
+                items
+            });
+            fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+                title: meta.name,
+                content: guideContentHTML
+            }), 'utf8');
+        }
     }
-});
 
-// Create the index.
-const indexRoot = {};
-for (const word in index) {
-    const id = shortid.generate();
-    indexRoot[word] = id;
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
-}
-const indexRootJSON = JSON.stringify(indexRoot);
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
+    // Create the index.
+    const indexRoot = {};
+    for (const word in index) {
+        const id = shortid.generate();
+        indexRoot[word] = id;
+        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
+    }
+    const indexRootJSON = JSON.stringify(indexRoot);
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
 
-// Create the homepage.
-fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
-    indexJSON: indexRootJSON,
-    guides: guides
-}), 'utf8');
+    // Create the homepage.
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
+        indexJSON: indexRootJSON,
+        guides: guides
+    }), 'utf8');
+
+    console.log(`Execution Time: ${Date.now() - startTime}ms`);
+})();
 
 function getCompiledTemplate(templatePath, data) {
     return handlebars.compile(fs.readFileSync(templatePath, 'utf8'))(data);
 }
 
-console.log(`Execution Time: ${Date.now() - startTime}ms`);

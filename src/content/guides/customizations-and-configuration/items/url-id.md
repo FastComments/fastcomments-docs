@@ -6,3 +6,5 @@ When rendering a comment thread, or leaving a comment, FastComments need to know
 those comments belong to.
 
 To do this, we use something we call the "URL ID". It's either an identifier, like a string or a number, or a URL.
+
+[code-example-start "{urlId: "https://example.com/page"}" code-example-end]
