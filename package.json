@@ -5,7 +5,8 @@
 		"marked": "^0.6.2",
 		"uglify-js": "^3.7.3",
 		"shortid": "^2.2.16",
-		"html-to-text": "^6.0.0"
+		"html-to-text": "^6.0.0",
+		"html-entities": "^2.1.0"
 	},
 	"scripts": {
 		"build": "node src/app",

@@ -7,4 +7,4 @@ those comments belong to.
 
 To do this, we use something we call the "URL ID". It's either an identifier, like a string or a number, or a URL.
 
-[code-example-start "{urlId: "https://example.com/page"}" code-example-end]
+[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6] code-example-end]

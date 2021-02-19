@@ -173,3 +173,28 @@ input:focus {
         box-sizing: border-box;
     }
 }
+
+.code {
+    white-space: pre;
+    background: #201600;
+    color: #fff;
+    padding: 5px 0;
+    box-shadow: inset 5px 5px 8px rgb(0 0 0);
+    font-family: monospace;
+    overflow-y: auto;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.code .line {
+    padding: 0 10px;
+}
+
+.code .line.highlight {
+    background: #214283;
+}
+
+.code .line .line-number {
+    display: inline-block;
+    width: 14px;
+    padding-right: 10px;
+}
