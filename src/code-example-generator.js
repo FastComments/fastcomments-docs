@@ -23,7 +23,7 @@ function getTemplate(config, linesToHighlight) {
 <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
+window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
         tenantId: 'demo',
         ...config
     }, null, '    ')});
