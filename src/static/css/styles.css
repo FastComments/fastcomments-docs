@@ -190,11 +190,12 @@ input:focus {
 }
 
 .code .line.highlight {
-    background: #214283;
+    background: #383830;
 }
 
 .code .line .line-number {
     display: inline-block;
     width: 14px;
     padding-right: 10px;
+    user-select: none;
 }

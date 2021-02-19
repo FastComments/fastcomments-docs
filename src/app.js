@@ -142,7 +142,9 @@ function addContentToIndex(content) {
             const fullUrl = `/${guide.url}#${id}`;
 
             const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
-            const html = marked(await processDynamicContent(markdown));
+            let html = marked(await processDynamicContent(markdown));
+
+            html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
             items.push({
                 title,

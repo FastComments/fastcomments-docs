@@ -1,5 +1,5 @@
 const vm = require('vm');
-const {encode} = require('html-entities');
+const hljs = require('highlight.js');
 
 const Template = `some code goes here with...`;
 
@@ -19,7 +19,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
 function getTemplate(config, linesToHighlight) {
     let html = '<div class="code">';
 
-    html += getTemplateLinesWithHighlight(encode(`
+    const templateWithConfig = `
 <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
@@ -28,7 +28,9 @@ function getTemplate(config, linesToHighlight) {
         ...config
     }, null, '    ')});
 </script>
-`), linesToHighlight);
+`;
+
+    html += getTemplateLinesWithHighlight(hljs.highlight('html', templateWithConfig).value, linesToHighlight);
     html += '</div>';
 
     return html;
