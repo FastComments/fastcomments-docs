@@ -7,9 +7,15 @@ const processors = [
     require('./code-example-generator')
 ];
 
-async function processDynamicContent(markdown) {
+/**
+ *
+ * @param {string} markdown
+ * @param {string} filePath
+ * @return {Promise<string>}
+ */
+async function processDynamicContent(markdown, filePath) {
     for (const processor of processors) {
-        markdown = await processor(markdown);
+        markdown = await processor(markdown, filePath);
     }
 
     return markdown;

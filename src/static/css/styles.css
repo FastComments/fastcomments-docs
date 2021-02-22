@@ -199,3 +199,13 @@ input:focus {
     padding-right: 10px;
     user-select: none;
 }
+
+.contribute-code-snippet {
+    font-size: 12px;
+    text-align: center;
+}
+
+.contribute-code-snippet a {
+    color: #000;
+    text-decoration: none;
+}

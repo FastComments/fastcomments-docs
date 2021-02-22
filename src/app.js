@@ -10,7 +10,8 @@ const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 
 const CONTENT_DIR = path.join(__dirname, 'content');
 const CATEGORIES_DIR = path.join(__dirname, 'content', 'categories');
-const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
+const GUIDES_DIR_NAME = 'guides';
+const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 
@@ -145,7 +146,7 @@ function addContentToIndex(content) {
             const fullUrl = `/${guide.url}#${id}`;
 
             const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
-            let html = marked(await processDynamicContent(markdown));
+            let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', item.file)));
 
             html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
