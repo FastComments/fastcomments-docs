@@ -72,8 +72,11 @@ function addContentToIndex(content) {
         if (word.includes('...')) {
             continue;
         }
+        if (word.includes('<') || word.includes('>')) {
+            continue;
+        }
         const wordPosition = text.indexOf(word);
-        const wordClean = word.replace(/(,|\\.)/g, '').toLowerCase();
+        const wordClean = word.replace(/[,\\.<>]/g, '').toLowerCase();
         if (index[wordClean] === undefined) {
             index[wordClean] = [];
         }
