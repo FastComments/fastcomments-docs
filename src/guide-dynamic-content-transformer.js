@@ -4,7 +4,8 @@
 // Processors can be async (for example, given a page and a selector, go take a screenshot)
 
 const processors = [
-    require('./code-example-generator')
+    require('./code-example-generator'),
+    require('./app-screenshot-generator')
 ];
 
 /**
@@ -21,4 +22,12 @@ async function processDynamicContent(markdown, filePath) {
     return markdown;
 }
 
-module.exports = { processDynamicContent };
+async function dispose() {
+    for (const processor of processors) {
+        if (processor.dispose) {
+            await processor.dispose();
+        }
+    }
+}
+
+module.exports = { processDynamicContent, dispose };

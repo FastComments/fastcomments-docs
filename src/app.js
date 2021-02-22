@@ -6,7 +6,7 @@ const marked = require('marked');
 const handlebars = require('handlebars');
 const shortid = require('shortid');
 const {htmlToText} = require('html-to-text');
-const {processDynamicContent} = require('./guide-dynamic-content-transformer');
+const {dispose, processDynamicContent} = require('./guide-dynamic-content-transformer');
 
 const CONTENT_DIR = path.join(__dirname, 'content');
 const CATEGORIES_DIR = path.join(__dirname, 'content', 'categories');
@@ -192,6 +192,8 @@ function addContentToIndex(content) {
         indexJSON: indexRootJSON,
         guides: guides
     }), 'utf8');
+
+    await dispose();
 
     console.log(`Execution Time: ${Date.now() - startTime}ms`);
 })();

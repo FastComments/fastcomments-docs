@@ -1,8 +1,6 @@
 const vm = require('vm');
 const hljs = require('highlight.js');
 
-const Template = `some code goes here with...`;
-
 const StartToken = '[code-example-start';
 const EndToken = 'code-example-end]';
 
