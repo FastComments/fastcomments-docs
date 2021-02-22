@@ -244,6 +244,9 @@ input:focus {
 }
 
 .screenshot img {
+    max-width: calc(100% - 30px);
+    box-sizing: border-box;
+    margin: auto 15px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     background: #fff;
