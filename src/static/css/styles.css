@@ -213,3 +213,7 @@ input:focus {
     color: #000;
     text-decoration: none;
 }
+
+.index-guide-item .index-guide-link img {
+    width: 16px;
+}

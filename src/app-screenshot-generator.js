@@ -13,7 +13,7 @@ let browser, page;
 async function getTemplate(url, selector, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
     if (!authenticated) {
-        browser = await puppeteer.launch({ headless: true });
+        browser = await puppeteer.launch({ headless: false });
         page = await browser.newPage();
         await page.goto(`${HOST}/auth/login`);
         await page.waitForSelector('form');
