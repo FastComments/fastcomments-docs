@@ -217,3 +217,24 @@ input:focus {
 .index-guide-item .index-guide-link img {
     width: 16px;
 }
+
+.screenshot {
+    margin: 10px 0;
+    padding: 0 0 35px 0;
+    text-align: center;
+    background: #201600;
+    color: #fff;
+}
+
+.screenshot .title {
+    font-weight: 500;
+    font-size: 17px;
+    padding: 25px 0;
+}
+
+.screenshot img {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+}

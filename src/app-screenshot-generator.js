@@ -10,7 +10,7 @@ const HOST = 'https://fastcomments.com';
 let authenticated = false;
 let browser, page;
 
-async function getTemplate(url, selector, filePath) {
+async function getTemplate(url, selector, title, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
     if (!authenticated) {
         browser = await puppeteer.launch({ headless: true });
@@ -36,7 +36,7 @@ async function getTemplate(url, selector, filePath) {
     await element.screenshot({ path: targetPath });
     console.log('app-screenshot-generator Created', targetPath);
 
-    return `<div class="text-center screenshot"><img src='/images/${targetFileName}' ></div>`;
+    return `<div class="screenshot"><div class="title">${title}</div><img src='/images/${targetFileName}' ></div>`;
 }
 
 async function process(input, filePath) {
@@ -58,7 +58,7 @@ async function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.selector, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.selector, args.title, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

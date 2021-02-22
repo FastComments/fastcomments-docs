@@ -9,4 +9,4 @@ To do this, we use something we call the "URL ID". It's either an identifier, li
 
 [code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6] code-example-end]
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; title='URL ID Input in Widget Customization Page' app-screenshot-end]
