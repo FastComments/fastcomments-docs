@@ -3,7 +3,11 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "URL ID",
+      "name": "Identifying Your Account",
+      "file": "tenant-id.md"
+    },
+    {
+      "name": "How Comments are Tied to Pages and Articles",
       "file": "url-id.md"
     }
   ]

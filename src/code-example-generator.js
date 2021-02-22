@@ -14,8 +14,9 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplate(config, linesToHighlight, filePath) {
+function getTemplate(config, linesToHighlight, title, filePath) {
     let html = '<div class="code">';
+    html += `<div class="title">${title}</div>`;
     html += `<div class="contribute-code-snippet"><a href="https://github.com/FastComments/fastcomments-docs/tree/main/${filePath}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Improve This Code Snippet"></a></div>`;
 
     const templateWithConfig = `
@@ -54,7 +55,7 @@ function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(args.config, args.linesToHighlight, filePath) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + getTemplate(args.config, args.linesToHighlight, args.title, filePath) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 17px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
     color: #201600;
 }
 
@@ -181,13 +182,18 @@ input:focus {
     color: #fff;
     padding: 5px 0;
     box-shadow: inset 5px 5px 8px rgb(0 0 0);
-    font-family: monospace;
     overflow-y: auto;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
+.code .title {
+    padding: 0 10px;
+    font-weight: 500;
+}
+
 .code .line {
     padding: 0 10px;
+    font-family: monospace;
 }
 
 .code .line.highlight {
@@ -218,6 +224,11 @@ input:focus {
     width: 16px;
 }
 
+.screenshot, .code {
+    box-shadow: 0 0 30px rgba(32, 22, 0, 0.25);
+    border-radius: 3px;
+}
+
 .screenshot {
     margin: 10px 0;
     padding: 0 0 35px 0;
@@ -228,8 +239,8 @@ input:focus {
 
 .screenshot .title {
     font-weight: 500;
-    font-size: 17px;
-    padding: 25px 0;
+    padding: 10px 0 15px 10px;
+    text-align: left;
 }
 
 .screenshot img {
@@ -237,4 +248,20 @@ input:focus {
     border-radius: 5px;
     background: #fff;
     padding: 15px;
+}
+
+.related-parameter {
+    margin: 10px 0;
+    padding: 5px 10px;
+    background: #201600;
+    color: #fff;
+    font-size: 13px;
+}
+
+.related-parameter span {
+    font-family: monospace;
+}
+
+.related-parameter span.as {
+    color: deeppink;
 }

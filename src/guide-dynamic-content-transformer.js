@@ -5,7 +5,8 @@
 
 const processors = [
     require('./code-example-generator'),
-    require('./app-screenshot-generator')
+    require('./app-screenshot-generator'),
+    require('./related-parameter-generator')
 ];
 
 /**
