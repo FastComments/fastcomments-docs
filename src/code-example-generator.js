@@ -18,6 +18,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
 
 function getTemplate(config, linesToHighlight, filePath) {
     let html = '<div class="code">';
+    html += `<div class="contribute-code-snippet"><a href="https://github.com/FastComments/fastcomments-docs/tree/main/${filePath}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Improve This Code Snippet"></a></div>`;
 
     const templateWithConfig = `
 <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
@@ -32,8 +33,6 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.str
 
     html += getTemplateLinesWithHighlight(hljs.highlight('html', templateWithConfig).value, linesToHighlight);
     html += '</div>';
-
-    html += `<div class="contribute-code-snippet"><a href="https://github.com/FastComments/fastcomments-docs/tree/main/${filePath}" target="_blank">Improve This Code Snippet</a></div>`;
 
     return html;
 }

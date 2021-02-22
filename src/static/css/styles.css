@@ -175,6 +175,7 @@ input:focus {
 }
 
 .code {
+    position: relative;
     white-space: pre;
     background: #201600;
     color: #fff;
@@ -201,6 +202,9 @@ input:focus {
 }
 
 .contribute-code-snippet {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     font-size: 12px;
     text-align: center;
 }
