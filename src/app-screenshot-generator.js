@@ -13,7 +13,7 @@ let browser, page;
 async function getTemplate(url, selector, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
     if (!authenticated) {
-        browser = await puppeteer.launch({ headless: false });
+        browser = await puppeteer.launch({ headless: true });
         page = await browser.newPage();
         await page.goto(`${HOST}/auth/login`);
         await page.waitForSelector('form');
@@ -22,9 +22,13 @@ async function getTemplate(url, selector, filePath) {
         await page.focus('input[name="email"]');
         await page.keyboard.type('demo@fastcomments.com');
         await page.click('button[type="submit"]');
+        await page.waitForSelector('body');
     }
+    console.log('app-screenshot-generator authenticated...');
     await page.goto(`${HOST}${url}`);
+    console.log('app-screenshot-generator loaded', url);
     await page.waitForSelector(selector);
+    console.log('app-screenshot-generator found', selector);
     const element = await page.$(selector);
 
     const targetFileName = url.replace(new RegExp('/', 'g'), '') + selector.replace(new RegExp('\\.', 'g'), 'DOT').replace(new RegExp('#', 'g'), 'HASH') + '.png';
