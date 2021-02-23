@@ -204,6 +204,7 @@ function addContentToIndex(content) {
     await dispose();
 
     console.log(`Execution Time: ${Date.now() - startTime}ms`);
+    process.exit(0);
 })();
 
 function getCompiledTemplate(templatePath, data) {
