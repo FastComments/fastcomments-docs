@@ -25,6 +25,10 @@
     {
       "name": "Rendering All Comments at Once - Disable Pagination",
       "file": "starting-page-disable-pagination.md"
+    },
+    {
+      "name": "Supporting Dark Backgrounds (Dark Mode)",
+      "file": "has-dark-background.md"
     }
   ]
 }
