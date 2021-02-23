@@ -33,6 +33,10 @@
     {
       "name": "Toggling Dark Mode",
       "file": "has-dark-background-toggle.md"
+    },
+    {
+      "name": "Changing The Default Avatar",
+      "file": "default-avatar-src.md"
     }
   ]
 }
