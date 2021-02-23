@@ -9,6 +9,10 @@
     {
       "name": "How Comments are Tied to Pages and Articles",
       "file": "url-id.md"
+    },
+    {
+      "name": "Linking from Comments to Pages",
+      "file": "url.md"
     }
   ]
 }
