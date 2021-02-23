@@ -224,7 +224,7 @@ input:focus {
     width: 16px;
 }
 
-.screenshot, .code {
+.screenshot, .code, .related-parameter {
     box-shadow: 0 0 30px rgba(32, 22, 0, 0.25);
     border-radius: 3px;
 }
