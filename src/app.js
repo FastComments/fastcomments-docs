@@ -131,6 +131,9 @@ function addContentToIndex(content) {
         });
     });
 
+    // We'll periodically compare the build id on the page with the one from an API call to alert the user if the docs are out of date.
+    const buildId = shortid.generate();
+
     // Create a page for each guide.
     for (const guide of guides) {
         /** @type {Meta} **/
@@ -172,7 +175,8 @@ function addContentToIndex(content) {
             });
             fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
                 title: meta.name,
-                content: guideContentHTML
+                content: guideContentHTML,
+                buildId
             }), 'utf8');
         }
     }
@@ -187,10 +191,14 @@ function addContentToIndex(content) {
     const indexRootJSON = JSON.stringify(indexRoot);
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
 
+    // Store the build id.
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
+
     // Create the homepage.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
         indexJSON: indexRootJSON,
-        guides: guides
+        guides,
+        buildId
     }), 'utf8');
 
     await dispose();
