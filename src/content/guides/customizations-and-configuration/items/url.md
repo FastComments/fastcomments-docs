@@ -3,7 +3,7 @@
 When sending notification emails, or rendering comments in user interfaces like the moderation page, it's helpful to be able to link
 from the comment to the page it's on.
 
-If URL ID isn't always an ID, then we have to store URL some place else. That's what the "url" property is for, defined as follows.
+If URL ID isn't always an ID, then we have to store the URL some place else. That's what the "url" property is for, defined as follows.
 
 [code-example-start config = {url: 'https://example.com/article-5'}; linesToHighlight = [6]; title = 'Defining a Custom URL'; code-example-end]
 
