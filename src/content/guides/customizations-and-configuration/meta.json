@@ -11,8 +11,20 @@
       "file": "url-id.md"
     },
     {
+      "name": "Rendering The Same Comments on Different Pages",
+      "file": "url-id-same-comments-different-pages.md"
+    },
+    {
       "name": "Linking from Comments to Pages",
       "file": "url.md"
+    },
+    {
+      "name": "Determining Which Page to Render",
+      "file": "starting-page.md"
+    },
+    {
+      "name": "Rendering All Comments at Once - Disable Pagination",
+      "file": "starting-page-disable-pagination.md"
     }
   ]
 }

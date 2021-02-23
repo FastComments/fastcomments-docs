@@ -17,7 +17,11 @@ const processors = [
  */
 async function processDynamicContent(markdown, filePath) {
     for (const processor of processors) {
-        markdown = await processor(markdown, filePath);
+        try {
+            markdown = await processor(markdown, filePath);
+        } catch(e) {
+            console.error('Processor failed', processor, markdown, e);
+        }
     }
 
     return markdown;
