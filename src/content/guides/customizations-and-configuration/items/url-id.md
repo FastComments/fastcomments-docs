@@ -27,7 +27,7 @@ This is all possible via the URL ID input field on this page, which looks like a
 
 The value in this field should match the "urlId" parameter passed into the comment widget. If you want your customization rule to be "urlId" agnostic, leave this field empty or enter *.
 
-#### Gotchas
+### Gotchas
 
 1. If your page has hash parameters (like example.com#page-1) - this will become part of the URL ID, by default.
 2. During migrations, for example from WordPress to Gatsby, you may have to migrate the URL ID comment values after the initial migration. For that, reach out to us.
