@@ -1,4 +1,4 @@
-[related-parameter-start name = 'startingPage'; type = 'string'; related-parameter-end]
+[related-parameter-start name = 'startingPage'; type = 'number'; related-parameter-end]
 
 To disable pagination, and just render all comments at once, set startingPage to -1.
 

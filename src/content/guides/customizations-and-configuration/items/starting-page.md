@@ -1,4 +1,4 @@
-[related-parameter-start name = 'startingPage'; type = 'string'; related-parameter-end]
+[related-parameter-start name = 'startingPage'; type = 'number'; related-parameter-end]
 
 When fetching and rendering comments, the comment widget needs to know which page to start on. By default, it starts with
 the first page, only rendering that page.
