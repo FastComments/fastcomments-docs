@@ -225,7 +225,7 @@ input:focus {
     user-select: none;
 }
 
-.contribute-code-snippet {
+.contribute-code-snippet, .screenshot-link {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -252,6 +252,7 @@ input:focus {
 }
 
 .screenshot {
+    position: relative;
     margin: 10px 0;
     padding: 0 0 35px 0;
     text-align: center;
@@ -265,7 +266,7 @@ input:focus {
     text-align: left;
 }
 
-.screenshot img {
+.screenshot .screenshot-image {
     max-width: calc(100% - 30px);
     box-sizing: border-box;
     margin: auto 15px;

@@ -204,7 +204,7 @@ function addContentToIndex(content) {
     await dispose();
 
     console.log(`Execution Time: ${Date.now() - startTime}ms`);
-    process.exit(0);
+    process.exit(0); // it seems like puppeteer is keeping the process alive...
 })();
 
 function getCompiledTemplate(templatePath, data) {

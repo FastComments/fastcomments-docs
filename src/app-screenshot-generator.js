@@ -25,7 +25,8 @@ async function getTemplate(url, selector, title, filePath) {
         await page.waitForSelector('body');
     }
     console.log('app-screenshot-generator authenticated...');
-    await page.goto(`${HOST}${url}`);
+    const remotePageUrl = `${HOST}${url}`;
+    await page.goto(remotePageUrl);
     console.log('app-screenshot-generator loaded', url);
     await page.waitForSelector(selector);
     console.log('app-screenshot-generator found', selector);
@@ -36,7 +37,11 @@ async function getTemplate(url, selector, title, filePath) {
     await element.screenshot({ path: targetPath });
     console.log('app-screenshot-generator Created', targetPath);
 
-    return `<div class="screenshot"><div class="title">${title}</div><img src='/images/${targetFileName}' ></div>`;
+    return `<div class="screenshot">
+        <div class="title">${title}</div>
+        <div class="screenshot-link"><a href="${remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>
+        <img src='/images/${targetFileName}' class="screenshot-image" >
+    </div>`;
 }
 
 async function process(input, filePath) {
