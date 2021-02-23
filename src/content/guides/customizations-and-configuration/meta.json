@@ -29,6 +29,10 @@
     {
       "name": "Supporting Dark Backgrounds (Dark Mode)",
       "file": "has-dark-background.md"
+    },
+    {
+      "name": "Toggling Dark Mode",
+      "file": "has-dark-background-toggle.md"
     }
   ]
 }
