@@ -18,7 +18,7 @@
 
     function check() {
         getContent('/build-id', function success(responseText) {
-            if (window.buildId !== responseText) {
+            if (responseText && window.buildId !== responseText) {
                 const alertContainer = document.createElement('div');
                 alertContainer.classList.add('new-version-alert');
                 alertContainer.innerHTML = 'A new version of these docs are available! <a href="javascript:window.location.reload()">Refresh</a> <a href="javascript:document.querySelector(\'.new-version-alert\').remove()">Ignore This Update</a>';
