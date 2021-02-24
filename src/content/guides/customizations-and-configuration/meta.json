@@ -57,6 +57,34 @@
     {
       "name": "Moving The Reply Box to After The Comments",
       "file": "input-after-comments.md"
+    },
+    {
+      "name": "Limiting The Comment Length",
+      "file": "max-comment-character-length.md"
+    },
+    {
+      "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
+      "file": "absolute-dates.md"
+    },
+    {
+      "name": "Adding a Button to Show Comments",
+      "file": "hide-comments-under-count-text-format.md"
+    },
+    {
+      "name": "Adding Header Text",
+      "file": "header-html.md"
+    },
+    {
+      "name": "Disabling All Default Styles",
+      "file": "no-styles.md"
+    },
+    {
+      "name": "Allow Anonymous Commenting",
+      "file": "allow-anon.md"
+    },
+    {
+      "name": "Preventing Anonymous Comments From Expiring",
+      "file": "allow-anon-retain-comments.md"
     }
   ]
 }
