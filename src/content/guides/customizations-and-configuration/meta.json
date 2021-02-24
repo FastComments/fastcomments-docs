@@ -39,6 +39,10 @@
       "file": "default-avatar-src.md"
     },
     {
+      "name": "Disabling Avatars",
+      "file": "hide-avatars.md"
+    },
+    {
       "name": "Page Titles",
       "file": "page-title.md"
     },
