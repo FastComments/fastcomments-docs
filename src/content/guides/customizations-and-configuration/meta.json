@@ -37,6 +37,14 @@
     {
       "name": "Changing The Default Avatar",
       "file": "default-avatar-src.md"
+    },
+    {
+      "name": "Page Titles",
+      "file": "page-title.md"
+    },
+    {
+      "name": "Customizing The Comment Count Text",
+      "file": "comment-count-format.md"
     }
   ]
 }
