@@ -49,6 +49,14 @@
     {
       "name": "Customizing The Comment Count Text",
       "file": "comment-count-format.md"
+    },
+    {
+      "name": "Prevent New Replies & Disable Votes",
+      "file": "readonly.md"
+    },
+    {
+      "name": "Moving The Reply Box to After The Comments",
+      "file": "input-after-comments.md"
     }
   ]
 }
