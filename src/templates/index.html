@@ -27,6 +27,7 @@
             <h2 class="text-center">- Guides -</h2>
             <div class="guide-items">
                 {{#each guides}}
+                {{#hasItems}}
                 <a class="guide" href="{{url}}">
                     <div class="icon-container">
                         <img src="{{icon}}" alt="{{name}} icon" title="{{name}}"/>
@@ -41,9 +42,11 @@
                     <div class="coming-soon">Coming soon!</div>
                     {{/unless}}
                 </a>
+                {{/hasItems}}
                 {{/each}}
             </div>
         </div>
+        <p>We have many more guides coming soon. Until then, <a href="https://blog.fastcomments.com" target="_blank">you might find what you're looking for on our blog</a>.</p>
     </div>
 </div>
 <script>
