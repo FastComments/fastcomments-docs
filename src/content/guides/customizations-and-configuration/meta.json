@@ -93,6 +93,10 @@
     {
       "name": "Manually Defining the User's Locale",
       "file": "locale.md"
+    },
+    {
+      "name": "The Comment Count & Counting All Nested Replies",
+      "file": "count-all.md"
     }
   ]
 }
