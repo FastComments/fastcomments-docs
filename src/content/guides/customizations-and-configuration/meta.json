@@ -85,6 +85,10 @@
     {
       "name": "Preventing Anonymous Comments From Expiring",
       "file": "allow-anon-retain-comments.md"
+    },
+    {
+      "name": "Disabling Image Uploads",
+      "file": "no-image-uploads.md"
     }
   ]
 }
