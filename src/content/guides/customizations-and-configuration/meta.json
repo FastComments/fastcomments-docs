@@ -89,6 +89,10 @@
     {
       "name": "Disabling Image Uploads",
       "file": "no-image-uploads.md"
+    },
+    {
+      "name": "Manually Defining the User's Locale",
+      "file": "locale.md"
     }
   ]
 }
