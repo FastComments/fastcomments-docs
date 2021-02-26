@@ -13,7 +13,7 @@ This is to prevent the page size changing constantly on the user, potentially ca
 For some use cases, like live bidding, or online events, this is not the desired behavior - you may want the commenting widget to be
 more like a "chat" box where new comments "show right away".
 
-Hence the name of the flag that enables that feature: **showLiveRightAway**.
+Hence, the name of the flag that enables that feature: **showLiveRightAway**.
 
 We can turn it on as follows:
 
