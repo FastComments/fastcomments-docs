@@ -120,14 +120,15 @@ function addContentToIndex(content) {
     const guides = [];
     fs.readdirSync(GUIDES_DIR).forEach((guide) => {
         const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
-        const hasItems = meta.itemsOrdered.length > 0;
-        guides.push({
-            id: guide,
-            url: hasItems ? `guide-${guide}.html` : (meta.url ? meta.url : '#'),
-            icon: `images/guide-icons/${meta.icon}`,
-            name: meta.name,
-            hasItems: hasItems || meta.url
-        });
+        const hasItems = meta.itemsOrdered.length > 0 || meta.url;
+        if (hasItems) {
+            guides.push({
+                id: guide,
+                url: meta.itemsOrdered.length > 0 ? `guide-${guide}.html` : (meta.url ? meta.url : '#'),
+                icon: `images/guide-icons/${meta.icon}`,
+                name: meta.name
+            });
+        }
     });
 
     // We'll periodically compare the build id on the page with the one from an API call to alert the user if the docs are out of date.

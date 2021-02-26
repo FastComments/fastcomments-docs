@@ -27,7 +27,6 @@
             <h2 class="text-center">- Guides -</h2>
             <div class="guide-items">
                 {{#each guides}}
-                {{#hasItems}}
                 <a class="guide" href="{{url}}">
                     <div class="icon-container">
                         <img src="{{icon}}" alt="{{name}} icon" title="{{name}}"/>
@@ -39,7 +38,6 @@
                               data-original="#000000" class="active-path" data-old_color="#000000" fill="#cfcfcf"/>
                     </svg>
                 </a>
-                {{/hasItems}}
                 {{/each}}
             </div>
         </div>
