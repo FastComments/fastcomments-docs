@@ -1,4 +1,4 @@
-FastComments can be configured to remove unverified comments after three days. This helps combat spam.
+FastComments can be configured to remove unverified comments after a desired number of days. This helps combat spam.
 
 By default, it does not.
 
