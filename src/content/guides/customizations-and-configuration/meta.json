@@ -97,6 +97,10 @@
     {
       "name": "The Comment Count & Counting All Nested Replies",
       "file": "count-all.md"
+    },
+    {
+      "name": "Show Live Comments Right Away",
+      "file": "show-live-right-away.md"
     }
   ]
 }
