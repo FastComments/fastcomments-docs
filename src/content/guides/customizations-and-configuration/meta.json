@@ -101,6 +101,10 @@
     {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md"
+    },
+    {
+      "name": "Enabling Commenter Links",
+      "file": "enable-commenter-links.md"
     }
   ]
 }
