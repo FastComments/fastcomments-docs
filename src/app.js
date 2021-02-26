@@ -8,7 +8,6 @@ const shortid = require('shortid');
 const {htmlToText} = require('html-to-text');
 const {dispose, processDynamicContent} = require('./guide-dynamic-content-transformer');
 
-const CONTENT_DIR = path.join(__dirname, 'content');
 const CATEGORIES_DIR = path.join(__dirname, 'content', 'categories');
 const GUIDES_DIR_NAME = 'guides';
 const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
@@ -124,10 +123,10 @@ function addContentToIndex(content) {
         const hasItems = meta.itemsOrdered.length > 0;
         guides.push({
             id: guide,
-            url: hasItems ? `guide-${guide}.html` : '#',
+            url: hasItems ? `guide-${guide}.html` : (meta.url ? meta.url : '#'),
             icon: `images/guide-icons/${meta.icon}`,
             name: meta.name,
-            hasItems
+            hasItems: hasItems || meta.url
         });
     });
 
