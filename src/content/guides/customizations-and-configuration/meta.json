@@ -105,6 +105,10 @@
     {
       "name": "Enabling Commenter Links",
       "file": "enable-commenter-links.md"
+    },
+    {
+      "name": "Changing The Default Sort Direction",
+      "file": "default-sort-direction.md"
     }
   ]
 }
