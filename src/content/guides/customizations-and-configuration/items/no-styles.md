@@ -1,6 +1,8 @@
 [related-parameter-start name = 'noStyles'; type = 'boolean'; related-parameter-end]
 
-All default styling can be removed by setting the **noStyles** paramter to true.
+For larger custom styling projects, it may be desirable to start with a clean slate and not use the default styling at all.
+
+All default styling can be removed by setting the **noStyles** parameter to true, as follows:
 
 [code-example-start config = {noStyles: true}; linesToHighlight = [6]; title = 'Disabling All Default Styles'; code-example-end]
 

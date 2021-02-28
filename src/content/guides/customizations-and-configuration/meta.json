@@ -15,6 +15,14 @@
       "file": "url-id-same-comments-different-pages.md"
     },
     {
+      "name": "Custom Styling",
+      "file": "custom-css.md"
+    },
+    {
+      "name": "Disabling All Default Styles",
+      "file": "no-styles.md"
+    },
+    {
       "name": "Linking from Comments to Pages",
       "file": "url.md"
     },
@@ -65,11 +73,11 @@
     {
       "name": "Limiting The Comment Length",
       "file": "max-comment-character-length.md"
-    },,
+    },
     {
       "name": "Disable Multi-Line Commenting",
       "file": "use-single-line-comment-input.md"
-    }
+    },
     {
       "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
       "file": "absolute-dates.md"
@@ -109,10 +117,6 @@
     {
       "name": "Changing The Default Sort Direction",
       "file": "default-sort-direction.md"
-    },
-    {
-      "name": "Disabling All Default Styles",
-      "file": "no-styles.md"
     }
   ]
 }
