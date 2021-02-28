@@ -1,6 +1,6 @@
 [related-parameter-start name = 'customCSS'; type = 'string'; related-parameter-end]
 
-FastComments is designed to be customized. The commenting widget itself runs inside of an iframe for security reasons, so to apply
+FastComments is designed to be customized. The commenting widget itself runs inside an iframe for security reasons, so to apply
 custom styling you have to follow one of two approaches.
 
 The first, the easiest approach, and preferred by us, is to use the widget customization page.
@@ -16,7 +16,7 @@ This approach has some benefits:
 
 The second approach is to specify the **customCSS** parameter in the widget configuration, as follows:
 
-[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6, 7, 8, 9, 10]; title = 'Passing Custom CSS'; code-example-end]
+[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Passing Custom CSS'; code-example-end]
 
 However, this has *limitations*:
 1. There is a limit to how much custom CSS that can be passed before our servers will reject the request, due to the size of the headers.
