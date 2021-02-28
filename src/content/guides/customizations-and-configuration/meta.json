@@ -47,6 +47,10 @@
       "file": "page-title.md"
     },
     {
+      "name": "Adding Header Text",
+      "file": "header-html.md"
+    },
+    {
       "name": "Customizing The Comment Count Text",
       "file": "comment-count-format.md"
     },
@@ -61,7 +65,11 @@
     {
       "name": "Limiting The Comment Length",
       "file": "max-comment-character-length.md"
-    },
+    },,
+    {
+      "name": "Disable Multi-Line Commenting",
+      "file": "use-single-line-comment-input.md"
+    }
     {
       "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
       "file": "absolute-dates.md"
@@ -69,14 +77,6 @@
     {
       "name": "Adding a Button to Show Comments",
       "file": "hide-comments-under-count-text-format.md"
-    },
-    {
-      "name": "Adding Header Text",
-      "file": "header-html.md"
-    },
-    {
-      "name": "Disabling All Default Styles",
-      "file": "no-styles.md"
     },
     {
       "name": "Allow Anonymous Commenting",
@@ -109,6 +109,10 @@
     {
       "name": "Changing The Default Sort Direction",
       "file": "default-sort-direction.md"
+    },
+    {
+      "name": "Disabling All Default Styles",
+      "file": "no-styles.md"
     }
   ]
 }
