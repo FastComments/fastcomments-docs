@@ -7,7 +7,7 @@ The first, the easiest approach, and preferred by us, is to use the widget custo
 
 In the widget customization page, see the "Show Advanced Options" section, under which there is an area labeled "Custom CSS":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.advanced-options'; title='Custom CSS Input Area' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; title='Custom CSS Input Area' app-screenshot-end]
 
 This approach has some benefits:
 1. The entered CSS is minified before it is sent to the user, and the formatting is kept consistent in the editing UI.
