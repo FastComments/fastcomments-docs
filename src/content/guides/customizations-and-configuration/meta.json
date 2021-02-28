@@ -23,6 +23,10 @@
       "file": "no-styles.md"
     },
     {
+      "name": "Removing Branding",
+      "file": "remove-branding.md"
+    },
+    {
       "name": "Linking from Comments to Pages",
       "file": "url.md"
     },
