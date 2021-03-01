@@ -5,15 +5,22 @@
 
     const searchResults = document.getElementById('search-results');
 
-    function getContent(url, cb) {
+    function makeRequest(url, method, body, cb) {
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
+        xhr.open(method, url);
         xhr.onload = function () {
             if (xhr.status === 200) {
-                cb(xhr.responseText);
+                cb && cb(xhr.responseText);
             }
         };
-        xhr.send();
+        if (method === 'POST') {
+            xhr.setRequestHeader('Content-type', 'application/json');
+        }
+        if (body) {
+            xhr.send(JSON.stringify(body));
+        } else {
+            xhr.send();
+        }
     }
 
     function arrayValuesSame(a, b) {
@@ -43,7 +50,7 @@
 
         let resultingPages = [];
         wordIds.forEach(function (id) {
-            getContent('/index-' + id + '.json', function cb(responseText) {
+            makeRequest('/index-' + id + '.json', 'GET', null, function cb(responseText) {
                 try {
                     const json = JSON.parse(responseText);
                     json.forEach(function (entry) {
@@ -60,8 +67,22 @@
     }
 
     const input = document.getElementById('search');
+    let queriesTracked = [];
     input.addEventListener('input', function () {
         const wordIdsToSearch = [];
+
+        if (input.value && input.value.length > 3) {
+            const valueTrimmed = input.value.trim();
+
+            if (!queriesTracked.includes(valueTrimmed)) {
+                // We track searches made, so that we know if we're missing some documentation. This is so we don't have to use a third party which could introduce tracking behavior.
+                makeRequest(location.hostname === 'localhost' ? 'http://localhost:3001/docs-search-event' : 'https://fastcomments.com/docs-search-event', 'POST', {
+                    input: valueTrimmed
+                });
+                queriesTracked.push(valueTrimmed);
+            }
+        }
+
         input.value.toLowerCase().split(' ').forEach(function (word) {
             const indexEntry = window.docIndex[word];
             if (indexEntry) {
