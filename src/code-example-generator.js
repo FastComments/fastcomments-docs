@@ -16,7 +16,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
             classes.push('highlight');
         }
         if (lineContent.includes('tenantId')) {
-            classes.push('has-tenant-id');
+            classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
         }
         result += `<div class="${classes.join(' ')}"><span class="line-number">${i + 1}</span>${lineContent}</div>`;
     }
