@@ -10,14 +10,22 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     let result = '';
     const inputSplitByLine = inputString.split('\n');
     for (let i = 0; i < inputSplitByLine.length; i++) {
-        result += '<div class="line' + (linesToHighlight.includes(i) ? ' highlight' : '') + '">' + '<span class="line-number">' + (i + 1) + '</span>' + inputSplitByLine[i] + '</div>';
+        const lineContent = inputSplitByLine[i];
+        const classes = ['line'];
+        if (linesToHighlight.includes(i)) {
+            classes.push('highlight');
+        }
+        if (lineContent.includes('tenantId')) {
+            classes.push('has-tenant-id');
+        }
+        result += `<div class="${classes.join(' ')}"><span class="line-number">${i + 1}</span>${lineContent}</div>`;
     }
 
     return result;
 }
 
 function getTemplateWrapped(codeHTML, linesToHighlight, title, filePath, examplePageFileName) {
-    let html = '<div class="code">';
+    let html = `<div class="code" id="${title.replace(new RegExp(' ', 'g'), '-').toLowerCase()}">`;
     html += `<div class="title">${title}</div>`;
     html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
 

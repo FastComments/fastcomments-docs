@@ -5,4 +5,9 @@ function getCompiledTemplate(templatePath, data) {
     return handlebars.compile(fs.readFileSync(templatePath, 'utf8'))(data);
 }
 
-module.exports = { getCompiledTemplate };
+const ExampleTenantId = 'aKa2Z4Q=';
+
+module.exports = {
+    ExampleTenantId,
+    getCompiledTemplate
+};

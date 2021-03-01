@@ -1,11 +1,11 @@
 <html>
 <head>
     <title>FastComments Docs</title>
-    <meta property="og:title" content="FastComments Documentation" />
-    <meta property="og:description" content="FastComments Documentation" />
-    <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png" />
-    <meta property="og:image:width" content="1080"  />
-    <meta property="og:image:height" content="1080"  />
+    <meta property="og:title" content="FastComments Documentation"/>
+    <meta property="og:description" content="FastComments Documentation"/>
+    <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png"/>
+    <meta property="og:image:width" content="1080"/>
+    <meta property="og:image:height" content="1080"/>
     <link rel="stylesheet" href="/css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -21,6 +21,37 @@
 <div class="content">
     {{{content}}}
 </div>
+
+<script>
+    (function () {
+        const ExampleTenantId = JSON.parse(`"{{{ExampleTenantId}}}"`);
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://fastcomments.com/auth/session-info');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                try {
+                    const result = JSON.parse(xhr.responseText);
+                    if (result.authenticated && result.tenantId) {
+                        const containers = document.querySelectorAll('.code');
+                        containers.forEach(function (container) {
+                            if (container.id !== 'demo-tenant-id') {
+                                const lineWithTenantId = container.querySelector('.has-tenant-id');
+                                if (lineWithTenantId) {
+                                    lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace(ExampleTenantId, result.tenantId);
+                                    lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace('demo', result.tenantId);
+                                }
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+        };
+        xhr.send();
+    })();
+</script>
+
 <script>
     window.buildId = "{{{buildId}}}";
 </script>

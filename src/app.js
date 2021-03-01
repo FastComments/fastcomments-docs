@@ -5,6 +5,7 @@ const path = require('path');
 const marked = require('marked');
 const handlebars = require('handlebars');
 const shortid = require('shortid');
+const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {htmlToText} = require('html-to-text');
 const {dispose, processDynamicContent} = require('./guide-dynamic-content-transformer');
@@ -149,7 +150,9 @@ function addContentToIndex(content) {
             // can have all the content on one page, but still deep link to it from search nicely.
             const fullUrl = `/${guide.url}#${id}`;
 
-            const markdown = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8');
+            const markdown = handlebars.compile(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8'))({
+                ExampleTenantId
+            });
             let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', item.file)));
 
             html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
@@ -177,7 +180,8 @@ function addContentToIndex(content) {
             fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
                 title: meta.name,
                 content: guideContentHTML,
-                buildId
+                buildId,
+                ExampleTenantId: ExampleTenantId
             }), 'utf8');
         }
     }
