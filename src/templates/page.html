@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
+    <script src="js/get-session-info.js"></script>
 </head>
 <body>
 <div class="header">
@@ -21,34 +22,23 @@
 <div class="content">
     {{{content}}}
 </div>
-
 <script>
     (function () {
         const ExampleTenantId = JSON.parse(`"{{{ExampleTenantId}}}"`);
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://fastcomments.com/auth/session-info');
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                try {
-                    const result = JSON.parse(xhr.responseText);
-                    if (result.authenticated && result.tenantId) {
-                        const containers = document.querySelectorAll('.code');
-                        containers.forEach(function (container) {
-                            if (container.id !== 'demo-tenant-id') {
-                                const lineWithTenantId = container.querySelector('.has-tenant-id');
-                                if (lineWithTenantId) {
-                                    lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace(ExampleTenantId, result.tenantId);
-                                    lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace('demo', result.tenantId);
-                                }
-                            }
-                        });
+        window.getSessionInfo(function (sessionInfo) {
+            if (sessionInfo.authenticated && sessionInfo.tenantId) {
+                const containers = document.querySelectorAll('.code');
+                containers.forEach(function (container) {
+                    if (container.id !== 'demo-tenant-id') {
+                        const lineWithTenantId = container.querySelector('.has-tenant-id');
+                        if (lineWithTenantId) {
+                            lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace(ExampleTenantId, sessionInfo.tenantId);
+                            lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace('demo', sessionInfo.tenantId);
+                        }
                     }
-                } catch (e) {
-                    console.error(e);
-                }
+                });
             }
-        };
-        xhr.send();
+        });
     })();
 </script>
 

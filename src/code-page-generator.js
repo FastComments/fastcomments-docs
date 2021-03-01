@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const {ExampleTenantId} = require('./utils');
 const { first, last } = require('lodash');
 const {getCompiledTemplate} = require('./utils');
 
@@ -11,7 +12,8 @@ function createCodeSnippetPage (codeHTML, snippetName, targetFileName, linesToHi
         codeHTML,
         snippetName,
         highLightLineFrom: linesToHighlight ? first(linesToHighlight) : 0,
-        highLightLineTo: linesToHighlight ? last(linesToHighlight) : 0
+        highLightLineTo: linesToHighlight ? last(linesToHighlight) : 0,
+        ExampleTenantId
     }), 'utf8');
 }
 

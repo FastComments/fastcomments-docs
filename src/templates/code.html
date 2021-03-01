@@ -17,6 +17,7 @@
     <script src="js/codemirror-xml.js"></script>
     <script src="js/codemirror-htmlmixed.js"></script>
     <script src="js/codemirror-mark-selection.js"></script>
+    <script src="js/get-session-info.js"></script>
 </head>
 <body>
 <div class="header">
@@ -34,46 +35,62 @@
     <iframe id="iframe" class="example-iframe"></iframe>
     <script>
         (function () {
+            const ExampleTenantId = JSON.parse(`"{{{ExampleTenantId}}}"`);
             const input = document.getElementById('code-input');
-            const editor = CodeMirror.fromTextArea(input, {
-                lineNumbers: true,
-                styleSelectedText: true,
-                viewportMargin: Infinity, // for auto resize
-                mode: 'htmlmixed',
-                theme: 'monokai',
-            });
-            window.editor = editor;
-            let markedText = editor.markText({line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 0}, {line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 99999}, {css: "background: #383830"});
             const iframe = document.getElementById('iframe');
 
-            function render() {
-                const blob = new Blob([editor.getValue()], {type: "text/html; charset=utf-8"});
-                iframe.src = URL.createObjectURL(blob);
-                updateIframeHeight();
-            }
+            function setup() {
+                const editor = CodeMirror.fromTextArea(input, {
+                    lineNumbers: true,
+                    styleSelectedText: true,
+                    viewportMargin: Infinity, // for auto resize
+                    mode: 'htmlmixed',
+                    theme: 'monokai',
+                });
+                window.editor = editor;
+                let markedText = editor.markText({
+                    line: JSON.parse(`{{highLightLineFrom}}`) - 1,
+                    ch: 0
+                }, {line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 99999}, {css: "background: #383830"});
 
-            let lastHeight = 0;
+                function render() {
+                    const blob = new Blob([editor.getValue()], {type: "text/html; charset=utf-8"});
+                    iframe.src = URL.createObjectURL(blob);
+                    updateIframeHeight();
+                }
 
-            function updateIframeHeight() {
-                if (iframe.contentWindow.document.body) {
-                    const currentHeight = iframe.contentWindow.document.body.offsetHeight + 50;
+                let lastHeight = 0;
 
-                    if (lastHeight !== currentHeight && (currentHeight - lastHeight) > 35) {
-                        iframe.style.height = `${currentHeight}px`;
+                function updateIframeHeight() {
+                    if (iframe.contentWindow.document.body) {
+                        const currentHeight = iframe.contentWindow.document.body.offsetHeight + 50;
+
+                        if (lastHeight !== currentHeight && (currentHeight - lastHeight) > 35) {
+                            iframe.style.height = `${currentHeight}px`;
+                        }
+                        lastHeight = currentHeight;
                     }
-                    lastHeight = currentHeight;
                 }
+
+                render();
+                setInterval(updateIframeHeight, 500);
+                editor.on('change', function () {
+                    render();
+                    if (markedText) {
+                        markedText.clear();
+                        markedText = null;
+                    }
+                });
             }
 
-            render();
-            setInterval(updateIframeHeight, 500);
-            editor.on('change', function() {
-                render();
-                if (markedText) {
-                    markedText.clear();
-                    markedText = null;
+            window.getSessionInfo(function (sessionInfo) {
+                if (sessionInfo.authenticated && sessionInfo.tenantId) {
+                    input.value = input.value.replace(ExampleTenantId, sessionInfo.tenantId);
+                    input.value = input.value.replace('"demo"', sessionInfo.tenantId);
+                } else {
+                    setup();
                 }
-            });
+            }, setup);
         })();
     </script>
     <style>
