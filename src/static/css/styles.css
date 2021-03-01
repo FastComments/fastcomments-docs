@@ -246,7 +246,7 @@ input:focus {
     margin-top: 30px;
 }
 
-.screenshot, .code, .related-parameter {
+.screenshot, .code, .related-parameter, .CodeMirror, .example-iframe {
     box-shadow: 0 0 30px rgba(32, 22, 0, 0.25);
     border-radius: 3px;
 }

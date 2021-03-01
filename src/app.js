@@ -5,6 +5,7 @@ const path = require('path');
 const marked = require('marked');
 const handlebars = require('handlebars');
 const shortid = require('shortid');
+const {getCompiledTemplate} = require('./utils');
 const {htmlToText} = require('html-to-text');
 const {dispose, processDynamicContent} = require('./guide-dynamic-content-transformer');
 
@@ -206,8 +207,4 @@ function addContentToIndex(content) {
     console.log(`Execution Time: ${Date.now() - startTime}ms`);
     process.exit(0); // it seems like puppeteer is keeping the process alive...
 })();
-
-function getCompiledTemplate(templatePath, data) {
-    return handlebars.compile(fs.readFileSync(templatePath, 'utf8'))(data);
-}
 

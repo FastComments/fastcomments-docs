@@ -1,5 +1,7 @@
 const vm = require('vm');
 const hljs = require('highlight.js');
+const path = require('path');
+const {createCodeSnippetPage} = require('./code-page-generator');
 
 const StartToken = '[inline-code-start]';
 const EndToken = '[inline-code-end]';
@@ -17,10 +19,10 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplate(inlineCode, title, filePath) {
+function getTemplate(inlineCode, title, filePath, examplePageFileName) {
     let html = '<div class="code">';
     html += `<div class="title">${title}</div>`;
-    html += `<div class="contribute-code-snippet"><a href="https://github.com/FastComments/fastcomments-docs/tree/main/${filePath}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Improve This Code Snippet"></a></div>`;
+    html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
 
     html += getTemplateLinesWithHighlight(hljs.highlight('html', inlineCode).value, []);
 
@@ -53,7 +55,10 @@ function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${attrsCode} given.`);
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, filePath) + input.substring(endTokenIndex + EndToken.length, input.length);
+        const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
+        createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
+
+        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

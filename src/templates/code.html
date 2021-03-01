@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>FastComments Docs</title>
+    <meta property="og:title" content="FastComments Documentation"/>
+    <meta property="og:description" content="FastComments Documentation"/>
+    <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png"/>
+    <meta property="og:image:width" content="1080"/>
+    <meta property="og:image:height" content="1080"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/codemirror-monokai.css">
+    <script src="js/codemirror.js"></script>
+    <script src="js/codemirror-javascript.js"></script>
+    <script src="js/codemirror-xml.js"></script>
+    <script src="js/codemirror-htmlmixed.js"></script>
+    <script src="js/codemirror-mark-selection.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="header-inner">
+        <a href="/"><img src="/images/logo-32-2020-01.png" alt="Logo"/>FastComments.com</a>
+    </div>
+</div>
+<div class="left-right-art"></div>
+<div class="content">
+    <h2 class="text-center">Example Code Snippet "{{snippetName}}"</h2>
+    <label>
+        <textarea id="code-input">{{{codeHTML}}}</textarea>
+    </label>
+    <h4>Result</h4>
+    <iframe id="iframe" class="example-iframe"></iframe>
+    <script>
+        (function () {
+            const input = document.getElementById('code-input');
+            const editor = CodeMirror.fromTextArea(input, {
+                lineNumbers: true,
+                styleSelectedText: true,
+                viewportMargin: Infinity, // for auto resize
+                mode: 'htmlmixed',
+                theme: 'monokai',
+            });
+            window.editor = editor;
+            let markedText = editor.markText({line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 0}, {line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 99999}, {css: "background: #383830"});
+            const iframe = document.getElementById('iframe');
+
+            function render() {
+                const blob = new Blob([editor.getValue()], {type: "text/html; charset=utf-8"});
+                iframe.src = URL.createObjectURL(blob);
+                updateIframeHeight();
+            }
+
+            let lastHeight = 0;
+
+            function updateIframeHeight() {
+                if (iframe.contentWindow.document.body) {
+                    const currentHeight = iframe.contentWindow.document.body.offsetHeight + 50;
+
+                    if (lastHeight !== currentHeight && (currentHeight - lastHeight) > 35) {
+                        iframe.style.height = `${currentHeight}px`;
+                    }
+                    lastHeight = currentHeight;
+                }
+            }
+
+            render();
+            setInterval(updateIframeHeight, 500);
+            editor.on('change', function() {
+                render();
+                if (markedText) {
+                    markedText.clear();
+                    markedText = null;
+                }
+            });
+        })();
+    </script>
+    <style>
+        h4 {
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+
+        #iframe {
+            width: 100%;
+            border: none;
+        }
+    </style>
+</div>
+<!-- Watch.ly is just to see how many people use this page, and how long they stay on it. -->
+<div id="watchly-target" style="display:none"></div>
+<script src="https://watch.ly/js/watchly-web.min.js"></script>
+<script>
+    watchly.connect(document.getElementById('watchly-target'), {
+        "key": "5d1fcfabcc00a66e161816b4",
+        "prefix": "",
+        "postfix": ""
+    });
+</script>
+</body>
+</html>

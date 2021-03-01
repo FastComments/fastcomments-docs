@@ -8,7 +8,7 @@ On page load, the widget will try to determine how dark the background of the pa
 the page could have a white background, but if you put the comment widget inside a container with a black background, dark mode should
 still automatically be enabled to make the comments readable.
 
-However, the detection mechanism, which relies on determining "luminance", may not enable dark mode when you want to. To forcefully enable it, set the
+However, the detection mechanism, which relies on determining "luminance", may not enable dark-mode when you want to. To forcefully enable it, set the
 *hasDarkBackground* flag to true as follows:
 
-[code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; code-example-end]
+[code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
