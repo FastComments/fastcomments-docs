@@ -76,7 +76,9 @@ async function process(input, filePath) {
 }
 
 process.dispose = async function() {
-    return browser.close();
+    if (browser) {
+        return browser.close();
+    }
 }
 
 module.exports = process;

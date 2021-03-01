@@ -59,6 +59,12 @@ function process(input, filePath) {
         createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
 
         input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
+        if (attrsIndex > -1) {
+            // remove the StartAttrsToken + EndAttrsToken
+            // but do it after other string manipulation, so logic is simpler
+            input = input.substring(0, input.indexOf(StartAttrsToken)) + input.substring(input.indexOf(EndAttrsToken) + EndAttrsToken.length, input.length);
+        }
+
         nextIndex = input.indexOf(StartToken);
     }
     return input;
