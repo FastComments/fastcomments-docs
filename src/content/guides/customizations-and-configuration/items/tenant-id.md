@@ -9,3 +9,5 @@ This is only meant to try out and play with the comment widget. In production, y
 [code-example-start config = {tenantId: '{{{ExampleTenantId}}}'}; linesToHighlight = [5]; title = 'Defining Your Tenant ID'; code-example-end]
 
 Your Tenant ID can be found already applied on the comment widget <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">code snippet in your account</a>.
+
+From this point on, if you are logged into FastComments, the code examples will use your real tenant id.
