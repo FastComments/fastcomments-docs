@@ -10,10 +10,10 @@ const HOST = 'https://fastcomments.com';
 let authenticated = false;
 let browser, page;
 
-async function getTemplate(url, clickSelector, selector, title, filePath) {
+async function getTemplate(url, clickSelectors, selector, title, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
     if (!authenticated) {
-        browser = await puppeteer.launch({ headless: true });
+        browser = await puppeteer.launch({headless: true});
         page = await browser.newPage();
         await page.goto(`${HOST}/auth/login`);
         await page.waitForSelector('form');
@@ -23,15 +23,19 @@ async function getTemplate(url, clickSelector, selector, title, filePath) {
         await page.keyboard.type('demo@fastcomments.com');
         await page.click('button[type="submit"]');
         await page.waitForSelector('body');
+        authenticated = true;
     }
     console.log('app-screenshot-generator authenticated...');
     const remotePageUrl = `${HOST}${url}`;
     await page.goto(remotePageUrl);
     console.log('app-screenshot-generator loaded', url);
 
-    if (clickSelector) {
-        await page.waitForSelector(clickSelector);
-        await page.click(clickSelector);
+    if (clickSelectors) {
+        for (const clickSelector of clickSelectors) {
+            console.log('Waiting for', clickSelector);
+            await page.waitForSelector(clickSelector);
+            await page.click(clickSelector);
+        }
     }
 
     await page.waitForSelector(selector);
@@ -40,7 +44,7 @@ async function getTemplate(url, clickSelector, selector, title, filePath) {
 
     const targetFileName = url.replace(new RegExp('/', 'g'), '') + selector.replace(new RegExp('\\.', 'g'), 'DOT').replace(new RegExp('#', 'g'), 'HASH') + '.png';
     const targetPath = path.join(__dirname, 'static', 'generated', 'images', targetFileName);
-    await element.screenshot({ path: targetPath });
+    await element.screenshot({path: targetPath});
     console.log('app-screenshot-generator Created', targetPath);
 
     return `<div class="screenshot">
@@ -69,13 +73,13 @@ async function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.clickSelector, args.selector, args.title, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.clickSelector ? [args.clickSelector] : args.clickSelectors, args.selector, args.title, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
 }
 
-process.dispose = async function() {
+process.dispose = async function () {
     if (browser) {
         return browser.close();
     }

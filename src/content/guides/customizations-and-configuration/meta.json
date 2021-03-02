@@ -47,6 +47,14 @@
       "file": "has-dark-background-toggle.md"
     },
     {
+      "name": "Manually Defining the User's Locale",
+      "file": "locale.md"
+    },
+    {
+      "name": "Overriding Text",
+      "file": "translations.md"
+    },
+    {
       "name": "Changing The Default Avatar",
       "file": "default-avatar-src.md"
     },
@@ -101,10 +109,6 @@
     {
       "name": "Disabling Image Uploads",
       "file": "no-image-uploads.md"
-    },
-    {
-      "name": "Manually Defining the User's Locale",
-      "file": "locale.md"
     },
     {
       "name": "The Comment Count & Counting All Nested Replies",
