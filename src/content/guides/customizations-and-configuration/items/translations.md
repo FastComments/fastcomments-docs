@@ -2,6 +2,8 @@
 
 With FastComments, all text in the comment widget is customizable.
 
+You can override a single piece of text, like the submit button, or all text in the entire comment widget.
+
 By default, the text in the comment widget is translated based on the user's locale. However, we can override the text, if we are confident
 that our user-base is using the same local/language, for example:
 

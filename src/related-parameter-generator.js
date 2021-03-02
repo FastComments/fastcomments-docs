@@ -1,10 +1,11 @@
 const vm = require('vm');
+const {encode} = require('html-entities');
 
 const StartToken = '[related-parameter-start';
 const EndToken = 'related-parameter-end]';
 
 function getTemplate(name, type, filePath) {
-    return `<div class="related-parameter">Related Parameter in Code: <span>${name}</span> <span class="as">as</span> <span>${type}</span></div>`;
+    return `<div class="related-parameter">Related Parameter in Code: <span>${name}</span> <span class="as">as</span> <span>${encode(type)}</span></div>`;
 }
 
 function process(input, filePath) {
