@@ -67,12 +67,10 @@
     }
 
     const input = document.getElementById('search');
-    let queriesTracked = [];
-    input.addEventListener('input', function () {
-        const wordIdsToSearch = [];
 
-        if (input.value && input.value.length > 3) {
-            const valueTrimmed = input.value.trim();
+    setInterval(function() {
+        if (input.value && input.value.length > 2) {
+            const valueTrimmed = input.value.trim().toLowerCase();
 
             if (!queriesTracked.includes(valueTrimmed)) {
                 // We track searches made, so that we know if we're missing some documentation. This is so we don't have to use a third party which could introduce tracking behavior.
@@ -82,6 +80,11 @@
                 queriesTracked.push(valueTrimmed);
             }
         }
+    }, 1500);
+
+    let queriesTracked = [];
+    input.addEventListener('input', function () {
+        const wordIdsToSearch = [];
 
         input.value.toLowerCase().split(' ').forEach(function (word) {
             const indexEntry = window.docIndex[word];
