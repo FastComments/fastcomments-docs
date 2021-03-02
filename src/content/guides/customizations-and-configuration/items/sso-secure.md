@@ -43,7 +43,7 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 #### The User Object
 
 The User object contains the following schema:
-[inline-code-attrs-start title = 'The User Object'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'The User Object'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface User {
     /** Required. 1k Characters Max. **/

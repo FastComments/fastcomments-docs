@@ -24,10 +24,12 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplateWrapped(codeHTML, linesToHighlight, title, filePath, examplePageFileName) {
+function getTemplateWrapped(codeHTML, linesToHighlight, title, isFunctional, filePath, examplePageFileName) {
     let html = `<div class="code" id="${title.replace(new RegExp(' ', 'g'), '-').toLowerCase()}">`;
     html += `<div class="title">${title}</div>`;
-    html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
+    if (isFunctional) {
+        html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
+    }
 
     html += getTemplateLinesWithHighlight(hljs.highlight('html', codeHTML).value, linesToHighlight);
     html += '</div>';
@@ -64,11 +66,13 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.str
         }, null, '    ')});
 </script>
 `;
-
+        const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
         const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
-        createCodeSnippetPage(codeHTML + (args.additionalDemoCode ? `\n${args.additionalDemoCode}` : ''), args.title, codeSnippetPageFileName, args.linesToHighlight);
+        if (isFunctional) {
+            createCodeSnippetPage(codeHTML + (args.additionalDemoCode ? `\n${args.additionalDemoCode}` : ''), args.title, codeSnippetPageFileName, args.linesToHighlight);
+        }
 
-        input = input.substring(0, nextIndex) + getTemplateWrapped(codeHTML, args.linesToHighlight, args.title, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + getTemplateWrapped(codeHTML, args.linesToHighlight, args.title, isFunctional, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
