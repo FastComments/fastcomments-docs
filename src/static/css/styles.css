@@ -291,3 +291,7 @@ input:focus {
 .related-parameter span.as {
     color: deeppink;
 }
+
+.related-parameter a {
+    color: #fff;
+}

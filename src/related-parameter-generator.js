@@ -4,8 +4,15 @@ const {encode} = require('html-entities');
 const StartToken = '[related-parameter-start';
 const EndToken = 'related-parameter-end]';
 
-function getTemplate(name, type, filePath) {
-    return `<div class="related-parameter">Related Parameter in Code: <span>${name}</span> <span class="as">as</span> <span>${encode(type)}</span></div>`;
+function getTemplate(name, type, typeLink, filePath) {
+    const typeEncoded = encode(type);
+    let typeHTML = '';
+    if (typeLink) {
+        typeHTML = `<a href="${typeLink}" target="_blank">${typeEncoded}</a>`;
+    } else {
+        typeHTML = typeEncoded;
+    }
+    return `<div class="related-parameter">Related Parameter in Code: <span>${name}</span> <span class="as">as</span> <span>${typeHTML}</span></div>`;
 }
 
 function process(input, filePath) {
@@ -27,7 +34,7 @@ function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(args.name, args.type, filePath) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + getTemplate(args.name, args.type, args.typeLink, filePath) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

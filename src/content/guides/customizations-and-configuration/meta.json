@@ -55,6 +55,18 @@
       "file": "translations.md"
     },
     {
+      "name": "Single Sign On (SSO) Overview",
+      "file": "sso.md"
+    },
+    {
+      "name": "Secure Single Sign On (SSO)",
+      "file": "sso-secure.md"
+    },
+    {
+      "name": "Simple Single Sign On (SSO)",
+      "file": "sso-simple.md"
+    },
+    {
       "name": "Changing The Default Avatar",
       "file": "default-avatar-src.md"
     },
