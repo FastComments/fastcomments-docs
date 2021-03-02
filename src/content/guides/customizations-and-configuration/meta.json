@@ -59,11 +59,11 @@
       "file": "sso.md"
     },
     {
-      "name": "Secure Single Sign On (SSO)",
+      "name": "Custom Integrations - Secure Single Sign On (SSO)",
       "file": "sso-secure.md"
     },
     {
-      "name": "Simple Single Sign On (SSO)",
+      "name": "Custom Integrations - Simple Single Sign On (SSO)",
       "file": "sso-simple.md"
     },
     {

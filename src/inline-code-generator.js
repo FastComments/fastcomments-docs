@@ -19,12 +19,15 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplate(inlineCode, title, filePath, examplePageFileName) {
+function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePageFileName) {
     let html = '<div class="code">';
     html += `<div class="title">${title}</div>`;
-    html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
 
-    html += getTemplateLinesWithHighlight(hljs.highlight('html', inlineCode).value, []);
+    if (isFunctional) {
+        html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
+    }
+
+    html += getTemplateLinesWithHighlight(hljs.highlight(type, inlineCode).value, []);
 
     html += '</div>';
 
@@ -39,7 +42,7 @@ function process(input, filePath) {
             throw new Error('Malformed input! Start token found, but not end.');
         }
 
-        const inlineCode = input.substring(nextIndex + StartToken.length, endTokenIndex);
+        let inlineCode = input.substring(nextIndex + StartToken.length, endTokenIndex);
 
         const attrsIndex = input.indexOf(StartAttrsToken);
         const attrsEndTokenIndex = input.indexOf(EndAttrsToken);
@@ -48,6 +51,7 @@ function process(input, filePath) {
         const args = {};
         vm.createContext(args); // Contextify the object.
         try {
+            args.globals = {};
             vm.runInContext(attrsCode, args);
             console.log('args are', args);
         } catch(e) {
@@ -55,10 +59,17 @@ function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${attrsCode} given.`);
         }
 
-        const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
-        createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
+        delete args.globals;
 
-        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
+        const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
+        const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
+        if (isFunctional) {
+            createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
+        } else { // OPTIMIZATION
+            inlineCode = inlineCode.replace(new RegExp('window.', 'g'), '');
+        }
+
+        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
         if (attrsIndex > -1) {
             // remove the StartAttrsToken + EndAttrsToken
             // but do it after other string manipulation, so logic is simpler

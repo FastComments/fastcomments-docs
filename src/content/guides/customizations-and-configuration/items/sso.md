@@ -1,7 +1,25 @@
-By default, FastComments has a very easy and seamless sign up flow. However, we can improve upon that further by only having
-one login flow for your entire site. FastComments accomplishes this with SSO, and there are two options.
+SSO, or single-sign-on, is a set of conventions used to allow you or your users use FastComments without having to create another account.
 
-First, we'll compare the options, and then go into details of each.
+Assuming you don't allow anonymous commenting, an account is required to comment with FastComments. We make this sign up process very easy - the user just leaves their email when they comment.
+However, we understand that even that is extra friction some sites want to avoid.
+
+We can reduce that friction by only having one login flow for your entire site.
+
+### How do I get it?
+All account types - from the $4.99/mo plan to the $350/mo plan - get access to SSO. As with other features, the Pro plan provides direct development support.
+
+Let's compare the options, and then go into details of each.
+
+### WordPress Users
+If you're using our <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress plugin</a> then there is no code to write! Simply go to the plugin's Admin page, click SSO Settings, and then Enable.
+
+This will take you to a single-button click wizard which will create your API key, send it over to your WordPress install and turn SSO on. We've consolidated this into a single button click for you.
+
+Note that if you are installing the plugin for the first time you will have to follow up the setup process before you see the admin page with the SSO Settings button.
+
+### Custom Integrations
+
+For Custom integrations, there are two options.
 
 ### Option One - Secure SSO
 
