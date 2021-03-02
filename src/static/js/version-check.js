@@ -21,7 +21,7 @@
             if (responseText && window.buildId !== responseText) {
                 const alertContainer = document.createElement('div');
                 alertContainer.classList.add('new-version-alert');
-                alertContainer.innerHTML = 'A new version of these docs are available! <a href="javascript:window.location.reload()">Refresh</a> <a href="javascript:document.querySelector(\'.new-version-alert\').remove()">Ignore This Update</a>';
+                alertContainer.innerHTML = 'A new version of these docs are available! <a href="javascript:window.location.reload(true)">Refresh</a> <a href="javascript:document.querySelector(\'.new-version-alert\').remove()">Ignore This Update</a>';
                 document.body.appendChild(alertContainer);
             } else {
                 setTimeout(check, 5000);
