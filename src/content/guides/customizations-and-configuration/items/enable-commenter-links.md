@@ -12,4 +12,4 @@ When said URL is provided, the user's account will be updated and all of their u
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.click-to-show-comments'; selector = '.commenter-links'; title='Enabling Commenter Links' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; title='Enabling Commenter Links' app-screenshot-end]

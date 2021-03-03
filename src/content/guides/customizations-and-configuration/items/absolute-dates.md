@@ -8,4 +8,4 @@ It may be necessary or desired to use absolute dates, in which case you set this
 
 This can be customized without code, on the widget customization page, under Advanced Options:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; title='Use Absolute Dates' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; title='Use Absolute Dates' app-screenshot-end]

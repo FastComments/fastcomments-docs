@@ -11,6 +11,6 @@ We enable the **useSingleLineCommentInput** flag as follows:
 
 This can also be done without code. In the widget customization page, see the "Enable Single-Line Comment Input" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.single-line-comment-input'; title='Enable Single-Line Comment Input' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.single-line-comment-input'; selector = '.single-line-comment-input'; title='Enable Single-Line Comment Input' app-screenshot-end]
 
 Note that, the comments on each page for each sort direction are pre-computed, so all sort directions have the same performance.
