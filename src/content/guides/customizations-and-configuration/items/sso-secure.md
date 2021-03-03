@@ -6,8 +6,9 @@ There is also some documentation regarding migrating from other providers with s
 
 The flow looks like this:
 
-<div class="text-center">
-    <img src="/images/sso-diagram.png" alt="SSO Diagram" title="SSO Diagram" />
+<div class="screenshot white-bg">
+    <div class="title">Secure SSO Flow</div>
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Secure SSO Diagram" />
 </div>
 
 Since Secure SSO involves full-stack development, full working code examples in Java/Spring, NodeJS/Express, and vanilla PHP are currently <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">on GitHub</a>.

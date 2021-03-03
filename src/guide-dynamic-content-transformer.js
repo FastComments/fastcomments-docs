@@ -5,9 +5,10 @@
 
 const processors = [
     require('./code-example-generator'),
+    // require('./flow-diagram-generator'),
     require('./inline-code-generator'),
     require('./app-screenshot-generator'),
-    require('./related-parameter-generator')
+    require('./related-parameter-generator'),
 ];
 
 /**

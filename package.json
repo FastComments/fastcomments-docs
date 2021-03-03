@@ -8,7 +8,8 @@
 		"html-to-text": "^6.0.0",
 		"highlight.js": "^10.4.1",
 		"puppeteer": "^7.1.0",
-		"html-entities": "^2.1.0"
+		"html-entities": "^2.1.0",
+		"diagrams": "^0.11.0"
 	},
 	"scripts": {
 		"build": "node src/app",
