@@ -75,6 +75,10 @@
       "file": "sso-commento.md"
     },
     {
+      "name": "Protecting Comment Threads With Single-Sign-On",
+      "file": "sso-require-to-view-comments.md"
+    },
+    {
       "name": "Changing The Default Avatar",
       "file": "default-avatar-src.md"
     },
