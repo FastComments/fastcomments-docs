@@ -62,3 +62,21 @@ interface User {
     websiteUrl?: string;
 }
 [inline-code-end]
+
+#### Notifications
+
+To enable or disable notifications, set the value of optedInNotifications to true or false respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+
+#### VIP Users & Special Labels
+
+You can display a special label next to the user's name by using the optional "displayLabel" field.
+
+#### Unauthenticated users
+
+To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+
+#### Direct Examples for Serializing and Hashing User Data
+
+More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here</a> (java) and <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here</a> (php).
+
+We understand that any integration can be a complicated and painful process. Don't hesitate to reach out to your representative or use the <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>.

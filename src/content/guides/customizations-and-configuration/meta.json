@@ -67,6 +67,14 @@
       "file": "sso-simple.md"
     },
     {
+      "name": "Custom Integrations - Migrating from Disqus SSO",
+      "file": "sso-disqus.md"
+    },
+    {
+      "name": "Custom Integrations - Migrating from Commento SSO",
+      "file": "sso-commento.md"
+    },
+    {
       "name": "Changing The Default Avatar",
       "file": "default-avatar-src.md"
     },
