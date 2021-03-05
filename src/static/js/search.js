@@ -40,6 +40,7 @@
     function fetchAndRenderResults(wordIds) {
         if (wordIds.length === 0) {
             searchResults.innerHTML = '';
+            lastSearchedWords = [];
             return;
         }
         if (arrayValuesSame(wordIds, lastSearchedWords)) {
@@ -94,6 +95,7 @@
         });
         if (input.value && input.value.length > 5 && wordIdsToSearch.length === 0) {
             searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
+            lastSearchedWords = [];
         } else {
             fetchAndRenderResults(wordIdsToSearch);
         }
