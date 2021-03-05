@@ -8,8 +8,8 @@ By default, the moderation page shows all comments, but we can filter comments i
 
 ## Reviewed vs Approved
 
-With FastComments, only approved comments will ever be able to show. This does not mean that you need to manually approve every comment,
-as is the setting by default. That can be configured <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">here</a>.
+With FastComments, only approved comments will ever be able to show. This does not mean that you need to manually approve every comment.
+By default, comments are automatically approved. This can be configured <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">here</a>.
 
 So, Approved means the comment can be viewed by other users on your site.
 
