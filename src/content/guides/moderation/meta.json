@@ -1,0 +1,14 @@
+{
+  "name": "Moderation",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "The Moderate Comments Page",
+      "file": "moderate-comments-page.md"
+    },
+    {
+      "name": "Filters",
+      "file": "filters.md"
+    }
+  ]
+}
