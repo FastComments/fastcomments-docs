@@ -2,5 +2,25 @@
   "name": "Installation",
   "icon": "download.png",
   "itemsOrdered": [
+    {
+      "name": "Wordpress",
+      "file": "wordpress.md"
+    },
+    {
+      "name": "VanillaJS",
+      "file": "vanillajs.md"
+    },
+    {
+      "name": "React",
+      "file": "react.md"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md"
+    }
   ]
 }

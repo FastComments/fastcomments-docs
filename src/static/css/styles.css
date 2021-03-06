@@ -195,6 +195,7 @@ input:focus {
 
 .code {
     position: relative;
+    margin: 5px 0;
     white-space: pre;
     background: #201600;
     color: #fff;

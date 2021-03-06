@@ -12,7 +12,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     for (let i = 0; i < inputSplitByLine.length; i++) {
         const lineContent = inputSplitByLine[i];
         const classes = ['line'];
-        if (linesToHighlight.includes(i)) {
+        if (linesToHighlight && linesToHighlight.includes(i)) {
             classes.push('highlight');
         }
         if (lineContent.includes('tenantId')) {

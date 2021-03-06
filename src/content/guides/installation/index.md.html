@@ -1,0 +1,13 @@
+## Installation
+
+FastComments is designed to be installed on any kind of page - static or dynamic, light themed or dark, it should be easy to install
+and adapt to any kind of site or web based application.
+
+{{#each items}}
+    <div class="index-guide-item">
+        <h2 id="{{id}}">{{title}} <a href="#{{id}}" class="index-guide-link"><img src="images/link-internal.png" alt="Internal Link" title="Direct Link"></a></h2>
+        <div class="index-guide-item-content">
+            {{{content}}}
+        </div>
+    </div>
+{{/each}}
