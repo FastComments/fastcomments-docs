@@ -9,11 +9,13 @@
 		"highlight.js": "^10.4.1",
 		"puppeteer": "^7.1.0",
 		"html-entities": "^2.1.0",
-		"diagrams": "^0.11.0"
+		"diagrams": "^0.11.0",
+		"filewatcher": "^3.0.1"
 	},
 	"scripts": {
 		"build": "node src/app",
-		"serve": "serve src/static/generated"
+		"serve": "serve src/static/generated",
+		"watch": "node src/watch"
 	},
 	"devDependencies": {
 		"serve": "^11.2.0"
