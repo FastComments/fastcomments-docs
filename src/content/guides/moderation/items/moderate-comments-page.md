@@ -1,4 +1,4 @@
-The place where most moderation takes place is the comment moderation page. For example, here's a screenshot of our current demo account:
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; selector = '.content'; title='Comment Moderation Page' app-screenshot-end]
 

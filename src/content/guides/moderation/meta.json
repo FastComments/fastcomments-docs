@@ -7,6 +7,26 @@
       "file": "moderate-comments-page.md"
     },
     {
+      "name": "Moderators",
+      "file": "moderators.md"
+    },
+    {
+      "name": "Adding Moderators",
+      "file": "moderators-adding.md"
+    },
+    {
+      "name": "Moderator Stats",
+      "file": "moderator-stats.md"
+    },
+    {
+      "name": "Removing Moderators",
+      "file": "moderators-removing.md"
+    },
+    {
+      "name": "Moderation Via Email",
+      "file": "moderation-via-email.md"
+    },
+    {
       "name": "Filters",
       "file": "filters.md"
     }

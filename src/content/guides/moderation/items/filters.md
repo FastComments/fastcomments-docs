@@ -16,7 +16,3 @@ So, Approved means the comment can be viewed by other users on your site.
 Reviewed is simply a tool for administrators and moderators, and has no impact on the visibility of a comment.
 
 The Reviewed flag makes it easier to find comments that you have reviewed.
-
-# Under Construction!
-
-This guide was last updated on March 5th 2021. We're working to complete it as soon as possible. 
