@@ -20,6 +20,7 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
  * @property {string} icon
  * @property {string} name
  * @property {string} itemsPath
+ * @property {string} metaJSONPath
  */
 
 async function buildGuideItem(guide, item, index) {
@@ -86,7 +87,8 @@ async function buildGuide(guide, index) {
 function getGuides() {
     const result = [];
     fs.readdirSync(GUIDES_DIR).forEach((guide) => {
-        const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide, 'meta.json'), 'utf8'));
+        const metaJSONPath = path.join(GUIDES_DIR, guide, 'meta.json');
+        const meta = JSON.parse(fs.readFileSync(metaJSONPath, 'utf8'));
         const hasItems = meta.itemsOrdered.length > 0 || meta.url;
         if (hasItems) {
             result.push({
@@ -94,6 +96,7 @@ function getGuides() {
                 url: meta.itemsOrdered.length > 0 ? `guide-${guide}.html` : (meta.url ? meta.url : '#'),
                 icon: `images/guide-icons/${meta.icon}`,
                 name: meta.name,
+                metaJSONPath,
                 itemsPath: path.join(GUIDES_DIR, guide, ITEMS_DIR_NAME)
             });
         }
