@@ -29,6 +29,34 @@
     {
       "name": "Filters",
       "file": "filters.md"
+    },
+    {
+      "name": "Sharing Moderation Links",
+      "file": "sharing-moderation-links.md"
+    },
+    {
+      "name": "Moderation Settings",
+      "file": "moderation-settings.md"
+    },
+    {
+      "name": "Spam Detection",
+      "file": "spam-detection.md"
+    },
+    {
+      "name": "Masking Profanity",
+      "file": "profanity-mask.md"
+    },
+    {
+      "name": "The Comment Thread Viewer",
+      "file": "comment-thread-viewer.md"
+    },
+    {
+      "name": "Comment Actions",
+      "file": "comment-actions.md"
+    },
+    {
+      "name": "Live Moderating",
+      "file": "comment-actions-live.md"
     }
   ]
 }
