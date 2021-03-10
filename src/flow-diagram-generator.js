@@ -21,7 +21,7 @@ let browser, page;
 
 async function getTemplate(flowText) {
     if (!authenticated) {
-        browser = await puppeteer.launch({headless: false});
+        browser = await puppeteer.launch({ headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         page = await browser.newPage();
         // Next step is to just host the library and run it this way, but ourselves, since there is no server side version.
         await page.goto('<todo>');

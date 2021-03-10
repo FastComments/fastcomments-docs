@@ -30,7 +30,7 @@ async function getTemplate(url, actions, clickSelectors, selector, title, newWid
         if (!newWidth) {
             newWidth = DEFAULT_WIDTH;
         }
-        browser = await puppeteer.launch({ headless, width: newWidth, height: DEFAULT_HEIGHT });
+        browser = await puppeteer.launch({ headless, width: newWidth, height: DEFAULT_HEIGHT, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         page = await browser.newPage();
         await page.setViewport({width: newWidth, height: DEFAULT_HEIGHT});
         await page.goto(`${HOST}/auth/login`);
