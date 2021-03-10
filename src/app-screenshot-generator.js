@@ -23,7 +23,7 @@ const addProxySelectToPage = async (page) => {
     await page.addStyleTag({content: styleFile});
 }
 
-async function getTemplate(url, actions, clickSelectors, selector, title, newWidth, addProxySelect, filePath) {
+async function getTemplate(url, actions, clickSelectors, selector, title, newWidth, addProxySelect, delay, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
     const headless = true;
     if (!authenticated || newWidth !== width) {
@@ -84,12 +84,23 @@ async function getTemplate(url, actions, clickSelectors, selector, title, newWid
         for (const clickSelector of clickSelectors) {
             console.log('Waiting for', clickSelector);
             await page.waitForSelector(clickSelector);
-            await page.click(clickSelector);
+            try {
+                await page.click(clickSelector);
+            } catch (e) {
+                console.error('Error for selector', clickSelector, e);
+            }
         }
     }
 
     await page.waitForSelector(selector);
     console.log('app-screenshot-generator found', selector);
+
+    if (delay) {
+        await new Promise((resolve) => {
+            setTimeout(resolve, delay);
+        });
+    }
+
     const element = await page.$(selector);
 
     const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
@@ -130,7 +141,7 @@ async function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.width, args.addProxySelect, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.width, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

@@ -57,6 +57,18 @@
     {
       "name": "Live Moderating",
       "file": "comment-actions-live.md"
+    },
+    {
+      "name": "Banning Users",
+      "file": "banning-users.md"
+    },
+    {
+      "name": "Banning Users With Wildcards",
+      "file": "banning-users-wildcards.md"
+    },
+    {
+      "name": "Bulk Actions",
+      "file": "bulk-actions.md"
     }
   ]
 }

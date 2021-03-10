@@ -13,6 +13,7 @@ const watcher = filewatcher();
 
 fs.readdirSync(GUIDES_DIR).forEach((guide) => {
     watcher.add(path.join(GUIDES_DIR, guide, 'meta.json'));
+    watcher.add(path.join(GUIDES_DIR, guide, 'index.md.html'));
     watcher.add(path.join(GUIDES_DIR, guide, 'items'));
 });
 
@@ -22,7 +23,7 @@ watcher.on('change', async function (file, stat) {
         console.log('deleted', file);
     }
     const guide = getGuides().find((guide) => {
-        return guide.itemsPath === file || guide.metaJSONPath === file;
+        return guide.itemsPath === file || guide.metaJSONPath === file || guide.indexTemplatePath === file;
     });
     if (!guide) {
         return console.error('Guide not found for path', file);

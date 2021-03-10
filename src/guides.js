@@ -9,6 +9,7 @@ const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 
 const GUIDES_DIR_NAME = 'guides';
 const ITEMS_DIR_NAME = 'items';
+const INDEX_NAME = 'index.md.html';
 const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
@@ -21,6 +22,7 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
  * @property {string} name
  * @property {string} itemsPath
  * @property {string} metaJSONPath
+ * @property {string} indexTemplatePath
  */
 
 async function buildGuideItem(guide, item, index) {
@@ -97,7 +99,8 @@ function getGuides() {
                 icon: `images/guide-icons/${meta.icon}`,
                 name: meta.name,
                 metaJSONPath,
-                itemsPath: path.join(GUIDES_DIR, guide, ITEMS_DIR_NAME)
+                itemsPath: path.join(GUIDES_DIR, guide, ITEMS_DIR_NAME),
+                indexTemplatePath: path.join(GUIDES_DIR, guide, INDEX_NAME)
             });
         }
     });
