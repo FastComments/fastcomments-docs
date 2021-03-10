@@ -19,8 +19,8 @@ let width = DEFAULT_WIDTH;
 const addProxySelectToPage = async (page) => {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');
     const styleFile = fs.readFileSync(path.resolve(__dirname, 'static', 'css', 'proxy-select.css'), 'utf8');
-    await page.addScriptTag({ content: scriptFile });
-    await page.addStyleTag({ content: styleFile });
+    await page.addScriptTag({content: scriptFile});
+    await page.addStyleTag({content: styleFile});
 }
 
 async function getTemplate(url, actions, clickSelectors, selector, title, newWidth, addProxySelect, filePath) {
@@ -30,7 +30,12 @@ async function getTemplate(url, actions, clickSelectors, selector, title, newWid
         if (!newWidth) {
             newWidth = DEFAULT_WIDTH;
         }
-        browser = await puppeteer.launch({ headless, width: newWidth, height: DEFAULT_HEIGHT, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        browser = await puppeteer.launch({
+            headless,
+            width: newWidth,
+            height: DEFAULT_HEIGHT,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
         page = await browser.newPage();
         await page.setViewport({width: newWidth, height: DEFAULT_HEIGHT});
         await page.goto(`${HOST}/auth/login`);
@@ -89,7 +94,13 @@ async function getTemplate(url, actions, clickSelectors, selector, title, newWid
 
     const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
     const targetFileName = fileNameHash + '.png';
-    const targetPath = path.join(__dirname, 'static', 'generated', 'images', targetFileName);
+    const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
+    if (!fs.existsSync(targetFolderPath)) {
+        fs.mkdirSync(targetFolderPath, {
+            recursive: true
+        });
+    }
+    const targetPath = path.join(targetFolderPath, targetFileName);
     await element.screenshot({path: targetPath});
     console.log('app-screenshot-generator Created', targetPath);
 
