@@ -9,12 +9,8 @@ const EndToken = 'app-screenshot-end]';
 
 const HOST = 'https://fastcomments.com';
 
-let authenticated = false;
-let browser, page;
-
 const DEFAULT_WIDTH = 1920;
 const DEFAULT_HEIGHT = 1080;
-let width = DEFAULT_WIDTH;
 
 const addProxySelectToPage = async (page) => {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');
@@ -23,21 +19,38 @@ const addProxySelectToPage = async (page) => {
     await page.addStyleTag({content: styleFile});
 }
 
-async function getTemplate(url, actions, clickSelectors, selector, title, newWidth, addProxySelect, delay, filePath) {
-    console.log('app-screenshot-generator Creating', url, selector);
-    const headless = true;
-    if (!authenticated || newWidth !== width) {
-        if (!newWidth) {
-            newWidth = DEFAULT_WIDTH;
-        }
-        browser = await puppeteer.launch({
-            headless,
-            width: newWidth,
+/**
+ *
+ * @typedef {Object} BrowserPooled
+ * @property {Object} browser
+ * @property {Object} page
+ */
+
+const browserPool = [];
+
+/**
+ *
+ * @callback BrowserPoolCallback
+ * @param {Object} BrowserPooled
+ */
+
+/**
+ * @async
+ * @param {BrowserPoolCallback} callback
+ * @return {Promise<*>}
+ */
+async function withPooledBrowser(callback) {
+    let instance = browserPool.pop();
+
+    if (!instance) {
+        const browser = await puppeteer.launch({
+            headless: true,
+            width: DEFAULT_WIDTH,
             height: DEFAULT_HEIGHT,
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
-        page = await browser.newPage();
-        await page.setViewport({width: newWidth, height: DEFAULT_HEIGHT});
+        const page = await browser.newPage();
+        await page.setViewport({width: DEFAULT_WIDTH, height: DEFAULT_HEIGHT});
         await page.goto(`${HOST}/auth/login`);
         await page.waitForSelector('form');
         await page.focus('input[name="username"]');
@@ -46,80 +59,100 @@ async function getTemplate(url, actions, clickSelectors, selector, title, newWid
         await page.keyboard.type('demo@fastcomments.com');
         await page.click('button[type="submit"]');
         await page.waitForSelector('body');
-        authenticated = true;
-        width = newWidth;
+
+        instance = {
+            browser,
+            page
+        };
     }
 
-    console.log('app-screenshot-generator authenticated...');
-    const remotePageUrl = `${HOST}${url}`;
-    await page.goto(remotePageUrl);
-    console.log('app-screenshot-generator loaded', url);
+    let result = undefined;
 
-    if (addProxySelect) {
-        await addProxySelectToPage(page);
-        // await page.waitForNavigation({waitUntil: 'networkidle2'});
+    try {
+        result = await callback(instance);
+    } catch (e) {
+        console.error(e);
     }
+    browserPool.push(instance);
 
-    if (actions) {
-        for (const action of actions) {
-            console.log('next action', action);
-            switch (action.type) {
-                case 'click':
-                    await page.waitForSelector(action.selector);
-                    await page.click(action.selector);
-                    break;
-                case 'set-value':
-                    await page.waitForSelector(action.selector);
-                    await page.evaluate((selector, value) => {
-                        document.querySelector(selector).value = value;
-                    }, action.selector, action.value);
-                    break;
-                default:
-                    throw new Error(`Unsupported action type! ${action}`);
+    return result;
+}
+
+async function getTemplate(url, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
+    console.log('app-screenshot-generator Creating', url, selector);
+
+    return await withPooledBrowser(async ({browser, page}) => {
+        console.log('app-screenshot-generator authenticated...');
+        const remotePageUrl = `${HOST}${url}`;
+        await page.goto(remotePageUrl);
+        console.log('app-screenshot-generator loaded', url);
+
+        if (addProxySelect) {
+            await addProxySelectToPage(page);
+            // await page.waitForNavigation({waitUntil: 'networkidle2'});
+        }
+
+        if (actions) {
+            for (const action of actions) {
+                console.log('next action', action);
+                switch (action.type) {
+                    case 'click':
+                        await page.waitForSelector(action.selector);
+                        await page.click(action.selector);
+                        break;
+                    case 'set-value':
+                        await page.waitForSelector(action.selector);
+                        await page.evaluate((selector, value) => {
+                            document.querySelector(selector).value = value;
+                        }, action.selector, action.value);
+                        break;
+                    default:
+                        throw new Error(`Unsupported action type! ${action}`);
+                }
             }
         }
-    }
 
-    if (clickSelectors) {
-        for (const clickSelector of clickSelectors) {
-            console.log('Waiting for', clickSelector);
-            await page.waitForSelector(clickSelector);
-            try {
-                await page.click(clickSelector);
-            } catch (e) {
-                console.error('Error for selector', clickSelector, e);
+        if (clickSelectors) {
+            for (const clickSelector of clickSelectors) {
+                console.log('Waiting for', clickSelector);
+                await page.waitForSelector(clickSelector);
+                try {
+                    await page.click(clickSelector);
+                } catch (e) {
+                    console.error('Error for selector', clickSelector, e);
+                }
             }
         }
-    }
 
-    await page.waitForSelector(selector);
-    console.log('app-screenshot-generator found', selector);
+        await page.waitForSelector(selector);
+        console.log('app-screenshot-generator found', selector);
 
-    if (delay) {
-        await new Promise((resolve) => {
-            setTimeout(resolve, delay);
-        });
-    }
+        if (delay) {
+            await new Promise((resolve) => {
+                setTimeout(resolve, delay);
+            });
+        }
 
-    const element = await page.$(selector);
+        const element = await page.$(selector);
 
-    const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
-    const targetFileName = fileNameHash + '.png';
-    const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
-    if (!fs.existsSync(targetFolderPath)) {
-        fs.mkdirSync(targetFolderPath, {
-            recursive: true
-        });
-    }
-    const targetPath = path.join(targetFolderPath, targetFileName);
-    await element.screenshot({path: targetPath});
-    console.log('app-screenshot-generator Created', targetPath);
+        const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
+        const targetFileName = fileNameHash + '.png';
+        const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
+        if (!fs.existsSync(targetFolderPath)) {
+            fs.mkdirSync(targetFolderPath, {
+                recursive: true
+            });
+        }
+        const targetPath = path.join(targetFolderPath, targetFileName);
+        await element.screenshot({path: targetPath});
+        console.log('app-screenshot-generator Created', targetPath);
 
-    return `<div class="screenshot">
+        return `<div class="screenshot">
         <div class="title">${title}</div>
         <div class="screenshot-link"><a href="${remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>
         <img src='/images/${targetFileName}' class="screenshot-image" >
     </div>`;
+    });
 }
 
 async function process(input, filePath) {
@@ -141,16 +174,14 @@ async function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.width, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
 }
 
 process.dispose = async function () {
-    if (browser) {
-        return browser.close();
-    }
+    browserPool.forEach((instance) => instance.browser.close());
 }
 
 module.exports = process;

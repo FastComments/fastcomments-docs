@@ -13,6 +13,9 @@ const INDEX_NAME = 'index.md.html';
 const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
+const GUIDE_LAYOUT_PATH = path.join(__dirname, 'templates', 'guide-layout.html');
+const GUIDE_INTRO_FILE_NAME = 'intro.md';
+const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
 
 /**
  * @typedef {Object} Guide
@@ -23,6 +26,8 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
  * @property {string} itemsPath
  * @property {string} metaJSONPath
  * @property {string} indexTemplatePath
+ * @property {string} conclusionPath
+ * @property {string} introPath
  */
 
 async function buildGuideItem(guide, item, index) {
@@ -64,19 +69,24 @@ async function buildGuideItem(guide, item, index) {
 async function buildGuide(guide, index) {
     /** @type {Meta} **/
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const items = [];
-    for (const item of meta.itemsOrdered) {
-        // We can't use parallelism here since some of the generators are not "thread safe" - we could fix this by using a pool of browsers in the generators.
-        items.push(await buildGuideItem(guide, item, index));
-    }
+    const items = await Promise.all(meta.itemsOrdered.map((item) => {
+        return buildGuideItem(guide, item, index);
+    }));
     const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
     if (fs.existsSync(guideIndexPath)) {
-        const guideContentHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
-            items
+        const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
+        const guideConclusionHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME), 'utf8'));
+        const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
+            intro: guideIntroHTML,
+            items,
+            conclusion: guideConclusionHTML
+        });
+        const guideRootHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
+            content: guideContentHTML
         });
         fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
             title: meta.name,
-            content: guideContentHTML,
+            content: guideRootHTML,
             ExampleTenantId: ExampleTenantId
         }), 'utf8');
     }
@@ -100,11 +110,18 @@ function getGuides() {
                 name: meta.name,
                 metaJSONPath,
                 itemsPath: path.join(GUIDES_DIR, guide, ITEMS_DIR_NAME),
-                indexTemplatePath: path.join(GUIDES_DIR, guide, INDEX_NAME)
+                indexTemplatePath: path.join(GUIDES_DIR, guide, INDEX_NAME),
+                conclusionPath: path.join(GUIDES_DIR, guide, GUIDE_CONCLUSION_FILE_NAME),
+                introPath: path.join(GUIDES_DIR, guide, GUIDE_INTRO_FILE_NAME)
             });
         }
     });
     return result;
 }
 
-module.exports = {buildGuide, getGuides};
+module.exports = {
+    TEMPLATE_DIR,
+    GUIDE_LAYOUT_PATH,
+    buildGuide,
+    getGuides
+};

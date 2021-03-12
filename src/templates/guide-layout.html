@@ -1,0 +1,38 @@
+<div class="content-with-sidebar">
+    <div class="sidebar">
+        <div class="sidebar-content">
+            {{#each items}}
+            <div class="sidebar-item">
+                <a href="#{{id}}">{{title}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="right-of-sidebar">
+        {{{intro}}}
+
+        <div class="guide-items">
+            {{#each items}}
+            <div class="index-guide-item">
+                <h2 id="{{id}}">{{title}} <a href="#{{id}}" class="index-guide-link"><img src="images/link-internal.png"
+                                                                                          alt="Internal Link"
+                                                                                          title="Direct Link"></a></h2>
+                <div class="index-guide-item-content">
+                    {{{content}}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        {{{conclusion}}}
+
+        <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
+        <div id="fastcomments-widget"></div>
+        <script>
+            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: 'nYrnfYEv'
+            });
+        </script>
+    </div>
+</div>

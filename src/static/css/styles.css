@@ -62,13 +62,54 @@ body {
 }
 
 .content {
-    max-width: 1024px;
+    max-width: 1500px;
     margin: 5% auto;
     padding: 10px;
     box-sizing: border-box;
     background: #fff;
     z-index: 1;
     line-height: 1.5em;
+}
+
+.content-with-sidebar > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.content-with-sidebar .sidebar {
+    display: none;
+}
+
+.content-with-sidebar .sidebar .sidebar-content {
+    position: fixed;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.content-with-sidebar .sidebar .sidebar-item {
+    margin: 10px 0;
+}
+
+.content-with-sidebar .sidebar .sidebar-item a {
+    color: #201600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .content-with-sidebar .sidebar {
+        display: inline-block;
+        width: 270px;
+        margin-right: 10px;
+    }
+
+    .content-with-sidebar .sidebar .sidebar-content {
+        width: 270px;
+    }
+
+    .content-with-sidebar .right-of-sidebar {
+        width: calc(100% - 290px);
+    }
 }
 
 input {
