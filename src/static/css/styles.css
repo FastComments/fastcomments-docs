@@ -102,6 +102,10 @@ body {
         display: inline-block;
         width: 270px;
         margin-right: 10px;
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        max-height: 100%;
     }
 
     .content-with-sidebar .sidebar .sidebar-content {
