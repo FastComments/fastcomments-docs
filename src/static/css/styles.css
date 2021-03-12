@@ -81,9 +81,10 @@ body {
 }
 
 .content-with-sidebar .sidebar .sidebar-content {
-    position: fixed;
-    max-height: 100%;
-    overflow-y: auto;
+    /* This currently causes issues with cutting off the bottom of the sidebar. Need a solution that allows the sidebar to "follow" the content and still be scrollable... */
+    /*position: fixed;*/
+    /*max-height: 100%;*/
+    /*overflow-y: auto;*/
 }
 
 .content-with-sidebar .sidebar .sidebar-item {
