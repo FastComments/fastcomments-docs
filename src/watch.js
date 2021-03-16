@@ -58,6 +58,7 @@ async function processNext() {
         await next();
         processing = false;
         console.log('Watch rebuild done...', jobsInQueue.length, 'more to do...');
+        setImmediate(processNext);
     }
 }
 
