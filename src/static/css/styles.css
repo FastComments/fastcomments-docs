@@ -96,6 +96,10 @@ body {
         border-bottom: 1px solid #e2dfd9;
     }
 
+    .content-with-sidebar .sidebar .sidebar-item.selected {
+        font-weight: 700;
+    }
+
     .content-with-sidebar .sidebar .sidebar-item a {
         color: #201600;
         text-transform: uppercase;
