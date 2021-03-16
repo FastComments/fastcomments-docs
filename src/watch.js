@@ -54,8 +54,9 @@ async function processNext() {
     if (!processing && jobsInQueue.length > 0) {
         console.log('Building next job...');
         const next = jobsInQueue.pop();
-        await next();
         processing = true;
+        await next();
+        processing = false;
         console.log('Watch rebuild done...', jobsInQueue.length, 'more to do...');
     }
 }
