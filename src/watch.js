@@ -47,37 +47,51 @@ async function rebuildGuide(guide) {
     await buildGuide(guide, {});
 }
 
-// TODO don't rebuild the same guide concurrently
+let jobsInQueue = [];
+let processing = false;
+
+async function processNext() {
+    if (!processing && jobsInQueue.length > 0) {
+        console.log('Building next job...');
+        const next = jobsInQueue.pop();
+        await next();
+        processing = true;
+        console.log('Watch rebuild done...', jobsInQueue.length, 'more to do...');
+    }
+}
+
 watcher.on('change', async function (file, stat) {
     console.log('File modified: %s', file);
     if (!stat) {
         console.log('deleted', file);
     }
-    const staticRootStart = STATIC_ROOT_DIRS.find((dir) => file.startsWith(dir));
-    if (staticRootStart) {
-        const targetFile = path.join(STATIC_ROOT_DIRS_TO_GENERATED[staticRootStart], path.basename(file));
-        console.log(`Copying... from=[${file}] to=[${targetFile}]`);
-        fs.copyFileSync(file, targetFile);
-        console.log(`Copy done! from=[${file}] to=[${targetFile}]`);
-    }
-    else if (GUIDE_ROOT_FILES.includes(file)) {
-        for (const guide of getGuides()) {
+    jobsInQueue.push(async function () {
+        const staticRootStart = STATIC_ROOT_DIRS.find((dir) => file.startsWith(dir));
+        if (staticRootStart) {
+            const targetFile = path.join(STATIC_ROOT_DIRS_TO_GENERATED[staticRootStart], path.basename(file));
+            console.log(`Copying... from=[${file}] to=[${targetFile}]`);
+            fs.copyFileSync(file, targetFile);
+            console.log(`Copy done! from=[${file}] to=[${targetFile}]`);
+        } else if (GUIDE_ROOT_FILES.includes(file)) {
+            for (const guide of getGuides()) {
+                await rebuildGuide(guide);
+            }
+        } else {
+            const guide = getGuides().find((guide) => {
+                return guide.itemsPath === file ||
+                    guide.metaJSONPath === file ||
+                    guide.indexTemplatePath === file ||
+                    guide.conclusionPath === file ||
+                    guide.introPath === file;
+            });
+            if (!guide) {
+                return console.error('Guide not found for path', file);
+            }
             await rebuildGuide(guide);
         }
-    } else {
-        const guide = getGuides().find((guide) => {
-            return guide.itemsPath === file ||
-                guide.metaJSONPath === file ||
-                guide.indexTemplatePath === file ||
-                guide.conclusionPath === file ||
-                guide.introPath === file;
-        });
-        if (!guide) {
-            return console.error('Guide not found for path', file);
-        }
-        await rebuildGuide(guide);
-    }
-    console.log('Watch rebuild done...');
+    });
+    console.log('Watch rebuild enqueued...');
+    await processNext();
 });
 
 console.log('Watching...');
