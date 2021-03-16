@@ -3,6 +3,8 @@ const path = require('path');
 const vm = require('vm');
 const puppeteer = require('puppeteer');
 const crypto = require('crypto');
+const os = require('os');
+const cpuCount = os.cpus().length;
 
 const StartToken = '[app-screenshot-start';
 const EndToken = 'app-screenshot-end]';
@@ -11,6 +13,7 @@ const HOST = 'https://fastcomments.com';
 
 const DEFAULT_WIDTH = 1920;
 const DEFAULT_HEIGHT = 1080;
+const MAX_BROWSERS = cpuCount;
 
 const addProxySelectToPage = async (page) => {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');
@@ -24,6 +27,7 @@ const addProxySelectToPage = async (page) => {
  * @typedef {Object} BrowserPooled
  * @property {Object} browser
  * @property {Object} page
+ * @property {boolean} inUse
  */
 
 const browserPool = [];
@@ -35,14 +39,19 @@ const browserPool = [];
  */
 
 /**
- * @async
- * @param {BrowserPoolCallback} callback
- * @return {Promise<*>}
+ *
+ * @return {Promise<BrowserPooled>}
  */
-async function withPooledBrowser(callback) {
-    let instance = browserPool.pop();
+async function getOrCreateAvailableBrowser() {
+    const available = browserPool.find((browser) => {
+        return !browser.inUse;
+    });
 
-    if (!instance) {
+    if (available) {
+        return available;
+    }
+
+    if (browserPool.length < MAX_BROWSERS) {
         const browser = await puppeteer.launch({
             headless: true,
             width: DEFAULT_WIDTH,
@@ -60,20 +69,48 @@ async function withPooledBrowser(callback) {
         await page.click('button[type="submit"]');
         await page.waitForSelector('body');
 
-        instance = {
+        const next = {
             browser,
-            page
+            page,
+            inUse: true
         };
+
+        browserPool.push(next);
+
+        return next;
     }
+
+    return new Promise((resolve) => {
+        const interval = setInterval(function () {
+            const available = browserPool.find((browser) => {
+                return !browser.inUse;
+            });
+
+            if (available) {
+                clearInterval(interval);
+                resolve(available);
+            }
+        }, 300);
+    });
+}
+
+/**
+ * @async
+ * @param {BrowserPoolCallback} callback
+ * @return {Promise<*>}
+ */
+async function withPooledBrowser(callback) {
+    const instance = await getOrCreateAvailableBrowser();
 
     let result = undefined;
 
     try {
+        instance.inUse = true;
         result = await callback(instance);
     } catch (e) {
         console.error(e);
     }
-    browserPool.push(instance);
+    instance.inUse = false;
 
     return result;
 }
