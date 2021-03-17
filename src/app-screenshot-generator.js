@@ -11,7 +11,7 @@ const HOST = 'https://fastcomments.com';
 
 const DEFAULT_WIDTH = 1920;
 const DEFAULT_HEIGHT = 1080;
-const MAX_BROWSERS = 4;
+const MAX_BROWSERS = process.env.MAX_BROWSERS ? parseInt(process.env.MAX_BROWSERS, 10) : 4;
 
 const addProxySelectToPage = async (page) => {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');
@@ -190,7 +190,7 @@ async function getTemplate(url, actions, clickSelectors, selector, title, addPro
     });
 }
 
-async function process(input, filePath) {
+async function processInput(input, filePath) {
     let nextIndex = input.indexOf(StartToken);
     while (nextIndex > -1) {
         const endTokenIndex = input.indexOf(EndToken);
@@ -215,8 +215,8 @@ async function process(input, filePath) {
     return input;
 }
 
-process.dispose = async function () {
+processInput.dispose = async function () {
     browserPool.forEach((instance) => instance.browser.close());
 }
 
-module.exports = process;
+module.exports = processInput;
