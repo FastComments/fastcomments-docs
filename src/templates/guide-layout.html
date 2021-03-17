@@ -28,6 +28,15 @@
 
         {{{conclusion}}}
 
+        <div class="pagination text-center">
+            {{#if prevGuideUrl}}
+                <a class="btn prev" href="{{prevGuideUrl}}">Previous Guide</a>
+            {{/if}}
+            {{#if nextGuideUrl}}
+                <a class="btn next" href="{{nextGuideUrl}}">Next Guide</a>
+            {{/if}}
+        </div>
+
         <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
         <div id="fastcomments-widget"></div>
         <script>
@@ -38,3 +47,4 @@
     </div>
     <script src="/js/sidebar.js"></script>
 </div>
+

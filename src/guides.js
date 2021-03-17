@@ -11,6 +11,7 @@ const GUIDES_DIR_NAME = 'guides';
 const ITEMS_DIR_NAME = 'items';
 const INDEX_NAME = 'index.md.html';
 const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
+const GUIDE_ORDER_PATH = path.join(__dirname, 'content', GUIDES_DIR_NAME, 'guide-order.json');
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 const GUIDE_LAYOUT_PATH = path.join(__dirname, 'templates', 'guide-layout.html');
@@ -20,6 +21,8 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
 /**
  * @typedef {Object} Guide
  * @property {string} id
+ * @property {string} prevGuideUrl
+ * @property {string} nextGuideUrl
  * @property {string} url
  * @property {string} icon
  * @property {string} name
@@ -44,14 +47,14 @@ async function buildGuideItem(guide, item, index) {
     });
     let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', item.file)));
 
-    html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
-
     addContentToIndex({
         html,
         title,
         urlId,
         fullUrl
     }, index);
+
+    html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
     return {
         title,
@@ -79,7 +82,8 @@ async function buildGuide(guide, index) {
         const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
             intro: guideIntroHTML,
             items,
-            conclusion: guideConclusionHTML
+            conclusion: guideConclusionHTML,
+            ...guide
         });
         const guideRootHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
             content: guideContentHTML
@@ -92,6 +96,10 @@ async function buildGuide(guide, index) {
     }
 }
 
+function createGuideLink(id) {
+    return `guide-${id}.html`;
+}
+
 /**
  *
  * @return {Array.<Guide>}
@@ -99,13 +107,26 @@ async function buildGuide(guide, index) {
 function getGuides() {
     const result = [];
     fs.readdirSync(GUIDES_DIR).forEach((guide) => {
+        if (guide === 'guide-order.json') {
+            return;
+        }
+        if (guide !== 'customizations-and-configuration') {
+            return;
+        }
         const metaJSONPath = path.join(GUIDES_DIR, guide, 'meta.json');
         const meta = JSON.parse(fs.readFileSync(metaJSONPath, 'utf8'));
         const hasItems = meta.itemsOrdered.length > 0 || meta.url;
         if (hasItems) {
+            /** @type {Array.<string>} **/
+            const guideOrder = JSON.parse(fs.readFileSync(GUIDE_ORDER_PATH, 'utf8'));
+            const guideIndex = guideOrder.indexOf(guide);
+            console.log('guideIndex', guide, guideOrder, guideIndex, guideIndex > -1 ? createGuideLink(guideOrder[guideIndex - 1]) : null, guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createGuideLink(guideOrder[guideIndex + 1]) : null)
+
             result.push({
                 id: guide,
-                url: meta.itemsOrdered.length > 0 ? `guide-${guide}.html` : (meta.url ? meta.url : '#'),
+                prevGuideUrl: guideIndex > 0 ? createGuideLink(guideOrder[guideIndex - 1]) : null,
+                nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createGuideLink(guideOrder[guideIndex + 1]) : null,
+                url: meta.itemsOrdered.length > 0 ? createGuideLink(guide) : (meta.url ? meta.url : '#'),
                 icon: `images/guide-icons/${meta.icon}`,
                 name: meta.name,
                 metaJSONPath,

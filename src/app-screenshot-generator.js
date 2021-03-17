@@ -3,8 +3,6 @@ const path = require('path');
 const vm = require('vm');
 const puppeteer = require('puppeteer');
 const crypto = require('crypto');
-const os = require('os');
-const cpuCount = os.cpus().length;
 
 const StartToken = '[app-screenshot-start';
 const EndToken = 'app-screenshot-end]';
@@ -13,7 +11,7 @@ const HOST = 'https://fastcomments.com';
 
 const DEFAULT_WIDTH = 1920;
 const DEFAULT_HEIGHT = 1080;
-const MAX_BROWSERS = cpuCount;
+const MAX_BROWSERS = 4;
 
 const addProxySelectToPage = async (page) => {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');

@@ -55,7 +55,11 @@ async function processNext() {
         console.log('Building next job...');
         const next = jobsInQueue.pop();
         processing = true;
-        await next();
+        try {
+            await next();
+        } catch (e) {
+            console.error('Watch processing failed', e);
+        }
         processing = false;
         console.log('Watch rebuild done...', jobsInQueue.length, 'more to do...');
         setImmediate(processNext);

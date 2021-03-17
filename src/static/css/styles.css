@@ -372,3 +372,25 @@ input:focus {
 .related-parameter a {
     color: #fff;
 }
+
+.pagination .btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background: #201600;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.pagination .btn.prev {
+    float: left;
+}
+
+.pagination .btn.next {
+    float: right;
+}

@@ -45,6 +45,9 @@ function addContentToIndex(content, index) {
         if (word.includes('<') || word.includes('>')) {
             continue;
         }
+        if (word.includes('[') || word.includes(']')) {
+            continue;
+        }
         const wordPosition = text.indexOf(word);
         const wordClean = word.replace(/[,\\.<>"]/g, '').toLowerCase();
         if (index[wordClean] === undefined) {
@@ -55,7 +58,7 @@ function addContentToIndex(content, index) {
             url: content.fullUrl,
             title: content.title,
             // TODO contain all instances of the word
-            aroundText: text.substring(wordPosition - 50, wordPosition) + '...' + text.substring(wordPosition, wordPosition + 50)
+            aroundText: text.substring(wordPosition - 50, wordPosition + 50)
         });
     }
 }
