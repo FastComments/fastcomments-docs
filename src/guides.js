@@ -33,19 +33,40 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} introPath
  */
 
-async function buildGuideItem(guide, item, index) {
-    const title = item.name;
-    const id = item.file.replace('.md', '');
-    const urlId = item.file.replace('md', 'html');
+/**
+ * @typedef {Object} GuideItem
+ * @property {string} id
+ * @property {string} title
+ * @property {string} content
+ * @property {string} name
+ * @property {string} file
+ */
 
-    // We add this guide item to the index, but its url is an anchor to the element on the guide page. This way we
+function createGuideItemIdFromPath(filePath) {
+    return filePath.replace('.md', '');
+}
+
+/**
+ *
+ * @param {Guide} guide
+ * @param {MetaItem} metaItem
+ * @param {Index} index
+ * @return {Promise<GuideItem>}
+ */
+async function buildGuideItemForMeta(guide, metaItem, index) {
+    console.log('buildGuideItemForMeta', metaItem.file);
+    const title = metaItem.name;
+    const id = createGuideItemIdFromPath(metaItem.file);
+    const urlId = metaItem.file.replace('md', 'html');
+
+    // We add this guide metaItem to the index, but its url is an anchor to the element on the guide page. This way we
     // can have all the content on one page, but still deep link to it from search nicely.
     const fullUrl = `/${guide.url}#${id}`;
 
-    const markdown = handlebars.compile(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', item.file), 'utf8'))({
+    const markdown = handlebars.compile(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', metaItem.file), 'utf8'))({
         ExampleTenantId
     });
-    let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', item.file)));
+    let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
 
     addContentToIndex({
         html,
@@ -59,6 +80,8 @@ async function buildGuideItem(guide, item, index) {
     return {
         title,
         id,
+        name: metaItem.name,
+        file: metaItem.file,
         content: html
     };
 }
@@ -67,14 +90,20 @@ async function buildGuideItem(guide, item, index) {
  *
  * @param {Guide} guide
  * @param {Index} index
- * @return {Promise<void>}
+ * @return {Promise<GuideItem[]>}
  */
 async function buildGuide(guide, index) {
     /** @type {Meta} **/
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const items = await Promise.all(meta.itemsOrdered.map((item) => {
-        return buildGuideItem(guide, item, index);
+    const items = await Promise.all(meta.itemsOrdered.map((metaItem) => {
+        return buildGuideItemForMeta(guide, metaItem, index);
     }));
+    await buildGuideFromItems(guide, items);
+
+    return items;
+}
+
+async function buildGuideFromItems(guide, items) {
     const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
     if (fs.existsSync(guideIndexPath)) {
         const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
@@ -89,7 +118,7 @@ async function buildGuide(guide, index) {
             content: guideContentHTML
         });
         fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
-            title: meta.name,
+            title: guide.name,
             content: guideRootHTML,
             ExampleTenantId: ExampleTenantId
         }), 'utf8');
@@ -108,9 +137,6 @@ function getGuides() {
     const result = [];
     fs.readdirSync(GUIDES_DIR).forEach((guide) => {
         if (guide === 'guide-order.json') {
-            return;
-        }
-        if (guide !== 'customizations-and-configuration') {
             return;
         }
         const metaJSONPath = path.join(GUIDES_DIR, guide, 'meta.json');
@@ -144,5 +170,8 @@ module.exports = {
     TEMPLATE_DIR,
     GUIDE_LAYOUT_PATH,
     buildGuide,
+    buildGuideItemForMeta,
+    buildGuideFromItems,
+    createGuideItemIdFromPath,
     getGuides
 };
