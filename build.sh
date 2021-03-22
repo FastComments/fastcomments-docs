@@ -5,7 +5,7 @@ mkdir -p src/static/css
 mkdir -p src/static/images
 mkdir -p src/static/js
 npm install
-rm src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time
+rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 npm run build-posix
 cp -rv src/static/css src/static/generated/
 cp -rv src/static/images src/static/generated/
