@@ -2,10 +2,13 @@
     <div class="sidebar-open-button"><img src="/images/menu.png" alt="Menu Icon" title="Open Menu"></div>
     <div class="sidebar">
         <div class="sidebar-content">
-            {{#each items}}
-            <div class="sidebar-item">
-                <a href="#{{id}}">{{title}}</a>
-            </div>
+            {{#each itemsBySubCat}}
+            <h4>{{@key}}</h4>
+            {{#each this}}
+                <div class="sidebar-item">
+                    <a href="#{{id}}">{{title}}</a>
+                </div>
+            {{/each}}
             {{/each}}
         </div>
     </div>

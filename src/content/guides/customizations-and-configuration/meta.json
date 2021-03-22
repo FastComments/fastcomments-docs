@@ -4,151 +4,188 @@
   "itemsOrdered": [
     {
       "name": "Identifying Your Account",
-      "file": "tenant-id.md"
+      "file": "tenant-id.md",
+      "subCat": "The Basics"
     },
     {
       "name": "How Comments are Tied to Pages and Articles",
-      "file": "url-id.md"
+      "file": "url-id.md",
+      "subCat": "The Basics"
     },
     {
       "name": "Rendering The Same Comments on Different Pages",
-      "file": "url-id-same-comments-different-pages.md"
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "The Basics"
     },
     {
       "name": "Custom Styling",
-      "file": "custom-css.md"
-    },
-    {
-      "name": "Disabling All Default Styles",
-      "file": "no-styles.md"
+      "file": "custom-css.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Removing Branding",
-      "file": "remove-branding.md"
-    },
-    {
-      "name": "Linking from Comments to Pages",
-      "file": "url.md"
-    },
-    {
-      "name": "Determining Which Page to Render",
-      "file": "starting-page.md"
-    },
-    {
-      "name": "Rendering All Comments at Once - Disable Pagination",
-      "file": "starting-page-disable-pagination.md"
+      "file": "remove-branding.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Supporting Dark Backgrounds (Dark Mode)",
-      "file": "has-dark-background.md"
+      "file": "has-dark-background.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Toggling Dark Mode",
-      "file": "has-dark-background-toggle.md"
-    },
-    {
-      "name": "Manually Defining the User's Locale",
-      "file": "locale.md"
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Overriding Text",
-      "file": "translations.md"
-    },
-    {
-      "name": "Single Sign On (SSO) Overview",
-      "file": "sso.md"
-    },
-    {
-      "name": "Custom Integrations - Secure Single Sign On (SSO)",
-      "file": "sso-secure.md"
-    },
-    {
-      "name": "Custom Integrations - Simple Single Sign On (SSO)",
-      "file": "sso-simple.md"
-    },
-    {
-      "name": "Custom Integrations - Migrating from Disqus SSO",
-      "file": "sso-disqus.md"
-    },
-    {
-      "name": "Custom Integrations - Migrating from Commento SSO",
-      "file": "sso-commento.md"
-    },
-    {
-      "name": "Protecting Comment Threads With Single-Sign-On",
-      "file": "sso-require-to-view-comments.md"
+      "file": "translations.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Changing The Default Avatar",
-      "file": "default-avatar-src.md"
+      "file": "default-avatar-src.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Disabling Avatars",
-      "file": "hide-avatars.md"
+      "file": "hide-avatars.md",
+      "subCat": "Look and Feel"
     },
     {
-      "name": "Page Titles",
-      "file": "page-title.md"
+      "name": "Disabling All Default Styles",
+      "file": "no-styles.md",
+      "subCat": "Look and Feel"
     },
     {
-      "name": "Adding Header Text",
-      "file": "header-html.md"
+      "name": "Linking from Comments to Pages",
+      "file": "url.md",
+      "subCat": "Look and Feel"
     },
     {
-      "name": "Customizing The Comment Count Text",
-      "file": "comment-count-format.md"
-    },
-    {
-      "name": "Prevent New Replies & Disable Votes",
-      "file": "readonly.md"
-    },
-    {
-      "name": "Moving The Reply Box to After The Comments",
-      "file": "input-after-comments.md"
-    },
-    {
-      "name": "Limiting The Comment Length",
-      "file": "max-comment-character-length.md"
-    },
-    {
-      "name": "Disable Multi-Line Commenting",
-      "file": "use-single-line-comment-input.md"
+      "name": "Determining Which Page to Render",
+      "file": "starting-page.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
-      "file": "absolute-dates.md"
+      "file": "absolute-dates.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Adding Header Text",
+      "file": "header-html.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Adding a Button to Show Comments",
-      "file": "hide-comments-under-count-text-format.md"
+      "file": "hide-comments-under-count-text-format.md",
+      "subCat": "Look and Feel"
     },
     {
-      "name": "Allow Anonymous Commenting",
-      "file": "allow-anon.md"
-    },
-    {
-      "name": "Preventing Anonymous Comments From Expiring",
-      "file": "allow-anon-retain-comments.md"
-    },
-    {
-      "name": "Disabling Image Uploads",
-      "file": "no-image-uploads.md"
-    },
-    {
-      "name": "The Comment Count & Counting All Nested Replies",
-      "file": "count-all.md"
+      "name": "Customizing The Comment Count Text",
+      "file": "comment-count-format.md",
+      "subCat": "Look and Feel"
     },
     {
       "name": "Show Live Comments Right Away",
-      "file": "show-live-right-away.md"
+      "file": "show-live-right-away.md",
+      "subCat": "Live Commenting"
     },
     {
-      "name": "Enabling Commenter Links",
-      "file": "enable-commenter-links.md"
+      "name": "Rendering All Comments at Once - Disable Pagination",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Pagination & Sorting"
     },
     {
       "name": "Changing The Default Sort Direction",
-      "file": "default-sort-direction.md"
+      "file": "default-sort-direction.md",
+      "subCat": "Pagination & Sorting"
+    },
+    {
+      "name": "Moving The Reply Box to After The Comments",
+      "file": "input-after-comments.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Limiting The Comment Length",
+      "file": "max-comment-character-length.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Disable Multi-Line Commenting",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Single Sign On (SSO) Overview",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Secure Single Sign On (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Simple Single Sign On (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Migrating from Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Migrating from Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Protecting Comment Threads With Single-Sign-On",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Allow Anonymous Commenting",
+      "file": "allow-anon.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Preventing Anonymous Comments From Expiring",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Manually Defining the User's Locale",
+      "file": "locale.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Page Titles",
+      "file": "page-title.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Prevent New Replies & Disable Votes",
+      "file": "readonly.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Disabling Image Uploads",
+      "file": "no-image-uploads.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "The Comment Count & Counting All Nested Replies",
+      "file": "count-all.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Enabling Commenter Links",
+      "file": "enable-commenter-links.md",
+      "subCat": "Misc"
     }
   ]
 }

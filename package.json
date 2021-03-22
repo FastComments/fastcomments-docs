@@ -13,7 +13,9 @@
 		"filewatcher": "^3.0.1"
 	},
 	"scripts": {
-		"build": "node src/app",
+		"build-content": "node src/app",
+		"build-windows": "build.bat",
+		"build-posix": "build.sh",
 		"serve": "serve src/static/generated",
 		"watch": "node src/watch"
 	},

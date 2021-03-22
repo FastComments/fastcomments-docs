@@ -4,71 +4,88 @@
   "itemsOrdered": [
     {
       "name": "The Moderate Comments Page",
-      "file": "moderate-comments-page.md"
+      "file": "moderate-comments-page.md",
+      "subCat": "Introduction"
     },
     {
       "name": "Moderators",
-      "file": "moderators.md"
+      "file": "moderators.md",
+      "subCat": "Moderators"
     },
     {
       "name": "Adding Moderators",
-      "file": "moderators-adding.md"
+      "file": "moderators-adding.md",
+      "subCat": "Moderators"
     },
     {
       "name": "Moderator Stats",
-      "file": "moderator-stats.md"
+      "file": "moderator-stats.md",
+      "subCat": "Moderators"
     },
     {
       "name": "Removing Moderators",
-      "file": "moderators-removing.md"
+      "file": "moderators-removing.md",
+      "subCat": "Moderators"
     },
     {
       "name": "Moderation Via Email",
-      "file": "moderation-via-email.md"
+      "file": "moderation-via-email.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Filters",
-      "file": "filters.md"
+      "file": "filters.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Sharing Moderation Links",
-      "file": "sharing-moderation-links.md"
-    },
-    {
-      "name": "Moderation Settings",
-      "file": "moderation-settings.md"
-    },
-    {
-      "name": "Spam Detection",
-      "file": "spam-detection.md"
-    },
-    {
-      "name": "Masking Profanity",
-      "file": "profanity-mask.md"
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "The Comment Thread Viewer",
-      "file": "comment-thread-viewer.md"
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Comment Actions",
-      "file": "comment-actions.md"
+      "file": "comment-actions.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Live Moderating",
-      "file": "comment-actions-live.md"
+      "file": "comment-actions-live.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Banning Users",
-      "file": "banning-users.md"
+      "file": "banning-users.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Banning Users With Wildcards",
-      "file": "banning-users-wildcards.md"
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderation Workflow"
     },
     {
       "name": "Bulk Actions",
-      "file": "bulk-actions.md"
+      "file": "bulk-actions.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Settings",
+      "file": "moderation-settings.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Spam Detection",
+      "file": "spam-detection.md",
+      "subCat": "Spam & Profanity"
+    },
+    {
+      "name": "Masking Profanity",
+      "file": "profanity-mask.md",
+      "subCat": "Spam & Profanity"
     }
   ]
 }

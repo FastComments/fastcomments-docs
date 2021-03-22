@@ -4,23 +4,28 @@
   "itemsOrdered": [
     {
       "name": "Wordpress",
-      "file": "wordpress.md"
+      "file": "wordpress.md",
+      "subCat": "Third-Party Plugins"
     },
     {
       "name": "VanillaJS",
-      "file": "vanillajs.md"
+      "file": "vanillajs.md",
+      "subCat": "Custom Installations"
     },
     {
       "name": "React",
-      "file": "react.md"
+      "file": "react.md",
+      "subCat": "Custom Installations"
     },
     {
       "name": "Vue",
-      "file": "vue.md"
+      "file": "vue.md",
+      "subCat": "Custom Installations"
     },
     {
       "name": "TypeScript",
-      "file": "typescript.md"
+      "file": "typescript.md",
+      "subCat": "Custom Installations"
     }
   ]
 }

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
+const { groupBy } = require('lodash');
 const handlebars = require('handlebars');
 const {addContentToIndex} = require('./index');
 const {ExampleTenantId} = require('./utils');
@@ -40,6 +41,7 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} content
  * @property {string} name
  * @property {string} file
+ * @property {string} subCat
  */
 
 function createGuideItemIdFromPath(filePath) {
@@ -82,6 +84,7 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         id,
         name: metaItem.name,
         file: metaItem.file,
+        subCat: metaItem.subCat,
         content: html
     };
 }
@@ -108,9 +111,11 @@ async function buildGuideFromItems(guide, items) {
     if (fs.existsSync(guideIndexPath)) {
         const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
         const guideConclusionHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME), 'utf8'));
+
         const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
             intro: guideIntroHTML,
             items,
+            itemsBySubCat: groupBy(items, 'subCat'),
             conclusion: guideConclusionHTML,
             ...guide
         });

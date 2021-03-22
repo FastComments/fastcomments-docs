@@ -35,6 +35,7 @@ const index = {};
  * @typedef {Object} MetaItem
  * @property {string} file
  * @property {string} name
+ * @property {string} subCat
  */
 
 /**
