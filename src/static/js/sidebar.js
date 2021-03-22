@@ -5,7 +5,7 @@
     });
     const headings = document.querySelectorAll('.index-guide-item h2');
     let lastVisibleHeadingText = '';
-    window.addEventListener('scroll', function () {
+    function updateSidebar () {
         const pageTop = window.scrollY;
         const pageBottom = pageTop + window.innerHeight;
         for (const heading of headings) {
@@ -30,7 +30,9 @@
                 break;
             }
         }
-    });
+    }
+    window.addEventListener('scroll', updateSidebar);
+    updateSidebar();
 
     sidebar.addEventListener('click', function(event) {
         if (event.target.tagName.toLowerCase() === 'a') {
