@@ -12,7 +12,9 @@
             const elementTop = heading.offsetTop;
             const elementBottom = elementTop + heading.getBoundingClientRect().height;
 
-            if ((pageTop < elementTop) && (pageBottom > elementBottom)) {
+            // We don't want to check if the heading is entirely in view, just that the bottom of it is. This results
+            // in a better experience.
+            if ((pageTop < elementBottom) && (pageBottom > elementBottom)) {
                 if (lastVisibleHeadingText === heading.textContent) {
                     return;
                 }
