@@ -1,9 +1,9 @@
 #!/bin/bash
 
 mkdir -p src/static/generated
-mkdir src/static/css
-mkdir src/static/images
-mkdir src/static/js
+mkdir -p src/static/css
+mkdir -p src/static/images
+mkdir -p src/static/js
 npm install
 rm src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time
 npm run build
