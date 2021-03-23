@@ -6,7 +6,7 @@ mkdir -p src/static/images
 mkdir -p src/static/js
 npm install
 rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
-npm run build-content
+MAX_BROWSERS=4 npm run build-content
 cp -rv src/static/css src/static/generated/
 cp -rv src/static/images src/static/generated/
 cp -rv src/static/js src/static/generated/

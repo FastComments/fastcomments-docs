@@ -11,13 +11,43 @@ const HOST = 'https://fastcomments.com';
 
 const DEFAULT_WIDTH = 1920;
 const DEFAULT_HEIGHT = 1080;
-const MAX_BROWSERS = process.env.MAX_BROWSERS ? parseInt(process.env.MAX_BROWSERS, 10) : 4;
+const MAX_BROWSERS = process.env.MAX_BROWSERS ? parseInt(process.env.MAX_BROWSERS, 10) : 1;
 
-const addProxySelectToPage = async (page) => {
+async function addProxySelectToPage(page) {
     const scriptFile = fs.readFileSync(path.resolve(__dirname, 'static', 'js', 'proxy-select.js'), 'utf8');
     const styleFile = fs.readFileSync(path.resolve(__dirname, 'static', 'css', 'proxy-select.css'), 'utf8');
     await page.addScriptTag({content: scriptFile});
     await page.addStyleTag({content: styleFile});
+}
+
+const imageCacheFolder = path.join(__dirname, 'static', 'generated', 'image-cache');
+
+function isImageCacheStale(args, fullPath, fileName) {
+    if (!fs.existsSync(fullPath)) {
+        return true;
+    }
+    if (!fs.existsSync(imageCacheFolder)) {
+        fs.mkdirSync(imageCacheFolder, {
+            recursive: true
+        });
+        return true;
+    }
+    const imageCacheFilePath = path.join(imageCacheFolder, `${fileName}.json`);
+    if (!fs.existsSync(imageCacheFilePath)) {
+        return true;
+    }
+
+    const imageCacheContent = JSON.parse(fs.readFileSync(imageCacheFilePath, 'utf8'));
+    if (!imageCacheContent) {
+        return true;
+    }
+
+    return imageCacheContent === JSON.stringify(args);
+}
+
+function updateImageCache(args, fileName) {
+    const imageCacheFilePath = path.join(imageCacheFolder, `${fileName}.json`);
+    fs.writeFileSync(imageCacheFilePath, JSON.stringify(args), 'utf8');
 }
 
 /**
@@ -116,6 +146,15 @@ async function withPooledBrowser(callback) {
 async function getTemplate(url, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
 
+    const cacheKey = {url, actions, clickSelectors, selector, title, addProxySelect};
+    const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
+    const targetFileName = fileNameHash + '.png';
+    const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
+    const targetPath = path.join(targetFolderPath, targetFileName);
+    if (!isImageCacheStale(cacheKey, targetPath, targetFileName)) {
+        return;
+    }
+
     return await withPooledBrowser(async ({browser, page}) => {
         console.log('app-screenshot-generator authenticated...');
         const remotePageUrl = `${HOST}${url}`;
@@ -170,16 +209,13 @@ async function getTemplate(url, actions, clickSelectors, selector, title, addPro
 
         const element = await page.$(selector);
 
-        const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
-        const targetFileName = fileNameHash + '.png';
-        const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
         if (!fs.existsSync(targetFolderPath)) {
             fs.mkdirSync(targetFolderPath, {
                 recursive: true
             });
         }
-        const targetPath = path.join(targetFolderPath, targetFileName);
         await element.screenshot({path: targetPath});
+        updateImageCache(cacheKey, targetFileName);
         console.log('app-screenshot-generator Created', targetPath);
 
         return `<div class="screenshot">
