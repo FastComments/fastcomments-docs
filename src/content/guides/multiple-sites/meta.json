@@ -1,0 +1,36 @@
+{
+  "name": "Multiple Sites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Setup",
+      "file": "add-domains-to-account.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Domain Limits",
+      "file": "domain-limits.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "From Name and Email",
+      "file": "from-name-email.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Customizations",
+      "file": "customizations.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Comment Moderation",
+      "file": "moderation.md",
+      "subCat": "Usage"
+    },
+    {
+      "name": "Sharing Comments Across Domains",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Usage"
+    }
+  ]
+}
