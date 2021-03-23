@@ -143,21 +143,28 @@ async function withPooledBrowser(callback) {
     return result;
 }
 
-async function getTemplate(url, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
+async function getTemplate(url, linkUrl, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
     console.log('app-screenshot-generator Creating', url, selector);
 
-    const cacheKey = {url, actions, clickSelectors, selector, title, addProxySelect};
+    const cacheKey = {url, linkUrl, actions, clickSelectors, selector, title, addProxySelect};
     const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
     const targetFileName = fileNameHash + '.png';
     const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
     const targetPath = path.join(targetFolderPath, targetFileName);
+    const remotePageUrl = `${HOST}${url}`;
+
+    const imageTemplate = `<div class="screenshot">
+        <div class="title">${title}</div>
+        <div class="screenshot-link"><a href="${linkUrl ? `${HOST}${linkUrl}` : remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>
+        <img src='/images/${targetFileName}' class="screenshot-image" >
+    </div>`;
+
     if (!isImageCacheStale(cacheKey, targetPath, targetFileName)) {
-        return;
+        return imageTemplate;
     }
 
     return await withPooledBrowser(async ({browser, page}) => {
         console.log('app-screenshot-generator authenticated...');
-        const remotePageUrl = `${HOST}${url}`;
         await page.goto(remotePageUrl);
         console.log('app-screenshot-generator loaded', url);
 
@@ -218,11 +225,7 @@ async function getTemplate(url, actions, clickSelectors, selector, title, addPro
         updateImageCache(cacheKey, targetFileName);
         console.log('app-screenshot-generator Created', targetPath);
 
-        return `<div class="screenshot">
-        <div class="title">${title}</div>
-        <div class="screenshot-link"><a href="${remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>
-        <img src='/images/${targetFileName}' class="screenshot-image" >
-    </div>`;
+        return imageTemplate;
     });
 }
 
@@ -245,7 +248,7 @@ async function processInput(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.linkUrl, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
