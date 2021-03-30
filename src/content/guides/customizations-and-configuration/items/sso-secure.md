@@ -32,8 +32,8 @@ The comment widget takes a configuration object - you already pass this if you'r
 To enable SSO, pass a new "sso" object, which must have the following parameters. The values should be generated server side.
 
 - userDataJSONBase64: The user's data in JSON format, which is then Base64 encoded.
-- verificationHash: The HMAC-SHA256 hash created from UNIX_TIME + userDataJSONBase64.
-- timestamp: The current unix time. Must not be in the future, or more than three hours in the past.
+- verificationHash: The HMAC-SHA256 hash created from UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Epoch timestamp, in **milliseconds**. Must not be in the future, or more than two days in the past.
 - loginURL: A URL that the comment widget can show to log the user in.
 - logoutURL: A URL that the comment widget can show to log the user out.
 - loginCallback: When provided instead of the login URL, a function that the comment widget will invoke when clicking the login button.
