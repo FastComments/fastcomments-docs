@@ -2,19 +2,19 @@ You can find our React library on NPM <a href="https://www.npmjs.com/package/fas
 
 The FastComments React commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 
-[inline-code-attrs-start title = 'FastComments React via NPM'; type = 'shell'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments React via Yarn'; type = 'shell'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React via Yarn'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'React Example'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import React, { Component } from 'react'
 

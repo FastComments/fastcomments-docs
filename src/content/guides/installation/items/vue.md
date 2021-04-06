@@ -6,19 +6,19 @@ The source code can be found on <a href="https://github.com/FastComments" target
 
 The FastComments Vue commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 
-[inline-code-attrs-start title = 'FastComments Vue via NPM'; type = 'shell'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Vue via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-vue
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments Vue via Yarn'; type = 'shell'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Vue via Yarn'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-vue
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'Vue Example'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Vue Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script lang="ts">
 import Vue from 'vue';
