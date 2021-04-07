@@ -2,5 +2,60 @@
   "name": "Migrations",
   "icon": "migrate.png",
   "itemsOrdered": [
+    {
+      "name": "Migrating From Other Providers",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Importing Data",
+      "file": "importing-data.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating From Disqus",
+      "file": "migrating-from-disqus.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating From Commento",
+      "file": "migrating-from-commento.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating From JustComments",
+      "file": "migrating-from-justcomments.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating From IntenseDebate",
+      "file": "migrating-from-intensedebate.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating From Other Providers",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating Users and Moderators",
+      "file": "migrating-users-moderators.md",
+      "subCat": "From Other Providers"
+    },
+    {
+      "name": "Migrating Domains",
+      "file": "migrating-domains.md",
+      "subCat": "Data Migrations"
+    },
+    {
+      "name": "Migrating Pages",
+      "file": "migrating-pages.md",
+      "subCat": "Data Migrations"
+    },
+    {
+      "name": "Exporting Data",
+      "file": "exporting-data.md",
+      "subCat": "To Other Providers"
+    }
   ]
 }
