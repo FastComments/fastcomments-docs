@@ -13,6 +13,11 @@
       "subCat": "From Other Providers"
     },
     {
+      "name": "Importing Wordpress Comments",
+      "file": "importing-data-wordpress.md",
+      "subCat": "From Other Providers"
+    },
+    {
       "name": "Migrating From Disqus",
       "file": "migrating-from-disqus.md",
       "subCat": "From Other Providers"
@@ -33,8 +38,8 @@
       "subCat": "From Other Providers"
     },
     {
-      "name": "Migrating From Other Providers",
-      "file": "migrating-from-other-providers.md",
+      "name": "Migrating From Muut Comments",
+      "file": "migrating-from-muut.md",
       "subCat": "From Other Providers"
     },
     {
