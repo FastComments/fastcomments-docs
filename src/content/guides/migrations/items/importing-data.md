@@ -1,9 +1,16 @@
 While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention
 of support staff.
 
-Data exports are provided by all providers mentioned in this document.
+We natively support importing exports from the following providers:
 
-By navigating (here)[https://fastcomments.com/auth/my-account/manage-data/import] we can upload the file containing the data to migrate.
+- Disqus
+- Commento
+- Muut Comments
+- IntenseDebate
+- Just-Comments
+- WordPress (via the plugin)
+
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
 [app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
 

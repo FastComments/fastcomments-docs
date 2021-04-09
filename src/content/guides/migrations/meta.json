@@ -18,31 +18,6 @@
       "subCat": "From Other Providers"
     },
     {
-      "name": "Migrating From Disqus",
-      "file": "migrating-from-disqus.md",
-      "subCat": "From Other Providers"
-    },
-    {
-      "name": "Migrating From Commento",
-      "file": "migrating-from-commento.md",
-      "subCat": "From Other Providers"
-    },
-    {
-      "name": "Migrating From JustComments",
-      "file": "migrating-from-justcomments.md",
-      "subCat": "From Other Providers"
-    },
-    {
-      "name": "Migrating From IntenseDebate",
-      "file": "migrating-from-intensedebate.md",
-      "subCat": "From Other Providers"
-    },
-    {
-      "name": "Migrating From Muut Comments",
-      "file": "migrating-from-muut.md",
-      "subCat": "From Other Providers"
-    },
-    {
       "name": "Migrating Users and Moderators",
       "file": "migrating-users-moderators.md",
       "subCat": "From Other Providers"
