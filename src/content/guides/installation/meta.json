@@ -13,6 +13,11 @@
       "subCat": "Custom Installations"
     },
     {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Custom Installations"
+    },
+    {
       "name": "React",
       "file": "react.md",
       "subCat": "Custom Installations"
