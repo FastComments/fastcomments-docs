@@ -14,7 +14,7 @@ The second way to ban a user is by clicking the ban button that is placed on eac
 
 When we click the ban button, we are presented with the same options (Confirm Ban, or Confirm Shadow Ban):
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; clickSelector = '.comment-ban'; selector = '.content .comment'; title='Clicking Ban' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelector = '.comment-ban'; selector = '.content .comment'; title='Clicking Ban' app-screenshot-end]
 
 ### Shadow Bans
 

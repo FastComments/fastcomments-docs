@@ -155,8 +155,8 @@ async function getTemplate(url, linkUrl, actions, clickSelectors, selector, titl
 
     const imageTemplate = `<div class="screenshot">
         <div class="title">${title}</div>
-        <div class="screenshot-link"><a href="${linkUrl ? `${HOST}${linkUrl}` : remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>
-        <img src='/images/${targetFileName}' class="screenshot-image" >
+        ` + (linkUrl !== false ? `<div class="screenshot-link"><a href="${linkUrl ? `${HOST}${linkUrl}` : remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>` : '') +
+        `<img src='/images/${targetFileName}' class="screenshot-image" >
     </div>`;
 
     if (!isImageCacheStale(cacheKey, targetPath, targetFileName)) {
