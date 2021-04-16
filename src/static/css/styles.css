@@ -12,6 +12,13 @@ body {
     text-align: center;
 }
 
+.footer {
+    position: sticky;
+    height: 30px;
+    top: calc(100vh - 30px);
+    font-size: 12px;
+}
+
 .new-version-alert {
     position: fixed;
     bottom: 50px;

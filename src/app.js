@@ -92,6 +92,7 @@ const index = {};
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
         indexJSON: indexRootJSON,
         guides,
+        lastUpdateDate: new Date().toLocaleString(),
         buildId
     }), 'utf8');
 
