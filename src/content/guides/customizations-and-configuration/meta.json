@@ -158,6 +158,11 @@
       "subCat": "Anonymous Commenting"
     },
     {
+      "name": "Callbacks",
+      "file": "callbacks.md",
+      "subCat": "Misc"
+    },
+    {
       "name": "Manually Defining the User's Locale",
       "file": "locale.md",
       "subCat": "Misc"

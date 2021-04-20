@@ -13,7 +13,15 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     let result = '';
     const inputSplitByLine = inputString.split('\n');
     for (let i = 0; i < inputSplitByLine.length; i++) {
-        result += '<div class="line' + (linesToHighlight.includes(i) ? ' highlight' : '') + '">' + '<span class="line-number">' + (i + 1) + '</span>' + inputSplitByLine[i] + '</div>';
+        const lineContent = inputSplitByLine[i];
+        const classes = ['line'];
+        if (linesToHighlight && linesToHighlight.includes(i)) {
+            classes.push('highlight');
+        }
+        if (lineContent.includes('tenantId')) {
+            classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
+        }
+        result += '<div class="' + classes.join(' ') + '">' + '<span class="line-number">' + (i + 1) + '</span>' + inputSplitByLine[i] + '</div>';
     }
 
     return result;

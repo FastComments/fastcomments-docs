@@ -89,6 +89,7 @@
                 if (sessionInfo.authenticated && sessionInfo.tenantId) {
                     input.value = input.value.replace(ExampleTenantId, sessionInfo.tenantId);
                     input.value = input.value.replace('"demo"', `"${sessionInfo.tenantId}"`);
+                    input.value = input.value.replace('\'demo\'', `"${sessionInfo.tenantId}"`);
                     setup();
                 } else {
                     setup();
