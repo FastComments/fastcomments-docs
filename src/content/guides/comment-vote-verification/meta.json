@@ -1,0 +1,36 @@
+{
+  "name": "Comment & Vote Verification",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Background",
+      "file": "background.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Unverified Comments",
+      "file": "unverified-comments.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Unverified Votes",
+      "file": "unverified-votes.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Verification Emails",
+      "file": "verification-emails.md",
+      "subCat": "Verification"
+    },
+    {
+      "name": "Sessions",
+      "file": "verification-sessions.md",
+      "subCat": "Verification"
+    },
+    {
+      "name": "Live Commenting",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verification"
+    }
+  ]
+}
