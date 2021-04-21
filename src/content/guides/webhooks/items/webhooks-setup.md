@@ -1,4 +1,4 @@
-First, navigate to the [Webhooks admin](/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
 
 The configuration page appears as follows:
 
