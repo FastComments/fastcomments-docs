@@ -68,9 +68,44 @@ const browserPool = [];
 
 /**
  *
+ * @param {number|null|undefined} width
+ * @param {number|null|undefined} height
  * @return {Promise<BrowserPooled>}
  */
-async function getOrCreateAvailableBrowser() {
+async function createBrowser(width, height) {
+    const browser = await puppeteer.launch({
+        headless: true,
+        width: width,
+        height: height,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const page = await browser.newPage();
+    await page.setViewport({width: width, height: height});
+    await page.goto(`${HOST}/auth/login`);
+    await page.waitForSelector('form');
+    await page.focus('input[name="username"]');
+    await page.keyboard.type('demo');
+    await page.focus('input[name="email"]');
+    await page.keyboard.type('demo@fastcomments.com');
+    await page.click('button[type="submit"]');
+    await page.waitForSelector('body');
+
+    return {
+        browser,
+        page,
+        inUse: true
+    };
+}
+
+/**
+ * @param {number|null|undefined} width
+ * @return {Promise<BrowserPooled>}
+ */
+async function getOrCreateAvailableBrowser(width) {
+    if (width) {
+        return createBrowser(width, DEFAULT_HEIGHT);
+    }
+
     const available = browserPool.find((browser) => {
         return !browser.inUse;
     });
@@ -80,28 +115,7 @@ async function getOrCreateAvailableBrowser() {
     }
 
     if (browserPool.length < MAX_BROWSERS) {
-        const browser = await puppeteer.launch({
-            headless: true,
-            width: DEFAULT_WIDTH,
-            height: DEFAULT_HEIGHT,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-        });
-        const page = await browser.newPage();
-        await page.setViewport({width: DEFAULT_WIDTH, height: DEFAULT_HEIGHT});
-        await page.goto(`${HOST}/auth/login`);
-        await page.waitForSelector('form');
-        await page.focus('input[name="username"]');
-        await page.keyboard.type('demo');
-        await page.focus('input[name="email"]');
-        await page.keyboard.type('demo@fastcomments.com');
-        await page.click('button[type="submit"]');
-        await page.waitForSelector('body');
-
-        const next = {
-            browser,
-            page,
-            inUse: true
-        };
+        const next = createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
         browserPool.push(next);
 
@@ -124,11 +138,12 @@ async function getOrCreateAvailableBrowser() {
 
 /**
  * @async
+ * @param {number|null|undefined} width
  * @param {BrowserPoolCallback} callback
  * @return {Promise<*>}
  */
-async function withPooledBrowser(callback) {
-    const instance = await getOrCreateAvailableBrowser();
+async function withPooledBrowser(width, callback) {
+    const instance = await getOrCreateAvailableBrowser(width);
 
     let result = undefined;
 
@@ -143,19 +158,29 @@ async function withPooledBrowser(callback) {
     return result;
 }
 
-async function getTemplate(url, linkUrl, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
-    console.log('app-screenshot-generator Creating', url, selector);
+function ensureHost(url) {
+    if (!url) {
+        return;
+    }
+    if (url.startsWith('http')) {
+        return url;
+    }
+    return `${HOST}${url}`;
+}
 
-    const cacheKey = {url, linkUrl, actions, clickSelectors, selector, title, addProxySelect};
+async function getTemplate(url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
+    console.log('app-screenshot-generator Creating', url, selector, width);
+
+    const cacheKey = {url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect};
     const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
     const targetFileName = fileNameHash + '.png';
     const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
     const targetPath = path.join(targetFolderPath, targetFileName);
-    const remotePageUrl = `${HOST}${url}`;
+    const remotePageUrl = ensureHost(url);
 
     const imageTemplate = `<div class="screenshot">
         <div class="title">${title}</div>
-        ` + (linkUrl !== false ? `<div class="screenshot-link"><a href="${linkUrl ? `${HOST}${linkUrl}` : remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>` : '') +
+        ` + (linkUrl !== false ? `<div class="screenshot-link"><a href="${linkUrl ? ensureHost(linkUrl) : remotePageUrl}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Go to This Page"></a></div>` : '') +
         `<img src='/images/${targetFileName}' class="screenshot-image" >
     </div>`;
 
@@ -163,7 +188,7 @@ async function getTemplate(url, linkUrl, actions, clickSelectors, selector, titl
         return imageTemplate;
     }
 
-    return await withPooledBrowser(async ({browser, page}) => {
+    return await withPooledBrowser(width, async ({browser, page}) => {
         console.log('app-screenshot-generator authenticated...');
         await page.goto(remotePageUrl);
         console.log('app-screenshot-generator loaded', url);
@@ -248,7 +273,7 @@ async function processInput(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.linkUrl, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.linkUrl, args.width, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
