@@ -23,7 +23,7 @@ interface WebhookComment {
     comment: string
     commentHTML: string
     parentId: string
-    date: DateString
+    date: UTC_ISO_DateString
     votes: number
     verified: boolean
     verifiedDate: number
