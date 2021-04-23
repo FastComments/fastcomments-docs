@@ -1,0 +1,21 @@
+{
+  "name": "On-Prem",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "What's Included",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Deployment Architecture",
+      "file": "on-prem-deployment-architecture.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Where to Start",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Getting Started"
+    }
+  ]
+}
