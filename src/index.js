@@ -35,6 +35,7 @@ function addContentToIndex(content, index) {
         }
     }).replace(/\n\n/g, '...');
     const words = text.replace(/\n/g, '').split(' ');
+    const wordCounts = {};
     for (const word of words) {
         if (word.length < 4) {
             continue;
@@ -48,6 +49,13 @@ function addContentToIndex(content, index) {
         if (word.includes('[') || word.includes(']')) {
             continue;
         }
+        if (wordCounts[word] === undefined) {
+            wordCounts[word] = 1;
+        } else {
+            wordCounts[word]++;
+        }
+    }
+    for (const word in wordCounts) {
         const wordPosition = text.indexOf(word);
         const wordClean = word.replace(/[,\\.<>"]/g, '').toLowerCase();
         if (index[wordClean] === undefined) {
@@ -58,7 +66,8 @@ function addContentToIndex(content, index) {
             url: content.fullUrl,
             title: content.title,
             // TODO contain all instances of the word
-            aroundText: text.substring(wordPosition - 50, wordPosition + 50)
+            aroundText: text.substring(wordPosition - 50, wordPosition + 50),
+            count: wordCounts[word]
         });
     }
 }

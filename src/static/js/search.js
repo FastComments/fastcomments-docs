@@ -37,6 +37,14 @@
 
     let lastSearchedWords = [];
 
+    /**
+     * @typedef {Object} SearchRequest
+     * @property {boolean} cancelled
+     */
+
+    /** @type {SearchRequest|null} **/
+    let lastSearchRequest = null;
+
     function fetchAndRenderResults(wordIds) {
         if (wordIds.length === 0) {
             searchResults.innerHTML = '';
@@ -49,27 +57,56 @@
         lastSearchedWords = wordIds;
         searchResults.innerHTML = '';
 
-        let resultingPages = [];
-        wordIds.forEach(function (id) {
-            makeRequest('/index-' + id + '.json', 'GET', null, function cb(responseText) {
-                try {
-                    const json = JSON.parse(responseText);
-                    json.forEach(function (entry) {
-                        if (!resultingPages.includes(entry.url)) {
-                            searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + entry.aroundText + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
-                            resultingPages.push(entry.url);
+        if (lastSearchRequest) {
+            lastSearchRequest.cancelled = true;
+        }
+
+        lastSearchRequest = {
+            cancelled: false
+        }
+        const searchFunction = function startCancellableSearch(searchRequest) {
+            let resultingPages = [];
+            const responses = [];
+            wordIds.forEach(function (id) {
+                makeRequest('/index-' + id + '.json', 'GET', null, function cb(responseText) {
+                    if (searchRequest.cancelled) {
+                        return;
+                    }
+                    try {
+                        responses.push(JSON.parse(responseText));
+                    } catch (e) {
+                        console.error('Failure to parse index entry', e);
+                    }
+                    if (responses.length === wordIds.length) {
+                        for (const json of responses) {
+                            try {
+                                json.sort(function (a, b) {
+                                    if (a.count === b.count) {
+                                        return 0;
+                                    }
+                                    return a.count < b.count ? 1 : -1;
+                                });
+                                json.forEach(function (entry) {
+                                    console.log('entry', entry.url, entry.count);
+                                    if (!resultingPages.includes(entry.url)) {
+                                        searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + entry.aroundText + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
+                                        resultingPages.push(entry.url);
+                                    }
+                                });
+                            } catch (e) {
+                                console.error('Failure to render index entry', e);
+                            }
                         }
-                    });
-                } catch (e) {
-                    console.error('Failure to parse index entry', e);
-                }
+                    }
+                });
             });
-        });
+        };
+        searchFunction(lastSearchRequest);
     }
 
     const input = document.getElementById('search');
 
-    setInterval(function() {
+    setInterval(function () {
         if (input.value && input.value.length > 2) {
             const valueTrimmed = input.value.trim().toLowerCase();
 
