@@ -107,21 +107,21 @@ async function getOrCreateAvailableBrowser(width) {
         return createBrowser(width, DEFAULT_HEIGHT);
     }
 
-    const available = browserPool.find((browser) => {
-        return !browser.inUse;
-    });
+    // const available = browserPool.find((browser) => {
+    //     return !browser.inUse;
+    // });
+    //
+    // if (available) {
+    //     return available;
+    // }
 
-    if (available) {
-        return available;
-    }
-
-    if (browserPool.length < MAX_BROWSERS) {
+    // if (browserPool.length < MAX_BROWSERS) {
         const next = createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
         browserPool.push(next);
 
         return next;
-    }
+    // }
 
     return new Promise((resolve) => {
         const interval = setInterval(function () {
