@@ -77,7 +77,8 @@ async function createBrowser(width, height) {
         headless: true,
         width: width,
         height: height,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-font-antialiasing']
+        // args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-font-antialiasing']
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
     await page.setViewport({width: width, height: height});
