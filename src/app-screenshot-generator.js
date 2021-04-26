@@ -77,8 +77,7 @@ async function createBrowser(width, height) {
         headless: true,
         width: width,
         height: height,
-        // args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-font-antialiasing']
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-font-antialiasing']
     });
     const page = await browser.newPage();
     await page.setViewport({width: width, height: height});
@@ -107,21 +106,21 @@ async function getOrCreateAvailableBrowser(width) {
         return createBrowser(width, DEFAULT_HEIGHT);
     }
 
-    // const available = browserPool.find((browser) => {
-    //     return !browser.inUse;
-    // });
-    //
-    // if (available) {
-    //     return available;
-    // }
+    const available = browserPool.find((browser) => {
+        return !browser.inUse;
+    });
 
-    // if (browserPool.length < MAX_BROWSERS) {
+    if (available) {
+        return available;
+    }
+
+    if (browserPool.length < MAX_BROWSERS) {
         const next = createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
         browserPool.push(next);
 
         return next;
-    // }
+    }
 
     return new Promise((resolve) => {
         const interval = setInterval(function () {
@@ -151,10 +150,12 @@ async function withPooledBrowser(width, callback) {
     try {
         instance.inUse = true;
         result = await callback(instance);
+        instance.inUse = false;
     } catch (e) {
+        instance.inUse = false;
         console.error(e);
+        throw e;
     }
-    instance.inUse = false;
 
     return result;
 }
