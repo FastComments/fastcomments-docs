@@ -280,7 +280,7 @@ async function processInput(input, filePath) {
 }
 
 processInput.dispose = async function () {
-    browserPool.forEach((instance) => instance.browser.close());
+    browserPool.forEach((instance) => instance.browser && instance.browser.close());
 }
 
 module.exports = processInput;
