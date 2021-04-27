@@ -1,0 +1,41 @@
+{
+  "name": "Users",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Types of Users",
+      "file": "types-of-users.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Administrator Users",
+      "file": "administrator-users.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Commenter Users",
+      "file": "commenter-users.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Adding Administrators",
+      "file": "adding-administrators.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Adding Moderators",
+      "file": "adding-moderators.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Updating Administrator Permissions",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Developers",
+      "file": "developers.md",
+      "subCat": "Setup"
+    }
+  ]
+}
