@@ -16,6 +16,15 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
  * @typedef {Object.<string, Array.<IndexEntry>>} Index
  */
 
+const CleanDescriptionRegex = /(\[|^)(.+?)(]|$)/g;
+
+function cleanDescription(text) {
+    if (text.includes('[') || text.includes(']')) {
+        return text.replace(CleanDescriptionRegex, '');
+    }
+    return text;
+}
+
 /**
  * @param {Content} content
  * @param {Index} index
@@ -62,11 +71,14 @@ function addContentToIndex(content, index) {
             index[wordClean] = [];
         }
 
+        const startDescriptionIndex = wordPosition - 75;
+        const endDescriptionIndex = wordPosition + 75;
+        const descriptionCleaned = cleanDescription(text.substring(startDescriptionIndex, endDescriptionIndex));
+
         index[wordClean].push({
             url: content.fullUrl,
             title: content.title,
-            // TODO contain all instances of the word
-            aroundText: text.substring(wordPosition - 50, wordPosition + 50),
+            aroundText: (startDescriptionIndex > 0 && !descriptionCleaned.startsWith('...') ? '...' : '') + descriptionCleaned + (endDescriptionIndex < text.length && !descriptionCleaned.endsWith('...') ? '...' : ''),
             count: wordCounts[word]
         });
     }
