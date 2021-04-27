@@ -16,3 +16,8 @@ This can be disabled, [instructions are here](/guide-customizations-and-configur
 ### Custom Styling
 
 Many of our customers apply their own styling to the comment widget. You can find the documentation [here](/guide-customizations-and-configuration.html#custom-css).
+
+### Showing The Same Comments on Multiple Domains
+
+Showing the same comments on multiple sites is something FastComments supports out of the box. See our
+[documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).

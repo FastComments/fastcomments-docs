@@ -36,6 +36,11 @@
       "name": "Common Use Cases",
       "file": "installation-common-use-cases.md",
       "subCat": "Custom Installations"
+    },
+    {
+      "name": "Debugging Common Issues",
+      "file": "debugging-common-issues.md",
+      "subCat": "Custom Installations"
     }
   ]
 }
