@@ -60,7 +60,7 @@ This is a file that describes your guide. Changing it will cause the watch job t
 
 ### Screenshots
 
-In order to keep this documentation easy to maintain, we do *absolutely never hard code screenshots*.
+In order to keep this documentation easy to maintain, we *absolutely never hard code screenshots*.
 
 Instead, we generate them, for example in your `some-guide-name/items/some-item.md` file:
 
