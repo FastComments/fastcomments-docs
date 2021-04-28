@@ -1,6 +1,6 @@
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
-Commenting can be locked so new comments or votes can be made by setting the readonly flag to true.
+Commenting can be locked so no new comments or votes can be left by setting the readonly flag to true.
 
 Comments will also be unable to be edited or deleted.
 
