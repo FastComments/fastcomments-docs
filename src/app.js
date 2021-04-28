@@ -2,18 +2,13 @@ const startTime = Date.now();
 
 const fs = require('fs');
 const path = require('path');
-const marked = require('marked');
 const shortid = require('shortid');
 const {getGuides} = require('./guides');
 const {persistIndex} = require('./index');
-const {addContentToIndex} = require('./index');
 const {buildGuide} = require('./guides');
 const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
 
-const CATEGORIES_DIR = path.join(__dirname, 'content', 'categories');
-const GUIDES_DIR_NAME = 'guides';
-const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 
@@ -45,31 +40,6 @@ const index = {};
  */
 
 (async function main() {
-    const content = {}; // full path like "categories/custom-styles/custom-css.md" to
-    fs.readdirSync(CATEGORIES_DIR).forEach(function (category) {
-        /** @type {Meta} **/
-        const meta = JSON.parse(fs.readFileSync(path.join(CATEGORIES_DIR, category, 'meta.json'), 'utf8'));
-        meta.itemsOrdered.forEach((item) => {
-            const title = item.name;
-            const urlId = item.file.replace('md', 'html');
-            const fullUrl = '/' + urlId;
-
-            const fileContent = fs.readFileSync(path.join(CATEGORIES_DIR, category, 'items', item.file), 'utf8');
-            const html = marked(fileContent);
-
-            const entry = {
-                html,
-                title,
-                urlId,
-                fullUrl,
-            };
-
-            addContentToIndex(entry, index);
-
-            content[`categories/${category}/${item.file}`] = entry;
-        });
-    });
-
     // Find guides.
     /** @type {Array.<Guide>} **/
     const guides = getGuides();
