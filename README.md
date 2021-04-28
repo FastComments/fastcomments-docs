@@ -72,7 +72,7 @@ The related code is in `src/app-screenshot-generator`.
 
 ### Code Snippets
 
-WHen writing code snippets, it's helpful that you also highlight the section of the code snippet that is important.
+When writing code snippets, it's helpful that you also highlight the section of the code snippet that is important.
 
     [code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Passing Custom CSS'; code-example-end]
 
