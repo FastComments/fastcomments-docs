@@ -6,3 +6,14 @@ detection system will learn from these actions to more accurately determine what
 Comments marked as **Spam** will not be automatically approved, so they will not show until explicitly marked as **Not Spam**.
 
 Spam Detection can be disabled via the Comment Moderation Settings page.
+
+### SSO
+
+Comments posted by SSO users can be considered spam, and will be checked as such. The exception is if the SSO user
+has the same email as a tenant user who has one or more of the following permissions:
+
+- Account Owner
+- Super Admin
+- Comment Moderator Admin
+
+SSO users with these permissions will not have their comments checked for spam.
