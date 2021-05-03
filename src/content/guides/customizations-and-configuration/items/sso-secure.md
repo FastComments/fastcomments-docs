@@ -53,7 +53,7 @@ interface User {
     email: string;
     /** Required. 1k Characters Max. Note: The username cannot be an email. Does not have to be unique. **/
     username: string;
-    /** Optional. 3k Characters Max. Default is from gravatar based on email. **/ 
+    /** Optional. 3k Characters Max for URLs. Default is from gravatar based on email. Supports 64 encoded images, in which case the limit is 50k characters. **/ 
     avatar?: string;
     /** Optional. Default false. **/
     optedInNotifications?: boolean;
