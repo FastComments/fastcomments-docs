@@ -8,6 +8,7 @@ The callbacks supported are:
 - onRender
 - onReplySuccess
 - onVoteSuccess
+- onImageClicked
 
 The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L77).
 
@@ -31,6 +32,9 @@ Here's an example with all callbacks used:
         },
         onVoteSuccess: function (comment, voteId, direction, status) {
             console.log('New vote saved!', comment, voteId, direction, status);
+        },
+        onImageClicked: function (src) {
+            console.log('Image clicked!', src);
         },
     });
 </script>

@@ -88,6 +88,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Image Redirect",
+      "file": "disable-image-redirect.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
