@@ -33,6 +33,11 @@
       "subCat": "Data Migrations"
     },
     {
+      "name": "Copying Comments",
+      "file": "copying-comments.md",
+      "subCat": "Data Migrations"
+    },
+    {
       "name": "Exporting Data",
       "file": "exporting-data.md",
       "subCat": "To Other Providers"
