@@ -3,6 +3,7 @@ With FastComments, there are a number of actions that Admins and Moderators can 
 - **Deleting** that comment
 - **Delete** that comment + **Ban the user** (Permanent or Shadow, more details later)
 - **Edit** that comment
+- **Adjust the votes** of that comment
 - Mark that comment **Reviewed** or **Not Reviewed**
 - Mark that comment **Approved** or **Not Approved**
 - Mark that comment as **Spam** or **Not Spam**
