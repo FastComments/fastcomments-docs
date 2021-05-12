@@ -6,13 +6,13 @@ The relationship between parent and child comments is defined via `parentId`;
 
 Comments must be fetched by-page. You can fetch comments for all pages at once, but use caution.
 
-[inline-code-attrs-start title = 'Comments cURL Example'; type = 'bash'; useDemoTenant = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comments cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Comments Request Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comments Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string;
@@ -26,7 +26,7 @@ interface CommentsRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Comments Response Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comments Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
     id: string;

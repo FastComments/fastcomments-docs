@@ -7,13 +7,13 @@ A `Page` stores information such as the page title, comment count, and `urlId`.
 
 You can currently only fetch all pages associated with your account. If you'd like more fine-grained searching, [reach out to us](https://fastcomments.com/auth/my-account/help). 
 
-[inline-code-attrs-start title = 'Pages cURL Example'; type = 'bash'; useDemoTenant = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Pages Request Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagesRequestQueryParams {
     tenantId: string;
@@ -21,7 +21,7 @@ interface PagesRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Pages Response Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Page {
     id: string;

@@ -16,13 +16,13 @@ There are three types of votes:
 
 These are returned in separate lists in the API to reduce confusion.
 
-[inline-code-attrs-start title = 'Votes cURL Example'; type = 'bash'; useDemoTenant = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Votes cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/votes?tenantId=demo&API_KEY=DEMO_API_SECRET&urlId=test'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Votes Request Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Votes Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotesRequestQueryParams {
     tenantId: string;
@@ -31,7 +31,7 @@ interface VotesRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Votes Response Structure'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Votes Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Vote {
     id: string;
