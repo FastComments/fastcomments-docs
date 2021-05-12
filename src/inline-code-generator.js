@@ -9,7 +9,7 @@ const EndToken = '[inline-code-end]';
 const StartAttrsToken = '[inline-code-attrs-start';
 const EndAttrsToken = 'inline-code-attrs-end]';
 
-function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
+function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTenant) {
     let result = '';
     const inputSplitByLine = inputString.split('\n');
     for (let i = 0; i < inputSplitByLine.length; i++) {
@@ -18,7 +18,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
         if (linesToHighlight && linesToHighlight.includes(i)) {
             classes.push('highlight');
         }
-        if (lineContent.includes('tenantId')) {
+        if (lineContent.includes('tenantId') && !useDemoTenant) {
             classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
         }
         result += '<div class="' + classes.join(' ') + '">' + '<span class="line-number">' + (i + 1) + '</span>' + inputSplitByLine[i] + '</div>';
@@ -27,7 +27,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePageFileName) {
+function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePageFileName, useDemoTenant) {
     let html = '<div class="code">';
     html += `<div class="title">${title}</div>`;
 
@@ -35,7 +35,7 @@ function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePag
         html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
     }
 
-    html += getTemplateLinesWithHighlight(hljs.highlight(type, inlineCode).value, []);
+    html += getTemplateLinesWithHighlight(hljs.highlight(type, inlineCode).value, [], useDemoTenant);
 
     html += '</div>';
 
@@ -77,7 +77,7 @@ function process(input, filePath) {
             inlineCode = inlineCode.replace(new RegExp('window.', 'g'), '');
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetPageFileName, args.useDemoTenant) + input.substring(endTokenIndex + EndToken.length, input.length);
         if (attrsIndex > -1) {
             // remove the StartAttrsToken + EndAttrsToken
             // but do it after other string manipulation, so logic is simpler

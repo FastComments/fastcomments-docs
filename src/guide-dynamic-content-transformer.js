@@ -9,6 +9,7 @@ const processors = [
     require('./inline-code-generator'),
     require('./app-screenshot-generator'),
     require('./related-parameter-generator'),
+    require('./api-resource-header-generator'),
 ];
 
 /**

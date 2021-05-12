@@ -1,0 +1,26 @@
+{
+  "name": "API",
+  "icon": "api.png",
+  "itemsOrdered": [
+    {
+      "name": "API Resources",
+      "file": "api-resources.md",
+      "subCat": "API Resources"
+    },
+    {
+      "name": "Fetching Pages",
+      "file": "pages.md",
+      "subCat": "Pages"
+    },
+    {
+      "name": "Fetching Comments",
+      "file": "comments.md",
+      "subCat": "Comments"
+    },
+    {
+      "name": "Fetching Votes",
+      "file": "votes.md",
+      "subCat": "Votes"
+    }
+  ]
+}
