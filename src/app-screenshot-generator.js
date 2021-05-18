@@ -232,6 +232,7 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
             }
         }
 
+        console.log('Waiting for (to click)', selector);
         await page.waitForSelector(selector);
         console.log('app-screenshot-generator found', selector);
 

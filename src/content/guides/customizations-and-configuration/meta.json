@@ -73,6 +73,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Showing Both Absolute & Relative Dates",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Adding Header Text",
       "file": "header-html.md",
       "subCat": "Look and Feel"
