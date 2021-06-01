@@ -8,17 +8,17 @@
       "subCat": "API Resources"
     },
     {
-      "name": "Fetching Pages",
+      "name": "Searching Pages",
       "file": "pages.md",
       "subCat": "Pages"
     },
     {
-      "name": "Fetching Comments",
+      "name": "Searching Comments",
       "file": "comments.md",
       "subCat": "Comments"
     },
     {
-      "name": "Fetching Votes",
+      "name": "Searching Votes",
       "file": "votes.md",
       "subCat": "Votes"
     }
