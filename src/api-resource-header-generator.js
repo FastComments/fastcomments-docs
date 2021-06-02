@@ -4,7 +4,7 @@ const StartToken = '[api-resource-header-start';
 const EndToken = 'api-resource-header-end]';
 
 function getTemplate(name, route, costPerPageLoad) {
-    return `<div class="api-resource-header">Resource: <span>${name}</span> <span class="as">as</span> <span>${route}</span> Cost: <span>1 Page Load = ${Number(costPerPageLoad)} ${name} Max</span></div>`;
+    return `<div class="api-resource-header">Resource: <span>${name}</span> <span class="as">as</span> <span>${route}</span> Cost: <span>1 Page Load = ${Number(costPerPageLoad)} ${name}s Max</span></div>`;
 }
 
 function process(input, filePath) {

@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Votes'; route = '/api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Vote'; route = '/api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
 
 A `Vote` object represents a vote left by a user.
 
@@ -33,15 +33,6 @@ interface VotesRequestQueryParams {
 
 [inline-code-attrs-start title = 'Votes Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface Vote {
-    id: string;
-    urlId: string;
-    commentId: string;
-    userId: string;
-    direction: 1 | -1;
-    createdAt: string;
-}
-
 interface VotesResponse {
     status: 'success' | 'failed';
     /** Included on failure. **/

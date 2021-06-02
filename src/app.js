@@ -31,6 +31,7 @@ const index = {};
  * @property {string} file
  * @property {string} name
  * @property {string} subCat
+ * @property {string} [sidebarItemClasses]
  */
 
 /**

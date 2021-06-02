@@ -5,7 +5,7 @@
             {{#each itemsBySubCat}}
             <h4>{{@key}}</h4>
             {{#each this}}
-                <div class="sidebar-item">
+                <div class="sidebar-item {{sidebarItemClasses}}">
                     <a href="#{{id}}">{{title}}</a>
                 </div>
             {{/each}}

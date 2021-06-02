@@ -101,9 +101,12 @@ body {
     font-weight: 700;
 }
 
+.content-with-sidebar .sidebar .sidebar-item:not(.retain-case) a {
+    text-transform: uppercase;
+}
+
 .content-with-sidebar .sidebar .sidebar-item a {
     color: #201600;
-    text-transform: uppercase;
     text-decoration: none;
 }
 

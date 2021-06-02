@@ -42,6 +42,7 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} name
  * @property {string} file
  * @property {string} subCat
+ * @property {string} [sidebarItemClasses]
  */
 
 function createGuideItemIdFromPath(filePath) {
@@ -85,6 +86,7 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         name: metaItem.name,
         file: metaItem.file,
         subCat: metaItem.subCat,
+        sidebarItemClasses: metaItem.sidebarItemClasses,
         content: html
     };
 }

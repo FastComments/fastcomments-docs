@@ -8,18 +8,47 @@
       "subCat": "API Resources"
     },
     {
-      "name": "GET /api/v1/pages",
-      "file": "pages.md",
-      "subCat": "Pages"
-    },
-    {
-      "name": "GET /api/v1/comments",
-      "file": "comments.md",
+      "name": "Comment Structure",
+      "file": "comment-structure.md",
       "subCat": "Comments"
     },
     {
+      "name": "GET /api/v1/comments",
+      "file": "comments-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "Page Structure",
+      "file": "page-structure.md",
+      "subCat": "Pages"
+    },
+    {
+      "name": "GET /api/v1/pages",
+      "file": "pages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "SSOUser Structure",
+      "file": "sso-user-structure.md",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "GET /api/v1/sso-users",
+      "file": "sso-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "Vote Structure",
+      "file": "vote-structure.md",
+      "subCat": "Votes"
+    },
+    {
       "name": "GET /api/v1/votes",
-      "file": "votes.md",
+      "file": "votes-get.md",
+      "sidebarItemClasses": "retain-case",
       "subCat": "Votes"
     }
   ]

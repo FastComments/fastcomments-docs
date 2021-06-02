@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Pages'; route = '/api/v1/pages'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = '/api/v1/pages'; costPerPageLoad = 1000; api-resource-header-end]
 
 A `Page` object represents the page that many comments may belong to. This relationship is defined by
 `urlId`.
@@ -23,15 +23,6 @@ interface PagesRequestQueryParams {
 
 [inline-code-attrs-start title = 'Pages Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface Page {
-    id: string;
-    urlId: string;
-    url: string;
-    title: string;
-    createdAt: string;
-    commentCount: number;
-}
-
 interface PagesResponse {
     status: 'success' | 'failed';
     /** Included on failure. **/
