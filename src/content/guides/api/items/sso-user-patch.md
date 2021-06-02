@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'SSOUser'; route = 'PATCH /api/v1/sso-users/:id'; costPerPageLoad = 1; api-resource-header-end]
 
-This route allows the ability to update a single SSO user.
+This route provides the ability to update a single SSO user.
 
 [inline-code-attrs-start title = 'SSOUser Update cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

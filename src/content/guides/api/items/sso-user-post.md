@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'SSOUser'; route = 'POST /api/v1/sso-users'; costPerPageLoad = 1; api-resource-header-end]
 
-This route allows the creation of a single SSO user.
+This route provides the creation of a single SSO user.
 
 Trying to create two users with the same ID will result in an error.
 

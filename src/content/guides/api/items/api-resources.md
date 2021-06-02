@@ -2,9 +2,10 @@ The FastComments API exposes the following resources to you:
 
 - Comments
 - Pages
+- SSO Users
 - Votes
 
-Currently, you can only fetch these resources. You cannot leave comments via the API.
+Comments, Pages, and Votes are currently read-only. You cannot leave comments via the API.
 
 ### Resource Usage
 

@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'SSOUser'; route = 'DELETE /api/v1/sso-users/:id'; costPerPageLoad = 1; api-resource-header-end]
 
-This route allows the removal of a single SSO user by their email.
+This route provides the removal of a single SSO user by their email.
 
 Note that loading the comment widget again with a payload for this user will simply recreate the user seamlessly.
 
