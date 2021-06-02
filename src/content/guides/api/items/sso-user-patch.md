@@ -5,7 +5,11 @@ This route allows the ability to update a single SSO user.
 [inline-code-attrs-start title = 'SSOUser Update cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
-  --url 'https://fastcomments.com/api/v1/sso-users/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET'
+  --url 'https://fastcomments.com/api/v1/sso-users/my-user-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"username": "notfordperfect"
+}'
 [inline-code-end]
 
 [inline-code-attrs-start title = 'SSOUser Update Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
