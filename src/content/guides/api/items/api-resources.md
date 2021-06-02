@@ -5,7 +5,7 @@ The FastComments API exposes the following resources to you:
 - SSO Users
 - Votes
 
-Comments, Pages, and Votes are currently read-only. You cannot leave comments via the API.
+Pages and Votes are currently read-only.
 
 ### Resource Usage
 

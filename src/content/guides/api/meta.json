@@ -19,6 +19,12 @@
       "subCat": "Comments"
     },
     {
+      "name": "POST /api/v1/comments",
+      "file": "comments-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "Page Structure",
       "file": "page-structure.md",
       "subCat": "Pages"
