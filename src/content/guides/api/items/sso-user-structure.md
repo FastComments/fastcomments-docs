@@ -9,7 +9,6 @@ interface SSOUser {
     email: string;
     signUpDate: number;
     createdFromUrlId: string;
-    verified: boolean;
     loginCount: number;
     avatarSrc: string;
     optedInNotifications: boolean;
