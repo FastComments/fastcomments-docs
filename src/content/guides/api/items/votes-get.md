@@ -1,9 +1,5 @@
 [api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
 
-A `Vote` object represents a vote left by a user.
-
-The relationship between comments and vote is defined via `commentId`;
-
 Votes must be fetched by `urlId`.
 
 ### Types of Votes

@@ -1,9 +1,5 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; costPerPageLoad = 30; api-resource-header-end]
 
-A `Comment` object represents a comment left by a user.
-
-The relationship between parent and child comments is defined via `parentId`;
-
 Comments must be fetched by-page. You can fetch comments for all pages at once, but use caution.
 
 [inline-code-attrs-start title = 'Comments cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]

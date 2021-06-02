@@ -1,3 +1,7 @@
+A `Comment` object represents a comment left by a user.
+
+The relationship between parent and child comments is defined via `parentId`;
+
 The structure for the Comment object is as follows:
 
 [inline-code-attrs-start title = 'Comment Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
