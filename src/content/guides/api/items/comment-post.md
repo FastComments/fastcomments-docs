@@ -7,7 +7,7 @@ Common use cases are custom UIs, integrations, or imports.
 Notes:
 
 - This API will automatically create user objects in our system.
-- Trying to save two comments with different emails but the same user id will result in an error for the second comment. 
+- Trying to save two comments with different emails, but the same username, will result in an error for the second comment. 
 - If you are specifying `parentId`, and a child comment has `notificationSentForParent` as false, **we will send notifications for the parent comment**. This is done every hour (we batch the notifications together to decrease the number of emails sent).
 - This API can be "live" if desired.
 - Comments created via this API will show up in the Analytics and Moderation pages of the admin app.
