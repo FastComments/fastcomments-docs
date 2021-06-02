@@ -20,7 +20,7 @@
     },
     {
       "name": "POST /api/v1/comments",
-      "file": "comments-post.md",
+      "file": "comment-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Comments"
     },

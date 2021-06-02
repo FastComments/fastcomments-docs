@@ -52,7 +52,7 @@ interface CommentPostQueryParams {
 [inline-code-attrs-start title = 'Comment POST Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
-interface CommentsResponse {
+interface CommentPostResponse {
     status: 'success' | 'failed';
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment';  
