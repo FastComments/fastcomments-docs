@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Comment'; route = '/api/v1/comments'; costPerPageLoad = 30; api-resource-header-end]
+[api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; costPerPageLoad = 30; api-resource-header-end]
 
 A `Comment` object represents a comment left by a user.
 

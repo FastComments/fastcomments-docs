@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Page'; route = '/api/v1/pages'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages'; costPerPageLoad = 1000; api-resource-header-end]
 
 A `Page` object represents the page that many comments may belong to. This relationship is defined by
 `urlId`.

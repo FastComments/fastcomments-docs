@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Vote'; route = '/api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
 
 A `Vote` object represents a vote left by a user.
 
