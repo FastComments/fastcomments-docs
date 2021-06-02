@@ -24,32 +24,10 @@ interface CommentsRequestQueryParams {
 
 [inline-code-attrs-start title = 'Comments Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface Comment {
-    id: string;
-    tenantId: string;
-    userId?: string|null;
-    urlId: string;
-    commenterName: string;
-    commenterLink: string;
-    commentHTML: string;
-    parentId?: string|null;
-    date: string;
-    votes: number;
-    verified: boolean;
-    avatarSrc: string;
-    hasImages: boolean;
-    hasLinks: boolean;
-    isByAdmin?: boolean;
-    isByModerator?: boolean;
-    isPinned?: boolean;
-    displayLabel?: string;
-    rating?: number;
-}
-
 interface CommentsResponse {
     status: 'success' | 'failed';
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date';
     /** Included on failure. **/
     reason?: string;
     /** The comments! **/
