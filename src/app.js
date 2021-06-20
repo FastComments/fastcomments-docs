@@ -8,6 +8,7 @@ const {persistIndex} = require('./index');
 const {buildGuide} = require('./guides');
 const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
+const guideOrder = require('./content/guides/guide-order.json');
 
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
@@ -45,6 +46,10 @@ const index = {};
     /** @type {Array.<Guide>} **/
     const guides = getGuides();
 
+    const gettingStartedGuides = guides
+        .filter((guide) => guideOrder.includes(guide.id))
+        .sort((a, b) => guideOrder.indexOf(a.id) - guideOrder.indexOf(b.id));
+
     // We'll periodically compare the build id on the page with the one from an API call to alert the user if the docs are out of date.
     const buildId = shortid.generate();
 
@@ -63,6 +68,7 @@ const index = {};
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
         indexJSON: indexRootJSON,
         guides,
+        gettingStartedGuides,
         lastUpdateDate: new Date().toLocaleString(),
         buildId
     }), 'utf8');

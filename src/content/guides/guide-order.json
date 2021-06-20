@@ -3,5 +3,7 @@
   "migrations",
   "customizations-and-configuration",
   "comment-vote-verification",
-  "moderation"
+  "moderation",
+  "multiple-sites",
+  "users"
 ]
