@@ -21,3 +21,7 @@ Many of our customers apply their own styling to the comment widget. You can fin
 
 Showing the same comments on multiple sites is something FastComments supports out of the box. See our
 [documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).
+
+### Changing The Current Page
+
+FastComments supports SPAs and complex applications. Changing the current page is easy, and covered [here](/guide-customizations-and-configuration#switching-comment-threads).
