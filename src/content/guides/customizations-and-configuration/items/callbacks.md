@@ -16,7 +16,7 @@ Here's an example with all callbacks used:
 
 [inline-code-attrs-start title = 'Callbacks Examples'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     window.FastCommentsUI(document.getElementById('fastcomments-widget'), {

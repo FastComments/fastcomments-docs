@@ -11,7 +11,7 @@ dark mode with the VanillaJS widget.
 
 [inline-code-attrs-start title = 'Toggling Dark Mode Complete Example'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://fastcomments.com/js/embed.js"></script>
+<script src="https://fastcomments.com/js/embed-v2.min.js"></script>
 <button id="toggle-dark-mode">Toggle Dark Mode</button>
 <div id="fastcomments-widget"></div>
 <script>
