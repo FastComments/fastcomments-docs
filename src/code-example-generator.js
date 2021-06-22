@@ -57,7 +57,7 @@ function process(input, filePath) {
         }
 
         const codeHTML = `
-<script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
 window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
