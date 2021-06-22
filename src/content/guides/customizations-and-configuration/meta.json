@@ -68,6 +68,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Switching Comment Threads Without Reloading The Page",
+      "file": "switching-comment-threads.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
       "file": "absolute-dates.md",
       "subCat": "Look and Feel"
