@@ -48,8 +48,13 @@
       "subCat": "Moderation Workflow"
     },
     {
-      "name": "Comment Actions",
+      "name": "Moderation Actions",
       "file": "comment-actions.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Actions From Comment Widget",
+      "file": "comment-actions-from-comment-widget.md",
       "subCat": "Moderation Workflow"
     },
     {
