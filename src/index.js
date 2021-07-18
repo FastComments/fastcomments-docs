@@ -66,7 +66,7 @@ function addContentToIndex(content, index) {
     }
     for (const word in wordCounts) {
         const wordPosition = text.indexOf(word);
-        const wordClean = word.replace(/[,\\.<>"]/g, '').toLowerCase();
+        const wordClean = word.replace(/[,\\.<>:"]/g, '').toLowerCase();
         if (index[wordClean] === undefined) {
             index[wordClean] = [];
         }
