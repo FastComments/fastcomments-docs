@@ -14,3 +14,7 @@ to add the **full domain including the subdomain** to your account, for example:
 We can add domains to our account by visiting the "My Domains page" and clicking "Add a Domain" at the bottom:
 
 [app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.account-block'; title='The My Domains Page' app-screenshot-end]
+
+
+During the trial period, **domains are automatically added to your account** when requests come from said domains. However,
+after this time they must be added explicitly for security.

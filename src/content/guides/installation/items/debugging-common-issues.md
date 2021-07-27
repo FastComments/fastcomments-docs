@@ -11,6 +11,9 @@ FastComments needs to know which domains are owned by you to authenticate reques
 with your account. [Check out our documentation](/guide-multiple-sites.html#add-domains-to-account) to see how
 to resolve this error (simply add the exact subdomain + domain to your account).
 
+Note that this should only occur after the trial period is over. During the trial period, any requests from new domains
+will automatically be added to your account.
+
 ### Migrated Comments Not Showing for Custom Installations
 
 Usually this happens when the imported comments are tied to a `Page ID`, and you are passing a URL
