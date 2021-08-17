@@ -63,6 +63,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Collapse Replies by Default",
+      "file": "collapse-replies.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Determining Which Page to Render",
       "file": "starting-page.md",
       "subCat": "Look and Feel"
