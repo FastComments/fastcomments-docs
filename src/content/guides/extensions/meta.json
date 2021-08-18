@@ -1,0 +1,31 @@
+{
+  "name": "Writing Extensions",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "The Extension Lifecycle",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Defining an Extension",
+      "file": "defining-an-extension.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Example Extensions",
+      "file": "example-extensions.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "The Extension Object",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "The Extension API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}
