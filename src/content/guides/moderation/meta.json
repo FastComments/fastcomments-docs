@@ -53,6 +53,11 @@
       "subCat": "Moderation Workflow"
     },
     {
+      "name": "Deleting Comments",
+      "file": "deleting-comments.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
       "name": "Moderation Actions From Comment Widget",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Moderation Workflow"
