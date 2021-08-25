@@ -35,3 +35,11 @@ interface SSOUserPostResponse {
     user?: SSOUser; // We return the created user on success.
 }
 [inline-code-end]
+
+#### Note
+
+Data passed by the API can be overridden simply by passing a different SSO user payload. For example, if
+you set a username via the API, but then pass a different one via the SSO flow, we will automatically update
+their username.
+
+We will not update user parameters in this flow unless you explicitly specify them or set them to null (not undefined).
