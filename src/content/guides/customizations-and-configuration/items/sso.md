@@ -17,6 +17,11 @@ This will take you to a single-button click wizard which will create your API ke
 
 Note that if you are installing the plugin for the first time you will have to follow up the setup process before you see the admin page with the SSO Settings button.
 
+#### WordPress SSO - Moderators
+
+Note that currently for the "Moderator" badge to show next to your moderators when they comment with the FastComments WordPress plugin,
+they must also be added as a Moderator in the FastComments dashboard, and have their email verified.
+
 ### Custom Integrations
 
 For Custom integrations, there are two options.
@@ -43,6 +48,17 @@ Company A and Company B, each can have an SSO user with the username "Bob". This
 
 #### Cons
 - Requires backend development.
+
+#### Updating User Data
+
+With Secure SSO, each time you pass the sso user payload, we will update their user with the latest information. For example, if
+the user has a username `X`, and you pass `Y` in the SSO payload, their username will become `Y`.
+
+If you want to remove values using this approach then set them to `null` (not `undefined`).
+
+#### Secure SSO API
+
+We also provide an API for interacting with the SSO users. See [the docs](/guide-api#sso-user-structure).
 
 ### Option Two - Simple SSO
 
@@ -73,3 +89,7 @@ Ideally, Simple SSO should only be picked when developing on a platform that doe
 - Username must be unique when paired with an email.
 - If Username is not unique, the user will go through the same flow as if not using SSO.
 - The user now has to deal with another account, not only the account associated with your website.
+
+#### Simple SSO API
+
+We do not provide an api for interacting with the users created from the Simple SSO flow.
