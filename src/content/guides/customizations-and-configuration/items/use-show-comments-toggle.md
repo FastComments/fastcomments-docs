@@ -14,5 +14,4 @@ be replaced by the localized count.
 
 This is designed to replace the `hideCommentsUnderCountTextFormat` configuration.
 
-The count is updated live with the comment thread.
-
+The count is updated live with the comment thread. The button is not shown if there are no comments.
