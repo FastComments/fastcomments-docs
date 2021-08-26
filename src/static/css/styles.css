@@ -16,6 +16,7 @@ body {
     position: sticky;
     height: 30px;
     top: calc(100vh - 30px);
+    margin-bottom: 15px;
     font-size: 12px;
 }
 

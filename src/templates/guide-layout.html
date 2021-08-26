@@ -5,9 +5,9 @@
             {{#each itemsBySubCat}}
             <h4>{{@key}}</h4>
             {{#each this}}
-                <div class="sidebar-item {{sidebarItemClasses}}">
-                    <a href="#{{id}}">{{title}}</a>
-                </div>
+            <div class="sidebar-item {{sidebarItemClasses}}">
+                <a href="#{{id}}">{{title}}</a>
+            </div>
             {{/each}}
             {{/each}}
         </div>
@@ -33,10 +33,10 @@
 
         <div class="pagination text-center">
             {{#if prevGuideUrl}}
-                <a class="btn prev" href="{{prevGuideUrl}}">Previous Guide</a>
+            <a class="btn prev" href="{{prevGuideUrl}}">Previous Guide</a>
             {{/if}}
             {{#if nextGuideUrl}}
-                <a class="btn next" href="{{nextGuideUrl}}">Next Guide</a>
+            <a class="btn next" href="{{nextGuideUrl}}">Next Guide</a>
             {{/if}}
         </div>
 
@@ -47,6 +47,9 @@
                 tenantId: 'nYrnfYEv'
             });
         </script>
+        <div class="footer">
+            <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">Contribute to This Guide</a></div>
+        </div>
     </div>
     <script src="/js/sidebar.js"></script>
 </div>
