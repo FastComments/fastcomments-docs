@@ -33,6 +33,11 @@
       "subCat": "Custom Installations"
     },
     {
+      "name": "Multiple Instances on The Same Page",
+      "file": "multiple-instances.md",
+      "subCat": "Custom Installations"
+    },
+    {
       "name": "Common Use Cases",
       "file": "installation-common-use-cases.md",
       "subCat": "Custom Installations"
