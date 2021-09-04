@@ -23,6 +23,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Custom Fonts",
+      "file": "custom-fonts.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Removing Branding",
       "file": "remove-branding.md",
       "subCat": "Look and Feel"
