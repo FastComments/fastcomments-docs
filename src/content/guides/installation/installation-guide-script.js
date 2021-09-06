@@ -38,10 +38,15 @@ module.exports = function getGuidePages(meta) {
 
     // build integration select pages, and integration + product pages
     for (const productMeta of meta.productsOrdered) {
-        const integrationsMetaForProduct = meta.integrationsOrdered.map((integrationMeta) => {
+        const productId = createId(productMeta.name);
+        const integrationsMetaForProduct = meta.integrationsOrdered
+            .filter((integrationMeta) => {
+                return !integrationMeta.supportedProducts || integrationMeta.supportedProducts.includes(productId);
+            })
+            .map((integrationMeta) => {
             return {
                 ...integrationMeta,
-                url: createPageLink(`${guideId}-${createId(productMeta.name)}-${createId(integrationMeta.name)}`)
+                url: createPageLink(`${guideId}-${productId}-${createId(integrationMeta.name)}`)
             }
         });
         const integrationSelectPage = {

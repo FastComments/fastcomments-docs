@@ -40,6 +40,7 @@
       "name": "WordPress",
       "file": "wordpress.json",
       "icon": "3rd-party-products/wordpress.png",
+      "supportedProducts": ["live-commenting"],
       "description": "First-party plugin available.",
       "tileClasses": "optimize-contrast"
     },
