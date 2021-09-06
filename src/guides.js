@@ -10,14 +10,11 @@ const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 
 const GUIDES_DIR_NAME = 'guides';
 const ITEMS_DIR_NAME = 'items';
-const INDEX_NAME = 'index.md.html';
 const GUIDES_DIR = path.join(__dirname, 'content', GUIDES_DIR_NAME);
 const GUIDE_ORDER_PATH = path.join(__dirname, 'content', GUIDES_DIR_NAME, 'guide-order.json');
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 const GUIDE_LAYOUT_PATH = path.join(__dirname, 'templates', 'guide-layout.html');
-const GUIDE_INTRO_FILE_NAME = 'intro.md';
-const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
 const NODE_MODULES_PATH = path.join(__dirname, '..', 'node_modules');
 
 /**
@@ -26,19 +23,14 @@ const NODE_MODULES_PATH = path.join(__dirname, '..', 'node_modules');
  * @property {string} prevGuideUrl
  * @property {string} nextGuideUrl
  * @property {string} url
- * @property {string} icon
  * @property {string} name
  * @property {string} itemsPath
  * @property {string} metaJSONPath
- * @property {string} indexTemplatePath
- * @property {string} conclusionPath
- * @property {string} introPath
  */
 
 /**
  * @typedef {Object} Guide
  * @property {string} id
- * @property {string} url
  * @property {string} icon
  * @property {string} name
  * @property {string} metaJSONPath
@@ -79,7 +71,7 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
 
     // We add this guide metaItem to the index, but its url is an anchor to the element on the guide page. This way we
     // can have all the content on one page, but still deep link to it from search nicely.
-    const fullUrl = `/${guide.url}#${id}`;
+    const fullUrl = `/${guide.url}#${id}`; // TODO BROKEN
 
     let html = '';
     if (metaItem.file.endsWith('.md')) {
@@ -94,7 +86,7 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         throw new Error(`Don't know how to handle meta item file=[${metaItem.file}]`);
     }
 
-    addContentToIndex({
+    addContentToIndex({ // TODO DO NOT DO THIS HERE
         html,
         title,
         urlId,
@@ -123,35 +115,26 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
  * @return {Promise<GuideItem[]>}
  */
 async function buildGuide(guide, index) {
-    /** @type {Meta} **/
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const items = await Promise.all(meta.itemsOrdered.map((metaItem) => {
-        return buildGuideItemForMeta(guide, metaItem, index);
-    }));
-    await buildGuideFromItems(guide, items);
+    await buildGuideFromItems(guide, null, {});
 
-    return items;
+    // return items;
 }
 
-async function buildGuideFromItems(guide, items) {
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
-    const guideConclusionHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME), 'utf8'));
-
+async function buildGuideFromItems(guide, items, index) {
     for (const page of guide.pages) {
-        buildGuidePage(guide, page);
+        await buildGuidePage(guide, page, index);
     }
 }
 
-function buildGuidePage(guide, data, layoutFile) {
-    const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
-        intro: guideIntroHTML,
-        items,
-        itemsBySubCat: groupBy(items, 'subCat'),
-        conclusion: guideConclusionHTML,
-        ...guide
-    });
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+async function buildGuidePage(guide, page, index) {
+    if (page.pageLayoutPath === GUIDE_LAYOUT_PATH && page.data && page.data.items) { // TODO HACK SHOULD BE DETERMINED VIA PAGE TYPE
+        page.data.items = await Promise.all(page.data.items.map((metaItem) => {
+            return buildGuideItemForMeta(guide, metaItem, index);
+        }));
+        page.data.itemsBySubCat = groupBy(page.data.items, 'subCat');
+    }
+    const guideContentHTML = handlebars.compile(fs.readFileSync(page.pageLayoutPath, 'utf8'))(page.data);
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, page.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
         title: guide.name,
         content: guideContentHTML,
         ExampleTenantId: ExampleTenantId
@@ -187,10 +170,11 @@ function getGuidePages(guideId, meta) {
                     icon: `images/guide-icons/${meta.icon}`,
                     name: meta.name,
                     itemsPath: path.join(GUIDES_DIR, guideId, ITEMS_DIR_NAME),
-                    indexTemplatePath: path.join(GUIDES_DIR, guideId, INDEX_NAME),
-                    conclusionPath: path.join(GUIDES_DIR, guideId, GUIDE_CONCLUSION_FILE_NAME),
-                    introPath: path.join(GUIDES_DIR, guideId, GUIDE_INTRO_FILE_NAME),
-                    pageLayoutPath: GUIDE_LAYOUT_PATH
+                    pageLayoutPath: GUIDE_LAYOUT_PATH,
+                    data: {
+                        items: meta.itemsOrdered,
+                        itemsBySubCat: groupBy(meta.itemsOrdered, 'subCat')
+                    }
                 }
             ]
         }
@@ -205,7 +189,7 @@ function getGuidePages(guideId, meta) {
 function getGuides() {
     const result = [];
     fs.readdirSync(GUIDES_DIR).forEach((guideId) => {
-        if (guideId === 'guideId-order.json') {
+        if (guideId === 'guide-order.json') {
             return;
         }
         const metaJSONPath = path.join(GUIDES_DIR, guideId, 'meta.json');
@@ -233,9 +217,11 @@ module.exports = {
     GUIDE_LAYOUT_PATH,
     STATIC_GENERATED_DIR,
     NODE_MODULES_PATH,
+    ITEMS_DIR_NAME,
     buildGuide,
     buildGuideItemForMeta,
     buildGuideFromItems,
+    createPageLink,
     createGuideItemIdFromPath,
     getGuides
 };

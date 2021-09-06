@@ -83,6 +83,10 @@ async function buildGuideAddToCache(guide) {
 
 async function rebuildGuide(guide, pathChanged) {
     console.log('Rebuilding...', guide);
+
+    await buildGuideAddToCache(guide); // HACK - always rebuilding whole thing
+    /*
+    TODO - fix optimization to work with new page structure
     if (pathChanged) {
         if (GuideCache[guide.id]) {
             const itemChanged = GuideCache[guide.id].items.find((item) => {
@@ -109,6 +113,7 @@ async function rebuildGuide(guide, pathChanged) {
     } else {
         await buildGuideAddToCache(guide);
     }
+     */
 }
 
 let jobsInQueue = [];
@@ -150,9 +155,6 @@ watcher.on('change', async function (file, stat) {
             const guide = getGuides().find((guide) => {
                 console.log(guide.itemsPath);
                 return guide.metaJSONPath === file ||
-                    guide.indexTemplatePath === file ||
-                    guide.conclusionPath === file ||
-                    guide.introPath === file ||
                     file.startsWith(guide.itemsPath)
             });
             if (!guide) {
