@@ -1,0 +1,47 @@
+{
+  "steps": [
+    {
+      "visible": false,
+      "goto": "",
+      "typeValue": {
+        "target": "",
+        "fromConfig": ""
+      }
+    },
+    {
+      "visible": false,
+      "typeValue": {
+        "target": "",
+        "fromConfig": ""
+      }
+    },
+    {
+      "visible": false,
+      "click": ""
+    },
+    {
+      "instruction": "Go to the Plugins page."
+    },
+    {
+      "instruction": "Search for FastComments."
+    },
+    {
+      "instruction": "Click Install."
+    },
+    {
+      "instruction": "Click Activate."
+    },
+    {
+      "instruction": "Go to the Plugin's admin page."
+    },
+    {
+      "instruction": "Choose whether or not you have an account."
+    },
+    {
+      "instruction": "Keep both the Plugin's admin page and FastComments.com open."
+    },
+    {
+      "instruction": "Wait for the sync to complete."
+    }
+  ]
+}

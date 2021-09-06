@@ -3,8 +3,6 @@ const fs = require('fs');
 const {GUIDE_ORDER_PATH} = require('../../../guides');
 const {getGuideIndex} = require('../../../guides');
 const {TEMPLATE_DIR} = require('../../../guides');
-const {GUIDE_LAYOUT_PATH} = require('../../../guides');
-const {INDEX_NAME} = require('../../../guides');
 const {ITEMS_DIR_NAME} = require('../../../guides');
 const {GUIDES_DIR} = require('../../../guides');
 const {createPageLink} = require('../../../guides');
@@ -58,7 +56,6 @@ module.exports = function getGuidePages(meta) {
         };
         pages.push(integrationSelectPage);
         for (const integrationMeta of integrationsMetaForProduct) {
-            // TODO generate product instructions
             const integrationProductPage = {
                 id: guideId,
                 prevGuideUrl: guideIndex > 0 ? createPageLink(guideOrder[guideIndex - 1]) : null,
@@ -68,7 +65,7 @@ module.exports = function getGuidePages(meta) {
                 itemsPath: path.join(GUIDES_DIR, guideId, ITEMS_DIR_NAME),
                 pageLayoutPath: path.join(TEMPLATE_DIR, 'layout-installation-via-code.html'),
                 data: {
-                    // TODO
+
                 }
             };
             pages.push(integrationProductPage);
@@ -76,4 +73,10 @@ module.exports = function getGuidePages(meta) {
     }
 
     return pages;
+}
+
+// TODO able to call this
+async function createProductInstructionsHTML() {
+    // TODO generate product instructions
+
 }
