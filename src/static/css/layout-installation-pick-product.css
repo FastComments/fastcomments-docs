@@ -35,7 +35,6 @@
 .integration-list .integration-item .logo-container img {
     max-height: 100px;
     max-width: 100%;
-    image-rendering: -webkit-optimize-contrast;
 }
 
 .integration-list .integration-item .title {

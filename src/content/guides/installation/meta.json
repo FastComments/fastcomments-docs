@@ -33,13 +33,15 @@
       "name": "Custom",
       "file": "custom.json",
       "icon": "3rd-party-products/coding.png",
-      "description": "Install FastComments how you like, on any site or application."
+      "description": "Install FastComments how you like, on any site or application.",
+      "tileClasses": "optimize-contrast"
     },
     {
       "name": "WordPress",
       "file": "wordpress.json",
       "icon": "3rd-party-products/wordpress.png",
-      "description": "First-party plugin available."
+      "description": "First-party plugin available.",
+      "tileClasses": "optimize-contrast"
     },
     {
       "name": "Wix",
@@ -129,13 +131,15 @@
       "name": "OpenCart",
       "file": "opencart.json",
       "icon": "3rd-party-products/opencart.png",
-      "description": "Add live commenting to OpenCart pages."
+      "description": "Add live commenting to OpenCart pages.",
+      "tileClasses": "optimize-contrast"
     },
     {
       "name": "Drupal",
       "file": "drupal.json",
       "icon": "3rd-party-products/drupal.png",
-      "description": "Add live commenting to your Drupal installation."
+      "description": "Add live commenting to your Drupal installation.",
+      "tileClasses": "optimize-contrast"
     }
   ]
 }
