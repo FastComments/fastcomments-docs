@@ -96,6 +96,11 @@
       "name": "Masking Profanity",
       "file": "profanity-mask.md",
       "subCat": "Spam & Profanity"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

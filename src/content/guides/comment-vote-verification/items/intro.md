@@ -1,5 +1,3 @@
-## Comment & Vote Verification
-
 FastComments provides a number of mechanisms to prevent spam, manage user accounts, and lower the friction
 of new users leaving comments and creating an account at the same time.
 

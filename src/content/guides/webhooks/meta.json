@@ -3,6 +3,11 @@
   "icon": "pipe.png",
   "itemsOrdered": [
     {
+      "name": "Intro",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "What are Webhooks",
       "file": "what-are-webhooks.md",
       "subCat": "Overview"
@@ -36,6 +41,11 @@
       "name": "How it Works",
       "file": "webhooks-how-it-works.md",
       "subCat": "Behind The Scenes"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

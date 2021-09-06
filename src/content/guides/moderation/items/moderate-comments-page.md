@@ -1,3 +1,7 @@
+FastComments provides a powerful suite of features for discussion moderation for all available product plans.
+
+This guide will start with an introduction to the various tools, and then go into detail for common use cases and gotchas.
+
 The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.content'; title='Comment Moderation Page' app-screenshot-end]

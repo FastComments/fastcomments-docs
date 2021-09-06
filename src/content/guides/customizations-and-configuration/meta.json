@@ -3,6 +3,11 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Customizations and Configuration",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "Identifying Your Account",
       "file": "tenant-id.md",
       "subCat": "The Basics"

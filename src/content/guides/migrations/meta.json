@@ -3,6 +3,11 @@
   "icon": "migrate.png",
   "itemsOrdered": [
     {
+      "name": "Migrations",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "Migrating From Other Providers",
       "file": "migrating-from-other-providers.md",
       "subCat": "From Other Providers"

@@ -3,6 +3,11 @@
   "icon": "on-prem.png",
   "itemsOrdered": [
     {
+      "name": "Hosting FastComments On Prem",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "What's Included",
       "file": "on-prem-whats-included.md",
       "subCat": "Background"
@@ -16,6 +21,11 @@
       "name": "Where to Start",
       "file": "on-prem-where-to-start.md",
       "subCat": "Getting Started"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

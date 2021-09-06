@@ -3,6 +3,11 @@
   "icon": "comment-vote-verification.png",
   "itemsOrdered": [
     {
+      "name": "Comment & Vote Verification",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "Background",
       "file": "background.md",
       "subCat": "The Basics"
@@ -31,6 +36,11 @@
       "name": "Live Commenting",
       "file": "verification-live-commenting.md",
       "subCat": "Verification"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

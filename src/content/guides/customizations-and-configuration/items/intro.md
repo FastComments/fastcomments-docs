@@ -1,7 +1,3 @@
-## Customizations and Configuration
-
-### Context
-
 Here you will find in-depth documentation on each of the features and settings that the comment widget supports.
 
 This documentation will cover core concepts, and will go deep into each area of functionality, with how-tos and common gotchas.

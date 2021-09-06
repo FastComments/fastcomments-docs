@@ -3,6 +3,11 @@
   "icon": "domains.png",
   "itemsOrdered": [
     {
+      "name": "Multiple Sites",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "Setup",
       "file": "add-domains-to-account.md",
       "subCat": "Setup"
@@ -31,6 +36,11 @@
       "name": "Sharing Comments Across Domains",
       "file": "sharing-comments-across-domains.md",
       "subCat": "Usage"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

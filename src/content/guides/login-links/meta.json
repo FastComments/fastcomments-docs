@@ -3,6 +3,11 @@
   "icon": "login-links.png",
   "itemsOrdered": [
     {
+      "name": "Login Links",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "What are Login Links?",
       "file": "login-links-what-are.md",
       "subCat": "Background"
@@ -21,6 +26,11 @@
       "name": "Who Gets Sent Login Links?",
       "file": "login-links-who-gets-sent.md",
       "subCat": "Usage"
+    },
+    {
+      "name": "In Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

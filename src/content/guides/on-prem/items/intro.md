@@ -1,5 +1,3 @@
-## Hosting FastComments On Prem
-
 FastComments provides several solutions for deployment. The most common is where we host
 the application **for you**.
 

@@ -3,6 +3,11 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Developing Extensions",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "The Extension Lifecycle",
       "file": "the-extension-lifecycle.md",
       "subCat": "Background"
