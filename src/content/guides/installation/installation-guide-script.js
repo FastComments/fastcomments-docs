@@ -1,4 +1,7 @@
 const path = require('path');
+const fs = require('fs');
+const {GUIDE_ORDER_PATH} = require('../../../guides');
+const {getGuideIndex} = require('../../../guides');
 const {TEMPLATE_DIR} = require('../../../guides');
 const {GUIDE_LAYOUT_PATH} = require('../../../guides');
 const {INDEX_NAME} = require('../../../guides');
@@ -15,7 +18,10 @@ module.exports = function getGuidePages(meta) {
 
     const guideId = createId(meta.name);
 
-    meta.productsOrdered.forEach(function(item) {
+    const guideOrder = JSON.parse(fs.readFileSync(GUIDE_ORDER_PATH, 'utf8'));
+    const guideIndex = getGuideIndex(guideId, guideOrder);
+
+    meta.productsOrdered.forEach(function (item) {
         item.url = createPageLink(guideId + '-' + createId(item.name));
     });
 
@@ -55,9 +61,8 @@ module.exports = function getGuidePages(meta) {
             // TODO generate product instructions
             const integrationProductPage = {
                 id: guideId,
-                // TODO pagination
-                // prevGuideUrl: guideIndex > 0 ? createPageLink(guideOrder[guideIndex - 1]) : null,
-                // nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createPageLink(guideOrder[guideIndex + 1]) : null,
+                prevGuideUrl: guideIndex > 0 ? createPageLink(guideOrder[guideIndex - 1]) : null,
+                nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createPageLink(guideOrder[guideIndex + 1]) : null,
                 url: integrationMeta.url,
                 name: meta.name,
                 itemsPath: path.join(GUIDES_DIR, guideId, ITEMS_DIR_NAME),

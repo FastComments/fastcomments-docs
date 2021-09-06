@@ -133,7 +133,10 @@ async function buildGuidePage(guide, page, index) {
         }));
         page.data.itemsBySubCat = groupBy(page.data.items, 'subCat');
     }
-    const guideContentHTML = handlebars.compile(fs.readFileSync(page.pageLayoutPath, 'utf8'))(page.data);
+    const guideContentHTML = handlebars.compile(fs.readFileSync(page.pageLayoutPath, 'utf8'))({
+        ...page,
+        ...page.data
+    });
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, page.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
         title: guide.name,
         content: guideContentHTML,
@@ -143,6 +146,12 @@ async function buildGuidePage(guide, page, index) {
 
 function createPageLink(id) {
     return `guide-${id}.html`;
+}
+
+function getGuideIndex(id, guideOrder) {
+    /** @type {Array.<string>} **/
+    guideOrder = guideOrder || JSON.parse(fs.readFileSync(GUIDE_ORDER_PATH, 'utf8'));
+    return guideOrder.indexOf(id);
 }
 
 /**
@@ -159,7 +168,7 @@ function getGuidePages(guideId, meta) {
         if (hasItems) {
             /** @type {Array.<string>} **/
             const guideOrder = JSON.parse(fs.readFileSync(GUIDE_ORDER_PATH, 'utf8'));
-            const guideIndex = guideOrder.indexOf(guideId);
+            const guideIndex = getGuideIndex(guideId, guideOrder);
             console.log('guideIndex', guideId, guideOrder, guideIndex, guideIndex > -1 ? createPageLink(guideOrder[guideIndex - 1]) : null, guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createPageLink(guideOrder[guideIndex + 1]) : null)
             return [
                 {
@@ -215,6 +224,7 @@ module.exports = {
     GUIDES_DIR,
     TEMPLATE_DIR,
     GUIDE_LAYOUT_PATH,
+    GUIDE_ORDER_PATH,
     STATIC_GENERATED_DIR,
     NODE_MODULES_PATH,
     ITEMS_DIR_NAME,
@@ -223,5 +233,6 @@ module.exports = {
     buildGuideFromItems,
     createPageLink,
     createGuideItemIdFromPath,
-    getGuides
+    getGuides,
+    getGuideIndex
 };

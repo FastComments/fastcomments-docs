@@ -1,1 +1,25 @@
-code layout...
+<div class="layout">
+    <div class="page-content">
+
+        <div class="pagination text-center">
+            {{#if prevGuideUrl}}
+            <a class="btn prev" href="{{prevGuideUrl}}">Previous Guide</a>
+            {{/if}}
+            {{#if nextGuideUrl}}
+            <a class="btn next" href="{{nextGuideUrl}}">Next Guide</a>
+            {{/if}}
+        </div>
+
+        <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+        <div id="fastcomments-widget"></div>
+        <script>
+            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: 'nYrnfYEv'
+            });
+        </script>
+        <div class="footer">
+            <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">Contribute to This Guide</a></div>
+        </div>
+    </div>
+</div>
+
