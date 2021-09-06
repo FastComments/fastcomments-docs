@@ -3,6 +3,11 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
+      "name": "The FastComments API",
+      "file": "intro.md",
+      "subCat": "Intro"
+    },
+    {
       "name": "API Resources",
       "file": "api-resources.md",
       "subCat": "API Resources"
@@ -86,6 +91,11 @@
       "file": "votes-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Votes"
+    },
+    {
+      "name": "Conclusion",
+      "file": "conclusion.md",
+      "subCat": "Conclusion"
     }
   ]
 }

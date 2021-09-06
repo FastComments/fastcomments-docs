@@ -41,6 +41,7 @@ const index = {};
  * @typedef {Object} Meta
  * @property {string} name
  * @property {string} [layoutFile]
+ * @property {string} [scriptFile]
  * @property {Array.<MetaItem>} itemsOrdered
  */
 

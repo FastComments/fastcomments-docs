@@ -42,7 +42,7 @@ const STATIC_ROOT_DIRS = [
 ];
 STATIC_ROOT_DIRS.forEach((rootDir) => {
     function nextDir(absPath) {
-        fs.readdirSync(absPath).forEach(function(item) {
+        fs.readdirSync(absPath).forEach(function (item) {
             processDirItems(path.join(absPath, item));
         });
     }
