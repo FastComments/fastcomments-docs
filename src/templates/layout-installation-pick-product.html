@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/layout-installation-pick-product.css" />
+<div class="layout">
+    <div class="page-content">
+
+        <h1 class="text-center select-integration-title">Select an Integration</h1>
+        <div class="integration-list">
+            {{#each items}}
+            <a class="integration-item" href="#">
+                <div class="logo-container">
+                    <img src="images/{{icon}}" alt="{{title}}" title="{{title}}">
+                </div>
+                <div class="title">{{title}}</div>
+                <div class="description">{{description}}</div>
+                <div class="get-started">Get Started</div>
+            </a>
+            {{/each}}
+        </a>
+        <div class="footer">
+            <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">Contribute to This
+                Guide</a></div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,67 @@
+.select-integration-title {
+    margin-bottom: 50px;
+}
+
+.integration-list {
+    text-align: center;
+}
+
+.integration-list .integration-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 250px;
+    margin: 15px;
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    transition-duration: 100ms;
+    color: #000;
+    text-decoration: none;
+}
+
+.integration-list .integration-item .logo-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 100px;
+}
+
+.integration-list .integration-item .logo-container img {
+    max-height: 100px;
+    max-width: 100%;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.integration-list .integration-item .title {
+    margin-top: 15px;
+}
+
+.integration-list .integration-item .description {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.integration-list .integration-item .get-started {
+    position: absolute;
+    display: block;
+    left: 30px;
+    bottom: 30px;
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    background: #201600;
+    line-height: 30px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.integration-list .integration-item:hover {
+    top: -2px;
+    left: -2px;
+}
