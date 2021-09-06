@@ -56,12 +56,6 @@
       "description": "Add live commenting to blogs hosted by Blogger."
     },
     {
-      "name": "GitHub Pages",
-      "file": "github-pages.json",
-      "icon": "3rd-party-products/github-pages.svg",
-      "description": "Add live commenting to sites hosted by GitHub Pages."
-    },
-    {
       "name": "BigCommerce",
       "file": "big-commerce.json",
       "icon": "3rd-party-products/bc-logo-bright.svg",
@@ -140,6 +134,12 @@
       "icon": "3rd-party-products/drupal.png",
       "description": "Add live commenting to your Drupal installation.",
       "tileClasses": "optimize-contrast"
+    },
+    {
+      "name": "GitHub Pages",
+      "file": "github-pages.json",
+      "icon": "3rd-party-products/github-pages.svg",
+      "description": "Add live commenting to sites hosted by GitHub Pages."
     }
   ]
 }
