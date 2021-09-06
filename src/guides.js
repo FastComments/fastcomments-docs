@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
-const { groupBy } = require('lodash');
+const {groupBy} = require('lodash');
 const handlebars = require('handlebars');
 const {addContentToIndex} = require('./index');
 const {ExampleTenantId} = require('./utils');
@@ -27,6 +27,7 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} url
  * @property {string} icon
  * @property {string} name
+ * @property {string} [layoutFile]
  * @property {string} itemsPath
  * @property {string} metaJSONPath
  * @property {string} indexTemplatePath
@@ -66,10 +67,18 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
     // can have all the content on one page, but still deep link to it from search nicely.
     const fullUrl = `/${guide.url}#${id}`;
 
-    const markdown = handlebars.compile(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', metaItem.file), 'utf8'))({
-        ExampleTenantId
-    });
-    let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
+    let html = '';
+    if (metaItem.file.endsWith('.md')) {
+        const metaItemAbsPath = fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', metaItem.file), 'utf8');
+        const markdown = handlebars.compile(metaItemAbsPath)({
+            ExampleTenantId
+        });
+        html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
+    } else if(metaItem.file.endsWith('.json')) {
+        // TODO
+    } else {
+        throw new Error(`Don't know how to handle meta item file=[${metaItem.file}]`);
+    }
 
     addContentToIndex({
         html,
@@ -84,7 +93,9 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         title,
         id,
         name: metaItem.name,
+        description: metaItem.description,
         file: metaItem.file,
+        icon: metaItem.icon,
         subCat: metaItem.subCat,
         sidebarItemClasses: metaItem.sidebarItemClasses,
         content: html
@@ -103,6 +114,7 @@ async function buildGuide(guide, index) {
     const items = await Promise.all(meta.itemsOrdered.map((metaItem) => {
         return buildGuideItemForMeta(guide, metaItem, index);
     }));
+    guide.layoutFile = meta.layoutFile;
     await buildGuideFromItems(guide, items);
 
     return items;
@@ -114,7 +126,8 @@ async function buildGuideFromItems(guide, items) {
         const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
         const guideConclusionHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME), 'utf8'));
 
-        const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
+        const layoutFile = guide.layoutFile ? path.join(__dirname, 'templates', guide.layoutFile) : GUIDE_LAYOUT_PATH;
+        const guideContentHTML = handlebars.compile(fs.readFileSync(layoutFile, 'utf8'))({
             intro: guideIntroHTML,
             items,
             itemsBySubCat: groupBy(items, 'subCat'),

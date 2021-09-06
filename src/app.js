@@ -31,13 +31,16 @@ const index = {};
  * @typedef {Object} MetaItem
  * @property {string} file
  * @property {string} name
+ * @property {string} description
  * @property {string} subCat
+ * @property {string} [icon]
  * @property {string} [sidebarItemClasses]
  */
 
 /**
  * @typedef {Object} Meta
  * @property {string} name
+ * @property {string} [layoutFile]
  * @property {Array.<MetaItem>} itemsOrdered
  */
 

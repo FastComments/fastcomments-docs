@@ -1,51 +1,116 @@
 {
   "name": "Installation",
   "icon": "download.png",
+  "layoutFile": "layout-installation-overview.html",
+  "scriptFile": "installation.js",
   "itemsOrdered": [
     {
-      "name": "Wordpress",
-      "file": "wordpress.md",
-      "subCat": "Third-Party Plugins"
+      "name": "Custom",
+      "file": "custom.json",
+      "icon": "3rd-party-products/coding.png",
+      "description": "Install FastComments how you like, on any site or application."
     },
     {
-      "name": "VanillaJS",
-      "file": "vanillajs.md",
-      "subCat": "Custom Installations"
+      "name": "WordPress",
+      "file": "wordpress.json",
+      "icon": "3rd-party-products/wordpress.png",
+      "description": "First-party plugin available."
     },
     {
-      "name": "Angular",
-      "file": "angular.md",
-      "subCat": "Custom Installations"
+      "name": "Wix",
+      "file": "wix.json",
+      "icon": "3rd-party-products/wix.svg",
+      "description": "Add live commenting to your Wix site."
     },
     {
-      "name": "React",
-      "file": "react.md",
-      "subCat": "Custom Installations"
+      "name": "Blogger (Blogspot)",
+      "file": "blogger.json",
+      "icon": "3rd-party-products/blogger.svg",
+      "description": "Add live commenting to blogs hosted by Blogger."
     },
     {
-      "name": "Vue",
-      "file": "vue.md",
-      "subCat": "Custom Installations"
+      "name": "GitHub Pages",
+      "file": "github-pages.json",
+      "icon": "3rd-party-products/github-pages.svg",
+      "description": "Add live commenting to sites hosted by GitHub Pages."
     },
     {
-      "name": "TypeScript",
-      "file": "typescript.md",
-      "subCat": "Custom Installations"
+      "name": "BigCommerce",
+      "file": "big-commerce.json",
+      "icon": "3rd-party-products/bc-logo-bright.svg",
+      "description": "Add live commenting to your BigCommerce store."
     },
     {
-      "name": "Multiple Instances on The Same Page",
-      "file": "multiple-instances.md",
-      "subCat": "Custom Installations"
+      "name": "Ionos",
+      "file": "ionos.json",
+      "icon": "3rd-party-products/ionos-by-1and1.svg",
+      "description": "Add live commenting to your Ionos site."
     },
     {
-      "name": "Common Use Cases",
-      "file": "installation-common-use-cases.md",
-      "subCat": "Custom Installations"
+      "name": "Godaddy",
+      "file": "godaddy.json",
+      "icon": "3rd-party-products/godaddy.svg",
+      "description": "Add live commenting to your Godaddy site."
     },
     {
-      "name": "Debugging Common Issues",
-      "file": "debugging-common-issues.md",
-      "subCat": "Custom Installations"
+      "name": "SquareSpace",
+      "file": "squarespace.json",
+      "icon": "3rd-party-products/squarespace.svg",
+      "description": "Add live commenting to your SquareSpace site."
+    },
+    {
+      "name": "Weebly",
+      "file": "weebly.json",
+      "icon": "3rd-party-products/weebly.svg",
+      "description": "Add live commenting to your Weebly site."
+    },
+    {
+      "name": "Bubble.io",
+      "file": "bubble-io.json",
+      "icon": "3rd-party-products/bubble-io.svg",
+      "description": "Add live commenting to your Bubble application."
+    },
+    {
+      "name": "Webflow",
+      "file": "webflow.json",
+      "icon": "3rd-party-products/webflow.svg",
+      "description": "Add live commenting to your Webflow site."
+    },
+    {
+      "name": "Shopfiy",
+      "file": "shopify.json",
+      "icon": "3rd-party-products/shopify.svg",
+      "description": "Embed comments directly into your store pages."
+    },
+    {
+      "name": "Memberstack",
+      "file": "memberstack.json",
+      "icon": "3rd-party-products/memberstack.png",
+      "description": "Integrate our commenting system with Memberstack."
+    },
+    {
+      "name": "Ghost",
+      "file": "ghost.json",
+      "icon": "3rd-party-products/ghost.png",
+      "description": "Add live commenting to your Ghost setup."
+    },
+    {
+      "name": "Tumblr",
+      "file": "tumblr.json",
+      "icon": "3rd-party-products/tumblr.svg",
+      "description": "Add live commenting to your Tumblr blog posts."
+    },
+    {
+      "name": "OpenCart",
+      "file": "opencart.json",
+      "icon": "3rd-party-products/opencart.png",
+      "description": "Add live commenting to OpenCart pages."
+    },
+    {
+      "name": "Drupal",
+      "file": "drupal.json",
+      "icon": "3rd-party-products/drupal.png",
+      "description": "Add live commenting to your Drupal installation."
     }
   ]
 }

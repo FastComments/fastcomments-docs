@@ -36,17 +36,29 @@ GUIDE_ROOT_FILES.forEach((file) => watcher.add(file));
 
 const STATIC_ROOT_DIRS = [
     path.join(__dirname, 'static', 'css'),
+    path.join(__dirname, 'static', 'images', '3rd-party-products'),
     path.join(__dirname, 'static', 'images'),
     path.join(__dirname, 'static', 'js'),
 ];
-STATIC_ROOT_DIRS.forEach((dir) => {
-    fs.readdirSync(dir).forEach((dirEntry) => {
-        watcher.add(path.join(dir, dirEntry));
-    });
+STATIC_ROOT_DIRS.forEach((rootDir) => {
+    function nextDir(absPath) {
+        fs.readdirSync(absPath).forEach(function(item) {
+            processDirItems(path.join(absPath, item));
+        });
+    }
+
+    function processDirItems(abs) {
+        if (!fs.statSync(abs).isDirectory()) {
+            watcher.add(abs);
+        }
+    }
+
+    nextDir(rootDir);
 });
 
 const STATIC_ROOT_DIRS_TO_GENERATED = {
     [path.join(__dirname, 'static', 'css')]: path.join(__dirname, 'static', 'generated', 'css'),
+    [path.join(__dirname, 'static', 'images', '3rd-party-products')]: path.join(__dirname, 'static', 'generated', 'images', '3rd-party-products'),
     [path.join(__dirname, 'static', 'images')]: path.join(__dirname, 'static', 'generated', 'images'),
     [path.join(__dirname, 'static', 'js')]: path.join(__dirname, 'static', 'generated', 'js'),
 };
