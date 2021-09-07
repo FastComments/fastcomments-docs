@@ -7,25 +7,25 @@
       "name": "Live Commenting",
       "id": "live-commenting",
       "icon": "https://fastcomments.com/images/svg/v2/logo.svg",
-      "description": "Customizable, live commenting for any page or app."
+      "description": "Customizable, <b>live commenting</b> for any page or app."
     },
     {
       "name": "Live Chat",
       "id": "live-chat",
       "icon": "https://fastcomments.com/images/svg/v2/logo_red.svg",
-      "description": "Live chat for any page or app."
+      "description": "<b>Live chat</b> for any page or app."
     },
     {
       "name": "Image Chat",
       "id": "image-chat",
       "icon": "https://fastcomments.com/images/image-chat-icon.svg",
-      "description": "Add conversations to images."
+      "description": "Add conversations to <b>images</b>."
     },
     {
       "name": "Collab Chat",
       "id": "collab-chat",
       "icon": "https://fastcomments.com/images/collab-chat-icon.svg",
-      "description": "Add conversations to static documents."
+      "description": "<b>Highlight</b> and discuss pieces of <b>text</b>."
     }
   ],
   "integrationsOrdered": [
