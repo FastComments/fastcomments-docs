@@ -31,7 +31,7 @@
   "integrationsOrdered": [
     {
       "name": "Custom",
-      "file": "custom.json",
+      "file": "custom.md",
       "icon": "3rd-party-products/coding.png",
       "description": "Install FastComments how you like, on any site or application.",
       "tileClasses": "optimize-contrast"
