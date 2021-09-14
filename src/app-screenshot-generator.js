@@ -205,11 +205,15 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
                 console.log('next action', action);
                 switch (action.type) {
                     case 'click':
+                        await page.bringToFront();
                         await page.waitForSelector(action.selector);
+                        await page.bringToFront();
                         await page.click(action.selector);
                         break;
                     case 'set-value':
+                        await page.bringToFront();
                         await page.waitForSelector(action.selector);
+                        await page.bringToFront();
                         await page.evaluate((selector, value) => {
                             document.querySelector(selector).value = value;
                         }, action.selector, action.value);
@@ -223,8 +227,10 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
         if (clickSelectors) {
             for (const clickSelector of clickSelectors) {
                 console.log('Waiting for', clickSelector);
+                await page.bringToFront();
                 await page.waitForSelector(clickSelector);
                 try {
+                    await page.bringToFront();
                     await page.click(clickSelector);
                 } catch (e) {
                     console.error('Error for selector', clickSelector, e);
@@ -233,6 +239,7 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
         }
 
         console.log('Waiting for (to click)', selector);
+        await page.bringToFront();
         await page.waitForSelector(selector);
         console.log('app-screenshot-generator found', selector);
 
