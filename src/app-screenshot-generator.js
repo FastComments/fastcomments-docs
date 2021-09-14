@@ -106,37 +106,40 @@ async function getOrCreateAvailableBrowser(width) {
         return createBrowser(width, DEFAULT_HEIGHT);
     }
 
-    const available = browserPool.find((browser) => {
-        return !browser.inUse;
-    });
+    return createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
-    if (available) {
-        return available;
-    }
-
-    if (browserPool.length < MAX_BROWSERS) {
-        const next = createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-
-        browserPool.push(next);
-
-        return next;
-    }
-
-    return new Promise((resolve) => {
-        const interval = setInterval(function () {
-            const available = browserPool.find((browser) => {
-                return !browser.inUse;
-            });
-
-            if (available) {
-                clearInterval(interval);
-                resolve(available);
-            }
-        }, 300);
-    });
+    // const available = browserPool.find((browser) => {
+    //     return !browser.inUse;
+    // });
+    //
+    // if (available) {
+    //     return available;
+    // }
+    //
+    // if (browserPool.length < MAX_BROWSERS) {
+    //     const next = createBrowser(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    //
+    //     browserPool.push(next);
+    //
+    //     return next;
+    // }
+    //
+    // return new Promise((resolve) => {
+    //     const interval = setInterval(function () {
+    //         const available = browserPool.find((browser) => {
+    //             return !browser.inUse;
+    //         });
+    //
+    //         if (available) {
+    //             clearInterval(interval);
+    //             resolve(available);
+    //         }
+    //     }, 300);
+    // });
 }
 
 /**
+ * @warn DOES NOT ACTUALLY USE POOLING RIGHT NOW! Pooling disabled as it makes the logs hard to read.
  * @async
  * @param {number|null|undefined} width
  * @param {BrowserPoolCallback} callback
@@ -151,6 +154,12 @@ async function withPooledBrowser(width, callback) {
         instance.inUse = true;
         result = await callback(instance);
         instance.inUse = false;
+        try {
+            await instance.page.close();
+            await instance.browser.close();
+        } catch (e) {
+            console.error('Error when closing browser', e);
+        }
     } catch (e) {
         instance.inUse = false;
         console.error(e);
@@ -192,6 +201,7 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
 
     return await withPooledBrowser(width, async ({browser, page}) => {
         console.log('app-screenshot-generator authenticated...');
+        await page.bringToFront();
         await page.goto(remotePageUrl);
         console.log('app-screenshot-generator loaded', url);
 
@@ -227,13 +237,17 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
         if (clickSelectors) {
             for (const clickSelector of clickSelectors) {
                 console.log('Waiting for', clickSelector);
-                await page.bringToFront();
-                await page.waitForSelector(clickSelector);
+                try {
+                    await page.bringToFront();
+                    await page.waitForSelector(clickSelector);
+                } catch (e) {
+                    console.error('Error for waiting for selector to click', clickSelector, e);
+                }
                 try {
                     await page.bringToFront();
                     await page.click(clickSelector);
                 } catch (e) {
-                    console.error('Error for selector', clickSelector, e);
+                    console.error('Error for clicking selector', clickSelector, e);
                 }
             }
         }

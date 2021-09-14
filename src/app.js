@@ -54,9 +54,10 @@ const index = {};
     const buildId = shortid.generate();
 
     // Create a page for each guide.
-    await Promise.all(guides.map((guide) => {
-        return buildGuide(guide, index);
-    }))
+    for (const guide of guides) {
+         // this is done one at a time to be easier to understand
+        await buildGuide(guide, index);
+    }
 
     // Create the index.
     const indexRootJSON = persistIndex(index);

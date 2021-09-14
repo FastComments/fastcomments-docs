@@ -100,9 +100,10 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
 async function buildGuide(guide, index) {
     /** @type {Meta} **/
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-    const items = await Promise.all(meta.itemsOrdered.map((metaItem) => {
-        return buildGuideItemForMeta(guide, metaItem, index);
-    }));
+    const items = [];
+    for (const metaItem of meta.itemsOrdered) {
+        items.push(await buildGuideItemForMeta(guide, metaItem, index)); // this is done one at a time to be easier to understand
+    }
     await buildGuideFromItems(guide, items);
 
     return items;
