@@ -73,6 +73,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disabling The Toolbar",
+      "file": "disable-toolbar.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Determining Which Page to Render",
       "file": "starting-page.md",
       "subCat": "Look and Feel"
