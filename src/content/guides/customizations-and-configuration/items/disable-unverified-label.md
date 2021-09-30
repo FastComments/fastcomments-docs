@@ -7,4 +7,4 @@ has an unverified browser session. Read more about unverified commenting [here](
 
 Additionally, this feature can be used, without writing code, in the Customization UI:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.disable-unverified-comment-label'; title='Disable The Unverified Label' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; title='Disable The Unverified Label' app-screenshot-end]
