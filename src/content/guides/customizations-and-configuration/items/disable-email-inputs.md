@@ -4,7 +4,8 @@ This will create an "unverified session" for that user, and we will ask them to 
 
 For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-Enabling anonymous commenting makes the email input field optional. However, we can disable it completely.
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
 
