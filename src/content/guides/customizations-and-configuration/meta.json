@@ -183,6 +183,11 @@
       "subCat": "Anonymous Commenting"
     },
     {
+      "name": "Disable Email Inputs",
+      "file": "disable-email-inputs.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
       "name": "Disable The Unverified Label",
       "file": "disable-unverified-label.md",
       "subCat": "Anonymous Commenting"
