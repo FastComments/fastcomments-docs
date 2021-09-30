@@ -27,7 +27,7 @@ interface Comment {
     /** The commenter's raw comment. **/
     comment: string;
     /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
-    locale?: 'en_us' | 'es_es' | 'fr_fr' | 'pl_pl' | 'de_de' | 'it_it' | 'ru_ru';
+    locale?: 'en_us' | 'es_es' | 'fr_fr' | 'pl_pl' | 'de_de' | 'it_it' | 'ru_ru' | 'ja_jp';
     /** READONLY: The commenter's comment parsed into HTML. **/
     commentHTML?: string;
     /** If we're replying to a comment, this is the ID that we are replying to. **/
