@@ -198,6 +198,11 @@
       "subCat": "Anonymous Commenting"
     },
     {
+      "name": "Setting a Default Username",
+      "file": "default-username.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
       "name": "Callbacks",
       "file": "callbacks.md",
       "subCat": "Misc"
