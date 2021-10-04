@@ -241,6 +241,11 @@
       "name": "Enabling Commenter Links",
       "file": "enable-commenter-links.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Disabling Live Commenting",
+      "file": "disable-live-commenting.md",
+      "subCat": "Misc"
     }
   ]
 }
