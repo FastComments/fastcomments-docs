@@ -1,0 +1,26 @@
+{
+  "name": "Mentions",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "What are Mentions",
+      "file": "what-are-mentions.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "How to Tag a User",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Using Mentions"
+    },
+    {
+      "name": "Notifications",
+      "file": "mentions-notifications.md",
+      "subCat": "Using Mentions"
+    },
+    {
+      "name": "How Mentions Autocomplete works",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Using Mentions"
+    }
+  ]
+}
