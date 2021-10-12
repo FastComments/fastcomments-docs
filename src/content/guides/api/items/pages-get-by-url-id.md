@@ -22,7 +22,7 @@ interface PagesRequestQueryParams {
 interface PagesResponse {
     status: 'success' | 'failed';
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id';
     /** Included on failure. **/
     reason?: string;
     page?: Page[] | null;
