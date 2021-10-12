@@ -36,6 +36,12 @@
       "subCat": "Pages"
     },
     {
+      "name": "GET /api/v1/pages/by-url-id",
+      "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
       "name": "SSOUser Structure",
       "file": "sso-user-structure.md",
       "subCat": "SSO Users"
