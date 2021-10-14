@@ -4,11 +4,13 @@ With Simple SSO, we can provide the commenting widget with information about the
 
 We can configure Simple SSO as follows:
 
-[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatarSrc: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob" }}; linesToHighlight = [6, 7, 8, 9, 10, 11]; title = 'Simple SSO'; code-example-end]
+[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob" }}; linesToHighlight = [6, 7, 8, 9, 10, 11]; title = 'Simple SSO'; code-example-end]
 
 The user won't actually be logged in, but it will appear as so in the commenting widget. When they take any action, we will email them asking to verify it, if an
 email is provided.
 
-Note that providing an email with Simple SSO is not required, however by default their comments will show as "Unverified".
+Notes: 
 
-If the provided username is not unique, they will be asked for a new username when attempting to comment.
+- Providing an email with Simple SSO is not required, however by default their comments will show as "Unverified".
+- If the provided username is not unique, they will be asked for a new username when attempting to comment.
+- While Simple SSO can automatically create users, it **cannot update users**. This is because Simple SSO has no form of authentication - we can't let an anonymous request change a user's name, or avatar, for example.
