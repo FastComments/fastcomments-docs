@@ -2,7 +2,7 @@ FastComments Access Control works by assigning `Pages` and `Users` into the desi
 
 A group is simply a string identifier, like `GREEN` or `abc-123`.
 
-`Users` and `Pages` are not just limited to one group, instead are limited to `100` and `1000` groups, respectively. 
+`Users` and `Pages` are not just limited to one group. They are limited to `100` and `1000` groups, respectively. 
 
 #### Accessing Unauthorized Pages
 

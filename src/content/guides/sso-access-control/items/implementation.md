@@ -2,7 +2,7 @@
 
 If two users belong to two different sets of groups, and there is no intersection, they will not be able to `@mention` each other.
 
-If a user manually types an `@mention` and submits their comment, it will remain plain text and the other user will not be tagged.
+If a user manually types an `@mention` and submits their comment, it will remain as plain text. The other user will not be tagged.
 
 #### Maintaining the Groups
 
@@ -13,7 +13,7 @@ not belong to a group, have access.
 
 Similarly, the `SSOUsers` API can be invoked to define the groups associated with each user.
 
-For both resources, the groups may be updated at any time.
+For both resources, there are no limitations as to when the groups can be set or updated.
 
 If it's only desired to limit users from `@mention`'ing each other, then `Pages` do not have to be taken into consideration.
 

@@ -1,6 +1,5 @@
-With FastComments SSO Access Control, users can be restricted to only access certain pages, or comment threads.
-
-Users also cannot tag users in other groups.
+With FastComments SSO Access Control, users can be restricted to only access certain pages, or comment threads. Additionally,
+users can only `@mention` each other in the same group.
 
 #### In Detail
 
