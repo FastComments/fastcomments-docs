@@ -1,0 +1,26 @@
+{
+  "name": "SSO Access Control",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "What is Access Control?",
+      "file": "what-is-access-control.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "How it Works",
+      "file": "how-it-works.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "The Spec",
+      "file": "access-control-spec.md",
+      "subCat": "Implementation"
+    },
+    {
+      "name": "Implementation",
+      "file": "implementation.md",
+      "subCat": "Implementation"
+    }
+  ]
+}

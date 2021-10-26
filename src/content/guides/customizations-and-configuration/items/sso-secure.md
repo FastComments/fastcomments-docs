@@ -61,6 +61,8 @@ interface User {
     displayLabel?: string;
     /** Optional. 2k Characters Max. The user's name will link to this. **/
     websiteUrl?: string;
+    /** Optional. Up to 100 groups per user. A group id may not be longer than 50 characters. **/
+    groupIds?: string[];
 }
 [inline-code-end]
 

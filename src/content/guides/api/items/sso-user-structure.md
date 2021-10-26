@@ -24,5 +24,10 @@ interface SSOUser {
     isAccountOwner?: boolean;
     isAdminAdmin?: boolean;
     isCommentModeratorAdmin?: boolean;
+    groupIds?: string[];
 }
 [inline-code-end]
+
+### Access Control
+
+Users can be broken into groups.
