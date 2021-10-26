@@ -12,9 +12,12 @@ curl --request POST \
   --data '{
 	"id": "my-user-id",
 	"username": "fordperfect",
-	"email": "fordperfect@galaxy.com"
+	"email": "fordperfect@galaxy.com",
+    "groupIds": ["some-optional-group-id"]
 }'
 [inline-code-end]
+
+In this example we specify `groupIds` for access control, but this is optional.
 
 [inline-code-attrs-start title = 'SSOUser Creation Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
