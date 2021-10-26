@@ -22,4 +22,4 @@ return 10 Votes, that also counts as two page loads as they are separate request
 
 We suggest reading the Pages documentation first, to help
 limit confusion when determining what values to pass for `urlId` in the Comment API.
-w
+
