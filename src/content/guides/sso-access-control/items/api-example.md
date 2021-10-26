@@ -1,5 +1,8 @@
 Here we'll walk through calling the FastComments API to setup access control.
 
+Before we begin, note that we don't have to explicitly create a `Group` structure. Groups are simply identifiers
+added to `Users` and `Pages`. Adding a group to a user or page automatically "creates" the group.
+
 First, let's create two users, `User A` and `User B`, we'll start them out in `Group X`:
 
 [inline-code-attrs-start title = 'Create User A cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
