@@ -21,6 +21,11 @@
       "name": "Implementation",
       "file": "implementation.md",
       "subCat": "Implementation"
+    },
+    {
+      "name": "Example API Calls",
+      "file": "api-example.md",
+      "subCat": "Implementation"
     }
   ]
 }
