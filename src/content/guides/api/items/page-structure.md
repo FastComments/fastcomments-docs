@@ -11,8 +11,10 @@ interface Page {
     id: string;
     urlId: string;
     url: string;
-    title: string;
+    title?: string;
     createdAt: string;
     commentCount: number;
+    rootCommentCount: number;
+    accessibleByGroupIds?: string[];
 }
 [inline-code-end]
