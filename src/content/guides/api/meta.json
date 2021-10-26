@@ -42,6 +42,24 @@
       "subCat": "Pages"
     },
     {
+      "name": "PATCH /api/v1/pages/:id",
+      "file": "page-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "POST /api/v1/pages",
+      "file": "page-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "DELETE /api/v1/pages/:id",
+      "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
       "name": "SSOUser Structure",
       "file": "sso-user-structure.md",
       "subCat": "SSO Users"
@@ -71,7 +89,7 @@
       "subCat": "SSO Users"
     },
     {
-      "name": "POST /api/v1/sso-users/:id",
+      "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "SSO Users"
