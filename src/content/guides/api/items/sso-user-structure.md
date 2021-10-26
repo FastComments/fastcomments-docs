@@ -24,10 +24,11 @@ interface SSOUser {
     isAccountOwner?: boolean;
     isAdminAdmin?: boolean;
     isCommentModeratorAdmin?: boolean;
-    groupIds?: string[];
+    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
+    groupIds?: string[] | null;
 }
 [inline-code-end]
 
 ### Access Control
 
-Users can be broken into groups.
+Users can be broken into groups. This is what the `groupIds` field is for, and is optional.
