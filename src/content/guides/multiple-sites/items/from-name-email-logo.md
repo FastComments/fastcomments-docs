@@ -12,3 +12,9 @@ This all can be customized on a per-domain basis via the "My Domains page":
 [app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.account-block form'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
 
 When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
+
+### When Customizing The `From Domain`
+
+To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
+
+Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
