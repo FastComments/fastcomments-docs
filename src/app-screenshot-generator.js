@@ -22,6 +22,8 @@ async function addProxySelectToPage(page) {
 
 const imageCacheFolder = path.join(__dirname, 'static', 'generated', 'image-cache');
 
+const CACHE_FORMAT_VERSION = 2;
+
 function isImageCacheStale(args, fullPath, fileName) {
     if (!fs.existsSync(fullPath)) {
         return true;
@@ -37,17 +39,29 @@ function isImageCacheStale(args, fullPath, fileName) {
         return true;
     }
 
-    const imageCacheContent = JSON.parse(fs.readFileSync(imageCacheFilePath, 'utf8'));
-    if (!imageCacheContent) {
+    const imageCacheObj = JSON.parse(fs.readFileSync(imageCacheFilePath, 'utf8'));
+    if (!imageCacheObj) {
         return true;
     }
 
-    return imageCacheContent === JSON.stringify(args);
+    if (imageCacheObj.version !== CACHE_FORMAT_VERSION) {
+        return true;
+    }
+
+    if (Date.now() - imageCacheObj.timestamp > 6.048e+8) { // one week
+        return true;
+    }
+
+    return imageCacheObj.contentJSON !== JSON.stringify(args);
 }
 
 function updateImageCache(args, fileName) {
     const imageCacheFilePath = path.join(imageCacheFolder, `${fileName}.json`);
-    fs.writeFileSync(imageCacheFilePath, JSON.stringify(args), 'utf8');
+    fs.writeFileSync(imageCacheFilePath, {
+        version: CACHE_FORMAT_VERSION,
+        timestamp: Date.now(),
+        contentJSON: JSON.stringify(args)
+    }, 'utf8');
 }
 
 /**
