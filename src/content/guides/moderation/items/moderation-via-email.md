@@ -2,7 +2,7 @@ FastComments supports a Daily, Weekly, or Monthly email digest for Moderators an
 
 The frequency of which can be configured <a href="" target="_blank">here</a>.
 
-[app-screenshot-start url='/auth/my-account/edit-notifications?demoDigestFrequencyValue=0'; linkUrl='/auth/my-account/edit-notifications'; selector = '.account-block'; title='Configuring Digest Frequency' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/edit-notifications?demoDigestFrequencyValue=0'; linkUrl='/auth/my-account/edit-notifications'; selector = '.content form'; title='Configuring Digest Frequency' app-screenshot-end]
 
 While including overall statistics around your comments, it will also list the three most recent comments needing review.
 

@@ -14,7 +14,7 @@ The second way to ban a user is by clicking the ban button that is placed on eac
 
 When we click the ban button, we are presented with some options, where we can specify the ban type and duration:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelector = '.comment-ban'; selector = '.content .comment'; title='Clicking Ban' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelectors = ['.comment .menu', '.comment .menu-content .comment-ban']; selector = '.content .comment'; title='Clicking Ban' app-screenshot-end]
 
 ### Shadow Bans
 
