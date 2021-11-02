@@ -24,6 +24,7 @@ async function processDynamicContent(markdown, filePath) {
             markdown = await processor(markdown, filePath);
         } catch(e) {
             console.error('Processor failed', processor, markdown, e);
+            throw e;
         }
     }
 
