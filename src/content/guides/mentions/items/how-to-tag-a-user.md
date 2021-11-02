@@ -10,4 +10,4 @@ Additionally, you can use the up and down arrow keys to navigate this list, and 
 
 We know that you may want to use the `@` symbol without tagging a user. FastComments will detect this and not intrude on your typing experience.
 
-Note that autocomplete is case-sensitive.
+Note that autocomplete first prefers case-sensitive matches, and then will also attempt to search for case-insensitive results.
