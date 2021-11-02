@@ -71,7 +71,7 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
     });
     let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
 
-    addContentToIndex({
+    await addContentToIndex({
         html,
         title,
         urlId,

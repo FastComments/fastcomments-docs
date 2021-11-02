@@ -189,6 +189,11 @@ input:focus {
     border: 1px solid #ccc;
 }
 
+.search-result em {
+    font-style: normal;
+    background: yellow;
+}
+
 .search-result .context-title {
     color: blue;
     font-size: 18px;

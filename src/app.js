@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const shortid = require('shortid');
 const {getGuides} = require('./guides');
-const {persistIndex} = require('./index');
 const {buildGuide} = require('./guides');
 const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
@@ -59,15 +58,11 @@ const index = {};
         await buildGuide(guide, index);
     }
 
-    // Create the index.
-    const indexRootJSON = persistIndex(index);
-
     // Store the build id.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
 
     // Create the homepage.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
-        indexJSON: indexRootJSON,
         guides,
         gettingStartedGuides,
         lastUpdateDate: new Date().toLocaleString(),

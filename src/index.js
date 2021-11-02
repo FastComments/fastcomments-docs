@@ -1,9 +1,13 @@
-const fs = require('fs');
 const path = require('path');
-const shortid = require('shortid');
+const fs = require('fs');
+const axios = require('axios');
+const md5 = require('md5');
 const {htmlToText} = require('html-to-text');
 
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
+const DOC_HASH_DIR = path.join(STATIC_GENERATED_DIR, 'doc-hashes');
+
+fs.mkdirSync(DOC_HASH_DIR, { recursive: true });
 
 /**
  * @typedef {Object} IndexEntry
@@ -16,90 +20,54 @@ const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
  * @typedef {Object.<string, Array.<IndexEntry>>} Index
  */
 
-const CleanDescriptionRegex = /(\[|^)(.+?)(]|$)/g;
+const CleanDescriptionRegex = /\[.+?\]/g;
 
 function cleanDescription(text) {
-    if (text.includes('[') || text.includes(']')) {
-        return text.replace(CleanDescriptionRegex, '');
-    }
-    return text;
+    return text.replaceAll(CleanDescriptionRegex, ' ... ')
 }
 
 /**
  * @param {Content} content
  * @param {Index} index
  */
-function addContentToIndex(content, index) {
-    const text = htmlToText(content.html, {
+async function addContentToIndex(content, index) {
+    if (!process.env.DOCS_SEARCH_INDEX_API_KEY) {
+        console.warn('No API key - not indexing.', content.urlId);
+        return;
+    }
+    const hashPath = path.join(DOC_HASH_DIR, content.urlId + '.hash');
+
+    const contentSanitized = cleanDescription(htmlToText(content.html, {
         wordwrap: 9001,
         tags: {
-            'h1': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'h2': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'h3': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'h4': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'h5': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'h6': {format: 'heading', options: {leadingLineBreaks: 0, trailingLineBreaks: 0, uppercase: false}},
-            'hr': {format: 'horizontalLine', options: {leadingLineBreaks: 0, length: undefined, trailingLineBreaks: 0}},
-            'p': {format: 'paragraph', options: {leadingLineBreaks: 0, trailingLineBreaks: 0}},
+            'h1': {format: 'heading', options: {uppercase: false}},
+            'h2': {format: 'heading', options: {uppercase: false}},
+            'h3': {format: 'heading', options: {uppercase: false}},
+            'h4': {format: 'heading', options: {uppercase: false}},
+            'h5': {format: 'heading', options: {uppercase: false}},
+            'h6': {format: 'heading', options: {uppercase: false}},
+            'hr': {format: 'horizontalLine', options: { length: undefined}},
+            'p': {format: 'paragraph', options: {}},
+            'ul': {format: 'unorderedList'},
+            'br': {format: 'lineBreak'},
+            'a': {format: 'inline'},
         }
-    }).replace(/\n\n/g, '...');
-    const words = text.replace(/\n/g, '').split(' ');
-    const wordCounts = {};
-    for (const word of words) {
-        if (word.length < 4) {
-            continue;
-        }
-        if (word.includes('...')) {
-            continue;
-        }
-        if (word.includes('<') || word.includes('>')) {
-            continue;
-        }
-        if (word.includes('[') || word.includes(']')) {
-            continue;
-        }
-        if (wordCounts[word] === undefined) {
-            wordCounts[word] = 1;
-        } else {
-            wordCounts[word]++;
+    }));
+
+    const newHash = md5(content.title + contentSanitized + content.fullUrl)
+    if (fs.existsSync(hashPath)) {
+        const existingHash = fs.readFileSync(hashPath, 'utf8');
+        if (newHash === existingHash) {
+            return;
         }
     }
-    for (const word in wordCounts) {
-        const wordPosition = text.indexOf(word);
-        const wordClean = word.replace(/[,\\.<>:"]/g, '').toLowerCase();
-        if (index[wordClean] === undefined) {
-            index[wordClean] = [];
-        }
-
-        const startDescriptionIndex = wordPosition - 75;
-        const endDescriptionIndex = wordPosition + 75;
-        const descriptionCleaned = cleanDescription(text.substring(startDescriptionIndex, endDescriptionIndex));
-
-        index[wordClean].push({
-            url: content.fullUrl,
-            title: content.title,
-            aroundText: (startDescriptionIndex > 0 && !descriptionCleaned.startsWith('...') ? '...' : '') + descriptionCleaned + (endDescriptionIndex < text.length && !descriptionCleaned.endsWith('...') ? '...' : ''),
-            count: wordCounts[word]
-        });
-    }
+    await axios.post(`https://fastcomments.com/docs-search-index/${content.urlId}?API_KEY=${process.env.DOCS_SEARCH_INDEX_API_KEY}`, {
+        contentHash: newHash,
+        contentTitle: content.title,
+        content: contentSanitized,
+        url: content.fullUrl
+    });
+    fs.writeFileSync(hashPath, newHash, 'utf8');
 }
 
-/**
- *
- * @param {Index} index
- * @return {string} index root JSON
- */
-function persistIndex(index) {
-    const indexRoot = {};
-    for (const word in index) {
-        const id = shortid.generate();
-        indexRoot[word] = id;
-        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, `index-${id}.json`), JSON.stringify(index[word]), 'utf8');
-    }
-    const indexRootJSON = JSON.stringify(indexRoot);
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.json'), indexRootJSON, 'utf8'); // Currently, this is only written to disk for debugging.
-
-    return indexRootJSON;
-}
-
-module.exports = {addContentToIndex, persistIndex};
+module.exports = {addContentToIndex};
