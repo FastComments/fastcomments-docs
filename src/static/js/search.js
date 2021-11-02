@@ -27,6 +27,10 @@
     /** @type {SearchRequest|null} **/
     let lastSearchRequest = null;
 
+    function setNoResults() {
+        searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
+    }
+
     function fetchAndRenderResults(queryText) {
         searchResults.innerHTML = '';
 
@@ -44,9 +48,13 @@
                 }
                 try {
                     const response = JSON.parse(responseText);
-                    response.results.forEach(function (entry) {
-                        searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + (entry.highlightedContent ? entry.highlightedContent : entry.content) + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
-                    });
+                    if (!response.results || response.results.length === 0) {
+                        setNoResults();
+                    } else {
+                        response.results.forEach(function (entry) {
+                            searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + (entry.highlightedContent ? entry.highlightedContent : entry.content) + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
+                        });
+                    }
                 } catch (e) {
                     console.error('Failure to parse index entry', e);
                 }
@@ -59,8 +67,8 @@
 
     input.addEventListener('input', function () {
         if (!input.value) {
-            searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
-        } else {
+            setNoResults();
+        } else if (input.value.length > 2) {
             fetchAndRenderResults(input.value);
         }
     });
