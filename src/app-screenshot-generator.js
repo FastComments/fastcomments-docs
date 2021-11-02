@@ -57,11 +57,11 @@ function isImageCacheStale(args, fullPath, fileName) {
 
 function updateImageCache(args, fileName) {
     const imageCacheFilePath = path.join(imageCacheFolder, `${fileName}.json`);
-    fs.writeFileSync(imageCacheFilePath, {
+    fs.writeFileSync(imageCacheFilePath, JSON.stringify({
         version: CACHE_FORMAT_VERSION,
         timestamp: Date.now(),
         contentJSON: JSON.stringify(args)
-    }, 'utf8');
+    }), 'utf8');
 }
 
 /**
