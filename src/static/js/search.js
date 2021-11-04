@@ -1,4 +1,5 @@
 (function search() {
+    const searchResultsWrapper = document.getElementById('search-results-wrapper');
     const searchResults = document.getElementById('search-results');
 
     function makeRequest(url, method, body, cb) {
@@ -32,8 +33,6 @@
     }
 
     function fetchAndRenderResults(queryText) {
-        searchResults.innerHTML = '';
-
         if (lastSearchRequest) {
             lastSearchRequest.cancelled = true;
         }
@@ -42,15 +41,19 @@
             cancelled: false
         }
         const searchFunction = function startCancellableSearch(searchRequest) {
+            searchResultsWrapper.classList.add('open');
+            searchResultsWrapper.classList.add('loading');
             makeRequest('https://fastcomments.com/docs-search-index/search?query=' + queryText, 'GET', null, function cb(responseText) {
                 if (searchRequest.cancelled) {
                     return;
                 }
                 try {
+                    searchResultsWrapper.classList.remove('loading');
                     const response = JSON.parse(responseText);
                     if (!response.results || response.results.length === 0) {
                         setNoResults();
                     } else {
+                        searchResults.innerHTML = '';
                         response.results.forEach(function (entry) {
                             searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + (entry.highlightedContent ? entry.highlightedContent : entry.content) + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
                         });

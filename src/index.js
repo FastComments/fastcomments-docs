@@ -50,7 +50,6 @@ async function addContentToIndex(content, index) {
             'p': {format: 'paragraph', options: {}},
             'ul': {format: 'unorderedList'},
             'br': {format: 'lineBreak'},
-            'a': {format: 'inline'},
         }
     }));
 
