@@ -4,7 +4,7 @@ FastComments is designed to be customized, and the font our widgets use is no ex
 
 By default, FastComments uses the `system font stack` to look as good as possible on a wide range of devices.
 
-To define your own fonts, see the [Custom CSS documentation](/guide-customizations-and-configuration#custom-css).
+To define your own fonts, see the [Custom CSS documentation](/guide-customizations-and-configuration.html#custom-css).
 
 There you will find a way to define custom CSS, which will allow you to define your desired fonts.
 
