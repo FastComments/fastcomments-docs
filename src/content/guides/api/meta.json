@@ -95,6 +95,12 @@
       "subCat": "SSO Users"
     },
     {
+      "name": "PUT /api/v1/sso-users",
+      "file": "sso-user-PUT.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
