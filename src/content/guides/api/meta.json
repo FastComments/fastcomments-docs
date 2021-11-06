@@ -96,7 +96,7 @@
     },
     {
       "name": "PUT /api/v1/sso-users",
-      "file": "sso-user-PUT.md",
+      "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "SSO Users"
     },
