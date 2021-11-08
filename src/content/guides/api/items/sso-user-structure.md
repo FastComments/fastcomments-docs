@@ -38,5 +38,3 @@ Users can be broken into groups. This is what the `groupIds` field is for, and i
 
 By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
 `username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
-
-The `@mention` tag itself will always be displayed with the `username` to ensure it is unique.
