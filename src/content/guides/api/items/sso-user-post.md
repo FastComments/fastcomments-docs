@@ -12,6 +12,7 @@ curl --request POST \
   --data '{
 	"id": "my-user-id",
 	"username": "fordperfect",
+	"displayName": "Ford Perfect",
 	"email": "fordperfect@galaxy.com",
     "groupIds": ["some-optional-group-id"]
 }'

@@ -9,6 +9,7 @@ curl --request PUT \
   --header 'Content-Type: application/json' \
   --data '{
 	"username": "fordperfect",
+	"displayName": "Ford Perfect",
 	"email": "fordperfect@galaxy.com",
     "groupIds": ["some-optional-group-id"]
 }'
