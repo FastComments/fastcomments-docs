@@ -58,7 +58,28 @@ interface Comment {
     notificationSentForParent?: boolean;
     /** Whether or not notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
     notificationSentForParentTenant?: boolean;
+    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    mentions?: CommentUserMention[]
 }
 [inline-code-end]
 
 Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
+
+[inline-code-attrs-start title = 'The Comment Mentions Object'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserMention {
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    id: string
+    /** The final @mention tag text, including the @ symbol. **/
+    tag: string
+    /** The original @mention tag text, including the @ symbol. **/
+    rawTag: string
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    type: 'user'|'sso'
+    /** If the user opts out of notifications, this will still be set to true. **/
+    sent: boolean
+}
+[inline-code-end]
