@@ -15,6 +15,9 @@ We can add domains to our account by visiting the "My Domains page" and clicking
 
 [app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; title='The My Domains Page' app-screenshot-end]
 
-
 During the trial period, **domains are automatically added to your account** when requests come from said domains. However,
 after this time they must be added explicitly for security.
+
+#### Via The API
+
+Domains can also be added and configured [via the DomainConfigs API](/guide-api#domain-config-structure).
