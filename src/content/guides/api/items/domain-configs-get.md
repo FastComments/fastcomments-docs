@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Comment'; route = 'GET /api/v1/domain-configs'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Comment'; route = 'GET /api/v1/domain-configs'; creditsCost = 1; api-resource-header-end]
 
 This API provides the ability to fetch all `DomainConfig` objects for a tenant.
 

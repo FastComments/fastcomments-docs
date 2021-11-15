@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'DomainConfig'; route = 'PATCH /api/v1/domain-configs/:domain'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'DomainConfig'; route = 'PATCH /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
 This API endpoint provides the ability to update a domain configuration by only specifying the domain and the attribute to update.
 

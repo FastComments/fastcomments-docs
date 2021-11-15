@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages'; creditsCost = 10; api-resource-header-end]
 
 You can currently only fetch all pages (or a single page via `/by-url-id`) associated with your account. If you'd like more fine-grained searching, [reach out to us](https://fastcomments.com/auth/my-account/help). 
 

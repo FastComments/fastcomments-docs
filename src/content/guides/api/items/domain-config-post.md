@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'DomainConfig'; route = 'POST /api/v1/domain-configs'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'DomainConfig'; route = 'POST /api/v1/domain-configs'; creditsCost = 1; api-resource-header-end]
 
 This API endpoint provides the ability to create domain configurations.
 

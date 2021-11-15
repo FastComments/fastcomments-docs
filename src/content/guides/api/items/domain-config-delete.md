@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'DomainConfig'; route = 'DELETE /api/v1/domain-configs/:domain'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'DomainConfig'; route = 'DELETE /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
 This route provides the removal of a single `DomainConfig` by id.
 

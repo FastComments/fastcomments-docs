@@ -3,8 +3,8 @@ const vm = require('vm');
 const StartToken = '[api-resource-header-start';
 const EndToken = 'api-resource-header-end]';
 
-function getTemplate(name, route, costPerPageLoad) {
-    return `<div class="api-resource-header">Resource: <span>${name}</span> <span class="as">as</span> <span>${route}</span> Cost: <span>1 Page Load = ${Number(costPerPageLoad)} ${name}s Max</span></div>`;
+function getTemplate(name, route, creditsCost) {
+    return `<div class="api-resource-header">Resource: <span>${name}</span> <span class="as">as</span> <span>${route}</span> Credit Cost: <span>${Number(creditsCost).toLocaleString()}</span></div>`;
 }
 
 function process(input, filePath) {
@@ -26,7 +26,7 @@ function process(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(args.name, args.route, args.costPerPageLoad) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + getTemplate(args.name, args.route, args.creditsCost) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

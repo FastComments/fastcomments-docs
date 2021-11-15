@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users'; creditsCost = 10; api-resource-header-end]
 
 This route returns all SSO Users on your account.
 

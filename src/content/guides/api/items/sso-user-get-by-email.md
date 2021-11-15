@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users/by-id/:id'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users/by-id/:id'; creditsCost = 1; api-resource-header-end]
 
 This route returns a single SSO user by their email.
 

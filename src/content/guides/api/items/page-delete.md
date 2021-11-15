@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Page'; route = 'DELETE /api/v1/pages/:id'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = 'DELETE /api/v1/pages/:id'; creditsCost = 1; api-resource-header-end]
 
 This route provides the removal of a single page by id.
 

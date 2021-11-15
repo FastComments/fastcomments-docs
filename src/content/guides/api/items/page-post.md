@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Page'; route = 'POST /api/v1/pages'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = 'POST /api/v1/pages'; creditsCost = 1; api-resource-header-end]
 
 This API endpoint provides the ability to create pages.
 

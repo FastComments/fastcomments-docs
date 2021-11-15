@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes'; costPerPageLoad = 1000; api-resource-header-end]
+[api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes'; creditsCost = 10; api-resource-header-end]
 
 Votes must be fetched by `urlId`.
 

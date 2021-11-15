@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; costPerPageLoad = 30; api-resource-header-end]
+[api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 10; api-resource-header-end]
 
 Comments must be fetched by-page. You can fetch comments for all pages at once, but use caution.
 

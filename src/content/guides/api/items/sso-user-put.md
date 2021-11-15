@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'SSOUser'; route = 'PUT /api/v1/sso-users'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'SSOUser'; route = 'PUT /api/v1/sso-users'; creditsCost = 1; api-resource-header-end]
 
 This route provides the ability to update a single SSO user.
 

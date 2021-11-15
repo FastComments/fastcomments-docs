@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'DomainConfig'; route = 'GET /api/v1/domain-configs/:domain'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'DomainConfig'; route = 'GET /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
 Individual DomainConfigs can be fetched by their corresponding `domain`. 
 

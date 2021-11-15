@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments'; creditsCost = 10; api-resource-header-end]
 
 This API endpoint provides the ability to create comments.
 

@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages/by-url-id'; costPerPageLoad = 1; api-resource-header-end]
+[api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages/by-url-id'; creditsCost = 1; api-resource-header-end]
 
 Individual pages can be fetched by their corresponding `urlId`. This can be useful for looking up page titles or comment counts. 
 
