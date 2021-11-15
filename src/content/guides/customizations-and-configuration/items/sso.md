@@ -6,7 +6,7 @@ However, we understand that even that is extra friction some sites want to avoid
 We can reduce that friction by only having one login flow for your entire site.
 
 ### How do I get it?
-All account types - from the $4.99/mo plan to the $350/mo plan - get access to SSO. As with other features, the Pro plan provides direct development support.
+All account types currently get access to SSO. However, the max number of SSO users will vary depending on your package. As with other features, the Pro plans and higher provide direct development support.
 
 Let's compare the options, and then go into details of each.
 
