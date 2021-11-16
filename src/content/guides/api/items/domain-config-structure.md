@@ -8,19 +8,21 @@ interface DomainConfig {
     /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
     domain: string;
     /** The From-Name used when sending emails. **/
-    emailFromName: string;
+    emailFromName?: string;
     /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
-    emailFromEmail: string;
+    emailFromEmail?: string;
     /** READONLY. When the object was created. **/
     createdAt: string;
     /** The logo related to this domain. Used in emails. Use HTTPS. **/
-    logoSrc: string;
+    logoSrc?: string;
     /** A smaller logo related to this domain. Use HTTPS. **/
-    logoSrc100px: string;
+    logoSrc100px?: string;
     /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
-    footerUnsubscribeURL: string;
+    footerUnsubscribeURL?: string;
     /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
-    emailHeaders: Record<string, string>;
+    emailHeaders?: Record<string, string>;
+    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    disableUnsubscribeLinks?: boolean;
 }
 [inline-code-end]
 
