@@ -15,10 +15,19 @@ When customizing the logo shown in emails, ensure that the size you are uploadin
 
 ### When Customizing The `From Domain`
 
+If you customize the `From Domain`, Email providers and clients need to know that FastComments is authorized to send emails on your behalf. Otherwise,
+defining the `From Domain` and not following the below steps likely will result in emails going to spam.
+
+#### 1. Setup SPF
+
 To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
 
 Ensure there are SPF records to allow `mail.fastcomments.com` and `sib.fastcomments.com` to send mail as your domain.
 
 Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
+
+#### 2. Setup DKIM
+
+In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, [invoke the API](/guide-api#domain-config-structure) to define your DKIM configuration.
 
 ### When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api#domain-config-structure).

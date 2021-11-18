@@ -23,6 +23,20 @@ interface DomainConfig {
     emailHeaders?: Record<string, string>;
     /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
     disableUnsubscribeLinks?: boolean;
+    /** DKIM Configuration. **/
+    dkim?: DomainConfigDKIM;
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = 'DKIM Config Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+interface DomainConfigDKIM {
+    /** The domain name in your DKIM record. **/
+    domainName: string;
+    /** The DKIM key selector to use. **/
+    keySelector: string;
+    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
+    privateKey: string;
 }
 [inline-code-end]
 
@@ -41,3 +55,7 @@ Also note that removing a domain from the `My Domains` UI will remove any corres
 ### For Email Customization
 
 The unsubscribe link in the email footer, and the one-click-unsubscribe feature offered by many email clients, can be configured via this API by defining `footerUnsubscribeURL` and `emailHeaders`, respectively.
+
+### For DKIM
+
+After defining your DKIM DNS records, simply update the DomainConfig with your DKIM configuration using the defined structure. 
