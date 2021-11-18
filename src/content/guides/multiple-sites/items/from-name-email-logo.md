@@ -30,4 +30,6 @@ Some more information on how to do this is here: https://mailtrap.io/blog/multip
 
 In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, [invoke the API](/guide-api#domain-config-structure) to define your DKIM configuration.
 
-### When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api#domain-config-structure).
+### Unsubscribe Links
+
+When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api#domain-config-structure).
