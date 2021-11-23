@@ -12,7 +12,7 @@ curl --request DELETE \
 
 [inline-code-attrs-start title = 'SSOUser Removal Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface SSOUsersRequestQueryParams {
+interface SSOUsersDeleteQueryParams {
     tenantId: string;
     API_KEY: string;
 }

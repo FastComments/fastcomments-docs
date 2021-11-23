@@ -12,7 +12,7 @@ curl --request DELETE \
 
 [inline-code-attrs-start title = 'Page Removal Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface PageRequestQueryParams {
+interface PageDeleteQueryParams {
     tenantId: string;
     API_KEY: string;
 }
