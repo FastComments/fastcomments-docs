@@ -37,6 +37,7 @@ GUIDE_ROOT_FILES.forEach((file) => watcher.add(file));
 const STATIC_ROOT_DIRS = [
     path.join(__dirname, 'static', 'css'),
     path.join(__dirname, 'static', 'images'),
+    path.join(__dirname, 'static', 'images', 'guide-icons'),
     path.join(__dirname, 'static', 'js'),
 ];
 STATIC_ROOT_DIRS.forEach((dir) => {
@@ -48,6 +49,7 @@ STATIC_ROOT_DIRS.forEach((dir) => {
 const STATIC_ROOT_DIRS_TO_GENERATED = {
     [path.join(__dirname, 'static', 'css')]: path.join(__dirname, 'static', 'generated', 'css'),
     [path.join(__dirname, 'static', 'images')]: path.join(__dirname, 'static', 'generated', 'images'),
+    [path.join(__dirname, 'static', 'images', 'guide-icons')]: path.join(__dirname, 'static', 'generated', 'images', 'guide-icons'),
     [path.join(__dirname, 'static', 'js')]: path.join(__dirname, 'static', 'generated', 'js'),
 };
 

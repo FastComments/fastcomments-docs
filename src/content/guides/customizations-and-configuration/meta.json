@@ -118,6 +118,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Automatic HashTag Creation",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
