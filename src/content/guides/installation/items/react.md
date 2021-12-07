@@ -27,6 +27,4 @@ class Example extends Component {
 }
 [inline-code-end]
 
-The fastcomments-vue and fastcomments-vue-next libraries support the same configuration as the VanillaJS commenting widget.
-
 You can find the configuration the React component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.

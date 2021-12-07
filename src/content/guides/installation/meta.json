@@ -23,6 +23,11 @@
       "subCat": "Custom Installations"
     },
     {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Custom Installations"
+    },
+    {
       "name": "Vue",
       "file": "vue.md",
       "subCat": "Custom Installations"
