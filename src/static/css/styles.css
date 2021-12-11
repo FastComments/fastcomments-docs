@@ -8,6 +8,48 @@ body {
     background: #fafafa;
 }
 
+.css-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.css-logo i {
+    display: block;
+    width: 25px;
+    height: 7px;
+    margin-top: 3px;
+    background: #201600
+}
+
+.css-logo i.t {
+    margin-top: 0;
+    border-radius: 0 4px 4px 4px
+}
+
+.css-logo i.m {
+    border-radius: 4px 0 4px 4px
+}
+
+.css-logo i.b {
+    width: 11px;
+    border-radius: 0 4px 4px 4px
+}
+
+@media (max-width: 500px) {
+    .css-logo i.t {
+        border-radius: 0 3px 3px 3px
+    }
+
+    .css-logo i.m {
+        border-radius: 3px 0 3px 3px
+    }
+
+    .css-logo i.b {
+        border-radius: 0 3px 3px 3px
+    }
+}
+
 .text-center {
     text-align: center;
 }
@@ -52,17 +94,6 @@ body {
 .header .header-inner > a, .header .header-inner > div {
     display: inline-block;
     vertical-align: top;
-}
-
-.header .header-inner > a {
-    position: relative;
-    padding-left: 29px;
-}
-
-.header .header-inner > a > img {
-    position: absolute;
-    left: 0;
-    top: 0;
 }
 
 .header a {
