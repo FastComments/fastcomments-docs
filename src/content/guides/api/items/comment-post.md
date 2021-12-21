@@ -21,6 +21,7 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --data '{
 	"urlId": "some-place",
+	"url": "https://exmaple.com/some-page",
 	"comment": "some-comment",
 	"commenterName": "some-commenter-name",
 	"commenterEmail": "fordperfect@spaceship.com",
