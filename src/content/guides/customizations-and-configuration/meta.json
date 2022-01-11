@@ -123,6 +123,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Change The Content Rating of Gifs",
+      "file": "gif-rating.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
