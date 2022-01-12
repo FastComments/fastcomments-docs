@@ -12,4 +12,4 @@ All assets and API calls from Giphy are stripped of information like cookies and
 ### The Gif Content Rating
 
 The content rating of gifs can be customized to be anywhere from `PG` to `R-rated` depending on your audience.
-[Documentation for customizating the content rating is here.](/guide-customizations-and-configuration.html#gif-rating).
+[Documentation for customizing the content rating is here.](/guide-customizations-and-configuration.html#gif-rating)
