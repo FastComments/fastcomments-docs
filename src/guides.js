@@ -161,6 +161,7 @@ function getGuides() {
                 prevGuideUrl: guideIndex > 0 ? createGuideLink(guideOrder[guideIndex - 1]) : null,
                 nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createGuideLink(guideOrder[guideIndex + 1]) : null,
                 url: meta.itemsOrdered.length > 0 ? createGuideLink(guide) : (meta.url ? meta.url : '#'),
+                urlEncoded: encodeURIComponent(meta.itemsOrdered.length > 0 ? 'https://docs.fastcomments.com/' + createGuideLink(guide) : (meta.url ? meta.url : '#')), // is relative path
                 icon: `images/guide-icons/${meta.icon}`,
                 name: meta.name,
                 metaJSONPath,
