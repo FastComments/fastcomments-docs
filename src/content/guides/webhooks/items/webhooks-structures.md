@@ -64,6 +64,8 @@ interface WebhookComment {
     locale: string
     /** The @mentions written in the comment that were successfully parsed. **/
     mentions?: CommentUserMention[]
+    /** The domain the comment is from. **/
+    domain?: string
 }
 [inline-code-end]
 
