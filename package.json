@@ -12,7 +12,8 @@
 		"puppeteer": "^7.1.0",
 		"html-entities": "^2.1.0",
 		"diagrams": "^0.11.0",
-		"filewatcher": "^3.0.1"
+		"filewatcher": "^3.0.1",
+		"unescape": "^1.0.1"
 	},
 	"scripts": {
 		"build-content": "node src/app",

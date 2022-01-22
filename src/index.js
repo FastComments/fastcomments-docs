@@ -3,11 +3,12 @@ const fs = require('fs');
 const axios = require('axios');
 const md5 = require('md5');
 const {htmlToText} = require('html-to-text');
+const htmlDecode = require('unescape');
 
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 const DOC_HASH_DIR = path.join(STATIC_GENERATED_DIR, 'doc-hashes');
 
-fs.mkdirSync(DOC_HASH_DIR, { recursive: true });
+fs.mkdirSync(DOC_HASH_DIR, {recursive: true});
 
 /**
  * @typedef {Object} IndexEntry
@@ -37,7 +38,7 @@ async function addContentToIndex(content, index) {
     }
     const hashPath = path.join(DOC_HASH_DIR, content.urlId + '.hash');
 
-    const contentSanitized = cleanDescription(htmlToText(content.html, {
+    const contentSanitized = cleanDescription(htmlToText(htmlDecode(content.html), {
         wordwrap: 9001,
         tags: {
             'h1': {format: 'heading', options: {uppercase: false}},
@@ -46,10 +47,10 @@ async function addContentToIndex(content, index) {
             'h4': {format: 'heading', options: {uppercase: false}},
             'h5': {format: 'heading', options: {uppercase: false}},
             'h6': {format: 'heading', options: {uppercase: false}},
-            'hr': {format: 'horizontalLine', options: { length: undefined}},
+            'hr': {format: 'horizontalLine', options: {length: undefined}},
             'p': {format: 'paragraph', options: {}},
             'ul': {format: 'unorderedList'},
-            'br': {format: 'lineBreak'},
+            'br': {format: 'lineBreak'}
         }
     }));
 
