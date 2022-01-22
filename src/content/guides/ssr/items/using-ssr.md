@@ -10,7 +10,7 @@ SSR is enabled by default for users without JS enabled as a fallback in the Word
 
 With an already existing application, SSR can be added with the [following example](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr), assuming the language used is PHP:
 
-[inline-code-attrs-start title = 'PHP-Based SSR Example'; type = 'php'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PHP-Based SSR Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 $tenantId = rawurlencode("my-tenant-id");
@@ -33,7 +33,7 @@ $fastcomments_url = "https://fastcomments.com/ssr/comments?tenantId=$tenantId&ur
 
 We can also only show the SSR UI when the user has JS disabled:
 
-[inline-code-attrs-start title = 'PHP-Based SSR Fallback Example'; type = 'php'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PHP-Based SSR Fallback Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 $tenantId = rawurlencode("my-tenant-id");
