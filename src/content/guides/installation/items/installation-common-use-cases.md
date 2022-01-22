@@ -24,4 +24,4 @@ Showing the same comments on multiple sites is something FastComments supports o
 
 ### Changing The Current Page
 
-FastComments supports SPAs and complex applications. Changing the current page is easy, and covered [here](/guide-customizations-and-configuration#switching-comment-threads).
+FastComments supports SPAs and complex applications. Changing the current page is easy, and covered [here](/guide-customizations-and-configuration.html#switching-comment-threads).
