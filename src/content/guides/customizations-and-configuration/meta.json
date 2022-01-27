@@ -123,6 +123,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Notification Bell",
+      "file": "disable-notification-bell.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Change The Content Rating of Gifs",
       "file": "gif-rating.md",
       "subCat": "Look and Feel"
