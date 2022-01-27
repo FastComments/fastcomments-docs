@@ -46,7 +46,7 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 The User object contains the following schema:
 [inline-code-attrs-start title = 'The User Object'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface User {
+interface SSOUser {
     /** Required. 1k Characters Max. **/
     id: string;
     /** Required. 1k Characters Max. Note: Must be unique. **/
@@ -59,12 +59,22 @@ interface User {
     optedInNotifications?: boolean;
     /** Optional. 100 Characters Max. This label will be shown next to their name. Default is Administrator/Moderator when applicable. **/
     displayLabel?: string;
+    /** Optional. 500 Characters Max. This will be shown instead of the username. **/
+    displayName?: string;
     /** Optional. 2k Characters Max. The user's name will link to this. **/
     websiteUrl?: string;
     /** Optional. Up to 100 groups per user. A group id may not be longer than 50 characters. **/
     groupIds?: string[];
+    /** Optional. Denotes the user as an administrator. **/
+    isAdmin?: boolean;
+    /** Optional. Denotes the user as a moderator. **/
+    isModerator?: boolean;
 }
 [inline-code-end]
+
+#### Moderators and Administrators
+
+For admins and moderators, pass the respective `isAdmin` or `isModerator` flags in the `SSOUser` object.
 
 #### Notifications
 
@@ -77,6 +87,8 @@ You can display a special label next to the user's name by using the optional "d
 #### Unauthenticated users
 
 To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+
+These users will not be able to comment, and instead will be presented with a login message (message, link, or button, depending on configuration).
 
 #### Direct Examples for Serializing and Hashing User Data
 
