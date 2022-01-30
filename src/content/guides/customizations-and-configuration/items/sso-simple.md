@@ -4,13 +4,13 @@ With Simple SSO, we can provide the commenting widget with information about the
 
 We can configure Simple SSO as follows:
 
-[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob" }}; linesToHighlight = [6, 7, 8, 9, 10, 11]; title = 'Simple SSO'; code-example-end]
+[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User" }}; linesToHighlight = [6, 7, 8, 9, 10, 11]; title = 'Simple SSO'; code-example-end]
 
-The user won't actually be logged in, but it will appear as so in the commenting widget. When they take any action, we will email them asking to verify it, if an
-email is provided.
+The user will be logged in, and will create an SSO User behind the scenes. The user will have `createdFromSimpleSSO` set to `true` if fetched from the API.
 
 Notes: 
 
-- Providing an email with Simple SSO is not required, however by default their comments will show as "Unverified".
-- If the provided username is not unique, they will be asked for a new username when attempting to comment.
-- While Simple SSO can automatically create users, it **cannot update users**. This is because Simple SSO has no form of authentication - we can't let an anonymous request change a user's name, or avatar, for example.
+- Email is the unique identifier for Simple SSO.
+- Providing an email with Simple SSO is not required, however by default their comments will show as "Unverified". <b>If no email is provided, the user cannot be fully authenticated.</b>
+- **NEW** Since Jan 2022: Usernames do not have to be unique across all of fastcomments.com
+- Simple SSO can automatically create and update SSO users, if an email is provided, and the user was not originally created from Secure SSO.

@@ -27,6 +27,7 @@ interface SSOUser {
     isCommentModeratorAdmin?: boolean;
     /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
     groupIds?: string[] | null;
+    createdFromSimpleSSO?: boolean;
 }
 [inline-code-end]
 
