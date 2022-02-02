@@ -128,6 +128,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Success Message",
+      "file": "disable-success-message.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Change The Content Rating of Gifs",
       "file": "gif-rating.md",
       "subCat": "Look and Feel"
