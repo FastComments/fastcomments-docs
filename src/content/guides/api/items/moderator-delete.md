@@ -11,18 +11,18 @@ curl --request DELETE \
 [inline-code-attrs-start title = 'Moderator Removal Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorDeleteQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Moderator Removal Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorDeleteResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
 }
 [inline-code-end]

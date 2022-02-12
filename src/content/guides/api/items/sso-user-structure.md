@@ -11,23 +11,23 @@ The structure for the SSOUser object is as follows:
 [inline-code-attrs-start title = 'SSOUser Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    id: string;
-    username: string;
-    websiteUrl: string;
-    email: string;
-    signUpDate: number;
-    createdFromUrlId: string;
-    loginCount: number;
-    avatarSrc: string;
-    optedInNotifications: boolean;
-    displayLabel?: string;
-    displayName?: string;
-    isAccountOwner?: boolean;
-    isAdminAdmin?: boolean;
-    isCommentModeratorAdmin?: boolean;
+    id: string
+    username: string
+    websiteUrl: string
+    email: string
+    signUpDate: number
+    createdFromUrlId: string
+    loginCount: number
+    avatarSrc: string
+    optedInNotifications: boolean
+    displayLabel?: string
+    displayName?: string
+    isAccountOwner?: boolean
+    isAdminAdmin?: boolean
+    isCommentModeratorAdmin?: boolean
     /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
-    groupIds?: string[] | null;
-    createdFromSimpleSSO?: boolean;
+    groupIds?: string[] | null
+    createdFromSimpleSSO?: boolean
 }
 [inline-code-end]
 

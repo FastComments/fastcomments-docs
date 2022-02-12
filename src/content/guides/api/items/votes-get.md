@@ -21,25 +21,25 @@ curl --request GET \
 [inline-code-attrs-start title = 'Votes Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotesRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
-    urlId: string;
+    tenantId: string
+    API_KEY: string
+    urlId: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Votes Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotesResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** Authorized, verified votes, applied to their corresponding comments. **/
-    appliedAuthorizedVotes: Vote[];
+    appliedAuthorizedVotes: Vote[]
     /** Anonymous votes, applied to their corresponding comments. **/
-    appliedAnonymousVotes: Vote[];
+    appliedAnonymousVotes: Vote[]
     /** Votes pending verification, not yet applied to their corresponding comments. **/
-    pendingVotes: Vote[];
+    pendingVotes: Vote[]
 }
 [inline-code-end]

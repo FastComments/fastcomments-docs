@@ -13,19 +13,19 @@ curl --request DELETE \
 [inline-code-attrs-start title = 'SSOUser Removal Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUsersDeleteQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'SSOUser Removal Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUsersResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'user-does-not-exist';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'user-does-not-exist'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     user?: SSOUser; // We return the removed user on success.
 }
 [inline-code-end]

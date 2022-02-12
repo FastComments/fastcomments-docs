@@ -11,22 +11,22 @@ curl --request GET \
 [inline-code-attrs-start title = 'HashTag Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagsRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** The page to fetch, starting with 0. **/
-    page: number;
+    page: number
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'HashTag Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagsResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** The hashtags! **/
-    hashTags: HashTag[];
+    hashTags: HashTag[]
 }
 [inline-code-end]

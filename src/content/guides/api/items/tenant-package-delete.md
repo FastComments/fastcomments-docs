@@ -13,18 +13,18 @@ curl --request DELETE \
 [inline-code-attrs-start title = 'TenantPackage Removal Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantPackageDeleteQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'TenantPackage Removal Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantPackageDeleteResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found' | 'unauthorized' | 'package-in-use';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found' | 'unauthorized' | 'package-in-use'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
 }
 [inline-code-end]

@@ -17,35 +17,35 @@ export enum UserDigestEmailFrequency {
 }
 
 export interface TenantUser {
-    id: string;
-    tenantId: string;
-    username: string;
+    id: string
+    tenantId: string
+    username: string
     /** A link to the commenter's blog, for example. **/
-    websiteUrl?: string;
-    email: string;
-    signUpDate: number;
-    createdFromUrlId: string;
-    createdFromTenantId: string;
-    verified: boolean;
-    loginCount: number;
-    optedInNotifications: boolean;
-    optedInTenantNotifications: boolean;
-    hideAccountCode: boolean;
-    avatarSrc?: string;
+    websiteUrl?: string
+    email: string
+    signUpDate: number
+    createdFromUrlId: string
+    createdFromTenantId: string
+    verified: boolean
+    loginCount: number
+    optedInNotifications: boolean
+    optedInTenantNotifications: boolean
+    hideAccountCode: boolean
+    avatarSrc?: string
     /** Does the user receive help requests from commenters? **/
-    isHelpRequestAdmin: boolean;
-    isAccountOwner: boolean;
-    isAdminAdmin: boolean;
-    isBillingAdmin: boolean;
-    isAnalyticsAdmin: boolean;
-    isCustomizationAdmin: boolean;
-    isManageDataAdmin: boolean;
-    isCommentModeratorAdmin: boolean;
-    isAPIAdmin: boolean;
-    moderatorIds: string[];
-    locale: FastCommentsLocale;
-    digestEmailFrequency: UserDigestEmailFrequency;
-    lastLoginDate: string;
-    displayLabel?: string;
+    isHelpRequestAdmin: boolean
+    isAccountOwner: boolean
+    isAdminAdmin: boolean
+    isBillingAdmin: boolean
+    isAnalyticsAdmin: boolean
+    isCustomizationAdmin: boolean
+    isManageDataAdmin: boolean
+    isCommentModeratorAdmin: boolean
+    isAPIAdmin: boolean
+    moderatorIds: string[]
+    locale: FastCommentsLocale
+    digestEmailFrequency: UserDigestEmailFrequency
+    lastLoginDate: string
+    displayLabel?: string
 }
 [inline-code-end]

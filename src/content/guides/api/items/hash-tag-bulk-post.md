@@ -20,19 +20,19 @@ curl --request PATCH \
 [inline-code-attrs-start title = 'HashTag Bulk Create Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagPostQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'HashTag Bulk Create Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagBulkPostResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-hash-tag' | 'tag-does-not-exist' | 'url-too-long' | 'invalid-tag';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-hash-tag' | 'tag-does-not-exist' | 'url-too-long' | 'invalid-tag'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     results?: HashTagPostResponse[]; // We return a list of HashTagPostResponse objects for each provided tag.
 }
 [inline-code-end]

@@ -13,21 +13,21 @@ curl --request GET \
 [inline-code-attrs-start title = 'TenantPackage Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantPackagesRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** The number of tenant packages to skip for pagination. **/
-    skip?: number;
+    skip?: number
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'TenantPackage Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantPackagesResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
     /** Included on failure. **/
-    reason?: string;
-    tenantPackages?: TenantPackage[];
+    reason?: string
+    tenantPackages?: TenantPackage[]
 }
 [inline-code-end]

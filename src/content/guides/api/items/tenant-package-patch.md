@@ -24,8 +24,8 @@ curl --request PATCH \
 [inline-code-attrs-start title = 'TenantPackage PATCH Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantPackagePatchQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
@@ -33,10 +33,10 @@ interface TenantPackagePatchQueryParams {
 [inline-code-start]
 
 interface TenantPackagePatchResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unexpected-param' | 'not-found' | 'white-labeling-not-allowed' | 'name-too-long' | 'for-who-text-too-long' | 'feature-tag-lines-too-long' | 'no-package' | 'invalid-package' | 'unauthorized' | 'child-tenant-too-large' | 'flex-param-missing' | 'unexpected-flex-param' | 'package-limit-reached' | 'flex-param-missing' | 'unexpected-flex-param'; 
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
 }
 [inline-code-end]

@@ -25,17 +25,17 @@ The structure for the `Moderator` object is as follows:
 [inline-code-attrs-start title = 'Moderator Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Moderator {
-    name: string;
-    email: string;
-    tenantId: string;
-    userId?: string|null;
-    acceptedInvite?: boolean;
-    markReviewedCount?: number;
-    deletedCount?: number;
-    markedSpamCount?: number;
-    approvedCount?: number;
-    editedCount?: number;
-    bannedCount?: number;
-    createdAt: string;
+    name: string
+    email: string
+    tenantId: string
+    userId?: string|null
+    acceptedInvite?: boolean
+    markReviewedCount?: number
+    deletedCount?: number
+    markedSpamCount?: number
+    approvedCount?: number
+    editedCount?: number
+    bannedCount?: number
+    createdAt: string
 }
 [inline-code-end]

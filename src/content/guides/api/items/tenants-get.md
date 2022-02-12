@@ -15,21 +15,21 @@ curl --request GET \
 [inline-code-attrs-start title = 'Tenant Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantsRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** The number of tenants to skip for pagination. **/
-    skip?: number;
+    skip?: number
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Tenant Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantsResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
     /** Included on failure. **/
-    reason?: string;
-    tenants?: Tenant[];
+    reason?: string
+    tenants?: Tenant[]
 }
 [inline-code-end]

@@ -25,20 +25,20 @@ This will send an email like `Bob at TenantName is inviting you to be a moderato
 [inline-code-attrs-start title = 'Moderator Invite Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorSendInviteQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** The email sent to the user will appear to be sent from this name. **/
-    fromName: string;
+    fromName: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Moderator Invite Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorSendInviteResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unauthorized' | 'not-found | 'from-name-required' | 'from-name-invalid';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unauthorized' | 'not-found | 'from-name-required' | 'from-name-invalid'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
 }
 [inline-code-end]

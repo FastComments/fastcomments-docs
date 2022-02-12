@@ -7,7 +7,7 @@
 		"uglify-js": "^3.7.3",
 		"shortid": "^2.2.16",
 		"html-to-text": "^6.0.0",
-		"highlight.js": "^10.4.1",
+		"highlight.js": "^11.4.0",
 		"md5": "^2.3.0",
 		"puppeteer": "^7.1.0",
 		"html-entities": "^2.1.0",

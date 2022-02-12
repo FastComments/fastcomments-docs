@@ -15,8 +15,8 @@ curl --request PATCH \
 [inline-code-attrs-start title = 'DomainConfig PATCH Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigPatchQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
@@ -24,12 +24,12 @@ interface DomainConfigPatchQueryParams {
 [inline-code-start]
 
 interface DomainConfigPatchResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'empty-request' | 'internal' | 'invalid-input' | 'missing-domain' | 'domain-does-not-exist' | 'update-would-create-duplicate' | 'domain-too-long' | 'domain-invalid';  
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** The updated configuration. **/
-    configuration?: DomainConfig;
+    configuration?: DomainConfig
 }
 [inline-code-end]

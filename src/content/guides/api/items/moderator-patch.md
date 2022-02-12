@@ -32,8 +32,8 @@ curl --request PATCH \
 [inline-code-attrs-start title = 'Moderator PATCH Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorPatchQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
@@ -41,10 +41,10 @@ interface ModeratorPatchQueryParams {
 [inline-code-start]
 
 interface ModeratorPatchResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'name-required' | 'email-required' | 'unexpected-param' | 'not-found';  
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
 }
 [inline-code-end]

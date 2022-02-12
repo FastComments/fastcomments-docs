@@ -11,21 +11,21 @@ curl --request GET \
 [inline-code-attrs-start title = 'Page By URL ID Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagesRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
-    urlId: string;
+    tenantId: string
+    API_KEY: string
+    urlId: string
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Page by URL ID Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagesResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id'
     /** Included on failure. **/
-    reason?: string;
-    page?: Page[] | null;
+    reason?: string
+    page?: Page[] | null
 }
 [inline-code-end]
 

@@ -13,25 +13,25 @@ curl --request GET \
 [inline-code-attrs-start title = 'TenantDailyUsage Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantDailyUsageQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** Based on UTC. **/
-    yearNumber?: number;
+    yearNumber?: number
     /** Zero-based. Based on UTC. **/
-    monthNumber?: number;
+    monthNumber?: number
     /** One-based. Based on UTC. **/
-    dayNumber?: number;
+    dayNumber?: number
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'TenantDailyUsage Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantDailyUsageResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
     /** Included on failure. **/
-    reason?: string;
-    tenantDailyUsages: TenantDailyUsage[];
+    reason?: string
+    tenantDailyUsages: TenantDailyUsage[]
 }
 [inline-code-end]

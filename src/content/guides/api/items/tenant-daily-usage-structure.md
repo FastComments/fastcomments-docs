@@ -8,22 +8,22 @@ The structure for the `TenantDailyUsage` object is as follows:
 [inline-code-attrs-start title = 'TenantDailyUsage Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface TenantDailyUsage {
-    yearNumber: number;
-    monthNumber: number;
-    dayNumber: number;
-    commentFetchCount?: number;
-    commentCreateCount?: number;
-    conversationCreateCount?: number;
-    voteCount?: number;
-    accountCreatedCount?: number;
-    userMentionSearch?: number;
-    hashTagSearch?: number;
-    gifSearchTrending?: number;
-    gifSearch?: number;
-    apiCreditsUsed?: number;
-    createdAt: string;
-    billed: boolean;
+    yearNumber: number
+    monthNumber: number
+    dayNumber: number
+    commentFetchCount?: number
+    commentCreateCount?: number
+    conversationCreateCount?: number
+    voteCount?: number
+    accountCreatedCount?: number
+    userMentionSearch?: number
+    hashTagSearch?: number
+    gifSearchTrending?: number
+    gifSearch?: number
+    apiCreditsUsed?: number
+    createdAt: string
+    billed: boolean
     /** Ignored for billing. **/
-    ignored: boolean;
+    ignored: boolean
 }
 [inline-code-end]

@@ -43,10 +43,10 @@ curl --request POST \
 [inline-code-start]
 // Note that urlId is not here - it is in the request body.
 interface CommentPostQueryParams {
-    tenantId: string;
-    API_KEY: string;
-    doSpamCheck?: 'true' | 'false';
-    isLive?: 'true' | 'false';
+    tenantId: string
+    API_KEY: string
+    doSpamCheck?: 'true' | 'false'
+    isLive?: 'true' | 'false'
 }
 [inline-code-end]
 
@@ -54,14 +54,14 @@ interface CommentPostQueryParams {
 [inline-code-start]
 
 interface CommentPostResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment';  
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** The created comment. **/
-    comment?: Comment;
+    comment?: Comment
     /** The associated user, which may or may not have already existed. **/
-    user?: User;
+    user?: User
 }
 [inline-code-end]

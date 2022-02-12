@@ -11,27 +11,27 @@ curl --request GET \
 [inline-code-attrs-start title = 'Comments Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
     /** The urlId (page url, or article id) the comments are associated with. **/
-    urlId: string;
+    urlId: string
     /** The page to fetch, starting with 0. Pass -1 for all comments. **/
-    page: number;
+    page: number
     /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
-    direction: 'MR' | 'OF' | 'NF';
+    direction: 'MR' | 'OF' | 'NF'
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Comments Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date';
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date'
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** The comments! **/
-    comments: Comment[];
+    comments: Comment[]
 }
 [inline-code-end]
 

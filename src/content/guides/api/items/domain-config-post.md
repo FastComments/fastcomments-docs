@@ -28,8 +28,8 @@ curl --request POST \
 [inline-code-attrs-start title = 'DomainConfig POST Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigPostQueryParams {
-    tenantId: string;
-    API_KEY: string;
+    tenantId: string
+    API_KEY: string
 }
 [inline-code-end]
 
@@ -37,12 +37,12 @@ interface DomainConfigPostQueryParams {
 [inline-code-start]
 
 interface DomainConfigPostResponse {
-    status: 'success' | 'failed';
+    status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'empty-request' | 'internal' | 'invalid-input' | 'missing-domain' | 'configuration-exists-for-domain' | 'domain-too-long' | 'domain-invalid';  
     /** Included on failure. **/
-    reason?: string;
+    reason?: string
     /** The created configuration. **/
-    configuration?: DomainConfig;
+    configuration?: DomainConfig
 }
 [inline-code-end]

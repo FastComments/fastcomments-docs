@@ -7,11 +7,11 @@ The structure for the `HashTag` object is as follows:
 [inline-code-start]
 interface HashTag {
     /** Should start with the "#" or desired character. **/
-    tag: string;
+    tag: string
     /** An optional URL that the hashtag can point to. Instead of filtering comments by hashtag, the UI will redirect to this upon click. **/
-    url?: string;
+    url?: string
     /** READONLY **/
-    createdAt: string;
+    createdAt: string
 }
 [inline-code-end]
 
