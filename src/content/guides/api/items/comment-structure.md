@@ -7,15 +7,17 @@ The structure for the Comment object is as follows:
 [inline-code-attrs-start title = 'Comment Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    id: string;
+    id: string
     /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
-    userId?: string|null;
+    userId?: string|null
     /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
     urlId: string;
     /** READONLY: The original urlId you passed us. **/
     urlIdRaw?: string;
     /** The URL to the location that this comment is visible, like a blog post. **/
     url: string;
+    /** The domain the comment was posted on. **/
+    domain?: string;
     /** The title of the page this comment was on. **/
     pageTitle?: string;
     /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/

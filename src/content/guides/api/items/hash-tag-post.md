@@ -4,7 +4,7 @@ This route provides the ability to add a single `HashTag`.
 
 [inline-code-attrs-start title = 'HashTag Create cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request PATCH \
+curl --request POST \
   --url 'https://fastcomments.com/api/v1/hash-tags?tenantId=demo&API_KEY=DEMO_API_SECRET' \
   --header 'Content-Type: application/json' \
   --data '{
