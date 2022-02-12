@@ -1,0 +1,26 @@
+{
+  "name": "White Labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "What is White Labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "How to Get White Labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "Setting up White Labeling",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementation"
+    },
+    {
+      "name": "Using The API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementation"
+    }
+  ]
+}
