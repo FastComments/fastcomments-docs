@@ -66,6 +66,8 @@ interface WebhookComment {
     mentions?: CommentUserMention[]
     /** The domain the comment is from. **/
     domain?: string
+    /** The optional list of moderation group ids associated with this comment. **/
+    moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 

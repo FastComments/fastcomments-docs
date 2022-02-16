@@ -56,12 +56,14 @@ interface Comment {
     displayLabel?: string
     /** A star rating. **/
     rating?: number
-    /** Whether or not notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
     notificationSentForParent?: boolean
-    /** Whether or not notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
     notificationSentForParentTenant?: boolean
     /** READONLY: The @mentions written in the comment that were successfully parsed. **/
     mentions?: CommentUserMention[]
+    /** The optional list of moderation group ids associated with this comment. **/
+    moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 

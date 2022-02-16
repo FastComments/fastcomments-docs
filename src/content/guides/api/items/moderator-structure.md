@@ -37,5 +37,6 @@ interface Moderator {
     editedCount?: number
     bannedCount?: number
     createdAt: string
+    moderationGroupIds?: string[]|null
 }
 [inline-code-end]
