@@ -266,6 +266,11 @@
       "name": "Disabling Live Commenting",
       "file": "disable-live-commenting.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Moderation Groups",
+      "file": "moderation-group-ids.md",
+      "subCat": "Misc"
     }
   ]
 }
