@@ -44,6 +44,7 @@ export interface TenantPackage {
     hasDebranding: boolean
     forWhoText: string
     featureTaglines: string[]
+    hasAuditing: boolean
     hasFlexPricing: boolean
     flexPageLoadCostCents?: null
     flexPageLoadUnit?: null

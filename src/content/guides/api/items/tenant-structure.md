@@ -71,5 +71,7 @@ export interface Tenant {
     hasFlexPricing?: boolean
     /** @readonly **/
     flexLastBilledAmount?: number
+    /** @readonly - Is calculated based on packageId. **/
+    hasAuditing?: boolean
 }
 [inline-code-end]
