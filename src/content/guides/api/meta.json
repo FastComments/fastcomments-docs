@@ -13,7 +13,7 @@
       "subCat": "AuditLogs"
     },
     {
-      "name": "GET /api/v1/comments",
+      "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "AuditLogs"
