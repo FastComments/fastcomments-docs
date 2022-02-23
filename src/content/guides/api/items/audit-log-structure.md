@@ -21,3 +21,5 @@ interface AuditLog {
 [inline-code-end]
 
 The audit log is immutable. It also cannot be written to manually. FastComments.com may only decide when to write to the audit log. However, you may read from it via this API.
+
+Events in the audit log expire after two years.
