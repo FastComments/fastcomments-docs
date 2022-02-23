@@ -8,6 +8,17 @@
       "subCat": "API Resources"
     },
     {
+      "name": "AuditLog Structure",
+      "file": "audit-log-structure.md",
+      "subCat": "AuditLogs"
+    },
+    {
+      "name": "GET /api/v1/comments",
+      "file": "audit-logs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "AuditLogs"
+    },
+    {
       "name": "Comment Structure",
       "file": "comment-structure.md",
       "subCat": "Comments"
