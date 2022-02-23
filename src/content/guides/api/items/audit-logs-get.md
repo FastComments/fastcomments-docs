@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-This API uses pagination, provided by the `skip` query parameter. AuditLogs are returned in pages of `1000`, ordered by `createdAt` and `id`.
+This API uses pagination, provided by the `skip` and `after` query parameters. AuditLogs are returned in pages of `1000`, ordered by `createdAt` and `id`.
 
 Fetching every `1000` logs has a credit cost of `10`.
 
