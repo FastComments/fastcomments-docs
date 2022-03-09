@@ -41,6 +41,26 @@ Try our [Chrome extension](https://chrome.google.com/webstore/detail/fastcomment
 configuration the comment widget is being passed. If all fails, take as screenshot of what the chrome extension says
 and [reach out to us](https://fastcomments.com/auth/my-account/help).
 
+### Comments Missing on Same URL With Different Hash Bang
+
+By default, FastComments will use the page URL for the "bucket" where comments are stored. If your URLs include `#hashbangs`, and these `#hashbangs`
+should not be part of the identifier that identifies a comment thread, we can simply ignore the hash bang value, for example:
+
+[inline-code-attrs-start title = 'Ignore Hash Bangs Example'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    tenantId: "demo",
+    url: location.href.replace(location.hash, ''),
+    urlId: location.href.replace(location.hash, '')
+});
+</script>
+[inline-code-end]
+
+Note that after making this change, a migration will have to be preformed. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
+
 ### Not Receiving Emails
 
 At FastComments, we put a lot of work into ensuring our delivery of emails is as reliable as
