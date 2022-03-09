@@ -6,11 +6,13 @@ The callbacks supported are:
 
 - onInit
 - onRender
+- commentCountUpdated
 - onReplySuccess
 - onVoteSuccess
 - onImageClicked
+- onOpenProfile
 
-The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L77).
+The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
 Here's an example with all callbacks used:
 
@@ -27,6 +29,9 @@ Here's an example with all callbacks used:
         onRender: function () {
             console.log('Render event happened!');
         },
+        commentCountUpdated: function (newCount) {
+            console.log('New comment count:', newCount);
+        },
         onReplySuccess: function (comment) {
             console.log('New comment saved!', comment);
         },
@@ -36,6 +41,10 @@ Here's an example with all callbacks used:
         onImageClicked: function (src) {
             console.log('Image clicked!', src);
         },
+        onOpenProfile: function (userId) {
+            console.log('User tried to open profile', userId);
+            // return true; // return true to prevent default behavior (opening fastcomments.com user profile).
+        }
     });
 </script>
 [inline-code-end]
