@@ -5,6 +5,7 @@ The callbacks are specified in the configuration object, with the same signature
 The callbacks supported are:
 
 - onInit
+- onAuthenticationChange
 - onRender
 - commentCountUpdated
 - onReplySuccess
@@ -25,6 +26,9 @@ Here's an example with all callbacks used:
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
+        },
+        onAuthenticationChange: function (eventName, userObj) {
+            console.log('User authenticated!', eventName, userObj);
         },
         onRender: function () {
             console.log('Render event happened!');
