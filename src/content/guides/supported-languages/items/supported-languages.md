@@ -6,6 +6,7 @@ FastComments supports a number of languages, across different locales.
 - Polish (Poland) (pl_pl)
 - German (Germany) (de_de)
 - Italian (Italy) (it_it)
+- Korean (Korea) (ko_kr)
 - Polish (Poland) (pl_pl)
 - Portuguese (Brazilian) (pt_br)
 - Russian (Russia) (ru_ru)
