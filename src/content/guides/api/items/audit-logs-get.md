@@ -1,10 +1,12 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-This API uses pagination, provided by the `skip` parameter. AuditLogs are returned in pages of `1000`, ordered by `when` and `id`.
+This API uses pagination, provided by the `after` and `skip` parameters. AuditLogs are returned in pages of `1000`, ordered by `when` and `id`.
 
 Fetching every `1000` logs has a credit cost of `10`.
 
-You will receive a list with **the newest items first**. This way, you can poll starting with `skip=0`, paginating until you find the last record you've consumed.
+You will receive a list with **the newest items first**. This way, you can poll starting with `after=x` and `skip=0`, paginating until you find the last record you've consumed.
+
+Start with `after=<lastRecordTimestamp>` and `skip=0`. This way, you avoid the entries added to the log caused by API access.
 
 [inline-code-attrs-start title = 'AuditLog cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
