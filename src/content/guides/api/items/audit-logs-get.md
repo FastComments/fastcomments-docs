@@ -18,7 +18,7 @@ interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
     skip?: number
-    /** Date in milliseconds. Be wary when using in combination with skip, as it can be confusing. **/
+    /** Date in milliseconds. **/
     after?: number
 }
 [inline-code-end]
