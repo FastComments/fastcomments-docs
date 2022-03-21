@@ -10,7 +10,7 @@ Alternatively, you can sort oldest-first, and paginate until there are no more r
 
 Sorting can be done by setting `order` to either `ASC` or `DESC`. The default is `ASC`.
 
-Querying by date is possible via `before` and `after` as timestamps with milliseconds.
+Querying by date is possible via `before` and `after` as timestamps with milliseconds. `before` and `after` are NOT inclusive.
 
 [inline-code-attrs-start title = 'AuditLog cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
