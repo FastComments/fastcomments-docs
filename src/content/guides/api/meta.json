@@ -36,6 +36,12 @@
       "subCat": "Comments"
     },
     {
+      "name": "DELETE /api/v1/comments/:id",
+      "file": "comment-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "HashTag Structure",
       "file": "hash-tag-structure.md",
       "subCat": "HashTags"
