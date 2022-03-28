@@ -64,11 +64,11 @@ curl --request POST \
 
 [inline-code-attrs-start title = 'Comment POST Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Note that urlId is not here - it is in the request body.
 interface CommentPostQueryParams {
     tenantId: string
     API_KEY: string
     doSpamCheck?: 'true' | 'false'
+	/** Whether the comment should appear "live" to users viewing instances of the comment widget with the same urlId. NOTE: Doubles credit cost from 1 to 2. **/
     isLive?: 'true' | 'false'
     sendEmails?: 'true' | 'false'
     populateNotifications?: 'true' | 'false'
