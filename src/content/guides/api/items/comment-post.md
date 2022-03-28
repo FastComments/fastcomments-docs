@@ -6,7 +6,7 @@ Common use cases are custom UIs, integrations, or imports.
 
 Notes:
 
-- This API can update the comment widget "live" if desired.
+- This API can update the comment widget "live" if desired (this increases `creditsCost` from `1` to `2`).
 - This API will automatically create user objects in our system if email is provided.
 - Trying to save two comments with different emails, but the same username, will result in an error for the second comment. 
 - If you are specifying `parentId`, and a child comment has `notificationSentForParent` as false, **we will send notifications for the parent comment**. This is done every hour (we batch the notifications together to decrease the number of emails sent).
