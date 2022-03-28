@@ -37,9 +37,9 @@ interface Comment {
     hasLinks?: boolean
     /** READONLY: The unique comment id. **/
     id: string
-    /** READONLY: Is the comment by an admin? **/
+    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? **/
+    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
     isByModerator?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
