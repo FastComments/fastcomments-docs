@@ -28,7 +28,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTen
 }
 
 function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePageFileName, useDemoTenant) {
-    let html = '<div class="code">';
+    let html = `<div class="code language-${type}">`;
     html += `<div class="title">${title}</div>`;
 
     if (isFunctional) {

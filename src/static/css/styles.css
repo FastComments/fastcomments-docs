@@ -394,6 +394,7 @@ input:focus {
 
     .guides .guide {
         display: block;
+
         width: 100%;
         margin: 10px 0;
         box-sizing: border-box;
@@ -422,6 +423,11 @@ input:focus {
     font-family: monospace;
 }
 
+.code.language-typescript .line {
+    /* Because HLJS is broken w/ TS optional types */
+    color: #f92672;
+}
+
 .code .line.highlight {
     background: #383830;
 }
@@ -431,6 +437,7 @@ input:focus {
     width: 14px;
     padding-right: 10px;
     user-select: none;
+    color: #fff;
 }
 
 .contribute-code-snippet, .screenshot-link {
