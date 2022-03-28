@@ -4,7 +4,7 @@ This API endpoint provides the ability to delete a comment.
 
 Notes:
 
-- This API can update the comment widget "live" if desired.
+- This API can update the comment widget "live" if desired (this increases `creditsCost` from `1` to `2`).
 - This API will delete all child comments.
 
 [inline-code-attrs-start title = 'Comment DELETE cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
