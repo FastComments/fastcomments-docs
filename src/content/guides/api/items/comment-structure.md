@@ -46,7 +46,7 @@ interface Comment {
     /** Is the comment spam? **/
     isSpam?: boolean
     /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
-    locale?: de_de | en_us | es_es | fr_fr | it_it | ja_jp | ko_kr | pl_pl | pt_br | ru_ru | tr_tr | zh_cn | zh_tw
+    locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
     /** READONLY: The @mentions written in the comment that were successfully parsed. **/
     mentions?: CommentUserMention[]
     /** Optional metadata associated with the comment. **/
