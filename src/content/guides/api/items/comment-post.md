@@ -81,7 +81,7 @@ interface CommentPostQueryParams {
 interface CommentPostResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email';
     /** Included on failure. **/
     reason?: string
     /** The created comment. **/
