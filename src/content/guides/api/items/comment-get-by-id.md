@@ -25,6 +25,6 @@ interface CommentGetByIdResponse {
     /** Included on failure. **/
     reason?: string
     /** The comment! **/
-    comment: Comment
+    comment?: Comment
 }
 [inline-code-end]
