@@ -17,6 +17,6 @@ interface HashTag {
 
 Notes:
 
-- In some of the API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
+- In some API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
 - Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
  
