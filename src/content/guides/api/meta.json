@@ -30,6 +30,12 @@
       "subCat": "Comments"
     },
     {
+      "name": "GET /api/v1/comments/:id",
+      "file": "comment-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "POST /api/v1/comments",
       "file": "comment-post.md",
       "sidebarItemClasses": "retain-case",
