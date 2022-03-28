@@ -21,7 +21,7 @@ The minimum data required to submit is a comment, that will show in the comment 
 [inline-code-attrs-start title = 'Minimum Comment POST cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
-  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET' \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
   --header 'Content-Type: application/json' \
   --data '{
 	"approved": true,
