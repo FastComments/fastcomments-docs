@@ -50,7 +50,7 @@ interface Comment {
     /** READONLY: The @mentions written in the comment that were successfully parsed. **/
     mentions?: CommentUserMention[]
     /** Optional metadata associated with the comment. **/
-    meta?: Record<string, any>
+    meta?: Record<string, string | number | boolean>
     /** The optional list of moderation group ids associated with this comment. **/
     moderationGroupIds?: string[]|null
     /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
