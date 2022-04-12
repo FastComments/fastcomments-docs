@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users'; creditsCost = 10; api-resource-header-end]
 
-This route returns all SSO Users on your account.
+This route returns SSO Users in pages of `100`. Pagination is provided by the `skip` parameter. Users are sorted by their `signUpDate` and `id`.
 
 [inline-code-attrs-start title = 'SSOUsers cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -13,6 +13,7 @@ curl --request GET \
 interface SSOUsersRequestQueryParams {
     tenantId: string
     API_KEY: string
+    skip?: number
 }
 [inline-code-end]
 
