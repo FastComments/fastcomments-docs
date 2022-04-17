@@ -78,6 +78,11 @@
       "subCat": "Moderation Workflow"
     },
     {
+      "name": "Flagging",
+      "file": "flagging.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
       "name": "Bulk Actions",
       "file": "bulk-actions.md",
       "subCat": "Moderation Workflow"
