@@ -13,7 +13,7 @@ The structure for the SSOUser object is as follows:
 interface SSOUser {
     id: string
     username: string
-    email: string
+    email?: string
     websiteUrl?: string
     signUpDate: number
     createdFromUrlId?: string
