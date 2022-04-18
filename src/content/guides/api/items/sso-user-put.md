@@ -22,6 +22,8 @@ In this example we specify `groupIds` for access control, but this is optional.
 interface SSOUserPutQueryParams {
     tenantId: string
     API_KEY: string
+    /** When email or username is changed, you can set this to true to also update the user's comments. This will double the credit cost. **/
+    updateComments: 'true' | 'false'
 }
 [inline-code-end]
 

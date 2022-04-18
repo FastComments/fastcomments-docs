@@ -15,6 +15,8 @@ curl --request DELETE \
 interface SSOUsersDeleteQueryParams {
     tenantId: string
     API_KEY: string
+    /** You can set this to true to also delete the user's comments. This will double the credit cost. **/
+    deleteComments: 'true' | 'false'
 }
 [inline-code-end]
 

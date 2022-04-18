@@ -17,6 +17,8 @@ curl --request PATCH \
 interface SSOUserPatchQueryParams {
     tenantId: string
     API_KEY: string
+    /** When email or username is changed, you can set this to true to also update the user's comments. This will double the credit cost. **/
+    updateComments: 'true' | 'false'
 }
 [inline-code-end]
 
