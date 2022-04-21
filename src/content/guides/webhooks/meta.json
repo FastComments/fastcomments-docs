@@ -13,6 +13,11 @@
       "subCat": "Overview"
     },
     {
+      "name": "Local Development Setup",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implementation"
+    },
+    {
       "name": "Setup",
       "file": "webhooks-setup.md",
       "subCat": "Implementation"
