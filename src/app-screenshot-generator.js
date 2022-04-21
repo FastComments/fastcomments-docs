@@ -228,6 +228,10 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
             for (const action of actions) {
                 console.log('next action', action);
                 switch (action.type) {
+                    case 'wait':
+                        await page.bringToFront();
+                        await page.waitForSelector(action.selector);
+                        break;
                     case 'click':
                         await page.bringToFront();
                         await page.waitForSelector(action.selector);
