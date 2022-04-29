@@ -51,6 +51,11 @@
       "name": "Debugging Common Issues",
       "file": "debugging-common-issues.md",
       "subCat": "Custom Installations"
+    },
+    {
+      "name": "Notion and Google Sites",
+      "file": "oembed.md",
+      "subCat": "Embedding in Documents"
     }
   ]
 }
