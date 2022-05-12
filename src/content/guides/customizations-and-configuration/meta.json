@@ -143,13 +143,18 @@
       "subCat": "Live Commenting"
     },
     {
-      "name": "Rendering All Comments at Once - Disable Pagination",
-      "file": "starting-page-disable-pagination.md",
+      "name": "Enabling Infinite Scrolling",
+      "file": "enable-infinite-scrolling.md",
       "subCat": "Pagination & Sorting"
     },
     {
       "name": "Changing The Default Sort Direction",
       "file": "default-sort-direction.md",
+      "subCat": "Pagination & Sorting"
+    },
+    {
+      "name": "Rendering All Comments at Once - Disable Pagination",
+      "file": "starting-page-disable-pagination.md",
       "subCat": "Pagination & Sorting"
     },
     {
