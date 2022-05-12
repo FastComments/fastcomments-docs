@@ -3,7 +3,7 @@
 FastComments is designed to be customized. The commenting widget itself runs inside an iframe for security reasons, so to apply
 custom styling you have to follow one of two approaches.
 
-The first, the easiest approach, and preferred by us, is to use the widget customization page.
+The first, the easiest approach, and preferred by us, is to use the [widget customization page](https://fastcomments.com/auth/my-account/customize-widget).
 
 In the widget customization page, see the "Show Advanced Options" section, under which there is an area labeled "Custom CSS":
 
