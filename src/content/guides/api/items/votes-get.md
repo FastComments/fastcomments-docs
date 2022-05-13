@@ -6,9 +6,9 @@ Votes must be fetched by `urlId`.
 
 There are three types of votes:
 
-- Authenticated Votes, which are applied to the corresponding comment.
-- Authenticated Votes, which are **pending** verification, and thus are not yet applied to the comment.
-- Anonymous Votes, which are applied to the corresponding comment.
+- Authenticated Votes, which are applied to the corresponding comment. You can create these via this API.
+- Authenticated Votes, which are **pending** verification, and thus are not yet applied to the comment. These are created when a user uses the FastComments.com *login to vote* mechanism.
+- Anonymous Votes, which are applied to the corresponding comment. These are created along with anonymous commenting.
 
 These are returned in separate lists in the API to reduce confusion.
 

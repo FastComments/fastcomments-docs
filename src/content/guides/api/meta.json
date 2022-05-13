@@ -339,6 +339,24 @@
       "subCat": "Votes"
     },
     {
+      "name": "GET /api/v1/votes/for-user",
+      "file": "votes-get-for-user.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "POST /api/v1/votes",
+      "file": "vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "DELETE /api/v1/votes/:id",
+      "file": "vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
       "name": "DomainConfig Structure",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
