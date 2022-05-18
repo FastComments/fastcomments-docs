@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
-const { groupBy } = require('lodash');
+const {groupBy} = require('lodash');
 const handlebars = require('handlebars');
 const {addContentToIndex} = require('./index');
 const {ExampleTenantId} = require('./utils');
@@ -110,27 +110,27 @@ async function buildGuide(guide, index) {
 }
 
 async function buildGuideFromItems(guide, items) {
-    const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
-    if (fs.existsSync(guideIndexPath)) {
-        const guideIntroHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME), 'utf8'));
-        const guideConclusionHTML = marked(fs.readFileSync(path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME), 'utf8'));
+    const introPath = path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME);
+    const guideIntroHTML = marked(fs.existsSync(introPath) ? fs.readFileSync(introPath, 'utf8') : '');
+    const conclusionPath = path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME);
+    const guideConclusionHTML = marked(fs.existsSync(conclusionPath) ? fs.readFileSync(conclusionPath, 'utf8') : '');
 
-        const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
-            intro: guideIntroHTML,
-            items,
-            itemsBySubCat: groupBy(items, 'subCat'),
-            conclusion: guideConclusionHTML,
-            ...guide
-        });
-        const guideRootHTML = handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
-            content: guideContentHTML
-        });
-        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
-            title: guide.name,
-            content: guideRootHTML,
-            ExampleTenantId: ExampleTenantId
-        }), 'utf8');
-    }
+    const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
+        intro: guideIntroHTML,
+        items,
+        itemsBySubCat: groupBy(items, 'subCat'),
+        conclusion: guideConclusionHTML,
+        ...guide
+    });
+    const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
+    const guideRootHTML = fs.existsSync(guideIndexPath) ? handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
+        content: guideContentHTML
+    }) : guideContentHTML;
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+        title: guide.name,
+        content: guideRootHTML,
+        ExampleTenantId: ExampleTenantId
+    }), 'utf8');
 }
 
 function createGuideLink(id) {
@@ -148,6 +148,9 @@ function getGuides() {
             return;
         }
         const metaJSONPath = path.join(GUIDES_DIR, guide, 'meta.json');
+        if (!fs.existsSync(metaJSONPath)) {
+            return console.warn('Skipping', guide, 'as it does not have a meta.json');
+        }
         const meta = JSON.parse(fs.readFileSync(metaJSONPath, 'utf8'));
         const hasItems = meta.itemsOrdered.length > 0 || meta.url;
         if (hasItems) {

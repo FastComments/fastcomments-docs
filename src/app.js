@@ -58,12 +58,16 @@ const index = {};
         await buildGuide(guide, index);
     }
 
+    const guidesNotInstallation = guides.filter((guide) => !guide.id.startsWith('installation-'));
+    const installationGuides = guides.filter((guide) => guide.id.startsWith('installation-'));
+
     // Store the build id.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
 
     // Create the homepage.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
-        guides,
+        guides: guidesNotInstallation,
+        installationGuides,
         gettingStartedGuides,
         lastUpdateDate: new Date().toLocaleString(),
         buildId
