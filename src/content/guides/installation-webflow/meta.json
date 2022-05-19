@@ -1,19 +1,20 @@
 {
   "name": "Webflow Installation",
+  "pageHeader": "Add Comments to Webflow Sites",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Step One",
+      "name": "Step One: Add an Embed Block",
       "file": "webflow-step-1.md",
       "subCat": "Webflow Installation"
     },
     {
-      "name": "Step Two",
+      "name": "Step Two: Paste Your FastComments.com Code",
       "file": "webflow-step-2.md",
       "subCat": "Webflow Installation"
     },
     {
-      "name": "Step Three",
+      "name": "Step Three: Publish",
       "file": "webflow-step-3.md",
       "subCat": "Webflow Installation"
     },

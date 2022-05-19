@@ -161,6 +161,7 @@ function getGuides() {
 
             result.push({
                 id: guide,
+                pageHeader: meta.pageHeader,
                 prevGuideUrl: guideIndex > 0 ? createGuideLink(guideOrder[guideIndex - 1]) : null,
                 nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createGuideLink(guideOrder[guideIndex + 1]) : null,
                 url: meta.itemsOrdered.length > 0 ? createGuideLink(guide) : (meta.url ? meta.url : '#'),
