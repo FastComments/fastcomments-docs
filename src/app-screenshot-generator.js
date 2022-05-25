@@ -56,6 +56,9 @@ function isImageCacheStale(args, fullPath, fileName) {
 }
 
 function updateImageCache(args, fileName) {
+    if (!fs.existsSync(imageCacheFolder)) {
+        fs.mkdirSync(imageCacheFolder);
+    }
     const imageCacheFilePath = path.join(imageCacheFolder, `${fileName}.json`);
     fs.writeFileSync(imageCacheFilePath, JSON.stringify({
         version: CACHE_FORMAT_VERSION,

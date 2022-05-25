@@ -2,6 +2,7 @@ const path = require('path');
 const vm = require('vm');
 const hljs = require('highlight.js');
 const {createCodeSnippetPage} = require('./code-page-generator');
+const {storeCodeSnippet} = require('./code-snippet-storage');
 
 const StartToken = '[code-example-start';
 const EndToken = 'code-example-end]';
@@ -24,12 +25,15 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
     return result;
 }
 
-function getTemplateWrapped(codeHTML, linesToHighlight, title, isFunctional, filePath, examplePageFileName) {
+function getTemplateWrapped(codeHTML, linesToHighlight, title, isFunctional, filePath, codeSnippetName, examplePageFileName) {
     let html = `<div class="code" id="${title.replace(new RegExp(' ', 'g'), '-').toLowerCase()}">`;
     html += `<div class="title">${title}</div>`;
+    html += '<div class="top-right">';
+    html += `<span class="copy" data-snippet-id="${codeSnippetName}"><span>Copy</span> <img src="/images/copy-white-24px.png" alt="Copy" title="Copy"></span>`;
     if (isFunctional) {
-        html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
+        html += `<a href="/${examplePageFileName}" target="_blank"><span>Run</span> <img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a>`;
     }
+    html += '</div>';
 
     html += getTemplateLinesWithHighlight(hljs.highlight('html', codeHTML).value, linesToHighlight);
     html += '</div>';
@@ -67,12 +71,16 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.str
 </script>
 `;
         const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
-        const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
+        const codeSnippetName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}`;
+        const codeSnippetPageFileName = `${codeSnippetName}.html`;
+        const fullCode = codeHTML + (args.additionalDemoCode ? `\n${args.additionalDemoCode}` : '');
         if (isFunctional) {
-            createCodeSnippetPage(codeHTML + (args.additionalDemoCode ? `\n${args.additionalDemoCode}` : ''), args.title, codeSnippetPageFileName, args.linesToHighlight);
+            createCodeSnippetPage(fullCode, args.title, codeSnippetPageFileName, args.linesToHighlight);
         }
 
-        input = input.substring(0, nextIndex) + getTemplateWrapped(codeHTML, args.linesToHighlight, args.title, isFunctional, filePath, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
+        storeCodeSnippet(fullCode.trim(), codeSnippetName);
+
+        input = input.substring(0, nextIndex) + getTemplateWrapped(codeHTML, args.linesToHighlight, args.title, isFunctional, filePath, codeSnippetName, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;

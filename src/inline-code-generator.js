@@ -2,6 +2,7 @@ const vm = require('vm');
 const hljs = require('highlight.js');
 const path = require('path');
 const {createCodeSnippetPage} = require('./code-page-generator');
+const {storeCodeSnippet} = require('./code-snippet-storage');
 
 const StartToken = '[inline-code-start]';
 const EndToken = '[inline-code-end]';
@@ -27,13 +28,16 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTen
     return result;
 }
 
-function getTemplate(inlineCode, title, type, isFunctional, filePath, examplePageFileName, useDemoTenant) {
+function getTemplate(inlineCode, title, type, isFunctional, filePath, codeSnippetName, examplePageFileName, useDemoTenant) {
     let html = `<div class="code language-${type}">`;
     html += `<div class="title">${title}</div>`;
 
+    html += '<div class="top-right">';
+    html += `<span class="copy" data-snippet-id="${codeSnippetName}"><span>Copy</span> <img src="/images/copy-white-24px.png" alt="Copy" title="Copy"></span>`;
     if (isFunctional) {
-        html += `<div class="contribute-code-snippet"><a href="/${examplePageFileName}" target="_blank"><img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a></div>`;
+        html += `<a href="/${examplePageFileName}" target="_blank"><span>Run</span> <img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a>`;
     }
+    html += '</div>';
 
     html += getTemplateLinesWithHighlight(hljs.highlight(type, inlineCode).value, [], useDemoTenant);
 
@@ -69,7 +73,8 @@ function process(input, filePath) {
 
         delete args.globals;
 
-        const codeSnippetPageFileName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}.html`;
+        const codeSnippetName = `code-${path.basename(filePath).replace('.md', '')}-${args.title.replace(new RegExp(' ', 'g'), '')}`;
+        const codeSnippetPageFileName = `${codeSnippetName}.html`;
         const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
         if (isFunctional) {
             createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
@@ -77,7 +82,9 @@ function process(input, filePath) {
             inlineCode = inlineCode.replace(new RegExp('window.', 'g'), '');
         }
 
-        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetPageFileName, args.useDemoTenant) + input.substring(endTokenIndex + EndToken.length, input.length);
+        storeCodeSnippet(inlineCode.trim(), codeSnippetName);
+
+        input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetName, codeSnippetPageFileName, args.useDemoTenant) + input.substring(endTokenIndex + EndToken.length, input.length);
         if (attrsIndex > -1) {
             // remove the StartAttrsToken + EndAttrsToken
             // but do it after other string manipulation, so logic is simpler

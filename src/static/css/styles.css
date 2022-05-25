@@ -441,7 +441,7 @@ input:focus {
     color: #fff;
 }
 
-.contribute-code-snippet, .screenshot-link {
+.top-right, .screenshot-link {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -449,9 +449,27 @@ input:focus {
     text-align: center;
 }
 
-.contribute-code-snippet a {
-    color: #000;
+.top-right a {
+    color: #fff;
     text-decoration: none;
+}
+
+.top-right > * {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.top-right > * > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top-right .copy {
+    cursor: pointer;
+}
+
+.top-right .copy * {
+    pointer-events: none;
 }
 
 .index-guide-item .index-guide-link img {
