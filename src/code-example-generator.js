@@ -19,7 +19,8 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
         if (lineContent.includes('tenantId')) {
             classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
         }
-        result += `<div class="${classes.join(' ')}"><span class="line-number">${i + 1}</span>${lineContent}</div>`;
+        // using line-content as hack because for some reason span breaks
+        result += `<div class="${classes.join(' ')}"><span class="line-number">${i + 1}</span><line-content class="line-content">${lineContent}</line-content></div>`;
     }
 
     return result;
@@ -77,8 +78,6 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.str
         if (isFunctional) {
             createCodeSnippetPage(fullCode, args.title, codeSnippetPageFileName, args.linesToHighlight);
         }
-
-        storeCodeSnippet(fullCode.trim(), codeSnippetName);
 
         input = input.substring(0, nextIndex) + getTemplateWrapped(codeHTML, args.linesToHighlight, args.title, isFunctional, filePath, codeSnippetName, codeSnippetPageFileName) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);

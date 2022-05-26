@@ -22,7 +22,8 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTen
         if (lineContent.includes('tenantId') && !useDemoTenant) {
             classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
         }
-        result += '<div class="' + classes.join(' ') + '">' + '<span class="line-number">' + (i + 1) + '</span>' + inputSplitByLine[i] + '</div>';
+        // using line-content as hack because for some reason span breaks
+        result += '<div class="' + classes.join(' ') + '">' + '<span class="line-number">' + (i + 1) + '</span><line-content class="line-content">' + inputSplitByLine[i] + '</line-content></div>';
     }
 
     return result;
@@ -81,8 +82,6 @@ function process(input, filePath) {
         } else { // OPTIMIZATION
             inlineCode = inlineCode.replace(new RegExp('window.', 'g'), '');
         }
-
-        storeCodeSnippet(inlineCode.trim(), codeSnippetName);
 
         input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetName, codeSnippetPageFileName, args.useDemoTenant) + input.substring(endTokenIndex + EndToken.length, input.length);
         if (attrsIndex > -1) {
