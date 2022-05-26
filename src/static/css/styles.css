@@ -435,7 +435,7 @@ input:focus {
 
 .code .line .line-number {
     display: inline-block;
-    width: 14px;
+    width: 17px;
     padding-right: 10px;
     user-select: none;
     color: #fff;
