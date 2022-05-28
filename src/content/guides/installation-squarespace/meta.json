@@ -1,0 +1,32 @@
+{
+  "name": "Squarespace Installation",
+  "pageHeader": "Add Comments to Squarespace Sites",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Step One: Open Blog Settings",
+      "file": "squarespace-step-1.md",
+      "subCat": "Squarespace Installation"
+    },
+    {
+      "name": "Step Two: Paste Your FastComments.com Code",
+      "file": "squarespace-step-2.md",
+      "subCat": "Squarespace Installation"
+    },
+    {
+      "name": "Success",
+      "file": "squarespace-success.md",
+      "subCat": "Squarespace Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace Installation"
+    }
+  ]
+}

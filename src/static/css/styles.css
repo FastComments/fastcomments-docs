@@ -343,7 +343,8 @@ input:focus {
 
 .guides .guide .icon-container {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     min-height: 45px;
     vertical-align: middle;
     padding: 5px;

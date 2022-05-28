@@ -24,6 +24,7 @@ Copy the following HTML snippet and paste it into the dialog, and click Update:
                 if (event.data.action === 'reload') {
                     console.log('Updating FastComments:', event.data.url);
                     config.urlId = event.data.url;
+                    config.url = event.data.url;
                     instance.update(config);
                 }
             }

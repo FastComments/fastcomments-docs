@@ -1,0 +1,47 @@
+{
+  "name": "Ghost Installation",
+  "pageHeader": "Add Members-Only Live Commenting to ghost Sites",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Step One: Download Your Theme",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Two: Install Your Theme Locally",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Three: Name The New Theme",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Four: Open The Post Template",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Five: Add The FastComments Code",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Six: Export Your Theme",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Step Seven: Upload The Theme to Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Success!",
+      "file": "ghost-success.md",
+      "subCat": "Ghost Installation"
+    }
+  ]
+}
