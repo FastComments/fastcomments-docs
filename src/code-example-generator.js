@@ -28,16 +28,20 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
 
 function getTemplateWrapped(codeHTML, linesToHighlight, title, isFunctional, filePath, codeSnippetName, examplePageFileName) {
     let html = `<div class="code" id="${title.replace(new RegExp(' ', 'g'), '-').toLowerCase()}">`;
+    html += `<div class="code-head">`;
     html += `<div class="title">${title}</div>`;
     html += '<div class="top-right">';
     html += `<span class="copy" data-snippet-id="${codeSnippetName}"><span>Copy</span> <img src="/images/copy-white-24px.png" alt="Copy" title="Copy"></span>`;
     if (isFunctional) {
         html += `<a href="/${examplePageFileName}" target="_blank"><span>Run</span> <img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a>`;
     }
-    html += '</div>';
+    html += '</div>'; // top-right
+    html += '</div>'; // code-head
 
+    html += `<div class="code-content">`;
     html += getTemplateLinesWithHighlight(hljs.highlight('html', codeHTML).value, linesToHighlight);
-    html += '</div>';
+    html += '</div>'; // code-content
+    html += '</div>'; // code
 
     return html;
 }

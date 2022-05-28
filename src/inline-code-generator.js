@@ -31,6 +31,7 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTen
 
 function getTemplate(inlineCode, title, type, isFunctional, filePath, codeSnippetName, examplePageFileName, useDemoTenant) {
     let html = `<div class="code language-${type}">`;
+    html += `<div class="code-head">`;
     html += `<div class="title">${title}</div>`;
 
     html += '<div class="top-right">';
@@ -38,11 +39,14 @@ function getTemplate(inlineCode, title, type, isFunctional, filePath, codeSnippe
     if (isFunctional) {
         html += `<a href="/${examplePageFileName}" target="_blank"><span>Run</span> <img src="/images/link-external.png" alt="External Link" title="Run This Code Snippet"></a>`;
     }
-    html += '</div>';
+    html += '</div>'; // top-right
+    html += '</div>'; // code-head
 
+    html += `<div class="code-content">`;
     html += getTemplateLinesWithHighlight(hljs.highlight(type, inlineCode).value, [], useDemoTenant);
+    html += '</div>'; // code-content
 
-    html += '</div>';
+    html += '</div>'; // code
 
     return html;
 }

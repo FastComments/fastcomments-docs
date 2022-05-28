@@ -1,7 +1,7 @@
 (function () {
     document.addEventListener('click', async function (e) {
         if (e.target && e.target.classList.contains('copy')) {
-            const textLines = Array.from(e.target.parentNode.parentNode.querySelectorAll('.line .line-content'))
+            const textLines = Array.from(e.target.parentNode.parentNode.parentNode.querySelectorAll('.line .line-content'))
                 .map(function(lineElement) {
                     return lineElement.innerText;
                 });

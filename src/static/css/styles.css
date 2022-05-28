@@ -415,11 +415,14 @@ input:focus {
     color: #fff;
     padding: 5px 0;
     box-shadow: inset 5px 5px 8px rgb(0 0 0);
-    overflow-y: auto;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
-.code .title {
+.code .code-content {
+    overflow-y: auto;
+}
+
+.code .code-head .title {
     padding: 0 10px;
     font-weight: 500;
 }
