@@ -111,6 +111,10 @@ body {
     line-height: 1.5em;
 }
 
+.content h1 {
+    line-height: 1em;
+}
+
 .content-with-sidebar .sidebar {
     display: none;
 }
