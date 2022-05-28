@@ -4,32 +4,32 @@
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Step One: Edit The Correct Page",
+      "name": "Step 1: Edit The Correct Page",
       "file": "wix-step-1.md",
       "subCat": "Wix Installation"
     },
     {
-      "name": "Step Two: Add an Embed Block",
+      "name": "Step 2: Add an Embed Block",
       "file": "wix-step-2.md",
       "subCat": "Wix Installation"
     },
     {
-      "name": "Step Three: Copy/Paste Custom Code",
+      "name": "Step 3: Copy/Paste Custom Code",
       "file": "wix-step-3.md",
       "subCat": "Wix Installation"
     },
     {
-      "name": "Step Four: Resize",
+      "name": "Step 4: Resize",
       "file": "wix-step-4.md",
       "subCat": "Wix Installation"
     },
     {
-      "name": "Step Five: Unique Comment Threads",
+      "name": "Step 5: Unique Comment Threads",
       "file": "wix-step-5.md",
       "subCat": "Wix Installation"
     },
     {
-      "name": "Step Six: Celebrate",
+      "name": "Step 6: Celebrate",
       "file": "wix-step-6.md",
       "subCat": "Wix Installation"
     },

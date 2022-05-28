@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
-      "name": "Step One: Open Blog Settings",
+      "name": "Step 1: Open Blog Settings",
       "file": "weebly-step-1.md",
       "subCat": "Weebly Installation"
     },
     {
-      "name": "Step Two: Add The FastComments.com Code",
+      "name": "Step 2: Add The FastComments.com Code",
       "file": "weebly-step-2.md",
       "subCat": "Weebly Installation"
     },
     {
-      "name": "Step Three: Publish!",
+      "name": "Step 3: Publish!",
       "file": "weebly-step-3.md",
       "subCat": "Weebly Installation"
     },

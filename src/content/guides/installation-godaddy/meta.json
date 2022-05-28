@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "Step One: Add a Code Area",
+      "name": "Step 1: Add a Code Area",
       "file": "godaddy-step-1.md",
       "subCat": "Godaddy Installation"
     },
     {
-      "name": "Step Two: Add FastComments.com Code",
+      "name": "Step 2: Add FastComments.com Code",
       "file": "godaddy-step-2.md",
       "subCat": "Godaddy Installation"
     },
     {
-      "name": "Step Three: Publish",
+      "name": "Step 3: Publish",
       "file": "godaddy-step-3.md",
       "subCat": "Godaddy Installation"
     },

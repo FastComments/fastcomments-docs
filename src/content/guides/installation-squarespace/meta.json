@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Step One: Open Blog Settings",
+      "name": "Step 1: Open Blog Settings",
       "file": "squarespace-step-1.md",
       "subCat": "Squarespace Installation"
     },
     {
-      "name": "Step Two: Paste Your FastComments.com Code",
+      "name": "Step 2: Paste Your FastComments.com Code",
       "file": "squarespace-step-2.md",
       "subCat": "Squarespace Installation"
     },

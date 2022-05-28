@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Step One: Add an Embed Block",
+      "name": "Step 1: Add an Embed Block",
       "file": "webflow-step-1.md",
       "subCat": "Webflow Installation"
     },
     {
-      "name": "Step Two: Paste Your FastComments.com Code",
+      "name": "Step 2: Paste Your FastComments.com Code",
       "file": "webflow-step-2.md",
       "subCat": "Webflow Installation"
     },
     {
-      "name": "Step Three: Publish",
+      "name": "Step 3: Publish",
       "file": "webflow-step-3.md",
       "subCat": "Webflow Installation"
     },
