@@ -42,6 +42,16 @@
       "name": "Success!",
       "file": "ghost-success.md",
       "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost Installation"
     }
   ]
 }
