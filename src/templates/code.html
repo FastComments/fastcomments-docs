@@ -22,7 +22,9 @@
 <body>
 <div class="header">
     <div class="header-inner">
-        <a href="/"><div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>FastComments.com</a>
+        <a href="/">
+            <div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>
+            FastComments.com</a>
     </div>
 </div>
 <div class="content">
@@ -90,6 +92,12 @@
                     input.value = input.value.replace(ExampleTenantId, sessionInfo.tenantId);
                     input.value = input.value.replace('"demo"', `"${sessionInfo.tenantId}"`);
                     input.value = input.value.replace('\'demo\'', `"${sessionInfo.tenantId}"`);
+                    if (sessionInfo.FC_CDN !== 'cdn.fastcomments.com') {
+                        input.value = input.value.replace('https://cdn.fastcomments.com', sessionInfo.FC_CDN);
+                    }
+                    if (sessionInfo.FC_SITE !== 'fastcomments.com') {
+                        input.value = input.value.replace('https://fastcomments.com', sessionInfo.FC_SITE);
+                    }
                     setup();
                 } else {
                     setup();

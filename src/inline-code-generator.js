@@ -22,6 +22,9 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight, useDemoTen
         if (lineContent.includes('tenantId') && !useDemoTenant) {
             classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
         }
+        if (lineContent.includes('http')) {
+            classes.push('has-url');
+        }
         // using line-content as hack because for some reason span breaks
         result += '<div class="' + classes.join(' ') + '">' + '<span class="line-number">' + (i + 1) + '</span><line-content class="line-content">' + inputSplitByLine[i] + '</line-content></div>';
     }

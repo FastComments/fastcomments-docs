@@ -2,7 +2,6 @@ const path = require('path');
 const vm = require('vm');
 const hljs = require('highlight.js');
 const {createCodeSnippetPage} = require('./code-page-generator');
-const {storeCodeSnippet} = require('./code-snippet-storage');
 
 const StartToken = '[code-example-start';
 const EndToken = 'code-example-end]';
@@ -18,6 +17,9 @@ function getTemplateLinesWithHighlight(inputString, linesToHighlight) {
         }
         if (lineContent.includes('tenantId')) {
             classes.push('has-tenant-id'); // this is to optimize a query to the DOM that replaces the example tenant id with the real one
+        }
+        if (lineContent.includes('http')) {
+            classes.push('has-url');
         }
         // using line-content as hack because for some reason span breaks
         result += `<div class="${classes.join(' ')}"><span class="line-number">${i + 1}</span><line-content class="line-content">${lineContent}</line-content></div>`;

@@ -15,7 +15,9 @@
 <body>
 <div class="header">
     <div class="header-inner">
-        <a href="/"><div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>FastComments.com</a>
+        <a href="/">
+            <div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>
+            FastComments.com</a>
     </div>
 </div>
 <div class="content">
@@ -33,6 +35,15 @@
                         if (lineWithTenantId) {
                             lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace(ExampleTenantId, sessionInfo.tenantId);
                             lineWithTenantId.innerHTML = lineWithTenantId.innerHTML.replace('demo', sessionInfo.tenantId);
+                        }
+                    }
+                    const lineWithURL = container.querySelector('.has-url');
+                    if (lineWithURL) {
+                        if (sessionInfo.FC_CDN !== 'cdn.fastcomments.com') {
+                            lineWithURL.innerHTML = lineWithURL.innerHTML.replace('https://cdn.fastcomments.com', sessionInfo.FC_CDN);
+                        }
+                        if (sessionInfo.FC_SITE !== 'fastcomments.com') {
+                            lineWithURL.innerHTML = lineWithURL.innerHTML.replace('https://fastcomments.com', sessionInfo.FC_SITE);
                         }
                     }
                 });
