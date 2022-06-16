@@ -2,6 +2,12 @@
 
 This route provides the removal of a `TenantUser` by id.
 
+Deleting the user's comments is possible via the `deleteComments` query parameter. Note that if this is true:
+
+1. All the user's comments will be deleted live.
+2. All __child__ (now orphan) comments will also be deleted.
+3. The `creditsCost` becomes `2`.
+
 [inline-code-attrs-start title = 'TenantUser Removal cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request DELETE \
