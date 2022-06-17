@@ -1,9 +1,7 @@
 (function () {
     window.getSessionInfo = async function getSessionInfo(cb) {
-        const xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
         // first try US/global session store and then check EU.
-        const sessionEndpoints = location.hostname === 'localhost' ?
+        const sessionEndpoints = false && location.hostname === 'localhost' ?
             ['http://localhost:3001/auth/session-info'] :
             [
                 'https://fastcomments.com/auth/session-info',
@@ -12,6 +10,8 @@
 
         function doGet(uri) {
             return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
                 xhr.open('GET', uri);
                 xhr.onload = function () {
                     if (xhr.status === 200) {
