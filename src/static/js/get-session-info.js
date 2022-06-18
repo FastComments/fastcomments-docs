@@ -1,7 +1,7 @@
 (function () {
     window.getSessionInfo = async function getSessionInfo(cb) {
         // first try US/global session store and then check EU.
-        const sessionEndpoints = false && location.hostname === 'localhost' ?
+        const sessionEndpoints = location.hostname === 'localhost' ?
             ['http://localhost:3001/auth/session-info'] :
             [
                 'https://fastcomments.com/auth/session-info',

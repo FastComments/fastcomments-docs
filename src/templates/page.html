@@ -28,8 +28,8 @@
         const ExampleTenantId = JSON.parse(`"{{{ExampleTenantId}}}"`);
         window.getSessionInfo(function (sessionInfo) {
             if (sessionInfo.authenticated && sessionInfo.tenantId) {
-                const containers = document.querySelectorAll('.code');
-                containers.forEach(function (container) {
+                const codeContainers = document.querySelectorAll('.code');
+                codeContainers.forEach(function (container) {
                     if (container.id !== 'demo-tenant-id') {
                         const lineWithTenantId = container.querySelector('.has-tenant-id');
                         if (lineWithTenantId) {
@@ -39,14 +39,20 @@
                     }
                     const lineWithURL = container.querySelector('.has-url');
                     if (lineWithURL) {
-                        if (sessionInfo.FC_CDN !== 'cdn.fastcomments.com') {
+                        if (sessionInfo.FC_CDN !== 'https://cdn.fastcomments.com') {
                             lineWithURL.innerHTML = lineWithURL.innerHTML.replace('https://cdn.fastcomments.com', sessionInfo.FC_CDN);
                         }
-                        if (sessionInfo.FC_SITE !== 'fastcomments.com') {
+                        if (sessionInfo.FC_SITE !== 'https://fastcomments.com') {
                             lineWithURL.innerHTML = lineWithURL.innerHTML.replace('https://fastcomments.com', sessionInfo.FC_SITE);
                         }
                     }
                 });
+                if (sessionInfo.FC_SITE !== 'https://fastcomments.com') {
+                    const containersWithSiteLink = document.querySelectorAll('.has-site-link');
+                    containersWithSiteLink.forEach(function (container) {
+                        container.innerHTML = container.innerHTML.replaceAll('https://fastcomments.com', sessionInfo.FC_SITE);
+                    });
+                }
             }
         });
     })();

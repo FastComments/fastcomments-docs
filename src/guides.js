@@ -87,7 +87,8 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         file: metaItem.file,
         subCat: metaItem.subCat,
         sidebarItemClasses: metaItem.sidebarItemClasses,
-        content: html
+        content: html,
+        itemClasses: html.includes('https://fastcomments.com') ? 'has-site-link' : '' // determine this at build time, so we can use a hack to quickly replace all the fastcomments.com links to eu.fastcomments.com
     };
 }
 
