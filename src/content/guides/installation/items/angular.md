@@ -61,6 +61,11 @@ Since the configuration can get quite complicated, we can pass in an object refe
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
 
+[inline-code-attrs-start title = 'Usage - EU'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
+[inline-code-end]
+
 The widget uses change detection, so changing any properties of the configuration object will cause it to be reloaded.
 
 You can find the configuration the Angular component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.

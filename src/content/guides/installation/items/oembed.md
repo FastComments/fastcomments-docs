@@ -9,6 +9,7 @@ For adding commenting to Notion docs, [see the explanation video here](https://b
 Google Sites is also supported, and the flow is similar.
 
 1. [Create a conversation to embed.](https://fastcomments.com/create)
+   1. **If you're in the EU** then use [eu.fastcomments.com/create](https://eu.fastcomments.com/create)
 2. When editing your Google Site, navigate to `Insert` -> `Embed`. Select `By URL`.
 3. Paste the URL from Step 1.
 4. Hit `Insert`. Done!

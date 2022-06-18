@@ -33,4 +33,17 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   );
 [inline-code-end]
 
+If you're in the EU, you'll want to set the `region` parameter:
+
+[inline-code-attrs-start title = 'React Native - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+  // ...
+  const config = {
+    tenantId: tenantId,
+    urlId: pageId,
+    region: 'eu'
+  };
+  // ...
+[inline-code-end]
+
 You can find the configuration the React Native component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.

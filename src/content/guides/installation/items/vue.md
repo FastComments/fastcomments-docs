@@ -39,6 +39,13 @@ export default {
 </script>
 [inline-code-end]
 
+If you're in the EU, you'll want to set the `region` to `EU`:
+
+[inline-code-attrs-start title = 'FastComments Vue - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<fast-comments v-bind:config="{tenantId: 'demo', region: 'eu'}"/>
+[inline-code-end]
+
 The `fastcomments-vue` and `fastcomments-vue-next` libraries support the same configuration as the VanillaJS commenting widget.
 
 You can find the configuration the Vue component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.
