@@ -21,11 +21,11 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const myTenantId = 'demo'; // Your tenant id. Can be fetched from https://fastcomments.com/auth/my-account/api-secret
-  const myAppPageId = 'native-test'; // the ID or URL of the comment thread in your app.
+  const tenantId = 'demo'; // Your tenant id. Can be fetched from https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // the ID or URL of the comment thread in your app.
   const config = {
-    tenantId: myTenantId,
-    urlId: myAppPageId
+    tenantId: tenantId,
+    urlId: pageId
   };
 
   return (
