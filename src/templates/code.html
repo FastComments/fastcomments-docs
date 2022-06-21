@@ -43,7 +43,16 @@
             const input = document.getElementById('code-input');
             const iframe = document.getElementById('iframe');
 
-            function setup() {
+            function setup(userId) {
+                if (userId) {
+                    // hack to keep user's comments on page reload since createObjectURL creates urls with uuids that reference location in browser memory
+                    const endOfConfig = `\n});\n${decodeURIComponent('%3C%2Fscript%3E')}`;
+                    console.log(input.value, input.value.includes(endOfConfig));
+                    if (input.value.includes(endOfConfig)) {
+                        input.value = input.value.replace(endOfConfig, `,\n    "urlId": "demo-session-${userId}" /\/\ just so your comments persist in this demo` + endOfConfig + '');
+                    }
+                }
+
                 const editor = CodeMirror.fromTextArea(input, {
                     lineNumbers: true,
                     styleSelectedText: true,
@@ -98,11 +107,13 @@
                     if (sessionInfo.FC_SITE !== 'fastcomments.com') {
                         input.value = input.value.replace('https://fastcomments.com', sessionInfo.FC_SITE);
                     }
-                    setup();
+                    setup(sessionInfo.userId);
                 } else {
-                    setup();
+                    setup(sessionInfo.userId);
                 }
-            }, setup);
+            }, function() {
+                setup(); // so we don't pass error as userId
+            });
         })();
     </script>
     <style>
