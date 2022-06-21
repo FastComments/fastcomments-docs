@@ -4,7 +4,7 @@ With Simple SSO, we can provide the commenting widget with information about the
 
 We can configure Simple SSO as follows:
 
-[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User" }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12, 13]; title = 'Simple SSO'; code-example-end]
+[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User", loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout' }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; title = 'Simple SSO'; code-example-end]
 
 The user will be logged in, and will create an SSO User behind the scenes. The user will have `createdFromSimpleSSO` set to `true` if fetched from the API.
 
