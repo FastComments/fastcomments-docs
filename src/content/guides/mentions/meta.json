@@ -21,6 +21,11 @@
       "name": "How Mentions Autocomplete Works",
       "file": "how-mentions-autocomplete-works.md",
       "subCat": "Using Mentions"
+    },
+    {
+      "name": "Populating Mentions",
+      "file": "populating-mentions.md",
+      "subCat": "Setting Up Mentions"
     }
   ]
 }
