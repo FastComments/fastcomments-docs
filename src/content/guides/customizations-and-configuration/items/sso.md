@@ -58,7 +58,7 @@ If you want to remove values using this approach then set them to `null` (not `u
 
 #### Secure SSO API
 
-We also provide an API for interacting with the SSO users. See [the docs](/guide-api#sso-user-structure).
+We also provide an API for interacting with the SSO users. See [the docs](/guide-api.html#sso-user-structure).
 
 ### Option Two - Simple SSO
 

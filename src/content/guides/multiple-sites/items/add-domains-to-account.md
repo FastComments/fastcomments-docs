@@ -20,4 +20,4 @@ after this time they must be added explicitly for security.
 
 #### Via The API
 
-Domains can also be added and configured [via the DomainConfigs API](/guide-api#domain-config-structure).
+Domains can also be added and configured [via the DomainConfigs API](/guide-api.html#domain-config-structure).
