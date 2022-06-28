@@ -19,11 +19,11 @@ interface WebhookComment {
     /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
     /** The URL that points to where the comment was left. **/
-    url: string
+    url?: string
     /** The user id that left the comment. If SSO, prefixed with tenant id. **/
-    userId: string
+    userId?: string
     /** The email of the user left the comment. **/
-    commenterEmail: string
+    commenterEmail?: string
     /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
     /** Raw comment text. **/
@@ -31,7 +31,7 @@ interface WebhookComment {
     /** Comment text after parsing. **/
     commentHTML: string
     /** The id of the parent comment. **/
-    parentId: string
+    parentId?: string | null
     /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
     /** Combined karma (up - down) of votes. **/
@@ -44,8 +44,8 @@ interface WebhookComment {
     verifiedDate?: number
     /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was used with SSO. **/
-    avatarSrc: string
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    avatarSrc?: string
     /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
     /** Was the comment automatically marked as spam? **/
