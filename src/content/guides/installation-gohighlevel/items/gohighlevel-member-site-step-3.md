@@ -36,6 +36,9 @@ with GoHighLevel:
                 const container = document.querySelector('#post-body');
                 if (container) {
                     console.log('FastComments: container found, updating...');
+                    if (document.querySelector('.fastcomments-wrapper')) {
+                        document.querySelector('.fastcomments-wrapper').remove();
+                    }
                     const target = document.createElement('div');
                     target.classList.add('fastcomments-wrapper');
                     container.append(target);
@@ -44,15 +47,17 @@ with GoHighLevel:
                         showLiveRightAway: true
                     });
                     rendered = true;
-                    setInterval(function() {
+                    const interval = setInterval(function() {
                         const doesContainerStillExist = document.querySelector('.fastcomments-wrapper');
                         if (!doesContainerStillExist) {
-                            render();
+                            rendered = false;
+                            tryNext();
+                            clearInterval(interval);
                         }
                     }, 1000);
                 } else {
                     console.log('FastComments: container not found, waiting...');
-                    setInterval(tryNext, 300);
+                    setTimeout(tryNext, 300);
                 }
             }
 
