@@ -1,0 +1,67 @@
+{
+  "name": "GoHighLevel Installation",
+  "pageHeader": "Add Comments to GoHighLevel Sites",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Edit Course",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Step 2: Open Advanced Settings",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Step 3: Copy Code",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Step 4: Paste Code",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Member Site Success",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Member Site Domain Errors",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Member Site Customization",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "GoHighLevel Member Site Installation"
+    },
+    {
+      "name": "Step 1: Add Custom Code Element",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "GoHighLevel Site Installation"
+    },
+    {
+      "name": "Step 2: Copy and Paste Code",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "GoHighLevel Site Installation"
+    },
+    {
+      "name": "Site Success",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "GoHighLevel Site Installation"
+    },
+    {
+      "name": "Site Domain Errors",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "GoHighLevel Site Installation"
+    },
+    {
+      "name": "Site Customization",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "GoHighLevel Site Installation"
+    }
+  ]
+}
