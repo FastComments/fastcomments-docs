@@ -10,7 +10,7 @@ Copy the following code:
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        if (top.location.pathname && top.location.pathname !== '/' && top.location.pathname.length > 1) {
+        if (top.location.pathname && top.location.pathname.startsWith('/f')) {
             FastCommentsUI(document.getElementById('fastcomments-widget'), {
                 tenantId: "demo",
                 pageTitle: top.document.title,
