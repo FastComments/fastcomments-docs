@@ -1,0 +1,67 @@
+{
+  "name": "WordPress Installation",
+  "pageHeader": "Add Live Commenting to WordPress Sites",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Moderation",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Users, Moderators and Admins",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Membership-Only Sites (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Notifications",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Custom Themes",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Syncing Back to WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Comment Counts",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "WordPress Installation <> FastComment Server Communication",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress Installation"
+    },
+    {
+      "name": "Deactivating vs Uninstalling The Plugin",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Plugin Removal"
+    }
+  ]
+}
