@@ -15,7 +15,7 @@ interface Page {
     createdAt: string
     commentCount: number
     rootCommentCount: number
-    /** Setting this to null means all SSO users can see the page. An empty list means it is closed to call users. **/
+    /** Setting this to null means all SSO users can see the page. An empty list means it is closed to all users. **/
     accessibleByGroupIds?: string[] | null
 }
 [inline-code-end]
