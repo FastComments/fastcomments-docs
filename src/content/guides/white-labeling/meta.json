@@ -18,9 +18,19 @@
       "subCat": "Implementation"
     },
     {
+      "name": "Using The Dashboard",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementation"
+    },
+    {
       "name": "Using The API",
       "file": "white-labeling-using-the-api.md",
       "subCat": "Implementation"
+    },
+    {
+      "name": "Manging White Labeled Tenants",
+      "file": "white-labeling-managing.md",
+      "subCat": "Tenant Management"
     }
   ]
 }
