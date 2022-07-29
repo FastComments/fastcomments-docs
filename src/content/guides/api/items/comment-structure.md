@@ -29,7 +29,7 @@ interface Comment {
     displayLabel?: string
     /** The domain the comment was posted on. **/
     domain?: string
-    /** The number of times the comment was flagged. **/
+    /** READONLY: The number of times the comment was flagged. **/
     flagCount?: number
     /** READONLY: The #hashtags written in the comment that were successfully parsed. **/
     hashTags?: CommentHashTag[]
