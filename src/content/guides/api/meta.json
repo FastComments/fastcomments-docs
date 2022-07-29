@@ -48,6 +48,18 @@
       "subCat": "Comments"
     },
     {
+      "name": "POST /api/v1/comments/:id/flag",
+      "file": "comment-flag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-flag",
+      "file": "comment-unflag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "HashTag Structure",
       "file": "hash-tag-structure.md",
       "subCat": "HashTags"
