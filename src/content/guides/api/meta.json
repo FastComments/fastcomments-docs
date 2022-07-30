@@ -60,6 +60,18 @@
       "subCat": "Comments"
     },
     {
+      "name": "POST /api/v1/comments/:id/block",
+      "file": "comment-block.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-block",
+      "file": "comment-unblock.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "HashTag Structure",
       "file": "hash-tag-structure.md",
       "subCat": "HashTags"
