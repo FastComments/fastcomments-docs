@@ -39,14 +39,22 @@ interface Comment {
     hasLinks?: boolean
     /** READONLY: The unique comment id. **/
     id: string
+    /** READONLY: Did the current user block the user that wrote this comment? **/
+    isBlocked?: boolean
     /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
     isByAdmin?: boolean
     /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
     isByModerator?: boolean
+    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    isFlagged?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
     /** Is the comment spam? **/
     isSpam?: boolean
+    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    isVotedDown?: boolean
+    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    isVotedUp?: boolean
     /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
     /** READONLY: The @mentions written in the comment that were successfully parsed. **/
@@ -55,6 +63,8 @@ interface Comment {
     meta?: Record<string, string | number | boolean>
     /** The optional list of moderation group ids associated with this comment. **/
     moderationGroupIds?: string[]|null
+    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    myVoteId?: string
     /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
     notificationSentForParent?: boolean
     /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
