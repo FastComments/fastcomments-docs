@@ -98,6 +98,22 @@ interface Comment {
 
 Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
 
+### Comment Text Structure
+
+Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
+
+Text is stored in two fields. The text the user entered is stored unmodified in the `comment` field. This is rendered and stored in the `commentHTML` field.
+
+The allowed HTML tags are `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
+
+It's recommended to render the HTML, since it is a very small subset of HTML, building a renderer is pretty straightforward. There are multiple libraries for React Native and Flutter, for instance, to help with this
+
+You may choose to render the un-normalized value of the `comment` field. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+
+The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
+
+### Tagging
+
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
@@ -116,6 +132,8 @@ interface CommentUserMention {
     sent: boolean
 }
 [inline-code-end]
+
+### HashTags
 
 When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
 has the following structure.
