@@ -10,6 +10,30 @@ All account types currently get access to SSO. However, the max number of SSO us
 
 Let's compare the options, and then go into details of each.
 
+### User and Comment Migrations
+
+When migrating from a platform with SSO like Disqus, you will already have users and their comments.
+
+Comments are imported as part of your migration, either by the API, our import UI, or customer support. The import UI is preferred if it supports the platform you
+are migrating from, as it incorporates error handling, avatar and media extraction and uploads, and a batch job monitoring system.
+
+The users themselves are added automatically when viewing comment threads for the first time. Alternatively, they can be pre-added via the API, but this work does not have
+many advantages.
+
+If comments are imported, and SSO users are not added manually via the API, then comments will automatically be migrated to the user's account the first
+time it is created when they view any comment thread. They will then be able to manage, edit, and delete the comments they originally wrote.
+
+If it is desired to import your comments and users at once, work with support to migrate the comments over to the users' respective accounts after users are imported
+via the API.
+
+So to summarize the easiest path to take for the migration is:
+
+1. Import comments.
+   1. Avatars and other media is migrated automatically if using the Import UI in `Manage Data -> Imports`.
+2. Setup Secure or Simple SSO.
+3. Let the migration happen per-user automatically when they log in for the first time.
+   1. This usually adds less than a second to the page load time if the user has less than 50k comments.
+
 ### WordPress Users
 If you're using our <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress plugin</a> then there is no code to write! Simply go to the plugin's Admin page, click SSO Settings, and then Enable.
 
