@@ -23,7 +23,8 @@ many advantages.
 If comments are imported, and SSO users are not added manually via the API, then comments will automatically be migrated to the user's account the first
 time it is created when they view any comment thread. They will then be able to manage, edit, and delete the comments they originally wrote.
 
-The automatic migration is done via email or username. Some platforms do not provide emails on export, like Disqus, so we fallback to username in this case.
+The automatic migration is done via email or username. Some platforms do not provide emails on export, like Disqus, so we fall back to username in this case.
+- As long as you pass a matching username, and an email in the SSO payload, we will add the email to the individual comment objects so that notifications and mentions work.
 
 If it is desired to import your comments and users at once, work with support to migrate the comments over to the users' respective accounts after users are imported
 via the API.
