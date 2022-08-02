@@ -59,7 +59,7 @@ As long as you create a valid payload, the user will always have a seamless comm
 With Secure SSO, the SSO payload is created **server-side** using HMAC authentication and then passed to the widget on the **client**.
 
 With Secure SSO, the user's account is **completely separate** from the rest of the FastComments user-base. This means if we have two partners
-Company A and Company B, each can have an SSO user with the username "Bob". This is not possible with **Simple** SSO if emails are provided.
+Company A and Company B, each can have an SSO user with the username "Bob".
 
 #### Requirements
 - Some basic knowledge around backend development.
@@ -84,19 +84,15 @@ If you want to remove values using this approach then set them to `null` (not `u
 
 We also provide an API for interacting with the SSO users. See [the docs](/guide-api.html#sso-user-structure).
 
+Note that when using Secure SSO, users are automatically created behind the scenes on page load. You do not have to bulk import your users.
+
 ### Option Two - Simple SSO
 
-The alternative to Secure SSO is to simply pass the user information to the commenting widget. They won't actually be logged in, but it
-will appear as so in the commenting widget. The reason for this is we can't actually create a "session" - however instead we will
-email them when they take action like commenting or voting to verify their activity, without ever asking them for their username or email.
+The alternative to Secure SSO is to simply pass the user information to the commenting widget.
 
-Note that providing an email with Simple SSO is not required, however by default their comments will show as "Unverified".
+Providing an email with Simple SSO is not required, however without this their comments will show as "Unverified".
 
-However, if invalid information is provided, for example: An email is provided along with a username, Bob. However, there is already a FastComments
-user with the user Bob. So, when the user goes to comment, they would get an error to pick a different username. This is one of the trade-offs of using Simple SSO.
-
-This is due to the fact that when providing an email, we seamlessly create an account for the user. However, if only a username is provided, we will not.
-Please note that the user will be sent a welcome email to verify their account. If they wish, they can also delete their account and keep their comment.
+<sup>Note!</sup> As of early 2022 usernames with Simple SSO do not need to be unique across all of FastComments.com.
 
 Ideally, Simple SSO should only be picked when developing on a platform that doesn't provide backend access.
 
@@ -110,10 +106,8 @@ Ideally, Simple SSO should only be picked when developing on a platform that doe
 - The user never enters their username or email.
 
 #### Cons
-- Username must be unique when paired with an email.
-- If Username is not unique, the user will go through the same flow as if not using SSO.
-- The user now has to deal with another account, not only the account associated with your website.
+- Less secure than Secure SSO as the client side payload could be crafted to become any user.
 
 #### Simple SSO API
 
-We do not provide an api for interacting with the users created from the Simple SSO flow.
+Users automatically created via the Simple SSO flow are stored as `SSOUser` objects. They can be accessed and managed via the `SSOUser` API. See [the docs](/guide-api.html#sso-user-structure).
