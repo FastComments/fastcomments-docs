@@ -14,7 +14,7 @@ Let's compare the options, and then go into details of each.
 
 When migrating from a platform with SSO like Disqus, you will already have users and their comments.
 
-Comments are imported as part of your migration, either by the API, our import UI, or customer support. The import UI is preferred if it supports the platform you
+Comments are imported as part of your migration, either by the API, our Import UI, or customer support. The Import UI is preferred if it supports the platform you
 are migrating from, as it incorporates error handling, avatar and media extraction and uploads, and a batch job monitoring system.
 
 The users themselves are added automatically when viewing comment threads for the first time. Alternatively, they can be pre-added via the API, but this work does not have
