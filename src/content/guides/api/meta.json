@@ -42,6 +42,12 @@
       "subCat": "Comments"
     },
     {
+      "name": "PATCH /api/v1/comments/:id",
+      "file": "comment-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
       "name": "DELETE /api/v1/comments/:id",
       "file": "comment-delete.md",
       "sidebarItemClasses": "retain-case",
