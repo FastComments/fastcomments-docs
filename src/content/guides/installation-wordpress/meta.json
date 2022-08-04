@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
+      "name": "Quick Start",
+      "file": "wordpress-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
       "name": "Installation",
       "file": "wordpress-installation.md",
       "subCat": "WordPress Installation"
