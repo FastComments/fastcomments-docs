@@ -18,9 +18,9 @@ Google Sites is also supported, and the flow is similar.
     <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
 </div>
 
-### Nimbus Notes
+### Nimbus Note
 
-Google Sites is also supported, and the flow is similar to Notion.
+Adding live commenting to a Nimbus Note is also supported, and the flow is similar to Notion.
 
 1. [Create a conversation to embed.](https://fastcomments.com/create)
 2. When editing your note, add an embed block.
