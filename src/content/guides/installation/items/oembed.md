@@ -17,3 +17,12 @@ Google Sites is also supported, and the flow is similar.
     <div class="title">Note: Comments Will Not Appear Until Publish</div>
     <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
 </div>
+
+### Nimbus Notes
+
+Google Sites is also supported, and the flow is similar to Notion.
+
+1. [Create a conversation to embed.](https://fastcomments.com/create)
+2. When editing your note, add an embed block.
+3. Use the URL from Step 1 as the URL to embed.
+4. Done!
