@@ -2,7 +2,7 @@ For the WordPress Networker theme, we have to add custom code to our WordPress i
 
 The code must be inserted into the footer of your site. There are quite a few plugins which can do this, so we won't list them here. However, here is the code to add:
 
-[inline-code-attrs-start title = 'Networker Theme Dark Mode Support Script'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Networker Theme Dark Mode Support Script'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     let isDarkMode = false;

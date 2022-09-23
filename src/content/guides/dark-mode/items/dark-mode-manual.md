@@ -16,7 +16,7 @@ Under `Base Theme` simply select `Force Dark Mode`.
 
 The easiest way to update dark mode is to go through all instances of the widget on the page, and update their configuration:
 
-[inline-code-attrs-start title = 'VanillaJS - Dark Mode Toggle'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'VanillaJS - Dark Mode Toggle'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     let isDarkMode = somehowDetermineIfDarkModeEnabled();
     for (const instanceWrapped of window.fcUIInstances) {
