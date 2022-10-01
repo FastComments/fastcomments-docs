@@ -8,6 +8,13 @@ body {
     background: #fafafa;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+        background-color: #181a1b;
+    }
+}
+
 .css-logo {
     display: inline-block;
     vertical-align: middle;
@@ -111,6 +118,13 @@ body {
     line-height: 1.5em;
 }
 
+@media (prefers-color-scheme: dark) {
+    .content {
+        color: #fff;
+        background-color: #181a1b;
+    }
+}
+
 .content h1 {
     line-height: 1em;
 }
@@ -140,6 +154,15 @@ body {
 .content-with-sidebar .sidebar .sidebar-item a {
     color: #201600;
     text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .content-with-sidebar .sidebar .sidebar-item {
+        border: none;
+    }
+    .content-with-sidebar .sidebar .sidebar-item a {
+        color: #fff;
+    }
 }
 
 .content-with-sidebar .sidebar-open-button {
@@ -339,6 +362,14 @@ input:focus {
     box-sizing: border-box;
     text-align: left;
     border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .guides .guide {
+        color: #fff;
+        background-color: #012f46;
+        box-shadow: 0 0 20px 10px rgba(1, 47, 70, 0.3);
+    }
 }
 
 .guides .guide .icon-container {
@@ -548,10 +579,26 @@ input:focus {
     cursor: pointer;
 }
 
+
+@media (prefers-color-scheme: dark) {
+    .pagination .btn {
+        background: #090a0a;
+    }
+    .pagination .btn:hover {
+        background: #012f46;
+    }
+}
+
 .pagination .btn.prev {
     float: left;
 }
 
 .pagination .btn.next {
     float: right;
+}
+
+@media (prefers-color-scheme: dark) {
+    a {
+        color: #fff;
+    }
 }
