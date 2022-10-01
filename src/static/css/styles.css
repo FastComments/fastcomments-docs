@@ -220,6 +220,12 @@ body {
         width: 100%;
     }
 
+    @media (prefers-color-scheme: dark) {
+        .content-with-sidebar .sidebar-open-button img {
+            filter: invert(1);
+        }
+    }
+
     .content-with-sidebar .sidebar.open {
         display: block;
         position: fixed;
@@ -231,6 +237,13 @@ body {
         z-index: 9000;
         background: #fafafa;
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .content-with-sidebar .sidebar.open {
+            color: #fff;
+            background-color: #181a1b;
+        }
     }
 }
 
