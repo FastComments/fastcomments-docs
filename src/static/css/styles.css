@@ -248,6 +248,7 @@ input {
 
 @media (prefers-color-scheme: dark) {
     input {
+        color: #fff;
         background: transparent;
         box-shadow: inset 0 1px 3px #0a0a0a;
     }
@@ -506,6 +507,7 @@ input:focus {
 }
 
 .code .line.highlight {
+    color: #000;
     background: #383830;
 }
 
