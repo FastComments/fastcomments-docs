@@ -160,6 +160,7 @@ body {
     .content-with-sidebar .sidebar .sidebar-item {
         border: none;
     }
+
     .content-with-sidebar .sidebar .sidebar-item a {
         color: #fff;
     }
@@ -223,6 +224,13 @@ input {
     box-sizing: border-box;
     padding: 12px 20px;
     outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    input {
+        background: transparent;
+        box-shadow: inset 0 1px 3px #0a0a0a;
+    }
 }
 
 input:focus {
@@ -334,6 +342,12 @@ input:focus {
     border: 1px solid #ccc;
 }
 
+@media (prefers-color-scheme: dark) {
+    .search-result {
+        color: #fff;
+    }
+}
+
 .search-result em {
     font-style: normal;
     background: yellow;
@@ -342,6 +356,13 @@ input:focus {
 .search-result .context-title {
     color: blue;
     font-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .search-result .context-title {
+        color: #fff;
+        text-decoration: underline;
+    }
 }
 
 .search-result .context-link {
@@ -584,6 +605,7 @@ input:focus {
     .pagination .btn {
         background: #090a0a;
     }
+
     .pagination .btn:hover {
         background: #012f46;
     }
