@@ -29,6 +29,12 @@ body {
     background: #201600
 }
 
+@media (prefers-color-scheme: dark) {
+    .css-logo i {
+        background: #fff;
+    }
+}
+
 .css-logo i.t {
     margin-top: 0;
     border-radius: 0 4px 4px 4px
@@ -114,6 +120,12 @@ body {
 .header a {
     text-decoration: none;
     color: #201600;
+}
+
+@media (prefers-color-scheme: dark) {
+    .header a {
+        color: #fff;
+    }
 }
 
 .content {
