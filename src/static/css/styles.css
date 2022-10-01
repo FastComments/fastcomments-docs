@@ -387,6 +387,13 @@ input:focus {
     background: yellow;
 }
 
+@media (prefers-color-scheme: dark) {
+    .search-result em {
+        color: #000;
+        background: #012f46;
+    }
+}
+
 .search-result .context-title {
     color: blue;
     font-size: 18px;
