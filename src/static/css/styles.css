@@ -574,6 +574,12 @@ input:focus {
     width: 16px;
 }
 
+@media(prefers-color-scheme: dark) {
+    .index-guide-item .index-guide-link img {
+        filter: invert(1);
+    }
+}
+
 .index-guide-item h2 {
     margin-top: 30px;
 }
