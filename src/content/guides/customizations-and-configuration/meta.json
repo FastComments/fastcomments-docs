@@ -276,6 +276,11 @@
       "name": "Moderation Groups",
       "file": "moderation-group-ids.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Mention Group Ids",
+      "file": "mention-group-ids.md",
+      "subCat": "Misc"
     }
   ]
 }

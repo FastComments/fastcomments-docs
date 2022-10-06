@@ -7,4 +7,4 @@ When specified, comments left using the specified configuration will contain the
 If a `Moderator` has one or more [Moderation Groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) defined, they will
 only see comments in the `Moderate Comments` page associated with their group(s).
 
-[code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6]; title = 'Specify Moderation Groups'; code-example-end]
+[code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
