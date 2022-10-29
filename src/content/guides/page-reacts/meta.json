@@ -1,0 +1,21 @@
+{
+  "name": "Page Reacts",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "The Floating Likes Widget",
+      "file": "floating-likes-about.md",
+      "subCat": "Floating Likes Widget"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Floating Likes Widget"
+    },
+    {
+      "name": "Installation - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Floating Likes Widget"
+    }
+  ]
+}
