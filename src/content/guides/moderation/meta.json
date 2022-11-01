@@ -28,6 +28,11 @@
       "subCat": "Moderators"
     },
     {
+      "name": "How Approvals Work",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
       "name": "Moderation Via Email",
       "file": "moderation-via-email.md",
       "subCat": "Moderation Workflow"
