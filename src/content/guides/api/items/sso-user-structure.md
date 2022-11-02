@@ -30,6 +30,7 @@ interface SSOUser {
     createdFromSimpleSSO?: boolean
     /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
     isProfileActivityPrivate?: boolean
+    karma?: number
 }
 [inline-code-end]
 

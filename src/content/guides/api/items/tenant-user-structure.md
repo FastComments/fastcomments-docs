@@ -47,5 +47,6 @@ export interface TenantUser {
     digestEmailFrequency: UserDigestEmailFrequency
     lastLoginDate: string
     displayLabel?: string
+    karma?: number
 }
 [inline-code-end]
