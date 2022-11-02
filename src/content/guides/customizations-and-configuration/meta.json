@@ -143,6 +143,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Highlighting New Comments",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
