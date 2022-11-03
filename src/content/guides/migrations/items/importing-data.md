@@ -3,8 +3,9 @@ of support staff.
 
 We natively support importing exports from the following providers:
 
-- Disqus
 - Commento
+- Disqus
+- Hyvor Talk
 - Muut Comments
 - IntenseDebate
 - Just-Comments
