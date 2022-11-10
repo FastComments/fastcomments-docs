@@ -71,6 +71,10 @@ interface SSOUser {
     isModerator?: boolean;
     /** Optional, default true. Set to false to enable the "activity" tab in the user's profile. **/
     isProfileActivityPrivate?: boolean;
+    /** Optional, default false. Set to true to disable profile comments. **/
+    isProfileCommentsPrivate?: boolean;
+    /** Optional, default false. Set to true to disable direct messaging this user. **/
+    isProfileDMDisabled?: boolean;
 }
 [inline-code-end]
 
