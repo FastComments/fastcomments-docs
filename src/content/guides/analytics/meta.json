@@ -1,0 +1,26 @@
+{
+  "name": "Analytics",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Background",
+      "file": "analytics-background.md",
+      "subCat": "Analytics"
+    },
+    {
+      "name": "Billing Analytics",
+      "file": "analytics-billing.md",
+      "subCat": "Analytics"
+    },
+    {
+      "name": "Site Analytics",
+      "file": "analytics-site.md",
+      "subCat": "Analytics"
+    },
+    {
+      "name": "Analytics Accuracy vs Other Platforms",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analytics"
+    }
+  ]
+}
