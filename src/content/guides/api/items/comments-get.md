@@ -10,6 +10,7 @@ Pagination can be done in one of two ways, depending on performance requirements
    2. Clicking "next" simply increases the page count.
    3. You can think of this as being retrieved by a key-value store.
    4. In this way, simply define a `page` parameter starting at `0` and a sort direction as `direction`.
+   5. Page sizes can be customized via customization rules.
 2. Most Flexible: **Flexible Pagination**:
    1. In this way you can define custom `limit` and `skip` parameters.
    2. Sort `direction` is also supported.
