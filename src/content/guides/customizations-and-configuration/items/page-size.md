@@ -1,6 +1,6 @@
 By default, the FastComments page size is `30`. This includes replies in threads.
 
-The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) from `10` to `200`.
+The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
 
 Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
 
