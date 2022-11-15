@@ -10,6 +10,15 @@ a moderator:
 - Mark that comment **Approved** (show it) or **Not Approved** (hide it)
 - Mark that comment as **Spam** or **Not Spam**
 
+### Closing Comment Threads
+
+Moderators and administrators can lock comment threads, by selecting `Close Thread` in the three-dot menu in the top
+of the comment area, if they are logged in. They can select `Re-Open Thread` later, at any time, to re-open commenting.
+
+Closing a comment thread prevents new comments, but still allows voting, and for users to delete their comments if desired.
+
+Closing and re-opening comment threads instantly affects all users viewing the thread.
+
 ### Updated Live
 
 All of these actions will update the comment threads of other users right away without them having to

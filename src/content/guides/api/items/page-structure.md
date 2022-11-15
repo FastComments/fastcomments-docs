@@ -17,5 +17,7 @@ interface Page {
     rootCommentCount: number
     /** Setting this to null means all SSO users can see the page. An empty list means it is closed to all users. **/
     accessibleByGroupIds?: string[] | null
+    /** Is this page closed for new comments? **/
+    isClosed?: boolean
 }
 [inline-code-end]
