@@ -296,6 +296,11 @@
       "name": "Mention Group Ids",
       "file": "mention-group-ids.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Third Party Cookie Bypass",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Misc"
     }
   ]
 }
