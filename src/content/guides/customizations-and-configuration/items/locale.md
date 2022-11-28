@@ -14,6 +14,24 @@ This can be defined using the widget customization UI. See the "Locale / Languag
 
 #### Via Code
 
-This can be overridden with a desired locale. Please check <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L53" target="_blank">here</a> for valid locales.
+This can be overridden with a desired locale. Please check <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L142" target="_blank">here</a> for valid locales.
 
 [code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
+
+### Locale Codes
+
+All locale codes are:
+
+- `zh_cn` (Chinese (Simplified))
+- `zh_tw` (Chinese (Traditional))
+- `en_us` (English (North America))
+- `fr_fr` (French (France))
+- `de_de` (German (Germany))
+- `it_it` (Italian (Italy))
+- `ja_jp` (Japanese (Japan))
+- `ko_kr` (Korean (Korea))
+- `pl_pl` (Polish (Poland))
+- `pt_br` (Portuguese (Brazilian))
+- `ru_ru` (Russian (Russia))
+- `es_es` (Spanish (Spain))
+- `tr_tr` (Turkish (Turkey))
