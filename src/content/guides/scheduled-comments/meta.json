@@ -1,0 +1,21 @@
+{
+  "name": "Scheduled Comments",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Background",
+      "file": "background.md",
+      "subCat": "Scheduled Comments"
+    },
+    {
+      "name": "Howto",
+      "file": "howto.md",
+      "subCat": "Scheduled Comments"
+    },
+    {
+      "name": "Import Format",
+      "file": "import-format.md",
+      "subCat": "Scheduled Comments"
+    }
+  ]
+}
