@@ -128,6 +128,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Profiles",
+      "file": "disable-profiles.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Disable Success Message",
       "file": "disable-success-message.md",
       "subCat": "Look and Feel"
