@@ -42,7 +42,7 @@
                     'eu': 'cdn-eu.fastcomments.com'
                 };
                 return cb({
-                    authenticted: true,
+                    authenticated: true,
                     tenantId,
                     FC_CDN: region && CDNByRegion[region] ? CDNByRegion[region] : (isProd ? 'https://cdn.fastcomments.com' : 'http://localhost:3001'),
                     FC_SITE: region && DomainsByRegion[region] ? DomainsByRegion[region] : (isProd ? 'https://fastcomments.com' : 'http://localhost:3001')
