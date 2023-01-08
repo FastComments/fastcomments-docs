@@ -1,0 +1,32 @@
+{
+  "name": "Zyro Installation",
+  "pageHeader": "Add Live Commenting to Zyro Sites",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Add Code Widget",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro Site Installation"
+    },
+    {
+      "name": "Step 2: Add The Code",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro Site Installation"
+    },
+    {
+      "name": "Success",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro Site Installation"
+    },
+    {
+      "name": "Site Domain Errors",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro Site Installation"
+    },
+    {
+      "name": "Site Customization",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro Site Installation"
+    }
+  ]
+}
