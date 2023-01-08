@@ -1,7 +1,7 @@
 {
   "name": "Hostinger Installation",
   "pageHeader": "Add Live Commenting to Hostinger Sites",
-  "icon": "3rd-party-products/hostinger.svg",
+  "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
       "name": "Step 1: Add Code Widget",
