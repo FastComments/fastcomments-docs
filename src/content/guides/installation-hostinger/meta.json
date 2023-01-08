@@ -1,0 +1,32 @@
+{
+  "name": "Hostinger Installation",
+  "pageHeader": "Add Live Commenting to Hostinger Sites",
+  "icon": "3rd-party-products/hostinger.svg",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Add Code Widget",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger Site Installation"
+    },
+    {
+      "name": "Step 2: Add The Code",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger Site Installation"
+    },
+    {
+      "name": "Success",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger Site Installation"
+    },
+    {
+      "name": "Site Domain Errors",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger Site Installation"
+    },
+    {
+      "name": "Site Customization",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger Site Installation"
+    }
+  ]
+}
