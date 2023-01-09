@@ -12,7 +12,7 @@ Now let's copy the code:
 <script>
     FastCommentsUI(document.getElementById('fastcomments-widget'), {
         tenantId: "demo",
-        pageTitle: window.parent.title,
+        pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
     });
