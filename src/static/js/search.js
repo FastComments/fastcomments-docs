@@ -27,6 +27,7 @@
 
     let searchCounter = 0;
     let searchRequest;
+    let currentDisplayedSearchValue;
 
     function setNoResults() {
         searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
@@ -39,6 +40,7 @@
             if (searchCounter !== queryCounter) {
                 return;
             }
+            currentDisplayedSearchValue = queryText;
             try {
                 searchResultsWrapper.classList.remove('loading');
                 const response = JSON.parse(responseText);
@@ -69,9 +71,18 @@
     input.addEventListener('input', function () {
         if (!input.value) {
             searchRequest = undefined;
+            currentDisplayedSearchValue = undefined;
+            searchCounter++;
             setNoResults();
         } else if (input.value.length > 2) {
+            if (currentDisplayedSearchValue && input.value.trim() === currentDisplayedSearchValue.trim()) {
+                return;
+            }
             searchRequest = input.value;
         }
+    });
+
+    input.addEventListener('submit', function() {
+        searchRequest = input.value;
     });
 })();
