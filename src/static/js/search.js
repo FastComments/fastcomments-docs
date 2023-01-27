@@ -61,7 +61,8 @@
     // simple debounce mechanism
     setInterval(function() {
         if (searchRequest) {
-            fetchAndRenderResults(searchRequest, searchCounter++);
+            searchCounter++
+            fetchAndRenderResults(searchRequest, searchCounter);
             searchRequest = undefined;
         }
     }, 1000);
