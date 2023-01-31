@@ -38,8 +38,13 @@
       "subCat": "Moderation Workflow"
     },
     {
-      "name": "Filters",
+      "name": "Filtering",
       "file": "filters.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Searching",
+      "file": "search.md",
       "subCat": "Moderation Workflow"
     },
     {
