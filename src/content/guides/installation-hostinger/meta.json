@@ -27,6 +27,11 @@
       "name": "Site Customization",
       "file": "hostinger-site-customize.md",
       "subCat": "Hostinger Site Installation"
+    },
+    {
+      "name": "Floating Likes Button",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger Floating Likes"
     }
   ]
 }

@@ -27,6 +27,11 @@
       "name": "Site Customization",
       "file": "zyro-site-customize.md",
       "subCat": "Zyro Site Installation"
+    },
+    {
+      "name": "Floating Likes Button",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro Floating Likes"
     }
   ]
 }
