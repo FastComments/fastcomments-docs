@@ -16,7 +16,7 @@ using [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), which
 <script>
     (function () {
         function tryLoad() {
-            if (window.FastCommentsEmbedPageLikesFloating) {
+            if (typeof window.FastCommentsEmbedPageLikesFloating !== undefined) {
                 window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
                     tenantId: 'demo'
                 });
