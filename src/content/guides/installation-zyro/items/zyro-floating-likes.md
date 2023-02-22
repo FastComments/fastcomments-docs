@@ -11,7 +11,7 @@ You can see it in action in the bottom right of this page!
 <script>
     (function () {
         function tryLoad() {
-            if (typeof window.FastCommentsEmbedPageLikesFloating !== undefined) {
+            if (typeof window.FastCommentsEmbedPageLikesFloating === 'function') {
                 window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
                     tenantId: "demo"
                 });
