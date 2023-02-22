@@ -147,6 +147,7 @@ body {
 
 .content h1 {
     line-height: 1em;
+    letter-spacing: 1px;
 }
 
 .content-with-sidebar .sidebar {
@@ -167,6 +168,10 @@ body {
     border-bottom: 1px solid #e2dfd9;
 }
 
+.content-with-sidebar .sidebar .sidebar-item h4 {
+    letter-spacing: 0.5px;
+}
+
 .content-with-sidebar .sidebar .sidebar-item.selected {
     font-weight: 700;
 }
@@ -174,6 +179,7 @@ body {
 .content-with-sidebar .sidebar .sidebar-item a {
     color: #201600;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 @media (prefers-color-scheme: dark) {
