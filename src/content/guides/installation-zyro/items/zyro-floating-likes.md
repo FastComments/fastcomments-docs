@@ -4,7 +4,7 @@ You can see it in action in the bottom right of this page!
 
 1. First, grab the code:
 
-[inline-code-attrs-start title = 'Zyro Floating Likes Code'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Zyro Floating Likes Code'; type = 'bash'; useDemoTenant = false; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
