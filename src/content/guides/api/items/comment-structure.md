@@ -13,6 +13,8 @@ interface Comment {
     approved?: boolean
     /** The user's avatar. **/
     avatarSrc?: string
+    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    children: Comment[]
     /** The commenter's raw comment. **/
     comment: string
     /** READONLY: The commenter's comment parsed into HTML. **/
@@ -31,7 +33,7 @@ interface Comment {
     domain?: string
     /** READONLY: The number of times the comment was flagged. **/
     flagCount?: number
-    /** READONLY: The #hashtags written in the comment that were successfully parsed. **/
+    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
     hashTags?: CommentHashTag[]
     /** READONLY: Does the comment contain images? **/
     hasImages?: boolean
@@ -147,5 +149,7 @@ interface CommentHashTag {
     tag: string
     /** If the hashtag is associated with a custom URL, this will be defined. **/
     url?: string
+    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    retain?: boolean
 }
 [inline-code-end]
