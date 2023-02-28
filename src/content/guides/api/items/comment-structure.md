@@ -138,7 +138,7 @@ interface CommentUserMention {
 ### HashTags
 
 When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
-has the following structure.
+has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
 
 [inline-code-attrs-start title = 'The Comment HashTag Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
