@@ -1,0 +1,42 @@
+{
+  "name": "Moodle Installation",
+  "pageHeader": "Add Comments to Moodle Sites",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Get Server Access",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Step 2: Identify View File",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Step 3: Add Code",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Member Site Success",
+      "file": "moodle-success.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Member Site Domain Errors",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Member Site Customization",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle Site Installation"
+    },
+    {
+      "name": "Want a Dedicated Plugin?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Dedicated Plugin?"
+    }
+  ]
+}
