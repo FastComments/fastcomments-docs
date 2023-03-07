@@ -154,6 +154,36 @@
       "subCat": "Moderators"
     },
     {
+      "name": "Notification Count Structure",
+      "file": "notification-count-structure.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "GET /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "DELETE /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "Notification Structure",
+      "file": "notification-structure.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "GET /api/v1/notifications",
+      "file": "notifications-get.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "PATCH /api/v1/notifications/:id",
+      "file": "notifications-patch.md",
+      "subCat": "Notifications"
+    },
+    {
       "name": "Page Structure",
       "file": "page-structure.md",
       "subCat": "Pages"
@@ -234,6 +264,26 @@
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "SSO Users"
+    },
+    {
+      "name": "Subscription Structure",
+      "file": "subscription-structure.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "GET /api/v1/subscriptions/:id",
+      "file": "subscriptions-get.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "POST /api/v1/subscriptions",
+      "file": "subscriptions-post.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "DELETE /api/v1/subscriptions/:id",
+      "file": "subscriptions-delete.md",
+      "subCat": "Subscriptions"
     },
     {
       "name": "TenantDailyUsage Structure",
