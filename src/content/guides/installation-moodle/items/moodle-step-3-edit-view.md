@@ -14,25 +14,31 @@ Now let's copy the code that adds the comment widget:
 
 [inline-code-attrs-start title = 'Moodle Comments Code'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-$users_picture_obj = new user_picture($USER);
-$users_picture_url = $users_picture_obj->get_url($PAGE);
 
-$simple_sso_json = json_encode($USER && $USER->username !== 'guest' ? array(
-    "username" => $USER->firstname . $USER->lastname,
-    "email" => $USER->email,
-    "avatar" => $users_picture_url->out(false)
-) : array(
-    "loginURL" => '/login/index.php'
-));
-
-echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
-<div id=\"fastcomments-widget\"></div>
-<script>
-FastCommentsUI(document.getElementById('fastcomments-widget'), {
-        tenantId: 'demo',
-        simpleSSO: $simple_sso_json
-    });
-</script>";
+if ($id) {
+    $url_decoded = str_replace('&amp;', '&', $PAGE->url);
+    $users_picture_obj = new user_picture($USER);
+    $users_picture_url = $users_picture_obj->get_url($PAGE);
+    
+    $simple_sso_json = json_encode($USER && $USER->username !== 'guest' ? array(
+        "username" => $USER->firstname . $USER->lastname,
+        "email" => $USER->email,
+        "avatar" => $users_picture_url->out(false)
+    ) : array(
+        "loginURL" => '/login/index.php'
+    ));
+    
+    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    <div id=\"fastcomments-widget\"></div>
+    <script>
+    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+            tenantId: 'demo',
+            simpleSSO: $simple_sso_json,
+            urlId: $id,
+            url: '$url_decoded'
+        });
+    </script>";
+}
 [inline-code-end]
 
 Use the arrow keys to position your cursor before the "box_end" line, and paste.
