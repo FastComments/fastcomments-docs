@@ -12,4 +12,4 @@ Your Tenant ID can be found already applied on the comment widget <a href="https
 
 You can also find your Tenant ID and manage your API keys [on the API credentials page](https://fastcomments.com/auth/my-account/api-secret).
 
-From this point on, if you are logged into FastComments, the code examples will use your real tenant id (if you are logged in).
+From this point on, if you are logged into FastComments, the code examples will use your real tenant id (if you are logged in on https://fastcomments.com).
