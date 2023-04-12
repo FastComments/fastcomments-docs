@@ -18,7 +18,7 @@
 	"scripts": {
 		"build-content": "node src/app",
 		"build-windows": "build.bat",
-		"build-posix": "build.sh",
+		"build-posix": "sh build.sh",
 		"serve": "serve src/static/generated",
 		"watch": "node src/watch"
 	},
