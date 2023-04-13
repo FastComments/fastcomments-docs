@@ -128,7 +128,7 @@ async function buildGuideFromItems(guide, items) {
         content: guideContentHTML
     }) : guideContentHTML;
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
-        title: guide.name,
+        title: guide.pageHeader ? guide.pageHeader : guide.name,
         content: guideRootHTML,
         ExampleTenantId: ExampleTenantId
     }), 'utf8');
