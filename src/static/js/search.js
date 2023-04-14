@@ -51,6 +51,7 @@
                     response.results.forEach(function (entry) {
                         let html = '';
                         html += '<div class="search-result"><a class="context-title" href="' + entry.url + '">' + entry.title + '</a>';
+                        html += '<div class="context-text-and-sections">';
                         html += '<div class="context-text">' + entry.body + '</div>';
                         if (entry.children) {
                             html += '<div class="context-sections"><h2>Relevant Sections</h2>';
@@ -59,7 +60,8 @@
                             }
                             html += '</div>';
                         }
-                        html += '<div class="context-link">Go to ' + entry.url + '</div>';
+                        html += '</div>';
+                        html += '<a class="context-link" href="' + entry.url + '">Go to ' + entry.url + '</a>';
                         html += '</div>';
                         searchResults.innerHTML += html;
                     });
@@ -71,7 +73,7 @@
     }
 
     // simple debounce mechanism
-    setInterval(function() {
+    setInterval(function () {
         if (searchRequest) {
             searchCounter++
             fetchAndRenderResults(searchRequest, searchCounter);
@@ -95,7 +97,7 @@
         }
     });
 
-    input.addEventListener('submit', function() {
+    input.addEventListener('submit', function () {
         searchRequest = input.value;
     });
 })();

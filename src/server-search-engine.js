@@ -8,6 +8,7 @@ const htmlDecode = require('unescape');
 const {getGuides, GUIDES_DIR, buildGuideItemForMeta} = require('./guides');
 const fs = require('fs');
 const path = require('path');
+const marked = require('marked');
 
 /** @type {Array.<Guide>} **/
 const guides = getGuides();
@@ -23,7 +24,7 @@ const entriesById = {};
             url: guide.url,
         };
         if (fs.existsSync(guide.introPath)) {
-            mainEntry.body = fs.readFileSync(guide.introPath, 'utf8'); // TODO new getIntroHTML()
+            mainEntry.body = marked(fs.readFileSync(guide.introPath, 'utf8')).replaceAll("", "");
         }
         entriesById[guide.id] = mainEntry;
         guidesFlat.push(mainEntry);
