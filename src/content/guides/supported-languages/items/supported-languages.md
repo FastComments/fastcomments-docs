@@ -1,7 +1,7 @@
 FastComments supports a number of languages, across different locales.
 
 - Chinese (Simplified and Traditional)
-- Danish
+- Danish (da_dk)
 - English (North America) (en_us)
 - French (France) (fr_fr)
 - German (Germany) (de_de)
