@@ -1,6 +1,7 @@
 FastComments supports a number of languages, across different locales.
 
 - Chinese (Simplified and Traditional)
+- Danish
 - English (North America) (en_us)
 - French (France) (fr_fr)
 - German (Germany) (de_de)
@@ -13,4 +14,3 @@ FastComments supports a number of languages, across different locales.
 - Russian (Russia) (ru_ru)
 - Spanish (Spain) (es_es)
 - Turkish (Turkey)
-
