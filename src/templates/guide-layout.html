@@ -47,7 +47,8 @@
         <div id="fastcomments-widget"></div>
         <script>
             window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: 'nYrnfYEv'
+                tenantId: 'nYrnfYEv',
+                urlId: window.location.origin + window.location.pathname // remove query params
             });
         </script>
         <noscript>
