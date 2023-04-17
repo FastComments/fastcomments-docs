@@ -63,7 +63,8 @@
 <div id="fastcomments-page-likes-floating"></div>
 <script>
     window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
-        tenantId: 'nYrnfYEv'
+        tenantId: 'nYrnfYEv',
+        urlId: window.location.origin + window.location.pathname // remove query params
     });
 </script>
 <!-- Watch.ly is just to see how many people use this page, and how long they stay on it. -->
