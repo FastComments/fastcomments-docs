@@ -1,3 +1,2 @@
 #!/bin/bash
-
-#intentionally blank
+sudo systemctl stop fastcomments-docs

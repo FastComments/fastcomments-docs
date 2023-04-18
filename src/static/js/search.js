@@ -36,7 +36,7 @@
     function fetchAndRenderResults(queryText, queryCounter) {
         searchResultsWrapper.classList.add('open');
         searchResultsWrapper.classList.add('loading');
-        makeRequest('https://fastcomments.com/docs-search-index/search?query=' + queryText, 'GET', null, function cb(responseText) {
+        makeRequest((window.location.href.includes('localhost:5000') ? 'http://localhost:5001' : 'https://docs-search.fastcomments.com') + '/search?query=' + queryText, 'GET', null, function cb(responseText) {
             if (searchCounter !== queryCounter) {
                 return;
             }
@@ -49,7 +49,12 @@
                 } else {
                     searchResults.innerHTML = '';
                     response.results.forEach(function (entry) {
-                        searchResults.innerHTML += '<a class="search-result" href="' + entry.url + '"><div class="context-title">' + entry.title + '</div><div class="context-text">' + (entry.highlightedContent ? entry.highlightedContent : entry.content) + '</div><div class="context-link">Go to ' + entry.url + '</div></a>';
+                        let html = '';
+                        html += '<div class="search-result"><a class="context-title" href="' + entry.url + '">' + entry.title + '</a>';
+                        html += '<div class="context-text">' + entry.preview + '</div>';
+                        html += '<a class="context-link" href="' + entry.url + '">Go to ' + entry.url + '</a>';
+                        html += '</div>';
+                        searchResults.innerHTML += html;
                     });
                 }
             } catch (e) {
@@ -59,7 +64,7 @@
     }
 
     // simple debounce mechanism
-    setInterval(function() {
+    setInterval(function () {
         if (searchRequest) {
             searchCounter++
             fetchAndRenderResults(searchRequest, searchCounter);
@@ -83,7 +88,7 @@
         }
     });
 
-    input.addEventListener('submit', function() {
+    input.addEventListener('submit', function () {
         searchRequest = input.value;
     });
 })();

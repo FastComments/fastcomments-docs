@@ -1,0 +1,12 @@
+[Unit]
+Description=fastcomments-docs
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=winrid
+ExecStart=/usr/bin/env sh /home/winrid/fastcomments-docs/run.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -2,17 +2,19 @@
 	"name": "fastcomments-docs",
 	"dependencies": {
 		"axios": "^0.24.0",
-		"handlebars": "^4.1.2",
-		"marked": "^0.6.2",
-		"uglify-js": "^3.7.3",
-		"shortid": "^2.2.16",
-		"html-to-text": "^6.0.0",
-		"highlight.js": "^11.5.0",
-		"md5": "^2.3.0",
-		"puppeteer": "^7.1.0",
-		"html-entities": "^2.1.0",
 		"diagrams": "^0.11.0",
+		"express": "^4.18.2",
 		"filewatcher": "^3.0.1",
+		"handlebars": "^4.1.2",
+		"highlight.js": "^11.5.0",
+		"html-entities": "^2.1.0",
+		"html-to-text": "^6.0.0",
+		"marked": "^0.6.2",
+		"md5": "^2.3.0",
+		"minisearch": "^6.0.1",
+		"puppeteer": "^7.1.0",
+		"shortid": "^2.2.16",
+		"uglify-js": "^3.7.3",
 		"unescape": "^1.0.1"
 	},
 	"scripts": {
@@ -20,6 +22,7 @@
 		"build-windows": "build.bat",
 		"build-posix": "sh build.sh",
 		"serve": "serve src/static/generated",
+		"start-search-engine": "node src/server-search-engine.js",
 		"watch": "node src/watch"
 	},
 	"devDependencies": {

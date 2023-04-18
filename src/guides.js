@@ -3,7 +3,6 @@ const path = require('path');
 const marked = require('marked');
 const {groupBy} = require('lodash');
 const handlebars = require('handlebars');
-const {addContentToIndex} = require('./index');
 const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
@@ -32,6 +31,7 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} indexTemplatePath
  * @property {string} conclusionPath
  * @property {string} introPath
+ * @property {string} pageHeader
  */
 
 /**
@@ -42,6 +42,7 @@ const GUIDE_CONCLUSION_FILE_NAME = 'conclusion.md';
  * @property {string} name
  * @property {string} file
  * @property {string} subCat
+ * @property {string} fullUrl
  * @property {string} [sidebarItemClasses]
  */
 
@@ -53,10 +54,9 @@ function createGuideItemIdFromPath(filePath) {
  *
  * @param {Guide} guide
  * @param {MetaItem} metaItem
- * @param {Index} index
  * @return {Promise<GuideItem>}
  */
-async function buildGuideItemForMeta(guide, metaItem, index) {
+async function buildGuideItemForMeta(guide, metaItem) {
     console.log('buildGuideItemForMeta', metaItem.file);
     const title = metaItem.name;
     const id = createGuideItemIdFromPath(metaItem.file);
@@ -71,13 +71,6 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
     });
     let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
 
-    await addContentToIndex({
-        html,
-        title,
-        urlId,
-        fullUrl
-    }, index);
-
     html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
     return {
@@ -88,7 +81,8 @@ async function buildGuideItemForMeta(guide, metaItem, index) {
         subCat: metaItem.subCat,
         sidebarItemClasses: metaItem.sidebarItemClasses,
         content: html,
-        itemClasses: html.includes('https://fastcomments.com') ? 'has-site-link' : '' // determine this at build time, so we can use a hack to quickly replace all the fastcomments.com links to eu.fastcomments.com
+        itemClasses: html.includes('https://fastcomments.com') ? 'has-site-link' : '', // determine this at build time, so we can use a hack to quickly replace all the fastcomments.com links to eu.fastcomments.com
+        fullUrl,
     };
 }
 
@@ -180,12 +174,18 @@ function getGuides() {
     return result;
 }
 
+function getGuideMeta(id) {
+    return JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, id, 'meta.json'), 'utf8'));
+}
+
 module.exports = {
+    GUIDES_DIR,
     TEMPLATE_DIR,
     GUIDE_LAYOUT_PATH,
     buildGuide,
     buildGuideItemForMeta,
     buildGuideFromItems,
     createGuideItemIdFromPath,
-    getGuides
+    getGuides,
+    getGuideMeta,
 };
