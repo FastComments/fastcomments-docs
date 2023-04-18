@@ -16,7 +16,7 @@ const marked = require('marked');
         const guideTitle = guide.pageHeader || guide.name;
 
         const meta = getGuideMeta(guide.id);
-        let preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')).replaceAll("", "") : '';
+        let preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')) : '';
         let bodyWithChildren = preview.trim();
         if (meta.itemsOrdered) {
             for (const item of meta.itemsOrdered) {
