@@ -1,4 +1,4 @@
-// We only have around 2.5mb of docs. ES ended up being a pain, even on a $5/mo instances, too many knobs etc to get search right.
+// We only have around 2.5mb of docs. ES ended up being a pain, too many knobs etc to get search right.
 // So we just put it all in memory in one node worker.
 
 const MiniSearch = require('minisearch');
