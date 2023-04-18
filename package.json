@@ -22,6 +22,7 @@
 		"build-windows": "build.bat",
 		"build-posix": "sh build.sh",
 		"serve": "serve src/static/generated",
+		"start-search-engine": "node src/server-search-engine.js",
 		"watch": "node src/watch"
 	},
 	"devDependencies": {

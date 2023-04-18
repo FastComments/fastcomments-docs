@@ -174,6 +174,10 @@ function getGuides() {
     return result;
 }
 
+function getGuideMeta(id) {
+    return JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, id, 'meta.json'), 'utf8'));
+}
+
 module.exports = {
     GUIDES_DIR,
     TEMPLATE_DIR,
@@ -182,5 +186,6 @@ module.exports = {
     buildGuideItemForMeta,
     buildGuideFromItems,
     createGuideItemIdFromPath,
-    getGuides
+    getGuides,
+    getGuideMeta,
 };

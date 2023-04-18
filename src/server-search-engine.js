@@ -3,50 +3,75 @@
 
 const MiniSearch = require('minisearch');
 const express = require('express');
-const {htmlToText} = require('html-to-text');
-const htmlDecode = require('unescape');
-const {getGuides, GUIDES_DIR, buildGuideItemForMeta} = require('./guides');
+const {getGuides, buildGuideItemForMeta, createGuideItemIdFromPath, getGuideMeta} = require('./guides');
 const fs = require('fs');
-const path = require('path');
 const marked = require('marked');
 
-/** @type {Array.<Guide>} **/
-const guides = getGuides();
-const guidesFlat = [];
-const entriesById = {};
-
 (async function () {
+    /** @type {Array.<Guide>} **/
+    const guides = getGuides();
+    const guidesFlat = [];
+
     for (const guide of guides) {
         const guideTitle = guide.pageHeader || guide.name;
+
+        const meta = getGuideMeta(guide.id);
+        let preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')).replaceAll("", "") : '';
+        let bodyWithChildren = preview.trim();
+        if (meta.itemsOrdered) {
+            for (const item of meta.itemsOrdered) {
+                const builtItem = await buildGuideItemForMeta(guide, item);
+                if (!preview.length) { // important we do after bodyWithChildren = so we don't duplicate content that could impact ranking.
+                    // use first section as preview.
+                    preview = builtItem.content;
+                }
+                bodyWithChildren += builtItem.content + '\n';
+            }
+        }
+        if (!preview.length) {
+            // probably a placeholder guide - does it refer to an other guide?
+            if (guide.url && guide.url.startsWith('/guide-')) {
+                let [path, subId] = guide.url.split('#');
+                if (subId) {
+                    path = path.replace('.html', '').replace('/guide-', '');
+                    const linkedGuide = guides.find((guide) => guide.id === path);
+                    if (linkedGuide) {
+                        const linkedGuideMeta = getGuideMeta(linkedGuide.id);
+                        if (linkedGuideMeta.itemsOrdered) {
+                            const subItem = linkedGuideMeta.itemsOrdered.find((item) => {
+                                return createGuideItemIdFromPath(item.file) === subId;
+                            });
+                            if (subItem) {
+                                const builtItem = await buildGuideItemForMeta(linkedGuide, subItem);
+                                preview = builtItem.content;
+                            }
+                        }
+                    }
+                } else {
+                    console.warn('No sub entry to link to to create preview!', guide);
+                }
+            }
+        }
+
+        const previewSplit = preview.split('\n');
+
+        if (previewSplit.length > 10) {
+            preview = previewSplit.slice(0, 10).join('\n');
+        }
+
         const mainEntry = {
             id: guide.id,
             title: guideTitle,
             url: guide.url,
+            preview,
+            bodyWithChildren
         };
-        if (fs.existsSync(guide.introPath)) {
-            mainEntry.body = marked(fs.readFileSync(guide.introPath, 'utf8')).replaceAll("", "");
-        }
-        entriesById[guide.id] = mainEntry;
         guidesFlat.push(mainEntry);
-        const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
-        if (meta.itemsOrdered) {
-            for (const item of meta.itemsOrdered) {
-                const builtItem = await buildGuideItemForMeta(guide, item);
-                const subEntry = {
-                    id: guide.id + builtItem.name + item.file,
-                    title: `${builtItem.name} (from ${guideTitle} -> ${item.subCat})`,
-                    body: builtItem.content,
-                    url: builtItem.fullUrl,
-                    parent: mainEntry
-                };
-                guidesFlat.push(subEntry);
-            }
-        }
     }
 
-    let miniSearch = new MiniSearch({
-        fields: ['title', 'body'], // fields to index for full-text search
-        storeFields: ['title', 'body', 'url', 'parent'], // fields to return with search results
+    const miniSearch = new MiniSearch({
+        fields: ['title', 'titleWithMeta', 'preview', 'bodyWithChildren'], // fields to index for full-text search
+        storeFields: ['title', 'preview', 'url', 'parent'], // fields to return with search results
         searchOptions: {
             boost: {title: 2},
             fuzzy: 0.2
@@ -67,40 +92,9 @@ const entriesById = {};
             console.log('Searching for', req.query.query);
             const rawResults = miniSearch.search(req.query.query);
             console.log(rawResults.length, 'results for', req.query.query);
-            const groupedByParentId = {};
-            for (const result of rawResults) {
-                if (result.parent) {
-                    const child = {
-                        id: result.id,
-                        title: result.title,
-                        body: result.body,
-                        url: result.url,
-                    };
-                    if (!groupedByParentId[result.parent.id]) {
-                        groupedByParentId[result.parent.id] = [child];
-                    } else {
-                        groupedByParentId[result.parent.id].push(child);
-                    }
-                } else {
-                    groupedByParentId[result.id] = [result];
-                }
-            }
-            const results = [];
-            for (const parentId in groupedByParentId) {
-                const children = groupedByParentId[parentId];
-                const parent = entriesById[parentId];
-                if (parent == children[0] && children.length === 1) {
-                    results.push(parent);
-                } else {
-                    results.push({
-                        ...parent,
-                        children
-                    });
-                }
-            }
             res.send({
                 status: 'success',
-                results: results.slice(0, 15)
+                results: rawResults.slice(0, 15)
             });
         } catch (e) {
             console.error('Failed to handle search request', req.query.query, e);

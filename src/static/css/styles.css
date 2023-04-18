@@ -416,12 +416,8 @@ input:focus {
     font-size: 11px;
 }
 
-.search-result .context-text-and-sections {
-    display: flex;
-}
-
-.search-result .context-text-and-sections > * {
-    width: 50%;
+.search-result .context-text h1, .search-result .context-text h2 {
+    display: none;
 }
 
 .guides {
