@@ -1,5 +1,5 @@
 (function () {
-    window.getSessionInfo = async function getSessionInfo(cb) {
+    window.getSessionInfo = async function getSessionInfo(cb, failedCB) {
         // first try US/global session store and then check EU.
         const sessionEndpoints = location.hostname === 'localhost' ?
             ['http://localhost:3001/auth/session-info'] :

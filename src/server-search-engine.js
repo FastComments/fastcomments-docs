@@ -6,6 +6,7 @@ const express = require('express');
 const {getGuides, buildGuideItemForMeta, createGuideItemIdFromPath, getGuideMeta} = require('./guides');
 const fs = require('fs');
 const marked = require('marked');
+const axios = require('axios');
 
 (async function () {
     /** @type {Array.<Guide>} **/
@@ -84,7 +85,7 @@ const marked = require('marked');
     const app = express()
     const port = 5001;
 
-    app.get('/search', (req, res) => {
+    app.get('/search', async (req, res) => {
         try {
             res.set('Access-Control-Allow-Origin', '*');
             res.set('Access-Control-Allow-Credentials', 'true');
@@ -96,6 +97,12 @@ const marked = require('marked');
                 status: 'success',
                 results: rawResults.slice(0, 15)
             });
+            await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
+                + encodeURIComponent(process.env.SEARCH_API_KEY)
+                + '&tenantId='
+                + encodeURIComponent(req.query.tenantId)
+                + '&searchInput=' + encodeURIComponent(req.query.query)
+            );
         } catch (e) {
             console.error('Failed to handle search request', req.query.query, e);
             res.status(500).send({

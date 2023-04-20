@@ -33,33 +33,50 @@
         searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
     }
 
+    let sessionInfo;
+
+    function getSessionInfoCached(cb) {
+        if (sessionInfo) {
+            cb(sessionInfo);
+        } else {
+            window.getSessionInfo(function (newSessionInfo) {
+                sessionInfo = newSessionInfo;
+                cb(newSessionInfo);
+            }, function failed() {
+                cb({});
+            });
+        }
+    }
+
     function fetchAndRenderResults(queryText, queryCounter) {
         searchResultsWrapper.classList.add('open');
         searchResultsWrapper.classList.add('loading');
-        makeRequest((window.location.href.includes('localhost:5000') ? 'http://localhost:5001' : 'https://docs-search.fastcomments.com') + '/search?query=' + queryText, 'GET', null, function cb(responseText) {
-            if (searchCounter !== queryCounter) {
-                return;
-            }
-            currentDisplayedSearchValue = queryText;
-            try {
-                searchResultsWrapper.classList.remove('loading');
-                const response = JSON.parse(responseText);
-                if (!response.results || response.results.length === 0) {
-                    setNoResults();
-                } else {
-                    searchResults.innerHTML = '';
-                    response.results.forEach(function (entry) {
-                        let html = '';
-                        html += '<div class="search-result"><a class="context-title" href="' + entry.url + '">' + entry.title + '</a>';
-                        html += '<div class="context-text">' + entry.preview + '</div>';
-                        html += '<a class="context-link" href="' + entry.url + '">Go to ' + entry.url + '</a>';
-                        html += '</div>';
-                        searchResults.innerHTML += html;
-                    });
+        getSessionInfoCached(function (sessionInfo) {
+            makeRequest((window.location.href.includes('localhost:5000') ? 'http://localhost:5001' : 'https://docs-search.fastcomments.com') + '/search?query=' + queryText + '&tenantId=' + sessionInfo.tenantId, 'GET', null, function cb(responseText) {
+                if (searchCounter !== queryCounter) {
+                    return;
                 }
-            } catch (e) {
-                console.error('Failure to parse index entry', e);
-            }
+                currentDisplayedSearchValue = queryText;
+                try {
+                    searchResultsWrapper.classList.remove('loading');
+                    const response = JSON.parse(responseText);
+                    if (!response.results || response.results.length === 0) {
+                        setNoResults();
+                    } else {
+                        searchResults.innerHTML = '';
+                        response.results.forEach(function (entry) {
+                            let html = '';
+                            html += '<div class="search-result"><a class="context-title" href="' + entry.url + '">' + entry.title + '</a>';
+                            html += '<div class="context-text">' + entry.preview + '</div>';
+                            html += '<a class="context-link" href="' + entry.url + '">Go to ' + entry.url + '</a>';
+                            html += '</div>';
+                            searchResults.innerHTML += html;
+                        });
+                    }
+                } catch (e) {
+                    console.error('Failure to parse index entry', e);
+                }
+            });
         });
     }
 
