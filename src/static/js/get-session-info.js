@@ -32,7 +32,7 @@
             const tenantId = urlParams.get('tId');
             const region = urlParams.get('region');
             if (tenantId) {
-                const isProd = location.hostname === 'localhost';
+                const isProd = location.hostname !== 'localhost';
                 const DomainsByRegion = {
                     'us-west': 'fastcomments.com',
                     'eu': 'eu.fastcomments.com'
