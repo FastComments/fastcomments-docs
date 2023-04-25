@@ -686,3 +686,16 @@ input:focus {
         color: #fff;
     }
 }
+
+h4 {
+    background: #efefef;
+    padding: 4px;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    h4 {
+        background: #012f46;
+    }
+}
