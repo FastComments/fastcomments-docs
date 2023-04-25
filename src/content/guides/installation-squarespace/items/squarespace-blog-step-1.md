@@ -1,5 +1,3 @@
-With Squarespace, we can easily add FastComments so that it automatically is added to every blog post.
-
 We'll start by opening Pages in the left, in the Editor:
 
 <div class="screenshot white-bg">

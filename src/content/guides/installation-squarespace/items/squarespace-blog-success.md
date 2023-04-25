@@ -1,4 +1,4 @@
-Success! You should now see the FastComments Comment Widget.
+Success! You should now see the FastComments Comment Widget on all of your blog posts.
 
 <div class="screenshot white-bg">
     <div class="title">Success!</div>
