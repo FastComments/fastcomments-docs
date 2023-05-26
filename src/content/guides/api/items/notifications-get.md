@@ -12,13 +12,15 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'Notifications Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface NotificationCountGetQueryParams {
+interface NotificationsGetQueryParams {
     tenantId: string
     API_KEY: string
     /** Paginate by skipping records. **/
     skip?: number
     /** Filter by user. **/
     userId?: string
+    /** Filter by urlId. **/
+    urlId?: string
     /** Filter by source comment. **/
     fromCommentId?: string
     /** Filter by read/unread. **/
@@ -28,7 +30,7 @@ interface NotificationCountGetQueryParams {
 
 [inline-code-attrs-start title = 'Notifications Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface NotificationCountGetResponse {
+interface NotificationsGetResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'unauthorized' | 'unexpected-param' | 'not-found'
