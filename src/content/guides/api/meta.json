@@ -179,6 +179,11 @@
       "subCat": "Notifications"
     },
     {
+      "name": "GET /api/v1/notifications/count",
+      "file": "notifications-get-count.md",
+      "subCat": "Notifications"
+    },
+    {
       "name": "PATCH /api/v1/notifications/:id",
       "file": "notifications-patch.md",
       "subCat": "Notifications"

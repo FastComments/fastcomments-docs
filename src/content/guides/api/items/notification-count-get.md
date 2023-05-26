@@ -4,6 +4,8 @@ This route returns a single `NotificationCount` by user id. With SSO, the user i
 
 If there are no unread notifications, there won't be a `NotificationCount` - so you will get a 404.
 
+This is different than `notifications/count` in that it is much faster, but does not allow filtering.
+
 [inline-code-attrs-start title = 'NotificationCount By ID cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
