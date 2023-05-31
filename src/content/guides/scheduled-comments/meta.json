@@ -16,6 +16,11 @@
       "name": "Import Format",
       "file": "import-format.md",
       "subCat": "Scheduled Comments"
+    },
+    {
+      "name": "Cleanup",
+      "file": "cleanup.md",
+      "subCat": "Scheduled Comments"
     }
   ]
 }
