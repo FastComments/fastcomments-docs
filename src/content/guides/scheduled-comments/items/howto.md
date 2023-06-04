@@ -16,6 +16,23 @@ in the dashboard.
 
 This is useful for scenarios where videos or other content starts from the beginning with each pay load. 
 
+### Dynamically Growing Playback
+
+Each time the autoplay script is ran for a user - on page load - there is still the
+opportunity for others to comment.
+
+As people leave comments, their comments, the comments are **automatically added to the replay
+script** at the same offset from page load, so the conversation continues to grow without any
+manual work.
+
+You can additionally **moderate** the comments posted, to curate which comments you want to show
+each time the autoplay script is ran.
+
+The `Moderate Comments` page will also show a timestamp like `AutoPlay 1hr 2m 30s` next to each
+comment instead of the date.
+
+This is only available for automatic playback, not manually scheduled playback.
+
 ### Configuration
 
 Every comment will be posted **live**. You may want to consider [turning on showing live comments right away](/guide-customizations-and-configuration.html#show-live-right-away).
