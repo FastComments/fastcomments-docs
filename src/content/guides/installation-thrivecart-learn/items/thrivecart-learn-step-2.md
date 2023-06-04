@@ -13,7 +13,7 @@ It's quite large, because the integration with ThriveCart is involved, so just c
         let attemptsRemaining = 10;
 
         function tryLoad() {
-            const simpleSSO = {};
+            const simpleSSO = {optedInNotifications: true};
             let isAuthenticated = false;
             let profileLink = document.querySelector('.thrivecart-courses-header-profile-link');
             if (!profileLink) {
