@@ -28,6 +28,11 @@
       "name": "Extra: Code Snippet for Live Commenting",
       "file": "clickfunnels-extra-live-commenting.md",
       "subCat": "Live Commenting Code Snippet"
+    },
+    {
+      "name": "Extra: Auto Play Comments",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Auto Play Comments"
     }
   ]
 }
