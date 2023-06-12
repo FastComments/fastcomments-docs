@@ -158,6 +158,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Email Templates",
+      "file": "email-templates.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"

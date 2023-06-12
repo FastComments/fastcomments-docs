@@ -1,0 +1,41 @@
+{
+  "name": "Email Templates",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Creating Templates",
+      "file": "creating-templates.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Template Language",
+      "file": "template-language.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Localizing and Custom Text",
+      "file": "localizing.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Per-Domain Templates",
+      "file": "per-domain-templates.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Data and Variables",
+      "file": "data-variables.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Render Failures",
+      "file": "render-failures.md",
+      "subCat": "Email Templates"
+    },
+    {
+      "name": "Applying Changes",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Email Templates"
+    }
+  ]
+}
