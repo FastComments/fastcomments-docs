@@ -6,8 +6,3 @@ a JSON structure.
 
 We can also customize the test data in this area, to see how our template looks
 in different situations. The test data can be reset back to the default with the `Reset` button.
-
-#### Note!
-
-We plan to add auto complete in the editor in the near future. This will assist in creating
-accurate templates.
