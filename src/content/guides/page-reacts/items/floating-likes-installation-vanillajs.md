@@ -1,6 +1,6 @@
 Installation is simple:
 
-[inline-code-attrs-start title = 'Floating Likes Code Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Floating Likes Code Example'; type = 'html'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -13,7 +13,7 @@ Installation is simple:
 
 The type signature of the constructor is:
 
-[inline-code-attrs-start title = 'Configuration'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'javascript';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuration'; useDemoTenant = true; isFunctional = false; type = 'javascript';  inline-code-attrs-end]
 [inline-code-start]
 /**
  *
@@ -33,7 +33,7 @@ Currently, only VanillaJS is supported. If you'd like this widget to be added to
 
 ### Async Version
 
-[inline-code-attrs-start title = 'Floating Likes Code Async Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Floating Likes Code Async Example'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
