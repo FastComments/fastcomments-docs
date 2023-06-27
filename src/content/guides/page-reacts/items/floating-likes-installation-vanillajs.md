@@ -1,6 +1,6 @@
 Installation is simple:
 
-[inline-code-attrs-start title = 'Floating Likes Code Example'; type = 'html'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Floating Likes Code Example'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -33,7 +33,7 @@ Currently, only VanillaJS is supported. If you'd like this widget to be added to
 
 ### Async Version
 
-[inline-code-attrs-start title = 'Floating Likes Code Async Example'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Floating Likes Code Async Example'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
