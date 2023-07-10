@@ -12,6 +12,7 @@ The callbacks supported are:
 - onVoteSuccess
 - onImageClicked
 - onOpenProfile
+- onCommentSubmitStart
 
 The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
@@ -48,6 +49,16 @@ Here's an example with all callbacks used:
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
             // return true; // return true to prevent default behavior (opening fastcomments.com user profile).
+        },
+        onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
+            console.log('Trying to submit comment', comment);
+            setTimeout(function() { // emulating async behavior (calling API etc).
+                if(confirm('Should submit?')) {
+                    continueSubmitFn();
+                } else {
+                    cancelFn();
+                }
+            }, 1000);
         }
     });
 </script>
