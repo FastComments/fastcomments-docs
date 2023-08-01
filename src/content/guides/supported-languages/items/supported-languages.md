@@ -12,5 +12,6 @@ FastComments supports a number of languages, across different locales.
 - Polish (Poland) (pl_pl)
 - Portuguese (Brazilian) (pt_br)
 - Russian (Russia) (ru_ru)
+- Russian (Ukraine) (ru_ua)
 - Spanish (Spain) (es_es)
 - Turkish (Turkey)
