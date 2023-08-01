@@ -5,17 +5,25 @@ We can easily connect FastComments with Memberstack with a small code snippet:
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    MemberStack.onReady.then(function (member) {
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
-            tenantId: "demo",
-            urlId: window.location.pathname,
-            simpleSSO: member.loggedIn ? {
-                username: member.name || member.email.replace(/@.+/, ''),
-                email: member.email,
-                avatar: member.avatar
-            } : null
-        });
-    });
+    window.$memberstackDom.getCurrentMember().then(({data: member}) => {
+        if (member) {
+            FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: "demo",
+                urlId: window.location.pathname,
+                simpleSSO: {
+                    username: member.customFields.name || member.auth.email.replace(/@.+/, ''),
+                    email: member.auth.email,
+                    avatar: member.customFields.avatar
+                }
+            });
+        } else {
+            FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: "demo",
+                urlId: window.location.pathname,
+                simpleSSO: null
+            });
+        }
+    })
 </script>
 [inline-code-end]
 
@@ -24,6 +32,8 @@ will be marked `Verified`.
 
 **They will also be able to comment by leaving their name and email, if they are not logged in.**
 
+### Member-Only Commenting
+
 If you'd like to have **member-only commenting**, try the following code snippet, but change `https://example.com/login` to where you want users to go when they click the `Login` button:
 
 [inline-code-attrs-start title = 'Exclusive FastComments Memberstack Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -31,19 +41,26 @@ If you'd like to have **member-only commenting**, try the following code snippet
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    MemberStack.onReady.then(function (member) {
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
-            tenantId: "demo",
-            urlId: window.location.pathname,
-            allowAnon: false,
-            simpleSSO: member.loggedIn ? {
-                username: member.name || member.email.replace(/@.+/, ''),
-                email: member.email,
-                avatar: member.avatar
-            } : {
-                loginURL: 'https://example.com/login'
-            }
-        });
-    });
+    window.$memberstackDom.getCurrentMember().then(({data: member}) => {
+        if (member) {
+            FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: "demo",
+                urlId: window.location.pathname,
+                simpleSSO: {
+                    username: member.customFields.name || member.auth.email.replace(/@.+/, ''),
+                    email: member.auth.email,
+                    avatar: member.customFields.avatar
+                }
+            });
+        } else {
+            FastCommentsUI(document.getElementById('fastcomments-widget'), {
+                tenantId: "demo",
+                urlId: window.location.pathname,
+                simpleSSO: {
+                    loginURL: 'https://example.com/login'
+                }
+            });
+        }
+    })
 </script>
 [inline-code-end]
