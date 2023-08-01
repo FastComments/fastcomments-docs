@@ -15,3 +15,4 @@ FastComments supports a number of languages, across different locales.
 - Russian (Ukraine) (ru_ua)
 - Spanish (Spain) (es_es)
 - Turkish (Turkey)
+- Ukrainian (Ukraine)
