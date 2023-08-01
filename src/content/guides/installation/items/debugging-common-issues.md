@@ -59,7 +59,27 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
 </script>
 [inline-code-end]
 
-Note that after making this change, a migration will have to be preformed. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
+Note that after making this change, a migration will have to be preformed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
+
+### URL Query Parameters Affecting Widget
+
+By default, FastComments will use the page URL for the "bucket" where comments are stored. If your URLs include query parameters
+that should not be part of the identifier that identifies a comment thread, we can simply ignore them, for example:
+
+[inline-code-attrs-start title = 'Ignore Query Parameters'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    tenantId: "demo",
+    url: location.protocol + '//' + location.host + location.pathname,
+    urlId: location.pathname
+});
+</script>
+[inline-code-end]
+
+Note that after making this change, a migration will have to be preformed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
 
 ### Not Receiving Emails
 
