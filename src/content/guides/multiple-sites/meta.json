@@ -3,34 +3,39 @@
   "icon": "domains.png",
   "itemsOrdered": [
     {
-      "name": "Setup",
+      "name": "Initial Setup",
       "file": "add-domains-to-account.md",
-      "subCat": "Setup"
+      "subCat": "Getting Started"
     },
     {
-      "name": "Domain Limits",
+      "name": "Limits and Pricing",
       "file": "domain-limits.md",
-      "subCat": "Setup"
+      "subCat": "Getting Started"
     },
     {
       "name": "From Name, Email, and Logo",
       "file": "from-name-email-logo.md",
-      "subCat": "Setup"
+      "subCat": "Per-Site Customization"
     },
     {
       "name": "Customizations",
       "file": "customizations.md",
-      "subCat": "Setup"
+      "subCat": "Per-Site Customization"
     },
     {
       "name": "Comment Moderation",
       "file": "moderation.md",
-      "subCat": "Usage"
+      "subCat": "Data & Search"
     },
     {
       "name": "Sharing Comments Across Domains",
       "file": "sharing-comments-across-domains.md",
-      "subCat": "Usage"
+      "subCat": "Data & Search"
+    },
+    {
+      "name": "With WordPress",
+      "file": "wordpress.md",
+      "subCat": "Integration Notes"
     }
   ]
 }
