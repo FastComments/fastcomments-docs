@@ -14,7 +14,8 @@ curl --request POST \
 interface VotePostQueryParams {
     tenantId: string
     API_KEY: string
-    userId: string
+    userId?: string
+    anonUserId?: string
     commentId: string
     direction: 'up' | 'down'
 }
@@ -32,7 +33,18 @@ interface VotePostResponse {
 }
 [inline-code-end]
 
-Notes:
+### Creating Anonymous Votes
+
+Anonymous votes can be created by setting `anonUserId` in the query params instead of `userId`.
+
+This id does not have to correspond to a user object anywhere (hence anonymous). It is simply an identifier
+for the session, so you can fetch votes again in the same session, to check if a comment has
+been voted.
+
+If you do not have such a thing as "anonymous sessions" like FastComments does - you can simply
+set this to a random ID, like a UUID (although we appreciate smaller identifiers to save space).
+
+### Other Notes
 
 - This API obeys tenant-level settings. For example, if you disable voting for a given page, and you attempt to create a vote via the API, it will fail with error code `voting-disabled`.
 - This API is live by default.

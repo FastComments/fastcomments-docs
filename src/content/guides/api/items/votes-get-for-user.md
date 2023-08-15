@@ -5,6 +5,8 @@ Allows fetching votes left by a user on a given `urlId`. Takes a `userId` which 
 This is useful if you want to show if a user has voted on a comment. When fetching comments, simply call this API at the same time for the user with the
 same `urlId`.
 
+If you're using anonymous voting then you'll want to pass `anonUserId` instead.
+
 [inline-code-attrs-start title = 'Votes For User cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
@@ -17,7 +19,8 @@ interface VotesForUserRequestQueryParams {
     tenantId: string
     API_KEY: string
     urlId: string
-    userId: string
+    userId?: string
+    anonUserId?: string
 }
 [inline-code-end]
 
