@@ -13,6 +13,14 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/votes/for-user?tenantId=demo&API_KEY=DEMO_API_SECRET&urlId=test&userId=some-user-id'
 [inline-code-end]
 
+[inline-code-attrs-start title = 'Votes For Anon User cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request GET \
+  --url 'https://fastcomments.com/api/v1/votes/for-user?tenantId=demo&API_KEY=DEMO_API_SECRET&urlId=test&anonUserId=some-user-id'
+[inline-code-end]
+
+Note that anonymous votes will appear in the `appliedAuthorizedVotes` list. They are considered authorized since they were created via the API with an API key.
+
 [inline-code-attrs-start title = 'Votes For User Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotesForUserRequestQueryParams {

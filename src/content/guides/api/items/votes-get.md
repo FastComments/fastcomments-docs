@@ -43,3 +43,9 @@ interface VotesResponse {
     pendingVotes: Vote[]
 }
 [inline-code-end]
+
+#### Anonymous Votes Notes
+
+Note that anonymous votes created via this API will appear in the `appliedAuthorizedVotes` list. They are considered authorized since they were created via the API with an API key.
+
+The `appliedAnonymousVotes` structure is for votes created without an email, API key, etc.

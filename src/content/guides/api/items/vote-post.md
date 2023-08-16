@@ -9,6 +9,13 @@ curl --request POST \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
+[inline-code-attrs-start title = 'Anonymous Vote Create cURL Example'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST \
+  --url 'https://fastcomments.com/api/v1/votes?tenantId=demo&API_KEY=DEMO_API_SECRET&anonUserId=some-randomly-generated-identifier&commentId=comment-id&direction=up' \
+  --header 'Content-Type: application/json'
+[inline-code-end]
+
 [inline-code-attrs-start title = 'Vote Create Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotePostQueryParams {
