@@ -112,6 +112,8 @@ interface CommentsRequestQueryParams {
     skip?: number
     /** For determining blocked and flagged comments. **/
     contextUserId?: string
+    /** For determining blocked and flagged comments. **/
+    anonUserId?: string
     /** For fetching child comments. **/
     parentId?: string
 }
@@ -132,7 +134,14 @@ interface CommentsResponse {
 }
 [inline-code-end]
 
-#### Helpful Tip
+### Helpful Tips
 
-You probably want to use the `Comment` API with the `urlId` parameter. You can call the `Pages` API first, to see what the `urlId` values available to you
-look like.
+#### URL ID
+
+You probably want to use the `Comment` API with the `urlId` parameter. You can call the `Pages` API first, to see what the `urlId` values available to you look like. 
+
+#### Anonymous Actions
+
+For anonymous commenting you probably want to pass `anonUserId` when fetching comments, and when performing flagging and blocking.
+
+(!) This is required for many app stores as users must be able to flag user-created content they can see, even if they are not logged in. Not doing so may cause your app to be removed from said store.

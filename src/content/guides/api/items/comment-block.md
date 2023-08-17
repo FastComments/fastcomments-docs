@@ -17,12 +17,23 @@ curl --request POST \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
+For anonymous blocking, we must specify an `anonUserId`. This can be an ID that represents the anonymous session, or a random UUID.
+This allows us to support blocking comments even if a user is not logged in by fetching the comments with the same `anonUserId`.
+
+[inline-code-attrs-start title = 'Anonymous Comment Block cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST \
+  --url 'https://fastcomments.com/api/v1/comments/some-comment-id/block?tenantId=demo&API_KEY=DEMO_API_SECRET&anonUserId=some-anon-user-id' \
+  --header 'Content-Type: application/json'
+[inline-code-end]
+
 [inline-code-attrs-start title = 'Comment Block Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentBlockQueryParams {
     tenantId: string
     API_KEY: string
-    userId: string
+    userId?: string
+    anonUserId?: string
     commentIdsToCheck?: string[]
 }
 [inline-code-end]
@@ -33,7 +44,7 @@ interface CommentBlockQueryParams {
 interface CommentBlockResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'missing-user-id' | 'comment-cannot-be-blocked'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'missing-user-id' | 'missing-anon-user-id' | 'comment-cannot-be-blocked'
     /** Included on failure. **/
     reason?: string
     /** If commentIdsToCheck is defined, entries in this map with true are also blocked. **/
