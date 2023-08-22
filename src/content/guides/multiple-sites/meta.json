@@ -18,6 +18,11 @@
       "subCat": "Per-Site Customization"
     },
     {
+      "name": "Tenant Per Environment",
+      "file": "tenant-per-environment.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
       "name": "Customizations",
       "file": "customizations.md",
       "subCat": "Per-Site Customization"
