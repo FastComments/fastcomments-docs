@@ -27,6 +27,10 @@ This is all possible via the URL ID input field on this page, which looks like a
 
 The value in this field should match the *urlId* parameter passed into the comment widget. If you want your customization rule to be *urlId* agnostic, leave this field empty or enter *.
 
+As of 2023 the `URL ID` field in widget customization now also takes patterns! For example you may
+have `*/blog/*` to add styling specific to your blog and `*/store/*` to have styling specific to your store,
+all while using the same domain.
+
 ### Gotchas
 
 1. If your page has hash parameters (like example.com#page-1) - this will become part of the URL ID, by default.
