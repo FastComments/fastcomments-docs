@@ -7,6 +7,13 @@ This can be done without code in the Widget Customization UI, under the setting 
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
 
+The available formats are:
+
+- Capitalize (display example user as Example User)
+- Last Initial (display Example User as Example U.)
+- All Initials (display Example User as E. U.)
+- Show "Anonymous"
+
 The effect of changing this is immediate. User's will still see their full username at the top of the comment area, for themselves, but their comments will show
 the modified username.
 
