@@ -163,6 +163,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "User Name Formats",
+      "file": "user-name-formats.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
