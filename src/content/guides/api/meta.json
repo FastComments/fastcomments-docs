@@ -482,6 +482,90 @@
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Domain Configs"
+    },
+    {
+      "name": "QuestionConfig Structure",
+      "file": "question-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "GET /api/v1/question-configs",
+      "file": "question-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "GET /api/v1/question-configs/:id",
+      "file": "question-config-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "POST /api/v1/question-configs",
+      "file": "question-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "PATCH /api/v1/question-configs/:id",
+      "file": "question-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "DELETE /api/v1/question-configs/:id",
+      "file": "question-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "QuestionResult Structure",
+      "file": "question-result-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results",
+      "file": "question-results-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results/:id",
+      "file": "question-result-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "POST /api/v1/question-results",
+      "file": "question-result-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "PATCH /api/v1/question-results/:id",
+      "file": "question-result-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "DELETE /api/v1/question-results/:id",
+      "file": "question-result-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate",
+      "file": "question-results-aggregate.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results Aggregation"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate/combine/comments",
+      "file": "question-results-combine-comments.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results Aggregation"
     }
   ]
 }
