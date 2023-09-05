@@ -316,6 +316,11 @@
       "name": "Third Party Cookie Bypass",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Deleting Comments With Replies",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Misc"
     }
   ]
 }
