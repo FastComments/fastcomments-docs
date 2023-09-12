@@ -78,6 +78,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disabling Blocking",
+      "file": "disable-blocking.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Determining Which Page to Render",
       "file": "starting-page.md",
       "subCat": "Look and Feel"
