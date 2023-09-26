@@ -43,6 +43,12 @@ It's quite large, because the integration with ThriveCart is involved, so just c
                 if (profileLink.innerText) {
                     isAuthenticated = true;
                     simpleSSO.username = profileLink.innerText;
+                } else {
+                    const bold = profileLink.querySelector('b');
+                    if (bold && bold.innerText) {
+                        isAuthenticated = true;
+                        simpleSSO.username = bold.innerText;
+                    }
                 }
             } else {
                 if (!attemptsRemaining) {
