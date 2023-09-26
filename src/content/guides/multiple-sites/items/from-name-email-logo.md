@@ -28,7 +28,10 @@ Some more information on how to do this is here: https://mailtrap.io/blog/multip
 
 #### 2. Setup DKIM
 
-In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, [invoke the API](/guide-api.html#domain-config-structure) to define your DKIM configuration.
+In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, you can click "Show Advanced" in the domain configurations page
+to show the DKIM settings per-domain.
+
+You can also [invoke the API](/guide-api.html#domain-config-structure) to set DKIM configuration.
 
 ### Unsubscribe Links
 
