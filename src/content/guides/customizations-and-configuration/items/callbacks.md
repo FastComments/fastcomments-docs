@@ -56,7 +56,7 @@ Here's an example with all callbacks used:
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
-                    cancelFn();
+                    cancelFn('Some optional error message');
                 }
             }, 1000);
         }
