@@ -27,7 +27,7 @@ As long as you're logged into FastComments.com the below code snippet will alrea
             topBarTarget.style.margin = '0 auto';
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
-                topBarTarget
+                topBarTarget: topBarTarget
             });
         }
 
