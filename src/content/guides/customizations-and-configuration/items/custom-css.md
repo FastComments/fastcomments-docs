@@ -25,6 +25,23 @@ However, this has *limitations*:
 4. A common optimization is minifying the CSS to reduce its size over the network, however with this approach you will have to handle that.
 5. Your custom CSS won't be tested when we make changes.
 
+### External CSS Files
+
+You can tell the widget to fetch an external file by using `@import`!
+
+It's recommended to put the `@import` in a customization rule. This way, if we ever need to make a change to the comment widget, we can use our automation
+tooling to verify your setup. So for example, you would create a customization rule in the Widget Customization UI, click `Advanced`, and enter in `Custom CSS`:
+
+    @import url(https://example.com/styles.css);
+
+#### In Code - Not Recommended
+
+You can also load an external CSS file via the `customCSS` property:
+
+[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'External CSS File'; code-example-end]
+
+However, remember that your CSS won't be able to be tested by us if you do this. 
+
 ### Backwards Compatibility
 
 At FastComments, we know our customers customize the commenting widget. That's by design - the last thing we want is for our product to cause design
