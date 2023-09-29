@@ -71,7 +71,7 @@ function process(input, filePath) {
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
+FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
             tenantId: 'demo',
             ...args.config
         }, null, '    ')});

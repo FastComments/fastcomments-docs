@@ -86,8 +86,6 @@ function process(input, filePath) {
         const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
         if (isFunctional) {
             createCodeSnippetPage(inlineCode, args.title, codeSnippetPageFileName);
-        } else { // OPTIMIZATION
-            inlineCode = inlineCode.replace(new RegExp('window.', 'g'), '');
         }
 
         input = input.substring(0, nextIndex) + getTemplate(inlineCode, args.title, args.type ? args.type : 'html', isFunctional, filePath, codeSnippetName, codeSnippetPageFileName, args.useDemoTenant) + input.substring(endTokenIndex + EndToken.length, input.length);
