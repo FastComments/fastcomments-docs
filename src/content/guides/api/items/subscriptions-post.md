@@ -8,7 +8,7 @@ Creating a subscription will result in `Notification` objects being created when
 [inline-code-attrs-start title = 'Subscription POST cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
-  --url 'https://fastcomments.com/api/v1/subscriptions/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET' \
+  --url 'https://fastcomments.com/api/v1/subscriptions?tenantId=demo&API_KEY=DEMO_API_SECRET' \
   --header 'Content-Type: application/json' \
   --data '{
     "userId": "tenantId:test-user-id",
