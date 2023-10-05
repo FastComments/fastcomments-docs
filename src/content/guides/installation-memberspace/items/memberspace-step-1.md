@@ -79,8 +79,6 @@ will be marked `Verified`.
 Additionally, in the above example if you have a subscription plan called `VIP Plan` then we'll display a `VIP` badge next to the user's name. You can edit the example to
 add more plans. Reach out to support if you have questions.
 
-**They will also be able to comment by leaving their name and email, if they are not logged in.**
-
 ### Allow Anonymous Commenting
 
 If you'd like to also have **anonymous commenting**, set ALLOW_ANON to true like this:
@@ -88,3 +86,5 @@ If you'd like to also have **anonymous commenting**, set ALLOW_ANON to true like
     const ALLOW_ANON = true;
 
 Also remember to change `https://example.com/login` to where you want users to go when they click the `Login` button:
+
+This way users will have the option of entering their name and email to comment if they are not logged in to your member site.
