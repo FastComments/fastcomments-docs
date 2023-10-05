@@ -1,0 +1,22 @@
+{
+  "name": "MemberSpace Installation",
+  "pageHeader": "Add Comments With MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "With Simple SSO",
+      "file": "memberspace-step-1.md",
+      "subCat": "MemberSpace Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "MemberSpace Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "memberspace-customize.md",
+      "subCat": "MemberSpace Installation"
+    }
+  ]
+}
