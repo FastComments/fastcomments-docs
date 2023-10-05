@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
-      "name": "With Simple SSO",
+      "name": "The Code",
       "file": "memberstack-step-1.md",
       "subCat": "Memberstack Installation"
     },

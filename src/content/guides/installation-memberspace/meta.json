@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
-      "name": "With Simple SSO",
+      "name": "The Code",
       "file": "memberspace-step-1.md",
       "subCat": "MemberSpace Installation"
     },
