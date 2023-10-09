@@ -7,6 +7,19 @@ Comments marked as **Spam** will not be automatically approved, so they will not
 
 Spam Detection can be disabled via the Comment Moderation Settings page.
 
+### Different Spam Detectors
+
+FastComments supports three ways of detecting spam:
+
+1. A traditional Naïve-Bayes classifier that is continuously trained, which is shared across all FastComments.com tenants.
+2. A traditional Naïve-Bayes classifier that is continuously trained, which is **isolated** to your tenant.
+3. Using ChatGPT 4.
+
+Everyone has access to the shared and isolated Naïve-Bayes classifiers.
+
+The ChatGPT 4 option is selectable in the Comment Moderation Settings page if you are on Flex billing, since it bills based
+on tokens used.
+
 ### SSO
 
 Comments posted by SSO users can be considered spam, and will be checked as such. The exception is if the SSO user
