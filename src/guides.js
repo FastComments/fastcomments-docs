@@ -185,6 +185,7 @@ module.exports = {
     buildGuide,
     buildGuideItemForMeta,
     buildGuideFromItems,
+    createGuideLink,
     createGuideItemIdFromPath,
     getGuides,
     getGuideMeta,

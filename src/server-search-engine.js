@@ -3,10 +3,21 @@
 
 const MiniSearch = require('minisearch');
 const express = require('express');
-const {getGuides, buildGuideItemForMeta, createGuideItemIdFromPath, getGuideMeta} = require('./guides');
+const {
+    getGuides,
+    buildGuideItemForMeta,
+    getGuideMeta,
+    createGuideLink
+} = require('./guides');
 const fs = require('fs');
 const marked = require('marked');
 const axios = require('axios');
+
+const AXIOS_CONFIG_NO_THROW = {
+    validateStatus: function () {
+        return true;
+    }
+};
 
 (async function () {
     /** @type {Array.<Guide>} **/
@@ -17,65 +28,48 @@ const axios = require('axios');
         const guideTitle = guide.pageHeader || guide.name;
 
         const meta = getGuideMeta(guide.id);
-        let preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')) : '';
-        let bodyWithChildren = preview.trim();
-        if (meta.itemsOrdered) {
+        if (guide.id.startsWith('installation-') && guide.id !== 'installation') {
+            const preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')) : '';
+            let bodyWithChildren = preview.trim();
             for (const item of meta.itemsOrdered) {
                 const builtItem = await buildGuideItemForMeta(guide, item);
-                if (!preview.length) { // important we do after bodyWithChildren = so we don't duplicate content that could impact ranking.
-                    // use first section as preview.
-                    preview = builtItem.content;
-                }
-                bodyWithChildren += builtItem.content + '\n';
+                bodyWithChildren += builtItem.content;
             }
-        }
-        if (!preview.length) {
-            // probably a placeholder guide - does it refer to an other guide?
-            if (guide.url && guide.url.startsWith('/guide-')) {
-                let [path, subId] = guide.url.split('#');
-                if (subId) {
-                    path = path.replace('.html', '').replace('/guide-', '');
-                    const linkedGuide = guides.find((guide) => guide.id === path);
-                    if (linkedGuide) {
-                        const linkedGuideMeta = getGuideMeta(linkedGuide.id);
-                        if (linkedGuideMeta.itemsOrdered) {
-                            const subItem = linkedGuideMeta.itemsOrdered.find((item) => {
-                                return createGuideItemIdFromPath(item.file) === subId;
-                            });
-                            if (subItem) {
-                                const builtItem = await buildGuideItemForMeta(linkedGuide, subItem);
-                                preview = builtItem.content;
-                            }
-                        }
-                    }
-                } else {
-                    console.warn('No sub entry to link to to create preview!', guide);
-                }
+
+            const subEntry = {
+                id: guide.id,
+                title: meta.pageHeader,
+                icon: '/images/guide-icons/' + meta.icon,
+                url: '/' + createGuideLink(guide.id),
+                searchText: bodyWithChildren
+            };
+            guidesFlat.push(subEntry);
+        } else if (meta.itemsOrdered) {
+            for (const item of meta.itemsOrdered) {
+                const builtItem = await buildGuideItemForMeta(guide, item);
+
+                const subEntry = {
+                    id: guide.id + '>' + builtItem.id,
+                    parentTitle: guideTitle,
+                    title: builtItem.title,
+                    icon: '/images/guide-icons/' + meta.icon,
+                    parentUrl: guide.url,
+                    url: builtItem.fullUrl,
+                    searchText: builtItem.content
+                };
+                guidesFlat.push(subEntry);
             }
+        } else {
+            // what guide wouldn't have this?
         }
-
-        const previewSplit = preview.split('\n');
-
-        if (previewSplit.length > 10) {
-            preview = previewSplit.slice(0, 10).join('\n');
-        }
-
-        const mainEntry = {
-            id: guide.id,
-            title: guideTitle,
-            url: guide.url,
-            preview,
-            bodyWithChildren
-        };
-        guidesFlat.push(mainEntry);
     }
 
     const miniSearch = new MiniSearch({
-        fields: ['title', 'titleWithMeta', 'preview', 'bodyWithChildren'], // fields to index for full-text search
-        storeFields: ['title', 'preview', 'url', 'parent'], // fields to return with search results
+        fields: ['title', 'parentTitle', 'searchText'], // fields to index for full-text search
+        storeFields: ['title', 'parentTitle', 'url', 'parentUrl', 'icon'], // fields to return with search results
         searchOptions: {
             boost: {title: 2},
-            fuzzy: 0.2
+            fuzzy: 0.1
         }
     })
 
@@ -91,18 +85,26 @@ const axios = require('axios');
             res.set('Access-Control-Allow-Credentials', 'true');
             res.set('Access-Control-Allow-Headers', 'content-type');
             console.log('Searching for', req.query.query);
-            const rawResults = miniSearch.search(req.query.query);
+            const rawResults = miniSearch.search(req.query.query, {
+                boostDocument: function (id, term) {
+                    if (id.startsWith('installation>') && term === 'install') {
+                        return 2;
+                    }
+                    return 1;
+                }
+            });
             console.log(rawResults.length, 'results for', req.query.query);
             res.send({
                 status: 'success',
                 results: rawResults.slice(0, 15)
             });
-            await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
+            const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
                 + encodeURIComponent(process.env.SEARCH_API_KEY)
                 + '&tenantId='
                 + encodeURIComponent(req.query.tenantId)
-                + '&searchInput=' + encodeURIComponent(req.query.query)
+                + '&searchInput=' + encodeURIComponent(req.query.query), AXIOS_CONFIG_NO_THROW
             );
+            console.log('Tracker search event response', response);
         } catch (e) {
             console.error('Failed to handle search request', req.query.query, e);
             res.status(500).send({

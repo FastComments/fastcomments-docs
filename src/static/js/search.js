@@ -66,10 +66,19 @@
                         searchResults.innerHTML = '';
                         response.results.forEach(function (entry) {
                             let html = '';
-                            html += '<div class="search-result"><a class="context-title" href="' + entry.url + '">' + entry.title + '</a>';
-                            html += '<div class="context-text">' + entry.preview + '</div>';
-                            html += '<a class="context-link" href="' + entry.url + '">Go to ' + entry.url + '</a>';
-                            html += '</div>';
+                            html += '<a class="search-result" href="' + entry.url + '">';
+                            if (entry.icon) {
+                                html += '<div class="icon-container">'
+                                html += '<img src="' + entry.icon + '" alt="Icon" />';
+                                html += '</div>';
+                            }
+                            html += '<div class="details">'
+                            if (entry.parentTitle && entry.parentUrl) {
+                                html += '<div class="context-title sm">From: ' + entry.parentTitle + '</div>';
+                            }
+                            html += '<div class="context-title">' + entry.title + '</div>';
+                            html += '</div>'
+                            html += '</a>';
                             searchResults.innerHTML += html;
                         });
                     }
