@@ -165,7 +165,7 @@
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
-      "file": "notification-count-get.md",
+      "file": "notification-count-delete.md",
       "subCat": "Notification Count"
     },
     {
