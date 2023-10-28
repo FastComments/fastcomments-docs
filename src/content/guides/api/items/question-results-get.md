@@ -16,7 +16,12 @@ interface QuestionResultsRequestQueryParams {
     API_KEY: string
     /** For pagination. Starts at 0. **/
     skip?: number
+    /** For pagination. **/
+    limit?: number
+    /** Get the results from a specific page. **/
     urlId?: string
+    /** Get the results from a specific user. **/
+    userId?: string
     startDate?: string | number
     questionId?: string | string[]
 }

@@ -37,7 +37,10 @@ interface QuestionResultsAggregateRequestQueryParams {
     questionId: string | string[]
     startDate?: string | number
     timeBucket?: 'day' | 'month' | 'year'
+    /** Aggregate for a specific page. **/
     urlId?: string
+    /** Aggregate for a specific user. **/
+    userId?: string
     /** Force recalculate now and update the cache. **/
     forceRecalculate?: boolean
 }
