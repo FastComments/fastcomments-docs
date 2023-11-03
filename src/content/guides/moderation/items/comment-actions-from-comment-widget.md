@@ -12,12 +12,14 @@ a moderator:
 
 ### Closing Comment Threads
 
-Moderators and administrators can lock comment threads, by selecting `Close Thread` in the three-dot menu in the top
+Moderators and administrators can lock, or close, comment threads, by selecting `Close Thread` in the three-dot menu in the top
 of the comment area, if they are logged in. They can select `Re-Open Thread` later, at any time, to re-open commenting.
 
 Closing a comment thread prevents new comments, but still allows voting, and for users to delete their comments if desired.
 
 Closing and re-opening comment threads instantly affects all users viewing the thread.
+
+You can also mark a thread read-only which removes vote and delete options as well, by creating a customization rule specifically for that page.
 
 ### Updated Live
 
