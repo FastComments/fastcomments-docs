@@ -1,5 +1,7 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
+This API is used to get comments for displaying to a user. For example, it automatically filters
+out unapproved or spam comments.
 
 ### Pagination
 
@@ -145,3 +147,7 @@ You probably want to use the `Comment` API with the `urlId` parameter. You can c
 For anonymous commenting you probably want to pass `anonUserId` when fetching comments, and when performing flagging and blocking.
 
 (!) This is required for many app stores as users must be able to flag user-created content they can see, even if they are not logged in. Not doing so may cause your app to be removed from said store.
+
+#### Comments Not Being Returned
+
+Check that your comments are approved, and are not spam.
