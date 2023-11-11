@@ -17,8 +17,10 @@ Pagination can be done in one of two ways, depending on performance requirements
    1. In this way you can define custom `limit` and `skip` parameters. Do not pass `page`.
    2. Sort `direction` is also supported.
    3. `limit` is the total number to return after `skip` is applied.
-      1. Example: set `skip = 200, limit = 100` when `page size = 100` and `page = 2`.
+      - Example: set `skip = 200, limit = 100` when `page size = 100` and `page = 2`.
    4. Child comments still count in the pagination. You can get around this using the `asTree` option.
+      - You can paginate children via `limitChildren` and `skipChildren`.
+      - You can limit the depth of the threads returned via `maxTreeDepth`.
 
 ### Threads
 
@@ -37,6 +39,7 @@ Pagination can be done in one of two ways, depending on performance requirements
    4. Set `skip` and `limit` for pagination.
    5. Set `asTree` to `true`.
    6. The credits cost increases by `2x`, as our backend has to do much more work in this scenario.
+   7. Set `maxTreeDepth`, `limitChildren`, and `skipChildren` as desired.
 
 ### Fetching Comments in The Context of a User
 
@@ -81,6 +84,18 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
+Want to only get the top level comments and the immediate children? Here's one way:
+
+[inline-code-attrs-start title = 'Comments As-A-Tree with Max Depth'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request GET \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
+[inline-code-end]
+
+However, in your UI you might need to know whether to show a "show replies" button on
+each comment. When fetching comments via a tree there is a `hasChildren` property tagged
+onto comments when applicable.
+
 ### Get Comments as a Tree, Searching by Hash Tag
 
 It's possible to search by hashtag using the API, across your entire tenant (not limited to one page, or `urlId`).
@@ -110,14 +125,22 @@ interface CommentsRequestQueryParams {
     page?: number
     /** Flexible Pagination: How many comments should we return? **/
     limit?: number
+    /** Flexible Pagination: How many child comments should we return for each parent? **/
+    limitChildren?: number
     /** Flexible Pagination: How many comments should we skip? **/
     skip?: number
+    /** Flexible Pagination: How many child comments should we skip for each parent? **/
+    skipChildren?: number
     /** For determining blocked and flagged comments. **/
     contextUserId?: string
     /** For determining blocked and flagged comments. **/
     anonUserId?: string
     /** For fetching child comments. **/
     parentId?: string
+    /** For fetching as a tree. **/
+    asTree?: boolean
+    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
+    maxTreeDepth?: number
 }
 [inline-code-end]
 
@@ -128,7 +151,7 @@ interface CommentsRequestQueryParams {
 interface CommentsResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
     /** Included on failure. **/
     reason?: string
     /** The comments! **/
