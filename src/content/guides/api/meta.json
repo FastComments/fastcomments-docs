@@ -413,6 +413,17 @@
       "subCat": "Tenant Users"
     },
     {
+      "name": "User Structure",
+      "file": "User-structure.md",
+      "subCat": "Users"
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "file": "user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Users"
+    },
+    {
       "name": "Vote Structure",
       "file": "vote-structure.md",
       "subCat": "Votes"
