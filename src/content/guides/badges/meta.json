@@ -1,0 +1,96 @@
+{
+  "name": "Badges",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Basics",
+      "file": "badge-basics.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Progression",
+      "file": "badge-progression.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Manual Badges",
+      "file": "badge-type-manual.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Comment Count",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Up-Votes",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Replies",
+      "file": "badge-type-replies.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Pinned Comments",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Veteran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Night Owl",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Fast Reply Time",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Reply to Specific Page",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Badge Types"
+    },
+    {
+      "name": "Intro to Moderator Badges",
+      "file": "moderator-badges.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Deleted",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Approved",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Un-Approved",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Reviewed",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Marked Spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Moderator Badge Types"
+    },
+    {
+      "name": "Comments Marked Not Spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Moderator Badge Types"
+    }
+  ]
+}
