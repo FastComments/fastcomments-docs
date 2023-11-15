@@ -9,7 +9,11 @@ The "create" event request body is a WebhookComment object.
 The "update" event request body is a WebhookComment object.
 
 ##### The "Delete" Event Structure
-The "delete" event request body is a WebhookComment object, but only containing the id.
+The "delete" event request body is a WebhookComment object.
+
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+
 
 [inline-code-attrs-start title = 'The WebhookComment Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -30,6 +34,8 @@ interface WebhookComment {
     comment: string
     /** Comment text after parsing. **/
     commentHTML: string
+    /** Comment external id. **/
+    externalId?: string
     /** The id of the parent comment. **/
     parentId?: string | null
     /** The UTC date when the comment was left. **/
