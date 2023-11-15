@@ -41,6 +41,15 @@ Pagination can be done in one of two ways, depending on performance requirements
    6. The credits cost increases by `2x`, as our backend has to do much more work in this scenario.
    7. Set `maxTreeDepth`, `limitChildren`, and `skipChildren` as desired.
 
+### Trees Explained
+
+When using `asTree`, it can be hard to reason about pagination. Here's a handy graphic:
+
+<div class="screenshot white-bg">
+    <div class="title">Tree Pagination Diagram</div>
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Tree Pagination Diagram" />
+</div>
+
 ### Fetching Comments in The Context of a User
 
 The `/comments` API can be used in two contexts, for different use cases:
