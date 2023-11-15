@@ -2,7 +2,7 @@ For Step 2 we have to copy our code snippet. Check that line 50 does not say "de
 
 Now let's copy our ThriveCart-Learn-Specific FastComments code snippet.
 
-It's quite large, because the integration with ThriveCart is involved, so just click the Copy button in the top right of the code snippet:
+It's quite large, because the integration with ThriveCart has a lot of features, so just click the Copy button in the top right of the code snippet:
 
 [inline-code-attrs-start title = 'ThriveCart Learn+ Comments Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

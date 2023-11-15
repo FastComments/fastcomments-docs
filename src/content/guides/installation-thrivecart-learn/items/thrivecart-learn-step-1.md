@@ -1,6 +1,6 @@
-With ThriveCart Learn+, we have to add the FastComments code to every course page we want to display comments on.
+Due to the design of ThriveCart Learn+, we have to add the FastComments code to every course page we want to display comments on.
 
-We can use the same code snippet on every page, and separate comment threads will be tied to each individual page.
+We can use the same code snippet on every page, and separate comment threads will automatically be tied to each individual page.
 
 We'll start by opening our course in the editor and adding an HTML block.
 
