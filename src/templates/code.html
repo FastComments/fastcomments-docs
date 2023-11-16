@@ -43,14 +43,71 @@
             const input = document.getElementById('code-input');
             const iframe = document.getElementById('iframe');
 
+            function getIndentation(line) {
+                if (!line) {
+                    return '    ';
+                }
+                let spaces = '';
+                for (const character of line.split('')) {
+                    if (character === ' ') {
+                        spaces += ' ';
+                    } else {
+                        break;
+                    }
+                }
+                return spaces;
+            }
+
             function setup(userId) {
                 if (userId) {
                     // hack to keep user's comments on page reload since createObjectURL creates urls with uuids that reference location in browser memory
-                    const endOfConfig = `\n});\n${decodeURIComponent('%3C%2Fscript%3E')}`;
-                    console.log(input.value, input.value.includes(endOfConfig));
-                    if (input.value.includes(endOfConfig)) {
-                        input.value = input.value.replace(endOfConfig, `,\n    "urlId": "demo-session-${userId}" /\/\ just so your comments persist in this demo` + endOfConfig + '');
+                    const scriptLines = input.value.split('\n');
+                    const result = [];
+                    const demoPageUrlIdLine = `"urlId": "demo-session-${userId}" /\/\ just so your comments persist in this demo`;
+                    let isInConfig = false;
+                    let foundTenantId = false;
+                    let added = false;
+                    let lastLineIndex = -1;
+                    for (let i = 0; i < scriptLines.length; i++) {
+                        const line = scriptLines[i];
+                        if (!isInConfig && line.endsWith('{')) {
+                            isInConfig = true;
+                        }
+                        if (isInConfig && line.includes('tenantId')) {
+                            foundTenantId = true;
+                        }
+                        const isEndOfScript = (line.endsWith('});') || line.endsWith('})') || line.endsWith('};'));
+                        if (isInConfig && !isEndOfScript && line.endsWith(';')) {
+                            isInConfig = false;
+                        }
+                        if (!added
+                            && (line.includes('"urlId":') || line.includes('urlId:'))
+                            // if is "urlId": "example"
+                            && (line.endsWith('"') || line.endsWith("'"))) {
+                            result.push(getIndentation(result[lastLineIndex]) + demoPageUrlIdLine);
+                            lastLineIndex++;
+                            added = true;
+                        } else {
+                            if (isInConfig && !added && isEndOfScript) {
+                                if (foundTenantId) { // if is valid config obj
+                                    if (!result[lastLineIndex].endsWith(',')) {
+                                        result[lastLineIndex] = result[lastLineIndex] + ',';
+                                    }
+                                    result.push(getIndentation(result[lastLineIndex]) + demoPageUrlIdLine);
+                                    lastLineIndex++;
+                                    added = true;
+                                }
+                                result.push(line);
+                                lastLineIndex++;
+                                isInConfig = false;
+                                foundTenantId = false;
+                            } else {
+                                result.push(line);
+                                lastLineIndex++;
+                            }
+                        }
                     }
+                    input.value = result.join('\n');
                 }
 
                 const editor = CodeMirror.fromTextArea(input, {
@@ -111,7 +168,7 @@
                 } else {
                     setup(sessionInfo.userId);
                 }
-            }, function() {
+            }, function () {
                 setup(); // so we don't pass error as userId
             });
         })();
