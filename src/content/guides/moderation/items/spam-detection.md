@@ -20,6 +20,13 @@ Everyone has access to the shared and isolated Naïve-Bayes classifiers.
 The ChatGPT 4 option is selectable in the Comment Moderation Settings page if you are on Flex billing, since it bills based
 on tokens used.
 
+### Trust Factor
+
+FastComments adjusts the spam filter for a user based on how much they are trusted for the given site.
+
+For example, if administrators have pinned lots of their comments, then probably they are a very trustworthy user. Or, if
+they have been a member of the site for a long time and have a lot of comments, then their trust factor may be high as well.
+
 ### SSO
 
 Comments posted by SSO users can be considered spam, and will be checked as such. The exception is if the SSO user
