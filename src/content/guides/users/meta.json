@@ -8,6 +8,11 @@
       "subCat": "Background"
     },
     {
+      "name": "Usernames",
+      "file": "usernames.md",
+      "subCat": "Background"
+    },
+    {
       "name": "Administrator Users",
       "file": "administrator-users.md",
       "subCat": "Background"
