@@ -98,13 +98,17 @@ const AXIOS_CONFIG_NO_THROW = {
                 status: 'success',
                 results: rawResults.slice(0, 15)
             });
-            const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
-                + encodeURIComponent(process.env.SEARCH_API_KEY)
-                + '&tenantId='
-                + encodeURIComponent(req.query.tenantId)
-                + '&searchInput=' + encodeURIComponent(req.query.query), AXIOS_CONFIG_NO_THROW
-            );
-            console.log('Tracker search event response', response);
+            try {
+                const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
+                    + encodeURIComponent(process.env.SEARCH_API_KEY)
+                    + '&tenantId='
+                    + encodeURIComponent(req.query.tenantId)
+                    + '&searchInput=' + encodeURIComponent(req.query.query), AXIOS_CONFIG_NO_THROW
+                );
+                console.log('Tracker search event response', response);
+            } catch (e) {
+                console.error(e);
+            }
         } catch (e) {
             console.error('Failed to handle search request', req.query.query, e);
             res.status(500).send({
