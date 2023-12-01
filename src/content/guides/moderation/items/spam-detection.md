@@ -37,3 +37,8 @@ has the same email as a tenant user who has one or more of the following permiss
 - Comment Moderator Admin
 
 SSO users with these permissions will not have their comments checked for spam.
+
+### Repeated Messages
+
+FastComments will detect and prevent repeated messages. It will also detect repeated message that are very similar to help prevent spam. This cannot
+be disabled as it prevents our platform from being used for abuse. If you have a high trust factor, this is taken into account when doing repeated message prevention.
