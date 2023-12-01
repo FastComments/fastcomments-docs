@@ -108,6 +108,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Render Links as Text",
+      "file": "render-links-as-text.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Toggling Comments With a Button",
       "file": "use-show-comments-toggle.md",
       "subCat": "Look and Feel"
