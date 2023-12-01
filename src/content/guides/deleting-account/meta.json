@@ -1,0 +1,16 @@
+{
+  "name": "Deleting Your Account",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Deleting Your Account",
+      "file": "deleting-your-account.md",
+      "subCat": "Commenters and Tenants"
+    },
+    {
+      "name": "Cancelling Your Subscription",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Tenants"
+    }
+  ]
+}
