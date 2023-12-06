@@ -19,6 +19,7 @@ FastComments supports a number of languages, across different locales.
 - Russian (Russia)
 - Russian (Ukraine)
 - Serbian (Bosnia & Herzegovina)
+- Serbian (Latin Serbia)
 - Serbian (Montenegro)
 - Serbian (Serbia)
 - Spanish (Spain)
