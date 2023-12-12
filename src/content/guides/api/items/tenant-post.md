@@ -5,7 +5,6 @@ This route provides the ability to add a single `Tenant`.
 Creating a `Tenant` has the following restrictions:
 
 - A `name` is required.
-- A `email` is required.
 - `domainConfiguration` is required.
 - The following values may not be provided when creating a `Tenant`:
   - `hasFlexPricing` 

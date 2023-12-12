@@ -46,7 +46,7 @@ export enum TenantPaymentFrequency {
 export interface Tenant {
     id: string
     name: string
-    email: string
+    email?: string
     signUpDate: number; // number due to "legacy" reasons
     packageId?: string | null
     paymentFrequency?: TenantPaymentFrequency
