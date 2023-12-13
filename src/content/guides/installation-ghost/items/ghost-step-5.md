@@ -9,7 +9,7 @@ If you're using the default `casper` theme, you'll see a section like this at li
 
 If you're using other themes, you won't see this, and will need to add this code after the last `</section>`:
 
-[inline-code-attrs-start title = 'Godaddy Comments Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Section Example'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <section class="article-comments gh-canvas">
 </section>
