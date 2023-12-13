@@ -1,0 +1,12 @@
+{
+  "name": "WooCommerce Installation",
+  "pageHeader": "Add Live Commenting to WooCommerce Sites",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Setup WordPress Plugin",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerce Installation"
+    }
+  ]
+}
