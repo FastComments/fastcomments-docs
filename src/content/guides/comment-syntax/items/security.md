@@ -26,7 +26,7 @@ This means that users can't do things like write `<script>` or `<style>` tags, o
 
 The HTML tags we allow are as follows:
 
-- `b`
+- `<b>`
 - `<em>`
 - `<u>`
 - `<i>`
