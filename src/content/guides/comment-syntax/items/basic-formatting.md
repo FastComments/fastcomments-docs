@@ -7,10 +7,17 @@ For most common formatting, you can use the formatting toolbar to do things like
 
 Some syntax examples are:
 
-- Bold: `**bold**` or `<b>bold text</b>`.
-- Italics: `*italics*` or `<i>italic text</i>`.
-- Strikethrough: `~~strikethrough~~` or `<strike>strikethrough</strike>`.
-- Quotes: `> quote`.
+- Bold:
+  - `**bold**`
+  - `<b>bold text</b>`
+- Italics:
+  - `*italics*`
+  - `<i>italic text</i>`
+- Strikethrough:
+  - `~~strikethrough~~`
+  - `<strike>strikethrough</strike>`
+- Quotes:
+  - `> quote`
 
 Note that Markdown headings are not supported.
 
