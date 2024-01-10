@@ -331,6 +331,11 @@
       "name": "Deleting Comments With Replies",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Enable Search Box",
+      "file": "enable-search.md",
+      "subCat": "Misc"
     }
   ]
 }
