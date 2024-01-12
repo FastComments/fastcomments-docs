@@ -82,9 +82,8 @@
                         }
                         if (!added
                             && (line.includes('"urlId":') || line.includes('urlId:'))
-                            // if is "urlId": "example"
-                            && (line.endsWith('"') || line.endsWith("'"))) {
-                            result.push(getIndentation(result[lastLineIndex]) + demoPageUrlIdLine);
+                        ) {
+                            result.push(line);
                             lastLineIndex++;
                             added = true;
                         } else {
