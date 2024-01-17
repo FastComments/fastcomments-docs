@@ -20,6 +20,7 @@ interface SSOUser {
     loginCount?: number
     avatarSrc?: string
     optedInNotifications?: boolean
+    optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
     isAccountOwner?: boolean
@@ -46,3 +47,12 @@ Users can be broken into groups. This is what the `groupIds` field is for, and i
 
 By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
 `username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
+
+### Subscriptions
+
+With FastComments, users can subscribe to a page by clicking the bell icon in the comment widget and clicking Subscribe.
+
+With a regular user, we send them notification emails based on their notification settings.
+
+With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
+emails if you set `optedInSubscriptionNotifications` to `true`.
