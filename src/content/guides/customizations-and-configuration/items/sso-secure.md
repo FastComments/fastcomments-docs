@@ -57,6 +57,8 @@ interface SSOUser {
     avatar?: string;
     /** Optional. Default false. **/
     optedInNotifications?: boolean;
+    /** Optional. Default false. **/
+    optedInSubscriptionNotifications?: boolean;
     /** Optional. 100 Characters Max. This label will be shown next to their name. Default is Administrator/Moderator when applicable. **/
     displayLabel?: string;
     /** Optional. 500 Characters Max. This will be shown instead of the username. **/
@@ -84,7 +86,9 @@ For admins and moderators, pass the respective `isAdmin` or `isModerator` flags 
 
 #### Notifications
 
-To enable or disable notifications, set the value of optedInNotifications to true or false respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+To enable or disable notifications, set the value of `optedInNotifications` to `true` or `false` respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+
+Additionally, if you want users to receive notification emails for activity on pages they subscribed to (as opposed to just in-app notifications), then set `optedInSubscriptionNotifications` to `true`.
 
 #### VIP Users & Special Labels
 
