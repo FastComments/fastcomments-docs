@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>FastComments Docs</title>
     <meta property="og:title" content="FastComments Documentation"/>
@@ -123,7 +124,15 @@
                 }, {line: JSON.parse(`{{highLightLineFrom}}`) - 1, ch: 99999}, {css: "background: #383830"});
 
                 function render() {
-                    const blob = new Blob([editor.getValue()], {type: "text/html; charset=utf-8"});
+                    let backgroundColor;
+                    try {
+                        // set background color of root node in iframe so dark mode detection works properly
+                        const style = window.getComputedStyle(window.document.body, 'background');
+                        backgroundColor = style.backgroundColor;
+                        iframe.style.backgroundColor = style.backgroundColor;
+                    } catch (e) {
+                    }
+                    const blob = new Blob(['<div style="background-color: ' + backgroundColor + '">' + editor.getValue() + '</div>'], {type: "text/html; charset=utf-8"});
                     iframe.src = URL.createObjectURL(blob);
                     updateIframeHeight();
                 }
