@@ -530,6 +530,10 @@ input:focus {
     }
 }
 
+pre {
+    overflow-y: auto; /* for regular markdown indented code snippets */
+}
+
 .code {
     position: relative;
     margin: 5px 0;
