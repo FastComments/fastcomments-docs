@@ -65,6 +65,7 @@
 <script>
     window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
         tenantId: 'L177BUDVvSe',
+        url: location.href.replace(location.hash, ''), // ignore hashbang in url - messes up links to comments
         urlId: window.location.origin + window.location.pathname // remove query params
     });
 </script>
