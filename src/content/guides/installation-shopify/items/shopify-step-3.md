@@ -1,34 +1,42 @@
-Next we're going to scroll down to line `100`:
+Now we're going to edit our store's theme to add FastComments.
+
+In the left panel, open `Themes`:
 
 <div class="screenshot white-bg">
-    <div class="title">Scroll to Line 100</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-7-line-100.png" alt="Scroll to Line 100" />
+    <div class="title">Open Themes</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-2-open-themes.png" alt="Open Themes" />
 </div>
 
-Now copy the following code snippet, which is designed **specifically for Shopify - do not use code snippets from other tutorials**:
-
-[inline-code-attrs-start title = 'Shopify FastComments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
-<div id="fastcomments-widget" class="page-width page-width--narrow"></div>
-<script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
-        tenantId: "demo",
-        urlId: window.location.pathname
-    });
-</script>
-[inline-code-end]
-
-Now we want to put our cursor on `line 101` - right after the `</div>` - and paste. You should have something like this:
+Under `Current theme`, select `Actions` and then `Edit code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Add The FastComments Code</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-8-code-pasted.png" alt="Add The FastComments Code" />
+    <div class="title">Edit Code</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-3-edit-code.png" alt="Edit Code" />
 </div>
 
-Now we can save:
+This will open up a code editor, with a file browser on the left and the code on the right.
+
+All we need to do is copy a small piece of code that adds FastComments and paste it on the right line in the right file.
+
+In the file browser on the left, scroll down and click `Sections`:
 
 <div class="screenshot white-bg">
-    <div class="title">Save</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-9-save.png" alt="Save" />
+    <div class="title">Select Sections</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-4-sections.png" alt="Select Sections" />
+</div>
+
+Now we're going to scroll down and select `main-article.liquid`:
+
+<div class="screenshot white-bg">
+    <div class="title">Select main-article</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-5-main-article.png" alt="Select main-article" />
+</div>
+
+This will open the *theme template* used to render a single blog article.
+
+You should now see something similar to the following, with `main-article.liquid` selected at the top:
+
+<div class="screenshot white-bg">
+    <div class="title">main-article Open</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-6-main-article-open.png" alt="main-article Open" />
 </div>

@@ -1,42 +1,33 @@
-Now we're going to edit our store's theme to add FastComments.
+The first step to using FastComments with Shopify is disabling Shopify's system.
 
-In the left panel, open `Themes`:
+**Note** FastComments Support can assist you in migrating over existing comment threads.
 
-<div class="screenshot white-bg">
-    <div class="title">Open Themes</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-2-open-themes.png" alt="Open Themes" />
-</div>
-
-Under `Current theme`, select `Actions` and then `Edit code`:
+To replace the Shopify comment system, we'll go to our store dashboard and click `Blog posts` in the bottom left:
 
 <div class="screenshot white-bg">
-    <div class="title">Edit Code</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-3-edit-code.png" alt="Edit Code" />
+    <div class="title">Open Blog Posts Admin</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-1-1-blog-posts.png" alt="Open Blog Posts Admin" />
 </div>
 
-This will open up a code editor, with a file browser on the left and the code on the right.
-
-All we need to do is copy a small piece of code that adds FastComments and paste it on the right line in the right file.
-
-In the file browser on the left, scroll down and click `Sections`:
+Then we will click `Manage blogs` in the top right:
 
 <div class="screenshot white-bg">
-    <div class="title">Select Sections</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-4-sections.png" alt="Select Sections" />
+    <div class="title">Manage Blogs</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-1-2-manage-blogs.png" alt="Manage Blogs" />
 </div>
 
-Now we're going to scroll down and select `main-article.liquid`:
+Click on the blog we want to manage. If it says `Comments are disabled` you can skip this step and move to `Step Two`.
 
 <div class="screenshot white-bg">
-    <div class="title">Select main-article</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-5-main-article.png" alt="Select main-article" />
+    <div class="title">Manage Blog</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-1-3-manage-blog.png" alt="Manage Blog" />
 </div>
 
-This will open the *theme template* used to render a single blog article.
-
-You should now see something similar to the following, with `main-article.liquid` selected at the top:
+If not, select the blog and ensure `Comments are disabled` is selected in the right panel:
 
 <div class="screenshot white-bg">
-    <div class="title">main-article Open</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-6-main-article-open.png" alt="main-article Open" />
+    <div class="title">Disable Comments</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-1-4-comments-disabled.png" alt="Disable Comments" />
 </div>
+
+Now click save.

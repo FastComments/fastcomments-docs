@@ -4,18 +4,23 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Step 1: Disable Default Commenting System",
+      "name": "Step 1: Import Existing Comments",
       "file": "shopify-step-1.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Step 2: Open The Blog Theme Template",
+      "name": "Step 2: Disable Default Commenting System",
       "file": "shopify-step-2.md",
       "subCat": "Shopify Installation"
     },
     {
-      "name": "Step 3: Add The FastComments.com Code",
+      "name": "Step 3: Open The Blog Theme Template",
       "file": "shopify-step-3.md",
+      "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Step 4: Add The FastComments.com Code",
+      "file": "shopify-step-4.md",
       "subCat": "Shopify Installation"
     },
     {
