@@ -1,0 +1,37 @@
+{
+  "name": "Framer Installation",
+  "pageHeader": "Add Live Commenting to Framer Sites",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Open Editor",
+      "file": "framer-step-1.md",
+      "subCat": "Framer Installation"
+    },
+    {
+      "name": "Step 2: Add Embed Block",
+      "file": "framer-step-2.md",
+      "subCat": "Framer Installation"
+    },
+    {
+      "name": "Step 3: Copy and Paste Framer-Specific FastComments Code",
+      "file": "framer-step-3.md",
+      "subCat": "Framer Installation"
+    },
+    {
+      "name": "Step 4: Adjust Widget and Page Height",
+      "file": "framer-step-4.md",
+      "subCat": "Framer Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "framer-customize.md",
+      "subCat": "Framer Installation"
+    }
+  ]
+}
