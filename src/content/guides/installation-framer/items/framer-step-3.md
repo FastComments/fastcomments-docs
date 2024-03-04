@@ -3,11 +3,6 @@ The Framer-specific FastComments snippet is:
 [inline-code-attrs-start title = 'FastComments Framer-Specific Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
-<style>
-#main > div:first-child {
-    height: auto !important;
-}
-</style>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
