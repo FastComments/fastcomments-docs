@@ -283,6 +283,11 @@
       "subCat": "Misc"
     },
     {
+      "name": "Limiting Allowed Languages",
+      "file": "allowed-languages.md",
+      "subCat": "Misc"
+    },
+    {
       "name": "Page Titles",
       "file": "page-title.md",
       "subCat": "Misc"
