@@ -10,10 +10,13 @@ Deleting the user's comments is possible via the `deleteComments` query paramete
 2. All __child__ (now orphan) comments will be deleted or anonymized based on each comment's associated page configuration. For example if thread deletion mode is "anonymize", then replies will remain, and the user's comments will be anonymized. This only applies when `commentDeleteMode` is `Remove` (the default value).
 3. The `creditsCost` becomes `2`.
 
+### Anonymized Comments
+
 You can retain the user's comments but simply anonymize them by setting `commentDeleteMode=1`.
 
 If the user's comments are anonymized then the following values are set to null:
 
+    - commenterName
     - commenterEmail
     - avatarSrc
     - userId
@@ -21,7 +24,11 @@ If the user's comments are anonymized then the following values are set to null:
     - mentions
     - badges
 
-The comment name (`commenterName`) is set to the translated value of `COMMENT_DELETED_NAME`.
+`isDeleted` is set to `true`.
+
+When rendering, the comment widget will use `DELETED_PLACEHOLDER` (default: "[deleted]") for the user's name. These can be customized via the Widget Customization UI.
+
+### Examples
 
 [inline-code-attrs-start title = 'SSOUser Removal cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
