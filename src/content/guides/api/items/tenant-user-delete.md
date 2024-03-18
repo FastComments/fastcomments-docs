@@ -22,9 +22,9 @@ If the user's comments are anonymized then the following values are set to null:
     - mentions
     - badges
 
-`isDeleted` is set to `true`.
+`isDeleted` and `isDeletedUser` is set to `true`.
 
-When rendering, the comment widget will use `DELETED_PLACEHOLDER` (default: "[deleted]") for the user's name. These can be customized via the Widget Customization UI.
+When rendering, the comment widget will use `DELETED_USER_PLACEHOLDER` (default: "[deleted]") for the user's name and `DELETED_CONTENT_PLACEHOLDER` for the comment. These can be customized via the Widget Customization UI.
 
 ### Examples
 

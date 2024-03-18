@@ -47,6 +47,10 @@ interface Comment {
     isByAdmin?: boolean
     /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
     isByModerator?: boolean
+    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    isDeleted?: boolean
+    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    isDeletedUser?: boolean
     /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
     isFlagged?: boolean
     /** Is the comment pinned? **/
