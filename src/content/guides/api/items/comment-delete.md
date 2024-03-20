@@ -20,6 +20,8 @@ curl --request DELETE \
 interface CommentDeleteQueryParams {
     tenantId: string
     API_KEY: string
+	/** The user doing the update. If desired can be used to check that they can delete the comment.  **/
+    contextUserId?: string
 	/** Whether the comment should be deleted "live" to users viewing instances of the comment widget with the same urlId. NOTE: Doubles credit cost from 1 to 2. **/
     isLive?: 'true' | 'false'
 }

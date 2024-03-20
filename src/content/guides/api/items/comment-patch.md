@@ -31,6 +31,9 @@ curl --request PATCH \
 interface CommentPatchQueryParams {
     tenantId: string
     API_KEY: string
+	/** The user doing the update. If desired can be used to check that they can edit the comment.  **/
+    contextUserId?: string
+	/** Should we check if the new comment looks like spam?  **/
     doSpamCheck?: 'true' | 'false'
 	/** Whether the comment should appear "live" to users viewing instances of the comment widget with the same urlId. NOTE: Doubles credit cost from 1 to 2. **/
     isLive?: 'true' | 'false'
