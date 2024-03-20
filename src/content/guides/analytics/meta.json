@@ -21,6 +21,11 @@
       "name": "Analytics Accuracy vs Other Platforms",
       "file": "analytics-vs-other-platforms.md",
       "subCat": "Analytics"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Tracking"
     }
   ]
 }
