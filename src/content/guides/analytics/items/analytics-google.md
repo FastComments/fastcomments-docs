@@ -7,7 +7,28 @@ We can track when users:
 
 Here's an example code snippet to do that:
 
-[code-example-start config = {onReplySuccess: function (comment) {gtag('event', 'post_comment', {'event_category': 'Engagement', 'event_label': 'Comment Posted'});}, onVoteSuccess: function (comment) {gtag('event', 'vote_comment', {'event_category': 'Engagement', 'event_label': 'User Voted on a Comment'});}}; linesToHighlight = [6, 7, 8, 9, 10, 11]; title = 'Google Analytics 4'; code-example-end]
+[inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        tenantId: "demo",
+        onReplySuccess: function (comment) {
+            gtag('event', 'post_comment', {
+                'event_category': 'Engagement',
+                'event_label': 'Comment Posted'
+            });
+        },
+        onVoteSuccess: function (comment) {
+            gtag('event', 'vote_comment', {
+                'event_category': 'Engagement',
+                'event_label': 'User Voted on a Comment'
+            });
+        }
+    });
+</script>
+[inline-code-end]
 
 This will add two events:
 
