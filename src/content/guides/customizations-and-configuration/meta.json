@@ -158,6 +158,16 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Deleting",
+      "file": "disable-deleting.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Editing",
+      "file": "disable-editing.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Highlighting New Comments",
       "file": "highlighting-new-comments.md",
       "subCat": "Look and Feel"
