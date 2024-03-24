@@ -36,8 +36,9 @@ Once ready, copy the FastComments.com widget code:
             \{{#if @member}}
                 simpleSSO = {
                     email: '\{{@member.email}}',
-                    username: '\{{@member.firstname}}',
-                    optedInNotifications: true,
+                    username: '\{{@member.name}}',
+                    optedInNotifications: \{{@member.subscribed_to_emails}},
+                    optedInSubscriptionNotifications: \{{@member.subscribed_to_emails}},
                     displayLabel: '\{{@member.labels}}'
                 }
             \{{/if}}
