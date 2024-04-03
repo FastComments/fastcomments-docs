@@ -16,7 +16,7 @@ Notes:
 - Comments created via this API can still be checked for spam if desired.
 - Configuration such as max comment length, if configured via the Customization Rule admin page, will apply here.
 
-The minimum data required to submit is a comment, that will show in the comment widget, is as follows:
+The minimum data required to submit that will show in the comment widget, is as follows:
 
 [inline-code-attrs-start title = 'Minimum Comment POST cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
