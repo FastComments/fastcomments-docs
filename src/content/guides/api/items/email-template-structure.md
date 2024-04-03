@@ -1,6 +1,6 @@
 An `EmailTemplate` object represents configuration for a custom email template, for a tenant.
 
-The application will find the email template to use via:
+The system will select the email template to use via:
 
 - Its type identifier, we call this `emailTemplateId`. These are constants.
 - The `domain`. We will first try to find a template for the domain that the related object (like a `Comment`) is tied to, and if a match is not found then we will try to find a template where domain is null or `*`.
