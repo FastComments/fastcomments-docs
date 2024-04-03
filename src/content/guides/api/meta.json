@@ -78,6 +78,47 @@
       "subCat": "Comments"
     },
     {
+      "name": "Email Template Structure",
+      "file": "email-template-structure.md",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates/:id",
+      "file": "email-template-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates",
+      "file": "email-templates-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "PATCH /api/v1/email-templates/:id",
+      "file": "email-template-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates",
+      "file": "email-template-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates/render",
+      "file": "email-template-render.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "DELETE /api/v1/email-templates/:id",
+      "file": "email-template-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
       "name": "HashTag Structure",
       "file": "hash-tag-structure.md",
       "subCat": "HashTags"
