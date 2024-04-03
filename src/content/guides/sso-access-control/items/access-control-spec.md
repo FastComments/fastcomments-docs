@@ -2,6 +2,7 @@ Defining how multiple users interact, and testing it, is complicated. Here is th
 which you may use to test your implementation:
 
     Page with null group ids, user with null group ids - should have access.
+    Page with null group ids, user with group ids - should have access.
     Page with group ids, user with null group ids - should have access.
     Page with group ids, user with empty list - should NOT have access.
     Page with group ids, user with group ids - intersection exists - should have access.

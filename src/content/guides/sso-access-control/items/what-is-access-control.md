@@ -1,12 +1,25 @@
-With FastComments SSO Access Control, users can be restricted to only access certain pages, or comment threads. Additionally,
+With FastComments SSO Access Control, sometimes referred to as RBAC, users can be restricted to only access certain pages, or comment threads. Additionally,
 users can only `@mention` each other in the same group.
 
-#### In Detail
+## In Detail
 
-`Users` can be placed into groups, in which case they will only be able to access `Pages` where
-there is an intersection of said groups.
+We can place `Users` and optionally `Pages` into groups.
 
-For example, if `User A` belongs to group `GREEN`, they will only be able to see `Pages` that
-include group `GREEN`.
+When `Users` are placed into groups, and `Limit Comments by SSO User Groups` is enabled in Widget Settings, then users
+will only see comments from users in their same groups and will only be able to `@mention` users in the same groups.
 
-Additionally, if `User B` belongs to group `BLUE`, then neither user will be able to `@mention` each other.
+Additionally, `Pages` can be placed into groups, and then users can only access comments for pages they have access to.
+
+We call this "User-Level" groups verses "Page-Level" groups.
+
+So which one is right for you?
+
+#### Use User-Level Groups if...
+
+- You want to use the same `urlId` value (page URL, or article ID), but restrict comments by group.
+- For example, you want to have "New User" and "Veteran User" groups, and they should never see each other's comments on the same pages.
+
+#### Use Page-Level Groups if...
+
+- Your groups have specific pages.
+- For example, users in "Public Pages" group should never view articles on the "Top Secret" articles.
