@@ -126,6 +126,8 @@ interface CommentsRequestQueryParams {
     API_KEY: string
     /** The urlId (page url, or article id) the comments are associated with. **/
     urlId?: string
+    /** Limit the comments returned by this user. **/
+    userId?: string
     /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
     hashTag?: string
     /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
