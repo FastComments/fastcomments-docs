@@ -2,20 +2,20 @@ The Framer-specific FastComments snippet is:
 
 [inline-code-attrs-start title = 'FastComments Framer-Specific Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
-<div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
+<script src="https://cdn.fastcomments.com/js/embed-live-chat.min.js"></script>
+<div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
         function tryLoad() {
             // some providers change the code snippet to be async
-            const container = document.getElementById('fastcomments-widget');
+            const container = document.getElementById('fastcomments-live-chat-widget');
             if (!container) {
                 return waitRetry();
             }
-            if (!window.FastCommentsUI) {
+            if (!window.FastCommentsLiveChat) {
                 return waitRetry();
             }
-            window.FastCommentsUI(container, {
+            window.FastCommentsLiveChat(container, {
                 tenantId: 'demo',
                 urlId: window.location.path
             });
@@ -36,3 +36,6 @@ FastComments supports the Framer editor, so you should see something like this o
 </div>
 
 Now when you view your site you should see the comment area! In the sidebar of Framer you can set the widget as full width as well, if desired.
+
+Note that Framer limits the height of widgets and does not support auto-resizing, so we've chosen the Live Chat
+widget here since it is fixed height.
