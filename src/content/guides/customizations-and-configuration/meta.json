@@ -73,6 +73,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Enable WYSIWYG",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Disabling The Toolbar",
       "file": "disable-toolbar.md",
       "subCat": "Look and Feel"
