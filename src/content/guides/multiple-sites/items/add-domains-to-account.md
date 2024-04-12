@@ -12,6 +12,8 @@ For Example:
 - To allow `www.example.com`, `somesite.example.com`, and `example.com`:
   - Add `example.com` to your domains.
   - This is billed as having **one domain** associated with your account.
+- You can now add wildcard subdomains, for example *myname.vercel.app. 
+  - This is billed as having **one domain** associated with your account.
 
 If you were using a blogging platform, and you were given a subdomain, you would want
 to add the **full domain including the subdomain** to your account, for example: `cats.blogger.com`.
