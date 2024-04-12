@@ -15,10 +15,14 @@ The Framer-specific FastComments snippet is:
             if (!window.FastCommentsLiveChat) {
                 return waitRetry();
             }
+            if (container.fastCommentsSetup) {
+                return;
+            }
             window.FastCommentsLiveChat(container, {
                 tenantId: 'demo',
                 urlId: window.location.path
             });
+            container.fastCommentsSetup = true;
         }
         function waitRetry() {
             setTimeout(tryLoad, 500);
