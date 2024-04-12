@@ -55,6 +55,8 @@ interface Comment {
     isFlagged?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
+    /** Is the comment locked for new replies (moderators still can reply)? **/
+    isLocked?: boolean
     /** Is the comment spam? **/
     isSpam?: boolean
     /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
