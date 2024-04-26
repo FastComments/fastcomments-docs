@@ -728,3 +728,24 @@ h4 {
         background: #012f46;
     }
 }
+
+table,
+table th,
+table td {
+  text-align: center;
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  padding: 5px;
+  white-space: nowrap;
+}
+table thead th {
+  background: lightgray;
+  border-color: lightgray;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+table td,
+table th {
+  padding: 10px;
+}
