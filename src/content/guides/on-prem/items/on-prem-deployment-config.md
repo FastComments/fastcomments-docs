@@ -44,7 +44,7 @@ Note that all domain-related variables use the `_HOST` or `_ADDR` postfix. The d
 
 The `EMAIL_CONFIG_PATH` should contain a path to a JSON file with the following example format:
 
-inline-code-attrs-start title = 'Email Config'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Email Config'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "defaultDKIM": {
