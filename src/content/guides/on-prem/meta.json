@@ -8,14 +8,49 @@
       "subCat": "Background"
     },
     {
-      "name": "Deployment Architecture",
-      "file": "on-prem-deployment-architecture.md",
-      "subCat": "Background"
-    },
-    {
       "name": "Where to Start",
       "file": "on-prem-where-to-start.md",
       "subCat": "Getting Started"
+    },
+    {
+      "name": "Instances",
+      "file": "on-prem-deployment-architecture.md",
+      "subCat": "Deployment"
+    },
+    {
+      "name": "Instances",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Deployment"
+    },
+    {
+      "name": "Database Downtime and Maintenance Mode",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architecture"
+    },
+    {
+      "name": "Locks",
+      "file": "on-prem-locks.md",
+      "subCat": "Architecture"
+    },
+    {
+      "name": "Widget Code",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installation & Integration"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installation & Integration"
+    },
+    {
+      "name": "Multiple Domains",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installation & Integration"
+    },
+    {
+      "name": "Security",
+      "file": "on-prem-security.md",
+      "subCat": "Security Tips"
     }
   ]
 }
