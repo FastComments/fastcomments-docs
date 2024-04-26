@@ -1,6 +1,40 @@
-The Framer-specific FastComments snippet is:
+The Framer Live Comments FastComments snippet is:
 
-[inline-code-attrs-start title = 'FastComments Framer-Specific Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Framer-Specific Comments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
+<script>
+    (function fcLoad() {
+        function tryLoad() {
+            // some providers change the code snippet to be async
+            const container = document.getElementById('fastcomments-widget');
+            if (!container) {
+                return waitRetry();
+            }
+            if (!window.FastCommentsUI) {
+                return waitRetry();
+            }
+            if (container.fastCommentsSetup) {
+                return;
+            }
+            window.FastCommentsUI(container, {
+                tenantId: 'demo',
+                urlId: window.location.path
+            });
+            container.fastCommentsSetup = true;
+        }
+        function waitRetry() {
+            setTimeout(tryLoad, 500);
+        }
+        tryLoad();
+    })();
+</script>
+[inline-code-end]
+
+Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming Chat FastComments snippet is:
+
+[inline-code-attrs-start title = 'FastComments Framer-Specific Streaming Chat Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-live-chat.min.js"></script>
 <div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
