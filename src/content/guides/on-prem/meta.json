@@ -14,11 +14,11 @@
     },
     {
       "name": "Instances",
-      "file": "on-prem-deployment-architecture.md",
+      "file": "on-prem-deployment-instances.md",
       "subCat": "Deployment"
     },
     {
-      "name": "Instances",
+      "name": "Config",
       "file": "on-prem-deployment-config.md",
       "subCat": "Deployment"
     },
