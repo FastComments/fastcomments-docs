@@ -132,7 +132,7 @@ interface CommentsRequestQueryParams {
     hashTag?: string
     /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments. **/
+    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
     page?: number
     /** Flexible Pagination: How many comments should we return? **/
     limit?: number
