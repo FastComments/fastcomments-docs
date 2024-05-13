@@ -25,6 +25,8 @@ interface NotificationsGetQueryParams {
     fromCommentId?: string
     /** Filter by read/unread. **/
     viewed?: 'true' | 'false'
+    /** Filter by type. **/
+    type?: NotificationType
 }
 [inline-code-end]
 
