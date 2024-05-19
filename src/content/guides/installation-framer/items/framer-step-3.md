@@ -1,20 +1,11 @@
 The Framer Live Comments FastComments snippet is below.
 
-## NOTE! Fill in the variables!
-
-In the below snippets, after you copy them, you'll have to provide values for `PAGE_TITLE` and `PAGE_URL` near the top. This is because Framer adds security
-measures that prevent custom scripts from seeing the page URL.
-
 [inline-code-attrs-start title = 'FastComments Framer-Specific Comments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
-        // Fill these in!
-        const PAGE_TITLE = "My Cool Page";
-        const PAGE_URL = "My Page URL";
-
         function tryLoad() {
             // some providers change the code snippet to be async
             const container = document.getElementById('fastcomments-widget');
@@ -29,9 +20,8 @@ measures that prevent custom scripts from seeing the page URL.
             }
             window.FastCommentsUI(container, {
                 tenantId: 'demo',
-                pageTitle: PAGE_TITLE,
-                url: PAGE_URL,
-                urlId: PAGE_URL
+                pageTitle: top.document.title,
+                urlId: top.location.pathname
             });
             container.fastCommentsSetup = true;
         }
