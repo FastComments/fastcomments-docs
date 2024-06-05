@@ -5,6 +5,7 @@ FastComments supports a number of languages, across different locales.
 - Chinese (Traditional)
 - Croatian (Croatia)
 - Danish
+- Dutch
 - English (North America)
 - French (France)
 - German (Germany)
