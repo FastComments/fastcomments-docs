@@ -58,16 +58,38 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 attemptsRemaining--;
                 return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
             }
+    
+            let url;
+            const selectedNavLink = document.querySelector('.tcc-browse-lesson.active a');
+    
+            if (selectedNavLink) {
+                // sometimes TC uses multiple links the same page, so let's de-dupe them.
+                url = getPathnameFromUrl(selectedNavLink.href);
+            } else {
+                // trim marketing parameters and domain name
+                url = window.location.pathname;
+            }
 
             FastCommentsUI(document.getElementById('fastcomments-widget'), {
                 tenantId: 'demo',
-                urlId: window.location.pathname, // trims marketing parameters and domain name
+                urlId: url,
                 simpleSSO: isAuthenticated ? simpleSSO : null
             });
         }
 
         tryLoad();
-
+    
+        function getPathnameFromUrl(url) {
+            try {
+                const parsedUrl = new URL(url);
+                // trim marketing parameters and domain name
+                return parsedUrl.pathname;
+            } catch (error) {
+                console.error("Invalid URL", url, error);
+                return window.location.pathname; // default to current, so at least it works sometimes
+            }
+        }
+    
     })();
 </script>
 [inline-code-end]
