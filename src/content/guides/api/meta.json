@@ -282,6 +282,12 @@
       "subCat": "PendingWebhookEvents"
     },
     {
+      "name": "DELETE /api/v1/pending-webhook-events/:id",
+      "file": "pending-webhook-event-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
       "name": "SSOUser Structure",
       "file": "sso-user-structure.md",
       "subCat": "SSO Users"

@@ -12,7 +12,7 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'PendingWebhookEvent Count Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface PendingWebhookEventCountGetQueryParams {
+interface PendingWebhookEventsCountQueryParams {
     tenantId: string
     API_KEY: string
     commentId?: string
@@ -27,7 +27,7 @@ interface PendingWebhookEventCountGetQueryParams {
 
 [inline-code-attrs-start title = 'PendingWebhookEvent Count Response Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface PendingWebhookEventCountGetResponse {
+interface PendingWebhookEventsCountResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'unauthorized' | 'unexpected-param' | 'not-found'
