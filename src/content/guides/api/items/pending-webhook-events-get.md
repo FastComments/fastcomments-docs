@@ -2,6 +2,8 @@
 
 This route returns a list of pending webhook events under a `pendingWebhookEvents` parameter.
 
+This API uses pagination, provided by the `skip` parameter. PendingWebhookEvents are returned in pages of `100`, ordered by `createdAt` newest first.
+
 [inline-code-attrs-start title = 'PendingWebhookEvent cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
