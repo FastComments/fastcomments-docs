@@ -265,6 +265,23 @@
       "subCat": "Pages"
     },
     {
+      "name": "PendingWebhookEvent Structure",
+      "file": "pending-webhook-event-structure.md",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events",
+      "file": "pending-webhook-events-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events/count",
+      "file": "pending-webhook-events-count.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
       "name": "SSOUser Structure",
       "file": "sso-user-structure.md",
       "subCat": "SSO Users"
