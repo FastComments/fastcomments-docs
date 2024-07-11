@@ -1,4 +1,4 @@
-[api-resource-header-start name = 'PendingWebhookEvent'; route = 'DELETE /api/v1/pending-webhook-events/:id'; creditsCost = 2; api-resource-header-end]
+[api-resource-header-start name = 'PendingWebhookEvent'; route = 'DELETE /api/v1/pending-webhook-events/:id'; creditsCost = 1; api-resource-header-end]
 
 This route allows the deletion of a single `PendingWebhookEvent`.
 
