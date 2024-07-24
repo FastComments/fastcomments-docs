@@ -361,6 +361,11 @@
       "name": "Enable Search Box",
       "file": "enable-search.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Enable Spoilers",
+      "file": "enable-spoilers.md",
+      "subCat": "Misc"
     }
   ]
 }
