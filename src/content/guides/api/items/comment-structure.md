@@ -41,6 +41,8 @@ interface Comment {
     hasLinks?: boolean
     /** READONLY: The unique comment id. **/
     id: string
+    /** Only on create! This is hashed for storage. **/
+    ip?: string
     /** READONLY: Did the current user block the user that wrote this comment? **/
     isBlocked?: boolean
     /** READONLY: Is the comment by an admin? Automatically set based on userId. **/

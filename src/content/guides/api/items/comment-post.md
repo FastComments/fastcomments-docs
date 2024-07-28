@@ -58,7 +58,8 @@ curl --request POST \
 	"verified": true,
 	"votes": 1,
 	"votesUp": 2,
-	"votesDown": 1
+	"votesDown": 1,
+	"ip": "123.456.789.000"
 }'
 [inline-code-end]
 
