@@ -21,6 +21,7 @@ The Framer Live Comments FastComments snippet is below.
             window.FastCommentsUI(container, {
                 tenantId: 'demo',
                 pageTitle: top.document.title,
+                url: top.location.href,
                 urlId: top.location.pathname
             });
             container.fastCommentsSetup = true;
@@ -41,9 +42,6 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
 <div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
-        // Fill these in!
-        const PAGE_TITLE = "My Cool Page";
-        const PAGE_URL = "My Page URL";
 
         function tryLoad() {
             // some providers change the code snippet to be async
@@ -59,9 +57,9 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
             }
             window.FastCommentsLiveChat(container, {
                 tenantId: 'demo',
-                pageTitle: PAGE_TITLE,
-                url: PAGE_URL,
-                urlId: PAGE_URL
+                pageTitle: top.document.title,
+                url: top.location.href,
+                urlId: top.location.pathname
             });
             container.fastCommentsSetup = true;
         }
