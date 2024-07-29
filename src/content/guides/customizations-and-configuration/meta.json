@@ -228,6 +228,11 @@
       "subCat": "The Reply Box"
     },
     {
+      "name": "Limit Comment Volume Per-User",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "The Reply Box"
+    },
+    {
       "name": "Single Sign On (SSO) Overview",
       "file": "sso.md",
       "subCat": "SSO"
