@@ -193,8 +193,28 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disabling Image Uploads",
+      "file": "no-image-uploads.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable Search Box",
+      "file": "enable-search.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable Spoilers",
+      "file": "enable-spoilers.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
+      "subCat": "Live Commenting"
+    },
+    {
+      "name": "Disabling Live Commenting",
+      "file": "disable-live-commenting.md",
       "subCat": "Live Commenting"
     },
     {
@@ -318,11 +338,6 @@
       "subCat": "Misc"
     },
     {
-      "name": "Disabling Image Uploads",
-      "file": "no-image-uploads.md",
-      "subCat": "Misc"
-    },
-    {
       "name": "Restricting Link Domains",
       "file": "restricting-link-domains.md",
       "subCat": "Misc"
@@ -335,11 +350,6 @@
     {
       "name": "Enabling Commenter Links",
       "file": "enable-commenter-links.md",
-      "subCat": "Misc"
-    },
-    {
-      "name": "Disabling Live Commenting",
-      "file": "disable-live-commenting.md",
       "subCat": "Misc"
     },
     {
@@ -360,16 +370,6 @@
     {
       "name": "Deleting Comments With Replies",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Misc"
-    },
-    {
-      "name": "Enable Search Box",
-      "file": "enable-search.md",
-      "subCat": "Misc"
-    },
-    {
-      "name": "Enable Spoilers",
-      "file": "enable-spoilers.md",
       "subCat": "Misc"
     }
   ]
