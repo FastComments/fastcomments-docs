@@ -253,6 +253,11 @@
       "subCat": "The Reply Box"
     },
     {
+      "name": "Prevent New Top-Level Comments",
+      "file": "no-new-root-comments.md",
+      "subCat": "The Reply Box"
+    },
+    {
       "name": "Single Sign On (SSO) Overview",
       "file": "sso.md",
       "subCat": "SSO"
