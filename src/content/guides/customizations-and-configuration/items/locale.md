@@ -4,7 +4,8 @@ By default, FastComments will render the comment widget in the locale determined
 
 When a user comments or logs in, we update their last used locale and use this for sending emails, as well.
 
-This impacts how the commenting widget is translated for the user.
+This impacts how the commenting widget is translated for the user. Locale consists of the user's language and region, so configuring locale will
+usually change the language used to show text to the user.
 
 #### Via The UI
 
@@ -14,24 +15,14 @@ This can be defined using the widget customization UI. See the "Locale / Languag
 
 #### Via Code
 
-This can be overridden with a desired locale. Please check <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L142" target="_blank">here</a> for valid locales.
+This can be overridden with a desired locale.
 
 [code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
 
-### Locale Codes
+### Supported Languages and Locale Codes
 
-All locale codes are:
+0[You can find the complete list of supported languages and the corresponding locale codes here.](/guide-supported-languages.html#supported-languages)
 
-- `de_de` German (Germany)
-- `en_us` English (North America)
-- `es_es` Spanish (Spain)
-- `fr_fr` French (France)
-- `it_it` Italian (Italy)
-- `ja_jp` Japanese (Japan)
-- `ko_kr` Korean (Korea)
-- `pl_pl` Polish (Poland)
-- `pt_br` Portuguese (Brazilian)
-- `ru_ru` Russian (Russia)
-- `tr_tr` Turkish (Turkey)
-- `zh_cn` Chinese (Simplified)
-- `zh_tw` Chinese (Traditional)
+### SSO Note
+
+If you're using SSO, you might want to pass the user's locale in the user object, so that emails and other things are localized correctly for them.
