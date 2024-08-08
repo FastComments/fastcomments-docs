@@ -21,7 +21,7 @@ This can be overridden with a desired locale.
 
 ### Supported Languages and Locale Codes
 
-0[You can find the complete list of supported languages and the corresponding locale codes here.](/guide-supported-languages.html#supported-languages)
+[You can find the complete list of supported languages and the corresponding locale codes here.](/guide-supported-languages.html#supported-languages)
 
 ### SSO Note
 
