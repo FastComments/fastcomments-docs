@@ -7,6 +7,9 @@ First, copy this small code snippet:
 [inline-code-attrs-start title = 'FastComments Header Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <style>
+    #comments {
+        display: none;
+    }
     #commentArea:not(.loaded) {
         display: none;
     }
