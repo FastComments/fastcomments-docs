@@ -10,6 +10,9 @@ First, copy this small code snippet:
     #commentArea:not(.loaded) {
         display: none;
     }
+    #commentArea.loaded {
+        display: block !important;
+    }
 </style>
 [inline-code-end]
 
@@ -55,6 +58,10 @@ Copy this code snippet which is designed **specifically for Weebly**:
             if (loaded) {
                 clearInterval(interval);
                 return;
+            }
+            const comments = document.getElementById('comments');
+            if (comments) { // remove show comments button
+                comments.remove();
             }
             const commentArea = document.getElementById('commentArea');
             if (!commentArea) {
