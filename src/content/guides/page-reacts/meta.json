@@ -3,6 +3,16 @@
   "icon": "heart.svg",
   "itemsOrdered": [
     {
+      "name": "Page Reactions",
+      "file": "page-reacts-about.md",
+      "subCat": "Page Reactions"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Page Reactions"
+    },
+    {
       "name": "The Floating Likes Widget",
       "file": "floating-likes-about.md",
       "subCat": "Floating Likes Widget"
