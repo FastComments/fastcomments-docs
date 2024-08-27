@@ -208,6 +208,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Enable Comment View Counts",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Show Live Comments Right Away",
       "file": "show-live-right-away.md",
       "subCat": "Live Commenting"
