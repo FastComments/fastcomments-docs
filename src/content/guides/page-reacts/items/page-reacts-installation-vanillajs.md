@@ -2,7 +2,11 @@ For Page Reacts we have to decide on two things:
 
 - What reaction images to use.
 - A short `id` to name each reaction.
+
+Optionally:
+
 - You can also define optional separate images for selected/unselected reacts.
+- You can decide if you want to show the list of users who reacted when moving a mouse over one of the reactions. 
 
 [inline-code-attrs-start title = 'Page Reacts Code Example'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -12,6 +16,7 @@ For Page Reacts we have to decide on two things:
     window.FastCommentsUI(document.getElementById('page-reacts-example'), {
         tenantId: 'demo',
         pageReactConfig: {
+            showUsers: true,
             reacts: [
                 {id: 'droll', src: 'https://docs.fastcomments.com/images/emojis/droll.png'},
                 {id: 'he', src: 'https://docs.fastcomments.com/images/emojis/heart-eyes.png'},
