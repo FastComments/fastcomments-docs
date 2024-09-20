@@ -12,13 +12,11 @@ When we go to ban a user, we can pick a type, either Permanent or Permanent Shad
 
 The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-When we click the ban button, we are presented with some options, where we can specify the ban type and duration:
-
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelectors = ['.comment .menu', '.comment .menu-content .comment-ban']; selector = '.content .comment'; title='Clicking Ban' app-screenshot-end]
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
 ### Shadow Bans
 
-A shadow ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
 desirable in certain situations.
 
 ### Banning Via IP Address

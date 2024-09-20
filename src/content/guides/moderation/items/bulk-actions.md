@@ -2,14 +2,13 @@ When moderating, sometimes there is a series of actions that we want to take all
 series of comments you want to delete, mark as spam, un-approve, or simply mark as reviewed. Instead of clicking "delete" and "confirm"
 on each comment, there's a better way.
 
-Next to each comment is a checkbox, which we can click to start a bulk action:
+Next to each comment is a checkbox, which we can click to start a bulk action. From there we can pick a bulk action and confirm it.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelectors = ['.comment[data-comment-id="demo-0"] .checkmark', '.comment[data-comment-id="demo-1"] .checkmark', '.comment[data-comment-id="demo-2"] .checkmark']; selector = '.content'; title='Bulk Actions' app-screenshot-end]
+You will see the progress as your bulk actions are taken, and you can ctrl+z to undo any bulk action. Bulk actions can also
+be paused, stopped, or resumed.
 
-Then we can pick a bulk action and confirm it:
+### Selecting Beyond Visible Comments
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelectors = ['.comment[data-comment-id="demo-0"] .checkmark', '.comment[data-comment-id="demo-1"] .checkmark', '.comment[data-comment-id="demo-2"] .checkmark', '.bulk-actions .btn[data-indv-action="do-remove"]']; selector = '.content'; title='Bulk Removal' app-screenshot-end]
-
-We will see the progress as our bulk actions are taken:
-
-[app-screenshot-start url='/auth/my-account/moderate-comments?demo=true'; linkUrl='/auth/my-account/moderate-comments'; clickSelectors = ['.comment[data-comment-id="demo-0"] .checkmark', '.comment[data-comment-id="demo-1"] .checkmark', '.comment[data-comment-id="demo-2"] .checkmark', '.bulk-actions .btn[data-indv-action="do-remove"]', '.bulk-actions .bulk-action-prompt .bulk-action-confirm']; selector = '.content'; delay = 500; title='Bulk Removal In Progress' app-screenshot-end]
+If you select the "Select All" checkbox it'll by default only select the visible comments on the page, but it will
+present you with an option to select all comments on the server that match your filters. So even if you need to approve, delete, etc
+millions of comments, you can do it with a few clicks.
