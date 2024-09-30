@@ -1,10 +1,13 @@
 By default, the moderation page shows all comments, but we can filter comments in many ways:
 
-- By Comments Needing Review
-- By Comments Needing Approval
-- By Comments Flagged as Spam
-- By Comments Already Reviewed
-- By Comments Approved
+- Needing Review
+- Needing Approval
+- Flagged as Spam
+- Flagged as Not Spam
+- Flagged
+- Already Reviewed
+- Approved
+- From Banned Users
 
 ## Reviewed vs Approved
 
