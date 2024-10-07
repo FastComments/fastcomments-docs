@@ -13,7 +13,7 @@ It's quite large, because the integration with ThriveCart has a lot of features,
         let attemptsRemaining = 10;
 
         function tryLoad() {
-            const simpleSSO = {optedInNotifications: true};
+            const simpleSSO = {optedInNotifications: true, optedInSubscriptionNotifications: true};
             let isAuthenticated = false;
             let profileLink = document.querySelector('.thrivecart-courses-header-profile-link');
             if (!profileLink) {
