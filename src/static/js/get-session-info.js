@@ -41,6 +41,11 @@
                     'us-west': 'cdn.fastcomments.com',
                     'eu': 'cdn-eu.fastcomments.com'
                 };
+                const allowedPattern = /^[A-Za-z0-9_-]+$/;
+                if (tenantId && !allowedPattern.test(tenantId)) {
+                    alert('This URL is invalid. Please share it with support so we can investigate the issue. Widget code will not have your account information prefilled.');
+                    return;
+                }
                 return cb({
                     authenticated: true,
                     tenantId,
