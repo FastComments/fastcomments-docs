@@ -13,6 +13,7 @@ The callbacks supported are:
 - onImageClicked
 - onOpenProfile
 - onCommentSubmitStart
+- onCommentsRendered
 
 The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
@@ -59,6 +60,11 @@ Here's an example with all callbacks used:
                     cancelFn('Some optional error message');
                 }
             }, 1000);
+        },
+        onCommentsRendered: function(comments) {
+            // comments is sorted by the default sort on the page which may be Most Relevant (ex: most upvoted, etc), or Newest First
+            const topCommentInList = comments[0];
+            console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
     });
 </script>
