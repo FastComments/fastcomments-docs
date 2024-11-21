@@ -65,7 +65,6 @@ Example response:
             "10": 2
         },
         "createdAt": "2023-08-30T00:00:00.000Z",
-        "dataByDateBucket": {},
         "dataByUrlId": {
             "some-page": {
                 "total": 3,
