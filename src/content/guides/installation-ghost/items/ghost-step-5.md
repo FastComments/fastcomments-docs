@@ -39,8 +39,8 @@ Once ready, copy the FastComments.com widget code:
                     email: '\{{@member.email}}',
                     username: '\{{@member.name}}',
                     avatar: '\{{ @member.avatar_image }}',
-                    optedInNotifications: \{{@member.subscribed_to_emails}},
-                    optedInSubscriptionNotifications: \{{@member.subscribed_to_emails}},
+                    optedInNotifications: true,
+                    optedInSubscriptionNotifications: true,
                     displayLabel: '\{{@member.labels}}'
                 }
             \{{/if}}
