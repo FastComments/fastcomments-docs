@@ -1,0 +1,46 @@
+{
+  "name": "Ratings and Reviews",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Features",
+      "file": "features.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Who Gets It",
+      "file": "who-gets-it.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Pricing",
+      "file": "pricing.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Choose a Display Type",
+      "file": "choose-display-type.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Define Your Questions",
+      "file": "define-your-questions.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "How Configuration Works",
+      "file": "how-configuration-works.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Viewing Ratings",
+      "file": "viewing-ratings.md",
+      "subCat": "Reporting"
+    },
+    {
+      "name": "Integrating via The API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Reporting"
+    }
+  ]
+}

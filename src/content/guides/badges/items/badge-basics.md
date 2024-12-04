@@ -35,3 +35,7 @@ If you must stop using a badge suggest you simply disable it so that users keep 
 When a badge is added or changed, the system will retroactively check anyone that interacted with your site to see if they should get the badge. This will be
 visible in the Badges page in the admin dashboard, as a spinner will be shown instead of the number of users that have the badge. This is because the number of users
 is being determined.
+
+### Seeing Who Has a Badge
+
+In the Badges list each link has a `View Users` option to show the list of users which has earned or was manually awarded a badge.
