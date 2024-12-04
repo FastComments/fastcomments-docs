@@ -33,6 +33,11 @@
       "subCat": "Setup"
     },
     {
+      "name": "The Summary Widget",
+      "file": "summary-widget-installation.md",
+      "subCat": "Setup"
+    },
+    {
       "name": "Viewing Ratings",
       "file": "viewing-ratings.md",
       "subCat": "Reporting"
@@ -41,6 +46,11 @@
       "name": "Integrating via The API",
       "file": "integrating-via-the-api.md",
       "subCat": "Reporting"
+    },
+    {
+      "name": "Summary Demo",
+      "file": "summary-demo.md",
+      "subCat": "Summary Demo"
     }
   ]
 }
