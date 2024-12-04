@@ -1,6 +1,6 @@
 Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
 
-[inline-code-attrs-start title = 'Summary Widget Installation'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Summary Widget Installation'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
