@@ -2,7 +2,7 @@ Most of FastComments is customized via the [Customize UI](https://fastcomments.c
 
 Once you add questions, they won't be used anywhere yet.
 
-To use them, create or edit a customization rule and enable teh `Enable Ratings or Other Questions` option. This will show a few other options:
+To use them, create or edit a customization rule and enable the `Enable Ratings or Other Questions` option. This will show a few other options:
 
 - Style
   - Vertical or Side-by-Side
