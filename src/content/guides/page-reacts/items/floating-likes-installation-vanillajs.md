@@ -53,3 +53,35 @@ Currently, only VanillaJS is supported. If you'd like this widget to be added to
     })();
 </script>
 [inline-code-end]
+
+### With SSO
+
+We can pass Secure SSO or Simple SSO payloads as well:
+
+[inline-code-attrs-start title = 'Floating Likes Secure SSO Code Example'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
+<div id="fastcomments-page-likes-floating"></div>
+<script>
+    window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
+        tenantId: 'demo',
+        sso // pass sso object
+    });
+</script>
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Floating Likes Simple SSO Code Example'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
+<div id="fastcomments-page-likes-floating"></div>
+<script>
+    window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
+        tenantId: 'demo',
+        simpleSSO: {
+            id: 'some-user-id',
+            username: 'some username',
+            email: 'some@email.com',
+        }
+    });
+</script>
+[inline-code-end]
