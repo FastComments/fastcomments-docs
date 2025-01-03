@@ -60,7 +60,7 @@ There are a few things you can configure in the code, see lines 4 through 7.
         if (!rawSiteUserInfo) {
             return loadCommentsForUser(LOGIN_REQUIRED ? null : undefined);
         }
-        const userSiteInfo = JSON.parse(cookieObject["SiteUserInfo"]);
+        const userSiteInfo = JSON.parse(rawSiteUserInfo);
         const userFirstName = userSiteInfo["firstName"];
         const userId = userSiteInfo["siteUserId"];
         const xsrf1 = cookieObject["crumb"];
