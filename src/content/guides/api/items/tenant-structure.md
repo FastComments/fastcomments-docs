@@ -73,5 +73,7 @@ export interface Tenant {
     flexLastBilledAmount?: number
     /** @readonly - Is calculated based on packageId. **/
     hasAuditing?: boolean
+    /** You can store a key value pair with the tenant which you can use to query. Keys cannot contain "." or "$", or be longer than 100 chars. Values may not be longer than 2k chars. **/
+    meta?: Record<string, string | null>
 }
 [inline-code-end]
