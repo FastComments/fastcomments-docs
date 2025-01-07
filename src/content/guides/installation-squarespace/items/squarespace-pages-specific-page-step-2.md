@@ -11,12 +11,7 @@ There are a few things you can configure in the code, see lines 4 through 7.
         const tenantId = 'demo'; // your account id
 
         function tryLoad() {
-            // try to load for different layouts
-            let targetDiv = document.querySelector('.blog-item-comments-content');
-            if (!targetDiv) {
-                targetDiv = document.getElementById('fastcomments-widget');
-            }
-            window.FastCommentsUI(targetDiv, {
+            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
                 tenantId
             });
         }
