@@ -1,4 +1,4 @@
-Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 5 then you should log into your FastComments account
+Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 6 then you should log into your FastComments account
 and then refresh this page so the copied code snippet has your account id.
 
 [inline-code-attrs-start title = 'Systeme.io Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
