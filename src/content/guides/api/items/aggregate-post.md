@@ -39,6 +39,7 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
                 }
             }
         },
+        {
             "urlId": {
                 "distinctCounts": {
                     "some-page": 2
