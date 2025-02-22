@@ -8,6 +8,11 @@
       "subCat": "API Resources"
     },
     {
+      "name": "Aggregate Your Data",
+      "file": "aggregate-post.md",
+      "subCat": "Aggregations"
+    },
+    {
       "name": "AuditLog Structure",
       "file": "audit-log-structure.md",
       "subCat": "AuditLogs"
