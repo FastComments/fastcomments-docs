@@ -300,6 +300,8 @@ Response:
 }
 [inline-code-end]
 
+### Structures
+
 [inline-code-attrs-start title = 'Aggregate Request Structure'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export type AggregationOpType = 'sum' | 'countDistinct' | 'distinct' | 'avg' | 'min' | 'max' | 'count';
