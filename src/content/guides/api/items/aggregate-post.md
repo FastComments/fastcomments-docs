@@ -9,13 +9,15 @@ The max memory usage allowed per API call by default is 64MB, and by default you
 aggregations simultaneously, they will be queued and ran in the order submitted. Pending aggregations will wait a maximum of 60 seconds, after that
 the request will time out. Individual aggregations may run for up to 5 minutes.
 
+If you have managed tenants, you can aggregate all child tenant resources in one call by passing the `parentTenantId` query param.
+
 ## Examples
 
 ### Example: Count Unique
 
 [inline-code-attrs-start title = 'Count Unique Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET' --header 'Content-Type: application/json' --data '{
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "distinct", "field": "urlId", "alias": "urlId" },
@@ -52,7 +54,7 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 
 [inline-code-attrs-start title = 'Count Distinct Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET' --header 'Content-Type: application/json' --data '{
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "countDistinct", "field": "urlId", "alias": "urlId" },
@@ -81,7 +83,7 @@ Response:
 
 [inline-code-attrs-start title = 'Sum Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET' --header 'Content-Type: application/json' --data '{
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "sum", "field": "votes", "alias": "votes" },
@@ -110,7 +112,7 @@ Response:
 
 [inline-code-attrs-start title = 'Average Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET' --header 'Content-Type: application/json' --data '{
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "avg", "field": "votes", "alias": "votes" },
@@ -139,7 +141,7 @@ Response:
 
 [inline-code-attrs-start title = 'Min/Max Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET' --header 'Content-Type: application/json' --data '{
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "min", "field": "votes", "alias": "votes" },
@@ -162,6 +164,136 @@ Response:
             "votesUp": { "numericValue": 0 },
             "votes": { "numericValue": 2 },
             "votesUp": { "numericValue": 2 }
+        }
+    ],
+    "stats": { "scanned": 2 }
+}
+[inline-code-end]
+
+### Example: Count Unique Values of Multiple Fields
+
+[inline-code-attrs-start title = 'Count Unique Values cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+    "resourceName": "Comment",
+    "operations": [
+        { "op": "distinct", "field": "urlId", "alias": "urlId" },
+        { "op": "distinct", "field": "commenterEmail", "alias": "commenterEmail" }
+    ]
+}'
+[inline-code-end]
+
+Response:
+
+[inline-code-attrs-start title = 'Count Unique Values Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+    "status": "success",
+    "data": [
+        {
+            "commenterEmail": {
+                "distinctCounts": {
+                    "someone@somewhere.com": 1,
+                    "someone2@somewhere.com": 1
+                }
+            },
+            "urlId": {
+                "distinctCounts": {
+                    "some-page": 2
+                }
+            }
+        }
+    ],
+    "stats": { "scanned": 2 }
+}
+[inline-code-end]
+
+### Example: Query Creation Example
+
+[inline-code-attrs-start title = 'Query Creation cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+    "resourceName": "Comment",
+    "groupBy": ["commenterName"],
+    "query": [
+        { "key": "approved", "value": true, "operator": "eq" },
+        { "key": "commenterName", "value": "some-username-2", "operator": "eq" }
+    ],
+    "operations": [
+        { "op": "sum", "field": "votes", "alias": "votes" }
+    ]
+}'
+[inline-code-end]
+
+Response:
+
+[inline-code-attrs-start title = 'Query Creation Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+    "status": "success",
+    "data": [
+        {
+            "groups": { "commenterName": "some-username-2" },
+            "votes": { "numericValue": 2 }
+        }
+    ],
+    "stats": { "scanned": 1 }
+}
+[inline-code-end]
+
+### Example: Count Comments Pending Review
+
+[inline-code-attrs-start title = 'Count Pending Review Comments cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+    "resourceName": "Comment",
+    "query": [
+        { "key": "reviewed", "value": true, "operator": "not_eq" }
+    ],
+    "operations": [
+        { "op": "count", "field": "id", "alias": "count" }
+    ]
+}'
+[inline-code-end]
+
+Response:
+
+[inline-code-attrs-start title = 'Count Pending Review Comments Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+    "status": "success",
+    "data": [
+        { "count": { "numericValue": 2 } }
+    ],
+    "stats": { "scanned": 2 }
+}
+[inline-code-end]
+
+### Example: Breakdown of Approved, Reviewed, and Spam Comments
+
+[inline-code-attrs-start title = 'Breakdown of Comments cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+    "resourceName": "Comment",
+    "operations": [
+        { "op": "distinct", "field": "approved", "alias": "approved" },
+        { "op": "distinct", "field": "reviewed", "alias": "reviewed" },
+        { "op": "distinct", "field": "isSpam", "alias": "isSpam" }
+    ]
+}'
+[inline-code-end]
+
+Response:
+
+[inline-code-attrs-start title = 'Breakdown of Comments Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+    "status": "success",
+    "data": [
+        {
+            "approved": { "distinctCounts": { "true": 2 } },
+            "reviewed": { "distinctCounts": { "false": 2 } },
+            "isSpam": { "distinctCounts": { "false": 2 } }
         }
     ],
     "stats": { "scanned": 2 }
