@@ -24,6 +24,13 @@ To just protect a particular domain, enter the domain in question into the "doma
 
 To protect a particular page, enter a page URL in the "URL ID" field. If you have a custom integration with FastComments, you may enter a type of ID here instead of a URL.
 
+#### Security Levels
+
+When requiring SSO, you'll want to decide if you require Simple SSO or Secure SSO. If you require Simple SSO, then both are allowed, but if you require Secure SSO then
+the content must be fetched with a Secure SSO payload hashed with your API key in order to be viewed.
+
+The security level option will appear when you select "Require SSO To View Comments".
+
 #### Protection Beyond Reading
 
 Enabling this option will protect the page or domain from being commented on unless the user is logged in via SSO.
