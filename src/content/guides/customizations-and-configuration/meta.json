@@ -158,6 +158,11 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Image Content Moderation",
+      "file": "image-content-moderation.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Change The Voting Style",
       "file": "vote-style.md",
       "subCat": "Look and Feel"
