@@ -646,6 +646,64 @@
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Question Results Aggregation"
+    },
+    {
+      "name": "UserBadge Structure",
+      "file": "user-badge-structure.md",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "GET /api/v1/user-badges",
+      "file": "user-badges-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "GET /api/v1/user-badges/:id",
+      "file": "user-badge-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "POST /api/v1/user-badges",
+      "file": "user-badge-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "PUT /api/v1/user-badges/:id",
+      "file": "user-badge-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "DELETE /api/v1/user-badges/:id",
+      "file": "user-badge-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "UserBadgeProgress Structure",
+      "file": "user-badge-progress-structure.md",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress",
+      "file": "user-badge-progress-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/:id",
+      "file": "user-badge-progress-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/user/:userId",
+      "file": "user-badge-progress-get-by-user-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
     }
   ]
 }
