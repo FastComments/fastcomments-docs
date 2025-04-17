@@ -36,6 +36,15 @@ interface SSOUser {
     /** Don't let other users send direct messages to this user. Default false. **/
     isProfileDMDisabled?: boolean
     karma?: number
+    /** Optional configuration for user badges. **/
+    badgeConfig?: {
+        /** Array of badge IDs to assign to the user. Limited to 30 badges. **/
+        badgeIds: string[]
+        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        override?: boolean
+        /** If true, updates badge display properties from tenant configuration. **/
+        update?: boolean
+    }
 }
 [inline-code-end]
 
@@ -56,3 +65,11 @@ With a regular user, we send them notification emails based on their notificatio
 
 With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
 emails if you set `optedInSubscriptionNotifications` to `true`.
+
+### Badges
+
+You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
+
+- `badgeIds` - An array of badge IDs to assign to the user. These must be valid badge IDs created in your FastComments account. Limited to 30 badges.
+- `override` - If true, all existing badges displayed on comments will be replaced with the provided ones. If false or omitted, the provided badges will be added to any existing badges.
+- `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.
