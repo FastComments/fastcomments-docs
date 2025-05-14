@@ -34,12 +34,12 @@
             if (tenantId) {
                 const isProd = location.hostname !== 'localhost';
                 const DomainsByRegion = {
-                    'us-west': 'fastcomments.com',
-                    'eu': 'eu.fastcomments.com'
+                    'us-west': 'https://fastcomments.com',
+                    'eu': 'https://eu.fastcomments.com'
                 };
                 const CDNByRegion = {
-                    'us-west': 'cdn.fastcomments.com',
-                    'eu': 'cdn-eu.fastcomments.com'
+                    'us-west': 'https://cdn.fastcomments.com',
+                    'eu': 'https://cdn-eu.fastcomments.com'
                 };
                 const allowedPattern = /^[A-Za-z0-9_-]+$/;
                 if (tenantId && !allowedPattern.test(tenantId)) {
