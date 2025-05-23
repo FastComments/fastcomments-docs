@@ -38,7 +38,7 @@
       "subCat": "Implementation"
     },
     {
-      "name": "How it Works",
+      "name": "How it Works & Handling Retries",
       "file": "webhooks-how-it-works.md",
       "subCat": "Behind The Scenes"
     }
