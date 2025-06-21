@@ -1,0 +1,16 @@
+{
+  "name": "Comment Count Widgets",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Comment Count Widget Installation",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Bulk Comment Count Widget Installation",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Installation"
+    }
+  ]
+}
