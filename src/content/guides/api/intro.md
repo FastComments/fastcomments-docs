@@ -15,9 +15,9 @@ We also now have SDKs for popular languages:
 - [fastcomments-java](https://github.com/FastComments/fastcomments-java)
 - [fastcomments-php](https://github.com/FastComments/fastcomments-php)
 - [fastcomments-php-sso](https://github.com/FastComments/fastcomments-php-sso)
+- [fastcomments-sdk-js](https://github.com/FastComments/fastcomments-sdk-js)
 - Go: Planned
 - Python: Planned
-- TypeScript: Planned
 - Rust: Planned
 
 ### Authentication
