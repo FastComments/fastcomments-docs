@@ -6,7 +6,9 @@ Some example metrics that are tracked:
 - API Credits (for the current month)
 - New Comments Stored (for the current month)
 - Tenant Users
-- SSO Users
+- SSO Users (regular SSO users without admin/moderator permissions)
+- SSO Admins (SSO users with admin flags `isAccountOwner` or `isAdminAdmin` - billed separately from regular SSO users)
+- SSO Moderators (SSO users with `isCommentModeratorAdmin` flag - billed separately from regular SSO users)
 - Moderators
 - Domains
 

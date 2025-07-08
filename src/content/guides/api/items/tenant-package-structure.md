@@ -50,7 +50,7 @@ export interface TenantPackage {
     flexPageLoadUnit?: null
     flexCommentCostCents?: null
     flexCommentUnit?: null
-    flexSSOUserCostCents?: null
+    flexSSOUserCostCents?: null // Cost per regular SSO user (without admin/moderator permissions)
     flexSSOUserUnit?: null
     flexAPICreditCostCents?: null
     flexAPICreditUnit?: null
@@ -60,6 +60,10 @@ export interface TenantPackage {
     flexAdminUnit?: null
     flexDomainCostCents?: null
     flexDomainUnit?: null
+    flexSSOAdminCostCents?: null // Cost per SSO user with admin permissions (isAccountOwner or isAdminAdmin flags)
+    flexSSOAdminUnit?: null
+    flexSSOModeratorCostCents?: null // Cost per SSO user with moderator permissions (isCommentModeratorAdmin flag)
+    flexSSOModeratorUnit?: null
     flexMinimumCostCents?: null
 }
 [inline-code-end]

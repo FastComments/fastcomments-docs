@@ -23,9 +23,9 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean
-    isAdminAdmin?: boolean
-    isCommentModeratorAdmin?: boolean
+    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
+    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
+    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
     /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
@@ -47,6 +47,16 @@ interface SSOUser {
     }
 }
 [inline-code-end]
+
+### Billing for SSO Users
+
+SSO users are billed differently based on their permission flags:
+
+- **Regular SSO Users**: Users without admin or moderator permissions are billed as regular SSO users
+- **SSO Admins**: Users with `isAccountOwner` or `isAdminAdmin` flags are billed separately as SSO Admins (same rate as regular tenant admins)
+- **SSO Moderators**: Users with `isCommentModeratorAdmin` flag are billed separately as SSO Moderators (same rate as regular moderators)
+
+**Important**: To prevent double billing, the system automatically deduplicates SSO users against regular tenant users and moderators by email address. If an SSO user has the same email as a regular tenant user or moderator, they will not be billed twice.
 
 ### Access Control
 
