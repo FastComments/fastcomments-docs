@@ -19,6 +19,59 @@ const AXIOS_CONFIG_NO_THROW = {
     }
 };
 
+// Search tracking collection
+const searchCollection = new Map(); // Map<tenantId, Map<searchInput, timestamp>>
+
+// Function to filter out prefix searches
+function filterPrefixSearches(searches) {
+    const searchArray = Array.from(searches.keys());
+    const filtered = [];
+    
+    for (let i = 0; i < searchArray.length; i++) {
+        let isPrefix = false;
+        for (let j = 0; j < searchArray.length; j++) {
+            if (i !== j && searchArray[j].startsWith(searchArray[i]) && searchArray[j] !== searchArray[i]) {
+                isPrefix = true;
+                break;
+            }
+        }
+        if (!isPrefix) {
+            filtered.push(searchArray[i]);
+        }
+    }
+    
+    return filtered;
+}
+
+// Process and track collected searches every 10 seconds
+setInterval(async () => {
+    if (searchCollection.size === 0) {
+        return;
+    }
+    
+    console.log('Processing collected searches...');
+    const currentCollection = new Map(searchCollection);
+    searchCollection.clear();
+    
+    for (const [tenantId, searches] of currentCollection) {
+        const filteredSearches = filterPrefixSearches(searches);
+        
+        for (const searchInput of filteredSearches) {
+            try {
+                const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
+                    + encodeURIComponent(process.env.SEARCH_API_KEY)
+                    + '&tenantId='
+                    + encodeURIComponent(tenantId)
+                    + '&searchInput=' + encodeURIComponent(searchInput), AXIOS_CONFIG_NO_THROW
+                );
+                console.log('Tracked search event for:', searchInput, 'Response:', response.status);
+            } catch (e) {
+                console.error('Failed to track search:', searchInput, e);
+            }
+        }
+    }
+}, 10000);
+
 (async function () {
     /** @type {Array.<Guide>} **/
     const guides = getGuides();
@@ -98,17 +151,13 @@ const AXIOS_CONFIG_NO_THROW = {
                 status: 'success',
                 results: rawResults.slice(0, 15)
             });
-            try {
-                const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
-                    + encodeURIComponent(process.env.SEARCH_API_KEY)
-                    + '&tenantId='
-                    + encodeURIComponent(req.query.tenantId)
-                    + '&searchInput=' + encodeURIComponent(req.query.query), AXIOS_CONFIG_NO_THROW
-                );
-                console.log('Tracker search event response', response);
-            } catch (e) {
-                console.error(e);
+            
+            // Collect search for batch processing
+            const tenantId = req.query.tenantId || 'default';
+            if (!searchCollection.has(tenantId)) {
+                searchCollection.set(tenantId, new Map());
             }
+            searchCollection.get(tenantId).set(req.query.query, Date.now());
         } catch (e) {
             console.error('Failed to handle search request', req.query.query, e);
             res.status(500).send({
