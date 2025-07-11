@@ -57,6 +57,12 @@ setInterval(async () => {
         const filteredSearches = filterPrefixSearches(searches);
         
         for (const searchInput of filteredSearches) {
+            // Skip tracking for e2e test searches
+            if (searchInput.includes('e2e-test')) {
+                console.log('Skipping e2e test search:', searchInput);
+                continue;
+            }
+            
             try {
                 const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
                     + encodeURIComponent(process.env.SEARCH_API_KEY)
