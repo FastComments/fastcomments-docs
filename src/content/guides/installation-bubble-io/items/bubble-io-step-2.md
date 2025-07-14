@@ -1,6 +1,7 @@
 Click on the HTML element you just added. In the property editor that appears, paste the following code into the HTML field:
 
-```html
+[inline-code-attrs-start title = 'Bubble.io Live Commenting Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
@@ -31,7 +32,7 @@ Click on the HTML element you just added. In the property editor that appears, p
         tryLoad();
     })();
 </script>
-```
+[inline-code-end]
 
 <div class="screenshot white-bg">
     <div class="title">Insert FastComments Code</div>
