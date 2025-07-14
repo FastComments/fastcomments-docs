@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Add Live Commenting to Bubble.io Sites",
+  "icon": "/images/guide-icons/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Add HTML Block",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Insert Code",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "3. Find Width Setting",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "4. Adjust Layout",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Success",
+      "file": "bubble-io-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}
