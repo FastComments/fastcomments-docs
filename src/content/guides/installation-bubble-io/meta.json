@@ -1,7 +1,7 @@
 {
   "name": "Bubble.io",
   "pageHeader": "Add Live Commenting to Bubble.io Sites",
-  "icon": "/images/guide-icons/bubble-io.png",
+  "icon": "3rd-party-products/bubble-io.svg",
   "itemsOrdered": [
     {
       "name": "1. Add HTML Block",
