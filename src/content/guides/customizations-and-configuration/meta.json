@@ -396,6 +396,11 @@
       "name": "Deleting Comments With Replies",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Misc"
+    },
+    {
+      "name": "Show Badges in Top Bar",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Look and Feel"
     }
   ]
 }
