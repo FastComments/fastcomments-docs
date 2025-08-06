@@ -42,6 +42,14 @@ You can also load an external CSS file via the `customCSS` property:
 
 However, remember that your CSS won't be able to be tested by us if you do this. 
 
+### User Profile Modal Styling
+
+User profile modals can also be styled with custom CSS. However, to ensure that custom styling is applied to user profiles, all CSS selectors must be prefixed with `.user-profile`. Without this prefix, custom styling will be ignored for user profile modals.
+
+For example:
+
+[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'User Profile CSS'; code-example-end]
+
 ### Backwards Compatibility
 
 At FastComments, we know our customers customize the commenting widget. That's by design - the last thing we want is for our product to cause design
