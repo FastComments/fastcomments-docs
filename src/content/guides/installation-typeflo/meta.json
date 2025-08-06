@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Add Live Commenting to Typeflo.io Blogs",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Find Code Input",
+      "file": "typeflo-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Insert Code",
+      "file": "typeflo-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Success",
+      "file": "typeflo-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}
