@@ -5,8 +5,6 @@ In the **Footer** section of the Custom Code tab, paste the following code:
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js" async></script>
 <script>
     (function () {
-        console.log('Starting FastComments');
-
         function load() {
             let target = null;
             let lastInstance;
@@ -18,17 +16,14 @@ In the **Footer** section of the Custom Code tab, paste the following code:
                 lastInstance.destroy();
             }
             if (window.FastCommentsUI) {
-                console.log('fastcomments found');
                 const newElement = document.createElement('div');
                 newElement.classList.add('fastcomments-widget');
                 const subscribeSection = document.querySelector('.nc-SectionSubscribe2');
-                console.log('subscribeSection', subscribeSection);
                 if (subscribeSection) {
                     subscribeSection.parentNode.insertBefore(newElement, subscribeSection);
                     target = newElement;
                 } else {
                     const fullWidthSection = document.querySelector('.container.w-full');
-                    console.log('fullWidthSection', fullWidthSection);
                     if (fullWidthSection) {
                         fullWidthSection.prepend(newElement);
                         target = newElement;
