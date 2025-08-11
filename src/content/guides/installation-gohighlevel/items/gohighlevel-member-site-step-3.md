@@ -33,7 +33,16 @@ with GoHighLevel:
                 if (rendered) {
                     return;
                 }
-                const container = document.querySelector('#post-body');
+                let container = document.querySelector('#post-body');
+                if (!container) {
+                    container = document.querySelector('#content-container #content-container #post-description');
+                }
+                if (!container) {
+                    container = document.querySelector('#post-description');
+                }
+                if (!container) {
+                    container = document.querySelector('#content-container');
+                }
                 if (container) {
                     console.log('FastComments: container found, updating...');
                     if (document.querySelector('.fastcomments-wrapper')) {
