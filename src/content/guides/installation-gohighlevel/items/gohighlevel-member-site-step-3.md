@@ -6,6 +6,8 @@ with GoHighLevel:
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <script>
     (function () {
+        const VALID_PATTERNS = ['/post'];
+
         const oldPushState = history.pushState;
         history.pushState = function pushState() {
             const ret = oldPushState.apply(this, arguments);
@@ -33,6 +35,18 @@ with GoHighLevel:
                 if (rendered) {
                     return;
                 }
+                if (!VALID_PATTERNS.some(function(pattern) {
+                    return window.location.pathname.includes(pattern);
+                })) {
+                    console.log('FastComments: Not set to load on this page. Waiting.');
+                    setTimeout(tryNext, 1000);
+                    return;
+                }
+                if (!window.FastCommentsUI) {
+                    console.log('FastComments: script not ready, waiting...');
+                    setTimeout(tryNext, 300);
+                    return;
+                }
                 let container = document.querySelector('#post-body');
                 if (!container) {
                     container = document.querySelector('#content-container #content-container #post-description');
@@ -43,13 +57,16 @@ with GoHighLevel:
                 if (!container) {
                     container = document.querySelector('#content-container');
                 }
+                if (!container) {
+                    container = document.querySelector('.post-description'); // mobile
+                }
                 if (container) {
                     console.log('FastComments: container found, updating...');
                     if (document.querySelector('.fastcomments-wrapper')) {
                         document.querySelector('.fastcomments-wrapper').remove();
                     }
                     const target = document.createElement('div');
-                    target.classList.add('fastcomments-wrapper');
+                    target.classList.add('fastcomments-wrapper', 'col-span-8');
                     container.append(target);
                     FastCommentsUI(target, {
                         tenantId: "demo",
@@ -82,3 +99,6 @@ with GoHighLevel:
     })();
 </script>
 [inline-code-end]
+
+You can configure the `VALID_PATTERNS` variable to set which URL routes the comments should show. By default, it will show
+on pages that contain `/post` in the URL.
