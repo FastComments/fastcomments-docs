@@ -6,7 +6,7 @@ with GoHighLevel:
 <script>
     (function () {
         const tenantId = 'demo';
-        const VALID_PATTERNS = ['/post'];
+        const VALID_PATTERNS = ['/post']; // only show on these pages. This is ignored if you set TARGET_ELEMENT_ID.
         const TYPE = 'commenting'; // set to one of: commenting, live, collab. You can also configure this per-page.
         const TARGET_ELEMENT_ID = ''; // you can set this to add the widget to a specific area of the page by adding a separate HTML element with a div
         const SCRIPT_ID = 'fastcomments-embed';
