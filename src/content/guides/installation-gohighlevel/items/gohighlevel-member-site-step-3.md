@@ -58,7 +58,12 @@ with GoHighLevel:
             if (TARGET_ELEMENT_ID) {
                 container = document.getElementById(TARGET_ELEMENT_ID);
                 if (container && container.getAttribute('type') === 'collab') {
-                    container = getContentContainer(); // instead we'll target the page content!
+                    const hasContent = container.textContent && container.textContent.trim().length > 0;
+                    if (hasContent) {
+                        return container;
+                    } else {
+                        container = getContentContainer();
+                    }
                 }
             } else {
                 container = getContentContainer();
@@ -315,7 +320,7 @@ Then in the GHL editor, click the "code" button and add where you want the comme
 <div
   id="fc_box"
   type="commenting"
-  urlid="curiouser-notcheating-whatischeating"
+  urlid="custom-chat-id"
 ></div>
 [inline-code-end]
 
@@ -333,3 +338,20 @@ If you want to enable collab chat for example change type to `type="collab"`.
 
 If you don't set don't set `TARGET_ELEMENT_ID`, you can instead configure the `VALID_PATTERNS` variable, to set which URL routes the comments should show. By default, it will show
 on pages that contain `/post` in the URL.
+
+### Configuring Collab Chat
+
+You can tell collab chat to only add collaborative functionality around HTML inside a specific area, for example, let's say you
+add the footer code above and then add this div in the post/page content to enable collab chat:
+
+[inline-code-attrs-start title = 'Collab Chat With Specified Content'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<div
+  id="fc_box"
+  type="collab"
+  urlid="custom-chat-id"
+><p>This content will have collab chat!</p></div>
+[inline-code-end]
+
+Then the paragraph element inside the `<div>` will have collab chat enabled, and nothing else on the page. If you don't
+put any content in the `<div>` then it will enable collab chat on the entire post body.
