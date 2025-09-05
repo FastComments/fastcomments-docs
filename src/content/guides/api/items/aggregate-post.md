@@ -321,7 +321,7 @@ export interface AggregationOperation {
 export interface QueryPredicate {
     key: string
     value: string | number | boolean
-    operator: 'eq' | 'not_eq' | 'greater_than' | 'less_than'
+    operator: 'eq' | 'not_eq' | 'greater_than' | 'less_than' | 'contains'
 }
 
 export interface AggregationRequest {
