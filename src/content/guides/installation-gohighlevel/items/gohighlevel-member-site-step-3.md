@@ -1,5 +1,5 @@
 Now we're going to copy our FastComments code. Try using the "Copy" button on the right, as the code is quite large to work properly
-with GoHighLevel:
+with GoHighLevel. Note that by default this will only show on page URLs that contain `/post`. You can add more pages in the `VALID_PATTERNS` line, or set it to `[]` to enable on all pages.
 
 [inline-code-attrs-start title = 'GoHighLevel FastComments Code Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
