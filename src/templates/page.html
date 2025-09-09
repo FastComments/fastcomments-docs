@@ -48,6 +48,15 @@
                         }
                     }
                 });
+                
+                // Update tenant ID inputs
+                const tenantIdInputs = document.querySelectorAll('.tenant-id');
+                tenantIdInputs.forEach(function (input) {
+                    if (input.value === 'demo' || input.value === ExampleTenantId) {
+                        input.value = sessionInfo.tenantId;
+                    }
+                });
+                
                 if (sessionInfo.FC_SITE !== 'https://fastcomments.com') {
                     const containersWithSiteLink = document.querySelectorAll('.has-site-link');
                     containersWithSiteLink.forEach(function (container) {
