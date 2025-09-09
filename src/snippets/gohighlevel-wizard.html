@@ -1,0 +1,454 @@
+<div id="ghl-wizard" style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 24px; margin: 20px 0;">
+    <h3 style="margin-top: 0; color: #212529;">FastComments Configuration Wizard</h3>
+    
+    <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #495057;">
+            Comment Type:
+        </label>
+        <select id="wizard-type" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+            <option value="commenting">Regular Comments (traditional comment box)</option>
+            <option value="live">Live Chat (real-time streaming chat)</option>
+            <option value="collab">Collab Chat (highlight and discuss text)</option>
+        </select>
+        <small style="display: block; margin-top: 4px; color: #6c757d;">Choose the type of commenting experience you want</small>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #495057;">
+            Placement Mode:
+        </label>
+        <select id="wizard-placement" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+            <option value="auto">Automatic (appears at bottom of posts)</option>
+            <option value="custom">Custom (I'll place it with a div element)</option>
+        </select>
+        <small style="display: block; margin-top: 4px; color: #6c757d;">How should the widget be placed on your pages?</small>
+    </div>
+
+    <div id="custom-id-section" style="margin-bottom: 20px; display: none;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #495057;">
+            Custom Element ID:
+        </label>
+        <input id="wizard-element-id" type="text" value="fc_box" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+        <small style="display: block; margin-top: 4px; color: #6c757d;">The ID of the div element where comments will appear</small>
+    </div>
+
+    <div id="page-patterns-section" style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #495057;">
+            Show on pages containing:
+        </label>
+        <input id="wizard-patterns" type="text" value="/post" placeholder="e.g., /post, /blog, /article" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+        <small style="display: block; margin-top: 4px; color: #6c757d;">Comma-separated URL patterns (leave empty for all pages)</small>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #495057;">
+            Tenant ID:
+        </label>
+        <input id="wizard-tenant" type="text" value="demo" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+        <small style="display: block; margin-top: 4px; color: #6c757d;">Your FastComments tenant ID (use "demo" for testing)</small>
+    </div>
+
+    <button id="generate-code" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-size: 16px; cursor: pointer; margin-bottom: 20px;">
+        Generate Code
+    </button>
+
+    <div id="generated-code-section" style="display: none;">
+        <h4 style="margin-bottom: 12px; color: #212529;">Your Generated Code:</h4>
+        <div style="position: relative;">
+            <textarea id="generated-code" readonly style="width: 100%; min-height: 400px; padding: 12px; border: 1px solid #ced4da; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 13px; background: #ffffff; resize: vertical; box-sizing: border-box;"></textarea>
+            <button id="copy-code" style="position: absolute; top: 8px; right: 8px; background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 14px; cursor: pointer;">
+                Copy
+            </button>
+        </div>
+        
+        <div id="custom-div-instruction" style="margin-top: 20px; padding: 16px; background: #e7f3ff; border: 1px solid #bee5eb; border-radius: 4px; display: none;">
+            <h5 style="margin-top: 0; color: #004085;">Additional Step Required:</h5>
+            <p style="margin-bottom: 8px;">Since you chose custom placement, you also need to add this HTML element where you want the comments to appear:</p>
+            <div style="position: relative;">
+                <textarea id="custom-div-code" readonly style="width: 100%; height: 80px; padding: 8px; border: 1px solid #b8daff; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 13px; background: white; box-sizing: border-box;"></textarea>
+                <button id="copy-div-code" style="position: absolute; top: 8px; right: 8px; background: #17a2b8; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 12px; cursor: pointer;">
+                    Copy
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const typeSelect = document.getElementById('wizard-type');
+    const placementSelect = document.getElementById('wizard-placement');
+    const customIdSection = document.getElementById('custom-id-section');
+    const pagePatternsSection = document.getElementById('page-patterns-section');
+    const generateBtn = document.getElementById('generate-code');
+    const generatedSection = document.getElementById('generated-code-section');
+    const generatedCode = document.getElementById('generated-code');
+    const copyBtn = document.getElementById('copy-code');
+    const customDivInstruction = document.getElementById('custom-div-instruction');
+    const customDivCode = document.getElementById('custom-div-code');
+    const copyDivBtn = document.getElementById('copy-div-code');
+
+    placementSelect.addEventListener('change', function() {
+        if (this.value === 'custom') {
+            customIdSection.style.display = 'block';
+            pagePatternsSection.style.display = 'none';
+        } else {
+            customIdSection.style.display = 'none';
+            pagePatternsSection.style.display = 'block';
+        }
+    });
+
+    generateBtn.addEventListener('click', function() {
+        const type = typeSelect.value;
+        const placement = placementSelect.value;
+        const elementId = placement === 'custom' ? document.getElementById('wizard-element-id').value : '';
+        const patterns = placement === 'auto' ? document.getElementById('wizard-patterns').value : '';
+        const tenantId = document.getElementById('wizard-tenant').value;
+
+        // Parse patterns
+        let patternsArray = [];
+        if (patterns) {
+            patternsArray = patterns.split(',').map(p => p.trim()).filter(p => p);
+        }
+        const patternsString = patternsArray.length > 0 
+            ? '[' + patternsArray.map(p => `'${p}'`).join(', ') + ']'
+            : '[]';
+
+        // Generate the code
+        const code = `<script>
+    (function () {
+        const tenantId = '${tenantId}';
+        const VALID_PATTERNS = ${patternsString}; // only show on these pages. This is ignored if you set TARGET_ELEMENT_ID.
+        const TYPE = '${type}'; // set to one of: commenting, live, collab. You can also configure this per-page.
+        const TARGET_ELEMENT_ID = '${elementId}'; // you can set this to add the widget to a specific area of the page by adding a separate HTML element with a div
+        const SCRIPT_ID = 'fastcomments-embed'; // don't change this
+
+        function getType() {
+            if (TARGET_ELEMENT_ID) {
+                const container = document.getElementById(TARGET_ELEMENT_ID);
+                if (container) {
+                    return container.getAttribute('type');
+                } else {
+                    console.log('FastComments: Type not available yet.');
+                    return null;
+                }
+            }
+            return TYPE;
+        }
+
+        function getConstructor() {
+            const type = getType();
+            if (!type) {
+                return null;
+            }
+            if (type === 'commenting') {
+                return window.FastCommentsUI;
+            }
+            if (type === 'live') {
+                return window.FastCommentsLiveChat;
+            }
+            if (type === 'collab') {
+                return window.FastCommentsCollabChat;
+            }
+        }
+
+        function getScript() {
+            const type = getType();
+            if (type === 'commenting') {
+                return 'https://cdn.fastcomments.com/js/embed-v2.min.js';
+            }
+            if (type === 'live') {
+                return 'https://cdn.fastcomments.com/js/embed-live-chat.min.js';
+            }
+            if (type === 'collab') {
+                return 'https://cdn.fastcomments.com/js/embed-collab-chat.min.js';
+            }
+        }
+
+        function getContainer() {
+            let container;
+            if (TARGET_ELEMENT_ID) {
+                container = document.getElementById(TARGET_ELEMENT_ID);
+                if (container && container.getAttribute('type') === 'collab') {
+                    const hasContent = container.textContent && container.textContent.trim().length > 0;
+                    if (hasContent) {
+                        return container;
+                    } else {
+                        container = getContentContainer();
+                    }
+                }
+            } else {
+                container = getContentContainer();
+            }
+            return container;
+        }
+
+        // Function to ensure script is loaded
+        function ensureScriptLoaded() {
+            return new Promise(async (resolve) => {
+                // Check if script tag already exists
+                let scriptTag = document.getElementById(SCRIPT_ID);
+
+                if (!scriptTag) {
+                    await new Promise((resolve) => {
+                        const interval = setInterval(() => {
+                            if (!getType()) {
+                                return; // wait
+                            }
+                            // wait for this so we can accurately determine what script/constructor to fetch
+                            const container = getContentContainer();
+                            if (container) {
+                                resolve();
+                                clearInterval(interval);
+                            }
+                        }, 100);
+                    });
+                    console.log('FastComments: Script tag not found, adding dynamically...');
+                    scriptTag = document.createElement('script');
+                    scriptTag.id = SCRIPT_ID;
+                    scriptTag.src = getScript();
+                    scriptTag.async = true;
+
+                    scriptTag.onload = () => {
+                        console.log('FastComments: Script loaded successfully', scriptTag.src);
+                        resolve();
+                    };
+
+                    scriptTag.onerror = () => {
+                        console.error('FastComments: Failed to load script', scriptTag.src);
+                        resolve(); // Resolve anyway to prevent hanging
+                    };
+
+                    document.head.appendChild(scriptTag);
+                } else if (getConstructor()) {
+                    // Script tag exists and is already loaded
+                    console.log('FastComments: Script already loaded');
+                    resolve();
+                } else {
+                    // Script tag exists but not ready yet
+                    console.log('FastComments: Waiting for script to initialize...');
+                    scriptTag.addEventListener('load', () => {
+                        resolve();
+                    });
+
+                    // Fallback in case the script is already loading
+                    const checkInterval = setInterval(() => {
+                        if (getConstructor(getContainer())) {
+                            clearInterval(checkInterval);
+                            resolve();
+                        }
+                    }, 100);
+
+                    // Timeout after 10 seconds
+                    setTimeout(() => {
+                        clearInterval(checkInterval);
+                        console.warn('FastComments: Script load timeout');
+                        resolve();
+                    }, 10000);
+                }
+            });
+        }
+
+        // History API modifications for SPA support
+        const oldPushState = history.pushState;
+        history.pushState = function pushState() {
+            const ret = oldPushState.apply(this, arguments);
+            window.dispatchEvent(new Event('pushstate'));
+            window.dispatchEvent(new Event('locationchange'));
+            return ret;
+        };
+
+        const oldReplaceState = history.replaceState;
+        history.replaceState = function replaceState() {
+            const ret = oldReplaceState.apply(this, arguments);
+            window.dispatchEvent(new Event('replacestate'));
+            window.dispatchEvent(new Event('locationchange'));
+            return ret;
+        };
+
+        window.addEventListener('popstate', () => {
+            window.dispatchEvent(new Event('locationchange'));
+        });
+
+        function getContentContainer() {
+            let container = null;
+            // Try to find container with multiple selectors
+            container = document.querySelector('#post-body');
+            if (!container) {
+                container = document.querySelector('#content-container #content-container #post-description');
+            }
+            if (!container) {
+                container = document.querySelector('#post-description');
+            }
+            if (!container) {
+                container = document.querySelector('#content-container');
+            }
+            if (!container) {
+                container = document.querySelector('.post-description'); // mobile
+            }
+            return container;
+        }
+
+        let lastInstance;
+        let currentUrlId;
+
+        // Main render function
+        async function render() {
+            let rendered = false;
+
+            // Ensure script is loaded before proceeding
+            await ensureScriptLoaded();
+
+            // Look for the target element with specific ID
+            let container = getContainer();
+
+            function tryNext() {
+                if (rendered) {
+                    return;
+                }
+
+                // Check if we should render on this page
+                if (!TARGET_ELEMENT_ID && !VALID_PATTERNS.some(function (pattern) {
+                    return window.location.pathname.includes(pattern);
+                })) {
+                    console.log('FastComments: Not set to load on this page. Waiting.');
+                    setTimeout(tryNext, 1000);
+                    return;
+                }
+
+                container = getContainer(); // important to re-fetch
+
+                if (container) {
+                    // Double-check if available
+                    if (!getConstructor()) {
+                        console.log('FastComments: not ready, waiting...');
+                        setTimeout(tryNext, 300);
+                        return;
+                    }
+                    console.log('FastComments: Target element found, initializing...');
+
+                    // Get urlId attribute
+                    const urlIdAttr = container.getAttribute('urlid');
+
+                    // Check if we need to re-render (urlId changed or first render)
+                    if (currentUrlId !== urlIdAttr || !lastInstance) {
+                        currentUrlId = urlIdAttr;
+
+                        // Destroy previous instance if exists
+                        if (lastInstance) {
+                            lastInstance.destroy();
+                            // Clear the container content
+                            container.innerHTML = '';
+                        }
+
+                        // Prepare config
+                        const config = {
+                            tenantId,
+                            showLiveRightAway: true
+                        };
+
+                        // Only add urlId to config if it's not "auto"
+                        if (urlIdAttr && urlIdAttr !== 'auto') {
+                            config.urlId = urlIdAttr;
+                            console.log('FastComments: Using urlId:', urlIdAttr);
+                        } else {
+                            console.log('FastComments: Using auto URL determination');
+                        }
+
+                        // Initialize FastComments
+                        lastInstance = getConstructor()(container, config);
+                        rendered = true;
+                    } else {
+                        console.log('FastComments: Already rendered with same urlId');
+                        rendered = true;
+                    }
+
+                    // Monitor if container gets removed or urlId changes
+                    const interval = setInterval(function () {
+                        const currentContainer = getContainer();
+                        if (!currentContainer) {
+                            console.log('FastComments: Container removed, will retry...');
+                            rendered = false;
+                            currentUrlId = null;
+                            tryNext();
+                            clearInterval(interval);
+                        } else {
+                            if (getType() === 'collab' && (!getContentContainer() || !getContentContainer().classList.contains('fastcomments-collab-chat-container'))) {
+                                console.log('FastComments: collab chat removed!');
+                                container = null; // collab chat was removed
+                                rendered = false;
+                                tryNext();
+                                clearInterval(interval);
+                            }
+                            const newUrlId = currentContainer.getAttribute('urlid');
+                            if (newUrlId !== currentUrlId) {
+                                console.log('FastComments: urlId changed, re-rendering...');
+                                rendered = false;
+                                tryNext();
+                                clearInterval(interval);
+                            }
+                        }
+                    }, 1000);
+                } else {
+                    console.log('FastComments: Target element not found, waiting...');
+                    setTimeout(tryNext, 300);
+                }
+            }
+
+            tryNext();
+        }
+
+        // Initial render
+        render();
+
+        // Re-render on location change
+        window.addEventListener('locationchange', function () {
+            console.log('FastComments: Location changed, updating...');
+            render();
+        });
+    })();
+<\/script>`;
+
+        generatedCode.value = code;
+        generatedSection.style.display = 'block';
+
+        // Show custom div instruction if needed
+        if (placement === 'custom') {
+            const divCode = `<div
+  id="${elementId}"
+  type="${type}"
+  urlid="auto"
+></div>`;
+            customDivCode.value = divCode;
+            customDivInstruction.style.display = 'block';
+        } else {
+            customDivInstruction.style.display = 'none';
+        }
+
+        // Scroll to generated code
+        generatedSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    copyBtn.addEventListener('click', function() {
+        generatedCode.select();
+        document.execCommand('copy');
+        const originalText = this.textContent;
+        this.textContent = 'Copied!';
+        this.style.background = '#28a745';
+        setTimeout(() => {
+            this.textContent = originalText;
+            this.style.background = '#28a745';
+        }, 2000);
+    });
+
+    copyDivBtn.addEventListener('click', function() {
+        customDivCode.select();
+        document.execCommand('copy');
+        const originalText = this.textContent;
+        this.textContent = 'Copied!';
+        setTimeout(() => {
+            this.textContent = originalText;
+        }, 2000);
+    });
+})();
+</script>

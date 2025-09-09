@@ -6,6 +6,7 @@ const handlebars = require('handlebars');
 const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
+const snippetProcessor = require('./snippet-processor');
 
 const GUIDES_DIR_NAME = 'guides';
 const ITEMS_DIR_NAME = 'items';
@@ -70,6 +71,9 @@ async function buildGuideItemForMeta(guide, metaItem) {
         ExampleTenantId
     });
     let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
+    
+    // Apply snippet processor after markdown processing
+    html = snippetProcessor(html, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file));
 
     html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
