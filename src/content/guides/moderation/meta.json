@@ -116,6 +116,11 @@
       "name": "Masking Profanity",
       "file": "profanity-mask.md",
       "subCat": "Spam & Profanity"
+    },
+    {
+      "name": "Comment Logs",
+      "file": "comment-logs.md",
+      "subCat": "Moderation Workflow"
     }
   ]
 }
