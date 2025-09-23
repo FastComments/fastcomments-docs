@@ -58,16 +58,22 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 attemptsRemaining--;
                 return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
             }
-    
+
             let url;
             const selectedNavLink = document.querySelector('.tcc-browse-lesson.active a');
-    
+
             if (selectedNavLink) {
                 // sometimes TC uses multiple links the same page, so let's de-dupe them.
                 url = getPathnameFromUrl(selectedNavLink.href);
             } else {
                 // trim marketing parameters and domain name
                 url = window.location.pathname;
+            }
+
+            if (url) {
+                url = url.replace('/starte-hier', '');
+                url = url.replace('/start-here', '');
+                url = removeQueryParam(url, 'initial');
             }
 
             FastCommentsUI(document.getElementById('fastcomments-widget'), {
@@ -78,7 +84,7 @@ It's quite large, because the integration with ThriveCart has a lot of features,
         }
 
         tryLoad();
-    
+
         function getPathnameFromUrl(url) {
             try {
                 const parsedUrl = new URL(url);
@@ -89,7 +95,13 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 return window.location.pathname; // default to current, so at least it works sometimes
             }
         }
-    
+
+        function removeQueryParam(url, param) {
+            const u = new URL(url, window.location.origin);
+            u.searchParams.delete(param);
+            return u.toString();
+        }
+
     })();
 </script>
 [inline-code-end]
