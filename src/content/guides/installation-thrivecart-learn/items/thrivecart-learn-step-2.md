@@ -73,7 +73,6 @@ It's quite large, because the integration with ThriveCart has a lot of features,
             if (url) {
                 url = url.replace('/starte-hier', '');
                 url = url.replace('/start-here', '');
-                url = removeQueryParam(url, 'initial');
             }
 
             FastCommentsUI(document.getElementById('fastcomments-widget'), {
@@ -94,12 +93,6 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 console.error("Invalid URL", url, error);
                 return window.location.pathname; // default to current, so at least it works sometimes
             }
-        }
-
-        function removeQueryParam(url, param) {
-            const u = new URL(url, window.location.origin);
-            u.searchParams.delete(param);
-            return u.toString();
         }
 
     })();
