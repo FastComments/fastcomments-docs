@@ -12,5 +12,5 @@ it does not matter if the system under attack uses passwords or magic links.
 
 ### Security Compared to MFA
 
-Login Links are less secure than MFA, however this is something we aim to offer in the future for
-admin accounts.
+Login Links are less secure than MFA. FastComments now supports two-factor authentication (2FA)
+for admin accounts to provide enhanced security. When 2FA is enabled, it is required even when using login links.
