@@ -23,6 +23,24 @@ const AXIOS_CONFIG_NO_THROW = {
 // Search tracking collection
 const searchCollection = new Map(); // Map<tenantId, Map<searchInput, timestamp>>
 
+// html-to-text configuration
+const htmlToTextOptions = {
+    selectors: [
+        { selector: '.line-number', format: 'skip' },
+        { selector: '.copy', format: 'skip' },
+        { selector: '.top-right', format: 'skip' },
+        { selector: 'img', format: 'skip' }
+    ]
+};
+
+// Clean search text by removing hljs styles and converting HTML to text
+function cleanSearchText(html) {
+    // Remove hljs style tags
+    const withoutHljsStyles = html.replace(/<style>pre code\.hljs\{[\s\S]*?<\/style>/g, '');
+    // Convert to text
+    return htmlToText(withoutHljsStyles, htmlToTextOptions);
+}
+
 // Function to filter out prefix searches
 function filterPrefixSearches(searches) {
     const searchArray = Array.from(searches.keys());
@@ -101,7 +119,7 @@ setInterval(async () => {
                 title: meta.pageHeader,
                 icon: '/images/guide-icons/' + meta.icon,
                 url: '/' + createGuideLink(guide.id),
-                searchText: htmlToText(bodyWithChildren)
+                searchText: cleanSearchText(bodyWithChildren)
             };
             guidesFlat.push(subEntry);
         } else if (meta.itemsOrdered) {
@@ -115,7 +133,7 @@ setInterval(async () => {
                     icon: '/images/guide-icons/' + meta.icon,
                     parentUrl: guide.url,
                     url: builtItem.fullUrl,
-                    searchText: htmlToText(builtItem.content)
+                    searchText: cleanSearchText(builtItem.content)
                 };
                 guidesFlat.push(subEntry);
             }
