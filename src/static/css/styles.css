@@ -764,6 +764,15 @@ table th {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     color: #fff;
     text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .llm-kit-banner {
+        color: #fff;
+        background-color: #012f46;
+        box-shadow: 0 0 20px 10px rgba(1, 47, 70, 0.3);
+    }
 }

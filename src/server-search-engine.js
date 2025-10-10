@@ -125,7 +125,7 @@ setInterval(async () => {
 
     const miniSearch = new MiniSearch({
         fields: ['title', 'parentTitle', 'searchText'], // fields to index for full-text search
-        storeFields: ['title', 'parentTitle', 'url', 'parentUrl', 'icon'], // fields to return with search results
+        storeFields: ['title', 'parentTitle', 'url', 'parentUrl', 'icon', 'searchText'], // fields to return with search results
         searchOptions: {
             boost: {title: 2},
             fuzzy: 0.1
@@ -153,11 +153,24 @@ setInterval(async () => {
                 }
             });
             console.log(rawResults.length, 'results for', req.query.query);
+
+            // Check if full documentation content should be included
+            const includeFull = req.query.full === 'true';
+            let results = rawResults.slice(0, 15);
+
+            // If full=true is not set, remove searchText from results
+            if (!includeFull) {
+                results = results.map(result => {
+                    const { searchText, ...rest } = result;
+                    return rest;
+                });
+            }
+
             res.send({
                 status: 'success',
-                results: rawResults.slice(0, 15)
+                results: results
             });
-            
+
             // Collect search for batch processing
             const tenantId = req.query.tenantId || 'default';
             if (!searchCollection.has(tenantId)) {
