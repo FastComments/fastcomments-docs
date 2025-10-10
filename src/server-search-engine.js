@@ -3,7 +3,7 @@
 
 const MiniSearch = require('minisearch');
 const express = require('express');
-const { convert } = require('html-to-text');
+const { htmlToText } = require('html-to-text');
 const {
     getGuides,
     buildGuideItemForMeta,
@@ -101,7 +101,7 @@ setInterval(async () => {
                 title: meta.pageHeader,
                 icon: '/images/guide-icons/' + meta.icon,
                 url: '/' + createGuideLink(guide.id),
-                searchText: convert(bodyWithChildren)
+                searchText: htmlToText(bodyWithChildren)
             };
             guidesFlat.push(subEntry);
         } else if (meta.itemsOrdered) {
@@ -115,7 +115,7 @@ setInterval(async () => {
                     icon: '/images/guide-icons/' + meta.icon,
                     parentUrl: guide.url,
                     url: builtItem.fullUrl,
-                    searchText: convert(builtItem.content)
+                    searchText: htmlToText(builtItem.content)
                 };
                 guidesFlat.push(subEntry);
             }
