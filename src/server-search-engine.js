@@ -3,6 +3,7 @@
 
 const MiniSearch = require('minisearch');
 const express = require('express');
+const { convert } = require('html-to-text');
 const {
     getGuides,
     buildGuideItemForMeta,
@@ -26,7 +27,7 @@ const searchCollection = new Map(); // Map<tenantId, Map<searchInput, timestamp>
 function filterPrefixSearches(searches) {
     const searchArray = Array.from(searches.keys());
     const filtered = [];
-    
+
     for (let i = 0; i < searchArray.length; i++) {
         let isPrefix = false;
         for (let j = 0; j < searchArray.length; j++) {
@@ -39,7 +40,7 @@ function filterPrefixSearches(searches) {
             filtered.push(searchArray[i]);
         }
     }
-    
+
     return filtered;
 }
 
@@ -48,21 +49,21 @@ setInterval(async () => {
     if (searchCollection.size === 0) {
         return;
     }
-    
+
     console.log('Processing collected searches...');
     const currentCollection = new Map(searchCollection);
     searchCollection.clear();
-    
+
     for (const [tenantId, searches] of currentCollection) {
         const filteredSearches = filterPrefixSearches(searches);
-        
+
         for (const searchInput of filteredSearches) {
             // Skip tracking for e2e test searches
             if (searchInput.includes('e2e-test')) {
                 console.log('Skipping e2e test search:', searchInput);
                 continue;
             }
-            
+
             try {
                 const response = await axios.post('https://fastcomments.com/docs-search/track-search-event?API_KEY='
                     + encodeURIComponent(process.env.SEARCH_API_KEY)
@@ -100,7 +101,7 @@ setInterval(async () => {
                 title: meta.pageHeader,
                 icon: '/images/guide-icons/' + meta.icon,
                 url: '/' + createGuideLink(guide.id),
-                searchText: bodyWithChildren
+                searchText: convert(bodyWithChildren)
             };
             guidesFlat.push(subEntry);
         } else if (meta.itemsOrdered) {
@@ -114,7 +115,7 @@ setInterval(async () => {
                     icon: '/images/guide-icons/' + meta.icon,
                     parentUrl: guide.url,
                     url: builtItem.fullUrl,
-                    searchText: builtItem.content
+                    searchText: convert(builtItem.content)
                 };
                 guidesFlat.push(subEntry);
             }
