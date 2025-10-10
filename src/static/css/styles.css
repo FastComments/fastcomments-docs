@@ -732,20 +732,38 @@ h4 {
 table,
 table th,
 table td {
-  text-align: center;
-  border: 1px solid lightgray;
-  border-collapse: collapse;
-  padding: 5px;
-  white-space: nowrap;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    padding: 5px;
+    white-space: nowrap;
 }
+
 table thead th {
-  background: lightgray;
-  border-color: lightgray;
-  color: #fff;
-  font-weight: 500;
-  margin-bottom: 10px;
+    background: lightgray;
+    border-color: lightgray;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
+
 table td,
 table th {
-  padding: 10px;
+    padding: 10px;
+}
+
+.llm-kit-banner {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: #201600;
+}
+
+.llm-kit-banner a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
 }
