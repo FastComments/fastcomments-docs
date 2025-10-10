@@ -1,12 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
-const {groupBy} = require('lodash');
 const handlebars = require('handlebars');
 const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 const snippetProcessor = require('./snippet-processor');
+
+function groupBy(array, key) {
+    return array.reduce((result, item) => {
+        const group = item[key];
+        if (!result[group]) {
+            result[group] = [];
+        }
+        result[group].push(item);
+        return result;
+    }, {});
+}
 
 const GUIDES_DIR_NAME = 'guides';
 const ITEMS_DIR_NAME = 'items';

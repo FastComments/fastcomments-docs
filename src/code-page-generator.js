@@ -1,8 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const {ExampleTenantId} = require('./utils');
-const { first, last } = require('lodash');
 const {getCompiledTemplate} = require('./utils');
+
+const first = (arr) => arr && arr.length > 0 ? arr[0] : undefined;
+const last = (arr) => arr && arr.length > 0 ? arr[arr.length - 1] : undefined;
 
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
