@@ -38,7 +38,7 @@ interface SSOUser {
     karma?: number
     /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. **/
+        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
         badgeIds: string[]
         /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
         override?: boolean
