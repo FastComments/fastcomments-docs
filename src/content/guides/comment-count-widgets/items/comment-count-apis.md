@@ -7,8 +7,9 @@ You can get the public comment counts using the widgets above or using the APIs 
 will never change.
 
 [inline-code-attrs-start title = 'Single Count Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
-https://fastcomments.com/widgets/comment-count/:tenantId?urlId=page_id_or_url
 [inline-code-start]
+https://fastcomments.com/widgets/comment-count/:tenantId?urlId=page_id_or_url
+[inline-code-end]
 
 This will return a structure like:
 
@@ -19,8 +20,9 @@ This will return a structure like:
 The `postfix` property is always included. 
 
 [inline-code-attrs-start title = 'Bulk Count Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
-https://fastcomments.com/widgets/comment-count-bulk/:tenantId?urlIds=x,y,z
 [inline-code-start]
+https://fastcomments.com/widgets/comment-count-bulk/:tenantId?urlIds=x,y,z
+[inline-code-end]
 
 This will return a structure like:
 
