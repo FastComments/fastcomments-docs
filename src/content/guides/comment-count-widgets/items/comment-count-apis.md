@@ -13,9 +13,10 @@ https://fastcomments.com/widgets/comment-count/:tenantId?urlId=page_id_or_url
 
 This will return a structure like:
 
-```
+[inline-code-attrs-start title = 'Single Count Endpoint Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 {"count":0,"postfix":"comments"}
-```
+[inline-code-end]
 
 The `postfix` property is always included. 
 
@@ -26,7 +27,8 @@ https://fastcomments.com/widgets/comment-count-bulk/:tenantId?urlIds=x,y,z
 
 This will return a structure like:
 
-```
+[inline-code-attrs-start title = 'Bulk Count Endpoint Response'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 {
     "status": "success",
     "translations": {
@@ -38,7 +40,7 @@ This will return a structure like:
         "x": 10
     }
 }
-```
+[inline-code-end]
 
 The `counts` object is only populated for pages that have counts. The `translations` map is always present as it is used for the widget.
 
