@@ -11,6 +11,11 @@
       "name": "Bulk Comment Count Widget Installation",
       "file": "bulk-comment-count-widget-installation.md",
       "subCat": "Installation"
+    },
+    {
+      "name": "Comment Count APIs",
+      "file": "comment-count-apis.md",
+      "subCat": "Comment Count APIs"
     }
   ]
 }

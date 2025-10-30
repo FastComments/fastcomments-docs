@@ -4,7 +4,7 @@ The Bulk Comment Count Widget is designed for efficiently displaying comment cou
 
 [inline-code-attrs-start title = 'Bulk Comment Count Widget Installation'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count-bulk.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 
 <!-- Multiple elements with comment counts -->
 <div class="fast-comments-count" data-fast-comments-url-id="page-1"></div>
@@ -40,7 +40,7 @@ Here's a practical example showing how you might use the bulk widget in a blog p
 
 [inline-code-attrs-start title = 'Blog Post Listing with Comment Counts'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count-bulk.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 
 <style>
     .blog-post {
@@ -111,7 +111,7 @@ You can have multiple elements on the page with the same `data-fast-comments-url
 
 [inline-code-attrs-start title = 'Multiple Elements Same URL ID'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count-bulk.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 
 <style>
     .count-example {

@@ -4,7 +4,7 @@ The Comment Count Widget is designed for displaying the comment count of a singl
 
 [inline-code-attrs-start title = 'Comment Count Widget Installation'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count"></div>
 <script>
     window.FastCommentsCommentCount(document.getElementById('comment-count'), {
@@ -28,7 +28,7 @@ The `FastCommentsCommentCount` function accepts the following configuration opti
 
 [inline-code-attrs-start title = 'Comment Count with Custom URL ID'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-custom"></div>
 <script>
     window.FastCommentsCommentCount(document.getElementById('comment-count-custom'), {
@@ -42,7 +42,7 @@ The `FastCommentsCommentCount` function accepts the following configuration opti
 
 [inline-code-attrs-start title = 'Comment Count Number Only'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-number"></div>
 <script>
     window.FastCommentsCommentCount(document.getElementById('comment-count-number'), {
@@ -56,7 +56,7 @@ The `FastCommentsCommentCount` function accepts the following configuration opti
 
 [inline-code-attrs-start title = 'Live Comment Count Updates'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-live"></div>
 <script>
     window.FastCommentsCommentCount(document.getElementById('comment-count-live'), {
@@ -77,7 +77,7 @@ The widget returns an object with the following methods:
 
 [inline-code-attrs-start title = 'Widget Methods Example'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-methods"></div>
 <script>
     const widget = window.FastCommentsCommentCount(document.getElementById('comment-count-methods'), {
@@ -115,7 +115,7 @@ The widget renders plain HTML with the comment count and comes with minimal styl
         display: inline-block;
     }
 </style>
-<script src="https://cdn.fastcomments.com/js/embed-comment-count.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-styled" class="comment-count-styled"></div>
 <script>
     window.FastCommentsCommentCount(document.getElementById('comment-count-styled'), {
