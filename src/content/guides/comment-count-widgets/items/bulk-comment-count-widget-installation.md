@@ -12,9 +12,9 @@ The Bulk Comment Count Widget is designed for efficiently displaying comment cou
 <div class="fast-comments-count" data-fast-comments-url-id="page-3"></div>
 
 <script>
-    window.FastCommentsCommentCountBulk({
+    window.FastCommentsBulkCountConfig = {
         tenantId: 'demo'
-    });
+    };
 </script>
 [inline-code-end]
 
@@ -91,9 +91,9 @@ Here's a practical example showing how you might use the bulk widget in a blog p
 </div>
 
 <script>
-    window.FastCommentsCommentCountBulk({
+    window.FastCommentsBulkCountConfig = {
         tenantId: 'demo'
-    });
+    };
 </script>
 [inline-code-end]
 
@@ -135,9 +135,9 @@ You can have multiple elements on the page with the same `data-fast-comments-url
 </div>
 
 <script>
-    window.FastCommentsCommentCountBulk({
+    window.FastCommentsBulkCountConfig = {
         tenantId: 'demo'
-    });
+    };
 </script>
 [inline-code-end]
 
