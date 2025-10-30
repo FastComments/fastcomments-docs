@@ -18,6 +18,11 @@
       "subCat": "Per-Site Customization"
     },
     {
+      "name": "Domain From Name/Email Not Working",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
       "name": "Tenant Per Environment",
       "file": "tenant-per-environment.md",
       "subCat": "Per-Site Customization"
