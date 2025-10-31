@@ -1,0 +1,26 @@
+{
+  "name": "Custom Styling",
+  "pageHeader": "Custom Styling Guide",
+  "itemsOrdered": [
+    {
+      "name": "How to Customize Styles",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "Comment Widget Styling Reference (v2, latest)",
+      "file": "css-v2-generated.md",
+      "subCat": "Widget Styling"
+    },
+    {
+      "name": "Recent Comments Widget Styling",
+      "file": "recent-comments-widget.md",
+      "subCat": "Widget Styling"
+    },
+    {
+      "name": "Top Pages Widget Styling",
+      "file": "top-pages-widget.md",
+      "subCat": "Widget Styling"
+    }
+  ]
+}
