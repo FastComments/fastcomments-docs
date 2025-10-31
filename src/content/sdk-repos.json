@@ -7,7 +7,16 @@
       "repo": "https://github.com/FastComments/fastcomments-sdk-js",
       "branch": "main",
       "language": "javascript",
-      "docGenerators": ["readme"],
+      "docGenerators": ["readme", "typescript-ai"],
+      "typescriptAiConfig": {
+        "apiFiles": [
+          "src/generated/src/apis/DefaultApi.ts",
+          "src/generated/src/apis/PublicApi.ts"
+        ],
+        "modelsPath": "src/generated/src/models/",
+        "cachePath": ".ai-cache/",
+        "specPath": "openapi.json"
+      },
       "description": "Official JavaScript/TypeScript SDK for the FastComments API"
     },
     {
@@ -19,7 +28,7 @@
       "language": "java",
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
-        "specPath": "client/api/openapi.yaml",
+        "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md"
       },
@@ -32,7 +41,12 @@
       "repo": "https://github.com/FastComments/fastcomments-php",
       "branch": "main",
       "language": "php",
-      "docGenerators": ["readme"],
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "docs/Api/",
+        "docFilePattern": "{ApiClass}.md"
+      },
       "description": "Official PHP SDK for the FastComments API"
     },
     {

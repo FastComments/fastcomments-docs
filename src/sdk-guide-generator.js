@@ -34,6 +34,10 @@ class SDKGuideGenerator {
                 case 'openapi':
                     generators.push(new OpenAPIDocGenerator(sdk, repoPath));
                     break;
+                case 'typescript-ai':
+                    const TypeScriptAIGenerator = require('./sdk-doc-generators/typescript-ai-generator');
+                    generators.push(new TypeScriptAIGenerator(sdk, repoPath));
+                    break;
                 default:
                     console.warn(`Unknown generator type: ${generatorType}`);
             }
@@ -58,6 +62,12 @@ class SDKGuideGenerator {
             fs.mkdirSync(itemsDir, { recursive: true });
         }
 
+        // Clean up old files in items directory (will be regenerated)
+        if (fs.existsSync(itemsDir)) {
+            fs.rmSync(itemsDir, { recursive: true, force: true });
+            fs.mkdirSync(itemsDir, { recursive: true });
+        }
+
         return { guideDir, itemsDir };
     }
 
@@ -70,7 +80,8 @@ class SDKGuideGenerator {
     generateMeta(sdk, sections) {
         const itemsOrdered = sections.map(section => ({
             name: section.name,
-            file: this.sanitizeFilename(section.name) + '.md',
+            // Use section.file if provided (for generated docs), otherwise sanitize name
+            file: section.file || (this.sanitizeFilename(section.name) + '.md'),
             subCat: section.subCat || 'Documentation',
             ...(section.sidebarItemClasses ? { sidebarItemClasses: section.sidebarItemClasses } : {})
         }));
@@ -103,6 +114,9 @@ class SDKGuideGenerator {
     async generateGuideForSDK(sdk, repoPath) {
         console.log(`Generating guide for ${sdk.name}...`);
 
+        // Create guide directory structure FIRST (before generators run)
+        const { guideDir, itemsDir } = this.createGuideDirectory(sdk);
+
         // Get all documentation generators
         const generators = this.getDocGenerators(sdk, repoPath);
 
@@ -131,9 +145,6 @@ class SDKGuideGenerator {
             }
         }
 
-        // Create guide directory structure
-        const { guideDir, itemsDir } = this.createGuideDirectory(sdk);
-
         // Write intro.md
         if (mergedIntro) {
             fs.writeFileSync(
@@ -154,10 +165,14 @@ class SDKGuideGenerator {
 
         // Write section files
         for (const section of allSections) {
-            const filename = this.sanitizeFilename(section.name) + '.md';
+            // Use custom filename if provided, otherwise generate from name
+            const filename = section.file || (this.sanitizeFilename(section.name) + '.md');
             const filePath = path.join(itemsDir, filename);
 
-            fs.writeFileSync(filePath, section.content, 'utf8');
+            // Only write if file doesn't exist (TypeScript AI generator writes as it goes)
+            if (!fs.existsSync(filePath)) {
+                fs.writeFileSync(filePath, section.content, 'utf8');
+            }
         }
 
         // Generate and write meta.json

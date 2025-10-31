@@ -534,7 +534,7 @@ pre {
     overflow-y: auto; /* for regular markdown indented code snippets */
 }
 
-.code {
+.code, pre .language-typescript, pre .language-java, pre .language-php, pre .language-go, pre .language-rust, pre .language-bash, pre .language-xml, pre .language-groovy, pre .language-json {
     position: relative;
     margin: 5px 0;
     white-space: pre;
@@ -543,6 +543,11 @@ pre {
     padding: 5px 0;
     box-shadow: inset 5px 5px 8px rgb(0 0 0);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+pre .language-typescript, pre .language-java, pre .language-php, pre .language-go, pre .language-rust, pre .language-bash, pre .language-xml, pre .language-groovy, pre .language-json {
+    display: block;
+    padding: 10px;
 }
 
 .code .code-content {

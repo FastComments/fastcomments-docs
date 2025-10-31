@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const yaml = require('js-yaml');
 const BaseDocGenerator = require('./base-generator');
 
 /**
@@ -61,7 +60,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
         try {
             const content = fs.readFileSync(fullPath, 'utf8');
-            return yaml.load(content);
+            return JSON.parse(content);
         } catch (e) {
             console.error(`Error parsing OpenAPI spec: ${e.message}`);
             return null;
@@ -86,8 +85,16 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 // Get primary tag as resource name
                 const tag = operation.tags?.[0] || 'default';
 
-                // Determine resource name from path if no tag
-                const resource = tag === 'default' ? this.inferResourceFromPath(pathStr) : tag;
+                // Skip Hidden API operations
+                if (tag === 'Hidden') {
+                    continue;
+                }
+
+                // Map Public to Misc Apis
+                let resource = tag === 'default' ? this.inferResourceFromPath(pathStr) : tag;
+                if (resource === 'Public') {
+                    resource = 'Misc Apis';
+                }
 
                 if (!grouped[resource]) {
                     grouped[resource] = [];
@@ -132,8 +139,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * @returns {DocSection|null}
      */
     generateOperationSection(operation, resource, config) {
-        // Generate filename from operationId
-        const filename = this.sanitizeFilename(operation.operationId || operation.summary);
+        // Use operationId as name (preserves case like GetComments)
+        const name = operation.operationId || this.sanitizeFilename(operation.summary);
 
         // Extract code example from generated docs
         const codeExample = this.extractCodeExample(operation, config);
@@ -141,11 +148,15 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         // Generate markdown content
         const content = this.generateOperationMarkdown(operation, codeExample);
 
-        // Categorize by resource for meta.json
-        const subCat = `API Reference - ${this.formatResourceName(resource)}`;
+        // Categorize by resource for meta.json (no "API Reference -" prefix)
+        const subCat = this.formatResourceName(resource);
+
+        // Generate filename with -generated suffix
+        const filename = this.sanitizeFilename(name) + '-generated.md';
 
         return {
-            name: filename,
+            name,
+            file: filename,
             content,
             subCat
         };
@@ -209,14 +220,21 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     parseCodeExampleFromMarkdown(markdown, operationId) {
         if (!operationId) return null;
 
-        // Try to find section for this operation
-        // OpenAPI Generator creates sections like:
-        // # **operationId**
-        // Note: operationId might be in different case (e.g., GetComments vs getComments)
-        // We match the actual section header with double asterisks to avoid matching TOC entries
         const escapedOperationId = operationId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const operationRegex = new RegExp(`^#+\\s*\\*\\*${escapedOperationId}\\*\\*\\s*$`, 'im');
-        const match = markdown.match(operationRegex);
+
+        // Try multiple heading formats:
+        // 1. Java: # **getComments**
+        // 2. PHP:  ## `getComments()`
+        const patterns = [
+            new RegExp(`^#+\\s*\\*\\*${escapedOperationId}\\*\\*\\s*$`, 'im'),
+            new RegExp(`^#+\\s*\`${escapedOperationId}\\(\\)\`\\s*$`, 'im')
+        ];
+
+        let match = null;
+        for (const pattern of patterns) {
+            match = markdown.match(pattern);
+            if (match) break;
+        }
 
         if (!match) {
             return null;
@@ -255,10 +273,6 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      */
     generateOperationMarkdown(operation, codeExample) {
         const lines = [];
-
-        // Title
-        lines.push(`# ${operation.summary || operation.operationId}`);
-        lines.push('');
 
         // HTTP method and path
         lines.push(`\`${operation.method} ${operation.path}\``);
@@ -330,9 +344,13 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
             // Determine language based on SDK
             const language = this.getLanguageForSDK();
-            lines.push(`\`\`\`${language}`);
+            const title = `${operation.operationId} Example`;
+
+            // Wrap in special format for syntax highlighting and copy button
+            lines.push(`[inline-code-attrs-start title = '${title}'; type = '${language}'; isFunctional = false; inline-code-attrs-end]`);
+            lines.push('[inline-code-start]');
             lines.push(codeExample);
-            lines.push('```');
+            lines.push('[inline-code-end]');
             lines.push('');
         }
 

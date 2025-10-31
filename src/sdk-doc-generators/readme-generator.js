@@ -75,6 +75,7 @@ class ReadmeDocGenerator extends BaseDocGenerator {
             // No sections found, treat entire README as one section
             return [{
                 name: 'Overview',
+                file: 'overview-generated.md',
                 content: content,
                 subCat: 'Getting Started'
             }];
@@ -99,6 +100,7 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
             sections.push({
                 name: sectionTitle,
+                file: this.sanitizeFilename(sectionTitle) + '-generated.md',
                 content: sectionContent,
                 subCat
             });
@@ -176,6 +178,7 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
                 sections.push({
                     name: title,
+                    file: this.sanitizeFilename(title) + '-generated.md',
                     content: this.removeFrontMatter(content),
                     subCat: 'Documentation'
                 });

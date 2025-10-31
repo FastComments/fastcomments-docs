@@ -9,7 +9,6 @@
 		"highlight.js": "^11.5.0",
 		"html-entities": "^2.1.0",
 		"html-to-text": "^9.0.5",
-		"js-yaml": "^4.1.0",
 		"marked": "^0.6.2",
 		"md5": "^2.3.0",
 		"minisearch": "^6.0.1",
@@ -22,6 +21,7 @@
 		"build-content": "node src/app",
 		"build-windows": "build.bat",
 		"build-posix": "sh build.sh",
+		"build-sdks-content": "node src/sdk-guide-generator.js",
 		"serve": "serve src/static/generated",
 		"start-search-engine": "node src/server-search-engine.js",
 		"watch": "node src/watch"
