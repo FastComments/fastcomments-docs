@@ -21,6 +21,7 @@
 		"build-content": "node src/app",
 		"build-windows": "build.bat",
 		"build-posix": "sh build.sh",
+		"build-sdks-content": "node src/sdk-guide-generator.js",
 		"serve": "serve src/static/generated",
 		"start-search-engine": "node src/server-search-engine.js",
 		"watch": "node src/watch"

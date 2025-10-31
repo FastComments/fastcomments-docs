@@ -12,8 +12,8 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/js
   npm install
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
-  #echo "Generating SDK documentation..."
-  #node src/sdk-guide-generator.js
+  echo "Generating SDK documentation..."
+  node src/sdk-guide-generator.js
   MAX_BROWSERS=1 npm run build-content
   cp -rv src/static/css src/static/generated/
   cp -rv src/static/csv src/static/generated/
