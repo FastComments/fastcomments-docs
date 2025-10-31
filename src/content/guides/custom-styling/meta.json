@@ -22,6 +22,11 @@
       "name": "Top Pages Widget Styling",
       "file": "top-pages-widget.md",
       "subCat": "Widget Styling"
+    },
+    {
+      "name": "Other Frontend Libraries",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Other Frontend Libraries"
     }
   ]
 }
