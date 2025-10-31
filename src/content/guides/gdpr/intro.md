@@ -1,0 +1,1 @@
+FastComments is committed to helping you maintain GDPR compliance. This guide covers our EU region data residency options, user rights implementation, and privacy controls to help you meet your compliance requirements. Whether you're serving EU users or need to comply with GDPR regulations, FastComments provides the tools and infrastructure to keep your data secure and compliant.

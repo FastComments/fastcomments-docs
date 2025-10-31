@@ -1,0 +1,31 @@
+{
+  "name": "GDPR Compliance",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Overview",
+      "file": "overview.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "EU Region Data Residency",
+      "file": "eu-region.md",
+      "subCat": "Data Residency"
+    },
+    {
+      "name": "User Rights",
+      "file": "user-rights.md",
+      "subCat": "User Rights"
+    },
+    {
+      "name": "Privacy Controls",
+      "file": "privacy-controls.md",
+      "subCat": "Privacy Controls"
+    },
+    {
+      "name": "Best Practices",
+      "file": "best-practices.md",
+      "subCat": "Best Practices"
+    }
+  ]
+}
