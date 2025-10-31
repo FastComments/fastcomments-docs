@@ -1,6 +1,7 @@
 {
   "name": "Custom Styling",
   "pageHeader": "Custom Styling Guide",
+  "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "How to Customize Styles",
