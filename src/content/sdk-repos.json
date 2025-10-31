@@ -1,0 +1,51 @@
+{
+  "sdks": [
+    {
+      "id": "sdk-javascript",
+      "name": "JavaScript/TypeScript SDK",
+      "pageHeader": "FastComments JavaScript/TypeScript SDK",
+      "repo": "https://github.com/FastComments/fastcomments-sdk-js",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "Official JavaScript/TypeScript SDK for the FastComments API"
+    },
+    {
+      "id": "sdk-java",
+      "name": "Java SDK",
+      "pageHeader": "FastComments Java SDK",
+      "repo": "https://github.com/FastComments/fastcomments-java",
+      "branch": "main",
+      "language": "java",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "client/api/openapi.yaml",
+        "generatedDocsPath": "client/docs/",
+        "docFilePattern": "{ApiClass}.md"
+      },
+      "description": "Official Java SDK for the FastComments API"
+    },
+    {
+      "id": "sdk-php",
+      "name": "PHP SDK",
+      "pageHeader": "FastComments PHP SDK",
+      "repo": "https://github.com/FastComments/fastcomments-php",
+      "branch": "main",
+      "language": "php",
+      "docGenerators": ["readme"],
+      "description": "Official PHP SDK for the FastComments API"
+    },
+    {
+      "id": "sdk-php-sso",
+      "name": "PHP SSO SDK",
+      "pageHeader": "FastComments PHP SSO SDK",
+      "repo": "https://github.com/FastComments/fastcomments-php-sso",
+      "branch": "main",
+      "language": "php",
+      "docGenerators": ["readme"],
+      "description": "PHP SDK for FastComments SSO integration"
+    }
+  ],
+  "checkoutDirectory": "src/content/sdks-checkout",
+  "guidesDirectory": "src/content/guides"
+}

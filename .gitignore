@@ -106,5 +106,9 @@ dist
 .idea
 src/static/generated
 
+# SDK checkout and generated guides
+src/content/sdks-checkout/
+src/content/guides/sdk-*/
+
 # OSX Finder
 .DS_Store

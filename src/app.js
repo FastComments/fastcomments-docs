@@ -58,8 +58,9 @@ const index = {};
         await buildGuide(guide, index);
     }
 
-    const guidesNotInstallation = guides.filter((guide) => !guide.id.startsWith('installation-'));
+    const guidesNotInstallation = guides.filter((guide) => !guide.id.startsWith('installation-') && !guide.id.startsWith('sdk-'));
     const installationGuides = guides.filter((guide) => guide.id.startsWith('installation-'));
+    const sdkGuides = guides.filter((guide) => guide.id.startsWith('sdk-'));
 
     // Store the build id.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
@@ -68,6 +69,7 @@ const index = {};
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
         guides: guidesNotInstallation,
         installationGuides,
+        sdkGuides,
         gettingStartedGuides,
         lastUpdateDate: new Date().toLocaleString(),
         buildId
