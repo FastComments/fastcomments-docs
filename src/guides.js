@@ -1,11 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
+const hljs = require('highlight.js');
 const handlebars = require('handlebars');
 const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 const snippetProcessor = require('./snippet-processor');
+
+// Configure marked to use highlight.js for code blocks
+marked.setOptions({
+    highlight: function (code, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+            return hljs.highlight(code.trim(), { language: lang }).value;
+        }
+        return hljs.highlightAuto(code.trim()).value;
+    }
+});
 
 function groupBy(array, key) {
     return array.reduce((result, item) => {
@@ -77,7 +88,18 @@ async function buildGuideItemForMeta(guide, metaItem) {
     // can have all the content on one page, but still deep link to it from search nicely.
     const fullUrl = `/${guide.url}#${id}`;
 
-    const markdown = handlebars.compile(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'items', metaItem.file), 'utf8'))({
+    const itemPath = path.join(GUIDES_DIR, guide.id, 'items', metaItem.file);
+
+    // Skip if file doesn't exist (generated files may not be present yet)
+    if (!fs.existsSync(itemPath)) {
+        if (metaItem.file.endsWith('-generated.md')) {
+            console.warn(`Skipping generated file (not yet created): ${metaItem.file}`);
+            return null;
+        }
+        throw new Error(`Required file not found: ${itemPath}`);
+    }
+
+    const markdown = handlebars.compile(fs.readFileSync(itemPath, 'utf8'))({
         ExampleTenantId
     });
     let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
@@ -111,7 +133,10 @@ async function buildGuide(guide, index) {
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
     const items = [];
     for (const metaItem of meta.itemsOrdered) {
-        items.push(await buildGuideItemForMeta(guide, metaItem, index)); // this is done one at a time to be easier to understand
+        const item = await buildGuideItemForMeta(guide, metaItem, index); // this is done one at a time to be easier to understand
+        if (item) {
+            items.push(item);
+        }
     }
     await buildGuideFromItems(guide, items);
 
@@ -175,7 +200,7 @@ function getGuides() {
                 nextGuideUrl: guideIndex > -1 && guideIndex < guideOrder.length - 1 ? createGuideLink(guideOrder[guideIndex + 1]) : null,
                 url: meta.itemsOrdered.length > 0 ? createGuideLink(guide) : (meta.url ? meta.url : '#'),
                 urlEncoded: encodeURIComponent(meta.itemsOrdered.length > 0 ? 'https://docs.fastcomments.com/' + createGuideLink(guide) : (meta.url ? meta.url : '#')), // is relative path
-                icon: `images/guide-icons/${meta.icon}`,
+                icon: meta.icon ? `images/guide-icons/${meta.icon}` : null,
                 name: meta.name,
                 metaJSONPath,
                 itemsPath: path.join(GUIDES_DIR, guide, ITEMS_DIR_NAME),
