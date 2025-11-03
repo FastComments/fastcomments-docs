@@ -177,7 +177,7 @@ class SDKCheckoutManager {
         if (cached && cached.commitHash === localHash) {
             // If we have a recent cache entry, skip remote check
             const age = Date.now() - cached.lastUpdated;
-            const maxAge = 1000 * 60 * 60; // 1 hour
+            const maxAge = 1000 * 60 * 2; // 2 minutes
             if (age < maxAge) {
                 console.log(`${sdk.id}: Using cached version (${localHash.substring(0, 7)})`);
                 return false;
