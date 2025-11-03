@@ -69,7 +69,7 @@
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
         "specPath": "openapi.json",
-        "generatedDocsPath": "docs/api/",
+        "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md"
       },
       "description": "Official Python SDK for the FastComments API"
