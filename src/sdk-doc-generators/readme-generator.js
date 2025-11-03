@@ -98,6 +98,10 @@ class ReadmeDocGenerator extends BaseDocGenerator {
             // Extract section content (including the header)
             let sectionContent = content.substring(startIndex, endIndex).trim();
 
+            // Remove the first H2 heading since it will be displayed by the frontend using the section name
+            // This prevents duplicate headings
+            sectionContent = sectionContent.replace(/^##\s+.+\n/, '').trim();
+
             // Convert relative links to absolute repository URLs
             sectionContent = this.convertRelativeLinks(
                 sectionContent,
