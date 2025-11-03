@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const BaseDocGenerator = require('./base-generator');
-const { convertFromPascal } = require('./naming-utils');
+const { convertFromPascal, parseSDKDocTable } = require('./naming-utils');
 
 /**
  * Documentation generator that creates API reference from OpenAPI spec
@@ -25,6 +25,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             return { intro: '', conclusion: '', sections: [] };
         }
 
+        // Parse SDK doc tables to build lookup maps for method names
+        const methodLookup = this.buildMethodLookup(config);
+
         // Group operations by resource (tag)
         const operationsByResource = this.groupOperationsByResource(spec);
 
@@ -32,7 +35,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const sections = [];
         for (const [resource, operations] of Object.entries(operationsByResource)) {
             for (const operation of operations) {
-                const section = this.generateOperationSection(operation, resource, config);
+                const section = this.generateOperationSection(operation, resource, config, methodLookup);
                 if (section) {
                     sections.push(section);
                 }
@@ -44,6 +47,28 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             conclusion: '',
             sections
         };
+    }
+
+    /**
+     * Build method name lookup from SDK documentation tables
+     * @param {Object} config - OpenAPI config
+     * @returns {Map<string, string>} - Map from "METHOD /path" to SDK method name
+     */
+    buildMethodLookup(config) {
+        const methodLookup = new Map();
+
+        // Parse tables from all API class files
+        const apiClasses = ['DefaultApi', 'PublicApi', 'HiddenApi'];
+
+        for (const apiClass of apiClasses) {
+            const classLookup = parseSDKDocTable(this.repoPath, config, apiClass);
+            // Merge into main lookup
+            for (const [key, value] of classLookup.entries()) {
+                methodLookup.set(key, value);
+            }
+        }
+
+        return methodLookup;
     }
 
     /**
@@ -137,19 +162,27 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * @param {Object} operation - Operation details
      * @param {string} resource - Resource name
      * @param {Object} config - OpenAPI config
+     * @param {Map<string, string>} methodLookup - Map from "METHOD /path" to SDK method name
      * @returns {DocSection|null}
      */
-    generateOperationSection(operation, resource, config) {
-        // Convert operation ID to SDK's naming convention
-        const namingConvention = this.sdk.namingConvention || 'camelCase';
-        const operationId = operation.operationId || this.sanitizeFilename(operation.summary);
-        const name = convertFromPascal(operationId, namingConvention);
+    generateOperationSection(operation, resource, config, methodLookup) {
+        // Try to get actual method name from SDK docs first
+        const lookupKey = `${operation.method} ${operation.path}`;
+        let name = methodLookup.get(lookupKey);
+
+        // Fallback to conversion if not found in lookup
+        if (!name) {
+            const namingConvention = this.sdk.namingConvention || 'camelCase';
+            const operationId = operation.operationId || this.sanitizeFilename(operation.summary);
+            name = convertFromPascal(operationId, namingConvention);
+            console.warn(`Method not found in SDK docs for ${lookupKey}, using fallback: ${name}`);
+        }
 
         // Extract code example from generated docs
-        const codeExample = this.extractCodeExample(operation, config);
+        const codeExample = this.extractCodeExample(operation, config, name);
 
         // Generate markdown content
-        const content = this.generateOperationMarkdown(operation, codeExample);
+        const content = this.generateOperationMarkdown(operation, codeExample, name);
 
         // Categorize by resource for meta.json (no "API Reference -" prefix)
         const subCat = this.formatResourceName(resource);
@@ -169,9 +202,10 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * Extract code example from generated markdown docs
      * @param {Object} operation - Operation details
      * @param {Object} config - OpenAPI config
+     * @param {string} methodName - Actual SDK method name to search for
      * @returns {string|null}
      */
-    extractCodeExample(operation, config) {
+    extractCodeExample(operation, config, methodName) {
         const docsPath = path.join(this.repoPath, config.generatedDocsPath);
 
         if (!fs.existsSync(docsPath)) {
@@ -192,7 +226,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
         try {
             const docContent = fs.readFileSync(docPath, 'utf8');
-            return this.parseCodeExampleFromMarkdown(docContent, operation.operationId);
+            return this.parseCodeExampleFromMarkdown(docContent, methodName);
         } catch (e) {
             console.error(`Error reading doc file: ${e.message}`);
             return null;
@@ -217,15 +251,12 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     /**
      * Parse code example from generated markdown
      * @param {string} markdown - Markdown content
-     * @param {string} operationId - Operation ID to find (PascalCase from OpenAPI spec)
+     * @param {string} methodName - Actual SDK method name to search for
      * @returns {string|null}
      */
-    parseCodeExampleFromMarkdown(markdown, operationId) {
-        if (!operationId) return null;
+    parseCodeExampleFromMarkdown(markdown, methodName) {
+        if (!methodName) return null;
 
-        // Convert operation ID to the SDK's naming convention
-        const namingConvention = this.sdk.namingConvention || 'camelCase';
-        const methodName = convertFromPascal(operationId, namingConvention);
         const escapedMethodName = methodName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         // Try multiple heading formats:
@@ -275,9 +306,10 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * Generate markdown content for an operation
      * @param {Object} operation - Operation details
      * @param {string|null} codeExample - Extracted code example
+     * @param {string} methodName - Actual SDK method name
      * @returns {string}
      */
-    generateOperationMarkdown(operation, codeExample) {
+    generateOperationMarkdown(operation, codeExample, methodName) {
         const lines = [];
 
         // HTTP method and path
@@ -351,9 +383,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             // Determine language based on SDK
             const language = this.getLanguageForSDK();
 
-            // Convert method name to SDK's naming convention for display
-            const namingConvention = this.sdk.namingConvention || 'camelCase';
-            const methodName = convertFromPascal(operation.operationId, namingConvention);
+            // Use the actual method name for the title
             const title = `${methodName} Example`;
 
             // Wrap in special format for syntax highlighting and copy button
