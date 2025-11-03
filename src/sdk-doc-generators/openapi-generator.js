@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const BaseDocGenerator = require('./base-generator');
+const { convertFromPascal } = require('./naming-utils');
 
 /**
  * Documentation generator that creates API reference from OpenAPI spec
@@ -139,8 +140,10 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * @returns {DocSection|null}
      */
     generateOperationSection(operation, resource, config) {
-        // Use operationId as name (preserves case like GetComments)
-        const name = operation.operationId || this.sanitizeFilename(operation.summary);
+        // Convert operation ID to SDK's naming convention
+        const namingConvention = this.sdk.namingConvention || 'camelCase';
+        const operationId = operation.operationId || this.sanitizeFilename(operation.summary);
+        const name = convertFromPascal(operationId, namingConvention);
 
         // Extract code example from generated docs
         const codeExample = this.extractCodeExample(operation, config);
@@ -214,20 +217,23 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     /**
      * Parse code example from generated markdown
      * @param {string} markdown - Markdown content
-     * @param {string} operationId - Operation ID to find
+     * @param {string} operationId - Operation ID to find (PascalCase from OpenAPI spec)
      * @returns {string|null}
      */
     parseCodeExampleFromMarkdown(markdown, operationId) {
         if (!operationId) return null;
 
-        const escapedOperationId = operationId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        // Convert operation ID to the SDK's naming convention
+        const namingConvention = this.sdk.namingConvention || 'camelCase';
+        const methodName = convertFromPascal(operationId, namingConvention);
+        const escapedMethodName = methodName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         // Try multiple heading formats:
-        // 1. Java: # **getComments**
-        // 2. PHP:  ## `getComments()`
+        // 1. Most SDKs: # **methodName**
+        // 2. With backticks and parens: ## `methodName()`
         const patterns = [
-            new RegExp(`^#+\\s*\\*\\*${escapedOperationId}\\*\\*\\s*$`, 'im'),
-            new RegExp(`^#+\\s*\`${escapedOperationId}\\(\\)\`\\s*$`, 'im')
+            new RegExp(`^#+\\s*\\*\\*${escapedMethodName}\\*\\*\\s*$`, 'm'),
+            new RegExp(`^#+\\s*\`${escapedMethodName}\\(\\)\`\\s*$`, 'm')
         ];
 
         let match = null;
@@ -241,9 +247,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
 
         // Extract content after the heading until next H1/H2 heading or end
-        // Use \n#{1,2}\s to match only H1 (#) or H2 (##) headings, not H3 (###)
+        // Use \n#{1,2}\s\*\* to match only markdown headings (with bold), not code comments
         const startIndex = match.index + match[0].length;
-        const nextHeadingMatch = markdown.substring(startIndex).match(/\n#{1,2}\s/);
+        const nextHeadingMatch = markdown.substring(startIndex).match(/\n#{1,2}\s+\*\*/);
         const endIndex = nextHeadingMatch
             ? startIndex + nextHeadingMatch.index
             : markdown.length;
@@ -344,7 +350,11 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
             // Determine language based on SDK
             const language = this.getLanguageForSDK();
-            const title = `${operation.operationId} Example`;
+
+            // Convert method name to SDK's naming convention for display
+            const namingConvention = this.sdk.namingConvention || 'camelCase';
+            const methodName = convertFromPascal(operation.operationId, namingConvention);
+            const title = `${methodName} Example`;
 
             // Wrap in special format for syntax highlighting and copy button
             lines.push(`[inline-code-attrs-start title = '${title}'; type = '${language}'; isFunctional = false; inline-code-attrs-end]`);

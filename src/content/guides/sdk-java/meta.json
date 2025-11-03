@@ -18,412 +18,412 @@
       "subCat": "Documentation"
     },
     {
-      "name": "SearchUsers",
+      "name": "searchUsers",
       "file": "searchusers-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetUserPresenceStatuses",
+      "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetUserNotifications",
+      "name": "getUserNotifications",
       "file": "getusernotifications-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "ResetUserNotifications",
+      "name": "resetUserNotifications",
       "file": "resetusernotifications-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetUserNotificationCount",
+      "name": "getUserNotificationCount",
       "file": "getusernotificationcount-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "ResetUserNotificationCount",
+      "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UpdateUserNotificationStatus",
+      "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UpdateUserNotificationCommentSubscriptionStatus",
+      "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UpdateUserNotificationPageSubscriptionStatus",
+      "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UploadImage",
+      "name": "uploadImage",
       "file": "uploadimage-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "FlagCommentPublic",
+      "name": "flagCommentPublic",
       "file": "flagcommentpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetFeedPostsPublic",
+      "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "CreateFeedPostPublic",
+      "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "ReactFeedPostPublic",
+      "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetUserReactsPublic",
+      "name": "getUserReactsPublic",
       "file": "getuserreactspublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UpdateFeedPostPublic",
+      "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "DeleteFeedPostPublic",
+      "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetFeedPostsStats",
+      "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetEventLog",
+      "name": "getEventLog",
       "file": "geteventlog-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetGlobalEventLog",
+      "name": "getGlobalEventLog",
       "file": "getglobaleventlog-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetCommentText",
+      "name": "getCommentText",
       "file": "getcommenttext-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "SetCommentText",
+      "name": "setCommentText",
       "file": "setcommenttext-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetCommentsPublic",
+      "name": "getCommentsPublic",
       "file": "getcommentspublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "CreateCommentPublic",
+      "name": "createCommentPublic",
       "file": "createcommentpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "DeleteCommentPublic",
+      "name": "deleteCommentPublic",
       "file": "deletecommentpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "CheckedCommentsForBlocked",
+      "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "VoteComment",
+      "name": "voteComment",
       "file": "votecomment-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "DeleteCommentVote",
+      "name": "deleteCommentVote",
       "file": "deletecommentvote-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetCommentVoteUserNames",
+      "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "PinComment",
+      "name": "pinComment",
       "file": "pincomment-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UnPinComment",
+      "name": "unPinComment",
       "file": "unpincomment-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "LockComment",
+      "name": "lockComment",
       "file": "lockcomment-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UnLockComment",
+      "name": "unLockComment",
       "file": "unlockcomment-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "BlockFromCommentPublic",
+      "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "UnBlockCommentPublic",
+      "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-generated.md",
       "subCat": "Misc Apis"
     },
     {
-      "name": "GetSubscriptions",
+      "name": "getSubscriptions",
       "file": "getsubscriptions-generated.md",
       "subCat": "Subscriptions"
     },
     {
-      "name": "CreateSubscription",
+      "name": "createSubscription",
       "file": "createsubscription-generated.md",
       "subCat": "Subscriptions"
     },
     {
-      "name": "DeleteSubscription",
+      "name": "deleteSubscription",
       "file": "deletesubscription-generated.md",
       "subCat": "Subscriptions"
     },
     {
-      "name": "GetSSOUsers",
+      "name": "getSSOUsers",
       "file": "getssousers-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "AddSSOUser",
+      "name": "addSSOUser",
       "file": "addssouser-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "GetSSOUserById",
+      "name": "getSSOUserById",
       "file": "getssouserbyid-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "GetSSOUserByEmail",
+      "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "DeleteSSOUser",
+      "name": "deleteSSOUser",
       "file": "deletessouser-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "PatchSSOUser",
+      "name": "patchSSOUser",
       "file": "patchssouser-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "PutSSOUser",
+      "name": "putSSOUser",
       "file": "putssouser-generated.md",
       "subCat": "Sso Users"
     },
     {
-      "name": "GetPages",
+      "name": "getPages",
       "file": "getpages-generated.md",
       "subCat": "Pages"
     },
     {
-      "name": "AddPage",
+      "name": "addPage",
       "file": "addpage-generated.md",
       "subCat": "Pages"
     },
     {
-      "name": "GetPageByURLId",
+      "name": "getPageByURLId",
       "file": "getpagebyurlid-generated.md",
       "subCat": "Pages"
     },
     {
-      "name": "PatchPage",
+      "name": "patchPage",
       "file": "patchpage-generated.md",
       "subCat": "Pages"
     },
     {
-      "name": "DeletePage",
+      "name": "deletePage",
       "file": "deletepage-generated.md",
       "subCat": "Pages"
     },
     {
-      "name": "GetUserBadge",
+      "name": "getUserBadge",
       "file": "getuserbadge-generated.md",
       "subCat": "User Badges"
     },
     {
-      "name": "UpdateUserBadge",
+      "name": "updateUserBadge",
       "file": "updateuserbadge-generated.md",
       "subCat": "User Badges"
     },
     {
-      "name": "DeleteUserBadge",
+      "name": "deleteUserBadge",
       "file": "deleteuserbadge-generated.md",
       "subCat": "User Badges"
     },
     {
-      "name": "GetUserBadges",
+      "name": "getUserBadges",
       "file": "getuserbadges-generated.md",
       "subCat": "User Badges"
     },
     {
-      "name": "CreateUserBadge",
+      "name": "createUserBadge",
       "file": "createuserbadge-generated.md",
       "subCat": "User Badges"
     },
     {
-      "name": "GetUserBadgeProgressById",
+      "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-generated.md",
       "subCat": "User Badge Progress"
     },
     {
-      "name": "GetUserBadgeProgressList",
+      "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-generated.md",
       "subCat": "User Badge Progress"
     },
     {
-      "name": "GetUserBadgeProgressByUserId",
+      "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-generated.md",
       "subCat": "User Badge Progress"
     },
     {
-      "name": "AggregateQuestionResults",
+      "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-generated.md",
       "subCat": "Question Results Aggregation"
     },
     {
-      "name": "BulkAggregateQuestionResults",
+      "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-generated.md",
       "subCat": "Question Results Aggregation"
     },
     {
-      "name": "CombineCommentsWithQuestionResults",
+      "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-generated.md",
       "subCat": "Question Results Aggregation"
     },
     {
-      "name": "GetFeedPosts",
+      "name": "getFeedPosts",
       "file": "getfeedposts-generated.md",
       "subCat": "Feed Posts"
     },
     {
-      "name": "CreateFeedPost",
+      "name": "createFeedPost",
       "file": "createfeedpost-generated.md",
       "subCat": "Feed Posts"
     },
     {
-      "name": "UpdateFeedPost",
+      "name": "updateFeedPost",
       "file": "updatefeedpost-generated.md",
       "subCat": "Feed Posts"
     },
     {
-      "name": "GetDomainConfigs",
+      "name": "getDomainConfigs",
       "file": "getdomainconfigs-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "AddDomainConfig",
+      "name": "addDomainConfig",
       "file": "adddomainconfig-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "GetDomainConfig",
+      "name": "getDomainConfig",
       "file": "getdomainconfig-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "DeleteDomainConfig",
+      "name": "deleteDomainConfig",
       "file": "deletedomainconfig-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "PutDomainConfig",
+      "name": "putDomainConfig",
       "file": "putdomainconfig-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "PatchDomainConfig",
+      "name": "patchDomainConfig",
       "file": "patchdomainconfig-generated.md",
       "subCat": "Domain Configs"
     },
     {
-      "name": "GetComment",
+      "name": "getComment",
       "file": "getcomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "UpdateComment",
+      "name": "updateComment",
       "file": "updatecomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "DeleteComment",
+      "name": "deleteComment",
       "file": "deletecomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "GetComments",
+      "name": "getComments",
       "file": "getcomments-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "SaveComment",
+      "name": "saveComment",
       "file": "savecomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "SaveCommentsBulk",
+      "name": "saveCommentsBulk",
       "file": "savecommentsbulk-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "FlagComment",
+      "name": "flagComment",
       "file": "flagcomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "UnFlagComment",
+      "name": "unFlagComment",
       "file": "unflagcomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "BlockUserFromComment",
+      "name": "blockUserFromComment",
       "file": "blockuserfromcomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "UnBlockUserFromComment",
+      "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-generated.md",
       "subCat": "Comments"
     },
     {
-      "name": "GetAuditLogs",
+      "name": "getAuditLogs",
       "file": "getauditlogs-generated.md",
       "subCat": "Audit Logs"
     },
     {
-      "name": "Aggregate",
+      "name": "aggregate",
       "file": "aggregate-generated.md",
       "subCat": "Aggregate"
     }
