@@ -73,10 +73,18 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
         if (matches.length === 0) {
             // No sections found, treat entire README as one section
+            // Convert relative links to absolute repository URLs
+            const convertedContent = this.convertRelativeLinks(
+                content,
+                this.sdk.repo,
+                this.sdk.branch,
+                '' // README is at the root of the repo
+            );
+
             return [{
                 name: 'Overview',
                 file: 'overview-generated.md',
-                content: content,
+                content: convertedContent,
                 subCat: 'Getting Started'
             }];
         }
@@ -89,6 +97,14 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
             // Extract section content (including the header)
             let sectionContent = content.substring(startIndex, endIndex).trim();
+
+            // Convert relative links to absolute repository URLs
+            sectionContent = this.convertRelativeLinks(
+                sectionContent,
+                this.sdk.repo,
+                this.sdk.branch,
+                '' // README is at the root of the repo
+            );
 
             // Determine subcategory based on section title
             const subCat = this.categorizeSection(sectionTitle);
@@ -170,7 +186,18 @@ class ReadmeDocGenerator extends BaseDocGenerator {
                 }
 
                 const filePath = path.join(docsDir, file);
-                const content = fs.readFileSync(filePath, 'utf8');
+                let content = fs.readFileSync(filePath, 'utf8');
+
+                // Remove front matter
+                content = this.removeFrontMatter(content);
+
+                // Convert relative links to absolute repository URLs
+                content = this.convertRelativeLinks(
+                    content,
+                    this.sdk.repo,
+                    this.sdk.branch,
+                    'docs/' // Files are in the docs/ directory
+                );
 
                 // Extract title from filename or content
                 const title = this.extractTitle(content) ||
@@ -179,7 +206,7 @@ class ReadmeDocGenerator extends BaseDocGenerator {
                 sections.push({
                     name: title,
                     file: this.sanitizeFilename(title) + '-generated.md',
-                    content: this.removeFrontMatter(content),
+                    content: content,
                     subCat: 'Documentation'
                 });
             }

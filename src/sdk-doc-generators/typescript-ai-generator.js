@@ -92,7 +92,6 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
         const concurrency = 10;
 
         // Create items directory
-        const fs = require('fs');
         const itemsDir = path.join(__dirname, '..', 'content', 'guides', this.sdk.id, 'items');
         console.log(`Creating items directory: ${itemsDir}`);
         if (!fs.existsSync(itemsDir)) {

@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 /**
  * Base class for SDK documentation generators
  *
@@ -78,7 +81,6 @@ class BaseDocGenerator {
      * @returns {string|null} - File contents or null if not found
      */
     readFileIfExists(filePath) {
-        const fs = require('fs');
         try {
             if (fs.existsSync(filePath)) {
                 return fs.readFileSync(filePath, 'utf8');
@@ -87,6 +89,50 @@ class BaseDocGenerator {
             console.error(`Error reading file ${filePath}:`, e.message);
         }
         return null;
+    }
+
+    /**
+     * Convert relative links in markdown to absolute repository URLs
+     * @param {string} markdown - Markdown content
+     * @param {string} repoUrl - Repository URL (e.g., https://github.com/FastComments/fastcomments-sdk-js)
+     * @param {string} branch - Branch name (e.g., main)
+     * @param {string} basePath - Base path relative to repo root (e.g., '' for root, 'docs/' for docs dir)
+     * @returns {string} - Markdown with converted links
+     */
+    convertRelativeLinks(markdown, repoUrl, branch, basePath = '') {
+        // Regex to match markdown links: [text](url)
+        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+        return markdown.replace(linkRegex, (match, text, url) => {
+            // Skip absolute URLs, anchors, and root-relative paths
+            if (url.startsWith('http://') ||
+                url.startsWith('https://') ||
+                url.startsWith('#') ||
+                url.startsWith('/')) {
+                return match;
+            }
+
+            // This is a relative link - convert it
+            // Resolve the path relative to the base path
+            let resolvedPath;
+            if (url.startsWith('./') || url.startsWith('../')) {
+                // Use path.join to properly resolve relative paths
+                resolvedPath = path.posix.join(basePath, url);
+            } else {
+                // No ./ or ../ prefix, treat as relative to base path
+                resolvedPath = path.posix.join(basePath, url);
+            }
+
+            // Normalize the path (remove ./ and resolve ../)
+            const normalizedPath = path.posix.normalize(resolvedPath);
+
+            // Build the absolute GitHub URL
+            // Remove trailing .git from repo URL if present
+            const cleanRepoUrl = repoUrl.replace(/\.git$/, '');
+            const absoluteUrl = `${cleanRepoUrl}/blob/${branch}/${normalizedPath}`;
+
+            return `[${text}](${absoluteUrl})`;
+        });
     }
 }
 
