@@ -13,11 +13,11 @@ FastComments now generates an [API Spec](https://fastcomments.com/js/swagger.jso
 We also now have SDKs for popular languages:
 
 - Go: Planned
-- [fastcomments-java](https://github.com/FastComments/fastcomments-java)
-- [fastcomments-sdk-js](https://github.com/FastComments/fastcomments-sdk-js)
-- [fastcomments-php](https://github.com/FastComments/fastcomments-php)
-- [fastcomments-php-sso](https://github.com/FastComments/fastcomments-php-sso)
-- [fastcomments-python](https://github.com/FastComments/fastcomments-python)
+- [fastcomments-java](./guide-sdk-java.html)
+- [fastcomments-sdk-js](./guide-sdk-javascript.html)
+- [fastcomments-php](guide-sdk-php.html)
+- [fastcomments-php-sso](./guide-sdk-php-sso.html)
+- [fastcomments-python](./guide-sdk-python.html)
 - Rust: Planned
 
 ### Authentication
