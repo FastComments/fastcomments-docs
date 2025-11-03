@@ -58,6 +58,21 @@
       "language": "php",
       "docGenerators": ["readme"],
       "description": "PHP SDK for FastComments SSO integration"
+    },
+    {
+      "id": "sdk-python",
+      "name": "Python SDK",
+      "pageHeader": "FastComments Python SDK",
+      "repo": "https://github.com/FastComments/fastcomments-python",
+      "branch": "main",
+      "language": "python",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "docs/api/",
+        "docFilePattern": "{ApiClass}.md"
+      },
+      "description": "Official Python SDK for the FastComments API"
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
