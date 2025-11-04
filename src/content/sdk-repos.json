@@ -78,6 +78,22 @@
         "docFilePattern": "{ApiClass}.md"
       },
       "description": "Official Python SDK for the FastComments API"
+    },
+    {
+      "id": "sdk-rust",
+      "name": "Rust SDK",
+      "pageHeader": "FastComments Rust SDK",
+      "repo": "https://github.com/FastComments/fastcomments-rust",
+      "branch": "main",
+      "language": "rust",
+      "namingConvention": "snake_case",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "client/docs/",
+        "docFilePattern": "{ApiClass}.md"
+      },
+      "description": "Official Rust SDK for the FastComments API"
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",

@@ -18,7 +18,7 @@ We also now have SDKs for popular languages:
 - [fastcomments-php](guide-sdk-php.html)
 - [fastcomments-php-sso](./guide-sdk-php-sso.html)
 - [fastcomments-python](./guide-sdk-python.html)
-- Rust: Planned
+- [fastcomments-rust](./guide-sdk-rust.html)
 
 ### Authentication
 
