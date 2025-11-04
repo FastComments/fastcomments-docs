@@ -121,6 +121,30 @@ class BaseDocGenerator {
     }
 
     /**
+     * Format resource name for display
+     * @param {string} resource - Raw resource name
+     * @returns {string}
+     */
+    formatResourceName(resource) {
+        // List of acronyms that should be fully capitalized
+        const acronyms = ['sso', 'api'];
+
+        // Convert from kebab-case or snake_case to Title Case
+        return resource
+            .replace(/[-_]/g, ' ')
+            .split(' ')
+            .map(word => {
+                const lowerWord = word.toLowerCase();
+                // Check if this word is an acronym
+                if (acronyms.includes(lowerWord)) {
+                    return word.toUpperCase();
+                }
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            })
+            .join(' ');
+    }
+
+    /**
      * Convert relative links in markdown to absolute repository URLs
      * @param {string} markdown - Markdown content
      * @param {string} repoUrl - Repository URL (e.g., https://github.com/FastComments/fastcomments-sdk-js)

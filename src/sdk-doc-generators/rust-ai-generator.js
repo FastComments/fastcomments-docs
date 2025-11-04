@@ -340,26 +340,54 @@ class RustAIGenerator extends BaseDocGenerator {
     }
 
     /**
-     * Format resource name for display
-     * @param {string} resource - Raw resource name
-     * @returns {string}
-     */
-    formatResourceName(resource) {
-        // Convert from kebab-case or snake_case to Title Case
-        return resource
-            .replace(/[-_]/g, ' ')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
-
-    /**
      * Convert snake_case to camelCase
      * @param {string} str - snake_case string
      * @returns {string} - camelCase string
      */
     snakeToCamelCase(str) {
-        return str.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
+        // List of common acronyms that should stay uppercase
+        const acronyms = ['sso', 'api', 'url', 'uri', 'http', 'https', 'html', 'json', 'xml'];
+
+        const parts = str.split('_');
+
+        return parts.map((part, index) => {
+            const lowerPart = part.toLowerCase();
+
+            // Special handling for 'id' - use 'Id' instead of 'ID' to match OpenAPI convention
+            if (lowerPart === 'id') {
+                return 'Id';
+            }
+
+            // Check if this part is an acronym
+            if (acronyms.includes(lowerPart)) {
+                return part.toUpperCase();
+            }
+
+            // Check for compound acronyms (e.g., 'urlid' -> 'URLId')
+            for (const acronym of acronyms) {
+                if (lowerPart.endsWith(acronym) && lowerPart !== acronym) {
+                    const prefix = lowerPart.slice(0, -acronym.length);
+                    // Check if the prefix is also an acronym
+                    if (acronyms.includes(prefix)) {
+                        return prefix.toUpperCase() + acronym.charAt(0).toUpperCase() + acronym.slice(1);
+                    }
+                }
+            }
+
+            // Handle compound with 'id' at the end (e.g., 'urlid' -> 'URLId')
+            if (lowerPart.endsWith('id') && lowerPart !== 'id') {
+                const prefix = lowerPart.slice(0, -2);
+                if (acronyms.includes(prefix)) {
+                    return prefix.toUpperCase() + 'Id';
+                }
+            }
+
+            // First part stays lowercase (for camelCase), rest get capitalized
+            if (index === 0) {
+                return part;
+            }
+            return part.charAt(0).toUpperCase() + part.slice(1);
+        }).join('');
     }
 }
 

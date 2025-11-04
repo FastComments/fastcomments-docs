@@ -336,19 +336,6 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
         };
     }
 
-    /**
-     * Format resource name for display
-     * @param {string} resource - Raw resource name
-     * @returns {string}
-     */
-    formatResourceName(resource) {
-        // Convert from kebab-case or snake_case to Title Case
-        return resource
-            .replace(/[-_]/g, ' ')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
 }
 
 module.exports = TypeScriptAIGenerator;

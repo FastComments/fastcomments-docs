@@ -45,54 +45,6 @@
       "type": "api"
     },
     {
-      "name": "add_sso_user",
-      "file": "add-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "delete_sso_user",
-      "file": "delete-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_page_by_urlid",
-      "file": "get-page-by-urlid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_sso_user_by_email",
-      "file": "get-sso-user-by-email-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_sso_user_by_id",
-      "file": "get-sso-user-by-id-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_sso_users",
-      "file": "get-sso-users-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patch_sso_user",
-      "file": "patch-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "put_sso_user",
-      "file": "put-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
       "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
       "subCat": "Audit Logs",
@@ -375,6 +327,12 @@
       "type": "api"
     },
     {
+      "name": "get_page_by_urlid",
+      "file": "get-page-by-urlid-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "get_pages",
       "file": "get-pages-api-generated.md",
       "subCat": "Pages",
@@ -402,6 +360,48 @@
       "name": "combine_comments_with_question_results",
       "file": "combine-comments-with-question-results-api-generated.md",
       "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "add_sso_user",
+      "file": "add-sso-user-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "delete_sso_user",
+      "file": "delete-sso-user-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "get_sso_user_by_email",
+      "file": "get-sso-user-by-email-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "get_sso_user_by_id",
+      "file": "get-sso-user-by-id-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "get_sso_users",
+      "file": "get-sso-users-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "patch_sso_user",
+      "file": "patch-sso-user-api-generated.md",
+      "subCat": "SSO Users",
+      "type": "api"
+    },
+    {
+      "name": "put_sso_user",
+      "file": "put-sso-user-api-generated.md",
+      "subCat": "SSO Users",
       "type": "api"
     },
     {
