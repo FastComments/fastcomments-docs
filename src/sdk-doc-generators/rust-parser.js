@@ -53,10 +53,14 @@ class RustParser {
                 this.resolveNestedTypes(paramsStruct.fields, method.nestedTypes, 0, 3);
             }
 
-            // Resolve the response type
-            const responseTypeDef = this.loadTypeDefinition(responseType);
+            // Resolve the response type (use method.responseType which has models:: stripped)
+            const responseTypeDef = this.loadTypeDefinition(method.responseType);
+
             if (responseTypeDef) {
-                method.nestedTypes[responseType] = responseTypeDef.summary;
+                method.nestedTypes[method.responseType] = {
+                    summary: responseTypeDef.summary,
+                    filePath: responseTypeDef.filePath
+                };
 
                 // Resolve nested types in response (shallower depth to avoid bloat)
                 if (responseTypeDef.fields) {
@@ -165,7 +169,10 @@ class RustParser {
                 // Try to load type definition from models
                 const typeDef = this.loadTypeDefinition(typeName);
                 if (typeDef) {
-                    nestedTypes[typeName] = typeDef.summary;
+                    nestedTypes[typeName] = {
+                        summary: typeDef.summary,
+                        filePath: typeDef.filePath
+                    };
 
                     // Recursively resolve nested types
                     if (typeDef.fields) {
@@ -253,6 +260,7 @@ class RustParser {
         // Check if it's an enum
         const enumDef = this.extractEnum(typeName, content);
         if (enumDef) {
+            enumDef.filePath = `${fileName}.rs`;
             this.typeCache.set(typeName, enumDef);
             return enumDef;
         }
@@ -264,7 +272,8 @@ class RustParser {
                 name: typeName,
                 kind: 'struct',
                 fields: structDef.fields,
-                summary: this.summarizeStruct(structDef)
+                summary: this.summarizeStruct(structDef),
+                filePath: `${fileName}.rs`
             };
             this.typeCache.set(typeName, typeDef);
             return typeDef;
@@ -423,6 +432,7 @@ class RustParser {
     toSnakeCase(str) {
         return str
             .replace(/([A-Z])/g, '_$1')
+            .replace(/([0-9]+)/g, '_$1')
             .toLowerCase()
             .replace(/^_/, '');
     }

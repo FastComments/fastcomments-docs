@@ -233,6 +233,20 @@ class RustAIGenerator extends BaseDocGenerator {
     }
 
     /**
+     * Generate GitHub URL for a type definition
+     * @param {string} fileName - File name relative to modelsPath
+     * @returns {string} - GitHub URL
+     */
+    generateTypeGitHubUrl(fileName) {
+        const config = this.sdk.rustAiConfig;
+        const baseUrl = this.sdk.repo.replace(/\.git$/, '');
+        const branch = this.sdk.branch;
+        const modelsPath = config.modelsPath;
+
+        return `${baseUrl}/blob/${branch}/${modelsPath}${fileName}`;
+    }
+
+    /**
      * Generate section for a single method
      * @param {Object} method - Method metadata
      * @param {string|null} codeExample - Generated code example
@@ -273,7 +287,15 @@ class RustAIGenerator extends BaseDocGenerator {
         if (method.responseType) {
             lines.push('## Response');
             lines.push('');
-            lines.push(`Returns: \`${method.responseType}\``);
+
+            // Generate GitHub link if we have type info with filePath
+            const typeInfo = method.nestedTypes[method.responseType];
+            if (typeInfo && typeInfo.filePath) {
+                const githubUrl = this.generateTypeGitHubUrl(typeInfo.filePath);
+                lines.push(`Returns: [\`${method.responseType}\`](${githubUrl})`);
+            } else {
+                lines.push(`Returns: \`${method.responseType}\``);
+            }
             lines.push('');
         }
 

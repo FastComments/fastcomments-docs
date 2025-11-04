@@ -61,7 +61,10 @@ class TypeScriptParser {
             // Resolve the response type
             const responseTypeDef = this.loadTypeDefinition(responseType);
             if (responseTypeDef) {
-                method.nestedTypes[responseType] = responseTypeDef.summary;
+                method.nestedTypes[responseType] = {
+                    summary: responseTypeDef.summary,
+                    filePath: responseTypeDef.filePath
+                };
 
                 // Resolve nested types in response (shallower depth to avoid bloat)
                 if (responseTypeDef.properties) {
@@ -159,7 +162,10 @@ class TypeScriptParser {
                 // Try to load type definition from models
                 const typeDef = this.loadTypeDefinition(typeName);
                 if (typeDef) {
-                    nestedTypes[typeName] = typeDef.summary;
+                    nestedTypes[typeName] = {
+                        summary: typeDef.summary,
+                        filePath: typeDef.filePath
+                    };
 
                     // Recursively resolve nested types
                     if (typeDef.properties) {
@@ -247,6 +253,7 @@ class TypeScriptParser {
         // Check if it's an enum
         const enumDef = this.extractEnum(typeName, content);
         if (enumDef) {
+            enumDef.filePath = `${typeName}.ts`;
             this.typeCache.set(typeName, enumDef);
             return enumDef;
         }
@@ -258,7 +265,8 @@ class TypeScriptParser {
                 name: typeName,
                 kind: 'interface',
                 properties: interfaceDef.properties,
-                summary: this.summarizeInterface(interfaceDef)
+                summary: this.summarizeInterface(interfaceDef),
+                filePath: `${typeName}.ts`
             };
             this.typeCache.set(typeName, typeDef);
             return typeDef;

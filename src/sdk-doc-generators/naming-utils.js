@@ -78,9 +78,10 @@ function parseSDKDocTable(repoPath, config, apiClass = 'DefaultApi') {
         const content = fs.readFileSync(docPath, 'utf8');
 
         // Find the table section
-        // Table format: Method | HTTP request | Description
-        // Followed by separator line: ------------- | ------------- | -------------
-        const tableRegex = /Method\s*\|\s*HTTP request\s*\|\s*Description\s*\n[-\s|]+\n([\s\S]*?)(?=\n#{1,2}\s|$)/;
+        // Table format: | Method | HTTP request | Description | (Java/PHP)
+        //           or: Method | HTTP request | Description (Python)
+        // Followed by separator line: |------------- | ------------- | -------------| (with or without pipes)
+        const tableRegex = /\|?\s*Method\s*\|\s*HTTP request\s*\|\s*Description\s*\|?\s*\n\|?[-\s|]+\|?\s*\n([\s\S]*?)(?=\n#{1,2}\s|$)/;
         const tableMatch = content.match(tableRegex);
 
         if (!tableMatch) {
@@ -90,8 +91,9 @@ function parseSDKDocTable(repoPath, config, apiClass = 'DefaultApi') {
         const tableContent = tableMatch[1];
 
         // Parse each row in the table
-        // Row format: [**method_name**](link) | **METHOD** /path | description
-        const rowRegex = /\[\*\*([^*]+)\*\*\][^\|]*\|\s*\*\*([A-Z]+)\*\*\s+([^\s|]+)/g;
+        // Row format: | [**method_name**](link) | **METHOD** /path | description
+        // Note: Leading pipe is optional (Python SDK doesn't have it)
+        const rowRegex = /\|?\s*\[\*\*([^*]+)\*\*\][^\|]*\|\s*\*\*([A-Z]+)\*\*\s+([^\s|]+)/g;
 
         let match;
         while ((match = rowRegex.exec(tableContent)) !== null) {

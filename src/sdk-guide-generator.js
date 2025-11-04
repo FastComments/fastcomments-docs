@@ -192,12 +192,26 @@ class SDKGuideGenerator {
 
     /**
      * Generate guides for all configured SDKs
+     * @param {string} sdkFilter - Optional SDK ID to generate for a specific SDK only
      */
-    async generateAll() {
+    async generateAll(sdkFilter = null) {
         console.log('Starting SDK guide generation...');
 
         // Checkout all SDKs
-        const checkouts = this.checkoutManager.checkoutAll();
+        let checkouts = this.checkoutManager.checkoutAll();
+
+        // Filter to specific SDK if requested
+        if (sdkFilter) {
+            checkouts = checkouts.filter(({ sdk }) => sdk.id === sdkFilter);
+            if (checkouts.length === 0) {
+                console.error(`SDK "${sdkFilter}" not found. Available SDKs: ${this.checkoutManager.getSDKs().map(s => s.id).join(', ')}`);
+                process.exit(1);
+            }
+            console.log(`Filtering to SDK: ${sdkFilter}`);
+        }
+
+        // Track validation errors across all SDKs
+        const validationErrors = [];
 
         // Generate guides for each SDK
         for (const { sdk, path: repoPath } of checkouts) {
@@ -206,10 +220,39 @@ class SDKGuideGenerator {
             } catch (e) {
                 console.error(`Failed to generate guide for ${sdk.id}:`, e.message);
                 console.error(e.stack);
+
+                // Track validation errors separately
+                if (e.validationErrors) {
+                    validationErrors.push({
+                        sdk: sdk.id,
+                        errors: e.validationErrors
+                    });
+                }
             }
         }
 
         console.log('SDK guide generation complete!');
+
+        // Fail build if there were validation errors
+        if (validationErrors.length > 0) {
+            console.error('\n=== SDK DOCUMENTATION VALIDATION ERRORS ===\n');
+
+            for (const { sdk, errors } of validationErrors) {
+                console.error(`\n${sdk}:`);
+                console.error(`  ${errors.length} method(s) not found in SDK documentation:\n`);
+
+                for (const error of errors) {
+                    console.error(`    - ${error.operation}`);
+                    if (error.operationId) {
+                        console.error(`      Operation ID: ${error.operationId}`);
+                    }
+                    console.error(`      Lookup key: ${error.lookupKey}`);
+                }
+            }
+
+            console.error(`\n=== BUILD FAILED: ${validationErrors.length} SDK(s) have missing methods ===\n`);
+            process.exit(1);
+        }
     }
 
     /**
@@ -236,7 +279,11 @@ if (require.main === module) {
     if (process.argv.includes('--clean')) {
         generator.cleanGeneratedGuides();
     } else {
-        generator.generateAll().catch(e => {
+        // Check for SDK filter argument
+        const sdkIndex = process.argv.indexOf('--sdk');
+        const sdkFilter = sdkIndex !== -1 ? process.argv[sdkIndex + 1] : null;
+
+        generator.generateAll(sdkFilter).catch(e => {
             console.error('Failed to generate SDK guides:', e);
             process.exit(1);
         });

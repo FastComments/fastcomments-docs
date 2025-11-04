@@ -8,6 +8,10 @@ const { convertFromPascal, parseSDKDocTable } = require('./naming-utils');
  * and extracts code examples from generated markdown docs
  */
 class OpenAPIDocGenerator extends BaseDocGenerator {
+    constructor(sdk, repoPath) {
+        super(sdk, repoPath);
+    }
+
     /**
      * Generate API reference documentation from OpenAPI spec
      * @returns {Promise<GeneratedDocs>}
@@ -32,6 +36,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const operationsByResource = this.groupOperationsByResource(spec);
 
         // Generate sections for each operation
+        // Will throw immediately if any operation fails
         const sections = [];
         for (const [resource, operations] of Object.entries(operationsByResource)) {
             for (const operation of operations) {
@@ -170,19 +175,21 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const lookupKey = `${operation.method} ${operation.path}`;
         let name = methodLookup.get(lookupKey);
 
-        // Fallback to conversion if not found in lookup
+        // FAIL FAST if method name not found
         if (!name) {
-            const namingConvention = this.sdk.namingConvention || 'camelCase';
-            const operationId = operation.operationId || this.sanitizeFilename(operation.summary);
-            name = convertFromPascal(operationId, namingConvention);
-            console.warn(`Method not found in SDK docs for ${lookupKey}, using fallback: ${name}`);
+            throw new Error(`Method not found in SDK docs for ${lookupKey}. Operation: ${operation.operationId || operation.summary}`);
         }
 
-        // Extract code example from generated docs
-        const codeExample = this.extractCodeExample(operation, config, name);
+        // Extract code example and return type from generated docs
+        const { codeExample, returnType } = this.extractCodeExample(operation, config, name);
+
+        // FAIL FAST if return type not found in markdown
+        if (!returnType) {
+            throw new Error(`Failed to extract return type from markdown for method: ${name} (${lookupKey})`);
+        }
 
         // Generate markdown content
-        const content = this.generateOperationMarkdown(operation, codeExample, name);
+        const content = this.generateOperationMarkdown(operation, codeExample, name, returnType);
 
         // Categorize by resource for meta.json (no "API Reference -" prefix)
         const subCat = this.formatResourceName(resource);
@@ -199,18 +206,18 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     }
 
     /**
-     * Extract code example from generated markdown docs
+     * Extract code example and return type from generated markdown docs
      * @param {Object} operation - Operation details
      * @param {Object} config - OpenAPI config
      * @param {string} methodName - Actual SDK method name to search for
-     * @returns {string|null}
+     * @returns {{codeExample: string|null, returnType: string|null}}
      */
     extractCodeExample(operation, config, methodName) {
         const docsPath = path.join(this.repoPath, config.generatedDocsPath);
 
         if (!fs.existsSync(docsPath)) {
             console.warn(`Generated docs path not found: ${docsPath}`);
-            return null;
+            return { codeExample: null, returnType: null };
         }
 
         // Find the API class file (e.g., DefaultApi.md, PublicApi.md)
@@ -221,15 +228,15 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
         if (!fs.existsSync(docPath)) {
             console.warn(`Doc file not found: ${docPath}`);
-            return null;
+            return { codeExample: null, returnType: null };
         }
 
         try {
             const docContent = fs.readFileSync(docPath, 'utf8');
-            return this.parseCodeExampleFromMarkdown(docContent, methodName);
+            return this.parseCodeExampleAndReturnType(docContent, methodName);
         } catch (e) {
             console.error(`Error reading doc file: ${e.message}`);
-            return null;
+            return { codeExample: null, returnType: null };
         }
     }
 
@@ -249,13 +256,13 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     }
 
     /**
-     * Parse code example from generated markdown
+     * Parse code example and return type from generated markdown
      * @param {string} markdown - Markdown content
      * @param {string} methodName - Actual SDK method name to search for
-     * @returns {string|null}
+     * @returns {{codeExample: string|null, returnType: string|null}}
      */
-    parseCodeExampleFromMarkdown(markdown, methodName) {
-        if (!methodName) return null;
+    parseCodeExampleAndReturnType(markdown, methodName) {
+        if (!methodName) return { codeExample: null, returnType: null };
 
         const escapedMethodName = methodName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -274,7 +281,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
 
         if (!match) {
-            return null;
+            return { codeExample: null, returnType: null };
         }
 
         // Extract content after the heading until next H1/H2 heading or end
@@ -287,19 +294,51 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
 
         const sectionContent = markdown.substring(startIndex, endIndex);
 
-        // Extract first code block (look for ### Example section first)
+        // Extract code example
+        let codeExample = null;
         const exampleSectionMatch = sectionContent.match(/###\s*Example[\s\S]*?```[\w]*\n([\s\S]*?)```/);
         if (exampleSectionMatch) {
-            return exampleSectionMatch[1].trim();
+            codeExample = exampleSectionMatch[1].trim();
+        } else {
+            const codeBlockMatch = sectionContent.match(/```[\w]*\n([\s\S]*?)```/);
+            if (codeBlockMatch) {
+                codeExample = codeBlockMatch[1].trim();
+            }
         }
 
-        // Fall back to first code block if no Example section
-        const codeBlockMatch = sectionContent.match(/```[\w]*\n([\s\S]*?)```/);
-        if (codeBlockMatch) {
-            return codeBlockMatch[1].trim();
+        // Extract return type from ### Return type section
+        let returnType = null;
+        // Match pattern: [**Type**](link) where Type can include brackets like List[InnerType]
+        const returnTypeMatch = sectionContent.match(/###\s*Return type\s*\n+\[\*\*(.+?)\*\*\]\(/);
+        if (returnTypeMatch) {
+            // Clean up HTML entities and extract the main type name
+            let fullType = returnTypeMatch[1].trim();
+
+            // Handle generic types first before namespace stripping:
+            // Java: List<Type> or Optional<Type> (HTML entities: &lt; &gt;)
+            // Python: List[Type] or Optional[Type]
+            // PHP: \Namespace\Type[] (array syntax with namespace)
+            const javaGenericMatch = fullType.match(/^(?:List|Optional|Set)&lt;([^&]+)&gt;$/);
+            const pythonGenericMatch = fullType.match(/^(?:List|Optional|Set)\[([^\]]+)\]$/);
+            const phpArrayMatch = fullType.match(/^(.+?)\[\]$/);
+
+            if (javaGenericMatch) {
+                returnType = javaGenericMatch[1];
+            } else if (pythonGenericMatch) {
+                returnType = pythonGenericMatch[1];
+            } else if (phpArrayMatch) {
+                // PHP array syntax - strip the [] and extract just class name
+                fullType = phpArrayMatch[1];
+            }
+
+            // Handle PHP namespaces: \FastComments\Client\Model\TypeName -> TypeName
+            // Must come after array handling
+            if (!returnType) {
+                returnType = fullType.replace(/^\\?(?:[A-Za-z]+\\)+([A-Za-z0-9_]+)$/, '$1');
+            }
         }
 
-        return null;
+        return { codeExample, returnType };
     }
 
     /**
@@ -309,12 +348,184 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      * @param {string} methodName - Actual SDK method name
      * @returns {string}
      */
-    generateOperationMarkdown(operation, codeExample, methodName) {
-        const lines = [];
+    /**
+     * Extract response type name from OpenAPI operation
+     * @param {Object} operation - Operation details
+     * @returns {string|null} - Response type name
+     */
+    extractResponseType(operation) {
+        if (!operation.responses || !operation.responses['200']) {
+            return null;
+        }
 
-        // HTTP method and path
-        lines.push(`\`${operation.method} ${operation.path}\``);
-        lines.push('');
+        const response200 = operation.responses['200'];
+        const content = response200.content;
+        if (!content || !content['application/json']) {
+            return null;
+        }
+
+        const schema = content['application/json'].schema;
+        if (!schema) {
+            return null;
+        }
+
+        // Handle direct $ref
+        if (schema.$ref) {
+            return this.extractTypeNameFromRef(schema.$ref);
+        }
+
+        // Handle anyOf/oneOf unions - take the first non-error type
+        if (schema.anyOf || schema.oneOf) {
+            const options = schema.anyOf || schema.oneOf;
+            for (const option of options) {
+                if (option.$ref) {
+                    const typeName = this.extractTypeNameFromRef(option.$ref);
+                    // Skip error types
+                    if (typeName && !typeName.includes('Error')) {
+                        return typeName;
+                    }
+                }
+            }
+            // If all are errors, just return the first one
+            if (options[0].$ref) {
+                return this.extractTypeNameFromRef(options[0].$ref);
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Extract type name from $ref string
+     * @param {string} ref - Reference string like "#/components/schemas/TypeName"
+     * @returns {string} - Type name with underscores removed (to match SDK generator behavior)
+     */
+    extractTypeNameFromRef(ref) {
+        const parts = ref.split('/');
+        const typeName = parts[parts.length - 1];
+        // Remove underscores to match how SDK generators (Java, PHP, Python) sanitize class names
+        return typeName.replace(/_/g, '');
+    }
+
+    /**
+     * Get the file path for a type in this SDK
+     * Language-specific implementations should override this for complex cases
+     * @param {string} typeName - Type name from markdown
+     * @returns {string|null} - File path relative to repo root
+     */
+    getTypeFilePath(typeName) {
+        const language = this.sdk.language;
+
+        switch (language) {
+            case 'java':
+                return `client/src/main/java/com/fastcomments/model/${typeName}.java`;
+            case 'php':
+                return `lib/Model/${typeName}.php`;
+            case 'javascript':
+                return `src/generated/src/models/${typeName}.ts`;
+            case 'python':
+                return this.getPythonTypeFilePath(typeName);
+            case 'rust':
+                return this.getRustTypeFilePath(typeName);
+            default:
+                return null;
+        }
+    }
+
+    /**
+     * Get Python type file path by extracting from import in model .md file
+     * @param {string} typeName - Type name (e.g., "GetUserPresenceStatusesResponse")
+     * @returns {string|null} - File path (e.g., "client/models/get_user_presence_statuses_response.py")
+     */
+    getPythonTypeFilePath(typeName) {
+        const config = this.sdk.openApiConfig;
+        if (!config) return null;
+
+        const modelDocPath = path.join(this.repoPath, config.generatedDocsPath, `${typeName}.md`);
+
+        if (!fs.existsSync(modelDocPath)) {
+            console.warn(`Python model doc not found: ${modelDocPath}`);
+            return null;
+        }
+
+        try {
+            const content = fs.readFileSync(modelDocPath, 'utf8');
+
+            // Extract import line: "from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse"
+            const importMatch = content.match(/from\s+([\w.]+)\s+import\s+\w+/);
+
+            if (importMatch) {
+                const modulePath = importMatch[1].replace(/\./g, '/');
+                return `${modulePath}.py`;
+            }
+
+            console.warn(`Could not extract import from ${modelDocPath}`);
+            return null;
+        } catch (e) {
+            console.error(`Error reading Python model doc: ${e.message}`);
+            return null;
+        }
+    }
+
+    /**
+     * Get Rust type file path by searching for struct/enum definition
+     * @param {string} typeName - Type name (e.g., "ImportedApiStatusSuccess")
+     * @returns {string|null} - File path (e.g., "client/src/models/imported_api_status_success.rs")
+     */
+    getRustTypeFilePath(typeName) {
+        const modelsDir = path.join(this.repoPath, 'client/src/models');
+
+        if (!fs.existsSync(modelsDir)) {
+            console.warn(`Rust models directory not found: ${modelsDir}`);
+            return null;
+        }
+
+        try {
+            // Search for struct or enum definition
+            const files = fs.readdirSync(modelsDir);
+
+            for (const file of files) {
+                if (!file.endsWith('.rs')) continue;
+
+                const filePath = path.join(modelsDir, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+
+                // Look for "pub struct TypeName" or "pub enum TypeName"
+                const structRegex = new RegExp(`pub\\s+(?:struct|enum)\\s+${typeName}\\b`);
+
+                if (structRegex.test(content)) {
+                    return `client/src/models/${file}`;
+                }
+            }
+
+            console.warn(`Could not find Rust file for type: ${typeName}`);
+            return null;
+        } catch (e) {
+            console.error(`Error searching for Rust type: ${e.message}`);
+            return null;
+        }
+    }
+
+    /**
+     * Generate GitHub URL for a type definition
+     * @param {string} typeName - Actual type name extracted from markdown
+     * @returns {string} - GitHub URL
+     */
+    generateTypeGitHubUrl(typeName) {
+        const baseUrl = this.sdk.repo.replace(/\.git$/, '');
+        const branch = this.sdk.branch;
+
+        const filePath = this.getTypeFilePath(typeName);
+
+        if (!filePath) {
+            return null;
+        }
+
+        return `${baseUrl}/blob/${branch}/${filePath}`;
+    }
+
+    generateOperationMarkdown(operation, codeExample, methodName, returnType) {
+        const lines = [];
 
         // Description
         if (operation.description) {
@@ -341,39 +552,17 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             lines.push('');
         }
 
-        // Request Body
-        if (operation.requestBody) {
-            lines.push('## Request Body');
-            lines.push('');
-            const description = operation.requestBody.description;
-            if (description) {
-                lines.push(description);
-                lines.push('');
-            }
+        // Response Type (extracted from markdown, required)
+        lines.push('## Response');
+        lines.push('');
 
-            const content = operation.requestBody.content;
-            if (content) {
-                const contentTypes = Object.keys(content);
-                if (contentTypes.length > 0) {
-                    lines.push(`Content-Type: \`${contentTypes[0]}\``);
-                    lines.push('');
-                }
-            }
+        const githubUrl = this.generateTypeGitHubUrl(returnType);
+        if (githubUrl) {
+            lines.push(`Returns: [\`${returnType}\`](${githubUrl})`);
+        } else {
+            lines.push(`Returns: \`${returnType}\``);
         }
-
-        // Responses
-        if (operation.responses) {
-            lines.push('## Responses');
-            lines.push('');
-
-            for (const [statusCode, response] of Object.entries(operation.responses)) {
-                lines.push(`### ${statusCode}`);
-                if (response.description) {
-                    lines.push(response.description);
-                }
-                lines.push('');
-            }
-        }
+        lines.push('');
 
         // Code Example
         if (codeExample) {
