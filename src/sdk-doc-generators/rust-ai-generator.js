@@ -256,12 +256,6 @@ class RustAIGenerator extends BaseDocGenerator {
     generateMethodSection(method, codeExample, resource) {
         const lines = [];
 
-        // HTTP method and path
-        if (method.httpMethod && method.path) {
-            lines.push(`\`${method.httpMethod} ${method.path}\``);
-            lines.push('');
-        }
-
         // Description
         if (method.description) {
             lines.push(method.description);
