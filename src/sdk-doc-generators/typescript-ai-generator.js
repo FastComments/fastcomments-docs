@@ -120,8 +120,8 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
                 // Determine resource for categorization
                 let resource = method.tag || 'api';
 
-                // Try to infer resource from path for default or Public tags
-                if (!method.tag || resource === 'Public') {
+                // Try to infer resource from path for default, api, or Public tags
+                if (!method.tag || method.tag === 'api' || resource === 'Public') {
                     const inferredResource = this.inferResourceFromPath(method.path);
                     // Only use inferred resource if it's meaningful
                     if (inferredResource && inferredResource !== 'api') {

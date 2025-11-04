@@ -69,285 +69,15 @@
       "type": "readme"
     },
     {
-      "name": "addDomainConfig",
-      "file": "adddomainconfig-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "addPage",
-      "file": "addpage-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "addSSOUser",
-      "file": "addssouser-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "aggregateQuestionResults",
-      "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "blockUserFromComment",
-      "file": "blockuserfromcomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "bulkAggregateQuestionResults",
-      "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "combineCommentsWithQuestionResults",
-      "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "createFeedPost",
-      "file": "createfeedpost-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "createSubscription",
-      "file": "createsubscription-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "createUserBadge",
-      "file": "createuserbadge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deleteComment",
-      "file": "deletecomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deleteDomainConfig",
-      "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deletePage",
-      "file": "deletepage-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deleteSSOUser",
-      "file": "deletessouser-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deleteSubscription",
-      "file": "deletesubscription-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "deleteUserBadge",
-      "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "flagComment",
-      "file": "flagcomment-api-generated.md",
-      "subCat": "Api",
+      "subCat": "Aggregate",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getComment",
-      "file": "getcomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getComments",
-      "file": "getcomments-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getDomainConfig",
-      "file": "getdomainconfig-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getDomainConfigs",
-      "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getFeedPosts",
-      "file": "getfeedposts-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getPageByURLId",
-      "file": "getpagebyurlid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getPages",
-      "file": "getpages-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getSSOUserByEmail",
-      "file": "getssouserbyemail-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getSSOUserById",
-      "file": "getssouserbyid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getSSOUsers",
-      "file": "getssousers-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getSubscriptions",
-      "file": "getsubscriptions-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getUserBadge",
-      "file": "getuserbadge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getUserBadgeProgressById",
-      "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getUserBadgeProgressByUserId",
-      "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getUserBadgeProgressList",
-      "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "getUserBadges",
-      "file": "getuserbadges-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patchDomainConfig",
-      "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patchPage",
-      "file": "patchpage-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patchSSOUser",
-      "file": "patchssouser-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "putDomainConfig",
-      "file": "putdomainconfig-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "putSSOUser",
-      "file": "putssouser-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "saveComment",
-      "file": "savecomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "saveCommentsBulk",
-      "file": "savecommentsbulk-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "unBlockUserFromComment",
-      "file": "unblockuserfromcomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "unFlagComment",
-      "file": "unflagcomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "updateComment",
-      "file": "updatecomment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "updateFeedPost",
-      "file": "updatefeedpost-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "updateUserBadge",
-      "file": "updateuserbadge-api-generated.md",
-      "subCat": "Api",
+      "subCat": "Audit Logs",
       "type": "api"
     },
     {
@@ -369,8 +99,20 @@
       "type": "api"
     },
     {
+      "name": "blockUserFromComment",
+      "file": "blockuserfromcomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "deleteComment",
+      "file": "deletecomment-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -383,6 +125,24 @@
     {
       "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "flagComment",
+      "file": "flagcomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "getComment",
+      "file": "getcomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "getComments",
+      "file": "getcomments-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -417,8 +177,32 @@
       "type": "api"
     },
     {
+      "name": "saveComment",
+      "file": "savecomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "saveCommentsBulk",
+      "file": "savecommentsbulk-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "unBlockUserFromComment",
+      "file": "unblockuserfromcomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "unFlagComment",
+      "file": "unflagcomment-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -435,9 +219,51 @@
       "type": "api"
     },
     {
+      "name": "updateComment",
+      "file": "updatecomment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "voteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "addDomainConfig",
+      "file": "adddomainconfig-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "deleteDomainConfig",
+      "file": "deletedomainconfig-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "getDomainConfig",
+      "file": "getdomainconfig-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "getDomainConfigs",
+      "file": "getdomainconfigs-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "patchDomainConfig",
+      "file": "patchdomainconfig-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "putDomainConfig",
+      "file": "putdomainconfig-api-generated.md",
+      "subCat": "Domain Configs",
       "type": "api"
     },
     {
@@ -453,6 +279,12 @@
       "type": "api"
     },
     {
+      "name": "createFeedPost",
+      "file": "createfeedpost-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Feed Posts",
@@ -461,6 +293,12 @@
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
+      "name": "getFeedPosts",
+      "file": "getfeedposts-api-generated.md",
       "subCat": "Feed Posts",
       "type": "api"
     },
@@ -489,6 +327,12 @@
       "type": "api"
     },
     {
+      "name": "updateFeedPost",
+      "file": "updatefeedpost-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Feed Posts",
@@ -501,9 +345,165 @@
       "type": "api"
     },
     {
+      "name": "addPage",
+      "file": "addpage-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "deletePage",
+      "file": "deletepage-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "getPageByURLId",
+      "file": "getpagebyurlid-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "getPages",
+      "file": "getpages-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "patchPage",
+      "file": "patchpage-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "aggregateQuestionResults",
+      "file": "aggregatequestionresults-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "bulkAggregateQuestionResults",
+      "file": "bulkaggregatequestionresults-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "combineCommentsWithQuestionResults",
+      "file": "combinecommentswithquestionresults-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "addSSOUser",
+      "file": "addssouser-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "deleteSSOUser",
+      "file": "deletessouser-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "getSSOUserByEmail",
+      "file": "getssouserbyemail-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "getSSOUserById",
+      "file": "getssouserbyid-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "getSSOUsers",
+      "file": "getssousers-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "patchSSOUser",
+      "file": "patchssouser-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "putSSOUser",
+      "file": "putssouser-api-generated.md",
+      "subCat": "Sso Users",
+      "type": "api"
+    },
+    {
+      "name": "createSubscription",
+      "file": "createsubscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "deleteSubscription",
+      "file": "deletesubscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "getSubscriptions",
+      "file": "getsubscriptions-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Upload Image",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadgeProgressById",
+      "file": "getuserbadgeprogressbyid-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadgeProgressByUserId",
+      "file": "getuserbadgeprogressbyuserid-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadgeProgressList",
+      "file": "getuserbadgeprogresslist-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "createUserBadge",
+      "file": "createuserbadge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "deleteUserBadge",
+      "file": "deleteuserbadge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadge",
+      "file": "getuserbadge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadges",
+      "file": "getuserbadges-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "updateUserBadge",
+      "file": "updateuserbadge-api-generated.md",
+      "subCat": "User Badges",
       "type": "api"
     },
     {

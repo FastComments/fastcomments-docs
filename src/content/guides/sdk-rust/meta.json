@@ -39,86 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "add_domain_config",
-      "file": "add-domain-config-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "add_page",
-      "file": "add-page-api-generated.md",
-      "subCat": "Api",
+      "name": "aggregate",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Aggregate",
       "type": "api"
     },
     {
       "name": "add_sso_user",
       "file": "add-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "aggregate",
-      "file": "aggregate-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "aggregate_question_results",
-      "file": "aggregate-question-results-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "block_user_from_comment",
-      "file": "block-user-from-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "bulk_aggregate_question_results",
-      "file": "bulk-aggregate-question-results-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "combine_comments_with_question_results",
-      "file": "combine-comments-with-question-results-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "create_feed_post",
-      "file": "create-feed-post-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "create_subscription",
-      "file": "create-subscription-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "create_user_badge",
-      "file": "create-user-badge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "delete_comment",
-      "file": "delete-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "delete_domain_config",
-      "file": "delete-domain-config-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "delete_page",
-      "file": "delete-page-api-generated.md",
       "subCat": "Api",
       "type": "api"
     },
@@ -129,68 +57,8 @@
       "type": "api"
     },
     {
-      "name": "delete_subscription",
-      "file": "delete-subscription-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "delete_user_badge",
-      "file": "delete-user-badge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "flag_comment",
-      "file": "flag-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_audit_logs",
-      "file": "get-audit-logs-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_comment",
-      "file": "get-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_comments",
-      "file": "get-comments-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_domain_config",
-      "file": "get-domain-config-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_domain_configs",
-      "file": "get-domain-configs-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_feed_posts",
-      "file": "get-feed-posts-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
       "name": "get_page_by_urlid",
       "file": "get-page-by-urlid-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_pages",
-      "file": "get-pages-api-generated.md",
       "subCat": "Api",
       "type": "api"
     },
@@ -213,62 +81,8 @@
       "type": "api"
     },
     {
-      "name": "get_subscriptions",
-      "file": "get-subscriptions-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_user_badge",
-      "file": "get-user-badge-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_user_badge_progress_by_id",
-      "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_user_badge_progress_by_user_id",
-      "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_user_badge_progress_list",
-      "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "get_user_badges",
-      "file": "get-user-badges-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patch_domain_config",
-      "file": "patch-domain-config-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "patch_page",
-      "file": "patch-page-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
       "name": "patch_sso_user",
       "file": "patch-sso-user-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "put_domain_config",
-      "file": "put-domain-config-api-generated.md",
       "subCat": "Api",
       "type": "api"
     },
@@ -279,45 +93,9 @@
       "type": "api"
     },
     {
-      "name": "save_comment",
-      "file": "save-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "save_comments_bulk",
-      "file": "save-comments-bulk-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "un_block_user_from_comment",
-      "file": "un-block-user-from-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "un_flag_comment",
-      "file": "un-flag-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "update_comment",
-      "file": "update-comment-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "update_feed_post",
-      "file": "update-feed-post-api-generated.md",
-      "subCat": "Api",
-      "type": "api"
-    },
-    {
-      "name": "update_user_badge",
-      "file": "update-user-badge-api-generated.md",
-      "subCat": "Api",
+      "name": "get_audit_logs",
+      "file": "get-audit-logs-api-generated.md",
+      "subCat": "Audit Logs",
       "type": "api"
     },
     {
@@ -339,8 +117,20 @@
       "type": "api"
     },
     {
+      "name": "block_user_from_comment",
+      "file": "block-user-from-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "create_comment_public",
       "file": "create-comment-public-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "delete_comment",
+      "file": "delete-comment-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -357,6 +147,18 @@
       "type": "api"
     },
     {
+      "name": "flag_comment",
+      "file": "flag-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "get_comment",
+      "file": "get-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "get_comment_text",
       "file": "get-comment-text-api-generated.md",
       "subCat": "Comments",
@@ -365,6 +167,12 @@
     {
       "name": "get_comment_vote_user_names",
       "file": "get-comment-vote-user-names-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "get_comments",
+      "file": "get-comments-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -387,8 +195,32 @@
       "type": "api"
     },
     {
+      "name": "save_comment",
+      "file": "save-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "save_comments_bulk",
+      "file": "save-comments-bulk-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "set_comment_text",
       "file": "set-comment-text-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "un_block_user_from_comment",
+      "file": "un-block-user-from-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "un_flag_comment",
+      "file": "un-flag-comment-api-generated.md",
       "subCat": "Comments",
       "type": "api"
     },
@@ -405,9 +237,51 @@
       "type": "api"
     },
     {
+      "name": "update_comment",
+      "file": "update-comment-api-generated.md",
+      "subCat": "Comments",
+      "type": "api"
+    },
+    {
       "name": "vote_comment",
       "file": "vote-comment-api-generated.md",
       "subCat": "Comments",
+      "type": "api"
+    },
+    {
+      "name": "add_domain_config",
+      "file": "add-domain-config-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "delete_domain_config",
+      "file": "delete-domain-config-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "get_domain_config",
+      "file": "get-domain-config-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "get_domain_configs",
+      "file": "get-domain-configs-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "patch_domain_config",
+      "file": "patch-domain-config-api-generated.md",
+      "subCat": "Domain Configs",
+      "type": "api"
+    },
+    {
+      "name": "put_domain_config",
+      "file": "put-domain-config-api-generated.md",
+      "subCat": "Domain Configs",
       "type": "api"
     },
     {
@@ -423,6 +297,12 @@
       "type": "api"
     },
     {
+      "name": "create_feed_post",
+      "file": "create-feed-post-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
       "name": "create_feed_post_public",
       "file": "create-feed-post-public-api-generated.md",
       "subCat": "Feed Posts",
@@ -431,6 +311,12 @@
     {
       "name": "delete_feed_post_public",
       "file": "delete-feed-post-public-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
+      "name": "get_feed_posts",
+      "file": "get-feed-posts-api-generated.md",
       "subCat": "Feed Posts",
       "type": "api"
     },
@@ -459,6 +345,12 @@
       "type": "api"
     },
     {
+      "name": "update_feed_post",
+      "file": "update-feed-post-api-generated.md",
+      "subCat": "Feed Posts",
+      "type": "api"
+    },
+    {
       "name": "update_feed_post_public",
       "file": "update-feed-post-public-api-generated.md",
       "subCat": "Feed Posts",
@@ -471,9 +363,117 @@
       "type": "api"
     },
     {
+      "name": "add_page",
+      "file": "add-page-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "delete_page",
+      "file": "delete-page-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "get_pages",
+      "file": "get-pages-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "patch_page",
+      "file": "patch-page-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "aggregate_question_results",
+      "file": "aggregate-question-results-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "bulk_aggregate_question_results",
+      "file": "bulk-aggregate-question-results-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "combine_comments_with_question_results",
+      "file": "combine-comments-with-question-results-api-generated.md",
+      "subCat": "Question Results Aggregation",
+      "type": "api"
+    },
+    {
+      "name": "create_subscription",
+      "file": "create-subscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "delete_subscription",
+      "file": "delete-subscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "get_subscriptions",
+      "file": "get-subscriptions-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
       "subCat": "Upload Image",
+      "type": "api"
+    },
+    {
+      "name": "get_user_badge_progress_by_id",
+      "file": "get-user-badge-progress-by-id-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "get_user_badge_progress_by_user_id",
+      "file": "get-user-badge-progress-by-user-id-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "get_user_badge_progress_list",
+      "file": "get-user-badge-progress-list-api-generated.md",
+      "subCat": "User Badge Progress",
+      "type": "api"
+    },
+    {
+      "name": "create_user_badge",
+      "file": "create-user-badge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "delete_user_badge",
+      "file": "delete-user-badge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "get_user_badge",
+      "file": "get-user-badge-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "get_user_badges",
+      "file": "get-user-badges-api-generated.md",
+      "subCat": "User Badges",
+      "type": "api"
+    },
+    {
+      "name": "update_user_badge",
+      "file": "update-user-badge-api-generated.md",
+      "subCat": "User Badges",
       "type": "api"
     },
     {
