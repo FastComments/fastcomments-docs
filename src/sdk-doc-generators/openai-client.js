@@ -9,10 +9,11 @@ const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
  * Client for generating code examples using OpenAI API
  */
 class OpenAIClient {
-    constructor(cachePath) {
+    constructor(cachePath, language = 'typescript') {
         this.cachePath = cachePath;
         this.apiKey = OPENAI_API_KEY;
         this.model = OPENAI_MODEL;
+        this.language = language;
 
         // Create cache directory if it doesn't exist
         if (!fs.existsSync(cachePath)) {
@@ -76,11 +77,34 @@ class OpenAIClient {
     }
 
     /**
+     * Get system message based on language
+     * @returns {string} - System message
+     */
+    getSystemMessage() {
+        if (this.language === 'rust') {
+            return 'You are an expert Rust developer generating realistic, idiomatic API usage examples for the FastComments API.';
+        }
+        return 'You are an expert TypeScript developer generating realistic API usage examples for the FastComments API.';
+    }
+
+    /**
      * Build prompt for OpenAI
      * @param {Object} method - Method metadata
      * @returns {string} - Prompt text
      */
     buildPrompt(method) {
+        if (this.language === 'rust') {
+            return this.buildRustPrompt(method);
+        }
+        return this.buildTypeScriptPrompt(method);
+    }
+
+    /**
+     * Build TypeScript-specific prompt
+     * @param {Object} method - Method metadata
+     * @returns {string} - Prompt text
+     */
+    buildTypeScriptPrompt(method) {
         const lines = [];
 
         lines.push(`Create a TypeScript code example that calls the async function "${method.name}".`);
@@ -127,6 +151,59 @@ class OpenAIClient {
     }
 
     /**
+     * Build Rust-specific prompt
+     * @param {Object} method - Method metadata
+     * @returns {string} - Prompt text
+     */
+    buildRustPrompt(method) {
+        const lines = [];
+
+        lines.push(`Create an idiomatic Rust code example that calls the async function "${method.name}".`);
+        lines.push('');
+        lines.push('The function signature is:');
+        lines.push(`pub async fn ${method.name}(configuration: &configuration::Configuration, params: ${method.paramsType}) -> Result<${method.responseType}, Error>`);
+        lines.push('');
+
+        lines.push('Function Parameters (inside the params struct):');
+        if (method.parameters && Object.keys(method.parameters).length > 0) {
+            for (const [name, info] of Object.entries(method.parameters)) {
+                const required = info.required ? 'required' : 'optional (Option<T>)';
+                lines.push(`  - ${name}: ${info.type} (${required})`);
+            }
+        } else {
+            lines.push('  (none)');
+        }
+
+        lines.push('');
+        lines.push(`Return Type: Result<${method.responseType || 'unit'}, Error>`);
+
+        if (method.nestedTypes && Object.keys(method.nestedTypes).length > 0) {
+            lines.push('');
+            lines.push('Type Definitions:');
+            for (const [typeName, typeDef] of Object.entries(method.nestedTypes)) {
+                lines.push(`  ${typeName}: ${typeDef}`);
+            }
+        }
+
+        lines.push('');
+        lines.push('Requirements:');
+        lines.push('1. Do NOT include any use statements or imports');
+        lines.push('2. Assume configuration and all types are already in scope');
+        lines.push('3. Create a params struct instance with realistic values');
+        lines.push('4. Use realistic parameter values (not "example_string" - use actual realistic values like "acme-corp-tenant", "news/article", etc.)');
+        lines.push('5. Call the function with .await and use ? operator to unwrap the Result');
+        lines.push('6. Use proper Rust type annotations and ownership semantics');
+        lines.push('7. Demonstrate optional parameters with Some(...) where relevant');
+        lines.push('8. Keep example very concise (< 25 lines)');
+        lines.push('9. Use idiomatic Rust style (snake_case, proper formatting)');
+        lines.push('10. Do NOT add any comments or explanations in the code');
+        lines.push('');
+        lines.push('Return only the Rust code, no explanations or markdown formatting.');
+
+        return lines.join('\n');
+    }
+
+    /**
      * Call OpenAI API to generate code example
      * @param {Object} method - Method metadata
      * @returns {Promise<string>} - Generated code example
@@ -155,7 +232,7 @@ class OpenAIClient {
                     messages: [
                         {
                             role: 'system',
-                            content: 'You are an expert TypeScript developer generating realistic API usage examples for the FastComments API.'
+                            content: this.getSystemMessage()
                         },
                         {
                             role: 'user',
@@ -178,6 +255,7 @@ class OpenAIClient {
             const cleanCode = codeExample
                 .replace(/^```typescript\n/, '')
                 .replace(/^```ts\n/, '')
+                .replace(/^```rust\n/, '')
                 .replace(/^```\n/, '')
                 .replace(/\n```$/, '');
 

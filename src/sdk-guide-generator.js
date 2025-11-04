@@ -38,6 +38,10 @@ class SDKGuideGenerator {
                     const TypeScriptAIGenerator = require('./sdk-doc-generators/typescript-ai-generator');
                     generators.push(new TypeScriptAIGenerator(sdk, repoPath));
                     break;
+                case 'rust-ai':
+                    const RustAIGenerator = require('./sdk-doc-generators/rust-ai-generator');
+                    generators.push(new RustAIGenerator(sdk, repoPath));
+                    break;
                 default:
                     console.warn(`Unknown generator type: ${generatorType}`);
             }

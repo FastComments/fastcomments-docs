@@ -58,7 +58,7 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const methodLookup = new Map();
 
         // Parse tables from all API class files
-        const apiClasses = ['DefaultApi', 'PublicApi', 'HiddenApi'];
+        const apiClasses = ['DefaultApi', 'PublicApi'];
 
         for (const apiClass of apiClasses) {
             const classLookup = parseSDKDocTable(this.repoPath, config, apiClass);

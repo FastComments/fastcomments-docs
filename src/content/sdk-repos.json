@@ -87,11 +87,15 @@
       "branch": "main",
       "language": "rust",
       "namingConvention": "snake_case",
-      "docGenerators": ["readme", "openapi"],
-      "openApiConfig": {
-        "specPath": "openapi.json",
-        "generatedDocsPath": "client/docs/",
-        "docFilePattern": "{ApiClass}.md"
+      "docGenerators": ["readme", "rust-ai"],
+      "rustAiConfig": {
+        "apiFiles": [
+          "client/src/apis/default_api.rs",
+          "client/src/apis/public_api.rs"
+        ],
+        "modelsPath": "client/src/models/",
+        "cachePath": ".ai-cache/",
+        "specPath": "openapi.json"
       },
       "description": "Official Rust SDK for the FastComments API"
     }
