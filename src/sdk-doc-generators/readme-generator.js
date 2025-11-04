@@ -83,9 +83,10 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
             return [{
                 name: 'Overview',
-                file: 'overview-generated.md',
+                file: 'overview-readme-generated.md',
                 content: convertedContent,
-                subCat: 'Getting Started'
+                subCat: 'Getting Started',
+                type: 'readme'
             }];
         }
 
@@ -120,9 +121,10 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
             sections.push({
                 name: sectionTitle,
-                file: this.sanitizeFilename(sectionTitle) + '-generated.md',
+                file: this.sanitizeFilename(sectionTitle) + '-readme-generated.md',
                 content: sectionContent,
-                subCat
+                subCat,
+                type: 'readme'
             });
         }
 
@@ -209,9 +211,10 @@ class ReadmeDocGenerator extends BaseDocGenerator {
 
                 sections.push({
                     name: title,
-                    file: this.sanitizeFilename(title) + '-generated.md',
+                    file: this.sanitizeFilename(title) + '-readme-generated.md',
                     content: content,
-                    subCat: 'Documentation'
+                    subCat: 'Documentation',
+                    type: 'readme'
                 });
             }
         } catch (e) {

@@ -82,11 +82,51 @@ class SDKGuideGenerator {
      * @returns {Object} - meta.json content
      */
     generateMeta(sdk, sections) {
-        const itemsOrdered = sections.map(section => ({
+        // Define priority categories (lower number = higher priority)
+        const categoryPriority = {
+            'Getting Started': 1,
+            'Documentation': 2,
+            'Usage': 3,
+            'API Reference': 4
+        };
+
+        // Separate README and API sections
+        const readmeSections = sections.filter(s => (s.type || 'readme') === 'readme');
+        const apiSections = sections.filter(s => s.type === 'api');
+
+        // README sections maintain their original order (no sorting)
+        // API sections are sorted by category priority, then category name, then item name
+        const sortedApiSections = apiSections.slice().sort((a, b) => {
+            const catA = a.subCat || 'Documentation';
+            const catB = b.subCat || 'Documentation';
+
+            // Get priority (default to 999 for non-priority categories)
+            const priorityA = categoryPriority[catA] || 999;
+            const priorityB = categoryPriority[catB] || 999;
+
+            // First sort by category priority
+            if (priorityA !== priorityB) {
+                return priorityA - priorityB;
+            }
+
+            // If same priority, sort by category name alphabetically
+            if (catA !== catB) {
+                return catA.localeCompare(catB);
+            }
+
+            // Within same category, sort by item name alphabetically
+            return a.name.localeCompare(b.name);
+        });
+
+        // Combine: README sections first (in original order), then API sections (sorted)
+        const sortedSections = [...readmeSections, ...sortedApiSections];
+
+        const itemsOrdered = sortedSections.map(section => ({
             name: section.name,
             // Use section.file if provided (for generated docs), otherwise sanitize name
             file: section.file || (this.sanitizeFilename(section.name) + '.md'),
             subCat: section.subCat || 'Documentation',
+            type: section.type || 'readme',
             ...(section.sidebarItemClasses ? { sidebarItemClasses: section.sidebarItemClasses } : {})
         }));
 

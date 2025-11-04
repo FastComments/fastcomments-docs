@@ -92,6 +92,35 @@ class BaseDocGenerator {
     }
 
     /**
+     * Infer resource name from API path
+     * @param {string} path - API path
+     * @returns {string}
+     */
+    inferResourceFromPath(path) {
+        // Return default if path is undefined or null
+        if (!path) {
+            return 'api';
+        }
+
+        // Try to extract resource from path
+        // Pattern 1: /api/v1/comments -> comments
+        let match = path.match(/\/api\/v\d+\/([^\/]+)/);
+        if (match) {
+            return match[1];
+        }
+
+        // Pattern 2: /user-notifications -> user-notifications
+        // Pattern 3: /feed-posts/{tenantId} -> feed-posts
+        // Extract first segment after leading slash, before path params
+        match = path.match(/^\/([^\/{\?]+)/);
+        if (match) {
+            return match[1];
+        }
+
+        return 'api';
+    }
+
+    /**
      * Convert relative links in markdown to absolute repository URLs
      * @param {string} markdown - Markdown content
      * @param {string} repoUrl - Repository URL (e.g., https://github.com/FastComments/fastcomments-sdk-js)

@@ -122,8 +122,16 @@ class RustAIGenerator extends BaseDocGenerator {
 
                 // Determine resource for categorization
                 let resource = method.tag || 'api';
-                if (resource === 'Public') {
-                    resource = 'Misc Apis';
+
+                // Try to infer resource from path for default or Public tags
+                if (!method.tag || resource === 'Public') {
+                    const inferredResource = this.inferResourceFromPath(method.path);
+                    // Only use inferred resource if it's meaningful
+                    if (inferredResource && inferredResource !== 'api') {
+                        resource = inferredResource;
+                    } else if (resource === 'Public') {
+                        resource = 'Misc Apis';
+                    }
                 }
 
                 // Generate section
@@ -254,6 +262,12 @@ class RustAIGenerator extends BaseDocGenerator {
      * @returns {Object|null} - Doc section
      */
     generateMethodSection(method, codeExample, resource) {
+        // Skip methods without a name
+        if (!method || !method.name) {
+            console.warn('Skipping method with undefined name');
+            return null;
+        }
+
         const lines = [];
 
         // Description
@@ -283,7 +297,7 @@ class RustAIGenerator extends BaseDocGenerator {
             lines.push('');
 
             // Generate GitHub link if we have type info with filePath
-            const typeInfo = method.nestedTypes[method.responseType];
+            const typeInfo = method.nestedTypes ? method.nestedTypes[method.responseType] : null;
             if (typeInfo && typeInfo.filePath) {
                 const githubUrl = this.generateTypeGitHubUrl(typeInfo.filePath);
                 lines.push(`Returns: [\`${method.responseType}\`](${githubUrl})`);
@@ -313,14 +327,15 @@ class RustAIGenerator extends BaseDocGenerator {
         // Categorize by resource for meta.json (no "API Reference -" prefix)
         const subCat = this.formatResourceName(resource);
 
-        // Generate filename with -generated suffix
-        const filename = this.sanitizeFilename(method.name) + '-generated.md';
+        // Generate filename with -api-generated suffix
+        const filename = this.sanitizeFilename(method.name) + '-api-generated.md';
 
         return {
             name: method.name,
             file: filename,
             content,
-            subCat
+            subCat,
+            type: 'api'
         };
     }
 

@@ -121,10 +121,16 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                     continue;
                 }
 
-                // Map Public to Misc Apis
-                let resource = tag === 'default' ? this.inferResourceFromPath(pathStr) : tag;
-                if (resource === 'Public') {
-                    resource = 'Misc Apis';
+                // Try to infer resource from path for default or Public tags
+                let resource;
+                if (tag === 'default' || tag === 'Public') {
+                    resource = this.inferResourceFromPath(pathStr);
+                    // Only fall back to 'Misc Apis' if we can't infer anything useful
+                    if (!resource || resource === 'api') {
+                        resource = 'Misc Apis';
+                    }
+                } else {
+                    resource = tag;
                 }
 
                 if (!grouped[resource]) {
@@ -146,20 +152,6 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
 
         return grouped;
-    }
-
-    /**
-     * Infer resource name from API path
-     * @param {string} path - API path
-     * @returns {string}
-     */
-    inferResourceFromPath(path) {
-        // Extract resource from path like /api/v1/comments -> comments
-        const match = path.match(/\/api\/v\d+\/([^\/]+)/);
-        if (match) {
-            return match[1];
-        }
-        return 'api';
     }
 
     /**
@@ -194,14 +186,15 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         // Categorize by resource for meta.json (no "API Reference -" prefix)
         const subCat = this.formatResourceName(resource);
 
-        // Generate filename with -generated suffix
-        const filename = this.sanitizeFilename(name) + '-generated.md';
+        // Generate filename with -api-generated suffix
+        const filename = this.sanitizeFilename(name) + '-api-generated.md';
 
         return {
             name,
             file: filename,
             content,
-            subCat
+            subCat,
+            type: 'api'
         };
     }
 
