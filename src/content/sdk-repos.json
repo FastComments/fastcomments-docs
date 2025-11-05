@@ -11,7 +11,8 @@
       "openApiConfig": {
         "specPath": "openapi.json",
         "generatedDocsPath": "client/docs/",
-        "docFilePattern": "{ApiClass}.md"
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": ["DefaultAPI", "PublicAPI"]
       },
       "description": "Official Go SDK for the FastComments API"
     },

@@ -93,12 +93,13 @@ function parseSDKDocTable(repoPath, config, apiClass = 'DefaultApi') {
         // Parse each row in the table
         // Row format: | [**method_name**](link) | **METHOD** /path | description
         // Note: Leading pipe is optional (Python SDK doesn't have it)
-        const rowRegex = /\|?\s*\[\*\*([^*]+)\*\*\][^\|]*\|\s*\*\*([A-Z]+)\*\*\s+([^\s|]+)/g;
+        // HTTP methods can be all-caps (POST) or PascalCase (Post) depending on the SDK
+        const rowRegex = /\|?\s*\[\*\*([^*]+)\*\*\][^\|]*\|\s*\*\*([A-Z][A-Za-z]*)\*\*\s+([^\s|]+)/g;
 
         let match;
         while ((match = rowRegex.exec(tableContent)) !== null) {
             const methodName = match[1].replace(/\(\)$/, ''); // Remove trailing () if present (PHP)
-            const httpMethod = match[2];
+            const httpMethod = match[2].toUpperCase(); // Normalize to uppercase (Go uses "Post", others use "POST")
             const apiPath = match[3];
 
             // Create key as "METHOD /path" to match with OpenAPI spec

@@ -63,7 +63,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const methodLookup = new Map();
 
         // Parse tables from all API class files
-        const apiClasses = ['DefaultApi', 'PublicApi'];
+        // Use configured apiClasses if available, otherwise default to standard naming
+        const apiClasses = config.apiClasses || ['DefaultApi', 'PublicApi'];
 
         for (const apiClass of apiClasses) {
             const classLookup = parseSDKDocTable(this.repoPath, config, apiClass);
@@ -240,12 +241,18 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      */
     determineApiClass(operation) {
         const tags = operation.tags || [];
+        const config = this.sdk.openApiConfig;
+        const apiClasses = config?.apiClasses || ['DefaultApi', 'PublicApi'];
 
         // Map tags to API classes
-        if (tags.includes('Public')) return 'PublicApi';
+        // Use the configured class names to determine the pattern
+        const defaultClass = apiClasses[0] || 'DefaultApi';
+        const publicClass = apiClasses[1] || 'PublicApi';
+
+        if (tags.includes('Public')) return publicClass;
         if (tags.includes('Hidden')) return 'HiddenApi';
 
-        return 'DefaultApi'; // Default for secured/authenticated endpoints
+        return defaultClass; // Default for secured/authenticated endpoints
     }
 
     /**
@@ -262,9 +269,11 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         // Try multiple heading formats:
         // 1. Most SDKs: # **methodName**
         // 2. With backticks and parens: ## `methodName()`
+        // 3. Go SDK: ## methodName (plain)
         const patterns = [
             new RegExp(`^#+\\s*\\*\\*${escapedMethodName}\\*\\*\\s*$`, 'm'),
-            new RegExp(`^#+\\s*\`${escapedMethodName}\\(\\)\`\\s*$`, 'm')
+            new RegExp(`^#+\\s*\`${escapedMethodName}\\(\\)\`\\s*$`, 'm'),
+            new RegExp(`^#+\\s*${escapedMethodName}\\s*$`, 'm')
         ];
 
         let match = null;
@@ -420,6 +429,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 return this.getPythonTypeFilePath(typeName);
             case 'rust':
                 return this.getRustTypeFilePath(typeName);
+            case 'go':
+                return this.getGoTypeFilePath(typeName);
             default:
                 return null;
         }
@@ -495,6 +506,45 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             return null;
         } catch (e) {
             console.error(`Error searching for Rust type: ${e.message}`);
+            return null;
+        }
+    }
+
+    /**
+     * Get Go type file path by searching for struct/interface definition
+     * @param {string} typeName - Type name (e.g., "AddDomainConfig200ResponseAnyOf")
+     * @returns {string|null} - File path (e.g., "client/model_add_domain_config_200_response_any_of.go")
+     */
+    getGoTypeFilePath(typeName) {
+        const modelsDir = path.join(this.repoPath, 'client');
+
+        if (!fs.existsSync(modelsDir)) {
+            console.warn(`Go models directory not found: ${modelsDir}`);
+            return null;
+        }
+
+        try {
+            // Search for struct or interface definition
+            const files = fs.readdirSync(modelsDir);
+
+            for (const file of files) {
+                if (!file.startsWith('model_') || !file.endsWith('.go')) continue;
+
+                const filePath = path.join(modelsDir, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+
+                // Look for "type TypeName struct" or "type TypeName interface"
+                const typeRegex = new RegExp(`type\\s+${typeName}\\s+(?:struct|interface)`);
+
+                if (typeRegex.test(content)) {
+                    return `client/${file}`;
+                }
+            }
+
+            console.warn(`Could not find Go file for type: ${typeName}`);
+            return null;
+        } catch (e) {
+            console.error(`Error searching for Go type: ${e.message}`);
             return null;
         }
     }
@@ -597,6 +647,12 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
         if (sdkId.includes('python')) {
             return 'python';
+        }
+        if (sdkId.includes('go')) {
+            return 'go';
+        }
+        if (sdkId.includes('rust')) {
+            return 'rust';
         }
 
         return '';
