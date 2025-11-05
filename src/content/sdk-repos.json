@@ -5,7 +5,7 @@
       "name": "Go SDK",
       "pageHeader": "FastComments Go SDK",
       "repo": "https://github.com/FastComments/fastcomments-go",
-      "branch": "main",
+      "branch": "master",
       "language": "go",
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
