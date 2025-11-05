@@ -1,13 +1,27 @@
 {
   "sdks": [
     {
+      "id": "sdk-go",
+      "name": "Go SDK",
+      "pageHeader": "FastComments Go SDK",
+      "repo": "https://github.com/FastComments/fastcomments-go",
+      "branch": "main",
+      "language": "go",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "client/docs/",
+        "docFilePattern": "{ApiClass}.md"
+      },
+      "description": "Official Go SDK for the FastComments API"
+    },
+    {
       "id": "sdk-javascript",
       "name": "JavaScript/TypeScript SDK",
       "pageHeader": "FastComments JavaScript/TypeScript SDK",
       "repo": "https://github.com/FastComments/fastcomments-sdk-js",
       "branch": "main",
       "language": "javascript",
-      "namingConvention": "camelCase",
       "docGenerators": ["readme", "typescript-ai"],
       "typescriptAiConfig": {
         "apiFiles": [
@@ -27,7 +41,6 @@
       "repo": "https://github.com/FastComments/fastcomments-java",
       "branch": "main",
       "language": "java",
-      "namingConvention": "camelCase",
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
         "specPath": "openapi.json",
@@ -43,7 +56,6 @@
       "repo": "https://github.com/FastComments/fastcomments-php",
       "branch": "main",
       "language": "php",
-      "namingConvention": "camelCase",
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
         "specPath": "openapi.json",
@@ -59,7 +71,6 @@
       "repo": "https://github.com/FastComments/fastcomments-php-sso",
       "branch": "main",
       "language": "php",
-      "namingConvention": "camelCase",
       "docGenerators": ["readme"],
       "description": "PHP SDK for FastComments SSO integration"
     },
@@ -70,7 +81,6 @@
       "repo": "https://github.com/FastComments/fastcomments-python",
       "branch": "main",
       "language": "python",
-      "namingConvention": "snake_case",
       "docGenerators": ["readme", "openapi"],
       "openApiConfig": {
         "specPath": "openapi.json",
@@ -86,7 +96,6 @@
       "repo": "https://github.com/FastComments/fastcomments-rust",
       "branch": "main",
       "language": "rust",
-      "namingConvention": "snake_case",
       "docGenerators": ["readme", "rust-ai"],
       "rustAiConfig": {
         "apiFiles": [
