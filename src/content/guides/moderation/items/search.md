@@ -6,6 +6,7 @@ Comments can be searched with the following example syntax:
   - Supports autocomplete.
 - By Page URL: `page:"https://example.com/some-page"`
   - Supports autocomplete.
+- By Site/Domain: `site:mysite.com` or `domain:othersite.com`
 - By User: `user:"Bob"`
   - Supports autocomplete.
 
