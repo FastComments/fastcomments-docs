@@ -1,6 +1,22 @@
 {
   "sdks": [
     {
+      "id": "sdk-cpp",
+      "name": "C++ SDK",
+      "pageHeader": "FastComments C++ SDK",
+      "repo": "https://github.com/FastComments/fastcomments-cpp",
+      "branch": "master",
+      "language": "cpp",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "docs/Apis/",
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": ["DefaultApi", "PublicApi"]
+      },
+      "description": "Official C++ SDK for the FastComments API"
+    },
+    {
       "id": "sdk-go",
       "name": "Go SDK",
       "pageHeader": "FastComments Go SDK",

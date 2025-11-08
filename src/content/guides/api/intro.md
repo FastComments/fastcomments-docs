@@ -12,6 +12,7 @@ FastComments now generates an [API Spec](https://fastcomments.com/js/swagger.jso
 
 We also now have SDKs for popular languages:
 
+- [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
 - [fastcomments-java](./guide-sdk-java.html)
 - [fastcomments-sdk-js](./guide-sdk-javascript.html)

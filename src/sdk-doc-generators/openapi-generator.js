@@ -431,6 +431,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 return this.getRustTypeFilePath(typeName);
             case 'go':
                 return this.getGoTypeFilePath(typeName);
+            case 'cpp':
+                return `client/include/FastCommentsClient/model/${typeName}.h`;
             default:
                 return null;
         }
@@ -653,6 +655,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
         if (sdkId.includes('rust')) {
             return 'rust';
+        }
+        if (sdkId.includes('cpp') || sdkId.includes('c++')) {
+            return 'cpp';
         }
 
         return '';
