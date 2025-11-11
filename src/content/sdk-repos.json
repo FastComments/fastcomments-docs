@@ -7,12 +7,15 @@
       "repo": "https://github.com/FastComments/fastcomments-cpp",
       "branch": "master",
       "language": "cpp",
-      "docGenerators": ["readme", "openapi"],
-      "openApiConfig": {
-        "specPath": "openapi.json",
-        "generatedDocsPath": "docs/Apis/",
-        "docFilePattern": "{ApiClass}.md",
-        "apiClasses": ["DefaultApi", "PublicApi"]
+      "docGenerators": ["readme", "cpp-ai"],
+      "cppAiConfig": {
+        "apiFiles": [
+          "client/include/FastCommentsClient/api/DefaultApi.h",
+          "client/include/FastCommentsClient/api/PublicApi.h"
+        ],
+        "modelsPath": "client/include/FastCommentsClient/model/",
+        "cachePath": ".ai-cache/",
+        "specPath": "openapi.json"
       },
       "description": "Official C++ SDK for the FastComments API"
     },

@@ -42,6 +42,10 @@ class SDKGuideGenerator {
                     const RustAIGenerator = require('./sdk-doc-generators/rust-ai-generator');
                     generators.push(new RustAIGenerator(sdk, repoPath));
                     break;
+                case 'cpp-ai':
+                    const CppAIGenerator = require('./sdk-doc-generators/cpp-ai-generator');
+                    generators.push(new CppAIGenerator(sdk, repoPath));
+                    break;
                 default:
                     console.warn(`Unknown generator type: ${generatorType}`);
             }

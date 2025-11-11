@@ -84,6 +84,9 @@ class OpenAIClient {
         if (this.language === 'rust') {
             return 'You are an expert Rust developer generating realistic, idiomatic API usage examples for the FastComments API.';
         }
+        if (this.language === 'cpp') {
+            return 'You are an expert C++ developer generating realistic, idiomatic API usage examples for the FastComments API.';
+        }
         return 'You are an expert TypeScript developer generating realistic API usage examples for the FastComments API.';
     }
 
@@ -95,6 +98,9 @@ class OpenAIClient {
     buildPrompt(method) {
         if (this.language === 'rust') {
             return this.buildRustPrompt(method);
+        }
+        if (this.language === 'cpp') {
+            return this.buildCppPrompt(method);
         }
         return this.buildTypeScriptPrompt(method);
     }
@@ -199,6 +205,59 @@ class OpenAIClient {
         lines.push('10. Do NOT add any comments or explanations in the code');
         lines.push('');
         lines.push('Return only the Rust code, no explanations or markdown formatting.');
+
+        return lines.join('\n');
+    }
+
+    /**
+     * Build C++-specific prompt
+     * @param {Object} method - Method metadata
+     * @returns {string} - Prompt text
+     */
+    buildCppPrompt(method) {
+        const lines = [];
+
+        lines.push(`Create an idiomatic C++ code example that calls the async method "${method.name}" from the FastComments C++ SDK.`);
+        lines.push('');
+        lines.push('The method returns:');
+        lines.push(`pplx::task<std::shared_ptr<${method.responseType || 'void'}>>`);
+        lines.push('');
+
+        lines.push('Function Parameters:');
+        if (method.parameters && Object.keys(method.parameters).length > 0) {
+            for (const [name, info] of Object.entries(method.parameters)) {
+                const required = info.required ? 'required' : 'optional (boost::optional<T>)';
+                lines.push(`  - ${name}: ${info.type} (${required})`);
+            }
+        } else {
+            lines.push('  (none)');
+        }
+
+        lines.push('');
+        lines.push(`Return Type: pplx::task<std::shared_ptr<${method.responseType || 'void'}>>`);
+
+        if (method.nestedTypes && Object.keys(method.nestedTypes).length > 0) {
+            lines.push('');
+            lines.push('Type Definitions:');
+            for (const [typeName, typeDef] of Object.entries(method.nestedTypes)) {
+                lines.push(`  ${typeName}: ${typeDef.summary || 'Type definition'}`);
+            }
+        }
+
+        lines.push('');
+        lines.push('Requirements:');
+        lines.push('1. Do NOT include any #include statements or namespace declarations');
+        lines.push('2. Assume an API client instance named "api" is already created and in scope');
+        lines.push('3. Use realistic parameter values (not "example_string" - use actual realistic values like "my-tenant-123", "user@example.com", etc.)');
+        lines.push('4. Call the method using api->${method.name}(...) and chain with .then() to handle the result');
+        lines.push('5. Use proper C++ types: utility::string_t for strings, std::make_shared for shared pointers');
+        lines.push('6. Demonstrate optional parameters with boost::optional where relevant');
+        lines.push('7. Keep example very concise (< 25 lines)');
+        lines.push('8. Use idiomatic C++ style and proper formatting');
+        lines.push('9. Do NOT add any comments or explanations in the code');
+        lines.push('10. The SDK uses cpprest (Microsoft C++ REST SDK), so use utility::string_t for strings');
+        lines.push('');
+        lines.push('Return only the C++ code, no explanations or markdown formatting.');
 
         return lines.join('\n');
     }
