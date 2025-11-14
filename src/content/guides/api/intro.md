@@ -20,6 +20,7 @@ We also now have SDKs for popular languages:
 - [fastcomments-php-sso](./guide-sdk-php-sso.html)
 - [fastcomments-python](./guide-sdk-python.html)
 - [fastcomments-rust](./guide-sdk-rust.html)
+- [fastcomments-swift](./guide-sdk-swift.html)
 
 ### Authentication
 

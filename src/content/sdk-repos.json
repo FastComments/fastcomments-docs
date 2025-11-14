@@ -127,6 +127,22 @@
         "specPath": "openapi.json"
       },
       "description": "Official Rust SDK for the FastComments API"
+    },
+    {
+      "id": "sdk-swift",
+      "name": "Swift SDK",
+      "pageHeader": "FastComments Swift SDK",
+      "repo": "https://github.com/FastComments/fastcomments-swift",
+      "branch": "main",
+      "language": "swift",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "client/docs/",
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": ["DefaultAPI", "PublicAPI"]
+      },
+      "description": "Official Swift SDK for the FastComments API"
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",

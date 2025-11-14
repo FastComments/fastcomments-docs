@@ -433,6 +433,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 return this.getGoTypeFilePath(typeName);
             case 'cpp':
                 return `client/include/FastCommentsClient/model/${typeName}.h`;
+            case 'swift':
+                return `client/FastCommentsSwift/Models/${typeName}.swift`;
             default:
                 return null;
         }
@@ -658,6 +660,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
         if (sdkId.includes('cpp') || sdkId.includes('c++')) {
             return 'cpp';
+        }
+        if (sdkId.includes('swift')) {
+            return 'swift';
         }
 
         return '';
