@@ -435,6 +435,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 return `client/include/FastCommentsClient/model/${typeName}.h`;
             case 'swift':
                 return `client/FastCommentsSwift/Models/${typeName}.swift`;
+            case 'ruby':
+                return this.getRubyTypeFilePath(typeName);
             default:
                 return null;
         }
@@ -554,6 +556,22 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     }
 
     /**
+     * Get Ruby type file path by converting PascalCase to snake_case
+     * @param {string} typeName - Type name (e.g., "GetCommentsPublic200Response")
+     * @returns {string|null} - File path (e.g., "client/lib/fastcomments-client/models/get_comments_public200_response.rb")
+     */
+    getRubyTypeFilePath(typeName) {
+        // Convert PascalCase to snake_case
+        // GetCommentsPublic200Response -> get_comments_public200_response
+        const snakeCase = typeName
+            .replace(/([A-Z])/g, '_$1')
+            .toLowerCase()
+            .replace(/^_/, '');
+
+        return `client/lib/fastcomments-client/models/${snakeCase}.rb`;
+    }
+
+    /**
      * Generate GitHub URL for a type definition
      * @param {string} typeName - Actual type name extracted from markdown
      * @returns {string} - GitHub URL
@@ -663,6 +681,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
         if (sdkId.includes('swift')) {
             return 'swift';
+        }
+        if (sdkId.includes('ruby')) {
+            return 'ruby';
         }
 
         return '';

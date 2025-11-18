@@ -19,6 +19,7 @@ We also now have SDKs for popular languages:
 - [fastcomments-php](guide-sdk-php.html)
 - [fastcomments-php-sso](./guide-sdk-php-sso.html)
 - [fastcomments-python](./guide-sdk-python.html)
+- [fastcomments-ruby](./guide-sdk-ruby.html)
 - [fastcomments-rust](./guide-sdk-rust.html)
 - [fastcomments-swift](./guide-sdk-swift.html)
 

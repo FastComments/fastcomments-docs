@@ -110,6 +110,22 @@
       "description": "Official Python SDK for the FastComments API"
     },
     {
+      "id": "sdk-ruby",
+      "name": "Ruby SDK",
+      "pageHeader": "FastComments Ruby SDK",
+      "repo": "https://github.com/FastComments/fastcomments-ruby",
+      "branch": "master",
+      "language": "ruby",
+      "docGenerators": ["readme", "openapi"],
+      "openApiConfig": {
+        "specPath": "openapi.json",
+        "generatedDocsPath": "client/docs/",
+        "docFilePattern": "{ApiClass}.md",
+        "apiClasses": ["DefaultApi", "PublicApi"]
+      },
+      "description": "Official Ruby SDK for the FastComments API"
+    },
+    {
       "id": "sdk-rust",
       "name": "Rust SDK",
       "pageHeader": "FastComments Rust SDK",
