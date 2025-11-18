@@ -1,6 +1,6 @@
 {
   "name": "User Profiles",
-  "icon": "profile.svg",
+  "icon": "users.png",
   "itemsOrdered": [
     {
       "name": "Profile Basics",
