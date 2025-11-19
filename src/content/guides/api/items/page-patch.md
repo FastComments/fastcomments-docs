@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'Page'; route = 'PATCH /api/v1/pages/:id'; creditsCost = 1; api-resource-header-end]
 
-This route provides the ability to update a single `Page`.
+This route provides the ability to update a single `Page`. The corresponding comments will be updated.
 
 [inline-code-attrs-start title = 'Page Update cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
