@@ -46,6 +46,10 @@ class SDKGuideGenerator {
                     const CppAIGenerator = require('./sdk-doc-generators/cpp-ai-generator');
                     generators.push(new CppAIGenerator(sdk, repoPath));
                     break;
+                case 'nim-ai':
+                    const NimAIGenerator = require('./sdk-doc-generators/nim-ai-generator');
+                    generators.push(new NimAIGenerator(sdk, repoPath));
+                    break;
                 default:
                     console.warn(`Unknown generator type: ${generatorType}`);
             }

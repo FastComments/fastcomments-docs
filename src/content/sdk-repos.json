@@ -70,6 +70,25 @@
       "description": "Official Java SDK for the FastComments API"
     },
     {
+      "id": "sdk-nim",
+      "name": "Nim SDK",
+      "pageHeader": "FastComments Nim SDK",
+      "repo": "https://github.com/FastComments/fastcomments-nim",
+      "branch": "master",
+      "language": "nim",
+      "docGenerators": ["readme", "nim-ai"],
+      "nimAiConfig": {
+        "apiFiles": [
+          "client/fastcomments/apis/api_default.nim",
+          "client/fastcomments/apis/api_public.nim"
+        ],
+        "modelsPath": "client/fastcomments/models/",
+        "cachePath": ".ai-cache/",
+        "specPath": "openapi.json"
+      },
+      "description": "Official Nim SDK for the FastComments API"
+    },
+    {
       "id": "sdk-php",
       "name": "PHP SDK",
       "pageHeader": "FastComments PHP SDK",

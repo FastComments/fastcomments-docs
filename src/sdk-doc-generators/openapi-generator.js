@@ -437,6 +437,8 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
                 return `client/FastCommentsSwift/Models/${typeName}.swift`;
             case 'ruby':
                 return this.getRubyTypeFilePath(typeName);
+            case 'nim':
+                return this.getNimTypeFilePath(typeName);
             default:
                 return null;
         }
@@ -572,6 +574,23 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
     }
 
     /**
+     * Get Nim type file path by converting PascalCase to snake_case with model_ prefix
+     * @param {string} typeName - Type name (e.g., "GetCommentsPublic_200_response")
+     * @returns {string|null} - File path (e.g., "client/fastcomments/models/model_get_comments_public200response.nim")
+     */
+    getNimTypeFilePath(typeName) {
+        // Convert PascalCase to snake_case with model_ prefix and remove underscores from the type name
+        // GetCommentsPublic_200_response -> model_get_comments_public200response
+        const snakeCase = 'model_' + typeName
+            .replace(/_/g, '')
+            .replace(/([A-Z])/g, '_$1')
+            .toLowerCase()
+            .replace(/^_/, '');
+
+        return `client/fastcomments/models/${snakeCase}.nim`;
+    }
+
+    /**
      * Generate GitHub URL for a type definition
      * @param {string} typeName - Actual type name extracted from markdown
      * @returns {string} - GitHub URL
@@ -684,6 +703,9 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
         if (sdkId.includes('ruby')) {
             return 'ruby';
+        }
+        if (sdkId.includes('nim')) {
+            return 'nim';
         }
 
         return '';

@@ -87,6 +87,9 @@ class OpenAIClient {
         if (this.language === 'cpp') {
             return 'You are an expert C++ developer generating realistic, idiomatic API usage examples for the FastComments API.';
         }
+        if (this.language === 'nim') {
+            return 'You are an expert Nim developer generating realistic, idiomatic API usage examples for the FastComments API.';
+        }
         return 'You are an expert TypeScript developer generating realistic API usage examples for the FastComments API.';
     }
 
@@ -101,6 +104,9 @@ class OpenAIClient {
         }
         if (this.language === 'cpp') {
             return this.buildCppPrompt(method);
+        }
+        if (this.language === 'nim') {
+            return this.buildNimPrompt(method);
         }
         return this.buildTypeScriptPrompt(method);
     }
@@ -258,6 +264,63 @@ class OpenAIClient {
         lines.push('10. The SDK uses cpprest (Microsoft C++ REST SDK), so use utility::string_t for strings');
         lines.push('');
         lines.push('Return only the C++ code, no explanations or markdown formatting.');
+
+        return lines.join('\n');
+    }
+
+    /**
+     * Build Nim-specific prompt
+     * @param {Object} method - Method metadata
+     * @returns {string} - Prompt text
+     */
+    buildNimPrompt(method) {
+        const lines = [];
+
+        lines.push(`Create an idiomatic Nim code example that calls the function "${method.name}" from the FastComments Nim SDK.`);
+        lines.push('');
+        lines.push('The function returns:');
+        lines.push(`(Option[${method.responseType || 'void'}], Response)`);
+        lines.push('');
+
+        lines.push('Function Parameters:');
+        if (method.parameters && Object.keys(method.parameters).length > 0) {
+            for (const [name, info] of Object.entries(method.parameters)) {
+                // Skip httpClient parameter as it's just the client instance
+                if (name === 'httpClient') continue;
+                const required = info.required ? 'required' : 'optional';
+                lines.push(`  - ${name}: ${info.type} (${required})`);
+            }
+        } else {
+            lines.push('  (none)');
+        }
+
+        lines.push('');
+        lines.push(`Return Type: (Option[${method.responseType || 'void'}], Response)`);
+
+        if (method.nestedTypes && Object.keys(method.nestedTypes).length > 0) {
+            lines.push('');
+            lines.push('Type Definitions:');
+            for (const [typeName, typeDef] of Object.entries(method.nestedTypes)) {
+                lines.push(`  ${typeName}: ${typeDef.summary || 'Type definition'}`);
+            }
+        }
+
+        lines.push('');
+        lines.push('Requirements:');
+        lines.push('1. Do NOT include any import statements');
+        lines.push('2. Assume an HttpClient instance named "client" is already created and in scope');
+        lines.push('3. CRITICAL: You MUST use named arguments for ALL function parameters (e.g., client.getCommentsPublic(tenantId = "...", urlId = "...", page = 0, ...))');
+        lines.push('4. Use realistic parameter values (not "example_string" - use actual realistic values like "my-tenant-123", "news/article-title", etc.)');
+        lines.push('5. Call the function and destructure the result tuple like: let (response, httpResponse) = client.${method.name}(...)');
+        lines.push('6. Check if response.isSome and access the value with response.get()');
+        lines.push('7. Use proper Nim types: string, int, bool, seq[string] for arrays');
+        lines.push('8. For optional/default parameters, pass appropriate default values (0 for int, "" for string, false for bool, @[] for seq, etc.)');
+        lines.push('9. Keep example very concise (< 30 lines)');
+        lines.push('10. Use idiomatic Nim style (camelCase for variables, proper indentation with 2 spaces)');
+        lines.push('11. Do NOT add any comments or explanations in the code');
+        lines.push('12. IMPORTANT: ALWAYS use named arguments like paramName = value for every parameter');
+        lines.push('');
+        lines.push('Return only the Nim code, no explanations or markdown formatting.');
 
         return lines.join('\n');
     }

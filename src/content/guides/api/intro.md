@@ -16,6 +16,7 @@ We also now have SDKs for popular languages:
 - [fastcomments-go](./guide-sdk-go.html)
 - [fastcomments-java](./guide-sdk-java.html)
 - [fastcomments-sdk-js](./guide-sdk-javascript.html)
+- [fastcomments-nim](./guide-sdk-nim.html)
 - [fastcomments-php](guide-sdk-php.html)
 - [fastcomments-php-sso](./guide-sdk-php-sso.html)
 - [fastcomments-python](./guide-sdk-python.html)
