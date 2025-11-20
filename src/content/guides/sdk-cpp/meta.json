@@ -21,6 +21,12 @@
       "type": "readme"
     },
     {
+      "name": "Making API Calls: Synchronous vs Asynchronous",
+      "file": "making-api-calls-synchronous-vs-asynchronous-readme-generated.md",
+      "subCat": "API Reference",
+      "type": "readme"
+    },
+    {
       "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Documentation",
