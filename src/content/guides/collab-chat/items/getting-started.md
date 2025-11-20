@@ -40,14 +40,14 @@ Here's a minimal example:
     <!-- Initialize Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
-            tenantId: 'your-tenant-id'
+            tenantId: 'demo'
         });
     </script>
 </body>
 </html>
 [inline-code-end]
 
-Replace `'your-tenant-id'` with your actual FastComments Tenant ID, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account).
+Replace `'demo'` with your actual FastComments Tenant ID, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account).
 
 ### How It Works
 

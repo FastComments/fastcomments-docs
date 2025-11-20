@@ -11,7 +11,7 @@ Your FastComments Tenant ID is required. You can find this in your [FastComments
 [inline-code-attrs-start title = "Configuration Example"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
-    tenantId: 'your-tenant-id'
+    tenantId: 'demo'
 });
 [inline-code-end]
 
