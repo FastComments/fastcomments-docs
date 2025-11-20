@@ -13,6 +13,11 @@
       "subCat": "Getting Started"
     },
     {
+      "name": "Adding Live Commenting to Online Books",
+      "file": "online-books.md",
+      "subCat": "Getting Started"
+    },
+    {
       "name": "Configuration Options",
       "file": "configuration-options.md",
       "subCat": "Configuration"
