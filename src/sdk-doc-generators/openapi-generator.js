@@ -316,16 +316,32 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
             // Clean up HTML entities and extract the main type name
             let fullType = returnTypeMatch[1].trim();
 
+            // Decode HTML entities (Ruby's OpenAPI generator encodes < and > as &lt; and &gt;)
+            fullType = this.decodeHtmlEntities(fullType);
+
             // Handle generic types first before namespace stripping:
-            // Java: List<Type> or Optional<Type> (HTML entities: &lt; &gt;)
+            // Java: List<Type> or Optional<Type>
+            // Ruby: Array<Type> or Hash<K, V>
             // Python: List[Type] or Optional[Type]
             // PHP: \Namespace\Type[] (array syntax with namespace)
-            const javaGenericMatch = fullType.match(/^(?:List|Optional|Set)&lt;([^&]+)&gt;$/);
+            // Use .+? for non-greedy matching to get content between < and last >
+            const genericMatch = fullType.match(/^(?:List|Optional|Set|Array|Hash)<(.+)>$/);
             const pythonGenericMatch = fullType.match(/^(?:List|Optional|Set)\[([^\]]+)\]$/);
             const phpArrayMatch = fullType.match(/^(.+?)\[\]$/);
 
-            if (javaGenericMatch) {
-                returnType = javaGenericMatch[1];
+            if (genericMatch) {
+                // For simple generics like Array<Type>, extract the inner type
+                // For complex generics like Hash<K, V> or nested types, keep the full inner content
+                const innerContent = genericMatch[1];
+
+                // If it's a simple type (no comma or nested brackets), extract it
+                // Otherwise, keep it as-is for complex types
+                if (!innerContent.includes(',') && !innerContent.includes('<')) {
+                    returnType = innerContent;
+                } else {
+                    // For complex types, just use the whole type as-is
+                    returnType = fullType;
+                }
             } else if (pythonGenericMatch) {
                 returnType = pythonGenericMatch[1];
             } else if (phpArrayMatch) {
@@ -341,6 +357,24 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         }
 
         return { codeExample, returnType };
+    }
+
+    /**
+     * Decode HTML entities in a string
+     * @param {string} str - String with HTML entities
+     * @returns {string} - Decoded string
+     */
+    decodeHtmlEntities(str) {
+        const entities = {
+            '&lt;': '<',
+            '&gt;': '>',
+            '&amp;': '&',
+            '&quot;': '"',
+            '&#39;': "'",
+            '&nbsp;': ' '
+        };
+
+        return str.replace(/&[#\w]+;/g, (match) => entities[match] || match);
     }
 
     /**
