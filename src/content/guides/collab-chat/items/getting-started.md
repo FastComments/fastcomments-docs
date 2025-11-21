@@ -1,7 +1,3 @@
-### What is Collab Chat?
-
-FastComments Collab Chat allows your users to select any text on your webpage and start a threaded discussion about it. When users highlight text, they can create annotations that are visible to all visitors, enabling collaborative conversations directly within your content.
-
 ### Quick Start
 
 Getting started with Collab Chat is simple. You need the FastComments Collab Chat script, an HTML element containing the text you want to annotate, and a configuration object with your Tenant ID.
