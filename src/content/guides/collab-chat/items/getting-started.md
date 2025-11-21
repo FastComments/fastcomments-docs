@@ -47,7 +47,7 @@ Here's a minimal example:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
 
 ### How It Works
 

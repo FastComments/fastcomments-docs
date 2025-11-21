@@ -179,28 +179,6 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 }
 [inline-code-end]
 
-### Database Schema
-
-For reference, text conversations are stored with this schema.
-
-`_id` (string) is the unique conversation identifier.
-
-`tenantId` (string) is your customer ID.
-
-`urlId` (string) is the base page identifier.
-
-`urlIdWithRange` (string) is the complete identifier including the text range.
-
-`pageTitle` (string) is the page title.
-
-`selector` (string) is the DOM path to the containing element.
-
-`range` (string) is the serialized text range.
-
-`createdFromCommentId` (string) is the initiating comment ID.
-
-`createdAt` (date) is when the conversation was created.
-
 ### Rate Limiting
 
 These endpoints are subject to standard FastComments API rate limiting. The rate limit middleware applies per-tenant to prevent abuse while allowing normal usage patterns.
