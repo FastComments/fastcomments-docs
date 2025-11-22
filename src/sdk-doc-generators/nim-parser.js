@@ -133,11 +133,13 @@ class NimParser {
 
         // Convert PascalCase to snake_case with model_ prefix
         // GetCommentsPublic_200_response -> model_get_comments_public200response.nim
+        // Handles acronyms properly: AddSSOUserAPIResponse -> add_sso_user_api_response
         const snakeCase = 'model_' + typeName
             .replace(/_/g, '')
-            .replace(/([A-Z])/g, '_$1')
+            .replace(/([a-z0-9])([A-Z])/g, '$1_$2')  // lowercase/digit followed by uppercase
+            .replace(/([A-Z])([A-Z][a-z])/g, '$1_$2')  // uppercase followed by uppercase+lowercase (handles acronyms)
             .toLowerCase()
-            .replace(/^_/, '');
+            .replace(/url_id/g, 'urlid');  // Special case: URLId becomes urlid not url_id
 
         const typeFilePath = path.join(this.modelsPath, `${snakeCase}.nim`);
 
