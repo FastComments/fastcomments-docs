@@ -222,16 +222,14 @@ class NimAIGenerator extends BaseDocGenerator {
 
     /**
      * Generate GitHub URL for a type definition
-     * @param {string} fileName - File name relative to modelsPath
+     * @param {string} fileName - File path relative to repo root
      * @returns {string} - GitHub URL
      */
     generateTypeGitHubUrl(fileName) {
-        const config = this.sdk.nimAiConfig;
         const baseUrl = this.sdk.repo.replace(/\.git$/, '');
         const branch = this.sdk.branch;
-        const modelsPath = config.modelsPath;
 
-        return `${baseUrl}/blob/${branch}/${modelsPath}${fileName}`;
+        return `${baseUrl}/blob/${branch}/${fileName}`;
     }
 
     /**
