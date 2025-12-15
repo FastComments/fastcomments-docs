@@ -24,7 +24,8 @@
 		"build-sdks-content": "node src/sdk-guide-generator.js",
 		"serve": "serve src/static/generated",
 		"start-search-engine": "node src/server-search-engine.js",
-		"watch": "node src/watch"
+		"watch": "node src/watch",
+		"check-translations": "node src/check-translations.js"
 	},
 	"devDependencies": {
 		"serve": "^11.2.0"

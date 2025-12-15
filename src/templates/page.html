@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{#if lang}}{{lang}}{{else}}en{{/if}}">
 <head>
     <title>{{title}} | FastComments Docs</title>
     <meta property="og:title" content="{{title}} | FastComments Documentation"/>
@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
+    {{#each alternateLocales}}
+    <link rel="alternate" hreflang="{{hreflang}}" href="/{{url}}">
+    {{/each}}
+    {{#if defaultUrl}}
+    <link rel="alternate" hreflang="x-default" href="/{{defaultUrl}}">
+    {{/if}}
     <script src="js/get-session-info.js"></script>
 </head>
 <body>
@@ -19,6 +25,15 @@
         <a href="/">
             <div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>
             FastComments.com</a>
+        {{#if availableLocales}}
+        <div class="lang-selector">
+            <select onchange="window.location.href=this.value">
+                {{#each availableLocales}}
+                <option value="/{{url}}" {{#if current}}selected{{/if}}>{{nativeName}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/if}}
     </div>
 </div>
 <div class="content">

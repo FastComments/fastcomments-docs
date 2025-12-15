@@ -14,6 +14,11 @@
     </div>
 
     <div class="right-of-sidebar">
+        {{#if isFallback}}
+        <div class="translation-notice">
+            This content is not yet available in your language. Showing English version.
+        </div>
+        {{/if}}
         {{#if pageHeader}}
         <h1>{{pageHeader}}</h1>
         {{/if}}
