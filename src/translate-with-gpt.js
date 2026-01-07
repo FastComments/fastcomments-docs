@@ -29,17 +29,67 @@ const {
     defaultLocale
 } = require('./check-translations');
 
-const {
-    loadSnapshot,
-    saveSnapshot,
-    hashContent,
-    needsTranslation,
-    markTranslated
-} = require('./translation-snapshot');
+const { hashContent } = require('./translation-snapshot');
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
-const CACHE_DIR = path.join(__dirname, '.translation-cache');
+const CACHE_FILE = path.join(__dirname, 'translation-cache.json');
+
+/**
+ * Load translation cache from disk
+ * @returns {Object} - Cache object { "guideId/locale/filename": "md5hash", ... }
+ */
+function loadCache() {
+    if (!fs.existsSync(CACHE_FILE)) {
+        return {};
+    }
+    try {
+        return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+    } catch (e) {
+        console.warn(`Failed to load cache: ${e.message}`);
+        return {};
+    }
+}
+
+/**
+ * Save translation cache to disk
+ * @param {Object} cache - Cache object
+ */
+function saveCache(cache) {
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
+}
+
+/**
+ * Generate cache key from path components
+ * @param {string} guideId - Guide ID
+ * @param {string} locale - Target locale
+ * @param {string} filename - Filename
+ * @returns {string} - Cache key
+ */
+function getCacheKey(guideId, locale, filename) {
+    return `${guideId}/${locale}/${filename}`;
+}
+
+/**
+ * Check if translation is cached with matching source hash
+ * @param {Object} cache - Cache object
+ * @param {string} key - Cache key
+ * @param {string} sourceHash - MD5 hash of source content
+ * @returns {boolean} - True if cached and hash matches
+ */
+function isCached(cache, key, sourceHash) {
+    return cache[key] === sourceHash;
+}
+
+/**
+ * Update cache entry
+ * @param {Object} cache - Cache object
+ * @param {string} key - Cache key
+ * @param {string} sourceHash - MD5 hash of source content
+ */
+function updateCache(cache, key, sourceHash) {
+    cache[key] = sourceHash;
+}
 
 /**
  * Translation client using OpenAI API
@@ -48,59 +98,6 @@ class TranslationClient {
     constructor() {
         this.apiKey = OPENAI_API_KEY;
         this.model = OPENAI_MODEL;
-
-        // Create cache directory if it doesn't exist
-        if (!fs.existsSync(CACHE_DIR)) {
-            fs.mkdirSync(CACHE_DIR, { recursive: true });
-        }
-    }
-
-    /**
-     * Generate cache key from content and locale
-     * @param {string} content - Source content
-     * @param {string} locale - Target locale
-     * @returns {string} - SHA256 hash
-     */
-    generateCacheKey(content, locale) {
-        const data = { content, locale, model: this.model };
-        return crypto.createHash('sha256')
-            .update(JSON.stringify(data))
-            .digest('hex');
-    }
-
-    /**
-     * Get cached translation if available
-     * @param {string} cacheKey - Cache key
-     * @returns {string|null} - Cached translation or null
-     */
-    getCachedTranslation(cacheKey) {
-        const cacheFile = path.join(CACHE_DIR, `${cacheKey}.json`);
-
-        if (fs.existsSync(cacheFile)) {
-            try {
-                const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
-                return cached.translation;
-            } catch (e) {
-                console.warn(`Failed to read cache: ${e.message}`);
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Save translation to cache
-     * @param {string} cacheKey - Cache key
-     * @param {Object} data - Data to cache
-     */
-    saveToCache(cacheKey, data) {
-        const cacheFile = path.join(CACHE_DIR, `${cacheKey}.json`);
-
-        try {
-            fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf8');
-        } catch (e) {
-            console.warn(`Failed to write cache: ${e.message}`);
-        }
     }
 
     /**
@@ -166,14 +163,6 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
      * @returns {Promise<string>} - Translated content
      */
     async translate(content, locale, filename) {
-        // Check cache first
-        const cacheKey = this.generateCacheKey(content, locale);
-        const cached = this.getCachedTranslation(cacheKey);
-        if (cached) {
-            console.log(`  [cache] ${filename}`);
-            return cached;
-        }
-
         const prompt = this.buildPrompt(content, locale);
         const systemMessage = this.getSystemMessage(locale);
 
@@ -201,17 +190,6 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
 
             const data = await response.json();
             const translation = data.choices?.[0]?.message?.content?.trim() || '';
-
-            // Save to cache
-            this.saveToCache(cacheKey, {
-                locale,
-                filename,
-                generatedAt: new Date().toISOString(),
-                translation,
-                model: this.model,
-                promptTokens: data.usage?.prompt_tokens,
-                completionTokens: data.usage?.completion_tokens
-            });
 
             console.log(`  [translated] ${filename} (${data.usage?.total_tokens || 0} tokens)`);
 
@@ -251,7 +229,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
  * @returns {Promise<Object>} - Results summary
  */
 async function processTranslations(tasks, client, options = {}) {
-    const { concurrency = 5, dryRun = false, snapshot = {} } = options;
+    const { concurrency = 5, dryRun = false, cache = {} } = options;
     const results = { success: 0, failed: 0, skipped: 0, validationErrors: [] };
     let currentIndex = 0;
 
@@ -270,6 +248,7 @@ async function processTranslations(tasks, client, options = {}) {
             if (!task) break;
 
             const { guideId, locale, filename, sourceHash } = task;
+            const cacheKey = getCacheKey(guideId, locale, filename);
 
             try {
                 const source = getSourceContent(guideId, filename);
@@ -301,8 +280,9 @@ async function processTranslations(tasks, client, options = {}) {
                 // Save translation
                 saveTranslation(guideId, locale, filename, translation);
 
-                // Update snapshot to mark this translation as complete
-                markTranslated(snapshot, guideId, filename, locale, sourceHash);
+                // Update cache with source hash and save immediately
+                updateCache(cache, cacheKey, sourceHash);
+                saveCache(cache);
 
                 results.success++;
             } catch (error) {
@@ -334,12 +314,12 @@ function hasLocaleStructure(guideId) {
 }
 
 /**
- * Build list of translation tasks using snapshot to detect changes
- * @param {Object} snapshot - Current snapshot
+ * Build list of translation tasks using cache to detect changes
+ * @param {Object} cache - Current cache
  * @param {Object} options - Filter options
- * @returns {Object} - { tasks: Array, snapshot: Object }
+ * @returns {Array} - Array of tasks
  */
-function buildTaskList(snapshot, options = {}) {
+function buildTaskList(cache, options = {}) {
     const { filterLocale, filterGuide, force = false } = options;
     const tasks = [];
     const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
@@ -359,8 +339,10 @@ function buildTaskList(snapshot, options = {}) {
             for (const locale of nonDefaultLocales) {
                 if (filterLocale && locale !== filterLocale) continue;
 
-                // Check if translation is needed using snapshot
-                if (force || needsTranslation(snapshot, guideId, filename, locale, sourceHash)) {
+                const cacheKey = getCacheKey(guideId, locale, filename);
+
+                // Check if translation is needed using cache
+                if (force || !isCached(cache, cacheKey, sourceHash)) {
                     tasks.push({ guideId, locale, filename, sourceHash });
                 }
             }
@@ -441,19 +423,19 @@ async function main() {
     if (options.locale) console.log(`Filter locale: ${options.locale}`);
     if (options.guide) console.log(`Filter guide: ${options.guide}`);
     if (options.dryRun) console.log(`Mode: DRY RUN`);
-    if (options.force) console.log(`Mode: FORCE (ignoring snapshot)`);
+    if (options.force) console.log(`Mode: FORCE (ignoring cache)`);
     console.log('');
 
-    // Load snapshot
-    console.log('Loading translation snapshot...');
-    const snapshot = loadSnapshot();
-    const snapshotEntries = Object.keys(snapshot).length;
-    console.log(`Snapshot has ${snapshotEntries} entries.`);
+    // Load cache
+    console.log('Loading translation cache...');
+    const cache = loadCache();
+    const cacheEntries = Object.keys(cache).length;
+    console.log(`Cache has ${cacheEntries} entries.`);
     console.log('');
 
-    // Build task list using snapshot
+    // Build task list using cache
     console.log('Scanning for translations needed...');
-    const tasks = buildTaskList(snapshot, {
+    const tasks = buildTaskList(cache, {
         filterLocale: options.locale,
         filterGuide: options.guide,
         force: options.force
@@ -461,7 +443,7 @@ async function main() {
 
     if (tasks.length === 0) {
         console.log('No translations needed matching the criteria.');
-        console.log('(All translations are up-to-date based on snapshot)');
+        console.log('(All translations are up-to-date based on cache)');
         process.exit(0);
     }
 
@@ -488,15 +470,8 @@ async function main() {
     const results = await processTranslations(tasks, client, {
         concurrency: options.concurrency,
         dryRun: options.dryRun,
-        snapshot
+        cache
     });
-
-    // Save updated snapshot (unless dry-run)
-    if (!options.dryRun && results.success > 0) {
-        console.log('');
-        console.log('Saving updated snapshot...');
-        saveSnapshot(snapshot);
-    }
 
     // Print summary
     console.log('');
