@@ -1,0 +1,29 @@
+FastComments unterstützt eine Reihe von Sprachen in verschiedenen Gebietsschemas.
+
+- `bg_bg`: Bulgarisch (Bulgarien)
+- `zh_cn`: Chinesisch (vereinfacht)
+- `zh_tw`: Chinesisch (traditionell)
+- `hr_hr`: Kroatisch (Kroatien)
+- `da_dk`: Dänisch
+- `nl_nl`: Niederländisch
+- `en_us`: Englisch (Nordamerika)
+- `fr_fr`: Französisch (Frankreich)
+- `de_de`: Deutsch (Deutschland)
+- `el_cy`: Griechisch (Zypern)
+- `el_gr`: Griechisch (Griechenland)
+- `he`: Hebräisch
+- `it_it`: Italienisch (Italien)
+- `ja_jp`: Japanisch (Japan)
+- `ko_kr`: Koreanisch (Korea)
+- `pl_pl`: Polnisch (Polen)
+- `pt_br`: Portugiesisch (Brasilien)
+- `ru_ru`: Russisch (Russland)
+- `ru_ua`: Russisch (Ukraine)
+- `sr_ba`: Serbisch (Bosnien und Herzegowina)
+- `sr_latn_rs`: Serbisch (Lateinisch, Serbien)
+- `sr_me`: Serbisch (Montenegro)
+- `sr_rs`: Serbisch (Serbien)
+- `sl_sl`: Slowenisch (Slowenien)
+- `es_es`: Spanisch (Spanien)
+- `uk_ua`: Ukrainisch (Ukraine)
+- `tr_tr`: Türkisch (Türkei)

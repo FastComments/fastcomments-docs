@@ -1,0 +1,29 @@
+FastComments understøtter en række sprog på tværs af forskellige lokaliteter.
+
+- `bg_bg`: Bulgarsk (Bulgarien)
+- `zh_cn`: Kinesisk (forenklet)
+- `zh_tw`: Kinesisk (traditionelt)
+- `hr_hr`: Kroatisk (Kroatien)
+- `da_dk`: Dansk
+- `nl_nl`: Hollandsk
+- `en_us`: Engelsk (Nordamerika)
+- `fr_fr`: Fransk (Frankrig)
+- `de_de`: Tysk (Tyskland)
+- `el_cy`: Græsk (Cypern)
+- `el_gr`: Græsk (Grækenland)
+- `he`: Hebraisk
+- `it_it`: Italiensk (Italien)
+- `ja_jp`: Japansk (Japan)
+- `ko_kr`: Koreansk (Korea)
+- `pl_pl`: Polsk (Polen)
+- `pt_br`: Portugisisk (Brasilien)
+- `ru_ru`: Russisk (Rusland)
+- `ru_ua`: Russisk (Ukraine)
+- `sr_ba`: Serbisk (Bosnien-Hercegovina)
+- `sr_latn_rs`: Serbisk (latinsk, Serbien)
+- `sr_me`: Serbisk (Montenegro)
+- `sr_rs`: Serbisk (Serbien)
+- `sl_sl`: Slovensk (Slovenien)
+- `es_es`: Spansk (Spanien)
+- `uk_ua`: Ukrainsk (Ukraine)
+- `tr_tr`: Tyrkisk (Tyrkiet)

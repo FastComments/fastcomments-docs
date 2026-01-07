@@ -1,0 +1,29 @@
+FastComments podpira številne jezike v različnih krajevnih nastavitvah.
+
+- `bg_bg`: Bolgarščina (Bolgarija)
+- `zh_cn`: Kitajščina (poenostavljena)
+- `zh_tw`: Kitajščina (tradicionalna)
+- `hr_hr`: Hrvaščina (Hrvaška)
+- `da_dk`: Danščina
+- `nl_nl`: Nizozemščina
+- `en_us`: Angleščina (Severna Amerika)
+- `fr_fr`: Francoščina (Francija)
+- `de_de`: Nemščina (Nemčija)
+- `el_cy`: Grščina (Ciper)
+- `el_gr`: Grščina (Grčija)
+- `he`: Hebrejščina
+- `it_it`: Italijanščina (Italija)
+- `ja_jp`: Japonščina (Japonska)
+- `ko_kr`: Korejščina (Koreja)
+- `pl_pl`: Poljščina (Poljska)
+- `pt_br`: Portugalščina (Brazilija)
+- `ru_ru`: Ruščina (Rusija)
+- `ru_ua`: Ruščina (Ukrajina)
+- `sr_ba`: Srbščina (Bosna in Hercegovina)
+- `sr_latn_rs`: Srbščina (latinica, Srbija)
+- `sr_me`: Srbščina (Črna gora)
+- `sr_rs`: Srbščina (Srbija)
+- `sl_sl`: Slovenščina (Slovenija)
+- `es_es`: Španščina (Španija)
+- `uk_ua`: Ukrajinščina (Ukrajina)
+- `tr_tr`: Turščina (Turčija)

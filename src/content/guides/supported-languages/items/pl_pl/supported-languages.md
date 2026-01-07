@@ -1,0 +1,29 @@
+FastComments obsługuje wiele języków w różnych ustawieniach regionalnych.
+
+- `bg_bg`: Bułgarski (Bułgaria)
+- `zh_cn`: Chiński (uproszczony)
+- `zh_tw`: Chiński (tradycyjny)
+- `hr_hr`: Chorwacki (Chorwacja)
+- `da_dk`: Duński
+- `nl_nl`: Holenderski
+- `en_us`: Angielski (Ameryka Północna)
+- `fr_fr`: Francuski (Francja)
+- `de_de`: Niemiecki (Niemcy)
+- `el_cy`: Grecki (Cypr)
+- `el_gr`: Grecki (Grecja)
+- `he`: Hebrajski
+- `it_it`: Włoski (Włochy)
+- `ja_jp`: Japoński (Japonia)
+- `ko_kr`: Koreański (Korea)
+- `pl_pl`: Polski (Polska)
+- `pt_br`: Portugalski (Brazylia)
+- `ru_ru`: Rosyjski (Rosja)
+- `ru_ua`: Rosyjski (Ukraina)
+- `sr_ba`: Serbski (Bośnia i Hercegowina)
+- `sr_latn_rs`: Serbski (łaciński, Serbia)
+- `sr_me`: Serbski (Czarnogóra)
+- `sr_rs`: Serbski (Serbia)
+- `sl_sl`: Słoweński (Słowenia)
+- `es_es`: Hiszpański (Hiszpania)
+- `uk_ua`: Ukraiński (Ukraina)
+- `tr_tr`: Turecki (Turcja)
