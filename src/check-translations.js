@@ -20,6 +20,46 @@ function countInlineCode(content) {
     return {start: startMatches, end: endMatches};
 }
 
+/**
+ * Count words in content (excluding code blocks)
+ * @param {string} content - File content
+ * @returns {number} - Word count
+ */
+function countWords(content) {
+    // Remove inline code blocks
+    let text = content.replace(/\[inline-code-start\][\s\S]*?\[inline-code-end\]/g, '');
+    // Remove code block attributes
+    text = text.replace(/\[inline-code-attrs-start[^\]]*\]/g, '');
+    // Remove api resource headers
+    text = text.replace(/\[api-resource-header-start[^\]]*api-resource-header-end\]/g, '');
+    // Remove markdown code blocks
+    text = text.replace(/```[\s\S]*?```/g, '');
+    // Remove inline code
+    text = text.replace(/`[^`]+`/g, '');
+    // Count words (split on whitespace and filter empty)
+    const words = text.split(/\s+/).filter(w => w.length > 0);
+    return words.length;
+}
+
+/**
+ * Estimate LLM tokens for content
+ * Uses approximation: ~4 characters per token for English text
+ * For translation prompts, we count both input and approximate output
+ * @param {string} content - File content
+ * @returns {Object} - {inputTokens, outputTokens, totalTokens}
+ */
+function estimateTokens(content) {
+    // Rough estimate: 1 token ≈ 4 characters
+    const inputTokens = Math.ceil(content.length / 4);
+    // Output is similar size (translated content) + some overhead
+    const outputTokens = Math.ceil(content.length / 4);
+    return {
+        inputTokens,
+        outputTokens,
+        totalTokens: inputTokens + outputTokens
+    };
+}
+
 function getGuideDirectories() {
     return fs.readdirSync(GUIDES_DIR).filter(name => {
         const guidePath = path.join(GUIDES_DIR, name);
@@ -81,6 +121,12 @@ function checkTranslations() {
     const inlineCodeErrors = [];
     let totalMissing = 0;
     let totalFiles = 0;
+    let totalWords = 0;
+    let totalInputTokens = 0;
+    let totalOutputTokens = 0;
+
+    // Cache source file stats to avoid re-reading
+    const sourceFileCache = new Map();
 
     const guides = getGuideDirectories();
     const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
@@ -96,6 +142,20 @@ function checkTranslations() {
         const defaultFiles = getDefaultLocaleFiles(guideId);
         if (defaultFiles.length === 0) continue;
 
+        // Pre-cache source file content and stats
+        for (const file of defaultFiles) {
+            const cacheKey = `${guideId}/${file}`;
+            if (!sourceFileCache.has(cacheKey)) {
+                const filePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+                sourceFileCache.set(cacheKey, {
+                    content,
+                    words: countWords(content),
+                    tokens: estimateTokens(content)
+                });
+            }
+        }
+
         for (const locale of nonDefaultLocales) {
             const localeFiles = new Set(getLocaleFiles(guideId, locale));
             const missing = defaultFiles.filter(file => !localeFiles.has(file));
@@ -104,6 +164,17 @@ function checkTranslations() {
                 const key = `${guideId} (${locale})`;
                 missingTranslations[key] = missing;
                 totalMissing += missing.length;
+
+                // Add word and token counts for missing files
+                for (const file of missing) {
+                    const cacheKey = `${guideId}/${file}`;
+                    const cached = sourceFileCache.get(cacheKey);
+                    if (cached) {
+                        totalWords += cached.words;
+                        totalInputTokens += cached.tokens.inputTokens;
+                        totalOutputTokens += cached.tokens.outputTokens;
+                    }
+                }
             }
             totalFiles += defaultFiles.length;
 
@@ -111,10 +182,12 @@ function checkTranslations() {
             for (const file of defaultFiles) {
                 if (!localeFiles.has(file)) continue;
 
-                const defaultFilePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file);
+                const cacheKey = `${guideId}/${file}`;
+                const cached = sourceFileCache.get(cacheKey);
+                const defaultContent = cached ? cached.content : fs.readFileSync(
+                    path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file), 'utf8'
+                );
                 const localeFilePath = path.join(GUIDES_DIR, guideId, 'items', locale, file);
-
-                const defaultContent = fs.readFileSync(defaultFilePath, 'utf8');
                 const localeContent = fs.readFileSync(localeFilePath, 'utf8');
 
                 const defaultCounts = countInlineCode(defaultContent);
@@ -133,7 +206,74 @@ function checkTranslations() {
         }
     }
 
-    return {missingTranslations, totalMissing, totalFiles, inlineCodeErrors};
+    return {
+        missingTranslations,
+        totalMissing,
+        totalFiles,
+        inlineCodeErrors,
+        totalWords,
+        totalInputTokens,
+        totalOutputTokens,
+        totalTokens: totalInputTokens + totalOutputTokens
+    };
+}
+
+/**
+ * Get detailed missing translation info for programmatic use
+ * @returns {Object} Object with missing translations organized by guide and locale
+ */
+function getMissingTranslations() {
+    const result = {};
+    const guides = getGuideDirectories();
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+
+    for (const guideId of guides) {
+        if (!hasLocaleStructure(guideId)) continue;
+
+        const defaultFiles = getDefaultLocaleFiles(guideId);
+        if (defaultFiles.length === 0) continue;
+
+        for (const locale of nonDefaultLocales) {
+            const localeFiles = new Set(getLocaleFiles(guideId, locale));
+            const missing = defaultFiles.filter(file => !localeFiles.has(file));
+
+            if (missing.length > 0) {
+                if (!result[guideId]) {
+                    result[guideId] = {};
+                }
+                result[guideId][locale] = missing;
+            }
+        }
+    }
+
+    return result;
+}
+
+/**
+ * Get content of a source file for translation
+ * @param {string} guideId - The guide ID
+ * @param {string} filename - The filename
+ * @returns {string} - File content
+ */
+function getSourceContent(guideId, filename) {
+    const filePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, filename);
+    return fs.readFileSync(filePath, 'utf8');
+}
+
+/**
+ * Save translated content
+ * @param {string} guideId - The guide ID
+ * @param {string} locale - Target locale
+ * @param {string} filename - The filename
+ * @param {string} content - Translated content
+ */
+function saveTranslation(guideId, locale, filename, content) {
+    const localeDir = path.join(GUIDES_DIR, guideId, 'items', locale);
+    if (!fs.existsSync(localeDir)) {
+        fs.mkdirSync(localeDir, { recursive: true });
+    }
+    const filePath = path.join(localeDir, filename);
+    fs.writeFileSync(filePath, content, 'utf8');
 }
 
 function main() {
@@ -153,7 +293,16 @@ function main() {
         console.log('---\n');
     }
 
-    const {missingTranslations, totalMissing, totalFiles, inlineCodeErrors} = checkTranslations();
+    const {
+        missingTranslations,
+        totalMissing,
+        totalFiles,
+        inlineCodeErrors,
+        totalWords,
+        totalInputTokens,
+        totalOutputTokens,
+        totalTokens
+    } = checkTranslations();
     const guides = Object.keys(missingTranslations);
     let hasErrors = needsMigration.length > 0;
 
@@ -176,6 +325,10 @@ function main() {
         console.log('---');
         console.log(`Total: ${totalMissing} missing translations across ${guides.length} guide(s)`);
         console.log(`Coverage: ${translated}/${totalFiles} files translated (${percentage}%)`);
+        console.log('');
+        console.log('Estimated translation workload:');
+        console.log(`  Words to translate: ${totalWords.toLocaleString()}`);
+        console.log(`  LLM tokens (approx): ${totalTokens.toLocaleString()} (${totalInputTokens.toLocaleString()} input + ${totalOutputTokens.toLocaleString()} output)`);
     }
 
     if (inlineCodeErrors.length > 0) {
@@ -200,4 +353,25 @@ function main() {
     process.exit(1);
 }
 
-main();
+// Export functions for programmatic use
+module.exports = {
+    getMissingTranslations,
+    getSourceContent,
+    saveTranslation,
+    checkTranslations,
+    checkGuidesNeedingMigration,
+    getGuideDirectories,
+    getDefaultLocaleFiles,
+    getLocaleFiles,
+    countInlineCode,
+    countWords,
+    estimateTokens,
+    GUIDES_DIR,
+    locales,
+    defaultLocale
+};
+
+// Run main only if called directly
+if (require.main === module) {
+    main();
+}
