@@ -14,6 +14,12 @@ const {locales, defaultLocale} = require('./locales');
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
 const verbose = process.argv.includes('--verbose');
 
+function countInlineCode(content) {
+    const startMatches = (content.match(/\[inline-code-start\]/g) || []).length;
+    const endMatches = (content.match(/\[inline-code-end\]/g) || []).length;
+    return {start: startMatches, end: endMatches};
+}
+
 function getGuideDirectories() {
     return fs.readdirSync(GUIDES_DIR).filter(name => {
         const guidePath = path.join(GUIDES_DIR, name);
@@ -46,6 +52,7 @@ function getLocaleFiles(guideId, locale) {
 
 function checkTranslations() {
     const missingTranslations = {};
+    const inlineCodeErrors = [];
     let totalMissing = 0;
     let totalFiles = 0;
 
@@ -73,40 +80,82 @@ function checkTranslations() {
                 totalMissing += missing.length;
             }
             totalFiles += defaultFiles.length;
+
+            // Check inline-code counts for existing translations
+            for (const file of defaultFiles) {
+                if (!localeFiles.has(file)) continue;
+
+                const defaultFilePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file);
+                const localeFilePath = path.join(GUIDES_DIR, guideId, 'items', locale, file);
+
+                const defaultContent = fs.readFileSync(defaultFilePath, 'utf8');
+                const localeContent = fs.readFileSync(localeFilePath, 'utf8');
+
+                const defaultCounts = countInlineCode(defaultContent);
+                const localeCounts = countInlineCode(localeContent);
+
+                if (defaultCounts.start !== localeCounts.start || defaultCounts.end !== localeCounts.end) {
+                    inlineCodeErrors.push({
+                        guide: guideId,
+                        locale,
+                        file,
+                        expected: defaultCounts,
+                        actual: localeCounts
+                    });
+                }
+            }
         }
     }
 
-    return {missingTranslations, totalMissing, totalFiles};
+    return {missingTranslations, totalMissing, totalFiles, inlineCodeErrors};
 }
 
 function main() {
     console.log('Checking for untranslated content...\n');
 
-    const {missingTranslations, totalMissing, totalFiles} = checkTranslations();
+    const {missingTranslations, totalMissing, totalFiles, inlineCodeErrors} = checkTranslations();
     const guides = Object.keys(missingTranslations);
+    let hasErrors = false;
 
-    if (guides.length === 0) {
-        console.log('All content is translated.');
+    if (guides.length > 0) {
+        hasErrors = true;
+        console.log('Missing translations:\n');
+
+        for (const guide of guides.sort()) {
+            const files = missingTranslations[guide];
+            console.log(`${guide}:`);
+            for (const file of files.sort()) {
+                console.log(`  - ${file}`);
+            }
+            console.log('');
+        }
+
+        const translated = totalFiles - totalMissing;
+        const percentage = totalFiles > 0 ? ((translated / totalFiles) * 100).toFixed(1) : 0;
+
+        console.log('---');
+        console.log(`Total: ${totalMissing} missing translations across ${guides.length} guide(s)`);
+        console.log(`Coverage: ${translated}/${totalFiles} files translated (${percentage}%)`);
+    }
+
+    if (inlineCodeErrors.length > 0) {
+        hasErrors = true;
+        console.log('\nInline-code count mismatches:\n');
+
+        for (const error of inlineCodeErrors) {
+            console.log(`${error.guide}/${error.locale}/${error.file}:`);
+            console.log(`  Expected: ${error.expected.start} start, ${error.expected.end} end`);
+            console.log(`  Actual:   ${error.actual.start} start, ${error.actual.end} end`);
+            console.log('');
+        }
+
+        console.log(`Total: ${inlineCodeErrors.length} file(s) with inline-code mismatches`);
+    }
+
+    if (!hasErrors) {
+        console.log('All content is translated and inline-code counts match.');
         process.exit(0);
     }
-
-    console.log('Missing translations:\n');
-
-    for (const guide of guides.sort()) {
-        const files = missingTranslations[guide];
-        console.log(`${guide}:`);
-        for (const file of files.sort()) {
-            console.log(`  - ${file}`);
-        }
-        console.log('');
-    }
-
-    const translated = totalFiles - totalMissing;
-    const percentage = totalFiles > 0 ? ((translated / totalFiles) * 100).toFixed(1) : 0;
-
-    console.log('---');
-    console.log(`Total: ${totalMissing} missing translations across ${guides.length} guide(s)`);
-    console.log(`Coverage: ${translated}/${totalFiles} files translated (${percentage}%)`);
 
     process.exit(1);
 }
