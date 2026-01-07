@@ -38,7 +38,7 @@ const {
 } = require('./translation-snapshot');
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5';
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
 const CACHE_DIR = path.join(__dirname, '.translation-cache');
 
 /**
@@ -134,10 +134,10 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         lines.push(`Translate the following FastComments documentation from English to ${localeName}.`);
         lines.push('');
         lines.push('CRITICAL RULES:');
-        lines.push('1. DO NOT translate anything inside [inline-code-start] and [inline-code-end] blocks');
+        lines.push('1. Retain code and logic in [inline-code-start] and [inline-code-end] blocks exactly, just translate comments.');
         lines.push('2. DO NOT translate anything inside [inline-code-attrs-start ...] tags - preserve them exactly');
         lines.push('3. DO NOT translate [api-resource-header-start ...] tags - preserve them exactly');
-        lines.push('4. DO NOT translate code blocks (```...```) or inline code (`...`)');
+        lines.push('4. DO NOT translate code blocks (```...```) or inline code (`...`) except comments.');
         lines.push('5. DO NOT translate URLs, API endpoints, variable names, or technical identifiers');
         lines.push('6. DO NOT translate property names in TypeScript/JavaScript interfaces');
         lines.push('7. PRESERVE all special tags and their attributes exactly as written');
