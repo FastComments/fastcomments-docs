@@ -2,7 +2,7 @@
 
 /**
  * Script to check for untranslated content.
- * Returns exit code 1 if there are missing translations, 0 if all content is translated.
+ * Returns exit code 1 if there are missing translations or guides needing migration, 0 if all content is translated.
  *
  * Usage: node src/check-translations.js [--verbose]
  */
@@ -36,6 +36,13 @@ function hasLocaleStructure(guideId) {
     return fs.existsSync(defaultLocalePath) && fs.statSync(defaultLocalePath).isDirectory();
 }
 
+function getFlatMarkdownFiles(guideId) {
+    const itemsPath = path.join(GUIDES_DIR, guideId, 'items');
+    if (!fs.existsSync(itemsPath)) return [];
+
+    return fs.readdirSync(itemsPath).filter(file => file.endsWith('.md'));
+}
+
 function getDefaultLocaleFiles(guideId) {
     const defaultPath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale);
     if (!fs.existsSync(defaultPath)) return [];
@@ -48,6 +55,25 @@ function getLocaleFiles(guideId, locale) {
     if (!fs.existsSync(localePath)) return [];
 
     return fs.readdirSync(localePath).filter(file => file.endsWith('.md'));
+}
+
+function checkGuidesNeedingMigration() {
+    const guides = getGuideDirectories();
+    const needsMigration = [];
+
+    for (const guideId of guides) {
+        if (!hasLocaleStructure(guideId)) {
+            const flatFiles = getFlatMarkdownFiles(guideId);
+            if (flatFiles.length > 0) {
+                needsMigration.push({
+                    guideId,
+                    fileCount: flatFiles.length
+                });
+            }
+        }
+    }
+
+    return needsMigration;
 }
 
 function checkTranslations() {
@@ -113,9 +139,23 @@ function checkTranslations() {
 function main() {
     console.log('Checking for untranslated content...\n');
 
+    // Check for guides needing migration first
+    const needsMigration = checkGuidesNeedingMigration();
+    if (needsMigration.length > 0) {
+        console.log('Guides needing locale structure migration:\n');
+        let totalMigrationFiles = 0;
+        for (const {guideId, fileCount} of needsMigration.sort((a, b) => a.guideId.localeCompare(b.guideId))) {
+            console.log(`  ${guideId}: ${fileCount} file(s)`);
+            totalMigrationFiles += fileCount;
+        }
+        console.log(`\nTotal: ${needsMigration.length} guide(s) with ${totalMigrationFiles} file(s) need migration to items/en/ structure\n`);
+        console.log('Run: node src/migrate-to-locale-structure.js\n');
+        console.log('---\n');
+    }
+
     const {missingTranslations, totalMissing, totalFiles, inlineCodeErrors} = checkTranslations();
     const guides = Object.keys(missingTranslations);
-    let hasErrors = false;
+    let hasErrors = needsMigration.length > 0;
 
     if (guides.length > 0) {
         hasErrors = true;
