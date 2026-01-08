@@ -22,18 +22,21 @@ class OpenAIClient {
     }
 
     /**
-     * Generate cache key from method signature
+     * Generate cache key from method signature and prompt
      * @param {Object} method - Method metadata
+     * @param {string} prompt - The full prompt being sent to the AI
      * @returns {string} - SHA256 hash
      */
-    generateCacheKey(method) {
+    generateCacheKey(method, prompt) {
         const data = {
             methodName: method.name,
             parameters: method.parameters,
             responseType: method.responseType,
             nestedTypes: method.nestedTypes,
             httpMethod: method.httpMethod,
-            path: method.path
+            path: method.path,
+            prompt: prompt,
+            model: this.model
         };
         return crypto.createHash('sha256')
             .update(JSON.stringify(data))
@@ -332,16 +335,17 @@ class OpenAIClient {
      * @returns {Promise<string>} - Generated code example
      */
     async generateCodeExample(method) {
-        // Check cache first
-        const cacheKey = this.generateCacheKey(method);
+        // Build prompt first so we can include it in the cache key
+        const prompt = this.buildPrompt(method);
+
+        // Check cache (includes prompt and model so changes invalidate cache)
+        const cacheKey = this.generateCacheKey(method, prompt);
         const cached = this.getCachedExample(cacheKey);
         if (cached) {
             return cached;
         }
 
         console.log(`Generating code example for ${method.name} using ${this.model}...`);
-
-        const prompt = this.buildPrompt(method);
 
         try {
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
