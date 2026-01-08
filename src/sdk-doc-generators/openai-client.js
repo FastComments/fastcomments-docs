@@ -154,8 +154,9 @@ class OpenAIClient {
         lines.push('5. Show the function call with await and assign the result to a typed variable');
         lines.push('6. Use the correct return type for the result variable (from Return Type above)');
         lines.push('7. Use TypeScript type annotations for all variables');
-        lines.push('8. Demonstrate optional parameters where relevant');
-        lines.push('9. Keep example very concise (< 20 lines)');
+        lines.push('8. NEVER use "as any" casts - use proper types from the Type Definitions above');
+        lines.push('9. Demonstrate optional parameters where relevant');
+        lines.push('10. Keep example very concise (< 20 lines)');
         lines.push('');
         lines.push('Return only the TypeScript code, no explanations or markdown formatting.');
 
