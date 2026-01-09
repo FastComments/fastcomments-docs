@@ -4,7 +4,7 @@ First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account
 
 The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v2' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
 
 In this page you can specify endpoints for each type of comment event.
 
