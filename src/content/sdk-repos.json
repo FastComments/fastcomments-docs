@@ -178,6 +178,86 @@
         "apiClasses": ["DefaultAPI", "PublicAPI"]
       },
       "description": "Official Swift SDK for the FastComments API"
+    },
+    {
+      "id": "lib-android",
+      "name": "Android Library",
+      "pageHeader": "FastComments Android Library",
+      "repo": "https://github.com/FastComments/fastcomments-android",
+      "branch": "main",
+      "language": "kotlin",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Android"
+    },
+    {
+      "id": "lib-react-native",
+      "name": "React Native Library",
+      "pageHeader": "FastComments React Native Library",
+      "repo": "https://github.com/FastComments/fastcomments-react-native",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for React Native"
+    },
+    {
+      "id": "lib-react-native-sdk",
+      "name": "React Native SDK",
+      "pageHeader": "FastComments React Native SDK",
+      "repo": "https://github.com/FastComments/fastcomments-react-native-sdk",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments SDK for React Native applications"
+    },
+    {
+      "id": "lib-angular",
+      "name": "Angular Library",
+      "pageHeader": "FastComments Angular Library",
+      "repo": "https://github.com/FastComments/fastcomments-angular",
+      "branch": "main",
+      "language": "typescript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Angular"
+    },
+    {
+      "id": "lib-react",
+      "name": "React Library",
+      "pageHeader": "FastComments React Library",
+      "repo": "https://github.com/FastComments/fastcomments-react",
+      "branch": "master",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for React"
+    },
+    {
+      "id": "lib-vue",
+      "name": "Vue 2 Library",
+      "pageHeader": "FastComments Vue 2 Library",
+      "repo": "https://github.com/FastComments/fastcomments-vue",
+      "branch": "master",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Vue 2"
+    },
+    {
+      "id": "lib-vue-next",
+      "name": "Vue 3 Library",
+      "pageHeader": "FastComments Vue 3 Library",
+      "repo": "https://github.com/FastComments/fastcomments-vue-next",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Vue 3"
+    },
+    {
+      "id": "lib-svelte",
+      "name": "Svelte Library",
+      "pageHeader": "FastComments Svelte Library",
+      "repo": "https://github.com/FastComments/fastcomments-svelte",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Svelte"
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",

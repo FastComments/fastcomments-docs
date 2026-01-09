@@ -171,7 +171,7 @@ class ReadmeDocGenerator extends BaseDocGenerator {
      */
     shouldSkipSection(title) {
         const lower = title.toLowerCase();
-        const skipKeywords = ['license', 'contributing', 'changelog', 'contributors'];
+        const skipKeywords = ['license', 'contributing', 'changelog', 'contributors', 'testing', 'tests', 'support', 'development', 'about this package'];
         return skipKeywords.some(keyword => lower.includes(keyword));
     }
 
@@ -208,6 +208,10 @@ class ReadmeDocGenerator extends BaseDocGenerator {
                 // Extract title from filename or content
                 const title = this.extractTitle(content) ||
                              file.replace('.md', '').replace(/-/g, ' ');
+
+                // Remove the first H1 heading since it will be displayed by the frontend using the section name
+                // This prevents duplicate headings
+                content = content.replace(/^#\s+.+\n/, '').trim();
 
                 sections.push({
                     name: title,
