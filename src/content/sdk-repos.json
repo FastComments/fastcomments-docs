@@ -224,7 +224,7 @@
       "name": "React Library",
       "pageHeader": "FastComments React Library",
       "repo": "https://github.com/FastComments/fastcomments-react",
-      "branch": "main",
+      "branch": "master",
       "language": "javascript",
       "docGenerators": ["readme"],
       "description": "FastComments commenting widgets for React"
@@ -234,7 +234,7 @@
       "name": "Vue 2 Library",
       "pageHeader": "FastComments Vue 2 Library",
       "repo": "https://github.com/FastComments/fastcomments-vue",
-      "branch": "main",
+      "branch": "master",
       "language": "javascript",
       "docGenerators": ["readme"],
       "description": "FastComments commenting widgets for Vue 2"
