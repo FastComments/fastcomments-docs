@@ -1,0 +1,15 @@
+---
+次のような認可エラーが表示されることがあります:
+
+<div class="screenshot white-bg">
+    <div class="title">ドメイン構成が見つかりません</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="ドメイン構成が見つかりません" />
+</div>
+
+これは、FastComments がこのドメインでアカウントを使用することを許可するよう設定されていないためです。
+
+この場合、対処は簡単です。FastComments.com のアカウントにサイトを追加するだけで済みます。
+
+[アカウントにサイトを追加するにはこちらへ。](https://fastcomments.com/auth/my-account/configure-domains)
+
+---

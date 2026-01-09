@@ -1,0 +1,2 @@
+Domyślnie FastComments zakłada, że wątki komentarzy są publiczne. Aby dodać warstwę zabezpieczeń, zaleca się utworzenie reguły dostosowania z
+`Requires SSO` opcją zaznaczoną. Spowoduje to, że wszystkie powiązane z komentarzami punkty końcowe będą wymagać uwierzytelnienia SSO.

@@ -1,0 +1,1 @@
+Varsayılan olarak FastComments yorum dizilerinin herkese açık olduğunu varsayar. Bir güvenlik katmanı eklemek için, `Requires SSO` seçeneği işaretli olacak şekilde bir Özelleştirme Kuralı oluşturmanız önerilir. Bu, tüm yorumla ilgili uç noktaların SSO kimlik doğrulaması gerektirmesine neden olur.

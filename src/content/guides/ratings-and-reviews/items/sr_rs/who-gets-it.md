@@ -1,0 +1,1 @@
+Сви FastComments пакети могу да користе Feedback модул, који укључује Ratings & Reviews.

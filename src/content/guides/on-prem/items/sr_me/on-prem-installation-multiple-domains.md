@@ -1,0 +1,2 @@
+Vaša On-Prem FastComments instalacija može isporučivati komentare za više internih domena, na primjer `app.mycorp.org` i `hr.mycorp.org`. Možete ih konfigurisati
+odvojeno, али ih hostovati na jednoj On-Prem instalaciji kreiranjem zasebnih Customization Rules kako biste podesili njihovo pojedinačno ponašanje.

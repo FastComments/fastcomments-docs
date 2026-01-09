@@ -1,0 +1,2 @@
+Erstellen und Bearbeiten von E-Mail-Vorlagen erfolgt sofort. Das bedeutet, in dem Moment, in dem Sie auf die Schaltfläche `Save` klicken, die
+Plattform wird beginnen, die neueste Version dieser E-Mail zu verwenden.

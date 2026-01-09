@@ -1,0 +1,1 @@
+For support, besøg venligst https://fastcomments.com/auth/my-account/help eller send en e-mail til support@fastcomments.com

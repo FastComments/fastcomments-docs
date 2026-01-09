@@ -1,0 +1,44 @@
+ドキュメントをグループ化（groupBy が指定されている場合）して複数の操作を適用することで集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
+
+## パラメータ
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
+
+## レスポンス
+
+戻り値: [`AggregationResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_aggregation_response.go)
+
+## 例
+
+[inline-code-attrs-start title = '集計の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+)
+
+func main() {
+	tenantId := "tenantId_example" // string | 
+	aggregationRequest := *openapiclient.NewAggregationRequest("ResourceName_example", []openapiclient.AggregationOperation{*openapiclient.NewAggregationOperation("Field_example", openapiclient.AggregationOpType("sum"))}) // AggregationRequest | 
+	parentTenantId := "parentTenantId_example" // string |  （オプション）
+	includeStats := true // bool |  （オプション）
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.Aggregate(context.Background()).TenantId(tenantId).AggregationRequest(aggregationRequest).ParentTenantId(parentTenantId).IncludeStats(includeStats).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.Aggregate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// `Aggregate` のレスポンス: AggregationResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
+}
+[inline-code-end]

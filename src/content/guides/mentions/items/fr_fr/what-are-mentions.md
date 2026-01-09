@@ -1,0 +1,2 @@
+Les mentions, ou `@mentions`, constituent une fonctionnalité de FastComments qui vous permet, via l'autocomplétion, de rechercher des utilisateurs à taguer, puis de leur envoyer des notifications
+les informant qu'ils ont été tagués.

@@ -1,0 +1,3 @@
+Wenn Sie bei Tests feststellen, dass die oben angegebenen Absendername-/E‑Mail-/Logo‑Einstellungen nicht funktionieren, könnte das daran liegen,
+dass diese Einstellungen nur für E‑Mails gelten, die einer Domain zugeordnet werden können. Das bedeutet, dass diese Einstellungen *nicht für die meisten Admin‑E‑Mails gelten*, jedoch
+wenn Kommentatoren E‑Mail‑Benachrichtigungen erhalten, werden Ihre Einstellungen verwendet.

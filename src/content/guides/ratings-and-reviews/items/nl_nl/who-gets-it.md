@@ -1,0 +1,1 @@
+Alle FastComments-pakketten kunnen de Feedback-module gebruiken, die Beoordelingen en recensies bevat.

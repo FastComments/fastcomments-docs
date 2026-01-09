@@ -1,0 +1,3 @@
+O plugin FastComments para WordPress substituirá o mecanismo padrão de contagem do WordPress por um sistema fornecido pela FastComments. Faremos uma requisição assíncrona
+por carregamento de página quando houver uma lista de posts com contagens de comentários para exibir. Se o usuário tiver o JavaScript desativado, ele voltará às contagens padrão do WordPress para que não haja
+perda de funcionalidade.

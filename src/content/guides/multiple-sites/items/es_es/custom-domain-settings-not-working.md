@@ -1,0 +1,2 @@
+Si al probar ves que los ajustes de nombre/dirección de correo/logo especificados arriba no están funcionando, esto podría deberse a que
+estos ajustes solo se aplican a correos electrónicos que pueden vincularse a un dominio. Esto significa que estos ajustes *no se aplican a la mayoría de los correos de administrador*, sin embargo cuando los comentaristas reciban notificaciones por correo electrónico se usarán tus ajustes.

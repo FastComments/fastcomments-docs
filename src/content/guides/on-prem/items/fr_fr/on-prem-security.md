@@ -1,0 +1,2 @@
+Par défaut, FastComments considère que les fils de commentaires sont publics. Pour ajouter une couche de sécurité, il est recommandé de créer une règle de personnalisation avec l'
+`Requires SSO` option cochée. Cela fera en sorte que tous les endpoints liés aux commentaires exigeront une authentification SSO.

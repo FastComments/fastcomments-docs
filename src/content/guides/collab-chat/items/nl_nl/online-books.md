@@ -1,0 +1,2 @@
+U kunt Collab Chat per pagina initialiseren indien gewenst, en per pagina afzonderlijke threads hebben; geef gewoon de `urlId` parameter
+een waarde zoals `book-one-page1`. Deze configuratie werkt ook voor de normale commentaarwidget.

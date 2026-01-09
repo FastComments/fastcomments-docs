@@ -1,0 +1,2 @@
+L'API può essere accessata esattamente come il prodotto SaaS regolare: ti colleghi alla dashboard On-Prem per creare chiavi API e usare quelle chiavi per accedere all'API. L'API
+endpoint sono gli stessi on-prem come lo sono per il prodotto SaaS.

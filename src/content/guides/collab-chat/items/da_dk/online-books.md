@@ -1,0 +1,2 @@
+Du kan initialisere Collab Chat pr. side, hvis ønsket, og have separate tråde pr. side, giv blot `urlId`-parameteren
+en værdi som `book-one-page1`. Denne konfiguration virker også for den normale kommenteringswidget.

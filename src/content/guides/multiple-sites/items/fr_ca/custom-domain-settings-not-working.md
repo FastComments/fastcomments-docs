@@ -1,0 +1,3 @@
+Si, lors des tests, vous constatez que les paramètres d'expéditeur (nom/courriel/logo) spécifiés ci‑dessus ne fonctionnent pas, cela peut être parce que
+ces paramètres ne s'appliquent qu'aux courriels pouvant être rattachés à un domaine. Cela signifie que ces paramètres *ne s'appliquent pas à la plupart des courriels d'administration*, toutefois
+lorsque les commentateurs reçoivent des notifications par courriel, vos paramètres seront utilisés.

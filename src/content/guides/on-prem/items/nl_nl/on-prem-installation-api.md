@@ -1,0 +1,2 @@
+De API is op dezelfde manier toegankelijk als het reguliere SaaS-product: u logt in op het On-Prem dashboard om API-sleutels aan te maken en gebruikt die sleutels om toegang tot de API te krijgen. De API
+endpoints zijn on-prem hetzelfde als voor het SaaS-product.

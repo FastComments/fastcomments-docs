@@ -1,0 +1,1 @@
+Vaši člani bodo prejeli enaka obvestila kot kateri koli drug uporabnik FastComments.com, ko jim odgovorijo ali jih omenjajo. [Preberite več](/guide-notifications.html).

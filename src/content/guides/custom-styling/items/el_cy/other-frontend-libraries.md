@@ -1,0 +1,2 @@
+Όλες οι επίσημες frontend βιβλιοθήκες του FastComments για React, Angular, Vue και ούτω καθεξής, δέχονται την παράμετρο διαμόρφωσης `customCSS`
+και λειτουργούν ως wrappers γύρω από τη βιβλιοθήκη vanilla js με την ίδια δομή HTML.

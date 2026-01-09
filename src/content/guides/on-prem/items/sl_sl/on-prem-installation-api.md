@@ -1,0 +1,2 @@
+Do API-ja je mogoče dostopati enako kot do običajnega SaaS izdelka: prijavite se v nadzorno ploščo On-Prem, ustvarite API ključe in uporabite te ključe za dostop do API-ja.  
+Končne točke API-ja so v On-Prem okolju enake kot pri SaaS izdelku.

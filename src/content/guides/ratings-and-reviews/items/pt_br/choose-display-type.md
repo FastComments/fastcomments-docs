@@ -1,0 +1,2 @@
+A primeira coisa ao configurar é decidir como suas perguntas serão exibidas. Nesta página, na parte inferior, estamos usando o tipo de exibição recomendado, que é o layout Side-by-Side
+para avaliações e subavaliações. O outro layout, que é mais para reações da página e não para avaliações, é um layout vertical usado em outras páginas da documentação.

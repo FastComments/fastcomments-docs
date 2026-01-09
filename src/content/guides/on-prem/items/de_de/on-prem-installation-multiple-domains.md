@@ -1,0 +1,2 @@
+Ihre On-Prem FastComments-Installation kann Kommentare für mehrere interne Domains bereitstellen, zum Beispiel `app.mycorp.org` und `hr.mycorp.org`. Sie können diese
+separat konfigurieren, aber auf einer einzigen On-Prem-Installation hosten, indem Sie separate Customization Rules erstellen, um ihr individuelles Verhalten zu konfigurieren.

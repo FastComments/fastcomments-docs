@@ -1,0 +1,96 @@
+Этот конечный пункт API позволяет создать новое назначение значка пользователю.
+
+Пример запроса:
+
+[inline-code-attrs-start title = 'Пример POST-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-start]
+curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET" \
+-H "Content-Type: application/json" \
+-d '{
+  "userId": "user456",
+  "badgeId": "badgeDef789",
+  "displayedOnComments": true
+}'
+[inline-code-end]
+
+Тело запроса должно содержать следующие параметры:
+
+- `userId` (обязательный) - ID пользователя, которому присваивается значок
+- `badgeId` (обязательный) - ID присваиваемого значка
+- `displayedOnComments` (необязательный) - Отображать ли значок в комментариях пользователя (по умолчанию true)
+
+Важные примечания:
+1. Значок должен существовать и быть включённым в каталоге значков вашего тенанта
+2. Вы можете присваивать значки только пользователям, которые принадлежат вашему тенанту или оставляли комментарии на вашем сайте
+
+Пример ответа:
+
+[inline-code-attrs-start title = 'Ответ'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "success",
+  "userBadge": {
+    "id": "badge123",
+    "userId": "user456",
+    "badgeId": "badgeDef789",
+    "fromTenantId": "tenant001",
+    "createdAt": 1650532511000,
+    "receivedAt": 1650532511000,
+    "type": 14,
+    "name": "Special Contributor",
+    "description": "Awarded to special contributors to our community",
+    "displayLabel": "Special",
+    "backgroundColor": "#4a5568",
+    "textColor": "#ffffff",
+    "displayedOnComments": true,
+    "order": 1
+  }
+}
+[inline-code-end]
+
+Возможные ответы с ошибкой:
+
+[inline-code-attrs-start title = 'Ошибка: Отсутствует Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "failed",
+  "code": "missing-tenant-id",
+  "reason": "Tenant ID (query param: tenantId) is missing."
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Ошибка: Отсутствует User ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "failed",
+  "code": "missing-user-id",
+  "reason": "User ID (body param: userId) is required."
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Ошибка: Отсутствует Badge ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "failed",
+  "code": "missing-badge-id",
+  "reason": "Badge ID (body param: badgeId) is required."
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Ошибка: Значок не найден'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "failed",
+  "code": "badge-not-found",
+  "reason": "The badge badgeDef789 was not found or is not enabled."
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = 'Ошибка: Неавторизованный пользователь'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+{
+  "status": "failed",
+  "code": "unauthorized-user",
+  "reason": "You can only add badges to users who belong to your tenant or have commented on your site."
+}
+[inline-code-end]

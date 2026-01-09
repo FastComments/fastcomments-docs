@@ -1,0 +1,2 @@
+Standardmäßig geht FastComments davon aus, dass Kommentar-Threads öffentlich sind. Um eine zusätzliche Sicherheitsebene hinzuzufügen, wird empfohlen, eine Anpassungsregel zu erstellen, bei der die
+`Requires SSO`-Option angekreuzt ist. Dadurch erfordern alle kommentarbezogenen Endpunkte eine SSO-Authentifizierung.

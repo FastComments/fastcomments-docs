@@ -1,0 +1,1 @@
+Questo badge viene assegnato quando i commenti vengono approvati. È chiamato `Big Stamp` per impostazione predefinita.

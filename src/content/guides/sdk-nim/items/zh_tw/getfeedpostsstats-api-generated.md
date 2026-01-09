@@ -1,0 +1,28 @@
+## 參數
+
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
+| postIds | seq[string] | 否 |  |
+| sso | string | 否 |  |
+
+## 回應
+
+回傳: [`Option[GetFeedPostsStats_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_stats200response.nim)
+
+## 範例
+
+[inline-code-attrs-start title = 'getFeedPostsStats 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getFeedPostsStats(
+  tenantId = "my-tenant-123",
+  postIds = @["news/article-2025-11-22", "opinion/market-trends-452"],
+  sso = ""
+)
+
+if response.isSome:
+  let stats = response.get()
+  discard stats
+[inline-code-end]
+
+---

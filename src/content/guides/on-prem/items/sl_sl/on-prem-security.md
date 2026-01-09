@@ -1,0 +1,2 @@
+Privzeto FastComments predpostavlja, da so nitke komentarjev javne. Če želite dodati plast varnosti, je priporočljivo ustvariti pravilo prilagoditve z
+`Requires SSO` možnostjo izbrano. To bo povzročilo, da bodo vse končne točke, povezane s komentarji, zahtevale SSO overjanje.

@@ -1,0 +1,1 @@
+Bu rozet, yorumlar onaylanmadığında (gizlendiğinde) verilir. Varsayılan olarak `Red Stamp` olarak adlandırılır.

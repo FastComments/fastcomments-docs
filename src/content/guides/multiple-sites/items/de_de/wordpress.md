@@ -1,0 +1,3 @@
+Sie können dasselbe FastComments-Konto mit mehreren WordPress-Installationen verwenden. Wenn Sie das Plugin einrichten, wird jedes Mal ein separates Integrations-Token hinzugefügt. [Sie können Ihre aktiven Integrationen hier einsehen.](https://fastcomments.com/auth/my-account/manage-data/integrations) 
+
+Sie können dasselbe FastComments-Konto auch mit einer WordPress-Installation verwenden, die sich über mehrere Domains erstreckt und auf diesen Domains denselben Inhalt hat.

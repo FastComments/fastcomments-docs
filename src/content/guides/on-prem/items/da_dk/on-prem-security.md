@@ -1,0 +1,2 @@
+Som standard antager FastComments, at kommentartråde er offentlige. For at tilføje et lag af sikkerhed anbefales det at oprette en Customization Rule med
+`Requires SSO` indstillingen markeret. Dette vil få alle kommentarrelaterede endpoints til at kræve SSO-godkendelse.

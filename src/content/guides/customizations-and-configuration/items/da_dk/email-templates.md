@@ -1,0 +1,1 @@
+E-mails sendt fra FastComments til dine kunder kan tilpasses. Skabelonen, logikken og oversættelserne kan alle ændres. Tekst kan tilpasses pr. lokalitet, og udseendet kan endda ændres pr. domæne. [Læs mere om tilpassede e-mail-skabeloner her.](/guide-email-templates.html)

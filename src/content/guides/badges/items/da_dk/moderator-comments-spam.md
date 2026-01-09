@@ -1,0 +1,1 @@
+Dette badge tildeles, når kommentarer markeres som spam. Det kaldes `Spam Detector` som standard.

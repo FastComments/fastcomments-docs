@@ -1,0 +1,1 @@
+Ovaj bedž se dodeljuje kada se komentari označe kao pregledani. Podrazumevano se zove `Fast Mod`.

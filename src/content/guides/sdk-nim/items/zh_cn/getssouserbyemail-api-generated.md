@@ -1,0 +1,25 @@
+---
+## 参数
+
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
+| email | string | 否 |  |
+
+## 响应
+
+返回: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_user_by_email_api_response.nim)
+
+## 示例
+
+[inline-code-attrs-start title = 'getSSOUserByEmail 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
+if response.isSome:
+  let ssoUser = response.get()
+  echo "SSO user found: ", ssoUser.email
+else:
+  echo "No SSO user found. HTTP status: ", httpResponse.status
+[inline-code-end]
+
+---

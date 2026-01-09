@@ -1,0 +1,1 @@
+Questo distintivo viene assegnato quando i commenti non sono approvati (nascosti). Si chiama `Red Stamp` per impostazione predefinita.

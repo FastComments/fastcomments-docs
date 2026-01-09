@@ -1,0 +1,2 @@
+Če pri testiranju opazite, da nastavitve imena pošiljatelja/e-pošte/logotipa, navedene zgoraj, ne delujejo, je to lahko zato
+da se te nastavitve uporabljajo samo za e-pošto, ki je lahko povezana z domeno. To pomeni, da se te nastavitve *ne nanašajo na večino administrativnih e-poštnih sporočil*, vendar pa bodo obvestila, ki jih prejmejo komentatorji, uporabljala vaše nastavitve.

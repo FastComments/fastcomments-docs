@@ -1,0 +1,2 @@
+Možete inicijalizovati Collab Chat po stranici ako želite i imati odvojene niti po stranici, jednostavno prosledite parametru `urlId`
+vrednost kao `book-one-page1`. Ova konfiguracija takođe radi za standardni widget za komentare.

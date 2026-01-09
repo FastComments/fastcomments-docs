@@ -1,0 +1,3 @@
+Manuelle Abzeichen sind Abzeichen, die niemals automatisch verliehen werden. Administratoren und Moderatoren können dieses Abzeichen vergeben, indem sie
+die Option `Award Badge` im Kommentar-Menü auswählen, wodurch das Abzeichen dem Benutzer verliehen wird und in allen ihren Kommentaren angezeigt wird, oder
+indem sie das Profil des Benutzers öffnen, indem sie auf dessen Avatar klicken, und im Menü oben rechts auf `Manage Badges` klicken.

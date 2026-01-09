@@ -1,0 +1,2 @@
+La prima cosa da fare durante la configurazione è decidere come verranno visualizzate le tue domande. In questa pagina, in fondo, stiamo usando il tipo di visualizzazione consigliato, che è il layout affiancato
+per le valutazioni e le sotto-valutazioni. L'altro layout, che è più indicato per le reazioni alla pagina e non per le recensioni, è un layout verticale utilizzato in altre pagine della documentazione.

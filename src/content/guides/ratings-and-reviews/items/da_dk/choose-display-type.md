@@ -1,0 +1,2 @@
+Det første, når du sætter det op, er at beslutte, hvordan dine spørgsmål vises. På denne side nederst bruger vi den anbefalede visningstype, som er Side-by-Side layout
+for bedømmelser og underbedømmelser. Det andet layout, som er mere til reaktioner på sider og ikke anmeldelser, er et lodret layout, der bruges på andre dokumentationssider.

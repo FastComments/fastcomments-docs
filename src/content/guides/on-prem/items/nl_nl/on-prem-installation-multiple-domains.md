@@ -1,0 +1,2 @@
+Uw On-Prem FastComments-installatie kan reacties serveren aan meerdere interne domeinen, bijvoorbeeld `app.mycorp.org` en `hr.mycorp.org`. U kunt deze
+apart configureren maar host ze op één On-Prem-installatie door aparte Customization Rules aan te maken om hun individuele gedrag te configureren.

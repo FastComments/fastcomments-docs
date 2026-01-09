@@ -1,0 +1,1 @@
+Commento utilise une approche SSO radicalement différente - ils exigent que vous ayez un point de terminaison qu’ils invoquent pour authentifier l’utilisateur. FastComments fonctionne à l’inverse - il suffit d’encoder et de hacher les informations de l’utilisateur en utilisant votre clé secrète et de les transmettre.

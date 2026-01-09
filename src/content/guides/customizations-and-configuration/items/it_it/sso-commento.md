@@ -1,0 +1,1 @@
+Commento utilizza un approccio SSO drasticamente diverso - richiedono che tu abbia un endpoint che invocano per autenticare l'utente. FastComments è l'opposto - semplicemente codificare e calcolare l'hash delle informazioni dell'utente usando la tua chiave segreta e passarle.

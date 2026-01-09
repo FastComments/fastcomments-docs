@@ -1,0 +1,9 @@
+---
+Тепер нам залишається лише зберегти зміни та опублікувати наш сайт!
+
+<div class="screenshot white-bg">
+    <div class="title">Зберегти та опублікувати</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-3-save-and-publish.png" alt="Зберегти та опублікувати" />
+</div>
+
+---

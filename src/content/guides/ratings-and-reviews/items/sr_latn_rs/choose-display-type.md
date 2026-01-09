@@ -1,0 +1,2 @@
+Prva stvar pri podešavanju je odlučiti kako će se vaša pitanja prikazivati. Na ovoj stranici, pri dnu, koristimo preporučeni tip prikaza, koji je Side-by-Side layout
+za ocene i podocene. Drugi izgled, koji je više za reakcije na stranici, a ne za recenzije, je vertical layout koji se koristi na drugim stranicama dokumentacije.

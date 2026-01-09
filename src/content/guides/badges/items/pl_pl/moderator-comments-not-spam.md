@@ -1,0 +1,1 @@
+Ta odznaka jest przyznawana, gdy komentarze są oznaczone jako nie spam. Domyślnie nazywa się `Not Spam`.

@@ -1,0 +1,39 @@
+## Paramètres
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
+| urlId | string | query | Oui |  |
+
+## Réponse
+
+Renvoie: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_page_by_urlid_api_response.go)
+
+## Exemple
+
+[inline-code-attrs-start title = 'Exemple de GetPageByURLId'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+)
+
+func main() {
+	tenantId := "tenantId_example" // string | 
+	urlId := "urlId_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.GetPageByURLId(context.Background()).TenantId(tenantId).UrlId(urlId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPageByURLId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// réponse de `GetPageByURLId`: GetPageByURLIdAPIResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPageByURLByURLId`: %v\n", resp)
+}
+[inline-code-end]

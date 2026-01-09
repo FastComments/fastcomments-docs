@@ -1,0 +1,1 @@
+Tüm FastComments paketleri, Puanlar ve İncelemeleri içeren Geri Bildirim modülünü kullanabilir.

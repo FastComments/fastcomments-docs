@@ -1,0 +1,1 @@
+あなたの On-Prem FastComments インストールは、例えば `app.mycorp.org` や `hr.mycorp.org` のように、複数の内部ドメインにコメントを配信できます。これらは個別に設定できますが、単一の On-Prem 設定上でホストし、それぞれの挙動を設定するために別々の Customization Rules を作成することで実現できます。

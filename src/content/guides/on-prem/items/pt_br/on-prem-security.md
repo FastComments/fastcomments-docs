@@ -1,0 +1,2 @@
+Por padrão, o FastComments assume que os tópicos de comentários são públicos. Para adicionar uma camada de segurança, recomenda-se criar uma Regra de Personalização com a
+`Requires SSO` marcada. Isso fará com que todos os endpoints relacionados a comentários exijam autenticação SSO.

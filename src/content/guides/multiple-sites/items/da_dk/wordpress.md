@@ -1,0 +1,3 @@
+Du kan bruge den samme FastComments-konto med flere WordPress-implementeringer. Når du opsætter plugin'et, tilføjes der et separat integrations-token hver gang. [Du kan se dine aktive integrationer her.](https://fastcomments.com/auth/my-account/manage-data/integrations) 
+
+Du kan også bruge den samme FastComments-konto med en WordPress-installation, der strækker sig over flere domæner og har det samme indhold på disse domæner.

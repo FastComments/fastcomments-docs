@@ -1,0 +1,2 @@
+Het aanmaken en bewerken van e-mailsjablonen is onmiddellijk. Dit betekent, op het moment dat je op de knop `Save` drukt, het
+platform zal beginnen met het gebruiken van de nieuwste versie van die e-mail.

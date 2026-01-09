@@ -1,0 +1,1 @@
+L'API peut être utilisée de la même manière que le produit SaaS standard : vous vous connectez au tableau de bord On-Prem pour créer des clés API et utiliser ces clés pour accéder à l'API. Les endpoints de l'API sont les mêmes on-prem que pour le produit SaaS.

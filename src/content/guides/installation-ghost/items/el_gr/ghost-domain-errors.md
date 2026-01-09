@@ -1,0 +1,12 @@
+Μπορεί να εμφανιστεί σφάλμα εξουσιοδότησης, όπως το παρακάτω:
+
+<div class="screenshot white-bg">
+    <div class="title">Λείπει η διαμόρφωση του τομέα</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+</div>
+
+Αυτό συμβαίνει επειδή το FastComments δεν γνωρίζει ότι πρέπει να επιτρέψει τη χρήση του λογαριασμού σας σε αυτόν τον τομέα.
+
+Σε αυτήν την περίπτωση, η διόρθωση είναι απλή. Απλώς πρέπει να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας στο FastComments.com.
+
+[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)

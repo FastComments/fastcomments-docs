@@ -1,0 +1,1 @@
+Esta insígnia é concedida quando comentários são excluídos. É chamada de `Big Hammer` por padrão.

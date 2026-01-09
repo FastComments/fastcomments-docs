@@ -1,0 +1,2 @@
+API je dostupan isto kao i običan SaaS proizvod u tom smislu da biste se prijavili u On-Prem dashboard da kreirate API ključeve i koristili te ključeve za pristup API-ju. API
+krajnje tačke su iste on-prem kao i za SaaS proizvod.

@@ -1,0 +1,1 @@
+当您的成员被回复或被提及时，他们将收到与任何其他 FastComments.com 用户相同的通知。 [了解更多](/guide-notifications.html).

@@ -1,0 +1,25 @@
+## パラメーター
+
+| 名前 | 型 | 必須 | 説明 |
+|------|------|----------|-------------|
+| tenantId | string | はい |  |
+| createUserBadgeParams | CreateUserBadgeParams | いいえ |  |
+
+## レスポンス
+
+戻り値： [`Option[CreateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_user_badge200response.nim)
+
+## 例
+
+[inline-code-attrs-start title = 'createUserBadge の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.createUserBadge(tenantId = "my-tenant-123",
+  createUserBadgeParams = CreateUserBadgeParams(userId = "user-987", badgeId = "top-commenter"))
+if response.isSome:
+  let createdBadge = response.get()
+  echo "Created badge for user: ", createdBadge.userId
+else:
+  echo "Failed to create badge, status: ", $httpResponse.status
+[inline-code-end]
+
+---

@@ -1,0 +1,1 @@
+Deze badge wordt toegekend wanneer reacties worden verwijderd. Standaard heet deze `Big Hammer`.

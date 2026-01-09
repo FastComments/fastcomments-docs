@@ -1,0 +1,2 @@
+Po zadanim postavkama, FastComments pretpostavlja da su niti komentara javne. Za dodatni sloj sigurnosti preporučuje se stvoriti pravilo prilagodbe s
+`Requires SSO` opcijom označenom. Time će svi endpointi povezani s komentarima zahtijevati SSO autentikaciju.

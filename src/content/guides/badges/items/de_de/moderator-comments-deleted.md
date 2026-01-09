@@ -1,0 +1,1 @@
+Diese Auszeichnung wird vergeben, wenn Kommentare gelöscht werden. Sie heißt standardmäßig `Big Hammer`.

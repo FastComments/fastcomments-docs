@@ -1,0 +1,1 @@
+Manuel rozetler, asla otomatik olarak verilmeyen rozetlerdir. Yöneticiler ve moderatörler bu rozeti, yorum menüsünde `Award Badge` seçeneğini seçerek kullanıcıya verebilir ve rozeti kullanıcının tüm yorumlarında görüntüleyebilir veya kullanıcı avatarına tıklayarak kullanıcının profilini açıp sağ üst menüde `Manage Badges` öğesine tıklayarak verebilirler.

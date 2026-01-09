@@ -1,0 +1,3 @@
+De `Reply to Specific Page` badge kan worden geconfigureerd zodat deze wordt toegekend wanneer een gebruiker een opmerking plaatst op een bepaalde pagina. Als u bijvoorbeeld
+een `FAQ`-pagina, wilt u gebruikers misschien belonen voor het beantwoorden van vragen hier. Het is gebaseerd op een configureerbare drempel, bijvoorbeeld dat u
+misschien pas deze badge wilt toekennen nadat ze 10 opmerkingen op die pagina hebben achtergelaten.

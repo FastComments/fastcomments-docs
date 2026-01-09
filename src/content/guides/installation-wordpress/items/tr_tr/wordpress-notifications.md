@@ -1,0 +1,1 @@
+Üyeleriniz, kendilerine cevap verildiğinde veya bahsedildiklerinde diğer herhangi bir FastComments.com kullanıcısının aldığıyla aynı bildirimleri alacaktır. [Daha fazla bilgi edinin](/guide-notifications.html).

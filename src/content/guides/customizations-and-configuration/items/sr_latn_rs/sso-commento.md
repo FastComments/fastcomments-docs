@@ -1,0 +1,1 @@
+Commento koristi drastično drugačiji SSO pristup - oni zahtevaju da imate endpoint koji oni pozivaju da bi autentifikovali korisnika. FastComments je suprotno - jednostavno enkodirajte i hešujte informacije o korisniku koristeći vaš tajni ključ i prosledite ih.

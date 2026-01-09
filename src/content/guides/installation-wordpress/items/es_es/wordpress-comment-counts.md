@@ -1,0 +1,3 @@
+El plugin de FastComments para WordPress reemplazará el mecanismo predeterminado de recuento de WordPress por un sistema proporcionado por FastComments. Haremos una solicitud asíncrona
+por carga de página cuando haya una lista de entradas con recuentos de comentarios para mostrar. Si el usuario tiene JavaScript desactivado, volverá a los recuentos predeterminados de WordPress para que no
+haya pérdida de funcionalidad.

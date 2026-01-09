@@ -1,0 +1,1 @@
+あなたのメンバーは返信やメンションを受けたとき、FastComments.com の他のユーザーと同じ通知を受け取ります。 [詳細はこちら](/guide-notifications.html).

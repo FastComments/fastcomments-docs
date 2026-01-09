@@ -1,0 +1,2 @@
+Puoi inizializzare Collab Chat per pagina se desideri e avere thread separati per pagina, basta passare al parametro `urlId`
+un valore come `book-one-page1`. Questa configurazione funziona anche per il widget normale dei commenti.

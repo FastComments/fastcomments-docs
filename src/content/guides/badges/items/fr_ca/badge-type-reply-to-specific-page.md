@@ -1,0 +1,3 @@
+Le badge `Reply to Specific Page` peut être configuré pour être attribué lorsqu'un utilisateur commente une page particulière. Par exemple, si vous avez
+une page `FAQ`, vous pourriez vouloir récompenser les utilisateurs pour avoir répondu aux questions ici. Il est basé sur un seuil configurable, par exemple vous
+pourriez ne vouloir attribuer ce badge qu'après qu'ils aient laissé 10 commentaires sur cette page.

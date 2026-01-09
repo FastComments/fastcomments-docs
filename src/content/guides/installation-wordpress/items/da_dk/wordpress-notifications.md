@@ -1,0 +1,1 @@
+Dine medlemmer vil modtage de samme notifikationer som enhver anden type FastComments.com-bruger, når der svares til dem eller de nævnes. [Læs mere](/guide-notifications.html).

@@ -1,0 +1,2 @@
+Pierwszą rzeczą podczas konfiguracji jest zdecydowanie, jak będą wyświetlane Twoje pytania. Na tej stronie, na dole, używamy zalecanego typu wyświetlania, którym jest układ Side-by-Side
+dla ocen i podocen. Inny układ, który jest bardziej przeznaczony dla reakcji na stronie, a nie dla recenzji, to układ pionowy używany na innych stronach dokumentacji.

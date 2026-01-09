@@ -1,0 +1,3 @@
+成功しました！ページにFastComments Comment Widgetが表示されているはずです。
+
+SquarespaceでFastCommentsを設定したこと、おめでとうございます！もしDomain Errorが発生した場合、またはコメント領域をカスタマイズする方法を知りたい場合は、以下をお読みください。

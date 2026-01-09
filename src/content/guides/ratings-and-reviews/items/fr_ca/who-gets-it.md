@@ -1,0 +1,1 @@
+Tous les forfaits FastComments peuvent utiliser le module Feedback, qui inclut les évaluations et les avis.

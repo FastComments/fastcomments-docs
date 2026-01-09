@@ -1,0 +1,1 @@
+Для поддержки, пожалуйста, посетите https://fastcomments.com/auth/my-account/help или напишите на support@fastcomments.com

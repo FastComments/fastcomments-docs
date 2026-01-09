@@ -1,0 +1,50 @@
+### 必須コンポーネント
+
+For On-Prem, FastComments just consists of an application server and a database. We have simplified the deployment so that
+the application can serve all traffic directly without adding other components.
+
+The application server is provided in a Docker image and can be deployed with any container management solution.
+
+The database, MongoDB, can be self-ran or hosted by another provider like AWS DocumentDB or MongoDB Atlas.
+
+FastComments is currently tested with MongoDB 7, however we aim to be DocumentDB compatible to ease deployment.
+
+### インスタンスサイズ
+
+You will find that FastComments is fairly well optimized and doesn't require large machines for the application itself to keep low P99s.
+
+All batch and cron jobs use streaming to limit total memory usage.
+
+The below tables for the application server and database can assist with sizing.
+
+### アプリケーションサーバのインスタンス
+
+
+| 同時ユーザー数 | クラスタ合計 CPU | クラスタ合計メモリ |
+|------------------|--------------------|----------------------|
+| 100              | 1                  | 256mb                |
+| 1K               | 2                  | 512mb                |
+| 10K              | 8                  | 1gb                  |
+| 100K             | 32                 | 8gb                  |
+| 1M               | 64                 | 64gb                 |
+
+For example, a single core serving around 100 comment threads a second usually never uses more than 250mb RSS.
+
+### データベースサーバのインスタンス
+
+Sizing the database depends on working set size, which is the amount of data you access at a given point in time, as well as concurrent requests.
+
+FastComments is fairly kind to Mongo, in that for the hot queries it uses index hints, streaming cursors, and has concurrency limits in various areas
+to prevent overloading of downstream systems.
+
+The below is a general guideline on database instance sizes. **Note that this is __per instance__, not total resources in the cluster**.
+
+| 同時ユーザー数 | 保存コメント数 | インスタンスあたり CPU | インスタンスあたりメモリ |
+|------------------|-----------------|-------------------|---------------------|
+| 100              | 1k              | 1                 | 256mb               |
+| 1K               | 5k              | 2                 | 512mb               |
+| 10K              | 100k            | 8                 | 2gb                 |
+| 100K             | 500k            | 16                | 8gb                 |
+| 1M               | 5M              | 32                | 32gb                |
+
+The above tables are conservative estimates. You may find actual requirements differ based on your specific configuration (page sizes, comment volume, etc).

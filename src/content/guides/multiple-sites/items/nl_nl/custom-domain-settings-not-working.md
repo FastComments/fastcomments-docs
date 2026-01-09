@@ -1,0 +1,3 @@
+Als je bij het testen ziet dat je hierboven opgegeven instellingen voor afzendernaam/e-mail/logo niet werken, kan dat komen doordat
+deze instellingen alleen van toepassing zijn op e-mails die aan een domein gekoppeld kunnen worden. Dit betekent dat deze instellingen *niet van toepassing zijn op de meeste beheerders-e-mails*, echter
+wanneer commentatoren e-mailmeldingen ontvangen, worden je instellingen gebruikt.
