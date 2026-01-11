@@ -1,0 +1,1 @@
+Vores kommenteringswidget kræver en browser, der som minimum understøtter ES6 JavaScript-standarder for at give en rig interaktiv oplevelse.

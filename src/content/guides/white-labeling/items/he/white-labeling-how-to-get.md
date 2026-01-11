@@ -1,0 +1,1 @@
+White Labeling זמינה במספר תוכניות של FastComments.com. בדקו את [התמחור שלנו](https://fastcomments.com/traffic-pricing) כדי לראות את החבילות השונות שמציעות White Labeling.

@@ -1,0 +1,14 @@
+## パラメータ
+
+| 名前 | 型 | 必須 | 説明 |
+|------|------|----------|-------------|
+| tenant_id | String | はい |  |
+| url_id | String | はい |  |
+| broadcast_id | String | はい |  |
+| comment_data | models::CommentData | はい |  |
+| session_id | String | いいえ |  |
+| sso | String | いいえ |  |
+
+## レスポンス
+
+戻り値: [`CreateCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_comment_public_200_response.rs)

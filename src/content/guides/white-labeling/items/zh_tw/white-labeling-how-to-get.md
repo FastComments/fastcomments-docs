@@ -1,0 +1,1 @@
+白標化在多個 FastComments.com 的方案中可用。查看 [我們的價格](https://fastcomments.com/traffic-pricing) 以了解提供白標化的不同方案。

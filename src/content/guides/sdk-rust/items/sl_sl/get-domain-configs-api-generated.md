@@ -1,0 +1,12 @@
+---
+## Parametri
+
+| Ime | Tip | Obvezno | Opis |
+|------|------|----------|-------------|
+| tenant_id | String | Da |  |
+
+## Odgovor
+
+Vrača: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_configs_200_response.rs)
+
+---

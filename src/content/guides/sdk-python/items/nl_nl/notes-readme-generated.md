@@ -1,0 +1,3 @@
+### Broadcast-ID's
+
+Je zult zien dat je een `broadcast_id` moet doorgeven in sommige API-aanroepen. Wanneer je gebeurtenissen ontvangt, krijg je deze ID terug, zodat je de gebeurtenis kunt negeren als je van plan bent wijzigingen optimistisch op de client toe te passen (wat je waarschijnlijk wilt doen omdat het de beste ervaring biedt). Geef hier een UUID door. De ID moet uniek genoeg zijn om niet twee keer voor te komen in een browsersessie.

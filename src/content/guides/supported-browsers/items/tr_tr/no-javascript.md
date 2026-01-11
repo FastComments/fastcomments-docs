@@ -1,0 +1,1 @@
+Yorum bileşenimiz, zengin etkileşimli bir deneyim sunmak için en az ES6 JavaScript standartlarını destekleyen bir tarayıcı gerektirir.

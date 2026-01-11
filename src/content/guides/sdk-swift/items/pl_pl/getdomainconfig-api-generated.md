@@ -1,0 +1,34 @@
+## Parametry
+
+| Name | Type | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
+| domain | string | path | Tak |  |
+
+## Odpowiedź
+
+Zwraca: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetDomainConfig200Response.swift)
+
+## Przykład
+
+[inline-code-attrs-start title = 'Przykład getDomainConfig'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+import FastCommentsSwift
+
+let tenantId = "tenantId_example" // String | 
+let domain = "domain_example" // String | 
+
+DefaultAPI.getDomainConfig(tenantId: tenantId, domain: domain) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+[inline-code-end]
+
+---

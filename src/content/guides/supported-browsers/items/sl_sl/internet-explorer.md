@@ -1,0 +1,1 @@
+Ker Microsoft načrtuje prenehanje glavne podpore za IE11 v letu 2021, ga trenutno ne podpiramo več.

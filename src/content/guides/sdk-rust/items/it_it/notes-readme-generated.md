@@ -1,0 +1,3 @@
+### ID di broadcast
+
+Vedrai che dovrai passare un `broadcastId` in alcune chiamate API. Quando ricevi eventi, riavrai questo ID, così saprai di ignorare l'evento se prevedi di applicare le modifiche in modo ottimistico sul client (cosa che probabilmente vorrai fare perché offre la migliore esperienza). Passa qui un UUID. L'ID dovrebbe essere abbastanza unico da non verificarsi due volte durante una sessione del browser.

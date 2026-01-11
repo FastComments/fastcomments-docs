@@ -1,0 +1,1 @@
+За поддръжка, моля посетете https://fastcomments.com/auth/my-account/help или изпратете имейл на support@fastcomments.com

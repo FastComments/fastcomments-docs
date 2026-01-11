@@ -1,0 +1,1 @@
+Naš widget za komentiranje zahtijeva preglednik koji podržava najmanje ES6 JavaScript standarde kako bi pružio bogato interaktivno iskustvo.

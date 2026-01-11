@@ -1,0 +1,7 @@
+---
+- Python >= 3.8
+- urllib3 >= 1.25.3
+- python-dateutil >= 2.8.2
+- pydantic >= 2.0.0
+- typing-extensions >= 4.0.0
+---

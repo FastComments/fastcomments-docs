@@ -1,0 +1,1 @@
+Για υποστήριξη, επισκεφθείτε https://fastcomments.com/auth/my-account/help ή στείλτε μήνυμα στο support@fastcomments.com

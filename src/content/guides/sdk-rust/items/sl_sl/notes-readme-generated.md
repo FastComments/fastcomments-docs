@@ -1,0 +1,3 @@
+### Identifikatorji oddaj
+
+Videli boste, da je treba v nekaterih klicih API posredovati `broadcastId`. Ko prejmete dogodke, boste ta ID dobili nazaj, zato boste vedeli, da lahko dogodek prezrete, če nameravate optimistično uporabiti spremembe na odjemalcu (kar boste verjetno želeli narediti, saj nudi najboljšo izkušnjo). Tukaj posredujte `UUID`. ID naj bo dovolj edinstven, da se v isti seji brskalnika ne pojavi dvakrat.

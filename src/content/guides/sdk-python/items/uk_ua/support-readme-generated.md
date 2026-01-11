@@ -1,0 +1,3 @@
+- [Документація](https://docs.fastcomments.com)
+- [Проблеми на GitHub](https://github.com/fastcomments/fastcomments-python/issues)
+- [Підтримка FastComments](https://fastcomments.com/auth/my-account/help)

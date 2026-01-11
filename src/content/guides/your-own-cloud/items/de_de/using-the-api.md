@@ -1,0 +1,2 @@
+FastComments Isolated Cloud bedeutet, dass Sie außerdem dedizierten Zugriff auf die API. Sie ist verfügbar
+über eine URI wie `https://fastcomments.example.com/api`. Weitere Einzelheiten finden Sie in der [API-Dokumentation](guide-api.html).

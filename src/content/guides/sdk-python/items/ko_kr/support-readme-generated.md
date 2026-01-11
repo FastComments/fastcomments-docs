@@ -1,0 +1,3 @@
+- [문서](https://docs.fastcomments.com)
+- [GitHub 이슈](https://github.com/fastcomments/fastcomments-python/issues)
+- [FastComments 지원](https://fastcomments.com/auth/my-account/help)

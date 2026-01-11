@@ -1,0 +1,1 @@
+FastComments SSO の詳細については、[FastComments のドキュメント](https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso) をご覧ください。

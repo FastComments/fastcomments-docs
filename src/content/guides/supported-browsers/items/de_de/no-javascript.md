@@ -1,0 +1,1 @@
+Unser Kommentar-Widget erfordert einen Browser, der mindestens die ES6-JavaScript-Standards unterstützt, um ein reichhaltiges, interaktives Erlebnis zu bieten.

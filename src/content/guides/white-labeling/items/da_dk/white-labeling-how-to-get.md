@@ -1,0 +1,1 @@
+White Labeling er tilgængelig på flere FastComments.com-planer. Se [vores priser](https://fastcomments.com/traffic-pricing) for at se, hvilke pakker der tilbyder White Labeling.

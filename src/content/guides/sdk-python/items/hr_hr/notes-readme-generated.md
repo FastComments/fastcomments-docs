@@ -1,0 +1,3 @@
+### Broadcast ID-ovi
+
+Vidjet ćete da trebate proslijediti `broadcast_id` u nekim API pozivima. Kada primite događaje, dobit ćete natrag ovaj ID, pa ćete znati zanemariti događaj ako planirate optimistično primijeniti promjene na klijentu (što ćete vjerojatno htjeti učiniti budući da nudi najbolje korisničko iskustvo). Ovdje proslijedite UUID. ID bi trebao biti dovoljno jedinstven da se ne pojavi dvaput u istoj sesiji preglednika.

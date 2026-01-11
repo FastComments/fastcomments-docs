@@ -1,0 +1,1 @@
+FastComments SSO ile ilgili tam dokümantasyon için, lütfen [FastComments dokümantasyonuna](https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso) bakın.

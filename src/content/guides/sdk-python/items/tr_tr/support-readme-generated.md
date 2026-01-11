@@ -1,0 +1,5 @@
+---
+- [Belgeler](https://docs.fastcomments.com)
+- [GitHub Sorunları](https://github.com/fastcomments/fastcomments-python/issues)
+- [FastComments Desteği](https://fastcomments.com/auth/my-account/help)
+---

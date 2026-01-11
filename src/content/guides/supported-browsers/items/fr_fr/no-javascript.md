@@ -1,0 +1,1 @@
+Notre widget de commentaires nécessite un navigateur qui prend en charge au minimum les standards JavaScript ES6 pour offrir une expérience interactive riche.

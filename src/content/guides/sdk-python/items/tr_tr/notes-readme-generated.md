@@ -1,0 +1,3 @@
+### Yayın Kimlikleri
+
+Bazı API çağrılarında bir `broadcast_id` geçirmeniz gerektiğini göreceksiniz. Olayları aldığınızda bu kimliği geri alırsınız; böylece istemcide değişiklikleri iyimser şekilde uygulamayı planlıyorsanız (muhtemelen en iyi deneyimi sunduğu için yapmak isteyeceksiniz), olayı yok saymanız gerektiğini bilirsiniz. Buraya bir UUID geçirin. Bu kimlik, bir tarayıcı oturumu içinde iki kez ortaya çıkmayacak kadar benzersiz olmalıdır.

@@ -1,0 +1,1 @@
+Opcja White Label jest dostępna w kilku planach FastComments.com. Zobacz [nasze ceny](https://fastcomments.com/traffic-pricing), aby sprawdzić różne pakiety, które oferują White Labeling.
