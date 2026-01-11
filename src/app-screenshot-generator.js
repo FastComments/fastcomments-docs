@@ -196,10 +196,10 @@ function ensureHost(url) {
     return `${HOST}${url}`;
 }
 
-async function getTemplate(url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect, delay, filePath) {
+async function getTemplate(url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect, delay, filePath, cacheBuster) {
     console.log('app-screenshot-generator Creating', url, selector, width);
 
-    const cacheKey = {url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect};
+    const cacheKey = {url, linkUrl, width, actions, clickSelectors, selector, title, addProxySelect, cacheBuster};
     const fileNameHash = crypto.createHash('md5').update(`${url}-${selector}-${title}`).digest('hex');
     const targetFileName = fileNameHash + '.png';
     const targetFolderPath = path.join(__dirname, 'static', 'generated', 'images');
@@ -318,7 +318,7 @@ async function processInput(input, filePath) {
             throw new Error(`Malformed input! Value between start/end tokens should be valid javascript. ${code} given.`);
         }
 
-        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.linkUrl, args.width, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath)) + input.substring(endTokenIndex + EndToken.length, input.length);
+        input = input.substring(0, nextIndex) + (await getTemplate(args.url, args.linkUrl, args.width, args.actions, args.clickSelector ? (args.clickSelector ? [args.clickSelector] : []) : args.clickSelectors, args.selector, args.title, args.addProxySelect, args.delay, filePath, args.cacheBuster)) + input.substring(endTokenIndex + EndToken.length, input.length);
         nextIndex = input.indexOf(StartToken);
     }
     return input;
