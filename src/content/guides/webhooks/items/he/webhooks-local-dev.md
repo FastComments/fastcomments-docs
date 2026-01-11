@@ -1,36 +1,38 @@
-לצורך פיתוח מקומי, השתמש בכלי כמו [ngrok](https://ngrok.com/).
+For Local development, use a tool like [ngrok](https://ngrok.com/).
 
-כדי לפשט את שמירת המערכת מאובטחת, הפיתוח המקומי עוקב אחרי אותו תהליך כמו התקנה ואבטחת סביבות אחרות. 
+In order to simplify keeping the system secure, local development follows the same process as setting up and securing other environments. 
 
-### שלב 1: הוסף את "localhost" לדומיינים בחשבונך.
+### שלב 1: הוסף "localhost" לדומיינים בחשבונך.
 
-הוסף את "localhost" [כדומיין כאן](https://fastcomments.com/auth/my-account/configure-domains).
+Add "localhost" [as a domain here](https://fastcomments.com/auth/my-account/configure-domains).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; selector = '.content .account-block'; title='Add localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Add localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
 
 ### שלב 2: בחר מפתח API
 
-נוסיף קונפיגורציית webhook לדומיין שלך, לכן נצטרך מפתח API. [אפשר לעשות זאת כאן.](https://fastcomments.com/auth/my-account/api-secret)
+We're going to be adding webhook configuration for your domain, so we'll need an API key. [You can do that here.](https://fastcomments.com/auth/my-account/api-secret)
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; selector = '.content .account-block'; title='Add Testing API Key'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Add Testing API Key'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
 
-מתחת ל-"Associate with domain" - בחר את הדומיין "localhost".
+Under "Associate with domain" - select your "localhost" domain.
 
-**הערה: לחלופין, ניתן להשתמש בסוד API אחד לכל פעילות הבדיקה וסביבות ה-staging. פשוט הוסף סוד API עבור "All Domains", ותגיד לו שם כמו "test".**
+**NOTE: Alternatively, you can use one API Secret for all testing activity and staging environments. Simply add an API Secret for "All Domains", and give it a name like "test".**
 
-וודא שיש לך סוד API מוגדר עבור דומיין/דומיינים של production. אירועים עבור שאר הדומיינים ישתמשו בסוד ה-wildcard (לצורך בדיקות).
+Ensure you have an API Secret defined for your production domain(s). Events for all other domains will use the wildcard (testing) secret.
 
-### שלב 3: הוסף את ה-webhook שלך
+### שלב 3: הוסף את ה-Webhook שלך
 
-בעת הרצת ngrok או כלי דומה, הגדר את הערך עבור "localhost" [כאן](https://fastcomments.com/auth/my-account/manage-data/webhooks).
+While running ngrok or similar tool, set the value for "localhost" [here](https://fastcomments.com/auth/my-account/manage-data/webhooks).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Add Testing Webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; title='Add Testing Webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
 
-כאשר תלחץ על `Send Test Payload`, אנחנו נשלח שני אירועי בדיקה כדי לבדוק שאכן אתם מאמתים את מפתח ה‑API.
+When clicking `Send Test Payload`, we will send two test events to check that you validate the API key.
 
-אם האימות יצליח, לחץ על `Save`.
+Once it validates, hit `Save`.
 
 ### שלב 4: הוסף תגובה
 
-כעת תוכל/תוכלו להוסיף, לערוך או למחוק תגובות ולראות שנקרא למכונת הפיתוח המקומית שלך עם האירועים, תוך שימוש במפתח ה‑API לניסוי. עשוי להיות עיכוב של עד 30 שניות
-עד שהאירועים יגיעו למכונה שלך.
+Now you can add, edit, or delete comments and should see us call your local development machine with the events, using your testing API key. There may be up to 30 seconds delay
+for the events to reach your machine.
+
+---

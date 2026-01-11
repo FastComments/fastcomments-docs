@@ -1,7 +1,23 @@
 In the Webhooks admin there are `Send Test Payload` buttons for each event type (Create, Update, Delete). The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
 
-The test will make two calls to verify the response code for "happy" (correct API Key) and "sad" (invalid API key) scenarios.
+## Verifying Payloads
 
-When the test sends an invalid API key you should return a status code of 401 for the test to pass completely. If you don't correctly check the value of the token, you'll see an error.
+When testing your webhook integration, verify the incoming requests include the following headers:
 
-This is to ensure that you properly authenticate the request.
+1. **`token`** - Your API Secret
+2. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
+3. **`X-FastComments-Signature`** - HMAC-SHA256 signature
+
+Use the HMAC signature verification to ensure payloads are authentic.
+
+## Testing Tools
+
+You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+
+## Event Types
+
+- **Create Event**: Triggered when a new comment is created. Default method: PUT
+- **Update Event**: Triggered when a comment is edited. Default method: PUT
+- **Delete Event**: Triggered when a comment is deleted. Default method: DELETE
+
+Each event includes the full comment data in the request body (see [Data Structures](/guides/webhooks/webhooks-structures) for the payload format).

@@ -1,11 +1,13 @@
-Suivez les mêmes étapes pour `localhost` que pour l'environnement de production. Assurez-vous d'avoir configuré les domaines de production et les API Secrets.
+Suivez les mêmes étapes pour `localhost` que pour la production. Assurez-vous d'avoir configuré des domaines de production et des API Secrets.
 
-Tout d'abord, rendez-vous dans la [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Ceci est accessible via Manage Data -> Webhooks.
+First, navigate to the [Administration des webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Gérer les données -> Webhooks.
 
-La page de configuration apparaît comme suit :
+The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
 
-Sur cette page, vous pouvez spécifier des endpoints pour chaque type d'événement de commentaire.
+On this page you can specify endpoints for each type of comment event.
 
-Pour chaque type d'événement, assurez-vous de cliquer sur Send Test Payload pour vérifier que votre intégration est correctement configurée. Voir la section suivante, "Testing", pour plus de détails.
+For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Tests", for details.
+
+---

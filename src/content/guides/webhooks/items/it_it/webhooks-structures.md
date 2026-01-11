@@ -1,18 +1,18 @@
-L'unica struttura inviata tramite webhook è l'oggetto WebhookComment, descritto in TypeScript di seguito.
+L'unica struttura inviata tramite webhook è l'oggetto WebhookComment, descritto in TypeScript qui sotto.
 
-#### The WebhookComment Object Structure
+#### La struttura dell'oggetto WebhookComment
 
-##### The "Create" Event Structure
-Il corpo della richiesta dell'evento "create" è un oggetto WebhookComment.
+##### La "Create" Event Structure
+Il body della richiesta dell'evento "create" è un oggetto WebhookComment.
 
-##### The "Update" Event Structure
-Il corpo della richiesta dell'evento "update" è un oggetto WebhookComment.
+##### La "Update" Event Structure
+Il body della richiesta dell'evento "update" è un oggetto WebhookComment.
 
-##### The "Delete" Event Structure
-Il corpo della richiesta dell'evento "delete" è un oggetto WebhookComment.
+##### La "Delete" Event Structure
+Il body della richiesta dell'evento "delete" è un oggetto WebhookComment.
 
-    Modifica del 14 novembre 2023
-    In precedenza il corpo della richiesta dell'evento "delete" conteneva solo l'id del commento. Ora contiene il commento completo al momento dell'eliminazione.
+    Modifica a partire dal 14 Nov 2023
+    In precedenza il body della richiesta dell'evento "delete" conteneva solo l'id del commento. Ora contiene il commento completo al momento dell'eliminazione.
 
 
 [inline-code-attrs-start title = 'Oggetto WebhookComment'; type = 'typescript'; inline-code-attrs-end]
@@ -20,11 +20,11 @@ Il corpo della richiesta dell'evento "delete" è un oggetto WebhookComment.
 interface WebhookComment {
     /** L'id del commento. **/
     id: string
-    /** L'id o l'URL che identifica il thread del commento. Normalizzato. **/
+    /** L'id o l'URL che identifica il thread dei commenti. Normalizzato. **/
     urlId: string
-    /** L'URL che indica dove è stato lasciato il commento. **/
+    /** L'URL che punta al luogo dove è stato lasciato il commento. **/
     url?: string
-    /** L'id utente che ha lasciato il commento. Se SSO, preceduto dall'id del tenant. **/
+    /** L'id utente che ha lasciato il commento. Se SSO, prefissato con l'id del tenant. **/
     userId?: string
     /** L'email dell'utente che ha lasciato il commento. **/
     commenterEmail?: string
@@ -44,35 +44,35 @@ interface WebhookComment {
     votes: number
     votesUp: number
     votesDown: number
-    /** True se l'utente era loggato quando ha commentato, o ha verificato il commento, o se ha verificato la sua sessione quando il commento è stato lasciato. **/
+    /** True se l'utente era autenticato quando ha commentato, o se ha verificato il commento, o se ha verificato la sessione quando il commento è stato lasciato. **/
     verified: boolean
     /** Data in cui il commento è stato verificato. **/
     verifiedDate?: number
     /** Se un moderatore ha contrassegnato il commento come revisionato. **/
     reviewed: boolean
-    /** La posizione, o codifica base64, dell'avatar. Sarà base64 solo se quel valore è stato passato con SSO. **/
+    /** La posizione, o codifica base64, dell'avatar. Sarà in base64 solo se questo è stato il valore passato con SSO. **/
     avatarSrc?: string
-    /** Il commento è stato contrassegnato come spam manualmente o automaticamente? **/
+    /** Il commento è stato contrassegnato manualmente o automaticamente come spam? **/
     isSpam: boolean
-    /** Il commento è stato contrassegnato automaticamente come spam? **/
+    /** Il commento è stato automaticamente contrassegnato come spam? **/
     aiDeterminedSpam: boolean
     /** Ci sono immagini nel commento? **/
     hasImages: boolean
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Most Relevant". **/
+    /** Il numero di pagina su cui si trova il commento per l'ordinamento "Most Relevant". **/
     pageNumber: number
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Oldest First". **/
+    /** Il numero di pagina su cui si trova il commento per l'ordinamento "Oldest First". **/
     pageNumberOF: number
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Newest First". **/
+    /** Il numero di pagina su cui si trova il commento per l'ordinamento "Newest First". **/
     pageNumberNF: number
     /** Il commento è stato approvato automaticamente o manualmente? **/
     approved: boolean
-    /** Il codice della localizzazione (formato: en_us) dell'utente quando il commento è stato scritto. **/
+    /** Il codice locale (formato: en_us) dell'utente quando il commento è stato scritto. **/
     locale: string
-    /** Le @mention scritte nel commento che sono state analizzate correttamente. **/
+    /** Le @mention scritte nel commento che sono state analizzate con successo. **/
     mentions?: CommentUserMention[]
     /** Il dominio da cui proviene il commento. **/
     domain?: string
-    /** L'elenco opzionale degli id dei gruppi di moderazione associati a questo commento. **/
+    /** L'elenco opzionale di id dei gruppi di moderazione associati a questo commento. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
@@ -83,11 +83,11 @@ has the following structure.
 [inline-code-attrs-start title = 'Oggetto Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** L'id dell'utente. Per gli utenti SSO, avrà il tenant id come prefisso. **/
+    /** L'id utente. Per gli utenti SSO, avrà prefissato l'id del tenant. **/
     id: string
-    /** Il testo finale del tag @mention, incluso il simbolo @. **/
+    /** Il testo finale del tag @mention, inclusivo del simbolo @. **/
     tag: string
-    /** Il testo originale del tag @mention, incluso il simbolo @. **/
+    /** Il testo originale del tag @mention, inclusivo del simbolo @. **/
     rawTag: string
     /** Che tipo di utente è stato taggato. user = account FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
@@ -96,12 +96,25 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### HTTP Methods Used
+#### HTTP Methods
 
-**Create e Update usano entrambi HTTP PUT e non POST!**
+Puoi configurare il metodo HTTP per ciascun tipo di evento webhook nel pannello di amministrazione:
 
-Poiché tutte le nostre richieste contengono un ID, ripetere la stessa richiesta Create o Update non dovrebbe creare nuovi oggetti dalla vostra parte.
+- **Evento "Create"**: POST o PUT (predefinito: PUT)
+- **Evento "Update"**: POST o PUT (predefinito: PUT)
+- **Evento "Delete"**: DELETE, POST o PUT (predefinito: DELETE)
 
-Ciò significa che queste chiamate sono idempotenti e dovrebbero essere eventi PUT secondo la specifica HTTP.
+Poiché tutte le richieste contengono un ID, le operazioni Create e Update sono idempotenti per impostazione predefinita (PUT). Ripetere la stessa richiesta di Create o Update non dovrebbe creare oggetti duplicati dalla tua parte.
 
----
+#### Request Headers
+
+Ogni richiesta webhook include le seguenti intestazioni:
+
+| Header | Descrizione |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Il tuo API Secret |
+| `X-FastComments-Timestamp` | Timestamp Unix (secondi) quando la richiesta è stata firmata |
+| `X-FastComments-Signature` | Firma HMAC-SHA256 (`sha256=<hex>`) |
+
+Vedi [Sicurezza e token API](/guides/webhooks/webhooks-api-tokens) per informazioni sulla verifica della firma HMAC.

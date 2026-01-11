@@ -1,7 +1,25 @@
-U Webhooks administraciji postoje dugmad `Send Test Payload` za svaki tip događaja (Create, Update, Delete). Događaji Create i Update šalju lažni WebhookComment objekat, dok testiranje Delete šalje lažno telo zahteva koje sadrži samo ID.
+У администраторском интерфејсу Webhooks-а налазе се дугмад `Send Test Payload` за сваки тип догађаја (Create, Update, Delete). Create и Update догађаји шаљу пример WebhookComment објекта, док тестирање Delete шаље пример тела захтева које садржи само ID.
 
-Test će izvršiti dva poziva da proveri statusni kod za scenarije "uspešan" (ispravan API ključ) i "neuspešan" (neispravan API ključ).
+## Верификација садржаја захтева
 
-Kada test pošalje neispravan API ključ treba da vratite statusni kod 401 da bi test potpuno prošao. Ako ne proverite ispravno vrednost tokena, dobićete grešku.
+Када тестирате интеграцију вебхука, проверите да долазни захтеви садрже следећа заглавља:
 
-Ovo je da bi se osiguralo da pravilno autentifikujete zahtev.
+1. **`token`** - Ваш API секрет
+2. **`X-FastComments-Timestamp`** - Unix временска ознака (у секундама)
+3. **`X-FastComments-Signature`** - HMAC-SHA256 потпис
+
+Користите верификацију HMAC потписа да бисте осигурали да су подаци аутентични.
+
+## Алати за тестирање
+
+Можете користити алате као што су [webhook.site](https://webhook.site) или [ngrok](https://ngrok.com) да прегледате долазне податке вебхука током развоја.
+
+## Типови догађаја
+
+- **Create Event**: Окида се када је креиран нови коментар. Подразумевани метод: PUT
+- **Update Event**: Окида се када је коментар измењен. Подразумевани метод: PUT
+- **Delete Event**: Окида се када је коментар обрисан. Подразумевани метод: DELETE
+
+Сваки догађај укључује целокупне податке коментара у телу захтева (погледајте [Структуре података](/guides/webhooks/webhooks-structures) за формат података).
+
+---

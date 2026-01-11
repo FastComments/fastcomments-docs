@@ -1,7 +1,23 @@
-Dans l'administration Webhooks il y a des boutons `Send Test Payload` pour chaque type d'événement (Create, Update, Delete). Les événements Create et Update envoient un objet WebhookComment factice, tandis que le test de Delete enverra un corps de requête factice contenant uniquement un ID.
+Dans l'interface d'administration des Webhooks il y a des boutons `Send Test Payload` pour chaque type d'événement (Create, Update, Delete). Les événements Create et Update envoient un objet WebhookComment factice, tandis que le test de Delete enverra un corps de requête factice contenant uniquement un ID.
 
-Le test effectuera deux appels pour vérifier le code de réponse pour les scénarios "happy" (clé API correcte) et "sad" (clé API invalide).
+## Vérification des charges utiles
 
-Lorsque le test envoie une clé API invalide, vous devez renvoyer un code d'état 401 pour que le test réussisse complètement. Si vous ne vérifiez pas correctement la valeur du jeton, vous verrez une erreur.
+Lorsque vous testez votre intégration webhook, vérifiez que les requêtes entrantes incluent les en-têtes suivants :
 
-Ceci permet de s'assurer que vous authentifiez correctement la requête.
+1. **`token`** - Votre secret d'API
+2. **`X-FastComments-Timestamp`** - Horodatage Unix (secondes)
+3. **`X-FastComments-Signature`** - Signature HMAC-SHA256
+
+Utilisez la vérification de la signature HMAC pour vous assurer que les charges utiles sont authentiques.
+
+## Outils de test
+
+Vous pouvez utiliser des outils comme [webhook.site](https://webhook.site) ou [ngrok](https://ngrok.com) pour inspecter les charges utiles des webhooks entrants pendant le développement.
+
+## Types d'événements
+
+- **Create Event**: Déclenché lorsqu'un nouveau commentaire est créé. Méthode par défaut : PUT
+- **Update Event**: Déclenché lorsqu'un commentaire est modifié. Méthode par défaut : PUT
+- **Delete Event**: Déclenché lorsqu'un commentaire est supprimé. Méthode par défaut : DELETE
+
+Chaque événement inclut l'intégralité des données du commentaire dans le corps de la requête (voir [Structures de données](/guides/webhooks/webhooks-structures) pour le format de la charge utile).

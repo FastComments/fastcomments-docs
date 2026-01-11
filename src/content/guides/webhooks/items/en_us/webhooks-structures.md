@@ -96,10 +96,25 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### HTTP Methods Used
+#### HTTP Methods
 
-**Create and Update both use HTTP PUT and not POST!**
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-Since all of our requests contain an ID, repeating the same Create or Update request should not create new objects on your side.
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-This means that these calls are idempotent and should be PUT events as per the HTTP specification.
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
+
+#### Request Headers
+
+Each webhook request includes the following headers:
+
+| Header | Description |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Your API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
+
+See [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) for information on verifying the HMAC signature.

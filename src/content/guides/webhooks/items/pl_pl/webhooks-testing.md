@@ -1,7 +1,23 @@
-W panelu administracyjnym Webhooks znajdują się przyciski `Send Test Payload` dla każdego typu zdarzenia (Create, Update, Delete). The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+W panelu administracyjnym Webhooks znajdują się przyciski `Send Test Payload` dla każdego typu zdarzenia (Utworzenie, Aktualizacja, Usunięcie). Zdarzenia Utworzenia i Aktualizacji wysyłają przykładowy obiekt WebhookComment, natomiast testowanie Usunięcia wyśle przykładową treść żądania zawierającą tylko identyfikator.
 
-Test wykona dwa wywołania, aby zweryfikować kod odpowiedzi dla scenariuszy "happy" (correct API Key) i "sad" (invalid API key).
+## Weryfikacja treści żądań
 
-Kiedy test wyśle nieprawidłowy API key, powinieneś zwrócić kod statusu 401, aby test przeszedł pomyślnie. Jeśli nie sprawdzisz poprawnie wartości tokena, otrzymasz błąd.
+Podczas testowania integracji webhooków upewnij się, że przychodzące żądania zawierają następujące nagłówki:
 
-Ma to zapewnić, że poprawnie uwierzytelniasz żądanie.
+1. **`token`** - Twój sekret API
+2. **`X-FastComments-Timestamp`** - Znacznik czasu Unix (w sekundach)
+3. **`X-FastComments-Signature`** - Sygnatura HMAC-SHA256
+
+Użyj weryfikacji sygnatury HMAC, aby upewnić się, że treści żądań są autentyczne.
+
+## Narzędzia testowe
+
+Możesz użyć narzędzi takich jak [webhook.site](https://webhook.site) lub [ngrok](https://ngrok.com), aby przejrzeć przychodzące dane webhooków podczas tworzenia.
+
+## Typy zdarzeń
+
+- **Zdarzenie utworzenia**: Wywoływane, gdy nowy komentarz zostanie utworzony. Domyślna metoda: PUT
+- **Zdarzenie aktualizacji**: Wywoływane, gdy komentarz jest edytowany. Domyślna metoda: PUT
+- **Zdarzenie usunięcia**: Wywoływane, gdy komentarz zostanie usunięty. Domyślna metoda: DELETE
+
+Każde zdarzenie zawiera pełne dane komentarza w treści żądania (zobacz [Struktury danych](/guides/webhooks/webhooks-structures) dla formatu danych).

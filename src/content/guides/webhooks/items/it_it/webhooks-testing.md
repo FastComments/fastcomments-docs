@@ -1,7 +1,23 @@
-Nell'admin dei Webhooks ci sono pulsanti `Send Test Payload` per ogni tipo di evento (Create, Update, Delete). Gli eventi Create e Update inviano un oggetto WebhookComment fittizio, mentre il test di Delete invierà un corpo della richiesta fittizio contenente solo un ID.
+Nella Webhooks admin ci sono `Send Test Payload` buttons per ogni tipo di evento (Create, Update, Delete). Gli eventi Create e Update inviano un oggetto di prova WebhookComment, mentre il test di Delete invierà un corpo della richiesta fittizio contenente solo un ID.
 
-Il test effettuerà due chiamate per verificare il codice di risposta per gli scenari "happy" (API Key corretta) e "sad" (API Key non valida).
+## Verifica dei payload
 
-Quando il test invia una API Key non valida dovresti restituire un codice di stato 401 affinché il test sia considerato completamente superato. Se non controlli correttamente il valore del token, vedrai un errore.
+Quando testi la tua integrazione webhook, verifica che le richieste in arrivo includano le seguenti intestazioni:
 
-Questo serve a garantire che tu autentichi correttamente la richiesta.
+1. **`token`** - Il tuo API Secret
+2. **`X-FastComments-Timestamp`** - Unix timestamp (secondi)
+3. **`X-FastComments-Signature`** - HMAC-SHA256 signature
+
+Usa la verifica della firma HMAC per garantire che i payload siano autentici.
+
+## Strumenti di test
+
+Puoi usare strumenti come [webhook.site](https://webhook.site) o [ngrok](https://ngrok.com) per ispezionare i payload webhook in arrivo durante lo sviluppo.
+
+## Tipi di evento
+
+- **Create Event**: Scatenato quando viene creato un nuovo commento. Metodo predefinito: PUT
+- **Update Event**: Scatenato quando un commento viene modificato. Metodo predefinito: PUT
+- **Delete Event**: Scatenato quando un commento viene eliminato. Metodo predefinito: DELETE
+
+Ogni evento include tutti i dati del commento nel corpo della richiesta (vedi [Strutture dei dati](/guides/webhooks/webhooks-structures) per il formato del payload).

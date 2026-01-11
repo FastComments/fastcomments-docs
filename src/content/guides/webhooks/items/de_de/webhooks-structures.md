@@ -2,17 +2,17 @@ Die einzige Struktur, die über Webhooks gesendet wird, ist das WebhookComment-O
 
 #### Die Struktur des WebhookComment-Objekts
 
-##### Die Struktur des "create"-Events
+##### Die "Create"-Event-Struktur
 Der Request-Body des "create"-Events ist ein WebhookComment-Objekt.
 
-##### Die Struktur des "update"-Events
+##### Die "Update"-Event-Struktur
 Der Request-Body des "update"-Events ist ein WebhookComment-Objekt.
 
-##### Die Struktur des "delete"-Events
+##### Die "Delete"-Event-Struktur
 Der Request-Body des "delete"-Events ist ein WebhookComment-Objekt.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Änderung ab 14. Nov 2023
+    Zuvor enthielt der Request-Body des "delete"-Events nur die Kommentar-ID. Er enthält jetzt den vollständigen Kommentar zum Zeitpunkt der Löschung.
 
 
 [inline-code-attrs-start title = 'Das WebhookComment-Objekt'; type = 'typescript'; inline-code-attrs-end]
@@ -20,17 +20,17 @@ Der Request-Body des "delete"-Events ist ein WebhookComment-Objekt.
 interface WebhookComment {
     /** Die id des Kommentars. **/
     id: string
-    /** Die id oder URL, die den Kommentarthread identifiziert. Normalisiert. **/
+    /** Die id oder URL, die den Kommentar-Thread identifiziert. Normalisiert. **/
     urlId: string
     /** Die URL, die auf den Ort zeigt, an dem der Kommentar hinterlassen wurde. **/
     url?: string
-    /** Die user id, der den Kommentar hinterlassen hat. Bei SSO mit tenant id vorangestellt. **/
+    /** Die Benutzer-id, die den Kommentar hinterlassen hat. Bei SSO mit Tenant-id vorangestellt. **/
     userId?: string
     /** Die E-Mail des Benutzers, der den Kommentar hinterlassen hat. **/
     commenterEmail?: string
-    /** Der Name des Benutzers, der im Kommentar-Widget angezeigt wird. Bei SSO kann es displayName sein. **/
+    /** Der Name des Benutzers, der im Kommentar-Widget angezeigt wird. Bei SSO kann dies displayName sein. **/
     commenterName: string
-    /** Rohtext des Kommentars. **/
+    /** Rohkommentartext. **/
     comment: string
     /** Kommentartext nach dem Parsen. **/
     commentHTML: string
@@ -38,68 +38,85 @@ interface WebhookComment {
     externalId?: string
     /** Die id des übergeordneten Kommentars. **/
     parentId?: string | null
-    /** Das UTC-Datum, wann der Kommentar hinterlassen wurde. **/
+    /** Das UTC-Datum, an dem der Kommentar hinterlassen wurde. **/
     date: UTC_ISO_DateString
-    /** Kombinierter Karma-Wert (up - down) der Votes. **/
+    /** Kombiniertes Karma (up - down) der Stimmen. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True, wenn der Benutzer zum Zeitpunkt des Kommentierens eingeloggt war, oder er den Kommentar verifiziert hat, oder wenn er seine Sitzung beim Hinterlassen des Kommentars verifiziert hat. **/
+    /** Wahr, wenn der Benutzer beim Kommentieren eingeloggt war, oder seinen Kommentar verifiziert hat, oder wenn er seine Sitzung beim Hinterlassen des Kommentars verifiziert hatte. **/
     verified: boolean
     /** Datum, wann der Kommentar verifiziert wurde. **/
     verifiedDate?: number
-    /** Ob ein Moderator den Kommentar als geprüft markiert hat. **/
+    /** Ob ein Moderator den Kommentar als überprüft markiert hat. **/
     reviewed: boolean
-    /** Der Speicherort bzw. die Base64-Codierung des Avatars. Wird nur base64 sein, wenn dieser Wert bei SSO übergeben wurde. **/
+    /** Der Speicherort oder die Base64-Codierung des Avatars. Wird nur Base64 sein, wenn dieser Wert mit SSO übergeben wurde. **/
     avatarSrc?: string
     /** Wurde der Kommentar manuell oder automatisch als Spam markiert? **/
     isSpam: boolean
     /** Wurde der Kommentar automatisch als Spam markiert? **/
     aiDeterminedSpam: boolean
-    /** Sind Bilder im Kommentar vorhanden? **/
+    /** Enthält der Kommentar Bilder? **/
     hasImages: boolean
-    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierung "Most Relevant" befindet. **/
+    /** Die Seitenzahl, auf der sich der Kommentar bei der Sortierung "Most Relevant" befindet. **/
     pageNumber: number
-    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierung "Oldest First" befindet. **/
+    /** Die Seitenzahl, auf der sich der Kommentar bei der Sortierung "Oldest First" befindet. **/
     pageNumberOF: number
-    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierung "Newest First" befindet. **/
+    /** Die Seitenzahl, auf der sich der Kommentar bei der Sortierung "Newest First" befindet. **/
     pageNumberNF: number
     /** Wurde der Kommentar automatisch oder manuell genehmigt? **/
     approved: boolean
-    /** Der Locale-Code (Format: en_us) des Benutzers zum Zeitpunkt des Abfassens des Kommentars. **/
+    /** Der Locale-Code (Format: en_us) des Benutzers beim Schreiben des Kommentars. **/
     locale: string
     /** Die im Kommentar geschriebenen @mentions, die erfolgreich geparst wurden. **/
     mentions?: CommentUserMention[]
     /** Die Domain, von der der Kommentar stammt. **/
     domain?: string
-    /** Die optionale Liste der mit diesem Kommentar verbundenen Moderationsgruppen-ids. **/
+    /** Die optionale Liste von Moderationsgruppen-ids, die mit diesem Kommentar verknüpft sind. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-Wenn Benutzer in einem Kommentar markiert werden, werden die Informationen in einer Liste namens `mentions` gespeichert. Jedes Objekt in dieser Liste
-hat die folgende Struktur.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
 [inline-code-attrs-start title = 'Das Webhook-Mentions-Objekt'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Die user id. Bei SSO-Benutzern wird die tenant id vorangestellt. **/
+    /** Die Benutzer-id. Für SSO-Benutzer wird Ihre Tenant-id vorangestellt. **/
     id: string
-    /** Der finale @mention-Tagtext inklusive des @-Symbols. **/
+    /** Der endgültige @mention-Tag-Text, einschließlich des @-Symbols. **/
     tag: string
-    /** Der ursprüngliche @mention-Tagtext inklusive des @-Symbols. **/
+    /** Der ursprüngliche @mention-Tag-Text, einschließlich des @-Symbols. **/
     rawTag: string
-    /** Welche Art von Benutzer markiert wurde. user = FastComments.com-Konto. sso = SSOUser. **/
+    /** Welcher Benutzertyp markiert wurde. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Wenn der Benutzer Benachrichtigungen abbestellt, wird dies trotzdem auf true gesetzt. **/
+    /** Wenn der Benutzer Benachrichtigungen abwählt, bleibt dieses Feld trotzdem auf true gesetzt. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### Verwendete HTTP-Methoden
+#### HTTP-Methoden
 
-**Create und Update verwenden beide HTTP PUT und nicht POST!**
+Sie können die HTTP-Methode für jeden Webhook-Ereignistyp im Admin-Panel konfigurieren:
 
-Da alle unsere Anfragen eine ID enthalten, sollte das Wiederholen derselben Create- oder Update-Anfrage auf Ihrer Seite keine neuen Objekte erstellen.
+- **Create Event**: POST oder PUT (Standard: PUT)
+- **Update Event**: POST oder PUT (Standard: PUT)
+- **Delete Event**: DELETE, POST oder PUT (Standard: DELETE)
 
-Das bedeutet, dass diese Aufrufe idempotent sind und gemäß der HTTP-Spezifikation als PUT-Ereignisse ausgeführt werden sollten.
+Da alle Anfragen eine ID enthalten, sind Create- und Update-Operationen standardmäßig idempotent (PUT). Die wiederholte Zusendung derselben Create- oder Update-Anfrage sollte auf Ihrer Seite keine doppelten Objekte erzeugen.
+
+#### Request-Header
+
+Jede Webhook-Anfrage enthält folgende Header:
+
+| Header | Description |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Ihr API-Secret |
+| `X-FastComments-Timestamp` | Unix-Zeitstempel (Sekunden), zu dem die Anfrage signiert wurde |
+| `X-FastComments-Signature` | HMAC-SHA256-Signatur (`sha256=<hex>`) |
+
+Siehe [Sicherheit & API-Token](/guides/webhooks/webhooks-api-tokens) für Informationen zur Überprüfung der HMAC-Signatur.
+
+---

@@ -1,104 +1,93 @@
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Denne API-endpoint giver mulighed for at oprette en kommentar.
+Dette API-endpoint giver mulighed for at oprette kommentarer.
 
-De krav og begrænsninger, der gælder for at efterlade en kommentar via kommentar-widget'en, gælder også her. For eksempel, hvis du har aktiveret meddelelser om samtykke, og brugeren ikke har accepteret dem, vil de ikke modtage e-mail-meddelelser.
+Almindelige anvendelsestilfælde er brugerdefinerede UI'er, integrationer eller imports.
 
-Denne rute adlyder også tenant-niveau indstillinger som `commentsRequireApproval`. Dette kan styres for denne anmodning via `isApproved`-flaget på anmodningen.
+Bemærkninger:
 
-[inline-code-attrs-start title = 'Comment POST cURL Eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+- Dette API kan opdatere kommentarwidgeten "live", hvis ønsket (dette øger `creditsCost` fra `1` til `2`).
+- Dette API vil automatisk oprette brugerobjekter i vores system, hvis der angives en e-mail.
+- Forsøg på at gemme to kommentarer med forskellige e-mails, men samme brugernavn, vil resultere i en fejl for den anden kommentar. 
+- Hvis du angiver `parentId`, og en børnekommentar har `notificationSentForParent` sat til false, **vil vi sende notifikationer for forældrekommentaren**. Dette gøres hver time (vi samler notifikationerne for at reducere antallet af sendte e-mails).
+- Hvis du vil sende velkomst-e-mails ved oprettelse af brugere, eller e-mails til verifikation af kommentarer, sæt `sendEmails` til `true` i forespørgselsparametrene.
+- Kommentarer oprettet via dette API vil blive vist på Analytics- og Moderation-siderne i admin-appen.
+- "bad words" bliver stadig maskerede i kommentatornavne og kommentartekst, hvis indstillingen er slået til.
+- Kommentarer oprettet via dette API kan stadig blive tjekket for spam, hvis ønsket.
+- Konfiguration såsom maksimal kommentar-længde, hvis konfigureret via Customization Rule-adminsiden, vil gælde her.
+
+De minimale data, der kræves for at indsende og som vil blive vist i kommentar-widgeten, er følgende:
+
+[inline-code-attrs-start title = 'Minimum Kommentar POST cURL-eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
-  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET' \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
   --header 'Content-Type: application/json' \
   --data '{
-    "urlId": "some-page-or-article",
-    "url": "https://example.com/some-page-url",
-    "pageTitle": "Some Page Title",
-    "userId": "some-user-id",
-    "commenterEmail": "someone@somewhere.com",
-    "commenterName": "Some Name",
-    "comment": "The **raw** comment text!"
+	"approved": true,
+	"comment": "some-comment",
+	"commenterName": "some-commenter-name",
+	"date": 1622644382148,
+	"urlId": "some-place",
+	"url": "https://exmaple.com/some-page",
+	"verified": true
 }'
 [inline-code-end]
 
-Ved at bruge `userId` vil vi kæde denne kommentar til en eksisterende SSO-bruger. Hvis brugeren ikke eksisterer, vil de blive oprettet.
+En mere realistisk forespørgsel kan se sådan ud:
 
-I dette tilfælde er `commenterEmail` og `commenterName` valgfrie. Hvis de ikke angives, vil de blive sat til de eksisterende værdier for brugeren. Hvis de
-angives, vil de blive brugt i stedet.
-
-Feltet `comment` er den rå, markdown-formaterede kommentar, maksimalt 16k tegn.
-
-Følgende felter understøttes også ved oprettelse af en kommentar:
-
-[inline-code-attrs-start title = 'Comment Oprettelsesfelter'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentar POST cURL-eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentPostBody {
-    anonUserId?: string
-    urlId: string
-    url: string
-    pageTitle?: string
-    userId?: string
-    commenterEmail?: string
-    commenterName?: string
-    comment: string
-    parentId?: string | null
-    date?: string
-    /** Default is true. **/
-    verified?: boolean
-    avatarSrc?: string
-    notificationLocaleOverride?: string
-    /** Used with SSO to store any id you want. Max length 200 characters. Can be used with GET Comment APIs to filter by externalId. **/
-    externalId?: string
-    isSpam?: boolean
-    isApproved?: boolean
-    /** Defaults to false. Set to true to not send email notification for this comment, for example when bulk importing. **/
-    skipNotifications?: boolean
-    meta?: Record<string, string>
-}
+curl --request POST \
+  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true&doSpamCheck=true' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"approved": true,
+	"avatarSrc": "https://static.fastcomments.com/1605337537848-DSC_0841.JPG",
+	"comment": "some-comment",
+	"commenterName": "some-commenter-name",
+	"commenterEmail": "fordperfect@spaceship.com",
+	"date": 1622644382148,
+	"isSpam": false,
+	"locale": "en_us",
+	"notificationSentForParent": true,
+	"notificationSentForParentTenant": true,
+	"reviewed": true,
+	"urlId": "some-place",
+	"url": "https://exmaple.com/some-page",
+	"verified": true,
+	"votes": 1,
+	"votesUp": 2,
+	"votesDown": 1,
+	"ip": "123.456.789.000"
+}'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Comment POST Anmodningsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentar POST-forespørgselsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentPostQueryParams {
     tenantId: string
     API_KEY: string
+    doSpamCheck?: 'true' | 'false'
+	/** Om kommentaren skal vises "live" for brugere, der ser instanser af kommentarwidgeten med samme urlId. BEMÆRK: Fordobler kreditforbruget fra 1 til 2. **/
+    isLive?: 'true' | 'false'
+    sendEmails?: 'true' | 'false'
+    populateNotifications?: 'true' | 'false'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Comment POST Svarstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentar POST-responsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+
 interface CommentPostResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-comment' | 'invalid-url' | 'invalid-url-id' | 'invalid-page-title' | 'invalid-parent-id' | 'invalid-date' | 'invalid-verified' | 'invalid-avatar-src' | 'empty-request' | 'invalid-input'
-    /** Included on failure. **/
+    /** Medtages ved fejl. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email';
+    /** Medtages ved fejl. **/
     reason?: string
+    /** Den oprettede kommentar. **/
     comment?: Comment
+    /** Den tilknyttede bruger, som måske allerede fandtes eller ej. **/
+    user?: User
 }
 [inline-code-end]
-
-### Oprettelse af Svar
-
-For at oprette et svar på en kommentar skal du angive `parentId`-feltet. Dette er ID'et på den kommentar, du svarer på.
-
-[inline-code-attrs-start title = 'Reply Comment POST cURL Eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-curl --request POST \
-  --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET' \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "urlId": "test",
-    "url": "https://example.com/test",
-    "pageTitle": "Test",
-    "userId": "some-user-id",
-    "commenterEmail": "someone@somewhere.com",
-    "commenterName": "Some Name",
-    "comment": "En **svar**!",
-    "parentId": "some-parent-comment-id"
-}'
-[inline-code-end]
-
-### Live API vs Doven Tilstand
-
-Som standard er denne API "doven" - den sender ikke meddelelser eller opdaterer kommentarer i realtid. Dette er nyttigt til migrationer. For at aktivere live-tilstand skal du sætte `skipNotifications` til `false`.

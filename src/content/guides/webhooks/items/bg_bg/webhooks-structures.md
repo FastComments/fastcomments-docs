@@ -1,18 +1,19 @@
-Единствената структура, изпращана чрез webhooks, е обектът WebhookComment, описан по-долу в TypeScript.
+---
+Единствената структура, изпращана чрез webhooks, е обектът WebhookComment, описан в TypeScript по-долу.
 
-#### The WebhookComment Object Structure
+#### Структура на обекта WebhookComment
 
-##### Структура на събитието "Create"
+##### Структура на събитието "create"
 Тялото на заявката за събитието "create" е обект WebhookComment.
 
-##### Структура на събитието "Update"
+##### Структура на събитието "update"
 Тялото на заявката за събитието "update" е обект WebhookComment.
 
-##### Структура на събитието "Delete"
+##### Структура на събитието "delete"
 Тялото на заявката за събитието "delete" е обект WebhookComment.
 
-    Промяна от Nov 14th 2023
-    Преди тялото на заявката за събитието "delete" съдържаше само id на коментара. Сега то съдържа целия коментар към момента на изтриване.
+    Промяна към 14 ноември 2023 г.
+    Преди това тялото на заявката за събитието "delete" съдържаше само id на коментара. Сега съдържа пълния коментар в момента на изтриването.
 
 
 [inline-code-attrs-start title = 'Обектът WebhookComment'; type = 'typescript'; inline-code-attrs-end]
@@ -20,15 +21,15 @@
 interface WebhookComment {
     /** Идентификаторът на коментара. **/
     id: string
-    /** Идентификаторът или URL, който идентифицира нишката с коментари. Нормализиран. **/
+    /** Идентификаторът или URL адресът, който идентифицира нишката с коментари. Нормализиран. **/
     urlId: string
-    /** URL, сочещ към мястото, където е оставен коментарът. **/
+    /** URL адресът, който сочи към мястото, където е оставен коментарът. **/
     url?: string
-    /** Идентификаторът на потребителя, който е оставил коментара. Ако е SSO, е с предварен префикс tenant id. **/
+    /** Идентификаторът на потребителя, който е оставил коментара. Ако е SSO, с префикс tenant id. **/
     userId?: string
     /** Имейлът на потребителя, който е оставил коментара. **/
     commenterEmail?: string
-    /** Името на потребителя, което се показва в коментарния уиджет. При SSO може да бъде displayName. **/
+    /** Името на потребителя, което се показва в comment widget-а. При SSO може да бъде displayName. **/
     commenterName: string
     /** Суров текст на коментара. **/
     comment: string
@@ -40,68 +41,83 @@ interface WebhookComment {
     parentId?: string | null
     /** UTC датата, когато е оставен коментарът. **/
     date: UTC_ISO_DateString
-    /** Комбинирана карма (up - down) от гласовете. **/
+    /** Комбинирана карма (up - down) на гласовете. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True ако потребителят е бил влязъл когато е коментирал, или ако е верифицирал коментара, или ако е верифицирал сесията си когато коментарът е бил оставен. **/
+    /** Вярно, ако потребителят е бил влязъл, когато е коментирал, ако е верифицирал коментара, или ако е верифицирал сесията си, когато е оставил коментара. **/
     verified: boolean
     /** Дата, когато коментарът е бил верифициран. **/
     verifiedDate?: number
     /** Ако модератор е отбелязал коментара като прегледан. **/
     reviewed: boolean
-    /** Местоположението или base64-кодираното изображение на аватара. Ще бъде base64 само ако това е стойността, подадена със SSO. **/
+    /** Местоположението, или base64 кодирането, на аватара. Ще бъде base64 само ако това е стойността, подадена при SSO. **/
     avatarSrc?: string
-    /** Беше ли коментарът маркиран като спам ръчно или автоматично? **/
+    /** Коментарът маркиран ли е ръчно или автоматично като спам? **/
     isSpam: boolean
-    /** Беше ли коментарът автоматично маркиран като спам? **/
+    /** Коментарът автоматично ли беше маркиран като спам? **/
     aiDeterminedSpam: boolean
     /** Има ли изображения в коментара? **/
     hasImages: boolean
-    /** Номерът на страницата, на която се намира коментарът за посоката на сортиране "Most Relevant". **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Most Relevant". **/
     pageNumber: number
-    /** Номерът на страницата за сортиране "Oldest First". **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Oldest First". **/
     pageNumberOF: number
-    /** Номерът на страницата за сортиране "Newest First". **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Newest First". **/
     pageNumberNF: number
     /** Коментарът одобрен ли е автоматично или ръчно? **/
     approved: boolean
-    /** Локалният код (формат: en_us) на потребителя, когато е написан коментарът. **/
+    /** Кодът на локала (формат: en_us) на потребителя, когато е написан коментарът. **/
     locale: string
-    /** @споменаванията, написани в коментара, които бяха успешно парснати. **/
+    /** @mentions, написани в коментара, които са успешно парснати. **/
     mentions?: CommentUserMention[]
     /** Домейнът, от който е коментарът. **/
     domain?: string
-    /** По избор списък с идентификатори на модерационни групи, свързани с този коментар. **/
+    /** Опционален списък с идентификатори на модераторски групи, асоциирани с този коментар. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Когато потребители са маркирани в коментар, информацията се съхранява в списък, наречен `mentions`. Всеки обект в този списък
+има следната структура.
 
-[inline-code-attrs-start title = 'Обектът за споменавания в Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Обектът Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Идентификаторът на потребителя. За SSO потребители ще има предварен префикс tenant id. **/
+    /** Идентификаторът на потребителя. За SSO потребителите това ще има префикс с вашия tenant id. **/
     id: string
-    /** Крайният текст на @mention тагa, включително символа @. **/
+    /** Финалният @mention таг текст, включително символа @. **/
     tag: string
-    /** Оригиналният текст на @mention тага, включително символа @. **/
+    /** Оригиналният @mention таг текст, включително символа @. **/
     rawTag: string
-    /** Какъв тип потребител е бил тагнат. user = FastComments.com акаунт. sso = SSOUser. **/
+    /** Какъв тип потребител е бил маркиран. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Ако потребителят се откаже от известия, това все пак ще бъде зададено на true. **/
+    /** Ако потребителят се откаже от нотификации, това все пак ще бъде зададено на true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP Methods Used
+#### HTTP Methods
 
-**Create and Update both use HTTP PUT and not POST!**
+Можете да конфигурирате HTTP метода за всеки тип webhook събитие в администраторския панел:
 
-Since all of our requests contain an ID, repeating the same Create or Update request should not create new objects on your side.
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-This means that these calls are idempotent and should be PUT events as per the HTTP specification.
+Тъй като всички заявки съдържат ID, операциите Create и Update са идемпотентни по подразбиране (PUT). Повтарянето на една и съща заявка за Create или Update не би трябвало да създаде дублирани обекти от ваша страна.
+
+#### Request Headers
+
+Всяка webhook заявка включва следните заглавки:
+
+| Хедър | Описание |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Вашият API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
+
+Вижте [Сигурност и API токени](/guides/webhooks/webhooks-api-tokens) за информация относно проверката на HMAC подписа.
 
 ---

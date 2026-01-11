@@ -1,105 +1,120 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Jedina struktura koja se šalje putem webhooks je objekat WebhookComment, prikazan u TypeScript-u ispod.
 
 #### Struktura objekta WebhookComment
 
-##### The "Create" Event Structure
-The "create" event request body is a WebhookComment object.
+##### Struktura događaja "Create"
+Telo zahteva za događaj "create" je objekat WebhookComment.
 
-##### The "Update" Event Structure
-The "update" event request body is a WebhookComment object.
+##### Struktura događaja "Update"
+Telo zahteva za događaj "update" je objekat WebhookComment.
 
-##### The "Delete" Event Structure
-The "delete" event request body is a WebhookComment object.
+##### Struktura događaja "Delete"
+Telo zahteva za događaj "delete" je objekat WebhookComment.
 
-    Promena od 14. novembra 2023.
-    Ranije telo zahteva za događaj "delete" je sadržavalo samo id komentara. Sada sadrži ceo komentar u trenutku brisanja.
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
 
 [inline-code-attrs-start title = 'Objekat WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** ID komentara. **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** ID ili URL koji identifikuje nit komentara. Normalizovano. **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** URL koji pokazuje mesto gde je komentar ostavljen. **/
     url?: string
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** ID korisnika koji je ostavio komentar. Ako je SSO, prefiksovan tenant id-jem. **/
     userId?: string
-    /** The email of the user left the comment. **/
+    /** Email korisnika koji je ostavio komentar. **/
     commenterEmail?: string
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** Ime korisnika koje se prikazuje u widgetu za komentare. Sa SSO, može biti displayName. **/
     commenterName: string
-    /** Raw comment text. **/
+    /** Neobrađeni tekst komentara. **/
     comment: string
-    /** Comment text after parsing. **/
+    /** Tekst komentara posle parsiranja. **/
     commentHTML: string
-    /** Comment external id. **/
+    /** Eksterni ID komentara. **/
     externalId?: string
-    /** The id of the parent comment. **/
+    /** ID roditeljskog komentara. **/
     parentId?: string | null
-    /** The UTC date when the comment was left. **/
+    /** UTC datum kada je komentar ostavljen. **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** Kombinovana vrednost glasova (za - protiv). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** True ako je korisnik bio ulogovan kada je komentarisao, ili ako je verifikovao komentar, ili ako je verifikovao sesiju kada je komentar ostavljen. **/
     verified: boolean
-    /** Date when the comment was verified. **/
+    /** Datum kada je komentar verifikovan. **/
     verifiedDate?: number
-    /** If a moderator marked the comment reviewed. **/
+    /** Da li je moderator označio komentar kao pregledan. **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** Lokacija ili base64 kodiranje avatara. Biće base64 samo ako je ta vrednost poslata sa SSO. **/
     avatarSrc?: string
-    /** Was the comment manually or automatically marked as spam? **/
+    /** Da li je komentar ručno ili automatski označen kao spam? **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** Da li je komentar automatski označen kao spam? **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** Da li u komentaru ima slika? **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** Broj stranice na kojoj se komentar nalazi za sortiranje "Most Relevant". **/
     pageNumber: number
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** Broj stranice na kojoj se komentar nalazi za sortiranje "Oldest First". **/
     pageNumberOF: number
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** Broj stranice na kojoj se komentar nalazi za sortiranje "Newest First". **/
     pageNumberNF: number
-    /** Was the comment approved automatically or manually? **/
+    /** Da li je komentar odobren automatski ili ručno? **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** Kod lokalizacije (format: en_us) korisnika kada je komentar napisan. **/
     locale: string
-    /** The @mentions written in the comment that were successfully parsed. **/
+    /** @pominjanja napisani u komentaru koja su uspešno parsirana. **/
     mentions?: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** Domen odakle je komentar. **/
     domain?: string
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Opcionalna lista ID-jeva moderacijskih grupa povezanih sa ovim komentarom. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Kada su korisnici označeni u komentaru, informacije se čuvaju u listi koja se zove `mentions`. Svaki objekat u toj listi
+ima sledeću strukturu.
 
-[inline-code-attrs-start title = 'Objekat pomena u webhooku'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objekat Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** ID korisnika. Za SSO korisnike biće prefiksovan vašim tenant id-jem. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Konačan tekst @mention taga, uključujući simbol @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Originalni tekst @mention taga, uključujući simbol @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Koji tip korisnika je označen. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Ako se korisnik isključi iz notifikacija, ovo će i dalje biti postavljeno na true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP Methods Used
+#### HTTP metode
 
-**Create and Update both use HTTP PUT and not POST!**
+Možete konfigurisati HTTP metodu za svaki tip webhook događaja u administratorskom panelu:
 
-Since all of our requests contain an ID, repeating the same Create or Update request should not create new objects on your side.
+- **Create Event**: POST ili PUT (podrazumevano: PUT)
+- **Update Event**: POST ili PUT (podrazumevano: PUT)
+- **Delete Event**: DELETE, POST, ili PUT (podrazumevano: DELETE)
 
-This means that these calls are idempotent and should be PUT events as per the HTTP specification.
+Pošto svi zahtevi sadrže ID, Create i Update operacije su idempotentne po defaultu (PUT). Ponavljanje istog Create ili Update zahteva ne bi trebalo da kreira duplikate objekata kod vas.
+
+#### Zaglavlja zahteva
+
+Svaki webhook zahtev uključuje sledeća zaglavlja:
+
+| Zaglavlje | Opis |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Vaš API Secret |
+| `X-FastComments-Timestamp` | Unix vremenski pečat (sekunde) kada je zahtev potpisan |
+| `X-FastComments-Signature` | HMAC-SHA256 potpis (`sha256=<hex>`) |
+
+Pogledajte [Bezbednost i API tokeni](/guides/webhooks/webhooks-api-tokens) za informacije o verifikaciji HMAC potpisa.

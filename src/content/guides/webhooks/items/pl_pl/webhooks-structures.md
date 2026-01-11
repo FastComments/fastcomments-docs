@@ -11,8 +11,8 @@ Ciało żądania zdarzenia "update" jest obiektem WebhookComment.
 ##### Struktura zdarzenia "delete"
 Ciało żądania zdarzenia "delete" jest obiektem WebhookComment.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Zmiana od 14 listopada 2023
+    Wcześniej ciało żądania zdarzenia "delete" zawierało tylko identyfikator komentarza. Teraz zawiera pełny komentarz w momencie usunięcia.
 
 
 [inline-code-attrs-start title = 'Obiekt WebhookComment'; type = 'typescript'; inline-code-attrs-end]
@@ -22,86 +22,100 @@ interface WebhookComment {
     id: string
     /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** URL wskazujący miejsce, gdzie zamieszczono komentarz. **/
+    /** URL wskazujący miejsce, gdzie został dodany komentarz. **/
     url?: string
-    /** Id użytkownika, który dodał komentarz. Jeśli SSO, poprzedzony tenant id. **/
+    /** Id użytkownika, który dodał komentarz. Jeśli SSO, poprzedzone tenant id. **/
     userId?: string
     /** Email użytkownika, który dodał komentarz. **/
     commenterEmail?: string
-    /** Nazwa użytkownika wyświetlana w widżecie komentarzy. Przy SSO może być to displayName. **/
+    /** Nazwa użytkownika wyświetlana w widżecie komentarzy. Przy SSO może to być displayName. **/
     commenterName: string
     /** Surowy tekst komentarza. **/
     comment: string
-    /** Tekst komentarza po przetworzeniu. **/
+    /** Tekst komentarza po parsowaniu. **/
     commentHTML: string
-    /** Zewnętrzny identyfikator komentarza. **/
+    /** Zewnętrzny id komentarza. **/
     externalId?: string
-    /** Id nadrzędnego komentarza. **/
+    /** Id komentarza nadrzędnego. **/
     parentId?: string | null
-    /** Data UTC, kiedy komentarz został dodany. **/
+    /** Data w UTC, kiedy komentarz został dodany. **/
     date: UTC_ISO_DateString
-    /** Suma punktów (głosy za - głosy przeciw). **/
+    /** Suma głosów (up - down). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Prawda, jeśli użytkownik był zalogowany podczas dodawania komentarza, jeśli komentarz został zweryfikowany przez użytkownika, lub jeśli użytkownik zweryfikował sesję w momencie dodania komentarza. **/
+    /** Prawda, jeśli użytkownik był zalogowany podczas dodawania komentarza, lub zweryfikował komentarz, albo zweryfikował swoją sesję w momencie dodania komentarza. **/
     verified: boolean
     /** Data, kiedy komentarz został zweryfikowany. **/
     verifiedDate?: number
-    /** Czy moderator oznaczył komentarz jako przejrzany. **/
+    /** Czy moderator oznaczył komentarz jako sprawdzony. **/
     reviewed: boolean
-    /** Lokalizacja lub kodowanie base64 avatara. Będzie base64 tylko jeśli taka wartość została przekazana wraz z SSO. **/
+    /** Lokalizacja lub kodowanie base64 awatara. Będzie base64 tylko wtedy, gdy taka wartość została przekazana z SSO. **/
     avatarSrc?: string
     /** Czy komentarz został oznaczony jako spam ręcznie czy automatycznie? **/
     isSpam: boolean
     /** Czy komentarz został automatycznie oznaczony jako spam? **/
     aiDeterminedSpam: boolean
-    /** Czy w komentarzu znajdują się obrazy? **/
+    /** Czy w komentarzu są obrazy? **/
     hasImages: boolean
-    /** Numer strony, na której znajduje się komentarz przy sortowaniu "Most Relevant". **/
+    /** Numer strony, na której znajduje się komentarz dla kierunku sortowania "Most Relevant". **/
     pageNumber: number
-    /** Numer strony, na której znajduje się komentarz przy sortowaniu "Oldest First". **/
+    /** Numer strony, na której znajduje się komentarz dla kierunku sortowania "Oldest First". **/
     pageNumberOF: number
-    /** Numer strony, na której znajduje się komentarz przy sortowaniu "Newest First". **/
+    /** Numer strony, na której znajduje się komentarz dla kierunku sortowania "Newest First". **/
     pageNumberNF: number
     /** Czy komentarz został zatwierdzony automatycznie czy ręcznie? **/
     approved: boolean
     /** Kod lokalizacji (format: en_us) użytkownika w momencie napisania komentarza. **/
     locale: string
-    /** The @mentions written in the comment that were successfully parsed. **/
+    /** @mentions napisane w komentarzu, które zostały pomyślnie sparsowane. **/
     mentions?: CommentUserMention[]
-    /** Domeną, z której pochodzi komentarz. **/
+    /** Domena, z której pochodzi komentarz. **/
     domain?: string
-    /** Opcjonalna lista identyfikatorów grup moderacyjnych powiązanych z tym komentarzem. **/
+    /** Opcjonalna lista id grup moderacji powiązanych z tym komentarzem. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Gdy użytkownicy są oznaczani w komentarzu, informacje są przechowywane w liście o nazwie `mentions`. Każdy obiekt w tej liście ma następującą strukturę.
 
-[inline-code-attrs-start title = 'Obiekt wzmianki Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Obiekt wzmianki webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Id użytkownika. Dla użytkowników SSO będzie poprzedzony tenant id. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Ostateczny tekst tagu @mention, łącznie z symbolem @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Oryginalny tekst tagu @mention, łącznie z symbolem @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Jaki typ użytkownika został oznaczony. user = konto FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Jeśli użytkownik zrezygnuje z powiadomień, ta wartość nadal będzie ustawiona na true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### Używane metody HTTP
+#### Metody HTTP
 
-**Create i Update używają HTTP PUT, a nie POST!**
+Możesz skonfigurować metodę HTTP dla każdego typu zdarzenia webhook w panelu administracyjnym:
 
-Ponieważ wszystkie nasze żądania zawierają identyfikator, powtórzenie tego samego żądania Create lub Update nie powinno tworzyć nowych obiektów po Twojej stronie.
+- **Create Event**: POST lub PUT (domyślnie: PUT)
+- **Update Event**: POST lub PUT (domyślnie: PUT)
+- **Delete Event**: DELETE, POST lub PUT (domyślnie: DELETE)
 
-Oznacza to, że te wywołania są idempotentne i zgodnie ze specyfikacją HTTP powinny być traktowane jako zdarzenia PUT.
+Ponieważ wszystkie żądania zawierają ID, operacje Create i Update są domyślnie idempotentne (PUT). Powtórzenie tego samego żądania Create lub Update nie powinno tworzyć zduplikowanych obiektów po Twojej stronie.
+
+#### Nagłówki żądań
+
+Każde żądanie webhook zawiera następujące nagłówki:
+
+| Nagłówek | Opis |
+|--------|-------------|
+| `Content-Type` | `application/json` |
+| `token` | Twój sekret API |
+| `X-FastComments-Timestamp` | Znacznik czasu Unix (sekundy) w momencie podpisania żądania |
+| `X-FastComments-Signature` | Podpis HMAC-SHA256 (`sha256=<hex>`) |
+
+Zobacz [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) aby uzyskać informacje o weryfikacji podpisu HMAC.
 
 ---

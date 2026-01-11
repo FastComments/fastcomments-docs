@@ -1,9 +1,23 @@
----
-V skrbniškem vmesniku Webhooks so gumbi `Send Test Payload` za vsako vrsto dogodka (Create, Update, Delete). Dogodka Create in Update pošljeta lažni WebhookComment objekt, medtem ko bo test Delete poslal lažno telo zahteve z zgolj ID.
+V skrbniku Webhooks so gumbi `Send Test Payload` za vsako vrsto dogodka (Create, Update, Delete). Dogodka Create in Update pošljeta lažen objekt WebhookComment, medtem ko bo pri testiranju Delete poslano lažno telo zahteve z le ID-jem.
 
-Test bo izvedel dva klica, da preveri kodo odgovora za "uspešen" (correct API Key) in "neuspešen" (invalid API key) scenarij.
+## Preverjanje payloadov
 
-Ko test pošlje invalid API key, morate vrniti statusno kodo 401, da test popolnoma uspe. Če ne preverite pravilno vrednosti tokena, se bo prikazala napaka.
+Ko testirate integracijo webhooka, preverite, da dohodne zahteve vsebujejo naslednje glave:
 
-To zagotavlja, da pravilno overite zahtevo.
----
+1. **`token`** - Vaš API skrivni ključ
+2. **`X-FastComments-Timestamp`** - Unix časovni žig (sekunde)
+3. **`X-FastComments-Signature`** - HMAC-SHA256 podpis
+
+Uporabite preverjanje HMAC podpisa, da zagotovite pristnost payloadov.
+
+## Orodja za testiranje
+
+Med razvojem lahko uporabite orodja, kot so [webhook.site](https://webhook.site) ali [ngrok](https://ngrok.com), za pregled dohodnih webhook payloadov.
+
+## Vrste dogodkov
+
+- **Create Event**: Sproži se, ko je ustvarjen nov komentar. Privzeta metoda: PUT
+- **Update Event**: Sproži se, ko je komentar urejen. Privzeta metoda: PUT
+- **Delete Event**: Sproži se, ko je komentar izbrisan. Privzeta metoda: DELETE
+
+Vsak dogodek vključuje celotne podatke komentarja v telesu zahteve (glejte [Strukture podatkov](/guides/webhooks/webhooks-structures) za format payloada).

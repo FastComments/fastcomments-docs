@@ -6,25 +6,25 @@ Da bi poenostavili ohranjanje varnosti sistema, lokalni razvoj sledi istemu post
 
 Dodajte "localhost" [kot domeno tukaj](https://fastcomments.com/auth/my-account/configure-domains).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; selector = '.content .account-block'; title='Add localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Dodaj localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
 
 ### Korak 2: Izberite API ključ
 
-Dodajali bomo konfiguracijo webhooka za vašo domeno, zato potrebujemo API ključ. [To lahko uredite tukaj.](https://fastcomments.com/auth/my-account/api-secret)
+Dodali bomo konfiguracijo webhooka za vašo domeno, zato bomo potrebovali API ključ. [To lahko naredite tukaj.](https://fastcomments.com/auth/my-account/api-secret)
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; selector = '.content .account-block'; title='Add Testing API Key'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Dodaj testni API ključ'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
 
-Pod "Associate with domain" - izberite vašo domeno "localhost".
+Under "Associate with domain" - select your "localhost" domain.
 
-**OPOMBA: Alternativno lahko uporabite en sam API Secret za vse testne aktivnosti in predprodukcijska okolja. Preprosto dodajte API Secret za "All Domains", in mu dajte ime, na primer "test".**
+**NOTE: Alternatively, you can use one API Secret for all testing activity and staging environments. Simply add an API Secret for "All Domains", and give it a name like "test".**
 
-Poskrbite, da imate za vaše produkcijske domene definirano API Secret. Dogodki za vse ostale domene bodo uporabljali wildcard (testni) secret.
+Poskrbite, da imate za svoje produkcijske domene definirano API skrivnost. Dogodki za vse ostale domene bodo uporabili nadomestno (testno) skrivnost.
 
-### Korak 3: Dodajte vaš webhook
+### Korak 3: Dodajte svoj webhook
 
-Med uporabo ngrok-a ali podobnega orodja nastavite vrednost za "localhost" [tukaj](https://fastcomments.com/auth/my-account/manage-data/webhooks).
+Med izvajanjem ngrok ali podobnega orodja nastavite vrednost za "localhost" [tukaj](https://fastcomments.com/auth/my-account/manage-data/webhooks).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Add Testing Webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; title='Dodaj testni webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
 
 When clicking `Send Test Payload`, we will send two test events to check that you validate the API key.
 
@@ -32,7 +32,6 @@ Once it validates, hit `Save`.
 
 ### Korak 4: Dodajte komentar
 
-Zdaj lahko dodate, uredite ali izbrišete komentarje in bi morali videti, da sistem kliče vaš lokalni razvojni računalnik z dogodki, pri čemer uporablja vaš testni API ključ. Morda bo do 30 sekund zamude
-prejema dogodkov na vaš računalnik.
+Zdaj lahko dodajate, urejate ali brišete komentarje in morali bi videti, da bo sistem klical vašo lokalno razvojno napravo z dogodki, pri čemer bo uporabljen vaš testni API ključ. Lahko pride do zamude do 30 sekund za prihod dogodkov do vaše naprave.
 
 ---
