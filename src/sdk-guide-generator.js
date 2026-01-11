@@ -65,6 +65,7 @@ class SDKGuideGenerator {
     createGuideDirectory(sdk) {
         const guideDir = path.join(GUIDES_DIR, sdk.id);
         const itemsDir = path.join(guideDir, 'items');
+        const generatedDir = path.join(itemsDir, 'generated');
 
         // Create directories if they don't exist
         if (!fs.existsSync(guideDir)) {
@@ -74,13 +75,14 @@ class SDKGuideGenerator {
             fs.mkdirSync(itemsDir, { recursive: true });
         }
 
-        // Clean up old files in items directory (will be regenerated)
-        if (fs.existsSync(itemsDir)) {
-            fs.rmSync(itemsDir, { recursive: true, force: true });
-            fs.mkdirSync(itemsDir, { recursive: true });
+        // Clean up old generated files in items/generated directory (will be regenerated)
+        // Note: We only clean the generated subfolder, not the entire items dir (which may have locale folders)
+        if (fs.existsSync(generatedDir)) {
+            fs.rmSync(generatedDir, { recursive: true, force: true });
         }
+        fs.mkdirSync(generatedDir, { recursive: true });
 
-        return { guideDir, itemsDir };
+        return { guideDir, itemsDir, generatedDir };
     }
 
     /**
@@ -167,7 +169,7 @@ class SDKGuideGenerator {
         console.log(`Generating guide for ${sdk.name}...`);
 
         // Create guide directory structure FIRST (before generators run)
-        const { guideDir, itemsDir } = this.createGuideDirectory(sdk);
+        const { guideDir, itemsDir, generatedDir } = this.createGuideDirectory(sdk);
 
         // Get all documentation generators
         const generators = this.getDocGenerators(sdk, repoPath);
@@ -215,16 +217,19 @@ class SDKGuideGenerator {
             );
         }
 
-        // Write section files
+        // Write section files to the generated subfolder
         for (const section of allSections) {
             // Use custom filename if provided, otherwise generate from name
             const filename = section.file || (this.sanitizeFilename(section.name) + '.md');
-            const filePath = path.join(itemsDir, filename);
+            const filePath = path.join(generatedDir, filename);
 
             // Only write if file doesn't exist (TypeScript AI generator writes as it goes)
             if (!fs.existsSync(filePath)) {
                 fs.writeFileSync(filePath, section.content, 'utf8');
             }
+
+            // Update section.file to include the generated/ prefix for meta.json
+            section.file = 'generated/' + filename;
         }
 
         // Generate and write meta.json

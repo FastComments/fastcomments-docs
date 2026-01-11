@@ -4,6 +4,7 @@ const path = require('path');
 const CSS_URL = 'https://fastcomments.com/js/shared/css-v2.js';
 const GUIDE_DIR = path.join(__dirname, 'content', 'guides', 'custom-styling');
 const ITEMS_DIR = path.join(GUIDE_DIR, 'items');
+const GENERATED_DIR = path.join(ITEMS_DIR, 'generated');
 
 /**
  * Fetch and extract CSS from the FastComments widget JavaScript file
@@ -56,6 +57,9 @@ async function generate() {
         if (!fs.existsSync(ITEMS_DIR)) {
             fs.mkdirSync(ITEMS_DIR, { recursive: true });
         }
+        if (!fs.existsSync(GENERATED_DIR)) {
+            fs.mkdirSync(GENERATED_DIR, { recursive: true });
+        }
 
         // Fetch CSS
         const css = await fetchCSS();
@@ -64,8 +68,8 @@ async function generate() {
         // Generate markdown
         const markdown = generateMarkdown(css);
 
-        // Write file
-        const outputFile = path.join(ITEMS_DIR, 'css-v2-generated.md');
+        // Write file to generated subfolder
+        const outputFile = path.join(GENERATED_DIR, 'css-v2-generated.md');
         fs.writeFileSync(outputFile, markdown, 'utf8');
         console.log(`Successfully generated ${outputFile}`);
 

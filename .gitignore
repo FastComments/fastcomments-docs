@@ -109,8 +109,5 @@ src/static/generated
 # SDK checkout
 src/content/sdks-checkout/
 
-# Generated SDK documentation files
-src/content/guides/**/items/*-generated.md
-
 # OSX Finder
 .DS_Store

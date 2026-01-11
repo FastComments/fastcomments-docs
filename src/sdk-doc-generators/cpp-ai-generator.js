@@ -91,11 +91,11 @@ class CppAIGenerator extends BaseDocGenerator {
         let currentIndex = 0;
         const concurrency = 10;
 
-        // Create items directory
-        const itemsDir = path.join(__dirname, '..', 'content', 'guides', this.sdk.id, 'items');
-        console.log(`Creating items directory: ${itemsDir}`);
-        if (!fs.existsSync(itemsDir)) {
-            fs.mkdirSync(itemsDir, { recursive: true });
+        // Create generated items directory
+        const generatedDir = path.join(__dirname, '..', 'content', 'guides', this.sdk.id, 'items', 'generated');
+        console.log(`Creating generated items directory: ${generatedDir}`);
+        if (!fs.existsSync(generatedDir)) {
+            fs.mkdirSync(generatedDir, { recursive: true });
         }
 
         // Function to get next method
@@ -134,12 +134,14 @@ class CppAIGenerator extends BaseDocGenerator {
                 // Generate section
                 const section = this.generateMethodSection(method, codeExample, resource);
                 if (section) {
-                    sections.push(section);
-
                     // Write file immediately with -generated suffix
-                    const filePath = path.join(itemsDir, section.file);
+                    const filePath = path.join(generatedDir, section.file);
                     console.log(`Writing file: ${filePath}`);
                     fs.writeFileSync(filePath, section.content, 'utf8');
+
+                    // Update section.file to include the generated/ prefix for meta.json
+                    section.file = 'generated/' + section.file;
+                    sections.push(section);
                 }
             }
         };
