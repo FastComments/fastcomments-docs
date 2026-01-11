@@ -189,6 +189,7 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         code: loc,
         name: locales[loc].name,
         nativeName: locales[loc].nativeName,
+        flag: locales[loc].flag || '🌐',
         url: createGuideLink(guide.id, loc),
         current: loc === locale
     }));

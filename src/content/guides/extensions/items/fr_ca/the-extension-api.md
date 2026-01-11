@@ -21,7 +21,7 @@ Chaque fois que vous renverrez du HTML comme ceci, il sera fusionné dans l'inte
 
 Nous pouvons attendre le chargement initial de la page et relancer manuellement le rendu d'un commentaire en invoquant `reRenderComment`:
 
-[inline-code-attrs-start title = 'Relancer le rendu d'un commentaire'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = "Relancer le rendu d'un commentaire"; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {

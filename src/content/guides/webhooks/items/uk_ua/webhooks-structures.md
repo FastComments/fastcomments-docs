@@ -15,7 +15,7 @@
     Раніше тіло запиту для події "delete" містило лише id коментаря. Тепер воно містить повний коментар на момент видалення.
 
 
-[inline-code-attrs-start title = 'Об'єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = "Об'єкт WebhookComment"; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** The id of the comment. **/
@@ -79,7 +79,7 @@ interface WebhookComment {
 
 Коли користувачів тегають у коментарі, інформація зберігається у списку, названому `mentions`. Кожен об'єкт у цьому списку має таку структуру.
 
-[inline-code-attrs-start title = 'Об'єкт згадок вебхука'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = "Об'єкт згадок вебхука"; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/

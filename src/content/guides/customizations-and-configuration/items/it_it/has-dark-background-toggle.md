@@ -9,7 +9,7 @@ Per il widget VanillaJS, dovremo fare un po' più di lavoro. Innanzitutto, FastC
 Possiamo semplicemente chiamare la funzione update ogni volta che vogliamo aggiornare la configurazione del widget dei commenti, come segue. Ecco un esempio completo e funzionante di attivazione/disattivazione
 della modalità scura con il widget VanillaJS.
 
-[inline-code-attrs-start title = 'Esempio completo di attivazione/disattivazione della modalità scura'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio completo di attivazione e disattivazione della modalità scura'; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://fastcomments.com/js/embed-v2.min.js"></script>
 <button id="toggle-dark-mode">Toggle Dark Mode</button>

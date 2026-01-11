@@ -17,7 +17,7 @@ Cet objet `Extension` est un singleton et n'est pas partagé avec d'autres exten
 
 Ensuite, pour charger notre extension, nous devons en informer le widget de commentaires. Par exemple :
 
-[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Utilisation d'une extension personnalisée'; code-example-end]
+[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = "Utilisation d'une extension personnalisée"; code-example-end]
 
 Pour des exemples fonctionnels, voir la section suivante.
 

@@ -4,7 +4,7 @@
 
 Структура об'єкта `Comment` наступна:
 
-[inline-code-attrs-start title = 'Структура об'єкта Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Структура об'єкта Comment"; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
     /** ТІЛЬКИ ДЛЯ ЧИТАННЯ: Встановлено у true, якщо механізм виявив, що коментар є спамом. **/

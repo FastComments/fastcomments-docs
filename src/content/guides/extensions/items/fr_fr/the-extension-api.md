@@ -21,7 +21,7 @@ Chaque fois que vous renvoyez du HTML de cette manière, il sera fusionné dans 
 
 Nous pouvons attendre le chargement initial de la page et re-rendre manuellement un commentaire en appelant `reRenderComment` :
 
-[inline-code-attrs-start title = 'Re-rendu d'un commentaire'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = "Re-rendu d'un commentaire"; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {

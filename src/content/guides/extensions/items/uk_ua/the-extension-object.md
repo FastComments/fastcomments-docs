@@ -1,7 +1,7 @@
 Об'єкт розширення складається з наступного визначення:
 
 <!-- якщо ви хочете оновити це, не забудьте також оновити comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc об'єкта розширення'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = "JSDoc об'єкта розширення"; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
  * Об'єкт розширення FastCommentsUI. Використовується для відкладеного (lazy) завантаження певних компонентів. Наприклад, система рецензій

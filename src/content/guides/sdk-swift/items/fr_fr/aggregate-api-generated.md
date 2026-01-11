@@ -15,7 +15,7 @@ Renvoie: [`AggregationResponse`](https://github.com/FastComments/fastcomments-sw
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'agrégation'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Exemple d'agrégation'; type = 'swift"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift

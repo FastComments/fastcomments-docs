@@ -11,7 +11,7 @@ Renvoie : [`Option[DeletePageAPIResponse]`](https://github.com/FastComments/fast
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de deletePage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Exemple d'utilisation de deletePage'; type = 'nim"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deletePage(tenantId = "site-tenant-456", id = "news/winter-updates-2025")
 if response.isSome:

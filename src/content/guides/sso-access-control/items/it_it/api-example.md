@@ -4,7 +4,7 @@ Prima di iniziare, nota che non dobbiamo creare esplicitamente una struttura `Gr
 
 Per prima cosa, creiamo due utenti, `User A` e `User B`, e li inseriremo inizialmente in `Group X`:
 
-[inline-code-attrs-start title = 'Esempio cURL per creare l'Utente A'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio cURL per creare l'Utente A"; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -17,7 +17,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Esempio cURL per creare l'Utente B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio cURL per creare l'Utente B"; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -50,7 +50,7 @@ Gli utenti A e B attualmente **NON** hanno accesso alla nuova pagina. Tuttavia, 
 
 Aggiorniamo `User B` in modo che ora possa accedere alla pagina:
 
-[inline-code-attrs-start title = 'Esempio cURL per aggiornare l'Utente B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio cURL per aggiornare l'Utente B"; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -64,7 +64,7 @@ curl --request POST \
 
 Facciamo in modo che solo `User B` possa visualizzare la pagina riservata:
 
-[inline-code-attrs-start title = 'Esempio cURL per aggiornare l'Utente B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio cURL per aggiornare l'Utente B"; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -79,7 +79,7 @@ Ora può visualizzare la pagina riservata, ma nessuno dei nostri utenti può pi�
 Tuttavia, qualsiasi utente che non fa parte del controllo degli accessi **potrà accedere alla nostra pagina**. Per evitarlo, assicurati che nessun Utente SSO abbia
 i propri `groupIds` impostati su null. Ad esempio, creiamo `User C`, che ha accesso a tutto:
 
-[inline-code-attrs-start title = 'Esempio cURL per creare l'Utente C'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio cURL per creare l'Utente C"; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \

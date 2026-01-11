@@ -189,7 +189,7 @@ All endpoints return standard HTTP status codes. A 400 response indicates invali
 
 Error responses include a JSON body with details:
 
-[inline-code-attrs-start title = 'Exemple de réponse d'erreur'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Exemple de réponse d'erreur"; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "error",

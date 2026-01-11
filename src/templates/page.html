@@ -18,6 +18,23 @@
     <link rel="alternate" hreflang="x-default" href="/{{defaultUrl}}">
     {{/if}}
     <script src="js/get-session-info.js"></script>
+    <script>
+        // Close dropdowns when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                const langSelector = document.querySelector('.lang-selector');
+                const mobileMenu = document.querySelector('.mobile-menu');
+
+                if (langSelector && !langSelector.contains(e.target)) {
+                    langSelector.classList.remove('open');
+                }
+
+                if (mobileMenu && !mobileMenu.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="header">
@@ -27,11 +44,30 @@
             FastComments.com</a>
         {{#if availableLocales}}
         <div class="lang-selector">
-            <select onchange="window.location.href=this.value">
+            <button class="lang-selector-btn" aria-label="Select Language" onclick="this.parentElement.classList.toggle('open')">
+                {{#each availableLocales}}{{#if current}}<span class="flag">{{flag}}</span> <span class="lang-name">{{nativeName}}</span>{{/if}}{{/each}}
+                <span class="arrow">▼</span>
+            </button>
+            <div class="lang-selector-dropdown">
                 {{#each availableLocales}}
-                <option value="/{{url}}" {{#if current}}selected{{/if}}>{{nativeName}}</option>
+                <a href="/{{url}}" class="lang-option{{#if current}} current{{/if}}">
+                    <span class="flag">{{flag}}</span>
+                    <span class="lang-name">{{nativeName}}</span>
+                </a>
                 {{/each}}
-            </select>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Mobile Menu" onclick="this.nextElementSibling.classList.toggle('open')">⋯</button>
+        <div class="mobile-menu">
+            <div class="mobile-menu-section">
+                <div class="mobile-menu-title">Language</div>
+                {{#each availableLocales}}
+                <a href="/{{url}}" class="mobile-menu-item{{#if current}} current{{/if}}">
+                    <span class="flag">{{flag}}</span>
+                    <span class="lang-name">{{nativeName}}</span>
+                </a>
+                {{/each}}
+            </div>
         </div>
         {{/if}}
     </div>

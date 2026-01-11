@@ -18,7 +18,7 @@ La struttura `Moderator` può essere usata come meccanismo di tracciamento delle
 
 La struttura dell'oggetto `Moderator` è la seguente:
 
-[inline-code-attrs-start title = 'Struttura dell'oggetto Moderator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Struttura dell'oggetto Moderator"; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Moderator {
     name: string
