@@ -2,6 +2,21 @@
     <div class="sidebar-open-button"><img src="/images/menu.png" alt="Menu Icon" title="Open Menu"></div>
     <div class="sidebar">
         <div class="sidebar-content">
+            {{#if availableLocales}}
+            <details class="lang-dropdown">
+                <summary>
+                    <h4>Language {{#each availableLocales}}{{#if current}}<span class="current-lang"><span class="flag">{{flag}}</span> {{nativeName}}</span>{{/if}}{{/each}}</h4>
+                </summary>
+                <div class="lang-list">
+                    {{#each availableLocales}}
+                    <a href="/{{url}}" class="lang-item{{#if current}} current{{/if}}">
+                        <span class="flag">{{flag}}</span>
+                        <span class="name">{{nativeName}}</span>
+                    </a>
+                    {{/each}}
+                </div>
+            </details>
+            {{/if}}
             {{#each itemsBySubCat}}
             <h4>{{@key}}</h4>
             {{#each this}}

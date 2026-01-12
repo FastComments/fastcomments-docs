@@ -168,9 +168,24 @@ async function buildGuide(guide, index, locale = defaultLocale) {
 }
 
 async function buildGuideFromItems(guide, items, locale = defaultLocale) {
-    const introPath = path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME);
+    // Check for localized intro first, then fall back to default locale, then root
+    let introPath = path.join(GUIDES_DIR, guide.id, 'items', locale, GUIDE_INTRO_FILE_NAME);
+    if (!fs.existsSync(introPath)) {
+        introPath = path.join(GUIDES_DIR, guide.id, 'items', defaultLocale, GUIDE_INTRO_FILE_NAME);
+    }
+    if (!fs.existsSync(introPath)) {
+        introPath = path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME);
+    }
     const guideIntroHTML = marked(fs.existsSync(introPath) ? fs.readFileSync(introPath, 'utf8') : '');
-    const conclusionPath = path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME);
+
+    // Check for localized conclusion first, then fall back to default locale, then root
+    let conclusionPath = path.join(GUIDES_DIR, guide.id, 'items', locale, GUIDE_CONCLUSION_FILE_NAME);
+    if (!fs.existsSync(conclusionPath)) {
+        conclusionPath = path.join(GUIDES_DIR, guide.id, 'items', defaultLocale, GUIDE_CONCLUSION_FILE_NAME);
+    }
+    if (!fs.existsSync(conclusionPath)) {
+        conclusionPath = path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME);
+    }
     const guideConclusionHTML = marked(fs.existsSync(conclusionPath) ? fs.readFileSync(conclusionPath, 'utf8') : '');
 
     // Check if any items are using fallback content
@@ -201,6 +216,7 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         conclusion: guideConclusionHTML,
         isFallback: hasFallbackContent,
         locale,
+        availableLocales,
         ...guide
     });
     const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
