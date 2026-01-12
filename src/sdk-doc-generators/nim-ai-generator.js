@@ -128,7 +128,7 @@ class NimAIGenerator extends BaseDocGenerator {
                 const method = next();
                 if (!method) break;
 
-                // Generate code example
+                // Generate code example (uses cache if signature unchanged)
                 const codeExample = await aiClient.generateCodeExample(method);
 
                 // Determine resource for categorization

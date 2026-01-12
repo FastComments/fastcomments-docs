@@ -6,6 +6,34 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
 
 /**
+ * Recursively sort object keys for deterministic JSON serialization
+ * @param {any} obj - Object to sort
+ * @returns {any} - Object with sorted keys
+ */
+function sortObjectKeys(obj) {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+    if (Array.isArray(obj)) {
+        return obj.map(sortObjectKeys);
+    }
+    const sorted = {};
+    for (const key of Object.keys(obj).sort()) {
+        sorted[key] = sortObjectKeys(obj[key]);
+    }
+    return sorted;
+}
+
+/**
+ * Deterministic JSON stringify that sorts object keys
+ * @param {any} obj - Object to stringify
+ * @returns {string} - JSON string with sorted keys
+ */
+function stableStringify(obj) {
+    return JSON.stringify(sortObjectKeys(obj));
+}
+
+/**
  * Client for generating code examples using OpenAI API
  */
 class OpenAIClient {
@@ -38,8 +66,9 @@ class OpenAIClient {
             prompt: prompt,
             model: this.model
         };
+        // Use stable stringify to ensure deterministic cache keys regardless of object property order
         return crypto.createHash('sha256')
-            .update(JSON.stringify(data))
+            .update(stableStringify(data))
             .digest('hex');
     }
 
@@ -259,7 +288,7 @@ class OpenAIClient {
         lines.push('1. Do NOT include any #include statements or namespace declarations');
         lines.push('2. Assume an API client instance named "api" is already created and in scope');
         lines.push('3. Use realistic parameter values (not "example_string" - use actual realistic values like "my-tenant-123", "user@example.com", etc.)');
-        lines.push('4. Call the method using api->${method.name}(...) and chain with .then() to handle the result');
+        lines.push(`4. Call the method using api->${method.name}(...) and chain with .then() to handle the result`);
         lines.push('5. Use proper C++ types: utility::string_t for strings, std::make_shared for shared pointers');
         lines.push('6. Demonstrate optional parameters with boost::optional where relevant');
         lines.push('7. Keep example very concise (< 25 lines)');
