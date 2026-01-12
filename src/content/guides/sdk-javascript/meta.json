@@ -63,12 +63,6 @@
       "type": "readme"
     },
     {
-      "name": "TypeScript Support",
-      "file": "generated/typescript-support-readme-generated.md",
-      "subCat": "Documentation",
-      "type": "readme"
-    },
-    {
       "name": "aggregate",
       "file": "generated/aggregate-api-generated.md",
       "subCat": "Aggregate",
@@ -267,6 +261,60 @@
       "type": "api"
     },
     {
+      "name": "createEmailTemplate",
+      "file": "generated/createemailtemplate-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "deleteEmailTemplate",
+      "file": "generated/deleteemailtemplate-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "deleteEmailTemplateRenderError",
+      "file": "generated/deleteemailtemplaterendererror-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "getEmailTemplate",
+      "file": "generated/getemailtemplate-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "getEmailTemplateDefinitions",
+      "file": "generated/getemailtemplatedefinitions-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "getEmailTemplateRenderErrors",
+      "file": "generated/getemailtemplaterendererrors-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "getEmailTemplates",
+      "file": "generated/getemailtemplates-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "renderEmailTemplate",
+      "file": "generated/renderemailtemplate-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "updateEmailTemplate",
+      "file": "generated/updateemailtemplate-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
       "name": "getEventLog",
       "file": "generated/geteventlog-api-generated.md",
       "subCat": "Event Log",
@@ -345,6 +393,102 @@
       "type": "api"
     },
     {
+      "name": "addHashTag",
+      "file": "generated/addhashtag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "addHashTagsBulk",
+      "file": "generated/addhashtagsbulk-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "deleteHashTag",
+      "file": "generated/deletehashtag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "getHashTags",
+      "file": "generated/gethashtags-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "patchHashTag",
+      "file": "generated/patchhashtag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "createModerator",
+      "file": "generated/createmoderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "deleteModerator",
+      "file": "generated/deletemoderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "getModerator",
+      "file": "generated/getmoderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "getModerators",
+      "file": "generated/getmoderators-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "sendInvite",
+      "file": "generated/sendinvite-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "updateModerator",
+      "file": "generated/updatemoderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "deleteNotificationCount",
+      "file": "generated/deletenotificationcount-api-generated.md",
+      "subCat": "Notification Count",
+      "type": "api"
+    },
+    {
+      "name": "getCachedNotificationCount",
+      "file": "generated/getcachednotificationcount-api-generated.md",
+      "subCat": "Notification Count",
+      "type": "api"
+    },
+    {
+      "name": "getNotificationCount",
+      "file": "generated/getnotificationcount-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
+      "name": "getNotifications",
+      "file": "generated/getnotifications-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
+      "name": "updateNotification",
+      "file": "generated/updatenotification-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
       "name": "addPage",
       "file": "generated/addpage-api-generated.md",
       "subCat": "Pages",
@@ -372,6 +516,84 @@
       "name": "patchPage",
       "file": "generated/patchpage-api-generated.md",
       "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "deletePendingWebhookEvent",
+      "file": "generated/deletependingwebhookevent-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "getPendingWebhookEventCount",
+      "file": "generated/getpendingwebhookeventcount-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "getPendingWebhookEvents",
+      "file": "generated/getpendingwebhookevents-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "createQuestionConfig",
+      "file": "generated/createquestionconfig-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "deleteQuestionConfig",
+      "file": "generated/deletequestionconfig-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "getQuestionConfig",
+      "file": "generated/getquestionconfig-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "getQuestionConfigs",
+      "file": "generated/getquestionconfigs-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "updateQuestionConfig",
+      "file": "generated/updatequestionconfig-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "createQuestionResult",
+      "file": "generated/createquestionresult-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "deleteQuestionResult",
+      "file": "generated/deletequestionresult-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "getQuestionResult",
+      "file": "generated/getquestionresult-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "getQuestionResults",
+      "file": "generated/getquestionresults-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "updateQuestionResult",
+      "file": "generated/updatequestionresult-api-generated.md",
+      "subCat": "Question Results",
       "type": "api"
     },
     {
@@ -450,6 +672,120 @@
       "name": "getSubscriptions",
       "file": "generated/getsubscriptions-api-generated.md",
       "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "getTenantDailyUsages",
+      "file": "generated/gettenantdailyusages-api-generated.md",
+      "subCat": "Tenant Daily Usage",
+      "type": "api"
+    },
+    {
+      "name": "createTenantPackage",
+      "file": "generated/createtenantpackage-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "deleteTenantPackage",
+      "file": "generated/deletetenantpackage-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "getTenantPackage",
+      "file": "generated/gettenantpackage-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "getTenantPackages",
+      "file": "generated/gettenantpackages-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "replaceTenantPackage",
+      "file": "generated/replacetenantpackage-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "updateTenantPackage",
+      "file": "generated/updatetenantpackage-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "createTenantUser",
+      "file": "generated/createtenantuser-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "deleteTenantUser",
+      "file": "generated/deletetenantuser-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "getTenantUser",
+      "file": "generated/gettenantuser-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "getTenantUsers",
+      "file": "generated/gettenantusers-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "replaceTenantUser",
+      "file": "generated/replacetenantuser-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "sendLoginLink",
+      "file": "generated/sendloginlink-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "updateTenantUser",
+      "file": "generated/updatetenantuser-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "createTenant",
+      "file": "generated/createtenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "deleteTenant",
+      "file": "generated/deletetenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "getTenant",
+      "file": "generated/gettenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "getTenants",
+      "file": "generated/gettenants-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "updateTenant",
+      "file": "generated/updatetenant-api-generated.md",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
@@ -558,6 +894,36 @@
       "name": "searchUsers",
       "file": "generated/searchusers-api-generated.md",
       "subCat": "User Search",
+      "type": "api"
+    },
+    {
+      "name": "getUser",
+      "file": "generated/getuser-api-generated.md",
+      "subCat": "Users",
+      "type": "api"
+    },
+    {
+      "name": "createVote",
+      "file": "generated/createvote-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "deleteVote",
+      "file": "generated/deletevote-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "getVotes",
+      "file": "generated/getvotes-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "getVotesForUser",
+      "file": "generated/getvotesforuser-api-generated.md",
+      "subCat": "Votes",
       "type": "api"
     }
   ]

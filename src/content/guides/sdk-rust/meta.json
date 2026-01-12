@@ -33,12 +33,6 @@
       "type": "readme"
     },
     {
-      "name": "Support",
-      "file": "generated/support-readme-generated.md",
-      "subCat": "Documentation",
-      "type": "readme"
-    },
-    {
       "name": "aggregate",
       "file": "generated/aggregate-api-generated.md",
       "subCat": "Aggregate",
@@ -237,6 +231,60 @@
       "type": "api"
     },
     {
+      "name": "create_email_template",
+      "file": "generated/create-email-template-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "delete_email_template",
+      "file": "generated/delete-email-template-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "delete_email_template_render_error",
+      "file": "generated/delete-email-template-render-error-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "get_email_template",
+      "file": "generated/get-email-template-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "get_email_template_definitions",
+      "file": "generated/get-email-template-definitions-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "get_email_template_render_errors",
+      "file": "generated/get-email-template-render-errors-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "get_email_templates",
+      "file": "generated/get-email-templates-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "render_email_template",
+      "file": "generated/render-email-template-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
+      "name": "update_email_template",
+      "file": "generated/update-email-template-api-generated.md",
+      "subCat": "Email Templates",
+      "type": "api"
+    },
+    {
       "name": "get_event_log",
       "file": "generated/get-event-log-api-generated.md",
       "subCat": "Event Log",
@@ -315,6 +363,102 @@
       "type": "api"
     },
     {
+      "name": "add_hash_tag",
+      "file": "generated/add-hash-tag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "add_hash_tags_bulk",
+      "file": "generated/add-hash-tags-bulk-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "delete_hash_tag",
+      "file": "generated/delete-hash-tag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "get_hash_tags",
+      "file": "generated/get-hash-tags-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "patch_hash_tag",
+      "file": "generated/patch-hash-tag-api-generated.md",
+      "subCat": "Hash Tags",
+      "type": "api"
+    },
+    {
+      "name": "create_moderator",
+      "file": "generated/create-moderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "delete_moderator",
+      "file": "generated/delete-moderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "get_moderator",
+      "file": "generated/get-moderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "get_moderators",
+      "file": "generated/get-moderators-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "send_invite",
+      "file": "generated/send-invite-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "update_moderator",
+      "file": "generated/update-moderator-api-generated.md",
+      "subCat": "Moderators",
+      "type": "api"
+    },
+    {
+      "name": "delete_notification_count",
+      "file": "generated/delete-notification-count-api-generated.md",
+      "subCat": "Notification Count",
+      "type": "api"
+    },
+    {
+      "name": "get_cached_notification_count",
+      "file": "generated/get-cached-notification-count-api-generated.md",
+      "subCat": "Notification Count",
+      "type": "api"
+    },
+    {
+      "name": "get_notification_count",
+      "file": "generated/get-notification-count-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
+      "name": "get_notifications",
+      "file": "generated/get-notifications-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
+      "name": "update_notification",
+      "file": "generated/update-notification-api-generated.md",
+      "subCat": "Notifications",
+      "type": "api"
+    },
+    {
       "name": "add_page",
       "file": "generated/add-page-api-generated.md",
       "subCat": "Pages",
@@ -342,6 +486,84 @@
       "name": "patch_page",
       "file": "generated/patch-page-api-generated.md",
       "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "delete_pending_webhook_event",
+      "file": "generated/delete-pending-webhook-event-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "get_pending_webhook_event_count",
+      "file": "generated/get-pending-webhook-event-count-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "get_pending_webhook_events",
+      "file": "generated/get-pending-webhook-events-api-generated.md",
+      "subCat": "Pending Webhook Events",
+      "type": "api"
+    },
+    {
+      "name": "create_question_config",
+      "file": "generated/create-question-config-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "delete_question_config",
+      "file": "generated/delete-question-config-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "get_question_config",
+      "file": "generated/get-question-config-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "get_question_configs",
+      "file": "generated/get-question-configs-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "update_question_config",
+      "file": "generated/update-question-config-api-generated.md",
+      "subCat": "Question Configs",
+      "type": "api"
+    },
+    {
+      "name": "create_question_result",
+      "file": "generated/create-question-result-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "delete_question_result",
+      "file": "generated/delete-question-result-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "get_question_result",
+      "file": "generated/get-question-result-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "get_question_results",
+      "file": "generated/get-question-results-api-generated.md",
+      "subCat": "Question Results",
+      "type": "api"
+    },
+    {
+      "name": "update_question_result",
+      "file": "generated/update-question-result-api-generated.md",
+      "subCat": "Question Results",
       "type": "api"
     },
     {
@@ -420,6 +642,120 @@
       "name": "get_subscriptions",
       "file": "generated/get-subscriptions-api-generated.md",
       "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant_daily_usages",
+      "file": "generated/get-tenant-daily-usages-api-generated.md",
+      "subCat": "Tenant Daily Usage",
+      "type": "api"
+    },
+    {
+      "name": "create_tenant_package",
+      "file": "generated/create-tenant-package-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "delete_tenant_package",
+      "file": "generated/delete-tenant-package-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant_package",
+      "file": "generated/get-tenant-package-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant_packages",
+      "file": "generated/get-tenant-packages-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "replace_tenant_package",
+      "file": "generated/replace-tenant-package-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "update_tenant_package",
+      "file": "generated/update-tenant-package-api-generated.md",
+      "subCat": "Tenant Packages",
+      "type": "api"
+    },
+    {
+      "name": "create_tenant_user",
+      "file": "generated/create-tenant-user-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "delete_tenant_user",
+      "file": "generated/delete-tenant-user-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant_user",
+      "file": "generated/get-tenant-user-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant_users",
+      "file": "generated/get-tenant-users-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "replace_tenant_user",
+      "file": "generated/replace-tenant-user-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "send_login_link",
+      "file": "generated/send-login-link-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "update_tenant_user",
+      "file": "generated/update-tenant-user-api-generated.md",
+      "subCat": "Tenant Users",
+      "type": "api"
+    },
+    {
+      "name": "create_tenant",
+      "file": "generated/create-tenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "delete_tenant",
+      "file": "generated/delete-tenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "get_tenant",
+      "file": "generated/get-tenant-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "get_tenants",
+      "file": "generated/get-tenants-api-generated.md",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "update_tenant",
+      "file": "generated/update-tenant-api-generated.md",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
@@ -528,6 +864,36 @@
       "name": "search_users",
       "file": "generated/search-users-api-generated.md",
       "subCat": "User Search",
+      "type": "api"
+    },
+    {
+      "name": "get_user",
+      "file": "generated/get-user-api-generated.md",
+      "subCat": "Users",
+      "type": "api"
+    },
+    {
+      "name": "create_vote",
+      "file": "generated/create-vote-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "delete_vote",
+      "file": "generated/delete-vote-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "get_votes",
+      "file": "generated/get-votes-api-generated.md",
+      "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "get_votes_for_user",
+      "file": "generated/get-votes-for-user-api-generated.md",
+      "subCat": "Votes",
       "type": "api"
     }
   ]

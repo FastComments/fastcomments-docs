@@ -218,7 +218,11 @@ class SDKGuideGenerator {
         // Write section files to the generated subfolder
         for (const section of allSections) {
             // Use custom filename if provided, otherwise generate from name
-            const filename = section.file || (this.sanitizeFilename(section.name) + '.md');
+            // Strip 'generated/' prefix if present (AI generators may have already added it)
+            let filename = section.file || (this.sanitizeFilename(section.name) + '.md');
+            if (filename.startsWith('generated/')) {
+                filename = filename.slice('generated/'.length);
+            }
             const filePath = path.join(generatedDir, filename);
 
             // Only write if file doesn't exist (TypeScript AI generator writes as it goes)
