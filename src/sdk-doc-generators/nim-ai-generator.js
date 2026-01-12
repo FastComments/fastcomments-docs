@@ -55,6 +55,12 @@ class NimAIGenerator extends BaseDocGenerator {
                     opInfo = operationMap.get(lowerFirst);
                 }
 
+                // Try with uppercase first letter (OpenAPI uses PascalCase, SDK may use camelCase)
+                if (!opInfo) {
+                    const upperFirst = method.name.charAt(0).toUpperCase() + method.name.slice(1);
+                    opInfo = operationMap.get(upperFirst);
+                }
+
                 // Try converting from snake_case to camelCase
                 if (!opInfo) {
                     const camelCase = method.name.replace(/_([a-z])/g, (m, p1) => p1.toUpperCase());

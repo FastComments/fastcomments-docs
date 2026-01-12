@@ -55,6 +55,12 @@ class CppAIGenerator extends BaseDocGenerator {
                     opInfo = operationMap.get(lowerFirst);
                 }
 
+                // Try with uppercase first letter (OpenAPI uses PascalCase, SDK may use camelCase)
+                if (!opInfo) {
+                    const upperFirst = method.name.charAt(0).toUpperCase() + method.name.slice(1);
+                    opInfo = operationMap.get(upperFirst);
+                }
+
                 if (opInfo) {
                     method.httpMethod = opInfo.method.toUpperCase();
                     method.path = opInfo.path;
