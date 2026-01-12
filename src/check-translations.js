@@ -87,7 +87,22 @@ function getDefaultLocaleFiles(guideId) {
     const defaultPath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale);
     if (!fs.existsSync(defaultPath)) return [];
 
-    return fs.readdirSync(defaultPath).filter(file => file.endsWith('.md'));
+    const files = fs.readdirSync(defaultPath).filter(file => file.endsWith('.md'));
+
+    // Also check for intro.md and conclusion.md in items/{defaultLocale} or root
+    const introInItems = path.join(defaultPath, 'intro.md');
+    const conclusionInItems = path.join(defaultPath, 'conclusion.md');
+    const introInRoot = path.join(GUIDES_DIR, guideId, 'intro.md');
+    const conclusionInRoot = path.join(GUIDES_DIR, guideId, 'conclusion.md');
+
+    if ((fs.existsSync(introInItems) || fs.existsSync(introInRoot)) && !files.includes('intro.md')) {
+        files.push('intro.md');
+    }
+    if ((fs.existsSync(conclusionInItems) || fs.existsSync(conclusionInRoot)) && !files.includes('conclusion.md')) {
+        files.push('conclusion.md');
+    }
+
+    return files;
 }
 
 function getLocaleFiles(guideId, locale) {
@@ -146,8 +161,7 @@ function checkTranslations() {
         for (const file of defaultFiles) {
             const cacheKey = `${guideId}/${file}`;
             if (!sourceFileCache.has(cacheKey)) {
-                const filePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file);
-                const content = fs.readFileSync(filePath, 'utf8');
+                const content = getSourceContent(guideId, file);
                 sourceFileCache.set(cacheKey, {
                     content,
                     words: countWords(content),
@@ -184,9 +198,7 @@ function checkTranslations() {
 
                 const cacheKey = `${guideId}/${file}`;
                 const cached = sourceFileCache.get(cacheKey);
-                const defaultContent = cached ? cached.content : fs.readFileSync(
-                    path.join(GUIDES_DIR, guideId, 'items', defaultLocale, file), 'utf8'
-                );
+                const defaultContent = cached ? cached.content : getSourceContent(guideId, file);
                 const localeFilePath = path.join(GUIDES_DIR, guideId, 'items', locale, file);
                 const localeContent = fs.readFileSync(localeFilePath, 'utf8');
 
@@ -256,6 +268,19 @@ function getMissingTranslations() {
  * @returns {string} - File content
  */
 function getSourceContent(guideId, filename) {
+    // Check for intro.md and conclusion.md in items/{defaultLocale} first, then root
+    if (filename === 'intro.md' || filename === 'conclusion.md') {
+        const itemsPath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, filename);
+        if (fs.existsSync(itemsPath)) {
+            return fs.readFileSync(itemsPath, 'utf8');
+        }
+        const rootPath = path.join(GUIDES_DIR, guideId, filename);
+        if (fs.existsSync(rootPath)) {
+            return fs.readFileSync(rootPath, 'utf8');
+        }
+        throw new Error(`Source file not found: ${filename} in guide ${guideId}`);
+    }
+
     const filePath = path.join(GUIDES_DIR, guideId, 'items', defaultLocale, filename);
     return fs.readFileSync(filePath, 'utf8');
 }
