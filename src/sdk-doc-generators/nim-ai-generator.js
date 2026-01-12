@@ -131,6 +131,12 @@ class NimAIGenerator extends BaseDocGenerator {
                 // Generate code example (uses cache if signature unchanged)
                 const codeExample = await aiClient.generateCodeExample(method);
 
+                // Skip if code example generation failed
+                if (!codeExample) {
+                    console.warn(`Skipping ${method.name} - no code example generated`);
+                    continue;
+                }
+
                 // Determine resource for categorization
                 let resource = method.tag || 'api';
 
