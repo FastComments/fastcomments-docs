@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "de6de006e1703b5a5920ae8820200389dd7997e4724726e8035010108efb7508",
+  "generatedAt": "2026-01-12T22:18:41.198Z",
+  "codeExample": "async function deleteIfPresent(tenantId: string, id?: string): Promise<FlagCommentPublic200Response | null> {\n  if (!id) return null;\n  const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);\n  return result;\n}\nconst tenantId: string = 'tenant_acme_001';\nconst optionalConfigId: string | undefined = 'qcfg_20260112_01';\n(async (): Promise<void> => {\n  const deleted: FlagCommentPublic200Response | null = await deleteIfPresent(tenantId, optionalConfigId);\n  void deleted;\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 2184
+}
