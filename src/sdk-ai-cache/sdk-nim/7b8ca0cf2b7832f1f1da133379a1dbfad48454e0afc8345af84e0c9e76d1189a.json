@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "7b8ca0cf2b7832f1f1da133379a1dbfad48454e0afc8345af84e0c9e76d1189a",
+  "generatedAt": "2025-11-21T16:25:13.158Z",
+  "codeExample": "let createPage = CreateAPIPageData(\n  urlId = \"news/ai-breakthrough-2025\",\n  url = \"https://news.example.com/ai/2025/ai-breakthrough\",\n  title = \"AI Breakthrough Accelerates Research\",\n  description = \"In-depth coverage of the 2025 AI research milestone\",\n  isEnabled = true,\n  isArticle = true,\n  tags = @[\"ai\", \"research\", \"technology\"],\n  author = \"Jane Doe\",\n  externalId = \"article-2025-98765\"\n)\n\nlet (response, httpResponse) = client.addPage(tenantId = \"my-tenant-123\", createAPIPageData = createPage)\n\nif response.isSome:\n  let page = response.get()\n  discard page\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 371,
+  "completionTokens": 1006
+}

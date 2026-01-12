@@ -1,0 +1,9 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "c91c254c35e8a9c3b66b091603d583b4cc72a3b45929f03c0d8bb80e9af0899f",
+  "generatedAt": "2025-11-20T22:24:28.316Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentIds = U(\"cmt-456,cmt-789\");\nboost::optional<utility::string_t> sso{ U(\"user@example.com\") };\napi->checkedCommentsForBlocked(tenantId, commentIds, sso)\n.then([](std::shared_ptr<CheckedCommentsForBlocked_200_response> resp){\n    auto copied = std::make_shared<CheckedCommentsForBlocked_200_response>(*resp);\n    return copied;\n})\n.then([](std::shared_ptr<CheckedCommentsForBlocked_200_response> finalResult){\n    (void)finalResult;\n})\n.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 356,
+  "completionTokens": 1556
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "a150b56005e349b30a3ec077bec66f271048451c93f80727073bd775f8bd2b0a",
+  "generatedAt": "2025-11-20T22:25:10.885Z",
+  "codeExample": "utility::string_t tenantId(U(\"my-tenant-123\"));\nboost::optional<int32_t> pageSize = 25;\nboost::optional<utility::string_t> afterId = utility::string_t(U(\"notif_456\"));\nboost::optional<bool> includeContext = true;\nboost::optional<int64_t> afterCreatedAt = 1625097600000LL;\nboost::optional<bool> unreadOnly = true;\nboost::optional<bool> dmOnly = false;\nboost::optional<bool> noDm = false;\nboost::optional<bool> includeTranslations = true;\nboost::optional<utility::string_t> sso = utility::string_t(U(\"user@example.com\"));\n\napi->getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso)\n.then([](pplx::task<std::shared_ptr<GetUserNotifications_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetUserNotifications_200_response>();\n        std::cout << \"Notifications fetched\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 465,
+  "completionTokens": 2133
+}

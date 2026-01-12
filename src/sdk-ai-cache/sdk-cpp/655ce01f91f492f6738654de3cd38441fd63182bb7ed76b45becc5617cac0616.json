@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "655ce01f91f492f6738654de3cd38441fd63182bb7ed76b45becc5617cac0616",
+  "generatedAt": "2025-11-20T22:25:28.719Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\nauto result = api->resetUserNotificationCount(tenantId, sso)\n    .then([](std::shared_ptr<ResetUserNotifications_200_response> resp){\n        if (!resp) resp = std::make_shared<ResetUserNotifications_200_response>();\n        return resp;\n    }).get();",
+  "model": "gpt-5-mini",
+  "promptTokens": 343,
+  "completionTokens": 1654
+}

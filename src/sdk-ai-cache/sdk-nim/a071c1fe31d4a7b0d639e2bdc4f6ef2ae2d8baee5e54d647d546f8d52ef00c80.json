@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "a071c1fe31d4a7b0d639e2bdc4f6ef2ae2d8baee5e54d647d546f8d52ef00c80",
+  "generatedAt": "2025-11-21T16:25:59.115Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadge(tenantId = \"my-tenant-123\", id = \"\")\nif response.isSome:\n  let badge = response.get()\n  echo \"Badge fetched:\", $badge\nelse:\n  echo \"No badge returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 1089
+}

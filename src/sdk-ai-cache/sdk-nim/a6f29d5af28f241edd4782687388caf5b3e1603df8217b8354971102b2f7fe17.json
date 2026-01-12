@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "a6f29d5af28f241edd4782687388caf5b3e1603df8217b8354971102b2f7fe17",
+  "generatedAt": "2025-11-21T16:26:18.713Z",
+  "codeExample": "let updateParams = UpdateUserBadgeParams(\n  name = \"Top Contributor\",\n  color = \"#FFD700\",\n  icon = \"star\",\n  isActive = true,\n  rank = 1,\n  tags = @[\"community\", \"trusted\"]\n)\n\nlet (response, httpResponse) = client.updateUserBadge(\n  tenantId = \"my-tenant-123\",\n  id = \"badge-987\",\n  updateUserBadgeParams = updateParams\n)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Updated badge: \", updated",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1019
+}

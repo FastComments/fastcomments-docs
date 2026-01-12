@@ -1,0 +1,9 @@
+{
+  "method": "get_pages",
+  "signatureHash": "a5a897d151cd5f80063119c887799c76f52bbe12afa12b8a488e1d552fcc8cad",
+  "generatedAt": "2025-11-21T23:52:28.081Z",
+  "codeExample": "let params: GetPagesParams = GetPagesParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    path: Some(\"news/article\".to_string()),\n    include_drafts: Some(false),\n    page: Some(1),\n    per_page: Some(25),\n};\n\nlet pages: GetPagesApiResponse = get_pages(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 285,
+  "completionTokens": 856
+}

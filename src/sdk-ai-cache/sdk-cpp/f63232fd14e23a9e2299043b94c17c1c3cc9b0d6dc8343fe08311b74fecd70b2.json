@@ -1,0 +1,9 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "f63232fd14e23a9e2299043b94c17c1c3cc9b0d6dc8343fe08311b74fecd70b2",
+  "generatedAt": "2025-11-20T22:25:40.258Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nutility::string_t broadcastId = U(\"broadcast-001\");\nCommentTextUpdateRequest req;\nreq.text = U(\"Thanks — updated comment text with additional context.\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"editKey-abc123\"));\nboost::optional<utility::string_t> sso = boost::none;\napi->setCommentText(tenantId, commentId, broadcastId, req, editKey, sso)\n.then([](std::shared_ptr<SetCommentText_200_response> resp){\n    std::cout << \"SetCommentText completed, response present: \" << (resp ? \"yes\" : \"no\") << std::endl;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 389,
+  "completionTokens": 2109
+}

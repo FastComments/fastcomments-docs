@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "1ac413b9952bedd06202cb930ce2837f5efd0d4e7ea30b7ea3add66f3c6f7cde",
+  "generatedAt": "2025-11-22T05:32:46.163Z",
+  "codeExample": "const tenantId: string = 'acmecorp-prod-01';\nconst userId: string = 'usr_78a9b2c4';\nconst result: GetUserBadge200Response = await getUserBadge(tenantId, userId);\nconst options: { includeDetails?: boolean } = { includeDetails: true };\nconst badgeName: string | undefined = (result as any)?.userBadge?.name;\nif (options.includeDetails) {\n  const badgeDescription: string | undefined = (result as any)?.userBadge?.description;\n  void badgeDescription;\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 387,
+  "completionTokens": 1727
+}

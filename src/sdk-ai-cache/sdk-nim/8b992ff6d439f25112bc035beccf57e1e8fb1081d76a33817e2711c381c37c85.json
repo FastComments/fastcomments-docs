@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "8b992ff6d439f25112bc035beccf57e1e8fb1081d76a33817e2711c381c37c85",
+  "generatedAt": "2025-11-21T16:25:59.003Z",
+  "codeExample": "let params = PatchDomainConfigParams(\n  allowedOrigins = @[\"https://news.example.com\"],\n  enableCors = true,\n  redirectToHttps = true,\n  maxCommentLength = 1000\n)\n\nlet (response, httpResponse) = client.patchDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"news.example.com\",\n  patchDomainConfigParams = params\n)\n\nif response.isSome:\n  let config = response.get()\n  echo \"Updated domain: \" & config.domain & \" status: \" & $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 1151
+}

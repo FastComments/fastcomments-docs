@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts",
+  "signatureHash": "112c816547a13a0fa7fb9234abaa0f64eea83e83c89e089c253aeb95c6706e70",
+  "generatedAt": "2025-11-21T23:52:26.095Z",
+  "codeExample": "async fn run() -> Result<GetFeedPosts200Response, Error> {\n    let params: GetFeedPostsParams = GetFeedPostsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        after_id: Some(String::from(\"post_987654321\")),\n        limit: Some(25),\n        tags: Some(vec![String::from(\"news/article\"), String::from(\"product-announcements\")]),\n    };\n    let response: GetFeedPosts200Response = get_feed_posts(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 700
+}

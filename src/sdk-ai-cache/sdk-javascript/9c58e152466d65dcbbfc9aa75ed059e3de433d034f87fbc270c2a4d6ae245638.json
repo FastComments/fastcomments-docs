@@ -1,0 +1,9 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "9c58e152466d65dcbbfc9aa75ed059e3de433d034f87fbc270c2a4d6ae245638",
+  "generatedAt": "2025-11-22T05:33:16.104Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_2025';\nconst postId: string = 'post_9f8a7b6c';\nconst broadcastId: string = 'broadcast_us_east_01';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakeSignature';\nconst result: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 401,
+  "completionTokens": 949
+}

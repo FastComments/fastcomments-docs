@@ -1,0 +1,9 @@
+{
+  "method": "get_event_log",
+  "signatureHash": "5d53c0a664ce8aadbd8e8b9c4318d342c00e2e29f96e0393b28f18fcc6e7efc6",
+  "generatedAt": "2025-11-21T23:53:36.607Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetEventLogParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article-123\".to_string(),\n        user_id_ws: \"user-98765\".to_string(),\n        start_time: 1_697_000_000i64,\n        end_time: 1_697_086_400i64,\n        limit: Some(100),\n        event_types: Some(vec![\"comment_created\".to_string(), \"vote\".to_string()]),\n    };\n    let response: GetEventLog200Response = get_event_log(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 451,
+  "completionTokens": 985
+}

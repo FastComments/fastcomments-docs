@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "98e32cc03100f88c9191a2183f36a3f06d23cff47da912c72d3b26b5b8a9e70e",
+  "generatedAt": "2025-11-22T05:32:41.536Z",
+  "codeExample": "const tenantId: string = 'acme-corp-2025';\nconst userId: string = 'user_72a9e4b8';\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);\nconst badgeProgress: UserBadgeProgress | undefined = (result as any)?.badgeProgress;\nconst apiStatus: APIStatus | undefined = (result as any)?.status;\nconst includeDetails?: boolean = true;",
+  "model": "gpt-5-mini",
+  "promptTokens": 399,
+  "completionTokens": 1582
+}

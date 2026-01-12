@@ -1,0 +1,9 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "191ab92da1bcecaab18ebbed1cbe6591d9f80b4940097cbbd5d398bed21bf2ee",
+  "generatedAt": "2025-11-20T22:23:49.693Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> optUrlId = utility::conversions::to_string_t(\"page-9f8b7c6e\");\nauto reqTask = api->getPageByURLId(tenantId, *optUrlId)\n    .then([](pplx::task<std::shared_ptr<GetPageByURLIdAPIResponse>> task)\n    {\n        try\n        {\n            auto resp = task.get();\n            if (!resp) resp = std::make_shared<GetPageByURLIdAPIResponse>();\n        }\n        catch (const std::exception&)\n        {\n            auto resp = std::make_shared<GetPageByURLIdAPIResponse>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 340,
+  "completionTokens": 1581
+}

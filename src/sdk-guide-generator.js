@@ -75,12 +75,10 @@ class SDKGuideGenerator {
             fs.mkdirSync(itemsDir, { recursive: true });
         }
 
-        // Clean up old generated files in items/generated directory (will be regenerated)
-        // Note: We only clean the generated subfolder, not the entire items dir (which may have locale folders)
-        if (fs.existsSync(generatedDir)) {
-            fs.rmSync(generatedDir, { recursive: true, force: true });
+        // Create generated directory if it doesn't exist (don't delete - files may be checked into git)
+        if (!fs.existsSync(generatedDir)) {
+            fs.mkdirSync(generatedDir, { recursive: true });
         }
-        fs.mkdirSync(generatedDir, { recursive: true });
 
         return { guideDir, itemsDir, generatedDir };
     }

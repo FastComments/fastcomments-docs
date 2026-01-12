@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post_public",
+  "signatureHash": "c9bcb391ad6ef0251d127d4474acb6c696849357b5057e63dbf16f7bb183db9e",
+  "generatedAt": "2025-11-21T23:53:25.344Z",
+  "codeExample": "let params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_feed_post_params: models::CreateFeedPostParams {\n        title: \"Acme One Launch\".to_string(),\n        body: \"Acme Corp announces the Acme One device, shipping worldwide next month.\".to_string(),\n        author_id: \"editor-42\".to_string(),\n        media: Some(vec![models::FeedPostMediaItem {\n            asset: Some(models::FeedPostMediaItemAsset {\n                url: \"https://cdn.acme.com/images/acme-one.jpg\".to_string(),\n                mime_type: Some(\"image/jpeg\".to_string())\n            }),\n            alt_text: Some(\"Acme One product image\".to_string())\n        }]),\n        links: Some(vec![models::FeedPostLink {\n            url: \"https://acme.com/blog/acme-one-launch\".to_string(),\n            title: Some(\"Read the announcement\".to_string())\n        }]),\n        tags: Some(vec![\"product\".to_string(), \"launch\".to_string()]),\n        is_public: Some(true)\n    },\n    broadcast_id: Some(\"broadcast-20251121\".to_string()),\n    sso: Some(\"sso-token-xyz-789\".to_string()),\n};\nlet response: CreateFeedPostPublic200Response = create_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 499,
+  "completionTokens": 1262
+}

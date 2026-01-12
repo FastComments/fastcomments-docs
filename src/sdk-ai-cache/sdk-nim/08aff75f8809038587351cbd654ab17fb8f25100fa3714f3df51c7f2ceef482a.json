@@ -1,0 +1,9 @@
+{
+  "method": "deletePage",
+  "signatureHash": "08aff75f8809038587351cbd654ab17fb8f25100fa3714f3df51c7f2ceef482a",
+  "generatedAt": "2025-11-21T16:25:27.421Z",
+  "codeExample": "let (response, httpResponse) = client.deletePage(tenantId = \"my-tenant-123\", id = \"news/article-title\")\nif response.isSome:\n  let deleted = response.get()\n  echo \"Page deleted:\", deleted\nelse:\n  echo \"Delete failed, HTTP response:\", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 365,
+  "completionTokens": 839
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getComment",
+  "signatureHash": "a307bca10a588cb857818e819e09cc7c31596d4d13b82a442b3b4ec33b11d89b",
+  "generatedAt": "2025-11-22T05:32:09.969Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant-01\";\nconst commentId: string | undefined = \"cmt_9f8e7d6c5b4a\"; // optional-style variable\nconst result: GetComment200Response = await getComment(tenantId, commentId!);",
+  "model": "gpt-5-mini",
+  "promptTokens": 424,
+  "completionTokens": 1034
+}

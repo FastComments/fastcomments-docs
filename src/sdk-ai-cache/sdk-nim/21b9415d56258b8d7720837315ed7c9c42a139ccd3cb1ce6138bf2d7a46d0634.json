@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "21b9415d56258b8d7720837315ed7c9c42a139ccd3cb1ce6138bf2d7a46d0634",
+  "generatedAt": "2025-11-21T16:25:39.755Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPosts(tenantId = \"my-tenant-123\", afterId = \"\", limit = 0, tags = @[])\nif response.isSome:\n  let feed = response.get()\n  discard feed",
+  "model": "gpt-5-mini",
+  "promptTokens": 410,
+  "completionTokens": 828
+}

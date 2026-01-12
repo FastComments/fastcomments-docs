@@ -28,7 +28,9 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
 
         // Create parser and OpenAI client
         const parser = new TypeScriptParser(this.repoPath, config.modelsPath);
-        const aiClient = new OpenAIClient(path.join(this.repoPath, config.cachePath));
+        // Use cache path outside of sdks-checkout so it can be checked into git
+        const aiCachePath = path.join(__dirname, '..', 'sdk-ai-cache', this.sdk.id);
+        const aiClient = new OpenAIClient(aiCachePath);
 
         // Build operation map from OpenAPI spec
         const operationMap = this.buildOperationMap(spec);

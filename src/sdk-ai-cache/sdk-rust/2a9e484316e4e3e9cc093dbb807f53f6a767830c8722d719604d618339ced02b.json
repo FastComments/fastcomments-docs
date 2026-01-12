@@ -1,0 +1,9 @@
+{
+  "method": "patch_page",
+  "signatureHash": "2a9e484316e4e3e9cc093dbb807f53f6a767830c8722d719604d618339ced02b",
+  "generatedAt": "2025-11-21T23:53:00.972Z",
+  "codeExample": "let params: PatchPageParams = PatchPageParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"news/article\".to_string(),\n    update_api_page_data: models::UpdateApiPageData {\n        title: Some(\"Breaking: Rust adoption surges\".to_string()),\n        slug: Some(\"news/article\".to_string()),\n        content: Some(\"<p>Rust is seeing increased adoption across startups.</p>\".to_string()),\n        published: Some(true),\n        tags: Some(vec![\"rust\".to_string(), \"technology\".to_string()]),\n        metadata: Some(serde_json::json!({\"author\":\"Jane Doe\",\"section\":\"News\"})),\n    },\n};\nlet updated_page: PatchPageApiResponse = patch_page(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 321,
+  "completionTokens": 1452
+}

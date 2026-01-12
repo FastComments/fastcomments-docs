@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "06b654bb2b07f4f295550d5201f062cfa18f500d444401fefac4b1a479054686",
+  "generatedAt": "2025-11-22T05:34:01.912Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-84';\nconst commentId: string = 'cmt_987654321';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'erroneous moderation',\n  unblockedBy: 'moderator.jane.doe@acme.com',\n  notes: 'User appeal validated; content restored',\n  restoreReplies: true\n};\nconst sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';\nconst result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 930
+}

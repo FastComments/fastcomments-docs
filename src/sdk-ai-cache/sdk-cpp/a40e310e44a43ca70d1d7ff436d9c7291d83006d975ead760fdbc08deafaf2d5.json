@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "a40e310e44a43ca70d1d7ff436d9c7291d83006d975ead760fdbc08deafaf2d5",
+  "generatedAt": "2025-11-20T22:24:03.850Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nauto updatePtr = std::make_shared<UpdateAPISSOUserData>();\nupdatePtr->setEmail(U(\"user@example.com\"));\nupdatePtr->setDisplayName(U(\"Jane Doe\"));\nboost::optional<bool> updateComments = boost::optional<bool>(true);\napi->patchSSOUser(tenantId, id, *updatePtr, updateComments)\n.then([](pplx::task<std::shared_ptr<PatchSSOUserAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        (void)resp;\n    } catch (const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 369,
+  "completionTokens": 1766
+}

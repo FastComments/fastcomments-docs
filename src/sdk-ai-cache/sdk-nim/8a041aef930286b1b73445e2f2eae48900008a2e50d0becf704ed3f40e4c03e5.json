@@ -1,0 +1,9 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "8a041aef930286b1b73445e2f2eae48900008a2e50d0becf704ed3f40e4c03e5",
+  "generatedAt": "2025-11-21T16:26:41.140Z",
+  "codeExample": "let (response, httpResponse) = client.getGlobalEventLog(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/how-to-code-in-nim\",\n  userIdWS = \"\",\n  startTime = int64(0),\n  endTime = int64(0)\n)\n\nif response.isSome:\n  let eventLog = response.get()\n  echo \"Received event log:\", eventLog",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 1054
+}

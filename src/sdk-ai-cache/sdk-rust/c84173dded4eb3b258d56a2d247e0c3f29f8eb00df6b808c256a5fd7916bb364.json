@@ -1,0 +1,9 @@
+{
+  "method": "un_block_user_from_comment",
+  "signatureHash": "c84173dded4eb3b258d56a2d247e0c3f29f8eb00df6b808c256a5fd7916bb364",
+  "generatedAt": "2025-11-21T23:53:01.960Z",
+  "codeExample": "let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"news/article/2025/interesting-story-12345\".to_string(),\n    un_block_from_comment_params: models::UnBlockFromCommentParams {\n        reason: Some(\"Appeal accepted; user reinstated\".to_string()),\n        unblocked_by: Some(\"moderator-42\".to_string()),\n    },\n    user_id: Some(\"user-9876\".to_string()),\n    anon_user_id: Some(\"anon-1234\".to_string()),\n};\nlet response: UnBlockCommentPublic200Response = un_block_user_from_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 1313
+}

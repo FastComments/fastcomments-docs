@@ -1,0 +1,9 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "cc5b4bc4a86e007229e352eadc30e9253197777891388ab85170904bd0493118",
+  "generatedAt": "2025-11-20T22:22:37.867Z",
+  "codeExample": "AddDomainConfigParams params;\nparams.domain = utility::string_t(U(\"comments.example.com\"));\nparams.contactEmail = utility::string_t(U(\"admin@example.com\"));\nparams.enforceHttps = boost::optional<bool>(true);\nparams.notes = boost::optional<utility::string_t>(utility::string_t(U(\"Primary comments domain\")));\n\napi->addDomainConfig(utility::string_t(U(\"my-tenant-123\")), params)\n.then([](std::shared_ptr<AddDomainConfig_200_response> resp){\n    if (!resp) return;\n    auto result = std::make_shared<AddDomainConfig_200_response>(*resp);\n    std::wcout << U(\"Domain config added for tenant: my-tenant-123\") << std::endl;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 341,
+  "completionTokens": 1700
+}

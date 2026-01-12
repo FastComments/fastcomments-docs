@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "d58b5641eb7bbbc2d0064dc4e02e72ab7e52c9d5bfdfcaeece3ed25d63daa8b9",
+  "generatedAt": "2025-11-21T16:26:28.551Z",
+  "codeExample": "let (response, httpResponse) = client.deleteCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-4f2b9a\",\n  broadcastId = \"\",\n  editKey = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let deleted = response.get()\n  echo \"Comment deleted successfully\"\nelse:\n  echo \"Delete request failed\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 1180
+}

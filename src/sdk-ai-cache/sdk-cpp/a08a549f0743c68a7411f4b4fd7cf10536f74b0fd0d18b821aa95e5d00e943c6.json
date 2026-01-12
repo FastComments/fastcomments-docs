@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "a08a549f0743c68a7411f4b4fd7cf10536f74b0fd0d18b821aa95e5d00e943c6",
+  "generatedAt": "2025-11-20T22:23:50.092Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t pageId = U(\"page-987\");\nUpdateAPIPageData updateData;\nupdateData.title = boost::optional<utility::string_t>(U(\"Updated Comments Page\"));\nupdateData.path = boost::optional<utility::string_t>(U(\"/products/widget-123/comments\"));\nupdateData.isPublished = boost::optional<bool>(true);\napi->patchPage(tenantId, pageId, updateData)\n.then([](std::shared_ptr<PatchPageAPIResponse> resp) {\n    if (resp) {\n        auto updatedCopy = std::make_shared<PatchPageAPIResponse>(*resp);\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 340,
+  "completionTokens": 1240
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "6aff02b5128b1ea0e69ee27c606f931278eba55d7e011c1a5fab0b7f4d38acb4",
+  "generatedAt": "2025-11-20T22:23:24.386Z",
+  "codeExample": "utility::string_t tenantId(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId(utility::string_t(\"post_98765\"));\nboost::optional<int32_t> limit(25);\nstd::vector<utility::string_t> tagVec{ utility::string_t(\"news\"), utility::string_t(\"featured\") };\nboost::optional<std::vector<utility::string_t>> tags(tagVec);\napi->getFeedPosts(tenantId, afterId, limit, tags).then([](pplx::task<std::shared_ptr<GetFeedPosts_200_response>> t) {\n    try {\n        auto resp = t.get();\n        auto respCopy = std::make_shared<GetFeedPosts_200_response>(*resp);\n        (void)respCopy;\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 371,
+  "completionTokens": 1215
+}

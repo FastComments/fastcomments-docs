@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "65456ff34779ad1faea08b754a2edb58aeaa6cbfe83542a4cccc5c1776fcdf2e",
+  "generatedAt": "2025-11-22T05:32:44.341Z",
+  "codeExample": "const tenantId: string = \"tenant_4f2b1a9e-6c3d-4e5f-b1a2-abcdef123456\";\nconst domainToUpdate: string = \"comments.acme-products.com\";\nconst patchDomainConfigParams: PatchDomainConfigParams = {\n  primary: true,\n  enableSsl: true,\n  sslCertificateId: \"ssl_cert_72f4b1\",\n  allowedOrigins: [\"https://www.acme.com\", \"https://shop.acme.com\"],\n  forceHttpsRedirect: undefined\n};\nconst updatedConfig: GetDomainConfig200Response = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 257,
+  "completionTokens": 1112
+}

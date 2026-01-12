@@ -1,0 +1,9 @@
+{
+  "method": "delete_page",
+  "signatureHash": "79ff6d1a96e5a63a9769ecfecf44df49978597278eab64dbf22e162efa36c9d1",
+  "generatedAt": "2025-11-21T23:52:19.653Z",
+  "codeExample": "async fn run() -> Result<DeletePageApiResponse, Error> {\n    let params: DeletePageParams = DeletePageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2025-11-21\".to_string(),\n        reason: Some(\"archived by editorial team\".to_string()),\n    };\n    let deleted: DeletePageApiResponse = delete_page(&configuration, params).await?;\n    Ok(deleted)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 287,
+  "completionTokens": 1260
+}

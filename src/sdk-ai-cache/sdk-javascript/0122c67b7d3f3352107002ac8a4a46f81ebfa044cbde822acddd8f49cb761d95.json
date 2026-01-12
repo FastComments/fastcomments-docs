@@ -1,0 +1,9 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "0122c67b7d3f3352107002ac8a4a46f81ebfa044cbde822acddd8f49cb761d95",
+  "generatedAt": "2025-11-22T05:32:42.711Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-tenant-42\";\nconst urlId: string = \"f47ac10b-58cc-4372-a567-0e02b2c3d479\";\nconst includeArchived: boolean | undefined = undefined; // optional flag example (not required by getPageByURLId)\nconst pageResponse: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\nconst page: APIPage | undefined = (pageResponse as any)?.page;\nconst pageTitle: string | undefined = (page as any)?.title;",
+  "model": "gpt-5-mini",
+  "promptTokens": 246,
+  "completionTokens": 1800
+}

@@ -1,0 +1,9 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "0875c7bcc4b4ea913ecf8ddb4466cb48c530efc95d9befabe02443d2090dcfde",
+  "generatedAt": "2025-11-22T05:33:02.081Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_7f4b21';\n  const createCommentParams: CreateCommentParams[] = [\n    {\n      content: 'I learned a lot from this post. Thanks for the practical tips!',\n      authorName: 'Sofia Ramos',\n      authorEmail: 'sofia.ramos@techblog.com',\n      userId: 'user_89237',\n      threadId: 'article-2025-11-typescript-tips',\n      url: 'https://techblog.com/posts/typescript-tips',\n      mentions: [{ userId: 'user_102', username: 'devMike' } as CommentUserMentionInfo],\n      hashtags: [{ tag: 'typescript' } as CommentUserHashTagInfo],\n      createdAt: new Date().toISOString()\n    }\n  ];\n  const isLive: boolean = true;\n  const doSpamCheck: boolean = true;\n  const sendEmails: boolean = false;\n  const populateNotifications: boolean = true;\n  const result: Array<SaveComment200Response> = await saveCommentsBulk(\n    tenantId,\n    createCommentParams,\n    isLive,\n    doSpamCheck,\n    sendEmails,\n    populateNotifications\n  );\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 294,
+  "completionTokens": 1293
+}

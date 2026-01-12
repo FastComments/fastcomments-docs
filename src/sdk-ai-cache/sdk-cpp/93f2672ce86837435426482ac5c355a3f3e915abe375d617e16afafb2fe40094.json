@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "93f2672ce86837435426482ac5c355a3f3e915abe375d617e16afafb2fe40094",
+  "generatedAt": "2025-11-20T22:22:40.601Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto aggregationRequest = std::make_shared<AggregationRequest>();\nboost::optional<utility::string_t> parentTenantId = boost::optional<utility::string_t>(U(\"parent-tenant-456\"));\nboost::optional<bool> includeStats = boost::optional<bool>(true);\napi->aggregate(tenantId, *aggregationRequest, parentTenantId, includeStats)\n.then([](std::shared_ptr<AggregationResponse> resp) {\n    if (resp) {\n        return resp;\n    }\n    return std::shared_ptr<AggregationResponse>();\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 353,
+  "completionTokens": 1672
+}

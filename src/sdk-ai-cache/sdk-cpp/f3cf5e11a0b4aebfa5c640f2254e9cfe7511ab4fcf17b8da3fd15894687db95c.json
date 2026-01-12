@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "f3cf5e11a0b4aebfa5c640f2254e9cfe7511ab4fcf17b8da3fd15894687db95c",
+  "generatedAt": "2025-11-20T22:22:38.605Z",
+  "codeExample": "auto payload = std::make_shared<CreateAPISSOUserData>();\npayload->email = utility::string_t(U(\"jane.doe@example.com\"));\npayload->displayName = utility::string_t(U(\"Jane Doe\"));\npayload->ssoId = utility::string_t(U(\"jdoe-azure-12345\"));\npayload->roles = std::vector<utility::string_t>{ utility::string_t(U(\"moderator\")) };\npayload->externalId = boost::optional<utility::string_t>(utility::string_t(U(\"ext-9876\")));\npayload->sendInvite = boost::optional<bool>(true);\n\napi->addSSOUser(utility::string_t(U(\"my-tenant-123\")), *payload)\n.then([](std::shared_ptr<AddSSOUserAPIResponse> resp){\n    if (resp) std::cout << \"Added SSO user successfully\\n\";\n    else std::cout << \"Failed to add SSO user\\n\";\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1551
+}

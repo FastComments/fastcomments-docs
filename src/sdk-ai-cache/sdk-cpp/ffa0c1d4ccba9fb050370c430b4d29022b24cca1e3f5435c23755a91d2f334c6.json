@@ -1,0 +1,9 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "ffa0c1d4ccba9fb050370c430b4d29022b24cca1e3f5435c23755a91d2f334c6",
+  "generatedAt": "2025-11-20T22:22:43.076Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> questionId(U(\"question-456\"));\nboost::optional<std::vector<utility::string_t>> questionIds(std::vector<utility::string_t>{U(\"question-456\"), U(\"question-789\")});\nboost::optional<utility::string_t> urlId(U(\"url-55\"));\nboost::optional<AggregateTimeBucket> timeBucket;\nboost::optional<utility::datetime> startDate(utility::datetime::from_string(U(\"2024-01-01T00:00:00Z\")));\nboost::optional<bool> forceRecalculate(true);\napi->aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)\n.then([](pplx::task<std::shared_ptr<AggregateQuestionResults_200_response>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = std::make_shared<AggregateQuestionResults_200_response>();\n    } catch(const std::exception&) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1901
+}

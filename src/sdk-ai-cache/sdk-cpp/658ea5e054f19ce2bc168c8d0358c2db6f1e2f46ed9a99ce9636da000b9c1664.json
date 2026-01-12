@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "658ea5e054f19ce2bc168c8d0358c2db6f1e2f46ed9a99ce9636da000b9c1664",
+  "generatedAt": "2025-11-20T22:23:39.284Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t userId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<utility::string_t> tenantOpt = tenantId;\napi->getSSOUserById(tenantOpt.value(), userId)\n    .then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp){\n        if(!resp) return;\n        auto responseCopy = std::make_shared<GetSSOUserByIdAPIResponse>(*resp);\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 344,
+  "completionTokens": 1475
+}

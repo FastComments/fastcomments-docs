@@ -1,0 +1,9 @@
+{
+  "method": "get_domain_config",
+  "signatureHash": "7ac8107868f1d57eb85609bf2c11ad57ef90903dbe305d14f9b54abca5dd52fd",
+  "generatedAt": "2025-11-21T23:52:25.340Z",
+  "codeExample": "async fn example_get_domain_config() -> Result<(), Error> {\n    let params: GetDomainConfigParams = GetDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain: \"blog.acme-corp.com\".to_string(),\n        include_subdomains: Some(true),\n    };\n    let config_response: GetDomainConfig200Response = get_domain_config(&configuration, params).await?;\n    let _ = config_response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 291,
+  "completionTokens": 875
+}

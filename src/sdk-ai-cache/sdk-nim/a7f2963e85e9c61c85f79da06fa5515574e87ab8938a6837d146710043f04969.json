@@ -1,0 +1,9 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "a7f2963e85e9c61c85f79da06fa5515574e87ab8938a6837d146710043f04969",
+  "generatedAt": "2025-11-21T16:27:07.235Z",
+  "codeExample": "let (response, httpResponse) = client.uploadImage(\n  tenantId = \"my-tenant-123\",\n  file = \"\",\n  sizePreset = default(SizePreset),\n  urlId = \"news/article-how-to-code\"\n)\n\nif response.isSome:\n  let uploadResp = response.get()\n  discard uploadResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 905
+}

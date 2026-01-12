@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "0262a544a7650f50eb98657fbc1edeea16e8bcec02f5d7ca9698989eccf526ef",
+  "generatedAt": "2025-11-22T05:32:13.454Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst afterId: string | undefined = 'post_20251120_001';\nconst tags: string[] = ['product-update', 'security'];\nconst result: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, undefined, tags);\nconsole.log(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 592
+}

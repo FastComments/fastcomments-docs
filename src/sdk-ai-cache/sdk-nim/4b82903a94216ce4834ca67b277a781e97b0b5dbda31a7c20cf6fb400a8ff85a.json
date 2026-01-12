@@ -1,0 +1,9 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "4b82903a94216ce4834ca67b277a781e97b0b5dbda31a7c20cf6fb400a8ff85a",
+  "generatedAt": "2025-11-22T08:35:42.007Z",
+  "codeExample": "let (response, httpResponse) = client.getPageByURLId(tenantId = \"my-tenant-123\", urlId = \"news/why-nim-shines\")\nif response.isSome:\n  let page = response.get()\n  echo \"Page retrieved successfully\"\nelse:\n  echo \"Page not found\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 970
+}

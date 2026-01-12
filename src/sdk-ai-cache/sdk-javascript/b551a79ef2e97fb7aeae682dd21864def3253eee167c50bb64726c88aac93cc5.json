@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "b551a79ef2e97fb7aeae682dd21864def3253eee167c50bb64726c88aac93cc5",
+  "generatedAt": "2025-11-22T05:33:51.792Z",
+  "codeExample": "const tenantId: string = \"tenant_9f1b2c\";\nconst notificationId: string = \"notification_1024\";\nconst optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum = UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptedIn;\nconst commentId: string = \"cmt_20251122_abcd\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature\";\n\nconst result: UpdateUserNotificationStatus200Response = await updateUserNotificationCommentSubscriptionStatus(\n  tenantId,\n  notificationId,\n  optedInOrOut,\n  commentId,\n  sso\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 806
+}

@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "309b80bd503c4e301acf357355c3425a7841056e3c3ba54021a627a688126ea3",
+  "generatedAt": "2025-11-22T08:35:48.546Z",
+  "codeExample": "let (response, httpResponse) = client.addPage(tenantId = \"my-tenant-123\", createAPIPageData = CreateAPIPageData())\nif response.isSome:\n  let addedPage = response.get()\n  discard addedPage",
+  "model": "gpt-5-mini",
+  "promptTokens": 388,
+  "completionTokens": 1338
+}

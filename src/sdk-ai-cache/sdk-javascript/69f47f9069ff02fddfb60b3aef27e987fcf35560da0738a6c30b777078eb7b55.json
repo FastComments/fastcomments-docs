@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "69f47f9069ff02fddfb60b3aef27e987fcf35560da0738a6c30b777078eb7b55",
+  "generatedAt": "2025-11-22T05:33:03.364Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-9b3f2a';\nconst id: string = 'sso-user-7f1c2d';\nconst updateData: UpdateAPISSOUserData = {\n  externalId: 'auth0|6032b1a7',\n  email: 'jane.doe@acme.com',\n  displayName: 'Jane Doe',\n  avatarUrl: 'https://cdn.acme.com/avatars/jane.jpg',\n  roles: ['moderator'],\n  metadata: { team: 'Platform', location: 'NYC' }\n};\nconst updateComments: boolean = true;\nconst result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateData, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 283,
+  "completionTokens": 937
+}

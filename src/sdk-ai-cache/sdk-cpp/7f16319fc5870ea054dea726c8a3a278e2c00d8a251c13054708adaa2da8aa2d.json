@@ -1,0 +1,9 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "7f16319fc5870ea054dea726c8a3a278e2c00d8a251c13054708adaa2da8aa2d",
+  "generatedAt": "2025-11-20T22:26:01.669Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto fileContent = std::make_shared<HttpContent>(U(\"avatar.png\"), U(\"image/png\"));\nboost::optional<SizePreset> sizePreset = boost::optional<SizePreset>(SizePreset::MEDIUM);\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"profile-avatar\"));\napi->uploadImage(tenantId, *fileContent, sizePreset, urlId)\n.then([](std::shared_ptr<UploadImageResponse> resp){\n    if (resp) std::cout << \"Image uploaded successfully\" << std::endl;\n    else std::cerr << \"Image upload returned no response\" << std::endl;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 354,
+  "completionTokens": 2212
+}

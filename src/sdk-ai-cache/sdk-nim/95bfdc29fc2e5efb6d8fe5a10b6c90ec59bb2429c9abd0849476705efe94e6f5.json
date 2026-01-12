@@ -1,0 +1,9 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "95bfdc29fc2e5efb6d8fe5a10b6c90ec59bb2429c9abd0849476705efe94e6f5",
+  "generatedAt": "2025-11-21T16:25:28.126Z",
+  "codeExample": "let (response, httpResponse) = client.deleteUserBadge(tenantId = \"my-tenant-123\", id = \"badge-456\")\nif response.isSome:\n  let deletedBadge = response.get()\n  echo \"Badge deleted for tenant my-tenant-123\"\nelse:\n  echo \"No badge returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 906
+}

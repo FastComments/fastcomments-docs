@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "1d43b2af6b4801cc305e058a444fed53346e3bc5fd10b421748dbebbc598d698",
+  "generatedAt": "2025-11-22T05:32:40.634Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst id: string = 'user_7842b';\nconst updateAPISSOUserData: UpdateAPISSOUserData = {\n  email: 'jane.doe@acmecorp.com',\n  displayName: 'Jane Doe',\n  externalId: 'acme|jdoe',\n  roles: ['editor'],\n  metadata: { team: 'Growth' }\n};\nconst updateComments: boolean = true;\nconst result: PatchSSOUserAPIResponse = await patchSSOUser(tenantId, id, updateAPISSOUserData, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 283,
+  "completionTokens": 717
+}

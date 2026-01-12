@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "7486197ec26fc67dea3f4ac5e56ed8ca22e674841e54997409ca2901906d6450",
+  "generatedAt": "2025-11-22T08:35:51.738Z",
+  "codeExample": "let updateData = UpdateAPIPageData(\n  title = \"Homepage — Daily Times\",\n  slug = \"news/homepage\",\n  enabled = true,\n  tags = @[\"featured\", \"editorial\"],\n  description = \"Updated summary for the homepage\",\n  priority = 0\n)\nlet (response, httpResponse) = client.patchPage(tenantId = \"my-tenant-123\", id = \"page-homepage-456\", updateAPIPageData = updateData)\nif response.isSome:\n  let page = response.get()\n  echo \"Updated page: \", page.id\nelse:\n  echo \"No response body, status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 396,
+  "completionTokens": 784
+}

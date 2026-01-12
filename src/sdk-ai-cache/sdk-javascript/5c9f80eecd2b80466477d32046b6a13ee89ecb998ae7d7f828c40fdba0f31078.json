@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "5c9f80eecd2b80466477d32046b6a13ee89ecb998ae7d7f828c40fdba0f31078",
+  "generatedAt": "2025-11-22T05:32:15.941Z",
+  "codeExample": "const tenantId: string = 'acme-marketing-1a2b';\nconst includeInactive: boolean | undefined = undefined; // optional parameter demonstration\nconst options: { includeInactive?: boolean } = includeInactive === undefined ? {} : { includeInactive };\nconst response: GetDomainConfigs200Response = await getDomainConfigs(tenantId);\n/* Optional parameters can be supplied as a second argument when available, e.g.:\n   await getDomainConfigs(tenantId, { includeInactive: true }) */",
+  "model": "gpt-5-mini",
+  "promptTokens": 223,
+  "completionTokens": 1136
+}

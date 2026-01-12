@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "250996e9a752bcd1e03d5a35558d01273d97cbd4dbea6eaa5642efd4e4476302",
+  "generatedAt": "2025-11-21T16:26:35.078Z",
+  "codeExample": "let (response, httpResponse) = client.getEventLog(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/sports-world-cup-2025\",\n  userIdWS = \"\",\n  startTime = int64(0),\n  endTime = int64(0)\n)\nif response.isSome:\n  let eventLog = response.get()",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 982
+}

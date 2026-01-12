@@ -28,7 +28,9 @@ class NimAIGenerator extends BaseDocGenerator {
 
         // Create parser and OpenAI client
         const parser = new NimParser(this.repoPath, config.modelsPath);
-        const aiClient = new OpenAIClient(path.join(this.repoPath, config.cachePath), 'nim');
+        // Use cache path outside of sdks-checkout so it can be checked into git
+        const aiCachePath = path.join(__dirname, '..', 'sdk-ai-cache', this.sdk.id);
+        const aiClient = new OpenAIClient(aiCachePath, 'nim');
 
         // Build operation map from OpenAPI spec
         const operationMap = this.buildOperationMap(spec);

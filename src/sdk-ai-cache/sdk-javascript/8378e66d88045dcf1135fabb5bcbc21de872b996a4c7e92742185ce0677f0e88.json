@@ -1,0 +1,9 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "8378e66d88045dcf1135fabb5bcbc21de872b996a4c7e92742185ce0677f0e88",
+  "generatedAt": "2025-11-22T05:33:00.804Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_001\";\nconst commentId: string = \"comment_9f8b7c\";\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: \"abusive_language\",\n  durationHours: 48,\n  notifyCommenter: true,\n  moderatorId: \"moderator_42\"\n};\nconst sso: string = \"sso_jwt_token_example_eyJhbGciOiJIUzI1Ni\";\nconst result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 718
+}

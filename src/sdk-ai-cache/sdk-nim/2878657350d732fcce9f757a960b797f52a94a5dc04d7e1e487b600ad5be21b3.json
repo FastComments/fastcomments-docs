@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "2878657350d732fcce9f757a960b797f52a94a5dc04d7e1e487b600ad5be21b3",
+  "generatedAt": "2025-11-21T16:25:46.103Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = \"my-tenant-123\", id = \"badge-456\")\nif response.isSome:\n  let badgeProgress = response.get()\n  discard badgeProgress\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 642
+}

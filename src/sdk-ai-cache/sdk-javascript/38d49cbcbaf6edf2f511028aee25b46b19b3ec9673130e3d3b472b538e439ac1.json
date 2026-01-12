@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "38d49cbcbaf6edf2f511028aee25b46b19b3ec9673130e3d3b472b538e439ac1",
+  "generatedAt": "2025-11-22T05:31:55.249Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-42';\nconst createData: CreateAPISSOUserData = {\n  externalId: 'google-oauth2|112233445566778899',\n  email: 'emma.jones@acme-corp.com',\n  displayName: 'Emma Jones',\n  roles: ['moderator'], // optional field included\n  isAdmin: false,\n  avatarUrl: 'https://cdn.acme-corp.com/avatars/emma.jpg',\n  metadata: { department: 'product', locale: 'en-US' } // optional metadata\n} as CreateAPISSOUserData;\nconst result: AddSSOUserAPIResponse = await addSSOUser(tenantId, createData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 266,
+  "completionTokens": 1316
+}

@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "3d71a25ba704330a6b68bded0048b065bf8a0a8026496c91d16d9bb3e91f03f9",
+  "generatedAt": "2025-11-20T22:22:41.924Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U(\"q-456\"));\nboost::optional<std::vector<utility::string_t>> questionIds = std::vector<utility::string_t>{ U(\"q-456\"), U(\"q-789\") };\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"url-321\"));\nutility::datetime sd = utility::datetime::from_string(U(\"2025-01-01T00:00:00Z\"));\nboost::optional<utility::datetime> startDate = sd;\nboost::optional<bool> forceRecalculate = true;\nboost::optional<double> minValue = 0.0;\nboost::optional<double> maxValue = 5.0;\nboost::optional<double> limit = 100.0;\napi->combineCommentsWithQuestionResults(tenantId, questionId, questionIds, urlId, startDate, forceRecalculate, minValue, maxValue, limit)\n.then([](pplx::task<std::shared_ptr<CombineCommentsWithQuestionResults_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto copy = std::make_shared<CombineCommentsWithQuestionResults_200_response>(*resp);\n        (void)copy;\n    } catch(const std::exception &){\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 458,
+  "completionTokens": 2039
+}

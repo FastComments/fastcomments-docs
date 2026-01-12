@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "46d3f416ea12777bd733a966f6033444308b0b8dcc6fbd8b96f77a79a51041a5",
+  "generatedAt": "2025-11-22T05:32:21.924Z",
+  "codeExample": "const tenantId: string = 'tenant_7f8b3c4d-01';\nconst skip: number = 50;\nconst usersFirstPage: GetSSOUsers200Response = await getSSOUsers(tenantId);\nconst usersSecondPage: GetSSOUsers200Response = await getSSOUsers(tenantId, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 244,
+  "completionTokens": 529
+}

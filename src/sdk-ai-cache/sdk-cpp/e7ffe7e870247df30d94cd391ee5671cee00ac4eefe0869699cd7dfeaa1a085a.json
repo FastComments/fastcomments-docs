@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "e7ffe7e870247df30d94cd391ee5671cee00ac4eefe0869699cd7dfeaa1a085a",
+  "generatedAt": "2025-11-20T22:23:42.746Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"alice@example.com\");\nboost::optional<utility::string_t> locale = boost::none;\nauto defaultResp = std::make_shared<GetUserBadge_200_response>();\napi->getUserBadge(tenantId, userId)\n    .then([defaultResp](std::shared_ptr<GetUserBadge_200_response> resp) {\n        auto result = resp ? resp : defaultResp;\n        return result;\n    })\n    .then([](std::shared_ptr<GetUserBadge_200_response> finalResp) {\n        if (finalResp) {\n            std::cout << \"User badge retrieved successfully\\n\";\n        } else {\n            std::cout << \"Failed to retrieve user badge\\n\";\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 333,
+  "completionTokens": 1073
+}

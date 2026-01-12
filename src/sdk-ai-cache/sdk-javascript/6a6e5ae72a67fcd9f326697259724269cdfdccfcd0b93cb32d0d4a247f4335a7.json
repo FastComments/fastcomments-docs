@@ -1,0 +1,9 @@
+{
+  "method": "flagComment",
+  "signatureHash": "6a6e5ae72a67fcd9f326697259724269cdfdccfcd0b93cb32d0d4a247f4335a7",
+  "generatedAt": "2025-11-22T05:32:12.492Z",
+  "codeExample": "const tenantId: string = 'tenant-acme-01';\nconst commentId: string = 'cmt_5f8e9a2b';\nconst userId: string = 'user_1024';\n\nconst flaggedByUserResponse: FlagComment200Response = await flagComment(tenantId, commentId, userId);\n\nconst anonUserId: string = 'anon_9f2b3c';\nconst flaggedAnonResponse: FlagComment200Response = await flagComment(tenantId, commentId, undefined, anonUserId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 395,
+  "completionTokens": 1080
+}

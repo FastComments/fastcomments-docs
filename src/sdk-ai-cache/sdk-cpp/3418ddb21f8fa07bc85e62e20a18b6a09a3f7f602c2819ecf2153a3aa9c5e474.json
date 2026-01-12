@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "3418ddb21f8fa07bc85e62e20a18b6a09a3f7f602c2819ecf2153a3aa9c5e474",
+  "generatedAt": "2025-11-20T22:22:45.360Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateFeedPostParams createFeedPostParams;\ncreateFeedPostParams.title = U(\"Product update: v2.1\");\ncreateFeedPostParams.content = U(\"We are releasing version 2.1 with performance and stability improvements.\");\ncreateFeedPostParams.authorEmail = U(\"author@example.com\");\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-789\"));\nboost::optional<bool> isLive = boost::optional<bool>(true);\nboost::optional<bool> doSpamCheck = boost::optional<bool>(false);\nboost::optional<bool> skipDupCheck = boost::optional<bool>(false);\n\napi->createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck)\n.then([](pplx::task<std::shared_ptr<CreateFeedPost_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<CreateFeedPost_200_response>(*resp);\n            std::cout << \"Feed post created\" << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"CreateFeedPost failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 401,
+  "completionTokens": 2149
+}

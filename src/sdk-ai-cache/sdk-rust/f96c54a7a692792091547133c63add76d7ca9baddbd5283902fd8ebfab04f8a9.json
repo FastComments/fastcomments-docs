@@ -1,0 +1,9 @@
+{
+  "method": "get_comment",
+  "signatureHash": "f96c54a7a692792091547133c63add76d7ca9baddbd5283902fd8ebfab04f8a9",
+  "generatedAt": "2025-11-21T23:52:18.929Z",
+  "codeExample": "async fn run_get_comment() -> Result<GetComment200Response, Error> {\n    let params: GetCommentParams = GetCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/2025/11/21/comment-7890\".to_string(),\n        include_replies: Some(true),\n    };\n    let comment: GetComment200Response = get_comment(configuration, params).await?;\n    Ok(comment)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 1129
+}

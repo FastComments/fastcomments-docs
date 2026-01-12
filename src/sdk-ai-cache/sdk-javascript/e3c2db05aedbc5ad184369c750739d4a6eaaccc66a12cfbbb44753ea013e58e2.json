@@ -1,0 +1,9 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "e3c2db05aedbc5ad184369c750739d4a6eaaccc66a12cfbbb44753ea013e58e2",
+  "generatedAt": "2025-11-22T05:32:05.321Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-enterprises-123\";\n  const subscriptionId: string = \"sub_8f2b4c9d\";\n  const userId: string = \"user_42b7a\";\n  const responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId, userId);\n  const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 237,
+  "completionTokens": 876
+}

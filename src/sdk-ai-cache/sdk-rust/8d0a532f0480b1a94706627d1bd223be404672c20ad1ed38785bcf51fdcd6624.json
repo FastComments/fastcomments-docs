@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post",
+  "signatureHash": "8d0a532f0480b1a94706627d1bd223be404672c20ad1ed38785bcf51fdcd6624",
+  "generatedAt": "2025-11-21T23:52:00.309Z",
+  "codeExample": "let params: CreateFeedPostParams = CreateFeedPostParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_feed_post_params: models::CreateFeedPostParams {\n        title: \"Major Outage Affecting Metro Area\".to_string(),\n        body: \"We are investigating reports of an outage impacting internet and voice services across the metro area. Engineers are on site and updates will follow.\".to_string(),\n        author_id: \"newsroom-ops\".to_string(),\n        media_items: vec![\n            FeedPostMediaItem {\n                asset: FeedPostMediaItemAsset {\n                    url: \"https://cdn.example.com/images/outage-map.png\".to_string(),\n                    mime_type: \"image/png\".to_string()\n                },\n                caption: Some(\"Affected neighborhoods\".to_string())\n            }\n        ],\n        links: vec![\n            FeedPostLink {\n                url: \"https://status.example.com/incidents/2025-11-21\".to_string(),\n                title: Some(\"Incident details\".to_string())\n            }\n        ],\n        tags: vec![\"outage\".to_string(), \"status\".to_string()],\n        allow_comments: Some(true)\n    },\n    broadcast_id: Some(\"live-feed-2025-11-21\".to_string()),\n    is_live: Some(true),\n    do_spam_check: Some(true),\n    skip_dup_check: Some(false)\n};\nlet response: CreateFeedPost200Response = create_feed_post(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 522,
+  "completionTokens": 1214
+}

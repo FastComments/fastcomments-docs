@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "b44b8a37c6a892b7f774fa36584a8098aa6b98602ab8225dcf6d1708f49e7359",
+  "generatedAt": "2025-11-22T05:32:25.183Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_acme_01\";\n  const userId: string = \"user_jdoe_42\";\n  const allSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);\n  const userSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);\n  console.log(allSubscriptions, userSubscriptions);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 238,
+  "completionTokens": 601
+}

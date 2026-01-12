@@ -1,0 +1,9 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "aea3262fa147d5e7d11db1b0e7ebbf23d324bdac34b306d578c6f321e5cd6add",
+  "generatedAt": "2025-11-20T22:23:08.260Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domain = U(\"acme.com\");\nboost::optional<utility::string_t> correlationId = U(\"corr-456\");\napi->deleteDomainConfig(tenantId, domain)\n.then([correlationId](std::shared_ptr<DeleteDomainConfig_200_response> resp){\n    auto finalResp = resp ? resp : std::make_shared<DeleteDomainConfig_200_response>();\n    (void)correlationId;\n    (void)finalResp;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 335,
+  "completionTokens": 1850
+}

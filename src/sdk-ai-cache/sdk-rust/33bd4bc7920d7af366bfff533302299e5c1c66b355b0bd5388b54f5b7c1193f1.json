@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts_stats",
+  "signatureHash": "33bd4bc7920d7af366bfff533302299e5c1c66b355b0bd5388b54f5b7c1193f1",
+  "generatedAt": "2025-11-21T23:53:38.015Z",
+  "codeExample": "async fn example() -> Result<GetFeedPostsStats200Response, Error> {\n    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: vec![\n            \"news/article-2025-11-01\".to_string(),\n            \"tech/review-2025-10-20\".to_string(),\n        ],\n        sso: Some(\"sso-session-token-9f3b\".to_string()),\n    };\n    let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;\n    Ok(stats)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 720
+}

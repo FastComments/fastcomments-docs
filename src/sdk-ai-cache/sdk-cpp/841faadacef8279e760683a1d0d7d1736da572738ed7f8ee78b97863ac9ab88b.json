@@ -1,0 +1,9 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "841faadacef8279e760683a1d0d7d1736da572738ed7f8ee78b97863ac9ab88b",
+  "generatedAt": "2025-11-20T22:25:28.376Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t urlId = utility::conversions::to_string_t(\"article-456\");\nutility::string_t usernameStartsWith = utility::conversions::to_string_t(\"john\");\nboost::optional<std::vector<utility::string_t>> mentionGroupIds = std::vector<utility::string_t>{\n    utility::conversions::to_string_t(\"editors\"),\n    utility::conversions::to_string_t(\"staff\")\n};\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"google\");\napi->searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso)\n.then([](pplx::task<std::shared_ptr<SearchUsers_200_response>> task){\n    try {\n        auto resp = task.get();\n        (void)resp;\n    } catch (const std::exception& e) {\n        auto fallback = std::make_shared<SearchUsers_200_response>();\n        (void)fallback; (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 371,
+  "completionTokens": 1713
+}

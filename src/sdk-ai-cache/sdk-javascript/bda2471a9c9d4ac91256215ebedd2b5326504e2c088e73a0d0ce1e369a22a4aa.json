@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "bda2471a9c9d4ac91256215ebedd2b5326504e2c088e73a0d0ce1e369a22a4aa",
+  "generatedAt": "2025-11-22T05:33:46.360Z",
+  "codeExample": "const tenantId: string = 'tenant_8f2d3c';\nconst afterId: string | undefined = 'notif_5b7a1e';\nconst afterCreatedAt: number | undefined = Date.now() - 2 * 60 * 60 * 1000;\nconst unreadOnly: boolean | undefined = true;\nconst dmOnly: boolean | undefined = false;\nconst noDm: boolean | undefined = undefined;\nconst sso: string | undefined = 'sso_user_24a9';\n\nconst result: ResetUserNotifications200Response = await resetUserNotifications(\n  tenantId,\n  afterId,\n  afterCreatedAt,\n  unreadOnly,\n  dmOnly,\n  noDm,\n  sso\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 1120
+}

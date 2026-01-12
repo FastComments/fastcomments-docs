@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "9b72c6c5efb90d73059d6ae67cce4be2a205c3b06032b3b9e336b65bd2cbd53a",
+  "generatedAt": "2025-11-22T05:31:55.047Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_8f3b2a9c-prod\";\n  const createAPIPageData: CreateAPIPageData = {\n    url: \"https://acme.blog/products/fastsync-2\",\n    title: \"Introducing FastSync 2.0\",\n    slug: \"fastsync-2-0\",\n    tags: [\"releases\", \"sync\", \"performance\"],\n    isPublic: true,\n    language: \"en-US\",\n    canonicalUrl: \"https://acme.com/products/fastsync-2\", // optional\n    metadata: { authorId: \"user_42\", summary: \"Faster sync across devices.\" } // optional\n  };\n  const result: AddPageAPIResponse = await addPage(tenantId, createAPIPageData);\n  console.log((result as any).page as APIPage);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 252,
+  "completionTokens": 1153
+}

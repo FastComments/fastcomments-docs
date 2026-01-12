@@ -1,0 +1,9 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "1b620f51c1bf7b48964c9311351f3578c92f13797c4d518fa0f9b9d4df463ddb",
+  "generatedAt": "2025-11-22T05:33:17.841Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'fc_tenant_42';\n  const commentId: string = 'cmt_9f8e7d6';\n  const dir: number = 1;\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20ifQ.signature';\n\n  const result: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);\n  const resultWithSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, sso);\n\n  console.log(result, resultWithSSO);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 403,
+  "completionTokens": 1029
+}

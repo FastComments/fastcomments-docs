@@ -1,0 +1,9 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "77612cb9ca8fc69d100676ce527049a0fdb152c7b18af85921a2c8b444df8462",
+  "generatedAt": "2025-11-21T16:25:11.293Z",
+  "codeExample": "let params = AddDomainConfigParams(\n  domain = \"news.example.com\",\n  enabled = true,\n  allowSubdomains = true,\n  allowedOrigins = @[\"https://news.example.com\"],\n  description = \"Primary domain for news site\"\n)\nlet (response, httpResponse) = client.addDomainConfig(tenantId = \"my-tenant-123\", addDomainConfigParams = params)\nif response.isSome:\n  let addedConfig = response.get()\n  echo \"Domain config added for: \", addedConfig.domain",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 947
+}

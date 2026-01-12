@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "07811662b0fdd4939c7fec0319004d9e55e6d7cb247fd7240b423dc39be12038",
+  "generatedAt": "2025-11-20T22:25:44.875Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t notificationId = utility::conversions::to_string_t(\"notif-456\");\nutility::string_t optedInOrOut = utility::conversions::to_string_t(\"opted_in\");\nutility::string_t commentId = utility::conversions::to_string_t(\"comment-789\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"sso-jwt-token-abc123\"));\napi->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)\n.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Subscription updated successfully\\n\";\n        else std::cout << \"No response\\n\";\n    } catch (const std::exception& e) {\n        std::cout << \"Error: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 378,
+  "completionTokens": 1850
+}

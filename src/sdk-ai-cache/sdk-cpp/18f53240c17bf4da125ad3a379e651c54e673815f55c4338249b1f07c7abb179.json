@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "18f53240c17bf4da125ad3a379e651c54e673815f55c4338249b1f07c7abb179",
+  "generatedAt": "2025-11-20T22:24:01.657Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto domainToUpdate = utility::string_t(U(\"mydomain.com\"));\nauto updateParams = std::make_shared<UpdateDomainConfigParams>();\nupdateParams->enabled = true;\nupdateParams->contactEmail = boost::optional<utility::string_t>(U(\"admin@mydomain.com\"));\nupdateParams->allowedOrigins = std::vector<utility::string_t>{ U(\"https://www.mydomain.com\"), U(\"https://dashboard.mydomain.com\") };\n\napi->putDomainConfig(tenantId, domainToUpdate, *updateParams)\n.then([](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Domain config updated for tenant\\n\";\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"Failed to update domain config: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 1441
+}

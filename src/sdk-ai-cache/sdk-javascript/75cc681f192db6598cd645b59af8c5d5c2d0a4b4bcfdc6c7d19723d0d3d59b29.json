@@ -1,0 +1,9 @@
+{
+  "method": "deletePage",
+  "signatureHash": "75cc681f192db6598cd645b59af8c5d5c2d0a4b4bcfdc6c7d19723d0d3d59b29",
+  "generatedAt": "2025-11-22T05:32:12.691Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-8421';\nconst id: string = 'page-home-2024-11-22';\nconst initiatedBy: string | undefined = 'ops@acme-corp.com'; // optional metadata\nconst result: DeletePageAPIResponse = await deletePage(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 228,
+  "completionTokens": 1230
+}

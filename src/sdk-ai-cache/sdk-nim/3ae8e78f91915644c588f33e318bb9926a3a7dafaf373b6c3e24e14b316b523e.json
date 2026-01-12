@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "3ae8e78f91915644c588f33e318bb9926a3a7dafaf373b6c3e24e14b316b523e",
+  "generatedAt": "2025-11-21T16:27:07.829Z",
+  "codeExample": "let (response, httpResponse) = client.updateFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"post-9876\",\n  updateFeedPostParams = UpdateFeedPostParams(\n    title = \"Breaking: Major Update on Community Project\",\n    content = \"Phase 2 completed with improvements to accessibility and performance.\",\n    isPinned = false,\n    tags = @[\"community\", \"update\"],\n    authorId = \"editor-42\"\n  ),\n  broadcastId = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let postResp = response.get()\n  discard postResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1481
+}

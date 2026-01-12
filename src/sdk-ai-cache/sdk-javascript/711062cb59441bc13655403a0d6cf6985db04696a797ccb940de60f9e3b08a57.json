@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "711062cb59441bc13655403a0d6cf6985db04696a797ccb940de60f9e3b08a57",
+  "generatedAt": "2025-11-22T05:32:58.380Z",
+  "codeExample": "const tenantId: string = \"tenant_7b6f3a2c\";\nconst id: string = \"cmt_5f4e3a2b1d\";\nconst updatableCommentParams: UpdatableCommentParams = {\n  content: \"I've updated my comment to add more context and fix a typo.\",\n  authorName: \"Jordan Lee\",\n  meta: { editedBy: \"moderator_12\", tags: [\"clarified\"] },\n  isVisible: true\n};\nconst contextUserId: string = \"user_98c3b\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = true;\nconst result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini",
+  "promptTokens": 440,
+  "completionTokens": 753
+}

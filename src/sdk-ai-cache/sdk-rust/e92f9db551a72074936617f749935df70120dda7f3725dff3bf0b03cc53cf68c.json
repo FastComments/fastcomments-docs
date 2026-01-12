@@ -1,0 +1,9 @@
+{
+  "method": "add_domain_config",
+  "signatureHash": "e92f9db551a72074936617f749935df70120dda7f3725dff3bf0b03cc53cf68c",
+  "generatedAt": "2025-11-21T23:51:57.512Z",
+  "codeExample": "async fn example_add_domain() -> Result<(), Error> {\n    let params: AddDomainConfigParams = AddDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        add_domain_config_params: models::AddDomainConfigParams {\n            domain: \"comments.acme.com\".to_string(),\n            site_path: \"/news/article\".to_string(),\n            enabled: Some(true),\n            allow_subdomains: Some(true),\n            include_paths: Some(vec![\"/news/*\".to_string(), \"/blog/*\".to_string()]),\n        },\n    };\n\n    let resp: AddDomainConfig200Response = add_domain_config(&configuration, params).await?;\n    println!(\"{:#?}\", resp);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 311,
+  "completionTokens": 1055
+}

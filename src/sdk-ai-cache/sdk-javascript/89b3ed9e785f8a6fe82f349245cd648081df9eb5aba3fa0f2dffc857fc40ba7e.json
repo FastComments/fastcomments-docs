@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "89b3ed9e785f8a6fe82f349245cd648081df9eb5aba3fa0f2dffc857fc40ba7e",
+  "generatedAt": "2025-11-22T05:32:52.933Z",
+  "codeExample": "const tenantId: string = 'tenant_6f9a2b4c';\nconst createCommentParams: CreateCommentParams = {\n  threadId: 'article_2025-11-22_001',\n  content: 'Great analysis — I learned a lot from this breakdown.',\n  userId: 'user_00421',\n  userDisplayName: 'Aisha Patel',\n  userEmail: 'aisha.patel@example.org',\n  metadata: { device: 'iPhone', locale: 'en-US' }\n};\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = false;\nconst populateNotifications: boolean = true;\nconst result: SaveComment200Response = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);",
+  "model": "gpt-5-mini",
+  "promptTokens": 492,
+  "completionTokens": 631
+}

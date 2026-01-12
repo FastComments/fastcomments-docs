@@ -1,0 +1,9 @@
+{
+  "method": "combine_comments_with_question_results",
+  "signatureHash": "743cc6ac6de03dee0a0aa7f8a67dc8dbaa5d429e0fe671c70aa83150158980a7",
+  "generatedAt": "2025-11-21T23:51:59.879Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CombineCommentsWithQuestionResultsParams = CombineCommentsWithQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        question_id: Some(\"q-98765\".to_string()),\n        question_ids: Some(vec![\"q-98765\".to_string(), \"q-12345\".to_string()]),\n        url_id: Some(\"news/technology/2025/rust-release\".to_string()),\n        start_date: Some(\"2025-01-01T00:00:00Z\".to_string()),\n        force_recalculate: Some(true),\n        min_value: Some(0.0),\n        max_value: Some(1.0),\n        limit: Some(100.0),\n    };\n    let resp: CombineCommentsWithQuestionResults200Response =\n        combine_comments_with_question_results(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 548,
+  "completionTokens": 906
+}

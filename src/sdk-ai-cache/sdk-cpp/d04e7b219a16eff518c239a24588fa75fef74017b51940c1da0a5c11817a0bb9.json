@@ -1,0 +1,9 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "d04e7b219a16eff518c239a24588fa75fef74017b51940c1da0a5c11817a0bb9",
+  "generatedAt": "2025-11-20T22:23:09.027Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> limit = 50.0;\nboost::optional<double> skip = 0.0;\nboost::optional<SORT_DIR> order = SORT_DIR::DESC;\nboost::optional<double> after = 1630454400.0;\nboost::optional<double> before = 1633046400.0;\nauto result_holder = std::make_shared<GetAuditLogs_200_response>();\n\napi->getAuditLogs(tenantId, limit, skip, order, after, before)\n    .then([result_holder](pplx::task<std::shared_ptr<GetAuditLogs_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) *result_holder = *resp;\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 396,
+  "completionTokens": 1591
+}

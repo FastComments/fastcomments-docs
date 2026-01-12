@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "64141d7bff1d315ed635842c89da1c0f24d6c92d23f3b9f8a01752f4842a7086",
+  "generatedAt": "2025-11-21T23:52:00.696Z",
+  "codeExample": "let params: AggregateParams = AggregateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    aggregation_request: models::AggregationRequest {\n        filters: Some(vec![\n            models::QueryPredicate {\n                field: \"path\".to_string(),\n                operator: \"equals\".to_string(),\n                value: models::QueryPredicateValue::String(\"news/article\".to_string()),\n            },\n        ]),\n        operations: vec![\n            models::AggregationOperation {\n                op: models::AggregationOpType::Count,\n                field: None,\n            },\n        ],\n        group_by: Some(vec![\"author_id\".to_string()]),\n        sort: Some(vec![\n            models::AggregationRequestSort { field: \"count\".to_string(), direction: \"desc\".to_string() },\n        ]),\n        limit: Some(100),\n    },\n    parent_tenant_id: Some(\"acme-global\".to_string()),\n    include_stats: Some(true),\n};\nlet aggregation: AggregationResponse = aggregate(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 1182
+}

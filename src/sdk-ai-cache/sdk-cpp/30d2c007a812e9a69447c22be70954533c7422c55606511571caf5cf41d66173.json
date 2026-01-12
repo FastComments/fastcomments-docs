@@ -1,0 +1,9 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "30d2c007a812e9a69447c22be70954533c7422c55606511571caf5cf41d66173",
+  "generatedAt": "2025-11-20T22:22:41.624Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateAPIUserSubscriptionData subscriptionData;\nsubscriptionData.userEmail = U(\"user@example.com\");\nsubscriptionData.planId = U(\"pro-monthly\");\nsubscriptionData.autoRenew = boost::optional<bool>(true);\nsubscriptionData.couponCode = boost::optional<utility::string_t>(U(\"WELCOME10\"));\nauto task = api->createSubscription(tenantId, subscriptionData)\n.then([=](pplx::task<std::shared_ptr<CreateSubscriptionAPIResponse>> t) {\n    try {\n        return t.get();\n    } catch (const std::exception&) {\n        return std::make_shared<CreateSubscriptionAPIResponse>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1753
+}

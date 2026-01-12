@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "55d703acc15d96f170c6d331a363b3ba7c6226d866e40c215e307b6b0cd0bee6",
+  "generatedAt": "2025-11-22T05:33:42.205Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst urlId: string = 'article/2025/launch';\nconst page: number = 1;\nconst direction: SortDirections = 'newest' as unknown as SortDirections;\nconst limit: number = 25;\nconst limitChildren: number = 3;\nconst countChildren: boolean = true;\nconst includeConfig: boolean = true;\nconst response: GetCommentsPublic200Response = await getCommentsPublic(tenantId, urlId, page, direction, undefined, 0, 0, limit, limitChildren, countChildren, undefined, includeConfig);",
+  "model": "gpt-5-mini",
+  "promptTokens": 650,
+  "completionTokens": 2762
+}

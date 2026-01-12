@@ -1,0 +1,9 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "aac69f185962ea578ad6f5181b16c641c1fb5244f8eeabe1f38830d8e54ecbcd",
+  "generatedAt": "2025-11-21T16:25:14.079Z",
+  "codeExample": "let params = BlockFromCommentParams(reason = \"Abusive language\", temporary = true, durationMinutes = 1440, tags = @[\"abuse\", \"spam\"])\nlet (response, httpResponse) = client.blockUserFromComment(tenantId = \"my-tenant-123\", id = \"cmt-98765\", blockFromCommentParams = params, userId = \"user-4321\", anonUserId = \"\")\nif response.isSome:\n  let blocked = response.get()\n  discard blocked\n  echo \"Block request succeeded, HTTP status: \", httpResponse.status\nelse:\n  echo \"No block response, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1297
+}

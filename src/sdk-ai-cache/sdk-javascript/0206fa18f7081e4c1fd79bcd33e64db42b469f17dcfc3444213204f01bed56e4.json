@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "0206fa18f7081e4c1fd79bcd33e64db42b469f17dcfc3444213204f01bed56e4",
+  "generatedAt": "2025-11-22T05:33:25.912Z",
+  "codeExample": "const tenantId: string = \"tenant_4f2a9b6c\";\nconst afterId: string = \"post_20251120_8b7c\";\nconst limit: number = 25;\nconst tags: Array<string> = [\"technology\", \"product-release\"];\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakepayload.signature\";\nconst isCrawler: boolean = false;\nconst includeUserInfo: boolean = true;\nconst response: GetFeedPostsPublic200Response = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);",
+  "model": "gpt-5-mini",
+  "promptTokens": 475,
+  "completionTokens": 731
+}

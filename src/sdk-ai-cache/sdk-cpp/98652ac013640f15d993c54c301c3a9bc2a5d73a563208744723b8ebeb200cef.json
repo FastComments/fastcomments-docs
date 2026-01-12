@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "98652ac013640f15d993c54c301c3a9bc2a5d73a563208744723b8ebeb200cef",
+  "generatedAt": "2025-11-20T22:24:13.528Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateCommentParams createParams;\ncreateParams.body = U(\"This is a test comment from the C++ SDK\");\ncreateParams.authorEmail = U(\"user@example.com\");\ncreateParams.threadId = U(\"thread-456\");\nboost::optional<bool> isLive(true);\nboost::optional<bool> doSpamCheck(false);\nboost::optional<bool> sendEmails(true);\nboost::optional<bool> populateNotifications(true);\napi->saveComment(tenantId, createParams, isLive, doSpamCheck, sendEmails, populateNotifications)\n.then([](pplx::task<std::shared_ptr<SaveComment_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto copy = std::make_shared<SaveComment_200_response>(*resp);\n        }\n    } catch (...) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 395,
+  "completionTokens": 1474
+}

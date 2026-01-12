@@ -1,0 +1,9 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "5e00255c77ab509cac56e81ede456a3db536aa6163857dd63d627944457ed0f7",
+  "generatedAt": "2025-11-20T22:23:02.609Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nboost::optional<bool> deleteComments = boost::optional<bool>(true);\nboost::optional<utility::string_t> commentDeleteMode = boost::optional<utility::string_t>(U(\"cascade\"));\napi->deleteSSOUser(tenantId, id, deleteComments, commentDeleteMode)\n    .then([](std::shared_ptr<DeleteSSOUserAPIResponse> resp){\n        if(!resp) return;\n        auto resultCopy = std::make_shared<DeleteSSOUserAPIResponse>(*resp);\n        (void)resultCopy;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 367,
+  "completionTokens": 1174
+}

@@ -1,0 +1,9 @@
+{
+  "method": "update_comment",
+  "signatureHash": "6de463f70704e6569300ee1242cea4ac32edb49fde398d7cc791987e112380c5",
+  "generatedAt": "2025-11-21T23:53:00.715Z",
+  "codeExample": "let params: UpdateCommentParams = UpdateCommentParams {\n    tenant_id: \"acme-news-tenant\".to_string(),\n    id: \"cmt-20251121-0001\".to_string(),\n    updatable_comment_params: models::UpdatableCommentParams {\n        content: \"Updated: I found additional sources that change my view on this.\".to_string(),\n        author_id: Some(\"user-9876\".to_string()),\n        tags: Some(vec![\"correction\".to_string(), \"news\".to_string()]),\n        ..Default::default()\n    },\n    context_user_id: Some(\"moderator-42\".to_string()),\n    do_spam_check: Some(true),\n    is_live: Some(true),\n};\nlet response: FlagCommentPublic200Response = update_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 945
+}

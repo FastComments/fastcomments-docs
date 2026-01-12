@@ -1,0 +1,9 @@
+{
+  "method": "delete_comment_vote",
+  "signatureHash": "25f489ed8341f6c6696f9e2a3bb358a636e4d24932c6ff8756584806ad3ba539",
+  "generatedAt": "2025-11-21T23:53:20.465Z",
+  "codeExample": "async fn run_delete_vote() -> Result<(), Error> {\n    let params: DeleteCommentVoteParams = DeleteCommentVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-7f3a2b\".to_string(),\n        vote_id: \"vote-4d2c1a\".to_string(),\n        url_id: \"news/article/major-update-2025\".to_string(),\n        broadcast_id: \"broadcast-2025-11-21\".to_string(),\n        edit_key: Some(\"edk-9b8c7d\".to_string()),\n        sso: Some(\"sso-user-xyz123\".to_string()),\n    };\n    let response: DeleteCommentVote200Response = delete_comment_vote(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 1139
+}

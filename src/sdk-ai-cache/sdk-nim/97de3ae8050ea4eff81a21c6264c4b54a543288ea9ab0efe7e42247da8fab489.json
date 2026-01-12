@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "97de3ae8050ea4eff81a21c6264c4b54a543288ea9ab0efe7e42247da8fab489",
+  "generatedAt": "2025-11-21T16:26:04.611Z",
+  "codeExample": "let (response, httpResponse) = client.putDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"news.example.com\",\n  updateDomainConfigParams = default(UpdateDomainConfigParams)\n)\nif response.isSome:\n  let domainConfig = response.get()\n  discard domainConfig",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 1033
+}

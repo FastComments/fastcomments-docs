@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "81ba0412bdd101c382be3e89062555b81a6a43a709b17cbfc827b4bb37886719",
+  "generatedAt": "2025-11-22T05:32:40.820Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-01';\nconst pageId: string = 'page_4f7a2b9d';\nconst updateData: UpdateAPIPageData = {\n  title: 'About Acme Corporation',\n  slug: '/about',\n  isPublished: true,\n  tags: ['company', 'about'], // optional array of tags\n  metadata: { description: 'Company history and mission statement.' }, // optional nested object\n  lastEditedBy: 'j.smith@acme.com' // optional auditor field\n};\nconst response: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 260,
+  "completionTokens": 979
+}

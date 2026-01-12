@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "28e2ae519dae11f9988c3e3abfdc2a571e000b886ebf94d194d2f112ff6c7d4a",
+  "generatedAt": "2025-11-21T16:26:37.184Z",
+  "codeExample": "let (response, httpResponse) = client.getUserNotificationCount(tenantId = \"my-tenant-123\", sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummySignature\")\nif response.isSome:\n  let countResp = response.get()\n  discard countResp\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 921
+}

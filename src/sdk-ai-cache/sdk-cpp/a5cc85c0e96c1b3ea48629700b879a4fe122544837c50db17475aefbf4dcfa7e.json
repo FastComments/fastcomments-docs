@@ -1,0 +1,9 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "a5cc85c0e96c1b3ea48629700b879a4fe122544837c50db17475aefbf4dcfa7e",
+  "generatedAt": "2025-11-20T22:24:41.325Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentId = utility::conversions::to_string_t(\"cmt-987654321\");\nint32_t dir = 1;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\napi->getCommentVoteUserNames(tenantId, commentId, dir, sso)\n.then([](pplx::task<std::shared_ptr<GetCommentVoteUserNames_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto result = std::make_shared<GetCommentVoteUserNames_200_response>(*resp);\n        }\n    } catch (const std::exception& e) {\n        auto fallback = std::make_shared<GetCommentVoteUserNames_200_response>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 369,
+  "completionTokens": 1232
+}

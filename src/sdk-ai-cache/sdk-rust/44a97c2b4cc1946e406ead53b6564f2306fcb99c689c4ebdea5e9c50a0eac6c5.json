@@ -1,0 +1,9 @@
+{
+  "method": "get_user_presence_statuses",
+  "signatureHash": "44a97c2b4cc1946e406ead53b6564f2306fcb99c689c4ebdea5e9c50a0eac6c5",
+  "generatedAt": "2025-11-21T23:53:56.256Z",
+  "codeExample": "async fn run() -> Result<GetUserPresenceStatuses200Response, Error> {\n    let params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id_ws: \"news/world/2025-election\".to_string(),\n        user_ids: \"user_123,user_456,user_789\".to_string(),\n        include_offline: Some(true),\n    };\n    let presence: GetUserPresenceStatuses200Response =\n        get_user_presence_statuses(&configuration, params).await?;\n    Ok(presence)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 1603
+}

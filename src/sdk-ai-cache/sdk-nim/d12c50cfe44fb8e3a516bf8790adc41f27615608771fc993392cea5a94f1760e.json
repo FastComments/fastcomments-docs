@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "d12c50cfe44fb8e3a516bf8790adc41f27615608771fc993392cea5a94f1760e",
+  "generatedAt": "2025-11-22T08:35:45.441Z",
+  "codeExample": "let (response, httpResponse) = client.addSSOUser(tenantId = \"my-tenant-123\",\n  createAPISSOUserData = CreateAPISSOUserData(externalId = \"user-789\",\n    email = \"jane.doe@newsorg.com\",\n    name = \"Jane Doe\",\n    isVerified = true,\n    roles = @[\"editor\"]))\nif response.isSome:\n  let added = response.get()\n  echo \"SSO user added:\", $added\nelse:\n  echo \"Failed to add SSO user, HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1091
+}

@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "12a3c9fd94f2f528cf05306a235dc891e54e44544bdf7d668a27b9d4cbb5c111",
+  "generatedAt": "2025-11-21T16:26:50.709Z",
+  "codeExample": "let reactBody = ReactBodyParams(reaction = \"like\", metadata = @[\"section:news\"])\nlet (response, httpResponse) = client.reactFeedPostPublic(tenantId = \"my-tenant-123\", postId = \"news/article-title-456\", reactBodyParams = reactBody, isUndo = false, broadcastId = \"broadcast-789\", sso = \"user-42-sso-token\")\nif response.isSome:\n  let result = response.get()\n  echo \"Reaction recorded:\", result\nelse:\n  echo \"No response body, HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 1154
+}

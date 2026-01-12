@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "69516e3e4b153e7112fe84663ff9d28c322579d9d408b6236891ac858bd0eaf5",
+  "generatedAt": "2025-11-22T05:32:45.760Z",
+  "codeExample": "const tenantId: string = 'tenant_9b3a2c';\nconst userId: string = 'user_5821';\nconst badgeId: string | undefined = undefined;\nconst type: number | undefined = 2;\nconst displayedOnComments: boolean | undefined = true;\nconst limit: number | undefined = 25;\nconst skip: number | undefined = 0;\nconst badges: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 699
+}

@@ -1,0 +1,9 @@
+{
+  "method": "patch_sso_user",
+  "signatureHash": "343fc64f32e1f7c64cdee8fab128377696661b927b96b667d1678f0dff913717",
+  "generatedAt": "2025-11-21T23:52:52.588Z",
+  "codeExample": "async fn update_user_example() -> Result<(), Error> {\n    let params: PatchSsoUserParams = PatchSsoUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"jane.doe@acme.com\".to_string(),\n        update_apisso_user_data: models::UpdateApissoUserData {\n            email: Some(\"jane.doe@acme.com\".to_string()),\n            first_name: Some(\"Jane\".to_string()),\n            last_name: Some(\"Doe\".to_string()),\n            role: Some(\"editor\".to_string()),\n            active: Some(true),\n        },\n        update_comments: Some(true),\n    };\n    let response: PatchSsoUserApiResponse = patch_sso_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 351,
+  "completionTokens": 1008
+}

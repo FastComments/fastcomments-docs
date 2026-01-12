@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "b58adf3e4d17493e1cb0f1f463681900bc90dfcba3e45d61adc5c6989a03e604",
+  "generatedAt": "2025-11-20T22:25:29.922Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId(utility::conversions::to_string_t(\"notification-987\"));\nboost::optional<int64_t> afterCreatedAt(1672531200LL);\nboost::optional<bool> unreadOnly(true);\nboost::optional<bool> dmOnly(false);\nboost::optional<bool> noDm;\nboost::optional<utility::string_t> sso(utility::conversions::to_string_t(\"sso-jwt-abc123\"));\nauto defaultResp = std::make_shared<ResetUserNotifications_200_response>();\napi->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)\n.then([defaultResp](std::shared_ptr<ResetUserNotifications_200_response> resp){\n    auto result = resp ? resp : defaultResp;\n    (void)result;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 420,
+  "completionTokens": 1873
+}

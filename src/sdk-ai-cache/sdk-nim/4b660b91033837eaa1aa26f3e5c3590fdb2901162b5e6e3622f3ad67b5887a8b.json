@@ -1,0 +1,9 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "4b660b91033837eaa1aa26f3e5c3590fdb2901162b5e6e3622f3ad67b5887a8b",
+  "generatedAt": "2025-11-21T16:25:32.617Z",
+  "codeExample": "let (response, httpResponse) = client.getAuditLogs(tenantId = \"my-tenant-123\",\n  limit = 100.0,\n  skip = 0.0,\n  order = SORTDIR.DESC,\n  after = 0.0,\n  before = 0.0)\n\nif response.isSome:\n  let logs = response.get()\n  discard logs",
+  "model": "gpt-5-mini",
+  "promptTokens": 428,
+  "completionTokens": 919
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "31f037f22d258d94fd92916dc9f5eaaa020bc553135cd93d59ab817d5fa130f9",
+  "generatedAt": "2025-11-20T22:24:38.230Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nutility::string_t voteId = U(\"vote-789\");\nutility::string_t urlId = U(\"article-2025-11-20\");\nutility::string_t broadcastId = U(\"broadcast-001\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"edit-KEY-xyz\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-abc\"));\napi->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Vote deleted successfully\\n\";\n        } else {\n            std::cout << \"Delete returned empty response\\n\";\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Delete failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 1546
+}

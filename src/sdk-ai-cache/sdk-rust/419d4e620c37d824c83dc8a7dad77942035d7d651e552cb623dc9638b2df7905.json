@@ -1,0 +1,9 @@
+{
+  "method": "delete_sso_user",
+  "signatureHash": "419d4e620c37d824c83dc8a7dad77942035d7d651e552cb623dc9638b2df7905",
+  "generatedAt": "2025-11-21T23:52:12.068Z",
+  "codeExample": "async fn delete_user_example() -> Result<DeleteSsoUserApiResponse, Error> {\n    let params = DeleteSsoUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-12345\".to_string(),\n        delete_comments: Some(true),\n        comment_delete_mode: Some(\"permanent\".to_string()),\n    };\n    let response: DeleteSsoUserApiResponse = delete_sso_user(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 335,
+  "completionTokens": 818
+}

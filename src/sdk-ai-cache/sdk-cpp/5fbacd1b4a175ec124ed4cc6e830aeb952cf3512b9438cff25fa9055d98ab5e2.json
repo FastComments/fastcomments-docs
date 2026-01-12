@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "5fbacd1b4a175ec124ed4cc6e830aeb952cf3512b9438cff25fa9055d98ab5e2",
+  "generatedAt": "2025-11-20T22:22:40.343Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto createReq = std::make_shared<CreateAPIPageData>();\ncreateReq->url = U(\"https://docs.example.com/getting-started\");\ncreateReq->title = U(\"Getting Started Guide\");\ncreateReq->authorEmail = U(\"doc-owner@example.com\");\ncreateReq->isPublished = boost::optional<bool>(true);\ncreateReq->summary = boost::optional<utility::string_t>(U(\"Introductory setup and usage\"));\napi->addPage(tenantId, *createReq).then([](pplx::task<std::shared_ptr<AddPageAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            utility::string_t pageId = resp->pageId;\n            utility::string_t status = resp->status;\n            (void)pageId; (void)status;\n        }\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1692
+}

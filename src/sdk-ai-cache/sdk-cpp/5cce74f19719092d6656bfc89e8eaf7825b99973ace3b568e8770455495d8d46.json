@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "5cce74f19719092d6656bfc89e8eaf7825b99973ace3b568e8770455495d8d46",
+  "generatedAt": "2025-11-20T22:23:52.405Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t userId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<utility::string_t> tenantOpt(tenantId);\nboost::optional<utility::string_t> userOpt;\napi->getUserBadgeProgressByUserId(tenantOpt.value_or(tenantId), userOpt.value_or(userId))\n  .then([](pplx::task<std::shared_ptr<GetUserBadgeProgressById_200_response>> t){\n    try {\n      auto resp = t.get();\n      if (!resp) resp = std::make_shared<GetUserBadgeProgressById_200_response>();\n    } catch (const std::exception&) {}\n  });",
+  "model": "gpt-5-mini",
+  "promptTokens": 350,
+  "completionTokens": 1644
+}

@@ -1,0 +1,9 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "e70b0bb11746726e44bbe848b0c431c5748ccaecac389c89c9501a825f34b222",
+  "generatedAt": "2025-11-20T22:22:45.455Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto req = std::make_shared<BulkAggregateQuestionResultsRequest>();\nboost::optional<bool> forceRecalculate(true);\napi->bulkAggregateQuestionResults(tenantId, req, forceRecalculate)\n    .then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResults_200_response>> t){\n        try {\n            auto resp = t.get();\n            (void)resp;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 364,
+  "completionTokens": 2174
+}

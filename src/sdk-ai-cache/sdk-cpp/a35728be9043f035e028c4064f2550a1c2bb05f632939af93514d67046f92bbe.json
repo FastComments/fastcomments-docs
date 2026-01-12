@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "a35728be9043f035e028c4064f2550a1c2bb05f632939af93514d67046f92bbe",
+  "generatedAt": "2025-11-20T22:23:30.037Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t email = U(\"user@example.com\");\nboost::optional<utility::string_t> emailOpt = email;\napi->getSSOUserByEmail(tenantId, emailOpt.value()).then([](std::shared_ptr<GetSSOUserByEmailAPIResponse> resp) {\n    auto safeResp = resp ? resp : std::make_shared<GetSSOUserByEmailAPIResponse>();\n    std::cout << \"SSO user fetch \" << (resp ? \"succeeded\" : \"failed\") << std::endl;\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 344,
+  "completionTokens": 1610
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "46bea4e13c87ec5fafdd22ee54095055a41e11c916510dab06e90feaa56bbc9b",
+  "generatedAt": "2025-11-20T22:24:37.592Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"articles/how-to-cpprest\");\nutility::string_t broadcastId = U(\"broadcast-987\");\nauto commentDataPtr = std::make_shared<CommentData>();\ncommentDataPtr->text = U(\"Great article! Learned a lot.\");\ncommentDataPtr->authorEmail = U(\"reader@example.com\");\nboost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U(\"session-abc-123\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-456\"));\napi->createCommentPublic(tenantId, urlId, broadcastId, *commentDataPtr, sessionId, sso)\n.then([](std::shared_ptr<CreateCommentPublic_200_response> resp){\n    if (resp) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 383,
+  "completionTokens": 2120
+}

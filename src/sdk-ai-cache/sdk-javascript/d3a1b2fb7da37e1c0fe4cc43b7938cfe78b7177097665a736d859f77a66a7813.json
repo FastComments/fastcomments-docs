@@ -1,0 +1,9 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "d3a1b2fb7da37e1c0fe4cc43b7938cfe78b7177097665a736d859f77a66a7813",
+  "generatedAt": "2025-11-22T05:32:07.784Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-inc-7a1b2c';\n  const optionalBadgeId: string | undefined = 'badge_9f3e1'; // could be undefined to use fallback\n  const id: string = optionalBadgeId ?? 'badge_default_0001';\n  const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 379,
+  "completionTokens": 870
+}

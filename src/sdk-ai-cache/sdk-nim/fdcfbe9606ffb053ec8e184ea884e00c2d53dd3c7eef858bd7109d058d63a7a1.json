@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "fdcfbe9606ffb053ec8e184ea884e00c2d53dd3c7eef858bd7109d058d63a7a1",
+  "generatedAt": "2025-11-21T16:26:24.593Z",
+  "codeExample": "let (response, httpResponse) = client.createCommentPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2025/ai-ethics\",\n  broadcastId = \"broadcast-456\",\n  commentData = CommentData(\n    content = \"Insightful article about AI governance and policy implications.\",\n    authorName = \"Jane Doe\",\n    authorEmail = \"jane.doe@example.com\",\n    isPublic = true,\n    tags = @[\"ai\", \"ethics\"]\n  ),\n  sessionId = \"sess-789\",\n  sso = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\"\n)\n\nif response.isSome:\n  let created = response.get()\n  discard created",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1260
+}

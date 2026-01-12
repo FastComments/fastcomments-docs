@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "27ef1aa5b8679e433c02a47689f014a21c11ff9136d8dd2c32decfa73642a0bb",
+  "generatedAt": "2025-11-22T05:34:09.136Z",
+  "codeExample": "const tenantId: string = 'tenant_news_42';\nconst commentId: string = 'cmt_5f8b9a2e';\nconst urlId: string = '/news/2025/11/22/election-results';\nconst broadcastId: string = 'brd_7f4a3';\nconst voteBodyParams: VoteBodyParams = { direction: 'up', weight: 1, reason: 'Helpful and on-topic' };\nconst sessionId: string = 'sess-9b8a7c6d1234';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signedPayload';\n\nconst result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 1025
+}

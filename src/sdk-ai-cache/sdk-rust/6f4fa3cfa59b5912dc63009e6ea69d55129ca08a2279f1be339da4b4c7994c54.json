@@ -1,0 +1,9 @@
+{
+  "method": "set_comment_text",
+  "signatureHash": "6f4fa3cfa59b5912dc63009e6ea69d55129ca08a2279f1be339da4b4c7994c54",
+  "generatedAt": "2025-11-21T23:54:04.815Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: SetCommentTextParams = SetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345/comment-6789\".to_string(),\n        broadcast_id: \"news/nytimes/frontpage\".to_string(),\n        comment_text_update_request: models::CommentTextUpdateRequest {\n            text: \"Updated: the event has been postponed until further notice.\".to_string(),\n            mentions: vec![\n                models::CommentUserMentionInfo {\n                    user_id: \"user-42\".to_string(),\n                    display_name: \"Jane Doe\".to_string(),\n                }\n            ],\n            hashtags: vec![\n                models::CommentUserHashTagInfo { tag: \"update\".to_string() }\n            ],\n        },\n        edit_key: Some(\"editkey-0a1b2c3d4e\".to_string()),\n        sso: Some(\"sso-token-9f8e7d6c\".to_string()),\n    };\n    let response: SetCommentText200Response = set_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 506,
+  "completionTokens": 1276
+}

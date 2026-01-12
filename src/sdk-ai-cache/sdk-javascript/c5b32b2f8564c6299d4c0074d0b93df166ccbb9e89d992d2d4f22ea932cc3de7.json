@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "c5b32b2f8564c6299d4c0074d0b93df166ccbb9e89d992d2d4f22ea932cc3de7",
+  "generatedAt": "2025-11-22T05:31:50.970Z",
+  "codeExample": "const tenantId: string = 'acme-publisher-01';\nconst questionIds: string[] = ['q_7f3a2b', 'q_9b1c4d'];\nconst urlId: string = 'article-2025-11-22';\nconst startDate: Date = new Date('2025-01-01T00:00:00Z');\nconst forceRecalculate: boolean = true;\nconst minValue: number = 0;\nconst maxValue: number = 5;\nconst limit: number = 100;\nconst result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults({\n  tenantId,\n  questionIds,\n  urlId,\n  startDate,\n  forceRecalculate,\n  minValue,\n  maxValue,\n  limit\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 473,
+  "completionTokens": 815
+}

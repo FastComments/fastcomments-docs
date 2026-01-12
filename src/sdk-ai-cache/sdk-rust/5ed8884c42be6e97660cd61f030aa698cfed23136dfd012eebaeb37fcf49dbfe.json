@@ -1,0 +1,9 @@
+{
+  "method": "get_page_by_urlid",
+  "signatureHash": "5ed8884c42be6e97660cd61f030aa698cfed23136dfd012eebaeb37fcf49dbfe",
+  "generatedAt": "2025-11-21T23:52:32.328Z",
+  "codeExample": "let params: GetPageByUrlidParams = GetPageByUrlidParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    url_id: String::from(\"news/2025/launch-announcement\"),\n    include_comments: Some(true),\n};\nlet page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 312,
+  "completionTokens": 1242
+}
