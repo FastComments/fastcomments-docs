@@ -17,9 +17,5 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   echo "Generating custom styling guide..."
   node src/custom-styling-guide-generator.js
   MAX_BROWSERS=1 npm run build-content
-  cp -rv src/static/css src/static/generated/
-  cp -rv src/static/csv src/static/generated/
-  cp -rv src/static/images src/static/generated/
-  cp -rv src/static/js src/static/generated/
-  #cp src/static/*.html src/static/generated/ #uncomment when we add the google verification stuff
+  npm run build-static
 fi
