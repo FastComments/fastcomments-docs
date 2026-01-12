@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "7a531e68397b880a2a56ba07f74363cda93eb87884c73b0f0199e6eed9c0a8a7",
+  "generatedAt": "2026-01-12T21:53:35.104Z",
+  "codeExample": "const tenantId: string = 'acme-corp-47';\nconst questionId: string = 'q-2026-01-12-01';\nconst result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);\nfunction summarizeConfig(cfg: GetQuestionConfig200Response, includeMetadata?: boolean): QuestionConfig | undefined {\n  // includeMetadata is optional; implementation omitted for brevity\n  return undefined;\n}\nconst summarizedWithMeta: QuestionConfig | undefined = summarizeConfig(result, true);\nconst summarizedDefault: QuestionConfig | undefined = summarizeConfig(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 1473
+}

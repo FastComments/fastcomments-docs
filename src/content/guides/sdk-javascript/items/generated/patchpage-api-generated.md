@@ -14,15 +14,13 @@ Returns: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'patchPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const pageId: string = 'page_4f7a2b9d';
-const updateData: UpdateAPIPageData = {
-  title: 'About Acme Corporation',
-  slug: '/about',
+const tenantId: string = 'tenant_7f3b2a4c';
+const pageId: string = 'page_9c1d8f7';
+const updateAPIPageData: UpdateAPIPageData = {
+  title: 'How to use FastComments with TypeScript',
+  path: '/guides/fastcomments-typescript',
   isPublished: true,
-  tags: ['company', 'about'], // optional array of tags
-  metadata: { description: 'Company history and mission statement.' }, // optional nested object
-  lastEditedBy: 'j.smith@acme.com' // optional auditor field
+  metadata: { author: 'Alex Martinez', tags: ['comments', 'typescript'] } // optional field included
 };
-const response: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateData);
+const result: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateAPIPageData);
 [inline-code-end]

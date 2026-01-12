@@ -15,16 +15,14 @@ Returns: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'get_comment_vote_user_names Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_vote_user_names() -> Result<(), Error> {
+async fn example_get_vote_users() -> Result<GetCommentVoteUserNames200Response, Error> {
     let params: GetCommentVoteUserNamesParams = GetCommentVoteUserNamesParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("news/article-2025-11-21-12345"),
-        dir: 1_i32,
-        sso: Some(String::from("sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article/12345".to_string(),
+        dir: 1,
+        sso: Some("sso-token-abc123".to_string()),
     };
-    let response: GetCommentVoteUserNames200Response =
-        get_comment_vote_user_names(&configuration, params).await?;
-    println!("{:#?}", response);
-    Ok(())
+    let response: GetCommentVoteUserNames200Response = get_comment_vote_user_names(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

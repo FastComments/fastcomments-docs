@@ -14,13 +14,10 @@ Returns: [`Option[CheckedCommentsForBlocked_200_response]`](https://github.com/F
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(tenantId = "my-tenant-123",
-  commentIds = "comment-1122,comment-3344",
-  sso = "")
-
+let (response, httpResponse) = client.checkedCommentsForBlocked(tenantId = "my-tenant-123", commentIds = "", sso = "")
 if response.isSome:
   let checked = response.get()
-  echo "Checked comments received: ", $checked
+  echo "Checked comments for blocked:", checked
 else:
-  echo "No checked comments returned, HTTP status: ", $httpResponse.status
+  echo "No response received, HTTP status:", httpResponse.status
 [inline-code-end]

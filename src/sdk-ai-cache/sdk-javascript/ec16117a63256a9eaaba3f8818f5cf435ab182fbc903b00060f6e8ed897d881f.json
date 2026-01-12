@@ -1,0 +1,9 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "ec16117a63256a9eaaba3f8818f5cf435ab182fbc903b00060f6e8ed897d881f",
+  "generatedAt": "2026-01-12T21:52:34.450Z",
+  "codeExample": "async function run(): Promise<void> {\n  const result: DeleteComment200Response = await deleteComment(\n    'acme-corp-tenant-01',\n    'comment-9f2b3c',\n    'user-4827',\n    true\n  );\n  console.log(result);\n}\nrun();",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 840
+}

@@ -13,8 +13,9 @@ Returns: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getSSOUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f8b3c4d-01';
-const skip: number = 50;
-const usersFirstPage: GetSSOUsers200Response = await getSSOUsers(tenantId);
-const usersSecondPage: GetSSOUsers200Response = await getSSOUsers(tenantId, skip);
+const tenantId: string = 'tenant_4a9f3b2c-01';
+const resultWithoutSkip: GetSSOUsers200Response = await getSSOUsers(tenantId);
+
+const skip: number = 25;
+const resultWithSkip: GetSSOUsers200Response = await getSSOUsers(tenantId, skip);
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "6aa97e60df5833c116d90dc7619922642af2bc15e72c622cca02f2880e6ddc36",
+  "generatedAt": "2026-01-12T21:56:18.962Z",
+  "codeExample": "let (response, httpResponse) = client.getDomainConfigs(tenantId = \"my-tenant-123\")\nif response.isSome:\n  let domainConfigs = response.get()\n  echo \"Received domain configs for tenant:\", domainConfigs\nelse:\n  echo \"No domain configs returned, HTTP status:\", httpResponse.status.code",
+  "model": "gpt-5-mini",
+  "promptTokens": 383,
+  "completionTokens": 842
+}

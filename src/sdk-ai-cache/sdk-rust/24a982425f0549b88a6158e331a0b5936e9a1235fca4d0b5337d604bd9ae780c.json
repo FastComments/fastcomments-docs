@@ -1,0 +1,9 @@
+{
+  "method": "get_audit_logs",
+  "signatureHash": "24a982425f0549b88a6158e331a0b5936e9a1235fca4d0b5337d604bd9ae780c",
+  "generatedAt": "2026-01-12T21:59:41.272Z",
+  "codeExample": "async fn fetch_audit_logs() -> Result<(), Error> {\n    let params = GetAuditLogsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        limit: Some(100.0),\n        skip: Some(0.0),\n        order: Some(models::SortDir::Desc),\n        after: Some(1_641_000_000.0),\n        before: Some(1_641_864_000.0),\n    };\n    let response: GetAuditLogs200Response = get_audit_logs(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 489,
+  "completionTokens": 772
+}

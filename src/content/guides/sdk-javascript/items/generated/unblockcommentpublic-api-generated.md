@@ -15,14 +15,17 @@ Returns: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'unBlockCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-84';
-const commentId: string = 'cmt_987654321';
-const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'erroneous moderation',
-  unblockedBy: 'moderator.jane.doe@acme.com',
-  notes: 'User appeal validated; content restored',
-  restoreReplies: true
-};
-const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
-const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+async function demoUnblock(): Promise<void> {
+  const tenantId: string = 'tenant_12345';
+  const commentId: string = 'cmt_98765';
+  const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
+    unblockReason: 'User appeal accepted after review',
+    moderatorId: 'mod_67890',
+    liftedAt: new Date().toISOString()
+  };
+  const sso: string = 'sso_tok_prod_01ab2c3d';
+  const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+  console.log(result);
+}
+demoUnblock();
 [inline-code-end]

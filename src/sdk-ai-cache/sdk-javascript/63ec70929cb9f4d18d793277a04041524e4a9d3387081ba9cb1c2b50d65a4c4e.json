@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "63ec70929cb9f4d18d793277a04041524e4a9d3387081ba9cb1c2b50d65a4c4e",
+  "generatedAt": "2026-01-12T21:54:50.254Z",
+  "codeExample": "const response: GetCommentsPublic200Response = await getCommentsPublic(\n  'tenant_7f3a2c',\n  'https://blog.example.com/posts/2026/new-features',\n  1,\n  'DESC',\n  'sso_jwt_eyJhbGciOiJIUzI1Ni',\n  0,\n  0,\n  25,\n  5,\n  true,\n  undefined,\n  true,\n  false,\n  true,\n  'en-US',\n  'reactions,moderation',\n  false,\n  true,\n  true,\n  3,\n  false,\n  undefined,\n  'new features release',\n  ['release', 'feature'],\n  'user_98765',\n  '{\"highlightThreads\":true}',\n  undefined,\n  undefined\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 669,
+  "completionTokens": 1581
+}

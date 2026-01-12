@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "d89bc87ff45c974db0f6e0a27312ac623a3bb40318339e3ca7b08f182a132649",
+  "generatedAt": "2026-01-12T21:55:33.472Z",
+  "codeExample": "let createData = CreateAPIPageData(path = \"news/2026/market-update\", title = \"Market Update — Jan 2026\", tags = @[\"finance\", \"markets\"], isPublished = true)\nlet (response, httpResponse) = client.addPage(tenantId = \"my-tenant-123\", createAPIPageData = createData)\nif response.isSome:\n  let page = response.get()\n  discard page",
+  "model": "gpt-5-mini",
+  "promptTokens": 388,
+  "completionTokens": 1250
+}

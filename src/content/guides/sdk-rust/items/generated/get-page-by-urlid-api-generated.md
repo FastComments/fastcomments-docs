@@ -13,10 +13,13 @@ Returns: [`GetPageByUrlidApiResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'get_page_by_urlid Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPageByUrlidParams = GetPageByUrlidParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    url_id: String::from("news/2025/launch-announcement"),
-    include_comments: Some(true),
-};
-let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;
+async fn fetch_page() -> Result<GetPageByUrlidApiResponse, Error> {
+    let params: GetPageByUrlidParams = GetPageByUrlidParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/2026/product-launch".to_string(),
+        include_comments: Some(true),
+    };
+    let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;
+    Ok(page)
+}
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "createTenant",
+  "signatureHash": "c91c092230adce4e2b2e18f55060e44171366fe9ebb8d03afd2c53eca9577afb",
+  "generatedAt": "2026-01-12T21:52:26.921Z",
+  "codeExample": "const tenantId: string = \"acme-corporation\";\nconst billing: BillingInfo = { planId: \"pro\", billingContactEmail: \"finance@acme-corp.com\", currency: \"USD\" };\nconst domainConfig: APIDomainConfiguration = { primaryDomain: \"comments.acme-corp.com\", allowedDomains: [\"acme-corp.com\", \"www.acme-corp.com\"], enforceHttps: true };\nconst importedSites: ImportedSiteType[] = [{ siteId: \"site-001\", url: \"https://blog.acme-corp.com\", name: \"Acme Blog\" }]; // optional\nconst createBody: CreateTenantBody = { tenantName: \"Acme Corporation\", adminEmail: \"admin@acme-corp.com\", billingInfo: billing, domainConfiguration: domainConfig, importedSites, enableModeration: true };\nconst response: CreateTenant200Response = await createTenant(tenantId, createBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 444,
+  "completionTokens": 1103
+}

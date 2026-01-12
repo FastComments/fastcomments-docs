@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "088943de65cebe6c91affa87cd65d778bf60ee4b3570dbc2e3d97eaab3366e8b",
+  "generatedAt": "2026-01-12T21:55:29.593Z",
+  "codeExample": "let createData = CreateAPISSOUserData(\n  id = \"user-789\",\n  email = \"jane.doe@example.com\",\n  username = \"jane.doe\",\n  displayName = \"Jane Doe\",\n  roles = @[\"author\", \"editor\"],\n  avatarUrl = \"https://cdn.example.com/avatars/jane.jpg\",\n  metadata = @[],\n  isActive = true\n)\n\nlet (response, httpResponse) = client.addSSOUser(tenantId = \"my-tenant-123\", createAPISSOUserData = createData)\n\nif response.isSome:\n  let result = response.get()\n  echo \"SSO user added: \", result.id\nelse:\n  echo \"Failed to add SSO user, HTTP status: \", httpResponse.status.code",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1068
+}

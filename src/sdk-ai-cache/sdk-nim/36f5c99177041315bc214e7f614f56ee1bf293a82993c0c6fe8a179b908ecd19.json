@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "36f5c99177041315bc214e7f614f56ee1bf293a82993c0c6fe8a179b908ecd19",
+  "generatedAt": "2026-01-12T21:57:53.107Z",
+  "codeExample": "let (response, httpResponse) = client.createCommentPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/my-article-2026\",\n  broadcastId = \"\",\n  commentData = CommentData(),\n  sessionId = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let created = response.get()\n  echo \"Comment created: \", $created",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1370
+}

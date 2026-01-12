@@ -1,0 +1,9 @@
+{
+  "method": "getVotes",
+  "signatureHash": "025e3dfcbb74a4cc86beaca06bae2bdbfc17df50bd58118471697768645bdb6d",
+  "generatedAt": "2026-01-12T21:56:58.212Z",
+  "codeExample": "let (response, httpResponse) = client.getVotes(tenantId = \"my-tenant-123\", urlId = \"news/2026/major-update\")\nif response.isSome:\n  let votes = response.get()\n  discard votes\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 387,
+  "completionTokens": 705
+}

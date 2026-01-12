@@ -14,10 +14,10 @@ Returns: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-1';
-const urlIdWS: string = 'wss://realtime.fastcomments.com/ws/site-acme';
-const optionalExtraUserId: string | undefined = 'user_789'; // optional
-const userIds: string = ['user_123', 'user_456', ...(optionalExtraUserId ? [optionalExtraUserId] : [])].join(',');
-const presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
-presenceStatuses;
+const tenantId: string = 'acme-news';
+const urlIdWS: string = 'wss://ws.fastcomments.com/tenant/acme-news';
+const userIds: string = 'user-7a9b,user-11f2';
+type PresenceOptions = { includeInactive?: boolean };
+const options: PresenceOptions = { includeInactive: true };
+const presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
 [inline-code-end]

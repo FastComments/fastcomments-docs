@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "11748af8ad01bc8d91dd13dac67586db9586e0f31a876f38b3031dcfe445e174",
+  "generatedAt": "2026-01-12T21:52:55.727Z",
+  "codeExample": "const tenantId: string = 'fc-tenant-8a9c2b';\nconst packageId: string = 'pkg-47f3c9';\nconst result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 830
+}

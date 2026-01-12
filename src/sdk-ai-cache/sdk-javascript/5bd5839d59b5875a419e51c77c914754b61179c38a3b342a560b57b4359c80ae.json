@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "5bd5839d59b5875a419e51c77c914754b61179c38a3b342a560b57b4359c80ae",
+  "generatedAt": "2026-01-12T21:55:13.020Z",
+  "codeExample": "const tenantId: string = \"tenant_71b9f3c2\";\nconst urlId: string = \"post-2026-01-12-why-ts-is-great\";\nconst url: string = \"https://www.example-news.com/opinion/why-typescript-is-great\";\nconst pageTitle: string = \"Why TypeScript Is Great for Large Teams\";\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =\n  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.SUBSCRIBED;\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature\";\nconst response: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(\n  tenantId,\n  urlId,\n  url,\n  pageTitle,\n  subscribedOrUnsubscribed,\n  sso\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 453,
+  "completionTokens": 1035
+}

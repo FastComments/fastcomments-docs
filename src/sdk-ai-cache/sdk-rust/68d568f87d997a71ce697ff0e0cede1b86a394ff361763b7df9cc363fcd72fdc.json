@@ -1,0 +1,9 @@
+{
+  "method": "get_comments_public",
+  "signatureHash": "68d568f87d997a71ce697ff0e0cede1b86a394ff361763b7df9cc363fcd72fdc",
+  "generatedAt": "2026-01-12T22:02:16.723Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: GetCommentsPublicParams = GetCommentsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/2026/01/big-update\".to_string(),\n        page: Some(1),\n        direction: Some(models::SortDirections::Desc),\n        limit: Some(50),\n        include_config: Some(true),\n        includei10n: Some(true),\n        locale: Some(\"en-US\".to_string()),\n        hash_tags: Some(vec![\"rust\".to_string(), \"release\".to_string()]),\n        as_tree: Some(true),\n        max_tree_depth: Some(3),\n        user_id: Some(\"user_789\".to_string()),\n        sso: Some(\"eyJhbGciOiJIUzI1Ni...\".to_string()),\n    };\n    let response: GetCommentsPublic200Response = get_comments_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 803,
+  "completionTokens": 2136
+}

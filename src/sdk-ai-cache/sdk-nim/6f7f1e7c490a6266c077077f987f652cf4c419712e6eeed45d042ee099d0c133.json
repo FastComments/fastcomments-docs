@@ -1,0 +1,9 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "6f7f1e7c490a6266c077077f987f652cf4c419712e6eeed45d042ee099d0c133",
+  "generatedAt": "2026-01-12T21:55:42.045Z",
+  "codeExample": "let createBody = CreateHashTagBody(\n  name = \"sports\",\n  description = \"Articles and discussions about sports\",\n  aliases = @[\"sport\", \"athletics\"],\n  isActive = true\n)\n\nlet (response, httpResponse) = client.addHashTag(tenantId = \"my-tenant-123\", createHashTagBody = createBody)\n\nif response.isSome:\n  let added = response.get()\n  echo \"HashTag added successfully\"\nelse:\n  echo \"Failed to add HashTag\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1202
+}

@@ -13,10 +13,9 @@ Returns: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getUserBadgeProgressByUserId Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-2025';
-const userId: string = 'user_72a9e4b8';
-const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);
-const badgeProgress: UserBadgeProgress | undefined = (result as any)?.badgeProgress;
-const apiStatus: APIStatus | undefined = (result as any)?.status;
-const includeDetails?: boolean = true;
+const tenantId: string = 'fastcomments-88a1';
+const userId: string = 'user_5f4d2c';
+const overrideUserId?: string = undefined; // optional override, demonstrate optional parameter usage
+const targetUserId: string = overrideUserId ?? userId;
+const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, targetUserId);
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "487fedbc21d831039a7d3deb499b1f7673d0f965cf263d4f1f5415036b9cb572",
+  "generatedAt": "2026-01-12T21:57:13.868Z",
+  "codeExample": "let replaceBody = ReplaceTenantPackageBody(\n  packageName = \"Community Pro\",\n  seats = 500,\n  enableModeration = true,\n  features = @[\"moderation\", \"analytics\", \"single-sign-on\"]\n)\n\nlet (response, httpResponse) = client.replaceTenantPackage(\n  tenantId = \"my-tenant-123\",\n  id = \"community-pro\",\n  replaceTenantPackageBody = replaceBody\n)\n\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Package replaced for tenant: \", \"my-tenant-123\"\n  discard flagResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1090
+}

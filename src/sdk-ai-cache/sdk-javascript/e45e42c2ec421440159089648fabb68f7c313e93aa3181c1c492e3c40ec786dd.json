@@ -1,0 +1,9 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "e45e42c2ec421440159089648fabb68f7c313e93aa3181c1c492e3c40ec786dd",
+  "generatedAt": "2026-01-12T21:55:12.005Z",
+  "codeExample": "const tenantId: string = 'tenant-4f3b2c9'\nconst file: Blob = new Blob([new Uint8Array([137,80,78,71,13,10,26,10])], { type: 'image/png' })\nconst sizePreset: SizePreset = { name: 'medium', maxWidth: 1024, maxHeight: 768 }\nconst urlId: string = 'article-2026-01-12'\nconst result: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId)",
+  "model": "gpt-5-mini",
+  "promptTokens": 288,
+  "completionTokens": 960
+}

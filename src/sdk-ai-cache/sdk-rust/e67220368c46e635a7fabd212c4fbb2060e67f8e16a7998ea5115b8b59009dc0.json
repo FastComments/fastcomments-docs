@@ -1,0 +1,9 @@
+{
+  "method": "replace_tenant_package",
+  "signatureHash": "e67220368c46e635a7fabd212c4fbb2060e67f8e16a7998ea5115b8b59009dc0",
+  "generatedAt": "2026-01-12T22:01:15.937Z",
+  "codeExample": "async fn run_replace_package() -> Result<FlagCommentPublic200Response, Error> {\n    let params: ReplaceTenantPackageParams = ReplaceTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"package-basic-2026\".to_string(),\n        replace_tenant_package_body: models::ReplaceTenantPackageBody {\n            name: \"Moderation Basic\".to_string(),\n            description: Some(\"Standard moderation package for news sites\".to_string()),\n            enabled: Some(true),\n            plan: Some(\"standard\".to_string()),\n            custom_config_parameters: Some(models::CustomConfigParameters {\n                max_comment_length: Some(1000),\n                allow_images: Some(true),\n            }),\n            vote_style: Some(models::VoteStyle::Thumbs),\n        },\n    };\n    let response = replace_tenant_package(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1601
+}

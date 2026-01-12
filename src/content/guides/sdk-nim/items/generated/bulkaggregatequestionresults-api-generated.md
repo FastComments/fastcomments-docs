@@ -14,18 +14,9 @@ Returns: [`Option[BulkAggregateQuestionResults_200_response]`](https://github.co
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(
-    questionIds: @["q-123", "q-456"],
-    startDate: "2025-01-01T00:00:00Z",
-    endDate: "2025-01-31T23:59:59Z"
-  ),
-  forceRecalculate = false
-)
-
+let request = BulkAggregateQuestionResultsRequest(questionIds = @["question-123", "question-456"], startDate = "2025-01-01", endDate = "2025-01-31")
+let (response, httpResponse) = client.bulkAggregateQuestionResults(tenantId = "my-tenant-123", bulkAggregateQuestionResultsRequest = request, forceRecalculate = false)
 if response.isSome:
   let results = response.get()
-  echo "Aggregated question results received for tenant:", "my-tenant-123"
-  echo results
+  discard results
 [inline-code-end]

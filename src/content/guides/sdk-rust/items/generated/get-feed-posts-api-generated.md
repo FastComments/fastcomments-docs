@@ -20,14 +20,14 @@ Returns: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'get_feed_posts Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<GetFeedPosts200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: GetFeedPostsParams = GetFeedPostsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        after_id: Some(String::from("post_987654321")),
-        limit: Some(25),
-        tags: Some(vec![String::from("news/article"), String::from("product-announcements")]),
+        tenant_id: "acme-corp-tenant".to_string(),
+        after_id: Some("post_12345".to_string()),
+        limit: Some(20),
+        tags: Some(vec!["news".to_string(), "product-updates".to_string()]),
     };
-    let response: GetFeedPosts200Response = get_feed_posts(&configuration, params).await?;
-    Ok(response)
+    let feed: GetFeedPosts200Response = get_feed_posts(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

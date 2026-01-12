@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "b6fcd783f820c7a303af322a932dca13e2e3d38166b30895f00405c89b2af65e",
+  "generatedAt": "2026-01-12T21:54:10.219Z",
+  "codeExample": "const tenantId: string = 'tenant-9b72f2';\nconst packageId: string = 'pkg-prod-v2';\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = {\n  name: 'Premium Moderation Bundle',\n  enabled: true,\n  maxModerators: 4,\n  // optional fields like \"notes\" or \"trialExpiry\" are intentionally omitted here\n} as ReplaceTenantPackageBody;\nconst result: FlagCommentPublic200Response = await replaceTenantPackage(\n  tenantId,\n  packageId,\n  replaceTenantPackageBody\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1276
+}

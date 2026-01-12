@@ -1,0 +1,9 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "87916c261417b503a63753a470a78ed84a877ed791fdfac260b7f52b1cf67363",
+  "generatedAt": "2026-01-12T21:57:24.468Z",
+  "codeExample": "let (response, httpResponse) = client.unFlagComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-9876\",\n  userId = \"user-42\",\n  anonUserId = \"\"\n)\n\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Unflag succeeded:\", flagResp\n\necho \"HTTP response status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 858
+}

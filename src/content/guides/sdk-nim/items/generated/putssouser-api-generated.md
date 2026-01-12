@@ -15,23 +15,21 @@ Returns: [`Option[PutSSOUserAPIResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'putSSOUser Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let updateData = UpdateAPISSOUserData(
+  email: "jane.doe@example.com",
+  displayName: "Jane Doe",
+  roles: @["editor"],
+  avatarUrl: "https://cdn.example.com/avatars/jane.jpg"
+)
+
 let (response, httpResponse) = client.putSSOUser(
   tenantId = "my-tenant-123",
-  id = "user-9876",
-  updateAPISSOUserData = UpdateAPISSOUserData(
-    name = "Jane Doe",
-    email = "jane.doe@news-site.com",
-    externalId = "ext-456",
-    roles = @["subscriber", "editor"],
-    avatarUrl = "https://news-site.com/avatars/jane.jpg",
-    moderator = false
-  ),
-  updateComments = false
+  id = "user-456",
+  updateAPISSOUserData = updateData,
+  updateComments = true
 )
 
 if response.isSome:
-  let respVal = response.get()
-  echo "SSO update succeeded; response object received."
-else:
-  echo "SSO update returned no body; HTTP status: ", httpResponse.status
+  let updatedUser = response.get()
+  discard updatedUser
 [inline-code-end]

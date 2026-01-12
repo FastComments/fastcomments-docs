@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "76ddd923f53c7e6b1d9cd526c5747ccf5c07c8b02ce236b7881535be84136ee0",
+  "generatedAt": "2026-01-12T21:52:54.430Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2a9c';\nconst id: string = 'user_4e5f6a7b';\nconst deleteComments: string = 'true';\nconst commentDeleteMode: string = 'hard';\n\nconst result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 601
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "0ce643f146612b929d25b1a0a2039a2f0c22a7bab73822f4dc45cada4f32a22e",
+  "generatedAt": "2026-01-12T21:52:21.280Z",
+  "codeExample": "const tenantId: string = \"tenant_7a9f2b3d\";\n\nconst createEmailTemplateBody: CreateEmailTemplateBody = {\n  name: \"Comment Notification\",\n  subject: \"New comment on your article: {{postTitle}}\",\n  htmlBody: \"<p>{{commenterName}} left a comment:</p><blockquote>{{commentText}}</blockquote>\",\n  enabled: true,\n  defaultLocale: \"en-US\",\n  metadata: { createdBy: \"admin@example.com\", purpose: \"notify_comment\" } // optional extra data\n};\n\nconst result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 913
+}

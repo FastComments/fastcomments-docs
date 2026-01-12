@@ -15,11 +15,9 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'unPinComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84a2c1';
-const commentId: string = 'cmt-9f2b6d7a';
-const broadcastId: string = 'live-20251122-nyc';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlcjEyMyIsImlhdCI6MTY5MDUwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-
-const responseWithSso: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, ssoToken);
-const responseWithoutSso: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId);
+const tenantId: string = 'acme-tenant-7f3d';
+const commentId: string = 'cmt_4b1e2a9c';
+const broadcastId: string = 'live_20260112_nyc';
+const sso: string = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGFjbWUuY29tIn0.r7hZQfK1Xk';
+const result: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);
 [inline-code-end]

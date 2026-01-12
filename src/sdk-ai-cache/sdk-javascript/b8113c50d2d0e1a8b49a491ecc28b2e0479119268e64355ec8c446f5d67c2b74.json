@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "b8113c50d2d0e1a8b49a491ecc28b2e0479119268e64355ec8c446f5d67c2b74",
+  "generatedAt": "2026-01-12T21:54:28.379Z",
+  "codeExample": "const tenantId: string = 'tenant_84f2b9';\nconst id: string = 'question_3a7c1d';\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  result: { verdict: 'helpful', confidence: 0.92 },\n  reviewer: { id: 'mod_102', name: 'Aisha Rahman' },\n  notifyUser: true // optional parameter included\n};\nconst response: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 955
+}

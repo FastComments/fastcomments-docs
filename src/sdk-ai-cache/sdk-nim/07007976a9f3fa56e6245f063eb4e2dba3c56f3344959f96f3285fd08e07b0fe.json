@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "07007976a9f3fa56e6245f063eb4e2dba3c56f3344959f96f3285fd08e07b0fe",
+  "generatedAt": "2026-01-12T21:57:15.988Z",
+  "codeExample": "let updateData = UpdateAPIPageData(\n  title = \"Main St Reopens After Repairs\",\n  path = \"news/main-st-reopens\",\n  description = \"Main Street reopened to traffic following overnight repairs\",\n  isEnabled = true,\n  tags = @[\"local\", \"infrastructure\"]\n)\n\nlet (response, httpResponse) = client.patchPage(tenantId = \"my-tenant-123\", id = \"page-456\", updateAPIPageData = updateData)\n\nif response.isSome:\n  let page = response.get()\n  echo \"Patched page:\", $page\nelse:\n  echo \"Patch failed, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 396,
+  "completionTokens": 1232
+}

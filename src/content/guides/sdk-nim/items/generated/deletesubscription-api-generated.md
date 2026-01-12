@@ -14,8 +14,14 @@ Returns: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'deleteSubscription Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "", userId = "")
+let (response, httpResponse) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-98765",
+  userId = ""
+)
 if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received for tenant: my-tenant-123"
+  let deleted = response.get()
+  echo "Deleted subscription:", $deleted
+else:
+  echo "Failed to delete subscription, HTTP status:", httpResponse.status
 [inline-code-end]

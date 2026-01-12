@@ -1,0 +1,9 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "cb097d3c4de24f2efb645b51cb116ab53b8469b311c4787ece38426d6b8c2a48",
+  "generatedAt": "2026-01-12T21:54:26.796Z",
+  "codeExample": "const tenantId: string = \"tenant_01H4ZQ7KABCD\";\nconst id: string = \"site_9f8e7d6c\";\nconst apiDomainConfiguration: APIDomainConfiguration = {\n  primaryDomain: \"comments.acme.com\",\n  allowSubdomains: true\n};\nconst billingInfo: BillingInfo = {\n  planName: \"Business\",\n  billingContactEmail: \"billing@acme.com\",\n  seats: 25\n};\nconst updateTenantBody: UpdateTenantBody = {\n  displayName: \"Acme Corporation Comments\",\n  apiDomainConfiguration,\n  billingInfo, // optional parameter demonstrated\n  enableModeration: true\n};\nconst result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 445,
+  "completionTokens": 1068
+}

@@ -15,15 +15,14 @@ Returns: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'putSSOUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-9b3f2a';
-const id: string = 'sso-user-7f1c2d';
+const tenantId: string = "fastcomments_tenant_7f3a2b";
+const id: string = "sso_user_4a9c21";
 const updateData: UpdateAPISSOUserData = {
-  externalId: 'auth0|6032b1a7',
-  email: 'jane.doe@acme.com',
-  displayName: 'Jane Doe',
-  avatarUrl: 'https://cdn.acme.com/avatars/jane.jpg',
-  roles: ['moderator'],
-  metadata: { team: 'Platform', location: 'NYC' }
+  email: "marija.kovacevic@example.com",
+  displayName: "Marija K.",
+  roles: ["moderator"],
+  avatarUrl: "https://cdn.example.com/avatars/marija.jpg",
+  externalId: "marija-kovacevic-01"
 };
 const updateComments: boolean = true;
 const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateData, updateComments);

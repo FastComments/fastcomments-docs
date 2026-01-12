@@ -13,20 +13,21 @@ Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'add_domain_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_add_domain() -> Result<(), Error> {
+async fn example() -> Result<AddDomainConfig200Response, Error> {
     let params: AddDomainConfigParams = AddDomainConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
         add_domain_config_params: models::AddDomainConfigParams {
             domain: "comments.acme.com".to_string(),
-            site_path: "/news/article".to_string(),
-            enabled: Some(true),
-            allow_subdomains: Some(true),
-            include_paths: Some(vec!["/news/*".to_string(), "/blog/*".to_string()]),
+            path: Some("/news/article".to_string()),
+            enable_cors: Some(true),
+            allowed_origins: Some(vec![
+                "https://acme.com".to_string(),
+                "https://www.acme.com".to_string()
+            ]),
+            sso_required: Some(false),
         },
     };
-
-    let resp: AddDomainConfig200Response = add_domain_config(&configuration, params).await?;
-    println!("{:#?}", resp);
-    Ok(())
+    let response: AddDomainConfig200Response = add_domain_config(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

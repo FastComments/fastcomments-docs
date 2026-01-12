@@ -17,19 +17,15 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8b3f2a';
-const urlId: string = 'articles/2025/11/solar-eclipse-grid-impact';
-const broadcastId: string = 'broadcast_4721';
+const tenantId: string = "tenant_92b4f3";
+const urlId: string = "https://www.news-site.com/articles/2026/typescript-updates";
+const broadcastId: string = "broadcast_live_20260112";
 const commentData: CommentData = {
-  body: 'Thanks for the in-depth coverage — wondering how local utilities are preparing for the eclipse day demand spike.',
-  parentId: null,
-  authorName: 'Jordan Meyers',
-  authorEmail: 'j.meyers@newsdaily.com',
-  mentions: [{ userId: 'user_2468', displayName: 'Alex Rivera' }],
-  hashtags: [{ tag: 'solar-eclipse' }],
-  metadata: { device: 'desktop', browser: 'Chrome/120' }
+  body: "Great updates — the stricter inference and tooling improvements will help a lot.",
+  author: { name: "Jordan Lee", avatarUrl: "https://avatars.example.com/jordan.jpg" },
+  metadata: { client: "web", editor: "rich-text" }
 };
-const sessionId: string = 'sess_9f3a2b7c';
-const sso: string = 'sso.jwt.token.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const sessionId: string = "sess_7a9c2d4b";
+const sso: string = "sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
 const result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);
 [inline-code-end]

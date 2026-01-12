@@ -1,3 +1,9 @@
+
+req
+tenantId
+urlId
+userIdWS
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -16,15 +22,17 @@ Returns: [`Option[GetEventLog_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getGlobalEventLog Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGlobalEventLog(
-  tenantId = "my-tenant-123",
-  urlId = "news/how-to-code-in-nim",
+let (response, httpResponse) = client.getGlobalEventLog(tenantId = "my-tenant-123",
+  urlId = "news/how-ai-is-changing",
   userIdWS = "",
   startTime = int64(0),
-  endTime = int64(0)
-)
+  endTime = int64(0))
 
 if response.isSome:
   let eventLog = response.get()
-  echo "Received event log:", eventLog
+  echo "Event log received:"
+  echo eventLog
+else:
+  echo "No event log; http response:"
+  echo httpResponse
 [inline-code-end]

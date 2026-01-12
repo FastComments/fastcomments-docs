@@ -1,0 +1,9 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "408ddcaa5c6faf512e6d92f956fcea2d85e0b82b3f774b07dd0f73459e09dc94",
+  "generatedAt": "2026-01-12T21:53:25.930Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_9c3b2b';\n  const commentId: string = 'cmt_f4a1b2';\n  const externalId: string = 'ext-789';\n  const eventType: string = 'comment.created';\n  const type: string = 'delivery';\n  const domain: string = 'app.example.com';\n  const attemptCountGT: number = 2;\n\n  const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(\n    tenantId,\n    commentId,\n    externalId,\n    eventType,\n    type,\n    domain,\n    attemptCountGT\n  );\n\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 449,
+  "completionTokens": 923
+}

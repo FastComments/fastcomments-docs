@@ -1,0 +1,9 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "36cef72a82ac1b874225dc03eab97264e8578b09f3042632c4aec6fd56ccd48d",
+  "generatedAt": "2026-01-12T21:55:07.401Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-42';\nconst urlId: string = 'news-2026-01-12-top-story';\nconst usernameStartsWith: string = 'sara';\nconst mentionGroupIds: Array<string> = ['editors', 'community-managers'];\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload';\n\nconst result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 647
+}

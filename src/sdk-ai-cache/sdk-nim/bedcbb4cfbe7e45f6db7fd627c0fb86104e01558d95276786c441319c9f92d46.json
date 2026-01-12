@@ -1,0 +1,9 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "bedcbb4cfbe7e45f6db7fd627c0fb86104e01558d95276786c441319c9f92d46",
+  "generatedAt": "2026-01-12T21:56:22.854Z",
+  "codeExample": "let (response, httpResponse) = client.getHashTags(tenantId = \"my-tenant-123\", page = 1.0)\nif response.isSome:\n  let tags = response.get()\n  for t in tags:\n    echo t\nelse:\n  echo \"no hashtags found\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 902
+}

@@ -13,8 +13,7 @@ Returns: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'deletePage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-8421';
-const id: string = 'page-home-2024-11-22';
-const initiatedBy: string | undefined = 'ops@acme-corp.com'; // optional metadata
-const result: DeletePageAPIResponse = await deletePage(tenantId, id);
+const tenantId: string = 'tenant_7c1ab2ef';
+const id: string = 'b5f9c3d0-12ab-4e6f-9a2c-3d4b5a6e7f8a';
+const response: DeletePageAPIResponse = await deletePage(tenantId, id);
 [inline-code-end]

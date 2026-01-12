@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "8bf8643cf506c404be5a301ea7fb544bb8c13661b44ee17c3c8b036a12c24d49",
+  "generatedAt": "2026-01-12T21:52:25.020Z",
+  "codeExample": "const tenantId: string = \"tenant_live_7f8b3c2a\";\nconst customOptions: QuestionConfigCustomOptionsInner[] = [\n  { value: \"under18\", label: \"Under 18\" },\n  { value: \"18-24\", label: \"18-24\" },\n  { value: \"25-34\", label: \"25-34\", defaultSelected: true }\n];\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  key: \"age_range\",\n  label: \"What is your age range?\",\n  required: false, // optional: demonstrate omitted vs included optional fields\n  renderingType: QuestionRenderingType.Dropdown,\n  options: customOptions,\n  whenSave: QuestionWhenSave.Always\n};\nconst result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1020
+}

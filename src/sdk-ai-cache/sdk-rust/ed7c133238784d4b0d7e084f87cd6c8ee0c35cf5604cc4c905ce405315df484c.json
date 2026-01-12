@@ -1,0 +1,9 @@
+{
+  "method": "flag_comment_public",
+  "signatureHash": "ed7c133238784d4b0d7e084f87cd6c8ee0c35cf5604cc4c905ce405315df484c",
+  "generatedAt": "2026-01-12T22:01:49.930Z",
+  "codeExample": "async fn example_flag_comment() -> Result<(), Error> {\n    let params: FlagCommentPublicParams = FlagCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-12345/comment-6789\".to_string(),\n        is_flagged: true,\n        sso: Some(\"user-sso-token-01\".to_string()),\n    };\n    let _response: FlagCommentPublic200Response = flag_comment_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 822
+}

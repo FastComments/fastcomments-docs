@@ -1,0 +1,9 @@
+{
+  "method": "replace_tenant_user",
+  "signatureHash": "c838ffda6bb46fd1cd91e1eb107cd481a2d3fa1c32fe1abee74f85afee02b940",
+  "generatedAt": "2026-01-12T22:01:08.476Z",
+  "codeExample": "let cfg: &configuration::Configuration = &configuration;\nlet replace_tenant_user_body: models::ReplaceTenantUserBody = models::ReplaceTenantUserBody {\n    external_id: Some(\"acct-834\".to_string()),\n    email: Some(\"jane.doe@acme-news.com\".to_string()),\n    display_name: Some(\"Jane Doe\".to_string()),\n    role: Some(\"moderator\".to_string()),\n};\nlet params: ReplaceTenantUserParams = ReplaceTenantUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"user-834\".to_string(),\n    replace_tenant_user_body,\n    update_comments: Some(\"true\".to_string()),\n};\nlet resp: FlagCommentPublic200Response = replace_tenant_user(cfg, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 455,
+  "completionTokens": 1262
+}

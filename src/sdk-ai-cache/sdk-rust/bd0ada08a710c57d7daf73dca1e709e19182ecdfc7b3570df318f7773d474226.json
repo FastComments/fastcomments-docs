@@ -1,0 +1,9 @@
+{
+  "method": "delete_page",
+  "signatureHash": "bd0ada08a710c57d7daf73dca1e709e19182ecdfc7b3570df318f7773d474226",
+  "generatedAt": "2026-01-12T21:59:23.566Z",
+  "codeExample": "async fn run_delete_page() -> Result<DeletePageApiResponse, Error> {\n    let params: DeletePageParams = DeletePageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/2026/launch-announcement\".to_string(),\n        cascade: Some(true),\n    };\n    let deleted: DeletePageApiResponse = delete_page(&configuration, params).await?;\n    Ok(deleted)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 287,
+  "completionTokens": 1061
+}

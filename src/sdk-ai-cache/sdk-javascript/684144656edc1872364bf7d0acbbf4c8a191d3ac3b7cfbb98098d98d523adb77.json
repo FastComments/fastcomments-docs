@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "684144656edc1872364bf7d0acbbf4c8a191d3ac3b7cfbb98098d98d523adb77",
+  "generatedAt": "2026-01-12T21:54:20.208Z",
+  "codeExample": "async function demoFetch(tenantId: string, id: string, includeRelated?: boolean): Promise<GetUserBadge200Response> {\n  const response: GetUserBadge200Response = await getUserBadge(tenantId, id);\n  return response;\n}\n\nconst tenantId: string = 'acme-enterprises-78';\nconst badgeId: string = '9f8b7c6d-5e4f-4012-8a3b-0c1d2e3f4a5b';\nconst badgeResponse: GetUserBadge200Response = await getUserBadge(tenantId, badgeId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 2250
+}

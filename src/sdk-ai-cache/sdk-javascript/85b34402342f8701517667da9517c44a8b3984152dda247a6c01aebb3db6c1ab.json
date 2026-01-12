@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "85b34402342f8701517667da9517c44a8b3984152dda247a6c01aebb3db6c1ab",
+  "generatedAt": "2026-01-12T21:54:44.954Z",
+  "codeExample": "const tenantId: string = 'acme-corp-uk';\nconst afterId: string | undefined = 'post_20260110_123456';\nconst limit: number | undefined = 25;\nconst tags: string[] | undefined = ['product-updates', 'featured'];\nconst sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\nconst isCrawler: boolean | undefined = false;\nconst includeUserInfo: boolean | undefined = true;\nconst response: GetFeedPostsPublic200Response = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);",
+  "model": "gpt-5-mini",
+  "promptTokens": 494,
+  "completionTokens": 738
+}

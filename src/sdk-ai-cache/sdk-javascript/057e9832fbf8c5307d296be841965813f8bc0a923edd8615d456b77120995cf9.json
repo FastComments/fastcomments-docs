@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "057e9832fbf8c5307d296be841965813f8bc0a923edd8615d456b77120995cf9",
+  "generatedAt": "2026-01-12T21:54:04.635Z",
+  "codeExample": "const tenantId: string = \"tenant_5f8b9a\";\nconst id: string = \"user_92bf21\";\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  email: \"jane.doe@acme-corp.com\",\n  displayName: \"Jane Doe\",\n  externalId: \"acme|12345\",\n  roles: [\"commenter\", \"moderator\"],\n  isActive: true,\n  metadata: { team: \"product\", location: \"NYC\" }\n};\nconst updateComments: string = \"Update historical comments to reflect new display name\";\nconst result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 431,
+  "completionTokens": 864
+}

@@ -13,10 +13,10 @@ Returns: [`Option[GetPageByURLIdAPIResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getPageByURLId Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPageByURLId(tenantId = "my-tenant-123", urlId = "news/why-nim-shines")
+let (response, httpResponse) = client.getPageByURLId(tenantId = "my-tenant-123", urlId = "news/article-title-2026")
 if response.isSome:
   let page = response.get()
-  echo "Page retrieved successfully"
+  echo "Page retrieved: ", $page
 else:
-  echo "Page not found"
+  echo "Page not found, HTTP status: ", $httpResponse.status
 [inline-code-end]

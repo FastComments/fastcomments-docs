@@ -15,15 +15,14 @@ Returns: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'delete_feed_post_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<(), Error> {
+async fn run_delete() -> Result<DeleteFeedPostPublic200Response, Error> {
     let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        post_id: "news/article-2025-11-21-12345".to_string(),
-        broadcast_id: Some("broadcast-7".to_string()),
+        post_id: "news/article-2026-01-12-12345".to_string(),
+        broadcast_id: Some("broadcast-9876".to_string()),
         sso: Some("sso-token-abcdef123456".to_string()),
     };
-    let response: DeleteFeedPostPublic200Response =
-        delete_feed_post_public(&configuration, params).await?;
-    Ok(())
+    let response: DeleteFeedPostPublic200Response = delete_feed_post_public(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

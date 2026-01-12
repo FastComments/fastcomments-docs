@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post",
+  "signatureHash": "6332196497f353525962b3035da6d656ce9afa81619b68f984b6506cc3b9a22c",
+  "generatedAt": "2026-01-12T21:59:03.871Z",
+  "codeExample": "async fn run_create_post() -> Result<CreateFeedPost200Response, Error> {\n    let params: CreateFeedPostParams = CreateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_feed_post_params: models::CreateFeedPostParams {\n            title: \"Breaking: Rust 2.0 Released\".to_string(),\n            content: \"Rust 2.0 brings performance and ergonomics improvements.\".to_string(),\n            author_id: \"editor-123\".to_string(),\n            media: vec![\n                models::FeedPostMediaItem {\n                    kind: \"image\".to_string(),\n                    assets: vec![\n                        models::FeedPostMediaItemAsset {\n                            url: \"https://cdn.acme.com/images/rust2.png\".to_string(),\n                            mime_type: Some(\"image/png\".to_string()),\n                        }\n                    ],\n                }\n            ],\n            links: vec![\n                models::FeedPostLink {\n                    url: \"https://acme.news/rust-2\".to_string(),\n                    title: Some(\"Full article\".to_string()),\n                }\n            ],\n            tags: vec![\"rust\".to_string(), \"release\".to_string()],\n            visibility: Some(\"public\".to_string()),\n        },\n        broadcast_id: Some(\"global-feed\".to_string()),\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        skip_dup_check: Some(false),\n    };\n    let response: CreateFeedPost200Response = create_feed_post(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 522,
+  "completionTokens": 1545
+}

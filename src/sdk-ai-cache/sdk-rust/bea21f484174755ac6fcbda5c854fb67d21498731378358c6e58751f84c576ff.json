@@ -1,0 +1,9 @@
+{
+  "method": "get_question_config",
+  "signatureHash": "bea21f484174755ac6fcbda5c854fb67d21498731378358c6e58751f84c576ff",
+  "generatedAt": "2026-01-12T22:00:18.940Z",
+  "codeExample": "async fn fetch_question_config() -> Result<(), Error> {\n    let tenant_env: Option<&str> = Some(\"prod\");\n    let tenant_id: String = match tenant_env {\n        Some(env) => format!(\"acme-corp-tenant-{}\", env),\n        None => \"acme-corp-tenant\".to_string(),\n    };\n    let params: GetQuestionConfigParams = GetQuestionConfigParams {\n        tenant_id,\n        id: \"news/article/2026/01/12-politics\".to_string(),\n    };\n    let response: GetQuestionConfig200Response = get_question_config(&configuration, params).await?;\n    let _status: ApiStatus = response.0;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 1690
+}

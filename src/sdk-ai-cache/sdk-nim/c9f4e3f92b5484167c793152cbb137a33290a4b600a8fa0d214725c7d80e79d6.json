@@ -1,0 +1,9 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "c9f4e3f92b5484167c793152cbb137a33290a4b600a8fa0d214725c7d80e79d6",
+  "generatedAt": "2026-01-12T21:55:34.534Z",
+  "codeExample": "let (response, httpResponse) = client.createEmailTemplate(tenantId = \"my-tenant-123\", createEmailTemplateBody = CreateEmailTemplateBody(name = \"Weekly Newsletter\", subject = \"Weekly updates from OurSite\", fromName = \"OurSite Team\", fromEmail = \"newsletter@oursite.com\", bodyHtml = \"<h1>Highlights</h1><p>Top stories this week...</p>\", enabled = true, tags = @[\"newsletter\", \"weekly\"]))\nif response.isSome:\n  let template = response.get()\n  discard template",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 699
+}

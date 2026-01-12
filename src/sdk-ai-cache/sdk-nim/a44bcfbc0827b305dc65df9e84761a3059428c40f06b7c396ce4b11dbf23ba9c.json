@@ -1,0 +1,9 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "a44bcfbc0827b305dc65df9e84761a3059428c40f06b7c396ce4b11dbf23ba9c",
+  "generatedAt": "2026-01-12T21:55:58.895Z",
+  "codeExample": "let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = \"my-tenant-123\", id = \"wh_evt_6f1e3b2a\")\nif response.isSome:\n  let flagResp = response.get()\n  discard flagResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 1089
+}

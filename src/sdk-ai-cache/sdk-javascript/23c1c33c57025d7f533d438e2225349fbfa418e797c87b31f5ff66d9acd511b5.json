@@ -1,0 +1,9 @@
+{
+  "method": "createVote",
+  "signatureHash": "23c1c33c57025d7f533d438e2225349fbfa418e797c87b31f5ff66d9acd511b5",
+  "generatedAt": "2026-01-12T21:52:39.967Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-812';\n  const commentId: string = '5e8f8b7a-3d4b-4f1b-9a2e-1c9f2d6a7b8c';\n  const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;\n  const anonUserId: string = 'anon-84b9c2d';\n  const voteResult: VoteComment200Response = await createVote(tenantId, commentId, direction, undefined, anonUserId);\n  console.log(voteResult);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1230
+}

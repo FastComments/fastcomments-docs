@@ -12,12 +12,10 @@ Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'get_domain_configs Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_domain_configs() -> Result<GetDomainConfigs200Response, Error> {
-    let params: GetDomainConfigsParams = GetDomainConfigsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        environment: Some("production".to_string()),
-        include_disabled: Some(false),
-    };
+async fn run() -> Result<GetDomainConfigs200Response, Error> {
+    let tenant_id_option: Option<String> = Some("acme-corp-tenant".to_string());
+    let tenant_id: String = tenant_id_option.expect("tenant id required");
+    let params: GetDomainConfigsParams = GetDomainConfigsParams { tenant_id };
     let response: GetDomainConfigs200Response = get_domain_configs(&configuration, params).await?;
     Ok(response)
 }

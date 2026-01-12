@@ -15,16 +15,7 @@ Returns: [`Option[GetCommentVoteUserNames_200_response]`](https://github.com/Fas
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentVoteUserNames(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
-  dir = 0,
-  sso = ""
-)
-
+let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
 if response.isSome:
-  let voteUserNames = response.get()
-  echo voteUserNames
-else:
-  echo "No vote user names returned"
+  let voteUsers = response.get()
 [inline-code-end]

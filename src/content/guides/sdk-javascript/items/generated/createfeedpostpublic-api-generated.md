@@ -15,24 +15,22 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_corp_001';
+const tenantId: string = 'fastcomments-tenant-84';
 const createFeedPostParams: CreateFeedPostParams = {
-  title: 'Introducing the new inline editor',
-  body: 'Today we launched an editor that supports markdown, drag-and-drop images, and live preview.',
-  authorId: 'user_4521',
-  isPublished: true,
-  tags: ['product','launch','editor'],
+  title: 'Product Update — Performance Improvements',
+  html: '<p>We deployed several backend optimizations reducing page load by ~30%.</p>',
+  authorName: 'Engineering Team',
+  published: true,
   media: [
     {
+      url: 'https://cdn.fastcomments.example/assets/release-2-4.png',
       type: 'image',
-      assets: [
-        { url: 'https://cdn.acme.com/images/editor-preview.png', mimeType: 'image/png', width: 1200, height: 800 }
-      ]
-    }
-  ],
-  links: [{ url: 'https://acme.com/blog/editor-release', title: 'Read the full release notes' }]
-};
-const broadcastId: string = 'broadcast_weekly_2025_11';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example_signature';
-const response: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
+      assets: [{ url: 'https://cdn.fastcomments.example/assets/release-2-4-thumb.png', width: 320 }]
+    } as FeedPostMediaItem
+  ] as FeedPostMediaItem[],
+  links: [{ url: 'https://fastcomments.example/changelog/2.4', title: 'Full changelog' } as FeedPostLink]
+} as CreateFeedPostParams;
+const broadcastId: string = 'broadcast_2026_01_12_01';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
+const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
 [inline-code-end]

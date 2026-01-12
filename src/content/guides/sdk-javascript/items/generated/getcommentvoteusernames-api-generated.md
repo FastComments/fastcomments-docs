@@ -15,15 +15,15 @@ Returns: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'fc_tenant_42';
-  const commentId: string = 'cmt_9f8e7d6';
-  const dir: number = 1;
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20ifQ.signature';
-
-  const result: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
-  const resultWithSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, sso);
-
-  console.log(result, resultWithSSO);
-})();
+async function example(): Promise<void> {
+  const tenantId: string = 'acme_corp';
+  const commentId: string = 'cmt_000123456';
+  const dirDownvote: number = -1;
+  const voteUserNamesDown: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirDownvote);
+  const dirUpvote: number = 1;
+  const ssoToken: string = 'sso:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+  const voteUserNamesUp: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirUpvote, ssoToken);
+  console.log(voteUserNamesDown, voteUserNamesUp);
+}
+example();
 [inline-code-end]

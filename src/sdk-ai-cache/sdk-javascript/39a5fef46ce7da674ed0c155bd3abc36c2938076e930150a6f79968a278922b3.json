@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "39a5fef46ce7da674ed0c155bd3abc36c2938076e930150a6f79968a278922b3",
+  "generatedAt": "2026-01-12T21:54:33.504Z",
+  "codeExample": "const tenantId: string = \"tenant_92b4f3\";\nconst urlId: string = \"https://www.news-site.com/articles/2026/typescript-updates\";\nconst broadcastId: string = \"broadcast_live_20260112\";\nconst commentData: CommentData = {\n  body: \"Great updates — the stricter inference and tooling improvements will help a lot.\",\n  author: { name: \"Jordan Lee\", avatarUrl: \"https://avatars.example.com/jordan.jpg\" },\n  metadata: { client: \"web\", editor: \"rich-text\" }\n};\nconst sessionId: string = \"sess_7a9c2d4b\";\nconst sso: string = \"sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 492,
+  "completionTokens": 854
+}

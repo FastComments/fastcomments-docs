@@ -1,0 +1,9 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "7104a879d68fccee27ba05c8789335eeb013987574c4e4f6b782993139bf3331",
+  "generatedAt": "2026-01-12T21:57:32.040Z",
+  "codeExample": "let updateBody = UpdateEmailTemplateBody(\n  name = \"Welcome Email\",\n  subject = \"Welcome to Example News\",\n  html = \"<p>Hi {name}, welcome to Example News.</p>\",\n  isActive = true,\n  tags = @[\"onboarding\", \"welcome\"]\n)\n\nlet (response, httpResponse) = client.updateEmailTemplate(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-template-2026\",\n  updateEmailTemplateBody = updateBody\n)\n\nif response.isSome:\n  let template = response.get()\n  discard template",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 960
+}

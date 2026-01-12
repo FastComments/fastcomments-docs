@@ -15,8 +15,8 @@ Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-        tenant_id: "acme-news-tenant".to_string(),
-        id: "moderator-badge-1234".to_string(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-98765".to_string(),
     };
     let response: UpdateUserBadge200Response = delete_user_badge(&configuration, params).await?;
     Ok(())

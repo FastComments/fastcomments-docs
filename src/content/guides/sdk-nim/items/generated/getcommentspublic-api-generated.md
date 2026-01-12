@@ -1,3 +1,8 @@
+
+req
+tenantId
+urlId
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -41,36 +46,35 @@ Returns: [`Option[GetCommentsPublic_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
-  urlId = "news/2025/important-update",
+  urlId = "news/latest-gear-review",
   page = 1,
-  direction = SortDirections.desc,
+  direction = SortDirections.Newest,
   sso = "",
   skip = 0,
   skipChildren = 0,
   limit = 20,
-  limitChildren = 5,
+  limitChildren = 0,
   countChildren = false,
   fetchPageForCommentId = "",
   includeConfig = true,
   countAll = false,
   includei10n = false,
   locale = "en-US",
-  modules = "",
+  modules = "reactions,moderation",
   isCrawler = false,
-  includeNotificationCount = true,
+  includeNotificationCount = false,
   asTree = true,
   maxTreeDepth = 3,
   useFullTranslationIds = false,
   parentId = "",
   searchText = "",
-  hashTags = @["breaking", "announcement"],
-  userId = "",
+  hashTags = @["tech", "review"],
+  userId = "user-987",
   customConfigStr = "",
   afterCommentId = "",
   beforeCommentId = ""
 )
-
 if response.isSome:
   let comments = response.get()
-  echo "Fetched comments: ", comments
+  echo "Fetched comments:", comments
 [inline-code-end]

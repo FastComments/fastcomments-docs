@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "84d6ec52ca4c31510928347a4393954240f82c804b1a3dfc2c185c7a1f8df8fc",
+  "generatedAt": "2026-01-12T21:53:12.550Z",
+  "codeExample": "const tenantId: string = \"tenant_5f6d9c\";\nconst afterId: string | undefined = \"post_20260110_abc123\";\nconst limit: number = 50;\nconst tags: Array<string> = [\"product-update\", \"security\"];\nconst response: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);",
+  "model": "gpt-5-mini",
+  "promptTokens": 444,
+  "completionTokens": 729
+}

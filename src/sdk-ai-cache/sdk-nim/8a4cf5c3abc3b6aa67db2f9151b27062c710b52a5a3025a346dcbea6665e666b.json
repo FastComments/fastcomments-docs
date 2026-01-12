@@ -1,0 +1,9 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "8a4cf5c3abc3b6aa67db2f9151b27062c710b52a5a3025a346dcbea6665e666b",
+  "generatedAt": "2026-01-12T21:57:15.045Z",
+  "codeExample": "let renderBody = RenderEmailTemplateBody(templateId: \"comment-notification\", subject: \"New comment on your article\", variables: @[\"John Doe\", \"news/global-climate\"])\nlet (response, httpResponse) = client.renderEmailTemplate(tenantId = \"my-tenant-123\", renderEmailTemplateBody = renderBody, locale = \"en-US\")\nif response.isSome:\n  let rendered = response.get()\n  echo rendered",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1379
+}

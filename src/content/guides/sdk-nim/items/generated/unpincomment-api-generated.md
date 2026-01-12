@@ -16,10 +16,10 @@ Returns: [`Option[PinComment_200_response]`](https://github.com/FastComments/fas
 [inline-code-attrs-start title = 'unPinComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", sso = "")
+
 if response.isSome:
-  let pin = response.get()
-  echo pin
+  let pinInfo = response.get()
+  echo "Unpinned comment:", pinInfo
 else:
-  echo "Failed to unpin comment"
-  echo httpResponse
+  echo "Failed to unpin, HTTP status:", httpResponse.status
 [inline-code-end]

@@ -23,20 +23,18 @@ Returns: [`Option[GetUserNotifications_200_response]`](https://github.com/FastCo
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotifications(
   tenantId = "my-tenant-123",
-  pageSize = 25,
-  afterId = "notif-789",
-  includeContext = true,
-  afterCreatedAt = int64(1700000000),
+  pageSize = 0,
+  afterId = "",
+  includeContext = false,
+  afterCreatedAt = int64(0),
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
-  includeTranslations = true,
-  sso = "sso-user-452"
+  includeTranslations = false,
+  sso = ""
 )
 
 if response.isSome:
   let notifications = response.get()
-  echo "Received user notifications"
-else:
-  echo "No notifications available"
+  echo notifications
 [inline-code-end]

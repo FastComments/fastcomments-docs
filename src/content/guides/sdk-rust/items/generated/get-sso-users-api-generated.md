@@ -16,9 +16,9 @@ Returns: [`GetSsoUsers200Response`](https://github.com/FastComments/fastcomments
 async fn fetch_sso_users() -> Result<(), Error> {
     let params: GetSsoUsersParams = GetSsoUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(10),
+        skip: Some(20),
     };
-    let _users_response: GetSsoUsers200Response = get_sso_users(&configuration, params).await?;
+    let response: GetSsoUsers200Response = get_sso_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "ee96a486538884b798946a72b5fd9b47eedd47fc19974bba29a2eecb5afeb1da",
+  "generatedAt": "2026-01-12T21:53:38.188Z",
+  "codeExample": "const tenantId: string = \"tenant_78b2f1\";\nconst commentId: string = \"cmt_0042\";\nconst eventType: string = \"comment.created\";\nconst domain: string = \"blog.example.com\";\nconst attemptCountGT: number = 1;\nconst skip: number = 0;\n\nconst pending: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(\n  tenantId,\n  commentId,\n  undefined, // externalId\n  eventType,\n  undefined, // type\n  domain,\n  attemptCountGT,\n  skip\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 473,
+  "completionTokens": 1024
+}

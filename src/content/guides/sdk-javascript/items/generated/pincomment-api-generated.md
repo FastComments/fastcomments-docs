@@ -16,11 +16,13 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'pinComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant_42f7a1";
-  const commentId: string = "cmt-5e8d3c9a";
-  const broadcastId: string = "bcast-20251122-01";
-  const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example_signature";
-  const pinned: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, sso);
-  console.log(pinned);
+  const tenantId: string = "tenant_1278";
+  const commentId: string = "cmt_84b3f";
+  const broadcastId: string = "brd_live_20260112";
+  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.signature";
+
+  const pinnedWithSso: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken);
+  const pinnedWithoutSso: PinComment200Response = await pinComment(tenantId, commentId, broadcastId);
+  console.log(pinnedWithSso, pinnedWithoutSso);
 })();
 [inline-code-end]

@@ -44,13 +44,34 @@ Returns: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getCommentsPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
-const urlId: string = 'article/2025/launch';
-const page: number = 1;
-const direction: SortDirections = 'newest' as unknown as SortDirections;
-const limit: number = 25;
-const limitChildren: number = 3;
-const countChildren: boolean = true;
-const includeConfig: boolean = true;
-const response: GetCommentsPublic200Response = await getCommentsPublic(tenantId, urlId, page, direction, undefined, 0, 0, limit, limitChildren, countChildren, undefined, includeConfig);
+const response: GetCommentsPublic200Response = await getCommentsPublic(
+  'tenant_7f3a2c',
+  'https://blog.example.com/posts/2026/new-features',
+  1,
+  'DESC',
+  'sso_jwt_eyJhbGciOiJIUzI1Ni',
+  0,
+  0,
+  25,
+  5,
+  true,
+  undefined,
+  true,
+  false,
+  true,
+  'en-US',
+  'reactions,moderation',
+  false,
+  true,
+  true,
+  3,
+  false,
+  undefined,
+  'new features release',
+  ['release', 'feature'],
+  'user_98765',
+  '{"highlightThreads":true}',
+  undefined,
+  undefined
+);
 [inline-code-end]

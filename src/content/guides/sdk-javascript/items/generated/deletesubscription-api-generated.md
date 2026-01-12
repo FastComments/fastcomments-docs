@@ -14,11 +14,6 @@ Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'deleteSubscription Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-enterprises-123";
-  const subscriptionId: string = "sub_8f2b4c9d";
-  const userId: string = "user_42b7a";
-  const responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId, userId);
-  const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);
-})();
+const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription('tenant_9f8b7a6c', 'sub_3a9d2e7b');
+const responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription('tenant_9f8b7a6c', 'sub_8b2c4f1d', 'user_47b2f9c1');
 [inline-code-end]

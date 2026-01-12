@@ -13,14 +13,13 @@ Returns: [`GetUserNotificationCount200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'get_user_notification_count Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_notification_count() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: GetUserNotificationCountParams = GetUserNotificationCountParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        sso: Some("user-9876-sso-token".to_string()),
+        tenant_id: "acme-corp-tenant".into(),
+        sso: Some("user-sso-token-42".into()),
     };
-    let response: GetUserNotificationCount200Response =
+    let _response: GetUserNotificationCount200Response =
         get_user_notification_count(&configuration, params).await?;
-    let _ = response;
     Ok(())
 }
 [inline-code-end]

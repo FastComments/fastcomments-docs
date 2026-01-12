@@ -18,7 +18,7 @@ Returns: [`Option[DeleteCommentPublic_200_response]`](https://github.com/FastCom
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "cmt-4f2b9a",
+  commentId = "cmt-456789",
   broadcastId = "",
   editKey = "",
   sso = ""
@@ -26,7 +26,5 @@ let (response, httpResponse) = client.deleteCommentPublic(
 
 if response.isSome:
   let deleted = response.get()
-  echo "Comment deleted successfully"
-else:
-  echo "Delete request failed"
+  discard deleted
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "84940c444363a286a59e749d80bec4e6fb48a75ae17c15439554e7c0f9bbbbba",
+  "generatedAt": "2026-01-12T21:58:04.368Z",
+  "codeExample": "let (response, httpResponse) = client.getEventLog(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  userIdWS = \"\",\n  startTime = 0'i64,\n  endTime = 0'i64\n)\nif response.isSome:\n  let eventLog = response.get()\n  echo \"Event log retrieved for news/article-title\"\n  discard eventLog\nelse:\n  echo \"Failed to retrieve event log, status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1137
+}

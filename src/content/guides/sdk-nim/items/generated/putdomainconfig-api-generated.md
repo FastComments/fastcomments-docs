@@ -14,12 +14,10 @@ Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(
-  tenantId = "my-tenant-123",
-  domainToUpdate = "news.example.com",
-  updateDomainConfigParams = default(UpdateDomainConfigParams)
-)
+let (response, httpResponse) = client.putDomainConfig(tenantId = "my-tenant-123", domainToUpdate = "news.example.com", updateDomainConfigParams = default(UpdateDomainConfigParams))
 if response.isSome:
-  let domainConfig = response.get()
-  discard domainConfig
+  let updatedConfig = response.get()
+  echo "Domain config updated for tenant my-tenant-123:", updatedConfig
+else:
+  echo "Failed to update domain config, HTTP status: ", httpResponse.status
 [inline-code-end]

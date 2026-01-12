@@ -1,0 +1,9 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "97c67808d0fe40d5f97fbf7bba5b17d6379b94b78a99e8be80c504bfa6cb6b41",
+  "generatedAt": "2026-01-12T21:54:09.494Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-004';\nconst id: string = 'comment_9b7f3a2c';\nconst fromName: string = 'María Hernández';\nconst response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 904
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "a0f159cad50937bd8b48f32b0266b30fbdf507eaf0added178c4da9a6f20663b",
+  "generatedAt": "2026-01-12T21:58:14.198Z",
+  "codeExample": "let (response, httpResponse) = client.getUserNotificationCount(tenantId = \"my-tenant-123\", sso = \"\")\nif response.isSome:\n  let data = response.get()\n  echo \"Unread notifications: \", $data.unreadCount\nelse:\n  echo \"No notification count available\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1160
+}

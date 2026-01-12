@@ -13,11 +13,7 @@ Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'deleteUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-inc-7a1b2c';
-  const optionalBadgeId: string | undefined = 'badge_9f3e1'; // could be undefined to use fallback
-  const id: string = optionalBadgeId ?? 'badge_default_0001';
-  const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
-  console.log(result);
-})();
+const tenantId: string = "tenant_78b3c6d9";
+const id: string = "badge-4a7b-11e6-80f5-76304dec7eb7";
+const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);
 [inline-code-end]

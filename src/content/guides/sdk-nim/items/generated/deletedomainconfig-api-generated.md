@@ -18,6 +18,5 @@ if response.isSome:
   let deletedConfig = response.get()
   echo deletedConfig
 else:
-  echo "No deleteDomainConfig response"
-echo httpResponse
+  echo "No domain config returned"
 [inline-code-end]

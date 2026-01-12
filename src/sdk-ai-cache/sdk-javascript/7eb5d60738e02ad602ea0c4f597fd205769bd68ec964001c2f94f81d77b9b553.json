@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "7eb5d60738e02ad602ea0c4f597fd205769bd68ec964001c2f94f81d77b9b553",
+  "generatedAt": "2026-01-12T21:53:39.267Z",
+  "codeExample": "const tenantId: string = 'tenant_4f3a9c2d';\nconst skip: number = 25;\nconst packagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId);\nconst pagedPackagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 587
+}

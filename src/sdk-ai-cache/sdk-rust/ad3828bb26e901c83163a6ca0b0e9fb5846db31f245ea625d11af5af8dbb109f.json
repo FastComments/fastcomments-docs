@@ -1,0 +1,9 @@
+{
+  "method": "block_user_from_comment",
+  "signatureHash": "ad3828bb26e901c83163a6ca0b0e9fb5846db31f245ea625d11af5af8dbb109f",
+  "generatedAt": "2026-01-12T21:58:47.768Z",
+  "codeExample": "let params: BlockUserFromCommentParams = BlockUserFromCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"news/article/2026-01-11/comment/7890\".to_string(),\n    block_from_comment_params: models::BlockFromCommentParams {\n        duration_minutes: Some(1440),\n        reason: Some(\"Repeated harassment and hate speech\".to_string()),\n        block_ip: Some(true),\n    },\n    user_id: Some(\"user_9876\".to_string()),\n    anon_user_id: Some(\"anon_42\".to_string()),\n};\nlet response: BlockFromCommentPublic200Response = block_user_from_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 1244
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_email_template_render_errors",
+  "signatureHash": "f266f81b5562baa1fa6b215b1e5d240da99fcd40da3deba727ac6bd09e7032ca",
+  "generatedAt": "2026-01-12T21:59:50.237Z",
+  "codeExample": "async fn example_call() -> Result<(), Error> {\n    let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email-template\".to_string(),\n        skip: Some(10.0),\n    };\n    let _response: GetEmailTemplateRenderErrors200Response =\n        get_email_template_render_errors(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 447,
+  "completionTokens": 681
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "49e54c3974523f424475913eee60fb53ca8e359a0cdcdf4e98260a85ba45288c",
+  "generatedAt": "2026-01-12T21:55:56.867Z",
+  "codeExample": "let (response, httpResponse) = client.createQuestionResult(tenantId = \"my-tenant-123\",\n  createQuestionResultBody = CreateQuestionResultBody(questionId: \"q-456\",\n    userId: \"user-789\",\n    correct: true,\n    score: 9,\n    answers: @[\"B\", \"D\"]))\nif response.isSome:\n  let result = response.get()\n  echo result",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1311
+}

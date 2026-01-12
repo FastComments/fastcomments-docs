@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post_public",
+  "signatureHash": "3680774fe38940e69be3cb9576d4802b8073539c1e2343990af5e25bfb7b8ede",
+  "generatedAt": "2026-01-12T22:01:54.750Z",
+  "codeExample": "let create_feed_post_params: models::CreateFeedPostParams = models::CreateFeedPostParams {\n    title: \"Major outage impacting Acme services\".to_string(),\n    body: \"We're investigating a major outage affecting login and API traffic.\".to_string(),\n    author_name: Some(\"Acme Status Team\".to_string()),\n    media: Some(vec![\n        models::FeedPostMediaItem {\n            id: Some(\"media-001\".to_string()),\n            assets: Some(vec![\n                models::FeedPostMediaItemAsset {\n                    url: \"https://cdn.acme.com/outage/overview.jpg\".to_string(),\n                    mime_type: Some(\"image/jpeg\".to_string()),\n                    alt_text: Some(\"Overview diagram\".to_string()),\n                }\n            ]),\n        }\n    ]),\n    links: Some(vec![\n        models::FeedPostLink { url: \"https://status.acme.com/incident/456\".to_string(), title: Some(\"Incident details\".to_string()) }\n    ]),\n};\n\nlet params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_feed_post_params,\n    broadcast_id: Some(\"broadcast-20260112\".to_string()),\n    sso: Some(\"sso-secure-token-xyz\".to_string()),\n};\n\nlet response: CreateFeedPostPublic200Response = create_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 499,
+  "completionTokens": 1585
+}

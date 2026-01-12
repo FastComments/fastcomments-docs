@@ -1,0 +1,9 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "2fa956cc7d11eb5785daf0f0842a4a123c6bc4247731640522fc5ca211460b2e",
+  "generatedAt": "2026-01-12T21:55:51.539Z",
+  "codeExample": "let (response, httpResponse) = client.deleteEmailTemplate(tenantId = \"my-tenant-123\", id = \"tmpl-456\")\nif response.isSome:\n  let deleted = response.get()\n  echo deleted",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 822
+}

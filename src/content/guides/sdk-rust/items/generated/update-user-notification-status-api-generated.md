@@ -15,15 +15,14 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'update_user_notification_status Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<UpdateUserNotificationStatus200Response, Error> {
+async fn example_update_user_notification_status() -> Result<UpdateUserNotificationStatus200Response, Error> {
     let params: UpdateUserNotificationStatusParams = UpdateUserNotificationStatusParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "notif-7f3b2a".to_string(),
-        new_status: "read".to_string(),
-        sso: Some("sso-token-abc123".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        notification_id: String::from("notification-8b7f3"),
+        new_status: String::from("read"),
+        sso: Some(String::from("sso-jwt-1a2b3c")),
     };
-    let resp: UpdateUserNotificationStatus200Response =
-        update_user_notification_status(&configuration, params).await?;
-    Ok(resp)
+    let response: UpdateUserNotificationStatus200Response = update_user_notification_status(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

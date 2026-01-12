@@ -14,31 +14,21 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'update_feed_post Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update() -> Result<(), Error> {
-    let feed_post: models::FeedPost = models::FeedPost {
-        id: Some("article-12345".to_string()),
-        title: Some("Acme Launches Next-Gen Widget".to_string()),
-        body: Some("Acme announces its next-generation widget with improved battery life and AI features.".to_string()),
-        author_id: Some("editor_jane".to_string()),
-        tags: Some(vec!["product".to_string(), "announcement".to_string()]),
-        published: Some(true),
-        media: Some(vec![
-            models::FeedPostMediaItem {
-                asset: Some(models::FeedPostMediaItemAsset { url: Some("https://cdn.acme.com/images/widget.jpg".to_string()) }),
-                media_type: Some("image".to_string()),
-                caption: Some("Official product image".to_string())
-            }
-        ]),
-        links: Some(vec![
-            models::FeedPostLink { url: "https://acme.com/blog/widget".to_string(), title: Some("Read the full story".to_string()) }
-        ])
-    };
+async fn run() -> Result<FlagCommentPublic200Response, Error> {
     let params: UpdateFeedPostParams = UpdateFeedPostParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-12345".to_string(),
-        feed_post
+        id: "news/article-2026-01-12-123".to_string(),
+        feed_post: models::FeedPost {
+            title: "Major Product Launch".to_string(),
+            content: Some("Acme has launched its next-gen widget with improved performance and battery life.".to_string()),
+            author_id: Some("editor-42".to_string()),
+            links: Some(vec![models::FeedPostLink { url: "https://acme.com/product".to_string(), title: Some("Product page".to_string()) }]),
+            media: Some(vec![models::FeedPostMediaItem { url: "https://cdn.acme.com/images/widget.jpg".to_string(), asset: Some(models::FeedPostMediaItemAsset { src: Some("https://cdn.acme.com/assets/widget.jpg".to_string()) }) }]),
+            published: Some(true),
+        },
     };
-    let _response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;
-    Ok(())
+
+    let response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

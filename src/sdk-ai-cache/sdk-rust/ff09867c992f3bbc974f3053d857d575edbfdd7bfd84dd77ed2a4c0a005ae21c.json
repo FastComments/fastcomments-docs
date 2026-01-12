@@ -1,0 +1,9 @@
+{
+  "method": "send_login_link",
+  "signatureHash": "ff09867c992f3bbc974f3053d857d575edbfdd7bfd84dd77ed2a4c0a005ae21c",
+  "generatedAt": "2026-01-12T22:01:11.028Z",
+  "codeExample": "async fn example_send_login_link() -> Result<FlagCommentPublic200Response, Error> {\n    let params: SendLoginLinkParams = SendLoginLinkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"jane.doe@acme.com\".to_string(),\n        redirect_url: Some(\"https://acme.example.com/dashboard\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 629
+}

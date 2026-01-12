@@ -1,0 +1,9 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "148743751ccb7d3a23f7ecafdbf9db3d664791f7cc7fd831a95e1a51c8fc4352",
+  "generatedAt": "2026-01-12T21:53:40.818Z",
+  "codeExample": "const tenantId: string = \"tenant_89f3c2-prod\";\nconst yearNumber: number = 2026;\nconst monthNumber: number = 1;\nconst skip: number = 0;\nconst usages: GetTenantDailyUsages200Response = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, undefined, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 787
+}

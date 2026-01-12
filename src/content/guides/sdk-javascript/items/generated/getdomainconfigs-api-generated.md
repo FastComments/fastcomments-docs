@@ -12,10 +12,7 @@ Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getDomainConfigs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-marketing-1a2b';
-const includeInactive: boolean | undefined = undefined; // optional parameter demonstration
-const options: { includeInactive?: boolean } = includeInactive === undefined ? {} : { includeInactive };
-const response: GetDomainConfigs200Response = await getDomainConfigs(tenantId);
-/* Optional parameters can be supplied as a second argument when available, e.g.:
-   await getDomainConfigs(tenantId, { includeInactive: true }) */
+// getDomainConfigs only requires tenantId; there are no optional parameters for this call
+const tenantId: string = "acme-corp-001";
+const domainConfigs: GetDomainConfigs200Response = await getDomainConfigs(tenantId);
 [inline-code-end]

@@ -15,10 +15,13 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'flagCommentPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(tenantId = "my-tenant-123", commentId = "comment-abc123", isFlagged = false, sso = "")
+let (response, httpResponse) = client.flagCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  isFlagged = false,
+  sso = ""
+)
 if response.isSome:
   let flagged = response.get()
-  echo flagged
-else:
-  echo "No response returned"
+  discard flagged
 [inline-code-end]

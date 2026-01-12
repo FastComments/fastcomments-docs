@@ -18,17 +18,15 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update() -> Result<UpdateUserNotificationStatus200Response, Error> {
-    let params: UpdateUserNotificationCommentSubscriptionStatusParams =
-        UpdateUserNotificationCommentSubscriptionStatusParams {
-            tenant_id: "acme-corp-tenant".to_string(),
-            notification_id: "notif-2025-09-21-01".to_string(),
-            opted_in_or_out: "opted_in".to_string(),
-            comment_id: "news/world/2025/interesting-article-98765".to_string(),
-            sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...".to_string()),
-        };
-    let updated: UpdateUserNotificationStatus200Response =
-        update_user_notification_comment_subscription_status(&configuration, params).await?;
-    Ok(updated)
+async fn example() -> Result<UpdateUserNotificationStatus200Response, Error> {
+    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        notification_id: String::from("notif-20260112-1234"),
+        opted_in_or_out: String::from("opted_in"),
+        comment_id: String::from("news/article/2026/updates-12345#cmt-98765"),
+        sso: Some(String::from("sso-jwt-abc123def456")),
+    };
+    let response: UpdateUserNotificationStatus200Response = update_user_notification_comment_subscription_status(configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

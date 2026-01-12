@@ -1,0 +1,9 @@
+{
+  "method": "getUser",
+  "signatureHash": "5c188320a0e0654e31a98d1d484d02ddce41e0e58edfdd2c2d25fb5563ae252a",
+  "generatedAt": "2026-01-12T21:56:52.374Z",
+  "codeExample": "let (response, httpResponse) = client.getUser(tenantId = \"my-tenant-123\", id = \"user-9876\")\nif response.isSome:\n  let user = response.get()\n  echo \"User:\", user\nelse:\n  echo \"No user found. HTTP response:\", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 386,
+  "completionTokens": 776
+}

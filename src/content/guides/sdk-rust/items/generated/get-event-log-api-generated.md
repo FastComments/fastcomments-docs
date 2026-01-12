@@ -22,17 +22,17 @@ Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'get_event_log Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params = GetEventLogParams {
+async fn main() -> Result<(), Error> {
+    let params: GetEventLogParams = GetEventLogParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article-123".to_string(),
-        user_id_ws: "user-98765".to_string(),
-        start_time: 1_697_000_000i64,
-        end_time: 1_697_086_400i64,
-        limit: Some(100),
-        event_types: Some(vec!["comment_created".to_string(), "vote".to_string()]),
+        url_id: "news/article-2026-01-10".to_string(),
+        user_id_ws: "user-942-ws".to_string(),
+        start_time: 1704835200i64,
+        end_time: 1704921599i64,
+        limit: Some(200),
     };
-    let response: GetEventLog200Response = get_event_log(configuration, params).await?;
+    let response: GetEventLog200Response = get_event_log(&configuration, params).await?;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

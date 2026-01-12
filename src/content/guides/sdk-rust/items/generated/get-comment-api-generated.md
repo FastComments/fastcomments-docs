@@ -13,13 +13,12 @@ Returns: [`GetComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'get_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_comment() -> Result<GetComment200Response, Error> {
-    let params: GetCommentParams = GetCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/2025/11/21/comment-7890".to_string(),
-        include_replies: Some(true),
-    };
-    let comment: GetComment200Response = get_comment(configuration, params).await?;
-    Ok(comment)
-}
+let params: GetCommentParams = GetCommentParams {
+    tenant_id: "acme-corp-tenant".to_owned(),
+    id: "news/article/2026-01-12-12345".to_owned(),
+    include_replies: Some(true),
+    include_deleted: Some(false),
+};
+
+let comment: GetComment200Response = get_comment(&configuration, params).await?;
 [inline-code-end]

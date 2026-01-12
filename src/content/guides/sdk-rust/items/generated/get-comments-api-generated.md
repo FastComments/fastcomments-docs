@@ -26,8 +26,8 @@ Returns: [`GetComments200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'get_comments Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetCommentsParams = GetCommentsParams {
+async fn example_get_comments() -> Result<GetComments200Response, Error> {
+    let params = GetCommentsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         page: Some(1),
         limit: Some(25),
@@ -36,15 +36,15 @@ async fn run() -> Result<(), Error> {
         skip_children: Some(0),
         limit_children: Some(10),
         max_tree_depth: Some(3),
-        url_id: Some("news/article/2025/11/20/breaking".to_string()),
-        user_id: Some("user_12345".to_string()),
-        anon_user_id: Some("anon_67890".to_string()),
-        context_user_id: Some("moderator_1".to_string()),
-        hash_tag: Some("rustlang".to_string()),
-        parent_id: Some("cmt_98765".to_string()),
+        url_id: Some("news/article-2026-01-12".to_string()),
+        user_id: Some("user-123".to_string()),
+        anon_user_id: Some("anon-9fcf".to_string()),
+        context_user_id: Some("ctx-42".to_string()),
+        hash_tag: Some("product-launch".to_string()),
+        parent_id: Some("comment-456".to_string()),
         direction: Some(models::SortDirections::Desc),
     };
-    let response: GetComments200Response = get_comments(&configuration, params).await?;
-    Ok(())
+    let resp: GetComments200Response = get_comments(&configuration, params).await?;
+    Ok(resp)
 }
 [inline-code-end]

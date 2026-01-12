@@ -1,0 +1,9 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "875052ffdffb078a9dcf1a1270966e8854e9df2fac2635aa10cde59c47397b3e",
+  "generatedAt": "2026-01-12T21:57:43.445Z",
+  "codeExample": "let (response, httpResponse) = client.updateTenant(\n  tenantId = \"my-tenant-123\",\n  id = \"tenant-456\",\n  updateTenantBody = UpdateTenantBody()\n)\nif response.isSome:\n  let flagResponse = response.get()\n  echo flagResponse\nelse:\n  echo \"No body returned; HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1428
+}

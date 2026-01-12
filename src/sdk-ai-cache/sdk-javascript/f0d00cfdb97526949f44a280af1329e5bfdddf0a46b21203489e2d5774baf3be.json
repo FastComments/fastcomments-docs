@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "f0d00cfdb97526949f44a280af1329e5bfdddf0a46b21203489e2d5774baf3be",
+  "generatedAt": "2026-01-12T21:53:48.180Z",
+  "codeExample": "const tenantId: string = 'fastcomments-88a1';\nconst userId: string = 'user_5f4d2c';\nconst overrideUserId?: string = undefined; // optional override, demonstrate optional parameter usage\nconst targetUserId: string = overrideUserId ?? userId;\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, targetUserId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 418,
+  "completionTokens": 675
+}

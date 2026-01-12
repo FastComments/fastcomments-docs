@@ -1,0 +1,9 @@
+{
+  "method": "add_page",
+  "signatureHash": "6d4018b45f62c56903d45aee03af128d18f68f83b4bed30cfd4d1f2ca4d15a61",
+  "generatedAt": "2026-01-12T21:58:47.926Z",
+  "codeExample": "async fn create_page() -> Result<AddPageApiResponse, Error> {\n    let params: AddPageParams = AddPageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_api_page_data: models::CreateApiPageData {\n            path: \"news/article\".to_string(),\n            title: \"Rust 2.0 Released\".to_string(),\n            url: Some(\"https://acme.example/news/rust-2\".to_string()),\n            allow_comments: Some(true),\n            tags: Some(vec![\"rust\".to_string(), \"release\".to_string()]),\n            metadata: Some(std::collections::HashMap::from([\n                (\"author\".to_string(), \"Jane Doe\".to_string()),\n                (\"section\".to_string(), \"technology\".to_string())\n            ])),\n            published: Some(true)\n        }\n    };\n    let response: AddPageApiResponse = add_page(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 313,
+  "completionTokens": 1234
+}

@@ -18,13 +18,12 @@ Returns: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'voteComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_news_42';
-const commentId: string = 'cmt_5f8b9a2e';
-const urlId: string = '/news/2025/11/22/election-results';
-const broadcastId: string = 'brd_7f4a3';
-const voteBodyParams: VoteBodyParams = { direction: 'up', weight: 1, reason: 'Helpful and on-topic' };
-const sessionId: string = 'sess-9b8a7c6d1234';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signedPayload';
-
+const tenantId: string = "tenant_9f8d7c";
+const commentId: string = "c_5a1b2c3d";
+const urlId: string = "news/2026/01/clean-energy-policy";
+const broadcastId: string = "broadcast_20260112_live";
+const voteBodyParams: VoteBodyParams = { vote: "up", weight: 1 };
+const sessionId: string | undefined = "session_xyz123";
+const sso: string | undefined = "sso_jwt_token_eyJ";
 const result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "d85c7d1c65b294f8283e6fe4369ab59bb40abea1edede1adceffc6e21f713903",
+  "generatedAt": "2026-01-12T21:56:39.027Z",
+  "codeExample": "let (response, httpResponse) = client.getSSOUsers(tenantId = \"my-tenant-123\", skip = 0)\nif response.isSome:\n  let ssoUsers = response.get()\n  echo ssoUsers",
+  "model": "gpt-5-mini",
+  "promptTokens": 396,
+  "completionTokens": 441
+}

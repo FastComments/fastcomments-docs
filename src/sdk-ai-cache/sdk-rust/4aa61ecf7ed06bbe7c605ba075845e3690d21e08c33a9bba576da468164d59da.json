@@ -1,0 +1,9 @@
+{
+  "method": "checked_comments_for_blocked",
+  "signatureHash": "4aa61ecf7ed06bbe7c605ba075845e3690d21e08c33a9bba576da468164d59da",
+  "generatedAt": "2026-01-12T22:01:50.658Z",
+  "codeExample": "async fn run_checked_comments() -> Result<CheckedCommentsForBlocked200Response, Error> {\n    let config: configuration::Configuration = configuration::Configuration::default();\n    let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_ids: \"cmt-12345,cmt-67890\".to_string(),\n        sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example_payload\".to_string()),\n    };\n    let response: CheckedCommentsForBlocked200Response =\n        checked_comments_for_blocked(&config, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1119
+}

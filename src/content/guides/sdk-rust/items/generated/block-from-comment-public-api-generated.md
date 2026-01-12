@@ -18,8 +18,12 @@ Returns: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/f
 async fn run() -> Result<(), Error> {
     let params: BlockFromCommentPublicParams = BlockFromCommentPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article-2025-11-21-cmt-987654".to_string(),
-        public_block_from_comment_params: models::PublicBlockFromCommentParams::default(),
+        comment_id: "comment-98765".to_string(),
+        public_block_from_comment_params: models::PublicBlockFromCommentParams {
+            reason: "spam and abusive language".to_string(),
+            notify_user: true,
+            duration_minutes: Some(60),
+        },
         sso: Some("sso-jwt-abcdef123456".to_string()),
     };
     let response: BlockFromCommentPublic200Response = block_from_comment_public(&configuration, params).await?;

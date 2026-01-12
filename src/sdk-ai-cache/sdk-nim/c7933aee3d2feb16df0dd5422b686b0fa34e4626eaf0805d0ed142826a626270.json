@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "c7933aee3d2feb16df0dd5422b686b0fa34e4626eaf0805d0ed142826a626270",
+  "generatedAt": "2026-01-12T21:57:52.906Z",
+  "codeExample": "var body: UpdateTenantUserBody\nbody.email = \"jane.doe@example.com\"\nbody.displayName = \"Jane Doe\"\nbody.roles = @[\"moderator\", \"editor\"]\nbody.isActive = true\n\nlet (response, httpResponse) = client.updateTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-789\",\n  updateTenantUserBody = body,\n  updateComments = \"Promoted user to moderator and editor roles\"\n)\n\nif response.isSome:\n  let flagResp = response.get()\n  echo flagResp\nelse:\n  echo \"Update failed, status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1484
+}

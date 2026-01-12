@@ -14,14 +14,12 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'patchDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4f2b1a9e-6c3d-4e5f-b1a2-abcdef123456";
-const domainToUpdate: string = "comments.acme-products.com";
+const tenantId: string = 'tenant_acme_42';
+const domainToUpdate: string = 'comments.acme-app.com';
 const patchDomainConfigParams: PatchDomainConfigParams = {
-  primary: true,
-  enableSsl: true,
-  sslCertificateId: "ssl_cert_72f4b1",
-  allowedOrigins: ["https://www.acme.com", "https://shop.acme.com"],
-  forceHttpsRedirect: undefined
-};
+  enableHttps: true,
+  allowedOrigins: ['https://www.acme-app.com', 'https://app.acme-app.com'], // optional list
+  redirectToPrimaryDomain: false // optional toggle
+} as PatchDomainConfigParams;
 const updatedConfig: GetDomainConfig200Response = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
 [inline-code-end]

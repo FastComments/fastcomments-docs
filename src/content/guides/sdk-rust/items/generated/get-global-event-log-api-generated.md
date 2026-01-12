@@ -22,20 +22,17 @@ Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'get_global_event_log Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let tenant_id: String = "acme-corp-tenant".to_string();
-    let url_id: String = "news/article/2025-election".to_string();
-    let user_id_ws: String = "ws-user-42".to_string();
-    let start_time: i64 = 1_693_000_000;
-    let end_time: i64 = 1_693_086_400;
-    let params = GetGlobalEventLogParams {
-        tenant_id,
-        url_id,
-        user_id_ws,
-        start_time,
-        end_time,
+async fn example() -> Result<GetEventLog200Response, Error> {
+    let params: GetGlobalEventLogParams = GetGlobalEventLogParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/world/article-123".to_string(),
+        user_id_ws: "user-987".to_string(),
+        start_time: 1672531200_i64,
+        end_time: 1672617600_i64,
+        cursor: Some("cursor-0001".to_string()),
+        limit: Some(500),
     };
     let response: GetEventLog200Response = get_global_event_log(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]

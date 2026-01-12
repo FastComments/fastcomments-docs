@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "01a08c91055ba14ad331ab2ba02b570bca895947d67adcd3c71d0d9c8b81bf34",
+  "generatedAt": "2026-01-12T21:54:56.441Z",
+  "codeExample": "const tenantId: string = \"tenant_9b1f4c\";\nconst postId: string = \"post_c3f1a7\";\nconst reactBody: ReactBodyParams = { reactionType: \"like\", emoji: \"👍\", userId: \"user_42\", timestamp: new Date().toISOString() };\nconst isUndo: boolean = false;\nconst broadcastId: string = \"broadcast_20260112_001\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzQyIn0.signature\";\nconst result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBody, isUndo, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 889
+}

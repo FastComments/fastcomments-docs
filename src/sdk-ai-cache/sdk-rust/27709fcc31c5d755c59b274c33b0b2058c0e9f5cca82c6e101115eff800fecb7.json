@@ -1,0 +1,9 @@
+{
+  "method": "patch_page",
+  "signatureHash": "27709fcc31c5d755c59b274c33b0b2058c0e9f5cca82c6e101115eff800fecb7",
+  "generatedAt": "2026-01-12T22:00:53.968Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PatchPageParams = PatchPageParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article-123\"),\n        update_api_page_data: models::UpdateApiPageData {\n            title: Some(String::from(\"Breaking: Rust 1.80 Released\")),\n            path: String::from(\"/news/rust-1-80\"),\n            description: Some(String::from(\"Highlights and features in Rust 1.80\")),\n            is_published: Some(true),\n            metadata: Some(std::collections::HashMap::from([\n                (String::from(\"author\"), String::from(\"Jane Doe\")),\n                (String::from(\"category\"), String::from(\"technology\")),\n            ])),\n        },\n    };\n    let response: PatchPageApiResponse = patch_page(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 321,
+  "completionTokens": 1032
+}

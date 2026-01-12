@@ -15,17 +15,18 @@ Returns: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'patchPage Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateData = UpdateAPIPageData(
-  title = "Homepage — Daily Times",
-  slug = "news/homepage",
-  enabled = true,
-  tags = @["featured", "editorial"],
-  description = "Updated summary for the homepage",
-  priority = 0
+  title = "Main St Reopens After Repairs",
+  path = "news/main-st-reopens",
+  description = "Main Street reopened to traffic following overnight repairs",
+  isEnabled = true,
+  tags = @["local", "infrastructure"]
 )
-let (response, httpResponse) = client.patchPage(tenantId = "my-tenant-123", id = "page-homepage-456", updateAPIPageData = updateData)
+
+let (response, httpResponse) = client.patchPage(tenantId = "my-tenant-123", id = "page-456", updateAPIPageData = updateData)
+
 if response.isSome:
   let page = response.get()
-  echo "Updated page: ", page.id
+  echo "Patched page:", $page
 else:
-  echo "No response body, status: ", httpResponse.status
+  echo "Patch failed, HTTP status: ", httpResponse.status
 [inline-code-end]

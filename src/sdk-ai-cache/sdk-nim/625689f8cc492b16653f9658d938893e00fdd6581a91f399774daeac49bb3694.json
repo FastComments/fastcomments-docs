@@ -1,0 +1,9 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "625689f8cc492b16653f9658d938893e00fdd6581a91f399774daeac49bb3694",
+  "generatedAt": "2026-01-12T21:57:41.702Z",
+  "codeExample": "let (response, httpResponse) = client.checkedCommentsForBlocked(tenantId = \"my-tenant-123\", commentIds = \"\", sso = \"\")\nif response.isSome:\n  let checked = response.get()\n  echo \"Checked comments for blocked:\", checked\nelse:\n  echo \"No response received, HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 782
+}

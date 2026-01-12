@@ -14,16 +14,17 @@ Returns: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'get_user_reacts_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_user_reacts() -> Result<GetUserReactsPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: GetUserReactsPublicParams = GetUserReactsPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
+        tenant_id: "acme-corp-tenant".to_string(),
         post_ids: Some(vec![
-            String::from("news/article-2025-11-21"),
-            String::from("blog/product-release-2025"),
+            "news/article-2026-01-12-breaking".to_string(),
+            "blog/product-launch-2026".to_string(),
         ]),
-        sso: Some(String::from("sso_user_abcd1234")),
+        sso: Some("sso-jwt-3f2a1b9e".to_string()),
     };
-    let response: GetUserReactsPublic200Response = get_user_reacts_public(&configuration, params).await?;
-    Ok(response)
+    let response: GetUserReactsPublic200Response =
+        get_user_reacts_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

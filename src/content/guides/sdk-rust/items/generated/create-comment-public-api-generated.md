@@ -17,18 +17,18 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'create_comment_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn post_comment() -> Result<CreateCommentPublic200Response, Error> {
-    let params: CreateCommentPublicParams = CreateCommentPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        url_id: String::from("news/2025/11/fast-rust-adoption"),
-        broadcast_id: String::from("main-stream"),
-        comment_data: models::CommentData {
-            body: String::from("Great reporting — I especially liked the data on adoption rates."),
-        },
-        session_id: Some(String::from("sess_9f8e7d6c")),
-        sso: Some(String::from("sso_token_abc123")),
-    };
-    let response: CreateCommentPublic200Response = create_comment_public(configuration, params).await?;
-    Ok(response)
-}
+let params: CreateCommentPublicParams = CreateCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    url_id: "news/article/2026/fastcomments-launch".to_string(),
+    broadcast_id: "live-2026-01-12".to_string(),
+    comment_data: models::CommentData {
+        content: "Excited about the launch — congrats to the team!".to_string(),
+        user_display_name: Some("Jane Doe".to_string()),
+        attachments: Vec::new(),
+        mentions: Vec::new(),
+    },
+    session_id: Some("sess_01HXYZabc123".to_string()),
+    sso: Some("sso-token-987654".to_string()),
+};
+let response: CreateCommentPublic200Response = create_comment_public(&configuration, params).await?;
 [inline-code-end]

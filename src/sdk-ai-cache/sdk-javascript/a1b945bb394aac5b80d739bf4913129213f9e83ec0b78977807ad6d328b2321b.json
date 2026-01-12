@@ -1,0 +1,9 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "a1b945bb394aac5b80d739bf4913129213f9e83ec0b78977807ad6d328b2321b",
+  "generatedAt": "2026-01-12T21:52:33.122Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b1a9c\";\nconst tenantPackage: TenantPackage = { id: \"pkg_001\", name: \"Premium Plan\", seats: 100 };\nconst customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  packageName: \"Premium Plus\",\n  tenantPackage,\n  customConfig,\n  notes: \"Enable advanced moderation and image uploads\" // optional parameter demonstrated\n};\nconst result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1550
+}

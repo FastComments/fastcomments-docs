@@ -1,3 +1,6 @@
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -19,15 +22,13 @@ Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/article-title",
+  urlId = "news/article-title-456",
   url = "",
   pageTitle = "",
   subscribedOrUnsubscribed = "",
   sso = ""
 )
 if response.isSome:
-  let updated = response.get()
-  echo "UpdateUserNotificationStatus received"
-else:
-  echo "No UpdateUserNotificationStatus returned, HTTP response available"
+  let result = response.get()
+  echo "Subscription update returned:", $result
 [inline-code-end]

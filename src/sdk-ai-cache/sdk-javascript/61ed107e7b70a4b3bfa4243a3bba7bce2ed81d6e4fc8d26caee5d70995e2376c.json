@@ -1,0 +1,9 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "61ed107e7b70a4b3bfa4243a3bba7bce2ed81d6e4fc8d26caee5d70995e2376c",
+  "generatedAt": "2026-01-12T21:54:23.148Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_922';\nconst mention: CommentUserMentionInfo = { userId: 'u-204', displayName: 'Maria Gomez', username: 'maria.g' };\nconst hashtag: CommentUserHashTagInfo = { tag: 'frontend', indices: [45, 53] };\nconst createCommentParams: Array<CreateCommentParams> = [\n  {\n    content: 'I replaced the legacy DOM manipulation with a small component — performance improved by ~30%.',\n    authorName: 'Samuel Park',\n    authorEmail: 'samuel.park@devteam.io',\n    permalink: '/guides/performance-tuning',\n    createdAt: '2026-01-11T09:15:00Z',\n    userMentions: [mention],\n    userHashtags: [hashtag]\n  }\n];\nconst responses: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);",
+  "model": "gpt-5-mini",
+  "promptTokens": 313,
+  "completionTokens": 1433
+}

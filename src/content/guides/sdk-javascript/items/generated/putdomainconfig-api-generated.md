@@ -14,15 +14,14 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const domainToUpdate: string = 'comments.acme.com';
+const tenantId: string = "tenant_92b4c1a7";
+const domainToUpdate: string = "blog.company-example.com";
 const updateDomainConfigParams: UpdateDomainConfigParams = {
-  enableSsl: true,
-  certificateProvider: 'letsencrypt',
-  redirectHttpToHttps: true, // optional parameter demonstrated
-  customCssUrl: 'https://cdn.acme.com/widgets/comments.css',
-  moderationMode: 'pre-moderation',
-  allowedOrigins: ['https://www.acme.com', 'https://blog.acme.com']
+  enableComments: true,
+  moderationMode: "pre-moderation",
+  allowedOrigins: ["https://company-example.com", "https://studio.company-example.com"],
+  // optional parameter demonstrated by including redirectToCanonical (may be omitted)
+  redirectToCanonical: true
 };
-const updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
+const response: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
 [inline-code-end]

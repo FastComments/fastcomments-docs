@@ -19,15 +19,21 @@ Returns: [`Option[CreateFeedPost_200_response]`](https://github.com/FastComments
 [inline-code-start]
 let (response, httpResponse) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = CreateFeedPostParams(),
-  broadcastId = "broadcast-456",
-  isLive = true,
-  doSpamCheck = true,
+  createFeedPostParams = CreateFeedPostParams(
+    title = "Breaking: Major Storm Hits City",
+    content = "A severe storm caused widespread outages and travel delays across the metro area.",
+    authorId = "author-789",
+    url = "news/major-storm",
+    tags = @["weather", "breaking"],
+    attachments = @[]
+  ),
+  broadcastId = "",
+  isLive = false,
+  doSpamCheck = false,
   skipDupCheck = false
 )
+
 if response.isSome:
   let created = response.get()
-  echo created
-else:
-  echo "No response body, HTTP status: ", httpResponse.statusCode
+  echo "Feed post created:", created
 [inline-code-end]

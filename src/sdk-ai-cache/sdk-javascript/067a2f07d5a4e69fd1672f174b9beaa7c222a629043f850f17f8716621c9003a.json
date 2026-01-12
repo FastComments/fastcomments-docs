@@ -1,0 +1,9 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "067a2f07d5a4e69fd1672f174b9beaa7c222a629043f850f17f8716621c9003a",
+  "generatedAt": "2026-01-12T21:52:20.655Z",
+  "codeExample": "const tenantId: string = \"tenant_9a8c7e4b\";\nconst createTenantUserBody: CreateTenantUserBody = {\n  email: \"julia.smith@acme-corp.com\",\n  displayName: \"Julia Smith\",\n  role: \"moderator\",\n  password: \"Str0ngP@ssword!23\",\n  sendInviteEmail: true, // optional parameter demonstrated\n  locale: \"en-US\",\n  metadata: { department: \"Customer Success\" }\n};\nconst result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 904
+}

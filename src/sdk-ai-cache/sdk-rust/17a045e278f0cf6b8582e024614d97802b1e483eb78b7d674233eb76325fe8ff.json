@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post_public",
+  "signatureHash": "17a045e278f0cf6b8582e024614d97802b1e483eb78b7d674233eb76325fe8ff",
+  "generatedAt": "2026-01-12T22:02:44.573Z",
+  "codeExample": "let params = UpdateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/article-12345\".to_string(),\n    update_feed_post_params: models::UpdateFeedPostParams {\n        title: Some(\"Acme launches unified search\".to_string()),\n        content: Some(\"Acme Corp released a unified search feature that improves discovery across products.\".to_string()),\n        links: Some(vec![\n            models::FeedPostLink { url: \"https://acme.com/blog/unified-search\".to_string(), title: Some(\"Read the announcement\".to_string()) }\n        ]),\n        media: Some(vec![\n            models::FeedPostMediaItem {\n                id: Some(\"media-1122\".to_string()),\n                caption: Some(\"Feature screenshot\".to_string()),\n                assets: Some(vec![\n                    models::FeedPostMediaItemAsset { url: \"https://cdn.acme.com/images/feature-1122.jpg\".to_string(), mime_type: Some(\"image/jpeg\".to_string()) }\n                ])\n            }\n        ]),\n        is_published: Some(true),\n    },\n    broadcast_id: Some(\"broadcast-789\".to_string()),\n    sso: Some(\"sso-token-abc\".to_string()),\n};\nlet response: CreateFeedPostPublic200Response = update_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 508,
+  "completionTokens": 1574
+}

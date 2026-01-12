@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "16dbc395a8523bec72a575cdf9229ed863bcf7295cb5b9fbfcce473c2a9a78fa",
+  "generatedAt": "2026-01-12T21:57:32.851Z",
+  "codeExample": "let (response, httpResponse) = client.updateComment(\n  tenantId = \"my-tenant-123\",\n  id = \"cmt-456\",\n  updatableCommentParams = UpdatableCommentParams(\n    content: \"Updated the comment to clarify the timeline\",\n    tags: @[\"clarification\", \"timeline\"],\n    isHidden: false\n  ),\n  contextUserId = \"user-789\",\n  doSpamCheck = true,\n  isLive = true\n)\n\nif response.isSome:\n  let updatedComment = response.get()\n  echo \"Updated comment received, id: \", updatedComment.id",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1733
+}

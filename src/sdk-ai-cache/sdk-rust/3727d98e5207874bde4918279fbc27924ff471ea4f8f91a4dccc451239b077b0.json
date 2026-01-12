@@ -1,0 +1,9 @@
+{
+  "method": "delete_moderator",
+  "signatureHash": "3727d98e5207874bde4918279fbc27924ff471ea4f8f91a4dccc451239b077b0",
+  "generatedAt": "2026-01-12T21:59:17.583Z",
+  "codeExample": "async fn run(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteModeratorParams = DeleteModeratorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"moderator-1234\".to_string(),\n        send_email: Some(\"true\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = delete_moderator(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 749
+}

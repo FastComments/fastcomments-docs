@@ -1,0 +1,9 @@
+{
+  "method": "get_question_result",
+  "signatureHash": "904bd17da8920fa264e37528f5ff26fc868de296e9b769d0bc5750f6bf1aaa1b",
+  "generatedAt": "2026-01-12T22:00:20.281Z",
+  "codeExample": "async fn run() -> Result<GetQuestionResult200Response, Error> {\n    let include_metadata: Option<bool> = Some(true);\n    let params: GetQuestionResultParams = GetQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/2026/12345\".to_string(),\n    };\n    let response: GetQuestionResult200Response = get_question_result(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 1516
+}

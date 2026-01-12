@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "3f26d6c8f28c5839e4a16efa8902f33bbc6153867a5e4781225c25b595949636",
+  "generatedAt": "2026-01-12T21:55:11.976Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8d7c\";\nconst commentId: string = \"c_5a1b2c3d\";\nconst urlId: string = \"news/2026/01/clean-energy-policy\";\nconst broadcastId: string = \"broadcast_20260112_live\";\nconst voteBodyParams: VoteBodyParams = { vote: \"up\", weight: 1 };\nconst sessionId: string | undefined = \"session_xyz123\";\nconst sso: string | undefined = \"sso_jwt_token_eyJ\";\nconst result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 462,
+  "completionTokens": 928
+}

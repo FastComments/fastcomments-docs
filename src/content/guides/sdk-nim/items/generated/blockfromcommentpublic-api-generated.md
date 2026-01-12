@@ -15,17 +15,16 @@ Returns: [`Option[BlockFromCommentPublic_200_response]`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'blockFromCommentPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = PublicBlockFromCommentParams(
-  reason: "Repeated spam and abusive language",
-  durationMinutes: 1440,
-  notify: true,
-  tags: @["spam", "abuse"]
-)
 let (response, httpResponse) = client.blockFromCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  publicBlockFromCommentParams = params,
-  sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+  commentId = "news/article-2026-01-12-comment-789",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(
+    reason = "harassment",
+    durationMinutes = 1440,
+    notifyUsers = false,
+    tags = @["abuse","spam"]
+  ),
+  sso = ""
 )
 if response.isSome:
   let blockResult = response.get()

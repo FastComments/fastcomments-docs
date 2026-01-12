@@ -1,0 +1,9 @@
+{
+  "method": "delete_user_badge",
+  "signatureHash": "c14a463a27897c4b03624373f3ef585db37eaf4726e2d47ad6109292fbd4b00f",
+  "generatedAt": "2026-01-12T21:59:48.382Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-98765\".to_string(),\n    };\n    let response: UpdateUserBadge200Response = delete_user_badge(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 1175
+}

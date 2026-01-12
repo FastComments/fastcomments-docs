@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "8aee9f16e687b626286818fd1f0d2205e9fdc47fc7a0aba2abaa857bebeaf119",
+  "generatedAt": "2026-01-12T21:57:58.519Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPostsStats(tenantId = \"my-tenant-123\", postIds = @[\"news/article-456\", \"blog/post-789\"], sso = \"user-abc-sso-token\")\nif response.isSome:\n  let stats = response.get()\n  echo \"Received feed posts stats: \", stats\nelse:\n  echo \"No feed posts stats returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 408,
+  "completionTokens": 862
+}

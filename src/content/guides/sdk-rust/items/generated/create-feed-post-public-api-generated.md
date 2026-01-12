@@ -15,28 +15,33 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'create_feed_post_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let create_feed_post_params: models::CreateFeedPostParams = models::CreateFeedPostParams {
+    title: "Major outage impacting Acme services".to_string(),
+    body: "We're investigating a major outage affecting login and API traffic.".to_string(),
+    author_name: Some("Acme Status Team".to_string()),
+    media: Some(vec![
+        models::FeedPostMediaItem {
+            id: Some("media-001".to_string()),
+            assets: Some(vec![
+                models::FeedPostMediaItemAsset {
+                    url: "https://cdn.acme.com/outage/overview.jpg".to_string(),
+                    mime_type: Some("image/jpeg".to_string()),
+                    alt_text: Some("Overview diagram".to_string()),
+                }
+            ]),
+        }
+    ]),
+    links: Some(vec![
+        models::FeedPostLink { url: "https://status.acme.com/incident/456".to_string(), title: Some("Incident details".to_string()) }
+    ]),
+};
+
 let params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    create_feed_post_params: models::CreateFeedPostParams {
-        title: "Acme One Launch".to_string(),
-        body: "Acme Corp announces the Acme One device, shipping worldwide next month.".to_string(),
-        author_id: "editor-42".to_string(),
-        media: Some(vec![models::FeedPostMediaItem {
-            asset: Some(models::FeedPostMediaItemAsset {
-                url: "https://cdn.acme.com/images/acme-one.jpg".to_string(),
-                mime_type: Some("image/jpeg".to_string())
-            }),
-            alt_text: Some("Acme One product image".to_string())
-        }]),
-        links: Some(vec![models::FeedPostLink {
-            url: "https://acme.com/blog/acme-one-launch".to_string(),
-            title: Some("Read the announcement".to_string())
-        }]),
-        tags: Some(vec!["product".to_string(), "launch".to_string()]),
-        is_public: Some(true)
-    },
-    broadcast_id: Some("broadcast-20251121".to_string()),
-    sso: Some("sso-token-xyz-789".to_string()),
+    create_feed_post_params,
+    broadcast_id: Some("broadcast-20260112".to_string()),
+    sso: Some("sso-secure-token-xyz".to_string()),
 };
+
 let response: CreateFeedPostPublic200Response = create_feed_post_public(&configuration, params).await?;
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "patch_hash_tag",
+  "signatureHash": "9b5177060ed2ac5033fd224e231fbfdb638d086a596291095f55d5e90461c133",
+  "generatedAt": "2026-01-12T22:01:01.741Z",
+  "codeExample": "async fn run_patch_hash_tag() -> Result<PatchHashTag200Response, Error> {\n    let params: PatchHashTagParams = PatchHashTagParams {\n        tag: \"breaking-news\".to_string(),\n        tenant_id: Some(\"acme-corp-tenant\".to_string()),\n        update_hash_tag_body: Some(models::UpdateHashTagBody {\n            name: \"Breaking News\".to_string(),\n            description: \"Posts about breaking news and urgent updates\".to_string(),\n            synonyms: vec![\"breaking\".to_string(), \"urgent\".to_string()],\n            is_active: true,\n        }),\n    };\n    let response: PatchHashTag200Response = patch_hash_tag(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 456,
+  "completionTokens": 1119
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createModerator",
+  "signatureHash": "8f07a3dc1b0e616dd4b18dffd5087026278216db74c55248d125896d1eaba661",
+  "generatedAt": "2026-01-12T21:55:38.998Z",
+  "codeExample": "let createBody = CreateModeratorBody(\n  email = \"moderator@news-site.com\",\n  displayName = \"News Moderator\",\n  permissions = @[\"approve_comments\", \"delete_comments\"],\n  isSuperAdmin = false\n)\n\nlet (response, httpResponse) = client.createModerator(tenantId = \"my-tenant-123\", createModeratorBody = createBody)\n\nif response.isSome:\n  let moderator = response.get()\n  echo \"Created moderator: \", $moderator",
+  "model": "gpt-5-mini",
+  "promptTokens": 390,
+  "completionTokens": 875
+}

@@ -1,0 +1,9 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "728d5f0dda079b4c1413ed2ebd2bfb9450c400b8865039f17b570027e7153d1d",
+  "generatedAt": "2026-01-12T21:55:26.635Z",
+  "codeExample": "let (response, httpResponse) = client.aggregateQuestionResults(\n  tenantId = \"my-tenant-123\",\n  questionId = \"q-42\",\n  questionIds = @[\"q-42\", \"q-43\"],\n  urlId = \"news/article-latest-updates\",\n  timeBucket = AggregateTimeBucket.daily,\n  startDate = \"2025-01-01T00:00:00Z\",\n  forceRecalculate = false\n)\n\nif response.isSome:\n  let aggregated = response.get()\n  discard aggregated",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1080
+}

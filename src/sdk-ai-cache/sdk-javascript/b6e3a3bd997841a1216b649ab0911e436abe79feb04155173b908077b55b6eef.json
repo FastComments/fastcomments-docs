@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "b6e3a3bd997841a1216b649ab0911e436abe79feb04155173b908077b55b6eef",
+  "generatedAt": "2026-01-12T21:54:36.142Z",
+  "codeExample": "const tenantId: string = 'tenant_8a4f1c9b';\nconst packageId: string = 'pkg_premium_v2';\nconst customConfig: CustomConfigParameters = { enableRichText: true, maxImagesPerComment: 5 };\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  name: 'Premium Moderation Package',\n  enabled: true,\n  description: 'Adds advanced spam rules, image moderation and priority support',\n  customConfigParameters: customConfig\n};\nconst result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, packageId, updateTenantPackageBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1354
+}

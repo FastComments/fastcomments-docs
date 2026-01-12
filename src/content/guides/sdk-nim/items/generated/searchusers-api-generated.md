@@ -18,13 +18,14 @@ Returns: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = ""
+  urlId = "news/best-tech-2026",
+  usernameStartsWith = "jo",
+  mentionGroupIds = @["group-editors", "group-moderators"],
+  sso = "okta"
 )
-
 if response.isSome:
-  let searchResult = response.get()
-  discard searchResult
+  let users = response.get()
+  echo "Search returned:", users
+else:
+  echo "No users found, HTTP status:", httpResponse.status
 [inline-code-end]

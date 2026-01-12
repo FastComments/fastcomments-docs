@@ -1,0 +1,9 @@
+{
+  "method": "get_notification_count",
+  "signatureHash": "4c27bbf6ad2535430f0073750f0180c4e02b69ff4f8dd561275b8e237060ab45",
+  "generatedAt": "2026-01-12T22:00:34.885Z",
+  "codeExample": "async fn example_get_notification_count() -> Result<GetNotificationCount200Response, Error> {\n    let params: GetNotificationCountParams = GetNotificationCountParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        user_id: Some(String::from(\"user-12345\")),\n        url_id: Some(String::from(\"news/article/2026/product-launch\")),\n        from_comment_id: Some(String::from(\"cmt-000987\")),\n        viewed: Some(false),\n    };\n    let response: GetNotificationCount200Response = get_notification_count(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 455,
+  "completionTokens": 904
+}

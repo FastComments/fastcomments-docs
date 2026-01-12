@@ -1,0 +1,9 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "bee8753a5581659e48a8b85fe2e49f0d3f2adf6a126103592f4d6ace0a5d7562",
+  "generatedAt": "2026-01-12T21:56:05.546Z",
+  "codeExample": "let (response, httpResponse) = client.deleteSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-7f3b9c\",\n  deleteComments = true,\n  commentDeleteMode = \"soft\"\n)\n\nif response.isSome:\n  let apiResult = response.get()\n  echo \"SSO user deleted successfully\"\n  discard apiResult",
+  "model": "gpt-5-mini",
+  "promptTokens": 411,
+  "completionTokens": 1048
+}

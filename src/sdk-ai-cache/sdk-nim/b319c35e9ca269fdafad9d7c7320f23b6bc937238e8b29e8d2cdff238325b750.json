@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "b319c35e9ca269fdafad9d7c7320f23b6bc937238e8b29e8d2cdff238325b750",
+  "generatedAt": "2026-01-12T21:58:29.446Z",
+  "codeExample": "let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(\n  tenantId = \"my-tenant-123\",\n  notificationId = \"\",\n  optedInOrOut = \"\",\n  commentId = \"comment-789\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let updateResp = response.get()\n  discard updateResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 428,
+  "completionTokens": 1168
+}

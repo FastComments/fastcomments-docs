@@ -15,13 +15,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'flagCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoFlagComment(): Promise<void> {
-  const tenantId: string = 'tenant_9a7c3f2b';
-  const commentId: string = 'cmt_5d8e12a4';
-  const isFlagged: boolean = true;
-  const sso: string | undefined = 'sso_tok_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const result: FlagCommentPublic200Response = await flagCommentPublic(tenantId, commentId, isFlagged, sso);
-  console.log(result);
-}
-demoFlagComment();
+const tenantId: string = "tenant_8a3f2b4c";
+const commentId: string = "cmt_9fc3e7a1";
+const isFlagged: boolean = true;
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+const result: FlagCommentPublic200Response = await flagCommentPublic(tenantId, commentId, isFlagged, sso);
 [inline-code-end]

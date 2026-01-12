@@ -14,9 +14,8 @@ Returns: [`Option[GetDomainConfigs_200_response]`](https://github.com/FastCommen
 [inline-code-start]
 let (response, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
 if response.isSome:
-  let configs = response.get()
-  echo "Received domain configs for tenant my-tenant-123"
-  echo configs
+  let domainConfigs = response.get()
+  echo "Received domain configs for tenant:", domainConfigs
 else:
-  echo "No domain configs returned"
+  echo "No domain configs returned, HTTP status:", httpResponse.status.code
 [inline-code-end]

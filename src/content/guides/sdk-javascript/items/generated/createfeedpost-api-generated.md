@@ -17,26 +17,31 @@ Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f2b1c';
-
-const createFeedPostParams: CreateFeedPostParams = ({
-  title: 'Feature X US Launch',
-  body: 'Feature X is now available to all US customers. See rollout details and known issues below.',
-  authorId: 'user_8421',
-  tags: ['launch', 'feature-x', 'us'],
+const tenantId: string = "tenant_8f3b2c";
+const createFeedPostParams: CreateFeedPostParams = {
+  title: "Weekly product update",
+  body: "We shipped performance improvements and a login fix. Please share feedback.",
+  authorId: "user_72a1",
+  externalId: "post-2026-01-12",
   media: [
     {
-      type: 'image',
-      assets: [{ url: 'https://cdn.example.com/featurex/hero.png', mimeType: 'image/png', width: 1200, height: 628 }]
-    }
+      type: "image",
+      assets: [
+        {
+          url: "https://cdn.example.com/images/update-jan.jpg",
+          width: 1200,
+          height: 630,
+          mimeType: "image/jpeg"
+        } as FeedPostMediaItemAsset
+      ]
+    } as FeedPostMediaItem
   ],
-  links: [{ url: 'https://status.example.com/feature-x', title: 'Live Status' }]
-} as unknown) as CreateFeedPostParams;
-
-const broadcastId: string = 'broadcast_2025_11_22';
-const isLive: boolean = false;
+  links: [
+    { url: "https://example.com/releases/january", title: "Release notes" } as FeedPostLink
+};
+const broadcastId: string = "bcast_20260112";
+const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const skipDupCheck: boolean = false;
-
-const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
+const response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
 [inline-code-end]

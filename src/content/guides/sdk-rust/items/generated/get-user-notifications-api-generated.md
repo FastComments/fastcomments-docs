@@ -23,16 +23,16 @@ Returns: [`GetUserNotifications200Response`](https://github.com/FastComments/fas
 [inline-code-start]
 let params: GetUserNotificationsParams = GetUserNotificationsParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    page_size: Some(25),
-    after_id: Some("notif_20251120_01".to_string()),
+    page_size: Some(25i32),
+    after_id: Some("notif_20260110_abc123".to_string()),
     include_context: Some(true),
-    after_created_at: Some(1_706_000_000i64),
+    after_created_at: Some(1704960000i64),
     unread_only: Some(true),
     dm_only: Some(false),
     no_dm: Some(false),
     include_translations: Some(true),
-    sso: Some("sso-session-xyz".to_string()),
+    sso: Some("user-9876".to_string()),
 };
 
-let notifications: GetUserNotifications200Response = get_user_notifications(configuration, params).await?;
+let notifications: GetUserNotifications200Response = get_user_notifications(&configuration, params).await?;
 [inline-code-end]

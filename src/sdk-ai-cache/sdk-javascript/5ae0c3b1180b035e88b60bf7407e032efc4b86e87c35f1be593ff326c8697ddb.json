@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "5ae0c3b1180b035e88b60bf7407e032efc4b86e87c35f1be593ff326c8697ddb",
+  "generatedAt": "2026-01-12T21:54:34.191Z",
+  "codeExample": "const tenantId: string = \"acme-newsroom-tenant-001\";\nconst commentId: string = \"cmt_20260112_9f2b3a\";\nconst broadcastId: string = \"homepage-article-452\";\nconst editKey: string | undefined = \"edit_7d3f6a9b\";\nconst sso: string | undefined = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature\";\n\nconst result: DeleteCommentPublic200Response = await deleteCommentPublic(\n  tenantId,\n  commentId,\n  broadcastId,\n  editKey,\n  sso\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 664
+}

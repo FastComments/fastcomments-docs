@@ -12,10 +12,11 @@ Returns: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'getPages Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-inc-78f9';
-const includeDrafts: boolean | undefined = undefined;
-const pageSize: number | undefined = 25;
-const pagesResponse: GetPagesAPIResponse = await getPages(tenantId);
-const pages: APIPage[] | undefined = (pagesResponse as any).pages;
-const firstPageTitle: string | undefined = pages?.[0]?.title as string | undefined;
+(async () => {
+  const tenantId: string = 'tenant_8a7b3d2f';
+  const result: GetPagesAPIResponse = await getPages(tenantId);
+  const pages: APIPage[] = result.pages ?? [];
+  const firstPageId: string | undefined = pages[0]?.id;
+  console.log(`Tenant ${tenantId} has ${pages.length} pages; first page id: ${firstPageId}`);
+})();
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "2658b9227f8b34391ca8d0682d16cbd4bbb224c84d6322ec10176b279f64765f",
+  "generatedAt": "2026-01-12T21:53:47.656Z",
+  "codeExample": "const tenantId: string = 'tenant_westus_01';\nconst packageId: string = 'pkg_premium_annual_2026';\ninterface FetchOptions { includeArchived?: boolean }\nconst options: FetchOptions = { includeArchived: false };\nconst result: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 1233
+}

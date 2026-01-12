@@ -22,13 +22,11 @@ Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getGlobalEventLog Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_media_tenant_001';
-const urlId: string = 'article-2025-11-22-fiber-upgrade';
-const userIdWS: string = 'ws_user_78321';
-const startTime: number = Date.now() - 1000 * 60 * 60 * 24; // 24 hours ago
+const tenantId: string = 'tenant_7a3f2b';
+const urlId: string = 'site-homepage';
+const optionalUrlId: string | undefined = undefined;
+const userIdWS: string = 'ws-user-9843';
+const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
 const endTime: number = Date.now();
-// Optional parameters example (not required by getGlobalEventLog)
-const options: { includeMetadata?: boolean; maxEntries?: number } = { includeMetadata: true };
-const result: GetEventLog200Response = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
-console.log(result);
+const eventLog: GetEventLog200Response = await getGlobalEventLog(tenantId, optionalUrlId ?? urlId, userIdWS, startTime, endTime);
 [inline-code-end]

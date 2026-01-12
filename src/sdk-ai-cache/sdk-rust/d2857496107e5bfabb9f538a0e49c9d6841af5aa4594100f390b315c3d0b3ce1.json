@@ -1,0 +1,9 @@
+{
+  "method": "send_invite",
+  "signatureHash": "d2857496107e5bfabb9f538a0e49c9d6841af5aa4594100f390b315c3d0b3ce1",
+  "generatedAt": "2026-01-12T22:01:11.407Z",
+  "codeExample": "let params: SendInviteParams = SendInviteParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"articles/2026/01/ai-news-12345\".to_string(),\n    from_name: \"Acme Newsroom\".to_string(),\n    reply_to: Some(\"editorial@acme.com\".to_string()),\n    message: Some(\"You have been invited to moderate comments on this article.\".to_string()),\n};\n\nlet invite_response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1277
+}

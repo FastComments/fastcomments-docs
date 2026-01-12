@@ -20,20 +20,23 @@ Returns: [`CombineCommentsWithQuestionResults200Response`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'combine_comments_with_question_results Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn run() -> Result<CombineCommentsWithQuestionResults200Response, Error> {
     let params: CombineCommentsWithQuestionResultsParams = CombineCommentsWithQuestionResultsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        question_id: Some("q-98765".to_string()),
-        question_ids: Some(vec!["q-98765".to_string(), "q-12345".to_string()]),
-        url_id: Some("news/technology/2025/rust-release".to_string()),
-        start_date: Some("2025-01-01T00:00:00Z".to_string()),
+        question_id: Some("q-2026-01-popularity".to_string()),
+        question_ids: Some(vec![
+            "q-2026-01-popularity".to_string(),
+            "q-2025-12-engagement".to_string(),
+        ]),
+        url_id: Some("news/article/2026/01/12/groundbreaking".to_string()),
+        start_date: Some("2025-12-01T00:00:00Z".to_string()),
         force_recalculate: Some(true),
         min_value: Some(0.0),
-        max_value: Some(1.0),
-        limit: Some(100.0),
+        max_value: Some(100.0),
+        limit: Some(250.0),
     };
-    let resp: CombineCommentsWithQuestionResults200Response =
+    let response: CombineCommentsWithQuestionResults200Response =
         combine_comments_with_question_results(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]

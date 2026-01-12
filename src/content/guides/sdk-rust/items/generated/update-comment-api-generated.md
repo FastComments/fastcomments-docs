@@ -17,18 +17,21 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'update_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateCommentParams = UpdateCommentParams {
-    tenant_id: "acme-news-tenant".to_string(),
-    id: "cmt-20251121-0001".to_string(),
-    updatable_comment_params: models::UpdatableCommentParams {
-        content: "Updated: I found additional sources that change my view on this.".to_string(),
-        author_id: Some("user-9876".to_string()),
-        tags: Some(vec!["correction".to_string(), "news".to_string()]),
+async fn run() -> Result<FlagCommentPublic200Response, Error> {
+    let updatable_comment_params: models::UpdatableCommentParams = models::UpdatableCommentParams {
+        content: Some("We've updated the policy — please review the changes.".to_string()),
+        author_name: Some("Jane Doe".to_string()),
         ..Default::default()
-    },
-    context_user_id: Some("moderator-42".to_string()),
-    do_spam_check: Some(true),
-    is_live: Some(true),
-};
-let response: FlagCommentPublic200Response = update_comment(&configuration, params).await?;
+    };
+    let params = UpdateCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article/2026-01-12/comment-873".to_string(),
+        updatable_comment_params,
+        context_user_id: Some("user-9876".to_string()),
+        do_spam_check: Some(true),
+        is_live: Some(false),
+    };
+    let response: FlagCommentPublic200Response = update_comment(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]

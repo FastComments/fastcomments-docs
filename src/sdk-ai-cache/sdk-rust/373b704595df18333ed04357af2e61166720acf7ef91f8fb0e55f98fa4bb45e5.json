@@ -1,0 +1,9 @@
+{
+  "method": "get_user_notifications",
+  "signatureHash": "373b704595df18333ed04357af2e61166720acf7ef91f8fb0e55f98fa4bb45e5",
+  "generatedAt": "2026-01-12T22:02:06.794Z",
+  "codeExample": "let params: GetUserNotificationsParams = GetUserNotificationsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    page_size: Some(25i32),\n    after_id: Some(\"notif_20260110_abc123\".to_string()),\n    include_context: Some(true),\n    after_created_at: Some(1704960000i64),\n    unread_only: Some(true),\n    dm_only: Some(false),\n    no_dm: Some(false),\n    include_translations: Some(true),\n    sso: Some(\"user-9876\".to_string()),\n};\n\nlet notifications: GetUserNotifications200Response = get_user_notifications(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 543,
+  "completionTokens": 854
+}

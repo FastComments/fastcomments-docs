@@ -17,22 +17,23 @@ Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'save_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<SaveComment200Response, Error> {
-    let create_params: models::CreateCommentParams = models::CreateCommentParams {
-        thread_id: "news/article/2025/11/21".to_string(),
-        content: "Great article! The reporting on the budget was thorough and well-sourced.".to_string(),
-        author_name: Some("Jane Doe".to_string()),
-        author_email: Some("jane.doe@acme.com".to_string()),
-    };
-    let params: SaveCommentParams = SaveCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        create_comment_params: create_params,
-        is_live: Some(true),
-        do_spam_check: Some(true),
-        send_emails: Some(false),
-        populate_notifications: Some(true),
-    };
-    let response: SaveComment200Response = save_comment(&configuration, params).await?;
-    Ok(response)
-}
+let create_comment_params: models::CreateCommentParams = models::CreateCommentParams {
+    content: "I found this article very insightful and well-researched.".to_string(),
+    url: "https://news.example.com/articles/2026/fast-comments".to_string(),
+    author_name: Some("Jane Doe".to_string()),
+    author_email: Some("jane.doe@example.com".to_string()),
+    parent_id: None,
+    tags: Some(vec!["technology".to_string(), "opinion".to_string()]),
+};
+
+let params: SaveCommentParams = SaveCommentParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_comment_params,
+    is_live: Some(true),
+    do_spam_check: Some(true),
+    send_emails: Some(false),
+    populate_notifications: Some(true),
+};
+
+let response: SaveComment200Response = save_comment(&configuration, params).await?;
 [inline-code-end]

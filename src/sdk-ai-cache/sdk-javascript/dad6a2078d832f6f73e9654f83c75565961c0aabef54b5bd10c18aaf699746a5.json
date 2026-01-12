@@ -1,0 +1,9 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "dad6a2078d832f6f73e9654f83c75565961c0aabef54b5bd10c18aaf699746a5",
+  "generatedAt": "2026-01-12T21:53:11.125Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-01';\nconst baseNotificationId: string = 'notif-000123';\nconst idSuffix: string | undefined = undefined; // optional parameter example\nconst notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;\nconst result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);\nconsole.log(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 410,
+  "completionTokens": 1251
+}

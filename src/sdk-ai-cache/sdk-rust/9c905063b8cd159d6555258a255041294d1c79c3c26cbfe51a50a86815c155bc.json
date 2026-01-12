@@ -1,0 +1,9 @@
+{
+  "method": "get_email_template_definitions",
+  "signatureHash": "9c905063b8cd159d6555258a255041294d1c79c3c26cbfe51a50a86815c155bc",
+  "generatedAt": "2026-01-12T21:59:55.558Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let config: configuration::Configuration = configuration::Configuration::default();\n    let params: GetEmailTemplateDefinitionsParams = GetEmailTemplateDefinitionsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        locale: Some(\"en-US\".to_string()),\n        include_inactive: Some(false),\n    };\n    let resp: GetEmailTemplateDefinitions200Response = get_email_template_definitions(&config, params).await?;\n    let _definitions = resp;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 420,
+  "completionTokens": 1143
+}

@@ -1,0 +1,9 @@
+{
+  "method": "save_comment",
+  "signatureHash": "bf82636fbd5e233054131b5d313bf1e8524c1cc0c9fbf08dc93344ff171b9b4c",
+  "generatedAt": "2026-01-12T22:01:05.902Z",
+  "codeExample": "let create_comment_params: models::CreateCommentParams = models::CreateCommentParams {\n    content: \"I found this article very insightful and well-researched.\".to_string(),\n    url: \"https://news.example.com/articles/2026/fast-comments\".to_string(),\n    author_name: Some(\"Jane Doe\".to_string()),\n    author_email: Some(\"jane.doe@example.com\".to_string()),\n    parent_id: None,\n    tags: Some(vec![\"technology\".to_string(), \"opinion\".to_string()]),\n};\n\nlet params: SaveCommentParams = SaveCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_comment_params,\n    is_live: Some(true),\n    do_spam_check: Some(true),\n    send_emails: Some(false),\n    populate_notifications: Some(true),\n};\n\nlet response: SaveComment200Response = save_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 525,
+  "completionTokens": 968
+}

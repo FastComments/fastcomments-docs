@@ -1,0 +1,9 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "1c94f550675b6194816511ab6f40b23cec2d050910c3ee577f14be35a864f5b3",
+  "generatedAt": "2026-01-12T21:54:10.331Z",
+  "codeExample": "const tenantId: string = 'acme-corp-7f3';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'new-comment-notification',\n  recipientEmail: 'jane.doe@acme.com',\n  variables: {\n    commenterName: 'Samir Patel',\n    commentText: 'I found this article really helpful — thanks for sharing!',\n    threadUrl: 'https://acme.com/blog/123#comments'\n  },\n  includeUnsubscribeLink: true\n};\nconst locale: string = 'en-US';\nconst response: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 982
+}

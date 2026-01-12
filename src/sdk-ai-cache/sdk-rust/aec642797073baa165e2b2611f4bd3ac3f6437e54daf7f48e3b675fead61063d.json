@@ -1,0 +1,9 @@
+{
+  "method": "put_sso_user",
+  "signatureHash": "aec642797073baa165e2b2611f4bd3ac3f6437e54daf7f48e3b675fead61063d",
+  "generatedAt": "2026-01-12T22:01:02.617Z",
+  "codeExample": "let params: PutSsoUserParams = PutSsoUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"user-12345\".to_string(),\n    update_apisso_user_data: models::UpdateApissoUserData {\n        email: \"jane.doe@acme.com\".to_string(),\n        display_name: \"Jane Doe\".to_string(),\n        external_id: \"sso-9876\".to_string(),\n        roles: vec![\"editor\".to_string()],\n    },\n    update_comments: Some(true),\n};\n\nlet response: PutSsoUserApiResponse = put_sso_user(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 342,
+  "completionTokens": 1111
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "825d73bc28bac983e646f1156c339f16cbe88cd6632419ff873862b24a472563",
+  "generatedAt": "2026-01-12T21:53:33.331Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8a7b3d2f';\n  const result: GetPagesAPIResponse = await getPages(tenantId);\n  const pages: APIPage[] = result.pages ?? [];\n  const firstPageId: string | undefined = pages[0]?.id;\n  console.log(`Tenant ${tenantId} has ${pages.length} pages; first page id: ${firstPageId}`);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 247,
+  "completionTokens": 1638
+}

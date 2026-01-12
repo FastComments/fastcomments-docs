@@ -15,13 +15,10 @@ Returns: [`Option[LockComment_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'lockComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.lockComment(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  broadcastId = "bcast-2025-08-01",
-  sso = "user-session-token-abc123"
-)
+let (response, httpResponse) = client.lockComment(tenantId = "my-tenant-123", commentId = "comment-98765", broadcastId = "", sso = "")
 if response.isSome:
-  let lockInfo = response.get()
-  discard lockInfo
+  let locked = response.get()
+  discard locked
+else:
+  discard httpResponse
 [inline-code-end]

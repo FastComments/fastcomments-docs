@@ -1,0 +1,9 @@
+{
+  "method": "get_question_results",
+  "signatureHash": "60d988290e4e083c21858ea2ace7a318aa20bf7e7fbdf6780fa7617dfd27cd44",
+  "generatedAt": "2026-01-12T22:00:17.822Z",
+  "codeExample": "async fn example_get_question_results() -> Result<(), Error> {\n    let params = GetQuestionResultsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: Some(String::from(\"news/article/2026/01/12/breaking\")),\n        user_id: Some(String::from(\"user-98765\")),\n        start_date: Some(String::from(\"2025-12-01\")),\n        question_id: Some(String::from(\"q-42\")),\n        question_ids: Some(String::from(\"q-42,q-43\")),\n        skip: Some(10.0),\n    };\n    let results: GetQuestionResults200Response = get_question_results(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 489,
+  "completionTokens": 1058
+}

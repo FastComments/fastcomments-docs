@@ -13,11 +13,8 @@ Returns: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getSubscriptions Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
 if response.isSome:
   let subscriptions = response.get()
-  echo "Received subscriptions for tenant my-tenant-123:"
-  echo subscriptions
-else:
-  echo "No subscriptions found, HTTP status: ", $httpResponse.status
+  discard subscriptions
 [inline-code-end]

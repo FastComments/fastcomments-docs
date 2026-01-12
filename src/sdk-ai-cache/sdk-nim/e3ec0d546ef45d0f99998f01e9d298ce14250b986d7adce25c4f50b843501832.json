@@ -1,0 +1,9 @@
+{
+  "method": "createTenant",
+  "signatureHash": "e3ec0d546ef45d0f99998f01e9d298ce14250b986d7adce25c4f50b843501832",
+  "generatedAt": "2026-01-12T21:55:46.015Z",
+  "codeExample": "let (response, httpResponse) = client.createTenant(tenantId = \"my-tenant-123\", createTenantBody = CreateTenantBody(\n  name: \"My Tenant 123\",\n  domain: \"mytenant.example.com\",\n  plan: \"pro\",\n  isActive: true,\n  allowedOrigins: @[\"https://www.example.com\", \"https://admin.example.com\"]\n))\nif response.isSome:\n  let tenantInfo = response.get()\n  discard tenantInfo",
+  "model": "gpt-5-mini",
+  "promptTokens": 390,
+  "completionTokens": 1770
+}

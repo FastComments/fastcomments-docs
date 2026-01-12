@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "ad9b52796744e593779d46a97ec7ec46bf8bab5397fb029b8138f6a50b9b6ad4",
+  "generatedAt": "2026-01-12T21:56:40.324Z",
+  "codeExample": "let (response, httpResponse) = client.getSSOUserById(tenantId = \"my-tenant-123\", id = \"sso-user-456\")\nif response.isSome:\n  let user = response.get()\n  echo \"Fetched SSO user:\"\n  echo user",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 771
+}

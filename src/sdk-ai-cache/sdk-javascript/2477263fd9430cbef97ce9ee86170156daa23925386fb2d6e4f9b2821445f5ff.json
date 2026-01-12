@@ -1,0 +1,9 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "2477263fd9430cbef97ce9ee86170156daa23925386fb2d6e4f9b2821445f5ff",
+  "generatedAt": "2026-01-12T21:54:07.662Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst id: string = 'user_9f3b2a';\nconst redirectURL: string = 'https://app.example.com/onboard?source=login-email';\nconst result: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 719
+}

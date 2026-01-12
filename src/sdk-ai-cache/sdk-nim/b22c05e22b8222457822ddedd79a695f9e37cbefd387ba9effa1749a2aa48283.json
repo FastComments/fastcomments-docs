@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "b22c05e22b8222457822ddedd79a695f9e37cbefd387ba9effa1749a2aa48283",
+  "generatedAt": "2026-01-12T21:55:31.592Z",
+  "codeExample": "let (response, httpResponse) = client.aggregate(\n  tenantId = \"my-tenant-123\",\n  aggregationRequest = AggregationRequest(\n    groupBy = @[\"urlPath\"],\n    filters = @[],\n    size = 50\n  ),\n  parentTenantId = \"parent-tenant-456\",\n  includeStats = true\n)\n\nif response.isSome:\n  let aggregation = response.get()\n  echo \"HTTP status: \", $httpResponse.status\n  echo \"Aggregation result: \", $aggregation",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1457
+}

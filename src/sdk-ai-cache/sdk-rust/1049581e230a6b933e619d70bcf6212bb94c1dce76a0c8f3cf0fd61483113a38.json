@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "1049581e230a6b933e619d70bcf6212bb94c1dce76a0c8f3cf0fd61483113a38",
+  "generatedAt": "2026-01-12T21:58:53.003Z",
+  "codeExample": "let params: AggregateParams = AggregateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    aggregation_request: models::AggregationRequest {\n        query: Some(models::QueryPredicate {\n            field: \"resource\".to_string(),\n            op: \"equals\".to_string(),\n            value: models::QueryPredicateValue::String(\"news/article\".to_string()),\n        }),\n        operations: vec![\n            models::AggregationOperation {\n                op_type: models::AggregationOpType::COUNT,\n                field: Some(\"id\".to_string()),\n                alias: Some(\"comment_count\".to_string()),\n            },\n        ],\n        group_by: Some(vec![\"author_id\".to_string()]),\n        size: Some(50),\n        sort: None,\n    },\n    parent_tenant_id: Some(\"acme-parent-tenant\".to_string()),\n    include_stats: Some(true),\n};\nlet aggregation_response: AggregationResponse = aggregate(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 1040
+}

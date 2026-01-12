@@ -15,15 +15,14 @@ Returns: [`GetCommentText200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'get_comment_text Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment_text() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: GetCommentTextParams = GetCommentTextParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article-2025-11-21-12345".to_string(),
-        edit_key: Some("edit_9f8b7c".to_string()),
-        sso: Some("sso_token_eyJhbGci".to_string()),
+        comment_id: "news/article/2026/01/12/rust-async-example#cmt-42".to_string(),
+        edit_key: Some("edk_3f2b7a9c".to_string()),
+        sso: Some("sso:user:7890:token".to_string()),
     };
     let response: GetCommentText200Response = get_comment_text(&configuration, params).await?;
-    let _response = response;
     Ok(())
 }
 [inline-code-end]

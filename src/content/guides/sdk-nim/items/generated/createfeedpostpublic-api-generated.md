@@ -15,20 +15,22 @@ Returns: [`Option[CreateFeedPostPublic_200_response]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'createFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let params = CreateFeedPostParams(
+  title: "Local Elections Update",
+  content: "Final results will be posted after polls close at 8pm.",
+  authorId: "reporter-789",
+  tags: @["politics", "local"],
+  isPublic: true
+)
 let (response, httpResponse) = client.createFeedPostPublic(
   tenantId = "my-tenant-123",
-  createFeedPostParams = CreateFeedPostParams(
-    title = "New Feature: Real-time Comments",
-    content = "FastComments now supports real-time threading and moderation across articles.",
-    authorId = "editor-42",
-    tags = @["product","release","comments"],
-    isPublished = true
-  ),
-  broadcastId = "",
-  sso = ""
+  createFeedPostParams = params,
+  broadcastId = "bcast-456",
+  sso = "sso-token-abc"
 )
-
 if response.isSome:
   let created = response.get()
-  echo "Created feed post:", created
+  echo "created post id: ", created.id
+else:
+  echo "request failed, status: ", httpResponse.status
 [inline-code-end]

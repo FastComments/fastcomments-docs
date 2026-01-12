@@ -15,15 +15,10 @@ Returns: [`Option[GetUserBadgeProgressList_200_response]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressList(
-  tenantId = "my-tenant-123",
-  userId = "user-98765",
-  limit = 50.0,
-  skip = 0.0
-)
+let (response, httpResponse) = client.getUserBadgeProgressList(tenantId = "my-tenant-123", userId = "user-456", limit = 25.0, skip = 0.0)
 if response.isSome:
   let badgeProgress = response.get()
-  echo "Received badge progress: ", $badgeProgress
+  echo "Retrieved badge progress for user-456"
 else:
-  echo "No badge progress returned. HTTP status: ", $httpResponse.status
+  echo "No badge progress returned"
 [inline-code-end]

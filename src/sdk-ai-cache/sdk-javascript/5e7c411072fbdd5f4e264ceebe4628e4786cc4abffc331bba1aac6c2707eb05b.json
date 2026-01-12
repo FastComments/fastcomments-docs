@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "5e7c411072fbdd5f4e264ceebe4628e4786cc4abffc331bba1aac6c2707eb05b",
+  "generatedAt": "2026-01-12T21:53:37.963Z",
+  "codeExample": "const tenantId: string = \"tenant_fc_7a9d3b\";\nconst email: string = \"laura.powell@dailynews.com\";\nconst response: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId, email);\nconst ssoUser: APISSOUser | undefined = response.user;\nconst ssoUserEmail: string | undefined = ssoUser?.email;",
+  "model": "gpt-5-mini",
+  "promptTokens": 269,
+  "completionTokens": 1249
+}

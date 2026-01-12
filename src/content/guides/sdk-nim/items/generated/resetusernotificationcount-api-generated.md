@@ -15,8 +15,8 @@ Returns: [`Option[ResetUserNotifications_200_response]`](https://github.com/Fast
 [inline-code-start]
 let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "")
 if response.isSome:
-  let resetInfo = response.get()
-  echo "Notifications reset:", resetInfo
+  let resetResult = response.get()
+  echo "Reset notifications response received"
 else:
-  echo "Reset failed"
+  echo "No response body; status:", httpResponse.status
 [inline-code-end]

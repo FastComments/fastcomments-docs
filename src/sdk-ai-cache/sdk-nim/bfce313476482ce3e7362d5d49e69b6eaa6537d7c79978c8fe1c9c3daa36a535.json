@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "bfce313476482ce3e7362d5d49e69b6eaa6537d7c79978c8fe1c9c3daa36a535",
+  "generatedAt": "2026-01-12T21:56:01.021Z",
+  "codeExample": "let (response, httpResponse) = client.deleteQuestionResult(tenantId = \"my-tenant-123\", id = \"question-result-789\")\nif response.isSome:\n  let result = response.get()\n  echo \"Deleted question result:\", result\nelse:\n  echo \"No result returned, HTTP status:\", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 653
+}

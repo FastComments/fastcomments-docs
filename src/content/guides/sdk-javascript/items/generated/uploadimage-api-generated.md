@@ -17,11 +17,9 @@ Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'uploadImage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc-tenant-84b9f3c2";
-const imageData: Uint8Array = new Uint8Array([255,216,255,224,0,16,74,70,73,70]);
-const file: Blob = new Blob([imageData], { type: "image/jpeg" });
-const sizePreset: SizePreset = { name: "medium", maxWidth: 1024, maxHeight: 768 };
-const urlId: string = "products/blue-widget-2025/hero-image";
-const uploadResult: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId);
-const uploadResultMinimal: UploadImageResponse = await uploadImage(tenantId, file);
+const tenantId: string = 'tenant-4f3b2c9'
+const file: Blob = new Blob([new Uint8Array([137,80,78,71,13,10,26,10])], { type: 'image/png' })
+const sizePreset: SizePreset = { name: 'medium', maxWidth: 1024, maxHeight: 768 }
+const urlId: string = 'article-2026-01-12'
+const result: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId)
 [inline-code-end]

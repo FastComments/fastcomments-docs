@@ -1,0 +1,9 @@
+{
+  "method": "get_sso_user_by_id",
+  "signatureHash": "9f7aaf6721bb8468f03ef9505c5fac5d63ae91777557e32ec51c6ccb2a3e4d85",
+  "generatedAt": "2026-01-12T22:00:25.630Z",
+  "codeExample": "async fn fetch_sso_user() -> Result<GetSsoUserByIdApiResponse, Error> {\n    let params = GetSsoUserByIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"jdoe-89\".to_string(),\n        expand: Some(vec![\"profile\".to_string(), \"roles\".to_string()]),\n    };\n    let sso_user: GetSsoUserByIdApiResponse = get_sso_user_by_id(&configuration, params).await?;\n    Ok(sso_user)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 318,
+  "completionTokens": 1342
+}

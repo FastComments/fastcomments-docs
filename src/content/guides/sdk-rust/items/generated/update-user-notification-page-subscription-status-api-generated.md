@@ -20,13 +20,16 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'update_user_notification_page_subscription_status Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    url_id: "news-article-12345".to_string(),
-    url: "https://acme.example.com/news/2025/11/21/new-product".to_string(),
-    page_title: "Acme Launches New Product".to_string(),
-    subscribed_or_unsubscribed: "subscribed".to_string(),
-    sso: Some("sso_user_jwt_eyJhbGciOiJIUzI1Ni...".to_string()),
-};
-let response: UpdateUserNotificationStatus200Response = update_user_notification_page_subscription_status(&configuration, params).await?;
+async fn run_update() -> Result<UpdateUserNotificationStatus200Response, Error> {
+    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: String::from("news-article-2026-01-12"),
+        url: String::from("https://acme.example.com/news/rust-2-0"),
+        page_title: String::from("Acme News — Rust 2.0 Released"),
+        subscribed_or_unsubscribed: String::from("subscribed"),
+        sso: Some(String::from("sso-jwt-abc123")),
+    };
+    let resp: UpdateUserNotificationStatus200Response = update_user_notification_page_subscription_status(&configuration, params).await?;
+    Ok(resp)
+}
 [inline-code-end]

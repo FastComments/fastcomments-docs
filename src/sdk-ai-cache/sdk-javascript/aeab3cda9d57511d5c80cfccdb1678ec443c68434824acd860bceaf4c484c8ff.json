@@ -1,0 +1,9 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "aeab3cda9d57511d5c80cfccdb1678ec443c68434824acd860bceaf4c484c8ff",
+  "generatedAt": "2026-01-12T21:54:49.919Z",
+  "codeExample": "const tenantId: string = 'tenant_7a3f2b';\nconst urlId: string = 'site-homepage';\nconst optionalUrlId: string | undefined = undefined;\nconst userIdWS: string = 'ws-user-9843';\nconst startTime: number = Date.now() - 24 * 60 * 60 * 1000;\nconst endTime: number = Date.now();\nconst eventLog: GetEventLog200Response = await getGlobalEventLog(tenantId, optionalUrlId ?? urlId, userIdWS, startTime, endTime);",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 1345
+}

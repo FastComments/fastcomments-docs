@@ -1,0 +1,9 @@
+{
+  "method": "getTenants",
+  "signatureHash": "188af759d4511c8bc35da42f738ded71a0c74ffd9457791a2d4e9df21535b4c1",
+  "generatedAt": "2026-01-12T21:53:43.886Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_9f2d1b7c';\n  const meta: string = 'include=domains,billing,customConfig';\n  const skip: number = 20;\n  const response: GetTenants200Response = await getTenants(tenantId, meta, skip);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 661
+}

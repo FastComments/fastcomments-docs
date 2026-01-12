@@ -16,18 +16,20 @@ Returns: [`AddSsoUserApiResponse`](https://github.com/FastComments/fastcomments-
 let params: AddSsoUserParams = AddSsoUserParams {
     tenant_id: "acme-corp-tenant".to_string(),
     create_apisso_user_data: models::CreateApissoUserData {
-        user_id: "jdoe".to_string(),
-        email: "jdoe@acme.com".to_string(),
-        display_name: Some("John Doe".to_string()),
-        roles: Some(vec!["editor".to_string(), "contributor".to_string()]),
-        external_id: Some("ldap:uid=12345,ou=users,dc=acme,dc=com".to_string()),
-        avatar_url: Some("https://acme.com/avatars/jdoe.png".to_string()),
-        metadata: Some(std::collections::HashMap::from([
-            ("department".to_string(), "Engineering".to_string()),
-            ("location".to_string(), "NYC".to_string()),
-        ])),
-        verified: Some(true),
+        username: "jane.doe".to_string(),
+        email: "jane.doe@acme-corp.com".to_string(),
+        display_name: Some("Jane Doe".to_string()),
+        external_id: Some("sso-12345".to_string()),
+        avatar_url: Some("https://acme-corp.com/avatars/jane.jpg".to_string()),
+        roles: Some(vec!["author".to_string(), "moderator".to_string()]),
+        metadata: Some({
+            let mut m = std::collections::HashMap::new();
+            m.insert("team".to_string(), "editorial".to_string());
+            m.insert("tier".to_string(), "premium".to_string());
+            m
+        }),
     },
 };
+
 let response: AddSsoUserApiResponse = add_sso_user(&configuration, params).await?;
 [inline-code-end]

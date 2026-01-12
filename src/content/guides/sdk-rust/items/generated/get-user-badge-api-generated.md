@@ -13,13 +13,12 @@ Returns: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'get_user_badge Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_user_badge() -> Result<GetUserBadge200Response, Error> {
-    let maybe_tenant: Option<String> = Some("acme-corp-tenant".to_string());
+pub async fn fetch_user_badge() -> Result<GetUserBadge200Response, Error> {
     let params: GetUserBadgeParams = GetUserBadgeParams {
-        tenant_id: maybe_tenant.unwrap(),
-        id: "top-commenter-2025".to_string(),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        id: "gold-contributor-1234".to_owned(),
     };
-    let badge: GetUserBadge200Response = get_user_badge(&configuration, params).await?;
-    Ok(badge)
+    let response: GetUserBadge200Response = get_user_badge(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]

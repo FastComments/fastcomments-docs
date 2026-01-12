@@ -15,8 +15,6 @@ Returns: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComment
 [inline-code-start]
 let (response, httpResponse) = client.deleteUserBadge(tenantId = "my-tenant-123", id = "badge-456")
 if response.isSome:
-  let deletedBadge = response.get()
-  echo "Badge deleted for tenant my-tenant-123"
-else:
-  echo "No badge returned"
+  let badge = response.get()
+  echo badge
 [inline-code-end]

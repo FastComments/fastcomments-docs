@@ -1,0 +1,9 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "5f10658be8ecbe920407299fc6f942dc488e9716b003b9ba053085cb985bcbf7",
+  "generatedAt": "2026-01-12T21:54:59.836Z",
+  "codeExample": "const tenantId: string = \"tenant_prod_81f4b3\";\nconst commentId: string = \"cmt_9a2f4e7b\";\nconst broadcastId: string = \"broadcast_2026_01_12_live\";\nconst mention: CommentUserMentionInfo = { userId: \"user_123\", displayName: \"Jane Doe\" };\nconst hashtag: CommentUserHashTagInfo = { tag: \"product-feedback\" };\nconst commentTextUpdateRequest: CommentTextUpdateRequest = {\n  text: \"Thanks for the update — tagging @Jane Doe for visibility. #product-feedback\",\n  mentions: [mention],\n  hashtags: [hashtag]\n};\nconst editKey: string = \"editkey_5f6b7c9d\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature\";\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 481,
+  "completionTokens": 814
+}

@@ -16,20 +16,16 @@ Returns: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'block_user_from_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_block() -> Result<(), Error> {
-    let params: BlockUserFromCommentParams = BlockUserFromCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/2025/11/21/comment-12345".to_string(),
-        block_from_comment_params: models::BlockFromCommentParams {
-            reason: Some("Repeated abusive language".to_string()),
-            duration_hours: Some(168),
-            notify: Some(true),
-        },
-        user_id: Some("user-9876".to_string()),
-        anon_user_id: None,
-    };
-
-    let response: BlockFromCommentPublic200Response = block_user_from_comment(&configuration, params).await?;
-    Ok(())
-}
+let params: BlockUserFromCommentParams = BlockUserFromCommentParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    id: "news/article/2026-01-11/comment/7890".to_string(),
+    block_from_comment_params: models::BlockFromCommentParams {
+        duration_minutes: Some(1440),
+        reason: Some("Repeated harassment and hate speech".to_string()),
+        block_ip: Some(true),
+    },
+    user_id: Some("user_9876".to_string()),
+    anon_user_id: Some("anon_42".to_string()),
+};
+let response: BlockFromCommentPublic200Response = block_user_from_comment(&configuration, params).await?;
 [inline-code-end]

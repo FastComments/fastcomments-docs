@@ -1,0 +1,9 @@
+{
+  "method": "delete_hash_tag",
+  "signatureHash": "2fdb00654ca3756b806829718a45ec46756950c05efac62864449c16c79ab772",
+  "generatedAt": "2026-01-12T21:59:28.468Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteHashTagParams = DeleteHashTagParams {\n        tag: \"news/politics\".to_string(),\n        tenant_id: Some(\"acme-corp-tenant\".to_string()),\n        delete_hash_tag_request: Some(models::DeleteHashTagRequest::default()),\n    };\n    let response: FlagCommentPublic200Response = delete_hash_tag(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 447,
+  "completionTokens": 871
+}

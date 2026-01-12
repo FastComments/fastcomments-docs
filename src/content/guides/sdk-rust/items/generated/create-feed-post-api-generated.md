@@ -17,34 +17,39 @@ Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'create_feed_post Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateFeedPostParams = CreateFeedPostParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_feed_post_params: models::CreateFeedPostParams {
-        title: "Major Outage Affecting Metro Area".to_string(),
-        body: "We are investigating reports of an outage impacting internet and voice services across the metro area. Engineers are on site and updates will follow.".to_string(),
-        author_id: "newsroom-ops".to_string(),
-        media_items: vec![
-            FeedPostMediaItem {
-                asset: FeedPostMediaItemAsset {
-                    url: "https://cdn.example.com/images/outage-map.png".to_string(),
-                    mime_type: "image/png".to_string()
-                },
-                caption: Some("Affected neighborhoods".to_string())
-            }
-        ],
-        links: vec![
-            FeedPostLink {
-                url: "https://status.example.com/incidents/2025-11-21".to_string(),
-                title: Some("Incident details".to_string())
-            }
-        ],
-        tags: vec!["outage".to_string(), "status".to_string()],
-        allow_comments: Some(true)
-    },
-    broadcast_id: Some("live-feed-2025-11-21".to_string()),
-    is_live: Some(true),
-    do_spam_check: Some(true),
-    skip_dup_check: Some(false)
-};
-let response: CreateFeedPost200Response = create_feed_post(&configuration, params).await?;
+async fn run_create_post() -> Result<CreateFeedPost200Response, Error> {
+    let params: CreateFeedPostParams = CreateFeedPostParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_feed_post_params: models::CreateFeedPostParams {
+            title: "Breaking: Rust 2.0 Released".to_string(),
+            content: "Rust 2.0 brings performance and ergonomics improvements.".to_string(),
+            author_id: "editor-123".to_string(),
+            media: vec![
+                models::FeedPostMediaItem {
+                    kind: "image".to_string(),
+                    assets: vec![
+                        models::FeedPostMediaItemAsset {
+                            url: "https://cdn.acme.com/images/rust2.png".to_string(),
+                            mime_type: Some("image/png".to_string()),
+                        }
+                    ],
+                }
+            ],
+            links: vec![
+                models::FeedPostLink {
+                    url: "https://acme.news/rust-2".to_string(),
+                    title: Some("Full article".to_string()),
+                }
+            ],
+            tags: vec!["rust".to_string(), "release".to_string()],
+            visibility: Some("public".to_string()),
+        },
+        broadcast_id: Some("global-feed".to_string()),
+        is_live: Some(true),
+        do_spam_check: Some(true),
+        skip_dup_check: Some(false),
+    };
+    let response: CreateFeedPost200Response = create_feed_post(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]

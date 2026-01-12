@@ -1,0 +1,9 @@
+{
+  "method": "lock_comment",
+  "signatureHash": "aa15fe6de53c7a265f2588a5a259c37c977531f553ab2073cadb0921eed83ab3",
+  "generatedAt": "2026-01-12T22:02:19.422Z",
+  "codeExample": "async fn lock_comment_example() -> Result<(), Error> {\n    let params: LockCommentParams = LockCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/98765#comment-42\".to_string(),\n        broadcast_id: \"live-coverage-98765\".to_string(),\n        sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload\".to_string()),\n    };\n\n    let response: LockComment200Response = lock_comment(&configuration, params).await?;\n    let _ = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 915
+}

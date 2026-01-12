@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "1a8e679cc4bf874a3e0e36db80bd481b5ae59985e36224c086abf73ed72328ac",
+  "generatedAt": "2026-01-12T21:58:05.913Z",
+  "codeExample": "let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = \"my-tenant-123\", urlIdWS = \"news/article-title\", userIds = \"user-987,user-654\")\nif response.isSome:\n  let statuses = response.get()\n  echo statuses\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 907
+}

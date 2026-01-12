@@ -1,0 +1,9 @@
+{
+  "method": "create_comment_public",
+  "signatureHash": "83d173c6e6b38064e947799bf2b22818c3c5ebeef6e347308eae6c39e3c06f64",
+  "generatedAt": "2026-01-12T22:01:54.360Z",
+  "codeExample": "let params: CreateCommentPublicParams = CreateCommentPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    url_id: \"news/article/2026/fastcomments-launch\".to_string(),\n    broadcast_id: \"live-2026-01-12\".to_string(),\n    comment_data: models::CommentData {\n        content: \"Excited about the launch — congrats to the team!\".to_string(),\n        user_display_name: Some(\"Jane Doe\".to_string()),\n        attachments: Vec::new(),\n        mentions: Vec::new(),\n    },\n    session_id: Some(\"sess_01HXYZabc123\".to_string()),\n    sso: Some(\"sso-token-987654\".to_string()),\n};\nlet response: CreateCommentPublic200Response = create_comment_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 515,
+  "completionTokens": 1335
+}

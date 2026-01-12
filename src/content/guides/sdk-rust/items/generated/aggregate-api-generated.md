@@ -21,27 +21,24 @@ Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-ru
 let params: AggregateParams = AggregateParams {
     tenant_id: "acme-corp-tenant".to_string(),
     aggregation_request: models::AggregationRequest {
-        filters: Some(vec![
-            models::QueryPredicate {
-                field: "path".to_string(),
-                operator: "equals".to_string(),
-                value: models::QueryPredicateValue::String("news/article".to_string()),
-            },
-        ]),
+        query: Some(models::QueryPredicate {
+            field: "resource".to_string(),
+            op: "equals".to_string(),
+            value: models::QueryPredicateValue::String("news/article".to_string()),
+        }),
         operations: vec![
             models::AggregationOperation {
-                op: models::AggregationOpType::Count,
-                field: None,
+                op_type: models::AggregationOpType::COUNT,
+                field: Some("id".to_string()),
+                alias: Some("comment_count".to_string()),
             },
         ],
         group_by: Some(vec!["author_id".to_string()]),
-        sort: Some(vec![
-            models::AggregationRequestSort { field: "count".to_string(), direction: "desc".to_string() },
-        ]),
-        limit: Some(100),
+        size: Some(50),
+        sort: None,
     },
-    parent_tenant_id: Some("acme-global".to_string()),
+    parent_tenant_id: Some("acme-parent-tenant".to_string()),
     include_stats: Some(true),
 };
-let aggregation: AggregationResponse = aggregate(&configuration, params).await?;
+let aggregation_response: AggregationResponse = aggregate(&configuration, params).await?;
 [inline-code-end]

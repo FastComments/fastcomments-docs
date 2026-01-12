@@ -13,13 +13,12 @@ Returns: [`GetUserBadge200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acmecorp-prod-01';
-const userId: string = 'usr_78a9b2c4';
-const result: GetUserBadge200Response = await getUserBadge(tenantId, userId);
-const options: { includeDetails?: boolean } = { includeDetails: true };
-const badgeName: string | undefined = (result as any)?.userBadge?.name;
-if (options.includeDetails) {
-  const badgeDescription: string | undefined = (result as any)?.userBadge?.description;
-  void badgeDescription;
+async function demoFetch(tenantId: string, id: string, includeRelated?: boolean): Promise<GetUserBadge200Response> {
+  const response: GetUserBadge200Response = await getUserBadge(tenantId, id);
+  return response;
 }
+
+const tenantId: string = 'acme-enterprises-78';
+const badgeId: string = '9f8b7c6d-5e4f-4012-8a3b-0c1d2e3f4a5b';
+const badgeResponse: GetUserBadge200Response = await getUserBadge(tenantId, badgeId);
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "get_tenant_daily_usages",
+  "signatureHash": "64e26dd6b84304bc456aae6137bac3acf8de6f82ab5162c3c2d3544a120ef72e",
+  "generatedAt": "2026-01-12T22:00:21.797Z",
+  "codeExample": "async fn example() -> Result<GetTenantDailyUsages200Response, Error> {\n    let params: GetTenantDailyUsagesParams = GetTenantDailyUsagesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        year_number: Some(2024.0),\n        month_number: Some(9.0),\n        day_number: Some(15.0),\n        skip: Some(0.0),\n    };\n    let response: GetTenantDailyUsages200Response = get_tenant_daily_usages(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 482,
+  "completionTokens": 771
+}

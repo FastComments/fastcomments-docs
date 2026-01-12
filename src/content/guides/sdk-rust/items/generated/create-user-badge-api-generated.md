@@ -13,17 +13,20 @@ Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'create_user_badge Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateUserBadgeParams = CreateUserBadgeParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_user_badge_params: models::CreateUserBadgeParams {
-        name: "Top Contributor".to_string(),
-        description: Some("Awarded for 100 helpful comments".to_string()),
-        icon_url: Some("https://acme-corp.com/assets/badges/top_contributor.png".to_string()),
-        criteria: Some("100_helpful_comments".to_string()),
-        weight: Some(10),
-        active: Some(true),
-    },
-};
-
-let response: CreateUserBadge200Response = create_user_badge(&configuration, params).await?;
+async fn example_create_user_badge() -> Result<CreateUserBadge200Response, Error> {
+    let params: CreateUserBadgeParams = CreateUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_user_badge_params: models::CreateUserBadgeParams {
+            user_id: "user-789".to_string(),
+            badge_key: "top_contributor".to_string(),
+            title: Some("Top Contributor".to_string()),
+            description: Some("Awarded for exceptional contributions to the community".to_string()),
+            image_url: Some("https://cdn.acme.com/badges/top_contributor.png".to_string()),
+            active: Some(true),
+            expires_at: None,
+        },
+    };
+    let response: CreateUserBadge200Response = create_user_badge(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]

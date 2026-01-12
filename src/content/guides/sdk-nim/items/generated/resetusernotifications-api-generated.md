@@ -27,10 +27,9 @@ let (response, httpResponse) = client.resetUserNotifications(
   noDm = false,
   sso = ""
 )
-
 if response.isSome:
-  let resetResp = response.get()
-  echo "ResetUserNotifications succeeded: ", $resetResp
+  let resetResult = response.get()
+  echo "ResetUserNotifications succeeded: ", resetResult
 else:
-  echo "No ResetUserNotifications response, HTTP status: ", httpResponse.status
+  echo "ResetUserNotifications returned no body, status: ", httpResponse.status
 [inline-code-end]

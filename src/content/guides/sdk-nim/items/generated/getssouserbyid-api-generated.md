@@ -13,10 +13,9 @@ Returns: [`Option[GetSSOUserByIdAPIResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getSSOUserById Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "")
+let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "sso-user-456")
 if response.isSome:
-  let ssoUser = response.get()
-  discard ssoUser
-else:
-  discard httpResponse
+  let user = response.get()
+  echo "Fetched SSO user:"
+  echo user
 [inline-code-end]

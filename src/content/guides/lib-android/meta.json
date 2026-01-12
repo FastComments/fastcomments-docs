@@ -1,0 +1,72 @@
+{
+  "name": "Android Library",
+  "pageHeader": "FastComments Android Library",
+  "itemsOrdered": [
+    {
+      "name": "Features",
+      "file": "generated/features-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Requirements",
+      "file": "generated/requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "generated/installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Basic Usage",
+      "file": "generated/basic-usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Secure SSO Authentication",
+      "file": "generated/secure-sso-authentication-readme-generated.md",
+      "subCat": "Authentication",
+      "type": "readme"
+    },
+    {
+      "name": "Feed Integration",
+      "file": "generated/feed-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live Chat Integration",
+      "file": "generated/live-chat-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Example Projects",
+      "file": "generated/example-projects-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Configuration Options",
+      "file": "generated/configuration-options-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Comprehensive Theme Customization",
+      "file": "generated/comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Memory Management",
+      "file": "generated/memory-management-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

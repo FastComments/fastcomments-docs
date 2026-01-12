@@ -23,17 +23,17 @@ Returns: [`GetFeedPostsPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'get_feed_posts_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_feed() -> Result<GetFeedPostsPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: GetFeedPostsPublicParams = GetFeedPostsPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
         after_id: Some("post_98765".to_string()),
         limit: Some(25),
-        tags: Some(vec!["news/article".to_string(), "technology".to_string()]),
-        sso: Some("user-12345".to_string()),
+        tags: Some(vec!["news".to_string(), "technology".to_string()]),
+        sso: Some("sso-token-abc123".to_string()),
         is_crawler: Some(false),
         include_user_info: Some(true),
     };
     let response: GetFeedPostsPublic200Response = get_feed_posts_public(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]

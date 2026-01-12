@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "01a15f183787dc15ed27f468f78d6e4b507da65b0e29c0337a7d3c8781babcd8",
+  "generatedAt": "2026-01-12T21:58:19.054Z",
+  "codeExample": "let (response, httpResponse) = client.resetUserNotificationCount(tenantId = \"my-tenant-123\", sso = \"\")\nif response.isSome:\n  let resetResult = response.get()\n  echo \"Reset notifications response received\"\nelse:\n  echo \"No response body; status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 1160
+}

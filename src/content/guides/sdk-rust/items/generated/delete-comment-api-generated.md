@@ -15,14 +15,14 @@ Returns: [`DeleteComment200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'delete_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete(configuration: configuration::Configuration) -> Result<DeleteComment200Response, Error> {
+async fn run() -> Result<DeleteComment200Response, Error> {
     let params: DeleteCommentParams = DeleteCommentParams {
-        tenant_id: "acme-news-tenant".to_string(),
-        id: "cmt-7890".to_string(),
-        context_user_id: Some("user-12345".to_string()),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "comment-8a7f3c2b-4d9e-4f1a-9c2b-1e6f3a9b2d4c".to_string(),
+        context_user_id: Some("user-3521".to_string()),
         is_live: Some(true),
     };
-    let response: DeleteComment200Response = delete_comment(&configuration, params).await?;
+    let response: DeleteComment200Response = delete_comment(configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getModerator",
+  "signatureHash": "2b15dcde90797daa871421072665c6b1c0d9077eed819f57f81c71ddb333da6c",
+  "generatedAt": "2026-01-12T21:56:30.868Z",
+  "codeExample": "let (response, httpResponse) = client.getModerator(tenantId = \"my-tenant-123\", id = \"mod-98765\")\nif response.isSome:\n  let moderator = response.get()\n  discard moderator",
+  "model": "gpt-5-mini",
+  "promptTokens": 386,
+  "completionTokens": 1334
+}

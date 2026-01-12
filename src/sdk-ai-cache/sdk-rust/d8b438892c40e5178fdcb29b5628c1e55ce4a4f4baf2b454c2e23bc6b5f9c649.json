@@ -1,0 +1,9 @@
+{
+  "method": "delete_vote",
+  "signatureHash": "d8b438892c40e5178fdcb29b5628c1e55ce4a4f4baf2b454c2e23bc6b5f9c649",
+  "generatedAt": "2026-01-12T21:59:38.570Z",
+  "codeExample": "async fn run_delete_vote() -> Result<(), Error> {\n    let params: DeleteVoteParams = DeleteVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/67890/comment/12345\".to_string(),\n        edit_key: Some(\"user-editkey-7f3b\".to_string()),\n    };\n    let response: DeleteCommentVote200Response = delete_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 748
+}

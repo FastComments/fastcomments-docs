@@ -14,14 +14,15 @@ Returns: [`CheckedCommentsForBlocked200Response`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_checked_comments() -> Result<(), Error> {
+async fn run_checked_comments() -> Result<CheckedCommentsForBlocked200Response, Error> {
+    let config: configuration::Configuration = configuration::Configuration::default();
     let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {
-        tenant_id: String::from("acme-news-tenant"),
-        comment_ids: String::from("cmt-9876,cmt-1122"),
-        sso: Some(String::from("sso-jwt-abc123")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_ids: "cmt-12345,cmt-67890".to_string(),
+        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example_payload".to_string()),
     };
-    let checked: CheckedCommentsForBlocked200Response =
-        checked_comments_for_blocked(&configuration, params).await?;
-    Ok(())
+    let response: CheckedCommentsForBlocked200Response =
+        checked_comments_for_blocked(&config, params).await?;
+    Ok(response)
 }
 [inline-code-end]

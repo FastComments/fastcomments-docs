@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "bad0b0c16f8f1361dd2147d5d413ac1ceb79d281f21b1983f462413bbc327869",
+  "generatedAt": "2026-01-12T21:52:51.728Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-01';\nconst questionResultId: string = '6f1a2b3c-4d5e-6789-abcd-ef0123456789';\nconst deletedResult: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, questionResultId);\nconsole.log(deletedResult);",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 852
+}

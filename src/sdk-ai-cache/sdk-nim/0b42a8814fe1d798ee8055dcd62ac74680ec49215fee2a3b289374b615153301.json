@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "0b42a8814fe1d798ee8055dcd62ac74680ec49215fee2a3b289374b615153301",
+  "generatedAt": "2026-01-12T21:58:03.501Z",
+  "codeExample": "let (response, httpResponse) = client.getFeedPostsPublic(\n  tenantId = \"my-tenant-123\",\n  afterId = \"\",\n  limit = 0,\n  tags = @[],\n  sso = \"\",\n  isCrawler = false,\n  includeUserInfo = false\n)\n\nif response.isSome:\n  let feed = response.get()\n  echo \"Retrieved feed posts\"\nelse:\n  echo \"No feed posts returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 1058
+}

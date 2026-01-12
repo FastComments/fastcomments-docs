@@ -1,0 +1,9 @@
+{
+  "method": "get_comment_vote_user_names",
+  "signatureHash": "aceb822ac4b22ce493f3d4bc424200e15972435217df250a32d46c654b610033",
+  "generatedAt": "2026-01-12T22:01:57.197Z",
+  "codeExample": "async fn example_get_vote_users() -> Result<GetCommentVoteUserNames200Response, Error> {\n    let params: GetCommentVoteUserNamesParams = GetCommentVoteUserNamesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345\".to_string(),\n        dir: 1,\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let response: GetCommentVoteUserNames200Response = get_comment_vote_user_names(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 769
+}

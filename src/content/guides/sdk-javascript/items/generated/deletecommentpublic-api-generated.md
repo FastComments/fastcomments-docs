@@ -16,11 +16,17 @@ Returns: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'deleteCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42ac9b0f';
-const commentId: string = 'cmt_5f8b7d3a9c';
-const broadcastId: string = 'broadcast_2025-11-22T12:00:00Z';
-const editKey: string = 'edk-3b9f7a2c';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.signature';
-const result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
-console.log(result);
+const tenantId: string = "acme-newsroom-tenant-001";
+const commentId: string = "cmt_20260112_9f2b3a";
+const broadcastId: string = "homepage-article-452";
+const editKey: string | undefined = "edit_7d3f6a9b";
+const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature";
+
+const result: DeleteCommentPublic200Response = await deleteCommentPublic(
+  tenantId,
+  commentId,
+  broadcastId,
+  editKey,
+  sso
+);
 [inline-code-end]

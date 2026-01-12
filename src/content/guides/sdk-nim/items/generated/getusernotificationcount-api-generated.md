@@ -13,10 +13,10 @@ Returns: [`Option[GetUserNotificationCount_200_response]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'getUserNotificationCount Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummySignature")
+let (response, httpResponse) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "")
 if response.isSome:
-  let countResp = response.get()
-  discard countResp
+  let data = response.get()
+  echo "Unread notifications: ", $data.unreadCount
 else:
-  discard httpResponse
+  echo "No notification count available"
 [inline-code-end]

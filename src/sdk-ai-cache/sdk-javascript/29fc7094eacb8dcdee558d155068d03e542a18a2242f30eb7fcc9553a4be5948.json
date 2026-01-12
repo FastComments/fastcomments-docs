@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "29fc7094eacb8dcdee558d155068d03e542a18a2242f30eb7fcc9553a4be5948",
+  "generatedAt": "2026-01-12T21:54:30.277Z",
+  "codeExample": "const tenantId: string = 'tenant_84f3b2';\nconst id: string = 'user_7a9d1c';\nconst updateComments: string = 'Promoted to moderator and updated contact email';\nconst updateTenantUserBody: UpdateTenantUserBody = {\n  email: 'jane.doe+mod@example.com',\n  displayName: 'Jane D.',\n  roles: ['moderator'],\n  isBanned: false,\n  metadata: { department: 'community' }\n};\nconst result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 431,
+  "completionTokens": 844
+}

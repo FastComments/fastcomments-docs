@@ -35,15 +35,16 @@ let (response, httpResponse) = client.getComments(
   skipChildren = 0,
   limitChildren = 5,
   maxTreeDepth = 3,
-  urlId = "news/article-2025-innovation",
-  userId = "user-987",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "product-launch",
+  urlId = "news/2026/01/important-announcement",
+  userId = "user-789",
+  anonUserId = "anon-456",
+  contextUserId = "ctx-321",
+  hashTag = "release",
   parentId = "",
-  direction = SortDirections.Desc)
+  direction = SortDirections.Newest
+)
 
 if response.isSome:
   let comments = response.get()
-  discard comments
+  echo "Fetched comments for url:", " news/2026/01/important-announcement"
 [inline-code-end]

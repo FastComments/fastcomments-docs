@@ -13,19 +13,23 @@ Returns: [`AddPageApiResponse`](https://github.com/FastComments/fastcomments-rus
 
 [inline-code-attrs-start title = 'add_page Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn create_page() -> Result<AddPageApiResponse, Error> {
     let params: AddPageParams = AddPageParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_api_page_data: models::CreateApiPageData {
-            path: "news/article/2025-election".to_string(),
-            title: "2025 Election Analysis".to_string(),
-            url: Some("https://acme.example.com/news/2025-election".to_string()),
-            description: Some("In-depth analysis of the 2025 election".to_string()),
-            tags: Some(vec!["politics".to_string(), "election".to_string()]),
-            is_active: Some(true),
-        },
+            path: "news/article".to_string(),
+            title: "Rust 2.0 Released".to_string(),
+            url: Some("https://acme.example/news/rust-2".to_string()),
+            allow_comments: Some(true),
+            tags: Some(vec!["rust".to_string(), "release".to_string()]),
+            metadata: Some(std::collections::HashMap::from([
+                ("author".to_string(), "Jane Doe".to_string()),
+                ("section".to_string(), "technology".to_string())
+            ])),
+            published: Some(true)
+        }
     };
     let response: AddPageApiResponse = add_page(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "createModerator",
+  "signatureHash": "754f9e9691bd276c8619863730f8f60d2ebfa17cc0ee479ae94aa5330b066ed5",
+  "generatedAt": "2026-01-12T21:52:20.807Z",
+  "codeExample": "const tenantId: string = \"tenant_prod_us-east_01\";\nconst createModeratorBody: CreateModeratorBody = {\n  email: \"maria.lopez+mod@fastcompany.com\",\n  username: \"mlopez_mod\",\n  displayName: \"Maria Lopez\",\n  roles: [\"content_moderator\"],\n  notifyOnReports: true,\n  metadata: { region: \"us-east\", team: \"community\" }\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 757
+}

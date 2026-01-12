@@ -1,0 +1,9 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "d4f20983fb82db1daa760e6ba1e8ce2164c4590a6bd6e96e27299b1c08c33a69",
+  "generatedAt": "2026-01-12T21:53:53.901Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst urlId: string = 'news/2026/01/12/product-launch';\nconst userId: string = 'user_9c3f2b';\nconst anonUserId: string = 'anon_d4e7a1';\n\nconst votesForUser: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId);\nconst votesForAnon: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, undefined, anonUserId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 833
+}

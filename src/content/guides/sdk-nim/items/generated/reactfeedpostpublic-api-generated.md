@@ -17,11 +17,15 @@ Returns: [`Option[ReactFeedPostPublic_200_response]`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let reactBody = ReactBodyParams(reaction = "like", metadata = @["section:news"])
-let (response, httpResponse) = client.reactFeedPostPublic(tenantId = "my-tenant-123", postId = "news/article-title-456", reactBodyParams = reactBody, isUndo = false, broadcastId = "broadcast-789", sso = "user-42-sso-token")
+let (response, httpResponse) = client.reactFeedPostPublic(
+  tenantId = "my-tenant-123",
+  postId = "news/international-earthquake-2026",
+  reactBodyParams = default(ReactBodyParams),
+  isUndo = false,
+  broadcastId = "broadcast-789",
+  sso = ""
+)
 if response.isSome:
-  let result = response.get()
-  echo "Reaction recorded:", result
-else:
-  echo "No response body, HTTP status:", httpResponse.status
+  let reactResult = response.get()
+  discard reactResult
 [inline-code-end]

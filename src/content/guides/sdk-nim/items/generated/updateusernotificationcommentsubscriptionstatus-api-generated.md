@@ -1,3 +1,5 @@
+Enable or disable notifications for a specific comment.
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -20,12 +22,11 @@ let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionS
   tenantId = "my-tenant-123",
   notificationId = "",
   optedInOrOut = "",
-  commentId = "comment-7890",
+  commentId = "comment-789",
   sso = ""
 )
+
 if response.isSome:
-  let updateInfo = response.get()
-  echo "Received update response for comment:", updateInfo
-else:
-  echo "No response body, HTTP status:", httpResponse.status
+  let updateResp = response.get()
+  discard updateResp
 [inline-code-end]

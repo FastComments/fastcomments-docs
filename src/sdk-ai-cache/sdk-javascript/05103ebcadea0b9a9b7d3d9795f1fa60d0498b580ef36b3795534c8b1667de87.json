@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "05103ebcadea0b9a9b7d3d9795f1fa60d0498b580ef36b3795534c8b1667de87",
+  "generatedAt": "2026-01-12T21:55:02.645Z",
+  "codeExample": "const tenantId: string = 'tenant_4a7f9c12';\nconst ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst resultWithSso: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);\nconst resultWithoutSso: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 400,
+  "completionTokens": 876
+}

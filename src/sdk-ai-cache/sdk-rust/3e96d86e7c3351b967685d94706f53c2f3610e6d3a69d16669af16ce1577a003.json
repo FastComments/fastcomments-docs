@@ -1,0 +1,9 @@
+{
+  "method": "delete_tenant",
+  "signatureHash": "3e96d86e7c3351b967685d94706f53c2f3610e6d3a69d16669af16ce1577a003",
+  "generatedAt": "2026-01-12T21:59:34.096Z",
+  "codeExample": "async fn example_delete_tenant() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteTenantParams = DeleteTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-12345\".to_string(),\n        sure: Some(\"confirm\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = delete_tenant(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 424,
+  "completionTokens": 873
+}

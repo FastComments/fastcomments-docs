@@ -13,15 +13,14 @@ Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'createUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fastcomments_tenant_01";
+const tenantId: string = 'tenant_9f8b6c';
 const createUserBadgeParams: CreateUserBadgeParams = {
-  name: "Community Helper",
-  description: "Awarded for consistently helpful and constructive replies",
-  iconUrl: "https://assets.examplecdn.com/badges/community-helper.svg",
-  // optional parameters
-  criteria: { type: "comment_count", threshold: 100 },
-  active: true,
-  customConfig: { color: "#1e90ff", highlight: true }
+  name: 'Top Contributor',
+  description: 'Awarded to users with 500+ helpful replies',
+  imageUrl: 'https://cdn.fastcomments.com/badges/top-contributor.png',
+  isActive: true,
+  criteria: { minComments: 500, minUpvotes: 120 }, // optional criteria
+  customConfig: { badgeColor: '#FFD700', displayOnProfile: true } // optional custom config
 };
 const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
 [inline-code-end]

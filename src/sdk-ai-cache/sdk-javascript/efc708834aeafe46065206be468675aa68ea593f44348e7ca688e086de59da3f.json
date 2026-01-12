@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "efc708834aeafe46065206be468675aa68ea593f44348e7ca688e086de59da3f",
+  "generatedAt": "2026-01-12T21:54:21.224Z",
+  "codeExample": "const tenantId: string = 'tenant-42-west';\nconst id: string = 'post-2026-01-12-007';\nconst mediaItem: FeedPostMediaItem = {\n  type: 'image',\n  caption: 'Team at launch event',\n  assets: [{ url: 'https://cdn.fastcomments.example/photos/launch-1234.jpg', width: 1920, height: 1080 }]\n};\nconst feedPost: FeedPost = {\n  title: 'Product Launch Recap',\n  body: 'We rolled out the new moderation features and performance improvements.',\n  published: true,\n  // optional parameters demonstrated:\n  media: [mediaItem],\n  links: [{ title: 'Full changelog', url: 'https://example.com/changelog/q1-2026' }]\n};\nconst response: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 1093
+}

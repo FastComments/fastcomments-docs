@@ -15,14 +15,14 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'flag_comment_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
+async fn example_flag_comment() -> Result<(), Error> {
     let params: FlagCommentPublicParams = FlagCommentPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/2025/11/21/opinion-12345/comment-9f8e".to_string(),
+        comment_id: "news/article-12345/comment-6789".to_string(),
         is_flagged: true,
-        sso: Some("user-jane.doe@acme.com".to_string()),
+        sso: Some("user-sso-token-01".to_string()),
     };
-    let response = flag_comment_public(&configuration, params).await?;
-    Ok(response)
+    let _response: FlagCommentPublic200Response = flag_comment_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

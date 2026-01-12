@@ -20,13 +20,14 @@ Returns: [`Option[AggregateQuestionResults_200_response]`](https://github.com/Fa
 [inline-code-start]
 let (response, httpResponse) = client.aggregateQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "like-button",
-  questionIds = @["q-456", "q-789"],
-  urlId = "news/article-123",
+  questionId = "q-42",
+  questionIds = @["q-42", "q-43"],
+  urlId = "news/article-latest-updates",
   timeBucket = AggregateTimeBucket.daily,
   startDate = "2025-01-01T00:00:00Z",
-  forceRecalculate = true
+  forceRecalculate = false
 )
+
 if response.isSome:
   let aggregated = response.get()
   discard aggregated

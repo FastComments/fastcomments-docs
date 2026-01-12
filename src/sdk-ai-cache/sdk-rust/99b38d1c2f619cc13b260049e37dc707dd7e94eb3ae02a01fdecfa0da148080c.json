@@ -1,0 +1,9 @@
+{
+  "method": "get_domain_configs",
+  "signatureHash": "99b38d1c2f619cc13b260049e37dc707dd7e94eb3ae02a01fdecfa0da148080c",
+  "generatedAt": "2026-01-12T21:59:51.376Z",
+  "codeExample": "async fn run() -> Result<GetDomainConfigs200Response, Error> {\n    let tenant_id_option: Option<String> = Some(\"acme-corp-tenant\".to_string());\n    let tenant_id: String = tenant_id_option.expect(\"tenant id required\");\n    let params: GetDomainConfigsParams = GetDomainConfigsParams { tenant_id };\n    let response: GetDomainConfigs200Response = get_domain_configs(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 283,
+  "completionTokens": 1256
+}

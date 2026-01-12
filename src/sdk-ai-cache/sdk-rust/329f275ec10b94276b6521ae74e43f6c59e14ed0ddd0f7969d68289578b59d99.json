@@ -1,0 +1,9 @@
+{
+  "method": "add_sso_user",
+  "signatureHash": "329f275ec10b94276b6521ae74e43f6c59e14ed0ddd0f7969d68289578b59d99",
+  "generatedAt": "2026-01-12T21:58:48.658Z",
+  "codeExample": "let params: AddSsoUserParams = AddSsoUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_apisso_user_data: models::CreateApissoUserData {\n        username: \"jane.doe\".to_string(),\n        email: \"jane.doe@acme-corp.com\".to_string(),\n        display_name: Some(\"Jane Doe\".to_string()),\n        external_id: Some(\"sso-12345\".to_string()),\n        avatar_url: Some(\"https://acme-corp.com/avatars/jane.jpg\".to_string()),\n        roles: Some(vec![\"author\".to_string(), \"moderator\".to_string()]),\n        metadata: Some({\n            let mut m = std::collections::HashMap::new();\n            m.insert(\"team\".to_string(), \"editorial\".to_string());\n            m.insert(\"tier\".to_string(), \"premium\".to_string());\n            m\n        }),\n    },\n};\n\nlet response: AddSsoUserApiResponse = add_sso_user(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 1514
+}

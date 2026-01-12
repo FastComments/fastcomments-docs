@@ -13,15 +13,16 @@ Returns: [`Option[AddDomainConfig_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'addDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = AddDomainConfigParams(
+let addParams = AddDomainConfigParams(
   domain = "news.example.com",
   enabled = true,
-  allowSubdomains = true,
-  allowedOrigins = @["https://news.example.com"],
+  allowSubdomains = false,
+  paths = @["/articles", "/breaking"],
+  priority = 10,
   description = "Primary domain for news site"
 )
-let (response, httpResponse) = client.addDomainConfig(tenantId = "my-tenant-123", addDomainConfigParams = params)
+let (response, httpResponse) = client.addDomainConfig(tenantId = "my-tenant-123", addDomainConfigParams = addParams)
 if response.isSome:
-  let addedConfig = response.get()
-  echo "Domain config added for: ", addedConfig.domain
+  let cfg = response.get()
+  echo "Added domain config:", cfg
 [inline-code-end]

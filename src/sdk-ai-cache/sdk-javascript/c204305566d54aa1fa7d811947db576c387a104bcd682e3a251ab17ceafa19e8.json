@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "c204305566d54aa1fa7d811947db576c387a104bcd682e3a251ab17ceafa19e8",
+  "generatedAt": "2026-01-12T21:54:06.992Z",
+  "codeExample": "const tenantId: string = \"tenant_92b4c1a7\";\nconst domainToUpdate: string = \"blog.company-example.com\";\nconst updateDomainConfigParams: UpdateDomainConfigParams = {\n  enableComments: true,\n  moderationMode: \"pre-moderation\",\n  allowedOrigins: [\"https://company-example.com\", \"https://studio.company-example.com\"],\n  // optional parameter demonstrated by including redirectToCanonical (may be omitted)\n  redirectToCanonical: true\n};\nconst response: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 276,
+  "completionTokens": 775
+}

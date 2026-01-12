@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "d7c5683a02016c2e423815cf7f826c9b0fd18c6b2c2cc8cc8d8d46c98d2e8516",
+  "generatedAt": "2026-01-12T21:54:31.545Z",
+  "codeExample": "const tenantId: string = \"acme_corp_tenant_01\";\nconst id: string = \"badge_000198\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  name: \"Top Reviewer\",\n  description: \"Awarded for 100+ helpful reviews\",\n  color: \"#ffb347\",\n  imageUrl: \"https://assets.acme.com/badges/top-reviewer.png\",\n  // optional: expiresAt can be omitted if badge is permanent\n  expiresAt: \"2027-01-01T00:00:00Z\"\n};\nconst updatedBadge: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 858
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "f0ad83f4817bf35f4925ad129ee24eae9be15f68c7467b31f73d0a0c4bba577a",
+  "generatedAt": "2026-01-12T21:54:22.140Z",
+  "codeExample": "const tenantId: string = \"tenant_86a7b3\";\nconst id: string = \"notif_20260112_01\";\nconst userId: string = \"moderator_42\";\nconst updateNotificationBody: UpdateNotificationBody = {\n  name: \"Flagged comment alert\",\n  enabled: true,\n  channels: [\"email\"],\n  recipients: [\"mod-team@news-site.com\"],\n  threshold: 1\n};\n\n(async () => {\n  const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 966
+}

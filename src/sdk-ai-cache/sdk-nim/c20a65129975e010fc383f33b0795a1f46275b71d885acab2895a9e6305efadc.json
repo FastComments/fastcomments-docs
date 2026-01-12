@@ -1,0 +1,9 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "c20a65129975e010fc383f33b0795a1f46275b71d885acab2895a9e6305efadc",
+  "generatedAt": "2026-01-12T21:55:47.676Z",
+  "codeExample": "let params = CreateUserBadgeParams(\n  userId = \"user-789\",\n  badgeId = \"top-contributor\",\n  awardedBy = \"moderator@news-site.com\",\n  reason = \"Helpful and respectful contributions\",\n  hidden = false,\n  ttlDays = 0,\n  tags = @[\"community\", \"trusted\"]\n)\n\nlet (response, httpResponse) = client.createUserBadge(tenantId = \"my-tenant-123\", createUserBadgeParams = params)\n\nif response.isSome:\n  let badge = response.get()\n  discard badge",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1148
+}

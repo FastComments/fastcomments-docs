@@ -1,0 +1,9 @@
+{
+  "method": "reset_user_notifications",
+  "signatureHash": "bd3fd36f1bf21f1cce6a08ecd8c1eafa542dca5da19fa2b0805b7ed2d5b7837f",
+  "generatedAt": "2026-01-12T22:02:26.717Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: ResetUserNotificationsParams = ResetUserNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"notification-87b2\".to_string()),\n        after_created_at: Some(1672531200i64),\n        unread_only: Some(true),\n        dm_only: Some(false),\n        no_dm: Some(false),\n        sso: Some(\"alice@acme.com\".to_string()),\n    };\n    let resp: ResetUserNotifications200Response =\n        reset_user_notifications(&configuration, params).await?;\n    let _resp = resp;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 485,
+  "completionTokens": 1235
+}

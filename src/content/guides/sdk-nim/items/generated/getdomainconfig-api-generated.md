@@ -13,10 +13,10 @@ Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'getDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.techblog.com")
+let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
 if response.isSome:
-  let domainConfig = response.get()
-  echo "Loaded domain config for tenant:", " my-tenant-123"
+  let config = response.get()
+  echo "Domain config received"
 else:
-  echo "No domain config found"
+  echo "No domain config available"
 [inline-code-end]

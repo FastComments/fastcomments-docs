@@ -1,0 +1,9 @@
+{
+  "method": "get_tenant_package",
+  "signatureHash": "c832b13de6891790255df01d7af9406a8d0cd5b5af83401fbcd5352790a6d293",
+  "generatedAt": "2026-01-12T22:00:31.460Z",
+  "codeExample": "async fn example_get_tenant_package(configuration: &configuration::Configuration) -> Result<GetTenantPackage200Response, Error> {\n    let params: GetTenantPackageParams = GetTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"premium-plan\".to_string(),\n        include_details: Some(true),\n    };\n    let package: GetTenantPackage200Response = get_tenant_package(configuration, params).await?;\n    Ok(package)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1131
+}

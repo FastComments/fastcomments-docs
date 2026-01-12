@@ -24,7 +24,7 @@ let (response, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
   questionId = "",
   questionIds = @[],
-  urlId = "news/article-title",
+  urlId = "news/earthquake-2026-10-05",
   startDate = "",
   forceRecalculate = false,
   minValue = 0.0,
@@ -33,6 +33,6 @@ let (response, httpResponse) = client.combineCommentsWithQuestionResults(
 )
 
 if response.isSome:
-  let combined = response.get()
-  discard combined
+  let result = response.get()
+  discard result
 [inline-code-end]

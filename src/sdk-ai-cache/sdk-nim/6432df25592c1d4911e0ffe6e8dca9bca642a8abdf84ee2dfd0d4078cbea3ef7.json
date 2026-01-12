@@ -1,0 +1,9 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "6432df25592c1d4911e0ffe6e8dca9bca642a8abdf84ee2dfd0d4078cbea3ef7",
+  "generatedAt": "2026-01-12T21:55:45.515Z",
+  "codeExample": "let createBody = CreateTenantUserBody(\n  email = \"jane.doe@acmepub.com\",\n  displayName = \"Jane Doe\",\n  password = \"S3cur3P@ssw0rd\",\n  roles = @[\"moderator\", \"editor\"],\n  disabled = false\n)\nlet (response, httpResponse) = client.createTenantUser(tenantId = \"my-tenant-123\", createTenantUserBody = createBody)\nif response.isSome:\n  let createdUser = response.get()\n  echo createdUser",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1273
+}

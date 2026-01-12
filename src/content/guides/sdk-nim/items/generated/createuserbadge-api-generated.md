@@ -13,10 +13,19 @@ Returns: [`Option[CreateUserBadge_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'createUserBadge Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createUserBadge(tenantId = "my-tenant-123", createUserBadgeParams = CreateUserBadgeParams())
+let params = CreateUserBadgeParams(
+  userId = "user-789",
+  badgeId = "top-contributor",
+  awardedBy = "moderator@news-site.com",
+  reason = "Helpful and respectful contributions",
+  hidden = false,
+  ttlDays = 0,
+  tags = @["community", "trusted"]
+)
+
+let (response, httpResponse) = client.createUserBadge(tenantId = "my-tenant-123", createUserBadgeParams = params)
+
 if response.isSome:
-  let createdBadge = response.get()
-  echo "Created badge:", $createdBadge
-else:
-  echo "Create badge failed:", $httpResponse
+  let badge = response.get()
+  discard badge
 [inline-code-end]

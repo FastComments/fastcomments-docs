@@ -15,14 +15,14 @@ Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'flag_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<FlagComment200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: FlagCommentParams = FlagCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "cmt-987654321".to_string(),
+        id: "news/article/2026/01/12/comment/6789".to_string(),
         user_id: Some("user-42".to_string()),
-        anon_user_id: None,
+        anon_user_id: Some("anon-9f8e".to_string()),
     };
-    let response: FlagComment200Response = flag_comment(&configuration, params).await?;
-    Ok(response)
+    let response: FlagComment200Response = flag_comment(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

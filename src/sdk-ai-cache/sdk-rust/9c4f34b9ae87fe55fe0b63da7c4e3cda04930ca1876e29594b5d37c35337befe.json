@@ -1,0 +1,9 @@
+{
+  "method": "update_tenant_user",
+  "signatureHash": "9c4f34b9ae87fe55fe0b63da7c4e3cda04930ca1876e29594b5d37c35337befe",
+  "generatedAt": "2026-01-12T22:01:38.072Z",
+  "codeExample": "async fn update_user_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params: UpdateTenantUserParams = UpdateTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-78b2\".to_string(),\n        update_tenant_user_body: models::UpdateTenantUserBody {\n            username: \"jdoe\".to_string(),\n            display_name: \"John Doe\".to_string(),\n            email: \"john.doe@acme.com\".to_string(),\n            roles: vec![\"moderator\".to_string()],\n            suspended: false,\n        },\n        update_comments: Some(\"Promoted to moderator for community moderation\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = update_tenant_user(configuration, params).await?;\n    println!(\"updated user response status: {:?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 455,
+  "completionTokens": 961
+}

@@ -4,7 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| usernameStartsWith | string | Yes |  |
+| usernameStartsWith | string | No |  |
 | mentionGroupIds | Array<string> | No |  |
 | sso | string | No |  |
 
@@ -16,10 +16,11 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'searchUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp";
-const urlId: string = "news/2025/11/22/site-launch";
-const usernameStartsWith: string = "jo";
-const mentionGroupIds: Array<string> = ["senior-editors", "community-moderators"];
-const sso: string = "sso_session_9f8e7d6c5b4a3";
+const tenantId: string = 'acme-corp-tenant-42';
+const urlId: string = 'news-2026-01-12-top-story';
+const usernameStartsWith: string = 'sara';
+const mentionGroupIds: Array<string> = ['editors', 'community-managers'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload';
+
 const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "fc9fda4a57f503f2380c080bb3562adcd0f6acc1fea971deefb75fb937c497f2",
+  "generatedAt": "2026-01-12T21:56:04.664Z",
+  "codeExample": "let (response, httpResponse) = client.deleteTenantPackage(tenantId = \"my-tenant-123\", id = \"pkg-789\")\nif response.isSome:\n  let deleted = response.get()\n  echo \"Successfully deleted tenant package\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 763
+}

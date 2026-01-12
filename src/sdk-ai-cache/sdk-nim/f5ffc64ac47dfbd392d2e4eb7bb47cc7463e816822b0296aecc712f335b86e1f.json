@@ -1,0 +1,9 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "f5ffc64ac47dfbd392d2e4eb7bb47cc7463e816822b0296aecc712f335b86e1f",
+  "generatedAt": "2026-01-12T21:57:42.495Z",
+  "codeExample": "let (response, httpResponse) = client.blockFromCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"news/article-2026-01-12-comment-789\",\n  publicBlockFromCommentParams = PublicBlockFromCommentParams(\n    reason = \"harassment\",\n    durationMinutes = 1440,\n    notifyUsers = false,\n    tags = @[\"abuse\",\"spam\"]\n  ),\n  sso = \"\"\n)\nif response.isSome:\n  let blockResult = response.get()\n  discard blockResult",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 889
+}

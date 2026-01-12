@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "3b2f0c3234146ab6d95e887979fc92b96e0800d8de48151c4a8c5b38f19f3115",
+  "generatedAt": "2026-01-12T21:58:30.335Z",
+  "codeExample": "let voteBody = VoteBodyParams(vote = 1)\nlet (response, httpResponse) = client.voteComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  urlId = \"news/article-2026-election\",\n  broadcastId = \"\",\n  voteBodyParams = voteBody,\n  sessionId = \"\",\n  sso = \"\"\n)\nif response.isSome:\n  let result = response.get()\n  echo \"Vote response:\", $result",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1072
+}

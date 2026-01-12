@@ -18,12 +18,12 @@ Returns: [`Option[SaveComment_200_response]`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'saveComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let createParams = CreateCommentParams(
-  content = "Great reporting — this clarified the policy changes for me.",
-  authorName = "Ava Thompson",
-  authorEmail = "ava.thompson@journalistmail.com",
-  urlId = "news/2025/energy-incentives",
-  parentId = 0,
-  tags = @["energy", "policy"]
+  content = "Great article — helped me understand async patterns.",
+  authorName = "Alex Morgan",
+  authorEmail = "alex.morgan@example.com",
+  url = "news/my-company-launches-new-api",
+  parentId = "",
+  tags = @["api", "launch"]
 )
 
 let (response, httpResponse) = client.saveComment(
@@ -31,11 +31,11 @@ let (response, httpResponse) = client.saveComment(
   createCommentParams = createParams,
   isLive = true,
   doSpamCheck = true,
-  sendEmails = true,
-  populateNotifications = false
+  sendEmails = false,
+  populateNotifications = true
 )
 
 if response.isSome:
   let saved = response.get()
-  echo "Comment saved for tenant my-tenant-123"
+  echo "Saved comment id: ", saved.id
 [inline-code-end]

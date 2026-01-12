@@ -1,0 +1,9 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "50766c08ce2525b5f3846b7c8dea786bd07af0f4f5511733ac0799ae9bd79c66",
+  "generatedAt": "2026-01-12T21:55:55.216Z",
+  "codeExample": "let (response, httpResponse) = client.deleteHashTag(tag = \"breaking-news\", tenantId = \"my-tenant-123\", deleteHashTagRequest = DeleteHashTagRequest())\nif response.isSome:\n  let result = response.get()\n  discard result",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 958
+}

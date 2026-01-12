@@ -1,0 +1,9 @@
+{
+  "method": "patch_domain_config",
+  "signatureHash": "5979b6afe35363b41bd460b6db0de9ecd064b4c2a01dac9b37c71d528fa61717",
+  "generatedAt": "2026-01-12T22:00:52.047Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PatchDomainConfigParams = PatchDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"blog.acme.com\".to_string(),\n        patch_domain_config_params: models::PatchDomainConfigParams {\n            moderation_enabled: Some(true),\n            allowed_origins: Some(vec![\"https://blog.acme.com\".to_string()]),\n            custom_css: Some(\".fc-comment{font-size:14px}\".to_string()),\n            notify_on_new_comment: Some(true),\n            ..Default::default()\n        },\n    };\n    let resp: GetDomainConfig200Response = patch_domain_config(&configuration, params).await?;\n    println!(\"{:#?}\", resp);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 319,
+  "completionTokens": 1067
+}

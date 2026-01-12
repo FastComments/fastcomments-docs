@@ -14,22 +14,9 @@ Returns: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'updateUserBadge Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateParams = UpdateUserBadgeParams(
-  name = "Top Contributor",
-  color = "#FFD700",
-  icon = "star",
-  isActive = true,
-  rank = 1,
-  tags = @["community", "trusted"]
-)
-
-let (response, httpResponse) = client.updateUserBadge(
-  tenantId = "my-tenant-123",
-  id = "badge-987",
-  updateUserBadgeParams = updateParams
-)
-
+let params = UpdateUserBadgeParams(badgeId: "badge-moderator", label: "Moderator", active: true)
+let (response, httpResponse) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
 if response.isSome:
-  let updated = response.get()
-  echo "Updated badge: ", updated
+  let badgeResp = response.get()
+  discard badgeResp
 [inline-code-end]

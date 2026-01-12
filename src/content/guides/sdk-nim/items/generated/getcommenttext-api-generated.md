@@ -15,8 +15,10 @@ Returns: [`Option[GetCommentText_200_response]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getCommentText Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-9a8b7c", editKey = "", sso = "")
+let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
 if response.isSome:
   let commentText = response.get()
-  echo commentText
+  echo "Comment text: ", commentText
+else:
+  echo "No comment text returned. HTTP response: ", httpResponse
 [inline-code-end]

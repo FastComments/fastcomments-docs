@@ -15,14 +15,14 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'pin_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_pin() -> Result<PinComment200Response, Error> {
+async fn pin_comment_example() -> Result<PinComment200Response, Error> {
     let params: PinCommentParams = PinCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news-article-comment-4721".to_string(),
-        broadcast_id: "news/article/2025-11-21-live".to_string(),
-        sso: Some("user-42-sso-token".to_string()),
+        comment_id: "news/article/2026/interesting-comment-987".to_string(),
+        broadcast_id: "broadcast-nyc-1".to_string(),
+        sso: Some("sso-token-xyz-789".to_string()),
     };
-    let response: PinComment200Response = pin_comment(configuration, params).await?;
-    Ok(response)
+    let pinned: PinComment200Response = pin_comment(&configuration, params).await?;
+    Ok(pinned)
 }
 [inline-code-end]

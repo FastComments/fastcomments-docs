@@ -13,9 +13,9 @@ Returns: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getSSOUserByEmail Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b7f2c';
-const email: string = 'jane.doe@acme-corp.com';
+const tenantId: string = "tenant_fc_7a9d3b";
+const email: string = "laura.powell@dailynews.com";
 const response: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId, email);
-const user: APISSOUser | undefined = (response as unknown as { user?: APISSOUser }).user;
-const emailVerified: boolean | undefined = user?.emailVerified;
+const ssoUser: APISSOUser | undefined = response.user;
+const ssoUserEmail: string | undefined = ssoUser?.email;
 [inline-code-end]

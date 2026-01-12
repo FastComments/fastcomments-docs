@@ -1,0 +1,9 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "542be55f50d8fd06eeef38049f2cfc5cd690632f6e67d8b6dc25090812c0559e",
+  "generatedAt": "2026-01-12T21:54:41.905Z",
+  "codeExample": "async function example(): Promise<void> {\n  const tenantId: string = 'acme_corp';\n  const commentId: string = 'cmt_000123456';\n  const dirDownvote: number = -1;\n  const voteUserNamesDown: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirDownvote);\n  const dirUpvote: number = 1;\n  const ssoToken: string = 'sso:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const voteUserNamesUp: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirUpvote, ssoToken);\n  console.log(voteUserNamesDown, voteUserNamesUp);\n}\nexample();",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 893
+}

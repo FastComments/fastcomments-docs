@@ -15,14 +15,14 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'un_pin_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn perform_unpin(configuration: &configuration::Configuration) -> Result<PinComment200Response, Error> {
+async fn run_unpin() -> Result<PinComment200Response, Error> {
     let params: UnPinCommentParams = UnPinCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-8f3a2b".to_string(),
-        broadcast_id: "news/article/2025/11/21".to_string(),
-        sso: Some("sso-jwt-abc123".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        comment_id: String::from("cmt-9f2b1a"),
+        broadcast_id: String::from("news/article/2026/01/12/breaking"),
+        sso: Some(String::from("user-9876-sso-token")),
     };
-    let response: PinComment200Response = un_pin_comment(configuration, params).await?;
-    Ok(response)
+    let resp: PinComment200Response = un_pin_comment(&configuration, params).await?;
+    Ok(resp)
 }
 [inline-code-end]

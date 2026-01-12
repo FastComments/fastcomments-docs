@@ -1,0 +1,9 @@
+{
+  "method": "get_question_configs",
+  "signatureHash": "fc54379f0dc941a59fcf9dcd8bf675e5ba97225c0dabad8a4771cc378f13c7bc",
+  "generatedAt": "2026-01-12T22:00:06.274Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10.0),\n    };\n    let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;\n    let _cfgs: GetQuestionConfigs200Response = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 801
+}

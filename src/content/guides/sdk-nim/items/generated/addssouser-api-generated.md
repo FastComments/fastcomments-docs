@@ -13,15 +13,22 @@ Returns: [`Option[AddSSOUserAPIResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'addSSOUser Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(externalId = "user-789",
-    email = "jane.doe@newsorg.com",
-    name = "Jane Doe",
-    isVerified = true,
-    roles = @["editor"]))
+let createData = CreateAPISSOUserData(
+  id = "user-789",
+  email = "jane.doe@example.com",
+  username = "jane.doe",
+  displayName = "Jane Doe",
+  roles = @["author", "editor"],
+  avatarUrl = "https://cdn.example.com/avatars/jane.jpg",
+  metadata = @[],
+  isActive = true
+)
+
+let (response, httpResponse) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = createData)
+
 if response.isSome:
-  let added = response.get()
-  echo "SSO user added:", $added
+  let result = response.get()
+  echo "SSO user added: ", result.id
 else:
-  echo "Failed to add SSO user, HTTP status:", httpResponse.status
+  echo "Failed to add SSO user, HTTP status: ", httpResponse.status.code
 [inline-code-end]

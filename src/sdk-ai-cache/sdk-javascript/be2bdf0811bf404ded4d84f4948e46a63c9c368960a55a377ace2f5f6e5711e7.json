@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "be2bdf0811bf404ded4d84f4948e46a63c9c368960a55a377ace2f5f6e5711e7",
+  "generatedAt": "2026-01-12T21:53:07.723Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-93b2';\n  const domain: string = 'comments.acme.com';\n  const domainConfig: GetDomainConfig200Response = await getDomainConfig(tenantId, domain);\n  console.log(domainConfig);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 250,
+  "completionTokens": 966
+}

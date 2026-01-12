@@ -13,13 +13,14 @@ Returns: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'get_subscriptions Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_subscriptions() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: GetSubscriptionsParams = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user_98765".to_string()),
+        user_id: Some("user-9876".to_string()),
     };
+
     let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    println!("{:?}", subscriptions);
+
     Ok(())
 }
 [inline-code-end]

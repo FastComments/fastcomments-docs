@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "2f35acd184a43bd74ecede0e0ec21b7b3276bbef4fb409c255f9b7c4e52d853c",
+  "generatedAt": "2026-01-12T21:57:08.165Z",
+  "codeExample": "let updateData: UpdateAPISSOUserData = UpdateAPISSOUserData(\n  name = \"Alice Johnson\",\n  email = \"alice.johnson@newsorg.com\",\n  externalId = \"user-789\",\n  roles = @[\"subscriber\"],\n  avatarUrl = \"https://cdn.newsorg.com/avatars/user-789.png\"\n)\n\nlet (response, httpResponse) = client.patchSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-789\",\n  updateAPISSOUserData = updateData,\n  updateComments = true\n)\n\nif response.isSome:\n  let patched = response.get()\n  echo patched, \" \", httpResponse.statusCode",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 923
+}

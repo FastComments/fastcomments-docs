@@ -17,13 +17,13 @@ Returns: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.deleteSSOUser(
   tenantId = "my-tenant-123",
-  id = "user-789",
+  id = "user-7f3b9c",
   deleteComments = true,
-  commentDeleteMode = "hard"
+  commentDeleteMode = "soft"
 )
 
 if response.isSome:
-  let apiResp = response.get()
-  echo "SSO user delete response received"
-  discard apiResp
+  let apiResult = response.get()
+  echo "SSO user deleted successfully"
+  discard apiResult
 [inline-code-end]

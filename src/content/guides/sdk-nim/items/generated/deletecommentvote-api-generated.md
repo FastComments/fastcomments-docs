@@ -20,9 +20,9 @@ Returns: [`Option[DeleteCommentVote_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "cmt-456",
   voteId = "",
-  urlId = "news/2025/fastcomments-case-study",
+  urlId = "news/top-stories/my-article",
   broadcastId = "",
   editKey = "",
   sso = ""
@@ -30,7 +30,6 @@ let (response, httpResponse) = client.deleteCommentVote(
 
 if response.isSome:
   let deleted = response.get()
-  echo "DeleteCommentVote succeeded: ", $deleted
-else:
-  echo "DeleteCommentVote failed, HTTP response: ", $httpResponse
+  echo "DeleteCommentVote succeeded for comment cmt-456"
+  discard deleted
 [inline-code-end]

@@ -16,20 +16,16 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.updateFeedPost(
   tenantId = "my-tenant-123",
-  id = "feedpost-456",
+  id = "post-456",
   feedPost = FeedPost(
-    title = "Downtown Festival 2025",
-    body = "Join us for the annual downtown festival with live music, food trucks, and family activities.",
-    url = "news/downtown-festival-2025",
-    author = "editor@localnews.com",
-    tags = @["community", "festival"],
-    published = true
+    id = "post-456",
+    title = "Breaking News: Market Rally",
+    content = "Stocks surged 5% after the Fed announcement; analysts cite renewed investor confidence.",
+    published = true,
+    tags = @["finance", "markets"]
   )
 )
-
 if response.isSome:
-  let result = response.get()
-  echo "FlagCommentPublic response received: ", result
-else:
-  echo "No response returned, HTTP status: ", httpResponse.status
+  let flagResp = response.get()
+  discard flagResp
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "4864de86a8ee75b8f05cdc28f02a71c7145930cbcc0e4e5bedcdc898fe5b23f9",
+  "generatedAt": "2026-01-12T21:58:08.512Z",
+  "codeExample": "let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = \"my-tenant-123\", postId = \"\", broadcastId = \"\", sso = \"\")\nif response.isSome:\n  let deleted = response.get()\n  discard deleted\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 1411
+}

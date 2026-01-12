@@ -15,15 +15,9 @@ Returns: [`Option[LockComment_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'unLockComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unLockComment(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-456",
-  broadcastId = "",
-  sso = ""
-)
+let (response, httpResponse) = client.unLockComment(tenantId = "my-tenant-123", commentId = "cmt-456789", broadcastId = "", sso = "")
 if response.isSome:
   let unlocked = response.get()
-  echo "Comment unlocked:", unlocked
-else:
-  echo "Unlock failed or no body"
+  discard unlocked
+discard httpResponse
 [inline-code-end]

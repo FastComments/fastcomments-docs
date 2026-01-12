@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "4a6e47bba80f84a6d571a5c9de5cb281dea572545b8f6145e569bc8ddbe44bc2",
+  "generatedAt": "2026-01-12T21:56:06.249Z",
+  "codeExample": "let (response, httpResponse) = client.deleteTenant(tenantId = \"my-tenant-123\", id = \"\", sure = \"\")\n\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Tenant deletion response received for tenant: \", \"my-tenant-123\"\n  discard flagResp\nelse:\n  echo \"No response body returned for tenant deletion\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 1239
+}

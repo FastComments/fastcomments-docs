@@ -1,0 +1,9 @@
+{
+  "method": "flagComment",
+  "signatureHash": "36c96adccc900c2858e84f83d98da90155653ee6a2498c72550e84e27d5754ab",
+  "generatedAt": "2026-01-12T21:56:06.964Z",
+  "codeExample": "let (response, httpResponse) = client.flagComment(tenantId = \"my-tenant-123\", id = \"comment-9876\", userId = \"\", anonUserId = \"anon-4f2b9c\")\n\nif response.isSome:\n  let flagResult = response.get()\n  echo \"Flag succeeded: \", $flagResult\nelse:\n  echo \"Flag failed, HTTP response status: \", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 802
+}

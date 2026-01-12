@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "eaccd643b9f515d52fef248b574afde07280dcaa5f7f69d17ba103b745235d29",
+  "generatedAt": "2026-01-12T21:55:36.996Z",
+  "codeExample": "let body = CreateQuestionConfigBody(\n  key = \"recommendation\",\n  question = \"Would you recommend this article to a friend?\",\n  required = false,\n  inputType = \"radio\",\n  options = @[\"Yes\", \"No\", \"Maybe\"]\n)\n\nlet (response, httpResponse) = client.createQuestionConfig(tenantId = \"my-tenant-123\", createQuestionConfigBody = body)\n\nif response.isSome:\n  let config = response.get()\n  discard config",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 812
+}

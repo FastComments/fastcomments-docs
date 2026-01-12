@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "60c5b87db81df23ad6d8d5b90c7d9bdf0fe38cee314c6b311a234205993de500",
+  "generatedAt": "2026-01-12T21:54:46.733Z",
+  "codeExample": "const tenantId: string = 'tenant_7f9c3b';\nconst urlId: string = 'article-3f2a1c';\nconst userIdWS: string = 'ws-user-4521';\nconst startTime: number = Date.now() - 86_400_000; // 24 hours ago (ms)\nconst endTime: number = Date.now();\nconst endTimeOverride: number | undefined = undefined; // optional override\nconst endTimeToUse: number = endTimeOverride ?? endTime;\nconst response: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTimeToUse);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 1175
+}

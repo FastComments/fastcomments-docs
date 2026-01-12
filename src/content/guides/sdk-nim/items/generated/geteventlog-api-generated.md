@@ -1,3 +1,9 @@
+
+req
+tenantId
+urlId
+userIdWS
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -18,11 +24,15 @@ Returns: [`Option[GetEventLog_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.getEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/sports-world-cup-2025",
+  urlId = "news/article-title",
   userIdWS = "",
-  startTime = int64(0),
-  endTime = int64(0)
+  startTime = 0'i64,
+  endTime = 0'i64
 )
 if response.isSome:
   let eventLog = response.get()
+  echo "Event log retrieved for news/article-title"
+  discard eventLog
+else:
+  echo "Failed to retrieve event log, status: ", httpResponse.status
 [inline-code-end]

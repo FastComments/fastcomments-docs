@@ -1,0 +1,9 @@
+{
+  "method": "update_tenant",
+  "signatureHash": "2cc19b90ddfa0d86235f9e79b7041aecbedc49c19c175e157694368b8d9a3f49",
+  "generatedAt": "2026-01-12T22:01:33.578Z",
+  "codeExample": "async fn run_update_tenant() -> Result<FlagCommentPublic200Response, Error> {\n    let params: UpdateTenantParams = UpdateTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        id: \"site-42\".to_owned(),\n        update_tenant_body: models::UpdateTenantBody {\n            name: Some(\"Acme Corporation\".to_string()),\n            default_site: Some(\"news/article\".to_string()),\n            allowed_origins: Some(vec![\n                \"https://www.acme.com\".to_string(),\n                \"https://blog.acme.com\".to_string(),\n            ]),\n            invite_only: Some(false),\n            api_domain_configuration: Some(ApiDomainConfiguration {\n                domain: \"comments.acme.com\".to_string(),\n                secure: Some(true),\n                ..Default::default()\n            }),\n            ..Default::default()\n        },\n    };\n    let response: FlagCommentPublic200Response = update_tenant(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 462,
+  "completionTokens": 1367
+}

@@ -15,10 +15,16 @@ Returns: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'unFlagComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unFlagComment(tenantId = "my-tenant-123", id = "comment-202311", userId = "user-889", anonUserId = "")
+let (response, httpResponse) = client.unFlagComment(
+  tenantId = "my-tenant-123",
+  id = "comment-9876",
+  userId = "user-42",
+  anonUserId = ""
+)
+
 if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
-else:
-  discard httpResponse
+  let flagResp = response.get()
+  echo "Unflag succeeded:", flagResp
+
+echo "HTTP response status:", httpResponse.status
 [inline-code-end]

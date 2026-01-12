@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "912f51a5a6090eb5b17bb80c3946461a69914a62db7de0c5cf9c0904c0c09922",
+  "generatedAt": "2026-01-12T21:54:10.514Z",
+  "codeExample": "const tenantId: string = \"tenant_92b3c\";\nconst mention: CommentUserMentionInfo = { userId: \"u842\", displayName: \"Alex Chen\" };\nconst hashtag: CommentUserHashTagInfo = { tag: \"performance\" };\nconst createCommentParams: CreateCommentParams = {\n  threadId: \"article-frontend-performance-2026\",\n  content: \"Performance improvements look great — shipped this in prod and saw a 12% render time reduction.\",\n  authorName: \"Jordan Harper\",\n  authorEmail: \"jordan.harper@example.com\",\n  mentions: [mention],\n  hashtags: [hashtag]\n};\nconst result: SaveComment200Response = await saveComment(tenantId, createCommentParams, true, true, false, true);",
+  "model": "gpt-5-mini",
+  "promptTokens": 511,
+  "completionTokens": 1322
+}

@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_comment_subscription_status",
+  "signatureHash": "fadf199dd679b8cb6b7bd3dccb0d41da82a39cd7b75377938313452658325c18",
+  "generatedAt": "2026-01-12T22:02:34.999Z",
+  "codeExample": "async fn example() -> Result<UpdateUserNotificationStatus200Response, Error> {\n    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        notification_id: String::from(\"notif-20260112-1234\"),\n        opted_in_or_out: String::from(\"opted_in\"),\n        comment_id: String::from(\"news/article/2026/updates-12345#cmt-98765\"),\n        sso: Some(String::from(\"sso-jwt-abc123def456\")),\n    };\n    let response: UpdateUserNotificationStatus200Response = update_user_notification_comment_subscription_status(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 1062
+}

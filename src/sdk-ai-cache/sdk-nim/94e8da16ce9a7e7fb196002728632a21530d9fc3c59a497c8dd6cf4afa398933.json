@@ -1,0 +1,9 @@
+{
+  "method": "getTenants",
+  "signatureHash": "94e8da16ce9a7e7fb196002728632a21530d9fc3c59a497c8dd6cf4afa398933",
+  "generatedAt": "2026-01-12T21:56:59.181Z",
+  "codeExample": "let (response, httpResponse) = client.getTenants(tenantId = \"my-tenant-123\", meta = \"include=details\", skip = 0.0)\nif response.isSome:\n  let tenants = response.get()\n  echo \"Received tenants: \", repr(tenants)\nelse:\n  echo \"Failed to retrieve tenants\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 400,
+  "completionTokens": 1488
+}

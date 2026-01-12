@@ -14,17 +14,20 @@ Returns: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'bulk_aggregate_question_results Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = BulkAggregateQuestionResultsParams {
+let params: BulkAggregateQuestionResultsParams = BulkAggregateQuestionResultsParams {
     tenant_id: "acme-corp-tenant".to_string(),
     bulk_aggregate_question_results_request: models::BulkAggregateQuestionResultsRequest {
-        questions: vec![
-            models::BulkAggregateQuestionItem { question_id: "satisfaction".to_string() },
-            models::BulkAggregateQuestionItem { question_id: "recommendation".to_string() },
+        items: vec![
+            models::BulkAggregateQuestionItem {
+                question_id: "reader_satisfaction".to_string(),
+                context_path: "/news/article/2026/01/12/major-update".to_string(),
+            }
         ],
-        start_time: "2025-10-01T00:00:00Z".to_string(),
-        end_time: "2025-10-31T23:59:59Z".to_string(),
+        time_bucket: models::AggregateTimeBucket::Daily,
+        start_time: "2026-01-01T00:00:00Z".to_string(),
+        end_time: "2026-01-12T00:00:00Z".to_string(),
     },
     force_recalculate: Some(true),
 };
-let aggregated: BulkAggregateQuestionResults200Response = bulk_aggregate_question_results(&configuration, params).await?;
+let response: BulkAggregateQuestionResults200Response = bulk_aggregate_question_results(&configuration, params).await?;
 [inline-code-end]

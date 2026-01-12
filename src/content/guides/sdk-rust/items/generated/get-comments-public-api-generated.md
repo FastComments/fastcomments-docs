@@ -44,24 +44,23 @@ Returns: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'get_comments_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetCommentsPublicParams = GetCommentsPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    url_id: String::from("news/2025/politics-election-preview"),
-    page: Some(1),
-    direction: Some(models::SortDirections::Desc),
-    limit: Some(25),
-    skip: Some(0),
-    include_config: Some(true),
-    count_children: Some(false),
-    hash_tags: Some(vec![String::from("breaking"), String::from("election")]),
-    user_id: Some(String::from("user-4521")),
-    after_comment_id: Some(String::from("c-9876")),
-    include_notification_count: Some(true),
-    as_tree: Some(true),
-    max_tree_depth: Some(3),
-    locale: Some(String::from("en-US")),
-    ..Default::default()
-};
-
-let response: GetCommentsPublic200Response = get_comments_public(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params: GetCommentsPublicParams = GetCommentsPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article/2026/01/big-update".to_string(),
+        page: Some(1),
+        direction: Some(models::SortDirections::Desc),
+        limit: Some(50),
+        include_config: Some(true),
+        includei10n: Some(true),
+        locale: Some("en-US".to_string()),
+        hash_tags: Some(vec!["rust".to_string(), "release".to_string()]),
+        as_tree: Some(true),
+        max_tree_depth: Some(3),
+        user_id: Some("user_789".to_string()),
+        sso: Some("eyJhbGciOiJIUzI1Ni...".to_string()),
+    };
+    let response: GetCommentsPublic200Response = get_comments_public(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

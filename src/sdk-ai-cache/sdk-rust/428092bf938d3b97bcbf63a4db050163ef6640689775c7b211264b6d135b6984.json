@@ -1,0 +1,9 @@
+{
+  "method": "get_sso_users",
+  "signatureHash": "428092bf938d3b97bcbf63a4db050163ef6640689775c7b211264b6d135b6984",
+  "generatedAt": "2026-01-12T22:00:16.423Z",
+  "codeExample": "async fn fetch_sso_users() -> Result<(), Error> {\n    let params: GetSsoUsersParams = GetSsoUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(20),\n    };\n    let response: GetSsoUsers200Response = get_sso_users(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 311,
+  "completionTokens": 536
+}

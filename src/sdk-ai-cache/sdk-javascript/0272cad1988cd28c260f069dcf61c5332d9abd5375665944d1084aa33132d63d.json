@@ -1,0 +1,9 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "0272cad1988cd28c260f069dcf61c5332d9abd5375665944d1084aa33132d63d",
+  "generatedAt": "2026-01-12T21:53:22.111Z",
+  "codeExample": "const tenantId: string = 'tenant_8a9b7c';\nconst userId: string = 'user_42b3c';\nconst urlId: string = 'https://blog.example.com/posts/introducing-new-editor';\nconst fromCommentId: string | undefined = undefined;\nconst viewed: boolean = false;\nconst type: string = 'mention';\nconst result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 819
+}

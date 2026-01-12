@@ -14,14 +14,15 @@ Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'updateUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9k2h7a";
-const id: string = "badge_01F8ZC7";
+const tenantId: string = "acme_corp_tenant_01";
+const id: string = "badge_000198";
 const updateUserBadgeParams: UpdateUserBadgeParams = {
-  name: "Helpful Contributor",
-  description: "Awarded for 100 helpful comments",
-  iconUrl: "https://cdn.fastcomments.com/badges/helpful.png",
-  enabled: true,
-  expiresAt: "2026-12-31T23:59:59Z" // optional parameter
-} as UpdateUserBadgeParams;
-const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
+  name: "Top Reviewer",
+  description: "Awarded for 100+ helpful reviews",
+  color: "#ffb347",
+  imageUrl: "https://assets.acme.com/badges/top-reviewer.png",
+  // optional: expiresAt can be omitted if badge is permanent
+  expiresAt: "2027-01-01T00:00:00Z"
+};
+const updatedBadge: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);
 [inline-code-end]

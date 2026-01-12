@@ -13,14 +13,13 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'get_domain_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_domain_config() -> Result<(), Error> {
+async fn example_get_domain_config() -> Result<GetDomainConfig200Response, Error> {
     let params: GetDomainConfigParams = GetDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        domain: "blog.acme-corp.com".to_string(),
+        tenant_id: String::from("acme-corp-tenant"),
+        domain: String::from("news/world"),
         include_subdomains: Some(true),
     };
     let config_response: GetDomainConfig200Response = get_domain_config(&configuration, params).await?;
-    let _ = config_response;
-    Ok(())
+    Ok(config_response)
 }
 [inline-code-end]

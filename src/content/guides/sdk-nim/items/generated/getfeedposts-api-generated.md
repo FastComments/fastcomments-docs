@@ -1,3 +1,8 @@
+
+req
+tenantId
+afterId
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -15,7 +20,13 @@ Returns: [`Option[GetFeedPosts_200_response]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getFeedPosts Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(tenantId = "my-tenant-123", afterId = "", limit = 0, tags = @[])
+let (response, httpResponse) = client.getFeedPosts(
+  tenantId = "my-tenant-123",
+  afterId = "",
+  limit = 0,
+  tags = @[]
+)
+
 if response.isSome:
   let feed = response.get()
   discard feed

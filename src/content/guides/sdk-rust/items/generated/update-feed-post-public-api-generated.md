@@ -16,35 +16,28 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'update_feed_post_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {
+let params = UpdateFeedPostPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    post_id: "news/article-2025-11-21".to_string(),
+    post_id: "news/article-12345".to_string(),
     update_feed_post_params: models::UpdateFeedPostParams {
-        title: Some("Global Markets Rally After Policy Update".to_string()),
-        body: Some("Markets responded positively to the central bank announcement...".to_string()),
-        tags: Some(vec!["markets".to_string(), "economy".to_string()]),
+        title: Some("Acme launches unified search".to_string()),
+        content: Some("Acme Corp released a unified search feature that improves discovery across products.".to_string()),
+        links: Some(vec![
+            models::FeedPostLink { url: "https://acme.com/blog/unified-search".to_string(), title: Some("Read the announcement".to_string()) }
+        ]),
         media: Some(vec![
             models::FeedPostMediaItem {
-                id: Some("img-hero-01".to_string()),
-                kind: Some("image".to_string()),
+                id: Some("media-1122".to_string()),
+                caption: Some("Feature screenshot".to_string()),
                 assets: Some(vec![
-                    models::FeedPostMediaItemAsset {
-                        url: "https://cdn.acme-corp.com/news/hero-2025.jpg".to_string(),
-                        mime_type: Some("image/jpeg".to_string())
-                    }
+                    models::FeedPostMediaItemAsset { url: "https://cdn.acme.com/images/feature-1122.jpg".to_string(), mime_type: Some("image/jpeg".to_string()) }
                 ])
             }
         ]),
-        links: Some(vec![
-            models::FeedPostLink {
-                url: "https://acme-corp.com/deep-dive".to_string(),
-                title: Some("Full analysis".to_string())
-            }
-        ]),
-        ..Default::default()
+        is_published: Some(true),
     },
     broadcast_id: Some("broadcast-789".to_string()),
-    sso: Some("sso-token-abc123".to_string())
+    sso: Some("sso-token-abc".to_string()),
 };
 let response: CreateFeedPostPublic200Response = update_feed_post_public(&configuration, params).await?;
 [inline-code-end]

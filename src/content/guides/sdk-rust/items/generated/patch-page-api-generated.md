@@ -14,17 +14,22 @@ Returns: [`PatchPageApiResponse`](https://github.com/FastComments/fastcomments-r
 
 [inline-code-attrs-start title = 'patch_page Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PatchPageParams = PatchPageParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "news/article".to_string(),
-    update_api_page_data: models::UpdateApiPageData {
-        title: Some("Breaking: Rust adoption surges".to_string()),
-        slug: Some("news/article".to_string()),
-        content: Some("<p>Rust is seeing increased adoption across startups.</p>".to_string()),
-        published: Some(true),
-        tags: Some(vec!["rust".to_string(), "technology".to_string()]),
-        metadata: Some(serde_json::json!({"author":"Jane Doe","section":"News"})),
-    },
-};
-let updated_page: PatchPageApiResponse = patch_page(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: PatchPageParams = PatchPageParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("news/article-123"),
+        update_api_page_data: models::UpdateApiPageData {
+            title: Some(String::from("Breaking: Rust 1.80 Released")),
+            path: String::from("/news/rust-1-80"),
+            description: Some(String::from("Highlights and features in Rust 1.80")),
+            is_published: Some(true),
+            metadata: Some(std::collections::HashMap::from([
+                (String::from("author"), String::from("Jane Doe")),
+                (String::from("category"), String::from("technology")),
+            ])),
+        },
+    };
+    let response: PatchPageApiResponse = patch_page(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

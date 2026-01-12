@@ -1,0 +1,9 @@
+{
+  "method": "get_comments",
+  "signatureHash": "8acf0239510a92882845323c70128567edc9607abecfaacf43dcf9fe67af2310",
+  "generatedAt": "2026-01-12T21:59:47.732Z",
+  "codeExample": "async fn example_get_comments() -> Result<GetComments200Response, Error> {\n    let params = GetCommentsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        page: Some(1),\n        limit: Some(25),\n        skip: Some(0),\n        as_tree: Some(true),\n        skip_children: Some(0),\n        limit_children: Some(10),\n        max_tree_depth: Some(3),\n        url_id: Some(\"news/article-2026-01-12\".to_string()),\n        user_id: Some(\"user-123\".to_string()),\n        anon_user_id: Some(\"anon-9fcf\".to_string()),\n        context_user_id: Some(\"ctx-42\".to_string()),\n        hash_tag: Some(\"product-launch\".to_string()),\n        parent_id: Some(\"comment-456\".to_string()),\n        direction: Some(models::SortDirections::Desc),\n    };\n    let resp: GetComments200Response = get_comments(&configuration, params).await?;\n    Ok(resp)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 624,
+  "completionTokens": 1120
+}

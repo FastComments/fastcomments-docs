@@ -1,0 +1,9 @@
+{
+  "method": "getComment",
+  "signatureHash": "5f82cc0e8b436773238c7dbe783501c8854978edb05b70b19efdcd136a856c78",
+  "generatedAt": "2026-01-12T21:53:12.690Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst commentId: string = 'b3d1f9c2-7e8a-4d2e-9a1b-6c2e9f8a1234';\nconst commentResponse: GetComment200Response = await getComment(tenantId, commentId);\nconst apiComment: APIComment | undefined = (commentResponse as { comment?: APIComment }).comment;\nconst firstBadge: CommentUserBadgeInfo | undefined = apiComment?.user?.badges?.[0];",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 1727
+}

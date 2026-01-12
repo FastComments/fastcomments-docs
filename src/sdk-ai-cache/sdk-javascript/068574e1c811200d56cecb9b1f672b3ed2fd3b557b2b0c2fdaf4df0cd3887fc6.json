@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "068574e1c811200d56cecb9b1f672b3ed2fd3b557b2b0c2fdaf4df0cd3887fc6",
+  "generatedAt": "2026-01-12T21:53:26.197Z",
+  "codeExample": "const tenantId: string = 'tenant-42a7b9';\nconst firstPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);\nconst secondPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 50);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 575
+}

@@ -17,14 +17,14 @@ Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
+  notificationId = "notif-98765",
   newStatus = "read",
-  sso = "ssoToken-abc123"
+  sso = "sso-session-776"
 )
 
 if response.isSome:
-  let result = response.get()
-  echo "Notification updated:", repr(result)
+  let updated = response.get()
+  echo "Updated notification:", $updated
 else:
-  echo "Failed to update notification. HTTP status:", httpResponse.status
+  echo "No update returned"
 [inline-code-end]

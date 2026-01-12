@@ -14,22 +14,20 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'patch_domain_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_domain() -> Result<GetDomainConfig200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: PatchDomainConfigParams = PatchDomainConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        domain_to_update: "news/articles".to_string(),
+        domain_to_update: "blog.acme.com".to_string(),
         patch_domain_config_params: models::PatchDomainConfigParams {
-            allowed_origins: Some(vec![
-                "https://www.acme.com".to_string(),
-                "https://editor.acme.com".to_string(),
-            ]),
-            moderation_mode: Some("pre_moderation".to_string()),
-            max_comment_length: Some(2000),
-            enable_cors: Some(true),
+            moderation_enabled: Some(true),
+            allowed_origins: Some(vec!["https://blog.acme.com".to_string()]),
+            custom_css: Some(".fc-comment{font-size:14px}".to_string()),
+            notify_on_new_comment: Some(true),
             ..Default::default()
         },
     };
-    let updated: GetDomainConfig200Response = patch_domain_config(&configuration, params).await?;
-    Ok(updated)
+    let resp: GetDomainConfig200Response = patch_domain_config(&configuration, params).await?;
+    println!("{:#?}", resp);
+    Ok(())
 }
 [inline-code-end]

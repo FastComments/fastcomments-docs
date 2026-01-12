@@ -18,15 +18,17 @@ Returns: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'vote_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: VoteCommentParams = VoteCommentParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    comment_id: "cmt-20251121-84a".to_string(),
-    url_id: "news/article/2025/11/21/major-update".to_string(),
-    broadcast_id: "broadcast-2025-11-21-1".to_string(),
-    vote_body_params: models::VoteBodyParams { vote: 1 },
-    session_id: Some("sess-9f4b".to_string()),
-    sso: Some("sso-jwt-token-xyz".to_string()),
-};
-
-let response: VoteComment200Response = vote_comment(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: VoteCommentParams = VoteCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-78f2a1".to_string(),
+        url_id: "news/article/2026/01/12/market-update".to_string(),
+        broadcast_id: "bcast-20260112".to_string(),
+        vote_body_params: models::VoteBodyParams { value: 1 },
+        session_id: Some("sess-9f8c7a".to_string()),
+        sso: Some("sso-token-abc123".to_string()),
+    };
+    let response: VoteComment200Response = vote_comment(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "fea973a2f0d5e0164f8d7350a979d56415eb5acc4e8f96e9b3fc551d12aaf871",
+  "generatedAt": "2026-01-12T21:56:10.130Z",
+  "codeExample": "let (response, httpResponse) = client.getCachedNotificationCount(tenantId = \"my-tenant-123\", id = \"notif-thread-2026\")\nif response.isSome:\n  let cached = response.get()\n  echo \"Cached notification count: \", $cached",
+  "model": "gpt-5-mini",
+  "promptTokens": 396,
+  "completionTokens": 896
+}

@@ -14,11 +14,10 @@ Returns: [`Option[GetUserPresenceStatuses_200_response]`](https://github.com/Fas
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "", userIds = "")
-
+let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user-987,user-654")
 if response.isSome:
   let statuses = response.get()
-  echo "Presence statuses: ", $statuses
+  echo statuses
 else:
-  echo "No presence statuses returned"
+  discard httpResponse
 [inline-code-end]

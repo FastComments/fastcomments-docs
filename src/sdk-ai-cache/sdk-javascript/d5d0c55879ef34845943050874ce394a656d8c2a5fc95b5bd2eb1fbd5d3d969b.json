@@ -1,0 +1,9 @@
+{
+  "method": "getTenant",
+  "signatureHash": "d5d0c55879ef34845943050874ce394a656d8c2a5fc95b5bd2eb1fbd5d3d969b",
+  "generatedAt": "2026-01-12T21:53:35.526Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_corp\";\nconst id: string = \"f47ac10b-58cc-4372-a567-0e02b2c3d479\";\ninterface GetOptions { includeDeleted?: boolean; locale?: string; }\nconst options: GetOptions = { locale: \"en-US\" };\nconst result: GetTenant200Response = await getTenant(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 865
+}

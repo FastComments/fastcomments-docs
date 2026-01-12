@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "5ea96e9cf333636290e23103ec20be8ab57ac03e5970fd83773d9640503ab8e0",
+  "generatedAt": "2026-01-12T21:56:44.238Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionResults(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/politics/election-2024\",\n  userId = \"user-9876\",\n  startDate = \"2024-01-01T00:00:00Z\",\n  questionId = \"q-user-satisfaction\",\n  questionIds = \"q-user-satisfaction,q-engagement\",\n  skip = 0.0\n)\n\nif response.isSome:\n  let results = response.get()\n  echo \"Got question results: \", $results\nelse:\n  echo \"No results, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 787
+}

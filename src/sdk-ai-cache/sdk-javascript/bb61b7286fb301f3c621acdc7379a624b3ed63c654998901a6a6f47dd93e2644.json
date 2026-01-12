@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "bb61b7286fb301f3c621acdc7379a624b3ed63c654998901a6a6f47dd93e2644",
+  "generatedAt": "2026-01-12T21:54:00.785Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b2a4c';\nconst pageId: string = 'page_9c1d8f7';\nconst updateAPIPageData: UpdateAPIPageData = {\n  title: 'How to use FastComments with TypeScript',\n  path: '/guides/fastcomments-typescript',\n  isPublished: true,\n  metadata: { author: 'Alex Martinez', tags: ['comments', 'typescript'] } // optional field included\n};\nconst result: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateAPIPageData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 279,
+  "completionTokens": 967
+}

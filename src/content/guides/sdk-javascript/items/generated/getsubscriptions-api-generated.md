@@ -13,11 +13,8 @@ Returns: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getSubscriptions Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_acme_01";
-  const userId: string = "user_jdoe_42";
-  const allSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
-  const userSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
-  console.log(allSubscriptions, userSubscriptions);
-})();
+const tenantId: string = 'tenant_8a7f3b2c';
+const userId: string = 'user_4f1c9d6a';
+const subscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
+const tenantOnlySubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 [inline-code-end]

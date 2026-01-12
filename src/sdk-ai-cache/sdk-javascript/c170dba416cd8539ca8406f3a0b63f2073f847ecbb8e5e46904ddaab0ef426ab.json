@@ -1,0 +1,9 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "c170dba416cd8539ca8406f3a0b63f2073f847ecbb8e5e46904ddaab0ef426ab",
+  "generatedAt": "2026-01-12T21:53:01.001Z",
+  "codeExample": "const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription('tenant_9f8b7a6c', 'sub_3a9d2e7b');\nconst responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription('tenant_9f8b7a6c', 'sub_8b2c4f1d', 'user_47b2f9c1');",
+  "model": "gpt-5-mini",
+  "promptTokens": 256,
+  "completionTokens": 798
+}

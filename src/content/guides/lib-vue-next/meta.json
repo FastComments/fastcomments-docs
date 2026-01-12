@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 Library",
+  "pageHeader": "FastComments Vue 3 Library",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "generated/installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Usage",
+      "file": "generated/usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Updating The Current Page (SPA Example)",
+      "file": "generated/updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "In Production",
+      "file": "generated/in-production-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "All Widgets and Documentation",
+      "file": "generated/all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "generated/fastcomments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

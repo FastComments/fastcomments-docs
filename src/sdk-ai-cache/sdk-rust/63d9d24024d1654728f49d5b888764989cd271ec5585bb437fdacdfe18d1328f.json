@@ -1,0 +1,9 @@
+{
+  "method": "update_question_result",
+  "signatureHash": "63d9d24024d1654728f49d5b888764989cd271ec5585bb437fdacdfe18d1328f",
+  "generatedAt": "2026-01-12T22:01:32.591Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {\n        question_id: \"q-12345\".to_string(),\n        result: true,\n        comment: Some(\"Marked by moderator after review\".to_string()),\n    };\n\n    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/98765\".to_string(),\n        update_question_result_body: body,\n    };\n\n    let response: FlagCommentPublic200Response = update_question_result(&configuration, params).await?;\n    println!(\"{:#?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 439,
+  "completionTokens": 1179
+}

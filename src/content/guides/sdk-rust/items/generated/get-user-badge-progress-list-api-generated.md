@@ -15,14 +15,11 @@ Returns: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_badge_progress() -> Result<GetUserBadgeProgressList200Response, Error> {
-    let params = GetUserBadgeProgressListParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user_9b7f3".to_string()),
-        limit: Some(25.0),
-        skip: Some(0.0),
-    };
-    let resp: GetUserBadgeProgressList200Response = get_user_badge_progress_list(&configuration, params).await?;
-    Ok(resp)
-}
+let params: GetUserBadgeProgressListParams = GetUserBadgeProgressListParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    user_id: Some("user-12345".to_string()),
+    limit: Some(25.0),
+    skip: Some(0.0),
+};
+let resp: GetUserBadgeProgressList200Response = get_user_badge_progress_list(&configuration, params).await?;
 [inline-code-end]

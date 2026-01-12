@@ -16,7 +16,7 @@ Returns: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComment
 let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "jane.doe@newsorg.com")
 if response.isSome:
   let ssoUser = response.get()
-  echo ssoUser
+  echo "SSO user retrieved for tenant my-tenant-123"
 else:
   echo "SSO user not found"
 [inline-code-end]

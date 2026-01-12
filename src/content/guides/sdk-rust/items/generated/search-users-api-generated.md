@@ -4,7 +4,7 @@
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | url_id | String | Yes |  |
-| username_starts_with | String | Yes |  |
+| username_starts_with | String | No |  |
 | mention_group_ids | Vec<String> | No |  |
 | sso | String | No |  |
 
@@ -16,12 +16,12 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'search_users Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<SearchUsers200Response, Error> {
+async fn perform_user_search() -> Result<SearchUsers200Response, Error> {
     let params: SearchUsersParams = SearchUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-123".to_string(),
-        username_starts_with: "jam".to_string(),
-        mention_group_ids: Some(vec!["editors".to_string(), "contributors".to_string()]),
+        url_id: "news/article-2026".to_string(),
+        username_starts_with: Some("jo".to_string()),
+        mention_group_ids: Some(vec!["editors".to_string(), "authors".to_string()]),
         sso: Some("saml".to_string()),
     };
     let response: SearchUsers200Response = search_users(&configuration, params).await?;

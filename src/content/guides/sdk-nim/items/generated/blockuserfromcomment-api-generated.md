@@ -16,12 +16,13 @@ Returns: [`Option[BlockFromCommentPublic_200_response]`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'blockUserFromComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = BlockFromCommentParams(reason = "Abusive language", temporary = true, durationMinutes = 1440, tags = @["abuse", "spam"])
-let (response, httpResponse) = client.blockUserFromComment(tenantId = "my-tenant-123", id = "cmt-98765", blockFromCommentParams = params, userId = "user-4321", anonUserId = "")
+let (response, httpResponse) = client.blockUserFromComment(
+  tenantId = "my-tenant-123",
+  id = "cmt-2026-0001",
+  blockFromCommentParams = BlockFromCommentParams(),
+  userId = "user-7421",
+  anonUserId = "")
 if response.isSome:
   let blocked = response.get()
   discard blocked
-  echo "Block request succeeded, HTTP status: ", httpResponse.status
-else:
-  echo "No block response, HTTP status: ", httpResponse.status
 [inline-code-end]

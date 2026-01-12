@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts_stats",
+  "signatureHash": "62d6cfaf2f186a11321aa9847d8bb7874656e9a7bc64e320477d6bb1062da003",
+  "generatedAt": "2026-01-12T22:02:03.307Z",
+  "codeExample": "async fn fetch_stats() -> Result<GetFeedPostsStats200Response, Error> {\n    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: vec![\n            \"news/2026/space-launch\".to_string(),\n            \"blog/tech/rust-1-75\".to_string(),\n        ],\n        sso: Some(\"user-12345-sso-token\".to_string()),\n    };\n    let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;\n    Ok(stats)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 844
+}

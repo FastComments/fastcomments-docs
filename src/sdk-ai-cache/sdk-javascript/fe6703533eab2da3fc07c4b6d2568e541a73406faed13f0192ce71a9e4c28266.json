@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "fe6703533eab2da3fc07c4b6d2568e541a73406faed13f0192ce71a9e4c28266",
+  "generatedAt": "2026-01-12T21:54:37.157Z",
+  "codeExample": "const tenantId: string = 'tenant_1034';\nconst commentId: string = 'cmt_20260111_784';\nconst voteId: string = 'vote_7782';\nconst urlId: string = 'article-2026-01-11-new-feature';\nconst broadcastId: string = 'broadcast_2026_01_11_live';\nconst editKey: string = 'edk_9f8e7d6c';\nconst sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 444,
+  "completionTokens": 815
+}
