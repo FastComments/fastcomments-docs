@@ -13,17 +13,22 @@ Returns: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addSSOUser Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto payload = std::make_shared<CreateAPISSOUserData>();
-payload->email = utility::string_t(U("jane.doe@example.com"));
-payload->displayName = utility::string_t(U("Jane Doe"));
-payload->ssoId = utility::string_t(U("jdoe-azure-12345"));
-payload->roles = std::vector<utility::string_t>{ utility::string_t(U("moderator")) };
-payload->externalId = boost::optional<utility::string_t>(utility::string_t(U("ext-9876")));
-payload->sendInvite = boost::optional<bool>(true);
-
-api->addSSOUser(utility::string_t(U("my-tenant-123")), *payload)
-.then([](std::shared_ptr<AddSSOUserAPIResponse> resp){
-    if (resp) std::cout << "Added SSO user successfully\n";
-    else std::cout << "Failed to add SSO user\n";
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto createPtr = std::make_shared<CreateAPISSOUserData>();
+createPtr->email = utility::conversions::to_string_t("user@example.com");
+createPtr->displayName = boost::optional<utility::string_t>(utility::conversions::to_string_t("Jane Doe"));
+createPtr->externalId = boost::optional<utility::string_t>(utility::conversions::to_string_t("ext-456"));
+createPtr->isAdmin = boost::optional<bool>(false);
+api->addSSOUser(tenantId, *createPtr)
+.then([](pplx::task<std::shared_ptr<AddSSOUserAPIResponse>> task){
+    try {
+        auto resp = task.get();
+        if (resp) {
+            return resp;
+        }
+        return std::shared_ptr<AddSSOUserAPIResponse>();
+    } catch (const std::exception&) {
+        return std::shared_ptr<AddSSOUserAPIResponse>();
+    }
 });
 [inline-code-end]

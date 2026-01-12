@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "71396262a5c755b5c0efc022cf658d485a5cc81847925be223328b7fc04db74b",
+  "generatedAt": "2026-01-12T20:33:48.440Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t urlId = utility::conversions::to_string_t(\"https://example.com/articles/42\");\nutility::string_t userId = utility::conversions::to_string_t(\"user@example.com\");\nutility::string_t parentId = utility::conversions::to_string_t(\"comment-abc-123\");\napi->getComments(tenantId,\n                 boost::optional<int32_t>(1),\n                 boost::optional<int32_t>(50),\n                 boost::optional<int32_t>(0),\n                 boost::optional<bool>(true),\n                 boost::optional<int32_t>(),\n                 boost::optional<int32_t>(),\n                 boost::optional<int32_t>(),\n                 boost::optional<utility::string_t>(urlId),\n                 boost::optional<utility::string_t>(userId),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(),\n                 boost::optional<utility::string_t>(parentId),\n                 boost::optional<SortDirections>())\n.then([](std::shared_ptr<GetComments_200_response> resp){\n    if (resp) {\n        auto copy = std::make_shared<GetComments_200_response>(*resp);\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 540,
+  "completionTokens": 3228
+}

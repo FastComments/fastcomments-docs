@@ -1,0 +1,9 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "4fc2bc0d91628fbc6babc9e1a04f2ca2573d059d34969a28a8ae6b7721183d2e",
+  "generatedAt": "2026-01-12T20:33:51.609Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-7a9f-12345\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getPageByURLId(tenantId, urlId)\n    .then([=](std::shared_ptr<GetPageByURLIdAPIResponse> response) {\n        auto result = response ? response : std::make_shared<GetPageByURLIdAPIResponse>();\n        return result;\n    })\n    .wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 341,
+  "completionTokens": 1349
+}

@@ -16,19 +16,17 @@ Returns: [`BlockFromCommentPublic_200_response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'blockUserFromComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
 BlockFromCommentParams params;
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::none;
+boost::optional<utility::string_t> anonUserId = boost::optional<utility::string_t>(U("anon-abc-123"));
 api->blockUserFromComment(tenantId, commentId, params, userId, anonUserId)
-    .then([](pplx::task<std::shared_ptr<BlockFromCommentPublic_200_response>> t){
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto copy = std::make_shared<BlockFromCommentPublic_200_response>(*resp);
-            }
-        } catch (const std::exception&) {
-        }
-    });
+.then([](std::shared_ptr<BlockFromCommentPublic_200_response> resp){
+    if(resp){
+        auto wrapper = std::make_shared<std::shared_ptr<BlockFromCommentPublic_200_response>>(resp);
+        std::cout << U("Blocked user from comment successfully\n");
+    }
+})
+.wait();
 [inline-code-end]

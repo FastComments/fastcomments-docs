@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "349aa1843c72717f0a65a9e83b3d2c5a95dfc3899f74529f49e951ed5c4ffa6a",
+  "generatedAt": "2026-01-12T20:36:13.316Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t packageId = U(\"pkg-456\");\nauto bodyPtr = std::make_shared<UpdateTenantPackageBody>();\nbodyPtr->name = utility::string_t(U(\"Pro Monthly\"));\nbodyPtr->description = boost::optional<utility::string_t>(U(\"Monthly subscription for pro users\"));\nbodyPtr->enabled = boost::optional<bool>(true);\napi->updateTenantPackage(tenantId, packageId, *bodyPtr)\n.then([](std::shared_ptr<FlagCommentPublic_200_response> resp){\n    std::cout << (resp ? \"updateTenantPackage succeeded\\n\" : \"updateTenantPackage returned null\\n\");\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 1821
+}

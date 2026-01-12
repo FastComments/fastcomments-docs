@@ -15,18 +15,21 @@ Returns: [`BlockFromCommentPublic_200_response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'blockFromCommentPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t(U("my-tenant-123"));
-utility::string_t commentId = utility::string_t(U("comment-456"));
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654321");
 PublicBlockFromCommentParams params;
-boost::optional<utility::string_t> sso = utility::string_t(U("sso-token-abc123"));
+params.reason = U("Repeated harassment");
+params.durationMinutes = 1440;
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc123"));
+auto placeholder = std::make_shared<BlockFromCommentPublic_200_response>();
 api->blockFromCommentPublic(tenantId, commentId, params, sso)
-.then([](pplx::task<std::shared_ptr<BlockFromCommentPublic_200_response>> task){
+.then([](pplx::task<std::shared_ptr<BlockFromCommentPublic_200_response>> t) {
     try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<BlockFromCommentPublic_200_response>();
-        std::cout << "BlockFromCommentPublic completed\n";
-    } catch (const std::exception& e) {
-        std::cerr << "BlockFromCommentPublic error: " << e.what() << '\n';
+        auto resp = t.get();
+        if (resp) std::wcout << U("Comment blocked successfully\n");
+        else std::wcout << U("Block request returned empty response\n");
+    } catch (...) {
+        std::wcout << U("Block request failed\n");
     }
 });
 [inline-code-end]

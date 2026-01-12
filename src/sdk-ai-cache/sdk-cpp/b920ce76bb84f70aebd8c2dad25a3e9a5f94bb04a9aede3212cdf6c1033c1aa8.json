@@ -1,0 +1,9 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "b920ce76bb84f70aebd8c2dad25a3e9a5f94bb04a9aede3212cdf6c1033c1aa8",
+  "generatedAt": "2026-01-12T20:33:05.825Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t voteId = utility::conversions::to_string_t(\"vote-98765\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user-edit-key-abc123\"));\n\napi->deleteVote(tenantId, voteId, editKey)\n.then([](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto result = resp ? std::make_shared<DeleteCommentVote_200_response>(*resp)\n                           : std::make_shared<DeleteCommentVote_200_response>();\n        (void)result;\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 347,
+  "completionTokens": 1283
+}

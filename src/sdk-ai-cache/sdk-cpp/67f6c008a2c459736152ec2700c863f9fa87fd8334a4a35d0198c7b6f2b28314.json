@@ -1,0 +1,9 @@
+{
+  "method": "flagComment",
+  "signatureHash": "67f6c008a2c459736152ec2700c863f9fa87fd8334a4a35d0198c7b6f2b28314",
+  "generatedAt": "2026-01-12T20:33:14.130Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId;\napi->flagComment(tenantId, commentId, userId, anonUserId)\n    .then([](pplx::task<std::shared_ptr<FlagComment_200_response>> t){\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto processed = std::make_shared<FlagComment_200_response>(*resp);\n            }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 359,
+  "completionTokens": 1383
+}

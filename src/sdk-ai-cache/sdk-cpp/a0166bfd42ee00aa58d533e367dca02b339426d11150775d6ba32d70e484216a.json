@@ -1,0 +1,9 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "a0166bfd42ee00aa58d533e367dca02b339426d11150775d6ba32d70e484216a",
+  "generatedAt": "2026-01-12T20:33:18.123Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> limit = 100.0;\nboost::optional<double> skip = 0.0;\nboost::optional<SORT_DIR> order = SORT_DIR::DESC;\nboost::optional<double> after = 1622505600.0;\nboost::optional<double> before = 1625097600.0;\n\napi->getAuditLogs(tenantId, limit, skip, order, after, before)\n.then([](pplx::task<std::shared_ptr<GetAuditLogs_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<GetAuditLogs_200_response>(*resp);\n        std::cout << \"Retrieved audit logs response at \" << std::time(nullptr) << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"Error fetching audit logs: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 395,
+  "completionTokens": 1370
+}

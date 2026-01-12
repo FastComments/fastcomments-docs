@@ -15,17 +15,15 @@ Returns: [`GetFeedPostsStats_200_response`](https://github.com/FastComments/fast
 [inline-code-attrs-start title = 'getFeedPostsStats Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-std::vector<utility::string_t> postIds = { U("post-001"), U("post-002"), U("post-003") };
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+std::vector<utility::string_t> postIds{ U("post-abc-001"), U("post-xyz-123") };
+boost::optional<utility::string_t> sso(U("user@example.com"));
 api->getFeedPostsStats(tenantId, postIds, sso)
-    .then([](pplx::task<std::shared_ptr<GetFeedPostsStats_200_response>> task)
+    .then([](pplx::task<std::shared_ptr<GetFeedPostsStats_200_response>> t)
     {
         try {
-            auto resp = task.get();
-            auto safeResp = resp ? resp : std::make_shared<GetFeedPostsStats_200_response>();
-            (void)safeResp;
-        } catch (const std::exception& e) {
-            (void)e;
-        }
+            auto resp = t.get();
+            auto respCopy = resp ? std::make_shared<GetFeedPostsStats_200_response>(*resp) : nullptr;
+            (void)respCopy;
+        } catch (const std::exception&) {}
     });
 [inline-code-end]

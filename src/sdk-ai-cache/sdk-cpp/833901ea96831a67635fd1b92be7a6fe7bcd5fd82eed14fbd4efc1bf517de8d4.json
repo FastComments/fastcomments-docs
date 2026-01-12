@@ -1,0 +1,9 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "833901ea96831a67635fd1b92be7a6fe7bcd5fd82eed14fbd4efc1bf517de8d4",
+  "generatedAt": "2026-01-12T20:36:52.762Z",
+  "codeExample": "utility::string_t tenantId(U(\"my-tenant-123\"));\nutility::string_t commentId(U(\"cmt-456\"));\nboost::optional<utility::string_t> editKey(utility::string_t(U(\"edit-key-789\")));\nboost::optional<utility::string_t> sso(utility::string_t(U(\"user@example.com\")));\nauto task = api->getCommentText(tenantId, commentId, editKey, sso)\n    .then([](std::shared_ptr<GetCommentText_200_response> resp){\n        if (resp) {\n            std::cout << \"Comment text retrieved\\n\";\n        } else {\n            std::cout << \"Comment not found\\n\";\n        }\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 363,
+  "completionTokens": 1631
+}

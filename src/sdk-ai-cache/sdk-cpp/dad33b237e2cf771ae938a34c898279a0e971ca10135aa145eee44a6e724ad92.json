@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "dad33b237e2cf771ae938a34c898279a0e971ca10135aa145eee44a6e724ad92",
+  "generatedAt": "2026-01-12T20:36:44.367Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"question-456\");\nUpdateQuestionResultBody updateQuestionResultBody;\nauto moderatorEmail = std::make_shared<utility::string_t>(U(\"moderator@example.com\"));\nboost::optional<utility::string_t> resolutionNote = boost::optional<utility::string_t>(U(\"Marked duplicate of q-123\"));\napi->updateQuestionResult(tenantId, id, updateQuestionResultBody)\n    .then([moderatorEmail, resolutionNote](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t)\n    {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto resultPtr = resp;\n            }\n        } catch (...) {}\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 2480
+}

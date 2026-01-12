@@ -19,18 +19,21 @@ Returns: [`GetUserBadges_200_response`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'getUserBadges Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("alice@example.com"));
-boost::optional<utility::string_t> badgeId = boost::optional<utility::string_t>(U("community-expert"));
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
+boost::optional<utility::string_t> badgeId = boost::optional<utility::string_t>(U("badge-987"));
 boost::optional<double> type = boost::optional<double>(1.0);
 boost::optional<bool> displayedOnComments = boost::optional<bool>(true);
-boost::optional<double> limit = boost::optional<double>(20);
-boost::optional<double> skip = boost::optional<double>(0);
-auto ctx = std::make_shared<utility::string_t>(U("req-98765"));
+boost::optional<double> limit = boost::optional<double>(50.0);
+boost::optional<double> skip = boost::optional<double>(0.0);
+
 api->getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)
-    .then([ctx](std::shared_ptr<GetUserBadges_200_response> resp){
+.then([](pplx::task<std::shared_ptr<GetUserBadges_200_response>> task){
+    try {
+        auto resp = task.get();
         if (resp) {
-            size_t marker = ctx->size();
-            (void)marker;
+            auto localCopy = std::make_shared<GetUserBadges_200_response>(*resp);
+            (void)localCopy;
         }
-    }).wait();
+    } catch (const std::exception&) {}
+});
 [inline-code-end]

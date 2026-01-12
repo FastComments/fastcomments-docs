@@ -1,0 +1,9 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "b774bd8ccf97ebf38d56445eec7db75cc29a53bfba70196f02f4d2ff1fd32689",
+  "generatedAt": "2026-01-12T20:34:02.670Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U(\"cmt-98765\"));\nboost::optional<utility::string_t> externalId = boost::optional<utility::string_t>(U(\"ext-abc-01\"));\nboost::optional<utility::string_t> eventType = boost::optional<utility::string_t>(U(\"comment_created\"));\nboost::optional<utility::string_t> type = boost::optional<utility::string_t>(U(\"webhook\"));\nboost::optional<utility::string_t> domain = boost::optional<utility::string_t>(U(\"example.com\"));\nboost::optional<double> attemptCountGT = boost::optional<double>(2.0);\nboost::optional<double> skip = boost::optional<double>(0.0);\n\napi->getPendingWebhookEvents(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT, skip)\n.then([](pplx::task<std::shared_ptr<GetPendingWebhookEvents_200_response>> t) {\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<GetPendingWebhookEvents_200_response>(*resp);\n        (void)copy;\n    } catch (const std::exception& e) {\n        (void)e;\n        auto empty = std::make_shared<GetPendingWebhookEvents_200_response>();\n        (void)empty;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1472
+}

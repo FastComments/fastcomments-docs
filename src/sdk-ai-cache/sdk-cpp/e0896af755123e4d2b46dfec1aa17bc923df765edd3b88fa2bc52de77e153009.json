@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "e0896af755123e4d2b46dfec1aa17bc923df765edd3b88fa2bc52de77e153009",
+  "generatedAt": "2026-01-12T20:33:01.943Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> deleteComments = boost::optional<utility::string_t>(U(\"true\"));\nboost::optional<utility::string_t> commentDeleteMode = boost::optional<utility::string_t>(U(\"soft\"));\nauto fallback = std::make_shared<FlagCommentPublic_200_response>();\napi->deleteTenantUser(tenantId, userId, deleteComments, commentDeleteMode)\n.then([fallback](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = fallback;\n        std::cout << \"deleteTenantUser completed\\n\";\n    } catch (const std::exception &e) {\n        std::cout << \"deleteTenantUser failed: \" << e.what() << \"\\n\";\n    }\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 365,
+  "completionTokens": 1302
+}

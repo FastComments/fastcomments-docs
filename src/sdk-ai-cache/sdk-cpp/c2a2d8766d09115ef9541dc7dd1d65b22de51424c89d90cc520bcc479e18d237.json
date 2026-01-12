@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "c2a2d8766d09115ef9541dc7dd1d65b22de51424c89d90cc520bcc479e18d237",
+  "generatedAt": "2026-01-12T20:33:41.371Z",
+  "codeExample": "boost::optional<utility::string_t> tenantIdOpt = utility::string_t(U(\"my-tenant-123\"));\napi->getEmailTemplateDefinitions(tenantIdOpt.value())\n.then([](pplx::task<std::shared_ptr<GetEmailTemplateDefinitions_200_response>> task) {\n    try {\n        auto resp = task.get();\n        auto localCopy = std::make_shared<GetEmailTemplateDefinitions_200_response>(*resp);\n        (void)localCopy;\n    } catch (const std::exception& e) {\n        auto fallback = std::make_shared<GetEmailTemplateDefinitions_200_response>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 1997
+}

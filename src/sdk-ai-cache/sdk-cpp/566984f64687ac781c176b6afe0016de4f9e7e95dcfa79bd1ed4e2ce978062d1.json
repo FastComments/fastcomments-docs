@@ -1,0 +1,9 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "566984f64687ac781c176b6afe0016de4f9e7e95dcfa79bd1ed4e2ce978062d1",
+  "generatedAt": "2026-01-12T20:32:38.090Z",
+  "codeExample": "utility::string_t tag = U(\"inappropriate\");\nboost::optional<utility::string_t> tenantId = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nDeleteHashTag_request req;\nboost::optional<DeleteHashTag_request> optReq = boost::optional<DeleteHashTag_request>(req);\n\napi->deleteHashTag(tag, tenantId, optReq)\n.then([](std::shared_ptr<FlagCommentPublic_200_response> resp){\n    auto out = std::make_shared<FlagCommentPublic_200_response>(*resp);\n    std::cout << \"Hashtag removed successfully for tenant\\n\";\n    return out;\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 360,
+  "completionTokens": 1555
+}

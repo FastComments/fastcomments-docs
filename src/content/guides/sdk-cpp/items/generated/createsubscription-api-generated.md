@@ -14,17 +14,21 @@ Returns: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'createSubscription Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-CreateAPIUserSubscriptionData subscriptionData;
-subscriptionData.userEmail = U("user@example.com");
-subscriptionData.planId = U("pro-monthly");
-subscriptionData.autoRenew = boost::optional<bool>(true);
-subscriptionData.couponCode = boost::optional<utility::string_t>(U("WELCOME10"));
-auto task = api->createSubscription(tenantId, subscriptionData)
-.then([=](pplx::task<std::shared_ptr<CreateSubscriptionAPIResponse>> t) {
+auto createData = std::make_shared<CreateAPIUserSubscriptionData>();
+createData->userEmail = U("user@example.com");
+createData->planId = U("pro-monthly");
+createData->paymentMethod = U("card_visa_4242");
+createData->coupon = boost::optional<utility::string_t>(U("WELCOME10"));
+
+api->createSubscription(tenantId, *createData)
+.then([](pplx::task<std::shared_ptr<CreateSubscriptionAPIResponse>> task) {
     try {
-        return t.get();
-    } catch (const std::exception&) {
-        return std::make_shared<CreateSubscriptionAPIResponse>();
+        auto resp = task.get();
+        if (resp) {
+            std::cout << "Subscription created: " << resp->subscriptionId << std::endl;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Create subscription failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]

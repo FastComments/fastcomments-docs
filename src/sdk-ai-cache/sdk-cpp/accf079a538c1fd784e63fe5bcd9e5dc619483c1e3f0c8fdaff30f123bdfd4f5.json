@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "accf079a538c1fd784e63fe5bcd9e5dc619483c1e3f0c8fdaff30f123bdfd4f5",
+  "generatedAt": "2026-01-12T20:36:51.433Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-789\");\nutility::string_t voteId = U(\"vote-456\");\nutility::string_t urlId = U(\"/articles/2026/fastcomments-guide\");\nutility::string_t broadcastId = U(\"broadcast-001\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"editkey-abc\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto placeholder = std::make_shared<DeleteCommentVote_200_response>();\napi->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)\n.then([=](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Vote deleted\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Delete failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 2499
+}

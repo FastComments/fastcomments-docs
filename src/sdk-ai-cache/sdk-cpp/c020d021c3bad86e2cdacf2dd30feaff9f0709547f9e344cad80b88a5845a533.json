@@ -1,0 +1,9 @@
+{
+  "method": "getComment",
+  "signatureHash": "c020d021c3bad86e2cdacf2dd30feaff9f0709547f9e344cad80b88a5845a533",
+  "generatedAt": "2026-01-12T20:33:26.227Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-4e9a1b2\");\nboost::optional<utility::string_t> ifModifiedSince = U(\"2026-01-01T00:00:00Z\");\napi->getComment(tenantId, commentId)\n    .then([ifModifiedSince](std::shared_ptr<GetComment_200_response> resp) {\n        auto result = resp ? resp : std::make_shared<GetComment_200_response>();\n        if(ifModifiedSince) { auto ims = *ifModifiedSince; (void)ims; }\n        return result;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 326,
+  "completionTokens": 2198
+}

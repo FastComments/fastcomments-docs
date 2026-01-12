@@ -16,18 +16,19 @@ Returns: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'patchSSOUser Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-auto updatePtr = std::make_shared<UpdateAPISSOUserData>();
-updatePtr->setEmail(U("user@example.com"));
-updatePtr->setDisplayName(U("Jane Doe"));
-boost::optional<bool> updateComments = boost::optional<bool>(true);
-api->patchSSOUser(tenantId, id, *updatePtr, updateComments)
+utility::string_t userId = U("user@example.com");
+auto updateData = std::make_shared<UpdateAPISSOUserData>();
+updateData->email = U("user@example.com");
+updateData->displayName = U("Jane Doe");
+boost::optional<bool> updateComments = true;
+api->patchSSOUser(tenantId, userId, *updateData, updateComments)
 .then([](pplx::task<std::shared_ptr<PatchSSOUserAPIResponse>> task){
     try {
         auto resp = task.get();
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
+        if (resp) std::cout << "Patched SSO user\n";
+        else std::cout << "No response\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Patch failed: " << e.what() << '\n';
     }
 });
 [inline-code-end]

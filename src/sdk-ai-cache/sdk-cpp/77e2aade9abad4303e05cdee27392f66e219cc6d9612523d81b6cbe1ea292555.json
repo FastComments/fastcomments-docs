@@ -1,0 +1,9 @@
+{
+  "method": "createVote",
+  "signatureHash": "77e2aade9abad4303e05cdee27392f66e219cc6d9612523d81b6cbe1ea292555",
+  "generatedAt": "2026-01-12T20:32:24.711Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nutility::string_t direction = U(\"up\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->createVote(tenantId, commentId, direction, userId, boost::none)\n.then([](pplx::task<std::shared_ptr<VoteComment_200_response>> task) {\n    try {\n        auto resp = task.get();\n        if (!resp) resp = std::make_shared<VoteComment_200_response>();\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 368,
+  "completionTokens": 1688
+}

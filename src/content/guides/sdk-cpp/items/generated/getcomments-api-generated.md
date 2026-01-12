@@ -26,34 +26,28 @@ Returns: [`GetComments_200_response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'getComments Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto page = boost::optional<int32_t>(1);
-auto limit = boost::optional<int32_t>(25);
-auto asTree = boost::optional<bool>(true);
-auto maxDepth = boost::optional<int32_t>(3);
-auto urlId = boost::optional<utility::string_t>(utility::string_t(U("/articles/2025/cpp-async")));
-auto userId = boost::optional<utility::string_t>(utility::string_t(U("user@example.com")));
-auto contextUserId = boost::optional<utility::string_t>(utility::string_t(U("ctx-user-42")));
-auto direction = boost::optional<SortDirections>(SortDirections::DESC);
-
-api->getComments(
-    tenantId,
-    page,
-    limit,
-    boost::optional<int32_t>(), 
-    asTree,
-    boost::optional<int32_t>(),
-    boost::optional<int32_t>(),
-    maxDepth,
-    urlId,
-    userId,
-    boost::optional<utility::string_t>(),
-    contextUserId,
-    boost::optional<utility::string_t>(),
-    boost::optional<utility::string_t>(),
-    direction
-).then([](std::shared_ptr<GetComments_200_response> resp){
-    if (!resp) return;
-    auto copy = std::make_shared<GetComments_200_response>(*resp);
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t urlId = utility::conversions::to_string_t("https://example.com/articles/42");
+utility::string_t userId = utility::conversions::to_string_t("user@example.com");
+utility::string_t parentId = utility::conversions::to_string_t("comment-abc-123");
+api->getComments(tenantId,
+                 boost::optional<int32_t>(1),
+                 boost::optional<int32_t>(50),
+                 boost::optional<int32_t>(0),
+                 boost::optional<bool>(true),
+                 boost::optional<int32_t>(),
+                 boost::optional<int32_t>(),
+                 boost::optional<int32_t>(),
+                 boost::optional<utility::string_t>(urlId),
+                 boost::optional<utility::string_t>(userId),
+                 boost::optional<utility::string_t>(),
+                 boost::optional<utility::string_t>(),
+                 boost::optional<utility::string_t>(),
+                 boost::optional<utility::string_t>(parentId),
+                 boost::optional<SortDirections>())
+.then([](std::shared_ptr<GetComments_200_response> resp){
+    if (resp) {
+        auto copy = std::make_shared<GetComments_200_response>(*resp);
+    }
 });
 [inline-code-end]

@@ -13,19 +13,13 @@ Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_8f3b2a9c-prod";
-  const createAPIPageData: CreateAPIPageData = {
-    url: "https://acme.blog/products/fastsync-2",
-    title: "Introducing FastSync 2.0",
-    slug: "fastsync-2-0",
-    tags: ["releases", "sync", "performance"],
-    isPublic: true,
-    language: "en-US",
-    canonicalUrl: "https://acme.com/products/fastsync-2", // optional
-    metadata: { authorId: "user_42", summary: "Faster sync across devices." } // optional
-  };
-  const result: AddPageAPIResponse = await addPage(tenantId, createAPIPageData);
-  console.log((result as any).page as APIPage);
-})();
+const tenantId: string = "acme-corp-prod-01";
+const createData: CreateAPIPageData = {
+  url: "/docs/2026/comment-moderation",
+  title: "Comment Moderation Guide",
+  description: "Step-by-step instructions to configure moderation workflows for community posts.",
+  language: "en-US", // optional field
+  metadata: { productArea: "support", owner: "platform-team" } // optional field
+};
+const result: AddPageAPIResponse = await addPage(tenantId, createData);
 [inline-code-end]

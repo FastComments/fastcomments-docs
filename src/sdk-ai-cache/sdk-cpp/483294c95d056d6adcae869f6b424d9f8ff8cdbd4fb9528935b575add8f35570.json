@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "483294c95d056d6adcae869f6b424d9f8ff8cdbd4fb9528935b575add8f35570",
+  "generatedAt": "2026-01-12T20:35:12.789Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"alice@example.com\");\nboost::optional<utility::string_t> includeMetadata = boost::optional<utility::string_t>(U(\"true\"));\napi->getTenantUser(tenantId, userId).then([includeMetadata](pplx::task<std::shared_ptr<GetTenantUser_200_response>> t)\n{\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<GetTenantUser_200_response>();\n        if (includeMetadata && result) { (void)includeMetadata; }\n        (void)result;\n    } catch (const std::exception& e) {\n        auto fallback = std::make_shared<GetTenantUser_200_response>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1465
+}

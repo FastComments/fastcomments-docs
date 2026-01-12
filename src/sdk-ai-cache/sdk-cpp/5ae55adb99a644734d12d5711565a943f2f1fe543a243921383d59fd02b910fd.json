@@ -1,0 +1,9 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "5ae55adb99a644734d12d5711565a943f2f1fe543a243921383d59fd02b910fd",
+  "generatedAt": "2026-01-12T20:37:40.181Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nutility::string_t broadcastId = U(\"brd-98765\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto defaultResp = std::make_shared<PinComment_200_response>();\napi->unPinComment(tenantId, commentId, broadcastId, sso)\n.then([defaultResp](pplx::task<std::shared_ptr<PinComment_200_response>> task) {\n    try {\n        auto resp = task.get();\n        if (!resp) resp = defaultResp;\n        std::cout << \"unPinComment completed; response pointer \" << (resp ? \"valid\" : \"null\") << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"unPinComment failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 355,
+  "completionTokens": 1568
+}

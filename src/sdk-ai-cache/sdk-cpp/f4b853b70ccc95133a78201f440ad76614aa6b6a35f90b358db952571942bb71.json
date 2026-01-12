@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "f4b853b70ccc95133a78201f440ad76614aa6b6a35f90b358db952571942bb71",
+  "generatedAt": "2026-01-12T20:35:48.414Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nUpdateAPISSOUserData updateData;\nupdateData.displayName = U(\"Jane Doe\");\nupdateData.email = U(\"user@example.com\");\nboost::optional<bool> updateComments = true;\napi->putSSOUser(tenantId, id, updateData, updateComments)\n.then([](std::shared_ptr<PutSSOUserAPIResponse> resp){\n    if(!resp){ std::cout << \"putSSOUser returned null\\n\"; return; }\n    auto copy = std::make_shared<PutSSOUserAPIResponse>(*resp);\n    std::cout << \"SSO user updated successfully\\n\";\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 369,
+  "completionTokens": 2212
+}

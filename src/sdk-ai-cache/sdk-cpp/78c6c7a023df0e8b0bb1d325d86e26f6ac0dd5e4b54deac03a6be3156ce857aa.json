@@ -1,0 +1,9 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "78c6c7a023df0e8b0bb1d325d86e26f6ac0dd5e4b54deac03a6be3156ce857aa",
+  "generatedAt": "2026-01-12T20:34:04.820Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U(\"cmt-789\"));\nboost::optional<utility::string_t> externalId = boost::optional<utility::string_t>(U(\"ext-456\"));\nboost::optional<utility::string_t> eventType = boost::optional<utility::string_t>(U(\"comment_created\"));\nboost::optional<utility::string_t> type = boost::optional<utility::string_t>(U(\"webhook\"));\nboost::optional<utility::string_t> domain = boost::optional<utility::string_t>(U(\"example.com\"));\nboost::optional<double> attemptCountGT = boost::optional<double>(1.0);\napi->getPendingWebhookEventCount(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT)\n.then([](pplx::task<std::shared_ptr<GetPendingWebhookEventCount_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto respCopy = std::make_shared<GetPendingWebhookEventCount_200_response>(*resp);\n        std::cout << \"Pending webhook event count retrieved\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Failed to get pending count: \" << e.what() << '\\n';\n    }\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 1521
+}

@@ -14,13 +14,15 @@ Returns: [`GetSSOUsers_200_response`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'getSSOUsers Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<int32_t> skip = boost::optional<int32_t>{10};
+boost::optional<int32_t> skip = boost::optional<int32_t>(20);
 api->getSSOUsers(tenantId, skip)
-.then([](pplx::task<std::shared_ptr<GetSSOUsers_200_response>> t) {
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<GetSSOUsers_200_response>();
-    } catch (const std::exception&) {
-    }
-});
+    .then([=](pplx::task<std::shared_ptr<GetSSOUsers_200_response>> task){
+        try {
+            auto resp = task.get();
+            if(!resp) resp = std::make_shared<GetSSOUsers_200_response>();
+            std::cout << "Fetched SSO users successfully\n";
+        } catch(const std::exception& e) {
+            std::cerr << "Error fetching SSO users: " << e.what() << '\n';
+        }
+    });
 [inline-code-end]

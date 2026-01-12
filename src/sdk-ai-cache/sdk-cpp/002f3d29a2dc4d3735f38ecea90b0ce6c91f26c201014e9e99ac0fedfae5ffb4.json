@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "002f3d29a2dc4d3735f38ecea90b0ce6c91f26c201014e9e99ac0fedfae5ffb4",
+  "generatedAt": "2026-01-12T20:31:36.895Z",
+  "codeExample": "AggregationRequest aggregationRequest;\nutility::string_t tenantId( \"my-tenant-123\" );\nboost::optional<utility::string_t> parentTenant( utility::string_t(\"global-tenant\") );\nboost::optional<bool> includeStats( true );\nauto defaultResp = std::make_shared<AggregationResponse>();\napi->aggregate(tenantId, aggregationRequest, parentTenant, includeStats)\n    .then([defaultResp](pplx::task<std::shared_ptr<AggregationResponse>> task){\n        try {\n            auto resp = task.get();\n            if (!resp) resp = defaultResp;\n            (void)resp;\n        } catch (...) {\n            throw;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 350,
+  "completionTokens": 1557
+}

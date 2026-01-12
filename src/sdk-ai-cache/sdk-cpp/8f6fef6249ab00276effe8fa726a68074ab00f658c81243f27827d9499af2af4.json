@@ -1,0 +1,9 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "8f6fef6249ab00276effe8fa726a68074ab00f658c81243f27827d9499af2af4",
+  "generatedAt": "2026-01-12T20:31:42.175Z",
+  "codeExample": "boost::optional<utility::string_t> tenantId(U(\"my-tenant-123\"));\nauto bodyPtr = std::make_shared<CreateHashTagBody>();\nbodyPtr->name = U(\"release\");\nbodyPtr->color = U(\"#00aaff\");\nboost::optional<CreateHashTagBody> createBody(*bodyPtr);\napi->addHashTag(tenantId, createBody).then([](pplx::task<std::shared_ptr<AddHashTag_200_response>> t){\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch(...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 352,
+  "completionTokens": 2051
+}

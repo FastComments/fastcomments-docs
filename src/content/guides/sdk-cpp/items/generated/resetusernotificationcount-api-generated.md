@@ -13,11 +13,15 @@ Returns: [`ResetUserNotifications_200_response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'resetUserNotificationCount Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("user@example.com");
-auto result = api->resetUserNotificationCount(tenantId, sso)
-    .then([](std::shared_ptr<ResetUserNotifications_200_response> resp){
-        if (!resp) resp = std::make_shared<ResetUserNotifications_200_response>();
-        return resp;
-    }).get();
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+api->resetUserNotificationCount(tenantId, sso)
+    .then([](pplx::task<std::shared_ptr<ResetUserNotifications_200_response>> task) {
+        try {
+            auto resp = task.get();
+            if (!resp) resp = std::make_shared<ResetUserNotifications_200_response>();
+        } catch (const std::exception &e) {
+            (void)e;
+        }
+    });
 [inline-code-end]

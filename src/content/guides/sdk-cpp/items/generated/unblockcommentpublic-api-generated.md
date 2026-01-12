@@ -15,19 +15,15 @@ Returns: [`UnBlockCommentPublic_200_response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'unBlockCommentPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-PublicBlockFromCommentParams publicBlockFromCommentParams;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U("sso-token-abc123")));
-
-api->unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
-.then([](pplx::task<std::shared_ptr<UnBlockCommentPublic_200_response>> t) {
+auto publicParams = std::make_shared<PublicBlockFromCommentParams>();
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U("user@example.com")));
+api->unBlockCommentPublic(utility::string_t(U("my-tenant-123")), utility::string_t(U("comment-98765")), *publicParams, sso)
+.then([](pplx::task<std::shared_ptr<UnBlockCommentPublic_200_response>> task) {
     try {
-        auto response = t.get();
-        if (!response) {
-            response = std::make_shared<UnBlockCommentPublic_200_response>();
-        }
+        auto resp = task.get();
+        if (resp) std::cout << "Unblocked comment successfully" << std::endl;
     } catch (const std::exception& e) {
+        std::cerr << "Unblock failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]

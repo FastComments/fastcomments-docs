@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "24e4755dece706fc03218df7b300680cb2fcca46e3a488359224ca331b065ffa",
+  "generatedAt": "2026-01-12T20:35:03.839Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> badgeId = boost::optional<utility::string_t>(U(\"badge-987\"));\nboost::optional<double> type = boost::optional<double>(1.0);\nboost::optional<bool> displayedOnComments = boost::optional<bool>(true);\nboost::optional<double> limit = boost::optional<double>(50.0);\nboost::optional<double> skip = boost::optional<double>(0.0);\n\napi->getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)\n.then([](pplx::task<std::shared_ptr<GetUserBadges_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto localCopy = std::make_shared<GetUserBadges_200_response>(*resp);\n            (void)localCopy;\n        }\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 418,
+  "completionTokens": 1716
+}

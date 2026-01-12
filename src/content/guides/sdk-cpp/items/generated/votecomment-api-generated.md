@@ -19,15 +19,19 @@ Returns: [`VoteComment_200_response`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'voteComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 VoteBodyParams voteBodyParams;
-boost::optional<utility::string_t> sessionId(U("sess-7f8e-7a9b"));
-boost::optional<utility::string_t> sso(U("user@example.com"));
-api->voteComment(U("my-tenant-123"), U("cmt-98765"), U("url-456"), U("br-222"), voteBodyParams, sessionId, sso)
-.then([](pplx::task<std::shared_ptr<VoteComment_200_response>> task){
-    try {
-        auto resp = task.get();
-        auto ack = std::make_shared<utility::string_t>(U("vote-recorded"));
-        (void)ack;
-    } catch(...) {
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-7890");
+utility::string_t urlId = U("/articles/2025/how-to-cpprest");
+utility::string_t broadcastId = U("broadcast-321");
+boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U("sess-0a1b2c"));
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-xyz"));
+
+api->voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)
+    .then([](pplx::task<std::shared_ptr<VoteComment_200_response>> t) {
+        try {
+            auto resp = t.get();
+            if (!resp) resp = std::make_shared<VoteComment_200_response>();
+        } catch (...) {
+        }
+    });
 [inline-code-end]

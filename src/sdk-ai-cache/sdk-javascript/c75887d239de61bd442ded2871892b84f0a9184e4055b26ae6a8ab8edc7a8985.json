@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "c75887d239de61bd442ded2871892b84f0a9184e4055b26ae6a8ab8edc7a8985",
+  "generatedAt": "2026-01-12T20:38:26.262Z",
+  "codeExample": "const tenantId: string = \"acme-corp-prod-01\";\nconst createData: CreateAPIPageData = {\n  url: \"/docs/2026/comment-moderation\",\n  title: \"Comment Moderation Guide\",\n  description: \"Step-by-step instructions to configure moderation workflows for community posts.\",\n  language: \"en-US\", // optional field\n  metadata: { productArea: \"support\", owner: \"platform-team\" } // optional field\n};\nconst result: AddPageAPIResponse = await addPage(tenantId, createData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 271,
+  "completionTokens": 891
+}

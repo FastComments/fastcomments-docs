@@ -20,22 +20,17 @@ Returns: [`CombineCommentsWithQuestionResults200Response`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-publisher-01';
-const questionIds: string[] = ['q_7f3a2b', 'q_9b1c4d'];
-const urlId: string = 'article-2025-11-22';
+const tenantId: string = 'tenant_abc123';
+const questionIds: string[] = ['q_101', 'q_102'];
 const startDate: Date = new Date('2025-01-01T00:00:00Z');
-const forceRecalculate: boolean = true;
-const minValue: number = 0;
-const maxValue: number = 5;
-const limit: number = 100;
+const limit: number = 200;
 const result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults({
   tenantId,
   questionIds,
-  urlId,
   startDate,
-  forceRecalculate,
-  minValue,
-  maxValue,
+  forceRecalculate: true,
+  minValue: 0,
+  maxValue: 100,
   limit
 });
 [inline-code-end]

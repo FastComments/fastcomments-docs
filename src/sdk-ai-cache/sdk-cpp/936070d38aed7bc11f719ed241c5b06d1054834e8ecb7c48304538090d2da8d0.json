@@ -1,0 +1,9 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "936070d38aed7bc11f719ed241c5b06d1054834e8ecb7c48304538090d2da8d0",
+  "generatedAt": "2026-01-12T20:32:49.267Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t subscriptionId = U(\"sub-456\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->deleteSubscription(tenantId, subscriptionId, userId)\n.then([](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<DeleteSubscriptionAPIResponse>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 339,
+  "completionTokens": 1163
+}

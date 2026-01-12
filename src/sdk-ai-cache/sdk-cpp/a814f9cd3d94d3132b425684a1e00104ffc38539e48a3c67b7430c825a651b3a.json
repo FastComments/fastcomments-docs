@@ -1,0 +1,9 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "a814f9cd3d94d3132b425684a1e00104ffc38539e48a3c67b7430c825a651b3a",
+  "generatedAt": "2026-01-12T20:35:44.000Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> redirectURL = utility::string_t(U(\"https://app.example.com/welcome\"));\napi->sendLoginLink(tenantId, userId, redirectURL)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t)\n    {\n        try\n        {\n            auto resp = t.get();\n            if (resp) return resp;\n            return std::make_shared<FlagCommentPublic_200_response>();\n        }\n        catch (...)\n        {\n            return std::make_shared<FlagCommentPublic_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 1315
+}

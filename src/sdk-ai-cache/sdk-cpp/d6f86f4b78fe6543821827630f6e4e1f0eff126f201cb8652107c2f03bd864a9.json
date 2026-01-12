@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "d6f86f4b78fe6543821827630f6e4e1f0eff126f201cb8652107c2f03bd864a9",
+  "generatedAt": "2026-01-12T20:31:45.551Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto createPtr = std::make_shared<CreateAPISSOUserData>();\ncreatePtr->email = utility::conversions::to_string_t(\"user@example.com\");\ncreatePtr->displayName = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Jane Doe\"));\ncreatePtr->externalId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"ext-456\"));\ncreatePtr->isAdmin = boost::optional<bool>(false);\napi->addSSOUser(tenantId, *createPtr)\n.then([](pplx::task<std::shared_ptr<AddSSOUserAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            return resp;\n        }\n        return std::shared_ptr<AddSSOUserAPIResponse>();\n    } catch (const std::exception&) {\n        return std::shared_ptr<AddSSOUserAPIResponse>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1959
+}

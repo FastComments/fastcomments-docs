@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "f9bf0b51f5935d19791e9d29de54ec572f1e57dd45a02b86062c080408723863",
+  "generatedAt": "2026-01-12T20:37:06.793Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-456\");\nutility::string_t userIdWS = U(\"user@example.com\");\nint64_t startTime = 1672531200LL;\nboost::optional<int64_t> endTimeOpt = 1672617600LL;\napi->getEventLog(tenantId, urlId, userIdWS, startTime, *endTimeOpt)\n    .then([](pplx::task<std::shared_ptr<GetEventLog_200_response>> t){\n        try {\n            auto resp = t.get();\n            if (!resp) resp = std::make_shared<GetEventLog_200_response>();\n        } catch (const std::exception&) {}\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 365,
+  "completionTokens": 1641
+}

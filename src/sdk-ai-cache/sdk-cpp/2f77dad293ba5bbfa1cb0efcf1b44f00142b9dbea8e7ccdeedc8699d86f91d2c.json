@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "2f77dad293ba5bbfa1cb0efcf1b44f00142b9dbea8e7ccdeedc8699d86f91d2c",
+  "generatedAt": "2026-01-12T20:34:26.889Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\nauto task = api->getTenantPackages(tenantId, skip).then([](pplx::task<std::shared_ptr<GetTenantPackages_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            (void)resp;\n        }\n    } catch (const std::exception&) {\n        auto fallback = std::make_shared<GetTenantPackages_200_response>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1217
+}

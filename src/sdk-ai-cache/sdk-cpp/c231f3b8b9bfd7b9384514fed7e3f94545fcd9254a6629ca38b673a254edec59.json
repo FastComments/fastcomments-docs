@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "c231f3b8b9bfd7b9384514fed7e3f94545fcd9254a6629ca38b673a254edec59",
+  "generatedAt": "2026-01-12T20:37:56.720Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-456\");\nutility::string_t url = U(\"https://www.example.com/articles/2026/new-feature\");\nutility::string_t pageTitle = U(\"New Feature Announcement\");\nutility::string_t subscribedOrUnsubscribed = U(\"subscribed\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto placeholder = std::make_shared<UpdateUserNotificationStatus_200_response>();\napi->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)\n.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){\n    try {\n        auto resp = task.get();\n        (void)resp;\n    } catch (const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 389,
+  "completionTokens": 1816
+}

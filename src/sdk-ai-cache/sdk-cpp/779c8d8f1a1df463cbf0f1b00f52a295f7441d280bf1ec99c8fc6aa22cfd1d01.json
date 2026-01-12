@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "779c8d8f1a1df463cbf0f1b00f52a295f7441d280bf1ec99c8fc6aa22cfd1d01",
+  "generatedAt": "2026-01-12T20:32:51.807Z",
+  "codeExample": "boost::optional<utility::string_t> maybeTenant = boost::none;\nutility::string_t defaultTenant = U(\"my-tenant-123\");\nutility::string_t questionId = U(\"question-456\");\nutility::string_t tenant = maybeTenant ? *maybeTenant : defaultTenant;\napi->deleteQuestionResult(tenant, questionId)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto processed = std::make_shared<FlagCommentPublic_200_response>(*resp);\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 334,
+  "completionTokens": 1743
+}

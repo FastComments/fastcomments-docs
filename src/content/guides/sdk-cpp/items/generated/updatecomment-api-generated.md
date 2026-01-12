@@ -17,21 +17,18 @@ Returns: [`FlagCommentPublic_200_response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'updateComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-auto paramsPtr = std::make_shared<UpdatableCommentParams>();
-paramsPtr->content = U("Clarified the point about API usage and fixed a typo.");
-boost::optional<utility::string_t> contextUserId = U("moderator@example.com");
-boost::optional<bool> doSpamCheck = true;
-boost::optional<bool> isLive = false;
-api->updateComment(tenantId, commentId, *paramsPtr, contextUserId, doSpamCheck, isLive)
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto commentId = utility::string_t(U("comment-456"));
+auto body = std::make_shared<UpdatableCommentParams>();
+body->content = utility::string_t(U("Updated comment text: fixed a typo and clarified meaning."));
+boost::optional<utility::string_t> contextUserId(utility::string_t(U("user@example.com")));
+boost::optional<bool> doSpamCheck(true);
+boost::optional<bool> isLive(false);
+api->updateComment(tenantId, commentId, body, contextUserId, doSpamCheck, isLive)
 .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){
     try {
-        auto resp = t.get();
-        if (resp) std::cout << "Comment updated successfully\n";
-        else std::cout << "No response received\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Update failed: " << e.what() << std::endl;
-    }
+        auto result = t.get();
+        (void)result;
+    } catch (...) {}
 });
 [inline-code-end]

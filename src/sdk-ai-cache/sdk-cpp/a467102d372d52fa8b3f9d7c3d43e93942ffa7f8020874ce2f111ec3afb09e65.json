@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "a467102d372d52fa8b3f9d7c3d43e93942ffa7f8020874ce2f111ec3afb09e65",
+  "generatedAt": "2026-01-12T20:34:06.257Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10;\napi->getQuestionConfigs(tenantId, skip).then([](pplx::task<std::shared_ptr<GetQuestionConfigs_200_response>> task) {\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto localCopy = std::make_shared<GetQuestionConfigs_200_response>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1012
+}

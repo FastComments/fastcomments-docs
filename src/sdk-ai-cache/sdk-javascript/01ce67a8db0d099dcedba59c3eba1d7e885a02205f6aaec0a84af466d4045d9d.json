@@ -1,0 +1,9 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "01ce67a8db0d099dcedba59c3eba1d7e885a02205f6aaec0a84af466d4045d9d",
+  "generatedAt": "2026-01-12T20:38:26.260Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-7f8c2d4b';\nconst createAPISSOUserData: CreateAPISSOUserData = {\n  externalId: 'okta|00u1abcd2345EfGH',\n  email: 'jane.doe@acme-corp.com',\n  displayName: 'Jane Doe',\n  avatarUrl: 'https://cdn.acme-corp.com/avatars/jane.jpg',\n  sendWelcomeEmail: true,\n  metadata: { department: 'Engineering', employeeId: 'E12345' }\n};\nconst result: AddSSOUserAPIResponse = await addSSOUser(tenantId, createAPISSOUserData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 285,
+  "completionTokens": 1309
+}

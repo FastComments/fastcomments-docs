@@ -15,10 +15,14 @@ Returns: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcom
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-auto fallback = std::make_shared<GetSubscriptionsAPIResponse>();
 api->getSubscriptions(tenantId, userId)
-    .then([fallback](std::shared_ptr<GetSubscriptionsAPIResponse> resp) {
-        auto result = resp ? resp : fallback;
-        return result;
-    });
+.then([](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t){
+    try {
+        auto resp = t.get();
+        if (resp) {
+            auto copy = std::make_shared<GetSubscriptionsAPIResponse>(*resp);
+        }
+    } catch (const std::exception&) {
+    }
+});
 [inline-code-end]

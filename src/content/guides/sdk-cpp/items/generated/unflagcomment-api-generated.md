@@ -16,17 +16,16 @@ Returns: [`FlagComment_200_response`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'unFlagComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::none;
-auto task = api->unFlagComment(tenantId, commentId, userId, anonUserId)
-    .then([](pplx::task<std::shared_ptr<FlagComment_200_response>> t){
+utility::string_t commentId = U("cmt-987654321");
+boost::optional<utility::string_t> userId(U("user@example.com"));
+boost::optional<utility::string_t> anonUserId;
+auto fallback = std::make_shared<FlagComment_200_response>();
+api->unFlagComment(tenantId, commentId, userId, anonUserId)
+    .then([fallback](pplx::task<std::shared_ptr<FlagComment_200_response>> t) {
         try {
             auto resp = t.get();
-            auto finalResp = resp ? resp : std::make_shared<FlagComment_200_response>();
-            (void)finalResp;
-        } catch (const std::exception& e) {
-            (void)e;
+            if (!resp) resp = fallback;
+        } catch (...) {
         }
     });
 [inline-code-end]

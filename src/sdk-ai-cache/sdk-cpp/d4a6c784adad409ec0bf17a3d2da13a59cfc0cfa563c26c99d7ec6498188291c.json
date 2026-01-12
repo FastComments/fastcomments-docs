@@ -1,0 +1,9 @@
+{
+  "method": "createTenant",
+  "signatureHash": "d4a6c784adad409ec0bf17a3d2da13a59cfc0cfa563c26c99d7ec6498188291c",
+  "generatedAt": "2026-01-12T20:32:14.189Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateTenantBody createTenantBody;\ncreateTenantBody.displayName = U(\"My Tenant Inc\");\ncreateTenantBody.adminEmail = U(\"admin@mytenant.com\");\ncreateTenantBody.plan = boost::optional<utility::string_t>(U(\"pro\"));\nauto task = api->createTenant(tenantId, createTenantBody)\n    .then([](std::shared_ptr<CreateTenant_200_response> resp){\n        if (resp){\n            auto createdId = std::make_shared<utility::string_t>(resp->tenantId);\n        }\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 2059
+}

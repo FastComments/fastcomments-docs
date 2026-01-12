@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "39648aa99a28ee495d8e77cb5250458789c96ef87676b9bd49410adf8ac41816",
+  "generatedAt": "2026-01-12T20:33:23.245Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> includeArchived = boost::optional<utility::string_t>(U(\"false\"));\napi->getDomainConfigs(tenantId).then([=](std::shared_ptr<GetDomainConfigs_200_response> resp) {\n    auto cfg = resp ? resp : std::make_shared<GetDomainConfigs_200_response>();\n    return cfg;\n}).then([](std::shared_ptr<GetDomainConfigs_200_response> finalCfg) {\n    (void)finalCfg;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 324,
+  "completionTokens": 1534
+}

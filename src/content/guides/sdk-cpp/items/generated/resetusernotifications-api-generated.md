@@ -18,17 +18,26 @@ Returns: [`ResetUserNotifications_200_response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'resetUserNotifications Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> afterId(utility::conversions::to_string_t("notification-987"));
-boost::optional<int64_t> afterCreatedAt(1672531200LL);
-boost::optional<bool> unreadOnly(true);
-boost::optional<bool> dmOnly(false);
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U("notif-987654321"));
+boost::optional<int64_t> afterCreatedAt = boost::optional<int64_t>(1625097600000LL);
+boost::optional<bool> unreadOnly = boost::optional<bool>(true);
+boost::optional<bool> dmOnly = boost::optional<bool>(false);
 boost::optional<bool> noDm;
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-jwt-abc123"));
-auto defaultResp = std::make_shared<ResetUserNotifications_200_response>();
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+
 api->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
-.then([defaultResp](std::shared_ptr<ResetUserNotifications_200_response> resp){
-    auto result = resp ? resp : defaultResp;
-    (void)result;
-});
+    .then([](pplx::task<std::shared_ptr<ResetUserNotifications_200_response>> t)
+    {
+        try
+        {
+            auto resp = t.get();
+            auto respCopy = std::make_shared<ResetUserNotifications_200_response>(*resp);
+            return respCopy;
+        }
+        catch (...)
+        {
+            return std::shared_ptr<ResetUserNotifications_200_response>();
+        }
+    });
 [inline-code-end]

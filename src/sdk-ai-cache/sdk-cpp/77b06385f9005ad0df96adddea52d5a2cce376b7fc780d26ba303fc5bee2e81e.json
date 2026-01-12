@@ -1,0 +1,9 @@
+{
+  "method": "deletePage",
+  "signatureHash": "77b06385f9005ad0df96adddea52d5a2cce376b7fc780d26ba303fc5bee2e81e",
+  "generatedAt": "2026-01-12T20:32:47.812Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t pageId = utility::conversions::to_string_t(\"page-456\");\nboost::optional<utility::string_t> auditNote = utility::conversions::to_string_t(\"admin@company.com requested deletion\");\napi->deletePage(tenantId, pageId)\n    .then([auditNote](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto result = std::make_shared<DeletePageAPIResponse>(*resp);\n            if (auditNote) {\n                (void)auditNote;\n            }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 324,
+  "completionTokens": 2091
+}

@@ -13,14 +13,15 @@ Returns: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cp
 [inline-code-attrs-start title = 'getPages Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> pageToken = U("cursor_456");
-auto pagesTask = api->getPages(tenantId).then([pageToken](pplx::task<std::shared_ptr<GetPagesAPIResponse>> t){
+boost::optional<int> pageLimit = 50;
+boost::optional<utility::string_t> cursor = boost::none;
+api->getPages(tenantId).then([tenantId](pplx::task<std::shared_ptr<GetPagesAPIResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetPagesAPIResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetPagesAPIResponse>();
+        auto resp = task.get();
+        if(!resp) resp = std::make_shared<GetPagesAPIResponse>();
+        std::wcout << U("Fetched pages for tenant: ") << tenantId << U("\n");
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << std::endl;
     }
 });
 [inline-code-end]

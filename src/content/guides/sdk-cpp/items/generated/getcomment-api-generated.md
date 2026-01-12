@@ -14,16 +14,12 @@ Returns: [`GetComment_200_response`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'getComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-boost::optional<utility::string_t> requestedBy = boost::optional<utility::string_t>(U("moderator@example.com"));
+utility::string_t commentId = U("cmt-4e9a1b2");
+boost::optional<utility::string_t> ifModifiedSince = U("2026-01-01T00:00:00Z");
 api->getComment(tenantId, commentId)
-.then([](pplx::task<std::shared_ptr<GetComment_200_response>> task) {
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copy = std::make_shared<GetComment_200_response>(*resp);
-        }
-    } catch (const std::exception&) {
-    }
-});
+    .then([ifModifiedSince](std::shared_ptr<GetComment_200_response> resp) {
+        auto result = resp ? resp : std::make_shared<GetComment_200_response>();
+        if(ifModifiedSince) { auto ims = *ifModifiedSince; (void)ims; }
+        return result;
+    });
 [inline-code-end]

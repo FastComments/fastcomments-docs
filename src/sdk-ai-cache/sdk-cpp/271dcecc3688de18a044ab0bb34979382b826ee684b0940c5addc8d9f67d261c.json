@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "271dcecc3688de18a044ab0bb34979382b826ee684b0940c5addc8d9f67d261c",
+  "generatedAt": "2026-01-12T20:35:23.676Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t pageId = U(\"page-456\");\nUpdateAPIPageData updateData;\nupdateData.title = utility::string_t(U(\"Homepage - Updated\"));\nupdateData.slug = boost::optional<utility::string_t>(U(\"homepage-updated\"));\nupdateData.published = boost::optional<bool>(true);\nauto fallbackResp = std::make_shared<PatchPageAPIResponse>();\napi->patchPage(tenantId, pageId, updateData)\n.then([](pplx::task<std::shared_ptr<PatchPageAPIResponse>> task)\n{\n    try\n    {\n        auto resp = task.get();\n        if (resp)\n            std::cout << \"Patch succeeded\" << std::endl;\n        else\n            std::cout << \"Patch returned no data\" << std::endl;\n    }\n    catch (const std::exception &e)\n    {\n        std::cerr << \"Patch failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 2208
+}

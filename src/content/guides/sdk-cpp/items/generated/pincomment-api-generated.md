@@ -15,15 +15,17 @@ Returns: [`PinComment_200_response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'pinComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso(U("user@example.com"));
-api->pinComment(U("my-tenant-123"), U("cmt-456"), U("broadcast-789"), sso)
-.then([](pplx::task<std::shared_ptr<PinComment_200_response>> task){
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
+utility::string_t broadcastId = U("broadcast-98765");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+
+api->pinComment(tenantId, commentId, broadcastId, sso)
+.then([](pplx::task<std::shared_ptr<PinComment_200_response>> t){
     try {
-        auto resp = task.get();
-        auto result = resp ? resp : std::make_shared<PinComment_200_response>();
-        std::cout << "pinComment completed successfully\n";
-    } catch (const std::exception& e) {
-        std::cerr << "pinComment failed: " << e.what() << '\n';
-    }
-});
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<PinComment_200_response>();
+        (void)resp;
+    } catch (...) {}
+}).wait();
 [inline-code-end]

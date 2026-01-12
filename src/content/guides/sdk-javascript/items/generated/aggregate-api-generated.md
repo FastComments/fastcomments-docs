@@ -18,21 +18,15 @@ Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const parentTenantId: string = 'org_98765';
-  const includeStats: boolean = true;
-  const aggregationRequest: AggregationRequest = {
-    predicates: [
-      { field: 'createdAt', operator: 'gte', value: '2025-01-01T00:00:00Z' } as QueryPredicate
-    ],
-    operations: [
-      { type: 'COUNT' as AggregationOpType, field: 'status' } as AggregationOperation
-    ],
-    sort: [{ field: 'count', direction: 'desc' }] as AggregationRequestSort,
-    limit: 25
-  };
-  const response: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const parentTenantId: string = "org_parent_7";
+const includeStats: boolean = true;
+const aggregationRequest: AggregationRequest = {
+  operation: { type: "COUNT", field: "commentId" },
+  groupBy: ["postId"],
+  filters: { predicates: [{ field: "status", operator: "EQ", value: { stringValue: "approved" } }] },
+  sort: [{ field: "count", direction: "DESC" }],
+  limit: 50
+};
+const result: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);
 [inline-code-end]

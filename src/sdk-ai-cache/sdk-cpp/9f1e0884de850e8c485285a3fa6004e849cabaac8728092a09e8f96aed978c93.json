@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "9f1e0884de850e8c485285a3fa6004e849cabaac8728092a09e8f96aed978c93",
+  "generatedAt": "2026-01-12T20:33:32.304Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email-001\");\nboost::optional<utility::string_t> preferLocale = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getEmailTemplate(tenantId, templateId)\n    .then([preferLocale](std::shared_ptr<GetEmailTemplate_200_response> resp) {\n        auto templateResp = resp ? resp : std::make_shared<GetEmailTemplate_200_response>();\n        if (preferLocale) {\n            (void)preferLocale;\n        }\n        return templateResp;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1484
+}

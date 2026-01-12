@@ -16,18 +16,16 @@ Returns: [`DeleteFeedPostPublic_200_response`](https://github.com/FastComments/f
 [inline-code-attrs-start title = 'deleteFeedPostPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("post-9876");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-42"));
+utility::string_t postId = U("post-456");
+boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-789"));
 boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto placeholder = std::make_shared<DeleteFeedPostPublic_200_response>();
 api->deleteFeedPostPublic(tenantId, postId, broadcastId, sso)
-.then([&placeholder](pplx::task<std::shared_ptr<DeleteFeedPostPublic_200_response>> task) {
+.then([](pplx::task<std::shared_ptr<DeleteFeedPostPublic_200_response>> t){
     try {
-        placeholder = task.get();
-        if (placeholder) std::cout << "Feed post deleted for tenant\n";
-        else std::cout << "DeleteFeedPostPublic returned no content\n";
-    } catch (const std::exception& e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
+        auto resp = t.get();
+        if (!resp) resp = std::make_shared<DeleteFeedPostPublic_200_response>();
+        (void)resp;
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]

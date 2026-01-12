@@ -1,0 +1,9 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "3c88a00952bb0502867a34282723014fc65960f7ba20924fe5f2e432af8eb345",
+  "generatedAt": "2026-01-12T20:33:01.534Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email-template-456\");\nutility::string_t errorId = U(\"render-error-789\");\nauto placeholder = std::make_shared<FlagCommentPublic_200_response>();\nboost::optional<utility::string_t> operatorNote = boost::none;\noperatorNote = U(\"auto-resolved\");\n\napi->deleteEmailTemplateRenderError(tenantId, templateId, errorId)\n    .then([operatorNote, templateId](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> previous) {\n        try {\n            auto resp = previous.get();\n            if (resp) {\n                std::cout << \"Successfully deleted render error for template: \" << utility::conversions::to_utf8string(templateId) << std::endl;\n            }\n            if (operatorNote) {\n                std::cout << \"Note: \" << utility::conversions::to_utf8string(operatorNote.value()) << std::endl;\n            }\n        } catch (const std::exception &e) {\n            std::cerr << \"API error: \" << e.what() << std::endl;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 347,
+  "completionTokens": 1734
+}

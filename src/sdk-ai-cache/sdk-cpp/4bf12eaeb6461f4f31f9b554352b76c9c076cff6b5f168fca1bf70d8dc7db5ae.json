@@ -1,0 +1,9 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "4bf12eaeb6461f4f31f9b554352b76c9c076cff6b5f168fca1bf70d8dc7db5ae",
+  "generatedAt": "2026-01-12T20:35:30.720Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nRenderEmailTemplateBody renderEmailTemplateBody;\nrenderEmailTemplateBody.setTemplateName(U(\"welcome_wagon\"));\nrenderEmailTemplateBody.setRecipient(U(\"alice@example.com\"));\nweb::json::value vars;\nvars[U(\"firstName\")] = web::json::value::string(U(\"Alice\"));\nrenderEmailTemplateBody.setVariables(vars);\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\nauto placeholder = std::make_shared<RenderEmailTemplate_200_response>();\napi->renderEmailTemplate(tenantId, renderEmailTemplateBody, locale)\n.then([](pplx::task<std::shared_ptr<RenderEmailTemplate_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Email template rendered successfully\" << std::endl;\n        } else {\n            std::cerr << \"No response returned\" << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"Render failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 354,
+  "completionTokens": 1857
+}

@@ -15,19 +15,16 @@ Returns: [`GetCommentVoteUserNames_200_response`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456");
 int32_t dir = 1;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
+boost::optional<utility::string_t> sso{ utility::string_t(U("user@example.com")) };
 api->getCommentVoteUserNames(tenantId, commentId, dir, sso)
-.then([](pplx::task<std::shared_ptr<GetCommentVoteUserNames_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto result = std::make_shared<GetCommentVoteUserNames_200_response>(*resp);
+    .then([](pplx::task<std::shared_ptr<GetCommentVoteUserNames_200_response>> t) {
+        try {
+            auto resp = t.get();
+            if (!resp) resp = std::make_shared<GetCommentVoteUserNames_200_response>();
+        } catch (const std::exception&) {
         }
-    } catch (const std::exception& e) {
-        auto fallback = std::make_shared<GetCommentVoteUserNames_200_response>();
-    }
-});
+    });
 [inline-code-end]

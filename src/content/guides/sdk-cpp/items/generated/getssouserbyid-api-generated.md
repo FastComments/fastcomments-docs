@@ -13,12 +13,13 @@ Returns: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getSSOUserById Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t userId = utility::conversions::to_string_t("user@example.com");
-boost::optional<utility::string_t> tenantOpt = tenantId;
-api->getSSOUserById(tenantOpt.value(), userId)
-    .then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp){
-        if(!resp) return;
-        auto responseCopy = std::make_shared<GetSSOUserByIdAPIResponse>(*resp);
-    });
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t userId = U("user@example.com");
+boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U("en-US"));
+api->getSSOUserById(tenantId, userId).then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp) {
+    if (!resp) {
+        return std::make_shared<GetSSOUserByIdAPIResponse>();
+    }
+    return resp;
+}).wait();
 [inline-code-end]

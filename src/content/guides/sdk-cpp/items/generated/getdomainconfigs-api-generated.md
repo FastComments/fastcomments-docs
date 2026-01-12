@@ -13,10 +13,11 @@ Returns: [`GetDomainConfigs_200_response`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'getDomainConfigs Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> environment = boost::optional<utility::string_t>(U("production"));
-api->getDomainConfigs(tenantId).then([environment](std::shared_ptr<GetDomainConfigs_200_response> resp) -> pplx::task<std::shared_ptr<GetDomainConfigs_200_response>> {
-    if (!resp) return pplx::task_from_result<std::shared_ptr<GetDomainConfigs_200_response>>(nullptr);
-    auto resultCopy = std::make_shared<GetDomainConfigs_200_response>(*resp);
-    return pplx::task_from_result(resultCopy);
+boost::optional<utility::string_t> includeArchived = boost::optional<utility::string_t>(U("false"));
+api->getDomainConfigs(tenantId).then([=](std::shared_ptr<GetDomainConfigs_200_response> resp) {
+    auto cfg = resp ? resp : std::make_shared<GetDomainConfigs_200_response>();
+    return cfg;
+}).then([](std::shared_ptr<GetDomainConfigs_200_response> finalCfg) {
+    (void)finalCfg;
 });
 [inline-code-end]

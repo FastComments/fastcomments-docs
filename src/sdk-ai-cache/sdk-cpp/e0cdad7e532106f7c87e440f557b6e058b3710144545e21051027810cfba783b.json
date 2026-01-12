@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "e0cdad7e532106f7c87e440f557b6e058b3710144545e21051027810cfba783b",
+  "generatedAt": "2026-01-12T20:35:41.512Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"comments.example.com\");\nUpdateDomainConfigParams updateParams;\nupdateParams.enabled = true;\nupdateParams.requireModeration = boost::optional<bool>(true);\nupdateParams.allowedOrigins = boost::optional<std::vector<utility::string_t>>({U(\"https://www.example.com\"), U(\"https://app.example.com\")});\nupdateParams.notificationEmail = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\nauto task = api->putDomainConfig(tenantId, domainToUpdate, updateParams)\n    .then([](std::shared_ptr<GetDomainConfig_200_response> resp){\n        auto updated = std::make_shared<GetDomainConfig_200_response>(*resp);\n        return updated;\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 1719
+}

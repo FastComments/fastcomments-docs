@@ -18,23 +18,19 @@ Returns: [`AggregateQuestionResults200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_8a3f9b2";
-  const questionId: string | undefined = undefined;
-  const questionIds: Array<string> = ["q-2024-001", "q-2024-002"];
-  const urlId: string | undefined = "url_4f9c";
-  const timeBucket: AggregateTimeBucket = ("monthly" as unknown) as AggregateTimeBucket;
-  const startDate: Date = new Date("2025-01-01T00:00:00Z");
-  const forceRecalculate: boolean = true;
-  const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
-    tenantId,
-    questionId,
-    questionIds,
-    urlId,
-    timeBucket,
-    startDate,
-    forceRecalculate
-  );
-  console.log(result);
-})();
+const tenantId: string = "tenant_9f3b7c2d";
+const questionIds: Array<string> = ["q_prod_feature_vote", "q_ui_satisfaction"];
+const urlId: string = "url_5f7a2c1e";
+const startDate: Date = new Date("2025-01-01T00:00:00Z");
+const forceRecalculate: boolean = true;
+
+const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
+  tenantId,
+  undefined,
+  questionIds,
+  urlId,
+  undefined,
+  startDate,
+  forceRecalculate
+);
 [inline-code-end]

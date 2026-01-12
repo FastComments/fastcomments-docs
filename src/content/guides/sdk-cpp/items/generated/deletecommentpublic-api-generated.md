@@ -16,15 +16,23 @@ Returns: [`DeleteCommentPublic_200_response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteCommentPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-7890");
-utility::string_t broadcastId = U("bcast-456");
-boost::optional<utility::string_t> editKey = utility::string_t(U("editKey-abc123"));
-boost::optional<utility::string_t> sso = boost::none;
+utility::string_t tenantId(U("my-tenant-123"));
+utility::string_t commentId(U("cmt-456"));
+utility::string_t broadcastId(U("brd-789"));
+boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(utility::string_t(U("editkey-abc123")));
+boost::optional<utility::string_t> sso; 
 
 api->deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)
-.then([](std::shared_ptr<DeleteCommentPublic_200_response> resp) {
-    auto copy = std::make_shared<DeleteCommentPublic_200_response>(*resp);
-    (void)copy;
+.then([](pplx::task<std::shared_ptr<DeleteCommentPublic_200_response>> t){
+    try {
+        auto resp = t.get();
+        if (resp) {
+            auto copied = std::make_shared<DeleteCommentPublic_200_response>(*resp);
+            (void)copied;
+        }
+    } catch (const std::exception&) {
+        auto fallback = std::make_shared<DeleteCommentPublic_200_response>();
+        (void)fallback;
+    }
 });
 [inline-code-end]

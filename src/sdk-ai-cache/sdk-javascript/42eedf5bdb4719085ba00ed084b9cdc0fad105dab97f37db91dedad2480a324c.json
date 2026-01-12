@@ -1,0 +1,9 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "42eedf5bdb4719085ba00ed084b9cdc0fad105dab97f37db91dedad2480a324c",
+  "generatedAt": "2026-01-12T20:38:30.101Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_3f2b9a';\n  const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n    tags: [\n      { name: 'performance', description: 'Comments about site performance', visibleToModeratorsOnly: false },\n      { name: 'feature-request', description: 'Requests for new features', visibleToModeratorsOnly: true }\n    ]\n  };\n  const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);\n  const resultWithNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);\n  console.log(result, resultWithNoTenant);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 322,
+  "completionTokens": 996
+}

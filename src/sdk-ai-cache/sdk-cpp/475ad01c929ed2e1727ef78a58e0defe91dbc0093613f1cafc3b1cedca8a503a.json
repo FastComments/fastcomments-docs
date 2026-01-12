@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "475ad01c929ed2e1727ef78a58e0defe91dbc0093613f1cafc3b1cedca8a503a",
+  "generatedAt": "2026-01-12T20:34:39.126Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t packageId = U(\"pkg-456\");\nboost::optional<utility::string_t> requestTrace = U(\"trace-20260112-01\");\napi->getTenantPackage(tenantId, packageId)\n.then([requestTrace](std::shared_ptr<GetTenantPackage_200_response> resp){\n    auto result = resp ? resp : std::make_shared<GetTenantPackage_200_response>();\n    if (requestTrace) { auto trace = *requestTrace; (void)trace; }\n    return result;\n})\n.then([](std::shared_ptr<GetTenantPackage_200_response> finalResp){\n    (void)finalResp;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 2014
+}

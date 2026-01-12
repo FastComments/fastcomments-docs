@@ -15,15 +15,14 @@ Returns: [`BulkAggregateQuestionResults_200_response`](https://github.com/FastCo
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-auto req = std::make_shared<BulkAggregateQuestionResultsRequest>();
-boost::optional<bool> forceRecalculate(true);
-api->bulkAggregateQuestionResults(tenantId, req, forceRecalculate)
-    .then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResults_200_response>> t){
-        try {
-            auto resp = t.get();
-            (void)resp;
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+BulkAggregateQuestionResultsRequest request;
+boost::optional<bool> forceRecalculate = boost::optional<bool>(true);
+api->bulkAggregateQuestionResults(tenantId, request, forceRecalculate)
+.then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResults_200_response>> t){
+    try {
+        auto resp = t.get();
+        auto result = resp ? resp : std::make_shared<BulkAggregateQuestionResults_200_response>();
+    } catch(const std::exception&) {
+    }
+});
 [inline-code-end]

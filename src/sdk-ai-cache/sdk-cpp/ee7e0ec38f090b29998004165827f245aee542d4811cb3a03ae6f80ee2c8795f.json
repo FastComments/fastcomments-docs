@@ -1,0 +1,9 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "ee7e0ec38f090b29998004165827f245aee542d4811cb3a03ae6f80ee2c8795f",
+  "generatedAt": "2026-01-12T20:32:04.840Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto createData = std::make_shared<CreateAPIUserSubscriptionData>();\ncreateData->userEmail = U(\"user@example.com\");\ncreateData->planId = U(\"pro-monthly\");\ncreateData->paymentMethod = U(\"card_visa_4242\");\ncreateData->coupon = boost::optional<utility::string_t>(U(\"WELCOME10\"));\n\napi->createSubscription(tenantId, *createData)\n.then([](pplx::task<std::shared_ptr<CreateSubscriptionAPIResponse>> task) {\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Subscription created: \" << resp->subscriptionId << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"Create subscription failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 1417
+}

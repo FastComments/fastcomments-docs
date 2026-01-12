@@ -1,0 +1,9 @@
+{
+  "method": "lockComment",
+  "signatureHash": "3ca341a17291180e9ba097258d95be3ff8e5a2d7519ada1edb7cc110234074dc",
+  "generatedAt": "2026-01-12T20:37:18.063Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456\");\nutility::string_t broadcastId = U(\"brdcst-789\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->lockComment(tenantId, commentId, broadcastId, sso)\n    .then([](pplx::task<std::shared_ptr<LockComment_200_response>> t)\n    {\n        try\n        {\n            auto resp = t.get();\n            if(!resp)\n            {\n                resp = std::make_shared<LockComment_200_response>();\n            }\n        }\n        catch(const std::exception& ex)\n        {\n            (void)ex;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 353,
+  "completionTokens": 1524
+}

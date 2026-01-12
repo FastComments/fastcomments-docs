@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "69760c218d61e44e6d02f73caa5f1c1191c70ce78287ffb5d50d7d57c720f322",
+  "generatedAt": "2026-01-12T20:34:07.279Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<int> pageLimit = 50;\nboost::optional<utility::string_t> cursor = boost::none;\napi->getPages(tenantId).then([tenantId](pplx::task<std::shared_ptr<GetPagesAPIResponse>> task) {\n    try {\n        auto resp = task.get();\n        if(!resp) resp = std::make_shared<GetPagesAPIResponse>();\n        std::wcout << U(\"Fetched pages for tenant: \") << tenantId << U(\"\\n\");\n    } catch(const std::exception& e) {\n        std::cerr << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 314,
+  "completionTokens": 1884
+}

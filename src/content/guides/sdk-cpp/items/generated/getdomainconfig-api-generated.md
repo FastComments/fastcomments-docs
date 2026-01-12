@@ -13,11 +13,17 @@ Returns: [`GetDomainConfig_200_response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getDomainConfig Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantOpt = boost::optional<utility::string_t>(U("my-tenant-123"));
-utility::string_t domain = U("blog.example.com");
-api->getDomainConfig(*tenantOpt, domain)
-    .then([=](std::shared_ptr<GetDomainConfig_200_response> resp){
-        auto cfg = resp ? resp : std::make_shared<GetDomainConfig_200_response>();
-        (void)cfg;
-    });
+boost::optional<utility::string_t> tenantOverride;
+utility::string_t tenantId = tenantOverride.value_or(utility::conversions::to_string_t("my-tenant-123"));
+utility::string_t domain = utility::conversions::to_string_t("comments.mycompany.com");
+api->getDomainConfig(tenantId, domain).then([](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> t){
+    try {
+        auto resp = t.get();
+        auto config = resp ? resp : std::make_shared<GetDomainConfig_200_response>();
+        (void)config;
+    } catch (const std::exception& e) {
+        auto fallback = std::make_shared<GetDomainConfig_200_response>();
+        (void)fallback;
+    }
+});
 [inline-code-end]

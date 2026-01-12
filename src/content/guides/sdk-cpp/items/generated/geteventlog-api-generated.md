@@ -1,3 +1,9 @@
+
+req
+tenantId
+urlId
+userIdWS
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -17,19 +23,15 @@ Returns: [`GetEventLog_200_response`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'getEventLog Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("post-789");
-utility::string_t userIdWS = U("alice@example.com");
-auto now = std::chrono::system_clock::now();
-int64_t endTime = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
-int64_t startTime = endTime - int64_t(24 * 60 * 60 * 1000);
-boost::optional<std::shared_ptr<GetEventLog_200_response>> optResponse = std::make_shared<GetEventLog_200_response>();
-api->getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
-    .then([&optResponse](pplx::task<std::shared_ptr<GetEventLog_200_response>> t) {
+utility::string_t urlId = U("article-456");
+utility::string_t userIdWS = U("user@example.com");
+int64_t startTime = 1672531200LL;
+boost::optional<int64_t> endTimeOpt = 1672617600LL;
+api->getEventLog(tenantId, urlId, userIdWS, startTime, *endTimeOpt)
+    .then([](pplx::task<std::shared_ptr<GetEventLog_200_response>> t){
         try {
             auto resp = t.get();
-            optResponse = resp ? resp : std::make_shared<GetEventLog_200_response>();
-        } catch (...) {
-            optResponse = std::make_shared<GetEventLog_200_response>();
-        }
+            if (!resp) resp = std::make_shared<GetEventLog_200_response>();
+        } catch (const std::exception&) {}
     });
 [inline-code-end]

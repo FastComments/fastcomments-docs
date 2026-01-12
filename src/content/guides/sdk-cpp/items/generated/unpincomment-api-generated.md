@@ -16,16 +16,18 @@ Returns: [`PinComment_200_response`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'unPinComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-98765");
-utility::string_t broadcastId = U("broadcast-2025-11-20");
+utility::string_t commentId = U("cmt-456789");
+utility::string_t broadcastId = U("brd-98765");
 boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+auto defaultResp = std::make_shared<PinComment_200_response>();
 api->unPinComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<PinComment_200_response>> task){
+.then([defaultResp](pplx::task<std::shared_ptr<PinComment_200_response>> task) {
     try {
         auto resp = task.get();
-        auto result = resp ? resp : std::make_shared<PinComment_200_response>();
-        (void)result;
-    } catch (const std::exception&) {
+        if (!resp) resp = defaultResp;
+        std::cout << "unPinComment completed; response pointer " << (resp ? "valid" : "null") << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "unPinComment failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]

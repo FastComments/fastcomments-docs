@@ -1,0 +1,9 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "53b2a86473a8cdb9c9b46abe4dc8ab78f1734abe6f81e20d1c0a13c9475c0215",
+  "generatedAt": "2026-01-12T20:36:01.872Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t notificationId = U(\"notif-456\");\nUpdateNotificationBody updateNotificationBody;\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\napi->updateNotification(tenantId, notificationId, updateNotificationBody, userId)\n.then([=](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto respCopy = std::make_shared<FlagCommentPublic_200_response>(*resp);\n            std::cout << \"Notification updated successfully\\n\";\n        } else {\n            std::cout << \"No response received\\n\";\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Update failed: \" << e.what() << \"\\n\";\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 359,
+  "completionTokens": 1490
+}

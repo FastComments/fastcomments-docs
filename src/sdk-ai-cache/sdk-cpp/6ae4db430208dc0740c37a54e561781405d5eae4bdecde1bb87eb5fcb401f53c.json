@@ -1,0 +1,9 @@
+{
+  "method": "getTenants",
+  "signatureHash": "6ae4db430208dc0740c37a54e561781405d5eae4bdecde1bb87eb5fcb401f53c",
+  "generatedAt": "2026-01-12T20:34:42.909Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> meta = boost::optional<utility::string_t>(U(\"admin@example.com\"));\nboost::optional<double> skip = boost::optional<double>(10.0);\nauto task = api->getTenants(tenantId, meta, skip)\n    .then([](std::shared_ptr<GetTenants_200_response> resp){\n        if (resp) {\n            auto copy = std::make_shared<GetTenants_200_response>(*resp);\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 352,
+  "completionTokens": 1279
+}

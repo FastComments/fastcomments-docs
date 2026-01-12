@@ -19,21 +19,18 @@ Returns: [`DeleteCommentVote_200_response`](https://github.com/FastComments/fast
 [inline-code-attrs-start title = 'deleteCommentVote Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-utility::string_t voteId = U("vote-789");
-utility::string_t urlId = U("article-2025-11-20");
+utility::string_t commentId = U("cmt-789");
+utility::string_t voteId = U("vote-456");
+utility::string_t urlId = U("/articles/2026/fastcomments-guide");
 utility::string_t broadcastId = U("broadcast-001");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-KEY-xyz"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc"));
+boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("editkey-abc"));
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+auto placeholder = std::make_shared<DeleteCommentVote_200_response>();
 api->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)
-.then([](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> task){
+.then([=](pplx::task<std::shared_ptr<DeleteCommentVote_200_response>> t){
     try {
-        auto resp = task.get();
-        if (resp) {
-            std::cout << "Vote deleted successfully\n";
-        } else {
-            std::cout << "Delete returned empty response\n";
-        }
+        auto resp = t.get();
+        if (resp) std::cout << "Vote deleted\n";
     } catch (const std::exception &e) {
         std::cerr << "Delete failed: " << e.what() << '\n';
     }

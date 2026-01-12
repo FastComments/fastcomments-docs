@@ -1,3 +1,5 @@
+Upload and resize an image
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -16,12 +18,16 @@ Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cp
 [inline-code-attrs-start title = 'uploadImage Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-auto fileContent = std::make_shared<HttpContent>(U("avatar.png"), U("image/png"));
+auto fileBytes = std::vector<unsigned char>{0x89,0x50,0x4E,0x47,0x0D,0x0A,0x1A,0x0A};
+auto file = std::make_shared<HttpContent>(fileBytes, U("image/png"), U("avatar.png"));
 boost::optional<SizePreset> sizePreset = boost::optional<SizePreset>(SizePreset::MEDIUM);
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("profile-avatar"));
-api->uploadImage(tenantId, *fileContent, sizePreset, urlId)
-.then([](std::shared_ptr<UploadImageResponse> resp){
-    if (resp) std::cout << "Image uploaded successfully" << std::endl;
-    else std::cerr << "Image upload returned no response" << std::endl;
-});
+boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("user-avatar-987"));
+api->uploadImage(tenantId, file, sizePreset, urlId)
+    .then([](pplx::task<std::shared_ptr<UploadImageResponse>> task) {
+        try {
+            return task.get();
+        } catch (...) {
+            return std::shared_ptr<UploadImageResponse>();
+        }
+    });
 [inline-code-end]

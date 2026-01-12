@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "b8f39ecaa332594c6f7149345e72ed0b4628377d6af4ae92f98f7305f4be6cf7",
+  "generatedAt": "2026-01-12T20:35:31.923Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nReplaceTenantUserBody replaceBody;\nboost::optional<utility::string_t> updateComments = boost::optional<utility::string_t>(U(\"true\"));\napi->replaceTenantUser(tenantId, id, replaceBody, updateComments)\n.then([](std::shared_ptr<FlagCommentPublic_200_response> resp){\n    if (resp) {\n        auto copy = std::make_shared<FlagCommentPublic_200_response>(*resp);\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 363,
+  "completionTokens": 1473
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "3a16ce496f0102bd718a277cbc7461090795b4822a74969d40503a40e59d7b4e",
+  "generatedAt": "2026-01-12T20:37:02.492Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U(\"post_abc123\"));\nboost::optional<int32_t> limit = boost::optional<int32_t>(20);\nboost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{U(\"news\"), U(\"tech\")});\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<bool> isCrawler = boost::optional<bool>(false);\nboost::optional<bool> includeUserInfo = boost::optional<bool>(true);\napi->getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)\n.then([](pplx::task<std::shared_ptr<GetFeedPostsPublic_200_response>> t){\n    try {\n        std::shared_ptr<GetFeedPostsPublic_200_response> resp = t.get();\n        auto marker = std::make_shared<int>(1);\n        if (resp) { (void)marker; }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1751
+}

@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "3a5cc9d50305b745c60c6679b34aae16307b2cce743ac0c7ce56d0eaf8d8dd65",
+  "generatedAt": "2026-01-12T20:37:34.548Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-987\");\nReactBodyParams reactBodyParams;\nreactBodyParams.userId = U(\"jane.doe@example.com\");\nreactBodyParams.reaction = U(\"like\");\nboost::optional<bool> isUndo = boost::optional<bool>(false);\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-001\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-xyz\"));\napi->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)\n    .then([](pplx::task<std::shared_ptr<ReactFeedPostPublic_200_response>> task) {\n        try {\n            auto resp = task.get();\n            auto out = resp ? resp : std::make_shared<ReactFeedPostPublic_200_response>();\n            std::cout << \"Reaction processed\\n\";\n        } catch (const std::exception &e) {\n            std::cerr << \"React failed: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 2315
+}

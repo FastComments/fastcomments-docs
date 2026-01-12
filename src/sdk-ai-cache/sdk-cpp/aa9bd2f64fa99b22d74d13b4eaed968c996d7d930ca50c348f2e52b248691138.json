@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "aa9bd2f64fa99b22d74d13b4eaed968c996d7d930ca50c348f2e52b248691138",
+  "generatedAt": "2026-01-12T20:37:07.612Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlIdWS = U(\"wss://realtime.fastcomments.com/socket/tenant-abc\");\nboost::optional<utility::string_t> optUserIds = U(\"alice@example.com,bob@example.com\");\nutility::string_t userIds = optUserIds.value_or(U(\"alice@example.com\"));\nauto task = api->getUserPresenceStatuses(tenantId, urlIdWS, userIds)\n    .then([](std::shared_ptr<GetUserPresenceStatuses_200_response> resp) {\n        if (!resp) return;\n        auto copy = std::make_shared<GetUserPresenceStatuses_200_response>(*resp);\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 1183
+}

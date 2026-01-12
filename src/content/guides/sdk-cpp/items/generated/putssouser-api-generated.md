@@ -15,18 +15,16 @@ Returns: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'putSSOUser Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-UpdateAPISSOUserData ssoData;
-ssoData.email = utility::string_t("user@example.com");
-ssoData.name = utility::string_t("Jane Doe");
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t id = U("user@example.com");
+UpdateAPISSOUserData updateData;
+updateData.displayName = U("Jane Doe");
+updateData.email = U("user@example.com");
 boost::optional<bool> updateComments = true;
-api->putSSOUser(utility::string_t("my-tenant-123"), utility::string_t("user@example.com"), ssoData, updateComments)
-.then([](pplx::task<std::shared_ptr<PutSSOUserAPIResponse>> task){
-    try {
-        auto resp = task.get();
-        auto result = resp ? std::make_shared<PutSSOUserAPIResponse>(*resp) : std::shared_ptr<PutSSOUserAPIResponse>();
-        (void)result;
-    } catch(const std::exception &e) {
-        (void)e;
-    }
+api->putSSOUser(tenantId, id, updateData, updateComments)
+.then([](std::shared_ptr<PutSSOUserAPIResponse> resp){
+    if(!resp){ std::cout << "putSSOUser returned null\n"; return; }
+    auto copy = std::make_shared<PutSSOUserAPIResponse>(*resp);
+    std::cout << "SSO user updated successfully\n";
 });
 [inline-code-end]

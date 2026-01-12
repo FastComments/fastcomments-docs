@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "d0974e568a0137d4bb5f19dee7d4c5cb8d8f372f9ba666503d5aa357ce6507af",
+  "generatedAt": "2026-01-12T20:31:45.144Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U(\"question-456\"));\nboost::optional<std::vector<utility::string_t>> questionIds = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{ U(\"question-456\"), U(\"question-789\") });\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"https://example.com/posts/789\"));\nutility::datetime start = utility::datetime::from_string(U(\"2025-01-01T00:00:00Z\"));\nboost::optional<utility::datetime> startDate(start);\nboost::optional<bool> forceRecalculate(true);\nboost::optional<double> minValue(0.0);\nboost::optional<double> maxValue(5.0);\nboost::optional<double> limit(100.0);\napi->combineCommentsWithQuestionResults(tenantId, questionId, questionIds, urlId, startDate, forceRecalculate, minValue, maxValue, limit)\n.then([](std::shared_ptr<CombineCommentsWithQuestionResults_200_response> resp){\n    if (resp) {\n        auto copy = std::make_shared<CombineCommentsWithQuestionResults_200_response>(*resp);\n        std::cout << \"Received combined results\\n\";\n    }\n})\n.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 2167
+}

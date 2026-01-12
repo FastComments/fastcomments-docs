@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "3ec1fa9e502970237326404ed6c2d80cfa07b6a730e3b6a32840b59396642e28",
+  "generatedAt": "2026-01-12T20:35:00.534Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getSSOUserById(tenantId, userId).then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp) {\n    if (!resp) {\n        return std::make_shared<GetSSOUserByIdAPIResponse>();\n    }\n    return resp;\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1726
+}

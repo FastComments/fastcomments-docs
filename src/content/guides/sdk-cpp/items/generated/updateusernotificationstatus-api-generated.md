@@ -15,18 +15,18 @@ Returns: [`UpdateUserNotificationStatus_200_response`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-utility::string_t notificationId = utility::string_t("notif-98765");
-utility::string_t newStatus = utility::string_t("read");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t("user@example.com"));
-
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t notificationId = U("notification-789");
+utility::string_t newStatus = U("read");
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc123"));
 api->updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task) {
+.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){
     try {
         auto resp = task.get();
-        auto safeResp = resp ? resp : std::make_shared<UpdateUserNotificationStatus_200_response>();
-        (void)safeResp;
+        if (resp) {
+            auto result = std::make_shared<UpdateUserNotificationStatus_200_response>(*resp);
+        }
     } catch (...) {
     }
-}).wait();
+});
 [inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "e56081fc5df49e702a5be36630c8e892cc087577a4a3999e38ac7ff0748e33a2",
+  "generatedAt": "2026-01-12T20:36:19.424Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto id = utility::string_t(U(\"tenant-0001\"));\nauto bodyPtr = std::make_shared<UpdateTenantBody>();\nbodyPtr->setDisplayName(utility::string_t(U(\"Acme Corporation\")));\nbodyPtr->setAdminEmail(utility::string_t(U(\"admin@acme.com\")));\nbodyPtr->setIsActive(true);\nbodyPtr->setMaxUsers(boost::optional<int>(250));\napi->updateTenant(tenantId, id, *bodyPtr)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto msg = resp->getMessage();\n            std::wcout << msg << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 344,
+  "completionTokens": 2132
+}

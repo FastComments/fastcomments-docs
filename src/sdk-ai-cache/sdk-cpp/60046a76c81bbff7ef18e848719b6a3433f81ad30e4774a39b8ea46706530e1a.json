@@ -1,0 +1,9 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "60046a76c81bbff7ef18e848719b6a3433f81ad30e4774a39b8ea46706530e1a",
+  "generatedAt": "2026-01-12T20:31:46.267Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U(\"question-456\"));\nboost::optional<std::vector<utility::string_t>> questionIds = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{U(\"question-456\"), U(\"question-789\")});\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"https://example.com/articles/123\"));\nboost::optional<AggregateTimeBucket> timeBucket = boost::optional<AggregateTimeBucket>(AggregateTimeBucket::DAILY);\nboost::optional<utility::datetime> startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2024-01-01T00:00:00Z\")));\nboost::optional<bool> forceRecalculate = boost::optional<bool>(true);\napi->aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)\n.then([](std::shared_ptr<AggregateQuestionResults_200_response> resp){\n    auto result = resp ? resp : std::make_shared<AggregateQuestionResults_200_response>();\n    (void)result;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 420,
+  "completionTokens": 2014
+}

@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "490b68448beb8290e028d95a8708b93bea02f81d7000629a4d27a3fe4846b04b",
+  "generatedAt": "2026-01-12T20:38:01.171Z",
+  "codeExample": "VoteBodyParams voteBodyParams;\nutility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-7890\");\nutility::string_t urlId = U(\"/articles/2025/how-to-cpprest\");\nutility::string_t broadcastId = U(\"broadcast-321\");\nboost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U(\"sess-0a1b2c\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-jwt-xyz\"));\n\napi->voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)\n    .then([](pplx::task<std::shared_ptr<VoteComment_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (!resp) resp = std::make_shared<VoteComment_200_response>();\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 389,
+  "completionTokens": 1828
+}

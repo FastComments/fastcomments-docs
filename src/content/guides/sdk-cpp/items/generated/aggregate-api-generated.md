@@ -1,3 +1,6 @@
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -15,15 +18,19 @@ Returns: [`AggregationResponse`](https://github.com/FastComments/fastcomments-cp
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto aggregationRequest = std::make_shared<AggregationRequest>();
-boost::optional<utility::string_t> parentTenantId = boost::optional<utility::string_t>(U("parent-tenant-456"));
-boost::optional<bool> includeStats = boost::optional<bool>(true);
-api->aggregate(tenantId, *aggregationRequest, parentTenantId, includeStats)
-.then([](std::shared_ptr<AggregationResponse> resp) {
-    if (resp) {
-        return resp;
-    }
-    return std::shared_ptr<AggregationResponse>();
-});
+AggregationRequest aggregationRequest;
+utility::string_t tenantId( "my-tenant-123" );
+boost::optional<utility::string_t> parentTenant( utility::string_t("global-tenant") );
+boost::optional<bool> includeStats( true );
+auto defaultResp = std::make_shared<AggregationResponse>();
+api->aggregate(tenantId, aggregationRequest, parentTenant, includeStats)
+    .then([defaultResp](pplx::task<std::shared_ptr<AggregationResponse>> task){
+        try {
+            auto resp = task.get();
+            if (!resp) resp = defaultResp;
+            (void)resp;
+        } catch (...) {
+            throw;
+        }
+    });
 [inline-code-end]

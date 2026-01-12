@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "70452e13177720f190e99a205c69513189c5d2bce9b1c4ed9e3e9ec92e496110",
+  "generatedAt": "2026-01-12T20:37:17.955Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<int32_t> pageSize = 50;\nboost::optional<utility::string_t> afterId = utility::conversions::to_string_t(\"notif_98765\");\nboost::optional<bool> includeContext = true;\nboost::optional<int64_t> afterCreatedAt = static_cast<int64_t>(1672531200);\nboost::optional<bool> unreadOnly = true;\nboost::optional<bool> dmOnly = false;\nboost::optional<bool> noDm = false;\nboost::optional<bool> includeTranslations = true;\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\n\napi->getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso)\n.then([](pplx::task<std::shared_ptr<GetUserNotifications_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto copy = std::make_shared<GetUserNotifications_200_response>(*resp);\n        return copy;\n    } catch (...) {\n        return std::shared_ptr<GetUserNotifications_200_response>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 2069
+}

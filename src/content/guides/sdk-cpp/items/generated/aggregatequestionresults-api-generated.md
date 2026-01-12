@@ -19,17 +19,15 @@ Returns: [`AggregateQuestionResults_200_response`](https://github.com/FastCommen
 [inline-code-attrs-start title = 'aggregateQuestionResults Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> questionId(U("question-456"));
-boost::optional<std::vector<utility::string_t>> questionIds(std::vector<utility::string_t>{U("question-456"), U("question-789")});
-boost::optional<utility::string_t> urlId(U("url-55"));
-boost::optional<AggregateTimeBucket> timeBucket;
-boost::optional<utility::datetime> startDate(utility::datetime::from_string(U("2024-01-01T00:00:00Z")));
-boost::optional<bool> forceRecalculate(true);
+boost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U("question-456"));
+boost::optional<std::vector<utility::string_t>> questionIds = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{U("question-456"), U("question-789")});
+boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("https://example.com/articles/123"));
+boost::optional<AggregateTimeBucket> timeBucket = boost::optional<AggregateTimeBucket>(AggregateTimeBucket::DAILY);
+boost::optional<utility::datetime> startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2024-01-01T00:00:00Z")));
+boost::optional<bool> forceRecalculate = boost::optional<bool>(true);
 api->aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)
-.then([](pplx::task<std::shared_ptr<AggregateQuestionResults_200_response>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<AggregateQuestionResults_200_response>();
-    } catch(const std::exception&) {}
+.then([](std::shared_ptr<AggregateQuestionResults_200_response> resp){
+    auto result = resp ? resp : std::make_shared<AggregateQuestionResults_200_response>();
+    (void)result;
 });
 [inline-code-end]

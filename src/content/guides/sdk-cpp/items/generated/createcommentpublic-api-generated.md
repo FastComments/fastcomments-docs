@@ -18,15 +18,22 @@ Returns: [`CreateCommentPublic_200_response`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'createCommentPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("articles/how-to-cpprest");
-utility::string_t broadcastId = U("broadcast-987");
-auto commentDataPtr = std::make_shared<CommentData>();
-commentDataPtr->text = U("Great article! Learned a lot.");
-commentDataPtr->authorEmail = U("reader@example.com");
-boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U("session-abc-123"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-456"));
-api->createCommentPublic(tenantId, urlId, broadcastId, *commentDataPtr, sessionId, sso)
-.then([](std::shared_ptr<CreateCommentPublic_200_response> resp){
-    if (resp) {}
-});
+utility::string_t urlId = U("/articles/2026/fastcomments-cpp-integration");
+utility::string_t broadcastId = U("broadcast-001");
+CommentData commentData;
+commentData.content = U("Hello from the C++ SDK — great article!");
+commentData.authorEmail = U("reader@example.com");
+commentData.authorName = U("Jane Reader");
+boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U("sess-9f3a2"));
+boost::optional<utility::string_t> sso = boost::none;
+auto task = api->createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso)
+    .then([](pplx::task<std::shared_ptr<CreateCommentPublic_200_response>> t) {
+        try {
+            auto resp = t.get();
+            if (resp) {
+                auto resultCopy = std::make_shared<CreateCommentPublic_200_response>(*resp);
+            }
+        } catch (const std::exception&) {}
+    });
+task.wait();
 [inline-code-end]

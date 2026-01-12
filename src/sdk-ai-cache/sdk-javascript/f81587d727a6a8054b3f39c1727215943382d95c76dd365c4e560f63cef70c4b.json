@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "f81587d727a6a8054b3f39c1727215943382d95c76dd365c4e560f63cef70c4b",
+  "generatedAt": "2026-01-12T20:38:28.466Z",
+  "codeExample": "const tenantId: string = \"tenant_42\";\nconst parentTenantId: string = \"org_parent_7\";\nconst includeStats: boolean = true;\nconst aggregationRequest: AggregationRequest = {\n  operation: { type: \"COUNT\", field: \"commentId\" },\n  groupBy: [\"postId\"],\n  filters: { predicates: [{ field: \"status\", operator: \"EQ\", value: { stringValue: \"approved\" } }] },\n  sort: [{ field: \"count\", direction: \"DESC\" }],\n  limit: 50\n};\nconst result: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 1044
+}

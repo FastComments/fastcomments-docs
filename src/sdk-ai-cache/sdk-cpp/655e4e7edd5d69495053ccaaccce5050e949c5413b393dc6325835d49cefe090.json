@@ -1,0 +1,9 @@
+{
+  "method": "getVotes",
+  "signatureHash": "655e4e7edd5d69495053ccaaccce5050e949c5413b393dc6325835d49cefe090",
+  "generatedAt": "2026-01-12T20:35:00.152Z",
+  "codeExample": "boost::optional<utility::string_t> tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> urlId = utility::string_t(U(\"/posts/2025/new-features\"));\nauto task = api->getVotes(tenantId.value(), urlId.value()).then([](std::shared_ptr<GetVotes_200_response> resp){\n    if (resp) {\n        auto copy = std::make_shared<GetVotes_200_response>(*resp);\n        std::cout << \"Fetched votes successfully\\n\";\n    } else {\n        std::cout << \"No votes response\\n\";\n    }\n});\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 327,
+  "completionTokens": 1488
+}

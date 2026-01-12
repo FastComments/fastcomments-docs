@@ -13,16 +13,19 @@ Returns: [`AddDomainConfig_200_response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'addDomainConfig Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-AddDomainConfigParams params;
-params.domain = utility::string_t(U("comments.example.com"));
-params.contactEmail = utility::string_t(U("admin@example.com"));
-params.enforceHttps = boost::optional<bool>(true);
-params.notes = boost::optional<utility::string_t>(utility::string_t(U("Primary comments domain")));
-
-api->addDomainConfig(utility::string_t(U("my-tenant-123")), params)
-.then([](std::shared_ptr<AddDomainConfig_200_response> resp){
-    if (!resp) return;
-    auto result = std::make_shared<AddDomainConfig_200_response>(*resp);
-    std::wcout << U("Domain config added for tenant: my-tenant-123") << std::endl;
-});
+utility::string_t tenantId = U("my-tenant-123");
+auto params = std::make_shared<AddDomainConfigParams>();
+params->setDomain(U("comments.example.com"));
+params->setOwnerEmail(utility::string_t(U("admin@example.com")));
+params->setAllowSubdomains(boost::optional<bool>(true));
+params->setAllowedOrigins(std::vector<utility::string_t>{U("https://www.example.com"), U("https://blog.example.com")});
+api->addDomainConfig(tenantId, *params)
+    .then([](pplx::task<std::shared_ptr<AddDomainConfig_200_response>> task) {
+        try {
+            auto resp = task.get();
+            (void)resp;
+        } catch (const std::exception& e) {
+            (void)e;
+        }
+    });
 [inline-code-end]

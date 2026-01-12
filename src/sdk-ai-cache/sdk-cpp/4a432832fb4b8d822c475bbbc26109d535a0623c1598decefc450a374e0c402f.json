@@ -1,0 +1,9 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "4a432832fb4b8d822c475bbbc26109d535a0623c1598decefc450a374e0c402f",
+  "generatedAt": "2026-01-12T20:35:08.233Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-987\");\nboost::optional<utility::string_t> userId = utility::string_t(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId;\napi->getVotesForUser(tenantId, urlId, userId, anonUserId)\n.then([](pplx::task<std::shared_ptr<GetVotesForUser_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto copy = std::make_shared<GetVotesForUser_200_response>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 370,
+  "completionTokens": 1763
+}

@@ -13,19 +13,13 @@ Returns: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getPageByURLId Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> optUrlId = utility::conversions::to_string_t("page-9f8b7c6e");
-auto reqTask = api->getPageByURLId(tenantId, *optUrlId)
-    .then([](pplx::task<std::shared_ptr<GetPageByURLIdAPIResponse>> task)
-    {
-        try
-        {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<GetPageByURLIdAPIResponse>();
-        }
-        catch (const std::exception&)
-        {
-            auto resp = std::make_shared<GetPageByURLIdAPIResponse>();
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-7a9f-12345");
+boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U("en-US"));
+api->getPageByURLId(tenantId, urlId)
+    .then([=](std::shared_ptr<GetPageByURLIdAPIResponse> response) {
+        auto result = response ? response : std::make_shared<GetPageByURLIdAPIResponse>();
+        return result;
+    })
+    .wait();
 [inline-code-end]

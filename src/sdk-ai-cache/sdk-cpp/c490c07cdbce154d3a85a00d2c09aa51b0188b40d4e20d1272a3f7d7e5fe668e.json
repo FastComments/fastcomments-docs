@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "c490c07cdbce154d3a85a00d2c09aa51b0188b40d4e20d1272a3f7d7e5fe668e",
+  "generatedAt": "2026-01-12T20:35:38.467Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nutility::string_t packageId = utility::string_t(\"pkg-456\");\nReplaceTenantPackageBody body;\nbody.name = utility::string_t(\"Premium Plan\");\nbody.planId = utility::string_t(\"premium_monthly\");\nbody.seats = 25;\nbody.billingEmail = utility::string_t(\"billing@acme.com\");\nboost::optional<utility::string_t> notes = boost::optional<utility::string_t>(utility::string_t(\"Migrated subscription\"));\nbody.notes = notes;\napi->replaceTenantPackage(tenantId, packageId, body).then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> task){\n    try{\n        auto resp = task.get();\n        if(resp){\n            auto resultCopy = std::make_shared<FlagCommentPublic_200_response>(*resp);\n        }\n    } catch(const std::exception&){\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 2196
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "015154a92c85eae0a209eddbd1867b5874501bc61a92ce6033c1bea72fc3c087",
+  "generatedAt": "2026-01-12T20:34:24.269Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getSubscriptions(tenantId, userId)\n.then([](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<GetSubscriptionsAPIResponse>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 329,
+  "completionTokens": 1407
+}

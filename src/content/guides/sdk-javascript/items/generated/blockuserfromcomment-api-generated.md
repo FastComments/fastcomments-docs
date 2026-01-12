@@ -16,15 +16,14 @@ Returns: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'blockUserFromComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-004';
-const commentId: string = 'cmt-9f2a3b4c';
+const tenantId: string = 'tenant_acme_01';
+const id: string = 'cmt_20260112_7b9f';
 const blockFromCommentParams: BlockFromCommentParams = {
-  reason: 'Repeated spam and promotional links',
-  durationDays: 30,
+  reason: 'Repeated spam links',
+  durationDays: 90,
   blockReplies: true,
-  notifyModerators: true
+  notifyCommenter: true
 };
-const userId: string = 'user-000123';
-const anonUserId: string = 'anon-8f7b2c';
-const result: BlockFromCommentPublic200Response = await blockUserFromComment(tenantId, commentId, blockFromCommentParams, userId, anonUserId);
+const userId: string = 'user_7f3e9';
+const result: BlockFromCommentPublic200Response = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);
 [inline-code-end]

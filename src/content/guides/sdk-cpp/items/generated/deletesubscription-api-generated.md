@@ -15,17 +15,15 @@ Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'deleteSubscription Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t subscriptionId = U("sub-987654");
+utility::string_t subscriptionId = U("sub-456");
 boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
 
 api->deleteSubscription(tenantId, subscriptionId, userId)
-.then([](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> task) {
+.then([](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t) {
     try {
-        auto resp = task.get();
+        auto resp = t.get();
         if (!resp) resp = std::make_shared<DeleteSubscriptionAPIResponse>();
-        std::cout << "Subscription deleted for tenant\n";
-    } catch (const std::exception& e) {
-        std::cerr << "Error deleting subscription: " << e.what() << '\n';
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]

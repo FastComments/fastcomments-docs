@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "8e96a7f605e68bb6781c13ecf4d5b1a1fbd2ddef4b3686f32ae6800412205b25",
+  "generatedAt": "2026-01-12T20:35:21.761Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nauto updateData = std::make_shared<UpdateAPISSOUserData>();\nupdateData->email = U(\"user@example.com\");\nupdateData->displayName = U(\"Jane Doe\");\nboost::optional<bool> updateComments = true;\napi->patchSSOUser(tenantId, userId, *updateData, updateComments)\n.then([](pplx::task<std::shared_ptr<PatchSSOUserAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) std::cout << \"Patched SSO user\\n\";\n        else std::cout << \"No response\\n\";\n    } catch (const std::exception& e) {\n        std::cerr << \"Patch failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 369,
+  "completionTokens": 1926
+}

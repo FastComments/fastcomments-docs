@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "022178121efb50de39356cf750134a755b46e56e4c92fa76dddc19bbcae5e69b",
+  "generatedAt": "2026-01-12T20:35:29.610Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"example.com\");\nPatchDomainConfigParams params;\nparams.adminEmail = boost::optional<utility::string_t>(U(\"admin@example.com\"));\nparams.enableSso = boost::optional<bool>(true);\nparams.ssoRedirectUrl = boost::optional<utility::string_t>(U(\"https://auth.example.com/callback\"));\napi->patchDomainConfig(tenantId, domainToUpdate, params)\n    .then([](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> task){\n        try {\n            auto resp = task.get();\n            if (resp) {\n                auto updated = std::make_shared<GetDomainConfig_200_response>(*resp);\n            }\n        } catch (const std::exception& e) {\n            auto err = std::string(e.what());\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 2118
+}

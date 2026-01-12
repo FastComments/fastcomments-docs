@@ -1,0 +1,9 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "4ae265978c187c10b19c387a8fea33a8478aceb64d2830960304fdde6b408877",
+  "generatedAt": "2026-01-12T20:35:49.386Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> userId(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId;\nauto fallback = std::make_shared<FlagComment_200_response>();\napi->unFlagComment(tenantId, commentId, userId, anonUserId)\n    .then([fallback](pplx::task<std::shared_ptr<FlagComment_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (!resp) resp = fallback;\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 361,
+  "completionTokens": 1564
+}
