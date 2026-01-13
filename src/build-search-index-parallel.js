@@ -4,13 +4,15 @@
  */
 
 const { Worker } = require('worker_threads');
+const os = require('os');
 const path = require('path');
 const fs = require('fs');
 const { locales } = require('./locales');
 
 const DB_DIR = path.join(__dirname, '..', 'db');
 const WORKER_PATH = path.join(__dirname, 'build-search-index-worker.js');
-const MAX_WORKERS = 10;
+// Each worker won't max out a core
+const MAX_WORKERS = Math.ceil(os.cpus().length * 1.5);
 
 // Ensure db directory exists
 if (!fs.existsSync(DB_DIR)) {
