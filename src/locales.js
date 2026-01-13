@@ -8,7 +8,7 @@ module.exports = {
             name: 'English',
             nativeName: 'English',
             hreflang: 'en',
-            flag: '🇬🇧'
+            flag: '🇺🇸'
         },
         bg_bg: {
             name: 'Bulgarian (Bulgaria)',
