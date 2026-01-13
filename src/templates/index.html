@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
     <title>FastComments Docs</title>
     <meta property="og:title" content="FastComments Documentation"/>
@@ -23,11 +23,26 @@
         <a href="https://fastcomments.com">
             <div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>
             FastComments.com</a>
+        {{#if availableLocales}}
+        <details class="lang-dropdown header-lang">
+            <summary>
+                {{#each availableLocales}}{{#if current}}<span class="current-lang"><span class="flag">{{flag}}</span> {{nativeName}}</span>{{/if}}{{/each}}
+            </summary>
+            <div class="lang-list">
+                {{#each availableLocales}}
+                <a href="/{{url}}" class="lang-item{{#if current}} current{{/if}}">
+                    <span class="flag">{{flag}}</span>
+                    <span class="name">{{nativeName}}</span>
+                </a>
+                {{/each}}
+            </div>
+        </details>
+        {{/if}}
     </div>
 </div>
 <div class="llm-kit-banner">
     <a href="/guide-llm-kit.html">
-        <span>Get the FastComments LLM Kit for AI Assisted Development</span>
+        <span>{{t.LLM_KIT_BANNER}}</span>
         <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
              viewBox="0 0 451.846 451.847">
             <path d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z"
@@ -37,19 +52,18 @@
 </div>
 <div class="content">
     <div class="text-center">
-        <h1>Documentation</h1>
-        <p>You've come to the right place to find all there is to know about FastComments. Try searching, or using one
-            of our pre-made guides below.</p>
+        <h1>{{t.DOCUMENTATION_TITLE}}</h1>
+        <p>{{t.DOCUMENTATION_DESCRIPTION}}</p>
         <div class="search">
-            <input id="search" placeholder="Search">
+            <input id="search" placeholder="{{t.SEARCH_PLACEHOLDER}}">
             <noscript>This search feature requires JavaScript.</noscript>
             <div id="search-results-wrapper">
                 <div id="search-results"></div>
-                <div class="loading-overlay"><i class="spinner">Loading...</i></div>
+                <div class="loading-overlay"><i class="spinner">{{t.LOADING}}</i></div>
             </div>
         </div>
         <div class="guides">
-            <h2 class="text-center">- Getting Started -</h2>
+            <h2 class="text-center">- {{t.GETTING_STARTED}} -</h2>
             <div class="guide-items">
                 {{#each gettingStartedGuides}}
                 <a class="guide" href="{{url}}">
@@ -69,7 +83,7 @@
             </div>
         </div>
         <div class="guides">
-            <h2 class="text-center">- All Guides -</h2>
+            <h2 class="text-center">- {{t.ALL_GUIDES}} -</h2>
             <div class="guide-items">
                 {{#each guides}}
                 <a class="guide" href="{{url}}">
@@ -89,7 +103,7 @@
             </div>
         </div>
         <div class="guides">
-            <h2 class="text-center">- Other Platforms -</h2>
+            <h2 class="text-center">- {{t.OTHER_PLATFORMS}} -</h2>
             <div class="guide-items">
                 {{#each installationGuides}}
                 <a class="guide" href="{{url}}">
@@ -109,7 +123,7 @@
             </div>
         </div>
         <div class="guides">
-            <h2 class="text-center">- SDKs -</h2>
+            <h2 class="text-center">- {{t.SDKS}} -</h2>
             <div class="guide-items">
                 {{#each sdkGuides}}
                 <a class="guide" href="{{url}}">
@@ -132,8 +146,8 @@
 </div>
 
 <div class="footer">
-    <div class="text-center last-update-date">Documentation Last Updated {{lastUpdateDate}}</div>
-    <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">Contribute</a></div>
+    <div class="text-center last-update-date">{{t.DOCUMENTATION_LAST_UPDATED}} {{lastUpdateDate}}</div>
+    <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">{{t.CONTRIBUTE}}</a></div>
 </div>
 
 <script src="js/get-session-info.js"></script>

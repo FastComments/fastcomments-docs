@@ -12,6 +12,17 @@ const {locales, defaultLocale} = require('./locales');
 
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
+const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
+
+/**
+ * Load translations for a specific locale, falling back to default locale
+ * @param {string} locale - Target locale
+ * @returns {Object} - Translations object
+ */
+function getTranslations(locale) {
+    const translations = JSON.parse(fs.readFileSync(TRANSLATIONS_FILE, 'utf8'));
+    return translations[locale] || translations[defaultLocale] || {};
+}
 
 /**
  * @type {Object.<string, Array.<IndexEntry>>}
@@ -73,15 +84,47 @@ const index = {};
     // Store the build id.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
 
-    // Create the homepage.
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'index.html'), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
-        guides: guidesNotInstallation,
-        installationGuides,
-        sdkGuides,
-        gettingStartedGuides,
-        lastUpdateDate: new Date().toLocaleString(),
-        buildId
-    }), 'utf8');
+    // Helper to localize guide URLs
+    function localizeGuides(guides, locale) {
+        if (locale === defaultLocale) {
+            return guides;
+        }
+        return guides.map(guide => ({
+            ...guide,
+            url: guide.url.replace('.html', `-${locale}.html`)
+        }));
+    }
+
+    // Create the homepage for each locale.
+    for (const locale of Object.keys(locales)) {
+        const t = getTranslations(locale);
+        const localeInfo = locales[locale];
+        const isDefault = locale === defaultLocale;
+        const filename = isDefault ? 'index.html' : `index-${locale}.html`;
+
+        // Build available locales for language selector
+        const availableLocales = Object.keys(locales).map(loc => ({
+            code: loc,
+            name: locales[loc].name,
+            nativeName: locales[loc].nativeName,
+            flag: locales[loc].flag || '🌐',
+            url: loc === defaultLocale ? 'index.html' : `index-${loc}.html`,
+            current: loc === locale
+        }));
+
+        fs.writeFileSync(path.join(STATIC_GENERATED_DIR, filename), getCompiledTemplate(path.join(TEMPLATE_DIR, 'index.html'), {
+            guides: localizeGuides(guidesNotInstallation, locale),
+            installationGuides: localizeGuides(installationGuides, locale),
+            sdkGuides: localizeGuides(sdkGuides, locale),
+            gettingStartedGuides: localizeGuides(gettingStartedGuides, locale),
+            lastUpdateDate: new Date().toLocaleString(),
+            buildId,
+            locale,
+            lang: localeInfo.hreflang,
+            availableLocales,
+            t
+        }), 'utf8');
+    }
 
     await dispose();
 

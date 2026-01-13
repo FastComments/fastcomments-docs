@@ -9,6 +9,18 @@ const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 const snippetProcessor = require('./snippet-processor');
 const {locales, defaultLocale} = require('./locales');
 
+const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
+
+/**
+ * Load translations for a specific locale, falling back to default locale
+ * @param {string} locale - Target locale
+ * @returns {Object} - Translations object
+ */
+function getTranslations(locale) {
+    const translations = JSON.parse(fs.readFileSync(TRANSLATIONS_FILE, 'utf8'));
+    return translations[locale] || translations[defaultLocale] || {};
+}
+
 // Configure marked to use highlight.js for code blocks
 marked.setOptions({
     highlight: function (code, lang) {
@@ -209,6 +221,7 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         current: loc === locale
     }));
 
+    const t = getTranslations(locale);
     const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
         intro: guideIntroHTML,
         items,
@@ -217,6 +230,7 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         isFallback: hasFallbackContent,
         locale,
         availableLocales,
+        t,
         ...guide
     });
     const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');

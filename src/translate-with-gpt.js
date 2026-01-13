@@ -18,6 +18,7 @@ const crypto = require('crypto');
 
 const {
     getMissingTranslations,
+    getMissingUITranslations,
     getSourceContent,
     saveTranslation,
     countInlineCode,
@@ -25,6 +26,7 @@ const {
     getDefaultLocaleFiles,
     getLocaleFiles,
     GUIDES_DIR,
+    TRANSLATIONS_FILE,
     locales,
     defaultLocale
 } = require('./check-translations');
@@ -383,6 +385,159 @@ function hasLocaleStructure(guideId) {
 }
 
 /**
+ * Load translations.json file
+ * @returns {Object} - Translations object
+ */
+function loadUITranslations() {
+    if (!fs.existsSync(TRANSLATIONS_FILE)) {
+        return {};
+    }
+    return JSON.parse(fs.readFileSync(TRANSLATIONS_FILE, 'utf8'));
+}
+
+/**
+ * Save translations.json file
+ * @param {Object} translations - Translations object
+ */
+function saveUITranslations(translations) {
+    fs.writeFileSync(TRANSLATIONS_FILE, JSON.stringify(translations, null, 2), 'utf8');
+}
+
+/**
+ * Translate UI strings for a locale
+ * @param {string} locale - Target locale
+ * @param {Object} sourceStrings - Object of key: value pairs to translate
+ * @param {TranslationClient} client - Translation client
+ * @returns {Promise<Object|null>} - Translated strings or null on failure
+ */
+async function translateUIStrings(locale, sourceStrings, client) {
+    const localeInfo = locales[locale];
+    const localeName = localeInfo ? localeInfo.nativeName : locale;
+
+    const systemMessage = `You are an expert translator. Translate UI strings from English to ${localeName} (${locale}).
+Return ONLY a valid JSON object with the same keys but translated values.
+Do not include any explanation or markdown formatting - just the raw JSON.`;
+
+    const prompt = `Translate these UI strings to ${localeName}:
+
+${JSON.stringify(sourceStrings, null, 2)}
+
+Return ONLY a valid JSON object with the translated values. No explanations.`;
+
+    const maxRetries = 5;
+    const baseDelay = 1000;
+
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${client.apiKey}`
+                },
+                body: JSON.stringify({
+                    model: client.model,
+                    messages: [
+                        { role: 'system', content: systemMessage },
+                        { role: 'user', content: prompt }
+                    ],
+                    max_completion_tokens: 4000
+                })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+            }
+
+            const data = await response.json();
+            let content = data.choices?.[0]?.message?.content?.trim() || '';
+
+            // Strip markdown code block if present
+            if (content.startsWith('```json')) {
+                content = content.slice(7);
+            } else if (content.startsWith('```')) {
+                content = content.slice(3);
+            }
+            if (content.endsWith('```')) {
+                content = content.slice(0, -3);
+            }
+            content = content.trim();
+
+            if (!content) {
+                throw new Error('API returned empty translation');
+            }
+
+            const translated = JSON.parse(content);
+            console.log(`  [translated] UI strings for ${locale} (${data.usage?.total_tokens || 0} tokens)`);
+            return translated;
+        } catch (error) {
+            if (attempt === maxRetries) {
+                console.error(`  [error] UI translation for ${locale}: ${error.message}`);
+                return null;
+            }
+
+            const delay = baseDelay * Math.pow(2, attempt - 1);
+            console.warn(`  [retry ${attempt}/${maxRetries}] ${error.message}, retrying in ${delay}ms...`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Process UI translations
+ * @param {TranslationClient} client - Translation client
+ * @param {Object} options - Options
+ * @returns {Promise<Object>} - Results summary
+ */
+async function processUITranslations(client, options = {}) {
+    const { filterLocale, dryRun = false } = options;
+    const results = { success: 0, failed: 0, skipped: 0 };
+
+    const missingUITranslations = getMissingUITranslations();
+    const translations = loadUITranslations();
+    const sourceStrings = translations[defaultLocale] || {};
+
+    for (const [locale, missingKeys] of Object.entries(missingUITranslations)) {
+        if (filterLocale && locale !== filterLocale) continue;
+
+        const localeInfo = locales[locale];
+        const localeName = localeInfo ? localeInfo.nativeName : locale;
+
+        // Build object of strings to translate
+        const toTranslate = {};
+        for (const key of missingKeys) {
+            toTranslate[key] = sourceStrings[key];
+        }
+
+        if (dryRun) {
+            console.log(`  [dry-run] Would translate ${missingKeys.length} UI string(s) for ${locale} (${localeName})`);
+            results.skipped++;
+            continue;
+        }
+
+        console.log(`  Translating ${missingKeys.length} UI string(s) for ${locale} (${localeName})...`);
+        const translated = await translateUIStrings(locale, toTranslate, client);
+
+        if (translated) {
+            // Merge with existing translations for this locale
+            if (!translations[locale]) {
+                translations[locale] = {};
+            }
+            Object.assign(translations[locale], translated);
+            saveUITranslations(translations);
+            results.success++;
+        } else {
+            results.failed++;
+        }
+    }
+
+    return results;
+}
+
+/**
  * Build list of translation tasks using cache to detect changes
  * @param {Object} cache - Current cache
  * @param {Object} options - Filter options
@@ -501,6 +656,49 @@ async function main() {
     if (options.force) console.log(`Mode: FORCE (ignoring cache)`);
     console.log('');
 
+    const client = new TranslationClient();
+    let hasFailures = false;
+
+    // Process UI translations first (translations.json)
+    if (!options.guide) {
+        console.log('--- UI Translations (translations.json) ---\n');
+        const missingUI = getMissingUITranslations();
+        const uiLocales = Object.keys(missingUI).filter(l => !options.locale || l === options.locale);
+
+        if (uiLocales.length > 0) {
+            console.log(`Found ${uiLocales.length} locale(s) needing UI translations.`);
+            for (const locale of uiLocales.sort()) {
+                const localeInfo = locales[locale];
+                const name = localeInfo ? localeInfo.nativeName : locale;
+                console.log(`  ${locale} (${name}): ${missingUI[locale].length} key(s)`);
+            }
+            console.log('');
+
+            const uiResults = await processUITranslations(client, {
+                filterLocale: options.locale,
+                dryRun: options.dryRun
+            });
+
+            console.log('');
+            console.log('UI Translation Results:');
+            console.log(`  Success: ${uiResults.success} locale(s)`);
+            console.log(`  Failed: ${uiResults.failed} locale(s)`);
+            if (uiResults.skipped > 0) {
+                console.log(`  Skipped: ${uiResults.skipped} locale(s)`);
+            }
+
+            if (uiResults.failed > 0) {
+                hasFailures = true;
+            }
+        } else {
+            console.log('All UI translations are up-to-date.');
+        }
+        console.log('');
+    }
+
+    // Process guide file translations
+    console.log('--- Guide File Translations ---\n');
+
     // Load cache
     console.log('Loading translation cache...');
     const cache = loadCache();
@@ -517,8 +715,11 @@ async function main() {
     });
 
     if (tasks.length === 0) {
-        console.log('No translations needed matching the criteria.');
+        console.log('No guide file translations needed matching the criteria.');
         console.log('(All translations are up-to-date based on cache)');
+        if (hasFailures) {
+            process.exit(1);
+        }
         process.exit(0);
     }
 
@@ -541,7 +742,6 @@ async function main() {
     console.log('Starting translations...');
     console.log('');
 
-    const client = new TranslationClient();
     const results = await processTranslations(tasks, client, {
         concurrency: options.concurrency,
         dryRun: options.dryRun,
@@ -550,7 +750,7 @@ async function main() {
 
     // Print summary
     console.log('');
-    console.log('--- Summary ---');
+    console.log('--- Guide File Summary ---');
     console.log(`Success: ${results.success}`);
     console.log(`Failed: ${results.failed}`);
     if (results.skipped > 0) {
@@ -567,7 +767,7 @@ async function main() {
         }
     }
 
-    if (results.failed > 0) {
+    if (results.failed > 0 || hasFailures) {
         process.exit(1);
     }
 }

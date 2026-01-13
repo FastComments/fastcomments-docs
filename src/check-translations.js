@@ -12,6 +12,7 @@ const path = require('path');
 const {locales, defaultLocale} = require('./locales');
 
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
+const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
 const verbose = process.argv.includes('--verbose');
 
 function countInlineCode(content) {
@@ -129,6 +130,58 @@ function checkGuidesNeedingMigration() {
     }
 
     return needsMigration;
+}
+
+/**
+ * Check translations.json for missing locale translations
+ * @returns {Object} - { missingLocales: string[], missingKeys: { locale: string[] } }
+ */
+function checkUITranslations() {
+    if (!fs.existsSync(TRANSLATIONS_FILE)) {
+        return { missingLocales: Object.keys(locales), missingKeys: {} };
+    }
+
+    const translations = JSON.parse(fs.readFileSync(TRANSLATIONS_FILE, 'utf8'));
+    const defaultKeys = Object.keys(translations[defaultLocale] || {});
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+
+    const missingLocales = [];
+    const missingKeys = {};
+
+    for (const locale of nonDefaultLocales) {
+        if (!translations[locale]) {
+            missingLocales.push(locale);
+        } else {
+            const localeKeys = Object.keys(translations[locale]);
+            const missing = defaultKeys.filter(k => !localeKeys.includes(k));
+            if (missing.length > 0) {
+                missingKeys[locale] = missing;
+            }
+        }
+    }
+
+    return { missingLocales, missingKeys, defaultKeys };
+}
+
+/**
+ * Get UI translations that need to be translated
+ * @returns {Object} - { locale: [keys] }
+ */
+function getMissingUITranslations() {
+    const { missingLocales, missingKeys, defaultKeys } = checkUITranslations();
+    const result = {};
+
+    // Locales completely missing get all keys
+    for (const locale of missingLocales) {
+        result[locale] = defaultKeys;
+    }
+
+    // Locales with partial translations get only missing keys
+    for (const [locale, keys] of Object.entries(missingKeys)) {
+        result[locale] = keys;
+    }
+
+    return result;
 }
 
 function checkTranslations() {
@@ -395,6 +448,26 @@ function main() {
         console.log(`Total: ${inlineCodeErrors.length} file(s) with inline-code mismatches`);
     }
 
+    // Check UI translations (translations.json)
+    const missingUITranslations = getMissingUITranslations();
+    const uiLocalesNeedingTranslation = Object.keys(missingUITranslations);
+
+    if (uiLocalesNeedingTranslation.length > 0) {
+        hasErrors = true;
+        console.log('\n--- UI Translations (translations.json) ---\n');
+        console.log('Missing UI translations:\n');
+
+        let totalMissingKeys = 0;
+        for (const locale of uiLocalesNeedingTranslation.sort()) {
+            const keys = missingUITranslations[locale];
+            const localeInfo = locales[locale];
+            const localeName = localeInfo ? localeInfo.nativeName : locale;
+            console.log(`  ${locale} (${localeName}): ${keys.length} key(s)`);
+            totalMissingKeys += keys.length;
+        }
+        console.log(`\nTotal: ${totalMissingKeys} missing UI translation key(s) across ${uiLocalesNeedingTranslation.length} locale(s)`);
+    }
+
     if (!hasErrors) {
         console.log('All content is translated and inline-code counts match.');
         process.exit(0);
@@ -406,6 +479,8 @@ function main() {
 // Export functions for programmatic use
 module.exports = {
     getMissingTranslations,
+    getMissingUITranslations,
+    checkUITranslations,
     getSourceContent,
     saveTranslation,
     checkTranslations,
@@ -417,6 +492,7 @@ module.exports = {
     countWords,
     estimateTokens,
     GUIDES_DIR,
+    TRANSLATIONS_FILE,
     locales,
     defaultLocale
 };
