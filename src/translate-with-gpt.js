@@ -253,6 +253,16 @@ async function processTranslations(tasks, client, options = {}) {
             try {
                 const source = getSourceContent(guideId, filename);
 
+                // Skip empty or very small files (likely placeholders)
+                if (source.trim().length < 10) {
+                    console.log(`  [skipped] ${guideId}/${locale}/${filename} (empty or too small)`);
+                    results.skipped++;
+                    // Still update cache to avoid retrying
+                    updateCache(cache, cacheKey, sourceHash);
+                    saveCache(cache);
+                    continue;
+                }
+
                 if (dryRun) {
                     console.log(`  [dry-run] Would translate ${guideId}/${locale}/${filename}`);
                     results.skipped++;

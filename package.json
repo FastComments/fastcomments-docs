@@ -30,7 +30,8 @@
 		"translate": "node src/translate-with-gpt.js",
 		"migrate-locale-structure": "node src/migrate-to-locale-structure.js",
 		"populate-snapshot": "node src/populate-snapshot.js",
-		"fix-composer": "node src/content/sdks-checkout/sdk-php/fix-composer.js"
+		"fix-composer": "node src/content/sdks-checkout/sdk-php/fix-composer.js",
+		"cleanup-empty-translations": "node src/cleanup-empty-translations.js"
 	},
 	"devDependencies": {
 		"serve": "^11.2.0"
