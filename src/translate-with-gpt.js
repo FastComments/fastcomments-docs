@@ -344,6 +344,12 @@ function buildTaskList(cache, options = {}) {
 
         for (const filename of sourceFiles) {
             const source = getSourceContent(guideId, filename);
+
+            // Skip empty or very small files (less than 10 characters)
+            if (source.trim().length < 10) {
+                continue;
+            }
+
             const sourceHash = hashContent(source);
 
             for (const locale of nonDefaultLocales) {

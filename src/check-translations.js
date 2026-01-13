@@ -154,21 +154,35 @@ function checkTranslations() {
             continue;
         }
 
-        const defaultFiles = getDefaultLocaleFiles(guideId);
+        let defaultFiles = getDefaultLocaleFiles(guideId);
         if (defaultFiles.length === 0) continue;
 
-        // Pre-cache source file content and stats
+        // Pre-cache source file content and stats, and filter out empty files
+        const nonEmptyFiles = [];
         for (const file of defaultFiles) {
             const cacheKey = `${guideId}/${file}`;
             if (!sourceFileCache.has(cacheKey)) {
                 const content = getSourceContent(guideId, file);
+                // Skip empty or very small files (less than 10 characters)
+                if (content.trim().length < 10) {
+                    if (verbose) {
+                        console.log(`Skipping empty file: ${guideId}/${file}`);
+                    }
+                    continue;
+                }
                 sourceFileCache.set(cacheKey, {
                     content,
                     words: countWords(content),
                     tokens: estimateTokens(content)
                 });
+                nonEmptyFiles.push(file);
+            } else {
+                // File was already cached, include it
+                nonEmptyFiles.push(file);
             }
         }
+        defaultFiles = nonEmptyFiles;
+        if (defaultFiles.length === 0) continue;
 
         for (const locale of nonDefaultLocales) {
             const localeFiles = new Set(getLocaleFiles(guideId, locale));
@@ -242,7 +256,18 @@ function getMissingTranslations() {
     for (const guideId of guides) {
         if (!hasLocaleStructure(guideId)) continue;
 
-        const defaultFiles = getDefaultLocaleFiles(guideId);
+        let defaultFiles = getDefaultLocaleFiles(guideId);
+        if (defaultFiles.length === 0) continue;
+
+        // Filter out empty or very small files (less than 10 characters)
+        defaultFiles = defaultFiles.filter(file => {
+            try {
+                const content = getSourceContent(guideId, file);
+                return content.trim().length >= 10;
+            } catch (e) {
+                return false;
+            }
+        });
         if (defaultFiles.length === 0) continue;
 
         for (const locale of nonDefaultLocales) {

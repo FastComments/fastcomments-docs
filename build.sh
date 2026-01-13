@@ -12,6 +12,33 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/js
   npm install
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
+
+  # Check for missing translations
+  echo "Checking for missing translations..."
+  node src/check-translations.js
+  if [ $? -ne 0 ]; then
+    echo "Missing translations detected. Running automated translation..."
+
+    # Run translation
+    node src/translate-with-gpt.js
+    if [ $? -ne 0 ]; then
+      echo "Build failed: Translation failed"
+      exit 1
+    fi
+
+    # Check if there are changes to commit
+    if [ -n "$(git status --porcelain src/content src/translation-cache.json 2>/dev/null)" ]; then
+      echo "Committing translation changes..."
+      git add src/content src/translation-cache.json
+      git commit -m "Automated translation update"
+      echo "Translation changes committed."
+    else
+      echo "No translation changes to commit."
+    fi
+  else
+    echo "All translations up to date."
+  fi
+
   echo "Generating SDK documentation..."
   node src/sdk-guide-generator.js
   echo "Generating custom styling guide..."
