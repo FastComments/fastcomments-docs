@@ -12,7 +12,7 @@ Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'envoi de lien de connexion'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'envoi de lien de connexion'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 

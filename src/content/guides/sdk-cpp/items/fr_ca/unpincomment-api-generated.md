@@ -13,7 +13,7 @@ Renvoie : [`PinComment_200_response`](https://github.com/FastComments/fastcommen
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'unPinComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'unPinComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t commentId = U("cmt-456789");

@@ -12,7 +12,7 @@ Retourne : [`Option[FlagCommentPublic_200_response]`](https://github.com/FastCom
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de deleteTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de deleteTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
 

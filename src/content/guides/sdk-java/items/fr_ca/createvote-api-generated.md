@@ -14,7 +14,7 @@ Renvoie: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de createVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de createVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
