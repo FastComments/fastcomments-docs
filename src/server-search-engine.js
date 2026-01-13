@@ -1,18 +1,16 @@
-// We only have around 2.5mb of docs. ES ended up being a pain, too many knobs etc to get search right.
-// So we just put it all in memory in one node worker.
+/**
+ * Search server using SQLite FTS5 indexes.
+ * Queries pre-built database files from the db/ folder.
+ */
 
-const MiniSearch = require('minisearch');
+const Database = require('better-sqlite3');
 const express = require('express');
-const { htmlToText } = require('html-to-text');
-const {
-    getGuides,
-    buildGuideItemForMeta,
-    getGuideMeta,
-    createGuideLink
-} = require('./guides');
 const fs = require('fs');
-const marked = require('marked');
+const path = require('path');
 const axios = require('axios');
+const { locales, defaultLocale } = require('./locales');
+
+const DB_DIR = path.join(__dirname, '..', 'db');
 
 const AXIOS_CONFIG_NO_THROW = {
     validateStatus: function () {
@@ -21,25 +19,7 @@ const AXIOS_CONFIG_NO_THROW = {
 };
 
 // Search tracking collection
-const searchCollection = new Map(); // Map<tenantId, Map<searchInput, timestamp>>
-
-// html-to-text configuration
-const htmlToTextOptions = {
-    selectors: [
-        { selector: '.line-number', format: 'skip' },
-        { selector: '.copy', format: 'skip' },
-        { selector: '.top-right', format: 'skip' },
-        { selector: 'img', format: 'skip' }
-    ]
-};
-
-// Clean search text by removing hljs styles and converting HTML to text
-function cleanSearchText(html) {
-    // Remove hljs style tags
-    const withoutHljsStyles = html.replace(/<style>pre code\.hljs\{[\s\S]*?<\/style>/g, '');
-    // Convert to text
-    return htmlToText(withoutHljsStyles, htmlToTextOptions);
-}
+const searchCollection = new Map();
 
 // Function to filter out prefix searches
 function filterPrefixSearches(searches) {
@@ -76,7 +56,6 @@ setInterval(async () => {
         const filteredSearches = filterPrefixSearches(searches);
 
         for (const searchInput of filteredSearches) {
-            // Skip tracking for e2e test searches
             if (searchInput.includes('e2e-test')) {
                 console.log('Skipping e2e test search:', searchInput);
                 continue;
@@ -97,121 +76,151 @@ setInterval(async () => {
     }
 }, 10000);
 
-(async function () {
-    /** @type {Array.<Guide>} **/
-    const guides = getGuides();
-    const guidesFlat = [];
+// Cache database connections
+const dbConnections = new Map();
 
-    for (const guide of guides) {
-        const guideTitle = guide.pageHeader || guide.name;
-
-        const meta = getGuideMeta(guide.id);
-        if (guide.id.startsWith('installation-') && guide.id !== 'installation') {
-            const preview = fs.existsSync(guide.introPath) ? marked(fs.readFileSync(guide.introPath, 'utf8')) : '';
-            let bodyWithChildren = preview.trim();
-            for (const item of meta.itemsOrdered) {
-                const builtItem = await buildGuideItemForMeta(guide, item);
-                bodyWithChildren += builtItem.content;
-            }
-
-            const subEntry = {
-                id: guide.id,
-                title: meta.pageHeader,
-                icon: '/images/guide-icons/' + meta.icon,
-                url: '/' + createGuideLink(guide.id),
-                searchText: cleanSearchText(bodyWithChildren)
-            };
-            guidesFlat.push(subEntry);
-        } else if (meta.itemsOrdered) {
-            for (const item of meta.itemsOrdered) {
-                const builtItem = await buildGuideItemForMeta(guide, item);
-
-                const subEntry = {
-                    id: guide.id + '>' + builtItem.id,
-                    parentTitle: guideTitle,
-                    title: builtItem.title,
-                    icon: '/images/guide-icons/' + meta.icon,
-                    parentUrl: guide.url,
-                    url: builtItem.fullUrl,
-                    searchText: cleanSearchText(builtItem.content)
-                };
-                guidesFlat.push(subEntry);
-            }
-        } else {
-            // what guide wouldn't have this?
-        }
+function getDatabase(locale) {
+    if (dbConnections.has(locale)) {
+        return dbConnections.get(locale);
     }
 
-    const miniSearch = new MiniSearch({
-        fields: ['title', 'parentTitle', 'searchText'], // fields to index for full-text search
-        storeFields: ['title', 'parentTitle', 'url', 'parentUrl', 'icon', 'searchText'], // fields to return with search results
-        searchOptions: {
-            boost: {title: 2},
-            fuzzy: 0.1
+    const dbPath = path.join(DB_DIR, `search-${locale}.db`);
+    if (!fs.existsSync(dbPath)) {
+        // Fall back to default locale if requested locale doesn't exist
+        const fallbackPath = path.join(DB_DIR, `search-${defaultLocale}.db`);
+        if (!fs.existsSync(fallbackPath)) {
+            throw new Error(`No search database found for locale ${locale} or default ${defaultLocale}`);
         }
-    })
+        console.log(`Using fallback database for locale ${locale}`);
+        const db = new Database(fallbackPath, { readonly: true });
+        dbConnections.set(locale, db);
+        return db;
+    }
 
-    miniSearch.addAll(guidesFlat);
+    const db = new Database(dbPath, { readonly: true });
+    dbConnections.set(locale, db);
+    return db;
+}
 
-    console.log('Starting server...');
-    const app = express()
-    const port = 5001;
+function search(locale, query, limit = 15) {
+    const db = getDatabase(locale);
 
-    app.get('/search', async (req, res) => {
-        try {
-            res.set('Access-Control-Allow-Origin', '*');
-            res.set('Access-Control-Allow-Credentials', 'true');
-            res.set('Access-Control-Allow-Headers', 'content-type');
-            console.log('Searching for', req.query.query);
-            const rawResults = miniSearch.search(req.query.query, {
-                boostDocument: function (id, term) {
-                    if (id.startsWith('installation>') && term === 'install') {
-                        return 2;
-                    }
-                    return 1;
-                }
-            });
-            console.log(rawResults.length, 'results for', req.query.query);
+    // Escape special FTS5 characters and prepare query
+    const sanitizedQuery = query
+        .replace(/['"]/g, '') // Remove quotes
+        .replace(/[-+*(){}[\]^~:]/g, ' ') // Replace special chars with spaces
+        .trim()
+        .split(/\s+/)
+        .filter(term => term.length > 0)
+        .map(term => `"${term}"*`) // Prefix matching
+        .join(' OR ');
 
-            // Check if full documentation content should be included
-            const includeFull = req.query.full === 'true';
-            let results = rawResults.slice(0, 15);
+    if (!sanitizedQuery) {
+        return [];
+    }
 
-            // If full=true is not set, remove searchText from results
-            if (!includeFull) {
-                results = results.map(result => {
-                    const { searchText, ...rest } = result;
-                    return rest;
-                });
-            }
+    try {
+        const stmt = db.prepare(`
+            SELECT
+                doc_id,
+                title,
+                parent_title,
+                url,
+                parent_url,
+                icon,
+                bm25(search_index) as score
+            FROM search_index
+            WHERE search_index MATCH ?
+            ORDER BY bm25(search_index)
+            LIMIT ?
+        `);
 
-            res.send({
-                status: 'success',
-                results: results
-            });
+        const results = stmt.all(sanitizedQuery, limit);
 
-            // Collect search for batch processing
-            const tenantId = req.query.tenantId || 'default';
-            if (!searchCollection.has(tenantId)) {
-                searchCollection.set(tenantId, new Map());
-            }
-            searchCollection.get(tenantId).set(req.query.query, Date.now());
-        } catch (e) {
-            console.error('Failed to handle search request', req.query.query, e);
-            res.status(500).send({
-                status: 'failed'
-            })
-        }
-    });
+        return results.map(row => ({
+            id: row.doc_id,
+            title: row.title,
+            parentTitle: row.parent_title,
+            url: row.url,
+            parentUrl: row.parent_url,
+            icon: row.icon,
+            score: -row.score // bm25 returns negative scores, lower is better
+        }));
+    } catch (e) {
+        console.error('Search error:', e.message);
+        return [];
+    }
+}
 
-    app.options('/search', function (req, res) {
+// Check if databases exist
+const availableLocales = Object.keys(locales).filter(locale => {
+    const dbPath = path.join(DB_DIR, `search-${locale}.db`);
+    return fs.existsSync(dbPath);
+});
+
+if (availableLocales.length === 0) {
+    console.error('No search databases found in', DB_DIR);
+    console.error('Run "npm run build-search-index" first to create the databases.');
+    process.exit(1);
+}
+
+console.log(`Found ${availableLocales.length} search databases`);
+
+const app = express();
+const port = 5001;
+
+app.get('/search', async (req, res) => {
+    try {
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Credentials', 'true');
         res.set('Access-Control-Allow-Headers', 'content-type');
-        res.status(200).end();
-    });
 
-    app.listen(port, () => {
-        console.log(`Search server listening on port ${port}.`)
-    });
-})();
+        const locale = req.query.locale || defaultLocale;
+        const query = req.query.query || '';
+
+        console.log('Searching for', query, 'in locale', locale);
+
+        const results = search(locale, query);
+
+        console.log(results.length, 'results for', query);
+
+        res.send({
+            status: 'success',
+            results: results
+        });
+
+        // Collect search for batch processing
+        const tenantId = req.query.tenantId || 'default';
+        if (!searchCollection.has(tenantId)) {
+            searchCollection.set(tenantId, new Map());
+        }
+        searchCollection.get(tenantId).set(query, Date.now());
+    } catch (e) {
+        console.error('Failed to handle search request', req.query.query, e);
+        res.status(500).send({
+            status: 'failed',
+            error: e.message
+        });
+    }
+});
+
+app.options('/search', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Credentials', 'true');
+    res.set('Access-Control-Allow-Headers', 'content-type');
+    res.status(200).end();
+});
+
+// Graceful shutdown
+process.on('SIGINT', () => {
+    console.log('\nClosing database connections...');
+    for (const [locale, db] of dbConnections) {
+        db.close();
+    }
+    process.exit(0);
+});
+
+app.listen(port, () => {
+    console.log(`Search server listening on port ${port}`);
+    console.log(`Available locales: ${availableLocales.join(', ')}`);
+});
