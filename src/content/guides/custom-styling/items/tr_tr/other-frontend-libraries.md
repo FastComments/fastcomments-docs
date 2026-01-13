@@ -1,0 +1,2 @@
+React, Angular, Vue ve benzeri için tüm resmi FastComments ön uç kütüphaneleri `customCSS` yapılandırma
+parametresini kabul eder ve aynı HTML yapısına sahip vanilla js kütüphanesinin etrafında birer sarmalayıcıdır.

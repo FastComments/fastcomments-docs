@@ -1,0 +1,9 @@
+{
+  "method": "delete_subscription",
+  "signatureHash": "19ca4f25035b54238cbe9b0f134089930721c2aa2d813cf724d9a00fe809a031",
+  "generatedAt": "2026-01-12T21:59:32.422Z",
+  "codeExample": "async fn example_delete_subscription() -> Result<DeleteSubscriptionApiResponse, Error> {\n    let params: DeleteSubscriptionParams = DeleteSubscriptionParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"sub-newsletter-daily\".to_string(),\n        user_id: Some(\"user_12345\".to_string()),\n    };\n    let response: DeleteSubscriptionApiResponse = delete_subscription(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 300,
+  "completionTokens": 873
+}

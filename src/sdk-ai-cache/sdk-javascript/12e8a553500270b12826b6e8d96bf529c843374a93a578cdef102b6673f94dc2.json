@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "12e8a553500270b12826b6e8d96bf529c843374a93a578cdef102b6673f94dc2",
+  "generatedAt": "2026-01-12T21:54:26.310Z",
+  "codeExample": "const tenantId: string = \"tenant_82b1c4\";\nconst commentId: string = \"cmt_9f3b2a1\";\nconst updatableCommentParams: UpdatableCommentParams = {\n  content: \"Thanks — I've clarified the timeline and fixed the source link.\",\n  metadata: { editedBy: \"moderator_12\", editReason: \"clarity\" }\n};\nconst contextUserId: string = \"user_47a2b\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = false;\nconst result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 735
+}

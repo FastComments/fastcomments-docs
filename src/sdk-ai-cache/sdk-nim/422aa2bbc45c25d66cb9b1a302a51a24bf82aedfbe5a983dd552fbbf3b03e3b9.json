@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "422aa2bbc45c25d66cb9b1a302a51a24bf82aedfbe5a983dd552fbbf3b03e3b9",
+  "generatedAt": "2025-11-22T08:35:39.414Z",
+  "codeExample": "let (response, httpResponse) = client.getPages(tenantId = \"my-tenant-123\")\nif response.isSome:\n  let pages = response.get()\n  echo \"Pages retrieved for tenant:\", \" my-tenant-123\"\n  echo pages\nelse:\n  echo \"No pages returned, HTTP response:\", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 374,
+  "completionTokens": 780
+}

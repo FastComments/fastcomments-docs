@@ -1,0 +1,9 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "ae221a97b539b5a24c1432d329c413bdf383a71dbbfefdc50d3547c15e098c7e",
+  "generatedAt": "2025-11-21T16:26:11.678Z",
+  "codeExample": "let createParams = @[\n  CreateCommentParams(\n    urlId = \"news/2025-election-analysis\",\n    content = \"Insightful reporting — thanks for the deep dive.\",\n    userId = \"user-789\",\n    anonUserId = \"\",\n    parentId = \"\"\n  )\n]\n\nlet unBlockParams = UnBlockFromCommentParams(commentId = \"cmt-2345\", reason = \"User appeal accepted\")\n\nlet (response, httpResponse) = client.saveCommentsBulk(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = createParams,\n  isLive = true,\n  doSpamCheck = true,\n  sendEmails = false,\n  populateNotifications = true,\n  id = \"op-5678\",\n  unBlockFromCommentParams = unBlockParams,\n  userId = \"user-789\",\n  anonUserId = \"\"\n)\n\nif response.isSome:\n  let unblockResult = response.get()",
+  "model": "gpt-5-mini",
+  "promptTokens": 494,
+  "completionTokens": 1418
+}

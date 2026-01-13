@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "ebe9d7e5f5a9c3ce2860c86221913a98901e8fdd64e24251644ce3522b38e838",
+  "generatedAt": "2026-01-12T20:34:05.262Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"question-456\");\nboost::optional<utility::string_t> locale = U(\"en-US\");\nauto defaultResp = std::make_shared<GetQuestionConfig_200_response>();\napi->getQuestionConfig(tenantId, id).then([defaultResp](pplx::task<std::shared_ptr<GetQuestionConfig_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if(!resp) resp = defaultResp;\n        std::cout << \"Question config retrieved\" << std::endl;\n    } catch(const std::exception &e) {\n        std::cerr << \"Failed to get question config: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1325
+}

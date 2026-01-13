@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "96e102a3163babc0eb23f20ff6a86965fa6530780e51e4234a99e44376679488",
+  "generatedAt": "2025-11-21T16:26:35.059Z",
+  "codeExample": "let (response, httpResponse) = client.updateFeedPost(\n  tenantId = \"my-tenant-123\",\n  id = \"feedpost-456\",\n  feedPost = FeedPost(\n    title = \"Downtown Festival 2025\",\n    body = \"Join us for the annual downtown festival with live music, food trucks, and family activities.\",\n    url = \"news/downtown-festival-2025\",\n    author = \"editor@localnews.com\",\n    tags = @[\"community\", \"festival\"],\n    published = true\n  )\n)\n\nif response.isSome:\n  let result = response.get()\n  echo \"FlagCommentPublic response received: \", result\nelse:\n  echo \"No response returned, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 401,
+  "completionTokens": 932
+}

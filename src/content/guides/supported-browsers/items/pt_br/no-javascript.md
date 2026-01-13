@@ -1,0 +1,1 @@
+Nosso widget de comentários exige um navegador que suporte, no mínimo, os padrões JavaScript ES6 para fornecer uma experiência interativa rica.

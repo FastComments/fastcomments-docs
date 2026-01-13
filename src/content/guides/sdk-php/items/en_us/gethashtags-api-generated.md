@@ -1,0 +1,42 @@
+## Parameters
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+
+## Response
+
+Returns: [`GetHashTags200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTags200Response.php)
+
+## Example
+
+[inline-code-attrs-start title = 'getHashTags Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api_key
+// Uncomment the line below to set a prefix (e.g., "Bearer") for the API key if needed
+// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new FastComments\Client\Api\DefaultApi(
+    // If you want to use a custom HTTP client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional; `GuzzleHttp\Client` will be used by default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tenant_id = 'tenant_id_example'; // string
+$page = 3.4; // float
+
+try {
+    $result = $apiInstance->getHashTags($tenant_id, $page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getHashTags: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]
+
+---

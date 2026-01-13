@@ -1,0 +1,1 @@
+Verjetno ne želite konfiguracije določiti neposredno (inline), če posredujete povratne klice itd. Namesto tega konfiguracijo določite z uporabo `computed()`, sicer se bo vsakič, ko se vaš povratni klic itd. pokliče, celoten pripomoček ponovno upodobil.

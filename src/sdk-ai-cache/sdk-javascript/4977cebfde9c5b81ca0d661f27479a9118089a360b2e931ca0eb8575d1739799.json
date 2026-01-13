@@ -1,0 +1,9 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "4977cebfde9c5b81ca0d661f27479a9118089a360b2e931ca0eb8575d1739799",
+  "generatedAt": "2026-01-12T21:54:10.369Z",
+  "codeExample": "const tenantId: string = \"tenant_7b3f2c9a\";\nconst commentId: string = \"comment_9d4a1f2b\";\nconst unBlockFromCommentParams: UnBlockFromCommentParams = {\n  reason: \"User submitted successful appeal; block removed\",\n  moderatorId: \"mod_jane_doe\",\n  effectiveAt: new Date().toISOString()\n};\nconst userId: string = \"user_5a8f3e21\";\nconst anonUserId: string = \"anon_2f7d9c88\";\nconst result: UnBlockCommentPublic200Response = await unBlockUserFromComment(\n  tenantId,\n  commentId,\n  unBlockFromCommentParams,\n  userId,\n  anonUserId\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 874
+}

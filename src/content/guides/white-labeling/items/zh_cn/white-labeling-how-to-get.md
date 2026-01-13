@@ -1,0 +1,1 @@
+白标（White Labeling）在 FastComments.com 的多个方案中可用。查看 [我们的定价](https://fastcomments.com/traffic-pricing) 以了解提供白标功能的不同套餐。

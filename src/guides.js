@@ -7,6 +7,7 @@ const {ExampleTenantId} = require('./utils');
 const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 const snippetProcessor = require('./snippet-processor');
+const {locales, defaultLocale} = require('./locales');
 
 // Configure marked to use highlight.js for code blocks
 marked.setOptions({
@@ -76,19 +77,37 @@ function createGuideItemIdFromPath(filePath) {
  *
  * @param {Guide} guide
  * @param {MetaItem} metaItem
+ * @param {string} locale
  * @return {Promise<GuideItem>}
  */
-async function buildGuideItemForMeta(guide, metaItem) {
-    console.log('buildGuideItemForMeta', metaItem.file);
+async function buildGuideItemForMeta(guide, metaItem, locale = defaultLocale) {
+    console.log('buildGuideItemForMeta', metaItem.file, 'locale:', locale);
     const title = metaItem.name;
     const id = createGuideItemIdFromPath(metaItem.file);
     const urlId = metaItem.file.replace('md', 'html');
 
     // We add this guide metaItem to the index, but its url is an anchor to the element on the guide page. This way we
     // can have all the content on one page, but still deep link to it from search nicely.
-    const fullUrl = `/${guide.url}#${id}`;
+    const guideUrl = createGuideLink(guide.id, locale);
+    const fullUrl = `/${guideUrl}#${id}`;
 
-    const itemPath = path.join(GUIDES_DIR, guide.id, 'items', metaItem.file);
+    // Check for localized content first, then fall back to default locale
+    let itemPath = path.join(GUIDES_DIR, guide.id, 'items', locale, metaItem.file);
+    let isFallback = false;
+
+    if (!fs.existsSync(itemPath)) {
+        // Try default locale as fallback
+        itemPath = path.join(GUIDES_DIR, guide.id, 'items', defaultLocale, metaItem.file);
+        if (locale !== defaultLocale) {
+            isFallback = true;
+        }
+    }
+
+    // Also check for non-localized path (for backwards compatibility with guides that haven't been reorganized)
+    if (!fs.existsSync(itemPath)) {
+        itemPath = path.join(GUIDES_DIR, guide.id, 'items', metaItem.file);
+        isFallback = false; // not a fallback if it's the original structure
+    }
 
     // Skip if file doesn't exist (generated files may not be present yet)
     if (!fs.existsSync(itemPath)) {
@@ -102,10 +121,13 @@ async function buildGuideItemForMeta(guide, metaItem) {
     const markdown = handlebars.compile(fs.readFileSync(itemPath, 'utf8'))({
         ExampleTenantId
     });
-    let html = marked(await processDynamicContent(markdown, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file)));
-    
+
+    // Determine the relative path for dynamic content processing
+    const relativePath = itemPath.replace(path.join(__dirname, '..') + '/', '');
+    let html = marked(await processDynamicContent(markdown, relativePath));
+
     // Apply snippet processor after markdown processing
-    html = snippetProcessor(html, path.join('src', 'content', GUIDES_DIR_NAME, guide.id, 'items', metaItem.file));
+    html = snippetProcessor(html, relativePath);
 
     html += '<style>' + fs.readFileSync(path.join(__dirname, './../node_modules/highlight.js/styles/monokai-sublime.css'), 'utf8') + '</style>';
 
@@ -119,6 +141,7 @@ async function buildGuideItemForMeta(guide, metaItem) {
         content: html,
         itemClasses: html.includes('https://fastcomments.com') ? 'has-site-link' : '', // determine this at build time, so we can use a hack to quickly replace all the fastcomments.com links to eu.fastcomments.com
         fullUrl,
+        isFallback,
     };
 }
 
@@ -126,48 +149,100 @@ async function buildGuideItemForMeta(guide, metaItem) {
  *
  * @param {Guide} guide
  * @param {Index} index
+ * @param {string} locale
  * @return {Promise<GuideItem[]>}
  */
-async function buildGuide(guide, index) {
+async function buildGuide(guide, index, locale = defaultLocale) {
     /** @type {Meta} **/
     const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
     const items = [];
     for (const metaItem of meta.itemsOrdered) {
-        const item = await buildGuideItemForMeta(guide, metaItem, index); // this is done one at a time to be easier to understand
+        const item = await buildGuideItemForMeta(guide, metaItem, locale); // this is done one at a time to be easier to understand
         if (item) {
             items.push(item);
         }
     }
-    await buildGuideFromItems(guide, items);
+    await buildGuideFromItems(guide, items, locale);
 
     return items;
 }
 
-async function buildGuideFromItems(guide, items) {
-    const introPath = path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME);
+async function buildGuideFromItems(guide, items, locale = defaultLocale) {
+    // Check for localized intro first, then fall back to default locale, then root
+    let introPath = path.join(GUIDES_DIR, guide.id, 'items', locale, GUIDE_INTRO_FILE_NAME);
+    if (!fs.existsSync(introPath)) {
+        introPath = path.join(GUIDES_DIR, guide.id, 'items', defaultLocale, GUIDE_INTRO_FILE_NAME);
+    }
+    if (!fs.existsSync(introPath)) {
+        introPath = path.join(GUIDES_DIR, guide.id, GUIDE_INTRO_FILE_NAME);
+    }
     const guideIntroHTML = marked(fs.existsSync(introPath) ? fs.readFileSync(introPath, 'utf8') : '');
-    const conclusionPath = path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME);
+
+    // Check for localized conclusion first, then fall back to default locale, then root
+    let conclusionPath = path.join(GUIDES_DIR, guide.id, 'items', locale, GUIDE_CONCLUSION_FILE_NAME);
+    if (!fs.existsSync(conclusionPath)) {
+        conclusionPath = path.join(GUIDES_DIR, guide.id, 'items', defaultLocale, GUIDE_CONCLUSION_FILE_NAME);
+    }
+    if (!fs.existsSync(conclusionPath)) {
+        conclusionPath = path.join(GUIDES_DIR, guide.id, GUIDE_CONCLUSION_FILE_NAME);
+    }
     const guideConclusionHTML = marked(fs.existsSync(conclusionPath) ? fs.readFileSync(conclusionPath, 'utf8') : '');
+
+    // Check if any items are using fallback content
+    const hasFallbackContent = items.some(item => item.isFallback);
+
+    // Build alternate locale links for hreflang tags
+    const currentUrl = createGuideLink(guide.id, locale);
+    const alternateLocales = Object.keys(locales).map(loc => ({
+        hreflang: locales[loc].hreflang,
+        url: createGuideLink(guide.id, loc),
+        current: loc === locale
+    }));
+
+    // Build available locales for language selector
+    const availableLocales = Object.keys(locales).map(loc => ({
+        code: loc,
+        name: locales[loc].name,
+        nativeName: locales[loc].nativeName,
+        flag: locales[loc].flag || '🌐',
+        url: createGuideLink(guide.id, loc),
+        current: loc === locale
+    }));
 
     const guideContentHTML = handlebars.compile(fs.readFileSync(GUIDE_LAYOUT_PATH, 'utf8'))({
         intro: guideIntroHTML,
         items,
         itemsBySubCat: groupBy(items, 'subCat'),
         conclusion: guideConclusionHTML,
+        isFallback: hasFallbackContent,
+        locale,
+        availableLocales,
         ...guide
     });
     const guideIndexPath = path.join(GUIDES_DIR, guide.id, 'index.md.html');
     const guideRootHTML = fs.existsSync(guideIndexPath) ? handlebars.compile(marked(fs.readFileSync(guideIndexPath, 'utf8')))({
         content: guideContentHTML
     }) : guideContentHTML;
-    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, guide.url), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
+
+    const outputUrl = createGuideLink(guide.id, locale);
+    const defaultUrl = createGuideLink(guide.id, defaultLocale);
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, outputUrl), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
         title: guide.pageHeader ? guide.pageHeader : guide.name,
         content: guideRootHTML,
-        ExampleTenantId: ExampleTenantId
+        ExampleTenantId: ExampleTenantId,
+        lang: locales[locale].hreflang,
+        locale,
+        alternateLocales,
+        availableLocales,
+        defaultUrl,
+        stableUrlId: '/' + defaultUrl // Stable urlId for FastComments widgets (same across all locales)
     }), 'utf8');
 }
 
-function createGuideLink(id) {
+function createGuideLink(id, locale) {
+    if (locale && locale !== defaultLocale) {
+        return `guide-${id}-${locale}.html`;
+    }
     return `guide-${id}.html`;
 }
 

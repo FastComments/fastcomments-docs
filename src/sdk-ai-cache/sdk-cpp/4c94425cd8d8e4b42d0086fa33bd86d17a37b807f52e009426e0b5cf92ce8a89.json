@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "4c94425cd8d8e4b42d0086fa33bd86d17a37b807f52e009426e0b5cf92ce8a89",
+  "generatedAt": "2026-01-12T20:33:28.807Z",
+  "codeExample": "boost::optional<utility::string_t> tenantOverride;\nutility::string_t tenantId = tenantOverride.value_or(utility::conversions::to_string_t(\"my-tenant-123\"));\nutility::string_t domain = utility::conversions::to_string_t(\"comments.mycompany.com\");\napi->getDomainConfig(tenantId, domain).then([](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto config = resp ? resp : std::make_shared<GetDomainConfig_200_response>();\n        (void)config;\n    } catch (const std::exception& e) {\n        auto fallback = std::make_shared<GetDomainConfig_200_response>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 2027
+}

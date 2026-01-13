@@ -1,0 +1,9 @@
+{
+  "method": "get_votes_for_user",
+  "signatureHash": "34eabebfec12dafeedde02c7e14d8bc5726566e8105e5ad03427f91025bcf152",
+  "generatedAt": "2026-01-12T22:00:40.978Z",
+  "codeExample": "async fn fetch_votes() -> Result<GetVotesForUser200Response, Error> {\n    let params = GetVotesForUserParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/2026/01/12/breaking-tech\"),\n        user_id: Some(String::from(\"user-78a3\")),\n        anon_user_id: Some(String::from(\"anon-4f2b\")),\n    };\n    let response: GetVotesForUser200Response = get_votes_for_user(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 453,
+  "completionTokens": 645
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "521ed06cf1b62ebd37339830744c97cf5041b7f0edc278bc3b01d7d97507c4cc",
+  "generatedAt": "2025-11-20T22:24:42.741Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateFeedPostParams feedParams = CreateFeedPostParams();\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-456\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"alice@example.com\"));\napi->createFeedPostPublic(tenantId, feedParams, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<CreateFeedPostPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto respCopy = std::make_shared<CreateFeedPostPublic_200_response>(*resp);\n        (void)respCopy;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 374,
+  "completionTokens": 2093
+}

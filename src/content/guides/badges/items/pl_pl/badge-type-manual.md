@@ -1,0 +1,3 @@
+Odznaki przydzielane ręcznie to odznaki, które nigdy nie są przyznawane automatycznie. Administratorzy i moderatorzy mogą przyznać tę odznakę przez
+wybranie opcji `Award Badge` w menu komentarza, co spowoduje przyznanie odznaki użytkownikowi i wyświetlenie jej we wszystkich jego komentarzach, lub
+otwierając profil użytkownika, klikając jego awatar, a w menu w prawym górnym rogu klikając `Manage Badges`.

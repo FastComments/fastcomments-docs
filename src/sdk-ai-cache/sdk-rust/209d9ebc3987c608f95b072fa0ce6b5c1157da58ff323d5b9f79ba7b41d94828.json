@@ -1,0 +1,9 @@
+{
+  "method": "delete_pending_webhook_event",
+  "signatureHash": "209d9ebc3987c608f95b072fa0ce6b5c1157da58ff323d5b9f79ba7b41d94828",
+  "generatedAt": "2026-01-12T21:59:36.482Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let event_id_opt: Option<String> = Some(\"webhook-event/news-article-2026-01-10-1234\".to_string());\n    let event_id: String = event_id_opt.unwrap();\n    let params: DeletePendingWebhookEventParams = DeletePendingWebhookEventParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: event_id,\n    };\n    let response: FlagCommentPublic200Response = delete_pending_webhook_event(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 418,
+  "completionTokens": 1799
+}

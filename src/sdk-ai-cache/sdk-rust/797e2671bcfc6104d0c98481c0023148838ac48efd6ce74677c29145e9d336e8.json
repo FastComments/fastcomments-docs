@@ -1,0 +1,9 @@
+{
+  "method": "update_user_badge",
+  "signatureHash": "797e2671bcfc6104d0c98481c0023148838ac48efd6ce74677c29145e9d336e8",
+  "generatedAt": "2025-11-21T23:53:13.191Z",
+  "codeExample": "async fn run() -> Result<UpdateUserBadge200Response, Error> {\n    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-789\".to_string(),\n        update_user_badge_params: models::UpdateUserBadgeParams {\n            badge_id: \"trusted-contributor\".to_string(),\n            label: Some(\"Trusted Contributor\".to_string()),\n            description: Some(\"Awarded for sustained high-quality contributions\".to_string()),\n            is_active: Some(true),\n            awarded_at: Some(\"2025-01-15T12:00:00Z\".to_string()),\n            expires_at: None,\n        },\n    };\n    let resp: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;\n    Ok(resp)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1208
+}

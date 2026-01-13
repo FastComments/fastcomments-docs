@@ -1,0 +1,9 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "f55389fa60ab7afdb5a6ebab2209b8a117217c73d2283c34f0440512782aefc0",
+  "generatedAt": "2026-01-12T20:31:42.581Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto params = std::make_shared<AddDomainConfigParams>();\nparams->setDomain(U(\"comments.example.com\"));\nparams->setOwnerEmail(utility::string_t(U(\"admin@example.com\")));\nparams->setAllowSubdomains(boost::optional<bool>(true));\nparams->setAllowedOrigins(std::vector<utility::string_t>{U(\"https://www.example.com\"), U(\"https://blog.example.com\")});\napi->addDomainConfig(tenantId, *params)\n    .then([](pplx::task<std::shared_ptr<AddDomainConfig_200_response>> task) {\n        try {\n            auto resp = task.get();\n            (void)resp;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 340,
+  "completionTokens": 1717
+}

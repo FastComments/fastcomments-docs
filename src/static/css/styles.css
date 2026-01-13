@@ -781,3 +781,115 @@ table th {
         box-shadow: 0 0 20px 10px rgba(1, 47, 70, 0.3);
     }
 }
+
+/* Language Selector - Sidebar Dropdown (All Screens) */
+.lang-dropdown {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.lang-dropdown summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.lang-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.lang-dropdown summary h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lang-dropdown .current-lang {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 5px;
+}
+
+.lang-dropdown .current-lang::after {
+    content: '▼';
+    font-size: 10px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.lang-dropdown[open] .current-lang::after {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown .current-lang .flag {
+    font-size: 14px;
+}
+
+.lang-list {
+    padding-top: 8px;
+}
+
+.lang-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    color: #201600;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+
+.lang-item:hover {
+    background: #f5f5f5;
+}
+
+.lang-item.current {
+    background: #e8f4f8;
+    font-weight: 600;
+}
+
+.lang-item .flag {
+    font-size: 18px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .lang-item {
+        color: #fff;
+    }
+
+    .lang-item:hover {
+        background: #222;
+    }
+
+    .lang-item.current {
+        background: #1a3a47;
+    }
+}
+
+/* Translation fallback notice */
+.translation-notice {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    color: #856404;
+    font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .translation-notice {
+        background: #332701;
+        border-color: #665200;
+        color: #ffc107;
+    }
+}

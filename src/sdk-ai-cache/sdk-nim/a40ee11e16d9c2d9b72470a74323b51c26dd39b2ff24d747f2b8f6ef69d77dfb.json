@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "a40ee11e16d9c2d9b72470a74323b51c26dd39b2ff24d747f2b8f6ef69d77dfb",
+  "generatedAt": "2026-01-12T21:57:58.005Z",
+  "codeExample": "let params = CreateFeedPostParams(\n  title: \"Local Elections Update\",\n  content: \"Final results will be posted after polls close at 8pm.\",\n  authorId: \"reporter-789\",\n  tags: @[\"politics\", \"local\"],\n  isPublic: true\n)\nlet (response, httpResponse) = client.createFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = params,\n  broadcastId = \"bcast-456\",\n  sso = \"sso-token-abc\"\n)\nif response.isSome:\n  let created = response.get()\n  echo \"created post id: \", created.id\nelse:\n  echo \"request failed, status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 420,
+  "completionTokens": 1570
+}

@@ -1,0 +1,1 @@
+Naš vidžet za komentare zahteva pregledač koji podržava najmanje ES6 JavaScript standarde kako bi obezbedio bogato interaktivno iskustvo.

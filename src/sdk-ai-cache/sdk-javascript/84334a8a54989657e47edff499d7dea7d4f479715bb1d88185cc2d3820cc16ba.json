@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "84334a8a54989657e47edff499d7dea7d4f479715bb1d88185cc2d3820cc16ba",
+  "generatedAt": "2026-01-12T21:53:49.924Z",
+  "codeExample": "const tenantId: string = \"tenant_9f7d4b2a-1c3e\";\nconst id: string = \"user_6a12b3c4d5\";\nconst includeProfile: boolean | undefined = true; // optional parameter example\nconst response: GetTenantUser200Response = await getTenantUser(tenantId, id);\nconsole.log(\"Tenant user fetched\", response);",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1245
+}

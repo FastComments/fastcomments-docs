@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "c7ae194b08a52dcf9ffb8eb67ff802dc5b10daa61d7edf5bb476c31531555354",
+  "generatedAt": "2026-01-12T21:57:39.031Z",
+  "codeExample": "let (response, httpResponse) = client.updateTenantPackage(tenantId = \"my-tenant-123\", id = \"pkg-premium\", updateTenantPackageBody = UpdateTenantPackageBody())\nif response.isSome:\n  let updated = response.get()\n  echo \"Updated package received:\", updated\nelse:\n  echo \"Update failed, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1173
+}

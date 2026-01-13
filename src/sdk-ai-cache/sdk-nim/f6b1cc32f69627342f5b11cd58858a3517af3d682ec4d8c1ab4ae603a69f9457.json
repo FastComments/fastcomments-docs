@@ -1,0 +1,9 @@
+{
+  "method": "getComment",
+  "signatureHash": "f6b1cc32f69627342f5b11cd58858a3517af3d682ec4d8c1ab4ae603a69f9457",
+  "generatedAt": "2026-01-12T21:56:11.787Z",
+  "codeExample": "let (response, httpResponse) = client.getComment(tenantId = \"my-tenant-123\", id = \"cmt-987654\")\nif response.isSome:\n  let comment = response.get()\n  echo \"Comment received:\", comment\nelse:\n  echo \"No comment found, HTTP status:\", httpResponse.status.code",
+  "model": "gpt-5-mini",
+  "promptTokens": 386,
+  "completionTokens": 652
+}

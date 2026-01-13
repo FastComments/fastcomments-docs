@@ -1,0 +1,9 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "a936449900d1bc680fc535e4ae72a2272d6badd3770b943b3928eef561e4c6af",
+  "generatedAt": "2025-11-21T16:25:17.037Z",
+  "codeExample": "let (response, httpResponse) = client.aggregateQuestionResults(\n  tenantId = \"my-tenant-123\",\n  questionId = \"like-button\",\n  questionIds = @[\"q-456\", \"q-789\"],\n  urlId = \"news/article-123\",\n  timeBucket = AggregateTimeBucket.daily,\n  startDate = \"2025-01-01T00:00:00Z\",\n  forceRecalculate = true\n)\nif response.isSome:\n  let aggregated = response.get()\n  discard aggregated",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1333
+}

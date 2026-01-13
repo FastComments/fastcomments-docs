@@ -1,0 +1,5 @@
+---
+- [Documentazione](https://docs.fastcomments.com)
+- [Segnalazioni GitHub](https://github.com/fastcomments/fastcomments-python/issues)
+- [Supporto FastComments](https://fastcomments.com/auth/my-account/help)
+---

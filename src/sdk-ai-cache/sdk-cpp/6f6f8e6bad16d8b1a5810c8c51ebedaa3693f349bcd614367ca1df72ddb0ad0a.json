@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "6f6f8e6bad16d8b1a5810c8c51ebedaa3693f349bcd614367ca1df72ddb0ad0a",
+  "generatedAt": "2026-01-12T20:37:29.525Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-2026-01-12\");\nboost::optional<int32_t> page(2);\nboost::optional<SortDirections> direction(SortDirections::DESC);\nboost::optional<bool> includeConfig(true);\nboost::optional<std::vector<utility::string_t>> hashTags(std::vector<utility::string_t>{ U(\"feature\"), U(\"bug\") });\napi->getCommentsPublic(\n    tenantId,\n    urlId,\n    page,\n    direction,\n    boost::optional<utility::string_t>(),\n    boost::optional<int32_t>(),\n    boost::optional<int32_t>(),\n    boost::optional<int32_t>(50),\n    boost::optional<int32_t>(),\n    boost::optional<bool>(false),\n    boost::optional<utility::string_t>(),\n    includeConfig,\n    boost::optional<bool>(),\n    boost::optional<bool>(),\n    boost::optional<utility::string_t>(),\n    boost::optional<utility::string_t>(),\n    boost::optional<bool>(),\n    boost::optional<bool>(),\n    boost::optional<bool>(),\n    boost::optional<int32_t>(),\n    boost::optional<bool>(),\n    boost::optional<utility::string_t>(),\n    boost::optional<utility::string_t>(),\n    hashTags,\n    boost::optional<utility::string_t>(U(\"user-789\")),\n    boost::optional<utility::string_t>(),\n    boost::optional<utility::string_t>()\n).then([](pplx::task<std::shared_ptr<GetCommentsPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto fallback = std::make_shared<GetCommentsPublic_200_response>();\n        (void)(resp ? resp : fallback);\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 743,
+  "completionTokens": 2877
+}

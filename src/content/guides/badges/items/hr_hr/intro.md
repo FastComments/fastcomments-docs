@@ -1,0 +1,2 @@
+FastComments nudi sustav znački bogat mogućnostima na svim planovima kako bi nagradio vaše korisnike i moderatore. Pročitajte dalje da biste saznali koje vrste znački podržavamo,
+tko može dobiti koju vrstu značke i koji su zahtjevi za svaku.

@@ -1,0 +1,9 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "435da6be454dca55c09165a5512cfbefc821f4d07a205afac5538e4f433db8bb",
+  "generatedAt": "2026-01-12T21:52:59.693Z",
+  "codeExample": "const tenantId: string = \"tenant_78b3c6d9\";\nconst id: string = \"badge-4a7b-11e6-80f5-76304dec7eb7\";\nconst result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 841
+}

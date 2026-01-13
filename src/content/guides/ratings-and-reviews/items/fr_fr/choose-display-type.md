@@ -1,0 +1,2 @@
+La première chose lors de la configuration est de décider comment vos questions seront affichées. Sur cette page, en bas, nous utilisons le type d'affichage recommandé, qui est la mise en page côte à côte
+pour les évaluations et sous-évaluations. L'autre mise en page, qui est davantage destinée aux réactions sur la page et non aux avis, est une disposition verticale utilisée dans d'autres pages de documentation.

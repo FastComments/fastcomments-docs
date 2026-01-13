@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "69d9c0ee9d41bf118c727999f4c423350e728b2b9e8cc5a78924b1a8f78f9319",
+  "generatedAt": "2026-01-12T21:53:58.342Z",
+  "codeExample": "const tenantId: string = \"fastcomments_tenant_7f3a2b\";\nconst id: string = \"sso_user_4a9c21\";\nconst updateData: UpdateAPISSOUserData = {\n  email: \"marija.kovacevic@example.com\",\n  displayName: \"Marija K.\",\n  roles: [\"moderator\"],\n  avatarUrl: \"https://cdn.example.com/avatars/marija.jpg\",\n  externalId: \"marija-kovacevic-01\"\n};\nconst updateComments: boolean = true;\nconst result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateData, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 302,
+  "completionTokens": 728
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "dcc01087e24e837466dad324d3f2b054aa483a29949e8e515d6dd1a3ad8484d7",
+  "generatedAt": "2025-11-22T08:35:40.854Z",
+  "codeExample": "let (response, httpResponse) = client.deleteSubscription(tenantId = \"my-tenant-123\", id = \"\", userId = \"\")\nif response.isSome:\n  let deleteResp = response.get()\n  echo \"Delete subscription response received for tenant: my-tenant-123\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 899
+}

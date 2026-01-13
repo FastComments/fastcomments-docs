@@ -1,0 +1,1 @@
+Največja razlika med Disqus in FastComments Secure SSO je, da Disqus uporablja SHA1 za šifriranje, medtem ko mi uporabljamo SHA256. To pomeni, da je migracija iz Disqus enostavna - zamenjajte algoritem zgoščevanja iz SHA1 v SHA256 in posodobite imena lastnosti, posredovana v UI.

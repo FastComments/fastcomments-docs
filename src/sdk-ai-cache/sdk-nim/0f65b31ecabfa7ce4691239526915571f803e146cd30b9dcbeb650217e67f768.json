@@ -1,0 +1,9 @@
+{
+  "method": "lockComment",
+  "signatureHash": "0f65b31ecabfa7ce4691239526915571f803e146cd30b9dcbeb650217e67f768",
+  "generatedAt": "2026-01-12T21:58:07.321Z",
+  "codeExample": "let (response, httpResponse) = client.lockComment(tenantId = \"my-tenant-123\", commentId = \"comment-98765\", broadcastId = \"\", sso = \"\")\nif response.isSome:\n  let locked = response.get()\n  discard locked\nelse:\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 646
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "cca2d03dfd8eb152f2d2e1f7fa50b74b865727b35cac3ebb87d147e81f2a21c3",
+  "generatedAt": "2025-11-20T22:24:51.558Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-9876\");\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-42\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto placeholder = std::make_shared<DeleteFeedPostPublic_200_response>();\napi->deleteFeedPostPublic(tenantId, postId, broadcastId, sso)\n.then([&placeholder](pplx::task<std::shared_ptr<DeleteFeedPostPublic_200_response>> task) {\n    try {\n        placeholder = task.get();\n        if (placeholder) std::cout << \"Feed post deleted for tenant\\n\";\n        else std::cout << \"DeleteFeedPostPublic returned no content\\n\";\n    } catch (const std::exception& e) {\n        std::cerr << \"Delete failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 371,
+  "completionTokens": 2084
+}

@@ -1,0 +1,2 @@
+Se durante i test noti che le impostazioni del mittente (nome/email/logo) specificate sopra non funzionano, questo potrebbe essere perché
+queste impostazioni si applicano solo alle email che possono essere collegate a un dominio. Questo significa che queste impostazioni *non si applicano alla maggior parte delle email amministrative*, tuttavia, quando i commentatori ricevono notifiche via email verranno utilizzate le tue impostazioni.

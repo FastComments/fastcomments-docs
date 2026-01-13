@@ -1,0 +1,30 @@
+## Parametry
+
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|-------------|
+| tenant_id | String | Tak |  |
+| user_id | String | Nie |  |
+| url_id | String | Nie |  |
+| from_comment_id | String | Nie |  |
+| viewed | bool | Nie |  |
+
+## Odpowiedź
+
+Zwraca: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_200_response.rs)
+
+## Przykład
+
+[inline-code-attrs-start title = 'get_notification_count Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example_get_notification_count() -> Result<GetNotificationCount200Response, Error> {
+    let params: GetNotificationCountParams = GetNotificationCountParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        user_id: Some(String::from("user-12345")),
+        url_id: Some(String::from("news/article/2026/product-launch")),
+        from_comment_id: Some(String::from("cmt-000987")),
+        viewed: Some(false),
+    };
+    let response: GetNotificationCount200Response = get_notification_count(&configuration, params).await?;
+    Ok(response)
+}
+[inline-code-end]

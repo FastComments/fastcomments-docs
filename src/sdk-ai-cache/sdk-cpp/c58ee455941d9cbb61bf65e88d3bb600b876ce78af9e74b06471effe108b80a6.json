@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "c58ee455941d9cbb61bf65e88d3bb600b876ce78af9e74b06471effe108b80a6",
+  "generatedAt": "2026-01-12T20:32:12.807Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateQuestionConfigBody body;\nbody.name = utility::string_t(U(\"Feature X Feedback\"));\nbody.description = boost::optional<utility::string_t>(utility::string_t(U(\"Ask users if Feature X met their needs\")));\nbody.createdBy = utility::string_t(U(\"admin@mycompany.com\"));\nbody.enabled = boost::optional<bool>(true);\napi->createQuestionConfig(tenantId, body).then([](std::shared_ptr<CreateQuestionConfig_200_response> resp){\n    if(resp){\n        auto result = std::make_shared<CreateQuestionConfig_200_response>(*resp);\n        std::wcout << U(\"Question config created successfully\") << std::endl;\n    } else {\n        std::wcout << U(\"Failed to create question config\") << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1916
+}

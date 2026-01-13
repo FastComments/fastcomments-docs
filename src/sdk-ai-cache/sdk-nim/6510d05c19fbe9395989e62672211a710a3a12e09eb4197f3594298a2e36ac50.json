@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "6510d05c19fbe9395989e62672211a710a3a12e09eb4197f3594298a2e36ac50",
+  "generatedAt": "2026-01-12T21:57:12.133Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantUsers(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let tenantUsers = response.get()\n  echo \"Fetched tenant users for my-tenant-123\"\n  discard tenantUsers\nelse:\n  echo \"No users returned\"\n  discard httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 979
+}

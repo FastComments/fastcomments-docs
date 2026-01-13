@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "cd1b2b3970d708e0a8abe46b5690bd0e7964f658d2cf34ce92305ef0390f4e88",
+  "generatedAt": "2025-11-22T05:33:22.537Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-42';\nconst ssoToken: string = 'sso:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example';\nconst notificationsWithoutSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId);\nconst notificationsWithSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId, ssoToken);",
+  "model": "gpt-5-mini",
+  "promptTokens": 383,
+  "completionTokens": 556
+}

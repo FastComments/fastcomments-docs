@@ -1,0 +1,9 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "ca5b79f8ea3498e096295106dce797c2028eef8f06aa6c06af45d63ae79c3a43",
+  "generatedAt": "2026-01-12T21:55:02.779Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-7f3d';\nconst commentId: string = 'cmt_4b1e2a9c';\nconst broadcastId: string = 'live_20260112_nyc';\nconst sso: string = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGFjbWUuY29tIn0.r7hZQfK1Xk';\nconst result: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 790
+}

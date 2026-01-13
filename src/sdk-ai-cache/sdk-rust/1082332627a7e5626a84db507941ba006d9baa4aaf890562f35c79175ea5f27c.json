@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post",
+  "signatureHash": "1082332627a7e5626a84db507941ba006d9baa4aaf890562f35c79175ea5f27c",
+  "generatedAt": "2026-01-12T22:01:43.325Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let params: UpdateFeedPostParams = UpdateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-01-12-123\".to_string(),\n        feed_post: models::FeedPost {\n            title: \"Major Product Launch\".to_string(),\n            content: Some(\"Acme has launched its next-gen widget with improved performance and battery life.\".to_string()),\n            author_id: Some(\"editor-42\".to_string()),\n            links: Some(vec![models::FeedPostLink { url: \"https://acme.com/product\".to_string(), title: Some(\"Product page\".to_string()) }]),\n            media: Some(vec![models::FeedPostMediaItem { url: \"https://cdn.acme.com/images/widget.jpg\".to_string(), asset: Some(models::FeedPostMediaItemAsset { src: Some(\"https://cdn.acme.com/assets/widget.jpg\".to_string()) }) }]),\n            published: Some(true),\n        },\n    };\n\n    let response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 1861
+}

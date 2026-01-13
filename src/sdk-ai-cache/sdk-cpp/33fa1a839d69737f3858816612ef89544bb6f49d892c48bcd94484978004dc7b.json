@@ -1,0 +1,9 @@
+{
+  "method": "getModerator",
+  "signatureHash": "33fa1a839d69737f3858816612ef89544bb6f49d892c48bcd94484978004dc7b",
+  "generatedAt": "2026-01-12T20:33:52.922Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t moderatorId = U(\"moderator-456\");\nboost::optional<utility::string_t> requestLocale = U(\"en-US\");\nauto fallbackModerator = std::make_shared<GetModerator_200_response>();\n\napi->getModerator(tenantId, moderatorId)\n    .then([fallbackModerator, requestLocale](std::shared_ptr<GetModerator_200_response> resp) -> pplx::task<std::shared_ptr<GetModerator_200_response>> {\n        auto moderator = resp ? resp : fallbackModerator;\n        if (requestLocale) { auto loc = *requestLocale; (void)loc; }\n        return pplx::task_from_result(moderator);\n    })\n    .then([](std::shared_ptr<GetModerator_200_response> finalResp) -> void {\n        (void)finalResp;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 326,
+  "completionTokens": 1665
+}

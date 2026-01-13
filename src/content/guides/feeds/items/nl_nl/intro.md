@@ -1,0 +1,3 @@
+FastComments Feeds stelt u in staat om contentfeeds in sociale stijl te maken met uitgebreide ondersteuning voor web-, native Android- en iOS-platforms. Met deze krachtige functie kunt u boeiende, dynamische contentervaringen bouwen die aangepast en gepersonaliseerd kunnen worden voor verschillende doelgroepen en regio's.
+
+Feeds ondersteunen tekst- en afbeeldingscontent, en afbeeldingen worden opgeslagen met veelgebruikte apparaatformaten.

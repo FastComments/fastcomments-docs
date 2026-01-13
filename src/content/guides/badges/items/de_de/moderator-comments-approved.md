@@ -1,0 +1,1 @@
+Dieses Abzeichen wird vergeben, wenn Kommentare genehmigt werden. Es heißt standardmäßig `Big Stamp`.

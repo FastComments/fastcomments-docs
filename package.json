@@ -2,6 +2,7 @@
 	"name": "fastcomments-docs",
 	"dependencies": {
 		"axios": "^0.24.0",
+		"better-sqlite3": "^12.6.0",
 		"diagrams": "^0.11.0",
 		"express": "^4.18.2",
 		"filewatcher": "^3.0.1",
@@ -21,10 +22,18 @@
 		"build-content": "node src/app",
 		"build-windows": "build.bat",
 		"build-posix": "bash build.sh",
+		"build-static": "bash build-static.sh",
 		"build-sdks-content": "node src/sdk-guide-generator.js",
 		"serve": "serve src/static/generated",
+		"build-search-index": "node src/build-search-index-parallel.js",
 		"start-search-engine": "node src/server-search-engine.js",
-		"watch": "node src/watch"
+		"watch": "node src/watch",
+		"check-translations": "node src/check-translations.js",
+		"translate": "node src/translate-with-gpt.js",
+		"migrate-locale-structure": "node src/migrate-to-locale-structure.js",
+		"populate-snapshot": "node src/populate-snapshot.js",
+		"fix-composer": "node src/content/sdks-checkout/sdk-php/fix-composer.js",
+		"cleanup-empty-translations": "node src/cleanup-empty-translations.js"
 	},
 	"devDependencies": {
 		"serve": "^11.2.0"

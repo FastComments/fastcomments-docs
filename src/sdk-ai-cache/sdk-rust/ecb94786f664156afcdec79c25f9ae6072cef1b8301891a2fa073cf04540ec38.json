@@ -1,0 +1,9 @@
+{
+  "method": "get_tenants",
+  "signatureHash": "ecb94786f664156afcdec79c25f9ae6072cef1b8301891a2fa073cf04540ec38",
+  "generatedAt": "2026-01-12T22:00:30.704Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetTenantsParams = GetTenantsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        meta: Some(String::from(\"include=domains,settings\")),\n        skip: Some(10.0),\n    };\n    let response: GetTenants200Response = get_tenants(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 453,
+  "completionTokens": 737
+}

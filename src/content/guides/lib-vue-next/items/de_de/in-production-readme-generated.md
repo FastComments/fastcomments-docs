@@ -1,0 +1,2 @@
+Sie möchten die Konfiguration wahrscheinlich nicht inline definieren, wenn Sie Callbacks usw. übergeben. Stattdessen sollten Sie
+die Konfiguration über `computed()` definieren, andernfalls wird das gesamte Widget jedes Mal neu gerendert, wenn Ihr Callback usw. aufgerufen wird.

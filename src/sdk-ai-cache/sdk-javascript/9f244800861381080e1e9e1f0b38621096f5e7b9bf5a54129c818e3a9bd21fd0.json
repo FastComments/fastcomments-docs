@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "9f244800861381080e1e9e1f0b38621096f5e7b9bf5a54129c818e3a9bd21fd0",
+  "generatedAt": "2025-11-22T05:31:55.771Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const parentTenantId: string = 'org_98765';\n  const includeStats: boolean = true;\n  const aggregationRequest: AggregationRequest = {\n    predicates: [\n      { field: 'createdAt', operator: 'gte', value: '2025-01-01T00:00:00Z' } as QueryPredicate\n    ],\n    operations: [\n      { type: 'COUNT' as AggregationOpType, field: 'status' } as AggregationOperation\n    ],\n    sort: [{ field: 'count', direction: 'desc' }] as AggregationRequestSort,\n    limit: 25\n  };\n  const response: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 329,
+  "completionTokens": 1213
+}

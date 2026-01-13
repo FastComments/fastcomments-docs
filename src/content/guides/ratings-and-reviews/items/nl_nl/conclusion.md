@@ -1,0 +1,2 @@
+We hopen dat u de Ratings & Reviews-documentatie volledig vond, en we hopen dat u het gemakkelijk kunt instellen en gebruiken. Als u denkt
+dat we iets in de documentatie hebben gemist laat het ons hieronder weten!

@@ -1,0 +1,2 @@
+- Android SDK 26+ (Android 8.0 Oreo 或更高版本)
+- Java 8+

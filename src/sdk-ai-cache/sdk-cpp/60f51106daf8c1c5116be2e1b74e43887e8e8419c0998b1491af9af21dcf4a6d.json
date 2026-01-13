@@ -1,0 +1,9 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "60f51106daf8c1c5116be2e1b74e43887e8e8419c0998b1491af9af21dcf4a6d",
+  "generatedAt": "2025-11-20T22:24:46.751Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"editkey-456\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-abc123\"));\napi->getCommentText(tenantId, commentId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<GetCommentText_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto safeResp = resp ? resp : std::make_shared<GetCommentText_200_response>();\n    } catch (const std::exception &e) {\n        auto fallback = std::make_shared<GetCommentText_200_response>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 364,
+  "completionTokens": 1669
+}

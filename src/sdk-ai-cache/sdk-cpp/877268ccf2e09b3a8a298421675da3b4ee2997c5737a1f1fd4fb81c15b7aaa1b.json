@@ -1,0 +1,9 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "877268ccf2e09b3a8a298421675da3b4ee2997c5737a1f1fd4fb81c15b7aaa1b",
+  "generatedAt": "2026-01-12T20:32:33.372Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t moderatorId = U(\"moderator-456\");\nboost::optional<utility::string_t> sendEmail = boost::optional<utility::string_t>(U(\"moderator@notifications.example.com\"));\napi->deleteModerator(tenantId, moderatorId, sendEmail)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n        try {\n            auto resp = t.get();\n            if (!resp) resp = std::make_shared<FlagCommentPublic_200_response>();\n            return resp;\n        } catch (const std::exception&) {\n            return std::make_shared<FlagCommentPublic_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 347,
+  "completionTokens": 1384
+}

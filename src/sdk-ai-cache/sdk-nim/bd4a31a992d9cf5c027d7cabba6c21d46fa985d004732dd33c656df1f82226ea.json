@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "bd4a31a992d9cf5c027d7cabba6c21d46fa985d004732dd33c656df1f82226ea",
+  "generatedAt": "2025-11-21T16:26:00.828Z",
+  "codeExample": "let (response, httpResponse) = client.getUserBadges(\n  tenantId = \"my-tenant-123\",\n  userId = \"\",\n  badgeId = \"\",\n  displayedOnComments = false,\n  limit = 0.0,\n  skip = 0.0\n)\n\nif response.isSome:\n  let badges = response.get()\n  echo \"Retrieved user badges: \", badges\nelse:\n  echo \"No badges found, status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 937
+}

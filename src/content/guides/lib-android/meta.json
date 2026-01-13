@@ -1,0 +1,72 @@
+{
+  "name": "Android Library",
+  "pageHeader": "FastComments Android Library",
+  "itemsOrdered": [
+    {
+      "name": "Features",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Requirements",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Basic Usage",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Secure SSO Authentication",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Authentication",
+      "type": "readme"
+    },
+    {
+      "name": "Feed Integration",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live Chat Integration",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Example Projects",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Configuration Options",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Comprehensive Theme Customization",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Memory Management",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

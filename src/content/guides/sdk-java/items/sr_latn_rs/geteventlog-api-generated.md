@@ -1,0 +1,55 @@
+req
+tenantId
+urlId
+userIdWS
+
+## Parametri
+
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| userIdWS | string | query | Da |  |
+| startTime | integer | query | Da |  |
+| endTime | integer | query | Da |  |
+
+## Odgovor
+
+Vraća: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetEventLog200Response.java)
+
+## Primer
+
+[inline-code-attrs-start title = 'getEventLog Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// Import classes:
+import com.fastcomments.invoker.ApiClient;
+import com.fastcomments.invoker.ApiException;
+import com.fastcomments.invoker.Configuration;
+import com.fastcomments.invoker.models.*;
+import com.fastcomments.api.PublicApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://fastcomments.com");
+
+    PublicApi apiInstance = new PublicApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String userIdWS = "userIdWS_example"; // String | 
+    Long startTime = 56L; // Long | 
+    Long endTime = 56L; // Long | 
+    try {
+      GetEventLog200Response result = apiInstance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+            .execute();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PublicApi#getEventLog");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+[inline-code-end]

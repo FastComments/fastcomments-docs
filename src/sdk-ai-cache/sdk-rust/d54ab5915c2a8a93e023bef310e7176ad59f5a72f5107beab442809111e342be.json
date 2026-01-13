@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_page_subscription_status",
+  "signatureHash": "d54ab5915c2a8a93e023bef310e7176ad59f5a72f5107beab442809111e342be",
+  "generatedAt": "2025-11-21T23:54:11.783Z",
+  "codeExample": "let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    url_id: \"news-article-12345\".to_string(),\n    url: \"https://acme.example.com/news/2025/11/21/new-product\".to_string(),\n    page_title: \"Acme Launches New Product\".to_string(),\n    subscribed_or_unsubscribed: \"subscribed\".to_string(),\n    sso: Some(\"sso_user_jwt_eyJhbGciOiJIUzI1Ni...\".to_string()),\n};\nlet response: UpdateUserNotificationStatus200Response = update_user_notification_page_subscription_status(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 468,
+  "completionTokens": 1125
+}

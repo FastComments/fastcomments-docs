@@ -1,0 +1,9 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "28a90ff9d95745ebc38e8e87bac5302efe409f595b98a49831aaa11f2cf1aaa7",
+  "generatedAt": "2026-01-12T20:32:02.611Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto body = std::make_shared<CreateEmailTemplateBody>();\nbody->name = utility::string_t(U(\"Welcome Email\"));\nbody->subject = utility::string_t(U(\"Welcome to Our Service\"));\nbody->fromEmail = utility::string_t(U(\"no-reply@mycompany.com\"));\nbody->fromName = utility::string_t(U(\"MyCompany Support\"));\nbody->html = utility::string_t(U(\"<p>Hello {{user.name}}, welcome to MyCompany.</p>\"));\nbody->description = boost::optional<utility::string_t>(utility::string_t(U(\"Onboarding welcome template\")));\napi->createEmailTemplate(tenantId, *body)\n.then([](pplx::task<std::shared_ptr<CreateEmailTemplate_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            bool created = true;\n            (void)created;\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 2014
+}

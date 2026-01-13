@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "35c1f0f685070f8241d8cca4c5477e2016cef0b489bcb10c05887e6fd124f236",
+  "generatedAt": "2025-11-20T22:23:37.557Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto fallback = std::make_shared<GetSubscriptionsAPIResponse>();\napi->getSubscriptions(tenantId, userId)\n    .then([fallback](std::shared_ptr<GetSubscriptionsAPIResponse> resp) {\n        auto result = resp ? resp : fallback;\n        return result;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 331,
+  "completionTokens": 1260
+}

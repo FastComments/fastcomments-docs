@@ -1,0 +1,9 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "e163b41699ba9500eacd1f664c91f99223b1a190420b55263c29fa7ab3dae8d7",
+  "generatedAt": "2026-01-12T20:36:22.657Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentIds = utility::conversions::to_string_t(\"cmt-456,cmt-789\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\nauto task = api->checkedCommentsForBlocked(tenantId, commentIds, sso)\n    .then([=](std::shared_ptr<CheckedCommentsForBlocked_200_response> resp) -> std::shared_ptr<CheckedCommentsForBlocked_200_response> {\n        if (!resp) return std::make_shared<CheckedCommentsForBlocked_200_response>();\n        return resp;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 356,
+  "completionTokens": 1313
+}

@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "aaea09906b40bc27e9f36b8043b62f9fa0263ffcd9367e76de3bbbd76d431706",
+  "generatedAt": "2025-11-20T22:24:14.505Z",
+  "codeExample": "UpdateAPISSOUserData ssoData;\nssoData.email = utility::string_t(\"user@example.com\");\nssoData.name = utility::string_t(\"Jane Doe\");\nboost::optional<bool> updateComments = true;\napi->putSSOUser(utility::string_t(\"my-tenant-123\"), utility::string_t(\"user@example.com\"), ssoData, updateComments)\n.then([](pplx::task<std::shared_ptr<PutSSOUserAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        auto result = resp ? std::make_shared<PutSSOUserAPIResponse>(*resp) : std::shared_ptr<PutSSOUserAPIResponse>();\n        (void)result;\n    } catch(const std::exception &e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 369,
+  "completionTokens": 1972
+}

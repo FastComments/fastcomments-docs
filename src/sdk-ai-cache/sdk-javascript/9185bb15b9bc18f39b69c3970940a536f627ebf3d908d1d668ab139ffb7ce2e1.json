@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "9185bb15b9bc18f39b69c3970940a536f627ebf3d908d1d668ab139ffb7ce2e1",
+  "generatedAt": "2026-01-12T21:53:48.844Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b2c1a';\nconst skip: number = 50;\nconst firstPage: GetTenantUsers200Response = await getTenantUsers(tenantId);\nconst nextPage: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 649
+}

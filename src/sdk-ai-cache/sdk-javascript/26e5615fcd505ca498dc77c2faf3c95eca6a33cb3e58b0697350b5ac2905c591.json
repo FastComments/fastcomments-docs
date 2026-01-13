@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "26e5615fcd505ca498dc77c2faf3c95eca6a33cb3e58b0697350b5ac2905c591",
+  "generatedAt": "2026-01-12T21:53:20.547Z",
+  "codeExample": "const tenantId: string = 'tenant_8f4d2b7c';\nconst responseWithoutSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId);\nconst skip: number = 20;\nconst responseWithSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 587
+}

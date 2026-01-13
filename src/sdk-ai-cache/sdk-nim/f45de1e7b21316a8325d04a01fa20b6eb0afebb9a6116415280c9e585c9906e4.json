@@ -1,0 +1,9 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "f45de1e7b21316a8325d04a01fa20b6eb0afebb9a6116415280c9e585c9906e4",
+  "generatedAt": "2026-01-12T21:57:13.592Z",
+  "codeExample": "let (response, httpResponse) = client.patchHashTag(tag = \"politics\", tenantId = \"my-tenant-123\", updateHashTagBody = UpdateHashTagBody())\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Hashtag updated successfully\"\nelse:\n  echo \"Failed to update hashtag, status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1234
+}

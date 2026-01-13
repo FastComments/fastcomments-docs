@@ -1,0 +1,9 @@
+{
+  "method": "un_pin_comment",
+  "signatureHash": "dfa216a66910867712fcc0df4509d9640a9f817b8da40915e2cfd1745b69ee29",
+  "generatedAt": "2026-01-12T22:02:34.775Z",
+  "codeExample": "async fn run_unpin() -> Result<PinComment200Response, Error> {\n    let params: UnPinCommentParams = UnPinCommentParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"cmt-9f2b1a\"),\n        broadcast_id: String::from(\"news/article/2026/01/12/breaking\"),\n        sso: Some(String::from(\"user-9876-sso-token\")),\n    };\n    let resp: PinComment200Response = un_pin_comment(&configuration, params).await?;\n    Ok(resp)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 905
+}

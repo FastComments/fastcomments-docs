@@ -1,0 +1,10 @@
+- 🔄 Gerçek zamanlı güncellemelerle canlı yorum yapma
+- 📱 Yerel Android UI bileşenleri
+- 🧵 Yanıtlarla dizili tartışmalar
+- 👤 Güvenli SSO kimlik doğrulaması
+- 👍 Özelleştirilebilir stillere sahip oylama sistemi
+- 🔔 Kullanıcı bildirimleri ve çevrimiçi durumu
+- 🔍 Yorum denetleme özellikleri
+- 📱 Sosyal akış entegrasyonu
+- ♾️ Sonsuz kaydırmalı sayfalandırma
+- 🎨 Kapsamlı tema özelleştirmesi

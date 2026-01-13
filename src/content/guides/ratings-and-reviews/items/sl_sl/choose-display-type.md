@@ -1,0 +1,2 @@
+Prva stvar pri nastavitvi je odločiti, kako se bodo vaša vprašanja prikazovala. Na tej strani smo na dnu uporabili priporočeno obliko prikaza, ki je postavitev Side-by-Side
+za ocene in njihove podocene. Druga postavitev, ki je bolj namenjena odzivom na strani in ne ocenam, je navpična postavitev, uporabljena na drugih dokumentacijskih straneh.

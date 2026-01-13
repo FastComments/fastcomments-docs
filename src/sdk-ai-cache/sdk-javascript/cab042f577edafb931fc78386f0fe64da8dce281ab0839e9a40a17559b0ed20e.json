@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "cab042f577edafb931fc78386f0fe64da8dce281ab0839e9a40a17559b0ed20e",
+  "generatedAt": "2025-11-22T05:33:20.474Z",
+  "codeExample": "const tenantId: string = 'tenant_8b3f2a';\nconst urlId: string = 'articles/2025/11/solar-eclipse-grid-impact';\nconst broadcastId: string = 'broadcast_4721';\nconst commentData: CommentData = {\n  body: 'Thanks for the in-depth coverage — wondering how local utilities are preparing for the eclipse day demand spike.',\n  parentId: null,\n  authorName: 'Jordan Meyers',\n  authorEmail: 'j.meyers@newsdaily.com',\n  mentions: [{ userId: 'user_2468', displayName: 'Alex Rivera' }],\n  hashtags: [{ tag: 'solar-eclipse' }],\n  metadata: { device: 'desktop', browser: 'Chrome/120' }\n};\nconst sessionId: string = 'sess_9f3a2b7c';\nconst sso: string = 'sso.jwt.token.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 473,
+  "completionTokens": 1472
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deletePage",
+  "signatureHash": "e7b6148741ac2bd23d21fa8cff4f14adb44e20b6ee387144b002675fe6de05a6",
+  "generatedAt": "2026-01-12T21:52:51.464Z",
+  "codeExample": "const tenantId: string = 'tenant_7c1ab2ef';\nconst id: string = 'b5f9c3d0-12ab-4e6f-9a2c-3d4b5a6e7f8a';\nconst response: DeletePageAPIResponse = await deletePage(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 247,
+  "completionTokens": 979
+}

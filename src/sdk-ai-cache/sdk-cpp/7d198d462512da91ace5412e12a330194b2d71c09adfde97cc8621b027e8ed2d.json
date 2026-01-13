@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "7d198d462512da91ace5412e12a330194b2d71c09adfde97cc8621b027e8ed2d",
+  "generatedAt": "2025-11-20T22:25:58.044Z",
+  "codeExample": "VoteBodyParams voteBodyParams;\nboost::optional<utility::string_t> sessionId(U(\"sess-7f8e-7a9b\"));\nboost::optional<utility::string_t> sso(U(\"user@example.com\"));\napi->voteComment(U(\"my-tenant-123\"), U(\"cmt-98765\"), U(\"url-456\"), U(\"br-222\"), voteBodyParams, sessionId, sso)\n.then([](pplx::task<std::shared_ptr<VoteComment_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto ack = std::make_shared<utility::string_t>(U(\"vote-recorded\"));\n        (void)ack;\n    } catch(...) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 2149
+}

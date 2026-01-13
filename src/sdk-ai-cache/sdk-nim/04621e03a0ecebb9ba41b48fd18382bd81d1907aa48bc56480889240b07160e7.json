@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "04621e03a0ecebb9ba41b48fd18382bd81d1907aa48bc56480889240b07160e7",
+  "generatedAt": "2025-11-21T16:26:00.899Z",
+  "codeExample": "let updateData = UpdateAPISSOUserData(\n  email = \"jane.doe@newsmedia.com\",\n  displayName = \"Jane Doe\",\n  roles = @[\"author\", \"editor\"],\n  externalId = \"sso-789\",\n  avatarUrl = \"https://images.newsmedia.com/avatars/jane.jpg\",\n  isActive = true\n)\n\nlet (response, httpResponse) = client.patchSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  updateAPISSOUserData = updateData,\n  updateComments = true\n)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Updated SSO user for tenant:\", \" \", \"my-tenant-123\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 1063
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getModerators",
+  "signatureHash": "11719d857d3ba1251e129efdd6ca43992fa89c2958134a308fb1bf21619f27af",
+  "generatedAt": "2026-01-12T20:33:50.282Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = boost::optional<double>(10);\nauto task = api->getModerators(tenantId, skip)\n    .then([](std::shared_ptr<GetModerators_200_response> resp) {\n        if (!resp) {\n            std::cout << \"No moderators returned\\n\";\n            return;\n        }\n        auto copy = std::make_shared<GetModerators_200_response>(*resp);\n        std::cout << \"Retrieved moderators\\n\";\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1213
+}

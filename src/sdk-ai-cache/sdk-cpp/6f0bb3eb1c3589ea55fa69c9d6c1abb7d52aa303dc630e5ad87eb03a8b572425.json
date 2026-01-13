@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "6f0bb3eb1c3589ea55fa69c9d6c1abb7d52aa303dc630e5ad87eb03a8b572425",
+  "generatedAt": "2025-11-20T22:25:25.699Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-9876\");\nauto reactBodyPtr = std::make_shared<ReactBodyParams>();\nboost::optional<bool> isUndo = false;\nboost::optional<utility::string_t> broadcastId = U(\"broadcast-2025\");\nboost::optional<utility::string_t> sso = U(\"user@example.com\");\napi->reactFeedPostPublic(tenantId, postId, *reactBodyPtr, isUndo, broadcastId, sso)\n.then([](std::shared_ptr<ReactFeedPostPublic_200_response> resp){\n    (void)resp;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 1623
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "68b9adb605fe484b5e7fb02025d667be921871be71f3511b0b7717ff4e725a42",
+  "generatedAt": "2026-01-12T20:32:26.692Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateFeedPostParams createFeedPostParams;\ncreateFeedPostParams.title = U(\"Release 2.4: UI & Search Improvements\");\ncreateFeedPostParams.content = U(\"Announcing our new release with improved search and UI enhancements.\");\ncreateFeedPostParams.authorName = U(\"Jane Doe\");\ncreateFeedPostParams.authorEmail = U(\"jane.doe@example.com\");\n\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-456\"));\nboost::optional<bool> isLive = boost::optional<bool>(true);\nboost::optional<bool> doSpamCheck = boost::optional<bool>(false);\nboost::optional<bool> skipDupCheck = boost::optional<bool>(false);\n\napi->createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck)\n.then([](pplx::task<std::shared_ptr<CreateFeedPost_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto createdCopy = std::make_shared<CreateFeedPost_200_response>(*resp);\n        (void)createdCopy;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 400,
+  "completionTokens": 1935
+}

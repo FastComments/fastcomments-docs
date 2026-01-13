@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "ceddb1220651c44e71722ca4287bcc51ab3d4fec8a5afdceccc2fc62580294dd",
+  "generatedAt": "2026-01-12T21:52:43.651Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3b2c\";\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: \"Weekly product update\",\n  body: \"We shipped performance improvements and a login fix. Please share feedback.\",\n  authorId: \"user_72a1\",\n  externalId: \"post-2026-01-12\",\n  media: [\n    {\n      type: \"image\",\n      assets: [\n        {\n          url: \"https://cdn.example.com/images/update-jan.jpg\",\n          width: 1200,\n          height: 630,\n          mimeType: \"image/jpeg\"\n        } as FeedPostMediaItemAsset\n      ]\n    } as FeedPostMediaItem\n  ],\n  links: [\n    { url: \"https://example.com/releases/january\", title: \"Release notes\" } as FeedPostLink\n};\nconst broadcastId: string = \"bcast_20260112\";\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst response: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini",
+  "promptTokens": 490,
+  "completionTokens": 1676
+}

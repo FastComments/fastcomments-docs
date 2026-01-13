@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "e291aaea18c66faeb789cf3723f8e3d50510b6424792ddb1b9db0c66d33e6834",
+  "generatedAt": "2025-11-22T08:36:01.523Z",
+  "codeExample": "let (response, httpResponse) = client.putSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-9876\",\n  updateAPISSOUserData = UpdateAPISSOUserData(\n    name = \"Jane Doe\",\n    email = \"jane.doe@news-site.com\",\n    externalId = \"ext-456\",\n    roles = @[\"subscriber\", \"editor\"],\n    avatarUrl = \"https://news-site.com/avatars/jane.jpg\",\n    moderator = false\n  ),\n  updateComments = false\n)\n\nif response.isSome:\n  let respVal = response.get()\n  echo \"SSO update succeeded; response object received.\"\nelse:\n  echo \"SSO update returned no body; HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 1387
+}

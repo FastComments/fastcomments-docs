@@ -1,0 +1,9 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "cbdd99ca24fce3b44cb07f616654531b6ac916b07ad1728ec7a0b6653c4be544",
+  "generatedAt": "2025-11-22T05:33:47.436Z",
+  "codeExample": "const tenantId: string = 'tenant_981c';\nconst commentId: string = 'cmt-2048';\nconst broadcastId: string = 'broadcast-nyc-2025-11-22';\nconst commentTextUpdateRequest: CommentTextUpdateRequest = {\n  text: 'Thanks for the update — I think @maria raises a good point. See #product-roadmap',\n  mentions: [{ userId: 'user_maria', displayName: 'María López' }],\n  hashtags: [{ tag: 'product-roadmap' }]\n};\nconst editKey: string = 'editkey_7f3a';\nconst sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 462,
+  "completionTokens": 786
+}

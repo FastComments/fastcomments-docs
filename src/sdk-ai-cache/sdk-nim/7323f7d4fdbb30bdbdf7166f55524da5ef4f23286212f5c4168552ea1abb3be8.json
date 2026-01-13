@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "7323f7d4fdbb30bdbdf7166f55524da5ef4f23286212f5c4168552ea1abb3be8",
+  "generatedAt": "2026-01-12T21:56:43.616Z",
+  "codeExample": "let (response, httpResponse) = client.getSSOUserByEmail(tenantId = \"my-tenant-123\", email = \"jane.doe@newsorg.com\")\nif response.isSome:\n  let ssoUser = response.get()\n  echo \"SSO user retrieved for tenant my-tenant-123\"\nelse:\n  echo \"SSO user not found\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1047
+}

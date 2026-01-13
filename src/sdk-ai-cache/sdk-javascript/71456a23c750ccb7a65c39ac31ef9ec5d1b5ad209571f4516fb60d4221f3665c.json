@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "71456a23c750ccb7a65c39ac31ef9ec5d1b5ad209571f4516fb60d4221f3665c",
+  "generatedAt": "2025-11-22T05:33:38.180Z",
+  "codeExample": "const tenantId: string = 'tenant_8a1f4';\nconst maybeUrlId: string | undefined = 'articles/2025/product-launch';\nconst urlId: string = maybeUrlId!;\nconst userIdWS: string = 'ws_user_4521';\nconst startTime: number = Date.now() - 1000 * 60 * 60 * 24; // 24 hours ago\nconst endTime: number = Date.now();\nconst result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 1541
+}

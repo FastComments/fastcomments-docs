@@ -1,0 +1,9 @@
+{
+  "method": "update_question_config",
+  "signatureHash": "89b7cf25c6a9975f57b7c3584075e051897408944c1227a12466dedc9cd82ce6",
+  "generatedAt": "2026-01-12T22:01:30.061Z",
+  "codeExample": "async fn run_update() -> Result<(), Error> {\n    let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article-2026-01-12\"),\n        update_question_config_body: models::UpdateQuestionConfigBody {\n            question_text: String::from(\"Did you find this reporting accurate?\"),\n            required: Some(true),\n            rendering_type: Some(models::QuestionRenderingType::Inline),\n            options: Some(vec![\n                models::QuestionConfigCustomOptionsInner { id: String::from(\"opt-yes\"), label: String::from(\"Yes\"), value: String::from(\"yes\") },\n                models::QuestionConfigCustomOptionsInner { id: String::from(\"opt-no\"), label: String::from(\"No\"), value: String::from(\"no\") },\n            ]),\n            when_save: Some(models::QuestionWhenSave::OnSubmit),\n        },\n    };\n    let response: FlagCommentPublic200Response = update_question_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 1388
+}

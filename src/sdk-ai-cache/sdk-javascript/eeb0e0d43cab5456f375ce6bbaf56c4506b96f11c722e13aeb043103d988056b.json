@@ -1,0 +1,9 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "eeb0e0d43cab5456f375ce6bbaf56c4506b96f11c722e13aeb043103d988056b",
+  "generatedAt": "2026-01-12T20:38:27.796Z",
+  "codeExample": "const tenantId: string = 'tenant_7b2f6c2b';\nconst createBody: CreateHashTagBody = {\n  tag: 'feature-request',\n  label: 'Feature Request',\n  description: 'Requests for new functionality in the web client',\n  isActive: true,\n  visibility: 'public',\n  allowedDomains: ['example.com', 'internal.example.com']\n};\nconst result: AddHashTag200Response = await addHashTag(tenantId, createBody);\nconst resultWithoutTenant: AddHashTag200Response = await addHashTag(undefined, {\n  tag: 'bug',\n  label: 'Bug',\n  description: 'Use for reproducible bugs reported by users',\n  isActive: true,\n  visibility: 'public'\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 1382
+}

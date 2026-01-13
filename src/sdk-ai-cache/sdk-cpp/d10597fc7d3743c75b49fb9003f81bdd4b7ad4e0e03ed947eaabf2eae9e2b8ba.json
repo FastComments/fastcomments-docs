@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "d10597fc7d3743c75b49fb9003f81bdd4b7ad4e0e03ed947eaabf2eae9e2b8ba",
+  "generatedAt": "2026-01-12T20:37:33.826Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->resetUserNotificationCount(tenantId, sso)\n    .then([](pplx::task<std::shared_ptr<ResetUserNotifications_200_response>> task) {\n        try {\n            auto resp = task.get();\n            if (!resp) resp = std::make_shared<ResetUserNotifications_200_response>();\n        } catch (const std::exception &e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 343,
+  "completionTokens": 1099
+}

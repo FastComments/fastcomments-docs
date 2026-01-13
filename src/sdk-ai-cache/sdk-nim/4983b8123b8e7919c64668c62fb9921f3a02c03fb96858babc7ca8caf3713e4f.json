@@ -1,0 +1,9 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "4983b8123b8e7919c64668c62fb9921f3a02c03fb96858babc7ca8caf3713e4f",
+  "generatedAt": "2026-01-12T21:55:55.192Z",
+  "codeExample": "let (response, httpResponse) = client.deleteEmailTemplateRenderError(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-email-template\",\n  errorId = \"render-error-2026\"\n)\nif response.isSome:\n  let flagResp = response.get()\n  discard flagResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1032
+}

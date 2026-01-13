@@ -1,0 +1,3 @@
+FastComments #hashtags fornecem uma maneira para um usuário marcar seu comentário como relevante para um determinado tópico ou grupo. Além disso, hashtags podem ser usadas para vincular a outras páginas ou documentos.
+
+Por exemplo, se desejado, um cliente que hospeda um site de resenhas de vídeo online poderia pré-popular uma hashtag para cada vídeo e definir cada hashtag para apontar para a página de resenhas apropriada daquele vídeo. Dessa forma, quando alguém clica em `#awesomevideo` em um comentário, essa pessoa é direcionada para `https://example.com/awesome-video/reviews` em vez de visualizar todos os comentários com a tag `#awesomevideo`.

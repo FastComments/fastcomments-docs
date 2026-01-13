@@ -1,0 +1,1 @@
+所有 FastComments 套件均可使用 Feedback 模組，其中包含 Ratings & Reviews。

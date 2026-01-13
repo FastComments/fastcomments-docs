@@ -1,0 +1,9 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "5e4e0005b55b2662704f99dc92d6431293d66c4c605c8850f2aa2cb90fa37eea",
+  "generatedAt": "2026-01-12T21:52:41.485Z",
+  "codeExample": "const tag: string = 'breaking-news';\nconst tenantId: string = 'tenant_42';\nconst deleteReq: DeleteHashTagRequest = { removedBy: 'moderator_jane', reason: 'off-topic for this community', deleteAssociatedComments: true } as DeleteHashTagRequest;\nconst result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteReq);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 858
+}

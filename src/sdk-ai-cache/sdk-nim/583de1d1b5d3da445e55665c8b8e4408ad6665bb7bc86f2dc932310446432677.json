@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "583de1d1b5d3da445e55665c8b8e4408ad6665bb7bc86f2dc932310446432677",
+  "generatedAt": "2026-01-12T21:55:59.953Z",
+  "codeExample": "let (response, httpResponse) = client.deleteQuestionConfig(tenantId = \"my-tenant-123\", id = \"qcfg-456\")\nif response.isSome:\n  let respVal = response.get()\n  echo \"Delete succeeded for tenant my-tenant-123\"\nelse:\n  echo \"Delete returned no data (status: \", $httpResponse.status, \")\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 917
+}

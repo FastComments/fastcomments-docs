@@ -1,0 +1,3 @@
+- [文档](https://docs.fastcomments.com)
+- [GitHub 问题](https://github.com/fastcomments/fastcomments-python/issues)
+- [FastComments 支持](https://fastcomments.com/auth/my-account/help)

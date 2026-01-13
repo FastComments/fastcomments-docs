@@ -1,0 +1,9 @@
+{
+  "method": "update_user_badge",
+  "signatureHash": "392e2aa67671c99c4a64001bbaacb1854c8be69f1f207650bc6c2c00f50e5086",
+  "generatedAt": "2026-01-12T22:02:12.682Z",
+  "codeExample": "async fn update_badge_example() -> Result<(), Error> {\n    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-top-commenter-001\".to_string(),\n        update_user_badge_params: models::UpdateUserBadgeParams {\n            title: Some(\"Top Commenter\".to_string()),\n            description: Some(\"Awarded for 100+ comments across news and opinion sections\".to_string()),\n            enabled: Some(true),\n            icon_url: Some(\"https://cdn.acme-corp.com/assets/badges/top-commenter.png\".to_string()),\n            color: Some(\"#FFD700\".to_string()),\n            min_comments: Some(100),\n        },\n    };\n    let response: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1408
+}

@@ -1,0 +1,9 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "80d03aeb529e6d81f3c8d0729998a5c0456adb55a5b083bbf72da3f103229ea3",
+  "generatedAt": "2025-11-22T05:31:48.777Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3c9b2a9e1\";\nconst addDomainConfigParams: AddDomainConfigParams = {\n  domain: \"comments.production.example.com\",\n  enableHttps: true,\n  allowedOrigins: [\"https://example.com\", \"https://dashboard.example.com\"],\n  cname: undefined, // optional parameter explicitly omitted\n};\nconst result: AddDomainConfig200Response = await addDomainConfig(tenantId, addDomainConfigParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 247,
+  "completionTokens": 940
+}

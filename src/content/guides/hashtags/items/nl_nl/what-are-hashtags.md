@@ -1,0 +1,3 @@
+FastComments #hashtags bieden een manier voor een gebruiker om hun opmerking te taggen als relevant voor een bepaald onderwerp of een bepaalde groep. Daarnaast kunnen hashtags gebruikt worden om te linken naar andere pagina's of documenten.
+
+Bijvoorbeeld, indien gewenst kan een klant die een online site met videorecensies host, voor elke video een hashtag vooraf invullen en elke hashtag definiëren als een link naar de passende recensiepagina voor die video. Op deze manier, wanneer iemand op `#awesomevideo` in een opmerking klikt, gaan ze naar `https://example.com/awesome-video/reviews` in plaats van alle opmerkingen met de `#awesomevideo` tag te bekijken.

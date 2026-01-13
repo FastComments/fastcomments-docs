@@ -1,0 +1,1 @@
+Todos os pacotes FastComments podem usar o módulo Feedback, que inclui Avaliações e Resenhas.

@@ -1,0 +1,9 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "977a3ab27ba914397651ac110c04b4cfd008616c8d7dd9f193979630569c2389",
+  "generatedAt": "2026-01-12T20:33:20.786Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> opt_status = boost::optional<utility::string_t>(U(\"unread\"));\napi->getCachedNotificationCount(tenantId, userId)\n    .then([=](pplx::task<std::shared_ptr<GetCachedNotificationCount_200_response>> t){\n        try {\n            std::shared_ptr<GetCachedNotificationCount_200_response> resp = t.get();\n            if(!resp) return;\n            auto copy = std::make_shared<GetCachedNotificationCount_200_response>(*resp);\n        } catch(const std::exception &){\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1632
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "f917b377c9df8fd7da3546edb69fa05d7ba88e6a84f727a7180960bf58ef5352",
+  "generatedAt": "2026-01-12T21:54:41.741Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_98765\";\n  const commentId: string = \"cmt_54321\";\n  const editKey: string = \"edit_1a2b3c4d\";\n  const sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload\";\n  const commentTextBasic: GetCommentText200Response = await getCommentText(tenantId, commentId);\n  const commentTextWithAuth: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 1044
+}

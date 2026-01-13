@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "d7d047de9f772488070b9815d3638da9eb9ea7e299d9517457e9d53878eb1100",
+  "generatedAt": "2026-01-12T20:34:22.997Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<int32_t> skip = boost::optional<int32_t>(20);\napi->getSSOUsers(tenantId, skip)\n    .then([=](pplx::task<std::shared_ptr<GetSSOUsers_200_response>> task){\n        try {\n            auto resp = task.get();\n            if(!resp) resp = std::make_shared<GetSSOUsers_200_response>();\n            std::cout << \"Fetched SSO users successfully\\n\";\n        } catch(const std::exception& e) {\n            std::cerr << \"Error fetching SSO users: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1373
+}

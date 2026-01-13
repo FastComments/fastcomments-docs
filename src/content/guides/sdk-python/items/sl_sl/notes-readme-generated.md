@@ -1,0 +1,3 @@
+### ID-ji za broadcast
+
+V nekaterih API klicih boste opazili, da morate posredovati `broadcast_id`. Ko prejmete dogodke, boste to ID dobili nazaj, tako da boste vedeli, da morate dogodek ignorirati, če nameravate optimistično uporabiti spremembe na odjemalcu (kar boste verjetno želeli storiti, saj zagotavlja najboljšo izkušnjo). Tukaj posredujte UUID. ID naj bo dovolj enoličen, da se v isti seji brskalnika ne pojavi dvakrat.

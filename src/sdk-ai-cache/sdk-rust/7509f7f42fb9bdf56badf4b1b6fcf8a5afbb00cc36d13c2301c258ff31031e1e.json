@@ -1,0 +1,9 @@
+{
+  "method": "create_subscription",
+  "signatureHash": "7509f7f42fb9bdf56badf4b1b6fcf8a5afbb00cc36d13c2301c258ff31031e1e",
+  "generatedAt": "2025-11-21T23:51:59.029Z",
+  "codeExample": "let params: CreateSubscriptionParams = CreateSubscriptionParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_api_user_subscription_data: models::CreateApiUserSubscriptionData {\n        user_id: \"user_42\".to_string(),\n        channel: \"news/article\".to_string(),\n        resource_id: \"article-9876\".to_string(),\n        plan: Some(\"pro-monthly\".to_string()),\n        start_at: Some(\"2025-11-01T00:00:00Z\".to_string()),\n        auto_renew: Some(true),\n        notes: None,\n    },\n};\nlet response: CreateSubscriptionApiResponse = create_subscription(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 315,
+  "completionTokens": 1114
+}

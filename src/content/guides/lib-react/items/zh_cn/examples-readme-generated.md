@@ -1,0 +1,1 @@
+你可以在 examples 文件夹中找到各种用例（暗色模式、分页等）的示例。每个示例可以通过 `npm install` 进行设置，并通过 `npm run start` 启动。

@@ -1,0 +1,10 @@
+- 🔄 Live commenting with real-time updates
+- 📱 Native Android UI components
+- 🧵 Threaded discussions with replies
+- 👤 Secure SSO authentication
+- 👍 Voting system with customizable styles
+- 🔔 User notifications and presence
+- 🔍 Comment moderation capabilities
+- 📱 Social feed integration
+- ♾️ Infinite scroll pagination
+- 🎨 Comprehensive theming

@@ -1,0 +1,20 @@
+## Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+
+## Response
+
+Returns: [`Option[UpdateUserBadge_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_badge200response.nim)
+
+## Example
+
+[inline-code-attrs-start title = 'deleteUserBadge Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.deleteUserBadge(tenantId = "my-tenant-123", id = "badge-456")
+if response.isSome:
+  let badge = response.get()
+  echo badge
+[inline-code-end]

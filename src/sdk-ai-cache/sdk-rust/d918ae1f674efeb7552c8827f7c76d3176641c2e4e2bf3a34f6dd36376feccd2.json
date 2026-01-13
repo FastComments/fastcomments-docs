@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post",
+  "signatureHash": "d918ae1f674efeb7552c8827f7c76d3176641c2e4e2bf3a34f6dd36376feccd2",
+  "generatedAt": "2025-11-21T23:53:33.203Z",
+  "codeExample": "async fn run_update() -> Result<(), Error> {\n    let feed_post: models::FeedPost = models::FeedPost {\n        id: Some(\"article-12345\".to_string()),\n        title: Some(\"Acme Launches Next-Gen Widget\".to_string()),\n        body: Some(\"Acme announces its next-generation widget with improved battery life and AI features.\".to_string()),\n        author_id: Some(\"editor_jane\".to_string()),\n        tags: Some(vec![\"product\".to_string(), \"announcement\".to_string()]),\n        published: Some(true),\n        media: Some(vec![\n            models::FeedPostMediaItem {\n                asset: Some(models::FeedPostMediaItemAsset { url: Some(\"https://cdn.acme.com/images/widget.jpg\".to_string()) }),\n                media_type: Some(\"image\".to_string()),\n                caption: Some(\"Official product image\".to_string())\n            }\n        ]),\n        links: Some(vec![\n            models::FeedPostLink { url: \"https://acme.com/blog/widget\".to_string(), title: Some(\"Read the full story\".to_string()) }\n        ])\n    };\n    let params: UpdateFeedPostParams = UpdateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-12345\".to_string(),\n        feed_post\n    };\n    let _response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 1532
+}

@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "bccf33185a979513a42b106ed003d7efa1a580c3981a9dda73fe5a5fab00590f",
+  "generatedAt": "2025-11-21T16:25:15.882Z",
+  "codeExample": "let (response, httpResponse) = client.combineCommentsWithQuestionResults(\n  tenantId = \"my-tenant-123\",\n  questionId = \"\",\n  questionIds = @[],\n  urlId = \"news/article-title\",\n  startDate = \"\",\n  forceRecalculate = false,\n  minValue = 0.0,\n  maxValue = 0.0,\n  limit = 0.0\n)\n\nif response.isSome:\n  let combined = response.get()\n  discard combined",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 877
+}

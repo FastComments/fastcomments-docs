@@ -1,0 +1,3 @@
+Das FastComments WordPress-Plugin ersetzt den standardmäßigen WordPress-Zählmechanismus durch ein von FastComments bereitgestelltes System. Wir werden eine asynchrone Anfrage
+pro Seitenaufruf, wenn eine Liste von Beiträgen mit anzuzeigenden Kommentaranzahlen vorhanden ist. Wenn der Benutzer JavaScript deaktiviert hat, fällt es auf die standardmäßigen WordPress-Zählungen zurück, so dass
+kein Verlust an Funktionalität entsteht.

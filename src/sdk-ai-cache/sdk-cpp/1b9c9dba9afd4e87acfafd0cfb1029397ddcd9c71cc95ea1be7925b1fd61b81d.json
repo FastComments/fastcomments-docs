@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "1b9c9dba9afd4e87acfafd0cfb1029397ddcd9c71cc95ea1be7925b1fd61b81d",
+  "generatedAt": "2025-11-20T22:23:34.593Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> pageToken = U(\"cursor_456\");\nauto pagesTask = api->getPages(tenantId).then([pageToken](pplx::task<std::shared_ptr<GetPagesAPIResponse>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetPagesAPIResponse>();\n        return resp;\n    } catch (...) {\n        return std::make_shared<GetPagesAPIResponse>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 316,
+  "completionTokens": 1724
+}

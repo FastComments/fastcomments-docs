@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "6d40acfe76b6488e7786ba25bc6fc319f5e3cfaea905c9c8b4d910b323e4512f",
+  "generatedAt": "2026-01-12T21:56:20.907Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplates(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let templates = response.get()\n  echo templates\nelse:\n  echo \"No templates returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 896
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badge",
+  "signatureHash": "2ebfd90e2ac5e44a83018469337b7a683cb4069fecbae9f95331aa5a23436dac",
+  "generatedAt": "2025-11-21T23:52:44.721Z",
+  "codeExample": "async fn fetch_user_badge() -> Result<GetUserBadge200Response, Error> {\n    let maybe_tenant: Option<String> = Some(\"acme-corp-tenant\".to_string());\n    let params: GetUserBadgeParams = GetUserBadgeParams {\n        tenant_id: maybe_tenant.unwrap(),\n        id: \"top-commenter-2025\".to_string(),\n    };\n    let badge: GetUserBadge200Response = get_user_badge(&configuration, params).await?;\n    Ok(badge)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1459
+}

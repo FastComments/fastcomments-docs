@@ -1,0 +1,2 @@
+İsterseniz Collab Chat'i sayfa başına başlatabilir ve sayfa başına ayrı konuşma dizilerine sahip olabilirsiniz, sadece `urlId` parametresine
+`book-one-page1` gibi bir değer iletmeniz yeterlidir. Bu yapılandırma normal yorum bileşeni için de çalışır.

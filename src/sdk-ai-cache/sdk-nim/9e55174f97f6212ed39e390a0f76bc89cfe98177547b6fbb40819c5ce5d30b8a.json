@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "9e55174f97f6212ed39e390a0f76bc89cfe98177547b6fbb40819c5ce5d30b8a",
+  "generatedAt": "2026-01-12T21:58:23.088Z",
+  "codeExample": "let (response, httpResponse) = client.reactFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"news/international-earthquake-2026\",\n  reactBodyParams = default(ReactBodyParams),\n  isUndo = false,\n  broadcastId = \"broadcast-789\",\n  sso = \"\"\n)\nif response.isSome:\n  let reactResult = response.get()\n  discard reactResult",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 1057
+}

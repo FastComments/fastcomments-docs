@@ -1,0 +1,9 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "331c31acd061b14a1624f74205225670612a520ccc12f9db01cde824050c4bb9",
+  "generatedAt": "2026-01-12T20:31:50.571Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto bodyPtr = std::make_shared<BulkCreateHashTagsBody>();\nboost::optional<utility::string_t> optTenant(tenantId);\nboost::optional<BulkCreateHashTagsBody> optBody(*bodyPtr);\napi->addHashTagsBulk(optTenant, optBody).then([](pplx::task<std::shared_ptr<AddHashTagsBulk_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Bulk hashtags added for tenant\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"addHashTagsBulk error: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 360,
+  "completionTokens": 2287
+}

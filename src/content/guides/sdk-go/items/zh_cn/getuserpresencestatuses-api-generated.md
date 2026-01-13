@@ -1,0 +1,43 @@
+## 参数
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
+
+## 响应
+
+返回: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_presence_statuses_200_response.go)
+
+## 示例
+
+[inline-code-attrs-start title = 'GetUserPresenceStatuses 示例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+)
+
+func main() {
+	tenantId := "tenantId_example" // string | 
+	urlIdWS := "urlIdWS_example" // string | 
+	userIds := "userIds_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PublicAPI.GetUserPresenceStatuses(context.Background()).TenantId(tenantId).UrlIdWS(urlIdWS).UserIds(userIds).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetUserPresenceStatuses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetUserPresenceStatuses`: GetUserPresenceStatuses200Response
+	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserPresenceStatuses`: %v\n", resp)
+}
+[inline-code-end]
+
+---

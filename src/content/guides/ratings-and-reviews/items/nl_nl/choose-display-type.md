@@ -1,0 +1,2 @@
+Het eerste waar je bij het instellen aan moet denken is hoe je vragen worden weergegeven. Op deze pagina gebruiken we onderaan het aanbevolen weergavetype, namelijk de Side-by-Side layout
+voor beoordelingen en subbeoordelingen. De andere layout, die meer bedoeld is voor pagina-reacties en niet voor recensies, is een vertical layout die op andere documentatiepagina's wordt gebruikt.

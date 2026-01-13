@@ -1,0 +1,3 @@
+---
+Pour obtenir de l'aide, veuillez visiter https://fastcomments.com/auth/my-account/help ou envoyer un e-mail à support@fastcomments.com
+---

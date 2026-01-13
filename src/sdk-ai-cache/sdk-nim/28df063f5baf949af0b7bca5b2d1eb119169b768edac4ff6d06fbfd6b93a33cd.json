@@ -1,0 +1,9 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "28df063f5baf949af0b7bca5b2d1eb119169b768edac4ff6d06fbfd6b93a33cd",
+  "generatedAt": "2026-01-12T21:57:40.380Z",
+  "codeExample": "let (response, httpResponse) = client.updateNotification(tenantId = \"my-tenant-123\",\n  id = \"notif-456\",\n  updateNotificationBody = UpdateNotificationBody(),\n  userId = \"user-789\")\nif response.isSome:\n  let updated = response.get()\n  echo \"Updated notification id: \", $updated",
+  "model": "gpt-5-mini",
+  "promptTokens": 411,
+  "completionTokens": 911
+}

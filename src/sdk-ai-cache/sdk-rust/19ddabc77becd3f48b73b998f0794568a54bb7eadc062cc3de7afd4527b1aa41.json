@@ -1,0 +1,9 @@
+{
+  "method": "create_tenant",
+  "signatureHash": "19ddabc77becd3f48b73b998f0794568a54bb7eadc062cc3de7afd4527b1aa41",
+  "generatedAt": "2026-01-12T21:59:19.039Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateTenantParams = CreateTenantParams {\n        tenant_id: \"acme-news-tenant\".to_string(),\n        create_tenant_body: models::CreateTenantBody {\n            name: \"Acme News\".to_string(),\n            domain: Some(\"news.acme.com\".to_string()),\n            api_domain_configuration: Some(models::ApiDomainConfiguration {\n                domain: \"api.news.acme.com\".to_string(),\n                enforce_https: true,\n            }),\n            billing_info: Some(models::BillingInfo {\n                contact_email: \"billing@acme.com\".to_string(),\n                plan_id: \"pro_monthly\".to_string(),\n            }),\n            imported_site_type: Some(models::ImportedSiteType::Articles),\n            ..Default::default()\n        },\n    };\n\n    let created: CreateTenant200Response = create_tenant(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 457,
+  "completionTokens": 1863
+}

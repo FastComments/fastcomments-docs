@@ -1,0 +1,2 @@
+La première chose à faire lors de la configuration est de décider comment vos questions s'afficheront. Sur cette page, en bas, nous utilisons le type d'affichage recommandé, qui est la disposition Side-by-Side
+pour les évaluations et sous-évaluations. L'autre disposition, qui est davantage destinée aux réactions de page et non aux avis, est une disposition verticale utilisée dans d'autres pages de la documentation.

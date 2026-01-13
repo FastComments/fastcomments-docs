@@ -1,0 +1,9 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "b7351fe426faf4516d7398a9c12597c14454488b0c6a14082912258066182839",
+  "generatedAt": "2025-11-20T22:24:16.707Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId = boost::none;\nauto task = api->unFlagComment(tenantId, commentId, userId, anonUserId)\n    .then([](pplx::task<std::shared_ptr<FlagComment_200_response>> t){\n        try {\n            auto resp = t.get();\n            auto finalResp = resp ? resp : std::make_shared<FlagComment_200_response>();\n            (void)finalResp;\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 362,
+  "completionTokens": 1530
+}

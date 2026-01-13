@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "b76110b2e05cfd4228a69e9b58afe3fdae99ca3863e6328b52143ad00c7c7956",
+  "generatedAt": "2026-01-12T20:37:30.960Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U(\"notif-987654321\"));\nboost::optional<int64_t> afterCreatedAt = boost::optional<int64_t>(1625097600000LL);\nboost::optional<bool> unreadOnly = boost::optional<bool>(true);\nboost::optional<bool> dmOnly = boost::optional<bool>(false);\nboost::optional<bool> noDm;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)\n    .then([](pplx::task<std::shared_ptr<ResetUserNotifications_200_response>> t)\n    {\n        try\n        {\n            auto resp = t.get();\n            auto respCopy = std::make_shared<ResetUserNotifications_200_response>(*resp);\n            return respCopy;\n        }\n        catch (...)\n        {\n            return std::shared_ptr<ResetUserNotifications_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 2050
+}

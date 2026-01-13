@@ -1,0 +1,2 @@
+FastComments tilbyder et funktionsrigt badgesystem på alle planer til at belønne dine brugere og moderatorer. Læs videre for at lære, hvilke typer badges vi understøtter,
+hvem kan få hvilken type badge, og kravene for hver.

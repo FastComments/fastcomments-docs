@@ -1,0 +1,55 @@
+V razdelku **Footer** na zavihku Custom Code prilepite naslednjo kodo:
+
+[inline-code-attrs-start title = 'Vstavek kode za komentiranje v živo za Typeflo.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js" async></script>
+<script>
+    (function () {
+        function load() {
+            let target = null;
+            let lastInstance;
+            if (document.querySelector('.fastcomments-widget')) {
+                setTimeout(load, 1000);
+                return;
+            }
+            if (lastInstance) {
+                lastInstance.destroy();
+            }
+            if (window.FastCommentsUI) {
+                const newElement = document.createElement('div');
+                newElement.classList.add('fastcomments-widget');
+                const subscribeSection = document.querySelector('.nc-SectionSubscribe2');
+                if (subscribeSection) {
+                    subscribeSection.parentNode.insertBefore(newElement, subscribeSection);
+                    target = newElement;
+                } else {
+                    const fullWidthSection = document.querySelector('.container.w-full');
+                    if (fullWidthSection) {
+                        fullWidthSection.prepend(newElement);
+                        target = newElement;
+                    }
+                }
+            }
+            if (target) {
+                lastInstance = FastCommentsUI(target, {
+                    "tenantId": "demo"
+                });
+            }
+            setTimeout(load, 1000);
+        }
+
+        load();
+    })();
+</script>
+[inline-code-end]
+
+<div class="screenshot white-bg">
+    <div class="title">Prilepite kodo v razdelek Footer</div>
+    <img class="screenshot-image" src="/images/installation-guides/typeflo-step-3-paste-code-in-footer-section.png" alt="Prilepite FastComments kodo v razdelek Footer" />
+</div>
+
+Po prilepitvi kode kliknite gumb **Save**, da uveljavite spremembe.
+
+Opomba: Ta koda vsebuje logiko, ki dinamično postavi vtičnik FastComments na najbolj primerno mesto v vaših objavah na Typeflo.io. Druge kode ne bodo pravilno delovale s postavitvijo Typeflo.io.
+
+Ne pozabite zamenjati 'demo' z vašim dejanskim FastComments tenant ID-jem po registraciji. Če ste prijavljeni na FastComments.com, bi moralo biti že zamenjano.

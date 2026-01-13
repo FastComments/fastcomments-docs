@@ -1,0 +1,9 @@
+{
+  "method": "update_comment",
+  "signatureHash": "93d86a41e60fd9489c451f5cff985325b5023742730bcce5cf38cb34a5715db6",
+  "generatedAt": "2026-01-12T22:01:29.268Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let updatable_comment_params: models::UpdatableCommentParams = models::UpdatableCommentParams {\n        content: Some(\"We've updated the policy — please review the changes.\".to_string()),\n        author_name: Some(\"Jane Doe\".to_string()),\n        ..Default::default()\n    };\n    let params = UpdateCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/2026-01-12/comment-873\".to_string(),\n        updatable_comment_params,\n        context_user_id: Some(\"user-9876\".to_string()),\n        do_spam_check: Some(true),\n        is_live: Some(false),\n    };\n    let response: FlagCommentPublic200Response = update_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 1278
+}

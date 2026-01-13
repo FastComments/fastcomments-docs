@@ -1,0 +1,9 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "7678fa52d88cd3e06de89d9cfc70858f098cf0f62703f2faa2837958cc30a5d8",
+  "generatedAt": "2026-01-12T21:53:19.061Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-7a9f\";\n  const tagsPage1: GetHashTags200Response = await getHashTags(tenantId);\n  const tagsPage2: GetHashTags200Response = await getHashTags(tenantId, 2);\n  console.log(tagsPage1, tagsPage2);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 726
+}

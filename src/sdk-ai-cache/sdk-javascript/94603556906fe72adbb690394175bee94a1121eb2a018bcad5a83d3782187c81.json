@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "94603556906fe72adbb690394175bee94a1121eb2a018bcad5a83d3782187c81",
+  "generatedAt": "2025-11-22T05:33:57.313Z",
+  "codeExample": "const tenantId: string = 'tenant_9f4c2b1a';\nconst urlId: string = 'article-2025-11-22-fastcomments';\nconst url: string = 'https://blog.example.com/2025/11/fastcomments-tutorial';\nconst pageTitle: string = 'FastComments Integration Guide';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakeSignature';\nconst response: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 1019
+}

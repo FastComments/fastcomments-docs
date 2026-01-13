@@ -1,0 +1,9 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "5595b92f8930e090ae0154dd6e2990f7c84340d580751ddd7b768d74754d4db5",
+  "generatedAt": "2025-11-22T08:35:55.790Z",
+  "codeExample": "let updateData: UpdateAPISSOUserData = UpdateAPISSOUserData(email = \"jane.doe@example.com\", displayName = \"Jane Doe\", roles = @[\"editor\", \"subscriber\"], externalId = \"sso-789\")\nlet (response, httpResponse) = client.patchSSOUser(tenantId = \"my-tenant-123\", id = \"user-456\", updateAPISSOUserData = updateData, updateComments = true)\nif response.isSome:\n  let patched = response.get()\n  discard patched",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 1082
+}

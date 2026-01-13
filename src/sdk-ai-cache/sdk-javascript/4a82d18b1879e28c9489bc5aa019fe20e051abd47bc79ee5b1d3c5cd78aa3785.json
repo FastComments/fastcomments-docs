@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "4a82d18b1879e28c9489bc5aa019fe20e051abd47bc79ee5b1d3c5cd78aa3785",
+  "generatedAt": "2025-11-22T05:32:12.560Z",
+  "codeExample": "const region: string | undefined = 'eu';\nconst tenantId: string = region ? `acme-tenant-82a3f-${region}` : 'acme-tenant-82a3f';\nconst domain: string = 'comments.acme-corp.com';\nconst previewMode: boolean | undefined = true;\nconst response: GetDomainConfig200Response = await getDomainConfig(tenantId, domain);",
+  "model": "gpt-5-mini",
+  "promptTokens": 231,
+  "completionTokens": 990
+}

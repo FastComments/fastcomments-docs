@@ -1,0 +1,2 @@
+Wir hoffen, dass Sie die Dokumentation zu Bewertungen & Rezensionen umfassend fanden, und wir hoffen, dass Sie sie einfach einrichten und verwenden können. Wenn Sie denken
+wir etwas in der Dokumentation übersehen haben, lassen Sie es uns unten wissen!

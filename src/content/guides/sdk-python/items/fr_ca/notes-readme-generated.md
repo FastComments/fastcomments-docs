@@ -1,0 +1,3 @@
+### Identifiants de diffusion
+
+Vous verrez que vous devez transmettre un `broadcast_id` dans certaines requêtes d'API. Lorsque vous recevez des événements, vous récupérerez cet ID, ce qui vous permet de l'ignorer si vous prévoyez d'appliquer de façon optimiste des modifications côté client (ce que vous voudrez probablement faire puisque cela offre la meilleure expérience). Passez un UUID ici. L'ID doit être suffisamment unique pour ne pas apparaître deux fois dans une session du navigateur.

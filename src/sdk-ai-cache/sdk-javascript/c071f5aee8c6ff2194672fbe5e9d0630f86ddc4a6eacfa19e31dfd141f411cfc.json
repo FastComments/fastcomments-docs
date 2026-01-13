@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "c071f5aee8c6ff2194672fbe5e9d0630f86ddc4a6eacfa19e31dfd141f411cfc",
+  "generatedAt": "2025-11-22T05:33:10.076Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp_001';\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: 'Introducing the new inline editor',\n  body: 'Today we launched an editor that supports markdown, drag-and-drop images, and live preview.',\n  authorId: 'user_4521',\n  isPublished: true,\n  tags: ['product','launch','editor'],\n  media: [\n    {\n      type: 'image',\n      assets: [\n        { url: 'https://cdn.acme.com/images/editor-preview.png', mimeType: 'image/png', width: 1200, height: 800 }\n      ]\n    }\n  ],\n  links: [{ url: 'https://acme.com/blog/editor-release', title: 'Read the full release notes' }]\n};\nconst broadcastId: string = 'broadcast_weekly_2025_11';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example_signature';\nconst response: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 454,
+  "completionTokens": 833
+}

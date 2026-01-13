@@ -1,0 +1,9 @@
+{
+  "method": "delete_email_template_render_error",
+  "signatureHash": "ec4c074516b693a3eefd501798708eba3fb8908922554800c1ee21fa4e391f8d",
+  "generatedAt": "2026-01-12T21:59:21.432Z",
+  "codeExample": "async fn delete_email_template_render_error_example() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"marketing/newsletter/welcome-email\".to_string(),\n        error_id: \"render-err-2026-01-12-01\".to_string(),\n    };\n    let response: FlagCommentPublic200Response = delete_email_template_render_error(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 428,
+  "completionTokens": 1470
+}

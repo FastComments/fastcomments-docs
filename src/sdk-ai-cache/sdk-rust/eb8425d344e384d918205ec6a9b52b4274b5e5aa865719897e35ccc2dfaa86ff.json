@@ -1,0 +1,9 @@
+{
+  "method": "get_user",
+  "signatureHash": "eb8425d344e384d918205ec6a9b52b4274b5e5aa865719897e35ccc2dfaa86ff",
+  "generatedAt": "2026-01-12T22:01:10.526Z",
+  "codeExample": "async fn run_get_user() -> Result<(), Error> {\n    let maybe_id: Option<String> = Some(\"user-6412\".to_owned());\n    let params: GetUserParams = GetUserParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        id: maybe_id.unwrap(),\n    };\n    let user_response: GetUser200Response = get_user(&configuration, params).await?;\n    println!(\"{:#?}\", user_response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1388
+}

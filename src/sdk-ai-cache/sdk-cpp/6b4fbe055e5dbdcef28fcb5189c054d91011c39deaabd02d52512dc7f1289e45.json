@@ -1,0 +1,9 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "6b4fbe055e5dbdcef28fcb5189c054d91011c39deaabd02d52512dc7f1289e45",
+  "generatedAt": "2025-11-20T22:25:37.614Z",
+  "codeExample": "boost::optional<utility::string_t> sso(U(\"sso-token-abc123\"));\napi->unLockComment(U(\"my-tenant-123\"), U(\"cmt-456\"), U(\"broadcast-789\"), sso)\n.then([](pplx::task<std::shared_ptr<LockComment_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<LockComment_200_response>();\n        (void)result;\n    } catch (...) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 356,
+  "completionTokens": 1530
+}

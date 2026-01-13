@@ -1,0 +1,3 @@
+Se você perceber nos testes que as configurações de nome/email/logo do remetente especificadas acima não estão funcionando, isso pode ser porque
+essas configurações aplicam-se apenas a e-mails que podem ser vinculados a um domínio. Isso significa que essas configurações *não se aplicam à maioria dos e-mails de administrador*, entretanto
+quando comentaristas receberem notificações por e-mail, serão usadas as suas configurações.

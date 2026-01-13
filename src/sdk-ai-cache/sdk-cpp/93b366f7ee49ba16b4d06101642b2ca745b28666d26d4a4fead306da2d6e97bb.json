@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "93b366f7ee49ba16b4d06101642b2ca745b28666d26d4a4fead306da2d6e97bb",
+  "generatedAt": "2025-11-20T22:25:02.122Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> afterId{ utility::string_t(U(\"post_abcdef\")) };\nboost::optional<int32_t> limit{ 20 };\nboost::optional<std::vector<utility::string_t>> tags{ std::vector<utility::string_t>{ U(\"news\"), U(\"announcement\") } };\nboost::optional<utility::string_t> sso{ utility::string_t(U(\"user@example.com\")) };\nboost::optional<bool> isCrawler{ false };\nboost::optional<bool> includeUserInfo{ true };\n\napi->getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)\n.then([](pplx::task<std::shared_ptr<GetFeedPostsPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<GetFeedPostsPublic_200_response>(*resp);\n    } catch(const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1761
+}

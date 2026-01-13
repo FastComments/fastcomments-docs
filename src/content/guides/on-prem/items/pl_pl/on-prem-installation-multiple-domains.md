@@ -1,0 +1,2 @@
+Twoja instalacja On-Prem FastComments może obsługiwać komentarze dla wielu wewnętrznych domen, na przykład `app.mycorp.org` i `hr.mycorp.org`. Możesz konfigurować je
+oddzielnie, ale hostować je na jednej instalacji On-Prem, tworząc oddzielne Customization Rules, aby określić ich indywidualne zachowania.

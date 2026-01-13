@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "ca332eb76719d517e74d4e733245304c0625b64b1dc8faaef9295fe4a740f73b",
+  "generatedAt": "2026-01-12T21:53:19.030Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises-123';\n  const id: string = 'welcome-email-template-v2';\n  const locale: string | undefined = 'en-US'; // optional parameter example\n  const template: GetEmailTemplate200Response = await getEmailTemplate(tenantId, id);\n  console.log(template, locale);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 982
+}

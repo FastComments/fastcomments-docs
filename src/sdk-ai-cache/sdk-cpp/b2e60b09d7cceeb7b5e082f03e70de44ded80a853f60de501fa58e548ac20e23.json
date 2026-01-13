@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "b2e60b09d7cceeb7b5e082f03e70de44ded80a853f60de501fa58e548ac20e23",
+  "generatedAt": "2026-01-12T20:32:56.313Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"flag-456\");\nboost::optional<utility::string_t> sure = utility::string_t(U(\"true\"));\napi->deleteTenant(tenantId, id, sure)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            auto safeResp = resp ? resp : std::make_shared<FlagCommentPublic_200_response>();\n            (void)safeResp;\n        } catch (...) {}\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1161
+}

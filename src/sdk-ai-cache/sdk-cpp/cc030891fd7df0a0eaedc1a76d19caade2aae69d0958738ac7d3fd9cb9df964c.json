@@ -1,0 +1,9 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "cc030891fd7df0a0eaedc1a76d19caade2aae69d0958738ac7d3fd9cb9df964c",
+  "generatedAt": "2026-01-12T20:32:12.123Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto body = std::make_shared<CreateTenantPackageBody>();\nbody->name = U(\"Standard Package - 1k comments\");\nbody->createdByEmail = U(\"admin@mycompany.com\");\nbody->monthlyLimit = boost::optional<int>(1000);\nbody->notes = boost::optional<utility::string_t>(U(\"Onboarding promo\"));\napi->createTenantPackage(tenantId, *body)\n.then([](pplx::task<std::shared_ptr<CreateTenantPackage_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) {\n            std::cout << \"Package created: \" << utility::conversions::to_utf8string(resp->packageId) << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"Create failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1748
+}

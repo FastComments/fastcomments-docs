@@ -1,0 +1,9 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "ad8a7b093d7e341fb547625bacaf589b1d1444ea1707c2ba148f7a211f653769",
+  "generatedAt": "2026-01-12T20:32:11.695Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nCreateUserBadgeParams params;\nparams.userId = utility::string_t(\"user@example.com\");\nparams.badgeId = utility::string_t(\"gold-contributor\");\nboost::optional<utility::string_t> expiresAt = utility::string_t(\"2026-12-31T23:59:59Z\");\nparams.expiresAt = expiresAt;\nauto placeholder = std::make_shared<CreateUserBadge_200_response>();\napi->createUserBadge(tenantId, params).then([](pplx::task<std::shared_ptr<CreateUserBadge_200_response>> t){\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1518
+}

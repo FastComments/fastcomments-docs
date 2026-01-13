@@ -1,0 +1,10 @@
+- 🔄 Live-kommentering med opdateringer i realtid
+- 📱 Native Android UI-komponenter
+- 🧵 Trådede diskussioner med svar
+- 👤 Sikker SSO-autentificering
+- 👍 Afstemningssystem med tilpasselige stilarter
+- 🔔 Brugerunderretninger og tilstedeværelse
+- 🔍 Kommentarmoderationsfunktioner
+- 📱 Integration med sociale feeds
+- ♾️ Uendelig scroll-paginering
+- 🎨 Omfattende temaopsætning

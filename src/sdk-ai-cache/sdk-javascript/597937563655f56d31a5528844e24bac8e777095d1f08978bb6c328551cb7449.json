@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "597937563655f56d31a5528844e24bac8e777095d1f08978bb6c328551cb7449",
+  "generatedAt": "2026-01-12T21:53:14.918Z",
+  "codeExample": "const commentsResponse: GetComments200Response = await getComments(\n  'tenant_abc123',\n  2,\n  25,\n  0,\n  true,\n  1,\n  3,\n  3,\n  'article-2026',\n  'user_42',\n  undefined,\n  undefined,\n  '#feature-release',\n  'cmt_987654'\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 561,
+  "completionTokens": 1497
+}

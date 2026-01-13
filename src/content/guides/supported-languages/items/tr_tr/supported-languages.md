@@ -1,0 +1,29 @@
+FastComments, farklı yerel ayarlarda birçok dili destekler.
+
+- `bg_bg`: Bulgarca (Bulgaristan)
+- `zh_cn`: Çince (Basitleştirilmiş)
+- `zh_tw`: Çince (Geleneksel)
+- `hr_hr`: Hırvatça (Hırvatistan)
+- `da_dk`: Danca
+- `nl_nl`: Felemenkçe
+- `en_us`: İngilizce (Kuzey Amerika)
+- `fr_fr`: Fransızca (Fransa)
+- `de_de`: Almanca (Almanya)
+- `el_cy`: Yunanca (Kıbrıs)
+- `el_gr`: Yunanca (Yunanistan)
+- `he`: İbranice
+- `it_it`: İtalyanca (İtalya)
+- `ja_jp`: Japonca (Japonya)
+- `ko_kr`: Korece (Kore)
+- `pl_pl`: Lehçe (Polonya)
+- `pt_br`: Portekizce (Brezilya)
+- `ru_ru`: Rusça (Rusya)
+- `ru_ua`: Rusça (Ukrayna)
+- `sr_ba`: Sırpça (Bosna Hersek)
+- `sr_latn_rs`: Sırpça (Latin, Sırbistan)
+- `sr_me`: Sırpça (Karadağ)
+- `sr_rs`: Sırpça (Sırbistan)
+- `sl_sl`: Slovence (Slovenya)
+- `es_es`: İspanyolca (İspanya)
+- `uk_ua`: Ukraynaca (Ukrayna)
+- `tr_tr`: Türkçe (Türkiye)

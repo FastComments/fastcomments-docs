@@ -1,0 +1,9 @@
+{
+  "method": "get_sso_user_by_email",
+  "signatureHash": "f9af64e519ba2c61e245b3244348028867446b7c8ed0277679406ca3a81fcd45",
+  "generatedAt": "2025-11-21T23:52:36.981Z",
+  "codeExample": "async fn get_user_by_email_example() -> Result<GetSsoUserByEmailApiResponse, Error> {\n    let params: GetSsoUserByEmailParams = GetSsoUserByEmailParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        email: \"jane.doe@acme.com\".to_string(),\n        include_profile: Some(true),\n    };\n    let user: GetSsoUserByEmailApiResponse = get_sso_user_by_email(&configuration, params).await?;\n    Ok(user)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 318,
+  "completionTokens": 1210
+}

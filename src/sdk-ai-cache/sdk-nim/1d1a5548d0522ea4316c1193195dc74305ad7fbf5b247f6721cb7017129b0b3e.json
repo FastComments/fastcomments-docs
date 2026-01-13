@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "1d1a5548d0522ea4316c1193195dc74305ad7fbf5b247f6721cb7017129b0b3e",
+  "generatedAt": "2026-01-12T21:56:20.303Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplateDefinitions(tenantId = \"my-tenant-123\")\nif response.isSome:\n  let defs = response.get()\n  echo \"Received email template definitions for tenant my-tenant-123\"\nelse:\n  echo \"No template definitions returned; HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 388,
+  "completionTokens": 717
+}

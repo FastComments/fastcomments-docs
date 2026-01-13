@@ -1,0 +1,14 @@
+Du kan få en autorisationsfejl, som følgende:
+
+<div class="screenshot white-bg">
+    <div class="title">Domænekonfiguration mangler</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domænekonfiguration mangler" />
+</div>
+
+Det skyldes, at FastComments ikke ved, at din konto skal være tilladt på dette domæne.
+
+I dette tilfælde er løsningen enkel. Du skal blot tilføje din side til din FastComments.com-konto.
+
+[Gå her for at tilføje din side til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
+
+---

@@ -1,0 +1,9 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "5cc9c297672d062efcf9eccbaca49b3b7fd9d606530843a136f02ec9979a048b",
+  "generatedAt": "2026-01-12T21:55:49.275Z",
+  "codeExample": "let (response, httpResponse) = client.deleteDomainConfig(tenantId = \"my-tenant-123\", domain = \"news.example.com\")\nif response.isSome:\n  let deletedConfig = response.get()\n  echo deletedConfig\nelse:\n  echo \"No domain config returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 707
+}

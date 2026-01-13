@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "463361e36e3d76cd54c4473da465be4050c8f106d5bec98091c1235b106785b8",
+  "generatedAt": "2025-11-20T22:25:04.608Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlIdWS = U(\"wss://comments.fastcomments.com/ws/room-456\");\nboost::optional<utility::string_t> optUserIds = U(\"alice@example.com,bob@example.com\");\nutility::string_t userIds = optUserIds ? *optUserIds : utility::string_t();\n\napi->getUserPresenceStatuses(tenantId, urlIdWS, userIds)\n    .then([](pplx::task<std::shared_ptr<GetUserPresenceStatuses_200_response>> task){\n        try {\n            auto resp = task.get();\n            if(!resp) resp = std::make_shared<GetUserPresenceStatuses_200_response>();\n            // use resp as needed\n        } catch (const std::exception&) {\n            auto resp = std::make_shared<GetUserPresenceStatuses_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 1734
+}

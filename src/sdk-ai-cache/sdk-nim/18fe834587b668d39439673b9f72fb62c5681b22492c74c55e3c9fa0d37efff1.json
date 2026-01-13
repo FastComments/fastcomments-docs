@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "18fe834587b668d39439673b9f72fb62c5681b22492c74c55e3c9fa0d37efff1",
+  "generatedAt": "2025-11-21T16:26:35.422Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentsPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2025/important-update\",\n  page = 1,\n  direction = SortDirections.desc,\n  sso = \"\",\n  skip = 0,\n  skipChildren = 0,\n  limit = 20,\n  limitChildren = 5,\n  countChildren = false,\n  fetchPageForCommentId = \"\",\n  includeConfig = true,\n  countAll = false,\n  includei10n = false,\n  locale = \"en-US\",\n  modules = \"\",\n  isCrawler = false,\n  includeNotificationCount = true,\n  asTree = true,\n  maxTreeDepth = 3,\n  useFullTranslationIds = false,\n  parentId = \"\",\n  searchText = \"\",\n  hashTags = @[\"breaking\", \"announcement\"],\n  userId = \"\",\n  customConfigStr = \"\",\n  afterCommentId = \"\",\n  beforeCommentId = \"\"\n)\n\nif response.isSome:\n  let comments = response.get()\n  echo \"Fetched comments: \", comments",
+  "model": "gpt-5-mini",
+  "promptTokens": 635,
+  "completionTokens": 939
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "7df10427ff4130e1804dd33569a5d1e9fc9c9c0a40c45e4a8988c623b6e0a192",
+  "generatedAt": "2026-01-12T21:53:40.680Z",
+  "codeExample": "const tenantId: string = \"fastcomments-enterprise-42\";\nconst id: string = \"sso_user_9f3b1c2d\";\nconst result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, id);\nconst ssoUser: APISSOUser | undefined = result.user;\nconst email: string | undefined = ssoUser?.email;\nconsole.log(email);",
+  "model": "gpt-5-mini",
+  "promptTokens": 269,
+  "completionTokens": 1379
+}

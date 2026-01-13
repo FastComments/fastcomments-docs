@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "d4bb5b5e9dff5628fa99850f321a35c71a0a34b78f04bb5fcc960dafc5b862df",
+  "generatedAt": "2026-01-12T21:56:19.352Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplate(tenantId = \"my-tenant-123\", id = \"welcome-email-01\")\nif response.isSome:\n  let template = response.get()\n  echo \"Template ID: \", template.id\n  echo \"Subject: \", template.subject\n  echo \"Body: \", template.body",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 783
+}

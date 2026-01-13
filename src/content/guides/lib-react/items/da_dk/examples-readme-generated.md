@@ -1,0 +1,1 @@
+Du finder eksempler på forskellige brugssituationer (dark mode, pagination osv.) i mappen examples. Hvert eksempel kan sættes op med `npm install` og startes med `npm run start`.

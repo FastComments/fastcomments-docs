@@ -1,0 +1,9 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "ff712213293b5dbb2fc9691151c509ad87fcaffb7a34caae8aa3bc77cb82f255",
+  "generatedAt": "2026-01-12T21:54:20.165Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-01';\nconst id: string = 'email_tpl_42b7a9';\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: 'Comment Flag Notification',\n  subject: 'A comment was flagged on acme.com',\n  html: '<p>A comment by {{commenterName}} was flagged. Review at {{moderationUrl}}</p>',\n  replyTo: 'noreply@acme.com', // optional field demonstrated\n  enabled: true,\n  customConfig: { priority: 'high' } // optional custom parameters\n};\nconst response: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1058
+}

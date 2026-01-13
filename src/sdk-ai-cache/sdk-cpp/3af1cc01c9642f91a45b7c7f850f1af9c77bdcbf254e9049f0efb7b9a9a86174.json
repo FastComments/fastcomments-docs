@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "3af1cc01c9642f91a45b7c7f850f1af9c77bdcbf254e9049f0efb7b9a9a86174",
+  "generatedAt": "2026-01-12T20:33:02.763Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t pkgId = U(\"package-456\");\nboost::optional<utility::string_t> ifMatch = boost::optional<utility::string_t>(U(\"\\\"etag-789\\\"\"));\nauto fallback = std::make_shared<FlagCommentPublic_200_response>();\nauto task = api->deleteTenantPackage(tenantId, pkgId).then([fallback](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) return resp;\n        return fallback;\n    } catch (const std::exception&) {\n        return fallback;\n    }\n});\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 334,
+  "completionTokens": 1569
+}

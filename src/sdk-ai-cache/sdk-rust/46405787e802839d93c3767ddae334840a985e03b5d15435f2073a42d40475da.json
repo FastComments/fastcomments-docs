@@ -1,0 +1,9 @@
+{
+  "method": "save_comment",
+  "signatureHash": "46405787e802839d93c3767ddae334840a985e03b5d15435f2073a42d40475da",
+  "generatedAt": "2025-11-21T23:53:03.900Z",
+  "codeExample": "async fn run() -> Result<SaveComment200Response, Error> {\n    let create_params: models::CreateCommentParams = models::CreateCommentParams {\n        thread_id: \"news/article/2025/11/21\".to_string(),\n        content: \"Great article! The reporting on the budget was thorough and well-sourced.\".to_string(),\n        author_name: Some(\"Jane Doe\".to_string()),\n        author_email: Some(\"jane.doe@acme.com\".to_string()),\n    };\n    let params: SaveCommentParams = SaveCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_comment_params: create_params,\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        send_emails: Some(false),\n        populate_notifications: Some(true),\n    };\n    let response: SaveComment200Response = save_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 525,
+  "completionTokens": 1740
+}

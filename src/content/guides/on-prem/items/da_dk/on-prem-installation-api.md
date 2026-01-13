@@ -1,0 +1,2 @@
+API'et kan tilgås på samme måde som det almindelige SaaS-produkt, idet du logger ind på On-Prem dashboardet for at oprette API-nøgler og bruge disse nøgler til at få adgang til API'et. API'et
+endpoints er de samme on-prem som de er for SaaS-produktet.

@@ -1,0 +1,9 @@
+{
+  "method": "add_page",
+  "signatureHash": "9afc18638488c9fa5e6b1d3f50d2e0d34a2e6bd93a792082106cad23c53c6e19",
+  "generatedAt": "2025-11-21T23:52:02.151Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: AddPageParams = AddPageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_api_page_data: models::CreateApiPageData {\n            path: \"news/article/2025-election\".to_string(),\n            title: \"2025 Election Analysis\".to_string(),\n            url: Some(\"https://acme.example.com/news/2025-election\".to_string()),\n            description: Some(\"In-depth analysis of the 2025 election\".to_string()),\n            tags: Some(vec![\"politics\".to_string(), \"election\".to_string()]),\n            is_active: Some(true),\n        },\n    };\n    let response: AddPageApiResponse = add_page(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 313,
+  "completionTokens": 1329
+}

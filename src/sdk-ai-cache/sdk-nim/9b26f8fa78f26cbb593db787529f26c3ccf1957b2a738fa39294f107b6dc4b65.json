@@ -1,0 +1,9 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "9b26f8fa78f26cbb593db787529f26c3ccf1957b2a738fa39294f107b6dc4b65",
+  "generatedAt": "2026-01-12T21:58:31.988Z",
+  "codeExample": "let (response, httpResponse) = client.uploadImage(\n  tenantId = \"my-tenant-123\",\n  file = \"/var/www/uploads/headline-image.jpg\",\n  sizePreset = SizePreset.Medium,\n  urlId = \"news/article-title\"\n)\n\nif response.isSome:\n  let upload = response.get()\n  echo \"Upload response received\"\nelse:\n  echo \"No upload response received\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 1180
+}

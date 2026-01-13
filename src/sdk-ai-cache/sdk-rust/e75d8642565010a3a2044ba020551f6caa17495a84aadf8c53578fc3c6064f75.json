@@ -1,0 +1,9 @@
+{
+  "method": "update_notification",
+  "signatureHash": "e75d8642565010a3a2044ba020551f6caa17495a84aadf8c53578fc3c6064f75",
+  "generatedAt": "2026-01-12T22:01:31.816Z",
+  "codeExample": "pub async fn run_update_notification(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {\n    let params: UpdateNotificationParams = UpdateNotificationParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"notification-67890\".to_string(),\n        update_notification_body: models::UpdateNotificationBody {\n            title: Some(\"Flag Review Complete\".to_string()),\n            message: Some(\"A moderator reviewed the flagged comment and marked it resolved.\".to_string()),\n            resolved: Some(true),\n            channels: Some(vec![\"email\".to_string(), \"in_app\".to_string()]),\n        },\n        user_id: Some(\"moderator-007\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = update_notification(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 1270
+}

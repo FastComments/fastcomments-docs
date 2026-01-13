@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "da427b52f9baef8e96765bf6739e3d141863b27e59399f91cec05d4aa8141f6e",
+  "generatedAt": "2026-01-12T21:56:36.679Z",
+  "codeExample": "let (response, httpResponse) = client.getPages(tenantId = \"my-tenant-123\")\nif response.isSome:\n  let pages = response.get()\n  echo \"Pages received for tenant my-tenant-123\"\n  echo pages\nelse:\n  echo \"No pages found, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 374,
+  "completionTokens": 781
+}

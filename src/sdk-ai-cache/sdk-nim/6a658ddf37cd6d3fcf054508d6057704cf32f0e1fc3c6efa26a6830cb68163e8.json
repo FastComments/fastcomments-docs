@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "6a658ddf37cd6d3fcf054508d6057704cf32f0e1fc3c6efa26a6830cb68163e8",
+  "generatedAt": "2025-11-21T16:25:14.388Z",
+  "codeExample": "let (response, httpResponse) = client.createFeedPost(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = CreateFeedPostParams(),\n  broadcastId = \"broadcast-456\",\n  isLive = true,\n  doSpamCheck = true,\n  skipDupCheck = false\n)\nif response.isSome:\n  let created = response.get()\n  echo created\nelse:\n  echo \"No response body, HTTP status: \", httpResponse.statusCode",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 747
+}

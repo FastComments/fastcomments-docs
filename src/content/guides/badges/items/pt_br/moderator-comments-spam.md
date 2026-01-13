@@ -1,0 +1,1 @@
+Este distintivo é concedido quando comentários são marcados como spam. Ele é chamado `Spam Detector` por padrão.

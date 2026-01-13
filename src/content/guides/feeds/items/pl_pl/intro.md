@@ -1,0 +1,3 @@
+FastComments Feeds umożliwiają tworzenie kanałów treści w stylu społecznościowym z kompleksowym wsparciem dla web, natywnych platform Android i iOS. Ta potężna funkcja pozwala budować angażujące, dynamiczne doświadczenia z treścią, które można dostosować i spersonalizować dla różnych odbiorców i regionów.
+
+Kanały obsługują treści tekstowe i obrazkowe, a obrazy są przechowywane w popularnych rozmiarach urządzeń.

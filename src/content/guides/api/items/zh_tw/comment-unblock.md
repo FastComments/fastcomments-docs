@@ -1,0 +1,50 @@
+[api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/un-block'; creditsCost = 1; api-resource-header-end]
+
+此 API 端點提供解除對撰寫特定評論之使用者封鎖的功能。它支援解除封鎖由 FastComments.com 使用者、SSO 使用者，以及租戶使用者所撰寫的評論。
+
+它支援一個 `commentIdsToCheck` 的 body 參數，用來檢查在此操作執行後，客戶端上任何其他可能可見的評論是否應該被封鎖/解除封鎖。
+
+注意：
+
+- 此呼叫必須始終在某個使用者的上下文中進行。該使用者可以是 FastComments.com 使用者、SSO 使用者，或租戶使用者。
+- 請求中的 `userId` 指的是*正在解除封鎖*的那個使用者。例如：`User A` 想要解除封鎖 `User B`。傳入 `userId=User A` 以及 `User B` 所撰寫的評論 id。
+- 完全匿名的評論（沒有使用者 id、沒有 email）無法被封鎖，系統將回傳錯誤。
+
+[inline-code-attrs-start title = '評論解除封鎖 cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST \
+  --url 'https://fastcomments.com/api/v1/comments/some-comment-id/un-block?tenantId=demo&API_KEY=DEMO_API_SECRET&userId=some-user-id' \
+  --header 'Content-Type: application/json'
+[inline-code-end]
+
+[inline-code-attrs-start title = '匿名評論解除封鎖 cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+curl --request POST \
+  --url 'https://fastcomments.com/api/v1/comments/some-comment-id/un-block?tenantId=demo&API_KEY=DEMO_API_SECRET&anonUserId=some-anon-user-id' \
+  --header 'Content-Type: application/json'
+[inline-code-end]
+
+[inline-code-attrs-start title = '評論解除封鎖請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUnBlockQueryParams {
+    tenantId: string
+    API_KEY: string
+    userId?: string
+    anonUserId?: string
+    commentIdsToCheck?: string[]
+}
+[inline-code-end]
+
+[inline-code-attrs-start title = '評論解除封鎖回應結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+
+interface CommentUnBlockResponse {
+    status: 'success' | 'failed'
+    /** 失敗時包含。 **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'missing-user-id' | 'missing-anon-user-id' | 'comment-cannot-be-blocked'
+    /** 失敗時包含。 **/
+    reason?: string
+    /** 如果定義了 commentIdsToCheck，這個映射中為 true 的條目仍然被封鎖。如果為 false，您可能想要把這些評論對使用者取消隱藏，這樣使用者就不需要重新整理。 **/
+    commentStatuses?: Record<string, boolean>;
+}
+[inline-code-end]

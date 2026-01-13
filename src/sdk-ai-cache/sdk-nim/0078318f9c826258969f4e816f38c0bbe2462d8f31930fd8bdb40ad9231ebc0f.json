@@ -1,0 +1,9 @@
+{
+  "method": "patchPage",
+  "signatureHash": "0078318f9c826258969f4e816f38c0bbe2462d8f31930fd8bdb40ad9231ebc0f",
+  "generatedAt": "2025-11-21T16:26:03.637Z",
+  "codeExample": "let updateData = UpdateAPIPageData(\n  title = \"City Council Approves Budget\",\n  url = \"news/city-council-budget-2025\",\n  description = \"Highlights of the approved 2025 municipal budget\",\n  allowComments = true,\n  includeInSitemap = true,\n  tags = @[\"local\", \"budget\", \"2025\"]\n)\n\nlet (response, httpResponse) = client.patchPage(tenantId = \"my-tenant-123\", id = \"page-456\", updateAPIPageData = updateData)\n\nif response.isSome:\n  let patched = response.get()\n  echo \"Patched page title: \" & patched.title\nelse:\n  echo \"Patch failed, HTTP status: \" & $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 379,
+  "completionTokens": 1189
+}

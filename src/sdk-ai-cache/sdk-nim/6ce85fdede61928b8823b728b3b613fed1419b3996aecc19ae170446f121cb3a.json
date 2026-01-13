@@ -1,0 +1,9 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "6ce85fdede61928b8823b728b3b613fed1419b3996aecc19ae170446f121cb3a",
+  "generatedAt": "2025-11-21T16:25:13.885Z",
+  "codeExample": "let (response, httpResponse) = client.bulkAggregateQuestionResults(\n  tenantId = \"my-tenant-123\",\n  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(\n    questionIds: @[\"q-123\", \"q-456\"],\n    startDate: \"2025-01-01T00:00:00Z\",\n    endDate: \"2025-01-31T23:59:59Z\"\n  ),\n  forceRecalculate = false\n)\n\nif response.isSome:\n  let results = response.get()\n  echo \"Aggregated question results received for tenant:\", \"my-tenant-123\"\n  echo results",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1295
+}

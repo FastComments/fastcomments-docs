@@ -1,0 +1,9 @@
+{
+  "method": "delete_comment",
+  "signatureHash": "391381ca8242dadf4c50ece8a6ae75ae860629544f9b8b1d9822cf3916e77134",
+  "generatedAt": "2025-11-21T23:52:14.034Z",
+  "codeExample": "async fn run_delete(configuration: configuration::Configuration) -> Result<DeleteComment200Response, Error> {\n    let params: DeleteCommentParams = DeleteCommentParams {\n        tenant_id: \"acme-news-tenant\".to_string(),\n        id: \"cmt-7890\".to_string(),\n        context_user_id: Some(\"user-12345\".to_string()),\n        is_live: Some(true),\n    };\n    let response: DeleteComment200Response = delete_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 756
+}

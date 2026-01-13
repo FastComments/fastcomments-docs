@@ -1,0 +1,9 @@
+{
+  "method": "bulk_aggregate_question_results",
+  "signatureHash": "45a3a59822c36f4457bd919019250f21d699927e7b490f989abf23b8f2ed7c51",
+  "generatedAt": "2025-11-21T23:52:01.086Z",
+  "codeExample": "let params = BulkAggregateQuestionResultsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    bulk_aggregate_question_results_request: models::BulkAggregateQuestionResultsRequest {\n        questions: vec![\n            models::BulkAggregateQuestionItem { question_id: \"satisfaction\".to_string() },\n            models::BulkAggregateQuestionItem { question_id: \"recommendation\".to_string() },\n        ],\n        start_time: \"2025-10-01T00:00:00Z\".to_string(),\n        end_time: \"2025-10-31T23:59:59Z\".to_string(),\n    },\n    force_recalculate: Some(true),\n};\nlet aggregated: BulkAggregateQuestionResults200Response = bulk_aggregate_question_results(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 476,
+  "completionTokens": 1261
+}

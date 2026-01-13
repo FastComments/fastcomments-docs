@@ -1,0 +1,9 @@
+{
+  "method": "get_comment",
+  "signatureHash": "3a9c6b5e717da313096ee16b701e50ea6548d65bace63b1063ca0c15755ef78f",
+  "generatedAt": "2026-01-12T21:59:40.687Z",
+  "codeExample": "let params: GetCommentParams = GetCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_owned(),\n    id: \"news/article/2026-01-12-12345\".to_owned(),\n    include_replies: Some(true),\n    include_deleted: Some(false),\n};\n\nlet comment: GetComment200Response = get_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 665
+}

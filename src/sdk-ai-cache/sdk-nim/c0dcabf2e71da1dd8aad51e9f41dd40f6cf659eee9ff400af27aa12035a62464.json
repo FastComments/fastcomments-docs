@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "c0dcabf2e71da1dd8aad51e9f41dd40f6cf659eee9ff400af27aa12035a62464",
+  "generatedAt": "2025-11-22T08:35:48.331Z",
+  "codeExample": "let (response, httpResponse) = client.getSubscriptions(tenantId = \"my-tenant-123\", userId = \"user-456\")\nif response.isSome:\n  let subscriptions = response.get()\n  echo \"Received subscriptions for tenant my-tenant-123:\"\n  echo subscriptions\nelse:\n  echo \"No subscriptions found, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 383,
+  "completionTokens": 597
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "efcef8512524eab063e58998dc2c2a8629b557057773d84fef77edb249786260",
+  "generatedAt": "2026-01-12T21:53:27.232Z",
+  "codeExample": "const tenantId: string = 'acme-corp-742';\nconst urlId: string = 'blog-article-9f4b2c';\nconst response: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\nconst page: APIPage | undefined = response.page;\nconst pageId: string | undefined = page?.id",
+  "model": "gpt-5-mini",
+  "promptTokens": 265,
+  "completionTokens": 1175
+}

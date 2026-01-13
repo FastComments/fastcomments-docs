@@ -1,0 +1,9 @@
+{
+  "method": "getUser",
+  "signatureHash": "7ff0b7ebefc79493e288a32853e39edc41216d97ae837574b2b237c60531efb9",
+  "generatedAt": "2026-01-12T20:34:46.909Z",
+  "codeExample": "boost::optional<utility::string_t> tenant(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> userId(U(\"user@example.com\"));\napi->getUser(tenant.value(), userId.value())\n    .then([](pplx::task<std::shared_ptr<GetUser_200_response>> task) {\n        try {\n            auto resp = task.get();\n            if (resp) {\n                auto result_copy = std::make_shared<GetUser_200_response>(*resp);\n            } else {\n                auto fallback = std::make_shared<GetUser_200_response>();\n            }\n        } catch (const std::exception &e) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 326,
+  "completionTokens": 1556
+}

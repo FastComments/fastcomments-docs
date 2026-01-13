@@ -1,0 +1,9 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "0627718bdee4e51fe465d4387608dc4fd97ec36fb5cb347286cefa9b5cb6b1db",
+  "generatedAt": "2026-01-12T20:36:31.054Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t moderatorId = U(\"moderator-456\");\nauto bodyPtr = std::make_shared<UpdateModeratorBody>();\nbodyPtr->email = utility::string_t(U(\"mod.jane@example.com\"));\nbodyPtr->displayName = boost::optional<utility::string_t>(utility::string_t(U(\"Jane Moderator\")));\nbodyPtr->enabled = boost::optional<bool>(true);\napi->updateModerator(tenantId, moderatorId, *bodyPtr).then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            std::cout << \"Moderator updated successfully\" << std::endl;\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Update failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 344,
+  "completionTokens": 2064
+}

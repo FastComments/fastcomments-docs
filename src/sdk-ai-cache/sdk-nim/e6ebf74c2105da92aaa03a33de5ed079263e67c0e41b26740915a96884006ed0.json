@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "e6ebf74c2105da92aaa03a33de5ed079263e67c0e41b26740915a96884006ed0",
+  "generatedAt": "2026-01-12T21:57:11.923Z",
+  "codeExample": "let (response, httpResponse) = client.putDomainConfig(tenantId = \"my-tenant-123\", domainToUpdate = \"news.example.com\", updateDomainConfigParams = default(UpdateDomainConfigParams))\nif response.isSome:\n  let updatedConfig = response.get()\n  echo \"Domain config updated for tenant my-tenant-123:\", updatedConfig\nelse:\n  echo \"Failed to update domain config, HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 1316
+}

@@ -1,0 +1,15 @@
+---
+## 参数
+
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|----------|-------------|
+| tenant_id | String | 是 |  |
+| comment_id | String | 是 |  |
+| edit_key | String | 否 |  |
+| sso | String | 否 |  |
+
+## 响应
+
+返回：[`GetCommentText200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_200_response.rs)
+
+---

@@ -1,0 +1,2 @@
+Wszystkie oficjalne biblioteki frontendowe FastComments dla React, Angular, Vue i innych akceptują `customCSS` konfiguracyjny
+parametr i są wrapperami wokół vanilla js library o tej samej strukturze HTML.

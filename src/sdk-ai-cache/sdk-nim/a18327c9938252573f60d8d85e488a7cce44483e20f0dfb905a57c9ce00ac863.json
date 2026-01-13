@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "a18327c9938252573f60d8d85e488a7cce44483e20f0dfb905a57c9ce00ac863",
+  "generatedAt": "2026-01-12T21:56:19.935Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = \"my-tenant-123\", id = \"welcome-email-template-001\", skip = 0.0)\nif response.isSome:\n  let result = response.get()\n  echo \"Render errors:\", result\nelse:\n  echo \"No render errors or request failed. HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 410,
+  "completionTokens": 1048
+}

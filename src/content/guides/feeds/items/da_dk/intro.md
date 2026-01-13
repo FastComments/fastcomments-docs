@@ -1,0 +1,3 @@
+FastComments Feeds giver dig mulighed for at oprette indholdsfeeds i social stil med omfattende understøttelse på web, native Android og iOS-platforme. Denne kraftfulde funktion gør det muligt at bygge engagerende, dynamiske indholdsoplevelser, som kan tilpasses og personaliseres til forskellige målgrupper og regioner.
+
+Feeds understøtter tekst- og billedindhold, og billeder gemmes i populære enhedsstørrelser.

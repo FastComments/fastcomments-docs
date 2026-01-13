@@ -1,0 +1,9 @@
+{
+  "method": "pinComment",
+  "signatureHash": "0563e54b73ca5ed223344f9ee49113a08f6c1b59774ad3078e830da48f0d397e",
+  "generatedAt": "2026-01-12T21:58:19.474Z",
+  "codeExample": "let (response, httpResponse) = client.pinComment(tenantId = \"tenant-456\", commentId = \"cmt-7890\", broadcastId = \"broadcast-001\", sso = \"\")\nif response.isSome:\n  let pinResult = response.get()\n  discard pinResult",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 900
+}

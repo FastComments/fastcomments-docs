@@ -1,0 +1,1 @@
+FastComments는 Flex 및 Pro 요금제 고객을 위해 SAML 2.0 인증을 지원합니다. SAML은 조직의 아이덴티티 제공자(identity provider)를 통해 안전한 싱글 사인온(SSO) 인증을 가능하게 하여 사용자가 기존의 기업 자격 증명으로 FastComments에 접근할 수 있도록 합니다. 이 가이드는 SAML 인증의 설정, 구성 및 문제 해결을 다룹니다.

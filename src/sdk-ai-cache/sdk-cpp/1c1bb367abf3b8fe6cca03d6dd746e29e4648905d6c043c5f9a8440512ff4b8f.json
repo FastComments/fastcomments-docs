@@ -1,0 +1,9 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "1c1bb367abf3b8fe6cca03d6dd746e29e4648905d6c043c5f9a8440512ff4b8f",
+  "generatedAt": "2026-01-12T20:38:06.068Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nauto fileBytes = std::vector<unsigned char>{0x89,0x50,0x4E,0x47,0x0D,0x0A,0x1A,0x0A};\nauto file = std::make_shared<HttpContent>(fileBytes, U(\"image/png\"), U(\"avatar.png\"));\nboost::optional<SizePreset> sizePreset = boost::optional<SizePreset>(SizePreset::MEDIUM);\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"user-avatar-987\"));\napi->uploadImage(tenantId, file, sizePreset, urlId)\n    .then([](pplx::task<std::shared_ptr<UploadImageResponse>> task) {\n        try {\n            return task.get();\n        } catch (...) {\n            return std::shared_ptr<UploadImageResponse>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 352,
+  "completionTokens": 2067
+}

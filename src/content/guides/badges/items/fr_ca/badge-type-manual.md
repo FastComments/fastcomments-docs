@@ -1,0 +1,3 @@
+Les badges manuels sont des badges qui ne sont jamais attribués automatiquement. Les administrateurs et les modérateurs peuvent attribuer ce badge en
+sélectionnant l'option `Award Badge` dans le menu du commentaire, ce qui attribuera le badge à l'utilisateur et l'affichera sur tous ses commentaires, ou
+en ouvrant le profil de l'utilisateur en cliquant sur son avatar, et dans le menu en haut à droite en cliquant sur `Manage Badges`.

@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "fb1bcb74c4809329773411dd8be2cdce5e781ed7e7297f963aeb922742e55f3d",
+  "generatedAt": "2026-01-12T21:55:15.014Z",
+  "codeExample": "async function demoUnblock(): Promise<void> {\n  const tenantId: string = 'tenant_12345';\n  const commentId: string = 'cmt_98765';\n  const publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n    unblockReason: 'User appeal accepted after review',\n    moderatorId: 'mod_67890',\n    liftedAt: new Date().toISOString()\n  };\n  const sso: string = 'sso_tok_prod_01ab2c3d';\n  const result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);\n  console.log(result);\n}\ndemoUnblock();",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 988
+}

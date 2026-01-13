@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "008cecacf405e00a8c59cfe12b4e0b160d94ca3c990c25c4026a62a6c0f01969",
+  "generatedAt": "2026-01-12T21:52:43.448Z",
+  "codeExample": "const tenantId: string = \"fc_tenant_7a3c_us-east-1\";\nconst metaItem: MetaItem = { key: \"referrer\", value: \"/blog/how-to-comment\" };\nconst createQuestionResultBody: CreateQuestionResultBody = {\n  questionId: \"q_42\",\n  commenterId: \"user_1984\",\n  answer: \"yes\",\n  score: 4,\n  meta: [metaItem] // optional metadata demonstrated\n} as CreateQuestionResultBody;\nconst result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 1736
+}

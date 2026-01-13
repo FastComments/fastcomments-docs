@@ -1,0 +1,1 @@
+White Labeling доступний у кількох планах FastComments.com. Перегляньте [наші ціни](https://fastcomments.com/traffic-pricing), щоб побачити різні пакети, які пропонують White Labeling.

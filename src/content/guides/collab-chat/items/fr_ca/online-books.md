@@ -1,0 +1,2 @@
+Vous pouvez initialiser Collab Chat par page si vous le souhaitez, et avoir des fils de discussion distincts pour chaque page, il suffit de passer au paramètre `urlId`
+une valeur telle que `book-one-page1`. Cette configuration fonctionne également pour le widget de commentaires normal.

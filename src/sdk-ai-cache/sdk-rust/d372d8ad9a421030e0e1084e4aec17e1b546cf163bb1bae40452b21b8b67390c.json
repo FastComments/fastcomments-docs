@@ -1,0 +1,9 @@
+{
+  "method": "upload_image",
+  "signatureHash": "d372d8ad9a421030e0e1084e4aec17e1b546cf163bb1bae40452b21b8b67390c",
+  "generatedAt": "2026-01-12T22:02:40.132Z",
+  "codeExample": "async fn run_upload() -> Result<UploadImageResponse, Error> {\n    let params: UploadImageParams = UploadImageParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        file: std::path::PathBuf::from(\"assets/images/news-article-hero.jpg\"),\n        size_preset: None,\n        url_id: Some(String::from(\"news/article/2026/hero-image\")),\n    };\n    let response: UploadImageResponse = upload_image(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 343,
+  "completionTokens": 1208
+}

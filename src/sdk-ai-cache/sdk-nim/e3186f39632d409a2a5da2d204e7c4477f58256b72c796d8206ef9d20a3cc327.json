@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "e3186f39632d409a2a5da2d204e7c4477f58256b72c796d8206ef9d20a3cc327",
+  "generatedAt": "2026-01-12T21:56:32.380Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionConfig(tenantId = \"my-tenant-123\", id = \"qcfg-98765\")\nif response.isSome:\n  let config = response.get()\n  echo \"Received question config for tenant:\", \" my-tenant-123\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 709
+}

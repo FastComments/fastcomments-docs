@@ -1,0 +1,1 @@
+Ta odznaka jest przyznawana, gdy komentarze zostaną oznaczone jako sprawdzone. Domyślnie nazywa się `Fast Mod`.

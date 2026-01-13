@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "52f7841f1a693f0ec768060196b889f98581fe2d7404d65710c59338fac89955",
+  "generatedAt": "2026-01-12T20:33:30.414Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"email-template-789\");\nboost::optional<double> skip{10.0};\nauto defaultResp = std::make_shared<GetEmailTemplateRenderErrors_200_response>();\napi->getEmailTemplateRenderErrors(tenantId, id, skip).then([defaultResp](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrors_200_response>> t){\n    try {\n        auto resp = t.get();\n        if(!resp) resp = defaultResp;\n        std::wcout << (resp ? U(\"Received render errors response\\n\") : U(\"No response\\n\"));\n    } catch(...) {\n        std::wcout << U(\"Failed to retrieve render errors\\n\");\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 358,
+  "completionTokens": 1260
+}

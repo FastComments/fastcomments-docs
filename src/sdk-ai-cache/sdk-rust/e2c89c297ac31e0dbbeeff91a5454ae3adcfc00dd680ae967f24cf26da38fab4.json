@@ -1,0 +1,9 @@
+{
+  "method": "un_pin_comment",
+  "signatureHash": "e2c89c297ac31e0dbbeeff91a5454ae3adcfc00dd680ae967f24cf26da38fab4",
+  "generatedAt": "2025-11-21T23:54:09.635Z",
+  "codeExample": "async fn perform_unpin(configuration: &configuration::Configuration) -> Result<PinComment200Response, Error> {\n    let params: UnPinCommentParams = UnPinCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-8f3a2b\".to_string(),\n        broadcast_id: \"news/article/2025/11/21\".to_string(),\n        sso: Some(\"sso-jwt-abc123\".to_string()),\n    };\n    let response: PinComment200Response = un_pin_comment(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1099
+}

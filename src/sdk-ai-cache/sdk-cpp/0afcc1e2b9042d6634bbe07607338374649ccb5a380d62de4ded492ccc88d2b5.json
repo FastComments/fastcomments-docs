@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "0afcc1e2b9042d6634bbe07607338374649ccb5a380d62de4ded492ccc88d2b5",
+  "generatedAt": "2026-01-12T20:32:45.352Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"qcfg-98765\");\nboost::optional<utility::string_t> tenantOpt = tenantId;\nauto t = api->deleteQuestionConfig(tenantOpt.value_or(utility::string_t()), id)\n.then([](std::shared_ptr<FlagCommentPublic_200_response> resp) -> std::shared_ptr<FlagCommentPublic_200_response> {\n    auto out = std::make_shared<FlagCommentPublic_200_response>();\n    if (resp) *out = *resp;\n    return out;\n});\nt.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 334,
+  "completionTokens": 1228
+}

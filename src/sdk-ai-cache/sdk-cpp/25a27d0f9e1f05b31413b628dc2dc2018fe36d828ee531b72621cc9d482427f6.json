@@ -1,0 +1,9 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "25a27d0f9e1f05b31413b628dc2dc2018fe36d828ee531b72621cc9d482427f6",
+  "generatedAt": "2026-01-12T20:37:51.531Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456\");\nutility::string_t broadcastId = U(\"bcast-789\");\nCommentTextUpdateRequest commentTextUpdateRequest;\ncommentTextUpdateRequest.setText(U(\"Updated comment text by moderator.\"));\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U(\"edit-key-abc123\"));\nboost::optional<utility::string_t> sso;\napi->setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)\n.then([](pplx::task<std::shared_ptr<SetCommentText_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto result = std::make_shared<SetCommentText_200_response>(*resp);\n            std::cout << \"Comment updated\\n\";\n        } else {\n            std::cout << \"No response\\n\";\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"setCommentText error: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 388,
+  "completionTokens": 2371
+}

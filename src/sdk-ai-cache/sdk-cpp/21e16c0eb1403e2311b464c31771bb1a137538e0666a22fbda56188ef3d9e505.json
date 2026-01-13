@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "21e16c0eb1403e2311b464c31771bb1a137538e0666a22fbda56188ef3d9e505",
+  "generatedAt": "2026-01-12T20:33:49.561Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(utility::string_t(U(\"post_456\")));\nboost::optional<int32_t> limit = boost::optional<int32_t>(20);\nstd::vector<utility::string_t> tagList = { utility::string_t(U(\"news\")), utility::string_t(U(\"product-updates\")) };\nboost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(tagList);\napi->getFeedPosts(tenantId, afterId, limit, tags).then([](pplx::task<std::shared_ptr<GetFeedPosts_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto localCopy = std::make_shared<GetFeedPosts_200_response>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 370,
+  "completionTokens": 1888
+}

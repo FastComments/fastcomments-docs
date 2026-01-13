@@ -1,0 +1,2 @@
+Qui tratteremo il formato dei commenti di FastComments, le funzionalità supportate durante la scrittura dei commenti,
+come formattare il testo, e i vari filtri e misure di sicurezza incorporati nel sistema.

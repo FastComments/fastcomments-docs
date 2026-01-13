@@ -1,0 +1,9 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "d83178cb5ace6762685d50059448583390a71cba471f75da6350928b537936fe",
+  "generatedAt": "2025-11-21T16:26:58.167Z",
+  "codeExample": "let (response, httpResponse) = client.unPinComment(tenantId = \"my-tenant-123\", commentId = \"cmt-987654321\", broadcastId = \"\", sso = \"\")\nif response.isSome:\n  let pin = response.get()\n  echo pin\nelse:\n  echo \"Failed to unpin comment\"\n  echo httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 850
+}

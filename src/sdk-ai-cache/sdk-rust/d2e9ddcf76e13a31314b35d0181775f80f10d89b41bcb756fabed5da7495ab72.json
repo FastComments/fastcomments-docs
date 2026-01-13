@@ -1,0 +1,9 @@
+{
+  "method": "checked_comments_for_blocked",
+  "signatureHash": "d2e9ddcf76e13a31314b35d0181775f80f10d89b41bcb756fabed5da7495ab72",
+  "generatedAt": "2025-11-21T23:53:13.470Z",
+  "codeExample": "async fn run_checked_comments() -> Result<(), Error> {\n    let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {\n        tenant_id: String::from(\"acme-news-tenant\"),\n        comment_ids: String::from(\"cmt-9876,cmt-1122\"),\n        sso: Some(String::from(\"sso-jwt-abc123\")),\n    };\n    let checked: CheckedCommentsForBlocked200Response =\n        checked_comments_for_blocked(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 821
+}

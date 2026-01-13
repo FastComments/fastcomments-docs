@@ -1,0 +1,9 @@
+{
+  "method": "delete_comment_vote",
+  "signatureHash": "144f08cdd42cd1a5087631d7858683e8cbc37f7311d8bbb576c3b58804ffe25b",
+  "generatedAt": "2026-01-12T22:01:46.926Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteCommentVoteParams = DeleteCommentVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-7890\".to_string(),\n        vote_id: \"vote-4567\".to_string(),\n        url_id: \"news/article/2026/01/12/rust-launch\".to_string(),\n        broadcast_id: \"broadcast-20260112\".to_string(),\n        edit_key: Some(\"edit_abc123\".to_string()),\n        sso: Some(\"sso-user-42-token\".to_string()),\n    };\n    let response: DeleteCommentVote200Response = delete_comment_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 806
+}

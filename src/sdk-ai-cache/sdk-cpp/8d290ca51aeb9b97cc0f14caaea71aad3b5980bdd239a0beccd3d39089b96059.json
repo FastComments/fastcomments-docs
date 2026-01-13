@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "8d290ca51aeb9b97cc0f14caaea71aad3b5980bdd239a0beccd3d39089b96059",
+  "generatedAt": "2026-01-12T20:36:17.639Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"jane.doe@example.com\");\nauto bodyPtr = std::make_shared<UpdateTenantUserBody>();\nbodyPtr->setEmail(U(\"jane.doe@example.com\"));\nbodyPtr->setDisplayName(U(\"Jane Doe\"));\nboost::optional<utility::string_t> updateComments = U(\"Normalized display name\");\n\napi->updateTenantUser(tenantId, userId, *bodyPtr, updateComments)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Tenant user updated successfully\\n\";\n        else std::cout << \"Update returned no data\\n\";\n    } catch (const std::exception& ex) {\n        std::cerr << \"Update failed: \" << ex.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 363,
+  "completionTokens": 1874
+}

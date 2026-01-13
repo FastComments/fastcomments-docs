@@ -1,0 +1,9 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "94dadc48b34e1eaba62d934ca84a53a70a3dcada238453106fdbbbfcb8fdd6e6",
+  "generatedAt": "2026-01-12T20:35:38.618Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"comment-456\");\nutility::string_t fromName = U(\"moderator@example.com\");\nboost::optional<utility::string_t> inviteNote = boost::optional<utility::string_t>(U(\"Please review this flagged comment\"));\nauto task = api->sendInvite(tenantId, id, fromName)\n    .then([inviteNote](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) -> std::shared_ptr<FlagCommentPublic_200_response> {\n        try {\n            auto resp = t.get();\n            auto wrapped = std::make_shared<FlagCommentPublic_200_response>(*resp);\n            (void)inviteNote;\n            return wrapped;\n        } catch (...) {\n            throw;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 341,
+  "completionTokens": 1210
+}

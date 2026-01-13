@@ -1,0 +1,2 @@
+Esperamos que haya encontrado la documentación de Calificaciones y Reseñas completa, y que le resulte fácil de configurar y usar. Si cree
+que omitimos algo en la documentación, ¡háganoslo saber a continuación!

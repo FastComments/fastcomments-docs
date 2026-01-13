@@ -1,0 +1,9 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "3a96434e82f31b04e20ff488fc6ebb3def1af2efd51755f0b9aa04fe76caad18",
+  "generatedAt": "2026-01-12T21:53:23.285Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8f3b1a2c';\n  const userId: string = 'user_42';\n  const urlId: string = 'https://news.example.com/articles/2026/01/11/comment-thread';\n  const fromCommentId: string = 'cmt_9a7b';\n  const viewed: boolean = false;\n  const type: string = 'mention';\n  const skip: number = 0;\n  const response: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 789
+}

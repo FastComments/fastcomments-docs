@@ -1,0 +1,9 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "c53695d057dd38dbaa2fc1bde0aaeb786403f1245984991e6027a5969225d1e5",
+  "generatedAt": "2025-11-21T16:25:22.580Z",
+  "codeExample": "let (response, httpResponse) = client.deleteComment(tenantId = \"my-tenant-123\", id = \"\", contextUserId = \"\", isLive = false)\nif response.isSome:\n  let deleted = response.get()\n  echo \"DeleteComment response received\"\nelse:\n  echo \"No DeleteComment response body received\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 908
+}

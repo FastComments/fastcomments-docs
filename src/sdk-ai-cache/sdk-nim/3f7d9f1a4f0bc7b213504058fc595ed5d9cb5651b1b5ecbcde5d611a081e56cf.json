@@ -1,0 +1,9 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "3f7d9f1a4f0bc7b213504058fc595ed5d9cb5651b1b5ecbcde5d611a081e56cf",
+  "generatedAt": "2026-01-12T21:55:43.751Z",
+  "codeExample": "let packageBody = CreateTenantPackageBody(\n  packageName = \"premium-comments\",\n  description = \"Premium moderation package for news site\",\n  planId = \"plan-pro-2024\",\n  seats = 100,\n  enabled = true,\n  features = @[\"moderation\", \"analytics\", \"sentiment\"]\n)\n\nlet (response, httpResponse) = client.createTenantPackage(tenantId = \"my-tenant-123\", createTenantPackageBody = packageBody)\n\nif response.isSome:\n  let pkg = response.get()\n  echo \"Created package ID: \", pkg.packageId\n  echo \"Package name: \", pkg.packageName\nelse:\n  echo \"Failed to create package, HTTP status: \", httpResponse.status.code",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 863
+}

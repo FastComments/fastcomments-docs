@@ -1,0 +1,1 @@
+Este distintivo se otorga cuando los comentarios están desaprobados (ocultos). Se llama `Red Stamp` por defecto.

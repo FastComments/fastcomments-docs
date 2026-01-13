@@ -1,0 +1,16 @@
+Primeri koda front-enda i biblioteke za On-Prem su isti kao kod SaaS proizvoda. Međutim, morate navesti `apiHost` i ispravnu putanju skripte:
+
+[inline-code-attrs-start title = 'Kod komentara za On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        tenantId: "demo",
+        apiHost: "https://my.host.com"
+        // ... možete takođe proslijediti SSO payload itd.
+    });
+</script>
+[inline-code-end]
+
+Gore je vrlo jednostavan primjer. Takođe možemo koristiti zvanične React, Angular, Vue, Svelte itd. biblioteke.

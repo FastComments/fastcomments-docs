@@ -1,0 +1,1 @@
+Voor ondersteuning, bezoek https://fastcomments.com/auth/my-account/help of e-mail support@fastcomments.com

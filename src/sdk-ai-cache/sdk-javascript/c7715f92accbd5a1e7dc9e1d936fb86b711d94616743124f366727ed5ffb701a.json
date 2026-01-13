@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "c7715f92accbd5a1e7dc9e1d936fb86b711d94616743124f366727ed5ffb701a",
+  "generatedAt": "2026-01-12T21:53:30.409Z",
+  "codeExample": "const tenantId: string = \"3fa85f64-5717-4562-b3fc-2c963f66afa6\";\nconst questionId: string = \"question_72f1b9c3a4\";\nconst result: GetQuestionResult200Response = await getQuestionResult(tenantId, questionId);\nconsole.log(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 786
+}

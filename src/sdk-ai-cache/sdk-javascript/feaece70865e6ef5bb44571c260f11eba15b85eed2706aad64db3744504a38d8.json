@@ -1,0 +1,9 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "feaece70865e6ef5bb44571c260f11eba15b85eed2706aad64db3744504a38d8",
+  "generatedAt": "2026-01-12T21:52:25.314Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"fc_tenant_7f3b2a\";\n  const subscriptionData: CreateAPIUserSubscriptionData = {\n    userId: \"user_84c9\",\n    planId: \"pro_annual\",\n    startDate: \"2026-01-15T12:00:00Z\",\n    autoRenew: true,\n    paymentMethodId: \"pm_visa_9876\",\n    trialEndsAt: \"2026-02-15T12:00:00Z\", // optional field demonstrated\n    metadata: { signupSource: \"marketing_campaign\" } // optional field demonstrated\n  };\n  const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 275,
+  "completionTokens": 1003
+}

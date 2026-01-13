@@ -1,0 +1,9 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "cc9650102baabe4998e9259163d4519ace11c0209179a1ba1a0bd37824279fe7",
+  "generatedAt": "2025-11-20T22:23:09.395Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t badgeId = U(\"badge-abc123\");\nboost::optional<utility::string_t> maybeTenant = tenantId;\napi->deleteUserBadge(maybeTenant.value(), badgeId)\n.then([](pplx::task<std::shared_ptr<UpdateUserBadge_200_response>> prevTask){\n    try {\n        auto resp = prevTask.get();\n        if (resp) return std::make_shared<UpdateUserBadge_200_response>(*resp);\n        return std::make_shared<UpdateUserBadge_200_response>();\n    } catch (...) {\n        return std::make_shared<UpdateUserBadge_200_response>();\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 335,
+  "completionTokens": 1756
+}

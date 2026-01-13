@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "53665023cbbb9eafbe2dcd3cafce613beaed6cafdd38b36296d70e4dd877955f",
+  "generatedAt": "2026-01-12T21:53:54.350Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'site_8a12c9f';\n  const displayedOnComments: boolean = true;\n  const limit: number = 15;\n  const skip: number = 0;\n  const response: GetUserBadges200Response = await getUserBadges(tenantId, undefined, undefined, undefined, displayedOnComments, limit, skip);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 453,
+  "completionTokens": 994
+}

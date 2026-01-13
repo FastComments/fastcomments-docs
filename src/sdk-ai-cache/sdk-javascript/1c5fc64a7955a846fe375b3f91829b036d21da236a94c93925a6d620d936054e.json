@@ -1,0 +1,9 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "1c5fc64a7955a846fe375b3f91829b036d21da236a94c93925a6d620d936054e",
+  "generatedAt": "2025-11-22T05:31:44.787Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_prod_84b2\";\n  const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {\n    questionIds: [\"q_9fa1b2\", \"q_3c4d5e\"],\n    startDate: \"2025-10-01T00:00:00Z\",\n    endDate: \"2025-10-31T23:59:59Z\",\n    groupBy: \"question\",\n    timeBucket: \"day\"\n  };\n  const forceRecalculate: boolean = true;\n  const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 614
+}

@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "f09bcc2a9757cf1c3671f34c4d53fc077032785752405915906b90fb7e8d437f",
+  "generatedAt": "2026-01-12T20:37:37.240Z",
+  "codeExample": "auto publicParams = std::make_shared<PublicBlockFromCommentParams>();\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U(\"user@example.com\")));\napi->unBlockCommentPublic(utility::string_t(U(\"my-tenant-123\")), utility::string_t(U(\"comment-98765\")), *publicParams, sso)\n.then([](pplx::task<std::shared_ptr<UnBlockCommentPublic_200_response>> task) {\n    try {\n        auto resp = task.get();\n        if (resp) std::cout << \"Unblocked comment successfully\" << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Unblock failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 372,
+  "completionTokens": 1525
+}

@@ -1,0 +1,9 @@
+{
+  "method": "update_tenant_package",
+  "signatureHash": "7904f144e257b56366f0415ecd5442efe9ef7e6757f6d368197d3af6e6a5ab9d",
+  "generatedAt": "2026-01-12T22:01:39.542Z",
+  "codeExample": "async fn example_update_tenant_package() -> Result<FlagCommentPublic200Response, Error> {\n    let params: UpdateTenantPackageParams = UpdateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"pro-plan-2026\".to_string(),\n        update_tenant_package_body: models::UpdateTenantPackageBody {\n            name: Some(\"Pro Plan\".to_string()),\n            description: Some(\"Priority support, custom branding, and advanced moderation tools\".to_string()),\n            enabled: Some(true),\n            monthly_price_cents: Some(1999),\n            features: Some(vec![\n                \"priority_support\".to_string(),\n                \"custom_branding\".to_string(),\n                \"advanced_moderation\".to_string(),\n            ]),\n        },\n    };\n\n    let response: FlagCommentPublic200Response = update_tenant_package(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1478
+}

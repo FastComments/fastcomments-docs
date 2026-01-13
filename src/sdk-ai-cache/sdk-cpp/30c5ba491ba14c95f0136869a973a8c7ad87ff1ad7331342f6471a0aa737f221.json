@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "30c5ba491ba14c95f0136869a973a8c7ad87ff1ad7331342f6471a0aa737f221",
+  "generatedAt": "2025-11-20T22:23:30.476Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<int32_t> skip = boost::optional<int32_t>{10};\napi->getSSOUsers(tenantId, skip)\n.then([](pplx::task<std::shared_ptr<GetSSOUsers_200_response>> t) {\n    try {\n        auto resp = t.get();\n        auto result = resp ? resp : std::make_shared<GetSSOUsers_200_response>();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1272
+}

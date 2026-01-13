@@ -1,0 +1,2 @@
+Com o FastComments você pode coletar apenas avaliações ou avaliações acompanhadas de uma resenha correspondente. Essas avaliações podem ser relatadas internamente ou
+exibidas publicamente usando nossos widgets, por exemplo para mostrar a distribuição das avaliações de clientes por produto. Saiba mais sobre os recursos de Avaliações e Resenhas do FastComments e como configurá-los abaixo.

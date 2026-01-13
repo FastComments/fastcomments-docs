@@ -1,0 +1,9 @@
+{
+  "method": "flag_comment_public",
+  "signatureHash": "bd73e9f588982b4bd8ceec37b6c4ca50d9f6f83ffa4fb7e42e4d9c13281103d3",
+  "generatedAt": "2025-11-21T23:53:24.981Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let params: FlagCommentPublicParams = FlagCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/2025/11/21/opinion-12345/comment-9f8e\".to_string(),\n        is_flagged: true,\n        sso: Some(\"user-jane.doe@acme.com\".to_string()),\n    };\n    let response = flag_comment_public(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 770
+}

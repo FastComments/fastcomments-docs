@@ -1,0 +1,2 @@
+FastComments oferuje rozbudowany system odznak we wszystkich planach, aby nagradzać swoich użytkowników i moderatorów. Czytaj dalej, aby dowiedzieć się, jakie rodzaje odznak obsługujemy,
+kto może otrzymać jaki rodzaj odznaki oraz jakie są wymagania dla każdej z nich.

@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "606830b5c4a62c767e6fb660a74855dbbf1a4497b3834549c84864ec484b5c93",
+  "generatedAt": "2026-01-12T21:56:36.455Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionConfigs(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let configs = response.get()\n  discard configs",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 822
+}

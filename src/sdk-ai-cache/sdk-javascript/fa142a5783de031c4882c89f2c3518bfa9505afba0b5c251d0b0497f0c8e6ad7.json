@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "fa142a5783de031c4882c89f2c3518bfa9505afba0b5c251d0b0497f0c8e6ad7",
+  "generatedAt": "2026-01-12T21:54:56.049Z",
+  "codeExample": "const tenantId: string = 'acme-news';\nconst urlIdWS: string = 'wss://ws.fastcomments.com/tenant/acme-news';\nconst userIds: string = 'user-7a9b,user-11f2';\ntype PresenceOptions = { includeInactive?: boolean };\nconst options: PresenceOptions = { includeInactive: true };\nconst presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);",
+  "model": "gpt-5-mini",
+  "promptTokens": 412,
+  "completionTokens": 1325
+}

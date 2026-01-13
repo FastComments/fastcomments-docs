@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_comment_subscription_status",
+  "signatureHash": "fce9abde993fb0c6e262a5037b1016ff2cd18c84dfe70034cf82ae578d39e77a",
+  "generatedAt": "2025-11-21T23:54:08.396Z",
+  "codeExample": "async fn example_update() -> Result<UpdateUserNotificationStatus200Response, Error> {\n    let params: UpdateUserNotificationCommentSubscriptionStatusParams =\n        UpdateUserNotificationCommentSubscriptionStatusParams {\n            tenant_id: \"acme-corp-tenant\".to_string(),\n            notification_id: \"notif-2025-09-21-01\".to_string(),\n            opted_in_or_out: \"opted_in\".to_string(),\n            comment_id: \"news/world/2025/interesting-article-98765\".to_string(),\n            sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\".to_string()),\n        };\n    let updated: UpdateUserNotificationStatus200Response =\n        update_user_notification_comment_subscription_status(&configuration, params).await?;\n    Ok(updated)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 889
+}

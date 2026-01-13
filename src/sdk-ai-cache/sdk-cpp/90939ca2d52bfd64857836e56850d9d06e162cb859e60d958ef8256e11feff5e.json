@@ -1,0 +1,9 @@
+{
+  "method": "createModerator",
+  "signatureHash": "90939ca2d52bfd64857836e56850d9d06e162cb859e60d958ef8256e11feff5e",
+  "generatedAt": "2026-01-12T20:32:18.217Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateModeratorBody createModeratorBody;\ncreateModeratorBody.email = U(\"moderator@example.com\");\ncreateModeratorBody.displayName = U(\"Support Moderator\");\ncreateModeratorBody.roles = std::vector<utility::string_t>{ U(\"moderator\"), U(\"support\") };\ncreateModeratorBody.notes = boost::optional<utility::string_t>(U(\"Temporary moderator for Q1\"));\napi->createModerator(tenantId, createModeratorBody)\n.then([](pplx::task<std::shared_ptr<CreateModerator_200_response>> t)\n{\n    try\n    {\n        auto resp = t.get();\n        auto respCopy = std::make_shared<CreateModerator_200_response>(*resp);\n        (void)respCopy;\n    }\n    catch (const std::exception&)\n    {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 2169
+}

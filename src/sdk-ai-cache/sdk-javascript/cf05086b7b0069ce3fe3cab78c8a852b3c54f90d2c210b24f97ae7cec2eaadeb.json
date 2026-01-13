@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "cf05086b7b0069ce3fe3cab78c8a852b3c54f90d2c210b24f97ae7cec2eaadeb",
+  "generatedAt": "2025-11-22T05:33:51.290Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_corp_01\";\nconst postId: string = \"post_2025-11-22-001\";\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: \"Service Window: Brief Maintenance\",\n  content: \"We will perform a brief maintenance window on 2025-11-23 at 02:00 UTC. Expected downtime ~5 minutes.\",\n  media: [{ id: \"m_1001\", type: \"image\", assets: [{ url: \"https://cdn.acme.com/images/maintenance-banner.jpg\", width: 1200, height: 300 }] }],\n  links: [{ url: \"https://status.acme.com/2025-11-23\", title: \"Detailed status\" }],\n  isPublished: true\n};\nconst broadcastId: string = \"broadcast_9f8b7c6d\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature\";\nconst result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 905
+}

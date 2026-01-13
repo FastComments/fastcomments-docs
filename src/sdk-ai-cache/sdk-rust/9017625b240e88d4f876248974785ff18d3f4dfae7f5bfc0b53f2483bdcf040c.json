@@ -1,0 +1,9 @@
+{
+  "method": "vote_comment",
+  "signatureHash": "9017625b240e88d4f876248974785ff18d3f4dfae7f5bfc0b53f2483bdcf040c",
+  "generatedAt": "2025-11-21T23:54:21.671Z",
+  "codeExample": "let params: VoteCommentParams = VoteCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    comment_id: \"cmt-20251121-84a\".to_string(),\n    url_id: \"news/article/2025/11/21/major-update\".to_string(),\n    broadcast_id: \"broadcast-2025-11-21-1\".to_string(),\n    vote_body_params: models::VoteBodyParams { vote: 1 },\n    session_id: Some(\"sess-9f4b\".to_string()),\n    sso: Some(\"sso-jwt-token-xyz\".to_string()),\n};\n\nlet response: VoteComment200Response = vote_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 484,
+  "completionTokens": 1185
+}

@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "2a20634b96c7fe7e7242f3627aae91d5d83e22186151829f9402f1c1146431f3",
+  "generatedAt": "2025-11-22T05:31:50.953Z",
+  "codeExample": "const tenantId: string = 'tenant_9f2b1c';\n\nconst createFeedPostParams: CreateFeedPostParams = ({\n  title: 'Feature X US Launch',\n  body: 'Feature X is now available to all US customers. See rollout details and known issues below.',\n  authorId: 'user_8421',\n  tags: ['launch', 'feature-x', 'us'],\n  media: [\n    {\n      type: 'image',\n      assets: [{ url: 'https://cdn.example.com/featurex/hero.png', mimeType: 'image/png', width: 1200, height: 628 }]\n    }\n  ],\n  links: [{ url: 'https://status.example.com/feature-x', title: 'Live Status' }]\n} as unknown) as CreateFeedPostParams;\n\nconst broadcastId: string = 'broadcast_2025_11_22';\nconst isLive: boolean = false;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\n\nconst result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini",
+  "promptTokens": 471,
+  "completionTokens": 1087
+}

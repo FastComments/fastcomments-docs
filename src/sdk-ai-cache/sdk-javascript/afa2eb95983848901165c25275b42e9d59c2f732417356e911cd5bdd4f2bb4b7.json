@@ -1,0 +1,9 @@
+{
+  "method": "getModerator",
+  "signatureHash": "afa2eb95983848901165c25275b42e9d59c2f732417356e911cd5bdd4f2bb4b7",
+  "generatedAt": "2026-01-12T21:53:25.933Z",
+  "codeExample": "const tenantId: string = \"tenant_eu_4f8d2b9e\";\nconst maybeModeratorId: string | undefined = \"mod_91c3b7a2\"; // optional source (could be undefined)\nconst moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1357
+}

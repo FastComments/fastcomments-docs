@@ -1,0 +1,1 @@
+지원이 필요하시면 https://fastcomments.com/auth/my-account/help 를 방문하시거나 support@fastcomments.com 으로 이메일을 보내주세요

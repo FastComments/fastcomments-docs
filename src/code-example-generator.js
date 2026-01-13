@@ -68,13 +68,13 @@ function process(input, filePath) {
         }
 
         const codeHTML = `
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-FastCommentsUI(document.getElementById('fastcomments-widget'), ${JSON.stringify({
-            tenantId: 'demo',
-            ...args.config
-        }, null, '    ')});
+window.fcConfigs = [${JSON.stringify({
+    tenantId: 'demo',
+    ...args.config
+}, null, '    ')})];
 </script>
 `;
         const isFunctional = args.isFunctional === undefined || args.isFunctional === true;

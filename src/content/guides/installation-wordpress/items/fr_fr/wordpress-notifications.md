@@ -1,0 +1,1 @@
+Vos membres recevront les mêmes notifications que tout autre utilisateur de FastComments.com lorsqu'on leur répond ou qu'ils sont mentionnés. [En savoir plus](/guide-notifications.html).

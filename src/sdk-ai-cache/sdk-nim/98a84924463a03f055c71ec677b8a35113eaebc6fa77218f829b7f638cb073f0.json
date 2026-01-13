@@ -1,0 +1,9 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "98a84924463a03f055c71ec677b8a35113eaebc6fa77218f829b7f638cb073f0",
+  "generatedAt": "2025-11-21T16:25:25.832Z",
+  "codeExample": "let (response, httpResponse) = client.deleteSSOUser(tenantId = \"my-tenant-123\", id = \"user-9876\", deleteComments = true, commentDeleteMode = \"anonymize\")\nif response.isSome:\n  let result = response.get()\n  discard result",
+  "model": "gpt-5-mini",
+  "promptTokens": 390,
+  "completionTokens": 902
+}

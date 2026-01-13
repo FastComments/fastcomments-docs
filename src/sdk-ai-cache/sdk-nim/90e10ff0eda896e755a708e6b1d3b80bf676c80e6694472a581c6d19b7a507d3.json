@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "90e10ff0eda896e755a708e6b1d3b80bf676c80e6694472a581c6d19b7a507d3",
+  "generatedAt": "2026-01-12T21:57:35.506Z",
+  "codeExample": "let (response, httpResponse) = client.updateQuestionConfig(\n  tenantId = \"my-tenant-123\",\n  id = \"q-config-456\",\n  updateQuestionConfigBody = UpdateQuestionConfigBody()\n)\nif response.isSome:\n  let updated = response.get()\n  discard updated\n  echo \"Question config updated\"\nelse:\n  echo \"Update did not return a result\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 985
+}

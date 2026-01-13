@@ -1,0 +1,9 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "2d690adb5cc787b4be21461f966589b51e683e314df52299414afd0d9eb5490d",
+  "generatedAt": "2026-01-12T21:56:48.961Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantDailyUsages(\n  tenantId = \"my-tenant-123\",\n  yearNumber = 2025.0,\n  monthNumber = 6.0,\n  dayNumber = 15.0,\n  skip = 0.0\n)\n\nif response.isSome:\n  let usages = response.get()\n  echo usages\nelse:\n  echo \"No daily usages returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 432,
+  "completionTokens": 1058
+}

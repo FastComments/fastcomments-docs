@@ -1,0 +1,9 @@
+{
+  "method": "getTenant",
+  "signatureHash": "9c6bd05fdae47d610b926d92aa15700419fb28aad25418fb943fe51f1e80d16e",
+  "generatedAt": "2026-01-12T20:34:24.684Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"admin@fastcomments.com\");\nboost::optional<utility::string_t> asOf = boost::optional<utility::string_t>(U(\"2026-01-01T00:00:00Z\"));\napi->getTenant(tenantId, id).then([asOf](pplx::task<std::shared_ptr<GetTenant_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) return;\n        auto processed = std::make_shared<GetTenant_200_response>(*resp);\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 326,
+  "completionTokens": 1242
+}

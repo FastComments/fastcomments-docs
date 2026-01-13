@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "99e892f3cef7de34f3b9213c579e368369ccdef29949146e9e5ebff2a946a6f1",
+  "generatedAt": "2026-01-12T21:53:58.044Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst domainToUpdate: string = 'comments.acme-app.com';\nconst patchDomainConfigParams: PatchDomainConfigParams = {\n  enableHttps: true,\n  allowedOrigins: ['https://www.acme-app.com', 'https://app.acme-app.com'], // optional list\n  redirectToPrimaryDomain: false // optional toggle\n} as PatchDomainConfigParams;\nconst updatedConfig: GetDomainConfig200Response = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 276,
+  "completionTokens": 1149
+}

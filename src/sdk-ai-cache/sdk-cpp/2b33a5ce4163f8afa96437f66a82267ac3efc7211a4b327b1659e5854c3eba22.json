@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "2b33a5ce4163f8afa96437f66a82267ac3efc7211a4b327b1659e5854c3eba22",
+  "generatedAt": "2026-01-12T20:34:41.788Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nboost::optional<utility::string_t> optLocale = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getUserBadgeProgressById(tenantId, userId)\n    .then([=](std::shared_ptr<GetUserBadgeProgressById_200_response> resp) {\n        if(!resp) resp = std::make_shared<GetUserBadgeProgressById_200_response>();\n        std::cout << \"Badge progress retrieved: \" << (resp ? \"yes\" : \"no\") << std::endl;\n        return resp;\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 350,
+  "completionTokens": 987
+}

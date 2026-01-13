@@ -1,0 +1,2 @@
+L'API peut être accédée de la même manière que le produit SaaS régulier : vous vous connectez au tableau de bord On-Prem pour créer des clés d'API et utiliser ces clés pour accéder à l'API. L'API
+points de terminaison sont les mêmes on-prem que pour le produit SaaS.

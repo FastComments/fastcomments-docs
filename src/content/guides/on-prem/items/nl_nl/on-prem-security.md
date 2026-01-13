@@ -1,0 +1,2 @@
+Standaard gaat FastComments ervan uit dat discussiedraden openbaar zijn. Om een extra beveiligingslaag toe te voegen, wordt aanbevolen een Aanpassingsregel te maken met de
+`Requires SSO` optie aangevinkt. Hierdoor zullen alle endpoints die met reacties te maken hebben SSO-authenticatie vereisen.

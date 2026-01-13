@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "b7f57fc42ababbd76a0830f609b804c95415888a1b636081791d9632b5feadc3",
+  "generatedAt": "2025-11-21T16:26:12.179Z",
+  "codeExample": "let createParams = CreateCommentParams(\n  content = \"Great reporting — this clarified the policy changes for me.\",\n  authorName = \"Ava Thompson\",\n  authorEmail = \"ava.thompson@journalistmail.com\",\n  urlId = \"news/2025/energy-incentives\",\n  parentId = 0,\n  tags = @[\"energy\", \"policy\"]\n)\n\nlet (response, httpResponse) = client.saveComment(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = createParams,\n  isLive = true,\n  doSpamCheck = true,\n  sendEmails = true,\n  populateNotifications = false\n)\n\nif response.isSome:\n  let saved = response.get()\n  echo \"Comment saved for tenant my-tenant-123\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 1259
+}

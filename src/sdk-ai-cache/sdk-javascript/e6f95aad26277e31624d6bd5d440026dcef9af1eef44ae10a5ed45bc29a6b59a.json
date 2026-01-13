@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "e6f95aad26277e31624d6bd5d440026dcef9af1eef44ae10a5ed45bc29a6b59a",
+  "generatedAt": "2025-11-22T05:33:11.663Z",
+  "codeExample": "(async function run(): Promise<void> {\n  const tenantId: string = \"tenant_9f3d2b1a\";\n  const commentId: string = \"comment_72a9f4e1\";\n  const voteId: string = \"vote_8d1a3c5b\";\n  const urlId: string = \"url_4b6d9e2f\";\n  const broadcastId: string = \"broadcast_2025-11-22_01\";\n  const editKey: string | undefined = \"editkey_6a1b2c3d\";\n  const sso: string | undefined = \"sso_jwt_token_example\";\n  const result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 768
+}

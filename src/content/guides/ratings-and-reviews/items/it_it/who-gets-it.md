@@ -1,0 +1,1 @@
+Tutti i pacchetti FastComments possono utilizzare il modulo Feedback, che include Valutazioni e Recensioni.

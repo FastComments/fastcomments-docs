@@ -1,0 +1,9 @@
+{
+  "method": "get_global_event_log",
+  "signatureHash": "2c4f37d0e295cf35d2b540854a643c015251afbefc52ea7adaaefd236f52de91",
+  "generatedAt": "2025-11-21T23:53:54.887Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let tenant_id: String = \"acme-corp-tenant\".to_string();\n    let url_id: String = \"news/article/2025-election\".to_string();\n    let user_id_ws: String = \"ws-user-42\".to_string();\n    let start_time: i64 = 1_693_000_000;\n    let end_time: i64 = 1_693_086_400;\n    let params = GetGlobalEventLogParams {\n        tenant_id,\n        url_id,\n        user_id_ws,\n        start_time,\n        end_time,\n    };\n    let response: GetEventLog200Response = get_global_event_log(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 454,
+  "completionTokens": 1572
+}

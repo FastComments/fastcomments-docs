@@ -1,0 +1,9 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "f70d735e5772267b210a35965e60e3effa738fd4743ee3a924c44ae391b0ed7f",
+  "generatedAt": "2026-01-12T21:57:23.133Z",
+  "codeExample": "let (response, httpResponse) = client.sendLoginLink(tenantId = \"fastcomments-tenant-42\", id = \"user-9876\", redirectURL = \"https://news.example.com/articles/2026/fastcomments-login\")\nif response.isSome:\n  let loginResp = response.get()\n  echo \"Login link sent successfully\"\nelse:\n  echo \"Failed to send login link\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 400,
+  "completionTokens": 859
+}

@@ -65,6 +65,7 @@ class SDKGuideGenerator {
     createGuideDirectory(sdk) {
         const guideDir = path.join(GUIDES_DIR, sdk.id);
         const itemsDir = path.join(guideDir, 'items');
+        const enDir = path.join(itemsDir, 'en');
 
         // Create directories if they don't exist
         if (!fs.existsSync(guideDir)) {
@@ -74,13 +75,12 @@ class SDKGuideGenerator {
             fs.mkdirSync(itemsDir, { recursive: true });
         }
 
-        // Clean up old files in items directory (will be regenerated)
-        if (fs.existsSync(itemsDir)) {
-            fs.rmSync(itemsDir, { recursive: true, force: true });
-            fs.mkdirSync(itemsDir, { recursive: true });
+        // Create en directory if it doesn't exist (default locale for generated docs)
+        if (!fs.existsSync(enDir)) {
+            fs.mkdirSync(enDir, { recursive: true });
         }
 
-        return { guideDir, itemsDir };
+        return { guideDir, itemsDir, generatedDir: enDir };
     }
 
     /**
@@ -167,7 +167,7 @@ class SDKGuideGenerator {
         console.log(`Generating guide for ${sdk.name}...`);
 
         // Create guide directory structure FIRST (before generators run)
-        const { guideDir, itemsDir } = this.createGuideDirectory(sdk);
+        const { guideDir, itemsDir, generatedDir } = this.createGuideDirectory(sdk);
 
         // Get all documentation generators
         const generators = this.getDocGenerators(sdk, repoPath);
@@ -197,34 +197,41 @@ class SDKGuideGenerator {
             }
         }
 
-        // Write intro.md
+        // Write intro.md to en locale folder
         if (mergedIntro) {
             fs.writeFileSync(
-                path.join(guideDir, 'intro.md'),
+                path.join(generatedDir, 'intro.md'),
                 mergedIntro,
                 'utf8'
             );
         }
 
-        // Write conclusion.md
+        // Write conclusion.md to en locale folder
         if (mergedConclusion) {
             fs.writeFileSync(
-                path.join(guideDir, 'conclusion.md'),
+                path.join(generatedDir, 'conclusion.md'),
                 mergedConclusion,
                 'utf8'
             );
         }
 
-        // Write section files
+        // Write section files to the en locale subfolder
         for (const section of allSections) {
             // Use custom filename if provided, otherwise generate from name
-            const filename = section.file || (this.sanitizeFilename(section.name) + '.md');
-            const filePath = path.join(itemsDir, filename);
+            // Strip 'generated/' prefix if present (for backwards compatibility)
+            let filename = section.file || (this.sanitizeFilename(section.name) + '.md');
+            if (filename.startsWith('generated/')) {
+                filename = filename.slice('generated/'.length);
+            }
+            const filePath = path.join(generatedDir, filename);
 
             // Only write if file doesn't exist (TypeScript AI generator writes as it goes)
             if (!fs.existsSync(filePath)) {
                 fs.writeFileSync(filePath, section.content, 'utf8');
             }
+
+            // Update section.file to just be the filename (no prefix needed for locale structure)
+            section.file = filename;
         }
 
         // Generate and write meta.json

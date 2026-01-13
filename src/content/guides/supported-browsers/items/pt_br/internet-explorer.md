@@ -1,0 +1,1 @@
+Como a Microsoft planeja encerrar o suporte principal ao IE11 em 2021, atualmente não o suportamos mais.

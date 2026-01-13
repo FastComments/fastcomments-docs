@@ -1,0 +1,9 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "f04af6b67bb977d5b2099c75a1f2350a248b084a617a7220b3c94fd3619e1277",
+  "generatedAt": "2025-11-21T16:26:09.739Z",
+  "codeExample": "let (response, httpResponse) = client.putSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-789\",\n  updateAPISSOUserData = UpdateAPISSOUserData(\n    email = \"jane.doe@example.com\",\n    displayName = \"Jane Doe\",\n    externalId = \"ext-789\",\n    roles = @[\"subscriber\", \"beta-tester\"],\n    avatarUrl = \"https://cdn.example.com/avatars/jane.jpg\"\n  ),\n  updateComments = false\n)\n\nif response.isSome:\n  let user = response.get()\n  echo \"Updated user ID: \", user.id\nelse:\n  echo \"No user returned, HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 1122
+}

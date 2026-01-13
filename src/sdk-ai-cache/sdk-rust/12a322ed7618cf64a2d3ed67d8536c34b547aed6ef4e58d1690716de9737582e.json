@@ -1,0 +1,9 @@
+{
+  "method": "get_hash_tags",
+  "signatureHash": "12a322ed7618cf64a2d3ed67d8536c34b547aed6ef4e58d1690716de9737582e",
+  "generatedAt": "2026-01-12T21:59:57.587Z",
+  "codeExample": "async fn example_get_hash_tags() -> Result<GetHashTags200Response, Error> {\n    let params: GetHashTagsParams = GetHashTagsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        page: Some(1.0_f64),\n    };\n    let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 670
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_tenant",
+  "signatureHash": "01edbce5aeb5bca177a83d573231c284fb8d7dfee6ac6f2dc342825386fe0d1e",
+  "generatedAt": "2026-01-12T22:00:29.027Z",
+  "codeExample": "async fn run_get_tenant() -> Result<(), Error> {\n    let params: GetTenantParams = GetTenantParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article\"),\n    };\n    let include_metadata: Option<bool> = Some(true);\n    let tenant_response: GetTenant200Response = get_tenant(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 432,
+  "completionTokens": 1313
+}

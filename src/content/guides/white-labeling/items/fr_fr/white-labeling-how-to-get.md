@@ -1,0 +1,1 @@
+La marque blanche est disponible sur plusieurs plans FastComments.com. Consultez [nos tarifs](https://fastcomments.com/traffic-pricing) pour voir les différents forfaits qui proposent la marque blanche.

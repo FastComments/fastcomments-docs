@@ -1,0 +1,9 @@
+{
+  "method": "getUser",
+  "signatureHash": "08f447d4890c6ef11251984e473e64288a99f4780f75a0751bd21f97dff827a4",
+  "generatedAt": "2026-01-12T21:53:48.259Z",
+  "codeExample": "const tenantId: string = \"acme-publishing-42\";\nconst userIdOptional: string | undefined = \"user_9d7b4c\"; // may be undefined in some flows (optional)\nconst id: string = userIdOptional ?? \"user_default_0001\";\nconst result: GetUser200Response = await getUser(tenantId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 411,
+  "completionTokens": 793
+}

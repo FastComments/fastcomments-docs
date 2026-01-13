@@ -1,0 +1,9 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "abe703447ea8e1db4a881c91a2759593e16bb6671b65d912737109baede6e3b9",
+  "generatedAt": "2026-01-12T21:52:59.444Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b21c9';\nconst id: string = 'vote_4a2d9f1b';\nconst editKey: string = 'edit_92b7c6a1';\n\nconst resultWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);\nconst resultWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 617
+}

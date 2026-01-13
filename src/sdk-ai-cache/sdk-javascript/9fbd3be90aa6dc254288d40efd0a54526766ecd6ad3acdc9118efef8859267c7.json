@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "9fbd3be90aa6dc254288d40efd0a54526766ecd6ad3acdc9118efef8859267c7",
+  "generatedAt": "2026-01-12T21:53:13.197Z",
+  "codeExample": "// getDomainConfigs only requires tenantId; there are no optional parameters for this call\nconst tenantId: string = \"acme-corp-001\";\nconst domainConfigs: GetDomainConfigs200Response = await getDomainConfigs(tenantId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 242,
+  "completionTokens": 1339
+}

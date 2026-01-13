@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "11be86c1aedea49c37896630443090ed73403da0cff6c63a8206a72dc5124a91",
+  "generatedAt": "2025-11-21T16:26:25.876Z",
+  "codeExample": "let (response, httpResponse) = client.createFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = CreateFeedPostParams(\n    title = \"New Feature: Real-time Comments\",\n    content = \"FastComments now supports real-time threading and moderation across articles.\",\n    authorId = \"editor-42\",\n    tags = @[\"product\",\"release\",\"comments\"],\n    isPublished = true\n  ),\n  broadcastId = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let created = response.get()\n  echo \"Created feed post:\", created",
+  "model": "gpt-5-mini",
+  "promptTokens": 420,
+  "completionTokens": 1348
+}

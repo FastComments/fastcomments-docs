@@ -1,0 +1,9 @@
+{
+  "method": "get_comment_text",
+  "signatureHash": "b62c09564ea9836c86b0266b4c2feff36fb75a2829d1bafd541f7d8aa1ecbc28",
+  "generatedAt": "2025-11-21T23:53:32.499Z",
+  "codeExample": "async fn fetch_comment_text() -> Result<(), Error> {\n    let params: GetCommentTextParams = GetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-2025-11-21-12345\".to_string(),\n        edit_key: Some(\"edit_9f8b7c\".to_string()),\n        sso: Some(\"sso_token_eyJhbGci\".to_string()),\n    };\n    let response: GetCommentText200Response = get_comment_text(&configuration, params).await?;\n    let _response = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 973
+}

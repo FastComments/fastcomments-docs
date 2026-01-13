@@ -1,0 +1,2 @@
+A API pode ser acessada da mesma forma que o produto SaaS regular, ou seja, você faria login no painel On-Prem para criar chaves de API e usar essas chaves para acessar a API. A API
+endpoints são os mesmos on-prem que para o produto SaaS.

@@ -1,0 +1,9 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "96b8db8cc2dac5e02c974c449f557648905d75acf49d5dd0e15a9a79b773f4f0",
+  "generatedAt": "2026-01-12T21:54:14.578Z",
+  "codeExample": "const tenantId: string = \"tenant_3f8b1a4c\";\nconst id: string = \"comment_5d7a2b9e\";\nconst userId: string = \"moderator_1024\";\n\nconst result: FlagComment200Response = await unFlagComment(tenantId, id, userId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 590
+}

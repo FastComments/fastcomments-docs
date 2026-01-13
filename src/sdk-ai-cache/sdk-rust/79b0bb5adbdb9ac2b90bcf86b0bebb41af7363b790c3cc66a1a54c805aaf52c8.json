@@ -1,0 +1,9 @@
+{
+  "method": "react_feed_post_public",
+  "signatureHash": "79b0bb5adbdb9ac2b90bcf86b0bebb41af7363b790c3cc66a1a54c805aaf52c8",
+  "generatedAt": "2025-11-21T23:53:52.707Z",
+  "codeExample": "let react_body_params: models::ReactBodyParams = models::ReactBodyParams {\n    reaction: \"like\".to_string(),\n};\nlet params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/article-2025-11-21\".to_string(),\n    react_body_params,\n    is_undo: Some(false),\n    broadcast_id: Some(\"broadcast-789\".to_string()),\n    sso: Some(\"sso-token-abc123\".to_string()),\n};\nlet response: ReactFeedPostPublic200Response = react_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 483,
+  "completionTokens": 853
+}

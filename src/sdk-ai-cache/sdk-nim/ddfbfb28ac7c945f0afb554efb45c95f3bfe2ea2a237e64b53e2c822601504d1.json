@@ -1,0 +1,9 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "ddfbfb28ac7c945f0afb554efb45c95f3bfe2ea2a237e64b53e2c822601504d1",
+  "generatedAt": "2026-01-12T21:57:23.560Z",
+  "codeExample": "let (response, httpResponse) = client.saveCommentsBulk(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = @[],\n  isLive = false,\n  doSpamCheck = false,\n  sendEmails = false,\n  populateNotifications = false,\n  id = \"\",\n  fromName = \"\"\n)\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Flag response received: \", $flagResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 1187
+}

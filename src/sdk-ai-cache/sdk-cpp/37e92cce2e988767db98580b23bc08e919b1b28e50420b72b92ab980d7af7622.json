@@ -1,0 +1,9 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "37e92cce2e988767db98580b23bc08e919b1b28e50420b72b92ab980d7af7622",
+  "generatedAt": "2025-11-20T22:25:17.653Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nstd::vector<utility::string_t> postIdsVec = { U(\"post-abc-001\"), U(\"post-def-002\") };\nboost::optional<std::vector<utility::string_t>> postIdsOpt = postIdsVec;\nboost::optional<utility::string_t> ssoOpt = U(\"user@example.com\");\nauto fallback = std::make_shared<GetUserReactsPublic_200_response>();\napi->getUserReactsPublic(tenantId, postIdsOpt, ssoOpt).then([fallback](std::shared_ptr<GetUserReactsPublic_200_response> resp){\n    auto result = resp ? resp : fallback;\n    std::wcout << U(\"Received user reacts (public)\") << std::endl;\n    return result;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 366,
+  "completionTokens": 1717
+}

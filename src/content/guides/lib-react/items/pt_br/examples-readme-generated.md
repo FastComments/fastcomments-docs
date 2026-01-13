@@ -1,0 +1,1 @@
+Você encontrará exemplos para vários casos de uso (modo escuro, paginação, etc) na pasta examples. Cada exemplo pode ser configurado com `npm install` e iniciado com `npm run start`.

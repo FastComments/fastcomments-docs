@@ -1,0 +1,9 @@
+{
+  "method": "get_votes",
+  "signatureHash": "4bb1eae271bcf96c2a27cc94274769f976c136e6eb5c6ac2af2dda6910fb103b",
+  "generatedAt": "2026-01-12T22:00:47.186Z",
+  "codeExample": "async fn fetch_votes_example() -> Result<(), Error> {\n    let params: GetVotesParams = GetVotesParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/article/2026-01-12/housing-market\"),\n    };\n    let votes: GetVotes200Response = get_votes(&configuration, params).await?;\n    let _ = votes;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 995
+}

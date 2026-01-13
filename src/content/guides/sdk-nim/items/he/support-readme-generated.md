@@ -1,0 +1,1 @@
+לקבלת תמיכה, אנא בקר ב־https://fastcomments.com/auth/my-account/help או שלח דוא״ל ל־support@fastcomments.com

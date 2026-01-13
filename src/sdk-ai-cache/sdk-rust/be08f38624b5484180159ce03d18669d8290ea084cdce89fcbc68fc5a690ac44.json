@@ -1,0 +1,9 @@
+{
+  "method": "delete_tenant_user",
+  "signatureHash": "be08f38624b5484180159ce03d18669d8290ea084cdce89fcbc68fc5a690ac44",
+  "generatedAt": "2026-01-12T21:59:43.789Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteTenantUserParams = DeleteTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-12345\".to_string(),\n        delete_comments: Some(\"true\".to_string()),\n        comment_delete_mode: Some(\"cascade\".to_string()),\n    };\n    let resp: FlagCommentPublic200Response = delete_tenant_user(&configuration, params).await?;\n    Ok(resp)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1077
+}

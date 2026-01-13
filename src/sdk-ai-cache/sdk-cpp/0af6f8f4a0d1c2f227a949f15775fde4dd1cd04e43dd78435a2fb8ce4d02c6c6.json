@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "0af6f8f4a0d1c2f227a949f15775fde4dd1cd04e43dd78435a2fb8ce4d02c6c6",
+  "generatedAt": "2026-01-12T20:33:40.757Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\napi->getEmailTemplates(tenantId, skip).then([](pplx::task<std::shared_ptr<GetEmailTemplates_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<GetEmailTemplates_200_response>(*resp);\n        }\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1211
+}

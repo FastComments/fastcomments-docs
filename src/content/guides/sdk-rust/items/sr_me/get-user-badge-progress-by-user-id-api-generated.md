@@ -1,0 +1,13 @@
+---
+## Параметри
+
+| Назив | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| user_id | String | Да |  |
+
+## Одговор
+
+Враћа: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_badge_progress_by_id_200_response.rs)
+
+---

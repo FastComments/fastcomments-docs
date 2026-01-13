@@ -1,0 +1,9 @@
+{
+  "method": "create_comment_public",
+  "signatureHash": "1cb0cea2469ea942fb83154f9dba3583914b477d2abb892edc400b406f7877db",
+  "generatedAt": "2025-11-21T23:53:31.379Z",
+  "codeExample": "async fn post_comment() -> Result<CreateCommentPublic200Response, Error> {\n    let params: CreateCommentPublicParams = CreateCommentPublicParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/2025/11/fast-rust-adoption\"),\n        broadcast_id: String::from(\"main-stream\"),\n        comment_data: models::CommentData {\n            body: String::from(\"Great reporting — I especially liked the data on adoption rates.\"),\n        },\n        session_id: Some(String::from(\"sess_9f8e7d6c\")),\n        sso: Some(String::from(\"sso_token_abc123\")),\n    };\n    let response: CreateCommentPublic200Response = create_comment_public(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 515,
+  "completionTokens": 1714
+}

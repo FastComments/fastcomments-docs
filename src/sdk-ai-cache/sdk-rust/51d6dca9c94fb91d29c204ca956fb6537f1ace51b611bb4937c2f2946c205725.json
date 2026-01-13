@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badge_progress_list",
+  "signatureHash": "51d6dca9c94fb91d29c204ca956fb6537f1ace51b611bb4937c2f2946c205725",
+  "generatedAt": "2026-01-12T22:00:39.813Z",
+  "codeExample": "let params: GetUserBadgeProgressListParams = GetUserBadgeProgressListParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    user_id: Some(\"user-12345\".to_string()),\n    limit: Some(25.0),\n    skip: Some(0.0),\n};\nlet resp: GetUserBadgeProgressList200Response = get_user_badge_progress_list(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 465,
+  "completionTokens": 995
+}

@@ -1,0 +1,9 @@
+{
+  "method": "addPage",
+  "signatureHash": "d82d259be2b5d7557c379d606257bf55b7354b42833fc2f2e9568eafb962a642",
+  "generatedAt": "2026-01-12T20:31:43.503Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto pageDataPtr = std::make_shared<CreateAPIPageData>();\npageDataPtr->url = utility::conversions::to_string_t(\"https://blog.example.com/posts/2026-product-release\");\npageDataPtr->title = utility::conversions::to_string_t(\"2026 Product Release\");\npageDataPtr->authorEmail = utility::conversions::to_string_t(\"author@example.com\");\npageDataPtr->description = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Announcing our major 2026 release\"));\npageDataPtr->isPublished = boost::optional<bool>(true);\napi->addPage(tenantId, *pageDataPtr).then([](pplx::task<std::shared_ptr<AddPageAPIResponse>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"addPage succeeded\" << std::endl;\n        } else {\n            std::cout << \"addPage returned null response\" << std::endl;\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"addPage failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 330,
+  "completionTokens": 2201
+}

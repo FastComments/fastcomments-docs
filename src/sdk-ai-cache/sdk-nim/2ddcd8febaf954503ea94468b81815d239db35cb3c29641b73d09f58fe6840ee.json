@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "2ddcd8febaf954503ea94468b81815d239db35cb3c29641b73d09f58fe6840ee",
+  "generatedAt": "2025-11-21T16:25:41.201Z",
+  "codeExample": "let (response, httpResponse) = client.getComments(\n  tenantId = \"my-tenant-123\",\n  page = 1,\n  limit = 25,\n  skip = 0,\n  asTree = true,\n  skipChildren = 0,\n  limitChildren = 5,\n  maxTreeDepth = 3,\n  urlId = \"news/article-2025-innovation\",\n  userId = \"user-987\",\n  anonUserId = \"\",\n  contextUserId = \"\",\n  hashTag = \"product-launch\",\n  parentId = \"\",\n  direction = SortDirections.Desc)\n\nif response.isSome:\n  let comments = response.get()\n  discard comments",
+  "model": "gpt-5-mini",
+  "promptTokens": 504,
+  "completionTokens": 979
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "7cb5d181582322e20f76677a3523694767821d8e715da116bdb6ece106d5129d",
+  "generatedAt": "2026-01-12T21:57:43.729Z",
+  "codeExample": "let params = UpdateUserBadgeParams(badgeId: \"badge-moderator\", label: \"Moderator\", active: true)\nlet (response, httpResponse) = client.updateUserBadge(tenantId = \"my-tenant-123\", id = \"user-456\", updateUserBadgeParams = params)\nif response.isSome:\n  let badgeResp = response.get()\n  discard badgeResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 921
+}

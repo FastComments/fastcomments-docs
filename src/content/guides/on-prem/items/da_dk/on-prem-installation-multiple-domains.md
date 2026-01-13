@@ -1,0 +1,2 @@
+Din On-Prem FastComments-installation kan levere kommentarer til flere interne domæner, for eksempel `app.mycorp.org` og `hr.mycorp.org`. Du kan konfigurere disse
+separat, men hoste dem på én On-Prem-opsætning ved at oprette separate tilpasningsregler for at konfigurere deres individuelle adfærd.

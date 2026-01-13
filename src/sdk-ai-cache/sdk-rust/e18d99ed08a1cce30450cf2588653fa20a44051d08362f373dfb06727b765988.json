@@ -1,0 +1,9 @@
+{
+  "method": "delete_domain_config",
+  "signatureHash": "e18d99ed08a1cce30450cf2588653fa20a44051d08362f373dfb06727b765988",
+  "generatedAt": "2025-11-21T23:52:22.577Z",
+  "codeExample": "let domain_opt: Option<String> = Some(\"blog.acme.com\".to_string());\nlet params: DeleteDomainConfigParams = DeleteDomainConfigParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    domain: domain_opt.unwrap(),\n};\nlet response: DeleteDomainConfig200Response = delete_domain_config(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 293,
+  "completionTokens": 1619
+}

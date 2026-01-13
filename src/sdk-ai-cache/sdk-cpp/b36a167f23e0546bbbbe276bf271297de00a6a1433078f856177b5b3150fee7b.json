@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "b36a167f23e0546bbbbe276bf271297de00a6a1433078f856177b5b3150fee7b",
+  "generatedAt": "2026-01-12T20:34:15.023Z",
+  "codeExample": "boost::optional<utility::string_t> tenantOpt(U(\"my-tenant-123\"));\nutility::string_t tenantId = tenantOpt.value_or(U(\"my-tenant-123\"));\nutility::string_t email = U(\"alice@example.com\");\n\napi->getSSOUserByEmail(tenantId, email)\n    .then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto userCopy = std::make_shared<GetSSOUserByEmailAPIResponse>(*resp);\n            }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 346,
+  "completionTokens": 1367
+}

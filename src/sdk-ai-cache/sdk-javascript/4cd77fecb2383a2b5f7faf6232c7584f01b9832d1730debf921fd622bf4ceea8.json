@@ -1,0 +1,9 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "4cd77fecb2383a2b5f7faf6232c7584f01b9832d1730debf921fd622bf4ceea8",
+  "generatedAt": "2026-01-12T21:52:22.613Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b6c';\nconst createUserBadgeParams: CreateUserBadgeParams = {\n  name: 'Top Contributor',\n  description: 'Awarded to users with 500+ helpful replies',\n  imageUrl: 'https://cdn.fastcomments.com/badges/top-contributor.png',\n  isActive: true,\n  criteria: { minComments: 500, minUpvotes: 120 }, // optional criteria\n  customConfig: { badgeColor: '#FFD700', displayOnProfile: true } // optional custom config\n};\nconst result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 855
+}

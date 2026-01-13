@@ -1,0 +1,3 @@
+Med FastComments kan vi nemt tilføje live-kommentarer til enhver Wix-side. Vi vil også gennemgå, hvordan man sikrer, at hver side eller hvert blogindlæg kan have sin egen unikke kommentartråd.
+
+Bemærk, at denne vejledning kræver en FastComments-konto. Det anbefales, at du opretter en konto først og derefter vender tilbage hertil. [Du kan oprette en konto her.](https://fastcomments.com/auth/tenant-signup?packageId=flex)

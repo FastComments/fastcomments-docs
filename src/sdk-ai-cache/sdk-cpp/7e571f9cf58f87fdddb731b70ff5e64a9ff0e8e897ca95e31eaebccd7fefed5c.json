@@ -1,0 +1,9 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "7e571f9cf58f87fdddb731b70ff5e64a9ff0e8e897ca95e31eaebccd7fefed5c",
+  "generatedAt": "2026-01-12T20:36:29.315Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654321\");\nPublicBlockFromCommentParams params;\nparams.reason = U(\"Repeated harassment\");\nparams.durationMinutes = 1440;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-abc123\"));\nauto placeholder = std::make_shared<BlockFromCommentPublic_200_response>();\napi->blockFromCommentPublic(tenantId, commentId, params, sso)\n.then([](pplx::task<std::shared_ptr<BlockFromCommentPublic_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) std::wcout << U(\"Comment blocked successfully\\n\");\n        else std::wcout << U(\"Block request returned empty response\\n\");\n    } catch (...) {\n        std::wcout << U(\"Block request failed\\n\");\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 370,
+  "completionTokens": 1813
+}

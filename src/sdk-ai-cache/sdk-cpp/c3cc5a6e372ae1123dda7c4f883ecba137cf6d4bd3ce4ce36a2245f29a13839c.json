@@ -1,0 +1,9 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "c3cc5a6e372ae1123dda7c4f883ecba137cf6d4bd3ce4ce36a2245f29a13839c",
+  "generatedAt": "2025-11-20T22:23:08.745Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t id = utility::conversions::to_string_t(\"comment-987654\");\nboost::optional<utility::string_t> contextUserId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<bool> isLive = true;\napi->deleteComment(tenantId, id, contextUserId, isLive)\n.then([](pplx::task<std::shared_ptr<DeleteComment_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto dummy = std::make_shared<DeleteComment_200_response>();\n        (void)resp;\n        (void)dummy;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 361,
+  "completionTokens": 2024
+}

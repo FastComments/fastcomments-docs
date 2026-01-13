@@ -1,0 +1,9 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "6e19de60ce83fc76607998b50892cf2e86f2b5e4184d25bea26d2671f01af5e6",
+  "generatedAt": "2026-01-12T20:37:07.308Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t defaultUrlId = U(\"article-456\");\nboost::optional<utility::string_t> maybeUrlId = boost::optional<utility::string_t>(U(\"article-456\"));\nutility::string_t urlId = maybeUrlId ? *maybeUrlId : defaultUrlId;\nutility::string_t userIdWS = U(\"user@example.com\");\nint64_t startTime = 1622505600000LL;\nint64_t endTime = 1622592000000LL;\nauto defaultResp = std::make_shared<GetEventLog_200_response>();\napi->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)\n.then([](pplx::task<std::shared_ptr<GetEventLog_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) std::cout << \"Received event log with entries\\n\";\n        else std::cout << \"No event log returned\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"getGlobalEventLog failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 367,
+  "completionTokens": 1671
+}

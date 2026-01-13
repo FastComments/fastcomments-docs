@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "a7c9448684a73541e870d7b578146df9118c3db1361a520878e96b995e6d226f",
+  "generatedAt": "2025-11-20T22:24:35.112Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-7890\");\nutility::string_t broadcastId = U(\"bcast-456\");\nboost::optional<utility::string_t> editKey = utility::string_t(U(\"editKey-abc123\"));\nboost::optional<utility::string_t> sso = boost::none;\n\napi->deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)\n.then([](std::shared_ptr<DeleteCommentPublic_200_response> resp) {\n    auto copy = std::make_shared<DeleteCommentPublic_200_response>(*resp);\n    (void)copy;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 375,
+  "completionTokens": 1565
+}

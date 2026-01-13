@@ -1,0 +1,23 @@
+## Parametri
+
+| Ime | Tip | Obvezno | Opis |
+|------|------|----------|-------------|
+| tenantId | string | Da |  |
+
+## Odgovor
+
+Vrne: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
+
+## Primer
+
+[inline-code-attrs-start title = 'Primer getPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
+if response.isSome:
+  let pages = response.get()
+  echo "Received pages response: ", pages
+else:
+  echo "No pages returned. HTTP response: ", httpResponse
+[inline-code-end]
+
+---

@@ -1,0 +1,12 @@
+## Parameter
+
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|----------|-------------|
+| tenant_id | String | Ja |  |
+| skip | i32 | Nein |  |
+
+## Antwort
+
+Gibt zurück: [`GetSsoUsers200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_sso_users_200_response.rs)
+
+---

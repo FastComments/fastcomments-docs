@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "ed8c35d3fa76362ab029d518852c0f73f59fe7bef6580406ad6e1601c77ca8b7",
+  "generatedAt": "2026-01-12T21:53:51.043Z",
+  "codeExample": "const tenantId: string = \"tenant_4f7b9c2e\";\nconst userId: string = \"user_9a12b3f6\";\nconst limit: number = 25;\nconst skip: number = 0;\nconst result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 536
+}

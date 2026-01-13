@@ -1,0 +1,2 @@
+Das Erste, was beim Einrichten entschieden werden muss, ist, wie Ihre Fragen angezeigt werden. Auf dieser Seite verwenden wir unten den empfohlenen Anzeigetyp, das Nebeneinander-Layout
+für Bewertungen und Unterbewertungen. Das andere Layout, das eher für Seitenreaktionen und nicht für Rezensionen gedacht ist, ist ein vertikales Layout, das auf anderen Dokumentationsseiten verwendet wird.

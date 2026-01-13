@@ -1,0 +1,1 @@
+Avec FastComments, nous pouvons configurer des commentaires réservés exclusivement aux membres lorsqu'il est associé à Memberstack !

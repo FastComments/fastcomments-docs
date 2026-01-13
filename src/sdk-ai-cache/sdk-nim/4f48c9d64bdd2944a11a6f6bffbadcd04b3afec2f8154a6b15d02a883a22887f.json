@@ -1,0 +1,9 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "4f48c9d64bdd2944a11a6f6bffbadcd04b3afec2f8154a6b15d02a883a22887f",
+  "generatedAt": "2026-01-12T21:56:33.772Z",
+  "codeExample": "let (response, httpResponse) = client.getNotifications(\n  tenantId = \"fastcomments-tenant-42\",\n  userId = \"\",\n  urlId = \"news/latest-tech-innovations\",\n  fromCommentId = \"\",\n  viewed = false,\n  skip = 0.0\n)\n\nif response.isSome:\n  let notifications = response.get()\n  echo \"Received notifications: \", notifications\nelse:\n  echo \"No notifications, response: \", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 1256
+}

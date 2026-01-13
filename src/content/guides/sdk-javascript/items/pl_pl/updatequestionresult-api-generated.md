@@ -1,0 +1,25 @@
+## Parametry
+
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|-------------|
+| tenantId | string | Tak |  |
+| id | string | Tak |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Tak |  |
+
+## Odpowiedź
+
+Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+
+## Przykład
+
+[inline-code-attrs-start title = 'Przykład updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_84f2b9';
+const id: string = 'question_3a7c1d';
+const updateQuestionResultBody: UpdateQuestionResultBody = {
+  result: { verdict: 'helpful', confidence: 0.92 },
+  reviewer: { id: 'mod_102', name: 'Aisha Rahman' },
+  notifyUser: true // parametr opcjonalny
+};
+const response: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+[inline-code-end]

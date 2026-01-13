@@ -1,0 +1,9 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "5d3464d42d1ffc72a99573ea102eb85a89baaeb267cd810d526d32d9eee1122b",
+  "generatedAt": "2026-01-12T21:55:26.948Z",
+  "codeExample": "let (response, httpResponse) = client.blockUserFromComment(\n  tenantId = \"my-tenant-123\",\n  id = \"cmt-2026-0001\",\n  blockFromCommentParams = BlockFromCommentParams(),\n  userId = \"user-7421\",\n  anonUserId = \"\")\nif response.isSome:\n  let blocked = response.get()\n  discard blocked",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 985
+}

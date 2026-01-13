@@ -1,0 +1,9 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "c07b87c2e5a44c467a1164b74bbadfce40960771e89690c88af89bc367dda37e",
+  "generatedAt": "2026-01-12T20:37:36.377Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654\");\nutility::string_t broadcastId = U(\"brd-456\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nauto dummyResp = std::make_shared<LockComment_200_response>();\napi->unLockComment(tenantId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<LockComment_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            std::cout << \"Comment unlocked successfully\\n\";\n        } else {\n            std::cout << \"Unlock returned empty response\\n\";\n        }\n    } catch (const std::exception& e) {\n        std::cerr << \"Error unlocking comment: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 355,
+  "completionTokens": 1301
+}

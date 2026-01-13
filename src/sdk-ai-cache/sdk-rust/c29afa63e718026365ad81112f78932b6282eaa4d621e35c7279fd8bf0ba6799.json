@@ -1,0 +1,9 @@
+{
+  "method": "get_comment_vote_user_names",
+  "signatureHash": "c29afa63e718026365ad81112f78932b6282eaa4d621e35c7279fd8bf0ba6799",
+  "generatedAt": "2025-11-21T23:53:33.552Z",
+  "codeExample": "async fn fetch_vote_user_names() -> Result<(), Error> {\n    let params: GetCommentVoteUserNamesParams = GetCommentVoteUserNamesParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"news/article-2025-11-21-12345\"),\n        dir: 1_i32,\n        sso: Some(String::from(\"sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\")),\n    };\n    let response: GetCommentVoteUserNames200Response =\n        get_comment_vote_user_names(&configuration, params).await?;\n    println!(\"{:#?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 1058
+}

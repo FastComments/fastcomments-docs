@@ -1,0 +1,1 @@
+Ta odznaka jest przyznawana, gdy komentarze są usuwane. Nazywana jest `Big Hammer` domyślnie.

@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "3436904a504dd428222117ba425275d20726400c8ce2a3cd2c2f0b1af149fca0",
+  "generatedAt": "2025-11-22T05:32:21.596Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const result: GetComments200Response = await getComments(\n    tenantId,\n    1,                     // page\n    25,                    // limit\n    0,                     // skip\n    true,                  // asTree\n    0,                     // skipChildren\n    3,                     // limitChildren\n    5,                     // maxTreeDepth\n    'news-article-20251122-abc123', // urlId\n    'user_7890',           // userId\n    'anon_456',            // anonUserId\n    'moderator_101',       // contextUserId\n    'discussion',          // hashTag\n    'comment_9876',        // parentId\n    SortDirections.DESC    // direction\n  );\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 542,
+  "completionTokens": 963
+}

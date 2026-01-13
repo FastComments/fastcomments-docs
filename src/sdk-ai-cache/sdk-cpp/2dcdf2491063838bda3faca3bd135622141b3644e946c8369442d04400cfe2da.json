@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "2dcdf2491063838bda3faca3bd135622141b3644e946c8369442d04400cfe2da",
+  "generatedAt": "2026-01-12T20:34:14.819Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t questionId = U(\"question-456\");\nboost::optional<utility::string_t> requestor = U(\"user@example.com\");\n\nauto task = api->getQuestionResult(tenantId, questionId)\n    .then([requestor](pplx::task<std::shared_ptr<GetQuestionResult_200_response>> prev) -> std::shared_ptr<GetQuestionResult_200_response> {\n        try {\n            auto resp = prev.get();\n            if (!resp) return std::make_shared<GetQuestionResult_200_response>();\n            (void)requestor;\n            return resp;\n        } catch (const std::exception &) {\n            return std::make_shared<GetQuestionResult_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1838
+}

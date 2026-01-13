@@ -1,0 +1,9 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "1c50f54ede273d50a8ae3454a77df712b5c1da72a8e858c903ba3920b1f52fdb",
+  "generatedAt": "2026-01-12T21:55:56.636Z",
+  "codeExample": "let (response, httpResponse) = client.deleteModerator(tenantId = \"my-tenant-123\", id = \"moderator-456\", sendEmail = \"false\")\nif response.isSome:\n  let flagResp = response.get()\n  echo \"Moderator deletion response: \", $flagResp\nelse:\n  echo \"No response body; HTTP status: \", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 399,
+  "completionTokens": 919
+}

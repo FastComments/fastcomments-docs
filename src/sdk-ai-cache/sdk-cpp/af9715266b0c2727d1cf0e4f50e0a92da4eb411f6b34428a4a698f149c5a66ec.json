@@ -1,0 +1,9 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "af9715266b0c2727d1cf0e4f50e0a92da4eb411f6b34428a4a698f149c5a66ec",
+  "generatedAt": "2026-01-12T20:36:38.497Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-456\");\nboost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U(\"broadcast-789\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->deleteFeedPostPublic(tenantId, postId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<DeleteFeedPostPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<DeleteFeedPostPublic_200_response>();\n        (void)resp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 371,
+  "completionTokens": 1334
+}

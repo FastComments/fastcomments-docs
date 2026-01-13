@@ -1,0 +1,9 @@
+{
+  "method": "create_question_config",
+  "signatureHash": "0ecc6630bc7f4f0b18d86ebdad39014f237f08f944cfd0655c03f4b70af3c049",
+  "generatedAt": "2026-01-12T21:59:03.870Z",
+  "codeExample": "let params: CreateQuestionConfigParams = CreateQuestionConfigParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    create_question_config_body: models::CreateQuestionConfigBody {\n        key: String::from(\"article-usefulness\"),\n        label: Some(String::from(\"Was this article useful?\")),\n        description: Some(String::from(\"Help us improve by rating this article.\")),\n        required: Some(true),\n        rendering_type: Some(models::QuestionRenderingType::MultipleChoice),\n        custom_options: Some(vec![\n            models::QuestionConfigCustomOptionsInner { value: String::from(\"1\"), label: Some(String::from(\"Not useful\")) },\n            models::QuestionConfigCustomOptionsInner { value: String::from(\"3\"), label: Some(String::from(\"Somewhat useful\")) },\n            models::QuestionConfigCustomOptionsInner { value: String::from(\"5\"), label: Some(String::from(\"Very useful\")) },\n        ]),\n        enabled: Some(true),\n    },\n};\nlet response: CreateQuestionConfig200Response = create_question_config(configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 1387
+}

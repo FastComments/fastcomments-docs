@@ -1,0 +1,3 @@
+### Identyfikatory Broadcast
+
+Zobaczysz, że w niektórych wywołaniach API powinieneś przekazać `broadcast_id`. Kiedy otrzymasz zdarzenia, otrzymasz ten identyfikator z powrotem, dzięki czemu będziesz wiedzieć, aby zignorować zdarzenie, jeśli zamierzasz optymistycznie zastosować zmiany po stronie klienta (co prawdopodobnie będziesz chciał zrobić, ponieważ zapewnia to najlepsze doświadczenie). Przekaż tutaj UUID. Identyfikator powinien być na tyle unikalny, żeby nie wystąpił dwukrotnie w sesji przeglądarki.

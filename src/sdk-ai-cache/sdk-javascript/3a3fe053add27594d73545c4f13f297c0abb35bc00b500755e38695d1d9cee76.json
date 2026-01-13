@@ -1,0 +1,9 @@
+{
+  "method": "pinComment",
+  "signatureHash": "3a3fe053add27594d73545c4f13f297c0abb35bc00b500755e38695d1d9cee76",
+  "generatedAt": "2026-01-12T21:55:01.702Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_1278\";\n  const commentId: string = \"cmt_84b3f\";\n  const broadcastId: string = \"brd_live_20260112\";\n  const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.signature\";\n\n  const pinnedWithSso: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken);\n  const pinnedWithoutSso: PinComment200Response = await pinComment(tenantId, commentId, broadcastId);\n  console.log(pinnedWithSso, pinnedWithoutSso);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1315
+}

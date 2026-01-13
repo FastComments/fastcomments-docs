@@ -1,0 +1,9 @@
+{
+  "method": "get_domain_config",
+  "signatureHash": "1a3db5b5bf7c4469713d94d3a9e707c5266dc28bf0e68083ff8052b4bec806bb",
+  "generatedAt": "2026-01-12T21:59:53.211Z",
+  "codeExample": "async fn example_get_domain_config() -> Result<GetDomainConfig200Response, Error> {\n    let params: GetDomainConfigParams = GetDomainConfigParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        domain: String::from(\"news/world\"),\n        include_subdomains: Some(true),\n    };\n    let config_response: GetDomainConfig200Response = get_domain_config(&configuration, params).await?;\n    Ok(config_response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 291,
+  "completionTokens": 1447
+}

@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "1ecd5d5214b387efc5dc4d2e2d4a6cb0de03f1e6859b7a04105712dad7e97328",
+  "generatedAt": "2026-01-12T21:57:09.800Z",
+  "codeExample": "let patchParams = PatchDomainConfigParams(\n  domainName: \"comments.mynews.com\",\n  enableModeration: true,\n  allowedOrigins: @[\"https://www.mynews.com\", \"https://editor.mynews.com\"]\n)\n\nlet (response, httpResponse) = client.patchDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"news/article-title\",\n  patchDomainConfigParams = patchParams\n)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Updated domain config for: \", updated.domainName",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 1533
+}

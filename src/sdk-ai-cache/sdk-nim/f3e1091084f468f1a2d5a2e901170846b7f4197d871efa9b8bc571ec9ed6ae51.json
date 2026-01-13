@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "f3e1091084f468f1a2d5a2e901170846b7f4197d871efa9b8bc571ec9ed6ae51",
+  "generatedAt": "2026-01-12T21:58:17.025Z",
+  "codeExample": "let (response, httpResponse) = client.unBlockCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654\",\n  publicBlockFromCommentParams = PublicBlockFromCommentParams(reason = \"\", blockDurationMinutes = 0, notifyUser = false),\n  sso = \"\"\n)\nif response.isSome:\n  let result = response.get()\n  discard result",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 925
+}

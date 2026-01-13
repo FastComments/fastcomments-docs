@@ -1,0 +1,9 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "dc20c677d2e7ba580f6c4c90346be0ae1a4c9f56f51e5a807783648ab0b6fc60",
+  "generatedAt": "2025-11-20T22:24:08.047Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"comments.example.com\");\nPatchDomainConfigParams patchParams;\npatchParams.allowComments = boost::optional<bool>(true);\npatchParams.moderationMode = boost::optional<utility::string_t>(U(\"pre-moderation\"));\nauto fallback = std::make_shared<GetDomainConfig_200_response>();\napi->patchDomainConfig(tenantId, domainToUpdate, patchParams)\n.then([fallback](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> t)\n{\n    try\n    {\n        auto resp = t.get();\n        if(!resp) resp = fallback;\n        (void)resp;\n    }\n    catch(const std::exception &)\n    {\n        auto resp = fallback;\n        (void)resp;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 2043
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "20082ea1b38efdbfe490f6f4ae19eea9866c682a9f7613ff786563f4077a98f8",
+  "generatedAt": "2025-11-20T22:24:22.722Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-456\");\nFeedPost feedPost;\nfeedPost.title = U(\"Scheduled maintenance\");\nfeedPost.content = U(\"We'll be updating servers at 00:00 UTC.\");\nfeedPost.authorEmail = U(\"admin@my-domain.com\");\nfeedPost.authorDisplayName = boost::optional<utility::string_t>(U(\"Site Admin\"));\nfeedPost.pinned = boost::optional<bool>(false);\napi->updateFeedPost(tenantId, postId, feedPost)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto safeResp = resp ? resp : std::make_shared<FlagCommentPublic_200_response>();\n        if (safeResp) std::cout << \"Feed post updated successfully\\n\";\n        else std::cout << \"Update returned empty response\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Update failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 345,
+  "completionTokens": 1972
+}

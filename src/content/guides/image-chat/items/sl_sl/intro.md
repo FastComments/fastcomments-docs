@@ -1,0 +1,3 @@
+FastComments Image Chat omogoča interaktivne razprave na slikah tako, da uporabnikom omogoči klik kjer koli na sliki za ustvarjanje točk razprave. Uporabniki lahko kliknejo na določene dele slike, da začnejo pogovore o teh območjih, s čimer se ustvarijo vizualne oznake, ki pokažejo, kje potekajo razprave.
+
+Ta funkcija je idealna za povratne informacije o oblikovanju, ocene izdelkov, izobraževalne materiale z diagrami, fotografske galerije s komentarji in vse primere, kjer želite kontekstualne razprave, pritrjene na določene lokacije na sliki.

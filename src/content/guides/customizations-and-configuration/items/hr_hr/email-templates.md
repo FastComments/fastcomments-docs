@@ -1,0 +1,1 @@
+E-poruke koje FastComments šalje vašim kupcima mogu se prilagoditi. Predložak, logika i prijevodi svi se mogu promijeniti. Tekst se može prilagoditi po lokalizaciji, a stil se čak može mijenjati po domeni. [Saznajte više o prilagođenim predlošcima e-pošte ovdje.](/guide-email-templates.html)

@@ -1,0 +1,9 @@
+{
+  "method": "aggregate",
+  "signatureHash": "590638bdfeba512183405959f930a17e02de1c56fb44420a2d45ea85e53f1a47",
+  "generatedAt": "2025-11-21T16:25:08.253Z",
+  "codeExample": "let (response, httpResponse) = client.aggregate(tenantId = \"my-tenant-123\", aggregationRequest = AggregationRequest(), parentTenantId = \"\", includeStats = false)\nif response.isSome:\n  let agg = response.get()\n  echo \"Aggregation succeeded: \", $agg\nelse:\n  echo \"Aggregation failed, HTTP response: \", $httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 397,
+  "completionTokens": 853
+}

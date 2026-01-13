@@ -1,0 +1,9 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "492774eddef07f4b3dd7d0373f3f2cb09a069f3de0d395185d050b71205b89f4",
+  "generatedAt": "2026-01-12T21:56:30.622Z",
+  "codeExample": "let (response, httpResponse) = client.getNotificationCount(\n  tenantId = \"acme-corp-tenant-12\",\n  userId = \"user-84\",\n  urlId = \"news/2026/market-update\",\n  fromCommentId = \"cmt-20251234\",\n  viewed = false\n)\n\nif response.isSome:\n  let notificationData = response.get()\n  echo \"Received notification data\"\nelse:\n  echo \"No notification data\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 938
+}

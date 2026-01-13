@@ -1,0 +1,9 @@
+{
+  "method": "create_question_result",
+  "signatureHash": "4ec6f3a75e4e1a5080587e5276b4db308782be5376f533d262486dbeb81f1a1d",
+  "generatedAt": "2026-01-12T21:59:11.285Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateQuestionResultParams = CreateQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_question_result_body: models::CreateQuestionResultBody {\n            question_id: \"feedback-article-2026\".to_string(),\n            comment_id: Some(\"cmt-2026-001\".to_string()),\n            user_id: Some(\"reader-007\".to_string()),\n            answer: \"yes\".to_string(),\n            score: Some(4),\n            metadata: Some(std::collections::HashMap::from([(\n                \"path\".to_string(),\n                \"news/politics/2026-election\".to_string(),\n            )])),\n            anonymous: Some(false),\n            submitted_at: Some(\"2026-01-12T09:15:00Z\".to_string()),\n        },\n    };\n\n    let created: CreateQuestionResult200Response = create_question_result(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 1434
+}

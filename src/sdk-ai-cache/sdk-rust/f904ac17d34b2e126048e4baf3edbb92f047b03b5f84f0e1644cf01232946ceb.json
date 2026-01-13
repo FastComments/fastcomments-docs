@@ -1,0 +1,9 @@
+{
+  "method": "vote_comment",
+  "signatureHash": "f904ac17d34b2e126048e4baf3edbb92f047b03b5f84f0e1644cf01232946ceb",
+  "generatedAt": "2026-01-12T22:02:43.643Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: VoteCommentParams = VoteCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-78f2a1\".to_string(),\n        url_id: \"news/article/2026/01/12/market-update\".to_string(),\n        broadcast_id: \"bcast-20260112\".to_string(),\n        vote_body_params: models::VoteBodyParams { value: 1 },\n        session_id: Some(\"sess-9f8c7a\".to_string()),\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let response: VoteComment200Response = vote_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 484,
+  "completionTokens": 1197
+}

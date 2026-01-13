@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "8ebcdce8635a8bef1d90e02b51c2d3804084143c32279d7780dc5838547d5762",
+  "generatedAt": "2026-01-12T20:36:41.277Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto paramsPtr = std::make_shared<CreateFeedPostParams>();\nparamsPtr->title = utility::string_t(U(\"Weekly Release Notes\"));\nparamsPtr->content = utility::string_t(U(\"We've deployed version 2.4.1 with bug fixes and UX improvements.\"));\nparamsPtr->authorEmail = utility::string_t(U(\"alice@example.com\"));\nboost::optional<utility::string_t> broadcastId = utility::string_t(U(\"broadcast-456\"));\nboost::optional<utility::string_t> sso = utility::string_t(U(\"sso-token-abc123\"));\napi->createFeedPostPublic(tenantId, *paramsPtr, broadcastId, sso)\n    .then([](pplx::task<std::shared_ptr<CreateFeedPostPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) std::cout << \"Feed post created successfully\\n\";\n        } catch (const std::exception& e) {\n            std::cerr << \"Failed to create feed post: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 374,
+  "completionTokens": 2491
+}

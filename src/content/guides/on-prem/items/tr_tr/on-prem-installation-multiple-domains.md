@@ -1,0 +1,2 @@
+On-Prem FastComments kurulumunuz, örneğin `app.mycorp.org` ve `hr.mycorp.org` gibi birden fazla dahili domaine yorum sağlayabilir. Bunları yapılandırabilirsiniz
+ayrı ayrı ancak bunların bireysel davranışlarını yapılandırmak için ayrı Customization Rules oluşturarak bunları tek bir On-Prem kurulumu üzerinde barındırabilirsiniz.

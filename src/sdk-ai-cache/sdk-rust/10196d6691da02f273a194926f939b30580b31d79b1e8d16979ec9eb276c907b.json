@@ -1,0 +1,9 @@
+{
+  "method": "create_tenant_user",
+  "signatureHash": "10196d6691da02f273a194926f939b30580b31d79b1e8d16979ec9eb276c907b",
+  "generatedAt": "2026-01-12T21:59:01.557Z",
+  "codeExample": "let create_tenant_user_body: models::CreateTenantUserBody = models::CreateTenantUserBody {\n    email: \"jane.doe@acme.com\".to_string(),\n    display_name: Some(\"Jane Doe\".to_string()),\n    role: Some(\"moderator\".to_string()),\n    external_id: Some(\"acme-12345\".to_string()),\n    subscribed_to_digest: Some(false),\n};\nlet params: CreateTenantUserParams = CreateTenantUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_tenant_user_body,\n};\nlet response: CreateTenantUser200Response = create_tenant_user(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 918
+}

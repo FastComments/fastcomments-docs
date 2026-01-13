@@ -1,0 +1,1 @@
+귀하의 멤버들은 회신되거나 언급될 때 다른 FastComments.com 사용자와 동일한 알림을 받습니다. [자세히 알아보기](/guide-notifications.html).

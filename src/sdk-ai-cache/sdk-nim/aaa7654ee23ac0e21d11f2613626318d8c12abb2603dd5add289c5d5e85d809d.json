@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "aaa7654ee23ac0e21d11f2613626318d8c12abb2603dd5add289c5d5e85d809d",
+  "generatedAt": "2026-01-12T21:57:18.192Z",
+  "codeExample": "let replaceBody = ReplaceTenantUserBody(name: \"Jane Doe\", email: \"jane.doe@example.com\", roles: @[\"moderator\", \"contributor\"], banned: false)\nlet (response, httpResponse) = client.replaceTenantUser(tenantId = \"my-tenant-123\", id = \"user-789\", replaceTenantUserBody = replaceBody, updateComments = \"true\")\nif response.isSome:\n  let updated = response.get()\n  echo updated\nelse:\n  echo \"No response returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1333
+}

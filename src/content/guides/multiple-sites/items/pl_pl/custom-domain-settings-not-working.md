@@ -1,0 +1,3 @@
+Jeśli podczas testów zauważysz, że ustawienia nazwy nadawcy/adresu e-mail/logo określone powyżej nie działają, może to być spowodowane tym, że
+ustawienia te mają zastosowanie tylko do wiadomości e-mail, które można powiązać z domeną. Oznacza to, że ustawienia te *nie dotyczą większości e-maili administracyjnych*, jednak
+gdy komentujący otrzymają powiadomienia e-mail, wówczas będą używane Twoje ustawienia.

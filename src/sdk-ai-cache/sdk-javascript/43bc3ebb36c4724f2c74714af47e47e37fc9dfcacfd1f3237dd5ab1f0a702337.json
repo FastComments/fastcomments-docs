@@ -1,0 +1,9 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "43bc3ebb36c4724f2c74714af47e47e37fc9dfcacfd1f3237dd5ab1f0a702337",
+  "generatedAt": "2025-11-22T05:32:50.756Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst domainToUpdate: string = 'comments.acme.com';\nconst updateDomainConfigParams: UpdateDomainConfigParams = {\n  enableSsl: true,\n  certificateProvider: 'letsencrypt',\n  redirectHttpToHttps: true, // optional parameter demonstrated\n  customCssUrl: 'https://cdn.acme.com/widgets/comments.css',\n  moderationMode: 'pre-moderation',\n  allowedOrigins: ['https://www.acme.com', 'https://blog.acme.com']\n};\nconst updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);",
+  "model": "gpt-5-mini",
+  "promptTokens": 257,
+  "completionTokens": 788
+}

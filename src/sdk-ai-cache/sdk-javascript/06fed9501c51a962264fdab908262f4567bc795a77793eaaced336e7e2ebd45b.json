@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "06fed9501c51a962264fdab908262f4567bc795a77793eaaced336e7e2ebd45b",
+  "generatedAt": "2025-11-22T05:32:29.158Z",
+  "codeExample": "const tenantId: string = 'tenant_9b7f2c';\nconst email: string = 'jane.doe@acme-corp.com';\nconst response: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId, email);\nconst user: APISSOUser | undefined = (response as unknown as { user?: APISSOUser }).user;\nconst emailVerified: boolean | undefined = user?.emailVerified;",
+  "model": "gpt-5-mini",
+  "promptTokens": 250,
+  "completionTokens": 873
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "54db7f5ea140ef5cb7bc1a031efd29da3b5ebfaa356916d22b90ebc11d8da2d0",
+  "generatedAt": "2026-01-12T21:52:38.926Z",
+  "codeExample": "const tenantId: string = 'tenant_8d3f2b4a9c';\nconst domain: string = 'comments.myproduct.io';\nconst response: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId, domain);\n// Optional post-delete handler (demonstrates optional parameter usage)\nconst onDeleted?: (res: DeleteDomainConfig200Response) => void = (res) => { /* notify admin, refresh UI */ };\nonDeleted?.(response);",
+  "model": "gpt-5-mini",
+  "promptTokens": 250,
+  "completionTokens": 1002
+}

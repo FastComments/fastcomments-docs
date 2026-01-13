@@ -1,0 +1,9 @@
+{
+  "method": "deletePage",
+  "signatureHash": "45369c969e0eb988d5b86f0d2ba98f0d0248a6e4c3fda1cd585e0c975902a69e",
+  "generatedAt": "2025-11-20T22:23:07.347Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t pageId = U(\"page-456\");\nboost::optional<utility::string_t> requestTag = boost::none;\napi->deletePage(tenantId, pageId)\n.then([](std::shared_ptr<DeletePageAPIResponse> resp) {\n    if (resp) {\n        auto copy = std::make_shared<DeletePageAPIResponse>(*resp);\n        (void)copy;\n    }\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 326,
+  "completionTokens": 1393
+}

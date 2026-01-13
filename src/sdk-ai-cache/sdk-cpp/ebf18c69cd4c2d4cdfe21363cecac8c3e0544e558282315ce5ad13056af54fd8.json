@@ -1,0 +1,9 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "ebf18c69cd4c2d4cdfe21363cecac8c3e0544e558282315ce5ad13056af54fd8",
+  "generatedAt": "2026-01-12T20:33:05.065Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nboost::optional<bool> deleteComments(true);\nboost::optional<utility::string_t> commentDeleteMode(U(\"soft_delete\"));\n\napi->deleteSSOUser(tenantId, id, deleteComments, commentDeleteMode)\n    .then([](pplx::task<std::shared_ptr<DeleteSSOUserAPIResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto fallback = std::make_shared<DeleteSSOUserAPIResponse>();\n            if (resp) { (void)resp; } else { (void)fallback; }\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 367,
+  "completionTokens": 2469
+}

@@ -1,0 +1,1 @@
+Per la documentazione completa sul SSO di FastComments, consultare la [documentazione di FastComments](https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso).

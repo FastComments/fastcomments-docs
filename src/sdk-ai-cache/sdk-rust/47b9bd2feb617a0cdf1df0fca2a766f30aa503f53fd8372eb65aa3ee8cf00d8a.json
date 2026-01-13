@@ -1,0 +1,9 @@
+{
+  "method": "delete_feed_post_public",
+  "signatureHash": "47b9bd2feb617a0cdf1df0fca2a766f30aa503f53fd8372eb65aa3ee8cf00d8a",
+  "generatedAt": "2026-01-12T22:01:49.074Z",
+  "codeExample": "async fn run_delete() -> Result<DeleteFeedPostPublic200Response, Error> {\n    let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_id: \"news/article-2026-01-12-12345\".to_string(),\n        broadcast_id: Some(\"broadcast-9876\".to_string()),\n        sso: Some(\"sso-token-abcdef123456\".to_string()),\n    };\n    let response: DeleteFeedPostPublic200Response = delete_feed_post_public(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 843
+}

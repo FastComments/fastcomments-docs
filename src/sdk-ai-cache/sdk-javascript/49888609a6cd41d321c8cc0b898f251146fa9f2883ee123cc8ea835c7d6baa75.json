@@ -1,0 +1,9 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "49888609a6cd41d321c8cc0b898f251146fa9f2883ee123cc8ea835c7d6baa75",
+  "generatedAt": "2025-11-22T05:32:25.144Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-9a8b';\nconst userId: string = 'user_73f2b6';\nconst sessionSegment: string | undefined = undefined; // optional segment appended when present\nconst effectiveId: string = sessionSegment ? `${userId}:${sessionSegment}` : userId;\nconst result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, effectiveId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 250,
+  "completionTokens": 1066
+}

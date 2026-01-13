@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "a2079749df1857d8021875bc790f9f2203799c942e92205d4f4ad7223fa6c6b1",
+  "generatedAt": "2026-01-12T20:36:50.205Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"/articles/2026/fastcomments-cpp-integration\");\nutility::string_t broadcastId = U(\"broadcast-001\");\nCommentData commentData;\ncommentData.content = U(\"Hello from the C++ SDK — great article!\");\ncommentData.authorEmail = U(\"reader@example.com\");\ncommentData.authorName = U(\"Jane Reader\");\nboost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(U(\"sess-9f3a2\"));\nboost::optional<utility::string_t> sso = boost::none;\nauto task = api->createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso)\n    .then([](pplx::task<std::shared_ptr<CreateCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto resultCopy = std::make_shared<CreateCommentPublic_200_response>(*resp);\n            }\n        } catch (const std::exception&) {}\n    });\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 382,
+  "completionTokens": 2233
+}

@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "eeb8820402a128418d0731b0841a596cc7eb6ee770aac47556dcb06f60f72c81",
+  "generatedAt": "2026-01-12T20:38:29.025Z",
+  "codeExample": "const tenantId: string = 'tenant_abc123';\nconst questionIds: string[] = ['q_101', 'q_102'];\nconst startDate: Date = new Date('2025-01-01T00:00:00Z');\nconst limit: number = 200;\nconst result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults({\n  tenantId,\n  questionIds,\n  startDate,\n  forceRecalculate: true,\n  minValue: 0,\n  maxValue: 100,\n  limit\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 492,
+  "completionTokens": 1084
+}

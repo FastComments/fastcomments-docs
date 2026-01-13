@@ -1,0 +1,9 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "d84eb672642527423f2f7ce652bf378323b1bb12022ff262aad25d26634469ba",
+  "generatedAt": "2025-11-22T05:31:58.156Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-tenant-904\";\n  const id: string = \"cmt_7f84d2a9\";\n  const contextUserId: string = \"moderator_21\";\n  const isLive: boolean = true;\n  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 404,
+  "completionTokens": 678
+}

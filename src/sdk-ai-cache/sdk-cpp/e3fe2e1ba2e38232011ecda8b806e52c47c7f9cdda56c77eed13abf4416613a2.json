@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "e3fe2e1ba2e38232011ecda8b806e52c47c7f9cdda56c77eed13abf4416613a2",
+  "generatedAt": "2026-01-12T20:35:38.170Z",
+  "codeExample": "auto params = std::make_shared<CreateCommentParams>();\nparams->content = utility::conversions::to_string_t(\"This is a test comment on the product page\");\nparams->authorEmail = utility::conversions::to_string_t(\"jane.doe@example.com\");\nparams->authorName = utility::conversions::to_string_t(\"Jane Doe\");\nparams->threadId = utility::conversions::to_string_t(\"product-123-thread\");\n\nboost::optional<bool> isLive(true);\nboost::optional<bool> doSpamCheck(true);\nboost::optional<bool> sendEmails(false);\nboost::optional<bool> populateNotifications(true);\n\napi->saveComment(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    *params,\n    isLive,\n    doSpamCheck,\n    sendEmails,\n    populateNotifications\n).then([](pplx::task<std::shared_ptr<SaveComment_200_response>> t) {\n    try {\n        auto resp = t.get();\n        (void)resp;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 1831
+}

@@ -1,0 +1,9 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "98f5164df23cde1f1848ac7ef90d4b09f24bbccd17f5427ae115eb7964d80b0d",
+  "generatedAt": "2026-01-12T21:53:59.981Z",
+  "codeExample": "const tag: string = 'release-2026';\nconst tenantId: string = 'tenant_42';\nconst updateHashTagBody: UpdateHashTagBody = {\n  displayName: 'Release 2026',\n  description: 'Discussions and notes for the 2026 product release',\n  isActive: true\n};\nconst result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 431,
+  "completionTokens": 867
+}

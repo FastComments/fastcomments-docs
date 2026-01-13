@@ -1,0 +1,9 @@
+{
+  "method": "saveComment",
+  "signatureHash": "33ae990ff4bf56898dd74e835dca5801be1063d9f7d304a9ac87860d474a3a8e",
+  "generatedAt": "2026-01-12T21:57:19.180Z",
+  "codeExample": "let createParams = CreateCommentParams(\n  content = \"Great article — helped me understand async patterns.\",\n  authorName = \"Alex Morgan\",\n  authorEmail = \"alex.morgan@example.com\",\n  url = \"news/my-company-launches-new-api\",\n  parentId = \"\",\n  tags = @[\"api\", \"launch\"]\n)\n\nlet (response, httpResponse) = client.saveComment(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = createParams,\n  isLive = true,\n  doSpamCheck = true,\n  sendEmails = false,\n  populateNotifications = true\n)\n\nif response.isSome:\n  let saved = response.get()\n  echo \"Saved comment id: \", saved.id",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 988
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "21a294a360f04872d183df5536d37403133048310f2dc888317960f689736ce4",
+  "generatedAt": "2026-01-12T21:57:32.981Z",
+  "codeExample": "let updateBody = UpdateModeratorBody(\n  name: \"Alicia Gomez\",\n  email: \"alicia.gomez@dailynews.com\",\n  active: true,\n  roles: @[\"moderator\"]\n)\n\nlet (response, httpResponse) = client.updateModerator(tenantId = \"my-tenant-123\", id = \"moderator-789\", updateModeratorBody = updateBody)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Moderator updated:\", updated",
+  "model": "gpt-5-mini",
+  "promptTokens": 402,
+  "completionTokens": 1069
+}

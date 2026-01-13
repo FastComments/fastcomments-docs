@@ -1,0 +1,9 @@
+{
+  "method": "create_user_badge",
+  "signatureHash": "b49d1a3cdf96b25fd948931987d56c3d2ddfe8add39571b28c383fc07dccaaec",
+  "generatedAt": "2025-11-21T23:52:12.401Z",
+  "codeExample": "let params: CreateUserBadgeParams = CreateUserBadgeParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_user_badge_params: models::CreateUserBadgeParams {\n        name: \"Top Contributor\".to_string(),\n        description: Some(\"Awarded for 100 helpful comments\".to_string()),\n        icon_url: Some(\"https://acme-corp.com/assets/badges/top_contributor.png\".to_string()),\n        criteria: Some(\"100_helpful_comments\".to_string()),\n        weight: Some(10),\n        active: Some(true),\n    },\n};\n\nlet response: CreateUserBadge200Response = create_user_badge(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 440,
+  "completionTokens": 984
+}

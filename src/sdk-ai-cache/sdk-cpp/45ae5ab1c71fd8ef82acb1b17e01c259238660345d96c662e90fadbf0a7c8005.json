@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "45ae5ab1c71fd8ef82acb1b17e01c259238660345d96c662e90fadbf0a7c8005",
+  "generatedAt": "2026-01-12T20:37:14.166Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\nstd::shared_ptr<GetUserNotificationCount_200_response> result;\napi->getUserNotificationCount(tenantId, sso)\n.then([&result](pplx::task<std::shared_ptr<GetUserNotificationCount_200_response>> t) {\n    try {\n        result = t.get();\n        if (!result) result = std::make_shared<GetUserNotificationCount_200_response>();\n    } catch (...) {\n        result = std::make_shared<GetUserNotificationCount_200_response>();\n    }\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 345,
+  "completionTokens": 1244
+}

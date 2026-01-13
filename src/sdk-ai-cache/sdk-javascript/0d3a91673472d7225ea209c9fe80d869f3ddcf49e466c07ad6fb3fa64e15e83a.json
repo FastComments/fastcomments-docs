@@ -1,0 +1,9 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "0d3a91673472d7225ea209c9fe80d869f3ddcf49e466c07ad6fb3fa64e15e83a",
+  "generatedAt": "2026-01-12T21:54:54.057Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_42\";\n  const pageSize: number = 25;\n  const afterId: string = \"notif_987654321\";\n  const includeContext: boolean = true;\n  const afterCreatedAt: number = Date.now() - 7 * 24 * 60 * 60 * 1000;\n  const unreadOnly: boolean = true;\n  const dmOnly: boolean = false;\n  const noDm: boolean = false;\n  const includeTranslations: boolean = true;\n  const sso: string = \"sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\n  const result: GetUserNotifications200Response = await getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 499,
+  "completionTokens": 1172
+}

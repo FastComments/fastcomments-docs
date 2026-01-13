@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "6b61bf770bbdaa79c8b3ebf21de856c5bfd6a472d91a82fb7601a20c89f52201",
+  "generatedAt": "2025-11-20T22:24:17.290Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user-9876\");\nauto paramsPtr = std::make_shared<UpdateUserBadgeParams>();\nparamsPtr->name = utility::string_t(U(\"Community Moderator\"));\nparamsPtr->color = utility::string_t(U(\"#4CAF50\"));\nboost::optional<utility::string_t> note = boost::optional<utility::string_t>(U(\"Recognized contributor\"));\nparamsPtr->note = note;\nparamsPtr->active = true;\napi->updateUserBadge(tenantId, id, *paramsPtr)\n    .then([](pplx::task<std::shared_ptr<UpdateUserBadge_200_response>> task) {\n        try {\n            auto resp = task.get();\n            (void)resp;\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 349,
+  "completionTokens": 1465
+}

@@ -1,0 +1,9 @@
+{
+  "method": "delete_tenant_package",
+  "signatureHash": "4fb8ae3a1904dc780869806e3f9b56a12c15c017c4cff80ce3515d7039a809f0",
+  "generatedAt": "2026-01-12T21:59:36.694Z",
+  "codeExample": "let params: DeleteTenantPackageParams = DeleteTenantPackageParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"pkg-news-comments-2025-01\".to_string(),\n    cascade: Some(true),\n};\nlet response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 1105
+}

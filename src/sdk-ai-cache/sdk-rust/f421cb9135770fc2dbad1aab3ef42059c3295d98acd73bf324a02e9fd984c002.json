@@ -1,0 +1,9 @@
+{
+  "method": "get_page_by_urlid",
+  "signatureHash": "f421cb9135770fc2dbad1aab3ef42059c3295d98acd73bf324a02e9fd984c002",
+  "generatedAt": "2026-01-12T22:00:11.054Z",
+  "codeExample": "async fn fetch_page() -> Result<GetPageByUrlidApiResponse, Error> {\n    let params: GetPageByUrlidParams = GetPageByUrlidParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/2026/product-launch\".to_string(),\n        include_comments: Some(true),\n    };\n    let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;\n    Ok(page)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 312,
+  "completionTokens": 1137
+}

@@ -1,0 +1,9 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "7826cd1ac42e2b5be01e8851702c03b3ea87adcb9c092fc019cb45c0704137f5",
+  "generatedAt": "2026-01-12T21:55:29.313Z",
+  "codeExample": "let bulkBody = BulkCreateHashTagsBody(\n  tags = @[\"breaking\", \"world-news\", \"economy\"],\n  createdBy = \"editor@dailynews.com\",\n  replaceExisting = false\n)\nlet (response, httpResponse) = client.addHashTagsBulk(tenantId = \"newsroom-tenant-42\", bulkCreateHashTagsBody = bulkBody)\nif response.isSome:\n  let created = response.get()\n  echo created\nelse:\n  echo \"AddHashTagsBulk failed:\", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 404,
+  "completionTokens": 1075
+}

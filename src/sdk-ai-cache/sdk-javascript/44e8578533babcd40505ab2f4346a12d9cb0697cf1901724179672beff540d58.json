@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "44e8578533babcd40505ab2f4346a12d9cb0697cf1901724179672beff540d58",
+  "generatedAt": "2026-01-12T21:53:45.709Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-inc-tenant-001';\n  const userId: string = 'user-842391';\n  const badgeProgress: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, userId);\n  console.log(badgeProgress);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 416,
+  "completionTokens": 782
+}

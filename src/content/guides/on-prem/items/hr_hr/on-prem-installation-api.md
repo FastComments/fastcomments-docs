@@ -1,0 +1,2 @@
+Pristup API-ju je moguć na isti način kao i kod uobičajenog SaaS proizvoda — prijavite se u On-Prem nadzornu ploču kako biste stvorili API ključeve i koristili te ključeve za pristup API-ju. API
+endpoints su isti on-prem kao i za SaaS proizvod.

@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "048267a8e6850c288f7ee8f9850047e7645fd5b6187514339bc6d1d3e3000867",
+  "generatedAt": "2025-11-20T22:23:26.704Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto page = boost::optional<int32_t>(1);\nauto limit = boost::optional<int32_t>(25);\nauto asTree = boost::optional<bool>(true);\nauto maxDepth = boost::optional<int32_t>(3);\nauto urlId = boost::optional<utility::string_t>(utility::string_t(U(\"/articles/2025/cpp-async\")));\nauto userId = boost::optional<utility::string_t>(utility::string_t(U(\"user@example.com\")));\nauto contextUserId = boost::optional<utility::string_t>(utility::string_t(U(\"ctx-user-42\")));\nauto direction = boost::optional<SortDirections>(SortDirections::DESC);\n\napi->getComments(\n    tenantId,\n    page,\n    limit,\n    boost::optional<int32_t>(), \n    asTree,\n    boost::optional<int32_t>(),\n    boost::optional<int32_t>(),\n    maxDepth,\n    urlId,\n    userId,\n    boost::optional<utility::string_t>(),\n    contextUserId,\n    boost::optional<utility::string_t>(),\n    boost::optional<utility::string_t>(),\n    direction\n).then([](std::shared_ptr<GetComments_200_response> resp){\n    if (!resp) return;\n    auto copy = std::make_shared<GetComments_200_response>(*resp);\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 542,
+  "completionTokens": 1834
+}

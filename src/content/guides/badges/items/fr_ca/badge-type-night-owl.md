@@ -1,0 +1,3 @@
+Le badge `Night Owl` est décerné en fonction du fait que l'utilisateur commente la nuit dans son fuseau horaire local. Cela aide les utilisateurs à se sentir spéciaux lorsqu'ils interagissent avec votre site en dehors des heures normales, ce qui peut témoigner de leur dévouement.
+
+Actuellement, les commentaires laissés entre 22 h et 4 h sont pris en compte pour ce badge et cela n'est pas configurable.

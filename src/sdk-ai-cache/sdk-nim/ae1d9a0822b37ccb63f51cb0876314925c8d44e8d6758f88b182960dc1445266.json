@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "ae1d9a0822b37ccb63f51cb0876314925c8d44e8d6758f88b182960dc1445266",
+  "generatedAt": "2026-01-12T21:56:44.787Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantPackages(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let packages = response.get()\n  echo \"Received packages for tenant:\", \" my-tenant-123\"\n  echo packages\nelse:\n  echo \"No packages found, status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 392,
+  "completionTokens": 532
+}

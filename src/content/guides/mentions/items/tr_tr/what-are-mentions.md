@@ -1,0 +1,2 @@
+Mentions ya da `@mentions`, FastComments'ın otomatik tamamlama aracılığıyla etiketlenecek kullanıcıları aramanıza ve ardından onlara etiketlendiklerini bildiren bildirimler
+göndermenize olanak tanıyan bir özelliğidir.

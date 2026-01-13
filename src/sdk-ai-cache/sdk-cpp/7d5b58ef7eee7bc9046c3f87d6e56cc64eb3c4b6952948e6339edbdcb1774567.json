@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "7d5b58ef7eee7bc9046c3f87d6e56cc64eb3c4b6952948e6339edbdcb1774567",
+  "generatedAt": "2026-01-12T20:36:36.463Z",
+  "codeExample": "utility::string_t tenantId(U(\"my-tenant-123\"));\nutility::string_t commentId(U(\"cmt-456\"));\nutility::string_t broadcastId(U(\"brd-789\"));\nboost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(utility::string_t(U(\"editkey-abc123\")));\nboost::optional<utility::string_t> sso; \n\napi->deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)\n.then([](pplx::task<std::shared_ptr<DeleteCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copied = std::make_shared<DeleteCommentPublic_200_response>(*resp);\n            (void)copied;\n        }\n    } catch (const std::exception&) {\n        auto fallback = std::make_shared<DeleteCommentPublic_200_response>();\n        (void)fallback;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 374,
+  "completionTokens": 1304
+}

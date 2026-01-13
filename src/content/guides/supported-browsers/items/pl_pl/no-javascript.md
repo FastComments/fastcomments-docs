@@ -1,0 +1,1 @@
+Nasz widżet komentarzy wymaga przeglądarki, która obsługuje co najmniej standardy JavaScript ES6, aby zapewnić bogate interaktywne doświadczenie.

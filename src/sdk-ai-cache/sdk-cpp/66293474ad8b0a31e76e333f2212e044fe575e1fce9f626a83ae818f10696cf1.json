@@ -1,0 +1,9 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "66293474ad8b0a31e76e333f2212e044fe575e1fce9f626a83ae818f10696cf1",
+  "generatedAt": "2026-01-12T20:32:51.091Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(U(\"my-tenant-123\"));\nutility::string_t domain = utility::string_t(U(\"comments.example.com\"));\nboost::optional<utility::string_t> requestId = utility::string_t(U(\"trace-789\"));\nauto fallback = std::make_shared<DeleteDomainConfig_200_response>();\napi->deleteDomainConfig(tenantId, domain)\n    .then([fallback, requestId](pplx::task<std::shared_ptr<DeleteDomainConfig_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                *fallback = *resp;\n            }\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 334,
+  "completionTokens": 1447
+}

@@ -1,0 +1,36 @@
+## Parameters
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
+
+## Response
+
+Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentPublic200Response.swift)
+
+## Example
+
+[inline-code-attrs-start title = 'deleteTenantUser Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// The following code samples are still in beta. If you encounter any issues, please report them at http://github.com/OpenAPITools/openapi-generator/issues/new
+import FastCommentsSwift
+
+let tenantId = "tenantId_example" // String | 
+let id = "id_example" // String | 
+let deleteComments = "deleteComments_example" // String |  (optional)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (optional)
+
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+[inline-code-end]

@@ -1,0 +1,9 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "7a3f81d7b498227236b2a99ca80304db7ed8afc7782284ac8c4db4ddbb5708f0",
+  "generatedAt": "2025-11-22T05:31:59.847Z",
+  "codeExample": "const tenantId: string = 'tenant_84b2f1e';\nconst id: string = 'ssouser_5a9c3d2';\nconst deleteComments: boolean = true;\nconst commentDeleteMode: string = 'permanent';\nconst response: DeleteSSOUserAPIResponse = await deleteSSOUser(tenantId, id, deleteComments, commentDeleteMode);",
+  "model": "gpt-5-mini",
+  "promptTokens": 263,
+  "completionTokens": 538
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "f8b8c8773d5ac13c4849171467d117a31ae1573840639d8aa07662886895f7a8",
+  "generatedAt": "2026-01-12T21:58:08.822Z",
+  "codeExample": "let (response, httpResponse) = client.getUserReactsPublic(tenantId = \"my-tenant-123\", postIds = @[\"post-987\", \"post-654\"], sso = \"sso-token-abc123\")\nif response.isSome:\n  let reacts = response.get()\n  echo \"Received reacts:\", repr(reacts)\nelse:\n  echo \"No reacts returned, HTTP status:\", $httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 413,
+  "completionTokens": 738
+}

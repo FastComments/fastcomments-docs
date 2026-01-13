@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "ed91983b9b548c95df00c295c465518906b5275090cb3d90ca6ffaa3e7b9da22",
+  "generatedAt": "2026-01-12T20:34:33.903Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = boost::optional<double>(20);\napi->getTenantUsers(tenantId, skip)\n    .then([=](pplx::task<std::shared_ptr<GetTenantUsers_200_response>> t) {\n        try {\n            std::shared_ptr<GetTenantUsers_200_response> resp = t.get();\n            if (!resp) resp = std::make_shared<GetTenantUsers_200_response>();\n            (void)resp;\n        } catch (const std::exception& ex) {\n            (void)ex;\n            std::shared_ptr<GetTenantUsers_200_response> err = std::make_shared<GetTenantUsers_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1125
+}

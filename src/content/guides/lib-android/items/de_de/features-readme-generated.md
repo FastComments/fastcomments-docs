@@ -1,0 +1,10 @@
+- 🔄 Live-Kommentare mit Echtzeit-Updates
+- 📱 Native Android UI-Komponenten
+- 🧵 Thread-basierte Diskussionen mit Antworten
+- 👤 Sichere SSO-Authentifizierung
+- 👍 Abstimmungssystem mit anpassbaren Stilen
+- 🔔 Benutzerbenachrichtigungen und Präsenz
+- 🔍 Moderationsfunktionen für Kommentare
+- 📱 Integration sozialer Feeds
+- ♾️ Unendliche Scroll-Paginierung
+- 🎨 Umfassendes Theming

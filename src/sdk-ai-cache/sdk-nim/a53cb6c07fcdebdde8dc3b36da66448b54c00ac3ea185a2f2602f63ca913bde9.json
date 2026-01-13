@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "a53cb6c07fcdebdde8dc3b36da66448b54c00ac3ea185a2f2602f63ca913bde9",
+  "generatedAt": "2026-01-12T21:55:52.666Z",
+  "codeExample": "let (response, httpResponse) = client.createFeedPost(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = CreateFeedPostParams(\n    title = \"Breaking: Major Storm Hits City\",\n    content = \"A severe storm caused widespread outages and travel delays across the metro area.\",\n    authorId = \"author-789\",\n    url = \"news/major-storm\",\n    tags = @[\"weather\", \"breaking\"],\n    attachments = @[]\n  ),\n  broadcastId = \"\",\n  isLive = false,\n  doSpamCheck = false,\n  skipDupCheck = false\n)\n\nif response.isSome:\n  let created = response.get()\n  echo \"Feed post created:\", created",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1563
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getVotes",
+  "signatureHash": "5a9129f73bbc86293b33c71531af4f58076fe51cd2b4d4d6351b4aafbae72fc0",
+  "generatedAt": "2026-01-12T21:53:54.899Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b3c_prod';\nconst urlId: string = '/news/2026/typescript-ecosystem-update';\nconst votes: GetVotes200Response = await getVotes(tenantId, urlId);\n// If an optional parameter existed, e.g. includeHidden, it might be used like:\n// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });",
+  "model": "gpt-5-mini",
+  "promptTokens": 404,
+  "completionTokens": 1066
+}

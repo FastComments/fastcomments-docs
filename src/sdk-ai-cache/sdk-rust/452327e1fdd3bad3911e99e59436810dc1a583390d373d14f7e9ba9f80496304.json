@@ -1,0 +1,9 @@
+{
+  "method": "render_email_template",
+  "signatureHash": "452327e1fdd3bad3911e99e59436810dc1a583390d373d14f7e9ba9f80496304",
+  "generatedAt": "2026-01-12T22:01:31.307Z",
+  "codeExample": "let params: RenderEmailTemplateParams = RenderEmailTemplateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    render_email_template_body: models::RenderEmailTemplateBody {\n        template_id: \"comment-notification\".to_string(),\n        subject: Some(\"New comment on your article\".to_string()),\n        placeholders: std::collections::HashMap::from([\n            (\"article_title\".to_string(), \"Rust Gains Momentum in 2026\".to_string()),\n            (\"comment_author\".to_string(), \"Jane Doe\".to_string()),\n            (\"comment_snippet\".to_string(), \"Great insights — thanks for sharing!\".to_string()),\n        ]),\n    },\n    locale: Some(\"en-US\".to_string()),\n};\nlet rendered: RenderEmailTemplate200Response = render_email_template(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 1331
+}

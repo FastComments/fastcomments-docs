@@ -1,0 +1,1 @@
+Ovaj bedž se dodeljuje kada su komentari označeni kao da nisu spam. Podrazumevano se naziva `Not Spam`.

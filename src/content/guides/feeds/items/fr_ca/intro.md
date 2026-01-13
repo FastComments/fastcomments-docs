@@ -1,0 +1,3 @@
+Les flux FastComments vous permettent de créer des fils de contenu de type social avec une prise en charge complète sur le web, Android natif et iOS. Cette fonctionnalité puissante vous permet de créer des expériences de contenu dynamiques et engageantes qui peuvent être personnalisées et adaptées à différents publics et régions.
+
+Les flux prennent en charge le contenu textuel et image, et les images sont stockées aux tailles d'appareils populaires.

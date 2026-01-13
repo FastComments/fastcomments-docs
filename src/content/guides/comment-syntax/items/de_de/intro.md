@@ -1,0 +1,2 @@
+Hier behandeln wir das FastComments-Kommentarformat, die beim Schreiben von Kommentaren unterstützten Funktionen,
+wie man Text formatiert und die verschiedenen Filter und Sicherheitsmaßnahmen, die im System integriert sind.

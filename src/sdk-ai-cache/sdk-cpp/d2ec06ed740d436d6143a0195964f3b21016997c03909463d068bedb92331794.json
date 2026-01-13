@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "d2ec06ed740d436d6143a0195964f3b21016997c03909463d068bedb92331794",
+  "generatedAt": "2026-01-12T20:36:03.297Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto configId = utility::string_t(U(\"question-config-456\"));\nauto body = std::make_shared<UpdateQuestionConfigBody>();\nbody->enabled = true;\nbody->threshold = 5;\nbody->moderatorEmail = utility::string_t(U(\"moderator@example.com\"));\nbody->notifyUsers = boost::optional<bool>(true);\nbody->description = boost::optional<utility::string_t>(utility::string_t(U(\"Tighten question moderation for new users\")));\n\napi->updateQuestionConfig(tenantId, configId, *body)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            std::cout << (resp ? \"updateQuestionConfig succeeded\\n\" : \"updateQuestionConfig returned null\\n\");\n        } catch (const std::exception& e) {\n            std::cerr << \"updateQuestionConfig failed: \" << e.what() << '\\n';\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 1449
+}

@@ -1,0 +1,1 @@
+Onze reactie-widget vereist een browser die minimaal ES6 JavaScript-standaarden ondersteunt om een rijke, interactieve ervaring te bieden.

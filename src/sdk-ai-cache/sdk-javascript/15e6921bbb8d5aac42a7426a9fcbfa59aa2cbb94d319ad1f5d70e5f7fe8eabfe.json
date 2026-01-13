@@ -1,0 +1,9 @@
+{
+  "method": "getPages",
+  "signatureHash": "15e6921bbb8d5aac42a7426a9fcbfa59aa2cbb94d319ad1f5d70e5f7fe8eabfe",
+  "generatedAt": "2025-11-22T05:32:36.307Z",
+  "codeExample": "const tenantId: string = 'acme-inc-78f9';\nconst includeDrafts: boolean | undefined = undefined;\nconst pageSize: number | undefined = 25;\nconst pagesResponse: GetPagesAPIResponse = await getPages(tenantId);\nconst pages: APIPage[] | undefined = (pagesResponse as any).pages;\nconst firstPageTitle: string | undefined = pages?.[0]?.title as string | undefined;",
+  "model": "gpt-5-mini",
+  "promptTokens": 228,
+  "completionTokens": 1379
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "b1a643259f15b017572a132065ef06c46de853c6b20d03b1553f71bead4e5e26",
+  "generatedAt": "2026-01-12T20:36:00.729Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto commentId = utility::string_t(U(\"comment-456\"));\nauto body = std::make_shared<UpdatableCommentParams>();\nbody->content = utility::string_t(U(\"Updated comment text: fixed a typo and clarified meaning.\"));\nboost::optional<utility::string_t> contextUserId(utility::string_t(U(\"user@example.com\")));\nboost::optional<bool> doSpamCheck(true);\nboost::optional<bool> isLive(false);\napi->updateComment(tenantId, commentId, body, contextUserId, doSpamCheck, isLive)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto result = t.get();\n        (void)result;\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 2040
+}

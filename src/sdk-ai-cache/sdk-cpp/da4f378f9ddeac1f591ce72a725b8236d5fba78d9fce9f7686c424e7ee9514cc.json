@@ -1,0 +1,9 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "da4f378f9ddeac1f591ce72a725b8236d5fba78d9fce9f7686c424e7ee9514cc",
+  "generatedAt": "2026-01-12T20:33:59.845Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U(\"https://example.com/posts/42\"));\nboost::optional<utility::string_t> fromCommentId = boost::optional<utility::string_t>(U(\"cmt-98765\"));\nboost::optional<bool> viewed = boost::optional<bool>(true);\nboost::optional<utility::string_t> type = boost::optional<utility::string_t>(U(\"reply\"));\nboost::optional<double> skip = boost::optional<double>(0.0);\n\napi->getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)\n.then([](pplx::task<std::shared_ptr<GetNotifications_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto processed = std::make_shared<GetNotifications_200_response>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 406,
+  "completionTokens": 1601
+}

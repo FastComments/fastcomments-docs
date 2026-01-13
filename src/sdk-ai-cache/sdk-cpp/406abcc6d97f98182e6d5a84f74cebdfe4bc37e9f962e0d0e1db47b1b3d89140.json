@@ -1,0 +1,9 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "406abcc6d97f98182e6d5a84f74cebdfe4bc37e9f962e0d0e1db47b1b3d89140",
+  "generatedAt": "2026-01-12T20:32:53.855Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t eventId = U(\"wh_evt_456\");\nboost::optional<utility::string_t> requestId = boost::optional<utility::string_t>(U(\"req-789\"));\napi->deletePendingWebhookEvent(tenantId, eventId)\n    .then([requestId](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto resultCopy = std::make_shared<FlagCommentPublic_200_response>(*resp);\n                if (requestId) {\n                    (void)requestId.get();\n                }\n                (void)resultCopy;\n            } else {\n                auto fallback = std::make_shared<FlagCommentPublic_200_response>();\n                (void)fallback;\n            }\n        } catch (const std::exception&) {\n            auto errorObj = std::make_shared<FlagCommentPublic_200_response>();\n            (void)errorObj;\n        }\n    }).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 336,
+  "completionTokens": 1704
+}

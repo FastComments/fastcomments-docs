@@ -1,0 +1,9 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "402b64a0fabc5b4f3d9ec1bda6611bd77c742d03c875716e77720d0f8bae186a",
+  "generatedAt": "2026-01-12T21:55:05.577Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-7a1f2b';\nconst commentId: string = 'cmt-9d4e2f7a-12';\nconst broadcastId: string = 'bcast-2026-01-12-live';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4IiwiaWF0IjoxNjQwMDAwMDB9.signature';\n\nconst resultWithoutSso: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId);\nconst resultWithSso: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, ssoToken);",
+  "model": "gpt-5-mini",
+  "promptTokens": 415,
+  "completionTokens": 950
+}

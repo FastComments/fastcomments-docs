@@ -1,0 +1,1 @@
+Beyaz Etiketleme, FastComments.com planlarının birkaçında mevcuttur. Beyaz Etiketleme sunan farklı paketleri görmek için [fiyatlandırmamıza](https://fastcomments.com/traffic-pricing) göz atın.

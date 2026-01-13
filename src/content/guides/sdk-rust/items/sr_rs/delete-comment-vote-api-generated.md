@@ -1,0 +1,17 @@
+## Параметри
+
+| Name | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| vote_id | String | Да |  |
+| url_id | String | Да |  |
+| broadcast_id | String | Да |  |
+| edit_key | String | Не |  |
+| sso | String | Не |  |
+
+## Одговор
+
+Враћа: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_vote_200_response.rs)
+
+---

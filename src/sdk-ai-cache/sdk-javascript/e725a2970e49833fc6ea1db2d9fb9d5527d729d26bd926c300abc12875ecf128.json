@@ -1,0 +1,9 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "e725a2970e49833fc6ea1db2d9fb9d5527d729d26bd926c300abc12875ecf128",
+  "generatedAt": "2026-01-12T20:38:21.711Z",
+  "codeExample": "const tenantId: string = 'tenant_6a9f8b2c';\nconst params: AddDomainConfigParams = {\n  domain: 'comments.myproduct.io',\n  allowedOrigins: ['https://www.myproduct.io', 'https://app.myproduct.io'],\n  enforceHttps: true, // optional parameter\n  description: 'Comments subdomain for product site'\n};\nconst response: AddDomainConfig200Response = await addDomainConfig(tenantId, params);",
+  "model": "gpt-5-mini",
+  "promptTokens": 266,
+  "completionTokens": 938
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "780a65ab3c1a1a627ebfe63546dddc48ceb7b5e0693f0579cb63a6d4999524ce",
+  "generatedAt": "2026-01-12T20:36:08.320Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-987654321\");\nFeedPost feedPost;\nfeedPost.title = U(\"Weekly status update\");\nfeedPost.content = U(\"Completed the migration of the comments service to the new infra.\");\nfeedPost.authorEmail = U(\"developer@acme-corp.com\");\nboost::optional<utility::string_t> summary = boost::optional<utility::string_t>(U(\"Migration complete\"));\nfeedPost.summary = summary;\nauto updateTask = api->updateFeedPost(tenantId, postId, feedPost)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            if (resp) {\n                auto cloned = std::make_shared<FlagCommentPublic_200_response>(*resp);\n            }\n        } catch (...) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 344,
+  "completionTokens": 2063
+}

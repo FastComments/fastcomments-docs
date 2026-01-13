@@ -1,0 +1,1 @@
+Uz FastComments možete prikupljati ocjene ili ocjene zajedno sa odgovarajućom recenzijom. Ove ocjene se mogu izvještavati interno ili prikazivati javno koristeći naše widgete, na primjer da prikažu raspodjelu recenzija kupaca po proizvodu. Saznajte više o značajkama FastComments Ratings & Reviews i kako ih postaviti u nastavku.

@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "8aa677080c8fcc9026163d51655df24f09b6b179ad2f6e8a12a02845f0822032",
+  "generatedAt": "2026-01-12T21:54:29.461Z",
+  "codeExample": "const tenantId: string = 'tenant-82b3a';\nconst id: string = 'qst-20260112';\nconst updateQuestionConfigBody: UpdateQuestionConfigBody = { label: 'Age verification', required: true, renderingType: 'singleChoice', customOptions: [{ value: '18-24', label: '18–24' }] } as UpdateQuestionConfigBody;\nconst result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1651
+}

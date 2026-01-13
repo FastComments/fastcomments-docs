@@ -1,0 +1,9 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "c5884958e7fc30d05d30d1ec1111fbb605d4fdceae33cc2c38d6be024d17e5f7",
+  "generatedAt": "2026-01-12T21:55:28.337Z",
+  "codeExample": "let (response, httpResponse) = client.combineCommentsWithQuestionResults(\n  tenantId = \"my-tenant-123\",\n  questionId = \"\",\n  questionIds = @[],\n  urlId = \"news/earthquake-2026-10-05\",\n  startDate = \"\",\n  forceRecalculate = false,\n  minValue = 0.0,\n  maxValue = 0.0,\n  limit = 0.0\n)\n\nif response.isSome:\n  let result = response.get()\n  discard result",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 949
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "761c2f9886c001403c94473b3316f12624933df50fe54dbdc43dfcd7176c4521",
+  "generatedAt": "2025-11-21T16:26:14.761Z",
+  "codeExample": "let updateParams = UpdatableCommentParams(\n  content = \"Updated comment to clarify publication timeline\",\n  tags = @[\"news\", \"timeline\"],\n  isApproved = true\n)\n\nlet (response, httpResponse) = client.updateComment(\n  tenantId = \"my-tenant-123\",\n  id = \"cmt-987654321\",\n  updatableCommentParams = updateParams,\n  contextUserId = \"user-42\",\n  doSpamCheck = true,\n  isLive = true\n)\n\nif response.isSome:\n  let flagResult = response.get()\n  echo \"FlagCommentPublic_200_response received: \", flagResult\nelse:\n  echo \"No response body; HTTP status: \", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1181
+}

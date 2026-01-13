@@ -1,0 +1,9 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "f0b529ddf22ca97c3b9e93851b87d687b02d2670eafb9eea97fc55b7954efb2b",
+  "generatedAt": "2026-01-12T21:57:00.153Z",
+  "codeExample": "let (response, httpResponse) = client.getVotesForUser(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/economy-update-2026\",\n  userId = \"user-789\",\n  anonUserId = \"\"\n)\n\nif response.isSome:\n  let votes = response.get()\n  discard votes",
+  "model": "gpt-5-mini",
+  "promptTokens": 416,
+  "completionTokens": 655
+}

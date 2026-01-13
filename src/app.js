@@ -8,6 +8,7 @@ const {buildGuide} = require('./guides');
 const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
 const guideOrder = require('./content/guides/guide-order.json');
+const {locales, defaultLocale} = require('./locales');
 
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
@@ -52,10 +53,17 @@ const index = {};
     // We'll periodically compare the build id on the page with the one from an API call to alert the user if the docs are out of date.
     const buildId = shortid.generate();
 
-    // Create a page for each guide.
+    // Create a page for each guide in each locale.
     for (const guide of guides) {
-         // this is done one at a time to be easier to understand
-        await buildGuide(guide, index);
+        // Build default locale first
+        await buildGuide(guide, index, defaultLocale);
+
+        // Build other locales
+        for (const locale of Object.keys(locales)) {
+            if (locale !== defaultLocale) {
+                await buildGuide(guide, index, locale);
+            }
+        }
     }
 
     const guidesNotInstallation = guides.filter((guide) => !guide.id.startsWith('installation-') && !guide.id.startsWith('sdk-') && !guide.id.startsWith('lib-'));

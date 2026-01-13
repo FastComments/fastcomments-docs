@@ -1,0 +1,3 @@
+### Broadcast-IDs
+
+Sie werden feststellen, dass Sie in einigen API-Aufrufen ein `broadcast_id` übergeben sollen. Wenn Sie Ereignisse erhalten, bekommen Sie diese ID zurück, sodass Sie das Ereignis ignorieren können, falls Sie Änderungen auf dem Client optimistisch anwenden möchten (was Sie wahrscheinlich tun sollten, da es die beste Nutzererfahrung bietet). Übergeben Sie hier eine `UUID`. Die ID sollte so einzigartig sein, dass sie in einer Browsersitzung nicht zweimal vorkommt.

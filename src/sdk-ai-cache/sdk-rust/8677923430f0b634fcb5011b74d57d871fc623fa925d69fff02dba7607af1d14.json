@@ -1,0 +1,9 @@
+{
+  "method": "put_sso_user",
+  "signatureHash": "8677923430f0b634fcb5011b74d57d871fc623fa925d69fff02dba7607af1d14",
+  "generatedAt": "2025-11-21T23:53:00.871Z",
+  "codeExample": "async fn update_sso_user() -> Result<PutSsoUserApiResponse, Error> {\n    let params: PutSsoUserParams = PutSsoUserParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"user-12345\"),\n        update_apisso_user_data: models::UpdateApissoUserData {\n            email: String::from(\"jane.doe@acme.com\"),\n            name: String::from(\"Jane Doe\"),\n            external_id: String::from(\"sso-67890\"),\n            provider: String::from(\"saml\"),\n            roles: vec![String::from(\"editor\")],\n        },\n        update_comments: Some(true),\n    };\n    let response: PutSsoUserApiResponse = put_sso_user(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 342,
+  "completionTokens": 1275
+}

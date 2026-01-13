@@ -1,0 +1,2 @@
+Mamy nadzieję, że dokumentacja dotycząca ocen i recenzji była wyczerpująca i że konfiguracja oraz użytkowanie będą dla Ciebie proste. Jeśli uważasz
+że pominęliśmy coś w dokumentacji, daj nam znać poniżej!

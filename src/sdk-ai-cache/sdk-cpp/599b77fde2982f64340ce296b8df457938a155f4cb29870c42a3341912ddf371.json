@@ -1,0 +1,9 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "599b77fde2982f64340ce296b8df457938a155f4cb29870c42a3341912ddf371",
+  "generatedAt": "2025-11-20T22:24:36.018Z",
+  "codeExample": "boost::optional<utility::string_t> sso = utility::string_t(U(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.token\"));\nauto task = api->flagCommentPublic(utility::string_t(U(\"my-tenant-123\")), utility::string_t(U(\"cmt-456\")), true, sso)\n    .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n        try {\n            auto resp = t.get();\n            auto result = std::make_shared<FlagCommentPublic_200_response>(*resp);\n            return result;\n        } catch (const std::exception&) {\n            return std::make_shared<FlagCommentPublic_200_response>();\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 361,
+  "completionTokens": 1455
+}

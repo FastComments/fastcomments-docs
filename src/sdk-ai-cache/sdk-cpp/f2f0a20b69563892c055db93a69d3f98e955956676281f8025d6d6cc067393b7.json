@@ -1,0 +1,9 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "f2f0a20b69563892c055db93a69d3f98e955956676281f8025d6d6cc067393b7",
+  "generatedAt": "2026-01-12T20:32:18.583Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nCreateTenantUserBody createTenantUserBody;\ncreateTenantUserBody.email = utility::conversions::to_string_t(\"new.user@company.com\");\ncreateTenantUserBody.password = utility::conversions::to_string_t(\"Secur3P@ssw0rd!\");\ncreateTenantUserBody.displayName = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"New User\"));\ncreateTenantUserBody.roles = std::vector<utility::string_t>{utility::conversions::to_string_t(\"member\")};\n\napi->createTenantUser(tenantId, createTenantUserBody)\n    .then([](pplx::task<std::shared_ptr<CreateTenantUser_200_response>> task){\n        try {\n            auto resp = task.get();\n            auto created = std::make_shared<CreateTenantUser_200_response>(*resp);\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1563
+}

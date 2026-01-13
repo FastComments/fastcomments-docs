@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "ee10aed1b219a7f9d59f9d1dc3d703b227be4d0cb1655223188947c7d0862c12",
+  "generatedAt": "2025-11-20T22:25:57.870Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-456\");\nutility::string_t url = U(\"https://www.example.com/articles/fastcomments-integration\");\nutility::string_t pageTitle = U(\"FastComments Integration Guide\");\nutility::string_t subscribedOrUnsubscribed = U(\"subscribed\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-token-74a9\"));\napi->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)\n    .then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatus_200_response>> task){\n        try {\n            auto resp = task.get();\n            if (!resp) {\n                auto fallback = std::make_shared<UpdateUserNotificationStatus_200_response>();\n                (void)fallback;\n            } else {\n                (void)resp;\n            }\n        } catch (const std::exception& e) {\n            (void)e;\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 387,
+  "completionTokens": 2163
+}

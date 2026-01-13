@@ -1,0 +1,22 @@
+## Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+
+## Response
+
+Returns: [`Option[GetUserBadgeProgressById_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_badge_progress_by_id200response.nim)
+
+## Example
+
+[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (response, httpResponse) = client.getUserBadgeProgressByUserId(tenantId = "my-tenant-123", userId = "user-78")
+if response.isSome:
+  let progress = response.get()
+  echo "Badge progress received for user-78"
+else:
+  echo "No badge progress for user-78 (HTTP " & $(httpResponse.status) & ")"
+[inline-code-end]

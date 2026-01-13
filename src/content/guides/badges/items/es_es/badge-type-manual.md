@@ -1,0 +1,3 @@
+Las insignias manuales son insignias que nunca se otorgan automáticamente. Los administradores y moderadores pueden otorgar esta insignia al
+seleccionar la opción `Award Badge` en el menú de comentarios, la cual otorgará la insignia al usuario y la mostrará en todos sus comentarios, o
+al abrir el perfil del usuario haciendo clic en su avatar, y en el menú superior derecho haciendo clic en `Manage Badges`.

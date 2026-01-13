@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badge_progress_by_user_id",
+  "signatureHash": "30576a4928563c2dc2de372a7a8d0b448bc29db707d80fe176be17a517679612",
+  "generatedAt": "2026-01-12T22:00:43.697Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: GetUserBadgeProgressByUserIdParams = GetUserBadgeProgressByUserIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"user-9876\".to_string(),\n    };\n    let _badge_progress: GetUserBadgeProgressById200Response =\n        get_user_badge_progress_by_user_id(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 444,
+  "completionTokens": 1258
+}

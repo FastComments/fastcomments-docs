@@ -1,0 +1,9 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "f41ac8022680730b8d9224707cbf35912022775e75bcc4a81f21ed1e3a16f632",
+  "generatedAt": "2026-01-12T20:32:42.997Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t notifId = U(\"notification-456\");\nboost::optional<utility::string_t> actingUser = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\napi->deleteNotificationCount(tenantId, notifId)\n.then([actingUser](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<FlagCommentPublic_200_response>();\n        if (actingUser) std::cout << \"Actor: \" << actingUser->c_str() << \"\\n\";\n        std::cout << \"Notification count cleared\\n\";\n    } catch (const std::exception &e) {\n        std::cout << \"Failed: \" << e.what() << \"\\n\";\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 334,
+  "completionTokens": 1608
+}

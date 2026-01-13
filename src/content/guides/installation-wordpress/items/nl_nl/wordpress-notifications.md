@@ -1,0 +1,1 @@
+Uw leden ontvangen dezelfde meldingen als alle andere soorten FastComments.com-gebruikers wanneer op hen wordt gereageerd of zij worden genoemd. [Meer informatie](/guide-notifications.html).

@@ -1,0 +1,9 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "a1558b3ad4f6c8cb3212219c7570f31ca4380fd12e86bcc9b1db811dea2cbdee",
+  "generatedAt": "2025-11-21T16:26:29.004Z",
+  "codeExample": "let (response, httpResponse) = client.getCommentVoteUserNames(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654321\",\n  dir = 0,\n  sso = \"\"\n)\n\nif response.isSome:\n  let voteUserNames = response.get()\n  echo voteUserNames\nelse:\n  echo \"No vote user names returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 794
+}

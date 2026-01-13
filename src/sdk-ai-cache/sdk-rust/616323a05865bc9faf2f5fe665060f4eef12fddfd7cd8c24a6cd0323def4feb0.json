@@ -1,0 +1,9 @@
+{
+  "method": "get_domain_configs",
+  "signatureHash": "616323a05865bc9faf2f5fe665060f4eef12fddfd7cd8c24a6cd0323def4feb0",
+  "generatedAt": "2025-11-21T23:52:27.336Z",
+  "codeExample": "async fn fetch_domain_configs() -> Result<GetDomainConfigs200Response, Error> {\n    let params: GetDomainConfigsParams = GetDomainConfigsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        environment: Some(\"production\".to_string()),\n        include_disabled: Some(false),\n    };\n    let response: GetDomainConfigs200Response = get_domain_configs(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 283,
+  "completionTokens": 931
+}

@@ -1,0 +1,1 @@
+Omembe, oziroma `@mentions`, so funkcija FastComments, ki vam omogoča prek samodokončevanja iskati uporabnike za označevanje in jim nato pošiljati obvestila, da so bili označeni.

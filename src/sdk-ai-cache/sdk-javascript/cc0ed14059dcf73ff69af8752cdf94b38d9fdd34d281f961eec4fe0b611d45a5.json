@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "cc0ed14059dcf73ff69af8752cdf94b38d9fdd34d281f961eec4fe0b611d45a5",
+  "generatedAt": "2025-11-22T05:33:38.528Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-1';\nconst urlIdWS: string = 'wss://realtime.fastcomments.com/ws/site-acme';\nconst optionalExtraUserId: string | undefined = 'user_789'; // optional\nconst userIds: string = ['user_123', 'user_456', ...(optionalExtraUserId ? [optionalExtraUserId] : [])].join(',');\nconst presenceStatuses: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);\npresenceStatuses;",
+  "model": "gpt-5-mini",
+  "promptTokens": 393,
+  "completionTokens": 831
+}

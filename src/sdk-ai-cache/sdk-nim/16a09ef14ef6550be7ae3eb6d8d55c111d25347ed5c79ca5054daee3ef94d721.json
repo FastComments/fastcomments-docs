@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "16a09ef14ef6550be7ae3eb6d8d55c111d25347ed5c79ca5054daee3ef94d721",
+  "generatedAt": "2026-01-12T21:56:42.708Z",
+  "codeExample": "let (response, httpResponse) = client.getSubscriptions(tenantId = \"my-tenant-123\", userId = \"\")\nif response.isSome:\n  let subscriptions = response.get()\n  discard subscriptions",
+  "model": "gpt-5-mini",
+  "promptTokens": 383,
+  "completionTokens": 946
+}

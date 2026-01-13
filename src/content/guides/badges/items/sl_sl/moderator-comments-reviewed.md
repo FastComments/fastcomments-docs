@@ -1,0 +1,1 @@
+Ta značka je podeljena, ko so komentarji označeni kot pregledani. Privzeto se imenuje `Fast Mod`.

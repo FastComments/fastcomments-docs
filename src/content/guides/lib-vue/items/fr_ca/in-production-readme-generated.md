@@ -1,0 +1,3 @@
+Vous ne voudrez probablement pas définir la configuration en ligne si vous passez des callbacks, etc. Au lieu de cela, définissez la configuration dans un bloc `computed`; sinon, chaque fois que votre callback, etc. est invoqué, l'ensemble du widget sera entièrement re-rendu.
+
+[Consultez l'exemple du spinner pour voir comment faire.](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-spinner.vue)

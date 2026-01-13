@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "451a61a166e1351e6e9f476a28597511b89b358e35e0a71c2d90045b7c56eed3",
+  "generatedAt": "2026-01-12T21:56:17.814Z",
+  "codeExample": "let (response, httpResponse) = client.getComments(\n  tenantId = \"my-tenant-123\",\n  page = 1,\n  limit = 25,\n  skip = 0,\n  asTree = true,\n  skipChildren = 0,\n  limitChildren = 5,\n  maxTreeDepth = 3,\n  urlId = \"news/2026/01/important-announcement\",\n  userId = \"user-789\",\n  anonUserId = \"anon-456\",\n  contextUserId = \"ctx-321\",\n  hashTag = \"release\",\n  parentId = \"\",\n  direction = SortDirections.Newest\n)\n\nif response.isSome:\n  let comments = response.get()\n  echo \"Fetched comments for url:\", \" news/2026/01/important-announcement\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 504,
+  "completionTokens": 1136
+}

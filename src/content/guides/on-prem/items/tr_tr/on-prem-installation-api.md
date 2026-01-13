@@ -1,0 +1,2 @@
+API, normal SaaS ürünüyle aynı şekilde erişilebilir; On-Prem kontrol paneline giriş yaparak API anahtarları oluşturur ve bu anahtarları API'ye erişmek için kullanırsınız. API
+uç noktaları on-prem, SaaS ürünü için olanlarla aynıdır.

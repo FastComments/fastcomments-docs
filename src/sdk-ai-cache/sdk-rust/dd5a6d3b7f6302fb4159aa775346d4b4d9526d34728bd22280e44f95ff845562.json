@@ -1,0 +1,9 @@
+{
+  "method": "update_moderator",
+  "signatureHash": "dd5a6d3b7f6302fb4159aa775346d4b4d9526d34728bd22280e44f95ff845562",
+  "generatedAt": "2026-01-12T22:01:23.671Z",
+  "codeExample": "let params: UpdateModeratorParams = UpdateModeratorParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"moderator-12345\".to_string(),\n    update_moderator_body: models::UpdateModeratorBody {\n        username: \"jane.doe\".to_string(),\n        display_name: Some(\"Jane Doe\".to_string()),\n        email: Some(\"jane.doe@acme.com\".to_string()),\n        is_active: Some(true),\n        permissions: Some(vec![\"moderate_comments\".to_string(), \"view_reports\".to_string()]),\n    },\n};\nlet response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 439,
+  "completionTokens": 1051
+}

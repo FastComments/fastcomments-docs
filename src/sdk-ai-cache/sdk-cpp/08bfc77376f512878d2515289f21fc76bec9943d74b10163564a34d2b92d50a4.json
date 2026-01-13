@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "08bfc77376f512878d2515289f21fc76bec9943d74b10163564a34d2b92d50a4",
+  "generatedAt": "2025-11-20T22:25:33.001Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nPublicBlockFromCommentParams publicBlockFromCommentParams;\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U(\"sso-token-abc123\")));\n\napi->unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)\n.then([](pplx::task<std::shared_ptr<UnBlockCommentPublic_200_response>> t) {\n    try {\n        auto response = t.get();\n        if (!response) {\n            response = std::make_shared<UnBlockCommentPublic_200_response>();\n        }\n    } catch (const std::exception& e) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 372,
+  "completionTokens": 1201
+}

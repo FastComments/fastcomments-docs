@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "b4e5c9a3cdec8dd1fa54752b874adb11b59a2aabac0d206cd1c2df458df4dd50",
+  "generatedAt": "2025-11-22T05:33:03.930Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-42';\nconst id: string = 'feedpost_20251122_001';\nconst feedPost: FeedPost = {\n  title: 'Product roadmap update',\n  content: 'Updated roadmap including new moderation and analytics features.',\n  authorName: 'Acme Product Team',\n  isPublished: false,\n  scheduledAt: '2025-12-01T09:00:00Z', // optional scheduling parameter\n  media: [\n    {\n      type: 'image',\n      url: 'https://assets.acme.com/images/roadmap.png',\n      assets: [{ resolution: '1024x768', url: 'https://assets.acme.com/images/roadmap-1024.png' }]\n    }\n  ],\n  links: [{ title: 'Full Roadmap', url: 'https://acme.com/roadmap' }],\n  tags: ['roadmap', 'release', 'moderation']\n};\nconst result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 1127
+}

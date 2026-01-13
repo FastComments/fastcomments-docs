@@ -1,0 +1,9 @@
+{
+  "method": "aggregate_question_results",
+  "signatureHash": "eabcc7169a31656a48396bc2df55038c58dd94207bd1c58c8cd7ac87f8513229",
+  "generatedAt": "2026-01-12T21:58:43.990Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: AggregateQuestionResultsParams = AggregateQuestionResultsParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        question_id: Some(String::from(\"q-12345\")),\n        question_ids: Some(vec![String::from(\"q-12345\"), String::from(\"q-67890\")]),\n        url_id: Some(String::from(\"news/article/2026/01/12/breaking\")),\n        time_bucket: Some(models::AggregateTimeBucket::Daily),\n        start_date: Some(String::from(\"2026-01-01T00:00:00Z\")),\n        force_recalculate: Some(true),\n    };\n    let aggregation: AggregateQuestionResults200Response =\n        aggregate_question_results(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 509,
+  "completionTokens": 1013
+}

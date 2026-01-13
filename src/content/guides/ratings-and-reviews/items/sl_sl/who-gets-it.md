@@ -1,0 +1,1 @@
+Vsi paketi FastComments lahko uporabljajo modul za povratne informacije, ki vključuje ocene in mnenja.

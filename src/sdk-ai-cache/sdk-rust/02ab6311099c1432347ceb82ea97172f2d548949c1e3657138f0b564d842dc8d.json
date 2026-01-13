@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badge",
+  "signatureHash": "02ab6311099c1432347ceb82ea97172f2d548949c1e3657138f0b564d842dc8d",
+  "generatedAt": "2026-01-12T22:01:20.174Z",
+  "codeExample": "pub async fn fetch_user_badge() -> Result<GetUserBadge200Response, Error> {\n    let params: GetUserBadgeParams = GetUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        id: \"gold-contributor-1234\".to_owned(),\n    };\n    let response: GetUserBadge200Response = get_user_badge(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1827
+}

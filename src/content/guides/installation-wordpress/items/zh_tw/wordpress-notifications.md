@@ -1,0 +1,1 @@
+您的成員在被回覆或被提及時，會收到與其他任何 FastComments.com 使用者相同的通知。 [了解更多](/guide-notifications.html)。

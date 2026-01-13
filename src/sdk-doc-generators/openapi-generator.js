@@ -485,32 +485,27 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
      */
     getPythonTypeFilePath(typeName) {
         const config = this.sdk.openApiConfig;
-        if (!config) return null;
+        if (!config) {
+            throw new Error(`No openApiConfig for Python SDK`);
+        }
 
         const modelDocPath = path.join(this.repoPath, config.generatedDocsPath, `${typeName}.md`);
 
         if (!fs.existsSync(modelDocPath)) {
-            console.warn(`Python model doc not found: ${modelDocPath}`);
-            return null;
+            throw new Error(`Python model doc not found: ${modelDocPath}`);
         }
 
-        try {
-            const content = fs.readFileSync(modelDocPath, 'utf8');
+        const content = fs.readFileSync(modelDocPath, 'utf8');
 
-            // Extract import line: "from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse"
-            const importMatch = content.match(/from\s+([\w.]+)\s+import\s+\w+/);
+        // Extract import line: "from client.models.get_user_presence_statuses_response import GetUserPresenceStatusesResponse"
+        const importMatch = content.match(/from\s+([\w.]+)\s+import\s+\w+/);
 
-            if (importMatch) {
-                const modulePath = importMatch[1].replace(/\./g, '/');
-                return `${modulePath}.py`;
-            }
-
-            console.warn(`Could not extract import from ${modelDocPath}`);
-            return null;
-        } catch (e) {
-            console.error(`Error reading Python model doc: ${e.message}`);
-            return null;
+        if (importMatch) {
+            const modulePath = importMatch[1].replace(/\./g, '/');
+            return `${modulePath}.py`;
         }
+
+        throw new Error(`Could not extract import from ${modelDocPath}`);
     }
 
     /**
@@ -522,34 +517,27 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const modelsDir = path.join(this.repoPath, 'client/src/models');
 
         if (!fs.existsSync(modelsDir)) {
-            console.warn(`Rust models directory not found: ${modelsDir}`);
-            return null;
+            throw new Error(`Rust models directory not found: ${modelsDir}`);
         }
 
-        try {
-            // Search for struct or enum definition
-            const files = fs.readdirSync(modelsDir);
+        // Search for struct or enum definition
+        const files = fs.readdirSync(modelsDir);
 
-            for (const file of files) {
-                if (!file.endsWith('.rs')) continue;
+        for (const file of files) {
+            if (!file.endsWith('.rs')) continue;
 
-                const filePath = path.join(modelsDir, file);
-                const content = fs.readFileSync(filePath, 'utf8');
+            const filePath = path.join(modelsDir, file);
+            const content = fs.readFileSync(filePath, 'utf8');
 
-                // Look for "pub struct TypeName" or "pub enum TypeName"
-                const structRegex = new RegExp(`pub\\s+(?:struct|enum)\\s+${typeName}\\b`);
+            // Look for "pub struct TypeName" or "pub enum TypeName"
+            const structRegex = new RegExp(`pub\\s+(?:struct|enum)\\s+${typeName}\\b`);
 
-                if (structRegex.test(content)) {
-                    return `client/src/models/${file}`;
-                }
+            if (structRegex.test(content)) {
+                return `client/src/models/${file}`;
             }
-
-            console.warn(`Could not find Rust file for type: ${typeName}`);
-            return null;
-        } catch (e) {
-            console.error(`Error searching for Rust type: ${e.message}`);
-            return null;
         }
+
+        throw new Error(`Could not find Rust file for type: ${typeName}`);
     }
 
     /**
@@ -561,34 +549,32 @@ class OpenAPIDocGenerator extends BaseDocGenerator {
         const modelsDir = path.join(this.repoPath, 'client');
 
         if (!fs.existsSync(modelsDir)) {
-            console.warn(`Go models directory not found: ${modelsDir}`);
-            return null;
+            throw new Error(`Go models directory not found: ${modelsDir}`);
         }
 
-        try {
-            // Search for struct or interface definition
-            const files = fs.readdirSync(modelsDir);
+        // Strip slice prefix [] if present (e.g., []SaveComment200Response -> SaveComment200Response)
+        if (typeName.startsWith('[]')) {
+            typeName = typeName.slice(2);
+        }
 
-            for (const file of files) {
-                if (!file.startsWith('model_') || !file.endsWith('.go')) continue;
+        // Search for struct or interface definition
+        const files = fs.readdirSync(modelsDir);
 
-                const filePath = path.join(modelsDir, file);
-                const content = fs.readFileSync(filePath, 'utf8');
+        for (const file of files) {
+            if (!file.startsWith('model_') || !file.endsWith('.go')) continue;
 
-                // Look for "type TypeName struct" or "type TypeName interface"
-                const typeRegex = new RegExp(`type\\s+${typeName}\\s+(?:struct|interface)`);
+            const filePath = path.join(modelsDir, file);
+            const content = fs.readFileSync(filePath, 'utf8');
 
-                if (typeRegex.test(content)) {
-                    return `client/${file}`;
-                }
+            // Look for "type TypeName struct" or "type TypeName interface"
+            const typeRegex = new RegExp(`type\\s+${typeName}\\s+(?:struct|interface)`);
+
+            if (typeRegex.test(content)) {
+                return `client/${file}`;
             }
-
-            console.warn(`Could not find Go file for type: ${typeName}`);
-            return null;
-        } catch (e) {
-            console.error(`Error searching for Go type: ${e.message}`);
-            return null;
         }
+
+        throw new Error(`Could not find Go file for type: ${typeName}`);
     }
 
     /**

@@ -1,0 +1,9 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "dedfcf2a67c069c387dc5fb9db72e84126ce1ce9394027b0a4f26fd0cced2a12",
+  "generatedAt": "2025-11-22T05:32:07.592Z",
+  "codeExample": "const tenantId: string | undefined = 'org-4f1a2b';\nconst domain: string = 'comments.acme-corp.com';\nconst result: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId!, domain);",
+  "model": "gpt-5-mini",
+  "promptTokens": 231,
+  "completionTokens": 827
+}

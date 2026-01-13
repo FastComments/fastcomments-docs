@@ -1,0 +1,9 @@
+{
+  "method": "add_hash_tags_bulk",
+  "signatureHash": "a2e3014cd17439fc29f18735bf899fbd221e02854fb295dc183b459875136f1f",
+  "generatedAt": "2026-01-12T21:58:51.294Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: AddHashTagsBulkParams = AddHashTagsBulkParams {\n        tenant_id: Some(\"acme-corp-tenant\".to_string()),\n        bulk_create_hash_tags_body: Some(models::BulkCreateHashTagsBody {\n            tags: vec![\n                models::BulkCreateHashTagsBodyTagsInner {\n                    name: \"news/article\".to_string(),\n                    path: \"news/article\".to_string(),\n                    description: Some(\"Article tag for front page\".to_string()),\n                    enabled: Some(true),\n                },\n            ],\n        }),\n    };\n\n    let response: AddHashTagsBulk200Response = add_hash_tags_bulk(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 378,
+  "completionTokens": 1566
+}

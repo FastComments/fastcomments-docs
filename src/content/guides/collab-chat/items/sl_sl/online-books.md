@@ -1,0 +1,1 @@
+Lahko inicializirate Collab Chat za vsako stran posebej, če želite, in imate ločene niti za vsako stran; preprosto posredujte parameter `urlId` z vrednostjo, kot je `book-one-page1`. Ta konfiguracija deluje tudi z običajnim pripomočkom za komentarje.

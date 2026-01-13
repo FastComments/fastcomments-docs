@@ -1,0 +1,9 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "652bed784944952bc2189cfc54c89302e7bf8ac4b35b28beaa3f4e994dac2980",
+  "generatedAt": "2026-01-12T20:35:23.930Z",
+  "codeExample": "utility::string_t tag = U(\"release-1.0\");\nboost::optional<utility::string_t> tenantId = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nUpdateHashTagBody body;\nboost::optional<UpdateHashTagBody> updateBody = boost::optional<UpdateHashTagBody>(body);\napi->patchHashTag(tag, tenantId, updateBody)\n.then([](pplx::task<std::shared_ptr<PatchHashTag_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copied = std::make_shared<PatchHashTag_200_response>(*resp);\n            std::cout << \"PatchHashTag succeeded\" << std::endl;\n        } else {\n            std::cout << \"PatchHashTag returned no data\" << std::endl;\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"PatchHashTag error: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 360,
+  "completionTokens": 1699
+}

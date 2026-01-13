@@ -1,0 +1,9 @@
+{
+  "method": "get_sso_user_by_id",
+  "signatureHash": "10a755cff0a5cd131980039184a4a6e04dd45a1b0f0c79d38b1bdbdb688fe19e",
+  "generatedAt": "2025-11-21T23:52:43.166Z",
+  "codeExample": "async fn fetch_sso_user(configuration: &configuration::Configuration) -> Result<GetSsoUserByIdApiResponse, Error> {\n    let params: GetSsoUserByIdParams = GetSsoUserByIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"sso-user-98765\".to_string(),\n    };\n    let user: GetSsoUserByIdApiResponse = get_sso_user_by_id(configuration, params).await?;\n    Ok(user)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 318,
+  "completionTokens": 1781
+}

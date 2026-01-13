@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "1d9622b1709b58a1bf76a92e3af444f713694c0e0c8ccd4540940ca6ebfd7e25",
+  "generatedAt": "2026-01-12T21:56:46.599Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantPackage(tenantId = \"my-tenant-123\", id = \"pkg-premium-001\")\nif response.isSome:\n  let pkg = response.get()\n  echo pkg\nelse:\n  echo \"No package found for tenant\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 772
+}

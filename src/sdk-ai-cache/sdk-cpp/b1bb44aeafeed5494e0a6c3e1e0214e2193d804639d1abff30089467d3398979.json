@@ -1,0 +1,9 @@
+{
+  "method": "flagComment",
+  "signatureHash": "b1bb44aeafeed5494e0a6c3e1e0214e2193d804639d1abff30089467d3398979",
+  "generatedAt": "2025-11-20T22:23:22.081Z",
+  "codeExample": "utility::string_t tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nutility::string_t commentId = utility::conversions::to_string_t(\"cmt-456789\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"));\nboost::optional<utility::string_t> anonUserId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"anon-uuid-789\"));\nauto t = api->flagComment(tenantId, commentId, userId, anonUserId)\n.then([](pplx::task<std::shared_ptr<FlagComment_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto marker = std::make_shared<utility::string_t>(utility::conversions::to_string_t(\"comment_flagged\"));\n        (void)resp;\n        (void)marker;\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 361,
+  "completionTokens": 2148
+}

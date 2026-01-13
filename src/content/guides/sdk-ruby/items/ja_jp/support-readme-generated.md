@@ -1,0 +1,1 @@
+サポートについては、https://fastcomments.com/auth/my-account/help をご覧いただくか、support@fastcomments.com にメールしてください

@@ -1,0 +1,9 @@
+{
+  "method": "put_domain_config",
+  "signatureHash": "d27866292725d947cb73a5cd87bf3a7c8080ec7f185043d2dd851e3e9fec0f37",
+  "generatedAt": "2025-11-21T23:52:49.915Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: PutDomainConfigParams = PutDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"news/article\".to_string(),\n        update_domain_config_params: models::UpdateDomainConfigParams {\n            allow_comments: Some(true),\n            moderation_required: Some(true),\n            moderation_mode: Some(\"pre\".to_string()),\n            max_comment_length: Some(2000),\n            allowed_origins: Some(vec![\n                \"https://www.acme.com\".to_string(),\n                \"https://blog.acme.com\".to_string(),\n            ]),\n        },\n    };\n\n    let response: GetDomainConfig200Response = put_domain_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 319,
+  "completionTokens": 875
+}

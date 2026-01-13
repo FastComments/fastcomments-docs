@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "0487962e5c2e8bcbd41eab93e8419ea6abed145c1357960a08da45a5d022d87b",
+  "generatedAt": "2025-11-20T22:25:12.613Z",
+  "codeExample": "api->getCommentsPublic(\n    utility::string_t(U(\"my-tenant-123\")),\n    utility::string_t(U(\"/articles/how-to-cpp-async\")),\n    boost::optional<int32_t>(1),\n    boost::optional<SortDirections>(SortDirections::DESC)\n).then([](pplx::task<std::shared_ptr<GetCommentsPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<GetCommentsPublic_200_response>(*resp);\n    } catch (...) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 744,
+  "completionTokens": 2873
+}

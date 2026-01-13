@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "f3c26011b38c5608e3af33806e38399ddd95d3b857b6af8fa9b738be2eac932a",
+  "generatedAt": "2026-01-12T20:34:50.540Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nboost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U(\"en-US\"));\napi->getUserBadge(tenantId, id).then([=](pplx::task<std::shared_ptr<GetUserBadge_200_response>> t) {\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<GetUserBadge_200_response>();\n        return resp;\n    } catch (const std::exception&) {\n        return std::make_shared<GetUserBadge_200_response>();\n    }\n}).then([](std::shared_ptr<GetUserBadge_200_response> result) {\n    (void)result;\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 332,
+  "completionTokens": 1457
+}

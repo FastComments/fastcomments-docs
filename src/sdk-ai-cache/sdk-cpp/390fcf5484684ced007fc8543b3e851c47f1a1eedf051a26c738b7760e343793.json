@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "390fcf5484684ced007fc8543b3e851c47f1a1eedf051a26c738b7760e343793",
+  "generatedAt": "2025-11-20T22:23:29.155Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> environment = boost::optional<utility::string_t>(U(\"production\"));\napi->getDomainConfigs(tenantId).then([environment](std::shared_ptr<GetDomainConfigs_200_response> resp) -> pplx::task<std::shared_ptr<GetDomainConfigs_200_response>> {\n    if (!resp) return pplx::task_from_result<std::shared_ptr<GetDomainConfigs_200_response>>(nullptr);\n    auto resultCopy = std::make_shared<GetDomainConfigs_200_response>(*resp);\n    return pplx::task_from_result(resultCopy);\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 325,
+  "completionTokens": 1234
+}

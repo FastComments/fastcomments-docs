@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "890645abd85f9875fd6232ccb0929cd91ac097d3e24f2f32ced29715fc2f18c9",
+  "generatedAt": "2026-01-12T20:32:06.453Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateQuestionResultBody createQuestionResultBody;\ncreateQuestionResultBody.questionId = U(\"question-789\");\ncreateQuestionResultBody.userEmail = U(\"student@example.com\");\ncreateQuestionResultBody.selectedOption = U(\"B\");\ncreateQuestionResultBody.isCorrect = true;\ncreateQuestionResultBody.score = 9.5;\ncreateQuestionResultBody.metadata = boost::optional<utility::string_t>(U(\"{\\\"session\\\":\\\"quiz-2026-01\\\"}\"));\nauto task = api->createQuestionResult(tenantId, createQuestionResultBody)\n.then([](pplx::task<std::shared_ptr<CreateQuestionResult_200_response>> t){\n    try {\n        auto result = t.get();\n        auto copy = std::make_shared<CreateQuestionResult_200_response>(*result);\n        (void)copy;\n    } catch (...) {}\n});\ntask.wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 1671
+}

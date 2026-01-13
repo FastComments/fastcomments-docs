@@ -1,0 +1,9 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "b1721deeb80ea31771b9434eaf5827381c05f6fe55e4fe42055d84b65def9367",
+  "generatedAt": "2025-11-21T16:25:37.775Z",
+  "codeExample": "let (response, httpResponse) = client.getDomainConfig(tenantId = \"my-tenant-123\", domain = \"news.techblog.com\")\nif response.isSome:\n  let domainConfig = response.get()\n  echo \"Loaded domain config for tenant:\", \" my-tenant-123\"\nelse:\n  echo \"No domain config found\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 391,
+  "completionTokens": 911
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "b77e1af9bbceda07ffe27f577be96231964100c5b443457816ce495606559727",
+  "generatedAt": "2026-01-12T20:36:01.613Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email-01\");\nUpdateEmailTemplateBody updateBody;\nboost::optional<utility::string_t> optionalFrom = boost::optional<utility::string_t>(U(\"no-reply@myapp.com\"));\nupdateBody.from = optionalFrom;\nupdateBody.subject = U(\"Welcome to MyApp\");\nupdateBody.html = U(\"<p>Hi {{displayName}}, welcome to MyApp!</p>\");\nauto bodyPtr = std::make_shared<UpdateEmailTemplateBody>(updateBody);\napi->updateEmailTemplate(tenantId, templateId, *bodyPtr)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            std::cout << \"Email template updated successfully\\n\";\n        } else {\n            std::cout << \"Unexpected empty response\\n\";\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Update failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 2167
+}

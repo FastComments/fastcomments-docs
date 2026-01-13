@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "40e85e33d86099a2a3004dca48f28da9cc2a96e03cc8e8f176c4abca011f0289",
+  "generatedAt": "2026-01-12T21:58:27.328Z",
+  "codeExample": "let updateParams = UpdateFeedPostParams(\n  title = \"Launch: FastComments v2.0\",\n  content = \"Announcing the v2.0 release with performance and moderation improvements.\",\n  visible = true,\n  tags = @[\"release\", \"announcement\"],\n  priority = 1\n)\n\nlet (response, httpResponse) = client.updateFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"news/launch-fastcomments-v2\",\n  updateFeedPostParams = updateParams,\n  broadcastId = \"\",\n  sso = \"\"\n)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Feed post updated successfully\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 917
+}

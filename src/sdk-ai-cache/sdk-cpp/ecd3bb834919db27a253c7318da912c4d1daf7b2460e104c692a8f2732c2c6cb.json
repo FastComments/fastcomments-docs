@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "ecd3bb834919db27a253c7318da912c4d1daf7b2460e104c692a8f2732c2c6cb",
+  "generatedAt": "2026-01-12T20:36:38.480Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"user@example.com\");\nUpdateUserBadgeParams updateParams;\nupdateParams.badgeId = U(\"badge-top-100\");\nupdateParams.label = U(\"Top Contributor\");\nupdateParams.active = boost::optional<bool>(true);\nupdateParams.expiresAt = boost::optional<utility::string_t>(U(\"2026-12-31T23:59:59Z\"));\napi->updateUserBadge(tenantId, id, updateParams)\n.then([](pplx::task<std::shared_ptr<UpdateUserBadge_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto result = std::make_shared<UpdateUserBadge_200_response>(*resp);\n        }\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 348,
+  "completionTokens": 1984
+}

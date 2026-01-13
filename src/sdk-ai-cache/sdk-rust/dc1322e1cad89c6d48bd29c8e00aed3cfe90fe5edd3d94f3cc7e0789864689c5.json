@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_status",
+  "signatureHash": "dc1322e1cad89c6d48bd29c8e00aed3cfe90fe5edd3d94f3cc7e0789864689c5",
+  "generatedAt": "2026-01-12T22:02:38.698Z",
+  "codeExample": "async fn example_update_user_notification_status() -> Result<UpdateUserNotificationStatus200Response, Error> {\n    let params: UpdateUserNotificationStatusParams = UpdateUserNotificationStatusParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        notification_id: String::from(\"notification-8b7f3\"),\n        new_status: String::from(\"read\"),\n        sso: Some(String::from(\"sso-jwt-1a2b3c\")),\n    };\n    let response: UpdateUserNotificationStatus200Response = update_user_notification_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 777
+}

@@ -1,0 +1,14 @@
+Potresti ricevere un errore di autorizzazione, simile al seguente:
+
+<div class="screenshot white-bg">
+    <div class="title">Configurazione del dominio mancante</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Configurazione del dominio mancante" />
+</div>
+
+Generalmente ciò accade se usi il tuo dominio invece del dominio predefinito "thrivecart.com".
+
+Questo perché FastComments non sa che dovrebbe consentire l'utilizzo del tuo account su questo dominio.
+
+In questo caso, la soluzione è semplice. Devi solo aggiungere il tuo sito al tuo account FastComments.com.
+
+[Vai qui per aggiungere il tuo sito al tuo account.](https://fastcomments.com/auth/my-account/configure-domains)

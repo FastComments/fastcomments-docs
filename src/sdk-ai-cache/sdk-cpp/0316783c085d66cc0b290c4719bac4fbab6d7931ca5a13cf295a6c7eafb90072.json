@@ -1,0 +1,9 @@
+{
+  "method": "pinComment",
+  "signatureHash": "0316783c085d66cc0b290c4719bac4fbab6d7931ca5a13cf295a6c7eafb90072",
+  "generatedAt": "2025-11-20T22:25:15.169Z",
+  "codeExample": "boost::optional<utility::string_t> sso(U(\"user@example.com\"));\napi->pinComment(U(\"my-tenant-123\"), U(\"cmt-456\"), U(\"broadcast-789\"), sso)\n.then([](pplx::task<std::shared_ptr<PinComment_200_response>> task){\n    try {\n        auto resp = task.get();\n        auto result = resp ? resp : std::make_shared<PinComment_200_response>();\n        std::cout << \"pinComment completed successfully\\n\";\n    } catch (const std::exception& e) {\n        std::cerr << \"pinComment failed: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 355,
+  "completionTokens": 1494
+}

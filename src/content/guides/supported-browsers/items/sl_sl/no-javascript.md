@@ -1,0 +1,1 @@
+Naš pripomoček za komentiranje zahteva brskalnik, ki vsaj podpira standard ES6 JavaScript, da omogoči bogato interaktivno izkušnjo.

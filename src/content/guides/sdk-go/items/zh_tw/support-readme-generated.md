@@ -1,0 +1,1 @@
+如需支援，請造訪 https://fastcomments.com/auth/my-account/help 或電郵 support@fastcomments.com

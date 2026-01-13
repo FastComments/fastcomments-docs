@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "a7e00e0ead4f8f73ed1987eb71a3265776007f56fbbf943b577b19438d527249",
+  "generatedAt": "2026-01-12T21:57:39.845Z",
+  "codeExample": "let (response, httpResponse) = client.updateFeedPost(\n  tenantId = \"my-tenant-123\",\n  id = \"post-456\",\n  feedPost = FeedPost(\n    id = \"post-456\",\n    title = \"Breaking News: Market Rally\",\n    content = \"Stocks surged 5% after the Fed announcement; analysts cite renewed investor confidence.\",\n    published = true,\n    tags = @[\"finance\", \"markets\"]\n  )\n)\nif response.isSome:\n  let flagResp = response.get()\n  discard flagResp",
+  "model": "gpt-5-mini",
+  "promptTokens": 401,
+  "completionTokens": 1209
+}

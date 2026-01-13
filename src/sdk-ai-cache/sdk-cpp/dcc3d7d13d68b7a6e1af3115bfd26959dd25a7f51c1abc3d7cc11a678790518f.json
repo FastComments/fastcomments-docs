@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "dcc3d7d13d68b7a6e1af3115bfd26959dd25a7f51c1abc3d7cc11a678790518f",
+  "generatedAt": "2025-11-20T22:24:15.983Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nauto paramsPtr = std::make_shared<UpdatableCommentParams>();\nparamsPtr->content = U(\"Clarified the point about API usage and fixed a typo.\");\nboost::optional<utility::string_t> contextUserId = U(\"moderator@example.com\");\nboost::optional<bool> doSpamCheck = true;\nboost::optional<bool> isLive = false;\napi->updateComment(tenantId, commentId, *paramsPtr, contextUserId, doSpamCheck, isLive)\n.then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Comment updated successfully\\n\";\n        else std::cout << \"No response received\\n\";\n    } catch (const std::exception &e) {\n        std::cerr << \"Update failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 395,
+  "completionTokens": 1704
+}

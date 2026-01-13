@@ -28,7 +28,9 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
 
         // Create parser and OpenAI client
         const parser = new TypeScriptParser(this.repoPath, config.modelsPath);
-        const aiClient = new OpenAIClient(path.join(this.repoPath, config.cachePath));
+        // Use cache path outside of sdks-checkout so it can be checked into git
+        const aiCachePath = path.join(__dirname, '..', 'sdk-ai-cache', this.sdk.id);
+        const aiClient = new OpenAIClient(aiCachePath);
 
         // Build operation map from OpenAPI spec
         const operationMap = this.buildOperationMap(spec);
@@ -91,11 +93,11 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
         let currentIndex = 0;
         const concurrency = 10;
 
-        // Create items directory
-        const itemsDir = path.join(__dirname, '..', 'content', 'guides', this.sdk.id, 'items');
-        console.log(`Creating items directory: ${itemsDir}`);
-        if (!fs.existsSync(itemsDir)) {
-            fs.mkdirSync(itemsDir, { recursive: true });
+        // Create generated items directory
+        const generatedDir = path.join(__dirname, '..', 'content', 'guides', this.sdk.id, 'items', 'generated');
+        console.log(`Creating generated items directory: ${generatedDir}`);
+        if (!fs.existsSync(generatedDir)) {
+            fs.mkdirSync(generatedDir, { recursive: true });
         }
 
         // Function to get next method
@@ -114,8 +116,14 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
                 const method = next();
                 if (!method) break;
 
-                // Generate code example
+                // Generate code example (uses cache if signature unchanged)
                 const codeExample = await aiClient.generateCodeExample(method);
+
+                // Skip if code example generation failed
+                if (!codeExample) {
+                    console.warn(`Skipping ${method.name} - no code example generated`);
+                    continue;
+                }
 
                 // Determine resource for categorization
                 let resource = method.tag || 'api';
@@ -134,12 +142,14 @@ class TypeScriptAIGenerator extends BaseDocGenerator {
                 // Generate section
                 const section = this.generateMethodSection(method, codeExample, resource);
                 if (section) {
-                    sections.push(section);
-
                     // Write file immediately with -generated suffix
-                    const filePath = path.join(itemsDir, section.file);
+                    const filePath = path.join(generatedDir, section.file);
                     console.log(`Writing file: ${filePath}`);
                     fs.writeFileSync(filePath, section.content, 'utf8');
+
+                    // Update section.file to include the generated/ prefix for meta.json
+                    section.file = 'generated/' + section.file;
+                    sections.push(section);
                 }
             }
         };

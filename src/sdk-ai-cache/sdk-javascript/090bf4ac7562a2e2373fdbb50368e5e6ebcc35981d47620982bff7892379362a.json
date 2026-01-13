@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "090bf4ac7562a2e2373fdbb50368e5e6ebcc35981d47620982bff7892379362a",
+  "generatedAt": "2026-01-12T21:53:32.382Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst urlId: string = 'news/2025/fastcomments-release';\nconst userId: string = 'user_8b7f3c';\nconst startDate: string = '2025-01-01T00:00:00Z';\nconst questionIds: string = 'q123,q124';\nconst skip: number = 20;\nconst result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 894
+}

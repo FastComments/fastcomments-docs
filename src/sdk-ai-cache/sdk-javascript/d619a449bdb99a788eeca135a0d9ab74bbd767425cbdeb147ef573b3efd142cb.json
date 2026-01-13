@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "d619a449bdb99a788eeca135a0d9ab74bbd767425cbdeb147ef573b3efd142cb",
+  "generatedAt": "2026-01-12T21:55:05.356Z",
+  "codeExample": "const tenantId: string = \"tenant_98f4c2\";\nconst postId: string = \"post_4a9b12\";\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: \"Weekly Product Update — Jan 12, 2026\",\n  body: \"Released performance improvements (~30%) and fixed comment threading bug.\",\n  published: true,\n  tags: [\"release\", \"performance\"]\n};\nconst broadcastId: string = \"broadcast_20260112_01\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature\";\nconst result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 482,
+  "completionTokens": 948
+}

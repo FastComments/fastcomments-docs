@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "9a29bddbd95ad82a34fed5d1e9b1137ef636f298057b3081b0b725b11533a35d",
+  "generatedAt": "2026-01-12T21:57:37.863Z",
+  "codeExample": "let (response, httpResponse) = client.updateQuestionResult(\n  tenantId = \"my-tenant-123\",\n  id = \"question-456\",\n  updateQuestionResultBody = UpdateQuestionResultBody(\n    result = \"approved\",\n    reviewerId = \"moderator-42\",\n    notes = \"Valid question, no action required\",\n    isSpam = false\n  )\n)\nif response.isSome:\n  let flagResponse = response.get()\n  discard flagResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 405,
+  "completionTokens": 1321
+}

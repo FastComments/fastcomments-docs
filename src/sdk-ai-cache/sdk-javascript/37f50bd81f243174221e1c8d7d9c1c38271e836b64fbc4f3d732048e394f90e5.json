@@ -1,0 +1,9 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "37f50bd81f243174221e1c8d7d9c1c38271e836b64fbc4f3d732048e394f90e5",
+  "generatedAt": "2026-01-12T20:38:30.050Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst id: string = 'cmt_20260112_7b9f';\nconst blockFromCommentParams: BlockFromCommentParams = {\n  reason: 'Repeated spam links',\n  durationDays: 90,\n  blockReplies: true,\n  notifyCommenter: true\n};\nconst userId: string = 'user_7f3e9';\nconst result: BlockFromCommentPublic200Response = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 444,
+  "completionTokens": 1021
+}

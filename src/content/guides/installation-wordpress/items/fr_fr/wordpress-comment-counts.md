@@ -1,0 +1,3 @@
+L'extension FastComments pour WordPress remplacera le mécanisme de comptage par défaut de WordPress par un système fourni par FastComments. Nous effectuerons une requête asynchrone
+par chargement de page lorsqu'il y a une liste d'articles avec des décomptes de commentaires à afficher. Si l'utilisateur a désactivé JavaScript, il basculera vers les décomptes par défaut de WordPress afin qu'il n'y
+ait pas de perte de fonctionnalité.

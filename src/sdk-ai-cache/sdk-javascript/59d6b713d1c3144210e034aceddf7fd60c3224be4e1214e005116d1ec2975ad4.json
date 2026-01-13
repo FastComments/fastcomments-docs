@@ -1,0 +1,9 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "59d6b713d1c3144210e034aceddf7fd60c3224be4e1214e005116d1ec2975ad4",
+  "generatedAt": "2026-01-12T21:52:43.375Z",
+  "codeExample": "const tenantId: string = \"tenant_4b2f6a-4b2f6a2d\";\nconst templateId: string = \"email_template_9f8b7c3e\";\nconst result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);\nconst status: APIStatus | undefined = result?.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 1236
+}

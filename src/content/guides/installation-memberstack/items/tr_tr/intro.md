@@ -1,0 +1,1 @@
+FastComments ile, Memberstack ile birleştirildiğinde yalnızca üyelere özel yorum özelliği kurabiliriz!

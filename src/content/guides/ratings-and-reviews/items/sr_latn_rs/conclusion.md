@@ -1,0 +1,2 @@
+Nadamo se da ste dokumentaciju o ocenama i recenzijama smatrali sveobuhvatnom, i nadamo se da vam je lako da je podesite i koristite. Ako mislite
+da smo nešto propustili u dokumentaciji, javite nam ispod!

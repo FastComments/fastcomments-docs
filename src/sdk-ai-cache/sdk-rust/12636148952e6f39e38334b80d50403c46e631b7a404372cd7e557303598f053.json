@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post_public",
+  "signatureHash": "12636148952e6f39e38334b80d50403c46e631b7a404372cd7e557303598f053",
+  "generatedAt": "2025-11-21T23:54:14.124Z",
+  "codeExample": "let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/article-2025-11-21\".to_string(),\n    update_feed_post_params: models::UpdateFeedPostParams {\n        title: Some(\"Global Markets Rally After Policy Update\".to_string()),\n        body: Some(\"Markets responded positively to the central bank announcement...\".to_string()),\n        tags: Some(vec![\"markets\".to_string(), \"economy\".to_string()]),\n        media: Some(vec![\n            models::FeedPostMediaItem {\n                id: Some(\"img-hero-01\".to_string()),\n                kind: Some(\"image\".to_string()),\n                assets: Some(vec![\n                    models::FeedPostMediaItemAsset {\n                        url: \"https://cdn.acme-corp.com/news/hero-2025.jpg\".to_string(),\n                        mime_type: Some(\"image/jpeg\".to_string())\n                    }\n                ])\n            }\n        ]),\n        links: Some(vec![\n            models::FeedPostLink {\n                url: \"https://acme-corp.com/deep-dive\".to_string(),\n                title: Some(\"Full analysis\".to_string())\n            }\n        ]),\n        ..Default::default()\n    },\n    broadcast_id: Some(\"broadcast-789\".to_string()),\n    sso: Some(\"sso-token-abc123\".to_string())\n};\nlet response: CreateFeedPostPublic200Response = update_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 508,
+  "completionTokens": 1481
+}

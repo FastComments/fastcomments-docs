@@ -1,0 +1,3 @@
+Le module WordPress FastComments remplacera le mécanisme de comptage par défaut de WordPress par un système fourni par FastComments. Nous effectuerons une requête asynchrone
+par chargement de page lorsqu'il y a une liste d'articles dont les compteurs de commentaires doivent être affichés. Si l'utilisateur a JavaScript désactivé, le plugin utilisera les compteurs par défaut de WordPress afin qu'il
+n'y ait pas de perte de fonctionnalité.

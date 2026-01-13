@@ -1,0 +1,14 @@
+## Parameter
+
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| createFeedPostParams | CreateFeedPostParams | Ja |  |
+| broadcastId | string | Nein |  |
+| sso | string | Nein |  |
+
+## Antwort
+
+Gibt zurück: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublic200Response.ts)
+
+---

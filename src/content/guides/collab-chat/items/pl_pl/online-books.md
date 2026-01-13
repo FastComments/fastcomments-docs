@@ -1,0 +1,2 @@
+Możesz zainicjalizować Collab Chat dla każdej strony, jeśli chcesz, i mieć osobne wątki dla każdej strony — wystarczy przekazać parametr `urlId`
+wartość taką jak `book-one-page1`. Ta konfiguracja działa również dla standardowego widżetu komentarzy.

@@ -1,0 +1,9 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "801d111597423ccd28d3baf7945d2b7825d03527b80c67f353dcc5eb333e881b",
+  "generatedAt": "2025-11-22T05:32:56.349Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_9c2f7b';\n  const id: string = 'comment_6a1b2c3d';\n  const unBlockFromCommentParams: UnBlockFromCommentParams = {\n    reason: 'User appealed; evidence reviewed and ban lifted',\n    liftedByAdminId: 'admin_42',\n    effectiveAt: new Date().toISOString()\n  };\n  const userId: string = 'user_1024';\n  const anonUserId: string = 'anon_7f9e';\n  const response: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId, anonUserId);\n  console.log(response);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 938
+}

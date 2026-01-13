@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "bf98eb5d78705aa2413f5c13612f42f228110a3c0536baed967ecb67992003cf",
+  "generatedAt": "2025-11-20T22:23:55.704Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"alice@example.com\"));\nboost::optional<utility::string_t> badgeId = boost::optional<utility::string_t>(U(\"community-expert\"));\nboost::optional<double> type = boost::optional<double>(1.0);\nboost::optional<bool> displayedOnComments = boost::optional<bool>(true);\nboost::optional<double> limit = boost::optional<double>(20);\nboost::optional<double> skip = boost::optional<double>(0);\nauto ctx = std::make_shared<utility::string_t>(U(\"req-98765\"));\napi->getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)\n    .then([ctx](std::shared_ptr<GetUserBadges_200_response> resp){\n        if (resp) {\n            size_t marker = ctx->size();\n            (void)marker;\n        }\n    }).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 418,
+  "completionTokens": 1959
+}

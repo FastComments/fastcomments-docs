@@ -1,0 +1,49 @@
+Μπορείτε να βρείτε τη βιβλιοθήκη React Native μας στο NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">εδώ</a>.
+
+Το FastComments React Native widget σχολίων υποστηρίζει όλες τις ίδιες δυνατότητες με την έκδοση VanillaJS - ζωντανά σχόλια, SSO και ούτω καθεξής.
+
+[inline-code-attrs-start title = 'FastComments React Native μέσω NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+npm install --save fastcomments-react-native
+[inline-code-end]
+
+
+[inline-code-attrs-start title = 'FastComments React Native μέσω Yarn'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+yarn add fastcomments-react-native
+[inline-code-end]
+
+Η διαμόρφωση καθορίζεται ελαφρώς διαφορετικά σε σύγκριση με τη βιβλιοθήκη `fastcomments-react`:
+
+[inline-code-attrs-start title = 'Παράδειγμα React Native'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import { FastCommentsCommentWidget } from 'fastcomments-react-native';
+
+// ...
+
+  const tenantId = 'demo'; // Το tenant id σας. Μπορεί να ληφθεί από https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // Το ID ή URL του νήματος σχολίων στην εφαρμογή σας.
+  const config = {
+    tenantId: tenantId,
+    urlId: pageId
+  };
+
+  return (
+      <FastCommentsCommentWidget config={config}/>
+  );
+[inline-code-end]
+
+Αν είστε στην EU, θα θέλετε να ορίσετε την παράμετρο `region`:
+
+[inline-code-attrs-start title = 'React Native - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+  // ...
+  const config = {
+    tenantId: tenantId,
+    urlId: pageId,
+    region: 'eu'
+  };
+  // ...
+[inline-code-end]
+
+Μπορείτε να βρείτε τη διαμόρφωση που υποστηρίζει το React Native component <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">εδώ</a>.

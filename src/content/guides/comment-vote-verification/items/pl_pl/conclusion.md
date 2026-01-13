@@ -1,0 +1,1 @@
+Mamy nadzieję, że ten przewodnik okazał się pomocny. Jeśli uważasz, że coś przeoczyliśmy, daj nam znać poniżej.

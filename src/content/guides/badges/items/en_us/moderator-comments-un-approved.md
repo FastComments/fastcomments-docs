@@ -1,0 +1,1 @@
+This badge is awarded when comments are unapproved (hidden). It is called `Red Stamp` by default.

@@ -1,0 +1,3 @@
+Deactivating the plugin will remove your token from your WordPress installation. Your data remains on FastComments servers until you delete your account. If you reactivate the plugin, you will have to perform the initial sync again.
+
+Uninstalling the plugin removes all data related to the plugin on your site, but you would still need to delete your FastComments account to remove the data that remains on FastComments' servers.

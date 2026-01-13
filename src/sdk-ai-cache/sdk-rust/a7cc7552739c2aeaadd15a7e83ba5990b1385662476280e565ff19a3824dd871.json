@@ -1,0 +1,9 @@
+{
+  "method": "upload_image",
+  "signatureHash": "a7cc7552739c2aeaadd15a7e83ba5990b1385662476280e565ff19a3824dd871",
+  "generatedAt": "2025-11-21T23:54:12.344Z",
+  "codeExample": "let params: UploadImageParams = UploadImageParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    file: std::path::PathBuf::from(\"assets/images/article-hero.jpg\"),\n    size_preset: Some(models::SizePreset::Medium),\n    url_id: Some(\"news/article/hero\".to_string()),\n};\nlet upload_response: UploadImageResponse = upload_image(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 343,
+  "completionTokens": 740
+}

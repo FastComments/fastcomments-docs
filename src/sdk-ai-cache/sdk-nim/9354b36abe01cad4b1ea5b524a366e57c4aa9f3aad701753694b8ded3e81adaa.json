@@ -1,0 +1,9 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "9354b36abe01cad4b1ea5b524a366e57c4aa9f3aad701753694b8ded3e81adaa",
+  "generatedAt": "2026-01-12T21:55:39.188Z",
+  "codeExample": "let (response, httpResponse) = client.createSubscription(tenantId = \"my-tenant-123\", createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(userId = \"user-789\", email = \"jane.doe@example.com\", subscriptionType = \"thread\", topics = @[\"news\", \"world\"], active = true))\nif response.isSome:\n  let created = response.get()\n  echo \"Subscription created for user: \", created.userId",
+  "model": "gpt-5-mini",
+  "promptTokens": 390,
+  "completionTokens": 807
+}

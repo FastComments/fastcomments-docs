@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "0d223f899d8aa7c071f6b66f7139a24067489bdc88c18492c835e4da2355e9db",
+  "generatedAt": "2025-11-22T05:33:37.190Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-47';\nconst postId: string = 'post_8f3a9b2c';\nconst reactBodyParams: ReactBodyParams = { reaction: 'like', userId: 'editor_42', metadata: { locale: 'en-US' } };\nconst isUndo: boolean = false;\nconst broadcastId: string = 'broadcast_20251122_01';\nconst sso: string = 'sso_eyJ1c2VyIjoiZWRpdG9yXzQyIn0';\nconst result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 431,
+  "completionTokens": 806
+}

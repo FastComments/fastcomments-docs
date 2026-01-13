@@ -1,0 +1,9 @@
+{
+  "method": "get_comment_text",
+  "signatureHash": "8f5fef403e0472057beb8e7b12e0e9d69eecb65fc3dc1f18992708e66bec9ca9",
+  "generatedAt": "2026-01-12T22:01:55.468Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetCommentTextParams = GetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/2026/01/12/rust-async-example#cmt-42\".to_string(),\n        edit_key: Some(\"edk_3f2b7a9c\".to_string()),\n        sso: Some(\"sso:user:7890:token\".to_string()),\n    };\n    let response: GetCommentText200Response = get_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 781
+}

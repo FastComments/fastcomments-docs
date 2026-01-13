@@ -1,0 +1,9 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "0a8863919b9441250ca0ea6383d47f358e044049ea5d6c1ced2e2dab5802a4ee",
+  "generatedAt": "2025-11-22T05:33:14.392Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8a3f4b2c';\n  const commentId: string = 'cmt_9f4d3a2b';\n  const resultBasic: GetCommentText200Response = await getCommentText(tenantId, commentId);\n  const editKey: string = 'EK-4f3b2a1c';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const resultWithOpts: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);\n  console.log(resultBasic, resultWithOpts);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 398,
+  "completionTokens": 998
+}

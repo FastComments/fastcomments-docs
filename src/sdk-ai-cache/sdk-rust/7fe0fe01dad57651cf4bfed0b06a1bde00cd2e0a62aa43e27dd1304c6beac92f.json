@@ -1,0 +1,9 @@
+{
+  "method": "create_user_badge",
+  "signatureHash": "7fe0fe01dad57651cf4bfed0b06a1bde00cd2e0a62aa43e27dd1304c6beac92f",
+  "generatedAt": "2026-01-12T21:59:06.464Z",
+  "codeExample": "async fn example_create_user_badge() -> Result<CreateUserBadge200Response, Error> {\n    let params: CreateUserBadgeParams = CreateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_user_badge_params: models::CreateUserBadgeParams {\n            user_id: \"user-789\".to_string(),\n            badge_key: \"top_contributor\".to_string(),\n            title: Some(\"Top Contributor\".to_string()),\n            description: Some(\"Awarded for exceptional contributions to the community\".to_string()),\n            image_url: Some(\"https://cdn.acme.com/badges/top_contributor.png\".to_string()),\n            active: Some(true),\n            expires_at: None,\n        },\n    };\n    let response: CreateUserBadge200Response = create_user_badge(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 440,
+  "completionTokens": 1084
+}

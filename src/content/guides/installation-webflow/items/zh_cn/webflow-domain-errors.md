@@ -1,0 +1,23 @@
+您可能会收到如下授权错误：
+
+<div class="screenshot white-bg">
+    <div class="title">域名配置缺失</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="域名配置缺失" />
+</div>
+
+这是因为 FastComments 不知道应该允许您的账户在此域名下使用。
+
+在这种情况下，解决方法很简单。您只需将您的站点添加到您的 FastComments.com 帐户中。
+
+[在此处将您的站点添加到您的帐户。](https://fastcomments.com/auth/my-account/configure-domains)
+
+添加域名，如下所示：
+
+<div class="screenshot white-bg">
+    <div class="title">添加您的域名</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-6.png" alt="添加您的域名" />
+</div>
+
+现在您应该已经在 Webflow 站点上添加了快速、实时的评论功能！
+
+---

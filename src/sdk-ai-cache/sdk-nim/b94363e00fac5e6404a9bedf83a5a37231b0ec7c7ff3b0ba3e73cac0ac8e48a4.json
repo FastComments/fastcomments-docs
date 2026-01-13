@@ -1,0 +1,9 @@
+{
+  "method": "getTenant",
+  "signatureHash": "b94363e00fac5e6404a9bedf83a5a37231b0ec7c7ff3b0ba3e73cac0ac8e48a4",
+  "generatedAt": "2026-01-12T21:57:02.657Z",
+  "codeExample": "let (response, httpResponse) = client.getTenant(tenantId = \"my-tenant-123\", id = \"\")\nif response.isSome:\n  let tenant = response.get()\n  echo \"Tenant retrieved\"\n  discard tenant\nelse:\n  echo \"No tenant found\"\n  echo \"HTTP status:\", httpResponse.status",
+  "model": "gpt-5-mini",
+  "promptTokens": 386,
+  "completionTokens": 1034
+}

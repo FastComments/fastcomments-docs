@@ -1,0 +1,9 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "0e530c060e643606576779fe5767ab9fb7a1124ef6e7b71d48e6f4e6349c46cb",
+  "generatedAt": "2026-01-12T20:34:28.805Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> year = 2025;\nboost::optional<double> month = 1;\nauto placeholder = std::make_shared<GetTenantDailyUsages_200_response>();\napi->getTenantDailyUsages(tenantId, year, month, boost::optional<double>(), boost::optional<double>())\n.then([](pplx::task<std::shared_ptr<GetTenantDailyUsages_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) std::cout << \"Received tenant daily usages\\n\";\n        else std::cout << \"No usage data\\n\";\n    } catch (const std::exception &e) {\n        std::cout << \"Request error: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 395,
+  "completionTokens": 1524
+}

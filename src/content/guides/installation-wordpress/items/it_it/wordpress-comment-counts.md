@@ -1,0 +1,3 @@
+Il plugin FastComments per WordPress sostituirà il meccanismo predefinito di conteggio di WordPress con un sistema fornito da FastComments. Effettueremo una richiesta asincrona
+per ogni caricamento di pagina quando è presente un elenco di post con i conteggi dei commenti da mostrare. Se l'utente ha JavaScript disabilitato, si ricorrerà ai conteggi predefiniti di WordPress in modo che non vi
+sia perdita di funzionalità.

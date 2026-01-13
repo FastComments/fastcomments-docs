@@ -1,0 +1,9 @@
+{
+  "method": "pinComment",
+  "signatureHash": "a54c55ebfd96f8a96bbfb26623813975c625387ed6541a8389f169182c61c216",
+  "generatedAt": "2026-01-12T20:37:22.361Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nutility::string_t broadcastId = U(\"broadcast-98765\");\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->pinComment(tenantId, commentId, broadcastId, sso)\n.then([](pplx::task<std::shared_ptr<PinComment_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (!resp) resp = std::make_shared<PinComment_200_response>();\n        (void)resp;\n    } catch (...) {}\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 353,
+  "completionTokens": 1696
+}

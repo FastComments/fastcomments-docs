@@ -1,0 +1,45 @@
+## パラメータ
+
+| 名前 | 型 | 必須 | 説明 |
+|------|------|----------|-------------|
+| tenantId | string | はい |  |
+| afterId | string | いいえ |  |
+| afterCreatedAt | int64_t | いいえ |  |
+| unreadOnly | bool | いいえ |  |
+| dmOnly | bool | いいえ |  |
+| noDm | bool | いいえ |  |
+| sso | string | いいえ |  |
+
+## レスポンス
+
+戻り値: [`ResetUserNotifications_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotifications_200_response.h)
+
+## 例
+
+[inline-code-attrs-start title = 'resetUserNotifications の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U("notif-987654321"));
+boost::optional<int64_t> afterCreatedAt = boost::optional<int64_t>(1625097600000LL);
+boost::optional<bool> unreadOnly = boost::optional<bool>(true);
+boost::optional<bool> dmOnly = boost::optional<bool>(false);
+boost::optional<bool> noDm;
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+
+api->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
+    .then([](pplx::task<std::shared_ptr<ResetUserNotifications_200_response>> t)
+    {
+        try
+        {
+            auto resp = t.get();
+            auto respCopy = std::make_shared<ResetUserNotifications_200_response>(*resp);
+            return respCopy;
+        }
+        catch (...)
+        {
+            return std::shared_ptr<ResetUserNotifications_200_response>();
+        }
+    });
+[inline-code-end]
+
+---

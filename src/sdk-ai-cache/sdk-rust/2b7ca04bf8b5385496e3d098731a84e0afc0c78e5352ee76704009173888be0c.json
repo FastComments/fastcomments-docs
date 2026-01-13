@@ -1,0 +1,9 @@
+{
+  "method": "create_email_template",
+  "signatureHash": "2b7ca04bf8b5385496e3d098731a84e0afc0c78e5352ee76704009173888be0c",
+  "generatedAt": "2026-01-12T21:58:54.891Z",
+  "codeExample": "let params: CreateEmailTemplateParams = CreateEmailTemplateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_email_template_body: models::CreateEmailTemplateBody {\n        name: \"New Comment Notification\".to_string(),\n        subject: \"New comment on your article\".to_string(),\n        html_body: \"<p>A new comment was posted on <strong>{article_title}</strong>.</p>\".to_string(),\n        text_body: Some(\"A new comment was posted on {article_title}.\".to_string()),\n        from_email: Some(\"no-reply@acme-news.com\".to_string()),\n        enabled: Some(true),\n    },\n};\nlet response: CreateEmailTemplate200Response = create_email_template(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 870
+}
