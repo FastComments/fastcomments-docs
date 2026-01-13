@@ -49,37 +49,32 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
 
   echo "Generating SDK documentation..."
-  node src/sdk-guide-generator.js
-  if [ $? -ne 0 ]; then
-    echo "ERROR: SDK documentation generation failed with exit code $?"
+  if ! node src/sdk-guide-generator.js; then
+    echo "ERROR: SDK documentation generation failed"
     exit 1
   fi
 
   echo "Generating custom styling guide..."
-  node src/custom-styling-guide-generator.js
-  if [ $? -ne 0 ]; then
-    echo "ERROR: Custom styling guide generation failed with exit code $?"
+  if ! node src/custom-styling-guide-generator.js; then
+    echo "ERROR: Custom styling guide generation failed"
     exit 1
   fi
 
   echo "Building content..."
-  NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content
-  if [ $? -ne 0 ]; then
-    echo "ERROR: Content build failed with exit code $?"
+  if ! NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content; then
+    echo "ERROR: Content build failed"
     exit 1
   fi
 
   echo "Building static..."
-  npm run build-static
-  if [ $? -ne 0 ]; then
-    echo "ERROR: Static build failed with exit code $?"
+  if ! npm run build-static; then
+    echo "ERROR: Static build failed"
     exit 1
   fi
 
   echo "Building search indexes..."
-  npm run build-search-index
-  if [ $? -ne 0 ]; then
-    echo "ERROR: Search index build failed with exit code $?"
+  if ! npm run build-search-index; then
+    echo "ERROR: Search index build failed"
     exit 1
   fi
 
