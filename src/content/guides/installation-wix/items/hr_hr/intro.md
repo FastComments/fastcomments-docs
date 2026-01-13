@@ -1,0 +1,3 @@
+S FastCommentsom jednostavno možemo dodati komentare uživo na bilo koju Wix stranicu. Također ćemo proći kroz osiguravanje da svaka stranica ili objava na blogu može imati svoju jedinstvenu nit komentara.
+
+Imajte na umu da ovaj vodič zahtijeva FastComments račun. Preporučuje se da se prvo registrirate, a zatim se vratite ovdje. [Ovdje možete otvoriti račun.](https://fastcomments.com/auth/tenant-signup?packageId=flex)

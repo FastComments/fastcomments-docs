@@ -1,0 +1,3 @@
+FastComments Feeds vam omogućavaju da kreirate feed-ove sadržaja u stilu društvenih mreža sa sveobuhvatnom podrškom za web, native Android i iOS platforme. Ova moćna funkcionalnost vam omogućava da pravite angažujuća, dinamična sadržajna iskustva koja se mogu prilagoditi i personalizovati za različite publike i regione.
+
+Feed-ovi podržavaju tekstualni i slikovni sadržaj, a slike se čuvaju u popularnim veličinama za uređaje.

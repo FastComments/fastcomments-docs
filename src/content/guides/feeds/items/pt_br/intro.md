@@ -1,0 +1,3 @@
+FastComments Feeds permitem que você crie feeds de conteúdo no estilo de redes sociais com suporte abrangente para web, Android nativo e iOS. Esse recurso poderoso permite que você construa experiências de conteúdo dinâmicas e envolventes que podem ser customizadas e personalizadas para diferentes públicos e regiões.
+
+Os feeds suportam conteúdo em texto e imagens, e as imagens são armazenadas com tamanhos populares de dispositivos.

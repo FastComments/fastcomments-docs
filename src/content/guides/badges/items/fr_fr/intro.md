@@ -1,0 +1,2 @@
+FastComments propose un système de badges riche en fonctionnalités sur tous les forfaits pour récompenser vos utilisateurs et vos modérateurs. Lisez la suite pour découvrir quels types de badges nous prenons en charge,
+qui peut obtenir quel type de badge, et les exigences pour chacun.

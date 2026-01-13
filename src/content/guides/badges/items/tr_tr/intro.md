@@ -1,0 +1,2 @@
+FastComments, tüm planlarda kullanıcılarınızı ve moderatörlerinizi ödüllendirmek için zengin özelliklere sahip bir rozet sistemi sunar.
+Okumaya devam ederek desteklediğimiz rozet türlerini, kimin hangi tür rozeti alabileceğini ve her birinin gereksinimlerini öğrenin.

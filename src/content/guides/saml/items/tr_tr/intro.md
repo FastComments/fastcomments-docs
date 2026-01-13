@@ -1,0 +1,3 @@
+FastComments, Flex ve Pro planlarındaki müşteriler için SAML 2.0 kimlik doğrulamasını destekler. SAML, güvenli tek oturum açma (SSO) 
+kimlik doğrulamasını kuruluşunuzun kimlik sağlayıcısı aracılığıyla sağlar ve kullanıcıların mevcut kurumsal kimlik bilgilerini kullanarak FastComments'a erişmelerine olanak tanır. 
+Bu kılavuz, SAML kimlik doğrulamasının kurulumu, yapılandırması ve sorun giderilmesini kapsar.

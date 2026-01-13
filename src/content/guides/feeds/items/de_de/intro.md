@@ -1,0 +1,3 @@
+FastComments Feeds ermöglichen es Ihnen, Content-Feeds im Stil sozialer Netzwerke zu erstellen, mit umfassender Unterstützung für Web-, native Android- und iOS-Plattformen. Mit dieser leistungsstarken Funktion können Sie ansprechende, dynamische Inhalte erstellen, die für verschiedene Zielgruppen und Regionen angepasst und personalisiert werden können.
+
+Feeds unterstützen Text- und Bildinhalte, und Bilder werden in gängigen Gerätegrößen gespeichert.

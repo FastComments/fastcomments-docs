@@ -1,0 +1,3 @@
+Z FastComments możemy łatwo dodać komentarze na żywo do dowolnej strony Wix. Przejdziemy również przez zapewnienie, że każda strona, lub wpis na blogu, może mieć własny, unikalny wątek komentarzy.
+
+Zwróć uwagę, że ten samouczek wymaga konta FastComments. Zaleca się, aby najpierw się zarejestrować, a następnie wrócić tutaj. [Możesz założyć konto tutaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)

@@ -1,0 +1,3 @@
+FastComments offre un système complet de profils utilisateur qui permet aux membres de votre communauté de s'exprimer, de se connecter avec d'autres et de bâtir leur réputation. Les profils utilisateur comprennent des avatars et des en-têtes personnalisables, des biographies personnelles, des liens vers les réseaux sociaux, des badges obtenus, des contrôles de confidentialité, la messagerie directe et bien plus encore.
+
+Poursuivez votre lecture pour apprendre comment afficher, personnaliser et gérer les profils utilisateur dans votre communauté FastComments.

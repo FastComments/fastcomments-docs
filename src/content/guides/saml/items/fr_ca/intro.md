@@ -1,0 +1,3 @@
+FastComments prend en charge l’authentification SAML 2.0 pour les clients des forfaits Flex et Pro. SAML permet une authentification unique (SSO) sécurisée via le fournisseur d’identités de votre organisation, permettant aux utilisateurs d’accéder à FastComments en utilisant leurs identifiants d’entreprise existants. 
+
+Ce guide couvre la mise en place, la configuration et le dépannage de l’authentification SAML.

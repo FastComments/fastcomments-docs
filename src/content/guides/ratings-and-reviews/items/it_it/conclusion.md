@@ -1,0 +1,2 @@
+Speriamo che tu abbia trovato la documentazione di Ratings & Reviews completa e speriamo che sia facile da configurare e utilizzare. Se pensi
+che ci siamo dimenticati qualcosa nella documentazione, faccelo sapere qui sotto!

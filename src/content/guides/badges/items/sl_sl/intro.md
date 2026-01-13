@@ -1,0 +1,2 @@
+FastComments ponuja bogat sistem značk v vseh načrtih, s katerim lahko nagradite svoje uporabnike in moderatorje. Preberite naprej, da izveste, katere vrste značk podpiramo,
+kdo lahko prejme katero vrsto značke in kakšne so zahteve za vsako.

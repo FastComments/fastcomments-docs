@@ -1,0 +1,2 @@
+Nadamo se da ste dokumentaciju Ocjena i recenzija smatrali sveobuhvatnom, i nadamo se da će vam biti jednostavno postaviti i koristiti. Ako mislite
+da smo u dokumentaciji nešto propustili, javite nam dolje!

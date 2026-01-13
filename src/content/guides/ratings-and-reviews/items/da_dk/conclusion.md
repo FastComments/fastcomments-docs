@@ -1,0 +1,2 @@
+Vi håber, du fandt dokumentationen om Bedømmelser & Anmeldelser fyldestgørende, og vi håber, du synes, det er nemt at opsætte og bruge. Hvis du synes
+vi har glemt noget i dokumentationen, så lad os det vide nedenfor!

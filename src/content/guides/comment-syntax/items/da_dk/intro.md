@@ -1,0 +1,2 @@
+Her vil vi gennemgå FastComments' kommentarformat, funktioner der understøttes, mens du skriver kommentarer,
+hvordan man formaterer tekst, og de forskellige filtre og sikkerhedsforanstaltninger, der er indbygget i systemet.

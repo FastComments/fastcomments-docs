@@ -1,0 +1,3 @@
+FastComments Image Chat consente discussioni interattive sulle immagini permettendo agli utenti di fare clic in qualsiasi punto di un'immagine per creare punti di discussione. Gli utenti possono fare clic su parti specifiche delle immagini per avviare conversazioni su quelle aree, creando indicatori visivi che mostrano dove si trovano le discussioni.
+
+Questa funzione è perfetta per feedback sul design, recensioni di prodotti, materiali didattici con diagrammi, gallerie fotografiche con commenti e qualsiasi scenario in cui si desiderino discussioni contestuali ancorate a posizioni specifiche dell'immagine.

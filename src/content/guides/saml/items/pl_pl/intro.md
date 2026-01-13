@@ -1,0 +1,3 @@
+FastComments obsługuje uwierzytelnianie SAML 2.0 dla klientów korzystających z planów Flex i Pro. SAML umożliwia bezpieczne logowanie jednokrotne (SSO) 
+za pośrednictwem dostawcy tożsamości Twojej organizacji, pozwalając użytkownikom uzyskać dostęp do FastComments przy użyciu ich istniejących służbowych poświadczeń. 
+Ten przewodnik obejmuje konfigurację, ustawienia i rozwiązywanie problemów związanych z uwierzytelnianiem SAML.

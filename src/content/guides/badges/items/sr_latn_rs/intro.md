@@ -1,0 +1,2 @@
+FastComments nudi bogat sistem bedževa na svim planovima za nagrađivanje vaših korisnika i moderatora. Pročitajte dalje da saznate koje vrste bedževa podržavamo,
+ko može dobiti koju vrstu bedža i zahteve za svaki.

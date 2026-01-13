@@ -1,0 +1,2 @@
+FastComments ofrece un sistema de insignias con muchas funciones en todos los planes para premiar a tus usuarios y moderadores. Sigue leyendo para saber qué tipos de insignias ofrecemos,
+quién puede obtener qué tipo de insignia, y los requisitos para cada una.

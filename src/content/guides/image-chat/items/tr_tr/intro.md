@@ -1,0 +1,3 @@
+FastComments Image Chat, kullanıcıların bir resmin herhangi bir yerine tıklayarak tartışma noktaları oluşturmasına olanak tanıyarak resimler üzerinde etkileşimli tartışmalar sağlar. Kullanıcılar, belirli resim bölgelerine tıklayarak o alanlar hakkında konuşmalar başlatabilir ve tartışmaların nerede olduğunu gösteren görsel işaretçiler oluşturabilir.
+
+Bu özellik tasarım geri bildirimi, ürün incelemeleri, diyagramlı eğitim materyalleri, yorumlu fotoğraf galerileri ve bağlamsal tartışmaları belirli görüntü konumlarına sabitlemek istediğiniz her senaryo için mükemmeldir.
