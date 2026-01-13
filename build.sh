@@ -56,4 +56,5 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   npm run build-static
   echo "Building search indexes..."
   npm run build-search-index
+  echo "Build Complete!"
 fi
