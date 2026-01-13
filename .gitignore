@@ -111,3 +111,6 @@ src/content/sdks-checkout/
 
 # OSX Finder
 .DS_Store
+
+# Search index databases
+db/

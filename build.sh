@@ -10,6 +10,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/csv
   mkdir -p src/static/images
   mkdir -p src/static/js
+  mkdir -p db
   npm install
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
@@ -32,7 +33,8 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     # Check if there are changes to commit
     if [ -n "$(git status --porcelain src/content src/translation-cache.json 2>/dev/null)" ]; then
       echo "Committing translation changes..."
-      git add src/content src/translation-cache.json
+      git add -A src/content
+      git add src/translation-cache.json
       git commit -m "Automated translation update"
       echo "Translation changes committed."
 
@@ -52,4 +54,6 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   node src/custom-styling-guide-generator.js
   MAX_BROWSERS=1 npm run build-content
   npm run build-static
+  echo "Building search indexes..."
+  npm run build-search-index
 fi
