@@ -15,8 +15,11 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   # Check for missing translations
   echo "Checking for missing translations..."
+  set +e  # Temporarily disable exit-on-error for translation check
   node src/check-translations.js
-  if [ $? -ne 0 ]; then
+  translation_check_result=$?
+  set -e  # Re-enable exit-on-error
+  if [ $translation_check_result -ne 0 ]; then
     echo "Missing translations detected. Running automated translation..."
 
     # Run translation
@@ -32,6 +35,10 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
       git add src/content src/translation-cache.json
       git commit -m "Automated translation update"
       echo "Translation changes committed."
+
+      echo "Pushing translation changes..."
+      git push
+      echo "Translation changes pushed."
     else
       echo "No translation changes to commit."
     fi
