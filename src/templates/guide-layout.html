@@ -5,7 +5,7 @@
             {{#if availableLocales}}
             <details class="lang-dropdown">
                 <summary>
-                    <h4>Language {{#each availableLocales}}{{#if current}}<span class="current-lang"><span class="flag">{{flag}}</span> {{nativeName}}</span>{{/if}}{{/each}}</h4>
+                    <h4>{{t.LANGUAGE}} {{#each availableLocales}}{{#if current}}<span class="current-lang"><span class="flag">{{flag}}</span> {{nativeName}}</span>{{/if}}{{/each}}</h4>
                 </summary>
                 <div class="lang-list">
                     {{#each availableLocales}}
@@ -31,7 +31,7 @@
     <div class="right-of-sidebar">
         {{#if isFallback}}
         <div class="translation-notice">
-            This content is not yet available in your language. Showing English version.
+            {{t.TRANSLATION_NOTICE}}
         </div>
         {{/if}}
         {{#if pageHeader}}
@@ -56,10 +56,10 @@
 
         <div class="pagination text-center">
             {{#if prevGuideUrl}}
-            <a class="btn prev" href="{{prevGuideUrl}}">Previous Guide</a>
+            <a class="btn prev" href="{{prevGuideUrl}}">{{t.PREVIOUS_GUIDE}}</a>
             {{/if}}
             {{#if nextGuideUrl}}
-            <a class="btn next" href="{{nextGuideUrl}}">Next Guide</a>
+            <a class="btn next" href="{{nextGuideUrl}}">{{t.NEXT_GUIDE}}</a>
             {{/if}}
         </div>
 
@@ -91,8 +91,7 @@
             ></iframe>
         </noscript>
         <div class="footer">
-            <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">Contribute to This
-                Guide</a></div>
+            <div class="text-center"><a href="https://github.com/FastComments/fastcomments-docs">{{t.CONTRIBUTE_TO_GUIDE}}</a></div>
         </div>
     </div>
     <script src="/js/sidebar.js"></script>
