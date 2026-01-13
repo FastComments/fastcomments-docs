@@ -52,7 +52,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   node src/sdk-guide-generator.js
   echo "Generating custom styling guide..."
   node src/custom-styling-guide-generator.js
-  MAX_BROWSERS=1 npm run build-content
+  NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content
   npm run build-static
   echo "Building search indexes..."
   npm run build-search-index
