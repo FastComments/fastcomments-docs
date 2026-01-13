@@ -1,0 +1,2 @@
+Verovatno ne želite da definišete konfiguraciju inline ako prosleđujete callback-ove itd. Umesto toga, trebalo bi da definišete
+konfiguraciju preko `computed()`, inače će se svaki put kada se pozove vaš callback itd. čitav widget ponovo renderovati.

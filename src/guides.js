@@ -225,6 +225,7 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
     }) : guideContentHTML;
 
     const outputUrl = createGuideLink(guide.id, locale);
+    const defaultUrl = createGuideLink(guide.id, defaultLocale);
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, outputUrl), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
         title: guide.pageHeader ? guide.pageHeader : guide.name,
         content: guideRootHTML,
@@ -233,7 +234,8 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         locale,
         alternateLocales,
         availableLocales,
-        defaultUrl: createGuideLink(guide.id, defaultLocale)
+        defaultUrl,
+        stableUrlId: '/' + defaultUrl // Stable urlId for FastComments widgets (same across all locales)
     }), 'utf8');
 }
 

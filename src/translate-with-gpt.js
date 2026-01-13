@@ -33,6 +33,7 @@ const { hashContent } = require('./translation-snapshot');
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
+const ALTERNATE_MODELS = ['gpt-4.1', 'gpt-5.2']; // Fallback models for large files
 const CACHE_FILE = path.join(__dirname, 'translation-cache.json');
 
 /**
@@ -156,7 +157,16 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
     }
 
     /**
-     * Call OpenAI API to translate content
+     * Sleep for a given number of milliseconds
+     * @param {number} ms - Milliseconds to sleep
+     * @returns {Promise<void>}
+     */
+    async sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    /**
+     * Call OpenAI API to translate content with retry logic
      * @param {string} content - Source content
      * @param {string} locale - Target locale
      * @param {string} filename - For logging
@@ -165,39 +175,87 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
     async translate(content, locale, filename) {
         const prompt = this.buildPrompt(content, locale);
         const systemMessage = this.getSystemMessage(locale);
+        const maxRetries = 10;
+        const baseDelay = 1000; // 1 second
 
-        try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.apiKey}`
-                },
-                body: JSON.stringify({
-                    model: this.model,
-                    messages: [
-                        { role: 'system', content: systemMessage },
-                        { role: 'user', content: prompt }
-                    ],
-                    max_completion_tokens: 16000
-                })
-            });
+        // Build list of models to try: primary model + alternates for length issues
+        const modelsToTry = [this.model, ...ALTERNATE_MODELS];
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+        for (const currentModel of modelsToTry) {
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+                    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${this.apiKey}`
+                        },
+                        body: JSON.stringify({
+                            model: currentModel,
+                            messages: [
+                                { role: 'system', content: systemMessage },
+                                { role: 'user', content: prompt }
+                            ],
+                            max_completion_tokens: 16000
+                        })
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+                    }
+
+                    const data = await response.json();
+                    const translation = data.choices?.[0]?.message?.content?.trim() || '';
+                    const finishReason = data.choices?.[0]?.finish_reason;
+
+                    if (!translation) {
+                        // If hit length limit, try next model instead of retrying same one
+                        if (finishReason === 'length') {
+                            const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                            if (nextModelIndex < modelsToTry.length) {
+                                console.warn(`  [length limit] ${filename}: Output truncated with ${currentModel}, trying ${modelsToTry[nextModelIndex]}...`);
+                                break; // Break inner retry loop, continue to next model
+                            }
+                            throw new Error(`API returned empty translation. Finish reason: ${finishReason} (exhausted all models)`);
+                        }
+                        throw new Error(`API returned empty translation. Finish reason: ${finishReason}`);
+                    }
+
+                    const modelSuffix = currentModel !== this.model ? ` [${currentModel}]` : '';
+                    console.log(`  [translated] ${filename} (${data.usage?.total_tokens || 0} tokens)${modelSuffix}`);
+
+                    return translation;
+                } catch (error) {
+                    const isLastAttempt = attempt === maxRetries;
+                    const isLengthError = error.message.includes('Finish reason: length');
+
+                    // If length error, break to try next model
+                    if (isLengthError) {
+                        break;
+                    }
+
+                    if (isLastAttempt) {
+                        console.error(`  [error] ${filename}: ${error.message} (failed after ${maxRetries} attempts with ${currentModel})`);
+                        // Continue to next model if available
+                        const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                        if (nextModelIndex < modelsToTry.length) {
+                            console.warn(`  [fallback] Trying ${modelsToTry[nextModelIndex]}...`);
+                            break;
+                        }
+                        return null;
+                    }
+
+                    // Exponential backoff: 1s, 2s, 4s, 8s, 16s, 32s, 64s, 128s, 256s, 512s
+                    const delay = baseDelay * Math.pow(2, attempt - 1);
+                    console.error(`  [error] ${filename}: ${error.message}`);
+                    console.warn(`  [retry ${attempt}/${maxRetries}] Retrying in ${delay}ms...`);
+                    await this.sleep(delay);
+                }
             }
-
-            const data = await response.json();
-            const translation = data.choices?.[0]?.message?.content?.trim() || '';
-
-            console.log(`  [translated] ${filename} (${data.usage?.total_tokens || 0} tokens)`);
-
-            return translation;
-        } catch (error) {
-            console.error(`  [error] ${filename}: ${error.message}`);
-            return null;
         }
+
+        return null;
     }
 
     /**
@@ -296,7 +354,8 @@ async function processTranslations(tasks, client, options = {}) {
 
                 results.success++;
             } catch (error) {
-                console.error(`  [error] ${guideId}/${locale}/${filename}: ${error.message}`);
+                console.error(`  [error] ${guideId}/${locale}/${filename}: ${error.message || error}`);
+                console.error(error.stack || error);
                 results.failed++;
             }
         }

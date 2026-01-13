@@ -1,0 +1,8 @@
+---
+- C++17 או מאוחר יותר
+- CMake 3.14 או מאוחר יותר
+- OpenSSL
+- C++ REST SDK (cpprestsdk)
+- Boost
+- Google Test (יורד אוטומטית לצורך בדיקות)
+---

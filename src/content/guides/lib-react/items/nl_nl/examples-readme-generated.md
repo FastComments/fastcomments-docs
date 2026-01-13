@@ -1,0 +1,1 @@
+Je vindt voorbeelden voor verschillende use-cases (donkere modus, paginering, enz.) in de examples-map. Elk voorbeeld kan worden opgezet met `npm install` en gestart met `npm run start`.

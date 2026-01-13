@@ -4,19 +4,19 @@
   "itemsOrdered": [
     {
       "name": "Installation",
-      "file": "generated/installation-readme-generated.md",
+      "file": "installation-readme-generated.md",
       "subCat": "Getting Started",
       "type": "readme"
     },
     {
       "name": "Usage",
-      "file": "generated/usage-readme-generated.md",
+      "file": "usage-readme-generated.md",
       "subCat": "Usage",
       "type": "readme"
     },
     {
       "name": "Documentation",
-      "file": "generated/documentation-readme-generated.md",
+      "file": "documentation-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

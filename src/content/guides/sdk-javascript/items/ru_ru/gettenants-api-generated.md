@@ -1,0 +1,26 @@
+## Параметры
+
+| Имя | Тип | Обязательный | Описание |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| meta | string | Нет |  |
+| skip | number | Нет |  |
+
+## Ответ
+
+Возвращает: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenants200Response.ts)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример getTenants'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+(async () => {
+  const tenantId: string = 'tenant_9f2d1b7c';
+  const meta: string = 'include=domains,billing,customConfig';
+  const skip: number = 20;
+  const response: GetTenants200Response = await getTenants(tenantId, meta, skip);
+  console.log(response);
+})();
+[inline-code-end]
+
+---

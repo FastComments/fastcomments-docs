@@ -1,0 +1,12 @@
+---
+- 🔄 Comentarios en vivo con actualizaciones en tiempo real
+- 📱 Componentes de IU nativos para Android
+- 🧵 Discusiones en hilos con respuestas
+- 👤 Autenticación SSO segura
+- 👍 Sistema de votación con estilos personalizables
+- 🔔 Notificaciones y presencia de usuarios
+- 🔍 Capacidades de moderación de comentarios
+- 📱 Integración de feeds sociales
+- ♾️ Paginación con desplazamiento infinito
+- 🎨 Personalización completa de temas
+---

@@ -1,0 +1,26 @@
+## Параметри
+
+| Назва | Тип | Обов'язково | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Так |  |
+| createQuestionResultBody | CreateQuestionResultBody | Так |  |
+
+## Відповідь
+
+Повертає: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
+
+## Приклад
+
+[inline-code-attrs-start title = 'Приклад createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "fc_tenant_7a3c_us-east-1";
+const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const createQuestionResultBody: CreateQuestionResultBody = {
+  questionId: "q_42",
+  commenterId: "user_1984",
+  answer: "yes",
+  score: 4,
+  meta: [metaItem] // демонстрація необов'язкових метаданих
+} as CreateQuestionResultBody;
+const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
+[inline-code-end]

@@ -1,0 +1,2 @@
+Você provavelmente não quer definir a config inline se estiver passando callbacks etc. Em vez disso, você vai querer definir
+a config via `computed()`, caso contrário cada vez que seu callback etc for invocado todo o widget será renderizado novamente.

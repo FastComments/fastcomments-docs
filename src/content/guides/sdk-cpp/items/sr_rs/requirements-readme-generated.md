@@ -1,0 +1,6 @@
+- C++17 или новији
+- CMake 3.14 или новији
+- OpenSSL
+- C++ REST SDK (cpprestsdk)
+- Boost
+- Google Test (аутоматски се преузима за тестирање)

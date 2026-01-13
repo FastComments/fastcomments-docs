@@ -4,25 +4,25 @@
   "itemsOrdered": [
     {
       "name": "Installation",
-      "file": "generated/installation-readme-generated.md",
+      "file": "installation-readme-generated.md",
       "subCat": "Getting Started",
       "type": "readme"
     },
     {
       "name": "Usage",
-      "file": "generated/usage-readme-generated.md",
+      "file": "usage-readme-generated.md",
       "subCat": "Usage",
       "type": "readme"
     },
     {
       "name": "Updating The Current Page (SPA Example)",
-      "file": "generated/updating-the-current-page-spa-example-readme-generated.md",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Usage",
       "type": "readme"
     },
     {
       "name": "In Production",
-      "file": "generated/in-production-readme-generated.md",
+      "file": "in-production-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

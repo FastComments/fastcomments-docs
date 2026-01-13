@@ -1,0 +1,4 @@
+---
+- Android SDK 26+ (Android 8.0 Oreo o versioni successive)
+- Java 8+
+---

@@ -1,0 +1,6 @@
+- C++17 eller nyere
+- CMake 3.14 eller nyere
+- OpenSSL
+- C++ REST SDK (cpprestsdk)
+- Boost
+- Google Test (downloades automatisk til testning)

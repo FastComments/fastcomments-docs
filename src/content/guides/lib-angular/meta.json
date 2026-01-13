@@ -4,7 +4,7 @@
   "itemsOrdered": [
     {
       "name": "Project Structure",
-      "file": "generated/project-structure-readme-generated.md",
+      "file": "project-structure-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

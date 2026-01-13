@@ -1,0 +1,10 @@
+- 🔄 Commentaires en direct avec mises à jour en temps réel
+- 📱 Composants d'interface utilisateur natifs pour Android
+- 🧵 Discussions organisées en fils avec réponses
+- 👤 Authentification SSO sécurisée
+- 👍 Système de vote avec styles personnalisables
+- 🔔 Notifications et présence des utilisateurs
+- 🔍 Fonctionnalités de modération des commentaires
+- 📱 Intégration du fil social
+- ♾️ Pagination à défilement infini
+- 🎨 Personnalisation complète des thèmes

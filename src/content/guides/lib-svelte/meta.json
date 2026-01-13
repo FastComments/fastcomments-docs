@@ -4,19 +4,19 @@
   "itemsOrdered": [
     {
       "name": "Widgets",
-      "file": "generated/widgets-readme-generated.md",
+      "file": "widgets-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
       "name": "Developing",
-      "file": "generated/developing-readme-generated.md",
+      "file": "developing-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
       "name": "Building",
-      "file": "generated/building-readme-generated.md",
+      "file": "building-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

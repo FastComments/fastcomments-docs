@@ -1,0 +1,8 @@
+---
+- C++17 veya daha yeni
+- CMake 3.14 veya daha yeni
+- OpenSSL
+- C++ REST SDK (cpprestsdk)
+- Boost
+- Google Test (test için otomatik olarak indirilecek)
+---

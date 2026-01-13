@@ -1,0 +1,1 @@
+您會在 examples 資料夾中找到各種使用情境的範例（黑暗模式、分頁等）。每個範例可以透過 `npm install` 進行設定，並使用 `npm run start` 啟動。

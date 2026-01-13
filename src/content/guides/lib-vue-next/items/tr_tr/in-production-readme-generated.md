@@ -1,0 +1,2 @@
+Muhtemelen callbacks vb. geçiriyorsanız config'i satır içi olarak tanımlamak istemezsiniz. Bunun yerine, tanımlamak isteyeceksiniz
+config'i `computed()` aracılığıyla; aksi takdirde callback'iniz vb. her çağrıldığında tüm bileşen yeniden renderlenecek.

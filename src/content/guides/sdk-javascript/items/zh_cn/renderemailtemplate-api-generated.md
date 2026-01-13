@@ -1,0 +1,32 @@
+## 参数
+
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | 是 |  |
+| locale | string | 否 |  |
+
+## 响应
+
+返回: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplate200Response.ts)
+
+## 示例
+
+[inline-code-attrs-start title = 'renderEmailTemplate 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'acme-corp-7f3';
+const renderEmailTemplateBody: RenderEmailTemplateBody = {
+  templateId: 'new-comment-notification',
+  recipientEmail: 'jane.doe@acme.com',
+  variables: {
+    commenterName: 'Samir Patel',
+    commentText: 'I found this article really helpful — thanks for sharing!',
+    threadUrl: 'https://acme.com/blog/123#comments'
+  },
+  includeUnsubscribeLink: true
+};
+const locale: string = 'en-US';
+const response: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
+[inline-code-end]
+
+---

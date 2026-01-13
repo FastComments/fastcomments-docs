@@ -81,7 +81,11 @@
     window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
         tenantId: 'L177BUDVvSe',
         url: location.href.replace(location.hash, ''), // ignore hashbang in url - messes up links to comments
-        urlId: window.location.origin + window.location.pathname // remove query params
+        {{#if stableUrlId}}
+        urlId: window.location.origin + '{{stableUrlId}}' // stable across locales
+        {{else}}
+        urlId: window.location.origin + window.location.pathname // fallback for non-guide pages
+        {{/if}}
     });
 </script>
 <!-- Watch.ly is just to see how many people use this page, and how long they stay on it. -->

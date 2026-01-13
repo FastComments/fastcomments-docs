@@ -1,0 +1,51 @@
+## פרמטרים
+
+| שם | סוג | מיקום | נדרש | תיאור |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
+| commentId | string | query | לא |  |
+| externalId | string | query | לא |  |
+| eventType | string | query | לא |  |
+| type | string | query | לא |  |
+| domain | string | query | לא |  |
+| attemptCountGT | number | query | לא |  |
+| skip | number | query | לא |  |
+
+## תגובה
+
+מחזיר: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pending_webhook_events200_response.rb)
+
+## דוגמה
+
+[inline-code-attrs-start title = 'דוגמה ל-get_pending_webhook_events'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+require 'time'
+require 'fastcomments-client'
+# הגדרת אימות
+FastCommentsClient.configure do |config|
+  # קבע אימות באמצעות מפתח ה-API: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, למשל 'Bearer' (ברירת מחדל nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # מחרוזת | 
+opts = {
+  comment_id: 'comment_id_example', # מחרוזת | 
+  external_id: 'external_id_example', # מחרוזת | 
+  event_type: 'event_type_example', # מחרוזת | 
+  type: 'type_example', # מחרוזת | 
+  domain: 'domain_example', # מחרוזת | 
+  attempt_count_gt: 1.2, # מספר עשרוני | 
+  skip: 1.2 # מספר עשרוני | 
+}
+
+begin
+  
+  result = api_instance.get_pending_webhook_events(tenant_id, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->get_pending_webhook_events: #{e}"
+end
+[inline-code-end]

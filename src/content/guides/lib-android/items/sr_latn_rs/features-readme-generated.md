@@ -1,0 +1,10 @@
+- 🔄 Komentarisanje uživo sa ažuriranjima u realnom vremenu
+- 📱 Nativne Android UI komponente
+- 🧵 Nitaste diskusije sa odgovorima
+- 👤 Sigurna SSO autentifikacija
+- 👍 Sistem glasanja sa prilagodljivim stilovima
+- 🔔 Obaveštenja i prisutnost korisnika
+- 🔍 Mogućnosti moderacije komentara
+- 📱 Integracija društvenog feeda
+- ♾️ Paginacija sa beskonačnim skrolovanjem
+- 🎨 Sveobuhvatno prilagođavanje tema

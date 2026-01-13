@@ -1,0 +1,28 @@
+## Parametri
+
+| Ime | Tip | Obvezno | Opis |
+|------|------|----------|-------------|
+| tenantId | string | Da |  |
+| createModeratorBody | CreateModeratorBody | Da |  |
+
+## Odgovor
+
+Vrne: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModerator200Response.ts)
+
+## Primer
+
+[inline-code-attrs-start title = 'Primer createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_prod_us-east_01";
+const createModeratorBody: CreateModeratorBody = {
+  email: "maria.lopez+mod@fastcompany.com",
+  username: "mlopez_mod",
+  displayName: "Maria Lopez",
+  roles: ["content_moderator"],
+  notifyOnReports: true,
+  metadata: { region: "us-east", team: "community" }
+};
+const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+[inline-code-end]
+
+---

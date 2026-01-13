@@ -1,0 +1,2 @@
+Prawdopodobnie nie chcesz definiować konfiguracji bezpośrednio, jeśli przekazujesz funkcje zwrotne itp. Zamiast tego będziesz chciał zdefiniować
+konfigurację za pomocą `computed()`, w przeciwnym razie za każdym razem, gdy twoja funkcja zwrotna itp. zostanie wywołana, cały widżet zostanie ponownie wyrenderowany.

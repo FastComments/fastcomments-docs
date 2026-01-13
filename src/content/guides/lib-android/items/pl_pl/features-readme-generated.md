@@ -1,0 +1,10 @@
+- 🔄 Komentowanie na żywo z aktualizacjami w czasie rzeczywistym
+- 📱 Natywne komponenty UI dla Androida
+- 🧵 Dyskusje w wątkach z odpowiedziami
+- 👤 Bezpieczne uwierzytelnianie SSO
+- 👍 System głosowania z konfigurowalnymi stylami
+- 🔔 Powiadomienia użytkowników i status obecności
+- 🔍 Możliwości moderacji komentarzy
+- 📱 Integracja z feedem społecznościowym
+- ♾️ Paginacja z nieskończonym przewijaniem
+- 🎨 Szerokie możliwości dostosowywania motywów

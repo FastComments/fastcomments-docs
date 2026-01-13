@@ -1,0 +1,28 @@
+## Параметри
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
+
+## Одговор
+
+Враћа: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+
+## Пример
+
+[inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_7f3b1a9c";
+const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
+const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const createTenantPackageBody: CreateTenantPackageBody = {
+  packageName: "Premium Plus",
+  tenantPackage,
+  customConfig,
+  notes: "Enable advanced moderation and image uploads" // опциони параметар (демонстрирано)
+};
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+[inline-code-end]
+
+---

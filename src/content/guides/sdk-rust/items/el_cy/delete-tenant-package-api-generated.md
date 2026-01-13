@@ -1,0 +1,24 @@
+## Παράμετροι
+
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|----------|-------------|
+| tenant_id | String | Ναι |  |
+| id | String | Ναι |  |
+
+## Απόκριση
+
+Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+
+## Παράδειγμα
+
+[inline-code-attrs-start title = 'Παράδειγμα delete_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let params: DeleteTenantPackageParams = DeleteTenantPackageParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    id: "pkg-news-comments-2025-01".to_string(),
+    cascade: Some(true),
+};
+let response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;
+[inline-code-end]
+
+---
