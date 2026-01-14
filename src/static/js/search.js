@@ -100,8 +100,26 @@
     }, 1000);
 
     const input = document.getElementById('search');
+    var isComposing = false;
+
+    // Track IME composition state (for Chinese, Japanese, Korean input)
+    input.addEventListener('compositionstart', function () {
+        isComposing = true;
+    });
+
+    input.addEventListener('compositionend', function () {
+        isComposing = false;
+        // Trigger search after composition ends
+        if (input.value.length > 2) {
+            searchRequest = input.value;
+        }
+    });
 
     input.addEventListener('input', function () {
+        // Skip input events during IME composition
+        if (isComposing) {
+            return;
+        }
         if (!input.value) {
             searchRequest = undefined;
             currentDisplayedSearchValue = undefined;
