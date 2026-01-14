@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -e  # Exit immediately if any command fails
-set -o pipefail  # Exit if any command in a pipeline fails
-
 if [ "$PARTIAL_BUILD" != "true" ]; then
+  echo "Creating directories..."
   mkdir -p src/static/generated
   mkdir -p src/static/generated/image-cache
   mkdir -p src/static/css
@@ -11,22 +9,25 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/images
   mkdir -p src/static/js
   mkdir -p db
-  npm install
+
+  echo "Installing dependencies..."
+  if ! npm install; then
+    echo "ERROR: npm install failed"
+    exit 1
+  fi
+
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
   # Check for missing translations
   echo "Checking for missing translations..."
-  set +e  # Temporarily disable exit-on-error for translation check
   node src/check-translations.js
   translation_check_result=$?
-  set -e  # Re-enable exit-on-error
   if [ $translation_check_result -ne 0 ]; then
     echo "Missing translations detected. Running automated translation..."
 
     # Run translation
-    node src/translate-with-gpt.js
-    if [ $? -ne 0 ]; then
-      echo "Build failed: Translation failed"
+    if ! node src/translate-with-gpt.js; then
+      echo "ERROR: Translation failed"
       exit 1
     fi
 
@@ -35,11 +36,17 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
       echo "Committing translation changes..."
       git add -A src/content
       git add src/translation-cache.json
-      git commit -m "Automated translation update"
+      if ! git commit -m "Automated translation update"; then
+        echo "ERROR: Git commit failed"
+        exit 1
+      fi
       echo "Translation changes committed."
 
       echo "Pushing translation changes..."
-      git push
+      if ! git push; then
+        echo "ERROR: Git push failed"
+        exit 1
+      fi
       echo "Translation changes pushed."
     else
       echo "No translation changes to commit."
@@ -53,30 +60,35 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "ERROR: SDK documentation generation failed"
     exit 1
   fi
+  echo "SDK documentation generation complete."
 
   echo "Generating custom styling guide..."
   if ! node src/custom-styling-guide-generator.js; then
     echo "ERROR: Custom styling guide generation failed"
     exit 1
   fi
+  echo "Custom styling guide generation complete."
 
   echo "Building content..."
   if ! NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content; then
     echo "ERROR: Content build failed"
     exit 1
   fi
+  echo "Content build complete."
 
   echo "Building static..."
   if ! npm run build-static; then
     echo "ERROR: Static build failed"
     exit 1
   fi
+  echo "Static build complete."
 
   echo "Building search indexes..."
   if ! npm run build-search-index; then
     echo "ERROR: Search index build failed"
     exit 1
   fi
+  echo "Search index build complete."
 
   echo "Build Complete!"
 fi
