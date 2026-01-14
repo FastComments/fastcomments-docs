@@ -69,8 +69,7 @@ async function reorderResultsWithOpenAI(query, results) {
                     content: `Query: "${query}"\n\nResults:\n${resultsList}`
                 }
             ],
-            max_completion_tokens: 200,
-            temperature: 0
+            max_completion_tokens: 200
         }, {
             headers: {
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
