@@ -107,7 +107,7 @@ async function buildIndexForLocale(locale) {
                     null,
                     '/' + createGuideLink(guide.id, locale),
                     null,
-                    '/images/guide-icons/' + meta.icon,
+                    meta.icon ? '/images/guide-icons/' + meta.icon : null,
                     cleanSearchText(bodyWithChildren)
                 );
                 indexedCount++;
@@ -126,7 +126,7 @@ async function buildIndexForLocale(locale) {
                         guideTitle,
                         builtItem.fullUrl,
                         createGuideLink(guide.id, locale),
-                        '/images/guide-icons/' + meta.icon,
+                        meta.icon ? '/images/guide-icons/' + meta.icon : null,
                         cleanSearchText(builtItem.content)
                     );
                     indexedCount++;
