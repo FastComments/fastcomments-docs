@@ -193,6 +193,13 @@ setInterval(async () => {
     }
 }, 10000);
 
+// Convert hreflang format (zh-CN) to locale key format (zh_cn)
+function hreflangToLocaleKey(hreflang) {
+    if (!hreflang) return defaultLocale;
+    // Convert to lowercase and replace hyphens with underscores
+    return hreflang.toLowerCase().replace(/-/g, '_');
+}
+
 // Cache database connections
 const dbConnections = new Map();
 
@@ -204,11 +211,12 @@ function getDatabase(locale) {
     const dbPath = path.join(DB_DIR, `search-${locale}.db`);
     if (!fs.existsSync(dbPath)) {
         // Fall back to default locale if requested locale doesn't exist
+        console.log(`Database not found for locale ${locale}: ${dbPath}`);
         const fallbackPath = path.join(DB_DIR, `search-${defaultLocale}.db`);
         if (!fs.existsSync(fallbackPath)) {
             throw new Error(`No search database found for locale ${locale} or default ${defaultLocale}`);
         }
-        console.log(`Using fallback database for locale ${locale}`);
+        console.log(`Using fallback database (${defaultLocale}) for locale ${locale}`);
         const db = new Database(fallbackPath, { readonly: true });
         dbConnections.set(locale, db);
         return db;
@@ -294,7 +302,7 @@ app.get('/search', async (req, res) => {
         res.set('Access-Control-Allow-Credentials', 'true');
         res.set('Access-Control-Allow-Headers', 'content-type');
 
-        const locale = req.query.locale || defaultLocale;
+        const locale = hreflangToLocaleKey(req.query.locale) || defaultLocale;
         const query = req.query.query || '';
         const full = req.query.full === 'true';
         const nollm = req.query.nollm === 'true';
