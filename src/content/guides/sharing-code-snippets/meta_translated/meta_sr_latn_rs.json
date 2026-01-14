@@ -1,0 +1,31 @@
+{
+  "name": "Deljenje fragmenata koda",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Šta su fragmenti koda?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Programerske zajednice",
+      "file": "code-snippets-communities.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Podržani programski jezici",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Podešavanje deljenja fragmenata koda",
+      "file": "code-snippets-setup.md",
+      "subCat": "Podešavanje"
+    },
+    {
+      "name": "Deljenje fragmenata koda",
+      "file": "code-snippets-usage.md",
+      "subCat": "Upotreba"
+    }
+  ]
+}

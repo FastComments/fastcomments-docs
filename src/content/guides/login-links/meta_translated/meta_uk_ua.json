@@ -1,0 +1,26 @@
+{
+  "name": "Посилання для входу",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке посилання для входу?",
+      "file": "login-links-what-are.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Переваги посилань для входу порівняно з паролями",
+      "file": "login-links-benefits.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як ми забезпечуємо безпеку посилань для входу",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Безпека"
+    },
+    {
+      "name": "Хто отримує посилання для входу?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Використання"
+    }
+  ]
+}

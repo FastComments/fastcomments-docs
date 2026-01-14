@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace のインストール",
+  "pageHeader": "Squarespace サイトにコメントを追加する",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "ブログにライブコメントを追加する",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "ブログにコメントを追加する"
+    },
+    {
+      "name": "ステップ 1: ブログの設定を開く",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "ブログにコメントを追加する"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを貼り付ける",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "ブログにコメントを追加する"
+    },
+    {
+      "name": "完了",
+      "file": "squarespace-blog-success.md",
+      "subCat": "ブログにコメントを追加する"
+    },
+    {
+      "name": "すべてのページにライブコメントを追加する",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "すべてのページにコメントを追加する"
+    },
+    {
+      "name": "ステップ 1: 開発者ツールを開く",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "すべてのページにコメントを追加する"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを貼り付ける",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "すべてのページにコメントを追加する"
+    },
+    {
+      "name": "完了",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "すべてのページにコメントを追加する"
+    },
+    {
+      "name": "特定のページにライブコメントを追加する",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "特定のページにコメントを追加する"
+    },
+    {
+      "name": "ステップ 1: コードブロックを追加する",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "特定のページにコメントを追加する"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを貼り付ける",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "特定のページにコメントを追加する"
+    },
+    {
+      "name": "完了",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "特定のページにコメントを追加する"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace の次のステップ"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace の次のステップ"
+    }
+  ]
+}

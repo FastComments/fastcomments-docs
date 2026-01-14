@@ -1,0 +1,96 @@
+{
+  "name": "Значке",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Основе",
+      "file": "badge-basics.md",
+      "subCat": "Основе"
+    },
+    {
+      "name": "Напредовање",
+      "file": "badge-progression.md",
+      "subCat": "Основе"
+    },
+    {
+      "name": "Ручне значке",
+      "file": "badge-type-manual.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Број коментара",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Позитивни гласови",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Одговори",
+      "file": "badge-type-replies.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Закачени коментари",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Ветеран",
+      "file": "badge-type-veteran.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Ноћна сова",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Брзо време одговора",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Одговор на одређену страницу",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Врсте значки"
+    },
+    {
+      "name": "Увод у модераторске значке",
+      "file": "moderator-badges.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Обрисани коментари",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Одобрени коментари",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Неодобрени коментари",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Прегледани коментари",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Коментари означени као спам",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Врсте модераторских значки"
+    },
+    {
+      "name": "Коментари означени као не-спам",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Врсте модераторских значки"
+    }
+  ]
+}

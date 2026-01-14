@@ -1,0 +1,51 @@
+{
+  "name": "Brugerprofiler",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Grundlæggende om profiler",
+      "file": "profile-basics.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Tilpas din profil",
+      "file": "customizing-profiles.md",
+      "subCat": "Tilpasning"
+    },
+    {
+      "name": "Privatlivsindstillinger",
+      "file": "privacy-settings.md",
+      "subCat": "Tilpasning"
+    },
+    {
+      "name": "Mærker",
+      "file": "badges.md",
+      "subCat": "Funktioner"
+    },
+    {
+      "name": "Profilkommentarer",
+      "file": "profile-comments.md",
+      "subCat": "Funktioner"
+    },
+    {
+      "name": "Direkte beskeder",
+      "file": "direct-messaging.md",
+      "subCat": "Funktioner"
+    },
+    {
+      "name": "Aktivitetsstrøm",
+      "file": "activity-feed.md",
+      "subCat": "Funktioner"
+    },
+    {
+      "name": "Brugernoter",
+      "file": "user-notes.md",
+      "subCat": "Funktioner"
+    },
+    {
+      "name": "Styling af profiler",
+      "file": "styling-profiles.md",
+      "subCat": "For udviklere"
+    }
+  ]
+}

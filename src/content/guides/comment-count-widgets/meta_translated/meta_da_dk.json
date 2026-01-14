@@ -1,0 +1,21 @@
+{
+  "name": "Widgets til kommentartælling",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Installation af widget til kommentartælling",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Installation af flere widgets til kommentartælling",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "API'er til kommentartælling",
+      "file": "comment-count-apis.md",
+      "subCat": "API'er til kommentartælling"
+    }
+  ]
+}

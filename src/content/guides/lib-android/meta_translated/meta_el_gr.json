@@ -1,0 +1,72 @@
+{
+  "name": "Βιβλιοθήκη Android",
+  "pageHeader": "Βιβλιοθήκη FastComments για Android",
+  "itemsOrdered": [
+    {
+      "name": "Χαρακτηριστικά",
+      "file": "features-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Βασική Χρήση",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Ασφαλής Αυθεντικοποίηση SSO",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Αυθεντικοποίηση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενσωμάτωση Ροής",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενσωμάτωση Ζωντανής Συνομιλίας",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Παραδείγματα Έργων",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Επιλογές Διαμόρφωσης",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Διαμόρφωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εκτενής Προσαρμογή Θέματος",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Διαχείριση Μνήμης",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

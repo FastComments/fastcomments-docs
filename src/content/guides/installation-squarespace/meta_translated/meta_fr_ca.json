@@ -1,0 +1,77 @@
+{
+  "name": "Installation de Squarespace",
+  "pageHeader": "Ajouter des commentaires aux sites Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ajouter des commentaires en direct à votre blogue",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Ajouter des commentaires à votre blogue"
+    },
+    {
+      "name": "Étape 1 : Ouvrir les paramètres du blogue",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Ajouter des commentaires à votre blogue"
+    },
+    {
+      "name": "Étape 2 : Coller votre code FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Ajouter des commentaires à votre blogue"
+    },
+    {
+      "name": "Succès",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Ajouter des commentaires à votre blogue"
+    },
+    {
+      "name": "Ajouter des commentaires en direct à toutes les pages",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Ajouter des commentaires à toutes les pages"
+    },
+    {
+      "name": "Étape 1 : Ouvrir les outils de développement",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Ajouter des commentaires à toutes les pages"
+    },
+    {
+      "name": "Étape 2 : Coller votre code FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Ajouter des commentaires à toutes les pages"
+    },
+    {
+      "name": "Succès",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Ajouter des commentaires à toutes les pages"
+    },
+    {
+      "name": "Ajouter des commentaires en direct à une page spécifique",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Ajouter des commentaires à une page spécifique"
+    },
+    {
+      "name": "Étape 1 : Ajouter un bloc de code",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Ajouter des commentaires à une page spécifique"
+    },
+    {
+      "name": "Étape 2 : Coller votre code FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Ajouter des commentaires à une page spécifique"
+    },
+    {
+      "name": "Succès",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Ajouter des commentaires à une page spécifique"
+    },
+    {
+      "name": "Erreurs de domaine",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Étapes suivantes pour Squarespace"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "squarespace-customize.md",
+      "subCat": "Étapes suivantes pour Squarespace"
+    }
+  ]
+}

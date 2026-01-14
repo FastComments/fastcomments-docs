@@ -1,0 +1,37 @@
+{
+  "name": "Ionos instalacija",
+  "pageHeader": "Dodajte komentare na Ionos stranice",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodajte kontakt obrazac",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos instalacija"
+    },
+    {
+      "name": "Korak 2: Dodajte kod za FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos instalacija"
+    },
+    {
+      "name": "Korak 3: Objavite",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos instalacija"
+    },
+    {
+      "name": "Uspjeh",
+      "file": "ionos-success.md",
+      "subCat": "Ionos instalacija"
+    },
+    {
+      "name": "Pogreške domene",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos instalacija"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos instalacija"
+    }
+  ]
+}

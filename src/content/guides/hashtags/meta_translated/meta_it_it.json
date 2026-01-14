@@ -1,0 +1,46 @@
+{
+  "name": "Hashtag",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono gli hashtag",
+      "file": "what-are-hashtags.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Come usare gli hashtag",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Utilizzo degli hashtag"
+    },
+    {
+      "name": "Filtrare i commenti per hashtag",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Utilizzo degli hashtag"
+    },
+    {
+      "name": "Hashtag validi e non validi",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Utilizzo degli hashtag"
+    },
+    {
+      "name": "Uso di simboli diversi da #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Configurazione degli hashtag"
+    },
+    {
+      "name": "Precompilazione degli hashtag",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Configurazione degli hashtag"
+    },
+    {
+      "name": "Collegamento ai contenuti tramite hashtag",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Configurazione degli hashtag"
+    },
+    {
+      "name": "Come funziona l'autocompletamento degli hashtag",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Contesto sugli hashtag"
+    }
+  ]
+}

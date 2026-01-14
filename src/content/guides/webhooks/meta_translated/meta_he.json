@@ -1,0 +1,46 @@
+{
+  "name": "ווב־הוקים",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "מה הם ווב־הוקים",
+      "file": "what-are-webhooks.md",
+      "subCat": "סקירה כללית"
+    },
+    {
+      "name": "אירועים ומשאבים נתמכים",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "סקירה כללית"
+    },
+    {
+      "name": "הגדרות פיתוח מקומי",
+      "file": "webhooks-local-dev.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "הגדרה",
+      "file": "webhooks-setup.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "בדיקות",
+      "file": "webhooks-testing.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "מבני נתונים",
+      "file": "webhooks-structures.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "אבטחה ואסימוני API",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "כיצד זה עובד וטיפול בניסיונות חוזרים",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "מאחורי הקלעים"
+    }
+  ]
+}

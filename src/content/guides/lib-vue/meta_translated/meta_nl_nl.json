@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2-bibliotheek",
+  "pageHeader": "FastComments Vue 2-bibliotheek",
+  "itemsOrdered": [
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Gebruik",
+      "file": "usage-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Bijwerken van de huidige pagina (SPA-voorbeeld)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "In productie",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

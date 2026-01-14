@@ -1,0 +1,12 @@
+{
+  "name": "Angular-bibliotek",
+  "pageHeader": "FastComments Angular-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Projektstruktur",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

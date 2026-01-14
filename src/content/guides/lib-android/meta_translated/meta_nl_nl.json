@@ -1,0 +1,72 @@
+{
+  "name": "Android-bibliotheek",
+  "pageHeader": "FastComments Android-bibliotheek",
+  "itemsOrdered": [
+    {
+      "name": "Functies",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Vereisten",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Basisgebruik",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Beveiligde SSO-authenticatie",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Authenticatie",
+      "type": "readme"
+    },
+    {
+      "name": "Feed-integratie",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Livechat-integratie",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeeldprojecten",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Configuratieopties",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Uitgebreide thema-aanpassing",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Geheugenbeheer",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

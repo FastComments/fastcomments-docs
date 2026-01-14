@@ -1,0 +1,47 @@
+{
+  "name": "BigCommerce-installatie",
+  "pageHeader": "Reacties toevoegen aan BigCommerce-sites",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Bereid uw thema voor",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Stap 2: Bewerk het juiste sjabloon",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Stap 3: Voeg widgetcode toe",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Stap 4: Activeer het nieuwe thema",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Succes",
+      "file": "bigcommerce-success.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "bigcommerce-customize.md",
+      "subCat": "BigCommerce-installatie"
+    },
+    {
+      "name": "Extra: codefragment voor Page Builder",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Gebruik van de Page Builder"
+    }
+  ]
+}

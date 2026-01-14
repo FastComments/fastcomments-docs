@@ -1,0 +1,41 @@
+{
+  "name": "이메일 템플릿",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "템플릿 만들기",
+      "file": "creating-templates.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "템플릿 언어",
+      "file": "template-language.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "현지화 및 사용자 정의 텍스트",
+      "file": "localizing.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "도메인별 템플릿",
+      "file": "per-domain-templates.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "데이터 및 변수",
+      "file": "data-variables.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "렌더링 실패",
+      "file": "render-failures.md",
+      "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "변경 사항 적용",
+      "file": "time-to-apply-changes.md",
+      "subCat": "이메일 템플릿"
+    }
+  ]
+}

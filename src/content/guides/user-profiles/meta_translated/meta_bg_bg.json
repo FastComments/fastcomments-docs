@@ -1,0 +1,51 @@
+{
+  "name": "Потребителски профили",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Основи на профила",
+      "file": "profile-basics.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Персонализиране на вашия профил",
+      "file": "customizing-profiles.md",
+      "subCat": "Персонализиране"
+    },
+    {
+      "name": "Настройки за поверителност",
+      "file": "privacy-settings.md",
+      "subCat": "Персонализиране"
+    },
+    {
+      "name": "Значки",
+      "file": "badges.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Коментари на профила",
+      "file": "profile-comments.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Лични съобщения",
+      "file": "direct-messaging.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Хронология на дейността",
+      "file": "activity-feed.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Потребителски бележки",
+      "file": "user-notes.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Стилизиране на профили",
+      "file": "styling-profiles.md",
+      "subCat": "За разработчици"
+    }
+  ]
+}

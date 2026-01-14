@@ -1,0 +1,31 @@
+{
+  "name": "Analysen",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Hintergrund",
+      "file": "analytics-background.md",
+      "subCat": "Analysen"
+    },
+    {
+      "name": "Abrechnungsanalyse",
+      "file": "analytics-billing.md",
+      "subCat": "Analysen"
+    },
+    {
+      "name": "Website-Analyse",
+      "file": "analytics-site.md",
+      "subCat": "Analysen"
+    },
+    {
+      "name": "Genauigkeit der Analysen im Vergleich zu anderen Plattformen",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analysen"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Nachverfolgung"
+    }
+  ]
+}

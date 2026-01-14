@@ -1,0 +1,41 @@
+{
+  "name": "Шаблоны электронных писем",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Создание шаблонов",
+      "file": "creating-templates.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Язык шаблонов",
+      "file": "template-language.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Локализация и пользовательский текст",
+      "file": "localizing.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Шаблоны по доменам",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Данные и переменные",
+      "file": "data-variables.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Ошибки рендеринга",
+      "file": "render-failures.md",
+      "subCat": "Шаблоны электронных писем"
+    },
+    {
+      "name": "Применение изменений",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблоны электронных писем"
+    }
+  ]
+}

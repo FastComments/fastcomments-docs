@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "SAML nedir?",
+      "file": "saml-overview.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "SAML ve SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "SAML Kurulumu",
+      "file": "saml-setup.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Kimlik Sağlayıcı Yapılandırması",
+      "file": "saml-idp-config.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Hizmet Sağlayıcı Bilgileri",
+      "file": "saml-sp-info.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Kullanıcı Rolleri ve İzinler",
+      "file": "saml-user-roles.md",
+      "subCat": "Kullanıcı Yönetimi"
+    },
+    {
+      "name": "SAML Kimlik Doğrulamasını Test Etme",
+      "file": "saml-testing.md",
+      "subCat": "Sorun Giderme"
+    },
+    {
+      "name": "Yaygın Sorunlar",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Sorun Giderme"
+    },
+    {
+      "name": "Güvenlik İçin En İyi Uygulamalar",
+      "file": "saml-security.md",
+      "subCat": "Gelişmiş"
+    }
+  ]
+}

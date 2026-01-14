@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Hostinger",
+  "pageHeader": "Додати живі коментарі на сайти Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Додати віджет коду",
+      "file": "hostinger-step-1.md",
+      "subCat": "Встановлення сайту на Hostinger"
+    },
+    {
+      "name": "Крок 2: Додати код",
+      "file": "hostinger-step-2.md",
+      "subCat": "Встановлення сайту на Hostinger"
+    },
+    {
+      "name": "Успішно",
+      "file": "hostinger-site-success.md",
+      "subCat": "Встановлення сайту на Hostinger"
+    },
+    {
+      "name": "Помилки домену сайту",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Встановлення сайту на Hostinger"
+    },
+    {
+      "name": "Налаштування сайту",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Встановлення сайту на Hostinger"
+    },
+    {
+      "name": "Плаваюча кнопка вподобань",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Плаваючі вподобання для Hostinger"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Значки",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Основи",
+      "file": "badge-basics.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Прогрес",
+      "file": "badge-progression.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Ручні значки",
+      "file": "badge-type-manual.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Кількість коментарів",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Голоси за",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Відповіді",
+      "file": "badge-type-replies.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Закріплені коментарі",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Ветеран",
+      "file": "badge-type-veteran.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Нічна сова",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Швидка відповідь",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Відповідь на конкретну сторінку",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Типи значків"
+    },
+    {
+      "name": "Вступ до значків модераторів",
+      "file": "moderator-badges.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Видалені коментарі",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Схвалені коментарі",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Несхвалені коментарі",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Перевірені коментарі",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Коментарі, позначені як спам",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Типи значків модераторів"
+    },
+    {
+      "name": "Коментарі, позначені як не спам",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Типи значків модераторів"
+    }
+  ]
+}

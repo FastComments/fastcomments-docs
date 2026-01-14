@@ -1,0 +1,51 @@
+{
+  "name": "Више сајтова",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Почетно подешавање",
+      "file": "add-domains-to-account.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Ограничења и цене",
+      "file": "domain-limits.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Име пошиљаоца, е-пошта и лого",
+      "file": "from-name-email-logo.md",
+      "subCat": "Прилагођавање по сајту"
+    },
+    {
+      "name": "Поље From (име/имејл) за домен не функционише",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Прилагођавање по сајту"
+    },
+    {
+      "name": "Тенант по окружењу",
+      "file": "tenant-per-environment.md",
+      "subCat": "Прилагођавање по сајту"
+    },
+    {
+      "name": "Прилагођавања",
+      "file": "customizations.md",
+      "subCat": "Прилагођавање по сајту"
+    },
+    {
+      "name": "Модерација коментара",
+      "file": "moderation.md",
+      "subCat": "Подаци и претрага"
+    },
+    {
+      "name": "Дељење коментара између домена",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Подаци и претрага"
+    },
+    {
+      "name": "Са WordPress-ом",
+      "file": "wordpress.md",
+      "subCat": "Напомене о интеграцији"
+    }
+  ]
+}

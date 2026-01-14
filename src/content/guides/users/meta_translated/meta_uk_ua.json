@@ -1,0 +1,46 @@
+{
+  "name": "Користувачі",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Типи користувачів",
+      "file": "types-of-users.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Імена користувачів",
+      "file": "usernames.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Адміністратори",
+      "file": "administrator-users.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Коментатори",
+      "file": "commenter-users.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Додавання адміністраторів",
+      "file": "adding-administrators.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Додавання модераторів",
+      "file": "adding-moderators.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Оновлення дозволів адміністраторів",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Розробники",
+      "file": "developers.md",
+      "subCat": "Налаштування"
+    }
+  ]
+}

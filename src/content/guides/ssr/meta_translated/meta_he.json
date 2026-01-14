@@ -1,0 +1,36 @@
+{
+  "name": "SSR (רינדור בצד השרת)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "מה זה SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "יתרונות של SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "תכונות SSR הנתמכות ב-FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "מקרי שימוש",
+      "file": "ssr-use-cases.md",
+      "subCat": "שימוש ב-SSR"
+    },
+    {
+      "name": "היכן נעשה שימוש ב-SSR על ידי FastComments",
+      "file": "ssr-where-used.md",
+      "subCat": "שימוש ב-SSR"
+    },
+    {
+      "name": "שימוש ב-SSR",
+      "file": "using-ssr.md",
+      "subCat": "שימוש ב-SSR"
+    }
+  ]
+}

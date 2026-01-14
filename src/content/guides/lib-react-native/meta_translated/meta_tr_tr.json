@@ -1,0 +1,42 @@
+{
+  "name": "React Native Kütüphanesi",
+  "pageHeader": "FastComments React Native Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Yerel SDK'yı Değerlendirin",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım - Canlı Yorum Bileşeni",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım - Canlı Sohbet Bileşeni",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım - Tek Oturum Açma (SSO)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Eş Bağımlılıklar",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

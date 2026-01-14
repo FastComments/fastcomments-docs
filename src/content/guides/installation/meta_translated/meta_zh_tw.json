@@ -1,0 +1,61 @@
+{
+  "name": "安裝",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "第三方外掛"
+    },
+    {
+      "name": "原生 JavaScript / HTML 片段",
+      "file": "vanillajs.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "同一頁面上的多個實例",
+      "file": "multiple-instances.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "常見使用情境",
+      "file": "installation-common-use-cases.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "除錯常見問題",
+      "file": "debugging-common-issues.md",
+      "subCat": "自訂安裝"
+    },
+    {
+      "name": "Notion 與 Google Sites",
+      "file": "oembed.md",
+      "subCat": "在文件中嵌入"
+    }
+  ]
+}

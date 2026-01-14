@@ -1,0 +1,21 @@
+{
+  "name": "Yorum Sayısı Widget'ları",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Yorum Sayısı Widget'ı Kurulumu",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Toplu Yorum Sayısı Widget'ı Kurulumu",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Yorum Sayısı API'leri",
+      "file": "comment-count-apis.md",
+      "subCat": "Yorum Sayısı API'leri"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Cookies van derden",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn cookies van derden",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe FastComments cookies van derden gebruikt",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Cookies van derden inschakelen",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Inschakelen"
+    }
+  ]
+}

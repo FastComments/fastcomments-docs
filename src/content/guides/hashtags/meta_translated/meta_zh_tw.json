@@ -1,0 +1,46 @@
+{
+  "name": "主題標籤",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是主題標籤",
+      "file": "what-are-hashtags.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何使用主題標籤",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "使用主題標籤"
+    },
+    {
+      "name": "按主題標籤篩選留言",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "使用主題標籤"
+    },
+    {
+      "name": "有效與無效的主題標籤",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "使用主題標籤"
+    },
+    {
+      "name": "使用除 # 之外的符號",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "設定主題標籤"
+    },
+    {
+      "name": "預先填入主題標籤",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "設定主題標籤"
+    },
+    {
+      "name": "透過主題標籤連結到內容",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "設定主題標籤"
+    },
+    {
+      "name": "主題標籤自動完成的運作方式",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "主題標籤背景"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "분석",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "배경",
+      "file": "analytics-background.md",
+      "subCat": "분석"
+    },
+    {
+      "name": "청구 분석",
+      "file": "analytics-billing.md",
+      "subCat": "분석"
+    },
+    {
+      "name": "사이트 분석",
+      "file": "analytics-site.md",
+      "subCat": "분석"
+    },
+    {
+      "name": "타 플랫폼 대비 분석 정확도",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "분석"
+    },
+    {
+      "name": "구글 애널리틱스",
+      "file": "analytics-google.md",
+      "subCat": "추적"
+    }
+  ]
+}

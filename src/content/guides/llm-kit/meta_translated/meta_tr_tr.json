@@ -1,0 +1,11 @@
+{
+  "name": "LLM Kiti",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "LLM Kitini Edinin",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM Entegrasyonu"
+    }
+  ]
+}

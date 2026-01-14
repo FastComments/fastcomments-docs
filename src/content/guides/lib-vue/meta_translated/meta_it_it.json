@@ -1,0 +1,30 @@
+{
+  "name": "Libreria Vue 2",
+  "pageHeader": "Libreria FastComments per Vue 2",
+  "itemsOrdered": [
+    {
+      "name": "Installazione",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primi passi",
+      "type": "readme"
+    },
+    {
+      "name": "Utilizzo",
+      "file": "usage-readme-generated.md",
+      "subCat": "Utilizzo",
+      "type": "readme"
+    },
+    {
+      "name": "Aggiornamento della pagina corrente (esempio SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Utilizzo",
+      "type": "readme"
+    },
+    {
+      "name": "In produzione",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    }
+  ]
+}

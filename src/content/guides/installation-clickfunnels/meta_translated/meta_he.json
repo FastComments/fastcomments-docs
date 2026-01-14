@@ -1,0 +1,37 @@
+{
+  "name": "התקנת ClickFunnels",
+  "pageHeader": "הוספת צ'אט חי לקורסים ב-ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב ראשון: מצא את התבנית",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "התקנת ClickFunnels"
+    },
+    {
+      "name": "שלב שני: הוסף את הקוד",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "התקנת ClickFunnels"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "התקנת ClickFunnels"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "clickfunnels-customize.md",
+      "subCat": "התקנת ClickFunnels"
+    },
+    {
+      "name": "נוסף: קטע קוד להערות חיות",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "קטע קוד להערות חיות"
+    },
+    {
+      "name": "נוסף: השמעת הערות אוטומטית",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "השמעת הערות אוטומטית"
+    }
+  ]
+}

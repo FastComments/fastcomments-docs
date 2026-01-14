@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "הוסף תגובות בזמן אמת לאתרים ב-Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. הוסף בלוק HTML",
+      "file": "bubble-io-step-1.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "2. הכנס קוד",
+      "file": "bubble-io-step-2.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "3. מצא את הגדרת הרוחב",
+      "file": "bubble-io-step-3.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "4. התאם את הפריסה",
+      "file": "bubble-io-step-4.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "הצלחה",
+      "file": "bubble-io-success.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "שגיאות בדומיין",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

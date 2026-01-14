@@ -1,0 +1,42 @@
+{
+  "name": "Установка Wix",
+  "pageHeader": "Добавление комментариев на сайты Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Отредактируйте нужную страницу",
+      "file": "wix-step-1.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Шаг 2: Добавьте блок вставки",
+      "file": "wix-step-2.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Шаг 3: Скопируйте и вставьте пользовательский код",
+      "file": "wix-step-3.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Шаг 4: Измените размер",
+      "file": "wix-step-4.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Шаг 5: Уникальные ветки комментариев",
+      "file": "wix-step-5.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Шаг 6: Отпразднуйте",
+      "file": "wix-step-6.md",
+      "subCat": "Установка Wix"
+    },
+    {
+      "name": "Настройка",
+      "file": "wix-customize.md",
+      "subCat": "Установка Wix"
+    }
+  ]
+}

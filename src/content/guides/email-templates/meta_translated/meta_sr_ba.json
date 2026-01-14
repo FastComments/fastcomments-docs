@@ -1,0 +1,41 @@
+{
+  "name": "Шаблони е-порука",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Креирање шаблона",
+      "file": "creating-templates.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Језик шаблона",
+      "file": "template-language.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Локализација и прилагођени текст",
+      "file": "localizing.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Шаблони по домену",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Подаци и променљиве",
+      "file": "data-variables.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Грешке при рендеровању",
+      "file": "render-failures.md",
+      "subCat": "Шаблони е-порука"
+    },
+    {
+      "name": "Примјена промјена",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблони е-порука"
+    }
+  ]
+}

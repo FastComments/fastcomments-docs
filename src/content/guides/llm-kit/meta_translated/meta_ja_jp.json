@@ -1,0 +1,11 @@
+{
+  "name": "LLMキット",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "LLMキットを入手する",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM統合"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "הערות מתוזמנות",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "רקע",
+      "file": "background.md",
+      "subCat": "הערות מתוזמנות"
+    },
+    {
+      "name": "מדריך",
+      "file": "howto.md",
+      "subCat": "הערות מתוזמנות"
+    },
+    {
+      "name": "פורמט ייבוא",
+      "file": "import-format.md",
+      "subCat": "הערות מתוזמנות"
+    }
+  ]
+}

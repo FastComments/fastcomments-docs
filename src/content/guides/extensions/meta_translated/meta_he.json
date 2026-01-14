@@ -1,0 +1,31 @@
+{
+  "name": "כתיבת הרחבות",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "מחזור חיי ההרחבה",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הגדרת הרחבה",
+      "file": "defining-an-extension.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "דוגמאות להרחבות",
+      "file": "example-extensions.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "אובייקט ההרחבה",
+      "file": "the-extension-object.md",
+      "subCat": "ממשק"
+    },
+    {
+      "name": "ממשק API של ההרחבה",
+      "file": "the-extension-api.md",
+      "subCat": "ממשק"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Ionos 설치",
+  "pageHeader": "Ionos 사이트에 댓글 추가",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 문의 양식 추가",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos 설치"
+    },
+    {
+      "name": "2단계: FastComments.com 코드 추가",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos 설치"
+    },
+    {
+      "name": "3단계: 게시하기",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos 설치"
+    },
+    {
+      "name": "성공",
+      "file": "ionos-success.md",
+      "subCat": "Ionos 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos 설치"
+    }
+  ]
+}

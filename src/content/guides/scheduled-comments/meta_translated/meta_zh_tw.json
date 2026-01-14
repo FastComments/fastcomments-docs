@@ -1,0 +1,21 @@
+{
+  "name": "排程評論",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "排程評論"
+    },
+    {
+      "name": "操作說明",
+      "file": "howto.md",
+      "subCat": "排程評論"
+    },
+    {
+      "name": "匯入格式",
+      "file": "import-format.md",
+      "subCat": "排程評論"
+    }
+  ]
+}

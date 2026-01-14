@@ -1,0 +1,21 @@
+{
+  "name": "Ciasteczka stron trzecich",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym są ciasteczka stron trzecich",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Jak FastComments używa ciasteczek stron trzecich",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Włącz ciasteczka stron trzecich",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Włączanie"
+    }
+  ]
+}

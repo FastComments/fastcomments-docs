@@ -1,0 +1,22 @@
+{
+  "name": "Εγκατάσταση Memberstack",
+  "pageHeader": "Προσθήκη σχολίων με το Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Ο κώδικας",
+      "file": "memberstack-step-1.md",
+      "subCat": "Εγκατάσταση Memberstack"
+    },
+    {
+      "name": "Σφάλματα ονόματος τομέα",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Εγκατάσταση Memberstack"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "memberstack-customize.md",
+      "subCat": "Εγκατάσταση Memberstack"
+    }
+  ]
+}

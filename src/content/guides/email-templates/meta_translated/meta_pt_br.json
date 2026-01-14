@@ -1,0 +1,41 @@
+{
+  "name": "Modelos de E-mail",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Criando Modelos",
+      "file": "creating-templates.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Linguagem de Template",
+      "file": "template-language.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Localização e Texto Personalizado",
+      "file": "localizing.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Modelos por Domínio",
+      "file": "per-domain-templates.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Dados e Variáveis",
+      "file": "data-variables.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Falhas de Renderização",
+      "file": "render-failures.md",
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Aplicando Alterações",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Modelos de E-mail"
+    }
+  ]
+}

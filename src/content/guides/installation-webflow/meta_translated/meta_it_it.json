@@ -1,0 +1,37 @@
+{
+  "name": "Installazione di Webflow",
+  "pageHeader": "Aggiungi commenti ai siti Webflow",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Aggiungi un blocco Embed",
+      "file": "webflow-step-1.md",
+      "subCat": "Installazione di Webflow"
+    },
+    {
+      "name": "Passo 2: Incolla il codice di FastComments.com",
+      "file": "webflow-step-2.md",
+      "subCat": "Installazione di Webflow"
+    },
+    {
+      "name": "Passo 3: Pubblica",
+      "file": "webflow-step-3.md",
+      "subCat": "Installazione di Webflow"
+    },
+    {
+      "name": "Completato",
+      "file": "webflow-success.md",
+      "subCat": "Installazione di Webflow"
+    },
+    {
+      "name": "Errori di dominio",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Installazione di Webflow"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "webflow-customize.md",
+      "subCat": "Installazione di Webflow"
+    }
+  ]
+}

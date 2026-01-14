@@ -1,0 +1,31 @@
+{
+  "name": "SSO Erişim Kontrolü",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Erişim Kontrolü nedir?",
+      "file": "what-is-access-control.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Nasıl Çalışır",
+      "file": "how-it-works.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Spesifikasyon",
+      "file": "access-control-spec.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Uygulama",
+      "file": "implementation.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Örnek API Çağrıları",
+      "file": "api-example.md",
+      "subCat": "Uygulama"
+    }
+  ]
+}

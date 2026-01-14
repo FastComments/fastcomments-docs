@@ -1,0 +1,61 @@
+{
+  "name": "Инсталација",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Додаци трећих страна"
+    },
+    {
+      "name": "VanillaJS / HTML фрагмент",
+      "file": "vanillajs.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Више инстанци на истој страници",
+      "file": "multiple-instances.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Уобичајени случајеви употребе",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Решавање уобичајених проблема",
+      "file": "debugging-common-issues.md",
+      "subCat": "Прилагођене инсталације"
+    },
+    {
+      "name": "Notion и Google Sites",
+      "file": "oembed.md",
+      "subCat": "Уграђивање у документе"
+    }
+  ]
+}

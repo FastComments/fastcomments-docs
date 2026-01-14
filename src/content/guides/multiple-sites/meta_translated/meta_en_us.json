@@ -1,0 +1,51 @@
+{
+  "name": "Multiple Sites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Initial Setup",
+      "file": "add-domains-to-account.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "Limits and Pricing",
+      "file": "domain-limits.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "From Name, Email, and Logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
+      "name": "From Name/Email Not Working for a Domain",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
+      "name": "Tenant Per Environment",
+      "file": "tenant-per-environment.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
+      "name": "Customizations",
+      "file": "customizations.md",
+      "subCat": "Per-Site Customization"
+    },
+    {
+      "name": "Comment Moderation",
+      "file": "moderation.md",
+      "subCat": "Data & Search"
+    },
+    {
+      "name": "Sharing Comments Across Domains",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Data & Search"
+    },
+    {
+      "name": "Using WordPress",
+      "file": "wordpress.md",
+      "subCat": "Integration Notes"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Instalacja",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Wtyczki firm trzecich"
+    },
+    {
+      "name": "VanillaJS / fragment HTML",
+      "file": "vanillajs.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Wiele instancji na tej samej stronie",
+      "file": "multiple-instances.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Typowe przypadki użycia",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Debugowanie typowych problemów",
+      "file": "debugging-common-issues.md",
+      "subCat": "Instalacje niestandardowe"
+    },
+    {
+      "name": "Notion i Google Sites",
+      "file": "oembed.md",
+      "subCat": "Osadzanie w dokumentach"
+    }
+  ]
+}

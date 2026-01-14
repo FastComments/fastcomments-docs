@@ -1,0 +1,57 @@
+{
+  "name": "Ghost 安裝",
+  "pageHeader": "為 Ghost 站點新增僅限會員的即時留言功能",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：下載您的主題",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 2：在本機安裝您的主題",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 3：為新主題命名",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 4：開啟文章範本",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 5：加入 FastComments 程式碼",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 6：匯出您的主題",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "步驟 7：將主題上傳到 Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "成功！",
+      "file": "ghost-success.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost 安裝"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 Library",
+  "pageHeader": "FastComments Vue 2 Library",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Usage",
+      "file": "usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Updating The Current Page (SPA Example)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "In Production",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

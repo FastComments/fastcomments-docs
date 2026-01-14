@@ -1,0 +1,16 @@
+{
+  "name": "Kommentarsyntaks",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Grundlæggende formatering",
+      "file": "basic-formatting.md",
+      "subCat": "Formatering"
+    },
+    {
+      "name": "Sikkerhed",
+      "file": "security.md",
+      "subCat": "Sikkerhed"
+    }
+  ]
+}

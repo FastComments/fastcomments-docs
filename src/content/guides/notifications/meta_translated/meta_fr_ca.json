@@ -1,0 +1,26 @@
+{
+  "name": "Notifications",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Quand FastComments envoie-t-il des notifications ?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Types de notifications",
+      "file": "notification-types.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Se désabonner",
+      "file": "opting-out-notifications.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Configurer les notifications pour l'authentification unique (SSO)",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Configuration"
+    }
+  ]
+}

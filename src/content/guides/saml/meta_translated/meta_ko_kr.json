@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "SAML이란?",
+      "file": "saml-overview.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "SAML과 SSO의 차이",
+      "file": "saml-vs-sso.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "SAML 설정",
+      "file": "saml-setup.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "ID 공급자 구성",
+      "file": "saml-idp-config.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "서비스 제공자 정보",
+      "file": "saml-sp-info.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "사용자 역할 및 권한",
+      "file": "saml-user-roles.md",
+      "subCat": "사용자 관리"
+    },
+    {
+      "name": "SAML 인증 테스트",
+      "file": "saml-testing.md",
+      "subCat": "문제 해결"
+    },
+    {
+      "name": "자주 발생하는 문제",
+      "file": "saml-troubleshooting.md",
+      "subCat": "문제 해결"
+    },
+    {
+      "name": "보안 모범 사례",
+      "file": "saml-security.md",
+      "subCat": "고급"
+    }
+  ]
+}

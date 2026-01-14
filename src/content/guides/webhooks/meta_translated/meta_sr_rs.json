@@ -1,0 +1,46 @@
+{
+  "name": "Вебхукови",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су вебхукови",
+      "file": "what-are-webhooks.md",
+      "subCat": "Преглед"
+    },
+    {
+      "name": "Подржани догађаји и ресурси",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Преглед"
+    },
+    {
+      "name": "Постављање локалног окружења за развој",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Постављање",
+      "file": "webhooks-setup.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Тестирање",
+      "file": "webhooks-testing.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Структуре података",
+      "file": "webhooks-structures.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Безбедност и API токени",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Како функционише и руковање поновним покушајима",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Иза кулиса"
+    }
+  ]
+}

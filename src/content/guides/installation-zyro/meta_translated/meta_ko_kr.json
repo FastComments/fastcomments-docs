@@ -1,0 +1,37 @@
+{
+  "name": "Zyro 설치",
+  "pageHeader": "Zyro 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 코드 위젯 추가",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro 사이트 설치"
+    },
+    {
+      "name": "2단계: 코드 추가",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro 사이트 설치"
+    },
+    {
+      "name": "성공",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro 사이트 설치"
+    },
+    {
+      "name": "사이트 도메인 오류",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro 사이트 설치"
+    },
+    {
+      "name": "사이트 맞춤 설정",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro 사이트 설치"
+    },
+    {
+      "name": "플로팅 좋아요 버튼",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro 플로팅 좋아요"
+    }
+  ]
+}

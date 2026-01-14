@@ -1,0 +1,126 @@
+{
+  "name": "Moderasyon",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Yorumları Denetleme Sayfası",
+      "file": "moderate-comments-page.md",
+      "subCat": "Giriş"
+    },
+    {
+      "name": "Moderatörler",
+      "file": "moderators.md",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "Moderatör Ekleme",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "Moderatör İstatistikleri",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "Moderatör Kaldırma",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "Onaylar Nasıl Çalışır",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "E-posta ile Moderasyon",
+      "file": "moderation-via-email.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Filtreleme",
+      "file": "filters.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Arama",
+      "file": "search.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Moderasyon Bağlantılarını Paylaşma",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Yorum Dizisi Görüntüleyicisi",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Moderasyon İşlemleri",
+      "file": "comment-actions.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Yorumları Silme",
+      "file": "deleting-comments.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Yorum Bileşeni Üzerinden Moderasyon İşlemleri",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Canlı Moderasyon",
+      "file": "comment-actions-live.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Kullanıcı Yasaklama",
+      "file": "banning-users.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Joker Karakterlerle Kullanıcı Yasaklama",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Bayraklama",
+      "file": "flagging.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Toplu İşlemler",
+      "file": "bulk-actions.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Moderasyon Grupları",
+      "file": "moderation-groups.md",
+      "subCat": "Moderasyon Grupları"
+    },
+    {
+      "name": "Moderasyon Ayarları",
+      "file": "moderation-settings.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Spam Tespiti",
+      "file": "spam-detection.md",
+      "subCat": "Spam ve Küfür"
+    },
+    {
+      "name": "Küfürü Maskeleme",
+      "file": "profanity-mask.md",
+      "subCat": "Spam ve Küfür"
+    },
+    {
+      "name": "Yorum Kayıtları",
+      "file": "comment-logs.md",
+      "subCat": "Moderasyon İş Akışı"
+    }
+  ]
+}

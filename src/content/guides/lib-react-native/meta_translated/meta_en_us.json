@@ -1,0 +1,42 @@
+{
+  "name": "React Native Library",
+  "pageHeader": "FastComments React Native Library",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Consider the Native SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Usage - The Live Comment Widget",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Usage - The Live Chat Widget",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Usage - SSO",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Peer Dependencies",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

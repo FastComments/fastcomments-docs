@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "מה זה SAML?",
+      "file": "saml-overview.md",
+      "subCat": "יסודות"
+    },
+    {
+      "name": "SAML לעומת SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "יסודות"
+    },
+    {
+      "name": "הגדרת SAML",
+      "file": "saml-setup.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "תצורת ספק זהות",
+      "file": "saml-idp-config.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "מידע על ספק השירות",
+      "file": "saml-sp-info.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "תפקידים והרשאות משתמש",
+      "file": "saml-user-roles.md",
+      "subCat": "ניהול משתמשים"
+    },
+    {
+      "name": "בדיקת אימות SAML",
+      "file": "saml-testing.md",
+      "subCat": "פתרון בעיות"
+    },
+    {
+      "name": "בעיות נפוצות",
+      "file": "saml-troubleshooting.md",
+      "subCat": "פתרון בעיות"
+    },
+    {
+      "name": "שיטות עבודה מומלצות לאבטחה",
+      "file": "saml-security.md",
+      "subCat": "מתקדם"
+    }
+  ]
+}

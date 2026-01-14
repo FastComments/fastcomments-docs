@@ -1,0 +1,41 @@
+{
+  "name": "E-mailskabeloner",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Oprettelse af skabeloner",
+      "file": "creating-templates.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Skabelonsprog",
+      "file": "template-language.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Lokalisering og tilpasset tekst",
+      "file": "localizing.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Skabeloner pr. domæne",
+      "file": "per-domain-templates.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Data og variabler",
+      "file": "data-variables.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Gengivelsesfejl",
+      "file": "render-failures.md",
+      "subCat": "E-mailskabeloner"
+    },
+    {
+      "name": "Anvendelse af ændringer",
+      "file": "time-to-apply-changes.md",
+      "subCat": "E-mailskabeloner"
+    }
+  ]
+}

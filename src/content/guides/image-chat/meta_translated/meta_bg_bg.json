@@ -1,0 +1,41 @@
+{
+  "name": "Чат с изображения",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Първи стъпки",
+      "file": "getting-started.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Примери",
+      "file": "examples.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Опции за конфигуриране",
+      "file": "configuration-options.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Адаптивен дизайн",
+      "file": "responsive-design.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "customization.md",
+      "subCat": "Персонализиране"
+    },
+    {
+      "name": "Синхронизация в реално време",
+      "file": "live-sync.md",
+      "subCat": "Разширени"
+    },
+    {
+      "name": "Справочник за API",
+      "file": "api-reference.md",
+      "subCat": "Разширени"
+    }
+  ]
+}

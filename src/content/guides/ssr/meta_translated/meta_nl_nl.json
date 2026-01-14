@@ -1,0 +1,36 @@
+{
+  "name": "SSR (weergave aan de serverzijde)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat is SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Voordelen van SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Door FastComments ondersteunde SSR-functies",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Gebruiksscenario's",
+      "file": "ssr-use-cases.md",
+      "subCat": "SSR gebruiken"
+    },
+    {
+      "name": "Waar FastComments SSR gebruikt",
+      "file": "ssr-where-used.md",
+      "subCat": "SSR gebruiken"
+    },
+    {
+      "name": "SSR gebruiken",
+      "file": "using-ssr.md",
+      "subCat": "SSR gebruiken"
+    }
+  ]
+}

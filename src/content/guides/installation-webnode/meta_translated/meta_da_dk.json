@@ -1,0 +1,42 @@
+{
+  "name": "Webnode-installation",
+  "pageHeader": "Tilføj kommentarer til Webnode-sider",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Rediger din side",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Trin 2: Tilføj sektion og HTML-blok",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Trin 3: Kopier og indsæt kodeudsnit",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Trin 4: Udgiv",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Fuldført",
+      "file": "webnode-success.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode-installation"
+    }
+  ]
+}

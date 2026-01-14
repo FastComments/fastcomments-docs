@@ -1,0 +1,32 @@
+{
+  "name": "Пользовательские стили",
+  "pageHeader": "Руководство по пользовательским стилям",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Как настроить стили",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Справочник по стилям виджета комментариев (v2, последняя версия)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Стилизация виджета"
+    },
+    {
+      "name": "Стилизация виджета последних комментариев",
+      "file": "recent-comments-widget.md",
+      "subCat": "Стилизация виджета"
+    },
+    {
+      "name": "Стилизация виджета популярных страниц",
+      "file": "top-pages-widget.md",
+      "subCat": "Стилизация виджета"
+    },
+    {
+      "name": "Другие библиотеки фронтенда",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Другие библиотеки фронтенда"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "用户资料",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "资料入门",
+      "file": "profile-basics.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "自定义个人资料",
+      "file": "customizing-profiles.md",
+      "subCat": "自定义"
+    },
+    {
+      "name": "隐私设置",
+      "file": "privacy-settings.md",
+      "subCat": "自定义"
+    },
+    {
+      "name": "徽章",
+      "file": "badges.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "个人资料评论",
+      "file": "profile-comments.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "私信",
+      "file": "direct-messaging.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "活动动态",
+      "file": "activity-feed.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "用户备注",
+      "file": "user-notes.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "个人资料样式",
+      "file": "styling-profiles.md",
+      "subCat": "面向开发者"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Plantillas de correo electrónico",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Creación de plantillas",
+      "file": "creating-templates.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Lenguaje de plantillas",
+      "file": "template-language.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Localización y texto personalizado",
+      "file": "localizing.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Plantillas por dominio",
+      "file": "per-domain-templates.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Datos y variables",
+      "file": "data-variables.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Errores de renderizado",
+      "file": "render-failures.md",
+      "subCat": "Plantillas de correo electrónico"
+    },
+    {
+      "name": "Aplicación de cambios",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Plantillas de correo electrónico"
+    }
+  ]
+}

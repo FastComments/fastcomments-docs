@@ -1,0 +1,42 @@
+{
+  "name": "Installazione di Moodle",
+  "pageHeader": "Aggiungere commenti ai siti Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Ottenere l'accesso al server",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Passo 2: Identificare il file della vista",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Passo 3: Aggiungere il codice",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Successo del sito membro",
+      "file": "moodle-success.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Errori di dominio del sito membro",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Personalizzazione del sito membro",
+      "file": "moodle-customize.md",
+      "subCat": "Installazione del sito Moodle"
+    },
+    {
+      "name": "Vuoi un plugin dedicato?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Plugin dedicato?"
+    }
+  ]
+}

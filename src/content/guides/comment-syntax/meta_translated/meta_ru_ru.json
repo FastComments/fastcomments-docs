@@ -1,0 +1,16 @@
+{
+  "name": "Синтаксис комментариев",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Базовое форматирование",
+      "file": "basic-formatting.md",
+      "subCat": "Форматирование"
+    },
+    {
+      "name": "Безопасность",
+      "file": "security.md",
+      "subCat": "Безопасность"
+    }
+  ]
+}

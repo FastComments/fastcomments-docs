@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Adicionar comentários em tempo real a sites Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Adicionar bloco HTML",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "2. Inserir código",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "3. Localizar configuração de largura",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "4. Ajustar o layout",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "Concluído",
+      "file": "bubble-io-success.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "Personalização",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Tilpasset styling",
+  "pageHeader": "Guide til tilpasset styling",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Sådan tilpasser du stilarter",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Stylingreference for kommentar-widget (v2, nyeste)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Widget-styling for seneste kommentarer",
+      "file": "recent-comments-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Widget-styling for top-sider",
+      "file": "top-pages-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Andre frontend-biblioteker",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Andre frontend-biblioteker"
+    }
+  ]
+}

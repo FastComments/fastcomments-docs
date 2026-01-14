@@ -1,0 +1,51 @@
+{
+  "name": "使用者個人檔案",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "個人檔案基礎",
+      "file": "profile-basics.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "自訂個人檔案",
+      "file": "customizing-profiles.md",
+      "subCat": "自訂"
+    },
+    {
+      "name": "隱私設定",
+      "file": "privacy-settings.md",
+      "subCat": "自訂"
+    },
+    {
+      "name": "徽章",
+      "file": "badges.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "個人檔案留言",
+      "file": "profile-comments.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "私訊",
+      "file": "direct-messaging.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "動態消息",
+      "file": "activity-feed.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "使用者筆記",
+      "file": "user-notes.md",
+      "subCat": "功能"
+    },
+    {
+      "name": "個人檔案樣式",
+      "file": "styling-profiles.md",
+      "subCat": "適用於開發人員"
+    }
+  ]
+}

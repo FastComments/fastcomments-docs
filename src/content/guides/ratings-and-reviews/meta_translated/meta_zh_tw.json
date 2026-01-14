@@ -1,0 +1,56 @@
+{
+  "name": "評分與評論",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "適用對象",
+      "file": "who-gets-it.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "定價",
+      "file": "pricing.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "選擇顯示類型",
+      "file": "choose-display-type.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "定義您的問題",
+      "file": "define-your-questions.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "設定運作方式",
+      "file": "how-configuration-works.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "摘要小工具",
+      "file": "summary-widget-installation.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "查看評分",
+      "file": "viewing-ratings.md",
+      "subCat": "報告"
+    },
+    {
+      "name": "透過 API 整合",
+      "file": "integrating-via-the-api.md",
+      "subCat": "報告"
+    },
+    {
+      "name": "摘要示範",
+      "file": "summary-demo.md",
+      "subCat": "摘要示範"
+    }
+  ]
+}

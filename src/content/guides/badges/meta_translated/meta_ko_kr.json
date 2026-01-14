@@ -1,0 +1,96 @@
+{
+  "name": "배지",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "기본",
+      "file": "badge-basics.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "진행",
+      "file": "badge-progression.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "수동 배지",
+      "file": "badge-type-manual.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "댓글 수",
+      "file": "badge-type-comment-count.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "추천",
+      "file": "badge-type-up-votes.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "답글",
+      "file": "badge-type-replies.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "고정 댓글",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "베테랑",
+      "file": "badge-type-veteran.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "야행성",
+      "file": "badge-type-night-owl.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "빠른 응답 시간",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "특정 페이지에 답글",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "배지 유형"
+    },
+    {
+      "name": "모더레이터 배지 소개",
+      "file": "moderator-badges.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "삭제된 댓글",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "승인된 댓글",
+      "file": "moderator-comments-approved.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "승인 취소된 댓글",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "검토된 댓글",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "스팸으로 표시된 댓글",
+      "file": "moderator-comments-spam.md",
+      "subCat": "모더레이터 배지 유형"
+    },
+    {
+      "name": "스팸 아님으로 표시된 댓글",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "모더레이터 배지 유형"
+    }
+  ]
+}

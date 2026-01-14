@@ -1,0 +1,77 @@
+{
+  "name": "Εγκατάσταση Squarespace",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Προσθήκη ζωντανών σχολίων στο ιστολόγιό σας",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
+    },
+    {
+      "name": "Βήμα 1: Ανοίξτε τις ρυθμίσεις του ιστολογίου",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
+    },
+    {
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα του FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
+    },
+    {
+      "name": "Προσθήκη ζωντανών σχολίων σε όλες τις σελίδες",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
+    },
+    {
+      "name": "Βήμα 1: Ανοίξτε τα εργαλεία προγραμματιστή",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
+    },
+    {
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα του FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
+    },
+    {
+      "name": "Προσθήκη ζωντανών σχολίων σε συγκεκριμένη σελίδα",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
+    },
+    {
+      "name": "Βήμα 1: Προσθέστε μπλοκ κώδικα",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
+    },
+    {
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα του FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Επόμενα βήματα για Squarespace"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "squarespace-customize.md",
+      "subCat": "Επόμενα βήματα για Squarespace"
+    }
+  ]
+}

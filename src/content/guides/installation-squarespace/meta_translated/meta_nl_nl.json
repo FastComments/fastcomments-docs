@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace-installatie",
+  "pageHeader": "Reacties toevoegen aan Squarespace-sites",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Live reacties toevoegen aan je blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Reacties toevoegen aan je blog"
+    },
+    {
+      "name": "Stap 1: Open bloginstellingen",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Reacties toevoegen aan je blog"
+    },
+    {
+      "name": "Stap 2: Plak je FastComments.com-code",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Reacties toevoegen aan je blog"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Reacties toevoegen aan je blog"
+    },
+    {
+      "name": "Live reacties toevoegen aan alle pagina's",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Reacties toevoegen aan alle pagina's"
+    },
+    {
+      "name": "Stap 1: Open de ontwikkelaarstools",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Reacties toevoegen aan alle pagina's"
+    },
+    {
+      "name": "Stap 2: Plak je FastComments.com-code",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Reacties toevoegen aan alle pagina's"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Reacties toevoegen aan alle pagina's"
+    },
+    {
+      "name": "Live reactie toevoegen aan een specifieke pagina",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Reacties toevoegen aan een specifieke pagina"
+    },
+    {
+      "name": "Stap 1: Voeg een codeblok toe",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Reacties toevoegen aan een specifieke pagina"
+    },
+    {
+      "name": "Stap 2: Plak je FastComments.com-code",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Reacties toevoegen aan een specifieke pagina"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Reacties toevoegen aan een specifieke pagina"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Vervolgstappen voor Squarespace"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "squarespace-customize.md",
+      "subCat": "Vervolgstappen voor Squarespace"
+    }
+  ]
+}

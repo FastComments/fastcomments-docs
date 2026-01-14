@@ -1,0 +1,37 @@
+{
+  "name": "Zyro Kurulumu",
+  "pageHeader": "Zyro Sitelerine Canlı Yorum Ekleme",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Kod Widget'ı Ekle",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro Site Kurulumu"
+    },
+    {
+      "name": "Adım 2: Kodu Ekle",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro Site Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro Site Kurulumu"
+    },
+    {
+      "name": "Site Alan Adı Hataları",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro Site Kurulumu"
+    },
+    {
+      "name": "Site Özelleştirme",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro Site Kurulumu"
+    },
+    {
+      "name": "Yüzen Beğeni Butonu",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro Yüzen Beğeniler"
+    }
+  ]
+}

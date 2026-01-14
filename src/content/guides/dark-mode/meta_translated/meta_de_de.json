@@ -1,0 +1,21 @@
+{
+  "name": "Dunkelmodus",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Automatische Erkennung",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Manuelle Konfiguration",
+      "file": "dark-mode-manual.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Dunkelmodus-Unterstützung für das WordPress Networker-Theme",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress-Themes"
+    }
+  ]
+}

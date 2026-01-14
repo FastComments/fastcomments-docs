@@ -1,0 +1,31 @@
+{
+  "name": "Omnævnelser",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er omnævnelser",
+      "file": "what-are-mentions.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Sådan tagger du en bruger",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Brug af omnævnelser"
+    },
+    {
+      "name": "Notifikationer",
+      "file": "mentions-notifications.md",
+      "subCat": "Brug af omnævnelser"
+    },
+    {
+      "name": "Hvordan autofuldførelse for omnævnelser fungerer",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Brug af omnævnelser"
+    },
+    {
+      "name": "Udfyldning af omnævnelser",
+      "file": "populating-mentions.md",
+      "subCat": "Opsætning af omnævnelser"
+    }
+  ]
+}

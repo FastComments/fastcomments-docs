@@ -1,0 +1,21 @@
+{
+  "name": "RSSフィード",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "概要",
+      "file": "overview.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "RSSフィードの設定",
+      "file": "setup.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "セキュリティ上の考慮事項",
+      "file": "security.md",
+      "subCat": "実装"
+    }
+  ]
+}

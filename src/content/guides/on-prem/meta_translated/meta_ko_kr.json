@@ -1,0 +1,56 @@
+{
+  "name": "온프레미스",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "포함된 항목",
+      "file": "on-prem-whats-included.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "시작하기",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "인스턴스",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "배포"
+    },
+    {
+      "name": "설정",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "배포"
+    },
+    {
+      "name": "데이터베이스 다운타임 및 유지보수 모드",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "아키텍처"
+    },
+    {
+      "name": "잠금",
+      "file": "on-prem-locks.md",
+      "subCat": "아키텍처"
+    },
+    {
+      "name": "위젯 코드",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "설치 및 통합"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "설치 및 통합"
+    },
+    {
+      "name": "다중 도메인",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "설치 및 통합"
+    },
+    {
+      "name": "보안",
+      "file": "on-prem-security.md",
+      "subCat": "보안 팁"
+    }
+  ]
+}

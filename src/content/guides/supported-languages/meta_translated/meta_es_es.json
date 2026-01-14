@@ -1,0 +1,21 @@
+{
+  "name": "Idiomas compatibles",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Idiomas compatibles",
+      "file": "supported-languages.md",
+      "subCat": "Idiomas compatibles"
+    },
+    {
+      "name": "¿Qué partes de FastComments están localizadas?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Idiomas compatibles"
+    },
+    {
+      "name": "Solicitar soporte para un nuevo idioma",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Idiomas compatibles"
+    }
+  ]
+}

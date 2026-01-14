@@ -1,0 +1,42 @@
+{
+  "name": "Βιβλιοθήκη React Native",
+  "pageHeader": "Βιβλιοθήκη FastComments για React Native",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Εξετάστε το εγγενές SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση - Το widget ζωντανών σχολίων",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση - Το widget ζωντανής συνομιλίας",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση - Ενιαία Σύνδεση (SSO)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Εξαρτήσεις peer",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

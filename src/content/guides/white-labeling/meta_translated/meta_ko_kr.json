@@ -1,0 +1,36 @@
+{
+  "name": "화이트 라벨링",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "화이트 라벨링이란?",
+      "file": "white-labeling-background.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "화이트 라벨링을 받는 방법",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "화이트 라벨링 설정하기",
+      "file": "white-labeling-process.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "대시보드 사용법",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "API 사용법",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "화이트 라벨링된 테넌트 관리",
+      "file": "white-labeling-managing.md",
+      "subCat": "테넌트 관리"
+    }
+  ]
+}

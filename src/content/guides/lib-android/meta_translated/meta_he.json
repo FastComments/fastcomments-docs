@@ -1,0 +1,72 @@
+{
+  "name": "ספריית Android",
+  "pageHeader": "ספריית FastComments ל-Android",
+  "itemsOrdered": [
+    {
+      "name": "תכונות",
+      "file": "features-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה מהירה",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש בסיסי",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "אימות SSO מאובטח",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "אימות",
+      "type": "readme"
+    },
+    {
+      "name": "שילוב פיד",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "שילוב צ'אט חי",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "פרויקטים לדוגמה",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "אפשרויות תצורה",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "תצורה",
+      "type": "readme"
+    },
+    {
+      "name": "התאמה מקיפה של ערכת הנושא",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "ניהול זיכרון",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

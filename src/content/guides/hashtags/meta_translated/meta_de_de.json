@@ -1,0 +1,46 @@
+{
+  "name": "Hashtags",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Was sind Hashtags",
+      "file": "what-are-hashtags.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wie man Hashtags verwendet",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Verwendung von Hashtags"
+    },
+    {
+      "name": "Kommentare nach Hashtag filtern",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Verwendung von Hashtags"
+    },
+    {
+      "name": "Gültige vs. ungültige Hashtags",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Verwendung von Hashtags"
+    },
+    {
+      "name": "Verwendung anderer Symbole als #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Einrichtung von Hashtags"
+    },
+    {
+      "name": "Hashtags vorbefüllen",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Einrichtung von Hashtags"
+    },
+    {
+      "name": "Verlinkung zu Inhalten über Hashtags",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Einrichtung von Hashtags"
+    },
+    {
+      "name": "Wie die Hashtag-Autovervollständigung funktioniert",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Hintergrund zu Hashtags"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "モデレーション",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "コメントのモデレーションページ",
+      "file": "moderate-comments-page.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "モデレーター",
+      "file": "moderators.md",
+      "subCat": "モデレーター"
+    },
+    {
+      "name": "モデレーターの追加",
+      "file": "moderators-adding.md",
+      "subCat": "モデレーター"
+    },
+    {
+      "name": "モデレーターの統計",
+      "file": "moderator-stats.md",
+      "subCat": "モデレーター"
+    },
+    {
+      "name": "モデレーターの削除",
+      "file": "moderators-removing.md",
+      "subCat": "モデレーター"
+    },
+    {
+      "name": "承認の仕組み",
+      "file": "moderation-approvals.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "メールによるモデレーション",
+      "file": "moderation-via-email.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "フィルタリング",
+      "file": "filters.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "検索",
+      "file": "search.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "モデレーションリンクの共有",
+      "file": "sharing-moderation-links.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "コメントスレッドビューア",
+      "file": "comment-thread-viewer.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "モデレーションの操作",
+      "file": "comment-actions.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "コメントの削除",
+      "file": "deleting-comments.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "コメントウィジェットからのモデレーション操作",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "ライブモデレーション",
+      "file": "comment-actions-live.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "ユーザーの禁止",
+      "file": "banning-users.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "ワイルドカードによるユーザーの禁止",
+      "file": "banning-users-wildcards.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "フラグ付け",
+      "file": "flagging.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "一括操作",
+      "file": "bulk-actions.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "モデレーショングループ",
+      "file": "moderation-groups.md",
+      "subCat": "モデレーショングループ"
+    },
+    {
+      "name": "モデレーション設定",
+      "file": "moderation-settings.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "スパム検出",
+      "file": "spam-detection.md",
+      "subCat": "スパムと不適切な表現"
+    },
+    {
+      "name": "不適切な表現のマスキング",
+      "file": "profanity-mask.md",
+      "subCat": "スパムと不適切な表現"
+    },
+    {
+      "name": "コメントログ",
+      "file": "comment-logs.md",
+      "subCat": "モデレーションのワークフロー"
+    }
+  ]
+}

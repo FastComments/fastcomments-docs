@@ -1,0 +1,31 @@
+{
+  "name": "Reazioni della Pagina",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Reazioni della Pagina",
+      "file": "page-reacts-about.md",
+      "subCat": "Reazioni della Pagina"
+    },
+    {
+      "name": "Installazione - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Reazioni della Pagina"
+    },
+    {
+      "name": "Widget Mi Piace Fluttuante",
+      "file": "floating-likes-about.md",
+      "subCat": "Widget Mi Piace Fluttuante"
+    },
+    {
+      "name": "Installazione - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Widget Mi Piace Fluttuante"
+    },
+    {
+      "name": "Installazione - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Widget Mi Piace Fluttuante"
+    }
+  ]
+}

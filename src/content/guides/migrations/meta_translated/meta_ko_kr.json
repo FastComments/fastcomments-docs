@@ -1,0 +1,46 @@
+{
+  "name": "마이그레이션",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "다른 제공업체에서의 마이그레이션",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "다른 제공업체에서"
+    },
+    {
+      "name": "데이터 가져오기",
+      "file": "importing-data.md",
+      "subCat": "다른 제공업체에서"
+    },
+    {
+      "name": "워드프레스 댓글 가져오기",
+      "file": "importing-data-wordpress.md",
+      "subCat": "다른 제공업체에서"
+    },
+    {
+      "name": "사용자 및 중재자 마이그레이션",
+      "file": "migrating-users-moderators.md",
+      "subCat": "다른 제공업체에서"
+    },
+    {
+      "name": "도메인 마이그레이션",
+      "file": "migrating-domains.md",
+      "subCat": "데이터 마이그레이션"
+    },
+    {
+      "name": "페이지 마이그레이션",
+      "file": "migrating-pages.md",
+      "subCat": "데이터 마이그레이션"
+    },
+    {
+      "name": "댓글 복사",
+      "file": "copying-comments.md",
+      "subCat": "데이터 마이그레이션"
+    },
+    {
+      "name": "데이터 내보내기",
+      "file": "exporting-data.md",
+      "subCat": "다른 제공업체로"
+    }
+  ]
+}

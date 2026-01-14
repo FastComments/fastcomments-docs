@@ -1,0 +1,36 @@
+{
+  "name": "Uw eigen cloud",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Wat is FastComments Isolated Cloud?",
+      "file": "your-own-cloud.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe u het kunt krijgen",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Opzetten en training",
+      "file": "set-up-training.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Het dashboard gebruiken",
+      "file": "using-the-dashboard.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "De API gebruiken",
+      "file": "using-the-api.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Tenants beheren",
+      "file": "managing-tenants.md",
+      "subCat": "Tenantbeheer"
+    }
+  ]
+}

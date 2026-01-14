@@ -1,0 +1,22 @@
+{
+  "name": "Инсталиране на Memberstack",
+  "pageHeader": "Добавяне на коментари с Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Кодът",
+      "file": "memberstack-step-1.md",
+      "subCat": "Инсталиране на Memberstack"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Инсталиране на Memberstack"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "memberstack-customize.md",
+      "subCat": "Инсталиране на Memberstack"
+    }
+  ]
+}

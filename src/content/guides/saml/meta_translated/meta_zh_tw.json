@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是 SAML？",
+      "file": "saml-overview.md",
+      "subCat": "基礎知識"
+    },
+    {
+      "name": "SAML 與 SSO 的比較",
+      "file": "saml-vs-sso.md",
+      "subCat": "基礎知識"
+    },
+    {
+      "name": "設定 SAML",
+      "file": "saml-setup.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "身分提供者設定",
+      "file": "saml-idp-config.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "服務提供者資訊",
+      "file": "saml-sp-info.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "使用者角色與權限",
+      "file": "saml-user-roles.md",
+      "subCat": "使用者管理"
+    },
+    {
+      "name": "測試 SAML 認證",
+      "file": "saml-testing.md",
+      "subCat": "疑難排解"
+    },
+    {
+      "name": "常見問題",
+      "file": "saml-troubleshooting.md",
+      "subCat": "疑難排解"
+    },
+    {
+      "name": "安全最佳實務",
+      "file": "saml-security.md",
+      "subCat": "進階"
+    }
+  ]
+}

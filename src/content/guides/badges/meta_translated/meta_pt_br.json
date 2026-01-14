@@ -1,0 +1,96 @@
+{
+  "name": "Insígnias",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Noções Básicas",
+      "file": "badge-basics.md",
+      "subCat": "Noções Básicas"
+    },
+    {
+      "name": "Progressão",
+      "file": "badge-progression.md",
+      "subCat": "Noções Básicas"
+    },
+    {
+      "name": "Insígnias Manuais",
+      "file": "badge-type-manual.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Contagem de Comentários",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Votos Positivos",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Respostas",
+      "file": "badge-type-replies.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Comentários Fixados",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Veterano",
+      "file": "badge-type-veteran.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Coruja Noturna",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Tempo de Resposta Rápido",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Responder a Página Específica",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Tipos de Insígnias"
+    },
+    {
+      "name": "Introdução às Insígnias de Moderadores",
+      "file": "moderator-badges.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Excluídos",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Aprovados",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Não Aprovados",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Revisados",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Marcados como Spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    },
+    {
+      "name": "Comentários Marcados como Não Spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Tipos de Insígnias de Moderadores"
+    }
+  ]
+}

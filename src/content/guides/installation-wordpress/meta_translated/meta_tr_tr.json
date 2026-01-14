@@ -1,0 +1,72 @@
+{
+  "name": "WordPress Kurulumu",
+  "pageHeader": "WordPress Sitelerine Canlı Yorum Ekleme",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Kısa Özet"
+    },
+    {
+      "name": "Kurulum",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Moderasyon",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Kullanıcılar, Moderatörler ve Yöneticiler",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Üyeliğe Özel Siteler (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Bildirimler",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Özel Temalar",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "WordPress'e Geri Eşitleme",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Yorum Sayıları",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "WordPress Kurulumu <> FastComment Sunucu İletişimi",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress Kurulumu"
+    },
+    {
+      "name": "Eklentiyi Devre Dışı Bırakma ile Kaldırma",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Eklenti Kaldırma"
+    }
+  ]
+}

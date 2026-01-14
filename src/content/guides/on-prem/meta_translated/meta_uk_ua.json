@@ -1,0 +1,56 @@
+{
+  "name": "Локальне розгортання",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Що включено",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "З чого почати",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Екземпляри",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Розгортання"
+    },
+    {
+      "name": "Конфігурація",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Розгортання"
+    },
+    {
+      "name": "Простій бази даних та режим технічного обслуговування",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Архітектура"
+    },
+    {
+      "name": "Блокування",
+      "file": "on-prem-locks.md",
+      "subCat": "Архітектура"
+    },
+    {
+      "name": "Код віджету",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Встановлення та інтеграція"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Встановлення та інтеграція"
+    },
+    {
+      "name": "Кілька доменів",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Встановлення та інтеграція"
+    },
+    {
+      "name": "Безпека",
+      "file": "on-prem-security.md",
+      "subCat": "Поради щодо безпеки"
+    }
+  ]
+}

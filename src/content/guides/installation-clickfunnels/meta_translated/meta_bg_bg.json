@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на ClickFunnels",
+  "pageHeader": "Добавяне на жив чат към курсовете в ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Намерете шаблона",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Инсталиране на ClickFunnels"
+    },
+    {
+      "name": "Стъпка 2: Добавете кода",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Инсталиране на ClickFunnels"
+    },
+    {
+      "name": "Проблеми с домейна",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Инсталиране на ClickFunnels"
+    },
+    {
+      "name": "Персонализация",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Инсталиране на ClickFunnels"
+    },
+    {
+      "name": "Допълнително: Кодов фрагмент за коментиране на живо",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Кодов фрагмент за коментиране на живо"
+    },
+    {
+      "name": "Допълнително: Автоматично възпроизвеждане на коментари",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Автоматично възпроизвеждане на коментари"
+    }
+  ]
+}

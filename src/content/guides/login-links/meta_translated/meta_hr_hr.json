@@ -1,0 +1,26 @@
+{
+  "name": "Poveznice za prijavu",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Što su poveznice za prijavu?",
+      "file": "login-links-what-are.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Prednosti poveznica za prijavu u odnosu na lozinke",
+      "file": "login-links-benefits.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kako osiguravamo sigurnost poveznica za prijavu",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Sigurnost"
+    },
+    {
+      "name": "Kome se šalju poveznice za prijavu?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Korištenje"
+    }
+  ]
+}

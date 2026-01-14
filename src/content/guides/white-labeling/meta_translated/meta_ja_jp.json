@@ -1,0 +1,36 @@
+{
+  "name": "ホワイトラベル化",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "ホワイトラベル化とは",
+      "file": "white-labeling-background.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ホワイトラベル化を取得する方法",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "ホワイトラベル化の設定",
+      "file": "white-labeling-process.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "ダッシュボードの使い方",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "APIの使い方",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "ホワイトラベル化されたテナントの管理",
+      "file": "white-labeling-managing.md",
+      "subCat": "テナント管理"
+    }
+  ]
+}

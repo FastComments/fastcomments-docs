@@ -1,0 +1,46 @@
+{
+  "name": "Mots-clics",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce qu'un mot-clic?",
+      "file": "what-are-hashtags.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Comment utiliser les mots-clics",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Utilisation des mots-clics"
+    },
+    {
+      "name": "Filtrer les commentaires par mot-clic",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Utilisation des mots-clics"
+    },
+    {
+      "name": "Mots-clics valides et invalides",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Utilisation des mots-clics"
+    },
+    {
+      "name": "Utiliser d'autres symboles que #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Configuration des mots-clics"
+    },
+    {
+      "name": "Préremplissage des mots-clics",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Configuration des mots-clics"
+    },
+    {
+      "name": "Lier du contenu via des mots-clics",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Configuration des mots-clics"
+    },
+    {
+      "name": "Comment fonctionne l'autocomplétion des mots-clics",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Contexte des mots-clics"
+    }
+  ]
+}

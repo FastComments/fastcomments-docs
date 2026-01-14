@@ -1,0 +1,21 @@
+{
+  "name": "Υποστηριζόμενες γλώσσες",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Υποστηριζόμενες γλώσσες",
+      "file": "supported-languages.md",
+      "subCat": "Υποστηριζόμενες γλώσσες"
+    },
+    {
+      "name": "Ποια τμήματα του FastComments είναι τοπικοποιημένα;",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Υποστηριζόμενες γλώσσες"
+    },
+    {
+      "name": "Αίτηση για υποστήριξη νέας γλώσσας",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Υποστηριζόμενες γλώσσες"
+    }
+  ]
+}

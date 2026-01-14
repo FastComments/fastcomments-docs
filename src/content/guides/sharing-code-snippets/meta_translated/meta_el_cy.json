@@ -1,0 +1,31 @@
+{
+  "name": "Κοινοποίηση Αποσπασμάτων Κώδικα",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι τα αποσπάσματα κώδικα;",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Κοινότητες Προγραμματισμού",
+      "file": "code-snippets-communities.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Υποστηριζόμενες Γλώσσες Προγραμματισμού",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Ρύθμιση Κοινοποίησης Αποσπασμάτων Κώδικα",
+      "file": "code-snippets-setup.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Κοινοποίηση Αποσπασμάτων Κώδικα",
+      "file": "code-snippets-usage.md",
+      "subCat": "Χρήση"
+    }
+  ]
+}

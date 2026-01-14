@@ -1,0 +1,16 @@
+{
+  "name": "Fuentes",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Personalización de Fuentes",
+      "file": "personalizing-feeds.md",
+      "subCat": "Personalización"
+    },
+    {
+      "name": "Fuentes regionales",
+      "file": "regional-feeds.md",
+      "subCat": "Personalización"
+    }
+  ]
+}

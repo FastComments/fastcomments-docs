@@ -1,0 +1,36 @@
+{
+  "name": "SSR (рендеринг на стороне сервера)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Преимущества SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Функции SSR, поддерживаемые FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Сценарии использования",
+      "file": "ssr-use-cases.md",
+      "subCat": "Использование SSR"
+    },
+    {
+      "name": "Где FastComments использует SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Использование SSR"
+    },
+    {
+      "name": "Использование SSR",
+      "file": "using-ssr.md",
+      "subCat": "Использование SSR"
+    }
+  ]
+}

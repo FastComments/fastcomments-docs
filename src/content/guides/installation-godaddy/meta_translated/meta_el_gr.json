@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση GoDaddy",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους GoDaddy",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθήκη περιοχής κώδικα",
+      "file": "godaddy-step-1.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη κώδικα FastComments.com",
+      "file": "godaddy-step-2.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    },
+    {
+      "name": "Βήμα 3: Δημοσίευση",
+      "file": "godaddy-step-3.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "godaddy-success.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "godaddy-customize.md",
+      "subCat": "Εγκατάσταση GoDaddy"
+    }
+  ]
+}

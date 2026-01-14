@@ -1,0 +1,32 @@
+{
+  "name": "Systeme.io のインストール",
+  "pageHeader": "Systeme.io のブログにコメントを追加する",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: ブログのテーマテンプレートを開く",
+      "file": "systeme-step-1.md",
+      "subCat": "Systeme.io のインストール"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを追加する",
+      "file": "systeme-step-2.md",
+      "subCat": "Systeme.io のインストール"
+    },
+    {
+      "name": "成功",
+      "file": "systeme-success.md",
+      "subCat": "Systeme.io のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Systeme.io のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "systeme-customize.md",
+      "subCat": "Systeme.io のインストール"
+    }
+  ]
+}

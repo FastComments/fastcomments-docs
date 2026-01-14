@@ -1,0 +1,31 @@
+{
+  "name": "Erweiterungen schreiben",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Lebenszyklus einer Erweiterung",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Definieren einer Erweiterung",
+      "file": "defining-an-extension.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Beispielerweiterungen",
+      "file": "example-extensions.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Das Erweiterungsobjekt",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "Die Erweiterungs-API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

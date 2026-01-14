@@ -1,0 +1,56 @@
+{
+  "name": "Lokalna instalacija",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Što je uključeno",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Gdje započeti",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Kako započeti"
+    },
+    {
+      "name": "Instancije",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Konfiguracija",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Zastoji baze podataka i način održavanja",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Arhitektura"
+    },
+    {
+      "name": "Zaključavanja",
+      "file": "on-prem-locks.md",
+      "subCat": "Arhitektura"
+    },
+    {
+      "name": "Kod widgeta",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Instalacija i integracija"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Instalacija i integracija"
+    },
+    {
+      "name": "Više domena",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Instalacija i integracija"
+    },
+    {
+      "name": "Sigurnost",
+      "file": "on-prem-security.md",
+      "subCat": "Sigurnosni savjeti"
+    }
+  ]
+}

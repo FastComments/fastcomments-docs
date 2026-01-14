@@ -1,0 +1,37 @@
+{
+  "name": "Установка Zyro",
+  "pageHeader": "Добавить живые комментарии на сайты Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Добавить виджет кода",
+      "file": "zyro-step-1.md",
+      "subCat": "Установка на сайт Zyro"
+    },
+    {
+      "name": "Шаг 2: Добавить код",
+      "file": "zyro-step-2.md",
+      "subCat": "Установка на сайт Zyro"
+    },
+    {
+      "name": "Готово",
+      "file": "zyro-site-success.md",
+      "subCat": "Установка на сайт Zyro"
+    },
+    {
+      "name": "Ошибки домена сайта",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Установка на сайт Zyro"
+    },
+    {
+      "name": "Настройка сайта",
+      "file": "zyro-site-customize.md",
+      "subCat": "Установка на сайт Zyro"
+    },
+    {
+      "name": "Плавающая кнопка «Нравится»",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Плавающие лайки Zyro"
+    }
+  ]
+}

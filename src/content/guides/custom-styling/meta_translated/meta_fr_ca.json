@@ -1,0 +1,32 @@
+{
+  "name": "Styles personnalisés",
+  "pageHeader": "Guide de personnalisation des styles",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Comment personnaliser les styles",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Référence de style du widget de commentaires (v2, dernière version)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Style des widgets"
+    },
+    {
+      "name": "Style du widget des commentaires récents",
+      "file": "recent-comments-widget.md",
+      "subCat": "Style des widgets"
+    },
+    {
+      "name": "Style du widget des pages populaires",
+      "file": "top-pages-widget.md",
+      "subCat": "Style des widgets"
+    },
+    {
+      "name": "Autres bibliothèques front-end",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Autres bibliothèques front-end"
+    }
+  ]
+}

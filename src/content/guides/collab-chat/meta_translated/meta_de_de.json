@@ -1,0 +1,46 @@
+{
+  "name": "Collab-Chat",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Erste Schritte",
+      "file": "getting-started.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Beispiele",
+      "file": "examples.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Live-Kommentare zu Online-Büchern hinzufügen",
+      "file": "online-books.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Konfigurationsoptionen",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Verhalten bei Textauswahl",
+      "file": "text-selection-behavior.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Anpassung",
+      "file": "customization.md",
+      "subCat": "Anpassung"
+    },
+    {
+      "name": "Live-Synchronisierung",
+      "file": "live-sync.md",
+      "subCat": "Erweitert"
+    },
+    {
+      "name": "API-Referenz",
+      "file": "api-reference.md",
+      "subCat": "Erweitert"
+    }
+  ]
+}

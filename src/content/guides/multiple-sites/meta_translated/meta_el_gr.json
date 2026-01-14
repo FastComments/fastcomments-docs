@@ -1,0 +1,51 @@
+{
+  "name": "Πολλαπλοί ιστότοποι",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Αρχική Ρύθμιση",
+      "file": "add-domains-to-account.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Όρια και Τιμολόγηση",
+      "file": "domain-limits.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Όνομα αποστολέα, Διεύθυνση Email και Λογότυπο",
+      "file": "from-name-email-logo.md",
+      "subCat": "Προσαρμογή ανά ιστότοπο"
+    },
+    {
+      "name": "Το domain από το όνομα/το email δεν λειτουργεί",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Προσαρμογή ανά ιστότοπο"
+    },
+    {
+      "name": "Tenant ανά περιβάλλον",
+      "file": "tenant-per-environment.md",
+      "subCat": "Προσαρμογή ανά ιστότοπο"
+    },
+    {
+      "name": "Προσαρμογές",
+      "file": "customizations.md",
+      "subCat": "Προσαρμογή ανά ιστότοπο"
+    },
+    {
+      "name": "Διαχείριση σχολίων",
+      "file": "moderation.md",
+      "subCat": "Δεδομένα και Αναζήτηση"
+    },
+    {
+      "name": "Κοινή χρήση σχολίων μεταξύ τομέων",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Δεδομένα και Αναζήτηση"
+    },
+    {
+      "name": "Με το WordPress",
+      "file": "wordpress.md",
+      "subCat": "Σημειώσεις ενσωμάτωσης"
+    }
+  ]
+}

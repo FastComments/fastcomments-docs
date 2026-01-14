@@ -1,0 +1,42 @@
+{
+  "name": "Встановлення Webnode",
+  "pageHeader": "Додавання коментарів до сайтів Webnode",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Редагування сторінки",
+      "file": "webnode-step-1.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Крок 2: Додавання секції та HTML-блоку",
+      "file": "webnode-step-2.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Крок 3: Копіювання та вставлення фрагмента коду",
+      "file": "webnode-step-3.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Крок 4: Публікація",
+      "file": "webnode-step-4.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Успіх",
+      "file": "webnode-success.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Налаштування",
+      "file": "webnode-customize.md",
+      "subCat": "Встановлення Webnode"
+    }
+  ]
+}

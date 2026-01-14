@@ -1,0 +1,36 @@
+{
+  "name": "White-Labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Was ist White-Labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wie man White-Labeling erhält",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "White-Labeling einrichten",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementierung"
+    },
+    {
+      "name": "Das Dashboard verwenden",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementierung"
+    },
+    {
+      "name": "Die API verwenden",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementierung"
+    },
+    {
+      "name": "Verwaltung von White-Label-Mandanten",
+      "file": "white-labeling-managing.md",
+      "subCat": "Mandantenverwaltung"
+    }
+  ]
+}

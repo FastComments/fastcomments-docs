@@ -1,0 +1,31 @@
+{
+  "name": "Αναλύσεις",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Υπόβαθρο",
+      "file": "analytics-background.md",
+      "subCat": "Αναλύσεις"
+    },
+    {
+      "name": "Αναλύσεις Τιμολόγησης",
+      "file": "analytics-billing.md",
+      "subCat": "Αναλύσεις"
+    },
+    {
+      "name": "Αναλύσεις Ιστοτόπου",
+      "file": "analytics-site.md",
+      "subCat": "Αναλύσεις"
+    },
+    {
+      "name": "Ακρίβεια των Αναλύσεων σε Σύγκριση με Άλλες Πλατφόρμες",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Αναλύσεις"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Παρακολούθηση"
+    }
+  ]
+}

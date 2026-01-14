@@ -1,0 +1,42 @@
+{
+  "name": "התקנת Webnode",
+  "pageHeader": "הוספת תגובות לאתרי Webnode",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: ערוך את הדף שלך",
+      "file": "webnode-step-1.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "שלב 2: הוסף מקטע ובלוק HTML",
+      "file": "webnode-step-2.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "שלב 3: העתק והדבק את קטע הקוד",
+      "file": "webnode-step-3.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "שלב 4: פרסם",
+      "file": "webnode-step-4.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "הצלחה",
+      "file": "webnode-success.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "webnode-domain-errors.md",
+      "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "webnode-customize.md",
+      "subCat": "התקנת Webnode"
+    }
+  ]
+}

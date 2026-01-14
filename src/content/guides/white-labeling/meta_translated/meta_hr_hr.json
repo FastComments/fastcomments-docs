@@ -1,0 +1,36 @@
+{
+  "name": "White labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Što je white labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kako dobiti white labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Početak"
+    },
+    {
+      "name": "Postavljanje white labelinga",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Korištenje nadzorne ploče",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Korištenje API-ja",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Upravljanje tenantima s white labelom",
+      "file": "white-labeling-managing.md",
+      "subCat": "Upravljanje tenantima"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Встановлення Wix",
+  "pageHeader": "Додайте коментарі на сайти Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Відредагуйте потрібну сторінку",
+      "file": "wix-step-1.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Крок 2: Додайте блок для вставки",
+      "file": "wix-step-2.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Крок 3: Скопіюйте та вставте власний код",
+      "file": "wix-step-3.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Крок 4: Змініть розмір",
+      "file": "wix-step-4.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Крок 5: Унікальні теми коментарів",
+      "file": "wix-step-5.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Крок 6: Святкуйте",
+      "file": "wix-step-6.md",
+      "subCat": "Встановлення Wix"
+    },
+    {
+      "name": "Налаштування",
+      "file": "wix-customize.md",
+      "subCat": "Встановлення Wix"
+    }
+  ]
+}

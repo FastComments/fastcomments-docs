@@ -1,0 +1,36 @@
+{
+  "name": "Affiliateprogram",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvorfor blive FastComments-affiliate?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Affiliateprogram"
+    },
+    {
+      "name": "Kom godt i gang",
+      "file": "getting-started.md",
+      "subCat": "Affiliateprogram"
+    },
+    {
+      "name": "Provision",
+      "file": "commission.md",
+      "subCat": "Affiliateprogram"
+    },
+    {
+      "name": "Affiliate-dashboardet",
+      "file": "dashboard.md",
+      "subCat": "Affiliateprogram"
+    },
+    {
+      "name": "Udbetalingsplan",
+      "file": "payout-schedule.md",
+      "subCat": "Affiliateprogram"
+    },
+    {
+      "name": "Markedsføringsmaterialer",
+      "file": "marketing-materials.md",
+      "subCat": "Affiliateprogram"
+    }
+  ]
+}

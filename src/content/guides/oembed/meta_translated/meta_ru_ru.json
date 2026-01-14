@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Создание беседы oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Использование"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Pagina-reacties",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Pagina-reacties",
+      "file": "page-reacts-about.md",
+      "subCat": "Pagina-reacties"
+    },
+    {
+      "name": "Installatie - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Pagina-reacties"
+    },
+    {
+      "name": "Zwevende vind-ik-leuk-widget",
+      "file": "floating-likes-about.md",
+      "subCat": "Zwevende vind-ik-leuk-widget"
+    },
+    {
+      "name": "Installatie - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Zwevende vind-ik-leuk-widget"
+    },
+    {
+      "name": "Installatie - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Zwevende vind-ik-leuk-widget"
+    }
+  ]
+}

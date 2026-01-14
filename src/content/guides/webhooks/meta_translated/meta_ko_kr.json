@@ -1,0 +1,46 @@
+{
+  "name": "웹후크",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "웹후크란 무엇인가",
+      "file": "what-are-webhooks.md",
+      "subCat": "개요"
+    },
+    {
+      "name": "지원되는 이벤트 및 리소스",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "개요"
+    },
+    {
+      "name": "로컬 개발 설정",
+      "file": "webhooks-local-dev.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "설정",
+      "file": "webhooks-setup.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "테스트",
+      "file": "webhooks-testing.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "데이터 구조",
+      "file": "webhooks-structures.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "보안 및 API 토큰",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "동작 방식 및 재시도 처리",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "내부 동작"
+    }
+  ]
+}

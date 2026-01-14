@@ -1,0 +1,26 @@
+{
+  "name": "Подржани прегледачи",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Подржани прегледачи",
+      "file": "supported-browsers.md",
+      "subCat": "Подржани прегледачи"
+    },
+    {
+      "name": "Интернет Експлорер",
+      "file": "internet-explorer.md",
+      "subCat": "Подржани прегледачи"
+    },
+    {
+      "name": "Како тестирамо",
+      "file": "how-we-test.md",
+      "subCat": "Подржани прегледачи"
+    },
+    {
+      "name": "Захтеви за JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Подржани прегледачи"
+    }
+  ]
+}

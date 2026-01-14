@@ -1,0 +1,21 @@
+{
+  "name": "Κινούμενα GIF",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Τύποι Υποστηριζόμενων Κινούμενων Εικόνων",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIFs και Κινούμενες Εικόνες"
+    },
+    {
+      "name": "Κινούμενες Εικόνες που Μεταφορτώθηκαν από Χρήστες",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Χρήση GIFs"
+    },
+    {
+      "name": "Επιλογέας GIF",
+      "file": "gif-picker.md",
+      "subCat": "Χρήση GIFs"
+    }
+  ]
+}

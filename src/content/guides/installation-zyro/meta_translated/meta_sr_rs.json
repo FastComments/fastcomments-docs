@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација Zyro",
+  "pageHeader": "Додајте коментарисање уживо на Zyro сајтове",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Додајте видгет за код",
+      "file": "zyro-step-1.md",
+      "subCat": "Инсталација Zyro сајта"
+    },
+    {
+      "name": "Корак 2: Додајте код",
+      "file": "zyro-step-2.md",
+      "subCat": "Инсталација Zyro сајта"
+    },
+    {
+      "name": "Успешно",
+      "file": "zyro-site-success.md",
+      "subCat": "Инсталација Zyro сајта"
+    },
+    {
+      "name": "Грешке домена сајта",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Инсталација Zyro сајта"
+    },
+    {
+      "name": "Прилагођавање сајта",
+      "file": "zyro-site-customize.md",
+      "subCat": "Инсталација Zyro сајта"
+    },
+    {
+      "name": "Плутајуће дугме за лајкове",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Плутајући лајкови за Zyro"
+    }
+  ]
+}

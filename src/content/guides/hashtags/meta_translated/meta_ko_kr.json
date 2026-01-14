@@ -1,0 +1,46 @@
+{
+  "name": "해시태그",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "해시태그란 무엇인가",
+      "file": "what-are-hashtags.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "해시태그 사용 방법",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "해시태그 사용"
+    },
+    {
+      "name": "해시태그로 댓글 필터링하기",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "해시태그 사용"
+    },
+    {
+      "name": "유효한 해시태그와 유효하지 않은 해시태그",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "해시태그 사용"
+    },
+    {
+      "name": "‘#’ 이외의 기호 사용",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "해시태그 설정"
+    },
+    {
+      "name": "해시태그 미리 채우기",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "해시태그 설정"
+    },
+    {
+      "name": "해시태그로 콘텐츠 연결하기",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "해시태그 설정"
+    },
+    {
+      "name": "해시태그 자동완성 동작 원리",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "해시태그 배경"
+    }
+  ]
+}

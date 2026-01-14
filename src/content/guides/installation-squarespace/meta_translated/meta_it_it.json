@@ -1,0 +1,77 @@
+{
+  "name": "Installazione di Squarespace",
+  "pageHeader": "Aggiungere commenti ai siti Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Aggiungere commenti in tempo reale al tuo blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Aggiungere commenti al tuo blog"
+    },
+    {
+      "name": "Passo 1: Apri le impostazioni del blog",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Aggiungere commenti al tuo blog"
+    },
+    {
+      "name": "Passo 2: Incolla il codice di FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Aggiungere commenti al tuo blog"
+    },
+    {
+      "name": "Completato",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Aggiungere commenti al tuo blog"
+    },
+    {
+      "name": "Aggiungere commenti in tempo reale a tutte le pagine",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Aggiungere commenti a tutte le pagine"
+    },
+    {
+      "name": "Passo 1: Apri gli Strumenti per sviluppatori",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Aggiungere commenti a tutte le pagine"
+    },
+    {
+      "name": "Passo 2: Incolla il codice di FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Aggiungere commenti a tutte le pagine"
+    },
+    {
+      "name": "Completato",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Aggiungere commenti a tutte le pagine"
+    },
+    {
+      "name": "Aggiungere commenti in tempo reale a una pagina specifica",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Aggiungere commenti a una pagina specifica"
+    },
+    {
+      "name": "Passo 1: Aggiungi un blocco di codice",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Aggiungere commenti a una pagina specifica"
+    },
+    {
+      "name": "Passo 2: Incolla il codice di FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Aggiungere commenti a una pagina specifica"
+    },
+    {
+      "name": "Completato",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Aggiungere commenti a una pagina specifica"
+    },
+    {
+      "name": "Errori di dominio",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Prossimi passi per Squarespace"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "squarespace-customize.md",
+      "subCat": "Prossimi passi per Squarespace"
+    }
+  ]
+}

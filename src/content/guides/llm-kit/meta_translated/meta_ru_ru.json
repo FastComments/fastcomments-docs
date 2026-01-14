@@ -1,0 +1,11 @@
+{
+  "name": "Набор LLM",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Получите набор LLM",
+      "file": "llm-kit-snippet.md",
+      "subCat": "Интеграция LLM"
+    }
+  ]
+}

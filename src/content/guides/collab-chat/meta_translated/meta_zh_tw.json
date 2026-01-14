@@ -1,0 +1,46 @@
+{
+  "name": "協作聊天",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "快速上手",
+      "file": "getting-started.md",
+      "subCat": "快速上手"
+    },
+    {
+      "name": "範例",
+      "file": "examples.md",
+      "subCat": "快速上手"
+    },
+    {
+      "name": "為線上書籍新增即時評論",
+      "file": "online-books.md",
+      "subCat": "快速上手"
+    },
+    {
+      "name": "設定選項",
+      "file": "configuration-options.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "文字選取行為",
+      "file": "text-selection-behavior.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "自訂",
+      "file": "customization.md",
+      "subCat": "自訂"
+    },
+    {
+      "name": "即時同步",
+      "file": "live-sync.md",
+      "subCat": "進階"
+    },
+    {
+      "name": "API 參考",
+      "file": "api-reference.md",
+      "subCat": "進階"
+    }
+  ]
+}

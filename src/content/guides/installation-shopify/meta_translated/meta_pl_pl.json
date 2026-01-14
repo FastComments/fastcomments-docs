@@ -1,0 +1,42 @@
+{
+  "name": "Instalacja Shopify",
+  "pageHeader": "Dodaj komentarze do stron Shopify",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Importuj istniejące komentarze",
+      "file": "shopify-step-1.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Krok 2: Wyłącz domyślny system komentarzy",
+      "file": "shopify-step-2.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Krok 3: Otwórz szablon motywu bloga",
+      "file": "shopify-step-3.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Krok 4: Dodaj kod FastComments.com",
+      "file": "shopify-step-4.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Sukces",
+      "file": "shopify-success.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "shopify-customize.md",
+      "subCat": "Instalacja Shopify"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Споменавания",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват споменаванията",
+      "file": "what-are-mentions.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Как да тагнете потребител",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Използване на споменаванията"
+    },
+    {
+      "name": "Известия",
+      "file": "mentions-notifications.md",
+      "subCat": "Използване на споменаванията"
+    },
+    {
+      "name": "Как работи автоматичното допълване на споменаванията",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Използване на споменаванията"
+    },
+    {
+      "name": "Попълване на споменаванията",
+      "file": "populating-mentions.md",
+      "subCat": "Настройване на споменаванията"
+    }
+  ]
+}

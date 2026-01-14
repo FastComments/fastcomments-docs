@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels 安裝",
+  "pageHeader": "將即時聊天加入 ClickFunnels 課程",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "第一步：找到範本",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels 安裝"
+    },
+    {
+      "name": "第二步：加入程式碼",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels 安裝"
+    },
+    {
+      "name": "額外：即時留言程式碼片段",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "即時留言程式碼片段"
+    },
+    {
+      "name": "額外：自動播放留言",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "自動播放留言"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 Kütüphanesi",
+  "pageHeader": "FastComments Vue 2 Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım",
+      "file": "usage-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Mevcut Sayfayı Güncelleme (SPA Örneği)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Üretim Ortamında",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

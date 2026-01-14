@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono i Webhook",
+      "file": "what-are-webhooks.md",
+      "subCat": "Panoramica"
+    },
+    {
+      "name": "Eventi e risorse supportati",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Panoramica"
+    },
+    {
+      "name": "Configurazione per sviluppo locale",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Configurazione",
+      "file": "webhooks-setup.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Test",
+      "file": "webhooks-testing.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Strutture dati",
+      "file": "webhooks-structures.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Sicurezza e token API",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Come funziona e gestione dei tentativi di ritrasmissione",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Dietro le quinte"
+    }
+  ]
+}

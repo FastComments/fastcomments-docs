@@ -1,0 +1,21 @@
+{
+  "name": "スケジュールされたコメント",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "スケジュールされたコメント"
+    },
+    {
+      "name": "使い方",
+      "file": "howto.md",
+      "subCat": "スケジュールされたコメント"
+    },
+    {
+      "name": "インポート形式",
+      "file": "import-format.md",
+      "subCat": "スケジュールされたコメント"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Миграции",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Мигриране от други доставчици",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "От други доставчици"
+    },
+    {
+      "name": "Импортиране на данни",
+      "file": "importing-data.md",
+      "subCat": "От други доставчици"
+    },
+    {
+      "name": "Импортиране на коментари от WordPress",
+      "file": "importing-data-wordpress.md",
+      "subCat": "От други доставчици"
+    },
+    {
+      "name": "Мигриране на потребители и модератори",
+      "file": "migrating-users-moderators.md",
+      "subCat": "От други доставчици"
+    },
+    {
+      "name": "Мигриране на домейни",
+      "file": "migrating-domains.md",
+      "subCat": "Мигриране на данни"
+    },
+    {
+      "name": "Мигриране на страници",
+      "file": "migrating-pages.md",
+      "subCat": "Мигриране на данни"
+    },
+    {
+      "name": "Копиране на коментари",
+      "file": "copying-comments.md",
+      "subCat": "Мигриране на данни"
+    },
+    {
+      "name": "Експортиране на данни",
+      "file": "exporting-data.md",
+      "subCat": "Към други доставчици"
+    }
+  ]
+}

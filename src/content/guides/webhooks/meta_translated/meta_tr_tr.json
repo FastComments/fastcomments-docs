@@ -1,0 +1,46 @@
+{
+  "name": "Webhook'lar",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Webhook'lar Nedir?",
+      "file": "what-are-webhooks.md",
+      "subCat": "Genel Bakış"
+    },
+    {
+      "name": "Desteklenen Olaylar ve Kaynaklar",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Genel Bakış"
+    },
+    {
+      "name": "Yerel Geliştirme Kurulumu",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Kurulum",
+      "file": "webhooks-setup.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Test Etme",
+      "file": "webhooks-testing.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Veri Yapıları",
+      "file": "webhooks-structures.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Güvenlik ve API Jetonları",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Nasıl Çalışır ve Yeniden Denemelerin İşlenmesi",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Perde Arkası"
+    }
+  ]
+}

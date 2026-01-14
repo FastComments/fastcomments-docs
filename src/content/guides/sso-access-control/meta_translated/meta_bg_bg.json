@@ -1,0 +1,31 @@
+{
+  "name": "Контрол на достъпа (SSO)",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво е контрол на достъпа?",
+      "file": "what-is-access-control.md",
+      "subCat": "Предистория"
+    },
+    {
+      "name": "Как работи",
+      "file": "how-it-works.md",
+      "subCat": "Предистория"
+    },
+    {
+      "name": "Спецификацията",
+      "file": "access-control-spec.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Имплементация",
+      "file": "implementation.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Примери за API заявки",
+      "file": "api-example.md",
+      "subCat": "Имплементация"
+    }
+  ]
+}

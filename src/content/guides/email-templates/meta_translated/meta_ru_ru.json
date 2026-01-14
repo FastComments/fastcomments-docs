@@ -1,0 +1,41 @@
+{
+  "name": "Шаблоны электронной почты",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Создание шаблонов",
+      "file": "creating-templates.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Язык шаблонов",
+      "file": "template-language.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Локализация и настраиваемый текст",
+      "file": "localizing.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Шаблоны по доменам",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Данные и переменные",
+      "file": "data-variables.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Ошибки рендеринга",
+      "file": "render-failures.md",
+      "subCat": "Шаблоны электронной почты"
+    },
+    {
+      "name": "Применение изменений",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблоны электронной почты"
+    }
+  ]
+}

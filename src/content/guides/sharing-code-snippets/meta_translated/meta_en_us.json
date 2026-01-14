@@ -1,0 +1,31 @@
+{
+  "name": "Sharing Code Snippets",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "What are Code Snippets?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Coding Communities",
+      "file": "code-snippets-communities.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Programming Languages Supported",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Setting Up Code Snippet Sharing",
+      "file": "code-snippets-setup.md",
+      "subCat": "Setup"
+    },
+    {
+      "name": "Sharing Code Snippets",
+      "file": "code-snippets-usage.md",
+      "subCat": "Usage"
+    }
+  ]
+}

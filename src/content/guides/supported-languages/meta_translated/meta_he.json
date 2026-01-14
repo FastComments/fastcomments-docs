@@ -1,0 +1,21 @@
+{
+  "name": "שפות נתמכות",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "שפות נתמכות",
+      "file": "supported-languages.md",
+      "subCat": "שפות נתמכות"
+    },
+    {
+      "name": "אילו חלקים ב-FastComments מותאמים מקומית?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "שפות נתמכות"
+    },
+    {
+      "name": "בקשה לתמיכה בשפה חדשה",
+      "file": "requesting-new-language-support.md",
+      "subCat": "שפות נתמכות"
+    }
+  ]
+}

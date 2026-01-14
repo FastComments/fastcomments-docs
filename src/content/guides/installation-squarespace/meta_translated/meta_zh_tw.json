@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace 安裝",
+  "pageHeader": "在 Squarespace 網站新增留言",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "為您的部落格加入即時留言",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "在部落格新增留言功能"
+    },
+    {
+      "name": "步驟 1：開啟部落格設定",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "在部落格新增留言功能"
+    },
+    {
+      "name": "步驟 2：貼上您的 FastComments.com 程式碼",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "在部落格新增留言功能"
+    },
+    {
+      "name": "完成",
+      "file": "squarespace-blog-success.md",
+      "subCat": "在部落格新增留言功能"
+    },
+    {
+      "name": "在所有頁面新增即時留言功能",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "在所有頁面新增留言功能"
+    },
+    {
+      "name": "步驟 1：開啟開發者工具",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "在所有頁面新增留言功能"
+    },
+    {
+      "name": "步驟 2：貼上您的 FastComments.com 程式碼",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "在所有頁面新增留言功能"
+    },
+    {
+      "name": "完成",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "在所有頁面新增留言功能"
+    },
+    {
+      "name": "在特定頁面新增即時留言功能",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "在特定頁面新增留言功能"
+    },
+    {
+      "name": "步驟 1：新增程式碼區塊",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "在特定頁面新增留言功能"
+    },
+    {
+      "name": "步驟 2：貼上您的 FastComments.com 程式碼",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "在特定頁面新增留言功能"
+    },
+    {
+      "name": "完成",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "在特定頁面新增留言功能"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace 後續步驟"
+    },
+    {
+      "name": "自訂",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace 後續步驟"
+    }
+  ]
+}

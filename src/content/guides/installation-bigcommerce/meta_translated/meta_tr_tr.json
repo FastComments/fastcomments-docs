@@ -1,0 +1,47 @@
+{
+  "name": "BigCommerce Kurulumu",
+  "pageHeader": "BigCommerce Sitelerine Yorum Ekleme",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Adım: Temanızı Hazırlayın",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "2. Adım: Doğru Şablonu Düzenleyin",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "3. Adım: Widget Kodunu Ekleyin",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "4. Adım: Yeni Temayı Etkinleştirin",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "bigcommerce-success.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "bigcommerce-customize.md",
+      "subCat": "BigCommerce Kurulumu"
+    },
+    {
+      "name": "Ekstra: Sayfa Oluşturucu için Kod Parçacığı",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Sayfa Oluşturucuyu Kullanma"
+    }
+  ]
+}

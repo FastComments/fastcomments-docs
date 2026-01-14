@@ -1,0 +1,36 @@
+{
+  "name": "Verifikacija komentara i glasova",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Pozadina",
+      "file": "background.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Neverifikovani komentari",
+      "file": "unverified-comments.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Neverifikovani glasovi",
+      "file": "unverified-votes.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Mejlovi za verifikaciju",
+      "file": "verification-emails.md",
+      "subCat": "Verifikacija"
+    },
+    {
+      "name": "Sesije",
+      "file": "verification-sessions.md",
+      "subCat": "Verifikacija"
+    },
+    {
+      "name": "Komentarisanje uživo",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verifikacija"
+    }
+  ]
+}

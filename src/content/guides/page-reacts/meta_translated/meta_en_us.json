@@ -1,0 +1,31 @@
+{
+  "name": "Page Reactions",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Page Reactions",
+      "file": "page-reacts-about.md",
+      "subCat": "Page Reactions"
+    },
+    {
+      "name": "Installation - Vanilla JS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Page Reactions"
+    },
+    {
+      "name": "The Floating Likes Widget",
+      "file": "floating-likes-about.md",
+      "subCat": "Floating Likes Widget"
+    },
+    {
+      "name": "Installation - Vanilla JS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Floating Likes Widget"
+    },
+    {
+      "name": "Installation - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Floating Likes Widget"
+    }
+  ]
+}

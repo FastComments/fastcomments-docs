@@ -1,0 +1,16 @@
+{
+  "name": "刪除您的帳戶",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "刪除您的帳戶",
+      "file": "deleting-your-account.md",
+      "subCat": "評論者與租戶"
+    },
+    {
+      "name": "取消您的訂閱",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "租戶"
+    }
+  ]
+}

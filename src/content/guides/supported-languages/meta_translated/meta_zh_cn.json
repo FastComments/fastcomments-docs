@@ -1,0 +1,21 @@
+{
+  "name": "支持的语言",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "支持的语言",
+      "file": "supported-languages.md",
+      "subCat": "支持的语言"
+    },
+    {
+      "name": "FastComments 的哪些部分已本地化？",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "支持的语言"
+    },
+    {
+      "name": "请求新增语言支持",
+      "file": "requesting-new-language-support.md",
+      "subCat": "支持的语言"
+    }
+  ]
+}

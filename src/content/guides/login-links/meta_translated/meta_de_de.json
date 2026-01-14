@@ -1,0 +1,26 @@
+{
+  "name": "Login-Links",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Was sind Login-Links?",
+      "file": "login-links-what-are.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Vorteile von Login-Links gegenüber Passwörtern",
+      "file": "login-links-benefits.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wie wir die Sicherheit von Login-Links gewährleisten",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Sicherheit"
+    },
+    {
+      "name": "Wer erhält Login-Links?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Verwendung"
+    }
+  ]
+}

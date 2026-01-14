@@ -1,0 +1,21 @@
+{
+  "name": "深色模式",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "自动检测",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "手动配置",
+      "file": "dark-mode-manual.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "WordPress Networker 主题的深色模式支持",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress 主题"
+    }
+  ]
+}

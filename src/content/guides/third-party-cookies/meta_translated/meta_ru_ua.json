@@ -1,0 +1,21 @@
+{
+  "name": "Файлы cookie третьих сторон",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое файлы cookie третьих сторон",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как FastComments использует файлы cookie третьих сторон",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Включение файлов cookie третьих сторон",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Включение"
+    }
+  ]
+}

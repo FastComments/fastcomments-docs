@@ -1,0 +1,72 @@
+{
+  "name": "Android-bibliotek",
+  "pageHeader": "FastComments Android-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Funktioner",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Krav",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Grundlæggende brug",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Sikker SSO-godkendelse",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Godkendelse",
+      "type": "readme"
+    },
+    {
+      "name": "Feed-integration",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Livechat-integration",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Eksempelprojekter",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Konfigurationsindstillinger",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Omfattende tema-tilpasning",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Hukommelsesstyring",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

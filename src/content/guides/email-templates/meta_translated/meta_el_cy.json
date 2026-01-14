@@ -1,0 +1,41 @@
+{
+  "name": "Πρότυπα Email",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Δημιουργία Προτύπων",
+      "file": "creating-templates.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Γλώσσα Προτύπου",
+      "file": "template-language.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Τοπικοποίηση και Προσαρμοσμένο Κείμενο",
+      "file": "localizing.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Πρότυπα ανά Τομέα",
+      "file": "per-domain-templates.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Δεδομένα και Μεταβλητές",
+      "file": "data-variables.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Σφάλματα απόδοσης",
+      "file": "render-failures.md",
+      "subCat": "Πρότυπα Email"
+    },
+    {
+      "name": "Εφαρμογή Αλλαγών",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Πρότυπα Email"
+    }
+  ]
+}

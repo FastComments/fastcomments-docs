@@ -1,0 +1,11 @@
+{
+  "name": "Dynamically Add and Swap Comment Threads",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dynamically Add and Swap Comment Threads",
+      "file": "swap-widgets-example.md",
+      "subCat": "Examples"
+    }
+  ]
+}

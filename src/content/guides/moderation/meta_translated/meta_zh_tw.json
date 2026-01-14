@@ -1,0 +1,126 @@
+{
+  "name": "內容審核",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "評論審核頁面",
+      "file": "moderate-comments-page.md",
+      "subCat": "介紹"
+    },
+    {
+      "name": "管理員",
+      "file": "moderators.md",
+      "subCat": "管理員"
+    },
+    {
+      "name": "新增管理員",
+      "file": "moderators-adding.md",
+      "subCat": "管理員"
+    },
+    {
+      "name": "管理員統計",
+      "file": "moderator-stats.md",
+      "subCat": "管理員"
+    },
+    {
+      "name": "移除管理員",
+      "file": "moderators-removing.md",
+      "subCat": "管理員"
+    },
+    {
+      "name": "核准機制",
+      "file": "moderation-approvals.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "透過電子郵件審核",
+      "file": "moderation-via-email.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "過濾",
+      "file": "filters.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "搜尋",
+      "file": "search.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "分享審核連結",
+      "file": "sharing-moderation-links.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "評論串檢視器",
+      "file": "comment-thread-viewer.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "審核操作",
+      "file": "comment-actions.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "刪除評論",
+      "file": "deleting-comments.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "評論小工具的審核操作",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "即時審核",
+      "file": "comment-actions-live.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "封禁使用者",
+      "file": "banning-users.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "使用萬用字元封禁使用者",
+      "file": "banning-users-wildcards.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "檢舉",
+      "file": "flagging.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "批次操作",
+      "file": "bulk-actions.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "審核群組",
+      "file": "moderation-groups.md",
+      "subCat": "審核群組"
+    },
+    {
+      "name": "審核設定",
+      "file": "moderation-settings.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "垃圾訊息偵測",
+      "file": "spam-detection.md",
+      "subCat": "垃圾與不當用語"
+    },
+    {
+      "name": "遮蔽不當用語",
+      "file": "profanity-mask.md",
+      "subCat": "垃圾與不當用語"
+    },
+    {
+      "name": "評論記錄",
+      "file": "comment-logs.md",
+      "subCat": "審核流程"
+    }
+  ]
+}

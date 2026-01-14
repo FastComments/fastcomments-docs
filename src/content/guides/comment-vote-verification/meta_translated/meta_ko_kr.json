@@ -1,0 +1,36 @@
+{
+  "name": "댓글 및 투표 검증",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "배경",
+      "file": "background.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "미검증 댓글",
+      "file": "unverified-comments.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "미검증 투표",
+      "file": "unverified-votes.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "검증 이메일",
+      "file": "verification-emails.md",
+      "subCat": "검증"
+    },
+    {
+      "name": "세션",
+      "file": "verification-sessions.md",
+      "subCat": "검증"
+    },
+    {
+      "name": "실시간 댓글",
+      "file": "verification-live-commenting.md",
+      "subCat": "검증"
+    }
+  ]
+}

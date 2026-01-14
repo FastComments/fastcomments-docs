@@ -1,0 +1,36 @@
+{
+  "name": "Брендування під власним брендом (White Label)",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке White Label (брендування під власним брендом)",
+      "file": "white-labeling-background.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як отримати брендування під власним брендом",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Налаштування брендування під власним брендом",
+      "file": "white-labeling-process.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Використання панелі керування",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Використання API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Управління тенантами з брендуванням під власним брендом",
+      "file": "white-labeling-managing.md",
+      "subCat": "Управління тенантами"
+    }
+  ]
+}

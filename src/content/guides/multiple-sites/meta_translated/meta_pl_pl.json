@@ -1,0 +1,51 @@
+{
+  "name": "Wiele witryn",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Konfiguracja początkowa",
+      "file": "add-domains-to-account.md",
+      "subCat": "Rozpoczęcie pracy"
+    },
+    {
+      "name": "Limity i ceny",
+      "file": "domain-limits.md",
+      "subCat": "Rozpoczęcie pracy"
+    },
+    {
+      "name": "Nazwa nadawcy, adres e-mail i logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Dostosowanie dla każdej witryny"
+    },
+    {
+      "name": "Nazwa/e-mail nadawcy domeny nie działa",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Dostosowanie dla każdej witryny"
+    },
+    {
+      "name": "Tenant dla środowiska",
+      "file": "tenant-per-environment.md",
+      "subCat": "Dostosowanie dla każdej witryny"
+    },
+    {
+      "name": "Dostosowania",
+      "file": "customizations.md",
+      "subCat": "Dostosowanie dla każdej witryny"
+    },
+    {
+      "name": "Moderacja komentarzy",
+      "file": "moderation.md",
+      "subCat": "Dane i wyszukiwanie"
+    },
+    {
+      "name": "Udostępnianie komentarzy między domenami",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Dane i wyszukiwanie"
+    },
+    {
+      "name": "Z WordPressem",
+      "file": "wordpress.md",
+      "subCat": "Uwagi dotyczące integracji"
+    }
+  ]
+}

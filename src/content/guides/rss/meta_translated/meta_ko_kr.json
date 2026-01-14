@@ -1,0 +1,21 @@
+{
+  "name": "RSS 피드",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "개요",
+      "file": "overview.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "RSS 피드 설정",
+      "file": "setup.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "보안 고려사항",
+      "file": "security.md",
+      "subCat": "구현"
+    }
+  ]
+}

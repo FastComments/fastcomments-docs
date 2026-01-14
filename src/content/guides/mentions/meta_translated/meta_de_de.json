@@ -1,0 +1,31 @@
+{
+  "name": "Erwähnungen",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Was sind Erwähnungen",
+      "file": "what-are-mentions.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wie man einen Benutzer markiert",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Erwähnungen verwenden"
+    },
+    {
+      "name": "Benachrichtigungen",
+      "file": "mentions-notifications.md",
+      "subCat": "Erwähnungen verwenden"
+    },
+    {
+      "name": "Wie die Autovervollständigung für Erwähnungen funktioniert",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Erwähnungen verwenden"
+    },
+    {
+      "name": "Erwähnungen befüllen",
+      "file": "populating-mentions.md",
+      "subCat": "Einrichten von Erwähnungen"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Cos'è SAML?",
+      "file": "saml-overview.md",
+      "subCat": "Nozioni di base"
+    },
+    {
+      "name": "SAML vs SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Nozioni di base"
+    },
+    {
+      "name": "Configurazione di SAML",
+      "file": "saml-setup.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Configurazione del provider di identità",
+      "file": "saml-idp-config.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Informazioni sul provider di servizio",
+      "file": "saml-sp-info.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Ruoli e autorizzazioni degli utenti",
+      "file": "saml-user-roles.md",
+      "subCat": "Gestione utenti"
+    },
+    {
+      "name": "Test dell'autenticazione SAML",
+      "file": "saml-testing.md",
+      "subCat": "Risoluzione dei problemi"
+    },
+    {
+      "name": "Problemi comuni",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Risoluzione dei problemi"
+    },
+    {
+      "name": "Migliori pratiche di sicurezza",
+      "file": "saml-security.md",
+      "subCat": "Avanzato"
+    }
+  ]
+}

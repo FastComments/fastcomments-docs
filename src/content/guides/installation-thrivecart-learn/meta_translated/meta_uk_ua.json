@@ -1,0 +1,32 @@
+{
+  "name": "Встановлення ThriveCart Learn+",
+  "pageHeader": "Додати коментарі до курсів ThriveCart Learn+",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Підготовка курсу",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "Встановлення ThriveCart Learn+"
+    },
+    {
+      "name": "Крок 2: Додати користувацький код",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "Встановлення ThriveCart Learn+"
+    },
+    {
+      "name": "Успішно",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "Встановлення ThriveCart Learn+"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "Встановлення ThriveCart Learn+"
+    },
+    {
+      "name": "Налаштування",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "Встановлення ThriveCart Learn+"
+    }
+  ]
+}

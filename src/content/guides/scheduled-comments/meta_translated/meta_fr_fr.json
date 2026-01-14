@@ -1,0 +1,21 @@
+{
+  "name": "Commentaires programmés",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Contexte",
+      "file": "background.md",
+      "subCat": "Commentaires programmés"
+    },
+    {
+      "name": "Comment faire",
+      "file": "howto.md",
+      "subCat": "Commentaires programmés"
+    },
+    {
+      "name": "Format d'importation",
+      "file": "import-format.md",
+      "subCat": "Commentaires programmés"
+    }
+  ]
+}

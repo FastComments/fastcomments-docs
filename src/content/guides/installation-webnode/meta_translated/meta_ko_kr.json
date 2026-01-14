@@ -1,0 +1,42 @@
+{
+  "name": "Webnode 설치",
+  "pageHeader": "Webnode 사이트에 댓글 추가하기",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 페이지 편집",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "2단계: 섹션 및 HTML 블록 추가",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "3단계: 코드 스니펫 복사 및 붙여넣기",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "4단계: 게시",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "완료",
+      "file": "webnode-success.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode 설치"
+    }
+  ]
+}

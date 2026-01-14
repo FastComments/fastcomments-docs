@@ -1,0 +1,41 @@
+{
+  "name": "Modelli di posta elettronica",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Creazione dei modelli",
+      "file": "creating-templates.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Linguaggio dei modelli",
+      "file": "template-language.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Localizzazione e testo personalizzato",
+      "file": "localizing.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Modelli per dominio",
+      "file": "per-domain-templates.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Dati e variabili",
+      "file": "data-variables.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Errori di rendering",
+      "file": "render-failures.md",
+      "subCat": "Modelli di posta elettronica"
+    },
+    {
+      "name": "Applicazione delle modifiche",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Modelli di posta elettronica"
+    }
+  ]
+}

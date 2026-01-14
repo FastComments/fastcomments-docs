@@ -1,0 +1,22 @@
+{
+  "name": "Installation af Memberstack",
+  "pageHeader": "Tilføj kommentarer med Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Koden",
+      "file": "memberstack-step-1.md",
+      "subCat": "Installation af Memberstack"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Installation af Memberstack"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "memberstack-customize.md",
+      "subCat": "Installation af Memberstack"
+    }
+  ]
+}

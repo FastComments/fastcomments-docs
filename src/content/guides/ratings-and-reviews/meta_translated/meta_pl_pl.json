@@ -1,0 +1,56 @@
+{
+  "name": "Oceny i recenzje",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Funkcje",
+      "file": "features.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Kto otrzymuje",
+      "file": "who-gets-it.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Cennik",
+      "file": "pricing.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Wybierz typ wyświetlania",
+      "file": "choose-display-type.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Zdefiniuj swoje pytania",
+      "file": "define-your-questions.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Jak działa konfiguracja",
+      "file": "how-configuration-works.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Widżet podsumowania",
+      "file": "summary-widget-installation.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Wyświetlanie ocen",
+      "file": "viewing-ratings.md",
+      "subCat": "Raportowanie"
+    },
+    {
+      "name": "Integracja przez API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Raportowanie"
+    },
+    {
+      "name": "Demo podsumowania",
+      "file": "summary-demo.md",
+      "subCat": "Demo podsumowania"
+    }
+  ]
+}

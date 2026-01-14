@@ -1,0 +1,46 @@
+{
+  "name": "用户",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "用户类型",
+      "file": "types-of-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "用户名",
+      "file": "usernames.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "管理员用户",
+      "file": "administrator-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "评论用户",
+      "file": "commenter-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "添加管理员",
+      "file": "adding-administrators.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "添加版主",
+      "file": "adding-moderators.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "更新管理员权限",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "开发者",
+      "file": "developers.md",
+      "subCat": "设置"
+    }
+  ]
+}

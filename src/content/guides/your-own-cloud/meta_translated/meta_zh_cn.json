@@ -1,0 +1,36 @@
+{
+  "name": "您的专属云",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "FastComments 隔离云是什么？",
+      "file": "your-own-cloud.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何获取",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "设置与培训",
+      "file": "set-up-training.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "使用仪表板",
+      "file": "using-the-dashboard.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "使用 API",
+      "file": "using-the-api.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "管理租户",
+      "file": "managing-tenants.md",
+      "subCat": "租户管理"
+    }
+  ]
+}

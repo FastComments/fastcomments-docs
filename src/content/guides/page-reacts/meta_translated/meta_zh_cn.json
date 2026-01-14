@@ -1,0 +1,31 @@
+{
+  "name": "页面反应",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "页面反应",
+      "file": "page-reacts-about.md",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "安装 - 原生 JavaScript",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "浮动点赞组件",
+      "file": "floating-likes-about.md",
+      "subCat": "浮动点赞组件"
+    },
+    {
+      "name": "安装 - 原生 JavaScript",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "浮动点赞组件"
+    },
+    {
+      "name": "安装 - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "浮动点赞组件"
+    }
+  ]
+}

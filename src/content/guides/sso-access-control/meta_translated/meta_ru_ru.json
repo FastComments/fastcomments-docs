@@ -1,0 +1,31 @@
+{
+  "name": "Контроль доступа SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое контроль доступа?",
+      "file": "what-is-access-control.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как это работает",
+      "file": "how-it-works.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Спецификация",
+      "file": "access-control-spec.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Реализация",
+      "file": "implementation.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Примеры вызовов API",
+      "file": "api-example.md",
+      "subCat": "Реализация"
+    }
+  ]
+}

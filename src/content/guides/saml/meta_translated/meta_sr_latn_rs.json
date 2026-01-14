@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Šta je SAML?",
+      "file": "saml-overview.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "SAML naspram SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Podešavanje SAML-a",
+      "file": "saml-setup.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Konfiguracija provajdera identiteta",
+      "file": "saml-idp-config.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Informacije o provajderu usluga",
+      "file": "saml-sp-info.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Uloge i dozvole korisnika",
+      "file": "saml-user-roles.md",
+      "subCat": "Upravljanje korisnicima"
+    },
+    {
+      "name": "Testiranje SAML autentifikacije",
+      "file": "saml-testing.md",
+      "subCat": "Otklanjanje problema"
+    },
+    {
+      "name": "Uobičajeni problemi",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Otklanjanje problema"
+    },
+    {
+      "name": "Najbolje bezbednosne prakse",
+      "file": "saml-security.md",
+      "subCat": "Napredno"
+    }
+  ]
+}

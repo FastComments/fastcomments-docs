@@ -1,0 +1,36 @@
+{
+  "name": "Вашият собствен облак",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Какво представлява изолираният облак на FastComments?",
+      "file": "your-own-cloud.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Как да го получите",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Настройване и обучение",
+      "file": "set-up-training.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Използване на таблото за управление",
+      "file": "using-the-dashboard.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Използване на API",
+      "file": "using-the-api.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Управление на наематели",
+      "file": "managing-tenants.md",
+      "subCat": "Управление на наематели"
+    }
+  ]
+}

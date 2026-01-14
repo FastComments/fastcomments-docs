@@ -1,0 +1,31 @@
+{
+  "name": "SSO-toegangscontrole",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat is toegangscontrole?",
+      "file": "what-is-access-control.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe het werkt",
+      "file": "how-it-works.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "De specificatie",
+      "file": "access-control-spec.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Implementatie",
+      "file": "implementation.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Voorbeeld-API-aanroepen",
+      "file": "api-example.md",
+      "subCat": "Implementatie"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на GoDaddy",
+  "pageHeader": "Добавяне на коментари към сайтове в GoDaddy",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Добавяне на област за код",
+      "file": "godaddy-step-1.md",
+      "subCat": "Инсталиране на GoDaddy"
+    },
+    {
+      "name": "Стъпка 2: Добавяне на кода на FastComments.com",
+      "file": "godaddy-step-2.md",
+      "subCat": "Инсталиране на GoDaddy"
+    },
+    {
+      "name": "Стъпка 3: Публикуване",
+      "file": "godaddy-step-3.md",
+      "subCat": "Инсталиране на GoDaddy"
+    },
+    {
+      "name": "Успешно",
+      "file": "godaddy-success.md",
+      "subCat": "Инсталиране на GoDaddy"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Инсталиране на GoDaddy"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "godaddy-customize.md",
+      "subCat": "Инсталиране на GoDaddy"
+    }
+  ]
+}

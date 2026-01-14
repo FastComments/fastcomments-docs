@@ -1,0 +1,42 @@
+{
+  "name": "Shopify 安装",
+  "pageHeader": "向 Shopify 网站添加评论",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：导入现有评论",
+      "file": "shopify-step-1.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "步骤 2：禁用默认评论系统",
+      "file": "shopify-step-2.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "步骤 3：打开博客主题模板",
+      "file": "shopify-step-3.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "步骤 4：添加 FastComments.com 的代码",
+      "file": "shopify-step-4.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "成功",
+      "file": "shopify-success.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify 安装"
+    }
+  ]
+}

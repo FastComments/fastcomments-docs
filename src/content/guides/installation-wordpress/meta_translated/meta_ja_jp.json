@@ -1,0 +1,72 @@
+{
+  "name": "WordPress のインストール",
+  "pageHeader": "WordPressサイトにライブコメントを追加する",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "クイックスタート",
+      "file": "wordpress-quick-start.md",
+      "subCat": "要約"
+    },
+    {
+      "name": "インストール",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "モデレーション",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "ユーザー、モデレーター、管理者",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "会員限定サイト（SSO）",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "通知",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "カスタムテーマ",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "WordPressへの同期",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "コメント数",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "WordPress のインストールと FastComment サーバー間の通信",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "プラグインの無効化とアンインストールの違い",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "プラグインの削除"
+    }
+  ]
+}

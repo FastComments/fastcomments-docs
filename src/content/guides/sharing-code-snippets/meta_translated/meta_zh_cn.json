@@ -1,0 +1,31 @@
+{
+  "name": "分享代码片段",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是代码片段？",
+      "file": "code-snippets-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "编程社区",
+      "file": "code-snippets-communities.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "支持的编程语言",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "设置代码片段共享",
+      "file": "code-snippets-setup.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "分享代码片段",
+      "file": "code-snippets-usage.md",
+      "subCat": "使用"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Condivisione di frammenti di codice",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono i frammenti di codice?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Comunità di programmatori",
+      "file": "code-snippets-communities.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Linguaggi di programmazione supportati",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Configurare la condivisione di frammenti di codice",
+      "file": "code-snippets-setup.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Condivisione di frammenti di codice",
+      "file": "code-snippets-usage.md",
+      "subCat": "Utilizzo"
+    }
+  ]
+}

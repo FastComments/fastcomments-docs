@@ -1,0 +1,21 @@
+{
+  "name": "Гифови",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Врсте подржаних анимираних слика",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "Гифови и анимиране слике"
+    },
+    {
+      "name": "Анимиране слике отпремљене од корисника",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Коришћење гифова"
+    },
+    {
+      "name": "Изборник гифова",
+      "file": "gif-picker.md",
+      "subCat": "Коришћење гифова"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Instalacja Systeme.io",
+  "pageHeader": "Dodaj komentarze do bloga Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Otwórz szablon motywu bloga",
+      "file": "systeme-step-1.md",
+      "subCat": "Instalacja Systeme.io"
+    },
+    {
+      "name": "Krok 2: Dodaj kod FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Instalacja Systeme.io"
+    },
+    {
+      "name": "Sukces",
+      "file": "systeme-success.md",
+      "subCat": "Instalacja Systeme.io"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Instalacja Systeme.io"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "systeme-customize.md",
+      "subCat": "Instalacja Systeme.io"
+    }
+  ]
+}

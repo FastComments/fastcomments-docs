@@ -1,0 +1,47 @@
+{
+  "name": "Namestitev BigCommerce",
+  "pageHeader": "Dodajanje komentarjev na spletna mesta BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Pripravite svojo temo",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Korak 2: Uredite pravo predlogo",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Korak 3: Dodajte kodo gradnika",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Korak 4: Aktivirajte novo temo",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Uspeh",
+      "file": "bigcommerce-success.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Napake domen",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Prilagoditve",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Namestitev BigCommerce"
+    },
+    {
+      "name": "Dodatno: Izsek kode za Page Builder",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Uporaba urejevalnika strani"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "SSOアクセス制御",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "アクセス制御とは？",
+      "file": "what-is-access-control.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "仕組み",
+      "file": "how-it-works.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "仕様",
+      "file": "access-control-spec.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "実装",
+      "file": "implementation.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "API呼び出しの例",
+      "file": "api-example.md",
+      "subCat": "実装"
+    }
+  ]
+}

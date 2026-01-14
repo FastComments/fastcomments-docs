@@ -1,0 +1,24 @@
+{
+  "name": "React Native SDK",
+  "pageHeader": "FastComments React Native SDK",
+  "itemsOrdered": [
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "소개",
+      "file": "about-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "스크린샷",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення ClickFunnels",
+  "pageHeader": "Додавання живого чату до курсів ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Знайти шаблон",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Встановлення ClickFunnels"
+    },
+    {
+      "name": "Крок 2: Додати код",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Встановлення ClickFunnels"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Встановлення ClickFunnels"
+    },
+    {
+      "name": "Налаштування",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Встановлення ClickFunnels"
+    },
+    {
+      "name": "Додатково: фрагмент коду для живого коментування",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Фрагмент коду для живого коментування"
+    },
+    {
+      "name": "Додатково: автопрогравання коментарів",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Автопрогравання коментарів"
+    }
+  ]
+}

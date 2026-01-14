@@ -1,0 +1,31 @@
+{
+  "name": "Помене",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су помене",
+      "file": "what-are-mentions.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како означити корисника",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Коришћење помена"
+    },
+    {
+      "name": "Обавештења",
+      "file": "mentions-notifications.md",
+      "subCat": "Коришћење помена"
+    },
+    {
+      "name": "Како функционише аутокомплетирање помена",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Коришћење помена"
+    },
+    {
+      "name": "Попуњавање помена",
+      "file": "populating-mentions.md",
+      "subCat": "Подешавање помена"
+    }
+  ]
+}

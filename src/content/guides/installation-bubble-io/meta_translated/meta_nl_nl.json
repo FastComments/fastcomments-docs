@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Live reacties toevoegen aan Bubble.io-sites",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTML-blok toevoegen",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "2. Code invoegen",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "3. Zoek de breedte-instelling",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "4. Pas de lay-out aan",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "Succes",
+      "file": "bubble-io-success.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

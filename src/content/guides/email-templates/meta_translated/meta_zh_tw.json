@@ -1,0 +1,41 @@
+{
+  "name": "電子郵件範本",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "建立範本",
+      "file": "creating-templates.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "範本語言",
+      "file": "template-language.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "在地化與自訂文字",
+      "file": "localizing.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "依網域的範本",
+      "file": "per-domain-templates.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "資料與變數",
+      "file": "data-variables.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "渲染失敗",
+      "file": "render-failures.md",
+      "subCat": "電子郵件範本"
+    },
+    {
+      "name": "套用變更",
+      "file": "time-to-apply-changes.md",
+      "subCat": "電子郵件範本"
+    }
+  ]
+}

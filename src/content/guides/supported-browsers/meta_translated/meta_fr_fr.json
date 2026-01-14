@@ -1,0 +1,26 @@
+{
+  "name": "Navigateurs pris en charge",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Navigateurs pris en charge",
+      "file": "supported-browsers.md",
+      "subCat": "Navigateurs pris en charge"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Navigateurs pris en charge"
+    },
+    {
+      "name": "Comment nous testons",
+      "file": "how-we-test.md",
+      "subCat": "Navigateurs pris en charge"
+    },
+    {
+      "name": "Exigences JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Navigateurs pris en charge"
+    }
+  ]
+}

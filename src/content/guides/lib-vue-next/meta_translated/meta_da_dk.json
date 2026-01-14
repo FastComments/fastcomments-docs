@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3-bibliotek",
+  "pageHeader": "FastComments Vue 3-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Brug",
+      "file": "usage-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Opdatering af den aktuelle side (SPA-eksempel)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "I produktion",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Alle widgets og dokumentation",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

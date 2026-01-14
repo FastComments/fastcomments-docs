@@ -1,0 +1,16 @@
+{
+  "name": "Yorum Sözdizimi",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Temel Biçimlendirme",
+      "file": "basic-formatting.md",
+      "subCat": "Biçimlendirme"
+    },
+    {
+      "name": "Güvenlik",
+      "file": "security.md",
+      "subCat": "Güvenlik"
+    }
+  ]
+}

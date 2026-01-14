@@ -1,0 +1,42 @@
+{
+  "name": "Βιβλιοθήκη Vue 3",
+  "pageHeader": "Βιβλιοθήκη FastComments για Vue 3",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση",
+      "file": "usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενημέρωση της τρέχουσας σελίδας (παράδειγμα SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Σε παραγωγή",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Όλα τα Widgets και η τεκμηρίωση",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

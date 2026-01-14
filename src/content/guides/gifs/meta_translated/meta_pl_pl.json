@@ -1,0 +1,21 @@
+{
+  "name": "Gify",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Obsługiwane rodzaje animowanych obrazów",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "Gify i obrazy animowane"
+    },
+    {
+      "name": "Animowane obrazy przesłane przez użytkowników",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Korzystanie z gifów"
+    },
+    {
+      "name": "Wybieracz gifów",
+      "file": "gif-picker.md",
+      "subCat": "Korzystanie z gifów"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Προφίλ Χρηστών",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Βασικά στοιχεία προφίλ",
+      "file": "profile-basics.md",
+      "subCat": "Πρώτα βήματα"
+    },
+    {
+      "name": "Προσαρμογή του προφίλ σας",
+      "file": "customizing-profiles.md",
+      "subCat": "Προσαρμογή"
+    },
+    {
+      "name": "Ρυθμίσεις απορρήτου",
+      "file": "privacy-settings.md",
+      "subCat": "Προσαρμογή"
+    },
+    {
+      "name": "Διακριτικά",
+      "file": "badges.md",
+      "subCat": "Χαρακτηριστικά"
+    },
+    {
+      "name": "Σχόλια προφίλ",
+      "file": "profile-comments.md",
+      "subCat": "Χαρακτηριστικά"
+    },
+    {
+      "name": "Άμεσα μηνύματα",
+      "file": "direct-messaging.md",
+      "subCat": "Χαρακτηριστικά"
+    },
+    {
+      "name": "Ροή δραστηριότητας",
+      "file": "activity-feed.md",
+      "subCat": "Χαρακτηριστικά"
+    },
+    {
+      "name": "Σημειώσεις χρήστη",
+      "file": "user-notes.md",
+      "subCat": "Χαρακτηριστικά"
+    },
+    {
+      "name": "Στυλιζάρισμα προφίλ",
+      "file": "styling-profiles.md",
+      "subCat": "Για προγραμματιστές"
+    }
+  ]
+}

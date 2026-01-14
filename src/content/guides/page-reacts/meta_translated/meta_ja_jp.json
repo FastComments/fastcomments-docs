@@ -1,0 +1,31 @@
+{
+  "name": "ページリアクション",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "ページリアクション",
+      "file": "page-reacts-about.md",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "インストール - バニラJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "フローティングいいねウィジェット",
+      "file": "floating-likes-about.md",
+      "subCat": "フローティングいいねウィジェット"
+    },
+    {
+      "name": "インストール - バニラJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "フローティングいいねウィジェット"
+    },
+    {
+      "name": "インストール - ワードプレス",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "フローティングいいねウィジェット"
+    }
+  ]
+}

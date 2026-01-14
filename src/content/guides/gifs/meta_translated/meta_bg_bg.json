@@ -1,0 +1,21 @@
+{
+  "name": "Гифове",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Поддържани видове анимирани изображения",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "Гифове и анимирани изображения"
+    },
+    {
+      "name": "Анимирани изображения, качени от потребители",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Използване на гифове"
+    },
+    {
+      "name": "Избор на гифове",
+      "file": "gif-picker.md",
+      "subCat": "Използване на гифове"
+    }
+  ]
+}

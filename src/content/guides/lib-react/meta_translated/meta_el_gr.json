@@ -1,0 +1,24 @@
+{
+  "name": "Βιβλιοθήκη React",
+  "pageHeader": "Βιβλιοθήκη FastComments για React",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Παραδείγματα",
+      "file": "examples-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση",
+      "file": "usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    }
+  ]
+}

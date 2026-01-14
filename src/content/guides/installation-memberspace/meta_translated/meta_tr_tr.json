@@ -1,0 +1,22 @@
+{
+  "name": "MemberSpace Kurulumu",
+  "pageHeader": "MemberSpace ile Yorum Ekleme",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Kod",
+      "file": "memberspace-step-1.md",
+      "subCat": "MemberSpace Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "MemberSpace Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "memberspace-customize.md",
+      "subCat": "MemberSpace Kurulumu"
+    }
+  ]
+}

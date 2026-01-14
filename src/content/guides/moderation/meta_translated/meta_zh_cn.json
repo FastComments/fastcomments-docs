@@ -1,0 +1,126 @@
+{
+  "name": "审核",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "评论审核页面",
+      "file": "moderate-comments-page.md",
+      "subCat": "简介"
+    },
+    {
+      "name": "版主",
+      "file": "moderators.md",
+      "subCat": "版主"
+    },
+    {
+      "name": "添加版主",
+      "file": "moderators-adding.md",
+      "subCat": "版主"
+    },
+    {
+      "name": "版主统计",
+      "file": "moderator-stats.md",
+      "subCat": "版主"
+    },
+    {
+      "name": "移除版主",
+      "file": "moderators-removing.md",
+      "subCat": "版主"
+    },
+    {
+      "name": "批准流程",
+      "file": "moderation-approvals.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "通过电子邮件审核",
+      "file": "moderation-via-email.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "过滤",
+      "file": "filters.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "搜索",
+      "file": "search.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "分享审核链接",
+      "file": "sharing-moderation-links.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "评论线程查看器",
+      "file": "comment-thread-viewer.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "审核操作",
+      "file": "comment-actions.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "删除评论",
+      "file": "deleting-comments.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "评论小部件中的审核操作",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "实时审核",
+      "file": "comment-actions-live.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "封禁用户",
+      "file": "banning-users.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "使用通配符封禁用户",
+      "file": "banning-users-wildcards.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "举报",
+      "file": "flagging.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "批量操作",
+      "file": "bulk-actions.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "审核组",
+      "file": "moderation-groups.md",
+      "subCat": "审核组"
+    },
+    {
+      "name": "审核设置",
+      "file": "moderation-settings.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "垃圾评论检测",
+      "file": "spam-detection.md",
+      "subCat": "垃圾与不当语言"
+    },
+    {
+      "name": "屏蔽脏话",
+      "file": "profanity-mask.md",
+      "subCat": "垃圾与不当语言"
+    },
+    {
+      "name": "评论日志",
+      "file": "comment-logs.md",
+      "subCat": "审核工作流程"
+    }
+  ]
+}

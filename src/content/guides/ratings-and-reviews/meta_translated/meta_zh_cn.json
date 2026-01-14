@@ -1,0 +1,56 @@
+{
+  "name": "评分与评论",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "适用对象",
+      "file": "who-gets-it.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "定价",
+      "file": "pricing.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "选择显示类型",
+      "file": "choose-display-type.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "定义问题",
+      "file": "define-your-questions.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "配置工作原理",
+      "file": "how-configuration-works.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "汇总小部件",
+      "file": "summary-widget-installation.md",
+      "subCat": "设置"
+    },
+    {
+      "name": "查看评分",
+      "file": "viewing-ratings.md",
+      "subCat": "报告"
+    },
+    {
+      "name": "通过 API 集成",
+      "file": "integrating-via-the-api.md",
+      "subCat": "报告"
+    },
+    {
+      "name": "汇总演示",
+      "file": "summary-demo.md",
+      "subCat": "汇总演示"
+    }
+  ]
+}

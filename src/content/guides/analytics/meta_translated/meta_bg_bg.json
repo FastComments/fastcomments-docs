@@ -1,0 +1,31 @@
+{
+  "name": "Аналитика",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Въведение",
+      "file": "analytics-background.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Аналитика за фактуриране",
+      "file": "analytics-billing.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Аналитика на сайта",
+      "file": "analytics-site.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Точност на аналитиката в сравнение с други платформи",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Проследяване"
+    }
+  ]
+}

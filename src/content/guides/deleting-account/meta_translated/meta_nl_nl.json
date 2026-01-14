@@ -1,0 +1,16 @@
+{
+  "name": "Je account verwijderen",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Je account verwijderen",
+      "file": "deleting-your-account.md",
+      "subCat": "Commentatoren en huurders"
+    },
+    {
+      "name": "Je abonnement opzeggen",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Huurders"
+    }
+  ]
+}

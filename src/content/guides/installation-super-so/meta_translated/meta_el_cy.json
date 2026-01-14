@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Super.so",
+  "pageHeader": "Προσθέστε Ζωντανές Συζητήσεις σε Ιστότοπους Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Άνοιγμα Ρυθμίσεων",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη Έτοιμου Κώδικα",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Δείτε επίσης: Κανονικό widget σχολίων",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "super-so-learn-success.md",
+      "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Σφάλματα Τομέα",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Εγκατάσταση Super.so"
+    }
+  ]
+}

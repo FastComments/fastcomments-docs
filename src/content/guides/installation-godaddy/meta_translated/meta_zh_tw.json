@@ -1,0 +1,37 @@
+{
+  "name": "GoDaddy 安裝",
+  "pageHeader": "在 GoDaddy 網站新增留言",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：新增程式碼區塊",
+      "file": "godaddy-step-1.md",
+      "subCat": "GoDaddy 安裝"
+    },
+    {
+      "name": "步驟 2：加入 FastComments.com 的程式碼",
+      "file": "godaddy-step-2.md",
+      "subCat": "GoDaddy 安裝"
+    },
+    {
+      "name": "步驟 3：發佈",
+      "file": "godaddy-step-3.md",
+      "subCat": "GoDaddy 安裝"
+    },
+    {
+      "name": "完成",
+      "file": "godaddy-success.md",
+      "subCat": "GoDaddy 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "GoDaddy 安裝"
+    },
+    {
+      "name": "客製化",
+      "file": "godaddy-customize.md",
+      "subCat": "GoDaddy 安裝"
+    }
+  ]
+}

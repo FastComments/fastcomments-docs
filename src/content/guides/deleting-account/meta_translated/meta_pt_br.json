@@ -1,0 +1,16 @@
+{
+  "name": "Excluindo sua conta",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Excluindo sua conta",
+      "file": "deleting-your-account.md",
+      "subCat": "Comentadores e locatários"
+    },
+    {
+      "name": "Cancelando sua assinatura",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Locatários"
+    }
+  ]
+}

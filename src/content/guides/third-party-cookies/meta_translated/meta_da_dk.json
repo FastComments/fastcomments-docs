@@ -1,0 +1,21 @@
+{
+  "name": "Tredjeparts-cookies",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er tredjeparts-cookies",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Hvordan FastComments bruger tredjeparts-cookies",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Aktiver tredjeparts-cookies",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Aktivering"
+    }
+  ]
+}

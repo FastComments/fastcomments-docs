@@ -1,0 +1,31 @@
+{
+  "name": "Написание расширений",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Жизненный цикл расширения",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Определение расширения",
+      "file": "defining-an-extension.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Примеры расширений",
+      "file": "example-extensions.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Объект расширения",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "API расширения",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

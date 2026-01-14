@@ -1,0 +1,37 @@
+{
+  "name": "Namestitev Webflowa",
+  "pageHeader": "Dodajte komentarje na spletna mesta Webflow",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodajte blok za vdelavo",
+      "file": "webflow-step-1.md",
+      "subCat": "Namestitev Webflowa"
+    },
+    {
+      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "file": "webflow-step-2.md",
+      "subCat": "Namestitev Webflowa"
+    },
+    {
+      "name": "Korak 3: Objavite",
+      "file": "webflow-step-3.md",
+      "subCat": "Namestitev Webflowa"
+    },
+    {
+      "name": "Uspešno",
+      "file": "webflow-success.md",
+      "subCat": "Namestitev Webflowa"
+    },
+    {
+      "name": "Napake domene",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Namestitev Webflowa"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "webflow-customize.md",
+      "subCat": "Namestitev Webflowa"
+    }
+  ]
+}

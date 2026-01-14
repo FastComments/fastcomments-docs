@@ -1,0 +1,31 @@
+{
+  "name": "Sayfa Tepkileri",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Sayfa Tepkileri",
+      "file": "page-reacts-about.md",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "Kurulum - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "Yüzen Beğeni Bileşeni",
+      "file": "floating-likes-about.md",
+      "subCat": "Yüzen Beğeni Bileşeni"
+    },
+    {
+      "name": "Kurulum - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Yüzen Beğeni Bileşeni"
+    },
+    {
+      "name": "Kurulum - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Yüzen Beğeni Bileşeni"
+    }
+  ]
+}

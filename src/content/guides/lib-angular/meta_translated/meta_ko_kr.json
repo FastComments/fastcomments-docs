@@ -1,0 +1,12 @@
+{
+  "name": "Angular 라이브러리",
+  "pageHeader": "FastComments Angular 라이브러리",
+  "itemsOrdered": [
+    {
+      "name": "프로젝트 구조",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

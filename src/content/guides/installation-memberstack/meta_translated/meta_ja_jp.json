@@ -1,0 +1,22 @@
+{
+  "name": "Memberstackのインストール",
+  "pageHeader": "Memberstackでコメントを追加",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "コード",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstackのインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstackのインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstackのインストール"
+    }
+  ]
+}

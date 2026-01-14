@@ -1,0 +1,41 @@
+{
+  "name": "Chat d'images",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Premiers pas",
+      "file": "getting-started.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Exemples",
+      "file": "examples.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Options de configuration",
+      "file": "configuration-options.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Conception adaptative",
+      "file": "responsive-design.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "customization.md",
+      "subCat": "Personnalisation"
+    },
+    {
+      "name": "Synchronisation en temps réel",
+      "file": "live-sync.md",
+      "subCat": "Avancé"
+    },
+    {
+      "name": "Référence de l'API",
+      "file": "api-reference.md",
+      "subCat": "Avancé"
+    }
+  ]
+}

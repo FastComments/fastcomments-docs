@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Webflow",
+  "pageHeader": "Додавання коментарів на сайти Webflow",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Додайте вбудований блок (Embed)",
+      "file": "webflow-step-1.md",
+      "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Крок 2: Вставте свій код з FastComments.com",
+      "file": "webflow-step-2.md",
+      "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Крок 3: Опублікуйте",
+      "file": "webflow-step-3.md",
+      "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Успішно",
+      "file": "webflow-success.md",
+      "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Налаштування",
+      "file": "webflow-customize.md",
+      "subCat": "Встановлення Webflow"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Prilagojeno oblikovanje",
+  "pageHeader": "Vodnik za prilagojeno oblikovanje",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Kako prilagoditi sloge",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Referenca oblikovanja gradnika za komentarje (v2, najnovejše)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Oblikovanje gradnikov"
+    },
+    {
+      "name": "Oblikovanje gradnika za najnovejše komentarje",
+      "file": "recent-comments-widget.md",
+      "subCat": "Oblikovanje gradnikov"
+    },
+    {
+      "name": "Oblikovanje gradnika za najbolj obiskane strani",
+      "file": "top-pages-widget.md",
+      "subCat": "Oblikovanje gradnikov"
+    },
+    {
+      "name": "Druge knjižnice za sprednji del",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Druge knjižnice za sprednji del"
+    }
+  ]
+}

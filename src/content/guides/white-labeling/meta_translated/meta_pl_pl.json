@@ -1,0 +1,36 @@
+{
+  "name": "White-label",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym jest white-label",
+      "file": "white-labeling-background.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Jak uzyskać white-label",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Pierwsze kroki"
+    },
+    {
+      "name": "Konfigurowanie white-label",
+      "file": "white-labeling-process.md",
+      "subCat": "Wdrożenie"
+    },
+    {
+      "name": "Korzystanie z panelu",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Wdrożenie"
+    },
+    {
+      "name": "Korzystanie z API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Wdrożenie"
+    },
+    {
+      "name": "Zarządzanie najemcami white-label",
+      "file": "white-labeling-managing.md",
+      "subCat": "Zarządzanie najemcami"
+    }
+  ]
+}

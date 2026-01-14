@@ -1,0 +1,31 @@
+{
+  "name": "Contrôle d'accès SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce que le contrôle d'accès ?",
+      "file": "what-is-access-control.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Comment ça fonctionne",
+      "file": "how-it-works.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "La spécification",
+      "file": "access-control-spec.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Implémentation",
+      "file": "implementation.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Exemples d'appels d'API",
+      "file": "api-example.md",
+      "subCat": "Implémentation"
+    }
+  ]
+}

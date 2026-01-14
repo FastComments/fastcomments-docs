@@ -1,0 +1,72 @@
+{
+  "name": "Εγκατάσταση WordPress",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστοσελίδες WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Σύντομη περίληψη"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "wordpress-installation.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "wordpress-customize.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Διαχείριση",
+      "file": "wordpress-moderation.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Χρήστες, Συντονιστές και Διαχειριστές",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Ιστότοποι μόνο για μέλη (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Ειδοποιήσεις",
+      "file": "wordpress-notifications.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Προσαρμοσμένα θέματα",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Συγχρονισμός με το WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Πλήθος σχολίων",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Επικοινωνία Εγκατάστασης WordPress με Διακομιστή FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Εγκατάσταση WordPress"
+    },
+    {
+      "name": "Απενεργοποίηση vs Απεγκατάσταση του πρόσθετου",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Κατάργηση πρόσθετου"
+    }
+  ]
+}

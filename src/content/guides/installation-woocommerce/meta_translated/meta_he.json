@@ -1,0 +1,12 @@
+{
+  "name": "התקנת WooCommerce",
+  "pageHeader": "הוסף תגובות בזמן אמת לאתרי WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "הגדרת תוסף WordPress",
+      "file": "woocommerce.md",
+      "subCat": "התקנת WooCommerce"
+    }
+  ]
+}

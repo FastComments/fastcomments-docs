@@ -1,0 +1,21 @@
+{
+  "name": "Уиджети за брой коментари",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Инсталиране на уиджет за брой коментари",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Инсталиране"
+    },
+    {
+      "name": "Масово инсталиране на уиджети за брой коментари",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Инсталиране"
+    },
+    {
+      "name": "API-та за брой коментари",
+      "file": "comment-count-apis.md",
+      "subCat": "API-та за брой коментари"
+    }
+  ]
+}

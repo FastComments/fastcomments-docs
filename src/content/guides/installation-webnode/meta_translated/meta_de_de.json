@@ -1,0 +1,42 @@
+{
+  "name": "Webnode-Installation",
+  "pageHeader": "Kommentare zu Webnode-Seiten hinzufügen",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Schritt 1: Seite bearbeiten",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Schritt 2: Abschnitt und HTML-Block hinzufügen",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Schritt 3: Code-Snippet kopieren und einfügen",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Schritt 4: Veröffentlichen",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Erfolg",
+      "file": "webnode-success.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode-Installation"
+    }
+  ]
+}

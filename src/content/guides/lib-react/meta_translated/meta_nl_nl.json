@@ -1,0 +1,24 @@
+{
+  "name": "React-bibliotheek",
+  "pageHeader": "FastComments React-bibliotheek",
+  "itemsOrdered": [
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeelden",
+      "file": "examples-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Gebruik",
+      "file": "usage-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    }
+  ]
+}

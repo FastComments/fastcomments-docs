@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое SAML?",
+      "file": "saml-overview.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Сравнение SAML и SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Настройка SAML",
+      "file": "saml-setup.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Конфигурация поставщика удостоверений",
+      "file": "saml-idp-config.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Информация о поставщике услуг",
+      "file": "saml-sp-info.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Роли и права пользователей",
+      "file": "saml-user-roles.md",
+      "subCat": "Управление пользователями"
+    },
+    {
+      "name": "Тестирование аутентификации SAML",
+      "file": "saml-testing.md",
+      "subCat": "Устранение неполадок"
+    },
+    {
+      "name": "Распространенные проблемы",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Устранение неполадок"
+    },
+    {
+      "name": "Лучшие практики безопасности",
+      "file": "saml-security.md",
+      "subCat": "Продвинутые"
+    }
+  ]
+}

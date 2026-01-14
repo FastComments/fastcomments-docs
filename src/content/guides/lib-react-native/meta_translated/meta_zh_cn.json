@@ -1,0 +1,42 @@
+{
+  "name": "React Native 库",
+  "pageHeader": "FastComments React Native 库",
+  "itemsOrdered": [
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "考虑原生 SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "用法 - 实时评论组件",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "用法 - 实时聊天组件",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "用法 - SSO（单点登录）",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "对等依赖",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Установка Shopify",
+  "pageHeader": "Добавление комментариев на сайты Shopify",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Импорт существующих комментариев",
+      "file": "shopify-step-1.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Шаг 2: Отключение стандартной системы комментариев",
+      "file": "shopify-step-2.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Шаг 3: Откройте шаблон темы блога",
+      "file": "shopify-step-3.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Шаг 4: Добавьте код FastComments.com",
+      "file": "shopify-step-4.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Готово",
+      "file": "shopify-success.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Настройка",
+      "file": "shopify-customize.md",
+      "subCat": "Установка Shopify"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Ghost-Installation",
+  "pageHeader": "Füge Live-Kommentare nur für Mitglieder zu Ghost-Websites hinzu",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Schritt 1: Lade dein Theme herunter",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 2: Installiere dein Theme lokal",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 3: Benenne das neue Theme",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 4: Öffne die Beitragsvorlage",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 5: Füge den FastComments-Code hinzu",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 6: Exportiere dein Theme",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Schritt 7: Lade das Theme in Ghost hoch",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Erfolgreich!",
+      "file": "ghost-success.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost-Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost-Installation"
+    }
+  ]
+}

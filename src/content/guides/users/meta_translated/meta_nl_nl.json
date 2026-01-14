@@ -1,0 +1,46 @@
+{
+  "name": "Gebruikers",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Soorten gebruikers",
+      "file": "types-of-users.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Gebruikersnamen",
+      "file": "usernames.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Beheerders",
+      "file": "administrator-users.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Commentatoren",
+      "file": "commenter-users.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Beheerders toevoegen",
+      "file": "adding-administrators.md",
+      "subCat": "Instellen"
+    },
+    {
+      "name": "Moderators toevoegen",
+      "file": "adding-moderators.md",
+      "subCat": "Instellen"
+    },
+    {
+      "name": "Rechten van beheerders bijwerken",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Instellen"
+    },
+    {
+      "name": "Ontwikkelaars",
+      "file": "developers.md",
+      "subCat": "Instellen"
+    }
+  ]
+}

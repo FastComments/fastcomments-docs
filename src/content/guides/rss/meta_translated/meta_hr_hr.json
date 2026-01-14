@@ -1,0 +1,21 @@
+{
+  "name": "RSS kanali",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Pregled",
+      "file": "overview.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Postavljanje vašeg RSS kanala",
+      "file": "setup.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Sigurnosna razmatranja",
+      "file": "security.md",
+      "subCat": "Implementacija"
+    }
+  ]
+}

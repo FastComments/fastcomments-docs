@@ -1,0 +1,37 @@
+{
+  "name": "Installation af Zyro",
+  "pageHeader": "Tilføj live-kommentering til Zyro-sider",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Tilføj kode-widget",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro-sideinstallation"
+    },
+    {
+      "name": "Trin 2: Tilføj koden",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro-sideinstallation"
+    },
+    {
+      "name": "Succes",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro-sideinstallation"
+    },
+    {
+      "name": "Domænefejl på siden",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro-sideinstallation"
+    },
+    {
+      "name": "Tilpasning af siden",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro-sideinstallation"
+    },
+    {
+      "name": "Flydende like-knap",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro Flydende Likes"
+    }
+  ]
+}

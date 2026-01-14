@@ -1,0 +1,37 @@
+{
+  "name": "Namestitev Ionos",
+  "pageHeader": "Dodajte komentarje na Ionosove strani",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodajte kontaktni obrazec",
+      "file": "ionos-step-1.md",
+      "subCat": "Namestitev Ionos"
+    },
+    {
+      "name": "Korak 2: Dodajte kodo FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Namestitev Ionos"
+    },
+    {
+      "name": "Korak 3: Objavite",
+      "file": "ionos-step-3.md",
+      "subCat": "Namestitev Ionos"
+    },
+    {
+      "name": "Uspeh",
+      "file": "ionos-success.md",
+      "subCat": "Namestitev Ionos"
+    },
+    {
+      "name": "Napake domen",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Namestitev Ionos"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "ionos-customize.md",
+      "subCat": "Namestitev Ionos"
+    }
+  ]
+}

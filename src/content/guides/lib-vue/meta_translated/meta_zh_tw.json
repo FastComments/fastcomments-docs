@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 函式庫",
+  "pageHeader": "FastComments Vue 2 函式庫",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速上手",
+      "type": "readme"
+    },
+    {
+      "name": "用法",
+      "file": "usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "更新目前頁面（SPA 範例）",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "生產環境",
+      "file": "in-production-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

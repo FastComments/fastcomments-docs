@@ -1,0 +1,32 @@
+{
+  "name": "自定义样式",
+  "pageHeader": "自定义样式指南",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "如何自定义样式",
+      "file": "comment-widget-instructions.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "评论小部件样式参考（v2，最新）",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "小部件样式"
+    },
+    {
+      "name": "最新评论小部件样式",
+      "file": "recent-comments-widget.md",
+      "subCat": "小部件样式"
+    },
+    {
+      "name": "热门页面小部件样式",
+      "file": "top-pages-widget.md",
+      "subCat": "小部件样式"
+    },
+    {
+      "name": "其他前端库",
+      "file": "other-frontend-libraries.md",
+      "subCat": "其他前端库"
+    }
+  ]
+}

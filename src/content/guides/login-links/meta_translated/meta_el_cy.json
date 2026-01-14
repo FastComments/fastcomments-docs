@@ -1,0 +1,26 @@
+{
+  "name": "Σύνδεσμοι Εισόδου",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι Είναι οι Σύνδεσμοι Εισόδου;",
+      "file": "login-links-what-are.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Οφέλη των Συνδέσμων Εισόδου σε Σχέση με τους Κωδικούς Πρόσβασης",
+      "file": "login-links-benefits.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς Διασφαλίζουμε την Ασφάλεια των Συνδέσμων Εισόδου",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Ασφάλεια"
+    },
+    {
+      "name": "Σε Ποιους Αποστέλλονται οι Σύνδεσμοι Εισόδου;",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Χρήση"
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "name": "Персонализации и конфигурация",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Идентифициране на вашия акаунт",
+      "file": "tenant-id.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Как коментарите са свързани със страници и статии",
+      "file": "url-id.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Изобразяване на същите коментари на различни страници",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Персонализиран стил",
+      "file": "custom-css.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Персонализирани шрифтове",
+      "file": "custom-fonts.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Премахване на брандирането",
+      "file": "remove-branding.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Поддръжка на тъмен фон (тъмен режим)",
+      "file": "has-dark-background.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Превключване на тъмния режим",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Презаписване на текст",
+      "file": "translations.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Промяна на стандартния аватар",
+      "file": "default-avatar-src.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на аватарите",
+      "file": "hide-avatars.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на всички стандартни стилове",
+      "file": "no-styles.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Свързване на коментари със страници",
+      "file": "url.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Свиване на отговорите по подразбиране",
+      "file": "collapse-replies.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Активиране на WYSIWYG редактор",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на лентата с инструменти",
+      "file": "disable-toolbar.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на блокирането",
+      "file": "disable-blocking.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Определяне коя страница да се изобрази",
+      "file": "starting-page.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Превключване на нишки с коментари без презареждане на страницата",
+      "file": "switching-comment-threads.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Абсолютни дати (деактивиране на удобни за човека времеви отметки)",
+      "file": "absolute-dates.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Показване както на абсолютни, така и на относителни дати",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Добавяне на заглавен текст",
+      "file": "header-html.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Изобразяване на връзки като текст",
+      "file": "render-links-as-text.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Превключване на коментарите с бутон",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Персонализиране на текста за броя коментари",
+      "file": "comment-count-format.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на пренасочване на изображения",
+      "file": "disable-image-redirect.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на автоматичното създаване на хаштагове",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на звънеца за известия",
+      "file": "disable-notification-bell.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на профилите",
+      "file": "disable-profiles.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на съобщението за успех",
+      "file": "disable-success-message.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Промяна на рейтинга на съдържанието за GIF",
+      "file": "gif-rating.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Модерация на съдържанието на изображенията",
+      "file": "image-content-moderation.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Промяна на стила на гласуване",
+      "file": "vote-style.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на изтриването",
+      "file": "disable-deleting.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на редактирането",
+      "file": "disable-editing.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Открояване на новите коментари",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Размери на страниците",
+      "file": "page-size.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Шаблони за имейли",
+      "file": "email-templates.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Формати на потребителските имена",
+      "file": "user-name-formats.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Деактивиране на качването на изображения",
+      "file": "no-image-uploads.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Активиране на полето за търсене",
+      "file": "enable-search.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Активиране на спойлери",
+      "file": "enable-spoilers.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Активиране на брояча за прегледи на коментари",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Външен вид и усещане"
+    },
+    {
+      "name": "Показване на коментари в реално време веднага",
+      "file": "show-live-right-away.md",
+      "subCat": "Коментари в реално време"
+    },
+    {
+      "name": "Деактивиране на коментари в реално време",
+      "file": "disable-live-commenting.md",
+      "subCat": "Коментари в реално време"
+    },
+    {
+      "name": "Нови коментари в реално време в долната част",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Коментари в реално време"
+    },
+    {
+      "name": "Активиране на безкрайно превъртане",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Пагинация и сортиране"
+    },
+    {
+      "name": "Промяна на подразбиращата се посока на сортиране",
+      "file": "default-sort-direction.md",
+      "subCat": "Пагинация и сортиране"
+    },
+    {
+      "name": "Изобразяване на всички коментари наведнъж - деактивиране на пагинацията",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Пагинация и сортиране"
+    },
+    {
+      "name": "Преместване на полето за отговор след коментарите",
+      "file": "input-after-comments.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Ограничаване на дължината на коментара",
+      "file": "max-comment-character-length.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Деактивиране на многоредовите коментари",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Ограничаване на броя коментари на потребител",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Предотвратяване на нови коментари от най-горно ниво",
+      "file": "no-new-root-comments.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Максимална дълбочина на отговорите",
+      "file": "max-reply-depth.md",
+      "subCat": "Поле за отговор"
+    },
+    {
+      "name": "Преглед на Еднократно влизане (SSO)",
+      "file": "sso.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Персонализирани интеграции - Сигурно еднократно влизане (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Персонализирани интеграции - Просто еднократно влизане (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Персонализирани интеграции - Мигриране от Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Персонализирани интеграции - Мигриране от Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Защита на нишки с коментари чрез еднократно влизане",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "Еднократно влизане (SSO)"
+    },
+    {
+      "name": "Позволяване на анонимни коментари",
+      "file": "allow-anon.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Предотвратяване на изтичане на анонимни коментари",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Деактивиране на полетата за имейл",
+      "file": "disable-email-inputs.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Деактивиране на етикета \"Непотвърден\"",
+      "file": "disable-unverified-label.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Позволяване на анонимно гласуване",
+      "file": "allow-anon-votes.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Задаване на подразбиращо се потребителско име",
+      "file": "default-username.md",
+      "subCat": "Анонимни коментари"
+    },
+    {
+      "name": "Обратни повиквания",
+      "file": "callbacks.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Ръчно задаване на локала на потребителя",
+      "file": "locale.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Ограничаване на разрешените езици",
+      "file": "allowed-languages.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Заглавия на страници",
+      "file": "page-title.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Предотвратяване на нови отговори и деактивиране на гласуването",
+      "file": "readonly.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Ограничаване на домейни на връзки",
+      "file": "restricting-link-domains.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Брой коментари и броене на всички вложени отговори",
+      "file": "count-all.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Активиране на връзки към коментиращите",
+      "file": "enable-commenter-links.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Групи за модерация",
+      "file": "moderation-group-ids.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Идентификатори на групи за споменаване",
+      "file": "mention-group-ids.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Заобикаляне на бисквитки от трети страни",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Изтриване на коментари с отговори",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Други"
+    },
+    {
+      "name": "Показване на значки в горната лента",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Външен вид и усещане"
+    }
+  ]
+}

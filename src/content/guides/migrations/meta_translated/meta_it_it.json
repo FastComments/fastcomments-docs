@@ -1,0 +1,46 @@
+{
+  "name": "Migrazioni",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Migrazione da altri provider",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Da altri provider"
+    },
+    {
+      "name": "Importazione dei dati",
+      "file": "importing-data.md",
+      "subCat": "Da altri provider"
+    },
+    {
+      "name": "Importazione dei commenti di WordPress",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Da altri provider"
+    },
+    {
+      "name": "Migrazione di utenti e moderatori",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Da altri provider"
+    },
+    {
+      "name": "Migrazione dei domini",
+      "file": "migrating-domains.md",
+      "subCat": "Migrazioni dei dati"
+    },
+    {
+      "name": "Migrazione delle pagine",
+      "file": "migrating-pages.md",
+      "subCat": "Migrazioni dei dati"
+    },
+    {
+      "name": "Copia dei commenti",
+      "file": "copying-comments.md",
+      "subCat": "Migrazioni dei dati"
+    },
+    {
+      "name": "Esportazione dei dati",
+      "file": "exporting-data.md",
+      "subCat": "Verso altri provider"
+    }
+  ]
+}

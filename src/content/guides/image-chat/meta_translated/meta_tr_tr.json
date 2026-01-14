@@ -1,0 +1,41 @@
+{
+  "name": "Resim Sohbeti",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Başlarken",
+      "file": "getting-started.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Örnekler",
+      "file": "examples.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Yapılandırma Seçenekleri",
+      "file": "configuration-options.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Duyarlı Tasarım",
+      "file": "responsive-design.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "customization.md",
+      "subCat": "Özelleştirme"
+    },
+    {
+      "name": "Canlı Senkronizasyon",
+      "file": "live-sync.md",
+      "subCat": "Gelişmiş"
+    },
+    {
+      "name": "API Referansı",
+      "file": "api-reference.md",
+      "subCat": "Gelişmiş"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace 설치",
+  "pageHeader": "Squarespace 사이트에 댓글 추가",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "블로그에 실시간 댓글 추가",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "블로그에 댓글 추가"
+    },
+    {
+      "name": "1단계: 블로그 설정 열기",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "블로그에 댓글 추가"
+    },
+    {
+      "name": "2단계: FastComments.com 코드를 붙여넣기",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "블로그에 댓글 추가"
+    },
+    {
+      "name": "완료",
+      "file": "squarespace-blog-success.md",
+      "subCat": "블로그에 댓글 추가"
+    },
+    {
+      "name": "모든 페이지에 실시간 댓글 추가",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "모든 페이지에 댓글 추가"
+    },
+    {
+      "name": "1단계: 개발자 도구 열기",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "모든 페이지에 댓글 추가"
+    },
+    {
+      "name": "2단계: FastComments.com 코드를 붙여넣기",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "모든 페이지에 댓글 추가"
+    },
+    {
+      "name": "완료",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "모든 페이지에 댓글 추가"
+    },
+    {
+      "name": "특정 페이지에 실시간 댓글 추가",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "특정 페이지에 댓글 추가"
+    },
+    {
+      "name": "1단계: 코드 블록 추가",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "특정 페이지에 댓글 추가"
+    },
+    {
+      "name": "2단계: FastComments.com 코드를 붙여넣기",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "특정 페이지에 댓글 추가"
+    },
+    {
+      "name": "완료",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "특정 페이지에 댓글 추가"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace 다음 단계"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace 다음 단계"
+    }
+  ]
+}

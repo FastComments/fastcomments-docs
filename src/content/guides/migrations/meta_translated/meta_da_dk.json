@@ -1,0 +1,46 @@
+{
+  "name": "Migrationer",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Migrering fra andre udbydere",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Fra andre udbydere"
+    },
+    {
+      "name": "Import af data",
+      "file": "importing-data.md",
+      "subCat": "Fra andre udbydere"
+    },
+    {
+      "name": "Import af WordPress-kommentarer",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Fra andre udbydere"
+    },
+    {
+      "name": "Migrering af brugere og moderatorer",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Fra andre udbydere"
+    },
+    {
+      "name": "Migrering af domæner",
+      "file": "migrating-domains.md",
+      "subCat": "Datamigrationer"
+    },
+    {
+      "name": "Migrering af sider",
+      "file": "migrating-pages.md",
+      "subCat": "Datamigrationer"
+    },
+    {
+      "name": "Kopiering af kommentarer",
+      "file": "copying-comments.md",
+      "subCat": "Datamigrationer"
+    },
+    {
+      "name": "Eksport af data",
+      "file": "exporting-data.md",
+      "subCat": "Til andre udbydere"
+    }
+  ]
+}

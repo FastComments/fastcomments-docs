@@ -1,0 +1,37 @@
+{
+  "name": "Zyro-Installation",
+  "pageHeader": "Live-Kommentare zu Zyro-Websites hinzufügen",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Schritt 1: Code-Widget hinzufügen",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro-Website-Installation"
+    },
+    {
+      "name": "Schritt 2: Code hinzufügen",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro-Website-Installation"
+    },
+    {
+      "name": "Erfolg",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro-Website-Installation"
+    },
+    {
+      "name": "Fehler bei der Website-Domain",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro-Website-Installation"
+    },
+    {
+      "name": "Website-Anpassung",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro-Website-Installation"
+    },
+    {
+      "name": "Schwebender Gefällt-mir-Button",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro Schwebender Gefällt-mir-Button"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Μεταφορές δεδομένων",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Μεταφορά από άλλους παρόχους",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Από άλλους παρόχους"
+    },
+    {
+      "name": "Εισαγωγή δεδομένων",
+      "file": "importing-data.md",
+      "subCat": "Από άλλους παρόχους"
+    },
+    {
+      "name": "Εισαγωγή σχολίων WordPress",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Από άλλους παρόχους"
+    },
+    {
+      "name": "Μεταφορά χρηστών και συντονιστών",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Από άλλους παρόχους"
+    },
+    {
+      "name": "Μεταφορά τομέων",
+      "file": "migrating-domains.md",
+      "subCat": "Μεταφορές δεδομένων"
+    },
+    {
+      "name": "Μεταφορά σελίδων",
+      "file": "migrating-pages.md",
+      "subCat": "Μεταφορές δεδομένων"
+    },
+    {
+      "name": "Αντιγραφή σχολίων",
+      "file": "copying-comments.md",
+      "subCat": "Μεταφορές δεδομένων"
+    },
+    {
+      "name": "Εξαγωγή δεδομένων",
+      "file": "exporting-data.md",
+      "subCat": "Σε άλλους παρόχους"
+    }
+  ]
+}

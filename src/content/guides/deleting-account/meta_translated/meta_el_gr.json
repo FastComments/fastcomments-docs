@@ -1,0 +1,16 @@
+{
+  "name": "Διαγραφή του λογαριασμού σας",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Διαγραφή του λογαριασμού σας",
+      "file": "deleting-your-account.md",
+      "subCat": "Σχολιαστές και Ενοικιαστές"
+    },
+    {
+      "name": "Ακύρωση της συνδρομής σας",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Ενοικιαστές"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Namestitev WooCommerce",
+  "pageHeader": "Dodajte komentiranje v živo na spletna mesta WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev vtičnika za WordPress",
+      "file": "woocommerce.md",
+      "subCat": "Namestitev WooCommerce"
+    }
+  ]
+}

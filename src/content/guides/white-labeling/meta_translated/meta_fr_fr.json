@@ -1,0 +1,36 @@
+{
+  "name": "Marque blanche",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce que la marque blanche ?",
+      "file": "white-labeling-background.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Comment obtenir la marque blanche",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Mise en place de la marque blanche",
+      "file": "white-labeling-process.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Utilisation du tableau de bord",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Utilisation de l'API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Gestion des locataires en marque blanche",
+      "file": "white-labeling-managing.md",
+      "subCat": "Gestion des locataires"
+    }
+  ]
+}

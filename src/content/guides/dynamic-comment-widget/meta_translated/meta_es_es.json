@@ -1,0 +1,11 @@
+{
+  "name": "Agregar e intercambiar hilos de comentarios de forma dinámica",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Agregar e intercambiar hilos de comentarios de forma dinámica",
+      "file": "swap-widgets-example.md",
+      "subCat": "Ejemplos"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Namestitev Moodla",
+  "pageHeader": "Dodajanje komentarjev na Moodle spletna mesta",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Pridobite dostop do strežnika",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Korak 2: Poiščite datoteko pogleda",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Korak 3: Dodajte kodo",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Uspeh za člansko spletno mesto",
+      "file": "moodle-success.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Napake domene na članskem spletnem mestu",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Prilagoditev članskega spletnega mesta",
+      "file": "moodle-customize.md",
+      "subCat": "Namestitev Moodle spletnega mesta"
+    },
+    {
+      "name": "Želite namenski vtičnik?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Namenski vtičnik?"
+    }
+  ]
+}

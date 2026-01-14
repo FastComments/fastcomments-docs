@@ -1,0 +1,11 @@
+{
+  "name": "Aggiungere e scambiare dinamicamente i thread dei commenti",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Aggiungere e scambiare dinamicamente i thread dei commenti",
+      "file": "swap-widgets-example.md",
+      "subCat": "Esempi"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Namestitev Zyro",
+  "pageHeader": "Dodajte komentiranje v živo na Zyro spletne strani",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodajte pripomoček za kodo",
+      "file": "zyro-step-1.md",
+      "subCat": "Namestitev Zyro spletnega mesta"
+    },
+    {
+      "name": "Korak 2: Dodajte kodo",
+      "file": "zyro-step-2.md",
+      "subCat": "Namestitev Zyro spletnega mesta"
+    },
+    {
+      "name": "Uspešno",
+      "file": "zyro-site-success.md",
+      "subCat": "Namestitev Zyro spletnega mesta"
+    },
+    {
+      "name": "Napake domene spletnega mesta",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Namestitev Zyro spletnega mesta"
+    },
+    {
+      "name": "Prilagoditev spletnega mesta",
+      "file": "zyro-site-customize.md",
+      "subCat": "Namestitev Zyro spletnega mesta"
+    },
+    {
+      "name": "Plavajoči gumb za všečke",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro plavajoči všečki"
+    }
+  ]
+}

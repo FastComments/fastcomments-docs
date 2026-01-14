@@ -1,0 +1,31 @@
+{
+  "name": "頁面反應",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "頁面反應",
+      "file": "page-reacts-about.md",
+      "subCat": "頁面反應"
+    },
+    {
+      "name": "安裝 - 原生 JavaScript",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "頁面反應"
+    },
+    {
+      "name": "浮動按讚小工具",
+      "file": "floating-likes-about.md",
+      "subCat": "浮動按讚小工具"
+    },
+    {
+      "name": "安裝 - 原生 JavaScript",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "浮動按讚小工具"
+    },
+    {
+      "name": "安裝 - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "浮動按讚小工具"
+    }
+  ]
+}

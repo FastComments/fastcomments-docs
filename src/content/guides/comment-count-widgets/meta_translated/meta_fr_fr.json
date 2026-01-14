@@ -1,0 +1,21 @@
+{
+  "name": "Widgets de compteur de commentaires",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Installation du widget de compteur de commentaires",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Installation en masse du widget de compteur de commentaires",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "APIs de comptage des commentaires",
+      "file": "comment-count-apis.md",
+      "subCat": "APIs de comptage des commentaires"
+    }
+  ]
+}

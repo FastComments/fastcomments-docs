@@ -1,0 +1,36 @@
+{
+  "name": "White Labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "What Is White Labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "How to Get White Labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "Setting Up White Labeling",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementation"
+    },
+    {
+      "name": "Using the Dashboard",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementation"
+    },
+    {
+      "name": "Using the API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementation"
+    },
+    {
+      "name": "Managing White-Labeled Tenants",
+      "file": "white-labeling-managing.md",
+      "subCat": "Tenant Management"
+    }
+  ]
+}

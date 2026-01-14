@@ -1,0 +1,26 @@
+{
+  "name": "Podržani preglednici",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Podržani preglednici",
+      "file": "supported-browsers.md",
+      "subCat": "Podržani preglednici"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Podržani preglednici"
+    },
+    {
+      "name": "Kako testiramo",
+      "file": "how-we-test.md",
+      "subCat": "Podržani preglednici"
+    },
+    {
+      "name": "Zahtjevi za JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Podržani preglednici"
+    }
+  ]
+}

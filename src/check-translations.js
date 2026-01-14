@@ -164,6 +164,32 @@ function checkUITranslations() {
 }
 
 /**
+ * Check which meta.json files need translation
+ * Note: This only checks for missing files, not content changes.
+ * The translation script uses cache hashing for detecting content changes.
+ * @returns {Array} - Array of {guideId, locale} objects
+ */
+function checkMetaJsonTranslations() {
+    const guides = getGuideDirectories();
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+    const missing = [];
+
+    for (const guideId of guides) {
+        const metaPath = path.join(GUIDES_DIR, guideId, 'meta.json');
+        if (!fs.existsSync(metaPath)) continue;
+
+        for (const locale of nonDefaultLocales) {
+            const localeMetaPath = path.join(GUIDES_DIR, guideId, 'meta_translated', `meta_${locale}.json`);
+            if (!fs.existsSync(localeMetaPath)) {
+                missing.push({ guideId, locale });
+            }
+        }
+    }
+
+    return missing;
+}
+
+/**
  * Get UI translations that need to be translated
  * @returns {Object} - { locale: [keys] }
  */
@@ -468,6 +494,39 @@ function main() {
         console.log(`\nTotal: ${totalMissingKeys} missing UI translation key(s) across ${uiLocalesNeedingTranslation.length} locale(s)`);
     }
 
+    // Check meta.json translations
+    const missingMetaJsonTranslations = checkMetaJsonTranslations();
+
+    if (missingMetaJsonTranslations.length > 0) {
+        hasErrors = true;
+        console.log('\n--- Meta.json Translations ---\n');
+        console.log('Missing meta.json translations:\n');
+
+        // Group by locale for summary
+        const byLocale = {};
+        for (const { guideId, locale } of missingMetaJsonTranslations) {
+            if (!byLocale[locale]) {
+                byLocale[locale] = [];
+            }
+            byLocale[locale].push(guideId);
+        }
+
+        let totalMissing = 0;
+        for (const locale of Object.keys(byLocale).sort()) {
+            const guides = byLocale[locale];
+            const localeInfo = locales[locale];
+            const localeName = localeInfo ? localeInfo.nativeName : locale;
+            console.log(`  ${locale} (${localeName}): ${guides.length} guide(s)`);
+            if (verbose) {
+                for (const guideId of guides.sort()) {
+                    console.log(`    - ${guideId}`);
+                }
+            }
+            totalMissing += guides.length;
+        }
+        console.log(`\nTotal: ${totalMissing} missing meta.json translation(s) across ${Object.keys(byLocale).length} locale(s)`);
+    }
+
     if (!hasErrors) {
         console.log('All content is translated and inline-code counts match.');
         process.exit(0);
@@ -481,6 +540,7 @@ module.exports = {
     getMissingTranslations,
     getMissingUITranslations,
     checkUITranslations,
+    checkMetaJsonTranslations,
     getSourceContent,
     saveTranslation,
     checkTranslations,

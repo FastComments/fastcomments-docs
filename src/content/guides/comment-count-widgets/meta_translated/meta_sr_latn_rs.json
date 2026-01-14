@@ -1,0 +1,21 @@
+{
+  "name": "Vidžeti za broj komentara",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Instalacija vidžeta za broj komentara",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "Masovna instalacija vidžeta za broj komentara",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "API-ji za broj komentara",
+      "file": "comment-count-apis.md",
+      "subCat": "API-ji za broj komentara"
+    }
+  ]
+}

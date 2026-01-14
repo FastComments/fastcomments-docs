@@ -1,0 +1,47 @@
+{
+  "name": "BigCommerce-installation",
+  "pageHeader": "Tilføj kommentarer til BigCommerce-sider",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Forbered dit tema",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Trin 2: Rediger den korrekte skabelon",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Trin 3: Tilføj widget-kode",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Trin 4: Aktivér det nye tema",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Succes",
+      "file": "bigcommerce-success.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "bigcommerce-customize.md",
+      "subCat": "BigCommerce-installation"
+    },
+    {
+      "name": "Ekstra: Kodeudsnit til sidebyggeren",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Brug af sidebyggeren"
+    }
+  ]
+}

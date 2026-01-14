@@ -1,0 +1,21 @@
+{
+  "name": "评论计数小部件",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "安装评论计数小部件",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "安装"
+    },
+    {
+      "name": "批量安装评论计数小部件",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "安装"
+    },
+    {
+      "name": "评论计数接口",
+      "file": "comment-count-apis.md",
+      "subCat": "评论计数接口"
+    }
+  ]
+}

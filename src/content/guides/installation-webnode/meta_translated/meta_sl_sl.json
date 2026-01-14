@@ -1,0 +1,42 @@
+{
+  "name": "Namestitev Webnode",
+  "pageHeader": "Dodajte komentarje na strani Webnode",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Uredite svojo stran",
+      "file": "webnode-step-1.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Korak 2: Dodajte razdelek in HTML blok",
+      "file": "webnode-step-2.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Korak 3: Kopirajte in prilepite del kode",
+      "file": "webnode-step-3.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Korak 4: Objavite",
+      "file": "webnode-step-4.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Uspeh",
+      "file": "webnode-success.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Napake pri domeni",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "webnode-customize.md",
+      "subCat": "Namestitev Webnode"
+    }
+  ]
+}

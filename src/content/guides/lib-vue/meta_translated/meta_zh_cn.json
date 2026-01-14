@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 库",
+  "pageHeader": "FastComments Vue 2 库",
+  "itemsOrdered": [
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "用法",
+      "file": "usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "更新当前页面（单页应用示例）",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "生产环境",
+      "file": "in-production-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Instalacija Ghost-a",
+  "pageHeader": "Dodajte uživo komentarisanje dostupno samo članovima na Ghost sajtovima",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Preuzmite svoju temu",
+      "file": "ghost-step-1.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 2: Instalirajte svoju temu lokalno",
+      "file": "ghost-step-2.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 3: Dajte ime novoj temi",
+      "file": "ghost-step-3.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 4: Otvorite šablon objave",
+      "file": "ghost-step-4.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 5: Dodajte FastComments kod",
+      "file": "ghost-step-5.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 6: Izvezite svoju temu",
+      "file": "ghost-step-6.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Korak 7: Ot premite temu na Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Uspešno!",
+      "file": "ghost-success.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Greške sa domenom",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Instalacija Ghost-a"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "ghost-customize.md",
+      "subCat": "Instalacija Ghost-a"
+    }
+  ]
+}

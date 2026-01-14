@@ -1,0 +1,36 @@
+{
+  "name": "אימות תגובות והצבעות",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "רקע",
+      "file": "background.md",
+      "subCat": "היסודות"
+    },
+    {
+      "name": "תגובות לא מאומתות",
+      "file": "unverified-comments.md",
+      "subCat": "היסודות"
+    },
+    {
+      "name": "הצבעות לא מאומתות",
+      "file": "unverified-votes.md",
+      "subCat": "היסודות"
+    },
+    {
+      "name": "אימיילי אימות",
+      "file": "verification-emails.md",
+      "subCat": "אימות"
+    },
+    {
+      "name": "סשנים",
+      "file": "verification-sessions.md",
+      "subCat": "אימות"
+    },
+    {
+      "name": "תגובות בזמן אמת",
+      "file": "verification-live-commenting.md",
+      "subCat": "אימות"
+    }
+  ]
+}

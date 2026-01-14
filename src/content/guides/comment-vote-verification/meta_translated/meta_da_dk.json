@@ -1,0 +1,36 @@
+{
+  "name": "Verifikation af kommentarer og stemmer",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Baggrund",
+      "file": "background.md",
+      "subCat": "Grundlæggende"
+    },
+    {
+      "name": "Uverificerede kommentarer",
+      "file": "unverified-comments.md",
+      "subCat": "Grundlæggende"
+    },
+    {
+      "name": "Uverificerede stemmer",
+      "file": "unverified-votes.md",
+      "subCat": "Grundlæggende"
+    },
+    {
+      "name": "Verifikations-e-mails",
+      "file": "verification-emails.md",
+      "subCat": "Verifikation"
+    },
+    {
+      "name": "Sessioner",
+      "file": "verification-sessions.md",
+      "subCat": "Verifikation"
+    },
+    {
+      "name": "Kommentering i realtid",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verifikation"
+    }
+  ]
+}

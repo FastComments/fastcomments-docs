@@ -1,0 +1,46 @@
+{
+  "name": "遷移",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "從其他服務提供者遷移",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "從其他服務提供者"
+    },
+    {
+      "name": "匯入資料",
+      "file": "importing-data.md",
+      "subCat": "從其他服務提供者"
+    },
+    {
+      "name": "匯入 WordPress 評論",
+      "file": "importing-data-wordpress.md",
+      "subCat": "從其他服務提供者"
+    },
+    {
+      "name": "遷移使用者與版主",
+      "file": "migrating-users-moderators.md",
+      "subCat": "從其他服務提供者"
+    },
+    {
+      "name": "遷移網域",
+      "file": "migrating-domains.md",
+      "subCat": "資料遷移"
+    },
+    {
+      "name": "遷移頁面",
+      "file": "migrating-pages.md",
+      "subCat": "資料遷移"
+    },
+    {
+      "name": "複製評論",
+      "file": "copying-comments.md",
+      "subCat": "資料遷移"
+    },
+    {
+      "name": "匯出資料",
+      "file": "exporting-data.md",
+      "subCat": "至其他服務提供者"
+    }
+  ]
+}

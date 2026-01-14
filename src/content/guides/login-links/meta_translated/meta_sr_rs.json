@@ -1,0 +1,26 @@
+{
+  "name": "Линкови за пријаву",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су линкови за пријаву?",
+      "file": "login-links-what-are.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Предности линкова за пријаву у односу на лозинке",
+      "file": "login-links-benefits.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како обезбеђујемо безбедност линкова за пријаву",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Безбедност"
+    },
+    {
+      "name": "Коме се шаљу линкови за пријаву?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Коришћење"
+    }
+  ]
+}

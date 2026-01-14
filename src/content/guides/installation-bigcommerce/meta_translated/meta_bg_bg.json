@@ -1,0 +1,47 @@
+{
+  "name": "Инсталиране на BigCommerce",
+  "pageHeader": "Добавяне на коментари в сайтове на BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Подгответе темата си",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Стъпка 2: Редактирайте правилния шаблон",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Стъпка 3: Добавете кода на уиджета",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Стъпка 4: Активирайте новата тема",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Успех",
+      "file": "bigcommerce-success.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Инсталиране на BigCommerce"
+    },
+    {
+      "name": "Допълнително: Кодов фрагмент за конструктора на страници",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Използване на конструктора на страници"
+    }
+  ]
+}

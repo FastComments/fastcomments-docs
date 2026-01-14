@@ -1,0 +1,42 @@
+{
+  "name": "התקנת Shopify",
+  "pageHeader": "הוספת תגובות לאתרי Shopify",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: ייבא תגובות קיימות",
+      "file": "shopify-step-1.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "שלב 2: השבת את מערכת התגובות המוגדרת כברירת מחדל",
+      "file": "shopify-step-2.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "שלב 3: פתח את תבנית הנושא של הבלוג",
+      "file": "shopify-step-3.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "שלב 4: הוסף את קוד FastComments.com",
+      "file": "shopify-step-4.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "הצלחה",
+      "file": "shopify-success.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "shopify-domain-errors.md",
+      "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "shopify-customize.md",
+      "subCat": "התקנת Shopify"
+    }
+  ]
+}

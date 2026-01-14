@@ -1,0 +1,21 @@
+{
+  "name": "RSS feedovi",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Pregled",
+      "file": "overview.md",
+      "subCat": "Početak"
+    },
+    {
+      "name": "Podešavanje vašeg RSS feeda",
+      "file": "setup.md",
+      "subCat": "Početak"
+    },
+    {
+      "name": "Bezbednosna razmatranja",
+      "file": "security.md",
+      "subCat": "Implementacija"
+    }
+  ]
+}

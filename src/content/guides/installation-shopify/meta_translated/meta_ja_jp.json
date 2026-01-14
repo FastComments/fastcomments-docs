@@ -1,0 +1,42 @@
+{
+  "name": "Shopify のインストール",
+  "pageHeader": "Shopify サイトにコメントを追加する",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: 既存のコメントをインポート",
+      "file": "shopify-step-1.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "ステップ 2: デフォルトのコメント機能を無効化",
+      "file": "shopify-step-2.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "ステップ 3: ブログのテーマテンプレートを開く",
+      "file": "shopify-step-3.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "ステップ 4: FastComments.com のコードを追加",
+      "file": "shopify-step-4.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "shopify-success.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify のインストール"
+    }
+  ]
+}

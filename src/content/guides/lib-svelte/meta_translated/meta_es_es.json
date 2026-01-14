@@ -1,0 +1,24 @@
+{
+  "name": "Biblioteca Svelte",
+  "pageHeader": "Biblioteca Svelte de FastComments",
+  "itemsOrdered": [
+    {
+      "name": "Widgets",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Desarrollo",
+      "file": "developing-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Compilación",
+      "file": "building-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    }
+  ]
+}

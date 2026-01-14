@@ -1,0 +1,26 @@
+{
+  "name": "알림",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "FastComments는 언제 알림을 전송하나요?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "알림 유형",
+      "file": "notification-types.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "수신 거부",
+      "file": "opting-out-notifications.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "SSO를 위한 알림 구성",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "구성"
+    }
+  ]
+}

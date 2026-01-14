@@ -1,0 +1,36 @@
+{
+  "name": "Λευκή Ετικέτα",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι η Λευκή Ετικέτα",
+      "file": "white-labeling-background.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς να αποκτήσετε Λευκή Ετικέτα",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Πρώτα βήματα"
+    },
+    {
+      "name": "Ρύθμιση της Λευκής Ετικέτας",
+      "file": "white-labeling-process.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Χρήση του Πίνακα Ελέγχου",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Χρήση του API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Διαχείριση πελατών με Λευκή Ετικέτα",
+      "file": "white-labeling-managing.md",
+      "subCat": "Διαχείριση πελατών"
+    }
+  ]
+}

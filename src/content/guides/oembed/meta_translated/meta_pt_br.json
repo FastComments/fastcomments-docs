@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "O que é oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Criando uma conversa com oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Uso"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Lokalnie (On-Prem)",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Co zawiera",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Od czego zacząć",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Pierwsze kroki"
+    },
+    {
+      "name": "Instancje",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Wdrażanie"
+    },
+    {
+      "name": "Konfiguracja",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Wdrażanie"
+    },
+    {
+      "name": "Przestoje bazy danych i tryb konserwacji",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architektura"
+    },
+    {
+      "name": "Blokady",
+      "file": "on-prem-locks.md",
+      "subCat": "Architektura"
+    },
+    {
+      "name": "Kod widżetu",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Instalacja i integracja"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Instalacja i integracja"
+    },
+    {
+      "name": "Wiele domen",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Instalacja i integracja"
+    },
+    {
+      "name": "Bezpieczeństwo",
+      "file": "on-prem-security.md",
+      "subCat": "Wskazówki bezpieczeństwa"
+    }
+  ]
+}

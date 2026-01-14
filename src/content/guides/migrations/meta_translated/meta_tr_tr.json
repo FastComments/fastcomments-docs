@@ -1,0 +1,46 @@
+{
+  "name": "Taşımalar",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Diğer Sağlayıcılardan Taşınma",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Diğer Sağlayıcılardan"
+    },
+    {
+      "name": "Veri İçe Aktarma",
+      "file": "importing-data.md",
+      "subCat": "Diğer Sağlayıcılardan"
+    },
+    {
+      "name": "WordPress Yorumlarını İçe Aktarma",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Diğer Sağlayıcılardan"
+    },
+    {
+      "name": "Kullanıcı ve Moderatör Taşınması",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Diğer Sağlayıcılardan"
+    },
+    {
+      "name": "Alan Adlarının Taşınması",
+      "file": "migrating-domains.md",
+      "subCat": "Veri Taşımaları"
+    },
+    {
+      "name": "Sayfaların Taşınması",
+      "file": "migrating-pages.md",
+      "subCat": "Veri Taşımaları"
+    },
+    {
+      "name": "Yorumları Kopyalama",
+      "file": "copying-comments.md",
+      "subCat": "Veri Taşımaları"
+    },
+    {
+      "name": "Veri Dışa Aktarma",
+      "file": "exporting-data.md",
+      "subCat": "Diğer Sağlayıcılara"
+    }
+  ]
+}

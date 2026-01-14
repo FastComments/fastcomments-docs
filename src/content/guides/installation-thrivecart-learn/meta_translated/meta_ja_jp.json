@@ -1,0 +1,32 @@
+{
+  "name": "ThriveCart Learn+ のインストール",
+  "pageHeader": "ThriveCart Learn+ のコースにコメントを追加する",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: コースを準備する",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "ThriveCart Learn+ のインストール"
+    },
+    {
+      "name": "ステップ 2: カスタムコードを追加する",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "ThriveCart Learn+ のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "ThriveCart Learn+ のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "ThriveCart Learn+ のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "ThriveCart Learn+ のインストール"
+    }
+  ]
+}

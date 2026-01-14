@@ -1,0 +1,42 @@
+{
+  "name": "Webnode Kurulumu",
+  "pageHeader": "Webnode Sitelerine Yorum Ekle",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Sayfanızı Düzenleyin",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Adım 2: Bölüm ve HTML Bloğu Ekleyin",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Adım 3: Kod Parçacığını Kopyalayıp Yapıştırın",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Adım 4: Yayınlayın",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "webnode-success.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode Kurulumu"
+    }
+  ]
+}

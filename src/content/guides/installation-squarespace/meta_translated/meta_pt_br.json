@@ -1,0 +1,77 @@
+{
+  "name": "Instalação do Squarespace",
+  "pageHeader": "Adicionar comentários em sites Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adicionando comentários em tempo real ao seu blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Adicionar comentários ao seu blog"
+    },
+    {
+      "name": "Passo 1: Abra as configurações do blog",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Adicionar comentários ao seu blog"
+    },
+    {
+      "name": "Passo 2: Cole o código do FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Adicionar comentários ao seu blog"
+    },
+    {
+      "name": "Concluído",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Adicionar comentários ao seu blog"
+    },
+    {
+      "name": "Adicionar comentários em tempo real a todas as páginas",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Adicionar comentários a todas as páginas"
+    },
+    {
+      "name": "Passo 1: Abra as ferramentas de desenvolvedor",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Adicionar comentários a todas as páginas"
+    },
+    {
+      "name": "Passo 2: Cole o código do FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Adicionar comentários a todas as páginas"
+    },
+    {
+      "name": "Concluído",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Adicionar comentários a todas as páginas"
+    },
+    {
+      "name": "Adicionar comentários em tempo real a uma página específica",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Adicionar comentários a uma página específica"
+    },
+    {
+      "name": "Passo 1: Adicione um bloco de código",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Adicionar comentários a uma página específica"
+    },
+    {
+      "name": "Passo 2: Cole o código do FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Adicionar comentários a uma página específica"
+    },
+    {
+      "name": "Concluído",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Adicionar comentários a uma página específica"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Próximos passos no Squarespace"
+    },
+    {
+      "name": "Personalização",
+      "file": "squarespace-customize.md",
+      "subCat": "Próximos passos no Squarespace"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Odznaki",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Podstawy",
+      "file": "badge-basics.md",
+      "subCat": "Podstawy"
+    },
+    {
+      "name": "Postępy",
+      "file": "badge-progression.md",
+      "subCat": "Podstawy"
+    },
+    {
+      "name": "Odznaki ręczne",
+      "file": "badge-type-manual.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Liczba komentarzy",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Głosy za",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Odpowiedzi",
+      "file": "badge-type-replies.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Przypięte komentarze",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Weteran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Nocna sowa",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Szybki czas odpowiedzi",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Odpowiedź na konkretną stronę",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Rodzaje odznak"
+    },
+    {
+      "name": "Wprowadzenie do odznak moderatorów",
+      "file": "moderator-badges.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Usunięte komentarze",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Zatwierdzone komentarze",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Komentarze niezatwierdzone",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Przejrzane komentarze",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Komentarze oznaczone jako spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    },
+    {
+      "name": "Komentarze oznaczone jako nie spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Rodzaje odznak moderatorów"
+    }
+  ]
+}

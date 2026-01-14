@@ -1,0 +1,51 @@
+{
+  "name": "Çoklu Siteler",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "İlk Kurulum",
+      "file": "add-domains-to-account.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Sınırlar ve Fiyatlandırma",
+      "file": "domain-limits.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Gönderen Adı, E-posta ve Logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Site Başına Özelleştirme"
+    },
+    {
+      "name": "Alan Adı - Gönderen Adı/E-posta Çalışmıyor",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Site Başına Özelleştirme"
+    },
+    {
+      "name": "Ortam Başına Tenant",
+      "file": "tenant-per-environment.md",
+      "subCat": "Site Başına Özelleştirme"
+    },
+    {
+      "name": "Özelleştirmeler",
+      "file": "customizations.md",
+      "subCat": "Site Başına Özelleştirme"
+    },
+    {
+      "name": "Yorum Moderasyonu",
+      "file": "moderation.md",
+      "subCat": "Veri ve Arama"
+    },
+    {
+      "name": "Alan Adları Arasında Yorum Paylaşımı",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Veri ve Arama"
+    },
+    {
+      "name": "WordPress ile",
+      "file": "wordpress.md",
+      "subCat": "Entegrasyon Notları"
+    }
+  ]
+}

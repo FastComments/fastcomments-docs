@@ -1,0 +1,406 @@
+{
+  "name": "맞춤 설정 및 구성",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "계정 식별",
+      "file": "tenant-id.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "댓글이 페이지 및 기사에 연결되는 방법",
+      "file": "url-id.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "다른 페이지에서 동일한 댓글 표시하기",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "기본"
+    },
+    {
+      "name": "맞춤 스타일",
+      "file": "custom-css.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "맞춤 글꼴",
+      "file": "custom-fonts.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "브랜딩 제거",
+      "file": "remove-branding.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "다크 모드(어두운 배경) 지원",
+      "file": "has-dark-background.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "다크 모드 전환",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "텍스트 재정의",
+      "file": "translations.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "기본 아바타 변경",
+      "file": "default-avatar-src.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "아바타 비활성화",
+      "file": "hide-avatars.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "모든 기본 스타일 비활성화",
+      "file": "no-styles.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "댓글에서 페이지로 링크하기",
+      "file": "url.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "답글 기본 접기",
+      "file": "collapse-replies.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "WYSIWYG 활성화",
+      "file": "enable-wysiwyg.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "툴바 비활성화",
+      "file": "disable-toolbar.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "차단 기능 비활성화",
+      "file": "disable-blocking.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "렌더링할 페이지 결정",
+      "file": "starting-page.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "페이지를 새로 고치지 않고 댓글 스레드 전환하기",
+      "file": "switching-comment-threads.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "절대 날짜(사람 친화적 타임스탬프 비활성화)",
+      "file": "absolute-dates.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "절대 및 상대 날짜 모두 표시",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "헤더 텍스트 추가",
+      "file": "header-html.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "링크를 텍스트로 렌더링",
+      "file": "render-links-as-text.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "버튼으로 댓글 전환",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "댓글 수 텍스트 맞춤 설정",
+      "file": "comment-count-format.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "이미지 리디렉션 비활성화",
+      "file": "disable-image-redirect.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "자동 해시태그 생성 비활성화",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "알림 벨 비활성화",
+      "file": "disable-notification-bell.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "프로필 비활성화",
+      "file": "disable-profiles.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "성공 메시지 비활성화",
+      "file": "disable-success-message.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "GIF의 콘텐츠 등급 변경",
+      "file": "gif-rating.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "이미지 콘텐츠 검토",
+      "file": "image-content-moderation.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "투표 스타일 변경",
+      "file": "vote-style.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "삭제 비활성화",
+      "file": "disable-deleting.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "편집 비활성화",
+      "file": "disable-editing.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "새 댓글 강조",
+      "file": "highlighting-new-comments.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "페이지 크기",
+      "file": "page-size.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "이메일 템플릿",
+      "file": "email-templates.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "사용자 이름 형식",
+      "file": "user-name-formats.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "이미지 업로드 비활성화",
+      "file": "no-image-uploads.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "검색 상자 활성화",
+      "file": "enable-search.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "스포일러 활성화",
+      "file": "enable-spoilers.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "댓글 조회수 활성화",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "모양 및 느낌"
+    },
+    {
+      "name": "실시간 댓글 즉시 표시",
+      "file": "show-live-right-away.md",
+      "subCat": "실시간 댓글"
+    },
+    {
+      "name": "실시간 댓글 비활성화",
+      "file": "disable-live-commenting.md",
+      "subCat": "실시간 댓글"
+    },
+    {
+      "name": "새 실시간 댓글을 하단에 표시",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "실시간 댓글"
+    },
+    {
+      "name": "무한 스크롤 활성화",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "페이지 매김 및 정렬"
+    },
+    {
+      "name": "기본 정렬 방향 변경",
+      "file": "default-sort-direction.md",
+      "subCat": "페이지 매김 및 정렬"
+    },
+    {
+      "name": "모든 댓글을 한 번에 렌더링하기 - 페이지 매김 비활성화",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "페이지 매김 및 정렬"
+    },
+    {
+      "name": "답글 입력 상자를 댓글 뒤로 이동",
+      "file": "input-after-comments.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "댓글 길이 제한",
+      "file": "max-comment-character-length.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "다중 행 댓글 비활성화",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "사용자별 댓글 수 제한",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "새 최상위 댓글 방지",
+      "file": "no-new-root-comments.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "답글 최대 깊이",
+      "file": "max-reply-depth.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "싱글 사인온(SSO) 개요",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "맞춤 통합 - 보안 싱글 사인온(SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "맞춤 통합 - 간단한 싱글 사인온(SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "맞춤 통합 - Disqus SSO에서 마이그레이션",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "맞춤 통합 - Commento SSO에서 마이그레이션",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "싱글 사인온으로 댓글 스레드 보호",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "익명 댓글 허용",
+      "file": "allow-anon.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "익명 댓글 만료 방지",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "이메일 입력 비활성화",
+      "file": "disable-email-inputs.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "미확인 레이블 비활성화",
+      "file": "disable-unverified-label.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "익명 투표 허용",
+      "file": "allow-anon-votes.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "기본 사용자 이름 설정",
+      "file": "default-username.md",
+      "subCat": "익명 댓글"
+    },
+    {
+      "name": "콜백",
+      "file": "callbacks.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "사용자 로케일 수동 지정",
+      "file": "locale.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "허용 언어 제한",
+      "file": "allowed-languages.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "페이지 제목",
+      "file": "page-title.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "새 답글 방지 및 투표 비활성화",
+      "file": "readonly.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "링크 도메인 제한",
+      "file": "restricting-link-domains.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "댓글 수 및 중첩된 모든 답글 포함 계산",
+      "file": "count-all.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "댓글 작성자 링크 활성화",
+      "file": "enable-commenter-links.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "모더레이션 그룹",
+      "file": "moderation-group-ids.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "그룹 멘션 ID",
+      "file": "mention-group-ids.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "타사 쿠키 우회",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "답글이 있는 댓글 삭제",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "상단 바에 배지 표시",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "모양 및 느낌"
+    }
+  ]
+}

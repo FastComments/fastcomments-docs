@@ -1,0 +1,56 @@
+{
+  "name": "Bedømmelser og anmeldelser",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Funktioner",
+      "file": "features.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Hvem får det",
+      "file": "who-gets-it.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Prissætning",
+      "file": "pricing.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Vælg en visningstype",
+      "file": "choose-display-type.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Definer dine spørgsmål",
+      "file": "define-your-questions.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Hvordan konfigurationen fungerer",
+      "file": "how-configuration-works.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Oversigtswidget",
+      "file": "summary-widget-installation.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Visning af bedømmelser",
+      "file": "viewing-ratings.md",
+      "subCat": "Rapportering"
+    },
+    {
+      "name": "Integration via API'en",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Rapportering"
+    },
+    {
+      "name": "Oversigtsdemo",
+      "file": "summary-demo.md",
+      "subCat": "Oversigtsdemo"
+    }
+  ]
+}

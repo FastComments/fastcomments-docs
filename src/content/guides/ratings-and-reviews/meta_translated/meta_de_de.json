@@ -1,0 +1,56 @@
+{
+  "name": "Bewertungen und Rezensionen",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Funktionen",
+      "file": "features.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wer erhält es",
+      "file": "who-gets-it.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Preisgestaltung",
+      "file": "pricing.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Anzeigetyp auswählen",
+      "file": "choose-display-type.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Fragen definieren",
+      "file": "define-your-questions.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Wie die Konfiguration funktioniert",
+      "file": "how-configuration-works.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Das Zusammenfassungs-Widget",
+      "file": "summary-widget-installation.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Bewertungen anzeigen",
+      "file": "viewing-ratings.md",
+      "subCat": "Berichterstattung"
+    },
+    {
+      "name": "Integration über die API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Berichterstattung"
+    },
+    {
+      "name": "Zusammenfassungsdemo",
+      "file": "summary-demo.md",
+      "subCat": "Zusammenfassungsdemo"
+    }
+  ]
+}

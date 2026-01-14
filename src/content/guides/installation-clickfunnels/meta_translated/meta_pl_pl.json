@@ -1,0 +1,37 @@
+{
+  "name": "Instalacja ClickFunnels",
+  "pageHeader": "Dodaj czat na żywo do kursów ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Krok pierwszy: Znajdź szablon",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Instalacja ClickFunnels"
+    },
+    {
+      "name": "Krok drugi: Dodaj kod",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Instalacja ClickFunnels"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Instalacja ClickFunnels"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Instalacja ClickFunnels"
+    },
+    {
+      "name": "Dodatkowo: fragment kodu do komentarzy na żywo",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Fragment kodu do komentowania na żywo"
+    },
+    {
+      "name": "Dodatkowo: automatyczne odtwarzanie komentarzy",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Automatyczne odtwarzanie komentarzy"
+    }
+  ]
+}

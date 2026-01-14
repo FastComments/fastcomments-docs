@@ -1,0 +1,32 @@
+{
+  "name": "ThriveCart Learn+ 安裝",
+  "pageHeader": "在 ThriveCart Learn+ 課程新增評論",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：準備課程",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "ThriveCart Learn+ 安裝"
+    },
+    {
+      "name": "步驟 2：加入自訂程式碼",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "ThriveCart Learn+ 安裝"
+    },
+    {
+      "name": "完成",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "ThriveCart Learn+ 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "ThriveCart Learn+ 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "ThriveCart Learn+ 安裝"
+    }
+  ]
+}

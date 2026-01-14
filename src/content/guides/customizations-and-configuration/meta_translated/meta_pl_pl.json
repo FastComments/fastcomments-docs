@@ -1,0 +1,406 @@
+{
+  "name": "Dostosowania i konfiguracja",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Identyfikacja konta",
+      "file": "tenant-id.md",
+      "subCat": "Podstawy"
+    },
+    {
+      "name": "Powiązanie komentarzy ze stronami i artykułami",
+      "file": "url-id.md",
+      "subCat": "Podstawy"
+    },
+    {
+      "name": "Wyświetlanie tych samych komentarzy na różnych stronach",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "Podstawy"
+    },
+    {
+      "name": "Własne style",
+      "file": "custom-css.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Własne czcionki",
+      "file": "custom-fonts.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Usuwanie brandingu",
+      "file": "remove-branding.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Obsługa ciemnego tła (tryb ciemny)",
+      "file": "has-dark-background.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Przełączanie trybu ciemnego",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Nadpisywanie tekstu",
+      "file": "translations.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Zmiana domyślnego awatara",
+      "file": "default-avatar-src.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłączanie awatarów",
+      "file": "hide-avatars.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłączanie wszystkich domyślnych stylów",
+      "file": "no-styles.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Łączenie komentarzy ze stronami",
+      "file": "url.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Domyślne zwijanie odpowiedzi",
+      "file": "collapse-replies.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Włączenie WYSIWYG",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłączanie paska narzędzi",
+      "file": "disable-toolbar.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłączanie blokowania",
+      "file": "disable-blocking.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Określanie, którą stronę wyświetlić",
+      "file": "starting-page.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Przełączanie wątków komentarzy bez przeładowania strony",
+      "file": "switching-comment-threads.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Daty bezwzględne (wyłącz czytelne znaczniki czasu)",
+      "file": "absolute-dates.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyświetlanie dat absolutnych i względnych",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Dodawanie tekstu w nagłówku",
+      "file": "header-html.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyświetlanie linków jako tekst",
+      "file": "render-links-as-text.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Przełączanie komentarzy za pomocą przycisku",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Dostosowywanie tekstu liczby komentarzy",
+      "file": "comment-count-format.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz przekierowanie obrazów",
+      "file": "disable-image-redirect.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz automatyczne tworzenie hashtagów",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz dzwonek powiadomień",
+      "file": "disable-notification-bell.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz profile",
+      "file": "disable-profiles.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz komunikat o powodzeniu",
+      "file": "disable-success-message.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Zmień ocenę zawartości GIF-ów",
+      "file": "gif-rating.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Moderacja treści obrazów",
+      "file": "image-content-moderation.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Zmień styl głosowania",
+      "file": "vote-style.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz usuwanie",
+      "file": "disable-deleting.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłącz edycję",
+      "file": "disable-editing.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyróżnianie nowych komentarzy",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Rozmiary stron",
+      "file": "page-size.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Szablony e-mail",
+      "file": "email-templates.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Formaty nazw użytkowników",
+      "file": "user-name-formats.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyłączanie przesyłania obrazów",
+      "file": "no-image-uploads.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Włącz pole wyszukiwania",
+      "file": "enable-search.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Włącz spoilery",
+      "file": "enable-spoilers.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Włącz liczniki wyświetleń komentarzy",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Wygląd"
+    },
+    {
+      "name": "Wyświetlaj komentarze na żywo od razu",
+      "file": "show-live-right-away.md",
+      "subCat": "Komentowanie na żywo"
+    },
+    {
+      "name": "Wyłączanie komentowania na żywo",
+      "file": "disable-live-commenting.md",
+      "subCat": "Komentowanie na żywo"
+    },
+    {
+      "name": "Nowe komentarze na żywo na dół",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Komentowanie na żywo"
+    },
+    {
+      "name": "Włączanie nieskończonego przewijania",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Paginacja i sortowanie"
+    },
+    {
+      "name": "Zmiana domyślnego kierunku sortowania",
+      "file": "default-sort-direction.md",
+      "subCat": "Paginacja i sortowanie"
+    },
+    {
+      "name": "Wyświetlanie wszystkich komentarzy naraz — wyłącz paginację",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Paginacja i sortowanie"
+    },
+    {
+      "name": "Przeniesienie pola odpowiedzi za komentarze",
+      "file": "input-after-comments.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Ograniczenie długości komentarza",
+      "file": "max-comment-character-length.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Wyłącz wielolinijkowe komentowanie",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Ogranicz liczbę komentarzy na użytkownika",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Zablokuj dodawanie nowych komentarzy najwyższego poziomu",
+      "file": "no-new-root-comments.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Maksymalna głębokość odpowiedzi",
+      "file": "max-reply-depth.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Przegląd Single Sign-On (SSO)",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Integracje niestandardowe — bezpieczne Single Sign-On (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Integracje niestandardowe — proste Single Sign-On (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Integracje niestandardowe — migracja z Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Integracje niestandardowe — migracja z Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Ochrona wątków komentarzy za pomocą Single Sign-On (SSO)",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Zezwalaj na anonimowe komentowanie",
+      "file": "allow-anon.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Zapobieganie wygaśnięciu anonimowych komentarzy",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Wyłącz pola e-mail",
+      "file": "disable-email-inputs.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Wyłącz etykietę „Niezweryfikowany”",
+      "file": "disable-unverified-label.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Zezwalaj na anonimowe głosowanie",
+      "file": "allow-anon-votes.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Ustawianie domyślnej nazwy użytkownika",
+      "file": "default-username.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Wywołania zwrotne",
+      "file": "callbacks.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Ręczne określanie lokalizacji użytkownika",
+      "file": "locale.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Ograniczanie dozwolonych języków",
+      "file": "allowed-languages.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Tytuły stron",
+      "file": "page-title.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Zablokuj nowe odpowiedzi i wyłącz głosowanie",
+      "file": "readonly.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Ograniczanie domen linków",
+      "file": "restricting-link-domains.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Liczba komentarzy i zliczanie wszystkich zagnieżdżonych odpowiedzi",
+      "file": "count-all.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Włączanie linków do autorów komentarzy",
+      "file": "enable-commenter-links.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Grupy moderacji",
+      "file": "moderation-group-ids.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Identyfikatory grup do wzmiankowania",
+      "file": "mention-group-ids.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Omijanie plików cookie stron trzecich",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Usuwanie komentarzy z odpowiedziami",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Różne"
+    },
+    {
+      "name": "Wyświetl odznaki na górnym pasku",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Wygląd"
+    }
+  ]
+}

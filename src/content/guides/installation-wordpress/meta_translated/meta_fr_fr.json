@@ -1,0 +1,72 @@
+{
+  "name": "Installation de WordPress",
+  "pageHeader": "Ajouter des commentaires en direct aux sites WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Démarrage rapide",
+      "file": "wordpress-quick-start.md",
+      "subCat": "En bref"
+    },
+    {
+      "name": "Installation",
+      "file": "wordpress-installation.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "wordpress-customize.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Modération",
+      "file": "wordpress-moderation.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Utilisateurs, modérateurs et administrateurs",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Sites réservés aux membres (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Notifications",
+      "file": "wordpress-notifications.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Thèmes personnalisés",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Synchronisation vers WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Nombre de commentaires",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Communication entre WordPress et le serveur FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Erreurs de domaine",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Installation de WordPress"
+    },
+    {
+      "name": "Désactivation vs désinstallation du plugin",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Suppression du plugin"
+    }
+  ]
+}

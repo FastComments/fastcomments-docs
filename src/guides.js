@@ -166,7 +166,12 @@ async function buildGuideItemForMeta(guide, metaItem, locale = defaultLocale) {
  */
 async function buildGuide(guide, index, locale = defaultLocale) {
     /** @type {Meta} **/
-    const meta = JSON.parse(fs.readFileSync(path.join(GUIDES_DIR, guide.id, 'meta.json'), 'utf8'));
+    // Try to load locale-specific meta file first, fallback to default meta.json
+    let metaPath = path.join(GUIDES_DIR, guide.id, 'meta_translated', `meta_${locale}.json`);
+    if (!fs.existsSync(metaPath)) {
+        metaPath = path.join(GUIDES_DIR, guide.id, 'meta.json');
+    }
+    const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
     const items = [];
     for (const metaItem of meta.itemsOrdered) {
         const item = await buildGuideItemForMeta(guide, metaItem, locale); // this is done one at a time to be easier to understand
@@ -262,9 +267,10 @@ function createGuideLink(id, locale) {
 
 /**
  *
+ * @param {string} locale - The locale to use for guide names
  * @return {Array.<Guide>}
  */
-function getGuides() {
+function getGuides(locale = defaultLocale) {
     const result = [];
     fs.readdirSync(GUIDES_DIR).forEach((guide) => {
         if (guide === 'guide-order.json') {
@@ -274,7 +280,13 @@ function getGuides() {
         if (!fs.existsSync(metaJSONPath)) {
             return console.warn('Skipping', guide, 'as it does not have a meta.json');
         }
-        const meta = JSON.parse(fs.readFileSync(metaJSONPath, 'utf8'));
+
+        // Try to load locale-specific meta file first, fallback to default meta.json
+        let metaPath = path.join(GUIDES_DIR, guide, 'meta_translated', `meta_${locale}.json`);
+        if (!fs.existsSync(metaPath)) {
+            metaPath = metaJSONPath;
+        }
+        const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
         const hasItems = meta.itemsOrdered.length > 0 || meta.url;
         if (hasItems) {
             /** @type {Array.<string>} **/

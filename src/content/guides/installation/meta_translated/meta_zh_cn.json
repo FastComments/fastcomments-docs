@@ -1,0 +1,61 @@
+{
+  "name": "安装",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "第三方插件"
+    },
+    {
+      "name": "原生 JS / HTML 片段",
+      "file": "vanillajs.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "同一页面上的多个实例",
+      "file": "multiple-instances.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "常见用例",
+      "file": "installation-common-use-cases.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "调试常见问题",
+      "file": "debugging-common-issues.md",
+      "subCat": "自定义安装"
+    },
+    {
+      "name": "Notion 与 Google Sites",
+      "file": "oembed.md",
+      "subCat": "在文档中嵌入"
+    }
+  ]
+}

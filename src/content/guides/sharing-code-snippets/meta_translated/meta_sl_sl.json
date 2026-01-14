@@ -1,0 +1,31 @@
+{
+  "name": "Deljenje odlomkov kode",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj so odlomki kode?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Skupnosti za programiranje",
+      "file": "code-snippets-communities.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Podprti programski jeziki",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Nastavitev deljenja odlomkov kode",
+      "file": "code-snippets-setup.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Deljenje odlomkov kode",
+      "file": "code-snippets-usage.md",
+      "subCat": "Uporaba"
+    }
+  ]
+}

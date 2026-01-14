@@ -1,0 +1,96 @@
+{
+  "name": "Značke",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Osnove",
+      "file": "badge-basics.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Napredovanje",
+      "file": "badge-progression.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Ručne značke",
+      "file": "badge-type-manual.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Broj komentara",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Pozitivni glasovi",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Odgovori",
+      "file": "badge-type-replies.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Pričvršćeni komentari",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Veteran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Noćna ptica",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Brzo vrijeme odgovora",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Odgovor na određenu stranicu",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Vrste znački"
+    },
+    {
+      "name": "Uvod u moderatorske značke",
+      "file": "moderator-badges.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Izbrisani komentari",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Odobreni komentari",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Komentari neodobreni",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Pregledani komentari",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Komentari označeni kao neželjena pošta",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Vrste moderatorskih znački"
+    },
+    {
+      "name": "Komentari označeni kao nisu neželjena pošta",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Vrste moderatorskih znački"
+    }
+  ]
+}

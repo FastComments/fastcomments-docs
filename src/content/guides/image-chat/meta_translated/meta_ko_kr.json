@@ -1,0 +1,41 @@
+{
+  "name": "이미지 채팅",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "시작하기",
+      "file": "getting-started.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "예제",
+      "file": "examples.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "구성 옵션",
+      "file": "configuration-options.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "반응형 디자인",
+      "file": "responsive-design.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "맞춤화",
+      "file": "customization.md",
+      "subCat": "맞춤화"
+    },
+    {
+      "name": "실시간 동기화",
+      "file": "live-sync.md",
+      "subCat": "고급"
+    },
+    {
+      "name": "API 참조",
+      "file": "api-reference.md",
+      "subCat": "고급"
+    }
+  ]
+}

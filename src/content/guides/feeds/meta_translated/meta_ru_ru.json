@@ -1,0 +1,16 @@
+{
+  "name": "Ленты",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Персонализация лент",
+      "file": "personalizing-feeds.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Региональные ленты",
+      "file": "regional-feeds.md",
+      "subCat": "Настройка"
+    }
+  ]
+}

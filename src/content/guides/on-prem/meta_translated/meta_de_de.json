@@ -1,0 +1,56 @@
+{
+  "name": "On-Prem (Vor Ort)",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Was enthalten ist",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Einstieg",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Instanzen",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Bereitstellung"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Bereitstellung"
+    },
+    {
+      "name": "Datenbankausfall und Wartungsmodus",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architektur"
+    },
+    {
+      "name": "Sperren",
+      "file": "on-prem-locks.md",
+      "subCat": "Architektur"
+    },
+    {
+      "name": "Widget-Code",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installation und Integration"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installation und Integration"
+    },
+    {
+      "name": "Mehrere Domains",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installation und Integration"
+    },
+    {
+      "name": "Sicherheit",
+      "file": "on-prem-security.md",
+      "subCat": "Sicherheitshinweise"
+    }
+  ]
+}

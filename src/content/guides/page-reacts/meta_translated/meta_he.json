@@ -1,0 +1,31 @@
+{
+  "name": "תגובות לעמוד",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "תגובות לעמוד",
+      "file": "page-reacts-about.md",
+      "subCat": "תגובות לעמוד"
+    },
+    {
+      "name": "התקנה - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "תגובות לעמוד"
+    },
+    {
+      "name": "ווידג'ט הלייקים הצף",
+      "file": "floating-likes-about.md",
+      "subCat": "ווידג'ט הלייקים הצף"
+    },
+    {
+      "name": "התקנה - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "ווידג'ט הלייקים הצף"
+    },
+    {
+      "name": "התקנה - וורדפרס",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "ווידג'ט הלייקים הצף"
+    }
+  ]
+}

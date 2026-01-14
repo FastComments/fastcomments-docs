@@ -1,0 +1,96 @@
+{
+  "name": "徽章",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "基础",
+      "file": "badge-basics.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "进阶",
+      "file": "badge-progression.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "手动徽章",
+      "file": "badge-type-manual.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "评论数量",
+      "file": "badge-type-comment-count.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "点赞",
+      "file": "badge-type-up-votes.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "回复",
+      "file": "badge-type-replies.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "置顶评论",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "资深",
+      "file": "badge-type-veteran.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "夜猫子",
+      "file": "badge-type-night-owl.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "快速回复",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "回复特定页面",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "徽章类型"
+    },
+    {
+      "name": "版主徽章简介",
+      "file": "moderator-badges.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "已删除评论",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "已批准评论",
+      "file": "moderator-comments-approved.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "取消批准的评论",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "已审核评论",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "被标记为垃圾评论",
+      "file": "moderator-comments-spam.md",
+      "subCat": "版主徽章类型"
+    },
+    {
+      "name": "被标记为非垃圾评论",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "版主徽章类型"
+    }
+  ]
+}

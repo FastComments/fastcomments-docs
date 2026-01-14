@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Додати живі коментарі до блогів Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Знайти поле введення коду",
+      "file": "typeflo-step-1.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "2. Вставити код",
+      "file": "typeflo-step-2.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "Успіх",
+      "file": "typeflo-success.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "Налаштування",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

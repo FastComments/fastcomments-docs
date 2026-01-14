@@ -1,0 +1,126 @@
+{
+  "name": "Moderering",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Siden til moderering af kommentarer",
+      "file": "moderate-comments-page.md",
+      "subCat": "Introduktion"
+    },
+    {
+      "name": "Moderatorer",
+      "file": "moderators.md",
+      "subCat": "Moderatorer"
+    },
+    {
+      "name": "Tilføjelse af moderatorer",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatorer"
+    },
+    {
+      "name": "Moderatorstatistik",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatorer"
+    },
+    {
+      "name": "Fjernelse af moderatorer",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatorer"
+    },
+    {
+      "name": "Hvordan godkendelser fungerer",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Moderering via e-mail",
+      "file": "moderation-via-email.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Filtrering",
+      "file": "filters.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Søgning",
+      "file": "search.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Deling af moderationslinks",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Visning af kommentartråde",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Moderationshandlinger",
+      "file": "comment-actions.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Sletning af kommentarer",
+      "file": "deleting-comments.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Moderationshandlinger fra kommentarwidget",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Moderering i realtid",
+      "file": "comment-actions-live.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Udelukkelse af brugere",
+      "file": "banning-users.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Udelukkelse af brugere med jokertegn",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Rapportering",
+      "file": "flagging.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Massehandlinger",
+      "file": "bulk-actions.md",
+      "subCat": "Moderationsproces"
+    },
+    {
+      "name": "Moderationsgrupper",
+      "file": "moderation-groups.md",
+      "subCat": "Moderationsgrupper"
+    },
+    {
+      "name": "Moderationsindstillinger",
+      "file": "moderation-settings.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Spamopdagelse",
+      "file": "spam-detection.md",
+      "subCat": "Spam og bandeord"
+    },
+    {
+      "name": "Maskering af bandeord",
+      "file": "profanity-mask.md",
+      "subCat": "Spam og bandeord"
+    },
+    {
+      "name": "Kommentarlogfiler",
+      "file": "comment-logs.md",
+      "subCat": "Moderationsproces"
+    }
+  ]
+}

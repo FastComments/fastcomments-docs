@@ -1,0 +1,11 @@
+{
+  "name": "Dynamiczne dodawanie i zamienianie wątków komentarzy",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dynamiczne dodawanie i zamienianie wątków komentarzy",
+      "file": "swap-widgets-example.md",
+      "subCat": "Przykłady"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Επαλήθευση Σχολίων και Ψήφων",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Υπόβαθρο",
+      "file": "background.md",
+      "subCat": "Τα Βασικά"
+    },
+    {
+      "name": "Μη Επαληθευμένα Σχόλια",
+      "file": "unverified-comments.md",
+      "subCat": "Τα Βασικά"
+    },
+    {
+      "name": "Μη Επαληθευμένες Ψήφοι",
+      "file": "unverified-votes.md",
+      "subCat": "Τα Βασικά"
+    },
+    {
+      "name": "Μηνύματα Επαλήθευσης μέσω Ηλεκτρονικού Ταχυδρομείου",
+      "file": "verification-emails.md",
+      "subCat": "Επαλήθευση"
+    },
+    {
+      "name": "Συνεδρίες",
+      "file": "verification-sessions.md",
+      "subCat": "Επαλήθευση"
+    },
+    {
+      "name": "Σχολιασμός σε Πραγματικό Χρόνο",
+      "file": "verification-live-commenting.md",
+      "subCat": "Επαλήθευση"
+    }
+  ]
+}

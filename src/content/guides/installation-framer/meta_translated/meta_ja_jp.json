@@ -1,0 +1,37 @@
+{
+  "name": "Framer のインストール",
+  "pageHeader": "Framer サイトにライブコメントを追加する",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: エディタを開く",
+      "file": "framer-step-1.md",
+      "subCat": "Framer のインストール"
+    },
+    {
+      "name": "ステップ 2: 埋め込みブロックを追加する",
+      "file": "framer-step-2.md",
+      "subCat": "Framer のインストール"
+    },
+    {
+      "name": "ステップ 3: Framer 用 FastComments コードをコピーして貼り付ける",
+      "file": "framer-step-3.md",
+      "subCat": "Framer のインストール"
+    },
+    {
+      "name": "ステップ 4: ウィジェットとページの高さを調整する",
+      "file": "framer-step-4.md",
+      "subCat": "Framer のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "framer-customize.md",
+      "subCat": "Framer のインストール"
+    }
+  ]
+}

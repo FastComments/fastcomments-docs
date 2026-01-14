@@ -1,0 +1,46 @@
+{
+  "name": "Θεματικές ετικέτες (hashtags)",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι τα hashtags",
+      "file": "what-are-hashtags.md",
+      "subCat": "Ιστορικό"
+    },
+    {
+      "name": "Πώς να χρησιμοποιήσετε τα hashtags",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Χρήση hashtags"
+    },
+    {
+      "name": "Φιλτράρισμα σχολίων ανά hashtag",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Χρήση hashtags"
+    },
+    {
+      "name": "Έγκυρα και μη έγκυρα hashtags",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Χρήση hashtags"
+    },
+    {
+      "name": "Χρήση συμβόλων διαφορετικών από το #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Ρύθμιση hashtags"
+    },
+    {
+      "name": "Προσυμπλήρωση hashtags",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Ρύθμιση hashtags"
+    },
+    {
+      "name": "Σύνδεση με περιεχόμενο μέσω hashtags",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Ρύθμιση hashtags"
+    },
+    {
+      "name": "Πώς λειτουργεί η αυτόματη συμπλήρωση των hashtags",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Ιστορικό των hashtags"
+    }
+  ]
+}

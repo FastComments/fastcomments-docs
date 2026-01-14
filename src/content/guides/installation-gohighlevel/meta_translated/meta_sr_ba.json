@@ -1,0 +1,67 @@
+{
+  "name": "Инсталација GoHighLevel-а",
+  "pageHeader": "Додавање коментара на GoHighLevel сајтове",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Измени курс",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Корак 2: Отвори напредна подешавања",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Корак 3: Копирај код",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Корак 4: Налепи код",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Члански сајт — успешно",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Грешке домене чланског сајта",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Прилагођавање чланског сајта",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Инсталација чланског сајта GoHighLevel-а"
+    },
+    {
+      "name": "Корак 1: Додај елемент за прилагођени код",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Инсталација сајта GoHighLevel-а"
+    },
+    {
+      "name": "Корак 2: Копирај и налепи код",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Инсталација сајта GoHighLevel-а"
+    },
+    {
+      "name": "Сајт — успешно",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Инсталација сајта GoHighLevel-а"
+    },
+    {
+      "name": "Грешке домене сајта",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Инсталација сајта GoHighLevel-а"
+    },
+    {
+      "name": "Прилагођавање сајта",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Инсталација сајта GoHighLevel-а"
+    }
+  ]
+}

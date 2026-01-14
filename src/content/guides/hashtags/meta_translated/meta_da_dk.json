@@ -1,0 +1,46 @@
+{
+  "name": "Hashtags",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er hashtags",
+      "file": "what-are-hashtags.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Sådan bruger du hashtags",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Brug af hashtags"
+    },
+    {
+      "name": "Filtrering af kommentarer efter hashtag",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Brug af hashtags"
+    },
+    {
+      "name": "Gyldige vs ugyldige hashtags",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Brug af hashtags"
+    },
+    {
+      "name": "Brug af andre symboler end #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Opsætning af hashtags"
+    },
+    {
+      "name": "Forudfyldning af hashtags",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Opsætning af hashtags"
+    },
+    {
+      "name": "Linke til indhold via hashtags",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Opsætning af hashtags"
+    },
+    {
+      "name": "Hvordan hashtags-autofuldførelse fungerer",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Baggrund om hashtags"
+    }
+  ]
+}

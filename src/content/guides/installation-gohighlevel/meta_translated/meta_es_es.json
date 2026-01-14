@@ -1,0 +1,67 @@
+{
+  "name": "Instalación de GoHighLevel",
+  "pageHeader": "Agregar comentarios a los sitios de GoHighLevel",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Editar curso",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Paso 2: Abrir configuración avanzada",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Paso 3: Copiar código",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Paso 4: Pegar código",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Instalación del sitio de miembros exitosa",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Errores de dominio del sitio de miembros",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Personalización del sitio de miembros",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+    },
+    {
+      "name": "Paso 1: Agregar elemento de código personalizado",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Instalación del sitio de GoHighLevel"
+    },
+    {
+      "name": "Paso 2: Copiar y pegar código",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Instalación del sitio de GoHighLevel"
+    },
+    {
+      "name": "Instalación del sitio exitosa",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Instalación del sitio de GoHighLevel"
+    },
+    {
+      "name": "Errores de dominio del sitio",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Instalación del sitio de GoHighLevel"
+    },
+    {
+      "name": "Personalización del sitio",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Instalación del sitio de GoHighLevel"
+    }
+  ]
+}

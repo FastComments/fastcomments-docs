@@ -1,0 +1,42 @@
+{
+  "name": "Webnode 安装",
+  "pageHeader": "向 Webnode 网站添加评论",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：编辑您的页面",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "步骤 2：添加区段并插入 HTML 模块",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "步骤 3：复制并粘贴代码片段",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "步骤 4：发布",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "成功",
+      "file": "webnode-success.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode 安装"
+    }
+  ]
+}

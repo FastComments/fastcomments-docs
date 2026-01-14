@@ -1,0 +1,37 @@
+{
+  "name": "Weebly Kurulumu",
+  "pageHeader": "Weebly Sitelerine Yorum Ekleme",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Blog Ayarlarını Açın",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Adım 3: Yayınlayın!",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "weebly-success.md",
+      "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly Kurulumu"
+    }
+  ]
+}

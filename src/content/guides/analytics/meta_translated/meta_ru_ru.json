@@ -1,0 +1,31 @@
+{
+  "name": "Аналитика",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Обзор",
+      "file": "analytics-background.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Аналитика биллинга",
+      "file": "analytics-billing.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Аналитика сайта",
+      "file": "analytics-site.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Точность аналитики по сравнению с другими платформами",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Аналитика"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Отслеживание"
+    }
+  ]
+}

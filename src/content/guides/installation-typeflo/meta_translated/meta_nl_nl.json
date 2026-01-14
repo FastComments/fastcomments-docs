@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Voeg live reacties toe aan Typeflo.io-blogs",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Zoek het invoerveld voor code",
+      "file": "typeflo-step-1.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "2. Code invoegen",
+      "file": "typeflo-step-2.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "Succes",
+      "file": "typeflo-success.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

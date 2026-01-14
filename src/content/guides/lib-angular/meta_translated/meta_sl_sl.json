@@ -1,0 +1,12 @@
+{
+  "name": "Angular knjižnica",
+  "pageHeader": "FastComments Angular knjižnica",
+  "itemsOrdered": [
+    {
+      "name": "Struktura projekta",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

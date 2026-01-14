@@ -1,0 +1,42 @@
+{
+  "name": "Instalacja Moodle",
+  "pageHeader": "Dodawanie komentarzy na witrynach Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Uzyskaj dostęp do serwera",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Krok 2: Zidentyfikuj plik widoku",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Krok 3: Dodaj kod",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Sukces na stronie członkowskiej",
+      "file": "moodle-success.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Błędy domeny na stronie członkowskiej",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Dostosowywanie strony członkowskiej",
+      "file": "moodle-customize.md",
+      "subCat": "Instalacja witryny Moodle"
+    },
+    {
+      "name": "Chcesz dedykowaną wtyczkę?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Dedykowana wtyczka?"
+    }
+  ]
+}

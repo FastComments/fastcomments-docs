@@ -53,9 +53,9 @@ const index = {};
  */
 
 (async function main() {
-    // Find guides.
+    // Find guides for default locale (for building guide pages).
     /** @type {Array.<Guide>} **/
-    const guides = getGuides();
+    const guides = getGuides(defaultLocale);
 
     const gettingStartedGuides = guides
         .filter((guide) => guideOrder.includes(guide.id))
@@ -76,10 +76,6 @@ const index = {};
             }
         }
     }
-
-    const guidesNotInstallation = guides.filter((guide) => !guide.id.startsWith('installation-') && !guide.id.startsWith('sdk-') && !guide.id.startsWith('lib-'));
-    const installationGuides = guides.filter((guide) => guide.id.startsWith('installation-'));
-    const sdkGuides = guides.filter((guide) => guide.id.startsWith('sdk-') || guide.id.startsWith('lib-'));
 
     // Store the build id.
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'build-id'), buildId, 'utf8');
@@ -102,6 +98,15 @@ const index = {};
         const isDefault = locale === defaultLocale;
         const filename = isDefault ? 'index.html' : `index-${locale}.html`;
 
+        // Get guides with locale-specific names for this locale
+        const localeGuides = getGuides(locale);
+        const localeGettingStartedGuides = localeGuides
+            .filter((guide) => guideOrder.includes(guide.id))
+            .sort((a, b) => guideOrder.indexOf(a.id) - guideOrder.indexOf(b.id));
+        const guidesNotInstallation = localeGuides.filter((guide) => !guide.id.startsWith('installation-') && !guide.id.startsWith('sdk-') && !guide.id.startsWith('lib-'));
+        const installationGuides = localeGuides.filter((guide) => guide.id.startsWith('installation-'));
+        const sdkGuides = localeGuides.filter((guide) => guide.id.startsWith('sdk-') || guide.id.startsWith('lib-'));
+
         // Build available locales for language selector
         const availableLocales = Object.keys(locales).map(loc => ({
             code: loc,
@@ -116,7 +121,7 @@ const index = {};
             guides: localizeGuides(guidesNotInstallation, locale),
             installationGuides: localizeGuides(installationGuides, locale),
             sdkGuides: localizeGuides(sdkGuides, locale),
-            gettingStartedGuides: localizeGuides(gettingStartedGuides, locale),
+            gettingStartedGuides: localizeGuides(localeGettingStartedGuides, locale),
             lastUpdateDate: new Date().toLocaleString(),
             buildId,
             locale,

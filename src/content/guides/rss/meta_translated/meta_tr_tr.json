@@ -1,0 +1,21 @@
+{
+  "name": "RSS Beslemeleri",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Genel Bakış",
+      "file": "overview.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "RSS Beslemenizi Kurma",
+      "file": "setup.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Güvenlik Hususları",
+      "file": "security.md",
+      "subCat": "Uygulama"
+    }
+  ]
+}

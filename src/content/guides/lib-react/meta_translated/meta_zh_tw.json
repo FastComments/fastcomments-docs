@@ -1,0 +1,24 @@
+{
+  "name": "React 函式庫",
+  "pageHeader": "FastComments React 函式庫",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "範例",
+      "file": "examples-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "用法",
+      "file": "usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    }
+  ]
+}

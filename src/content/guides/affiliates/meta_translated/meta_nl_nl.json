@@ -1,0 +1,36 @@
+{
+  "name": "Affiliateprogramma",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Waarom FastComments-affiliate worden?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Affiliateprogramma"
+    },
+    {
+      "name": "Aan de slag",
+      "file": "getting-started.md",
+      "subCat": "Affiliateprogramma"
+    },
+    {
+      "name": "Commissie",
+      "file": "commission.md",
+      "subCat": "Affiliateprogramma"
+    },
+    {
+      "name": "Het Affiliate-dashboard",
+      "file": "dashboard.md",
+      "subCat": "Affiliateprogramma"
+    },
+    {
+      "name": "Uitbetalingsschema",
+      "file": "payout-schedule.md",
+      "subCat": "Affiliateprogramma"
+    },
+    {
+      "name": "Marketingmateriaal",
+      "file": "marketing-materials.md",
+      "subCat": "Affiliateprogramma"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Instalacija Systeme.io",
+  "pageHeader": "Dodavanje komentara na Systeme.io blog",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Otvorite predložak teme bloga",
+      "file": "systeme-step-1.md",
+      "subCat": "Instalacija Systeme.io"
+    },
+    {
+      "name": "Korak 2: Dodajte FastComments.com kod",
+      "file": "systeme-step-2.md",
+      "subCat": "Instalacija Systeme.io"
+    },
+    {
+      "name": "Uspešno",
+      "file": "systeme-success.md",
+      "subCat": "Instalacija Systeme.io"
+    },
+    {
+      "name": "Greške domena",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Instalacija Systeme.io"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "systeme-customize.md",
+      "subCat": "Instalacija Systeme.io"
+    }
+  ]
+}

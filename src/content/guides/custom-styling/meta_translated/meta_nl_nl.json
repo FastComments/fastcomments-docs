@@ -1,0 +1,32 @@
+{
+  "name": "Aangepaste styling",
+  "pageHeader": "Gids voor aangepaste styling",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Hoe stijlen aan te passen",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Referentie voor styling van de Reacties-widget (v2, nieuwste)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Styling van de widget Recente reacties",
+      "file": "recent-comments-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Styling van de widget Toppagina's",
+      "file": "top-pages-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Andere frontend-bibliotheken",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Andere frontend-bibliotheken"
+    }
+  ]
+}

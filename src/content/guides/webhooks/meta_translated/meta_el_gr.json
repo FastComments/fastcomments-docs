@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι τα Webhooks",
+      "file": "what-are-webhooks.md",
+      "subCat": "Επισκόπηση"
+    },
+    {
+      "name": "Υποστηριζόμενα Γεγονότα και Πόροι",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Επισκόπηση"
+    },
+    {
+      "name": "Ρύθμιση τοπικής ανάπτυξης",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Ρύθμιση",
+      "file": "webhooks-setup.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Δοκιμές",
+      "file": "webhooks-testing.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Δομές δεδομένων",
+      "file": "webhooks-structures.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Ασφάλεια και Διακριτικά API",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Πώς λειτουργεί και χειρισμός επαναπροσπαθειών",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Πίσω από τα Παρασκήνια"
+    }
+  ]
+}

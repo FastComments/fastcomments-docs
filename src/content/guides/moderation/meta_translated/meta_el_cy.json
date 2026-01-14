@@ -1,0 +1,126 @@
+{
+  "name": "Διαχείριση σχολίων",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Σελίδα διαχείρισης σχολίων",
+      "file": "moderate-comments-page.md",
+      "subCat": "Εισαγωγή"
+    },
+    {
+      "name": "Διαχειριστές",
+      "file": "moderators.md",
+      "subCat": "Διαχειριστές"
+    },
+    {
+      "name": "Προσθήκη διαχειριστών",
+      "file": "moderators-adding.md",
+      "subCat": "Διαχειριστές"
+    },
+    {
+      "name": "Στατιστικά διαχειριστών",
+      "file": "moderator-stats.md",
+      "subCat": "Διαχειριστές"
+    },
+    {
+      "name": "Αφαίρεση διαχειριστών",
+      "file": "moderators-removing.md",
+      "subCat": "Διαχειριστές"
+    },
+    {
+      "name": "Πώς λειτουργούν οι εγκρίσεις",
+      "file": "moderation-approvals.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Διαχείριση μέσω email",
+      "file": "moderation-via-email.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Φιλτράρισμα",
+      "file": "filters.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Αναζήτηση",
+      "file": "search.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Κοινή χρήση συνδέσμων διαχείρισης",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Προβολή νήματος σχολίων",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Ενέργειες διαχείρισης",
+      "file": "comment-actions.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Διαγραφή σχολίων",
+      "file": "deleting-comments.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Ενέργειες διαχείρισης από το widget σχολίων",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Ζωντανή διαχείριση",
+      "file": "comment-actions-live.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Αποκλεισμός χρηστών",
+      "file": "banning-users.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Αποκλεισμός χρηστών με μπαλαντέρ",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Σήμανση",
+      "file": "flagging.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Μαζικές ενέργειες",
+      "file": "bulk-actions.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    },
+    {
+      "name": "Ομάδες διαχείρισης",
+      "file": "moderation-groups.md",
+      "subCat": "Ομάδες διαχείρισης"
+    },
+    {
+      "name": "Ρυθμίσεις διαχείρισης",
+      "file": "moderation-settings.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Ανίχνευση ανεπιθύμητου περιεχομένου",
+      "file": "spam-detection.md",
+      "subCat": "Spam & βωμολοχία"
+    },
+    {
+      "name": "Απόκρυψη βωμολοχίας",
+      "file": "profanity-mask.md",
+      "subCat": "Spam & βωμολοχία"
+    },
+    {
+      "name": "Αρχεία καταγραφής σχολίων",
+      "file": "comment-logs.md",
+      "subCat": "Ροή εργασιών διαχείρισης"
+    }
+  ]
+}

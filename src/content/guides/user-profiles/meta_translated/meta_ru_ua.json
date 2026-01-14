@@ -1,0 +1,51 @@
+{
+  "name": "Профили користувачів",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Основи профілю",
+      "file": "profile-basics.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Налаштування профілю",
+      "file": "customizing-profiles.md",
+      "subCat": "Персоналізація"
+    },
+    {
+      "name": "Налаштування конфіденційності",
+      "file": "privacy-settings.md",
+      "subCat": "Персоналізація"
+    },
+    {
+      "name": "Бейджі",
+      "file": "badges.md",
+      "subCat": "Функції"
+    },
+    {
+      "name": "Коментарі до профілю",
+      "file": "profile-comments.md",
+      "subCat": "Функції"
+    },
+    {
+      "name": "Особисті повідомлення",
+      "file": "direct-messaging.md",
+      "subCat": "Функції"
+    },
+    {
+      "name": "Стрічка активності",
+      "file": "activity-feed.md",
+      "subCat": "Функції"
+    },
+    {
+      "name": "Нотатки користувача",
+      "file": "user-notes.md",
+      "subCat": "Функції"
+    },
+    {
+      "name": "Оформлення профілів",
+      "file": "styling-profiles.md",
+      "subCat": "Для розробників"
+    }
+  ]
+}

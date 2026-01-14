@@ -1,0 +1,42 @@
+{
+  "name": "Shopify Kurulumu",
+  "pageHeader": "Shopify Sitelerine Yorum Ekleme",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Var Olan Yorumları İçe Aktar",
+      "file": "shopify-step-1.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Adım 2: Varsayılan Yorum Sistemini Devre Dışı Bırak",
+      "file": "shopify-step-2.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Adım 3: Blog Tema Şablonunu Aç",
+      "file": "shopify-step-3.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Adım 4: FastComments.com Kodunu Ekle",
+      "file": "shopify-step-4.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "shopify-success.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify Kurulumu"
+    }
+  ]
+}

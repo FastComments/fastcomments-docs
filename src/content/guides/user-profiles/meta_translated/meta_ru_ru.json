@@ -1,0 +1,51 @@
+{
+  "name": "Профили пользователей",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Основы профиля",
+      "file": "profile-basics.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Настройка профиля",
+      "file": "customizing-profiles.md",
+      "subCat": "Персонализация"
+    },
+    {
+      "name": "Настройки конфиденциальности",
+      "file": "privacy-settings.md",
+      "subCat": "Персонализация"
+    },
+    {
+      "name": "Значки",
+      "file": "badges.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Комментарии к профилю",
+      "file": "profile-comments.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Личные сообщения",
+      "file": "direct-messaging.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Лента активности",
+      "file": "activity-feed.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Заметки пользователя",
+      "file": "user-notes.md",
+      "subCat": "Функции"
+    },
+    {
+      "name": "Оформление профилей",
+      "file": "styling-profiles.md",
+      "subCat": "Для разработчиков"
+    }
+  ]
+}

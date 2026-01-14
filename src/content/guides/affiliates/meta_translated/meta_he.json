@@ -1,0 +1,36 @@
+{
+  "name": "שותפים",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "למה להיות שותף של FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "שותפים"
+    },
+    {
+      "name": "התחלה",
+      "file": "getting-started.md",
+      "subCat": "שותפים"
+    },
+    {
+      "name": "עמלה",
+      "file": "commission.md",
+      "subCat": "שותפים"
+    },
+    {
+      "name": "לוח המחוונים של השותפים",
+      "file": "dashboard.md",
+      "subCat": "שותפים"
+    },
+    {
+      "name": "לוח זמנים לתשלומים",
+      "file": "payout-schedule.md",
+      "subCat": "שותפים"
+    },
+    {
+      "name": "חומרי שיווק",
+      "file": "marketing-materials.md",
+      "subCat": "שותפים"
+    }
+  ]
+}

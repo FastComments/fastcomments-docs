@@ -1,0 +1,32 @@
+{
+  "name": "自訂樣式",
+  "pageHeader": "自訂樣式指南",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "如何自訂樣式",
+      "file": "comment-widget-instructions.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "留言小工具樣式參考（v2，最新）",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "小工具樣式"
+    },
+    {
+      "name": "最新留言小工具樣式",
+      "file": "recent-comments-widget.md",
+      "subCat": "小工具樣式"
+    },
+    {
+      "name": "熱門頁面小工具樣式",
+      "file": "top-pages-widget.md",
+      "subCat": "小工具樣式"
+    },
+    {
+      "name": "其他前端函式庫",
+      "file": "other-frontend-libraries.md",
+      "subCat": "其他前端函式庫"
+    }
+  ]
+}

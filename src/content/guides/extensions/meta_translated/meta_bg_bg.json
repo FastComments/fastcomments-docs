@@ -1,0 +1,31 @@
+{
+  "name": "Писане на разширения",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Жизнен цикъл на разширението",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Дефиниране на разширение",
+      "file": "defining-an-extension.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Примерни разширения",
+      "file": "example-extensions.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Обектът на разширението",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "API за разширения",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

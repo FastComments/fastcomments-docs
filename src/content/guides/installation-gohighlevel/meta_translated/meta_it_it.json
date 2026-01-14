@@ -1,0 +1,67 @@
+{
+  "name": "Installazione di GoHighLevel",
+  "pageHeader": "Aggiungi commenti ai siti GoHighLevel",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Modifica il corso",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Passo 2: Apri le impostazioni avanzate",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Passo 3: Copia il codice",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Passo 4: Incolla il codice",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Area membri: installazione completata",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Errori di dominio dell'area membri",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Personalizzazione area membri",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Installazione area membri GoHighLevel"
+    },
+    {
+      "name": "Passo 1: Aggiungi elemento di codice personalizzato",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Installazione sito GoHighLevel"
+    },
+    {
+      "name": "Passo 2: Copia e incolla il codice",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Installazione sito GoHighLevel"
+    },
+    {
+      "name": "Sito: installazione completata",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Installazione sito GoHighLevel"
+    },
+    {
+      "name": "Errori di dominio del sito",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Installazione sito GoHighLevel"
+    },
+    {
+      "name": "Personalizzazione sito",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Installazione sito GoHighLevel"
+    }
+  ]
+}

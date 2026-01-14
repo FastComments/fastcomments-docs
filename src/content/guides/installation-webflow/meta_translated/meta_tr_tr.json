@@ -1,0 +1,37 @@
+{
+  "name": "Webflow Kurulumu",
+  "pageHeader": "Webflow Sitelerine Yorum Ekleme",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Bir Embed Bloğu Ekleyin",
+      "file": "webflow-step-1.md",
+      "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Adım 2: FastComments.com Kodunuzu Yapıştırın",
+      "file": "webflow-step-2.md",
+      "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Adım 3: Yayınlayın",
+      "file": "webflow-step-3.md",
+      "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "webflow-success.md",
+      "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "webflow-customize.md",
+      "subCat": "Webflow Kurulumu"
+    }
+  ]
+}

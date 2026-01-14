@@ -1,0 +1,37 @@
+{
+  "name": "Установка Framer",
+  "pageHeader": "Добавление живых комментариев на сайты Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Откройте редактор",
+      "file": "framer-step-1.md",
+      "subCat": "Установка Framer"
+    },
+    {
+      "name": "Шаг 2: Добавьте блок вставки",
+      "file": "framer-step-2.md",
+      "subCat": "Установка Framer"
+    },
+    {
+      "name": "Шаг 3: Скопируйте и вставьте код FastComments для Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Установка Framer"
+    },
+    {
+      "name": "Шаг 4: Отрегулируйте высоту виджета и страницы",
+      "file": "framer-step-4.md",
+      "subCat": "Установка Framer"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "framer-domain-errors.md",
+      "subCat": "Установка Framer"
+    },
+    {
+      "name": "Настройка",
+      "file": "framer-customize.md",
+      "subCat": "Установка Framer"
+    }
+  ]
+}

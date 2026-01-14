@@ -1,0 +1,31 @@
+{
+  "name": "Analyses",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Contexte",
+      "file": "analytics-background.md",
+      "subCat": "Analyses"
+    },
+    {
+      "name": "Analyses de facturation",
+      "file": "analytics-billing.md",
+      "subCat": "Analyses"
+    },
+    {
+      "name": "Analyses du site",
+      "file": "analytics-site.md",
+      "subCat": "Analyses"
+    },
+    {
+      "name": "Précision des analyses par rapport à d'autres plateformes",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analyses"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Suivi"
+    }
+  ]
+}

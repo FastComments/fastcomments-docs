@@ -1,0 +1,51 @@
+{
+  "name": "사용자 프로필",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "프로필 기본",
+      "file": "profile-basics.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "프로필 맞춤 설정",
+      "file": "customizing-profiles.md",
+      "subCat": "맞춤 설정"
+    },
+    {
+      "name": "개인정보 설정",
+      "file": "privacy-settings.md",
+      "subCat": "맞춤 설정"
+    },
+    {
+      "name": "배지",
+      "file": "badges.md",
+      "subCat": "기능"
+    },
+    {
+      "name": "프로필 댓글",
+      "file": "profile-comments.md",
+      "subCat": "기능"
+    },
+    {
+      "name": "다이렉트 메시지",
+      "file": "direct-messaging.md",
+      "subCat": "기능"
+    },
+    {
+      "name": "활동 피드",
+      "file": "activity-feed.md",
+      "subCat": "기능"
+    },
+    {
+      "name": "사용자 메모",
+      "file": "user-notes.md",
+      "subCat": "기능"
+    },
+    {
+      "name": "프로필 스타일링",
+      "file": "styling-profiles.md",
+      "subCat": "개발자용"
+    }
+  ]
+}

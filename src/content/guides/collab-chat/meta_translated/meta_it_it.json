@@ -1,0 +1,46 @@
+{
+  "name": "Chat Collaborativa",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Primi passi",
+      "file": "getting-started.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Esempi",
+      "file": "examples.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Aggiungere commenti in tempo reale ai libri online",
+      "file": "online-books.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Opzioni di configurazione",
+      "file": "configuration-options.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Comportamento della selezione del testo",
+      "file": "text-selection-behavior.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "customization.md",
+      "subCat": "Personalizzazione"
+    },
+    {
+      "name": "Sincronizzazione in tempo reale",
+      "file": "live-sync.md",
+      "subCat": "Avanzate"
+    },
+    {
+      "name": "Riferimento API",
+      "file": "api-reference.md",
+      "subCat": "Avanzate"
+    }
+  ]
+}

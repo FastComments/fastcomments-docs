@@ -1,0 +1,21 @@
+{
+  "name": "Comentários Agendados",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Contexto",
+      "file": "background.md",
+      "subCat": "Comentários Agendados"
+    },
+    {
+      "name": "Como Fazer",
+      "file": "howto.md",
+      "subCat": "Comentários Agendados"
+    },
+    {
+      "name": "Formato de Importação",
+      "file": "import-format.md",
+      "subCat": "Comentários Agendados"
+    }
+  ]
+}

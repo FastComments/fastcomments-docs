@@ -1,0 +1,37 @@
+{
+  "name": "Framer-installatie",
+  "pageHeader": "Voeg live reacties toe aan Framer-sites",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Open de editor",
+      "file": "framer-step-1.md",
+      "subCat": "Framer-installatie"
+    },
+    {
+      "name": "Stap 2: Voeg een embed-blok toe",
+      "file": "framer-step-2.md",
+      "subCat": "Framer-installatie"
+    },
+    {
+      "name": "Stap 3: Kopieer en plak Framer-specifieke FastComments-code",
+      "file": "framer-step-3.md",
+      "subCat": "Framer-installatie"
+    },
+    {
+      "name": "Stap 4: Pas de hoogte van widget en pagina aan",
+      "file": "framer-step-4.md",
+      "subCat": "Framer-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "framer-customize.md",
+      "subCat": "Framer-installatie"
+    }
+  ]
+}

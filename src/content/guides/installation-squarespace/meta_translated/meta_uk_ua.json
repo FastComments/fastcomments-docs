@@ -1,0 +1,77 @@
+{
+  "name": "Встановлення Squarespace",
+  "pageHeader": "Додавання коментарів на сайти Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Додавання живого коментування до вашого блогу",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Додати коментарі до блогу"
+    },
+    {
+      "name": "Крок 1: Відкрийте налаштування блогу",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Додати коментарі до блогу"
+    },
+    {
+      "name": "Крок 2: Вставте код FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Додати коментарі до блогу"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Додати коментарі до блогу"
+    },
+    {
+      "name": "Додавання живого коментування на всі сторінки",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Додати коментарі до всіх сторінок"
+    },
+    {
+      "name": "Крок 1: Відкрийте інструменти розробника",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Додати коментарі до всіх сторінок"
+    },
+    {
+      "name": "Крок 2: Вставте код FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Додати коментарі до всіх сторінок"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Додати коментарі до всіх сторінок"
+    },
+    {
+      "name": "Додавання живого коментування на конкретну сторінку",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Додати коментарі до конкретної сторінки"
+    },
+    {
+      "name": "Крок 1: Додайте блок коду",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Додати коментарі до конкретної сторінки"
+    },
+    {
+      "name": "Крок 2: Вставте код FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Додати коментарі до конкретної сторінки"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Додати коментарі до конкретної сторінки"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Наступні кроки для Squarespace"
+    },
+    {
+      "name": "Налаштування",
+      "file": "squarespace-customize.md",
+      "subCat": "Наступні кроки для Squarespace"
+    }
+  ]
+}

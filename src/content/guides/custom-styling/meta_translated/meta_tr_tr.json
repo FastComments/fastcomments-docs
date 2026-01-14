@@ -1,0 +1,32 @@
+{
+  "name": "Özelleştirilmiş Stil",
+  "pageHeader": "Özelleştirilmiş Stil Kılavuzu",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Stilleri Nasıl Özelleştirirsiniz",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Yorum Bileşeni Stil Referansı (v2, en güncel)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Widget Stilleri"
+    },
+    {
+      "name": "Son Yorumlar Widget Stili",
+      "file": "recent-comments-widget.md",
+      "subCat": "Widget Stilleri"
+    },
+    {
+      "name": "En Popüler Sayfalar Widget Stili",
+      "file": "top-pages-widget.md",
+      "subCat": "Widget Stilleri"
+    },
+    {
+      "name": "Diğer Ön Yüz Kütüphaneleri",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Diğer Ön Yüz Kütüphaneleri"
+    }
+  ]
+}

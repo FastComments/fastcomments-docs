@@ -1,0 +1,16 @@
+{
+  "name": "Brisanje vašega računa",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Brisanje vašega računa",
+      "file": "deleting-your-account.md",
+      "subCat": "Komentatorji in najemniki"
+    },
+    {
+      "name": "Preklic vaše naročnine",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Najemniki"
+    }
+  ]
+}

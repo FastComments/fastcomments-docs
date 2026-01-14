@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels Kurulumu",
+  "pageHeader": "ClickFunnels Kurslarına Canlı Sohbet Ekle",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Şablonu Bul",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels Kurulumu"
+    },
+    {
+      "name": "Adım 2: Kodu Ekle",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels Kurulumu"
+    },
+    {
+      "name": "Ek: Canlı Yorumlar için Kod Parçacığı",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Canlı Yorum Kod Parçacığı"
+    },
+    {
+      "name": "Ek: Yorumları Otomatik Oynat",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Yorumları Otomatik Oynat"
+    }
+  ]
+}

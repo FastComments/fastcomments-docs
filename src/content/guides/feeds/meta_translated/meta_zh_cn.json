@@ -1,0 +1,16 @@
+{
+  "name": "信息流",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "个性化信息流",
+      "file": "personalizing-feeds.md",
+      "subCat": "自定义"
+    },
+    {
+      "name": "区域信息流",
+      "file": "regional-feeds.md",
+      "subCat": "自定义"
+    }
+  ]
+}

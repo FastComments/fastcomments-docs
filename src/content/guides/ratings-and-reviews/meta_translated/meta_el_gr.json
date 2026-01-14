@@ -1,0 +1,56 @@
+{
+  "name": "Βαθμολογίες και Κριτικές",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Χαρακτηριστικά",
+      "file": "features.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Ποιος το λαμβάνει",
+      "file": "who-gets-it.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Τιμολόγηση",
+      "file": "pricing.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Επιλέξτε τύπο εμφάνισης",
+      "file": "choose-display-type.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Καθορίστε τις ερωτήσεις σας",
+      "file": "define-your-questions.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Πώς λειτουργεί η διαμόρφωση",
+      "file": "how-configuration-works.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Το widget περίληψης",
+      "file": "summary-widget-installation.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Προβολή βαθμολογιών",
+      "file": "viewing-ratings.md",
+      "subCat": "Αναφορές"
+    },
+    {
+      "name": "Ενσωμάτωση μέσω του API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Αναφορές"
+    },
+    {
+      "name": "Παρουσίαση Σύνοψης",
+      "file": "summary-demo.md",
+      "subCat": "Παρουσίαση Σύνοψης"
+    }
+  ]
+}

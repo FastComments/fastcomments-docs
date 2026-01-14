@@ -1,0 +1,51 @@
+{
+  "name": "Profile użytkowników",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Podstawy profilu",
+      "file": "profile-basics.md",
+      "subCat": "Pierwsze kroki"
+    },
+    {
+      "name": "Dostosowywanie profilu",
+      "file": "customizing-profiles.md",
+      "subCat": "Personalizacja"
+    },
+    {
+      "name": "Ustawienia prywatności",
+      "file": "privacy-settings.md",
+      "subCat": "Personalizacja"
+    },
+    {
+      "name": "Odznaki",
+      "file": "badges.md",
+      "subCat": "Funkcje"
+    },
+    {
+      "name": "Komentarze do profilu",
+      "file": "profile-comments.md",
+      "subCat": "Funkcje"
+    },
+    {
+      "name": "Wiadomości prywatne",
+      "file": "direct-messaging.md",
+      "subCat": "Funkcje"
+    },
+    {
+      "name": "Kanał aktywności",
+      "file": "activity-feed.md",
+      "subCat": "Funkcje"
+    },
+    {
+      "name": "Notatki użytkownika",
+      "file": "user-notes.md",
+      "subCat": "Funkcje"
+    },
+    {
+      "name": "Stylowanie profili",
+      "file": "styling-profiles.md",
+      "subCat": "Dla programistów"
+    }
+  ]
+}

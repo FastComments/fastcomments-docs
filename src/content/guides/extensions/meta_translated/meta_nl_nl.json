@@ -1,0 +1,31 @@
+{
+  "name": "Extensies schrijven",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "De levenscyclus van een extensie",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Een extensie definiëren",
+      "file": "defining-an-extension.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Voorbeeldextensies",
+      "file": "example-extensions.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Het extensie-object",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "De extensie-API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

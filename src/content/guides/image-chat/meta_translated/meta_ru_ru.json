@@ -1,0 +1,41 @@
+{
+  "name": "Чат с изображениями",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Начало работы",
+      "file": "getting-started.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Примеры",
+      "file": "examples.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Параметры конфигурации",
+      "file": "configuration-options.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Адаптивный дизайн",
+      "file": "responsive-design.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Настройка",
+      "file": "customization.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Синхронизация в реальном времени",
+      "file": "live-sync.md",
+      "subCat": "Расширенные"
+    },
+    {
+      "name": "Справочник API",
+      "file": "api-reference.md",
+      "subCat": "Расширенные"
+    }
+  ]
+}

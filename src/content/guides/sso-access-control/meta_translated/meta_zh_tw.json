@@ -1,0 +1,31 @@
+{
+  "name": "SSO 存取控制",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是存取控制？",
+      "file": "what-is-access-control.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "運作方式",
+      "file": "how-it-works.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "規範",
+      "file": "access-control-spec.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "實作",
+      "file": "implementation.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "範例 API 呼叫",
+      "file": "api-example.md",
+      "subCat": "實作"
+    }
+  ]
+}

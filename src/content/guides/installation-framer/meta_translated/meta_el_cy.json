@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Framer",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Άνοιγμα του επεξεργαστή",
+      "file": "framer-step-1.md",
+      "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη μπλοκ ενσωμάτωσης",
+      "file": "framer-step-2.md",
+      "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Βήμα 3: Αντιγραφή και επικόλληση του ειδικού για Framer κώδικα FastComments",
+      "file": "framer-step-3.md",
+      "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Βήμα 4: Προσαρμογή ύψους του widget και της σελίδας",
+      "file": "framer-step-4.md",
+      "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "framer-domain-errors.md",
+      "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "framer-customize.md",
+      "subCat": "Εγκατάσταση Framer"
+    }
+  ]
+}

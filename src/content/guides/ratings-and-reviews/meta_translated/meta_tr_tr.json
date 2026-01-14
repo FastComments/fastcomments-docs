@@ -1,0 +1,56 @@
+{
+  "name": "Puanlar ve İncelemeler",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Özellikler",
+      "file": "features.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Kimler Alır",
+      "file": "who-gets-it.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Fiyatlandırma",
+      "file": "pricing.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Görüntüleme Türü Seçin",
+      "file": "choose-display-type.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Sorularınızı Tanımlayın",
+      "file": "define-your-questions.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Yapılandırma Nasıl Çalışır",
+      "file": "how-configuration-works.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Özet Bileşeni",
+      "file": "summary-widget-installation.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Puanları Görüntüleme",
+      "file": "viewing-ratings.md",
+      "subCat": "Raporlama"
+    },
+    {
+      "name": "API Üzerinden Entegrasyon",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Raporlama"
+    },
+    {
+      "name": "Özet Demo",
+      "file": "summary-demo.md",
+      "subCat": "Özet Demo"
+    }
+  ]
+}

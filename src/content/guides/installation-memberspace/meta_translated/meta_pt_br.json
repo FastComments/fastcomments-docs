@@ -1,0 +1,22 @@
+{
+  "name": "Instalação do MemberSpace",
+  "pageHeader": "Adicionar comentários com o MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "O Código",
+      "file": "memberspace-step-1.md",
+      "subCat": "Instalação do MemberSpace"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Instalação do MemberSpace"
+    },
+    {
+      "name": "Personalização",
+      "file": "memberspace-customize.md",
+      "subCat": "Instalação do MemberSpace"
+    }
+  ]
+}

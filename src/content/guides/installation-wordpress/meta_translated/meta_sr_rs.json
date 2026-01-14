@@ -1,0 +1,72 @@
+{
+  "name": "Инсталација WordPress-а",
+  "pageHeader": "Додајте коментарисање у реалном времену на WordPress сајтове",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Брзи почетак",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Инсталација",
+      "file": "wordpress-installation.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "wordpress-customize.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Модерација",
+      "file": "wordpress-moderation.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Корисници, модератори и администратори",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Сајтови само за чланове (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Обавештења",
+      "file": "wordpress-notifications.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Прилагођене теме",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Синхронизација назад у WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Број коментара",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Комуникација између WordPress инсталације и FastComment сервера",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Доменске грешке",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Инсталација WordPress-а"
+    },
+    {
+      "name": "Деактивирање у односу на деинсталирање додатка",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Уклањање додатка"
+    }
+  ]
+}

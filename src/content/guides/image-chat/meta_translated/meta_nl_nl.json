@@ -1,0 +1,41 @@
+{
+  "name": "Beeldchat",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Aan de slag",
+      "file": "getting-started.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Voorbeelden",
+      "file": "examples.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Configuratieopties",
+      "file": "configuration-options.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Responsief ontwerp",
+      "file": "responsive-design.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "customization.md",
+      "subCat": "Aanpassing"
+    },
+    {
+      "name": "Live-synchronisatie",
+      "file": "live-sync.md",
+      "subCat": "Geavanceerd"
+    },
+    {
+      "name": "API-referentie",
+      "file": "api-reference.md",
+      "subCat": "Geavanceerd"
+    }
+  ]
+}

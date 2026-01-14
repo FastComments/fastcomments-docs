@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι το SAML;",
+      "file": "saml-overview.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "SAML έναντι SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Ρύθμιση SAML",
+      "file": "saml-setup.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Διαμόρφωση παρόχου ταυτότητας",
+      "file": "saml-idp-config.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Πληροφορίες παρόχου υπηρεσίας",
+      "file": "saml-sp-info.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Ρόλοι χρηστών και δικαιώματα",
+      "file": "saml-user-roles.md",
+      "subCat": "Διαχείριση χρηστών"
+    },
+    {
+      "name": "Δοκιμή αυθεντικοποίησης SAML",
+      "file": "saml-testing.md",
+      "subCat": "Αντιμετώπιση προβλημάτων"
+    },
+    {
+      "name": "Συνήθη προβλήματα",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Αντιμετώπιση προβλημάτων"
+    },
+    {
+      "name": "Καλύτερες πρακτικές ασφάλειας",
+      "file": "saml-security.md",
+      "subCat": "Για προχωρημένους"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Instalación de WordPress",
+  "pageHeader": "Añadir comentarios en vivo a sitios de WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Inicio rápido",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Resumen"
+    },
+    {
+      "name": "Instalación",
+      "file": "wordpress-installation.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Personalización",
+      "file": "wordpress-customize.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Moderación",
+      "file": "wordpress-moderation.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Usuarios, moderadores y administradores",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Sitios solo para miembros (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Notificaciones",
+      "file": "wordpress-notifications.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Temas personalizados",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Sincronización con WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Recuento de comentarios",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Comunicación entre la instalación de WordPress y el servidor FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Desactivar vs desinstalar el plugin",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Eliminación del plugin"
+    }
+  ]
+}

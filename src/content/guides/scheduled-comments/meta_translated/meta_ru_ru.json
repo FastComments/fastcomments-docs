@@ -1,0 +1,21 @@
+{
+  "name": "Запланированные комментарии",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Введение",
+      "file": "background.md",
+      "subCat": "Запланированные комментарии"
+    },
+    {
+      "name": "Инструкция",
+      "file": "howto.md",
+      "subCat": "Запланированные комментарии"
+    },
+    {
+      "name": "Формат импорта",
+      "file": "import-format.md",
+      "subCat": "Запланированные комментарии"
+    }
+  ]
+}

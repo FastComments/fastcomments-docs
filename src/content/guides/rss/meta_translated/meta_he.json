@@ -1,0 +1,21 @@
+{
+  "name": "הזנות RSS",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "סקירה כללית",
+      "file": "overview.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "הגדרת הזנת RSS שלך",
+      "file": "setup.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "שיקולי אבטחה",
+      "file": "security.md",
+      "subCat": "מימוש"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "动态添加和替换评论线程",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "动态添加和替换评论线程",
+      "file": "swap-widgets-example.md",
+      "subCat": "示例"
+    }
+  ]
+}

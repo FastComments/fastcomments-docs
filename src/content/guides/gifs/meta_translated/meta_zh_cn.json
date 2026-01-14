@@ -1,0 +1,21 @@
+{
+  "name": "GIF 动图",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "支持的动画图像类型",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF 与动画图像"
+    },
+    {
+      "name": "用户上传的动画图像",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "使用 GIF"
+    },
+    {
+      "name": "GIF 选择器",
+      "file": "gif-picker.md",
+      "subCat": "使用 GIF"
+    }
+  ]
+}

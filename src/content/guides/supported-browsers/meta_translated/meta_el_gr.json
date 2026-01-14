@@ -1,0 +1,26 @@
+{
+  "name": "Υποστηριζόμενοι περιηγητές",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Υποστηριζόμενοι περιηγητές",
+      "file": "supported-browsers.md",
+      "subCat": "Υποστηριζόμενοι περιηγητές"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Υποστηριζόμενοι περιηγητές"
+    },
+    {
+      "name": "Πώς δοκιμάζουμε",
+      "file": "how-we-test.md",
+      "subCat": "Υποστηριζόμενοι περιηγητές"
+    },
+    {
+      "name": "Απαιτήσεις JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Υποστηριζόμενοι περιηγητές"
+    }
+  ]
+}

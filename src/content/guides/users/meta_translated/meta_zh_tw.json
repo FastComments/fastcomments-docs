@@ -1,0 +1,46 @@
+{
+  "name": "使用者",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "使用者類型",
+      "file": "types-of-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "使用者名稱",
+      "file": "usernames.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "管理員",
+      "file": "administrator-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "評論者",
+      "file": "commenter-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "新增管理員",
+      "file": "adding-administrators.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "新增版主",
+      "file": "adding-moderators.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "更新管理員權限",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "開發者",
+      "file": "developers.md",
+      "subCat": "設定"
+    }
+  ]
+}

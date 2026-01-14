@@ -1,0 +1,11 @@
+{
+  "name": "動態新增與切換評論串",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "動態新增與切換評論串",
+      "file": "swap-widgets-example.md",
+      "subCat": "範例"
+    }
+  ]
+}

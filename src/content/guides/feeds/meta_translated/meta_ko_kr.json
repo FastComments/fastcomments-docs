@@ -1,0 +1,16 @@
+{
+  "name": "피드",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "피드 개인화",
+      "file": "personalizing-feeds.md",
+      "subCat": "맞춤 설정"
+    },
+    {
+      "name": "지역별 피드",
+      "file": "regional-feeds.md",
+      "subCat": "맞춤 설정"
+    }
+  ]
+}

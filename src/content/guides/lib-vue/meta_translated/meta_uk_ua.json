@@ -1,0 +1,30 @@
+{
+  "name": "Бібліотека Vue 2",
+  "pageHeader": "FastComments бібліотека для Vue 2",
+  "itemsOrdered": [
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Використання",
+      "file": "usage-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Оновлення поточної сторінки (приклад SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "У продакшені",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

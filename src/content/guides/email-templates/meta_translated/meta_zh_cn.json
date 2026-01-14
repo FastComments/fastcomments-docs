@@ -1,0 +1,41 @@
+{
+  "name": "电子邮件模板",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "创建模板",
+      "file": "creating-templates.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "模板语言",
+      "file": "template-language.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "本地化与自定义文本",
+      "file": "localizing.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "按域模板",
+      "file": "per-domain-templates.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "数据与变量",
+      "file": "data-variables.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "渲染失败",
+      "file": "render-failures.md",
+      "subCat": "电子邮件模板"
+    },
+    {
+      "name": "应用更改",
+      "file": "time-to-apply-changes.md",
+      "subCat": "电子邮件模板"
+    }
+  ]
+}

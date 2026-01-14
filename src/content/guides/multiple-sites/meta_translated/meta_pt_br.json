@@ -1,0 +1,51 @@
+{
+  "name": "Múltiplos Sites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Configuração Inicial",
+      "file": "add-domains-to-account.md",
+      "subCat": "Primeiros Passos"
+    },
+    {
+      "name": "Limites e Preços",
+      "file": "domain-limits.md",
+      "subCat": "Primeiros Passos"
+    },
+    {
+      "name": "Nome do Remetente, E-mail e Logotipo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Personalização por Site"
+    },
+    {
+      "name": "Domínio do Nome/E-mail do Remetente Não Está Funcionando",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Personalização por Site"
+    },
+    {
+      "name": "Tenant por Ambiente",
+      "file": "tenant-per-environment.md",
+      "subCat": "Personalização por Site"
+    },
+    {
+      "name": "Personalizações",
+      "file": "customizations.md",
+      "subCat": "Personalização por Site"
+    },
+    {
+      "name": "Moderação de Comentários",
+      "file": "moderation.md",
+      "subCat": "Dados e Pesquisa"
+    },
+    {
+      "name": "Compartilhamento de Comentários Entre Domínios",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Dados e Pesquisa"
+    },
+    {
+      "name": "Com WordPress",
+      "file": "wordpress.md",
+      "subCat": "Notas de Integração"
+    }
+  ]
+}

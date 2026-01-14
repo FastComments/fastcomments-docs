@@ -1,0 +1,26 @@
+{
+  "name": "התראות",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "מתי FastComments שולחת התראות?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "סוגי התראות",
+      "file": "notification-types.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הפסקת קבלת התראות",
+      "file": "opting-out-notifications.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "הגדרת התראות עבור SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "תצורה"
+    }
+  ]
+}

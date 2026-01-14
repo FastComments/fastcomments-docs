@@ -1,0 +1,16 @@
+{
+  "name": "Hesabınızı Silme",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hesabınızı Silme",
+      "file": "deleting-your-account.md",
+      "subCat": "Yorum Yapanlar ve Kiracılar"
+    },
+    {
+      "name": "Aboneliğinizi İptal Etme",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Kiracılar"
+    }
+  ]
+}

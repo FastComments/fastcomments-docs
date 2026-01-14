@@ -1,0 +1,42 @@
+{
+  "name": "Wix Kurulumu",
+  "pageHeader": "Wix Sitelerine Yorum Ekleyin",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Doğru Sayfayı Düzenleyin",
+      "file": "wix-step-1.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Adım 2: Gömme Bloğu Ekleyin",
+      "file": "wix-step-2.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Adım 3: Özel Kodu Kopyalayın/Yapıştırın",
+      "file": "wix-step-3.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Adım 4: Yeniden Boyutlandırın",
+      "file": "wix-step-4.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Adım 5: Benzersiz Yorum Dizileri",
+      "file": "wix-step-5.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Adım 6: Kutlayın",
+      "file": "wix-step-6.md",
+      "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "wix-customize.md",
+      "subCat": "Wix Kurulumu"
+    }
+  ]
+}

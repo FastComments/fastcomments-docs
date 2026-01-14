@@ -1,0 +1,37 @@
+{
+  "name": "התקנת Zyro",
+  "pageHeader": "הוספת תגובות בזמן אמת לאתרי Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הוסף ווידג'ט קוד",
+      "file": "zyro-step-1.md",
+      "subCat": "התקנת אתר Zyro"
+    },
+    {
+      "name": "שלב 2: הוסף את הקוד",
+      "file": "zyro-step-2.md",
+      "subCat": "התקנת אתר Zyro"
+    },
+    {
+      "name": "הצלחה",
+      "file": "zyro-site-success.md",
+      "subCat": "התקנת אתר Zyro"
+    },
+    {
+      "name": "שגיאות בדומיין האתר",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "התקנת אתר Zyro"
+    },
+    {
+      "name": "התאמה אישית של האתר",
+      "file": "zyro-site-customize.md",
+      "subCat": "התקנת אתר Zyro"
+    },
+    {
+      "name": "כפתור לייקים צף",
+      "file": "zyro-floating-likes.md",
+      "subCat": "לייקים צפים ב-Zyro"
+    }
+  ]
+}

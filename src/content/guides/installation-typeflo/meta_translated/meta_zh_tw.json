@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "為 Typeflo.io 部落格新增即時留言功能",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. 找到程式碼輸入位置",
+      "file": "typeflo-step-1.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "2. 插入程式碼",
+      "file": "typeflo-step-2.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "完成",
+      "file": "typeflo-success.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

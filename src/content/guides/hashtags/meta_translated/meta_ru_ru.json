@@ -1,0 +1,46 @@
+{
+  "name": "Хэштеги",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое хэштеги",
+      "file": "what-are-hashtags.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как использовать хэштеги",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Использование хэштегов"
+    },
+    {
+      "name": "Фильтрация комментариев по хэштегу",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Использование хэштегов"
+    },
+    {
+      "name": "Допустимые и недопустимые хэштеги",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Использование хэштегов"
+    },
+    {
+      "name": "Использование символов, отличных от #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Настройка хэштегов"
+    },
+    {
+      "name": "Предзаполнение хэштегов",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Настройка хэштегов"
+    },
+    {
+      "name": "Связывание с контентом через хэштеги",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Настройка хэштегов"
+    },
+    {
+      "name": "Как работает автодополнение хэштегов",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Общие сведения о хэштегах"
+    }
+  ]
+}

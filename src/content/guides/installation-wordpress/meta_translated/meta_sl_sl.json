@@ -1,0 +1,72 @@
+{
+  "name": "Namestitev WordPressa",
+  "pageHeader": "Dodajte komentiranje v živo na WordPress spletne strani",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Hitri začetek",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Povzetek"
+    },
+    {
+      "name": "Namestitev",
+      "file": "wordpress-installation.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "wordpress-customize.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Moderiranje",
+      "file": "wordpress-moderation.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Uporabniki, moderatorji in skrbniki",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Spletna mesta samo za člane (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Obvestila",
+      "file": "wordpress-notifications.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Prilagojene teme",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Sinhronizacija z WordPressom",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Število komentarjev",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Komunikacija med WordPress namestitvijo in strežnikom FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Napake domen",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Namestitev WordPressa"
+    },
+    {
+      "name": "Deaktivacija ali odstranitev vtičnika",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Odstranitev vtičnika"
+    }
+  ]
+}

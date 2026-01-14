@@ -1,0 +1,21 @@
+{
+  "name": "Langues prises en charge",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Langues prises en charge",
+      "file": "supported-languages.md",
+      "subCat": "Langues prises en charge"
+    },
+    {
+      "name": "Quelles parties de FastComments sont localisées ?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Langues prises en charge"
+    },
+    {
+      "name": "Demande de prise en charge d'une nouvelle langue",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Langues prises en charge"
+    }
+  ]
+}

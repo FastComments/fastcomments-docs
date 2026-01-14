@@ -1,0 +1,36 @@
+{
+  "name": "SSR (серверний рендеринг)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Переваги SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Підтримувані функції SSR у FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Сценарії використання",
+      "file": "ssr-use-cases.md",
+      "subCat": "Використання SSR"
+    },
+    {
+      "name": "Де FastComments використовує SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Використання SSR"
+    },
+    {
+      "name": "Використання SSR",
+      "file": "using-ssr.md",
+      "subCat": "Використання SSR"
+    }
+  ]
+}

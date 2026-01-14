@@ -1,0 +1,36 @@
+{
+  "name": "White label",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Che cos'è il white labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Come ottenere il white labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Configurare il white labeling",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Utilizzo della dashboard",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Utilizzo dell'API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Gestione dei tenant white label",
+      "file": "white-labeling-managing.md",
+      "subCat": "Gestione dei tenant"
+    }
+  ]
+}

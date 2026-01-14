@@ -1,0 +1,31 @@
+{
+  "name": "Compartilhando trechos de código",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "O que são trechos de código?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Comunidades de programação",
+      "file": "code-snippets-communities.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Linguagens de programação suportadas",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Configurando o compartilhamento de trechos de código",
+      "file": "code-snippets-setup.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Compartilhando trechos de código",
+      "file": "code-snippets-usage.md",
+      "subCat": "Uso"
+    }
+  ]
+}

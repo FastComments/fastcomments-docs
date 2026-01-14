@@ -1,0 +1,56 @@
+{
+  "name": "Yerinde (On-Prem)",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Neler Dahil",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Nereden Başlanır",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Örnekler",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Dağıtım"
+    },
+    {
+      "name": "Yapılandırma",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Dağıtım"
+    },
+    {
+      "name": "Veritabanı Kesintisi ve Bakım Modu",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Mimari"
+    },
+    {
+      "name": "Kilitler",
+      "file": "on-prem-locks.md",
+      "subCat": "Mimari"
+    },
+    {
+      "name": "Widget Kodu",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Kurulum & Entegrasyon"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Kurulum & Entegrasyon"
+    },
+    {
+      "name": "Birden Fazla Alan Adı",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Kurulum & Entegrasyon"
+    },
+    {
+      "name": "Güvenlik",
+      "file": "on-prem-security.md",
+      "subCat": "Güvenlik İpuçları"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Šabloni e-pošte",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Kreiranje šablona",
+      "file": "creating-templates.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Jezik šablona",
+      "file": "template-language.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Lokalizacija i prilagođeni tekst",
+      "file": "localizing.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Šabloni po domenu",
+      "file": "per-domain-templates.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Podaci i promenljive",
+      "file": "data-variables.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Greške pri renderovanju",
+      "file": "render-failures.md",
+      "subCat": "Šabloni e-pošte"
+    },
+    {
+      "name": "Primena izmena",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Šabloni e-pošte"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Moderacija",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Stran za moderiranje komentarjev",
+      "file": "moderate-comments-page.md",
+      "subCat": "Uvod"
+    },
+    {
+      "name": "Moderatorji",
+      "file": "moderators.md",
+      "subCat": "Moderatorji"
+    },
+    {
+      "name": "Dodajanje moderatorjev",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatorji"
+    },
+    {
+      "name": "Statistika moderatorjev",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatorji"
+    },
+    {
+      "name": "Odstranjevanje moderatorjev",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatorji"
+    },
+    {
+      "name": "Kako delujejo odobritve",
+      "file": "moderation-approvals.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Moderiranje prek e-pošte",
+      "file": "moderation-via-email.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Filtriranje",
+      "file": "filters.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Iskanje",
+      "file": "search.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Deljenje povezav za moderiranje",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Pregledovalnik niti komentarjev",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Dejanja moderiranja",
+      "file": "comment-actions.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Brisanje komentarjev",
+      "file": "deleting-comments.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Dejanja moderiranja iz pripomočka za komentarje",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Moderiranje v živo",
+      "file": "comment-actions-live.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Blokiranje uporabnikov",
+      "file": "banning-users.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Blokiranje uporabnikov z nadomestnimi znaki",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Označevanje",
+      "file": "flagging.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Masovna dejanja",
+      "file": "bulk-actions.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Skupine za moderiranje",
+      "file": "moderation-groups.md",
+      "subCat": "Skupine za moderiranje"
+    },
+    {
+      "name": "Nastavitve moderiranja",
+      "file": "moderation-settings.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Zaznavanje neželene pošte",
+      "file": "spam-detection.md",
+      "subCat": "Neželena pošta in žaljiva vsebina"
+    },
+    {
+      "name": "Maskiranje žaljivih besed",
+      "file": "profanity-mask.md",
+      "subCat": "Neželena pošta in žaljiva vsebina"
+    },
+    {
+      "name": "Dnevniki komentarjev",
+      "file": "comment-logs.md",
+      "subCat": "Potek moderiranja"
+    }
+  ]
+}

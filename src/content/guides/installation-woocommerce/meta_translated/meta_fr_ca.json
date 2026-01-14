@@ -1,0 +1,12 @@
+{
+  "name": "Installation de WooCommerce",
+  "pageHeader": "Ajouter des commentaires en direct aux sites WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Configurer l'extension WordPress",
+      "file": "woocommerce.md",
+      "subCat": "Installation de WooCommerce"
+    }
+  ]
+}

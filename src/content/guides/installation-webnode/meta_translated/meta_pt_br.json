@@ -1,0 +1,42 @@
+{
+  "name": "Instalação do Webnode",
+  "pageHeader": "Adicionar comentários a sites do Webnode",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Edite sua página",
+      "file": "webnode-step-1.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Passo 2: Adicione uma seção e um bloco HTML",
+      "file": "webnode-step-2.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Passo 3: Copie e cole o trecho de código",
+      "file": "webnode-step-3.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Passo 4: Publique",
+      "file": "webnode-step-4.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Sucesso",
+      "file": "webnode-success.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Personalização",
+      "file": "webnode-customize.md",
+      "subCat": "Instalação do Webnode"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Афилијати",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Зашто постати FastComments афилијат?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Афилијати"
+    },
+    {
+      "name": "Како почети",
+      "file": "getting-started.md",
+      "subCat": "Афилијати"
+    },
+    {
+      "name": "Комисија",
+      "file": "commission.md",
+      "subCat": "Афилијати"
+    },
+    {
+      "name": "Афилијатски контролни панел",
+      "file": "dashboard.md",
+      "subCat": "Афилијати"
+    },
+    {
+      "name": "Распоред исплата",
+      "file": "payout-schedule.md",
+      "subCat": "Афилијати"
+    },
+    {
+      "name": "Маркетиншки материјали",
+      "file": "marketing-materials.md",
+      "subCat": "Афилијати"
+    }
+  ]
+}

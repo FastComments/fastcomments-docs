@@ -1,0 +1,56 @@
+{
+  "name": "Valoraciones y reseñas",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Características",
+      "file": "features.md",
+      "subCat": "Información general"
+    },
+    {
+      "name": "Quién lo recibe",
+      "file": "who-gets-it.md",
+      "subCat": "Información general"
+    },
+    {
+      "name": "Precios",
+      "file": "pricing.md",
+      "subCat": "Información general"
+    },
+    {
+      "name": "Elegir un tipo de visualización",
+      "file": "choose-display-type.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Defina sus preguntas",
+      "file": "define-your-questions.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Cómo funciona la configuración",
+      "file": "how-configuration-works.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "El widget de resumen",
+      "file": "summary-widget-installation.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Ver valoraciones",
+      "file": "viewing-ratings.md",
+      "subCat": "Informes"
+    },
+    {
+      "name": "Integración a través de la API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Informes"
+    },
+    {
+      "name": "Demostración del resumen",
+      "file": "summary-demo.md",
+      "subCat": "Demostración del resumen"
+    }
+  ]
+}

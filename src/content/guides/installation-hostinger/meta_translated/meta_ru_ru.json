@@ -1,0 +1,37 @@
+{
+  "name": "Установка на Hostinger",
+  "pageHeader": "Добавьте живые комментарии на сайты Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Добавить виджет с кодом",
+      "file": "hostinger-step-1.md",
+      "subCat": "Установка на сайте Hostinger"
+    },
+    {
+      "name": "Шаг 2: Добавить код",
+      "file": "hostinger-step-2.md",
+      "subCat": "Установка на сайте Hostinger"
+    },
+    {
+      "name": "Готово",
+      "file": "hostinger-site-success.md",
+      "subCat": "Установка на сайте Hostinger"
+    },
+    {
+      "name": "Ошибки домена сайта",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Установка на сайте Hostinger"
+    },
+    {
+      "name": "Настройка сайта",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Установка на сайте Hostinger"
+    },
+    {
+      "name": "Плавающая кнопка лайков",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Плавающие лайки на Hostinger"
+    }
+  ]
+}

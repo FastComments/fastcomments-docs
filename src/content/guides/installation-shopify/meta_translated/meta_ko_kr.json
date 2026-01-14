@@ -1,0 +1,42 @@
+{
+  "name": "Shopify 설치",
+  "pageHeader": "Shopify 사이트에 댓글 추가하기",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 기존 댓글 가져오기",
+      "file": "shopify-step-1.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "2단계: 기본 댓글 시스템 비활성화",
+      "file": "shopify-step-2.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "3단계: 블로그 테마 템플릿 열기",
+      "file": "shopify-step-3.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "4단계: FastComments.com 코드 추가",
+      "file": "shopify-step-4.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "성공",
+      "file": "shopify-success.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify 설치"
+    }
+  ]
+}

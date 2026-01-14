@@ -1,0 +1,36 @@
+{
+  "name": "SSR (Απόδοση στην πλευρά του διακομιστή)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι το SSR;",
+      "file": "what-is-ssr.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Οφέλη του SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Υποστηριζόμενα χαρακτηριστικά SSR του FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Περιπτώσεις χρήσης",
+      "file": "ssr-use-cases.md",
+      "subCat": "Χρήση του SSR"
+    },
+    {
+      "name": "Πού χρησιμοποιεί το FastComments το SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Χρήση του SSR"
+    },
+    {
+      "name": "Χρήση του SSR",
+      "file": "using-ssr.md",
+      "subCat": "Χρήση του SSR"
+    }
+  ]
+}

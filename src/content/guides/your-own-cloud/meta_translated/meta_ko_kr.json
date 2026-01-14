@@ -1,0 +1,36 @@
+{
+  "name": "나만의 클라우드",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "FastComments Isolated Cloud란 무엇인가?",
+      "file": "your-own-cloud.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "도입 방법",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "설정 및 교육",
+      "file": "set-up-training.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "대시보드 사용법",
+      "file": "using-the-dashboard.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "API 사용법",
+      "file": "using-the-api.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "테넌트 관리",
+      "file": "managing-tenants.md",
+      "subCat": "테넌트 관리"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Android knjižnica",
+  "pageHeader": "FastComments Android knjižnica",
+  "itemsOrdered": [
+    {
+      "name": "Funkcije",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Zahteve",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Osnovna uporaba",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Varno SSO preverjanje pristnosti",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Preverjanje pristnosti",
+      "type": "readme"
+    },
+    {
+      "name": "Integracija vira",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Integracija klepeta v živo",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Primeri projektov",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Možnosti konfiguracije",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Konfiguracija",
+      "type": "readme"
+    },
+    {
+      "name": "Celovita prilagoditev teme",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Upravljanje pomnilnika",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

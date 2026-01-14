@@ -1,0 +1,37 @@
+{
+  "name": "Weebly 安裝",
+  "pageHeader": "在 Weebly 網站加入評論",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：開啟部落格設定",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "步驟 2：加入 FastComments.com 代碼",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "步驟 3：發佈！",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "成功",
+      "file": "weebly-success.md",
+      "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly 安裝"
+    }
+  ]
+}

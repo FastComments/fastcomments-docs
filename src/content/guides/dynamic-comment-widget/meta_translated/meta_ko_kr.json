@@ -1,0 +1,11 @@
+{
+  "name": "댓글 스레드를 동적으로 추가하고 교체하기",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "댓글 스레드를 동적으로 추가하고 교체하기",
+      "file": "swap-widgets-example.md",
+      "subCat": "예제"
+    }
+  ]
+}

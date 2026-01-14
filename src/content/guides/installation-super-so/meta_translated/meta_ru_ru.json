@@ -1,0 +1,37 @@
+{
+  "name": "Установка Super.so",
+  "pageHeader": "Добавьте живые обсуждения на сайты Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Откройте настройки",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Установка Super.so"
+    },
+    {
+      "name": "Шаг 2: Добавьте готовый код",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Установка Super.so"
+    },
+    {
+      "name": "См. также: обычный виджет комментариев",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Установка Super.so"
+    },
+    {
+      "name": "Успех",
+      "file": "super-so-learn-success.md",
+      "subCat": "Установка Super.so"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Установка Super.so"
+    },
+    {
+      "name": "Настройка",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Установка Super.so"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Instalacija WooCommerce",
+  "pageHeader": "Dodajte komentare uživo na WooCommerce sajtove",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Podesite WordPress dodatak",
+      "file": "woocommerce.md",
+      "subCat": "Instalacija WooCommerce"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "您的專屬雲端",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "什麼是 FastComments 隔離式雲端？",
+      "file": "your-own-cloud.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何取得",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "設定與培訓",
+      "file": "set-up-training.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "使用儀表板",
+      "file": "using-the-dashboard.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "使用 API",
+      "file": "using-the-api.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "管理租戶",
+      "file": "managing-tenants.md",
+      "subCat": "租戶管理"
+    }
+  ]
+}

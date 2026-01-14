@@ -1,0 +1,21 @@
+{
+  "name": "Commentaires planifiés",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Contexte",
+      "file": "background.md",
+      "subCat": "Commentaires planifiés"
+    },
+    {
+      "name": "Comment faire",
+      "file": "howto.md",
+      "subCat": "Commentaires planifiés"
+    },
+    {
+      "name": "Format d'importation",
+      "file": "import-format.md",
+      "subCat": "Commentaires planifiés"
+    }
+  ]
+}

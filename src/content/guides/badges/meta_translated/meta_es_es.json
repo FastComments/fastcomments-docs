@@ -1,0 +1,96 @@
+{
+  "name": "Insignias",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Conceptos básicos",
+      "file": "badge-basics.md",
+      "subCat": "Conceptos básicos"
+    },
+    {
+      "name": "Progresión",
+      "file": "badge-progression.md",
+      "subCat": "Conceptos básicos"
+    },
+    {
+      "name": "Insignias manuales",
+      "file": "badge-type-manual.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Recuento de comentarios",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Votos positivos",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Respuestas",
+      "file": "badge-type-replies.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Comentarios fijados",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Veterano",
+      "file": "badge-type-veteran.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Noctámbulo",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Tiempo de respuesta rápido",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Responder a una página específica",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Tipos de insignias"
+    },
+    {
+      "name": "Introducción a las insignias de moderador",
+      "file": "moderator-badges.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios eliminados",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios aprobados",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios no aprobados",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios revisados",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios marcados como spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Tipos de insignias de moderador"
+    },
+    {
+      "name": "Comentarios marcados como no spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Tipos de insignias de moderador"
+    }
+  ]
+}

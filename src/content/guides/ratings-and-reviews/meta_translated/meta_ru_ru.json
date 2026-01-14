@@ -1,0 +1,56 @@
+{
+  "name": "Рейтинги и отзывы",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Функции",
+      "file": "features.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Кто получает",
+      "file": "who-gets-it.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Ценообразование",
+      "file": "pricing.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Выберите тип отображения",
+      "file": "choose-display-type.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Определите вопросы",
+      "file": "define-your-questions.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Как работает конфигурация",
+      "file": "how-configuration-works.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Виджет сводки",
+      "file": "summary-widget-installation.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Просмотр рейтингов",
+      "file": "viewing-ratings.md",
+      "subCat": "Отчёты"
+    },
+    {
+      "name": "Интеграция через API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Отчёты"
+    },
+    {
+      "name": "Демонстрация сводки",
+      "file": "summary-demo.md",
+      "subCat": "Демонстрация сводки"
+    }
+  ]
+}

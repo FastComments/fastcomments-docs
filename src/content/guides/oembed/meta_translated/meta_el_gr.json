@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι το oEmbed;",
+      "file": "about-oembed.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Δημιουργία μιας συνομιλίας oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Χρήση"
+    }
+  ]
+}

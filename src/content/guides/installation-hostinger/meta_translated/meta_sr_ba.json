@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација Hostinger-а",
+  "pageHeader": "Додајте уживо коментарисање на сајтове Hostinger-а",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Додајте видџет за код",
+      "file": "hostinger-step-1.md",
+      "subCat": "Инсталација сајта на Hostinger-у"
+    },
+    {
+      "name": "Корак 2: Додајте код",
+      "file": "hostinger-step-2.md",
+      "subCat": "Инсталација сајта на Hostinger-у"
+    },
+    {
+      "name": "Успешно",
+      "file": "hostinger-site-success.md",
+      "subCat": "Инсталација сајта на Hostinger-у"
+    },
+    {
+      "name": "Грешке домена сајта",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Инсталација сајта на Hostinger-у"
+    },
+    {
+      "name": "Прилагођавање сајта",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Инсталација сајта на Hostinger-у"
+    },
+    {
+      "name": "Плутајуће дугме за лајкове",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Плутајући лајкови на Hostinger-у"
+    }
+  ]
+}

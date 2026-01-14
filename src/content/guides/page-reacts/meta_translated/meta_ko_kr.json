@@ -1,0 +1,31 @@
+{
+  "name": "페이지 리액션",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "페이지 리액션",
+      "file": "page-reacts-about.md",
+      "subCat": "페이지 리액션"
+    },
+    {
+      "name": "설치 - 바닐라 JS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "페이지 리액션"
+    },
+    {
+      "name": "플로팅 좋아요 위젯",
+      "file": "floating-likes-about.md",
+      "subCat": "플로팅 좋아요 위젯"
+    },
+    {
+      "name": "설치 - 바닐라 JS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "플로팅 좋아요 위젯"
+    },
+    {
+      "name": "설치 - 워드프레스",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "플로팅 좋아요 위젯"
+    }
+  ]
+}

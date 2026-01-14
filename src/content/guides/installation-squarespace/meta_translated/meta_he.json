@@ -1,0 +1,77 @@
+{
+  "name": "התקנת Squarespace",
+  "pageHeader": "הוספת תגובות לאתרים ב-Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "הוספת תגובות בזמן אמת לבלוג שלך",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "הוספת תגובות לבלוג שלך"
+    },
+    {
+      "name": "שלב 1: פתח את הגדרות הבלוג",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "הוספת תגובות לבלוג שלך"
+    },
+    {
+      "name": "שלב 2: הדבק את קוד FastComments.com שלך",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "הוספת תגובות לבלוג שלך"
+    },
+    {
+      "name": "הצלחה",
+      "file": "squarespace-blog-success.md",
+      "subCat": "הוספת תגובות לבלוג שלך"
+    },
+    {
+      "name": "הוספת תגובות בזמן אמת לכל הדפים",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "הוספת תגובות לכל הדפים"
+    },
+    {
+      "name": "שלב 1: פתח את כלי המפתחים",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "הוספת תגובות לכל הדפים"
+    },
+    {
+      "name": "שלב 2: הדבק את קוד FastComments.com שלך",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "הוספת תגובות לכל הדפים"
+    },
+    {
+      "name": "הצלחה",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "הוספת תגובות לכל הדפים"
+    },
+    {
+      "name": "הוספת תגובות בזמן אמת לעמוד ספציפי",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "הוספת תגובות לעמוד ספציפי"
+    },
+    {
+      "name": "שלב 1: הוסף בלוק קוד",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "הוספת תגובות לעמוד ספציפי"
+    },
+    {
+      "name": "שלב 2: הדבק את קוד FastComments.com שלך",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "הוספת תגובות לעמוד ספציפי"
+    },
+    {
+      "name": "הצלחה",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "הוספת תגובות לעמוד ספציפי"
+    },
+    {
+      "name": "שגיאות בדומיין",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "השלבים הבאים ב-Squarespace"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "squarespace-customize.md",
+      "subCat": "השלבים הבאים ב-Squarespace"
+    }
+  ]
+}

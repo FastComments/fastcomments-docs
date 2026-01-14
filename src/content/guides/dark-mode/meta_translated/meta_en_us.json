@@ -1,0 +1,21 @@
+{
+  "name": "Dark Mode",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Auto Detection",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Manual Configuration",
+      "file": "dark-mode-manual.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "WordPress Networker Theme Dark Mode Support",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress Themes"
+    }
+  ]
+}

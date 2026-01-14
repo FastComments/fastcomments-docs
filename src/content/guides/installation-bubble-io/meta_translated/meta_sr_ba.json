@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Додајте коментарисање уживо на Bubble.io сајтове",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Додајте HTML блок",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "2. Убаците код",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "3. Пронађите подешавање ширине",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "4. Прилагодите изглед",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "Успешно",
+      "file": "bubble-io-success.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

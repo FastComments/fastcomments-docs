@@ -1,0 +1,21 @@
+{
+  "name": "서드파티 쿠키",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "서드파티 쿠키란 무엇인가",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "FastComments가 서드파티 쿠키를 사용하는 방법",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "서드파티 쿠키 활성화",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "활성화"
+    }
+  ]
+}

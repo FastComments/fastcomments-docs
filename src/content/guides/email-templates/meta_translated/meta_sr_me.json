@@ -1,0 +1,41 @@
+{
+  "name": "Шаблони е-поште",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Креирање шаблона",
+      "file": "creating-templates.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Језик шаблона",
+      "file": "template-language.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Локализација и прилагођени текст",
+      "file": "localizing.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Шаблони по домену",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Подаци и променљиве",
+      "file": "data-variables.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Неуспеси при рендеровању",
+      "file": "render-failures.md",
+      "subCat": "Шаблони е-поште"
+    },
+    {
+      "name": "Примена промена",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблони е-поште"
+    }
+  ]
+}

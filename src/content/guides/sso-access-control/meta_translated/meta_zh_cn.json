@@ -1,0 +1,31 @@
+{
+  "name": "SSO 访问控制",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是访问控制？",
+      "file": "what-is-access-control.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "工作原理",
+      "file": "how-it-works.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "规范",
+      "file": "access-control-spec.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "实现",
+      "file": "implementation.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "示例 API 调用",
+      "file": "api-example.md",
+      "subCat": "实现"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "RSS-feeds",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Overzicht",
+      "file": "overview.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Uw RSS-feed instellen",
+      "file": "setup.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Beveiligingsoverwegingen",
+      "file": "security.md",
+      "subCat": "Implementatie"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Desteklenen Tarayıcılar",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Desteklenen Tarayıcılar",
+      "file": "supported-browsers.md",
+      "subCat": "Desteklenen Tarayıcılar"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Desteklenen Tarayıcılar"
+    },
+    {
+      "name": "Nasıl Test Ederiz",
+      "file": "how-we-test.md",
+      "subCat": "Desteklenen Tarayıcılar"
+    },
+    {
+      "name": "JavaScript Gereksinimleri",
+      "file": "no-javascript.md",
+      "subCat": "Desteklenen Tarayıcılar"
+    }
+  ]
+}

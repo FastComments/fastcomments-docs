@@ -1,0 +1,41 @@
+{
+  "name": "E-mailsjablonen",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Sjablonen maken",
+      "file": "creating-templates.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Sjabloontaal",
+      "file": "template-language.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Lokalisatie en aangepaste tekst",
+      "file": "localizing.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Sjablonen per domein",
+      "file": "per-domain-templates.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Gegevens en variabelen",
+      "file": "data-variables.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Weergavefouten",
+      "file": "render-failures.md",
+      "subCat": "E-mailsjablonen"
+    },
+    {
+      "name": "Wijzigingen toepassen",
+      "file": "time-to-apply-changes.md",
+      "subCat": "E-mailsjablonen"
+    }
+  ]
+}

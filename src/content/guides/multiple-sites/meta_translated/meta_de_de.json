@@ -1,0 +1,51 @@
+{
+  "name": "Mehrere Websites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Ersteinrichtung",
+      "file": "add-domains-to-account.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Limits und Preise",
+      "file": "domain-limits.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Absendername, E‑Mail und Logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Anpassung pro Website"
+    },
+    {
+      "name": "Domain 'From'-Name/-E‑Mail funktioniert nicht",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Anpassung pro Website"
+    },
+    {
+      "name": "Mandant pro Umgebung",
+      "file": "tenant-per-environment.md",
+      "subCat": "Anpassung pro Website"
+    },
+    {
+      "name": "Anpassungen",
+      "file": "customizations.md",
+      "subCat": "Anpassung pro Website"
+    },
+    {
+      "name": "Kommentarmoderation",
+      "file": "moderation.md",
+      "subCat": "Daten & Suche"
+    },
+    {
+      "name": "Kommentare über mehrere Domains teilen",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Daten & Suche"
+    },
+    {
+      "name": "Mit WordPress",
+      "file": "wordpress.md",
+      "subCat": "Integrationshinweise"
+    }
+  ]
+}

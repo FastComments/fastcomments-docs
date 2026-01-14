@@ -1,0 +1,46 @@
+{
+  "name": "迁移",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "从其他提供商迁移",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "来自其他提供商"
+    },
+    {
+      "name": "导入数据",
+      "file": "importing-data.md",
+      "subCat": "来自其他提供商"
+    },
+    {
+      "name": "导入 WordPress 评论",
+      "file": "importing-data-wordpress.md",
+      "subCat": "来自其他提供商"
+    },
+    {
+      "name": "迁移用户和版主",
+      "file": "migrating-users-moderators.md",
+      "subCat": "来自其他提供商"
+    },
+    {
+      "name": "迁移域名",
+      "file": "migrating-domains.md",
+      "subCat": "数据迁移"
+    },
+    {
+      "name": "迁移页面",
+      "file": "migrating-pages.md",
+      "subCat": "数据迁移"
+    },
+    {
+      "name": "复制评论",
+      "file": "copying-comments.md",
+      "subCat": "数据迁移"
+    },
+    {
+      "name": "导出数据",
+      "file": "exporting-data.md",
+      "subCat": "导出到其他提供商"
+    }
+  ]
+}

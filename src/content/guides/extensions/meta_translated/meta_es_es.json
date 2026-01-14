@@ -1,0 +1,31 @@
+{
+  "name": "Escribir extensiones",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "El ciclo de vida de la extensión",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Definir una extensión",
+      "file": "defining-an-extension.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Ejemplos de extensiones",
+      "file": "example-extensions.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "El objeto de la extensión",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "La API de la extensión",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

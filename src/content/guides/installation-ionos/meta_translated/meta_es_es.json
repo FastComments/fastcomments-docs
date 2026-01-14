@@ -1,0 +1,37 @@
+{
+  "name": "Instalación de Ionos",
+  "pageHeader": "Añadir comentarios a sitios de Ionos",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Añadir un formulario de contacto",
+      "file": "ionos-step-1.md",
+      "subCat": "Instalación de Ionos"
+    },
+    {
+      "name": "Paso 2: Añadir el código de FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Instalación de Ionos"
+    },
+    {
+      "name": "Paso 3: Publicar",
+      "file": "ionos-step-3.md",
+      "subCat": "Instalación de Ionos"
+    },
+    {
+      "name": "Éxito",
+      "file": "ionos-success.md",
+      "subCat": "Instalación de Ionos"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Instalación de Ionos"
+    },
+    {
+      "name": "Personalización",
+      "file": "ionos-customize.md",
+      "subCat": "Instalación de Ionos"
+    }
+  ]
+}

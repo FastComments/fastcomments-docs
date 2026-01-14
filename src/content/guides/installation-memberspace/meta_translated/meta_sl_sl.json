@@ -1,0 +1,22 @@
+{
+  "name": "Namestitev MemberSpace",
+  "pageHeader": "Dodajanje komentarjev z MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Koda",
+      "file": "memberspace-step-1.md",
+      "subCat": "Namestitev MemberSpace"
+    },
+    {
+      "name": "Napake domene",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Namestitev MemberSpace"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "memberspace-customize.md",
+      "subCat": "Namestitev MemberSpace"
+    }
+  ]
+}

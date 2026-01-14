@@ -1,0 +1,21 @@
+{
+  "name": "Widżety licznika komentarzy",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Instalacja widżetu licznika komentarzy",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "Masowa instalacja widżetów licznika komentarzy",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "API licznika komentarzy",
+      "file": "comment-count-apis.md",
+      "subCat": "API licznika komentarzy"
+    }
+  ]
+}

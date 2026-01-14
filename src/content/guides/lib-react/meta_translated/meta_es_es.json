@@ -1,0 +1,24 @@
+{
+  "name": "Biblioteca de React",
+  "pageHeader": "Biblioteca de FastComments para React",
+  "itemsOrdered": [
+    {
+      "name": "Instalación",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeros pasos",
+      "type": "readme"
+    },
+    {
+      "name": "Ejemplos",
+      "file": "examples-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Uso",
+      "file": "usage-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    }
+  ]
+}

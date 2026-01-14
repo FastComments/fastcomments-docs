@@ -1,0 +1,36 @@
+{
+  "name": "Πρόγραμμα συνεργατών",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Γιατί να γίνετε συνεργάτης του FastComments;",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    },
+    {
+      "name": "Πρώτα βήματα",
+      "file": "getting-started.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    },
+    {
+      "name": "Προμήθεια",
+      "file": "commission.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    },
+    {
+      "name": "Πίνακας ελέγχου συνεργατών",
+      "file": "dashboard.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    },
+    {
+      "name": "Πρόγραμμα πληρωμών",
+      "file": "payout-schedule.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    },
+    {
+      "name": "Υλικό προώθησης",
+      "file": "marketing-materials.md",
+      "subCat": "Πρόγραμμα συνεργατών"
+    }
+  ]
+}

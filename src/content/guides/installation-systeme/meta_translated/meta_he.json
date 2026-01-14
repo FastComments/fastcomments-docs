@@ -1,0 +1,32 @@
+{
+  "name": "התקנת Systeme.io",
+  "pageHeader": "הוספת תגובות לבלוג ב-Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: פתח את תבנית הנושא של הבלוג",
+      "file": "systeme-step-1.md",
+      "subCat": "התקנת Systeme.io"
+    },
+    {
+      "name": "שלב 2: הוסף את קוד FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "התקנת Systeme.io"
+    },
+    {
+      "name": "הצלחה",
+      "file": "systeme-success.md",
+      "subCat": "התקנת Systeme.io"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "systeme-domain-errors.md",
+      "subCat": "התקנת Systeme.io"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "systeme-customize.md",
+      "subCat": "התקנת Systeme.io"
+    }
+  ]
+}

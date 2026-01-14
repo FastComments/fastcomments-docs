@@ -1,0 +1,16 @@
+{
+  "name": "Usuwanie konta",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Usuwanie konta",
+      "file": "deleting-your-account.md",
+      "subCat": "Komentujący i najemcy"
+    },
+    {
+      "name": "Anulowanie subskrypcji",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Najemcy"
+    }
+  ]
+}

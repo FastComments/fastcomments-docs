@@ -1,0 +1,56 @@
+{
+  "name": "On-Premise",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat is inbegrepen",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Waar te beginnen",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Instanties",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Configuratie",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Database-uitval en onderhoudsmodus",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architectuur"
+    },
+    {
+      "name": "Vergrendelingen",
+      "file": "on-prem-locks.md",
+      "subCat": "Architectuur"
+    },
+    {
+      "name": "Widgetcode",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installatie en integratie"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installatie en integratie"
+    },
+    {
+      "name": "Meerdere domeinen",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installatie en integratie"
+    },
+    {
+      "name": "Beveiliging",
+      "file": "on-prem-security.md",
+      "subCat": "Beveiligingstips"
+    }
+  ]
+}

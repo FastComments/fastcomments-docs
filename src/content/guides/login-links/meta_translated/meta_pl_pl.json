@@ -1,0 +1,26 @@
+{
+  "name": "Linki logowania",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym są linki logowania?",
+      "file": "login-links-what-are.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Zalety linków logowania w porównaniu z hasłami",
+      "file": "login-links-benefits.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Jak zapewniamy bezpieczeństwo linków logowania",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Bezpieczeństwo"
+    },
+    {
+      "name": "Do kogo wysyłane są linki logowania?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Użycie"
+    }
+  ]
+}

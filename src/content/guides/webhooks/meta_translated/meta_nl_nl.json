@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn Webhooks",
+      "file": "what-are-webhooks.md",
+      "subCat": "Overzicht"
+    },
+    {
+      "name": "Ondersteunde gebeurtenissen en bronnen",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Overzicht"
+    },
+    {
+      "name": "Lokale ontwikkelomgeving instellen",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Installatie",
+      "file": "webhooks-setup.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Testen",
+      "file": "webhooks-testing.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Datastructuren",
+      "file": "webhooks-structures.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Beveiliging & API-tokens",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Hoe het werkt & het afhandelen van herhaalpogingen",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Achter de schermen"
+    }
+  ]
+}

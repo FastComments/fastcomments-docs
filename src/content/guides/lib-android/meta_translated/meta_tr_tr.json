@@ -1,0 +1,72 @@
+{
+  "name": "Android Kütüphanesi",
+  "pageHeader": "FastComments Android Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Özellikler",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Gereksinimler",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Temel Kullanım",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Güvenli SSO Kimlik Doğrulama",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Kimlik Doğrulama",
+      "type": "readme"
+    },
+    {
+      "name": "Akış Entegrasyonu",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Canlı Sohbet Entegrasyonu",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Örnek Projeler",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma Seçenekleri",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Kapsamlı Tema Özelleştirme",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bellek Yönetimi",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

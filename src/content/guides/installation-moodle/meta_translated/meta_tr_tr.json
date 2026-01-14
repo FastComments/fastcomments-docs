@@ -1,0 +1,42 @@
+{
+  "name": "Moodle Kurulumu",
+  "pageHeader": "Moodle Sitelerine Yorum Ekle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Sunucuya Erişim Sağlayın",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Adım 2: Görünüm Dosyasını Belirleyin",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Adım 3: Kod Ekleyin",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Başarısı",
+      "file": "moodle-success.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Alan Adı Hataları",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Özelleştirmesi",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle Site Kurulumu"
+    },
+    {
+      "name": "Özel Bir Eklenti İster misiniz?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Özel Eklenti?"
+    }
+  ]
+}

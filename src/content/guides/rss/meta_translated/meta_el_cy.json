@@ -1,0 +1,21 @@
+{
+  "name": "Ροές RSS",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Επισκόπηση",
+      "file": "overview.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Ρύθμιση της ροής RSS σας",
+      "file": "setup.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Θέματα Ασφαλείας",
+      "file": "security.md",
+      "subCat": "Υλοποίηση"
+    }
+  ]
+}

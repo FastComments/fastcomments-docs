@@ -1,0 +1,41 @@
+{
+  "name": "Klepet s slikami",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Začetek",
+      "file": "getting-started.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Primeri",
+      "file": "examples.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Možnosti konfiguracije",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagodljiv dizajn",
+      "file": "responsive-design.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "customization.md",
+      "subCat": "Prilagajanje"
+    },
+    {
+      "name": "Sinhronizacija v živo",
+      "file": "live-sync.md",
+      "subCat": "Napredno"
+    },
+    {
+      "name": "Referenca API-ja",
+      "file": "api-reference.md",
+      "subCat": "Napredno"
+    }
+  ]
+}

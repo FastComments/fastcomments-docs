@@ -1,0 +1,16 @@
+{
+  "name": "Емисии",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Персонализиране на емисиите",
+      "file": "personalizing-feeds.md",
+      "subCat": "Персонализиране"
+    },
+    {
+      "name": "Регионални емисии",
+      "file": "regional-feeds.md",
+      "subCat": "Персонализиране"
+    }
+  ]
+}

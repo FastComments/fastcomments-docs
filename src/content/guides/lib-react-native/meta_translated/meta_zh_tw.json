@@ -1,0 +1,42 @@
+{
+  "name": "React Native 函式庫",
+  "pageHeader": "FastComments React Native 函式庫",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "考慮使用原生 SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "使用 - 即時留言元件",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "使用 - 即時聊天元件",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "使用 - 單一登入 (SSO)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "對等相依",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

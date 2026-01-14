@@ -1,0 +1,26 @@
+{
+  "name": "דפדפנים נתמכים",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "דפדפנים נתמכים",
+      "file": "supported-browsers.md",
+      "subCat": "דפדפנים נתמכים"
+    },
+    {
+      "name": "אינטרנט אקספלורר",
+      "file": "internet-explorer.md",
+      "subCat": "דפדפנים נתמכים"
+    },
+    {
+      "name": "כיצד אנו בודקים",
+      "file": "how-we-test.md",
+      "subCat": "דפדפנים נתמכים"
+    },
+    {
+      "name": "דרישות JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "דפדפנים נתמכים"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на Weebly",
+  "pageHeader": "Добавяне на коментари към сайтове Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Отворете настройките на блога",
+      "file": "weebly-step-1.md",
+      "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Стъпка 2: Добавете кода на FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Стъпка 3: Публикувайте!",
+      "file": "weebly-step-3.md",
+      "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Успешно",
+      "file": "weebly-success.md",
+      "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Грешки с домейна",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "weebly-customize.md",
+      "subCat": "Инсталиране на Weebly"
+    }
+  ]
+}

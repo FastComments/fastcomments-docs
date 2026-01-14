@@ -1,0 +1,46 @@
+{
+  "name": "Benutzer",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Benutzertypen",
+      "file": "types-of-users.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Benutzernamen",
+      "file": "usernames.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Administratoren",
+      "file": "administrator-users.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Kommentatoren",
+      "file": "commenter-users.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Administratoren hinzufügen",
+      "file": "adding-administrators.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Moderatoren hinzufügen",
+      "file": "adding-moderators.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Administratorberechtigungen aktualisieren",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Einrichtung"
+    },
+    {
+      "name": "Entwickler",
+      "file": "developers.md",
+      "subCat": "Einrichtung"
+    }
+  ]
+}

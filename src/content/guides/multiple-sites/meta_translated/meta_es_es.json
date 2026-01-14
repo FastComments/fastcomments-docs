@@ -1,0 +1,51 @@
+{
+  "name": "Múltiples sitios",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Configuración inicial",
+      "file": "add-domains-to-account.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Límites y precios",
+      "file": "domain-limits.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Nombre, correo y logotipo del remitente",
+      "file": "from-name-email-logo.md",
+      "subCat": "Personalización por sitio"
+    },
+    {
+      "name": "El dominio del campo De (nombre/correo) no funciona",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Personalización por sitio"
+    },
+    {
+      "name": "Inquilino por entorno",
+      "file": "tenant-per-environment.md",
+      "subCat": "Personalización por sitio"
+    },
+    {
+      "name": "Personalizaciones",
+      "file": "customizations.md",
+      "subCat": "Personalización por sitio"
+    },
+    {
+      "name": "Moderación de comentarios",
+      "file": "moderation.md",
+      "subCat": "Datos y búsqueda"
+    },
+    {
+      "name": "Compartir comentarios entre dominios",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Datos y búsqueda"
+    },
+    {
+      "name": "Con WordPress",
+      "file": "wordpress.md",
+      "subCat": "Notas de integración"
+    }
+  ]
+}

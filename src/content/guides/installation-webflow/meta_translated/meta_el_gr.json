@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Webflow",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Webflow",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθέστε ένα μπλοκ ενσωμάτωσης",
+      "file": "webflow-step-1.md",
+      "subCat": "Εγκατάσταση Webflow"
+    },
+    {
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα από το FastComments.com",
+      "file": "webflow-step-2.md",
+      "subCat": "Εγκατάσταση Webflow"
+    },
+    {
+      "name": "Βήμα 3: Δημοσιεύστε",
+      "file": "webflow-step-3.md",
+      "subCat": "Εγκατάσταση Webflow"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "webflow-success.md",
+      "subCat": "Εγκατάσταση Webflow"
+    },
+    {
+      "name": "Σφάλματα στον τομέα",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Εγκατάσταση Webflow"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "webflow-customize.md",
+      "subCat": "Εγκατάσταση Webflow"
+    }
+  ]
+}

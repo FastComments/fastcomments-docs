@@ -1,0 +1,46 @@
+{
+  "name": "Уебхукове",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват уебхуковете",
+      "file": "what-are-webhooks.md",
+      "subCat": "Преглед"
+    },
+    {
+      "name": "Поддържани събития и ресурси",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Преглед"
+    },
+    {
+      "name": "Настройка за локална разработка",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Настройка",
+      "file": "webhooks-setup.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Тестване",
+      "file": "webhooks-testing.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Структури от данни",
+      "file": "webhooks-structures.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Сигурност и API токени",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Как работи и обработка на повторни опити",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Зад кулисите"
+    }
+  ]
+}

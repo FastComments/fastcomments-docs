@@ -1,0 +1,31 @@
+{
+  "name": "SSO 접근 제어",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "접근 제어란 무엇인가?",
+      "file": "what-is-access-control.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "작동 방식",
+      "file": "how-it-works.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "명세",
+      "file": "access-control-spec.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "구현",
+      "file": "implementation.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "예제 API 호출",
+      "file": "api-example.md",
+      "subCat": "구현"
+    }
+  ]
+}

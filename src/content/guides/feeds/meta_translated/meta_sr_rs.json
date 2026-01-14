@@ -1,0 +1,16 @@
+{
+  "name": "Фидови",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Прилагођавање фидова",
+      "file": "personalizing-feeds.md",
+      "subCat": "Прилагођавање"
+    },
+    {
+      "name": "Регионални фидови",
+      "file": "regional-feeds.md",
+      "subCat": "Прилагођавање"
+    }
+  ]
+}

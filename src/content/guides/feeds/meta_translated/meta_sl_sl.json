@@ -1,0 +1,16 @@
+{
+  "name": "Viri",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Prilagajanje virov",
+      "file": "personalizing-feeds.md",
+      "subCat": "Prilagoditev"
+    },
+    {
+      "name": "Regionalni viri",
+      "file": "regional-feeds.md",
+      "subCat": "Prilagoditev"
+    }
+  ]
+}

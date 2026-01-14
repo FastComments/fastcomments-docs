@@ -1,0 +1,126 @@
+{
+  "name": "Модерация",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Страница модерации комментариев",
+      "file": "moderate-comments-page.md",
+      "subCat": "Введение"
+    },
+    {
+      "name": "Модераторы",
+      "file": "moderators.md",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "Добавление модераторов",
+      "file": "moderators-adding.md",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "Статистика модераторов",
+      "file": "moderator-stats.md",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "Удаление модераторов",
+      "file": "moderators-removing.md",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "Как работают одобрения",
+      "file": "moderation-approvals.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Модерация по электронной почте",
+      "file": "moderation-via-email.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Фильтрация",
+      "file": "filters.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Поиск",
+      "file": "search.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Совместное использование ссылок модерации",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Просмотрщик ветки комментариев",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Действия модерации",
+      "file": "comment-actions.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Удаление комментариев",
+      "file": "deleting-comments.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Действия модерации из виджета комментариев",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Модерация в реальном времени",
+      "file": "comment-actions-live.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Блокировка пользователей",
+      "file": "banning-users.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Блокировка пользователей с подстановочными символами",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Флагирование",
+      "file": "flagging.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Массовые действия",
+      "file": "bulk-actions.md",
+      "subCat": "Процесс модерации"
+    },
+    {
+      "name": "Группы модерации",
+      "file": "moderation-groups.md",
+      "subCat": "Группы модерации"
+    },
+    {
+      "name": "Настройки модерации",
+      "file": "moderation-settings.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Обнаружение спама",
+      "file": "spam-detection.md",
+      "subCat": "Спам и ненормативная лексика"
+    },
+    {
+      "name": "Маскировка нецензурной лексики",
+      "file": "profanity-mask.md",
+      "subCat": "Спам и ненормативная лексика"
+    },
+    {
+      "name": "Журналы комментариев",
+      "file": "comment-logs.md",
+      "subCat": "Процесс модерации"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "BigCommerce 설치",
+  "pageHeader": "BigCommerce 사이트에 댓글 추가",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 테마 준비",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "2단계: 올바른 템플릿 편집",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "3단계: 위젯 코드 추가",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "4단계: 새 테마 활성화",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "성공",
+      "file": "bigcommerce-success.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "bigcommerce-customize.md",
+      "subCat": "BigCommerce 설치"
+    },
+    {
+      "name": "추가: 페이지 빌더용 코드 스니펫",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "페이지 빌더 사용"
+    }
+  ]
+}

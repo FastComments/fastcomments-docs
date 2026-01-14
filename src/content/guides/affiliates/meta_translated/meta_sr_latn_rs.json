@@ -1,0 +1,36 @@
+{
+  "name": "Partnerski program",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Zašto postati FastComments partner?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Partnerski program"
+    },
+    {
+      "name": "Početak rada",
+      "file": "getting-started.md",
+      "subCat": "Partnerski program"
+    },
+    {
+      "name": "Provizija",
+      "file": "commission.md",
+      "subCat": "Partnerski program"
+    },
+    {
+      "name": "Nadzorna ploča za partnere",
+      "file": "dashboard.md",
+      "subCat": "Partnerski program"
+    },
+    {
+      "name": "Raspored isplata",
+      "file": "payout-schedule.md",
+      "subCat": "Partnerski program"
+    },
+    {
+      "name": "Marketinški materijali",
+      "file": "marketing-materials.md",
+      "subCat": "Partnerski program"
+    }
+  ]
+}

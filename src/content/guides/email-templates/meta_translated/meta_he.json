@@ -1,0 +1,41 @@
+{
+  "name": "תבניות דואר אלקטרוני",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "יצירת תבניות",
+      "file": "creating-templates.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "שפת התבנית",
+      "file": "template-language.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "לוקליזציה וטקסט מותאם אישית",
+      "file": "localizing.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "תבניות לכל דומיין",
+      "file": "per-domain-templates.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "נתונים ומשתנים",
+      "file": "data-variables.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "כשלי רינדור",
+      "file": "render-failures.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    },
+    {
+      "name": "החלת שינויים",
+      "file": "time-to-apply-changes.md",
+      "subCat": "תבניות דואר אלקטרוני"
+    }
+  ]
+}

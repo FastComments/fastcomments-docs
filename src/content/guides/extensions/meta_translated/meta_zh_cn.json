@@ -1,0 +1,31 @@
+{
+  "name": "编写扩展",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "扩展的生命周期",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "定义扩展",
+      "file": "defining-an-extension.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "示例扩展",
+      "file": "example-extensions.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "扩展对象",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "扩展 API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

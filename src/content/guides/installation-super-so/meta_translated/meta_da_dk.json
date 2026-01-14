@@ -1,0 +1,37 @@
+{
+  "name": "Installation af Super.so",
+  "pageHeader": "Tilføj live-diskussioner til Super.so-sider",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Åbn indstillinger",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Installation af Super.so"
+    },
+    {
+      "name": "Trin 2: Tilføj færdiglavet kode",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Installation af Super.so"
+    },
+    {
+      "name": "Se også: Standard kommentarfelt",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Installation af Super.so"
+    },
+    {
+      "name": "Succes",
+      "file": "super-so-learn-success.md",
+      "subCat": "Installation af Super.so"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Installation af Super.so"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Installation af Super.so"
+    }
+  ]
+}

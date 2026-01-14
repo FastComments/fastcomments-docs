@@ -1,0 +1,22 @@
+{
+  "name": "Memberstack 安裝",
+  "pageHeader": "使用 Memberstack 新增留言",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "程式碼",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstack 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstack 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstack 安裝"
+    }
+  ]
+}

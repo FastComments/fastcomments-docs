@@ -1,0 +1,56 @@
+{
+  "name": "Sur site",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Ce qui est inclus",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Par où commencer",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Instances",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Déploiement"
+    },
+    {
+      "name": "Configuration",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Déploiement"
+    },
+    {
+      "name": "Indisponibilité de la base de données et mode maintenance",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architecture"
+    },
+    {
+      "name": "Verrous",
+      "file": "on-prem-locks.md",
+      "subCat": "Architecture"
+    },
+    {
+      "name": "Code du widget",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installation et intégration"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installation et intégration"
+    },
+    {
+      "name": "Plusieurs domaines",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installation et intégration"
+    },
+    {
+      "name": "Sécurité",
+      "file": "on-prem-security.md",
+      "subCat": "Conseils de sécurité"
+    }
+  ]
+}

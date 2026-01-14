@@ -1,0 +1,42 @@
+{
+  "name": "Wix 설치",
+  "pageHeader": "Wix 사이트에 댓글 추가",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 올바른 페이지 편집",
+      "file": "wix-step-1.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "2단계: 임베드 블록 추가",
+      "file": "wix-step-2.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "3단계: 맞춤 코드 복사/붙여넣기",
+      "file": "wix-step-3.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "4단계: 크기 조정",
+      "file": "wix-step-4.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "5단계: 고유 댓글 스레드",
+      "file": "wix-step-5.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "6단계: 축하하기",
+      "file": "wix-step-6.md",
+      "subCat": "Wix 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "wix-customize.md",
+      "subCat": "Wix 설치"
+    }
+  ]
+}

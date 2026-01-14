@@ -1,0 +1,11 @@
+{
+  "name": "LLM-sæt",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Få LLM-sættet",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM-integration"
+    }
+  ]
+}

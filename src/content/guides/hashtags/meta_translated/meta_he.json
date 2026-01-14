@@ -1,0 +1,46 @@
+{
+  "name": "האשטאגים",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "מהם האשטאגים",
+      "file": "what-are-hashtags.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "כיצד להשתמש בהאשטאגים",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "שימוש בהאשטאגים"
+    },
+    {
+      "name": "סינון תגובות לפי האשטאג",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "שימוש בהאשטאגים"
+    },
+    {
+      "name": "האשטאגים תקפים לעומת לא תקפים",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "שימוש בהאשטאגים"
+    },
+    {
+      "name": "שימוש בסמלים שאינם #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "הגדרת האשטאגים"
+    },
+    {
+      "name": "מילוי מראש של האשטאגים",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "הגדרת האשטאגים"
+    },
+    {
+      "name": "קישור לתוכן באמצעות האשטאגים",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "הגדרת האשטאגים"
+    },
+    {
+      "name": "כיצד פועלת ההשלמה האוטומטית של האשטאגים",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "רקע על האשטאגים"
+    }
+  ]
+}

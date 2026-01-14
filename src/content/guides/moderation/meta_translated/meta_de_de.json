@@ -1,0 +1,126 @@
+{
+  "name": "Moderation",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Seite zum Moderieren von Kommentaren",
+      "file": "moderate-comments-page.md",
+      "subCat": "Einführung"
+    },
+    {
+      "name": "Moderatoren",
+      "file": "moderators.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatoren hinzufügen",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatorenstatistiken",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatoren entfernen",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Wie Genehmigungen funktionieren",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Moderation per E-Mail",
+      "file": "moderation-via-email.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Filterung",
+      "file": "filters.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Suche",
+      "file": "search.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Moderationslinks teilen",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Kommentar-Thread-Ansicht",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Moderationsaktionen",
+      "file": "comment-actions.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Kommentare löschen",
+      "file": "deleting-comments.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Moderationsaktionen im Kommentar-Widget",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Echtzeit-Moderation",
+      "file": "comment-actions-live.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Benutzer sperren",
+      "file": "banning-users.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Benutzer mit Platzhaltern sperren",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Melden",
+      "file": "flagging.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Massenaktionen",
+      "file": "bulk-actions.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Moderationsgruppen",
+      "file": "moderation-groups.md",
+      "subCat": "Moderationsgruppen"
+    },
+    {
+      "name": "Moderationseinstellungen",
+      "file": "moderation-settings.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Spam-Erkennung",
+      "file": "spam-detection.md",
+      "subCat": "Spam & anstößige Sprache"
+    },
+    {
+      "name": "Fluchwörter maskieren",
+      "file": "profanity-mask.md",
+      "subCat": "Spam & anstößige Sprache"
+    },
+    {
+      "name": "Kommentarprotokolle",
+      "file": "comment-logs.md",
+      "subCat": "Moderationsablauf"
+    }
+  ]
+}

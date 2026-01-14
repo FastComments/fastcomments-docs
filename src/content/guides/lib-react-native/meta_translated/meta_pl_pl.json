@@ -1,0 +1,42 @@
+{
+  "name": "Biblioteka React Native",
+  "pageHeader": "Biblioteka FastComments dla React Native",
+  "itemsOrdered": [
+    {
+      "name": "Instalacja",
+      "file": "installation-readme-generated.md",
+      "subCat": "Pierwsze kroki",
+      "type": "readme"
+    },
+    {
+      "name": "Rozważ użycie natywnego SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Użycie - widżet komentarzy na żywo",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Użycie - widżet czatu na żywo",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Użycie - SSO",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Zależności peer",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    }
+  ]
+}

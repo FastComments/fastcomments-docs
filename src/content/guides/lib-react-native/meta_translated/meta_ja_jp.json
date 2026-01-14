@@ -1,0 +1,42 @@
+{
+  "name": "React Native ライブラリ",
+  "pageHeader": "FastComments React Native ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "ネイティブ SDK を検討する",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "使用法 - ライブコメントウィジェット",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "使用法",
+      "type": "readme"
+    },
+    {
+      "name": "使用法 - ライブチャットウィジェット",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "使用法",
+      "type": "readme"
+    },
+    {
+      "name": "使用法 - SSO（シングルサインオン）",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "使用法",
+      "type": "readme"
+    },
+    {
+      "name": "ピア依存関係",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

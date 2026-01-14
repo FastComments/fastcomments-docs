@@ -1,0 +1,36 @@
+{
+  "name": "Партньорска програма",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Защо да станете партньор на FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Партньорска програма"
+    },
+    {
+      "name": "Първи стъпки",
+      "file": "getting-started.md",
+      "subCat": "Партньорска програма"
+    },
+    {
+      "name": "Комисионна",
+      "file": "commission.md",
+      "subCat": "Партньорска програма"
+    },
+    {
+      "name": "Табло за партньори",
+      "file": "dashboard.md",
+      "subCat": "Партньорска програма"
+    },
+    {
+      "name": "График на изплащанията",
+      "file": "payout-schedule.md",
+      "subCat": "Партньорска програма"
+    },
+    {
+      "name": "Маркетингови материали",
+      "file": "marketing-materials.md",
+      "subCat": "Партньорска програма"
+    }
+  ]
+}

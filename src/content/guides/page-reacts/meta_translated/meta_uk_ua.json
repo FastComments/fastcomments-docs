@@ -1,0 +1,31 @@
+{
+  "name": "Реакції сторінки",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Реакції сторінки",
+      "file": "page-reacts-about.md",
+      "subCat": "Реакції сторінки"
+    },
+    {
+      "name": "Встановлення — VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Реакції сторінки"
+    },
+    {
+      "name": "Плаваючий віджет лайків",
+      "file": "floating-likes-about.md",
+      "subCat": "Плаваючий віджет лайків"
+    },
+    {
+      "name": "Встановлення — VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Плаваючий віджет лайків"
+    },
+    {
+      "name": "Встановлення — WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Плаваючий віджет лайків"
+    }
+  ]
+}

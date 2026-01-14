@@ -1,0 +1,31 @@
+{
+  "name": "Згадки",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке згадки",
+      "file": "what-are-mentions.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як позначити користувача",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Використання згадок"
+    },
+    {
+      "name": "Сповіщення",
+      "file": "mentions-notifications.md",
+      "subCat": "Використання згадок"
+    },
+    {
+      "name": "Як працює автозаповнення згадок",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Використання згадок"
+    },
+    {
+      "name": "Заповнення згадок",
+      "file": "populating-mentions.md",
+      "subCat": "Налаштування згадок"
+    }
+  ]
+}

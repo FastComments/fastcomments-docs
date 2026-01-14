@@ -1,0 +1,12 @@
+{
+  "name": "WooCommerce Kurulumu",
+  "pageHeader": "WooCommerce Sitelerine Canlı Yorum Ekle",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "WordPress Eklentisini Kur",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerce Kurulumu"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "התקנת ויקס",
+  "pageHeader": "הוספת תגובות לאתרי ויקס",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: ערוך את הדף הנכון",
+      "file": "wix-step-1.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "שלב 2: הוסף בלוק הטמעה",
+      "file": "wix-step-2.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "שלב 3: העתק והדבק קוד מותאם אישית",
+      "file": "wix-step-3.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "שלב 4: שנה את הגודל",
+      "file": "wix-step-4.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "שלב 5: שרשורי תגובות ייחודיים",
+      "file": "wix-step-5.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "שלב 6: חגוג",
+      "file": "wix-step-6.md",
+      "subCat": "התקנת ויקס"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "wix-customize.md",
+      "subCat": "התקנת ויקס"
+    }
+  ]
+}

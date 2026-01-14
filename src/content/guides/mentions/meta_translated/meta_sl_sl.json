@@ -1,0 +1,31 @@
+{
+  "name": "Omembe",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj so omembe",
+      "file": "what-are-mentions.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kako označiti uporabnika",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Uporaba omemb"
+    },
+    {
+      "name": "Obvestila",
+      "file": "mentions-notifications.md",
+      "subCat": "Uporaba omemb"
+    },
+    {
+      "name": "Kako deluje samodokončanje omemb",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Uporaba omemb"
+    },
+    {
+      "name": "Polnjenje omemb",
+      "file": "populating-mentions.md",
+      "subCat": "Nastavitev omemb"
+    }
+  ]
+}

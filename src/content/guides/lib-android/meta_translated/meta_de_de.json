@@ -1,0 +1,72 @@
+{
+  "name": "Android-Bibliothek",
+  "pageHeader": "FastComments Android-Bibliothek",
+  "itemsOrdered": [
+    {
+      "name": "Funktionen",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Anforderungen",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Grundlegende Nutzung",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    },
+    {
+      "name": "Sichere SSO-Authentifizierung",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Authentifizierung",
+      "type": "readme"
+    },
+    {
+      "name": "Feed-Integration",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-Chat-Integration",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Beispielprojekte",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    },
+    {
+      "name": "Konfigurationsoptionen",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Umfassende Anpassung des Designs",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Speicherverwaltung",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

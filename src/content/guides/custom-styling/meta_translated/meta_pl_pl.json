@@ -1,0 +1,32 @@
+{
+  "name": "Niestandardowe style",
+  "pageHeader": "Przewodnik po niestandardowych stylach",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Jak dostosować style",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Pierwsze kroki"
+    },
+    {
+      "name": "Referencja stylów widgetu komentarzy (v2, najnowsza)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Stylizacja widgetów"
+    },
+    {
+      "name": "Stylizacja widgetu 'Najnowsze komentarze'",
+      "file": "recent-comments-widget.md",
+      "subCat": "Stylizacja widgetów"
+    },
+    {
+      "name": "Stylizacja widgetu 'Najpopularniejsze strony'",
+      "file": "top-pages-widget.md",
+      "subCat": "Stylizacja widgetów"
+    },
+    {
+      "name": "Inne biblioteki frontendowe",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Inne biblioteki frontendowe"
+    }
+  ]
+}

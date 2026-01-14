@@ -1,0 +1,72 @@
+{
+  "name": "안드로이드 라이브러리",
+  "pageHeader": "FastComments 안드로이드 라이브러리",
+  "itemsOrdered": [
+    {
+      "name": "기능",
+      "file": "features-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "요구 사항",
+      "file": "requirements-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "기본 사용법",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "보안 SSO 인증",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "인증",
+      "type": "readme"
+    },
+    {
+      "name": "피드 연동",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "라이브 채팅 연동",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "예제 프로젝트",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "구성 옵션",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "구성",
+      "type": "readme"
+    },
+    {
+      "name": "포괄적인 테마 맞춤화",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "메모리 관리",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

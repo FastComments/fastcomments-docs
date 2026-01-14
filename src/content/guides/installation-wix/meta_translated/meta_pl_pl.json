@@ -1,0 +1,42 @@
+{
+  "name": "Instalacja Wix",
+  "pageHeader": "Dodaj komentarze do stron Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Edytuj właściwą stronę",
+      "file": "wix-step-1.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Krok 2: Dodaj blok osadzania",
+      "file": "wix-step-2.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Krok 3: Skopiuj i wklej niestandardowy kod",
+      "file": "wix-step-3.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Krok 4: Zmień rozmiar",
+      "file": "wix-step-4.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Krok 5: Unikalne wątki komentarzy",
+      "file": "wix-step-5.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Krok 6: Świętuj",
+      "file": "wix-step-6.md",
+      "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "wix-customize.md",
+      "subCat": "Instalacja Wix"
+    }
+  ]
+}

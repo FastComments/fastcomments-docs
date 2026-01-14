@@ -1,0 +1,37 @@
+{
+  "name": "Инсталация на Ionos",
+  "pageHeader": "Добавяне на коментари в сайтове на Ionos",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Добавяне на контактна форма",
+      "file": "ionos-step-1.md",
+      "subCat": "Инсталация на Ionos"
+    },
+    {
+      "name": "Стъпка 2: Добавяне на кода на FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Инсталация на Ionos"
+    },
+    {
+      "name": "Стъпка 3: Публикуване",
+      "file": "ionos-step-3.md",
+      "subCat": "Инсталация на Ionos"
+    },
+    {
+      "name": "Успешно",
+      "file": "ionos-success.md",
+      "subCat": "Инсталация на Ionos"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Инсталация на Ionos"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "ionos-customize.md",
+      "subCat": "Инсталация на Ionos"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "WooCommerce 설치",
+  "pageHeader": "WooCommerce 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "WordPress 플러그인 설정",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerce 설치"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Instalação do Framer",
+  "pageHeader": "Adicione comentários em tempo real a sites do Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Abra o editor",
+      "file": "framer-step-1.md",
+      "subCat": "Instalação do Framer"
+    },
+    {
+      "name": "Passo 2: Adicione um bloco de incorporação",
+      "file": "framer-step-2.md",
+      "subCat": "Instalação do Framer"
+    },
+    {
+      "name": "Passo 3: Copie e cole o código do FastComments específico para o Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Instalação do Framer"
+    },
+    {
+      "name": "Passo 4: Ajuste a altura do widget e da página",
+      "file": "framer-step-4.md",
+      "subCat": "Instalação do Framer"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "framer-domain-errors.md",
+      "subCat": "Instalação do Framer"
+    },
+    {
+      "name": "Personalização",
+      "file": "framer-customize.md",
+      "subCat": "Instalação do Framer"
+    }
+  ]
+}

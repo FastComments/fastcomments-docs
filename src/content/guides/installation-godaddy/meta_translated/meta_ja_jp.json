@@ -1,0 +1,37 @@
+{
+  "name": "Godaddy のインストール",
+  "pageHeader": "Godaddy サイトにコメントを追加",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ1: コード領域を追加",
+      "file": "godaddy-step-1.md",
+      "subCat": "Godaddy のインストール"
+    },
+    {
+      "name": "ステップ2: FastComments.com のコードを追加",
+      "file": "godaddy-step-2.md",
+      "subCat": "Godaddy のインストール"
+    },
+    {
+      "name": "ステップ3: 公開",
+      "file": "godaddy-step-3.md",
+      "subCat": "Godaddy のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "godaddy-success.md",
+      "subCat": "Godaddy のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Godaddy のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "godaddy-customize.md",
+      "subCat": "Godaddy のインストール"
+    }
+  ]
+}

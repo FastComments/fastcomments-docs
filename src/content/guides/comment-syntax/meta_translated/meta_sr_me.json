@@ -1,0 +1,16 @@
+{
+  "name": "Синтакса коментара",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Основно форматирање",
+      "file": "basic-formatting.md",
+      "subCat": "Форматирање"
+    },
+    {
+      "name": "Безбједност",
+      "file": "security.md",
+      "subCat": "Безбједност"
+    }
+  ]
+}

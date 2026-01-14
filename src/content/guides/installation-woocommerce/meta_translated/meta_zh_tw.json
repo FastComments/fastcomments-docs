@@ -1,0 +1,12 @@
+{
+  "name": "WooCommerce 安裝",
+  "pageHeader": "為 WooCommerce 網站新增即時評論",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "設定 WordPress 外掛",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerce 安裝"
+    }
+  ]
+}

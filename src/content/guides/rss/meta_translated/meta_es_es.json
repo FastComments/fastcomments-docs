@@ -1,0 +1,21 @@
+{
+  "name": "Canales RSS",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Visión general",
+      "file": "overview.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Configurar su canal RSS",
+      "file": "setup.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Consideraciones de seguridad",
+      "file": "security.md",
+      "subCat": "Implementación"
+    }
+  ]
+}

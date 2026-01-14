@@ -1,0 +1,16 @@
+{
+  "name": "コメント構文",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "基本的な書式",
+      "file": "basic-formatting.md",
+      "subCat": "書式"
+    },
+    {
+      "name": "セキュリティ",
+      "file": "security.md",
+      "subCat": "セキュリティ"
+    }
+  ]
+}

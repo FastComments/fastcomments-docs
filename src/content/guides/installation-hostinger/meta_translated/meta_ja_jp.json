@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger のインストール",
+  "pageHeader": "Hostinger サイトにライブコメントを追加",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ1: コードウィジェットを追加",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger サイトのインストール"
+    },
+    {
+      "name": "ステップ2: コードを追加",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger サイトのインストール"
+    },
+    {
+      "name": "成功",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger サイトのインストール"
+    },
+    {
+      "name": "サイトのドメインエラー",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger サイトのインストール"
+    },
+    {
+      "name": "サイトのカスタマイズ",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger サイトのインストール"
+    },
+    {
+      "name": "フローティングいいねボタン",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger のフローティングいいね"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Hostinger",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθήκη widget κώδικα",
+      "file": "hostinger-step-1.md",
+      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη του κώδικα",
+      "file": "hostinger-step-2.md",
+      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "hostinger-site-success.md",
+      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+    },
+    {
+      "name": "Σφάλματα τομέα ιστότοπου",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+    },
+    {
+      "name": "Προσαρμογή ιστότοπου",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+    },
+    {
+      "name": "Πλωτό κουμπί 'Μου αρέσει'",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Πλωτά 'Μου αρέσει' στο Hostinger"
+    }
+  ]
+}

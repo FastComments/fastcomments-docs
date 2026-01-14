@@ -1,0 +1,36 @@
+{
+  "name": "Program partnerski",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Dlaczego warto zostać partnerem FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Program partnerski"
+    },
+    {
+      "name": "Pierwsze kroki",
+      "file": "getting-started.md",
+      "subCat": "Program partnerski"
+    },
+    {
+      "name": "Prowizja",
+      "file": "commission.md",
+      "subCat": "Program partnerski"
+    },
+    {
+      "name": "Panel programu partnerskiego",
+      "file": "dashboard.md",
+      "subCat": "Program partnerski"
+    },
+    {
+      "name": "Harmonogram wypłat",
+      "file": "payout-schedule.md",
+      "subCat": "Program partnerski"
+    },
+    {
+      "name": "Materiały marketingowe",
+      "file": "marketing-materials.md",
+      "subCat": "Program partnerski"
+    }
+  ]
+}

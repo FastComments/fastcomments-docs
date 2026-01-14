@@ -1,0 +1,126 @@
+{
+  "name": "Модерация",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Страница за модериране на коментари",
+      "file": "moderate-comments-page.md",
+      "subCat": "Въведение"
+    },
+    {
+      "name": "Модератори",
+      "file": "moderators.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Добавяне на модератори",
+      "file": "moderators-adding.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Статистика за модераторите",
+      "file": "moderator-stats.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Премахване на модератори",
+      "file": "moderators-removing.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Как работят одобренията",
+      "file": "moderation-approvals.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Модериране чрез имейл",
+      "file": "moderation-via-email.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Филтриране",
+      "file": "filters.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Търсене",
+      "file": "search.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Споделяне на връзки за модериране",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Преглед на нишката с коментари",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Модерационни действия",
+      "file": "comment-actions.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Изтриване на коментари",
+      "file": "deleting-comments.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Модерационни действия от приспособлението за коментари",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Модериране на живо",
+      "file": "comment-actions-live.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Блокиране на потребители",
+      "file": "banning-users.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Блокиране на потребители с универсални символи",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Сигнализиране",
+      "file": "flagging.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Масови действия",
+      "file": "bulk-actions.md",
+      "subCat": "Работен процес на модерацията"
+    },
+    {
+      "name": "Групи за модериране",
+      "file": "moderation-groups.md",
+      "subCat": "Групи за модериране"
+    },
+    {
+      "name": "Настройки за модериране",
+      "file": "moderation-settings.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Откриване на спам",
+      "file": "spam-detection.md",
+      "subCat": "Спам и нецензурни изрази"
+    },
+    {
+      "name": "Маскиране на нецензурни изрази",
+      "file": "profanity-mask.md",
+      "subCat": "Спам и нецензурни изрази"
+    },
+    {
+      "name": "Регистри на коментари",
+      "file": "comment-logs.md",
+      "subCat": "Работен процес на модерацията"
+    }
+  ]
+}

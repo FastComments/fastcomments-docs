@@ -1,0 +1,36 @@
+{
+  "name": "SSR (Server-side rendering)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Fordele ved SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Understøttede funktioner i FastComments SSR",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Brugstilfælde",
+      "file": "ssr-use-cases.md",
+      "subCat": "Brug af SSR"
+    },
+    {
+      "name": "Hvor FastComments bruger SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Brug af SSR"
+    },
+    {
+      "name": "Brug af SSR",
+      "file": "using-ssr.md",
+      "subCat": "Brug af SSR"
+    }
+  ]
+}

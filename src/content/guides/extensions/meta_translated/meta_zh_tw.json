@@ -1,0 +1,31 @@
+{
+  "name": "撰寫擴充套件",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "擴充套件生命週期",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "定義擴充套件",
+      "file": "defining-an-extension.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "範例擴充套件",
+      "file": "example-extensions.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "擴充套件物件",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "擴充套件 API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

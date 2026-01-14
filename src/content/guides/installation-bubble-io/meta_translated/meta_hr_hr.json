@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Dodajte komentare uživo na Bubble.io stranice",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Dodajte HTML blok",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "2. Umetnite kod",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "3. Pronađite postavku širine",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "4. Prilagodite izgled",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "Uspjeh",
+      "file": "bubble-io-success.md",
+      "subCat": "Instalacija"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Pogreške domene",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

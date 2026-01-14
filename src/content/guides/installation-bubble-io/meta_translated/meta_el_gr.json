@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Προσθήκη μπλοκ HTML",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "2. Εισαγωγή κώδικα",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "3. Βρείτε τη ρύθμιση πλάτους",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "4. Προσαρμογή διάταξης",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "bubble-io-success.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Σφάλματα ονόματος τομέα",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

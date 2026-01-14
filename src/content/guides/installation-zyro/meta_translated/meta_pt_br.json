@@ -1,0 +1,37 @@
+{
+  "name": "Instalação do Zyro",
+  "pageHeader": "Adicione comentários em tempo real a sites Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Adicionar o widget de código",
+      "file": "zyro-step-1.md",
+      "subCat": "Instalação do site Zyro"
+    },
+    {
+      "name": "Passo 2: Adicionar o código",
+      "file": "zyro-step-2.md",
+      "subCat": "Instalação do site Zyro"
+    },
+    {
+      "name": "Sucesso",
+      "file": "zyro-site-success.md",
+      "subCat": "Instalação do site Zyro"
+    },
+    {
+      "name": "Erros de domínio do site",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Instalação do site Zyro"
+    },
+    {
+      "name": "Personalização do site",
+      "file": "zyro-site-customize.md",
+      "subCat": "Instalação do site Zyro"
+    },
+    {
+      "name": "Botão flutuante de curtidas",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Curtidas flutuantes do Zyro"
+    }
+  ]
+}

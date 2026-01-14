@@ -1,0 +1,31 @@
+{
+  "name": "Analyse",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Achtergrond",
+      "file": "analytics-background.md",
+      "subCat": "Analyse"
+    },
+    {
+      "name": "Factureringsanalyse",
+      "file": "analytics-billing.md",
+      "subCat": "Analyse"
+    },
+    {
+      "name": "Website-analyse",
+      "file": "analytics-site.md",
+      "subCat": "Analyse"
+    },
+    {
+      "name": "Nauwkeurigheid van analyses versus andere platforms",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analyse"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Volgen"
+    }
+  ]
+}

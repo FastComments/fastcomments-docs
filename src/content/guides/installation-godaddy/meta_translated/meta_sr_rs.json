@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација GoDaddy",
+  "pageHeader": "Додајте коментаре на GoDaddy сајтове",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Додајте поље за код",
+      "file": "godaddy-step-1.md",
+      "subCat": "Инсталација GoDaddy"
+    },
+    {
+      "name": "Корак 2: Додајте FastComments.com код",
+      "file": "godaddy-step-2.md",
+      "subCat": "Инсталација GoDaddy"
+    },
+    {
+      "name": "Корак 3: Објавите",
+      "file": "godaddy-step-3.md",
+      "subCat": "Инсталација GoDaddy"
+    },
+    {
+      "name": "Успешно",
+      "file": "godaddy-success.md",
+      "subCat": "Инсталација GoDaddy"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Инсталација GoDaddy"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "godaddy-customize.md",
+      "subCat": "Инсталација GoDaddy"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Svelte knjižnica",
+  "pageHeader": "FastComments Svelte knjižnica",
+  "itemsOrdered": [
+    {
+      "name": "Widgeti",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Razvoj",
+      "file": "developing-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Izgradnja",
+      "file": "building-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

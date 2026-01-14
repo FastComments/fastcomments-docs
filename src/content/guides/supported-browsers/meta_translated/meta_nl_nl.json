@@ -1,0 +1,26 @@
+{
+  "name": "Ondersteunde browsers",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Ondersteunde browsers",
+      "file": "supported-browsers.md",
+      "subCat": "Ondersteunde browsers"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Ondersteunde browsers"
+    },
+    {
+      "name": "Hoe we testen",
+      "file": "how-we-test.md",
+      "subCat": "Ondersteunde browsers"
+    },
+    {
+      "name": "Vereisten voor JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Ondersteunde browsers"
+    }
+  ]
+}

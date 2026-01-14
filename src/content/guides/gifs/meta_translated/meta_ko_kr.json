@@ -1,0 +1,21 @@
+{
+  "name": "GIF(움직이는 이미지)",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "지원되는 애니메이션 이미지 유형",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF 및 애니메이션 이미지"
+    },
+    {
+      "name": "사용자가 업로드한 애니메이션 이미지",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "GIF 사용하기"
+    },
+    {
+      "name": "GIF 선택기",
+      "file": "gif-picker.md",
+      "subCat": "GIF 사용하기"
+    }
+  ]
+}

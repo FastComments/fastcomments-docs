@@ -1,0 +1,41 @@
+{
+  "name": "Шаблони за имейли",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Създаване на шаблони",
+      "file": "creating-templates.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Език на шаблона",
+      "file": "template-language.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Локализация и персонализиран текст",
+      "file": "localizing.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Шаблони по домейн",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Данни и променливи",
+      "file": "data-variables.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Грешки при рендериране",
+      "file": "render-failures.md",
+      "subCat": "Шаблони за имейли"
+    },
+    {
+      "name": "Прилагане на промените",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблони за имейли"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Instalación de Ghost",
+  "pageHeader": "Añadir comentarios en vivo solo para miembros en sitios Ghost",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Descarga tu tema",
+      "file": "ghost-step-1.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 2: Instala tu tema localmente",
+      "file": "ghost-step-2.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 3: Nombra el nuevo tema",
+      "file": "ghost-step-3.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 4: Abre la plantilla de la publicación",
+      "file": "ghost-step-4.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 5: Añade el código de FastComments",
+      "file": "ghost-step-5.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 6: Exporta tu tema",
+      "file": "ghost-step-6.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Paso 7: Sube el tema a Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "¡Éxito!",
+      "file": "ghost-success.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Personalización",
+      "file": "ghost-customize.md",
+      "subCat": "Instalación de Ghost"
+    }
+  ]
+}

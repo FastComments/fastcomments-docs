@@ -1,0 +1,126 @@
+{
+  "name": "ניהול תגובות",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "דף ניהול התגובות",
+      "file": "moderate-comments-page.md",
+      "subCat": "הקדמה"
+    },
+    {
+      "name": "מפעילי המודרציה",
+      "file": "moderators.md",
+      "subCat": "מפעילי המודרציה"
+    },
+    {
+      "name": "הוספת מפעילי המודרציה",
+      "file": "moderators-adding.md",
+      "subCat": "מפעילי המודרציה"
+    },
+    {
+      "name": "סטטיסטיקות מפעילי המודרציה",
+      "file": "moderator-stats.md",
+      "subCat": "מפעילי המודרציה"
+    },
+    {
+      "name": "הסרת מפעילי המודרציה",
+      "file": "moderators-removing.md",
+      "subCat": "מפעילי המודרציה"
+    },
+    {
+      "name": "כיצד פועלת מערכת האישור",
+      "file": "moderation-approvals.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "מודרציה באמצעות דוא\"ל",
+      "file": "moderation-via-email.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "סינון",
+      "file": "filters.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "חיפוש",
+      "file": "search.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "שיתוף קישורי המודרציה",
+      "file": "sharing-moderation-links.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "צפייה בשרשור התגובות",
+      "file": "comment-thread-viewer.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "פעולות מודרציה",
+      "file": "comment-actions.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "מחיקת תגובות",
+      "file": "deleting-comments.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "פעולות מודרציה מווידג'ט התגובה",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "מודרציה בזמן אמת",
+      "file": "comment-actions-live.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "חסימת משתמשים",
+      "file": "banning-users.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "חסימת משתמשים באמצעות תווים כלליים",
+      "file": "banning-users-wildcards.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "דיווח",
+      "file": "flagging.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "פעולות המוניות",
+      "file": "bulk-actions.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "קבוצות מודרציה",
+      "file": "moderation-groups.md",
+      "subCat": "קבוצות מודרציה"
+    },
+    {
+      "name": "הגדרות מודרציה",
+      "file": "moderation-settings.md",
+      "subCat": "הגדרות"
+    },
+    {
+      "name": "זיהוי ספאם",
+      "file": "spam-detection.md",
+      "subCat": "ספאם וגסויות"
+    },
+    {
+      "name": "הסתרת גסויות",
+      "file": "profanity-mask.md",
+      "subCat": "ספאם וגסויות"
+    },
+    {
+      "name": "יומני תגובות",
+      "file": "comment-logs.md",
+      "subCat": "תהליך המודרציה"
+    }
+  ]
+}

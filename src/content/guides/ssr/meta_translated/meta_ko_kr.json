@@ -1,0 +1,36 @@
+{
+  "name": "SSR (서버 사이드 렌더링)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "SSR이란?",
+      "file": "what-is-ssr.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "SSR의 이점",
+      "file": "benefits-of-ssr.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "FastComments의 SSR 지원 기능",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "사용 사례",
+      "file": "ssr-use-cases.md",
+      "subCat": "SSR 사용"
+    },
+    {
+      "name": "FastComments의 SSR 사용처",
+      "file": "ssr-where-used.md",
+      "subCat": "SSR 사용"
+    },
+    {
+      "name": "SSR 사용하기",
+      "file": "using-ssr.md",
+      "subCat": "SSR 사용"
+    }
+  ]
+}

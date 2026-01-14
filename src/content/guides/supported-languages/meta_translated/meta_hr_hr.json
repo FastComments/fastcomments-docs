@@ -1,0 +1,21 @@
+{
+  "name": "Podržani jezici",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Podržani jezici",
+      "file": "supported-languages.md",
+      "subCat": "Podržani jezici"
+    },
+    {
+      "name": "Koji dijelovi FastCommentsa su lokalizirani?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Podržani jezici"
+    },
+    {
+      "name": "Zahtjev za podršku novog jezika",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Podržani jezici"
+    }
+  ]
+}

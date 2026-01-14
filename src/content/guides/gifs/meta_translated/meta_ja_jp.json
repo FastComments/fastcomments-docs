@@ -1,0 +1,21 @@
+{
+  "name": "GIF",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "サポートされているアニメーション画像の種類",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF とアニメーション画像"
+    },
+    {
+      "name": "ユーザーがアップロードしたアニメーション画像",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "GIF の使い方"
+    },
+    {
+      "name": "GIFピッカー",
+      "file": "gif-picker.md",
+      "subCat": "GIF の使い方"
+    }
+  ]
+}

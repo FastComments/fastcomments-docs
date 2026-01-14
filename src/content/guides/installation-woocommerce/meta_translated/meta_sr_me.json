@@ -1,0 +1,12 @@
+{
+  "name": "Инсталација WooCommerce-а",
+  "pageHeader": "Додајте коментарисање уживо на WooCommerce сајтове",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Подешавање WordPress додатка",
+      "file": "woocommerce.md",
+      "subCat": "Инсталација WooCommerce-а"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Šta je oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kreiranje oEmbed konverzacije",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Upotreba"
+    }
+  ]
+}

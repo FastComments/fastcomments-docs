@@ -1,0 +1,36 @@
+{
+  "name": "Το δικό σας Cloud",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι το FastComments Isolated Cloud?",
+      "file": "your-own-cloud.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς να το αποκτήσετε",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Ρύθμιση και Εκπαίδευση",
+      "file": "set-up-training.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Χρήση του Πίνακα Ελέγχου",
+      "file": "using-the-dashboard.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Χρήση του API",
+      "file": "using-the-api.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Διαχείριση ενοικιαστών",
+      "file": "managing-tenants.md",
+      "subCat": "Διαχείριση ενοικιαστών"
+    }
+  ]
+}

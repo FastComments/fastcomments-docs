@@ -1,0 +1,21 @@
+{
+  "name": "Widgets Μέτρησης Σχολίων",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση Widget Μέτρησης Σχολίων",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "Μαζική Εγκατάσταση Widget Μέτρησης Σχολίων",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "APIs Μέτρησης Σχολίων",
+      "file": "comment-count-apis.md",
+      "subCat": "APIs Μέτρησης Σχολίων"
+    }
+  ]
+}

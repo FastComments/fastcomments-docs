@@ -1,0 +1,47 @@
+{
+  "name": "Εγκατάσταση BigCommerce",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα ένα: Προετοιμάστε το θέμα σας",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Βήμα δύο: Επεξεργαστείτε το σωστό πρότυπο",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Βήμα τρία: Προσθέστε τον κώδικα του widget",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Βήμα τέσσερα: Ενεργοποιήστε το νέο θέμα",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "bigcommerce-success.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Εγκατάσταση BigCommerce"
+    },
+    {
+      "name": "Επιπλέον: Απόσπασμα κώδικα για τον Δημιουργό Σελίδων",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Χρήση Δημιουργού Σελίδων"
+    }
+  ]
+}

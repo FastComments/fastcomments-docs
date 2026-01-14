@@ -1,0 +1,46 @@
+{
+  "name": "Хештеги",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке хештеги",
+      "file": "what-are-hashtags.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як використовувати хештеги",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Використання хештегів"
+    },
+    {
+      "name": "Фільтрація коментарів за хештегом",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Використання хештегів"
+    },
+    {
+      "name": "Дійсні й недійсні хештеги",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Використання хештегів"
+    },
+    {
+      "name": "Використання символів, крім #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Налаштування хештегів"
+    },
+    {
+      "name": "Попереднє заповнення хештегів",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Налаштування хештегів"
+    },
+    {
+      "name": "Посилання на контент через хештеги",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Налаштування хештегів"
+    },
+    {
+      "name": "Як працює автодоповнення хештегів",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Загальні відомості про хештеги"
+    }
+  ]
+}

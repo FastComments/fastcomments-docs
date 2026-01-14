@@ -1,0 +1,31 @@
+{
+  "name": "分享程式碼片段",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是程式碼片段？",
+      "file": "code-snippets-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "程式設計社群",
+      "file": "code-snippets-communities.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "支援的程式語言",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "設定程式碼片段分享",
+      "file": "code-snippets-setup.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "分享程式碼片段",
+      "file": "code-snippets-usage.md",
+      "subCat": "使用"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Installation af WooCommerce",
+  "pageHeader": "Tilføj live-kommentering til WooCommerce-sider",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Opsæt WordPress-plugin",
+      "file": "woocommerce.md",
+      "subCat": "Installation af WooCommerce"
+    }
+  ]
+}

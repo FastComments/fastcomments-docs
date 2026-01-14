@@ -1,0 +1,51 @@
+{
+  "name": "Meerdere sites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Eerste installatie",
+      "file": "add-domains-to-account.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Limieten en prijzen",
+      "file": "domain-limits.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Afzendernaam, e-mail en logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Site-specifieke aanpassingen"
+    },
+    {
+      "name": "Domein voor afzendernaam/e-mail werkt niet",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Site-specifieke aanpassingen"
+    },
+    {
+      "name": "Tenant per omgeving",
+      "file": "tenant-per-environment.md",
+      "subCat": "Site-specifieke aanpassingen"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "customizations.md",
+      "subCat": "Site-specifieke aanpassingen"
+    },
+    {
+      "name": "Moderatie van reacties",
+      "file": "moderation.md",
+      "subCat": "Data en zoeken"
+    },
+    {
+      "name": "Reacties delen tussen domeinen",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Data en zoeken"
+    },
+    {
+      "name": "Met WordPress",
+      "file": "wordpress.md",
+      "subCat": "Integratie-opmerkingen"
+    }
+  ]
+}

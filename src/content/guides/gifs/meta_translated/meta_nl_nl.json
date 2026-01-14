@@ -1,0 +1,21 @@
+{
+  "name": "Gifs",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Ondersteunde typen geanimeerde afbeeldingen",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "Gifs en geanimeerde afbeeldingen"
+    },
+    {
+      "name": "Door gebruikers geüploade geanimeerde afbeeldingen",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Gifs gebruiken"
+    },
+    {
+      "name": "De Gifkiezer",
+      "file": "gif-picker.md",
+      "subCat": "Gifs gebruiken"
+    }
+  ]
+}

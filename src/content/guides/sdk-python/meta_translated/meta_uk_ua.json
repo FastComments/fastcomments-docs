@@ -1,0 +1,894 @@
+{
+  "name": "SDK для Python",
+  "pageHeader": "FastComments SDK для Python",
+  "itemsOrdered": [
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Примітки",
+      "file": "notes-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "агрегувати",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Агрегація",
+      "type": "api"
+    },
+    {
+      "name": "отримати_журнали_аудиту",
+      "file": "get-audit-logs-api-generated.md",
+      "subCat": "Журнали аудиту",
+      "type": "api"
+    },
+    {
+      "name": "заблокувати_за_коментарем_публічно",
+      "file": "block-from-comment-public-api-generated.md",
+      "subCat": "Блокування за коментарем",
+      "type": "api"
+    },
+    {
+      "name": "розблокувати_коментар_публічно",
+      "file": "un-block-comment-public-api-generated.md",
+      "subCat": "Блокування за коментарем",
+      "type": "api"
+    },
+    {
+      "name": "перевірені_коментарі_на_блокування",
+      "file": "checked-comments-for-blocked-api-generated.md",
+      "subCat": "Перевірити заблоковані коментарі",
+      "type": "api"
+    },
+    {
+      "name": "заблокувати_користувача_за_коментарем",
+      "file": "block-user-from-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "створити_коментар_публічно",
+      "file": "create-comment-public-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "видалити_коментар",
+      "file": "delete-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "видалити_коментар_публічно",
+      "file": "delete-comment-public-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "видалити_голос_за_коментар",
+      "file": "delete-comment-vote-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "позначити_коментар",
+      "file": "flag-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_коментар",
+      "file": "get-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_текст_коментаря",
+      "file": "get-comment-text-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_імена_користувачів_які_голосували_за_коментар",
+      "file": "get-comment-vote-user-names-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_коментарі",
+      "file": "get-comments-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_коментарі_публічно",
+      "file": "get-comments-public-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "заблокувати_коментар",
+      "file": "lock-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "закріпити_коментар",
+      "file": "pin-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "зберегти_коментар",
+      "file": "save-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "зберегти_коментарі_пакетно",
+      "file": "save-comments-bulk-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "встановити_текст_коментаря",
+      "file": "set-comment-text-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "розблокувати_користувача_за_коментарем",
+      "file": "un-block-user-from-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "зняти_позначку_з_коментаря",
+      "file": "un-flag-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "розблокувати_коментар",
+      "file": "un-lock-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "відкріпити_коментар",
+      "file": "un-pin-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "оновити_коментар",
+      "file": "update-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "проголосувати_за_коментар",
+      "file": "vote-comment-api-generated.md",
+      "subCat": "Коментарі",
+      "type": "api"
+    },
+    {
+      "name": "додати_конфігурацію_домену",
+      "file": "add-domain-config-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "видалити_конфігурацію_домену",
+      "file": "delete-domain-config-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "отримати_конфігурацію_домену",
+      "file": "get-domain-config-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "отримати_конфігурації_домену",
+      "file": "get-domain-configs-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "частково_оновити_конфігурацію_домену",
+      "file": "patch-domain-config-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "замінити_конфігурацію_домену",
+      "file": "put-domain-config-api-generated.md",
+      "subCat": "Конфігурації домену",
+      "type": "api"
+    },
+    {
+      "name": "створити_шаблон_електронної_пошти",
+      "file": "create-email-template-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "видалити_шаблон_електронної_пошти",
+      "file": "delete-email-template-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "видалити_помилку_рендерингу_шаблону_електронної_пошти",
+      "file": "delete-email-template-render-error-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "отримати_шаблон_електронної_пошти",
+      "file": "get-email-template-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "отримати_визначення_шаблонів_електронної_пошти",
+      "file": "get-email-template-definitions-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "отримати_помилки_рендерингу_шаблонів_електронної_пошти",
+      "file": "get-email-template-render-errors-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "отримати_шаблони_електронної_пошти",
+      "file": "get-email-templates-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "відрендерити_шаблон_електронної_пошти",
+      "file": "render-email-template-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "оновити_шаблон_електронної_пошти",
+      "file": "update-email-template-api-generated.md",
+      "subCat": "Шаблони електронної пошти",
+      "type": "api"
+    },
+    {
+      "name": "отримати_журнал_подій",
+      "file": "get-event-log-api-generated.md",
+      "subCat": "Журнал подій",
+      "type": "api"
+    },
+    {
+      "name": "отримати_глобальний_журнал_подій",
+      "file": "get-global-event-log-api-generated.md",
+      "subCat": "Журнал подій",
+      "type": "api"
+    },
+    {
+      "name": "створити_пост_стрічки",
+      "file": "create-feed-post-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "створити_публічний_пост_стрічки",
+      "file": "create-feed-post-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "видалити_публічний_пост_стрічки",
+      "file": "delete-feed-post-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "отримати_пости_стрічки",
+      "file": "get-feed-posts-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "отримати_пости_стрічки_публічно",
+      "file": "get-feed-posts-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "отримати_статистику_постів_стрічки",
+      "file": "get-feed-posts-stats-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "отримати_реакції_користувача_публічно",
+      "file": "get-user-reacts-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "реагувати_на_пост_стрічки_публічно",
+      "file": "react-feed-post-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "оновити_пост_стрічки",
+      "file": "update-feed-post-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "оновити_публічний_пост_стрічки",
+      "file": "update-feed-post-public-api-generated.md",
+      "subCat": "Пости",
+      "type": "api"
+    },
+    {
+      "name": "позначити_коментар_публічно",
+      "file": "flag-comment-public-api-generated.md",
+      "subCat": "Позначення коментаря",
+      "type": "api"
+    },
+    {
+      "name": "додати_хештег",
+      "file": "add-hash-tag-api-generated.md",
+      "subCat": "Хештеги",
+      "type": "api"
+    },
+    {
+      "name": "додати_хештеги_пакетно",
+      "file": "add-hash-tags-bulk-api-generated.md",
+      "subCat": "Хештеги",
+      "type": "api"
+    },
+    {
+      "name": "видалити_хештег",
+      "file": "delete-hash-tag-api-generated.md",
+      "subCat": "Хештеги",
+      "type": "api"
+    },
+    {
+      "name": "отримати_хештеги",
+      "file": "get-hash-tags-api-generated.md",
+      "subCat": "Хештеги",
+      "type": "api"
+    },
+    {
+      "name": "частково_оновити_хештег",
+      "file": "patch-hash-tag-api-generated.md",
+      "subCat": "Хештеги",
+      "type": "api"
+    },
+    {
+      "name": "створити_модератора",
+      "file": "create-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "видалити_модератора",
+      "file": "delete-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "отримати_модератора",
+      "file": "get-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "отримати_модераторів",
+      "file": "get-moderators-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "надіслати_запрошення",
+      "file": "send-invite-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "оновити_модератора",
+      "file": "update-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "видалити_лічильник_сповіщень",
+      "file": "delete-notification-count-api-generated.md",
+      "subCat": "Кількість сповіщень",
+      "type": "api"
+    },
+    {
+      "name": "отримати_кешований_лічильник_сповіщень",
+      "file": "get-cached-notification-count-api-generated.md",
+      "subCat": "Кількість сповіщень",
+      "type": "api"
+    },
+    {
+      "name": "отримати_кількість_сповіщень",
+      "file": "get-notification-count-api-generated.md",
+      "subCat": "Сповіщення",
+      "type": "api"
+    },
+    {
+      "name": "отримати_сповіщення",
+      "file": "get-notifications-api-generated.md",
+      "subCat": "Сповіщення",
+      "type": "api"
+    },
+    {
+      "name": "оновити_сповіщення",
+      "file": "update-notification-api-generated.md",
+      "subCat": "Сповіщення",
+      "type": "api"
+    },
+    {
+      "name": "додати_сторінку",
+      "file": "add-page-api-generated.md",
+      "subCat": "Сторінки",
+      "type": "api"
+    },
+    {
+      "name": "видалити_сторінку",
+      "file": "delete-page-api-generated.md",
+      "subCat": "Сторінки",
+      "type": "api"
+    },
+    {
+      "name": "отримати_сторінку_за_urlid",
+      "file": "get-page-by-urlid-api-generated.md",
+      "subCat": "Сторінки",
+      "type": "api"
+    },
+    {
+      "name": "отримати_сторінки",
+      "file": "get-pages-api-generated.md",
+      "subCat": "Сторінки",
+      "type": "api"
+    },
+    {
+      "name": "частково_оновити_сторінку",
+      "file": "patch-page-api-generated.md",
+      "subCat": "Сторінки",
+      "type": "api"
+    },
+    {
+      "name": "видалити_очікувану_подію_вебхука",
+      "file": "delete-pending-webhook-event-api-generated.md",
+      "subCat": "Очікувані події вебхука",
+      "type": "api"
+    },
+    {
+      "name": "отримати_кількість_очікуваних_подій_вебхука",
+      "file": "get-pending-webhook-event-count-api-generated.md",
+      "subCat": "Очікувані події вебхука",
+      "type": "api"
+    },
+    {
+      "name": "отримати_очікувані_події_вебхука",
+      "file": "get-pending-webhook-events-api-generated.md",
+      "subCat": "Очікувані події вебхука",
+      "type": "api"
+    },
+    {
+      "name": "створити_конфігурацію_питання",
+      "file": "create-question-config-api-generated.md",
+      "subCat": "Налаштування питань",
+      "type": "api"
+    },
+    {
+      "name": "видалити_конфігурацію_питання",
+      "file": "delete-question-config-api-generated.md",
+      "subCat": "Налаштування питань",
+      "type": "api"
+    },
+    {
+      "name": "отримати_конфігурацію_питання",
+      "file": "get-question-config-api-generated.md",
+      "subCat": "Налаштування питань",
+      "type": "api"
+    },
+    {
+      "name": "отримати_конфігурації_питань",
+      "file": "get-question-configs-api-generated.md",
+      "subCat": "Налаштування питань",
+      "type": "api"
+    },
+    {
+      "name": "оновити_конфігурацію_питання",
+      "file": "update-question-config-api-generated.md",
+      "subCat": "Налаштування питань",
+      "type": "api"
+    },
+    {
+      "name": "створити_результат_питання",
+      "file": "create-question-result-api-generated.md",
+      "subCat": "Результати опитувань",
+      "type": "api"
+    },
+    {
+      "name": "видалити_результат_питання",
+      "file": "delete-question-result-api-generated.md",
+      "subCat": "Результати опитувань",
+      "type": "api"
+    },
+    {
+      "name": "отримати_результат_питання",
+      "file": "get-question-result-api-generated.md",
+      "subCat": "Результати опитувань",
+      "type": "api"
+    },
+    {
+      "name": "отримати_результати_питань",
+      "file": "get-question-results-api-generated.md",
+      "subCat": "Результати опитувань",
+      "type": "api"
+    },
+    {
+      "name": "оновити_результат_питання",
+      "file": "update-question-result-api-generated.md",
+      "subCat": "Результати опитувань",
+      "type": "api"
+    },
+    {
+      "name": "агрегувати_результати_питань",
+      "file": "aggregate-question-results-api-generated.md",
+      "subCat": "Агрегація результатів опитувань",
+      "type": "api"
+    },
+    {
+      "name": "масово_агрегувати_результати_питань",
+      "file": "bulk-aggregate-question-results-api-generated.md",
+      "subCat": "Агрегація результатів опитувань",
+      "type": "api"
+    },
+    {
+      "name": "поєднати_коментарі_з_результатами_питань",
+      "file": "combine-comments-with-question-results-api-generated.md",
+      "subCat": "Агрегація результатів опитувань",
+      "type": "api"
+    },
+    {
+      "name": "додати_SSO_користувача",
+      "file": "add-sso-user-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "видалити_SSO_користувача",
+      "file": "delete-sso-user-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "отримати_SSO_користувача_за_email",
+      "file": "get-sso-user-by-email-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "отримати_SSO_користувача_за_id",
+      "file": "get-sso-user-by-id-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "отримати_SSO_користувачів",
+      "file": "get-sso-users-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "частково_оновити_SSO_користувача",
+      "file": "patch-sso-user-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "замінити_SSO_користувача",
+      "file": "put-sso-user-api-generated.md",
+      "subCat": "Користувачі SSO",
+      "type": "api"
+    },
+    {
+      "name": "створити_підписку",
+      "file": "create-subscription-api-generated.md",
+      "subCat": "Підписки",
+      "type": "api"
+    },
+    {
+      "name": "видалити_підписку",
+      "file": "delete-subscription-api-generated.md",
+      "subCat": "Підписки",
+      "type": "api"
+    },
+    {
+      "name": "отримати_підписки",
+      "file": "get-subscriptions-api-generated.md",
+      "subCat": "Підписки",
+      "type": "api"
+    },
+    {
+      "name": "отримати_щоденне_використання_орендаря",
+      "file": "get-tenant-daily-usages-api-generated.md",
+      "subCat": "Щоденне використання орендаря",
+      "type": "api"
+    },
+    {
+      "name": "створити_пакет_орендаря",
+      "file": "create-tenant-package-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "видалити_пакет_орендаря",
+      "file": "delete-tenant-package-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "отримати_пакет_орендаря",
+      "file": "get-tenant-package-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "отримати_пакети_орендаря",
+      "file": "get-tenant-packages-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "замінити_пакет_орендаря",
+      "file": "replace-tenant-package-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "оновити_пакет_орендаря",
+      "file": "update-tenant-package-api-generated.md",
+      "subCat": "Пакети орендаря",
+      "type": "api"
+    },
+    {
+      "name": "створити_користувача_орендаря",
+      "file": "create-tenant-user-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "видалити_користувача_орендаря",
+      "file": "delete-tenant-user-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "отримати_користувача_орендаря",
+      "file": "get-tenant-user-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "отримати_користувачів_орендаря",
+      "file": "get-tenant-users-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "замінити_користувача_орендаря",
+      "file": "replace-tenant-user-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "надіслати_посилання_для_входу",
+      "file": "send-login-link-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "оновити_користувача_орендаря",
+      "file": "update-tenant-user-api-generated.md",
+      "subCat": "Користувачі орендаря",
+      "type": "api"
+    },
+    {
+      "name": "створити_орендаря",
+      "file": "create-tenant-api-generated.md",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "видалити_орендаря",
+      "file": "delete-tenant-api-generated.md",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_орендаря",
+      "file": "get-tenant-api-generated.md",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "отримати_орендарів",
+      "file": "get-tenants-api-generated.md",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "оновити_орендаря",
+      "file": "update-tenant-api-generated.md",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "завантажити_зображення",
+      "file": "upload-image-api-generated.md",
+      "subCat": "Завантажити зображення",
+      "type": "api"
+    },
+    {
+      "name": "отримати_прогрес_значка_користувача_за_id",
+      "file": "get-user-badge-progress-by-id-api-generated.md",
+      "subCat": "Прогрес значка користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_прогрес_значка_користувача_за_id_користувача",
+      "file": "get-user-badge-progress-by-user-id-api-generated.md",
+      "subCat": "Прогрес значка користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_список_прогресу_значків_користувача",
+      "file": "get-user-badge-progress-list-api-generated.md",
+      "subCat": "Прогрес значка користувача",
+      "type": "api"
+    },
+    {
+      "name": "створити_значок_користувача",
+      "file": "create-user-badge-api-generated.md",
+      "subCat": "Значки користувача",
+      "type": "api"
+    },
+    {
+      "name": "видалити_значок_користувача",
+      "file": "delete-user-badge-api-generated.md",
+      "subCat": "Значки користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_значок_користувача",
+      "file": "get-user-badge-api-generated.md",
+      "subCat": "Значки користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_значки_користувача",
+      "file": "get-user-badges-api-generated.md",
+      "subCat": "Значки користувача",
+      "type": "api"
+    },
+    {
+      "name": "оновити_значок_користувача",
+      "file": "update-user-badge-api-generated.md",
+      "subCat": "Значки користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_кількість_сповіщень_користувача",
+      "file": "get-user-notification-count-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_сповіщення_користувача",
+      "file": "get-user-notifications-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "скинути_лічильник_сповіщень_користувача",
+      "file": "reset-user-notification-count-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "скинути_сповіщення_користувача",
+      "file": "reset-user-notifications-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "оновити_стан_підписки_користувача_на_коментарі_сповіщень",
+      "file": "update-user-notification-comment-subscription-status-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "оновити_стан_підписки_користувача_на_сторінку_сповіщень",
+      "file": "update-user-notification-page-subscription-status-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "оновити_стан_сповіщень_користувача",
+      "file": "update-user-notification-status-api-generated.md",
+      "subCat": "Сповіщення користувача",
+      "type": "api"
+    },
+    {
+      "name": "отримати_статуси_присутності_користувача",
+      "file": "get-user-presence-statuses-api-generated.md",
+      "subCat": "Статус присутності користувача",
+      "type": "api"
+    },
+    {
+      "name": "шукати_користувачів",
+      "file": "search-users-api-generated.md",
+      "subCat": "Пошук користувачів",
+      "type": "api"
+    },
+    {
+      "name": "отримати_користувача",
+      "file": "get-user-api-generated.md",
+      "subCat": "Користувачі",
+      "type": "api"
+    },
+    {
+      "name": "створити_голос",
+      "file": "create-vote-api-generated.md",
+      "subCat": "Голоси",
+      "type": "api"
+    },
+    {
+      "name": "видалити_голос",
+      "file": "delete-vote-api-generated.md",
+      "subCat": "Голоси",
+      "type": "api"
+    },
+    {
+      "name": "отримати_голоси",
+      "file": "get-votes-api-generated.md",
+      "subCat": "Голоси",
+      "type": "api"
+    },
+    {
+      "name": "отримати_голоси_для_користувача",
+      "file": "get-votes-for-user-api-generated.md",
+      "subCat": "Голоси",
+      "type": "api"
+    }
+  ]
+}

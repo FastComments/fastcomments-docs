@@ -1,0 +1,57 @@
+{
+  "name": "Ghost のインストール",
+  "pageHeader": "Ghost サイトにメンバー限定のライブコメントを追加する",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: テーマをダウンロードする",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 2: テーマをローカルにインストールする",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 3: 新しいテーマに名前を付ける",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 4: 投稿テンプレートを開く",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 5: FastComments のコードを追加する",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 6: テーマをエクスポートする",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ステップ 7: テーマを Ghost にアップロードする",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "完了！",
+      "file": "ghost-success.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost のインストール"
+    }
+  ]
+}

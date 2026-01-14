@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација ClickFunnels-а",
+  "pageHeader": "Додајте ћаскање уживо у ClickFunnels курсеве",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Пронађите шаблон",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Инсталација ClickFunnels-а"
+    },
+    {
+      "name": "Корак 2: Додајте код",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Инсталација ClickFunnels-а"
+    },
+    {
+      "name": "Проблеми са доменом",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Инсталација ClickFunnels-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Инсталација ClickFunnels-а"
+    },
+    {
+      "name": "Додатно: исечак кода за коментарисање уживо",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Исечак кода за коментарисање уживо"
+    },
+    {
+      "name": "Додатно: аутоматско репродуковање коментара",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Аутоматско репродуковање коментара"
+    }
+  ]
+}

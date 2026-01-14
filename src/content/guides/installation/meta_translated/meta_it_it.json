@@ -1,0 +1,61 @@
+{
+  "name": "Installazione",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Plugin di terze parti"
+    },
+    {
+      "name": "VanillaJS / frammento HTML",
+      "file": "vanillajs.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Più istanze sulla stessa pagina",
+      "file": "multiple-instances.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Casi d'uso comuni",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Risoluzione dei problemi comuni",
+      "file": "debugging-common-issues.md",
+      "subCat": "Installazioni personalizzate"
+    },
+    {
+      "name": "Notion e Google Sites",
+      "file": "oembed.md",
+      "subCat": "Incorporazione nei documenti"
+    }
+  ]
+}

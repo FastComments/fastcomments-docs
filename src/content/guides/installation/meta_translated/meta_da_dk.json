@@ -1,0 +1,61 @@
+{
+  "name": "Installation",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Tredjepartsplugins"
+    },
+    {
+      "name": "VanillaJS / HTML-udsnit",
+      "file": "vanillajs.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Flere instanser på samme side",
+      "file": "multiple-instances.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Typiske anvendelsestilfælde",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Fejlfinding af almindelige problemer",
+      "file": "debugging-common-issues.md",
+      "subCat": "Tilpassede installationer"
+    },
+    {
+      "name": "Notion og Google Sites",
+      "file": "oembed.md",
+      "subCat": "Indlejring i dokumenter"
+    }
+  ]
+}

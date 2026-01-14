@@ -1,0 +1,21 @@
+{
+  "name": "Бисквитки на трети страни",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват бисквитките на трети страни",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Как FastComments използва бисквитките на трети страни",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Разрешаване на бисквитки на трети страни",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Активиране"
+    }
+  ]
+}

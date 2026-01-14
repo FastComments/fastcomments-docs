@@ -1,0 +1,36 @@
+{
+  "name": "Marca Branca",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "O que é marca branca",
+      "file": "white-labeling-background.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Como obter marca branca",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Primeiros passos"
+    },
+    {
+      "name": "Configurando marca branca",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Usando o painel",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Usando a API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Gerenciando locatários com marca branca",
+      "file": "white-labeling-managing.md",
+      "subCat": "Gerenciamento de locatários"
+    }
+  ]
+}

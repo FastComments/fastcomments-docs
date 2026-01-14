@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Typeflo.io 블로그에 실시간 댓글 추가",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. 코드 입력란 찾기",
+      "file": "typeflo-step-1.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "2. 코드 삽입",
+      "file": "typeflo-step-2.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "완료",
+      "file": "typeflo-success.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

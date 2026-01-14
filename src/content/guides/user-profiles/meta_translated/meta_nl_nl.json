@@ -1,0 +1,51 @@
+{
+  "name": "Gebruikersprofielen",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Profielbasis",
+      "file": "profile-basics.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Je profiel aanpassen",
+      "file": "customizing-profiles.md",
+      "subCat": "Personalisatie"
+    },
+    {
+      "name": "Privacy-instellingen",
+      "file": "privacy-settings.md",
+      "subCat": "Personalisatie"
+    },
+    {
+      "name": "Badges",
+      "file": "badges.md",
+      "subCat": "Functies"
+    },
+    {
+      "name": "Profielreacties",
+      "file": "profile-comments.md",
+      "subCat": "Functies"
+    },
+    {
+      "name": "Directe berichten",
+      "file": "direct-messaging.md",
+      "subCat": "Functies"
+    },
+    {
+      "name": "Activiteitenfeed",
+      "file": "activity-feed.md",
+      "subCat": "Functies"
+    },
+    {
+      "name": "Gebruikersnotities",
+      "file": "user-notes.md",
+      "subCat": "Functies"
+    },
+    {
+      "name": "Profielen stylen",
+      "file": "styling-profiles.md",
+      "subCat": "Voor ontwikkelaars"
+    }
+  ]
+}

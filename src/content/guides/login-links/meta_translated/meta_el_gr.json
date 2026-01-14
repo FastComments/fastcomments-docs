@@ -1,0 +1,26 @@
+{
+  "name": "Σύνδεσμοι Σύνδεσης",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι οι Σύνδεσμοι Σύνδεσης;",
+      "file": "login-links-what-are.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πλεονεκτήματα των Συνδέσμων Σύνδεσης σε σχέση με τους Κωδικούς Πρόσβασης",
+      "file": "login-links-benefits.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς διασφαλίζουμε την ασφάλεια των Συνδέσμων Σύνδεσης",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Ασφάλεια"
+    },
+    {
+      "name": "Σε ποιους αποστέλλονται οι Σύνδεσμοι Σύνδεσης;",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Χρήση"
+    }
+  ]
+}

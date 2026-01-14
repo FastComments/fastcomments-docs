@@ -1,0 +1,26 @@
+{
+  "name": "Link di accesso",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono i link di accesso?",
+      "file": "login-links-what-are.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Vantaggi dei link di accesso rispetto alle password",
+      "file": "login-links-benefits.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Come garantiamo la sicurezza dei link di accesso",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Sicurezza"
+    },
+    {
+      "name": "A chi vengono inviati i link di accesso?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Utilizzo"
+    }
+  ]
+}

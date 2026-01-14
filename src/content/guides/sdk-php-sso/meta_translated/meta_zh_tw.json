@@ -1,0 +1,24 @@
+{
+  "name": "PHP 單一登入 (SSO) SDK",
+  "pageHeader": "FastComments PHP 單一登入 (SSO) SDK",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "使用方法",
+      "file": "usage-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "文件",
+      "file": "documentation-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

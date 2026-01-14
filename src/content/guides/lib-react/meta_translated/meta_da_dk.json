@@ -1,0 +1,24 @@
+{
+  "name": "React-bibliotek",
+  "pageHeader": "FastComments React-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Eksempler",
+      "file": "examples-readme-generated.md",
+      "subCat": "Anvendelse",
+      "type": "readme"
+    },
+    {
+      "name": "Anvendelse",
+      "file": "usage-readme-generated.md",
+      "subCat": "Anvendelse",
+      "type": "readme"
+    }
+  ]
+}

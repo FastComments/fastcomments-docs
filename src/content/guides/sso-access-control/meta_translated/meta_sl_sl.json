@@ -1,0 +1,31 @@
+{
+  "name": "Nadzor dostopa SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj je nadzor dostopa?",
+      "file": "what-is-access-control.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kako deluje",
+      "file": "how-it-works.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Specifikacija",
+      "file": "access-control-spec.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Implementacija",
+      "file": "implementation.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Primeri API klicev",
+      "file": "api-example.md",
+      "subCat": "Implementacija"
+    }
+  ]
+}

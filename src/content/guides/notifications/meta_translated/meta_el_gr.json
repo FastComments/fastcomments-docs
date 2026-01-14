@@ -1,0 +1,26 @@
+{
+  "name": "Ειδοποιήσεις",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Πότε στέλνει το FastComments ειδοποιήσεις;",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Τύποι ειδοποιήσεων",
+      "file": "notification-types.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Αποεγγραφή",
+      "file": "opting-out-notifications.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Διαμόρφωση ειδοποιήσεων για SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Διαμόρφωση"
+    }
+  ]
+}

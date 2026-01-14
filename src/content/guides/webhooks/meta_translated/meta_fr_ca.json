@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce qu'un webhook",
+      "file": "what-are-webhooks.md",
+      "subCat": "Aperçu"
+    },
+    {
+      "name": "Événements et ressources pris en charge",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Aperçu"
+    },
+    {
+      "name": "Configuration pour le développement local",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Configuration",
+      "file": "webhooks-setup.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Tests",
+      "file": "webhooks-testing.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Structures de données",
+      "file": "webhooks-structures.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Sécurité et jetons d'API",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Implémentation"
+    },
+    {
+      "name": "Fonctionnement et gestion des réessais",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Dans les coulisses"
+    }
+  ]
+}

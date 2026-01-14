@@ -1,0 +1,46 @@
+{
+  "name": "Hashtag'lar",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Hashtag'lar nedir?",
+      "file": "what-are-hashtags.md",
+      "subCat": "Arka plan"
+    },
+    {
+      "name": "Hashtag'lar nasıl kullanılır?",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Hashtag kullanımı"
+    },
+    {
+      "name": "Yorumları Hashtag'e göre filtreleme",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Hashtag kullanımı"
+    },
+    {
+      "name": "Geçerli ve geçersiz Hashtag'lar",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Hashtag kullanımı"
+    },
+    {
+      "name": " # dışında sembol kullanımı",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Hashtag'ları ayarlama"
+    },
+    {
+      "name": "Hashtag'leri önceden doldurma",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Hashtag'ları ayarlama"
+    },
+    {
+      "name": "Hashtag'ler aracılığıyla içeriğe bağlantı",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Hashtag'ları ayarlama"
+    },
+    {
+      "name": "Hashtag'lerin otomatik tamamlama özelliği nasıl çalışır?",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Hashtag arka planı"
+    }
+  ]
+}

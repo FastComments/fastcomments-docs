@@ -1,0 +1,21 @@
+{
+  "name": "Планирани коментари",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Позадина",
+      "file": "background.md",
+      "subCat": "Планирани коментари"
+    },
+    {
+      "name": "Упутство",
+      "file": "howto.md",
+      "subCat": "Планирани коментари"
+    },
+    {
+      "name": "Формат увоза",
+      "file": "import-format.md",
+      "subCat": "Планирани коментари"
+    }
+  ]
+}

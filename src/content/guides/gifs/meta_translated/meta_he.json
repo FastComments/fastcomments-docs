@@ -1,0 +1,21 @@
+{
+  "name": "גיפים",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "סוגי תמונות מונפשות נתמכות",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "גיפים ותמונות מונפשות"
+    },
+    {
+      "name": "תמונות מונפשות שהועלו על ידי משתמשים",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "שימוש בגיפים"
+    },
+    {
+      "name": "בחירת גיפים",
+      "file": "gif-picker.md",
+      "subCat": "שימוש בגיפים"
+    }
+  ]
+}

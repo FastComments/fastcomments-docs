@@ -1,0 +1,11 @@
+{
+  "name": "コメントスレッドを動的に追加・切り替える",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "コメントスレッドを動的に追加・切り替える",
+      "file": "swap-widgets-example.md",
+      "subCat": "例"
+    }
+  ]
+}

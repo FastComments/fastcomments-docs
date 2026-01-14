@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "מה זה oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "יצירת שיחה ב-oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "שימוש"
+    }
+  ]
+}

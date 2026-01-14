@@ -1,0 +1,894 @@
+{
+  "name": "Python SDK",
+  "pageHeader": "FastComments Python SDK",
+  "itemsOrdered": [
+    {
+      "name": "Инсталиране",
+      "file": "installation-readme-generated.md",
+      "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Бърз старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Бележки",
+      "file": "notes-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Изисквания",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Агрегация",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Агрегация",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на одитни записи",
+      "file": "get-audit-logs-api-generated.md",
+      "subCat": "Журнали за одит",
+      "type": "api"
+    },
+    {
+      "name": "Блокиране от публичен коментар",
+      "file": "block-from-comment-public-api-generated.md",
+      "subCat": "Блокиране от коментар",
+      "type": "api"
+    },
+    {
+      "name": "Премахване на блокиране от публичен коментар",
+      "file": "un-block-comment-public-api-generated.md",
+      "subCat": "Блокиране от коментар",
+      "type": "api"
+    },
+    {
+      "name": "Проверка на блокирани коментари",
+      "file": "checked-comments-for-blocked-api-generated.md",
+      "subCat": "Проверка на блокирани коментари",
+      "type": "api"
+    },
+    {
+      "name": "Блокирай потребител от коментар",
+      "file": "block-user-from-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на публичен коментар",
+      "file": "create-comment-public-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на коментар",
+      "file": "delete-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на публичен коментар",
+      "file": "delete-comment-public-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на глас за коментар",
+      "file": "delete-comment-vote-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Докладване на коментар",
+      "file": "flag-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на коментар",
+      "file": "get-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на текст на коментар",
+      "file": "get-comment-text-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на потребителски имена на гласували за коментар",
+      "file": "get-comment-vote-user-names-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на коментари",
+      "file": "get-comments-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на публични коментари",
+      "file": "get-comments-public-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Заключване на коментар",
+      "file": "lock-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Закрепване на коментар",
+      "file": "pin-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Запазване на коментар",
+      "file": "save-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Масово запазване на коментари",
+      "file": "save-comments-bulk-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Задаване на текст на коментар",
+      "file": "set-comment-text-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Премахване на блокиране на потребител от коментар",
+      "file": "un-block-user-from-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Премахване на доклад за коментар",
+      "file": "un-flag-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Отключване на коментар",
+      "file": "un-lock-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Премахване на закрепване на коментар",
+      "file": "un-pin-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на коментар",
+      "file": "update-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Гласуване за коментар",
+      "file": "vote-comment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добавяне на конфигурация на домейн",
+      "file": "add-domain-config-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на конфигурация на домейн",
+      "file": "delete-domain-config-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на конфигурация на домейн",
+      "file": "get-domain-config-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на конфигурации на домейни",
+      "file": "get-domain-configs-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Частично актуализиране на конфигурация на домейн",
+      "file": "patch-domain-config-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Замяна на конфигурация на домейн",
+      "file": "put-domain-config-api-generated.md",
+      "subCat": "Конфигурации на домейни",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на шаблон за имейл",
+      "file": "create-email-template-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на шаблон за имейл",
+      "file": "delete-email-template-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на грешка при рендиране на шаблон за имейл",
+      "file": "delete-email-template-render-error-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на шаблон за имейл",
+      "file": "get-email-template-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на дефиниции на шаблони за имейл",
+      "file": "get-email-template-definitions-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на грешки при рендиране на шаблони за имейл",
+      "file": "get-email-template-render-errors-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на шаблони за имейли",
+      "file": "get-email-templates-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Рендиране на шаблон за имейл",
+      "file": "render-email-template-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на шаблон за имейл",
+      "file": "update-email-template-api-generated.md",
+      "subCat": "Шаблони за имейли",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на журнал на събития",
+      "file": "get-event-log-api-generated.md",
+      "subCat": "Журнал на събития",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на глобален журнал на събития",
+      "file": "get-global-event-log-api-generated.md",
+      "subCat": "Журнал на събития",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на публикация във фийда",
+      "file": "create-feed-post-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на публична публикация във фийда",
+      "file": "create-feed-post-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на публична публикация във фийда",
+      "file": "delete-feed-post-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на публикации във фийда",
+      "file": "get-feed-posts-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на публични публикации във фийда",
+      "file": "get-feed-posts-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на статистики за публикации във фийда",
+      "file": "get-feed-posts-stats-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на публични реакции на потребители",
+      "file": "get-user-reacts-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Реакция на публична публикация във фийда",
+      "file": "react-feed-post-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на публикация във фийда",
+      "file": "update-feed-post-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на публична публикация във фийда",
+      "file": "update-feed-post-public-api-generated.md",
+      "subCat": "Публикации във фийда",
+      "type": "api"
+    },
+    {
+      "name": "Докладване на публичен коментар",
+      "file": "flag-comment-public-api-generated.md",
+      "subCat": "Докладване на коментар",
+      "type": "api"
+    },
+    {
+      "name": "Добавяне на хаштаг",
+      "file": "add-hash-tag-api-generated.md",
+      "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "Масово добавяне на хаштагове",
+      "file": "add-hash-tags-bulk-api-generated.md",
+      "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на хаштаг",
+      "file": "delete-hash-tag-api-generated.md",
+      "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на хаштагове",
+      "file": "get-hash-tags-api-generated.md",
+      "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "Частично актуализиране на хаштаг",
+      "file": "patch-hash-tag-api-generated.md",
+      "subCat": "Хаштагове",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на модератор",
+      "file": "create-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на модератор",
+      "file": "delete-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на модератор",
+      "file": "get-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на модератори",
+      "file": "get-moderators-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Изпращане на покана",
+      "file": "send-invite-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на модератор",
+      "file": "update-moderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на брой известия",
+      "file": "delete-notification-count-api-generated.md",
+      "subCat": "Брой известия",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на кеширан брой известия",
+      "file": "get-cached-notification-count-api-generated.md",
+      "subCat": "Брой известия",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на брой известия",
+      "file": "get-notification-count-api-generated.md",
+      "subCat": "Известия",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на известия",
+      "file": "get-notifications-api-generated.md",
+      "subCat": "Известия",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на известие",
+      "file": "update-notification-api-generated.md",
+      "subCat": "Известия",
+      "type": "api"
+    },
+    {
+      "name": "Добавяне на страница",
+      "file": "add-page-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на страница",
+      "file": "delete-page-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на страница по URL ID",
+      "file": "get-page-by-urlid-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на страници",
+      "file": "get-pages-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "Частично актуализиране на страница",
+      "file": "patch-page-api-generated.md",
+      "subCat": "Страници",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на изчакващо уебхук събитие",
+      "file": "delete-pending-webhook-event-api-generated.md",
+      "subCat": "Изчакващи уебхук събития",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на брой изчакващи уебхук събития",
+      "file": "get-pending-webhook-event-count-api-generated.md",
+      "subCat": "Изчакващи уебхук събития",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на изчакващи уебхук събития",
+      "file": "get-pending-webhook-events-api-generated.md",
+      "subCat": "Изчакващи уебхук събития",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на конфигурация за въпрос",
+      "file": "create-question-config-api-generated.md",
+      "subCat": "Конфигурации за въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на конфигурация за въпрос",
+      "file": "delete-question-config-api-generated.md",
+      "subCat": "Конфигурации за въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на конфигурация за въпрос",
+      "file": "get-question-config-api-generated.md",
+      "subCat": "Конфигурации за въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на конфигурации за въпроси",
+      "file": "get-question-configs-api-generated.md",
+      "subCat": "Конфигурации за въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на конфигурация за въпрос",
+      "file": "update-question-config-api-generated.md",
+      "subCat": "Конфигурации за въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на резултат от въпрос",
+      "file": "create-question-result-api-generated.md",
+      "subCat": "Резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на резултат от въпрос",
+      "file": "delete-question-result-api-generated.md",
+      "subCat": "Резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на резултат от въпрос",
+      "file": "get-question-result-api-generated.md",
+      "subCat": "Резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на резултати от въпроси",
+      "file": "get-question-results-api-generated.md",
+      "subCat": "Резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на резултат от въпрос",
+      "file": "update-question-result-api-generated.md",
+      "subCat": "Резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Агрегиране на резултати от въпроси",
+      "file": "aggregate-question-results-api-generated.md",
+      "subCat": "Агрегиране на резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Масово агрегиране на резултати от въпроси",
+      "file": "bulk-aggregate-question-results-api-generated.md",
+      "subCat": "Агрегиране на резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Комбиниране на коментари с резултати от въпроси",
+      "file": "combine-comments-with-question-results-api-generated.md",
+      "subCat": "Агрегиране на резултати от въпроси",
+      "type": "api"
+    },
+    {
+      "name": "Добавяне на SSO потребител",
+      "file": "add-sso-user-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на SSO потребител",
+      "file": "delete-sso-user-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на SSO потребител по имейл",
+      "file": "get-sso-user-by-email-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на SSO потребител по ID",
+      "file": "get-sso-user-by-id-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на SSO потребители",
+      "file": "get-sso-users-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Частично актуализиране на SSO потребител",
+      "file": "patch-sso-user-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Замяна на SSO потребител",
+      "file": "put-sso-user-api-generated.md",
+      "subCat": "SSO потребители",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на абонамент",
+      "file": "create-subscription-api-generated.md",
+      "subCat": "Абонаменти",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на абонамент",
+      "file": "delete-subscription-api-generated.md",
+      "subCat": "Абонаменти",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на абонаменти",
+      "file": "get-subscriptions-api-generated.md",
+      "subCat": "Абонаменти",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на дневна употреба на наемател",
+      "file": "get-tenant-daily-usages-api-generated.md",
+      "subCat": "Дневна употреба на наемател",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на пакет за наемател",
+      "file": "create-tenant-package-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на пакет за наемател",
+      "file": "delete-tenant-package-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на пакет за наемател",
+      "file": "get-tenant-package-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на пакети за наематели",
+      "file": "get-tenant-packages-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Замяна на пакет за наемател",
+      "file": "replace-tenant-package-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на пакет за наемател",
+      "file": "update-tenant-package-api-generated.md",
+      "subCat": "Пакети за наематели",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на потребител на наемател",
+      "file": "create-tenant-user-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на потребител на наемател",
+      "file": "delete-tenant-user-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на потребител на наемател",
+      "file": "get-tenant-user-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на потребители на наемател",
+      "file": "get-tenant-users-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Замяна на потребител на наемател",
+      "file": "replace-tenant-user-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Изпращане на връзка за вход",
+      "file": "send-login-link-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на потребител на наемател",
+      "file": "update-tenant-user-api-generated.md",
+      "subCat": "Потребители на наематели",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на наемател",
+      "file": "create-tenant-api-generated.md",
+      "subCat": "Наематели",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на наемател",
+      "file": "delete-tenant-api-generated.md",
+      "subCat": "Наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на наемател",
+      "file": "get-tenant-api-generated.md",
+      "subCat": "Наематели",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на наематели",
+      "file": "get-tenants-api-generated.md",
+      "subCat": "Наематели",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на наемател",
+      "file": "update-tenant-api-generated.md",
+      "subCat": "Наематели",
+      "type": "api"
+    },
+    {
+      "name": "Качване на изображение",
+      "file": "upload-image-api-generated.md",
+      "subCat": "Качване на изображение",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на прогрес на значка на потребител по ID",
+      "file": "get-user-badge-progress-by-id-api-generated.md",
+      "subCat": "Прогрес на значки на потребител",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на прогрес на значка по потребителско ID",
+      "file": "get-user-badge-progress-by-user-id-api-generated.md",
+      "subCat": "Прогрес на значки на потребител",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на списък с прогрес на значки на потребители",
+      "file": "get-user-badge-progress-list-api-generated.md",
+      "subCat": "Прогрес на значки на потребител",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на значка за потребител",
+      "file": "create-user-badge-api-generated.md",
+      "subCat": "Значки за потребители",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на значка за потребител",
+      "file": "delete-user-badge-api-generated.md",
+      "subCat": "Значки за потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на значка за потребител",
+      "file": "get-user-badge-api-generated.md",
+      "subCat": "Значки за потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на значки за потребители",
+      "file": "get-user-badges-api-generated.md",
+      "subCat": "Значки за потребители",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на значка за потребител",
+      "file": "update-user-badge-api-generated.md",
+      "subCat": "Значки за потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на брой уведомления за потребител",
+      "file": "get-user-notification-count-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на уведомления за потребител",
+      "file": "get-user-notifications-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Нулиране на брой уведомления за потребител",
+      "file": "reset-user-notification-count-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Нулиране на уведомления за потребител",
+      "file": "reset-user-notifications-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на статус на абонамент за коментари (уведомления) на потребител",
+      "file": "update-user-notification-comment-subscription-status-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на статус на абонамент за страница (уведомления) на потребител",
+      "file": "update-user-notification-page-subscription-status-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Актуализиране на статуса на уведомление за потребител",
+      "file": "update-user-notification-status-api-generated.md",
+      "subCat": "Потребителски уведомления",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на статуси на присъствие на потребители",
+      "file": "get-user-presence-statuses-api-generated.md",
+      "subCat": "Статуси на присъствие на потребител",
+      "type": "api"
+    },
+    {
+      "name": "Търсене на потребители",
+      "file": "search-users-api-generated.md",
+      "subCat": "Търсене на потребители",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на потребител",
+      "file": "get-user-api-generated.md",
+      "subCat": "Потребители",
+      "type": "api"
+    },
+    {
+      "name": "Създаване на глас",
+      "file": "create-vote-api-generated.md",
+      "subCat": "Гласове",
+      "type": "api"
+    },
+    {
+      "name": "Изтриване на глас",
+      "file": "delete-vote-api-generated.md",
+      "subCat": "Гласове",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на гласове",
+      "file": "get-votes-api-generated.md",
+      "subCat": "Гласове",
+      "type": "api"
+    },
+    {
+      "name": "Получаване на гласове за потребител",
+      "file": "get-votes-for-user-api-generated.md",
+      "subCat": "Гласове",
+      "type": "api"
+    }
+  ]
+}

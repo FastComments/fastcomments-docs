@@ -1,0 +1,36 @@
+{
+  "name": "White-label",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое White-label",
+      "file": "white-labeling-background.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как получить White-label",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Настройка White-label",
+      "file": "white-labeling-process.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Работа с панелью управления",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Работа с API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Управление White-label арендаторами",
+      "file": "white-labeling-managing.md",
+      "subCat": "Управление арендаторами"
+    }
+  ]
+}

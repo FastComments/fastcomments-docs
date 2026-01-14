@@ -1,0 +1,51 @@
+{
+  "name": "ユーザープロフィール",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "プロフィールの基本",
+      "file": "profile-basics.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "プロフィールのカスタマイズ",
+      "file": "customizing-profiles.md",
+      "subCat": "カスタマイズ"
+    },
+    {
+      "name": "プライバシー設定",
+      "file": "privacy-settings.md",
+      "subCat": "カスタマイズ"
+    },
+    {
+      "name": "バッジ",
+      "file": "badges.md",
+      "subCat": "機能"
+    },
+    {
+      "name": "プロフィールコメント",
+      "file": "profile-comments.md",
+      "subCat": "機能"
+    },
+    {
+      "name": "ダイレクトメッセージ",
+      "file": "direct-messaging.md",
+      "subCat": "機能"
+    },
+    {
+      "name": "アクティビティフィード",
+      "file": "activity-feed.md",
+      "subCat": "機能"
+    },
+    {
+      "name": "ユーザーノート",
+      "file": "user-notes.md",
+      "subCat": "機能"
+    },
+    {
+      "name": "プロフィールのスタイリング",
+      "file": "styling-profiles.md",
+      "subCat": "開発者向け"
+    }
+  ]
+}

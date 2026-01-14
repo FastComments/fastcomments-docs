@@ -1,0 +1,31 @@
+{
+  "name": "אנליטיקה",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "רקע",
+      "file": "analytics-background.md",
+      "subCat": "אנליטיקה"
+    },
+    {
+      "name": "אנליטיקה של חיובים",
+      "file": "analytics-billing.md",
+      "subCat": "אנליטיקה"
+    },
+    {
+      "name": "אנליטיקה של האתר",
+      "file": "analytics-site.md",
+      "subCat": "אנליטיקה"
+    },
+    {
+      "name": "דיוק האנליטיקה לעומת פלטפורמות אחרות",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "אנליטיקה"
+    },
+    {
+      "name": "גוגל אנליטיקס",
+      "file": "analytics-google.md",
+      "subCat": "מעקב"
+    }
+  ]
+}

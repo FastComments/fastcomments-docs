@@ -1,0 +1,56 @@
+{
+  "name": "オンプレミス",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "含まれる内容",
+      "file": "on-prem-whats-included.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "はじめに",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "導入"
+    },
+    {
+      "name": "インスタンス",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "展開"
+    },
+    {
+      "name": "設定",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "展開"
+    },
+    {
+      "name": "データベースのダウンタイムとメンテナンスモード",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "アーキテクチャ"
+    },
+    {
+      "name": "ロック",
+      "file": "on-prem-locks.md",
+      "subCat": "アーキテクチャ"
+    },
+    {
+      "name": "ウィジェットのコード",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "インストールと統合"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "インストールと統合"
+    },
+    {
+      "name": "複数ドメイン",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "インストールと統合"
+    },
+    {
+      "name": "セキュリティ",
+      "file": "on-prem-security.md",
+      "subCat": "セキュリティのヒント"
+    }
+  ]
+}

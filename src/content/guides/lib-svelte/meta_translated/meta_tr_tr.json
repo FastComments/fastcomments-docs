@@ -1,0 +1,24 @@
+{
+  "name": "Svelte Kütüphanesi",
+  "pageHeader": "FastComments Svelte Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Bileşenler",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Geliştirme",
+      "file": "developing-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Derleme",
+      "file": "building-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

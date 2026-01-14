@@ -1,0 +1,41 @@
+{
+  "name": "Шаблони електронної пошти",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Створення шаблонів",
+      "file": "creating-templates.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Мова шаблонів",
+      "file": "template-language.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Локалізація та власний текст",
+      "file": "localizing.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Шаблони на рівні домену",
+      "file": "per-domain-templates.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Дані та змінні",
+      "file": "data-variables.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Помилки рендерингу",
+      "file": "render-failures.md",
+      "subCat": "Шаблони електронної пошти"
+    },
+    {
+      "name": "Застосування змін",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Шаблони електронної пошти"
+    }
+  ]
+}

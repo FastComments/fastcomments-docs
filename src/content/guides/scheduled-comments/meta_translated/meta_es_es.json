@@ -1,0 +1,21 @@
+{
+  "name": "Comentarios programados",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Antecedentes",
+      "file": "background.md",
+      "subCat": "Comentarios programados"
+    },
+    {
+      "name": "Cómo hacerlo",
+      "file": "howto.md",
+      "subCat": "Comentarios programados"
+    },
+    {
+      "name": "Formato de importación",
+      "file": "import-format.md",
+      "subCat": "Comentarios programados"
+    }
+  ]
+}

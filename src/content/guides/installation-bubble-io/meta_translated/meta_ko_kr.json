@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Bubble.io 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTML 블록 추가",
+      "file": "bubble-io-step-1.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "2. 코드 삽입",
+      "file": "bubble-io-step-2.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "3. 너비 설정 찾기",
+      "file": "bubble-io-step-3.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "4. 레이아웃 조정",
+      "file": "bubble-io-step-4.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "완료",
+      "file": "bubble-io-success.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

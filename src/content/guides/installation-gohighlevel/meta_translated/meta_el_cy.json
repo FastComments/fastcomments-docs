@@ -1,0 +1,67 @@
+{
+  "name": "Εγκατάσταση GoHighLevel",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους GoHighLevel",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Επεξεργασία μαθήματος",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Βήμα 2: Άνοιγμα προχωρημένων ρυθμίσεων",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Βήμα 3: Αντιγραφή κώδικα",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Βήμα 4: Επικόλληση κώδικα",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Επιτυχής ρύθμιση ιστότοπου μελών",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Σφάλματα τομέα του ιστότοπου μελών",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Προσαρμογή ιστότοπου μελών",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+    },
+    {
+      "name": "Βήμα 1: Προσθήκη στοιχείου προσαρμοσμένου κώδικα",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Εγκατάσταση ιστοτόπου GoHighLevel"
+    },
+    {
+      "name": "Βήμα 2: Αντιγραφή και επικόλληση κώδικα",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Εγκατάσταση ιστοτόπου GoHighLevel"
+    },
+    {
+      "name": "Επιτυχής ρύθμιση ιστότοπου",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Εγκατάσταση ιστοτόπου GoHighLevel"
+    },
+    {
+      "name": "Σφάλματα τομέα ιστότοπου",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Εγκατάσταση ιστοτόπου GoHighLevel"
+    },
+    {
+      "name": "Προσαρμογή ιστότοπου",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Εγκατάσταση ιστοτόπου GoHighLevel"
+    }
+  ]
+}

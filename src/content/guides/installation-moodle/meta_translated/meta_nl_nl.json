@@ -1,0 +1,42 @@
+{
+  "name": "Moodle-installatie",
+  "pageHeader": "Reacties toevoegen aan Moodle-sites",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Servertoegang verkrijgen",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Stap 2: Weergavebestand identificeren",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Stap 3: Code toevoegen",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Succes voor ledenwebsite",
+      "file": "moodle-success.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Domeinfouten van de ledenwebsite",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Aanpassing van de ledenwebsite",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle-siteinstallatie"
+    },
+    {
+      "name": "Wilt u een speciale plug-in?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Speciale plug-in?"
+    }
+  ]
+}

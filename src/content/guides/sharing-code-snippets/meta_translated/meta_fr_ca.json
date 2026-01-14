@@ -1,0 +1,31 @@
+{
+  "name": "Partage d'extraits de code",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est‑ce qu'un extrait de code ?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Communautés de développeurs",
+      "file": "code-snippets-communities.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Langages de programmation pris en charge",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Configurer le partage d'extraits de code",
+      "file": "code-snippets-setup.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Partage d'extraits de code",
+      "file": "code-snippets-usage.md",
+      "subCat": "Utilisation"
+    }
+  ]
+}

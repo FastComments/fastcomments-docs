@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на Super.so",
+  "pageHeader": "Добавяне на живи дискусии към сайтове на Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Отворете настройките",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Стъпка 2: Добавете готов код",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Вижте също: Обикновен уиджет за коментари",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Успешно",
+      "file": "super-so-learn-success.md",
+      "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Инсталиране на Super.so"
+    }
+  ]
+}

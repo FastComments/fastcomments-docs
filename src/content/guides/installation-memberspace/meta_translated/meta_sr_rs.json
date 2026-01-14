@@ -1,0 +1,22 @@
+{
+  "name": "Инсталација MemberSpace",
+  "pageHeader": "Додавање коментара уз MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Код",
+      "file": "memberspace-step-1.md",
+      "subCat": "Инсталација MemberSpace"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Инсталација MemberSpace"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "memberspace-customize.md",
+      "subCat": "Инсталација MemberSpace"
+    }
+  ]
+}

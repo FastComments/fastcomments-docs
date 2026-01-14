@@ -1,0 +1,26 @@
+{
+  "name": "Underretninger",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvornår sender FastComments underretninger?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Typer af underretninger",
+      "file": "notification-types.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Fravalg",
+      "file": "opting-out-notifications.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Konfiguration af underretninger til SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguration"
+    }
+  ]
+}

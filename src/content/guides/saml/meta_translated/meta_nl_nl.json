@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat is SAML?",
+      "file": "saml-overview.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "SAML versus SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "SAML configureren",
+      "file": "saml-setup.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Configuratie van de identiteitsprovider",
+      "file": "saml-idp-config.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Informatie over de serviceprovider",
+      "file": "saml-sp-info.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Gebruikersrollen en machtigingen",
+      "file": "saml-user-roles.md",
+      "subCat": "Gebruikersbeheer"
+    },
+    {
+      "name": "SAML-authenticatie testen",
+      "file": "saml-testing.md",
+      "subCat": "Probleemoplossing"
+    },
+    {
+      "name": "Veelvoorkomende problemen",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Probleemoplossing"
+    },
+    {
+      "name": "Beste beveiligingspraktijken",
+      "file": "saml-security.md",
+      "subCat": "Geavanceerd"
+    }
+  ]
+}

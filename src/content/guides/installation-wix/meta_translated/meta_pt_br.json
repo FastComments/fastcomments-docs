@@ -1,0 +1,42 @@
+{
+  "name": "Instalação do Wix",
+  "pageHeader": "Adicionar comentários a sites Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Edite a página correta",
+      "file": "wix-step-1.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Passo 2: Adicione um bloco de incorporação",
+      "file": "wix-step-2.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Passo 3: Copie e cole o código personalizado",
+      "file": "wix-step-3.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Passo 4: Redimensione",
+      "file": "wix-step-4.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Passo 5: Tópicos de comentários exclusivos",
+      "file": "wix-step-5.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Passo 6: Comemore",
+      "file": "wix-step-6.md",
+      "subCat": "Instalação do Wix"
+    },
+    {
+      "name": "Personalização",
+      "file": "wix-customize.md",
+      "subCat": "Instalação do Wix"
+    }
+  ]
+}

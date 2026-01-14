@@ -1,0 +1,21 @@
+{
+  "name": "Desteklenen Diller",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Desteklenen Diller",
+      "file": "supported-languages.md",
+      "subCat": "Desteklenen Diller"
+    },
+    {
+      "name": "FastComments'in hangi bölümleri yerelleştirilmiştir?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Desteklenen Diller"
+    },
+    {
+      "name": "Yeni Dil Desteği Talebi",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Desteklenen Diller"
+    }
+  ]
+}

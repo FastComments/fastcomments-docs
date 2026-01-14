@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Live-Kommentare zu Bubble.io-Seiten hinzufügen",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTML-Block hinzufügen",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Code einfügen",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "3. Breiten-Einstellung finden",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "4. Layout anpassen",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Erfolgreich",
+      "file": "bubble-io-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

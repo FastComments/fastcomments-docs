@@ -1,0 +1,12 @@
+{
+  "name": "Angular ライブラリ",
+  "pageHeader": "FastComments の Angular ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "プロジェクト構成",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

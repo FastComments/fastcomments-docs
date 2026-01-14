@@ -1,0 +1,42 @@
+{
+  "name": "Moodle 安裝",
+  "pageHeader": "在 Moodle 站點新增評論",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：取得伺服器存取權限",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "步驟 2：找出檢視檔案",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "步驟 3：加入程式碼",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "會員站點成功",
+      "file": "moodle-success.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "會員站點網域錯誤",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "會員站點客製化",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle 站點安裝"
+    },
+    {
+      "name": "想要專屬外掛嗎？",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "專屬外掛？"
+    }
+  ]
+}

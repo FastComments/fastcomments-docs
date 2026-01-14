@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger 安裝",
+  "pageHeader": "為 Hostinger 網站新增即時留言",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：新增程式碼小工具",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger 網站安裝"
+    },
+    {
+      "name": "步驟 2：加入程式碼",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger 網站安裝"
+    },
+    {
+      "name": "完成",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger 網站安裝"
+    },
+    {
+      "name": "網站網域錯誤",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger 網站安裝"
+    },
+    {
+      "name": "網站客製化",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger 網站安裝"
+    },
+    {
+      "name": "浮動按讚按鈕",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger 浮動按讚"
+    }
+  ]
+}

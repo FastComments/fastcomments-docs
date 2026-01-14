@@ -1,0 +1,61 @@
+{
+  "name": "Installatie",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Plugins van derden"
+    },
+    {
+      "name": "VanillaJS / HTML-fragment",
+      "file": "vanillajs.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Meerdere instanties op dezelfde pagina",
+      "file": "multiple-instances.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Veelvoorkomende toepassingen",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Foutopsporing bij veelvoorkomende problemen",
+      "file": "debugging-common-issues.md",
+      "subCat": "Aangepaste installaties"
+    },
+    {
+      "name": "Notion en Google Sites",
+      "file": "oembed.md",
+      "subCat": "Insluiten in documenten"
+    }
+  ]
+}

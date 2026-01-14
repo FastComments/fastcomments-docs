@@ -1,0 +1,31 @@
+{
+  "name": "Menzioni",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono le menzioni",
+      "file": "what-are-mentions.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Come menzionare un utente",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Uso delle menzioni"
+    },
+    {
+      "name": "Notifiche",
+      "file": "mentions-notifications.md",
+      "subCat": "Uso delle menzioni"
+    },
+    {
+      "name": "Come funziona l'autocompletamento delle menzioni",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Uso delle menzioni"
+    },
+    {
+      "name": "Popolamento delle menzioni",
+      "file": "populating-mentions.md",
+      "subCat": "Configurazione delle menzioni"
+    }
+  ]
+}

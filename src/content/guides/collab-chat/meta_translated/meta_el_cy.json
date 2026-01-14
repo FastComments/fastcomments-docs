@@ -1,0 +1,46 @@
+{
+  "name": "Συνεργατική Συνομιλία",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ξεκινώντας",
+      "file": "getting-started.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Παραδείγματα",
+      "file": "examples.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Προσθήκη ζωντανών σχολίων σε διαδικτυακά βιβλία",
+      "file": "online-books.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Επιλογές διαμόρφωσης",
+      "file": "configuration-options.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Συμπεριφορά επιλογής κειμένου",
+      "file": "text-selection-behavior.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "customization.md",
+      "subCat": "Προσαρμογή"
+    },
+    {
+      "name": "Συγχρονισμός σε πραγματικό χρόνο",
+      "file": "live-sync.md",
+      "subCat": "Για προχωρημένους"
+    },
+    {
+      "name": "Αναφορά API",
+      "file": "api-reference.md",
+      "subCat": "Για προχωρημένους"
+    }
+  ]
+}

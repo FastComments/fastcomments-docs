@@ -1,0 +1,21 @@
+{
+  "name": "Cookies τρίτων",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι τα cookies τρίτων",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς το FastComments χρησιμοποιεί cookies τρίτων",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Ενεργοποίηση cookies τρίτων",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Ενεργοποίηση"
+    }
+  ]
+}

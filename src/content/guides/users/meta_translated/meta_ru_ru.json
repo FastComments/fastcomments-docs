@@ -1,0 +1,46 @@
+{
+  "name": "Пользователи",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Типы пользователей",
+      "file": "types-of-users.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Имена пользователей",
+      "file": "usernames.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Администраторы",
+      "file": "administrator-users.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Комментаторы",
+      "file": "commenter-users.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Добавление администраторов",
+      "file": "adding-administrators.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Добавление модераторов",
+      "file": "adding-moderators.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Обновление прав администраторов",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Разработчики",
+      "file": "developers.md",
+      "subCat": "Настройка"
+    }
+  ]
+}

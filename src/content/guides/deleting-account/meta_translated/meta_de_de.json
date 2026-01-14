@@ -1,0 +1,16 @@
+{
+  "name": "Ihr Konto löschen",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ihr Konto löschen",
+      "file": "deleting-your-account.md",
+      "subCat": "Kommentierende und Mieter"
+    },
+    {
+      "name": "Ihr Abonnement kündigen",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Mieter"
+    }
+  ]
+}

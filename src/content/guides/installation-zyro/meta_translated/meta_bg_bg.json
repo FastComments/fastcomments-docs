@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на Zyro",
+  "pageHeader": "Добавяне на живи коментари към сайтове на Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Добавете уиджет за код",
+      "file": "zyro-step-1.md",
+      "subCat": "Инсталиране на сайт в Zyro"
+    },
+    {
+      "name": "Стъпка 2: Добавете кода",
+      "file": "zyro-step-2.md",
+      "subCat": "Инсталиране на сайт в Zyro"
+    },
+    {
+      "name": "Успех",
+      "file": "zyro-site-success.md",
+      "subCat": "Инсталиране на сайт в Zyro"
+    },
+    {
+      "name": "Грешки в домейна на сайта",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Инсталиране на сайт в Zyro"
+    },
+    {
+      "name": "Персонализиране на сайта",
+      "file": "zyro-site-customize.md",
+      "subCat": "Инсталиране на сайт в Zyro"
+    },
+    {
+      "name": "Плаващ бутон за харесвания",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Плаващи харесвания в Zyro"
+    }
+  ]
+}

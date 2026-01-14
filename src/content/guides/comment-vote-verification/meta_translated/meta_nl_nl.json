@@ -1,0 +1,36 @@
+{
+  "name": "Reactie- en stemverificatie",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Achtergrond",
+      "file": "background.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "Ongeverifieerde reacties",
+      "file": "unverified-comments.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "Ongeverifieerde stemmen",
+      "file": "unverified-votes.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "Verificatie-e-mails",
+      "file": "verification-emails.md",
+      "subCat": "Verificatie"
+    },
+    {
+      "name": "Sessies",
+      "file": "verification-sessions.md",
+      "subCat": "Verificatie"
+    },
+    {
+      "name": "Live Reageren",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verificatie"
+    }
+  ]
+}

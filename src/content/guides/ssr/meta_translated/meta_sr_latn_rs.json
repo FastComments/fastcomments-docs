@@ -1,0 +1,36 @@
+{
+  "name": "SSR (renderovanje na serverskoj strani)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "Šta je SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Prednosti SSR-a",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Podržane funkcije SSR-a u FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Slučajevi upotrebe",
+      "file": "ssr-use-cases.md",
+      "subCat": "Korišćenje SSR-a"
+    },
+    {
+      "name": "Gde FastComments koristi SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Korišćenje SSR-a"
+    },
+    {
+      "name": "Korišćenje SSR-a",
+      "file": "using-ssr.md",
+      "subCat": "Korišćenje SSR-a"
+    }
+  ]
+}

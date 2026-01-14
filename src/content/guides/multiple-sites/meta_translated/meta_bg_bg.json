@@ -1,0 +1,51 @@
+{
+  "name": "Множество сайтове",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Първоначална настройка",
+      "file": "add-domains-to-account.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Ограничения и цени",
+      "file": "domain-limits.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Име на подателя, имейл и лого",
+      "file": "from-name-email-logo.md",
+      "subCat": "Персонализиране за всеки сайт"
+    },
+    {
+      "name": "Доменът в полето 'От' (име/имейл) не работи",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Персонализиране за всеки сайт"
+    },
+    {
+      "name": "Наемател за всяка среда",
+      "file": "tenant-per-environment.md",
+      "subCat": "Персонализиране за всеки сайт"
+    },
+    {
+      "name": "Персонализации",
+      "file": "customizations.md",
+      "subCat": "Персонализиране за всеки сайт"
+    },
+    {
+      "name": "Модериране на коментари",
+      "file": "moderation.md",
+      "subCat": "Данни и търсене"
+    },
+    {
+      "name": "Споделяне на коментари между домейни",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Данни и търсене"
+    },
+    {
+      "name": "С WordPress",
+      "file": "wordpress.md",
+      "subCat": "Бележки за интеграция"
+    }
+  ]
+}

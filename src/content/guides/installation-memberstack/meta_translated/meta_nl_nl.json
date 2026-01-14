@@ -1,0 +1,22 @@
+{
+  "name": "Memberstack-installatie",
+  "pageHeader": "Reacties toevoegen met Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "De code",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstack-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstack-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstack-installatie"
+    }
+  ]
+}

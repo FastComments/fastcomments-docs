@@ -1,0 +1,72 @@
+{
+  "name": "Android 函式庫",
+  "pageHeader": "FastComments Android 函式庫",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "需求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "基本用法",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "安全的單一登入（SSO）驗證",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "驗證",
+      "type": "readme"
+    },
+    {
+      "name": "Feed 整合",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "即時聊天整合",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "範例專案",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "設定選項",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "完整的主題自訂",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "記憶體管理",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

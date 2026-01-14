@@ -1,0 +1,56 @@
+{
+  "name": "Lokal installation",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er inkluderet",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Hvor du skal starte",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Instanser",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Udrulning"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Udrulning"
+    },
+    {
+      "name": "Database-nedetid og vedligeholdelsestilstand",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Arkitektur"
+    },
+    {
+      "name": "Låse",
+      "file": "on-prem-locks.md",
+      "subCat": "Arkitektur"
+    },
+    {
+      "name": "Widget-kode",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installation og integration"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installation og integration"
+    },
+    {
+      "name": "Flere domæner",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installation og integration"
+    },
+    {
+      "name": "Sikkerhed",
+      "file": "on-prem-security.md",
+      "subCat": "Sikkerhedstips"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Перевірка коментарів і голосів",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Загальна інформація",
+      "file": "background.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Неперевірені коментарі",
+      "file": "unverified-comments.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Неперевірені голоси",
+      "file": "unverified-votes.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Листи підтвердження",
+      "file": "verification-emails.md",
+      "subCat": "Перевірка"
+    },
+    {
+      "name": "Сесії",
+      "file": "verification-sessions.md",
+      "subCat": "Перевірка"
+    },
+    {
+      "name": "Коментування в реальному часі",
+      "file": "verification-live-commenting.md",
+      "subCat": "Перевірка"
+    }
+  ]
+}

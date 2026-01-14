@@ -1,0 +1,24 @@
+{
+  "name": "PHP SSO SDK",
+  "pageHeader": "FastComments の PHP SSO SDK",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "使用方法",
+      "file": "usage-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "ドキュメント",
+      "file": "documentation-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Инсталиране на Framer",
+  "pageHeader": "Добавяне на коментиране в реално време към сайтове на Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Отворете редактора",
+      "file": "framer-step-1.md",
+      "subCat": "Инсталиране на Framer"
+    },
+    {
+      "name": "Стъпка 2: Добавете блок за вграждане",
+      "file": "framer-step-2.md",
+      "subCat": "Инсталиране на Framer"
+    },
+    {
+      "name": "Стъпка 3: Копирайте и поставете кода на FastComments, специфичен за Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Инсталиране на Framer"
+    },
+    {
+      "name": "Стъпка 4: Регулирайте височината на уиджета и на страницата",
+      "file": "framer-step-4.md",
+      "subCat": "Инсталиране на Framer"
+    },
+    {
+      "name": "Грешки с домейна",
+      "file": "framer-domain-errors.md",
+      "subCat": "Инсталиране на Framer"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "framer-customize.md",
+      "subCat": "Инсталиране на Framer"
+    }
+  ]
+}

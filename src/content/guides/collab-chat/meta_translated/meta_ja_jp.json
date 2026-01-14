@@ -1,0 +1,46 @@
+{
+  "name": "コラボチャット",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "はじめに",
+      "file": "getting-started.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "例",
+      "file": "examples.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "オンライン書籍にライブコメントを追加する",
+      "file": "online-books.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "設定オプション",
+      "file": "configuration-options.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "テキスト選択の動作",
+      "file": "text-selection-behavior.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "customization.md",
+      "subCat": "カスタマイズ"
+    },
+    {
+      "name": "ライブ同期",
+      "file": "live-sync.md",
+      "subCat": "上級"
+    },
+    {
+      "name": "API リファレンス",
+      "file": "api-reference.md",
+      "subCat": "上級"
+    }
+  ]
+}

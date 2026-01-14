@@ -1,0 +1,61 @@
+{
+  "name": "Установка",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Сторонние плагины"
+    },
+    {
+      "name": "VanillaJS / HTML-фрагмент",
+      "file": "vanillajs.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Несколько экземпляров на одной странице",
+      "file": "multiple-instances.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Распространённые сценарии использования",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Отладка распространённых проблем",
+      "file": "debugging-common-issues.md",
+      "subCat": "Пользовательские установки"
+    },
+    {
+      "name": "Notion и Google Sites",
+      "file": "oembed.md",
+      "subCat": "Встраивание в документы"
+    }
+  ]
+}

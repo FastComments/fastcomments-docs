@@ -1,0 +1,36 @@
+{
+  "name": "Din egen sky",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er FastComments' isolerede sky?",
+      "file": "your-own-cloud.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Sådan får du den",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Opsætning og oplæring",
+      "file": "set-up-training.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Brug af dashboardet",
+      "file": "using-the-dashboard.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Brug af API'en",
+      "file": "using-the-api.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Administration af lejere",
+      "file": "managing-tenants.md",
+      "subCat": "Administration af lejere"
+    }
+  ]
+}

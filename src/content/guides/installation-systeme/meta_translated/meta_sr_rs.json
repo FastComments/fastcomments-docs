@@ -1,0 +1,32 @@
+{
+  "name": "Инсталација Systeme.io",
+  "pageHeader": "Додавање коментара на Systeme.io блог",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Отворите шаблон теме блога",
+      "file": "systeme-step-1.md",
+      "subCat": "Инсталација Systeme.io"
+    },
+    {
+      "name": "Корак 2: Додајте код са FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Инсталација Systeme.io"
+    },
+    {
+      "name": "Успех",
+      "file": "systeme-success.md",
+      "subCat": "Инсталација Systeme.io"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Инсталација Systeme.io"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "systeme-customize.md",
+      "subCat": "Инсталација Systeme.io"
+    }
+  ]
+}

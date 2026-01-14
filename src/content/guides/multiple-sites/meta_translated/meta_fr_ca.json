@@ -1,0 +1,51 @@
+{
+  "name": "Plusieurs sites",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Configuration initiale",
+      "file": "add-domains-to-account.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Limites et tarification",
+      "file": "domain-limits.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Nom de l'expéditeur, courriel et logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Personnalisation par site"
+    },
+    {
+      "name": "Le nom et le courriel de l'expéditeur du domaine ne fonctionnent pas",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Personnalisation par site"
+    },
+    {
+      "name": "Locataire par environnement",
+      "file": "tenant-per-environment.md",
+      "subCat": "Personnalisation par site"
+    },
+    {
+      "name": "Personnalisations",
+      "file": "customizations.md",
+      "subCat": "Personnalisation par site"
+    },
+    {
+      "name": "Modération des commentaires",
+      "file": "moderation.md",
+      "subCat": "Données et recherche"
+    },
+    {
+      "name": "Partage des commentaires entre domaines",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Données et recherche"
+    },
+    {
+      "name": "Avec WordPress",
+      "file": "wordpress.md",
+      "subCat": "Notes d'intégration"
+    }
+  ]
+}

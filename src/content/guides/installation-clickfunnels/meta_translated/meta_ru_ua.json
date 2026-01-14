@@ -1,0 +1,37 @@
+{
+  "name": "Установка ClickFunnels",
+  "pageHeader": "Добавление живого чата в курсы ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Найдите шаблон",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Установка ClickFunnels"
+    },
+    {
+      "name": "Шаг 2: Добавьте код",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Установка ClickFunnels"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Установка ClickFunnels"
+    },
+    {
+      "name": "Настройка",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Установка ClickFunnels"
+    },
+    {
+      "name": "Дополнительно: фрагмент кода для живых комментариев",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Фрагмент кода для живых комментариев"
+    },
+    {
+      "name": "Дополнительно: автоматическое воспроизведение комментариев",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Автоматическое воспроизведение комментариев"
+    }
+  ]
+}

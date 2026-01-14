@@ -1,0 +1,36 @@
+{
+  "name": "専用クラウド",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "FastComments Isolated Cloudとは？",
+      "file": "your-own-cloud.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "入手方法",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "セットアップとトレーニング",
+      "file": "set-up-training.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "ダッシュボードの使い方",
+      "file": "using-the-dashboard.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "APIの使い方",
+      "file": "using-the-api.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "テナントの管理",
+      "file": "managing-tenants.md",
+      "subCat": "テナント管理"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Бяло етикетиране",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво е бяло етикетиране",
+      "file": "white-labeling-background.md",
+      "subCat": "Предистория"
+    },
+    {
+      "name": "Как да получите бяло етикетиране",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Настройване на бяло етикетиране",
+      "file": "white-labeling-process.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Използване на контролния панел",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Използване на API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Внедряване"
+    },
+    {
+      "name": "Управление на наематели с бяло етикетиране",
+      "file": "white-labeling-managing.md",
+      "subCat": "Управление на наематели"
+    }
+  ]
+}

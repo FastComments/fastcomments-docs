@@ -1,0 +1,32 @@
+{
+  "name": "Установка Systeme.io",
+  "pageHeader": "Добавление комментариев в блог Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Откройте шаблон темы блога",
+      "file": "systeme-step-1.md",
+      "subCat": "Установка Systeme.io"
+    },
+    {
+      "name": "Шаг 2: Добавьте код FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Установка Systeme.io"
+    },
+    {
+      "name": "Готово",
+      "file": "systeme-success.md",
+      "subCat": "Установка Systeme.io"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Установка Systeme.io"
+    },
+    {
+      "name": "Настройка",
+      "file": "systeme-customize.md",
+      "subCat": "Установка Systeme.io"
+    }
+  ]
+}

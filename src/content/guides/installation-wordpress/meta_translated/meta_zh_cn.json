@@ -1,0 +1,72 @@
+{
+  "name": "WordPress 安装",
+  "pageHeader": "向 WordPress 站点添加实时评论",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "快速开始",
+      "file": "wordpress-quick-start.md",
+      "subCat": "简要"
+    },
+    {
+      "name": "安装",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "审核",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "用户、版主和管理员",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "仅限会员站点（单点登录）",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "通知",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "自定义主题",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "同步回 WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "评论数",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "WordPress 安装 <> FastComment 服务器通信",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress 安装"
+    },
+    {
+      "name": "停用与卸载插件的区别",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "插件移除"
+    }
+  ]
+}

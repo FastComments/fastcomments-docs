@@ -1,0 +1,96 @@
+{
+  "name": "תגים",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "יסודות",
+      "file": "badge-basics.md",
+      "subCat": "היסודות"
+    },
+    {
+      "name": "התקדמות",
+      "file": "badge-progression.md",
+      "subCat": "היסודות"
+    },
+    {
+      "name": "תגים ידניים",
+      "file": "badge-type-manual.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "ספירת תגובות",
+      "file": "badge-type-comment-count.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "הצבעות בעד",
+      "file": "badge-type-up-votes.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "תגובות",
+      "file": "badge-type-replies.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "תגובות נעוצות",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "ותיק",
+      "file": "badge-type-veteran.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "פעיל בלילה",
+      "file": "badge-type-night-owl.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "מענה מהיר",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "תגובה לדף מסוים",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "סוגי תגים"
+    },
+    {
+      "name": "מבוא לתגי ממונה",
+      "file": "moderator-badges.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שנמחקו",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שאושרו",
+      "file": "moderator-comments-approved.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שלא אושרו",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שנבדקו",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שסומנו כספאם",
+      "file": "moderator-comments-spam.md",
+      "subCat": "סוגי תגי ממונה"
+    },
+    {
+      "name": "תגובות שסומנו כלא-ספאם",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "סוגי תגי ממונה"
+    }
+  ]
+}

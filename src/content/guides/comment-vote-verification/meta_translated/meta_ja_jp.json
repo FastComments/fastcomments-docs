@@ -1,0 +1,36 @@
+{
+  "name": "コメントと投票の検証",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "未検証のコメント",
+      "file": "unverified-comments.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "未検証の投票",
+      "file": "unverified-votes.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "確認メール",
+      "file": "verification-emails.md",
+      "subCat": "検証"
+    },
+    {
+      "name": "セッション",
+      "file": "verification-sessions.md",
+      "subCat": "検証"
+    },
+    {
+      "name": "ライブでのコメント",
+      "file": "verification-live-commenting.md",
+      "subCat": "検証"
+    }
+  ]
+}

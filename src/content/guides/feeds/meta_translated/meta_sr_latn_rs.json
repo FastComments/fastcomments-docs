@@ -1,0 +1,16 @@
+{
+  "name": "Feedovi",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Personalizacija feedova",
+      "file": "personalizing-feeds.md",
+      "subCat": "Prilagođavanje"
+    },
+    {
+      "name": "Regionalni feedovi",
+      "file": "regional-feeds.md",
+      "subCat": "Prilagođavanje"
+    }
+  ]
+}

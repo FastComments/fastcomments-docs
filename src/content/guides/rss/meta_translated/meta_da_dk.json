@@ -1,0 +1,21 @@
+{
+  "name": "RSS-feeds",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Oversigt",
+      "file": "overview.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Opsætning af din RSS-feed",
+      "file": "setup.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Sikkerhedsovervejelser",
+      "file": "security.md",
+      "subCat": "Implementering"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks（网络回调）",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是 Webhook（网络回调）",
+      "file": "what-are-webhooks.md",
+      "subCat": "概述"
+    },
+    {
+      "name": "支持的事件与资源",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "概述"
+    },
+    {
+      "name": "本地开发设置",
+      "file": "webhooks-local-dev.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "设置",
+      "file": "webhooks-setup.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "测试",
+      "file": "webhooks-testing.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "数据结构",
+      "file": "webhooks-structures.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "安全性与 API 令牌",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "实现"
+    },
+    {
+      "name": "工作原理与重试处理",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "幕后原理"
+    }
+  ]
+}

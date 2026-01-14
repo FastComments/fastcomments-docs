@@ -1,0 +1,24 @@
+{
+  "name": "React Native SDK",
+  "pageHeader": "FastComments React Native SDK",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hakkında",
+      "file": "about-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Ekran Görüntüleri",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    }
+  ]
+}

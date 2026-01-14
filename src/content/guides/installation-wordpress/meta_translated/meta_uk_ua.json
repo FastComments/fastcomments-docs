@@ -1,0 +1,72 @@
+{
+  "name": "Встановлення WordPress",
+  "pageHeader": "Додати живі коментарі на сайти WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Швидкий старт",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Коротко"
+    },
+    {
+      "name": "Встановлення",
+      "file": "wordpress-installation.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Налаштування",
+      "file": "wordpress-customize.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Модерація",
+      "file": "wordpress-moderation.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Користувачі, модератори та адміністратори",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Сайти лише для учасників (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Сповіщення",
+      "file": "wordpress-notifications.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Користувацькі теми",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Синхронізація з WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Кількість коментарів",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Обмін даними між WordPress і сервером FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Встановлення WordPress"
+    },
+    {
+      "name": "Деактивація проти видалення плагіна",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Видалення плагіна"
+    }
+  ]
+}

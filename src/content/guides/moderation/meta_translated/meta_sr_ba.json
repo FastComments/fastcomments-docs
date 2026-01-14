@@ -1,0 +1,126 @@
+{
+  "name": "Модерација",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Страница за модерацију коментара",
+      "file": "moderate-comments-page.md",
+      "subCat": "Увод"
+    },
+    {
+      "name": "Модератори",
+      "file": "moderators.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Додавање модератора",
+      "file": "moderators-adding.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Статистика модератора",
+      "file": "moderator-stats.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Уклањање модератора",
+      "file": "moderators-removing.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Како функционишу одобрења",
+      "file": "moderation-approvals.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Модерација путем е-поште",
+      "file": "moderation-via-email.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Филтрирање",
+      "file": "filters.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Претрага",
+      "file": "search.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Дељење веза за модерацију",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Прегледач нити коментара",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Акције модерације",
+      "file": "comment-actions.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Брисање коментара",
+      "file": "deleting-comments.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Акције модерације из виџета за коментаре",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Модерирање уживо",
+      "file": "comment-actions-live.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Блокирање корисника",
+      "file": "banning-users.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Блокирање корисника помоћу џокера",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Пријављивање",
+      "file": "flagging.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Масовне акције",
+      "file": "bulk-actions.md",
+      "subCat": "Радни процес модерације"
+    },
+    {
+      "name": "Групе за модерацију",
+      "file": "moderation-groups.md",
+      "subCat": "Групе за модерацију"
+    },
+    {
+      "name": "Подешавања модерације",
+      "file": "moderation-settings.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Откривање спама",
+      "file": "spam-detection.md",
+      "subCat": "Спам и неприкладан језик"
+    },
+    {
+      "name": "Маскирање псовки",
+      "file": "profanity-mask.md",
+      "subCat": "Спам и неприкладан језик"
+    },
+    {
+      "name": "Записи о коментарима",
+      "file": "comment-logs.md",
+      "subCat": "Радни процес модерације"
+    }
+  ]
+}

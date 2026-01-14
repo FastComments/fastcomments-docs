@@ -1,0 +1,21 @@
+{
+  "name": "コメント数ウィジェット",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "コメント数ウィジェットのインストール",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "コメント数ウィジェットの一括インストール",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "コメント数API",
+      "file": "comment-count-apis.md",
+      "subCat": "コメント数API"
+    }
+  ]
+}

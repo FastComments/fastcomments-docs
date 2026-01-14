@@ -1,0 +1,21 @@
+{
+  "name": "Donkere modus",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Automatische detectie",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Handmatige configuratie",
+      "file": "dark-mode-manual.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Ondersteuning voor donkere modus van het WordPress Networker-thema",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress-thema's"
+    }
+  ]
+}

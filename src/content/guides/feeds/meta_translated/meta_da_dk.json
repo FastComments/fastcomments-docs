@@ -1,0 +1,16 @@
+{
+  "name": "Nyhedsfeeds",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Tilpasning af nyhedsfeeds",
+      "file": "personalizing-feeds.md",
+      "subCat": "Tilpasning"
+    },
+    {
+      "name": "Regionale nyhedsfeeds",
+      "file": "regional-feeds.md",
+      "subCat": "Tilpasning"
+    }
+  ]
+}

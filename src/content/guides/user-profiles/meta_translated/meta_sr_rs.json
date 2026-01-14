@@ -1,0 +1,51 @@
+{
+  "name": "Кориснички профили",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Основе профила",
+      "file": "profile-basics.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Прилагођавање вашег профила",
+      "file": "customizing-profiles.md",
+      "subCat": "Прилагођавање"
+    },
+    {
+      "name": "Подешавања приватности",
+      "file": "privacy-settings.md",
+      "subCat": "Прилагођавање"
+    },
+    {
+      "name": "Значке",
+      "file": "badges.md",
+      "subCat": "Функције"
+    },
+    {
+      "name": "Коментари на профилу",
+      "file": "profile-comments.md",
+      "subCat": "Функције"
+    },
+    {
+      "name": "Директне поруке",
+      "file": "direct-messaging.md",
+      "subCat": "Функције"
+    },
+    {
+      "name": "Ток активности",
+      "file": "activity-feed.md",
+      "subCat": "Функције"
+    },
+    {
+      "name": "Белешке корисника",
+      "file": "user-notes.md",
+      "subCat": "Функције"
+    },
+    {
+      "name": "Стиловање профила",
+      "file": "styling-profiles.md",
+      "subCat": "За програмере"
+    }
+  ]
+}

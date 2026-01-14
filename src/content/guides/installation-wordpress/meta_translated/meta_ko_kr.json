@@ -1,0 +1,72 @@
+{
+  "name": "워드프레스 설치",
+  "pageHeader": "워드프레스 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "빠른 시작",
+      "file": "wordpress-quick-start.md",
+      "subCat": "요약"
+    },
+    {
+      "name": "설치",
+      "file": "wordpress-installation.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "wordpress-customize.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "댓글 관리",
+      "file": "wordpress-moderation.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "사용자, 모더레이터 및 관리자",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "회원 전용 사이트 (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "알림",
+      "file": "wordpress-notifications.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "맞춤 테마",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "워드프레스로 동기화",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "댓글 수",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "워드프레스 설치 <> FastComment 서버 통신",
+      "file": "wordpress-server-communication.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "워드프레스 설치"
+    },
+    {
+      "name": "플러그인 비활성화와 제거의 차이",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "플러그인 제거"
+    }
+  ]
+}

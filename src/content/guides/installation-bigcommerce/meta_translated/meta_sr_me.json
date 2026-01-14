@@ -1,0 +1,47 @@
+{
+  "name": "Инсталација BigCommerce",
+  "pageHeader": "Додајте коментаре на BigCommerce сајтове",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Припремите тему",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Корак 2: Уредите одговарајући шаблон",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Корак 3: Додајте код видгета",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Корак 4: Активирајте нову тему",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Успешно",
+      "file": "bigcommerce-success.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Доменске грешке",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Инсталација BigCommerce"
+    },
+    {
+      "name": "Додатно: исечак кода за Page Builder",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Коришћење Page Builder-а"
+    }
+  ]
+}

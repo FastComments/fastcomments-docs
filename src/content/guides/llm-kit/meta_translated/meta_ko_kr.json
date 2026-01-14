@@ -1,0 +1,11 @@
+{
+  "name": "LLM 키트",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "LLM 키트 받기",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM 통합"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "支持的浏览器",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "支持的浏览器",
+      "file": "supported-browsers.md",
+      "subCat": "支持的浏览器"
+    },
+    {
+      "name": "Internet Explorer (IE)",
+      "file": "internet-explorer.md",
+      "subCat": "支持的浏览器"
+    },
+    {
+      "name": "我们的测试方法",
+      "file": "how-we-test.md",
+      "subCat": "支持的浏览器"
+    },
+    {
+      "name": "JavaScript 要求",
+      "file": "no-javascript.md",
+      "subCat": "支持的浏览器"
+    }
+  ]
+}

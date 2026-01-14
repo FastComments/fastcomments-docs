@@ -1,0 +1,24 @@
+{
+  "name": "React Native СДК",
+  "pageHeader": "FastComments React Native СДК",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "О",
+      "file": "about-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Снимци екрана",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

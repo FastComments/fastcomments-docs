@@ -1,0 +1,21 @@
+{
+  "name": "Karanlık Mod",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Otomatik Algılama",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Manuel Yapılandırma",
+      "file": "dark-mode-manual.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "WordPress Networker Teması Karanlık Mod Desteği",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress Temaları"
+    }
+  ]
+}

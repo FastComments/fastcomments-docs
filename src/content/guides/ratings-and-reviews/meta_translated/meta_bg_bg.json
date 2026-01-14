@@ -1,0 +1,56 @@
+{
+  "name": "Оценки и отзиви",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Функции",
+      "file": "features.md",
+      "subCat": "Контекст"
+    },
+    {
+      "name": "Кой го получава",
+      "file": "who-gets-it.md",
+      "subCat": "Контекст"
+    },
+    {
+      "name": "Ценообразуване",
+      "file": "pricing.md",
+      "subCat": "Контекст"
+    },
+    {
+      "name": "Изберете тип на визуализация",
+      "file": "choose-display-type.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Определете въпросите си",
+      "file": "define-your-questions.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Как работи конфигурацията",
+      "file": "how-configuration-works.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Уиджет за обобщение",
+      "file": "summary-widget-installation.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Преглед на оценки",
+      "file": "viewing-ratings.md",
+      "subCat": "Отчитане"
+    },
+    {
+      "name": "Интегриране чрез API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Отчитане"
+    },
+    {
+      "name": "Демо на обобщение",
+      "file": "summary-demo.md",
+      "subCat": "Демо на обобщение"
+    }
+  ]
+}

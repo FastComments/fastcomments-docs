@@ -1,0 +1,67 @@
+{
+  "name": "GoHighLevel Kurulumu",
+  "pageHeader": "GoHighLevel Sitelerine Yorum Ekle",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Kursu Düzenle",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Adım 2: Gelişmiş Ayarları Aç",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Adım 3: Kodu Kopyala",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Adım 4: Kodu Yapıştır",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Kurulumu Başarılı",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Alan Adı Hataları",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Üye Sitesi Özelleştirmesi",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "GoHighLevel Üye Sitesi Kurulumu"
+    },
+    {
+      "name": "Adım 1: Özel Kod Öğesi Ekle",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "GoHighLevel Site Kurulumu"
+    },
+    {
+      "name": "Adım 2: Kodu Kopyala ve Yapıştır",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "GoHighLevel Site Kurulumu"
+    },
+    {
+      "name": "Site Kurulumu Başarılı",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "GoHighLevel Site Kurulumu"
+    },
+    {
+      "name": "Site Alan Adı Hataları",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "GoHighLevel Site Kurulumu"
+    },
+    {
+      "name": "Site Özelleştirmesi",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "GoHighLevel Site Kurulumu"
+    }
+  ]
+}

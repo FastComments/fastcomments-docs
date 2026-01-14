@@ -1,0 +1,16 @@
+{
+  "name": "Sletning af din konto",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Sletning af din konto",
+      "file": "deleting-your-account.md",
+      "subCat": "Kommentatorer og lejere"
+    },
+    {
+      "name": "Opsigelse af dit abonnement",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Lejere"
+    }
+  ]
+}

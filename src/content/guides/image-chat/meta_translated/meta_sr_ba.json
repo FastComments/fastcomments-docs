@@ -1,0 +1,41 @@
+{
+  "name": "Разговор са сликама",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Како почети",
+      "file": "getting-started.md",
+      "subCat": "Како почети"
+    },
+    {
+      "name": "Примјери",
+      "file": "examples.md",
+      "subCat": "Како почети"
+    },
+    {
+      "name": "Опције конфигурације",
+      "file": "configuration-options.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Респонзивни дизајн",
+      "file": "responsive-design.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "customization.md",
+      "subCat": "Прилагођавање"
+    },
+    {
+      "name": "Синхронизација уживо",
+      "file": "live-sync.md",
+      "subCat": "Напредно"
+    },
+    {
+      "name": "API референца",
+      "file": "api-reference.md",
+      "subCat": "Напредно"
+    }
+  ]
+}

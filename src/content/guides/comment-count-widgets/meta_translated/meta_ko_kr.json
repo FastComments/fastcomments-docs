@@ -1,0 +1,21 @@
+{
+  "name": "댓글 수 위젯",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "댓글 수 위젯 설치",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "댓글 수 위젯 일괄 설치",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "설치"
+    },
+    {
+      "name": "댓글 수 API",
+      "file": "comment-count-apis.md",
+      "subCat": "댓글 수 API"
+    }
+  ]
+}

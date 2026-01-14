@@ -1,0 +1,56 @@
+{
+  "name": "Локальное развертывание",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Что включено",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Обзор"
+    },
+    {
+      "name": "С чего начать",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Экземпляры",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Развертывание"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Развертывание"
+    },
+    {
+      "name": "Простой базы данных и режим обслуживания",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Архитектура"
+    },
+    {
+      "name": "Блокировки",
+      "file": "on-prem-locks.md",
+      "subCat": "Архитектура"
+    },
+    {
+      "name": "Код виджета",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Установка и интеграция"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Установка и интеграция"
+    },
+    {
+      "name": "Несколько доменов",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Установка и интеграция"
+    },
+    {
+      "name": "Безопасность",
+      "file": "on-prem-security.md",
+      "subCat": "Рекомендации по безопасности"
+    }
+  ]
+}

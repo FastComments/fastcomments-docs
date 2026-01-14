@@ -1,0 +1,72 @@
+{
+  "name": "Инсталиране на WordPress",
+  "pageHeader": "Добавяне на коментари в реално време към WordPress сайтове",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Бърз старт",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Накратко"
+    },
+    {
+      "name": "Инсталация",
+      "file": "wordpress-installation.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "wordpress-customize.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Модерация",
+      "file": "wordpress-moderation.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Потребители, модератори и администратори",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Сайтове само за членове (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Известия",
+      "file": "wordpress-notifications.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Персонализирани теми",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Синхронизация обратно към WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Брой коментари",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Комуникация между инсталацията на WordPress и сървъра FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Инсталиране на WordPress"
+    },
+    {
+      "name": "Деактивиране срещу деинсталиране на плъгина",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Премахване на плъгина"
+    }
+  ]
+}

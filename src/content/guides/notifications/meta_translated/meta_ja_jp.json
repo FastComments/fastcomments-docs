@@ -1,0 +1,26 @@
+{
+  "name": "通知",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "FastCommentsはいつ通知を送信しますか？",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "通知の種類",
+      "file": "notification-types.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "オプトアウト",
+      "file": "opting-out-notifications.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "SSOの通知の設定",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "設定"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Керування доступом SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке керування доступом?",
+      "file": "what-is-access-control.md",
+      "subCat": "Передумови"
+    },
+    {
+      "name": "Як це працює",
+      "file": "how-it-works.md",
+      "subCat": "Передумови"
+    },
+    {
+      "name": "Специфікація",
+      "file": "access-control-spec.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Реалізація",
+      "file": "implementation.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Приклади викликів API",
+      "file": "api-example.md",
+      "subCat": "Реалізація"
+    }
+  ]
+}

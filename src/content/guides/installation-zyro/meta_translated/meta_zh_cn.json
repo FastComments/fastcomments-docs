@@ -1,0 +1,37 @@
+{
+  "name": "Zyro 安装",
+  "pageHeader": "向 Zyro 网站添加实时评论",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "第1步：添加代码小部件",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro 网站安装"
+    },
+    {
+      "name": "第2步：添加代码",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro 网站安装"
+    },
+    {
+      "name": "成功",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro 网站安装"
+    },
+    {
+      "name": "站点域名错误",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro 网站安装"
+    },
+    {
+      "name": "站点自定义",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro 网站安装"
+    },
+    {
+      "name": "浮动点赞按钮",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro 浮动点赞"
+    }
+  ]
+}

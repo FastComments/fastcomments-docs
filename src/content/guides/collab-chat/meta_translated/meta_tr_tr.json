@@ -1,0 +1,46 @@
+{
+  "name": "İşbirliği Sohbeti",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Başlarken",
+      "file": "getting-started.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Örnekler",
+      "file": "examples.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Çevrimiçi Kitaplara Canlı Yorum Ekleme",
+      "file": "online-books.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Yapılandırma Seçenekleri",
+      "file": "configuration-options.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Metin Seçimi Davranışı",
+      "file": "text-selection-behavior.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "customization.md",
+      "subCat": "Özelleştirme"
+    },
+    {
+      "name": "Canlı Eşitleme",
+      "file": "live-sync.md",
+      "subCat": "Gelişmiş"
+    },
+    {
+      "name": "API Referansı",
+      "file": "api-reference.md",
+      "subCat": "Gelişmiş"
+    }
+  ]
+}

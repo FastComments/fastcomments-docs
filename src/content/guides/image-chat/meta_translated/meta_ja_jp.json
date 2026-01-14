@@ -1,0 +1,41 @@
+{
+  "name": "画像チャット",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "はじめに",
+      "file": "getting-started.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "例",
+      "file": "examples.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "設定オプション",
+      "file": "configuration-options.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "レスポンシブデザイン",
+      "file": "responsive-design.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "customization.md",
+      "subCat": "カスタマイズ"
+    },
+    {
+      "name": "ライブ同期",
+      "file": "live-sync.md",
+      "subCat": "上級"
+    },
+    {
+      "name": "APIリファレンス",
+      "file": "api-reference.md",
+      "subCat": "上級"
+    }
+  ]
+}

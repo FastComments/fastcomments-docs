@@ -1,0 +1,61 @@
+{
+  "name": "Инсталация",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Плъгини на трети страни"
+    },
+    {
+      "name": "VanillaJS / HTML фрагмент",
+      "file": "vanillajs.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Множество инстанции на една и съща страница",
+      "file": "multiple-instances.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Често срещани случаи на употреба",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Отстраняване на често срещани проблеми",
+      "file": "debugging-common-issues.md",
+      "subCat": "Персонализирани инсталации"
+    },
+    {
+      "name": "Notion и Google Sites",
+      "file": "oembed.md",
+      "subCat": "Вграждане в документи"
+    }
+  ]
+}

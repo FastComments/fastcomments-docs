@@ -1,0 +1,47 @@
+{
+  "name": "Установка BigCommerce",
+  "pageHeader": "Добавление комментариев на сайты BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Подготовьте тему",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Шаг 2: Отредактируйте нужный шаблон",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Шаг 3: Добавьте код виджета",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Шаг 4: Активируйте новую тему",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Успешно",
+      "file": "bigcommerce-success.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Настройка",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Установка BigCommerce"
+    },
+    {
+      "name": "Дополнительно: фрагмент кода для конструктора страниц",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Использование конструктора страниц"
+    }
+  ]
+}

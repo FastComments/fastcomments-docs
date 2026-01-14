@@ -1,0 +1,12 @@
+{
+  "name": "WooCommerceのインストール",
+  "pageHeader": "WooCommerceサイトにライブコメントを追加する",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "WordPressプラグインのセットアップ",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerceのインストール"
+    }
+  ]
+}

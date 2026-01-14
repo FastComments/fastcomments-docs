@@ -1,0 +1,31 @@
+{
+  "name": "Споделяне на фрагменти от код",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват фрагментите от код?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Програмистки общности",
+      "file": "code-snippets-communities.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Поддържани езици за програмиране",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Настройване на споделянето на фрагменти от код",
+      "file": "code-snippets-setup.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Споделяне на фрагменти от код",
+      "file": "code-snippets-usage.md",
+      "subCat": "Използване"
+    }
+  ]
+}

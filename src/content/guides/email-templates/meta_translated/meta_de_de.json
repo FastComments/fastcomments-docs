@@ -1,0 +1,41 @@
+{
+  "name": "E-Mail-Vorlagen",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Vorlagen erstellen",
+      "file": "creating-templates.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Vorlagensprache",
+      "file": "template-language.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Lokalisierung und benutzerdefinierte Texte",
+      "file": "localizing.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Domainspezifische Vorlagen",
+      "file": "per-domain-templates.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Daten und Variablen",
+      "file": "data-variables.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Fehler beim Rendern",
+      "file": "render-failures.md",
+      "subCat": "E-Mail-Vorlagen"
+    },
+    {
+      "name": "Änderungen anwenden",
+      "file": "time-to-apply-changes.md",
+      "subCat": "E-Mail-Vorlagen"
+    }
+  ]
+}

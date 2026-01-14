@@ -1,0 +1,67 @@
+{
+  "name": "Installation af GoHighLevel",
+  "pageHeader": "Tilføj kommentarer til GoHighLevel-sider",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Rediger kursus",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Trin 2: Åbn avancerede indstillinger",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Trin 3: Kopier kode",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Trin 4: Indsæt kode",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Medlemsområde succes",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Domænefejl på medlemsområdet",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Tilpasning af medlemsområdet",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Installation af GoHighLevel-medlemsområde"
+    },
+    {
+      "name": "Trin 1: Tilføj brugerdefineret kodeelement",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Installation af GoHighLevel-side"
+    },
+    {
+      "name": "Trin 2: Kopier og indsæt kode",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Installation af GoHighLevel-side"
+    },
+    {
+      "name": "Side succes",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Installation af GoHighLevel-side"
+    },
+    {
+      "name": "Domænefejl på siden",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Installation af GoHighLevel-side"
+    },
+    {
+      "name": "Tilpasning af siden",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Installation af GoHighLevel-side"
+    }
+  ]
+}

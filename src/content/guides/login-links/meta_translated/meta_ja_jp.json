@@ -1,0 +1,26 @@
+{
+  "name": "ログインリンク",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "ログインリンクとは何ですか？",
+      "file": "login-links-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "パスワードに対するログインリンクの利点",
+      "file": "login-links-benefits.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ログインリンクのセキュリティをどのように確保しているか",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "セキュリティ"
+    },
+    {
+      "name": "ログインリンクは誰に送られますか？",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "利用"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Namestitev Super.so",
+  "pageHeader": "Dodajte žive razprave na spletna mesta Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Odprite nastavitve",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Korak 2: Dodajte vnaprej pripravljeno kodo",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Glej tudi: standardni pripomoček za komentarje",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Uspeh",
+      "file": "super-so-learn-success.md",
+      "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Napake domene",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Prilagoditev",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Namestitev Super.so"
+    }
+  ]
+}

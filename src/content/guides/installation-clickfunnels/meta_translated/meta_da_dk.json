@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels-installation",
+  "pageHeader": "Tilføj livechat til ClickFunnels-kurser",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Find skabelonen",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels-installation"
+    },
+    {
+      "name": "Trin 2: Tilføj koden",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels-installation"
+    },
+    {
+      "name": "Ekstra: Kodeudsnit til livekommentering",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Kodeudsnit til livekommentering"
+    },
+    {
+      "name": "Ekstra: Automatisk afspilning af kommentarer",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Automatisk afspilning af kommentarer"
+    }
+  ]
+}

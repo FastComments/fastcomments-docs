@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 ライブラリ",
+  "pageHeader": "FastComments の Vue 3 ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "使い方",
+      "file": "usage-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "現在のページを更新する（SPA の例）",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "本番環境での運用",
+      "file": "in-production-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "すべてのウィジェットとドキュメント",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

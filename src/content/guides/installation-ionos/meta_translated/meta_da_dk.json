@@ -1,0 +1,37 @@
+{
+  "name": "Ionos-installation",
+  "pageHeader": "Tilføj kommentarer til Ionos-websteder",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Tilføj en kontaktformular",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos-installation"
+    },
+    {
+      "name": "Trin 2: Tilføj FastComments.com-kode",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos-installation"
+    },
+    {
+      "name": "Trin 3: Udgiv",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos-installation"
+    },
+    {
+      "name": "Succes",
+      "file": "ionos-success.md",
+      "subCat": "Ionos-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos-installation"
+    }
+  ]
+}

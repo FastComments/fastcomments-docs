@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger-installation",
+  "pageHeader": "Tilføj live-kommentarer til Hostinger-sider",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Tilføj kode-widget",
+      "file": "hostinger-step-1.md",
+      "subCat": "Installation af Hostinger-side"
+    },
+    {
+      "name": "Trin 2: Tilføj koden",
+      "file": "hostinger-step-2.md",
+      "subCat": "Installation af Hostinger-side"
+    },
+    {
+      "name": "Succes",
+      "file": "hostinger-site-success.md",
+      "subCat": "Installation af Hostinger-side"
+    },
+    {
+      "name": "Domænefejl på siden",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Installation af Hostinger-side"
+    },
+    {
+      "name": "Tilpasning af websted",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Installation af Hostinger-side"
+    },
+    {
+      "name": "Flydende like-knap",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger Flydende Like-knap"
+    }
+  ]
+}

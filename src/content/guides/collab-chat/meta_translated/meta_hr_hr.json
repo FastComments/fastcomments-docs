@@ -1,0 +1,46 @@
+{
+  "name": "Collab Chat",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Početak rada",
+      "file": "getting-started.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Primjeri",
+      "file": "examples.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Dodavanje komentiranja u stvarnom vremenu u online knjige",
+      "file": "online-books.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Opcije konfiguracije",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Ponašanje odabira teksta",
+      "file": "text-selection-behavior.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "customization.md",
+      "subCat": "Prilagodba"
+    },
+    {
+      "name": "Sinkronizacija uživo",
+      "file": "live-sync.md",
+      "subCat": "Napredno"
+    },
+    {
+      "name": "Referenca API-ja",
+      "file": "api-reference.md",
+      "subCat": "Napredno"
+    }
+  ]
+}

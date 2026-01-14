@@ -1,0 +1,24 @@
+{
+  "name": "ספריית React",
+  "pageHeader": "ספריית FastComments עבור React",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "דוגמאות",
+      "file": "examples-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש",
+      "file": "usage-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    }
+  ]
+}

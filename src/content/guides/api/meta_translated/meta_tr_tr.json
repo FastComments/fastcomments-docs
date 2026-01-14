@@ -1,0 +1,709 @@
+{
+  "name": "API",
+  "icon": "api.png",
+  "itemsOrdered": [
+    {
+      "name": "API Kaynakları",
+      "file": "api-resources.md",
+      "subCat": "API Kaynakları"
+    },
+    {
+      "name": "Verilerinizi Toplayın",
+      "file": "aggregate-post.md",
+      "subCat": "Toplamalar"
+    },
+    {
+      "name": "AuditLog Yapısı",
+      "file": "audit-log-structure.md",
+      "subCat": "Denetim Kayıtları"
+    },
+    {
+      "name": "GET /api/v1/audit-logs",
+      "file": "audit-logs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Denetim Kayıtları"
+    },
+    {
+      "name": "Yorum Yapısı",
+      "file": "comment-structure.md",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "GET /api/v1/comments",
+      "file": "comments-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "GET /api/v1/comments/:id",
+      "file": "comment-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "POST /api/v1/comments",
+      "file": "comment-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "PATCH /api/v1/comments/:id",
+      "file": "comment-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "DELETE /api/v1/comments/:id",
+      "file": "comment-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/flag",
+      "file": "comment-flag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-flag",
+      "file": "comment-unflag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/block",
+      "file": "comment-block.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-block",
+      "file": "comment-unblock.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Yorumlar"
+    },
+    {
+      "name": "E-posta Şablonu Yapısı",
+      "file": "email-template-structure.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "GET /api/v1/email-templates/:id",
+      "file": "email-template-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "GET /api/v1/email-templates",
+      "file": "email-templates-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "PATCH /api/v1/email-templates/:id",
+      "file": "email-template-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "POST /api/v1/email-templates",
+      "file": "email-template-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "POST /api/v1/email-templates/render",
+      "file": "email-template-render.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "DELETE /api/v1/email-templates/:id",
+      "file": "email-template-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Hashtag Yapısı",
+      "file": "hash-tag-structure.md",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "GET /api/v1/hash-tags",
+      "file": "hash-tags-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "PATCH /api/v1/hash-tags/:tag",
+      "file": "hash-tag-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "POST /api/v1/hash-tags",
+      "file": "hash-tag-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "POST /api/v1/hash-tags/bulk",
+      "file": "hash-tag-bulk-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "DELETE /api/v1/hash-tags/:tag",
+      "file": "hash-tag-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Hashtag'ler"
+    },
+    {
+      "name": "Moderatör Yapısı",
+      "file": "moderator-structure.md",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "GET /api/v1/moderators/:id",
+      "file": "moderator-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "GET /api/v1/moderators",
+      "file": "moderators-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "PATCH /api/v1/moderators/:id",
+      "file": "moderator-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "POST /api/v1/moderators",
+      "file": "moderator-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "POST /api/v1/moderators/:id/send-invite",
+      "file": "moderator-send-invite.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "DELETE /api/v1/moderators/:id",
+      "file": "moderator-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderatörler"
+    },
+    {
+      "name": "Bildirim Sayısı Yapısı",
+      "file": "notification-count-structure.md",
+      "subCat": "Bildirim Sayısı"
+    },
+    {
+      "name": "GET /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "Bildirim Sayısı"
+    },
+    {
+      "name": "DELETE /api/v1/notification-count/:user_id",
+      "file": "notification-count-delete.md",
+      "subCat": "Bildirim Sayısı"
+    },
+    {
+      "name": "Bildirim Yapısı",
+      "file": "notification-structure.md",
+      "subCat": "Bildirimler"
+    },
+    {
+      "name": "GET /api/v1/notifications",
+      "file": "notifications-get.md",
+      "subCat": "Bildirimler"
+    },
+    {
+      "name": "GET /api/v1/notifications/count",
+      "file": "notifications-get-count.md",
+      "subCat": "Bildirimler"
+    },
+    {
+      "name": "PATCH /api/v1/notifications/:id",
+      "file": "notifications-patch.md",
+      "subCat": "Bildirimler"
+    },
+    {
+      "name": "Sayfa Yapısı",
+      "file": "page-structure.md",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "GET /api/v1/pages",
+      "file": "pages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "GET /api/v1/pages/by-url-id",
+      "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "PATCH /api/v1/pages/:id",
+      "file": "page-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "POST /api/v1/pages",
+      "file": "page-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "DELETE /api/v1/pages/:id",
+      "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "Bekleyen Webhook Olayı Yapısı",
+      "file": "pending-webhook-event-structure.md",
+      "subCat": "Bekleyen Webhook Olayları"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events",
+      "file": "pending-webhook-events-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Bekleyen Webhook Olayları"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events/count",
+      "file": "pending-webhook-events-count.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Bekleyen Webhook Olayları"
+    },
+    {
+      "name": "DELETE /api/v1/pending-webhook-events/:id",
+      "file": "pending-webhook-event-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Bekleyen Webhook Olayları"
+    },
+    {
+      "name": "SSO Kullanıcısı Yapısı",
+      "file": "sso-user-structure.md",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "GET /api/v1/sso-users",
+      "file": "sso-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-id/:id",
+      "file": "sso-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-email/:email",
+      "file": "sso-user-get-by-email.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "PATCH /api/v1/sso-users/:id",
+      "file": "sso-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "POST /api/v1/sso-users",
+      "file": "sso-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "PUT /api/v1/sso-users/:id",
+      "file": "sso-user-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "DELETE /api/v1/sso-users/:id",
+      "file": "sso-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Kullanıcıları"
+    },
+    {
+      "name": "Abonelik Yapısı",
+      "file": "subscription-structure.md",
+      "subCat": "Abonelikler"
+    },
+    {
+      "name": "GET /api/v1/subscriptions/:id",
+      "file": "subscriptions-get.md",
+      "subCat": "Abonelikler"
+    },
+    {
+      "name": "POST /api/v1/subscriptions",
+      "file": "subscriptions-post.md",
+      "subCat": "Abonelikler"
+    },
+    {
+      "name": "DELETE /api/v1/subscriptions/:id",
+      "file": "subscriptions-delete.md",
+      "subCat": "Abonelikler"
+    },
+    {
+      "name": "Kiracı Günlük Kullanım Yapısı",
+      "file": "tenant-daily-usage-structure.md",
+      "subCat": "Kiracı Günlük Kullanımı"
+    },
+    {
+      "name": "GET /api/v1/tenant-daily-usage",
+      "file": "tenant-daily-usages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Günlük Kullanımı"
+    },
+    {
+      "name": "Kiracı Yapısı",
+      "file": "tenant-structure.md",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "GET /api/v1/tenants/:id",
+      "file": "tenant-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "GET /api/v1/tenants",
+      "file": "tenants-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "POST /api/v1/tenants",
+      "file": "tenant-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "PATCH /api/v1/tenants/:id",
+      "file": "tenant-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "DELETE /api/v1/tenants/:id",
+      "file": "tenant-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracılar"
+    },
+    {
+      "name": "Kiracı Paketi Yapısı",
+      "file": "tenant-package-structure.md",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages/:id",
+      "file": "tenant-package-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages",
+      "file": "tenant-packages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "POST /api/v1/tenant-packages",
+      "file": "tenant-package-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-packages/:id",
+      "file": "tenant-package-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-packages/:id",
+      "file": "tenant-package-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Paketleri"
+    },
+    {
+      "name": "Kiracı Kullanıcı Yapısı",
+      "file": "tenant-user-structure.md",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "GET /api/v1/tenant-users/:id",
+      "file": "tenant-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "GET /api/v1/tenant-users",
+      "file": "tenant-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "POST /api/v1/tenant-users",
+      "file": "tenant-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "POST /api/v1/tenant-users/:id/send-login-link",
+      "file": "tenant-user-send-login-link.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-users/:id",
+      "file": "tenant-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-users/:id",
+      "file": "tenant-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kiracı Kullanıcıları"
+    },
+    {
+      "name": "Kullanıcı Yapısı",
+      "file": "user-structure.md",
+      "subCat": "Kullanıcılar"
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "file": "user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcılar"
+    },
+    {
+      "name": "Oy Yapısı",
+      "file": "vote-structure.md",
+      "subCat": "Oylar"
+    },
+    {
+      "name": "GET /api/v1/votes",
+      "file": "votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Oylar"
+    },
+    {
+      "name": "GET /api/v1/votes/for-user",
+      "file": "votes-get-for-user.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Oylar"
+    },
+    {
+      "name": "POST /api/v1/votes",
+      "file": "vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Oylar"
+    },
+    {
+      "name": "DELETE /api/v1/votes/:id",
+      "file": "vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Oylar"
+    },
+    {
+      "name": "Alan Adı Yapılandırması Yapısı",
+      "file": "domain-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "GET /api/v1/domain-configs",
+      "file": "domain-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "GET /api/v1/domain-configs/:domain",
+      "file": "domain-config-get-by-domain.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "POST /api/v1/domain-configs",
+      "file": "domain-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "PATCH /api/v1/domain-configs/:domain",
+      "file": "domain-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "PUT /api/v1/domain-configs/:domain",
+      "file": "domain-config-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "DELETE /api/v1/domain-configs/:domain",
+      "file": "domain-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Alan Adı Yapılandırmaları"
+    },
+    {
+      "name": "Soru Yapılandırması Yapısı",
+      "file": "question-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "GET /api/v1/question-configs",
+      "file": "question-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "GET /api/v1/question-configs/:id",
+      "file": "question-config-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "POST /api/v1/question-configs",
+      "file": "question-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "PATCH /api/v1/question-configs/:id",
+      "file": "question-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "DELETE /api/v1/question-configs/:id",
+      "file": "question-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Yapılandırmaları"
+    },
+    {
+      "name": "Soru Sonucu Yapısı",
+      "file": "question-result-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "GET /api/v1/question-results",
+      "file": "question-results-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "GET /api/v1/question-results/:id",
+      "file": "question-result-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "POST /api/v1/question-results",
+      "file": "question-result-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "PATCH /api/v1/question-results/:id",
+      "file": "question-result-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "DELETE /api/v1/question-results/:id",
+      "file": "question-result-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate",
+      "file": "question-results-aggregate.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları Toplaması"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate/combine/comments",
+      "file": "question-results-combine-comments.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Soru Sonuçları Toplaması"
+    },
+    {
+      "name": "Kullanıcı Rozeti Yapısı",
+      "file": "user-badge-structure.md",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "GET /api/v1/user-badges",
+      "file": "user-badges-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "GET /api/v1/user-badges/:id",
+      "file": "user-badge-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "POST /api/v1/user-badges",
+      "file": "user-badge-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "PUT /api/v1/user-badges/:id",
+      "file": "user-badge-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "DELETE /api/v1/user-badges/:id",
+      "file": "user-badge-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozetleri"
+    },
+    {
+      "name": "Kullanıcı Rozet İlerleme Yapısı",
+      "file": "user-badge-progress-structure.md",
+      "subCat": "Kullanıcı Rozet İlerlemesi"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress",
+      "file": "user-badge-progress-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozet İlerlemesi"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/:id",
+      "file": "user-badge-progress-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozet İlerlemesi"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/user/:userId",
+      "file": "user-badge-progress-get-by-user-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Kullanıcı Rozet İlerlemesi"
+    }
+  ]
+}

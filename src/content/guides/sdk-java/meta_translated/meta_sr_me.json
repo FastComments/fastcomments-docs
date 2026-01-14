@@ -1,0 +1,888 @@
+{
+  "name": "Java SDK",
+  "pageHeader": "FastComments Java SDK",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Брзи почетак",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Напомене",
+      "file": "notes-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Агрегирање",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Агрегација",
+      "type": "api"
+    },
+    {
+      "name": "Добиј аудиторске записе",
+      "file": "getauditlogs-api-generated.md",
+      "subCat": "Аудиторски записи",
+      "type": "api"
+    },
+    {
+      "name": "Блокирај корисника из коментара (јавно)",
+      "file": "blockfromcommentpublic-api-generated.md",
+      "subCat": "Блокирање из коментара",
+      "type": "api"
+    },
+    {
+      "name": "Деблокирај коментар (јавно)",
+      "file": "unblockcommentpublic-api-generated.md",
+      "subCat": "Блокирање из коментара",
+      "type": "api"
+    },
+    {
+      "name": "Провери коментаре за блокиране",
+      "file": "checkedcommentsforblocked-api-generated.md",
+      "subCat": "Провера блокираних коментара",
+      "type": "api"
+    },
+    {
+      "name": "Блокирај корисника из коментара",
+      "file": "blockuserfromcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Креирај јавни коментар",
+      "file": "createcommentpublic-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Избриши коментар",
+      "file": "deletecomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Избриши јавни коментар",
+      "file": "deletecommentpublic-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Уклони глас на коментару",
+      "file": "deletecommentvote-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Пријави коментар",
+      "file": "flagcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добиј коментар",
+      "file": "getcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добиј коментаре",
+      "file": "getcomments-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добиј јавне коментаре",
+      "file": "getcommentspublic-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добиј текст коментара",
+      "file": "getcommenttext-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Добиј имена корисника који су гласали за коментар",
+      "file": "getcommentvoteusernames-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Закључај коментар",
+      "file": "lockcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Закачи коментар",
+      "file": "pincomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Сачувај коментар",
+      "file": "savecomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Сачувај коментаре масовно",
+      "file": "savecommentsbulk-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Постави текст коментара",
+      "file": "setcommenttext-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Деблокирај корисника из коментара",
+      "file": "unblockuserfromcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Уклони пријаву коментара",
+      "file": "unflagcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Откључај коментар",
+      "file": "unlockcomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Уклони закачени коментар",
+      "file": "unpincomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај коментар",
+      "file": "updatecomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Гласај за коментар",
+      "file": "votecomment-api-generated.md",
+      "subCat": "Коментари",
+      "type": "api"
+    },
+    {
+      "name": "Додај конфигурацију домена",
+      "file": "adddomainconfig-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Избриши конфигурацију домена",
+      "file": "deletedomainconfig-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Добиј конфигурацију домена",
+      "file": "getdomainconfig-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Добиј конфигурације домена",
+      "file": "getdomainconfigs-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Делимично измени конфигурацију домена",
+      "file": "patchdomainconfig-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Замени конфигурацију домена",
+      "file": "putdomainconfig-api-generated.md",
+      "subCat": "Конфигурације домена",
+      "type": "api"
+    },
+    {
+      "name": "Креирај шаблон е-поште",
+      "file": "createemailtemplate-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Избриши шаблон е-поште",
+      "file": "deleteemailtemplate-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Избриши грешку рендеровања шаблона е-поште",
+      "file": "deleteemailtemplaterendererror-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Добиј шаблон е-поште",
+      "file": "getemailtemplate-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Добиј дефиниције шаблона е-поште",
+      "file": "getemailtemplatedefinitions-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Добиј грешке рендеровања шаблона е-поште",
+      "file": "getemailtemplaterendererrors-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Добиј шаблоне е-поште",
+      "file": "getemailtemplates-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Рендеруј шаблон е-поште",
+      "file": "renderemailtemplate-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај шаблон е-поште",
+      "file": "updateemailtemplate-api-generated.md",
+      "subCat": "Шаблони е-поште",
+      "type": "api"
+    },
+    {
+      "name": "Добиј дневник догађаја",
+      "file": "geteventlog-api-generated.md",
+      "subCat": "Дневник догађаја",
+      "type": "api"
+    },
+    {
+      "name": "Добиј глобални дневник догађаја",
+      "file": "getglobaleventlog-api-generated.md",
+      "subCat": "Дневник догађаја",
+      "type": "api"
+    },
+    {
+      "name": "Креирај објаву",
+      "file": "createfeedpost-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Креирај јавну објаву",
+      "file": "createfeedpostpublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Избриши јавну објаву",
+      "file": "deletefeedpostpublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Добиј објаве",
+      "file": "getfeedposts-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Добиј јавне објаве",
+      "file": "getfeedpostspublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Добиј статистику објава",
+      "file": "getfeedpostsstats-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Добиј реакције корисника (јавно)",
+      "file": "getuserreactspublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Реагуј на јавну објаву",
+      "file": "reactfeedpostpublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај објаву",
+      "file": "updatefeedpost-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај јавну објаву",
+      "file": "updatefeedpostpublic-api-generated.md",
+      "subCat": "Објаве",
+      "type": "api"
+    },
+    {
+      "name": "Пријави коментар (јавно)",
+      "file": "flagcommentpublic-api-generated.md",
+      "subCat": "Пријави коментар",
+      "type": "api"
+    },
+    {
+      "name": "Додај хештег",
+      "file": "addhashtag-api-generated.md",
+      "subCat": "Хештегови",
+      "type": "api"
+    },
+    {
+      "name": "Додај хештегове масовно",
+      "file": "addhashtagsbulk-api-generated.md",
+      "subCat": "Хештегови",
+      "type": "api"
+    },
+    {
+      "name": "Избриши хештег",
+      "file": "deletehashtag-api-generated.md",
+      "subCat": "Хештегови",
+      "type": "api"
+    },
+    {
+      "name": "Добиј хештегове",
+      "file": "gethashtags-api-generated.md",
+      "subCat": "Хештегови",
+      "type": "api"
+    },
+    {
+      "name": "Делимично измени хештег",
+      "file": "patchhashtag-api-generated.md",
+      "subCat": "Хештегови",
+      "type": "api"
+    },
+    {
+      "name": "Креирај модератора",
+      "file": "createmoderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Избриши модератора",
+      "file": "deletemoderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Добиј модератора",
+      "file": "getmoderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Добиј модераторе",
+      "file": "getmoderators-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Пошаљи позивницу",
+      "file": "sendinvite-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај модератора",
+      "file": "updatemoderator-api-generated.md",
+      "subCat": "Модератори",
+      "type": "api"
+    },
+    {
+      "name": "Избриши број обавештења",
+      "file": "deletenotificationcount-api-generated.md",
+      "subCat": "Број обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Добиј кеширани број обавештења",
+      "file": "getcachednotificationcount-api-generated.md",
+      "subCat": "Број обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Добиј број обавештења",
+      "file": "getnotificationcount-api-generated.md",
+      "subCat": "Обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Добиј обавештења",
+      "file": "getnotifications-api-generated.md",
+      "subCat": "Обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај обавештење",
+      "file": "updatenotification-api-generated.md",
+      "subCat": "Обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Додај страницу",
+      "file": "addpage-api-generated.md",
+      "subCat": "Странице",
+      "type": "api"
+    },
+    {
+      "name": "Избриши страницу",
+      "file": "deletepage-api-generated.md",
+      "subCat": "Странице",
+      "type": "api"
+    },
+    {
+      "name": "Добиј страницу по URL ИД-у",
+      "file": "getpagebyurlid-api-generated.md",
+      "subCat": "Странице",
+      "type": "api"
+    },
+    {
+      "name": "Добиј странице",
+      "file": "getpages-api-generated.md",
+      "subCat": "Странице",
+      "type": "api"
+    },
+    {
+      "name": "Делимично измени страницу",
+      "file": "patchpage-api-generated.md",
+      "subCat": "Странице",
+      "type": "api"
+    },
+    {
+      "name": "Избриши чекајући webhook догађај",
+      "file": "deletependingwebhookevent-api-generated.md",
+      "subCat": "Чекајући webhook догађаји",
+      "type": "api"
+    },
+    {
+      "name": "Добиј број чекајућих webhook догађаја",
+      "file": "getpendingwebhookeventcount-api-generated.md",
+      "subCat": "Чекајући webhook догађаји",
+      "type": "api"
+    },
+    {
+      "name": "Добиј чекајуће webhook догађаје",
+      "file": "getpendingwebhookevents-api-generated.md",
+      "subCat": "Чекајући webhook догађаји",
+      "type": "api"
+    },
+    {
+      "name": "Креирај конфигурацију питања",
+      "file": "createquestionconfig-api-generated.md",
+      "subCat": "Конфигурације питања",
+      "type": "api"
+    },
+    {
+      "name": "Избриши конфигурацију питања",
+      "file": "deletequestionconfig-api-generated.md",
+      "subCat": "Конфигурације питања",
+      "type": "api"
+    },
+    {
+      "name": "Добиј конфигурацију питања",
+      "file": "getquestionconfig-api-generated.md",
+      "subCat": "Конфигурације питања",
+      "type": "api"
+    },
+    {
+      "name": "Добиј конфигурације питања",
+      "file": "getquestionconfigs-api-generated.md",
+      "subCat": "Конфигурације питања",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај конфигурацију питања",
+      "file": "updatequestionconfig-api-generated.md",
+      "subCat": "Конфигурације питања",
+      "type": "api"
+    },
+    {
+      "name": "Креирај резултат питања",
+      "file": "createquestionresult-api-generated.md",
+      "subCat": "Резултати питања",
+      "type": "api"
+    },
+    {
+      "name": "Избриши резултат питања",
+      "file": "deletequestionresult-api-generated.md",
+      "subCat": "Резултати питања",
+      "type": "api"
+    },
+    {
+      "name": "Добиј резултат питања",
+      "file": "getquestionresult-api-generated.md",
+      "subCat": "Резултати питања",
+      "type": "api"
+    },
+    {
+      "name": "Добиј резултате питања",
+      "file": "getquestionresults-api-generated.md",
+      "subCat": "Резултати питања",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај резултат питања",
+      "file": "updatequestionresult-api-generated.md",
+      "subCat": "Резултати питања",
+      "type": "api"
+    },
+    {
+      "name": "Агрегирај резултате питања",
+      "file": "aggregatequestionresults-api-generated.md",
+      "subCat": "Агрегација резултата питања",
+      "type": "api"
+    },
+    {
+      "name": "Масовно агрегирање резултата питања",
+      "file": "bulkaggregatequestionresults-api-generated.md",
+      "subCat": "Агрегација резултата питања",
+      "type": "api"
+    },
+    {
+      "name": "Комбинуј коментаре са резултатима питања",
+      "file": "combinecommentswithquestionresults-api-generated.md",
+      "subCat": "Агрегација резултата питања",
+      "type": "api"
+    },
+    {
+      "name": "Додај SSO корисника",
+      "file": "addssouser-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Избриши SSO корисника",
+      "file": "deletessouser-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Добиј SSO корисника по е-пошти",
+      "file": "getssouserbyemail-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Добиј SSO корисника по ИД-у",
+      "file": "getssouserbyid-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Добиј SSO кориснике",
+      "file": "getssousers-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Делимично измени SSO корисника",
+      "file": "patchssouser-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Замени SSO корисника",
+      "file": "putssouser-api-generated.md",
+      "subCat": "SSO корисници",
+      "type": "api"
+    },
+    {
+      "name": "Креирај претплату",
+      "file": "createsubscription-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
+      "name": "Избриши претплату",
+      "file": "deletesubscription-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
+      "name": "Добиј претплате",
+      "file": "getsubscriptions-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
+      "name": "Добиј дневну употребу тенанта",
+      "file": "gettenantdailyusages-api-generated.md",
+      "subCat": "Дневна употреба тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Креирај пакет тенанта",
+      "file": "createtenantpackage-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Избриши пакет тенанта",
+      "file": "deletetenantpackage-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Добиј пакет тенанта",
+      "file": "gettenantpackage-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Добиј пакете тенанта",
+      "file": "gettenantpackages-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Замени пакет тенанта",
+      "file": "replacetenantpackage-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај пакет тенанта",
+      "file": "updatetenantpackage-api-generated.md",
+      "subCat": "Пакети тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Креирај корисника тенанта",
+      "file": "createtenantuser-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Избриши корисника тенанта",
+      "file": "deletetenantuser-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Добиј корисника тенанта",
+      "file": "gettenantuser-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Добиј кориснике тенанта",
+      "file": "gettenantusers-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Замени корисника тенанта",
+      "file": "replacetenantuser-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Пошаљи линк за пријаву",
+      "file": "sendloginlink-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај корисника тенанта",
+      "file": "updatetenantuser-api-generated.md",
+      "subCat": "Корисници тенанта",
+      "type": "api"
+    },
+    {
+      "name": "Креирај тенанта",
+      "file": "createtenant-api-generated.md",
+      "subCat": "Тенанти",
+      "type": "api"
+    },
+    {
+      "name": "Избриши тенанта",
+      "file": "deletetenant-api-generated.md",
+      "subCat": "Тенанти",
+      "type": "api"
+    },
+    {
+      "name": "Добиј тенанта",
+      "file": "gettenant-api-generated.md",
+      "subCat": "Тенанти",
+      "type": "api"
+    },
+    {
+      "name": "Добиј тенанте",
+      "file": "gettenants-api-generated.md",
+      "subCat": "Тенанти",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај тенанта",
+      "file": "updatetenant-api-generated.md",
+      "subCat": "Тенанти",
+      "type": "api"
+    },
+    {
+      "name": "Отпреми слику",
+      "file": "uploadimage-api-generated.md",
+      "subCat": "Отпремање слике",
+      "type": "api"
+    },
+    {
+      "name": "Добиј напредак значке корисника по ИД-у",
+      "file": "getuserbadgeprogressbyid-api-generated.md",
+      "subCat": "Напредак значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј напредак значке по ИД-у корисника",
+      "file": "getuserbadgeprogressbyuserid-api-generated.md",
+      "subCat": "Напредак значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј листу напретка значки корисника",
+      "file": "getuserbadgeprogresslist-api-generated.md",
+      "subCat": "Напредак значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Креирај значку корисника",
+      "file": "createuserbadge-api-generated.md",
+      "subCat": "Значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Избриши значку корисника",
+      "file": "deleteuserbadge-api-generated.md",
+      "subCat": "Значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј значку корисника",
+      "file": "getuserbadge-api-generated.md",
+      "subCat": "Значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј значке корисника",
+      "file": "getuserbadges-api-generated.md",
+      "subCat": "Значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај значку корисника",
+      "file": "updateuserbadge-api-generated.md",
+      "subCat": "Значке корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј број корисничких обавештења",
+      "file": "getusernotificationcount-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Добиј корисничка обавештења",
+      "file": "getusernotifications-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ресетуј број корисничких обавештења",
+      "file": "resetusernotificationcount-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ресетуј корисничка обавештења",
+      "file": "resetusernotifications-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај статус претплате корисника на обавештења о коментарима",
+      "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај статус претплате корисника на обавештења о страници",
+      "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Ажурирај статус корисничког обавештења",
+      "file": "updateusernotificationstatus-api-generated.md",
+      "subCat": "Корисничка обавештења",
+      "type": "api"
+    },
+    {
+      "name": "Добиј статусе присутности корисника",
+      "file": "getuserpresencestatuses-api-generated.md",
+      "subCat": "Статуси присутности корисника",
+      "type": "api"
+    },
+    {
+      "name": "Претражи кориснике",
+      "file": "searchusers-api-generated.md",
+      "subCat": "Претрага корисника",
+      "type": "api"
+    },
+    {
+      "name": "Добиј корисника",
+      "file": "getuser-api-generated.md",
+      "subCat": "Корисници",
+      "type": "api"
+    },
+    {
+      "name": "Креирај глас",
+      "file": "createvote-api-generated.md",
+      "subCat": "Гласови",
+      "type": "api"
+    },
+    {
+      "name": "Избриши глас",
+      "file": "deletevote-api-generated.md",
+      "subCat": "Гласови",
+      "type": "api"
+    },
+    {
+      "name": "Добиј гласове",
+      "file": "getvotes-api-generated.md",
+      "subCat": "Гласови",
+      "type": "api"
+    },
+    {
+      "name": "Добиј гласове за корисника",
+      "file": "getvotesforuser-api-generated.md",
+      "subCat": "Гласови",
+      "type": "api"
+    }
+  ]
+}

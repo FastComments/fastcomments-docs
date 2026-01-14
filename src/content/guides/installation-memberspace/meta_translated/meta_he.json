@@ -1,0 +1,22 @@
+{
+  "name": "התקנת MemberSpace",
+  "pageHeader": "הוספת תגובות באמצעות MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "הקוד",
+      "file": "memberspace-step-1.md",
+      "subCat": "התקנת MemberSpace"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "התקנת MemberSpace"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "memberspace-customize.md",
+      "subCat": "התקנת MemberSpace"
+    }
+  ]
+}

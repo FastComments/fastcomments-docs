@@ -1,0 +1,72 @@
+{
+  "name": "Android библиотека",
+  "pageHeader": "FastComments Android библиотека",
+  "itemsOrdered": [
+    {
+      "name": "Карактеристике",
+      "file": "features-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Захтеви",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак",
+      "type": "readme"
+    },
+    {
+      "name": "Основна употреба",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Сигурна SSO аутентификација",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Аутентификација",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграција фида",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграција живог ћаскања",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Примерни пројекти",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Опције конфигурације",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Конфигурација",
+      "type": "readme"
+    },
+    {
+      "name": "Свеобухватно прилагођавање теме",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Управљање меморијом",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

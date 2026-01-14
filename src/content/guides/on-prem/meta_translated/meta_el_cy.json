@@ -1,0 +1,56 @@
+{
+  "name": "Εντός εγκαταστάσεων",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι περιλαμβάνεται",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Από πού να ξεκινήσετε",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Πρώτα βήματα"
+    },
+    {
+      "name": "Κόμβοι",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Ανάπτυξη"
+    },
+    {
+      "name": "Διαμόρφωση",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Ανάπτυξη"
+    },
+    {
+      "name": "Διακοπή λειτουργίας της βάσης δεδομένων και λειτουργία συντήρησης",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Αρχιτεκτονική"
+    },
+    {
+      "name": "Κλειδώματα",
+      "file": "on-prem-locks.md",
+      "subCat": "Αρχιτεκτονική"
+    },
+    {
+      "name": "Κώδικας widget",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Εγκατάσταση και Ενσωμάτωση"
+    },
+    {
+      "name": "Διεπαφή προγραμματισμού εφαρμογών (API)",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Εγκατάσταση και Ενσωμάτωση"
+    },
+    {
+      "name": "Πολλαπλοί τομείς",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Εγκατάσταση και Ενσωμάτωση"
+    },
+    {
+      "name": "Ασφάλεια",
+      "file": "on-prem-security.md",
+      "subCat": "Συμβουλές ασφάλειας"
+    }
+  ]
+}

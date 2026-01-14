@@ -1,0 +1,36 @@
+{
+  "name": "Потвърждаване на коментари и гласове",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Контекст",
+      "file": "background.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Непотвърдени коментари",
+      "file": "unverified-comments.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Непотвърдени гласове",
+      "file": "unverified-votes.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Имейли за потвърждение",
+      "file": "verification-emails.md",
+      "subCat": "Потвърждение"
+    },
+    {
+      "name": "Сесии",
+      "file": "verification-sessions.md",
+      "subCat": "Потвърждение"
+    },
+    {
+      "name": "Живо коментиране",
+      "file": "verification-live-commenting.md",
+      "subCat": "Потвърждение"
+    }
+  ]
+}

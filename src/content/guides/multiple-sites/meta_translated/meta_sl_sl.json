@@ -1,0 +1,51 @@
+{
+  "name": "Več spletnih mest",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Začetna nastavitev",
+      "file": "add-domains-to-account.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Omejitve in cene",
+      "file": "domain-limits.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Ime pošiljatelja, e-pošta in logotip",
+      "file": "from-name-email-logo.md",
+      "subCat": "Prilagoditve za posamezno spletno mesto"
+    },
+    {
+      "name": "Domena v polju 'From' (ime/e-pošta) ne deluje",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Prilagoditve za posamezno spletno mesto"
+    },
+    {
+      "name": "Najemnik za vsako okolje",
+      "file": "tenant-per-environment.md",
+      "subCat": "Prilagoditve za posamezno spletno mesto"
+    },
+    {
+      "name": "Prilagoditve",
+      "file": "customizations.md",
+      "subCat": "Prilagoditve za posamezno spletno mesto"
+    },
+    {
+      "name": "Moderiranje komentarjev",
+      "file": "moderation.md",
+      "subCat": "Podatki in iskanje"
+    },
+    {
+      "name": "Deljenje komentarjev med domenami",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Podatki in iskanje"
+    },
+    {
+      "name": "S WordPressom",
+      "file": "wordpress.md",
+      "subCat": "Opombe o integraciji"
+    }
+  ]
+}

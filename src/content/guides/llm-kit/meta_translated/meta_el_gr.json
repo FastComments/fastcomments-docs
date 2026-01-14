@@ -1,0 +1,11 @@
+{
+  "name": "Πακέτο LLM",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Αποκτήστε το Πακέτο LLM",
+      "file": "llm-kit-snippet.md",
+      "subCat": "Ενσωμάτωση LLM"
+    }
+  ]
+}

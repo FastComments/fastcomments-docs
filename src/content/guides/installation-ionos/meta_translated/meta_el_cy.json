@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση στο Ionos",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Ionos",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθήκη φόρμας επικοινωνίας",
+      "file": "ionos-step-1.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη του κώδικα του FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    },
+    {
+      "name": "Βήμα 3: Δημοσίευση",
+      "file": "ionos-step-3.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "ionos-success.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    },
+    {
+      "name": "Σφάλματα στον τομέα",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "ionos-customize.md",
+      "subCat": "Εγκατάσταση στο Ionos"
+    }
+  ]
+}

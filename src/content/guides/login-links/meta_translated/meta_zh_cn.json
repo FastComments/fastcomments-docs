@@ -1,0 +1,26 @@
+{
+  "name": "登录链接",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是登录链接？",
+      "file": "login-links-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "登录链接相较于密码的优势",
+      "file": "login-links-benefits.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "我们如何确保登录链接的安全",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "安全"
+    },
+    {
+      "name": "谁会收到登录链接？",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "使用"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "PHP SSO SDK",
+  "pageHeader": "FastComments PHP SSO SDK",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση",
+      "file": "usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Τεκμηρίωση",
+      "file": "documentation-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

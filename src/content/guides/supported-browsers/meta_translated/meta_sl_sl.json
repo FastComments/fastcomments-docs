@@ -1,0 +1,26 @@
+{
+  "name": "Podprti brskalniki",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Podprti brskalniki",
+      "file": "supported-browsers.md",
+      "subCat": "Podprti brskalniki"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Podprti brskalniki"
+    },
+    {
+      "name": "Kako testiramo",
+      "file": "how-we-test.md",
+      "subCat": "Podprti brskalniki"
+    },
+    {
+      "name": "Zahteve za JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Podprti brskalniki"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger Kurulumu",
+  "pageHeader": "Hostinger Sitelerine Canlı Yorum Ekle",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Kod Bileşeni Ekle",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger Site Kurulumu"
+    },
+    {
+      "name": "Adım 2: Kodu Ekle",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger Site Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger Site Kurulumu"
+    },
+    {
+      "name": "Site Alan Adı Hataları",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger Site Kurulumu"
+    },
+    {
+      "name": "Site Özelleştirme",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger Site Kurulumu"
+    },
+    {
+      "name": "Yüzen Beğeni Butonu",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger Yüzen Beğeniler"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "コードスニペットの共有",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "コードスニペットとは？",
+      "file": "code-snippets-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "プログラミングコミュニティ",
+      "file": "code-snippets-communities.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "サポートされているプログラミング言語",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "コードスニペット共有の設定",
+      "file": "code-snippets-setup.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "コードスニペットの共有",
+      "file": "code-snippets-usage.md",
+      "subCat": "使用方法"
+    }
+  ]
+}

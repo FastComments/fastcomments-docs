@@ -1,0 +1,37 @@
+{
+  "name": "Инсталация на Hostinger",
+  "pageHeader": "Добавяне на коментари в реално време към сайтове на Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Добавяне на уиджет за код",
+      "file": "hostinger-step-1.md",
+      "subCat": "Инсталация на сайт в Hostinger"
+    },
+    {
+      "name": "Стъпка 2: Добавяне на кода",
+      "file": "hostinger-step-2.md",
+      "subCat": "Инсталация на сайт в Hostinger"
+    },
+    {
+      "name": "Успех",
+      "file": "hostinger-site-success.md",
+      "subCat": "Инсталация на сайт в Hostinger"
+    },
+    {
+      "name": "Грешки с домейна на сайта",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Инсталация на сайт в Hostinger"
+    },
+    {
+      "name": "Персонализиране на сайта",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Инсталация на сайт в Hostinger"
+    },
+    {
+      "name": "Плаващ бутон за харесвания",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Плаващи харесвания в Hostinger"
+    }
+  ]
+}

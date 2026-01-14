@@ -1,0 +1,51 @@
+{
+  "name": "Više sajtova",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Početno podešavanje",
+      "file": "add-domains-to-account.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Ograničenja i cene",
+      "file": "domain-limits.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Ime pošiljaoca, e-pošta i logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Prilagođavanje po sajtu"
+    },
+    {
+      "name": "Ime/adresa pošiljaoca na domenu ne funkcionišu",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Prilagođavanje po sajtu"
+    },
+    {
+      "name": "Tenant po okruženju",
+      "file": "tenant-per-environment.md",
+      "subCat": "Prilagođavanje po sajtu"
+    },
+    {
+      "name": "Prilagođavanja",
+      "file": "customizations.md",
+      "subCat": "Prilagođavanje po sajtu"
+    },
+    {
+      "name": "Moderiranje komentara",
+      "file": "moderation.md",
+      "subCat": "Podaci i pretraga"
+    },
+    {
+      "name": "Deljenje komentara između domena",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Podaci i pretraga"
+    },
+    {
+      "name": "Sa WordPressom",
+      "file": "wordpress.md",
+      "subCat": "Napomene o integraciji"
+    }
+  ]
+}

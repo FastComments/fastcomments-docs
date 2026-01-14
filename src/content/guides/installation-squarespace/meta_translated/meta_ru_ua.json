@@ -1,0 +1,77 @@
+{
+  "name": "Установка Squarespace",
+  "pageHeader": "Добавление комментариев на сайты Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Добавление комментариев в реальном времени в блог",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Добавить комментарии в блог"
+    },
+    {
+      "name": "Шаг 1: Откройте настройки блога",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Добавить комментарии в блог"
+    },
+    {
+      "name": "Шаг 2: Вставьте код с FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Добавить комментарии в блог"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Добавить комментарии в блог"
+    },
+    {
+      "name": "Добавить комментарии в реальном времени на все страницы",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Добавить комментарии на все страницы"
+    },
+    {
+      "name": "Шаг 1: Откройте инструменты разработчика",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Добавить комментарии на все страницы"
+    },
+    {
+      "name": "Шаг 2: Вставьте код с FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Добавить комментарии на все страницы"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Добавить комментарии на все страницы"
+    },
+    {
+      "name": "Добавить комментарий в реальном времени на конкретную страницу",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Добавить комментарии на конкретную страницу"
+    },
+    {
+      "name": "Шаг 1: Добавьте блок кода",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Добавить комментарии на конкретную страницу"
+    },
+    {
+      "name": "Шаг 2: Вставьте код с FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Добавить комментарии на конкретную страницу"
+    },
+    {
+      "name": "Готово",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Добавить комментарии на конкретную страницу"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Дальнейшие шаги для Squarespace"
+    },
+    {
+      "name": "Настройка",
+      "file": "squarespace-customize.md",
+      "subCat": "Дальнейшие шаги для Squarespace"
+    }
+  ]
+}

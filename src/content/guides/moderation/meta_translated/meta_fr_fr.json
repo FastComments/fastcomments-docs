@@ -1,0 +1,126 @@
+{
+  "name": "Modération",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "La page de modération des commentaires",
+      "file": "moderate-comments-page.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Modérateurs",
+      "file": "moderators.md",
+      "subCat": "Modérateurs"
+    },
+    {
+      "name": "Ajouter des modérateurs",
+      "file": "moderators-adding.md",
+      "subCat": "Modérateurs"
+    },
+    {
+      "name": "Statistiques des modérateurs",
+      "file": "moderator-stats.md",
+      "subCat": "Modérateurs"
+    },
+    {
+      "name": "Supprimer des modérateurs",
+      "file": "moderators-removing.md",
+      "subCat": "Modérateurs"
+    },
+    {
+      "name": "Comment fonctionnent les approbations",
+      "file": "moderation-approvals.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Modération par e-mail",
+      "file": "moderation-via-email.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Filtrage",
+      "file": "filters.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Recherche",
+      "file": "search.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Partage de liens de modération",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Le visualiseur du fil de commentaires",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Actions de modération",
+      "file": "comment-actions.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Suppression des commentaires",
+      "file": "deleting-comments.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Actions de modération depuis le widget de commentaires",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Modération en temps réel",
+      "file": "comment-actions-live.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Bannir des utilisateurs",
+      "file": "banning-users.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Bannir des utilisateurs avec des caractères génériques",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Signalement",
+      "file": "flagging.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Actions groupées",
+      "file": "bulk-actions.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Groupes de modération",
+      "file": "moderation-groups.md",
+      "subCat": "Groupes de modération"
+    },
+    {
+      "name": "Paramètres de modération",
+      "file": "moderation-settings.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Détection du spam",
+      "file": "spam-detection.md",
+      "subCat": "Spam et propos injurieux"
+    },
+    {
+      "name": "Masquage des propos injurieux",
+      "file": "profanity-mask.md",
+      "subCat": "Spam et propos injurieux"
+    },
+    {
+      "name": "Journaux des commentaires",
+      "file": "comment-logs.md",
+      "subCat": "Processus de modération"
+    }
+  ]
+}

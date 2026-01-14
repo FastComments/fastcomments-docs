@@ -1,0 +1,56 @@
+{
+  "name": "Оцјене и рецензије",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Карактеристике",
+      "file": "features.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Ко га добија",
+      "file": "who-gets-it.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Цијене",
+      "file": "pricing.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Одаберите тип приказа",
+      "file": "choose-display-type.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Дефинишите своја питања",
+      "file": "define-your-questions.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Како функционише конфигурација",
+      "file": "how-configuration-works.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Сажетак виџета",
+      "file": "summary-widget-installation.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Преглед оцјена",
+      "file": "viewing-ratings.md",
+      "subCat": "Извјештавање"
+    },
+    {
+      "name": "Интеграција путем API-ја",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Извјештавање"
+    },
+    {
+      "name": "Демо сажетка",
+      "file": "summary-demo.md",
+      "subCat": "Демо сажетка"
+    }
+  ]
+}

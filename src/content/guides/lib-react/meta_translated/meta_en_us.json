@@ -1,0 +1,24 @@
+{
+  "name": "React Library",
+  "pageHeader": "FastComments React Library",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Examples",
+      "file": "examples-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Usage",
+      "file": "usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    }
+  ]
+}

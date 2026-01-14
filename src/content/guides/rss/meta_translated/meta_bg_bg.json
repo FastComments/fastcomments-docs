@@ -1,0 +1,21 @@
+{
+  "name": "RSS емисии",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Преглед",
+      "file": "overview.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Настройване на вашата RSS емисия",
+      "file": "setup.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Съображения за сигурност",
+      "file": "security.md",
+      "subCat": "Имплементация"
+    }
+  ]
+}

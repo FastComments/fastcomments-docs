@@ -1,0 +1,57 @@
+{
+  "name": "Установка Ghost",
+  "pageHeader": "Добавьте комментарии в реальном времени только для участников на сайтах Ghost",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Скачайте тему",
+      "file": "ghost-step-1.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 2: Установите тему локально",
+      "file": "ghost-step-2.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 3: Назовите новую тему",
+      "file": "ghost-step-3.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 4: Откройте шаблон записи",
+      "file": "ghost-step-4.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 5: Добавьте код FastComments",
+      "file": "ghost-step-5.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 6: Экспортируйте тему",
+      "file": "ghost-step-6.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Шаг 7: Загрузите тему в Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Готово!",
+      "file": "ghost-success.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Настройка",
+      "file": "ghost-customize.md",
+      "subCat": "Установка Ghost"
+    }
+  ]
+}

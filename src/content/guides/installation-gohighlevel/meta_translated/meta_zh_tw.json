@@ -1,0 +1,67 @@
+{
+  "name": "GoHighLevel 安裝",
+  "pageHeader": "在 GoHighLevel 網站新增評論",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：編輯課程",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "步驟 2：開啟進階設定",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "步驟 3：複製程式碼",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "步驟 4：貼上程式碼",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "會員網站安裝成功",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "會員網站網域錯誤",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "會員網站客製化",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "GoHighLevel 會員網站安裝"
+    },
+    {
+      "name": "步驟 1：新增自訂程式碼元件",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "GoHighLevel 站點安裝"
+    },
+    {
+      "name": "步驟 2：複製並貼上程式碼",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "GoHighLevel 站點安裝"
+    },
+    {
+      "name": "站點安裝成功",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "GoHighLevel 站點安裝"
+    },
+    {
+      "name": "站點網域錯誤",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "GoHighLevel 站點安裝"
+    },
+    {
+      "name": "站點客製化",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "GoHighLevel 站點安裝"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "ハッシュタグ",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "ハッシュタグとは",
+      "file": "what-are-hashtags.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ハッシュタグの使い方",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "ハッシュタグの使用"
+    },
+    {
+      "name": "ハッシュタグによるコメントのフィルタリング",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "ハッシュタグの使用"
+    },
+    {
+      "name": "有効なハッシュタグと無効なハッシュタグ",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "ハッシュタグの使用"
+    },
+    {
+      "name": "「#」以外の記号の使用",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "ハッシュタグの設定"
+    },
+    {
+      "name": "ハッシュタグの事前入力",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "ハッシュタグの設定"
+    },
+    {
+      "name": "ハッシュタグを介したコンテンツへのリンク",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "ハッシュタグの設定"
+    },
+    {
+      "name": "ハッシュタグのオートコンプリートの仕組み",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "ハッシュタグの背景"
+    }
+  ]
+}

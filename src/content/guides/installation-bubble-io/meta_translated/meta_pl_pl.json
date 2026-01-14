@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Dodaj komentarze na żywo do stron Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Dodaj blok HTML",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "2. Wstaw kod",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "3. Znajdź ustawienie szerokości",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "4. Dostosuj układ",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "Sukces",
+      "file": "bubble-io-success.md",
+      "subCat": "Instalacja"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

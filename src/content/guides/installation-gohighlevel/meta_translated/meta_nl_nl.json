@@ -1,0 +1,67 @@
+{
+  "name": "GoHighLevel-installatie",
+  "pageHeader": "Opmerkingen toevoegen aan GoHighLevel-sites",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Cursus bewerken",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Stap 2: Geavanceerde instellingen openen",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Stap 3: Code kopiëren",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Stap 4: Code plakken",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Membersite succesvol",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Domeinfouten bij membersite",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Aanpassen van membersite",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Installatie van GoHighLevel-ledenwebsite"
+    },
+    {
+      "name": "Stap 1: Voeg element voor aangepaste code toe",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Installatie van GoHighLevel-website"
+    },
+    {
+      "name": "Stap 2: Code kopiëren en plakken",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Installatie van GoHighLevel-website"
+    },
+    {
+      "name": "Website succesvol",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Installatie van GoHighLevel-website"
+    },
+    {
+      "name": "Domeinfouten bij website",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Installatie van GoHighLevel-website"
+    },
+    {
+      "name": "Website aanpassen",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Installatie van GoHighLevel-website"
+    }
+  ]
+}

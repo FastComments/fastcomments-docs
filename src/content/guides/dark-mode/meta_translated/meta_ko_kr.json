@@ -1,0 +1,21 @@
+{
+  "name": "다크 모드",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "자동 감지",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "수동 구성",
+      "file": "dark-mode-manual.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "워드프레스 Networker 테마 다크 모드 지원",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "워드프레스 테마"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Adicionar comentários em tempo real aos blogs do Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Encontre o campo de código",
+      "file": "typeflo-step-1.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "2. Insira o código",
+      "file": "typeflo-step-2.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "Sucesso",
+      "file": "typeflo-success.md",
+      "subCat": "Instalação"
+    },
+    {
+      "name": "Personalização",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Erros de domínio",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

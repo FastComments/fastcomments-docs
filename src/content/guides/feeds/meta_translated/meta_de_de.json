@@ -1,0 +1,16 @@
+{
+  "name": "Feeds",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Feeds personalisieren",
+      "file": "personalizing-feeds.md",
+      "subCat": "Anpassung"
+    },
+    {
+      "name": "Regionale Feeds",
+      "file": "regional-feeds.md",
+      "subCat": "Anpassung"
+    }
+  ]
+}

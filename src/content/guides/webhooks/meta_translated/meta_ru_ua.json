@@ -1,0 +1,46 @@
+{
+  "name": "Вебхуки",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое вебхуки",
+      "file": "what-are-webhooks.md",
+      "subCat": "Обзор"
+    },
+    {
+      "name": "Поддерживаемые события и ресурсы",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Обзор"
+    },
+    {
+      "name": "Настройка локальной разработки",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Настройка",
+      "file": "webhooks-setup.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Тестирование",
+      "file": "webhooks-testing.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Структуры данных",
+      "file": "webhooks-structures.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Безопасность и API-токены",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Как это работает и обработка повторных попыток",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "За кулисами"
+    }
+  ]
+}

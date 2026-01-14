@@ -1,0 +1,57 @@
+{
+  "name": "Installation af Ghost",
+  "pageHeader": "Tilføj live-kommentarer kun for medlemmer til Ghost-sider",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Download dit tema",
+      "file": "ghost-step-1.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 2: Installer dit tema lokalt",
+      "file": "ghost-step-2.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 3: Navngiv det nye tema",
+      "file": "ghost-step-3.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 4: Åbn indlægsskabelonen",
+      "file": "ghost-step-4.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 5: Tilføj FastComments-koden",
+      "file": "ghost-step-5.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 6: Eksporter dit tema",
+      "file": "ghost-step-6.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Trin 7: Upload temaet til Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Succes!",
+      "file": "ghost-success.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Installation af Ghost"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "ghost-customize.md",
+      "subCat": "Installation af Ghost"
+    }
+  ]
+}

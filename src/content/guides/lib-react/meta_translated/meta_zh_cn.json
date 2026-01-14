@@ -1,0 +1,24 @@
+{
+  "name": "React 库",
+  "pageHeader": "FastComments React 库",
+  "itemsOrdered": [
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "示例",
+      "file": "examples-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "用法",
+      "file": "usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    }
+  ]
+}

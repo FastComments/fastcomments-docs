@@ -1,0 +1,42 @@
+{
+  "name": "Moodle 설치",
+  "pageHeader": "Moodle 사이트에 댓글 추가",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "단계 1: 서버 접근 권한 얻기",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "단계 2: 뷰 파일 찾기",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "단계 3: 코드 추가",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "회원 사이트 성공",
+      "file": "moodle-success.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "회원 사이트 도메인 오류",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "회원 사이트 맞춤 설정",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle 사이트 설치"
+    },
+    {
+      "name": "전용 플러그인을 원하시나요?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "전용 플러그인?"
+    }
+  ]
+}

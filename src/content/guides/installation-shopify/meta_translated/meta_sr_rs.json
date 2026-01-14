@@ -1,0 +1,42 @@
+{
+  "name": "Инсталација Shopify",
+  "pageHeader": "Додавање коментара на Shopify сајтове",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Увезите постојеће коментаре",
+      "file": "shopify-step-1.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Корак 2: Онемогућите подразумевани систем коментара",
+      "file": "shopify-step-2.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Корак 3: Отворите шаблон теме блога",
+      "file": "shopify-step-3.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Корак 4: Додајте код FastComments.com",
+      "file": "shopify-step-4.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Успешно",
+      "file": "shopify-success.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Инсталација Shopify"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "shopify-customize.md",
+      "subCat": "Инсталација Shopify"
+    }
+  ]
+}

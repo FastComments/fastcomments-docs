@@ -1,0 +1,46 @@
+{
+  "name": "Sodelovalni klepet",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Začetek",
+      "file": "getting-started.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Primeri",
+      "file": "examples.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Dodajanje komentarjev v živo v spletne knjige",
+      "file": "online-books.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Možnosti konfiguracije",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Obnašanje pri izbiri besedila",
+      "file": "text-selection-behavior.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagoditev",
+      "file": "customization.md",
+      "subCat": "Prilagoditev"
+    },
+    {
+      "name": "Sinhronizacija v živo",
+      "file": "live-sync.md",
+      "subCat": "Napredno"
+    },
+    {
+      "name": "Referenca API",
+      "file": "api-reference.md",
+      "subCat": "Napredno"
+    }
+  ]
+}

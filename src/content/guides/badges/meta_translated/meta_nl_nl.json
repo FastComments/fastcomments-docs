@@ -1,0 +1,96 @@
+{
+  "name": "Badges",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Basis",
+      "file": "badge-basics.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "Voortgang",
+      "file": "badge-progression.md",
+      "subCat": "De basis"
+    },
+    {
+      "name": "Handmatige badges",
+      "file": "badge-type-manual.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Aantal reacties",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Positieve stemmen",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Antwoorden",
+      "file": "badge-type-replies.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Vastgezette reacties",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Veteraan",
+      "file": "badge-type-veteran.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Nachtuil",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Snelle reactietijd",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Reageren op specifieke pagina",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Soorten badges"
+    },
+    {
+      "name": "Introductie tot moderatorbadges",
+      "file": "moderator-badges.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Verwijderde reacties",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Goedgekeurde reacties",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Niet-goedgekeurde reacties",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Beoordeelde reacties",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Reacties gemarkeerd als spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Soorten moderatorbadges"
+    },
+    {
+      "name": "Reacties gemarkeerd als niet-spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Soorten moderatorbadges"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Bubble.io サイトにライブコメントを追加する",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTMLブロックを追加",
+      "file": "bubble-io-step-1.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "2. コードを挿入",
+      "file": "bubble-io-step-2.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "3. 幅の設定を見つける",
+      "file": "bubble-io-step-3.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "4. レイアウトを調整",
+      "file": "bubble-io-step-4.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "完了",
+      "file": "bubble-io-success.md",
+      "subCat": "インストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "WordPress-installation",
+  "pageHeader": "Tilføj live-kommentering til WordPress-sider",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Hurtig start",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Kort sagt"
+    },
+    {
+      "name": "Installation",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Moderering",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Brugere, moderatorer og administratorer",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Sider kun for medlemmer (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Notifikationer",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Tilpassede temaer",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Synkronisering tilbage til WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Antal kommentarer",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "WordPress-installation <> FastComment-serverkommunikation",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress-installation"
+    },
+    {
+      "name": "Deaktivering vs. afinstallation af pluginet",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Fjernelse af plugin"
+    }
+  ]
+}

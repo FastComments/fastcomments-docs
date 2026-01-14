@@ -1,0 +1,31 @@
+{
+  "name": "Упоминания",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое упоминания",
+      "file": "what-are-mentions.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как упомянуть пользователя",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Использование упоминаний"
+    },
+    {
+      "name": "Уведомления",
+      "file": "mentions-notifications.md",
+      "subCat": "Использование упоминаний"
+    },
+    {
+      "name": "Как работает автодополнение упоминаний",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Использование упоминаний"
+    },
+    {
+      "name": "Заполнение списка упоминаний",
+      "file": "populating-mentions.md",
+      "subCat": "Настройка упоминаний"
+    }
+  ]
+}

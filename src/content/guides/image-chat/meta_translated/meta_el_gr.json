@@ -1,0 +1,41 @@
+{
+  "name": "Συνομιλία με Εικόνες",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ξεκινώντας",
+      "file": "getting-started.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Παραδείγματα",
+      "file": "examples.md",
+      "subCat": "Ξεκινώντας"
+    },
+    {
+      "name": "Επιλογές Διαμόρφωσης",
+      "file": "configuration-options.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Ανταποκρινόμενος Σχεδιασμός",
+      "file": "responsive-design.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "customization.md",
+      "subCat": "Προσαρμογή"
+    },
+    {
+      "name": "Συγχρονισμός σε Πραγματικό Χρόνο",
+      "file": "live-sync.md",
+      "subCat": "Για Προχωρημένους"
+    },
+    {
+      "name": "Αναφορά API",
+      "file": "api-reference.md",
+      "subCat": "Για Προχωρημένους"
+    }
+  ]
+}

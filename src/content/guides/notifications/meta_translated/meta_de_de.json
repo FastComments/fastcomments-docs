@@ -1,0 +1,26 @@
+{
+  "name": "Benachrichtigungen",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Wann sendet FastComments Benachrichtigungen?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Benachrichtigungsarten",
+      "file": "notification-types.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Abmeldung",
+      "file": "opting-out-notifications.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Benachrichtigungen für SSO konfigurieren",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguration"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "聯盟夥伴",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "為什麼成為 FastComments 聯盟夥伴？",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "聯盟夥伴"
+    },
+    {
+      "name": "開始使用",
+      "file": "getting-started.md",
+      "subCat": "聯盟夥伴"
+    },
+    {
+      "name": "佣金",
+      "file": "commission.md",
+      "subCat": "聯盟夥伴"
+    },
+    {
+      "name": "聯盟夥伴儀表板",
+      "file": "dashboard.md",
+      "subCat": "聯盟夥伴"
+    },
+    {
+      "name": "付款時程",
+      "file": "payout-schedule.md",
+      "subCat": "聯盟夥伴"
+    },
+    {
+      "name": "行銷素材",
+      "file": "marketing-materials.md",
+      "subCat": "聯盟夥伴"
+    }
+  ]
+}

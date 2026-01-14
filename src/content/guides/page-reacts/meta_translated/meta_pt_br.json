@@ -1,0 +1,31 @@
+{
+  "name": "Reações da Página",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Reações da Página",
+      "file": "page-reacts-about.md",
+      "subCat": "Reações da Página"
+    },
+    {
+      "name": "Instalação - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Reações da Página"
+    },
+    {
+      "name": "O Widget de Curtidas Flutuantes",
+      "file": "floating-likes-about.md",
+      "subCat": "Widget de Curtidas Flutuantes"
+    },
+    {
+      "name": "Instalação - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Widget de Curtidas Flutuantes"
+    },
+    {
+      "name": "Instalação - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Widget de Curtidas Flutuantes"
+    }
+  ]
+}

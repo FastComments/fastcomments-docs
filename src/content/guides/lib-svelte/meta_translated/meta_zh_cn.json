@@ -1,0 +1,24 @@
+{
+  "name": "Svelte 库",
+  "pageHeader": "FastComments Svelte 库",
+  "itemsOrdered": [
+    {
+      "name": "组件",
+      "file": "widgets-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "开发",
+      "file": "developing-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "构建",
+      "file": "building-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

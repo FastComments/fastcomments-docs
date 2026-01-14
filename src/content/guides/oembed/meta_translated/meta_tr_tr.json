@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "oEmbed nedir?",
+      "file": "about-oembed.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "oEmbed Konuşması Oluşturma",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Kullanım"
+    }
+  ]
+}

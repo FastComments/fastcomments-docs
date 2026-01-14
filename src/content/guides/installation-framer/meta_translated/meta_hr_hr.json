@@ -1,0 +1,37 @@
+{
+  "name": "Instalacija Framera",
+  "pageHeader": "Dodajte komentare uživo na Framer web-stranice",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Otvorite uređivač",
+      "file": "framer-step-1.md",
+      "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Korak 2: Dodajte blok za ugrađivanje",
+      "file": "framer-step-2.md",
+      "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Korak 3: Kopirajte i zalijepite FastComments kod za Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Korak 4: Prilagodite visinu widgeta i stranice",
+      "file": "framer-step-4.md",
+      "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Pogreške domene",
+      "file": "framer-domain-errors.md",
+      "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "framer-customize.md",
+      "subCat": "Instalacija Framera"
+    }
+  ]
+}

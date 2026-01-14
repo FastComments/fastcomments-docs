@@ -1,0 +1,36 @@
+{
+  "name": "Kendi Bulutunuz",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "FastComments İzole Bulutu nedir?",
+      "file": "your-own-cloud.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Nasıl Edinilir",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Kurulum ve Eğitim",
+      "file": "set-up-training.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Kontrol Panelini Kullanma",
+      "file": "using-the-dashboard.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "API'yi Kullanma",
+      "file": "using-the-api.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Kiracıları Yönetme",
+      "file": "managing-tenants.md",
+      "subCat": "Kiracı Yönetimi"
+    }
+  ]
+}

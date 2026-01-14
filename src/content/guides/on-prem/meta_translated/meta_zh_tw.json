@@ -1,0 +1,56 @@
+{
+  "name": "內部部署",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "包含內容",
+      "file": "on-prem-whats-included.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "從何開始",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "開始使用"
+    },
+    {
+      "name": "執行個體",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "部署"
+    },
+    {
+      "name": "設定",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "部署"
+    },
+    {
+      "name": "資料庫停機與維護模式",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "架構"
+    },
+    {
+      "name": "鎖定",
+      "file": "on-prem-locks.md",
+      "subCat": "架構"
+    },
+    {
+      "name": "Widget 程式碼",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "安裝與整合"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "安裝與整合"
+    },
+    {
+      "name": "多個網域",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "安裝與整合"
+    },
+    {
+      "name": "安全性",
+      "file": "on-prem-security.md",
+      "subCat": "安全性提示"
+    }
+  ]
+}

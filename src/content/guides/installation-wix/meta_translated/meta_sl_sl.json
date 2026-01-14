@@ -1,0 +1,42 @@
+{
+  "name": "Namestitev Wix",
+  "pageHeader": "Dodajanje komentarjev na spletna mesta Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Uredite pravilno stran",
+      "file": "wix-step-1.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Korak 2: Dodajte blok za vdelavo",
+      "file": "wix-step-2.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Korak 3: Kopirajte in prilepite prilagojeno kodo",
+      "file": "wix-step-3.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Korak 4: Prilagodite velikost",
+      "file": "wix-step-4.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Korak 5: Edinstvene niti komentarjev",
+      "file": "wix-step-5.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Korak 6: Proslavite",
+      "file": "wix-step-6.md",
+      "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "wix-customize.md",
+      "subCat": "Namestitev Wix"
+    }
+  ]
+}

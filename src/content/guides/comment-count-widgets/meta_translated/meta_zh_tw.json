@@ -1,0 +1,21 @@
+{
+  "name": "留言計數小工具",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "安裝留言計數小工具",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "批次安裝留言計數小工具",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "留言計數 API",
+      "file": "comment-count-apis.md",
+      "subCat": "留言計數 API"
+    }
+  ]
+}

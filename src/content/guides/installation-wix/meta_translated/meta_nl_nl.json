@@ -1,0 +1,42 @@
+{
+  "name": "Wix-installatie",
+  "pageHeader": "Reacties toevoegen aan Wix-sites",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Bewerk de juiste pagina",
+      "file": "wix-step-1.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Stap 2: Voeg een insluitblok toe",
+      "file": "wix-step-2.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Stap 3: Kopieer/plak aangepaste code",
+      "file": "wix-step-3.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Stap 4: Grootte aanpassen",
+      "file": "wix-step-4.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Stap 5: Unieke reactiedraden",
+      "file": "wix-step-5.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Stap 6: Vier het",
+      "file": "wix-step-6.md",
+      "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "wix-customize.md",
+      "subCat": "Wix-installatie"
+    }
+  ]
+}

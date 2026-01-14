@@ -1,0 +1,26 @@
+{
+  "name": "지원되는 브라우저",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "지원되는 브라우저",
+      "file": "supported-browsers.md",
+      "subCat": "지원되는 브라우저"
+    },
+    {
+      "name": "인터넷 익스플로러",
+      "file": "internet-explorer.md",
+      "subCat": "지원되는 브라우저"
+    },
+    {
+      "name": "테스트 방법",
+      "file": "how-we-test.md",
+      "subCat": "지원되는 브라우저"
+    },
+    {
+      "name": "JavaScript 요구사항",
+      "file": "no-javascript.md",
+      "subCat": "지원되는 브라우저"
+    }
+  ]
+}

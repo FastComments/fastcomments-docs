@@ -1,0 +1,30 @@
+{
+  "name": "Βιβλιοθήκη Vue 2",
+  "pageHeader": "FastComments Βιβλιοθήκη Vue 2",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Εισαγωγή",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση",
+      "file": "usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενημέρωση της τρέχουσας σελίδας (Παράδειγμα SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Σε Παραγωγή",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

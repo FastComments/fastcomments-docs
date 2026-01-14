@@ -1,0 +1,32 @@
+{
+  "name": "Systeme.io-installatie",
+  "pageHeader": "Reacties toevoegen aan een Systeme.io-blog",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Open de blogthema-sjabloon",
+      "file": "systeme-step-1.md",
+      "subCat": "Systeme.io-installatie"
+    },
+    {
+      "name": "Stap 2: Voeg de FastComments.com-code toe",
+      "file": "systeme-step-2.md",
+      "subCat": "Systeme.io-installatie"
+    },
+    {
+      "name": "Succes",
+      "file": "systeme-success.md",
+      "subCat": "Systeme.io-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Systeme.io-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "systeme-customize.md",
+      "subCat": "Systeme.io-installatie"
+    }
+  ]
+}

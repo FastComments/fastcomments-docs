@@ -1,0 +1,46 @@
+{
+  "name": "Хештегови",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су хештегови",
+      "file": "what-are-hashtags.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како користити хештегове",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Коришћење хештегова"
+    },
+    {
+      "name": "Филтрирање коментара по хештегу",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Коришћење хештегова"
+    },
+    {
+      "name": "Важећи и неважећи хештегови",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Коришћење хештегова"
+    },
+    {
+      "name": "Коришћење симбола осим #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Постављање хештегова"
+    },
+    {
+      "name": "Унапред попуњавање хештегова",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Постављање хештегова"
+    },
+    {
+      "name": "Повезивање са садржајем помоћу хештегова",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Постављање хештегова"
+    },
+    {
+      "name": "Како функционише аутокомплетирање хештегова",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Позадина хештегова"
+    }
+  ]
+}

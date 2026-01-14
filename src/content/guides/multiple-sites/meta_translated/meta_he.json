@@ -1,0 +1,51 @@
+{
+  "name": "אתרים מרובים",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "הגדרה ראשונית",
+      "file": "add-domains-to-account.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "מגבלות ותמחור",
+      "file": "domain-limits.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "שם השולח, אימייל ולוגו",
+      "file": "from-name-email-logo.md",
+      "subCat": "התאמה אישית לכל אתר"
+    },
+    {
+      "name": "שם/אימייל השולח של הדומיין לא עובד",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "התאמה אישית לכל אתר"
+    },
+    {
+      "name": "טננט לכל סביבה",
+      "file": "tenant-per-environment.md",
+      "subCat": "התאמה אישית לכל אתר"
+    },
+    {
+      "name": "התאמות אישיות",
+      "file": "customizations.md",
+      "subCat": "התאמה אישית לכל אתר"
+    },
+    {
+      "name": "ניהול תגובות",
+      "file": "moderation.md",
+      "subCat": "נתונים וחיפוש"
+    },
+    {
+      "name": "שיתוף תגובות בין דומיינים",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "נתונים וחיפוש"
+    },
+    {
+      "name": "עם וורדפרס",
+      "file": "wordpress.md",
+      "subCat": "הערות אינטגרציה"
+    }
+  ]
+}

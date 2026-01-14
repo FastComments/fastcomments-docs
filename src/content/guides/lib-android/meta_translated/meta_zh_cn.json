@@ -1,0 +1,72 @@
+{
+  "name": "Android 库",
+  "pageHeader": "FastComments Android 库",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "要求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "基本用法",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "安全的单点登录（SSO）认证",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "认证",
+      "type": "readme"
+    },
+    {
+      "name": "信息流集成",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时聊天集成",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "示例项目",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "配置选项",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "配置",
+      "type": "readme"
+    },
+    {
+      "name": "全面的主题自定义",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "内存管理",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Tryb ciemny",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Automatyczne wykrywanie",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Ręczna konfiguracja",
+      "file": "dark-mode-manual.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Obsługa trybu ciemnego motywu Networker dla WordPressa",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Motywy WordPressa"
+    }
+  ]
+}

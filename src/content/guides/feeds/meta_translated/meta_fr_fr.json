@@ -1,0 +1,16 @@
+{
+  "name": "Flux",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Personnalisation des flux",
+      "file": "personalizing-feeds.md",
+      "subCat": "Personnalisation"
+    },
+    {
+      "name": "Flux régionaux",
+      "file": "regional-feeds.md",
+      "subCat": "Personnalisation"
+    }
+  ]
+}

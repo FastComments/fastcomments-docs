@@ -1,0 +1,37 @@
+{
+  "name": "Weebly 설치",
+  "pageHeader": "Weebly 사이트에 댓글 추가",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 블로그 설정 열기",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly 설치"
+    },
+    {
+      "name": "2단계: FastComments.com 코드 추가",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly 설치"
+    },
+    {
+      "name": "3단계: 게시!",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly 설치"
+    },
+    {
+      "name": "성공",
+      "file": "weebly-success.md",
+      "subCat": "Weebly 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly 설치"
+    }
+  ]
+}

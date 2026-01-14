@@ -1,0 +1,46 @@
+{
+  "name": "Kullanıcılar",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Kullanıcı Türleri",
+      "file": "types-of-users.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Kullanıcı Adları",
+      "file": "usernames.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Yönetici Kullanıcılar",
+      "file": "administrator-users.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Yorum Yapan Kullanıcılar",
+      "file": "commenter-users.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Yönetici Ekleme",
+      "file": "adding-administrators.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Moderatör Ekleme",
+      "file": "adding-moderators.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Yönetici İzinlerini Güncelleme",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Geliştiriciler",
+      "file": "developers.md",
+      "subCat": "Kurulum"
+    }
+  ]
+}

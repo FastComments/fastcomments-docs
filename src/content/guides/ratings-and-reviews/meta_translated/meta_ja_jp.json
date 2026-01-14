@@ -1,0 +1,56 @@
+{
+  "name": "評価とレビュー",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "機能",
+      "file": "features.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "対象者",
+      "file": "who-gets-it.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "料金",
+      "file": "pricing.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "表示形式の選択",
+      "file": "choose-display-type.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "質問の定義",
+      "file": "define-your-questions.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "設定の仕組み",
+      "file": "how-configuration-works.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "サマリーウィジェット",
+      "file": "summary-widget-installation.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "評価の表示",
+      "file": "viewing-ratings.md",
+      "subCat": "レポート"
+    },
+    {
+      "name": "API経由での統合",
+      "file": "integrating-via-the-api.md",
+      "subCat": "レポート"
+    },
+    {
+      "name": "サマリーのデモ",
+      "file": "summary-demo.md",
+      "subCat": "サマリーのデモ"
+    }
+  ]
+}

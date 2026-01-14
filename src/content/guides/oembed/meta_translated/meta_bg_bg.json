@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво е oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Предистория"
+    },
+    {
+      "name": "Създаване на oEmbed разговор",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Използване"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Notes et avis",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Fonctionnalités",
+      "file": "features.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Qui y a accès",
+      "file": "who-gets-it.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Tarification",
+      "file": "pricing.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Choisir un type d'affichage",
+      "file": "choose-display-type.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Définir vos questions",
+      "file": "define-your-questions.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Comment fonctionne la configuration",
+      "file": "how-configuration-works.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Le widget récapitulatif",
+      "file": "summary-widget-installation.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Consultation des évaluations",
+      "file": "viewing-ratings.md",
+      "subCat": "Rapports"
+    },
+    {
+      "name": "Intégration via l'API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Rapports"
+    },
+    {
+      "name": "Démo récapitulative",
+      "file": "summary-demo.md",
+      "subCat": "Démo récapitulative"
+    }
+  ]
+}

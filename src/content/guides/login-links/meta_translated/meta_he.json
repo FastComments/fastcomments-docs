@@ -1,0 +1,26 @@
+{
+  "name": "קישורי כניסה",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "מהם קישורי כניסה?",
+      "file": "login-links-what-are.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "יתרונות קישורי כניסה לעומת סיסמאות",
+      "file": "login-links-benefits.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "כיצד אנו מבטיחים את אבטחת קישורי כניסה",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "אבטחה"
+    },
+    {
+      "name": "למי נשלחים קישורי כניסה?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "שימוש"
+    }
+  ]
+}

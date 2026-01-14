@@ -1,0 +1,37 @@
+{
+  "name": "Zyroのインストール",
+  "pageHeader": "Zyroサイトにライブコメントを追加",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ1：コードウィジェットを追加",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyroサイトのインストール"
+    },
+    {
+      "name": "ステップ2：コードを追加",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyroサイトのインストール"
+    },
+    {
+      "name": "成功",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyroサイトのインストール"
+    },
+    {
+      "name": "サイトドメインのエラー",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyroサイトのインストール"
+    },
+    {
+      "name": "サイトのカスタマイズ",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyroサイトのインストール"
+    },
+    {
+      "name": "フローティングいいねボタン",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyroフローティングいいね"
+    }
+  ]
+}

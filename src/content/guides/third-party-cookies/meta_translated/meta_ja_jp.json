@@ -1,0 +1,21 @@
+{
+  "name": "サードパーティのクッキー",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "サードパーティのクッキーとは",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "FastComments がサードパーティのクッキーをどのように使用するか",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "サードパーティのクッキーを有効にする",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "有効化"
+    }
+  ]
+}

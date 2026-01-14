@@ -1,0 +1,22 @@
+{
+  "name": "Installation af MemberSpace",
+  "pageHeader": "Tilføj kommentarer med MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Koden",
+      "file": "memberspace-step-1.md",
+      "subCat": "Installation af MemberSpace"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Installation af MemberSpace"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "memberspace-customize.md",
+      "subCat": "Installation af MemberSpace"
+    }
+  ]
+}

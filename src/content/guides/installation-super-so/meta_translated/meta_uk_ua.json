@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Super.so",
+  "pageHeader": "Додайте живі обговорення на сайти Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Відкрийте налаштування",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Крок 2: Додайте готовий код",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Див. також: звичайний віджет коментарів",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Успіх",
+      "file": "super-so-learn-success.md",
+      "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Налаштування",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Встановлення Super.so"
+    }
+  ]
+}

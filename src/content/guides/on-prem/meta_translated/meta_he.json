@@ -1,0 +1,56 @@
+{
+  "name": "בתשתית מקומית",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "מה נכלל",
+      "file": "on-prem-whats-included.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "מאיפה להתחיל",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "אינסטנציות",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "פריסה"
+    },
+    {
+      "name": "הגדרות",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "פריסה"
+    },
+    {
+      "name": "השבתת מסד הנתונים ומצב תחזוקה",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "ארכיטקטורה"
+    },
+    {
+      "name": "נעילות",
+      "file": "on-prem-locks.md",
+      "subCat": "ארכיטקטורה"
+    },
+    {
+      "name": "קוד הווידג'ט",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "התקנה ואינטגרציה"
+    },
+    {
+      "name": "ממשק API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "התקנה ואינטגרציה"
+    },
+    {
+      "name": "דומיינים מרובים",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "התקנה ואינטגרציה"
+    },
+    {
+      "name": "אבטחה",
+      "file": "on-prem-security.md",
+      "subCat": "טיפים לאבטחה"
+    }
+  ]
+}

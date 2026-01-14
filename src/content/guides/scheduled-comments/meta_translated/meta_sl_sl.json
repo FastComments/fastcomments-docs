@@ -1,0 +1,21 @@
+{
+  "name": "Načrtovani komentarji",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ozadje",
+      "file": "background.md",
+      "subCat": "Načrtovani komentarji"
+    },
+    {
+      "name": "Navodila",
+      "file": "howto.md",
+      "subCat": "Načrtovani komentarji"
+    },
+    {
+      "name": "Format uvoza",
+      "file": "import-format.md",
+      "subCat": "Načrtovani komentarji"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym jest oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Tworzenie konwersacji oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Użycie"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er SAML?",
+      "file": "saml-overview.md",
+      "subCat": "Grundlæggende"
+    },
+    {
+      "name": "SAML vs SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Grundlæggende"
+    },
+    {
+      "name": "Opsætning af SAML",
+      "file": "saml-setup.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Konfiguration af identitetsudbyder",
+      "file": "saml-idp-config.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Oplysninger om tjenesteudbyder",
+      "file": "saml-sp-info.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Brugerroller og tilladelser",
+      "file": "saml-user-roles.md",
+      "subCat": "Brugeradministration"
+    },
+    {
+      "name": "Test af SAML-godkendelse",
+      "file": "saml-testing.md",
+      "subCat": "Fejlfinding"
+    },
+    {
+      "name": "Almindelige problemer",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Fejlfinding"
+    },
+    {
+      "name": "Bedste sikkerhedspraksis",
+      "file": "saml-security.md",
+      "subCat": "Avanceret"
+    }
+  ]
+}

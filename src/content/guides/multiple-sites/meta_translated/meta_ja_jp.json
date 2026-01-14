@@ -1,0 +1,51 @@
+{
+  "name": "複数サイト",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "初期設定",
+      "file": "add-domains-to-account.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "制限と料金",
+      "file": "domain-limits.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "差出人名、メールアドレス、ロゴ",
+      "file": "from-name-email-logo.md",
+      "subCat": "サイトごとのカスタマイズ"
+    },
+    {
+      "name": "ドメインでの差出人名／メールアドレスが機能しない",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "サイトごとのカスタマイズ"
+    },
+    {
+      "name": "環境ごとのテナント",
+      "file": "tenant-per-environment.md",
+      "subCat": "サイトごとのカスタマイズ"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "customizations.md",
+      "subCat": "サイトごとのカスタマイズ"
+    },
+    {
+      "name": "コメントの管理",
+      "file": "moderation.md",
+      "subCat": "データと検索"
+    },
+    {
+      "name": "ドメイン間でのコメント共有",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "データと検索"
+    },
+    {
+      "name": "WordPress との連携",
+      "file": "wordpress.md",
+      "subCat": "連携の注意点"
+    }
+  ]
+}

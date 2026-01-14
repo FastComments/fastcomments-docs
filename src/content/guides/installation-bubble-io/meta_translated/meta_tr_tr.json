@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Bubble.io Sitelerine Canlı Yorum Ekle",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTML Bloğu Ekle",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "2. Kodu Ekle",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "3. Genişlik Ayarını Bul",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "4. Düzeni Ayarla",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Başarılı",
+      "file": "bubble-io-success.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

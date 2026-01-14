@@ -1,0 +1,36 @@
+{
+  "name": "留言與投票驗證",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "基礎知識"
+    },
+    {
+      "name": "未驗證的留言",
+      "file": "unverified-comments.md",
+      "subCat": "基礎知識"
+    },
+    {
+      "name": "未驗證的投票",
+      "file": "unverified-votes.md",
+      "subCat": "基礎知識"
+    },
+    {
+      "name": "驗證電子郵件",
+      "file": "verification-emails.md",
+      "subCat": "驗證"
+    },
+    {
+      "name": "會話",
+      "file": "verification-sessions.md",
+      "subCat": "驗證"
+    },
+    {
+      "name": "即時留言",
+      "file": "verification-live-commenting.md",
+      "subCat": "驗證"
+    }
+  ]
+}

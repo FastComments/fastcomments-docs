@@ -1,0 +1,22 @@
+{
+  "name": "Установка Memberstack",
+  "pageHeader": "Добавление комментариев с помощью Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Код",
+      "file": "memberstack-step-1.md",
+      "subCat": "Установка Memberstack"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Установка Memberstack"
+    },
+    {
+      "name": "Настройка",
+      "file": "memberstack-customize.md",
+      "subCat": "Установка Memberstack"
+    }
+  ]
+}

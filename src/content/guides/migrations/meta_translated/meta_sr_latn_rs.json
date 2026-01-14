@@ -1,0 +1,46 @@
+{
+  "name": "Migracije",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Migracija sa drugih provajdera",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Sa drugih provajdera"
+    },
+    {
+      "name": "Uvoz podataka",
+      "file": "importing-data.md",
+      "subCat": "Sa drugih provajdera"
+    },
+    {
+      "name": "Uvoz WordPress komentara",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Sa drugih provajdera"
+    },
+    {
+      "name": "Migracija korisnika i moderatora",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Sa drugih provajdera"
+    },
+    {
+      "name": "Migracija domena",
+      "file": "migrating-domains.md",
+      "subCat": "Migracije podataka"
+    },
+    {
+      "name": "Migracija stranica",
+      "file": "migrating-pages.md",
+      "subCat": "Migracije podataka"
+    },
+    {
+      "name": "Kopiranje komentara",
+      "file": "copying-comments.md",
+      "subCat": "Migracije podataka"
+    },
+    {
+      "name": "Izvoz podataka",
+      "file": "exporting-data.md",
+      "subCat": "Ka drugim provajderima"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "React Native 開發套件",
+  "pageHeader": "FastComments React Native 開發套件",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "關於",
+      "file": "about-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "截圖",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

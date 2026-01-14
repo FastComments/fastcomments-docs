@@ -1,0 +1,31 @@
+{
+  "name": "Pominjanja",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Šta su pominjanja",
+      "file": "what-are-mentions.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kako označiti korisnika",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Korišćenje pominjanja"
+    },
+    {
+      "name": "Obaveštenja",
+      "file": "mentions-notifications.md",
+      "subCat": "Korišćenje pominjanja"
+    },
+    {
+      "name": "Kako funkcioniše automatsko dovršavanje pominjanja",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Korišćenje pominjanja"
+    },
+    {
+      "name": "Popunjavanje pominjanja",
+      "file": "populating-mentions.md",
+      "subCat": "Podešavanje pominjanja"
+    }
+  ]
+}

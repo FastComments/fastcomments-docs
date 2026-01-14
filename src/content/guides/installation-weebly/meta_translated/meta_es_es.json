@@ -1,0 +1,37 @@
+{
+  "name": "Instalación de Weebly",
+  "pageHeader": "Añadir comentarios a sitios de Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Abrir la configuración del blog",
+      "file": "weebly-step-1.md",
+      "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Paso 2: Añadir el código de FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Paso 3: ¡Publicar!",
+      "file": "weebly-step-3.md",
+      "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Éxito",
+      "file": "weebly-success.md",
+      "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Personalización",
+      "file": "weebly-customize.md",
+      "subCat": "Instalación de Weebly"
+    }
+  ]
+}

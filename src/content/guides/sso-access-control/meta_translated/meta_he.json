@@ -1,0 +1,31 @@
+{
+  "name": "בקרת גישה ל-SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "מהי בקרת גישה?",
+      "file": "what-is-access-control.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "כיצד זה עובד",
+      "file": "how-it-works.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "המפרט",
+      "file": "access-control-spec.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "יישום",
+      "file": "implementation.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "דוגמאות לקריאות API",
+      "file": "api-example.md",
+      "subCat": "יישום"
+    }
+  ]
+}

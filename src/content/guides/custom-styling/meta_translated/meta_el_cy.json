@@ -1,0 +1,32 @@
+{
+  "name": "Προσαρμοσμένο Στυλ",
+  "pageHeader": "Οδηγός Προσαρμογής Στυλ",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Πώς να προσαρμόσετε τα στυλ",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Εισαγωγή"
+    },
+    {
+      "name": "Αναφορά στυλ widget σχολίων (v2, τελευταία έκδοση)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Στυλ widget"
+    },
+    {
+      "name": "Στυλ widget πρόσφατων σχολίων",
+      "file": "recent-comments-widget.md",
+      "subCat": "Στυλ widget"
+    },
+    {
+      "name": "Στυλ widget κορυφαίων σελίδων",
+      "file": "top-pages-widget.md",
+      "subCat": "Στυλ widget"
+    },
+    {
+      "name": "Άλλες βιβλιοθήκες frontend",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Άλλες βιβλιοθήκες frontend"
+    }
+  ]
+}

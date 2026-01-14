@@ -1,0 +1,31 @@
+{
+  "name": "Обмін фрагментами коду",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке фрагменти коду?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Спільноти програмістів",
+      "file": "code-snippets-communities.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Підтримувані мови програмування",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Налаштування обміну фрагментами коду",
+      "file": "code-snippets-setup.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Обмін фрагментами коду",
+      "file": "code-snippets-usage.md",
+      "subCat": "Використання"
+    }
+  ]
+}

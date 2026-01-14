@@ -1,0 +1,11 @@
+{
+  "name": "Kommentarthreads dynamisch hinzufügen und austauschen",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Kommentarthreads dynamisch hinzufügen und austauschen",
+      "file": "swap-widgets-example.md",
+      "subCat": "Beispiele"
+    }
+  ]
+}

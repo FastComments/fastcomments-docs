@@ -1,0 +1,36 @@
+{
+  "name": "SSR (Sunucu Tarafı Renderlama)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "SSR nedir?",
+      "file": "what-is-ssr.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "SSR'nin Faydaları",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "FastComments SSR Desteklenen Özellikler",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Kullanım Senaryoları",
+      "file": "ssr-use-cases.md",
+      "subCat": "SSR Kullanımı"
+    },
+    {
+      "name": "FastComments'ın SSR Kullanım Alanları",
+      "file": "ssr-where-used.md",
+      "subCat": "SSR Kullanımı"
+    },
+    {
+      "name": "SSR Kullanımı",
+      "file": "using-ssr.md",
+      "subCat": "SSR Kullanımı"
+    }
+  ]
+}

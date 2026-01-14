@@ -1,0 +1,21 @@
+{
+  "name": "Widgets de recuento de comentarios",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Instalación del widget de recuento de comentarios",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Instalación"
+    },
+    {
+      "name": "Instalación masiva del widget de recuento de comentarios",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Instalación"
+    },
+    {
+      "name": "APIs de recuento de comentarios",
+      "file": "comment-count-apis.md",
+      "subCat": "APIs de recuento de comentarios"
+    }
+  ]
+}

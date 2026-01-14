@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2-bibliotek",
+  "pageHeader": "FastComments Vue 2-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Brug",
+      "file": "usage-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Opdatering af den aktuelle side (SPA-eksempel)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "I produktion",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Модерація",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Сторінка модерації коментарів",
+      "file": "moderate-comments-page.md",
+      "subCat": "Вступ"
+    },
+    {
+      "name": "Модератори",
+      "file": "moderators.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Додавання модераторів",
+      "file": "moderators-adding.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Статистика модераторів",
+      "file": "moderator-stats.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Видалення модераторів",
+      "file": "moderators-removing.md",
+      "subCat": "Модератори"
+    },
+    {
+      "name": "Як працює процес затвердження",
+      "file": "moderation-approvals.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Модерація через електронну пошту",
+      "file": "moderation-via-email.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Фільтрація",
+      "file": "filters.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Пошук",
+      "file": "search.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Обмін посиланнями для модерації",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Переглядач гілки коментарів",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Дії модерації",
+      "file": "comment-actions.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Видалення коментарів",
+      "file": "deleting-comments.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Дії модерації з віджету коментарів",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Модерація в реальному часі",
+      "file": "comment-actions-live.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Блокування користувачів",
+      "file": "banning-users.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Блокування користувачів за допомогою шаблонів",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Позначення",
+      "file": "flagging.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Масові дії",
+      "file": "bulk-actions.md",
+      "subCat": "Робочий процес модерації"
+    },
+    {
+      "name": "Групи модерації",
+      "file": "moderation-groups.md",
+      "subCat": "Групи модерації"
+    },
+    {
+      "name": "Налаштування модерації",
+      "file": "moderation-settings.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Виявлення спаму",
+      "file": "spam-detection.md",
+      "subCat": "Спам і ненормативна лексика"
+    },
+    {
+      "name": "Приховування ненормативної лексики",
+      "file": "profanity-mask.md",
+      "subCat": "Спам і ненормативна лексика"
+    },
+    {
+      "name": "Журнали коментарів",
+      "file": "comment-logs.md",
+      "subCat": "Робочий процес модерації"
+    }
+  ]
+}

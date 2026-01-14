@@ -1,0 +1,42 @@
+{
+  "name": "Instalacija Webnode-a",
+  "pageHeader": "Dodavanje komentara na Webnode sajtove",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Izmenite vašu stranicu",
+      "file": "webnode-step-1.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Korak 2: Dodajte sekciju i HTML blok",
+      "file": "webnode-step-2.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Korak 3: Kopirajte i nalepite deo koda",
+      "file": "webnode-step-3.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Korak 4: Objavite",
+      "file": "webnode-step-4.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Uspešno",
+      "file": "webnode-success.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Greške domena",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Instalacija Webnode-a"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "webnode-customize.md",
+      "subCat": "Instalacija Webnode-a"
+    }
+  ]
+}

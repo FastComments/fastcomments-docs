@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "הוסף תגובות בזמן אמת לבלוגים של Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. מצא שדה להזנת קוד",
+      "file": "typeflo-step-1.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "2. הכנס קוד",
+      "file": "typeflo-step-2.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "הצלחה",
+      "file": "typeflo-success.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "שגיאות בדומיין",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

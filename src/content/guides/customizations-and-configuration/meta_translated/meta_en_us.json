@@ -1,0 +1,406 @@
+{
+  "name": "Customizations & Configuration",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Identifying Your Account",
+      "file": "tenant-id.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "How Comments are Tied to Pages and Articles",
+      "file": "url-id.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Rendering The Same Comments on Different Pages",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "The Basics"
+    },
+    {
+      "name": "Custom Styling",
+      "file": "custom-css.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Custom Fonts",
+      "file": "custom-fonts.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Removing Branding",
+      "file": "remove-branding.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Supporting Dark Backgrounds (Dark Mode)",
+      "file": "has-dark-background.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Toggling Dark Mode",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Overriding Text",
+      "file": "translations.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Changing The Default Avatar",
+      "file": "default-avatar-src.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disabling Avatars",
+      "file": "hide-avatars.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disabling All Default Styles",
+      "file": "no-styles.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Linking from Comments to Pages",
+      "file": "url.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Collapse Replies by Default",
+      "file": "collapse-replies.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable WYSIWYG",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disabling The Toolbar",
+      "file": "disable-toolbar.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disabling Blocking",
+      "file": "disable-blocking.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Determining Which Page to Render",
+      "file": "starting-page.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Switching Comment Threads Without Reloading The Page",
+      "file": "switching-comment-threads.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Absolute Dates (Disable Human-Friendly Timestamps)",
+      "file": "absolute-dates.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Showing Both Absolute & Relative Dates",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Adding Header Text",
+      "file": "header-html.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Render Links as Text",
+      "file": "render-links-as-text.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Toggling Comments With a Button",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Customizing The Comment Count Text",
+      "file": "comment-count-format.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Image Redirect",
+      "file": "disable-image-redirect.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Automatic Hashtag Creation",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Notification Bell",
+      "file": "disable-notification-bell.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Profiles",
+      "file": "disable-profiles.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Success Message",
+      "file": "disable-success-message.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Change The Content Rating of GIFs",
+      "file": "gif-rating.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Image Content Moderation",
+      "file": "image-content-moderation.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Change The Voting Style",
+      "file": "vote-style.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Deleting",
+      "file": "disable-deleting.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Editing",
+      "file": "disable-editing.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Highlighting New Comments",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Page Sizes",
+      "file": "page-size.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Email Templates",
+      "file": "email-templates.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "User Name Formats",
+      "file": "user-name-formats.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disabling Image Uploads",
+      "file": "no-image-uploads.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable Search Box",
+      "file": "enable-search.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable Spoilers",
+      "file": "enable-spoilers.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Enable Comment View Counts",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Show Live Comments Right Away",
+      "file": "show-live-right-away.md",
+      "subCat": "Live Commenting"
+    },
+    {
+      "name": "Disabling Live Commenting",
+      "file": "disable-live-commenting.md",
+      "subCat": "Live Commenting"
+    },
+    {
+      "name": "New Live Comments to Bottom",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Live Commenting"
+    },
+    {
+      "name": "Enabling Infinite Scrolling",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Pagination & Sorting"
+    },
+    {
+      "name": "Changing The Default Sort Direction",
+      "file": "default-sort-direction.md",
+      "subCat": "Pagination & Sorting"
+    },
+    {
+      "name": "Rendering All Comments at Once - Disable Pagination",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Pagination & Sorting"
+    },
+    {
+      "name": "Moving The Reply Box to After The Comments",
+      "file": "input-after-comments.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Limiting The Comment Length",
+      "file": "max-comment-character-length.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Disable Multi-Line Commenting",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Limit Comment Volume Per-User",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Prevent New Top-Level Comments",
+      "file": "no-new-root-comments.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Maximum Reply Depth",
+      "file": "max-reply-depth.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "Single Sign-On (SSO) Overview",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Secure Single Sign-On (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Simple Single Sign-On (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Migrating from Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Custom Integrations - Migrating from Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Protecting Comment Threads With Single-Sign-On",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Allow Anonymous Commenting",
+      "file": "allow-anon.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Preventing Anonymous Comments From Expiring",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Disable Email Inputs",
+      "file": "disable-email-inputs.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Disable The Unverified Label",
+      "file": "disable-unverified-label.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Allow Anonymous Voting",
+      "file": "allow-anon-votes.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Setting a Default Username",
+      "file": "default-username.md",
+      "subCat": "Anonymous Commenting"
+    },
+    {
+      "name": "Callbacks",
+      "file": "callbacks.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Manually Defining the User's Locale",
+      "file": "locale.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Limiting Allowed Languages",
+      "file": "allowed-languages.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Page Titles",
+      "file": "page-title.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Prevent New Replies & Disable Votes",
+      "file": "readonly.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Restricting Link Domains",
+      "file": "restricting-link-domains.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "The Comment Count & Counting All Nested Replies",
+      "file": "count-all.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Enabling Commenter Links",
+      "file": "enable-commenter-links.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Moderation Groups",
+      "file": "moderation-group-ids.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Mention Group Ids",
+      "file": "mention-group-ids.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Third-Party Cookie Bypass",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Deleting Comments With Replies",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Misc"
+    },
+    {
+      "name": "Show Badges in Top Bar",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Look and Feel"
+    }
+  ]
+}

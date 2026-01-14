@@ -1,0 +1,31 @@
+{
+  "name": "Reakcije strani",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Reakcije strani",
+      "file": "page-reacts-about.md",
+      "subCat": "Reakcije strani"
+    },
+    {
+      "name": "Namestitev - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Reakcije strani"
+    },
+    {
+      "name": "Plavajoči pripomoček za všečke",
+      "file": "floating-likes-about.md",
+      "subCat": "Plavajoči pripomoček za všečke"
+    },
+    {
+      "name": "Namestitev - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Plavajoči pripomoček za všečke"
+    },
+    {
+      "name": "Namestitev - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Plavajoči pripomoček za všečke"
+    }
+  ]
+}

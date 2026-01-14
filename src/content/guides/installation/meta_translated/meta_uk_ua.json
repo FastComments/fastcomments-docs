@@ -1,0 +1,61 @@
+{
+  "name": "Встановлення",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Сторонні плагіни"
+    },
+    {
+      "name": "VanillaJS / HTML-фрагмент",
+      "file": "vanillajs.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Кілька екземплярів на одній сторінці",
+      "file": "multiple-instances.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Типові випадки використання",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Налагодження поширених проблем",
+      "file": "debugging-common-issues.md",
+      "subCat": "Користувацькі встановлення"
+    },
+    {
+      "name": "Notion та Google Sites",
+      "file": "oembed.md",
+      "subCat": "Вбудовування в документи"
+    }
+  ]
+}

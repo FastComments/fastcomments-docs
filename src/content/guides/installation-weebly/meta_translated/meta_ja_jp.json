@@ -1,0 +1,37 @@
+{
+  "name": "Weebly のインストール",
+  "pageHeader": "Weebly サイトにコメントを追加する",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: ブログ設定を開く",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを追加する",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "ステップ 3: 公開する！",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "成功",
+      "file": "weebly-success.md",
+      "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "ドメインのエラー",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly のインストール"
+    }
+  ]
+}

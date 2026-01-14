@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels のインストール",
+  "pageHeader": "ClickFunnels コースにライブチャットを追加する",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ1：テンプレートを見つける",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels のインストール"
+    },
+    {
+      "name": "ステップ2：コードを追加する",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels のインストール"
+    },
+    {
+      "name": "ドメインのエラー",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels のインストール"
+    },
+    {
+      "name": "補足：ライブコメント用のコードスニペット",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "ライブコメント用コードスニペット"
+    },
+    {
+      "name": "補足：コメントの自動再生",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "コメントの自動再生"
+    }
+  ]
+}

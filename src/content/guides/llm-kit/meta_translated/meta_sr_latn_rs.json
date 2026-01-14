@@ -1,0 +1,11 @@
+{
+  "name": "LLM komplet",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Preuzmite LLM komplet",
+      "file": "llm-kit-snippet.md",
+      "subCat": "Integracija LLM-a"
+    }
+  ]
+}

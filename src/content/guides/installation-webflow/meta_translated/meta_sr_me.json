@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација Webflow-а",
+  "pageHeader": "Додајте коментаре на Webflow сајтове",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Додајте ембед блок",
+      "file": "webflow-step-1.md",
+      "subCat": "Инсталација Webflow-а"
+    },
+    {
+      "name": "Корак 2: Налепите ваш FastComments.com код",
+      "file": "webflow-step-2.md",
+      "subCat": "Инсталација Webflow-а"
+    },
+    {
+      "name": "Корак 3: Објавите",
+      "file": "webflow-step-3.md",
+      "subCat": "Инсталација Webflow-а"
+    },
+    {
+      "name": "Успјех",
+      "file": "webflow-success.md",
+      "subCat": "Инсталација Webflow-а"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Инсталација Webflow-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "webflow-customize.md",
+      "subCat": "Инсталација Webflow-а"
+    }
+  ]
+}

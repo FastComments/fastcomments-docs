@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er Webhooks",
+      "file": "what-are-webhooks.md",
+      "subCat": "Oversigt"
+    },
+    {
+      "name": "Understøttede hændelser og ressourcer",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Oversigt"
+    },
+    {
+      "name": "Opsætning til lokal udvikling",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Opsætning",
+      "file": "webhooks-setup.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Testning",
+      "file": "webhooks-testing.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Datastrukturer",
+      "file": "webhooks-structures.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Sikkerhed og API-tokens",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Hvordan det virker og håndtering af genforsøg",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Bag kulisserne"
+    }
+  ]
+}

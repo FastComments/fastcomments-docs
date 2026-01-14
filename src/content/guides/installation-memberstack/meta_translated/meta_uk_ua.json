@@ -1,0 +1,22 @@
+{
+  "name": "Встановлення Memberstack",
+  "pageHeader": "Додавання коментарів за допомогою Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Код",
+      "file": "memberstack-step-1.md",
+      "subCat": "Встановлення Memberstack"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Встановлення Memberstack"
+    },
+    {
+      "name": "Налаштування",
+      "file": "memberstack-customize.md",
+      "subCat": "Встановлення Memberstack"
+    }
+  ]
+}

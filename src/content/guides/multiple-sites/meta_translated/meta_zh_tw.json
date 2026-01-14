@@ -1,0 +1,51 @@
+{
+  "name": "多站點",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "初始設定",
+      "file": "add-domains-to-account.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "限制與價格",
+      "file": "domain-limits.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "寄件者名稱、電子郵件與標誌",
+      "file": "from-name-email-logo.md",
+      "subCat": "每站自訂"
+    },
+    {
+      "name": "寄件人名稱/電子郵件的網域無效",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "每站自訂"
+    },
+    {
+      "name": "每個環境的租戶",
+      "file": "tenant-per-environment.md",
+      "subCat": "每站自訂"
+    },
+    {
+      "name": "自訂",
+      "file": "customizations.md",
+      "subCat": "每站自訂"
+    },
+    {
+      "name": "留言審核",
+      "file": "moderation.md",
+      "subCat": "資料與搜尋"
+    },
+    {
+      "name": "跨網域共用留言",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "資料與搜尋"
+    },
+    {
+      "name": "與 WordPress",
+      "file": "wordpress.md",
+      "subCat": "整合說明"
+    }
+  ]
+}

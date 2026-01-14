@@ -1,0 +1,24 @@
+{
+  "name": "SDK של React Native",
+  "pageHeader": "SDK של FastComments ל-React Native",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה מהירה",
+      "type": "readme"
+    },
+    {
+      "name": "אודות",
+      "file": "about-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "צילומי מסך",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

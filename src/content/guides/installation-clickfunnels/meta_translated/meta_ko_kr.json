@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels 설치",
+  "pageHeader": "ClickFunnels 코스에 라이브 채팅 추가",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 템플릿 찾기",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels 설치"
+    },
+    {
+      "name": "2단계: 코드 추가하기",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels 설치"
+    },
+    {
+      "name": "추가: 라이브 댓글용 코드 스니펫",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "라이브 댓글 코드 스니펫"
+    },
+    {
+      "name": "추가: 댓글 자동 재생",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "댓글 자동 재생"
+    }
+  ]
+}

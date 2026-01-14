@@ -1,0 +1,31 @@
+{
+  "name": "Обмен фрагментами кода",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое фрагменты кода?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Сообщества разработчиков",
+      "file": "code-snippets-communities.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Поддерживаемые языки программирования",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Настройка обмена фрагментами кода",
+      "file": "code-snippets-setup.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Обмен фрагментами кода",
+      "file": "code-snippets-usage.md",
+      "subCat": "Использование"
+    }
+  ]
+}

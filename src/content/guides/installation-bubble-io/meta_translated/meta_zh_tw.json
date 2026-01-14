@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "在 Bubble.io 網站加入即時留言功能",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. 新增 HTML 區塊",
+      "file": "bubble-io-step-1.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "2. 插入程式碼",
+      "file": "bubble-io-step-2.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "3. 找到寬度設定",
+      "file": "bubble-io-step-3.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "4. 調整佈局",
+      "file": "bubble-io-step-4.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "完成",
+      "file": "bubble-io-success.md",
+      "subCat": "安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

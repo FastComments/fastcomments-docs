@@ -1,0 +1,47 @@
+{
+  "name": "Instalacja BigCommerce",
+  "pageHeader": "Dodaj komentarze na stronach BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Przygotuj motyw",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Krok 2: Edytuj właściwy szablon",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Krok 3: Dodaj kod widżetu",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Krok 4: Aktywuj nowy motyw",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Sukces",
+      "file": "bigcommerce-success.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Instalacja BigCommerce"
+    },
+    {
+      "name": "Dodatkowo: fragment kodu dla kreatora stron",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Korzystanie z kreatora stron"
+    }
+  ]
+}

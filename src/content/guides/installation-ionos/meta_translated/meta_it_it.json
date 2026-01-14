@@ -1,0 +1,37 @@
+{
+  "name": "Installazione IONOS",
+  "pageHeader": "Aggiungi commenti ai siti IONOS",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Fase 1: Aggiungi un modulo di contatto",
+      "file": "ionos-step-1.md",
+      "subCat": "Installazione IONOS"
+    },
+    {
+      "name": "Fase 2: Aggiungi il codice di FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Installazione IONOS"
+    },
+    {
+      "name": "Fase 3: Pubblica",
+      "file": "ionos-step-3.md",
+      "subCat": "Installazione IONOS"
+    },
+    {
+      "name": "Successo",
+      "file": "ionos-success.md",
+      "subCat": "Installazione IONOS"
+    },
+    {
+      "name": "Errori di dominio",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Installazione IONOS"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "ionos-customize.md",
+      "subCat": "Installazione IONOS"
+    }
+  ]
+}

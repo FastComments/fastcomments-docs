@@ -1,0 +1,36 @@
+{
+  "name": "Верификација коментара и гласова",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Позадина",
+      "file": "background.md",
+      "subCat": "Основе"
+    },
+    {
+      "name": "Неверификовани коментари",
+      "file": "unverified-comments.md",
+      "subCat": "Основе"
+    },
+    {
+      "name": "Неверификовани гласови",
+      "file": "unverified-votes.md",
+      "subCat": "Основе"
+    },
+    {
+      "name": "Е-поруке за верификацију",
+      "file": "verification-emails.md",
+      "subCat": "Верификација"
+    },
+    {
+      "name": "Сесије",
+      "file": "verification-sessions.md",
+      "subCat": "Верификација"
+    },
+    {
+      "name": "Коментарисање уживо",
+      "file": "verification-live-commenting.md",
+      "subCat": "Верификација"
+    }
+  ]
+}

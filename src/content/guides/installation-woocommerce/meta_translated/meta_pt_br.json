@@ -1,0 +1,12 @@
+{
+  "name": "Instalação do WooCommerce",
+  "pageHeader": "Adicionar comentários ao vivo em sites com WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Configurar o plugin do WordPress",
+      "file": "woocommerce.md",
+      "subCat": "Instalação do WooCommerce"
+    }
+  ]
+}

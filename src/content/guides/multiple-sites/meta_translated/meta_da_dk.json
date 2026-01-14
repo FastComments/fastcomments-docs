@@ -1,0 +1,51 @@
+{
+  "name": "Flere websteder",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Indledende opsætning",
+      "file": "add-domains-to-account.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Begrænsninger og priser",
+      "file": "domain-limits.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Afsendernavn, e-mail og logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Tilpasning pr. websted"
+    },
+    {
+      "name": "Afsenderdomæne (navn/e-mail) virker ikke",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Tilpasning pr. websted"
+    },
+    {
+      "name": "Lejer pr. miljø",
+      "file": "tenant-per-environment.md",
+      "subCat": "Tilpasning pr. websted"
+    },
+    {
+      "name": "Tilpasninger",
+      "file": "customizations.md",
+      "subCat": "Tilpasning pr. websted"
+    },
+    {
+      "name": "Moderering af kommentarer",
+      "file": "moderation.md",
+      "subCat": "Data og søgning"
+    },
+    {
+      "name": "Deling af kommentarer på tværs af domæner",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Data og søgning"
+    },
+    {
+      "name": "Med WordPress",
+      "file": "wordpress.md",
+      "subCat": "Noter om integration"
+    }
+  ]
+}

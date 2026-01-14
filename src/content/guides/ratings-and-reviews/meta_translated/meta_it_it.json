@@ -1,0 +1,56 @@
+{
+  "name": "Valutazioni e Recensioni",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Funzionalità",
+      "file": "features.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "A chi è rivolto",
+      "file": "who-gets-it.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Prezzi",
+      "file": "pricing.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Scegli un tipo di visualizzazione",
+      "file": "choose-display-type.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Definisci le tue domande",
+      "file": "define-your-questions.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Come funziona la configurazione",
+      "file": "how-configuration-works.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Il widget di riepilogo",
+      "file": "summary-widget-installation.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Visualizzazione delle valutazioni",
+      "file": "viewing-ratings.md",
+      "subCat": "Reportistica"
+    },
+    {
+      "name": "Integrazione tramite API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Reportistica"
+    },
+    {
+      "name": "Demo del riepilogo",
+      "file": "summary-demo.md",
+      "subCat": "Demo del riepilogo"
+    }
+  ]
+}

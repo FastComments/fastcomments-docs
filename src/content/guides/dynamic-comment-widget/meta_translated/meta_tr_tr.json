@@ -1,0 +1,11 @@
+{
+  "name": "Yorum Dizilerini Dinamik Olarak Ekleme ve Değiştirme",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Yorum Dizilerini Dinamik Olarak Ekleme ve Değiştirme",
+      "file": "swap-widgets-example.md",
+      "subCat": "Örnekler"
+    }
+  ]
+}

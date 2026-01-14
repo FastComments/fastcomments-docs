@@ -1,0 +1,21 @@
+{
+  "name": "מצב כהה",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "זיהוי אוטומטי",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "הגדרות"
+    },
+    {
+      "name": "תצורה ידנית",
+      "file": "dark-mode-manual.md",
+      "subCat": "הגדרות"
+    },
+    {
+      "name": "תמיכה במצב כהה בערכת הנושא Networker של וורדפרס",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "ערכות נושא של וורדפרס"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "多站点",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "初始设置",
+      "file": "add-domains-to-account.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "限制与定价",
+      "file": "domain-limits.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "发件人名称、电子邮件和徽标",
+      "file": "from-name-email-logo.md",
+      "subCat": "每站点自定义"
+    },
+    {
+      "name": "发件人名称/邮箱的域名无法正常工作",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "每站点自定义"
+    },
+    {
+      "name": "每环境租户",
+      "file": "tenant-per-environment.md",
+      "subCat": "每站点自定义"
+    },
+    {
+      "name": "自定义",
+      "file": "customizations.md",
+      "subCat": "每站点自定义"
+    },
+    {
+      "name": "评论审核",
+      "file": "moderation.md",
+      "subCat": "数据与搜索"
+    },
+    {
+      "name": "跨域共享评论",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "数据与搜索"
+    },
+    {
+      "name": "与 WordPress 集成",
+      "file": "wordpress.md",
+      "subCat": "集成说明"
+    }
+  ]
+}

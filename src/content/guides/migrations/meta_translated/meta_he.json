@@ -1,0 +1,46 @@
+{
+  "name": "מיגרציות",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "מעבר מספקים אחרים",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "מספקים אחרים"
+    },
+    {
+      "name": "ייבוא נתונים",
+      "file": "importing-data.md",
+      "subCat": "מספקים אחרים"
+    },
+    {
+      "name": "ייבוא תגובות מוורדפרס",
+      "file": "importing-data-wordpress.md",
+      "subCat": "מספקים אחרים"
+    },
+    {
+      "name": "העברת משתמשים ומודרטורים",
+      "file": "migrating-users-moderators.md",
+      "subCat": "מספקים אחרים"
+    },
+    {
+      "name": "העברת דומיינים",
+      "file": "migrating-domains.md",
+      "subCat": "העברות נתונים"
+    },
+    {
+      "name": "העברת דפים",
+      "file": "migrating-pages.md",
+      "subCat": "העברות נתונים"
+    },
+    {
+      "name": "העתקת תגובות",
+      "file": "copying-comments.md",
+      "subCat": "העברות נתונים"
+    },
+    {
+      "name": "ייצוא נתונים",
+      "file": "exporting-data.md",
+      "subCat": "לספקים אחרים"
+    }
+  ]
+}

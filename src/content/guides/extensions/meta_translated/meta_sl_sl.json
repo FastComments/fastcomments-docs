@@ -1,0 +1,31 @@
+{
+  "name": "Pisanje razširitev",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Življenjski cikel razširitve",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Opredelitev razširitve",
+      "file": "defining-an-extension.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Primeri razširitev",
+      "file": "example-extensions.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Objekt razširitve",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "API razširitve",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

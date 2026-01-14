@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Добавить живые комментарии в блоги Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Найдите поле ввода кода",
+      "file": "typeflo-step-1.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "2. Вставьте код",
+      "file": "typeflo-step-2.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "Готово",
+      "file": "typeflo-success.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "Настройка",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

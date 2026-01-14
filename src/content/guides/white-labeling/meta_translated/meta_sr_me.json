@@ -1,0 +1,36 @@
+{
+  "name": "Бела етикета",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта је бела етикета",
+      "file": "white-labeling-background.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како добити белу етикету",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Почетак"
+    },
+    {
+      "name": "Постављање беле етикете",
+      "file": "white-labeling-process.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Коришћење контролне табле",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Коришћење API-ја",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Управљање клијентима са белом етикетом",
+      "file": "white-labeling-managing.md",
+      "subCat": "Управљање клијентима"
+    }
+  ]
+}

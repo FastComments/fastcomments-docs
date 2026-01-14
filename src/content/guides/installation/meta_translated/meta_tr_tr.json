@@ -1,0 +1,61 @@
+{
+  "name": "Kurulum",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "Wordpress",
+      "file": "wordpress.md",
+      "subCat": "Üçüncü Taraf Eklentiler"
+    },
+    {
+      "name": "VanillaJS / HTML Parçacığı",
+      "file": "vanillajs.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Aynı Sayfada Birden Fazla Örnek",
+      "file": "multiple-instances.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Yaygın Kullanım Senaryoları",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Yaygın Sorunların Giderilmesi",
+      "file": "debugging-common-issues.md",
+      "subCat": "Özel Kurulumlar"
+    },
+    {
+      "name": "Notion ve Google Sites",
+      "file": "oembed.md",
+      "subCat": "Belgelere Gömme"
+    }
+  ]
+}

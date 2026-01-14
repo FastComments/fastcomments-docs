@@ -1,0 +1,16 @@
+{
+  "name": "Стрічки",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Персоналізація стрічок",
+      "file": "personalizing-feeds.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Регіональні стрічки",
+      "file": "regional-feeds.md",
+      "subCat": "Налаштування"
+    }
+  ]
+}

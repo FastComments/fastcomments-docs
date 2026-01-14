@@ -1,0 +1,51 @@
+{
+  "name": "User Profiles",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Profile Basics",
+      "file": "profile-basics.md",
+      "subCat": "Getting Started"
+    },
+    {
+      "name": "Customizing Your Profile",
+      "file": "customizing-profiles.md",
+      "subCat": "Customization"
+    },
+    {
+      "name": "Privacy Settings",
+      "file": "privacy-settings.md",
+      "subCat": "Customization"
+    },
+    {
+      "name": "Badges",
+      "file": "badges.md",
+      "subCat": "Features"
+    },
+    {
+      "name": "Profile Comments",
+      "file": "profile-comments.md",
+      "subCat": "Features"
+    },
+    {
+      "name": "Direct Messaging",
+      "file": "direct-messaging.md",
+      "subCat": "Features"
+    },
+    {
+      "name": "Activity Feed",
+      "file": "activity-feed.md",
+      "subCat": "Features"
+    },
+    {
+      "name": "User Notes",
+      "file": "user-notes.md",
+      "subCat": "Features"
+    },
+    {
+      "name": "Styling Profiles",
+      "file": "styling-profiles.md",
+      "subCat": "For Developers"
+    }
+  ]
+}

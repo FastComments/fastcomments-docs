@@ -1,0 +1,72 @@
+{
+  "name": "התקנת וורדפרס",
+  "pageHeader": "הוספת תגובות בזמן אמת לאתרי וורדפרס",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "התחלה מהירה",
+      "file": "wordpress-quick-start.md",
+      "subCat": "תקציר"
+    },
+    {
+      "name": "התקנה",
+      "file": "wordpress-installation.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "wordpress-customize.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "ניהול תגובות",
+      "file": "wordpress-moderation.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "משתמשים, מודרטורים ומנהלים",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "אתרים לחברים בלבד (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "התראות",
+      "file": "wordpress-notifications.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "ערכות נושא מותאמות",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "סנכרון חזרה לוורדפרס",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "ספירת תגובות",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "תקשורת בין וורדפרס לשרת FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "התקנת וורדפרס"
+    },
+    {
+      "name": "השבתה לעומת הסרת התוסף",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "הסרת תוסף"
+    }
+  ]
+}

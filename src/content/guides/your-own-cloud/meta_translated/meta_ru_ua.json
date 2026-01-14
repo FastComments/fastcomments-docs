@@ -1,0 +1,36 @@
+{
+  "name": "Ваша собственная облачная среда",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Что такое FastComments Isolated Cloud?",
+      "file": "your-own-cloud.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как получить",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Настройка и обучение",
+      "file": "set-up-training.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Использование панели управления",
+      "file": "using-the-dashboard.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Использование API",
+      "file": "using-the-api.md",
+      "subCat": "Внедрение"
+    },
+    {
+      "name": "Управление арендаторами",
+      "file": "managing-tenants.md",
+      "subCat": "Управление арендаторами"
+    }
+  ]
+}

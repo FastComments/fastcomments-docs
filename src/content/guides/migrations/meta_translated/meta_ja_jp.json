@@ -1,0 +1,46 @@
+{
+  "name": "移行",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "他のプロバイダーからの移行",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "他のプロバイダーから"
+    },
+    {
+      "name": "データのインポート",
+      "file": "importing-data.md",
+      "subCat": "他のプロバイダーから"
+    },
+    {
+      "name": "WordPressのコメントのインポート",
+      "file": "importing-data-wordpress.md",
+      "subCat": "他のプロバイダーから"
+    },
+    {
+      "name": "ユーザーとモデレーターの移行",
+      "file": "migrating-users-moderators.md",
+      "subCat": "他のプロバイダーから"
+    },
+    {
+      "name": "ドメインの移行",
+      "file": "migrating-domains.md",
+      "subCat": "データ移行"
+    },
+    {
+      "name": "ページの移行",
+      "file": "migrating-pages.md",
+      "subCat": "データ移行"
+    },
+    {
+      "name": "コメントのコピー",
+      "file": "copying-comments.md",
+      "subCat": "データ移行"
+    },
+    {
+      "name": "データのエクスポート",
+      "file": "exporting-data.md",
+      "subCat": "他のプロバイダーへ"
+    }
+  ]
+}

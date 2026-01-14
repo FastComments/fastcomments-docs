@@ -1,0 +1,32 @@
+{
+  "name": "Налаштування стилів",
+  "pageHeader": "Посібник з налаштування стилів",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Як налаштувати стилі",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Довідник зі стилізації віджета коментарів (v2, остання версія)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Стилізація віджетів"
+    },
+    {
+      "name": "Стилізація віджета останніх коментарів",
+      "file": "recent-comments-widget.md",
+      "subCat": "Стилізація віджетів"
+    },
+    {
+      "name": "Стилізація віджета найпопулярніших сторінок",
+      "file": "top-pages-widget.md",
+      "subCat": "Стилізація віджетів"
+    },
+    {
+      "name": "Інші бібліотеки фронтенду",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Інші бібліотеки фронтенду"
+    }
+  ]
+}

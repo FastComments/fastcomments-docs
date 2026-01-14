@@ -1,0 +1,406 @@
+{
+  "name": "Настройки и конфигурация",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Идентификация вашего аккаунта",
+      "file": "tenant-id.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Как комментарии привязаны к страницам и статьям",
+      "file": "url-id.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Отображение одних и тех же комментариев на разных страницах",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Пользовательская стилизация",
+      "file": "custom-css.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Пользовательские шрифты",
+      "file": "custom-fonts.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Удаление брендинга",
+      "file": "remove-branding.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Поддержка тёмных фонов (тёмная тема)",
+      "file": "has-dark-background.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Переключение тёмной темы",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Замена текста",
+      "file": "translations.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Изменение аватара по умолчанию",
+      "file": "default-avatar-src.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключение аватаров",
+      "file": "hide-avatars.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключение всех стандартных стилей",
+      "file": "no-styles.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Ссылки из комментариев на страницы",
+      "file": "url.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Сворачивать ответы по умолчанию",
+      "file": "collapse-replies.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Включить визуальный редактор (WYSIWYG)",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключение панели инструментов",
+      "file": "disable-toolbar.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключение блокировки",
+      "file": "disable-blocking.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Определение страницы для отображения",
+      "file": "starting-page.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Переключение обсуждений без перезагрузки страницы",
+      "file": "switching-comment-threads.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Абсолютные даты (отключить удобочитаемые отметки времени)",
+      "file": "absolute-dates.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Показать абсолютные и относительные даты",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Добавление текста заголовка",
+      "file": "header-html.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отображать ссылки как текст",
+      "file": "render-links-as-text.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Переключать комментарии кнопкой",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Настройка текста счётчика комментариев",
+      "file": "comment-count-format.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить перенаправление изображений",
+      "file": "disable-image-redirect.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить автоматическое создание хэштегов",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить колокольчик уведомлений",
+      "file": "disable-notification-bell.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить профили",
+      "file": "disable-profiles.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить сообщение об успехе",
+      "file": "disable-success-message.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Изменить рейтинг контента GIF",
+      "file": "gif-rating.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Модерация изображений",
+      "file": "image-content-moderation.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Изменить стиль голосования",
+      "file": "vote-style.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить удаление",
+      "file": "disable-deleting.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключить редактирование",
+      "file": "disable-editing.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Выделение новых комментариев",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Размеры страниц",
+      "file": "page-size.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Шаблоны писем",
+      "file": "email-templates.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Форматы имён пользователей",
+      "file": "user-name-formats.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Отключение загрузки изображений",
+      "file": "no-image-uploads.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Включить поле поиска",
+      "file": "enable-search.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Включить спойлеры",
+      "file": "enable-spoilers.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Включить счётчик просмотров комментариев",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Внешний вид"
+    },
+    {
+      "name": "Показывать живые комментарии сразу",
+      "file": "show-live-right-away.md",
+      "subCat": "Живые комментарии"
+    },
+    {
+      "name": "Отключение живых комментариев",
+      "file": "disable-live-commenting.md",
+      "subCat": "Живые комментарии"
+    },
+    {
+      "name": "Новые живые комментарии внизу",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Живые комментарии"
+    },
+    {
+      "name": "Включение бесконечной прокрутки",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Пагинация и сортировка"
+    },
+    {
+      "name": "Изменение направления сортировки по умолчанию",
+      "file": "default-sort-direction.md",
+      "subCat": "Пагинация и сортировка"
+    },
+    {
+      "name": "Отображать все комментарии сразу — отключить пагинацию",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Пагинация и сортировка"
+    },
+    {
+      "name": "Переместить поле ответа после комментариев",
+      "file": "input-after-comments.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Ограничение длины комментария",
+      "file": "max-comment-character-length.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Отключить многострочные комментарии",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Ограничить количество комментариев на пользователя",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Запретить новые комментарии верхнего уровня",
+      "file": "no-new-root-comments.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Максимальная глубина ответов",
+      "file": "max-reply-depth.md",
+      "subCat": "Поле ответа"
+    },
+    {
+      "name": "Обзор единого входа (SSO)",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Пользовательские интеграции — безопасный единый вход (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Пользовательские интеграции — простой единый вход (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Пользовательские интеграции — миграция с Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Пользовательские интеграции — миграция с Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Защита обсуждений с помощью единого входа",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "Разрешить анонимные комментарии",
+      "file": "allow-anon.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Предотвращение истечения срока действия анонимных комментариев",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Отключить поля для e-mail",
+      "file": "disable-email-inputs.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Отключить метку «непроверено»",
+      "file": "disable-unverified-label.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Разрешить анонимное голосование",
+      "file": "allow-anon-votes.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Установка имени пользователя по умолчанию",
+      "file": "default-username.md",
+      "subCat": "Анонимные комментарии"
+    },
+    {
+      "name": "Обратные вызовы",
+      "file": "callbacks.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Ручное задание локали пользователя",
+      "file": "locale.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Ограничение разрешённых языков",
+      "file": "allowed-languages.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Заголовки страниц",
+      "file": "page-title.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Запретить новые ответы и отключить голоса",
+      "file": "readonly.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Ограничение доменов ссылок",
+      "file": "restricting-link-domains.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Счётчик комментариев и подсчёт всех вложенных ответов",
+      "file": "count-all.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Включение ссылок авторов комментариев",
+      "file": "enable-commenter-links.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Группы модерации",
+      "file": "moderation-group-ids.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Идентификаторы групп для упоминаний",
+      "file": "mention-group-ids.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Обход сторонних cookie",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Удаление комментариев с ответами",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Разное"
+    },
+    {
+      "name": "Показывать бейджи в верхней панели",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Внешний вид"
+    }
+  ]
+}

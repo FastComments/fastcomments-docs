@@ -1,0 +1,42 @@
+{
+  "name": "Установка Moodle",
+  "pageHeader": "Добавление комментариев на сайты Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Получить доступ к серверу",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Шаг 2: Определить файл представления",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Шаг 3: Добавить код",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Успех на сайте участника",
+      "file": "moodle-success.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Ошибки домена сайта участника",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Настройка сайта участника",
+      "file": "moodle-customize.md",
+      "subCat": "Установка сайта Moodle"
+    },
+    {
+      "name": "Хотите выделенный плагин?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Выделенный плагин?"
+    }
+  ]
+}

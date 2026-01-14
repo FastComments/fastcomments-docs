@@ -1,0 +1,31 @@
+{
+  "name": "Analityka",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Tło",
+      "file": "analytics-background.md",
+      "subCat": "Analityka"
+    },
+    {
+      "name": "Analityka rozliczeń",
+      "file": "analytics-billing.md",
+      "subCat": "Analityka"
+    },
+    {
+      "name": "Analityka witryny",
+      "file": "analytics-site.md",
+      "subCat": "Analityka"
+    },
+    {
+      "name": "Dokładność analityki w porównaniu z innymi platformami",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analityka"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Śledzenie"
+    }
+  ]
+}

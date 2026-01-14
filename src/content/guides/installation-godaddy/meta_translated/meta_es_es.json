@@ -1,0 +1,37 @@
+{
+  "name": "Instalación de GoDaddy",
+  "pageHeader": "Añadir comentarios a sitios de GoDaddy",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Añadir un área de código",
+      "file": "godaddy-step-1.md",
+      "subCat": "Instalación de GoDaddy"
+    },
+    {
+      "name": "Paso 2: Añadir el código de FastComments.com",
+      "file": "godaddy-step-2.md",
+      "subCat": "Instalación de GoDaddy"
+    },
+    {
+      "name": "Paso 3: Publicar",
+      "file": "godaddy-step-3.md",
+      "subCat": "Instalación de GoDaddy"
+    },
+    {
+      "name": "Éxito",
+      "file": "godaddy-success.md",
+      "subCat": "Instalación de GoDaddy"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Instalación de GoDaddy"
+    },
+    {
+      "name": "Personalización",
+      "file": "godaddy-customize.md",
+      "subCat": "Instalación de GoDaddy"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Добавяне на коментиране в реално време към сайтове на Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Добавете HTML блок",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Инсталация"
+    },
+    {
+      "name": "2. Вмъкнете кода",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Инсталация"
+    },
+    {
+      "name": "3. Намерете настройката за ширина",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Инсталация"
+    },
+    {
+      "name": "4. Коригирайте оформлението",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Инсталация"
+    },
+    {
+      "name": "Успех",
+      "file": "bubble-io-success.md",
+      "subCat": "Инсталация"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

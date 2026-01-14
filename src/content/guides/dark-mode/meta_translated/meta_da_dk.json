@@ -1,0 +1,21 @@
+{
+  "name": "Mørkt tema",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Automatisk registrering",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Manuel konfiguration",
+      "file": "dark-mode-manual.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Understøttelse af mørkt tema i WordPress Networker-temaet",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress-temaer"
+    }
+  ]
+}

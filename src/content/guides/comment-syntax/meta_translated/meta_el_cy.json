@@ -1,0 +1,16 @@
+{
+  "name": "Σύνταξη Σχολίων",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βασική Μορφοποίηση",
+      "file": "basic-formatting.md",
+      "subCat": "Μορφοποίηση"
+    },
+    {
+      "name": "Ασφάλεια",
+      "file": "security.md",
+      "subCat": "Ασφάλεια"
+    }
+  ]
+}

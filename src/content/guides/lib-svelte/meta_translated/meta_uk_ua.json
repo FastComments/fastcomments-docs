@@ -1,0 +1,24 @@
+{
+  "name": "Бібліотека Svelte",
+  "pageHeader": "Бібліотека FastComments для Svelte",
+  "itemsOrdered": [
+    {
+      "name": "Віджети",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Розробка",
+      "file": "developing-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Збірка",
+      "file": "building-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

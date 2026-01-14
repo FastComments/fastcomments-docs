@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Godaddy",
+  "pageHeader": "Додати коментарі до сайтів Godaddy",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Додати область для коду",
+      "file": "godaddy-step-1.md",
+      "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Крок 2: Додати код FastComments.com",
+      "file": "godaddy-step-2.md",
+      "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Крок 3: Опублікувати",
+      "file": "godaddy-step-3.md",
+      "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Успішно",
+      "file": "godaddy-success.md",
+      "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Налаштування",
+      "file": "godaddy-customize.md",
+      "subCat": "Встановлення Godaddy"
+    }
+  ]
+}

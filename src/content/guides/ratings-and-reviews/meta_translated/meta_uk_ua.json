@@ -1,0 +1,56 @@
+{
+  "name": "Оцінки та відгуки",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Особливості",
+      "file": "features.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Кому доступно",
+      "file": "who-gets-it.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Ціноутворення",
+      "file": "pricing.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Виберіть тип відображення",
+      "file": "choose-display-type.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Визначте свої запитання",
+      "file": "define-your-questions.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Як працює конфігурація",
+      "file": "how-configuration-works.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Віджет підсумків",
+      "file": "summary-widget-installation.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Перегляд оцінок",
+      "file": "viewing-ratings.md",
+      "subCat": "Звітність"
+    },
+    {
+      "name": "Інтеграція через API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Звітність"
+    },
+    {
+      "name": "Демонстрація підсумків",
+      "file": "summary-demo.md",
+      "subCat": "Демонстрація підсумків"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "GoHighLevel 설치",
+  "pageHeader": "GoHighLevel 사이트에 댓글 추가하기",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 코스 편집",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "2단계: 고급 설정 열기",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "3단계: 코드 복사",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "4단계: 코드 붙여넣기",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "멤버 사이트 설치 성공",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "멤버 사이트 도메인 오류",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "멤버 사이트 맞춤 설정",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "GoHighLevel 멤버 사이트 설치"
+    },
+    {
+      "name": "1단계: 커스텀 코드 요소 추가",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "GoHighLevel 사이트 설치"
+    },
+    {
+      "name": "2단계: 코드 복사 및 붙여넣기",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "GoHighLevel 사이트 설치"
+    },
+    {
+      "name": "사이트 설치 성공",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "GoHighLevel 사이트 설치"
+    },
+    {
+      "name": "사이트 도메인 오류",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "GoHighLevel 사이트 설치"
+    },
+    {
+      "name": "사이트 맞춤 설정",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "GoHighLevel 사이트 설치"
+    }
+  ]
+}

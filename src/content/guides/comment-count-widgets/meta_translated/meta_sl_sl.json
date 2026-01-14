@@ -1,0 +1,21 @@
+{
+  "name": "Gradniki za štetje komentarjev",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev gradnika za štetje komentarjev",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Namestitev"
+    },
+    {
+      "name": "Množična namestitev gradnikov za štetje komentarjev",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Namestitev"
+    },
+    {
+      "name": "API-ji za štetje komentarjev",
+      "file": "comment-count-apis.md",
+      "subCat": "API-ji za štetje komentarjev"
+    }
+  ]
+}

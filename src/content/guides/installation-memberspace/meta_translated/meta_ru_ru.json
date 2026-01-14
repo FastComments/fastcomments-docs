@@ -1,0 +1,22 @@
+{
+  "name": "Установка MemberSpace",
+  "pageHeader": "Добавление комментариев с помощью MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Код",
+      "file": "memberspace-step-1.md",
+      "subCat": "Установка MemberSpace"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Установка MemberSpace"
+    },
+    {
+      "name": "Настройка",
+      "file": "memberspace-customize.md",
+      "subCat": "Установка MemberSpace"
+    }
+  ]
+}

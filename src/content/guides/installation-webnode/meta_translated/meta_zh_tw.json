@@ -1,0 +1,42 @@
+{
+  "name": "Webnode 安裝",
+  "pageHeader": "在 Webnode 網站新增留言",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：編輯您的頁面",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "步驟 2：新增區段與 HTML 區塊",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "步驟 3：複製並貼上程式碼片段",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "步驟 4：發佈",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "成功",
+      "file": "webnode-success.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode 安裝"
+    }
+  ]
+}

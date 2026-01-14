@@ -1,0 +1,42 @@
+{
+  "name": "ספריית React Native",
+  "pageHeader": "ספריית FastComments עבור React Native",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "שקול שימוש ב-Native SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש - ווידג'ט התגובות בזמן אמת",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש - ווידג'ט הצ'אט בזמן אמת",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש - SSO (כניסה אחידה)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "תלויות עמית",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

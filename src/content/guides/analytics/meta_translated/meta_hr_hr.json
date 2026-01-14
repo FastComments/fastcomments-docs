@@ -1,0 +1,31 @@
+{
+  "name": "Analitika",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Pozadina",
+      "file": "analytics-background.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Analitika naplate",
+      "file": "analytics-billing.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Analitika web-lokacije",
+      "file": "analytics-site.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Točnost analitike u usporedbi s drugim platformama",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Praćenje"
+    }
+  ]
+}

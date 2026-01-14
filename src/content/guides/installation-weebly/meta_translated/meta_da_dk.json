@@ -1,0 +1,37 @@
+{
+  "name": "Weebly-installation",
+  "pageHeader": "Tilføj kommentarer til Weebly-sider",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Åbn blogindstillingerne",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Trin 2: Tilføj FastComments.com-koden",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Trin 3: Udgiv!",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Succes",
+      "file": "weebly-success.md",
+      "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly-installation"
+    }
+  ]
+}

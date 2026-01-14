@@ -1,0 +1,406 @@
+{
+  "name": "Налаштування та конфігурація",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Ідентифікація вашого облікового запису",
+      "file": "tenant-id.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Як коментарі прив'язуються до сторінок та статей",
+      "file": "url-id.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Відображення одних і тих самих коментарів на різних сторінках",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Користувацьке оформлення",
+      "file": "custom-css.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Користувацькі шрифти",
+      "file": "custom-fonts.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Видалення брендингу",
+      "file": "remove-branding.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Підтримка темного фону (темний режим)",
+      "file": "has-dark-background.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Перемикання темного режиму",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Перевизначення тексту",
+      "file": "translations.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Зміна аватара за замовчуванням",
+      "file": "default-avatar-src.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнення аватарів",
+      "file": "hide-avatars.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнення всіх стилів за замовчуванням",
+      "file": "no-styles.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Посилання з коментарів на сторінки",
+      "file": "url.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Згортати відповіді за замовчуванням",
+      "file": "collapse-replies.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Увімкнути WYSIWYG-редактор",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнення панелі інструментів",
+      "file": "disable-toolbar.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнення блокування",
+      "file": "disable-blocking.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Визначення, яку сторінку відображати",
+      "file": "starting-page.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Перемикання гілок коментарів без перезавантаження сторінки",
+      "file": "switching-comment-threads.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Абсолютні дати (відключити зручні часові позначки)",
+      "file": "absolute-dates.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Показувати як абсолютні, так і відносні дати",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Додавання тексту заголовка",
+      "file": "header-html.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Відображати посилання як текст",
+      "file": "render-links-as-text.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Перемикання коментарів за допомогою кнопки",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Налаштування тексту лічильника коментарів",
+      "file": "comment-count-format.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути перенаправлення зображень",
+      "file": "disable-image-redirect.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути автоматичне створення хештегів",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути дзвіночок сповіщень",
+      "file": "disable-notification-bell.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути профілі",
+      "file": "disable-profiles.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути повідомлення про успіх",
+      "file": "disable-success-message.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Змінити рейтинг вмісту GIF",
+      "file": "gif-rating.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Модерація зображень",
+      "file": "image-content-moderation.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Змінити стиль голосування",
+      "file": "vote-style.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути видалення",
+      "file": "disable-deleting.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнути редагування",
+      "file": "disable-editing.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Виділення нових коментарів",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Розміри сторінок",
+      "file": "page-size.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Шаблони електронних листів",
+      "file": "email-templates.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Формати імен користувачів",
+      "file": "user-name-formats.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Вимкнення завантаження зображень",
+      "file": "no-image-uploads.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Увімкнути поле пошуку",
+      "file": "enable-search.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Увімкнути спойлери",
+      "file": "enable-spoilers.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Увімкнути лічильники переглядів коментарів",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Зовнішній вигляд"
+    },
+    {
+      "name": "Показувати живі коментарі одразу",
+      "file": "show-live-right-away.md",
+      "subCat": "Живі коментарі"
+    },
+    {
+      "name": "Вимкнення живих коментарів",
+      "file": "disable-live-commenting.md",
+      "subCat": "Живі коментарі"
+    },
+    {
+      "name": "Розміщувати нові живі коментарі внизу",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Живі коментарі"
+    },
+    {
+      "name": "Увімкнення безкінечного прокручування",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Пагінація та сортування"
+    },
+    {
+      "name": "Зміна напрямку сортування за замовчуванням",
+      "file": "default-sort-direction.md",
+      "subCat": "Пагінація та сортування"
+    },
+    {
+      "name": "Відображення всіх коментарів одразу — вимкнути пагінацію",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Пагінація та сортування"
+    },
+    {
+      "name": "Переміщення поля відповіді після коментарів",
+      "file": "input-after-comments.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Обмеження довжини коментаря",
+      "file": "max-comment-character-length.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Вимкнути багаторядкові коментарі",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Обмежити кількість коментарів на одного користувача",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Запобігти створенню нових коментарів верхнього рівня",
+      "file": "no-new-root-comments.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Максимальна глибина відповідей",
+      "file": "max-reply-depth.md",
+      "subCat": "Поле відповіді"
+    },
+    {
+      "name": "Огляд єдиного входу (SSO)",
+      "file": "sso.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Користувацькі інтеграції — захищений єдиний вхід (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Користувацькі інтеграції — простий єдиний вхід (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Користувацькі інтеграції — міграція з Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Користувацькі інтеграції — міграція з Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Захист гілок коментарів за допомогою єдиного входу",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "Єдиний вхід (SSO)"
+    },
+    {
+      "name": "Дозволити анонімні коментарі",
+      "file": "allow-anon.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Запобігання закінченню терміну дії анонімних коментарів",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Вимкнути введення електронної пошти",
+      "file": "disable-email-inputs.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Вимкнути мітку «Непідтверджено»",
+      "file": "disable-unverified-label.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Дозволити анонімне голосування",
+      "file": "allow-anon-votes.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Встановлення імені користувача за замовчуванням",
+      "file": "default-username.md",
+      "subCat": "Анонімні коментарі"
+    },
+    {
+      "name": "Зворотні виклики",
+      "file": "callbacks.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Ручне визначення локалі користувача",
+      "file": "locale.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Обмеження дозволених мов",
+      "file": "allowed-languages.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Заголовки сторінок",
+      "file": "page-title.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Запобігти новим відповідям і вимкнути голосування",
+      "file": "readonly.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Обмеження доменів посилань",
+      "file": "restricting-link-domains.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Кількість коментарів та підрахунок усіх вкладених відповідей",
+      "file": "count-all.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Увімкнення посилань коментаторів",
+      "file": "enable-commenter-links.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Групи модерації",
+      "file": "moderation-group-ids.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Ідентифікатори груп для згадування",
+      "file": "mention-group-ids.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Обхід сторонніх cookie",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Видалення коментарів з відповідями",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Різне"
+    },
+    {
+      "name": "Показувати бейджі у верхній панелі",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Зовнішній вигляд"
+    }
+  ]
+}

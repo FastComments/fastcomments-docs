@@ -1,0 +1,31 @@
+{
+  "name": "SSO Контрола приступа",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта је контрола приступа?",
+      "file": "what-is-access-control.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како функционише",
+      "file": "how-it-works.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Спецификација",
+      "file": "access-control-spec.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Имплементација",
+      "file": "implementation.md",
+      "subCat": "Имплементација"
+    },
+    {
+      "name": "Примери API позива",
+      "file": "api-example.md",
+      "subCat": "Имплементација"
+    }
+  ]
+}

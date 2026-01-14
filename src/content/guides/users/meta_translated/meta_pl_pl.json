@@ -1,0 +1,46 @@
+{
+  "name": "Użytkownicy",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Rodzaje użytkowników",
+      "file": "types-of-users.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Nazwy użytkowników",
+      "file": "usernames.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Administratorzy",
+      "file": "administrator-users.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Komentatorzy",
+      "file": "commenter-users.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Dodawanie administratorów",
+      "file": "adding-administrators.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Dodawanie moderatorów",
+      "file": "adding-moderators.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Aktualizacja uprawnień administratorów",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Deweloperzy",
+      "file": "developers.md",
+      "subCat": "Konfiguracja"
+    }
+  ]
+}

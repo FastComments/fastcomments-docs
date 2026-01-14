@@ -1,0 +1,21 @@
+{
+  "name": "Üçüncü Taraf Çerezleri",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Üçüncü Taraf Çerezleri Nedir",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "FastComments'in Üçüncü Taraf Çerezlerini Nasıl Kullandığı",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Üçüncü Taraf Çerezlerini Etkinleştir",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Etkinleştirme"
+    }
+  ]
+}

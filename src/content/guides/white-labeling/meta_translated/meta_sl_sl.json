@@ -1,0 +1,36 @@
+{
+  "name": "White labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj je white-labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kako pridobiti white-labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Nastavitev white-labelinga",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Uporaba nadzorne plošče",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Uporaba API-ja",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Upravljanje najemnikov z belimi etiketami",
+      "file": "white-labeling-managing.md",
+      "subCat": "Upravljanje najemnikov"
+    }
+  ]
+}

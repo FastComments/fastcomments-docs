@@ -1,0 +1,51 @@
+{
+  "name": "Perfiles de Usuario",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Conceptos básicos del perfil",
+      "file": "profile-basics.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Personalización del perfil",
+      "file": "customizing-profiles.md",
+      "subCat": "Personalización"
+    },
+    {
+      "name": "Configuración de privacidad",
+      "file": "privacy-settings.md",
+      "subCat": "Personalización"
+    },
+    {
+      "name": "Insignias",
+      "file": "badges.md",
+      "subCat": "Funciones"
+    },
+    {
+      "name": "Comentarios del perfil",
+      "file": "profile-comments.md",
+      "subCat": "Funciones"
+    },
+    {
+      "name": "Mensajes directos",
+      "file": "direct-messaging.md",
+      "subCat": "Funciones"
+    },
+    {
+      "name": "Feed de actividad",
+      "file": "activity-feed.md",
+      "subCat": "Funciones"
+    },
+    {
+      "name": "Notas de usuario",
+      "file": "user-notes.md",
+      "subCat": "Funciones"
+    },
+    {
+      "name": "Estilizado de perfiles",
+      "file": "styling-profiles.md",
+      "subCat": "Para desarrolladores"
+    }
+  ]
+}

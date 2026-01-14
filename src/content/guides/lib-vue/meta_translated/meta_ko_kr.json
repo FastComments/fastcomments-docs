@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 라이브러리",
+  "pageHeader": "FastComments Vue 2 라이브러리",
+  "itemsOrdered": [
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "사용법",
+      "file": "usage-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "현재 페이지 업데이트 (SPA 예제)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "운영 환경에서",
+      "file": "in-production-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

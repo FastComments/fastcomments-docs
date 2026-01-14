@@ -1,0 +1,21 @@
+{
+  "name": "Поддерживаемые языки",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Поддерживаемые языки",
+      "file": "supported-languages.md",
+      "subCat": "Поддерживаемые языки"
+    },
+    {
+      "name": "Какие части FastComments локализованы?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Поддерживаемые языки"
+    },
+    {
+      "name": "Запрос на добавление поддержки нового языка",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Поддерживаемые языки"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Инсталиране на ThriveCart Learn+",
+  "pageHeader": "Добавяне на коментари към курсовете в ThriveCart Learn+",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Подготовка на курса",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "Инсталиране на ThriveCart Learn+"
+    },
+    {
+      "name": "Стъпка 2: Добавяне на персонализиран код",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "Инсталиране на ThriveCart Learn+"
+    },
+    {
+      "name": "Успех",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "Инсталиране на ThriveCart Learn+"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "Инсталиране на ThriveCart Learn+"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "Инсталиране на ThriveCart Learn+"
+    }
+  ]
+}

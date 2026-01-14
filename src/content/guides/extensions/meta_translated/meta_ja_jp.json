@@ -1,0 +1,31 @@
+{
+  "name": "拡張機能の作成",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "拡張機能のライフサイクル",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "拡張機能の定義",
+      "file": "defining-an-extension.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "拡張機能の例",
+      "file": "example-extensions.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "拡張機能オブジェクト",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "拡張機能のAPI",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

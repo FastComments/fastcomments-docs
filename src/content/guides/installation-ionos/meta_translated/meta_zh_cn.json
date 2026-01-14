@@ -1,0 +1,37 @@
+{
+  "name": "Ionos 安装",
+  "pageHeader": "在 Ionos 网站添加评论",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：添加联系表单",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos 安装"
+    },
+    {
+      "name": "步骤 2：添加 FastComments.com 代码",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos 安装"
+    },
+    {
+      "name": "步骤 3：发布",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos 安装"
+    },
+    {
+      "name": "成功",
+      "file": "ionos-success.md",
+      "subCat": "Ionos 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos 安装"
+    }
+  ]
+}

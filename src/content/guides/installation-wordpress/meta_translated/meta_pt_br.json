@@ -1,0 +1,72 @@
+{
+  "name": "Instalação do WordPress",
+  "pageHeader": "Adicionar Comentários em Tempo Real a Sites WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Início Rápido",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Resumo"
+    },
+    {
+      "name": "Instalação",
+      "file": "wordpress-installation.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Personalização",
+      "file": "wordpress-customize.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Moderação",
+      "file": "wordpress-moderation.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Usuários, Moderadores e Administradores",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Sites Somente para Membros (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Notificações",
+      "file": "wordpress-notifications.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Temas Personalizados",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Sincronização de Volta com o WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Contagem de Comentários",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Comunicação entre a Instalação do WordPress e o Servidor FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Erros de Domínio",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Instalação do WordPress"
+    },
+    {
+      "name": "Desativar vs Desinstalar o Plugin",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Remoção do Plugin"
+    }
+  ]
+}

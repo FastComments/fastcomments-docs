@@ -1,0 +1,31 @@
+{
+  "name": "アナリティクス",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "analytics-background.md",
+      "subCat": "アナリティクス"
+    },
+    {
+      "name": "請求分析",
+      "file": "analytics-billing.md",
+      "subCat": "アナリティクス"
+    },
+    {
+      "name": "サイトアナリティクス",
+      "file": "analytics-site.md",
+      "subCat": "アナリティクス"
+    },
+    {
+      "name": "他プラットフォームとのアナリティクス精度の比較",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "アナリティクス"
+    },
+    {
+      "name": "Google アナリティクス",
+      "file": "analytics-google.md",
+      "subCat": "トラッキング"
+    }
+  ]
+}

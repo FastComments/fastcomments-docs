@@ -1,0 +1,126 @@
+{
+  "name": "Moderation",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "The Moderate Comments Page",
+      "file": "moderate-comments-page.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Moderators",
+      "file": "moderators.md",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "Adding Moderators",
+      "file": "moderators-adding.md",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "Moderator Stats",
+      "file": "moderator-stats.md",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "Removing Moderators",
+      "file": "moderators-removing.md",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "How Approvals Work",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Via Email",
+      "file": "moderation-via-email.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Filtering",
+      "file": "filters.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Searching",
+      "file": "search.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Sharing Moderation Links",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "The Comment Thread Viewer",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Actions",
+      "file": "comment-actions.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Deleting Comments",
+      "file": "deleting-comments.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Actions From Comment Widget",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Live Moderating",
+      "file": "comment-actions-live.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Banning Users",
+      "file": "banning-users.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Banning Users With Wildcards",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Flagging",
+      "file": "flagging.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Bulk Actions",
+      "file": "bulk-actions.md",
+      "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Moderation Groups",
+      "file": "moderation-groups.md",
+      "subCat": "Moderation Groups"
+    },
+    {
+      "name": "Moderation Settings",
+      "file": "moderation-settings.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Spam Detection",
+      "file": "spam-detection.md",
+      "subCat": "Spam & Profanity"
+    },
+    {
+      "name": "Masking Profanity",
+      "file": "profanity-mask.md",
+      "subCat": "Spam & Profanity"
+    },
+    {
+      "name": "Comment Logs",
+      "file": "comment-logs.md",
+      "subCat": "Moderation Workflow"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Βιβλιοθήκη Svelte",
+  "pageHeader": "Βιβλιοθήκη FastComments για Svelte",
+  "itemsOrdered": [
+    {
+      "name": "Γραφικά στοιχεία",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ανάπτυξη",
+      "file": "developing-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατασκευή",
+      "file": "building-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

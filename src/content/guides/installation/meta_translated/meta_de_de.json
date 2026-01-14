@@ -1,0 +1,61 @@
+{
+  "name": "Installation",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Plugins von Drittanbietern"
+    },
+    {
+      "name": "VanillaJS / HTML-Snippet",
+      "file": "vanillajs.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Mehrere Instanzen auf derselben Seite",
+      "file": "multiple-instances.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Häufige Anwendungsfälle",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Fehlerbehebung bei häufigen Problemen",
+      "file": "debugging-common-issues.md",
+      "subCat": "Benutzerdefinierte Installationen"
+    },
+    {
+      "name": "Notion und Google Sites",
+      "file": "oembed.md",
+      "subCat": "Einbetten in Dokumente"
+    }
+  ]
+}

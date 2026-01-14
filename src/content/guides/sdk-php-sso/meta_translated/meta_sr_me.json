@@ -1,0 +1,24 @@
+{
+  "name": "PHP SSO SDK",
+  "pageHeader": "FastComments PHP SSO SDK",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Први кораци",
+      "type": "readme"
+    },
+    {
+      "name": "Коришћење",
+      "file": "usage-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Документација",
+      "file": "documentation-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

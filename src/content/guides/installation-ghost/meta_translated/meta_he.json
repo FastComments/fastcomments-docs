@@ -1,0 +1,57 @@
+{
+  "name": "התקנת Ghost",
+  "pageHeader": "הוספת תגובות חיות לחברים בלבד לאתרים ב-Ghost",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הורד את התבנית שלך",
+      "file": "ghost-step-1.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 2: התקן את התבנית באופן מקומי",
+      "file": "ghost-step-2.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 3: תן שם לתבנית החדשה",
+      "file": "ghost-step-3.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 4: פתח את תבנית הפוסט",
+      "file": "ghost-step-4.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 5: הוסף את קוד FastComments",
+      "file": "ghost-step-5.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 6: ייצא את התבנית שלך",
+      "file": "ghost-step-6.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שלב 7: העלה את התבנית אל Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "הצלחה!",
+      "file": "ghost-success.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "ghost-domain-errors.md",
+      "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "ghost-customize.md",
+      "subCat": "התקנת Ghost"
+    }
+  ]
+}

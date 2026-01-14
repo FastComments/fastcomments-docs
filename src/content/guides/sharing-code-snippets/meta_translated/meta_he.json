@@ -1,0 +1,31 @@
+{
+  "name": "שיתוף קטעי קוד",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "מהם קטעי קוד?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "קהילות מפתחים",
+      "file": "code-snippets-communities.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "שפות תכנות נתמכות",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הגדרת שיתוף קטעי קוד",
+      "file": "code-snippets-setup.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "שיתוף קטעי קוד",
+      "file": "code-snippets-usage.md",
+      "subCat": "שימוש"
+    }
+  ]
+}

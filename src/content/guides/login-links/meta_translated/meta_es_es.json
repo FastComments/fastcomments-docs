@@ -1,0 +1,26 @@
+{
+  "name": "Enlaces de inicio de sesión",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "¿Qué son los enlaces de inicio de sesión?",
+      "file": "login-links-what-are.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Ventajas de los enlaces de inicio de sesión frente a las contraseñas",
+      "file": "login-links-benefits.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Cómo garantizamos la seguridad de los enlaces de inicio de sesión",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Seguridad"
+    },
+    {
+      "name": "¿A quiénes se les envían los enlaces de inicio de sesión?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Uso"
+    }
+  ]
+}

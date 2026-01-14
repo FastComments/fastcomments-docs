@@ -1,0 +1,22 @@
+{
+  "name": "Εγκατάσταση MemberSpace",
+  "pageHeader": "Προσθήκη σχολίων με το MemberSpace",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "Ο Κώδικας",
+      "file": "memberspace-step-1.md",
+      "subCat": "Εγκατάσταση MemberSpace"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "Εγκατάσταση MemberSpace"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "memberspace-customize.md",
+      "subCat": "Εγκατάσταση MemberSpace"
+    }
+  ]
+}

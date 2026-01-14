@@ -1,0 +1,37 @@
+{
+  "name": "התקנת הוסטינגר",
+  "pageHeader": "הוספת תגובות בזמן אמת לאתרי הוסטינגר",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הוספת ווידג'ט קוד",
+      "file": "hostinger-step-1.md",
+      "subCat": "התקנת אתר ב-הוסטינגר"
+    },
+    {
+      "name": "שלב 2: הוספת הקוד",
+      "file": "hostinger-step-2.md",
+      "subCat": "התקנת אתר ב-הוסטינגר"
+    },
+    {
+      "name": "הצלחה",
+      "file": "hostinger-site-success.md",
+      "subCat": "התקנת אתר ב-הוסטינגר"
+    },
+    {
+      "name": "שגיאות בדומיין של האתר",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "התקנת אתר ב-הוסטינגר"
+    },
+    {
+      "name": "התאמה אישית של האתר",
+      "file": "hostinger-site-customize.md",
+      "subCat": "התקנת אתר ב-הוסטינגר"
+    },
+    {
+      "name": "כפתור לייק צף",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "לייקים צפים ב-הוסטינגר"
+    }
+  ]
+}

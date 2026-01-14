@@ -1,0 +1,96 @@
+{
+  "name": "Mærker",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Grundlæggende",
+      "file": "badge-basics.md",
+      "subCat": "Det grundlæggende"
+    },
+    {
+      "name": "Fremgang",
+      "file": "badge-progression.md",
+      "subCat": "Det grundlæggende"
+    },
+    {
+      "name": "Manuelle mærker",
+      "file": "badge-type-manual.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Antal kommentarer",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Opstemninger",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Svar",
+      "file": "badge-type-replies.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Fastgjorte kommentarer",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Veteran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Natteravn",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Hurtig svartid",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Svar på en specifik side",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Mærketyper"
+    },
+    {
+      "name": "Introduktion til moderatormærker",
+      "file": "moderator-badges.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Slettede kommentarer",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Godkendte kommentarer",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Kommentarer ikke-godkendt",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Gennemgåede kommentarer",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Kommentarer markeret som spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Typer af moderatormærker"
+    },
+    {
+      "name": "Kommentarer markeret som ikke-spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Typer af moderatormærker"
+    }
+  ]
+}

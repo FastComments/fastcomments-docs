@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace-Installation",
+  "pageHeader": "Kommentare zu Squarespace-Seiten hinzufügen",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Live-Kommentare zu Ihrem Blog hinzufügen",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Kommentare zu Ihrem Blog hinzufügen"
+    },
+    {
+      "name": "Schritt 1: Blog-Einstellungen öffnen",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Kommentare zu Ihrem Blog hinzufügen"
+    },
+    {
+      "name": "Schritt 2: Ihren FastComments.com-Code einfügen",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Kommentare zu Ihrem Blog hinzufügen"
+    },
+    {
+      "name": "Erfolgreich",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Kommentare zu Ihrem Blog hinzufügen"
+    },
+    {
+      "name": "Live-Kommentare auf allen Seiten hinzufügen",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Kommentare auf allen Seiten hinzufügen"
+    },
+    {
+      "name": "Schritt 1: Entwicklertools öffnen",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Kommentare auf allen Seiten hinzufügen"
+    },
+    {
+      "name": "Schritt 2: Ihren FastComments.com-Code einfügen",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Kommentare auf allen Seiten hinzufügen"
+    },
+    {
+      "name": "Erfolgreich",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Kommentare auf allen Seiten hinzufügen"
+    },
+    {
+      "name": "Live-Kommentare zu einer bestimmten Seite hinzufügen",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
+    },
+    {
+      "name": "Schritt 1: Code-Block hinzufügen",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
+    },
+    {
+      "name": "Schritt 2: Ihren FastComments.com-Code einfügen",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
+    },
+    {
+      "name": "Erfolgreich",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Nächste Schritte für Squarespace"
+    },
+    {
+      "name": "Anpassung",
+      "file": "squarespace-customize.md",
+      "subCat": "Nächste Schritte für Squarespace"
+    }
+  ]
+}

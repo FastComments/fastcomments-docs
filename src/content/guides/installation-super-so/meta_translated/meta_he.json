@@ -1,0 +1,37 @@
+{
+  "name": "התקנת Super.so",
+  "pageHeader": "הוסף דיונים חיים לאתרי Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: פתח את ההגדרות",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "התקנת Super.so"
+    },
+    {
+      "name": "שלב 2: הוסף קוד מוכן מראש",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "התקנת Super.so"
+    },
+    {
+      "name": "ראו גם: ווידג'ט תגובות רגיל",
+      "file": "super-so-comment-widget.md",
+      "subCat": "התקנת Super.so"
+    },
+    {
+      "name": "הצלחה",
+      "file": "super-so-learn-success.md",
+      "subCat": "התקנת Super.so"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "התקנת Super.so"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "super-so-learn-customize.md",
+      "subCat": "התקנת Super.so"
+    }
+  ]
+}

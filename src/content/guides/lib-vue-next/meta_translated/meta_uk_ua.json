@@ -1,0 +1,42 @@
+{
+  "name": "Бібліотека Vue 3",
+  "pageHeader": "Бібліотека FastComments для Vue 3",
+  "itemsOrdered": [
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Використання",
+      "file": "usage-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Оновлення поточної сторінки (приклад SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "У виробничому середовищі",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Усі віджети та документація",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

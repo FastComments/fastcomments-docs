@@ -1,0 +1,37 @@
+{
+  "name": "Instalación de Zyro",
+  "pageHeader": "Añadir comentarios en vivo a sitios Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Añadir widget de código",
+      "file": "zyro-step-1.md",
+      "subCat": "Instalación del sitio Zyro"
+    },
+    {
+      "name": "Paso 2: Añadir el código",
+      "file": "zyro-step-2.md",
+      "subCat": "Instalación del sitio Zyro"
+    },
+    {
+      "name": "Éxito",
+      "file": "zyro-site-success.md",
+      "subCat": "Instalación del sitio Zyro"
+    },
+    {
+      "name": "Errores de dominio del sitio",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Instalación del sitio Zyro"
+    },
+    {
+      "name": "Personalización del sitio",
+      "file": "zyro-site-customize.md",
+      "subCat": "Instalación del sitio Zyro"
+    },
+    {
+      "name": "Botón flotante de 'Me gusta'",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Botones 'Me gusta' flotantes de Zyro"
+    }
+  ]
+}

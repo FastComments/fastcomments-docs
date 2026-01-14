@@ -1,0 +1,32 @@
+{
+  "name": "Installation af Systeme.io",
+  "pageHeader": "Tilføj kommentarer til en Systeme.io-blog",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Åbn blogtemaets skabelon",
+      "file": "systeme-step-1.md",
+      "subCat": "Installation af Systeme.io"
+    },
+    {
+      "name": "Trin 2: Tilføj FastComments.com-koden",
+      "file": "systeme-step-2.md",
+      "subCat": "Installation af Systeme.io"
+    },
+    {
+      "name": "Succes",
+      "file": "systeme-success.md",
+      "subCat": "Installation af Systeme.io"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Installation af Systeme.io"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "systeme-customize.md",
+      "subCat": "Installation af Systeme.io"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Instalacija Zyro",
+  "pageHeader": "Dodajte komentare uživo na Zyro sajtove",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodajte widget za kod",
+      "file": "zyro-step-1.md",
+      "subCat": "Instalacija Zyro sajta"
+    },
+    {
+      "name": "Korak 2: Dodajte kod",
+      "file": "zyro-step-2.md",
+      "subCat": "Instalacija Zyro sajta"
+    },
+    {
+      "name": "Uspešno",
+      "file": "zyro-site-success.md",
+      "subCat": "Instalacija Zyro sajta"
+    },
+    {
+      "name": "Greške domena sajta",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Instalacija Zyro sajta"
+    },
+    {
+      "name": "Prilagođavanje sajta",
+      "file": "zyro-site-customize.md",
+      "subCat": "Instalacija Zyro sajta"
+    },
+    {
+      "name": "Lebdeće dugme za lajkove",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Lebdeći lajkovi za Zyro"
+    }
+  ]
+}

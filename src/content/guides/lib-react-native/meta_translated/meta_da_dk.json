@@ -1,0 +1,42 @@
+{
+  "name": "React Native-bibliotek",
+  "pageHeader": "FastComments React Native-bibliotek",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Overvej det native SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Brug - Live-kommentar-widget",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Brug - Live-chat-widget",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Brug - SSO",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Peer-afhængigheder",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

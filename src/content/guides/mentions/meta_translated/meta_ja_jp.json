@@ -1,0 +1,31 @@
+{
+  "name": "メンション",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "メンションとは",
+      "file": "what-are-mentions.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ユーザーをタグ付けする方法",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "メンションの使い方"
+    },
+    {
+      "name": "通知",
+      "file": "mentions-notifications.md",
+      "subCat": "メンションの使い方"
+    },
+    {
+      "name": "メンションの自動補完の仕組み",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "メンションの使い方"
+    },
+    {
+      "name": "メンションの候補の作成",
+      "file": "populating-mentions.md",
+      "subCat": "メンションの設定"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Widgets voor reactietelling",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Installatie van de widget voor reactietelling",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "Bulkinstallatie van widgets voor reactietelling",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Installatie"
+    },
+    {
+      "name": "API's voor reactietelling",
+      "file": "comment-count-apis.md",
+      "subCat": "API's voor reactietelling"
+    }
+  ]
+}

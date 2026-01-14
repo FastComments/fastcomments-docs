@@ -1,0 +1,11 @@
+{
+  "name": "Dinamičko dodavanje i zamjena niti komentara",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dinamičko dodavanje i zamjena niti komentara",
+      "file": "swap-widgets-example.md",
+      "subCat": "Primjeri"
+    }
+  ]
+}

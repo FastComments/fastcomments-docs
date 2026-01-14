@@ -1,0 +1,37 @@
+{
+  "name": "Namestitev Weebly",
+  "pageHeader": "Dodajte komentarje na spletna mesta Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Odprite nastavitve bloga",
+      "file": "weebly-step-1.md",
+      "subCat": "Namestitev Weebly"
+    },
+    {
+      "name": "Korak 2: Dodajte kodo FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "Namestitev Weebly"
+    },
+    {
+      "name": "Korak 3: Objavite!",
+      "file": "weebly-step-3.md",
+      "subCat": "Namestitev Weebly"
+    },
+    {
+      "name": "Uspeh",
+      "file": "weebly-success.md",
+      "subCat": "Namestitev Weebly"
+    },
+    {
+      "name": "Napake domene",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Namestitev Weebly"
+    },
+    {
+      "name": "Prilagoditev",
+      "file": "weebly-customize.md",
+      "subCat": "Namestitev Weebly"
+    }
+  ]
+}

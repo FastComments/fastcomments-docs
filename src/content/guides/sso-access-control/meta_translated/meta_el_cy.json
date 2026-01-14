@@ -1,0 +1,31 @@
+{
+  "name": "Έλεγχος Πρόσβασης SSO",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι ο Έλεγχος Πρόσβασης;",
+      "file": "what-is-access-control.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς Λειτουργεί",
+      "file": "how-it-works.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Η Προδιαγραφή",
+      "file": "access-control-spec.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Υλοποίηση",
+      "file": "implementation.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Παραδείγματα Κλήσεων API",
+      "file": "api-example.md",
+      "subCat": "Υλοποίηση"
+    }
+  ]
+}

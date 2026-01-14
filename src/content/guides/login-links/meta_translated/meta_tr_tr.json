@@ -1,0 +1,26 @@
+{
+  "name": "Giriş Bağlantıları",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Giriş Bağlantıları Nedir?",
+      "file": "login-links-what-are.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Giriş Bağlantılarının Parolalara Göre Avantajları",
+      "file": "login-links-benefits.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Giriş Bağlantılarının Güvenliğini Nasıl Sağlıyoruz",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Güvenlik"
+    },
+    {
+      "name": "Giriş Bağlantıları Kimlere Gönderilir?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Kullanım"
+    }
+  ]
+}

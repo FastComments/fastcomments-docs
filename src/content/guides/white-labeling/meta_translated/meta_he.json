@@ -1,0 +1,36 @@
+{
+  "name": "מיתוג לבן",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "מהו מיתוג לבן",
+      "file": "white-labeling-background.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "כיצד לקבל מיתוג לבן",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "הגדרת מיתוג לבן",
+      "file": "white-labeling-process.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "שימוש בלוח המחוונים",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "שימוש ב-API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "ניהול דיירים בעלי מיתוג לבן",
+      "file": "white-labeling-managing.md",
+      "subCat": "ניהול דיירים"
+    }
+  ]
+}

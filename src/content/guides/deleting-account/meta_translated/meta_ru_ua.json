@@ -1,0 +1,16 @@
+{
+  "name": "Удаление аккаунта",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Удаление аккаунта",
+      "file": "deleting-your-account.md",
+      "subCat": "Комментаторы и арендаторы"
+    },
+    {
+      "name": "Отмена вашей подписки",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Арендаторы"
+    }
+  ]
+}

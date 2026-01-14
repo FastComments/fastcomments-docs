@@ -1,0 +1,31 @@
+{
+  "name": "Wzmianki",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym są wzmianki",
+      "file": "what-are-mentions.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Jak oznaczyć użytkownika",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Korzystanie ze wzmianek"
+    },
+    {
+      "name": "Powiadomienia",
+      "file": "mentions-notifications.md",
+      "subCat": "Korzystanie ze wzmianek"
+    },
+    {
+      "name": "Jak działa autouzupełnianie wzmianek",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Korzystanie ze wzmianek"
+    },
+    {
+      "name": "Uzupełnianie wzmianek",
+      "file": "populating-mentions.md",
+      "subCat": "Konfigurowanie wzmianek"
+    }
+  ]
+}

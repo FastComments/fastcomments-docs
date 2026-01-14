@@ -1,0 +1,77 @@
+{
+  "name": "Инсталација Squarespace",
+  "pageHeader": "Додавање коментара на Squarespace сајтове",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Додавање коментара уживо на ваш блог",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Додавање коментара на ваш блог"
+    },
+    {
+      "name": "Корак 1: Отворите подешавања блога",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Додавање коментара на ваш блог"
+    },
+    {
+      "name": "Корак 2: Налепите ваш FastComments.com код",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Додавање коментара на ваш блог"
+    },
+    {
+      "name": "Успешно",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Додавање коментара на ваш блог"
+    },
+    {
+      "name": "Додавање коментара уживо на све странице",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Додавање коментара на све странице"
+    },
+    {
+      "name": "Корак 1: Отворите алатке за програмере",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Додавање коментара на све странице"
+    },
+    {
+      "name": "Корак 2: Налепите ваш FastComments.com код",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Додавање коментара на све странице"
+    },
+    {
+      "name": "Успешно",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Додавање коментара на све странице"
+    },
+    {
+      "name": "Додавање коментара уживо на одређену страницу",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Додавање коментара на одређену страницу"
+    },
+    {
+      "name": "Корак 1: Додајте блок кода",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Додавање коментара на одређену страницу"
+    },
+    {
+      "name": "Корак 2: Налепите ваш FastComments.com код",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Додавање коментара на одређену страницу"
+    },
+    {
+      "name": "Успешно",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Додавање коментара на одређену страницу"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Следећи кораци за Squarespace"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "squarespace-customize.md",
+      "subCat": "Следећи кораци за Squarespace"
+    }
+  ]
+}

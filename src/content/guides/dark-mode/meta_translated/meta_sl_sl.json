@@ -1,0 +1,21 @@
+{
+  "name": "Temni način",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Samodejno zaznavanje",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Ročna konfiguracija",
+      "file": "dark-mode-manual.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Podpora temnega načina za temo WordPress Networker",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress teme"
+    }
+  ]
+}

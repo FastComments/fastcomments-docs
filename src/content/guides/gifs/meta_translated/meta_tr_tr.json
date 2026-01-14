@@ -1,0 +1,21 @@
+{
+  "name": "GIF'ler",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Desteklenen Animasyonlu Görüntü Türleri",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF'ler ve Animasyonlu Görüntüler"
+    },
+    {
+      "name": "Kullanıcıların Yüklediği Animasyonlu Görüntüler",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "GIF'lerin Kullanımı"
+    },
+    {
+      "name": "GIF Seçici",
+      "file": "gif-picker.md",
+      "subCat": "GIF'lerin Kullanımı"
+    }
+  ]
+}

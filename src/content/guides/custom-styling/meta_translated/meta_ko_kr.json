@@ -1,0 +1,32 @@
+{
+  "name": "맞춤 스타일링",
+  "pageHeader": "맞춤 스타일링 가이드",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "스타일 맞춤 설정 방법",
+      "file": "comment-widget-instructions.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "댓글 위젯 스타일링 참고 (v2, 최신)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "위젯 스타일링"
+    },
+    {
+      "name": "최근 댓글 위젯 스타일링",
+      "file": "recent-comments-widget.md",
+      "subCat": "위젯 스타일링"
+    },
+    {
+      "name": "상위 페이지 위젯 스타일링",
+      "file": "top-pages-widget.md",
+      "subCat": "위젯 스타일링"
+    },
+    {
+      "name": "기타 프론트엔드 라이브러리",
+      "file": "other-frontend-libraries.md",
+      "subCat": "기타 프론트엔드 라이브러리"
+    }
+  ]
+}

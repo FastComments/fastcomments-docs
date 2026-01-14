@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 библиотека",
+  "pageHeader": "FastComments библиотека за Vue 3",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Употреба",
+      "file": "usage-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Ажурирање тренутне странице (пример за SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "У продукцији",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Сви видгети и документација",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

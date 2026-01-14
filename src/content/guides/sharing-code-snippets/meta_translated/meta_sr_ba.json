@@ -1,0 +1,31 @@
+{
+  "name": "Дјељење исјечака кода",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су исјечци кода?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Програмерске заједнице",
+      "file": "code-snippets-communities.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Подржани програмски језици",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Подешавање дјељења исјечака кода",
+      "file": "code-snippets-setup.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Дјељење исјечака кода",
+      "file": "code-snippets-usage.md",
+      "subCat": "Коришћење"
+    }
+  ]
+}

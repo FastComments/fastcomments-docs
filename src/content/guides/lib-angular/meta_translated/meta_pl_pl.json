@@ -1,0 +1,12 @@
+{
+  "name": "Biblioteka Angulara",
+  "pageHeader": "Biblioteka FastComments dla Angulara",
+  "itemsOrdered": [
+    {
+      "name": "Struktura projektu",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    }
+  ]
+}

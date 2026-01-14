@@ -1,0 +1,57 @@
+{
+  "name": "Ghost Kurulumu",
+  "pageHeader": "Ghost Sitelerine Üyelere Özel Canlı Yorum Ekle",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Temanızı İndirin",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 2: Temanızı Yerel Olarak Kurun",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 3: Yeni Temaya İsim Verin",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 4: Yazı Şablonunu Açın",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 5: FastComments Kodunu Ekleyin",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 6: Temanızı Dışa Aktarın",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Adım 7: Temayı Ghost'a Yükleyin",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Başarılı!",
+      "file": "ghost-success.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost Kurulumu"
+    }
+  ]
+}

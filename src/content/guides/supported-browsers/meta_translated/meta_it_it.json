@@ -1,0 +1,26 @@
+{
+  "name": "Browser supportati",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Browser supportati",
+      "file": "supported-browsers.md",
+      "subCat": "Browser supportati"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Browser supportati"
+    },
+    {
+      "name": "Come testiamo",
+      "file": "how-we-test.md",
+      "subCat": "Browser supportati"
+    },
+    {
+      "name": "Requisiti JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Browser supportati"
+    }
+  ]
+}

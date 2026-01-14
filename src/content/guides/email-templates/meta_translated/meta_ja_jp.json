@@ -1,0 +1,41 @@
+{
+  "name": "メールテンプレート",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "テンプレートの作成",
+      "file": "creating-templates.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "テンプレート言語",
+      "file": "template-language.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "ローカライズとカスタムテキスト",
+      "file": "localizing.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "ドメインごとのテンプレート",
+      "file": "per-domain-templates.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "データと変数",
+      "file": "data-variables.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "レンダリング失敗",
+      "file": "render-failures.md",
+      "subCat": "メールテンプレート"
+    },
+    {
+      "name": "変更の適用",
+      "file": "time-to-apply-changes.md",
+      "subCat": "メールテンプレート"
+    }
+  ]
+}

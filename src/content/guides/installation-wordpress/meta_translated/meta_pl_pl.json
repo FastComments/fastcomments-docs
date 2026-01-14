@@ -1,0 +1,72 @@
+{
+  "name": "Instalacja WordPressa",
+  "pageHeader": "Dodaj komentowanie na żywo do stron WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Szybki start",
+      "file": "wordpress-quick-start.md",
+      "subCat": "W skrócie"
+    },
+    {
+      "name": "Instalacja",
+      "file": "wordpress-installation.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "wordpress-customize.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Moderacja",
+      "file": "wordpress-moderation.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Użytkownicy, moderatorzy i administratorzy",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Strony dostępne tylko dla członków (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Powiadomienia",
+      "file": "wordpress-notifications.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Niestandardowe motywy",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Synchronizacja z WordPressem",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Liczba komentarzy",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Komunikacja instalacji WordPress z serwerem FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Instalacja WordPressa"
+    },
+    {
+      "name": "Dezaktywacja vs odinstalowanie wtyczki",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Usuwanie wtyczki"
+    }
+  ]
+}

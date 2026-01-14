@@ -1,0 +1,36 @@
+{
+  "name": "Provjera komentara i glasova",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Pozadina",
+      "file": "background.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Neprovjereni komentari",
+      "file": "unverified-comments.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Neprovjereni glasovi",
+      "file": "unverified-votes.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Potvrdne e-poruke",
+      "file": "verification-emails.md",
+      "subCat": "Provjera"
+    },
+    {
+      "name": "Sesije",
+      "file": "verification-sessions.md",
+      "subCat": "Provjera"
+    },
+    {
+      "name": "Komentiranje uživo",
+      "file": "verification-live-commenting.md",
+      "subCat": "Provjera"
+    }
+  ]
+}

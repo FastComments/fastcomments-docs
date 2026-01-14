@@ -1,0 +1,26 @@
+{
+  "name": "Login-links",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er login-links?",
+      "file": "login-links-what-are.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Fordele ved login-links i forhold til adgangskoder",
+      "file": "login-links-benefits.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Hvordan vi sikrer sikkerheden for login-links",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Sikkerhed"
+    },
+    {
+      "name": "Hvem får tilsendt login-links?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Brug"
+    }
+  ]
+}

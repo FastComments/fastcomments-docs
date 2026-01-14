@@ -1,0 +1,41 @@
+{
+  "name": "E-posta Şablonları",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Şablon Oluşturma",
+      "file": "creating-templates.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Şablon Dili",
+      "file": "template-language.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Yerelleştirme ve Özel Metin",
+      "file": "localizing.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Etki Alanı Başına Şablonlar",
+      "file": "per-domain-templates.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Veriler ve Değişkenler",
+      "file": "data-variables.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Render Hataları",
+      "file": "render-failures.md",
+      "subCat": "E-posta Şablonları"
+    },
+    {
+      "name": "Değişiklikleri Uygulama",
+      "file": "time-to-apply-changes.md",
+      "subCat": "E-posta Şablonları"
+    }
+  ]
+}

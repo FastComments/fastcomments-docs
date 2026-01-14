@@ -1,0 +1,41 @@
+{
+  "name": "Billedchat",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Kom godt i gang",
+      "file": "getting-started.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Eksempler",
+      "file": "examples.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Konfigurationsmuligheder",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Responsivt design",
+      "file": "responsive-design.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "customization.md",
+      "subCat": "Tilpasning"
+    },
+    {
+      "name": "Live-synkronisering",
+      "file": "live-sync.md",
+      "subCat": "Avanceret"
+    },
+    {
+      "name": "API-reference",
+      "file": "api-reference.md",
+      "subCat": "Avanceret"
+    }
+  ]
+}

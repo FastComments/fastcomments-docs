@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace-installation",
+  "pageHeader": "Tilføj kommentarer til Squarespace-websteder",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Tilføj live-kommentarer til din blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Tilføj kommentarer til din blog"
+    },
+    {
+      "name": "Trin 1: Åbn blogindstillinger",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Tilføj kommentarer til din blog"
+    },
+    {
+      "name": "Trin 2: Indsæt din FastComments.com-kode",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Tilføj kommentarer til din blog"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Tilføj kommentarer til din blog"
+    },
+    {
+      "name": "Tilføj live-kommentarer til alle sider",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Tilføj kommentarer til alle sider"
+    },
+    {
+      "name": "Trin 1: Åbn udviklerværktøjer",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Tilføj kommentarer til alle sider"
+    },
+    {
+      "name": "Trin 2: Indsæt din FastComments.com-kode",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Tilføj kommentarer til alle sider"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Tilføj kommentarer til alle sider"
+    },
+    {
+      "name": "Tilføj live-kommentar til en specifik side",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Tilføj kommentarer til en specifik side"
+    },
+    {
+      "name": "Trin 1: Tilføj kodeblok",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Tilføj kommentarer til en specifik side"
+    },
+    {
+      "name": "Trin 2: Indsæt din FastComments.com-kode",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Tilføj kommentarer til en specifik side"
+    },
+    {
+      "name": "Succes",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Tilføj kommentarer til en specifik side"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Næste trin for Squarespace"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "squarespace-customize.md",
+      "subCat": "Næste trin for Squarespace"
+    }
+  ]
+}

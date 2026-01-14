@@ -1,0 +1,46 @@
+{
+  "name": "Міграції",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Міграція з інших провайдерів",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "З інших провайдерів"
+    },
+    {
+      "name": "Імпорт даних",
+      "file": "importing-data.md",
+      "subCat": "З інших провайдерів"
+    },
+    {
+      "name": "Імпорт коментарів WordPress",
+      "file": "importing-data-wordpress.md",
+      "subCat": "З інших провайдерів"
+    },
+    {
+      "name": "Міграція користувачів і модераторів",
+      "file": "migrating-users-moderators.md",
+      "subCat": "З інших провайдерів"
+    },
+    {
+      "name": "Міграція доменів",
+      "file": "migrating-domains.md",
+      "subCat": "Міграція даних"
+    },
+    {
+      "name": "Міграція сторінок",
+      "file": "migrating-pages.md",
+      "subCat": "Міграція даних"
+    },
+    {
+      "name": "Копіювання коментарів",
+      "file": "copying-comments.md",
+      "subCat": "Міграція даних"
+    },
+    {
+      "name": "Експорт даних",
+      "file": "exporting-data.md",
+      "subCat": "До інших провайдерів"
+    }
+  ]
+}

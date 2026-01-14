@@ -1,0 +1,72 @@
+{
+  "name": "Instalacija WordPressa",
+  "pageHeader": "Dodajte komentarisanje uživo na WordPress sajtove",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Brzi početak",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Ukratko"
+    },
+    {
+      "name": "Instalacija",
+      "file": "wordpress-installation.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "wordpress-customize.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Moderacija",
+      "file": "wordpress-moderation.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Korisnici, moderatori i administratori",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Sajtovi samo za članove (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Obaveštenja",
+      "file": "wordpress-notifications.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Prilagođene teme",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Sinhronizacija nazad u WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Broj komentara",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Komunikacija između instalacije WordPressa i FastComment servera",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Greške domena",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Deaktiviranje naspram deinstalacije dodatka",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Uklanjanje dodatka"
+    }
+  ]
+}

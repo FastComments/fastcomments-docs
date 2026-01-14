@@ -1,0 +1,36 @@
+{
+  "name": "Партнёрская программа",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Почему стоит стать партнёром FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Партнёрская программа"
+    },
+    {
+      "name": "Начало работы",
+      "file": "getting-started.md",
+      "subCat": "Партнёрская программа"
+    },
+    {
+      "name": "Комиссия",
+      "file": "commission.md",
+      "subCat": "Партнёрская программа"
+    },
+    {
+      "name": "Панель партнёрской программы",
+      "file": "dashboard.md",
+      "subCat": "Партнёрская программа"
+    },
+    {
+      "name": "График выплат",
+      "file": "payout-schedule.md",
+      "subCat": "Партнёрская программа"
+    },
+    {
+      "name": "Маркетинговые материалы",
+      "file": "marketing-materials.md",
+      "subCat": "Партнёрская программа"
+    }
+  ]
+}

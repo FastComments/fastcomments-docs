@@ -1,0 +1,96 @@
+{
+  "name": "Badges",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Notions de base",
+      "file": "badge-basics.md",
+      "subCat": "Notions de base"
+    },
+    {
+      "name": "Progression",
+      "file": "badge-progression.md",
+      "subCat": "Notions de base"
+    },
+    {
+      "name": "Badges manuels",
+      "file": "badge-type-manual.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Nombre de commentaires",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Votes positifs",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Réponses",
+      "file": "badge-type-replies.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Commentaires épinglés",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Vétéran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Noctambule",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Temps de réponse rapide",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Réponse à une page spécifique",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Types de badges"
+    },
+    {
+      "name": "Introduction aux badges de modérateur",
+      "file": "moderator-badges.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires supprimés",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires approuvés",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires non approuvés",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires examinés",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires marqués comme spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Types de badges de modérateur"
+    },
+    {
+      "name": "Commentaires marqués comme non spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Types de badges de modérateur"
+    }
+  ]
+}

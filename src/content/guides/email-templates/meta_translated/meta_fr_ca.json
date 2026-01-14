@@ -1,0 +1,41 @@
+{
+  "name": "Modèles de courriel",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Création de modèles",
+      "file": "creating-templates.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Langage des modèles",
+      "file": "template-language.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Localisation et texte personnalisé",
+      "file": "localizing.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Modèles par domaine",
+      "file": "per-domain-templates.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Données et variables",
+      "file": "data-variables.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Échecs de rendu",
+      "file": "render-failures.md",
+      "subCat": "Modèles de courriel"
+    },
+    {
+      "name": "Application des modifications",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Modèles de courriel"
+    }
+  ]
+}

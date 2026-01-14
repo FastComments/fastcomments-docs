@@ -1,0 +1,67 @@
+{
+  "name": "Встановлення GoHighLevel",
+  "pageHeader": "Додавання коментарів до сайтів GoHighLevel",
+  "icon": "3rd-party-products/gohighlevel.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Редагуйте курс",
+      "file": "gohighlevel-member-site-step-1.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Крок 2: Відкрийте розширені налаштування",
+      "file": "gohighlevel-member-site-step-2.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Крок 3: Скопіюйте код",
+      "file": "gohighlevel-member-site-step-3.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Крок 4: Вставте код",
+      "file": "gohighlevel-member-site-step-4.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Успішне налаштування сайту для учасників",
+      "file": "gohighlevel-member-site-success.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Помилки домену сайту для учасників",
+      "file": "gohighlevel-member-site-domain-errors.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Налаштування сайту для учасників",
+      "file": "gohighlevel-member-site-customize.md",
+      "subCat": "Встановлення сайту для учасників GoHighLevel"
+    },
+    {
+      "name": "Крок 1: Додайте елемент користувацького коду",
+      "file": "gohighlevel-site-step-1.md",
+      "subCat": "Встановлення сайту GoHighLevel"
+    },
+    {
+      "name": "Крок 2: Скопіюйте та вставте код",
+      "file": "gohighlevel-site-step-2.md",
+      "subCat": "Встановлення сайту GoHighLevel"
+    },
+    {
+      "name": "Успішне налаштування сайту",
+      "file": "gohighlevel-site-success.md",
+      "subCat": "Встановлення сайту GoHighLevel"
+    },
+    {
+      "name": "Помилки домену сайту",
+      "file": "gohighlevel-site-domain-errors.md",
+      "subCat": "Встановлення сайту GoHighLevel"
+    },
+    {
+      "name": "Налаштування сайту",
+      "file": "gohighlevel-site-customize.md",
+      "subCat": "Встановлення сайту GoHighLevel"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Εγκατάσταση Wix",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Wix",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Επεξεργαστείτε τη σωστή σελίδα",
+      "file": "wix-step-1.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Βήμα 2: Προσθέστε ένα μπλοκ ενσωμάτωσης",
+      "file": "wix-step-2.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Βήμα 3: Αντιγραφή/επικόλληση προσαρμοσμένου κώδικα",
+      "file": "wix-step-3.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Βήμα 4: Αλλαγή μεγέθους",
+      "file": "wix-step-4.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Βήμα 5: Μοναδικά νήματα σχολίων",
+      "file": "wix-step-5.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Βήμα 6: Γιορτάστε",
+      "file": "wix-step-6.md",
+      "subCat": "Εγκατάσταση Wix"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "wix-customize.md",
+      "subCat": "Εγκατάσταση Wix"
+    }
+  ]
+}

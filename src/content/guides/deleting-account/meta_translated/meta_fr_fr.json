@@ -1,0 +1,16 @@
+{
+  "name": "Suppression de votre compte",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Suppression de votre compte",
+      "file": "deleting-your-account.md",
+      "subCat": "Commentateurs et locataires"
+    },
+    {
+      "name": "Annulation de votre abonnement",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Locataires"
+    }
+  ]
+}

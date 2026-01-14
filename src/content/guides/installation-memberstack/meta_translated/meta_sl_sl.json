@@ -1,0 +1,22 @@
+{
+  "name": "Namestitev Memberstacka",
+  "pageHeader": "Dodajanje komentarjev z Memberstackom",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Koda",
+      "file": "memberstack-step-1.md",
+      "subCat": "Namestitev Memberstacka"
+    },
+    {
+      "name": "Napake domene",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Namestitev Memberstacka"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "memberstack-customize.md",
+      "subCat": "Namestitev Memberstacka"
+    }
+  ]
+}

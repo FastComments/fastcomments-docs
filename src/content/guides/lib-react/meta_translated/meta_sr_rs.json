@@ -1,0 +1,24 @@
+{
+  "name": "React библиотека",
+  "pageHeader": "FastComments React библиотека",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Примери",
+      "file": "examples-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Коришћење",
+      "file": "usage-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "예약된 댓글",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "배경",
+      "file": "background.md",
+      "subCat": "예약된 댓글"
+    },
+    {
+      "name": "사용 방법",
+      "file": "howto.md",
+      "subCat": "예약된 댓글"
+    },
+    {
+      "name": "가져오기 형식",
+      "file": "import-format.md",
+      "subCat": "예약된 댓글"
+    }
+  ]
+}

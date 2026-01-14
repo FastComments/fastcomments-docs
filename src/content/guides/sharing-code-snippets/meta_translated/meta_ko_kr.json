@@ -1,0 +1,31 @@
+{
+  "name": "코드 스니펫 공유",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "코드 스니펫이란?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "코딩 커뮤니티",
+      "file": "code-snippets-communities.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "지원되는 프로그래밍 언어",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "코드 스니펫 공유 설정",
+      "file": "code-snippets-setup.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "코드 스니펫 공유하기",
+      "file": "code-snippets-usage.md",
+      "subCat": "사용법"
+    }
+  ]
+}

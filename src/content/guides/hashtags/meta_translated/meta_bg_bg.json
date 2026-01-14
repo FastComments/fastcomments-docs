@@ -1,0 +1,46 @@
+{
+  "name": "Хаштагове",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват хаштаговете",
+      "file": "what-are-hashtags.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Как да използвате хаштаговете",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Използване на хаштагове"
+    },
+    {
+      "name": "Филтриране на коментари по хаштагове",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Използване на хаштагове"
+    },
+    {
+      "name": "Валидни и невалидни хаштагове",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Използване на хаштагове"
+    },
+    {
+      "name": "Използване на символи, различни от #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Настройка на хаштагове"
+    },
+    {
+      "name": "Предварително попълване на хаштагове",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Настройка на хаштагове"
+    },
+    {
+      "name": "Свързване към съдържание чрез хаштагове",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Настройка на хаштагове"
+    },
+    {
+      "name": "Как работи автодовършването на хаштаговете",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Фон на хаштаговете"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "React Kütüphanesi",
+  "pageHeader": "FastComments React Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Örnekler",
+      "file": "examples-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım",
+      "file": "usage-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    }
+  ]
+}

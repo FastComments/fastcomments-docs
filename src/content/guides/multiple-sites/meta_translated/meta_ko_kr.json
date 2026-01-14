@@ -1,0 +1,51 @@
+{
+  "name": "다중 사이트",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "초기 설정",
+      "file": "add-domains-to-account.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "제한 및 요금",
+      "file": "domain-limits.md",
+      "subCat": "시작하기"
+    },
+    {
+      "name": "발신자 이름, 이메일 및 로고",
+      "file": "from-name-email-logo.md",
+      "subCat": "사이트별 맞춤 설정"
+    },
+    {
+      "name": "도메인 기반 발신자 이름/이메일이 작동하지 않음",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "사이트별 맞춤 설정"
+    },
+    {
+      "name": "환경별 테넌트",
+      "file": "tenant-per-environment.md",
+      "subCat": "사이트별 맞춤 설정"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "customizations.md",
+      "subCat": "사이트별 맞춤 설정"
+    },
+    {
+      "name": "댓글 중재",
+      "file": "moderation.md",
+      "subCat": "데이터 및 검색"
+    },
+    {
+      "name": "도메인 간 댓글 공유",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "데이터 및 검색"
+    },
+    {
+      "name": "워드프레스 연동",
+      "file": "wordpress.md",
+      "subCat": "연동 안내"
+    }
+  ]
+}

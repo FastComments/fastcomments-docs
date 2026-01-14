@@ -1,0 +1,37 @@
+{
+  "name": "GoDaddy-installation",
+  "pageHeader": "Tilføj kommentarer til GoDaddy-websteder",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Tilføj et kodeområde",
+      "file": "godaddy-step-1.md",
+      "subCat": "GoDaddy-installation"
+    },
+    {
+      "name": "Trin 2: Tilføj FastComments.com-kode",
+      "file": "godaddy-step-2.md",
+      "subCat": "GoDaddy-installation"
+    },
+    {
+      "name": "Trin 3: Udgiv",
+      "file": "godaddy-step-3.md",
+      "subCat": "GoDaddy-installation"
+    },
+    {
+      "name": "Succes",
+      "file": "godaddy-success.md",
+      "subCat": "GoDaddy-installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "GoDaddy-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "godaddy-customize.md",
+      "subCat": "GoDaddy-installation"
+    }
+  ]
+}

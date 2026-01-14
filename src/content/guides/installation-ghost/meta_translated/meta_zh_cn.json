@@ -1,0 +1,57 @@
+{
+  "name": "Ghost 安装",
+  "pageHeader": "为 Ghost 站点添加仅限会员的实时评论",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：下载您的主题",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 2：在本地安装您的主题",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 3：为新主题命名",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 4：打开文章模板",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 5：添加 FastComments 代码",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 6：导出您的主题",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "步骤 7：将主题上传到 Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "成功！",
+      "file": "ghost-success.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost 安装"
+    }
+  ]
+}

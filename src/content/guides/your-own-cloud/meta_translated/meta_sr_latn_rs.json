@@ -1,0 +1,36 @@
+{
+  "name": "Vaš sopstveni oblak",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Šta je FastComments izolovani oblak?",
+      "file": "your-own-cloud.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kako ga dobiti",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Podešavanje i obuka",
+      "file": "set-up-training.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Korišćenje kontrolne table",
+      "file": "using-the-dashboard.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Korišćenje API-ja",
+      "file": "using-the-api.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Upravljanje tenantima",
+      "file": "managing-tenants.md",
+      "subCat": "Upravljanje tenantima"
+    }
+  ]
+}

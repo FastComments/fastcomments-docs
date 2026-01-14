@@ -1,0 +1,709 @@
+{
+  "name": "API",
+  "icon": "api.png",
+  "itemsOrdered": [
+    {
+      "name": "API Resources",
+      "file": "api-resources.md",
+      "subCat": "API Resources"
+    },
+    {
+      "name": "Aggregate Your Data",
+      "file": "aggregate-post.md",
+      "subCat": "Aggregations"
+    },
+    {
+      "name": "AuditLog Structure",
+      "file": "audit-log-structure.md",
+      "subCat": "AuditLogs"
+    },
+    {
+      "name": "GET /api/v1/audit-logs",
+      "file": "audit-logs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "AuditLogs"
+    },
+    {
+      "name": "Comment Structure",
+      "file": "comment-structure.md",
+      "subCat": "Comments"
+    },
+    {
+      "name": "GET /api/v1/comments",
+      "file": "comments-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "GET /api/v1/comments/:id",
+      "file": "comment-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments",
+      "file": "comment-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "PATCH /api/v1/comments/:id",
+      "file": "comment-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "DELETE /api/v1/comments/:id",
+      "file": "comment-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/flag",
+      "file": "comment-flag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-flag",
+      "file": "comment-unflag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/block",
+      "file": "comment-block.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-block",
+      "file": "comment-unblock.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Comments"
+    },
+    {
+      "name": "Email Template Structure",
+      "file": "email-template-structure.md",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates/:id",
+      "file": "email-template-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates",
+      "file": "email-templates-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "PATCH /api/v1/email-templates/:id",
+      "file": "email-template-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates",
+      "file": "email-template-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates/render",
+      "file": "email-template-render.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "DELETE /api/v1/email-templates/:id",
+      "file": "email-template-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "HashTag Structure",
+      "file": "hash-tag-structure.md",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "GET /api/v1/hash-tags",
+      "file": "hash-tags-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "PATCH /api/v1/hash-tags/:tag",
+      "file": "hash-tag-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "POST /api/v1/hash-tags",
+      "file": "hash-tag-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "POST /api/v1/hash-tags/bulk",
+      "file": "hash-tag-bulk-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "DELETE /api/v1/hash-tags/:tag",
+      "file": "hash-tag-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "HashTags"
+    },
+    {
+      "name": "Moderator Structure",
+      "file": "moderator-structure.md",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "GET /api/v1/moderators/:id",
+      "file": "moderator-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "GET /api/v1/moderators",
+      "file": "moderators-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "PATCH /api/v1/moderators/:id",
+      "file": "moderator-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "POST /api/v1/moderators",
+      "file": "moderator-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "POST /api/v1/moderators/:id/send-invite",
+      "file": "moderator-send-invite.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "DELETE /api/v1/moderators/:id",
+      "file": "moderator-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Moderators"
+    },
+    {
+      "name": "Notification Count Structure",
+      "file": "notification-count-structure.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "GET /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "DELETE /api/v1/notification-count/:user_id",
+      "file": "notification-count-delete.md",
+      "subCat": "Notification Count"
+    },
+    {
+      "name": "Notification Structure",
+      "file": "notification-structure.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "GET /api/v1/notifications",
+      "file": "notifications-get.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "GET /api/v1/notifications/count",
+      "file": "notifications-get-count.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "PATCH /api/v1/notifications/:id",
+      "file": "notifications-patch.md",
+      "subCat": "Notifications"
+    },
+    {
+      "name": "Page Structure",
+      "file": "page-structure.md",
+      "subCat": "Pages"
+    },
+    {
+      "name": "GET /api/v1/pages",
+      "file": "pages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "GET /api/v1/pages/by-url-id",
+      "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "PATCH /api/v1/pages/:id",
+      "file": "page-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "POST /api/v1/pages",
+      "file": "page-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "DELETE /api/v1/pages/:id",
+      "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "PendingWebhookEvent Structure",
+      "file": "pending-webhook-event-structure.md",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events",
+      "file": "pending-webhook-events-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events/count",
+      "file": "pending-webhook-events-count.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "DELETE /api/v1/pending-webhook-events/:id",
+      "file": "pending-webhook-event-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "SSOUser Structure",
+      "file": "sso-user-structure.md",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "GET /api/v1/sso-users",
+      "file": "sso-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-id/:id",
+      "file": "sso-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-email/:email",
+      "file": "sso-user-get-by-email.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "PATCH /api/v1/sso-users/:id",
+      "file": "sso-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "POST /api/v1/sso-users",
+      "file": "sso-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "PUT /api/v1/sso-users/:id",
+      "file": "sso-user-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "DELETE /api/v1/sso-users/:id",
+      "file": "sso-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO Users"
+    },
+    {
+      "name": "Subscription Structure",
+      "file": "subscription-structure.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "GET /api/v1/subscriptions/:id",
+      "file": "subscriptions-get.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "POST /api/v1/subscriptions",
+      "file": "subscriptions-post.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "DELETE /api/v1/subscriptions/:id",
+      "file": "subscriptions-delete.md",
+      "subCat": "Subscriptions"
+    },
+    {
+      "name": "TenantDailyUsage Structure",
+      "file": "tenant-daily-usage-structure.md",
+      "subCat": "Tenant Daily Usage"
+    },
+    {
+      "name": "GET /api/v1/tenant-daily-usage",
+      "file": "tenant-daily-usages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Daily Usage"
+    },
+    {
+      "name": "Tenant Structure",
+      "file": "tenant-structure.md",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "GET /api/v1/tenants/:id",
+      "file": "tenant-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "GET /api/v1/tenants",
+      "file": "tenants-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "POST /api/v1/tenants",
+      "file": "tenant-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "PATCH /api/v1/tenants/:id",
+      "file": "tenant-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "DELETE /api/v1/tenants/:id",
+      "file": "tenant-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenants"
+    },
+    {
+      "name": "Tenant Package Structure",
+      "file": "tenant-package-structure.md",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages/:id",
+      "file": "tenant-package-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages",
+      "file": "tenant-packages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "POST /api/v1/tenant-packages",
+      "file": "tenant-package-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-packages/:id",
+      "file": "tenant-package-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-packages/:id",
+      "file": "tenant-package-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Packages"
+    },
+    {
+      "name": "Tenant User Structure",
+      "file": "tenant-user-structure.md",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "GET /api/v1/tenant-users/:id",
+      "file": "tenant-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "GET /api/v1/tenant-users",
+      "file": "tenant-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "POST /api/v1/tenant-users",
+      "file": "tenant-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "POST /api/v1/tenant-users/:id/send-login-link",
+      "file": "tenant-user-send-login-link.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-users/:id",
+      "file": "tenant-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-users/:id",
+      "file": "tenant-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Tenant Users"
+    },
+    {
+      "name": "User Structure",
+      "file": "user-structure.md",
+      "subCat": "Users"
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "file": "user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Users"
+    },
+    {
+      "name": "Vote Structure",
+      "file": "vote-structure.md",
+      "subCat": "Votes"
+    },
+    {
+      "name": "GET /api/v1/votes",
+      "file": "votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "GET /api/v1/votes/for-user",
+      "file": "votes-get-for-user.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "POST /api/v1/votes",
+      "file": "vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "DELETE /api/v1/votes/:id",
+      "file": "vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votes"
+    },
+    {
+      "name": "DomainConfig Structure",
+      "file": "domain-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "GET /api/v1/domain-configs",
+      "file": "domain-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "GET /api/v1/domain-configs/:domain",
+      "file": "domain-config-get-by-domain.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "POST /api/v1/domain-configs",
+      "file": "domain-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "PATCH /api/v1/domain-configs/:domain",
+      "file": "domain-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "PUT /api/v1/domain-configs/:domain",
+      "file": "domain-config-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "DELETE /api/v1/domain-configs/:domain",
+      "file": "domain-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Domain Configs"
+    },
+    {
+      "name": "QuestionConfig Structure",
+      "file": "question-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "GET /api/v1/question-configs",
+      "file": "question-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "GET /api/v1/question-configs/:id",
+      "file": "question-config-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "POST /api/v1/question-configs",
+      "file": "question-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "PATCH /api/v1/question-configs/:id",
+      "file": "question-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "DELETE /api/v1/question-configs/:id",
+      "file": "question-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Configs"
+    },
+    {
+      "name": "QuestionResult Structure",
+      "file": "question-result-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results",
+      "file": "question-results-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results/:id",
+      "file": "question-result-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "POST /api/v1/question-results",
+      "file": "question-result-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "PATCH /api/v1/question-results/:id",
+      "file": "question-result-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "DELETE /api/v1/question-results/:id",
+      "file": "question-result-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate",
+      "file": "question-results-aggregate.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results Aggregation"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate/combine/comments",
+      "file": "question-results-combine-comments.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Question Results Aggregation"
+    },
+    {
+      "name": "UserBadge Structure",
+      "file": "user-badge-structure.md",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "GET /api/v1/user-badges",
+      "file": "user-badges-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "GET /api/v1/user-badges/:id",
+      "file": "user-badge-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "POST /api/v1/user-badges",
+      "file": "user-badge-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "PUT /api/v1/user-badges/:id",
+      "file": "user-badge-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "DELETE /api/v1/user-badges/:id",
+      "file": "user-badge-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badges"
+    },
+    {
+      "name": "UserBadgeProgress Structure",
+      "file": "user-badge-progress-structure.md",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress",
+      "file": "user-badge-progress-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/:id",
+      "file": "user-badge-progress-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/user/:userId",
+      "file": "user-badge-progress-get-by-user-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "User Badge Progress"
+    }
+  ]
+}

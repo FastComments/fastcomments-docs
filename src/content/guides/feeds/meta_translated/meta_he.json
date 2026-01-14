@@ -1,0 +1,16 @@
+{
+  "name": "הזנות",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "התאמה אישית של ההזנות",
+      "file": "personalizing-feeds.md",
+      "subCat": "התאמה אישית"
+    },
+    {
+      "name": "הזנות אזוריות",
+      "file": "regional-feeds.md",
+      "subCat": "התאמה אישית"
+    }
+  ]
+}

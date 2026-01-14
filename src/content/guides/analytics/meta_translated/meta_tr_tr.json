@@ -1,0 +1,31 @@
+{
+  "name": "Analitik",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Arka Plan",
+      "file": "analytics-background.md",
+      "subCat": "Analitik"
+    },
+    {
+      "name": "Faturalama Analitiği",
+      "file": "analytics-billing.md",
+      "subCat": "Analitik"
+    },
+    {
+      "name": "Site Analitiği",
+      "file": "analytics-site.md",
+      "subCat": "Analitik"
+    },
+    {
+      "name": "Diğer Platformlara Göre Analitik Doğruluğu",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analitik"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "İzleme"
+    }
+  ]
+}

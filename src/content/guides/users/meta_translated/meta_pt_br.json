@@ -1,0 +1,46 @@
+{
+  "name": "Usuários",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Tipos de Usuários",
+      "file": "types-of-users.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Nomes de Usuário",
+      "file": "usernames.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Usuários Administradores",
+      "file": "administrator-users.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Comentaristas",
+      "file": "commenter-users.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Adicionando Administradores",
+      "file": "adding-administrators.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Adicionando Moderadores",
+      "file": "adding-moderators.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Atualizando Permissões de Administrador",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Desenvolvedores",
+      "file": "developers.md",
+      "subCat": "Configuração"
+    }
+  ]
+}

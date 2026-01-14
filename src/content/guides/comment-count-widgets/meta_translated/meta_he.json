@@ -1,0 +1,21 @@
+{
+  "name": "ווידג'טים של ספירת תגובות",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "התקנת ווידג'ט ספירת תגובות",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "התקנת אצווה של ווידג'טים לספירת תגובות",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "התקנה"
+    },
+    {
+      "name": "ממשקי API לספירת תגובות",
+      "file": "comment-count-apis.md",
+      "subCat": "ממשקי API לספירת תגובות"
+    }
+  ]
+}

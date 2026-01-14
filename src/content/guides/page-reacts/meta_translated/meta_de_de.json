@@ -1,0 +1,31 @@
+{
+  "name": "Seitenreaktionen",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Seitenreaktionen",
+      "file": "page-reacts-about.md",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "Das schwebende Gefällt mir-Widget",
+      "file": "floating-likes-about.md",
+      "subCat": "Schwebendes Gefällt mir-Widget"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Schwebendes Gefällt mir-Widget"
+    },
+    {
+      "name": "Installation - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Schwebendes Gefällt mir-Widget"
+    }
+  ]
+}

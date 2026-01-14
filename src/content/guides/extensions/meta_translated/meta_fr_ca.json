@@ -1,0 +1,31 @@
+{
+  "name": "Création d'extensions",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Le cycle de vie de l'extension",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Définir une extension",
+      "file": "defining-an-extension.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Exemples d'extensions",
+      "file": "example-extensions.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "L'objet d'extension",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "L'API d'extension",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

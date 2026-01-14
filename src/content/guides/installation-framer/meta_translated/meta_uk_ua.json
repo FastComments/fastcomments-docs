@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Framer",
+  "pageHeader": "Додайте живі коментарі на сайти Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Відкрийте редактор",
+      "file": "framer-step-1.md",
+      "subCat": "Встановлення Framer"
+    },
+    {
+      "name": "Крок 2: Додайте блок вставки",
+      "file": "framer-step-2.md",
+      "subCat": "Встановлення Framer"
+    },
+    {
+      "name": "Крок 3: Скопіюйте та вставте код FastComments, специфічний для Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Встановлення Framer"
+    },
+    {
+      "name": "Крок 4: Налаштуйте висоту віджета та сторінки",
+      "file": "framer-step-4.md",
+      "subCat": "Встановлення Framer"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "framer-domain-errors.md",
+      "subCat": "Встановлення Framer"
+    },
+    {
+      "name": "Налаштування",
+      "file": "framer-customize.md",
+      "subCat": "Встановлення Framer"
+    }
+  ]
+}

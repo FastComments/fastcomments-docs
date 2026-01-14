@@ -1,0 +1,77 @@
+{
+  "name": "Instalación de Squarespace",
+  "pageHeader": "Agregar comentarios a sitios de Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Agregar comentarios en vivo a tu blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Agregar comentarios a tu blog"
+    },
+    {
+      "name": "Paso 1: Abre la configuración del blog",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Agregar comentarios a tu blog"
+    },
+    {
+      "name": "Paso 2: Pega el código de FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Agregar comentarios a tu blog"
+    },
+    {
+      "name": "Éxito",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Agregar comentarios a tu blog"
+    },
+    {
+      "name": "Agregar comentarios en vivo a todas las páginas",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Agregar comentarios a todas las páginas"
+    },
+    {
+      "name": "Paso 1: Abre las herramientas del desarrollador",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Agregar comentarios a todas las páginas"
+    },
+    {
+      "name": "Paso 2: Pega el código de FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Agregar comentarios a todas las páginas"
+    },
+    {
+      "name": "Éxito",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Agregar comentarios a todas las páginas"
+    },
+    {
+      "name": "Agregar comentario en vivo a una página específica",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Agregar comentarios a una página específica"
+    },
+    {
+      "name": "Paso 1: Agrega un bloque de código",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Agregar comentarios a una página específica"
+    },
+    {
+      "name": "Paso 2: Pega el código de FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Agregar comentarios a una página específica"
+    },
+    {
+      "name": "Éxito",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Agregar comentarios a una página específica"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Siguientes pasos en Squarespace"
+    },
+    {
+      "name": "Personalización",
+      "file": "squarespace-customize.md",
+      "subCat": "Siguientes pasos en Squarespace"
+    }
+  ]
+}

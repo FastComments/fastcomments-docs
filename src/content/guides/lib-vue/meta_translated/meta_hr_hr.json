@@ -1,0 +1,30 @@
+{
+  "name": "Biblioteka Vue 2",
+  "pageHeader": "FastComments biblioteka za Vue 2",
+  "itemsOrdered": [
+    {
+      "name": "Instalacija",
+      "file": "installation-readme-generated.md",
+      "subCat": "Početak",
+      "type": "readme"
+    },
+    {
+      "name": "Korištenje",
+      "file": "usage-readme-generated.md",
+      "subCat": "Korištenje",
+      "type": "readme"
+    },
+    {
+      "name": "Ažuriranje trenutne stranice (primjer SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Korištenje",
+      "type": "readme"
+    },
+    {
+      "name": "U produkciji",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

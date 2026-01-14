@@ -1,0 +1,96 @@
+{
+  "name": "Значки",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Основы",
+      "file": "badge-basics.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Прогресс",
+      "file": "badge-progression.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Ручные значки",
+      "file": "badge-type-manual.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Количество комментариев",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Положительные голоса",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Ответы",
+      "file": "badge-type-replies.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Закреплённые комментарии",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Ветеран",
+      "file": "badge-type-veteran.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Ночная сова",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Быстрое время ответа",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Ответ на определённую страницу",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Типы значков"
+    },
+    {
+      "name": "Введение в значки модераторов",
+      "file": "moderator-badges.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Удалённые комментарии",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Одобренные комментарии",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Комментарии, снятые с одобрения",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Проверенные комментарии",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Комментарии, помеченные как спам",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Типы значков модераторов"
+    },
+    {
+      "name": "Комментарии, помеченные как не спам",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Типы значков модераторов"
+    }
+  ]
+}

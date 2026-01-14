@@ -1,0 +1,26 @@
+{
+  "name": "로그인 링크",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "로그인 링크란 무엇인가요?",
+      "file": "login-links-what-are.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "비밀번호보다 로그인 링크의 이점",
+      "file": "login-links-benefits.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "로그인 링크의 보안을 어떻게 보장하는지",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "보안"
+    },
+    {
+      "name": "누가 로그인 링크를 받나요?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "사용"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Instalación de BigCommerce",
+  "pageHeader": "Añadir comentarios a sitios de BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Preparar tu tema",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Paso 2: Editar la plantilla correcta",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Paso 3: Añadir el código del widget",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Paso 4: Activar el nuevo tema",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Éxito",
+      "file": "bigcommerce-success.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Personalización",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Instalación de BigCommerce"
+    },
+    {
+      "name": "Extra: Fragmento de código para el generador de páginas",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Uso del generador de páginas"
+    }
+  ]
+}

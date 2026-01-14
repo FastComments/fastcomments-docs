@@ -1,0 +1,41 @@
+{
+  "name": "Razgovor s slikama",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Početak rada",
+      "file": "getting-started.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Primjeri",
+      "file": "examples.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Opcije konfiguracije",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Responzivni dizajn",
+      "file": "responsive-design.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "customization.md",
+      "subCat": "Prilagodba"
+    },
+    {
+      "name": "Sinkronizacija uživo",
+      "file": "live-sync.md",
+      "subCat": "Napredno"
+    },
+    {
+      "name": "Referenca API-ja",
+      "file": "api-reference.md",
+      "subCat": "Napredno"
+    }
+  ]
+}

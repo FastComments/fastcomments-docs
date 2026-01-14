@@ -1,0 +1,72 @@
+{
+  "name": "Установка WordPress",
+  "pageHeader": "Добавление комментариев в реальном времени на сайты WordPress",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Быстрый старт",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Кратко"
+    },
+    {
+      "name": "Установка",
+      "file": "wordpress-installation.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Настройка",
+      "file": "wordpress-customize.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Модерация",
+      "file": "wordpress-moderation.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Пользователи, модераторы и администраторы",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Сайты только для участников (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Уведомления",
+      "file": "wordpress-notifications.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Пользовательские темы",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Синхронизация обратно в WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Количество комментариев",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Обмен данными между WordPress и сервером FastComment",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Установка WordPress"
+    },
+    {
+      "name": "Деактивация и удаление плагина",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Удаление плагина"
+    }
+  ]
+}

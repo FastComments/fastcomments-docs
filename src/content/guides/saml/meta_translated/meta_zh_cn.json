@@ -1,0 +1,51 @@
+{
+  "name": "SAML（安全断言标记语言）",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是 SAML？",
+      "file": "saml-overview.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "SAML 与 SSO 的比较",
+      "file": "saml-vs-sso.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "设置 SAML",
+      "file": "saml-setup.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "身份提供商配置",
+      "file": "saml-idp-config.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "服务提供商信息",
+      "file": "saml-sp-info.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "用户角色与权限",
+      "file": "saml-user-roles.md",
+      "subCat": "用户管理"
+    },
+    {
+      "name": "测试 SAML 身份验证",
+      "file": "saml-testing.md",
+      "subCat": "故障排除"
+    },
+    {
+      "name": "常见问题",
+      "file": "saml-troubleshooting.md",
+      "subCat": "故障排除"
+    },
+    {
+      "name": "安全最佳实践",
+      "file": "saml-security.md",
+      "subCat": "高级"
+    }
+  ]
+}

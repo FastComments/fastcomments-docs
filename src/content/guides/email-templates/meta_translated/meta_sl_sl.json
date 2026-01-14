@@ -1,0 +1,41 @@
+{
+  "name": "E-poštne predloge",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ustvarjanje predlog",
+      "file": "creating-templates.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Jezik predloge",
+      "file": "template-language.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Lokalizacija in prilagojeno besedilo",
+      "file": "localizing.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Predloge za posamezno domeno",
+      "file": "per-domain-templates.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Podatki in spremenljivke",
+      "file": "data-variables.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Napake pri upodabljanju",
+      "file": "render-failures.md",
+      "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Uveljavljanje sprememb",
+      "file": "time-to-apply-changes.md",
+      "subCat": "E-poštne predloge"
+    }
+  ]
+}

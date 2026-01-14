@@ -1,0 +1,11 @@
+{
+  "name": "Ajouter et échanger dynamiquement des fils de commentaires",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Ajouter et échanger dynamiquement des fils de commentaires",
+      "file": "swap-widgets-example.md",
+      "subCat": "Exemples"
+    }
+  ]
+}

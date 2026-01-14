@@ -1,0 +1,21 @@
+{
+  "name": "GIF'er",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Understøttede typer af animerede billeder",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF'er og animerede billeder"
+    },
+    {
+      "name": "Animerede billeder uploadet af brugere",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Brug af GIF'er"
+    },
+    {
+      "name": "GIF-vælgeren",
+      "file": "gif-picker.md",
+      "subCat": "Brug af GIF'er"
+    }
+  ]
+}

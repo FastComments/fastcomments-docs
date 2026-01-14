@@ -1,0 +1,16 @@
+{
+  "name": "アカウントの削除",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "アカウントの削除",
+      "file": "deleting-your-account.md",
+      "subCat": "コメント投稿者とテナント"
+    },
+    {
+      "name": "サブスクリプションのキャンセル",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "テナント"
+    }
+  ]
+}

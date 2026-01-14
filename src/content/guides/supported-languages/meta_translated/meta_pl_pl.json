@@ -1,0 +1,21 @@
+{
+  "name": "Obsługiwane języki",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Obsługiwane języki",
+      "file": "supported-languages.md",
+      "subCat": "Obsługiwane języki"
+    },
+    {
+      "name": "Które części FastComments są zlokalizowane?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Obsługiwane języki"
+    },
+    {
+      "name": "Prośba o dodanie obsługi nowego języka",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Obsługiwane języki"
+    }
+  ]
+}

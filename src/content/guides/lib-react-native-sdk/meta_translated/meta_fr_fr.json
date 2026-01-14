@@ -1,0 +1,24 @@
+{
+  "name": "SDK React Native",
+  "pageHeader": "SDK FastComments pour React Native",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prise en main",
+      "type": "readme"
+    },
+    {
+      "name": "À propos",
+      "file": "about-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Captures d'écran",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace 安装",
+  "pageHeader": "向 Squarespace 站点添加评论",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "在博客中添加实时评论",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "向博客添加评论"
+    },
+    {
+      "name": "步骤 1：打开博客设置",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "向博客添加评论"
+    },
+    {
+      "name": "步骤 2：粘贴您的 FastComments.com 代码",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "向博客添加评论"
+    },
+    {
+      "name": "成功",
+      "file": "squarespace-blog-success.md",
+      "subCat": "向博客添加评论"
+    },
+    {
+      "name": "在所有页面添加实时评论",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "向所有页面添加评论"
+    },
+    {
+      "name": "步骤 1：打开开发者工具",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "向所有页面添加评论"
+    },
+    {
+      "name": "步骤 2：粘贴您的 FastComments.com 代码",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "向所有页面添加评论"
+    },
+    {
+      "name": "成功",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "向所有页面添加评论"
+    },
+    {
+      "name": "在特定页面添加实时评论",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "向特定页面添加评论"
+    },
+    {
+      "name": "步骤 1：添加代码块",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "向特定页面添加评论"
+    },
+    {
+      "name": "步骤 2：粘贴您的 FastComments.com 代码",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "向特定页面添加评论"
+    },
+    {
+      "name": "成功",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "向特定页面添加评论"
+    },
+    {
+      "name": "域名错误",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace 后续步骤"
+    },
+    {
+      "name": "自定义",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace 后续步骤"
+    }
+  ]
+}

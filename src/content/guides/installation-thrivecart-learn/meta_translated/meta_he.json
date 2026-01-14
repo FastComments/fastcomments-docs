@@ -1,0 +1,32 @@
+{
+  "name": "התקנת ThriveCart Learn+",
+  "pageHeader": "הוספת תגובות לקורסי ThriveCart Learn+",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הכנת הקורס",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "התקנת ThriveCart Learn+"
+    },
+    {
+      "name": "שלב 2: הוספת קוד מותאם אישית",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "התקנת ThriveCart Learn+"
+    },
+    {
+      "name": "הצלחה",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "התקנת ThriveCart Learn+"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "התקנת ThriveCart Learn+"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "התקנת ThriveCart Learn+"
+    }
+  ]
+}

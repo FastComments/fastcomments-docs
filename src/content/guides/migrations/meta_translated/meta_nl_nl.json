@@ -1,0 +1,46 @@
+{
+  "name": "Migraties",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Migreren van andere providers",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Van andere providers"
+    },
+    {
+      "name": "Gegevens importeren",
+      "file": "importing-data.md",
+      "subCat": "Van andere providers"
+    },
+    {
+      "name": "WordPress-reacties importeren",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Van andere providers"
+    },
+    {
+      "name": "Gebruikers en moderators migreren",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Van andere providers"
+    },
+    {
+      "name": "Domeinen migreren",
+      "file": "migrating-domains.md",
+      "subCat": "Gegevensmigraties"
+    },
+    {
+      "name": "Pagina's migreren",
+      "file": "migrating-pages.md",
+      "subCat": "Gegevensmigraties"
+    },
+    {
+      "name": "Reacties kopiëren",
+      "file": "copying-comments.md",
+      "subCat": "Gegevensmigraties"
+    },
+    {
+      "name": "Gegevens exporteren",
+      "file": "exporting-data.md",
+      "subCat": "Naar andere providers"
+    }
+  ]
+}

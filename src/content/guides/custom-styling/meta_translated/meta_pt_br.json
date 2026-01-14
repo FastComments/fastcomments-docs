@@ -1,0 +1,32 @@
+{
+  "name": "Estilização Personalizada",
+  "pageHeader": "Guia de Estilização Personalizada",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Como Personalizar Estilos",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Primeiros Passos"
+    },
+    {
+      "name": "Referência de Estilização do Widget de Comentários (v2, mais recente)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Estilização do Widget"
+    },
+    {
+      "name": "Estilização do Widget de Comentários Recentes",
+      "file": "recent-comments-widget.md",
+      "subCat": "Estilização do Widget"
+    },
+    {
+      "name": "Estilização do Widget de Páginas Principais",
+      "file": "top-pages-widget.md",
+      "subCat": "Estilização do Widget"
+    },
+    {
+      "name": "Outras Bibliotecas de Frontend",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Outras Bibliotecas de Frontend"
+    }
+  ]
+}

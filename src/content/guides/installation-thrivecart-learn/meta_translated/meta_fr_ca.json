@@ -1,0 +1,32 @@
+{
+  "name": "Installation de ThriveCart Learn+",
+  "pageHeader": "Ajouter des commentaires aux cours de ThriveCart Learn+",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "Étape 1 : Préparer le cours",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "Installation de ThriveCart Learn+"
+    },
+    {
+      "name": "Étape 2 : Ajouter du code personnalisé",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "Installation de ThriveCart Learn+"
+    },
+    {
+      "name": "Succès",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "Installation de ThriveCart Learn+"
+    },
+    {
+      "name": "Erreurs de domaine",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "Installation de ThriveCart Learn+"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "Installation de ThriveCart Learn+"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Webnode のインストール",
+  "pageHeader": "Webnode サイトにコメントを追加",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: ページを編集",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "ステップ 2: セクションとHTMLブロックを追加",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "ステップ 3: コードスニペットをコピー＆ペースト",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "ステップ 4: 公開",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "webnode-success.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode のインストール"
+    }
+  ]
+}

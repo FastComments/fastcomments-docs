@@ -1,0 +1,46 @@
+{
+  "name": "Clavardage collaboratif",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Premiers pas",
+      "file": "getting-started.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Exemples",
+      "file": "examples.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Ajout de commentaires en direct aux livres en ligne",
+      "file": "online-books.md",
+      "subCat": "Premiers pas"
+    },
+    {
+      "name": "Options de configuration",
+      "file": "configuration-options.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Comportement de la sélection de texte",
+      "file": "text-selection-behavior.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "customization.md",
+      "subCat": "Personnalisation"
+    },
+    {
+      "name": "Synchronisation en direct",
+      "file": "live-sync.md",
+      "subCat": "Avancé"
+    },
+    {
+      "name": "Référence de l'API",
+      "file": "api-reference.md",
+      "subCat": "Avancé"
+    }
+  ]
+}

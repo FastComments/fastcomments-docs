@@ -1,0 +1,42 @@
+{
+  "name": "Инсталиране на Moodle",
+  "pageHeader": "Добавяне на коментари към сайтове на Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Получаване на достъп до сървъра",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Стъпка 2: Идентифициране на файла на изгледа",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Стъпка 3: Добавяне на код",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Успех на членския сайт",
+      "file": "moodle-success.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Грешки в домейна на членския сайт",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Персонализиране на членския сайт",
+      "file": "moodle-customize.md",
+      "subCat": "Инсталиране на сайт на Moodle"
+    },
+    {
+      "name": "Искате ли специализиран плъгин?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Специализиран плъгин?"
+    }
+  ]
+}

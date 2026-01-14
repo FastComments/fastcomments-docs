@@ -1,0 +1,21 @@
+{
+  "name": "Тёмный режим",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Автоматическое определение",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Ручная настройка",
+      "file": "dark-mode-manual.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Поддержка тёмного режима темы Networker для WordPress",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Темы WordPress"
+    }
+  ]
+}

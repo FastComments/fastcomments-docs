@@ -1,0 +1,22 @@
+{
+  "name": "Memberstack 安装",
+  "pageHeader": "使用 Memberstack 添加评论",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "代码",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstack 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstack 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstack 安装"
+    }
+  ]
+}

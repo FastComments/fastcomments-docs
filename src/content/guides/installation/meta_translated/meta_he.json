@@ -1,0 +1,61 @@
+{
+  "name": "התקנה",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "וורדפרס",
+      "file": "wordpress.md",
+      "subCat": "תוספי צד שלישי"
+    },
+    {
+      "name": "ונילה JS / קוד HTML",
+      "file": "vanillajs.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "אנגולר",
+      "file": "angular.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "ריאקט",
+      "file": "react.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "ריאקט נייטיב",
+      "file": "react-native.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "וויו",
+      "file": "vue.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "טייפסקריפט",
+      "file": "typescript.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "מספר מופעים באותו דף",
+      "file": "multiple-instances.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "שימושים נפוצים",
+      "file": "installation-common-use-cases.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "ניפוי בעיות נפוצות",
+      "file": "debugging-common-issues.md",
+      "subCat": "התקנות מותאמות"
+    },
+    {
+      "name": "נושן וגוגל סייטס",
+      "file": "oembed.md",
+      "subCat": "הטמעה במסמכים"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Codefragmenten delen",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn codefragmenten?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Programmeergemeenschappen",
+      "file": "code-snippets-communities.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Ondersteunde programmeertalen",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Instellen van het delen van codefragmenten",
+      "file": "code-snippets-setup.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Codefragmenten delen",
+      "file": "code-snippets-usage.md",
+      "subCat": "Gebruik"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Afiliados",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "¿Por qué ser afiliado de FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Afiliados"
+    },
+    {
+      "name": "Primeros pasos",
+      "file": "getting-started.md",
+      "subCat": "Afiliados"
+    },
+    {
+      "name": "Comisión",
+      "file": "commission.md",
+      "subCat": "Afiliados"
+    },
+    {
+      "name": "El panel de afiliados",
+      "file": "dashboard.md",
+      "subCat": "Afiliados"
+    },
+    {
+      "name": "Calendario de pagos",
+      "file": "payout-schedule.md",
+      "subCat": "Afiliados"
+    },
+    {
+      "name": "Materiales de marketing",
+      "file": "marketing-materials.md",
+      "subCat": "Afiliados"
+    }
+  ]
+}

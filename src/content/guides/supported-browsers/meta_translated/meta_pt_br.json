@@ -1,0 +1,26 @@
+{
+  "name": "Navegadores compatíveis",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Navegadores compatíveis",
+      "file": "supported-browsers.md",
+      "subCat": "Navegadores compatíveis"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Navegadores compatíveis"
+    },
+    {
+      "name": "Como testamos",
+      "file": "how-we-test.md",
+      "subCat": "Navegadores compatíveis"
+    },
+    {
+      "name": "Requisitos de JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Navegadores compatíveis"
+    }
+  ]
+}

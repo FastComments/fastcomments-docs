@@ -1,0 +1,21 @@
+{
+  "name": "Zamanlanmış Yorumlar",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Arka Plan",
+      "file": "background.md",
+      "subCat": "Zamanlanmış Yorumlar"
+    },
+    {
+      "name": "Nasıl Yapılır",
+      "file": "howto.md",
+      "subCat": "Zamanlanmış Yorumlar"
+    },
+    {
+      "name": "İçe Aktarma Biçimi",
+      "file": "import-format.md",
+      "subCat": "Zamanlanmış Yorumlar"
+    }
+  ]
+}

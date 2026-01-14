@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Загальна інформація"
+    },
+    {
+      "name": "Створення розмови oEmbed",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Використання"
+    }
+  ]
+}

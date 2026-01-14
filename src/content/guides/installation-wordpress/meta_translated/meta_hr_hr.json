@@ -1,0 +1,72 @@
+{
+  "name": "Instalacija WordPressa",
+  "pageHeader": "Dodajte komentare uživo na WordPress stranice",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Brzi početak",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Sažetak"
+    },
+    {
+      "name": "Instalacija",
+      "file": "wordpress-installation.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "wordpress-customize.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Moderiranje",
+      "file": "wordpress-moderation.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Korisnici, moderatori i administratori",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Samo za članove (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Obavijesti",
+      "file": "wordpress-notifications.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Prilagođene teme",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Sinkronizacija natrag u WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Broj komentara",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Komunikacija između instalacije WordPressa i FastComment poslužitelja",
+      "file": "wordpress-server-communication.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Pogreške domene",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "Instalacija WordPressa"
+    },
+    {
+      "name": "Deaktivacija naspram deinstalacije dodatka",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Uklanjanje dodatka"
+    }
+  ]
+}

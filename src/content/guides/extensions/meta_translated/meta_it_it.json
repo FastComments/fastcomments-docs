@@ -1,0 +1,31 @@
+{
+  "name": "Scrivere estensioni",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Il ciclo di vita dell'estensione",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Informazioni di base"
+    },
+    {
+      "name": "Definire un'estensione",
+      "file": "defining-an-extension.md",
+      "subCat": "Informazioni di base"
+    },
+    {
+      "name": "Esempi di estensioni",
+      "file": "example-extensions.md",
+      "subCat": "Informazioni di base"
+    },
+    {
+      "name": "L'oggetto dell'estensione",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "L'API dell'estensione",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

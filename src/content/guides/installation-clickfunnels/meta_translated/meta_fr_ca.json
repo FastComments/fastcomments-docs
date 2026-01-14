@@ -1,0 +1,37 @@
+{
+  "name": "Installation de ClickFunnels",
+  "pageHeader": "Ajouter le clavardage en direct aux cours ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Étape 1 : Trouver le modèle",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Installation de ClickFunnels"
+    },
+    {
+      "name": "Étape 2 : Ajouter le code",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Installation de ClickFunnels"
+    },
+    {
+      "name": "Erreurs de domaine",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Installation de ClickFunnels"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Installation de ClickFunnels"
+    },
+    {
+      "name": "Supplément : extrait de code pour commentaires en direct",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Extrait de code pour commentaires en direct"
+    },
+    {
+      "name": "Supplément : lecture automatique des commentaires",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Lecture automatique des commentaires"
+    }
+  ]
+}

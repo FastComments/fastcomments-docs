@@ -1,0 +1,21 @@
+{
+  "name": "RSS 提要",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "概覽",
+      "file": "overview.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "設定您的 RSS 提要",
+      "file": "setup.md",
+      "subCat": "入門"
+    },
+    {
+      "name": "安全考量",
+      "file": "security.md",
+      "subCat": "實作"
+    }
+  ]
+}

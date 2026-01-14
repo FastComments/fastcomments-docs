@@ -1,0 +1,72 @@
+{
+  "name": "Библиотека Android",
+  "pageHeader": "Библиотека FastComments для Android",
+  "itemsOrdered": [
+    {
+      "name": "Функции",
+      "file": "features-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Базовое использование",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Безопасная SSO-аутентификация",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Аутентификация",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция ленты",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция чата в реальном времени",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Примеры проектов",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Параметры конфигурации",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Полная настройка темы",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Управление памятью",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

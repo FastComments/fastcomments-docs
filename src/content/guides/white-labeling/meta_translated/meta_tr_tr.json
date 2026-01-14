@@ -1,0 +1,36 @@
+{
+  "name": "Beyaz Etiketleme",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Beyaz Etiketleme Nedir",
+      "file": "white-labeling-background.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Beyaz Etiketlemeyi Nasıl Alırsınız",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Beyaz Etiketleme Kurulumu",
+      "file": "white-labeling-process.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Kontrol Panelini Kullanma",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "API'yi Kullanma",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Beyaz Etiketli Kiracıları Yönetme",
+      "file": "white-labeling-managing.md",
+      "subCat": "Kiracı Yönetimi"
+    }
+  ]
+}

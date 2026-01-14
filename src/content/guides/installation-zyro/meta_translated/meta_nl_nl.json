@@ -1,0 +1,37 @@
+{
+  "name": "Zyro-installatie",
+  "pageHeader": "Voeg live reacties toe aan Zyro-sites",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Voeg de code-widget toe",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro-siteinstallatie"
+    },
+    {
+      "name": "Stap 2: Voeg de code toe",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro-siteinstallatie"
+    },
+    {
+      "name": "Succes",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro-siteinstallatie"
+    },
+    {
+      "name": "Fouten met het domein van de site",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro-siteinstallatie"
+    },
+    {
+      "name": "Site-aanpassing",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro-siteinstallatie"
+    },
+    {
+      "name": "Drijvende vind-ik-leuk-knop",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro drijvende vind-ik-leuk-knop"
+    }
+  ]
+}

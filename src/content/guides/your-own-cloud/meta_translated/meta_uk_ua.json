@@ -1,0 +1,36 @@
+{
+  "name": "Ваша власна хмара",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Що таке Isolated Cloud від FastComments?",
+      "file": "your-own-cloud.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як отримати",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Налаштування та навчання",
+      "file": "set-up-training.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Використання панелі керування",
+      "file": "using-the-dashboard.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Використання API",
+      "file": "using-the-api.md",
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Керування орендарями",
+      "file": "managing-tenants.md",
+      "subCat": "Керування орендарями"
+    }
+  ]
+}

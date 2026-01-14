@@ -1,0 +1,77 @@
+{
+  "name": "Instalacija Squarespacea",
+  "pageHeader": "Dodavanje komentara na Squarespace stranice",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dodavanje komentiranja uživo na vaš blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Dodavanje komentara na vaš blog"
+    },
+    {
+      "name": "Korak 1: Otvorite postavke bloga",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Dodavanje komentara na vaš blog"
+    },
+    {
+      "name": "Korak 2: Zalijepite svoj FastComments.com kod",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Dodavanje komentara na vaš blog"
+    },
+    {
+      "name": "Uspješno",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Dodavanje komentara na vaš blog"
+    },
+    {
+      "name": "Dodavanje komentiranja uživo na sve stranice",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Dodavanje komentara na sve stranice"
+    },
+    {
+      "name": "Korak 1: Otvorite alate za razvojne programere",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Dodavanje komentara na sve stranice"
+    },
+    {
+      "name": "Korak 2: Zalijepite svoj FastComments.com kod",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Dodavanje komentara na sve stranice"
+    },
+    {
+      "name": "Uspješno",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Dodavanje komentara na sve stranice"
+    },
+    {
+      "name": "Dodavanje komentiranja uživo na određenu stranicu",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Dodavanje komentara na određenu stranicu"
+    },
+    {
+      "name": "Korak 1: Dodajte blok koda",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Dodavanje komentara na određenu stranicu"
+    },
+    {
+      "name": "Korak 2: Zalijepite svoj FastComments.com kod",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Dodavanje komentara na određenu stranicu"
+    },
+    {
+      "name": "Uspješno",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Dodavanje komentara na određenu stranicu"
+    },
+    {
+      "name": "Pogreške domene",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Daljnji koraci za Squarespace"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "squarespace-customize.md",
+      "subCat": "Daljnji koraci za Squarespace"
+    }
+  ]
+}

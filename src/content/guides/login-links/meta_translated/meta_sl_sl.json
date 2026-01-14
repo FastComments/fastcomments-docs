@@ -1,0 +1,26 @@
+{
+  "name": "Prijavne povezave",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj so prijavne povezave?",
+      "file": "login-links-what-are.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Prednosti prijavnih povezav pred gesli",
+      "file": "login-links-benefits.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kako zagotavljamo varnost prijavnih povezav",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Varnost"
+    },
+    {
+      "name": "Kdo prejme prijavne povezave?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Uporaba"
+    }
+  ]
+}

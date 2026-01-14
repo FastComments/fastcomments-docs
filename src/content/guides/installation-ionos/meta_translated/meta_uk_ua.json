@@ -1,0 +1,37 @@
+{
+  "name": "Встановлення Ionos",
+  "pageHeader": "Додавання коментарів на сайтах Ionos",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Додайте контактну форму",
+      "file": "ionos-step-1.md",
+      "subCat": "Встановлення Ionos"
+    },
+    {
+      "name": "Крок 2: Додайте код FastComments.com",
+      "file": "ionos-step-2.md",
+      "subCat": "Встановлення Ionos"
+    },
+    {
+      "name": "Крок 3: Опублікуйте",
+      "file": "ionos-step-3.md",
+      "subCat": "Встановлення Ionos"
+    },
+    {
+      "name": "Успіх",
+      "file": "ionos-success.md",
+      "subCat": "Встановлення Ionos"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Встановлення Ionos"
+    },
+    {
+      "name": "Налаштування",
+      "file": "ionos-customize.md",
+      "subCat": "Встановлення Ionos"
+    }
+  ]
+}

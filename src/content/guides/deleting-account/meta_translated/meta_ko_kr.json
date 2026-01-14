@@ -1,0 +1,16 @@
+{
+  "name": "계정 삭제",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "계정 삭제",
+      "file": "deleting-your-account.md",
+      "subCat": "댓글 작성자 및 테넌트"
+    },
+    {
+      "name": "구독 취소",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "테넌트"
+    }
+  ]
+}

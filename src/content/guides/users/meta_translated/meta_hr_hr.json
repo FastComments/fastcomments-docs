@@ -1,0 +1,46 @@
+{
+  "name": "Korisnici",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Vrste korisnika",
+      "file": "types-of-users.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Korisnička imena",
+      "file": "usernames.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Administratori",
+      "file": "administrator-users.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Komentatori",
+      "file": "commenter-users.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Dodavanje administratora",
+      "file": "adding-administrators.md",
+      "subCat": "Postavljanje"
+    },
+    {
+      "name": "Dodavanje moderatora",
+      "file": "adding-moderators.md",
+      "subCat": "Postavljanje"
+    },
+    {
+      "name": "Ažuriranje administratorskih dozvola",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Postavljanje"
+    },
+    {
+      "name": "Programeri",
+      "file": "developers.md",
+      "subCat": "Postavljanje"
+    }
+  ]
+}

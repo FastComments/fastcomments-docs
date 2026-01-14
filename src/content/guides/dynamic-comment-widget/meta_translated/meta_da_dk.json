@@ -1,0 +1,11 @@
+{
+  "name": "Dynamisk tilføjelse og udskiftning af kommentartråde",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dynamisk tilføjelse og udskiftning af kommentartråde",
+      "file": "swap-widgets-example.md",
+      "subCat": "Eksempler"
+    }
+  ]
+}

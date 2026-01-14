@@ -1,0 +1,41 @@
+{
+  "name": "צ'אט תמונות",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "התחלה",
+      "file": "getting-started.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "דוגמאות",
+      "file": "examples.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "אפשרויות תצורה",
+      "file": "configuration-options.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "עיצוב רספונסיבי",
+      "file": "responsive-design.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "customization.md",
+      "subCat": "התאמה אישית"
+    },
+    {
+      "name": "סנכרון בזמן אמת",
+      "file": "live-sync.md",
+      "subCat": "מתקדם"
+    },
+    {
+      "name": "תיעוד ה-API",
+      "file": "api-reference.md",
+      "subCat": "מתקדם"
+    }
+  ]
+}

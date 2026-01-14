@@ -1,0 +1,24 @@
+{
+  "name": "Svelte ライブラリ",
+  "pageHeader": "FastComments の Svelte ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "ウィジェット",
+      "file": "widgets-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "開発",
+      "file": "developing-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ビルド",
+      "file": "building-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

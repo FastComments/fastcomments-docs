@@ -1,0 +1,61 @@
+{
+  "name": "Εγκατάσταση",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Πρόσθετα τρίτων"
+    },
+    {
+      "name": "VanillaJS / Απόσπασμα HTML",
+      "file": "vanillajs.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Πολλαπλά στιγμιότυπα στην ίδια σελίδα",
+      "file": "multiple-instances.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Κοινές περιπτώσεις χρήσης",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Αντιμετώπιση συνηθισμένων προβλημάτων",
+      "file": "debugging-common-issues.md",
+      "subCat": "Προσαρμοσμένες εγκαταστάσεις"
+    },
+    {
+      "name": "Notion και Google Sites",
+      "file": "oembed.md",
+      "subCat": "Ενσωμάτωση σε έγγραφα"
+    }
+  ]
+}

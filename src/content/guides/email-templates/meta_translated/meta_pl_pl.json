@@ -1,0 +1,41 @@
+{
+  "name": "Szablony wiadomości e-mail",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Tworzenie szablonów",
+      "file": "creating-templates.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Język szablonów",
+      "file": "template-language.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Lokalizacja i tekst niestandardowy",
+      "file": "localizing.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Szablony dla poszczególnych domen",
+      "file": "per-domain-templates.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Dane i zmienne",
+      "file": "data-variables.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Błędy renderowania",
+      "file": "render-failures.md",
+      "subCat": "Szablony wiadomości e-mail"
+    },
+    {
+      "name": "Zastosowanie zmian",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Szablony wiadomości e-mail"
+    }
+  ]
+}

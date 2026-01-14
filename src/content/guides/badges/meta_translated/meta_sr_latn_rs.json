@@ -1,0 +1,96 @@
+{
+  "name": "Bedževi",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Osnove",
+      "file": "badge-basics.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Napredovanje",
+      "file": "badge-progression.md",
+      "subCat": "Osnove"
+    },
+    {
+      "name": "Ručno dodeljeni bedževi",
+      "file": "badge-type-manual.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Broj komentara",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Pozitivni glasovi",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Odgovori",
+      "file": "badge-type-replies.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Pričvršćeni komentari",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Veteran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Noćna sova",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Brzo vreme odgovora",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Odgovor na određenu stranicu",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Vrste bedževa"
+    },
+    {
+      "name": "Uvod u moderatorske bedževe",
+      "file": "moderator-badges.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Obrisani komentari",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Odobreni komentari",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Komentari poništeni",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Pregledani komentari",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Komentari označeni kao spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    },
+    {
+      "name": "Komentari označeni kao ne-spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Vrste moderatorskih bedževa"
+    }
+  ]
+}

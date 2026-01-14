@@ -1,0 +1,61 @@
+{
+  "name": "Installation",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Third-Party Plugins"
+    },
+    {
+      "name": "Vanilla JS / HTML Snippet",
+      "file": "vanillajs.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Multiple Instances on the Same Page",
+      "file": "multiple-instances.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Common Use Cases",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Debugging Common Issues",
+      "file": "debugging-common-issues.md",
+      "subCat": "Custom Installations"
+    },
+    {
+      "name": "Notion and Google Sites",
+      "file": "oembed.md",
+      "subCat": "Embedding in Documents"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Δημιουργία επεκτάσεων",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Κύκλος ζωής επέκτασης",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Ορισμός επέκτασης",
+      "file": "defining-an-extension.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Παραδείγματα επεκτάσεων",
+      "file": "example-extensions.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Το αντικείμενο επέκτασης",
+      "file": "the-extension-object.md",
+      "subCat": "Διεπαφή API"
+    },
+    {
+      "name": "Το API της επέκτασης",
+      "file": "the-extension-api.md",
+      "subCat": "Διεπαφή API"
+    }
+  ]
+}

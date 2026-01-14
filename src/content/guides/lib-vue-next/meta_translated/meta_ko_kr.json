@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 라이브러리",
+  "pageHeader": "FastComments Vue 3 라이브러리",
+  "itemsOrdered": [
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "사용법",
+      "file": "usage-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "현재 페이지 업데이트 (SPA 예제)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "프로덕션 환경",
+      "file": "in-production-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "모든 위젯 및 문서",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

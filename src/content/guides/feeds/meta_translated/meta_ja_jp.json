@@ -1,0 +1,16 @@
+{
+  "name": "フィード",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "フィードのパーソナライズ",
+      "file": "personalizing-feeds.md",
+      "subCat": "カスタマイズ"
+    },
+    {
+      "name": "地域別フィード",
+      "file": "regional-feeds.md",
+      "subCat": "カスタマイズ"
+    }
+  ]
+}

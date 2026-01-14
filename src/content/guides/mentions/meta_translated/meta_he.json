@@ -1,0 +1,31 @@
+{
+  "name": "אזכורים",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "מהם אזכורים",
+      "file": "what-are-mentions.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "כיצד לתייג משתמש",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "שימוש באזכורים"
+    },
+    {
+      "name": "התראות",
+      "file": "mentions-notifications.md",
+      "subCat": "שימוש באזכורים"
+    },
+    {
+      "name": "כיצד פועלת השלמה אוטומטית של אזכורים",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "שימוש באזכורים"
+    },
+    {
+      "name": "מילוי אזכורים",
+      "file": "populating-mentions.md",
+      "subCat": "הגדרת אזכורים"
+    }
+  ]
+}

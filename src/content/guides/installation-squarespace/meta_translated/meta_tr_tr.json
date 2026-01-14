@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace Kurulumu",
+  "pageHeader": "Squarespace Sitelerine Yorum Ekle",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Blogunuza Canlı Yorum Ekleme",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Blogunuza Yorum Ekleme"
+    },
+    {
+      "name": "Adım 1: Blog Ayarlarını Açın",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Blogunuza Yorum Ekleme"
+    },
+    {
+      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Blogunuza Yorum Ekleme"
+    },
+    {
+      "name": "Başarıyla Tamamlandı",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Blogunuza Yorum Ekleme"
+    },
+    {
+      "name": "Tüm Sayfalara Canlı Yorum Ekleme",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Tüm Sayfalara Yorum Ekleme"
+    },
+    {
+      "name": "Adım 1: Geliştirici Araçlarını Açın",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Tüm Sayfalara Yorum Ekleme"
+    },
+    {
+      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Tüm Sayfalara Yorum Ekleme"
+    },
+    {
+      "name": "Başarıyla Tamamlandı",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Tüm Sayfalara Yorum Ekleme"
+    },
+    {
+      "name": "Belirli Bir Sayfaya Canlı Yorum Ekleme",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+    },
+    {
+      "name": "Adım 1: Kod Bloğu Ekleyin",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+    },
+    {
+      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+    },
+    {
+      "name": "Başarıyla Tamamlandı",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace Sonraki Adımlar"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace Sonraki Adımlar"
+    }
+  ]
+}

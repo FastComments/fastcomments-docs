@@ -1,0 +1,72 @@
+{
+  "name": "WordPress-installatie",
+  "pageHeader": "Voeg live reacties toe aan WordPress-sites",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Snel aan de slag",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Installatie",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Moderatie",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Gebruikers, moderators en beheerders",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Sites alleen voor leden (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Meldingen",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Aangepaste thema's",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Terug synchroniseren naar WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Aantal reacties",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Communicatie tussen WordPress-installatie en FastComment-server",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress-installatie"
+    },
+    {
+      "name": "Deactiveren versus verwijderen van de plug-in",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Plug-in verwijderen"
+    }
+  ]
+}

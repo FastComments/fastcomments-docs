@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "oEmbed란 무엇인가?",
+      "file": "about-oembed.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "oEmbed 대화 생성",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "사용"
+    }
+  ]
+}

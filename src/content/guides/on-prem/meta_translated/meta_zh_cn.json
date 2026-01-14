@@ -1,0 +1,56 @@
+{
+  "name": "本地部署",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "包含内容",
+      "file": "on-prem-whats-included.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何开始",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "实例",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "部署"
+    },
+    {
+      "name": "配置",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "部署"
+    },
+    {
+      "name": "数据库停机与维护模式",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "架构"
+    },
+    {
+      "name": "锁",
+      "file": "on-prem-locks.md",
+      "subCat": "架构"
+    },
+    {
+      "name": "小部件代码",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "安装与集成"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "安装与集成"
+    },
+    {
+      "name": "多个域名",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "安装与集成"
+    },
+    {
+      "name": "安全",
+      "file": "on-prem-security.md",
+      "subCat": "安全提示"
+    }
+  ]
+}

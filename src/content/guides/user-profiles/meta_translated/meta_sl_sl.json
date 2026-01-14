@@ -1,0 +1,51 @@
+{
+  "name": "Uporabniški profili",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Osnove profila",
+      "file": "profile-basics.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Prilagajanje profila",
+      "file": "customizing-profiles.md",
+      "subCat": "Prilagajanje"
+    },
+    {
+      "name": "Nastavitve zasebnosti",
+      "file": "privacy-settings.md",
+      "subCat": "Prilagajanje"
+    },
+    {
+      "name": "Značke",
+      "file": "badges.md",
+      "subCat": "Funkcije"
+    },
+    {
+      "name": "Komentarji na profilu",
+      "file": "profile-comments.md",
+      "subCat": "Funkcije"
+    },
+    {
+      "name": "Neposredno sporočanje",
+      "file": "direct-messaging.md",
+      "subCat": "Funkcije"
+    },
+    {
+      "name": "Vir dejavnosti",
+      "file": "activity-feed.md",
+      "subCat": "Funkcije"
+    },
+    {
+      "name": "Uporabniške opombe",
+      "file": "user-notes.md",
+      "subCat": "Funkcije"
+    },
+    {
+      "name": "Oblikovanje profilov",
+      "file": "styling-profiles.md",
+      "subCat": "Za razvijalce"
+    }
+  ]
+}

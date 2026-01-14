@@ -1,0 +1,46 @@
+{
+  "name": "צ'אט שיתופי",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "התחלה",
+      "file": "getting-started.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "דוגמאות",
+      "file": "examples.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "הוספת הערות בזמן אמת לספרים מקוונים",
+      "file": "online-books.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "אפשרויות תצורה",
+      "file": "configuration-options.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "התנהגות בחירת הטקסט",
+      "file": "text-selection-behavior.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "customization.md",
+      "subCat": "התאמה אישית"
+    },
+    {
+      "name": "סנכרון בזמן אמת",
+      "file": "live-sync.md",
+      "subCat": "מתקדם"
+    },
+    {
+      "name": "תיעוד ה-API",
+      "file": "api-reference.md",
+      "subCat": "מתקדם"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Hashtagovi",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Što su hashtagovi",
+      "file": "what-are-hashtags.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Kako koristiti hashtagove",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Korištenje hashtagova"
+    },
+    {
+      "name": "Filtriranje komentara po hashtagovima",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Korištenje hashtagova"
+    },
+    {
+      "name": "Ispravni i neispravni hashtagovi",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Korištenje hashtagova"
+    },
+    {
+      "name": "Korištenje simbola osim #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Postavljanje hashtagova"
+    },
+    {
+      "name": "Predpopunjavanje hashtagova",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Postavljanje hashtagova"
+    },
+    {
+      "name": "Povezivanje s sadržajem putem hashtagova",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Postavljanje hashtagova"
+    },
+    {
+      "name": "Kako funkcionira automatsko dovršavanje hashtagova",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Pozadina hashtagova"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "התקנת Memberstack",
+  "pageHeader": "הוספת תגובות עם Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "הקוד",
+      "file": "memberstack-step-1.md",
+      "subCat": "התקנת Memberstack"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "התקנת Memberstack"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "memberstack-customize.md",
+      "subCat": "התקנת Memberstack"
+    }
+  ]
+}

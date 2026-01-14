@@ -1,0 +1,11 @@
+{
+  "name": "ערכת LLM",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "השג את ערכת ה-LLM",
+      "file": "llm-kit-snippet.md",
+      "subCat": "אינטגרציה של LLM"
+    }
+  ]
+}

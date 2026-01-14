@@ -1,0 +1,31 @@
+{
+  "name": "SSO-adgangskontrol",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er adgangskontrol?",
+      "file": "what-is-access-control.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Hvordan det virker",
+      "file": "how-it-works.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Specifikationen",
+      "file": "access-control-spec.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Implementering",
+      "file": "implementation.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Eksempler på API-opkald",
+      "file": "api-example.md",
+      "subCat": "Implementering"
+    }
+  ]
+}

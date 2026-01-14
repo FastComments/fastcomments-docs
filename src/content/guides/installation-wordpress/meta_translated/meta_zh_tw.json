@@ -1,0 +1,72 @@
+{
+  "name": "WordPress 安裝",
+  "pageHeader": "在 WordPress 網站新增即時評論功能",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "快速開始",
+      "file": "wordpress-quick-start.md",
+      "subCat": "重點摘要"
+    },
+    {
+      "name": "安裝",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "留言審核",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "使用者、審核員與管理員",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "僅限會員網站（SSO）",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "通知",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "自訂主題",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "同步回 WordPress",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "留言計數",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "WordPress 安裝 <> FastComment 伺服器通訊",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress 安裝"
+    },
+    {
+      "name": "停用與解除安裝外掛的差異",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "移除外掛"
+    }
+  ]
+}

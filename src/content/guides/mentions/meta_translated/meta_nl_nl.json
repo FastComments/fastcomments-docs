@@ -1,0 +1,31 @@
+{
+  "name": "Vermeldingen",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn vermeldingen",
+      "file": "what-are-mentions.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe tag je een gebruiker",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Vermeldingen gebruiken"
+    },
+    {
+      "name": "Meldingen",
+      "file": "mentions-notifications.md",
+      "subCat": "Vermeldingen gebruiken"
+    },
+    {
+      "name": "Hoe automatisch aanvullen voor vermeldingen werkt",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Vermeldingen gebruiken"
+    },
+    {
+      "name": "Vermeldingen vullen",
+      "file": "populating-mentions.md",
+      "subCat": "Vermeldingen instellen"
+    }
+  ]
+}

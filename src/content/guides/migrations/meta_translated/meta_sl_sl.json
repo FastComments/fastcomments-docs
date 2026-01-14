@@ -1,0 +1,46 @@
+{
+  "name": "Migracije",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "Migracija iz drugih ponudnikov",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "Iz drugih ponudnikov"
+    },
+    {
+      "name": "Uvoz podatkov",
+      "file": "importing-data.md",
+      "subCat": "Iz drugih ponudnikov"
+    },
+    {
+      "name": "Uvoz komentarjev iz WordPressa",
+      "file": "importing-data-wordpress.md",
+      "subCat": "Iz drugih ponudnikov"
+    },
+    {
+      "name": "Migracija uporabnikov in moderatorjev",
+      "file": "migrating-users-moderators.md",
+      "subCat": "Iz drugih ponudnikov"
+    },
+    {
+      "name": "Migracija domen",
+      "file": "migrating-domains.md",
+      "subCat": "Migracije podatkov"
+    },
+    {
+      "name": "Migracija strani",
+      "file": "migrating-pages.md",
+      "subCat": "Migracije podatkov"
+    },
+    {
+      "name": "Kopiranje komentarjev",
+      "file": "copying-comments.md",
+      "subCat": "Migracije podatkov"
+    },
+    {
+      "name": "Izvoz podatkov",
+      "file": "exporting-data.md",
+      "subCat": "K drugim ponudnikom"
+    }
+  ]
+}

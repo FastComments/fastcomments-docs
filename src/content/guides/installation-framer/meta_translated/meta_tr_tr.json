@@ -1,0 +1,37 @@
+{
+  "name": "Framer Kurulumu",
+  "pageHeader": "Framer Sitelerine Canlı Yorum Ekleme",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Düzenleyiciyi Açın",
+      "file": "framer-step-1.md",
+      "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Adım 2: Gömme Bloğu Ekle",
+      "file": "framer-step-2.md",
+      "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Adım 3: Framer'a Özel FastComments Kodunu Kopyalayın ve Yapıştırın",
+      "file": "framer-step-3.md",
+      "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Adım 4: Widget ve Sayfa Yüksekliğini Ayarlayın",
+      "file": "framer-step-4.md",
+      "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "framer-customize.md",
+      "subCat": "Framer Kurulumu"
+    }
+  ]
+}

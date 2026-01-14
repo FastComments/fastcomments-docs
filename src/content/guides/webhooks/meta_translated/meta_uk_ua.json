@@ -1,0 +1,46 @@
+{
+  "name": "Вебхуки",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке вебхуки",
+      "file": "what-are-webhooks.md",
+      "subCat": "Огляд"
+    },
+    {
+      "name": "Підтримувані події та ресурси",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Огляд"
+    },
+    {
+      "name": "Налаштування локальної розробки",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Налаштування",
+      "file": "webhooks-setup.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Тестування",
+      "file": "webhooks-testing.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Структури даних",
+      "file": "webhooks-structures.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Безпека та API-токени",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Реалізація"
+    },
+    {
+      "name": "Як це працює та обробка повторних спроб",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "За лаштунками"
+    }
+  ]
+}

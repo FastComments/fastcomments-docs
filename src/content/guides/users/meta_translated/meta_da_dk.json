@@ -1,0 +1,46 @@
+{
+  "name": "Brugere",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Brugertyper",
+      "file": "types-of-users.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Brugernavne",
+      "file": "usernames.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Administratorbrugere",
+      "file": "administrator-users.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Kommentatorer",
+      "file": "commenter-users.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Tilføjelse af administratorer",
+      "file": "adding-administrators.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Tilføjelse af moderatorer",
+      "file": "adding-moderators.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Opdatering af administratorrettigheder",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Udviklere",
+      "file": "developers.md",
+      "subCat": "Opsætning"
+    }
+  ]
+}

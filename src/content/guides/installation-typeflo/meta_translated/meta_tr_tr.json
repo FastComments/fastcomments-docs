@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Typeflo.io Bloglarına Canlı Yorum Ekle",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Kod Girişini Bul",
+      "file": "typeflo-step-1.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "2. Kodu Ekle",
+      "file": "typeflo-step-2.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Başarılı",
+      "file": "typeflo-success.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

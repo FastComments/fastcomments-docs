@@ -1,0 +1,26 @@
+{
+  "name": "Уведомления",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Когда FastComments отправляет уведомления?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Типы уведомлений",
+      "file": "notification-types.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Отказ от уведомлений",
+      "file": "opting-out-notifications.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Настройка уведомлений для SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Настройка"
+    }
+  ]
+}

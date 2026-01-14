@@ -1,0 +1,42 @@
+{
+  "name": "Εγκατάσταση Moodle",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Απόκτηση πρόσβασης στον διακομιστή",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Βήμα 2: Εντοπισμός αρχείου προβολής",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Βήμα 3: Προσθήκη κώδικα",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Επιτυχής ιστότοπος μέλους",
+      "file": "moodle-success.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Σφάλματα τομέα ιστότοπου μέλους",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Προσαρμογή ιστότοπου μέλους",
+      "file": "moodle-customize.md",
+      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+    },
+    {
+      "name": "Θέλετε ένα αφιερωμένο πρόσθετο;",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Αφιερωμένο πρόσθετο?"
+    }
+  ]
+}

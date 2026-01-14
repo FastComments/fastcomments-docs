@@ -1,0 +1,21 @@
+{
+  "name": "עוגיות צד שלישי",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "מהן עוגיות צד שלישי?",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "שימוש של FastComments בעוגיות צד שלישי",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הפעלת עוגיות צד שלישי",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "הפעלה"
+    }
+  ]
+}

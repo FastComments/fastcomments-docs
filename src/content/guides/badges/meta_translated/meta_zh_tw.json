@@ -1,0 +1,96 @@
+{
+  "name": "徽章",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "基礎",
+      "file": "badge-basics.md",
+      "subCat": "基礎"
+    },
+    {
+      "name": "進度",
+      "file": "badge-progression.md",
+      "subCat": "基礎"
+    },
+    {
+      "name": "手動徽章",
+      "file": "badge-type-manual.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "評論數",
+      "file": "badge-type-comment-count.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "按讚數",
+      "file": "badge-type-up-votes.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "回覆",
+      "file": "badge-type-replies.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "置頂評論",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "資深會員",
+      "file": "badge-type-veteran.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "夜貓子",
+      "file": "badge-type-night-owl.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "快速回覆",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "針對特定頁面回覆",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "徽章類型"
+    },
+    {
+      "name": "版主徽章簡介",
+      "file": "moderator-badges.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "已刪除評論",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "已核准評論",
+      "file": "moderator-comments-approved.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "未核准評論",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "已審核評論",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "標記為垃圾評論",
+      "file": "moderator-comments-spam.md",
+      "subCat": "版主徽章類型"
+    },
+    {
+      "name": "標記為非垃圾評論",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "版主徽章類型"
+    }
+  ]
+}

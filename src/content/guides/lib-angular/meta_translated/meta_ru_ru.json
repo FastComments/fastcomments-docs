@@ -1,0 +1,12 @@
+{
+  "name": "Библиотека Angular",
+  "pageHeader": "Библиотека FastComments для Angular",
+  "itemsOrdered": [
+    {
+      "name": "Структура проекта",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

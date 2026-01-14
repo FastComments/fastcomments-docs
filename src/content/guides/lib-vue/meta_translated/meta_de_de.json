@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2-Bibliothek",
+  "pageHeader": "FastComments Vue 2-Bibliothek",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Verwendung",
+      "file": "usage-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    },
+    {
+      "name": "Aktualisieren der aktuellen Seite (SPA-Beispiel)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    },
+    {
+      "name": "Im Produktivbetrieb",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

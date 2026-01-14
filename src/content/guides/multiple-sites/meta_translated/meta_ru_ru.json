@@ -1,0 +1,51 @@
+{
+  "name": "Несколько сайтов",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Начальная настройка",
+      "file": "add-domains-to-account.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Ограничения и цены",
+      "file": "domain-limits.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Имя отправителя, электронная почта и логотип",
+      "file": "from-name-email-logo.md",
+      "subCat": "Настройка для каждого сайта"
+    },
+    {
+      "name": "Домен в поле «From Name/Email» не работает",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Настройка для каждого сайта"
+    },
+    {
+      "name": "Тенант для каждого окружения",
+      "file": "tenant-per-environment.md",
+      "subCat": "Настройка для каждого сайта"
+    },
+    {
+      "name": "Кастомизации",
+      "file": "customizations.md",
+      "subCat": "Настройка для каждого сайта"
+    },
+    {
+      "name": "Модерация комментариев",
+      "file": "moderation.md",
+      "subCat": "Данные и поиск"
+    },
+    {
+      "name": "Совместное использование комментариев между доменами",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Данные и поиск"
+    },
+    {
+      "name": "С WordPress",
+      "file": "wordpress.md",
+      "subCat": "Примечания по интеграции"
+    }
+  ]
+}

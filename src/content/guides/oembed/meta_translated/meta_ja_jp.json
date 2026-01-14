@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "oEmbedとは何ですか？",
+      "file": "about-oembed.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "oEmbedの会話を作成する",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "使い方"
+    }
+  ]
+}

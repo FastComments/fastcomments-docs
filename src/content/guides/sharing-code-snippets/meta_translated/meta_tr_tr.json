@@ -1,0 +1,31 @@
+{
+  "name": "Kod Örneklerini Paylaşma",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Kod Örnekleri Nedir?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Kodlama Toplulukları",
+      "file": "code-snippets-communities.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Desteklenen Programlama Dilleri",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Kod Örnekleri Paylaşımını Kurma",
+      "file": "code-snippets-setup.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Kod Örneklerini Paylaşma",
+      "file": "code-snippets-usage.md",
+      "subCat": "Kullanım"
+    }
+  ]
+}

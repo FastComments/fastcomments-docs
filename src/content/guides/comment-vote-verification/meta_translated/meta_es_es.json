@@ -1,0 +1,36 @@
+{
+  "name": "Verificación de comentarios y votos",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Antecedentes",
+      "file": "background.md",
+      "subCat": "Conceptos básicos"
+    },
+    {
+      "name": "Comentarios no verificados",
+      "file": "unverified-comments.md",
+      "subCat": "Conceptos básicos"
+    },
+    {
+      "name": "Votos no verificados",
+      "file": "unverified-votes.md",
+      "subCat": "Conceptos básicos"
+    },
+    {
+      "name": "Correos de verificación",
+      "file": "verification-emails.md",
+      "subCat": "Verificación"
+    },
+    {
+      "name": "Sesiones",
+      "file": "verification-sessions.md",
+      "subCat": "Verificación"
+    },
+    {
+      "name": "Comentarios en directo",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verificación"
+    }
+  ]
+}

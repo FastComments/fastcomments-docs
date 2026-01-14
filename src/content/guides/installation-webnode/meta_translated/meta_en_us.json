@@ -1,0 +1,42 @@
+{
+  "name": "Webnode Installation",
+  "pageHeader": "Add Comments to Webnode Sites",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Edit Your Page",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Step 2: Add Section and HTML Block",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Step 3: Copy & Paste Code Snippet",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Step 4: Publish",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Success",
+      "file": "webnode-success.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode Installation"
+    }
+  ]
+}

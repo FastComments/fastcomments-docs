@@ -1,0 +1,51 @@
+{
+  "name": "Kullanıcı Profilleri",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Profil Temelleri",
+      "file": "profile-basics.md",
+      "subCat": "Başlarken"
+    },
+    {
+      "name": "Profilinizi Özelleştirme",
+      "file": "customizing-profiles.md",
+      "subCat": "Özelleştirme"
+    },
+    {
+      "name": "Gizlilik Ayarları",
+      "file": "privacy-settings.md",
+      "subCat": "Özelleştirme"
+    },
+    {
+      "name": "Rozetler",
+      "file": "badges.md",
+      "subCat": "Özellikler"
+    },
+    {
+      "name": "Profil Yorumları",
+      "file": "profile-comments.md",
+      "subCat": "Özellikler"
+    },
+    {
+      "name": "Doğrudan Mesajlaşma",
+      "file": "direct-messaging.md",
+      "subCat": "Özellikler"
+    },
+    {
+      "name": "Aktivite Akışı",
+      "file": "activity-feed.md",
+      "subCat": "Özellikler"
+    },
+    {
+      "name": "Kullanıcı Notları",
+      "file": "user-notes.md",
+      "subCat": "Özellikler"
+    },
+    {
+      "name": "Profil Stilleri",
+      "file": "styling-profiles.md",
+      "subCat": "Geliştiriciler İçin"
+    }
+  ]
+}

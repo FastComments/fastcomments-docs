@@ -232,13 +232,15 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
                     const isLastAttempt = attempt === maxRetries;
                     const isLengthError = error.message.includes('Finish reason: length');
 
+                    // Always log the error
+                    console.error(`  [error] ${filename}: ${error.message}`);
+
                     // If length error, break to try next model
                     if (isLengthError) {
                         break;
                     }
 
                     if (isLastAttempt) {
-                        console.error(`  [error] ${filename}: ${error.message} (failed after ${maxRetries} attempts with ${currentModel})`);
                         // Continue to next model if available
                         const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
                         if (nextModelIndex < modelsToTry.length) {
@@ -250,7 +252,6 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
 
                     // Exponential backoff: 1s, 2s, 4s, 8s, 16s, 32s, 64s, 128s, 256s, 512s
                     const delay = baseDelay * Math.pow(2, attempt - 1);
-                    console.error(`  [error] ${filename}: ${error.message}`);
                     console.warn(`  [retry ${attempt}/${maxRetries}] Retrying in ${delay}ms...`);
                     await this.sleep(delay);
                 }
@@ -427,59 +428,107 @@ Return ONLY a valid JSON object with the translated values. No explanations.`;
     const maxRetries = 5;
     const baseDelay = 1000;
 
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-        try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${client.apiKey}`
-                },
-                body: JSON.stringify({
-                    model: client.model,
-                    messages: [
-                        { role: 'system', content: systemMessage },
-                        { role: 'user', content: prompt }
-                    ],
-                    max_completion_tokens: 4000
-                })
-            });
+    // Build list of models to try: primary model + alternates for length issues
+    const modelsToTry = [client.model, ...ALTERNATE_MODELS];
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+    for (const currentModel of modelsToTry) {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${client.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: currentModel,
+                        messages: [
+                            { role: 'system', content: systemMessage },
+                            { role: 'user', content: prompt }
+                        ],
+                        max_completion_tokens: 16000
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+                }
+
+                const data = await response.json();
+                let content = data.choices?.[0]?.message?.content?.trim() || '';
+                const finishReason = data.choices?.[0]?.finish_reason;
+
+                // Strip markdown code block if present
+                if (content.startsWith('```json')) {
+                    content = content.slice(7);
+                } else if (content.startsWith('```')) {
+                    content = content.slice(3);
+                }
+                if (content.endsWith('```')) {
+                    content = content.slice(0, -3);
+                }
+                content = content.trim();
+
+                if (!content) {
+                    // If hit length limit, try next model instead of retrying same one
+                    if (finishReason === 'length') {
+                        const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                        if (nextModelIndex < modelsToTry.length) {
+                            console.warn(`  [length limit] UI strings for ${locale}: Output truncated with ${currentModel}, trying ${modelsToTry[nextModelIndex]}...`);
+                            break; // Break inner retry loop, continue to next model
+                        }
+                        const errorDetails = {
+                            finishReason,
+                            usage: data.usage,
+                            model: data.model
+                        };
+                        throw new Error(`API returned empty translation. Details: ${JSON.stringify(errorDetails)} (exhausted all models)`);
+                    }
+                    const errorDetails = {
+                        finishReason,
+                        usage: data.usage,
+                        model: data.model
+                    };
+                    throw new Error(`API returned empty translation. Details: ${JSON.stringify(errorDetails)}`);
+                }
+
+                let translated;
+                try {
+                    translated = JSON.parse(content);
+                } catch (parseError) {
+                    throw new Error(`Failed to parse API response as JSON: ${parseError.message}. Content: ${content.substring(0, 200)}...`);
+                }
+
+                const modelSuffix = currentModel !== client.model ? ` [${currentModel}]` : '';
+                console.log(`  [translated] UI strings for ${locale} (${data.usage?.total_tokens || 0} tokens)${modelSuffix}`);
+                return translated;
+            } catch (error) {
+                const isLastAttempt = attempt === maxRetries;
+                const isLengthError = error.message.includes('Finish reason: length');
+
+                // Always log the error
+                console.error(`  [error] UI strings for ${locale}: ${error.message}`);
+
+                // If length error, break to try next model
+                if (isLengthError) {
+                    break;
+                }
+
+                if (isLastAttempt) {
+                    // Continue to next model if available
+                    const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                    if (nextModelIndex < modelsToTry.length) {
+                        console.warn(`  [fallback] Trying ${modelsToTry[nextModelIndex]}...`);
+                        break;
+                    }
+                    return null;
+                }
+
+                const delay = baseDelay * Math.pow(2, attempt - 1);
+                console.warn(`  [retry ${attempt}/${maxRetries}] Retrying in ${delay}ms...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
             }
-
-            const data = await response.json();
-            let content = data.choices?.[0]?.message?.content?.trim() || '';
-
-            // Strip markdown code block if present
-            if (content.startsWith('```json')) {
-                content = content.slice(7);
-            } else if (content.startsWith('```')) {
-                content = content.slice(3);
-            }
-            if (content.endsWith('```')) {
-                content = content.slice(0, -3);
-            }
-            content = content.trim();
-
-            if (!content) {
-                throw new Error('API returned empty translation');
-            }
-
-            const translated = JSON.parse(content);
-            console.log(`  [translated] UI strings for ${locale} (${data.usage?.total_tokens || 0} tokens)`);
-            return translated;
-        } catch (error) {
-            if (attempt === maxRetries) {
-                console.error(`  [error] UI translation for ${locale}: ${error.message}`);
-                return null;
-            }
-
-            const delay = baseDelay * Math.pow(2, attempt - 1);
-            console.warn(`  [retry ${attempt}/${maxRetries}] ${error.message}, retrying in ${delay}ms...`);
-            await new Promise(resolve => setTimeout(resolve, delay));
         }
     }
 
@@ -533,6 +582,292 @@ async function processUITranslations(client, options = {}) {
             results.failed++;
         }
     }
+
+    return results;
+}
+
+/**
+ * Translate meta.json structure for a locale
+ * @param {string} guideId - Guide ID
+ * @param {string} locale - Target locale
+ * @param {Object} meta - Source meta.json object
+ * @param {TranslationClient} client - Translation client
+ * @returns {Promise<Object|null>} - Translated meta object or null on failure
+ */
+async function translateMetaJson(guideId, locale, meta, client) {
+    const localeInfo = locales[locale];
+    const localeName = localeInfo ? localeInfo.nativeName : locale;
+
+    // Build object to translate
+    const toTranslate = {
+        guideName: meta.name
+    };
+
+    if (meta.pageHeader) {
+        toTranslate.pageHeader = meta.pageHeader;
+    }
+
+    // Add all item names and subCats
+    meta.itemsOrdered.forEach((item, idx) => {
+        toTranslate[`item_${idx}_name`] = item.name;
+        toTranslate[`item_${idx}_subCat`] = item.subCat;
+    });
+
+    const systemMessage = `You are an expert translator. Translate metadata from English to ${localeName} (${locale}).
+Return ONLY a valid JSON object with the same keys but translated values.
+Do not include any explanation or markdown formatting - just the raw JSON.`;
+
+    const prompt = `Translate these guide metadata strings to ${localeName}:
+
+${JSON.stringify(toTranslate, null, 2)}
+
+Return ONLY a valid JSON object with the translated values. No explanations.`;
+
+    const maxRetries = 5;
+    const baseDelay = 1000;
+
+    // Build list of models to try: primary model + alternates for length issues
+    const modelsToTry = [client.model, ...ALTERNATE_MODELS];
+
+    for (const currentModel of modelsToTry) {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${client.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: currentModel,
+                        messages: [
+                            { role: 'system', content: systemMessage },
+                            { role: 'user', content: prompt }
+                        ],
+                        max_completion_tokens: 16000
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+                }
+
+                const data = await response.json();
+                let content = data.choices?.[0]?.message?.content?.trim() || '';
+                const finishReason = data.choices?.[0]?.finish_reason;
+
+                // Strip markdown code block if present
+                if (content.startsWith('```json')) {
+                    content = content.slice(7);
+                } else if (content.startsWith('```')) {
+                    content = content.slice(3);
+                }
+                if (content.endsWith('```')) {
+                    content = content.slice(0, -3);
+                }
+                content = content.trim();
+
+                if (!content) {
+                    // If hit length limit, try next model instead of retrying same one
+                    if (finishReason === 'length') {
+                        const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                        if (nextModelIndex < modelsToTry.length) {
+                            console.warn(`  [length limit] meta.json for ${guideId}/${locale}: Output truncated with ${currentModel}, trying ${modelsToTry[nextModelIndex]}...`);
+                            break; // Break inner retry loop, continue to next model
+                        }
+                        const errorDetails = {
+                            finishReason,
+                            usage: data.usage,
+                            model: data.model
+                        };
+                        throw new Error(`API returned empty translation. Details: ${JSON.stringify(errorDetails)} (exhausted all models)`);
+                    }
+                    const errorDetails = {
+                        finishReason,
+                        usage: data.usage,
+                        model: data.model
+                    };
+                    throw new Error(`API returned empty translation. Details: ${JSON.stringify(errorDetails)}`);
+                }
+
+                let translated;
+                try {
+                    translated = JSON.parse(content);
+                } catch (parseError) {
+                    throw new Error(`Failed to parse API response as JSON: ${parseError.message}. Content: ${content.substring(0, 200)}...`);
+                }
+
+                // Build translated meta object
+                const translatedMeta = {
+                    ...meta,
+                    name: translated.guideName
+                };
+
+                if (meta.pageHeader && translated.pageHeader) {
+                    translatedMeta.pageHeader = translated.pageHeader;
+                }
+
+                // Update item names and subCats
+                translatedMeta.itemsOrdered = meta.itemsOrdered.map((item, idx) => ({
+                    ...item,
+                    name: translated[`item_${idx}_name`] || item.name,
+                    subCat: translated[`item_${idx}_subCat`] || item.subCat
+                }));
+
+                const modelSuffix = currentModel !== client.model ? ` [${currentModel}]` : '';
+                console.log(`  [translated] meta.json for ${guideId}/${locale} (${data.usage?.total_tokens || 0} tokens)${modelSuffix}`);
+                return translatedMeta;
+            } catch (error) {
+                const isLastAttempt = attempt === maxRetries;
+                const isLengthError = error.message.includes('Finish reason: length');
+
+                // Always log the error
+                console.error(`  [error] meta.json for ${guideId}/${locale}: ${error.message}`);
+
+                // If length error, break to try next model
+                if (isLengthError) {
+                    break;
+                }
+
+                if (isLastAttempt) {
+                    // Continue to next model if available
+                    const nextModelIndex = modelsToTry.indexOf(currentModel) + 1;
+                    if (nextModelIndex < modelsToTry.length) {
+                        console.warn(`  [fallback] Trying ${modelsToTry[nextModelIndex]}...`);
+                        break;
+                    }
+                    return null;
+                }
+
+                const delay = baseDelay * Math.pow(2, attempt - 1);
+                console.warn(`  [retry ${attempt}/${maxRetries}] Retrying in ${delay}ms...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Check which meta.json files need translation using cache
+ * @param {Object} cache - Current cache
+ * @param {Object} options - Filter options
+ * @returns {Array} - Array of {guideId, locale, sourceHash} objects
+ */
+function getMetaJsonTranslationNeeds(cache, options = {}) {
+    const { filterLocale, filterGuide, force = false } = options;
+    const guides = getGuideDirectories();
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+    const needed = [];
+
+    for (const guideId of guides) {
+        if (filterGuide && guideId !== filterGuide) continue;
+
+        const metaPath = path.join(GUIDES_DIR, guideId, 'meta.json');
+        if (!fs.existsSync(metaPath)) continue;
+
+        const metaContent = fs.readFileSync(metaPath, 'utf8');
+        const sourceHash = hashContent(metaContent);
+
+        for (const locale of nonDefaultLocales) {
+            if (filterLocale && locale !== filterLocale) continue;
+
+            const cacheKey = getCacheKey(guideId, locale, 'meta.json');
+
+            // Check if translation is needed using cache
+            if (force || !isCached(cache, cacheKey, sourceHash)) {
+                needed.push({ guideId, locale, sourceHash });
+            }
+        }
+    }
+
+    return needed;
+}
+
+/**
+ * Process meta.json translations with concurrency
+ * @param {TranslationClient} client - Translation client
+ * @param {Object} options - Options
+ * @returns {Promise<Object>} - Results summary
+ */
+async function processMetaJsonTranslations(client, options = {}) {
+    const { filterLocale, filterGuide, dryRun = false, cache = {}, concurrency = 5 } = options;
+    const results = { success: 0, failed: 0, skipped: 0 };
+
+    const needed = getMetaJsonTranslationNeeds(cache, { filterLocale, filterGuide, force: options.force });
+
+    if (needed.length === 0) {
+        return results;
+    }
+
+    let currentIndex = 0;
+
+    const next = () => {
+        if (currentIndex < needed.length) {
+            const task = needed[currentIndex];
+            currentIndex++;
+            return task;
+        }
+        return null;
+    };
+
+    const worker = async () => {
+        while (true) {
+            const task = next();
+            if (!task) break;
+
+            const { guideId, locale, sourceHash } = task;
+            const metaPath = path.join(GUIDES_DIR, guideId, 'meta.json');
+            const localeInfo = locales[locale];
+            const localeName = localeInfo ? localeInfo.nativeName : locale;
+            const cacheKey = getCacheKey(guideId, locale, 'meta.json');
+
+            try {
+                if (dryRun) {
+                    console.log(`  [dry-run] Would translate meta.json for ${guideId} to ${locale} (${localeName})`);
+                    results.skipped++;
+                    continue;
+                }
+
+                const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+                const translatedMeta = await translateMetaJson(guideId, locale, meta, client);
+
+                if (!translatedMeta) {
+                    results.failed++;
+                    continue;
+                }
+
+                // Create meta_translated directory if it doesn't exist
+                const metaTranslatedDir = path.join(GUIDES_DIR, guideId, 'meta_translated');
+                if (!fs.existsSync(metaTranslatedDir)) {
+                    fs.mkdirSync(metaTranslatedDir, { recursive: true });
+                }
+
+                const outputPath = path.join(metaTranslatedDir, `meta_${locale}.json`);
+                fs.writeFileSync(outputPath, JSON.stringify(translatedMeta, null, 2), 'utf8');
+
+                // Update cache with source hash and save immediately
+                updateCache(cache, cacheKey, sourceHash);
+                saveCache(cache);
+
+                results.success++;
+            } catch (error) {
+                console.error(`  [error] meta.json for ${guideId}/${locale}: ${error.message || error}`);
+                console.error(error.stack || error);
+                results.failed++;
+            }
+        }
+    };
+
+    // Start concurrent workers
+    const workers = [];
+    for (let i = 0; i < concurrency; i++) {
+        workers.push(worker());
+    }
+
+    await Promise.all(workers);
 
     return results;
 }
@@ -696,18 +1031,66 @@ async function main() {
         console.log('');
     }
 
-    // Process guide file translations
-    console.log('--- Guide File Translations ---\n');
-
-    // Load cache
+    // Load cache (used for both meta.json and guide files)
     console.log('Loading translation cache...');
     const cache = loadCache();
     const cacheEntries = Object.keys(cache).length;
     console.log(`Cache has ${cacheEntries} entries.`);
     console.log('');
 
+    // Process meta.json translations
+    console.log('--- Meta.json Translations ---\n');
+    const metaNeeded = getMetaJsonTranslationNeeds(cache, {
+        filterLocale: options.locale,
+        filterGuide: options.guide,
+        force: options.force
+    });
+
+    if (metaNeeded.length > 0) {
+        console.log(`Found ${metaNeeded.length} meta.json file(s) needing translation.`);
+
+        // Group by locale for summary
+        const byLocale = {};
+        for (const { locale } of metaNeeded) {
+            byLocale[locale] = (byLocale[locale] || 0) + 1;
+        }
+        for (const [locale, count] of Object.entries(byLocale).sort()) {
+            const localeInfo = locales[locale];
+            const name = localeInfo ? localeInfo.nativeName : locale;
+            console.log(`  ${locale} (${name}): ${count} guide(s)`);
+        }
+        console.log('');
+
+        const metaResults = await processMetaJsonTranslations(client, {
+            filterLocale: options.locale,
+            filterGuide: options.guide,
+            dryRun: options.dryRun,
+            force: options.force,
+            concurrency: options.concurrency,
+            cache
+        });
+
+        console.log('');
+        console.log('Meta.json Translation Results:');
+        console.log(`  Success: ${metaResults.success} file(s)`);
+        console.log(`  Failed: ${metaResults.failed} file(s)`);
+        if (metaResults.skipped > 0) {
+            console.log(`  Skipped: ${metaResults.skipped} file(s)`);
+        }
+
+        if (metaResults.failed > 0) {
+            hasFailures = true;
+        }
+    } else {
+        console.log('All meta.json files are up-to-date (based on cache).');
+    }
+    console.log('');
+
+    // Process guide file translations
+    console.log('--- Guide File Translations ---\n');
+
     // Build task list using cache
-    console.log('Scanning for translations needed...');
+    console.log('Scanning for guide file translations needed...');
     const tasks = buildTaskList(cache, {
         filterLocale: options.locale,
         filterGuide: options.guide,

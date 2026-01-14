@@ -1,0 +1,31 @@
+{
+  "name": "Analitika",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Ozadje",
+      "file": "analytics-background.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Analitika obračunov",
+      "file": "analytics-billing.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Analitika spletnega mesta",
+      "file": "analytics-site.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Natančnost analitike v primerjavi z drugimi platformami",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analitika"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Sledenje"
+    }
+  ]
+}

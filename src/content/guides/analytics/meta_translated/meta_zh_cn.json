@@ -1,0 +1,31 @@
+{
+  "name": "分析",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "analytics-background.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "计费分析",
+      "file": "analytics-billing.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "网站分析",
+      "file": "analytics-site.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "与其他平台相比的分析准确性",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "谷歌分析",
+      "file": "analytics-google.md",
+      "subCat": "跟踪"
+    }
+  ]
+}

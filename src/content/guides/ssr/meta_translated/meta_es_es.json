@@ -1,0 +1,36 @@
+{
+  "name": "SSR (Renderizado del lado del servidor)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "¿Qué es SSR?",
+      "file": "what-is-ssr.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Beneficios del SSR",
+      "file": "benefits-of-ssr.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Características compatibles con SSR de FastComments",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Casos de uso",
+      "file": "ssr-use-cases.md",
+      "subCat": "Uso de SSR"
+    },
+    {
+      "name": "Dónde FastComments utiliza SSR",
+      "file": "ssr-where-used.md",
+      "subCat": "Uso de SSR"
+    },
+    {
+      "name": "Uso de SSR",
+      "file": "using-ssr.md",
+      "subCat": "Uso de SSR"
+    }
+  ]
+}

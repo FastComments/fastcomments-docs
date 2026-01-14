@@ -1,0 +1,26 @@
+{
+  "name": "Inloglinks",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn inloglinks?",
+      "file": "login-links-what-are.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Voordelen van inloglinks ten opzichte van wachtwoorden",
+      "file": "login-links-benefits.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe we de beveiliging van inloglinks waarborgen",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Beveiliging"
+    },
+    {
+      "name": "Wie krijgt inloglinks toegestuurd?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Gebruik"
+    }
+  ]
+}

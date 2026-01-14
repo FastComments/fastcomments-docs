@@ -1,0 +1,16 @@
+{
+  "name": "Syntaxis voor opmerkingen",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Basisopmaak",
+      "file": "basic-formatting.md",
+      "subCat": "Opmaak"
+    },
+    {
+      "name": "Beveiliging",
+      "file": "security.md",
+      "subCat": "Beveiliging"
+    }
+  ]
+}

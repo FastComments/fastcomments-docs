@@ -1,0 +1,37 @@
+{
+  "name": "Instalação no Hostinger",
+  "pageHeader": "Adicionar Comentários ao Vivo em Sites Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Adicionar o Widget de Código",
+      "file": "hostinger-step-1.md",
+      "subCat": "Instalação em Sites Hostinger"
+    },
+    {
+      "name": "Passo 2: Adicionar o Código",
+      "file": "hostinger-step-2.md",
+      "subCat": "Instalação em Sites Hostinger"
+    },
+    {
+      "name": "Sucesso",
+      "file": "hostinger-site-success.md",
+      "subCat": "Instalação em Sites Hostinger"
+    },
+    {
+      "name": "Erros de Domínio do Site",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Instalação em Sites Hostinger"
+    },
+    {
+      "name": "Personalização do Site",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Instalação em Sites Hostinger"
+    },
+    {
+      "name": "Botão de Curtidas Flutuante",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Curtidas Flutuantes no Hostinger"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Kanały",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Personalizacja kanałów",
+      "file": "personalizing-feeds.md",
+      "subCat": "Dostosowywanie"
+    },
+    {
+      "name": "Kanały regionalne",
+      "file": "regional-feeds.md",
+      "subCat": "Dostosowywanie"
+    }
+  ]
+}

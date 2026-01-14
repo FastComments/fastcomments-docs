@@ -1,0 +1,37 @@
+{
+  "name": "Super.so 설치",
+  "pageHeader": "Super.so 사이트에 실시간 토론 추가",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 설정 열기",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Super.so 설치"
+    },
+    {
+      "name": "2단계: 미리 만들어진 코드 추가",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Super.so 설치"
+    },
+    {
+      "name": "참고: 일반 댓글 위젯",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Super.so 설치"
+    },
+    {
+      "name": "성공",
+      "file": "super-so-learn-success.md",
+      "subCat": "Super.so 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Super.so 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Super.so 설치"
+    }
+  ]
+}

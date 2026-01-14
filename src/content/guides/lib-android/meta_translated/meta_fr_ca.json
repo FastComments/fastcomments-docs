@@ -1,0 +1,72 @@
+{
+  "name": "Bibliothèque Android",
+  "pageHeader": "Bibliothèque FastComments pour Android",
+  "itemsOrdered": [
+    {
+      "name": "Fonctionnalités",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Prérequis",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Premiers pas",
+      "type": "readme"
+    },
+    {
+      "name": "Utilisation de base",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Utilisation",
+      "type": "readme"
+    },
+    {
+      "name": "Authentification SSO sécurisée",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Authentification",
+      "type": "readme"
+    },
+    {
+      "name": "Intégration de flux",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Intégration du clavardage en direct",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Projets d'exemple",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Utilisation",
+      "type": "readme"
+    },
+    {
+      "name": "Options de configuration",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Personnalisation complète du thème",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Gestion de la mémoire",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

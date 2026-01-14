@@ -1,0 +1,32 @@
+{
+  "name": "Stili personalizzati",
+  "pageHeader": "Guida alla personalizzazione degli stili",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Come personalizzare gli stili",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Riferimento di stile del widget Commenti (v2, più recente)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Stili del widget"
+    },
+    {
+      "name": "Stili del widget Commenti recenti",
+      "file": "recent-comments-widget.md",
+      "subCat": "Stili del widget"
+    },
+    {
+      "name": "Stili del widget Pagine principali",
+      "file": "top-pages-widget.md",
+      "subCat": "Stili del widget"
+    },
+    {
+      "name": "Altre librerie frontend",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Altre librerie frontend"
+    }
+  ]
+}

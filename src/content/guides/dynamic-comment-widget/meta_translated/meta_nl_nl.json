@@ -1,0 +1,11 @@
+{
+  "name": "Reactiedraden dynamisch toevoegen en verwisselen",
+  "icon": "swap.svg",
+  "itemsOrdered": [
+    {
+      "name": "Reactiedraden dynamisch toevoegen en verwisselen",
+      "file": "swap-widgets-example.md",
+      "subCat": "Voorbeelden"
+    }
+  ]
+}

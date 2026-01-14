@@ -1,0 +1,21 @@
+{
+  "name": "Piškotki tretjih oseb",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj so piškotki tretjih oseb",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kako FastComments uporablja piškotke tretjih oseb",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Omogoči piškotke tretjih oseb",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Omogočanje"
+    }
+  ]
+}

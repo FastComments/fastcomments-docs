@@ -1,0 +1,26 @@
+{
+  "name": "Obsługiwane przeglądarki",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Obsługiwane przeglądarki",
+      "file": "supported-browsers.md",
+      "subCat": "Obsługiwane przeglądarki"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Obsługiwane przeglądarki"
+    },
+    {
+      "name": "Jak testujemy",
+      "file": "how-we-test.md",
+      "subCat": "Obsługiwane przeglądarki"
+    },
+    {
+      "name": "Wymagania dotyczące JavaScriptu",
+      "file": "no-javascript.md",
+      "subCat": "Obsługiwane przeglądarki"
+    }
+  ]
+}

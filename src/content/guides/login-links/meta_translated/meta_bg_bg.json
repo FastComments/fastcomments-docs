@@ -1,0 +1,26 @@
+{
+  "name": "Връзки за вход",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват връзките за вход?",
+      "file": "login-links-what-are.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Предимства на връзките за вход спрямо паролите",
+      "file": "login-links-benefits.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Как гарантираме сигурността на връзките за вход",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Сигурност"
+    },
+    {
+      "name": "На кого се изпращат връзки за вход?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Употреба"
+    }
+  ]
+}

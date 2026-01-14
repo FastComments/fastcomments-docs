@@ -1,0 +1,32 @@
+{
+  "name": "Systeme.io 安装",
+  "pageHeader": "向 Systeme.io 博客添加评论",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：打开博客主题模板",
+      "file": "systeme-step-1.md",
+      "subCat": "Systeme.io 安装"
+    },
+    {
+      "name": "步骤 2：添加 FastComments.com 代码",
+      "file": "systeme-step-2.md",
+      "subCat": "Systeme.io 安装"
+    },
+    {
+      "name": "成功",
+      "file": "systeme-success.md",
+      "subCat": "Systeme.io 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Systeme.io 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "systeme-customize.md",
+      "subCat": "Systeme.io 安装"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 knjižnica",
+  "pageHeader": "FastComments Vue 3 knjižnica",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Uporaba",
+      "file": "usage-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Posodabljanje trenutne strani (primer SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "V produkcijskem okolju",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Vsi pripomočki in dokumentacija",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

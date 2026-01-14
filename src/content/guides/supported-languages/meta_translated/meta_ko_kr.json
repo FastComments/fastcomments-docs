@@ -1,0 +1,21 @@
+{
+  "name": "지원 언어",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "지원 언어",
+      "file": "supported-languages.md",
+      "subCat": "지원 언어"
+    },
+    {
+      "name": "FastComments의 어떤 부분이 현지화되어 있나요?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "지원 언어"
+    },
+    {
+      "name": "새 언어 지원 요청",
+      "file": "requesting-new-language-support.md",
+      "subCat": "지원 언어"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Hashtags",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "O que são Hashtags",
+      "file": "what-are-hashtags.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Como usar Hashtags",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Usando Hashtags"
+    },
+    {
+      "name": "Filtrando Comentários por Hashtag",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Usando Hashtags"
+    },
+    {
+      "name": "Hashtags Válidas vs Inválidas",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Usando Hashtags"
+    },
+    {
+      "name": "Usando Símbolos Diferentes de #",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Configurando Hashtags"
+    },
+    {
+      "name": "Pré-preenchimento de Hashtags",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Configurando Hashtags"
+    },
+    {
+      "name": "Vinculando ao Conteúdo via Hashtags",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Configurando Hashtags"
+    },
+    {
+      "name": "Como o Autocompletar de Hashtags Funciona",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Contexto das Hashtags"
+    }
+  ]
+}

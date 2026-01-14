@@ -1,0 +1,32 @@
+{
+  "name": "Prilagođeno stilizovanje",
+  "pageHeader": "Vodič za prilagođeno stilizovanje",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Kako prilagoditi stilove",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Početak rada"
+    },
+    {
+      "name": "Referenca stilizovanja komentarskog widgeta (v2, najnovije)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Stilizovanje widgeta"
+    },
+    {
+      "name": "Stilizovanje widgeta za najnovije komentare",
+      "file": "recent-comments-widget.md",
+      "subCat": "Stilizovanje widgeta"
+    },
+    {
+      "name": "Stilizovanje widgeta za najposećenije stranice",
+      "file": "top-pages-widget.md",
+      "subCat": "Stilizovanje widgeta"
+    },
+    {
+      "name": "Druge frontend biblioteke",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Druge frontend biblioteke"
+    }
+  ]
+}

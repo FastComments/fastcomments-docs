@@ -1,0 +1,46 @@
+{
+  "name": "Спільний чат",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Початок роботи",
+      "file": "getting-started.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Приклади",
+      "file": "examples.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Додавання живих коментарів до онлайн-книг",
+      "file": "online-books.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Параметри конфігурації",
+      "file": "configuration-options.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Поведінка виділення тексту",
+      "file": "text-selection-behavior.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Налаштування",
+      "file": "customization.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Жива синхронізація",
+      "file": "live-sync.md",
+      "subCat": "Розширені"
+    },
+    {
+      "name": "Довідник API",
+      "file": "api-reference.md",
+      "subCat": "Розширені"
+    }
+  ]
+}

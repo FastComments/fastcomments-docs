@@ -1,0 +1,46 @@
+{
+  "name": "Webhooks",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "O que são Webhooks",
+      "file": "what-are-webhooks.md",
+      "subCat": "Visão geral"
+    },
+    {
+      "name": "Eventos e recursos suportados",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "Visão geral"
+    },
+    {
+      "name": "Configuração de desenvolvimento local",
+      "file": "webhooks-local-dev.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Configuração",
+      "file": "webhooks-setup.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Testes",
+      "file": "webhooks-testing.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Estruturas de dados",
+      "file": "webhooks-structures.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Segurança e tokens de API",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Como funciona e como lidar com tentativas de reenvio",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "Bastidores"
+    }
+  ]
+}

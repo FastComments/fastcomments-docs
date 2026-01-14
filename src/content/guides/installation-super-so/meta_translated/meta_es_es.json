@@ -1,0 +1,37 @@
+{
+  "name": "Instalación de Super.so",
+  "pageHeader": "Añadir discusiones en vivo a sitios de Super.so",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Paso 1: Abrir ajustes",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Instalación de Super.so"
+    },
+    {
+      "name": "Paso 2: Añadir código predefinido",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Instalación de Super.so"
+    },
+    {
+      "name": "Véase también: Widget de comentarios estándar",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Instalación de Super.so"
+    },
+    {
+      "name": "Éxito",
+      "file": "super-so-learn-success.md",
+      "subCat": "Instalación de Super.so"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Instalación de Super.so"
+    },
+    {
+      "name": "Personalización",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Instalación de Super.so"
+    }
+  ]
+}

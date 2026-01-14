@@ -1,0 +1,77 @@
+{
+  "name": "Instalacja Squarespace",
+  "pageHeader": "Dodawanie komentarzy na stronach Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dodawanie komentarzy na żywo do bloga",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Dodaj komentarze do bloga"
+    },
+    {
+      "name": "Krok 1: Otwórz ustawienia bloga",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Dodaj komentarze do bloga"
+    },
+    {
+      "name": "Krok 2: Wklej kod FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Dodaj komentarze do bloga"
+    },
+    {
+      "name": "Sukces",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Dodaj komentarze do bloga"
+    },
+    {
+      "name": "Dodawanie komentarzy na żywo na wszystkich stronach",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Dodaj komentarze do wszystkich stron"
+    },
+    {
+      "name": "Krok 1: Otwórz narzędzia deweloperskie",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Dodaj komentarze do wszystkich stron"
+    },
+    {
+      "name": "Krok 2: Wklej kod FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Dodaj komentarze do wszystkich stron"
+    },
+    {
+      "name": "Sukces",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Dodaj komentarze do wszystkich stron"
+    },
+    {
+      "name": "Dodaj komentarz na żywo do konkretnej strony",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Dodaj komentarze do konkretnej strony"
+    },
+    {
+      "name": "Krok 1: Dodaj blok kodu",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Dodaj komentarze do konkretnej strony"
+    },
+    {
+      "name": "Krok 2: Wklej kod FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Dodaj komentarze do konkretnej strony"
+    },
+    {
+      "name": "Sukces",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Dodaj komentarze do konkretnej strony"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Następne kroki w Squarespace"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "squarespace-customize.md",
+      "subCat": "Następne kroki w Squarespace"
+    }
+  ]
+}

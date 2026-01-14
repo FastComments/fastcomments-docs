@@ -1,0 +1,51 @@
+{
+  "name": "Кілька сайтів",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Початкове налаштування",
+      "file": "add-domains-to-account.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Ліміти та ціни",
+      "file": "domain-limits.md",
+      "subCat": "Початок роботи"
+    },
+    {
+      "name": "Ім'я відправника, електронна адреса та логотип",
+      "file": "from-name-email-logo.md",
+      "subCat": "Налаштування для кожного сайту"
+    },
+    {
+      "name": "Домен у полях 'Від' (ім'я/електронна адреса) не працює",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Налаштування для кожного сайту"
+    },
+    {
+      "name": "Тенант для кожного середовища",
+      "file": "tenant-per-environment.md",
+      "subCat": "Налаштування для кожного сайту"
+    },
+    {
+      "name": "Налаштування",
+      "file": "customizations.md",
+      "subCat": "Налаштування для кожного сайту"
+    },
+    {
+      "name": "Модерація коментарів",
+      "file": "moderation.md",
+      "subCat": "Дані та пошук"
+    },
+    {
+      "name": "Спільне використання коментарів між доменами",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Дані та пошук"
+    },
+    {
+      "name": "З WordPress",
+      "file": "wordpress.md",
+      "subCat": "Примітки щодо інтеграції"
+    }
+  ]
+}

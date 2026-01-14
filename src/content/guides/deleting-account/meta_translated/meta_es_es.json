@@ -1,0 +1,16 @@
+{
+  "name": "Eliminar tu cuenta",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Eliminar tu cuenta",
+      "file": "deleting-your-account.md",
+      "subCat": "Comentaristas e inquilinos"
+    },
+    {
+      "name": "Cancelar tu suscripción",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Inquilinos"
+    }
+  ]
+}

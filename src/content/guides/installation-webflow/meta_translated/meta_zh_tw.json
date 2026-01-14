@@ -1,0 +1,37 @@
+{
+  "name": "Webflow 安裝",
+  "pageHeader": "在 Webflow 網站加入留言",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：新增嵌入區塊",
+      "file": "webflow-step-1.md",
+      "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "步驟 2：貼上您的 FastComments.com 程式碼",
+      "file": "webflow-step-2.md",
+      "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "步驟 3：發佈",
+      "file": "webflow-step-3.md",
+      "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "成功",
+      "file": "webflow-success.md",
+      "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "webflow-customize.md",
+      "subCat": "Webflow 安裝"
+    }
+  ]
+}

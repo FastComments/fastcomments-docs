@@ -1,0 +1,72 @@
+{
+  "name": "WordPress-Installation",
+  "pageHeader": "Live-Kommentare zu WordPress-Websites hinzufügen",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "Schnellstart",
+      "file": "wordpress-quick-start.md",
+      "subCat": "Kurzfassung"
+    },
+    {
+      "name": "Installation",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Moderation",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Benutzer, Moderatoren und Administratoren",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Seiten nur für Mitglieder (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Benachrichtigungen",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Benutzerdefinierte Themes",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Zurück nach WordPress synchronisieren",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Anzahl der Kommentare",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Kommunikation zwischen WordPress-Installation und FastComment-Server",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Deaktivieren vs. Deinstallieren des Plugins",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "Plugin-Entfernung"
+    }
+  ]
+}

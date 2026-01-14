@@ -1,0 +1,21 @@
+{
+  "name": "対応言語",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "対応言語",
+      "file": "supported-languages.md",
+      "subCat": "対応言語"
+    },
+    {
+      "name": "FastCommentsのどの部分がローカライズされていますか？",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "対応言語"
+    },
+    {
+      "name": "新しい言語のサポートをリクエストする",
+      "file": "requesting-new-language-support.md",
+      "subCat": "対応言語"
+    }
+  ]
+}

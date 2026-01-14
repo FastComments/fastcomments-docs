@@ -1,0 +1,22 @@
+{
+  "name": "Instalación de Memberstack",
+  "pageHeader": "Añadir comentarios con Memberstack",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "El código",
+      "file": "memberstack-step-1.md",
+      "subCat": "Instalación de Memberstack"
+    },
+    {
+      "name": "Errores de dominio",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Instalación de Memberstack"
+    },
+    {
+      "name": "Personalización",
+      "file": "memberstack-customize.md",
+      "subCat": "Instalación de Memberstack"
+    }
+  ]
+}

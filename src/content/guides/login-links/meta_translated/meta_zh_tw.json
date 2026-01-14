@@ -1,0 +1,26 @@
+{
+  "name": "登入連結",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是登入連結？",
+      "file": "login-links-what-are.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "登入連結相較於密碼的優點",
+      "file": "login-links-benefits.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "我們如何確保登入連結的安全性",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "安全性"
+    },
+    {
+      "name": "誰會收到登入連結？",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "使用"
+    }
+  ]
+}

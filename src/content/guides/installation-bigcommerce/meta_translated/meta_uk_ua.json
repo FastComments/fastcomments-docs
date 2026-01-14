@@ -1,0 +1,47 @@
+{
+  "name": "Встановлення BigCommerce",
+  "pageHeader": "Додавання коментарів на сайти BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Крок перший: Підготуйте вашу тему",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Крок другий: Відредагуйте відповідний шаблон",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Крок третій: Додайте код віджета",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Крок четвертий: Активуйте нову тему",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Успіх",
+      "file": "bigcommerce-success.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Налаштування",
+      "file": "bigcommerce-customize.md",
+      "subCat": "Встановлення BigCommerce"
+    },
+    {
+      "name": "Додатково: фрагмент коду для конструктора сторінок",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "Використання конструктора сторінок"
+    }
+  ]
+}

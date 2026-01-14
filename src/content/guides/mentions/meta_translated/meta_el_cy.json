@@ -1,0 +1,31 @@
+{
+  "name": "Αναφορές",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι οι αναφορές",
+      "file": "what-are-mentions.md",
+      "subCat": "Υπόβαθρο"
+    },
+    {
+      "name": "Πώς να επισημάνετε έναν χρήστη",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Χρήση αναφορών"
+    },
+    {
+      "name": "Ειδοποιήσεις",
+      "file": "mentions-notifications.md",
+      "subCat": "Χρήση αναφορών"
+    },
+    {
+      "name": "Πώς λειτουργεί η αυτόματη συμπλήρωση αναφορών",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Χρήση αναφορών"
+    },
+    {
+      "name": "Πλήρωση αναφορών",
+      "file": "populating-mentions.md",
+      "subCat": "Ρύθμιση αναφορών"
+    }
+  ]
+}

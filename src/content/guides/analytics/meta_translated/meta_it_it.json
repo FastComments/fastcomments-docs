@@ -1,0 +1,31 @@
+{
+  "name": "Analisi",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Contesto",
+      "file": "analytics-background.md",
+      "subCat": "Analisi"
+    },
+    {
+      "name": "Analisi della fatturazione",
+      "file": "analytics-billing.md",
+      "subCat": "Analisi"
+    },
+    {
+      "name": "Analisi del sito",
+      "file": "analytics-site.md",
+      "subCat": "Analisi"
+    },
+    {
+      "name": "Precisione delle analisi rispetto ad altre piattaforme",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Analisi"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Tracciamento"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Namestitev",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "Vtičniki tretjih oseb"
+    },
+    {
+      "name": "VanillaJS / HTML-vstavek",
+      "file": "vanillajs.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Več primerkov na isti strani",
+      "file": "multiple-instances.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Pogosti primeri uporabe",
+      "file": "installation-common-use-cases.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Odpravljanje pogostih težav",
+      "file": "debugging-common-issues.md",
+      "subCat": "Prilagojene namestitve"
+    },
+    {
+      "name": "Notion in Google Sites",
+      "file": "oembed.md",
+      "subCat": "Vstavljanje v dokumente"
+    }
+  ]
+}

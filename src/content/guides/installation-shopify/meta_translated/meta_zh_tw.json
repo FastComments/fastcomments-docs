@@ -1,0 +1,42 @@
+{
+  "name": "Shopify 安裝",
+  "pageHeader": "在 Shopify 網站新增留言",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：匯入現有留言",
+      "file": "shopify-step-1.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "步驟 2：停用預設留言系統",
+      "file": "shopify-step-2.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "步驟 3：開啟部落格主題範本",
+      "file": "shopify-step-3.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "步驟 4：加入 FastComments.com 代碼",
+      "file": "shopify-step-4.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "成功",
+      "file": "shopify-success.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify 安裝"
+    }
+  ]
+}

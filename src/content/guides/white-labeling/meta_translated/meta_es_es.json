@@ -1,0 +1,36 @@
+{
+  "name": "Marca blanca",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Qué es la marca blanca",
+      "file": "white-labeling-background.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Cómo obtener la marca blanca",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Configurar la marca blanca",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementación"
+    },
+    {
+      "name": "Uso del panel de control",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementación"
+    },
+    {
+      "name": "Uso de la API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementación"
+    },
+    {
+      "name": "Gestión de inquilinos con marca blanca",
+      "file": "white-labeling-managing.md",
+      "subCat": "Gestión de inquilinos"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "白标",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是白标",
+      "file": "white-labeling-background.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何获得白标",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "设置白标",
+      "file": "white-labeling-process.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "使用仪表板",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "使用 API",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "实施"
+    },
+    {
+      "name": "管理白标租户",
+      "file": "white-labeling-managing.md",
+      "subCat": "租户管理"
+    }
+  ]
+}

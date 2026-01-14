@@ -1,0 +1,406 @@
+{
+  "name": "התאמות ותצורה",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "זיהוי החשבון שלך",
+      "file": "tenant-id.md",
+      "subCat": "יסודות"
+    },
+    {
+      "name": "כיצד תגובות מקושרות לעמודים ולמאמרים",
+      "file": "url-id.md",
+      "subCat": "יסודות"
+    },
+    {
+      "name": "הצגת אותן תגובות בעמודים שונים",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "יסודות"
+    },
+    {
+      "name": "עיצוב מותאם אישית",
+      "file": "custom-css.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "גופנים מותאמים אישית",
+      "file": "custom-fonts.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הסרת המיתוג",
+      "file": "remove-branding.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "תמיכה ברקע כהה (מצב כהה)",
+      "file": "has-dark-background.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הפעלה וכיבוי של מצב כהה",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "החלפת טקסט",
+      "file": "translations.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "שינוי תמונת הפרופיל ברירת המחדל",
+      "file": "default-avatar-src.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת תמונות פרופיל",
+      "file": "hide-avatars.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת כל הסגנונות המוגדרים מראש",
+      "file": "no-styles.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "קישור תגובות לעמודים",
+      "file": "url.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "קיפול תגובות כברירת מחדל",
+      "file": "collapse-replies.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הפעלת עורך WYSIWYG",
+      "file": "enable-wysiwyg.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת סרגל הכלים",
+      "file": "disable-toolbar.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת חסימה",
+      "file": "disable-blocking.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "קביעת איזה עמוד להציג",
+      "file": "starting-page.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "החלפת שרשורי תגובות ללא טעינת הדף מחדש",
+      "file": "switching-comment-threads.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "תאריכים מוחלטים (השבתת חותמות זמן ידידותיות)",
+      "file": "absolute-dates.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הצגת תאריכים מוחלטים ויחסיים",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הוספת טקסט בכותרת",
+      "file": "header-html.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הצגת קישורים כטקסט",
+      "file": "render-links-as-text.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הצגה/הסתרת תגובות באמצעות כפתור",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "התאמת הטקסט של מונה התגובות",
+      "file": "comment-count-format.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת הפניית תמונות",
+      "file": "disable-image-redirect.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת יצירת האשטאגים באופן אוטומטי",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת פעמון ההתראות",
+      "file": "disable-notification-bell.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת פרופילים",
+      "file": "disable-profiles.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת הודעת ההצלחה",
+      "file": "disable-success-message.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "שינוי דירוג התוכן של GIFים",
+      "file": "gif-rating.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "בקרת תוכן לתמונות",
+      "file": "image-content-moderation.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "שינוי סגנון ההצבעה",
+      "file": "vote-style.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת המחיקה",
+      "file": "disable-deleting.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת העריכה",
+      "file": "disable-editing.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הדגשת תגובות חדשות",
+      "file": "highlighting-new-comments.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "גודל הדפים",
+      "file": "page-size.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "תבניות דוא\"ל",
+      "file": "email-templates.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "פורמטים של שמות משתמש",
+      "file": "user-name-formats.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "השבתת העלאת תמונות",
+      "file": "no-image-uploads.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הפעלת תיבת חיפוש",
+      "file": "enable-search.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הפעלת ספוילרים",
+      "file": "enable-spoilers.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הפעלת ספירת צפיות לתגובות",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "מראה ותחושה"
+    },
+    {
+      "name": "הצגת תגובות חיות מיד",
+      "file": "show-live-right-away.md",
+      "subCat": "תגובות בזמן אמת"
+    },
+    {
+      "name": "השבתת תגובות בזמן אמת",
+      "file": "disable-live-commenting.md",
+      "subCat": "תגובות בזמן אמת"
+    },
+    {
+      "name": "הצגת תגובות חיות חדשות בתחתית",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "תגובות בזמן אמת"
+    },
+    {
+      "name": "הפעלת גלילה אינסופית",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "דפדוף ומיון"
+    },
+    {
+      "name": "שינוי כיוון המיון המוגדר כברירת מחדל",
+      "file": "default-sort-direction.md",
+      "subCat": "דפדוף ומיון"
+    },
+    {
+      "name": "הצגת כל התגובות בבת אחת - השבתת פגינציה",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "דפדוף ומיון"
+    },
+    {
+      "name": "העברת תיבת התשובה לאחר התגובות",
+      "file": "input-after-comments.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "הגבלת אורך התגובה",
+      "file": "max-comment-character-length.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "השבתת תגובות מרובות שורות",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "הגבלת מספר התגובות לכל משתמש",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "מניעת יצירת תגובות חדשות ברמת שורש",
+      "file": "no-new-root-comments.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "עומק מקסימלי של תשובות",
+      "file": "max-reply-depth.md",
+      "subCat": "תיבת תגובה"
+    },
+    {
+      "name": "סקירה של כניסה יחידה (SSO)",
+      "file": "sso.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "אינטגרציות מותאמות - כניסה יחידה מאובטחת (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "אינטגרציות מותאמות - כניסה יחידה פשוטה (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "אינטגרציות מותאמות - מעבר מ-Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "אינטגרציות מותאמות - מעבר מ-Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "הגנה על שרשורי תגובות באמצעות כניסה יחידה (SSO)",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "כניסה יחידה (SSO)"
+    },
+    {
+      "name": "אפשר תגובות אנונימיות",
+      "file": "allow-anon.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "מניעת פקיעת תגובות אנונימיות",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "השבתת שדות אימייל",
+      "file": "disable-email-inputs.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "השבתת התווית 'לא מאומת'",
+      "file": "disable-unverified-label.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "אפשר הצבעות אנונימיות",
+      "file": "allow-anon-votes.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "הגדרת שם משתמש ברירת מחדל",
+      "file": "default-username.md",
+      "subCat": "תגובות אנונימיות"
+    },
+    {
+      "name": "קריאות חזרה",
+      "file": "callbacks.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "הגדרה ידנית של מיקום המשתמש (Locale)",
+      "file": "locale.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "הגבלת השפות המותרות",
+      "file": "allowed-languages.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "כותרות עמודים",
+      "file": "page-title.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "מניעת תגובות חדשות והשבתת הצבעות",
+      "file": "readonly.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "הגבלת דומיינים של קישורים",
+      "file": "restricting-link-domains.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "מניין התגובות וספירת כל התגובות המקוננות",
+      "file": "count-all.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "הפעלת קישורים למגיבים",
+      "file": "enable-commenter-links.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "קבוצות מודרציה",
+      "file": "moderation-group-ids.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "אזכור מזהי קבוצות",
+      "file": "mention-group-ids.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "עקיפת עוגיות של צד שלישי",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "מחיקת תגובות הכוללות תשובות",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "שונות"
+    },
+    {
+      "name": "הצגת תגים בסרגל העליון",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "מראה ותחושה"
+    }
+  ]
+}

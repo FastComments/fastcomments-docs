@@ -1,0 +1,21 @@
+{
+  "name": "RSS viri",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Pregled",
+      "file": "overview.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Nastavitev vašega RSS vira",
+      "file": "setup.md",
+      "subCat": "Začetek"
+    },
+    {
+      "name": "Varnostni premisleki",
+      "file": "security.md",
+      "subCat": "Implementacija"
+    }
+  ]
+}

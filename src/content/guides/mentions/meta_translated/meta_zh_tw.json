@@ -1,0 +1,31 @@
+{
+  "name": "提及",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是提及",
+      "file": "what-are-mentions.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何標註使用者",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "使用提及"
+    },
+    {
+      "name": "通知",
+      "file": "mentions-notifications.md",
+      "subCat": "使用提及"
+    },
+    {
+      "name": "提及的自動完成如何運作",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "使用提及"
+    },
+    {
+      "name": "填入提及清單",
+      "file": "populating-mentions.md",
+      "subCat": "設定提及"
+    }
+  ]
+}

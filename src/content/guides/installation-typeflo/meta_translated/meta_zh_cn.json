@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "在 Typeflo.io 博客中添加实时评论",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. 找到代码输入",
+      "file": "typeflo-step-1.md",
+      "subCat": "安装"
+    },
+    {
+      "name": "2. 插入代码",
+      "file": "typeflo-step-2.md",
+      "subCat": "安装"
+    },
+    {
+      "name": "成功",
+      "file": "typeflo-success.md",
+      "subCat": "安装"
+    },
+    {
+      "name": "自定义",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "域名错误",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

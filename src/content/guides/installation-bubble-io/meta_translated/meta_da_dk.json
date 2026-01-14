@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Tilføj live-kommentering til Bubble.io-sider",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Tilføj HTML-blok",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Indsæt kode",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "3. Find breddeindstilling",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "4. Tilpas layout",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Succes",
+      "file": "bubble-io-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

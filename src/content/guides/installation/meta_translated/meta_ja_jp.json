@@ -1,0 +1,61 @@
+{
+  "name": "インストール",
+  "icon": "download.png",
+  "itemsOrdered": [
+    {
+      "name": "WordPress",
+      "file": "wordpress.md",
+      "subCat": "サードパーティ製プラグイン"
+    },
+    {
+      "name": "VanillaJS / HTML スニペット",
+      "file": "vanillajs.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "同一ページ上での複数インスタンス",
+      "file": "multiple-instances.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "一般的なユースケース",
+      "file": "installation-common-use-cases.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "よくある問題のデバッグ",
+      "file": "debugging-common-issues.md",
+      "subCat": "カスタムインストール"
+    },
+    {
+      "name": "NotionとGoogle Sites",
+      "file": "oembed.md",
+      "subCat": "ドキュメントへの埋め込み"
+    }
+  ]
+}

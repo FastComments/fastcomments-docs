@@ -1,0 +1,77 @@
+{
+  "name": "Инсталиране на Squarespace",
+  "pageHeader": "Добавяне на коментари в сайтове на Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Добавяне на живи коментари към вашия блог",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Добавяне на коментари към вашия блог"
+    },
+    {
+      "name": "Стъпка 1: Отворете настройките на блога",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Добавяне на коментари към вашия блог"
+    },
+    {
+      "name": "Стъпка 2: Поставете кода от FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Добавяне на коментари към вашия блог"
+    },
+    {
+      "name": "Успех",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Добавяне на коментари към вашия блог"
+    },
+    {
+      "name": "Добавяне на живо коментиране на всички страници",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Добавяне на коментари към всички страници"
+    },
+    {
+      "name": "Стъпка 1: Отворете инструментите за разработчици",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Добавяне на коментари към всички страници"
+    },
+    {
+      "name": "Стъпка 2: Поставете кода от FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Добавяне на коментари към всички страници"
+    },
+    {
+      "name": "Успех",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Добавяне на коментари към всички страници"
+    },
+    {
+      "name": "Добавяне на живо коментиране на конкретна страница",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Добавяне на коментари към конкретна страница"
+    },
+    {
+      "name": "Стъпка 1: Добавете блок с код",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Добавяне на коментари към конкретна страница"
+    },
+    {
+      "name": "Стъпка 2: Поставете кода от FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Добавяне на коментари към конкретна страница"
+    },
+    {
+      "name": "Успех",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Добавяне на коментари към конкретна страница"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Следващи стъпки за Squarespace"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "squarespace-customize.md",
+      "subCat": "Следващи стъпки за Squarespace"
+    }
+  ]
+}

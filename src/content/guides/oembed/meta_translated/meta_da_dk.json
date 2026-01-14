@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er oEmbed?",
+      "file": "about-oembed.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Oprettelse af en oEmbed-samtale",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "Brug"
+    }
+  ]
+}

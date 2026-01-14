@@ -1,0 +1,31 @@
+{
+  "name": "Реакции на страницата",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Реакции на страницата",
+      "file": "page-reacts-about.md",
+      "subCat": "Реакции на страницата"
+    },
+    {
+      "name": "Инсталация - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Реакции на страницата"
+    },
+    {
+      "name": "Плаващият уиджет за харесвания",
+      "file": "floating-likes-about.md",
+      "subCat": "Плаващ уиджет за харесвания"
+    },
+    {
+      "name": "Инсталация - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Плаващ уиджет за харесвания"
+    },
+    {
+      "name": "Инсталация - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Плаващ уиджет за харесвания"
+    }
+  ]
+}

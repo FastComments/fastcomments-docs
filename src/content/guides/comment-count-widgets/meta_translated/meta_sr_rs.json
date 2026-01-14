@@ -1,0 +1,21 @@
+{
+  "name": "Видџети за број коментара",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација видџета за број коментара",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "Масовна инсталација видџета за број коментара",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Инсталација"
+    },
+    {
+      "name": "АПИ-ји за број коментара",
+      "file": "comment-count-apis.md",
+      "subCat": "АПИ-ји за број коментара"
+    }
+  ]
+}

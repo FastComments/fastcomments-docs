@@ -1,0 +1,24 @@
+{
+  "name": "Библиотека React",
+  "pageHeader": "Библиотека FastComments для React",
+  "itemsOrdered": [
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Примеры",
+      "file": "examples-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Использование",
+      "file": "usage-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    }
+  ]
+}

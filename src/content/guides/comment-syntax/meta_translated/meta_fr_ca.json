@@ -1,0 +1,16 @@
+{
+  "name": "Syntaxe des commentaires",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Mise en forme de base",
+      "file": "basic-formatting.md",
+      "subCat": "Mise en forme"
+    },
+    {
+      "name": "Sécurité",
+      "file": "security.md",
+      "subCat": "Sécurité"
+    }
+  ]
+}

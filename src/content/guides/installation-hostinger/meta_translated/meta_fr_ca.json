@@ -1,0 +1,37 @@
+{
+  "name": "Installation sur Hostinger",
+  "pageHeader": "Ajouter des commentaires en direct aux sites Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Étape 1 : Ajouter le widget de code",
+      "file": "hostinger-step-1.md",
+      "subCat": "Installation sur Hostinger"
+    },
+    {
+      "name": "Étape 2 : Ajouter le code",
+      "file": "hostinger-step-2.md",
+      "subCat": "Installation sur Hostinger"
+    },
+    {
+      "name": "Succès",
+      "file": "hostinger-site-success.md",
+      "subCat": "Installation sur Hostinger"
+    },
+    {
+      "name": "Erreurs de domaine du site",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Installation sur Hostinger"
+    },
+    {
+      "name": "Personnalisation du site",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Installation sur Hostinger"
+    },
+    {
+      "name": "Bouton flottant de mentions J'aime",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Mentions J'aime flottantes Hostinger"
+    }
+  ]
+}

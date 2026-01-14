@@ -1,0 +1,32 @@
+{
+  "name": "Systeme.io 설치",
+  "pageHeader": "Systeme.io 블로그에 댓글 추가",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 블로그 테마 템플릿 열기",
+      "file": "systeme-step-1.md",
+      "subCat": "Systeme.io 설치"
+    },
+    {
+      "name": "2단계: FastComments.com 코드 추가",
+      "file": "systeme-step-2.md",
+      "subCat": "Systeme.io 설치"
+    },
+    {
+      "name": "성공",
+      "file": "systeme-success.md",
+      "subCat": "Systeme.io 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Systeme.io 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "systeme-customize.md",
+      "subCat": "Systeme.io 설치"
+    }
+  ]
+}

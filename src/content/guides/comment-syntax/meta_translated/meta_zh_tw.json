@@ -1,0 +1,16 @@
+{
+  "name": "註解語法",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "基本格式",
+      "file": "basic-formatting.md",
+      "subCat": "格式化"
+    },
+    {
+      "name": "安全性",
+      "file": "security.md",
+      "subCat": "安全性"
+    }
+  ]
+}

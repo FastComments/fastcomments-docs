@@ -1,0 +1,31 @@
+{
+  "name": "Deling af kodeudsnit",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er kodeudsnit?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Kodningsfællesskaber",
+      "file": "code-snippets-communities.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Understøttede programmeringssprog",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Opsætning af deling af kodeudsnit",
+      "file": "code-snippets-setup.md",
+      "subCat": "Opsætning"
+    },
+    {
+      "name": "Deling af kodeudsnit",
+      "file": "code-snippets-usage.md",
+      "subCat": "Brug"
+    }
+  ]
+}

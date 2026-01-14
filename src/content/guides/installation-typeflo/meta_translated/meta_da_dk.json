@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Tilføj live-kommentarer til Typeflo.io-blogge",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Find kodefeltet",
+      "file": "typeflo-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Indsæt kode",
+      "file": "typeflo-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Succes",
+      "file": "typeflo-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

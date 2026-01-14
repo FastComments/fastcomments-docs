@@ -1,0 +1,42 @@
+{
+  "name": "Библиотека React Native",
+  "pageHeader": "Библиотека FastComments для React Native",
+  "itemsOrdered": [
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Рассмотрите нативный SDK",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Использование — виджет комментариев в реальном времени",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Использование — виджет чата в реальном времени",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Использование — SSO (единый вход)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Peer-зависимости",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

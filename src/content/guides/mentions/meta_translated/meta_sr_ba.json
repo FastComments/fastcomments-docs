@@ -1,0 +1,31 @@
+{
+  "name": "Означавања",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су означавања",
+      "file": "what-are-mentions.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Како означити корисника",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "Коришћење означавања"
+    },
+    {
+      "name": "Обавештења",
+      "file": "mentions-notifications.md",
+      "subCat": "Коришћење означавања"
+    },
+    {
+      "name": "Како функционише аутоматско довршавање означавања",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "Коришћење означавања"
+    },
+    {
+      "name": "Попуњавање означавања",
+      "file": "populating-mentions.md",
+      "subCat": "Подешавање означавања"
+    }
+  ]
+}

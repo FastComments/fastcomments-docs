@@ -1,0 +1,72 @@
+{
+  "name": "Бібліотека Android",
+  "pageHeader": "Бібліотека FastComments для Android",
+  "itemsOrdered": [
+    {
+      "name": "Можливості",
+      "file": "features-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Основне використання",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Безпечна SSO-аутентифікація",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Аутентифікація",
+      "type": "readme"
+    },
+    {
+      "name": "Інтеграція стрічки",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Інтеграція чату в реальному часі",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Приклади проєктів",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Параметри конфігурації",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Конфігурація",
+      "type": "readme"
+    },
+    {
+      "name": "Повне налаштування теми",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Керування пам'яттю",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

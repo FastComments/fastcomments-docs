@@ -1,0 +1,56 @@
+{
+  "name": "דירוגים וביקורות",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "מאפיינים",
+      "file": "features.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "מי מקבל את זה",
+      "file": "who-gets-it.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "תמחור",
+      "file": "pricing.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "בחר סוג תצוגה",
+      "file": "choose-display-type.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "הגדר את השאלות שלך",
+      "file": "define-your-questions.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "כיצד עובדת התצורה",
+      "file": "how-configuration-works.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "ווידג'ט הסיכום",
+      "file": "summary-widget-installation.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "צפייה בדירוגים",
+      "file": "viewing-ratings.md",
+      "subCat": "דיווח"
+    },
+    {
+      "name": "שילוב באמצעות ה-API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "דיווח"
+    },
+    {
+      "name": "הדגמת סיכום",
+      "file": "summary-demo.md",
+      "subCat": "הדגמת סיכום"
+    }
+  ]
+}

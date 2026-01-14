@@ -1,0 +1,21 @@
+{
+  "name": "RSS-каналы",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Обзор",
+      "file": "overview.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Настройка вашей RSS-ленты",
+      "file": "setup.md",
+      "subCat": "Начало работы"
+    },
+    {
+      "name": "Соображения по безопасности",
+      "file": "security.md",
+      "subCat": "Реализация"
+    }
+  ]
+}

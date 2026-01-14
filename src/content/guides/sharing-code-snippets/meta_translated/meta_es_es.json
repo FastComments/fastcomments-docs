@@ -1,0 +1,31 @@
+{
+  "name": "Compartir fragmentos de código",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "¿Qué son los fragmentos de código?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Comunidades de programación",
+      "file": "code-snippets-communities.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Lenguajes de programación compatibles",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Configurar el uso compartido de fragmentos de código",
+      "file": "code-snippets-setup.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Compartir fragmentos de código",
+      "file": "code-snippets-usage.md",
+      "subCat": "Uso"
+    }
+  ]
+}

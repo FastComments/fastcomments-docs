@@ -1,0 +1,42 @@
+{
+  "name": "Vue 3 Kütüphanesi",
+  "pageHeader": "FastComments Vue 3 Kütüphanesi",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım",
+      "file": "usage-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Mevcut Sayfayı Güncelleme (SPA Örneği)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Üretimde",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Tüm Widget'lar ve Dokümantasyon",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

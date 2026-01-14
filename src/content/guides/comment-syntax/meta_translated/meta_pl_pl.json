@@ -1,0 +1,16 @@
+{
+  "name": "Składnia komentarzy",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Podstawowe formatowanie",
+      "file": "basic-formatting.md",
+      "subCat": "Formatowanie"
+    },
+    {
+      "name": "Bezpieczeństwo",
+      "file": "security.md",
+      "subCat": "Bezpieczeństwo"
+    }
+  ]
+}

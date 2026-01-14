@@ -1,0 +1,36 @@
+{
+  "name": "Партнери",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Чому варто стати партнером FastComments?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Початок роботи",
+      "file": "getting-started.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Комісія",
+      "file": "commission.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Панель керування партнерами",
+      "file": "dashboard.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Графік виплат",
+      "file": "payout-schedule.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Маркетингові матеріали",
+      "file": "marketing-materials.md",
+      "subCat": "Партнери"
+    }
+  ]
+}

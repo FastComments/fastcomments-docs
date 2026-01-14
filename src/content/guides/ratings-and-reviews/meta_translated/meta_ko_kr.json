@@ -1,0 +1,56 @@
+{
+  "name": "평점 및 리뷰",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "기능",
+      "file": "features.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "대상",
+      "file": "who-gets-it.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "가격",
+      "file": "pricing.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "표시 유형 선택",
+      "file": "choose-display-type.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "질문 정의",
+      "file": "define-your-questions.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "구성 작동 방식",
+      "file": "how-configuration-works.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "요약 위젯",
+      "file": "summary-widget-installation.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "평점 보기",
+      "file": "viewing-ratings.md",
+      "subCat": "보고"
+    },
+    {
+      "name": "API를 통한 통합",
+      "file": "integrating-via-the-api.md",
+      "subCat": "보고"
+    },
+    {
+      "name": "요약 데모",
+      "file": "summary-demo.md",
+      "subCat": "요약 데모"
+    }
+  ]
+}

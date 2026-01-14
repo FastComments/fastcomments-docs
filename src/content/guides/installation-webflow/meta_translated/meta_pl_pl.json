@@ -1,0 +1,37 @@
+{
+  "name": "Instalacja Webflow",
+  "pageHeader": "Dodaj komentarze do witryn Webflow",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Dodaj blok osadzenia",
+      "file": "webflow-step-1.md",
+      "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Krok 2: Wklej kod z FastComments.com",
+      "file": "webflow-step-2.md",
+      "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Krok 3: Opublikuj",
+      "file": "webflow-step-3.md",
+      "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Sukces",
+      "file": "webflow-success.md",
+      "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "webflow-customize.md",
+      "subCat": "Instalacja Webflow"
+    }
+  ]
+}

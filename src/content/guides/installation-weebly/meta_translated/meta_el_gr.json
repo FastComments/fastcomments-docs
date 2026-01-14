@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Weebly",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Ανοίξτε τις ρυθμίσεις του ιστολογίου",
+      "file": "weebly-step-1.md",
+      "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Βήμα 2: Προσθέστε τον κώδικα του FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Βήμα 3: Δημοσιεύστε!",
+      "file": "weebly-step-3.md",
+      "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "weebly-success.md",
+      "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "weebly-customize.md",
+      "subCat": "Εγκατάσταση Weebly"
+    }
+  ]
+}

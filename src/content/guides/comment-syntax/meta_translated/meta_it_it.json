@@ -1,0 +1,16 @@
+{
+  "name": "Sintassi dei commenti",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Formattazione di base",
+      "file": "basic-formatting.md",
+      "subCat": "Formattazione"
+    },
+    {
+      "name": "Sicurezza",
+      "file": "security.md",
+      "subCat": "Sicurezza"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Uporabniki",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Vrste uporabnikov",
+      "file": "types-of-users.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Uporabniška imena",
+      "file": "usernames.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Administratorji",
+      "file": "administrator-users.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Komentatorji",
+      "file": "commenter-users.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Dodajanje administratorjev",
+      "file": "adding-administrators.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Dodajanje moderatorjev",
+      "file": "adding-moderators.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Posodabljanje administratorskih pravic",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Razvijalci",
+      "file": "developers.md",
+      "subCat": "Nastavitev"
+    }
+  ]
+}

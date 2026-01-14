@@ -1,0 +1,46 @@
+{
+  "name": "משתמשים",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "סוגי משתמשים",
+      "file": "types-of-users.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "שמות משתמש",
+      "file": "usernames.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "משתמשים מנהלים",
+      "file": "administrator-users.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "משתמשים שמגיבים",
+      "file": "commenter-users.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הוספת מנהלים",
+      "file": "adding-administrators.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "הוספת ממונים",
+      "file": "adding-moderators.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "עדכון הרשאות מנהלים",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "הגדרה"
+    },
+    {
+      "name": "מפתחים",
+      "file": "developers.md",
+      "subCat": "הגדרה"
+    }
+  ]
+}

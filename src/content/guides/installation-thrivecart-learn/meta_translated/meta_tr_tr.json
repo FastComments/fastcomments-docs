@@ -1,0 +1,32 @@
+{
+  "name": "ThriveCart Learn+ Kurulumu",
+  "pageHeader": "ThriveCart Learn+ Kurslarına Yorum Ekleme",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Kursu Hazırla",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "ThriveCart Learn+ Kurulumu"
+    },
+    {
+      "name": "Adım 2: Özel Kod Ekle",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "ThriveCart Learn+ Kurulumu"
+    },
+    {
+      "name": "Başarı",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "ThriveCart Learn+ Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "ThriveCart Learn+ Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "ThriveCart Learn+ Kurulumu"
+    }
+  ]
+}

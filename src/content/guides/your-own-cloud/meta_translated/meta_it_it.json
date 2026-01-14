@@ -1,0 +1,36 @@
+{
+  "name": "Il tuo cloud",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "Cos'è FastComments Isolated Cloud?",
+      "file": "your-own-cloud.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Come ottenerlo",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Configurazione e formazione",
+      "file": "set-up-training.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Utilizzo della dashboard",
+      "file": "using-the-dashboard.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Utilizzo dell'API",
+      "file": "using-the-api.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Gestione dei tenant",
+      "file": "managing-tenants.md",
+      "subCat": "Gestione dei tenant"
+    }
+  ]
+}

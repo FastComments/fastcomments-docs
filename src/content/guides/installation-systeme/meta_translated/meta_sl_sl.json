@@ -1,0 +1,32 @@
+{
+  "name": "Namestitev Systeme.io",
+  "pageHeader": "Dodajanje komentarjev v blog Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Odprite predlogo teme bloga",
+      "file": "systeme-step-1.md",
+      "subCat": "Namestitev Systeme.io"
+    },
+    {
+      "name": "Korak 2: Dodajte kodo FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Namestitev Systeme.io"
+    },
+    {
+      "name": "Uspeh",
+      "file": "systeme-success.md",
+      "subCat": "Namestitev Systeme.io"
+    },
+    {
+      "name": "Napake domene",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Namestitev Systeme.io"
+    },
+    {
+      "name": "Prilagoditev",
+      "file": "systeme-customize.md",
+      "subCat": "Namestitev Systeme.io"
+    }
+  ]
+}

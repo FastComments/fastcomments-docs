@@ -1,0 +1,406 @@
+{
+  "name": "自訂與設定",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "識別您的帳戶",
+      "file": "tenant-id.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "評論如何與頁面和文章關聯",
+      "file": "url-id.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "在不同頁面呈現相同評論",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "自訂樣式",
+      "file": "custom-css.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "自訂字型",
+      "file": "custom-fonts.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "移除品牌標示",
+      "file": "remove-branding.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "支援深色背景（深色模式）",
+      "file": "has-dark-background.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "切換深色模式",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "覆寫文字",
+      "file": "translations.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "變更預設頭像",
+      "file": "default-avatar-src.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用頭像",
+      "file": "hide-avatars.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用所有預設樣式",
+      "file": "no-styles.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "從評論連結到頁面",
+      "file": "url.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "預設收合回覆",
+      "file": "collapse-replies.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "啟用所見即所得編輯器",
+      "file": "enable-wysiwyg.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用工具列",
+      "file": "disable-toolbar.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用封鎖功能",
+      "file": "disable-blocking.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "決定要呈現的頁面",
+      "file": "starting-page.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "切換評論串而不重新載入頁面",
+      "file": "switching-comment-threads.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "絕對日期（停用人性化時間戳）",
+      "file": "absolute-dates.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "同時顯示絕對與相對日期",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "新增標頭文字",
+      "file": "header-html.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "將連結顯示為純文字",
+      "file": "render-links-as-text.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "用按鈕切換評論",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "自訂評論數文字",
+      "file": "comment-count-format.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用圖片重新導向",
+      "file": "disable-image-redirect.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用自動建立 Hashtag",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用通知鈴",
+      "file": "disable-notification-bell.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用個人檔案",
+      "file": "disable-profiles.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用成功訊息",
+      "file": "disable-success-message.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "變更 GIF 的內容分級",
+      "file": "gif-rating.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "圖片內容審核",
+      "file": "image-content-moderation.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "變更投票樣式",
+      "file": "vote-style.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用刪除功能",
+      "file": "disable-deleting.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用編輯功能",
+      "file": "disable-editing.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "標示新評論",
+      "file": "highlighting-new-comments.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "頁面大小",
+      "file": "page-size.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "電子郵件範本",
+      "file": "email-templates.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "使用者名稱格式",
+      "file": "user-name-formats.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用圖片上傳",
+      "file": "no-image-uploads.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "啟用搜尋框",
+      "file": "enable-search.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "啟用劇透（隱藏內容）",
+      "file": "enable-spoilers.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "啟用評論檢視次數",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "立即顯示即時評論",
+      "file": "show-live-right-away.md",
+      "subCat": "即時評論"
+    },
+    {
+      "name": "停用即時評論",
+      "file": "disable-live-commenting.md",
+      "subCat": "即時評論"
+    },
+    {
+      "name": "新即時評論顯示在底部",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "即時評論"
+    },
+    {
+      "name": "啟用無限滾動",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "分頁與排序"
+    },
+    {
+      "name": "變更預設排序方向",
+      "file": "default-sort-direction.md",
+      "subCat": "分頁與排序"
+    },
+    {
+      "name": "一次呈現所有評論 — 停用分頁",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "分頁與排序"
+    },
+    {
+      "name": "將回覆框移至評論後方",
+      "file": "input-after-comments.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "限制評論長度",
+      "file": "max-comment-character-length.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "停用多行評論",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "限制每位使用者的評論數量",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "禁止新增頂層評論",
+      "file": "no-new-root-comments.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "最大回覆深度",
+      "file": "max-reply-depth.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "單一登入 (SSO) 概覽",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "自訂整合 - 安全單一登入 (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "自訂整合 - 簡易單一登入 (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "自訂整合 - 從 Disqus SSO 遷移",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "自訂整合 - 從 Commento SSO 遷移",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "使用單一登入保護評論串",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "允許匿名評論",
+      "file": "allow-anon.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "防止匿名評論過期",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "停用電子郵件輸入欄位",
+      "file": "disable-email-inputs.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "停用未驗證標籤",
+      "file": "disable-unverified-label.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "允許匿名投票",
+      "file": "allow-anon-votes.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "設定預設使用者名稱",
+      "file": "default-username.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "回呼 (Callbacks)",
+      "file": "callbacks.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "手動定義使用者的地區語言設定",
+      "file": "locale.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "限制允許的語言",
+      "file": "allowed-languages.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "頁面標題",
+      "file": "page-title.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "禁止新增回覆並停用投票",
+      "file": "readonly.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "限制連結網域",
+      "file": "restricting-link-domains.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "評論數量與計算所有巢狀回覆",
+      "file": "count-all.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "啟用評論者連結",
+      "file": "enable-commenter-links.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "審核群組",
+      "file": "moderation-group-ids.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "提及群組 ID",
+      "file": "mention-group-ids.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "繞過第三方 Cookie",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "刪除包含回覆的評論",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "其他"
+    },
+    {
+      "name": "在頂部欄顯示徽章",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "外觀與風格"
+    }
+  ]
+}

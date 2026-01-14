@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Live-Kommentare zu Typeflo.io-Blogs hinzufügen",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Code-Eingabe finden",
+      "file": "typeflo-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Code einfügen",
+      "file": "typeflo-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Erfolg",
+      "file": "typeflo-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Domainfehler",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "사용자",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "사용자 유형",
+      "file": "types-of-users.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "사용자 이름",
+      "file": "usernames.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "관리자",
+      "file": "administrator-users.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "댓글 작성자",
+      "file": "commenter-users.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "관리자 추가",
+      "file": "adding-administrators.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "모더레이터 추가",
+      "file": "adding-moderators.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "관리자 권한 업데이트",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "설정"
+    },
+    {
+      "name": "개발자",
+      "file": "developers.md",
+      "subCat": "설정"
+    }
+  ]
+}

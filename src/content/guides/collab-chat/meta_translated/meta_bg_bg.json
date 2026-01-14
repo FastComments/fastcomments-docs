@@ -1,0 +1,46 @@
+{
+  "name": "Съвместен чат",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Първи стъпки",
+      "file": "getting-started.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Примери",
+      "file": "examples.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Добавяне на коментиране в реално време към онлайн книги",
+      "file": "online-books.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Опции за конфигурация",
+      "file": "configuration-options.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Поведение при избор на текст",
+      "file": "text-selection-behavior.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "customization.md",
+      "subCat": "Персонализиране"
+    },
+    {
+      "name": "Синхронизация в реално време",
+      "file": "live-sync.md",
+      "subCat": "Разширени"
+    },
+    {
+      "name": "Справочник на API",
+      "file": "api-reference.md",
+      "subCat": "Разширени"
+    }
+  ]
+}

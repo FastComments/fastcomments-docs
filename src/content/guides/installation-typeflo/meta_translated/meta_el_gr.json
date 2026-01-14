@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων στα blogs του Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Εύρεση πεδίου εισαγωγής κώδικα",
+      "file": "typeflo-step-1.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "2. Εισαγωγή κώδικα",
+      "file": "typeflo-step-2.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "typeflo-success.md",
+      "subCat": "Εγκατάσταση"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Σφάλματα ονόματος τομέα",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

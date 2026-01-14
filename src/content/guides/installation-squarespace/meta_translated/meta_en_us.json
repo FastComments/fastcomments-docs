@@ -1,0 +1,77 @@
+{
+  "name": "Squarespace Installation",
+  "pageHeader": "Add Comments to Squarespace Sites",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adding Live Commenting to Your Blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Add Comments to Your Blog"
+    },
+    {
+      "name": "Step 1: Open Blog Settings",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Add Comments to Your Blog"
+    },
+    {
+      "name": "Step 2: Paste Your FastComments.com Code",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Add Comments to Your Blog"
+    },
+    {
+      "name": "Success",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Add Comments to Your Blog"
+    },
+    {
+      "name": "Add Live Commenting to All Pages",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Add Comments to All Pages"
+    },
+    {
+      "name": "Step 1: Open Developer Tools",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Add Comments to All Pages"
+    },
+    {
+      "name": "Step 2: Paste Your FastComments.com Code",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Add Comments to All Pages"
+    },
+    {
+      "name": "Success",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Add Comments to All Pages"
+    },
+    {
+      "name": "Add Live Comment to Specific Page",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Add Comments to a Specific Page"
+    },
+    {
+      "name": "Step 1: Add Code Block",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Add Comments to a Specific Page"
+    },
+    {
+      "name": "Step 2: Paste Your FastComments.com Code",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Add Comments to a Specific Page"
+    },
+    {
+      "name": "Success",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Add Comments to a Specific Page"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace Next Steps"
+    },
+    {
+      "name": "Customization",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace Next Steps"
+    }
+  ]
+}

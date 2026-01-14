@@ -1,0 +1,56 @@
+{
+  "name": "Ocene in mnenja",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Funkcije",
+      "file": "features.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Kdo ga prejme",
+      "file": "who-gets-it.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Cenik",
+      "file": "pricing.md",
+      "subCat": "Ozadje"
+    },
+    {
+      "name": "Izberite vrsto prikaza",
+      "file": "choose-display-type.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Določite vprašanja",
+      "file": "define-your-questions.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Kako deluje konfiguracija",
+      "file": "how-configuration-works.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Povzetni pripomoček",
+      "file": "summary-widget-installation.md",
+      "subCat": "Nastavitev"
+    },
+    {
+      "name": "Ogled ocen",
+      "file": "viewing-ratings.md",
+      "subCat": "Poročanje"
+    },
+    {
+      "name": "Integracija prek API-ja",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Poročanje"
+    },
+    {
+      "name": "Demo povzetka",
+      "file": "summary-demo.md",
+      "subCat": "Demo povzetka"
+    }
+  ]
+}

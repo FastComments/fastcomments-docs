@@ -1,0 +1,37 @@
+{
+  "name": "Super.so-Installation",
+  "pageHeader": "Live-Diskussionen zu Super.so-Seiten hinzufügen",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "Schritt 1: Einstellungen öffnen",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Schritt 2: Vorgefertigten Code hinzufügen",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Siehe auch: Standard-Kommentar-Widget",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Erfolg",
+      "file": "super-so-learn-success.md",
+      "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Domain-Fehler",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Super.so-Installation"
+    }
+  ]
+}

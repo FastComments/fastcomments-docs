@@ -1,0 +1,31 @@
+{
+  "name": "확장 프로그램 작성",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "확장 프로그램의 수명 주기",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "확장 프로그램 정의",
+      "file": "defining-an-extension.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "예제 확장 기능",
+      "file": "example-extensions.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "확장 객체",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "확장 API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

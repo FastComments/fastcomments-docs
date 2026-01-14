@@ -1,0 +1,21 @@
+{
+  "name": "GIF-i",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "Podprte vrste animiranih slik",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "GIF-i in animirane slike"
+    },
+    {
+      "name": "Uporabniško naložene animirane slike",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "Uporaba GIF-ov"
+    },
+    {
+      "name": "Izbirnik GIF-ov",
+      "file": "gif-picker.md",
+      "subCat": "Uporaba GIF-ov"
+    }
+  ]
+}

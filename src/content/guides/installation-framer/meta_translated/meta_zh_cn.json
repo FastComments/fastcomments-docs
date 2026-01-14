@@ -1,0 +1,37 @@
+{
+  "name": "Framer 安装",
+  "pageHeader": "在 Framer 网站上添加实时评论",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：打开编辑器",
+      "file": "framer-step-1.md",
+      "subCat": "Framer 安装"
+    },
+    {
+      "name": "步骤 2：添加嵌入块",
+      "file": "framer-step-2.md",
+      "subCat": "Framer 安装"
+    },
+    {
+      "name": "步骤 3：复制并粘贴适用于 Framer 的 FastComments 代码",
+      "file": "framer-step-3.md",
+      "subCat": "Framer 安装"
+    },
+    {
+      "name": "步骤 4：调整小部件和页面高度",
+      "file": "framer-step-4.md",
+      "subCat": "Framer 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "framer-customize.md",
+      "subCat": "Framer 安装"
+    }
+  ]
+}

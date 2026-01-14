@@ -1,0 +1,24 @@
+{
+  "name": "Svelte библиотека",
+  "pageHeader": "FastComments Svelte библиотека",
+  "itemsOrdered": [
+    {
+      "name": "Видџети",
+      "file": "widgets-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Развој",
+      "file": "developing-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Изградња",
+      "file": "building-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

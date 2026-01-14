@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Добавьте живые комментарии на сайты Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Добавьте HTML-блок",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "2. Вставьте код",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "3. Найдите настройку ширины",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "4. Настройте макет",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "Готово",
+      "file": "bubble-io-success.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "Настройка",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

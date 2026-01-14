@@ -1,0 +1,32 @@
+{
+  "name": "Εγκατάσταση Systeme.io",
+  "pageHeader": "Προσθήκη σχολίων σε blog του Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Άνοιγμα του προτύπου θέματος του ιστολογίου",
+      "file": "systeme-step-1.md",
+      "subCat": "Εγκατάσταση Systeme.io"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη του κώδικα του FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Εγκατάσταση Systeme.io"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "systeme-success.md",
+      "subCat": "Εγκατάσταση Systeme.io"
+    },
+    {
+      "name": "Σφάλματα ονόματος τομέα",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Εγκατάσταση Systeme.io"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "systeme-customize.md",
+      "subCat": "Εγκατάσταση Systeme.io"
+    }
+  ]
+}

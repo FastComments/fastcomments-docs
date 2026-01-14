@@ -1,0 +1,21 @@
+{
+  "name": "Understøttede sprog",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Understøttede sprog",
+      "file": "supported-languages.md",
+      "subCat": "Understøttede sprog"
+    },
+    {
+      "name": "Hvilke dele af FastComments er lokaliseret?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Understøttede sprog"
+    },
+    {
+      "name": "Anmodning om tilføjelse af nye sprog",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Understøttede sprog"
+    }
+  ]
+}

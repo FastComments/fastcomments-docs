@@ -1,0 +1,16 @@
+{
+  "name": "תחביר הערות",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "עיצוב בסיסי",
+      "file": "basic-formatting.md",
+      "subCat": "עיצוב"
+    },
+    {
+      "name": "אבטחה",
+      "file": "security.md",
+      "subCat": "אבטחה"
+    }
+  ]
+}

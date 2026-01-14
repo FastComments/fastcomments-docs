@@ -1,0 +1,36 @@
+{
+  "name": "White-labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er white-labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Sådan får du white-labeling",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Opsætning af white-labeling",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Brug af dashboardet",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Brug af API'en",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Håndtering af white-label-tenants",
+      "file": "white-labeling-managing.md",
+      "subCat": "Tenant-administration"
+    }
+  ]
+}

@@ -1,0 +1,709 @@
+{
+  "name": "API",
+  "icon": "api.png",
+  "itemsOrdered": [
+    {
+      "name": "Ресурсы API",
+      "file": "api-resources.md",
+      "subCat": "Ресурсы API"
+    },
+    {
+      "name": "Агрегирование данных",
+      "file": "aggregate-post.md",
+      "subCat": "Агрегации"
+    },
+    {
+      "name": "Структура журнала аудита",
+      "file": "audit-log-structure.md",
+      "subCat": "Журналы аудита"
+    },
+    {
+      "name": "GET /api/v1/audit-logs",
+      "file": "audit-logs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Журналы аудита"
+    },
+    {
+      "name": "Структура комментария",
+      "file": "comment-structure.md",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "GET /api/v1/comments",
+      "file": "comments-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "GET /api/v1/comments/:id",
+      "file": "comment-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "POST /api/v1/comments",
+      "file": "comment-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "PATCH /api/v1/comments/:id",
+      "file": "comment-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "DELETE /api/v1/comments/:id",
+      "file": "comment-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/flag",
+      "file": "comment-flag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-flag",
+      "file": "comment-unflag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/block",
+      "file": "comment-block.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-block",
+      "file": "comment-unblock.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Комментарии"
+    },
+    {
+      "name": "Структура шаблона письма",
+      "file": "email-template-structure.md",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "GET /api/v1/email-templates/:id",
+      "file": "email-template-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "GET /api/v1/email-templates",
+      "file": "email-templates-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "PATCH /api/v1/email-templates/:id",
+      "file": "email-template-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "POST /api/v1/email-templates",
+      "file": "email-template-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "POST /api/v1/email-templates/render",
+      "file": "email-template-render.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "DELETE /api/v1/email-templates/:id",
+      "file": "email-template-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Шаблоны писем"
+    },
+    {
+      "name": "Структура хэштега",
+      "file": "hash-tag-structure.md",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "GET /api/v1/hash-tags",
+      "file": "hash-tags-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "PATCH /api/v1/hash-tags/:tag",
+      "file": "hash-tag-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "POST /api/v1/hash-tags",
+      "file": "hash-tag-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "POST /api/v1/hash-tags/bulk",
+      "file": "hash-tag-bulk-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "DELETE /api/v1/hash-tags/:tag",
+      "file": "hash-tag-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Хэштеги"
+    },
+    {
+      "name": "Структура модератора",
+      "file": "moderator-structure.md",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "GET /api/v1/moderators/:id",
+      "file": "moderator-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "GET /api/v1/moderators",
+      "file": "moderators-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "PATCH /api/v1/moderators/:id",
+      "file": "moderator-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "POST /api/v1/moderators",
+      "file": "moderator-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "POST /api/v1/moderators/:id/send-invite",
+      "file": "moderator-send-invite.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "DELETE /api/v1/moderators/:id",
+      "file": "moderator-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Модераторы"
+    },
+    {
+      "name": "Структура счётчика уведомлений",
+      "file": "notification-count-structure.md",
+      "subCat": "Счётчик уведомлений"
+    },
+    {
+      "name": "GET /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "Счётчик уведомлений"
+    },
+    {
+      "name": "DELETE /api/v1/notification-count/:user_id",
+      "file": "notification-count-delete.md",
+      "subCat": "Счётчик уведомлений"
+    },
+    {
+      "name": "Структура уведомления",
+      "file": "notification-structure.md",
+      "subCat": "Уведомления"
+    },
+    {
+      "name": "GET /api/v1/notifications",
+      "file": "notifications-get.md",
+      "subCat": "Уведомления"
+    },
+    {
+      "name": "GET /api/v1/notifications/count",
+      "file": "notifications-get-count.md",
+      "subCat": "Уведомления"
+    },
+    {
+      "name": "PATCH /api/v1/notifications/:id",
+      "file": "notifications-patch.md",
+      "subCat": "Уведомления"
+    },
+    {
+      "name": "Структура страницы",
+      "file": "page-structure.md",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "GET /api/v1/pages",
+      "file": "pages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "GET /api/v1/pages/by-url-id",
+      "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "PATCH /api/v1/pages/:id",
+      "file": "page-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "POST /api/v1/pages",
+      "file": "page-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "DELETE /api/v1/pages/:id",
+      "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "Структура ожидающего события вебхука",
+      "file": "pending-webhook-event-structure.md",
+      "subCat": "Ожидающие события вебхука"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events",
+      "file": "pending-webhook-events-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ожидающие события вебхука"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events/count",
+      "file": "pending-webhook-events-count.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ожидающие события вебхука"
+    },
+    {
+      "name": "DELETE /api/v1/pending-webhook-events/:id",
+      "file": "pending-webhook-event-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ожидающие события вебхука"
+    },
+    {
+      "name": "Структура SSO-пользователя",
+      "file": "sso-user-structure.md",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "GET /api/v1/sso-users",
+      "file": "sso-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-id/:id",
+      "file": "sso-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-email/:email",
+      "file": "sso-user-get-by-email.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "PATCH /api/v1/sso-users/:id",
+      "file": "sso-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "POST /api/v1/sso-users",
+      "file": "sso-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "PUT /api/v1/sso-users/:id",
+      "file": "sso-user-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "DELETE /api/v1/sso-users/:id",
+      "file": "sso-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO-пользователи"
+    },
+    {
+      "name": "Структура подписки",
+      "file": "subscription-structure.md",
+      "subCat": "Подписки"
+    },
+    {
+      "name": "GET /api/v1/subscriptions/:id",
+      "file": "subscriptions-get.md",
+      "subCat": "Подписки"
+    },
+    {
+      "name": "POST /api/v1/subscriptions",
+      "file": "subscriptions-post.md",
+      "subCat": "Подписки"
+    },
+    {
+      "name": "DELETE /api/v1/subscriptions/:id",
+      "file": "subscriptions-delete.md",
+      "subCat": "Подписки"
+    },
+    {
+      "name": "Структура ежедневного использования тенанта",
+      "file": "tenant-daily-usage-structure.md",
+      "subCat": "Ежедневное использование тенанта"
+    },
+    {
+      "name": "GET /api/v1/tenant-daily-usage",
+      "file": "tenant-daily-usages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ежедневное использование тенанта"
+    },
+    {
+      "name": "Структура тенанта",
+      "file": "tenant-structure.md",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "GET /api/v1/tenants/:id",
+      "file": "tenant-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "GET /api/v1/tenants",
+      "file": "tenants-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "POST /api/v1/tenants",
+      "file": "tenant-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "PATCH /api/v1/tenants/:id",
+      "file": "tenant-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "DELETE /api/v1/tenants/:id",
+      "file": "tenant-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Тенанты"
+    },
+    {
+      "name": "Структура пакета тенанта",
+      "file": "tenant-package-structure.md",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages/:id",
+      "file": "tenant-package-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages",
+      "file": "tenant-packages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "POST /api/v1/tenant-packages",
+      "file": "tenant-package-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-packages/:id",
+      "file": "tenant-package-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-packages/:id",
+      "file": "tenant-package-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакеты тенанта"
+    },
+    {
+      "name": "Структура пользователя тенанта",
+      "file": "tenant-user-structure.md",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "GET /api/v1/tenant-users/:id",
+      "file": "tenant-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "GET /api/v1/tenant-users",
+      "file": "tenant-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "POST /api/v1/tenant-users",
+      "file": "tenant-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "POST /api/v1/tenant-users/:id/send-login-link",
+      "file": "tenant-user-send-login-link.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-users/:id",
+      "file": "tenant-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-users/:id",
+      "file": "tenant-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи тенанта"
+    },
+    {
+      "name": "Структура пользователя",
+      "file": "user-structure.md",
+      "subCat": "Пользователи"
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "file": "user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пользователи"
+    },
+    {
+      "name": "Структура голоса",
+      "file": "vote-structure.md",
+      "subCat": "Голоса"
+    },
+    {
+      "name": "GET /api/v1/votes",
+      "file": "votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса"
+    },
+    {
+      "name": "GET /api/v1/votes/for-user",
+      "file": "votes-get-for-user.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса"
+    },
+    {
+      "name": "POST /api/v1/votes",
+      "file": "vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса"
+    },
+    {
+      "name": "DELETE /api/v1/votes/:id",
+      "file": "vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса"
+    },
+    {
+      "name": "Структура конфигурации домена",
+      "file": "domain-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "GET /api/v1/domain-configs",
+      "file": "domain-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "GET /api/v1/domain-configs/:domain",
+      "file": "domain-config-get-by-domain.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "POST /api/v1/domain-configs",
+      "file": "domain-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "PATCH /api/v1/domain-configs/:domain",
+      "file": "domain-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "PUT /api/v1/domain-configs/:domain",
+      "file": "domain-config-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "DELETE /api/v1/domain-configs/:domain",
+      "file": "domain-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации домена"
+    },
+    {
+      "name": "Структура конфигурации вопроса",
+      "file": "question-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-configs",
+      "file": "question-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-configs/:id",
+      "file": "question-config-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "POST /api/v1/question-configs",
+      "file": "question-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "PATCH /api/v1/question-configs/:id",
+      "file": "question-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "DELETE /api/v1/question-configs/:id",
+      "file": "question-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Конфигурации вопросов"
+    },
+    {
+      "name": "Структура результата вопроса",
+      "file": "question-result-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-results",
+      "file": "question-results-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-results/:id",
+      "file": "question-result-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "POST /api/v1/question-results",
+      "file": "question-result-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "PATCH /api/v1/question-results/:id",
+      "file": "question-result-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "DELETE /api/v1/question-results/:id",
+      "file": "question-result-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Результаты вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate",
+      "file": "question-results-aggregate.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Агрегация результатов вопросов"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate/combine/comments",
+      "file": "question-results-combine-comments.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Агрегация результатов вопросов"
+    },
+    {
+      "name": "Структура значка пользователя",
+      "file": "user-badge-structure.md",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "GET /api/v1/user-badges",
+      "file": "user-badges-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "GET /api/v1/user-badges/:id",
+      "file": "user-badge-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "POST /api/v1/user-badges",
+      "file": "user-badge-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "PUT /api/v1/user-badges/:id",
+      "file": "user-badge-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "DELETE /api/v1/user-badges/:id",
+      "file": "user-badge-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Значки пользователей"
+    },
+    {
+      "name": "Структура прогресса значка пользователя",
+      "file": "user-badge-progress-structure.md",
+      "subCat": "Прогресс значка пользователя"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress",
+      "file": "user-badge-progress-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Прогресс значка пользователя"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/:id",
+      "file": "user-badge-progress-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Прогресс значка пользователя"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/user/:userId",
+      "file": "user-badge-progress-get-by-user-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Прогресс значка пользователя"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Поддържани браузъри",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "Поддържани браузъри",
+      "file": "supported-browsers.md",
+      "subCat": "Поддържани браузъри"
+    },
+    {
+      "name": "Internet Explorer",
+      "file": "internet-explorer.md",
+      "subCat": "Поддържани браузъри"
+    },
+    {
+      "name": "Как тестваме",
+      "file": "how-we-test.md",
+      "subCat": "Поддържани браузъри"
+    },
+    {
+      "name": "Изисквания за JavaScript",
+      "file": "no-javascript.md",
+      "subCat": "Поддържани браузъри"
+    }
+  ]
+}

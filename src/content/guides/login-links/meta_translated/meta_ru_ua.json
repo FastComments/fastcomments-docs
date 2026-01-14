@@ -1,0 +1,26 @@
+{
+  "name": "Ссылки для входа",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое ссылки для входа?",
+      "file": "login-links-what-are.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Преимущества ссылок для входа по сравнению с паролями",
+      "file": "login-links-benefits.md",
+      "subCat": "Общие сведения"
+    },
+    {
+      "name": "Как мы обеспечиваем безопасность ссылок для входа",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Безопасность"
+    },
+    {
+      "name": "Кому отправляются ссылки для входа?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Использование"
+    }
+  ]
+}

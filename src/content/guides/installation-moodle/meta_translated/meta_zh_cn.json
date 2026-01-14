@@ -1,0 +1,42 @@
+{
+  "name": "Moodle 安装",
+  "pageHeader": "向 Moodle 站点添加评论",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：获取服务器访问权限",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "步骤 2：定位视图文件",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "步骤 3：添加代码",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "会员站点成功",
+      "file": "moodle-success.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "会员站点域名错误",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "会员站点定制",
+      "file": "moodle-customize.md",
+      "subCat": "Moodle 站点安装"
+    },
+    {
+      "name": "需要专用插件吗？",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "专用插件？"
+    }
+  ]
+}

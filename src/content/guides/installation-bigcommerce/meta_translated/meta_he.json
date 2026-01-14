@@ -1,0 +1,47 @@
+{
+  "name": "התקנת BigCommerce",
+  "pageHeader": "הוספת תגובות לאתרים ב‑BigCommerce",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב ראשון: הכינו את התבנית",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "שלב שני: ערכו את התבנית המתאימה",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "שלב שלישי: הוסיפו את קוד הווידג'ט",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "שלב רביעי: הפעילו את התבנית החדשה",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "הצלחה",
+      "file": "bigcommerce-success.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "שגיאות בדומיין",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "bigcommerce-customize.md",
+      "subCat": "התקנת BigCommerce"
+    },
+    {
+      "name": "נוסף: קטע קוד עבור בונה הדפים",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "שימוש בבונה הדפים"
+    }
+  ]
+}

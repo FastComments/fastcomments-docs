@@ -1,0 +1,32 @@
+{
+  "name": "Benutzerdefiniertes Styling",
+  "pageHeader": "Leitfaden für benutzerdefiniertes Styling",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "So passen Sie Styles an",
+      "file": "comment-widget-instructions.md",
+      "subCat": "Erste Schritte"
+    },
+    {
+      "name": "Referenz für das Styling des Kommentar-Widgets (v2, aktuell)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "Widget-Styling"
+    },
+    {
+      "name": "Styling des Widgets für neueste Kommentare",
+      "file": "recent-comments-widget.md",
+      "subCat": "Widget-Styling"
+    },
+    {
+      "name": "Styling des Widgets für Top-Seiten",
+      "file": "top-pages-widget.md",
+      "subCat": "Widget-Styling"
+    },
+    {
+      "name": "Andere Frontend-Bibliotheken",
+      "file": "other-frontend-libraries.md",
+      "subCat": "Andere Frontend-Bibliotheken"
+    }
+  ]
+}

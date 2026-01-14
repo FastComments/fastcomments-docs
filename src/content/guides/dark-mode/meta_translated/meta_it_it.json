@@ -1,0 +1,21 @@
+{
+  "name": "Modalità Scura",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Rilevamento Automatico",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Configurazione Manuale",
+      "file": "dark-mode-manual.md",
+      "subCat": "Configurazione"
+    },
+    {
+      "name": "Supporto Modalità Scura per il Tema Networker di WordPress",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Temi WordPress"
+    }
+  ]
+}

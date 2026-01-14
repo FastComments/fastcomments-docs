@@ -1,0 +1,36 @@
+{
+  "name": "제휴 프로그램",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "FastComments 제휴사가 되어야 하는 이유",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "제휴 프로그램"
+    },
+    {
+      "name": "시작하기",
+      "file": "getting-started.md",
+      "subCat": "제휴 프로그램"
+    },
+    {
+      "name": "커미션",
+      "file": "commission.md",
+      "subCat": "제휴 프로그램"
+    },
+    {
+      "name": "제휴 대시보드",
+      "file": "dashboard.md",
+      "subCat": "제휴 프로그램"
+    },
+    {
+      "name": "지급 일정",
+      "file": "payout-schedule.md",
+      "subCat": "제휴 프로그램"
+    },
+    {
+      "name": "마케팅 자료",
+      "file": "marketing-materials.md",
+      "subCat": "제휴 프로그램"
+    }
+  ]
+}

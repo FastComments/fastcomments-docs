@@ -1,0 +1,26 @@
+{
+  "name": "サポートされているブラウザ",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "サポートされているブラウザ",
+      "file": "supported-browsers.md",
+      "subCat": "サポートされているブラウザ"
+    },
+    {
+      "name": "Internet Explorer（インターネットエクスプローラー）",
+      "file": "internet-explorer.md",
+      "subCat": "サポートされているブラウザ"
+    },
+    {
+      "name": "テスト方法",
+      "file": "how-we-test.md",
+      "subCat": "サポートされているブラウザ"
+    },
+    {
+      "name": "JavaScript の要件",
+      "file": "no-javascript.md",
+      "subCat": "サポートされているブラウザ"
+    }
+  ]
+}

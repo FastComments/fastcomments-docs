@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση Zyro",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Zyro",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθήκη widget κώδικα",
+      "file": "zyro-step-1.md",
+      "subCat": "Εγκατάσταση ιστότοπου Zyro"
+    },
+    {
+      "name": "Βήμα 2: Προσθήκη του κώδικα",
+      "file": "zyro-step-2.md",
+      "subCat": "Εγκατάσταση ιστότοπου Zyro"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "zyro-site-success.md",
+      "subCat": "Εγκατάσταση ιστότοπου Zyro"
+    },
+    {
+      "name": "Σφάλματα τομέα ιστότοπου",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Εγκατάσταση ιστότοπου Zyro"
+    },
+    {
+      "name": "Προσαρμογή ιστοτόπου",
+      "file": "zyro-site-customize.md",
+      "subCat": "Εγκατάσταση ιστότοπου Zyro"
+    },
+    {
+      "name": "Πλωτό κουμπί «Μου αρέσει»",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Πλωτά «Μου αρέσει» στο Zyro"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Ionos Kurulumu",
+  "pageHeader": "Ionos Sitelerine Yorum Ekleyin",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Bir İletişim Formu Ekleyin",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Adım 3: Yayınlayın",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Başarılı",
+      "file": "ionos-success.md",
+      "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos Kurulumu"
+    }
+  ]
+}

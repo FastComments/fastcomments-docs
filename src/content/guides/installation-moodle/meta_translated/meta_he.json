@@ -1,0 +1,42 @@
+{
+  "name": "התקנת Moodle",
+  "pageHeader": "הוספת הערות לאתרי Moodle",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: השג גישה לשרת",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "שלב 2: זהה את קובץ התצוגה",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "שלב 3: הוסף קוד",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "הצלחת אתר חברים",
+      "file": "moodle-success.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "שגיאות דומיין באתר חברים",
+      "file": "moodle-domain-errors.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "התאמה אישית לאתר חברים",
+      "file": "moodle-customize.md",
+      "subCat": "התקנת אתר Moodle"
+    },
+    {
+      "name": "מעוניין בתוסף ייעודי?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "תוסף ייעודי?"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Moderatie",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "De pagina Reacties modereren",
+      "file": "moderate-comments-page.md",
+      "subCat": "Inleiding"
+    },
+    {
+      "name": "Moderatoren",
+      "file": "moderators.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatoren toevoegen",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatorstatistieken",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Moderatoren verwijderen",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatoren"
+    },
+    {
+      "name": "Hoe goedkeuringen werken",
+      "file": "moderation-approvals.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Moderatie via e-mail",
+      "file": "moderation-via-email.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Filteren",
+      "file": "filters.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Zoeken",
+      "file": "search.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Moderatie-links delen",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "De weergave van reactiedraden",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Moderatieacties",
+      "file": "comment-actions.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Reacties verwijderen",
+      "file": "deleting-comments.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Moderatieacties vanuit de reactie-widget",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Live moderatie",
+      "file": "comment-actions-live.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Gebruikers verbannen",
+      "file": "banning-users.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Gebruikers verbannen met wildcards",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Vlaggen",
+      "file": "flagging.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Bulkacties",
+      "file": "bulk-actions.md",
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "Moderatiegroepen",
+      "file": "moderation-groups.md",
+      "subCat": "Moderatiegroepen"
+    },
+    {
+      "name": "Moderatie-instellingen",
+      "file": "moderation-settings.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Spamdetectie",
+      "file": "spam-detection.md",
+      "subCat": "Spam & Beledigende taal"
+    },
+    {
+      "name": "Beledigende taal maskeren",
+      "file": "profanity-mask.md",
+      "subCat": "Spam & Beledigende taal"
+    },
+    {
+      "name": "Reactie-logboeken",
+      "file": "comment-logs.md",
+      "subCat": "Moderatieworkflow"
+    }
+  ]
+}

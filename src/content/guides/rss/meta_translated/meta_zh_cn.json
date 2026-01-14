@@ -1,0 +1,21 @@
+{
+  "name": "RSS 订阅源",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "概览",
+      "file": "overview.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "设置您的 RSS 订阅",
+      "file": "setup.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "安全注意事项",
+      "file": "security.md",
+      "subCat": "实现"
+    }
+  ]
+}

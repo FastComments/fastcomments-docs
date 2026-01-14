@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 knjižnica",
+  "pageHeader": "FastComments Vue 2 knjižnica",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prvi koraki",
+      "type": "readme"
+    },
+    {
+      "name": "Uporaba",
+      "file": "usage-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Posodabljanje trenutne strani (primer SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "V produkcijskem okolju",
+      "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

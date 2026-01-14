@@ -1,0 +1,96 @@
+{
+  "name": "Insignes",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Notions de base",
+      "file": "badge-basics.md",
+      "subCat": "Les bases"
+    },
+    {
+      "name": "Progression",
+      "file": "badge-progression.md",
+      "subCat": "Les bases"
+    },
+    {
+      "name": "Insignes manuels",
+      "file": "badge-type-manual.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Nombre de commentaires",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Votes positifs",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Réponses",
+      "file": "badge-type-replies.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Commentaires épinglés",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Vétéran",
+      "file": "badge-type-veteran.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Noctambule",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Temps de réponse rapide",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Répondre à une page spécifique",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Types d'insignes"
+    },
+    {
+      "name": "Introduction aux insignes de modérateur",
+      "file": "moderator-badges.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires supprimés",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires approuvés",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires non approuvés",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires examinés",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires marqués comme spam",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Types d'insignes de modérateur"
+    },
+    {
+      "name": "Commentaires marqués comme non spam",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Types d'insignes de modérateur"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Тамни режим",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Аутоматско откривање",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Ручна конфигурација",
+      "file": "dark-mode-manual.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Подршка за тамни режим теме WordPress Networker",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Теме за WordPress"
+    }
+  ]
+}

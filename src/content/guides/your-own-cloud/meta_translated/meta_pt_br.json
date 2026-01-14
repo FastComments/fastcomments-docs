@@ -1,0 +1,36 @@
+{
+  "name": "Sua Própria Nuvem",
+  "icon": "cloud-secure.svg",
+  "itemsOrdered": [
+    {
+      "name": "O que é o FastComments Isolated Cloud?",
+      "file": "your-own-cloud.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Como obtê-lo",
+      "file": "isolated-cloud-how-to-get.md",
+      "subCat": "Primeiros Passos"
+    },
+    {
+      "name": "Configuração e Treinamento",
+      "file": "set-up-training.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Usando o Painel",
+      "file": "using-the-dashboard.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Usando a API",
+      "file": "using-the-api.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Gerenciando Tenants",
+      "file": "managing-tenants.md",
+      "subCat": "Gerenciamento de Tenants"
+    }
+  ]
+}

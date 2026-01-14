@@ -1,0 +1,37 @@
+{
+  "name": "Framer 설치",
+  "pageHeader": "Framer 사이트에 라이브 댓글 추가",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 에디터 열기",
+      "file": "framer-step-1.md",
+      "subCat": "Framer 설치"
+    },
+    {
+      "name": "2단계: 임베드 블록 추가",
+      "file": "framer-step-2.md",
+      "subCat": "Framer 설치"
+    },
+    {
+      "name": "3단계: Framer 전용 FastComments 코드 복사하여 붙여넣기",
+      "file": "framer-step-3.md",
+      "subCat": "Framer 설치"
+    },
+    {
+      "name": "4단계: 위젯 및 페이지 높이 조정",
+      "file": "framer-step-4.md",
+      "subCat": "Framer 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "framer-customize.md",
+      "subCat": "Framer 설치"
+    }
+  ]
+}

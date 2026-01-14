@@ -1,0 +1,42 @@
+{
+  "name": "Instalacija Moodla",
+  "pageHeader": "Dodavanje komentara na Moodle sajtove",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dobijte pristup serveru",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Korak 2: Identifikujte fajl prikaza",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Korak 3: Dodajte kod",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Uspeh članskog sajta",
+      "file": "moodle-success.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Greške domena članskog sajta",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Prilagođavanje članskog sajta",
+      "file": "moodle-customize.md",
+      "subCat": "Instalacija Moodle sajta"
+    },
+    {
+      "name": "Želite namenski dodatak?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Namenski dodatak?"
+    }
+  ]
+}

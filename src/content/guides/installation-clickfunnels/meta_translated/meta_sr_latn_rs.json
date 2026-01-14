@@ -1,0 +1,37 @@
+{
+  "name": "Instalacija ClickFunnels-a",
+  "pageHeader": "Dodajte live chat u ClickFunnels kurseve",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Pronađite šablon",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Instalacija ClickFunnels-a"
+    },
+    {
+      "name": "Korak 2: Dodajte kod",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Instalacija ClickFunnels-a"
+    },
+    {
+      "name": "Greške domena",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Instalacija ClickFunnels-a"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Instalacija ClickFunnels-a"
+    },
+    {
+      "name": "Dodatno: Isječak koda za komentarisanje uživo",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Isječak koda za komentarisanje uživo"
+    },
+    {
+      "name": "Dodatno: Automatsko reprodukovanje komentara",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Automatsko reprodukovanje komentara"
+    }
+  ]
+}

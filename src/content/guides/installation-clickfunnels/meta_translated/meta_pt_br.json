@@ -1,0 +1,37 @@
+{
+  "name": "Instalação do ClickFunnels",
+  "pageHeader": "Adicionar Chat ao Vivo aos Cursos do ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Passo Um: Encontre o Modelo",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Instalação do ClickFunnels"
+    },
+    {
+      "name": "Passo Dois: Adicione o Código",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Instalação do ClickFunnels"
+    },
+    {
+      "name": "Erros de Domínio",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Instalação do ClickFunnels"
+    },
+    {
+      "name": "Personalização",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Instalação do ClickFunnels"
+    },
+    {
+      "name": "Extra: Trecho de Código para Comentários ao Vivo",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Trecho de Código para Comentários ao Vivo"
+    },
+    {
+      "name": "Extra: Reprodução Automática de Comentários",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Reprodução Automática de Comentários"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "GoDaddy 설치",
+  "pageHeader": "GoDaddy 사이트에 댓글 추가",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 코드 영역 추가",
+      "file": "godaddy-step-1.md",
+      "subCat": "GoDaddy 설치"
+    },
+    {
+      "name": "2단계: FastComments.com 코드 추가",
+      "file": "godaddy-step-2.md",
+      "subCat": "GoDaddy 설치"
+    },
+    {
+      "name": "3단계: 게시",
+      "file": "godaddy-step-3.md",
+      "subCat": "GoDaddy 설치"
+    },
+    {
+      "name": "성공",
+      "file": "godaddy-success.md",
+      "subCat": "GoDaddy 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "GoDaddy 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "godaddy-customize.md",
+      "subCat": "GoDaddy 설치"
+    }
+  ]
+}

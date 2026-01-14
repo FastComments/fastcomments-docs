@@ -1,0 +1,36 @@
+{
+  "name": "アフィリエイト",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "なぜFastCommentsのアフィリエイトになるべきか？",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "アフィリエイト"
+    },
+    {
+      "name": "はじめに",
+      "file": "getting-started.md",
+      "subCat": "アフィリエイト"
+    },
+    {
+      "name": "報酬",
+      "file": "commission.md",
+      "subCat": "アフィリエイト"
+    },
+    {
+      "name": "アフィリエイトダッシュボード",
+      "file": "dashboard.md",
+      "subCat": "アフィリエイト"
+    },
+    {
+      "name": "支払いスケジュール",
+      "file": "payout-schedule.md",
+      "subCat": "アフィリエイト"
+    },
+    {
+      "name": "マーケティング資料",
+      "file": "marketing-materials.md",
+      "subCat": "アフィリエイト"
+    }
+  ]
+}

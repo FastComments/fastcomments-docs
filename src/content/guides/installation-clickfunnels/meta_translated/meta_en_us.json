@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels Installation",
+  "pageHeader": "Add Live Chat to ClickFunnels Courses",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Step One: Find The Template",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels Installation"
+    },
+    {
+      "name": "Step Two: Add The Code",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels Installation"
+    },
+    {
+      "name": "Extra: Code Snippet for Live Commenting",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Live Commenting Code Snippet"
+    },
+    {
+      "name": "Extra: Auto Play Comments",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Auto Play Comments"
+    }
+  ]
+}

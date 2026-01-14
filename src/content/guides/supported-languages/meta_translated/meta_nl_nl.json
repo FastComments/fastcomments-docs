@@ -1,0 +1,21 @@
+{
+  "name": "Ondersteunde talen",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "Ondersteunde talen",
+      "file": "supported-languages.md",
+      "subCat": "Ondersteunde talen"
+    },
+    {
+      "name": "Welke onderdelen van FastComments zijn gelokaliseerd?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "Ondersteunde talen"
+    },
+    {
+      "name": "Ondersteuning voor een nieuwe taal aanvragen",
+      "file": "requesting-new-language-support.md",
+      "subCat": "Ondersteunde talen"
+    }
+  ]
+}

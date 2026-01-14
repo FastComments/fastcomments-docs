@@ -1,0 +1,36 @@
+{
+  "name": "Партнери",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "Зашто бити FastComments партнер?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Почетак",
+      "file": "getting-started.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Провизија",
+      "file": "commission.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Контролна табла за партнере",
+      "file": "dashboard.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Распоред исплата",
+      "file": "payout-schedule.md",
+      "subCat": "Партнери"
+    },
+    {
+      "name": "Маркетиншки материјали",
+      "file": "marketing-materials.md",
+      "subCat": "Партнери"
+    }
+  ]
+}

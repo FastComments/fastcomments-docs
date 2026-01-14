@@ -1,0 +1,46 @@
+{
+  "name": "ユーザー",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "ユーザーの種類",
+      "file": "types-of-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ユーザー名",
+      "file": "usernames.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "管理者ユーザー",
+      "file": "administrator-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "コメント投稿者",
+      "file": "commenter-users.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "管理者の追加",
+      "file": "adding-administrators.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "モデレーターの追加",
+      "file": "adding-moderators.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "管理者権限の更新",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "開発者",
+      "file": "developers.md",
+      "subCat": "設定"
+    }
+  ]
+}

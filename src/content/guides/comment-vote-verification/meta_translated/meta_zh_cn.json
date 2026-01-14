@@ -1,0 +1,36 @@
+{
+  "name": "评论与投票验证",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "未验证的评论",
+      "file": "unverified-comments.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "未验证的投票",
+      "file": "unverified-votes.md",
+      "subCat": "基础"
+    },
+    {
+      "name": "验证邮件",
+      "file": "verification-emails.md",
+      "subCat": "验证"
+    },
+    {
+      "name": "会话",
+      "file": "verification-sessions.md",
+      "subCat": "验证"
+    },
+    {
+      "name": "实时评论",
+      "file": "verification-live-commenting.md",
+      "subCat": "验证"
+    }
+  ]
+}

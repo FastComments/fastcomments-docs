@@ -1,0 +1,42 @@
+{
+  "name": "Εγκατάσταση Shopify",
+  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους Shopify",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Εισαγωγή υπαρχόντων σχολίων",
+      "file": "shopify-step-1.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Βήμα 2: Απενεργοποίηση του προεπιλεγμένου συστήματος σχολιασμού",
+      "file": "shopify-step-2.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Βήμα 3: Άνοιγμα του προτύπου θέματος ιστολογίου",
+      "file": "shopify-step-3.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Βήμα 4: Προσθήκη του κώδικα του FastComments.com",
+      "file": "shopify-step-4.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Επιτυχία",
+      "file": "shopify-success.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "shopify-customize.md",
+      "subCat": "Εγκατάσταση Shopify"
+    }
+  ]
+}

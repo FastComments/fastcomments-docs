@@ -1,0 +1,37 @@
+{
+  "name": "Установка Weebly",
+  "pageHeader": "Добавление комментариев на сайты Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Откройте настройки блога",
+      "file": "weebly-step-1.md",
+      "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Шаг 2: Добавьте код FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Шаг 3: Опубликуйте!",
+      "file": "weebly-step-3.md",
+      "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Успешно",
+      "file": "weebly-success.md",
+      "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Настройка",
+      "file": "weebly-customize.md",
+      "subCat": "Установка Weebly"
+    }
+  ]
+}

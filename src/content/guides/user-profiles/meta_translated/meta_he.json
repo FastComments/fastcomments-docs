@@ -1,0 +1,51 @@
+{
+  "name": "פרופילי משתמשים",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "יסודות הפרופיל",
+      "file": "profile-basics.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "התאמה אישית של הפרופיל",
+      "file": "customizing-profiles.md",
+      "subCat": "התאמה אישית"
+    },
+    {
+      "name": "הגדרות פרטיות",
+      "file": "privacy-settings.md",
+      "subCat": "התאמה אישית"
+    },
+    {
+      "name": "תגים",
+      "file": "badges.md",
+      "subCat": "תכונות"
+    },
+    {
+      "name": "תגובות לפרופיל",
+      "file": "profile-comments.md",
+      "subCat": "תכונות"
+    },
+    {
+      "name": "הודעות פרטיות",
+      "file": "direct-messaging.md",
+      "subCat": "תכונות"
+    },
+    {
+      "name": "עדכוני פעילות",
+      "file": "activity-feed.md",
+      "subCat": "תכונות"
+    },
+    {
+      "name": "הערות משתמש",
+      "file": "user-notes.md",
+      "subCat": "תכונות"
+    },
+    {
+      "name": "עיצוב פרופילים",
+      "file": "styling-profiles.md",
+      "subCat": "למפתחים"
+    }
+  ]
+}

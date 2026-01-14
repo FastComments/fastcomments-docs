@@ -1,0 +1,11 @@
+{
+  "name": "LLM 套件",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "取得 LLM 套件",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM 整合"
+    }
+  ]
+}

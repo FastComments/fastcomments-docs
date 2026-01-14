@@ -1,0 +1,24 @@
+{
+  "name": "React Native SDK",
+  "pageHeader": "FastComments の React Native SDK",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "概要",
+      "file": "about-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "スクリーンショット",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

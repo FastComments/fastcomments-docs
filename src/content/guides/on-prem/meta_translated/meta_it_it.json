@@ -1,0 +1,56 @@
+{
+  "name": "On-Prem",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Cosa è incluso",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Da dove iniziare",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Istanze",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Distribuzione"
+    },
+    {
+      "name": "Configurazione",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Distribuzione"
+    },
+    {
+      "name": "Interruzione del database e modalità di manutenzione",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Architettura"
+    },
+    {
+      "name": "Blocchi",
+      "file": "on-prem-locks.md",
+      "subCat": "Architettura"
+    },
+    {
+      "name": "Codice del widget",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Installazione e integrazione"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Installazione e integrazione"
+    },
+    {
+      "name": "Domini multipli",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Installazione e integrazione"
+    },
+    {
+      "name": "Sicurezza",
+      "file": "on-prem-security.md",
+      "subCat": "Suggerimenti sulla sicurezza"
+    }
+  ]
+}

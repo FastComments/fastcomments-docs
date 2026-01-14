@@ -1,0 +1,16 @@
+{
+  "name": "動態",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "個人化動態",
+      "file": "personalizing-feeds.md",
+      "subCat": "自訂"
+    },
+    {
+      "name": "區域動態",
+      "file": "regional-feeds.md",
+      "subCat": "自訂"
+    }
+  ]
+}

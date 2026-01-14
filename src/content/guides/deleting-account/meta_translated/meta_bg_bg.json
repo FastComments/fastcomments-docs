@@ -1,0 +1,16 @@
+{
+  "name": "Изтриване на вашия акаунт",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Изтриване на вашия акаунт",
+      "file": "deleting-your-account.md",
+      "subCat": "Коментатори и наематели"
+    },
+    {
+      "name": "Отказване на вашия абонамент",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Наематели"
+    }
+  ]
+}

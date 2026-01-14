@@ -1,0 +1,16 @@
+{
+  "name": "Sintaksa komentara",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Osnovno formatiranje",
+      "file": "basic-formatting.md",
+      "subCat": "Formatiranje"
+    },
+    {
+      "name": "Bezbednost",
+      "file": "security.md",
+      "subCat": "Bezbednost"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Installazione di ClickFunnels",
+  "pageHeader": "Aggiungi chat live ai corsi ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Passo uno: trova il modello",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Installazione di ClickFunnels"
+    },
+    {
+      "name": "Passo due: aggiungi il codice",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Installazione di ClickFunnels"
+    },
+    {
+      "name": "Errori di dominio",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Installazione di ClickFunnels"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Installazione di ClickFunnels"
+    },
+    {
+      "name": "Extra: frammento di codice per commenti in tempo reale",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Frammento di codice per commenti in tempo reale"
+    },
+    {
+      "name": "Extra: riproduzione automatica dei commenti",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Riproduzione automatica dei commenti"
+    }
+  ]
+}

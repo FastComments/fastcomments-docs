@@ -1,0 +1,37 @@
+{
+  "name": "התקנת GoDaddy",
+  "pageHeader": "הוספת תגובות לאתרים ב-GoDaddy",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הוספת אזור קוד",
+      "file": "godaddy-step-1.md",
+      "subCat": "התקנת GoDaddy"
+    },
+    {
+      "name": "שלב 2: הוספת קוד של FastComments.com",
+      "file": "godaddy-step-2.md",
+      "subCat": "התקנת GoDaddy"
+    },
+    {
+      "name": "שלב 3: פרסום",
+      "file": "godaddy-step-3.md",
+      "subCat": "התקנת GoDaddy"
+    },
+    {
+      "name": "הצלחה",
+      "file": "godaddy-success.md",
+      "subCat": "התקנת GoDaddy"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "התקנת GoDaddy"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "godaddy-customize.md",
+      "subCat": "התקנת GoDaddy"
+    }
+  ]
+}

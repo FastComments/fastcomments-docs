@@ -1,0 +1,42 @@
+{
+  "name": "React Native knjižnica",
+  "pageHeader": "FastComments knjižnica za React Native",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Razmislite o nativnem SDK-ju",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Uporaba - pripomoček za komentarje v živo",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Uporaba - pripomoček za klepet v živo",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Uporaba - enotna prijava (SSO)",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Peer odvisnosti",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

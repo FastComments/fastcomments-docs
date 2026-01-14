@@ -1,0 +1,42 @@
+{
+  "name": "Installation af Moodle",
+  "pageHeader": "Tilføj kommentarer til Moodle-websteder",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Få adgang til serveren",
+      "file": "moodle-step-1-server-access.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Trin 2: Identificer visningsfilen",
+      "file": "moodle-step-2-identify-view-file.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Trin 3: Tilføj kode",
+      "file": "moodle-step-3-edit-view.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Succes for medlemswebsted",
+      "file": "moodle-success.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Domænefejl på medlemswebsted",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Tilpasning af medlemswebsted",
+      "file": "moodle-customize.md",
+      "subCat": "Installation af Moodle-websted"
+    },
+    {
+      "name": "Ønsker du et dedikeret plugin?",
+      "file": "moodle-want-a-plugin.md",
+      "subCat": "Dedikeret plugin?"
+    }
+  ]
+}

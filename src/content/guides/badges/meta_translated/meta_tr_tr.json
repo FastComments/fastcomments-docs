@@ -1,0 +1,96 @@
+{
+  "name": "Rozetler",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Temel Bilgiler",
+      "file": "badge-basics.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "İlerleme",
+      "file": "badge-progression.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "Manuel Rozetler",
+      "file": "badge-type-manual.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Yorum Sayısı",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Beğeniler",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Yanıtlar",
+      "file": "badge-type-replies.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Sabitlenmiş Yorumlar",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Kıdemli",
+      "file": "badge-type-veteran.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Gece Kuşu",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Hızlı Yanıt Süresi",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Belirli Sayfaya Yanıt",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Rozet Türleri"
+    },
+    {
+      "name": "Moderatör Rozetlerine Giriş",
+      "file": "moderator-badges.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "Silinen Yorumlar",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "Onaylanan Yorumlar",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "Onayı Kaldırılan Yorumlar",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "İncelenen Yorumlar",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "Spam Olarak İşaretlenen Yorumlar",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Moderatör Rozet Türleri"
+    },
+    {
+      "name": "Spam Değil Olarak İşaretlenen Yorumlar",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Moderatör Rozet Türleri"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Сторонні файли cookie",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке сторонні файли cookie",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Як FastComments використовує сторонні файли cookie",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Увімкнення сторонніх файлів cookie",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Увімкнення"
+    }
+  ]
+}

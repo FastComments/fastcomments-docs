@@ -1,0 +1,42 @@
+{
+  "name": "Инсталација Wix",
+  "pageHeader": "Додавање коментара на Wix сајтове",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Уредите праву страницу",
+      "file": "wix-step-1.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Корак 2: Додајте блок за уграђивање",
+      "file": "wix-step-2.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Корак 3: Копирајте и залепите прилагођени код",
+      "file": "wix-step-3.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Корак 4: Промените величину",
+      "file": "wix-step-4.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Корак 5: Јединствене теме коментара",
+      "file": "wix-step-5.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Корак 6: Прославите",
+      "file": "wix-step-6.md",
+      "subCat": "Инсталација Wix"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "wix-customize.md",
+      "subCat": "Инсталација Wix"
+    }
+  ]
+}

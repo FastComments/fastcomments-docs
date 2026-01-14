@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке SAML?",
+      "file": "saml-overview.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "SAML проти SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "Основи"
+    },
+    {
+      "name": "Налаштування SAML",
+      "file": "saml-setup.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Конфігурація постачальника ідентичності",
+      "file": "saml-idp-config.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Інформація про постачальника послуг",
+      "file": "saml-sp-info.md",
+      "subCat": "Конфігурація"
+    },
+    {
+      "name": "Ролі користувачів та дозволи",
+      "file": "saml-user-roles.md",
+      "subCat": "Керування користувачами"
+    },
+    {
+      "name": "Тестування автентифікації SAML",
+      "file": "saml-testing.md",
+      "subCat": "Усунення неполадок"
+    },
+    {
+      "name": "Поширені проблеми",
+      "file": "saml-troubleshooting.md",
+      "subCat": "Усунення неполадок"
+    },
+    {
+      "name": "Найкращі практики безпеки",
+      "file": "saml-security.md",
+      "subCat": "Розширені"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Instalacija Memberstacka",
+  "pageHeader": "Dodajte komentare pomoću Memberstacka",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Kod",
+      "file": "memberstack-step-1.md",
+      "subCat": "Instalacija Memberstacka"
+    },
+    {
+      "name": "Greške na domenu",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Instalacija Memberstacka"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "memberstack-customize.md",
+      "subCat": "Instalacija Memberstacka"
+    }
+  ]
+}

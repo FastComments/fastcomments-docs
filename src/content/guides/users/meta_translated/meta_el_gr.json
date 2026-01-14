@@ -1,0 +1,46 @@
+{
+  "name": "Χρήστες",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "Τύποι χρηστών",
+      "file": "types-of-users.md",
+      "subCat": "Γενικές πληροφορίες"
+    },
+    {
+      "name": "Ονόματα χρήστη",
+      "file": "usernames.md",
+      "subCat": "Γενικές πληροφορίες"
+    },
+    {
+      "name": "Διαχειριστές",
+      "file": "administrator-users.md",
+      "subCat": "Γενικές πληροφορίες"
+    },
+    {
+      "name": "Σχολιαστές",
+      "file": "commenter-users.md",
+      "subCat": "Γενικές πληροφορίες"
+    },
+    {
+      "name": "Προσθήκη διαχειριστών",
+      "file": "adding-administrators.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Προσθήκη συντονιστών",
+      "file": "adding-moderators.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Ενημέρωση δικαιωμάτων διαχειριστή",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Προγραμματιστές",
+      "file": "developers.md",
+      "subCat": "Ρύθμιση"
+    }
+  ]
+}

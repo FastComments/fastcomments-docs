@@ -1,0 +1,16 @@
+{
+  "name": "Видалення вашого облікового запису",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Видалення вашого облікового запису",
+      "file": "deleting-your-account.md",
+      "subCat": "Коментатори та орендарі"
+    },
+    {
+      "name": "Скасування вашої підписки",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Орендарі"
+    }
+  ]
+}

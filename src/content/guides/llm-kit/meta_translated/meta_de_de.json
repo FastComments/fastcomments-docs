@@ -1,0 +1,11 @@
+{
+  "name": "LLM-Kit",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "LLM-Kit erhalten",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM-Integration"
+    }
+  ]
+}

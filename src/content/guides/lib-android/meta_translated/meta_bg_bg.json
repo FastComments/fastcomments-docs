@@ -1,0 +1,72 @@
+{
+  "name": "Библиотека за Android",
+  "pageHeader": "FastComments библиотека за Android",
+  "itemsOrdered": [
+    {
+      "name": "Функции",
+      "file": "features-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Изисквания",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталация",
+      "file": "installation-readme-generated.md",
+      "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Основна употреба",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Използване",
+      "type": "readme"
+    },
+    {
+      "name": "Сигурна SSO автентикация",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Удостоверяване",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция на емисия",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Интеграция на чат на живо",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Примерни проекти",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Използване",
+      "type": "readme"
+    },
+    {
+      "name": "Опции за конфигурация",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Пълна персонализация на темата",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Управление на паметта",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

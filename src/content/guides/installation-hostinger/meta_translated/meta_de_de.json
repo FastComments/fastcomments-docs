@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger-Installation",
+  "pageHeader": "Live-Kommentare zu Hostinger-Websites hinzufügen",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Schritt 1: Code-Widget hinzufügen",
+      "file": "hostinger-step-1.md",
+      "subCat": "Installation auf Hostinger"
+    },
+    {
+      "name": "Schritt 2: Code hinzufügen",
+      "file": "hostinger-step-2.md",
+      "subCat": "Installation auf Hostinger"
+    },
+    {
+      "name": "Erfolg",
+      "file": "hostinger-site-success.md",
+      "subCat": "Installation auf Hostinger"
+    },
+    {
+      "name": "Domainfehler der Website",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Installation auf Hostinger"
+    },
+    {
+      "name": "Website-Anpassung",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Installation auf Hostinger"
+    },
+    {
+      "name": "Schwebender Like-Button",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger Schwebende Likes"
+    }
+  ]
+}

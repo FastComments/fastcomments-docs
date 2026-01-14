@@ -1,0 +1,36 @@
+{
+  "name": "SSR（サーバーサイドレンダリング）",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "SSRとは？",
+      "file": "what-is-ssr.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "SSRの利点",
+      "file": "benefits-of-ssr.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "FastCommentsのSSR対応機能",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "ユースケース",
+      "file": "ssr-use-cases.md",
+      "subCat": "SSRの使用"
+    },
+    {
+      "name": "FastCommentsがSSRを使用する箇所",
+      "file": "ssr-where-used.md",
+      "subCat": "SSRの使用"
+    },
+    {
+      "name": "SSRの使用",
+      "file": "using-ssr.md",
+      "subCat": "SSRの使用"
+    }
+  ]
+}

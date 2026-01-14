@@ -1,0 +1,41 @@
+{
+  "name": "Predlošci e-pošte",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "Izrada predložaka",
+      "file": "creating-templates.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Jezik predloška",
+      "file": "template-language.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Lokalizacija i prilagođeni tekst",
+      "file": "localizing.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Predlošci po domenama",
+      "file": "per-domain-templates.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Podaci i varijable",
+      "file": "data-variables.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Pogreške pri renderiranju",
+      "file": "render-failures.md",
+      "subCat": "Predlošci e-pošte"
+    },
+    {
+      "name": "Primjena promjena",
+      "file": "time-to-apply-changes.md",
+      "subCat": "Predlošci e-pošte"
+    }
+  ]
+}

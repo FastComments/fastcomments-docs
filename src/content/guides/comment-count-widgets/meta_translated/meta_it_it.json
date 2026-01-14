@@ -1,0 +1,21 @@
+{
+  "name": "Widget conteggio commenti",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Installazione del widget conteggio commenti",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Installazione"
+    },
+    {
+      "name": "Installazione in blocco del widget conteggio commenti",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Installazione"
+    },
+    {
+      "name": "API per il conteggio dei commenti",
+      "file": "comment-count-apis.md",
+      "subCat": "API per il conteggio dei commenti"
+    }
+  ]
+}

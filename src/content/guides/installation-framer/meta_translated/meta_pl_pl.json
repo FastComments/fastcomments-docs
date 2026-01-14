@@ -1,0 +1,37 @@
+{
+  "name": "Instalacja Framera",
+  "pageHeader": "Dodaj komentowanie na żywo do stron Framer",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Krok 1: Otwórz edytor",
+      "file": "framer-step-1.md",
+      "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Krok 2: Dodaj blok osadzania",
+      "file": "framer-step-2.md",
+      "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Krok 3: Skopiuj i wklej kod FastComments dla Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Krok 4: Dostosuj wysokość widżetu i strony",
+      "file": "framer-step-4.md",
+      "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "framer-domain-errors.md",
+      "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "framer-customize.md",
+      "subCat": "Instalacja Framera"
+    }
+  ]
+}

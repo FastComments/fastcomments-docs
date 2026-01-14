@@ -1,0 +1,31 @@
+{
+  "name": "分析",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "analytics-background.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "計費分析",
+      "file": "analytics-billing.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "網站分析",
+      "file": "analytics-site.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "分析準確性與其他平台比較",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "分析"
+    },
+    {
+      "name": "Google Analytics（Google 分析）",
+      "file": "analytics-google.md",
+      "subCat": "追蹤"
+    }
+  ]
+}

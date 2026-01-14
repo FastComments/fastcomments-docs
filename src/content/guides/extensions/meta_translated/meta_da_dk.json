@@ -1,0 +1,31 @@
+{
+  "name": "Skrivning af udvidelser",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Udvidelsens livscyklus",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Definition af en udvidelse",
+      "file": "defining-an-extension.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Eksempler på udvidelser",
+      "file": "example-extensions.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Udvidelsesobjektet",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "Udvidelses-API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

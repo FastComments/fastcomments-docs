@@ -1,0 +1,37 @@
+{
+  "name": "ClickFunnels 安装",
+  "pageHeader": "向 ClickFunnels 课程添加实时聊天",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "第一步：查找模板",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels 安装"
+    },
+    {
+      "name": "第二步：添加代码",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels 安装"
+    },
+    {
+      "name": "附加：用于实时评论的代码片段",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "实时评论代码片段"
+    },
+    {
+      "name": "附加：自动播放评论",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "自动播放评论"
+    }
+  ]
+}

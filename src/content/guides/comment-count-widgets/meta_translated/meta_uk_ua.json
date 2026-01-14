@@ -1,0 +1,21 @@
+{
+  "name": "Віджети підрахунку коментарів",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Встановлення віджета підрахунку коментарів",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "Масове встановлення віджетів підрахунку коментарів",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "API підрахунку коментарів",
+      "file": "comment-count-apis.md",
+      "subCat": "API підрахунку коментарів"
+    }
+  ]
+}

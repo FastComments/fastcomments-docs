@@ -1,0 +1,32 @@
+{
+  "name": "Встановлення Systeme.io",
+  "pageHeader": "Додати коментарі до блогу Systeme.io",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Відкрийте шаблон теми блогу",
+      "file": "systeme-step-1.md",
+      "subCat": "Встановлення Systeme.io"
+    },
+    {
+      "name": "Крок 2: Додайте код FastComments.com",
+      "file": "systeme-step-2.md",
+      "subCat": "Встановлення Systeme.io"
+    },
+    {
+      "name": "Успішно",
+      "file": "systeme-success.md",
+      "subCat": "Встановлення Systeme.io"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Встановлення Systeme.io"
+    },
+    {
+      "name": "Налаштування",
+      "file": "systeme-customize.md",
+      "subCat": "Встановлення Systeme.io"
+    }
+  ]
+}

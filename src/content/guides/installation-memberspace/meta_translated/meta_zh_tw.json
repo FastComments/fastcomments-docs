@@ -1,0 +1,22 @@
+{
+  "name": "MemberSpace 安裝",
+  "pageHeader": "使用 MemberSpace 新增評論",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "程式碼",
+      "file": "memberspace-step-1.md",
+      "subCat": "MemberSpace 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "MemberSpace 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "memberspace-customize.md",
+      "subCat": "MemberSpace 安裝"
+    }
+  ]
+}

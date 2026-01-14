@@ -1,0 +1,16 @@
+{
+  "name": "oEmbed",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是 oEmbed？",
+      "file": "about-oembed.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "建立 oEmbed 對話",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "用法"
+    }
+  ]
+}

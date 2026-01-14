@@ -1,0 +1,46 @@
+{
+  "name": "Collab Chat",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Rozpoczęcie pracy",
+      "file": "getting-started.md",
+      "subCat": "Rozpoczęcie pracy"
+    },
+    {
+      "name": "Przykłady",
+      "file": "examples.md",
+      "subCat": "Rozpoczęcie pracy"
+    },
+    {
+      "name": "Dodawanie komentowania w czasie rzeczywistym do książek online",
+      "file": "online-books.md",
+      "subCat": "Rozpoczęcie pracy"
+    },
+    {
+      "name": "Opcje konfiguracji",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Zachowanie zaznaczania tekstu",
+      "file": "text-selection-behavior.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "customization.md",
+      "subCat": "Dostosowywanie"
+    },
+    {
+      "name": "Synchronizacja w czasie rzeczywistym",
+      "file": "live-sync.md",
+      "subCat": "Zaawansowane"
+    },
+    {
+      "name": "Dokumentacja API",
+      "file": "api-reference.md",
+      "subCat": "Zaawansowane"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Geplande reacties",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Achtergrond",
+      "file": "background.md",
+      "subCat": "Geplande reacties"
+    },
+    {
+      "name": "Handleiding",
+      "file": "howto.md",
+      "subCat": "Geplande reacties"
+    },
+    {
+      "name": "Importformaat",
+      "file": "import-format.md",
+      "subCat": "Geplande reacties"
+    }
+  ]
+}

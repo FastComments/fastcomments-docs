@@ -1,0 +1,57 @@
+{
+  "name": "Инсталация на Ghost",
+  "pageHeader": "Добавяне на живо коментиране само за членове в сайтове на Ghost",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Изтеглете темата си",
+      "file": "ghost-step-1.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 2: Инсталирайте темата си локално",
+      "file": "ghost-step-2.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 3: Дайте име на новата тема",
+      "file": "ghost-step-3.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 4: Отворете шаблона на публикацията",
+      "file": "ghost-step-4.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 5: Добавете кода на FastComments",
+      "file": "ghost-step-5.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 6: Експортирайте темата си",
+      "file": "ghost-step-6.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Стъпка 7: Качете темата в Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Готово!",
+      "file": "ghost-success.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Грешки с домейна",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Инсталация на Ghost"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "ghost-customize.md",
+      "subCat": "Инсталация на Ghost"
+    }
+  ]
+}

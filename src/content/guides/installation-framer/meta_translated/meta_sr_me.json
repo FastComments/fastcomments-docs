@@ -1,0 +1,37 @@
+{
+  "name": "Инсталација Framer-а",
+  "pageHeader": "Додајте уживо коментарисање на Framer сајтове",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Отворите уређивач",
+      "file": "framer-step-1.md",
+      "subCat": "Инсталација Framer-а"
+    },
+    {
+      "name": "Корак 2: Додајте блок за уграђивање",
+      "file": "framer-step-2.md",
+      "subCat": "Инсталација Framer-а"
+    },
+    {
+      "name": "Корак 3: Копирајте и налепите FastComments код специфичан за Framer",
+      "file": "framer-step-3.md",
+      "subCat": "Инсталација Framer-а"
+    },
+    {
+      "name": "Корак 4: Прилагодите висину видгета и странице",
+      "file": "framer-step-4.md",
+      "subCat": "Инсталација Framer-а"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "framer-domain-errors.md",
+      "subCat": "Инсталација Framer-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "framer-customize.md",
+      "subCat": "Инсталација Framer-а"
+    }
+  ]
+}

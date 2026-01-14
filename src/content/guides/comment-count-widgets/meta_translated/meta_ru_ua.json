@@ -1,0 +1,21 @@
+{
+  "name": "Виджеты подсчёта комментариев",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Установка виджета подсчёта комментариев",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "Массовая установка виджетов подсчёта комментариев",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "Установка"
+    },
+    {
+      "name": "API подсчёта комментариев",
+      "file": "comment-count-apis.md",
+      "subCat": "API подсчёта комментариев"
+    }
+  ]
+}

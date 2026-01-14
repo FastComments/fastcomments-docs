@@ -1,0 +1,16 @@
+{
+  "name": "Akışlar",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Akışları Kişiselleştirme",
+      "file": "personalizing-feeds.md",
+      "subCat": "Özelleştirme"
+    },
+    {
+      "name": "Bölgesel Akışlar",
+      "file": "regional-feeds.md",
+      "subCat": "Özelleştirme"
+    }
+  ]
+}

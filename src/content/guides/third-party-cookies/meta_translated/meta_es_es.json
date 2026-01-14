@@ -1,0 +1,21 @@
+{
+  "name": "Cookies de terceros",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Qué son las cookies de terceros",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Cómo FastComments utiliza cookies de terceros",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Habilitar cookies de terceros",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Activación"
+    }
+  ]
+}

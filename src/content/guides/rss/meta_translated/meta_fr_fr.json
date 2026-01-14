@@ -1,0 +1,21 @@
+{
+  "name": "Flux RSS",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Aperçu",
+      "file": "overview.md",
+      "subCat": "Prise en main"
+    },
+    {
+      "name": "Configurer votre flux RSS",
+      "file": "setup.md",
+      "subCat": "Prise en main"
+    },
+    {
+      "name": "Considérations de sécurité",
+      "file": "security.md",
+      "subCat": "Implémentation"
+    }
+  ]
+}

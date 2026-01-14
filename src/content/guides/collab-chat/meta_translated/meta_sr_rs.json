@@ -1,0 +1,46 @@
+{
+  "name": "Чет за сарадњу",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Почетак рада",
+      "file": "getting-started.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Примери",
+      "file": "examples.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Додавање коментара у реалном времену онлајн књигама",
+      "file": "online-books.md",
+      "subCat": "Почетак рада"
+    },
+    {
+      "name": "Опције конфигурисања",
+      "file": "configuration-options.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Понашање селекције текста",
+      "file": "text-selection-behavior.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "customization.md",
+      "subCat": "Прилагођавање"
+    },
+    {
+      "name": "Синхронизација уживо",
+      "file": "live-sync.md",
+      "subCat": "Напредно"
+    },
+    {
+      "name": "Референца API-ја",
+      "file": "api-reference.md",
+      "subCat": "Напредно"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "GoDaddy 安装",
+  "pageHeader": "向 GoDaddy 网站添加评论",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：添加代码区域",
+      "file": "godaddy-step-1.md",
+      "subCat": "GoDaddy 安装"
+    },
+    {
+      "name": "步骤 2：添加 FastComments.com 代码",
+      "file": "godaddy-step-2.md",
+      "subCat": "GoDaddy 安装"
+    },
+    {
+      "name": "步骤 3：发布",
+      "file": "godaddy-step-3.md",
+      "subCat": "GoDaddy 安装"
+    },
+    {
+      "name": "成功",
+      "file": "godaddy-success.md",
+      "subCat": "GoDaddy 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "GoDaddy 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "godaddy-customize.md",
+      "subCat": "GoDaddy 安装"
+    }
+  ]
+}

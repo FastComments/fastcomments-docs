@@ -1,0 +1,16 @@
+{
+  "name": "Ροές",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "Προσαρμογή ροών",
+      "file": "personalizing-feeds.md",
+      "subCat": "Προσαρμογή"
+    },
+    {
+      "name": "Περιφερειακές ροές",
+      "file": "regional-feeds.md",
+      "subCat": "Προσαρμογή"
+    }
+  ]
+}

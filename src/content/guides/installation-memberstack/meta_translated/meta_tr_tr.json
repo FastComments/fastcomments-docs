@@ -1,0 +1,22 @@
+{
+  "name": "Memberstack Kurulumu",
+  "pageHeader": "Memberstack ile Yorum Ekleme",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "Kod",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstack Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstack Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstack Kurulumu"
+    }
+  ]
+}

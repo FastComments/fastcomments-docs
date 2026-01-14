@@ -1,0 +1,31 @@
+{
+  "name": "Аналітика",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "Загальні відомості",
+      "file": "analytics-background.md",
+      "subCat": "Аналітика"
+    },
+    {
+      "name": "Аналітика білінгу",
+      "file": "analytics-billing.md",
+      "subCat": "Аналітика"
+    },
+    {
+      "name": "Аналітика сайту",
+      "file": "analytics-site.md",
+      "subCat": "Аналітика"
+    },
+    {
+      "name": "Точність аналітики порівняно з іншими платформами",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "Аналітика"
+    },
+    {
+      "name": "Google Analytics",
+      "file": "analytics-google.md",
+      "subCat": "Відстеження"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Додати живе коментування на сайти Bubble.io",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. Додати HTML-блок",
+      "file": "bubble-io-step-1.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "2. Вставити код",
+      "file": "bubble-io-step-2.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "3. Знайти налаштування ширини",
+      "file": "bubble-io-step-3.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "4. Налаштувати макет",
+      "file": "bubble-io-step-4.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "Успіх",
+      "file": "bubble-io-success.md",
+      "subCat": "Встановлення"
+    },
+    {
+      "name": "Налаштування",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "Помилки доменів",
+      "file": "bubble-io-domain-errors.md"
+    }
+  ]
+}

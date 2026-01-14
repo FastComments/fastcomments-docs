@@ -1,0 +1,21 @@
+{
+  "name": "Cookies tiers",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Que sont les cookies tiers?",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Comment FastComments utilise les cookies tiers",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Activer les cookies tiers",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Activation"
+    }
+  ]
+}

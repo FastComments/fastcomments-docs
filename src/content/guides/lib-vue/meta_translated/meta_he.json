@@ -1,0 +1,30 @@
+{
+  "name": "ספריית Vue 2",
+  "pageHeader": "ספריית FastComments עבור Vue 2",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה מהירה",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש",
+      "file": "usage-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "עדכון העמוד הנוכחי (דוגמה ל-SPA)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "בסביבת ייצור",
+      "file": "in-production-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

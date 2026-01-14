@@ -1,0 +1,406 @@
+{
+  "name": "Προσαρμογές και Ρυθμίσεις",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Ταυτοποίηση του λογαριασμού σας",
+      "file": "tenant-id.md",
+      "subCat": "Βασικά"
+    },
+    {
+      "name": "Πώς συνδέονται τα σχόλια με σελίδες και άρθρα",
+      "file": "url-id.md",
+      "subCat": "Βασικά"
+    },
+    {
+      "name": "Εμφάνιση των ίδιων σχολίων σε διαφορετικές σελίδες",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "Βασικά"
+    },
+    {
+      "name": "Προσαρμοσμένο στυλ",
+      "file": "custom-css.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Προσαρμοσμένες γραμματοσειρές",
+      "file": "custom-fonts.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Αφαίρεση επωνυμίας",
+      "file": "remove-branding.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Υποστήριξη σκοτεινών φόντων (σκοτεινή λειτουργία)",
+      "file": "has-dark-background.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Εναλλαγή σκοτεινής λειτουργίας",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Αντικατάσταση κειμένου",
+      "file": "translations.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Αλλαγή προεπιλεγμένης εικόνας προφίλ",
+      "file": "default-avatar-src.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση εικόνων προφίλ",
+      "file": "hide-avatars.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση όλων των προεπιλεγμένων στυλ",
+      "file": "no-styles.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Σύνδεση σχολίων με σελίδες",
+      "file": "url.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Σύμπτυξη απαντήσεων από προεπιλογή",
+      "file": "collapse-replies.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Ενεργοποίηση WYSIWYG",
+      "file": "enable-wysiwyg.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση γραμμής εργαλείων",
+      "file": "disable-toolbar.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση αποκλεισμού",
+      "file": "disable-blocking.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Καθορισμός ποια σελίδα θα αποδοθεί",
+      "file": "starting-page.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Εναλλαγή νημάτων σχολίων χωρίς επαναφόρτωση της σελίδας",
+      "file": "switching-comment-threads.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απόλυτες ημερομηνίες (απενεργοποίηση φιλικών χρονοσημειώσεων)",
+      "file": "absolute-dates.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Εμφάνιση και απόλυτων και σχετικών ημερομηνιών",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Προσθήκη κειμένου κεφαλίδας",
+      "file": "header-html.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απόδοση συνδέσμων ως κείμενο",
+      "file": "render-links-as-text.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Εναλλαγή εμφάνισης σχολίων με κουμπί",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Προσαρμογή κειμένου πλήθους σχολίων",
+      "file": "comment-count-format.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση ανακατεύθυνσης εικόνων",
+      "file": "disable-image-redirect.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση αυτόματης δημιουργίας hashtag",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση κουδουνιού ειδοποιήσεων",
+      "file": "disable-notification-bell.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση προφίλ",
+      "file": "disable-profiles.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση μηνύματος επιτυχίας",
+      "file": "disable-success-message.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Αλλαγή βαθμολογίας περιεχομένου για GIF",
+      "file": "gif-rating.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Διαχείριση περιεχομένου εικόνων",
+      "file": "image-content-moderation.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Αλλαγή τρόπου ψηφοφορίας",
+      "file": "vote-style.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση διαγραφής",
+      "file": "disable-deleting.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση επεξεργασίας",
+      "file": "disable-editing.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Επισήμανση νέων σχολίων",
+      "file": "highlighting-new-comments.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Μέγεθος σελίδων",
+      "file": "page-size.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Πρότυπα ηλεκτρονικού ταχυδρομείου",
+      "file": "email-templates.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Μορφές ονομάτων χρήστη",
+      "file": "user-name-formats.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Απενεργοποίηση ανέβασματος εικόνων",
+      "file": "no-image-uploads.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Ενεργοποίηση πεδίου αναζήτησης",
+      "file": "enable-search.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Ενεργοποίηση spoiler",
+      "file": "enable-spoilers.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Ενεργοποίηση καταμέτρησης προβολών σχολίων",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    },
+    {
+      "name": "Εμφάνιση ζωντανών σχολίων αμέσως",
+      "file": "show-live-right-away.md",
+      "subCat": "Ζωντανά σχόλια"
+    },
+    {
+      "name": "Απενεργοποίηση ζωντανών σχολίων",
+      "file": "disable-live-commenting.md",
+      "subCat": "Ζωντανά σχόλια"
+    },
+    {
+      "name": "Νέα ζωντανά σχόλια στο κάτω μέρος",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "Ζωντανά σχόλια"
+    },
+    {
+      "name": "Ενεργοποίηση άπειρης κύλισης",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "Σελιδοποίηση και Ταξινόμηση"
+    },
+    {
+      "name": "Αλλαγή προεπιλεγμένης κατεύθυνσης ταξινόμησης",
+      "file": "default-sort-direction.md",
+      "subCat": "Σελιδοποίηση και Ταξινόμηση"
+    },
+    {
+      "name": "Εμφάνιση όλων των σχολίων ταυτόχρονα - Απενεργοποίηση σελιδοποίησης",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "Σελιδοποίηση και Ταξινόμηση"
+    },
+    {
+      "name": "Μετακίνηση του πλαισίου απάντησης μετά τα σχόλια",
+      "file": "input-after-comments.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Περιορισμός μήκους σχολίου",
+      "file": "max-comment-character-length.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Απενεργοποίηση σχολίων πολλαπλών γραμμών",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Περιορισμός όγκου σχολίων ανά χρήστη",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Αποτροπή νέων σχολίων πρώτου επιπέδου",
+      "file": "no-new-root-comments.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Μέγιστο βάθος απαντήσεων",
+      "file": "max-reply-depth.md",
+      "subCat": "Πλαίσιο απάντησης"
+    },
+    {
+      "name": "Επισκόπηση ενιαίας σύνδεσης (SSO)",
+      "file": "sso.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Προσαρμοσμένες ενσωματώσεις - Ασφαλής ενιαία σύνδεση (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Προσαρμοσμένες ενσωματώσεις - Απλή ενιαία σύνδεση (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Προσαρμοσμένες ενσωματώσεις - Μετάβαση από Disqus SSO",
+      "file": "sso-disqus.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Προσαρμοσμένες ενσωματώσεις - Μετάβαση από Commento SSO",
+      "file": "sso-commento.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Προστασία νημάτων σχολίων με ενιαία σύνδεση",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "Ενιαία Σύνδεση (SSO)"
+    },
+    {
+      "name": "Επιτρέπονται ανώνυμα σχόλια",
+      "file": "allow-anon.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Αποτροπή λήξης ανώνυμων σχολίων",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Απενεργοποίηση πεδίων email",
+      "file": "disable-email-inputs.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Απενεργοποίηση ετικέτας μη επαληθευμένου",
+      "file": "disable-unverified-label.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Επιτρέπονται ανώνυμες ψήφοι",
+      "file": "allow-anon-votes.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Ορισμός προεπιλεγμένου ονόματος χρήστη",
+      "file": "default-username.md",
+      "subCat": "Ανώνυμα σχόλια"
+    },
+    {
+      "name": "Συναρτήσεις επανάκλησης",
+      "file": "callbacks.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Χειροκίνητος ορισμός τοπικής ρύθμισης του χρήστη",
+      "file": "locale.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Περιορισμός επιτρεπόμενων γλωσσών",
+      "file": "allowed-languages.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Τίτλοι σελίδων",
+      "file": "page-title.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Αποτροπή νέων απαντήσεων και απενεργοποίηση ψήφων",
+      "file": "readonly.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Περιορισμός τομέων συνδέσμων",
+      "file": "restricting-link-domains.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Αριθμός σχολίων και καταμέτρηση όλων των εμφωλευμένων απαντήσεων",
+      "file": "count-all.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Ενεργοποίηση συνδέσμων σχολιαστών",
+      "file": "enable-commenter-links.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Ομάδες εποπτείας",
+      "file": "moderation-group-ids.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Αναφορά αναγνωριστικών ομάδων",
+      "file": "mention-group-ids.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Παράκαμψη cookies τρίτων",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Διαγραφή σχολίων με απαντήσεις",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "Διάφορα"
+    },
+    {
+      "name": "Εμφάνιση διακριτικών στην κορυφαία μπάρα",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "Εμφάνιση και Αίσθηση"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Side-reaktioner",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Side-reaktioner",
+      "file": "page-reacts-about.md",
+      "subCat": "Side-reaktioner"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Side-reaktioner"
+    },
+    {
+      "name": "Det flydende Likes-widget",
+      "file": "floating-likes-about.md",
+      "subCat": "Flydende Likes-widget"
+    },
+    {
+      "name": "Installation - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Flydende Likes-widget"
+    },
+    {
+      "name": "Installation - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Flydende Likes-widget"
+    }
+  ]
+}

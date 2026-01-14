@@ -1,0 +1,42 @@
+{
+  "name": "Webnode-installatie",
+  "pageHeader": "Reacties toevoegen aan Webnode-sites",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Bewerk uw pagina",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Stap 2: Voeg een sectie en een HTML-blok toe",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Stap 3: Kopieer en plak het codefragment",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Stap 4: Publiceer",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Succes",
+      "file": "webnode-success.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode-installatie"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Hostinger 설치",
+  "pageHeader": "Hostinger 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 코드 위젯 추가",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger 사이트 설치"
+    },
+    {
+      "name": "2단계: 코드 추가",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger 사이트 설치"
+    },
+    {
+      "name": "성공",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger 사이트 설치"
+    },
+    {
+      "name": "사이트 도메인 오류",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger 사이트 설치"
+    },
+    {
+      "name": "사이트 맞춤 설정",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger 사이트 설치"
+    },
+    {
+      "name": "플로팅 좋아요 버튼",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger 플로팅 좋아요"
+    }
+  ]
+}

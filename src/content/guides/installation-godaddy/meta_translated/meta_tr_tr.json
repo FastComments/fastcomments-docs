@@ -1,0 +1,37 @@
+{
+  "name": "GoDaddy Kurulumu",
+  "pageHeader": "GoDaddy Sitelerine Yorum Ekleyin",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Bir Kod Alanı Ekleyin",
+      "file": "godaddy-step-1.md",
+      "subCat": "GoDaddy Kurulumu"
+    },
+    {
+      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "file": "godaddy-step-2.md",
+      "subCat": "GoDaddy Kurulumu"
+    },
+    {
+      "name": "Adım 3: Yayınlayın",
+      "file": "godaddy-step-3.md",
+      "subCat": "GoDaddy Kurulumu"
+    },
+    {
+      "name": "Başarı",
+      "file": "godaddy-success.md",
+      "subCat": "GoDaddy Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "GoDaddy Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "godaddy-customize.md",
+      "subCat": "GoDaddy Kurulumu"
+    }
+  ]
+}

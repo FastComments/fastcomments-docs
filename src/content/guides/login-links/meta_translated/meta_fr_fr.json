@@ -1,0 +1,26 @@
+{
+  "name": "Liens de connexion",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce qu'un lien de connexion ?",
+      "file": "login-links-what-are.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Avantages des liens de connexion par rapport aux mots de passe",
+      "file": "login-links-benefits.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Comment nous assurons la sécurité des liens de connexion",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "Sécurité"
+    },
+    {
+      "name": "À qui sont envoyés les liens de connexion ?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "Utilisation"
+    }
+  ]
+}

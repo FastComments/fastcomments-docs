@@ -1,0 +1,56 @@
+{
+  "name": "Локална инсталация",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво е включено",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Обща информация"
+    },
+    {
+      "name": "Откъде да започнете",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Първи стъпки"
+    },
+    {
+      "name": "Инстанции",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Разгръщане"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Разгръщане"
+    },
+    {
+      "name": "Престой на базата данни и режим за поддръжка",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Архитектура"
+    },
+    {
+      "name": "Заключвания",
+      "file": "on-prem-locks.md",
+      "subCat": "Архитектура"
+    },
+    {
+      "name": "Код на уиджета",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Инсталация и интеграция"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Инсталация и интеграция"
+    },
+    {
+      "name": "Множество домейни",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Инсталация и интеграция"
+    },
+    {
+      "name": "Сигурност",
+      "file": "on-prem-security.md",
+      "subCat": "Съвети за сигурност"
+    }
+  ]
+}

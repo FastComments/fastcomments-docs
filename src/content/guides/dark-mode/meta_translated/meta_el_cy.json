@@ -1,0 +1,21 @@
+{
+  "name": "Σκοτεινή Λειτουργία",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Αυτόματη ανίχνευση",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Ρυθμίσεις"
+    },
+    {
+      "name": "Χειροκίνητη διαμόρφωση",
+      "file": "dark-mode-manual.md",
+      "subCat": "Ρυθμίσεις"
+    },
+    {
+      "name": "Υποστήριξη Σκοτεινής Λειτουργίας για το θέμα Networker του WordPress",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Θέματα WordPress"
+    }
+  ]
+}

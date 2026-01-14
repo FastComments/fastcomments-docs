@@ -1,0 +1,37 @@
+{
+  "name": "Installazione Hostinger",
+  "pageHeader": "Aggiungi commenti in tempo reale ai siti Hostinger",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "Passaggio 1: Aggiungi il widget codice",
+      "file": "hostinger-step-1.md",
+      "subCat": "Installazione del sito Hostinger"
+    },
+    {
+      "name": "Passaggio 2: Aggiungi il codice",
+      "file": "hostinger-step-2.md",
+      "subCat": "Installazione del sito Hostinger"
+    },
+    {
+      "name": "Successo",
+      "file": "hostinger-site-success.md",
+      "subCat": "Installazione del sito Hostinger"
+    },
+    {
+      "name": "Errori di dominio del sito",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Installazione del sito Hostinger"
+    },
+    {
+      "name": "Personalizzazione del sito",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Installazione del sito Hostinger"
+    },
+    {
+      "name": "Pulsante Mi piace flottante",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Mi piace flottanti per Hostinger"
+    }
+  ]
+}

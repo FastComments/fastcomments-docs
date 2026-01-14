@@ -1,0 +1,26 @@
+{
+  "name": "Meldingen",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Wanneer stuurt FastComments meldingen?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Soorten meldingen",
+      "file": "notification-types.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Afmelden",
+      "file": "opting-out-notifications.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Meldingen configureren voor SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Configuratie"
+    }
+  ]
+}

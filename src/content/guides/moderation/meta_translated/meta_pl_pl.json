@@ -1,0 +1,126 @@
+{
+  "name": "Moderacja",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Strona moderowania komentarzy",
+      "file": "moderate-comments-page.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Moderatorzy",
+      "file": "moderators.md",
+      "subCat": "Moderatorzy"
+    },
+    {
+      "name": "Dodawanie moderatorów",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatorzy"
+    },
+    {
+      "name": "Statystyki moderatorów",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatorzy"
+    },
+    {
+      "name": "Usuwanie moderatorów",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatorzy"
+    },
+    {
+      "name": "Jak działają zatwierdzenia",
+      "file": "moderation-approvals.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Moderacja przez e-mail",
+      "file": "moderation-via-email.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Filtrowanie",
+      "file": "filters.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Wyszukiwanie",
+      "file": "search.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Udostępnianie linków do moderacji",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Podgląd wątku komentarzy",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Działania moderacyjne",
+      "file": "comment-actions.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Usuwanie komentarzy",
+      "file": "deleting-comments.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Działania moderacyjne z widżetu komentarza",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Moderacja na żywo",
+      "file": "comment-actions-live.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Blokowanie użytkowników",
+      "file": "banning-users.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Blokowanie użytkowników z użyciem symboli wieloznacznych",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Zgłaszanie",
+      "file": "flagging.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Działania masowe",
+      "file": "bulk-actions.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Grupy moderacyjne",
+      "file": "moderation-groups.md",
+      "subCat": "Grupy moderacyjne"
+    },
+    {
+      "name": "Ustawienia moderacji",
+      "file": "moderation-settings.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Wykrywanie spamu",
+      "file": "spam-detection.md",
+      "subCat": "Spam i wulgaryzmy"
+    },
+    {
+      "name": "Maskowanie wulgaryzmów",
+      "file": "profanity-mask.md",
+      "subCat": "Spam i wulgaryzmy"
+    },
+    {
+      "name": "Dzienniki komentarzy",
+      "file": "comment-logs.md",
+      "subCat": "Proces moderacji"
+    }
+  ]
+}

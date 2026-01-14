@@ -1,0 +1,31 @@
+{
+  "name": "Писање екстензија",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Животни циклус екстензије",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Дефинисање екстензије",
+      "file": "defining-an-extension.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Примери екстензија",
+      "file": "example-extensions.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Објекат екстензије",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "API екстензије",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

@@ -1,0 +1,888 @@
+{
+  "name": "SDK de Java",
+  "pageHeader": "SDK de FastComments para Java",
+  "itemsOrdered": [
+    {
+      "name": "Instalación",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeros pasos",
+      "type": "readme"
+    },
+    {
+      "name": "Inicio rápido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Notas",
+      "file": "notes-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "agregar",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Agregación",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRegistrosDeAuditoría",
+      "file": "getauditlogs-api-generated.md",
+      "subCat": "Registros de auditoría",
+      "type": "api"
+    },
+    {
+      "name": "bloquearDesdeComentarioPúblico",
+      "file": "blockfromcommentpublic-api-generated.md",
+      "subCat": "Bloquear desde comentario",
+      "type": "api"
+    },
+    {
+      "name": "desbloquearComentarioPúblico",
+      "file": "unblockcommentpublic-api-generated.md",
+      "subCat": "Bloquear desde comentario",
+      "type": "api"
+    },
+    {
+      "name": "comprobarComentariosBloqueados",
+      "file": "checkedcommentsforblocked-api-generated.md",
+      "subCat": "Comprobar comentarios bloqueados",
+      "type": "api"
+    },
+    {
+      "name": "bloquearUsuarioDesdeComentario",
+      "file": "blockuserfromcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "crearComentarioPúblico",
+      "file": "createcommentpublic-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "eliminarComentario",
+      "file": "deletecomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "eliminarComentarioPúblico",
+      "file": "deletecommentpublic-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "eliminarVotoComentario",
+      "file": "deletecommentvote-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "marcarComentario",
+      "file": "flagcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerComentario",
+      "file": "getcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerComentarios",
+      "file": "getcomments-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerComentariosPúblicos",
+      "file": "getcommentspublic-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerTextoComentario",
+      "file": "getcommenttext-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerNombresUsuariosVotosComentario",
+      "file": "getcommentvoteusernames-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "bloquearComentario",
+      "file": "lockcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "fijarComentario",
+      "file": "pincomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "guardarComentario",
+      "file": "savecomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "guardarComentariosEnBloque",
+      "file": "savecommentsbulk-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "establecerTextoComentario",
+      "file": "setcommenttext-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "desbloquearUsuarioDesdeComentario",
+      "file": "unblockuserfromcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "quitarMarcaComentario",
+      "file": "unflagcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "desbloquearComentario",
+      "file": "unlockcomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "desfijarComentario",
+      "file": "unpincomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "actualizarComentario",
+      "file": "updatecomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "votarComentario",
+      "file": "votecomment-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
+      "name": "agregarConfiguraciónDominio",
+      "file": "adddomainconfig-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "eliminarConfiguraciónDominio",
+      "file": "deletedomainconfig-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "obtenerConfiguraciónDominio",
+      "file": "getdomainconfig-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "obtenerConfiguracionesDominio",
+      "file": "getdomainconfigs-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "actualizarParcialConfiguraciónDominio",
+      "file": "patchdomainconfig-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "reemplazarConfiguraciónDominio",
+      "file": "putdomainconfig-api-generated.md",
+      "subCat": "Configuraciones de dominio",
+      "type": "api"
+    },
+    {
+      "name": "crearPlantillaCorreo",
+      "file": "createemailtemplate-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "eliminarPlantillaCorreo",
+      "file": "deleteemailtemplate-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "eliminarErrorRenderizadoPlantillaCorreo",
+      "file": "deleteemailtemplaterendererror-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPlantillaCorreo",
+      "file": "getemailtemplate-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "obtenerDefinicionesPlantillasCorreo",
+      "file": "getemailtemplatedefinitions-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "obtenerErroresRenderizadoPlantillasCorreo",
+      "file": "getemailtemplaterendererrors-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPlantillasCorreo",
+      "file": "getemailtemplates-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "renderizarPlantillaCorreo",
+      "file": "renderemailtemplate-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "actualizarPlantillaCorreo",
+      "file": "updateemailtemplate-api-generated.md",
+      "subCat": "Plantillas de correo electrónico",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRegistroEventos",
+      "file": "geteventlog-api-generated.md",
+      "subCat": "Registro de eventos",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRegistroGlobalEventos",
+      "file": "getglobaleventlog-api-generated.md",
+      "subCat": "Registro de eventos",
+      "type": "api"
+    },
+    {
+      "name": "crearPublicaciónFeed",
+      "file": "createfeedpost-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "crearPublicaciónFeedPública",
+      "file": "createfeedpostpublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "eliminarPublicaciónFeedPública",
+      "file": "deletefeedpostpublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPublicacionesFeed",
+      "file": "getfeedposts-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPublicacionesFeedPúblicas",
+      "file": "getfeedpostspublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "obtenerEstadísticasPublicacionesFeed",
+      "file": "getfeedpostsstats-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "obtenerReaccionesUsuariosPúblicas",
+      "file": "getuserreactspublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "reaccionarPublicaciónFeedPública",
+      "file": "reactfeedpostpublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "actualizarPublicaciónFeed",
+      "file": "updatefeedpost-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "actualizarPublicaciónFeedPública",
+      "file": "updatefeedpostpublic-api-generated.md",
+      "subCat": "Publicaciones de feed",
+      "type": "api"
+    },
+    {
+      "name": "marcarComentarioPúblico",
+      "file": "flagcommentpublic-api-generated.md",
+      "subCat": "Marcar comentario",
+      "type": "api"
+    },
+    {
+      "name": "agregarHashtag",
+      "file": "addhashtag-api-generated.md",
+      "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "agregarHashtagsEnBloque",
+      "file": "addhashtagsbulk-api-generated.md",
+      "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "eliminarHashtag",
+      "file": "deletehashtag-api-generated.md",
+      "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "obtenerHashtags",
+      "file": "gethashtags-api-generated.md",
+      "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "actualizarParcialHashtag",
+      "file": "patchhashtag-api-generated.md",
+      "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "crearModerador",
+      "file": "createmoderator-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "eliminarModerador",
+      "file": "deletemoderator-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "obtenerModerador",
+      "file": "getmoderator-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "obtenerModeradores",
+      "file": "getmoderators-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "enviarInvitación",
+      "file": "sendinvite-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "actualizarModerador",
+      "file": "updatemoderator-api-generated.md",
+      "subCat": "Moderadores",
+      "type": "api"
+    },
+    {
+      "name": "eliminarRecuentoNotificaciones",
+      "file": "deletenotificationcount-api-generated.md",
+      "subCat": "Recuento de notificaciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRecuentoNotificacionesEnCaché",
+      "file": "getcachednotificationcount-api-generated.md",
+      "subCat": "Recuento de notificaciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRecuentoNotificaciones",
+      "file": "getnotificationcount-api-generated.md",
+      "subCat": "Notificaciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerNotificaciones",
+      "file": "getnotifications-api-generated.md",
+      "subCat": "Notificaciones",
+      "type": "api"
+    },
+    {
+      "name": "actualizarNotificación",
+      "file": "updatenotification-api-generated.md",
+      "subCat": "Notificaciones",
+      "type": "api"
+    },
+    {
+      "name": "agregarPágina",
+      "file": "addpage-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "eliminarPágina",
+      "file": "deletepage-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPáginaPorURLId",
+      "file": "getpagebyurlid-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPáginas",
+      "file": "getpages-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "actualizarParcialPágina",
+      "file": "patchpage-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "eliminarEventoWebhookPendiente",
+      "file": "deletependingwebhookevent-api-generated.md",
+      "subCat": "Eventos de webhook pendientes",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRecuentoEventosWebhookPendientes",
+      "file": "getpendingwebhookeventcount-api-generated.md",
+      "subCat": "Eventos de webhook pendientes",
+      "type": "api"
+    },
+    {
+      "name": "obtenerEventosWebhookPendientes",
+      "file": "getpendingwebhookevents-api-generated.md",
+      "subCat": "Eventos de webhook pendientes",
+      "type": "api"
+    },
+    {
+      "name": "crearConfiguraciónPregunta",
+      "file": "createquestionconfig-api-generated.md",
+      "subCat": "Configuraciones de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "eliminarConfiguraciónPregunta",
+      "file": "deletequestionconfig-api-generated.md",
+      "subCat": "Configuraciones de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerConfiguraciónPregunta",
+      "file": "getquestionconfig-api-generated.md",
+      "subCat": "Configuraciones de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerConfiguracionesPregunta",
+      "file": "getquestionconfigs-api-generated.md",
+      "subCat": "Configuraciones de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "actualizarConfiguraciónPregunta",
+      "file": "updatequestionconfig-api-generated.md",
+      "subCat": "Configuraciones de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "crearResultadoPregunta",
+      "file": "createquestionresult-api-generated.md",
+      "subCat": "Resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "eliminarResultadoPregunta",
+      "file": "deletequestionresult-api-generated.md",
+      "subCat": "Resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerResultadoPregunta",
+      "file": "getquestionresult-api-generated.md",
+      "subCat": "Resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "obtenerResultadosPreguntas",
+      "file": "getquestionresults-api-generated.md",
+      "subCat": "Resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "actualizarResultadoPregunta",
+      "file": "updatequestionresult-api-generated.md",
+      "subCat": "Resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "agregarResultadosPreguntas",
+      "file": "aggregatequestionresults-api-generated.md",
+      "subCat": "Agregación de resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "agregaciónMasivaResultadosPreguntas",
+      "file": "bulkaggregatequestionresults-api-generated.md",
+      "subCat": "Agregación de resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "combinarComentariosConResultadosPreguntas",
+      "file": "combinecommentswithquestionresults-api-generated.md",
+      "subCat": "Agregación de resultados de preguntas",
+      "type": "api"
+    },
+    {
+      "name": "agregarUsuarioSSO",
+      "file": "addssouser-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "eliminarUsuarioSSO",
+      "file": "deletessouser-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuarioSSOPorCorreo",
+      "file": "getssouserbyemail-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuarioSSOPorId",
+      "file": "getssouserbyid-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuariosSSO",
+      "file": "getssousers-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "actualizarParcialUsuarioSSO",
+      "file": "patchssouser-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "reemplazarUsuarioSSO",
+      "file": "putssouser-api-generated.md",
+      "subCat": "Usuarios SSO",
+      "type": "api"
+    },
+    {
+      "name": "crearSuscripción",
+      "file": "createsubscription-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "eliminarSuscripción",
+      "file": "deletesubscription-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerSuscripciones",
+      "file": "getsubscriptions-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsosDiariosInquilino",
+      "file": "gettenantdailyusages-api-generated.md",
+      "subCat": "Uso diario del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "crearPaqueteInquilino",
+      "file": "createtenantpackage-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "eliminarPaqueteInquilino",
+      "file": "deletetenantpackage-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPaqueteInquilino",
+      "file": "gettenantpackage-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "obtenerPaquetesInquilino",
+      "file": "gettenantpackages-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "reemplazarPaqueteInquilino",
+      "file": "replacetenantpackage-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "actualizarPaqueteInquilino",
+      "file": "updatetenantpackage-api-generated.md",
+      "subCat": "Paquetes del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "crearUsuarioInquilino",
+      "file": "createtenantuser-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "eliminarUsuarioInquilino",
+      "file": "deletetenantuser-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuarioInquilino",
+      "file": "gettenantuser-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuariosInquilino",
+      "file": "gettenantusers-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "reemplazarUsuarioInquilino",
+      "file": "replacetenantuser-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "enviarEnlaceAcceso",
+      "file": "sendloginlink-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "actualizarUsuarioInquilino",
+      "file": "updatetenantuser-api-generated.md",
+      "subCat": "Usuarios del inquilino",
+      "type": "api"
+    },
+    {
+      "name": "crearInquilino",
+      "file": "createtenant-api-generated.md",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "eliminarInquilino",
+      "file": "deletetenant-api-generated.md",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "obtenerInquilino",
+      "file": "gettenant-api-generated.md",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "obtenerInquilinos",
+      "file": "gettenants-api-generated.md",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "actualizarInquilino",
+      "file": "updatetenant-api-generated.md",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "subirImagen",
+      "file": "uploadimage-api-generated.md",
+      "subCat": "Subir imagen",
+      "type": "api"
+    },
+    {
+      "name": "obtenerProgresoInsigniaUsuarioPorId",
+      "file": "getuserbadgeprogressbyid-api-generated.md",
+      "subCat": "Progreso de insignias del usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerProgresoInsigniaUsuarioPorUserId",
+      "file": "getuserbadgeprogressbyuserid-api-generated.md",
+      "subCat": "Progreso de insignias del usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerListaProgresoInsigniasUsuario",
+      "file": "getuserbadgeprogresslist-api-generated.md",
+      "subCat": "Progreso de insignias del usuario",
+      "type": "api"
+    },
+    {
+      "name": "crearInsigniaUsuario",
+      "file": "createuserbadge-api-generated.md",
+      "subCat": "Insignias de usuario",
+      "type": "api"
+    },
+    {
+      "name": "eliminarInsigniaUsuario",
+      "file": "deleteuserbadge-api-generated.md",
+      "subCat": "Insignias de usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerInsigniaUsuario",
+      "file": "getuserbadge-api-generated.md",
+      "subCat": "Insignias de usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerInsigniasUsuario",
+      "file": "getuserbadges-api-generated.md",
+      "subCat": "Insignias de usuario",
+      "type": "api"
+    },
+    {
+      "name": "actualizarInsigniaUsuario",
+      "file": "updateuserbadge-api-generated.md",
+      "subCat": "Insignias de usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerRecuentoNotificacionesUsuario",
+      "file": "getusernotificationcount-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerNotificacionesUsuario",
+      "file": "getusernotifications-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "restablecerRecuentoNotificacionesUsuario",
+      "file": "resetusernotificationcount-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "restablecerNotificacionesUsuario",
+      "file": "resetusernotifications-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "actualizarEstadoSuscripciónComentarioNotificacionesUsuario",
+      "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "actualizarEstadoSuscripciónPáginaNotificacionesUsuario",
+      "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "actualizarEstadoNotificacionesUsuario",
+      "file": "updateusernotificationstatus-api-generated.md",
+      "subCat": "Notificaciones de usuario",
+      "type": "api"
+    },
+    {
+      "name": "obtenerEstadosPresenciaUsuario",
+      "file": "getuserpresencestatuses-api-generated.md",
+      "subCat": "Estado de presencia de usuario",
+      "type": "api"
+    },
+    {
+      "name": "buscarUsuarios",
+      "file": "searchusers-api-generated.md",
+      "subCat": "Búsqueda de usuarios",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsuario",
+      "file": "getuser-api-generated.md",
+      "subCat": "Usuarios",
+      "type": "api"
+    },
+    {
+      "name": "crearVoto",
+      "file": "createvote-api-generated.md",
+      "subCat": "Votos",
+      "type": "api"
+    },
+    {
+      "name": "eliminarVoto",
+      "file": "deletevote-api-generated.md",
+      "subCat": "Votos",
+      "type": "api"
+    },
+    {
+      "name": "obtenerVotos",
+      "file": "getvotes-api-generated.md",
+      "subCat": "Votos",
+      "type": "api"
+    },
+    {
+      "name": "obtenerVotosParaUsuario",
+      "file": "getvotesforuser-api-generated.md",
+      "subCat": "Votos",
+      "type": "api"
+    }
+  ]
+}

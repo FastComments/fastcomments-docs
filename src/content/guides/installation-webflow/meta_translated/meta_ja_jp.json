@@ -1,0 +1,37 @@
+{
+  "name": "Webflow のインストール",
+  "pageHeader": "Webflow サイトにコメントを追加する",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: 埋め込みブロックを追加",
+      "file": "webflow-step-1.md",
+      "subCat": "Webflow のインストール"
+    },
+    {
+      "name": "ステップ 2: FastComments.com のコードを貼り付け",
+      "file": "webflow-step-2.md",
+      "subCat": "Webflow のインストール"
+    },
+    {
+      "name": "ステップ 3: 公開",
+      "file": "webflow-step-3.md",
+      "subCat": "Webflow のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "webflow-success.md",
+      "subCat": "Webflow のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Webflow のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "webflow-customize.md",
+      "subCat": "Webflow のインストール"
+    }
+  ]
+}

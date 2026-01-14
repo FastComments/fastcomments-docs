@@ -1,0 +1,21 @@
+{
+  "name": "Drittanbieter-Cookies",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "Was sind Drittanbieter-Cookies?",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Wie FastComments Drittanbieter-Cookies verwendet",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Drittanbieter-Cookies aktivieren",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "Aktivierung"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Yorum ve Oy Doğrulaması",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Arka Plan",
+      "file": "background.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "Doğrulanmamış Yorumlar",
+      "file": "unverified-comments.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "Doğrulanmamış Oylar",
+      "file": "unverified-votes.md",
+      "subCat": "Temel Bilgiler"
+    },
+    {
+      "name": "Doğrulama E-postaları",
+      "file": "verification-emails.md",
+      "subCat": "Doğrulama"
+    },
+    {
+      "name": "Oturumlar",
+      "file": "verification-sessions.md",
+      "subCat": "Doğrulama"
+    },
+    {
+      "name": "Canlı Yorum Yapma",
+      "file": "verification-live-commenting.md",
+      "subCat": "Doğrulama"
+    }
+  ]
+}

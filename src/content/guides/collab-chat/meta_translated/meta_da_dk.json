@@ -1,0 +1,46 @@
+{
+  "name": "Collab Chat",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Kom godt i gang",
+      "file": "getting-started.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Eksempler",
+      "file": "examples.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Tilføjelse af live-kommentarer til onlinebøger",
+      "file": "online-books.md",
+      "subCat": "Kom godt i gang"
+    },
+    {
+      "name": "Konfigurationsindstillinger",
+      "file": "configuration-options.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Adfærd ved tekstmarkering",
+      "file": "text-selection-behavior.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "customization.md",
+      "subCat": "Tilpasning"
+    },
+    {
+      "name": "Live-synkronisering",
+      "file": "live-sync.md",
+      "subCat": "Avanceret"
+    },
+    {
+      "name": "API-reference",
+      "file": "api-reference.md",
+      "subCat": "Avanceret"
+    }
+  ]
+}

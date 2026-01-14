@@ -1,0 +1,42 @@
+{
+  "name": "Установка Webnode",
+  "pageHeader": "Добавление комментариев на сайты Webnode",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Отредактируйте страницу",
+      "file": "webnode-step-1.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Шаг 2: Добавьте секцию и HTML-блок",
+      "file": "webnode-step-2.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Шаг 3: Скопируйте и вставьте фрагмент кода",
+      "file": "webnode-step-3.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Шаг 4: Опубликуйте страницу",
+      "file": "webnode-step-4.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Готово",
+      "file": "webnode-success.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Установка Webnode"
+    },
+    {
+      "name": "Настройка",
+      "file": "webnode-customize.md",
+      "subCat": "Установка Webnode"
+    }
+  ]
+}

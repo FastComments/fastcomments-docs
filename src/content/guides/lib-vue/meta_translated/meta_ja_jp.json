@@ -1,0 +1,30 @@
+{
+  "name": "Vue 2 ライブラリ",
+  "pageHeader": "FastComments Vue 2 ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "使い方",
+      "file": "usage-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "現在のページを更新する（SPA の例）",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "本番環境での利用",
+      "file": "in-production-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

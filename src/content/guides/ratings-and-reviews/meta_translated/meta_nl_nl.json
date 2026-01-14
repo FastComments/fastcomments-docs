@@ -1,0 +1,56 @@
+{
+  "name": "Beoordelingen en recensies",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "Functies",
+      "file": "features.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Wie het krijgt",
+      "file": "who-gets-it.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Prijzen",
+      "file": "pricing.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Kies een weergavetype",
+      "file": "choose-display-type.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Definieer uw vragen",
+      "file": "define-your-questions.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Hoe de configuratie werkt",
+      "file": "how-configuration-works.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "De samenvattingswidget",
+      "file": "summary-widget-installation.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Beoordelingen bekijken",
+      "file": "viewing-ratings.md",
+      "subCat": "Rapportage"
+    },
+    {
+      "name": "Integreren via de API",
+      "file": "integrating-via-the-api.md",
+      "subCat": "Rapportage"
+    },
+    {
+      "name": "Samenvattingsdemo",
+      "file": "summary-demo.md",
+      "subCat": "Samenvattingsdemo"
+    }
+  ]
+}

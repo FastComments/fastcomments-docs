@@ -1,0 +1,42 @@
+{
+  "name": "Wix 安裝",
+  "pageHeader": "在 Wix 網站新增評論",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：編輯正確的頁面",
+      "file": "wix-step-1.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "步驟 2：新增嵌入區塊",
+      "file": "wix-step-2.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "步驟 3：複製並貼上自訂程式碼",
+      "file": "wix-step-3.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "步驟 4：調整大小",
+      "file": "wix-step-4.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "步驟 5：獨立的留言串",
+      "file": "wix-step-5.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "步驟 6：慶祝",
+      "file": "wix-step-6.md",
+      "subCat": "Wix 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "wix-customize.md",
+      "subCat": "Wix 安裝"
+    }
+  ]
+}

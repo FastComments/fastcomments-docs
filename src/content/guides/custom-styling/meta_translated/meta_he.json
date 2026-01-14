@@ -1,0 +1,32 @@
+{
+  "name": "עיצוב מותאם אישית",
+  "pageHeader": "מדריך לעיצוב מותאם אישית",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "כיצד להתאים סגנונות",
+      "file": "comment-widget-instructions.md",
+      "subCat": "התחלה"
+    },
+    {
+      "name": "מדריך לעיצוב ווידג'ט תגובות (v2, העדכני ביותר)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "עיצוב ווידג'ט"
+    },
+    {
+      "name": "עיצוב ווידג'ט תגובות אחרונות",
+      "file": "recent-comments-widget.md",
+      "subCat": "עיצוב ווידג'ט"
+    },
+    {
+      "name": "עיצוב ווידג'ט דפים מובילים",
+      "file": "top-pages-widget.md",
+      "subCat": "עיצוב ווידג'ט"
+    },
+    {
+      "name": "ספריות פרונטאנד אחרות",
+      "file": "other-frontend-libraries.md",
+      "subCat": "ספריות פרונטאנד אחרות"
+    }
+  ]
+}

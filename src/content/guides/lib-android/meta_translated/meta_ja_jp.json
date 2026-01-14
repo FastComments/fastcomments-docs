@@ -1,0 +1,72 @@
+{
+  "name": "Android ライブラリ",
+  "pageHeader": "FastComments Android ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "機能",
+      "file": "features-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "要件",
+      "file": "requirements-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "基本的な使い方",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "セキュアな SSO 認証",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "認証",
+      "type": "readme"
+    },
+    {
+      "name": "フィード統合",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ライブチャット統合",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルプロジェクト",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "設定オプション",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "テーマの包括的なカスタマイズ",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "メモリ管理",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

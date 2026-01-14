@@ -1,0 +1,36 @@
+{
+  "name": "White-labeling",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat is white-labeling",
+      "file": "white-labeling-background.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe white-labeling te verkrijgen",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "White-labeling instellen",
+      "file": "white-labeling-process.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Het dashboard gebruiken",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "De API gebruiken",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Beheren van white-label tenants",
+      "file": "white-labeling-managing.md",
+      "subCat": "Tenantbeheer"
+    }
+  ]
+}

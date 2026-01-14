@@ -1,0 +1,37 @@
+{
+  "name": "התקנת Weebly",
+  "pageHeader": "הוספת תגובות לאתרי Weebly",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: פתח את הגדרות הבלוג",
+      "file": "weebly-step-1.md",
+      "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "שלב 2: הוסף את קוד FastComments.com",
+      "file": "weebly-step-2.md",
+      "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "שלב 3: פרסם!",
+      "file": "weebly-step-3.md",
+      "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "הצלחה",
+      "file": "weebly-success.md",
+      "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "שגיאות בדומיין",
+      "file": "weebly-domain-errors.md",
+      "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "weebly-customize.md",
+      "subCat": "התקנת Weebly"
+    }
+  ]
+}

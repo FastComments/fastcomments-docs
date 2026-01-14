@@ -1,0 +1,21 @@
+{
+  "name": "Σκοτεινή λειτουργία",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Αυτόματη ανίχνευση",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Ρυθμίσεις"
+    },
+    {
+      "name": "Χειροκίνητη ρύθμιση",
+      "file": "dark-mode-manual.md",
+      "subCat": "Ρυθμίσεις"
+    },
+    {
+      "name": "Υποστήριξη σκοτεινής λειτουργίας για το θέμα WordPress Networker",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Θέματα WordPress"
+    }
+  ]
+}

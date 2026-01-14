@@ -1,0 +1,37 @@
+{
+  "name": "Ionos のインストール",
+  "pageHeader": "Ionos サイトにコメントを追加",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "ステップ1：お問い合わせフォームを追加",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos のインストール"
+    },
+    {
+      "name": "ステップ2：FastComments.com のコードを追加",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos のインストール"
+    },
+    {
+      "name": "ステップ3：公開",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos のインストール"
+    },
+    {
+      "name": "完了",
+      "file": "ionos-success.md",
+      "subCat": "Ionos のインストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos のインストール"
+    }
+  ]
+}

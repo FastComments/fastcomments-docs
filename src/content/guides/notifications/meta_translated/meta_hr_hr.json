@@ -1,0 +1,26 @@
+{
+  "name": "Obavijesti",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "Kada FastComments šalje obavijesti?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Vrste obavijesti",
+      "file": "notification-types.md",
+      "subCat": "Pozadina"
+    },
+    {
+      "name": "Isključivanje obavijesti",
+      "file": "opting-out-notifications.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Konfiguriranje obavijesti za SSO",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguracija"
+    }
+  ]
+}

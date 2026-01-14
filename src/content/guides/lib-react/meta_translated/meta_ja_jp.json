@@ -1,0 +1,24 @@
+{
+  "name": "React ライブラリ",
+  "pageHeader": "FastComments の React ライブラリ",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "サンプル",
+      "file": "examples-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "使用方法",
+      "file": "usage-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    }
+  ]
+}

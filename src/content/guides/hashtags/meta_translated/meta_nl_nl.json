@@ -1,0 +1,46 @@
+{
+  "name": "Hashtags",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn hashtags",
+      "file": "what-are-hashtags.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Hoe je hashtags gebruikt",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "Hashtags gebruiken"
+    },
+    {
+      "name": "Reacties filteren op hashtag",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "Hashtags gebruiken"
+    },
+    {
+      "name": "Geldige en ongeldige hashtags",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "Hashtags gebruiken"
+    },
+    {
+      "name": "Andere symbolen dan # gebruiken",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "Hashtags instellen"
+    },
+    {
+      "name": "Hashtags vooraf invullen",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "Hashtags instellen"
+    },
+    {
+      "name": "Koppelen naar content via hashtags",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "Hashtags instellen"
+    },
+    {
+      "name": "Hoe het automatisch aanvullen van hashtags werkt",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "Achtergrond van hashtags"
+    }
+  ]
+}

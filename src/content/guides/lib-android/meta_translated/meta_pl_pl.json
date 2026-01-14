@@ -1,0 +1,72 @@
+{
+  "name": "Biblioteka Androida",
+  "pageHeader": "Biblioteka FastComments dla Androida",
+  "itemsOrdered": [
+    {
+      "name": "Funkcje",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Wymagania",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Instalacja",
+      "file": "installation-readme-generated.md",
+      "subCat": "Rozpoczęcie pracy",
+      "type": "readme"
+    },
+    {
+      "name": "Podstawowe użycie",
+      "file": "basic-usage-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Bezpieczne uwierzytelnianie SSO",
+      "file": "secure-sso-authentication-readme-generated.md",
+      "subCat": "Uwierzytelnianie",
+      "type": "readme"
+    },
+    {
+      "name": "Integracja kanału",
+      "file": "feed-integration-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Integracja czatu na żywo",
+      "file": "live-chat-integration-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Przykładowe projekty",
+      "file": "example-projects-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Opcje konfiguracji",
+      "file": "configuration-options-readme-generated.md",
+      "subCat": "Konfiguracja",
+      "type": "readme"
+    },
+    {
+      "name": "Kompleksowa personalizacja motywu",
+      "file": "comprehensive-theme-customization-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Zarządzanie pamięcią",
+      "file": "memory-management-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    }
+  ]
+}

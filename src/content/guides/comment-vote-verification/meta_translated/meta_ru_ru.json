@@ -1,0 +1,36 @@
+{
+  "name": "Проверка комментариев и голосов",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Общие сведения",
+      "file": "background.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Непроверенные комментарии",
+      "file": "unverified-comments.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Непроверенные голоса",
+      "file": "unverified-votes.md",
+      "subCat": "Основы"
+    },
+    {
+      "name": "Письма подтверждения",
+      "file": "verification-emails.md",
+      "subCat": "Подтверждение"
+    },
+    {
+      "name": "Сессии",
+      "file": "verification-sessions.md",
+      "subCat": "Подтверждение"
+    },
+    {
+      "name": "Комментирование в реальном времени",
+      "file": "verification-live-commenting.md",
+      "subCat": "Подтверждение"
+    }
+  ]
+}

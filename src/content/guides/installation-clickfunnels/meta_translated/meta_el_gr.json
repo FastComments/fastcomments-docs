@@ -1,0 +1,37 @@
+{
+  "name": "Εγκατάσταση ClickFunnels",
+  "pageHeader": "Προσθήκη ζωντανής συνομιλίας στα μαθήματα ClickFunnels",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Βρείτε το πρότυπο",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "Εγκατάσταση ClickFunnels"
+    },
+    {
+      "name": "Βήμα 2: Προσθέστε τον κώδικα",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "Εγκατάσταση ClickFunnels"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "Εγκατάσταση ClickFunnels"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "clickfunnels-customize.md",
+      "subCat": "Εγκατάσταση ClickFunnels"
+    },
+    {
+      "name": "Επιπλέον: Απόσπασμα κώδικα για ζωντανά σχόλια",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "Απόσπασμα κώδικα για ζωντανά σχόλια"
+    },
+    {
+      "name": "Επιπλέον: Αυτόματη αναπαραγωγή σχολίων",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "Αυτόματη αναπαραγωγή σχολίων"
+    }
+  ]
+}

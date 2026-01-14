@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "SAMLとは何ですか？",
+      "file": "saml-overview.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "SAMLとSSOの違い",
+      "file": "saml-vs-sso.md",
+      "subCat": "基本"
+    },
+    {
+      "name": "SAMLの設定",
+      "file": "saml-setup.md",
+      "subCat": "構成"
+    },
+    {
+      "name": "アイデンティティプロバイダーの構成",
+      "file": "saml-idp-config.md",
+      "subCat": "構成"
+    },
+    {
+      "name": "サービスプロバイダーの情報",
+      "file": "saml-sp-info.md",
+      "subCat": "構成"
+    },
+    {
+      "name": "ユーザーの役割と権限",
+      "file": "saml-user-roles.md",
+      "subCat": "ユーザー管理"
+    },
+    {
+      "name": "SAML認証のテスト",
+      "file": "saml-testing.md",
+      "subCat": "トラブルシューティング"
+    },
+    {
+      "name": "よくある問題",
+      "file": "saml-troubleshooting.md",
+      "subCat": "トラブルシューティング"
+    },
+    {
+      "name": "セキュリティのベストプラクティス",
+      "file": "saml-security.md",
+      "subCat": "上級"
+    }
+  ]
+}

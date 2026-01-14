@@ -1,0 +1,21 @@
+{
+  "name": "定时评论",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "背景",
+      "file": "background.md",
+      "subCat": "定时评论"
+    },
+    {
+      "name": "操作指南",
+      "file": "howto.md",
+      "subCat": "定时评论"
+    },
+    {
+      "name": "导入格式",
+      "file": "import-format.md",
+      "subCat": "定时评论"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Ghost-installatie",
+  "pageHeader": "Voeg live reacties alleen voor leden toe aan Ghost-sites",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Download je thema",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 2: Installeer je thema lokaal",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 3: Geef het nieuwe thema een naam",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 4: Open de berichttemplate",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 5: Voeg de FastComments-code toe",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 6: Exporteer je thema",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Stap 7: Upload het thema naar Ghost",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Succes!",
+      "file": "ghost-success.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost-installatie"
+    }
+  ]
+}

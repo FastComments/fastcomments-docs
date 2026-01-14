@@ -1,0 +1,126 @@
+{
+  "name": "Moderación",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "La página de moderación de comentarios",
+      "file": "moderate-comments-page.md",
+      "subCat": "Introducción"
+    },
+    {
+      "name": "Moderadores",
+      "file": "moderators.md",
+      "subCat": "Moderadores"
+    },
+    {
+      "name": "Agregar moderadores",
+      "file": "moderators-adding.md",
+      "subCat": "Moderadores"
+    },
+    {
+      "name": "Estadísticas de moderadores",
+      "file": "moderator-stats.md",
+      "subCat": "Moderadores"
+    },
+    {
+      "name": "Eliminar moderadores",
+      "file": "moderators-removing.md",
+      "subCat": "Moderadores"
+    },
+    {
+      "name": "Cómo funcionan las aprobaciones",
+      "file": "moderation-approvals.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Moderación por correo electrónico",
+      "file": "moderation-via-email.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Filtrado",
+      "file": "filters.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Búsqueda",
+      "file": "search.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Compartir enlaces de moderación",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Visor de hilos de comentarios",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Acciones de moderación",
+      "file": "comment-actions.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Eliminar comentarios",
+      "file": "deleting-comments.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Acciones de moderación desde el widget de comentarios",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Moderación en tiempo real",
+      "file": "comment-actions-live.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Bloquear usuarios",
+      "file": "banning-users.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Bloquear usuarios con comodines",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Marcado",
+      "file": "flagging.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Acciones masivas",
+      "file": "bulk-actions.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Grupos de moderación",
+      "file": "moderation-groups.md",
+      "subCat": "Grupos de moderación"
+    },
+    {
+      "name": "Configuración de moderación",
+      "file": "moderation-settings.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Detección de spam",
+      "file": "spam-detection.md",
+      "subCat": "Spam y lenguaje ofensivo"
+    },
+    {
+      "name": "Enmascarar lenguaje ofensivo",
+      "file": "profanity-mask.md",
+      "subCat": "Spam y lenguaje ofensivo"
+    },
+    {
+      "name": "Registros de comentarios",
+      "file": "comment-logs.md",
+      "subCat": "Flujo de trabajo de moderación"
+    }
+  ]
+}

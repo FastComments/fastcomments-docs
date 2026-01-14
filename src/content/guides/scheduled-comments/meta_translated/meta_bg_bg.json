@@ -1,0 +1,21 @@
+{
+  "name": "Планирани коментари",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Контекст",
+      "file": "background.md",
+      "subCat": "Планирани коментари"
+    },
+    {
+      "name": "Как да",
+      "file": "howto.md",
+      "subCat": "Планирани коментари"
+    },
+    {
+      "name": "Формат за импортиране",
+      "file": "import-format.md",
+      "subCat": "Планирани коментари"
+    }
+  ]
+}

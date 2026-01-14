@@ -1,0 +1,21 @@
+{
+  "name": "Mode sombre",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "Détection automatique",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Configuration manuelle",
+      "file": "dark-mode-manual.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Prise en charge du mode sombre pour le thème Networker de WordPress",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "Thèmes WordPress"
+    }
+  ]
+}

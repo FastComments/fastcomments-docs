@@ -1,0 +1,36 @@
+{
+  "name": "联盟计划",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "为什么要成为 FastComments 的联盟成员？",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "联盟"
+    },
+    {
+      "name": "入门",
+      "file": "getting-started.md",
+      "subCat": "联盟"
+    },
+    {
+      "name": "佣金",
+      "file": "commission.md",
+      "subCat": "联盟"
+    },
+    {
+      "name": "联盟仪表板",
+      "file": "dashboard.md",
+      "subCat": "联盟"
+    },
+    {
+      "name": "支付时间表",
+      "file": "payout-schedule.md",
+      "subCat": "联盟"
+    },
+    {
+      "name": "营销资料",
+      "file": "marketing-materials.md",
+      "subCat": "联盟"
+    }
+  ]
+}

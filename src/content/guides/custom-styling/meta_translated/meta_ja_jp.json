@@ -1,0 +1,32 @@
+{
+  "name": "カスタムスタイリング",
+  "pageHeader": "カスタムスタイリングガイド",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "スタイルのカスタマイズ方法",
+      "file": "comment-widget-instructions.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "コメントウィジェットのスタイリングリファレンス（v2、最新版）",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "ウィジェットのスタイリング"
+    },
+    {
+      "name": "最近のコメントウィジェットのスタイリング",
+      "file": "recent-comments-widget.md",
+      "subCat": "ウィジェットのスタイリング"
+    },
+    {
+      "name": "上位ページウィジェットのスタイリング",
+      "file": "top-pages-widget.md",
+      "subCat": "ウィジェットのスタイリング"
+    },
+    {
+      "name": "その他のフロントエンドライブラリ",
+      "file": "other-frontend-libraries.md",
+      "subCat": "その他のフロントエンドライブラリ"
+    }
+  ]
+}

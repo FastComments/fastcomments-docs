@@ -1,0 +1,96 @@
+{
+  "name": "Διακριτικά",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "Βασικά",
+      "file": "badge-basics.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Πρόοδος",
+      "file": "badge-progression.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Χειροκίνητα Διακριτικά",
+      "file": "badge-type-manual.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Αριθμός σχολίων",
+      "file": "badge-type-comment-count.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Ψήφοι υπέρ",
+      "file": "badge-type-up-votes.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Απαντήσεις",
+      "file": "badge-type-replies.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Καρφιτσωμένα σχόλια",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Βετεράνος",
+      "file": "badge-type-veteran.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Νυχτοπούλι",
+      "file": "badge-type-night-owl.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Γρήγορος χρόνος απάντησης",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Απάντηση σε συγκεκριμένη σελίδα",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "Τύποι Διακριτικών"
+    },
+    {
+      "name": "Εισαγωγή στα διακριτικά των συντονιστών",
+      "file": "moderator-badges.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Διαγραμμένα σχόλια",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Εγκεκριμένα σχόλια",
+      "file": "moderator-comments-approved.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Μη εγκεκριμένα σχόλια",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Επανεξετασμένα σχόλια",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Σχόλια σημειωμένα ως ανεπιθύμητα",
+      "file": "moderator-comments-spam.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    },
+    {
+      "name": "Σχόλια σημειωμένα ως μη ανεπιθύμητα",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "Τύποι διακριτικών συντονιστών"
+    }
+  ]
+}

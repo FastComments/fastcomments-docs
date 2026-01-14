@@ -1,0 +1,36 @@
+{
+  "name": "Kommentar- und Stimmenverifizierung",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Hintergrund",
+      "file": "background.md",
+      "subCat": "Die Grundlagen"
+    },
+    {
+      "name": "Unverifizierte Kommentare",
+      "file": "unverified-comments.md",
+      "subCat": "Die Grundlagen"
+    },
+    {
+      "name": "Unverifizierte Stimmen",
+      "file": "unverified-votes.md",
+      "subCat": "Die Grundlagen"
+    },
+    {
+      "name": "Verifizierungs-E-Mails",
+      "file": "verification-emails.md",
+      "subCat": "Verifizierung"
+    },
+    {
+      "name": "Sitzungen",
+      "file": "verification-sessions.md",
+      "subCat": "Verifizierung"
+    },
+    {
+      "name": "Live-Kommentare",
+      "file": "verification-live-commenting.md",
+      "subCat": "Verifizierung"
+    }
+  ]
+}

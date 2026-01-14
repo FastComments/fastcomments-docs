@@ -1,0 +1,46 @@
+{
+  "name": "协作聊天",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "入门",
+      "file": "getting-started.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "示例",
+      "file": "examples.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "在在线书籍中添加实时评论",
+      "file": "online-books.md",
+      "subCat": "入门"
+    },
+    {
+      "name": "配置选项",
+      "file": "configuration-options.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "文本选择行为",
+      "file": "text-selection-behavior.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "自定义",
+      "file": "customization.md",
+      "subCat": "自定义"
+    },
+    {
+      "name": "实时同步",
+      "file": "live-sync.md",
+      "subCat": "高级"
+    },
+    {
+      "name": "API 参考",
+      "file": "api-reference.md",
+      "subCat": "高级"
+    }
+  ]
+}

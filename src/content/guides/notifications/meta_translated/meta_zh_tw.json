@@ -1,0 +1,26 @@
+{
+  "name": "通知",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "FastComments 何時會發送通知？",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "通知類型",
+      "file": "notification-types.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "取消訂閱",
+      "file": "opting-out-notifications.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "為單一登入 (SSO) 設定通知",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "設定"
+    }
+  ]
+}

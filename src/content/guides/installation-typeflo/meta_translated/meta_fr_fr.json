@@ -1,0 +1,30 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Ajouter des commentaires en direct aux blogs Typeflo.io",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. Trouver l'emplacement d'insertion du code",
+      "file": "typeflo-step-1.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "2. Insérer le code",
+      "file": "typeflo-step-2.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Succès",
+      "file": "typeflo-success.md",
+      "subCat": "Installation"
+    },
+    {
+      "name": "Personnalisation",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "Erreurs de domaine",
+      "file": "typeflo-domain-errors.md"
+    }
+  ]
+}

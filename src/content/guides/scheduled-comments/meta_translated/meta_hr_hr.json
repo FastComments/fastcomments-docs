@@ -1,0 +1,21 @@
+{
+  "name": "Zakazani komentari",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "Pozadina",
+      "file": "background.md",
+      "subCat": "Zakazani komentari"
+    },
+    {
+      "name": "Upute",
+      "file": "howto.md",
+      "subCat": "Zakazani komentari"
+    },
+    {
+      "name": "Format uvoza",
+      "file": "import-format.md",
+      "subCat": "Zakazani komentari"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Weebly 安装",
+  "pageHeader": "向 Weebly 网站添加评论",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：打开博客设置",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly 安装"
+    },
+    {
+      "name": "步骤 2：添加 FastComments.com 代码",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly 安装"
+    },
+    {
+      "name": "步骤 3：发布！",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly 安装"
+    },
+    {
+      "name": "成功",
+      "file": "weebly-success.md",
+      "subCat": "Weebly 安装"
+    },
+    {
+      "name": "域名错误",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly 安装"
+    }
+  ]
+}

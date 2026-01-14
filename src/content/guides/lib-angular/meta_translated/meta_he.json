@@ -1,0 +1,12 @@
+{
+  "name": "ספריית Angular",
+  "pageHeader": "ספריית FastComments ל-Angular",
+  "itemsOrdered": [
+    {
+      "name": "מבנה הפרויקט",
+      "file": "project-structure-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

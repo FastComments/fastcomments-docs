@@ -1,0 +1,12 @@
+{
+  "name": "Установка WooCommerce",
+  "pageHeader": "Добавьте живые комментарии на сайты WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Установка плагина WordPress",
+      "file": "woocommerce.md",
+      "subCat": "Установка WooCommerce"
+    }
+  ]
+}

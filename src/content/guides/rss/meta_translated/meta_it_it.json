@@ -1,0 +1,21 @@
+{
+  "name": "Feed RSS",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "Panoramica",
+      "file": "overview.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Configurare il tuo feed RSS",
+      "file": "setup.md",
+      "subCat": "Primi passi"
+    },
+    {
+      "name": "Considerazioni sulla sicurezza",
+      "file": "security.md",
+      "subCat": "Implementazione"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Instalacja WooCommerce",
+  "pageHeader": "Dodaj komentowanie na żywo do witryn WooCommerce",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "Konfiguracja wtyczki WordPress",
+      "file": "woocommerce.md",
+      "subCat": "Instalacja WooCommerce"
+    }
+  ]
+}

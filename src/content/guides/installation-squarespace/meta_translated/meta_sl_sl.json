@@ -1,0 +1,77 @@
+{
+  "name": "Namestitev Squarespace",
+  "pageHeader": "Dodajanje komentarjev na spletne strani Squarespace",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "Dodajanje komentarjev v živo na blog",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "Dodajanje komentarjev na blog"
+    },
+    {
+      "name": "Korak 1: Odprite nastavitve bloga",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "Dodajanje komentarjev na blog"
+    },
+    {
+      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "Dodajanje komentarjev na blog"
+    },
+    {
+      "name": "Uspešno",
+      "file": "squarespace-blog-success.md",
+      "subCat": "Dodajanje komentarjev na blog"
+    },
+    {
+      "name": "Dodajanje komentarjev v živo na vse strani",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "Dodajanje komentarjev na vse strani"
+    },
+    {
+      "name": "Korak 1: Odprite orodja za razvijalce",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "Dodajanje komentarjev na vse strani"
+    },
+    {
+      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "Dodajanje komentarjev na vse strani"
+    },
+    {
+      "name": "Uspešno",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "Dodajanje komentarjev na vse strani"
+    },
+    {
+      "name": "Dodajanje komentarjev v živo na določeno stran",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "Dodajanje komentarjev na določeno stran"
+    },
+    {
+      "name": "Korak 1: Dodajte blok kode",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "Dodajanje komentarjev na določeno stran"
+    },
+    {
+      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "Dodajanje komentarjev na določeno stran"
+    },
+    {
+      "name": "Uspešno",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "Dodajanje komentarjev na določeno stran"
+    },
+    {
+      "name": "Napake domene",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Naslednji koraki za Squarespace"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "squarespace-customize.md",
+      "subCat": "Naslednji koraki za Squarespace"
+    }
+  ]
+}

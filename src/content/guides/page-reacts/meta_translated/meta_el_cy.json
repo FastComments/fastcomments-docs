@@ -1,0 +1,31 @@
+{
+  "name": "Αντιδράσεις Σελίδας",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "Αντιδράσεις Σελίδας",
+      "file": "page-reacts-about.md",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "Εγκατάσταση - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "Πλωτό Widget «Μου αρέσει»",
+      "file": "floating-likes-about.md",
+      "subCat": "Πλωτό Widget «Μου αρέσει»"
+    },
+    {
+      "name": "Εγκατάσταση - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "Πλωτό Widget «Μου αρέσει»"
+    },
+    {
+      "name": "Εγκατάσταση - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "Πλωτό Widget «Μου αρέσει»"
+    }
+  ]
+}

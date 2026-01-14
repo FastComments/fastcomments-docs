@@ -1,0 +1,42 @@
+{
+  "name": "Instalacija Wixa",
+  "pageHeader": "Dodavanje komentara na Wix sajtove",
+  "icon": "3rd-party-products/wix.svg",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Uredi pravu stranicu",
+      "file": "wix-step-1.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Korak 2: Dodaj ugrađeni blok",
+      "file": "wix-step-2.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Korak 3: Kopiraj/Nalepi prilagođeni kod",
+      "file": "wix-step-3.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Korak 4: Promeni veličinu",
+      "file": "wix-step-4.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Korak 5: Jedinstvene niti komentara",
+      "file": "wix-step-5.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Korak 6: Proslavi",
+      "file": "wix-step-6.md",
+      "subCat": "Instalacija Wixa"
+    },
+    {
+      "name": "Prilagođavanje",
+      "file": "wix-customize.md",
+      "subCat": "Instalacija Wixa"
+    }
+  ]
+}

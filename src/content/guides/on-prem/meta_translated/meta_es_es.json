@@ -1,0 +1,56 @@
+{
+  "name": "Local (On-Prem)",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "Qué incluye",
+      "file": "on-prem-whats-included.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Por dónde empezar",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "Primeros pasos"
+    },
+    {
+      "name": "Instancias",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "Despliegue"
+    },
+    {
+      "name": "Configuración",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "Despliegue"
+    },
+    {
+      "name": "Tiempo de inactividad de la base de datos y modo de mantenimiento",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "Arquitectura"
+    },
+    {
+      "name": "Bloqueos",
+      "file": "on-prem-locks.md",
+      "subCat": "Arquitectura"
+    },
+    {
+      "name": "Código del widget",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "Instalación e integración"
+    },
+    {
+      "name": "API",
+      "file": "on-prem-installation-api.md",
+      "subCat": "Instalación e integración"
+    },
+    {
+      "name": "Múltiples dominios",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "Instalación e integración"
+    },
+    {
+      "name": "Seguridad",
+      "file": "on-prem-security.md",
+      "subCat": "Consejos de seguridad"
+    }
+  ]
+}

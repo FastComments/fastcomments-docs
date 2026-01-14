@@ -1,0 +1,51 @@
+{
+  "name": "Siti multipli",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "Configurazione iniziale",
+      "file": "add-domains-to-account.md",
+      "subCat": "Introduzione"
+    },
+    {
+      "name": "Limiti e prezzi",
+      "file": "domain-limits.md",
+      "subCat": "Introduzione"
+    },
+    {
+      "name": "Nome mittente, email e logo",
+      "file": "from-name-email-logo.md",
+      "subCat": "Personalizzazione per sito"
+    },
+    {
+      "name": "Nome/Email del mittente del dominio non funzionano",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "Personalizzazione per sito"
+    },
+    {
+      "name": "Tenant per ambiente",
+      "file": "tenant-per-environment.md",
+      "subCat": "Personalizzazione per sito"
+    },
+    {
+      "name": "Personalizzazioni",
+      "file": "customizations.md",
+      "subCat": "Personalizzazione per sito"
+    },
+    {
+      "name": "Moderazione dei commenti",
+      "file": "moderation.md",
+      "subCat": "Dati e ricerca"
+    },
+    {
+      "name": "Condivisione dei commenti tra domini",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "Dati e ricerca"
+    },
+    {
+      "name": "Con WordPress",
+      "file": "wordpress.md",
+      "subCat": "Note sull'integrazione"
+    }
+  ]
+}

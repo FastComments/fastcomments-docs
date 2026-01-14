@@ -1,0 +1,31 @@
+{
+  "name": "Tworzenie rozszerzeń",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Cykl życia rozszerzenia",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Definiowanie rozszerzenia",
+      "file": "defining-an-extension.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Przykładowe rozszerzenia",
+      "file": "example-extensions.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Obiekt rozszerzenia",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "API rozszerzenia",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

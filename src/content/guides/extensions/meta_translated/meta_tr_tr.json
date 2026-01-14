@@ -1,0 +1,31 @@
+{
+  "name": "Eklenti Yazma",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Eklentinin Yaşam Döngüsü",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Eklentiyi Tanımlama",
+      "file": "defining-an-extension.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Örnek Eklentiler",
+      "file": "example-extensions.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Eklenti Nesnesi",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "Eklenti API'si",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

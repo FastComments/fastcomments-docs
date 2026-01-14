@@ -1,0 +1,37 @@
+{
+  "name": "Ionos 安裝",
+  "pageHeader": "在 Ionos 網站新增留言",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：新增聯絡表單",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos 安裝"
+    },
+    {
+      "name": "步驟 2：加入 FastComments.com 程式碼",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos 安裝"
+    },
+    {
+      "name": "步驟 3：發佈",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos 安裝"
+    },
+    {
+      "name": "完成",
+      "file": "ionos-success.md",
+      "subCat": "Ionos 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos 安裝"
+    }
+  ]
+}

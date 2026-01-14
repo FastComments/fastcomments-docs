@@ -1,0 +1,16 @@
+{
+  "name": "Брисање вашег налога",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Брисање вашег налога",
+      "file": "deleting-your-account.md",
+      "subCat": "Коментатори и станари"
+    },
+    {
+      "name": "Отказивање претплате",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Станари"
+    }
+  ]
+}

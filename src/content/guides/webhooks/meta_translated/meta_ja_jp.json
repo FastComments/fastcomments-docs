@@ -1,0 +1,46 @@
+{
+  "name": "ウェブフック",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "ウェブフックとは",
+      "file": "what-are-webhooks.md",
+      "subCat": "概要"
+    },
+    {
+      "name": "対応イベントとリソース",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "概要"
+    },
+    {
+      "name": "ローカル開発のセットアップ",
+      "file": "webhooks-local-dev.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "セットアップ",
+      "file": "webhooks-setup.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "テスト",
+      "file": "webhooks-testing.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "データ構造",
+      "file": "webhooks-structures.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "セキュリティとAPIトークン",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "仕組みと再試行の処理",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "内部の仕組み"
+    }
+  ]
+}

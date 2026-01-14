@@ -1,0 +1,16 @@
+{
+  "name": "מחיקת החשבון שלך",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "מחיקת החשבון שלך",
+      "file": "deleting-your-account.md",
+      "subCat": "מגיבים ושוכרים"
+    },
+    {
+      "name": "ביטול המנוי שלך",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "שוכרים"
+    }
+  ]
+}

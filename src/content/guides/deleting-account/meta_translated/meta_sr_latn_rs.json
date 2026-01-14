@@ -1,0 +1,16 @@
+{
+  "name": "Brisanje vašeg naloga",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "Brisanje vašeg naloga",
+      "file": "deleting-your-account.md",
+      "subCat": "Komentatori i tenanti"
+    },
+    {
+      "name": "Otkazivanje pretplate",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Tenanti"
+    }
+  ]
+}

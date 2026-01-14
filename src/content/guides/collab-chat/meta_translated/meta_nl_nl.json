@@ -1,0 +1,46 @@
+{
+  "name": "Collab Chat",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "Aan de slag",
+      "file": "getting-started.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Voorbeelden",
+      "file": "examples.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Live commentaar toevoegen aan online boeken",
+      "file": "online-books.md",
+      "subCat": "Aan de slag"
+    },
+    {
+      "name": "Configuratie-opties",
+      "file": "configuration-options.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Gedrag bij tekstselectie",
+      "file": "text-selection-behavior.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "customization.md",
+      "subCat": "Aanpassing"
+    },
+    {
+      "name": "Live-synchronisatie",
+      "file": "live-sync.md",
+      "subCat": "Geavanceerd"
+    },
+    {
+      "name": "API-referentie",
+      "file": "api-reference.md",
+      "subCat": "Geavanceerd"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Moderacija",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "Stranica za moderaciju komentara",
+      "file": "moderate-comments-page.md",
+      "subCat": "Uvod"
+    },
+    {
+      "name": "Moderatori",
+      "file": "moderators.md",
+      "subCat": "Moderatori"
+    },
+    {
+      "name": "Dodavanje moderatora",
+      "file": "moderators-adding.md",
+      "subCat": "Moderatori"
+    },
+    {
+      "name": "Statistika moderatora",
+      "file": "moderator-stats.md",
+      "subCat": "Moderatori"
+    },
+    {
+      "name": "Uklanjanje moderatora",
+      "file": "moderators-removing.md",
+      "subCat": "Moderatori"
+    },
+    {
+      "name": "Kako funkcionira odobravanje",
+      "file": "moderation-approvals.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Moderacija putem e-pošte",
+      "file": "moderation-via-email.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Filtriranje",
+      "file": "filters.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Pretraživanje",
+      "file": "search.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Dijeljenje poveznica za moderaciju",
+      "file": "sharing-moderation-links.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Preglednik niti komentara",
+      "file": "comment-thread-viewer.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Radnje moderacije",
+      "file": "comment-actions.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Brisanje komentara",
+      "file": "deleting-comments.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Radnje moderacije iz widgeta komentara",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Moderacija uživo",
+      "file": "comment-actions-live.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Blokiranje korisnika",
+      "file": "banning-users.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Blokiranje korisnika pomoću zamjenskih znakova",
+      "file": "banning-users-wildcards.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Prijavljivanje",
+      "file": "flagging.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Masovne radnje",
+      "file": "bulk-actions.md",
+      "subCat": "Tijek rada moderacije"
+    },
+    {
+      "name": "Grupe za moderaciju",
+      "file": "moderation-groups.md",
+      "subCat": "Grupe za moderaciju"
+    },
+    {
+      "name": "Postavke moderacije",
+      "file": "moderation-settings.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Otkrivanje spama",
+      "file": "spam-detection.md",
+      "subCat": "Spam i neprimjereni sadržaj"
+    },
+    {
+      "name": "Maskiranje psovki",
+      "file": "profanity-mask.md",
+      "subCat": "Spam i neprimjereni sadržaj"
+    },
+    {
+      "name": "Dnevnici komentara",
+      "file": "comment-logs.md",
+      "subCat": "Tijek rada moderacije"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Επαλήθευση σχολίων και ψήφων",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "Υπόβαθρο",
+      "file": "background.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Μη επαληθευμένα σχόλια",
+      "file": "unverified-comments.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Μη επαληθευμένες ψήφοι",
+      "file": "unverified-votes.md",
+      "subCat": "Τα βασικά"
+    },
+    {
+      "name": "Emails επαλήθευσης",
+      "file": "verification-emails.md",
+      "subCat": "Επαλήθευση"
+    },
+    {
+      "name": "Συνεδρίες",
+      "file": "verification-sessions.md",
+      "subCat": "Επαλήθευση"
+    },
+    {
+      "name": "Σχολιασμός σε πραγματικό χρόνο",
+      "file": "verification-live-commenting.md",
+      "subCat": "Επαλήθευση"
+    }
+  ]
+}

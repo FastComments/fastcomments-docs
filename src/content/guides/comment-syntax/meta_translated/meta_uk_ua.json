@@ -1,0 +1,16 @@
+{
+  "name": "Синтаксис коментарів",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "Основне форматування",
+      "file": "basic-formatting.md",
+      "subCat": "Форматування"
+    },
+    {
+      "name": "Безпека",
+      "file": "security.md",
+      "subCat": "Безпека"
+    }
+  ]
+}

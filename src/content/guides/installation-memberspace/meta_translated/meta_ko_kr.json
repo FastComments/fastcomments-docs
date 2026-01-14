@@ -1,0 +1,22 @@
+{
+  "name": "MemberSpace 설치",
+  "pageHeader": "MemberSpace로 댓글 추가하기",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "코드",
+      "file": "memberspace-step-1.md",
+      "subCat": "MemberSpace 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "MemberSpace 설치"
+    },
+    {
+      "name": "맞춤 설정",
+      "file": "memberspace-customize.md",
+      "subCat": "MemberSpace 설치"
+    }
+  ]
+}

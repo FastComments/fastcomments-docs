@@ -1,0 +1,46 @@
+{
+  "name": "话题标签",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "什么是话题标签",
+      "file": "what-are-hashtags.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "如何使用话题标签",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "使用话题标签"
+    },
+    {
+      "name": "按话题标签过滤评论",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "使用话题标签"
+    },
+    {
+      "name": "有效与无效的话题标签",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "使用话题标签"
+    },
+    {
+      "name": "使用除 # 以外的符号",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "设置话题标签"
+    },
+    {
+      "name": "预填充话题标签",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "设置话题标签"
+    },
+    {
+      "name": "通过话题标签链接内容",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "设置话题标签"
+    },
+    {
+      "name": "话题标签自动完成的工作原理",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "话题标签背景"
+    }
+  ]
+}
