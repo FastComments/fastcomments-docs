@@ -75,13 +75,13 @@ async function reorderResultsWithOpenAI(query, results) {
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
                 'Content-Type': 'application/json'
             },
-            timeout: 5000
+            timeout: 10000
         });
         console.log('OpenAI reranking: response received');
 
         const rankingText = response.data.choices?.[0]?.message?.content?.trim();
         if (!rankingText) {
-            console.log('OpenAI reranking: no ranking text in response, returning original order');
+            console.log('OpenAI reranking: no ranking text in response, returning original order', JSON.stringify(response.data));
             return results;
         }
 
