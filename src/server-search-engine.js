@@ -11,6 +11,123 @@ const axios = require('axios');
 const { locales, defaultLocale } = require('./locales');
 
 const DB_DIR = path.join(__dirname, '..', 'db');
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
+
+// Prompt injection detection patterns
+const INJECTION_PATTERNS = [
+    /ignore\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /disregard\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /forget\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /override\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /you\s+are\s+(now\s+)?(a|an)\s+/i,
+    /new\s+instructions?:/i,
+    /system\s*prompt/i,
+    /\bact\s+as\b/i,
+    /\brole\s*play\b/i,
+    /pretend\s+(you('re|are)|to\s+be)/i,
+    /do\s+not\s+follow/i,
+    /bypass\s+(the\s+)?(rules?|restrictions?|filters?)/i,
+];
+
+function containsPromptInjection(text) {
+    if (!text || typeof text !== 'string') return false;
+    return INJECTION_PATTERNS.some(pattern => pattern.test(text));
+}
+
+async function reorderResultsWithOpenAI(query, results) {
+    if (!process.env.OPENAI_API_KEY) {
+        console.log('OpenAI reranking skipped: no API key configured');
+        return results;
+    }
+    if (results.length <= 1) {
+        console.log('OpenAI reranking skipped: 0-1 results');
+        return results;
+    }
+
+    // Check for prompt injection in query
+    if (containsPromptInjection(query)) {
+        console.log('Prompt injection detected in query, skipping OpenAI reranking');
+        return results;
+    }
+
+    try {
+        const resultsList = results.map(r => `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}")`).join('\n');
+
+        console.log(`OpenAI reranking: calling ${OPENAI_MODEL} for ${results.length} results`);
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: OPENAI_MODEL,
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users'
+                    },
+                    {
+                        role: 'user',
+                        content: `Query: "${query}"\n\nResults:\n${resultsList}`
+                    }
+                ],
+                max_completion_tokens: 4000
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('OpenAI API error:', response.status, errorText);
+            console.log('OpenAI reranking: returning original order due to error');
+            return results;
+        }
+
+        const data = await response.json();
+        console.log('OpenAI reranking: response received');
+
+        const rankingText = data.choices?.[0]?.message?.content?.trim();
+        if (!rankingText) {
+            console.log('OpenAI reranking: no ranking text in response, returning original order', JSON.stringify(data));
+            return results;
+        }
+
+        // Parse the ranking (expecting comma-separated IDs)
+        const rankedIds = rankingText.split(',').map(s => s.trim()).filter(Boolean);
+
+        if (rankedIds.length === 0) {
+            console.log('OpenAI reranking: could not parse any IDs, returning original order');
+            return results;
+        }
+
+        // Build a map for quick lookup
+        const resultsById = new Map(results.map(r => [r.id, r]));
+
+        // Reorder results based on ranking
+        const reordered = [];
+        const used = new Set();
+        for (const id of rankedIds) {
+            if (!used.has(id) && resultsById.has(id)) {
+                reordered.push(resultsById.get(id));
+                used.add(id);
+            }
+        }
+
+        // Add any results not included in the ranking at the end
+        for (const r of results) {
+            if (!used.has(r.id)) {
+                reordered.push(r);
+            }
+        }
+
+        console.log(`OpenAI reranking: successfully reordered ${reordered.length} results`);
+        return reordered;
+    } catch (e) {
+        console.error('OpenAI reranking failed:', e.message);
+        console.log('OpenAI reranking: returning original order due to error');
+        return results;
+    }
+}
 
 const AXIOS_CONFIG_NO_THROW = {
     validateStatus: function () {
@@ -171,7 +288,7 @@ console.log(`Found ${availableLocales.length} search databases`);
 const app = express();
 const port = 5001;
 
-app.get('/search', (req, res) => {
+app.get('/search', async (req, res) => {
     try {
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Credentials', 'true');
@@ -180,12 +297,18 @@ app.get('/search', (req, res) => {
         const locale = req.query.locale || defaultLocale;
         const query = req.query.query || '';
         const full = req.query.full === 'true';
+        const nollm = req.query.nollm === 'true';
 
         console.log('Searching for', query, 'in locale', locale);
 
         let results = search(locale, query);
 
         console.log(results.length, 'results for', query);
+
+        // Reorder results using OpenAI for better relevance
+        if (!nollm) {
+            results = await reorderResultsWithOpenAI(query, results);
+        }
 
         // Only include body when full=true
         if (full) {
