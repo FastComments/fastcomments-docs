@@ -51,8 +51,9 @@
     function fetchAndRenderResults(queryText, queryCounter) {
         searchResultsWrapper.classList.add('open');
         searchResultsWrapper.classList.add('loading');
+        var locale = document.documentElement.lang || 'en';
         getSessionInfoCached(function (sessionInfo) {
-            makeRequest((window.location.href.includes('localhost:5000') ? 'http://localhost:5001' : 'https://docs-search.fastcomments.com') + '/search?query=' + queryText + '&tenantId=' + sessionInfo.tenantId, 'GET', null, function cb(responseText) {
+            makeRequest((window.location.href.includes('localhost:5000') ? 'http://localhost:5001' : 'https://docs-search.fastcomments.com') + '/search?query=' + queryText + '&tenantId=' + sessionInfo.tenantId + '&locale=' + locale, 'GET', null, function cb(responseText) {
                 if (searchCounter !== queryCounter) {
                     return;
                 }
