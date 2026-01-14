@@ -51,7 +51,10 @@ async function reorderResultsWithOpenAI(query, results) {
     }
 
     try {
-        const resultsList = results.map(r => `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}")`).join('\n');
+        const resultsList = results.map(r => {
+            const desc = r.searchText ? r.searchText.substring(0, 100) : '';
+            return `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}") - ${desc}`;
+        }).join('\n');
 
         console.log(`OpenAI reranking: calling ${OPENAI_MODEL} for ${results.length} results`);
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
@@ -66,7 +69,7 @@ async function reorderResultsWithOpenAI(query, results) {
                     content: `Query: "${query}"\n\nResults:\n${resultsList}`
                 }
             ],
-            max_tokens: 200,
+            max_completion_tokens: 200,
             temperature: 0
         }, {
             headers: {
@@ -239,6 +242,7 @@ function search(locale, query, limit = 15) {
                 url,
                 parent_url,
                 icon,
+                search_text,
                 bm25(search_index) as score
             FROM search_index
             WHERE search_index MATCH ?
@@ -255,6 +259,7 @@ function search(locale, query, limit = 15) {
             url: row.url,
             parentUrl: row.parent_url,
             icon: row.icon,
+            searchText: row.search_text,
             score: -row.score // bm25 returns negative scores, lower is better
         }));
     } catch (e) {
@@ -288,6 +293,7 @@ app.get('/search', async (req, res) => {
 
         const locale = req.query.locale || defaultLocale;
         const query = req.query.query || '';
+        const full = req.query.full === 'true';
 
         console.log('Searching for', query, 'in locale', locale);
 
@@ -297,6 +303,13 @@ app.get('/search', async (req, res) => {
 
         // Reorder results using OpenAI for better relevance
         results = await reorderResultsWithOpenAI(query, results);
+
+        // Only include body when full=true
+        if (full) {
+            results = results.map(({ searchText, ...rest }) => ({ ...rest, body: searchText }));
+        } else {
+            results = results.map(({ searchText, ...rest }) => rest);
+        }
 
         res.send({
             status: 'success',
