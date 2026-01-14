@@ -25,12 +25,14 @@
      * @property {boolean} cancelled
      */
 
+    const input = document.getElementById('search');
     let searchCounter = 0;
     let searchRequest;
     let currentDisplayedSearchValue;
 
     function setNoResults() {
-        searchResults.innerHTML = '<div class="no-results text-center">No results for those keywords.</div>';
+        var noResultsText = input.getAttribute('data-no-results') || 'No results for those keywords.';
+        searchResults.innerHTML = '<div class="no-results text-center">' + noResultsText + '</div>';
     }
 
     let sessionInfo;
@@ -99,7 +101,6 @@
         }
     }, 1000);
 
-    const input = document.getElementById('search');
     var isComposing = false;
 
     // Track IME composition state (for Chinese, Japanese, Korean input)

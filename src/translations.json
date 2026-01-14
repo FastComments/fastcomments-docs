@@ -15,7 +15,8 @@
     "TRANSLATION_NOTICE": "This content is not yet available in your language. Showing English version.",
     "PREVIOUS_GUIDE": "Previous Guide",
     "NEXT_GUIDE": "Next Guide",
-    "CONTRIBUTE_TO_GUIDE": "Contribute to This Guide"
+    "CONTRIBUTE_TO_GUIDE": "Contribute to This Guide",
+    "NO_RESULTS": "No results for those keywords."
   },
   "bg_bg": {
     "DOCUMENTATION_TITLE": "Документация",
@@ -33,7 +34,8 @@
     "TRANSLATION_NOTICE": "Това съдържание все още не е налично на вашия език. Показва се английската версия.",
     "PREVIOUS_GUIDE": "Предишно ръководство",
     "NEXT_GUIDE": "Следващо ръководство",
-    "CONTRIBUTE_TO_GUIDE": "Допринеси към това ръководство"
+    "CONTRIBUTE_TO_GUIDE": "Допринеси към това ръководство",
+    "NO_RESULTS": "Няма резултати за тези ключови думи."
   },
   "zh_cn": {
     "DOCUMENTATION_TITLE": "文档",
@@ -51,7 +53,8 @@
     "TRANSLATION_NOTICE": "此内容尚无您的语言版本，正在显示英文版本。",
     "PREVIOUS_GUIDE": "上一指南",
     "NEXT_GUIDE": "下一指南",
-    "CONTRIBUTE_TO_GUIDE": "为此指南贡献"
+    "CONTRIBUTE_TO_GUIDE": "为此指南贡献",
+    "NO_RESULTS": "没有找到相关结果。"
   },
   "zh_tw": {
     "DOCUMENTATION_TITLE": "說明文件",
@@ -69,7 +72,8 @@
     "TRANSLATION_NOTICE": "此內容尚未提供您的語言版本，顯示英文版本。",
     "PREVIOUS_GUIDE": "上一則指南",
     "NEXT_GUIDE": "下一則指南",
-    "CONTRIBUTE_TO_GUIDE": "為此指南貢獻"
+    "CONTRIBUTE_TO_GUIDE": "為此指南貢獻",
+    "NO_RESULTS": "沒有找到相關結果。"
   },
   "hr_hr": {
     "DOCUMENTATION_TITLE": "Dokumentacija",
@@ -87,7 +91,8 @@
     "TRANSLATION_NOTICE": "Ovaj sadržaj još nije dostupan na vašem jeziku. Prikazuje se engleska verzija.",
     "PREVIOUS_GUIDE": "Prethodni vodič",
     "NEXT_GUIDE": "Sljedeći vodič",
-    "CONTRIBUTE_TO_GUIDE": "Doprinesite ovom vodiču"
+    "CONTRIBUTE_TO_GUIDE": "Doprinesite ovom vodiču",
+    "NO_RESULTS": "Nema rezultata za te ključne riječi."
   },
   "da_dk": {
     "DOCUMENTATION_TITLE": "Dokumentation",
@@ -105,7 +110,8 @@
     "TRANSLATION_NOTICE": "Dette indhold er endnu ikke tilgængeligt på dit sprog. Viser den engelske version.",
     "PREVIOUS_GUIDE": "Forrige guide",
     "NEXT_GUIDE": "Næste guide",
-    "CONTRIBUTE_TO_GUIDE": "Bidrag til denne guide"
+    "CONTRIBUTE_TO_GUIDE": "Bidrag til denne guide",
+    "NO_RESULTS": "Ingen resultater for disse søgeord."
   },
   "nl_nl": {
     "DOCUMENTATION_TITLE": "Documentatie",
@@ -123,7 +129,8 @@
     "TRANSLATION_NOTICE": "Deze inhoud is nog niet beschikbaar in jouw taal. Engelse versie wordt weergegeven.",
     "PREVIOUS_GUIDE": "Vorige gids",
     "NEXT_GUIDE": "Volgende gids",
-    "CONTRIBUTE_TO_GUIDE": "Bijdragen aan deze gids"
+    "CONTRIBUTE_TO_GUIDE": "Bijdragen aan deze gids",
+    "NO_RESULTS": "Geen resultaten voor deze zoekwoorden."
   },
   "en_us": {
     "DOCUMENTATION_TITLE": "Documentation",
@@ -141,7 +148,8 @@
     "TRANSLATION_NOTICE": "This content is not yet available in your language. Showing the English version.",
     "PREVIOUS_GUIDE": "Previous Guide",
     "NEXT_GUIDE": "Next Guide",
-    "CONTRIBUTE_TO_GUIDE": "Contribute to This Guide"
+    "CONTRIBUTE_TO_GUIDE": "Contribute to This Guide",
+    "NO_RESULTS": "No results for those keywords."
   },
   "fr_ca": {
     "DOCUMENTATION_TITLE": "Documentation",
@@ -159,7 +167,8 @@
     "TRANSLATION_NOTICE": "Ce contenu n'est pas encore disponible dans votre langue. Affichage de la version anglaise.",
     "PREVIOUS_GUIDE": "Guide précédent",
     "NEXT_GUIDE": "Guide suivant",
-    "CONTRIBUTE_TO_GUIDE": "Contribuer à ce guide"
+    "CONTRIBUTE_TO_GUIDE": "Contribuer à ce guide",
+    "NO_RESULTS": "Aucun résultat pour ces mots-clés."
   },
   "fr_fr": {
     "DOCUMENTATION_TITLE": "Documentation",
@@ -177,7 +186,8 @@
     "TRANSLATION_NOTICE": "Ce contenu n'est pas encore disponible dans votre langue. Affichage de la version en anglais.",
     "PREVIOUS_GUIDE": "Guide précédent",
     "NEXT_GUIDE": "Guide suivant",
-    "CONTRIBUTE_TO_GUIDE": "Contribuer à ce guide"
+    "CONTRIBUTE_TO_GUIDE": "Contribuer à ce guide",
+    "NO_RESULTS": "Aucun résultat pour ces mots-clés."
   },
   "de_de": {
     "DOCUMENTATION_TITLE": "Dokumentation",
@@ -195,7 +205,8 @@
     "TRANSLATION_NOTICE": "Dieser Inhalt ist noch nicht in Ihrer Sprache verfügbar. Die englische Version wird angezeigt.",
     "PREVIOUS_GUIDE": "Vorheriger Leitfaden",
     "NEXT_GUIDE": "Nächster Leitfaden",
-    "CONTRIBUTE_TO_GUIDE": "Zu diesem Leitfaden beitragen"
+    "CONTRIBUTE_TO_GUIDE": "Zu diesem Leitfaden beitragen",
+    "NO_RESULTS": "Keine Ergebnisse für diese Suchbegriffe."
   },
   "el_cy": {
     "DOCUMENTATION_TITLE": "Τεκμηρίωση",
@@ -213,7 +224,8 @@
     "TRANSLATION_NOTICE": "Αυτό το περιεχόμενο δεν είναι ακόμη διαθέσιμο στη γλώσσα σας. Εμφανίζεται η αγγλική έκδοση.",
     "PREVIOUS_GUIDE": "Προηγούμενος οδηγός",
     "NEXT_GUIDE": "Επόμενος οδηγός",
-    "CONTRIBUTE_TO_GUIDE": "Συνεισφέρετε σε αυτόν τον οδηγό"
+    "CONTRIBUTE_TO_GUIDE": "Συνεισφέρετε σε αυτόν τον οδηγό",
+    "NO_RESULTS": "Δεν βρέθηκαν αποτελέσματα για αυτές τις λέξεις-κλειδιά."
   },
   "el_gr": {
     "DOCUMENTATION_TITLE": "Τεκμηρίωση",
@@ -231,7 +243,8 @@
     "TRANSLATION_NOTICE": "Αυτό το περιεχόμενο δεν είναι ακόμη διαθέσιμο στη γλώσσα σας. Εμφανίζεται η αγγλική έκδοση.",
     "PREVIOUS_GUIDE": "Προηγούμενος οδηγός",
     "NEXT_GUIDE": "Επόμενος οδηγός",
-    "CONTRIBUTE_TO_GUIDE": "Συνεισφέρετε σε αυτόν τον οδηγό"
+    "CONTRIBUTE_TO_GUIDE": "Συνεισφέρετε σε αυτόν τον οδηγό",
+    "NO_RESULTS": "Δεν βρέθηκαν αποτελέσματα για αυτές τις λέξεις-κλειδιά."
   },
   "he": {
     "DOCUMENTATION_TITLE": "תיעוד",
@@ -249,7 +262,8 @@
     "TRANSLATION_NOTICE": "תוכן זה עדיין אינו זמין בשפה שלך. מוצגת הגרסה האנגלית.",
     "PREVIOUS_GUIDE": "המדריך הקודם",
     "NEXT_GUIDE": "המדריך הבא",
-    "CONTRIBUTE_TO_GUIDE": "תרום למדריך זה"
+    "CONTRIBUTE_TO_GUIDE": "תרום למדריך זה",
+    "NO_RESULTS": "לא נמצאו תוצאות עבור מילות מפתח אלו."
   },
   "it_it": {
     "DOCUMENTATION_TITLE": "Documentazione",
@@ -267,7 +281,8 @@
     "TRANSLATION_NOTICE": "Questo contenuto non è ancora disponibile nella tua lingua. Viene mostrata la versione in inglese.",
     "PREVIOUS_GUIDE": "Guida precedente",
     "NEXT_GUIDE": "Guida successiva",
-    "CONTRIBUTE_TO_GUIDE": "Contribuisci a questa guida"
+    "CONTRIBUTE_TO_GUIDE": "Contribuisci a questa guida",
+    "NO_RESULTS": "Nessun risultato per queste parole chiave."
   },
   "ja_jp": {
     "DOCUMENTATION_TITLE": "ドキュメント",
@@ -285,7 +300,8 @@
     "TRANSLATION_NOTICE": "このコンテンツはまだお使いの言語で利用できません。英語版を表示しています。",
     "PREVIOUS_GUIDE": "前のガイド",
     "NEXT_GUIDE": "次のガイド",
-    "CONTRIBUTE_TO_GUIDE": "このガイドに貢献する"
+    "CONTRIBUTE_TO_GUIDE": "このガイドに貢献する",
+    "NO_RESULTS": "該当するキーワードの結果が見つかりません。"
   },
   "ko_kr": {
     "DOCUMENTATION_TITLE": "문서",
@@ -303,7 +319,8 @@
     "TRANSLATION_NOTICE": "이 콘텐츠는 아직 사용자의 언어로 번역되지 않았습니다. 영어 버전을 표시합니다.",
     "PREVIOUS_GUIDE": "이전 가이드",
     "NEXT_GUIDE": "다음 가이드",
-    "CONTRIBUTE_TO_GUIDE": "이 가이드에 기여하기"
+    "CONTRIBUTE_TO_GUIDE": "이 가이드에 기여하기",
+    "NO_RESULTS": "해당 키워드에 대한 결과가 없습니다."
   },
   "pl_pl": {
     "DOCUMENTATION_TITLE": "Dokumentacja",
@@ -321,7 +338,8 @@
     "TRANSLATION_NOTICE": "Ta treść nie jest jeszcze dostępna w Twoim języku. Wyświetlana jest wersja angielska.",
     "PREVIOUS_GUIDE": "Poprzedni przewodnik",
     "NEXT_GUIDE": "Następny przewodnik",
-    "CONTRIBUTE_TO_GUIDE": "Współtwórz ten przewodnik"
+    "CONTRIBUTE_TO_GUIDE": "Współtwórz ten przewodnik",
+    "NO_RESULTS": "Brak wyników dla tych słów kluczowych."
   },
   "pt_br": {
     "DOCUMENTATION_TITLE": "Documentação",
@@ -339,7 +357,8 @@
     "TRANSLATION_NOTICE": "Este conteúdo ainda não está disponível no seu idioma. Exibindo a versão em inglês.",
     "PREVIOUS_GUIDE": "Guia Anterior",
     "NEXT_GUIDE": "Próximo Guia",
-    "CONTRIBUTE_TO_GUIDE": "Contribuir para este guia"
+    "CONTRIBUTE_TO_GUIDE": "Contribuir para este guia",
+    "NO_RESULTS": "Nenhum resultado para essas palavras-chave."
   },
   "ru_ru": {
     "DOCUMENTATION_TITLE": "Документация",
@@ -357,7 +376,8 @@
     "TRANSLATION_NOTICE": "Этот контент ещё недоступен на вашем языке. Отображается английская версия.",
     "PREVIOUS_GUIDE": "Предыдущее руководство",
     "NEXT_GUIDE": "Следующее руководство",
-    "CONTRIBUTE_TO_GUIDE": "Внести вклад в это руководство"
+    "CONTRIBUTE_TO_GUIDE": "Внести вклад в это руководство",
+    "NO_RESULTS": "Нет результатов для этих ключевых слов."
   },
   "ru_ua": {
     "DOCUMENTATION_TITLE": "Документация",
@@ -375,7 +395,8 @@
     "TRANSLATION_NOTICE": "Этот материал ещё недоступен на вашем языке. Отображается версия на английском.",
     "PREVIOUS_GUIDE": "Предыдущее руководство",
     "NEXT_GUIDE": "Следующее руководство",
-    "CONTRIBUTE_TO_GUIDE": "Внести вклад в это руководство"
+    "CONTRIBUTE_TO_GUIDE": "Внести вклад в это руководство",
+    "NO_RESULTS": "Нет результатов для этих ключевых слов."
   },
   "sr_ba": {
     "DOCUMENTATION_TITLE": "Документација",
@@ -393,7 +414,8 @@
     "TRANSLATION_NOTICE": "Овај садржај још није доступан на вашем језику. Приказује се енглеска верзија.",
     "PREVIOUS_GUIDE": "Претходни водич",
     "NEXT_GUIDE": "Следећи водич",
-    "CONTRIBUTE_TO_GUIDE": "Допринесите овом водичу"
+    "CONTRIBUTE_TO_GUIDE": "Допринесите овом водичу",
+    "NO_RESULTS": "Нема резултата за те кључне ријечи."
   },
   "sr_latn_rs": {
     "DOCUMENTATION_TITLE": "Dokumentacija",
@@ -411,7 +433,8 @@
     "TRANSLATION_NOTICE": "Ovaj sadržaj još nije dostupan na vašem jeziku. Prikazuje se engleska verzija.",
     "PREVIOUS_GUIDE": "Prethodni vodič",
     "NEXT_GUIDE": "Sledeći vodič",
-    "CONTRIBUTE_TO_GUIDE": "Doprinesite ovom vodiču"
+    "CONTRIBUTE_TO_GUIDE": "Doprinesite ovom vodiču",
+    "NO_RESULTS": "Nema rezultata za te ključne reči."
   },
   "sr_me": {
     "DOCUMENTATION_TITLE": "Документација",
@@ -429,7 +452,8 @@
     "TRANSLATION_NOTICE": "Овај садржај још није доступан на вашем језику. Приказује се енглеска верзија.",
     "PREVIOUS_GUIDE": "Претходни водич",
     "NEXT_GUIDE": "Сљедећи водич",
-    "CONTRIBUTE_TO_GUIDE": "Допринети овом водичу"
+    "CONTRIBUTE_TO_GUIDE": "Допринети овом водичу",
+    "NO_RESULTS": "Нема резултата за те кључне ријечи."
   },
   "sr_rs": {
     "DOCUMENTATION_TITLE": "Документација",
@@ -447,7 +471,8 @@
     "TRANSLATION_NOTICE": "Овај садржај још није доступан на вашем језику. Приказује се енглеска верзија.",
     "PREVIOUS_GUIDE": "Претходни водич",
     "NEXT_GUIDE": "Следећи водич",
-    "CONTRIBUTE_TO_GUIDE": "Допринесите овом водичу"
+    "CONTRIBUTE_TO_GUIDE": "Допринесите овом водичу",
+    "NO_RESULTS": "Нема резултата за те кључне речи."
   },
   "sl_sl": {
     "DOCUMENTATION_TITLE": "Dokumentacija",
@@ -465,7 +490,8 @@
     "TRANSLATION_NOTICE": "Ta vsebina še ni na voljo v vašem jeziku. Prikazana je angleška različica.",
     "PREVIOUS_GUIDE": "Prejšnji vodnik",
     "NEXT_GUIDE": "Naslednji vodnik",
-    "CONTRIBUTE_TO_GUIDE": "Prispevajte k temu vodniku"
+    "CONTRIBUTE_TO_GUIDE": "Prispevajte k temu vodniku",
+    "NO_RESULTS": "Ni rezultatov za te ključne besede."
   },
   "es_es": {
     "DOCUMENTATION_TITLE": "Documentación",
@@ -483,7 +509,8 @@
     "TRANSLATION_NOTICE": "Este contenido aún no está disponible en tu idioma. Mostrando la versión en inglés.",
     "PREVIOUS_GUIDE": "Guía anterior",
     "NEXT_GUIDE": "Siguiente guía",
-    "CONTRIBUTE_TO_GUIDE": "Contribuir a esta guía"
+    "CONTRIBUTE_TO_GUIDE": "Contribuir a esta guía",
+    "NO_RESULTS": "No hay resultados para esas palabras clave."
   },
   "uk_ua": {
     "DOCUMENTATION_TITLE": "Документація",
@@ -501,7 +528,8 @@
     "TRANSLATION_NOTICE": "Цей вміст ще недоступний вашою мовою. Показується англійська версія.",
     "PREVIOUS_GUIDE": "Попередній посібник",
     "NEXT_GUIDE": "Наступний посібник",
-    "CONTRIBUTE_TO_GUIDE": "Зробити внесок у цей посібник"
+    "CONTRIBUTE_TO_GUIDE": "Зробити внесок у цей посібник",
+    "NO_RESULTS": "Немає результатів для цих ключових слів."
   },
   "tr_tr": {
     "DOCUMENTATION_TITLE": "Dokümantasyon",
@@ -519,6 +547,7 @@
     "TRANSLATION_NOTICE": "Bu içerik henüz sizin dilinizde mevcut değil. İngilizce sürüm gösteriliyor.",
     "PREVIOUS_GUIDE": "Önceki Rehber",
     "NEXT_GUIDE": "Sonraki Rehber",
-    "CONTRIBUTE_TO_GUIDE": "Bu Rehbere Katkıda Bulun"
+    "CONTRIBUTE_TO_GUIDE": "Bu Rehbere Katkıda Bulun",
+    "NO_RESULTS": "Bu anahtar kelimeler için sonuç bulunamadı."
   }
 }
