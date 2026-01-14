@@ -20,6 +20,22 @@ const { defaultLocale } = require('./locales');
 const DB_DIR = path.join(__dirname, '..', 'db');
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
 
+/**
+ * Get guide meta, using translated version if available
+ * @param {string} guideId - Guide ID
+ * @param {string} locale - Locale
+ * @returns {Object} - Meta object
+ */
+function getGuideMetaForLocale(guideId, locale) {
+    // Try translated meta first
+    const translatedPath = path.join(GUIDES_DIR, guideId, 'meta_translated', `meta_${locale}.json`);
+    if (fs.existsSync(translatedPath)) {
+        return JSON.parse(fs.readFileSync(translatedPath, 'utf8'));
+    }
+    // Fall back to default meta
+    return getGuideMeta(guideId);
+}
+
 const htmlToTextOptions = {
     selectors: [
         { selector: '.line-number', format: 'skip' },
@@ -60,13 +76,13 @@ async function buildIndexForLocale(locale) {
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
 
-    const guides = getGuides();
+    const guides = getGuides(locale);
     let indexedCount = 0;
     let skippedCount = 0;
 
     for (const guide of guides) {
-        const guideTitle = guide.pageHeader || guide.name;
-        const meta = getGuideMeta(guide.id);
+        const meta = getGuideMetaForLocale(guide.id, locale);
+        const guideTitle = meta.pageHeader || meta.name || guide.name;
 
         // Check if this guide has content for this locale
         const localeItemsPath = path.join(GUIDES_DIR, guide.id, 'items', locale);
