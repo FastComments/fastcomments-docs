@@ -51,10 +51,7 @@ async function reorderResultsWithOpenAI(query, results) {
     }
 
     try {
-        const resultsList = results.map(r => {
-            const desc = r.searchText ? r.searchText.substring(0, 100) : '';
-            return `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}") - ${desc}`;
-        }).join('\n');
+        const resultsList = results.map(r => `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}")`).join('\n');
 
         console.log(`OpenAI reranking: calling ${OPENAI_MODEL} for ${results.length} results`);
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
