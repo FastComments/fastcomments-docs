@@ -24,6 +24,7 @@ let completed = 0;
 let totalIndexed = 0;
 let totalSkipped = 0;
 let activeWorkers = 0;
+let failedCount = 0;
 const results = [];
 const queue = [...localeKeys];
 
@@ -48,6 +49,7 @@ function startWorker(locale) {
             console.log(`[${completed}/${localeKeys.length}] ${result.locale}: ${result.indexed} indexed, ${result.skipped} skipped, ${sizeMB} MB`);
             results.push(result);
         } else {
+            failedCount++;
             console.error(`[${completed}/${localeKeys.length}] ${result.locale}: FAILED - ${result.error}`);
         }
 
@@ -58,6 +60,7 @@ function startWorker(locale) {
     worker.on('error', (err) => {
         completed++;
         activeWorkers--;
+        failedCount++;
         console.error(`[${completed}/${localeKeys.length}] ${locale}: WORKER ERROR - ${err.message}`);
         processQueue();
     });
@@ -90,6 +93,11 @@ function finishBuild() {
         totalSize += stats.size;
     }
     console.log(`Total: ${(totalSize / 1024 / 1024).toFixed(2)} MB across ${files.length} databases`);
+
+    if (failedCount > 0) {
+        console.error(`\nERROR: ${failedCount} locale(s) failed to build.`);
+        process.exit(1);
+    }
 }
 
 // Start processing
