@@ -35,7 +35,12 @@ function containsPromptInjection(text) {
 }
 
 async function reorderResultsWithOpenAI(query, results) {
-    if (!process.env.OPENAI_API_KEY || results.length <= 1) {
+    if (!process.env.OPENAI_API_KEY) {
+        console.log('OpenAI reranking skipped: no API key configured');
+        return results;
+    }
+    if (results.length <= 1) {
+        console.log('OpenAI reranking skipped: 0-1 results');
         return results;
     }
 
@@ -48,6 +53,7 @@ async function reorderResultsWithOpenAI(query, results) {
     try {
         const resultsList = results.map(r => `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}")`).join('\n');
 
+        console.log(`OpenAI reranking: calling ${OPENAI_MODEL} for ${results.length} results`);
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
             model: OPENAI_MODEL,
             messages: [
@@ -69,9 +75,11 @@ async function reorderResultsWithOpenAI(query, results) {
             },
             timeout: 5000
         });
+        console.log('OpenAI reranking: response received');
 
         const rankingText = response.data.choices?.[0]?.message?.content?.trim();
         if (!rankingText) {
+            console.log('OpenAI reranking: no ranking text in response, returning original order');
             return results;
         }
 
@@ -79,6 +87,7 @@ async function reorderResultsWithOpenAI(query, results) {
         const rankedIds = rankingText.split(',').map(s => s.trim()).filter(Boolean);
 
         if (rankedIds.length === 0) {
+            console.log('OpenAI reranking: could not parse any IDs, returning original order');
             return results;
         }
 
@@ -102,9 +111,14 @@ async function reorderResultsWithOpenAI(query, results) {
             }
         }
 
+        console.log(`OpenAI reranking: successfully reordered ${reordered.length} results`);
         return reordered;
     } catch (e) {
         console.error('OpenAI reranking failed:', e.message);
+        if (e.response?.data) {
+            console.error('OpenAI error response:', JSON.stringify(e.response.data));
+        }
+        console.log('OpenAI reranking: returning original order due to error');
         return results;
     }
 }
