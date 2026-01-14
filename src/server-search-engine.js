@@ -11,6 +11,103 @@ const axios = require('axios');
 const { locales, defaultLocale } = require('./locales');
 
 const DB_DIR = path.join(__dirname, '..', 'db');
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
+
+// Prompt injection detection patterns
+const INJECTION_PATTERNS = [
+    /ignore\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /disregard\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /forget\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /override\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|context)/i,
+    /you\s+are\s+(now\s+)?(a|an)\s+/i,
+    /new\s+instructions?:/i,
+    /system\s*prompt/i,
+    /\bact\s+as\b/i,
+    /\brole\s*play\b/i,
+    /pretend\s+(you('re|are)|to\s+be)/i,
+    /do\s+not\s+follow/i,
+    /bypass\s+(the\s+)?(rules?|restrictions?|filters?)/i,
+];
+
+function containsPromptInjection(text) {
+    if (!text || typeof text !== 'string') return false;
+    return INJECTION_PATTERNS.some(pattern => pattern.test(text));
+}
+
+async function reorderResultsWithOpenAI(query, results) {
+    if (!process.env.OPENAI_API_KEY || results.length <= 1) {
+        return results;
+    }
+
+    // Check for prompt injection in query
+    if (containsPromptInjection(query)) {
+        console.log('Prompt injection detected in query, skipping OpenAI reranking');
+        return results;
+    }
+
+    try {
+        const resultsList = results.map(r => `[${r.id}] "${r.title}" (parent: "${r.parentTitle || 'none'}")`).join('\n');
+
+        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+            model: OPENAI_MODEL,
+            messages: [
+                {
+                    role: 'system',
+                    content: 'You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users'
+                },
+                {
+                    role: 'user',
+                    content: `Query: "${query}"\n\nResults:\n${resultsList}`
+                }
+            ],
+            max_tokens: 200,
+            temperature: 0
+        }, {
+            headers: {
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                'Content-Type': 'application/json'
+            },
+            timeout: 5000
+        });
+
+        const rankingText = response.data.choices?.[0]?.message?.content?.trim();
+        if (!rankingText) {
+            return results;
+        }
+
+        // Parse the ranking (expecting comma-separated IDs)
+        const rankedIds = rankingText.split(',').map(s => s.trim()).filter(Boolean);
+
+        if (rankedIds.length === 0) {
+            return results;
+        }
+
+        // Build a map for quick lookup
+        const resultsById = new Map(results.map(r => [r.id, r]));
+
+        // Reorder results based on ranking
+        const reordered = [];
+        const used = new Set();
+        for (const id of rankedIds) {
+            if (!used.has(id) && resultsById.has(id)) {
+                reordered.push(resultsById.get(id));
+                used.add(id);
+            }
+        }
+
+        // Add any results not included in the ranking at the end
+        for (const r of results) {
+            if (!used.has(r.id)) {
+                reordered.push(r);
+            }
+        }
+
+        return reordered;
+    } catch (e) {
+        console.error('OpenAI reranking failed:', e.message);
+        return results;
+    }
+}
 
 const AXIOS_CONFIG_NO_THROW = {
     validateStatus: function () {
@@ -180,9 +277,12 @@ app.get('/search', async (req, res) => {
 
         console.log('Searching for', query, 'in locale', locale);
 
-        const results = search(locale, query);
+        let results = search(locale, query);
 
         console.log(results.length, 'results for', query);
+
+        // Reorder results using OpenAI for better relevance
+        results = await reorderResultsWithOpenAI(query, results);
 
         res.send({
             status: 'success',
