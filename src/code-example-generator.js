@@ -74,7 +74,7 @@ function process(input, filePath) {
 window.fcConfigs = [${JSON.stringify({
     tenantId: 'demo',
     ...args.config
-}, null, '    ')})];
+}, null, '    ')}];
 </script>
 `;
         const isFunctional = args.isFunctional === undefined || args.isFunctional === true;
