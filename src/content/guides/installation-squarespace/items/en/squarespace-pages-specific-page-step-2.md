@@ -4,22 +4,14 @@ There are a few things you can configure in the code, see lines 4 through 7.
 
 [inline-code-attrs-start title = 'Squarespace Single Page Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        const tenantId = 'demo'; // your account id
-
-        function tryLoad() {
-            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId
-            });
-        }
-
-        tryLoad();
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: 'demo' // your account id
+    }];
 </script>
-
 [inline-code-end]
 
 It should look like this:
