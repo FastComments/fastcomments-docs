@@ -28,7 +28,7 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script async src=\"https://cdn-eu.fastcomments.com/js/embed-v2-async.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
     window.fcConfigs = [{
