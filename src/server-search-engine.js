@@ -65,7 +65,7 @@ async function reorderResultsWithOpenAI(query, results) {
                 messages: [
                     {
                         role: 'system',
-                        content: 'You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users'
+                        content: 'You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users\n\nImportant ranking hints:\n- For queries about installing, adding, or setting up FastComments on a website (e.g., "install", "add to site", "setup", "getting started", "how to add"), the guide-installation result should be ranked first if present.'
                     },
                     {
                         role: 'user',
