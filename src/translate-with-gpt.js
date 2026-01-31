@@ -25,6 +25,9 @@ const {
     getGuideDirectories,
     getDefaultLocaleFiles,
     getLocaleFiles,
+    loadUITranslationCache,
+    saveUITranslationCache,
+    getUITranslationCacheKey,
     GUIDES_DIR,
     TRANSLATIONS_FILE,
     locales,
@@ -542,32 +545,43 @@ Return ONLY a valid JSON object with the translated values. No explanations.`;
  * @returns {Promise<Object>} - Results summary
  */
 async function processUITranslations(client, options = {}) {
-    const { filterLocale, dryRun = false } = options;
+    const { filterLocale, dryRun = false, force = false } = options;
     const results = { success: 0, failed: 0, skipped: 0 };
 
-    const missingUITranslations = getMissingUITranslations();
+    const uiCache = loadUITranslationCache();
+    const missingUITranslations = getMissingUITranslations({ cache: uiCache, force });
     const translations = loadUITranslations();
     const sourceStrings = translations[defaultLocale] || {};
 
-    for (const [locale, missingKeys] of Object.entries(missingUITranslations)) {
+    for (const [locale, { missing, stale }] of Object.entries(missingUITranslations)) {
         if (filterLocale && locale !== filterLocale) continue;
 
         const localeInfo = locales[locale];
         const localeName = localeInfo ? localeInfo.nativeName : locale;
 
+        // Combine missing and stale keys
+        const allKeys = [...new Set([...missing, ...stale])];
+        if (allKeys.length === 0) continue;
+
         // Build object of strings to translate
         const toTranslate = {};
-        for (const key of missingKeys) {
+        for (const key of allKeys) {
             toTranslate[key] = sourceStrings[key];
         }
 
         if (dryRun) {
-            console.log(`  [dry-run] Would translate ${missingKeys.length} UI string(s) for ${locale} (${localeName})`);
+            const parts = [];
+            if (missing.length > 0) parts.push(`${missing.length} missing`);
+            if (stale.length > 0) parts.push(`${stale.length} stale`);
+            console.log(`  [dry-run] Would translate ${allKeys.length} UI string(s) for ${locale} (${localeName}) [${parts.join(', ')}]`);
             results.skipped++;
             continue;
         }
 
-        console.log(`  Translating ${missingKeys.length} UI string(s) for ${locale} (${localeName})...`);
+        const parts = [];
+        if (missing.length > 0) parts.push(`${missing.length} missing`);
+        if (stale.length > 0) parts.push(`${stale.length} stale`);
+        console.log(`  Translating ${allKeys.length} UI string(s) for ${locale} (${localeName}) [${parts.join(', ')}]...`);
         const translated = await translateUIStrings(locale, toTranslate, client);
 
         if (translated) {
@@ -577,6 +591,18 @@ async function processUITranslations(client, options = {}) {
             }
             Object.assign(translations[locale], translated);
             saveUITranslations(translations);
+
+            // Update cache with source hashes for translated keys
+            for (const key of Object.keys(translated)) {
+                const sourceValue = sourceStrings[key];
+                if (sourceValue !== undefined) {
+                    const sourceHash = hashContent(sourceValue);
+                    const cacheKey = getUITranslationCacheKey(locale, key);
+                    uiCache[cacheKey] = sourceHash;
+                }
+            }
+            saveUITranslationCache(uiCache);
+
             results.success++;
         } else {
             results.failed++;
@@ -997,21 +1023,34 @@ async function main() {
     // Process UI translations first (translations.json)
     if (!options.guide) {
         console.log('--- UI Translations (translations.json) ---\n');
-        const missingUI = getMissingUITranslations();
+        const uiCache = loadUITranslationCache();
+        const missingUI = getMissingUITranslations({ cache: uiCache, force: options.force });
         const uiLocales = Object.keys(missingUI).filter(l => !options.locale || l === options.locale);
 
         if (uiLocales.length > 0) {
             console.log(`Found ${uiLocales.length} locale(s) needing UI translations.`);
+            let totalMissing = 0;
+            let totalStale = 0;
             for (const locale of uiLocales.sort()) {
                 const localeInfo = locales[locale];
                 const name = localeInfo ? localeInfo.nativeName : locale;
-                console.log(`  ${locale} (${name}): ${missingUI[locale].length} key(s)`);
+                const { missing, stale } = missingUI[locale];
+                const parts = [];
+                if (missing.length > 0) parts.push(`${missing.length} missing`);
+                if (stale.length > 0) parts.push(`${stale.length} stale`);
+                console.log(`  ${locale} (${name}): ${parts.join(', ')}`);
+                totalMissing += missing.length;
+                totalStale += stale.length;
+            }
+            if (totalStale > 0) {
+                console.log(`\n  (${totalStale} stale translations will be re-translated due to source changes)`);
             }
             console.log('');
 
             const uiResults = await processUITranslations(client, {
                 filterLocale: options.locale,
-                dryRun: options.dryRun
+                dryRun: options.dryRun,
+                force: options.force
             });
 
             console.log('');

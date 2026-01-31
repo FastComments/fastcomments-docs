@@ -10,10 +10,36 @@
 const fs = require('fs');
 const path = require('path');
 const {locales, defaultLocale} = require('./locales');
+const { hashContent } = require('./translation-snapshot');
 
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
 const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
+const UI_TRANSLATION_CACHE_FILE = path.join(__dirname, 'ui-translation-cache.json');
 const verbose = process.argv.includes('--verbose');
+
+/**
+ * Load UI translation cache from disk
+ * @returns {Object} - Cache object { "locale/KEY": "md5hash", ... }
+ */
+function loadUITranslationCache() {
+    if (!fs.existsSync(UI_TRANSLATION_CACHE_FILE)) {
+        return {};
+    }
+    try {
+        return JSON.parse(fs.readFileSync(UI_TRANSLATION_CACHE_FILE, 'utf8'));
+    } catch (e) {
+        console.warn(`Failed to load UI translation cache: ${e.message}`);
+        return {};
+    }
+}
+
+/**
+ * Save UI translation cache to disk
+ * @param {Object} cache - Cache object
+ */
+function saveUITranslationCache(cache) {
+    fs.writeFileSync(UI_TRANSLATION_CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
+}
 
 function countInlineCode(content) {
     const startMatches = (content.match(/\[inline-code-start\]/g) || []).length;
@@ -190,24 +216,82 @@ function checkMetaJsonTranslations() {
 }
 
 /**
- * Get UI translations that need to be translated
- * @returns {Object} - { locale: [keys] }
+ * Get UI translations that need to be translated (missing or stale)
+ * @param {Object} options - { cache, force }
+ * @returns {Object} - { locale: { missing: [keys], stale: [keys] } }
  */
-function getMissingUITranslations() {
+function getMissingUITranslations(options = {}) {
+    const { cache = null, force = false } = options;
     const { missingLocales, missingKeys, defaultKeys } = checkUITranslations();
     const result = {};
 
-    // Locales completely missing get all keys
-    for (const locale of missingLocales) {
-        result[locale] = defaultKeys;
+    if (!fs.existsSync(TRANSLATIONS_FILE)) {
+        // No translations file - all locales need all keys
+        const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+        for (const locale of nonDefaultLocales) {
+            result[locale] = { missing: defaultKeys, stale: [] };
+        }
+        return result;
     }
 
-    // Locales with partial translations get only missing keys
-    for (const [locale, keys] of Object.entries(missingKeys)) {
-        result[locale] = keys;
+    const translations = JSON.parse(fs.readFileSync(TRANSLATIONS_FILE, 'utf8'));
+    const sourceStrings = translations[defaultLocale] || {};
+    const uiCache = cache || loadUITranslationCache();
+
+    // Locales completely missing get all keys
+    for (const locale of missingLocales) {
+        result[locale] = { missing: defaultKeys, stale: [] };
+    }
+
+    // Check existing locales for missing keys and stale translations
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+    for (const locale of nonDefaultLocales) {
+        if (missingLocales.includes(locale)) continue;
+
+        const missing = missingKeys[locale] || [];
+        const stale = [];
+
+        // Check each key for staleness (source changed since translation)
+        if (!force) {
+            const localeKeys = Object.keys(translations[locale] || {});
+            for (const key of localeKeys) {
+                if (sourceStrings[key] === undefined) continue; // Key doesn't exist in source
+
+                const sourceValue = sourceStrings[key];
+                const sourceHash = hashContent(sourceValue);
+                const cacheKey = `${locale}/${key}`;
+
+                // If not in cache or hash differs, translation is stale
+                if (uiCache[cacheKey] !== sourceHash) {
+                    stale.push(key);
+                }
+            }
+        } else {
+            // Force mode - mark all existing keys as stale
+            const localeKeys = Object.keys(translations[locale] || {});
+            for (const key of localeKeys) {
+                if (sourceStrings[key] !== undefined) {
+                    stale.push(key);
+                }
+            }
+        }
+
+        if (missing.length > 0 || stale.length > 0) {
+            result[locale] = { missing, stale };
+        }
     }
 
     return result;
+}
+
+/**
+ * Get UI translation cache key
+ * @param {string} locale - Locale code
+ * @param {string} key - Translation key
+ * @returns {string} - Cache key
+ */
+function getUITranslationCacheKey(locale, key) {
+    return `${locale}/${key}`;
 }
 
 function checkTranslations() {
@@ -481,17 +565,25 @@ function main() {
     if (uiLocalesNeedingTranslation.length > 0) {
         hasErrors = true;
         console.log('\n--- UI Translations (translations.json) ---\n');
-        console.log('Missing UI translations:\n');
+        console.log('UI translations needing attention:\n');
 
         let totalMissingKeys = 0;
+        let totalStaleKeys = 0;
         for (const locale of uiLocalesNeedingTranslation.sort()) {
-            const keys = missingUITranslations[locale];
+            const { missing, stale } = missingUITranslations[locale];
             const localeInfo = locales[locale];
             const localeName = localeInfo ? localeInfo.nativeName : locale;
-            console.log(`  ${locale} (${localeName}): ${keys.length} key(s)`);
-            totalMissingKeys += keys.length;
+            const parts = [];
+            if (missing.length > 0) parts.push(`${missing.length} missing`);
+            if (stale.length > 0) parts.push(`${stale.length} stale`);
+            console.log(`  ${locale} (${localeName}): ${parts.join(', ')}`);
+            totalMissingKeys += missing.length;
+            totalStaleKeys += stale.length;
         }
-        console.log(`\nTotal: ${totalMissingKeys} missing UI translation key(s) across ${uiLocalesNeedingTranslation.length} locale(s)`);
+        const totalKeys = totalMissingKeys + totalStaleKeys;
+        console.log(`\nTotal: ${totalKeys} UI translation key(s) need attention across ${uiLocalesNeedingTranslation.length} locale(s)`);
+        if (totalMissingKeys > 0) console.log(`  - ${totalMissingKeys} missing (new keys)`);
+        if (totalStaleKeys > 0) console.log(`  - ${totalStaleKeys} stale (source changed)`);
     }
 
     // Check meta.json translations
@@ -551,8 +643,12 @@ module.exports = {
     countInlineCode,
     countWords,
     estimateTokens,
+    loadUITranslationCache,
+    saveUITranslationCache,
+    getUITranslationCacheKey,
     GUIDES_DIR,
     TRANSLATIONS_FILE,
+    UI_TRANSLATION_CACHE_FILE,
     locales,
     defaultLocale
 };
