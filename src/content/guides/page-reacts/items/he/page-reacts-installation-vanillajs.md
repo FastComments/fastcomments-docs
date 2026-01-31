@@ -1,19 +1,21 @@
-עבור Page Reacts עלינו להחליט על שתי נקודות:
+---
+לגבי תגובות בעמוד עלינו להחליט שתי נקודות:
 
-- אילו תמונות תגובה להשתמש.
-- `id` קצר לשם כל תגובה.
+- אילו תמונות תגובה להשתמש בהן.
+- מזהה קצר (`id`) לשם כל תגובה.
 
 באופן אופציונלי:
 
-- ניתן גם להגדיר תמונות נפרדות אופציונליות לתגובות שנבחרו/לא נבחרו.
-- ניתן להחליט אם להציג את רשימת המשתמשים שהגיבו בעת העברת העכבר מעל אחת מהתגובות. 
+- ניתן גם להגדיר תמונות נפרדות אופציונליות עבור תגובות שנבחרו/לא נבחרו.
+- ניתן להחליט אם להציג את רשימת המשתמשים שהגיבו כאשר מעבירים את העכבר מעל אחת מהתגובות. 
 
-[inline-code-attrs-start title = 'דוגמת קוד ל-Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת קוד תגובות בעמוד'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +27,10 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-ההגדרה עבור ספריות ה־frontend כמו React, Angular וכו' זהה.
+התצורה עבור ספריות ה־frontend כמו React, Angular וכו' זהה.
 
 ---

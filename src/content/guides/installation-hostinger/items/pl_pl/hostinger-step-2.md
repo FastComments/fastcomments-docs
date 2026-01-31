@@ -1,21 +1,22 @@
 Dodajmy teraz kod naszego widżetu.
 
 Skopiuj poniższy kod. Upewnij się, że jesteś zalogowany na [fastcomments.com](https://fastcomments.com) 
-i przeładuj tę stronę, jeśli nie jesteś, aby kod został wstępnie wypełniony informacjami o Twoim koncie, w przeciwnym razie wyświetli się kod demonstracyjny.
+i odśwież tę stronę, jeśli nie jesteś, tak aby kod został wstępnie wypełniony informacjami z Twojego konta, w przeciwnym razie pokaże się kod demonstracyjny.
 
-Skopiujmy teraz kod:
+Teraz skopiujmy kod:
 
 [inline-code-attrs-start title = 'Kod komentarzy Hostinger'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
@@ -28,22 +29,21 @@ Wróćmy teraz do naszego kreatora stron i kliknij `Enter code`:
 
 ### Uwaga!
 
-Ważne jest, aby użyć powyższego kodu, a nie fragmentów kodu z innej dokumentacji, ponieważ ten fragment został przygotowany specjalnie
+Ważne jest, abyś użył powyższego kodu, a nie fragmentów kodu z innej dokumentacji, ponieważ ten fragment został stworzony specjalnie
 dla Hostinger.
 
-Powinieneś teraz zobaczyć coś podobnego do poniższego, co wygląda na puste. To jest oczekiwane. Najedź myszką na obszar,
-gdzie powinien znajdować się widżet:
+Powinieneś teraz zobaczyć coś podobnego do poniższego, co wydaje się puste. To jest oczekiwane. Najedź myszką na obszar, gdzie powinien znajdować się widżet:
 
 <div class="screenshot white-bg">
-    <div class="title">Dodano widżet kodu</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Dodano widżet kodu" />
+    <div class="title">Dodano widżet z kodem</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Dodano widżet z kodem" />
 </div>
 
-Teraz przeciągnij widżet do żądanego rozmiaru — zobaczysz, jak się wyświetla:
+Teraz przeciągnij widżet, aby ustawić żądany rozmiar — zobaczysz, że się pojawi:
 
 <div class="screenshot white-bg">
-    <div class="title">Dopasuj rozmiar</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Dopasuj rozmiar" />
+    <div class="title">Zmień rozmiar</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Zmień rozmiar" />
 </div>
 
 ...a teraz wyświetl podgląd i zapisz!

@@ -1,19 +1,21 @@
-Sayfa Reaksiyonları için iki şeye karar vermeliyiz:
+---
+Sayfa Tepkileri için iki şeye karar vermemiz gerekiyor:
 
-- Hangi reaksiyon görsellerinin kullanılacağı.
-- Her reaksiyonu adlandırmak için kısa bir `id`.
+- Hangi tepki görüntülerinin kullanılacağı.
+- Her tepkiyi adlandırmak için kısa bir `id`.
 
 İsteğe bağlı olarak:
 
-- Seçili/seçili olmayan reaksiyonlar için isteğe bağlı ayrı görseller tanımlayabilirsiniz.
-- Bir reaksiyonun üzerine fareyle gelindiğinde, reaksiyon yapan kullanıcıların listesini gösterip göstermemeye karar verebilirsiniz.
+- Seçili ve seçilmemiş tepkiler için ayrı isteğe bağlı görseller de tanımlayabilirsiniz.
+- Fareyi tepkilerden birinin üzerine getirdiğinizde tepki veren kullanıcıların listesini gösterip göstermemeye karar verebilirsiniz.
 
-[inline-code-attrs-start title = 'Sayfa Reaksiyonları Kod Örneği'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Sayfa Tepkileri Kod Örneği'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +27,10 @@ Sayfa Reaksiyonları için iki şeye karar vermeliyiz:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-React, Angular ve benzeri ön yüz (frontend) kütüphaneleri için yapılandırma aynıdır.
+React, Angular ve benzeri ön uç kütüphaneleri için yapılandırma aynıdır.
 
 ---

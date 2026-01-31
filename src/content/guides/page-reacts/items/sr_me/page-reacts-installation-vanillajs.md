@@ -1,19 +1,20 @@
-За Page Reacts морамо одлучити о двије ствари:
+Za Page Reacts moramo odlučiti o dvije stvari:
 
-- Које слике реакција користити.
-- Кратак `id` за именовање сваке реакције.
+- Koje slike reakcija koristiti.
+- Kratki `id` za imenovanje svake reakcije.
 
-Опционо:
+Opcionalno:
 
-- Можете такође дефинисати опционе посебне слике за одабране/неодабране реакције.
-- Можете одлучити да ли желите приказати списак корисника који су реаговали када померите миша преко једне од реакција. 
+- Takođe možete definirati opciona odvojena slika za odabrane/neodabrane reakcije.
+- Možete odlučiti da li želite prikazati listu korisnika koji su reagovali kada pređete mišem preko neke od reakcija. 
 
-[inline-code-attrs-start title = 'Пример кода за реакције странице'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer koda: Reakcije na stranici'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,8 +26,10 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Конфигурација за React, Angular и сличне frontend библиотеке је иста.
+Konfiguracija za React, Angular i ostale frontend biblioteke je ista.
+
+---

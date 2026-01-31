@@ -1,18 +1,18 @@
-Vervolgens open je het bestand `view.php`. Je kunt dit doen met `nano`:
+Open vervolgens het bestand `view.php`. Je kunt dit doen met `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Gebruik de pijltjestoetsen om naar beneden te scrollen. Zoek naar tekst die er ongeveer zo uitziet:
+Gebruik de pijltjestoetsen om naar beneden te scrollen. Zoek naar tekst die ongeveer zegt:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Kopieer nu de code die de commentaarwidget toevoegt:
+Kopieer nu de code die de reactie-widget toevoegt:
 
-[inline-code-attrs-start title = 'Moodle Reactiescode'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Moodle Reacties Code'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,29 +28,30 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Gebruik de pijltjestoetsen om je cursor vóór de regel met "box_end" te zetten en plak.
+Gebruik de pijltjestoetsen om je cursor vóór de regel met "box_end" te plaatsen, en plak.
 
-Je zou iets moeten hebben zoals dit:
+Je zou iets zoals dit moeten hebben:
 
 <div class="screenshot white-bg">
     <div class="title">Example</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
-Sla het nu op: 
+Sla nu op: 
 
 1. Druk op `ctrl+x`
 2. Druk op `y`

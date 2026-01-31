@@ -1,91 +1,81 @@
-Ево неких симптома са којима се често сусрећемо и уобичајених решења.
+Evo nekih simptoma na koje često nailazimo i uobičajenih rješenja. 
 
-### Порука "Ово је демо"
+### "This is a demo" Message
 
-Ово се приказује када сте копирали код виџета са наше почетне странице, који користи наш демо
-закупац. За коришћење вашег закупца, копирајте код виџета [одавде](https://fastcomments.com/auth/my-account/get-acct-code).
+Ovo se prikazuje kada ste kopirali kod widgeta sa naše početne stranice, koja koristi naš demo tenant. Da biste koristili svoj tenant, kopirajte kod widgeta sa [ovdje](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### Грешка "FastComments не може се учитати на овом домену"
+### "FastComments cannot load on this domain" Error
 
-FastComments мора знати који домени су у вашем власништву како би аутентификовао захтеве повезане
-са вашим налогом. [Погледајте нашу документацију](/guide-multiple-sites.html#add-domains-to-account) да бисте видели како
-да решите ову грешку (једноставно додајте тачан поддомен + домен на ваш налог).
+FastComments mora znati koji domeni pripadaju vama kako bi autentifikovao zahtjeve povezane sa vašim nalogom. [Pogledajte našu dokumentaciju](/guide-multiple-sites.html#add-domains-to-account) da vidite kako riješiti ovu grešku (jednostavno dodajte tačan subdomen + domen na vaš nalog).
 
-Имајте на уму да би се ово требало десити само након истека пробног периода. Током пробног периода, сви захтеви са нових домена
-аутоматски ће се додати на ваш налог.
+Obratite pažnju da bi se ovo trebalo pojaviti samo nakon isteka probnog perioda. Tokom probnog perioda, svi zahtjevi sa novih domena će automatski biti dodani na vaš nalog.
 
-### Мигрирани коментари се не приказују за прилагођене инсталације
+### Migrated Comments Not Showing for Custom Installations
 
-Обично се то дешава када су увезени коментари везани за `Page ID`, а ви прослеђујете URL
-(или никакву вредност, у ком случају се користи URL странице).
+Obično se ovo dešava kada su uvezeni komentari vezani za `Page ID`, a vi prosljeđujete URL (ili nijednu vrijednost, u kom slučaju se koristi zadani URL stranice).
 
-Ово можете дебаговати [извозом ваших коментара](https://fastcomments.com/auth/my-account/manage-data/export) и прегледавањем колоне `URL ID` (тренутно колона `B`).
+Možete ovo otkloniti tako što ćete [izvesti svoje komentare](https://fastcomments.com/auth/my-account/manage-data/export) i pogledati stupac `URL ID` (trenutno stupac `B`).
 
-Осигурајте да су вредности које видите у колони `URL ID` исте вредности које прослеђујете конфигурацији виџета
-као параметар `urlId`.
+Osigurajte da su vrijednosti koje vidite u stupcu `URL ID` iste vrijednosti koje prosljeđujete konfiguraciji widgeta kao parametar `urlId`.
 
-За додатно објашњење, покушајте прочитати нашу [документацију Како су коментари везани за странице и чланке](/guide-customizations-and-configuration.html#url-id).
+Za daljnje objašnjenje, pokušajte pročitati našu dokumentaciju [How Comments are Tied to Pages and Articles](/guide-customizations-and-configuration.html#url-id).
 
-Ако све друго не успе, [обратите нам се](https://fastcomments.com/auth/my-account/help).
+Ako ništa drugo ne pomogne, [obratite nam se](https://fastcomments.com/auth/my-account/help).
 
-### Виџет за коментаре се не приказује
+### Comment Widget Not Showing
 
-Ако се виџет за коментаре не приказује, проверите Chrome developer конзолу за грешке.
+Ako se komentar widget ne prikazuje, provjerite Chrome konzolu za razvojne programere zbog grešaka.
 
-За већину погрешних конфигурација, виџет за коментаре ће барем приказати грешку на страници ако се
-може учитати. Не видети ништа обично указује на скриптну грешку.
+Za većinu pogrešnih konfiguracija, widget će bar prikazati grešku na stranici ako je uopšte može učitati. To što se ne vidi ništa obično je indikacija greške u skripti.
 
-### Жељена конфигурација не ради како се очекује
+### Desired Configuration Not Working as Expected
 
-Испробајте наше [Chrome проширење](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) да видите која
-конфигурација се прослеђује виџету за коментаре. Ако све пропадне, направите снимак екрана шта chrome проширење каже
-и [обратите нам се](https://fastcomments.com/auth/my-account/help).
+Isprobajte našu [Chrome ekstenziju](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) da vidite koju konfiguraciju widget prima. Ako ništa ne pomogne, napravite snimak ekrana onoga što Chrome ekstenzija prikazuje i [obratite nam se](https://fastcomments.com/auth/my-account/help).
 
-### Коментари недостају на истом URL-у са различитим hash bang-ом
+### Comments Missing on Same URL With Different Hash Bang
 
-Према подразумеваним подешавањима, FastComments ће користити URL странице за "bucket" где се коментари чувају. Ако ваши URL-ови укључују `#hashbang`-ове, и ти `#hashbang`-ови
-не би требали бити део идентификатора који идентификује нит коментара, можемо једноставно игнорисати hash bang вредност, на пример:
+Po defaultu, FastComments će koristiti URL stranice za "bucket" gdje se komentari pohranjuju. Ako vaši URL-ovi uključuju `#hashbangs`, i ti `#hashbangs`
+ne bi trebali biti dio identifikatora koji određuje thread komentara, možemo jednostavno ignorisati vrijednost hash banga, na primjer:
 
-[inline-code-attrs-start title = 'Пример игнорисања hash bang-ова'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer ignorisanja hash-bangova'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.href.replace(location.hash, ''),
     urlId: location.href.replace(location.hash, '')
-});
+}];
 </script>
 [inline-code-end]
 
-Имајте на уму да ће након ове промене бити потребна миграција за постојеће коментаре. [За то нам се обратите.](https://fastcomments.com/auth/my-account/help)
+Obratite pažnju da će nakon ove promjene migracija morati biti izvršena za postojeće komentare. [Za to, obratite nam se.](https://fastcomments.com/auth/my-account/help)
 
-### URL параметри упита утичу на виџет
+### URL Query Parameters Affecting Widget
 
-Према подразумеваним подешавањима, FastComments ће користити URL странице за "bucket" где се коментари чувају. Ако ваши URL-ови укључују параметре упита
-који не би требали бити део идентификатора који идентификује нит коментара, можемо их једноставно игнорисати, на пример:
+Po defaultu, FastComments će koristiti URL stranice za "bucket" gdje se komentari pohranjuju. Ako vaši URL-ovi uključuju query parametre
+koji ne bi trebali biti dio identifikatora koji određuje thread komentara, možemo ih jednostavno ignorisati, na primjer:
 
-[inline-code-attrs-start title = 'Игнориши параметре упита'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ignoriši parametre upita'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.protocol + '//' + location.host + location.pathname,
     urlId: location.pathname
-});
+}];
 </script>
 [inline-code-end]
 
-Имајте на уму да ће након ове промене бити потребна миграција за постојеће коментаре. [За то нам се обратите.](https://fastcomments.com/auth/my-account/help)
+Obratite pažnju da će nakon ove promjene migracija morati biti izvršena za postojeće komentare. [Za to, obratite nam se.](https://fastcomments.com/auth/my-account/help)
 
-### Не примате е-поште
+### Not Receiving Emails
 
-У FastComments-у улажемо много труда како бисмо осигурали да је испорука наших е-порука што поузданија.
-Међутим, неким провајдерима е-поште је нотор тешко поуздано испоручивати. Проверите вашу spam
-фасциклу за поруке од fastcomments.com.
+U FastComments ulažemo mnogo truda da naša dostava e-poruka bude što pouzdanija. Međutim, nekim provajderima e-pošte je izuzetno teško pouzdano dostaviti poruke. Provjerite svoju mapu neželjene pošte za poruke od fastcomments.com.
 
-Ако нам се [обратите](https://fastcomments.com/auth/my-account/help) обично можемо пружити
-више увида зашто можда не видите е-поште од нас.
+Ako nam se [obratite](https://fastcomments.com/auth/my-account/help) obično možemo pružiti više informacija zašto možda ne vidite naše e-poruke.

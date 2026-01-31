@@ -1,18 +1,19 @@
-我們可以配置FastComments在有人與評論小工具互動時通知Google Analytics 4。
+我們可以設定 FastComments，在有人與留言小工具互動時通知 Google Analytics 4。
 
 我們可以追蹤使用者何時：
 
-- 評論。
+- 發表留言。
 - 投票。
 
-以下是執行此操作的示例程式碼片段：
+下面是一個範例程式碼片段來做到這點：
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,7 +27,7 @@
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 

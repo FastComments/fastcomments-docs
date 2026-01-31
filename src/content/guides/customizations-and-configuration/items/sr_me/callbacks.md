@@ -1,6 +1,6 @@
-Све библиотеке за коментарски виџет (тренутно Angular, React, Vue) подржавају повратне позиве.
+Све библиотеке за видгет коментара (тренутно Angular, React, Vue) подржавају повратне позиве (callbacks).
 
-Повратни позиви се навode у објекту конфигурације, са истом сигнатуром за сваку библиотеку.
+Повратни позиви се наводе у конфигурационом објекту, са истим сигнатурама за сваку библиотеку.
 
 Подржани повратни позиви су:
 
@@ -21,10 +21,11 @@
 
 [inline-code-attrs-start title = 'Примјери повратних позива'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // врати true да би се спречило подразумевано понашање (отварање fastcomments.com корисничког профила).
+            // return true; // вратите true да бисте спречили подразумевано понашање (отварање fastcomments.com user профила).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // емуловање асинхроног понашања (позив API-ја итд).
+            setTimeout(function() { // имитирање асинхроног понашања (позивање API итд).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // коментари су сортирани према подразумеваној сорти на страници која може бити Most Relevant (нпр. највише гласова, итд), или Newest First
+            // коментари су сортирани по подразумеваном редослиједу на страници који може бити Најрелевантније (нпр. највише оцењени итд.), или Најновије прво
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

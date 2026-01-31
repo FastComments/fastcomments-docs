@@ -1,13 +1,13 @@
 Als Nächstes müssen wir ermitteln, wo der FastComments.com-Widget-Code hinzugefügt werden soll.
 
-Wenn Sie das Standard-Theme `casper` verwenden, sehen Sie an Zeile `82` einen Abschnitt wie diesen:
+Wenn Sie das Standard-Theme `casper` verwenden, sehen Sie einen Abschnitt wie diesen bei Zeile `82`:
 
 <div class="screenshot white-bg">
     <div class="title">Deaktivierter Kommentarbereich</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Deaktivierter Kommentarbereich" />
 </div>
 
-Wenn Sie andere Themes verwenden, werden Sie dies nicht sehen und müssen diesen Code nach dem letzten `</section>` hinzufügen:
+Wenn Sie andere Themes verwenden, sehen Sie dies nicht und müssen diesen Code nach dem letzten `</section>` hinzufügen:
 
 [inline-code-attrs-start title = 'Beispiel für Abschnitt'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,7 +15,7 @@ Wenn Sie andere Themes verwenden, werden Sie dies nicht sehen und müssen diesen
 </section>
 [inline-code-end]
 
-Sie sollten etwas Ähnliches bereit haben:
+Sie sollten etwa Folgendes bereit haben:
 
 <div class="screenshot white-bg">
     <div class="title">Vorlage bereit für Kommentar-Code</div>
@@ -26,7 +26,7 @@ Sobald alles bereit ist, kopieren Sie den FastComments.com-Widget-Code:
 
 [inline-code-attrs-start title = 'Ghost FastComments.com Kommentar-Code-Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,12 +46,13 @@ Sobald alles bereit ist, kopieren Sie den FastComments.com-Widget-Code:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
@@ -59,8 +60,8 @@ Sobald alles bereit ist, kopieren Sie den FastComments.com-Widget-Code:
 ...und es sollte so aussehen:
 
 <div class="screenshot white-bg">
-    <div class="title">FastComments.com-Kommentar-Code hinzufügen</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="FastComments.com-Kommentar-Code hinzufügen" />
+    <div class="title">FastComments.com Kommentar-Code hinzufügen</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="FastComments.com Kommentar-Code hinzufügen" />
 </div>
 
-Die Codierung ist abgeschlossen. Jetzt müssen wir nur noch unser Theme neu importieren!
+Code fertig. Nun müssen wir nur noch unser Theme erneut importieren!

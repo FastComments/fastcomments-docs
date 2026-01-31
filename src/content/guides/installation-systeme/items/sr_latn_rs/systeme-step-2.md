@@ -1,14 +1,15 @@
-Sada ćemo kopirati naš kod. Ako isječak koda na liniji 6 prikazuje `tenantId: "demo"`, prijavite se na svoj FastComments nalog
-i zatim osvežite ovu stranicu tako da kopirani isječak koda sadrži ID vašeg naloga.
+Sada ćemo kopirati naš kod. Ako u isječku koda na liniji 6 piše `tenantId: "demo"` onda treba da se prijavite na vaš FastComments nalog
+i potom osvežite ovu stranicu tako da kopirani isječak koda ima ID vašeg naloga.
 
 [inline-code-attrs-start title = 'Isečak za Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
@@ -19,4 +20,4 @@ Sada ga nalepite u editor i kliknite sačuvaj:
     <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Dodajte FastComments kod" />
 </div>
 
-... zatim sačuvajte vaš sajt. To je to!
+... zatim sačuvajte svoj sajt. To je to!

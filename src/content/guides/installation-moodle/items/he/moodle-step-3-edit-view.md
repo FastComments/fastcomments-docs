@@ -1,18 +1,18 @@
-לאחר מכן, פתח את הקובץ `view.php`. אפשר לעשות זאת עם `nano`:
+Next, open the `view.php` file. You can do this with `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-השתמש במקשי החצים כדי לגלול למטה עד לתחתית. חפש טקסט שאומר משהו כמו:
+Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-כעת נעתיק את הקוד שמוסיף את ווידג'ט ההערות:
+Now let's copy the code that adds the comment widget:
 
-[inline-code-attrs-start title = 'קוד ההערות של Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'קוד תגובות Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-השתמש במקשי החצים כדי למקם את הסמן לפני השורה "box_end", והדבק.
+Use the arrow keys to position your cursor before the "box_end" line, and paste.
 
-כעת אמור להיראות משהו כזה:
+You should have something like this:
 
 <div class="screenshot white-bg">
-    <div class="title">דוגמה</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="דוגמה של Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
-עכשיו שמור: 
+Now save: 
 
-1. לחץ על `ctrl+x`
-2. לחץ על `y`
-3. לחץ על `enter`
+1. Press `ctrl+x`
+2. Press `y`
+3. Press `enter`
 
-זהו!
+That's it!

@@ -1,16 +1,16 @@
-接著，打開 `view.php` 檔案。你可以使用 `nano`：
+接下來，打開 `view.php` 檔案。你可以使用 `nano` 執行此操作：
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-使用方向鍵向下捲動到檔案底部。尋找類似以下的文字：
+使用方向鍵向下捲動到最底部。尋找類似以下的文字：
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-現在我們來複製加入評論小工具的程式碼：
+現在讓我們複製新增留言元件的程式碼：
 
 [inline-code-attrs-start title = 'Moodle 評論程式碼'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,22 +28,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-使用方向鍵將游標定位在 "box_end" 這一行之前，然後貼上。
+使用方向鍵將游標定位在 "box_end" 行之前，然後貼上。
 
-你應該會看到類似如下內容：
+你應該會得到類似以下內容：
 
 <div class="screenshot white-bg">
     <div class="title">範例</div>
@@ -52,8 +53,8 @@ if ($id) {
 
 現在儲存： 
 
-1. 按下 `ctrl+x`
-2. 按下 `y`
-3. 按下 `enter`
+1. 按 `ctrl+x`
+2. 按 `y`
+3. 按 `enter`
 
-就這樣！
+就是這樣！

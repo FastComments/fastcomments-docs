@@ -1,13 +1,14 @@
-## Comment personnaliser les styles du widget de commentaires
+## Comment personnaliser le style du widget de commentaires
 
-Vous pouvez personnaliser le style du widget de commentaires de deux manières :
+Vous pouvez personnaliser le style du widget de commentaires de deux façons :
 
-### Option 1 : via le paramètre customCSS
+### Option 1 : via le paramètre `customCSS`
 
 Passez votre CSS personnalisé sous forme de chaîne au paramètre `customCSS` lors de l'initialisation du widget :
 
 ```javascript
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: 'your-tenant-id',
     customCSS: `
         .fast-comments .comment {
@@ -15,21 +16,21 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
             border-radius: 8px !important;
         }
     `
-});
+}];
 ```
 
 ### Option 2 : via le tableau de bord d'administration
 
-1. Allez sur la [Page de personnalisation du widget](https://fastcomments.com/auth/my-account/customize-widget) dans votre tableau de bord d'administration
-2. Faites défiler jusqu'à la section « CSS personnalisé » sous « Avancé »
+1. Allez sur la [page de personnalisation du widget](https://fastcomments.com/auth/my-account/customize-widget) dans votre tableau de bord d'administration
+2. Faites défiler jusqu'à la section "CSS personnalisé" sous "Avancé"
 3. Saisissez votre CSS personnalisé
-4. Cliquez sur « Enregistrer »
+4. Cliquez sur "Enregistrer"
 
-Votre CSS personnalisé sera appliqué à tous les widgets de commentaires de votre site.
+Votre CSS personnalisé sera appliqué à tous les widgets de commentaires sur votre site.
 
 ## Conseils
 
 - Utilisez `!important` pour remplacer les styles par défaut si nécessaire
 - Ciblez des sélecteurs spécifiques pour éviter d'affecter d'autres parties de votre site
-- Testez votre CSS dans différents navigateurs pour la compatibilité
-- Le widget utilise du CSS standard — aucun préprocesseur spécial n'est requis
+- Testez votre CSS dans différents navigateurs pour vérifier la compatibilité
+- Le widget utilise du CSS standard - aucun préprocesseur spécial n'est requis

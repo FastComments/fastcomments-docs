@@ -1,19 +1,17 @@
----
-Les extraits de code front-end et les bibliothèques pour On-Prem sont les mêmes que pour le produit SaaS. Cependant, vous devez spécifier `apiHost` et le chemin de script correct :
+Les extraits de code et les bibliothèques front-end pour On-Prem sont les mêmes que pour le produit SaaS. Cependant, vous devez spécifier `apiHost` et le chemin de script correct :
 
-[inline-code-attrs-start title = 'Code des commentaires pour On Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Code des commentaires pour On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<script async src="https://my.host.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... peut aussi passer une charge utile SSO, etc.
-    });
+        // ... peut également transmettre la charge utile SSO, etc.
+    }];
 </script>
 [inline-code-end]
 
-L'exemple ci‑dessus est très simple. Nous pourrions également utiliser les bibliothèques officielles pour React, Angular, Vue, Svelte, etc.
-
----
+Ce qui précède est un exemple très simple. Nous pouvons également utiliser les bibliothèques officielles React, Angular, Vue, Svelte, etc.

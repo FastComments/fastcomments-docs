@@ -1,35 +1,15 @@
-FastComments'ı BigCommerce'in Sayfa Oluşturucusu aracılığıyla eklemek önerilmez çünkü bu durumda kodun her istenen sayfaya manuel olarak eklenmesi gerekir.
+FastComments'ı BigCommerce'in Page Builder'ı üzerinden eklemek önerilmez; çünkü kodun her istenen sayfaya elle eklenmesi gerekir.
 
-Ancak, eğer bu isteniyorsa, aşağıdaki kod parçacığı kullanılmalıdır. BigCommerce'in doğası gereği diğer öğreticilerdeki kod parçacıkları çalışmayacaktır:
+Ancak, eğer bu isteniyorsa, aşağıdaki kod parçası kullanılmalıdır. BigCommerce'in yapısı gereği diğer eğitimlerdeki kod parçacıkları çalışmayacaktır:
 
-[inline-code-attrs-start title = 'BigCommerce Sayfa Oluşturucu Parçacığı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'BigCommerce Page Builder Kod Parçası'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        let loaded = false;
-        function attemptLoad() {
-            if (loaded) {
-                return;
-            }
-            if (!window.FastCommentsUI) {
-                return;
-            }
-            FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: "demo"
-            });
-            loaded = true;
-        }
-        attemptLoad();
-        const interval = setInterval(function () {
-            attemptLoad();
-            if (loaded) {
-                clearInterval(interval);
-            }
-        }, 300);
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: "demo"
+    }];
 </script>
 [inline-code-end]
-
----

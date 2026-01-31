@@ -1,14 +1,13 @@
----
-Następnie musimy określić, gdzie dodać kod widżetu FastComments.com.
+Następnie musimy zidentyfikować miejsce, w którym należy dodać kod widżetu FastComments.com.
 
-Jeśli używasz domyślnego motywu `casper`, zobaczysz sekcję podobną do tej w linii `82`:
+Jeśli używasz domyślnego motywu `casper`, zobaczysz sekcję taką jak ta w linii `82`:
 
 <div class="screenshot white-bg">
     <div class="title">Wyłączona sekcja komentarzy</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Wyłączona sekcja komentarzy" />
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Disabled Comment Section" />
 </div>
 
-Jeśli używasz innego motywu, nie zobaczysz tego i będziesz musiał dodać ten kod po ostatnim `</section>`:
+Jeśli używasz innych motywów, nie zobaczysz tego i będziesz musiał dodać ten kod po ostatnim `</section>`:
 
 [inline-code-attrs-start title = 'Przykład sekcji'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,14 +19,14 @@ Powinieneś mieć coś takiego gotowe:
 
 <div class="screenshot white-bg">
     <div class="title">Szablon gotowy na kod komentarzy</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Szablon gotowy na kod komentarzy" />
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Template Ready For Comment Code" />
 </div>
 
 Gdy będziesz gotowy, skopiuj kod widżetu FastComments.com:
 
-[inline-code-attrs-start title = 'Fragment kodu komentarzy FastComments.com dla Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fragment kodu komentarza FastComments.com dla Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -47,12 +46,13 @@ Gdy będziesz gotowy, skopiuj kod widżetu FastComments.com:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
@@ -61,9 +61,9 @@ Gdy będziesz gotowy, skopiuj kod widżetu FastComments.com:
 
 <div class="screenshot white-bg">
     <div class="title">Dodaj kod komentarzy FastComments.com</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Dodaj kod komentarzy FastComments.com" />
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Add FastComments.com Comment Code" />
 </div>
 
-Kodowanie zakończone. Teraz trzeba tylko ponownie zaimportować nasz motyw!
+Kodowanie zakończone. Teraz musimy tylko ponownie zaimportować nasz motyw!
 
 ---

@@ -1,18 +1,19 @@
-Vi kan konfigurere FastComments til at underrette Google Analytics 4, når nogen interagerer med kommentar-widgetten.
+Vi kan konfigurere FastComments til at underrette Google Analytics 4, når nogen interagerer med kommentar-widgeten.
 
 Vi kan spore, når brugere:
 
 - Kommenterer.
 - Stemmer.
 
-Her er et eksempel på kode til det:
+Her er et eksempel på et kodeudsnit, der gør det:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,13 @@ Her er et eksempel på kode til det:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
 Dette vil tilføje to begivenheder:
 
-- Label: `Comment Posted`, Kategori: `Engagement`, ID: `post_comment`
-- Label: `User Voted on a Comment`, Kategori: `Engagement`, ID: `vote_comment`
+- Etiket: `Comment Posted`, Kategori: `Engagement`, ID: `post_comment`
+- Etiket: `User Voted on a Comment`, Kategori: `Engagement`, ID: `vote_comment`
+
+---

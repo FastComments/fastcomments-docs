@@ -4,15 +4,15 @@ Zatim otvorite datoteku `view.php`. To možete učiniti pomoću `nano`:
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Pomoću tipki sa strelicama pomaknite se prema dnu. Potražite tekst koji kaže nešto poput:
+Koristite tipke sa strelicama da se pomaknete prema dnu. Potražite tekst koji kaže otprilike ovako:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Sada ćemo kopirati kod koji dodaje widget za komentare:
+Sada kopirajmo kod koji dodaje widget za komentare:
 
-[inline-code-attrs-start title = 'Moodle kod komentara'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kod komentara za Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,26 +28,27 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Pomoću tipki sa strelicama postavite kursor prije retka "box_end" i zalijepite.
+Koristite tipke sa strelicama da pozicionirate kursor prije retka "box_end" i zalijepite.
 
 Trebali biste imati nešto poput ovoga:
 
 <div class="screenshot white-bg">
     <div class="title">Primjer</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle primjer" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Primjer Moodle" />
 </div>
 
 Sada spremite: 

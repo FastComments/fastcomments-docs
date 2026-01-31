@@ -7,7 +7,8 @@ You can customize the comment widget styling in two ways:
 Pass your custom CSS as a string to the `customCSS` parameter when initializing the widget:
 
 ```javascript
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: 'your-tenant-id',
     customCSS: `
         .fast-comments .comment {
@@ -15,7 +16,7 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
             border-radius: 8px !important;
         }
     `
-});
+}];
 ```
 
 ### Option 2: Via Admin Dashboard

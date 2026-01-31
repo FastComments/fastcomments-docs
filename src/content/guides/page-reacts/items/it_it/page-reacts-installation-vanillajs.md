@@ -1,19 +1,20 @@
 Per Page Reacts dobbiamo decidere due cose:
 
-- Quali immagini di reazione utilizzare.
+- Quali immagini di reazione usare.
 - Un breve `id` per nominare ogni reazione.
 
 Opzionalmente:
 
-- È inoltre possibile definire immagini separate opzionali per le reazioni selezionate/non selezionate.
-- È possibile decidere se mostrare l'elenco degli utenti che hanno reagito quando si sposta il mouse sopra una delle reazioni. 
+- Puoi anche definire immagini separate opzionali per reazioni selezionate/non selezionate.
+- Puoi decidere se mostrare l'elenco degli utenti che hanno reagito al passaggio del mouse su una delle reazioni. 
 
 [inline-code-attrs-start title = 'Esempio di codice per Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,10 @@ Opzionalmente:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-La configurazione per le librerie frontend React, Angular e simili è la stessa.
+La configurazione per le librerie frontend come React, Angular e così via è la stessa.
 
 ---

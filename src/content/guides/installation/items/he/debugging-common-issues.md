@@ -1,91 +1,81 @@
-הנה כמה תסמינים שאנחנו פוגשים לעתים קרובות, ופתרונות נפוצים.
+להלן כמה תסמינים שאנו נתקלים בהם לעתים קרובות ופתרונות נפוצים. 
 
-### הודעת "This is a demo"
+### הודעה "This is a demo"
 
-זה מוצג כאשר העתקת את קוד הווידג'ט מדף הבית שלנו, שמשתמש בדייר הדמו
-שלנו. כדי להשתמש בדייר שלך, העתק את קוד הווידג'ט [מכאן](https://fastcomments.com/auth/my-account/get-acct-code).
+זה מוצג כאשר העתקת את קוד הווידג'ט מהדף הראשי שלנו, שמשתמש ב-tenant הדמו שלנו. כדי להשתמש ב-tenant שלך, העתק את קוד הווידג'ט מ[כאן](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### שגיאת "FastComments cannot load on this domain"
+### שגיאה "FastComments cannot load on this domain"
 
-FastComments צריך לדעת אילו דומיינים שייכים לך כדי לאמת בקשות המשויכות
-לחשבון שלך. [עיין בתיעוד שלנו](/guide-multiple-sites.html#add-domains-to-account) כדי לראות איך
-לפתור שגיאה זו (פשוט הוסף את התת-דומיין + דומיין המדויקים לחשבון שלך).
+FastComments צריך לדעת אילו דומיינים שייכים לך כדי לאמת בקשות המשויכות לחשבונך. [עיינו בתיעוד שלנו](/guide-multiple-sites.html#add-domains-to-account) כדי לראות כיצד לפתור שגיאה זו (פשוט הוסיפו את תת-הדומיין + הדומיין המדויק לחשבונכם).
 
-שים לב שזה אמור לקרות רק לאחר שתקופת הניסיון הסתיימה. במהלך תקופת הניסיון, כל בקשות מדומיינים חדשים
-יתווספו אוטומטית לחשבון שלך.
+שימו לב שזה אמור להתרחש רק לאחר תום תקופת הניסיון. בתקופת הניסיון, כל הבקשות מדומיינים חדשים יתווספו אוטומטית לחשבונכם.
 
-### תגובות שהועברו לא מוצגות להתקנות מותאמות
+### תגובות שהועתקו לא מוצגות בהתקנות מותאמות
 
-בדרך כלל זה קורה כאשר התגובות המיובאות מקושרות ל-`Page ID`, ואתה מעביר URL
-(או אין ערך, ובמקרה זה הוא משתמש ב-URL של הדף).
+בדרך כלל זה קורה כאשר ההערות המיוצאות קשורות ל-`Page ID`, ואתה מעביר כתובת URL (או אין ערך, במקרה זה היא מייצרת כברירת מחדל את ה-URL של הדף).
 
-אתה יכול לבצע דיבוג על ידי [ייצוא התגובות שלך](https://fastcomments.com/auth/my-account/manage-data/export) וצפייה בעמודת `URL ID` (כרגע עמודה `B`).
+תוכל לאבחן זאת על ידי [ייצוא ההערות שלך](https://fastcomments.com/auth/my-account/manage-data/export) וצפייה בעמודת `URL ID` (כעת עמודה `B`).
 
-ודא שהערכים שאתה רואה בעמודת `URL ID` הם אותם ערכים שאתה מעביר להגדרות הווידג'ט
-כפרמטר `urlId`.
+ודא שהערכים שאתה רואה בעמודת `URL ID` הם אותם הערכים שאתה מעביר לקונפיגורציית הווידג'ט כפרמטר `urlId`.
 
-להסבר נוסף, נסה לקרוא את [התיעוד שלנו על איך תגובות מקושרות לדפים ומאמרים](/guide-customizations-and-configuration.html#url-id).
+להסבר נוסף, נסה לקרוא את [תיעוד: כיצד תגובות מקושרות לדפים ומאמרים](/guide-customizations-and-configuration.html#url-id).
 
-אם כל השאר נכשל, [צור איתנו קשר](https://fastcomments.com/auth/my-account/help).
+אם כל השאר נכשל, [פנו אלינו](https://fastcomments.com/auth/my-account/help).
 
-### ווידג'ט התגובות לא מוצג
+### הווידג'ט של ההערות לא מוצג
 
-אם ווידג'ט התגובות לא מוצג, בדוק את קונסולת המפתחים של Chrome לשגיאות.
+אם ווידג'ט ההערות לא מוצג, בדוק את קונסול המפתחים של Chrome לשגיאות.
 
-עבור רוב התצורות השגויות, ווידג'ט התגובות יציג לפחות שגיאה בדף אם הוא
-יכול לטעון. לראות כלום הוא בדרך כלל אינדיקציה לשגיאת סקריפט.
+ברוב מקרי התצורה השגויה, הווידג'ט של ההערות לפחות יציג שגיאה בעמוד אם הוא מצליח להיטען. אי־הצגה כללית בדרך כלל מעידה על שגיאת סקריפט.
 
-### הגדרות רצויות לא עובדות כצפוי
+### התצורה הרצויה לא פועלת כמצופה
 
-נסה את [תוסף Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) שלנו כדי לראות אילו
-הגדרות מועברות לווידג'ט התגובות. אם כל השאר נכשל, צלם צילום מסך של מה שתוסף Chrome אומר
-ו[צור איתנו קשר](https://fastcomments.com/auth/my-account/help).
+נסו את [ההרחבה של Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) כדי לראות איזו תצורה הווידג'ט מקבל. אם כלום לא עוזר, צלמו צילום מסך של מה שההרחבה מציגה ו[פנו אלינו](https://fastcomments.com/auth/my-account/help).
 
-### תגובות חסרות באותו URL עם hash bang שונה
+### חסרות תגובות באותו URL עם Hash Bang שונה
 
-כברירת מחדל, FastComments ישתמש ב-URL של הדף עבור ה-"bucket" בו התגובות מאוחסנות. אם ה-URLs שלך כוללים `#hashbangs`, ו-`#hashbangs` אלו
-לא אמורים להיות חלק מהמזהה שמזהה שרשור תגובות, אנחנו יכולים פשוט להתעלם מערך ה-hash bang, לדוגמה:
+ברירת המחדל, FastComments ישתמש ב-URL של הדף כ"פתיחה" (bucket) לאחסון התגובות. אם ה-URLים שלך כוללים `#hashbangs`, ואלה לא אמורים להיות חלק מהמזהה שמזהה את שרשור התגובות, נוכל פשוט להתעלם מערך ה-hash bang, לדוגמה:
 
-[inline-code-attrs-start title = 'דוגמה להתעלמות מ-hash bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'התעלמות מ־Hash Bangs — דוגמה'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.href.replace(location.hash, ''),
     urlId: location.href.replace(location.hash, '')
-});
+}];
 </script>
 [inline-code-end]
 
-שים לב שלאחר שינוי זה, יהיה צורך לבצע מיגרציה לתגובות קיימות. [לשם כך, צור איתנו קשר.](https://fastcomments.com/auth/my-account/help)
+שימו לב כי לאחר ביצוע שינוי זה, יידרש לבצע מיגרציה עבור ההערות הקיימות. [לשם כך, פנו אלינו.](https://fastcomments.com/auth/my-account/help)
 
-### פרמטרים של URL query משפיעים על הווידג'ט
+### פרמטרי שאילתה ב-URL שמשפיעים על הווידג'ט
 
-כברירת מחדל, FastComments ישתמש ב-URL של הדף עבור ה-"bucket" בו התגובות מאוחסנות. אם ה-URLs שלך כוללים פרמטרי query
-שלא אמורים להיות חלק מהמזהה שמזהה שרשור תגובות, אנחנו יכולים פשוט להתעלם מהם, לדוגמה:
+ברירת המחדל, FastComments ישתמש ב-URL של הדף כ"פתיחה" (bucket) לאחסון התגובות. אם ה-URLים שלך כוללים פרמטרי שאילתה שאינם אמורים להיות חלק מהמזהה שמזהה את שרשור התגובות, נוכל פשוט להתעלם מהם, לדוגמה:
 
-[inline-code-attrs-start title = 'התעלמות מפרמטרי query'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'התעלמות מפרמטרי שאילתה'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.protocol + '//' + location.host + location.pathname,
     urlId: location.pathname
-});
+}];
 </script>
 [inline-code-end]
 
-שים לב שלאחר שינוי זה, יהיה צורך לבצע מיגרציה לתגובות קיימות. [לשם כך, צור איתנו קשר.](https://fastcomments.com/auth/my-account/help)
+שימו לב כי לאחר ביצוע שינוי זה, יידרש לבצע מיגרציה עבור ההערות הקיימות. [לשם כך, פנו אלינו.](https://fastcomments.com/auth/my-account/help)
 
-### לא מקבל מיילים
+### לא מקבלים אימיילים
 
-ב-FastComments, אנו משקיעים מאמץ רב כדי להבטיח שמשלוח המיילים שלנו יהיה אמין ככל האפשר.
-עם זאת, חלק מספקי המייל ידועים כקשים למשלוח אמין. בדוק את תיקיית הספאם שלך
-להודעות מ-fastcomments.com.
+ב-FastComments אנו משקיעים מאמצים רבים כדי להבטיח שהשליחה של האימיילים תהיה אמינה ככל האפשר. עם זאת, ישנם ספקי אימייל שקשה מאוד למסור אליהם בצורה אמינה. בדקו את תיקיית הספאם עבור הודעות מ-fastcomments.com.
 
-אם [תיצור איתנו קשר](https://fastcomments.com/auth/my-account/help) אנחנו בדרך כלל יכולים לספק
-יותר תובנות למה אתה אולי לא רואה מיילים מאיתנו.
+אם [פניתם אלינו](https://fastcomments.com/auth/my-account/help) אנו בדרך כלל יכולים לספק תובנות נוספות מדוע ייתכן שאינכם רואים אימיילים מאיתנו.
+
+---

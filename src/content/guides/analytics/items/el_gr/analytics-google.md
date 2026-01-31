@@ -1,18 +1,19 @@
-Μπορούμε να διαμορφώσουμε το FastComments ώστε να ειδοποιεί το Google Analytics 4 όταν κάποιος αλληλεπιδρά με το widget σχολίων.
+Μπορούμε να ρυθμίσουμε το FastComments ώστε να ειδοποιεί το Google Analytics 4 όταν κάποιος αλληλεπιδρά με το widget των σχολίων.
 
-Μπορούμε να παρακολουθούμε όταν οι χρήστες:
+Μπορούμε να παρακολουθούμε πότε οι χρήστες:
 
 - Σχολιάζουν.
 - Ψηφίζουν.
 
-Εδώ είναι ένα παράδειγμα κώδικα για αυτό:
+Ακολουθεί ένα παράδειγμα κώδικα για αυτό:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,13 @@
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Αυτό θα προσθέσει δύο συμβάντα:
+Αυτό θα προσθέσει δύο γεγονότα:
 
 - Ετικέτα: `Comment Posted`, Κατηγορία: `Engagement`, ID: `post_comment`
 - Ετικέτα: `User Voted on a Comment`, Κατηγορία: `Engagement`, ID: `vote_comment`
+
+---

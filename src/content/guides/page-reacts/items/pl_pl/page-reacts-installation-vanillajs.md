@@ -1,19 +1,20 @@
-Dla Page Reacts musimy zdecydować o dwóch rzeczach:
+W przypadku Page Reacts musimy zdecydować o dwóch rzeczach:
 
-- Jakie obrazy reakcji zastosować.
-- Krótki `id` do nazwania każdej reakcji.
+- Jakie obrazy reakcji użyć.
+- Krótkie `id` do nazwania każdej reakcji.
 
 Opcjonalnie:
 
-- Możesz również określić opcjonalne osobne obrazy dla zaznaczonych/niezaznaczonych reakcji.
+- Możesz również zdefiniować opcjonalne osobne obrazy dla reakcji zaznaczonych/niezaznaczonych.
 - Możesz zdecydować, czy chcesz pokazywać listę użytkowników, którzy zareagowali, gdy najedziesz myszką na jedną z reakcji. 
 
 [inline-code-attrs-start title = 'Przykład kodu Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,8 +26,10 @@ Opcjonalnie:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Konfiguracja dla bibliotek frontendowych takich jak React, Angular i inne jest taka sama.
+Konfiguracja dla bibliotek frontendowych takich jak React, Angular itp. jest taka sama.
+
+---

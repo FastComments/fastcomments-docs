@@ -1,4 +1,4 @@
-Ensuite, ouvrez le fichier `view.php`. Vous pouvez le faire avec `nano` :
+Ensuite, ouvrez le fichier `view.php`. Vous pouvez le faire avec `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
@@ -28,15 +28,16 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
@@ -46,8 +47,8 @@ Utilisez les touches fléchées pour positionner votre curseur avant la ligne "b
 Vous devriez obtenir quelque chose comme ceci :
 
 <div class="screenshot white-bg">
-    <div class="title">Exemple</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Exemple Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
 Enregistrez maintenant : 
@@ -56,4 +57,4 @@ Enregistrez maintenant :
 2. Appuyez sur `y`
 3. Appuyez sur `enter`
 
-C'est tout !
+Voilà !

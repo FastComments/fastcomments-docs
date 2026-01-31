@@ -21,10 +21,11 @@ Aqui está um exemplo com todos os callbacks usados:
 
 [inline-code-attrs-start title = 'Exemplos de Callbacks'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@ Aqui está um exemplo com todos os callbacks usados:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // retorne true para prevenir o comportamento padrão (abrir o perfil do usuário em fastcomments.com).
+            // return true; // retornar true para impedir o comportamento padrão (abrir o perfil de usuário em fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // simulando comportamento assíncrono (chamando API etc).
+            setTimeout(function() { // emulando comportamento assíncrono (chamando API, etc).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,13 +63,10 @@ Aqui está um exemplo com todos os callbacks usados:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // os comentários estão ordenados pelo critério padrão da página, que pode ser Mais Relevantes (ex: mais votados, etc.), ou Mais Recentes
+            // comments está ordenado pela ordenação padrão na página, que pode ser Mais Relevantes (ex: mais votados, etc.), ou Mais Recentes primeiro
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
-
-
----

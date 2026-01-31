@@ -1,4 +1,5 @@
-Please follow the [installation procedure](#installation--usage) and then run the following:
+---
+Please follow the [installation procedure](#installation-usage-readme-generated) and then run the following:
 
 ```php
 <?php
@@ -7,13 +8,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment the line below to set up a prefix (e.g. Bearer) for the API key, if needed
+// Uncomment below to set up a prefix (e.g. Bearer) for the API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want to use a custom HTTP client, pass a client that implements `GuzzleHttp\ClientInterface`.
+    // If you want to use a custom HTTP client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional; `GuzzleHttp\Client` will be used by default.
     new GuzzleHttp\Client(),
     $config
@@ -29,3 +29,4 @@ try {
 }
 
 ```
+---

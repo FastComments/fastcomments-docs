@@ -1,0 +1,37 @@
+## Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | No |  |
+| bulk_create_hash_tags_body | models::BulkCreateHashTagsBody | No |  |
+
+## Response
+
+Returns: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_hash_tags_bulk_200_response.rs)
+
+## Example
+
+[inline-code-attrs-start title = 'add_hash_tags_bulk Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<(), Error> {
+    let params: AddHashTagsBulkParams = AddHashTagsBulkParams {
+        tenant_id: Some("acme-corp-tenant".to_string()),
+        bulk_create_hash_tags_body: Some(models::BulkCreateHashTagsBody {
+            tags: vec![
+                models::BulkCreateHashTagsBodyTagsInner {
+                    tag: "news/article".to_string(),
+                    selector: ".article-content".to_string(),
+                },
+                models::BulkCreateHashTagsBodyTagsInner {
+                    tag: "tech/review".to_string(),
+                    selector: ".review-body".to_string(),
+                },
+            ],
+        }),
+    };
+
+    let response: AddHashTagsBulk200Response = add_hash_tags_bulk(&configuration, params).await?;
+    let _ = response;
+    Ok(())
+}
+[inline-code-end]

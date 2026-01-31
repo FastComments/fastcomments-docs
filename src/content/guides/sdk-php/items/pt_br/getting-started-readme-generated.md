@@ -1,5 +1,4 @@
----
-Siga o [procedimento de instalação](#installation--usage) e então execute o seguinte:
+Por favor, siga o [procedimento de instalação](#installation-usage-readme-generated) e então execute o seguinte:
 
 ```php
 <?php
@@ -7,15 +6,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure API key authorization: api_key
+// Configurar autorização da chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Descomente abaixo para configurar prefixo (por exemplo, Bearer) para a chave de API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional; `GuzzleHttp\Client` será usado por padrão.
     new GuzzleHttp\Client(),
     $config
 );
@@ -30,4 +29,3 @@ try {
 }
 
 ```
----

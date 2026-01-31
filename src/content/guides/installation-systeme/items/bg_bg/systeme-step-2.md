@@ -1,18 +1,18 @@
-Сега ще копираме нашия код. Ако фрагментът от кода казва `tenantId: "demo"` на ред 6 тогава трябва да влезете в своя акаунт в FastComments
-и след това да презаредите тази страница така, че копираният фрагмент от кода да съдържа идентификатора на вашия акаунт.
+Сега ще копираме кода си. Ако в кода (snippet) пише `tenantId: "demo"` на ред 6, влезте в своя FastComments акаунт и след това презаредете тази страница, за да копираният фрагмент от кода съдържа идентификатора на вашия акаунт.
 
 [inline-code-attrs-start title = 'Фрагмент за Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
-Сега го поставете в редактора и натиснете 'Запазване':
+Сега го поставете в редактора и кликнете върху Запази:
 
 <div class="screenshot white-bg">
     <div class="title">Добавете кода на FastComments</div>

@@ -1,13 +1,13 @@
-Sonraki adım, FastComments.com widget kodunu nereye ekleyeceğimizi belirlemektir.
+Next we need to identify where to add the FastComments.com widget code.
 
-Varsayılan `casper` temasını kullanıyorsanız, `82` satırında şu şekilde bir bölüm görürsünüz:
+If you're using the default `casper` theme, you'll see a section like this at line `82`:
 
 <div class="screenshot white-bg">
     <div class="title">Devre Dışı Yorum Bölümü</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Devre Dışı Yorum Bölümü" />
 </div>
 
-Diğer temaları kullanıyorsanız, bunu görmezsiniz ve bu kodu son `</section>` etiketinden sonra eklemeniz gerekir:
+If you're using other themes, you won't see this, and will need to add this code after the last `</section>`:
 
 [inline-code-attrs-start title = 'Bölüm Örneği'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +15,18 @@ Diğer temaları kullanıyorsanız, bunu görmezsiniz ve bu kodu son `</section>
 </section>
 [inline-code-end]
 
-Elinizde şu şekilde bir şey hazır olmalıdır:
+You should have something like this ready:
 
 <div class="screenshot white-bg">
-    <div class="title">Yorum Kodu İçin Şablon Hazır</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Yorum Kodu İçin Şablon Hazır" />
+    <div class="title">Yorum Kodu İçin Hazır Şablon</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Yorum Kodu İçin Hazır Şablon" />
 </div>
 
-Hazır olduğunda, FastComments.com widget kodunu kopyalayın:
+Once ready, copy the FastComments.com widget code:
 
-[inline-code-attrs-start title = 'Ghost FastComments.com Yorum Kod Parçası'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ghost FastComments.com Yorum Kod Kesiti'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,21 +46,22 @@ Hazır olduğunda, FastComments.com widget kodunu kopyalayın:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
 
-...ve şöyle görünmelidir:
+...and it should look like this:
 
 <div class="screenshot white-bg">
     <div class="title">FastComments.com Yorum Kodunu Ekle</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="FastComments.com Yorum Kodunu Ekle" />
 </div>
 
-Kodlama tamam. Şimdi temanızı yeniden içe aktarmamız gerekiyor!
+Coding done. Now we just have to re-import our theme!

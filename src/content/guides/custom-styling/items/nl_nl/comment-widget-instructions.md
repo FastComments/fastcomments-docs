@@ -1,13 +1,14 @@
-## Hoe de stijl van de commentaarwidget aan te passen
+## Hoe de stijlen van de commentaarwidget aan te passen
 
-U kunt de styling van de commentaarwidget op twee manieren aanpassen:
+Je kunt de opmaak van de commentaarwidget op twee manieren aanpassen:
 
-### Optie 1: Via de customCSS-parameter
+### Optie 1: Via customCSS-parameter
 
-Geef uw aangepaste CSS als een string door aan de `customCSS`-parameter wanneer u de widget initialiseert:
+Geef je aangepaste CSS als een string door aan de `customCSS`-parameter bij het initialiseren van de widget:
 
 ```javascript
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: 'your-tenant-id',
     customCSS: `
         .fast-comments .comment {
@@ -15,21 +16,21 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
             border-radius: 8px !important;
         }
     `
-});
+}];
 ```
 
-### Optie 2: Via het Admin-dashboard
+### Optie 2: Via Admin-dashboard
 
-1. Ga naar de [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget) in uw beheerdersdashboard
-2. Scrol naar de sectie "Custom CSS" onder "Advanced"
-3. Voer uw aangepaste CSS in
-4. Klik op "Save"
+1. Ga naar de [Pagina 'Widget aanpassen'](https://fastcomments.com/auth/my-account/customize-widget) in je admin-dashboard
+2. Scrol naar de "Aangepaste CSS"-sectie onder "Geavanceerd"
+3. Voer je aangepaste CSS in
+4. Klik op "Opslaan"
 
-Uw aangepaste CSS wordt toegepast op alle commentaarwidgets op uw site.
+Je aangepaste CSS wordt toegepast op alle commentaarwidgets op je site.
 
 ## Tips
 
-- Gebruik `!important` om standaardstijlen indien nodig te overschrijven
-- Richt u op specifieke selectoren om te voorkomen dat andere delen van uw site worden beïnvloed
-- Test uw CSS in verschillende browsers voor compatibiliteit
-- De widget gebruikt standaard CSS - geen speciale preprocessors nodig
+- Gebruik `!important` om standaardstijlen te overschrijven indien nodig
+- Richt je op specifieke selectors om te voorkomen dat andere delen van je site worden beïnvloed
+- Test je CSS in verschillende browsers voor compatibiliteit
+- De widget gebruikt standaard CSS - geen speciale preprocessors vereist

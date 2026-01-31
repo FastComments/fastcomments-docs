@@ -1,47 +1,52 @@
-Zdaj dodajmo kodo našega pripomočka.
+Zdaj dodajmo kodo našega widgeta.
 
-Kopirajte kodo spodaj. Prepričajte se, da ste prijavljeni v [fastcomments.com](https://fastcomments.com) 
-in ponovno naložite to stran, če niste, tako da bo koda vnaprej izpolnjena z vašimi podatki računa, sicer bo prikazana demo koda.
+Kopirajte spodnjo kodo. Poskrbite, da ste prijavljeni na [fastcomments.com](https://fastcomments.com) 
+in po potrebi znova naložite to stran, da se koda samodejno izpolni z informacijami o vašem računu; sicer bo prikazana demo koda.
 
 Zdaj kopirajmo kodo:
 
 [inline-code-attrs-start title = 'Koda komentarjev Zyro'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Zdaj se vrnimo v urejevalnik naše strani in kliknimo `Enter code`:
+Zdaj se vrnimo v urejevalnik spletne strani in kliknite `Enter code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Vnesi kodo</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-2.png" alt="Vnesi kodo" />
+    <div class="title">Vnesite kodo</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-2.png" alt="Vnesite kodo" />
 </div>
 
 ### Opomba!
 
-Pomembno je, da uporabite zgornjo kodo in ne odlomkov kode iz druge dokumentacije, saj je ta odlomek posebej prilagojen za Zyro.
+Pomembno je, da uporabite zgornjo kodo in ne odlomkov kode iz druge dokumentacije, saj je ta košček kode ustvarjen posebej
+za Zyro.
 
-Zdaj bi morali imeti nekaj podobnega naslednjemu, kar se prikaže prazno. To je pričakovano. Premaknite miško nad območje, kjer naj bi bil pripomoček:
-
-<div class="screenshot white-bg">
-    <div class="title">Pripomoček je dodan</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Pripomoček je dodan" />
-</div>
-
-Zdaj povlecite pripomoček na želeno velikost, videli boste, da se prikaže:
+Zdaj bi morali imeti nekaj takega, kar se zdi prazno. To je pričakovano. Premaknite miško nad območje
+kjer bi moral biti widget:
 
 <div class="screenshot white-bg">
-    <div class="title">Prilagodi velikost</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Prilagodi velikost" />
+    <div class="title">Koda widgeta dodana</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Koda widgeta dodana" />
 </div>
 
-...nato predogledajte in shranite!
+Zdaj povlecite widget na želeno velikost; videli boste, da se prikaže:
+
+<div class="screenshot white-bg">
+    <div class="title">Prilagodite velikost</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Prilagodite velikost" />
+</div>
+
+...in sedaj predogledajte in shranite!
+
+---

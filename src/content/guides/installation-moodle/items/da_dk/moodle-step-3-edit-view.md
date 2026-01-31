@@ -1,19 +1,19 @@
 ---
-Next, open the `view.php` file. You can do this with `nano`:
+Åbn nu filen `view.php`. Du kan gøre dette med `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
+Brug piletasterne til at rulle ned til bunden. Find noget tekst, der siger noget i stil med:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Now let's copy the code that adds the comment widget:
+Kopier nu koden, der tilføjer kommentar-widget'en:
 
-[inline-code-attrs-start title = 'Kode til Moodle-kommentarer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Moodle-kommentarkode'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -29,34 +29,34 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use the arrow keys to position your cursor before the "box_end" line, and paste.
+Brug piletasterne til at placere din markør før linjen "box_end", og indsæt.
 
-You should have something like this:
+Du skulle nu have noget i stil med dette:
 
 <div class="screenshot white-bg">
-    <div class="title">Eksempel</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle-eksempel" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
-Now save: 
+Gem nu: 
 
-1. Press `ctrl+x`
-2. Press `y`
-3. Press `enter`
+1. Tryk `ctrl+x`
+2. Tryk `y`
+3. Tryk `enter`
 
-That's it!
-
+Det var det!
 ---

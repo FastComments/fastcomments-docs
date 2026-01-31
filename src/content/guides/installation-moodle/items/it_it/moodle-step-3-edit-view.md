@@ -4,15 +4,15 @@ Successivamente, apri il file `view.php`. Puoi farlo con `nano`:
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Usa i tasti freccia per scorrere fino in fondo. Cerca un testo che dica qualcosa del tipo:
+Usa i tasti freccia per scorrere fino in fondo. Cerca un testo simile a:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Ora copiamo il codice che aggiunge il widget dei commenti:
+Adesso copiamo il codice che aggiunge il widget dei commenti:
 
-[inline-code-attrs-start title = 'Codice commenti Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Codice Commenti Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,15 +28,16 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
@@ -46,8 +47,8 @@ Usa i tasti freccia per posizionare il cursore prima della riga "box_end" e inco
 Dovresti avere qualcosa del genere:
 
 <div class="screenshot white-bg">
-    <div class="title">Example</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
+    <div class="title">Esempio</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Esempio Moodle" />
 </div>
 
 Ora salva: 

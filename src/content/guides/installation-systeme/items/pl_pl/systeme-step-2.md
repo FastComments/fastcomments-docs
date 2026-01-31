@@ -1,25 +1,26 @@
 ---
-Teraz skopiujemy nasz kod. Jeśli fragment kodu pokazuje `tenantId: "demo"` w linii 6, powinieneś zalogować się na swoje konto FastComments
-i odświeżyć tę stronę, aby skopiowany fragment kodu zawierał identyfikator twojego konta.
+Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 6 then you should log into your FastComments account
+and then refresh this page so the copied code snippet has your account id.
 
 [inline-code-attrs-start title = 'Fragment Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
-Teraz wklej go do edytora i kliknij Zapisz:
+Now paste it into the editor and click save:
 
 <div class="screenshot white-bg">
     <div class="title">Dodaj kod FastComments</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Dodaj kod FastComments" />
 </div>
 
-... następnie zapisz swoją stronę. To wszystko!
+... then save your site. That's it!
 
 ---

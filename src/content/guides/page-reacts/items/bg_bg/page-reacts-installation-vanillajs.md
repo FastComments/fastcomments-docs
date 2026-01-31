@@ -1,19 +1,20 @@
-За реакциите на страницата трябва да решим две неща:
+За Page Reacts трябва да вземем решение по два въпроса:
 
-- Кои изображения за реакциите да използваме.
-- Кратък `id`, за да именуваме всяка реакция.
+- Кои изображения за реакции да използваме.
+- Кратък `id`, за да наименувате всяка реакция.
 
 По избор:
 
-- Можете също да зададете по избор отделни изображения за избрани/неизбрани реакции.
-- Можете да решите дали да показвате списъка с потребители, които са реагирали, когато преместите мишката върху една от реакциите. 
+- Можете също да зададете отделни изображения за избрани/неизбрани реакции.
+- Можете да решите дали да показвате списъка с потребители, които са реагирали, при преместване на мишката върху една от реакциите. 
 
-[inline-code-attrs-start title = 'Примерен код за реакции на страницата'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Примерен код за Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,8 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
 Конфигурацията за фронтенд библиотеките като React, Angular и т.н. е същата.
-
----

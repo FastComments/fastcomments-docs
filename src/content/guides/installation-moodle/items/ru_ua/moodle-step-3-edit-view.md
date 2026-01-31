@@ -1,16 +1,17 @@
-Далее откройте файл `view.php`. Это можно сделать с помощью `nano`:
+---
+Далее откройте файл `view.php`. Вы можете сделать это с помощью `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Используйте клавиши со стрелками, чтобы прокрутить вниз до конца. Найдите строку с текстом примерно такого вида:
+Используйте клавиши со стрелками, чтобы прокрутить вниз до конца. Найдите текст примерно такого вида:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Теперь скопируем код, который добавляет виджет комментариев:
+Теперь давайте скопируем код, который добавляет виджет комментариев:
 
 [inline-code-attrs-start title = 'Код комментариев Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,22 +29,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Используйте клавиши со стрелками, чтобы поместить курсор перед строкой "box_end", и вставьте.
+Используйте клавиши со стрелками, чтобы расположить курсор перед строкой "box_end", и вставьте.
 
-У вас должно получиться примерно так:
+У вас должно получиться примерно следующее:
 
 <div class="screenshot white-bg">
     <div class="title">Пример</div>
@@ -57,3 +59,5 @@ if ($id) {
 3. Нажмите `enter`
 
 Готово!
+
+---

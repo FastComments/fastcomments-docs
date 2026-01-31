@@ -1,16 +1,16 @@
-Next, open the `view.php` file. You can do this with `nano`:
+Στη συνέχεια, ανοίξτε το αρχείο `view.php`. Μπορείτε να το κάνετε με `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
+Χρησιμοποιήστε τα βελάκια για να μετακινηθείτε προς τα κάτω μέχρι το τέλος. Ψάξτε για κάποιο κείμενο που λέει κάτι σαν:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Now let's copy the code that adds the comment widget:
+Τώρα ας αντιγράψουμε τον κώδικα που προσθέτει το widget σχολίων:
 
 [inline-code-attrs-start title = 'Κώδικας σχολίων Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use the arrow keys to position your cursor before the "box_end" line, and paste.
+Χρησιμοποιήστε τα βελάκια για να τοποθετήσετε τον κέρσορα πριν από τη γραμμή "box_end" και επικολλήστε.
 
-You should have something like this:
+Θα πρέπει να έχετε κάτι σαν αυτό:
 
 <div class="screenshot white-bg">
     <div class="title">Παράδειγμα</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Παράδειγμα Moodle" />
 </div>
 
-Now save: 
+Τώρα αποθηκεύστε: 
 
 1. Πατήστε `ctrl+x`
 2. Πατήστε `y`
 3. Πατήστε `enter`
 
-That's it!
+Αυτό είναι!

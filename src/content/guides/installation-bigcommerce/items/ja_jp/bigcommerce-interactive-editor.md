@@ -1,35 +1,17 @@
 ---
-FastComments を BigCommerce の Page Builder 経由で追加することは推奨されません。そうするとコードを目的の各ページに手動で追加する必要があるためです。
+FastComments を BigCommerce のページビルダー経由で追加することは推奨されません。そうすると、コードを希望する各ページに手動で追加する必要があるためです。
 
-ただし、それでも追加したい場合は、次のコードスニペットを使用する必要があります。他のチュートリアルのコードスニペットは、BigCommerce の性質上動作しません:
+ただし、これを行いたい場合は、次のコードスニペットを使用する必要があります。BigCommerce の特性上、他のチュートリアルのコードスニペットは機能しません:
 
-[inline-code-attrs-start title = 'BigCommerce の Page Builder スニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'BigCommerce ページビルダー用スニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        let loaded = false;
-        function attemptLoad() {
-            if (loaded) {
-                return;
-            }
-            if (!window.FastCommentsUI) {
-                return;
-            }
-            FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: "demo"
-            });
-            loaded = true;
-        }
-        attemptLoad();
-        const interval = setInterval(function () {
-            attemptLoad();
-            if (loaded) {
-                clearInterval(interval);
-            }
-        }, 300);
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: "demo"
+    }];
 </script>
 [inline-code-end]
 

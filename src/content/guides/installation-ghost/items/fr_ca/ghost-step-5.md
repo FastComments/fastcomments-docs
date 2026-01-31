@@ -1,13 +1,13 @@
 Ensuite, nous devons identifier où ajouter le code du widget FastComments.com.
 
-Si vous utilisez le thème par défaut `casper`, vous verrez une section comme celle-ci à la ligne `82`:
+Si vous utilisez le thème par défaut `casper`, vous verrez une section comme celle-ci à la ligne `82` :
 
 <div class="screenshot white-bg">
     <div class="title">Section de commentaires désactivée</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Section de commentaires désactivée" />
 </div>
 
-Si vous utilisez d'autres thèmes, vous ne verrez pas cela, et devrez ajouter ce code après le dernier `</section>`:
+Si vous utilisez d'autres thèmes, vous ne verrez pas ceci, et devrez ajouter ce code après le dernier `</section>` :
 
 [inline-code-attrs-start title = 'Exemple de section'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +15,18 @@ Si vous utilisez d'autres thèmes, vous ne verrez pas cela, et devrez ajouter ce
 </section>
 [inline-code-end]
 
-Vous devriez avoir quelque chose comme ceci de prêt:
+Vous devriez avoir quelque chose comme ceci prêt :
 
 <div class="screenshot white-bg">
     <div class="title">Modèle prêt pour le code de commentaires</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Modèle prêt pour le code de commentaires" />
 </div>
 
-Une fois prêt, copiez le code du widget FastComments.com:
+Une fois prêt, copiez le code du widget FastComments.com :
 
 [inline-code-attrs-start title = 'Extrait de code de commentaire FastComments.com pour Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,23 +46,22 @@ Une fois prêt, copiez le code du widget FastComments.com:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
 
-...et cela devrait ressembler à ceci:
+...and it should look like this:
 
 <div class="screenshot white-bg">
     <div class="title">Ajouter le code de commentaires FastComments.com</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Ajouter le code de commentaires FastComments.com" />
 </div>
 
-Le codage est terminé. Il ne nous reste plus qu'à réimporter notre thème!
-
----
+Le codage est terminé. Maintenant, il ne reste plus qu'à réimporter notre thème !

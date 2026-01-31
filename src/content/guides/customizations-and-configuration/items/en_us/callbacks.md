@@ -21,10 +21,11 @@ Here's an example with all callbacks used:
 
 [inline-code-attrs-start title = 'Callbacks Examples'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -66,6 +67,6 @@ Here's an example with all callbacks used:
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

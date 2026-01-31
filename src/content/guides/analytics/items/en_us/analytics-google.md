@@ -9,10 +9,11 @@ Here's an example code snippet to do that:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,7 +27,7 @@ Here's an example code snippet to do that:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
@@ -34,3 +35,5 @@ This will add two events:
 
 - Label: `Comment Posted`, Category: `Engagement`, ID: `post_comment`
 - Label: `User Voted on a Comment`, Category: `Engagement`, ID: `vote_comment`
+
+---

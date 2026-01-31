@@ -1,4 +1,4 @@
-Here are some symptoms we see encountered frequently, and common solutions. 
+Here are some issues we encounter frequently, and common solutions. 
 
 ### "This is a demo" Message
 
@@ -32,13 +32,13 @@ If all else fails, [reach out to us](https://fastcomments.com/auth/my-account/he
 
 If the comment widget isn't showing, check the Chrome developer console for errors.
 
-For most misconfiguration, the comment widget will at least show an error on the page if it is
+For most misconfigurations, the comment widget will at least show an error on the page if it is
 able to load. Seeing nothing is usually an indication of a scripting error.
 
 ### Desired Configuration Not Working as Expected
 
 Try our [Chrome extension](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) to see what
-configuration the comment widget is being passed. If all fails, take as screenshot of what the chrome extension says
+configuration the comment widget is being passed. If all else fails, take a screenshot of what the Chrome extension shows
 and [reach out to us](https://fastcomments.com/auth/my-account/help).
 
 ### Comments Missing on Same URL With Different Hash Bang
@@ -48,18 +48,19 @@ should not be part of the identifier that identifies a comment thread, we can si
 
 [inline-code-attrs-start title = 'Ignore Hash Bangs Example'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.href.replace(location.hash, ''),
     urlId: location.href.replace(location.hash, '')
-});
+}];
 </script>
 [inline-code-end]
 
-Note that after making this change, a migration will have to be preformed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
+Note that after making this change, a migration will have to be performed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
 
 ### URL Query Parameters Affecting Widget
 
@@ -68,22 +69,23 @@ that should not be part of the identifier that identifies a comment thread, we c
 
 [inline-code-attrs-start title = 'Ignore Query Parameters'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.protocol + '//' + location.host + location.pathname,
     urlId: location.pathname
-});
+}];
 </script>
 [inline-code-end]
 
-Note that after making this change, a migration will have to be preformed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
+Note that after making this change, a migration will have to be performed for existing comments. [For that, reach out to us.](https://fastcomments.com/auth/my-account/help)
 
 ### Not Receiving Emails
 
-At FastComments, we put a lot of work into ensuring our delivery of emails is as reliable as
+At FastComments, we work hard to ensure our email delivery is as reliable as
 possible. However, some email providers are notoriously difficult to deliver to reliably. Check your spam
 folder for messages from fastcomments.com.
 

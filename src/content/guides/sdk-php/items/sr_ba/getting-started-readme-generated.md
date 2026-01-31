@@ -1,4 +1,4 @@
-Молимо пратите [поступак инсталације](#installation--usage) и затим покрените следеће:
+Molimo slijedite [postupak instalacije](#installation-usage-readme-generated), a zatim pokrenite sljedeće:
 
 ```php
 <?php
@@ -6,15 +6,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментаришите испод да бисте поставили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod kako biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевани.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao zadani.
     new GuzzleHttp\Client(),
     $config
 );

@@ -1,19 +1,19 @@
----
-On-Premのフロントエンド用コードスニペットとライブラリはSaaS製品と同じです。ただし、`apiHost` と正しいスクリプトパスを指定する必要があります：
+フロントエンドのコードスニペットとライブラリは、オンプレミス向けでも SaaS 製品と同じです。ただし、`apiHost` と正しいスクリプトパスを指定する必要があります：
 
-[inline-code-attrs-start title = 'オンプレ用のコメントコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'オンプレミス用コメントコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<script async src="https://my.host.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... SSO のペイロードなども渡すことができます。
-    });
+        // ... SSO ペイロードなども渡せます。
+    }];
 </script>
 [inline-code-end]
 
-上記は非常に単純な例です。1stパーティの React、Angular、Vue、Svelte などのライブラリを使用することもできます。
+上は非常に簡単な例です。公式の React、Angular、Vue、Svelte などのライブラリも使用できます。
 
 ---

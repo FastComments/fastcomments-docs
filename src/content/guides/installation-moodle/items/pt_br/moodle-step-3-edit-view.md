@@ -4,7 +4,7 @@ Em seguida, abra o arquivo `view.php`. Você pode fazer isso com `nano`:
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use as teclas de seta para rolar até o final. Procure por algum texto que diga algo como:
+Use as teclas de seta para descer até o final. Procure por um texto que diga algo como:
 
 ```php
 echo $OUTPUT->box_end();
@@ -28,22 +28,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use as teclas de seta para posicionar seu cursor antes da linha "box_end", e cole.
+Use as teclas de seta para posicionar o cursor antes da linha "box_end" e cole.
 
-Você deve ter algo como isto:
+Você deve ter algo parecido com isto:
 
 <div class="screenshot white-bg">
     <div class="title">Exemplo</div>

@@ -2,17 +2,18 @@ Podemos configurar FastComments para notificar a Google Analytics 4 cuando algui
 
 Podemos rastrear cuando los usuarios:
 
-- Comentan.
-- Votan.
+- Comentar.
+- Votar.
 
-Aquí hay un ejemplo de código para hacer eso:
+Aquí tienes un ejemplo de fragmento de código para hacerlo:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,13 @@ Aquí hay un ejemplo de código para hacer eso:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Esto agregará dos eventos:
+Esto añadirá dos eventos:
 
 - Etiqueta: `Comment Posted`, Categoría: `Engagement`, ID: `post_comment`
 - Etiqueta: `User Voted on a Comment`, Categoría: `Engagement`, ID: `vote_comment`
+
+---

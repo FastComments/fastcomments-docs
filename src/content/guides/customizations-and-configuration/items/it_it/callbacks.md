@@ -1,4 +1,4 @@
-Tutte le librerie per il widget dei commenti (attualmente Angular, React, Vue) supportano callback.
+Tutte le librerie per il widget dei commenti (attualmente Angular, React, Vue) supportano i callback.
 
 I callback sono specificati nell'oggetto di configurazione, con la stessa firma per ogni libreria.
 
@@ -15,16 +15,17 @@ I callback supportati sono:
 - onCommentSubmitStart
 - onCommentsRendered
 
-Le firme esatte possono essere trovate nelle [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
+Le firme esatte possono essere trovate nelle [definizioni TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
 Ecco un esempio con tutti i callback utilizzati:
 
 [inline-code-attrs-start title = 'Esempi di callback'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@ Ecco un esempio con tutti i callback utilizzati:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // restituisci true per impedire il comportamento predefinito (aprire il profilo utente su fastcomments.com).
+            // return true; // restituisci true per impedire il comportamento predefinito (apertura del profilo utente su fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // emulazione di comportamento asincrono (chiamata di API, ecc.).
+            setTimeout(function() { // emulazione di comportamento asincrono (chiamata alle API, ecc).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,13 +63,10 @@ Ecco un esempio con tutti i callback utilizzati:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // i commenti sono ordinati in base all'ordinamento predefinito della pagina che può essere "Più rilevanti" (es.: più votati, ecc.) o "Più recenti"
+            // comments sono ordinati secondo l'ordinamento predefinito della pagina, che può essere "Più rilevanti" (es.: i più votati, ecc.) oppure "Più recenti"
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
-
-
----

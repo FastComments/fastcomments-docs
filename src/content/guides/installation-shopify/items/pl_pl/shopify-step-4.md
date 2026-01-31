@@ -1,4 +1,3 @@
----
 Następnie przewiniemy w dół do linii `100`:
 
 <div class="screenshot white-bg">
@@ -6,21 +5,22 @@ Następnie przewiniemy w dół do linii `100`:
     <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-7-line-100.png" alt="Przewiń do linii 100" />
 </div>
 
-Teraz skopiuj następujący fragment kodu, który został stworzony **specjalnie dla Shopify - nie używaj fragmentów kodu z innych samouczków**:
+Teraz skopiuj poniższy fragment kodu, który jest zaprojektowany **konkretnie dla Shopify - nie używaj fragmentów kodu z innych samouczków**:
 
 [inline-code-attrs-start title = 'Fragment FastComments dla Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         urlId: window.location.pathname
-    });
+    }];
 </script>
 [inline-code-end]
 
-Teraz ustaw kursor na `linii 101` - tuż za `</div>` - i wklej. Powinieneś mieć coś takiego:
+Teraz chcemy umieścić kursor na `line 101` - right after the `</div>` - i wkleić. Powinno to wyglądać mniej więcej tak:
 
 <div class="screenshot white-bg">
     <div class="title">Dodaj kod FastComments</div>

@@ -1,17 +1,16 @@
----
 다음으로 `view.php` 파일을 엽니다. `nano`로 열 수 있습니다:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-화살표 키로 아래로 스크롤해 파일 끝으로 이동하세요. 다음과 비슷한 텍스트를 찾으세요:
+화살표 키를 사용하여 맨 아래로 스크롤하세요. 다음과 유사한 텍스트를 찾으세요:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-이제 댓글 위젯을 추가하는 코드를 복사합니다:
+이제 댓글 위젯을 추가하는 코드를 복사합시다:
 
 [inline-code-attrs-start title = 'Moodle 댓글 코드'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,34 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-화살표 키로 커서를 "box_end" 줄 앞에 위치시킨 후 붙여넣으세요.
+화살표 키로 커서를 "box_end" 줄 이전에 위치시키고 붙여넣으세요.
 
-다음과 유사해야 합니다:
+다음과 비슷해야 합니다:
 
 <div class="screenshot white-bg">
     <div class="title">예제</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle 예제" />
 </div>
 
-이제 저장하세요: 
+이제 저장: 
 
 1. Press `ctrl+x`
 2. Press `y`
 3. Press `enter`
 
-이것으로 완료입니다!
-
----
+그게 전부입니다!

@@ -1,16 +1,17 @@
-A continuación, abra el archivo `view.php`. Puede hacer esto con `nano`:
+---
+A continuación, abra el archivo `view.php`. Puede hacerlo con `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use las teclas de flecha para desplazarse hasta el final. Busque algún texto que diga algo como:
+Use las teclas de flecha para desplazarse hasta el final. Busque un texto que diga algo como:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Ahora copiemos el código que añade el widget de comentarios:
+Ahora copie el código que añade el widget de comentarios:
 
 [inline-code-attrs-start title = 'Código de comentarios de Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,22 +29,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use las teclas de flecha para posicionar el cursor antes de la línea "box_end" y pegar.
+Use las teclas de flecha para colocar el cursor antes de la línea "box_end" y pegue.
 
-Debería tener algo como esto:
+Debería tener algo así:
 
 <div class="screenshot white-bg">
     <div class="title">Ejemplo</div>
@@ -52,8 +54,10 @@ Debería tener algo como esto:
 
 Ahora guarde: 
 
-1. Presione `ctrl+x`
-2. Presione `y`
-3. Presione `enter`
+1. Press `ctrl+x`
+2. Press `y`
+3. Press `enter`
 
 ¡Eso es todo!
+
+---

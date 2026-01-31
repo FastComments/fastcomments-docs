@@ -1,25 +1,26 @@
-Сада ћемо додати код за наш видгет.
+Сада хајде да додамо код нашег видгета.
 
 Копирајте код испод. Уверите се да сте пријављени на [fastcomments.com](https://fastcomments.com) 
-и освежите ову страницу ако нисте, како би код био унапред попуњен информацијама о вашем налогу, иначе ће бити приказан демонстрациони код.
+и поново учитајте ову страницу ако нисте, како би код био аутоматски попуњен информацијама вашег налога, иначе ће показати демо код.
 
-Сада копирајмо код:
+Сада копирајте код:
 
-[inline-code-attrs-start title = 'Zyro код коментара'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Zyro kod komentara'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Сада се вратимо у наш алат за израду сајта и кликнемо на `Enter code`:
+Сада се вратимо у наш алат за прављење сајта и кликните на `Enter code`:
 
 <div class="screenshot white-bg">
     <div class="title">Унесите код</div>
@@ -28,20 +29,20 @@
 
 ### Напомена!
 
-Важно је да користите горњи код, а не исечке кода из друге документације, јер је овај исечак направљен посебно за Zyro.
+Важно је да користите горе наведени код, а не исечке кода из друге документације, јер је овај исечак специјално креиран за Zyro.
 
-Сада бисте требали имати нешто слично следећем, што изгледа празно. То је очекивано. Померите миша преко области где би требало да буде видгет:
-
-<div class="screenshot white-bg">
-    <div class="title">Видгет додат</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Видгет додат" />
-</div>
-
-Сада превуците видгет на жељену величину, видећете како се појављује:
+Сада би требало да имате нешто као следеће, што изгледа празно. То је очекивано. Померите миш преко области где би видгет требао да буде:
 
 <div class="screenshot white-bg">
-    <div class="title">Промените величину</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Промените величину" />
+    <div class="title">Код видгета додат</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Код видгета додат" />
 </div>
 
-...а сада прегледајте и сачувајте!
+Сада повуците видгет да одаберете жељену величину, видећете да се појављује:
+
+<div class="screenshot white-bg">
+    <div class="title">Промени величину</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Промени величину" />
+</div>
+
+...и сада прегледајте и сачувајте!

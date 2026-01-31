@@ -1,19 +1,20 @@
-Für Seitenreaktionen müssen wir zwei Dinge entscheiden:
+Bei Page Reacts müssen wir zwei Dinge festlegen:
 
 - Welche Reaktionsbilder verwendet werden sollen.
 - Eine kurze `id`, um jede Reaktion zu benennen.
 
 Optional:
 
-- Sie können außerdem optionale separate Bilder für ausgewählte/nicht ausgewählte Reaktionen definieren.
-- Sie können entscheiden, ob Sie die Liste der Nutzer anzeigen möchten, die reagiert haben, wenn Sie mit der Maus über eine der Reaktionen fahren. 
+- Sie können außerdem optional separate Bilder für ausgewählte und nicht ausgewählte Reaktionen definieren.
+- Sie können entscheiden, ob Sie die Liste der Benutzer, die reagiert haben, beim Überfahren einer der Reaktionen mit der Maus anzeigen möchten. 
 
-[inline-code-attrs-start title = 'Codebeispiel für Seitenreaktionen'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Codebeispiel für Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,10 @@ Optional:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Die Konfiguration für die React-, Angular- und andere Frontend-Bibliotheken ist dieselbe.
+Die Konfiguration für die Frontend-Bibliotheken wie React, Angular und so weiter ist dieselbe.
 
 ---

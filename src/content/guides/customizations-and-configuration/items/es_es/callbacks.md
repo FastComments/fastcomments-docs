@@ -1,9 +1,8 @@
----
 Todas las bibliotecas para el widget de comentarios (actualmente Angular, React, Vue) soportan callbacks.
 
 Los callbacks se especifican en el objeto de configuración, con la misma firma para cada biblioteca.
 
-Los callbacks soportados son:
+Los callbacks admitidos son:
 
 - onInit
 - onAuthenticationChange
@@ -22,10 +21,11 @@ Aquí hay un ejemplo con todos los callbacks usados:
 
 [inline-code-attrs-start title = 'Ejemplos de callbacks'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -50,11 +50,11 @@ Aquí hay un ejemplo con todos los callbacks usados:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // devolver true para evitar el comportamiento predeterminado (abrir el perfil de usuario en fastcomments.com).
+            // return true; // return true para evitar el comportamiento predeterminado (abrir el perfil de usuario en fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // emulando comportamiento asíncrono (llamando a la API, etc).
+            setTimeout(function() { // emulando comportamiento asíncrono (llamadas a la API, etc).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -63,13 +63,10 @@ Aquí hay un ejemplo con todos los callbacks usados:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments está ordenado por la ordenación predeterminada en la página que puede ser Más relevantes (p. ej.: más votados, etc.) o Más recientes
+            // comments está ordenado según la ordenación predeterminada en la página, la cual puede ser Most Relevant (p. ej.: más votados, etc.) o Newest First
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
-
-
----

@@ -1,6 +1,6 @@
-Sve biblioteke za widget za komentare (trenutno Angular, React, Vue) podržavaju callback-ove.
+Sve biblioteke za komentarski widget (trenutno Angular, React, Vue) podržavaju povratne pozive.
 
-Callback-ovi se navode u konfiguracionom objektu, sa istim potpisom za svaku biblioteku.
+Povratni pozivi se navode u konfiguracionom objektu, sa istim potpisom za svaku biblioteku.
 
 Podržani callback-ovi su:
 
@@ -19,12 +19,13 @@ Tačne potpise možete pronaći u [TypeScript definicijama](https://github.com/F
 
 Evo primera sa svim callback-ovima:
 
-[inline-code-attrs-start title = 'Primeri callback-ova'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primeri povratnih poziva'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@ Evo primera sa svim callback-ovima:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // vrati true da sprečite podrazumevano ponašanje (otvaranje fastcomments.com profila korisnika).
+            // return true; // vrati true da spreči podrazumevano ponašanje (otvaranje fastcomments.com korisničkog profila).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // emuliranje asinhronog ponašanja (pozivanje API-ja itd).
+            setTimeout(function() { // emulira asinhrono ponašanje (pozivanje API-ja itd).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,13 @@ Evo primera sa svim callback-ovima:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments su sortirani prema podrazumevanom poretku na stranici koji može biti 'Most Relevant' (npr: najviše upvotovani, itd), ili 'Newest First'
+            // comments je sortirana prema podrazumevanom sortiranju na stranici koje može biti Najrelevantnije (npr: najviše glasova, itd), ili Najnovije prvo
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
+
+
+---

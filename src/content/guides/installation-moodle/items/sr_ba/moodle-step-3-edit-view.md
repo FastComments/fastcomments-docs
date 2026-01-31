@@ -1,10 +1,10 @@
-Zatim otvorite datoteku `view.php`. Možete to uraditi pomoću `nano`:
+Zatim otvorite fajl `view.php`. Možete to uraditi pomoću `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Koristite tipke sa strelicama da se pomaknete do dna. Potražite tekst koji izgleda otprilike ovako:
+Koristite strelice na tastaturi da se pomaknete do dna. Potražite tekst koji izgleda otprilike ovako:
 
 ```php
 echo $OUTPUT->box_end();
@@ -12,7 +12,7 @@ echo $OUTPUT->box_end();
 
 Sada ćemo kopirati kod koji dodaje widget za komentare:
 
-[inline-code-attrs-start title = 'Moodle kod za komentare'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kod komentara za Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Pomaknite kursor pomoću tipki sa strelicama prije linije "box_end", i zalijepite.
+Koristite strelice da postavite kursor prije linije "box_end", i zalijepite.
 
-Trebali biste imati nešto ovako:
+Treba da imate nešto ovako:
 
 <div class="screenshot white-bg">
     <div class="title">Primjer</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle primjer" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Primjer" />
 </div>
 
 Sada sačuvajte: 
 
-1. Press `ctrl+x`
-2. Press `y`
-3. Press `enter`
+1. Pritisnite `ctrl+x`
+2. Pritisnite `y`
+3. Pritisnite `enter`
 
-To je to!
+To je sve!

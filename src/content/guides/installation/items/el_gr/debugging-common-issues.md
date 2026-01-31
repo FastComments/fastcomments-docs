@@ -1,91 +1,91 @@
-Εδώ είναι μερικά συμπτώματα που συναντάμε συχνά και κοινές λύσεις.
+Ακολουθούν κάποια συμπτώματα που συναντάμε συχνά, και κοινές λύσεις. 
 
-### Μήνυμα "This is a demo"
+### "This is a demo" Μήνυμα
 
-Αυτό εμφανίζεται όταν έχετε αντιγράψει τον κώδικα widget από την αρχική μας σελίδα, που χρησιμοποιεί τον demo
-tenant μας. Για να χρησιμοποιήσετε τον δικό σας tenant, αντιγράψτε τον κώδικα widget από [εδώ](https://fastcomments.com/auth/my-account/get-acct-code).
+Αυτό εμφανίζεται όταν έχετε αντιγράψει τον κώδικα του widget από την αρχική μας σελίδα, που χρησιμοποιεί τον demo
+tenant μας. Για να χρησιμοποιήσετε τον δικό σας tenant, αντιγράψτε τον κώδικα του widget από [εδώ](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### Σφάλμα "FastComments cannot load on this domain"
+### "FastComments cannot load on this domain" Σφάλμα
 
-Το FastComments πρέπει να γνωρίζει ποια domains σας ανήκουν για να πιστοποιεί αιτήματα που σχετίζονται
+Το FastComments χρειάζεται να γνωρίζει ποιες domains σας ανήκουν για να αυθεντικοποιεί αιτήματα που σχετίζονται
 με τον λογαριασμό σας. [Δείτε την τεκμηρίωσή μας](/guide-multiple-sites.html#add-domains-to-account) για να δείτε πώς
-να επιλύσετε αυτό το σφάλμα (απλά προσθέστε το ακριβές subdomain + domain στον λογαριασμό σας).
+να επιλύσετε αυτό το σφάλμα (απλώς προσθέστε την ακριβή υπο-τοποθεσία + domain στον λογαριασμό σας).
 
-Σημειώστε ότι αυτό θα πρέπει να συμβαίνει μόνο μετά τη λήξη της δοκιμαστικής περιόδου. Κατά τη διάρκεια της δοκιμαστικής περιόδου, τυχόν αιτήματα από νέα domains
+Σημειώστε ότι αυτό θα πρέπει να εμφανίζεται μόνο αφού τελειώσει η δοκιμαστική περίοδος. Κατά τη διάρκεια της δοκιμαστικής περιόδου, οποιαδήποτε αιτήματα από νέες domains
 θα προστίθενται αυτόματα στον λογαριασμό σας.
 
-### Τα μεταφερμένα σχόλια δεν εμφανίζονται για προσαρμοσμένες εγκαταστάσεις
+### Migrated Comments Not Showing for Custom Installations
 
-Συνήθως αυτό συμβαίνει όταν τα εισαγόμενα σχόλια είναι συνδεδεμένα με ένα `Page ID`, και εσείς περνάτε ένα URL
-(ή καμία τιμή, οπότε χρησιμοποιεί το URL της σελίδας).
+Συνήθως αυτό συμβαίνει όταν τα εισαχθέντα σχόλια έχουν συνδεθεί με ένα `Page ID`, και εσείς περνάτε ένα URL
+(ή καμία τιμή, οπότε χρησιμοποιείται ως προεπιλογή το URL της σελίδας).
 
-Μπορείτε να κάνετε debug αυτό [εξάγοντας τα σχόλιά σας](https://fastcomments.com/auth/my-account/manage-data/export) και βλέποντας τη στήλη `URL ID` (τρέχουσα στήλη `B`).
+Μπορείτε να εντοπίσετε το πρόβλημα κάνοντας [εξαγωγή των σχολίων σας](https://fastcomments.com/auth/my-account/manage-data/export) και βλέποντας την στήλη `URL ID` (επί του παρόντος Στήλη `B`).
 
-Βεβαιωθείτε ότι οι τιμές που βλέπετε στη στήλη `URL ID` είναι οι ίδιες τιμές που περνάτε στη διαμόρφωση του widget
-ως παράμετρος `urlId`.
+Βεβαιωθείτε ότι οι τιμές που βλέπετε στη στήλη `URL ID` είναι οι ίδιες τιμές που περνάτε στη ρύθμιση του widget
+ως παράμετρο `urlId`.
 
-Για περαιτέρω εξήγηση, δοκιμάστε να διαβάσετε την [τεκμηρίωση Πώς τα σχόλια συνδέονται με σελίδες και άρθρα](/guide-customizations-and-configuration.html#url-id).
+Για περαιτέρω εξήγηση, δοκιμάστε να διαβάσετε την [How Comments are Tied to Pages and Articles documentation](/guide-customizations-and-configuration.html#url-id).
 
-Αν όλα τα άλλα αποτύχουν, [επικοινωνήστε μαζί μας](https://fastcomments.com/auth/my-account/help).
+Αν όλα αποτύχουν, [επικοινωνήστε μαζί μας](https://fastcomments.com/auth/my-account/help).
 
-### Το widget σχολίων δεν εμφανίζεται
+### Comment Widget Not Showing
 
 Αν το widget σχολίων δεν εμφανίζεται, ελέγξτε την κονσόλα προγραμματιστή του Chrome για σφάλματα.
 
-Για τις περισσότερες λανθασμένες ρυθμίσεις, το widget σχολίων θα εμφανίσει τουλάχιστον ένα σφάλμα στη σελίδα αν μπορεί
-να φορτώσει. Το να μην βλέπετε τίποτα είναι συνήθως ένδειξη σφάλματος scripting.
+Για τις περισσότερες δυσρυθμίσεις, το widget σχολίων τουλάχιστον θα εμφανίσει ένα σφάλμα στη σελίδα εάν είναι
+σε θέση να φορτωθεί. Το να μην εμφανίζεται τίποτα συνήθως υποδηλώνει σφάλμα scripting.
 
-### Η επιθυμητή διαμόρφωση δεν λειτουργεί όπως αναμένεται
+### Desired Configuration Not Working as Expected
 
 Δοκιμάστε την [επέκταση Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) για να δείτε ποια
-διαμόρφωση περνάει στο widget σχολίων. Αν όλα αποτύχουν, τραβήξτε ένα screenshot του τι λέει η επέκταση chrome
+ρύθμιση περνάει στο widget σχολίων. Αν όλα αποτύχουν, πάρτε ένα screenshot από ό,τι λέει η επέκταση Chrome
 και [επικοινωνήστε μαζί μας](https://fastcomments.com/auth/my-account/help).
 
-### Σχόλια που λείπουν στο ίδιο URL με διαφορετικό hash bang
+### Comments Missing on Same URL With Different Hash Bang
 
-Από προεπιλογή, το FastComments θα χρησιμοποιεί το URL της σελίδας για το "bucket" όπου αποθηκεύονται τα σχόλια. Αν τα URL σας περιλαμβάνουν `#hashbangs`, και αυτά τα `#hashbangs`
-δεν πρέπει να είναι μέρος του αναγνωριστικού που προσδιορίζει ένα νήμα σχολίων, μπορούμε απλά να αγνοήσουμε την τιμή hash bang, για παράδειγμα:
+Από προεπιλογή, το FastComments θα χρησιμοποιήσει το URL της σελίδας για το "bucket" όπου αποθηκεύονται τα σχόλια. Αν τα URLs σας περιλαμβάνουν `#hashbangs`, και αυτά τα `#hashbangs`
+δεν θα πρέπει να αποτελούν μέρος του αναγνωριστικού που προσδιορίζει ένα θέμα σχολίων, μπορούμε απλά να αγνοήσουμε την τιμή του hash bang, για παράδειγμα:
 
-[inline-code-attrs-start title = 'Παράδειγμα αγνόησης hash bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα αγνόησης Hash Bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.href.replace(location.hash, ''),
     urlId: location.href.replace(location.hash, '')
-});
+}];
 </script>
 [inline-code-end]
 
-Σημειώστε ότι μετά από αυτή την αλλαγή, θα πρέπει να γίνει migration για τα υπάρχοντα σχόλια. [Για αυτό, επικοινωνήστε μαζί μας.](https://fastcomments.com/auth/my-account/help)
+Σημειώστε ότι μετά από αυτή την αλλαγή, θα χρειαστεί να γίνει migration για τα υπάρχοντα σχόλια. [Για αυτό, επικοινωνήστε μαζί μας.](https://fastcomments.com/auth/my-account/help)
 
-### Οι παράμετροι URL query επηρεάζουν το widget
+### URL Query Parameters Affecting Widget
 
-Από προεπιλογή, το FastComments θα χρησιμοποιεί το URL της σελίδας για το "bucket" όπου αποθηκεύονται τα σχόλια. Αν τα URL σας περιλαμβάνουν παραμέτρους query
-που δεν πρέπει να είναι μέρος του αναγνωριστικού που προσδιορίζει ένα νήμα σχολίων, μπορούμε απλά να τις αγνοήσουμε, για παράδειγμα:
+Από προεπιλογή, το FastComments θα χρησιμοποιήσει το URL της σελίδας για το "bucket" όπου αποθηκεύονται τα σχόλια. Αν τα URLs σας περιλαμβάνουν query parameters
+που δεν θα πρέπει να αποτελούν μέρος του αναγνωριστικού που προσδιορίζει ένα θέμα σχολίων, μπορούμε απλά να τα αγνοήσουμε, για παράδειγμα:
 
-[inline-code-attrs-start title = 'Αγνόηση παραμέτρων query'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα αγνόησης παραμέτρων ερωτήματος'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.protocol + '//' + location.host + location.pathname,
     urlId: location.pathname
-});
+}];
 </script>
 [inline-code-end]
 
-Σημειώστε ότι μετά από αυτή την αλλαγή, θα πρέπει να γίνει migration για τα υπάρχοντα σχόλια. [Για αυτό, επικοινωνήστε μαζί μας.](https://fastcomments.com/auth/my-account/help)
+Σημειώστε ότι μετά από αυτή την αλλαγή, θα χρειαστεί να γίνει migration για τα υπάρχοντα σχόλια. [Για αυτό, επικοινωνήστε μαζί μας.](https://fastcomments.com/auth/my-account/help)
 
-### Δεν λαμβάνετε emails
+### Not Receiving Emails
 
-Στο FastComments, καταβάλλουμε μεγάλη προσπάθεια για να διασφαλίσουμε ότι η παράδοση των email μας είναι όσο το δυνατόν πιο αξιόπιστη.
-Ωστόσο, ορισμένοι πάροχοι email είναι διαβόητα δύσκολο να παραδώσουν αξιόπιστα. Ελέγξτε τον φάκελο spam σας
-για μηνύματα από fastcomments.com.
+Στο FastComments, δίνουμε πολλή δουλειά για να εξασφαλίσουμε ότι η παράδοση των email μας είναι όσο το δυνατόν πιο αξιόπιστη. Ωστόσο, μερικοί πάροχοι email είναι γνωστό ότι είναι δύσκολοι στην αξιόπιστη παράδοση. Ελέγξτε το φάκελο ανεπιθύμητων για μηνύματα από fastcomments.com.
 
-Αν [επικοινωνήσετε μαζί μας](https://fastcomments.com/auth/my-account/help) μπορούμε συνήθως να παρέχουμε
-περισσότερες πληροφορίες για το γιατί μπορεί να μην βλέπετε emails από εμάς.
+Αν [επικοινωνήσετε μαζί μας](https://fastcomments.com/auth/my-account/help) συνήθως μπορούμε να δώσουμε
+περισσότερες πληροφορίες σχετικά με το γιατί ίσως δεν βλέπετε μηνύματα από εμάς.

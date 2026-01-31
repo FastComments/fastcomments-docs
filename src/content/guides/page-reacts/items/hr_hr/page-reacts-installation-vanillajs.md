@@ -1,4 +1,4 @@
-Za reakcije na stranici moramo odlučiti o dvije stvari:
+Za Page Reacts moramo odlučiti o dvije stvari:
 
 - Koje slike reakcija koristiti.
 - Kratki `id` za imenovanje svake reakcije.
@@ -6,14 +6,15 @@ Za reakcije na stranici moramo odlučiti o dvije stvari:
 Opcionalno:
 
 - Također možete definirati odvojene slike za odabrane/neodabrane reakcije.
-- Možete odlučiti želite li prikazati popis korisnika koji su reagirali kada se miš premakne preko jedne od reakcija. 
+- Možete odlučiti želite li prikazivati popis korisnika koji su reagirali kada pomaknete pokazivač miša iznad neke od reakcija. 
 
-[inline-code-attrs-start title = 'Primjer koda za reakcije stranice'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer koda za Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,7 +26,7 @@ Opcionalno:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 

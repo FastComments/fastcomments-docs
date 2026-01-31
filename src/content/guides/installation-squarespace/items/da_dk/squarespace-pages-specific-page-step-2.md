@@ -1,25 +1,17 @@
-Nu kan du kopiere følgende kodeudsnit. Brug kopier-knappen, der vises øverst til højre i uddraget.
+Nu kan vi kopiere følgende kodeudsnit. Brug kopier-knappen, der vises øverst til højre i uddraget.
 
-Der er et par ting, du kan konfigurere i koden, se linjer 4 til 7.
+Der er et par ting, du kan konfigurere i koden, se linjerne 4 til 7.
 
-[inline-code-attrs-start title = 'Squarespace-kode til enkelt side'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Squarespace kode til enkelt side'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        const tenantId = 'demo'; // din konto-id
-
-        function tryLoad() {
-            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId
-            });
-        }
-
-        tryLoad();
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: 'demo' // din konto-id
+    }];
 </script>
-
 [inline-code-end]
 
 Det skulle se sådan ud:
@@ -31,6 +23,6 @@ Det skulle se sådan ud:
 
 Klik nu på Gem øverst til højre.
 
-Bemærk, at indstillingen `Preview in Safe Mode` ikke vil fungere, men widget'en vil dukke op, når du besøger dit site.
+Bemærk, at `Preview in Safe Mode`-indstillingen ikke vil fungere, men widgetten vises, når du besøger dit site.
 
-Hvis du oplever problemer, så sørg for, at der nær bunden ikke står `"tenantId": "demo"`. Det burde vise dit tenant id, hvis du er logget ind. Hvis ikke, kontakt support.
+Hvis du har problemer, skal du sikre dig, at der nær bunden ikke står `"tenantId": "demo"`. Det bør vise din tenant-id, hvis du er logget ind. Hvis ikke, kontakt support.

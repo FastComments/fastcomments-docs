@@ -2,7 +2,7 @@
 
 コールバックは設定オブジェクトで指定し、各ライブラリで同じシグネチャを持ちます。
 
-サポートされているコールバック:
+サポートされているコールバックは以下です：
 
 - onInit
 - onAuthenticationChange
@@ -15,16 +15,17 @@
 - onCommentSubmitStart
 - onCommentsRendered
 
-正確なシグネチャは [TypeScript の定義](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124) で確認できます。
+正確なシグネチャは[TypeScript 定義](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124)で確認できます。
 
-以下はすべてのコールバックを使用した例です:
+以下はすべてのコールバックを使用した例です：
 
 [inline-code-attrs-start title = 'コールバックの例'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // デフォルトの動作（fastcomments.com のユーザープロフィールを開く）を防ぐには return true を返します。
+            // return true; // デフォルトの動作（fastcomments.com のユーザープロファイルを開く）を防ぐには true を返します。
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // 非同期の動作をエミュレートしています（API 呼び出しなど）。
+            setTimeout(function() { // 非同期動作をエミュレートしています（API 呼び出し等）。
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments はページのデフォルトのソート順でソートされています。デフォルトは「Most Relevant」（例: 投票数が多い等）または「Newest First」かもしれません
+            // comments はページのデフォルトのソート順で並べられます。デフォルトのソートは Most Relevant（例：投票数が多いもの等）や Newest First である場合があります。
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

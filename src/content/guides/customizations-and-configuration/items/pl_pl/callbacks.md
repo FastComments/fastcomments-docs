@@ -1,8 +1,8 @@
-Wszystkie biblioteki dla widżetu komentarzy (obecnie Angular, React, Vue) obsługują wywołania zwrotne.
+Wszystkie biblioteki dla widgetu komentarzy (obecnie Angular, React, Vue) obsługują callbacki.
 
-Wywołania zwrotne są określane w obiekcie konfiguracji, z tym samym podpisem dla każdej biblioteki.
+Callbacki są określane w obiekcie konfiguracyjnym, ze wspólną sygnaturą dla każdej biblioteki.
 
-Wywołania zwrotne obsługiwane to:
+Obsługiwane callbacki to:
 
 - onInit
 - onAuthenticationChange
@@ -17,14 +17,15 @@ Wywołania zwrotne obsługiwane to:
 
 Dokładne sygnatury można znaleźć w [definicjach TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-Oto przykład z użyciem wszystkich wywołań zwrotnych:
+Oto przykład wykorzystujący wszystkie callbacki:
 
-[inline-code-attrs-start title = 'Przykłady wywołań zwrotnych'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykłady callbacków'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@ Oto przykład z użyciem wszystkich wywołań zwrotnych:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // zwróć true, aby zapobiec domyślnemu zachowaniu (otwieraniu profilu użytkownika na fastcomments.com).
+            // return true; // zwróć true, aby zapobiec domyślnemu zachowaniu (otwieraniu profilu użytkownika fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // symulowanie zachowania asynchronicznego (wywoływanie API itp.).
+            setTimeout(function() { // symulacja zachowania asynchronicznego (wywołanie API itp).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,13 +63,10 @@ Oto przykład z użyciem wszystkich wywołań zwrotnych:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments są posortowane według domyślnego sortowania na stronie, które może być Najbardziej istotne (np. najbardziej głosowane itp.), lub Najnowsze najpierw
+            // comments są posortowane według domyślnego sortowania na stronie, które może być "Most Relevant" (np. najbardziej głosowane itp.) lub "Newest First"
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
-
-
----

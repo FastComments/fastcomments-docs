@@ -1,36 +1,28 @@
-Сад можемо копирати сљедећи исјечак кода. Користите дугме за копирање које се појави у горњем десном углу исјечка.
+Sada možemo kopirati sljedeći isječak koda. Koristite dugme za kopiranje koje se pojavljuje u gornjem desnom uglu isječka.
 
-Постоји неколико ствари које можете конфигурисати у коду, погледајте линије 4 до 7.
+Postoji nekoliko stvari koje možete konfigurirati u kodu, pogledajte redove 4 do 7.
 
-[inline-code-attrs-start title = 'Squarespace код за појединачну страницу'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Squarespace kod za pojedinačnu stranicu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        const tenantId = 'demo'; // ваш ID налога
-
-        function tryLoad() {
-            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId
-            });
-        }
-
-        tryLoad();
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: 'demo' // vaš ID računa
+    }];
 </script>
-
 [inline-code-end]
 
-Требало би да изгледа овако:
+Trebalo bi izgledati ovako:
 
 <div class="screenshot white-bg">
-    <div class="title">Залепи и сачувај</div>
-    <img class="screenshot-image" src="/images/installation-guides/squarespace-pages-specific-page-step-2-1-add-code-and-save.png" alt="Залепи и сачувај" />
+    <div class="title">Zalijepi i sačuvaj</div>
+    <img class="screenshot-image" src="/images/installation-guides/squarespace-pages-specific-page-step-2-1-add-code-and-save.png" alt="Zalijepi i sačuvaj" />
 </div>
 
-Сада кликните Сачувај у горњем десном углу.
+Sada kliknite sačuvaj u gornjem desnom uglu.
 
-Имајте на уму да опција `Preview in Safe Mode` неће радити, али видгет ће се појавити када посетите ваш сајт.
+Imajte na umu da opcija `Preview in Safe Mode` neće raditi, ali widget će se pojaviti kada posjetite vašu stranicu.
 
-Ако имате проблема, провјерите да ли при дну не пише `"tenantId": "demo"`. Требало би да буде приказан ваш tenant id ако сте пријављени. Ако није, обратите се подршци.
+Ako imate problema, provjerite pri dnu da ne piše `"tenantId": "demo"`. Trebalo bi da pokaže vaš tenant id ako ste prijavljeni. Ako nije, obratite se podršci.

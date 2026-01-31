@@ -1,8 +1,8 @@
-כל הספריות עבור הווידג'ט של התגובות (כרגע Angular, React, Vue) תומכות ב-callbacks.
+כל הספריות עבור הווידג'ט התגובות (כרגע Angular, React, Vue) תומכות בקריאות-חזרה.
 
-ה-callbacks מוגדרים באובייקט התצורה, עם אותה חתימה עבור כל ספריה.
+קריאות-החזרה מוגדרות באובייקט התצורה, עם אותה חתימה עבור כל ספרייה.
 
-ה-callbacks הנתמכים הם:
+הקריאות-חזרה הנתמכות הן:
 
 - onInit
 - onAuthenticationChange
@@ -15,16 +15,17 @@
 - onCommentSubmitStart
 - onCommentsRendered
 
-את החתימות המדויקות ניתן למצוא ב-[הגדרות TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
+החתימות המדויקות ניתן למצוא ב[הגדרות TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-להלן דוגמה שבה משתמשים בכל ה-callbacks:
+הנה דוגמה שבה כל הקריאות-חזרה מיושמות:
 
-[inline-code-attrs-start title = 'דוגמאות ל-Callbacks'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמאות של קריאות חזרה'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // החזרת return true תמנע את ההתנהגות המוגדרת כברירת מחדל (פתיחת פרופיל המשתמש ב-fastcomments.com).
+            // return true; // החזר true כדי למנוע את ההתנהגות המוגדרת כברירת מחדל (פתיחת פרופיל משתמש ב-fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // מחקה התנהגות אסינכרונית (קריאה ל-API וכו').
+            setTimeout(function() { // חיקוי התנהגות אסינכרונית (קריאת API וכו').
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments ממויין לפי המיון המוגדר כברירת מחדל בדף, שיכול להיות Most Relevant (לדוגמה: עם הכי הרבה הצבעות), או Newest First
+            // comments ממויין לפי המיון הדיפולטי בעמוד, אשר עשוי להיות 'Most Relevant' (למשל: עם הכי הרבה הצבעות, וכו'), או 'Newest First'
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

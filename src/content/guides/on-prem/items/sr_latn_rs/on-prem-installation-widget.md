@@ -1,16 +1,20 @@
-Front-end kod primeri i biblioteke za On-Prem su isti kao i za SaaS proizvod. Međutim, morate navesti `apiHost` i ispravnu putanju skripte:
+---
+Fragmenti front-end koda i biblioteke za On-Prem su isti kao i za SaaS proizvod. Međutim, morate navesti `apiHost` i tačnu putanju skripte:
 
-[inline-code-attrs-start title = 'Kod komentara za On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kod komentara za On Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<script async src="https://my.host.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... takođe možete proslediti SSO payload itd.
-    });
+        // ... možete takođe proslediti SSO payload itd.
+    }];
 </script>
 [inline-code-end]
 
-Gore je vrlo jednostavan primer. Takođe možemo koristiti 1st-party biblioteke za React, Angular, Vue, Svelte, itd.
+Gore je vrlo jednostavan primer. Takođe bismo mogli koristiti 1st-party biblioteke za React, Angular, Vue, Svelte itd.
+
+---

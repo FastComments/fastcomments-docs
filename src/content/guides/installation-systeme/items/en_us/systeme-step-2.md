@@ -3,12 +3,13 @@ and then refresh this page so the copied code snippet has your account id.
 
 [inline-code-attrs-start title = 'Systeme.io Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
@@ -20,3 +21,5 @@ Now paste it into the editor and click save:
 </div>
 
 ... then save your site. That's it!
+
+---

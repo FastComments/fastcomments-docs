@@ -1,14 +1,15 @@
----
-We gaan nu onze code kopiëren. Als het codefragment `tenantId: "demo"` op regel 6 aangeeft, moet je inloggen op je FastComments-account en vervolgens deze pagina verversen zodat het gekopieerde codefragment je account-id bevat.
+Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 6 then you should log into your FastComments account
+en vervolgens deze pagina vernieuwen zodat het gekopieerde codefragment je account-id bevat.
 
-[inline-code-attrs-start title = 'Systeme.io-fragment'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fragment voor Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 

@@ -4,7 +4,7 @@
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Χρησιμοποίησε τα βελάκια για να μετακινηθείς προς τα κάτω μέχρι το τέλος. Αναζήτησε κείμενο που λέει κάτι σαν:
+Χρησιμοποίησε τα πλήκτρα βέλους για να μετακινηθείς προς τα κάτω μέχρι το τέλος. Ψάξε για κάποιο κείμενο που λέει κάτι σαν:
 
 ```php
 echo $OUTPUT->box_end();
@@ -28,22 +28,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Χρησιμοποίησε τα βελάκια για να τοποθετήσεις τον κέρσορα πριν από τη γραμμή "box_end" και επικόλλησε.
+Χρησιμοποίησε τα πλήκτρα βέλους για να τοποθετήσεις τον κέρσορα πριν από τη γραμμή "box_end", και επικόλλησε.
 
-Θα πρέπει να έχεις κάτι σαν το παρακάτω:
+Θα πρέπει να έχεις κάτι σαν:
 
 <div class="screenshot white-bg">
     <div class="title">Παράδειγμα</div>
@@ -52,8 +53,8 @@ if ($id) {
 
 Τώρα αποθήκευσε: 
 
-1. Πάτησε `ctrl+x`
-2. Πάτησε `y`
-3. Πάτησε `enter`
+1. Press `ctrl+x`
+2. Press `y`
+3. Press `enter`
 
 Αυτό ήταν!

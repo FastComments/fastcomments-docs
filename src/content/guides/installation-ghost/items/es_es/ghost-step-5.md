@@ -1,13 +1,13 @@
-A continuación, necesitamos identificar dónde añadir el código del widget de FastComments.com.
+A continuación necesitamos identificar dónde añadir el código del widget de FastComments.com.
 
-Si estás usando el tema predeterminado `casper`, verás una sección como esta en la línea `82`:
+Si estás usando el tema por defecto `casper`, verás una sección como esta en la línea `82`:
 
 <div class="screenshot white-bg">
-    <div class="title">Sección de comentarios deshabilitada</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Sección de comentarios deshabilitada" />
+    <div class="title">Disabled Comment Section</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Disabled Comment Section" />
 </div>
 
-Si estás usando otros temas, no verás esto, y necesitarás añadir este código después del último `</section>`:
+Si usas otros temas, no verás esto, y necesitarás añadir este código después del último `</section>`:
 
 [inline-code-attrs-start title = 'Ejemplo de sección'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +15,18 @@ Si estás usando otros temas, no verás esto, y necesitarás añadir este códig
 </section>
 [inline-code-end]
 
-Deberías tener algo así listo:
+Deberías tener algo como esto listo:
 
 <div class="screenshot white-bg">
-    <div class="title">Plantilla lista para el código de comentarios</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Plantilla lista para el código de comentarios" />
+    <div class="title">Template Ready For Comment Code</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Template Ready For Comment Code" />
 </div>
 
 Una vez listo, copia el código del widget de FastComments.com:
 
-[inline-code-attrs-start title = 'Fragmento de código de comentario de FastComments.com para Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fragmento de código de comentarios de Ghost para FastComments.com'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,12 +46,13 @@ Una vez listo, copia el código del widget de FastComments.com:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
@@ -59,8 +60,8 @@ Una vez listo, copia el código del widget de FastComments.com:
 ...y debería verse así:
 
 <div class="screenshot white-bg">
-    <div class="title">Añadir código de comentarios de FastComments.com</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Añadir código de comentarios de FastComments.com" />
+    <div class="title">Add FastComments.com Comment Code</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Add FastComments.com Comment Code" />
 </div>
 
-Código listo. ¡Ahora solo tenemos que volver a importar nuestro tema!
+Código hecho. ¡Ahora solo tenemos que volver a importar nuestro tema!

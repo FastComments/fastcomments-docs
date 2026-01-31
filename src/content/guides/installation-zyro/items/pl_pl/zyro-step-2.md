@@ -1,25 +1,26 @@
 Teraz dodajmy kod naszego widżetu.
 
-Skopiuj poniższy kod. Upewnij się, że jesteś zalogowany na [fastcomments.com](https://fastcomments.com) 
-i przeładuj tę stronę, jeśli nie jesteś, aby kod został wstępnie wypełniony informacjami o Twoim koncie, w przeciwnym razie pokaże się kod demonstracyjny.
+Skopiuj kod poniżej. Upewnij się, że jesteś zalogowany na [fastcomments.com](https://fastcomments.com) 
+i w razie potrzeby odśwież tę stronę, aby kod został wstępnie wypełniony danymi Twojego konta; w przeciwnym razie pokaże się kod demonstracyjny.
 
-Teraz skopiujmy kod:
+Skopiujmy teraz kod:
 
 [inline-code-attrs-start title = 'Kod komentarzy Zyro'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Teraz wróćmy do naszego kreatora stron i kliknij `Enter code`:
+Wróćmy teraz do kreatora strony i kliknij `Enter code`:
 
 <div class="screenshot white-bg">
     <div class="title">Wprowadź kod</div>
@@ -28,10 +29,9 @@ Teraz wróćmy do naszego kreatora stron i kliknij `Enter code`:
 
 ### Uwaga!
 
-Ważne jest, aby użyć powyższego kodu, a nie fragmentów kodu z innych dokumentacji, ponieważ ten fragment został przygotowany specjalnie
-dla Zyro.
+Ważne: użyj powyższego kodu, a nie fragmentów kodu z innej dokumentacji, ponieważ ten fragment został przygotowany specjalnie dla Zyro.
 
-Powinieneś teraz mieć coś podobnego do poniższego, co wygląda na puste. To jest oczekiwane. Najedź kursorem na obszar,
+Powinieneś teraz zobaczyć coś podobnego do poniższego, co wydaje się puste. To oczekiwane. Najedź kursorem myszy na obszar
 gdzie powinien znajdować się widżet:
 
 <div class="screenshot white-bg">
@@ -39,7 +39,7 @@ gdzie powinien znajdować się widżet:
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Dodano widżet kodu" />
 </div>
 
-Teraz przeciągnij widżet, aby ustawić pożądany rozmiar — zobaczysz, jak się pojawia:
+Teraz przeciągnij widżet, aby ustawić żądany rozmiar — zobaczysz, jak się pojawia:
 
 <div class="screenshot white-bg">
     <div class="title">Zmień rozmiar</div>

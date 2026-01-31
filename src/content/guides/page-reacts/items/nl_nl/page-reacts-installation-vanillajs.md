@@ -1,19 +1,20 @@
-Voor Pagina-reacties moeten we twee dingen beslissen:
+Voor Page Reacts moeten we twee dingen bepalen:
 
 - Welke afbeeldingen voor reacties te gebruiken.
 - Een korte `id` om elke reactie te benoemen.
 
 Optioneel:
 
-- Je kunt ook optioneel afzonderlijke afbeeldingen definiëren voor geselecteerde/niet-geselecteerde reacties.
-- Je kunt bepalen of je de lijst met gebruikers die hebben gereageerd wilt tonen wanneer je met de muis over een van de reacties beweegt. 
+- U kunt ook optioneel afzonderlijke afbeeldingen definiëren voor geselecteerde/niet-geselecteerde reacties.
+- U kunt kiezen of u de lijst met gebruikers die hebben gereageerd wilt tonen wanneer u met de muis over een van de reacties gaat. 
 
-[inline-code-attrs-start title = 'Voorbeeldcode Pagina-reacties'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pagina-reacties - Voorbeeldcode'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,8 @@ Optioneel:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-De configuratie voor de React-, Angular- en andere frontend-bibliotheken is hetzelfde.
-
----
+De configuratie voor de frontendbibliotheken zoals React, Angular en dergelijke is hetzelfde.

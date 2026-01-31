@@ -10,7 +10,7 @@ Utilisez les touches fléchées pour faire défiler jusqu'en bas. Recherchez un 
 echo $OUTPUT->box_end();
 ```
 
-Copions maintenant le code qui ajoute le widget de commentaires :
+Maintenant, copions le code qui ajoute le widget de commentaires :
 
 [inline-code-attrs-start title = 'Code des commentaires Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Utilisez les touches fléchées pour placer votre curseur avant la ligne "box_end", puis collez.
+Utilisez les touches fléchées pour positionner votre curseur avant la ligne "box_end", puis collez.
 
-Vous devriez avoir quelque chose comme ceci :
+Vous devriez obtenir quelque chose comme ceci :
 
 <div class="screenshot white-bg">
-    <div class="title">Exemple</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Exemple Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
-Enregistrez maintenant : 
+Maintenant, enregistrez : 
 
-1. Press `ctrl+x`
-2. Press `y`
-3. Press `enter`
+1. Appuyez sur `ctrl+x`
+2. Appuyez sur `y`
+3. Appuyez sur `enter`
 
 C'est tout !

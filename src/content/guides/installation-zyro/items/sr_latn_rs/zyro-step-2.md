@@ -1,25 +1,25 @@
 Sada ćemo dodati kod našeg widgeta.
 
-Kopirajte kod ispod. Trebalo bi da budete prijavljeni na [fastcomments.com](https://fastcomments.com) 
-i osvežite ovu stranicu ako niste, tako da će se kod unapred popuniti informacijama vašeg naloga, u suprotnom će prikazati demo kod.
+Kopirajte kod ispod. Potrebno je da budete prijavljeni na [fastcomments.com](https://fastcomments.com) i da osvežite ovu stranicu ako niste, kako bi se kod unapred popunio vašim podacima naloga, u suprotnom će prikazati demo kod.
 
-Sada ćemo kopirati kod:
+Sada kopirajmo kod:
 
 [inline-code-attrs-start title = 'Zyro Comments kod'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Sada se vratite u alat za izradu sajta i kliknite `Enter code`:
+Sada se vratite u alat za izradu sajta i kliknite na `Enter code`:
 
 <div class="screenshot white-bg">
     <div class="title">Unesite kod</div>
@@ -28,18 +28,16 @@ Sada se vratite u alat za izradu sajta i kliknite `Enter code`:
 
 ### Napomena!
 
-Važno je da koristite gore navedeni kod i ne isječke koda iz druge dokumentacije, jer je ovaj isječak posebno prilagođen
-za Zyro.
+Važno je da koristite gornji kod, a ne isečke koda iz druge dokumentacije, jer je ovaj isječak posebno prilagođen za Zyro.
 
-Sada bi trebalo da imate nešto slično sledećem, što izgleda prazno. To je očekivano. Pomaknite miša iznad oblasti
-gde bi widget trebao biti:
+Sada biste trebali imati nešto slično sledećem, što izgleda prazno. To je očekivano. Pomaknite miš preko područja gde bi trebalo da bude widget:
 
 <div class="screenshot white-bg">
-    <div class="title">Dodat widget sa kodom</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Dodat widget sa kodom" />
+    <div class="title">Widget dodat</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Widget dodat" />
 </div>
 
-Sada prevucite widget da mu odredite željenu veličinu, videćete da će se pojaviti:
+Sada prevucite widget dok ne postignete željenu veličinu, videćete da se pojavljuje:
 
 <div class="screenshot white-bg">
     <div class="title">Promeni veličinu</div>

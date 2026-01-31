@@ -1,4 +1,4 @@
-אנא בצע את [הליך ההתקנה](#installation--usage) ואז הרץ את הקוד הבא:
+אנא פעל לפי [הליך ההתקנה](#installation-usage-readme-generated) ואז הרץ את הקוד הבא:
 
 ```php
 <?php
@@ -6,19 +6,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// הגדר אישור מפתח ה-API: api_key
+// הגדר הרשאת מפתח ה-API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// הסר את ההערה בשורה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם תרצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, ברירת המחדל היא `GuzzleHttp\Client`.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
+$tenant_id = 'tenant_id_example'; // string
 $add_domain_config_params = new \FastComments\Client\Model\AddDomainConfigParams(); // \FastComments\Client\Model\AddDomainConfigParams
 
 try {

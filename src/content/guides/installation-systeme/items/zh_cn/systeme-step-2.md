@@ -1,15 +1,15 @@
----
-现在我们要复制代码。如果代码片段在第6行显示 `tenantId: "demo"`，那么你应该登录你的 FastComments 帐户
-然后刷新此页面，以便复制的代码片段包含你的帐户 ID。
+现在我们将复制代码。如果代码片段在第6行显示 `tenantId: "demo"`，那么你应该登录你的 FastComments 帐户
+然后刷新此页面，这样复制的代码片段就会包含你的帐户 id。
 
 [inline-code-attrs-start title = 'Systeme.io 代码片段'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 

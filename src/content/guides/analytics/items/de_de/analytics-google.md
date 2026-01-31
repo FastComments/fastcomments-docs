@@ -1,18 +1,19 @@
 Wir können FastComments so konfigurieren, dass Google Analytics 4 benachrichtigt wird, wenn jemand mit dem Kommentar-Widget interagiert.
 
-Wir können verfolgen, wenn Benutzer:
+Wir können nachverfolgen, wenn Nutzer:
 
 - Kommentieren.
 - Abstimmen.
 
-Hier ist ein Beispiel-Code-Snippet dafür:
+Hier ein Beispiel-Code-Snippet dafür:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,13 @@ Hier ist ein Beispiel-Code-Snippet dafür:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Dies fügt zwei Ereignisse hinzu:
+Dadurch werden zwei Ereignisse hinzugefügt:
 
-- Label: `Comment Posted`, Kategorie: `Engagement`, ID: `post_comment`
-- Label: `User Voted on a Comment`, Kategorie: `Engagement`, ID: `vote_comment`
+- Bezeichnung: `Comment Posted`, Kategorie: `Engagement`, ID: `post_comment`
+- Bezeichnung: `User Voted on a Comment`, Kategorie: `Engagement`, ID: `vote_comment`
+
+---

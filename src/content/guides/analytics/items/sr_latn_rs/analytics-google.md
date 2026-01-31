@@ -1,18 +1,19 @@
-Možemo konfigurisati FastComments da obavesti Google Analytics 4 kada neko komunicira sa vidžetom za komentare.
+Možemo podesiti FastComments da obaveštava Google Analytics 4 kada neko interaguje sa widgetom za komentare.
 
 Možemo pratiti kada korisnici:
 
 - Komentarišu.
 - Glasaju.
 
-Evo primera koda za to:
+Evo primera koda koji to radi:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,7 +27,7 @@ Evo primera koda za to:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 

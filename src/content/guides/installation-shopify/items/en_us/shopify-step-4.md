@@ -9,13 +9,14 @@ Now copy the following code snippet, which is designed **specifically for Shopif
 
 [inline-code-attrs-start title = 'Shopify FastComments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         urlId: window.location.pathname
-    });
+    }];
 </script>
 [inline-code-end]
 

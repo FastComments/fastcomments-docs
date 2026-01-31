@@ -1,18 +1,19 @@
-FastComments'i, birisi yorum widget'ı ile etkileşime geçtiğinde Google Analytics 4'ü bilgilendirecek şekilde yapılandırabiliriz.
+FastComments'i, birisi yorum bileşeniyle etkileşime geçtiğinde Google Analytics 4'e bildirim gönderecek şekilde yapılandırabiliriz.
 
-Kullanıcıların ne zaman:
+Kullanıcıların şu eylemlerini izleyebiliriz:
 
-- Yorum yaptığını.
-- Oy verdiğini izleyebiliriz.
+- Yorum yapma.
+- Oy verme.
 
-İşte bunun için örnek bir kod parçacığı:
+İşte bunu yapmak için bir örnek kod parçacığı:
 
 [inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,11 @@ Kullanıcıların ne zaman:
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Bu iki olay ekleyecektir:
+Bu iki olayı ekleyecektir:
 
 - Etiket: `Comment Posted`, Kategori: `Engagement`, ID: `post_comment`
 - Etiket: `User Voted on a Comment`, Kategori: `Engagement`, ID: `vote_comment`

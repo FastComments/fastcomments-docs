@@ -1,10 +1,11 @@
-Sonraki adımda, `view.php` dosyasını açın. Bunu `nano` ile yapabilirsiniz:
+---
+Sonra, `view.php` dosyasını açın. Bunu `nano` ile yapabilirsiniz:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Aşağı kaydırmak için ok tuşlarını kullanın. Şuna benzer bir metin arayın:
+Aşağı kaydırmak için ok tuşlarını kullanın. Şunun gibi bir metin arayın:
 
 ```php
 echo $OUTPUT->box_end();
@@ -28,22 +29,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-İmlecinizi "box_end" satırının önüne yerleştirmek için ok tuşlarını kullanın ve yapıştırın.
+Ok tuşlarını kullanarak imlecinizi "box_end" satırının önüne getirin ve yapıştırın.
 
-Elinizde aşağıdakine benzer bir şey olmalıdır:
+Şunun gibi bir şey görmelisiniz:
 
 <div class="screenshot white-bg">
     <div class="title">Example</div>
@@ -52,8 +54,10 @@ Elinizde aşağıdakine benzer bir şey olmalıdır:
 
 Şimdi kaydedin: 
 
-1. `ctrl+x` tuşuna basın
-2. `y` tuşuna basın
-3. `enter` tuşuna basın
+1. Press `ctrl+x`
+2. Press `y`
+3. Press `enter`
 
 Hepsi bu!
+
+---

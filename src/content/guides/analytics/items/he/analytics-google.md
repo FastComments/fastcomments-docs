@@ -1,18 +1,20 @@
-אנחנו יכולים להגדיר את FastComments להודיע ל-Google Analytics 4 כאשר מישהו מתקשר עם וידג'ט התגובות.
+---
+אפשר להגדיר את FastComments כדי להודיע ל־גוגל אנליטיקס 4 כאשר מישהו מתקשר עם הווידג'ט של התגובות.
 
-אנחנו יכולים לעקוב כאשר משתמשים:
+אפשר לעקוב מתי משתמשים:
 
-- מגיבים.
-- מצביעים.
+- תגובה.
+- הצבעה.
 
-הנה דוגמת קוד לכך:
+להלן דוגמת קוד לכך:
 
-[inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'גוגל אנליטיקס 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,7 +28,7 @@
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
@@ -34,3 +36,5 @@
 
 - תווית: `Comment Posted`, קטגוריה: `Engagement`, מזהה: `post_comment`
 - תווית: `User Voted on a Comment`, קטגוריה: `Engagement`, מזהה: `vote_comment`
+
+---

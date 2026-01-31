@@ -1,7 +1,7 @@
-Для Page Reacts нам нужно принять два решения:
+Для Page Reacts нам нужно решить две вещи:
 
 - Какие изображения реакций использовать.
-- Короткий `id` для названия каждой реакции.
+- Короткий `id`, чтобы назвать каждую реакцию.
 
 Опционально:
 
@@ -10,10 +10,11 @@
 
 [inline-code-attrs-start title = 'Пример кода Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,10 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Конфигурация для фронтенд-библиотек, таких как React, Angular и т.д., одинаковая.
+Конфигурация для фронтенд-библиотек React, Angular и т.д. одна и та же.
 
 ---

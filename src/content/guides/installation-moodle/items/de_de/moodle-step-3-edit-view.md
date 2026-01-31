@@ -1,10 +1,10 @@
-Als Nächstes öffnen Sie die Datei `view.php`. Sie können dies mit `nano` tun:
+Nächste öffnen Sie die Datei `view.php`. Sie können dies mit `nano` tun:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Verwenden Sie die Pfeiltasten, um zum Ende zu scrollen. Suchen Sie nach einem Text, der etwa wie folgt aussieht:
+Verwenden Sie die Pfeiltasten, um nach unten zu scrollen. Suchen Sie nach einem Text, der ungefähr so aussieht:
 
 ```php
 echo $OUTPUT->box_end();
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Positionieren Sie mit den Pfeiltasten den Cursor vor die Zeile mit "box_end" und fügen Sie ein.
+Verwenden Sie die Pfeiltasten, um den Cursor vor die Zeile mit "box_end" zu setzen, und fügen Sie ein.
 
-Sie sollten etwas wie folgt haben:
+Sie sollten etwa Folgendes haben:
 
 <div class="screenshot white-bg">
     <div class="title">Beispiel</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle-Beispiel" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Beispiel" />
 </div>
 
 Jetzt speichern: 
 
-1. Press `ctrl+x`
-2. Press `y`
-3. Press `enter`
+1. Drücken Sie `ctrl+x`
+2. Drücken Sie `y`
+3. Drücken Sie `enter`
 
 Das war's!

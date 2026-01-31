@@ -1,8 +1,8 @@
 Все библиотеки для виджета комментариев (в настоящее время Angular, React, Vue) поддерживают обратные вызовы.
 
-Обратные вызовы указываются в объекте конфигурации и имеют одинаковую сигнатуру для каждой библиотеки.
+Обратные вызовы задаются в объекте конфигурации и имеют одинаковую сигнатуру для каждой библиотеки.
 
-Поддерживаемые обратные вызовы:
+Поддерживаются следующие обратные вызовы:
 
 - onInit
 - onAuthenticationChange
@@ -17,14 +17,15 @@
 
 Точные сигнатуры можно найти в [определениях TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-Ниже приведён пример со всеми обратными вызовами:
+Ниже приведён пример со всеми используемыми обратными вызовами:
 
 [inline-code-attrs-start title = 'Примеры обратных вызовов'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // вернуть true, чтобы предотвратить поведение по умолчанию (открытие профиля пользователя на fastcomments.com).
+            // return true; // вернуть true, чтобы предотвратить стандартное поведение (открытие профиля пользователя на fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // эмуляция асинхронного поведения (вызов API и т.д.).
+            setTimeout(function() { // имитация асинхронного поведения (вызов API и т.д.).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments отсортированы по умолчанию на странице, что может быть «Наиболее релевантные» (например: наиболее поддержанные и т.д.) или «Сначала новые»
+            // комментарии отсортированы по умолчанию на странице — это может быть «Наиболее релевантные» (например: с наибольшим количеством голосов и т.д.) или «Сначала новые»
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

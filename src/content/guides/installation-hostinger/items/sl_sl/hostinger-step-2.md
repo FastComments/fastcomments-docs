@@ -1,47 +1,48 @@
-Zdaj dodajmo kodo našega widgeta.
+Zdaj dodajmo kodo našega pripomočka.
 
 Kopirajte spodnjo kodo. Prepričajte se, da ste prijavljeni na [fastcomments.com](https://fastcomments.com) 
-in po potrebi ponovno naložite to stran, da se koda samodejno predpopolni z informacijami vašega računa, sicer se bo prikazala demo koda.
+in osvežite to stran, če niste, da se koda predizpolni z informacijami vašega računa, sicer bo prikazana demo koda.
 
 Zdaj kopirajmo kodo:
 
-[inline-code-attrs-start title = 'Koda komentarjev Hostinger'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Koda komentarjev za Hostinger'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Zdaj se vrnemo v urejevalnik strani in kliknemo `Enter code`:
+Zdaj se vrnimo v graditelja strani in kliknite `Enter code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Vnesi kodo</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-2.png" alt="Vnesi kodo" />
+    <div class="title">Vnesite kodo</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-2.png" alt="Vnesite kodo" />
 </div>
 
 ### Opomba!
 
-Pomembno je, da uporabite zgornjo kodo in ne izrezkov iz druge dokumentacije, saj je ta del kode posebej pripravljen za Hostinger.
+Pomembno je, da uporabite zgornjo kodo in ne odlomkov kode iz druge dokumentacije, saj je ta odlomek posebej prilagojen za Hostinger.
 
-Sedaj bi morali videti nekaj takšnega, kar se zdi prazno. To je pričakovano. Premaknite miško nad območje, kjer naj bi se pojavil widget:
-
-<div class="screenshot white-bg">
-    <div class="title">Dodani widget</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Dodani widget" />
-</div>
-
-Zdaj povlecite widget na želeno velikost; prikazal se bo:
+Zdaj bi morali imeti nekaj takega, kar se zdi prazno. To je pričakovano. Premaknite miško nad območje, kjer naj bi bil pripomoček:
 
 <div class="screenshot white-bg">
-    <div class="title">Prilagodi velikost</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Prilagodi velikost" />
+    <div class="title">Pripomoček s kodo dodan</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Pripomoček s kodo dodan" />
 </div>
 
-...in zdaj predoglejte in shranite!
+Zdaj povlecite pripomoček na želeno velikost, videli boste, da se prikaže:
+
+<div class="screenshot white-bg">
+    <div class="title">Spremenite velikost</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Spremenite velikost" />
+</div>
+
+...in zdaj predogledajte in shranite!

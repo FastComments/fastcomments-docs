@@ -1,4 +1,4 @@
-Zatim otvorite fajl `view.php`. Ovo možete uraditi pomoću `nano`:
+Zatim otvorite datoteku `view.php`. To možete uraditi pomoću `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
@@ -10,9 +10,9 @@ Koristite tastere sa strelicama da skrolujete do dna. Potražite tekst koji izgl
 echo $OUTPUT->box_end();
 ```
 
-Sada ćemo kopirati kod koji dodaje widget za komentare:
+Sada kopirajte kod koji dodaje widget za komentare:
 
-[inline-code-attrs-start title = 'Kod komentara za Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Moodle kod komentara'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 if ($id) {
@@ -28,20 +28,21 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Pomerite kursor pomoću tastera sa strelicama pre linije "box_end" i nalepite.
+Upotrebite tastere sa strelicama da pozicionirate kursor pre linije "box_end", i nalepite.
 
 Treba da imate nešto ovako:
 

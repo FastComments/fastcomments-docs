@@ -1,16 +1,16 @@
-Next, open the `view.php` file. You can do this with `nano`:
+Далее откройте файл `view.php`. Вы можете сделать это с помощью `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
+Используйте стрелки на клавиатуре, чтобы прокрутить вниз до конца. Найдите текст, похожий на:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Now let's copy the code that adds the comment widget:
+Теперь скопируйте код, который добавляет виджет комментариев:
 
 [inline-code-attrs-start title = 'Код комментариев Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use the arrow keys to position your cursor before the "box_end" line, and paste.
+Используйте стрелки, чтобы поставить курсор перед строкой "box_end" и вставьте.
 
 You should have something like this:
 
 <div class="screenshot white-bg">
-    <div class="title">Пример</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Пример Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
-Now save: 
+Теперь сохраните: 
 
 1. Press `ctrl+x`
 2. Press `y`
 3. Press `enter`
 
-That's it!
+Вот и всё!

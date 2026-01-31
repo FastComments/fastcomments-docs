@@ -1,33 +1,15 @@
-Nije preporučeno dodavanje FastComments-a putem BigCommerce-ovog Page Builder-a jer se tada kod mora ručno dodavati na svaku željenu stranicu.
+Није препоручљиво додавање FastComments-а преко BigCommerce-овог Page Builder-а јер у том случају код мора бити ручно додан на сваку страницу на којој желите.
 
-Međutim, ako je to poželjno, sljedeći isječak koda mora biti korišten. Isječci koda iz drugih tutorijala neće raditi zbog prirode BigCommerce-a:
+Међутим, ако је ово жељено, мора се користити следећи исечак кода. Исечци кода из других упутстава неће радити због природе BigCommerce-а:
 
-[inline-code-attrs-start title = 'Isječak za BigCommerce Page Builder'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Исечак за BigCommerce Page Builder'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        let loaded = false;
-        function attemptLoad() {
-            if (loaded) {
-                return;
-            }
-            if (!window.FastCommentsUI) {
-                return;
-            }
-            FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: "demo"
-            });
-            loaded = true;
-        }
-        attemptLoad();
-        const interval = setInterval(function () {
-            attemptLoad();
-            if (loaded) {
-                clearInterval(interval);
-            }
-        }, 300);
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: "demo"
+    }];
 </script>
 [inline-code-end]

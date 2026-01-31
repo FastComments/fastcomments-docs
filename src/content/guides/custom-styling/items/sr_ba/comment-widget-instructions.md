@@ -1,13 +1,14 @@
-## Kako prilagoditi stilove widgeta za komentare
+## Како прилагодити стилове виџета за коментаре
 
-Možete prilagoditi stilove widgeta za komentare na dva načina:
+Можете прилагодити стил виџета за коментаре на два начина:
 
-### Opcija 1: Putem parametra customCSS
+### Опција 1: Кроз параметар customCSS
 
-Prosledite vaš prilagođeni CSS kao string u parametar `customCSS` prilikom inicijalizacije widgeta:
+Прослиједите ваш прилагођени CSS као низ у параметар `customCSS` приликом иницијализације виџета:
 
 ```javascript
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: 'your-tenant-id',
     customCSS: `
         .fast-comments .comment {
@@ -15,21 +16,21 @@ window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
             border-radius: 8px !important;
         }
     `
-});
+}];
 ```
 
-### Opcija 2: Putem administratorskog panela
+### Опција 2: Кроз админ панел
 
-1. Idite na [Stranicu za prilagođavanje widgeta](https://fastcomments.com/auth/my-account/customize-widget) u vašem administratorskom panelu
-2. Pomaknite se do odjeljka "Prilagođeni CSS" pod "Napredno"
-3. Unesite vaš prilagođeni CSS
-4. Kliknite "Sačuvaj"
+1. Идите на страницу [Прилагођавање виџета](https://fastcomments.com/auth/my-account/customize-widget) у вашем админ панелу
+2. Скролујте до секције „Прилагођени CSS“ у оквиру „Напредно“
+3. Унесите ваш прилагођени CSS
+4. Кликните „Сачувај“
 
-Vaš prilagođeni CSS će se primijeniti na sve widgete za komentare na vašoj stranici.
+Ваш прилагођени CSS ће бити примењен на све виџете за коментаре на вашем сајту.
 
-## Savjeti
+## Савети
 
-- Koristite `!important` da nadjačate zadane stilove po potrebi
-- Ciljajte određene selektore kako biste izbegli uticaj na druge delove vaše stranice
-- Testirajte vaš CSS u različitim preglednicima radi kompatibilnosti
-- Widget koristi standardni CSS - nisu potrebni posebni preprocesori
+- Користите `!important` да надјачате подразумеване стилове ако је потребно
+- Циљајте специфичне селекторе да бисте избегли утицај на друге делове вашег сајта
+- Тестирајте ваш CSS у различитим прегледачима ради компатибилности
+- Виџет користи стандардни CSS - нису потребни посебни препроцесори

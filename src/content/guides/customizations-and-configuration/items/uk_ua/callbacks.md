@@ -1,8 +1,8 @@
-Усі бібліотеки для віджета коментарів (наразі Angular, React, Vue) підтримують зворотні виклики.
+Всі бібліотеки для віджету коментарів (наразі Angular, React, Vue) підтримують зворотні виклики.
 
-Зворотні виклики вказуються в об’єкті конфігурації й мають однакову сигнатуру для кожної бібліотеки.
+Зворотні виклики вказуються в об'єкті конфігурації й мають однакову сигнатуру для кожної бібліотеки.
 
-Підтримувані зворотні виклики:
+Підтримуються такі зворотні виклики:
 
 - onInit
 - onAuthenticationChange
@@ -17,14 +17,15 @@
 
 Точні сигнатури можна знайти в [визначеннях TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-Ось приклад із використанням усіх зворотних викликів:
+Ось приклад з усіма зворотними викликами:
 
 [inline-code-attrs-start title = 'Приклади зворотних викликів'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,7 +50,7 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // повернути true, щоб запобігти поведінці за замовчуванням (відкриттю профілю користувача на fastcomments.com).
+            // return true; // повернути true, щоб запобігти поведінці за замовчуванням (відкриттю профілю користувача fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
@@ -62,11 +63,11 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments відсортовані за сортуванням за замовчуванням на сторінці, яке може бути Most Relevant (наприклад: найбільше проголосовані тощо), або Newest First
+            // comments відсортовано за сортуванням за замовчуванням на сторінці, яке може бути Most Relevant (наприклад: найбільше проголосовані тощо), або Newest First
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
 

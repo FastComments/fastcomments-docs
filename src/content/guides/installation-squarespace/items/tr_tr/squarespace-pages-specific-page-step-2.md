@@ -1,28 +1,20 @@
-Şimdi aşağıdaki kod parçacığını kopyalayabiliriz. Parçacığın sağ üst köşesinde görünen kopyala düğmesini kullanın.
+Şimdi aşağıdaki kod parçasını kopyalayabiliriz. Kod parçasının sağ üst köşesinde görünen kopyala düğmesini kullanın.
 
-Koddaki birkaç şeyi yapılandırabilirsiniz, 4 ile 7. satırlara bakın.
+Kodda yapılandırabileceğiniz birkaç şey var, 4 ila 7. satırlara bakın.
 
 [inline-code-attrs-start title = 'Squarespace Tek Sayfa Kodu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    (function () {
-        const tenantId = 'demo'; // hesap kimliğiniz
-
-        function tryLoad() {
-            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId
-            });
-        }
-
-        tryLoad();
-    })();
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
+        tenantId: 'demo' // hesap kimliğiniz
+    }];
 </script>
-
 [inline-code-end]
 
-Şunun gibi görünmelidir:
+Aşağıdaki gibi görünmelidir:
 
 <div class="screenshot white-bg">
     <div class="title">Yapıştır ve Kaydet</div>
@@ -33,4 +25,4 @@ Koddaki birkaç şeyi yapılandırabilirsiniz, 4 ile 7. satırlara bakın.
 
 `Preview in Safe Mode` seçeneğinin çalışmayacağını unutmayın, ancak widget sitenizi ziyaret ettiğinizde görünecektir.
 
-Sorun yaşıyorsanız, sayfanın alt kısmına yakın yerde `"tenantId": "demo"` yazmadığından emin olun. Giriş yaptıysanız, tenant kimliğinizi göstermelidir. Değilse, destek ile iletişime geçin.
+Sorun yaşıyorsanız, aşağıya yakın kısımda `"tenantId": "demo"` yazmadığından emin olun. Oturum açmışsanız orada tenant id'niz görünmelidir. Değilse, destek ile iletişime geçin.

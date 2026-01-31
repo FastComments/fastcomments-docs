@@ -1,6 +1,6 @@
-Yorum widget'ı için tüm kütüphaneler (şu anda Angular, React, Vue) geri çağırmaları destekler.
+Yorum bileşeni için tüm kütüphaneler (şu anda Angular, React, Vue) geri çağırmaları destekler.
 
-Geri çağırmalar, her kütüphane için aynı imzaya sahip yapılandırma nesnesinde belirtilir.
+Geri çağırmalar, yapılandırma nesnesinde belirtilir ve her kütüphane için aynı imzaya sahiptir.
 
 Desteklenen geri çağırmalar:
 
@@ -15,16 +15,17 @@ Desteklenen geri çağırmalar:
 - onCommentSubmitStart
 - onCommentsRendered
 
-Tam imzaları şu [TypeScript tanımlarında](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124) bulabilirsiniz.
+Kesin imzalar [TypeScript tanımlarında](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124) bulunabilir.
 
 İşte tüm geri çağırmaların kullanıldığı bir örnek:
 
 [inline-code-attrs-start title = 'Geri Çağırma Örnekleri'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,7 +50,7 @@ Tam imzaları şu [TypeScript tanımlarında](https://github.com/FastComments/fa
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // varsayılan davranışı önlemek için true döndürün (fastcomments.com kullanıcı profilinin açılmasını).
+            // return true; // varsayılan davranışı (fastcomments.com kullanıcı profilini açma) engellemek için true döndürün.
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
@@ -62,10 +63,10 @@ Tam imzaları şu [TypeScript tanımlarında](https://github.com/FastComments/fa
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // yorumlar sayfadaki varsayılan sıralamaya göre sıralanır; bu 'Most Relevant' (ör: en çok oy alanlar vb.) veya 'Newest First' olabilir
+            // comments sayfadaki varsayılan sıralamaya göre sıralanır; bu En Alakalı (ör: en çok oy alan vb.) veya Yeniler İlk olabilir
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

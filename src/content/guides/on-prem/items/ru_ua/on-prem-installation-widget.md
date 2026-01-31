@@ -1,16 +1,17 @@
-The front end code snippets and libraries for On-Prem are the same as the SaaS product. However, you must specify `apiHost` and the correct script path:
+Фрагменты кода фронтенда и библиотеки для On-Prem такие же, как у SaaS-продукта. Однако необходимо указать `apiHost` и корректный путь к скрипту:
 
 [inline-code-attrs-start title = 'Код комментариев для On Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<script async src="https://my.host.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
         // ... также можно передать полезную нагрузку SSO и т.д.
-    });
+    }];
 </script>
 [inline-code-end]
 
-The above is a very simple example. We could also use the 1st-party React, Angular, Vue, Svelte, etc, libraries.
+Приведённый выше пример очень простой. Мы также можем использовать официальные библиотеки для React, Angular, Vue, Svelte и т.д.

@@ -1,4 +1,4 @@
-次に、[インストール手順](#installation--usage) に従ってから、以下を実行してください：
+まず[installation procedure](#installation-usage-readme-generated)に従ってください。その後、以下を実行してください:
 
 ```php
 <?php
@@ -6,15 +6,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// API キー認証を設定: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには下の行のコメントアウトを外してください
+// Configure API key authorization: api_key
+// APIキー認証を設定: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには下の行のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // これは任意です。デフォルトでは`GuzzleHttp\Client`が使用されます。
     new GuzzleHttp\Client(),
     $config
 );

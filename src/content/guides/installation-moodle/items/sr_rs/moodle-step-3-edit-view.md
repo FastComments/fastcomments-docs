@@ -1,17 +1,16 @@
----
-Затим отворите фајл `view.php`. То можете урадити помоћу `nano`:
+Затим, отворите датотеку `view.php`. То можете урадити помоћу `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Користите стрелице на тастатури да скролујете до дна. Потражите текст који изгледа отприлике овако:
+Користите тастере са стрелицама да скролујете до дна. Потражите неки текст који каже нешто попут:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Сада копирајте код који додаје видгет за коментаре:
+Сада хајде да копирамо код који додаје видгет за коментаре:
 
 [inline-code-attrs-start title = 'Код коментара за Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,26 +28,27 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Користите стрелице на тастатури да поставите курсор пре линије "box_end", и налепите.
+Користите тастере са стрелицама да поставите курсор пре линије "box_end", и налепите.
 
 Требало би да имате нешто овако:
 
 <div class="screenshot white-bg">
-    <div class="title">Пример</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Пример Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
 Сада сачувајте: 
@@ -58,5 +58,3 @@ if ($id) {
 3. Притисните `enter`
 
 То је то!
-
----

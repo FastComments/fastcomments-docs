@@ -1,19 +1,20 @@
-Για τις Αντιδράσεις Σελίδας πρέπει να αποφασίσουμε δύο πράγματα:
+Για τις Αντιδράσεις σελίδας πρέπει να αποφασίσουμε δύο πράγματα:
 
-- Ποιες εικόνες αντιδράσεων να χρησιμοποιηθούν.
-- Ένα σύντομο `id` για να ονομάσετε κάθε αντίδραση.
+- Ποιες εικόνες αντιδράσεων να χρησιμοποιήσουμε.
+- Ένα σύντομο `id` για να ονομάσει κάθε αντίδραση.
 
 Προαιρετικά:
 
 - Μπορείτε επίσης να ορίσετε προαιρετικές ξεχωριστές εικόνες για επιλεγμένες/μη επιλεγμένες αντιδράσεις.
-- Μπορείτε να αποφασίσετε αν θέλετε να εμφανίζεται η λίστα των χρηστών που αντέδρασαν όταν μετακινείτε το δείκτη του ποντικιού πάνω από μία από τις αντιδράσεις. 
+- Μπορείτε να αποφασίσετε αν θέλετε να εμφανίζεται η λίστα χρηστών που αντέδρασαν όταν μετακινείτε το ποντίκι πάνω από μία από τις αντιδράσεις. 
 
-[inline-code-attrs-start title = 'Παράδειγμα Κώδικα για Αντιδράσεις Σελίδας'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα κώδικα Αντιδράσεων Σελίδας'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,8 +26,10 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Η ρύθμιση για τις βιβλιοθήκες frontend όπως React, Angular κ.λπ. είναι η ίδια.
+Η διαμόρφωση για τις βιβλιοθήκες frontend όπως React, Angular κ.λπ. είναι η ίδια.
+
+---

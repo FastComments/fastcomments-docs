@@ -1,4 +1,4 @@
-다음 [설치 절차](#installation--usage)를 따라한 뒤, 다음을 실행하세요:
+다음 [설치 절차](#installation-usage-readme-generated)를 따르고, 아래 내용을 실행하세요:
 
 ```php
 <?php
@@ -8,13 +8,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API 키 인증 구성: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요한 경우 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래의 주석 처리를 해제하세요
+// 필요하면 아래의 주석을 해제하여 API 키에 대한 접두사(예: Bearer)를 설정하세요
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 선택사항입니다. `GuzzleHttp\Client`가 기본값으로 사용됩니다.
+    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client(),
     $config
 );

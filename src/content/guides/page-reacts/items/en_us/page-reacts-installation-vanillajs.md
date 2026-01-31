@@ -1,19 +1,20 @@
-For Page Reacts we need to decide on two things:
+For Page Reacts, we need to decide on two things:
 
 - What reaction images to use.
 - A short `id` to name each reaction.
 
 Optionally:
 
-- You can also define separate optional images for selected and unselected reactions.
-- You can choose whether to show the list of users who reacted when hovering over one of the reactions. 
+- You can also specify separate images for selected/unselected reacts.
+- You can choose whether to show the list of users who reacted when hovering over a reaction. 
 
 [inline-code-attrs-start title = 'Page Reacts Code Example'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,10 @@ Optionally:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-The configuration for React, Angular, and other front-end libraries is the same.
+The configuration for React, Angular, and other frontend libraries is the same.
 
 ---

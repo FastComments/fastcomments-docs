@@ -1,50 +1,49 @@
-Теперь давайте добавим код виджета.
+Теперь добавим код нашего виджета.
 
-Скопируйте код ниже. Убедитесь, что вы вошли в систему на [fastcomments.com](https://fastcomments.com) 
-и перезагрузите эту страницу, если нет, чтобы код был предварительно заполнен информацией вашего аккаунта, в противном случае будет показан демонстрационный код.
+Скопируйте код ниже. Убедитесь, что вы вошли в аккаунт на [fastcomments.com](https://fastcomments.com) 
+и перезагрузите эту страницу, если нет — тогда код будет предварительно заполнен информацией вашего аккаунта, иначе будет показан демонстрационный код.
 
 Теперь скопируем код:
 
 [inline-code-attrs-start title = 'Код комментариев Zyro'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         pageTitle: window.parent.document.title,
         urlId: window.parent.location.href,
         url: window.parent.location.href
-    });
+    }];
 </script>
 [inline-code-end]
 
-Теперь вернитесь в конструктор сайта и нажмите `Enter code`:
+Теперь вернитесь в наш конструктор сайта и нажмите `Enter code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Enter code</div>
+    <div class="title">Ввести код</div>
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-2.png" alt="Ввести код" />
 </div>
 
-### Примечание!
+### Важно!
 
-Важно использовать приведённый выше код, а не фрагменты из другой документации, так как этот фрагмент был специально подготовлен для Zyro.
+Важно использовать приведённый выше код, а не фрагменты кода из другой документации, поскольку этот фрагмент специально подготовлен для Zyro.
 
-Теперь у вас должно получиться нечто подобное, что выглядит пустым. Это ожидаемо. Наведите курсор мыши на область,
+Теперь у вас должно быть что-то похожее на следующее, что выглядит пустым. Это ожидаемо. Наведите курсор мыши на область,
 где должен быть виджет:
 
 <div class="screenshot white-bg">
-    <div class="title">Код виджета добавлен</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Код виджета добавлен" />
+    <div class="title">Виджет добавлен</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-3.png" alt="Виджет добавлен" />
 </div>
 
-Теперь перетащите виджет, задав желаемый размер, вы увидите, как он появится:
+Теперь перетащите виджет до нужного размера — вы увидите, как он появится:
 
 <div class="screenshot white-bg">
-    <div class="title">Измените размер</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Измените размер" />
+    <div class="title">Изменить размер</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-2-add-code-4.png" alt="Изменить размер" />
 </div>
 
-...а теперь просмотрите и сохраните!
-
----
+...а теперь предпросмотрите и сохраните!

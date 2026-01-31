@@ -5,15 +5,16 @@
 
 Опционально:
 
-- Вы также можете задать отдельные изображения для выбранных/невыбранных реакций.
-- Вы можете решить, показывать ли список пользователей, которые отреагировали, при наведении курсора мыши на одну из реакций. 
+- Можно также определить отдельные изображения для выбранных/невыбранных реакций.
+- Можно выбрать, показывать ли список пользователей, которые отреагировали, при наведении мыши на одну из реакций. 
 
-[inline-code-attrs-start title = 'Пример кода Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример кода для Page Reacts'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,8 +26,8 @@
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Конфигурация для фронтенд-библиотек React, Angular и т. п. одинакова.
+Конфигурация для библиотек фронтенда, таких как React, Angular и т.д., одинаковая.

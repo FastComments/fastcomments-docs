@@ -1,13 +1,13 @@
-Next we need to identify where to add the FastComments.com widget code.
+Далі потрібно визначити, куди додати код віджета FastComments.com.
 
-If you're using the default `casper` theme, you'll see a section like this at line `82`:
+Якщо ви використовуєте стандартну тему `casper`, ви побачите секцію, схожу на цю, на рядку `82`:
 
 <div class="screenshot white-bg">
     <div class="title">Відключений розділ коментарів</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Відключений розділ коментарів" />
 </div>
 
-If you're using other themes, you won't see this, and will need to add this code after the last `</section>`:
+Якщо ви використовуєте інші теми, ви не побачите цього й вам потрібно додати цей код після останнього `</section>`:
 
 [inline-code-attrs-start title = 'Приклад секції'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +15,18 @@ If you're using other themes, you won't see this, and will need to add this code
 </section>
 [inline-code-end]
 
-You should have something like this ready:
+У вас має бути щось на кшталт цього:
 
 <div class="screenshot white-bg">
     <div class="title">Шаблон готовий для коду коментарів</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Шаблон готовий для коду коментарів" />
 </div>
 
-Once ready, copy the FastComments.com widget code:
+Коли все готово, скопіюйте код віджета FastComments.com:
 
 [inline-code-attrs-start title = 'Фрагмент коду коментарів FastComments.com для Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,21 +46,24 @@ Once ready, copy the FastComments.com widget code:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
 
-...and it should look like this:
+...і це має виглядати приблизно так:
 
 <div class="screenshot white-bg">
     <div class="title">Додати код коментарів FastComments.com</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Додати код коментарів FastComments.com" />
 </div>
 
-Coding done. Now we just have to re-import our theme!
+Кодування завершено. Тепер нам залишилося лише знову імпортувати нашу тему!
+
+---

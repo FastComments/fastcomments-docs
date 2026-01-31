@@ -1,17 +1,16 @@
----
 Nato odprite datoteko `view.php`. To lahko naredite z `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Uporabite puščice na tipkovnici, da se pomaknete navzdol do dna. Poiščite nekaj besedila, ki pravi nekaj takega:
+Uporabite puščične tipke, da se pomaknete do dna. Poiščite besedilo, ki je nekaj takega:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Zdaj kopirajmo kodo, ki doda pripomoček za komentarje:
+Zdaj kopirajmo kodo, ki doda vtičnik za komentarje:
 
 [inline-code-attrs-start title = 'Koda komentarjev za Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,22 +28,23 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Uporabite puščice, da postavite kurzor pred vrstico "box_end" in prilepite.
+S puščičnimi tipkami postavite kazalec pred vrstico "box_end" in prilepite.
 
-Morali bi imeti nekaj takega:
+Moral bi imeti nekaj takega:
 
 <div class="screenshot white-bg">
     <div class="title">Primer</div>
@@ -58,5 +58,3 @@ Zdaj shranite:
 3. Pritisnite `enter`
 
 To je vse!
-
----

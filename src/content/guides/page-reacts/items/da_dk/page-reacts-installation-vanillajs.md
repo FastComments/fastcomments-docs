@@ -5,15 +5,16 @@ For Side-reaktioner skal vi beslutte to ting:
 
 Valgfrit:
 
-- Du kan også definere separate billeder for valgte/ikke-valgte reaktioner.
-- Du kan beslutte, om du vil vise listen over brugere, der har reageret, når du bevæger musen over en af reaktionerne. 
+- Du kan også definere separate valgfri billeder for valgte/ikke-valgte reaktioner.
+- Du kan vælge, om du vil vise listen over brugere, der har reageret, når musen føres over en af reaktionerne. 
 
 [inline-code-attrs-start title = 'Side-reaktioner kodeeksempel'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,10 +26,8 @@ Valgfrit:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-Konfigurationen for frontend-biblioteker som React, Angular osv. er den samme.
-
----
+Konfigurationen for frontend-bibliotekerne React, Angular osv. er den samme.

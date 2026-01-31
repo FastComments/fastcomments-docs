@@ -1,18 +1,19 @@
-Можемо конфигурисати FastComments да обавести Google Analytics 4 када неко комуницира са виџетом за коментаре.
+Можемо конфигурисати FastComments да обавијести Гоогле Аналитику 4 када неко интерагује са виџетом за коментаре.
 
 Можемо пратити када корисници:
 
 - Коментаришу.
 - Гласају.
 
-Ево примера кода за то:
+Ево примјера кода који то ради:
 
-[inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Гоогле Аналитика 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,11 @@
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
 Ово ће додати два догађаја:
 
-- Ознака: `Comment Posted`, Категорија: `Engagement`, ID: `post_comment`
-- Ознака: `User Voted on a Comment`, Категорија: `Engagement`, ID: `vote_comment`
+- Ознака: `Comment Posted`, Категорија: `Engagement`, ИД: `post_comment`
+- Ознака: `User Voted on a Comment`, Категорија: `Engagement`, ИД: `vote_comment`

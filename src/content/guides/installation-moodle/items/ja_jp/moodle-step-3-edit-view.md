@@ -1,17 +1,17 @@
 ---
-Next, open the `view.php` file. You can do this with `nano`:
+次に、`view.php` ファイルを開きます。`nano` を使って開けます：
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
+矢印キーを使って下までスクロールします。次のようなテキストを探してください：
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Now let's copy the code that adds the comment widget:
+次に、コメントウィジェットを追加するコードをコピーします：
 
 [inline-code-attrs-start title = 'Moodle コメントコード'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,34 +29,35 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Use the arrow keys to position your cursor before the "box_end" line, and paste.
+矢印キーを使ってカーソルを "box_end" 行の前に移動し、貼り付けます。
 
-You should have something like this:
+次のようになっているはずです：
 
 <div class="screenshot white-bg">
     <div class="title">例</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle の例" />
 </div>
 
-Now save: 
+保存するには：
 
-1. Press `ctrl+x`
-2. Press `y`
-3. Press `enter`
+1. `ctrl+x` を押す
+2. `y` を押す
+3. `enter` を押す
 
-That's it!
+これで完了です！
 
 ---

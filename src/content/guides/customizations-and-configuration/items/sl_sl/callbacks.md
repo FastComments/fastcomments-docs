@@ -1,7 +1,6 @@
----
-Vse knjižnice za pripomoček za komentarje (trenutno Angular, React, Vue) podpirajo povratne klice.
+Vse knjižnice za komentarni vtičnik (trenutno Angular, React, Vue) podpirajo povratne klice.
 
-Povratne klice so določene v konfiguracijskem objektu in imajo za vsako knjižnico enak podpis.
+Povratni klici so določeni v konfiguracijskem objektu, z istimi podpisi za vsako knjižnico.
 
 Podprti povratni klici so:
 
@@ -16,16 +15,17 @@ Podprti povratni klici so:
 - onCommentSubmitStart
 - onCommentsRendered
 
-Natančni podpisi so na voljo v [TypeScript definicijah](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
+Natančne podpise najdete v [TypeScript definicije](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
 Tukaj je primer z vsemi uporabljenimi povratnimi klici:
 
 [inline-code-attrs-start title = 'Primeri povratnih klicev'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -54,7 +54,7 @@ Tukaj je primer z vsemi uporabljenimi povratnimi klici:
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // simulira asinhrono vedenje (klic API itd.).
+            setTimeout(function() { // simuliranje asinhronega vedenja (klicanje API itd.).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -63,13 +63,10 @@ Tukaj je primer z vsemi uporabljenimi povratnimi klici:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // komentarji so razvrščeni po privzetem sortiranju na strani, ki je lahko Najbolj relevantno (npr. najbolj glasovani itd.) ali Najnovejši prvi
+            // komentarji so razvrščeni po privzetem vrstnem redu na strani, ki je lahko 'Najbolj relevantni' (npr. najbolj všečkani, itd.) ali 'Najnovejši prvi'
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
-
-
----

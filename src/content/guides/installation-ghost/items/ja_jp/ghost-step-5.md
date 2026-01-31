@@ -1,13 +1,14 @@
-Next we need to identify where to add the FastComments.com widget code.
+---
+次に、FastComments.com ウィジェットコードを追加する場所を特定する必要があります。
 
-If you're using the default `casper` theme, you'll see a section like this at line `82`:
+デフォルトの `casper` テーマを使用している場合、82行目に次のようなセクションが表示されます：
 
 <div class="screenshot white-bg">
     <div class="title">無効化されたコメントセクション</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="無効化されたコメントセクション" />
 </div>
 
-If you're using other themes, you won't see this, and will need to add this code after the last `</section>`:
+他のテーマを使用している場合はこれが表示されないため、最後の `</section>` の後にこのコードを追加する必要があります：
 
 [inline-code-attrs-start title = 'セクションの例'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +16,18 @@ If you're using other themes, you won't see this, and will need to add this code
 </section>
 [inline-code-end]
 
-You should have something like this ready:
+以下のようになっているはずです：
 
 <div class="screenshot white-bg">
     <div class="title">コメントコード用テンプレートの準備完了</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="コメントコード用テンプレートの準備完了" />
 </div>
 
-Once ready, copy the FastComments.com widget code:
+準備ができたら、FastComments.com ウィジェットコードをコピーします：
 
-[inline-code-attrs-start title = 'Ghost 用 FastComments.com コメントコードスニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ghost FastComments.com コメントコードスニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,21 +47,24 @@ Once ready, copy the FastComments.com widget code:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
 
-...and it should look like this:
+...すると次のように表示されます：
 
 <div class="screenshot white-bg">
     <div class="title">FastComments.com コメントコードを追加</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="FastComments.com コメントコードを追加" />
 </div>
 
-Coding done. Now we just have to re-import our theme!
+コーディングは完了です。次はテーマを再インポートするだけです！
+
+---

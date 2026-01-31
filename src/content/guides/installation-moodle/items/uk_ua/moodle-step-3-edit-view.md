@@ -4,13 +4,13 @@
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Використайте стрілки на клавіатурі, щоб прокрутити донизу. Знайдіть текст, який виглядає приблизно так:
+Використайте клавіші стрілок, щоб прокрутити вниз до кінця. Знайдіть текст приблизно такого вигляду:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Тепер скопіюйте код, який додає віджет коментарів:
+Тепер скопіюємо код, який додає віджет коментарів:
 
 [inline-code-attrs-start title = 'Код коментарів Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,26 +28,27 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Використайте стрілки, щоб розмістити курсор перед рядком "box_end" та вставте.
+Використайте клавіші стрілок, щоб розмістити курсор перед рядком "box_end", і вставте.
 
-Ви повинні бачити приблизно таке:
+У вас має вийти приблизно таке:
 
 <div class="screenshot white-bg">
-    <div class="title">Приклад</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Приклад Moodle" />
+    <div class="title">Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
 </div>
 
 Тепер збережіть: 
@@ -56,4 +57,4 @@ if ($id) {
 2. Натисніть `y`
 3. Натисніть `enter`
 
-Ось і все!
+Готово!

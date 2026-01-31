@@ -1,19 +1,20 @@
-For Page Reactsでは、次の2つを決める必要があります:
+Page Reactsでは、次の2点を決める必要があります:
 
-- どのリアクション画像を使用するか。
-- 各リアクションの名前にする短い `id`。
+- 使用するリアクション画像。
+- 各リアクションに付ける短い `id`。
 
-任意で:
+Optionally:
 
-- 選択済み／未選択のリアクション用に、別々の画像を定義することもできます。
-- リアクションのいずれかにマウスを重ねたときに、リアクションしたユーザーの一覧を表示するかどうかを選択できます。
+- 選択済み/未選択のリアクション用に別の画像を任意で定義することもできます。
+- リアクションの上にマウスを移動したときに、リアクションしたユーザーの一覧を表示するかどうかを決められます。
 
 [inline-code-attrs-start title = 'Page Reacts のコード例'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="page-reacts-example"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('page-reacts-example'), {
+    window.fcConfigs = [{
+        target: '#page-reacts-example',
         tenantId: 'demo',
         pageReactConfig: {
             showUsers: true,
@@ -25,8 +26,10 @@ For Page Reactsでは、次の2つを決める必要があります:
                 {id: 'rofl', src: 'https://docs.fastcomments.com/images/emojis/rofl.png' },
             ]
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-React、Angular などのフロントエンドライブラリ向けの設定も同じです。
+React、Angularなどのフロントエンドライブラリ向けの設定は同じです。
+
+---

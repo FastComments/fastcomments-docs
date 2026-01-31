@@ -1,13 +1,13 @@
-Στη συνέχεια πρέπει να εντοπίσουμε πού να προσθέσουμε τον κώδικα του widget του FastComments.com.
+Στη συνέχεια πρέπει να εντοπίσουμε πού θα προσθέσουμε τον κώδικα του widget του FastComments.com.
 
-Αν χρησιμοποιείτε το προεπιλεγμένο θέμα `casper`, θα δείτε μια ενότητα σαν αυτή στη γραμμή `82`:
+Αν χρησιμοποιείτε το προεπιλεγμένο θέμα `casper`, θα δείτε μια ενότητα σαν κι αυτή στη γραμμή `82`:
 
 <div class="screenshot white-bg">
     <div class="title">Απενεργοποιημένη Ενότητα Σχολίων</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Απενεργοποιημένη Ενότητα Σχολίων" />
 </div>
 
-Αν χρησιμοποιείτε άλλα θέματα, δεν θα δείτε αυτό, και θα χρειαστεί να προσθέσετε αυτόν τον κώδικα μετά το τελευταίο `</section>`:
+Αν χρησιμοποιείτε άλλα θέματα, δεν θα το δείτε, και θα χρειαστεί να προσθέσετε αυτόν τον κώδικα μετά το τελευταίο `</section>`:
 
 [inline-code-attrs-start title = 'Παράδειγμα Ενότητας'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,18 +15,18 @@
 </section>
 [inline-code-end]
 
-Πρέπει να έχετε κάτι σαν αυτό έτοιμο:
+Θα πρέπει να έχετε κάτι τέτοιο έτοιμο:
 
 <div class="screenshot white-bg">
-    <div class="title">Πρότυπο Έτοιμο για Κώδικα Σχολίων</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Πρότυπο Έτοιμο για Κώδικα Σχολίων" />
+    <div class="title">Πρότυπο Έτοιμο για τον Κώδικα Σχολίων</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Πρότυπο Έτοιμο για τον Κώδικα Σχολίων" />
 </div>
 
 Μόλις είστε έτοιμοι, αντιγράψτε τον κώδικα του widget του FastComments.com:
 
-[inline-code-attrs-start title = 'Απόσπασμα Κώδικα Σχολίων FastComments.com για Ghost'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Απόσπασμα κώδικα σχολίων Ghost FastComments.com'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,12 +46,13 @@
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
@@ -63,4 +64,4 @@
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Προσθήκη Κώδικα Σχολίων FastComments.com" />
 </div>
 
-Ο κώδικας ολοκληρώθηκε. Τώρα απλώς πρέπει να επανεισάγουμε το θέμα μας!
+Ο κώδικας ολοκληρώθηκε. Τώρα απλώς πρέπει να επαναεισαγάγουμε το θέμα μας!

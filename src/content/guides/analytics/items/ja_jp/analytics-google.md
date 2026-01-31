@@ -1,18 +1,19 @@
-FastCommentsを設定して、誰かがコメントウィジェットとやり取りしたときにGoogle Analytics 4に通知することができます。
+FastComments を設定して、コメントウィジェットでの操作があった際に Google アナリティクス 4 に通知することができます。
 
-ユーザーが以下を行ったときに追跡できます:
+ユーザーが次のような操作を行ったときに追跡できます:
 
-- コメント。
-- 投票。
+- コメント.
+- 投票.
 
-以下はそのためのコード例です:
+以下はそのためのコードスニペットの例です:
 
-[inline-code-attrs-start title = 'Google Analytics 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Google アナリティクス 4'; type = 'HTML'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         onReplySuccess: function (comment) {
             gtag('event', 'post_comment', {
@@ -26,11 +27,11 @@ FastCommentsを設定して、誰かがコメントウィジェットとやり�
                 'event_label': 'User Voted on a Comment'
             });
         }
-    });
+    }];
 </script>
 [inline-code-end]
 
-これにより2つのイベントが追加されます:
+これにより、2つのイベントが追加されます:
 
-- ラベル: `Comment Posted`、カテゴリ: `Engagement`、ID: `post_comment`
-- ラベル: `User Voted on a Comment`、カテゴリ: `Engagement`、ID: `vote_comment`
+- ラベル: `Comment Posted`, カテゴリ: `Engagement`, ID: `post_comment`
+- ラベル: `User Voted on a Comment`, カテゴリ: `Engagement`, ID: `vote_comment`

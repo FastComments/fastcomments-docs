@@ -1,91 +1,79 @@
-Tukaj je nekaj simptomov, s katerimi se pogosto srečujemo, in pogoste rešitve.
+Tukaj je nekaj simptomov, s katerimi se pogosto srečujemo, in pogoste rešitve. 
 
-### Sporočilo "To je demo"
+### Sporočilo "This is a demo"
 
-To se prikaže, ko ste kopirali kodo pripomočka z naše domače strani, ki uporablja naš demo
-najemnik. Za uporabo vašega najemnika kopirajte kodo pripomočka [od tukaj](https://fastcomments.com/auth/my-account/get-acct-code).
+To se prikaže, ko ste kopirali kodo vtičnika z naše domače strani, ki uporablja naš demo tenant. Če želite uporabljati svoj tenant, kopirajte kodo vtičnika s [te strani](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### Napaka "FastComments se ne more naložiti na tej domeni"
+### Napaka "FastComments cannot load on this domain"
 
-FastComments mora vedeti, katere domene so v vaši lasti, da lahko avtenticira zahteve, povezane
-z vašim računom. [Oglejte si našo dokumentacijo](/guide-multiple-sites.html#add-domains-to-account), da vidite, kako
-odpraviti to napako (preprosto dodajte natančno poddomeno + domeno v vaš račun).
+FastComments mora vedeti, katera domenska imena so v vaši lasti, da lahko preveri zahteve, povezane z vašim računom. [Oglejte si našo dokumentacijo](/guide-multiple-sites.html#add-domains-to-account), da vidite, kako odpraviti to napako (preprosto dodajte točno subdomeno + domeno v svoj račun).
 
-Upoštevajte, da bi se to moralo zgoditi šele po preteku preizkusnega obdobja. Med preizkusnim obdobjem se bodo vse zahteve z novih domen
-samodejno dodale v vaš račun.
+Upoštevajte, da se to običajno zgodi šele po koncu poskusnega obdobja. Med poskusnim obdobjem bodo vse zahteve z novih domen samodejno dodane v vaš račun.
 
-### Preseljeni komentarji se ne prikazujejo za prilagojene namestitve
+### Migrirani komentarji se ne prikazujejo za prilagojene inštalacije
 
-Običajno se to zgodi, ko so uvoženi komentarji vezani na `Page ID`, vi pa posredujete URL
-(ali nobene vrednosti, v tem primeru se uporabi URL strani).
+Običajno se to zgodi, ko so uvoženi komentarji vezani na `Page ID`, vi pa posredujete URL (ali nobene vrednosti, v tem primeru privzeto uporabljeno vrednost URL strani).
 
-To lahko razhroščujete z [izvozom vaših komentarjev](https://fastcomments.com/auth/my-account/manage-data/export) in ogledom stolpca `URL ID` (trenutno stolpec `B`).
+To lahko odpravite tako, da [izvozite svoje komentarje](https://fastcomments.com/auth/my-account/manage-data/export) in si ogledate stolpec `URL ID` (trenutno stolpec `B`).
 
-Zagotovite, da so vrednosti, ki jih vidite v stolpcu `URL ID`, enake vrednostim, ki jih posredujete konfiguraciji pripomočka
-kot parameter `urlId`.
+Prepričajte se, da so vrednosti, ki jih vidite v stolpcu `URL ID`, enake vrednostim, ki jih posredujete konfiguraciji vtičnika kot parameter `urlId`.
 
 Za dodatno razlago poskusite prebrati našo [dokumentacijo Kako so komentarji vezani na strani in članke](/guide-customizations-and-configuration.html#url-id).
 
-Če vse drugo odpove, [se obrnite na nas](https://fastcomments.com/auth/my-account/help).
+Če vse drugo odpove, nam [pišite](https://fastcomments.com/auth/my-account/help).
 
-### Pripomoček za komentarje se ne prikazuje
+### Komentarni vtičnik se ne prikazuje
 
-Če se pripomoček za komentarje ne prikazuje, preverite razvojno konzolo Chrome za napake.
+Če se komentarni vtičnik ne prikaže, preverite Chrome razvojno konzolo za napake.
 
-Za večino napačnih konfiguracij bo pripomoček za komentarje vsaj prikazal napako na strani, če se
-lahko naloži. Ne videti ničesar običajno kaže na skriptno napako.
+Pri večini napačnih konfiguracij se bo komentarni vtičnik vsaj prikazal z napako na strani, če se mu uspe naložiti. Če ne vidite ničesar, je to običajno znak skriptne napake.
 
 ### Želena konfiguracija ne deluje po pričakovanjih
 
-Preizkusite našo [razširitev za Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), da vidite, katera
-konfiguracija se posreduje pripomočku za komentarje. Če vse odpove, naredite posnetek zaslona, kaj pravi razširitev chrome,
-in [se obrnite na nas](https://fastcomments.com/auth/my-account/help).
+Poskusite naš [Chrome razširitev](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), da vidite, katera konfiguracija se posreduje komentarjem. Če vse odpove, naredite posnetek zaslona tistega, kar pove razširitev, in nam [pišite](https://fastcomments.com/auth/my-account/help).
 
-### Komentarji manjkajo na istem URL z različnim hash bangom
+### Komentarji manjkajo na istem URL z različnim hash-bangom
 
-Privzeto bo FastComments uporabil URL strani za "vedro", kjer se shranjujejo komentarji. Če vaši URL-ji vključujejo `#hashbange`, in ti `#hashbangi`
-ne bi smeli biti del identifikatorja, ki identificira nit komentarjev, lahko preprosto ignoriramo vrednost hash bang, na primer:
+Privzeto FastComments uporablja URL strani kot "vedro", kjer so shranjeni komentarji. Če vaši URL-ji vsebujejo `#hashbangs`, in ti `#hashbangs` ne bi smeli biti del identifikatorja, ki določa niti komentarjev, jih lahko preprosto zanemarimo, na primer:
 
-[inline-code-attrs-start title = 'Primer ignoriranja hash bangov'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer: ignoriranje hash-bangov'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.href.replace(location.hash, ''),
     urlId: location.href.replace(location.hash, '')
-});
+}];
 </script>
 [inline-code-end]
 
-Upoštevajte, da bo po tej spremembi za obstoječe komentarje potrebna migracija. [Za to se obrnite na nas.](https://fastcomments.com/auth/my-account/help)
+Upoštevajte, da bo po tej spremembi treba izvesti migracijo za obstoječe komentarje. [V ta namen nam pišite.](https://fastcomments.com/auth/my-account/help)
 
-### Parametri poizvedbe URL vplivajo na pripomoček
+### Vpliv URL parametrov poizvedbe na vtičnik
 
-Privzeto bo FastComments uporabil URL strani za "vedro", kjer se shranjujejo komentarji. Če vaši URL-ji vključujejo parametre poizvedbe,
-ki ne bi smeli biti del identifikatorja, ki identificira nit komentarjev, jih lahko preprosto ignoriramo, na primer:
+Privzeto FastComments uporablja URL strani kot "vedro", kjer so shranjeni komentarji. Če vaši URL-ji vsebujejo parametre poizvedbe, ki ne bi smeli biti del identifikatorja niti komentarja, jih lahko preprosto zanemarimo, na primer:
 
-[inline-code-attrs-start title = 'Ignoriraj parametre poizvedbe'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ignoriranje parametrov poizvedbe'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+window.fcConfigs = [{
+    target: '#fastcomments-widget',
     tenantId: "demo",
     url: location.protocol + '//' + location.host + location.pathname,
     urlId: location.pathname
-});
+}];
 </script>
 [inline-code-end]
 
-Upoštevajte, da bo po tej spremembi za obstoječe komentarje potrebna migracija. [Za to se obrnite na nas.](https://fastcomments.com/auth/my-account/help)
+Upoštevajte, da bo po tej spremembi treba izvesti migracijo za obstoječe komentarje. [V ta namen nam pišite.](https://fastcomments.com/auth/my-account/help)
 
 ### Ne prejemate e-pošte
 
-Pri FastComments vlagamo veliko truda, da zagotovimo, da je dostava naše e-pošte čim bolj zanesljiva.
-Vendar pa je nekaterim ponudnikom e-pošte notorično težko zanesljivo dostavljati. Preverite svojo mapo
-spam za sporočila od fastcomments.com.
+V FastComments vložimo veliko truda, da je dostava naših e-poštnih sporočil čim bolj zanesljiva. Vendar so nekateri ponudniki e-pošte znano težavni za zanesljivo dostavo. Preverite mapo z vsiljeno pošto za sporočila s strani fastcomments.com.
 
-Če [se obrnete na nas](https://fastcomments.com/auth/my-account/help), vam lahko običajno zagotovimo
-več vpogleda, zakaj morda ne vidite e-pošte od nas.
+Če nam [pišete](https://fastcomments.com/auth/my-account/help), vam običajno lahko damo več informacij o tem, zakaj morda ne vidite naših e-poštnih sporočil.

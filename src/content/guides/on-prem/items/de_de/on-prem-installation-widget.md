@@ -1,19 +1,17 @@
----
-Die Frontend-Code-Snippets und Bibliotheken für On-Prem sind dieselben wie beim SaaS-Produkt. Sie müssen jedoch `apiHost` und den korrekten Skriptpfad angeben:
+Die Frontend-Code-Snippets und Bibliotheken für On-Prem sind die gleichen wie beim SaaS-Produkt. Sie müssen jedoch `apiHost` und den richtigen Skriptpfad angeben:
 
 [inline-code-attrs-start title = 'Kommentare-Code für On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://my.host.com/js/embed-v2.min.js"></script>
+<script async src="https://my.host.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... es kann auch SSO-Payload usw. übergeben werden.
-    });
+        // ... kann auch SSO-Payload usw. übergeben werden.
+    }];
 </script>
 [inline-code-end]
 
-Das Obige ist ein sehr einfaches Beispiel. Wir könnten auch die First-Party-Bibliotheken für React, Angular, Vue, Svelte usw. verwenden.
-
----
+Das obige ist ein sehr einfaches Beispiel. Wir könnten auch die Erstanbieter-Bibliotheken für React, Angular, Vue, Svelte usw. verwenden.

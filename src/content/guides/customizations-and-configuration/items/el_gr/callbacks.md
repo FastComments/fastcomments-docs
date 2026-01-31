@@ -1,8 +1,8 @@
 Όλες οι βιβλιοθήκες για το widget σχολίων (προς το παρόν Angular, React, Vue) υποστηρίζουν callbacks.
 
-Τα callbacks ορίζονται στο αντικείμενο ρυθμίσεων, με την ίδια υπογραφή για κάθε βιβλιοθήκη.
+Οι callbacks ορίζονται στο αντικείμενο διαμόρφωσης, με την ίδια υπογραφή για κάθε βιβλιοθήκη.
 
-Τα υποστηριζόμενα callbacks είναι:
+Οι υποστηριζόμενες callbacks είναι:
 
 - onInit
 - onAuthenticationChange
@@ -15,16 +15,17 @@
 - onCommentSubmitStart
 - onCommentsRendered
 
-Οι ακριβείς υπογραφές μπορούν να βρεθούν στους [Ορισμούς TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
+Τις ακριβείς υπογραφές μπορείτε να βρείτε στους [ορισμούς TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-Ακολουθεί ένα παράδειγμα με όλα τα callbacks:
+Εδώ είναι ένα παράδειγμα που χρησιμοποιεί όλες τις callbacks:
 
-[inline-code-attrs-start title = 'Παραδείγματα Callbacks'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παραδείγματα callbacks'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,11 +50,11 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // επιστρέψτε true για να αποτρέψετε την προεπιλεγμένη συμπεριφορά (άνοιγμα προφίλ χρήστη στο fastcomments.com).
+            // return true; // επιστροφή true για να αποτρέψετε την προεπιλεγμένη συμπεριφορά (άνοιγμα προφίλ χρήστη fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // εξομοιώντας ασύγχρονη συμπεριφορά (κλήση API κ.λπ.).
+            setTimeout(function() { // προσομοίωση ασύγχρονης συμπεριφοράς (κλήση API κ.λπ).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,13 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // τα σχόλια είναι ταξινομημένα με την προεπιλεγμένη ταξινόμηση στη σελίδα, η οποία μπορεί να είναι Most Relevant (π.χ. τα περισσότερα upvotes κ.λπ.) ή Newest First
+            // Τα σχόλια είναι ταξινομημένα με την προεπιλεγμένη ταξινόμηση στη σελίδα, η οποία μπορεί να είναι Most Relevant (π.χ. most upvoted, κ.λπ.) ή Newest First
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]
+
+
+---

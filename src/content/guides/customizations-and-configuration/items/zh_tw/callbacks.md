@@ -1,8 +1,8 @@
-所有評論元件的函式庫（目前支援 Angular、React、Vue）都支援回呼。
+所有評論小工具的函式庫（目前為 Angular、React、Vue）都支援回呼。
 
-回呼在設定物件中指定，各函式庫使用相同的簽章。
+回呼在設定物件中指定，且每個函式庫使用相同的簽名。
 
-支援的回呼有：
+支援的回呼包括：
 
 - onInit
 - onAuthenticationChange
@@ -15,16 +15,17 @@
 - onCommentSubmitStart
 - onCommentsRendered
 
-確切的簽章可以在 [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124) 找到。
+精確的簽名可在 [TypeScript 定義](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124) 中找到。
 
-以下為使用所有回呼的範例：
+以下範例示範如何使用所有回呼：
 
-[inline-code-attrs-start title = '回呼範例'; inline-code-attrs-end]
+[inline-code-attrs-start title = '回呼 範例'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,7 +50,7 @@
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // 傳回 true 可阻止預設行為（開啟 fastcomments.com 的使用者個人頁）。
+            // return true; // 傳回 true 以防止預設行為（開啟 fastcomments.com 使用者頁面）。
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments 會根據頁面上的預設排序進行排序，該排序可能是 Most Relevant（例如：最多被按讚等）或 Newest First
+            // comments 會依頁面上的預設排序排序，該排序可能是 Most Relevant（例如：most upvoted 等），或 Newest First。
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

@@ -1,22 +1,23 @@
-Сада ћемо копирати наш код. Ако исечак кода на линији 6 пише `tenantId: "demo"` онда треба да се пријавите на свој FastComments налог
-и затим освежите ову страницу да би копирани исечак кода имао ваш идентификатор налога.
+Sada ćemo kopirati наш код. Ако у isječku кода на линији 6 пише `tenantId: "demo"`, требало би да се пријавите на свој FastComments налог
+и потом освежите ову страницу како би копирани isječak кода имао ID вашег налога.
 
-[inline-code-attrs-start title = 'Исечак Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Snippet za Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
-Сада налепите у уређивач и кликните сачувај:
+Сада га налепите у уредник и кликните Sačuvaj:
 
 <div class="screenshot white-bg">
-    <div class="title">Додајте FastComments код</div>
-    <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Додајте FastComments код" />
+    <div class="title">Dodajte FastComments kod</div>
+    <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Dodajte FastComments kod" />
 </div>
 
-... затим сачувајте ваш сајт. То је то!
+... затим сачувајте свој сајт. То је то!

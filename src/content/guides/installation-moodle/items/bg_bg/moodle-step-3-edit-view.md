@@ -1,16 +1,16 @@
-След това отворете файла `view.php`. Можете да го направите с `nano`:
+Next, open the `view.php` file. You can do this with `nano`:
 
 ```bash
 sudo nano /var/www/html/moodle/mod/book/view.php
 ```
 
-Използвайте стрелките, за да превъртите до дъното. Потърсете текст, който казва нещо като:
+Use the arrow keys to scroll down to the bottom. Look for some text that says something like:
 
 ```php
 echo $OUTPUT->box_end();
 ```
 
-Сега нека копираме кода, който добавя уиджета за коментари:
+Now let's copy the code that adds the comment widget:
 
 [inline-code-attrs-start title = 'Код за коментари в Moodle'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,32 +28,33 @@ if ($id) {
         "loginURL" => '/login/index.php'
     ));
     
-    echo "<script src=\"https://cdn-eu.fastcomments.com/js/embed-v2.min.js\"></script>
+    echo "<script async src=\"https://cdn.fastcomments.com/js/embed-v2-async.min.js\"></script>
     <div id=\"fastcomments-widget\"></div>
     <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: 'demo',
             simpleSSO: $simple_sso_json,
             urlId: $id,
             url: '$url_decoded'
-        });
+        }];
     </script>";
 }
 [inline-code-end]
 
-Използвайте стрелките, за да позиционирате курсора преди реда "box_end", и поставете.
+Use the arrow keys to position your cursor before the "box_end" line, and paste.
 
-Трябва да имате нещо подобно на следното:
+You should have something like this:
 
 <div class="screenshot white-bg">
-    <div class="title">Example</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Moodle Example" />
+    <div class="title">Пример</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-result-code.png" alt="Пример за Moodle" />
 </div>
 
-Сега запазете: 
+Now save: 
 
-1. Натиснете `ctrl+x`
-2. Натиснете `y`
-3. Натиснете `enter`
+1. Press `ctrl+x`
+2. Press `y`
+3. Press `enter`
 
-Готово!
+That's it!

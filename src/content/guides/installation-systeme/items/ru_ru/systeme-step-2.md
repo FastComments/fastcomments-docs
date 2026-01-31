@@ -1,17 +1,20 @@
-Теперь мы собираемся скопировать наш код. Если в фрагменте кода на строке 6 указано `tenantId: "demo"`, войдите в свою учетную запись FastComments, а затем обновите эту страницу, чтобы скопированный фрагмент кода содержал идентификатор вашей учетной записи.
+---
+Теперь мы собираемся скопировать наш код. Если в фрагменте кода на строке 6 указано `tenantId: "demo"`, то вам следует войти в свою учетную запись FastComments
+и затем обновить эту страницу, чтобы скопированный фрагмент кода содержал id вашей учетной записи.
 
-[inline-code-attrs-start title = 'Сниппет Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Фрагмент для Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo"
-    });
+    }];
 </script>
 [inline-code-end]
 
-Вставьте его в редактор и нажмите сохранить:
+Теперь вставьте его в редактор и нажмите Сохранить:
 
 <div class="screenshot white-bg">
     <div class="title">Добавьте код FastComments</div>
@@ -19,3 +22,5 @@
 </div>
 
 ... затем сохраните сайт. Вот и всё!
+
+---

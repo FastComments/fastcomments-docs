@@ -17,14 +17,15 @@
 
 Точные сигнатуры можно найти в [Определениях TypeScript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
 
-Вот пример, в котором используются все обратные вызовы:
+Вот пример со всеми используемыми обратными вызовами:
 
 [inline-code-attrs-start title = 'Примеры обратных вызовов'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -53,7 +54,7 @@
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
-            setTimeout(function() { // имитация асинхронного поведения (вызов API и т.д.).
+            setTimeout(function() { // имитируем асинхронное поведение (вызов API и т.д.).
                 if(confirm('Should submit?')) {
                     continueSubmitFn();
                 } else {
@@ -62,10 +63,10 @@
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // комментарии отсортированы по умолчанию на странице, что может быть Most Relevant (например: наиболее оценённые и т.д.), или Newest First
+            // comments отсортированы согласно сортировке по умолчанию на странице, которая может быть Most Relevant (например: с наибольшим количеством голосов и т.д.) или Newest First
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

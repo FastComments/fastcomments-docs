@@ -1,32 +1,33 @@
-Next we're going to scroll down to line `100`:
+Næste skal vi rulle ned til linje `100`:
 
 <div class="screenshot white-bg">
-    <div class="title">Rul ned til linje 100</div>
-    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-7-line-100.png" alt="Rul ned til linje 100" />
+    <div class="title">Rul til linje 100</div>
+    <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-7-line-100.png" alt="Rul til linje 100" />
 </div>
 
-Now copy the following code snippet, which is designed **specifically for Shopify - do not use code snippets from other tutorials**:
+Kopier nu følgende kodeudsnit, som er designet **specifikt til Shopify - brug ikke kodeudsnit fra andre vejledninger**:
 
 [inline-code-attrs-start title = 'Shopify FastComments-udsnit'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
 <script>
-    FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: "demo",
         urlId: window.location.pathname
-    });
+    }];
 </script>
 [inline-code-end]
 
-Now we want to put our cursor on `line 101` - right after the `</div>` - and paste. You should have something like this:
+Nu vil vi placere markøren på `line 101` - lige efter `</div>` - og indsætte. Du bør have noget som dette:
 
 <div class="screenshot white-bg">
     <div class="title">Tilføj FastComments-koden</div>
     <img class="screenshot-image" src="/images/installation-guides/shopify-step-2-8-code-pasted.png" alt="Tilføj FastComments-koden" />
 </div>
 
-Now we can save:
+Nu kan vi gemme:
 
 <div class="screenshot white-bg">
     <div class="title">Gem</div>

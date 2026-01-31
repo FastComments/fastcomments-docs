@@ -1,4 +1,4 @@
-Siga el [procedimiento de instalación](#installation--usage) y luego ejecute lo siguiente:
+Por favor, siga el [procedimiento de instalación](#installation-usage-readme-generated) y luego ejecute lo siguiente:
 
 ```php
 <?php
@@ -18,7 +18,7 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // cadena
+$tenant_id = 'tenant_id_example'; // string
 $add_domain_config_params = new \FastComments\Client\Model\AddDomainConfigParams(); // \FastComments\Client\Model\AddDomainConfigParams
 
 try {

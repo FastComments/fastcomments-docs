@@ -1,4 +1,4 @@
-Toutes les bibliothèques pour le widget de commentaires (actuellement Angular, React, Vue) prennent en charge les callbacks.
+Toutes les bibliothèques pour le widget de commentaires (actuellement Angular, React, Vue) supportent les callbacks.
 
 Les callbacks sont spécifiés dans l'objet de configuration, avec la même signature pour chaque bibliothèque.
 
@@ -21,10 +21,11 @@ Voici un exemple avec tous les callbacks utilisés :
 
 [inline-code-attrs-start title = 'Exemples de callbacks'; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
-    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+    window.fcConfigs = [{
+        target: '#fastcomments-widget',
         tenantId: 'demo',
         onInit: function () {
             console.log('Library started to fetch comments!');
@@ -49,7 +50,7 @@ Voici un exemple avec tous les callbacks utilisés :
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // renvoie true pour empêcher le comportement par défaut (ouverture du profil utilisateur sur fastcomments.com).
+            // return true; // return true pour empêcher le comportement par défaut (ouverture du profil utilisateur sur fastcomments.com).
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
@@ -62,10 +63,10 @@ Voici un exemple avec tous les callbacks utilisés :
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments est trié selon le tri par défaut de la page, qui peut être Most Relevant (ex : most upvoted, etc), ou Newest First
+            // comments est trié selon le tri par défaut de la page qui peut être "Most Relevant" (ex : le plus voté, etc.) ou "Newest First"
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }
-    });
+    }];
 </script>
 [inline-code-end]

@@ -1,13 +1,13 @@
-Sledeće treba da identifikujemo gde da dodamo FastComments.com widget kod.
+Sledeće treba da utvrdimo gde da dodamo FastComments.com widget kod.
 
-Ako koristite podrazumevanu temu `casper`, videćete sekciju poput ove na liniji `82`:
+Ako koristite podrazumevanu temu `casper`, videćete odeljak kao ovaj na liniji `82`:
 
 <div class="screenshot white-bg">
-    <div class="title">Onemogućena sekcija komentara</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Onemogućena sekcija komentara" />
+    <div class="title">Onemogućen odeljak komentara</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="Onemogućen odeljak komentara" />
 </div>
 
-Ako koristite druge teme, ovo nećete videti, i moraćete da dodate ovaj kod nakon poslednjeg `</section>`:
+Ako koristite druge teme, ovo nećete videti i moraćete da dodate ovaj kod posle poslednjeg `</section>`:
 
 [inline-code-attrs-start title = 'Primer sekcije'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,11 +22,11 @@ Treba da imate nešto ovako spremno:
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="Šablon spreman za kod komentara" />
 </div>
 
-Kada ste spremni, kopirajte FastComments.com kod widgeta:
+Kada ste spremni, kopirajte FastComments.com widget kod:
 
-[inline-code-attrs-start title = 'Ghost FastComments.com isječak koda za komentare'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ghost FastComments.com deo koda za komentare'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
@@ -46,12 +46,13 @@ Kada ste spremni, kopirajte FastComments.com kod widgeta:
             \{{/if}}
         \{{/if}}
 
-        FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        window.fcConfigs = [{
+            target: '#fastcomments-widget',
             tenantId: "demo",
             urlId: window.location.pathname,
             allowAnon: false,
             simpleSSO: simpleSSO
-        });
+        }];
     })();
 </script>
 [inline-code-end]
@@ -63,6 +64,4 @@ Kada ste spremni, kopirajte FastComments.com kod widgeta:
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="Dodajte FastComments.com kod za komentare" />
 </div>
 
-Kodiranje gotovo. Sada samo treba ponovo da uvezemo našu temu!
-
----
+Kodiranje gotovo. Sada samo treba da ponovo uvezemo našu temu!

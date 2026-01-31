@@ -1,4 +1,4 @@
-Volg de [installatieprocedure](#installation--usage) en voer vervolgens het volgende uit:
+Volg de [installation procedure](#installation-usage-readme-generated) en voer vervolgens het volgende uit:
 
 ```php
 <?php
@@ -6,9 +6,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configureer API-sleutel autorisatie: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaarstreep weg om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Haal de commentaarregel hieronder weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
