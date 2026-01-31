@@ -157,12 +157,18 @@ class BaseDocGenerator {
         const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
 
         return markdown.replace(linkRegex, (match, text, url) => {
-            // Skip absolute URLs, anchors, and root-relative paths
+            // Skip absolute URLs and root-relative paths
             if (url.startsWith('http://') ||
                 url.startsWith('https://') ||
-                url.startsWith('#') ||
                 url.startsWith('/')) {
                 return match;
+            }
+
+            // Convert internal anchor links to match sanitized section names
+            if (url.startsWith('#')) {
+                const anchor = url.substring(1);
+                const sanitizedAnchor = this.sanitizeFilename(anchor) + '-readme-generated';
+                return `[${text}](#${sanitizedAnchor})`;
             }
 
             // This is a relative link - convert it

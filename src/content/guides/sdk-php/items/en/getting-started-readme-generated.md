@@ -1,4 +1,4 @@
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the [installation procedure](#installation-usage-readme-generated) and then run the following:
 
 ```php
 <?php
