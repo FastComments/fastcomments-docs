@@ -8,6 +8,7 @@ const {getCompiledTemplate} = require('./utils');
 const {processDynamicContent} = require('./guide-dynamic-content-transformer');
 const snippetProcessor = require('./snippet-processor');
 const {locales, defaultLocale} = require('./locales');
+const {linkValidator} = require('./link-validator');
 
 const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
 
@@ -130,7 +131,14 @@ async function buildGuideItemForMeta(guide, metaItem, locale = defaultLocale) {
         throw new Error(`Required file not found: ${itemPath}`);
     }
 
-    const markdown = handlebars.compile(fs.readFileSync(itemPath, 'utf8'))({
+    const rawMarkdown = fs.readFileSync(itemPath, 'utf8');
+
+    // Validate links in the raw markdown (only on default locale to avoid duplicate errors)
+    if (locale === defaultLocale) {
+        linkValidator.validateContent(rawMarkdown, itemPath, guide.id);
+    }
+
+    const markdown = handlebars.compile(rawMarkdown)({
         ExampleTenantId
     });
 
@@ -287,6 +295,12 @@ function getGuides(locale = defaultLocale) {
             metaPath = metaJSONPath;
         }
         const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+
+        // Register guide items for link validation (using already-read meta)
+        if (meta.itemsOrdered && meta.itemsOrdered.length > 0) {
+            linkValidator.registerGuideItems(guide, meta.itemsOrdered);
+        }
+
         const hasItems = meta.itemsOrdered.length > 0 || meta.url;
         if (hasItems) {
             /** @type {Array.<string>} **/

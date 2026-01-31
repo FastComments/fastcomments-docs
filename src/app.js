@@ -9,6 +9,7 @@ const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
 const guideOrder = require('./content/guides/guide-order.json');
 const {locales, defaultLocale} = require('./locales');
+const {linkValidator} = require('./link-validator');
 
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
@@ -132,6 +133,12 @@ const index = {};
     }
 
     await dispose();
+
+    // Check for link validation errors (collected during build)
+    if (linkValidator.hasErrors()) {
+        linkValidator.printErrors();
+        process.exit(1);
+    }
 
     console.log(`Execution Time: ${Date.now() - startTime}ms`);
     process.exit(0); // it seems like puppeteer is keeping the process alive...
