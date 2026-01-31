@@ -6,12 +6,8 @@ const EXTERNAL_PREFIXES = ['http://', 'https://', 'mailto:', 'tel:'];
 class LinkValidator {
     constructor() {
         this.guideItems = {}; // { guideId: Set<itemId> }
-        this.errors = [];
     }
 
-    /**
-     * Register items for a guide (call once per guide when meta is loaded)
-     */
     registerGuideItems(guideId, metaItemsOrdered) {
         const items = new Set();
         for (const item of metaItemsOrdered) {
@@ -20,9 +16,6 @@ class LinkValidator {
         this.guideItems[guideId] = items;
     }
 
-    /**
-     * Validate links in already-read markdown content
-     */
     validateContent(content, filePath, guideId) {
         const contentWithoutCode = content.replace(CODE_BLOCK_REGEX, '');
         const lines = content.split('\n');
@@ -72,15 +65,19 @@ class LinkValidator {
         return 1;
     }
 
+    fail(filePath, lineNumber, linkText, link, issue, available) {
+        let msg = `\nInvalid link at ${filePath}:${lineNumber}\n`;
+        msg += `  Link: [${linkText}](${link})\n`;
+        msg += `  ${issue}\n`;
+        if (available) msg += `  Available: ${available}\n`;
+        throw new Error(msg);
+    }
+
     validateAnchor(filePath, guideId, anchor, linkText, link, lineNumber) {
         const items = this.guideItems[guideId];
         if (!items || !items.has(anchor)) {
-            const available = items ? Array.from(items).slice(0, 5).join(', ') : 'none';
-            this.errors.push({
-                filePath, lineNumber, linkText, link,
-                issue: `Anchor '${anchor}' not found in guide '${guideId}'`,
-                fix: `Available: ${available}${items && items.size > 5 ? ', ...' : ''}`
-            });
+            const available = items ? Array.from(items).slice(0, 5).join(', ') + (items.size > 5 ? ', ...' : '') : 'none';
+            this.fail(filePath, lineNumber, linkText, link, `Anchor '${anchor}' not found in guide '${guideId}'`, available);
         }
     }
 
@@ -89,19 +86,11 @@ class LinkValidator {
         const items = this.guideItems[guideId];
 
         if (!items || !items.has(targetItemId)) {
-            const available = items ? Array.from(items).slice(0, 5).join(', ') : 'none';
-            this.errors.push({
-                filePath, lineNumber, linkText, link,
-                issue: `Item '${targetItemId}' not found in guide '${guideId}'`,
-                fix: `Use anchor: (#${targetItemId})\n       Available: ${available}${items && items.size > 5 ? ', ...' : ''}`
-            });
+            const available = items ? Array.from(items).slice(0, 5).join(', ') + (items.size > 5 ? ', ...' : '') : 'none';
+            this.fail(filePath, lineNumber, linkText, link, `Item '${targetItemId}' not found in guide '${guideId}'`, available);
         } else if (anchor && !items.has(anchor)) {
-            const available = Array.from(items).slice(0, 5).join(', ');
-            this.errors.push({
-                filePath, lineNumber, linkText, link,
-                issue: `Anchor '${anchor}' not found in guide '${guideId}'`,
-                fix: `Available: ${available}${items.size > 5 ? ', ...' : ''}`
-            });
+            const available = Array.from(items).slice(0, 5).join(', ') + (items.size > 5 ? ', ...' : '');
+            this.fail(filePath, lineNumber, linkText, link, `Anchor '${anchor}' not found in guide '${guideId}'`, available);
         }
     }
 
@@ -112,46 +101,15 @@ class LinkValidator {
 
         const items = this.guideItems[guideId];
         if (!items) {
-            const available = Object.keys(this.guideItems).slice(0, 5).join(', ');
-            this.errors.push({
-                filePath, lineNumber, linkText, link,
-                issue: `Guide '${guideId}' not found`,
-                fix: `Available: ${available}${Object.keys(this.guideItems).length > 5 ? ', ...' : ''}`
-            });
+            const available = Object.keys(this.guideItems).slice(0, 5).join(', ') + (Object.keys(this.guideItems).length > 5 ? ', ...' : '');
+            this.fail(filePath, lineNumber, linkText, link, `Guide '${guideId}' not found`, available);
         } else if (anchor && !items.has(anchor)) {
-            const available = Array.from(items).slice(0, 5).join(', ');
-            this.errors.push({
-                filePath, lineNumber, linkText, link,
-                issue: `Anchor '${anchor}' not found in guide '${guideId}'`,
-                fix: `Available: ${available}${items.size > 5 ? ', ...' : ''}`
-            });
+            const available = Array.from(items).slice(0, 5).join(', ') + (items.size > 5 ? ', ...' : '');
+            this.fail(filePath, lineNumber, linkText, link, `Anchor '${anchor}' not found in guide '${guideId}'`, available);
         }
-    }
-
-    hasErrors() {
-        return this.errors.length > 0;
-    }
-
-    printErrors() {
-        if (this.errors.length === 0) return;
-
-        console.log('\n================================================================================');
-        console.log(`LINK VALIDATION FAILED - Found ${this.errors.length} invalid link${this.errors.length > 1 ? 's' : ''}`);
-        console.log('================================================================================\n');
-
-        for (const err of this.errors) {
-            console.log(`File:   ${err.filePath}:${err.lineNumber}`);
-            console.log(`Link:   [${err.linkText}](${err.link})`);
-            console.log(`Issue:  ${err.issue}`);
-            if (err.fix) console.log(`\n  ${err.fix}`);
-            console.log('\n--------------------------------------------------------------------------------\n');
-        }
-
-        console.log('================================================================================');
     }
 }
 
-// Singleton instance
 const linkValidator = new LinkValidator();
 
 module.exports = { linkValidator };
