@@ -1,61 +1,62 @@
 {
-  "name": "Installation",
-  "icon": "download.png",
-  "itemsOrdered": [
-    {
-      "name": "Wordpress",
-      "file": "wordpress.md",
-      "subCat": "Third-Party Plugins"
-    },
-    {
-      "name": "VanillaJS / HTML Snippet",
-      "file": "vanillajs.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Angular",
-      "file": "angular.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "React",
-      "file": "react.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "React Native",
-      "file": "react-native.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Vue",
-      "file": "vue.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "TypeScript",
-      "file": "typescript.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Multiple Instances on The Same Page",
-      "file": "multiple-instances.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Common Use Cases",
-      "file": "installation-common-use-cases.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Debugging Common Issues",
-      "file": "debugging-common-issues.md",
-      "subCat": "Custom Installations"
-    },
-    {
-      "name": "Notion and Google Sites",
-      "file": "oembed.md",
-      "subCat": "Embedding in Documents"
-    }
-  ]
+    "name": "Installation",
+    "pageHeader": "Installation | Add Comments To a Website",
+    "icon": "download.png",
+    "itemsOrdered": [
+        {
+            "name": "Wordpress",
+            "file": "wordpress.md",
+            "subCat": "Third-Party Plugins"
+        },
+        {
+            "name": "VanillaJS / HTML Snippet",
+            "file": "vanillajs.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Angular",
+            "file": "angular.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "React",
+            "file": "react.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "React Native",
+            "file": "react-native.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Vue",
+            "file": "vue.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "TypeScript",
+            "file": "typescript.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Multiple Instances on The Same Page",
+            "file": "multiple-instances.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Common Use Cases",
+            "file": "installation-common-use-cases.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Debugging Common Issues",
+            "file": "debugging-common-issues.md",
+            "subCat": "Custom Installations"
+        },
+        {
+            "name": "Notion and Google Sites",
+            "file": "oembed.md",
+            "subCat": "Embedding in Documents"
+        }
+    ]
 }
