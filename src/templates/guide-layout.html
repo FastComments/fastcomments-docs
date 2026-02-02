@@ -70,7 +70,11 @@
                 const config = {
                     tenantId: 'L177BUDVvSe',
                     url: location.href.replace(location.hash, ''), // ignore hashbang in url - messes up links to comments
+                    {{#if stableUrlId}}
                     urlId: window.location.origin + '{{stableUrlId}}' // stable across locales
+                    {{else}}
+                    urlId: window.location.origin + window.location.pathname // fallback for non-guide pages
+                    {{/if}}
                 };
                 if (window.guideDemoOverrides) {
                     Object.assign(config, window.guideDemoOverrides);
