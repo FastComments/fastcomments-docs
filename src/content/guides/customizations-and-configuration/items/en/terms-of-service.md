@@ -4,26 +4,14 @@ When enabled:
 - **Anonymous users** will see a TOS checkbox every time they comment
 - **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
 
-### Enabling Terms of Service
+### Configuration
 
-Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox:
+Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox. Once enabled, you'll see the following options:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Customizing the TOS Text
-
-By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. You can customize this text per locale if needed:
-
-1. Select "Customize text per locale"
-2. Select the locale from the dropdown and enter your custom text
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Updating Your Terms of Service
-
-When you update your Terms of Service, set the "Last Updated" date. Users who accepted the TOS before this date will be required to accept again:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
+- **TOS Text Mode**: By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. Select "Customize text per locale" to provide your own text for each language.
+- **TOS Last Updated Date**: When you update your Terms of Service, set this date. Users who accepted before this date will be required to accept again.
 
 ### How It Works
 
