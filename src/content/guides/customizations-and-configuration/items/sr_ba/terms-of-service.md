@@ -1,33 +1,21 @@
-FastComments вам омогућава да захтијевате од корисника који коментаришу први пут да прихвате ваше Услове коришћења прије него што пошаљу коментар.
+FastComments vam omogućava da zahtijevate od korisnika koji prvi put komentarišu da prihvate vaše Uslove korištenja prije nego što pošalju komentar.
 
-Када је омогућено:
-- **Анoнимни корисници** ће видјети поље за прихватање TOS-а сваки пут када коментаришу
-- **Пријављени корисници** ће видјети поље само при првом коментару, или када ажурирате ваш TOS
+When enabled:
+- **Anonimni korisnici** će vidjeti potvrdni okvir za Uslove korištenja svaki put kada komentarišu
+- **Prijavljeni korisnici** će vidjeti potvrdni okvir samo pri svom prvom komentaru, ili kada ažurirate svoje Uslove korištenja
 
-### Омогућавање Услова коришћења
+### Konfiguracija
 
-Идите на страницу за прилагођавање видџета и омогућите поље за потврду "Require Terms of Service acceptance":
+Idite na stranicu za prilagođavanje widgeta i uključite potvrdni okvir "Require Terms of Service acceptance". Nakon uključivanja, videćete sljedeće opcije:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Прилагођавање текста Услова коришћења
+- **Način prikaza teksta Uslova (TOS Text Mode)**: Po zadanom, potvrdni okvir prikazuje "I agree to the Terms of Service and Privacy Policy" sa linkovima na oba dokumenta. Odaberite "Customize text per locale" da unesete vlastiti tekst za svaki jezik.
+- **Datum posljednje izmjene Uslova (TOS Last Updated Date)**: Kada ažurirate svoje Uslove korištenja, postavite ovaj datum. Korisnici koji su prihvatili prije ovog datuma biće obavezni da ponovo prihvate.
 
-По подразумеваној вриједности, поље за потврду приказује "I agree to the Terms of Service and Privacy Policy" са линковима до оба документа. Можете прилагодити овај текст по локалу ако је потребно:
+### Kako to funkcioniše
 
-1. Одаберите "Customize text per locale"
-2. Одаберите локал из падајућег менија и унесите свој прилагођени текст
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Ажурирање ваших Услова коришћења
-
-Када ажурирате ваше Услове коришћења, подесите датум "Last Updated". Корисници који су прихватили TOS прије тог датума ће морати поново да прихвате:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
-
-### Како функционише
-
-- Временска ознака прихватања TOS-а се чува по кориснику и по коментару
-- Када корисник прихвати TOS, датум се забележи у њиховом корисничком профилу (per-tenant)
-- Ако поставите датум "Last Updated" који је након датума прихвата корисника, они ће морати поново да прихвате
-- За анонимне кориснике које није могуће пратити, поље за потврду се појављује при сваком слању коментара
+- Vremenska oznaka prihvatanja Uslova se čuva po korisniku i po komentaru
+- Kada korisnik prihvati Uslove, datum se bilježi na njihovom korisničkom profilu (per-tenant)
+- Ako postavite datum "Last Updated" koji je nakon datuma prihvatanja korisnika, oni će morati ponovo prihvatiti
+- Za anonimne korisnike koji se ne mogu pratiti, potvrdni okvir se pojavljuje pri svakom slanju komentara

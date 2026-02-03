@@ -1,33 +1,24 @@
-FastComments ermöglicht es Ihnen, Erstkommentatoren dazu zu verpflichten, Ihre Nutzungsbedingungen (Terms of Service, TOS) zu akzeptieren, bevor sie einen Kommentar absenden.
+---
+FastComments ermöglicht es Ihnen, Erstkommentatoren zu verpflichten, Ihre Nutzungsbedingungen zu akzeptieren, bevor sie einen Kommentar absenden.
 
-Wenn aktiviert:
-- **Anonyme Benutzer** sehen jedes Mal ein TOS-Kontrollkästchen, wenn sie kommentieren
-- **Authentifizierte Benutzer** sehen das Kontrollkästchen nur bei ihrem ersten Kommentar oder wenn Sie Ihre TOS aktualisieren
+When enabled:
+- **Anonymous users** will see a TOS checkbox every time they comment
+- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
 
-### Nutzungsbedingungen aktivieren
+### Konfiguration
 
-Navigieren Sie zur Seite zur Anpassung des Widgets und aktivieren Sie das Kontrollkästchen "Annahme der Nutzungsbedingungen erforderlich":
+Navigieren Sie zur Seite zur Anpassung des Widgets und aktivieren Sie das Kontrollkästchen "Akzeptieren der Nutzungsbedingungen erforderlich". Sobald aktiviert, sehen Sie die folgenden Optionen:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Anpassung des TOS-Texts
-
-Standardmäßig zeigt das Kontrollkästchen "Ich stimme den Nutzungsbedingungen und der Datenschutzerklärung zu" mit Links zu beiden Dokumenten an. Sie können diesen Text pro Gebietsschema anpassen, falls erforderlich:
-
-1. Wählen Sie "Text pro Gebietsschema anpassen"
-2. Wählen Sie das Gebietsschema aus dem Dropdown-Menü und geben Sie Ihren benutzerdefinierten Text ein
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Aktualisierung Ihrer Nutzungsbedingungen
-
-Wenn Sie Ihre Nutzungsbedingungen aktualisieren, legen Sie das Datum "Zuletzt aktualisiert" fest. Benutzer, die den TOS vor diesem Datum akzeptiert haben, müssen erneut zustimmen:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
+- **TOS-Textmodus**: Standardmäßig zeigt das Kontrollkästchen "I agree to the Terms of Service and Privacy Policy" mit Links zu beiden Dokumenten an. Wählen Sie "Customize text per locale", um Ihren eigenen Text für jede Sprache bereitzustellen.
+- **Datum der letzten Aktualisierung der Nutzungsbedingungen**: Wenn Sie Ihre Nutzungsbedingungen aktualisieren, legen Sie dieses Datum fest. Benutzer, die vor diesem Datum zugestimmt haben, müssen erneut zustimmen.
 
 ### Funktionsweise
 
-- Der Zeitstempel der Zustimmung zu den TOS wird pro Benutzer und pro Kommentar gespeichert
-- Wenn ein Benutzer den TOS akzeptiert, wird das Datum in seinem Benutzerprofil (pro Mandant) gespeichert
-- Wenn Sie ein "Zuletzt aktualisiert"-Datum festlegen, das nach dem Akzeptanzdatum des Benutzers liegt, muss er erneut zustimmen
-- Für anonyme Benutzer, die nicht nachverfolgt werden können, erscheint das Kontrollkästchen bei jeder Kommentarabgabe
+- Der Zeitstempel der TOS-Akzeptanz wird pro Benutzer und pro Kommentar gespeichert
+- Wenn ein Benutzer den TOS zustimmt, wird das Datum in seinem Benutzerprofil (pro Mandant) aufgezeichnet
+- Wenn Sie ein "Zuletzt aktualisiert"-Datum festlegen, das nach dem Zustimmungsdatum des Benutzers liegt, muss dieser erneut zustimmen
+- Bei anonymen Benutzern, die nicht nachverfolgt werden können, erscheint das Kontrollkästchen bei jeder Kommentarabgabe
+
+---

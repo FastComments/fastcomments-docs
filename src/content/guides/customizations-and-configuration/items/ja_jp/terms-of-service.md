@@ -1,35 +1,24 @@
-FastComments は、初めてコメントするユーザーに対して、コメントを送信する前に利用規約への同意を必須にすることができます。
+---
+FastCommentsでは、初めてコメントするユーザーに対して、コメントを送信する前に利用規約への同意を必須にすることができます。
 
 When enabled:
-- **匿名ユーザー** はコメントするたびに利用規約のチェックボックスが表示されます
-- **認証済みユーザー** は最初のコメント時、または利用規約を更新したときにのみチェックボックスが表示されます
+- **Anonymous users** will see a TOS checkbox every time they comment
+- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
 
-### Enabling Terms of Service
+### 設定
 
-ウィジェットのカスタマイズページに移動し、"Require Terms of Service acceptance" チェックボックスを有効にします:
+ウィジェットのカスタマイズページに移動し、「Require Terms of Service acceptance」チェックボックスを有効にします。 有効にすると、以下のオプションが表示されます:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Customizing the TOS Text
+- **TOS Text Mode**: デフォルトでは、チェックボックスには両方のドキュメントへのリンク付きで "I agree to the Terms of Service and Privacy Policy" と表示されます。 "Customize text per locale" を選択すると、各言語ごとに独自のテキストを指定できます。
+- **TOS Last Updated Date**: 利用規約を更新したときは、この日付を設定してください。この日付より前に同意したユーザーは再度同意が必要になります。
 
-デフォルトでは、チェックボックスには「I agree to the Terms of Service and Privacy Policy」と両方のドキュメントへのリンクが表示されます。必要に応じてロケールごとにこのテキストをカスタマイズできます:
+### 仕組み
 
-1. 「Customize text per locale」を選択します
-2. ドロップダウンからロケールを選び、カスタムテキストを入力します
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Updating Your Terms of Service
-
-利用規約を更新する際は、「Last Updated」日付を設定してください。この日付より前に利用規約に同意したユーザーは、再度同意を求められます:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
-
-### How It Works
-
-- 利用規約の同意タイムスタンプはユーザーごとおよびコメントごとに保存されます
-- ユーザーが利用規約に同意すると、その日付はユーザープロファイル（テナントごと）に記録されます
-- 「Last Updated」日付がユーザーの同意日より後の場合、再同意が必要になります
-- トラッキングできない匿名ユーザーについては、チェックボックスが毎回のコメント送信時に表示されます
+- 利用規約同意のタイムスタンプはユーザーごと・コメントごとに保存されます
+- ユーザーが利用規約に同意すると、その日付はユーザープロフィール（テナントごと）に記録されます
+- 設定した「最終更新日」がユーザーの同意日より後であれば、再度同意が必要になります
+- 追跡できない匿名ユーザーについては、チェックボックスが各コメント送信時に表示されます
 
 ---

@@ -1,33 +1,21 @@
 FastComments מאפשרת לך לדרוש ממגיבים בפעם הראשונה לקבל את תנאי השירות שלך לפני שליחת תגובה.
 
 When enabled:
-- **משתמשים אנונימיים** יראו תיבת סימון לאישור תנאי השירות בכל פעם שהם מגיבים
-- **משתמשים מאומתים** יראו את תיבת הסימון רק בתגובה הראשונה שלהם, או כשאתה מעדכן את תנאי השירות
+- **משתמשים אנונימיים** יראו תיבת סימון של תנאי השירות בכל פעם שהם מגיבים
+- **משתמשים מאומתים** יראו את תיבת הסימון רק בתגובה הראשונה שלהם, או כאשר אתה מעדכן את תנאי השירות
 
-### Enabling Terms of Service
+### תצורה
 
-נווט לעמוד התאמת הווידג'ט והפעל את תיבת הסימון "דרוש אישור תנאי השירות":
+נווט לעמוד התאמה אישית של הווידג'ט והפעל את תיבת הסימון "Require Terms of Service acceptance". לאחר ההפעלה, תראה את האפשרויות הבאות:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Customizing the TOS Text
+- **TOS Text Mode**: כברירת מחדל, תיבת הסימון מציגה "I agree to the Terms of Service and Privacy Policy" עם קישורים לשני המסמכים. בחר "Customize text per locale" כדי לספק טקסט משלך לכל שפה.
+- **TOS Last Updated Date**: כאשר תעדכן את תנאי השירות שלך, קבע תאריך זה. משתמשים שהסכימו לפני תאריך זה יידרשו להסכים שוב.
 
-בברירת המחדל, תיבת הסימון מציגה "אני מסכים לתנאי השירות ולמדיניות הפרטיות" עם קישורים לשני המסמכים. ניתן להתאים טקסט זה לפי לוקאל במידת הצורך:
+### כיצד זה עובד
 
-1. בחר "התאם טקסט לפי לוקאל"
-2. בחר את הלוקאל מהרשימה וזן את הטקסט המותאם שלך
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Updating Your Terms of Service
-
-כאשר אתה מעדכן את תנאי השירות שלך, קבע את תאריך ה-"Last Updated". משתמשים שאישרו את תנאי השירות לפני תאריך זה יידרשו לאשר שוב:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
-
-### How It Works
-
-- חותמת הזמן של אישור תנאי השירות נשמרת לפי משתמש ולפי תגובה
-- כאשר משתמש מאשר את תנאי השירות, התאריך נרשם בפרופיל המשתמש שלו (ברמת ה-tenant)
-- אם אתה קובע תאריך "Last Updated" שהוא לאחר תאריך אישור המשתמש, הם יצטרכו לאשר שוב
-- עבור משתמשים אנונימיים שלא ניתן לעקוב אחריהם, תיבת הסימון תופיע בכל שליחת תגובה
+- חותמת הזמן של קבלת תנאי השירות נשמרת לכל משתמש ולכל תגובה
+- כאשר משתמש מקבל את תנאי השירות, התאריך נרשם בפרופיל המשתמש שלו (per-tenant)
+- אם תגדיר תאריך "Last Updated" שיהיה לאחר תאריך קבלת המשתמש, הם יצטרכו להסכים מחדש
+- עבור משתמשים אנונימיים שאי אפשר לעקוב אחריהם, תיבת הסימון מופיעה בכל שליחת תגובה

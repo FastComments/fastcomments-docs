@@ -1,33 +1,21 @@
-FastComments stelt je in staat om gebruikers die voor het eerst reageren te verplichten je Servicevoorwaarden te accepteren voordat ze een opmerking indienen.
+FastComments stelt je in staat om gebruikers die voor het eerst reageren te verplichten je Servicevoorwaarden te accepteren voordat ze een reactie indienen.
 
-Wanneer ingeschakeld:
-- **Anonieme gebruikers** zien elke keer dat ze reageren een selectievakje voor de Servicevoorwaarden
-- **Geauthenticeerde gebruikers** zien het selectievakje alleen bij hun eerste reactie, of wanneer je je Servicevoorwaarden bijwerkt
+When enabled:
+- **Anonieme gebruikers** zullen een TOS-selectievakje zien elke keer dat ze reageren
+- **Aangemelde gebruikers** zullen het selectievakje alleen bij hun eerste reactie zien, of wanneer je je TOS bijwerkt
 
-### Servicevoorwaarden inschakelen
+### Configuratie
 
-Ga naar de pagina voor het aanpassen van de widget en schakel het selectievakje "Require Terms of Service acceptance" in:
+Ga naar de pagina voor het aanpassen van de widget en schakel het selectievakje "Acceptatie van de Servicevoorwaarden verplichten" in. Zodra ingeschakeld zie je de volgende opties:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### De tekst van de Servicevoorwaarden aanpassen
-
-Standaard toont het selectievakje "I agree to the Terms of Service and Privacy Policy" met links naar beide documenten. Je kunt deze tekst per locale aanpassen indien nodig:
-
-1. Selecteer "Customize text per locale"
-2. Selecteer de locale in de vervolgkeuzelijst en voer je aangepaste tekst in
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Je Servicevoorwaarden bijwerken
-
-Wanneer je je Servicevoorwaarden bijwerkt, stel je de datum "Last Updated" in. Gebruikers die de Servicevoorwaarden vóór deze datum hebben geaccepteerd, moeten opnieuw accepteren:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
+- **TOS-tekstmodus**: Standaard toont het selectievakje "Ik ga akkoord met de Servicevoorwaarden en het Privacybeleid" met links naar beide documenten. Selecteer "Tekst per taal aanpassen" om voor elke taal je eigen tekst op te geven.
+- **TOS Laatst Bijgewerkt Datum**: Wanneer je je Servicevoorwaarden bijwerkt, stel deze datum in. Gebruikers die vóór deze datum hebben geaccepteerd, zullen opnieuw moeten accepteren.
 
 ### Hoe het werkt
 
-- Het tijdstempel van de acceptatie van de Servicevoorwaarden wordt per gebruiker en per opmerking opgeslagen
-- Wanneer een gebruiker de Servicevoorwaarden accepteert, wordt de datum vastgelegd in hun gebruikersprofiel (per-tenant)
-- Als je een "Last Updated"-datum instelt die na de acceptatiedatum van de gebruiker ligt, moeten ze opnieuw accepteren
-- Voor anonieme gebruikers die niet gevolgd kunnen worden, verschijnt het selectievakje bij elke inzending van een opmerking
+- De TOS-acceptatietijdstempel wordt per gebruiker en per reactie opgeslagen
+- Wanneer een gebruiker de TOS accepteert, wordt de datum vastgelegd op hun gebruikersprofiel (per-tenant)
+- Als je een "Laatst bijgewerkt"-datum instelt die later is dan de acceptatiedatum van de gebruiker, moeten ze opnieuw accepteren
+- Voor anonieme gebruikers die niet gevolgd kunnen worden, verschijnt het selectievakje bij iedere reactieverzending

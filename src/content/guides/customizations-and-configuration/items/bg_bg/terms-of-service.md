@@ -1,33 +1,21 @@
-FastComments ви позволява да изисквате от първите коментиращи да приемат Условията за ползване преди да изпратят коментар.
+FastComments ви позволява да изисквате от потребителите, които коментират за първи път, да приемат вашите Условия за ползване преди да изпратят коментар.
 
-Когато е активирано:
-- **Анонимните потребители** ще виждат квадратче за потвърждение на Условията за ползване при всяко коментиране
-- **Удостоверените потребители** ще виждат отметката само при първия си коментар или когато актуализирате Условията за ползване
+When enabled:
+- **Anonymous users** will see a TOS checkbox every time they comment
+- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
 
-### Enabling Terms of Service
+### Configuration
 
-Отидете в страницата за персонализиране на уиджета и активирайте квадратчето "Require Terms of Service acceptance":
+Навигирайте до страницата за персонализиране на уиджета и включете отметката "Require Terms of Service acceptance". След като е включена, ще видите следните опции:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Customizing the TOS Text
-
-По подразбиране, квадратчето показва "I agree to the Terms of Service and Privacy Policy" с връзки към двата документа. Можете да персонализирате този текст за всяка локализация, ако е необходимо:
-
-1. Изберете "Customize text per locale"
-2. Изберете локализация от падащото меню и въведете своя персонализиран текст
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Updating Your Terms of Service
-
-Когато актуализирате Условията за ползване, задайте датата "Last Updated". Потребителите, които са приели Условията преди тази дата, ще трябва да ги приемат отново:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
+- **TOS Text Mode**: По подразбиране отметката показва "I agree to the Terms of Service and Privacy Policy" с връзки към двата документа. Изберете "Customize text per locale", за да предоставите собствен текст за всеки език.
+- **TOS Last Updated Date**: Когато актуализирате вашите Условия за ползване, задайте тази дата. Потребителите, които са приели преди тази дата, ще трябва да приемат отново.
 
 ### How It Works
 
-- Отметката за приемане на Условията се записва с времева маркировка за всеки потребител и за всеки коментар
-- Когато потребител приеме Условията за ползване, датата се записва в неговия потребителски профил (за всеки наемател)
-- Ако зададете дата "Last Updated", която е след датата на приемане от потребителя, те ще трябва да приемат отново
-- За анонимните потребители, които не могат да бъдат проследени, квадратчето се показва при всяко подаване на коментар
+- The TOS acceptance timestamp is stored per-user and per-comment
+- When a user accepts the TOS, the date is recorded on their user profile (per-tenant)
+- If you set a "Last Updated" date that is after the user's acceptance date, they will need to re-accept
+- For anonymous users who cannot be tracked, the checkbox appears on every comment submission

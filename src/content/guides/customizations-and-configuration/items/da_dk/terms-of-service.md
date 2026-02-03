@@ -1,33 +1,23 @@
-FastComments giver dig mulighed for at kræve, at førstegangskommenterende accepterer dine Servicevilkår, før de indsender en kommentar.
+FastComments giver dig mulighed for at kræve, at nye kommentatorer accepterer dine vilkår for tjenesten, før de indsender en kommentar.
 
-Når det er aktiveret:
-- **Anonyme brugere** vil se et afkrydsningsfelt for Servicevilkår hver gang de kommenterer
-- **Autentificerede brugere** vil se afkrydsningsfeltet kun ved deres første kommentar, eller når du opdaterer dine Servicevilkår
+Når aktiveret:
+- **Anonyme brugere** vil se et afkrydsningsfelt for tjenestevilkår hver gang de kommenterer
+- **Autentificerede brugere** vil kun se afkrydsningsfeltet ved deres første kommentar, eller når du opdaterer dine tjenestevilkår
 
-### Aktivering af Servicevilkår
+### Konfiguration
 
-Gå til siden til tilpasning af widget og aktiver afkrydsningsfeltet "Require Terms of Service acceptance":
+Gå til siden for widget-tilpasning, og aktivér afkrydsningsfeltet "Require Terms of Service acceptance". Når det er aktiveret, vil du se følgende indstillinger:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Tilpasning af Servicevilkårsteksten
+- **TOS Text Mode**: Som standard viser afkrydsningsfeltet "I agree to the Terms of Service and Privacy Policy" med links til begge dokumenter. Vælg "Customize text per locale" for at angive din egen tekst for hvert sprog.
+- **TOS Last Updated Date**: Når du opdaterer dine tjenestevilkår, angiv denne dato. Brugere, der accepterede før denne dato, vil blive bedt om at acceptere igen.
 
-Som standard viser afkrydsningsfeltet "I agree to the Terms of Service and Privacy Policy" med links til begge dokumenter. Du kan tilpasse denne tekst pr. lokalitet, hvis nødvendigt:
+### Sådan fungerer det
 
-1. Vælg "Customize text per locale"
-2. Vælg lokaliteten fra dropdown-menuen og indtast din tilpassede tekst
+- Tidsstempel for TOS-accept gemmes pr. bruger og pr. kommentar
+- Når en bruger accepterer tjenestevilkårene, registreres datoen på deres brugerprofil (per-tenant)
+- Hvis du angiver en 'Last Updated'-dato, der er efter brugerens accepteringsdato, skal de acceptere igen
+- For anonyme brugere, som ikke kan spores, vises afkrydsningsfeltet ved hver kommentarindsendelse
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Opdatering af dine Servicevilkår
-
-Når du opdaterer dine Servicevilkår, angiv "Last Updated"-datoen. Brugere, som accepterede Servicevilkårene før denne dato, vil blive bedt om at acceptere igen:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
-
-### Hvordan det fungerer
-
-- Tidsstemplet for accept af Servicevilkår gemmes pr. bruger og pr. kommentar
-- Når en bruger accepterer Servicevilkårene, registreres datoen på deres brugerprofil (per-tenant)
-- Hvis du angiver en "Last Updated"-dato, der ligger efter brugerens accepteringsdato, skal de acceptere igen
-- For anonyme brugere, som ikke kan spores, vises afkrydsningsfeltet ved hver indsendelse af en kommentar
+---

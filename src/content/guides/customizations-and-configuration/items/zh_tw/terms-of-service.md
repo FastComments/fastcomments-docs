@@ -1,33 +1,21 @@
 FastComments 允許您要求首次留言者在提交留言前接受您的服務條款。
 
 When enabled:
-- **Anonymous users** will see a TOS checkbox every time they comment
-- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
+- **匿名使用者** 每次留言時都會看到服務條款核取方塊
+- **已驗證使用者** 只會在其第一次留言，或當您更新您的服務條款時看到該核取方塊
 
-### Enabling Terms of Service
+### Configuration
 
-Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox:
+前往小工具自訂頁面並啟用「Require Terms of Service acceptance」核取方塊。啟用後，您會看到以下選項：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Customizing the TOS Text
-
-By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. You can customize this text per locale if needed:
-
-1. Select "Customize text per locale"
-2. Select the locale from the dropdown and enter your custom text
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Updating Your Terms of Service
-
-When you update your Terms of Service, set the "Last Updated" date. Users who accepted the TOS before this date will be required to accept again:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
+- **TOS Text Mode**：預設情況下，核取方塊會顯示「I agree to the Terms of Service and Privacy Policy」，並連結到兩份文件。選擇「Customize text per locale」以為每種語言提供自訂文字。
+- **TOS Last Updated Date**：當您更新您的服務條款時，請設定此日期。於此日期之前接受過的使用者將需要重新接受。
 
 ### How It Works
 
-- The TOS acceptance timestamp is stored per-user and per-comment
-- When a user accepts the TOS, the date is recorded on their user profile (per-tenant)
-- If you set a "Last Updated" date that is after the user's acceptance date, they will need to re-accept
-- For anonymous users who cannot be tracked, the checkbox appears on every comment submission
+- 服務條款接受時間戳記會以每位使用者及每則留言儲存
+- 當使用者接受服務條款時，該日期會記錄在其使用者檔案中（每租戶）
+- 如果您設定的「最後更新」日期晚於使用者接受的日期，他們將需要重新接受
+- 對於無法被追蹤的匿名使用者，該核取方塊會在每次留言提交時出現

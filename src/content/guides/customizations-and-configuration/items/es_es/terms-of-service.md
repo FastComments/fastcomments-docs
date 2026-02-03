@@ -1,36 +1,23 @@
----
-FastComments le permite exigir a los usuarios que comentan por primera vez que acepten sus Términos del Servicio antes de enviar un comentario.
+FastComments te permite exigir que los comentaristas primerizos acepten tus Términos de Servicio antes de enviar un comentario.
 
 Cuando está habilitado:
-- **Usuarios anónimos** verán una casilla de aceptación de los Términos del Servicio cada vez que comenten
-- **Usuarios autenticados** verán la casilla solo en su primer comentario, o cuando usted actualice sus Términos del Servicio
+- **Usuarios anónimos** verán una casilla de TOS cada vez que comenten
+- **Usuarios autenticados** verán la casilla solo en su primer comentario, o cuando actualices tus TOS
 
-### Habilitar los Términos del Servicio
+### Configuration
 
-Vaya a la página de personalización del widget y active la casilla "Require Terms of Service acceptance":
+Navega a la página de personalización del widget y habilita la casilla "Require Terms of Service acceptance". Una vez habilitada, verás las siguientes opciones:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-enabled'; title='Enable Terms of Service Checkbox' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
 
-### Personalizar el texto de los Términos del Servicio
+- **TOS Text Mode**: Por defecto, la casilla muestra "I agree to the Terms of Service and Privacy Policy" con enlaces a ambos documentos. Selecciona "Customize text per locale" para proporcionar tu propio texto para cada idioma.
+- **TOS Last Updated Date**: Cuando actualices tus Términos de Servicio, establece esta fecha. Los usuarios que aceptaron antes de esta fecha deberán aceptar de nuevo.
 
-Por defecto, la casilla muestra "I agree to the Terms of Service and Privacy Policy" con enlaces a ambos documentos. Puede personalizar este texto por idioma si lo desea:
+### How It Works
 
-1. Seleccione "Customize text per locale"
-2. Seleccione el idioma desde el menú desplegable e introduzca su texto personalizado
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-text-mode'; title='Customize TOS Text' app-screenshot-end]
-
-### Actualizar sus Términos del Servicio
-
-Cuando actualice sus Términos del Servicio, establezca la fecha "Last Updated". Los usuarios que aceptaron los Términos del Servicio antes de esa fecha tendrán que aceptar de nuevo:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.tos-last-updated'; title='TOS Last Updated Date' app-screenshot-end]
-
-### Cómo funciona
-
-- La marca de tiempo de aceptación de los Términos del Servicio se almacena por usuario y por comentario
-- Cuando un usuario acepta los Términos del Servicio, la fecha se registra en su perfil de usuario (per-tenant)
-- Si establece una fecha "Last Updated" que sea posterior a la fecha de aceptación del usuario, tendrán que aceptar de nuevo
+- La marca de tiempo de aceptación de los TOS se almacena por usuario y por comentario
+- Cuando un usuario acepta los TOS, la fecha se registra en su perfil de usuario (per-tenant)
+- Si estableces una fecha "Last Updated" que sea posterior a la fecha de aceptación del usuario, tendrá que aceptar de nuevo
 - Para los usuarios anónimos que no pueden ser rastreados, la casilla aparece en cada envío de comentario
 
 ---
