@@ -15,7 +15,35 @@ const { hashContent } = require('./translation-snapshot');
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
 const TRANSLATIONS_FILE = path.join(__dirname, 'translations.json');
 const UI_TRANSLATION_CACHE_FILE = path.join(__dirname, 'ui-translation-cache.json');
+const TRANSLATION_CACHE_FILE = path.join(__dirname, 'translation-cache.json');
 const verbose = process.argv.includes('--verbose');
+
+/**
+ * Load translation cache from disk
+ * @returns {Object} - Cache object { "guideId/locale/filename": "md5hash", ... }
+ */
+function loadTranslationCache() {
+    if (!fs.existsSync(TRANSLATION_CACHE_FILE)) {
+        return {};
+    }
+    try {
+        return JSON.parse(fs.readFileSync(TRANSLATION_CACHE_FILE, 'utf8'));
+    } catch (e) {
+        console.warn(`Failed to load translation cache: ${e.message}`);
+        return {};
+    }
+}
+
+/**
+ * Get cache key for a translation
+ * @param {string} guideId - Guide ID
+ * @param {string} locale - Target locale
+ * @param {string} filename - Filename
+ * @returns {string} - Cache key
+ */
+function getTranslationCacheKey(guideId, locale, filename) {
+    return `${guideId}/${locale}/${filename}`;
+}
 
 /**
  * Load UI translation cache from disk
@@ -296,8 +324,10 @@ function getUITranslationCacheKey(locale, key) {
 
 function checkTranslations() {
     const missingTranslations = {};
+    const staleTranslations = {};
     const inlineCodeErrors = [];
     let totalMissing = 0;
+    let totalStale = 0;
     let totalFiles = 0;
     let totalWords = 0;
     let totalInputTokens = 0;
@@ -305,6 +335,9 @@ function checkTranslations() {
 
     // Cache source file stats to avoid re-reading
     const sourceFileCache = new Map();
+
+    // Load translation cache to detect stale translations
+    const translationCache = loadTranslationCache();
 
     const guides = getGuideDirectories();
     const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
@@ -335,6 +368,7 @@ function checkTranslations() {
                 }
                 sourceFileCache.set(cacheKey, {
                     content,
+                    hash: hashContent(content),
                     words: countWords(content),
                     tokens: estimateTokens(content)
                 });
@@ -367,6 +401,42 @@ function checkTranslations() {
                     }
                 }
             }
+
+            // Check for stale translations (source changed since last translation)
+            const stale = [];
+            for (const file of defaultFiles) {
+                if (!localeFiles.has(file)) continue; // Skip missing files
+
+                const sourceCacheKey = `${guideId}/${file}`;
+                const cached = sourceFileCache.get(sourceCacheKey);
+                if (!cached) continue;
+
+                const translationCacheKey = getTranslationCacheKey(guideId, locale, file);
+                const cachedSourceHash = translationCache[translationCacheKey];
+
+                // If no cache entry or hash doesn't match, translation is stale
+                if (!cachedSourceHash || cachedSourceHash !== cached.hash) {
+                    stale.push(file);
+                }
+            }
+
+            if (stale.length > 0) {
+                const key = `${guideId} (${locale})`;
+                staleTranslations[key] = stale;
+                totalStale += stale.length;
+
+                // Add word and token counts for stale files
+                for (const file of stale) {
+                    const cacheKey = `${guideId}/${file}`;
+                    const cached = sourceFileCache.get(cacheKey);
+                    if (cached) {
+                        totalWords += cached.words;
+                        totalInputTokens += cached.tokens.inputTokens;
+                        totalOutputTokens += cached.tokens.outputTokens;
+                    }
+                }
+            }
+
             totalFiles += defaultFiles.length;
 
             // Check inline-code counts for existing translations
@@ -397,7 +467,9 @@ function checkTranslations() {
 
     return {
         missingTranslations,
+        staleTranslations,
         totalMissing,
+        totalStale,
         totalFiles,
         inlineCodeErrors,
         totalWords,
@@ -508,7 +580,9 @@ function main() {
 
     const {
         missingTranslations,
+        staleTranslations,
         totalMissing,
+        totalStale,
         totalFiles,
         inlineCodeErrors,
         totalWords,
@@ -516,14 +590,15 @@ function main() {
         totalOutputTokens,
         totalTokens
     } = checkTranslations();
-    const guides = Object.keys(missingTranslations);
+    const missingGuides = Object.keys(missingTranslations);
+    const staleGuides = Object.keys(staleTranslations);
     let hasErrors = needsMigration.length > 0;
 
-    if (guides.length > 0) {
+    if (missingGuides.length > 0) {
         hasErrors = true;
         console.log('Missing translations:\n');
 
-        for (const guide of guides.sort()) {
+        for (const guide of missingGuides.sort()) {
             const files = missingTranslations[guide];
             console.log(`${guide}:`);
             for (const file of files.sort()) {
@@ -532,12 +607,31 @@ function main() {
             console.log('');
         }
 
-        const translated = totalFiles - totalMissing;
+        console.log(`Total: ${totalMissing} missing translation(s) across ${missingGuides.length} guide(s)\n`);
+    }
+
+    if (staleGuides.length > 0) {
+        hasErrors = true;
+        console.log('Stale translations (source changed since last translation):\n');
+
+        for (const guide of staleGuides.sort()) {
+            const files = staleTranslations[guide];
+            console.log(`${guide}:`);
+            for (const file of files.sort()) {
+                console.log(`  - ${file}`);
+            }
+            console.log('');
+        }
+
+        console.log(`Total: ${totalStale} stale translation(s) across ${staleGuides.length} guide(s)\n`);
+    }
+
+    if (missingGuides.length > 0 || staleGuides.length > 0) {
+        const translated = totalFiles - totalMissing - totalStale;
         const percentage = totalFiles > 0 ? ((translated / totalFiles) * 100).toFixed(1) : 0;
 
         console.log('---');
-        console.log(`Total: ${totalMissing} missing translations across ${guides.length} guide(s)`);
-        console.log(`Coverage: ${translated}/${totalFiles} files translated (${percentage}%)`);
+        console.log(`Coverage: ${translated}/${totalFiles} files up-to-date (${percentage}%)`);
         console.log('');
         console.log('Estimated translation workload:');
         console.log(`  Words to translate: ${totalWords.toLocaleString()}`);
@@ -620,7 +714,7 @@ function main() {
     }
 
     if (!hasErrors) {
-        console.log('All content is translated and inline-code counts match.');
+        console.log('All translations are up-to-date.');
         process.exit(0);
     }
 
@@ -643,6 +737,8 @@ module.exports = {
     countInlineCode,
     countWords,
     estimateTokens,
+    loadTranslationCache,
+    getTranslationCacheKey,
     loadUITranslationCache,
     saveUITranslationCache,
     getUITranslationCacheKey,
