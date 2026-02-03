@@ -8,7 +8,7 @@
       "subCat": "Osnove"
     },
     {
-      "name": "Kako so komentarji povezani s stranmi in članki",
+      "name": "Kako so komentarji vezani na strani in članke",
       "file": "url-id.md",
       "subCat": "Osnove"
     },
@@ -18,17 +18,17 @@
       "subCat": "Osnove"
     },
     {
-      "name": "Prilagojeno oblikovanje",
+      "name": "Prilagojen slog",
       "file": "custom-css.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prilagojene pisave",
+      "name": "Pisave po meri",
       "file": "custom-fonts.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Odstranjevanje znamke",
+      "name": "Odstranjevanje blagovne znamke",
       "file": "remove-branding.md",
       "subCat": "Videz in občutek"
     },
@@ -43,7 +43,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prepisovanje besedila",
+      "name": "Nadpisovanje besedila",
       "file": "translations.md",
       "subCat": "Videz in občutek"
     },
@@ -63,12 +63,12 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Povezovanje komentarjev s stranmi",
+      "name": "Povezave iz komentarjev do strani",
       "file": "url.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Privzeto strni odgovore",
+      "name": "Privzeto strnjevanje odgovorov",
       "file": "collapse-replies.md",
       "subCat": "Videz in občutek"
     },
@@ -93,17 +93,17 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Preklapljanje med nitmi komentarjev brez osvežitve strani",
+      "name": "Preklapljanje niti komentarjev brez osvežitve strani",
       "file": "switching-comment-threads.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Absolutni datumi (onemogoči berljive časovne žige)",
+      "name": "Absolutni datumi (onemogoči človeško berljive časovne oznake)",
       "file": "absolute-dates.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prikazovanje absolutnih in relativnih datumov",
+      "name": "Prikaz absolutnih in relativnih datumov",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Videz in občutek"
     },
@@ -113,12 +113,12 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prikaz povezav kot besedilo",
+      "name": "Prikaži povezave kot besedilo",
       "file": "render-links-as-text.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Preklapljanje komentarjev s gumbom",
+      "name": "Preklapljanje komentarjev z gumbom",
       "file": "use-show-comments-toggle.md",
       "subCat": "Videz in občutek"
     },
@@ -128,7 +128,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Onemogoči preusmerjanje slik",
+      "name": "Onemogoči preusmeritev slik",
       "file": "disable-image-redirect.md",
       "subCat": "Videz in občutek"
     },
@@ -138,7 +138,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Onemogoči zvonec za obvestila",
+      "name": "Onemogoči zvonček za obvestila",
       "file": "disable-notification-bell.md",
       "subCat": "Videz in občutek"
     },
@@ -158,7 +158,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Moderiranje vsebine slik",
+      "name": "Moderacija slikovne vsebine",
       "file": "image-content-moderation.md",
       "subCat": "Videz in občutek"
     },
@@ -178,7 +178,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Označevanje novih komentarjev",
+      "name": "Poudarjanje novih komentarjev",
       "file": "highlighting-new-comments.md",
       "subCat": "Videz in občutek"
     },
@@ -218,64 +218,69 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Takoj prikaži komentarje v živo",
+      "name": "Prikazuj žive komentarje takoj",
       "file": "show-live-right-away.md",
-      "subCat": "Komentiranje v živo"
+      "subCat": "Živo komentiranje"
     },
     {
-      "name": "Onemogočanje komentiranja v živo",
+      "name": "Onemogočanje živega komentiranja",
       "file": "disable-live-commenting.md",
-      "subCat": "Komentiranje v živo"
+      "subCat": "Živo komentiranje"
     },
     {
-      "name": "Novi komentarji v živo na dnu",
+      "name": "Prikaz novih živih komentarjev na dnu",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Komentiranje v živo"
+      "subCat": "Živo komentiranje"
     },
     {
-      "name": "Omogočanje neskončnega drsenja",
+      "name": "Omogočanje neskončnega pomikanja",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Straničenje in razvrščanje"
+      "subCat": "Stranjevanje in razvrščanje"
     },
     {
-      "name": "Spreminjanje privzete smeri razvrščanja",
+      "name": "Sprememba privzete smeri razvrščanja",
       "file": "default-sort-direction.md",
-      "subCat": "Straničenje in razvrščanje"
+      "subCat": "Stranjevanje in razvrščanje"
     },
     {
-      "name": "Prikaz vseh komentarjev naenkrat - onemogoči straničenje",
+      "name": "Prikaz vseh komentarjev naenkrat – onemogoči straničenje",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Straničenje in razvrščanje"
+      "subCat": "Stranjevanje in razvrščanje"
     },
     {
-      "name": "Premik polja za odgovor pod komentarje",
+      "name": "Premik polja za odgovore za komentarje",
       "file": "input-after-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
-      "name": "Omejitev dolžine komentarjev",
+      "name": "Omejevanje dolžine komentarjev",
       "file": "max-comment-character-length.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Onemogoči večvrstično komentiranje",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Omeji število komentarjev na uporabnika",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
-      "name": "Prepreči nove komentarje najvišje ravni",
+      "name": "Prepreči nove komentarje na vrhnji ravni",
       "file": "no-new-root-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Največja globina odgovorov",
       "file": "max-reply-depth.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Polje za odgovore"
+    },
+    {
+      "name": "Zahtevaj sprejem pogojev uporabe",
+      "file": "terms-of-service.md",
+      "subCat": "Polje za odgovore"
     },
     {
       "name": "Pregled enotne prijave (SSO)",
@@ -283,27 +288,27 @@
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - varna enotna prijava (SSO)",
+      "name": "Prilagojene integracije – varna enotna prijava (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - preprosta enotna prijava (SSO)",
+      "name": "Prilagojene integracije – preprosta enotna prijava (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - migracija z Disqus SSO",
+      "name": "Prilagojene integracije – migracija iz Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagojene integracije - migracija z Commento SSO",
+      "name": "Prilagojene integracije – migracija iz Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
     {
-      "name": "Zaščita nitk komentarjev z enotno prijavo",
+      "name": "Zaščita niti komentarjev z enotno prijavo",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -343,7 +348,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Ročno določanje lokalne nastavitve uporabnika",
+      "name": "Ročno določanje lokalizacije uporabnika",
       "file": "locale.md",
       "subCat": "Razno"
     },
@@ -368,7 +373,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Število komentarjev in štetje vseh gnezdenih odgovorov",
+      "name": "Število komentarjev in štetje vseh vdelanih odgovorov",
       "file": "count-all.md",
       "subCat": "Razno"
     },
@@ -388,7 +393,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Obhod piškotkov tretjih oseb",
+      "name": "Zaobidenje piškotkov tretjih oseb",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Razno"
     },
@@ -398,7 +403,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaz značk v zgornji vrstici",
+      "name": "Prikaži značke v zgornji vrstici",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Videz in občutek"
     }

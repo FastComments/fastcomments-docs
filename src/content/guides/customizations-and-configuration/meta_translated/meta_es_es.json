@@ -3,7 +3,7 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identificar tu cuenta",
+      "name": "Identificando su cuenta",
       "file": "tenant-id.md",
       "subCat": "Conceptos básicos"
     },
@@ -68,12 +68,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Colapsar las respuestas por defecto",
+      "name": "Colapsar respuestas por defecto",
       "file": "collapse-replies.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar editor WYSIWYG",
+      "name": "Habilitar WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Apariencia"
     },
@@ -98,7 +98,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Fechas absolutas (desactivar marcas de tiempo amigables)",
+      "name": "Fechas absolutas (deshabilitar marcas de tiempo relativas)",
       "file": "absolute-dates.md",
       "subCat": "Apariencia"
     },
@@ -108,7 +108,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Añadir texto de encabezado",
+      "name": "Agregar texto de encabezado",
       "file": "header-html.md",
       "subCat": "Apariencia"
     },
@@ -133,7 +133,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Desactivar creación automática de hashtags",
+      "name": "Desactivar la creación automática de hashtags",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Apariencia"
     },
@@ -198,12 +198,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Desactivar carga de imágenes",
+      "name": "Desactivar cargas de imágenes",
       "file": "no-image-uploads.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Activar campo de búsqueda",
+      "name": "Habilitar campo de búsqueda",
       "file": "enable-search.md",
       "subCat": "Apariencia"
     },
@@ -238,47 +238,52 @@
       "subCat": "Paginación y ordenación"
     },
     {
-      "name": "Cambiar la dirección de orden predeterminada",
+      "name": "Cambiar la dirección de ordenación predeterminada",
       "file": "default-sort-direction.md",
       "subCat": "Paginación y ordenación"
     },
     {
-      "name": "Mostrar todos los comentarios a la vez - desactivar paginación",
+      "name": "Mostrar todos los comentarios a la vez - Desactivar paginación",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginación y ordenación"
     },
     {
       "name": "Mover la caja de respuesta después de los comentarios",
       "file": "input-after-comments.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
-      "name": "Limitar la longitud de los comentarios",
+      "name": "Limitar la longitud del comentario",
       "file": "max-comment-character-length.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
       "name": "Desactivar comentarios multilínea",
       "file": "use-single-line-comment-input.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
-      "name": "Limitar el volumen de comentarios por usuario",
+      "name": "Limitar la cantidad de comentarios por usuario",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
-      "name": "Evitar nuevos comentarios de primer nivel",
+      "name": "Evitar nuevos comentarios de nivel superior",
       "file": "no-new-root-comments.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
       "name": "Profundidad máxima de respuestas",
       "file": "max-reply-depth.md",
-      "subCat": "La caja de respuesta"
+      "subCat": "Caja de respuesta"
     },
     {
-      "name": "Resumen de inicio de sesión único (SSO)",
+      "name": "Requerir aceptación de los términos de servicio",
+      "file": "terms-of-service.md",
+      "subCat": "Caja de respuesta"
+    },
+    {
+      "name": "Visión general del inicio de sesión único (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -323,7 +328,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Desactivar la etiqueta no verificada",
+      "name": "Desactivar la etiqueta 'no verificado'",
       "file": "disable-unverified-label.md",
       "subCat": "Comentarios anónimos"
     },
@@ -368,7 +373,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "El recuento de comentarios y el conteo de todas las respuestas anidadas",
+      "name": "Recuento de comentarios y de todas las respuestas anidadas",
       "file": "count-all.md",
       "subCat": "Varios"
     },
@@ -388,7 +393,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Eludir cookies de terceros",
+      "name": "Omisión de cookies de terceros",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Varios"
     },

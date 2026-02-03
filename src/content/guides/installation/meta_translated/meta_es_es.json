@@ -1,9 +1,10 @@
 {
   "name": "Instalación",
+  "pageHeader": "Añadir comentarios a un sitio web",
   "icon": "download.png",
   "itemsOrdered": [
     {
-      "name": "WordPress",
+      "name": "Wordpress",
       "file": "wordpress.md",
       "subCat": "Plugins de terceros"
     },
@@ -48,7 +49,7 @@
       "subCat": "Instalaciones personalizadas"
     },
     {
-      "name": "Depuración de problemas comunes",
+      "name": "Solución de problemas comunes",
       "file": "debugging-common-issues.md",
       "subCat": "Instalaciones personalizadas"
     },

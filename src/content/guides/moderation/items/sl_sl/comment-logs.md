@@ -1,91 +1,123 @@
-FastComments samodejno spremlja podrobne dogodke za vsak komentar, da zagotovi preglednost pri odločitvah moderiranja in dejanjih sistema. Ti zapisi vam pomagajo razumeti, zakaj je bil komentar odobren, označen kot vsiljena pošta (spam) ali zakaj se je spremenil njegov status.
+FastComments samodejno beleži podrobne dogodke za vsak komentar, da zagotovi preglednost pri odločitvah moderiranja in sistemskih dejanjih. Ti zapisi pomagajo razumeti, zakaj je bil komentar odobren, označen kot spam ali mu je bil spremenjen status.
 
-Zapise komentarjev si lahko ogledate za posamezne komentarje na nadzorni plošči za moderiranje komentarjev tako, da izberete določen komentar.
+## Dostop do zapisov komentarjev
 
-## Dogodki v zapisu komentarja
+Za ogled zapisov za določen komentar:
 
-Vsak komentar vzdržuje zapis dogodkov, ki se zgodijo med njegovim življenjskim ciklom. Spodaj so vrste dogodkov, ki se beležijo:
+1. Pojdite na stran **Moderate Comments** v vašem FastComments nadzornem panelu
+2. Najdite komentar, ki ga želite pregledati
+3. Kliknite gumb **View Logs** (ikona ure) v vrstici z dejanji komentarja
+4. Prikaže se pogovorno okno, ki prikazuje celotno zgodovino dogodkov za ta komentar
+
+Vsak vnos v zapisu prikazuje:
+- **Kdaj** - Časovni žig dogodka
+- **Kdo** - Uporabnik ali sistem, ki je sprožil dogodek (če je ustrezno)
+- **Kaj** - Vrsta dejanja ali dogodka
+- **Podrobnosti** - Dodatni kontekst, kot so vrednosti pred/po, imena engine-ov ali povezani podatki
+
+## Dogodki v zapisu komentarjev
+
+Vsak komentar ima zapisan dnevnik dogodkov, ki se zgodijo v njegovem življenjskem ciklu. Spodaj so tipi dogodkov, ki se beležijo:
 
 ### Dogodki anonimizacije
-- **Anonymized** - Vsebina komentarja je bila izpraznjena in uporabnik označen kot izbrisan
+- **Anonymized** - Vsebina komentarja je bila izbrisana in uporabnik označen kot izbrisan
+- **RestoredFromAnonymized** - Komentar je bil obnovljen iz anonimiziranega stanja
 
 ### Dogodki odobritve
-- **ApprovedDueToPastComment** - Komentar odobren, ker je uporabnik imel prej odobrene komentarje
-- **ApprovedIsAdmin** - Komentar odobren, ker je uporabnik skrbnik
+- **ApprovedDueToPastComment** - Komentar odobren, ker ima uporabnik prej odobrene komentarje (vključuje sklic na prejšnji komentar)
+- **ApprovedIsAdmin** - Komentar odobren, ker je uporabnik admin
 - **NotApprovedRequiresApproval** - Komentar zahteva ročno odobritev
+- **NotApprovedLowTrustFactor** - Komentar ni bil odobren zaradi nizkega faktorja zaupanja uporabnika (vključuje vrednost faktorja zaupanja)
+
+### Dogodki odobritve komentarjev na profilih
+
+Ti dogodki se nanašajo posebej na komentarje na uporabniških profilih:
+
+- **ApprovedProfileAutoApproveAll** - Komentar na profilu samodejno odobren, ker je lastnik profila omogočil avtomatsko odobritev vseh komentarjev
+- **ApprovedProfileTrusted** - Komentar na profilu odobren, ker je komentator zaupanja vreden (vključuje sklic na komentar, ki je vzpostavil zaupanje)
+- **NotApprovedProfileManualApproveAll** - Komentar na profilu zahteva ročno odobritev, ker je lastnik profila omogočil ročno odobritev
+- **NotApprovedProfileNotTrusted** - Komentar na profilu ni bil odobren, ker komentator ni zaupanja vreden
+- **NotApprovedProfileNewUser** - Komentar na profilu ni bil odobren, ker je komentator nov uporabnik
 
 ### Dogodki zaznavanja spama
-- **IsSpam** - Komentar označen kot spam s strani mehanizma za zaznavanje
+- **IsSpam** - Komentar označen kot spam s strani detekcijskega engine-a (vključuje kateri engine je sprejel odločitev)
 - **IsSpamDueToBadWords** - Komentar označen kot spam zaradi filtra za neprimerne besede
-- **IsSpamFromLLM** - Komentar označen kot spam s strani AI/LLM mehanizma
-- **IsSpamRepeatComment** - Komentar označen kot spam zaradi ponavljanja
+- **IsSpamFromLLM** - Komentar označen kot spam s strani AI/LLM engine-a (vključuje ime engine-a, odgovor in št. tokenov)
+- **IsSpamRepeatComment** - Komentar označen kot spam zaradi ponavljanja (vključuje kateri engine ga je zaznal)
 - **NotSpamIsOnlyImage** - Komentar ni bil označen kot spam, ker vsebuje samo slike
 - **NotSpamIsOnlyReacts** - Komentar ni bil označen kot spam, ker vsebuje samo reakcije
 - **NotSpamNoLinkOrMention** - Komentar ni bil označen kot spam, ker ne vsebuje sumljivih povezav ali omemb
-- **NotSpamPerfectTrustFactor** - Komentar ni bil označen kot spam zaradi visokega zaupanja uporabnika
+- **NotSpamPerfectTrustFactor** - Komentar ni bil označen kot spam zaradi visokega faktorja zaupanja uporabnika
 - **NotSpamTooShort** - Komentar ni bil označen kot spam, ker je prekratek za analizo
 - **NotSpamSkipped** - Preverjanje spama je bilo preskočeno
-- **NotSpamFromEngine** - Komentar je bil kot ne-spam ocenjen s strani detekcijskega mehanizma
+- **NotSpamFromEngine** - Komentar ocenjen kot ne-spam s strani detekcijskega engine-a (vključuje ime engine-a in faktor zaupanja)
 
-### Dogodki neprimernih besed/žaljivk
+### Dogodki neprimernih besed/profanosti
 - **BadWordsCheckFailed** - Preverjanje filtra za neprimerne besede je naletelo na napako
-- **BadWordsFoundBadPhrase** - Filter za neprimerne besede je zaznal neprimerno frazo
-- **BadWordsFoundBadWord** - Filter za neprimerne besede je zaznal neprimerno besedo
-- **BadWordsNoDefinitionForLocale** - Za jezik komentarja ni na voljo definicij za filter neprimernih besed
+- **BadWordsFoundBadPhrase** - Filter je zaznal neprimerno frazo (vključuje frazo)
+- **BadWordsFoundBadWord** - Filter je zaznal neprimerno besedo (vključuje besedo)
+- **BadWordsNoDefinitionForLocale** - Za jezik komentarja ni na voljo definicij za filter (vključuje lokalno nastavitev)
 
 ### Dogodki preverjanja uporabnika
 - **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Komentar zahteva preverjanje, vendar uporabnik ni v preverjeni seji
 - **CommentMustBeVerifiedToApproveNotVerifiedYet** - Komentar zahteva preverjanje, vendar uporabnik še ni preverjen
 - **InVerifiedSession** - Uporabnik, ki objavlja komentar, je v preverjeni seji
-- **SentVerificationEmailNoSession** - Preveritveno e-poštno sporočilo poslano nepreverjenemu uporabniku
+- **SentVerificationEmailNoSession** - Potrditveno e-poštno sporočilo poslano nepreverjenemu uporabniku
 - **SentWelcomeEmail** - Pozdravno e-poštno sporočilo poslano novemu uporabniku
 
 ### Dogodki zaupanja in varnosti
-- **TrustFactorChanged** - Zaupanje uporabnika je bilo spremenjeno
-- **SpamFilterDisabledBecauseAdmin** - Filtriranje spama je bilo zaobšlo zaradi skrbnika
-- **TenantSpamFilterDisabled** - Filtriranje spama onemogočeno za celotnega najemnika
-- **RepeatCommentCheckIgnored** - Preverjanje ponavljajočih se komentarjev je bilo preskočeno
-- **UserIsAdmin** - Uporabnik je prepoznan kot skrbnik
-- **UserIsAdminParentTenant** - Uporabnik je prepoznan kot skrbnik nadrejenega najemnika
-- **UserIsAdminViaSSO** - Uporabnik je prepoznan kot skrbnik preko SSO
-- **UserIsMod** - Uporabnik je prepoznan kot moderator
+- **TrustFactorChanged** - Faktor zaupanja uporabnika je bil spremenjen (vključuje vrednosti pred in po)
+- **SpamFilterDisabledBecauseAdmin** - Filtriranje spama je bilo zaobideno za administratorskega uporabnika
+- **TenantSpamFilterDisabled** - Filtriranje spama onemogočeno za celoten tenant
+- **RepeatCommentCheckIgnored** - Preverjanje ponavljajočih se komentarjev je bilo izpuščeno (vključuje razlog)
+- **UserIsAdmin** - Uporabnik identificiran kot admin
+- **UserIsAdminParentTenant** - Uporabnik identificiran kot admin starševskega tenanta
+- **UserIsAdminViaSSO** - Uporabnik identificiran kot admin preko SSO
+- **UserIsMod** - Uporabnik identificiran kot moderator
 
 ### Spremembe statusa komentarja
-- **ExpireStatusChanged** - Status poteka/izteka komentarja je bil spremenjen
+
+Dogodki spremembe statusa vsebujejo vrednosti pred in po, ter uporabnika, ki je izvedel spremembo:
+
+- **ExpireStatusChanged** - Status poteka komentarja je bil spremenjen
 - **ReviewStatusChanged** - Status pregleda komentarja je bil spremenjen
 - **SpamStatusChanged** - Status spama komentarja je bil posodobljen
 - **ApproveStatusChanged** - Status odobritve komentarja je bil spremenjen
-- **TextChanged** - Besedilo komentarja je bilo urejeno
-- **VotesChanged** - Število glasov za komentar je bilo posodobljeno
-- **Flagged** - Komentar so označili uporabniki
-- **UnFlagged** - Označbe komentarja so bile odstranjene
+- **TextChanged** - Besedilo komentarja je bilo urejeno (vključuje besedilo pred in po)
+- **VotesChanged** - Štetje glasov za komentar je bilo posodobljeno (vključuje podroben razčlen glasov)
+- **Flagged** - Komentar je bil prijavljen s strani uporabnikov
+- **UnFlagged** - Prijave komentarja so bile odstranjene
 
-### Ukrepi moderiranja
-- **Pinned** - Komentar je bil pritrjen s strani moderatorja
-- **UnPinned** - Komentar je bil odpravljen iz pritrditve s strani moderatorja
-- **RestoredFromAnonymized** - Komentar je bil obnovljen iz anonimiziranega stanja
+### Moderacijska dejanja
+- **Pinned** - Komentar je moderator pripenil (vključuje kdo ga je pripenil)
+- **UnPinned** - Komentar je moderator odpenil (vključuje kdo ga je odpenil)
 
-### Dogodki obvestil
-- **CreatedNotifications** - Za komentar so bila ustvarjena obvestila
+### Dogodki obveščanja
+- **CreatedNotifications** - Za komentar so bila ustvarjena obvestila (vključuje število obvestil)
 - **NotificationCreateFailure** - Ustvarjanje obvestil ni uspelo
-- **BadgeAwarded** - Uporabniku je bila dodeljena značka za komentar
+- **BadgeAwarded** - Uporabniku je bila podeljena značka za komentar (vključuje ime značke)
 
-### Dogodki objave
-- **PublishedLive** - Komentar je bil objavljen za naročnike v živo
+### Dogodki objavljanja
+- **PublishedLive** - Komentar je bil objavljen za žive naročnike (vključuje število naročnikov)
 
-### Dogodki integracij
-- **WebhookSynced** - Komentar je bil sinhroniziran preko webhooka
+### Integracijski dogodki
+- **WebhookSynced** - Komentar je bil sinhroniziran preko webhook-a
 
-### Dogodki pravil spama
-- **SpamRuleMatch** - Komentar je ustrezal po meri določeni pravili spama
+### Dogodki pravil za spam
+- **SpamRuleMatch** - Komentar ustreza po meri določenemu pravilu za spam (vključuje podrobnosti pravila)
 
-## Dostop do zapisov komentarjev
+### Lokalizacijski dogodki
+- **LocaleDetectedFromText** - Jezikovna lokalizacija je bila samodejno zaznana iz besedila komentarja (vključuje zaznani jezik in lokalno nastavitev)
 
-Zapisi komentarjev so samodejno ustvarjeni in shranjeni pri vsakem komentarju. Nudijo vredne vpoglede za:
+## Primeri uporabe zapisov komentarjev
 
-- Razumevanje odločitev pri moderiranju
-- Odpravljanje napak pri odobritvi/težavah s spamom
-- Sledenje vzorcem vedenja uporabnikov
-- Revizijo dejanj sistema
+Zapisi komentarjev se samodejno ustvarijo in shranijo z vsakim komentarjem. Ponujajo dragocene vpoglede za:
 
-Ti zapisi pomagajo ohranjati preglednost v procesu moderiranja in pomagajo pri izpopolnjevanju vedenja vašega sistema komentarjev.
+- **Razumevanje odločitev moderiranja** - Oglejte si natančno, zakaj je bil komentar odobren, zadržan v pregledu ali označen kot spam
+- **Razhroščevanje težav z odobritvijo/spamom** - Sledite odločitveni logiki, ko komentarji ne delujejo, kot se pričakuje
+- **Spremljanje vzorcev vedenja uporabnikov** - Spremljajte spremembe faktorja zaupanja in status preverjanja
+- **Revidiranje dejanj moderatorjev** - Preglejte, katera dejanja so moderatorji izvedli za določene komentarje
+- **Preiskovanje učinkovitosti filtra spama** - Oglejte si, kateri detekcijski engine-i ujemajo spam in kateri ne
+- **Odpravljanje težav z integracijami** - Preverite sinhronizacije webhook-ov in dostavo obvestil
+
+Ti zapisi pomagajo ohranjati preglednost v procesu moderiranja in pomagajo pri natančnem nastavljanju vedenja sistema komentarjev.

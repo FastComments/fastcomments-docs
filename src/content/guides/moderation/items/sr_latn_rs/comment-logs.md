@@ -1,91 +1,123 @@
-FastComments automatski prati detaljne događaje za svaki komentar kako bi obezbedio transparentnost u donošenju odluka o moderaciji i akcijama sistema. Ovi zapisi pomažu da razumete zašto je komentar odobren, označen kao spam ili mu je promenjen status.
+FastComments automatski prati detaljne događaje za svaki komentar kako bi obezbedio transparentnost u odlukama o moderisanju i sistemskim akcijama. Ovi zapisi pomažu da shvatite zašto je komentar odobren, označen kao spam ili mu je promenjen status.
 
-Možete pregledati dnevnike komentara za pojedinačne komentare u kontrolnoj tabli Moderate Comments tako što ćete odabrati određeni komentar.
+## Pristupanje zapisima komentara
 
-## Comment Log Events
+Da biste videli zapise za određeni komentar:
+
+1. Idite na stranicu za moderisanje komentara u vašem FastComments kontrolnom panelu
+2. Pronađite komentar koji želite da pregledate
+3. Kliknite na dugme **Prikaži zapise** (ikona sata) u traci sa akcijama komentara
+4. Pojaviće se dijalog koji prikazuje kompletno istoriju događaja za taj komentar
+
+Svaki zapis prikazuje:
+- **Kada** - Vremenska oznaka događaja
+- **Ko** - Korisnik ili sistem koji je pokrenuo događaj (kada je primenljivo)
+- **Šta** - Tip akcije ili događaja
+- **Detalji** - Dodatni kontekst kao što su vrednosti pre/posle, imena engine-a ili povezani podaci
+
+## Događaji zapisnika komentara
 
 Svaki komentar održava zapis događaja koji se dešavaju tokom njegovog životnog ciklusa. Ispod su tipovi događaja koji se prate:
 
-### Anonymization Events
-- **Anonymized** - Sadržaj komentara je obrisan i korisnik označen kao obrisan
+### Događaji anonimizacije
+- **Anonymized** - Comment content was cleared and user marked as deleted
+- **RestoredFromAnonymized** - Comment was restored from anonymized state
 
-### Approval Events
-- **ApprovedDueToPastComment** - Komentar odobren jer je korisnik prethodno imao odobrene komentare
-- **ApprovedIsAdmin** - Komentar odobren jer je korisnik administrator
-- **NotApprovedRequiresApproval** - Komentar zahteva ručno odobrenje
+### Događaji odobravanja
+- **ApprovedDueToPastComment** - Comment approved because user has previously approved comments (includes reference to the past comment)
+- **ApprovedIsAdmin** - Comment approved because user is an admin
+- **NotApprovedRequiresApproval** - Comment requires manual approval
+- **NotApprovedLowTrustFactor** - Comment not approved due to low user trust factor (includes the trust factor value)
 
-### Spam Detection Events
-- **IsSpam** - Komentar označen kao spam od strane mehanizma za detekciju
-- **IsSpamDueToBadWords** - Komentar označen kao spam zbog filtera za nepristojne reči
-- **IsSpamFromLLM** - Komentar označen kao spam od strane AI/LLM mehanizma
-- **IsSpamRepeatComment** - Komentar označen kao spam zbog ponavljanja
-- **NotSpamIsOnlyImage** - Komentar nije označen kao spam jer sadrži samo slike
-- **NotSpamIsOnlyReacts** - Komentar nije označen kao spam jer sadrži samo reakcije
-- **NotSpamNoLinkOrMention** - Komentar nije označen kao spam jer ne sadrži sumnjive linkove ili pominjanja
-- **NotSpamPerfectTrustFactor** - Komentar nije označen kao spam zbog visokog poverenja korisnika
-- **NotSpamTooShort** - Komentar nije označen kao spam jer je prekratak za analizu
-- **NotSpamSkipped** - Provera spama je preskočena
-- **NotSpamFromEngine** - Komentar utvrđen kao ne-spam od strane mehanizma za detekciju
+### Događaji odobravanja komentara na profilima
 
-### Bad Words/Profanity Events
-- **BadWordsCheckFailed** - Provera filtera za nepristojne reči je naišla na grešku
-- **BadWordsFoundBadPhrase** - Filter za nepristojne reči je detektovao neprikladnu frazu
-- **BadWordsFoundBadWord** - Filter za nepristojne reči je detektovao neprikladnu reč
-- **BadWordsNoDefinitionForLocale** - Nema definicija profaniteta dostupnih za jezik komentara
+Ovi događaji se primenjuju specifično na komentare na korisničkim profilima:
 
-### User Verification Events
-- **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Komentar zahteva verifikaciju ali korisnik nije u verifikovanoj sesiji
-- **CommentMustBeVerifiedToApproveNotVerifiedYet** - Komentar zahteva verifikaciju ali korisnik još nije verificiran
-- **InVerifiedSession** - Korisnik koji objavljuje komentar je u verifikovanoj sesiji
-- **SentVerificationEmailNoSession** - Verifikacioni email poslat neverifikovanom korisniku
-- **SentWelcomeEmail** - Dobrodošli email poslat novom korisniku
+- **ApprovedProfileAutoApproveAll** - Profile comment auto-approved because the profile owner has enabled auto-approve for all comments
+- **ApprovedProfileTrusted** - Profile comment approved because the commenter is trusted (includes reference to the comment that established trust)
+- **NotApprovedProfileManualApproveAll** - Profile comment requires manual approval because the profile owner has enabled manual approval
+- **NotApprovedProfileNotTrusted** - Profile comment not approved because the commenter is not trusted
+- **NotApprovedProfileNewUser** - Profile comment not approved because the commenter is a new user
 
-### Trust and Security Events
-- **TrustFactorChanged** - Faktor poverenja korisnika je izmenjen
-- **SpamFilterDisabledBecauseAdmin** - Filtriranje spama zaobiđeno za administratorskog korisnika
-- **TenantSpamFilterDisabled** - Filtriranje spama onemogućeno za ceo tenant
-- **RepeatCommentCheckIgnored** - Provera za ponovljeni komentar je zaobiđena
-- **UserIsAdmin** - Korisnik identifikovan kao administrator
-- **UserIsAdminParentTenant** - Korisnik identifikovan kao administrator roditeljskog tena
-- **UserIsAdminViaSSO** - Korisnik identifikovan kao administrator putem SSO
-- **UserIsMod** - Korisnik identifikovan kao moderator
+### Događaji detekcije spama
+- **IsSpam** - Comment flagged as spam by detection engine (includes which engine made the decision)
+- **IsSpamDueToBadWords** - Comment flagged as spam due to profanity filter
+- **IsSpamFromLLM** - Comment flagged as spam by AI/LLM engine (includes engine name, response, and token count)
+- **IsSpamRepeatComment** - Comment flagged as spam for being repetitive (includes which engine detected it)
+- **NotSpamIsOnlyImage** - Comment not flagged as spam because it only contains images
+- **NotSpamIsOnlyReacts** - Comment not flagged as spam because it only contains reactions
+- **NotSpamNoLinkOrMention** - Comment not flagged as spam due to no suspicious links or mentions
+- **NotSpamPerfectTrustFactor** - Comment not flagged as spam due to high user trust
+- **NotSpamTooShort** - Comment not flagged as spam because it's too short to analyze
+- **NotSpamSkipped** - Spam check was skipped
+- **NotSpamFromEngine** - Comment determined not spam by detection engine (includes engine name and trust factor)
 
-### Comment Status Changes
-- **ExpireStatusChanged** - Status isteka komentara je izmenjen
-- **ReviewStatusChanged** - Status pregleda komentara je promenjen
-- **SpamStatusChanged** - Status spama komentara je ažuriran
-- **ApproveStatusChanged** - Status odobrenja komentara je promenjen
-- **TextChanged** - Tekst komentara je izmenjen
-- **VotesChanged** - Broj glasova za komentar je ažuriran
-- **Flagged** - Komentar je označen od strane korisnika
-- **UnFlagged** - Oznake za komentar su uklonjene
+### Događaji vezani za psovke/uvredljiv sadržaj
+- **BadWordsCheckFailed** - Profanity filter check encountered an error
+- **BadWordsFoundBadPhrase** - Profanity filter detected inappropriate phrase (includes the phrase)
+- **BadWordsFoundBadWord** - Profanity filter detected inappropriate word (includes the word)
+- **BadWordsNoDefinitionForLocale** - No profanity definitions available for comment language (includes the locale)
 
-### Moderation Actions
-- **Pinned** - Komentar je zakačen (pinned) od strane moderatora
-- **UnPinned** - Komentar je skinut sa vrha od strane moderatora
-- **RestoredFromAnonymized** - Komentar je vraćen iz anonimnog stanja
+### Događaji verifikacije korisnika
+- **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Comment requires verification but user not in verified session
+- **CommentMustBeVerifiedToApproveNotVerifiedYet** - Comment requires verification but user not yet verified
+- **InVerifiedSession** - User posting comment is in a verified session
+- **SentVerificationEmailNoSession** - Verification email sent to unverified user
+- **SentWelcomeEmail** - Welcome email sent to new user
 
-### Notification Events
-- **CreatedNotifications** - Obaveštenja su kreirana za komentar
-- **NotificationCreateFailure** - Nije uspelo kreiranje obaveštenja
-- **BadgeAwarded** - Korisniku je dodeljena značka za komentar
+### Događaji poverenja i bezbednosti
+- **TrustFactorChanged** - User's trust factor was modified (includes before and after values)
+- **SpamFilterDisabledBecauseAdmin** - Spam filtering bypassed for admin user
+- **TenantSpamFilterDisabled** - Spam filtering disabled for entire tenant
+- **RepeatCommentCheckIgnored** - Repeat comment check was bypassed (includes the reason)
+- **UserIsAdmin** - User identified as admin
+- **UserIsAdminParentTenant** - User identified as parent tenant admin
+- **UserIsAdminViaSSO** - User identified as admin via SSO
+- **UserIsMod** - User identified as moderator
 
-### Publishing Events
-- **PublishedLive** - Komentar je objavljen pretplatnicima uživo
+### Promene statusa komentara
 
-### Integration Events
-- **WebhookSynced** - Komentar je sinhronizovan putem webhook-a
+Događaji promene statusa uključuju vrednosti pre i posle, plus korisnika koji je izvršio promenu:
 
-### Spam Rule Events
-- **SpamRuleMatch** - Komentar je odgovarao prilagođenom pravilu za spam
+- **ExpireStatusChanged** - Comment expiration status was modified
+- **ReviewStatusChanged** - Comment review status was changed
+- **SpamStatusChanged** - Comment spam status was updated
+- **ApproveStatusChanged** - Comment approval status was changed
+- **TextChanged** - Comment text content was edited (includes before and after text)
+- **VotesChanged** - Comment vote counts were updated (includes detailed vote breakdown)
+- **Flagged** - Comment was flagged by users
+- **UnFlagged** - Comment flags were removed
 
-## Accessing Comment Logs
+### Akcije moderacije
+- **Pinned** - Comment was pinned by moderator (includes who pinned it)
+- **UnPinned** - Comment was unpinned by moderator (includes who unpinned it)
 
-Dnevnici komentara se automatski generišu i čuvaju uz svaki komentar. Oni pružaju vredne uvide za:
+### Događaji notifikacija
+- **CreatedNotifications** - Notifications were created for comment (includes notification count)
+- **NotificationCreateFailure** - Failed to create notifications
+- **BadgeAwarded** - User badge was awarded for comment (includes badge name)
 
-- Razumevanje odluka o moderaciji
-- Otkrivanje i rešavanje problema sa odobravanjem/spamom
-- Praćenje obrazaca ponašanja korisnika
-- Reviziju akcija sistema
+### Događaji objavljivanja
+- **PublishedLive** - Comment was published to live subscribers (includes subscriber count)
 
-Ovi zapisi pomažu održavanju transparentnosti u procesu moderacije i olakšavaju fino podešavanje ponašanja vašeg sistema za komentare.
+### Događaji integracije
+- **WebhookSynced** - Comment was synchronized via webhook
+
+### Događaji pravila protiv spama
+- **SpamRuleMatch** - Comment matched a custom spam rule (includes rule details)
+
+### Događaji lokalizacije
+- **LocaleDetectedFromText** - Language locale was automatically detected from comment text (includes detected language and locale)
+
+## Upotrebe zapisnika komentara
+
+Zapisnici komentara se automatski generišu i čuvaju uz svaki komentar. Oni pružaju vredne uvide za:
+
+- **Razumevanje odluka o moderisanju** - Tačno vidite zašto je komentar odobren, zadržan na pregledu ili označen kao spam
+- **Otklanjanje grešaka u vezi sa odobrenjem/spamom** - Pratite logiku odluke kada komentari ne funkcionišu očekivano
+- **Praćenje obrazaca ponašanja korisnika** - Pratite promene faktora poverenja i status verifikacije
+- **Reviziju akcija moderatora** - Pregledajte koje su akcije moderatori preduzeli nad određenim komentarima
+- **Istragu efikasnosti spam filtera** - Vidite koji engine-i detektuju spam, a koji ne
+- **Otklanjanje problema sa integracijama** - Proverite webhook sinhronizacije i isporuku notifikacija
+
+Ovi zapisi pomažu u održavanju transparentnosti procesa moderisanja i olakšavaju fino podešavanje ponašanja vašeg sistema komentarisanja.

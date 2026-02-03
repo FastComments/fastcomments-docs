@@ -8,229 +8,229 @@
       "subCat": "De basis"
     },
     {
-      "name": "Hoe opmerkingen aan pagina's en artikelen worden gekoppeld",
+      "name": "Hoe reacties aan pagina's en artikelen gekoppeld zijn",
       "file": "url-id.md",
       "subCat": "De basis"
     },
     {
-      "name": "Dezelfde opmerkingen op verschillende pagina's weergeven",
+      "name": "Dezelfde reacties op verschillende pagina's weergeven",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "De basis"
     },
     {
-      "name": "Aangepaste opmaak",
+      "name": "Aangepaste styling",
       "file": "custom-css.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Aangepaste lettertypen",
       "file": "custom-fonts.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Branding verwijderen",
       "file": "remove-branding.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Ondersteuning voor donkere achtergronden (donkere modus)",
       "file": "has-dark-background.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Donkere modus in-/uitschakelen",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Tekst overschrijven",
       "file": "translations.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "De standaardavatar wijzigen",
       "file": "default-avatar-src.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Avatars uitschakelen",
       "file": "hide-avatars.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Alle standaardstijlen uitschakelen",
       "file": "no-styles.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Linken van opmerkingen naar pagina's",
+      "name": "Linken van reacties naar pagina's",
       "file": "url.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Antwoorden standaard inklappen",
       "file": "collapse-replies.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "WYSIWYG inschakelen",
       "file": "enable-wysiwyg.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Werkbalk uitschakelen",
       "file": "disable-toolbar.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Blokkeren uitschakelen",
       "file": "disable-blocking.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Bepalen welke pagina wordt weergegeven",
       "file": "starting-page.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Opmerkingendraden wisselen zonder de pagina te herladen",
+      "name": "Schakelen tussen reactiedraden zonder de pagina te herladen",
       "file": "switching-comment-threads.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Absolute datums (mensenleesbare tijdstempels uitschakelen)",
+      "name": "Absolute datums (schakel mensvriendelijke tijdstempels uit)",
       "file": "absolute-dates.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Zowel absolute als relatieve datums weergeven",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Koptekst toevoegen",
       "file": "header-html.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Links als tekst weergeven",
       "file": "render-links-as-text.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Opmerkingen met een knop in-/uitschakelen",
+      "name": "Reacties met een knop in-/uitschakelen",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Tekst voor aantal opmerkingen aanpassen",
+      "name": "Tekst voor het aantal reacties aanpassen",
       "file": "comment-count-format.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Afbeeldingsomleiding uitschakelen",
       "file": "disable-image-redirect.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Automatisch aanmaken van hashtags uitschakelen",
+      "name": "Automatische hashtag-creatie uitschakelen",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Meldingsbel uitschakelen",
+      "name": "Notificatiebel uitschakelen",
       "file": "disable-notification-bell.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Profielen uitschakelen",
       "file": "disable-profiles.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Succesbericht uitschakelen",
+      "name": "Succesmelding uitschakelen",
       "file": "disable-success-message.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Inhoudsclassificatie van GIF's wijzigen",
       "file": "gif-rating.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Moderatie van afbeeldingsinhoud",
       "file": "image-content-moderation.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Stemstijl wijzigen",
       "file": "vote-style.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Verwijderen uitschakelen",
       "file": "disable-deleting.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Bewerken uitschakelen",
       "file": "disable-editing.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Nieuwe opmerkingen markeren",
+      "name": "Nieuwe reacties markeren",
       "file": "highlighting-new-comments.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Paginagrootten",
+      "name": "Paginagrootte",
       "file": "page-size.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "E-mailsjablonen",
       "file": "email-templates.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Gebruikersnaamformaten",
       "file": "user-name-formats.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Afbeeldingsuploads uitschakelen",
       "file": "no-image-uploads.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Zoekvak inschakelen",
       "file": "enable-search.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
       "name": "Spoilers inschakelen",
       "file": "enable-spoilers.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Weergaveaantallen van opmerkingen inschakelen",
+      "name": "Weergavetellers voor reacties inschakelen",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     },
     {
-      "name": "Live-opmerkingen direct weergeven",
+      "name": "Live reacties direct tonen",
       "file": "show-live-right-away.md",
-      "subCat": "Live opmerkingen"
+      "subCat": "Live reageren"
     },
     {
-      "name": "Live-opmerkingen uitschakelen",
+      "name": "Live reageren uitschakelen",
       "file": "disable-live-commenting.md",
-      "subCat": "Live opmerkingen"
+      "subCat": "Live reageren"
     },
     {
-      "name": "Nieuwe live-opmerkingen onderaan weergeven",
+      "name": "Nieuwe live reacties onderaan plaatsen",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Live opmerkingen"
+      "subCat": "Live reageren"
     },
     {
       "name": "Oneindig scrollen inschakelen",
@@ -238,72 +238,77 @@
       "subCat": "Paginering en sortering"
     },
     {
-      "name": "Standaard sorteervolgorde wijzigen",
+      "name": "Standaardsorteerrichting wijzigen",
       "file": "default-sort-direction.md",
       "subCat": "Paginering en sortering"
     },
     {
-      "name": "Alle opmerkingen tegelijk weergeven - paginering uitschakelen",
+      "name": "Alle reacties tegelijk weergeven - paginering uitschakelen",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginering en sortering"
     },
     {
-      "name": "Het reactieveld verplaatsen naar na de opmerkingen",
+      "name": "Het reactievak verplaatsen naar onder de reacties",
       "file": "input-after-comments.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
-      "name": "De maximale lengte van opmerkingen beperken",
+      "name": "De lengte van reacties beperken",
       "file": "max-comment-character-length.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
-      "name": "Meerregelige opmerkingen uitschakelen",
+      "name": "Meerregelig reageren uitschakelen",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
-      "name": "Aantal opmerkingen per gebruiker beperken",
+      "name": "Limiet voor aantal reacties per gebruiker",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
-      "name": "Nieuwe opmerkingen op hoofdniveau voorkomen",
+      "name": "Nieuwe reacties op topniveau voorkomen",
       "file": "no-new-root-comments.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
       "name": "Maximale antwoorddiepte",
       "file": "max-reply-depth.md",
-      "subCat": "Het reactieveld"
+      "subCat": "Het antwoordvak"
     },
     {
-      "name": "Overzicht Single Sign On (SSO)",
+      "name": "Acceptatie van de gebruiksvoorwaarden verplichten",
+      "file": "terms-of-service.md",
+      "subCat": "Het antwoordvak"
+    },
+    {
+      "name": "Single Sign-On (SSO) overzicht",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - veilige Single Sign On (SSO)",
+      "name": "Aangepaste integraties - beveiligde Single Sign-On (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - eenvoudige Single Sign On (SSO)",
+      "name": "Aangepaste integraties - eenvoudige Single Sign-On (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - migratie van Disqus SSO",
+      "name": "Aangepaste integraties - migreren vanaf Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - migratie van Commento SSO",
+      "name": "Aangepaste integraties - migreren vanaf Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
     {
-      "name": "Reactiedraden beschermen met Single Sign-On",
+      "name": "Discussiedraden beschermen met Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -313,7 +318,7 @@
       "subCat": "Anoniem reageren"
     },
     {
-      "name": "Voorkomen dat anonieme opmerkingen verlopen",
+      "name": "Voorkomen dat anonieme reacties verlopen",
       "file": "allow-anon-retain-comments.md",
       "subCat": "Anoniem reageren"
     },
@@ -323,12 +328,12 @@
       "subCat": "Anoniem reageren"
     },
     {
-      "name": "Het label 'onverifieerd' uitschakelen",
+      "name": "Label 'niet-geverifieerd' uitschakelen",
       "file": "disable-unverified-label.md",
       "subCat": "Anoniem reageren"
     },
     {
-      "name": "Anonieme stemmen toestaan",
+      "name": "Anoniem stemmen toestaan",
       "file": "allow-anon-votes.md",
       "subCat": "Anoniem reageren"
     },
@@ -343,7 +348,7 @@
       "subCat": "Overig"
     },
     {
-      "name": "De taal-/regio-instelling van de gebruiker handmatig instellen",
+      "name": "De locale van de gebruiker handmatig instellen",
       "file": "locale.md",
       "subCat": "Overig"
     },
@@ -363,17 +368,17 @@
       "subCat": "Overig"
     },
     {
-      "name": "Beperken van linkdomeinen",
+      "name": "Domeinen voor links beperken",
       "file": "restricting-link-domains.md",
       "subCat": "Overig"
     },
     {
-      "name": "Het aantal opmerkingen en het mee-tellen van alle geneste antwoorden",
+      "name": "Het aantal reacties en het tellen van alle geneste antwoorden",
       "file": "count-all.md",
       "subCat": "Overig"
     },
     {
-      "name": "Links voor reageerders inschakelen",
+      "name": "Links naar reageerders inschakelen",
       "file": "enable-commenter-links.md",
       "subCat": "Overig"
     },
@@ -383,24 +388,24 @@
       "subCat": "Overig"
     },
     {
-      "name": "Groep-ID's vermelden",
+      "name": "Groeps-ID's vermelden",
       "file": "mention-group-ids.md",
       "subCat": "Overig"
     },
     {
-      "name": "Cookies van derden omzeilen",
+      "name": "Omzeilen van cookies van derden",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Overig"
     },
     {
-      "name": "Opmerkingen met antwoorden verwijderen",
+      "name": "Reacties met antwoorden verwijderen",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Overig"
     },
     {
-      "name": "Badges in de bovenbalk weergeven",
+      "name": "Badges in de bovenbalk tonen",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Weergave en stijl"
+      "subCat": "Weergave"
     }
   ]
 }

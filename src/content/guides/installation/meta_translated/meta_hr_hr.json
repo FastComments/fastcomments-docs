@@ -1,5 +1,6 @@
 {
   "name": "Instalacija",
+  "pageHeader": "Dodavanje komentara na web stranicu",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -43,19 +44,19 @@
       "subCat": "Prilagođene instalacije"
     },
     {
-      "name": "Uobičajeni slučajevi korištenja",
+      "name": "Uobičajeni slučajevi upotrebe",
       "file": "installation-common-use-cases.md",
       "subCat": "Prilagođene instalacije"
     },
     {
-      "name": "Rješavanje uobičajenih problema",
+      "name": "Otklanjanje uobičajenih problema",
       "file": "debugging-common-issues.md",
       "subCat": "Prilagođene instalacije"
     },
     {
       "name": "Notion i Google Sites",
       "file": "oembed.md",
-      "subCat": "Umetanje u dokumente"
+      "subCat": "Ugrađivanje u dokumente"
     }
   ]
 }

@@ -1,11 +1,12 @@
 {
   "name": "Installation",
+  "pageHeader": "Kommentare zu einer Website hinzufügen",
   "icon": "download.png",
   "itemsOrdered": [
     {
       "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Plugins von Drittanbietern"
+      "subCat": "Drittanbieter-Plugins"
     },
     {
       "name": "VanillaJS / HTML-Snippet",

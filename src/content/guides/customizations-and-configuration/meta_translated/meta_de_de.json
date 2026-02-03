@@ -5,217 +5,217 @@
     {
       "name": "Ihr Konto identifizieren",
       "file": "tenant-id.md",
-      "subCat": "Grundlagen"
+      "subCat": "Die Grundlagen"
     },
     {
-      "name": "Wie Kommentare mit Seiten und Artikeln verknüpft werden",
+      "name": "Wie Kommentare mit Seiten und Artikeln verknüpft sind",
       "file": "url-id.md",
-      "subCat": "Grundlagen"
+      "subCat": "Die Grundlagen"
     },
     {
-      "name": "Die gleichen Kommentare auf verschiedenen Seiten darstellen",
+      "name": "Die gleichen Kommentare auf verschiedenen Seiten anzeigen",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Grundlagen"
+      "subCat": "Die Grundlagen"
     },
     {
       "name": "Benutzerdefiniertes Styling",
       "file": "custom-css.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Benutzerdefinierte Schriftarten",
       "file": "custom-fonts.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Branding entfernen",
       "file": "remove-branding.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Unterstützung für dunkle Hintergründe (Dunkelmodus)",
+      "name": "Dunkle Hintergründe unterstützen (Dark Mode)",
       "file": "has-dark-background.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Dunkelmodus umschalten",
+      "name": "Dark Mode umschalten",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Text überschreiben",
       "file": "translations.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Standard-Avatar ändern",
       "file": "default-avatar-src.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Avatare deaktivieren",
       "file": "hide-avatars.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Alle Standardstile deaktivieren",
       "file": "no-styles.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Verlinkung von Kommentaren zu Seiten",
       "file": "url.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Antworten standardmäßig einklappen",
       "file": "collapse-replies.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "WYSIWYG aktivieren",
       "file": "enable-wysiwyg.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Symbolleiste deaktivieren",
       "file": "disable-toolbar.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Blockierung deaktivieren",
+      "name": "Blockieren deaktivieren",
       "file": "disable-blocking.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Festlegen, welche Seite gerendert wird",
+      "name": "Bestimmen, welche Seite gerendert wird",
       "file": "starting-page.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Wechseln von Kommentar-Threads ohne Neuladen der Seite",
+      "name": "Kommentar-Threads wechseln, ohne die Seite neu zu laden",
       "file": "switching-comment-threads.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Absolute Datumsangaben (freundliche Zeitstempel deaktivieren)",
+      "name": "Absolute Datumsangaben (lesbare Zeitstempel deaktivieren)",
       "file": "absolute-dates.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Absolute und relative Datumsangaben anzeigen",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Kopfzeilentext hinzufügen",
+      "name": "Header-Text hinzufügen",
       "file": "header-html.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Links als Text darstellen",
+      "name": "Links als Text anzeigen",
       "file": "render-links-as-text.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Kommentare per Button ein-/ausblenden",
+      "name": "Kommentare mit einem Button umschalten",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Text der Kommentaranzahl anpassen",
       "file": "comment-count-format.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Bildweiterleitung deaktivieren",
       "file": "disable-image-redirect.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Automatische Hashtag-Erstellung deaktivieren",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Benachrichtigungsglocke deaktivieren",
       "file": "disable-notification-bell.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Profile deaktivieren",
       "file": "disable-profiles.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Erfolgsmeldung deaktivieren",
       "file": "disable-success-message.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Inhaltsbewertung von GIFs ändern",
       "file": "gif-rating.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Moderation von Bildinhalten",
       "file": "image-content-moderation.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Stil der Abstimmung ändern",
       "file": "vote-style.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Löschen deaktivieren",
       "file": "disable-deleting.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Bearbeiten deaktivieren",
       "file": "disable-editing.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Neue Kommentare hervorheben",
       "file": "highlighting-new-comments.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Seitengrößen",
       "file": "page-size.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "E-Mail-Vorlagen",
       "file": "email-templates.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Benutzernameformate",
+      "name": "Benutzername-Formate",
       "file": "user-name-formats.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Bild-Uploads deaktivieren",
       "file": "no-image-uploads.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Suchfeld aktivieren",
       "file": "enable-search.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Spoiler aktivieren",
       "file": "enable-spoilers.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
-      "name": "Anzeige von Kommentaransichten aktivieren",
+      "name": "Ansichtszähler für Kommentare aktivieren",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     },
     {
       "name": "Live-Kommentare sofort anzeigen",
@@ -228,24 +228,24 @@
       "subCat": "Live-Kommentare"
     },
     {
-      "name": "Neue Live-Kommentare unten anzeigen",
+      "name": "Neue Live-Kommentare am Ende anzeigen",
       "file": "new-comments-to-bottom.md",
       "subCat": "Live-Kommentare"
     },
     {
-      "name": "Unendliches Scrollen aktivieren",
+      "name": "Endloses Scrollen aktivieren",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
       "name": "Standard-Sortierreihenfolge ändern",
       "file": "default-sort-direction.md",
-      "subCat": "Paginierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
-      "name": "Alle Kommentare auf einmal darstellen – Paginierung deaktivieren",
+      "name": "Alle Kommentare auf einmal anzeigen – Paginierung deaktivieren",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
       "name": "Antwortfeld hinter die Kommentare verschieben",
@@ -263,7 +263,7 @@
       "subCat": "Antwortfeld"
     },
     {
-      "name": "Kommentaranzahl pro Benutzer begrenzen",
+      "name": "Anzahl der Kommentare pro Benutzer begrenzen",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Antwortfeld"
     },
@@ -278,7 +278,12 @@
       "subCat": "Antwortfeld"
     },
     {
-      "name": "Single Sign-On (SSO) – Übersicht",
+      "name": "Akzeptanz der Nutzungsbedingungen erforderlich",
+      "file": "terms-of-service.md",
+      "subCat": "Antwortfeld"
+    },
+    {
+      "name": "Single Sign-On (SSO) Übersicht",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -313,7 +318,7 @@
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Verhindern, dass anonyme Kommentare ablaufen",
+      "name": "Ablauf anonymer Kommentare verhindern",
       "file": "allow-anon-retain-comments.md",
       "subCat": "Anonymes Kommentieren"
     },
@@ -323,84 +328,84 @@
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Unverifiziertes Label deaktivieren",
+      "name": "Das 'Unverified'-Label deaktivieren",
       "file": "disable-unverified-label.md",
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Anonymes Abstimmen erlauben",
+      "name": "Anonyme Abstimmungen erlauben",
       "file": "allow-anon-votes.md",
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Standard-Benutzername festlegen",
+      "name": "Einen Standardbenutzernamen festlegen",
       "file": "default-username.md",
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Rückrufe",
+      "name": "Callbacks",
       "file": "callbacks.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Manuelles Festlegen der Benutzerlokalisierung",
+      "name": "Locale des Benutzers manuell festlegen",
       "file": "locale.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Zulässige Sprachen einschränken",
+      "name": "Erlaubte Sprachen einschränken",
       "file": "allowed-languages.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Seitentitel",
       "file": "page-title.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Neue Antworten verhindern und Abstimmungen deaktivieren",
       "file": "readonly.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Zulässige Link-Domains einschränken",
+      "name": "Link-Domains einschränken",
       "file": "restricting-link-domains.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Die Kommentaranzahl & das Zählen aller verschachtelten Antworten",
+      "name": "Kommentaranzahl und Zählen aller verschachtelten Antworten",
       "file": "count-all.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Kommentator-Links aktivieren",
+      "name": "Links für Kommentierende aktivieren",
       "file": "enable-commenter-links.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Moderationsgruppen",
       "file": "moderation-group-ids.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Gruppen-IDs für Erwähnungen",
       "file": "mention-group-ids.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Umgehung von Drittanbieter-Cookies",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
-      "name": "Löschen von Kommentaren mit Antworten",
+      "name": "Kommentare mit Antworten löschen",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Verschiedenes"
+      "subCat": "Sonstiges"
     },
     {
       "name": "Abzeichen in der oberen Leiste anzeigen",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Design & Erscheinungsbild"
+      "subCat": "Design & Darstellung"
     }
   ]
 }

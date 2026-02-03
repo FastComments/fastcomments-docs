@@ -1,5 +1,6 @@
 {
   "name": "Installatie",
+  "pageHeader": "Reacties toevoegen aan een website",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -48,7 +49,7 @@
       "subCat": "Aangepaste installaties"
     },
     {
-      "name": "Foutopsporing bij veelvoorkomende problemen",
+      "name": "Debuggen van veelvoorkomende problemen",
       "file": "debugging-common-issues.md",
       "subCat": "Aangepaste installaties"
     },

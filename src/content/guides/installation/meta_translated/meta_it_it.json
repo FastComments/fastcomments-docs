@@ -1,5 +1,6 @@
 {
   "name": "Installazione",
+  "pageHeader": "Aggiungi commenti a un sito web",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -55,7 +56,7 @@
     {
       "name": "Notion e Google Sites",
       "file": "oembed.md",
-      "subCat": "Incorporazione nei documenti"
+      "subCat": "Incorporamento nei documenti"
     }
   ]
 }

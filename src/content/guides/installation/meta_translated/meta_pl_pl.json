@@ -1,56 +1,57 @@
 {
   "name": "Instalacja",
+  "pageHeader": "Dodawanie komentarzy na stronie internetowej",
   "icon": "download.png",
   "itemsOrdered": [
     {
       "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Wtyczki firm trzecich"
+      "subCat": "Wtyczki firm zewnętrznych"
     },
     {
       "name": "VanillaJS / fragment HTML",
       "file": "vanillajs.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "Angular",
       "file": "angular.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "React",
       "file": "react.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "React Native",
       "file": "react-native.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "Vue",
       "file": "vue.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "TypeScript",
       "file": "typescript.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "Wiele instancji na tej samej stronie",
       "file": "multiple-instances.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
-      "name": "Typowe przypadki użycia",
+      "name": "Typowe zastosowania",
       "file": "installation-common-use-cases.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "Debugowanie typowych problemów",
       "file": "debugging-common-issues.md",
-      "subCat": "Instalacje niestandardowe"
+      "subCat": "Niestandardowe instalacje"
     },
     {
       "name": "Notion i Google Sites",

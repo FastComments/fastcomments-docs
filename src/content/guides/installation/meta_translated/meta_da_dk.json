@@ -1,11 +1,12 @@
 {
   "name": "Installation",
+  "pageHeader": "Tilføj kommentarer til et websted",
   "icon": "download.png",
   "itemsOrdered": [
     {
       "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Tredjepartsplugins"
+      "subCat": "Tredjeparts-plugins"
     },
     {
       "name": "VanillaJS / HTML-udsnit",
@@ -43,7 +44,7 @@
       "subCat": "Tilpassede installationer"
     },
     {
-      "name": "Typiske anvendelsestilfælde",
+      "name": "Almindelige anvendelsestilfælde",
       "file": "installation-common-use-cases.md",
       "subCat": "Tilpassede installationer"
     },

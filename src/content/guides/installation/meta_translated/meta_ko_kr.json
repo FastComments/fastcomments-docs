@@ -1,5 +1,6 @@
 {
   "name": "설치",
+  "pageHeader": "웹사이트에 댓글 추가하기",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -10,47 +11,47 @@
     {
       "name": "바닐라 JS / HTML 스니펫",
       "file": "vanillajs.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "앵귤러",
       "file": "angular.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "리액트",
       "file": "react.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "리액트 네이티브",
       "file": "react-native.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "뷰",
       "file": "vue.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "타입스크립트",
       "file": "typescript.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
-      "name": "같은 페이지에서 여러 인스턴스",
+      "name": "동일 페이지에서 여러 인스턴스",
       "file": "multiple-instances.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "일반적인 사용 사례",
       "file": "installation-common-use-cases.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "일반적인 문제 디버깅",
       "file": "debugging-common-issues.md",
-      "subCat": "사용자 정의 설치"
+      "subCat": "맞춤 설치"
     },
     {
       "name": "노션 및 구글 사이트",

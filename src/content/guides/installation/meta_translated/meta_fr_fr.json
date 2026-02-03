@@ -1,5 +1,6 @@
 {
   "name": "Installation",
+  "pageHeader": "Ajouter des commentaires à un site Web",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Extensions tierces"
     },
     {
-      "name": "Vanilla JS / extrait HTML",
+      "name": "VanillaJS / extrait HTML",
       "file": "vanillajs.md",
       "subCat": "Installations personnalisées"
     },
@@ -38,7 +39,7 @@
       "subCat": "Installations personnalisées"
     },
     {
-      "name": "Plusieurs instances sur la même page",
+      "name": "Instances multiples sur la même page",
       "file": "multiple-instances.md",
       "subCat": "Installations personnalisées"
     },
@@ -48,7 +49,7 @@
       "subCat": "Installations personnalisées"
     },
     {
-      "name": "Dépannage des problèmes courants",
+      "name": "Débogage des problèmes courants",
       "file": "debugging-common-issues.md",
       "subCat": "Installations personnalisées"
     },

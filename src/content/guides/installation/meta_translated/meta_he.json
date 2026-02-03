@@ -1,5 +1,6 @@
 {
   "name": "התקנה",
+  "pageHeader": "הוספת תגובות לאתר",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,52 +9,52 @@
       "subCat": "תוספי צד שלישי"
     },
     {
-      "name": "ונילה JS / קוד HTML",
+      "name": "ונילה JS / קטע HTML",
       "file": "vanillajs.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
       "name": "אנגולר",
       "file": "angular.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
       "name": "ריאקט",
       "file": "react.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
       "name": "ריאקט נייטיב",
       "file": "react-native.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
-      "name": "וויו",
+      "name": "ויו",
       "file": "vue.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
       "name": "טייפסקריפט",
       "file": "typescript.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
-      "name": "מספר מופעים באותו דף",
+      "name": "מופעים מרובים באותו עמוד",
       "file": "multiple-instances.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
-      "name": "שימושים נפוצים",
+      "name": "מקרי שימוש נפוצים",
       "file": "installation-common-use-cases.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
       "name": "ניפוי בעיות נפוצות",
       "file": "debugging-common-issues.md",
-      "subCat": "התקנות מותאמות"
+      "subCat": "התקנות מותאמות אישית"
     },
     {
-      "name": "נושן וגוגל סייטס",
+      "name": "Notion ו-Google Sites",
       "file": "oembed.md",
       "subCat": "הטמעה במסמכים"
     }

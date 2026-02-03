@@ -1,5 +1,6 @@
 {
   "name": "Namestitev",
+  "pageHeader": "Dodajanje komentarjev na spletno stran",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Vtičniki tretjih oseb"
     },
     {
-      "name": "VanillaJS / HTML-vstavek",
+      "name": "VanillaJS / HTML izsek",
       "file": "vanillajs.md",
       "subCat": "Prilagojene namestitve"
     },

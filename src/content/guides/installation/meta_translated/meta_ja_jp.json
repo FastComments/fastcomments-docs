@@ -1,5 +1,6 @@
 {
   "name": "インストール",
+  "pageHeader": "ウェブサイトにコメントを追加する",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "サードパーティ製プラグイン"
     },
     {
-      "name": "VanillaJS / HTML スニペット",
+      "name": "Vanilla JS / HTML スニペット",
       "file": "vanillajs.md",
       "subCat": "カスタムインストール"
     },
@@ -48,12 +49,12 @@
       "subCat": "カスタムインストール"
     },
     {
-      "name": "よくある問題のデバッグ",
+      "name": "よくある問題のトラブルシューティング",
       "file": "debugging-common-issues.md",
       "subCat": "カスタムインストール"
     },
     {
-      "name": "NotionとGoogle Sites",
+      "name": "Notion と Google Sites",
       "file": "oembed.md",
       "subCat": "ドキュメントへの埋め込み"
     }

@@ -1,5 +1,6 @@
 {
   "name": "Установка",
+  "pageHeader": "Добавление комментариев на сайт",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Сторонние плагины"
     },
     {
-      "name": "VanillaJS / HTML-фрагмент",
+      "name": "VanillaJS / HTML-сниппет",
       "file": "vanillajs.md",
       "subCat": "Пользовательские установки"
     },

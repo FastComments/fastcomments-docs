@@ -1,5 +1,6 @@
 {
   "name": "Инсталација",
+  "pageHeader": "Додавање коментара на веб-сајт",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Додаци трећих страна"
     },
     {
-      "name": "VanillaJS / HTML кодни исјечак",
+      "name": "VanillaJS / HTML исечак",
       "file": "vanillajs.md",
       "subCat": "Прилагођене инсталације"
     },

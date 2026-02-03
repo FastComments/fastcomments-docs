@@ -1,21 +1,21 @@
 {
-  "name": "התאמות ותצורה",
+  "name": "התאמות והגדרות",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "זיהוי החשבון שלך",
       "file": "tenant-id.md",
-      "subCat": "יסודות"
+      "subCat": "היסודות"
     },
     {
-      "name": "כיצד תגובות מקושרות לעמודים ולמאמרים",
+      "name": "כיצד תגובות מקושרות לדפים ומאמרים",
       "file": "url-id.md",
-      "subCat": "יסודות"
+      "subCat": "היסודות"
     },
     {
-      "name": "הצגת אותן תגובות בעמודים שונים",
+      "name": "הצגת אותן תגובות בדפים שונים",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "יסודות"
+      "subCat": "היסודות"
     },
     {
       "name": "עיצוב מותאם אישית",
@@ -28,12 +28,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "הסרת המיתוג",
+      "name": "הסרת מיתוג",
       "file": "remove-branding.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "תמיכה ברקע כהה (מצב כהה)",
+      "name": "תמיכה ברקעים כהים (מצב כהה)",
       "file": "has-dark-background.md",
       "subCat": "מראה ותחושה"
     },
@@ -43,17 +43,17 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "החלפת טקסט",
+      "name": "שינוי טקסט ברירת מחדל",
       "file": "translations.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "שינוי תמונת הפרופיל ברירת המחדל",
+      "name": "שינוי אווטאר ברירת המחדל",
       "file": "default-avatar-src.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת תמונות פרופיל",
+      "name": "השבתת אווטארים",
       "file": "hide-avatars.md",
       "subCat": "מראה ותחושה"
     },
@@ -63,12 +63,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "קישור תגובות לעמודים",
+      "name": "קישור מהתגובות לדפים",
       "file": "url.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "קיפול תגובות כברירת מחדל",
+      "name": "קיפול תגובות משנה כברירת מחדל",
       "file": "collapse-replies.md",
       "subCat": "מראה ותחושה"
     },
@@ -88,22 +88,22 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "קביעת איזה עמוד להציג",
+      "name": "קביעת הדף שיוצג",
       "file": "starting-page.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "החלפת שרשורי תגובות ללא טעינת הדף מחדש",
+      "name": "החלפת שרשורי תגובות ללא רענון הדף",
       "file": "switching-comment-threads.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "תאריכים מוחלטים (השבתת חותמות זמן ידידותיות)",
+      "name": "תאריכים מוחלטים (השבתת חותמות זמן יחסיות)",
       "file": "absolute-dates.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "הצגת תאריכים מוחלטים ויחסיים",
+      "name": "הצגת תאריכים מוחלטים ויחסיים יחד",
       "file": "absolute-and-relative-dates.md",
       "subCat": "מראה ותחושה"
     },
@@ -118,7 +118,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "הצגה/הסתרת תגובות באמצעות כפתור",
+      "name": "הצגה/הסתרה של תגובות באמצעות כפתור",
       "file": "use-show-comments-toggle.md",
       "subCat": "מראה ותחושה"
     },
@@ -133,12 +133,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת יצירת האשטאגים באופן אוטומטי",
+      "name": "השבתת יצירת האשטאגים אוטומטית",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת פעמון ההתראות",
+      "name": "השבתת פעמון התראות",
       "file": "disable-notification-bell.md",
       "subCat": "מראה ותחושה"
     },
@@ -148,7 +148,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת הודעת ההצלחה",
+      "name": "השבתת הודעת הצלחה",
       "file": "disable-success-message.md",
       "subCat": "מראה ותחושה"
     },
@@ -158,7 +158,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "בקרת תוכן לתמונות",
+      "name": "פיקוח על תוכן בתמונות",
       "file": "image-content-moderation.md",
       "subCat": "מראה ותחושה"
     },
@@ -168,12 +168,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת המחיקה",
+      "name": "השבתת מחיקה",
       "file": "disable-deleting.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת העריכה",
+      "name": "השבתת עריכה",
       "file": "disable-editing.md",
       "subCat": "מראה ותחושה"
     },
@@ -188,12 +188,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "תבניות דוא\"ל",
+      "name": "תבניות דואר אלקטרוני",
       "file": "email-templates.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "פורמטים של שמות משתמש",
+      "name": "פורמטי שמות משתמש",
       "file": "user-name-formats.md",
       "subCat": "מראה ותחושה"
     },
@@ -218,7 +218,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "הצגת תגובות חיות מיד",
+      "name": "הצגת תגובות בזמן אמת באופן מיידי",
       "file": "show-live-right-away.md",
       "subCat": "תגובות בזמן אמת"
     },
@@ -228,54 +228,59 @@
       "subCat": "תגובות בזמן אמת"
     },
     {
-      "name": "הצגת תגובות חיות חדשות בתחתית",
+      "name": "הצבת תגובות חדשות בתחתית",
       "file": "new-comments-to-bottom.md",
       "subCat": "תגובות בזמן אמת"
     },
     {
       "name": "הפעלת גלילה אינסופית",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "דפדוף ומיון"
+      "subCat": "עימוד ומיון"
     },
     {
-      "name": "שינוי כיוון המיון המוגדר כברירת מחדל",
+      "name": "שינוי כיוון המיון ברירת המחדל",
       "file": "default-sort-direction.md",
-      "subCat": "דפדוף ומיון"
+      "subCat": "עימוד ומיון"
     },
     {
-      "name": "הצגת כל התגובות בבת אחת - השבתת פגינציה",
+      "name": "הצגת כל התגובות בבת אחת - השבתת עימוד",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "דפדוף ומיון"
+      "subCat": "עימוד ומיון"
     },
     {
-      "name": "העברת תיבת התשובה לאחר התגובות",
+      "name": "העברת תיבת התגובה אחרי רשימת התגובות",
       "file": "input-after-comments.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
     },
     {
       "name": "הגבלת אורך התגובה",
       "file": "max-comment-character-length.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
     },
     {
-      "name": "השבתת תגובות מרובות שורות",
+      "name": "השבתת תגובות מרובת שורות",
       "file": "use-single-line-comment-input.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
     },
     {
-      "name": "הגבלת מספר התגובות לכל משתמש",
+      "name": "הגבלת מספר התגובות למשתמש",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
     },
     {
-      "name": "מניעת יצירת תגובות חדשות ברמת שורש",
+      "name": "מניעת יצירת תגובות חדשות ברמת השורש",
       "file": "no-new-root-comments.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
     },
     {
-      "name": "עומק מקסימלי של תשובות",
+      "name": "עומק מירבי של תגובות משנה",
       "file": "max-reply-depth.md",
-      "subCat": "תיבת תגובה"
+      "subCat": "תיבת התגובה"
+    },
+    {
+      "name": "דרישת קבלת תנאי השירות",
+      "file": "terms-of-service.md",
+      "subCat": "תיבת התגובה"
     },
     {
       "name": "סקירה של כניסה יחידה (SSO)",
@@ -303,7 +308,7 @@
       "subCat": "כניסה יחידה (SSO)"
     },
     {
-      "name": "הגנה על שרשורי תגובות באמצעות כניסה יחידה (SSO)",
+      "name": "הגנה על שרשורי תגובות באמצעות SSO",
       "file": "sso-require-to-view-comments.md",
       "subCat": "כניסה יחידה (SSO)"
     },
@@ -318,7 +323,7 @@
       "subCat": "תגובות אנונימיות"
     },
     {
-      "name": "השבתת שדות אימייל",
+      "name": "השבתת שדות דואר אלקטרוני",
       "file": "disable-email-inputs.md",
       "subCat": "תגובות אנונימיות"
     },
@@ -340,62 +345,62 @@
     {
       "name": "קריאות חזרה",
       "file": "callbacks.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "הגדרה ידנית של מיקום המשתמש (Locale)",
+      "name": "הגדרה ידנית של אזור המשתמש (Locale)",
       "file": "locale.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
       "name": "הגבלת השפות המותרות",
       "file": "allowed-languages.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "כותרות עמודים",
+      "name": "כותרות דפים",
       "file": "page-title.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
       "name": "מניעת תגובות חדשות והשבתת הצבעות",
       "file": "readonly.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
       "name": "הגבלת דומיינים של קישורים",
       "file": "restricting-link-domains.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "מניין התגובות וספירת כל התגובות המקוננות",
+      "name": "מונה התגובות וספירה של כל תגובות המשנה",
       "file": "count-all.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "הפעלת קישורים למגיבים",
+      "name": "הפעלת קישורים למחברי תגובות",
       "file": "enable-commenter-links.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "קבוצות מודרציה",
+      "name": "קבוצות פיקוח",
       "file": "moderation-group-ids.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
       "name": "אזכור מזהי קבוצות",
       "file": "mention-group-ids.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "עקיפת עוגיות של צד שלישי",
+      "name": "עקיפת עוגיות צד שלישי",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
-      "name": "מחיקת תגובות הכוללות תשובות",
+      "name": "מחיקת תגובות המכילות תגובות משנה",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "שונות"
+      "subCat": "כללי"
     },
     {
       "name": "הצגת תגים בסרגל העליון",

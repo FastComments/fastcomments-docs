@@ -1,11 +1,12 @@
 {
   "name": "Instalacija",
+  "pageHeader": "Dodavanje komentara na veb-sajt",
   "icon": "download.png",
   "itemsOrdered": [
     {
       "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Dodaci trećih strana"
+      "subCat": "Pluginovi trećih strana"
     },
     {
       "name": "VanillaJS / HTML isječak",

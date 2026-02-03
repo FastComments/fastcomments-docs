@@ -8,12 +8,12 @@
       "subCat": "基本"
     },
     {
-      "name": "コメントがページや記事に紐づく方法",
+      "name": "コメントがページや記事とどのように紐づくか",
       "file": "url-id.md",
       "subCat": "基本"
     },
     {
-      "name": "異なるページで同じコメントを表示する方法",
+      "name": "異なるページで同じコメントを表示する",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "基本"
     },
@@ -33,7 +33,7 @@
       "subCat": "外観"
     },
     {
-      "name": "ダーク背景（ダークモード）のサポート",
+      "name": "暗背景（ダークモード）への対応",
       "file": "has-dark-background.md",
       "subCat": "外観"
     },
@@ -53,12 +53,12 @@
       "subCat": "外観"
     },
     {
-      "name": "アバターの無効化",
+      "name": "アバターを無効化する",
       "file": "hide-avatars.md",
       "subCat": "外観"
     },
     {
-      "name": "全てのデフォルトスタイルを無効化",
+      "name": "すべてのデフォルトスタイルを無効化する",
       "file": "no-styles.md",
       "subCat": "外観"
     },
@@ -73,32 +73,32 @@
       "subCat": "外観"
     },
     {
-      "name": "WYSIWYGを有効にする",
+      "name": "WYSIWYG を有効にする",
       "file": "enable-wysiwyg.md",
       "subCat": "外観"
     },
     {
-      "name": "ツールバーを無効化",
+      "name": "ツールバーを無効化する",
       "file": "disable-toolbar.md",
       "subCat": "外観"
     },
     {
-      "name": "ブロック機能の無効化",
+      "name": "ブロック機能を無効にする",
       "file": "disable-blocking.md",
       "subCat": "外観"
     },
     {
-      "name": "表示するページの判定",
+      "name": "どのページをレンダリングするかの判定",
       "file": "starting-page.md",
       "subCat": "外観"
     },
     {
-      "name": "ページ再読み込みなしでコメントスレッドを切り替える",
+      "name": "ページをリロードせずにコメントスレッドを切り替える",
       "file": "switching-comment-threads.md",
       "subCat": "外観"
     },
     {
-      "name": "絶対日時（人間向けタイムスタンプを無効化）",
+      "name": "絶対日時（フレンドリーなタイムスタンプを無効にする）",
       "file": "absolute-dates.md",
       "subCat": "外観"
     },
@@ -123,37 +123,37 @@
       "subCat": "外観"
     },
     {
-      "name": "コメント数表示テキストのカスタマイズ",
+      "name": "コメント数テキストのカスタマイズ",
       "file": "comment-count-format.md",
       "subCat": "外観"
     },
     {
-      "name": "画像リダイレクトを無効化",
+      "name": "画像リダイレクトを無効にする",
       "file": "disable-image-redirect.md",
       "subCat": "外観"
     },
     {
-      "name": "自動ハッシュタグ生成を無効化",
+      "name": "自動ハッシュタグ作成を無効にする",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "外観"
     },
     {
-      "name": "通知ベルを無効化",
+      "name": "通知ベルを無効にする",
       "file": "disable-notification-bell.md",
       "subCat": "外観"
     },
     {
-      "name": "プロフィールを無効化",
+      "name": "プロフィールを無効にする",
       "file": "disable-profiles.md",
       "subCat": "外観"
     },
     {
-      "name": "成功メッセージを無効化",
+      "name": "成功メッセージを無効にする",
       "file": "disable-success-message.md",
       "subCat": "外観"
     },
     {
-      "name": "GIFのコンテンツ評価を変更する",
+      "name": "GIF のコンテンツ評価を変更する",
       "file": "gif-rating.md",
       "subCat": "外観"
     },
@@ -163,22 +163,22 @@
       "subCat": "外観"
     },
     {
-      "name": "投票スタイルの変更",
+      "name": "投票スタイルを変更する",
       "file": "vote-style.md",
       "subCat": "外観"
     },
     {
-      "name": "削除機能を無効化",
+      "name": "削除を無効にする",
       "file": "disable-deleting.md",
       "subCat": "外観"
     },
     {
-      "name": "編集機能を無効化",
+      "name": "編集を無効にする",
       "file": "disable-editing.md",
       "subCat": "外観"
     },
     {
-      "name": "新しいコメントのハイライト",
+      "name": "新しいコメントを強調表示する",
       "file": "highlighting-new-comments.md",
       "subCat": "外観"
     },
@@ -198,7 +198,7 @@
       "subCat": "外観"
     },
     {
-      "name": "画像アップロードを無効化",
+      "name": "画像アップロードを無効にする",
       "file": "no-image-uploads.md",
       "subCat": "外観"
     },
@@ -208,22 +208,22 @@
       "subCat": "外観"
     },
     {
-      "name": "ネタバレ（Spoiler）を有効化",
+      "name": "スポイラーを有効にする",
       "file": "enable-spoilers.md",
       "subCat": "外観"
     },
     {
-      "name": "コメント閲覧数を有効化",
+      "name": "コメントの閲覧回数を有効にする",
       "file": "enable-comment-view-counts.md",
       "subCat": "外観"
     },
     {
-      "name": "ライブコメントを即時表示する",
+      "name": "ライブコメントをすぐに表示する",
       "file": "show-live-right-away.md",
       "subCat": "ライブコメント"
     },
     {
-      "name": "ライブコメントを無効化",
+      "name": "ライブコメントを無効化する",
       "file": "disable-live-commenting.md",
       "subCat": "ライブコメント"
     },
@@ -233,19 +233,19 @@
       "subCat": "ライブコメント"
     },
     {
-      "name": "無限スクロールを有効化",
+      "name": "無限スクロールを有効にする",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "ページネーションと並び替え"
+      "subCat": "ページネーションと並べ替え"
     },
     {
       "name": "デフォルトの並び順を変更する",
       "file": "default-sort-direction.md",
-      "subCat": "ページネーションと並び替え"
+      "subCat": "ページネーションと並べ替え"
     },
     {
-      "name": "すべてのコメントを一度に表示する（ページネーションを無効化）",
+      "name": "全コメントを一度に表示 - ページネーションを無効化する",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "ページネーションと並び替え"
+      "subCat": "ページネーションと並べ替え"
     },
     {
       "name": "返信ボックスをコメントの後に移動する",
@@ -258,12 +258,12 @@
       "subCat": "返信ボックス"
     },
     {
-      "name": "複数行コメントを無効化",
+      "name": "複数行コメントを無効にする",
       "file": "use-single-line-comment-input.md",
       "subCat": "返信ボックス"
     },
     {
-      "name": "ユーザーごとのコメント数を制限する",
+      "name": "ユーザーごとのコメント量を制限する",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "返信ボックス"
     },
@@ -273,39 +273,44 @@
       "subCat": "返信ボックス"
     },
     {
-      "name": "返信の最大深度",
+      "name": "最大返信深度",
       "file": "max-reply-depth.md",
+      "subCat": "返信ボックス"
+    },
+    {
+      "name": "利用規約の同意を必須にする",
+      "file": "terms-of-service.md",
       "subCat": "返信ボックス"
     },
     {
       "name": "シングルサインオン（SSO）概要",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
       "name": "カスタム統合 - セキュアなシングルサインオン（SSO）",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
-      "name": "カスタム統合 - 簡易シングルサインオン（SSO）",
+      "name": "カスタム統合 - シンプルなシングルサインオン（SSO）",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
-      "name": "カスタム統合 - Disqus SSOからの移行",
+      "name": "カスタム統合 - Disqus SSO からの移行",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
-      "name": "カスタム統合 - Commento SSOからの移行",
+      "name": "カスタム統合 - Commento SSO からの移行",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
-      "name": "シングルサインオンでコメントスレッドを保護する",
+      "name": "シングルサインオン（SSO）でコメントスレッドを保護する",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン（SSO）"
     },
     {
       "name": "匿名コメントを許可する",
@@ -313,17 +318,17 @@
       "subCat": "匿名コメント"
     },
     {
-      "name": "匿名コメントの有効期限切れを防ぐ",
+      "name": "匿名コメントの期限切れを防ぐ",
       "file": "allow-anon-retain-comments.md",
       "subCat": "匿名コメント"
     },
     {
-      "name": "メール入力を無効化",
+      "name": "メール入力を無効にする",
       "file": "disable-email-inputs.md",
       "subCat": "匿名コメント"
     },
     {
-      "name": "未検証ラベルを無効化",
+      "name": "未検証ラベルを無効にする",
       "file": "disable-unverified-label.md",
       "subCat": "匿名コメント"
     },
@@ -333,7 +338,7 @@
       "subCat": "匿名コメント"
     },
     {
-      "name": "デフォルトのユーザー名を設定する",
+      "name": "デフォルトユーザー名の設定",
       "file": "default-username.md",
       "subCat": "匿名コメント"
     },
@@ -343,12 +348,12 @@
       "subCat": "その他"
     },
     {
-      "name": "ユーザーのロケールを手動で定義する",
+      "name": "ユーザーのロケールを手動で指定する",
       "file": "locale.md",
       "subCat": "その他"
     },
     {
-      "name": "許可する言語を制限する",
+      "name": "許可される言語を制限する",
       "file": "allowed-languages.md",
       "subCat": "その他"
     },
@@ -358,22 +363,22 @@
       "subCat": "その他"
     },
     {
-      "name": "新しい返信を禁止し投票を無効化する",
+      "name": "新しい返信を防止し投票を無効にする",
       "file": "readonly.md",
       "subCat": "その他"
     },
     {
-      "name": "リンクのドメイン制限",
+      "name": "リンクドメインの制限",
       "file": "restricting-link-domains.md",
       "subCat": "その他"
     },
     {
-      "name": "コメント数とネストした返信の全カウント",
+      "name": "コメント数とネストされた全返信の集計",
       "file": "count-all.md",
       "subCat": "その他"
     },
     {
-      "name": "コメント投稿者のリンクを有効化",
+      "name": "投稿者のリンクを有効にする",
       "file": "enable-commenter-links.md",
       "subCat": "その他"
     },
@@ -393,12 +398,12 @@
       "subCat": "その他"
     },
     {
-      "name": "返信のあるコメントを削除する",
+      "name": "返信付きコメントの削除",
       "file": "deleting-comments-with-replies.md",
       "subCat": "その他"
     },
     {
-      "name": "トップバーにバッジを表示する",
+      "name": "トップバーにバッジを表示",
       "file": "show-badges-in-top-bar.md",
       "subCat": "外観"
     }

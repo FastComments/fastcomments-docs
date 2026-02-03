@@ -8,7 +8,7 @@
       "subCat": "Les bases"
     },
     {
-      "name": "Comment les commentaires sont associés aux pages et aux articles",
+      "name": "Comment les commentaires sont liés aux pages et articles",
       "file": "url-id.md",
       "subCat": "Les bases"
     },
@@ -18,7 +18,7 @@
       "subCat": "Les bases"
     },
     {
-      "name": "Styles personnalisés",
+      "name": "Style personnalisé",
       "file": "custom-css.md",
       "subCat": "Apparence"
     },
@@ -28,12 +28,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Suppression du branding",
+      "name": "Suppression de la marque",
       "file": "remove-branding.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Prise en charge des arrière-plans sombres (mode sombre)",
+      "name": "Prise en charge des fonds sombres (mode sombre)",
       "file": "has-dark-background.md",
       "subCat": "Apparence"
     },
@@ -48,7 +48,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Modifier l'avatar par défaut",
+      "name": "Changer l'avatar par défaut",
       "file": "default-avatar-src.md",
       "subCat": "Apparence"
     },
@@ -63,7 +63,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Créer des liens depuis les commentaires vers les pages",
+      "name": "Lier les commentaires aux pages",
       "file": "url.md",
       "subCat": "Apparence"
     },
@@ -93,7 +93,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Changer de fil de discussion sans recharger la page",
+      "name": "Changer de fil de commentaires sans recharger la page",
       "file": "switching-comment-threads.md",
       "subCat": "Apparence"
     },
@@ -103,7 +103,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Afficher à la fois les dates absolues et relatives",
+      "name": "Afficher les dates absolues et relatives",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Apparence"
     },
@@ -113,12 +113,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Afficher les liens comme du texte",
+      "name": "Afficher les liens en texte",
       "file": "render-links-as-text.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Afficher/masquer les commentaires via un bouton",
+      "name": "Basculer les commentaires avec un bouton",
       "file": "use-show-comments-toggle.md",
       "subCat": "Apparence"
     },
@@ -148,7 +148,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver le message de succès",
+      "name": "Désactiver le message de confirmation",
       "file": "disable-success-message.md",
       "subCat": "Apparence"
     },
@@ -183,12 +183,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Taille des pages",
+      "name": "Tailles de page",
       "file": "page-size.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Modèles d'e-mails",
+      "name": "Modèles d'e-mail",
       "file": "email-templates.md",
       "subCat": "Apparence"
     },
@@ -203,7 +203,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Activer la barre de recherche",
+      "name": "Activer la boîte de recherche",
       "file": "enable-search.md",
       "subCat": "Apparence"
     },
@@ -218,7 +218,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Afficher les commentaires en direct immédiatement",
+      "name": "Afficher immédiatement les commentaires en direct",
       "file": "show-live-right-away.md",
       "subCat": "Commentaires en direct"
     },
@@ -228,7 +228,7 @@
       "subCat": "Commentaires en direct"
     },
     {
-      "name": "Placer les nouveaux commentaires en direct en bas",
+      "name": "Afficher les nouveaux commentaires en direct en bas",
       "file": "new-comments-to-bottom.md",
       "subCat": "Commentaires en direct"
     },
@@ -258,12 +258,12 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Désactiver les commentaires multi-lignes",
+      "name": "Désactiver les commentaires sur plusieurs lignes",
       "file": "use-single-line-comment-input.md",
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Limiter le nombre de commentaires par utilisateur",
+      "name": "Limiter le volume de commentaires par utilisateur",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Zone de réponse"
     },
@@ -278,17 +278,22 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Présentation du Single Sign-On (SSO)",
+      "name": "Exiger l'acceptation des conditions d'utilisation",
+      "file": "terms-of-service.md",
+      "subCat": "Zone de réponse"
+    },
+    {
+      "name": "Présentation de l'authentification unique (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Single Sign-On (SSO) sécurisé",
+      "name": "Intégrations personnalisées - Authentification unique sécurisée (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Single Sign-On (SSO) simple",
+      "name": "Intégrations personnalisées - Authentification unique simple (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -303,7 +308,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protéger les fils de commentaires avec le Single Sign-On",
+      "name": "Protéger les fils de commentaires avec l'authentification unique",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -318,12 +323,12 @@
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Désactiver les champs e-mail",
+      "name": "Désactiver les champs d'e-mail",
       "file": "disable-email-inputs.md",
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Désactiver l'étiquette non vérifiée",
+      "name": "Désactiver le label « Non vérifié »",
       "file": "disable-unverified-label.md",
       "subCat": "Commentaires anonymes"
     },
@@ -338,7 +343,7 @@
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Fonctions de rappel",
+      "name": "Callbacks",
       "file": "callbacks.md",
       "subCat": "Divers"
     },
@@ -383,7 +388,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Identifiants de groupes pour mentions",
+      "name": "Mentionner les identifiants de groupe",
       "file": "mention-group-ids.md",
       "subCat": "Divers"
     },

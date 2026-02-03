@@ -1,14 +1,15 @@
 {
   "name": "Kurulum",
+  "pageHeader": "Web Sitesine Yorum Ekleme",
   "icon": "download.png",
   "itemsOrdered": [
     {
-      "name": "Wordpress",
+      "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Üçüncü Taraf Eklentiler"
+      "subCat": "Üçüncü Taraf Eklentileri"
     },
     {
-      "name": "VanillaJS / HTML Parçacığı",
+      "name": "VanillaJS / HTML Kod Parçası",
       "file": "vanillajs.md",
       "subCat": "Özel Kurulumlar"
     },
@@ -43,12 +44,12 @@
       "subCat": "Özel Kurulumlar"
     },
     {
-      "name": "Yaygın Kullanım Senaryoları",
+      "name": "Yaygın Kullanım Durumları",
       "file": "installation-common-use-cases.md",
       "subCat": "Özel Kurulumlar"
     },
     {
-      "name": "Yaygın Sorunların Giderilmesi",
+      "name": "Yaygın Sorunları Hata Ayıklama",
       "file": "debugging-common-issues.md",
       "subCat": "Özel Kurulumlar"
     },

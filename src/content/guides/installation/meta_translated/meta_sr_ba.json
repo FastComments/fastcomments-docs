@@ -1,14 +1,15 @@
 {
   "name": "Инсталација",
+  "pageHeader": "Додавање коментара на веб-сајт",
   "icon": "download.png",
   "itemsOrdered": [
     {
       "name": "WordPress",
       "file": "wordpress.md",
-      "subCat": "Додаци трећих страна"
+      "subCat": "Додаци треће стране"
     },
     {
-      "name": "VanillaJS / HTML фрагмент",
+      "name": "VanillaJS / HTML исечак",
       "file": "vanillajs.md",
       "subCat": "Прилагођене инсталације"
     },
@@ -43,7 +44,7 @@
       "subCat": "Прилагођене инсталације"
     },
     {
-      "name": "Уобичајени случајеви употребе",
+      "name": "Чести случајеви употребе",
       "file": "installation-common-use-cases.md",
       "subCat": "Прилагођене инсталације"
     },
@@ -55,7 +56,7 @@
     {
       "name": "Notion и Google Sites",
       "file": "oembed.md",
-      "subCat": "Уграђивање у документе"
+      "subCat": "Уметање у документе"
     }
   ]
 }

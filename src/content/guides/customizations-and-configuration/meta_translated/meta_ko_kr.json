@@ -3,7 +3,7 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "계정 식별",
+      "name": "계정 식별하기",
       "file": "tenant-id.md",
       "subCat": "기본"
     },
@@ -33,7 +33,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "다크 모드(어두운 배경) 지원",
+      "name": "어두운 배경(다크 모드) 지원",
       "file": "has-dark-background.md",
       "subCat": "모양 및 느낌"
     },
@@ -48,7 +48,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "기본 아바타 변경",
+      "name": "기본 아바타 변경하기",
       "file": "default-avatar-src.md",
       "subCat": "모양 및 느낌"
     },
@@ -63,7 +63,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "댓글에서 페이지로 링크하기",
+      "name": "댓글에서 페이지로 연결하기",
       "file": "url.md",
       "subCat": "모양 및 느낌"
     },
@@ -83,12 +83,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "차단 기능 비활성화",
+      "name": "차단 비활성화",
       "file": "disable-blocking.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "렌더링할 페이지 결정",
+      "name": "렌더링할 페이지 결정하기",
       "file": "starting-page.md",
       "subCat": "모양 및 느낌"
     },
@@ -103,22 +103,22 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "절대 및 상대 날짜 모두 표시",
+      "name": "절대 및 상대 날짜 모두 표시하기",
       "file": "absolute-and-relative-dates.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "헤더 텍스트 추가",
+      "name": "헤더 텍스트 추가하기",
       "file": "header-html.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "링크를 텍스트로 렌더링",
+      "name": "링크를 텍스트로 렌더링하기",
       "file": "render-links-as-text.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "버튼으로 댓글 전환",
+      "name": "버튼으로 댓글 토글하기",
       "file": "use-show-comments-toggle.md",
       "subCat": "모양 및 느낌"
     },
@@ -153,17 +153,17 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "GIF의 콘텐츠 등급 변경",
+      "name": "GIF 콘텐츠 등급 변경하기",
       "file": "gif-rating.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "이미지 콘텐츠 검토",
+      "name": "이미지 콘텐츠 모더레이션",
       "file": "image-content-moderation.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "투표 스타일 변경",
+      "name": "투표 방식 변경하기",
       "file": "vote-style.md",
       "subCat": "모양 및 느낌"
     },
@@ -173,12 +173,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "편집 비활성화",
+      "name": "수정 비활성화",
       "file": "disable-editing.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "새 댓글 강조",
+      "name": "새 댓글 강조 표시",
       "file": "highlighting-new-comments.md",
       "subCat": "모양 및 느낌"
     },
@@ -213,7 +213,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "댓글 조회수 활성화",
+      "name": "댓글 조회수 표시 활성화",
       "file": "enable-comment-view-counts.md",
       "subCat": "모양 및 느낌"
     },
@@ -243,69 +243,74 @@
       "subCat": "페이지 매김 및 정렬"
     },
     {
-      "name": "모든 댓글을 한 번에 렌더링하기 - 페이지 매김 비활성화",
+      "name": "모든 댓글을 한 번에 렌더링하기 (페이지 매김 비활성화)",
       "file": "starting-page-disable-pagination.md",
       "subCat": "페이지 매김 및 정렬"
     },
     {
-      "name": "답글 입력 상자를 댓글 뒤로 이동",
+      "name": "답글 입력창을 댓글 뒤로 이동하기",
       "file": "input-after-comments.md",
       "subCat": "답글 입력창"
     },
     {
-      "name": "댓글 길이 제한",
+      "name": "댓글 길이 제한하기",
       "file": "max-comment-character-length.md",
       "subCat": "답글 입력창"
     },
     {
-      "name": "다중 행 댓글 비활성화",
+      "name": "여러 줄 댓글 비활성화",
       "file": "use-single-line-comment-input.md",
       "subCat": "답글 입력창"
     },
     {
-      "name": "사용자별 댓글 수 제한",
+      "name": "사용자당 댓글 수 제한",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "답글 입력창"
     },
     {
-      "name": "새 최상위 댓글 방지",
+      "name": "새 최상위 댓글 금지",
       "file": "no-new-root-comments.md",
       "subCat": "답글 입력창"
     },
     {
-      "name": "답글 최대 깊이",
+      "name": "최대 답글 깊이",
       "file": "max-reply-depth.md",
+      "subCat": "답글 입력창"
+    },
+    {
+      "name": "이용 약관 동의 필수",
+      "file": "terms-of-service.md",
       "subCat": "답글 입력창"
     },
     {
       "name": "싱글 사인온(SSO) 개요",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
       "name": "맞춤 통합 - 보안 싱글 사인온(SSO)",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
       "name": "맞춤 통합 - 간단한 싱글 사인온(SSO)",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
       "name": "맞춤 통합 - Disqus SSO에서 마이그레이션",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
       "name": "맞춤 통합 - Commento SSO에서 마이그레이션",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
-      "name": "싱글 사인온으로 댓글 스레드 보호",
+      "name": "싱글 사인온으로 댓글 스레드 보호하기",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "싱글 사인온(SSO)"
     },
     {
       "name": "익명 댓글 허용",
@@ -323,7 +328,7 @@
       "subCat": "익명 댓글"
     },
     {
-      "name": "미확인 레이블 비활성화",
+      "name": "미확인 라벨 비활성화",
       "file": "disable-unverified-label.md",
       "subCat": "익명 댓글"
     },
@@ -343,7 +348,7 @@
       "subCat": "기타"
     },
     {
-      "name": "사용자 로케일 수동 지정",
+      "name": "사용자 로케일 수동 설정",
       "file": "locale.md",
       "subCat": "기타"
     },
@@ -358,7 +363,7 @@
       "subCat": "기타"
     },
     {
-      "name": "새 답글 방지 및 투표 비활성화",
+      "name": "새 답글 차단 및 투표 비활성화",
       "file": "readonly.md",
       "subCat": "기타"
     },
@@ -368,7 +373,7 @@
       "subCat": "기타"
     },
     {
-      "name": "댓글 수 및 중첩된 모든 답글 포함 계산",
+      "name": "댓글 수 및 모든 중첩 답글 포함 계산",
       "file": "count-all.md",
       "subCat": "기타"
     },
@@ -383,7 +388,7 @@
       "subCat": "기타"
     },
     {
-      "name": "그룹 멘션 ID",
+      "name": "그룹 ID 언급",
       "file": "mention-group-ids.md",
       "subCat": "기타"
     },

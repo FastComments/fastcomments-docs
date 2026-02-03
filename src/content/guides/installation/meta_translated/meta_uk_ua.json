@@ -1,5 +1,6 @@
 {
   "name": "Встановлення",
+  "pageHeader": "Додавання коментарів на вебсайт",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -10,47 +11,47 @@
     {
       "name": "VanillaJS / HTML-фрагмент",
       "file": "vanillajs.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "Angular",
       "file": "angular.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "React",
       "file": "react.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "React Native",
       "file": "react-native.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "Vue",
       "file": "vue.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "TypeScript",
       "file": "typescript.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "Кілька екземплярів на одній сторінці",
       "file": "multiple-instances.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
-      "name": "Типові випадки використання",
+      "name": "Типові сценарії використання",
       "file": "installation-common-use-cases.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "Налагодження поширених проблем",
       "file": "debugging-common-issues.md",
-      "subCat": "Користувацькі встановлення"
+      "subCat": "Власні інсталяції"
     },
     {
       "name": "Notion та Google Sites",

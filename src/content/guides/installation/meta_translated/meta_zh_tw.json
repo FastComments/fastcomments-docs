@@ -1,5 +1,6 @@
 {
   "name": "安裝",
+  "pageHeader": "在網站新增留言",
   "icon": "download.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "第三方外掛"
     },
     {
-      "name": "原生 JavaScript / HTML 片段",
+      "name": "VanillaJS / HTML 片段",
       "file": "vanillajs.md",
       "subCat": "自訂安裝"
     },
@@ -55,7 +56,7 @@
     {
       "name": "Notion 與 Google Sites",
       "file": "oembed.md",
-      "subCat": "在文件中嵌入"
+      "subCat": "嵌入文件中"
     }
   ]
 }
