@@ -1,17 +1,17 @@
-Ви можете знайти нашу бібліотеку Angular на NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">тут</a>.
+Щоб додати коментарі на сайт, створений за допомогою Angular, ви можете знайти нашу бібліотеку Angular на NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">тут</a>.
 
-Віджет коментарів FastComments для Angular підтримує всі ті ж функції, що й VanillaJS версія — коментування в реальному часі, SSO тощо.
+Компонент коментування FastComments для Angular підтримує всі ті ж функції, що й версія на VanillaJS — коментування в режимі реального часу, SSO тощо.
 
-Вам знадобиться fastcomments-typescript, який є peer-залежністю. Будь ласка, переконайтеся, що він включений у вашу компіляцію TypeScript.
-У майбутньому ця peer-залежність буде переміщена до @types/fastcomments, що спростить встановлення.
+Вам знадобиться fastcomments-typescript, яка є peer-залежністю. Будь ласка, переконайтеся, що вона включена у вашу компіляцію TypeScript.
+У майбутньому ця peer-залежність буде перенесена до @types/fastcomments, що спростить встановлення.
 
-[inline-code-attrs-start title = 'FastComments Angular через NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments для Angular через NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
   npm install fastcomments-typescript --save
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Peer-залежність повинна бути додана у ваш файл tsconfig.json, наприклад:
+Цю peer-залежність слід додати у ваш файл tsconfig.json, наприклад:
 
 [inline-code-attrs-start title = 'Додавання peer-залежності fastcomments-typescript'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,9 +21,9 @@ Peer-залежність повинна бути додана у ваш фай�
 ],
 [inline-code-end]
 
-Потім додайте `FastCommentsModule` у ваш застосунок:
+Потім додайте `FastCommentsModule` до вашого застосунку:
 
-[inline-code-attrs-start title = 'Додавання модуля у ваш застосунок'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Додайте модуль у ваш додаток'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -47,16 +47,16 @@ export class AppModule { }
 
 ## Використання
 
-Для початку ми передаємо об'єкт конфігурації для демо-тенанта:
+Щоб почати, ми передаємо об'єкт конфігурації для демо-тенанта:
 
-[inline-code-attrs-start title = 'Використання - Вбудована конфігурація'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Використання - інлайн-конфігурація'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Оскільки конфігурація може бути досить складною, ми можемо передати посилання на об'єкт:
+Оскільки конфігурація може стати досить складною, ми можемо передати посилання на об'єкт:
 
-[inline-code-attrs-start title = 'Використання - Передача об\'єкта для конфігурації'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Використання - передача об'єкта конфігурації'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
@@ -66,6 +66,8 @@ export class AppModule { }
 <lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
 [inline-code-end]
 
-Віджет використовує виявлення змін, тому зміна будь-яких властивостей об'єкта конфігурації призведе до його перезавантаження.
+Віджет використовує відстеження змін, тож зміна будь-якої властивості об'єкта конфігурації спричинить його перезавантаження.
 
-Ви можете знайти конфігурацію, яку підтримує компонент Angular <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+Ви можете знайти конфігурацію, яку підтримує Angular-компонент, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+
+---

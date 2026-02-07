@@ -1,9 +1,9 @@
-WordPress eklentimizi <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">burada</a> bulabilirsiniz.
+WordPress sitenize yorum eklemek için WordPress eklentimizi <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">burada</a> bulabilirsiniz.
 
-Tam kurulum kılavuzu ve eklenti dokümantasyonu [burada](/guide-installation-wordpress.html) yer almaktadır.
+Eklentiyle ilgili eksiksiz kurulum kılavuzu ve dokümantasyon [burada](/guide-installation-wordpress.html).
 
-Bu eklenti canlı yorumlama, SSO ve kodsuz kurulumu destekler. Eklentiyi kurduktan sonra yönetici sayfasındaki
-kurulum kılavuzunu takip etmeniz yeterlidir. WordPress kurulumunuzu hesabınıza bağlama konusunda size rehberlik edecektir.
+Bu eklenti canlı yorum yapmayı, SSO'yu ve kod gerektirmeyen kurulumu destekler. Yönetici sayfasındaki kurulum kılavuzunu izleyin
+eklentiyi yükledikten sonra. Kurulum kılavuzu, WordPress kurulumunuzu hesabınıza bağlamanız konusunda size rehberlik edecektir.
 
-WordPress eklentimiz aracılığıyla FastComments ile bırakılan yorumlar, verileriniz üzerinde kontrolü koruyabilmeniz için
-otomatik olarak WordPress kurulumunuza geri senkronize edilebilir. WordPress veritabanınızın boyutunu sınırlamak için bu kapatılabilir.
+FastComments aracılığıyla WordPress eklentimiz üzerinden bırakılan herhangi bir yorum, WordPress
+kurulumunuza otomatik olarak geri senkronize edilebilir, böylece verileriniz üzerinde kontrolü elinizde tutarsınız. Bu, WordPress veritabanınızın boyutunu sınırlamak için kapatılabilir.

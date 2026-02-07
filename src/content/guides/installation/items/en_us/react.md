@@ -1,6 +1,6 @@
-You can find our React library on NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
+For adding comments to a site built with React, you can find our React library on npm <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
 
-The FastComments React commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
+The FastComments React commenting widget supports all the same features as the VanillaJS widget — live commenting, SSO, and more.
 
 [inline-code-attrs-start title = 'FastComments React via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,11 +27,11 @@ class Example extends Component {
 }
 [inline-code-end]
 
-If you're in the EU, you'll want to set the `region` parameter like so:
+If you're in the EU, set the `region` parameter like this:
 
 [inline-code-attrs-start title = 'React Example - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-You can find the configuration the React component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.
+You can find the configuration supported by the React component <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.

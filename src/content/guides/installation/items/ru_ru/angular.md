@@ -1,9 +1,9 @@
-Вы можете найти нашу библиотеку Angular на NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">здесь</a>.
+Для добавления комментариев на сайт, созданный с использованием Angular, вы можете найти нашу библиотеку Angular на NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">здесь</a>.
 
-Виджет комментариев FastComments для Angular поддерживает все те же функции, что и VanillaJS версия — комментирование в реальном времени, SSO и так далее.
+Виджет комментирования FastComments для Angular поддерживает все те же возможности, что и версия на VanillaJS — живое комментирование, sso и т.д.
 
-Вам понадобится fastcomments-typescript, который является peer-зависимостью. Пожалуйста, убедитесь, что он включён в вашу компиляцию TypeScript.
-В будущем эта peer-зависимость будет перемещена в @types/fastcomments, что упростит установку.
+Вам потребуется fastcomments-typescript, который является peer-зависимостью. Пожалуйста, убедитесь, что он включён в вашу компиляцию TypeScript.
+В будущем эта peer-зависимость будет перенесена в @types/fastcomments, что упростит эту установку.
 
 [inline-code-attrs-start title = 'FastComments Angular через NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -11,7 +11,7 @@
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Peer-зависимость должна быть добавлена в ваш файл tsconfig.json, например:
+Плеер-зависимость должна быть добавлена в ваш tsconfig.json файл, например:
 
 [inline-code-attrs-start title = 'Добавление peer-зависимости fastcomments-typescript'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -47,14 +47,14 @@ export class AppModule { }
 
 ## Использование
 
-Для начала мы передаём объект конфигурации для демо-тенанта:
+Для начала мы передаём объект конфигурации для демонстрационного tenant:
 
 [inline-code-attrs-start title = 'Использование - Встроенная конфигурация'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Поскольку конфигурация может быть довольно сложной, мы можем передать ссылку на объект:
+Поскольку конфигурация может быть довольно сложной, мы можем передавать ссылку на объект:
 
 [inline-code-attrs-start title = 'Использование - Передача объекта для конфигурации'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -68,4 +68,6 @@ export class AppModule { }
 
 Виджет использует обнаружение изменений, поэтому изменение любых свойств объекта конфигурации приведёт к его перезагрузке.
 
-Вы можете найти конфигурацию, которую поддерживает компонент Angular <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">здесь</a>.
+Конфигурацию, которую поддерживает Angular-компонент, можно найти <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">здесь</a>.
+
+---

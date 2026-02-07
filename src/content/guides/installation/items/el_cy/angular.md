@@ -1,9 +1,9 @@
-Μπορείτε να βρείτε τη βιβλιοθήκη Angular μας στο NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">εδώ</a>.
+Για να προσθέσετε σχόλια σε έναν ιστότοπο φτιαγμένο με Angular, μπορείτε να βρείτε τη βιβλιοθήκη μας για Angular στο NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">εδώ</a>.
 
-Το FastComments Angular widget σχολίων υποστηρίζει όλες τις ίδιες δυνατότητες με την έκδοση VanillaJS - ζωντανά σχόλια, SSO και ούτω καθεξής.
+Το FastComments Angular commenting widget υποστηρίζει όλες τις ίδιες δυνατότητες με το VanillaJS — ζωντανά σχόλια, SSO, κ.λπ.
 
-Θα χρειαστείτε το fastcomments-typescript, που είναι peer dependency. Βεβαιωθείτε ότι περιλαμβάνεται στη μεταγλώττιση TypeScript σας.
-Στο μέλλον, αυτό το peer dependency θα μετακινηθεί στο @types/fastcomments που θα απλοποιήσει την εγκατάσταση.
+Θα χρειαστείτε το fastcomments-typescript, που είναι ένα peer dependency. Παρακαλώ βεβαιωθείτε ότι αυτό είναι συμπεριλαμβανόμενο στην μεταγλώττιση TypeScript σας.
+Στο μέλλον, αυτό το peer dependency θα μεταφερθεί στο @types/fastcomments, κάτι που θα απλοποιήσει αυτήν την εγκατάσταση.
 
 [inline-code-attrs-start title = 'FastComments Angular μέσω NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -11,9 +11,9 @@
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Το peer dependency πρέπει να προστεθεί στο αρχείο tsconfig.json σας, για παράδειγμα:
+Το peer dependency θα πρέπει να προστεθεί στο αρχείο tsconfig.json σας, για παράδειγμα:
 
-[inline-code-attrs-start title = 'Προσθήκη fastcomments-typescript peer dependency'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Προσθήκη του peer dependency fastcomments-typescript'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 "include": [
   "src/**/*.ts",
@@ -47,25 +47,25 @@ export class AppModule { }
 
 ## Χρήση
 
-Για να ξεκινήσουμε, περνάμε ένα αντικείμενο ρύθμισης για τον demo tenant:
+Για να ξεκινήσετε, περνάμε ένα αντικείμενο ρύθμισης για τον demo tenant:
 
-[inline-code-attrs-start title = 'Χρήση - Inline διαμόρφωση'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Χρήση - Ενσωματωμένη διαμόρφωση'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Δεδομένου ότι η διαμόρφωση μπορεί να γίνει αρκετά περίπλοκη, μπορούμε να περάσουμε μια αναφορά αντικειμένου:
+Εφόσον η διαμόρφωση μπορεί να γίνει αρκετά περίπλοκη, μπορούμε να περάσουμε μια αναφορά σε αντικείμενο:
 
-[inline-code-attrs-start title = 'Χρήση - Πέρασμα αντικειμένου για διαμόρφωση'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Χρήση - Παράδοση αντικειμένου για διαμόρφωση'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Χρήση - EU'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Χρήση - ΕΕ'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
 [inline-code-end]
 
-Το widget χρησιμοποιεί ανίχνευση αλλαγών, οπότε η αλλαγή οποιωνδήποτε ιδιοτήτων του αντικειμένου διαμόρφωσης θα προκαλέσει επαναφόρτωση.
+Το widget χρησιμοποιεί ανίχνευση αλλαγών, οπότε η αλλαγή οποιασδήποτε ιδιότητας του αντικειμένου διαμόρφωσης θα το ξαναφορτώσει.
 
 Μπορείτε να βρείτε τη διαμόρφωση που υποστηρίζει το Angular component <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">εδώ</a>.

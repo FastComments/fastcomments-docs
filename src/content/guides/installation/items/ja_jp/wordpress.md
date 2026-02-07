@@ -1,9 +1,9 @@
-WordPressプラグインは<a href="https://wordpress.org/plugins/fastcomments/" target="_blank">こちら</a>で見つけることができます。
+WordPress サイトにコメントを追加するには、当社の WordPress プラグインを<a href="https://wordpress.org/plugins/fastcomments/" target="_blank">こちら</a>でご確認ください。
 
-完全なインストールガイドとプラグインに関するドキュメントは[こちら](/guide-installation-wordpress.html)にあります。
+プラグインの完全なインストールガイドとドキュメントは[こちら](/guide-installation-wordpress.html)にあります。
 
-このプラグインは、ライブコメント、SSO、コードなしのインストールをサポートしています。プラグインをインストールした後、
-管理ページのインストールガイドに従ってください。WordPressのインストールをアカウントに接続する手順が案内されます。
+このプラグインはライブコメント、SSO、およびノーコードでのインストールをサポートしています。インストール後は管理ページのインストールガイドに従ってください
+それがあなたの WordPress インストールをあなたのアカウントに接続する方法を案内します。
 
-FastCommentsのWordPressプラグインを通じて残されたコメントは、自動的にWordPressの
-インストールに同期され、データの管理を維持できます。これはWordPressデータベースのサイズを制限するために無効にすることができます。
+FastComments を通じて当社の WordPress プラグインで残されたコメントは、自動的にあなたの WordPress
+インストールに同期され、データの管理権を保持できます。これは WordPress のデータベースサイズを抑えるために無効にすることもできます。

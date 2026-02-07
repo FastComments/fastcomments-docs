@@ -1,20 +1,20 @@
-ReactライブラリはNPMの<a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">こちら</a>で見つけることができます。
+Reactで構築されたサイトにコメントを追加するには、NPMで当社のReactライブラリを <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">こちら</a> で見つけることができます。
 
-FastComments Reactコメントウィジェットは、VanillaJS版と同じすべての機能（ライブコメント、SSO など）をサポートしています。
+FastComments の React コメントウィジェットは、VanillaJS のものと同じすべての機能（ライブコメント、SSO など）をサポートします。
 
-[inline-code-attrs-start title = 'FastComments React（NPM経由）'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'NPM経由の FastComments React'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments React（Yarn経由）'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yarn経由の FastComments React'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'Reactの例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import React, { Component } from 'react'
 
@@ -27,11 +27,13 @@ class Example extends Component {
 }
 [inline-code-end]
 
-EUにいる場合は、次のように`region`パラメータを設定する必要があります：
+EUにいる場合は、`region` パラメータを次のように設定してください:
 
-[inline-code-attrs-start title = 'Reactの例 - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React の例 - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-Reactコンポーネントがサポートする設定は<a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">こちら</a>で見つけることができます。
+Reactコンポーネントがサポートする設定は <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">こちら</a> で確認できます。
+
+---

@@ -1,14 +1,14 @@
-React kütüphanemizi NPM'de <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">burada</a> bulabilirsiniz.
+For adding comments to a site built with React, you can find our React library on NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">burada</a>.
 
-FastComments React yorum widget'ı, VanillaJS olanla aynı tüm özellikleri destekler - canlı yorumlama, SSO vb.
+The FastComments React commenting widget supports all of the same features of the VanillaJS one - canlı yorum, sso ve benzeri.
 
-[inline-code-attrs-start title = 'FastComments React (NPM ile)'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React NPM üzerinden'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments React (Yarn ile)'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React Yarn üzerinden'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-react
 [inline-code-end]
@@ -27,11 +27,13 @@ class Example extends Component {
 }
 [inline-code-end]
 
-AB'deyseniz, `region` parametresini şu şekilde ayarlamanız gerekir:
+Eğer AB'deyseniz, `region` parametresini şöyle ayarlamak isteyebilirsiniz:
 
 [inline-code-attrs-start title = 'React Örneği - AB'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-React bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.
+You can find the configuration the React component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a>.
+
+---

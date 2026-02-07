@@ -1,17 +1,19 @@
-VanillaJS版のウィジェットは非常に簡単にインストールでき、ビルドシステムやサーバーサイドコードは必要ありません。
+---
+The VanillaJS version of the widget is the simplest way to add comments to your website, not requiring any build systems or server side code.
 
-任意のページに以下のコードスニペットを追加するだけです：
+Simply add the following code snippet to any page to add comments to your site:
 
-[code-example-start config = {}; title = 'シンプルなコードスニペット'; code-example-end]
+[code-example-start config = {}; title = 'Simple Code Snippet'; code-example-end]
 
-同じコードスニペットを多くのページで使用できます。ページごとに自動的に別のスレッドが作成されます。
+You can use the same code snippet on many pages; it will automatically create a separate thread per page.
 
-多くのアプリケーションには「HTMLエンベッドコード」オプションがあります。それを選択して、上記のコードスニペットを貼り付けてください。
+Many applications have an "HTML Embed Code" option. Select that and paste the code snippet above in.
 
-*試すのにアカウントは必要ありません！* ログインしていない場合、上記のスニペットに「tenantId: demo」と表示されることがあります。この場合、
-デモアカウントが使用されます。
+*You also don't need an account to try it!* You might see "tenantId: demo" in the above snippet if you're not logged in. This way it will use
+the demo account.
 
-ウィジェットの設定に関するドキュメントは<a href="/guide-customizations-and-configuration.html" target="_blank">こちら</a>で見つけることができます。
+You can find documentation on configuring the widget <a href="/guide-customizations-and-configuration.html" target="_blank">here</a>.
 
-FastCommentsウィジェットのすべてのバージョンは、コアVanillaJSライブラリのラッパーです。これにより、一箇所で機能を追加し
-問題を修正でき、変更は自動的にコメントウィジェットの他のバリアントに反映されます。
+All versions of the FastComments widget are wrappers around the core VanillaJS library. This allows us to add features
+and fix issues in one place - and the changes automatically propagate to the other variants of the commenting widget.
+---

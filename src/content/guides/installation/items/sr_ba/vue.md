@@ -1,26 +1,26 @@
-Нашу Vue библиотеку можете пронаћи на NPM-у <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">овде</a>.
+Da biste dodali komentare na svoju web stranicu izgrađenu koristeći Vue, naš Vue paket možete pronaći na NPM-u <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">ovdje</a>.
 
-Додатно, vue-next библиотека је на NPM-у <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">овде</a>
+Takođe, biblioteka vue-next je na NPM-u <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">ovdje</a>
 
-Изворни код можете пронаћи на <a href="https://github.com/FastComments" target="_blank">GitHub-у</a>.
+Izvorni kod možete pronaći na <a href="https://github.com/FastComments" target="_blank">GitHub</a>.
 
-FastComments Vue виџет за коментаре подржава све исте функције као VanillaJS верзија — коментарисање у реалном времену, SSO и тако даље.
+FastComments Vue vidžet za komentare podržava sve iste funkcije kao i VanillaJS - komentarisanje uživo, SSO i slično.
 
-Упутства испод су за Vue 3 пошто је изашао пре неког времена, међутим FastComments такође подржава Vue 2 преко `fastcomments-vue` библиотеке.
+Upute ispod su za Vue 3 jer je već neko vrijeme dostupan, međutim FastComments takođe podržava Vue 2 putem biblioteke `fastcomments-vue`.
 
-[inline-code-attrs-start title = 'FastComments Vue преко NPM-а'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Vue putem NPM-a'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-vue-next
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments Vue преко Yarn-а'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Vue putem Yarn-a'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-vue-next
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'Vue пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za Vue'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
@@ -39,13 +39,13 @@ export default {
 </script>
 [inline-code-end]
 
-Ако сте у ЕУ, желећете да подесите `region` на `EU`:
+Ako ste u EU, trebate postaviti `region` na `EU`:
 
 [inline-code-attrs-start title = 'FastComments Vue - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <fast-comments v-bind:config="{tenantId: 'demo', region: 'eu'}"/>
 [inline-code-end]
 
-Библиотеке `fastcomments-vue` и `fastcomments-vue-next` подржавају исту конфигурацију као VanillaJS виџет за коментаре.
+Biblioteke `fastcomments-vue` i `fastcomments-vue-next` podržavaju istu konfiguraciju kao VanillaJS vidžet za komentare.
 
-Конфигурацију коју Vue компонента подржава можете пронаћи <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">овде</a>.
+Konfiguraciju koju Vue komponenta podržava možete pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovdje</a>.

@@ -1,19 +1,20 @@
-Нашу Angular библиотеку можете пронаћи на NPM-у <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">овде</a>.
+---
+For adding comments to a site built with Angular, you can find our Angular library on NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">овде</a>.
 
-FastComments Angular виџет за коментаре подржава све исте функције као VanillaJS верзија — коментарисање у реалном времену, SSO и тако даље.
+The FastComments Angular commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 
-Требаће вам fastcomments-typescript, који је peer зависност. Молимо осигурајте да је укључен у вашу TypeScript компилацију.
-У будућности ће ова peer зависност бити премештена у @types/fastcomments што ће поједноставити инсталацију.
+You will need fastcomments-typescript, which is a peer dependency. Please ensure this is included in your TypeScript compilation.
+In the future, this peer dependency will be moved to @types/fastcomments which will simplify this installation.
 
-[inline-code-attrs-start title = 'FastComments Angular преко NPM-а'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Angular преко NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
   npm install fastcomments-typescript --save
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Peer зависност треба додати у вашу tsconfig.json датотеку, на пример:
+The peer dependency should be added in your tsconfig.json file, for example:
 
-[inline-code-attrs-start title = 'Додавање fastcomments-typescript peer зависности'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Додавање peer-зависности fastcomments-typescript'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 "include": [
   "src/**/*.ts",
@@ -21,7 +22,7 @@ Peer зависност треба додати у вашу tsconfig.json дат
 ],
 [inline-code-end]
 
-Затим додајте `FastCommentsModule` у вашу апликацију:
+Then, add the `FastCommentsModule` to your application:
 
 [inline-code-attrs-start title = 'Додајте модул у вашу апликацију'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -45,27 +46,29 @@ import { FastCommentsModule } from 'ngx-fastcomments';
 export class AppModule { }
 [inline-code-end]
 
-## Коришћење
+## Употреба
 
-За почетак, прослеђујемо конфигурацијски објекат за демо закупца:
+To get started, we pass a config object for the demo tenant:
 
-[inline-code-attrs-start title = 'Коришћење - Inline конфигурација'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - Инлајн конфигурација'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Пошто конфигурација може постати прилично сложена, можемо проследити референцу објекта:
+Since the configuration can get quite complicated, we can pass in an object reference:
 
-[inline-code-attrs-start title = 'Коришћење - Проследи објекат за конфигурацију'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - Проследите објекат за конфигурацију'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Коришћење - EU'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - ЕУ'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
 [inline-code-end]
 
-Виџет користи детекцију промена, тако да ће промена било којих својстава конфигурацијског објекта узроковати поновно учитавање.
+The widget uses change detection, so changing any properties of the configuration object will cause it to be reloaded.
 
-Конфигурацију коју Angular компонента подржава можете пронаћи <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">овде</a>.
+You can find the configuration the Angular component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">овде</a>.
+
+---

@@ -1,6 +1,6 @@
-Ви можете знайти нашу бібліотеку React на NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">тут</a>.
+Для додавання коментарів на сайт, створений з React, ви можете знайти нашу React-бібліотеку на NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">тут</a>.
 
-Віджет коментарів FastComments для React підтримує всі ті ж функції, що й VanillaJS версія — коментування в реальному часі, SSO тощо.
+Компонент коментування FastComments для React підтримує всі ті ж функції, що й для VanillaJS — живі коментарі, sso тощо.
 
 [inline-code-attrs-start title = 'FastComments React через NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,11 +27,13 @@ class Example extends Component {
 }
 [inline-code-end]
 
-Якщо ви знаходитесь у ЄС, вам потрібно встановити параметр `region` таким чином:
+Якщо ви перебуваєте в ЄС, варто встановити параметр `region` таким чином:
 
 [inline-code-attrs-start title = 'Приклад React - ЄС'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-Ви можете знайти конфігурацію, яку підтримує компонент React <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+Ви можете знайти конфігурацію, яку підтримує компонент React, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+
+---

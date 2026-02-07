@@ -1,12 +1,12 @@
-Vous pouvez trouver notre bibliothèque Vue sur NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">ici</a>.
+Pour ajouter des commentaires à votre site Web construit avec Vue, vous pouvez trouver notre bibliothèque Vue sur NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">ici</a>.
 
-De plus, une bibliothèque vue-next est disponible sur NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">ici</a>
+De plus, une bibliothèque vue-next est sur NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">ici</a>
 
 Le code source se trouve sur <a href="https://github.com/FastComments" target="_blank">GitHub</a>.
 
-Le widget de commentaires FastComments pour Vue prend en charge toutes les mêmes fonctionnalités que la version VanillaJS - commentaires en direct, SSO, et plus encore.
+Le widget de commentaires FastComments pour Vue prend en charge toutes les mêmes fonctionnalités que celui en VanillaJS - live commenting, sso, et ainsi de suite.
 
-Les instructions ci-dessous sont pour Vue 3 puisqu'il est sorti depuis un certain temps, cependant FastComments prend également en charge Vue 2 via la bibliothèque `fastcomments-vue`.
+Les instructions ci‑dessous concernent Vue 3 puisqu'il est disponible depuis un certain temps, cependant FastComments prend également en charge Vue 2 via la bibliothèque `fastcomments-vue`.
 
 [inline-code-attrs-start title = 'FastComments Vue via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ yarn add fastcomments-vue-next
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'Vue Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple pour Vue'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
@@ -39,9 +39,9 @@ export default {
 </script>
 [inline-code-end]
 
-Si vous êtes dans l'UE, vous devrez définir la `region` sur `EU` :
+Si vous êtes dans l'UE, vous voudrez définir le `region` sur `EU`:
 
-[inline-code-attrs-start title = 'FastComments Vue - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Vue - UE'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <fast-comments v-bind:config="{tenantId: 'demo', region: 'eu'}"/>
 [inline-code-end]

@@ -1,5 +1,4 @@
 ## Instalacija
 
-FastComments je dizajniran da se može instalirati na bilo koju vrstu stranice - statičku ili dinamičku, sa svijetlom ili tamnom temom, javne ili interne stranice. Treba biti lako instalirati i prilagoditi za bilo koju vrstu stranice ili web-aplikacije.
-
----
+FastComments olakšava dodavanje komentara na vašu web-stranicu, bilo da je statična ili dinamična, u svijetlom ili tamnom izdanju, za javne ili interne stranice. Treba biti jednostavno instalirati
+i prilagoditi bilo kojoj vrsti stranice ili web-aplikacije. To vam omogućuje komentiranje uživo odmah, bez potrebe za dodatnom konfiguracijom u mnogim slučajevima.

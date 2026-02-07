@@ -1,6 +1,6 @@
-U kunt onze React Native-bibliotheek op NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">hier</a> vinden.
+Om reacties aan je React Native-app toe te voegen, kun je onze React Native-bibliotheek op NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">hier</a> vinden.
 
-De FastComments React Native reactiewidget ondersteunt alle dezelfde functies als de VanillaJS-versie - live reacties, SSO, enzovoort.
+De FastComments React Native-commentaar-widget ondersteunt alle dezelfde functies als die van de VanillaJS-versie - realtime reacties, sso, en zo verder.
 
 [inline-code-attrs-start title = 'FastComments React Native via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -13,16 +13,16 @@ npm install --save fastcomments-react-native
 yarn add fastcomments-react-native
 [inline-code-end]
 
-De configuratie wordt iets anders gespecificeerd in vergelijking met de `fastcomments-react`-bibliotheek:
+De configuratie wordt iets anders opgegeven vergeleken met de `fastcomments-react`-bibliotheek:
 
-[inline-code-attrs-start title = 'React Native Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React Native Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const tenantId = 'demo'; // Your tenant id. Can be fetched from https://fastcomments.com/auth/my-account/api-secret
-  const pageId = 'native-test'; // the ID or URL of the comment thread in your app.
+  const tenantId = 'demo'; // Je tenant-id. Kan worden opgehaald van https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // De ID of URL van de discussiedraad in je app.
   const config = {
     tenantId: tenantId,
     urlId: pageId
@@ -33,7 +33,7 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   );
 [inline-code-end]
 
-Als u in de EU bent, wilt u de `region`-parameter instellen:
+Als je in de EU bent, wil je de `region`-parameter instellen:
 
 [inline-code-attrs-start title = 'React Native - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,4 +46,6 @@ Als u in de EU bent, wilt u de `region`-parameter instellen:
   // ...
 [inline-code-end]
 
-U kunt de configuratie die de React Native-component ondersteunt <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a> vinden.
+Je kunt de configuratie die de React Native-component ondersteunt <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a> vinden.
+
+---

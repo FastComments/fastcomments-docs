@@ -1,6 +1,6 @@
-React Native kütüphanemizi NPM'de <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">burada</a> bulabilirsiniz.
+React Native uygulamanıza yorum eklemek için React Native kütüphanemizi NPM'de <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">burada</a> bulabilirsiniz.
 
-FastComments React Native yorum widget'ı, VanillaJS olanla aynı tüm özellikleri destekler - canlı yorumlama, SSO vb.
+FastComments React Native yorum widget'ı, VanillaJS olan ile aynı tüm özellikleri destekler - canlı yorum, sso ve benzeri.
 
 [inline-code-attrs-start title = 'FastComments React Native (NPM ile)'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -13,7 +13,7 @@ npm install --save fastcomments-react-native
 yarn add fastcomments-react-native
 [inline-code-end]
 
-Yapılandırma, `fastcomments-react` kütüphanesine kıyasla biraz farklı belirtilir:
+Yapılandırma, `fastcomments-react` kütüphanesine kıyasla biraz farklı şekilde belirtilir:
 
 [inline-code-attrs-start title = 'React Native Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,8 +21,8 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const tenantId = 'demo'; // Kiracı kimliğiniz. https://fastcomments.com/auth/my-account/api-secret adresinden alınabilir
-  const pageId = 'native-test'; // Uygulamanızdaki yorum dizisinin ID'si veya URL'si
+  const tenantId = 'demo'; // Sizin tenant id'niz. Şuradan alınabilir: https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // uygulamanızdaki yorum dizisinin ID'si veya URL'si.
   const config = {
     tenantId: tenantId,
     urlId: pageId
@@ -33,7 +33,7 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   );
 [inline-code-end]
 
-AB'deyseniz, `region` parametresini ayarlamanız gerekir:
+Eğer AB'deyseniz, `region` parametresini ayarlamak isteyeceksiniz:
 
 [inline-code-attrs-start title = 'React Native - AB'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -47,3 +47,5 @@ AB'deyseniz, `region` parametresini ayarlamanız gerekir:
 [inline-code-end]
 
 React Native bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.
+
+---

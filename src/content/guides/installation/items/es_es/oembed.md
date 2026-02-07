@@ -1,28 +1,30 @@
-¿Quiere agregar comentarios a sus páginas de Notion? Lo tenemos cubierto.
+¿Quieres añadir comentarios a tus páginas de Notion, Google Sites o Nimbus Note? Lo tenemos cubierto.
 
 ### Notion
 
-Para agregar comentarios a documentos de Notion, [vea el video explicativo aquí](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
+Para añadir comentarios a documentos de Notion, [consulta el vídeo explicativo aquí](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
 
 ### Google Sites
 
-Google Sites también es compatible, y el flujo es similar.
+Google Sites también es compatible, y el proceso es similar.
 
-1. [Cree una conversación para incrustar.](https://fastcomments.com/create)
-2. Al editar su Google Site, navegue a `Insertar` -> `Incrustar`. Seleccione `Por URL`.
-3. Pegue la URL del Paso 1.
-4. Presione `Insertar`. ¡Listo!
+1. [Crea una conversación para incrustar.](https://fastcomments.com/create)
+2. Al editar tu Google Site, navega a `Insert` -> `Embed`. Selecciona `By URL`.
+3. Pega la URL del Paso 1.
+4. Pulsa `Insert`. ¡Listo!
 
 <div class="screenshot white-bg">
-    <div class="title">Nota: Los comentarios no aparecerán hasta publicar</div>
-    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
+    <div class="title">Nota: los comentarios no aparecerán hasta que publiques</div>
+    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments en Google Sites" alt="FastComments en Google Sites" />
 </div>
 
 ### Nimbus Note
 
-Agregar comentarios en vivo a una Nimbus Note también es compatible, y el flujo es similar a Notion.
+También se admite añadir comentarios en vivo a una nota de Nimbus Note, y el proceso es similar al de Notion.
 
-1. [Cree una conversación para incrustar.](https://fastcomments.com/create)
-2. Al editar su nota, agregue un bloque de incrustación.
-3. Use la URL del Paso 1 como la URL a incrustar.
+1. [Crea una conversación para incrustar.](https://fastcomments.com/create)
+2. Al editar tu nota, añade un bloque de incrustación.
+3. Usa la URL del Paso 1 como la URL a incrustar.
 4. ¡Listo!
+
+---

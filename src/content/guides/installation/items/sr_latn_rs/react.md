@@ -1,6 +1,6 @@
-Našu React biblioteku možete pronaći na NPM-u <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">ovde</a>.
+Za dodavanje komentara na sajt napravljen sa React, možete pronaći našu React biblioteku na NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">ovde</a>.
 
-FastComments React vidžet za komentare podržava sve iste funkcije kao VanillaJS verzija — komentarisanje u realnom vremenu, SSO i tako dalje.
+FastComments React komentatorski widget podržava sve iste funkcije kao i VanillaJS — komentarisanje uživo, sso, i tako dalje.
 
 [inline-code-attrs-start title = 'FastComments React preko NPM-a'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -14,7 +14,7 @@ yarn add fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'React primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za React'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import React, { Component } from 'react'
 
@@ -27,11 +27,13 @@ class Example extends Component {
 }
 [inline-code-end]
 
-Ako ste u EU, želećete da podesite parametar `region` ovako:
+Ako se nalazite u EU, treba da podesite `region` parametar ovako:
 
-[inline-code-attrs-start title = 'React primer - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za React - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-Konfiguraciju koju React komponenta podržava možete pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovde</a>.
+Možete pronaći konfiguraciju koju React komponenta podržava <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovde</a>.
+
+---

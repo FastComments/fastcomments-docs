@@ -1,28 +1,28 @@
-Notion sayfalarınıza yorum eklemek mi istiyorsunuz? Size yardımcı olabiliriz.
+Notion sayfalarınıza, Google Sites veya Nimbus Notes'a yorum eklemek mi istiyorsunuz? Size yardımcı oluyoruz.
 
 ### Notion
 
-Notion belgelerine yorum ekleme hakkında [açıklama videosunu buradan izleyin](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
+Notion dokümanlarına yorum eklemek için, [açıklayıcı videoya buradan bakın](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
 
 ### Google Sites
 
-Google Sites de desteklenir ve akış benzerdir.
+Google Sites de desteklenir ve işlem akışı benzerdir.
 
-1. [Gömmek için bir sohbet oluşturun.](https://fastcomments.com/create)
-2. Google Site'nizi düzenlerken `Ekle` -> `Göm` seçeneğine gidin. `URL ile` seçeneğini seçin.
-3. Adım 1'deki URL'yi yapıştırın.
-4. `Ekle`ye basın. Tamam!
+1. [Gömülecek bir konuşma oluşturun.](https://fastcomments.com/create)
+2. Google Sitenizi düzenlerken, `Insert` -> `Embed` yolunu izleyin. `By URL` öğesini seçin.
+3. Adım 1'den URL'yi yapıştırın.
+4. `Insert`'e tıklayın. Tamam!
 
 <div class="screenshot white-bg">
-    <div class="title">Not: Yorumlar Yayınlanana Kadar Görünmeyecek</div>
-    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="Google Sites'ta FastComments" alt="Google Sites'ta FastComments" />
+    <div class="title">Not: Yorumlar Yayınlanana Kadar Görünmeyecektir</div>
+    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
 </div>
 
 ### Nimbus Note
 
-Nimbus Note'a canlı yorum ekleme de desteklenir ve akış Notion'a benzer.
+Bir Nimbus Note'a canlı yorum eklemek de desteklenir ve işlem akışı Notion ile benzerdir.
 
-1. [Gömmek için bir sohbet oluşturun.](https://fastcomments.com/create)
-2. Notunuzu düzenlerken bir gömme bloğu ekleyin.
-3. Adım 1'deki URL'yi gömme URL'si olarak kullanın.
+1. [Gömülecek bir konuşma oluşturun.](https://fastcomments.com/create)
+2. Notunuzu düzenlerken, bir embed bloğu ekleyin.
+3. Gömülecek URL olarak Adım 1'deki URL'yi kullanın.
 4. Tamam!

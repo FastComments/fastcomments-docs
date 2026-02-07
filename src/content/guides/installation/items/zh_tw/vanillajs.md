@@ -1,17 +1,15 @@
-VanillaJS版本的小工具非常容易安裝，不需要任何建置系統或伺服器端程式碼。
+The VanillaJS 版本的 widget 是將評論加入您網站的最簡單方式，無需任何建置系統或伺服器端程式碼。
 
-只需將以下程式碼片段添加到任何頁面：
+只要將下列程式碼片段加入任何頁面，即可在您的網站新增評論：
 
-[code-example-start config = {}; title = '簡單程式碼片段'; code-example-end]
+[code-example-start config = {}; title = 'Simple Code Snippet'; code-example-end]
 
-您可以在多個頁面上使用相同的程式碼片段；它將自動為每個頁面建立單獨的討論串。
+您可以在多個頁面使用相同的程式碼片段；它會自動為每個頁面建立獨立的討論串。
 
-許多應用程式都有「HTML嵌入程式碼」選項。選擇該選項並貼上上面的程式碼片段。
+許多應用程式都有 "HTML Embed Code" 選項。選取該選項並將上方的程式碼片段貼入。
 
-*您甚至不需要帳戶就可以試用！* 如果您未登入，您可能會在上面的程式碼片段中看到「tenantId: demo」。這樣它將使用
-示範帳戶。
+*您也不需要帳戶即可試用！* 如果您尚未登入，您可能會在上方的程式碼片段中看到 "tenantId: demo"。這樣會使用 demo 帳戶。
 
-您可以在<a href="/guide-customizations-and-configuration.html" target="_blank">這裡</a>找到配置小工具的文檔。
+您可以在此找到有關設定 widget 的文件 <a href="/guide-customizations-and-configuration.html" target="_blank">這裡</a>。
 
-所有版本的FastComments小工具都是核心VanillaJS函式庫的包裝器。這使我們能夠在一個地方添加功能
-和修復問題——更改會自動傳播到評論小工具的其他變體。
+所有版本的 FastComments widget 都是包裹在核心 VanillaJS 函式庫的封裝器。這讓我們能夠在一個地方新增功能並修正問題 - 變更會自動傳播到其他評論 widget 的變體。

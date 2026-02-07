@@ -1,9 +1,9 @@
-Нашу Angular библиотеку можете пронаћи на NPM-у <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">овде</a>.
+За додавање коментара на сајт изграђен помоћу Angular-а, нашу Angular библиотеку можете наћи на NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">овде</a>.
 
-FastComments Angular виџет за коментаре подржава све исте функције као VanillaJS верзија — коментарисање у реалном времену, SSO и тако даље.
+FastComments Angular коментарски видгет подржава све исте функције као и VanillaJS верзија — коментарисање у стварном времену, SSO и тако даље.
 
-Требаће вам fastcomments-typescript, који је peer зависност. Молимо осигурајте да је укључен у вашу TypeScript компилацију.
-У будућности ће ова peer зависност бити премештена у @types/fastcomments што ће поједноставити инсталацију.
+Биће вам потребан fastcomments-typescript, који је peer зависност. Молимо осигурајте да је ово укључено у вашу TypeScript компилацију.
+У будућности, ова peer зависност биће премештена у @types/fastcomments што ће поједноставити ову инсталацију.
 
 [inline-code-attrs-start title = 'FastComments Angular преко NPM-а'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -11,7 +11,7 @@ FastComments Angular виџет за коментаре подржава све 
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Peer зависност треба додати у вашу tsconfig.json датотеку, на пример:
+Peer зависност треба додати у ваш tsconfig.json фајл, на пример:
 
 [inline-code-attrs-start title = 'Додавање fastcomments-typescript peer зависности'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,7 +21,7 @@ Peer зависност треба додати у вашу tsconfig.json дат
 ],
 [inline-code-end]
 
-Затим додајте `FastCommentsModule` у вашу апликацију:
+Затим, додајте `FastCommentsModule` у вашу апликацију:
 
 [inline-code-attrs-start title = 'Додајте модул у вашу апликацију'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -45,27 +45,27 @@ import { FastCommentsModule } from 'ngx-fastcomments';
 export class AppModule { }
 [inline-code-end]
 
-## Коришћење
+## Употреба
 
-За почетак, прослеђујемо конфигурацијски објекат за демо закупца:
+За почетак, прослеђујемо конфигурациони објекат за демо тенанта:
 
-[inline-code-attrs-start title = 'Коришћење - Inline конфигурација'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - Инлајн конфигурација'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Пошто конфигурација може постати прилично сложена, можемо проследити референцу објекта:
+Пошто конфигурација може постати прилично сложена, можемо проследити референцу на објекат:
 
-[inline-code-attrs-start title = 'Коришћење - Проследи објекат за конфигурацију'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - Проследите објекат за конфигурацију'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Коришћење - EU'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Употреба - ЕУ'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
 [inline-code-end]
 
-Виџет користи детекцију промена, тако да ће промена било којих својстава конфигурацијског објекта узроковати поновно учитавање.
+Видгет користи детекцију промена, тако да промена било које особине конфигурационог објекта ће узроковати његово поновно учитавање.
 
 Конфигурацију коју Angular компонента подржава можете пронаћи <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">овде</a>.

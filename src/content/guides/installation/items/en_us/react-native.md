@@ -1,6 +1,6 @@
-You can find our React Native library on NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">here</a>.
+To add comments to your React Native app, you can find our React Native library on NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">here</a>.
 
-The FastComments React Native commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
+The FastComments React Native commenting widget supports all of the same features of the VanillaJS one - live commenting, SSO, and so on.
 
 [inline-code-attrs-start title = 'FastComments React Native via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,8 +21,8 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const tenantId = 'demo'; // Your tenant id. Can be fetched from https://fastcomments.com/auth/my-account/api-secret
-  const pageId = 'native-test'; // the ID or URL of the comment thread in your app.
+  const tenantId = 'demo'; // Your tenant ID. Can be fetched from https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // The ID or URL of the comment thread in your app.
   const config = {
     tenantId: tenantId,
     urlId: pageId
@@ -46,4 +46,4 @@ If you're in the EU, you'll want to set the `region` parameter:
   // ...
 [inline-code-end]
 
-You can find the configuration the React Native component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.
+You can find the configuration supported by the React Native component <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">here</a>.

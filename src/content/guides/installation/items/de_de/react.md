@@ -1,20 +1,20 @@
-Sie finden unsere React-Bibliothek auf NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">hier</a>.
+Um Kommentare zu einer mit React erstellten Website hinzuzufügen, finden Sie unsere React-Bibliothek auf NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">hier</a>.
 
-Das FastComments React-Kommentar-Widget unterstützt alle Funktionen der VanillaJS-Version - Live-Kommentare, SSO und mehr.
+Das FastComments React-Kommentierungs-Widget unterstützt alle der gleichen Funktionen des VanillaJS-Widgets - Live-Kommentare, SSO, und so weiter.
 
-[inline-code-attrs-start title = 'FastComments React via NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React über NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments React via Yarn'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments React über Yarn'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'React Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React-Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import React, { Component } from 'react'
 
@@ -27,11 +27,13 @@ class Example extends Component {
 }
 [inline-code-end]
 
-Wenn Sie in der EU sind, sollten Sie den `region`-Parameter wie folgt setzen:
+Wenn Sie sich in der EU befinden, sollten Sie den `region`-Parameter wie folgt setzen:
 
-[inline-code-attrs-start title = 'React Example - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'React-Beispiel - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-Die vom React-Komponenten unterstützte Konfiguration finden Sie <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a>.
+Sie finden die Konfiguration, die die React-Komponente unterstützt, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a>.
+
+---

@@ -1,17 +1,15 @@
-Widget'ın VanillaJS versiyonu kurulumu çok kolaydır, herhangi bir derleme sistemi veya sunucu tarafı kod gerektirmez.
+The VanillaJS sürümü olan widget, web sitenize yorum eklemenin en basit yoludur; herhangi bir derleme sistemi veya sunucu tarafı kodu gerektirmez.
 
-Herhangi bir sayfaya aşağıdaki kod parçasını ekleyin:
+Yorumları sitenize eklemek için aşağıdaki kod parçasını herhangi bir sayfaya eklemeniz yeterlidir:
 
-[code-example-start config = {}; title = 'Basit Kod Parçası'; code-example-end]
+[code-example-start config = {}; title = 'Simple Code Snippet'; code-example-end]
 
-Aynı kod parçasını birçok sayfada kullanabilirsiniz; her sayfa için otomatik olarak ayrı bir tartışma dizisi oluşturacaktır.
+Aynı kod parçasını birçok sayfada kullanabilirsiniz; sayfa başına otomatik olarak ayrı bir konu oluşturur.
 
-Birçok uygulamada "HTML Gömme Kodu" seçeneği vardır. Bunu seçin ve yukarıdaki kod parçasını yapıştırın.
+Birçok uygulamada "HTML Embed Code" seçeneği bulunur. Bunu seçin ve yukarıdaki kod parçasını yapıştırın.
 
-*Denemek için hesaba bile ihtiyacınız yok!* Giriş yapmadıysanız yukarıdaki kod parçasında "tenantId: demo" görebilirsiniz. Bu durumda
-demo hesabı kullanılacaktır.
+*Denemek için bir hesabınızın olması da gerekmiyor!* Giriş yapmadıysanız yukarıdaki kod parçasında "tenantId: demo" görebilirsiniz. Bu durumda demo hesabı kullanılacaktır.
 
-Widget'ı yapılandırma hakkında dokümantasyonu <a href="/guide-customizations-and-configuration.html" target="_blank">burada</a> bulabilirsiniz.
+Widget'ı yapılandırma ile ilgili dokümantasyonu <a href="/guide-customizations-and-configuration.html" target="_blank">burada</a> bulabilirsiniz.
 
-FastComments widget'ının tüm versiyonları çekirdek VanillaJS kütüphanesinin sarmalayıcılarıdır. Bu, özellikleri eklememize ve
-sorunları tek bir yerde düzeltmemize olanak tanır — değişiklikler otomatik olarak yorum widget'ının diğer varyantlarına yayılır.
+FastComments widget'ının tüm sürümleri, çekirdek VanillaJS kütüphanesi etrafında sarma (wrapper) yapılarıdır. Bu, özellik eklememize ve sorunları tek bir yerde düzeltmemize olanak tanır — ve yapılan değişiklikler yorum widget'ının diğer varyantlarına otomatik olarak yansır.

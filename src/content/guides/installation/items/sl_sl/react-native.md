@@ -1,6 +1,6 @@
-Našo React Native knjižnico lahko najdete na NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">tukaj</a>.
+Če želite dodati komentarje v vašo React Native aplikacijo, lahko našo knjižnico za React Native najdete na NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">tukaj</a>.
 
-FastComments React Native pripomoček za komentarje podpira vse enake funkcije kot različica VanillaJS — komentiranje v realnem času, SSO in tako naprej.
+Widget za komentiranje FastComments za React Native podpira vse enake funkcije kot VanillaJS - komentiranje v živo, SSO, in podobno.
 
 [inline-code-attrs-start title = 'FastComments React Native prek NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,13 +15,13 @@ yarn add fastcomments-react-native
 
 Konfiguracija je določena nekoliko drugače v primerjavi s knjižnico `fastcomments-react`:
 
-[inline-code-attrs-start title = 'React Native primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer React Native'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const tenantId = 'demo'; // Vaš tenant id. Lahko ga dobite na https://fastcomments.com/auth/my-account/api-secret
+  const tenantId = 'demo'; // ID najemnika. Lahko ga pridobite na https://fastcomments.com/auth/my-account/api-secret
   const pageId = 'native-test'; // ID ali URL niti komentarjev v vaši aplikaciji.
   const config = {
     tenantId: tenantId,
@@ -33,7 +33,7 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   );
 [inline-code-end]
 
-Če ste v EU, boste želeli nastaviti parameter `region`:
+Če se nahajate v EU, boste želeli nastaviti parameter `region`:
 
 [inline-code-attrs-start title = 'React Native - EU'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,4 +46,4 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   // ...
 [inline-code-end]
 
-Konfiguracijo, ki jo podpira React Native komponenta, lahko najdete <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tukaj</a>.
+Konfiguracijo, ki jo komponenta React Native podpira, lahko najdete <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tukaj</a>.

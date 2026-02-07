@@ -1,6 +1,6 @@
-You can find our Angular library on NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">here</a>.
+For adding comments to a site built with Angular, you can find our Angular library on NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">here</a>.
 
-The FastComments Angular commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
+The FastComments Angular commenting widget supports all of the same features of the VanillaJS one - live commenting, SSO, and so on.
 
 You will need fastcomments-typescript, which is a peer dependency. Please ensure this is included in your TypeScript compilation.
 In the future, this peer dependency will be moved to @types/fastcomments which will simplify this installation.
@@ -47,14 +47,14 @@ export class AppModule { }
 
 ## Usage
 
-To get started, we pass a config object for the demo tenant:
+To get started, pass a config object for the demo tenant:
 
 [inline-code-attrs-start title = 'Usage - Inline Configuration'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Since the configuration can get quite complicated, we can pass in an object reference:
+Since the configuration can get quite complex, you can pass in an object reference:
 
 [inline-code-attrs-start title = 'Usage - Pass Object for Configuration'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,28 +1,31 @@
-Wilt u reacties toevoegen aan uw Notion-pagina's? Wij hebben de oplossing.
+---
+Wil je opmerkingen toevoegen aan je Notion-pagina's, Google Sites of Nimbus Notes? Wij regelen het.
 
 ### Notion
 
-Voor het toevoegen van reacties aan Notion-documenten, [bekijk de uitlegvideo hier](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
+Om opmerkingen aan Notion-documenten toe te voegen, [bekijk de uitlegvideo hier](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
 
 ### Google Sites
 
-Google Sites wordt ook ondersteund, en de werkwijze is vergelijkbaar.
+Google Sites wordt ook ondersteund en de werkwijze is vergelijkbaar.
 
-1. [Maak een conversatie om in te sluiten.](https://fastcomments.com/create)
-2. Wanneer u uw Google Site bewerkt, navigeer naar `Invoegen` -> `Insluiten`. Selecteer `Op URL`.
-3. Plak de URL van Stap 1.
-4. Druk op `Invoegen`. Klaar!
+1. [Maak een gesprek om in te sluiten.](https://fastcomments.com/create)
+2. Wanneer je je Google Site bewerkt, navigeer naar `Insert` -> `Embed`. Selecteer `By URL`.
+3. Plak de URL van stap 1.
+4. Klik op `Insert`. Klaar!
 
 <div class="screenshot white-bg">
-    <div class="title">Opmerking: Reacties Verschijnen Pas Na Publicatie</div>
+    <div class="title">Opmerking: reacties verschijnen pas na publicatie</div>
     <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
 </div>
 
 ### Nimbus Note
 
-Het toevoegen van live reacties aan een Nimbus Note wordt ook ondersteund, en de werkwijze is vergelijkbaar met Notion.
+Het toevoegen van live-opmerkingen aan een Nimbus Note wordt ook ondersteund, en de werkwijze is vergelijkbaar met Notion.
 
-1. [Maak een conversatie om in te sluiten.](https://fastcomments.com/create)
-2. Wanneer u uw notitie bewerkt, voeg een insluitblok toe.
-3. Gebruik de URL van Stap 1 als de in te sluiten URL.
+1. [Maak een gesprek om in te sluiten.](https://fastcomments.com/create)
+2. Wanneer je je notitie bewerkt, voeg een embed-blok toe.
+3. Gebruik de URL uit stap 1 als de URL om in te voegen.
 4. Klaar!
+
+---

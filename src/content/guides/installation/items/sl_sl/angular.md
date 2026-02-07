@@ -1,19 +1,19 @@
-Našo Angular knjižnico lahko najdete na NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">tukaj</a>.
+Za dodajanje komentarjev na spletno mesto, izdelano z Angular, lahko najdete našo Angular knjižnico na NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">tukaj</a>.
 
-FastComments Angular pripomoček za komentarje podpira vse enake funkcije kot različica VanillaJS — komentiranje v realnem času, SSO in tako naprej.
+Komentarni pripomoček FastComments za Angular podpira vse iste funkcije kot različica VanillaJS - komentiranje v živo, SSO itd.
 
-Potrebovali boste fastcomments-typescript, ki je peer odvisnost. Prosimo, zagotovite, da je vključen v vašo TypeScript kompilacijo.
-V prihodnosti bo ta peer odvisnost premaknjena v @types/fastcomments, kar bo poenostavilo namestitev.
+Potrebovali boste fastcomments-typescript, ki je peer-odvisnost. Prosimo, zagotovite, da je vključena v vašo TypeScript kompilacijo.
+V prihodnosti bo ta peer-odvisnost premaknjena v @types/fastcomments, kar bo poenostavilo to namestitev.
 
-[inline-code-attrs-start title = 'FastComments Angular prek NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments za Angular prek NPM'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
   npm install fastcomments-typescript --save
   npm install ngx-fastcomments --save
 [inline-code-end]
 
-Peer odvisnost je treba dodati v vašo datoteko tsconfig.json, na primer:
+To peer-odvisnost dodajte v datoteko tsconfig.json, na primer:
 
-[inline-code-attrs-start title = 'Dodajanje fastcomments-typescript peer odvisnosti'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Dodajanje peer-odvisnosti fastcomments-typescript'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 "include": [
   "src/**/*.ts",
@@ -45,18 +45,18 @@ import { FastCommentsModule } from 'ngx-fastcomments';
 export class AppModule { }
 [inline-code-end]
 
-## Uporaba
+## Usage
 
-Za začetek posredujemo konfiguracijski objekt za demo najemnika:
+Za začetek podamo konfiguracijski objekt za demo najemnika:
 
-[inline-code-attrs-start title = 'Uporaba - Inline konfiguracija'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Uporaba - vrstična konfiguracija'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="{ tenantId: 'demo' }"></lib-fastcomments>
 [inline-code-end]
 
-Ker lahko konfiguracija postane precej zapletena, lahko posredujemo referenco objekta:
+Ker je konfiguracija lahko precej zapletena, lahko namesto tega podamo referenco na objekt:
 
-[inline-code-attrs-start title = 'Uporaba - Posreduj objekt za konfiguracijo'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Uporaba - posredovanje objekta za konfiguracijo'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
@@ -66,6 +66,8 @@ Ker lahko konfiguracija postane precej zapletena, lahko posredujemo referenco ob
 <lib-fastcomments [config]="{ tenantId: 'demo', region: 'eu' }"></lib-fastcomments>
 [inline-code-end]
 
-Pripomoček uporablja zaznavanje sprememb, zato bo sprememba katerihkoli lastnosti konfiguracijskega objekta povzročila ponovno nalaganje.
+Pripomoček uporablja zaznavanje sprememb, zato bo sprememba katerekoli lastnosti konfiguracijskega objekta povzročila njegovo ponovno nalaganje.
 
-Konfiguracijo, ki jo podpira Angular komponenta, lahko najdete <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tukaj</a>.
+Konfiguracijo, ki jo podpira Angular komponenta, najdete <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tukaj</a>.
+
+---

@@ -1,15 +1,20 @@
-Die VanillaJS-Version des Widgets ist sehr einfach zu installieren und erfordert keine Build-Systeme oder serverseitigen Code.
+---
+Die VanillaJS-Version des Widgets ist die einfachste Möglichkeit, Kommentare zu Ihrer Website hinzuzufügen, ohne Build-Systeme oder serverseitigen Code zu benötigen.
 
-Fügen Sie einfach den folgenden Code-Schnipsel zu einer beliebigen Seite hinzu:
+Fügen Sie einfach den folgenden Codeausschnitt in jede Seite ein, um Kommentare zu Ihrer Website hinzuzufügen:
 
 [code-example-start config = {}; title = 'Simple Code Snippet'; code-example-end]
 
-Sie können denselben Code-Schnipsel auf vielen Seiten verwenden; es wird automatisch ein separater Thread pro Seite erstellt.
+Sie können denselben Codeausschnitt auf mehreren Seiten verwenden; er erstellt automatisch einen separaten Thread pro Seite.
 
-Viele Anwendungen haben eine Option "HTML-Einbettungscode". Wählen Sie diese und fügen Sie den obigen Code-Schnipsel ein.
+Viele Anwendungen haben eine "HTML Embed Code"-Option. Wählen Sie diese aus und fügen Sie den obigen Codeausschnitt dort ein.
 
-*Sie benötigen auch kein Konto zum Ausprobieren!* Möglicherweise sehen Sie "tenantId: demo" im obigen Schnipsel, wenn Sie nicht angemeldet sind. Auf diese Weise wird das Demo-Konto verwendet.
+*Sie benötigen außerdem kein Konto, um es auszuprobieren!* Möglicherweise sehen Sie "tenantId: demo" im obigen Ausschnitt, wenn Sie nicht eingeloggt sind. Auf diese Weise wird
+das Demo-Konto verwendet.
 
 Die Dokumentation zur Konfiguration des Widgets finden Sie <a href="/guide-customizations-and-configuration.html" target="_blank">hier</a>.
 
-Alle Versionen des FastComments-Widgets sind Wrapper um die Kern-VanillaJS-Bibliothek. Dies ermöglicht es uns, Funktionen hinzuzufügen und Probleme an einer Stelle zu beheben - und die Änderungen werden automatisch auf die anderen Varianten des Kommentar-Widgets übertragen.
+Alle Versionen des FastComments-Widgets sind Wrapper um die zentrale VanillaJS-Bibliothek. Dadurch können wir Funktionen hinzufügen
+und Probleme an einer Stelle beheben - und die Änderungen werden automatisch auf die anderen Varianten des Kommentar-Widgets übertragen.
+
+---

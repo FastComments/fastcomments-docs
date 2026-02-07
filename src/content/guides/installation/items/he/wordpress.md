@@ -1,5 +1,9 @@
-אתה יכול למצוא את תוסף ה-WordPress שלנו <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">כאן</a>.
+כדי להוסיף תגובות לאתר ה-WordPress שלך, תוכל למצוא את תוסף ה-WordPress שלנו <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">כאן</a>.
 
-מדריך התקנה מלא ותיעוד על התוסף [נמצאים כאן](/guide-installation-wordpress.html).
+מדריך התקנה מלא ותיעוד לגבי התוסף [זמינים כאן](/guide-installation-wordpress.html).
 
-תוסף זה תומך בתגובות בזמן אמת, SSO והתקנה ללא קוד.
+התוסף תומך בהוספת תגובות בזמן אמת, SSO והתקנה ללא קוד. פשוט עקוב אחר מדריך ההתקנה בדף הניהול
+לאחר התקנת התוסף. הוא ינחה אותך בתהליך חיבור התקנת ה-WordPress שלך לחשבון שלך.
+
+כל התגובות שנשארות באמצעות FastComments דרך התוסף שלנו ל-WordPress יכולות להסתנכרן אוטומטית חזרה להתקנת ה-WordPress שלך
+כך שתשמור על שליטה על הנתונים שלך. ניתן לכבות זאת כדי להגביל את גודל מסד הנתונים של ה-WordPress שלך.

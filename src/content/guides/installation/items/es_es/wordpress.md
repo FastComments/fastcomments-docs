@@ -1,7 +1,12 @@
-Puede encontrar nuestro plugin de WordPress <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">aquí</a>.
+---
+Para añadir comentarios a su sitio de WordPress, puede encontrar nuestro complemento de WordPress <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">aquí</a>.
 
-Una guía de instalación completa y documentación sobre el plugin [están aquí](/guide-installation-wordpress.html).
+Una guía completa de instalación y la documentación sobre el complemento [se encuentran aquí](/guide-installation-wordpress.html).
 
-Este plugin admite comentarios en vivo, SSO e instalación sin código. Simplemente siga la guía de instalación en la página de administración después de instalar el plugin. Le guiará para conectar su instalación de WordPress con su cuenta.
+Este complemento admite comentarios en vivo, SSO y una instalación sin código. Simplemente siga la guía de instalación en la página de administración
+después de instalar el complemento. Le guiará a través de la conexión de su instalación de WordPress a su cuenta.
 
-Cualquier comentario dejado con FastComments a través de nuestro plugin de WordPress puede sincronizarse automáticamente con su instalación de WordPress para que conserve el control de sus datos. Esto puede desactivarse para limitar el tamaño de su base de datos de WordPress.
+Cualquier comentario realizado con FastComments a través de nuestro complemento de WordPress puede sincronizarse automáticamente de vuelta a su instalación de WordPress
+para que usted mantenga el control sobre sus datos. Esto se puede desactivar para limitar el tamaño de su base de datos de WordPress.
+
+---

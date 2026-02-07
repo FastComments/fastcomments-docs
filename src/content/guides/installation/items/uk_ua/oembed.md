@@ -1,28 +1,30 @@
-Хочете додати коментарі на ваші сторінки Notion? Ми допоможемо.
+Хочете додати коментарі до сторінок Notion, Google Sites або Nimbus Notes? Ми вам допоможемо.
 
 ### Notion
 
-Для додавання коментарів до документів Notion [дивіться відео з поясненням тут](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
+Щоб додати коментування до документів Notion, [дивіться пояснювальне відео тут](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
 
 ### Google Sites
 
-Google Sites також підтримується, і процес аналогічний.
+Google Sites також підтримується, і процес схожий.
 
 1. [Створіть розмову для вбудовування.](https://fastcomments.com/create)
-2. При редагуванні вашого Google Site перейдіть до `Вставка` -> `Вбудувати`. Виберіть `За URL`.
-3. Вставте URL з Кроку 1.
-4. Натисніть `Вставити`. Готово!
+2. When editing your Google Site, navigate to `Insert` -> `Embed`. Select `By URL`.
+3. Paste the URL from Step 1.
+4. Hit `Insert`. Done!
 
 <div class="screenshot white-bg">
-    <div class="title">Примітка: Коментарі не з'являться до публікації</div>
-    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments у Google Sites" alt="FastComments у Google Sites" />
+    <div class="title">Примітка: коментарі не з’являться, поки ви не опублікуєте</div>
+    <img class="screenshot-image" src="https://blog.fastcomments.com/images/google-sites-howto-done.png" title="FastComments in Google Sites" alt="FastComments in Google Sites" />
 </div>
 
 ### Nimbus Note
 
-Додавання коментарів у реальному часі до Nimbus Note також підтримується, і процес аналогічний Notion.
+Додавання живого коментування до Nimbus Note також підтримується, і процес схожий на Notion.
 
 1. [Створіть розмову для вбудовування.](https://fastcomments.com/create)
-2. При редагуванні вашої нотатки додайте блок вбудовування.
-3. Використовуйте URL з Кроку 1 як URL для вбудовування.
-4. Готово!
+2. When editing your note, add an embed block.
+3. Use the URL from Step 1 as the URL to embed.
+4. Done!
+
+---

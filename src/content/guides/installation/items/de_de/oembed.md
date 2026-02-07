@@ -1,17 +1,18 @@
-Möchten Sie Kommentare zu Ihren Notion-Seiten hinzufügen? Wir haben die Lösung für Sie.
+---
+Möchten Sie Kommentare zu Ihren Notion-Seiten, Google Sites oder Nimbus Notes hinzufügen? Wir haben die passende Lösung.
 
 ### Notion
 
-Zum Hinzufügen von Kommentaren zu Notion-Dokumenten [sehen Sie das Erklärvideo hier](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
+Um Kommentarfunktionen zu Notion-Dokumenten hinzuzufügen, [sehen Sie sich hier das Erklärungsvideo an](https://blog.fastcomments.com/(10-05-2021)-adding-commenting-to-notion-pages.html).
 
 ### Google Sites
 
 Google Sites wird ebenfalls unterstützt, und der Ablauf ist ähnlich.
 
-1. [Erstellen Sie eine Konversation zum Einbetten.](https://fastcomments.com/create)
-2. Navigieren Sie beim Bearbeiten Ihrer Google-Site zu `Einfügen` -> `Einbetten`. Wählen Sie `Nach URL`.
+1. [Create a conversation to embed.](https://fastcomments.com/create)
+2. Wenn Sie Ihre Google Site bearbeiten, navigieren Sie zu `Insert` -> `Embed`. Wählen Sie `By URL`.
 3. Fügen Sie die URL aus Schritt 1 ein.
-4. Klicken Sie auf `Einfügen`. Fertig!
+4. Klicken Sie auf `Insert`. Fertig!
 
 <div class="screenshot white-bg">
     <div class="title">Hinweis: Kommentare werden erst nach der Veröffentlichung angezeigt</div>
@@ -22,7 +23,9 @@ Google Sites wird ebenfalls unterstützt, und der Ablauf ist ähnlich.
 
 Das Hinzufügen von Live-Kommentaren zu einer Nimbus Note wird ebenfalls unterstützt, und der Ablauf ist ähnlich wie bei Notion.
 
-1. [Erstellen Sie eine Konversation zum Einbetten.](https://fastcomments.com/create)
-2. Fügen Sie beim Bearbeiten Ihrer Notiz einen Einbettungsblock hinzu.
-3. Verwenden Sie die URL aus Schritt 1 als einzubettende URL.
+1. [Create a conversation to embed.](https://fastcomments.com/create)
+2. Beim Bearbeiten Ihrer Notiz fügen Sie einen Embed-Block hinzu.
+3. Verwenden Sie die URL aus Schritt 1 als die einzubettende URL.
 4. Fertig!
+
+---

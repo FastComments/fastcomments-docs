@@ -1,7 +1,6 @@
 ---
 ## Instalación
 
-FastComments está diseñado para instalarse en cualquier tipo de página - estática o dinámica, con tema claro o oscuro, páginas públicas o internas. Debe ser fácil de instalar
-y adaptar a cualquier tipo de sitio o aplicación web.
+FastComments facilita agregar comentarios a tu sitio web, ya sea estático o dinámico, con tema claro u oscuro, páginas públicas o internas. Debería ser fácil de instalar y adaptarse a cualquier tipo de sitio o aplicación web. Esto te ofrece comentarios en vivo de inmediato, sin necesidad de configuración adicional en muchos casos.
 
 ---

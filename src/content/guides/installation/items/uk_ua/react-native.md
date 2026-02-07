@@ -1,6 +1,6 @@
-Ви можете знайти нашу бібліотеку React Native на NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">тут</a>.
+Щоб додати коментарі до вашого додатка React Native, ви можете знайти нашу бібліотеку React Native на NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">тут</a>.
 
-Віджет коментарів FastComments для React Native підтримує всі ті ж функції, що й VanillaJS версія — коментування в реальному часі, SSO тощо.
+Компонент коментування FastComments для React Native підтримує всі ті ж функції, що й VanillaJS-версія — живе коментування, SSO тощо.
 
 [inline-code-attrs-start title = 'FastComments React Native через NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -13,7 +13,7 @@ npm install --save fastcomments-react-native
 yarn add fastcomments-react-native
 [inline-code-end]
 
-Конфігурація вказується трохи інакше порівняно з бібліотекою `fastcomments-react`:
+Конфігурація задається трохи інакше порівняно з бібліотекою `fastcomments-react`:
 
 [inline-code-attrs-start title = 'Приклад React Native'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,8 +21,8 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 
 // ...
 
-  const tenantId = 'demo'; // Ваш tenant id. Можна отримати на https://fastcomments.com/auth/my-account/api-secret
-  const pageId = 'native-test'; // ID або URL гілки коментарів у вашому застосунку.
+  const tenantId = 'demo'; // Ваш tenant id. Можна отримати з https://fastcomments.com/auth/my-account/api-secret
+  const pageId = 'native-test'; // ID або URL потоку коментарів у вашому додатку.
   const config = {
     tenantId: tenantId,
     urlId: pageId
@@ -33,7 +33,7 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   );
 [inline-code-end]
 
-Якщо ви знаходитесь у ЄС, вам потрібно встановити параметр `region`:
+Якщо ви перебуваєте в ЄС, варто встановити параметр `region`:
 
 [inline-code-attrs-start title = 'React Native - ЄС'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,4 +46,6 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
   // ...
 [inline-code-end]
 
-Ви можете знайти конфігурацію, яку підтримує компонент React Native <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+Ви можете знайти конфігурацію, яку підтримує компонент React Native, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
+
+---
