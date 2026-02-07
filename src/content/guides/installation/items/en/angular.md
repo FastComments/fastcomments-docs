@@ -1,4 +1,4 @@
-You can find our Angular library on NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">here</a>.
+For adding comments to a site built with Angular, you can find our Angular library on NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">here</a>.
 
 The FastComments Angular commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 

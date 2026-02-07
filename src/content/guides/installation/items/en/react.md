@@ -1,4 +1,4 @@
-You can find our React library on NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
+For adding comments to a site built with React, you can find our React library on NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
 
 The FastComments React commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 

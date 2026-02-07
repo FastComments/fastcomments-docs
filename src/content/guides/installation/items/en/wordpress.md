@@ -1,4 +1,4 @@
-You can find our WordPress plugin <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">here</a>.
+To add comments to your WordPress site, you can find our WordPress plugin <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">here</a>.
 
 A complete installation guide and docs around the plugin [are here](/guide-installation-wordpress.html).
 

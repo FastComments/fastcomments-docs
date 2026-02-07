@@ -1,6 +1,6 @@
-The VanillaJS version of the widget is very easy to install, not requiring any build systems or server side code.
+The VanillaJS version of the widget is the simplest way to add comments to your website, not requiring any build systems or server side code.
 
-Simply add the following code snippet to any page:
+Simply add the following code snippet to any page to add comments to your site:
 
 [code-example-start config = {}; title = 'Simple Code Snippet'; code-example-end]
 

@@ -1,4 +1,4 @@
-You can find our Vue library on NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">here</a>.
+To add comments to your website built with Vue, you can find our Vue library on NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">here</a>.
 
 Additionally, a vue-next library is on NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">here</a>
 

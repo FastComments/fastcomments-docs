@@ -1,4 +1,4 @@
-You can find our React Native library on NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">here</a>.
+To add comments to your React Native app, you can find our React Native library on NPM <a href="https://www.npmjs.com/package/fastcomments-react-native" target="_blank">here</a>.
 
 The FastComments React Native commenting widget supports all of the same features of the VanillaJS one - live commenting, sso, and so on.
 

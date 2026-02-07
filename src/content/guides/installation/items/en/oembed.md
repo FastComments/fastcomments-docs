@@ -1,4 +1,4 @@
-Want to add comments to your Notion pages? We have you covered.
+Want to add comments to your Notion pages, Google Sites, or Nimbus Notes? We have you covered.
 
 ### Notion
 
