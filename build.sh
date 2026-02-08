@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Load NVM to ensure consistent Node.js version with production
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 if [ "$PARTIAL_BUILD" != "true" ]; then
   echo "Creating directories..."
   mkdir -p src/static/generated
