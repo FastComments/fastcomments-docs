@@ -56,7 +56,7 @@ export class AppModule { }
 
 Оскільки конфігурація може стати досить складною, ми можемо передати посилання на об'єкт:
 
-[inline-code-attrs-start title = 'Використання - передача об'єкта конфігурації'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Використання - передача обʼєкта конфігурації'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <lib-fastcomments [config]="fastcommentsConfig"></lib-fastcomments>
 [inline-code-end]
