@@ -14,6 +14,8 @@ To use them, create or edit a customization rule and enable the `Enable Ratings 
   - Whether all the questions are required.
 - Show Answers on Comments?
   - Whether to show the rating or rating & sub ratings with each review.
+- Show Results Breakdown After Answering
+  - When enabled, after a user answers a question, an aggregated breakdown of all responses for that page is displayed. This includes average values, distribution bars, and response counts. Supported for Star, NPS, Thumbs, and Slider question types, including sub-questions.
 - Question to Show?
   - The top level question you want to show. Only one is supported today.
 
