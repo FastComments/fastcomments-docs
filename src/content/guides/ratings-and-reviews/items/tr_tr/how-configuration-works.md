@@ -1,25 +1,24 @@
-Most of FastComments is customized via the [Özelleştirme Arayüzü](https://fastcomments.com/auth/my-account/customize-widget). This includes Değerlendirmeler ve İncelemeler.
+Çoğu FastComments, [Özelleştirme Arayüzü](https://fastcomments.com/auth/my-account/customize-widget) aracılığıyla özelleştirilir. Bu, Değerlendirmeler ve İncelemeler'i de içerir.
 
-Once you add questions, they won't be used anywhere yet.
+Soru ekledikten sonra, henüz hiçbir yerde kullanılmayacaklar.
 
-To use them, create or edit a customization rule and enable the `Enable Ratings or Other Questions` option. This will show a few other options:
+Onları kullanmak için bir özelleştirme kuralı oluşturun veya düzenleyin ve `Enable Ratings or Other Questions` seçeneğini etkinleştirin. Bu birkaç diğer seçeneği gösterecektir:
 
-- Style
-  - Vertical or Side-by-Side
-- When to Save?
-  - Should we save the feedback as the user answers questions, or at once at the end when they submit their review?
-- Ask Sub Questions
-  - Whether to show the defined sub questions.
-- Questions Required?
-  - Whether all the questions are required.
-- Show Answers on Comments?
-  - Whether to show the rating or rating & sub ratings with each review.
-- Question to Show?
-  - The top level question you want to show. Only one is supported today.
+- Stil
+  - Dikey veya Yan Yana
+- Ne Zaman Kaydedilsin?
+  - Kullanıcının soruları yanıtlarken geri bildirimi kaydetmeli miyiz, yoksa incelemelerini gönderirken hepsini bir kerede mi kaydetmeliyiz?
+- Alt Soruları Sor
+  - Tanımlı alt soruları gösterip göstermeyeceği.
+- Sorular Zorunlu mu?
+  - Tüm soruların zorunlu olup olmadığı.
+- Yorumlarda Cevapları Göster?
+  - Her incelemeyle birlikte puanı veya puan ve alt puanları gösterip göstermeyeceği.
+- Cevapladıktan Sonra Sonuç Dökümünü Göster
+  - Etkinleştirildiğinde, bir kullanıcı bir soruyu yanıtladıktan sonra o sayfa için tüm yanıtların toplu bir dökümü görüntülenir. Bu ortalama değerleri, dağılım çubuklarını ve yanıt sayılarını içerir. Star, NPS, Thumbs ve Slider soru tipleri için, alt sorular dahil desteklenir.
+- Gösterilecek Soru?
+  - Görüntülemek istediğiniz en üst düzey soru. Bugün yalnızca biri desteklenmektedir.
 
-This configuration is to cater to a couple main use cases (page reactions and also ratings & reviews) as it can be used for both and also simple surveys.
+Bu yapılandırma, hem sayfa tepkileri hem de değerlendirmeler & incelemeler için kullanılabildiği ve aynı zamanda basit anketler için de uygun olduğu için birkaç ana kullanım durumuna hizmet edecek şekilde tasarlanmıştır.
 
-The reason we use the Customization UI is that decoupling this configuration from the questions themselves allows you to define different questions for different sites or different
-pages by customizing the widget configuration which allows you to select either all sites/pages, or a specific domain and page.
-
----
+Özelleştirme Arayüzü'nü kullanma nedenimiz, bu yapılandırmayı sorulardan ayırmanın, widget yapılandırmasını özelleştirerek farklı siteler veya farklı sayfalar için farklı sorular tanımlamanıza olanak vermesidir; bu, tüm siteler/sayfalar veya belirli bir domain ve sayfa arasında seçim yapmanıza izin verir.

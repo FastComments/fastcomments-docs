@@ -1,8 +1,12 @@
-Les composants Ratings & Reviews, faisant partie du module Feedback de FastComments, présentent les fonctionnalités suivantes à souligner :
+---
+Les composants Ratings & Reviews, faisant partie du module FastComments Feedback, présentent les fonctionnalités suivantes qui méritent d'être soulignées :
 
-- Deux dispositions différentes pour les questions - une verticale et une disposition côte à côte (cette dernière montrée au bas de cette page).
-- Un widget de synthèse que vous pouvez placer sur votre site.
-- *À venir en janvier 2024* : résumés d'avis et étiquettes générés par l'IA.
+- Deux mises en page différentes pour les questions : une verticale et une mise en page côte à côte (cette dernière est illustrée au bas de cette page).
+- Un widget de résumé que vous pouvez placer sur votre site.
+- Afficher aux utilisateurs une ventilation des résultats agrégés après qu'ils ont répondu, montrant la répartition de toutes les réponses pour cette page.
+- *Bientôt disponible en janvier 2024* : résumés et étiquettes d'avis basés sur l'IA.
 - Agrégations globales et au fil du temps dans le tableau de bord de rapports.
-- Une API avec laquelle s'intégrer pour enregistrer, récupérer et agréger les retours.
+- Une API pour s'intégrer afin d'enregistrer, récupérer et agréger les retours.
 - La possibilité de personnaliser les questions et sous-questions par domaine ou par page sans modifier le code.
+
+---

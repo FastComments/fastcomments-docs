@@ -1,11 +1,9 @@
----
-Komponente Ratings & Reviews, koje su deo FastComments Feedback modula, imaju sledeće karakteristike koje vredi istaći:
+Komponente Ocene i Recenzije, deo modula FastComments za povratne informacije, imaju sledeće karakteristike koje vredi istaći:
 
-- Two different layouts for questions - a vertical one and a side-by-side layout (the latter shown at bottom of this page).
-- A summary widget you can place on your site.
-- *Dostupno uskoro u januaru 2024.*: Sažeci recenzija zasnovani na AI i tagovi.
-- Ukupne agregacije i agregacije tokom vremena u izveštajnom panelu.
-- An API to integrate with for saving, fetching, and aggregating feedback.
-- Mogućnost prilagođavanja pitanja i pod-pitanja po domenu ili po stranici bez promene koda.
-
----
+- Dva različita rasporeda za pitanja - vertikalni i raspored jedan pored drugog (poslednji je prikazan na dnu ove stranice).
+- Widget za sažetak koji možete postaviti na svoj sajt.
+- Prikaz agregiranog prikaza rezultata korisnicima nakon što odgovore, pokazujući raspodelu svih odgovora za tu stranicu.
+- *Dolazi uskoro u januaru 2024.*: AI zasnovani sažeci recenzija i oznake.
+- Ukupne i vremenske agregacije u izveštajnom panelu.
+- API za integraciju radi snimanja, preuzimanja i agregiranja povratnih informacija.
+- Mogućnost prilagođavanja pitanja i pod-pitanja po domenu ili po stranici bez menjanja koda.

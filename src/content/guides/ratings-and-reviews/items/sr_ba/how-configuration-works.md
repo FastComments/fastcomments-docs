@@ -1,25 +1,25 @@
-Већина FastComments-а се прилагођава преко [Прилагоди кориснички интерфејс](https://fastcomments.com/auth/my-account/customize-widget). Ово укључује Оцјене и рецензије.
+Većina FastComments se može prilagoditi putem [Prilagodi UI](https://fastcomments.com/auth/my-account/customize-widget). Ovo uključuje Ocjene i Recenzije.
 
-Када додате питања, она још неће бити нигдје кориштена.
+Kada dodate pitanja, ona još nisu nigdje korištena.
 
-Да бисте их користили, направите или уредите правило прилагођавања и омогућите опцију `Enable Ratings or Other Questions`. Ово ће показати неколико других опција:
+Da biste ih koristili, kreirajte ili uredite pravilo prilagođavanja i omogućite opciju `Enable Ratings or Other Questions`. Ovo će prikazati nekoliko drugih opcija:
 
 - Style
   - Vertical or Side-by-Side
 - When to Save?
-  - Да ли да сачувамо повратну информацију док корисник одговара на питања, или све одједном на крају када пошаље своју рецензију?
+  - Da li da sačuvamo povratnu informaciju dok korisnik odgovara na pitanja, ili odjednom na kraju kada pošalje svoju recenziju?
 - Ask Sub Questions
-  - Да ли приказати дефинисана под-питања.
+  - Da li prikazati definisana pod-pitanja.
 - Questions Required?
-  - Да ли су сва питања обавезна.
+  - Da li su sva pitanja obavezna.
 - Show Answers on Comments?
-  - Да ли приказати оцјену или оцјену и подоцјене уз сваку рецензију.
+  - Da li prikazati ocjenu ili ocjenu i podocjene uz svaku recenziju.
+- Show Results Breakdown After Answering
+  - Kada je omogućeno, nakon što korisnik odgovori na pitanje, prikazuje se agregirani pregled svih odgovora za tu stranicu. To uključuje prosječne vrijednosti, trake distribucije i broj odgovora. Podržano za Star, NPS, Thumbs, and Slider tipove pitanja, uključujući pod-pitanja.
 - Question to Show?
-  - Главно питање које желите приказати. Тренутно је подржано само једно.
+  - Višlji nivo pitanja koje želite prikazati. Danas je podržano samo jedno.
 
-Ова конфигурација служи за неколико главних сценарија коришћења (реакције на странице и такође оцјене и рецензије) јер се може користити за обе намјене као и за једноставне анкете.
+Ova konfiguracija zadovoljava nekoliko glavnih slučajeva upotrebe (reakcije na stranici i također ocjene i recenzije), jer se može koristiti i za jedno i za drugo, kao i za jednostavne ankete.
 
-Разлог због којег користимо Прилагоди кориснички интерфејс је што раздвајање ове конфигурације од самих питања омогућава да дефинишете различита питања за различите
-странице прилагођавањем конфигурације виџета која вам омогућава да изаберете или све сајтове/странице, или одређени домен и страницу.
-
----
+Razlog zbog kojeg koristimo UI za prilagođavanje je što odvajanje ove konfiguracije od samih pitanja omogućava da definirate različita pitanja za različite sajtove ili različite
+stranice prilagođavanjem konfiguracije widgeta, što vam omogućava da odaberete ili sve sajtove/stranice, ili određeni domen i stranicu.

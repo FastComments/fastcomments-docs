@@ -1,23 +1,24 @@
-Većina FastComments-a se prilagođava putem [Prilagodi UI](https://fastcomments.com/auth/my-account/customize-widget). Ovo uključuje Ocene & Recenzije.
+Većina FastComments-a se prilagođava putem [Prilagodi UI](https://fastcomments.com/auth/my-account/customize-widget). Ovo uključuje Ocene i recenzije.
 
-Kada dodate pitanja, još se nigde neće koristiti.
+Kada dodate pitanja, još neće biti korišćena nigde.
 
-Da biste ih koristili, kreirajte ili uredite pravilo za prilagođavanje i omogućite opciju `Enable Ratings or Other Questions`. Ovo će prikazati nekoliko dodatnih opcija:
+Da biste ih koristili, napravite ili izmenite pravilo prilagođavanja i omogućite opciju `Enable Ratings or Other Questions`. Ovo će prikazati još nekoliko opcija:
 
-- Stil
-  - Vertikalno ili jedno pored drugog
-- Kada sačuvati?
-  - Da li da sačuvamo povratnu informaciju dok korisnik odgovara na pitanja, ili sve odjednom na kraju kada pošalje svoju recenziju?
-- Prikazati podpitanja
-  - Da li prikazati definisana podpitanja.
-- Da li su pitanja obavezna?
-  - Da li su sva pitanja obavezna.
-- Prikazati odgovore uz komentare?
-  - Da li prikazati ocenu ili ocenu i pomoćne ocene uz svaku recenziju.
-- Pitanje za prikaz?
-  - Pitanje višeg nivoa koje želite prikazati. Danas je podržano samo jedno.
+- Style
+  - Vertical or Side-by-Side
+- When to Save?
+  - Should we save the feedback as the user answers questions, or at once at the end when they submit their review?
+- Ask Sub Questions
+  - Whether to show the defined sub questions.
+- Questions Required?
+  - Whether all the questions are required.
+- Show Answers on Comments?
+  - Whether to show the rating or rating & sub ratings with each review.
+- Show Results Breakdown After Answering
+  - When enabled, after a user answers a question, an aggregated breakdown of all responses for that page is displayed. This includes average values, distribution bars, and response counts. Supported for Star, NPS, Thumbs, and Slider question types, including sub-questions.
+- Question to Show?
+  - The top level question you want to show. Only one is supported today.
 
-Ova konfiguracija služi za nekoliko glavnih slučajeva upotrebe (reakcije na stranici i takođe ocene & recenzije) jer se može koristiti za oba, kao i za jednostavne ankete.
+Ova konfiguracija pokriva nekoliko glavnih slučajeva upotrebe (reakcije na stranicama, kao i ocene i recenzije) jer se može koristiti za obe svrhe, ali i za jednostavne ankete.
 
-Razlog zbog kojeg koristimo Interfejs za prilagođavanje je taj što razdvajanje ove konfiguracije od samih pitanja omogućava da definišete različita pitanja za različite sajtove ili različite
-stranice prilagođavanjem konfiguracije widgeta što vam omogućava da izaberete ili sve sajtove/stranice, ili određeni domen i stranicu.
+Razlog zbog kojeg koristimo Customization UI je taj što odvajanje ove konfiguracije od samih pitanja omogućava da definišete različita pitanja za različite sajtove ili različite stranice prilagođavanjem konfiguracije widgeta, koja vam omogućava da izaberete ili sve sajtove/stranice, ili određeni domen i stranicu.

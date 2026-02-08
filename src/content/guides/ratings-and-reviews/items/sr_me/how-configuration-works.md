@@ -1,23 +1,24 @@
-Већина FastComments-а се прилагођава преко [Customize UI](https://fastcomments.com/auth/my-account/customize-widget). Ово укључује Оцјене и Рецензије.
+Većina FastComments-a se podešava putem [Prilagodite UI](https://fastcomments.com/auth/my-account/customize-widget). Ovo uključuje Ocjene i recenzije.
 
-Када додате питања, она још неће бити коришћена нигдје.
+Kada dodate pitanja, ona još neće biti korišćena nigdje.
 
-Да бисте их користили, направите или уредите правило за прилагођавање и омогућите опцију `Enable Ratings or Other Questions`. Ово ће приказати још неколико опција:
+Da biste ih koristili, kreirajte ili uredite pravilo prilagođavanja i omogućite opciju `Enable Ratings or Other Questions`. Ovo će prikazati još nekoliko opcija:
 
-- Стил
-  - Вертикално или једно поред другог
-- Када сачувати?
-  - Да ли да чувамо повратне информације док корисник одговара на питања, или све одједном на крају када пошаље своју рецензију?
-- Приказати под-питања
-  - Да ли приказати дефинисана под-питања.
-- Да ли су питања обавезна?
-  - Да ли су сва питања обавезна.
-- Приказати одговоре уз коментаре?
-  - Да ли приказати оцјену или оцјену и подоцјене уз сваку рецензију.
-- Питање за приказ?
-  - Главно питање које желите приказати. Тренутно је подржано само једно.
+- Stil
+  - Vertikalno ili jedno pored drugog
+- Kada sačuvati?
+  - Da li da sačuvamo povratnu informaciju dok korisnik odgovara na pitanja, ili sve odjednom na kraju kada pošalje svoju recenziju?
+- Postavljati pod-pitanja
+  - Da li prikazati definisana pod-pitanja.
+- Da li su pitanja obavezna?
+  - Da li su sva pitanja obavezna.
+- Prikazivati odgovore uz komentare?
+  - Da li prikazati ocjenu ili ocjenu i podocjene uz svaku recenziju.
+- Prikaz raspodjele rezultata nakon odgovora
+  - Kada je omogućeno, nakon što korisnik odgovori na pitanje, prikazuje se agregirani prikaz svih odgovora za tu stranicu. Ovo uključuje prosječne vrijednosti, trake raspodjele i brojeve odgovora. Podržano za tipove pitanja Zvijezda, NPS, Palac i Klizač, uključujući pod-pitanja.
+- Koje pitanje prikazati?
+  - Pitanje najvišeg nivoa koje želite prikazati. Trenutno je podržano samo jedno.
 
-Ова конфигурација служи за неколико главних случајева употребе (реакције на страници и такође оцјене и рецензије) јер се може користити и за једно и за друго, као и за једноставне анкете.
+Ovo podešavanje je namijenjeno nekoliko glavnih slučajeva upotrebe (reakcije na stranici i također ocjene i recenzije) jer se može koristiti za oboje, kao i za jednostavne ankete.
 
-Разлог због којег користимо Customization UI је тај што раздвајање ове конфигурације од самих питања омогућава да дефинишете различита питања за различите сајтове или различите
-странице прилагођавањем конфигурације виџета, што вам омогућава да одаберете или све сајтове/странице, или одређени домен и страницу.
+Razlog zbog kojeg koristimo Customization UI je što odvajanje ove konfiguracije od samih pitanja omogućava da definišete različita pitanja za različite sajtove ili različite stranice prilagođavanjem konfiguracije widgeta, što vam omogućava da izaberete ili sve sajtove/stranice, ili specifičnu domenu i stranicu.
