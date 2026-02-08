@@ -20,6 +20,9 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
+  echo "Rebuilding native modules..."
+  npm rebuild better-sqlite3
+
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
   # Check for missing translations
