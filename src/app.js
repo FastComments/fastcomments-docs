@@ -172,8 +172,20 @@ const index = {};
     }
 
     sitemapXml += '</urlset>\n';
+
+    const sitemapUrlCount = allLocaleKeys.length + guides.filter(g => !g.id.startsWith('code-')).length * allLocaleKeys.length;
+    const sitemapBytes = Buffer.byteLength(sitemapXml, 'utf8');
+    const MAX_SITEMAP_URLS = 50000;
+    const MAX_SITEMAP_BYTES = 50 * 1024 * 1024; // 50MB
+    if (sitemapUrlCount > MAX_SITEMAP_URLS) {
+        throw new Error(`Sitemap exceeds max URL count: ${sitemapUrlCount} > ${MAX_SITEMAP_URLS}`);
+    }
+    if (sitemapBytes > MAX_SITEMAP_BYTES) {
+        throw new Error(`Sitemap exceeds max file size: ${(sitemapBytes / 1024 / 1024).toFixed(1)}MB > 50MB`);
+    }
+
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
-    console.log(`Sitemap generated in ${Date.now() - sitemapStartTime}ms with entries for ${guides.filter(g => !g.id.startsWith('code-')).length} guides across ${allLocaleKeys.length} locales`);
+    console.log(`Sitemap generated in ${Date.now() - sitemapStartTime}ms with ${sitemapUrlCount} URLs (${(sitemapBytes / 1024 / 1024).toFixed(1)}MB)`);
 
     await dispose();
 
