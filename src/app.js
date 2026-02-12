@@ -3,8 +3,7 @@ const startTime = Date.now();
 const fs = require('fs');
 const path = require('path');
 const shortid = require('shortid');
-const {getGuides} = require('./guides');
-const {buildGuide} = require('./guides');
+const {getGuides, buildGuide, createGuideLink} = require('./guides');
 const {getCompiledTemplate} = require('./utils');
 const {dispose} = require('./guide-dynamic-content-transformer');
 const guideOrder = require('./content/guides/guide-order.json');
@@ -130,6 +129,51 @@ const index = {};
             t
         }), 'utf8');
     }
+
+    // Generate sitemap.xml
+    console.log('Generating sitemap.xml...');
+    const sitemapStartTime = Date.now();
+    const BASE_URL = 'https://docs.fastcomments.com/';
+    const allLocaleKeys = Object.keys(locales);
+
+    let sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    sitemapXml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+    sitemapXml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+
+    // Homepage entries
+    for (const locale of allLocaleKeys) {
+        const isDefault = locale === defaultLocale;
+        const filename = isDefault ? 'index.html' : `index-${locale}.html`;
+        sitemapXml += '  <url>\n';
+        sitemapXml += `    <loc>${BASE_URL}${filename}</loc>\n`;
+        for (const altLocale of allLocaleKeys) {
+            const altIsDefault = altLocale === defaultLocale;
+            const altFilename = altIsDefault ? 'index.html' : `index-${altLocale}.html`;
+            sitemapXml += `    <xhtml:link rel="alternate" hreflang="${locales[altLocale].hreflang}" href="${BASE_URL}${altFilename}"/>\n`;
+        }
+        sitemapXml += '  </url>\n';
+    }
+
+    // Guide page entries
+    for (const guide of guides) {
+        if (guide.id.startsWith('code-')) {
+            continue;
+        }
+        for (const locale of allLocaleKeys) {
+            const guideUrl = createGuideLink(guide.id, locale);
+            sitemapXml += '  <url>\n';
+            sitemapXml += `    <loc>${BASE_URL}${guideUrl}</loc>\n`;
+            for (const altLocale of allLocaleKeys) {
+                const altUrl = createGuideLink(guide.id, altLocale);
+                sitemapXml += `    <xhtml:link rel="alternate" hreflang="${locales[altLocale].hreflang}" href="${BASE_URL}${altUrl}"/>\n`;
+            }
+            sitemapXml += '  </url>\n';
+        }
+    }
+
+    sitemapXml += '</urlset>\n';
+    fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
+    console.log(`Sitemap generated in ${Date.now() - sitemapStartTime}ms with entries for ${guides.filter(g => !g.id.startsWith('code-')).length} guides across ${allLocaleKeys.length} locales`);
 
     await dispose();
 
