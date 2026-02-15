@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -18,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // продемонстрирован необязательный параметр
+  sendInviteEmail: true, // необязательный параметр для примера
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

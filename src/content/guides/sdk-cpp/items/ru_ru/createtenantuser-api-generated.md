@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantUserBody | CreateTenantUserBody | Да |  |
@@ -11,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantUserBody createTenantUserBody;

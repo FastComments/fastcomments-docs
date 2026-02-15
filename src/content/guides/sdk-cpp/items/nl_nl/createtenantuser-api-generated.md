@@ -5,9 +5,9 @@
 | tenantId | string | Ja |  |
 | createTenantUserBody | CreateTenantUserBody | Ja |  |
 
-## Respons
+## Antwoord
 
-Geeft terug: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUser_200_response.h)
+Retourneert: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUser_200_response.h)
 
 ## Voorbeeld
 
@@ -27,3 +27,5 @@ api->createTenantUser(tenantId, createTenantUserBody)
         }
     });
 [inline-code-end]
+
+---

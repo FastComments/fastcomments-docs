@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Richiesto | Descrizione |
 |------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | createTenantUserBody | CreateTenantUserBody | Sì |  |

@@ -5,7 +5,7 @@
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Ne |  |
 
-## Response
+## Odgovor
 
 Vraća: [`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
 

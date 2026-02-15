@@ -1,7 +1,7 @@
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createTenantUserBody | CreateTenantUserBody | 否 |  |
 

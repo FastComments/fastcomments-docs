@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createTenantUserBody | CreateTenantUserBody | כן |  |

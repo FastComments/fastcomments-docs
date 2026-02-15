@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createTenantUserBody | CreateTenantUserBody | Ναι |  |
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // προαιρετική παράμετρος (παράδειγμα)
+  sendInviteEmail: true, // προαιρετική παράμετρος για επίδειξη
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

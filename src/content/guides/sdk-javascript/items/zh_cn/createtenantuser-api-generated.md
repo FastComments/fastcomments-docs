@@ -1,8 +1,7 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createTenantUserBody | CreateTenantUserBody | 是 |  |
 

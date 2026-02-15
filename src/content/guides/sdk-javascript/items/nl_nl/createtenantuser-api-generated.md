@@ -5,7 +5,7 @@
 | tenantId | string | Ja |  |
 | createTenantUserBody | CreateTenantUserBody | Ja |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 

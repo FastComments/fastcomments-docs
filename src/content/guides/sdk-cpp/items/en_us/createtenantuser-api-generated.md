@@ -27,5 +27,3 @@ api->createTenantUser(tenantId, createTenantUserBody)
         }
     });
 [inline-code-end]
-
----

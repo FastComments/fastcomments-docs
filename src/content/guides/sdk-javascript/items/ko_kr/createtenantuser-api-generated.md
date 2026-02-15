@@ -1,7 +1,7 @@
 ---
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantUserBody | CreateTenantUserBody | 예 |  |

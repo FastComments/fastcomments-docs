@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | Так |  |
+| createTenantUserBody | CreateTenantUserBody | Так |  |
 
 ## Відповідь
 
@@ -11,7 +11,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {

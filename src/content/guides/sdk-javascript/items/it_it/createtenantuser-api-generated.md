@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | createTenantUserBody | CreateTenantUserBody | Sì |  |
 
@@ -11,7 +11,7 @@ Restituisce: [`CreateTenantUser200Response`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Esempio'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {

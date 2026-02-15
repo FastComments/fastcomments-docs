@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Döner: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 
 ## Örnek
 
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // isteğe bağlı parametre örneği
+  sendInviteEmail: true, // isteğe bağlı parametre gösterimi
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

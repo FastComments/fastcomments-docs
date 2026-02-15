@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantUserBody | CreateTenantUserBody | Нет |  |
@@ -11,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let createBody = CreateTenantUserBody(
   email = "jane.doe@acmepub.com",

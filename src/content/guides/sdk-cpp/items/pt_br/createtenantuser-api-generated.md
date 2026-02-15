@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Sim |  |
 | createTenantUserBody | CreateTenantUserBody | Sim |  |
 

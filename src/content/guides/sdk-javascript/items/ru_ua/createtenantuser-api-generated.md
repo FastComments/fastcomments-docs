@@ -1,6 +1,7 @@
+---
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Type | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantUserBody | CreateTenantUserBody | Да |  |
@@ -11,15 +12,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // демонстрируется необязательный параметр
+  sendInviteEmail: true, // демонстрация необязательного параметра
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]
+
+---

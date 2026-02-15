@@ -11,7 +11,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'createTenantUser Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantUserBody createTenantUserBody;

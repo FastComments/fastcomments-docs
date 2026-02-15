@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|-------------|-------------|
+| Name | Type | Erforderlich | Beschreibung |
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | createTenantUserBody | CreateTenantUserBody | Nein |  |
 

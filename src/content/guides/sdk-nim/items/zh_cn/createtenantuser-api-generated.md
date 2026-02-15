@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createTenantUserBody | CreateTenantUserBody | 否 |  |
 
 ## 响应
 
-返回：[`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
+返回: [`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
 
 ## 示例
 

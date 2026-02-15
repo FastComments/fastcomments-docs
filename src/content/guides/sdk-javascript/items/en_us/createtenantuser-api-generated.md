@@ -23,5 +23,3 @@ const createTenantUserBody: CreateTenantUserBody = {
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]
-
----

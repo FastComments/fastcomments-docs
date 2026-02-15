@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obvezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Ne |  |
@@ -11,7 +11,7 @@ Vraća: [`Option[CreateTenantUser_200_response]`](https://github.com/FastComment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let createBody = CreateTenantUserBody(
   email = "jane.doe@acmepub.com",

@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // optionaler Parameter zur Demonstration
+  sendInviteEmail: true, // optionaler Parameter demonstriert
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

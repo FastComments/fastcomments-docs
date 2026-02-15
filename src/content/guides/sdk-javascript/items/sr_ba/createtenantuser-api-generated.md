@@ -1,9 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | Da |  |
+| createTenantUserBody | CreateTenantUserBody | Da |  |
 
 ## Odgovor
 
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // primjer neobaveznog parametra
+  sendInviteEmail: true, // prikazan opcioni parametar
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

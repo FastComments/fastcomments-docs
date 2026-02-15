@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | createTenantUserBody | CreateTenantUserBody | Oui |  |
 
 ## Réponse
 
-Retourne: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Retourne : [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 
 ## Exemple
 

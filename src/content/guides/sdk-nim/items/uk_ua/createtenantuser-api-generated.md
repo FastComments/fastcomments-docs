@@ -11,7 +11,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад виклику createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let createBody = CreateTenantUserBody(
   email = "jane.doe@acmepub.com",

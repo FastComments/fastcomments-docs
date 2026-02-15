@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createTenantUserBody | CreateTenantUserBody | Hayır |  |

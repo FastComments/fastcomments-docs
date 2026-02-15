@@ -1,11 +1,11 @@
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantUserBody | CreateTenantUserBody | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
 

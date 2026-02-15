@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantUserBody | CreateTenantUserBody | Да |  |

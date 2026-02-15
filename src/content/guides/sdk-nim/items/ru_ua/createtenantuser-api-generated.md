@@ -1,9 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | No |  |
+| tenantId | string | Да |  |
+| createTenantUserBody | CreateTenantUserBody | Нет |  |
 
 ## Ответ
 
@@ -23,3 +23,5 @@ if response.isSome:
   let createdUser = response.get()
   echo createdUser
 [inline-code-end]
+
+---

@@ -1,9 +1,9 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | はい |  |
+| createTenantUserBody | CreateTenantUserBody | はい |  |
 
 ## レスポンス
 
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // オプションのパラメータを示しています
+  sendInviteEmail: true, // 任意パラメータの例
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

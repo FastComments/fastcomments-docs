@@ -1,13 +1,14 @@
+---
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Da |  |
 
 ## Odgovor
 
-Vrne: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUser_200_response.h)
+Vrača: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUser_200_response.h)
 
 ## Primer
 

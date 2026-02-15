@@ -1,11 +1,11 @@
 ## Parametri
 
-| Ime | Vrsta | Zahtevano | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`Option[CreateTenantUser_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user200response.nim)
 

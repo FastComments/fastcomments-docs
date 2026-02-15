@@ -1,3 +1,4 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -11,7 +12,7 @@ Zwraca: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastco
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantUserBody createTenantUserBody;

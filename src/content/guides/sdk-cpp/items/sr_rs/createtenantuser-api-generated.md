@@ -11,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantUserBody createTenantUserBody;
@@ -27,3 +27,5 @@ api->createTenantUser(tenantId, createTenantUserBody)
         }
     });
 [inline-code-end]
+
+---

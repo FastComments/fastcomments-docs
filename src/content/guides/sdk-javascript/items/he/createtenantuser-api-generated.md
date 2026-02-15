@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createTenantUserBody | CreateTenantUserBody | כן |  |
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // פרמטר אופציונלי מוצג
+  sendInviteEmail: true, // פרמטר אופציונלי - להדגמה
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

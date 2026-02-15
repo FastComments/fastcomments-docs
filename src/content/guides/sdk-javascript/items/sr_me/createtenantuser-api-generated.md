@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враća: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Враћа: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 
 ## Пример
 
@@ -17,7 +17,7 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  sendInviteEmail: true, // опциони параметар демонстриран
+  sendInviteEmail: true, // демонстриран опционални параметар
   locale: "en-US",
   metadata: { department: "Customer Success" }
 };

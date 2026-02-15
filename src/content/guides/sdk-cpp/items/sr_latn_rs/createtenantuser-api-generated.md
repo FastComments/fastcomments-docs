@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Da |  |
@@ -11,7 +11,7 @@ Vraća: [`CreateTenantUser_200_response`](https://github.com/FastComments/fastco
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantUserBody createTenantUserBody;

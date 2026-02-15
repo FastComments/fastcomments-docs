@@ -11,7 +11,7 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'createTenantUser Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantUserBody | CreateTenantUserBody | 예 |  |
