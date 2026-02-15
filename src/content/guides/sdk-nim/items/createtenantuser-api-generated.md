@@ -14,7 +14,7 @@ Returns: [`Option[CreateTenantUser_200_response]`](https://github.com/FastCommen
 [inline-code-attrs-start title = 'createTenantUser Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
-let createUserBody = CreateTenantUserBody(email = "alice.johnson@acme.com", displayName = "Alice Johnson", roles = @["moderator"], enabled = true)
+let createUserBody = CreateTenantUserBody(email = "alice.johnson@acme.com", displayName = "Alice Johnson", enabled = true)
 let (response, httpResponse) = client.createTenantUser(tenantId = tenantId, createTenantUserBody = createUserBody)
 if response.isSome:
   let user = response.get()

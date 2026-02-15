@@ -18,7 +18,6 @@ const createTenantUserBody: CreateTenantUserBody = {
   email: "maria.lopez@acmecorp.com",
   givenName: "María",
   familyName: "López",
-  roles: ["comment_moderator"],
   sendWelcomeEmail: true // optional parameter demonstrated
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);

@@ -17,8 +17,6 @@ const tenantId: string = "tenant_9a8c7e4b";
 const createTenantUserBody: CreateTenantUserBody = {
   email: "julia.smith@acme-corp.com",
   displayName: "Julia Smith",
-  role: "moderator",
-  password: "Str0ngP@ssword!23",
   sendInviteEmail: true, // опционални параметар демонстриран
   locale: "en-US",
   metadata: { department: "Customer Success" }

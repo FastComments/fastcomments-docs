@@ -17,7 +17,6 @@ utility::string_t tenantId = U("my-tenant-123");
 auto bodyPtr = std::make_shared<CreateTenantUserBody>();
 bodyPtr->email = utility::string_t(U("new.user@example.com"));
 bodyPtr->name = utility::string_t(U("Jane Doe"));
-bodyPtr->role = utility::string_t(U("member"));
 bodyPtr->sendInvite = boost::optional<bool>(true);
 api->createTenantUser(tenantId, *bodyPtr).then([](std::shared_ptr<CreateTenantUser_200_response> resp){
     (void)resp;
