@@ -182,7 +182,7 @@
     {
       "id": "lib-android",
       "name": "Android Library",
-      "pageHeader": "FastComments Android Library",
+      "pageHeader": "Add Comments to Your Android App",
       "repo": "https://github.com/FastComments/fastcomments-android",
       "branch": "main",
       "language": "kotlin",
@@ -192,7 +192,7 @@
     {
       "id": "lib-react-native",
       "name": "React Native Library",
-      "pageHeader": "FastComments React Native Library",
+      "pageHeader": "Add Comment Widgets to Your React Native App",
       "repo": "https://github.com/FastComments/fastcomments-react-native",
       "branch": "main",
       "language": "javascript",
@@ -202,7 +202,7 @@
     {
       "id": "lib-react-native-sdk",
       "name": "React Native SDK",
-      "pageHeader": "FastComments React Native SDK",
+      "pageHeader": "Add Comments to Your React Native App",
       "repo": "https://github.com/FastComments/fastcomments-react-native-sdk",
       "branch": "main",
       "language": "javascript",
@@ -212,7 +212,7 @@
     {
       "id": "lib-angular",
       "name": "Angular Library",
-      "pageHeader": "FastComments Angular Library",
+      "pageHeader": "Add Comments to Your Angular App",
       "repo": "https://github.com/FastComments/fastcomments-angular",
       "branch": "main",
       "language": "typescript",
@@ -222,7 +222,7 @@
     {
       "id": "lib-react",
       "name": "React Library",
-      "pageHeader": "FastComments React Library",
+      "pageHeader": "Add Comments to Your React App",
       "repo": "https://github.com/FastComments/fastcomments-react",
       "branch": "master",
       "language": "javascript",
@@ -232,7 +232,7 @@
     {
       "id": "lib-vue",
       "name": "Vue 2 Library",
-      "pageHeader": "FastComments Vue 2 Library",
+      "pageHeader": "Add Comments to Your Vue 2 App",
       "repo": "https://github.com/FastComments/fastcomments-vue",
       "branch": "master",
       "language": "javascript",
@@ -242,7 +242,7 @@
     {
       "id": "lib-vue-next",
       "name": "Vue 3 Library",
-      "pageHeader": "FastComments Vue 3 Library",
+      "pageHeader": "Add Comments to Your Vue 3 App",
       "repo": "https://github.com/FastComments/fastcomments-vue-next",
       "branch": "main",
       "language": "javascript",
@@ -252,12 +252,22 @@
     {
       "id": "lib-svelte",
       "name": "Svelte Library",
-      "pageHeader": "FastComments Svelte Library",
+      "pageHeader": "Add Comments to Your Svelte App",
       "repo": "https://github.com/FastComments/fastcomments-svelte",
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
       "description": "FastComments commenting widgets for Svelte"
+    },
+    {
+      "id": "lib-gatsby",
+      "name": "GatsbyJS Library",
+      "pageHeader": "Add Comments to Your GatsbyJS Site",
+      "repo": "https://github.com/FastComments/fastcomments-gatsbyjs-example",
+      "branch": "master",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "Example GatsbyJS site with FastComments setup"
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
