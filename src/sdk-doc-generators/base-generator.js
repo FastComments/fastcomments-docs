@@ -188,9 +188,13 @@ class BaseDocGenerator {
             // Remove trailing .git from repo URL if present
             const cleanRepoUrl = repoUrl.replace(/\.git$/, '');
 
-            // For images, use raw.githubusercontent.com so they render inline
+            // For images, copy from checkout to static dir and use local path
             if (isImage) {
-                // Convert https://github.com/User/Repo to https://raw.githubusercontent.com/User/Repo/branch/path
+                const localPath = this.copyImageToStatic(normalizedPath);
+                if (localPath) {
+                    return `![${text}](${localPath})`;
+                }
+                // Fallback to GitHub raw URL if local copy fails
                 const rawUrl = cleanRepoUrl.replace('https://github.com/', 'https://raw.githubusercontent.com/');
                 const absoluteUrl = `${rawUrl}/${branch}/${normalizedPath}`;
                 return `![${text}](${absoluteUrl})`;
@@ -201,6 +205,31 @@ class BaseDocGenerator {
 
             return `[${text}](${absoluteUrl})`;
         });
+    }
+
+    /**
+     * Copy an image from the repo checkout to the static images directory
+     * @param {string} repoRelativePath - Path relative to repo root (e.g., example/screenshots/skin-erebus.PNG)
+     * @returns {string|null} - Local URL path for the image, or null if copy failed
+     */
+    copyImageToStatic(repoRelativePath) {
+        const srcPath = path.join(this.repoPath, repoRelativePath);
+        if (!fs.existsSync(srcPath)) {
+            console.warn(`Image not found in repo checkout: ${srcPath}`);
+            return null;
+        }
+
+        // Create a unique filename: sdk-id--flattened-path (e.g., lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
+        const flatName = this.sdk.id + '--' + repoRelativePath.replace(/\//g, '-');
+        const destDir = path.join(__dirname, '..', 'static', 'generated', 'images', 'sdk-images');
+        const destPath = path.join(destDir, flatName);
+
+        if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, { recursive: true });
+        }
+
+        fs.copyFileSync(srcPath, destPath);
+        return `images/sdk-images/${flatName}`;
     }
 }
 
