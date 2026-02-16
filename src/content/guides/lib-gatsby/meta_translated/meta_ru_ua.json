@@ -1,0 +1,18 @@
+{
+  "name": "Библиотека GatsbyJS",
+  "pageHeader": "Добавьте комментарии на свой сайт GatsbyJS",
+  "itemsOrdered": [
+    {
+      "name": "🚀 Быстрый старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Примеры",
+      "file": "examples-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    }
+  ]
+}

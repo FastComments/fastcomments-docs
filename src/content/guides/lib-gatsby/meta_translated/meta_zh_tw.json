@@ -1,0 +1,18 @@
+{
+  "name": "GatsbyJS 函式庫",
+  "pageHeader": "在你的 GatsbyJS 網站新增評論",
+  "itemsOrdered": [
+    {
+      "name": "🚀 快速開始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "範例",
+      "file": "examples-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    }
+  ]
+}

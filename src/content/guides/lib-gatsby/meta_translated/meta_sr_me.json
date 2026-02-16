@@ -1,0 +1,18 @@
+{
+  "name": "GatsbyJS библиотека",
+  "pageHeader": "Додајте коментаре на ваш GatsbyJS сајт",
+  "itemsOrdered": [
+    {
+      "name": "🚀 Брзи почетак",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Примери",
+      "file": "examples-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    }
+  ]
+}

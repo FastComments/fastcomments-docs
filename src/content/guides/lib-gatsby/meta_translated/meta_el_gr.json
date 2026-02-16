@@ -1,0 +1,18 @@
+{
+  "name": "Βιβλιοθήκη GatsbyJS",
+  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας GatsbyJS",
+  "itemsOrdered": [
+    {
+      "name": "🚀 Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Παραδείγματα",
+      "file": "examples-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    }
+  ]
+}

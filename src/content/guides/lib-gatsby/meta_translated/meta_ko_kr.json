@@ -1,0 +1,18 @@
+{
+  "name": "GatsbyJS 라이브러리",
+  "pageHeader": "GatsbyJS 사이트에 댓글 추가하기",
+  "itemsOrdered": [
+    {
+      "name": "🚀 빠른 시작",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "예제",
+      "file": "examples-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    }
+  ]
+}
