@@ -1,9 +1,9 @@
 #### Skin: Erebus
-![Skin: Erebus](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/screenshots/skin-erebus.PNG)
+![Skin: Erebus](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-erebus.PNG)
 #### Skin: Default
-![Skin: Default](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/screenshots/skin-default.PNG)
+![Skin: Default](images/sdk-images/lib-react-native-sdk--example-screenshots-skin-default.PNG)
 #### Native WYSIWYG Editor with Image Support!
-![Native WYSIWYG Editor with Image Support](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/screenshots/native-wysiwyg.PNG)
+![Native WYSIWYG Editor with Image Support](images/sdk-images/lib-react-native-sdk--example-screenshots-native-wysiwyg.PNG)
 
 ### Rich Text Editor
 
