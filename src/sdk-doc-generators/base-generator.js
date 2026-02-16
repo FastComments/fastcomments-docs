@@ -153,10 +153,10 @@ class BaseDocGenerator {
      * @returns {string} - Markdown with converted links
      */
     convertRelativeLinks(markdown, repoUrl, branch, basePath = '') {
-        // Regex to match markdown links: [text](url)
-        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        // Regex to match markdown links and images: ![alt](url) or [text](url)
+        const linkRegex = /(!?)\[([^\]]+)\]\(([^)]+)\)/g;
 
-        return markdown.replace(linkRegex, (match, text, url) => {
+        return markdown.replace(linkRegex, (match, isImage, text, url) => {
             // Skip absolute URLs and root-relative paths
             if (url.startsWith('http://') ||
                 url.startsWith('https://') ||
@@ -168,7 +168,7 @@ class BaseDocGenerator {
             if (url.startsWith('#')) {
                 const anchor = url.substring(1);
                 const sanitizedAnchor = this.sanitizeFilename(anchor) + '-readme-generated';
-                return `[${text}](#${sanitizedAnchor})`;
+                return `${isImage}[${text}](#${sanitizedAnchor})`;
             }
 
             // This is a relative link - convert it
@@ -185,9 +185,18 @@ class BaseDocGenerator {
             // Normalize the path (remove ./ and resolve ../)
             const normalizedPath = path.posix.normalize(resolvedPath);
 
-            // Build the absolute GitHub URL
             // Remove trailing .git from repo URL if present
             const cleanRepoUrl = repoUrl.replace(/\.git$/, '');
+
+            // For images, use raw.githubusercontent.com so they render inline
+            if (isImage) {
+                // Convert https://github.com/User/Repo to https://raw.githubusercontent.com/User/Repo/branch/path
+                const rawUrl = cleanRepoUrl.replace('https://github.com/', 'https://raw.githubusercontent.com/');
+                const absoluteUrl = `${rawUrl}/${branch}/${normalizedPath}`;
+                return `![${text}](${absoluteUrl})`;
+            }
+
+            // Build the absolute GitHub URL for regular links
             const absoluteUrl = `${cleanRepoUrl}/blob/${branch}/${normalizedPath}`;
 
             return `[${text}](${absoluteUrl})`;
