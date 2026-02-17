@@ -35,8 +35,10 @@ interface DomainConfigDKIM {
     domainName: string
     /** The DKIM key selector to use. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** The public key, in PEM format. Returned in GET responses. **/
+    publicKey: string
+    /** @deprecated No longer returned in API responses. Accepted on write for backwards compatibility. **/
+    privateKey?: string
 }
 [inline-code-end]
 
