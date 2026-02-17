@@ -1,28 +1,33 @@
-Pri FastComments vemo, da že tako prejemate dovolj obvestil. Zaradi tega sprejemamo nekatere ukrepe za omejitev obvestil, ki jih uporabniki prejmejo, hkrati pa jih ohranjamo v stiku s svojimi skupnostmi. Prav tako želimo obveščati skrbnike in moderatorje ter jih opozoriti, kadar je treba ukrepati.
+---
+V FastComments vemo, da že prejemate dovolj obvestil. Zaradi tega sprejemamo ukrepe za omejevanje obvestil, ki jih prejmejo uporabniki, hkrati pa jih ohranjamo v stiku z njihovimi skupnostmi. Prav tako želimo, da so skrbniki in moderatorji obveščeni ter vedo, kdaj je treba ukrepati.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### Poslali bomo obvestila za naslednje dogodke za skrbnike in moderatorje:
 
-- Povzetek skupnosti (frekvenca nastavljiva).
-- Zahteve za pomoč skupnosti in opomniki.
-- Novi komentarji v tej uri.
+- Povzetek skupnosti (pogostost nastavljiva).
+- Zahteve za pomoč v skupnosti in opomniki.
+- Novi komentarji.
 
-#### For Commenters:
+#### Za komentatorje:
 
-- Ko vam kdo odgovori na komentar (preko e-pošte).
-- Ko ste omenjeni (v aplikaciji in prek e-pošte).
-- Ko kdo odgovori v isti niti (v aplikaciji in prek e-pošte).
-- Ko kdo odgovori na podkomentar v isti niti (v aplikaciji in prek e-pošte).
-- Ko kdo odgovori na strani, na katero ste naročeni (v aplikaciji in prek e-pošte).
-- Ko uporabnik komentira prvič (vendar ne z SSO).
-- Ko uporabnik pusti komentar v seji, ki ni preverjena (vendar ne z SSO).
-  - V tem primeru ne pošiljamo več potrditvenih e-poštnih sporočil. Pošljemo le prvo, ki bo potrdilo vso dejavnost v isti seji.
+- Ko vam nekdo odgovori na vaš komentar (prek e-pošte).
+- Ko ste omenjeni (obvestilo v aplikaciji in po e-pošti).
+- Ko nekdo odgovori v isti razpravi (obvestilo v aplikaciji in po e-pošti).
+- Ko nekdo odgovori na podkomentar v isti razpravi (obvestilo v aplikaciji in po e-pošti).
+- Ko nekdo odgovori na stran, na katero ste naročeni (obvestilo v aplikaciji in po e-pošti, pogostost nastavljiva za vsako naročnino: vsako minuto, vsako uro ali dnevno).
+- Ko uporabnik prvič komentira (razen pri SSO).
+- Ko uporabnik pusti komentar v seji, ki ni preverjena (razen pri SSO).
+  - Ne pošiljamo več potrditvenih e-poštnih sporočil v tem primeru. Samo prvega, ki bo potrdil vse dejavnosti v isti seji.
 
-#### ...and finally for administrators only:
+#### ...in končno samo za skrbnike:
 
-- Ko so integracije dokončane.
-- Ko so migracije dokončane.
+- Ko so integracije zaključene.
+- Ko so migracije zaključene.
 - Ko so uvozi ali izvozi zaključeni.
-- Ko pride do težav z obračunom.
-- Opomniki ob izteku preizkusnega obdobja.
+- Ko se pojavijo težave z obračunom.
+- Opomniki o koncu preizkusnega obdobja.
 
-Nekatera obvestila se združujejo v serije, da se prepreči množično pošiljanje obvestil uporabnikom. Več o tem v naslednjem poglavju `Notification Types`.
+Nekatera obvestila se združujejo, da se prepreči množično pošiljanje obvestil uporabnikom. Preberite več o tem v naslednjem razdelku `Notification Types`.
+
+
+
+---

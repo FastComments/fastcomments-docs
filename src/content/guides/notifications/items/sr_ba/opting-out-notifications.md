@@ -1,11 +1,11 @@
-Отпријављивање са обавијештења је могуће на више начина. Ако ваш налог управља FastComments.com и није преко SSO, можете подесити своја
-обавештења преко [странице Подешавања обавештења](https://fastcomments.com/auth/my-account/edit-notifications).
+Obavještenja se mogu odjaviti na nekoliko načina. Ako vaš nalog upravlja FastComments.com i nije putem SSO, možete podesiti
+svoja obavještenja preko [Stranica postavki obavještenja](https://fastcomments.com/auth/my-account/edit-notifications).
 
-Овде можете подесити обавештења о одговорима на коментаре и помињањима, сатна обавештења о новим коментарима, и уопште било која обавештења. Ако сте администратор сајта или
-модератор, имаћете овде и опцију да подесите учесталост Digest е-порука.
+Ovdje možete podesiti obavještenja o odgovorima na komentare i pomenima, učestalost obavještenja pretplate (svake minute, na sat, ili dnevno), i bilo koje opšte obavještenje. Ako ste administrator sajta ili
+moderator, imat ćete opciju da ovdje podesite i učestalost Digest e-pošte.
 
-Поред тога, свака е-порука садржи линк за одјаву. За обавештења о одговорима на коментаре, е-порука садржи линк да се **одјавите са обавештења за тај коментар**.
+Dodatno, svaki e-mail sadrži link za odjavu. Za obavještenja o odgovorima na komentare, e-mail sadrži link za **odjavu od obavještenja za taj komentar**.
 
-Обавештења такође имају линк за отписивање како би их искључили, као и одговарајуће хедере у е-поруци.
+Obavještenja će također imati link za odjavu kako bi ih isključili, kao i odgovarajuća zaglavlja e-pošte.
 
-Линкови за отписивање у е-порукама могу бити уклоњени на захтјев за одређеног tenant-а. Поред тога, линк се може прилагодити за SSO или whitelabel интеграције.
+Linkovi za odjavu u e-mailovima mogu biti uklonjeni na zahtjev za određenog tenant-a. Također, link se može prilagoditi za SSO ili whitelabel integracije.

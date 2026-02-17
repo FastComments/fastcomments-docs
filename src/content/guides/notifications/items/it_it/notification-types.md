@@ -1,12 +1,10 @@
----
-Ci sono alcuni tipi di notifiche e canali tramite i quali FastComments invia notifiche:
+Esistono alcuni tipi di notifiche e canali attraverso i quali FastComments invia notifiche:
 
-- Immediati tramite e-mail.
-- Immediati tramite app.
-  - Queste vengono mostrate sotto l'icona a forma di campana delle notifiche.
-- Raggruppate tramite e-mail.
-  - Queste vengono raggruppate su base oraria. Se non c'è nulla da inviare per l'utente in quel lasso di tempo, non inviamo un'e-mail.
-- Programmate tramite e-mail.
-  - Esempi includono il Sommario del Digest della community, che può essere inviato giornalmente, settimanalmente o mensilmente (o disattivato).
-
----
+- Immediato via email.
+  - Le notifiche di risposta a commenti e menzioni vengono inviate ogni minuto.
+- Immediato tramite app.
+  - Questi vengono mostrati sotto l'icona della campanella delle notifiche.
+- Raggruppati via email.
+  - Le notifiche di sottoscrizione alle pagine possono essere configurate, per ogni sottoscrizione, per l'invio ogni minuto, come riepilogo orario o come riepilogo giornaliero. Se non c'è nulla da inviare all'utente in quel periodo di tempo, non inviamo alcuna email.
+- Programmato via email.
+  - Esempi includono il Riepilogo Digest della Community che può essere inviato giornalmente, settimanalmente o mensilmente (o disabilitato).

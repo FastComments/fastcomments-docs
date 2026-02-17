@@ -1,29 +1,32 @@
-At FastComments, ми знаємо, що ви й так вже отримуєте забагато сповіщень. Тому ми вживаємо заходів, щоб обмежити кількість сповіщень, які отримують користувачі, водночас
-тримати їх на зв'язку зі своїми спільнотами. Ми також хочемо тримати адміністраторів і модераторів у курсі подій і повідомляти їх, коли потрібно вжити заходів.
+---
+У FastComments ми знаємо, що ви й так отримуєте забагато сповіщень. Через це ми вдаємося до певних заходів, щоб обмежити кількість сповіщень, які отримують користувачі, при цьому
+тримуючи їх на зв'язку зі своїми спільнотами. Ми також хочемо тримати адміністраторів та модераторів в курсі подій і повідомляти їм, коли потрібно вжити заходів.
 
 #### Ми надсилатимемо сповіщення про такі події для адміністраторів і модераторів:
 
-- Резюме дайджесту спільноти (частота налаштовується).
-- Запити допомоги від спільноти та нагадування.
-- Нові коментарі за останню годину.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
 #### Для коментаторів:
 
-- Коли хтось відповідає на ваш коментар (електронною поштою).
-- Коли вас згадують (повідомлення в додатку та електронною поштою).
-- Коли хтось відповідає в тій самій гілці (повідомлення в додатку та електронною поштою).
-- Коли хтось відповідає на дочірній коментар у тій самій гілці (повідомлення в додатку та електронною поштою).
-- Коли хтось відповідає на сторінці, на яку ви підписані (повідомлення в додатку та електронною поштою).
-- Коли користувач коментує вперше (але не при SSO).
-- Коли користувач залишає коментар у сесії, що не верифікована (але не при SSO).
-  - У цьому випадку ми не надсилаємо кілька листів для верифікації. Тільки перший, який верифікує всю активність у тій самій сесії.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
 #### ...і нарешті тільки для адміністраторів:
 
-- Коли інтеграції завершено.
-- Коли міграції завершено.
-- Коли імпорти або експорти завершено.
-- Коли виникають проблеми з білінгом.
-- Нагадування про завершення пробного періоду.
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
 
-Деякі сповіщення об'єднуються, щоб запобігти масовій розсилці користувачам. Дізнайтеся про це в наступному розділі `Notification Types`.
+Деякі сповіщення групуються, щоб запобігти масовій розсилці користувачам. Learn about this in the next section `Notification Types`.
+
+---

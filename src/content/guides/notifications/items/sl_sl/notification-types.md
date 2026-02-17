@@ -1,9 +1,10 @@
-Obstaja nekaj vrst obvestil in medijev, prek katerih FastComments pošilja obvestila:
+Obstaja nekaj vrst in načinov, preko katerih FastComments pošilja obvestila:
 
-- Takojšnje po e-pošti.
-- Takojšnje v aplikaciji.
+- Takojšnja po e-pošti.
+  - Obvestila o odgovorih na komentarje in omembah se pošiljajo vsako minuto.
+- Takojšnja v aplikaciji.
   - Prikazujejo se pod ikono zvonca za obvestila.
 - Združena po e-pošti.
-  - Združujejo se na vsaki urni osnovi. Če v tem časovnem okviru ni ničesar za poslati uporabniku, e-pošte ne pošljemo.
+  - Obvestila o naročilih strani je mogoče nastaviti za vsako naročnino posebej, da se pošiljajo vsako minuto, kot urni povzetek ali kot dnevni povzetek. Če v tem časovnem obdobju ni ničesar za poslati uporabniku, e-pošte ne pošljemo.
 - Načrtovana po e-pošti.
-  - Primeri vključujejo povzetek skupnosti (Community Digest Summary), ki je lahko poslan dnevno, tedensko ali mesečno (ali pa onemogočen).
+  - Primeri vključujejo Community Digest Summary, ki ga je mogoče pošiljati dnevno, tedensko ali mesečno (ali onemogočiti).

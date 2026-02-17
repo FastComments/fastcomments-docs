@@ -1,25 +1,23 @@
----
-Chez FastComments, nous savons que vous recevez déjà suffisamment de notifications. Pour cette raison, nous prenons certaines mesures afin de limiter les notifications que reçoivent les utilisateurs tout en
-les gardant en contact avec leurs communautés. Nous voulons aussi tenir les administrateurs et les modérateurs informés et leur signaler quand une action est nécessaire.
+Chez FastComments, nous savons que vous recevez déjà suffisamment de notifications. C'est pourquoi nous prenons des mesures pour limiter les notifications reçues par les utilisateurs tout en les gardant en contact avec leurs communautés. Nous voulons aussi tenir les administrateurs et les modérateurs informés et leur indiquer quand une action doit être entreprise.
 
-#### Nous enverrons des notifications pour les événements suivants aux administrateurs et aux modérateurs :
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Résumé du digest communautaire (fréquence configurable).
-- Demandes d'aide communautaire et rappels.
-- Nouveaux commentaires de l'heure.
+- Récapitulatif communautaire (fréquence configurable).
+- Demandes d'aide de la communauté et rappels.
+- Nouveaux commentaires.
 
-#### Pour les commentateurs :
+#### For Commenters:
 
 - Lorsqu'une personne répond à votre commentaire (par courriel).
 - Lorsque vous êtes mentionné (notification dans l'application et par courriel).
 - Lorsqu'une personne répond dans le même fil (notification dans l'application et par courriel).
 - Lorsqu'une personne répond à un commentaire enfant dans le même fil (notification dans l'application et par courriel).
-- Lorsqu'une personne répond sur une page à laquelle vous êtes abonné (notification dans l'application et par courriel).
+- Lorsqu'une personne répond à une page à laquelle vous êtes abonné (notification dans l'application et par courriel, fréquence configurable par abonnement : chaque minute, toutes les heures ou quotidiennement).
 - Lorsqu'un utilisateur commente pour la première fois (mais pas avec SSO).
-- Lorsqu'un utilisateur laisse un commentaire dans une session non vérifiée (mais pas avec SSO).
-  - Nous n'envoyons pas plusieurs courriels de vérification dans ce cas. Seulement le premier, qui vérifiera toute l'activité de la même session.
+- Lorsqu'un utilisateur laisse un commentaire pendant une session non vérifiée (mais pas avec SSO).
+  - Nous n'envoyons pas plusieurs courriels de vérification dans ce cas. Seul le premier sera envoyé, et il vérifiera toute l'activité de la même session.
 
-#### ...et enfin uniquement pour les administrateurs :
+#### ...and finally for administrators only:
 
 - Lorsque les intégrations sont terminées.
 - Lorsque les migrations sont terminées.
@@ -27,6 +25,4 @@ les gardant en contact avec leurs communautés. Nous voulons aussi tenir les adm
 - En cas de problèmes de facturation.
 - Rappels de fin d'essai.
 
-Certaines notifications sont groupées afin d'éviter l'envoi massif de notifications aux utilisateurs. Apprenez-en davantage à ce sujet dans la section suivante `Notification Types`.
-
----
+Certaines notifications sont regroupées par lot pour éviter l'envoi massif de notifications aux utilisateurs. En savoir plus dans la section suivante `Notification Types`.

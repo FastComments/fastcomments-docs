@@ -1,11 +1,11 @@
-Je kunt je afmelden voor meldingen op verschillende manieren. Als je account wordt beheerd door FastComments.com en niet via SSO, kun je je
+Meldingen kunnen op verschillende manieren worden uitgeschakeld. Als uw account wordt beheerd door FastComments.com en niet via SSO, kunt u uw
 meldingen configureren via de [Meldingsinstellingen-pagina](https://fastcomments.com/auth/my-account/edit-notifications).
 
-Hier kun je meldingen voor reacties op opmerkingen en vermeldingen, uurlijkse meldingen voor nieuwe opmerkingen en in het algemeen alle meldingen configureren. Als je sitebeheerder of
-moderator bent heb je hier ook de optie om de frequentie van de samenvattingsmail te configureren.
+Hier kunt u meldingen bij reacties en vermeldingen, de frequentie van abonnementsmeldingen (elke minuut, per uur of dagelijks) en meldingen in het algemeen configureren. Als u sitebeheerder of
+moderator bent, heeft u hier ook de optie om de frequentie van de Digest-e-mail te configureren.
 
-Daarnaast bevat elke e-mail een uitschrijflink. Voor meldingen over reacties bevat de e-mail een link om **je af te melden voor meldingen voor die opmerking**.
+Bovendien bevat elke e-mail een afmeldlink. Voor meldingen bij reacties bevat de e-mail een link om **u af te melden voor meldingen voor die reactie**.
 
 Meldingen bevatten ook een uitschrijflink om ze uit te schakelen, evenals de juiste e-mailheaders.
 
-Uitschrijflinks in e-mails kunnen op verzoek voor een bepaalde tenant worden verwijderd. Daarnaast kan de link worden aangepast voor SSO- of whitelabelintegraties.
+Uitschrijflinks in e-mails kunnen op verzoek worden verwijderd voor een gegeven tenant. Daarnaast kan de link worden aangepast voor SSO- of whitelabel-integraties.

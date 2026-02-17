@@ -1,12 +1,10 @@
----
-Postoji nekoliko vrsta obavijesti i kanala putem kojih FastComments šalje obavijesti:
+Postoji nekoliko vrsta obavijesti i načina na koje FastComments šalje obavijesti:
 
 - Odmah putem e-pošte.
+  - Obavijesti o odgovoru na komentar i spominjanju šalju se svake minute.
 - Odmah putem aplikacije.
-  - Prikazuju se ispod ikone zvona obavijesti.
+  - Prikazuju se ispod ikone zvona za obavijesti.
 - Grupirano putem e-pošte.
-  - Ove se grupiraju po satu. Ako nema ničega za slanje korisniku u tom vremenskom razdoblju, ne šaljemo e-poštu.
-- Vremenski putem e-pošte.
-  - Primjeri uključuju Sažetak zajednice (Community Digest Summary) koji se može slati dnevno, tjedno ili mjesečno (ili onemogućen).
-
----
+  - Obavijesti o pretplati na stranicu mogu se konfigurirati po pretplati da se šalju svake minute, kao satni sažetak ili kao dnevni sažetak. Ako nema ništa za poslati korisniku u tom vremenskom okviru, ne šaljemo e-poštu.
+- Planirano putem e-pošte.
+  - Primjeri uključuju Sažetak zajednice koji se može slati dnevno, tjedno ili mjesečno (ili onemogućen).
