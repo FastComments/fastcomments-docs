@@ -1,8 +1,5 @@
----
-`Moderators` и `Administrators` се могу додати вашем тенанту.
+`Moderators` i `Administrators` se mogu dodati u vaš tenant.
 
-Подразумевано, када коментаришу, ови корисници ће уз своје коментаре имати ознаке `Moderator` и `Administrator`, редом.
+Prema zadanim postavkama, kada komentarišu, ovi korisnici će imati pored svojih komentara oznake `Moderator` i `Administrator`, redom.
 
-Администратори могу добити дозволе, на пример за управљање другим администраторима.
-
----
+Administratori mogu dobiti detaljne dozvole zasnovane na ulogama (RBAC), na primjer za upravljanje drugim administratorima.

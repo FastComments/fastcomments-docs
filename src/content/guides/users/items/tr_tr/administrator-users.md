@@ -1,6 +1,6 @@
-`Moderators` ve `Administrators` tenant'ınıza eklenebilir.
+`Moderators` ve `Administrators` kiracınıza eklenebilir.
 
-Varsayılan olarak, yorum yaparken bu kullanıcıların sırasıyla `Moderator` ve `Administrator` etiketleri
-yorumlarının yanında görünür.
+Varsayılan olarak, yorum yaptıklarında, bu kullanıcıların `Moderator` ve `Administrator` etiketleri
+yorumlarının yanında sırasıyla bulunacaktır.
 
-Yöneticilere, örneğin diğer yöneticileri yönetme yetkisi gibi izinler verilebilir.
+Yöneticilere ayrıntılı, rol tabanlı izinler (RBAC) verilebilir; örneğin diğer yöneticileri yönetmek için.

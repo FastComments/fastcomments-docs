@@ -1,5 +1,5 @@
-`Moderators` ו-`Administrators` ניתן להוסיף לשוכר שלך.
+ניתן להוסיף את `Moderators` ואת `Administrators` ל-tenant שלך.
 
-כברירת מחדל, בעת פרסום תגובות, למשתמשים הללו יהיו תוויות `Moderator` ו-`Administrator` ליד תגובותיהם, בהתאמה.
+כברירת מחדל, כאשר הם כותבים תגובות, יוצגו למשתמשים אלה התוויות `Moderator` ו-`Administrator` ליד התגובות שלהם, בהתאמה.
 
-ניתן להעניק ל-Administrators הרשאות, למשל לניהול Administrators אחרים.
+ניתן להעניק ל-`Administrators` הרשאות מפורטות, מבוססות תפקידים (RBAC), למשל כדי לנהל מנהלים אחרים.

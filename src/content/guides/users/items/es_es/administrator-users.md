@@ -1,6 +1,6 @@
-`Moderators` y `Administrators` se pueden agregar a su tenant.
+`Moderators` y `Administrators` pueden añadirse a su tenant.
 
-De forma predeterminada, al comentar, estos usuarios tendrán etiquetas `Moderator` y `Administrator` junto
+Por defecto, al comentar, estos usuarios tendrán etiquetas `Moderator` y `Administrator` junto
 a sus comentarios, respectivamente.
 
-A los Administradores se les pueden otorgar permisos, por ejemplo, para gestionar a otros administradores.
+A los Administrators se les pueden otorgar permisos granulares basados en roles (RBAC), por ejemplo para gestionar a otros administrators.

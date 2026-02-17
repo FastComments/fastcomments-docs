@@ -1,6 +1,6 @@
 `Moderators` et `Administrators` peuvent être ajoutés à votre locataire.
 
-Par défaut, lorsqu'ils commentent, ces utilisateurs auront respectivement les étiquettes `Moderator` et `Administrator` à côté de
-leurs commentaires.
+Par défaut, lors de la publication de commentaires, ces utilisateurs auront des étiquettes `Moderator` et `Administrator`
+à côté de leurs commentaires, respectivement.
 
-Des permissions peuvent être accordées aux Administrators, par exemple pour gérer d'autres administrators.
+Les Administrators peuvent se voir attribuer des autorisations granulaires basées sur les rôles (RBAC), par exemple pour gérer d'autres administrators.

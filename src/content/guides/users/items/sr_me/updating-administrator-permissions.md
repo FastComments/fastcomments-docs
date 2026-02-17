@@ -1,3 +1,4 @@
-Dozvole za bilo kojeg `Administrator` mogu se ažurirati u bilo kojem trenutku od strane drugog `Super Admin`.
+Дозволе засноване на улогама (RBAC) за било ког `Administrator` могу се ажурирати у било ком тренутку од стране другог `Super Admin`.
 
-Neće morati da se odjave da bi dobili ažurirane dozvole. Ažurirane dozvole biće primijenjene odmah.
+Неће морати да се одјаве да би добили ажуриране дозволе. Ажуриране дозволе ће се применити
+одмах.

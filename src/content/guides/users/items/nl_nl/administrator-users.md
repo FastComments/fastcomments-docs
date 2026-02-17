@@ -1,5 +1,6 @@
 `Moderators` en `Administrators` kunnen aan uw tenant worden toegevoegd.
 
-Standaard hebben deze gebruikers bij het reageren respectievelijk de labels `Moderator` en `Administrator` naast hun opmerkingen.
+Standaard, wanneer ze reageren, zullen deze gebruikers `Moderator` en `Administrator` labels naast
+hun reacties hebben, respectievelijk.
 
-Beheerders kunnen rechten krijgen, bijvoorbeeld om andere beheerders te beheren.
+Administrators kunnen fijnmazige, op rollen gebaseerde machtigingen (RBAC) worden toegekend, bijvoorbeeld om andere administrators te beheren.

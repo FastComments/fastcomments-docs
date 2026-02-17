@@ -1,5 +1,5 @@
-`Moderators` and `Administrators` können zu Ihrem Mandanten hinzugefügt werden.
+`Moderators` und `Administrators` können zu Ihrem Mandanten hinzugefügt werden.
 
-Standardmäßig haben diese Benutzer beim Kommentieren neben ihren Kommentaren jeweils die Bezeichnungen `Moderator` und `Administrator`.
+Standardmäßig haben diese Benutzer beim Kommentieren jeweils die Bezeichnungen `Moderator` und `Administrator` neben ihren Kommentaren.
 
-Administratoren können Berechtigungen zugewiesen werden, zum Beispiel um andere Administratoren zu verwalten.
+Administratoren können granulare, rollenbasierte Berechtigungen (RBAC) erhalten, zum Beispiel um andere Administratoren zu verwalten.

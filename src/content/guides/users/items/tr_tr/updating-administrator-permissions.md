@@ -1,4 +1,7 @@
-Herhangi bir `Administrator`'ın izinleri başka bir `Super Admin` tarafından istendiği zaman güncellenebilir.
+---
+Herhangi bir `Administrator` için rol tabanlı izinler (RBAC), başka bir `Super Admin` tarafından istediği zaman güncellenebilir.
 
-Güncellenmiş izinleri almak için oturumu kapatmalarına gerek yoktur. Güncellenen izinler uygulanacaktır
+Güncellenmiş izinleri almak için çıkış yapmaları gerekmeyecek. Güncellenen izinler uygulanacaktır
 hemen.
+
+---
