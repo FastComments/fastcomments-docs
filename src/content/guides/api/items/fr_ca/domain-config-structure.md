@@ -2,7 +2,7 @@ Un objet `DomainConfig` représente la configuration d'un domaine pour un locata
 
 La structure de l'objet `DomainConfig` est la suivante :
 
-[inline-code-attrs-start title = 'Structure de l'objet DomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Config de Domaine'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
     /** Un domaine, pas une URL, comme "fastcomments.com" ou "www.example.com". Le sous-domaine peut être inclus si l'on souhaite limiter à un sous-domaine. Maximum 1000 caractères. **/
