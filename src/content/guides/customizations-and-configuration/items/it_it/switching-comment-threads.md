@@ -18,7 +18,7 @@ Quando istanzi il widget VanillaJS, questo restituisce alcune funzioni che posso
 
 Ecco un esempio funzionale in cui cambiamo l'hash della pagina e aggiorniamo il widget dei commenti:
 
-[inline-code-attrs-start title = 'Esempio di cambio dell\'hash della pagina'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di cambio dell’hash della pagina'; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <button id="change-page"></button>

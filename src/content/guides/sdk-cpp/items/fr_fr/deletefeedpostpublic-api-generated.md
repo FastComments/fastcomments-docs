@@ -13,7 +13,7 @@ Renvoie: [`DeleteFeedPostPublic_200_response`](https://github.com/FastComments/f
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'appel deleteFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d’appel deleteFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t postId = U("post-456");

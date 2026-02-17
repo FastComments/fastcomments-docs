@@ -44,7 +44,7 @@ Pour activer le SSO, passez un nouvel objet "sso", qui doit contenir les paramè
 #### L'objet utilisateur
 
 Le schéma de l'objet User contient les champs suivants :
-[inline-code-attrs-start title = 'L\'objet utilisateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L’objet utilisateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     /** Requis. 1k caractères maximum. **/

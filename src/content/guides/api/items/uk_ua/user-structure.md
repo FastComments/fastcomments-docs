@@ -15,7 +15,7 @@
 
 Структура об'єкта `User` наступна:
 
-[inline-code-attrs-start title = 'Структура об\'єкта User'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура об’єкта User'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface User {
     /** Це також id, який використовується як userId в об'єктах коментарів. **/

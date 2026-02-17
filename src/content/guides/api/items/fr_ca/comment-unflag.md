@@ -7,7 +7,7 @@ Notes :
 - Cet appel doit toujours être effectué dans le contexte d'un utilisateur. L'utilisateur peut être un utilisateur FastComments.com, un utilisateur SSO ou un utilisateur de locataire.
 - Après qu'un commentaire soit automatiquement désapprouvé (masqué) - le commentaire ne peut être réapprouvé que par un administrateur ou un modérateur. Annuler le signalement ne réapprouvera pas le commentaire.
 
-[inline-code-attrs-start title = 'Exemple cURL d\'Annulation de Signalement de Commentaire'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple cURL d’Annulation de Signalement de Commentaire'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id/un-flag?tenantId=demo&API_KEY=DEMO_API_SECRET&userId=some-user-id' \
@@ -24,7 +24,7 @@ curl --request POST \
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'Structure de Requête d\'Annulation de Signalement de Commentaire'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Requête d’Annulation de Signalement de Commentaire'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentFlagQueryParams {
     tenantId: string
@@ -34,7 +34,7 @@ interface CommentFlagQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Structure de Réponse d\'Annulation de Signalement de Commentaire'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Réponse d’Annulation de Signalement de Commentaire'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface CommentUnFlagResponse {

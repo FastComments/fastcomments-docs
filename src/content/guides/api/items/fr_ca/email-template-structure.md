@@ -7,7 +7,7 @@ Le système sélectionnera le modèle d'email à utiliser via :
 
 La structure de l'objet `EmailTemplate` est la suivante :
 
-[inline-code-attrs-start title = 'Structure de Modèle d\'Email'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Modèle d’Email'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface EmailTemplate {
     id: string

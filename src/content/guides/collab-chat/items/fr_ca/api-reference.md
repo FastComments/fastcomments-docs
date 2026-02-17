@@ -189,7 +189,7 @@ Tous les points de terminaison renvoient des codes de statut HTTP standard. Une 
 
 Les réponses d'erreur incluent un corps JSON avec des détails :
 
-[inline-code-attrs-start title = 'Exemple de réponse d\'erreur'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de réponse d’erreur'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "error",

@@ -10,7 +10,7 @@ Renvoie: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cp
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de getPages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d’utilisation de getPages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 int main()
 {

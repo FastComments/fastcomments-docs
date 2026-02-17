@@ -14,7 +14,7 @@ sono utilizzate per il feed delle notifiche e le integrazioni correlate.
 
 La struttura dell'oggetto `Notification` è la seguente:
 
-[inline-code-attrs-start title = 'Struttura dell\'oggetto Notification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struttura dell’oggetto Notification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 enum NotificationObjectType {
     Comment = 0,

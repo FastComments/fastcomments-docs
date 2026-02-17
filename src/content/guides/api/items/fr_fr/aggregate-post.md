@@ -303,7 +303,7 @@ Réponse :
 
 ### Structures
 
-[inline-code-attrs-start title = 'Structure de Requête d\'Agrégation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Requête d’Agrégation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export type AggregationOpType = 'sum' | 'countDistinct' | 'distinct' | 'avg' | 'min' | 'max' | 'count';
 
@@ -347,7 +347,7 @@ export type AggregationValue = {
 };
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Structure de Réponse d\'Agrégation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Réponse d’Agrégation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export type AggregationItem = Record<string, AggregationValue> & { groups?: GroupValues };
 

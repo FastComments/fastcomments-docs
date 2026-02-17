@@ -2,7 +2,7 @@
 
 Bu rota verilen id ile tek bir `QuestionConfig` döndürür.
 
-[inline-code-attrs-start title = 'QuestionConfig ID\'ye Göre cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'QuestionConfig ID’ye Göre cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-configs/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET'

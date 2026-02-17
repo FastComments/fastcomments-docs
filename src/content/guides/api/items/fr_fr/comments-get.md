@@ -87,7 +87,7 @@ curl --request GET \
 
 Il est possible d'obtenir les commentaires retournés sous forme d'arbre, avec la pagination ne comptant que les commentaires de premier niveau.
 
-[inline-code-attrs-start title = 'Commentaires sous forme d\'Arbre dans le Contexte Utilisateur'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Commentaires sous forme d’Arbre dans le Contexte Utilisateur'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
@@ -95,7 +95,7 @@ curl --request GET \
 
 Vous voulez obtenir uniquement les commentaires de premier niveau et les enfants immédiats ? Voici une façon :
 
-[inline-code-attrs-start title = 'Commentaires sous forme d\'Arbre avec Profondeur Maximale'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Commentaires sous forme d’Arbre avec Profondeur Maximale'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
@@ -111,7 +111,7 @@ Il est possible de rechercher par hashtag en utilisant l'API, à travers tout vo
 
 Dans cet exemple, nous omettons `urlId`, et nous recherchons par plusieurs hashtags. L'API ne retournera que les commentaires qui ont tous les hashtags demandés.
 
-[inline-code-attrs-start title = 'Commentaires sous forme d\'Arbre dans le Contexte Utilisateur, par Hash Tag'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Commentaires sous forme d’Arbre dans le Contexte Utilisateur, par Hash Tag'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'

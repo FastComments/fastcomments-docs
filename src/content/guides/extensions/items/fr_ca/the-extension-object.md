@@ -1,7 +1,7 @@
 L'objet d'extension se compose de la définition suivante :
 
 <!-- si vous voulez mettre à jour ceci, souvenez-vous de mettre à jour comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc de l\'extension'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'JSDoc de l’extension'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
  * The FastCommentsUI extension object. Used for lazy-loading certain components. For example, the review system is not

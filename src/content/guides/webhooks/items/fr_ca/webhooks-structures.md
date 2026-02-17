@@ -15,7 +15,7 @@ Le corps de la requête de l'événement "delete" est un objet WebhookComment.
     Auparavant, le corps de la requête de l'événement "delete" ne contenait que l'id du commentaire. Il contient maintenant le commentaire complet au moment de la suppression.
 
 
-[inline-code-attrs-start title = 'L\'objet WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L’objet WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** L'identifiant du commentaire. **/
@@ -79,7 +79,7 @@ interface WebhookComment {
 
 Lorsque des utilisateurs sont tagués dans un commentaire, l'information est stockée dans une liste appelée `mentions`. Chaque objet de cette liste a la structure suivante.
 
-[inline-code-attrs-start title = 'L\'objet de mentions du webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L’objet de mentions du webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** L'ID de l'utilisateur. Pour les utilisateurs SSO, votre ID de locataire sera préfixé. **/

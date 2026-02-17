@@ -11,7 +11,7 @@ Renvoie : [`GetUser200Response`](https://github.com/FastComments/fastcomments-go
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de GetUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d’utilisation de GetUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 

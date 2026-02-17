@@ -15,7 +15,7 @@ Retourne : [`AggregationResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'agrégation'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d’agrégation'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

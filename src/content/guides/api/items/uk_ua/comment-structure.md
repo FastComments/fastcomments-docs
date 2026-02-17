@@ -126,7 +126,7 @@ interface Comment {
 
 Коли користувачів згадують у коментарі, інформація зберігається у списку `mentions`. Кожен об'єкт у цьому списку має таку структуру.
 
-[inline-code-attrs-start title = 'Об\'єкт згадки коментаря'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об’єкт згадки коментаря'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** Ідентифікатор користувача. Для SSO-користувачів до нього буде додано префікс ідентифікатора вашого тенанта. **/
@@ -146,7 +146,7 @@ interface CommentUserMention {
 
 Коли хештеги використовуються і успішно розпізнаються, інформація зберігається в масиві `hashTags`. Кожен об'єкт у цьому масиві має таку структуру. Хештеги також можна додавати вручну в масив `hashTags` коментаря для запитів, якщо встановлено `retain`.
 
-[inline-code-attrs-start title = 'Об\'єкт хештегу коментаря'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об’єкт хештегу коментаря'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
     /** Ідентифікатор хештегу. **/

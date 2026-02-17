@@ -13,7 +13,7 @@ Les restrictions suivantes existent pour envoyer un email d'invitation à un `Mo
 
 Nous pouvons créer un `Moderator` pour un utilisateur dont nous ne connaissons que l'email :
 
-[inline-code-attrs-start title = 'Exemple cURL d\'Invitation de Modérateur'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple cURL d’Invitation de Modérateur'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/moderators/xyz/send-invite?tenantId=demo&API_KEY=DEMO_API_SECRET&fromName=Bob' \
@@ -22,7 +22,7 @@ curl --request POST \
 
 Cela enverra un email comme `Bob de TenantName vous invite à être modérateur...`
 
-[inline-code-attrs-start title = 'Structure de Requête d\'Invitation de Modérateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Requête d’Invitation de Modérateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorSendInviteQueryParams {
     tenantId: string
@@ -32,7 +32,7 @@ interface ModeratorSendInviteQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Structure de Réponse d\'Invitation de Modérateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de Réponse d’Invitation de Modérateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorSendInviteResponse {
     status: 'success' | 'failed'

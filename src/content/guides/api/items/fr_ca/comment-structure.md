@@ -127,7 +127,7 @@ L'exemple d'analyseur pourrait également être ajusté pour fonctionner avec HT
 Lorsque des utilisateurs sont tagués dans un commentaire, l'information est stockée dans une liste appelée `mentions`. Chaque objet dans cette liste
 a la structure suivante.
 
-[inline-code-attrs-start title = 'L\'objet Mentions de Commentaire'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L’objet Mentions de Commentaire'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -148,7 +148,7 @@ interface CommentUserMention {
 Lorsque des hashtags sont utilisés et analysés avec succès, l'information est stockée dans une liste appelée `hashTags`. Chaque objet dans cette liste
 a la structure suivante. Les hashtags peuvent également être ajoutés manuellement au tableau `hashTags` du commentaire pour la requête, si `retain` est défini.
 
-[inline-code-attrs-start title = 'L\'objet HashTag de Commentaire'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L’objet HashTag de Commentaire'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
     /** The hashtag id. **/

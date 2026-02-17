@@ -2,7 +2,7 @@
 
 Bu rota, id ile tek bir Tenant Package döndürür.
 
-[inline-code-attrs-start title = 'TenantPackage ID\'ye Göre cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'TenantPackage ID’ye Göre cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/tenant-packages/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET'

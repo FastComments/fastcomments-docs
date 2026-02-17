@@ -43,7 +43,7 @@ FastComments Secure SSO використовує шифрування HMAC-SHA25
 
 #### The User Object
 
-[inline-code-attrs-start title = 'Об\'єкт користувача'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об’єкт користувача'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     /** Обов'язково. Максимум 1к символів. **/

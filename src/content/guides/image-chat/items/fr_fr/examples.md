@@ -2,7 +2,7 @@
 
 La façon la plus simple d'utiliser Image Chat est de cibler un seul élément image. Cet exemple montre comment activer des discussions interactives sur une image :
 
-[inline-code-attrs-start title = 'Exemple basique d\'Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple basique d’Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
