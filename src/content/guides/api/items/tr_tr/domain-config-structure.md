@@ -5,23 +5,23 @@ The structure for the `DomainConfig` object is as follows:
 [inline-code-attrs-start title = 'Domain Yapılandırma Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** Bir alan adı, URL değil, örneğin "fastcomments.com" veya "www.example.com". Alt alan sınırlandırması isteniyorsa alt alan adı dahil edilebilir. En fazla 1000 karakter. **/
+    /** Bir alan adı, URL değil, örneğin "fastcomments.com" veya "www.example.com". Alt alan adı, alt alan adına sınırlama istenirse dahil edilebilir. Maksimum 1000 karakter. **/
     domain: string
-    /** E-posta gönderiminde kullanılan Gönderici Adı. **/
+    /** E-posta gönderilirken kullanılan Gönderen Adı. **/
     emailFromName?: string
-    /** E-posta gönderiminde kullanılan Gönderen E-posta adresi. Bu öznitelikte kullanılan alan adına mail.fastcomments.com'un e-posta göndermesine izin verecek şekilde SPF ayarlandığından emin olun. **/
+    /** E-postalar gönderilirken kullanılan Gönderen E-posta. Bu öznitelikte kullanılan alan adına mail.fastcomments.com'ın e-posta göndermesine izin vermek için SPF'in yapılandırıldığından emin olun. **/
     emailFromEmail?: string
-    /** SADECE OKUNUR. Nesnenin oluşturulma zamanı. **/
+    /** SADECE OKUNUR. Nesnenin ne zaman oluşturulduğu. **/
     createdAt: string
-    /** Bu domaine ait logo. E-postalarda kullanılır. HTTPS kullanın. **/
+    /** Bu alan adıyla ilişkili logo. E-postalarda kullanılır. HTTPS kullanın. **/
     logoSrc?: string
-    /** Bu domaine ait daha küçük logo. HTTPS kullanın. **/
+    /** Bu alan adıyla ilişkili daha küçük bir logo. HTTPS kullanın. **/
     logoSrc100px?: string
-    /** YALNIZCA SSO. Gönderilen her e-postanın altbilgisinde kullanılan URL. "[userId]" değişkenini destekler. **/
+    /** SADECE SSO. Gönderilen her e-postanın altbilgisinde kullanılan URL. "[userId]" değişkenini destekler. **/
     footerUnsubscribeURL?: string
-    /** YALNIZCA SSO. Gönderilen her e-postada kullanılan başlıklar. Örneğin teslimatı iyileştirmek için abonelikten çıkma ile ilgili başlıkların ayarlanması için yararlıdır. Bu kayıttaki List-Unsubscribe girdisi, varsa, "[userId]" değişkenini destekler. **/
+    /** SADECE SSO. Gönderilen her e-postada kullanılan başlıklar. Örneğin teslimatı iyileştirmek için abonelikten çıkma ile ilgili başlıkları ayarlamak için yararlıdır. Bu Kaydaki List-Unsubscribe girişi, mevcutsa, "[userId]" değişkenini destekler. **/
     emailHeaders?: Record<string, string>
-    /** Tüm abonelikten çıkma bağlantılarını devre dışı bırakır. Önerilmez, teslimat oranlarını olumsuz etkileyebilir. **/
+    /** Tüm abonelikten çıkma bağlantılarını devre dışı bırakır. Önerilmez, teslimat oranlarına zarar verebilir. **/
     disableUnsubscribeLinks?: boolean
     /** DKIM Yapılandırması. **/
     dkim?: DomainConfigDKIM
@@ -35,28 +35,31 @@ interface DomainConfigDKIM {
     domainName: string
     /** Kullanılacak DKIM anahtar seçicisi. **/
     keySelector: string
-    /** Özel anahtarınız. -----BEGIN PRIVATE KEY----- ile başlamalı ve -----END PRIVATE KEY----- ile bitmelidir **/
-    privateKey: string
+    /** PEM formatında açık anahtar. GET yanıtlarında döndürülür. **/
+    publicKey: string
+    /** @deprecated Artık API yanıtlarında döndürülmez. Geriye dönük uyumluluk için yazmada kabul edilir. **/
+    privateKey?: string
 }
 [inline-code-end]
 
 ### Kimlik Doğrulama
 
-Alan Yapılandırması, hesabınız için hangi sitelerin FastComments widget'ını barındırabileceğini belirlemek için kullanılır. Bu temel bir kimlik doğrulama biçimidir,
-yani herhangi bir Alan Yapılandırması eklenmesi veya kaldırılması, FastComments kurulumunuzun üretimdeki kullanılabilirliğini etkileyebilir.
+Domain Configuration is used to determine which sites can host the FastComments widget for your account. This is a basic form
+of authentication, meaning adding or removing any Domain Configurations can impact the availability of your FastComments installation
+in production.
 
-Halihazırda kullanımda olan bir alan için `Domain Config` içindeki `domain` özelliğini, o alanı devre dışı bırakmak amaçlanmıyorsa, kaldırmayın veya güncellemeyin.
+Don't remove or update the `domain` property of a `Domain Config` for a domain that is currently in use unless disabling that domain is intended.
 
-Bu, [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains)'den bir alanı kaldırma ile aynı davranışı gösterir.
+This has the same behavior as removing a domain from [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Ayrıca, `My Domains` UI'dan bir alanı kaldırmanın, bu UI aracılığıyla eklenmiş olabilecek o alana ait ilgili yapılandırmayı da kaldıracağını unutmayın.
+Also note that removing a domain from the `My Domains` UI will remove any corresponding configuration for that domain that may have been added via this UI.
 
 ### E-posta Özelleştirmesi İçin
 
-E-posta altbilgisindeki abonelikten çıkma bağlantısı ve birçok e-posta istemcisinin sunduğu tek tıklamayla abonelikten çıkma özelliği, sırasıyla `footerUnsubscribeURL` ve `emailHeaders` tanımlanarak bu API aracılığıyla yapılandırılabilir.
+The unsubscribe link in the email footer, and the one-click-unsubscribe feature offered by many email clients, can be configured via this API by defining `footerUnsubscribeURL` and `emailHeaders`, respectively.
 
 ### DKIM İçin
 
-DKIM DNS kayıtlarınızı tanımladıktan sonra, tanımlı yapıyı kullanarak DKIM yapılandırmanızı DomainConfig ile güncellemeniz yeterlidir. 
+After defining your DKIM DNS records, simply update the DomainConfig with your DKIM configuration using the defined structure. 
 
 ---

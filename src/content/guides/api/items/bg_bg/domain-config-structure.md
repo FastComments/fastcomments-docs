@@ -1,61 +1,65 @@
-Обектът `DomainConfig` представлява конфигурация за домейн за tenant.
+Обектът `DomainConfig` представлява конфигурация за домейн за един наемател.
 
-Структурата на обекта `DomainConfig` е следната:
+Структурата на обекта `DomainConfig` е както следва:
 
-[inline-code-attrs-start title = 'Структура на Domain Config'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на конфигурацията за домейн'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
+    /** Домейн, не URL, например "fastcomments.com" или "www.example.com". Поддомейн може да бъде включен, ако желаете да ограничите до поддомейн. Максимум 1000 знака. **/
     domain: string
-    /** The From-Name used when sending emails. **/
+    /** Името (From-Name), използвано при изпращане на имейли. **/
     emailFromName?: string
-    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
+    /** From-Email, използван при изпращане на имейли. Уверете се, че SPF е настроен да позволява на mail.fastcomments.com да изпраща имейли от домейна, използван в този атрибут. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** САМО ЗА ЧЕТЕНЕ. Кога е създаден обектът. **/
     createdAt: string
-    /** The logo related to this domain. Used in emails. Use HTTPS. **/
+    /** Лого, свързано с този домейн. Използва се в имейли. Използвайте HTTPS. **/
     logoSrc?: string
-    /** A smaller logo related to this domain. Use HTTPS. **/
+    /** По-малко лого, свързано с този домейн. Използвайте HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** САМО SSO. URL, използван в долната част (footer) на всеки изпратен имейл. Поддържа променливата "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** САМО SSO. Хедърите, използвани във всеки изпратен имейл. Полезно например за задаване на хедъри, свързани с отписване, за подобряване на доставяемостта. Записът List-Unsubscribe в този Record, ако съществува, поддържа променливата "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** Деактивира всички връзки за отписване. Не се препоръчва, може да навреди на нивата на доставяемост. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** Конфигурация на DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура на DKIM Config'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на DKIM конфигурацията'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** Името на домейна в DKIM записа ви. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** Селектора на DKIM ключа, който да се използва. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** Публичният ключ, в PEM формат. Връща се в GET отговори. **/
+    publicKey: string
+    /** @deprecated Вече не се връща в API отговори. Приема се при запис за обратно съвместимост. **/
+    privateKey?: string
 }
 [inline-code-end]
 
 ### За удостоверяване
 
-Конфигурацията на домейна се използва за определяне кои сайтове могат да хостват уиджета FastComments за вашия акаунт. Това е основна форма
-на удостоверяване, което означава, че добавянето или премахването на каквито и да е конфигурации на домейни може да повлияе на наличността на вашата инсталация на FastComments
+Конфигурацията на домейна се използва, за да се определи кои сайтове могат да хостват FastComments widget за вашия акаунт. Това е базова форма
+на удостоверяване, което означава, че добавянето или премахването на каквито и да е конфигурации на домейни може да повлияе на наличността на вашата инсталация FastComments
 в продукция.
 
-Не премахвайте или актуализирайте свойството `domain` на `Domain Config` за домейн, който в момента се използва, освен ако деактивирането на този домейн е предвидено.
+Не премахвайте и не променяйте свойството `domain` на `Domain Config` за домейн, който в момента се използва, освен ако не е предвидено да деактивирате този домейн.
 
-Това има същото поведение като премахването на домейн от [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Това има същото поведение като премахване на домейн от [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Също така имайте предвид, че премахването на домейн от потребителския интерфейс `My Domains` ще премахне всяка съответна конфигурация за този домейн, която може да е била добавена чрез този потребителски интерфейс.
+Също така обърнете внимание, че премахването на домейн от интерфейса `My Domains` ще премахне всяка съответстваща конфигурация за този домейн, която може да е била добавена чрез този потребителски интерфейс.
 
-### За персонализация на имейли
+### За персонализиране на имейли
 
-Връзката за отписване в долния колонтитул на имейла и функцията за отписване с едно щракване, предлагана от много имейл клиенти, могат да бъдат конфигурирани чрез този API, като дефинирате съответно `footerUnsubscribeURL` и `emailHeaders`.
+Линкът за отписване в долната част на имейла и функцията за едноклик-отписване, предлагана от много имейл клиенти, могат да бъдат конфигурирани чрез този API чрез дефиниране на `footerUnsubscribeURL` и `emailHeaders`, съответно.
 
 ### За DKIM
 
-След като дефинирате вашите DKIM DNS записи, просто актуализирайте DomainConfig с вашата DKIM конфигурация, като използвате дефинираната структура.
+След като дефинирате вашите DKIM DNS записи, просто актуализирайте `DomainConfig` с вашата DKIM конфигурация, използвайки указаната структура.
+
+---

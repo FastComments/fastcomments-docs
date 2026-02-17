@@ -1,29 +1,30 @@
-Објекат `DomainConfig` представља конфигурацију домена за тенанта.
+---
+A `DomainConfig` object represents configuration for a domain for a tenant.
 
-Структура објекта `DomainConfig` је следећа:
+The structure for the `DomainConfig` object is as follows:
 
-[inline-code-attrs-start title = 'Структура DomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура конфигурације домена'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** Домен, не URL, као што су "fastcomments.com" или "www.example.com". Може се укључити поддомен ако желите ограничити на поддомен. Максимум 1000 карактера. **/
+    /** Домен, не УРЛ, као на пример "fastcomments.com" или "www.example.com". Поддомен може бити укључен ако желите ограничити на поддомен. Максимално 1000 знакова. **/
     domain: string
-    /** Име пошиљаоца које се користи при слању е-поште. **/
+    /** Име пошиљаоца (From-Name) које се користи при слању имејлова. **/
     emailFromName?: string
-    /** From-Email који се користи при слању е-поште. Осигурајте да је SPF подешен тако да mail.fastcomments.com може слати мејлове у име домена коришћеног у овом атрибуту. **/
+    /** Адреса пошиљаоца (From-Email) која се користи при слању имејлова. Осигурајте да је SPF подешен да дозволи mail.fastcomments.com да шаље имејлове у име домена коришћеног у овом атрибуту. **/
     emailFromEmail?: string
-    /** Само за читање. Када је објекат креиран. **/
+    /** READONLY. When the object was created. **/
     createdAt: string
-    /** Лого повезан са овим доменом. Користи се у е-порукама. Користите HTTPS. **/
+    /** Лого повезан са овим доменом. Користи се у имејловима. Користите HTTPS. **/
     logoSrc?: string
     /** Мањи лого повезан са овим доменом. Користите HTTPS. **/
     logoSrc100px?: string
-    /** SAMO за SSO. URL који се користи у подножју сваког послатог мејла. Подржава променљиву "[userId]". **/
+    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
     footerUnsubscribeURL?: string
-    /** SAMO за SSO. Хедери који се користе у сваком послатом мејлу. Корисно, на пример, за подешавање хедера повезаних са отписивањем ради побољшања испоруке. Унос List-Unsubscribe у овом запису, ако постоји, подржава променљиву "[userId]". **/
+    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
     emailHeaders?: Record<string, string>
-    /** Онемогућити све линкове за отписивање. Не препоручује се, може негативно утицати на стопе испоруке. **/
+    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM конфигурација. **/
+    /** DKIM Configuration. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
@@ -31,30 +32,30 @@ interface DomainConfig {
 [inline-code-attrs-start title = 'Структура DKIM конфигурације'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** Име домена у вашем DKIM запису. **/
+    /** The domain name in your DKIM record. **/
     domainName: string
-    /** Селектор DKIM кључа који ће се користити. **/
+    /** The DKIM key selector to use. **/
     keySelector: string
-    /** Ваш приватни кључ. Почinje са -----BEGIN PRIVATE KEY----- и завршава са -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** The public key, in PEM format. Returned in GET responses. **/
+    publicKey: string
+    /** @deprecated No longer returned in API responses. Accepted on write for backwards compatibility. **/
+    privateKey?: string
 }
 [inline-code-end]
 
 ### За аутентификацију
 
-Конфигурација домена се користи за одређивање који сајтови могу да хостују FastComments видгет за ваш налог. Ово је основни облик
-аутентификације, што значи да додавање или уклањање било које конфигурације домена може утицати на доступност ваше FastComments инсталације
-у продукцији.
+Конфигурација домена се користи да утврди који сајтови могу угостити FastComments виџет за ваш налог. Ово је основни облик аутентификације, што значи да додавање или уклањање било које конфигурације домена може утицати на доступност ваше FastComments инсталације у продукцији.
 
-Не уклањајте и не ажурирајте својство `domain` објекта `Domain Config` за домен који је тренутно у употреби, осим ако није намера да се тај домен онемогући.
+Не уклањајте или ажурирајте својство `domain` у `Domain Config` за домен који је тренутно у употреби осим ако није намера да се тај домен онемогући.
 
-Ово има исто понашање као уклањање домена из [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Ово има исто понашање као уклањање домена са [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Такође имајте на уму да уклањање домена из `My Domains` корисничког интерфејса уклониће било коју одговарајућу конфигурацију за тај домен која је можда додата преко тог интерфејса.
+Такође, имајте у виду да уклањање домена из `My Domains` UI уклониће сваку одговарајућу конфигурацију за тај домен која је можда додата преко тог интерфејса.
 
-### За прилагођавање е-поште
+### За прилагођавање имејлова
 
-Линк за отписивање у подножју е-поруке и функција једнокликовног отписивања коју нуди много клијената за електронску пошту могу се конфигурисати преко овог API-ја дефинисањем `footerUnsubscribeURL` и `emailHeaders`, редом.
+Линк за одјаву у фоотеру имејла, и функција једним кликом за одјаву коју нуде многи имејл клијенти, могу се конфигурисати преко овог API-ја дефинисањем `footerUnsubscribeURL` и `emailHeaders`, респективно.
 
 ### За DKIM
 

@@ -1,60 +1,62 @@
-Un objet `DomainConfig` représente la configuration d'un domaine pour un locataire.
+Un objet `DomainConfig` représente la configuration d'un domaine pour un tenant.
 
 La structure de l'objet `DomainConfig` est la suivante :
 
-[inline-code-attrs-start title = 'Structure de Config de Domaine'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de l’objet DomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
+    /** Un domaine, pas une URL, comme "fastcomments.com" ou "www.example.com". Le sous-domaine peut être inclus si vous souhaitez limiter à un sous-domaine. Maximum 1000 caractères. **/
     domain: string
-    /** The From-Name used when sending emails. **/
+    /** Le From-Name utilisé lors de l'envoi des e-mails. **/
     emailFromName?: string
-    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
+    /** Le From-Email utilisé lors de l'envoi des e-mails. Assurez-vous que le SPF est configuré pour permettre à mail.fastcomments.com d'envoyer des e-mails au nom du domaine utilisé dans cet attribut. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** EN LECTURE SEULE. Date de création de l'objet. **/
     createdAt: string
-    /** The logo related to this domain. Used in emails. Use HTTPS. **/
+    /** Le logo lié à ce domaine. Utilisé dans les e-mails. Utilisez HTTPS. **/
     logoSrc?: string
-    /** A smaller logo related to this domain. Use HTTPS. **/
+    /** Un logo plus petit lié à ce domaine. Utilisez HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** SSO UNIQUEMENT. L'URL utilisée dans le pied de page de chaque e-mail envoyé. Prend en charge une variable "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** SSO UNIQUEMENT. Les en-têtes utilisés dans chaque e-mail envoyé. Utile par exemple pour définir des en-têtes liés à la désinscription afin d'améliorer la délivrabilité. L'entrée List-Unsubscribe dans cet enregistrement, si elle existe, prend en charge la variable "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** Désactiver tous les liens de désinscription. Non recommandé, peut nuire aux taux de délivrabilité. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** Configuration DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Structure de Config DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de configuration DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** Le nom de domaine dans votre enregistrement DKIM. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** Le sélecteur de clé DKIM à utiliser. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** La clé publique, au format PEM. Renvoyée dans les réponses GET. **/
+    publicKey: string
+    /** @deprecated N'est plus renvoyé dans les réponses de l'API. Accepté en écriture pour compatibilité rétroactive. **/
+    privateKey?: string
 }
 [inline-code-end]
 
-### Pour l'Authentification
+### Pour l'authentification
 
-La Configuration de Domaine est utilisée pour déterminer quels sites peuvent héberger le widget FastComments pour votre compte. C'est une forme basique
-d'authentification, ce qui signifie qu'ajouter ou supprimer des Configurations de Domaine peut impacter la disponibilité de votre installation FastComments
+Domain Configuration est utilisé pour déterminer quels sites peuvent héberger le widget FastComments pour votre compte. Il s'agit d'une forme basique
+d'authentification, ce qui signifie que l'ajout ou la suppression de toute configuration de domaine peut affecter la disponibilité de votre installation FastComments
 en production.
 
-Ne supprimez pas et ne mettez pas à jour la propriété `domain` d'une `Config de Domaine` pour un domaine actuellement en cours d'utilisation, sauf si la désactivation de ce domaine est intentionnelle.
+Ne supprimez pas et ne mettez pas à jour la propriété `domain` d'un `Domain Config` pour un domaine actuellement utilisé, sauf si l'intention est de désactiver ce domaine.
 
-Cela a le même comportement que supprimer un domaine de [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Cela a le même comportement que la suppression d'un domaine depuis [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Notez également que supprimer un domaine de l'interface utilisateur `Mes Domaines` supprimera toute configuration correspondante pour ce domaine qui aurait pu être ajoutée via cette interface.
+Notez également que la suppression d'un domaine depuis l'interface `My Domains` supprimera toute configuration correspondante pour ce domaine qui aurait pu être ajoutée via cette interface.
 
-### Pour la Personnalisation des Emails
+### Pour la personnalisation des e-mails
 
-Le lien de désabonnement dans le pied de page des emails, et la fonctionnalité de désabonnement en un clic offerte par de nombreux clients de messagerie, peuvent être configurés via cette API en définissant `footerUnsubscribeURL` et `emailHeaders`, respectivement.
+Le lien de désinscription dans le pied de page de l'e-mail, ainsi que la fonctionnalité de désinscription en un clic offerte par de nombreux clients de messagerie, peuvent être configurés via cette API en définissant `footerUnsubscribeURL` et `emailHeaders`, respectivement.
 
 ### Pour DKIM
 

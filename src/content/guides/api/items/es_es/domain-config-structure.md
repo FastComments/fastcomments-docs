@@ -1,61 +1,65 @@
-Un objeto `DomainConfig` representa la configuración para un dominio de un inquilino.
+Un objeto `DomainConfig` representa la configuración de un dominio para un tenant.
 
 La estructura del objeto `DomainConfig` es la siguiente:
 
-[inline-code-attrs-start title = 'Estructura de Configuración de Dominio'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de DomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
+    /** Un dominio, no una URL, como "fastcomments.com" o "www.example.com". Se puede incluir el subdominio si se desea limitar a un subdominio. Máximo 1000 caracteres. **/
     domain: string
-    /** The From-Name used when sending emails. **/
+    /** El nombre del remitente (From-Name) usado al enviar correos. **/
     emailFromName?: string
-    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
+    /** El From-Email usado al enviar correos. Asegúrate de que SPF esté configurado para permitir que mail.fastcomments.com envíe correos como el dominio usado en este atributo. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** SOLO LECTURA. Cuándo se creó el objeto. **/
     createdAt: string
-    /** The logo related to this domain. Used in emails. Use HTTPS. **/
+    /** El logotipo relacionado con este dominio. Usado en correos electrónicos. Usa HTTPS. **/
     logoSrc?: string
-    /** A smaller logo related to this domain. Use HTTPS. **/
+    /** Un logotipo más pequeño relacionado con este dominio. Usa HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** SOLO SSO. La URL usada en el pie de cada correo enviado. Admite la variable "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** SOLO SSO. Las cabeceras usadas en cada correo enviado. Útil, por ejemplo, para establecer cabeceras relacionadas con la baja para mejorar la entrega. La entrada List-Unsubscribe en este Record, si existe, admite la variable "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** Desactivar todos los enlaces de baja. No recomendado, puede perjudicar las tasas de entrega. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** Configuración DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estructura de Configuración DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de configuración DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** El nombre de dominio en tu registro DKIM. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** El selector de clave DKIM a usar. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** La clave pública, en formato PEM. Devuelta en respuestas GET. **/
+    publicKey: string
+    /** @deprecated Ya no se devuelve en las respuestas de la API. Aceptada al escribir para compatibilidad hacia atrás. **/
+    privateKey?: string
 }
 [inline-code-end]
 
-### Para Autenticación
+### Para autenticación
 
-La Configuración de Dominio se usa para determinar qué sitios pueden alojar el widget de FastComments para su cuenta. Esta es una forma básica
-de autenticación, lo que significa que agregar o eliminar cualquier Configuración de Dominio puede impactar la disponibilidad de su instalación de FastComments
+La Configuración de Dominio se utiliza para determinar qué sitios pueden alojar el widget de FastComments para tu cuenta. Esta es una forma básica
+de autenticación, lo que significa que agregar o eliminar cualquier Configuración de Dominio puede afectar la disponibilidad de tu instalación de FastComments
 en producción.
 
-No elimine ni actualice la propiedad `domain` de una `Domain Config` para un dominio que está actualmente en uso a menos que deshabilitar ese dominio sea intencional.
+No elimines ni actualices la propiedad `domain` de un `Domain Config` para un dominio que está en uso actualmente a menos que se pretenda desactivar ese dominio.
 
 Esto tiene el mismo comportamiento que eliminar un dominio desde [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-También tenga en cuenta que eliminar un dominio desde la UI de `Mis Dominios` eliminará cualquier configuración correspondiente para ese dominio que pueda haber sido agregada a través de esta UI.
+Ten en cuenta también que eliminar un dominio desde la interfaz `My Domains` quitará cualquier configuración correspondiente para ese dominio que haya sido añadida mediante esta interfaz.
 
-### Para Personalización de Email
+### Para la personalización de correos electrónicos
 
-El enlace de cancelación de suscripción en el pie de página del email, y la función de cancelación de suscripción con un clic ofrecida por muchos clientes de correo electrónico, se pueden configurar a través de esta API definiendo `footerUnsubscribeURL` y `emailHeaders`, respectivamente.
+El enlace de baja en el pie del correo electrónico, y la función de baja con un solo clic ofrecida por muchos clientes de correo, se pueden configurar a través de esta API definiendo `footerUnsubscribeURL` y `emailHeaders`, respectivamente.
 
 ### Para DKIM
 
-Después de definir sus registros DNS de DKIM, simplemente actualice el DomainConfig con su configuración DKIM usando la estructura definida.
+Después de definir tus registros DNS DKIM, simplemente actualiza el DomainConfig con tu configuración DKIM usando la estructura definida. 
+
+---

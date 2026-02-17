@@ -1,61 +1,63 @@
-Ένα αντικείμενο `DomainConfig` αντιπροσωπεύει τη διαμόρφωση για ένα domain για έναν ενοικιαστή.
+Ένα αντικείμενο `DomainConfig` αντιπροσωπεύει τη διαμόρφωση για ένα domain για έναν tenant.
 
-Η δομή για το αντικείμενο `DomainConfig` είναι η ακόλουθη:
+Η δομή για το αντικείμενο `DomainConfig` έχει ως εξής:
 
-[inline-code-attrs-start title = 'Δομή Domain Config'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή DomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
+    /** Ένας domain, όχι URL, όπως "fastcomments.com" ή "www.example.com". Μπορεί να συμπεριληφθεί υποτομέας αν επιθυμείτε περιορισμό σε υποτομέα. Μέγιστο 1000 χαρακτήρες. **/
     domain: string
-    /** The From-Name used when sending emails. **/
+    /** Το From-Name που χρησιμοποιείται όταν αποστέλλονται emails. **/
     emailFromName?: string
-    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
+    /** Το From-Email που χρησιμοποιείται όταν αποστέλλονται email. Βεβαιωθείτε ότι το SPF είναι ρυθμισμένο ώστε να επιτρέπει στο mail.fastcomments.com να στέλνει email ως το domain που χρησιμοποιείται σε αυτήν την ιδιότητα. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** READONLY. Πότε δημιουργήθηκε το αντικείμενο. **/
     createdAt: string
-    /** The logo related to this domain. Used in emails. Use HTTPS. **/
+    /** Το λογότυπο που σχετίζεται με αυτό το domain. Χρησιμοποιείται σε emails. Χρησιμοποιήστε HTTPS. **/
     logoSrc?: string
-    /** A smaller logo related to this domain. Use HTTPS. **/
+    /** Ένα μικρότερο λογότυπο σχετικό με αυτό το domain. Χρησιμοποιήστε HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** ΜΟΝΟ SSO. Το URL που χρησιμοποιείται στο υποσέλιδο κάθε αποστελλόμενου email. Υποστηρίζει τη μεταβλητή "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** ΜΟΝΟ SSO. Οι κεφαλίδες που χρησιμοποιούνται σε κάθε αποστελλόμενο email. Χρήσιμο, για παράδειγμα, για τον ορισμό κεφαλίδων σχετικών με τη διαγραφή συνδρομής για βελτίωση της παράδοσης. Η εγγραφή List-Unsubscribe σε αυτό το Record, εάν υπάρχει, υποστηρίζει τη μεταβλητή "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** Απενεργοποιεί όλους τους συνδέσμους διαγραφής συνδρομής. Δεν συνιστάται, μπορεί να επηρεάσει αρνητικά τα ποσοστά παράδοσης. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** Διαμόρφωση DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Δομή Ρύθμισης DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή ρυθμίσεων DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** Το όνομα domain στην καταγραφή DKIM σας. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** Ο selector κλειδιού DKIM που θα χρησιμοποιηθεί. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** Το δημόσιο κλειδί, σε μορφή PEM. Επιστρέφεται στις GET απαντήσεις. **/
+    publicKey: string
+    /** @deprecated Δεν επιστρέφεται πλέον στις απαντήσεις του API. Γίνεται αποδεκτό κατά την εγγραφή για συμβατότητα προς τα πίσω. **/
+    privateKey?: string
 }
 [inline-code-end]
 
-### Για Πιστοποίηση
+### Για Έλεγχο Ταυτότητας
 
-Η Διαμόρφωση Domain χρησιμοποιείται για να καθοριστεί ποιοι ιστότοποι μπορούν να φιλοξενήσουν το widget FastComments για τον λογαριασμό σας. Αυτή είναι μια βασική μορφή
-πιστοποίησης, που σημαίνει ότι η προσθήκη ή αφαίρεση οποιωνδήποτε Διαμορφώσεων Domain μπορεί να επηρεάσει τη διαθεσιμότητα της εγκατάστασης FastComments σας
-στην παραγωγή.
+Η διαμόρφωση domain χρησιμοποιείται για να καθορίσει ποιες τοποθεσίες μπορούν να φιλοξενήσουν το widget του FastComments για τον λογαριασμό σας. Πρόκειται για μια βασική μορφή ελέγχου ταυτότητας, πράγμα που σημαίνει ότι η προσθήκη ή η αφαίρεση οποιασδήποτε διαμόρφωσης domain μπορεί να επηρεάσει τη διαθεσιμότητα της εγκατάστασης FastComments στην παραγωγή.
 
-Μην αφαιρείτε ή ενημερώνετε την ιδιότητα `domain` ενός `Domain Config` για ένα domain που χρησιμοποιείται αυτή τη στιγμή εκτός αν η απενεργοποίηση αυτού του domain είναι επιθυμητή.
+Μην αφαιρείτε ή ενημερώνετε την ιδιότητα `domain` ενός `Domain Config` για ένα domain που χρησιμοποιείται επί του παρόντος, εκτός αν σκοπεύετε να απενεργοποιήσετε αυτό το domain.
 
-Αυτό έχει την ίδια συμπεριφορά με την αφαίρεση ενός domain από το [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Αυτό έχει την ίδια συμπεριφορά με την αφαίρεση ενός domain από [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Επίσης σημειώστε ότι η αφαίρεση ενός domain από τη διεπαφή `My Domains` θα αφαιρέσει οποιαδήποτε αντίστοιχη διαμόρφωση για αυτό το domain που μπορεί να έχει προστεθεί μέσω αυτής της διεπαφής.
+Σημειώστε επίσης ότι η αφαίρεση ενός domain από το UI `My Domains` θα αφαιρέσει οποιαδήποτε αντίστοιχη διαμόρφωση για εκείνο το domain που ενδέχεται να είχε προστεθεί μέσω αυτού του UI.
 
 ### Για Προσαρμογή Email
 
-Ο σύνδεσμος διαγραφής εγγραφής στο υποσέλιδο του email, και η λειτουργία διαγραφής εγγραφής με ένα κλικ που προσφέρεται από πολλούς πελάτες email, μπορούν να διαμορφωθούν μέσω αυτού του API ορίζοντας τα `footerUnsubscribeURL` και `emailHeaders`, αντίστοιχα.
+Ο σύνδεσμος διαγραφής συνδρομής στο υποσέλιδο του email, καθώς και η λειτουργία απεγγραφής με ένα κλικ που προσφέρεται από πολλούς πελάτες email, μπορούν να ρυθμιστούν μέσω αυτού του API ορίζοντας αντίστοιχα τα `footerUnsubscribeURL` και `emailHeaders`.
 
 ### Για DKIM
 
-Αφού ορίσετε τις εγγραφές DNS DKIM σας, απλά ενημερώστε το DomainConfig με τη διαμόρφωση DKIM σας χρησιμοποιώντας την καθορισμένη δομή.
+Αφού ορίσετε τις καταχωρήσεις DKIM DNS σας, απλά ενημερώστε το DomainConfig με τη διαμόρφωση DKIM χρησιμοποιώντας τη δομή που ορίζεται παραπάνω.
+
+---

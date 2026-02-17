@@ -1,63 +1,65 @@
-A `DomainConfig` object represents configuration for a domain for a tenant.
+Objekat `DomainConfig` predstavlja konfiguraciju za domen za tenant.
 
-The structure for the `DomainConfig` object is as follows:
+Struktura objekta `DomainConfig` je sledeća:
 
-[inline-code-attrs-start title = 'Структура конфигурације домена'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura konfiguracije domena'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** Домен, не URL, као што је "fastcomments.com" или "www.example.com". Поддомен може бити укључен ако желите ограничити на поддомен. Максимално 1000 карактера. **/
+    /** Domen, ne URL, poput "fastcomments.com" ili "www.example.com". Poddomen može biti uključen ako želite ograničiti na poddomen. Maksimalno 1000 karaktera. **/
     domain: string
-    /** Име пошиљаоца које се користи при слању имејлова. **/
+    /** The From-Name used when sending emails. **/
     emailFromName?: string
-    /** From-Email који се користи при слању имејлова. Осигурајте да је SPF подешен да омогући mail.fastcomments.com да шаље имејлове у име домена који се користи у овом атрибуту. **/
+    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
     emailFromEmail?: string
-    /** Само за читање. Када је објекат креиран. **/
+    /** READONLY. When the object was created. **/
     createdAt: string
-    /** Лого везан за овај домен. Користи се у имејловима. Користите HTTPS. **/
+    /** The logo related to this domain. Used in emails. Use HTTPS. **/
     logoSrc?: string
-    /** Мањи лого везан за овај домен. Користите HTTPS. **/
+    /** A smaller logo related to this domain. Use HTTPS. **/
     logoSrc100px?: string
-    /** Само за SSO. URL који се користи у фоотеру сваког послатог имејла. Подржава променљиву "[userId]". **/
+    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
     footerUnsubscribeURL?: string
-    /** Само за SSO. Хедери који се користе у сваком послатом имејлу. Корисно, на пример, за подешавање хедера везаних за отписивање ради побољшања испоруке. Ставка List-Unsubscribe у овом запису, ако постоји, подржава променљиву "[userId]". **/
+    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
     emailHeaders?: Record<string, string>
-    /** Онемогући све линкове за отписивање. Није препоручљиво, може негативно утицати на стопе испоруке. **/
+    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM конфигурација. **/
+    /** DKIM Configuration. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура DKIM конфигурације'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura DKIM konfiguracije'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** Име домена у вашем DKIM запису. **/
+    /** The domain name in your DKIM record. **/
     domainName: string
-    /** Селектор DKIM кључа који треба користити. **/
+    /** The DKIM key selector to use. **/
     keySelector: string
-    /** Ваш приватни кључ. Почните са -----BEGIN PRIVATE KEY----- и завршите са -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** The public key, in PEM format. Returned in GET responses. **/
+    publicKey: string
+    /** @deprecated No longer returned in API responses. Accepted on write for backwards compatibility. **/
+    privateKey?: string
 }
 [inline-code-end]
 
 ### За аутентификацију
 
-Конфигурација домена се користи да одреди који сајтови могу угостити FastComments видгет за ваш налог. Ово је основни облик
-аутентификације, што значи да додавање или уклањање било којих конфигурација домена може утицати на доступност ваше FastComments инсталације
+Konfiguracija domena se koristi за одређивање којих sajtova mogu da hostuju FastComments widget за ваш налог. Ovo је базичан облик
+аутентификације, што значи да додавање или уклањање било које конфигурације домена може утицати на доступност ваше FastComments инсталације
 у продукцији.
 
-Не уклањајте или мењајте својство `domain` у `Domain Config` за домен који се тренутно користи осим ако заиста не намеравате да онемогућите тај домен.
+Ne uklanjajte ili ažurirajte svojство `domain` objekta `Domain Config` za domen koji је тренутно у употреби, осим ако не намеравате да онемогућите тај домен.
 
-Ово има исто понашање као уклањање домена из [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Ovo ima isto понашање као уклањање домена са [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Такође имајте у виду да ће уклањање домена из интерфејса `My Domains` уклонити и сваку одговарајућу конфигурацију за тај домен која је можда додата преко тог интерфејса.
+Takođe imajte на уму да уклањање домена из `My Domains` UI ће ukloniti и било коју одговарајућу конфигурацију за тај домен која је можда додата путем тог UI.
 
-### За прилагођавање имејлова
+### За прилагођавање мејлова
 
-Линк за отписивање у фоотеру имејла, и функција једним кликом за отписивање коју нуде многи имејл клијенти, могу се подесити преко овог API-ја дефинисањем `footerUnsubscribeURL` и `emailHeaders`, респективно.
+Link za odjavu u podnožju mejla, i функција једноклик одјаве коју нуде многи мејл клијенти, могу се конфигурисати путем овог API-ja дефинисањем `footerUnsubscribeURL` и `emailHeaders`, респективно.
 
 ### За DKIM
 
-Након дефинисања ваших DKIM DNS записа, једноставно ажурирајте DomainConfig са вашом DKIM конфигурацијом користећи дефинисану структуру. 
+Након што дефинишете DKIM DNS записе, једноставно ажурирајте DomainConfig са вашом DKIM конфигурацијом користећи дефинисану структуру. 
 
 ---

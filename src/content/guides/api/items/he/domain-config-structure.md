@@ -1,61 +1,65 @@
-אובייקט `DomainConfig` מייצג קונפיגורציה עבור דומיין עבור שוכר.
+אובייקט `DomainConfig` מייצג תצורה עבור דומיין של שוכר.
 
-המבנה עבור אובייקט `DomainConfig` הוא כדלקמן:
+המבנה של האובייקט `DomainConfig` הוא כדלקמן:
 
-[inline-code-attrs-start title = 'מבנה קונפיגורציית דומיין'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מבנה תצורת הדומיין'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
+    /** דומיין, לא URL, כמו "fastcomments.com" או "www.example.com". ניתן לכלול תת‑דומיין אם רוצים להגביל לתת‑דומיין. מקסימום 1000 תווים. **/
     domain: string
-    /** The From-Name used when sending emails. **/
+    /** השם שמופיע בשדה From בעת שליחת אימיילים. **/
     emailFromName?: string
-    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
+    /** כתובת ה-From המושמשת לשליחת אימיילים. ודאו ש-SPF מוגדר כדי לאפשר ל-mail.fastcomments.com לשלוח אימיילים בשם הדומיין המופיע בתכונה זו. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** לקריאה בלבד. מועד יצירת האובייקט. **/
     createdAt: string
-    /** The logo related to this domain. Used in emails. Use HTTPS. **/
+    /** הלוגו הקשור לדומיין זה. משמש באימיילים. השתמשו ב-HTTPS. **/
     logoSrc?: string
-    /** A smaller logo related to this domain. Use HTTPS. **/
+    /** לוגו קטן יותר הקשור לדומיין זה. השתמשו ב-HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** SSO בלבד. ה-URL המשמש בכותרת תחתונה של כל אימייל שנשלח. תומך במשתנה "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** SSO בלבד. הכותרות שבהן משתמשים בכל אימייל שנשלח. שימושי, למשל, להגדרת כותרות הקשורות להסרה מרשימת תפוצה לשיפור מסירה. הערך List-Unsubscribe ברשומה זו, אם קיים, תומך במשתנה "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** השבתת כל קישורי הסרה מרשימת תפוצה. לא מומלץ, עלול לפגוע בשיעורי המסירה. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** תצורת DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'מבנה קונפיגורציית DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מבנה תצורת DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** שם הדומיין ברשומת DKIM שלך. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** מצביע המפתח (selector) של DKIM לשימוש. **/
     keySelector: string
-    /** Your private key. Start with -----BEGIN PRIVATE KEY----- and end with -----END PRIVATE KEY----- **/
-    privateKey: string
+    /** המפתח הציבורי בפורמט PEM. מוחזר בתגובות GET. **/
+    publicKey: string
+    /** @deprecated לא מוחזר עוד בתגובות ה-API. מתקבל בכתיבה עבור תאימות לאחור. **/
+    privateKey?: string
 }
 [inline-code-end]
 
-### לאימות
+### לצורך אימות
 
-קונפיגורציית דומיין משמשת לקביעת אילו אתרים יכולים לארח את ווידג'ט FastComments עבור החשבון שלך. זו צורה בסיסית
-של אימות, כלומר הוספה או הסרה של קונפיגורציות דומיין יכולה להשפיע על זמינות התקנת FastComments שלך
-בייצור.
+תצורת דומיינים משמשת לקביעת אילו אתרים יכולים לארח את הווידג'ט של FastComments עבור החשבון שלך. זוהי צורה בסיסית של
+אימות, כלומר הוספה או הסרה של תצורות דומיין עלולה להשפיע על זמינות התקנת FastComments שלך
+בסביבת הייצור.
 
-אל תסיר או תעדכן את מאפיין `domain` של `Domain Config` עבור דומיין שנמצא בשימוש כרגע אלא אם כן השבתת אותו דומיין היא מכוונת.
+אל תסירו או תעדכנו את המאפיין `domain` של `Domain Config` עבור דומיין שנמצא בשימוש כרגע אלא אם המטרה היא לנטרל את הדומיין.
 
-להתנהגות זו יש את אותה התנהגות כמו הסרת דומיין מ-[/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+זה מתנהג באותו אופן כמו הסרת דומיין מ-[/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-שים לב גם שהסרת דומיין מממשק המשתמש `הדומיינים שלי` תסיר כל קונפיגורציה תואמת לאותו דומיין שאולי נוספה דרך ממשק משתמש זה.
+שימו לב שגם הסרה של דומיין מ-`My Domains` UI תסיר כל תצורה מקבילה עבור אותו דומיין שעשויה להיות נוספה דרך ממשק זה.
 
-### להתאמה אישית של אימייל
+### להתאמה אישית של אימיילים
 
-קישור ביטול ההרשמה בתחתית האימייל, ותכונת ביטול ההרשמה בלחיצה אחת המוצעת על ידי לקוחות אימייל רבים, ניתנות להגדרה דרך API זה על ידי הגדרת `footerUnsubscribeURL` ו-`emailHeaders`, בהתאמה.
+קישור ההסרה בכותרת התחתונה של המייל, ותכונת 'הסרה בלחיצה אחת' שמוצעת על ידי לקוחות דוא״ל רבים, ניתנים להגדרה דרך ה-API הזה על ידי הגדרת `footerUnsubscribeURL` ו-`emailHeaders`, בהתאמה.
 
-### עבור DKIM
+### לגבי DKIM
 
-לאחר הגדרת רשומות ה-DNS של DKIM שלך, פשוט עדכן את DomainConfig עם קונפיגורציית ה-DKIM שלך באמצעות המבנה המוגדר.
+לאחר שהגדרתם את רשומות ה-DNS של DKIM שלכם, פשוט עדכנו את DomainConfig עם תצורת DKIM שלכם באמצעות המבנה המוגדר.
+
+---
