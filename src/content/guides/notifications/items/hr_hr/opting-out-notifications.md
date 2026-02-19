@@ -1,11 +1,11 @@
-Obavijestima se možete odjaviti na nekoliko načina. Ako vaš račun upravlja FastComments.com i nije putem SSO-a, možete konfigurirati svoje
-obavijesti putem [stranice postavki obavijesti](https://fastcomments.com/auth/my-account/edit-notifications).
+Za obavijesti se možete odjaviti na nekoliko načina. Ako vaš račun upravlja FastComments.com i nije putem SSO-a, možete konfigurirati svoje
+obavijesti putem [Stranice postavki obavijesti](https://fastcomments.com/auth/my-account/edit-notifications).
 
-Ovdje možete konfigurirati obavijesti o odgovorima na komentare i spominjanjima, učestalost obavijesti za pretplatu (svake minute, na satnoj osnovi ili dnevno), i bilo koje obavijesti općenito. Ako ste administrator stranice ili
-moderator, ovdje ćete također imati mogućnost konfiguriranja učestalosti sažetka e-pošte.
+Ovdje možete konfigurirati obavijesti o odgovorima na komentare i spominjanjima, učestalost obavijesti (svake minute, satno ili dnevno), učestalost obavijesti o pretplatama (svake minute, satno ili dnevno) i općenito bilo koju obavijest. Ako ste administrator stranice ili
+moderator, imat ćete i zasebnu postavku **Učestalost administratorskih obavijesti** koja kontrolira koliko često primate e-poruke o novim komentarima na vašoj stranici (zadano: satno), kao i opciju konfiguriranja učestalosti sažetka e-pošte.
 
-Dodatno, svaki e-mail sadrži link za odjavu. Za obavijesti o odgovorima na komentare, e-mail sadrži link za **odjavu od obavijesti za taj komentar**.
+Osim toga, svaka e-poruka sadrži poveznicu za odjavu. Za obavijesti o odgovorima na komentare, e-poruka sadrži poveznicu za **odjavu s primanja obavijesti za taj komentar**.
 
-Obavijesti će također imati link za odjavu za isključivanje, kao i odgovarajuća zaglavlja e-pošte.
+Obavijesti će također sadržavati poveznicu za odjavu da ih isključite, kao i odgovarajuće zaglavlje e-pošte.
 
-Linkovi za odjavu u e-mailovima mogu se ukloniti na zahtjev za određenog tenant-a. Također se link može prilagoditi za SSO ili whitelabel integracije.
+Poveznice za odjavu u e-porukama mogu se ukloniti na zahtjev za određenog tenanta. Dodatno, poveznica se može prilagoditi za SSO ili white-label integracije.

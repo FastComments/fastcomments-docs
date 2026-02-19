@@ -1,11 +1,12 @@
-Bildirimlerden birkaç farklı şekilde vazgeçilebilir. Hesabınız FastComments.com tarafından yönetiliyor ve SSO üzerinden değilse, bildirimlerinizi
-[Bildirim Ayarları sayfası](https://fastcomments.com/auth/my-account/edit-notifications) üzerinden yapılandırabilirsiniz.
+---
+Bildirimler birkaç farklı şekilde kapatılabilir. Hesabınız FastComments.com tarafından yönetiliyor ve SSO aracılığıyla değilse, bildirimlerinizi
+[Notifications Settings page](https://fastcomments.com/auth/my-account/edit-notifications) üzerinden yapılandırabilirsiniz.
 
-Burada yorum yanıtı ve bahsetme bildirimlerini, abonelik bildirim sıklığını (her dakika, saatlik veya günlük) ve genel olarak herhangi bir bildirimi yapılandırabilirsiniz. Eğer site yöneticisi veya
-moderatörseniz, burada Özet E-postası sıklığını yapılandırma seçeneğiniz de olacaktır.
+Burada yorum yanıtı ve bahsetme bildirimlerini, bildirim sıklığını (her dakika, saatlik veya günlük), abonelik bildirim sıklığını (her dakika, saatlik veya günlük) ve genel olarak herhangi bir bildirimi yapılandırabilirsiniz. Bir site yöneticisi veya moderatörseniz, sitenizdeki yeni yorumlarla ilgili e-postaları ne sıklıkla alacağınızı kontrol eden ayrı bir **Yönetici Bildirim Sıklığı** ayarına (varsayılan olarak saatlik) ve ayrıca Özet E-posta sıklığını yapılandırma seçeneğine de sahip olursunuz.
 
-Ek olarak, her e-posta bir vazgeçme bağlantısı içerir. Yorum yanıtı bildirimleri için e-posta, **o yorum için bildirimlerden vazgeçmek** üzere bir bağlantı içerir.
+Ayrıca, her e-postada bir abonelikten çıkma bağlantısı bulunur. Yorum yanıtı bildirimleri için, e-posta **o yorum için bildirimleri kapatma** bağlantısı içerir.
 
-Bildirimlerin kapatılması için ayrıca bir abonelikten çıkma bağlantısı ve uygun e-posta üstbilgileri olacaktır.
+Bildirimlerin kapatılması için ayrıca bir abonelikten çıkma bağlantısı ve uygun e-posta üstbilgileri de olacaktır.
 
-E-postalardaki abonelikten çıkma bağlantıları, belirli bir tenant için talep üzerine kaldırılabilir. Ayrıca, bağlantı SSO veya whitelabel entegrasyonları için özelleştirilebilir.
+E-postalardaki abonelikten çıkma bağlantıları, talep üzerine belirli bir tenant için kaldırılabilir. Ayrıca, bağlantı SSO veya whitelabel entegrasyonları için özelleştirilebilir.
+---
