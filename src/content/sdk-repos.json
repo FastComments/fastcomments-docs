@@ -17,7 +17,7 @@
         "cachePath": ".ai-cache/",
         "specPath": "openapi.json"
       },
-      "description": "Official C++ SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your C++ applications."
     },
     {
       "id": "sdk-go",
@@ -33,7 +33,7 @@
         "docFilePattern": "{ApiClass}.md",
         "apiClasses": ["DefaultAPI", "PublicAPI"]
       },
-      "description": "Official Go SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Go applications."
     },
     {
       "id": "sdk-javascript",
@@ -52,7 +52,7 @@
         "cachePath": ".ai-cache/",
         "specPath": "openapi.json"
       },
-      "description": "Official JavaScript/TypeScript SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from Node.js or the browser."
     },
     {
       "id": "sdk-java",
@@ -67,7 +67,7 @@
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md"
       },
-      "description": "Official Java SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Java applications."
     },
     {
       "id": "sdk-nim",
@@ -86,7 +86,7 @@
         "cachePath": ".ai-cache/",
         "specPath": "openapi.json"
       },
-      "description": "Official Nim SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Nim applications."
     },
     {
       "id": "sdk-php",
@@ -101,7 +101,7 @@
         "generatedDocsPath": "docs/Api/",
         "docFilePattern": "{ApiClass}.md"
       },
-      "description": "Official PHP SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your PHP applications."
     },
     {
       "id": "sdk-php-sso",
@@ -111,7 +111,7 @@
       "branch": "main",
       "language": "php",
       "docGenerators": ["readme"],
-      "description": "PHP SDK for FastComments SSO integration"
+      "description": "Integrate FastComments Single Sign-On in your PHP application."
     },
     {
       "id": "sdk-python",
@@ -126,7 +126,7 @@
         "generatedDocsPath": "client/docs/",
         "docFilePattern": "{ApiClass}.md"
       },
-      "description": "Official Python SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Python applications."
     },
     {
       "id": "sdk-ruby",
@@ -142,7 +142,7 @@
         "docFilePattern": "{ApiClass}.md",
         "apiClasses": ["DefaultApi", "PublicApi"]
       },
-      "description": "Official Ruby SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Ruby applications."
     },
     {
       "id": "sdk-rust",
@@ -161,7 +161,7 @@
         "cachePath": ".ai-cache/",
         "specPath": "openapi.json"
       },
-      "description": "Official Rust SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Rust applications."
     },
     {
       "id": "sdk-swift",
@@ -177,7 +177,7 @@
         "docFilePattern": "{ApiClass}.md",
         "apiClasses": ["DefaultAPI", "PublicAPI"]
       },
-      "description": "Official Swift SDK for the FastComments API"
+      "description": "Manage comments, users, SSO, and moderation from your Swift applications."
     },
     {
       "id": "lib-android",
@@ -187,7 +187,7 @@
       "branch": "main",
       "language": "kotlin",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Android"
+      "description": "Embed live commenting, chat, and review widgets in your Android app."
     },
     {
       "id": "lib-react-native",
@@ -197,7 +197,7 @@
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for React Native"
+      "description": "Embed live commenting, chat, and review widgets in your React Native app."
     },
     {
       "id": "lib-react-native-sdk",
@@ -207,7 +207,7 @@
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments SDK for React Native applications"
+      "description": "Access the FastComments API directly from your React Native application."
     },
     {
       "id": "lib-angular",
@@ -217,7 +217,7 @@
       "branch": "main",
       "language": "typescript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Angular"
+      "description": "Embed live commenting, chat, and review widgets in your Angular app."
     },
     {
       "id": "lib-react",
@@ -227,7 +227,7 @@
       "branch": "master",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for React"
+      "description": "Embed live commenting, chat, and review widgets in your React app."
     },
     {
       "id": "lib-vue",
@@ -237,7 +237,7 @@
       "branch": "master",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Vue 2"
+      "description": "Embed live commenting, chat, and review widgets in your Vue 2 app."
     },
     {
       "id": "lib-vue-next",
@@ -247,7 +247,7 @@
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Vue 3"
+      "description": "Embed live commenting, chat, and review widgets in your Vue app."
     },
     {
       "id": "lib-svelte",
@@ -257,7 +257,7 @@
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Svelte"
+      "description": "Embed live commenting, chat, and review widgets in your Svelte app."
     },
     {
       "id": "lib-astro",
@@ -267,7 +267,7 @@
       "branch": "main",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "FastComments commenting widgets for Astro"
+      "description": "Embed live commenting, chat, and review widgets in your Astro site."
     },
     {
       "id": "lib-gatsby",
@@ -277,7 +277,7 @@
       "branch": "master",
       "language": "javascript",
       "docGenerators": ["readme"],
-      "description": "Example GatsbyJS site with FastComments setup"
+      "description": "A working example showing how to add FastComments to a GatsbyJS site."
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
