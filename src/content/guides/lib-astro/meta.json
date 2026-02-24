@@ -1,0 +1,36 @@
+{
+  "name": "Astro Library",
+  "pageHeader": "Add Comments to Your Astro Site",
+  "itemsOrdered": [
+    {
+      "name": "Install",
+      "file": "install-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Quick Start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Components",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Example Project",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

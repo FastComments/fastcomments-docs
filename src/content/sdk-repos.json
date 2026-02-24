@@ -260,6 +260,16 @@
       "description": "FastComments commenting widgets for Svelte"
     },
     {
+      "id": "lib-astro",
+      "name": "Astro Library",
+      "pageHeader": "Add Comments to Your Astro Site",
+      "repo": "https://github.com/FastComments/fastcomments-astro",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "FastComments commenting widgets for Astro"
+    },
+    {
       "id": "lib-gatsby",
       "name": "GatsbyJS Library",
       "pageHeader": "Add Comments to Your GatsbyJS Site",
