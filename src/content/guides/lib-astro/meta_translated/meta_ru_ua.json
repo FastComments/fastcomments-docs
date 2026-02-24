@@ -1,0 +1,36 @@
+{
+  "name": "Библиотека Astro",
+  "pageHeader": "Добавьте комментарии на ваш сайт Astro",
+  "itemsOrdered": [
+    {
+      "name": "Установка",
+      "file": "install-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненты",
+      "file": "components-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Пример проекта",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Ссылки",
+      "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

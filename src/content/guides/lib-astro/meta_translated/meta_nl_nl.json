@@ -1,0 +1,36 @@
+{
+  "name": "Astro-bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan je Astro-site",
+  "itemsOrdered": [
+    {
+      "name": "Installatie",
+      "file": "install-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Snelstart",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Componenten",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeeldproject",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

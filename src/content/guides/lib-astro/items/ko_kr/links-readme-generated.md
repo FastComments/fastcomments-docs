@@ -1,0 +1,5 @@
+---
+- [FastComments 문서](https://docs.fastcomments.com)
+- [맞춤화 및 구성](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Astro 문서](https://docs.astro.build)
+---

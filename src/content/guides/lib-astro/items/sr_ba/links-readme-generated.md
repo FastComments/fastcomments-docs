@@ -1,0 +1,5 @@
+---
+- [Документација FastComments](https://docs.fastcomments.com)
+- [Прилагођавање & Конфигурација](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Документација Astro](https://docs.astro.build)
+---

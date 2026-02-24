@@ -1,0 +1,36 @@
+{
+  "name": "Astro ライブラリ",
+  "pageHeader": "あなたの Astro サイトにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "install-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "コンポーネント",
+      "file": "components-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルプロジェクト",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "リンク",
+      "file": "links-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

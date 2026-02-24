@@ -1,0 +1,36 @@
+{
+  "name": "Бібліотека Astro",
+  "pageHeader": "Додавання коментарів до вашого сайту Astro",
+  "itemsOrdered": [
+    {
+      "name": "Встановлення",
+      "file": "install-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненти",
+      "file": "components-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Приклад проєкту",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Посилання",
+      "file": "links-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

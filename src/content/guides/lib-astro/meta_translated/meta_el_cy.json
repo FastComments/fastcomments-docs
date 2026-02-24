@@ -1,0 +1,36 @@
+{
+  "name": "Βιβλιοθήκη Astro",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπό σας Astro",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Συστατικά",
+      "file": "components-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Παράδειγμα έργου",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Σύνδεσμοι",
+      "file": "links-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

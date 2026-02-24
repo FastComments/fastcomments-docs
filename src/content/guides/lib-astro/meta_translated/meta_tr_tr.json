@@ -1,0 +1,36 @@
+{
+  "name": "Astro Kütüphanesi",
+  "pageHeader": "Astro Sitenize Yorumlar Ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Bileşenler",
+      "file": "components-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Örnek Proje",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Bağlantılar",
+      "file": "links-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    }
+  ]
+}

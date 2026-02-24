@@ -1,0 +1,36 @@
+{
+  "name": "Knjižnica Astro",
+  "pageHeader": "Dodajte komentarje na svojo Astro spletno stran",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev",
+      "file": "install-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Hitri začetek",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Komponente",
+      "file": "components-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Primer projekta",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Povezave",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

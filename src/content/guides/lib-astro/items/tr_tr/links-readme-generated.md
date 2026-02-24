@@ -1,0 +1,5 @@
+---
+- [FastComments Dokümantasyonu](https://docs.fastcomments.com)
+- [Özelleştirme ve Yapılandırma](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Astro Dokümantasyonu](https://docs.astro.build)
+---

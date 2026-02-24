@@ -1,0 +1,36 @@
+{
+  "name": "Astro 라이브러리",
+  "pageHeader": "Astro 사이트에 댓글 추가하기",
+  "itemsOrdered": [
+    {
+      "name": "설치",
+      "file": "install-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "컴포넌트",
+      "file": "components-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "예제 프로젝트",
+      "file": "example-project-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "링크",
+      "file": "links-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}

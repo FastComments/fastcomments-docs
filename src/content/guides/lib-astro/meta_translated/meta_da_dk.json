@@ -1,0 +1,36 @@
+{
+  "name": "Astro-bibliotek",
+  "pageHeader": "Tilføj kommentarer til dit Astro-websted",
+  "itemsOrdered": [
+    {
+      "name": "Installer",
+      "file": "install-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Hurtig start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Komponenter",
+      "file": "components-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Eksempelprojekt",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

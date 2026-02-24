@@ -1,0 +1,36 @@
+{
+  "name": "Astro 函式庫",
+  "pageHeader": "在你的 Astro 網站加入留言",
+  "itemsOrdered": [
+    {
+      "name": "安裝",
+      "file": "install-readme-generated.md",
+      "subCat": "入門",
+      "type": "readme"
+    },
+    {
+      "name": "快速開始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "元件",
+      "file": "components-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "範例專案",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "連結",
+      "file": "links-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}
