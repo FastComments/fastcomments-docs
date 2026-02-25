@@ -225,10 +225,7 @@ class SDKGuideGenerator {
             }
             const filePath = path.join(generatedDir, filename);
 
-            // Only write if file doesn't exist (TypeScript AI generator writes as it goes)
-            if (!fs.existsSync(filePath)) {
-                fs.writeFileSync(filePath, section.content, 'utf8');
-            }
+            fs.writeFileSync(filePath, section.content, 'utf8');
 
             // Update section.file to just be the filename (no prefix needed for locale structure)
             section.file = filename;
