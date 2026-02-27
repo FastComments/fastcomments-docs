@@ -10,6 +10,12 @@ With most systems that require a password, you can go through a Forgot Password 
 if you have the user's email. This means, if you have access to the user's email account,
 it does not matter if the system under attack uses passwords or magic links.
 
+### New IP Login Alerts
+
+When a login occurs from an IP address that has not been seen before for a given account, FastComments sends a security alert email
+with the approximate location and IP address. This helps users detect unauthorized access. Note that FastComments does not store
+raw IP addresses — only an obfuscated form is stored for security purposes.
+
 ### Security Compared to MFA
 
 Login Links are less secure than MFA. FastComments now supports two-factor authentication (2FA)
