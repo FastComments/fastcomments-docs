@@ -1,16 +1,25 @@
-Da Anmeldelinks im Wesentlichen Passwörter sind, nehmen wir die Sicherheit sehr ernst.
+---
+Da die Login-Links im Grunde Passwörter sind, nehmen wir die Sicherheit sehr ernst.
 
-Alle Anmeldelinks in unserem System sind so eingestellt, dass sie nach einer bestimmten Zeit ablaufen, und wir haben auch Mechanismen implementiert, um
-das Erraten eines Anmeldelinks zu erkennen. Einige Anmeldelinks sind in mehrere Passwörter aufgeteilt, und wenn eines erraten wird,
-wird das andere ungültig.
+All login links in our system are set to expire after a certain period of time, and we also have mechanisms in place to detect
+the guessing of a login link. Some login links are split into multiple passwords, and if one is guessed,
+the other will be invalidated.
 
 ### Sicherheit im Vergleich zu Passwörtern
 
-Bei den meisten Systemen, die ein Passwort erfordern, kann man den Passwort-vergessen-Mechanismus durchlaufen,
-wenn man die E-Mail des Benutzers hat. Das bedeutet, wenn Sie Zugriff auf das E-Mail-Konto des Benutzers haben,
-spielt es keine Rolle, ob das angegriffene System Passwörter oder magische Links verwendet.
+Bei den meisten Systemen, die ein Passwort erfordern, können Sie den 'Passwort vergessen'-Mechanismus
+nutzen, wenn Sie die E-Mail-Adresse des Benutzers haben. Das bedeutet, wenn Sie Zugriff auf das E-Mail-Konto des Benutzers haben,
+spielt es keine Rolle, ob das angegriffene System Passwörter oder Magic Links verwendet.
+
+### Neue IP-Anmeldebenachrichtigungen
+
+When a login occurs from an IP address that has not been seen before for a given account, FastComments sends a security alert email
+with the approximate location and IP address. This helps users detect unauthorized access. Note that FastComments does not store
+raw IP addresses — only an obfuscated form is stored for security purposes.
 
 ### Sicherheit im Vergleich zu MFA
 
-Anmeldelinks sind weniger sicher als MFA. FastComments unterstützt jetzt die Zwei-Faktor-Authentifizierung (2FA)
-für Admin-Konten, um die Sicherheit zu erhöhen. Wenn 2FA aktiviert ist, ist sie auch bei Verwendung von Anmeldelinks erforderlich.
+Login-Links sind weniger sicher als MFA. FastComments unterstützt jetzt die Zwei-Faktor-Authentifizierung (2FA)
+für Administratorkonten, um die Sicherheit zu erhöhen. Wenn 2FA aktiviert ist, ist sie auch bei der Verwendung von Login-Links erforderlich.
+
+---

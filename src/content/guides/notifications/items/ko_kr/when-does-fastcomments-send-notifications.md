@@ -1,28 +1,32 @@
-At FastComments, 우리는 이미 충분한 알림을 받고 있다는 것을 알고 있습니다. 따라서 사용자가 커뮤니티와의 연결을 유지할 수 있으면서도 받는 알림을 제한하기 위한 몇 가지 조치를 취합니다. 또한 관리자와 모더레이터가 최신 상태를 유지하고 조치가 필요할 때 알 수 있도록 하고자 합니다.
+At FastComments, 우리는 이미 충분한 알림을 받고 있다는 것을 알고 있습니다. 그래서 사용자가 커뮤니티와 계속 연결된 상태를 유지하면서도 받는 알림을 제한하기 위한 몇 가지 조치를 취합니다. 또한 관리자와 중재자에게 최신 상태를 유지시키고 조치가 필요할 때 이를 알리고자 합니다.
 
-#### 관리자 및 모더레이터에게는 다음 이벤트에 대해 알림을 보냅니다:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- 커뮤니티 다이제스트 요약 (빈도 조정 가능).
-- 커뮤니티 도움 요청 및 알림.
-- 새 댓글.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
-#### 댓글 작성자용:
+#### For Commenters:
 
-- 누군가 귀하의 댓글에 답글을 달면 (이메일로).
-- 귀하가 언급되면 (앱 내 및 이메일 알림).
-- 동일한 스레드에서 누군가가 답글을 달면 (앱 내 및 이메일 알림).
-- 동일한 스레드에서 자식 댓글에 누군가가 답글을 달면 (앱 내 및 이메일 알림).
-- 귀하가 구독한 페이지에 누군가가 댓글을 달면 (앱 내 및 이메일 알림, 구독별로 빈도 설정 가능: 매분, 매시간 또는 매일).
-- 사용자가 처음으로 댓글을 남기면 (단, SSO인 경우 제외).
-- 사용자가 인증되지 않은 세션에서 댓글을 남기면 (단, SSO인 경우 제외).
-  - 이 경우 여러 번의 인증 이메일을 보내지 않습니다. 동일한 세션의 모든 활동을 인증하는 첫 번째 이메일만 보냅니다.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### ...마지막으로 관리자 전용:
+#### For All Users:
 
-- 통합이 완료되었을 때.
-- 마이그레이션이 완료되었을 때.
-- 가져오기 또는 내보내기가 완료되었을 때.
-- 결제 문제 발생 시.
-- 체험 기간 종료 알림.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-일부 알림은 사용자에게 대량으로 전송되는 것을 방지하기 위해 배치 처리됩니다. 다음 섹션 `Notification Types`에서 이에 대해 알아보세요.
+#### ...and finally for administrators only:
+
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
+
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.

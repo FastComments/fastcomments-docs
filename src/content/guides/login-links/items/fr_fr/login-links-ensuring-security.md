@@ -1,16 +1,17 @@
 Étant donné que les liens de connexion sont essentiellement des mots de passe, nous prenons la sécurité très au sérieux.
 
-Tous les liens de connexion de notre système expirent après une certaine période, et nous disposons également de mécanismes en place pour détecter
-les tentatives de deviner un lien de connexion. Certains liens de connexion sont divisés en plusieurs mots de passe, et si l'un est deviné,
-l'autre sera invalidé.
+Tous les liens de connexion de notre système expirent après une certaine durée, et nous disposons également de mécanismes pour détecter la tentative de deviner un lien de connexion. Certains liens de connexion sont répartis en plusieurs mots de passe, et si l'un est deviné, les autres seront invalidés.
 
-### Sécurité comparée aux mots de passe
+### Sécurité par rapport aux mots de passe
 
-Dans la plupart des systèmes qui exigent un mot de passe, vous pouvez passer par un mécanisme « Mot de passe oublié »
-si vous disposez de l'email de l'utilisateur. Cela signifie que, si vous avez accès au compte email de l'utilisateur,
-il n'importe pas si le système attaqué utilise des mots de passe ou des liens magiques.
+Dans la plupart des systèmes nécessitant un mot de passe, il suffit d'utiliser la procédure « Mot de passe oublié » si vous disposez de l'adresse e-mail de l'utilisateur. Cela signifie que si vous avez accès au compte e-mail de l'utilisateur, il est indifférent que le système attaqué utilise des mots de passe ou des liens magiques.
 
-### Sécurité comparée à l'authentification multifacteur (MFA)
+### Alertes de connexion depuis une nouvelle IP
 
-Les liens de connexion sont moins sécurisés que l'authentification multifacteur (MFA). FastComments prend désormais en charge l'authentification à deux facteurs (2FA)
-pour les comptes administrateur afin d'offrir une sécurité renforcée. Lorsque la 2FA est activée, elle est requise même lors de l'utilisation de liens de connexion.
+Lorsqu'une connexion est effectuée depuis une adresse IP qui n'a pas été vue auparavant pour un compte donné, FastComments envoie un e-mail d'alerte de sécurité contenant la localisation approximative et l'adresse IP. Cela aide les utilisateurs à détecter les accès non autorisés. Notez que FastComments ne stocke pas les adresses IP brutes — seule une forme obfusquée est conservée pour des raisons de sécurité.
+
+### Sécurité par rapport à la MFA
+
+Les liens de connexion sont moins sécurisés que la MFA. FastComments prend désormais en charge l'authentification à deux facteurs (2FA) pour les comptes administrateur afin d'offrir une sécurité renforcée. Lorsque la 2FA est activée, elle est requise même lors de l'utilisation de liens de connexion.
+
+---
