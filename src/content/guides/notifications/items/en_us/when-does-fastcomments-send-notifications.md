@@ -18,6 +18,10 @@ keeping them in touch with their communities. We also want to keep administrator
 - When a user leaves a comment in a session that is not verified (But not with SSO).
   - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
+#### For All Users:
+
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+
 #### ...and finally for administrators only:
 
 - When integrations are complete.

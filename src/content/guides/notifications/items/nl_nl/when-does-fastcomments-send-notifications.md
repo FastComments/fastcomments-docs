@@ -1,28 +1,32 @@
-Bij FastComments weten we dat je al genoeg meldingen ontvangt. Daarom nemen we maatregelen om de meldingen die gebruikers ontvangen te beperken, terwijl we ze toch in contact houden met hun communities. We willen ook beheerders en moderatoren op de hoogte houden en hen laten weten wanneer er actie nodig is.
+Bij FastComments weten we dat je al genoeg meldingen krijgt. Daarom nemen we maatregelen om het aantal meldingen dat gebruikers ontvangen te beperken, terwijl we ze toch in contact houden met hun gemeenschappen. We willen ook beheerders en moderators op de hoogte houden en hen laten weten wanneer er actie nodig is.
 
-#### We sturen meldingen voor de volgende gebeurtenissen voor beheerders en moderatoren:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Community Digest-samenvatting (frequentie configureerbaar).
-- Community-hulpverzoeken en herinneringen.
-- Nieuwe reacties.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
-#### Voor reageerders:
+#### For Commenters:
 
-- Wanneer iemand op je reactie reageert (per e-mail).
-- Wanneer je genoemd wordt (in-app en e-mailmelding).
-- Wanneer iemand in dezelfde discussiedraad reageert (in-app en e-mailmelding).
-- Wanneer iemand antwoordt op een onderliggende reactie in dezelfde discussiedraad (in-app en e-mailmelding).
-- Wanneer iemand reageert op een pagina waarop je geabonneerd bent (in-app en e-mailmelding, frequentie configureerbaar per abonnement: elke minuut, elk uur of dagelijks).
-- Wanneer een gebruiker voor het eerst reageert (maar niet bij SSO).
-- Wanneer een gebruiker een reactie achterlaat in een sessie die niet is geverifieerd (maar niet bij SSO).
-  - We sturen in dit geval niet meerdere verificatie-e-mails. Alleen de eerste, die alle activiteit in dezelfde sessie zal verifiëren.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### ...en tenslotte alleen voor beheerders:
+#### For All Users:
 
-- Wanneer integraties voltooid zijn.
-- Wanneer migraties voltooid zijn.
-- Wanneer importen of exporten zijn voltooid.
-- Wanneer er factureringsproblemen zijn.
-- Herinneringen bij het einde van de proefperiode.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-Sommige meldingen worden gebundeld om massale verzending van meldingen naar gebruikers te voorkomen. Lees hierover in de volgende sectie `Notification Types`.
+#### ...and finally for administrators only:
+
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
+
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
