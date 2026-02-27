@@ -16,6 +16,15 @@ When a login occurs from an IP address that has not been seen before for a given
 with the approximate location and IP address. This helps users detect unauthorized access. Note that FastComments does not store
 raw IP addresses — only an obfuscated form is stored for security purposes.
 
+### Backup Email for Account Recovery
+
+If you lose access to your primary email, you can use a verified backup email to recover your account. Your backup email works
+with all login flows. You can enter it on the forgot username page, use it with magic link login, or type it in the
+username/email field for password login.
+
+To set up a backup email, go to [Account Details](https://fastcomments.com/auth/my-account/edit-details) and click
+**Define a Backup Email**. Your backup email is only used for account recovery and will not receive notifications.
+
 ### Security Compared to MFA
 
 Login Links are less secure than MFA. FastComments now supports two-factor authentication (2FA)

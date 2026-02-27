@@ -108,3 +108,18 @@ You can optionally set your country, which displays a flag icon next to your nam
 3. Save changes
 
 The country flag appears next to your username on your profile.
+
+### Backup Email
+
+You can add a backup email to your account for recovery purposes. If you lose access to your primary email, your backup email
+can be used to log in or recover your username.
+
+**To add a backup email:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Click **Define a Backup Email** under the email field
+3. Enter your backup email address and submit
+4. Click the verification link sent to that address
+
+Your backup email is only used for account recovery and will not receive notifications or other emails. You can change or remove it at any time.
+
+Note: Backup email is only available for regular users, not SSO users.
