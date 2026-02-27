@@ -1,51 +1,51 @@
-FastComments User Profiles are highly customizable, allowing users to express their personality and build their online presence.
+Uporabniški profili FastComments so močno prilagodljivi, kar uporabnikom omogoča izražanje svoje osebnosti in gradnjo spletne prisotnosti.
 
 ### Urejanje vašega profila
 
 Če želite prilagoditi svoj profil, obiščite stran [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details). Tukaj lahko spremenite vse vidike videza in informacij vašega profila.
 
-### Profilni avatar
+### Avatar profila
 
-Vaš avatar je profilna slika, ki se prikaže poleg vaših komentarjev in na vaši strani profila.
+Vaš avatar je profilna slika, ki se prikaže ob vaših komentarjih in na strani vašega profila.
 
-**Za spremembo avatarja:**
-1. Obiščite svojo profilno stran
-2. Kliknite povezavo "Uredi avatar" (vidno le na vašem profilu)
+**Če želite spremeniti avatar:**
+1. Obiščite svojo stran profila
+2. Kliknite povezavo "Uredi avatar" (vidno samo na vašem profilu)
 3. Naložite novo sliko
 
 **Zahteve za avatar:**
-- Priporočena velikost: 200x200 slikovnih pik ali več
+- Priporočena velikost: 200x200 pik ali več
 - Podprti formati: JPG, PNG, GIF
-- Kvadratne slike delujejo najbolje
+- Najbolje delujejo kvadratne slike
 
-Opomba: uporabniki SSO lahko imajo avatar pod nadzorom SSO sistema njihove strani.
+Opomba: avatar uporabnikov SSO lahko nadzira SSO sistem njihove strani.
 
 ### Ozadje glave profila
 
-Ozadje glave je velika pasica na vrhu vašega profila, ki jo lahko prilagodite, da odraža vaš slog.
+Ozadje glave je velika pasica na vrhu vašega profila, ki jo lahko prilagodite, da izraža vaš slog.
 
-**Za nalaganje ozadja glave:**
-1. Obiščite svojo profilno stran
-2. Kliknite gumb "Naloži naslovno sliko"
-3. Izberite sliko v svoji napravi
+**Če želite naložiti ozadje glave:**
+1. Obiščite svojo stran profila
+2. Kliknite gumb "Naloži ozadje glave"
+3. Izberite sliko iz svoje naprave
 
 **Zahteve za ozadje glave:**
-- Priporočena velikost: 1200x300 slikovnih pik
+- Priporočena velikost: 1200x300 pik
 - Podprti formati: JPG, PNG
 - Najbolje delujejo ležeče/široke slike
 - Slike se samodejno prilagodijo velikosti
 
-Če ne naložite lastnega ozadja, bo prikazano privzeto ozadje.
+Če ne naložite lastnega ozadja glave, bo prikazano privzeto ozadje.
 
 ### Prikazno ime
 
-Vaše prikazno ime je način, kako se drugim uporabnikom prikazujete v FastComments. Za razliko od uporabniških imen (ki morajo biti edinstvena), prikazna imena:
+Prikazno ime je način, kako se prikazujete drugim uporabnikom na FastComments. V nasprotju z uporabniškimi imeni (ki morajo biti edinstvena), prikazna imena:
 
-- Ne morajo biti edinstvena
+- Ni nujno, da so edinstvena
 - Lahko vsebujejo presledke in posebne znake
 - Lahko vključujejo emotikone
 
-**Za nastavitev prikaznega imena:**
+**Če želite nastaviti prikazno ime:**
 1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
 2. Vnesite želeno prikazno ime
 3. Shrani spremembe
@@ -58,53 +58,67 @@ Vaše uporabniško ime je edinstven identifikator, ki se uporablja za prijavo v 
 - Uporablja se v URL-ju vašega profila: `fastcomments.com/auth/user-profile/username`
 - Ne sme vsebovati presledkov ali posebnih znakov
 
-**Opomba:** uporabniki SSO lahko imajo neunikatna uporabniška imena, saj so vezana na določenega najemnika/skupnost.
+Opomba: uporabniki SSO lahko imajo ne-edinstvena uporabniška imena, saj so povezana s specifičnim najemnikom/skupnostjo.
 
 ### Biografija
 
-Dodajte osebno biografijo, da drugim poveste o sebi, vaših zanimanjih ali o tem, kaj počnete.
+Dodajte osebno biografijo, da drugim poveste o sebi, svojih zanimanjih ali kaj počnete.
 
-**Za dodajanje biografije:**
+**Če želite dodati biografijo:**
 1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
 2. Vnesite besedilo v polje Biografija
 3. Shrani spremembe
 
-Vaša biografija je vidna na vaši profilni strani in pomaga drugim razumeti, kdo ste.
+Vaša biografija se vidno prikaže na strani vašega profila in pomaga drugim razumeti, kdo ste.
 
-### URL spletne strani
+### URL spletnega mesta
 
 Dodajte povezavo do svoje osebne spletne strani, bloga ali portfelja.
 
-**Za dodajanje spletne strani:**
+**Če želite dodati spletno stran:**
 1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
-2. Vnesite URL vaše spletne strani v polje Spletna stran
+2. Vnesite URL svoje spletne strani v polje Spletna stran
 3. Shrani spremembe
 
-Povezava do vaše spletne strani bo prikazana na vašem profilu z ikono, ki jo je mogoče klikniti.
+Povezava do vaše spletne strani bo prikazana na vašem profilu z ikono, na katero je mogoče klikniti.
 
-### Povezave do družbenih omrežij
+### Povezave družbenih omrežij
 
-Povežite svoje profile družbenih omrežij s profilom FastComments. Podprte platforme vključujejo:
+Povežite svoje profile družbenih omrežij s svojim FastComments profilom. Podprte platforme vključujejo:
 
 - **Facebook** - Povezava do vašega Facebook profila
 - **Instagram** - Povezava do vašega Instagram računa
 - **LinkedIn** - Povezava do vašega LinkedIn profila
-- **Lastne povezave** - Dodajte katerokoli drugo družbeno omrežje ali spletni profil
+- **Lastne povezave** - Dodajte katerokoli drugo socialno omrežje ali spletni profil
 
-**Za dodajanje povezav do družbenih omrežij:**
+**Če želite dodati povezave do družbenih omrežij:**
 1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
 2. Vnesite URL-je svojih računov družbenih omrežij
 3. Shrani spremembe
 
-Povezave do družbenih omrežij se prikažejo na vašem profilu s prepoznavnimi ikonami platform, kar članom skupnosti olajša povezovanje z vami drugje.
+Povezave do družbenih omrežij se prikažejo na vašem profilu z prepoznavnimi ikonami platform, kar članom skupnosti olajša povezovanje z vami drugje.
 
 ### Država
 
-Neobvezno lahko nastavite svojo državo, ki prikaže ikono zastave poleg vašega imena.
+Izbirno lahko nastavite svojo državo, kar prikaže ikono zastave poleg vašega imena.
 
-**Za nastavitev države:**
+**Če želite nastaviti državo:**
 1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
 2. Izberite svojo državo iz spustnega seznama
 3. Shrani spremembe
 
-Zastava države se prikaže poleg vašega uporabniškega imena na vašem profilu.
+Zastava države se prikaže poleg vašega uporabniškega imena na profilu.
+
+### Rezervni e-poštni naslov
+
+Lahko dodate rezervni e-poštni naslov v svoj račun za namene obnovitve. Če izgubite dostop do svojega primarnega e-poštnega naslova, se lahko rezervni e-poštni naslov uporabi za prijavo ali obnovitev vašega uporabniškega imena.
+
+**Če želite dodati rezervni e-poštni naslov:**
+1. Pojdite na [Podrobnosti računa](https://fastcomments.com/auth/my-account/edit-details)
+2. Kliknite **Določite rezervni e-poštni naslov** pod poljem za e-pošto
+3. Vnesite rezervni e-poštni naslov in ga pošljite
+4. Kliknite potrditveno povezavo, poslano na ta naslov
+
+Vaš rezervni e-poštni naslov se uporablja samo za obnovitev računa in ne bo prejemal obvestil ali drugih e-poštnih sporočil. Lahko ga kadarkoli spremenite ali odstranite.
+
+Opomba: rezervni e-poštni naslov je na voljo samo običajnim uporabnikom, ne uporabnikom SSO.

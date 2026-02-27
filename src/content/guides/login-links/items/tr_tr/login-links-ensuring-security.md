@@ -1,20 +1,30 @@
-Giriş bağlantıları esasen parolalar olduğundan, güvenliği çok ciddiye alıyoruz.
+Giriş bağlantıları aslında birer şifre olduğundan, güvenliği çok ciddiye alıyoruz.
 
-Sistemimizdeki tüm giriş bağlantıları belirli bir süre sonra süresi dolacak şekilde ayarlanmıştır ve ayrıca bir giriş bağlantısının tahmin edilmesini algılamak için mekanizmalarımız bulunmaktadır.
-Bazı giriş bağlantıları birden fazla parola şeklinde bölünmüştür ve eğer biri tahmin edilirse,
-diğeri geçersiz kılınacaktır.
+Sistemimizdeki tüm giriş bağlantıları belirli bir süre sonra süresi dolacak şekilde ayarlanır, ve ayrıca bir giriş bağlantısının tahmin edilmesini tespit etmek için mekanizmalarımız vardır.
+Bazı giriş bağlantıları birden fazla parolaya bölünür; ve eğer biri tahmin edilirse,
+diğeri geçersiz kılınır.
 
-### Security Compared to Passwords
+### Parolalarla Karşılaştırıldığında Güvenlik
 
-Çoğu parola gerektiren sistemde, kullanıcının e-postasına erişiminiz varsa Şifremi Unuttum mekanizmasından geçebilirsiniz.
-Bu, kullanıcının e-posta hesabına erişiminiz varsa, saldırı altındaki sistemin parola mı yoksa sihirli bağlantılar mı kullandığının önemi olmadığı anlamına gelir.
+Çoğu parola gerektiren sistemde, kullanıcının e-postasına sahipseniz Şifremi Unuttum mekanizmasından geçebilirsiniz. Bu, kullanıcının e-posta hesabına erişiminiz varsa,
+sistemin saldırı altında olup parolalar mı yoksa sihirli bağlantılar mı kullandığının bir önemi olmadığı anlamına gelir.
 
-### New IP Login Alerts
+### Yeni IP Giriş Uyarıları
 
-Belirli bir hesap için daha önce görülmemiş bir IP adresinden giriş olduğunda, FastComments yaklaşık konum ve IP adresi ile bir güvenlik uyarı e-postası gönderir.
-Bu, kullanıcıların yetkisiz erişimi tespit etmelerine yardımcı olur. FastComments'in ham IP adreslerini saklamadığını unutmayın — güvenlik amacıyla yalnızca gizlenmiş bir biçimi saklanır.
+Belirli bir hesap için daha önce görülmemiş bir IP adresinden giriş yapıldığında, FastComments yaklaşık konum ve IP adresini içeren bir güvenlik uyarı e-postası gönderir.
+Bu, kullanıcıların yetkisiz erişimi tespit etmesine yardımcı olur. FastComments ham IP adreslerini saklamaz — yalnızca güvenlik amacıyla maskelenmiş bir biçim saklanır.
 
-### Security Compared to MFA
+### Hesap Kurtarma için Yedek E-posta
 
-Giriş bağlantıları MFA'dan daha az güvenlidir. FastComments artık yönetici hesapları için geliştirilmiş güvenlik sağlamak amacıyla iki faktörlü kimlik doğrulamayı (2FA) desteklemektedir.
-2FA etkinleştirildiğinde, giriş bağlantıları kullanılsa bile 2FA zorunludur.
+Birincil e-postanıza erişimi kaybederseniz, hesabınızı kurtarmak için doğrulanmış bir yedek e-posta kullanabilirsiniz. Yedek e-postanız tüm giriş akışlarıyla uyumludur.
+Bunu kullanıcı adını unuttum sayfasına girebilir, sihirli bağlantı girişinde kullanabilir veya parola ile girişte kullanıcı adı/e-posta alanına yazabilirsiniz.
+
+Yedek e-posta ayarlamak için [Hesap Ayrıntıları](https://fastcomments.com/auth/my-account/edit-details) sayfasına gidin ve
+**Yedek E-postayı Tanımla**'ya tıklayın. Yedek e-postanız yalnızca hesap kurtarma için kullanılır ve bildirim almaz.
+
+### MFA ile Karşılaştırıldığında Güvenlik
+
+Giriş bağlantıları MFA'dan daha az güvenlidir. FastComments artık yönetici hesapları için gelişmiş güvenlik sağlamak amacıyla iki faktörlü kimlik doğrulamayı (2FA) desteklemektedir.
+2FA etkinleştirildiğinde, giriş bağlantıları kullanılıyor olsa bile 2FA zorunlu olur.
+
+---

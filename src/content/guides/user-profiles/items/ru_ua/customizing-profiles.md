@@ -1,110 +1,125 @@
 FastComments User Profiles are highly customizable, allowing users to express their personality and build their online presence.
 
-### Редагування вашого профілю
+### Editing Your Profile
 
-Щоб налаштувати свій профіль, відвідайте сторінку [Account Details](https://fastcomments.com/auth/my-account/edit-details). Тут ви можете змінити всі аспекти зовнішнього вигляду та інформації профілю.
+To customize your profile, visit your [Account Details](https://fastcomments.com/auth/my-account/edit-details) page. Here you can modify all aspects of your profile appearance and information.
 
-### Аватар профілю
+### Profile Avatar
 
-Ваш аватар — це зображення профілю, яке відображається поруч із вашими коментарями та на сторінці профілю.
+Your avatar is the profile picture that appears next to your comments and on your profile page.
 
-**Щоб змінити аватар:**
-1. Відвідайте сторінку свого профілю
-2. Натисніть посилання "Edit Avatar" (видно лише на вашому власному профілі)
-3. Завантажте нове зображення
+**To change your avatar:**
+1. Visit your profile page
+2. Click the "Edit Avatar" link (visible only on your own profile)
+3. Upload a new image
 
-**Вимоги до аватара:**
-- Рекомендований розмір: 200x200 пікселів або більше
-- Підтримувані формати: JPG, PNG, GIF
-- Квадратні зображення працюють найкраще
+**Avatar Requirements:**
+- Recommended size: 200x200 pixels or larger
+- Supported formats: JPG, PNG, GIF
+- Square images work best
 
-Примітка: користувачі SSO можуть мати аватар, який контролюється системою SSO їхнього сайту.
+Note: SSO users may have their avatar controlled by their site's SSO system.
 
-### Фон шапки профілю
+### Profile Header Background
 
-Фон шапки — це велике банерне зображення у верхній частині вашого профілю, яке можна налаштувати, щоб відобразити ваш стиль.
+The header background is a large banner image at the top of your profile that can be customized to reflect your style.
 
-**Щоб завантажити фон шапки:**
-1. Відвідайте сторінку свого профілю
-2. Натисніть кнопку "Upload Header"
-3. Виберіть зображення зі свого пристрою
+**To upload a header background:**
+1. Visit your profile page
+2. Click the "Upload Header" button
+3. Select an image from your device
 
-**Вимоги до шапки:**
-- Рекомендований розмір: 1200x300 пікселів
-- Підтримувані формати: JPG, PNG
-- Краще підходять ландшафтні/широкі зображення
-- Зображення автоматично змінюються за розміром для підгонки
+**Header Requirements:**
+- Recommended size: 1200x300 pixels
+- Supported formats: JPG, PNG
+- Landscape/wide images work best
+- Images are automatically resized to fit
 
-Якщо ви не завантажите власний фон шапки, буде відображено фон за замовчуванням.
+If you don't upload a custom header, a default background will be displayed.
 
-### Відображуване ім'я
+### Display Name
 
-Ваше відображуване ім'я — це те, як ви виглядаєте для інших користувачів у FastComments. На відміну від імен користувачів (які мають бути унікальними), відображувані імена:
+Your display name is how you appear to other users across FastComments. Unlike usernames (which must be unique), display names:
 
-- Не повинні бути унікальними
-- Можуть містити пробіли та спеціальні символи
-- Можуть містити емодзі
+- Don't need to be unique
+- Can contain spaces and special characters
+- Can include emojis
 
-**Щоб встановити відображуване ім'я:**
-1. Перейдіть до [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Введіть бажане відображуване ім'я
-3. Збережіть зміни
+**To set your display name:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Enter your preferred display name
+3. Save changes
 
-### Ім'я користувача
+### Username
 
-Ваше ім'я користувача — це унікальний ідентифікатор, який використовується для входу в FastComments.
+Your username is a unique identifier used to log in to FastComments.
 
-- Повинно бути унікальним серед усіх користувачів FastComments
-- Використовується у вашому URL профілю: `fastcomments.com/auth/user-profile/username`
-- Не може містити пробілів або спеціальних символів
+- Must be unique across all FastComments users
+- Used in your profile URL: `fastcomments.com/auth/user-profile/username`
+- Cannot contain spaces or special characters
 
-**Примітка:** користувачі SSO можуть мати неунікальні імена користувачів, оскільки вони прив'язані до конкретного орендаря/спільноти.
+**Note:** SSO users can have non-unique usernames since they're tied to a specific tenant/community.
 
-### Біографія
+### Bio
 
-Додайте коротку біографію, щоб розповісти іншим про себе, свої інтереси або чим ви займаєтесь.
+Add a personal bio to tell others about yourself, your interests, or what you do.
 
-**Щоб додати біографію:**
-1. Перейдіть до [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Введіть текст у поле Bio
-3. Збережіть зміни
+**To add a bio:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Enter text in the Bio field
+3. Save changes
 
-Ваша біографія відображається на вашій сторінці профілю та допомагає іншим зрозуміти, хто ви.
+Your bio appears prominently on your profile page and helps others understand who you are.
 
-### URL вебсайту
+### Website URL
 
-Додайте посилання на свій персональний вебсайт, блог або портфоліо.
+Add a link to your personal website, blog, or portfolio.
 
-**Щоб додати вебсайт:**
-1. Перейдіть до [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Введіть URL свого вебсайту в поле Website
-3. Збережіть зміни
+**To add a website:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Enter your website URL in the Website field
+3. Save changes
 
-Посилання на ваш вебсайт відображатиметься у профілі з клікабельною іконкою.
+Your website link will be displayed on your profile with a clickable icon.
 
-### Посилання на соціальні мережі
+### Social Media Links
 
-Підключіть свої профілі в соціальних мережах до профілю FastComments. Підтримувані платформи включають:
+Connect your social media profiles to your FastComments profile. Supported platforms include:
 
-- **Facebook** - посилання на ваш профіль Facebook
-- **Instagram** - посилання на ваш акаунт Instagram
-- **LinkedIn** - посилання на ваш профіль LinkedIn
-- **Custom Links** - додайте будь-які інші профілі в соціальних мережах або веб‑посилання
+- **Facebook** - Link to your Facebook profile
+- **Instagram** - Link to your Instagram account
+- **LinkedIn** - Link to your LinkedIn profile
+- **Custom Links** - Add any other social media or web profiles
 
-**Щоб додати соціальні посилання:**
-1. Перейдіть до [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Введіть URL ваших акаунтів у соціальних мережах
-3. Збережіть зміни
+**To add social links:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Enter URLs for your social media accounts
+3. Save changes
 
-Соціальні посилання відображаються у вашому профілі з впізнаваними іконками платформ, що дозволяє учасникам спільноти легко зв'язатися з вами в інших місцях.
+Social links appear on your profile with recognizable platform icons, making it easy for community members to connect with you elsewhere.
 
-### Країна
+### Country
 
-За бажанням ви можете вказати свою країну, що відображатиме іконку прапора поруч з вашим ім'ям.
+You can optionally set your country, which displays a flag icon next to your name.
 
-**Щоб вказати країну:**
-1. Перейдіть до [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Оберіть свою країну з випадаючого списку
-3. Збережіть зміни
+**To set your country:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Select your country from the dropdown
+3. Save changes
 
-Іконка прапора країни відображається поруч із вашим ім'ям користувача на вашому профілі.
+The country flag appears next to your username on your profile.
+
+### Backup Email
+
+You can add a backup email to your account for recovery purposes. If you lose access to your primary email, your backup email
+can be used to log in or recover your username.
+
+**To add a backup email:**
+1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
+2. Click **Define a Backup Email** under the email field
+3. Enter your backup email address and submit
+4. Click the verification link sent to that address
+
+Your backup email is only used for account recovery and will not receive notifications or other emails. You can change or remove it at any time.
+
+Note: Backup email is only available for regular users, not SSO users.

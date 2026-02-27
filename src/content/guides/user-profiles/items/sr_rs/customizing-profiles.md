@@ -1,110 +1,125 @@
-FastComments User Profiles are highly customizable, allowing users to express their personality and build their online presence.
+FastComments кориснички профили су веома прилагодљиви, омогућавајући корисницима да изразе своју личност и изградe своју онлајн присутност.
 
-### Uređivanje vašeg profila
+### Уређивање вашег профила
 
-Da biste prilagodili svoj profil, posetite stranicu [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details). Ovde možete izmeniti sve aspekte izgleda i informacija svog profila.
+Да бисте прилагодили свој профил, посетите своју страницу [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details). Овде можете изменити све аспекте изгледа и података вашег профила.
 
-### Avatar profila
+### Аватар профила
 
-Vaš avatar je profilna slika koja se pojavljuje pored vaših komentara i na vašoj stranici profila.
+Ваш аватар је слика профила која се појављује поред ваших коментара и на вашој страници профила.
 
-**Za promenu avatara:**
-1. Posetite vašu stranicu profila
-2. Kliknite na link "Izmeni avatar" (vidljivo samo na vašem profilu)
-3. Otpremite novu sliku
+**Да промените аватар:**
+1. Посетите вашу страницу профила
+2. Кликните на линк "Уреди аватар" (видљиво само на вашем профилу)
+3. Отпремите нову слику
 
-**Zahtevi za avatar:**
-- Preporučena veličina: 200x200 piksela ili veća
-- Podržani formati: JPG, PNG, GIF
-- Kvadratne slike su najbolje
+**Захтеви за аватар:**
+- Препоручена величина: 200x200 пиксела или већа
+- Подржани формати: JPG, PNG, GIF
+- Најбоље функционишу квадратне слике
 
-Napomena: SSO korisnici mogu imati avatar koji kontroliše SSO sistem njihovog sajta.
+Напомена: SSO корисници могу имати аватар који контролише SSO систем њиховог сајта.
 
-### Pozadina zaglavlja profila
+### Позадина заглавља профила
 
-Pozadina zaglavlja je velika baner slika na vrhu vašeg profila koju možete prilagoditi da odražava vaš stil.
+Позадина заглавља је велика банер слика на врху вашег профила коју можете прилагодити да одражава ваш стил.
 
-**Za otpremanje pozadine zaglavlja:**
-1. Posetite vašu stranicu profila
-2. Kliknite na dugme "Otpremi zaglavlje"
-3. Izaberite sliku sa vašeg uređaja
+**Да отпремите позадину заглавља:**
+1. Посетите вашу страницу профила
+2. Кликните на дугме "Отпреми заглавље"
+3. Изаберите слику са вашег уређаја
 
-**Zahtevi za zaglavlje:**
-- Preporučena veličina: 1200x300 piksela
-- Podržani formati: JPG, PNG
-- Pejzažne/široke slike su najbolje
-- Slike se automatski skaliraju da odgovaraju
+**Захтеви за заглавље:**
+- Препоручена величина: 1200x300 пиксела
+- Подржани формати: JPG, PNG
+- Најбоље функционишу пејзажне/широке слике
+- Слике се аутоматски мењају да одговарају
 
-Ako ne otpremite prilagođeno zaglavlje, biće prikazana podrazumevana pozadina.
+Ако не отпремите прилагођено заглавље, биће приказана подразумевана позадина.
 
-### Prikazano ime
+### Приказано име
 
-Vaše prikazano ime je kako se pojavljujete drugim korisnicima na FastComments. Za razliku od korisničkih imena (koja moraju biti jedinstvena), prikazana imena:
+Ваше приказано име је начин на који се појављујете другим корисницима на FastComments. За разлику од корисничких имена (која морају бити јединствена), приказана имена:
 
-- Ne moraju biti jedinstvena
-- Mogu sadržati razmake i posebne karaktere
-- Mogu uključivati emodžije
+- Не морају бити јединствена
+- Могу садржати размаке и специјалне знакове
+- Могу укључивати емотиконе
 
-**Da postavite prikazano ime:**
-1. Idite na [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details)
-2. Unesite željeno prikazano ime
-3. Sačuvajte izmene
+**Да подесите приказано име:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Унесите жељено приказано име
+3. Саčувајте измене
 
-### Korisničko ime
+### Корисничко име
 
-Vaše korisničko ime je jedinstveni identifikator koji se koristi za prijavu na FastComments.
+Ваше корисничко име је јединствени идентификатор који се користи за пријаву у FastComments.
 
-- Mora biti jedinstveno među svim korisnicima FastComments-a
-- Koristi se u URL-u vašeg profila: `fastcomments.com/auth/user-profile/username`
-- Ne može sadržati razmake ili posebne karaktere
+- Мора бити јединствено међу свим FastComments корисницима
+- Користи се у URL вашег профила: `fastcomments.com/auth/user-profile/username`
+- Не сме садржати размаке или специјалне карактере
 
-**Napomena:** SSO korisnici mogu imati nejedinstvena korisnička imena jer su povezana sa određenim tenantom/zajednicom.
+**Напомена:** SSO корисници могу имати нејединствена корисничка имена јер су везана за одређеног тенанта/заједницу.
 
-### Biografija
+### Биографија
 
-Dodajte ličnu biografiju da biste drugima ispričali nešto o sebi, vašim interesovanjima ili čime se bavite.
+Додајте личну биографију да другима кажете више о себи, вашим интересовањима или чиме се бавите.
 
-**Za dodavanje biografije:**
-1. Idite na [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details)
-2. Unesite tekst u polje Biografija
-3. Sačuvajte izmene
+**Да додате биографију:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Унесите текст у поље Биографија
+3. Саčувајте измене
 
-Vaša biografija se istaknuto pojavljuje na stranici vašeg profila i pomaže drugima da razumeju ko ste.
+Ваша биографија је истакнута на вашој страници профила и помаже другим корисницима да разумеју ко сте.
 
-### URL veb-sajta
+### URL веб-сајта
 
-Dodajte link do vašeg ličnog veb-sajta, bloga ili portfolija.
+Додајте линк ка вашем личном веб-сајту, блогу или портфолију.
 
-**Za dodavanje veb-sajta:**
-1. Idite na [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details)
-2. Unesite URL vašeg veb-sajta u polje Website
-3. Sačuvajte izmene
+**Да додате веб-сајт:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Унесите URL вашег веб-сајта у поље Website
+3. Саčувајте измене
 
-Link do vašeg veb-sajta biće prikazan na vašem profilu sa klikabilnom ikonicom.
+Ваш линк ка веб-сајту биће приказан на вашем профилу са кликабилном иконом.
 
-### Linkovi društvenih mreža
+### Линкови друштвених мрежа
 
-Povežite vaše profile na društvenim mrežama sa vašim FastComments profilom. Podržane platforme uključuju:
+Повежите ваше профиле друштвених мрежа са FastComments профилом. Подржане платформе укључују:
 
-- **Facebook** - Link do vašeg Facebook profila
-- **Instagram** - Link do vašeg Instagram naloga
-- **LinkedIn** - Link do vašeg LinkedIn profila
-- **Prilagođeni linkovi** - Dodajte bilo koje druge profile na društvenim mrežama ili veb-profile
+- **Facebook** - Линк ка вашем Facebook профилу
+- **Instagram** - Линк ка вашем Instagram налогу
+- **LinkedIn** - Линк ка вашем LinkedIn профилу
+- **Custom Links** - Додајте било које друге линкове ка друштвеним мрежама или веб профилима
 
-**Za dodavanje linkova društvenih mreža:**
-1. Idite na [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details)
-2. Unesite URL-ove za vaše naloge na društvenim mrežama
-3. Sačuvajte izmene
+**Да додате друштвене линкове:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Унесите URL-ове ваших налога на друштвеним мрежама
+3. Саčувајте измене
 
-Linkovi društvenih mreža pojavljuju se na vašem profilu sa prepoznatljivim ikonama platformi, što olakšava članovima zajednice da stupe u kontakt sa vama na drugim mestima.
+Друштвени линкови се појављују на вашем профилу са препознатљивим иконама платформи, олакшавајући члановима заједнице да вас повежу и ван FastComments-а.
 
-### Država
+### Земља
 
-Opcionalno možete podesiti vašu državu, koja prikazuje ikonicu zastave pored vašeg imena.
+Опционо можете подесити вашу земљу, која приказује икону заставе поред вашег имена.
 
-**Za podešavanje države:**
-1. Idite na [Detalji naloga](https://fastcomments.com/auth/my-account/edit-details)
-2. Izaberite vašu državu iz padajućeg menija
-3. Sačuvajte izmene
+**Да подесите земљу:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Изаберите вашу земљу из падајуће листе
+3. Саčувајте измене
 
-Zastava države se pojavljuje pored vašeg korisničkog imena na vašem profilu.
+Икона заставе земље се појављује поред вашег корисничког имена на вашем профилу.
+
+### Резервна имејл адреса
+
+Можете додати резервну имејл адресу на ваш налог за потребе опоравка. Ако изгубите приступ вашем примарном имејлу, резервна адреса
+може се користити за пријаву или опоравак корисничког имена.
+
+**Да додате резервну имејл адресу:**
+1. Идите на [Детаљи налога](https://fastcomments.com/auth/my-account/edit-details)
+2. Кликните на **Поставите резервни имејл** испод поља за имејл
+3. Унесите вашу резервну имејл адресу и пошаљите
+4. Кликните на верификациони линк послат на ту адресу
+
+Ваша резервна имејл адреса се користи само за опоравак налога и неће примати обавештења или друге имејлове. Можете је променити или уклонити у било ком тренутку.
+
+Напомена: Резервна имејл адреса је доступна само за редовне кориснике, не и за SSO кориснике.

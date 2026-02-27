@@ -1,110 +1,125 @@
-FastComments User Profiles are highly customizable, allowing users to express their personality and build their online presence.
+Los perfiles de usuario de FastComments son altamente personalizables, lo que permite a los usuarios expresar su personalidad y crear su presencia en línea.
 
-### Editing Your Profile
+### Editar tu perfil
 
-To customize your profile, visit your [Account Details](https://fastcomments.com/auth/my-account/edit-details) page. Here you can modify all aspects of your profile appearance and information.
+Para personalizar tu perfil, visita tu página de [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details). Aquí puedes modificar todos los aspectos de la apariencia e información de tu perfil.
 
-### Profile Avatar
+### Avatar del perfil
 
-Your avatar is the profile picture that appears next to your comments and on your profile page.
+Tu avatar es la imagen de perfil que aparece junto a tus comentarios y en tu página de perfil.
 
-**To change your avatar:**
-1. Visit your profile page
-2. Click the "Edit Avatar" link (visible only on your own profile)
-3. Upload a new image
+**Para cambiar tu avatar:**
+1. Visita tu página de perfil
+2. Haz clic en el enlace "Editar avatar" (visible solo en tu propio perfil)
+3. Sube una nueva imagen
 
-**Avatar Requirements:**
-- Recommended size: 200x200 pixels or larger
-- Supported formats: JPG, PNG, GIF
-- Square images work best
+**Requisitos del avatar:**
+- Tamaño recomendado: 200x200 píxeles o más grande
+- Formatos compatibles: JPG, PNG, GIF
+- Las imágenes cuadradas funcionan mejor
 
-Note: SSO users may have their avatar controlled by their site's SSO system.
+Nota: Los usuarios SSO pueden tener su avatar controlado por el sistema SSO de su sitio.
 
-### Profile Header Background
+### Fondo del encabezado del perfil
 
-The header background is a large banner image at the top of your profile that can be customized to reflect your style.
+El fondo del encabezado es una imagen banner grande en la parte superior de tu perfil que se puede personalizar para reflejar tu estilo.
 
-**To upload a header background:**
-1. Visit your profile page
-2. Click the "Upload Header" button
-3. Select an image from your device
+**Para subir un fondo de encabezado:**
+1. Visita tu página de perfil
+2. Haz clic en el botón "Subir encabezado"
+3. Selecciona una imagen desde tu dispositivo
 
-**Header Requirements:**
-- Recommended size: 1200x300 pixels
-- Supported formats: JPG, PNG
-- Landscape/wide images work best
-- Images are automatically resized to fit
+**Requisitos del encabezado:**
+- Tamaño recomendado: 1200x300 píxeles
+- Formatos compatibles: JPG, PNG
+- Las imágenes en formato apaisado/anchas funcionan mejor
+- Las imágenes se redimensionan automáticamente para ajustarse
 
-If you don't upload a custom header, a default background will be displayed.
+Si no subes un encabezado personalizado, se mostrará un fondo predeterminado.
 
-### Display Name
+### Nombre para mostrar
 
-Your display name is how you appear to other users across FastComments. Unlike usernames (which must be unique), display names:
+Tu nombre para mostrar es cómo apareces ante otros usuarios en FastComments. A diferencia de los nombres de usuario (que deben ser únicos), los nombres para mostrar:
 
-- Don't need to be unique
-- Can contain spaces and special characters
-- Can include emojis
+- No necesitan ser únicos
+- Pueden contener espacios y caracteres especiales
+- Pueden incluir emojis
 
-**To set your display name:**
-1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Enter your preferred display name
-3. Save changes
+**Para establecer tu nombre para mostrar:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Introduce tu nombre para mostrar preferido
+3. Guarda los cambios
 
-### Username
+### Nombre de usuario
 
-Your username is a unique identifier used to log in to FastComments.
+Tu nombre de usuario es un identificador único usado para iniciar sesión en FastComments.
 
-- Must be unique across all FastComments users
-- Used in your profile URL: `fastcomments.com/auth/user-profile/username`
-- Cannot contain spaces or special characters
+- Debe ser único entre todos los usuarios de FastComments
+- Se usa en la URL de tu perfil: `fastcomments.com/auth/user-profile/username`
+- No puede contener espacios ni caracteres especiales
 
-**Note:** SSO users can have non-unique usernames since they're tied to a specific tenant/community.
+**Nota:** Los usuarios SSO pueden tener nombres de usuario no únicos ya que están vinculados a un inquilino/comunidad específica.
 
-### Bio
+### Biografía
 
-Add a personal bio to tell others about yourself, your interests, or what you do.
+Añade una biografía personal para contar a los demás sobre ti, tus intereses o a qué te dedicas.
 
-**To add a bio:**
-1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Enter text in the Bio field
-3. Save changes
+**Para añadir una biografía:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Escribe texto en el campo Biografía
+3. Guarda los cambios
 
-Your bio appears prominently on your profile page and helps others understand who you are.
+Tu biografía aparece de forma destacada en tu página de perfil y ayuda a los demás a comprender quién eres.
 
-### Website URL
+### URL del sitio web
 
-Add a link to your personal website, blog, or portfolio.
+Añade un enlace a tu sitio web personal, blog o portafolio.
 
-**To add a website:**
-1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Enter your website URL in the Website field
-3. Save changes
+**Para añadir un sitio web:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Introduce la URL de tu sitio web en el campo Sitio web
+3. Guarda los cambios
 
-Your website link will be displayed on your profile with a clickable icon.
+Tu enlace al sitio web se mostrará en tu perfil con un icono clicable.
 
-### Social Media Links
+### Enlaces a redes sociales
 
-Connect your social media profiles to your FastComments profile. Supported platforms include:
+Conecta tus perfiles de redes sociales a tu perfil de FastComments. Las plataformas compatibles incluyen:
 
-- **Facebook** - Link to your Facebook profile
-- **Instagram** - Link to your Instagram account
-- **LinkedIn** - Link to your LinkedIn profile
-- **Custom Links** - Add any other social media or web profiles
+- **Facebook** - Enlace a tu perfil de Facebook
+- **Instagram** - Enlace a tu cuenta de Instagram
+- **LinkedIn** - Enlace a tu perfil de LinkedIn
+- **Enlaces personalizados** - Añade cualquier otra red social o perfil web
 
-**To add social links:**
-1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Enter URLs for your social media accounts
-3. Save changes
+**Para añadir enlaces sociales:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Introduce las URL de tus cuentas de redes sociales
+3. Guarda los cambios
 
-Social links appear on your profile with recognizable platform icons, making it easy for community members to connect with you elsewhere.
+Los enlaces sociales aparecen en tu perfil con iconos reconocibles de las plataformas, facilitando que los miembros de la comunidad se conecten contigo en otros sitios.
 
-### Country
+### País
 
-You can optionally set your country, which displays a flag icon next to your name.
+Opcionalmente puedes establecer tu país, lo que muestra un icono de bandera junto a tu nombre.
 
-**To set your country:**
-1. Go to [Account Details](https://fastcomments.com/auth/my-account/edit-details)
-2. Select your country from the dropdown
-3. Save changes
+**Para establecer tu país:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Selecciona tu país en el desplegable
+3. Guarda los cambios
 
-The country flag appears next to your username on your profile.
+La bandera del país aparece junto a tu nombre de usuario en tu perfil.
+
+### Correo electrónico de respaldo
+
+Puedes añadir un correo electrónico de respaldo a tu cuenta para fines de recuperación. Si pierdes el acceso a tu correo electrónico principal, tu correo electrónico de respaldo
+puede usarse para iniciar sesión o recuperar tu nombre de usuario.
+
+**Para añadir un correo electrónico de respaldo:**
+1. Ve a [Detalles de la cuenta](https://fastcomments.com/auth/my-account/edit-details)
+2. Haz clic en **Definir un correo electrónico de respaldo** debajo del campo de correo electrónico
+3. Introduce tu dirección de correo electrónico de respaldo y envía
+4. Haz clic en el enlace de verificación enviado a esa dirección
+
+Tu correo electrónico de respaldo solo se utiliza para la recuperación de la cuenta y no recibirá notificaciones u otros correos. Puedes cambiarlo o eliminarlo en cualquier momento.
+
+Nota: El correo electrónico de respaldo solo está disponible para usuarios regulares, no para usuarios SSO.
