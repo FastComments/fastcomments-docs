@@ -1,37 +1,37 @@
-Stranica sa postavkama dodatka se nalazi na **Site Administration > Plugins > Local plugins > FastComments**. Dostupne opcije su:
+Страница подешавања додатка је на **Site Administration > Plugins > Local plugins > FastComments**. Доступне опције су:
 
-#### Tenant ID
+#### ID zakupca
 
-Vaš FastComments Tenant ID. Pronađite ga u <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> pod postavkama naloga.
+Ваш FastComments Tenant ID. Пронађите ово у <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments контролној табли</a> у подешавањима налога.
 
-#### API Secret
+#### API тајни кључ
 
-Vaš API Secret ključ, potreban za Secure SSO mode. Pronađite ga na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Ваш API Secret кључ, потребан за Secure SSO режим. Пронађите ово на <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
 
-#### SSO Mode
+#### SSO режим
 
-Izaberite kako su korisnici autentifikovani. Pogledajte sekciju [SSO Modes](#moodle-sso-modes) za detalje o svakoj opciji.
+Изаберите како се корисници аутентификују. Погледајте секцију [SSO Modes](#moodle-sso-modes) за детаље о свакој опцији.
 
-- **Secure** (preporučeno) - serverski HMAC-SHA256 potpis za autentifikaciju
-- **Simple** - klijentski podaci o korisniku bez potpisa
-- **None** - anonimno komentarisanje, bez integracije prijave na Moodle
+- **Sigurno** (препоручено) - HMAC-SHA256 потписана аутентификација на serverskoj strani
+- **Jednostavno** - подаци о кориснику на strani клијента без потписа
+- **Nijedno** - анонимно коментарисање, без интеграције Moodle пријаве
 
-#### Page Contexts
+#### Контеkсти страница
 
-Kontroliše gdje se komentari prikazuju:
+Контролише где се коментари појављују:
 
-- **Course pages** - komentari na glavnim stranicama kursa
-- **Module/activity pages** - komentari na pojedinačnim aktivnostima i resursima
-- **Both** - komentari na svim tipovima stranica
+- **Странице курса** - коментари на главним страницама курса
+- **Странице модула/активности** - коментари на појединачним активностима и ресурсима
+- **Обоје** - коментари на свим типовима страница
 
-#### Commenting Style
+#### Стил коментарисања
 
-Izaberite iskustvo komentarisanja. Pogledajte [Commenting Styles](#moodle-commenting-styles) za snimke ekrana svakog režima.
+Изаберите искуство коментарисања. Погледајте [Stilovi komentarisanja](#moodle-commenting-styles) за снимке екрана сваког режима.
 
-- **Comments** - standardni ugnježdeni widget za komentare ispod sadržaja stranice
-- **Collab Chat** - diskusije direktno u tekstu putem selekcije, sa indikatorima prisustva
-- **Both** - Comments i Collab Chat aktivni zajedno
+- **Коментари** - стандардни униткнути (threaded) видгет за коментаре испод садржаја странице
+- **Collab Chat** - дискусије у линији на основу избора текста са индикаторима присутности
+- **Обоје** - коментари и collab chat активни заједно
 
 #### CDN URL
 
-The FastComments CDN URL. Zadano je `https://cdn.fastcomments.com`. Promijenite ovo na EU CDN URL ako su vaši podaci hostovani u EU regiji.
+FastComments CDN URL. Подразумевано је `https://cdn.fastcomments.com`. Промените ово на EU CDN URL ако су ваши подаци хостовани у ЕУ региону.

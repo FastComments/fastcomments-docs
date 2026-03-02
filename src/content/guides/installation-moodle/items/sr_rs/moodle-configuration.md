@@ -1,20 +1,20 @@
-Страница поставки додатка је на **Site Administration > Plugins > Local plugins > FastComments**. Доступне опције су:
+Страница подешавања додатка се налази на **Site Administration > Plugins > Local plugins > FastComments**. Доступне опције су:
 
 #### Tenant ID
 
-Ваш FastComments Tenant ID. Пронађите ово на <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments контролној табли</a> у оквиру подешавања налога.
+Ваш FastComments Tenant ID. Пронађите га у <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> у подешавањима налога.
 
 #### API Secret
 
-Ваш API тајни кључ, потребан за Secure SSO режим. Пронађите ово на <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Мој налог > API тајна</a>.
+Ваш API Secret кључ, потребан за Secure SSO режим. Пронађите га на <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
 
 #### SSO Mode
 
-Изаберите како се корисници аутентификују. Погледајте одељак [SSO режими](#moodle-sso-modes) за детаље о свакој опцији.
+Изаберите како се корисници аутентификују. Погледајте одељак [SSO Modes](#moodle-sso-modes) за детаље о свакој опцији.
 
-- **Secure** (препоручено) - серверска HMAC-SHA256 потписана аутентификација
+- **Secure** (recommended) - серверска аутентификација потписана помоћу HMAC-SHA256
 - **Simple** - подаци о кориснику на клијентској страни без потписа
-- **None** - анонимно коментарисање, без интеграције Moodle пријаве
+- **None** - анонимно коментарисање, без интеграције пријављивања у Moodle
 
 #### Page Contexts
 
@@ -26,12 +26,12 @@
 
 #### Commenting Style
 
-Изаберите искуство коментарисања. Погледајте [Стилове коментарисања](#moodle-commenting-styles) за скриншотове сваког режима.
+Изаберите начин коментарисања. Погледајте [Commenting Styles](#moodle-commenting-styles) за снимке екрана сваког режима.
 
-- **Comments** - стандардни уграђени threaded коментар испод садржаја странице
-- **Collab Chat** - дискусије унутар текста изабраног као inline са индикаторима присутности
-- **Both** - коментари и collab chat активни заједно
+- **Comments** - стандардни нитни видџет за коментаре испод садржаја странице
+- **Collab Chat** - инлајн дискусије засноване на селекцији текста са индикаторима присутности
+- **Both** - коментари и Collab Chat активни истовремено
 
 #### CDN URL
 
-FastComments CDN URL. Подразумева се на `https://cdn.fastcomments.com`. Промените ово на EU CDN URL ако су ваши подаци хостовани у EU региону.
+The FastComments CDN URL. Подразумевано је `https://cdn.fastcomments.com`. Промените ово на EU CDN URL ако су ваши подаци хостовани у ЕУ региону.

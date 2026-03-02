@@ -1,37 +1,37 @@
-Stran z nastavitvami vtičnika se nahaja na **Site Administration > Plugins > Local plugins > FastComments**. Na voljo so naslednje možnosti:
+Stran z nastavitvami vtičnika se nahaja na **Administracija spletnega mesta > Vtičniki > Lokalni vtičniki > FastComments**. Na voljo so naslednje možnosti:
 
-#### ID najemnika
+#### Tenant ID
 
-Vaš FastComments Tenant ID. Najdete ga v <a href="https://fastcomments.com/auth/my-account" target="_blank">nadzorni plošči FastComments</a> pod nastavitvami računa.
+Vaš FastComments Tenant ID. Najdete ga v <a href="https://fastcomments.com/auth/my-account" target="_blank">nadzorni plošči FastComments</a> v nastavitvah računa.
 
-#### API skrivnost
+#### API Secret
 
-Vaš API Secret ključ, zahtevan za varen način SSO. Najdete ga na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Moj račun > API skrivnost</a>.
+Vaš API Secret ključ, zahtevan za način Secure SSO. Najdete ga na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Moj račun > API Secret</a>.
 
-#### Način SSO
+#### SSO Mode
 
-Izberite, kako so uporabniki overjeni. Oglejte si razdelek [Načini SSO](#moodle-sso-modes) za podrobnosti o vsaki možnosti.
+Izberite, kako so uporabniki overjeni. Oglejte si razdelek [SSO Modes](#moodle-sso-modes) za podrobnosti o vsaki možnosti.
 
-- **Varen** (priporočeno) - strežniško overjanje, podpisano z HMAC-SHA256
-- **Preprosto** - podatki o uporabniku na odjemalski strani brez podpisa
-- **Brez** - anonimno komentiranje, brez integracije prijave Moodle
+- **Secure** (recommended) - strežniško HMAC-SHA256 podpisano overjanje
+- **Simple** - odjemalski podatki o uporabniku brez podpisa
+- **None** - anonimno komentiranje, brez integracije prijave v Moodle
 
-#### Konteksti strani
+#### Page Contexts
 
-Nadzoruje, kje se prikazujejo komentarji:
+Nadzoruje, kje se prikažejo komentarji:
 
-- **Strani tečajev** - komentarji na glavnih straneh tečajev
-- **Strani modulov/aktivnosti** - komentarji pri posameznih aktivnostih in virih
-- **Oboje** - komentarji na vseh vrstah strani
+- **Course pages** - komentarji na glavnih straneh predmeta
+- **Module/activity pages** - komentarji na posameznih dejavnostih in gradivih
+- **Both** - komentarji na vseh vrstah strani
 
-#### Slog komentiranja
+#### Commenting Style
 
-Izberite izkušnjo komentiranja. Oglejte si [Slogi komentiranja](#moodle-commenting-styles) za posnetke zaslona vsakega načina.
+Izberite izkušnjo komentiranja. Oglejte si [Commenting Styles](#moodle-commenting-styles) za posnetke zaslona vsakega načina.
 
-- **Komentarji** - standardni nitast pripomoček za komentarje pod vsebino strani
+- **Comments** - standardni nitni pripomoček za komentarje pod vsebino strani
 - **Collab Chat** - razprave ob izbiri besedila z indikatorji prisotnosti
-- **Oboje** - komentarji in Collab Chat hkrati aktivna
+- **Both** - komentarji in Collab Chat hkrati aktivni
 
 #### CDN URL
 
-CDN URL storitve FastComments. Privzeto je `https://cdn.fastcomments.com`. Spremenite to na CDN URL za EU, če so vaši podatki gostovani v regiji EU.
+URL FastComments CDN. Privzeto je `https://cdn.fastcomments.com`. Spremenite ga na EU CDN URL, če so vaši podatki gostovani v regiji EU.

@@ -1,19 +1,19 @@
-Η σελίδα ρυθμίσεων του πρόσθετου βρίσκεται στο **Site Administration > Plugins > Local plugins > FastComments**. Οι διαθέσιμες επιλογές είναι:
+Η σελίδα ρυθμίσεων του πρόσθετου βρίσκεται στο **Διαχείριση ιστότοπου > Πρόσθετα > Τοπικά πρόσθετα > FastComments**. Οι διαθέσιμες επιλογές είναι:
 
 #### Tenant ID
 
-Το Tenant ID του FastComments σας. Βρείτε το στο <a href="https://fastcomments.com/auth/my-account" target="_blank">ταμπλό του FastComments</a> κάτω από τις ρυθμίσεις του λογαριασμού σας.
+Το Tenant ID του FastComments σας. Βρείτε το στον <a href="https://fastcomments.com/auth/my-account" target="_blank">πίνακα ελέγχου του FastComments</a> στις ρυθμίσεις του λογαριασμού σας.
 
 #### API Secret
 
-Το API Secret κλειδί σας, απαιτείται για το Secure SSO mode. Βρείτε το στο <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Το API Secret κλειδί σας, απαιτείται για τη λειτουργία Secure SSO. Βρείτε το στο <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Ο λογαριασμός μου > API Secret</a>.
 
 #### SSO Mode
 
-Επιλέξτε πώς γίνεται η πιστοποίηση των χρηστών. Δείτε την ενότητα [SSO Modes](#moodle-sso-modes) για λεπτομέρειες σχετικά με κάθε επιλογή.
+Επιλέξτε πώς γίνεται η πιστοποίηση των χρηστών. Δείτε την ενότητα [Λειτουργίες SSO](#moodle-sso-modes) για λεπτομέρειες σχετικά με κάθε επιλογή.
 
-- **Secure** (recommended) - πιστοποίηση υπογεγραμμένη με HMAC-SHA256 από την πλευρά του διακομιστή
-- **Simple** - δεδομένα χρήστη στην πλευρά του πελάτη χωρίς υπογραφή
+- **Secure** (συνιστάται) - πιστοποίηση στο server-side υπογεγραμμένη με HMAC-SHA256
+- **Simple** - δεδομένα χρήστη στο client-side χωρίς υπογραφή
 - **None** - ανώνυμα σχόλια, χωρίς ενσωμάτωση σύνδεσης Moodle
 
 #### Page Contexts
@@ -26,12 +26,12 @@
 
 #### Commenting Style
 
-Επιλέξτε την εμπειρία σχολιασμού. Δείτε τα [Commenting Styles](#moodle-commenting-styles) για στιγμιότυπα οθόνης κάθε λειτουργίας.
+Επιλέξτε την εμπειρία σχολιασμού. Δείτε τα [Στυλ σχολιασμού](#moodle-commenting-styles) για στιγμιότυπα οθόνης κάθε λειτουργίας.
 
-- **Comments** - τυπικό νηματικό widget σχολίων κάτω από το περιεχόμενο της σελίδας
-- **Collab Chat** - inline συζητήσεις επιλογής κειμένου με ενδείξεις παρουσίας
-- **Both** - ενεργά και σχόλια και collab chat ταυτόχρονα
+- **Comments** - τυπικό νηματοποιημένο widget σχολίων κάτω από το περιεχόμενο της σελίδας
+- **Collab Chat** - συζητήσεις με επιλογή κειμένου εντός σελίδας με δείκτες παρουσίας
+- **Both** - σχόλια και collab chat ενεργά ταυτόχρονα
 
 #### CDN URL
 
-Το URL του FastComments CDN. Προεπιλογή είναι `https://cdn.fastcomments.com`. Αλλάξτε το στο EU CDN URL εάν τα δεδομένα σας φιλοξενούνται στην περιοχή της ΕΕ.
+Το URL του CDN του FastComments. Προεπιλογή είναι το `https://cdn.fastcomments.com`. Αλλάξτε το στο URL του CDN για την ΕΕ εάν τα δεδομένα σας φιλοξενούνται στην περιοχή της ΕΕ.

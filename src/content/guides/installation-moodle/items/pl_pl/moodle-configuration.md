@@ -1,37 +1,37 @@
-Strona ustawień wtyczki znajduje się w **Site Administration > Plugins > Local plugins > FastComments**. Dostępne opcje to:
+The plugin settings page is at **Administracja witryną > Wtyczki > Wtyczki lokalne > FastComments**. The available options are:
 
 #### Tenant ID
 
-Twój FastComments Tenant ID. Znajdź go w <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> w ustawieniach konta.
+Your FastComments Tenant ID. Find this in the <a href="https://fastcomments.com/auth/my-account" target="_blank">panel FastComments</a> under your account settings.
 
 #### API Secret
 
-Twój klucz API Secret, wymagany dla trybu Secure SSO. Znajdź go w <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Your API Secret key, required for Secure SSO mode. Find this at <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Moje konto > API Secret</a>.
 
 #### SSO Mode
 
-Wybierz sposób uwierzytelniania użytkowników. Zobacz sekcję [SSO Modes](#moodle-sso-modes) po szczegóły każdego z wariantów.
+Choose how users are authenticated. See the [SSO Modes](#moodle-sso-modes) section for details on each option.
 
-- **Secure** (zalecane) - uwierzytelnianie po stronie serwera z podpisem HMAC-SHA256
+- **Secure** (recommended) - uwierzytelnianie podpisane po stronie serwera przy użyciu HMAC-SHA256
 - **Simple** - dane użytkownika po stronie klienta bez podpisu
 - **None** - anonimowe komentowanie, brak integracji z logowaniem Moodle
 
 #### Page Contexts
 
-Kontroluje, gdzie pojawiają się komentarze:
+Controls where comments appear:
 
 - **Course pages** - komentarze na stronach głównych kursów
-- **Module/activity pages** - komentarze na stronach poszczególnych aktywności i zasobów
+- **Module/activity pages** - komentarze na stronach pojedynczych aktywności i zasobów
 - **Both** - komentarze na wszystkich typach stron
 
 #### Commenting Style
 
-Wybierz sposób komentowania. Zobacz [Commenting Styles](#moodle-commenting-styles) po zrzuty ekranu każdego trybu.
+Choose the commenting experience. See [Commenting Styles](#moodle-commenting-styles) for screenshots of each mode.
 
-- **Comments** - standardowy wątkowany widżet komentarzy poniżej treści strony
-- **Collab Chat** - dyskusje inline po zaznaczeniu tekstu z wskaźnikami obecności
-- **Both** - jednoczesne aktywowanie komentarzy i collab chatu
+- **Comments** - standardowy wielowątkowy widżet komentarzy poniżej treści strony
+- **Collab Chat** - inline text selection discussions with presence indicators
+- **Both** - komentarze i Collab Chat aktywne jednocześnie
 
 #### CDN URL
 
-Adres CDN FastComments. Domyślnie `https://cdn.fastcomments.com`. Zmień to na adres CDN dla UE, jeśli Twoje dane są hostowane w regionie UE.
+The FastComments CDN URL. Defaults to `https://cdn.fastcomments.com`. Change this to the EU CDN URL if your data is hosted in the EU region.

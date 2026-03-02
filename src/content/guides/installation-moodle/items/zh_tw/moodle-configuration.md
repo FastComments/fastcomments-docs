@@ -1,4 +1,4 @@
-外掛設定頁面位於 **網站管理 > 外掛 > 本地外掛 > FastComments**。可用選項如下：
+外掛設定頁面位於 **網站管理 > 外掛 > 本機外掛 > FastComments**。可用選項如下：
 
 #### Tenant ID
 
@@ -6,34 +6,32 @@
 
 #### API Secret
 
-您的 API Secret 金鑰，Secure SSO 模式所需。可在 <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">我的帳戶 > API Secret</a> 找到。
+您的 API 密鑰，使用安全 SSO 模式時必需。可在 <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">我的帳戶 > API Secret</a> 找到此項。
 
-#### SSO 模式
+#### SSO Mode
 
-選擇使用者的驗證方式。請參閱 [SSO 模式](#moodle-sso-modes) 欄目以瞭解各選項的詳細說明。
+選擇使用者的驗證方式。請參閱 [SSO Modes](#moodle-sso-modes) 區段以了解各選項的詳細說明。
 
-- **Secure**（建議） - 伺服器端 HMAC-SHA256 簽名驗證
-- **Simple** - 用戶端的使用者資料，無簽名
+- **Secure** (recommended) - 伺服器端 HMAC-SHA256 簽章驗證
+- **Simple** - 客戶端使用者資料，無簽章
 - **None** - 匿名留言，未整合 Moodle 登入
 
-#### 頁面上下文
+#### Page Contexts
 
-控制留言顯示的位置：
+控制留言出現的位置：
 
-- **Course pages** - 在課程主頁面顯示留言
-- **Module/activity pages** - 在各活動與資源的個別頁面顯示留言
+- **Course pages** - 在課程主頁的留言
+- **Module/activity pages** - 在個別活動與資源頁面的留言
 - **Both** - 在所有頁面類型顯示留言
 
-#### 留言樣式
+#### Commenting Style
 
-選擇留言體驗。請參閱 [留言樣式](#moodle-commenting-styles) 查看各模式的截圖。
+選擇留言體驗。請參閱 [Commenting Styles](#moodle-commenting-styles) 以查看每種模式的畫面截圖。
 
-- **Comments** - 標準的分層留言元件，顯示於頁面內容下方
-- **Collab Chat** - 內嵌文字選取討論，顯示在線狀態
+- **Comments** - 頁面內容下方的標準串狀留言元件
+- **Collab Chat** - 內嵌文字選取討論，並顯示在線狀態指示
 - **Both** - 同時啟用留言與協作聊天
 
 #### CDN URL
 
-FastComments 的 CDN URL。預設為 `https://cdn.fastcomments.com`。如果您的資料託管在歐盟區域，請將此變更為 EU 的 CDN URL。
-
----
+FastComments 的 CDN URL。預設為 `https://cdn.fastcomments.com`。若您的資料託管於 EU 區域，請將此改為 EU 的 CDN URL。

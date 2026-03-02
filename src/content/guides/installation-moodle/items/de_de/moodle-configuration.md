@@ -1,37 +1,40 @@
-Die Einstellungsseite des Plugins befindet sich unter **Site Administration > Plugins > Local plugins > FastComments**. Die verfügbaren Optionen sind:
+---
+Die Plugin-Einstellungsseite befindet sich unter **Website-Administration > Plugins > Lokale Plugins > FastComments**. Die verfügbaren Optionen sind:
 
 #### Tenant ID
 
-Your FastComments Tenant ID. Find this in the <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments-Dashboard</a> under your account settings.
+Ihre FastComments Tenant-ID. Finden Sie diese im <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments-Dashboard</a> unter Ihren Kontoeinstellungen.
 
 #### API Secret
 
-Your API Secret key, required for Secure SSO mode. Find this at <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Mein Konto > API Secret</a>.
+Ihr API-Secret-Schlüssel, erforderlich für den Secure-SSO-Modus. Finden Sie diesen unter <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Mein Konto > API-Secret</a>.
 
 #### SSO Mode
 
-Wählen Sie, wie Benutzer authentifiziert werden. Siehe den [SSO Modes](#moodle-sso-modes) Abschnitt für Details zu jeder Option.
+Wählen Sie, wie Benutzer authentifiziert werden. Siehe den Abschnitt [SSO-Modi](#moodle-sso-modes) für Details zu jeder Option.
 
-- **Secure** (recommended) - server-side HMAC-SHA256 signed authentication
-- **Simple** - client-side user data without signature
-- **None** - anonymous commenting, no Moodle login integration
+- **Secure** (empfohlen) - serverseitige, mit HMAC-SHA256 signierte Authentifizierung
+- **Simple** - clientseitige Benutzerdaten ohne Signatur
+- **None** - anonyme Kommentierung, keine Moodle-Anmeldeintegration
 
 #### Page Contexts
 
 Steuert, wo Kommentare erscheinen:
 
-- **Course pages** - comments on course main pages
-- **Module/activity pages** - comments on individual activities and resources
-- **Both** - comments on all page types
+- **Course pages** - Kommentare auf Hauptseiten des Kurses
+- **Module/activity pages** - Kommentare zu einzelnen Aktivitäten und Ressourcen
+- **Both** - Kommentare auf allen Seitentypen
 
 #### Commenting Style
 
-Wählen Sie das Kommentiererlebnis. Siehe [Commenting Styles](#moodle-commenting-styles) für Screenshots der einzelnen Modi.
+Wählen Sie das Kommentiererlebnis. Siehe [Kommentier-Stile](#moodle-commenting-styles) für Screenshots jeder Darstellung.
 
-- **Comments** - standard threaded comment widget below page content
-- **Collab Chat** - inline text selection discussions with presence indicators
-- **Both** - comments and collab chat active together
+- **Comments** - standardmäßiges threaded Kommentar-Widget unter dem Seiteninhalt
+- **Collab Chat** - Inline-Diskussionen per Textauswahl mit Präsenzanzeigen
+- **Both** - Kommentare und Collab Chat gleichzeitig aktiv
 
 #### CDN URL
 
-The FastComments CDN URL. Defaults to `https://cdn.fastcomments.com`. Change this to the EU CDN URL if your data is hosted in the EU region.
+Die FastComments-CDN-URL. Standardmäßig `https://cdn.fastcomments.com`. Ändern Sie dies auf die EU-CDN-URL, wenn Ihre Daten in der EU gehostet werden.
+
+---

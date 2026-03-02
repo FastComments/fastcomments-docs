@@ -1,16 +1,16 @@
-Siden for pluginindstillinger findes under **Site Administration > Plugins > Local plugins > FastComments**. Følgende indstillinger er tilgængelige:
+The plugin settings page is at **Site Administration > Plugins > Local plugins > FastComments**. The available options are:
 
 #### Tenant ID
 
-Dit FastComments Tenant ID. Find dette i <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> under dine kontoindstillinger.
+Your FastComments Tenant ID. Find this in the <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> under your account settings.
 
 #### API Secret
 
-Din API Secret-nøgle, påkrævet for Secure SSO-tilstand. Find dette på <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Min konto > API Secret</a>.
+Your API Secret key, required for Secure SSO mode. Find this at <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Min konto > API Secret</a>.
 
 #### SSO Mode
 
-Vælg, hvordan brugere godkendes. Se afsnittet [SSO Modes](#moodle-sso-modes) for detaljer om hver mulighed.
+Choose how users are authenticated. See the [SSO Modes](#moodle-sso-modes) section for details on each option.
 
 - **Secure** (recommended) - server-side HMAC-SHA256 signed authentication
 - **Simple** - client-side user data without signature
@@ -18,7 +18,7 @@ Vælg, hvordan brugere godkendes. Se afsnittet [SSO Modes](#moodle-sso-modes) fo
 
 #### Page Contexts
 
-Styrer, hvor kommentarer vises:
+Controls where comments appear:
 
 - **Course pages** - comments on course main pages
 - **Module/activity pages** - comments on individual activities and resources
@@ -26,7 +26,7 @@ Styrer, hvor kommentarer vises:
 
 #### Commenting Style
 
-Vælg kommenteringsoplevelsen. Se [Commenting Styles](#moodle-commenting-styles) for skærmbilleder af hver tilstand.
+Choose the commenting experience. See [Commenting Styles](#moodle-commenting-styles) for screenshots of each mode.
 
 - **Comments** - standard threaded comment widget below page content
 - **Collab Chat** - inline text selection discussions with presence indicators
@@ -34,4 +34,4 @@ Vælg kommenteringsoplevelsen. Se [Commenting Styles](#moodle-commenting-styles)
 
 #### CDN URL
 
-FastComments CDN URL. Standard er `https://cdn.fastcomments.com`. Skift dette til EU-CDN-URL'en, hvis dine data hostes i EU-regionen.
+The FastComments CDN URL. Defaults to `https://cdn.fastcomments.com`. Change this to the EU CDN URL if your data is hosted in the EU region.

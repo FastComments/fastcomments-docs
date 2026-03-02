@@ -1,37 +1,37 @@
-Stranica postavki dodatka nalazi se na **Site Administration > Plugins > Local plugins > FastComments**. Dostupne opcije su:
+Stranica postavki dodatka nalazi se na **Administracija stranice > Dodaci > Lokalni dodaci > FastComments**. Dostupne opcije su:
 
-#### Tenant ID
+#### ID zakupca
 
-Your FastComments Tenant ID. Pronađite ga u <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> u postavkama vašeg računa.
+Vaš FastComments Tenant ID. Pronađite ovo na <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments nadzornoj ploči</a> u postavkama vašeg računa.
 
-#### API Secret
+#### API tajna
 
-Your API Secret key, required for Secure SSO mode. Pronađite ga na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Vaš API Secret ključ, potreban za Secure SSO način. Pronađite ovo na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Moj račun > API tajna</a>.
 
-#### SSO Mode
+#### SSO način
 
-Choose how users are authenticated. See the [SSO Modes](#moodle-sso-modes) section for details on each option.
+Odaberite kako se korisnici autentificiraju. Pogledajte odjeljak [SSO načini](#moodle-sso-modes) za detalje o svakoj opciji.
 
-- **Secure** (recommended) - serverska autentikacija potpisana HMAC-SHA256
-- **Simple** - klijentski podaci korisnika bez potpisa
-- **None** - anonimno komentiranje, bez integracije Moodle prijave
+- **Sigurno** (preporučeno) - autentikacija potpisana HMAC-SHA256 na strani poslužitelja
+- **Jednostavno** - korisnički podaci na strani klijenta bez potpisa
+- **Nijedan** - anonimno komentiranje, bez integracije prijave u Moodle
 
-#### Page Contexts
+#### Konteksti stranice
 
-Controls where comments appear:
+Kontrolira gdje se komentari pojavljuju:
 
-- **Course pages** - komentari na glavnim stranicama tečajeva
-- **Module/activity pages** - komentari na pojedinačnim aktivnostima i resursima
-- **Both** - komentari na svim vrstama stranica
+- **Stranice kolegija** - komentari na glavnim stranicama kolegija
+- **Stranice modula/aktivnosti** - komentari na pojedinačnim aktivnostima i resursima
+- **Oba** - komentari na svim vrstama stranica
 
-#### Commenting Style
+#### Stil komentiranja
 
-Choose the commenting experience. See [Commenting Styles](#moodle-commenting-styles) for screenshots of each mode.
+Odaberite iskustvo komentiranja. Pogledajte [Stilovi komentiranja](#moodle-commenting-styles) za snimke zaslona svakog moda.
 
-- **Comments** - standardni widget komentara u nitima ispod sadržaja stranice
-- **Collab Chat** - rasprave unutar teksta putem označavanja s indikatorima prisutnosti
-- **Both** - comments and collab chat active together
+- **Komentari** - standardni ugniježđeni widget za komentare ispod sadržaja stranice
+- **Collab Chat** - rasprave unutar odabranog teksta s indikatorima prisutnosti
+- **Oba** - komentari i Collab Chat aktivni istovremeno
 
 #### CDN URL
 
-The FastComments CDN URL. Defaults to `https://cdn.fastcomments.com`. Change this to the EU CDN URL if your data is hosted in the EU region.
+FastComments CDN URL. Zadano je `https://cdn.fastcomments.com`. Promijenite ovo na EU CDN URL ako su vaši podaci hostani u EU regiji.

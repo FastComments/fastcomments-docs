@@ -1,14 +1,14 @@
 La page des paramètres du plugin se trouve dans **Administration du site > Plugins > Plugins locaux > FastComments**. Les options disponibles sont :
 
-#### ID du locataire
+#### Tenant ID
 
-Votre ID de locataire FastComments. Trouvez-le dans le <a href="https://fastcomments.com/auth/my-account" target="_blank">tableau de bord FastComments</a> dans les paramètres de votre compte.
+Votre Tenant ID FastComments. Trouvez-le dans le <a href="https://fastcomments.com/auth/my-account" target="_blank">tableau de bord FastComments</a> dans les paramètres de votre compte.
 
-#### Clé secrète de l'API
+#### API Secret
 
-Votre clé API secrète, requise pour le mode SSO sécurisé. Trouvez-la à <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Mon compte > Secret API</a>.
+Votre clé API Secret, requise pour le mode SSO sécurisé. Trouvez-la à <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Mon compte > API Secret</a>.
 
-#### Mode SSO
+#### SSO Mode
 
 Choisissez comment les utilisateurs sont authentifiés. Voir la section [SSO Modes](#moodle-sso-modes) pour des détails sur chaque option.
 
@@ -16,24 +16,22 @@ Choisissez comment les utilisateurs sont authentifiés. Voir la section [SSO Mod
 - **Simple** - données utilisateur côté client sans signature
 - **None** - commentaires anonymes, pas d'intégration de connexion Moodle
 
-#### Contexte des pages
+#### Page Contexts
 
 Contrôle où les commentaires apparaissent :
 
-- **Pages de cours** - commentaires sur les pages principales des cours
-- **Pages des modules/activités** - commentaires sur les activités et ressources individuelles
-- **Les deux** - commentaires sur tous les types de pages
+- **Course pages** - commentaires sur les pages principales du cours
+- **Module/activity pages** - commentaires sur les activités et ressources individuelles
+- **Both** - commentaires sur tous les types de pages
 
-#### Style de commentaires
+#### Commenting Style
 
-Choisissez l'expérience de commentaires. Voir [Styles de commentaires](#moodle-commenting-styles) pour des captures d'écran de chaque mode.
+Choisissez l'expérience de commentaire. Voir [Commenting Styles](#moodle-commenting-styles) pour des captures d'écran de chaque mode.
 
-- **Comments** - widget de commentaires filaire standard sous le contenu de la page
-- **Collab Chat** - discussions en ligne via sélection de texte avec indicateurs de présence
-- **Both** - commentaires et collab chat actifs simultanément
+- **Comments** - widget de commentaires filaires standard sous le contenu de la page
+- **Collab Chat** - discussions par sélection de texte en ligne avec indicateurs de présence
+- **Both** - commentaires et Collab Chat actifs simultanément
 
-#### URL du CDN
+#### CDN URL
 
-L'URL du CDN FastComments. Par défaut : `https://cdn.fastcomments.com`. Changez ceci pour l'URL du CDN UE si vos données sont hébergées dans la région UE.
-
----
+L'URL CDN de FastComments. Par défaut `https://cdn.fastcomments.com`. Changez ceci pour l'URL CDN UE si vos données sont hébergées dans la région UE.
