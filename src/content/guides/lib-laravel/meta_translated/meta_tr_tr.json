@@ -1,0 +1,48 @@
+{
+  "name": "Laravel Paketi",
+  "pageHeader": "Laravel Uygulamanıza Yorum Ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Gereksinimler",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Blade Bileşenleri",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Tek Oturum Açma (SSO)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "API Erişimi",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API Referansı",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma Referansı",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API Referansı",
+      "type": "readme"
+    },
+    {
+      "name": "Görünümleri Özelleştirme",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

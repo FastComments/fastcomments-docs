@@ -1,0 +1,48 @@
+{
+  "name": "Laravel パッケージ",
+  "pageHeader": "Laravel アプリにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "要件",
+      "file": "requirements-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "Blade コンポーネント",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "SSO（シングルサインオン）",
+      "file": "sso-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "API アクセス",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API リファレンス",
+      "type": "readme"
+    },
+    {
+      "name": "設定リファレンス",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API リファレンス",
+      "type": "readme"
+    },
+    {
+      "name": "ビューのカスタマイズ",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

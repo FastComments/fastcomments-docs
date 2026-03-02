@@ -1,0 +1,48 @@
+{
+  "name": "Laravel 包",
+  "pageHeader": "向你的 Laravel 应用添加评论",
+  "itemsOrdered": [
+    {
+      "name": "要求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "Blade 组件",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "单点登录",
+      "file": "sso-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "API 访问",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API 参考",
+      "type": "readme"
+    },
+    {
+      "name": "配置参考",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API 参考",
+      "type": "readme"
+    },
+    {
+      "name": "自定义视图",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

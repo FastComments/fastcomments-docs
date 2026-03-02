@@ -1,0 +1,48 @@
+{
+  "name": "Laravel 套件",
+  "pageHeader": "在你的 Laravel 應用中新增評論",
+  "itemsOrdered": [
+    {
+      "name": "需求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "入門",
+      "type": "readme"
+    },
+    {
+      "name": "Blade 元件",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "單一登入",
+      "file": "sso-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "API 存取",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API 參考",
+      "type": "readme"
+    },
+    {
+      "name": "設定參考",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API 參考",
+      "type": "readme"
+    },
+    {
+      "name": "自訂視圖",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

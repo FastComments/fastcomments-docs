@@ -1,0 +1,48 @@
+{
+  "name": "Laravel-pakke",
+  "pageHeader": "Tilføj kommentarer til din Laravel-app",
+  "itemsOrdered": [
+    {
+      "name": "Krav",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Blade-komponenter",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "SSO",
+      "file": "sso-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "API-adgang",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API-reference",
+      "type": "readme"
+    },
+    {
+      "name": "Konfigurationsreference",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API-reference",
+      "type": "readme"
+    },
+    {
+      "name": "Tilpas visninger",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

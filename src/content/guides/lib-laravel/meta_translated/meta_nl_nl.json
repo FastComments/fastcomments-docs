@@ -1,0 +1,48 @@
+{
+  "name": "Laravel-pakket",
+  "pageHeader": "Voeg opmerkingen toe aan uw Laravel-app",
+  "itemsOrdered": [
+    {
+      "name": "Vereisten",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Blade-componenten",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "SSO",
+      "file": "sso-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "API-toegang",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API-referentie",
+      "type": "readme"
+    },
+    {
+      "name": "Configuratie-referentie",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API-referentie",
+      "type": "readme"
+    },
+    {
+      "name": "Weergaven aanpassen",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

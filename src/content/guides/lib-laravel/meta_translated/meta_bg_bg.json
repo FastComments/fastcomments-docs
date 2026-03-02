@@ -1,0 +1,48 @@
+{
+  "name": "Пакет за Laravel",
+  "pageHeader": "Добавете коментари към вашето Laravel приложение",
+  "itemsOrdered": [
+    {
+      "name": "Изисквания",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталация",
+      "file": "installation-readme-generated.md",
+      "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненти Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Еднократно влизане (SSO)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Достъп до API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API справочник",
+      "type": "readme"
+    },
+    {
+      "name": "Справочник за конфигурация",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API справочник",
+      "type": "readme"
+    },
+    {
+      "name": "Персонализиране на изгледите",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

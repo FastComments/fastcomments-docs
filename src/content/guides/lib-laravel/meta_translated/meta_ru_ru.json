@@ -1,0 +1,48 @@
+{
+  "name": "Пакет Laravel",
+  "pageHeader": "Добавление комментариев в ваше приложение Laravel",
+  "itemsOrdered": [
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненты Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Единый вход)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Доступ к API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "Справочник API",
+      "type": "readme"
+    },
+    {
+      "name": "Справочник конфигурации",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "Справочник API",
+      "type": "readme"
+    },
+    {
+      "name": "Настройка представлений",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

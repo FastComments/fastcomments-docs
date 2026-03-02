@@ -1,0 +1,48 @@
+{
+  "name": "Paquete de Laravel",
+  "pageHeader": "Añadir comentarios a tu aplicación Laravel",
+  "itemsOrdered": [
+    {
+      "name": "Requisitos",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Instalación",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeros pasos",
+      "type": "readme"
+    },
+    {
+      "name": "Componentes Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Inicio de sesión único)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Acceso a la API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "Referencia de la API",
+      "type": "readme"
+    },
+    {
+      "name": "Referencia de configuración",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "Referencia de la API",
+      "type": "readme"
+    },
+    {
+      "name": "Personalizar vistas",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    }
+  ]
+}

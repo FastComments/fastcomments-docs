@@ -1,0 +1,48 @@
+{
+  "name": "חבילת Laravel",
+  "pageHeader": "הוספת תגובות ליישום Laravel שלך",
+  "itemsOrdered": [
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "רכיבי Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "כניסה אחודה (SSO)",
+      "file": "sso-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "גישה ל-API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "מדריך ה-API",
+      "type": "readme"
+    },
+    {
+      "name": "מדריך תצורה",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "מדריך ה-API",
+      "type": "readme"
+    },
+    {
+      "name": "התאמת תצוגות",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

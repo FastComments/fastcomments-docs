@@ -1,0 +1,48 @@
+{
+  "name": "Laravel пакет",
+  "pageHeader": "Додајте коментаре у вашу Laravel апликацију",
+  "itemsOrdered": [
+    {
+      "name": "Захтеви",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Blade компоненте",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "SSO",
+      "file": "sso-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Приступ API-ју",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API референца",
+      "type": "readme"
+    },
+    {
+      "name": "Референца конфигурације",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API референца",
+      "type": "readme"
+    },
+    {
+      "name": "Прилагођавање погледа",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

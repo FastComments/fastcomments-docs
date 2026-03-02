@@ -1,0 +1,48 @@
+{
+  "name": "Laravel-Paket",
+  "pageHeader": "Kommentare zu Ihrer Laravel-App hinzufügen",
+  "itemsOrdered": [
+    {
+      "name": "Anforderungen",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Blade-Komponenten",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "SSO",
+      "file": "sso-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "API-Zugriff",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API-Referenz",
+      "type": "readme"
+    },
+    {
+      "name": "Konfigurationsreferenz",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API-Referenz",
+      "type": "readme"
+    },
+    {
+      "name": "Ansichten anpassen",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

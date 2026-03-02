@@ -1,0 +1,48 @@
+{
+  "name": "Πακέτο Laravel",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Laravel σας",
+  "itemsOrdered": [
+    {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Συστατικά Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενιαία Σύνδεση (SSO)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Πρόσβαση στο API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Αναφορά ρυθμίσεων",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Προσαρμογή προβολών",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

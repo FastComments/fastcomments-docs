@@ -1,0 +1,48 @@
+{
+  "name": "Пакет Laravel",
+  "pageHeader": "Додайте коментарі до вашого застосунку Laravel",
+  "itemsOrdered": [
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненти Blade",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Єдиний вхід (SSO)",
+      "file": "sso-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Доступ до API",
+      "file": "api-access-readme-generated.md",
+      "subCat": "Довідник API",
+      "type": "readme"
+    },
+    {
+      "name": "Довідник конфігурації",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "Довідник API",
+      "type": "readme"
+    },
+    {
+      "name": "Налаштування подань",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}
