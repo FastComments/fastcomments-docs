@@ -10,7 +10,7 @@ Din API Secret-nøgle, påkrævet for Secure SSO-tilstand. Find dette på <a hre
 
 #### SSO Mode
 
-Vælg, hvordan brugere godkendes. Se afsnittet [SSO Modes](#items-moodle-sso-modes) for detaljer om hver mulighed.
+Vælg, hvordan brugere godkendes. Se afsnittet [SSO Modes](#moodle-sso-modes) for detaljer om hver mulighed.
 
 - **Secure** (recommended) - server-side HMAC-SHA256 signed authentication
 - **Simple** - client-side user data without signature
@@ -26,7 +26,7 @@ Styrer, hvor kommentarer vises:
 
 #### Commenting Style
 
-Vælg kommenteringsoplevelsen. Se [Commenting Styles](#items-moodle-commenting-styles) for skærmbilleder af hver tilstand.
+Vælg kommenteringsoplevelsen. Se [Commenting Styles](#moodle-commenting-styles) for skærmbilleder af hver tilstand.
 
 - **Comments** - standard threaded comment widget below page content
 - **Collab Chat** - inline text selection discussions with presence indicators

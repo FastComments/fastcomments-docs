@@ -1,23 +1,21 @@
 #### Prenesite vtičnik
 
-Prenesite najnovejšo izdajo v obliki ZIP iz <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub repozitorija</a>.
+Prenesite ZIP najnovejše izdaje iz <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub repozitorij FastComments Moodle</a>.
 
-#### Razpakirajte v imenik Moodla
+#### Razpakirajte v svojo namestitev Moodle
 
-Razpakirajte ZIP v vašo namestitev Moodla tako, da bo vtičnik lociran v `<moodle-root>/local/fastcomments`. Mapa vtičnika naj neposredno vsebuje `version.php`, `lib.php` in druge datoteke vtičnika (ne v podmapi).
+Razpakirajte ZIP v vašo Moodle namestitev tako, da bo vtičnik nameščen na `<moodle-root>/local/fastcomments`. Mapa vtičnika naj neposredno vsebuje `version.php`, `lib.php` in druge datoteke vtičnika (ne v podmapi).
 
-For example:
+Na primer:
 
     /var/www/html/moodle/local/fastcomments/version.php
     /var/www/html/moodle/local/fastcomments/lib.php
     /var/www/html/moodle/local/fastcomments/settings.php
 
-#### Namestitev prek skrbnika Moodla
+#### Namestite prek Moodle skrbnika
 
-Prijavite se kot skrbnik strani in pojdite na **Administracija spletnega mesta > Obvestila**. Moodle bo zaznal nov vtičnik in vas pozval, da zaženete namestitev.
+Prijavite se kot skrbnik spletnega mesta in pojdite v **Upravljanje mesta > Obvestila**. Moodle bo zaznal nov vtičnik in vas pozval, da zaženete namestitev.
 
 #### Konfigurirajte vtičnik
 
-Po namestitvi pojdite na **Administracija spletnega mesta > Vtičniki > Lokalni vtičniki > FastComments**, kjer vnesete svoje nastavitve. Oglejte si razdelek [Konfiguracija](#moodle-configuration) za podrobnosti o vsaki možnosti.
-
----
+Po namestitvi pojdite na **Upravljanje mesta > Vtičniki > Lokalni vtičniki > FastComments**, da vnesete nastavitve. Oglejte si razdelek [Konfiguracija](#moodle-configuration) za podrobnosti o vsaki možnosti.

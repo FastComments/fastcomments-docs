@@ -10,7 +10,7 @@ Your API Secret key, required for Secure SSO mode. Find this at <a href="https:/
 
 #### SSO Mode
 
-Wählen Sie, wie Benutzer authentifiziert werden. Siehe den [SSO Modes](#items-moodle-sso-modes) Abschnitt für Details zu jeder Option.
+Wählen Sie, wie Benutzer authentifiziert werden. Siehe den [SSO Modes](#moodle-sso-modes) Abschnitt für Details zu jeder Option.
 
 - **Secure** (recommended) - server-side HMAC-SHA256 signed authentication
 - **Simple** - client-side user data without signature
@@ -26,7 +26,7 @@ Steuert, wo Kommentare erscheinen:
 
 #### Commenting Style
 
-Wählen Sie das Kommentiererlebnis. Siehe [Commenting Styles](#items-moodle-commenting-styles) für Screenshots der einzelnen Modi.
+Wählen Sie das Kommentiererlebnis. Siehe [Commenting Styles](#moodle-commenting-styles) für Screenshots der einzelnen Modi.
 
 - **Comments** - standard threaded comment widget below page content
 - **Collab Chat** - inline text selection discussions with presence indicators

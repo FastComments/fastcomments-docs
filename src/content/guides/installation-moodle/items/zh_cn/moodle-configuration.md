@@ -10,7 +10,7 @@
 
 #### SSO 模式
 
-选择用户的身份验证方式。有关每个选项的详细信息，请参见 [SSO 模式](#items-moodle-sso-modes) 部分。
+选择用户的身份验证方式。有关每个选项的详细信息，请参见 [SSO 模式](#moodle-sso-modes) 部分。
 
 - **Secure** (recommended) - 服务器端 HMAC-SHA256 签名认证
 - **Simple** - 客户端用户数据，无签名
@@ -26,7 +26,7 @@
 
 #### 评论样式
 
-选择评论体验。有关每种模式的屏幕截图，请参见 [评论样式](#items-moodle-commenting-styles)。
+选择评论体验。有关每种模式的屏幕截图，请参见 [评论样式](#moodle-commenting-styles)。
 
 - **Comments** - 标准线程式评论小部件，显示在页面内容下方
 - **Collab Chat** - 内联文本选择讨论，带在线状态指示

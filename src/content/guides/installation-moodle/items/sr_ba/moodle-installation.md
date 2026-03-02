@@ -1,10 +1,11 @@
+---
 #### Preuzmite dodatak
 
-Preuzmite najnoviji ZIP izdanja sa <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub repozitorij</a>.
+Preuzmite najnoviji ZIP izdanja sa <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub repozitorija</a>.
 
-#### Otpakujte u Moodle direktorijum
+#### Raspakujte u vašu Moodle direktorijum
 
-Otpakujte ZIP u vašu Moodle instalaciju tako da se dodatak nalazi na `<moodle-root>/local/fastcomments`. Direktorijum dodatka treba da sadrži `version.php`, `lib.php`, i druge datoteke dodatka direktno (ne u podfolderu).
+Raspakujte ZIP u vašu Moodle instalaciju tako da se dodatak nalazi na `<moodle-root>/local/fastcomments`. Direktorijum dodatka treba sadržavati `version.php`, `lib.php`, i druge datoteke dodatka direktno (ne ugnježdene u podfolderu).
 
 Na primjer:
 
@@ -12,10 +13,12 @@ Na primjer:
     /var/www/html/moodle/local/fastcomments/lib.php
     /var/www/html/moodle/local/fastcomments/settings.php
 
-#### Instalirajte putem Moodle administracije
+#### Instalirajte putem Moodle administratora
 
-Prijavite se kao administrator sajta i idite na **Site Administration > Notifications**. Moodle će otkriti novi dodatak i zatražiti da pokrenete instalaciju.
+Prijavite se kao administrator sajta i idite na **Administracija sajta > Obavještenja**. Moodle će otkriti novi dodatak i zatražiti od vas da pokrenete instalaciju.
 
 #### Konfigurišite dodatak
 
-Nakon instalacije, idite na **Site Administration > Plugins > Local plugins > FastComments** da unesete svoje postavke. Pogledajte odjeljak [Konfiguracija](#moodle-configuration) za detalje o svakoj opciji.
+Nakon instalacije, idite na **Administracija sajta > Dodaci > Lokalni dodaci > FastComments** da unesete vaše postavke. Pogledajte odjeljak [Konfiguracija](#moodle-configuration) za detalje o svakoj opciji.
+
+---

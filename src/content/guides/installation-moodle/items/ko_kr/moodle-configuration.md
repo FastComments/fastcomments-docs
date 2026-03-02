@@ -10,7 +10,7 @@ Secure SSO 모드에 필요한 API Secret 키입니다. <a href="https://fastcom
 
 #### SSO 모드
 
-사용자 인증 방식을 선택하세요. 각 옵션에 대한 자세한 내용은 [SSO 모드](#items-moodle-sso-modes) 섹션을 참조하세요.
+사용자 인증 방식을 선택하세요. 각 옵션에 대한 자세한 내용은 [SSO 모드](#moodle-sso-modes) 섹션을 참조하세요.
 
 - **Secure** (권장) - 서버 측 HMAC-SHA256 서명 인증
 - **Simple** - 서명 없는 클라이언트 측 사용자 데이터
@@ -26,7 +26,7 @@ Secure SSO 모드에 필요한 API Secret 키입니다. <a href="https://fastcom
 
 #### 댓글 스타일
 
-댓글 경험을 선택하세요. 각 모드의 스크린샷은 [댓글 스타일](#items-moodle-commenting-styles)을 참조하세요.
+댓글 경험을 선택하세요. 각 모드의 스크린샷은 [댓글 스타일](#moodle-commenting-styles)을 참조하세요.
 
 - **Comments** - 페이지 콘텐츠 아래의 표준 스레드형 댓글 위젯
 - **Collab Chat** - 선택한 텍스트에 대한 인라인 토론(참여자 표시 포함)

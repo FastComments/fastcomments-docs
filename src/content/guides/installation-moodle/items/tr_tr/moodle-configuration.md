@@ -10,7 +10,7 @@ Güvenli SSO modu için gerekli API Secret anahtarınız. Bunu <a href="https://
 
 #### SSO Mode
 
-Kullanıcıların nasıl kimlik doğrulanacağını seçin. Her seçenek hakkında ayrıntılar için [SSO Modları](#items-moodle-sso-modes) bölümüne bakın.
+Kullanıcıların nasıl kimlik doğrulanacağını seçin. Her seçenek hakkında ayrıntılar için [SSO Modları](#moodle-sso-modes) bölümüne bakın.
 
 - **Secure** (önerilir) - sunucu tarafı HMAC-SHA256 ile imzalanmış kimlik doğrulama
 - **Simple** - imzasız, istemci tarafı kullanıcı verisi
@@ -26,7 +26,7 @@ Yorumların nerede görüneceğini kontrol eder:
 
 #### Commenting Style
 
-Yorum deneyimini seçin. Her modun ekran görüntüleri için [Yorum Stilleri](#items-moodle-commenting-styles) bölümüne bakın.
+Yorum deneyimini seçin. Her modun ekran görüntüleri için [Yorum Stilleri](#moodle-commenting-styles) bölümüne bakın.
 
 - **Comments** - sayfa içeriğinin altında standart dallanmış yorum bileşeni
 - **Collab Chat** - varlık göstergeleriyle satır içi metin seçimi tartışmaları

@@ -10,7 +10,7 @@ Vaš API Secret ključ, zahtevan za varen način SSO. Najdete ga na <a href="htt
 
 #### Način SSO
 
-Izberite, kako so uporabniki overjeni. Oglejte si razdelek [Načini SSO](#items-moodle-sso-modes) za podrobnosti o vsaki možnosti.
+Izberite, kako so uporabniki overjeni. Oglejte si razdelek [Načini SSO](#moodle-sso-modes) za podrobnosti o vsaki možnosti.
 
 - **Varen** (priporočeno) - strežniško overjanje, podpisano z HMAC-SHA256
 - **Preprosto** - podatki o uporabniku na odjemalski strani brez podpisa
@@ -26,7 +26,7 @@ Nadzoruje, kje se prikazujejo komentarji:
 
 #### Slog komentiranja
 
-Izberite izkušnjo komentiranja. Oglejte si [Slogi komentiranja](#items-moodle-commenting-styles) za posnetke zaslona vsakega načina.
+Izberite izkušnjo komentiranja. Oglejte si [Slogi komentiranja](#moodle-commenting-styles) za posnetke zaslona vsakega načina.
 
 - **Komentarji** - standardni nitast pripomoček za komentarje pod vsebino strani
 - **Collab Chat** - razprave ob izbiri besedila z indikatorji prisotnosti

@@ -10,7 +10,7 @@
 
 #### SSO 模式
 
-選擇使用者的驗證方式。請參閱 [SSO 模式](#items-moodle-sso-modes) 欄目以瞭解各選項的詳細說明。
+選擇使用者的驗證方式。請參閱 [SSO 模式](#moodle-sso-modes) 欄目以瞭解各選項的詳細說明。
 
 - **Secure**（建議） - 伺服器端 HMAC-SHA256 簽名驗證
 - **Simple** - 用戶端的使用者資料，無簽名
@@ -26,7 +26,7 @@
 
 #### 留言樣式
 
-選擇留言體驗。請參閱 [留言樣式](#items-moodle-commenting-styles) 查看各模式的截圖。
+選擇留言體驗。請參閱 [留言樣式](#moodle-commenting-styles) 查看各模式的截圖。
 
 - **Comments** - 標準的分層留言元件，顯示於頁面內容下方
 - **Collab Chat** - 內嵌文字選取討論，顯示在線狀態

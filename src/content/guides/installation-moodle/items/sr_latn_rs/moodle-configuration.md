@@ -10,7 +10,7 @@ Vaš API Secret ključ, potreban za Secure SSO režim. Pronađite ovo na <a href
 
 #### SSO režim
 
-Izaberite kako se korisnici autentifikuju. Pogledajte odeljak [SSO Modes](#items-moodle-sso-modes) za detalje o svakoj opciji.
+Izaberite kako se korisnici autentifikuju. Pogledajte odeljak [SSO Modes](#moodle-sso-modes) za detalje o svakoj opciji.
 
 - **Secure** (preporučeno) - serverska HMAC-SHA256 potpisana autentifikacija
 - **Simple** - podaci o korisniku na strani klijenta bez potpisa
@@ -26,7 +26,7 @@ Kontroliše gde se prikazuju komentari:
 
 #### Stil komentarisanja
 
-Izaberite iskustvo komentarisanja. Pogledajte [Commenting Styles](#items-moodle-commenting-styles) za snimke ekrana svakog režima.
+Izaberite iskustvo komentarisanja. Pogledajte [Commenting Styles](#moodle-commenting-styles) za snimke ekrana svakog režima.
 
 - **Komentari** - standardni ugnježdeni widget za komentare ispod sadržaja stranice
 - **Collab Chat** - diskusije direktno u tekstu pomoću selekcije teksta sa indikatorima prisutnosti

@@ -1,10 +1,10 @@
-#### Hent plugin
+#### Hent plugin'et
 
-Hent den seneste release-ZIP fra <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub-repositorium</a>.
+Hent den seneste udgivelses-ZIP fra <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub repository</a>.
 
 #### Udpak til din Moodle-mappe
 
-Udpak ZIP-filen til din Moodle-installation, så pluginet ligger i `<moodle-root>/local/fastcomments`. Pluginmappen bør indeholde `version.php`, `lib.php`, og andre pluginfiler direkte (ikke indlejret i en undermappe).
+Udpak ZIP-filen ind i din Moodle-installation, så plugin'et ligger på `<moodle-root>/local/fastcomments`. Plugin-mappen bør indeholde `version.php`, `lib.php` og andre plugin-filer direkte (ikke indlejret i en undermappe).
 
 For eksempel:
 
@@ -14,8 +14,8 @@ For eksempel:
 
 #### Installer via Moodle-administrator
 
-Log ind som en siteadministrator og gå til **Site Administration > Notifications**. Moodle vil registrere det nye plugin og bede dig om at køre installationen.
+Log ind som siteadministrator og gå til **Site Administration > Notifications**. Moodle vil registrere det nye plugin og bede dig om at køre installationen.
 
-#### Konfigurer plugin
+#### Konfigurer plugin'et
 
-Efter installationen, gå til **Site Administration > Plugins > Local plugins > FastComments** for at indtaste dine indstillinger. Se afsnittet [Konfiguration](#moodle-configuration) for detaljer om hver indstilling.
+Efter installationen skal du gå til **Site Administration > Plugins > Local plugins > FastComments** for at indtaste dine indstillinger. Se sektionen [Konfiguration](#moodle-configuration) for detaljer om hver indstilling.

@@ -10,7 +10,7 @@ Twój klucz API Secret, wymagany dla trybu Secure SSO. Znajdź go w <a href="htt
 
 #### SSO Mode
 
-Wybierz sposób uwierzytelniania użytkowników. Zobacz sekcję [SSO Modes](#items-moodle-sso-modes) po szczegóły każdego z wariantów.
+Wybierz sposób uwierzytelniania użytkowników. Zobacz sekcję [SSO Modes](#moodle-sso-modes) po szczegóły każdego z wariantów.
 
 - **Secure** (zalecane) - uwierzytelnianie po stronie serwera z podpisem HMAC-SHA256
 - **Simple** - dane użytkownika po stronie klienta bez podpisu
@@ -26,7 +26,7 @@ Kontroluje, gdzie pojawiają się komentarze:
 
 #### Commenting Style
 
-Wybierz sposób komentowania. Zobacz [Commenting Styles](#items-moodle-commenting-styles) po zrzuty ekranu każdego trybu.
+Wybierz sposób komentowania. Zobacz [Commenting Styles](#moodle-commenting-styles) po zrzuty ekranu każdego trybu.
 
 - **Comments** - standardowy wątkowany widżet komentarzy poniżej treści strony
 - **Collab Chat** - dyskusje inline po zaznaczeniu tekstu z wskaźnikami obecności

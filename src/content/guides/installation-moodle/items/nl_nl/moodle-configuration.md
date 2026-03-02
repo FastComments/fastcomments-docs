@@ -10,7 +10,7 @@ Uw API Secret-sleutel, vereist voor Secure SSO-modus. U vindt deze op <a href="h
 
 #### SSO Mode
 
-Kies hoe gebruikers worden geverifieerd. Zie de sectie [SSO-modi](#items-moodle-sso-modes) voor details over elke optie.
+Kies hoe gebruikers worden geverifieerd. Zie de sectie [SSO-modi](#moodle-sso-modes) voor details over elke optie.
 
 - **Secure** (recommended) - server-side HMAC-SHA256 ondertekende authenticatie
 - **Simple** - client-side gebruikersgegevens zonder handtekening
@@ -26,7 +26,7 @@ Bepaal waar reacties verschijnen:
 
 #### Commenting Style
 
-Kies de commentaarervaring. Zie [Commentaarstijlen](#items-moodle-commenting-styles) voor schermafbeeldingen van elke modus.
+Kies de commentaarervaring. Zie [Commentaarstijlen](#moodle-commenting-styles) voor schermafbeeldingen van elke modus.
 
 - **Comments** - standaard draadgestructureerde commentaar-widget onder de paginainhoud
 - **Collab Chat** - inline discussies op geselecteerde tekst met aanwezigheidsindicatoren
