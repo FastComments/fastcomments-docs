@@ -1,42 +1,47 @@
 {
   "name": "Установка Moodle",
-  "pageHeader": "Добавление комментариев на сайты Moodle",
+  "pageHeader": "Добавление комментариев на сайтах Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Шаг 1: Получить доступ к серверу",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Установка сайта Moodle"
+      "name": "Быстрый старт",
+      "file": "moodle-quick-start.md",
+      "subCat": "Кратко"
     },
     {
-      "name": "Шаг 2: Определить файл представления",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Установка сайта Moodle"
+      "name": "Установка",
+      "file": "moodle-installation.md",
+      "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Шаг 3: Добавить код",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Установка сайта Moodle"
+      "name": "Настройка",
+      "file": "moodle-configuration.md",
+      "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Успех на сайте участника",
-      "file": "moodle-success.md",
-      "subCat": "Установка сайта Moodle"
+      "name": "Стили комментирования",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Ошибки домена сайта участника",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Установка сайта Moodle"
+      "name": "Режимы SSO",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Настройка сайта участника",
+      "name": "Настройки уведомлений пользователя",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Установка плагина Moodle"
+    },
+    {
+      "name": "Кастомизация",
       "file": "moodle-customize.md",
-      "subCat": "Установка сайта Moodle"
+      "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Хотите выделенный плагин?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Выделенный плагин?"
+      "name": "Ошибки домена",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Установка плагина Moodle"
     }
   ]
 }

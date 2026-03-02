@@ -1,42 +1,47 @@
 {
   "name": "Moodle-installatie",
-  "pageHeader": "Reacties toevoegen aan Moodle-sites",
+  "pageHeader": "Opmerkingen toevoegen aan Moodle-sites",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Servertoegang verkrijgen",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle-siteinstallatie"
+      "name": "Snelstart",
+      "file": "moodle-quick-start.md",
+      "subCat": "Kort samengevat"
     },
     {
-      "name": "Stap 2: Weergavebestand identificeren",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle-siteinstallatie"
+      "name": "Installatie",
+      "file": "moodle-installation.md",
+      "subCat": "Installatie van Moodle-plugin"
     },
     {
-      "name": "Stap 3: Code toevoegen",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle-siteinstallatie"
+      "name": "Configuratie",
+      "file": "moodle-configuration.md",
+      "subCat": "Installatie van Moodle-plugin"
     },
     {
-      "name": "Succes voor ledenwebsite",
-      "file": "moodle-success.md",
-      "subCat": "Moodle-siteinstallatie"
+      "name": "Commentaarstijlen",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Installatie van Moodle-plugin"
     },
     {
-      "name": "Domeinfouten van de ledenwebsite",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle-siteinstallatie"
+      "name": "SSO-modi",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Installatie van Moodle-plugin"
     },
     {
-      "name": "Aanpassing van de ledenwebsite",
+      "name": "Voorkeuren voor gebruikersmeldingen",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Installatie van Moodle-plugin"
+    },
+    {
+      "name": "Aanpassing",
       "file": "moodle-customize.md",
-      "subCat": "Moodle-siteinstallatie"
+      "subCat": "Installatie van Moodle-plugin"
     },
     {
-      "name": "Wilt u een speciale plug-in?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Speciale plug-in?"
+      "name": "Domeinfouten",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Installatie van Moodle-plugin"
     }
   ]
 }

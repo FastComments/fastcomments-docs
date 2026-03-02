@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "步骤 1：获取服务器访问权限",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle 站点安装"
+      "name": "快速开始",
+      "file": "moodle-quick-start.md",
+      "subCat": "摘要"
     },
     {
-      "name": "步骤 2：定位视图文件",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle 站点安装"
+      "name": "安装",
+      "file": "moodle-installation.md",
+      "subCat": "Moodle 插件安装"
     },
     {
-      "name": "步骤 3：添加代码",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle 站点安装"
+      "name": "配置",
+      "file": "moodle-configuration.md",
+      "subCat": "Moodle 插件安装"
     },
     {
-      "name": "会员站点成功",
-      "file": "moodle-success.md",
-      "subCat": "Moodle 站点安装"
+      "name": "评论样式",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Moodle 插件安装"
     },
     {
-      "name": "会员站点域名错误",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle 站点安装"
+      "name": "单点登录模式",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Moodle 插件安装"
     },
     {
-      "name": "会员站点定制",
+      "name": "用户通知偏好",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Moodle 插件安装"
+    },
+    {
+      "name": "自定义",
       "file": "moodle-customize.md",
-      "subCat": "Moodle 站点安装"
+      "subCat": "Moodle 插件安装"
     },
     {
-      "name": "需要专用插件吗？",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "专用插件？"
+      "name": "域名错误",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle 插件安装"
     }
   ]
 }

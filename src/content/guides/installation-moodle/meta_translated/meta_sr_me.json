@@ -1,42 +1,47 @@
 {
   "name": "Инсталација Moodle-а",
-  "pageHeader": "Додајте коментаре на Moodle сајтовима",
+  "pageHeader": "Додавање коментара на Moodle сајтове",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Добијте приступ серверу",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Инсталација Moodle сајта"
+      "name": "Брзи почетак",
+      "file": "moodle-quick-start.md",
+      "subCat": "Укратко"
     },
     {
-      "name": "Корак 2: Пронађите датотеку приказа",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Инсталација Moodle сајта"
+      "name": "Инсталација",
+      "file": "moodle-installation.md",
+      "subCat": "Инсталација Moodle додатка"
     },
     {
-      "name": "Корак 3: Додајте код",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Инсталација Moodle сајта"
+      "name": "Конфигурација",
+      "file": "moodle-configuration.md",
+      "subCat": "Инсталација Moodle додатка"
     },
     {
-      "name": "Успех чланског сајта",
-      "file": "moodle-success.md",
-      "subCat": "Инсталација Moodle сајта"
+      "name": "Стилови коментарисања",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Инсталација Moodle додатка"
     },
     {
-      "name": "Грешке домена чланског сајта",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Инсталација Moodle сајта"
+      "name": "SSO режими",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Инсталација Moodle додатка"
     },
     {
-      "name": "Прилагођавање чланског сајта",
+      "name": "Подешавања обавештавања корисника",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Инсталација Moodle додатка"
+    },
+    {
+      "name": "Прилагођавање",
       "file": "moodle-customize.md",
-      "subCat": "Инсталација Moodle сајта"
+      "subCat": "Инсталација Moodle додатка"
     },
     {
-      "name": "Желите посебан додатак?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Посебан додатак?"
+      "name": "Грешке домена",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Инсталација Moodle додатка"
     }
   ]
 }

@@ -1,12 +1,10 @@
-FastComments와 약간의 프로그래밍 지식을 사용하면 모든 Moodle 사이트의 강좌 페이지에 SSO를 이용한 실시간 댓글 기능을 추가할 수 있습니다!
+FastComments에는 강좌 및 활동에 실시간 댓글 기능을 추가하는 전용 Moodle 플러그인이 있습니다. SSO는 자동으로 처리되며, 사용자는 별도의 로그인 없이 자신의 Moodle 계정으로 댓글을 작성합니다.
 
 <div class="screenshot white-bg">
-    <div class="title">예제</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle Example" />
+    <div class="title">강좌 댓글 예시</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="Moodle 강좌 페이지의 FastComments" />
 </div>
 
-SSO를 사용하기 때문에 사용자가 댓글을 달기 위해 별도로 로그인할 필요가 없습니다. Moodle 계정으로 원활하게 이용할 수 있습니다.
-
-If you don't feel comfortable with the following tutorial, reach out to support, and we may be able to help set it up for you.
+이 플러그인은 스레드형 댓글, 실시간 협업 채팅, 그리고 다양한 SSO 모드를 지원합니다. <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub 리포지토리</a>에서 확인하세요.
 
 ---

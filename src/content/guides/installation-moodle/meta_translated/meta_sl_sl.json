@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Pridobite dostop do strežnika",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "name": "Hitri začetek",
+      "file": "moodle-quick-start.md",
+      "subCat": "Na kratko"
     },
     {
-      "name": "Korak 2: Poiščite datoteko pogleda",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "name": "Namestitev",
+      "file": "moodle-installation.md",
+      "subCat": "Namestitev vtičnika za Moodle"
     },
     {
-      "name": "Korak 3: Dodajte kodo",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "name": "Konfiguracija",
+      "file": "moodle-configuration.md",
+      "subCat": "Namestitev vtičnika za Moodle"
     },
     {
-      "name": "Uspeh za člansko spletno mesto",
-      "file": "moodle-success.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "name": "Slogi komentiranja",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Namestitev vtičnika za Moodle"
     },
     {
-      "name": "Napake domene na članskem spletnem mestu",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "name": "Načini enotne prijave (SSO)",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Namestitev vtičnika za Moodle"
     },
     {
-      "name": "Prilagoditev članskega spletnega mesta",
+      "name": "Nastavitve obvestil uporabnika",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Namestitev vtičnika za Moodle"
+    },
+    {
+      "name": "Prilagoditev",
       "file": "moodle-customize.md",
-      "subCat": "Namestitev Moodle spletnega mesta"
+      "subCat": "Namestitev vtičnika za Moodle"
     },
     {
-      "name": "Želite namenski vtičnik?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Namenski vtičnik?"
+      "name": "Napake domene",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Namestitev vtičnika za Moodle"
     }
   ]
 }

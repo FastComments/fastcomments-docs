@@ -1,12 +1,8 @@
-С помощью FastComments и небольших навыков программирования мы можем добавить живые комментарии с SSO на страницу курса любого сайта Moodle!
+FastComments имеет специальный плагин для Moodle, который добавляет возможность живых комментариев в ваши курсы и активности. SSO обрабатывается автоматически — ваши пользователи комментируют с помощью своих учетных записей Moodle без отдельного входа.
 
 <div class="screenshot white-bg">
-    <div class="title">Пример</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Пример Moodle" />
+    <div class="title">Пример комментариев курса</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments на странице курса Moodle" />
 </div>
 
-Поскольку мы будем использовать SSO, вашим пользователям не придется отдельно входить в систему, чтобы комментировать. Они будут автоматически использовать свой аккаунт Moodle.
-
-Если вы не уверены в своих силах при выполнении следующего руководства, свяжитесь со службой поддержки — возможно, мы сможем помочь настроить это для вас.
-
----
+Плагин поддерживает древовидные комментарии, совместный чат в реальном времени и несколько режимов SSO. Получить его можно из <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">репозитория на GitHub</a>.

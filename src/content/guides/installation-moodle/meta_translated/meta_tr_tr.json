@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Sunucuya Erişim Sağlayın",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle Site Kurulumu"
+      "name": "Hızlı Başlangıç",
+      "file": "moodle-quick-start.md",
+      "subCat": "Kısa Özet"
     },
     {
-      "name": "Adım 2: Görünüm Dosyasını Belirleyin",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle Site Kurulumu"
+      "name": "Kurulum",
+      "file": "moodle-installation.md",
+      "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Adım 3: Kod Ekleyin",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle Site Kurulumu"
+      "name": "Yapılandırma",
+      "file": "moodle-configuration.md",
+      "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Üye Sitesi Başarısı",
-      "file": "moodle-success.md",
-      "subCat": "Moodle Site Kurulumu"
+      "name": "Yorumlama Stilleri",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Üye Sitesi Alan Adı Hataları",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle Site Kurulumu"
+      "name": "SSO Modları",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Üye Sitesi Özelleştirmesi",
+      "name": "Kullanıcı Bildirim Tercihleri",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Moodle Eklenti Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
       "file": "moodle-customize.md",
-      "subCat": "Moodle Site Kurulumu"
+      "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Özel Bir Eklenti İster misiniz?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Özel Eklenti?"
+      "name": "Alan Adı Hataları",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle Eklenti Kurulumu"
     }
   ]
 }

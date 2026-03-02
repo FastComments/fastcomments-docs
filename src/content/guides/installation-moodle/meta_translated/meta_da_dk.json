@@ -1,42 +1,47 @@
 {
   "name": "Installation af Moodle",
-  "pageHeader": "Tilføj kommentarer til Moodle-websteder",
+  "pageHeader": "Tilføj kommentarer til Moodle-sider",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Trin 1: Få adgang til serveren",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Installation af Moodle-websted"
+      "name": "Kom godt i gang",
+      "file": "moodle-quick-start.md",
+      "subCat": "Kort sagt"
     },
     {
-      "name": "Trin 2: Identificer visningsfilen",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Installation af Moodle-websted"
+      "name": "Installation",
+      "file": "moodle-installation.md",
+      "subCat": "Installation af Moodle-plugin"
     },
     {
-      "name": "Trin 3: Tilføj kode",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Installation af Moodle-websted"
+      "name": "Konfiguration",
+      "file": "moodle-configuration.md",
+      "subCat": "Installation af Moodle-plugin"
     },
     {
-      "name": "Succes for medlemswebsted",
-      "file": "moodle-success.md",
-      "subCat": "Installation af Moodle-websted"
+      "name": "Kommentarstile",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Installation af Moodle-plugin"
     },
     {
-      "name": "Domænefejl på medlemswebsted",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Installation af Moodle-websted"
+      "name": "SSO-tilstande",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Installation af Moodle-plugin"
     },
     {
-      "name": "Tilpasning af medlemswebsted",
+      "name": "Brugerens notifikationsindstillinger",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Installation af Moodle-plugin"
+    },
+    {
+      "name": "Tilpasning",
       "file": "moodle-customize.md",
-      "subCat": "Installation af Moodle-websted"
+      "subCat": "Installation af Moodle-plugin"
     },
     {
-      "name": "Ønsker du et dedikeret plugin?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Dedikeret plugin?"
+      "name": "Domænefejl",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Installation af Moodle-plugin"
     }
   ]
 }

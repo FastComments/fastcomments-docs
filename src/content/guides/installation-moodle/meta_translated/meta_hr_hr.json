@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dobivanje pristupa poslužitelju",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Instalacija Moodle stranice"
+      "name": "Brzi početak",
+      "file": "moodle-quick-start.md",
+      "subCat": "Sažetak"
     },
     {
-      "name": "Korak 2: Pronađite datoteku prikaza",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Instalacija Moodle stranice"
+      "name": "Instalacija",
+      "file": "moodle-installation.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Korak 3: Dodajte kôd",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Instalacija Moodle stranice"
+      "name": "Konfiguracija",
+      "file": "moodle-configuration.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Uspjeh članske stranice",
-      "file": "moodle-success.md",
-      "subCat": "Instalacija Moodle stranice"
+      "name": "Stilovi komentiranja",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Pogreške domene članske stranice",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Instalacija Moodle stranice"
+      "name": "Načini SSO",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Prilagodba članske stranice",
+      "name": "Postavke obavijesti korisnika",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Instalacija Moodle dodatka"
+    },
+    {
+      "name": "Prilagodba",
       "file": "moodle-customize.md",
-      "subCat": "Instalacija Moodle stranice"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Želite li namjenski dodatak?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Namjenski dodatak?"
+      "name": "Pogreške domene",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Instalacija Moodle dodatka"
     }
   ]
 }

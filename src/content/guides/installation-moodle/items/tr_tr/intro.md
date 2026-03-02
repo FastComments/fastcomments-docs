@@ -1,12 +1,8 @@
-FastComments ve biraz programlama bilgisiyle, herhangi bir Moodle sitesinin ders sayfasına SSO ile birlikte canlı yorum özelliği ekleyebiliriz!
+FastComments'ın kurs ve etkinliklerinize canlı yorum ekleyen özel bir Moodle eklentisi vardır. SSO otomatik olarak yönetilir - kullanıcılarınız ayrı bir oturum açmaya gerek kalmadan Moodle hesaplarıyla yorum yapar.
 
 <div class="screenshot white-bg">
-    <div class="title">Örnek</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle Örneği" />
+    <div class="title">Kurs Yorumları Örneği</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="Moodle Kurs Sayfasında FastComments" />
 </div>
 
-SSO kullanacağımız için kullanıcılarınız yorum yapmak için ayrı oturum açmak zorunda kalmayacak. Moodle hesaplarını sorunsuz bir şekilde kullanacaklar.
-
-Aşağıdaki eğitimle rahat hissetmiyorsanız, destek ile iletişime geçin; kurulumu sizin için ayarlamaya yardımcı olabiliriz.
-
----
+Eklenti, dallanmış yorumları, gerçek zamanlı ortak sohbeti ve birden fazla SSO modunu destekler. Edinin: <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub deposu</a>.

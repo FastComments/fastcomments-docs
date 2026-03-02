@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "ステップ 1: サーバーへのアクセスを取得する",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle サイトのインストール"
+      "name": "クイックスタート",
+      "file": "moodle-quick-start.md",
+      "subCat": "要約"
     },
     {
-      "name": "ステップ 2: ビューファイルを特定する",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle サイトのインストール"
+      "name": "インストール",
+      "file": "moodle-installation.md",
+      "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "ステップ 3: コードを追加する",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle サイトのインストール"
+      "name": "設定",
+      "file": "moodle-configuration.md",
+      "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "メンバーサイトの成功",
-      "file": "moodle-success.md",
-      "subCat": "Moodle サイトのインストール"
+      "name": "コメントのスタイル",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "メンバーサイトのドメインエラー",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle サイトのインストール"
+      "name": "SSO モード",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "メンバーサイトのカスタマイズ",
+      "name": "ユーザーの通知設定",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Moodle プラグインのインストール"
+    },
+    {
+      "name": "カスタマイズ",
       "file": "moodle-customize.md",
-      "subCat": "Moodle サイトのインストール"
+      "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "専用プラグインが必要ですか？",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "専用プラグイン？"
+      "name": "ドメインエラー",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle プラグインのインストール"
     }
   ]
 }

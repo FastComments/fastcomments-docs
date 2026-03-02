@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Ottenere l'accesso al server",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Installazione del sito Moodle"
+      "name": "Avvio rapido",
+      "file": "moodle-quick-start.md",
+      "subCat": "In breve"
     },
     {
-      "name": "Passo 2: Identificare il file della vista",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Installazione del sito Moodle"
+      "name": "Installazione",
+      "file": "moodle-installation.md",
+      "subCat": "Installazione del plugin per Moodle"
     },
     {
-      "name": "Passo 3: Aggiungere il codice",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Installazione del sito Moodle"
+      "name": "Configurazione",
+      "file": "moodle-configuration.md",
+      "subCat": "Installazione del plugin per Moodle"
     },
     {
-      "name": "Successo del sito membro",
-      "file": "moodle-success.md",
-      "subCat": "Installazione del sito Moodle"
+      "name": "Stili di commento",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Installazione del plugin per Moodle"
     },
     {
-      "name": "Errori di dominio del sito membro",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Installazione del sito Moodle"
+      "name": "Modalità SSO",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Installazione del plugin per Moodle"
     },
     {
-      "name": "Personalizzazione del sito membro",
+      "name": "Preferenze di notifica dell'utente",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Installazione del plugin per Moodle"
+    },
+    {
+      "name": "Personalizzazione",
       "file": "moodle-customize.md",
-      "subCat": "Installazione del sito Moodle"
+      "subCat": "Installazione del plugin per Moodle"
     },
     {
-      "name": "Vuoi un plugin dedicato?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Plugin dedicato?"
+      "name": "Errori di dominio",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Installazione del plugin per Moodle"
     }
   ]
 }

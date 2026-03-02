@@ -1,12 +1,10 @@
-Με το FastComments και λίγη προγραμματιστική εμπειρία, μπορούμε να προσθέσουμε ζωντανά σχόλια, με SSO, στη σελίδα μαθήματος οποιουδήποτε ιστότοπου Moodle!
+---
+Το FastComments διαθέτει ένα ειδικό πρόσθετο για το Moodle που προσθέτει σχολιασμό σε πραγματικό χρόνο στα μαθήματά σας και στις δραστηριότητές σας. Η ενιαία σύνδεση (SSO) γίνεται αυτόματα - οι χρήστες σας σχολιάζουν με τους λογαριασμούς Moodle χωρίς ξεχωριστή είσοδο.
 
 <div class="screenshot white-bg">
-    <div class="title">Παράδειγμα</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Παράδειγμα Moodle" />
+    <div class="title">Παράδειγμα σχολίων μαθήματος</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments σε σελίδα μαθήματος Moodle" />
 </div>
 
-Εφόσον θα χρησιμοποιήσουμε SSO, οι χρήστες σας δεν θα χρειάζεται να συνδεθούν ξεχωριστά για να σχολιάσουν. Θα χρησιμοποιούν απρόσκοπτα τον λογαριασμό Moodle τους.
-
-Εάν δεν αισθάνεστε άνετα με τον ακόλουθο οδηγό, επικοινωνήστε με την υποστήριξη, και ίσως μπορέσουμε να βοηθήσουμε να το ρυθμίσουμε για εσάς.
-
+Το πρόσθετο υποστηρίζει σχόλια σε νήματα, συνεργατική συνομιλία σε πραγματικό χρόνο και πολλαπλές λειτουργίες SSO. Κατεβάστε το από το <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">αποθετήριο GitHub</a>.
 ---

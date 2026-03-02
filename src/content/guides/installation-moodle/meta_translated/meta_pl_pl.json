@@ -1,42 +1,47 @@
 {
   "name": "Instalacja Moodle",
-  "pageHeader": "Dodawanie komentarzy na witrynach Moodle",
+  "pageHeader": "Dodawanie komentarzy do stron Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Krok 1: Uzyskaj dostęp do serwera",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Instalacja witryny Moodle"
+      "name": "Szybki start",
+      "file": "moodle-quick-start.md",
+      "subCat": "W skrócie"
     },
     {
-      "name": "Krok 2: Zidentyfikuj plik widoku",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Instalacja witryny Moodle"
+      "name": "Instalacja",
+      "file": "moodle-installation.md",
+      "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Krok 3: Dodaj kod",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Instalacja witryny Moodle"
+      "name": "Konfiguracja",
+      "file": "moodle-configuration.md",
+      "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Sukces na stronie członkowskiej",
-      "file": "moodle-success.md",
-      "subCat": "Instalacja witryny Moodle"
+      "name": "Style komentowania",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Błędy domeny na stronie członkowskiej",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Instalacja witryny Moodle"
+      "name": "Tryby SSO",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Dostosowywanie strony członkowskiej",
+      "name": "Preferencje powiadomień użytkownika",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Instalacja wtyczki Moodle"
+    },
+    {
+      "name": "Dostosowywanie",
       "file": "moodle-customize.md",
-      "subCat": "Instalacja witryny Moodle"
+      "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Chcesz dedykowaną wtyczkę?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Dedykowana wtyczka?"
+      "name": "Błędy domeny",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Instalacja wtyczki Moodle"
     }
   ]
 }

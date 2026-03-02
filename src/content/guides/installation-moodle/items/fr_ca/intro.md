@@ -1,12 +1,8 @@
-Avec FastComments et un peu de connaissances en programmation, nous pouvons ajouter des commentaires en direct, avec SSO, à la page de cours de n'importe quel site Moodle !
+FastComments propose un plugin Moodle dédié qui ajoute des commentaires en direct à vos cours et activités. Le SSO est géré automatiquement - vos utilisateurs commentent avec leurs comptes Moodle sans connexion séparée.
 
 <div class="screenshot white-bg">
-    <div class="title">Exemple</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Exemple Moodle" />
+    <div class="title">Exemple de commentaires de cours</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments sur une page de cours Moodle" />
 </div>
 
-Puisque nous utiliserons SSO, vos utilisateurs n'auront pas à se connecter séparément pour commenter. Ils utiliseront leur compte Moodle de façon transparente.
-
-Si vous ne vous sentez pas à l'aise avec le tutoriel suivant, contactez le support, et nous pourrons peut‑être vous aider à le configurer.
-
----
+Le plugin prend en charge les commentaires en fils de discussion, le chat collaboratif en temps réel et plusieurs modes SSO. Téléchargez-le depuis le <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">dépôt GitHub</a>.

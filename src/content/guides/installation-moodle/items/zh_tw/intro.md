@@ -1,12 +1,11 @@
-透過 FastComments 和一點程式設計技巧，我們可以在任何 Moodle 網站的課程頁面加入具有 SSO 的即時留言功能！
+---
+FastComments 有一個專用的 Moodle 外掛，能為您的課程與活動新增即時留言功能。SSO 會自動處理 — 您的使用者可使用 Moodle 帳號留言，無需另外登入。
 
 <div class="screenshot white-bg">
-    <div class="title">範例</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle 範例" />
+    <div class="title">課程留言範例</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments 在 Moodle 課程頁面上" />
 </div>
 
-由於我們會使用 SSO，您的使用者不需要另行登入即可留言。他們會無縫使用他們的 Moodle 帳戶。
-
-如果您對下列教學感到不自在，請聯絡支援，我們可能能協助您完成設定。
+此外掛支援串狀留言、即時協作聊天室，以及多種 SSO 模式。可從 <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub 儲存庫</a> 取得。
 
 ---

@@ -1,12 +1,11 @@
-借助 FastComments 和一些编程知识，我们可以向任何 Moodle 站点的课程页面添加带 SSO 的实时评论功能！
+---
+FastComments 有一个专用的 Moodle 插件，可为您的课程和活动添加实时评论。SSO（单点登录）会自动处理——您的用户可以使用他们的 Moodle 帐户发表评论，无需单独登录。
 
 <div class="screenshot white-bg">
-    <div class="title">示例</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle 示例" />
+    <div class="title">课程评论示例</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="Moodle 课程页面上的 FastComments" />
 </div>
 
-由于我们将使用 SSO，您的用户无需单独登录即可发表评论。他们将无缝使用他们的 Moodle 帐户。
-
-如果您对下面的教程不熟悉或不放心，请联系支持团队，我们可能能够帮您设置。
+该插件支持线程式评论、实时协作聊天以及多种 SSO 模式。请从 <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub 仓库</a> 获取。
 
 ---

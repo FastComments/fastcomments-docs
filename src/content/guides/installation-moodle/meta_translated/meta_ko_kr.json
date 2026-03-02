@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "단계 1: 서버 접근 권한 얻기",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle 사이트 설치"
+      "name": "빠른 시작",
+      "file": "moodle-quick-start.md",
+      "subCat": "요약"
     },
     {
-      "name": "단계 2: 뷰 파일 찾기",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle 사이트 설치"
+      "name": "설치",
+      "file": "moodle-installation.md",
+      "subCat": "Moodle 플러그인 설치"
     },
     {
-      "name": "단계 3: 코드 추가",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle 사이트 설치"
+      "name": "구성",
+      "file": "moodle-configuration.md",
+      "subCat": "Moodle 플러그인 설치"
     },
     {
-      "name": "회원 사이트 성공",
-      "file": "moodle-success.md",
-      "subCat": "Moodle 사이트 설치"
+      "name": "댓글 스타일",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Moodle 플러그인 설치"
     },
     {
-      "name": "회원 사이트 도메인 오류",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle 사이트 설치"
+      "name": "SSO 모드",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Moodle 플러그인 설치"
     },
     {
-      "name": "회원 사이트 맞춤 설정",
+      "name": "사용자 알림 설정",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Moodle 플러그인 설치"
+    },
+    {
+      "name": "맞춤 설정",
       "file": "moodle-customize.md",
-      "subCat": "Moodle 사이트 설치"
+      "subCat": "Moodle 플러그인 설치"
     },
     {
-      "name": "전용 플러그인을 원하시나요?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "전용 플러그인?"
+      "name": "도메인 오류",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle 플러그인 설치"
     }
   ]
 }

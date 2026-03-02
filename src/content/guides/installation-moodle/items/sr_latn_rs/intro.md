@@ -1,12 +1,8 @@
-Uz FastComments i malo programske stručnosti, možemo dodati komentarisanje uživo, sa SSO, na stranicu kursa bilo kog Moodle sajta!
+FastComments ima posvećen Moodle dodatak koji dodaje komentarisanje uživo na vaše kurseve i aktivnosti. SSO se automatski obavlja - vaši korisnici komentarišu koristeći svoje Moodle naloge bez zasebne prijave.
 
 <div class="screenshot white-bg">
-    <div class="title">Primer</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Primer Moodla" />
+    <div class="title">Primer komentara na kursu</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments na Moodle stranici kursa" />
 </div>
 
-Pošto ćemo koristiti SSO, vaši korisnici neće morati da se posebno prijavljuju da bi komentarisali. Oni će koristiti svoj Moodle nalog neometano.
-
-Ako niste sigurni u vezi sa sledećim uputstvom, obratite se podršci i možda ćemo moći da vam pomognemo da ga podesite.
-
----
+Dodatak podržava ugnježdene komentare, kolaborativni chat u realnom vremenu i više SSO režima. Nabavite ga iz <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub repozitorijuma</a>.

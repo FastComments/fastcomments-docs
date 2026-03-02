@@ -1,13 +1,8 @@
----
-Met FastComments en wat programmeerkennis kunnen we live commentaar, met SSO, toevoegen aan de cursuspagina van elke Moodle-site!
+FastComments heeft een speciale Moodle-plugin die live commentaar toevoegt aan uw cursussen en activiteiten. SSO wordt automatisch afgehandeld - uw gebruikers plaatsen opmerkingen met hun Moodle-accounts zonder een aparte aanmelding.
 
 <div class="screenshot white-bg">
-    <div class="title">Voorbeeld</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle-voorbeeld" />
+    <div class="title">Voorbeeld cursusreacties</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments op een Moodle-cursuspagina" />
 </div>
 
-Aangezien we SSO gebruiken, hoeven uw gebruikers niet apart in te loggen om te reageren. Ze gebruiken naadloos hun Moodle-account.
-
-Als u zich niet op uw gemak voelt bij de volgende handleiding, neem dan contact op met onze ondersteuning; mogelijk kunnen wij u helpen bij de installatie.
-
----
+De plugin ondersteunt geneste reacties, realtime samenwerkende chat en meerdere SSO-modi. Haal het uit de <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub-repository</a>.

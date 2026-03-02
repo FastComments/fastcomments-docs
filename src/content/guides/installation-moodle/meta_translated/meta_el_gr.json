@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Απόκτηση πρόσβασης στον διακομιστή",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "name": "Γρήγορη εκκίνηση",
+      "file": "moodle-quick-start.md",
+      "subCat": "Σύνοψη"
     },
     {
-      "name": "Βήμα 2: Εντοπισμός αρχείου προβολής",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "name": "Εγκατάσταση",
+      "file": "moodle-installation.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     },
     {
-      "name": "Βήμα 3: Προσθήκη κώδικα",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "name": "Διαμόρφωση",
+      "file": "moodle-configuration.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     },
     {
-      "name": "Επιτυχής ιστότοπος μέλους",
-      "file": "moodle-success.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "name": "Στυλ σχολιασμού",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     },
     {
-      "name": "Σφάλματα τομέα ιστότοπου μέλους",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "name": "Λειτουργίες SSO",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     },
     {
-      "name": "Προσαρμογή ιστότοπου μέλους",
+      "name": "Προτιμήσεις ειδοποιήσεων χρήστη",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
+    },
+    {
+      "name": "Προσαρμογή",
       "file": "moodle-customize.md",
-      "subCat": "Εγκατάσταση ιστότοπου Moodle"
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     },
     {
-      "name": "Θέλετε ένα αφιερωμένο πρόσθετο;",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Αφιερωμένο πρόσθετο?"
+      "name": "Σφάλματα τομέα",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Εγκατάσταση πρόσθετου Moodle"
     }
   ]
 }

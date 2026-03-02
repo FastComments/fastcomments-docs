@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Стъпка 1: Получаване на достъп до сървъра",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "name": "Бърз старт",
+      "file": "moodle-quick-start.md",
+      "subCat": "Накратко"
     },
     {
-      "name": "Стъпка 2: Идентифициране на файла на изгледа",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "name": "Инсталация",
+      "file": "moodle-installation.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Стъпка 3: Добавяне на код",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "name": "Конфигурация",
+      "file": "moodle-configuration.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Успех на членския сайт",
-      "file": "moodle-success.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "name": "Стилове на коментиране",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Грешки в домейна на членския сайт",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "name": "Режими на единен вход (SSO)",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Персонализиране на членския сайт",
+      "name": "Предпочитания за известия на потребителя",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
+    },
+    {
+      "name": "Персонализиране",
       "file": "moodle-customize.md",
-      "subCat": "Инсталиране на сайт на Moodle"
+      "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Искате ли специализиран плъгин?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Специализиран плъгин?"
+      "name": "Грешки в домейна",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Инсталиране на плъгин за Moodle"
     }
   ]
 }

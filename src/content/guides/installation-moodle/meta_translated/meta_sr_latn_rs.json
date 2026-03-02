@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dobijte pristup serveru",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Instalacija Moodle sajta"
+      "name": "Brzi početak",
+      "file": "moodle-quick-start.md",
+      "subCat": "UKRATKO"
     },
     {
-      "name": "Korak 2: Identifikujte fajl prikaza",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Instalacija Moodle sajta"
+      "name": "Instalacija",
+      "file": "moodle-installation.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Korak 3: Dodajte kod",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Instalacija Moodle sajta"
+      "name": "Konfiguracija",
+      "file": "moodle-configuration.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Uspeh članskog sajta",
-      "file": "moodle-success.md",
-      "subCat": "Instalacija Moodle sajta"
+      "name": "Stilovi komentarisanja",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Greške domena članskog sajta",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Instalacija Moodle sajta"
+      "name": "SSO režimi",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Prilagođavanje članskog sajta",
+      "name": "Podešavanja obaveštenja korisnika",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Instalacija Moodle dodatka"
+    },
+    {
+      "name": "Prilagođavanje",
       "file": "moodle-customize.md",
-      "subCat": "Instalacija Moodle sajta"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Želite namenski dodatak?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Namenski dodatak?"
+      "name": "Greške domena",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Instalacija Moodle dodatka"
     }
   ]
 }

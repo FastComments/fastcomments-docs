@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Schritt 1: Zugriff auf den Server erhalten",
-      "file": "moodle-step-1-server-access.md",
-      "subCat": "Moodle-Site-Installation"
+      "name": "Schnellstart",
+      "file": "moodle-quick-start.md",
+      "subCat": "Kurzfassung"
     },
     {
-      "name": "Schritt 2: View-Datei identifizieren",
-      "file": "moodle-step-2-identify-view-file.md",
-      "subCat": "Moodle-Site-Installation"
+      "name": "Installation",
+      "file": "moodle-installation.md",
+      "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Schritt 3: Code hinzufügen",
-      "file": "moodle-step-3-edit-view.md",
-      "subCat": "Moodle-Site-Installation"
+      "name": "Konfiguration",
+      "file": "moodle-configuration.md",
+      "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Erfolg der Mitgliederseite",
-      "file": "moodle-success.md",
-      "subCat": "Moodle-Site-Installation"
+      "name": "Kommentarstile",
+      "file": "moodle-commenting-styles.md",
+      "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Domain-Fehler der Mitgliederseite",
-      "file": "moodle-domain-errors.md",
-      "subCat": "Moodle-Site-Installation"
+      "name": "SSO-Modi",
+      "file": "moodle-sso-modes.md",
+      "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Anpassung der Mitgliederseite",
+      "name": "Benachrichtigungseinstellungen für Benutzer",
+      "file": "moodle-user-preferences.md",
+      "subCat": "Moodle-Plugin-Installation"
+    },
+    {
+      "name": "Anpassung",
       "file": "moodle-customize.md",
-      "subCat": "Moodle-Site-Installation"
+      "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Möchten Sie ein eigenes Plugin?",
-      "file": "moodle-want-a-plugin.md",
-      "subCat": "Eigenes Plugin?"
+      "name": "Domain-Fehler",
+      "file": "moodle-domain-errors.md",
+      "subCat": "Moodle-Plugin-Installation"
     }
   ]
 }
