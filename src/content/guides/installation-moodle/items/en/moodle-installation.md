@@ -18,4 +18,4 @@ Log in as a site administrator and navigate to **Site Administration > Notificat
 
 #### Configure the Plugin
 
-After installation, go to **Site Administration > Plugins > Local plugins > FastComments** to enter your settings. See the [Configuration](#items-moodle-configuration) section for details on each option.
+After installation, go to **Site Administration > Plugins > Local plugins > FastComments** to enter your settings. See the [Configuration](#moodle-configuration) section for details on each option.
