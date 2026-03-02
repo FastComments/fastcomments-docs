@@ -225,7 +225,10 @@ class SDKGuideGenerator {
             }
             const filePath = path.join(generatedDir, filename);
 
-            fs.writeFileSync(filePath, section.content, 'utf8');
+            // Escape Handlebars-like syntax (e.g. Blade's {{-- --}}) so it doesn't
+            // break the Handlebars compile step in guides.js
+            const escaped = section.content.replace(/\{\{/g, '\\{{');
+            fs.writeFileSync(filePath, escaped, 'utf8');
 
             // Update section.file to just be the filename (no prefix needed for locale structure)
             section.file = filename;

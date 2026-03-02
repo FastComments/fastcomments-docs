@@ -138,10 +138,7 @@ async function buildGuideItemForMeta(guide, metaItem, locale = defaultLocale) {
         linkValidator.validateContent(rawMarkdown, itemPath, guide.id);
     }
 
-    // Escape Handlebars syntax that isn't our own placeholders (e.g. Blade's {{-- comment --}} syntax)
-    const escapedMarkdown = rawMarkdown.replace(/\{\{(?!ExampleTenantId\}\})/g, '\\{{');
-
-    const markdown = handlebars.compile(escapedMarkdown)({
+    const markdown = handlebars.compile(rawMarkdown)({
         ExampleTenantId
     });
 
