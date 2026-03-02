@@ -1,10 +1,8 @@
-With FastComments and a little programming know-how, we can add live commenting, with SSO, to the course page of any Moodle site!
+FastComments has a dedicated Moodle plugin that adds live commenting to your courses and activities. SSO is handled automatically - your users comment with their Moodle accounts without a separate login.
 
 <div class="screenshot white-bg">
-    <div class="title">Example</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-example.png" alt="Moodle Example" />
+    <div class="title">Course Comments Example</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments on a Moodle Course Page" />
 </div>
 
-Since we'll use SSO, your users won't have to login separately to comment. They will use their Moodle account seamlessly.
-
-If you don't feel comfortable with the following tutorial, reach out to support, and we may be able to help set it up for you.
+The plugin supports threaded comments, real-time collaborative chat, and multiple SSO modes. Get it from the <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub repository</a>.
