@@ -1,21 +1,21 @@
-#### Eklentiyi İndir
+#### Eklentiyi İndirin
 
-En son sürüm ZIP'ini <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub deposundan</a> indirin.
+En son sürüm ZIP dosyasını <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub deposu</a>ndan indirin.
 
-#### ZIP'i Moodle Dizininize Çıkarın
+#### Moodle Dizininize Çıkartın
 
-ZIP'i Moodle kurulumunuza çıkarın, böylece eklenti `<moodle-root>/local/fastcomments` konumunda olur. Eklenti dizini doğrudan `version.php`, `lib.php` ve diğer eklenti dosyalarını içermelidir (alt bir klasör içinde olmayacak şekilde).
+ZIP'i Moodle kurulumunuza çıkartın, böylece eklenti `<moodle-root>/local/fastcomments` içinde yer alır. Eklenti dizini doğrudan `version.php`, `lib.php` ve diğer eklenti dosyalarını içermelidir (alt klasöre gömülü olmamalıdır).
 
-Örneğin:
+For example:
 
     /var/www/html/moodle/local/fastcomments/version.php
     /var/www/html/moodle/local/fastcomments/lib.php
     /var/www/html/moodle/local/fastcomments/settings.php
 
-#### Moodle Yönetici Arayüzünden Yükleyin
+#### Moodle Yönetici Panelinden Yükleyin
 
-Site yöneticisi olarak giriş yapın ve **Site Yönetimi > Bildirimler** sayfasına gidin. Moodle yeni eklentiyi algılar ve kurulum işlemini başlatmanız için sizi uyarır.
+Site yöneticisi olarak giriş yapın ve **Site Yönetimi > Bildirimler** yolunu izleyin. Moodle yeni eklentiyi algılayacak ve yüklemeyi çalıştırmanız için sizi yönlendirecektir.
 
 #### Eklentiyi Yapılandırın
 
-Kurulumdan sonra ayarlarınızı girmek için **Site Yönetimi > Eklentiler > Yerel eklentiler > FastComments** bölümüne gidin. Her seçeneğin ayrıntıları için [Yapılandırma](#items-moodle-configuration) bölümüne bakın.
+Yüklemeden sonra, ayarlarınızı girmek için **Site Yönetimi > Eklentiler > Yerel eklentiler > FastComments** bölümüne gidin. Her seçeneğin ayrıntıları için [Yapılandırma](#moodle-configuration) bölümüne bakın.

@@ -4,20 +4,18 @@ Laden Sie die neueste Release-ZIP aus dem <a href="https://github.com/FastCommen
 
 #### In Ihr Moodle-Verzeichnis entpacken
 
-Entpacken Sie die ZIP in Ihre Moodle-Installation, sodass das Plugin unter `<moodle-root>/local/fastcomments` liegt. Das Plugin-Verzeichnis sollte direkt `version.php`, `lib.php` und andere Plugin-Dateien enthalten (nicht in einem Unterordner verschachtelt).
+Entpacken Sie die ZIP-Datei in Ihre Moodle-Installation, sodass das Plugin unter `<moodle-root>/local/fastcomments` liegt. Das Plugin-Verzeichnis sollte direkt `version.php`, `lib.php` und andere Plugin-Dateien enthalten (nicht in einem Unterordner verschachtelt).
 
-For example:
+Zum Beispiel:
 
     /var/www/html/moodle/local/fastcomments/version.php
     /var/www/html/moodle/local/fastcomments/lib.php
     /var/www/html/moodle/local/fastcomments/settings.php
 
-#### Installation über Moodle-Administration
+#### Über das Moodle-Admin installieren
 
-Melden Sie sich als Website-Administrator an und navigieren Sie zu **Site Administration > Notifications**. Moodle erkennt das neue Plugin und fordert Sie auf, die Installation auszuführen.
+Melden Sie sich als Website-Administrator an und navigieren Sie zu **Website-Administration > Benachrichtigungen**. Moodle erkennt das neue Plugin und fordert Sie auf, die Installation auszuführen.
 
 #### Plugin konfigurieren
 
-Nach der Installation gehen Sie zu **Site Administration > Plugins > Local plugins > FastComments**, um Ihre Einstellungen vorzunehmen. Siehe den [Konfiguration](#items-moodle-configuration)-Abschnitt für Details zu jeder Option.
-
----
+Nach der Installation gehen Sie zu **Website-Administration > Plugins > Lokale Plugins > FastComments**, um Ihre Einstellungen vorzunehmen. Siehe den Abschnitt [Konfiguration](#moodle-configuration) für Details zu jeder Option.
