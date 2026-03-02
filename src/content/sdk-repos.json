@@ -287,7 +287,7 @@
       "branch": "main",
       "language": "php",
       "docGenerators": ["readme"],
-      "description": "Add live commenting, chat, and more to your Laravel application."
+      "description": "A Laravel package that wraps the FastComments PHP SDK and SSO library, providing Blade components, SSO integration, and full API access."
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
