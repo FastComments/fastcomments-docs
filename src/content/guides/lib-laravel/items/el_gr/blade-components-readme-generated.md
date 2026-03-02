@@ -1,9 +1,9 @@
-### Widget σχολίων
+### Widget Σχολίων
 
 ```blade
 <x-fastcomments />
 
-{{-- Με επιλογές --}}
+\{{-- With options --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -19,7 +19,7 @@
 <x-fastcomments-live-chat url-id="chat-room-1" />
 ```
 
-### Αριθμός σχολίων
+### Αριθμός Σχολίων
 
 ```blade
 <x-fastcomments-comment-count url-id="my-page-id" />

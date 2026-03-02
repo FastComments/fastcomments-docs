@@ -1,10 +1,9 @@
----
-### Widget de Comentarios
+### Widget de comentarios
 
 ```blade
 <x-fastcomments />
 
-{{-- Con opciones --}}
+\{{-- Con opciones --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -14,16 +13,15 @@
 />
 ```
 
-### Chat en Vivo
+### Chat en vivo
 
 ```blade
 <x-fastcomments-live-chat url-id="chat-room-1" />
 ```
 
-### Contador de Comentarios
+### Recuento de comentarios
 
 ```blade
 <x-fastcomments-comment-count url-id="my-page-id" />
 <x-fastcomments-comment-count url-id="my-page-id" :number-only="true" />
 ```
----

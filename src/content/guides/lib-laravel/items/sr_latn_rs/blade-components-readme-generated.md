@@ -1,9 +1,9 @@
-### Widget komentara
+### Vidžet za komentare
 
 ```blade
 <x-fastcomments />
 
-{{-- Sa opcijama --}}
+\{{-- Sa opcijama --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -13,7 +13,7 @@
 />
 ```
 
-### Chat uživo
+### Ćaskanje uživo
 
 ```blade
 <x-fastcomments-live-chat url-id="chat-room-1" />

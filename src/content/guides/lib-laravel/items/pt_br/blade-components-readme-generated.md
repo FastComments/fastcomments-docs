@@ -1,9 +1,10 @@
+---
 ### Widget de Comentários
 
 ```blade
 <x-fastcomments />
 
-{{-- Com opções --}}
+\{{-- Com opções --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -25,3 +26,4 @@
 <x-fastcomments-comment-count url-id="my-page-id" />
 <x-fastcomments-comment-count url-id="my-page-id" :number-only="true" />
 ```
+---

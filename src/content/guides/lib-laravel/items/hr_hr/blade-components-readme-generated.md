@@ -1,9 +1,9 @@
-### Widget za komentare
+### Widget komentara
 
 ```blade
 <x-fastcomments />
 
-{{-- S opcijama --}}
+\{{-- S opcijama --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"

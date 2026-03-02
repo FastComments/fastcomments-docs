@@ -3,7 +3,7 @@
 ```blade
 <x-fastcomments />
 
-{{-- Z opcjami --}}
+\{{-- Z opcjami --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"

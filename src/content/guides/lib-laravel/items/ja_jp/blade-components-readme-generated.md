@@ -1,10 +1,9 @@
----
 ### コメントウィジェット
 
 ```blade
 <x-fastcomments />
 
-{{-- オプション付き --}}
+\{{-- オプション付き --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -26,4 +25,3 @@
 <x-fastcomments-comment-count url-id="my-page-id" />
 <x-fastcomments-comment-count url-id="my-page-id" :number-only="true" />
 ```
----

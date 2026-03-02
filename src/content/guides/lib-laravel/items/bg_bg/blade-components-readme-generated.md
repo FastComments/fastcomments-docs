@@ -1,10 +1,10 @@
 ---
-### Коментарен уиджет
+### Уиджет за коментари
 
 ```blade
 <x-fastcomments />
 
-{{-- С опции --}}
+\{{-- С опции --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"

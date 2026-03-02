@@ -3,7 +3,7 @@
 ```blade
 <x-fastcomments />
 
-{{-- С опциями --}}
+\{{-- С опциями --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -13,7 +13,7 @@
 />
 ```
 
-### Онлайн-чат
+### Живой чат
 
 ```blade
 <x-fastcomments-live-chat url-id="chat-room-1" />

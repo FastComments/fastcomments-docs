@@ -3,7 +3,7 @@
 ```blade
 <x-fastcomments />
 
-{{-- עם אפשרויות --}}
+\{{-- עם אפשרויות --}}
 <x-fastcomments
     url-id="my-page-id"
     url="https://example.com/my-page"
@@ -19,7 +19,7 @@
 <x-fastcomments-live-chat url-id="chat-room-1" />
 ```
 
-### ספירת תגובות
+### מספר תגובות
 
 ```blade
 <x-fastcomments-comment-count url-id="my-page-id" />
