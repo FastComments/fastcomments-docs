@@ -38,9 +38,11 @@ interface SSOUser {
     karma?: number
     /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
+        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. These are global badges visible on all pages. **/
         badgeIds: string[]
-        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        /** Array of badge IDs scoped to the current page (urlId). These badges are only displayed on the page where they were assigned. **/
+        pageBadgeIds?: string[]
+        /** If true, replaces all existing displayed badges with the provided ones. Global and page-scoped badges are overridden independently. If false, adds to existing badges. **/
         override?: boolean
         /** If true, updates badge display properties from tenant configuration. **/
         update?: boolean
@@ -80,6 +82,7 @@ emails if you set `optedInSubscriptionNotifications` to `true`.
 
 You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
 
-- `badgeIds` - An array of badge IDs to assign to the user. These must be valid badge IDs created in your FastComments account. Limited to 30 badges.
-- `override` - If true, all existing badges displayed on comments will be replaced with the provided ones. If false or omitted, the provided badges will be added to any existing badges.
+- `badgeIds` - An array of badge IDs to assign to the user. These are global badges visible on all pages. Must be valid badge IDs created in your FastComments account. Limited to 30 badges.
+- `pageBadgeIds` - An optional array of badge IDs scoped to the current page (`urlId`). These badges are only displayed on the page where they were assigned. Different pages can have different page-scoped badges for the same user.
+- `override` - If true, all existing displayed badges will be replaced with the provided ones. Global and page-scoped badges are overridden independently — overriding global badges does not affect page-scoped badges, and vice versa. If false or omitted, the provided badges will be added to any existing badges.
 - `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.

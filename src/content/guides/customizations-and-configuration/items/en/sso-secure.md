@@ -77,6 +77,17 @@ interface SSOUser {
     isProfileCommentsPrivate?: boolean;
     /** Optional, default false. Set to true to disable direct messaging this user. **/
     isProfileDMDisabled?: boolean;
+    /** Optional configuration for user badges. **/
+    badgeConfig?: {
+        /** Array of global badge IDs to assign. Limited to 30 badges. Order is respected. **/
+        badgeIds: string[];
+        /** Array of badge IDs scoped to the current page (urlId). Only displayed on the assigned page. **/
+        pageBadgeIds?: string[];
+        /** If true, replaces existing displayed badges. Global and page-scoped are overridden independently. **/
+        override?: boolean;
+        /** If true, updates badge display properties from tenant configuration. **/
+        update?: boolean;
+    };
 }
 [inline-code-end]
 

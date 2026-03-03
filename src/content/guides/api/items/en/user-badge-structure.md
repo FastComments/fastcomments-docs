@@ -52,5 +52,7 @@ export interface UserBadge {
     displayedOnComments: boolean
     /** The display order of the badge */
     order?: number
+    /** If set, this badge is only displayed on the page with the matching urlId. Null for global badges. */
+    urlId?: string | null
 }
 [inline-code-end]
