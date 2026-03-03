@@ -1,5 +1,5 @@
 {
-  "name": "Personalizações e Configurações",
+  "name": "Personalizações e Configuração",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -8,7 +8,7 @@
       "subCat": "Noções Básicas"
     },
     {
-      "name": "Como os Comentários Estão Vinculados a Páginas e Artigos",
+      "name": "Como os Comentários São Vinculados a Páginas e Artigos",
       "file": "url-id.md",
       "subCat": "Noções Básicas"
     },
@@ -33,7 +33,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Suportando Fundos Escuros (Modo Escuro)",
+      "name": "Suporte a Fundos Escuros (Modo Escuro)",
       "file": "has-dark-background.md",
       "subCat": "Aparência"
     },
@@ -43,7 +43,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Sobrescrevendo Texto",
+      "name": "Substituindo Texto",
       "file": "translations.md",
       "subCat": "Aparência"
     },
@@ -83,7 +83,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Desativando o Bloqueio",
+      "name": "Desativando Bloqueio",
       "file": "disable-blocking.md",
       "subCat": "Aparência"
     },
@@ -93,22 +93,22 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Alternando Tópicos de Comentários sem Recarregar a Página",
+      "name": "Alternar Tópicos de Comentários Sem Recarregar a Página",
       "file": "switching-comment-threads.md",
       "subCat": "Aparência"
     },
     {
-      "name": "Datas Absolutas (Desativar Marcas de Tempo Amigáveis)",
+      "name": "Datas Absolutas (Desativar Marcas de Tempo Legíveis)",
       "file": "absolute-dates.md",
       "subCat": "Aparência"
     },
     {
-      "name": "Exibir Datas Absolutas e Relativas",
+      "name": "Exibir Ambas as Datas Absolutas e Relativas",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Aparência"
     },
     {
-      "name": "Adicionando Texto no Cabeçalho",
+      "name": "Adicionando Texto de Cabeçalho",
       "file": "header-html.md",
       "subCat": "Aparência"
     },
@@ -128,7 +128,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Desativar Redirecionamento de Imagens",
+      "name": "Desativar Redirecionamento de Imagem",
       "file": "disable-image-redirect.md",
       "subCat": "Aparência"
     },
@@ -145,6 +145,16 @@
     {
       "name": "Desativar Perfis",
       "file": "disable-profiles.md",
+      "subCat": "Aparência"
+    },
+    {
+      "name": "Desativar Comentários no Perfil",
+      "file": "disable-profile-comments.md",
+      "subCat": "Aparência"
+    },
+    {
+      "name": "Desativar Mensagens Diretas do Perfil",
+      "file": "disable-profile-direct-messages.md",
       "subCat": "Aparência"
     },
     {
@@ -198,7 +208,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Desativando Uploads de Imagens",
+      "name": "Desativar Upload de Imagens",
       "file": "no-image-uploads.md",
       "subCat": "Aparência"
     },
@@ -218,12 +228,12 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Mostrar Comentários ao Vivo Imediatamente",
+      "name": "Exibir Comentários ao Vivo Imediatamente",
       "file": "show-live-right-away.md",
       "subCat": "Comentários ao Vivo"
     },
     {
-      "name": "Desativando Comentários ao Vivo",
+      "name": "Desativar Comentários ao Vivo",
       "file": "disable-live-commenting.md",
       "subCat": "Comentários ao Vivo"
     },
@@ -233,12 +243,12 @@
       "subCat": "Comentários ao Vivo"
     },
     {
-      "name": "Ativando Rolagem Infinita",
+      "name": "Ativar Rolagem Infinita",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Paginação e Ordenação"
     },
     {
-      "name": "Alterando a Direção de Ordenação Padrão",
+      "name": "Alterar a Direção de Ordenação Padrão",
       "file": "default-sort-direction.md",
       "subCat": "Paginação e Ordenação"
     },
@@ -248,22 +258,22 @@
       "subCat": "Paginação e Ordenação"
     },
     {
-      "name": "Mover a Caixa de Resposta para Após os Comentários",
+      "name": "Mover a Caixa de Resposta para Depois dos Comentários",
       "file": "input-after-comments.md",
       "subCat": "Caixa de Resposta"
     },
     {
-      "name": "Limitando o Tamanho do Comentário",
+      "name": "Limitar o Tamanho do Comentário",
       "file": "max-comment-character-length.md",
       "subCat": "Caixa de Resposta"
     },
     {
-      "name": "Desativar Comentários em Múltiplas Linhas",
+      "name": "Desativar Comentários Multilinha",
       "file": "use-single-line-comment-input.md",
       "subCat": "Caixa de Resposta"
     },
     {
-      "name": "Limitar o Volume de Comentários por Usuário",
+      "name": "Limitar Volume de Comentários por Usuário",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Caixa de Resposta"
     },
@@ -273,7 +283,7 @@
       "subCat": "Caixa de Resposta"
     },
     {
-      "name": "Profundidade Máxima de Resposta",
+      "name": "Profundidade Máxima de Respostas",
       "file": "max-reply-depth.md",
       "subCat": "Caixa de Resposta"
     },
@@ -288,12 +298,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Integrações Personalizadas - Single Sign-On (SSO) Seguro",
+      "name": "Integrações Personalizadas - Single Sign-On Seguro (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrações Personalizadas - Single Sign-On (SSO) Simples",
+      "name": "Integrações Personalizadas - Single Sign-On Simples (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -328,12 +338,12 @@
       "subCat": "Comentários Anônimos"
     },
     {
-      "name": "Desativar o Rótulo Não Verificado",
+      "name": "Desativar o Rótulo 'Não Verificado'",
       "file": "disable-unverified-label.md",
       "subCat": "Comentários Anônimos"
     },
     {
-      "name": "Permitir Votações Anônimas",
+      "name": "Permitir Votação Anônima",
       "file": "allow-anon-votes.md",
       "subCat": "Comentários Anônimos"
     },
@@ -373,12 +383,12 @@
       "subCat": "Diversos"
     },
     {
-      "name": "A Contagem de Comentários e a Contagem de Todas as Respostas Aninhadas",
+      "name": "Contagem de Comentários e de Todas as Respostas Aninhadas",
       "file": "count-all.md",
       "subCat": "Diversos"
     },
     {
-      "name": "Ativar Links do Comentador",
+      "name": "Ativar Links dos Comentadores",
       "file": "enable-commenter-links.md",
       "subCat": "Diversos"
     },

@@ -1,9 +1,9 @@
 {
-  "name": "Personalizzazioni e Configurazione",
+  "name": "Personalizzazioni e configurazione",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identificazione del tuo account",
+      "name": "Identificare il tuo account",
       "file": "tenant-id.md",
       "subCat": "Nozioni di base"
     },
@@ -38,7 +38,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Attivazione/disattivazione della modalità scura",
+      "name": "Commutare la modalità scura",
       "file": "has-dark-background-toggle.md",
       "subCat": "Aspetto e stile"
     },
@@ -63,17 +63,17 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Collegare i commenti alle pagine",
+      "name": "Collegamento dai commenti alle pagine",
       "file": "url.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Comprimi le risposte per impostazione predefinita",
+      "name": "Comprimi automaticamente le risposte",
       "file": "collapse-replies.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilitare WYSIWYG",
+      "name": "Abilita WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Aspetto e stile"
     },
@@ -93,12 +93,12 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Passare tra i thread di commenti senza ricaricare la pagina",
+      "name": "Passare tra thread di commenti senza ricaricare la pagina",
       "file": "switching-comment-threads.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Date assolute (disabilita i timestamp leggibili)",
+      "name": "Date assolute (disattiva i timestamp leggibili)",
       "file": "absolute-dates.md",
       "subCat": "Aspetto e stile"
     },
@@ -108,7 +108,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Aggiungere testo nell'intestazione",
+      "name": "Aggiungere testo all'intestazione",
       "file": "header-html.md",
       "subCat": "Aspetto e stile"
     },
@@ -118,7 +118,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Attivare/disattivare i commenti con un pulsante",
+      "name": "Mostrare/nascondere i commenti con un pulsante",
       "file": "use-show-comments-toggle.md",
       "subCat": "Aspetto e stile"
     },
@@ -128,27 +128,37 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare il reindirizzamento delle immagini",
+      "name": "Disabilita il reindirizzamento delle immagini",
       "file": "disable-image-redirect.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare la creazione automatica degli hashtag",
+      "name": "Disabilita la creazione automatica degli hashtag",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare la campanella delle notifiche",
+      "name": "Disabilita la campanella delle notifiche",
       "file": "disable-notification-bell.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare i profili",
+      "name": "Disabilita i profili",
       "file": "disable-profiles.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare il messaggio di successo",
+      "name": "Disabilita i commenti del profilo",
+      "file": "disable-profile-comments.md",
+      "subCat": "Aspetto e stile"
+    },
+    {
+      "name": "Disabilita i messaggi diretti del profilo",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Aspetto e stile"
+    },
+    {
+      "name": "Disabilita il messaggio di successo",
       "file": "disable-success-message.md",
       "subCat": "Aspetto e stile"
     },
@@ -168,12 +178,12 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare l'eliminazione",
+      "name": "Disabilita l'eliminazione",
       "file": "disable-deleting.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare la modifica",
+      "name": "Disabilita la modifica",
       "file": "disable-editing.md",
       "subCat": "Aspetto e stile"
     },
@@ -183,7 +193,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Dimensioni della pagina",
+      "name": "Dimensioni delle pagine",
       "file": "page-size.md",
       "subCat": "Aspetto e stile"
     },
@@ -198,27 +208,27 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilitare l'upload delle immagini",
+      "name": "Disabilitare il caricamento delle immagini",
       "file": "no-image-uploads.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilitare la casella di ricerca",
+      "name": "Abilita la casella di ricerca",
       "file": "enable-search.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilitare gli spoiler",
+      "name": "Abilita gli spoiler",
       "file": "enable-spoilers.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilitare il conteggio delle visualizzazioni dei commenti",
+      "name": "Abilita il conteggio delle visualizzazioni dei commenti",
       "file": "enable-comment-view-counts.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Mostrare subito i commenti in tempo reale",
+      "name": "Mostra subito i commenti in tempo reale",
       "file": "show-live-right-away.md",
       "subCat": "Commenti in tempo reale"
     },
@@ -228,12 +238,12 @@
       "subCat": "Commenti in tempo reale"
     },
     {
-      "name": "Mettere i nuovi commenti in tempo reale in fondo",
+      "name": "Visualizzare i nuovi commenti in tempo reale in fondo",
       "file": "new-comments-to-bottom.md",
       "subCat": "Commenti in tempo reale"
     },
     {
-      "name": "Abilitare lo scorrimento infinito",
+      "name": "Abilita lo scorrimento infinito",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Paginazione e ordinamento"
     },
@@ -243,57 +253,57 @@
       "subCat": "Paginazione e ordinamento"
     },
     {
-      "name": "Visualizzare tutti i commenti contemporaneamente - disabilitare la paginazione",
+      "name": "Visualizzare tutti i commenti contemporaneamente - Disabilitare la paginazione",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginazione e ordinamento"
     },
     {
       "name": "Spostare la casella di risposta dopo i commenti",
       "file": "input-after-comments.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
-      "name": "Limitare la lunghezza dei commenti",
+      "name": "Limitare la lunghezza del commento",
       "file": "max-comment-character-length.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
-      "name": "Disabilitare i commenti multilinea",
+      "name": "Disabilita i commenti multilinea",
       "file": "use-single-line-comment-input.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
       "name": "Limitare il numero di commenti per utente",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
       "name": "Impedire nuovi commenti di primo livello",
       "file": "no-new-root-comments.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
       "name": "Profondità massima delle risposte",
       "file": "max-reply-depth.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
-      "name": "Richiedere l'accettazione dei termini di servizio",
+      "name": "Richiedere l'accettazione dei Termini di Servizio",
       "file": "terms-of-service.md",
-      "subCat": "La casella di risposta"
+      "subCat": "Casella di risposta"
     },
     {
-      "name": "Panoramica Single Sign-On (SSO)",
+      "name": "Panoramica Single Sign On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign-On (SSO) sicuro",
+      "name": "Integrazioni personalizzate - Single Sign On sicuro (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign-On (SSO) semplice",
+      "name": "Integrazioni personalizzate - Single Sign On semplice (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -308,7 +318,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Proteggere i thread dei commenti con Single Sign-On",
+      "name": "Proteggere i thread di commenti con Single Sign-On (SSO)",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -323,12 +333,12 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare i campi email",
+      "name": "Disabilita l'inserimento dell'email",
       "file": "disable-email-inputs.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare l'etichetta 'Non verificato'",
+      "name": "Disabilita l'etichetta 'Non verificato'",
       "file": "disable-unverified-label.md",
       "subCat": "Commenti anonimi"
     },
@@ -373,7 +383,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Conteggio dei commenti e di tutte le risposte annidate",
+      "name": "Conteggio dei commenti e inclusione di tutte le risposte annidate",
       "file": "count-all.md",
       "subCat": "Varie"
     },

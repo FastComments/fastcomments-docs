@@ -133,7 +133,7 @@
       "subCat": "Look and Feel"
     },
     {
-      "name": "Disable Automatic HashTag Creation",
+      "name": "Disable Automatic Hashtag Creation",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Look and Feel"
     },
@@ -148,12 +148,22 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Profile Comments",
+      "file": "disable-profile-comments.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Profile Direct Messages",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Disable Success Message",
       "file": "disable-success-message.md",
       "subCat": "Look and Feel"
     },
     {
-      "name": "Change The Content Rating of Gifs",
+      "name": "Change The Content Rating of GIFs",
       "file": "gif-rating.md",
       "subCat": "Look and Feel"
     },
@@ -283,17 +293,17 @@
       "subCat": "The Reply Box"
     },
     {
-      "name": "Single Sign On (SSO) Overview",
+      "name": "Single Sign-On (SSO) Overview",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Custom Integrations - Secure Single Sign On (SSO)",
+      "name": "Custom Integrations - Secure Single Sign-On (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Custom Integrations - Simple Single Sign On (SSO)",
+      "name": "Custom Integrations - Simple Single Sign-On (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -393,7 +403,7 @@
       "subCat": "Misc"
     },
     {
-      "name": "Third Party Cookie Bypass",
+      "name": "Third-Party Cookie Bypass",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Misc"
     },

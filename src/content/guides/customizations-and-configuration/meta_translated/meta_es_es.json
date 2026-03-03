@@ -1,5 +1,5 @@
 {
-  "name": "Personalizaciones y configuración",
+  "name": "Personalizaciones y Configuración",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -33,12 +33,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Compatibilidad con fondos oscuros (modo oscuro)",
+      "name": "Soporte para fondos oscuros (modo oscuro)",
       "file": "has-dark-background.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Alternar modo oscuro",
+      "name": "Alternar el modo oscuro",
       "file": "has-dark-background-toggle.md",
       "subCat": "Apariencia"
     },
@@ -63,7 +63,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Enlazar comentarios a páginas",
+      "name": "Enlazar comentarios con páginas",
       "file": "url.md",
       "subCat": "Apariencia"
     },
@@ -73,7 +73,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar WYSIWYG",
+      "name": "Habilitar editor WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Apariencia"
     },
@@ -98,12 +98,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Fechas absolutas (deshabilitar marcas de tiempo relativas)",
+      "name": "Fechas absolutas (desactivar marcas de tiempo legibles)",
       "file": "absolute-dates.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Mostrar fechas absolutas y relativas",
+      "name": "Mostrar tanto fechas absolutas como relativas",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Apariencia"
     },
@@ -148,12 +148,22 @@
       "subCat": "Apariencia"
     },
     {
+      "name": "Desactivar comentarios en perfiles",
+      "file": "disable-profile-comments.md",
+      "subCat": "Apariencia"
+    },
+    {
+      "name": "Desactivar mensajes directos en perfiles",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Apariencia"
+    },
+    {
       "name": "Desactivar mensaje de éxito",
       "file": "disable-success-message.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Cambiar la clasificación de contenido de GIFs",
+      "name": "Cambiar la clasificación de contenido de los GIFs",
       "file": "gif-rating.md",
       "subCat": "Apariencia"
     },
@@ -178,7 +188,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Resaltar comentarios nuevos",
+      "name": "Resaltar nuevos comentarios",
       "file": "highlighting-new-comments.md",
       "subCat": "Apariencia"
     },
@@ -203,7 +213,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar campo de búsqueda",
+      "name": "Habilitar cuadro de búsqueda",
       "file": "enable-search.md",
       "subCat": "Apariencia"
     },
@@ -213,7 +223,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar recuento de vistas de comentarios",
+      "name": "Habilitar contador de vistas de comentarios",
       "file": "enable-comment-view-counts.md",
       "subCat": "Apariencia"
     },
@@ -243,67 +253,67 @@
       "subCat": "Paginación y ordenación"
     },
     {
-      "name": "Mostrar todos los comentarios a la vez - Desactivar paginación",
+      "name": "Mostrar todos los comentarios a la vez - desactivar paginación",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginación y ordenación"
     },
     {
-      "name": "Mover la caja de respuesta después de los comentarios",
+      "name": "Mover el cuadro de respuesta después de los comentarios",
       "file": "input-after-comments.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
       "name": "Limitar la longitud del comentario",
       "file": "max-comment-character-length.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
       "name": "Desactivar comentarios multilínea",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
       "name": "Limitar la cantidad de comentarios por usuario",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
-      "name": "Evitar nuevos comentarios de nivel superior",
+      "name": "Impedir nuevos comentarios de primer nivel",
       "file": "no-new-root-comments.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
       "name": "Profundidad máxima de respuestas",
       "file": "max-reply-depth.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
       "name": "Requerir aceptación de los términos de servicio",
       "file": "terms-of-service.md",
-      "subCat": "Caja de respuesta"
+      "subCat": "El cuadro de respuesta"
     },
     {
-      "name": "Visión general del inicio de sesión único (SSO)",
+      "name": "Resumen de inicio de sesión único (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - Inicio de sesión único (SSO) seguro",
+      "name": "Integraciones personalizadas - inicio de sesión único seguro (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - Inicio de sesión único (SSO) simple",
+      "name": "Integraciones personalizadas - inicio de sesión único simple (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - Migración desde Disqus SSO",
+      "name": "Integraciones personalizadas - migración desde Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - Migración desde Commento SSO",
+      "name": "Integraciones personalizadas - migración desde Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
@@ -328,7 +338,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Desactivar la etiqueta 'no verificado'",
+      "name": "Desactivar la etiqueta 'No verificado'",
       "file": "disable-unverified-label.md",
       "subCat": "Comentarios anónimos"
     },
@@ -363,7 +373,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Evitar nuevas respuestas y desactivar votos",
+      "name": "Impedir nuevas respuestas y desactivar votos",
       "file": "readonly.md",
       "subCat": "Varios"
     },
@@ -373,7 +383,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Recuento de comentarios y de todas las respuestas anidadas",
+      "name": "Recuento de comentarios y conteo de todas las respuestas anidadas",
       "file": "count-all.md",
       "subCat": "Varios"
     },
@@ -393,7 +403,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Omisión de cookies de terceros",
+      "name": "Eludir cookies de terceros",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Varios"
     },

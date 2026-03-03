@@ -3,12 +3,12 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identificiranje vašeg računa",
+      "name": "Identifikacija vašeg računa",
       "file": "tenant-id.md",
       "subCat": "Osnove"
     },
     {
-      "name": "Kako su komentari povezani sa stranicama i člancima",
+      "name": "Kako su komentari povezani s stranicama i člancima",
       "file": "url-id.md",
       "subCat": "Osnove"
     },
@@ -18,7 +18,7 @@
       "subCat": "Osnove"
     },
     {
-      "name": "Prilagođeno oblikovanje",
+      "name": "Prilagođeni stilovi",
       "file": "custom-css.md",
       "subCat": "Izgled i dojam"
     },
@@ -33,12 +33,12 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Podrška za tamne pozadine (tamni način)",
+      "name": "Podrška za tamne pozadine (tamni način rada)",
       "file": "has-dark-background.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prebacivanje tamnog načina",
+      "name": "Prebacivanje tamnog načina rada",
       "file": "has-dark-background-toggle.md",
       "subCat": "Izgled i dojam"
     },
@@ -68,7 +68,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Sklapati odgovore prema zadanim postavkama",
+      "name": "Sklapanje odgovora po zadanom",
       "file": "collapse-replies.md",
       "subCat": "Izgled i dojam"
     },
@@ -98,12 +98,12 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Apsolutni datumi (onemogući čitljive vremenske oznake)",
+      "name": "Apsolutni datumi (onemogućavanje čitljivih vremenskih oznaka)",
       "file": "absolute-dates.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikaz i apsolutnih i relativnih datuma",
+      "name": "Prikazivanje apsolutnih i relativnih datuma",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Izgled i dojam"
     },
@@ -113,12 +113,12 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikazivanje poveznica kao tekst",
+      "name": "Prikazivanje poveznica kao teksta",
       "file": "render-links-as-text.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prebacivanje prikaza komentara pomoću gumba",
+      "name": "Prebacivanje komentara pomoću gumba",
       "file": "use-show-comments-toggle.md",
       "subCat": "Izgled i dojam"
     },
@@ -128,32 +128,42 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući preusmjeravanje slika",
+      "name": "Onemogućavanje preusmjeravanja slika",
       "file": "disable-image-redirect.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući automatsko stvaranje hashtagova",
+      "name": "Onemogućavanje automatskog stvaranja hashtagova",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući zvono obavijesti",
+      "name": "Onemogućavanje zvona za obavijesti",
       "file": "disable-notification-bell.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući profile",
+      "name": "Onemogućavanje profila",
       "file": "disable-profiles.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući poruku o uspjehu",
+      "name": "Onemogućavanje komentara na profilima",
+      "file": "disable-profile-comments.md",
+      "subCat": "Izgled i dojam"
+    },
+    {
+      "name": "Onemogućavanje izravnih poruka na profilima",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Izgled i dojam"
+    },
+    {
+      "name": "Onemogućavanje poruke o uspjehu",
       "file": "disable-success-message.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Promijeni ocjenu sadržaja GIF-ova",
+      "name": "Promjena ocjene sadržaja za GIF-ove",
       "file": "gif-rating.md",
       "subCat": "Izgled i dojam"
     },
@@ -163,17 +173,17 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Promijeni stil glasanja",
+      "name": "Promjena stila glasanja",
       "file": "vote-style.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući brisanje",
+      "name": "Onemogućavanje brisanja",
       "file": "disable-deleting.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući uređivanje",
+      "name": "Onemogućavanje uređivanja",
       "file": "disable-editing.md",
       "subCat": "Izgled i dojam"
     },
@@ -198,7 +208,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogućavanje učitavanja slika",
+      "name": "Onemogućavanje prijenosa slika",
       "file": "no-image-uploads.md",
       "subCat": "Izgled i dojam"
     },
@@ -213,12 +223,12 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Omogući prikaz broja pregleda komentara",
+      "name": "Omogući broj pregleda komentara",
       "file": "enable-comment-view-counts.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikaži žive komentare odmah",
+      "name": "Odmah prikazivati komentare uživo",
       "file": "show-live-right-away.md",
       "subCat": "Komentiranje uživo"
     },
@@ -235,20 +245,20 @@
     {
       "name": "Omogućavanje beskonačnog pomicanja",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginacija i sortiranje"
+      "subCat": "Straničenje i sortiranje"
     },
     {
       "name": "Promjena zadanog smjera sortiranja",
       "file": "default-sort-direction.md",
-      "subCat": "Paginacija i sortiranje"
+      "subCat": "Straničenje i sortiranje"
     },
     {
-      "name": "Prikaz svih komentara odjednom - onemogući paginaciju",
+      "name": "Prikaz svih komentara odjednom - onemogućavanje paginacije",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginacija i sortiranje"
+      "subCat": "Straničenje i sortiranje"
     },
     {
-      "name": "Premještanje polja za odgovor ispod komentara",
+      "name": "Premještanje polja za odgovor iza komentara",
       "file": "input-after-comments.md",
       "subCat": "Polje za odgovor"
     },
@@ -258,17 +268,17 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Onemogući komentare u više redova",
+      "name": "Onemogućavanje višerednog komentiranja",
       "file": "use-single-line-comment-input.md",
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Ograniči broj komentara po korisniku",
+      "name": "Ograničenje broja komentara po korisniku",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Spriječi dodavanje novih glavnih komentara",
+      "name": "Sprječavanje novih komentara najviše razine",
       "file": "no-new-root-comments.md",
       "subCat": "Polje za odgovor"
     },
@@ -278,22 +288,22 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Zahtijevaj prihvaćanje uvjeta korištenja",
+      "name": "Zahtijevati prihvaćanje uvjeta korištenja",
       "file": "terms-of-service.md",
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Pregled jedinstvenog prijavljivanja (SSO)",
+      "name": "Pregled jedinstvene prijave (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagođene integracije - Sigurno jedinstveno prijavljivanje (SSO)",
+      "name": "Prilagođene integracije - Sigurna jedinstvena prijava (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagođene integracije - Jednostavno jedinstveno prijavljivanje (SSO)",
+      "name": "Prilagođene integracije - Jednostavna jedinstvena prijava (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -308,12 +318,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Zaštita komentarskih niti pomoću SSO-a",
+      "name": "Zaštita niti komentara putem jedinstvene prijave",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
-      "name": "Dozvoli anonimno komentiranje",
+      "name": "Dopusti anonimno komentiranje",
       "file": "allow-anon.md",
       "subCat": "Anonimno komentiranje"
     },
@@ -323,17 +333,17 @@
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Onemogući unos e-pošte",
+      "name": "Onemogućavanje unosa e-pošte",
       "file": "disable-email-inputs.md",
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Onemogući oznaku 'nepotvrđeno'",
+      "name": "Onemogućavanje oznake 'Nepotvrđeno'",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Dozvoli anonimno glasanje",
+      "name": "Dopusti anonimno glasanje",
       "file": "allow-anon-votes.md",
       "subCat": "Anonimno komentiranje"
     },
@@ -363,7 +373,7 @@
       "subCat": "Ostalo"
     },
     {
-      "name": "Spriječi nove odgovore i onemogući glasanje",
+      "name": "Sprječavanje novih odgovora i onemogućavanje glasova",
       "file": "readonly.md",
       "subCat": "Ostalo"
     },
@@ -373,7 +383,7 @@
       "subCat": "Ostalo"
     },
     {
-      "name": "Broj komentara i brojanje svih ugniježdenih odgovora",
+      "name": "Broj komentara i brojanje svih ugniježđenih odgovora",
       "file": "count-all.md",
       "subCat": "Ostalo"
     },
@@ -383,7 +393,7 @@
       "subCat": "Ostalo"
     },
     {
-      "name": "Grupe za moderiranje",
+      "name": "Grupe za moderaciju",
       "file": "moderation-group-ids.md",
       "subCat": "Ostalo"
     },
@@ -403,7 +413,7 @@
       "subCat": "Ostalo"
     },
     {
-      "name": "Prikaži značke u gornjoj traci",
+      "name": "Prikaz znački u gornjoj traci",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Izgled i dojam"
     }

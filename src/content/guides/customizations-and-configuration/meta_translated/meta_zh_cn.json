@@ -13,7 +13,7 @@
       "subCat": "基础"
     },
     {
-      "name": "在不同页面呈现相同的评论",
+      "name": "在不同页面上呈现相同评论",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "基础"
     },
@@ -33,7 +33,7 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "支持深色背景（暗黑模式）",
+      "name": "支持暗色背景（暗黑模式）",
       "file": "has-dark-background.md",
       "subCat": "外观与风格"
     },
@@ -83,7 +83,7 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "禁用屏蔽功能",
+      "name": "禁用屏蔽",
       "file": "disable-blocking.md",
       "subCat": "外观与风格"
     },
@@ -98,12 +98,12 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "绝对日期（禁用人性化时间戳）",
+      "name": "绝对日期（禁用相对友好时间）",
       "file": "absolute-dates.md",
       "subCat": "外观与风格"
     },
     {
-      "name": "同时显示绝对和相对日期",
+      "name": "显示绝对和相对日期",
       "file": "absolute-and-relative-dates.md",
       "subCat": "外观与风格"
     },
@@ -118,7 +118,7 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "使用按钮切换评论",
+      "name": "通过按钮切换评论",
       "file": "use-show-comments-toggle.md",
       "subCat": "外观与风格"
     },
@@ -148,12 +148,22 @@
       "subCat": "外观与风格"
     },
     {
+      "name": "禁用个人资料评论",
+      "file": "disable-profile-comments.md",
+      "subCat": "外观与风格"
+    },
+    {
+      "name": "禁用个人资料私信",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "外观与风格"
+    },
+    {
       "name": "禁用成功消息",
       "file": "disable-success-message.md",
       "subCat": "外观与风格"
     },
     {
-      "name": "更改 GIF 内容分级",
+      "name": "更改 GIF 的内容分级",
       "file": "gif-rating.md",
       "subCat": "外观与风格"
     },
@@ -168,12 +178,12 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "禁用删除功能",
+      "name": "禁用删除",
       "file": "disable-deleting.md",
       "subCat": "外观与风格"
     },
     {
-      "name": "禁用编辑功能",
+      "name": "禁用编辑",
       "file": "disable-editing.md",
       "subCat": "外观与风格"
     },
@@ -208,12 +218,12 @@
       "subCat": "外观与风格"
     },
     {
-      "name": "启用剧透标记",
+      "name": "启用隐藏内容（Spoiler）",
       "file": "enable-spoilers.md",
       "subCat": "外观与风格"
     },
     {
-      "name": "启用评论查看次数",
+      "name": "启用评论查看计数",
       "file": "enable-comment-view-counts.md",
       "subCat": "外观与风格"
     },
@@ -228,7 +238,7 @@
       "subCat": "实时评论"
     },
     {
-      "name": "新实时评论添加到底部",
+      "name": "新实时评论显示在底部",
       "file": "new-comments-to-bottom.md",
       "subCat": "实时评论"
     },
@@ -243,12 +253,12 @@
       "subCat": "分页与排序"
     },
     {
-      "name": "一次性呈现所有评论（禁用分页）",
+      "name": "一次性呈现所有评论 - 禁用分页",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分页与排序"
     },
     {
-      "name": "将回复框移到评论之后",
+      "name": "将回复框移至评论之后",
       "file": "input-after-comments.md",
       "subCat": "回复框"
     },
@@ -263,12 +273,12 @@
       "subCat": "回复框"
     },
     {
-      "name": "限制每个用户的评论数量",
+      "name": "限制每用户评论数量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回复框"
     },
     {
-      "name": "阻止新增顶层评论",
+      "name": "禁止新增顶层评论",
       "file": "no-new-root-comments.md",
       "subCat": "回复框"
     },
@@ -283,17 +293,17 @@
       "subCat": "回复框"
     },
     {
-      "name": "单点登录（SSO）概述",
+      "name": "单点登录 (SSO) 概述",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "自定义集成 - 安全单点登录（SSO）",
+      "name": "自定义集成 - 安全单点登录 (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "自定义集成 - 简易单点登录（SSO）",
+      "name": "自定义集成 - 简易单点登录 (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -323,7 +333,7 @@
       "subCat": "匿名评论"
     },
     {
-      "name": "禁用电子邮件输入",
+      "name": "禁用邮箱输入",
       "file": "disable-email-inputs.md",
       "subCat": "匿名评论"
     },
@@ -348,7 +358,7 @@
       "subCat": "其他"
     },
     {
-      "name": "手动定义用户区域设置",
+      "name": "手动指定用户区域设置",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -363,7 +373,7 @@
       "subCat": "其他"
     },
     {
-      "name": "阻止新回复并禁用投票",
+      "name": "禁止新回复并禁用投票",
       "file": "readonly.md",
       "subCat": "其他"
     },

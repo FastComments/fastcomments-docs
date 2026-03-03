@@ -58,7 +58,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Wyłączanie wszystkich stylów domyślnych",
+      "name": "Wyłączanie wszystkich domyślnych stylów",
       "file": "no-styles.md",
       "subCat": "Wygląd i styl"
     },
@@ -73,7 +73,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Włącz WYSIWYG",
+      "name": "Włączenie edytora WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Wygląd i styl"
     },
@@ -88,7 +88,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Ustalanie, którą stronę wyrenderować",
+      "name": "Określanie, którą stronę wyrenderować",
       "file": "starting-page.md",
       "subCat": "Wygląd i styl"
     },
@@ -98,7 +98,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Daty bezwzględne (wyłącz przyjazne znaczniki czasu)",
+      "name": "Daty absolutne (wyłącz przyjazne znaczniki czasu)",
       "file": "absolute-dates.md",
       "subCat": "Wygląd i styl"
     },
@@ -113,22 +113,22 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Wyświetlaj linki jako tekst",
+      "name": "Wyświetlanie linków jako tekst",
       "file": "render-links-as-text.md",
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Przełączanie komentarzy przyciskiem",
+      "name": "Przełączanie komentarzy za pomocą przycisku",
       "file": "use-show-comments-toggle.md",
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Dostosowywanie tekstu licznika komentarzy",
+      "name": "Dostosowywanie tekstu z liczbą komentarzy",
       "file": "comment-count-format.md",
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Wyłącz przekierowanie obrazów",
+      "name": "Wyłącz przekierowywanie obrazów",
       "file": "disable-image-redirect.md",
       "subCat": "Wygląd i styl"
     },
@@ -145,6 +145,16 @@
     {
       "name": "Wyłącz profile",
       "file": "disable-profiles.md",
+      "subCat": "Wygląd i styl"
+    },
+    {
+      "name": "Wyłącz komentarze w profilach",
+      "file": "disable-profile-comments.md",
+      "subCat": "Wygląd i styl"
+    },
+    {
+      "name": "Wyłącz wiadomości prywatne w profilach",
+      "file": "disable-profile-direct-messages.md",
       "subCat": "Wygląd i styl"
     },
     {
@@ -188,7 +198,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Szablony e-maili",
+      "name": "Szablony e-mail",
       "file": "email-templates.md",
       "subCat": "Wygląd i styl"
     },
@@ -208,7 +218,7 @@
       "subCat": "Wygląd i styl"
     },
     {
-      "name": "Włączanie spoilerów",
+      "name": "Włącz spoilery",
       "file": "enable-spoilers.md",
       "subCat": "Wygląd i styl"
     },
@@ -233,7 +243,7 @@
       "subCat": "Komentowanie na żywo"
     },
     {
-      "name": "Włączanie nieskończonego przewijania",
+      "name": "Włączenie nieskończonego przewijania",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Paginacja i sortowanie"
     },
@@ -243,12 +253,12 @@
       "subCat": "Paginacja i sortowanie"
     },
     {
-      "name": "Wyświetlanie wszystkich komentarzy naraz — wyłącz paginację",
+      "name": "Wyświetlanie wszystkich komentarzy jednocześnie - wyłącz paginację",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginacja i sortowanie"
     },
     {
-      "name": "Przeniesienie pola odpowiedzi za komentarze",
+      "name": "Przeniesienie pola odpowiedzi poniżej komentarzy",
       "file": "input-after-comments.md",
       "subCat": "Pole odpowiedzi"
     },
@@ -268,7 +278,7 @@
       "subCat": "Pole odpowiedzi"
     },
     {
-      "name": "Zablokuj nowe komentarze najwyższego poziomu",
+      "name": "Zablokuj dodawanie nowych komentarzy najwyższego poziomu",
       "file": "no-new-root-comments.md",
       "subCat": "Pole odpowiedzi"
     },
@@ -283,7 +293,7 @@
       "subCat": "Pole odpowiedzi"
     },
     {
-      "name": "Przegląd logowania jednokrotnego (SSO)",
+      "name": "Omówienie Single Sign-On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -315,32 +325,32 @@
     {
       "name": "Zezwalaj na anonimowe komentowanie",
       "file": "allow-anon.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
       "name": "Zapobieganie wygasaniu anonimowych komentarzy",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
       "name": "Wyłącz pola e-mail",
       "file": "disable-email-inputs.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Wyłącz etykietę 'Niezweryfikowany'",
+      "name": "Wyłącz etykietę „Niezweryfikowany”",
       "file": "disable-unverified-label.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
       "name": "Zezwalaj na anonimowe głosowanie",
       "file": "allow-anon-votes.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
       "name": "Ustawianie domyślnej nazwy użytkownika",
       "file": "default-username.md",
-      "subCat": "Komentowanie anonimowe"
+      "subCat": "Anonimowe komentowanie"
     },
     {
       "name": "Wywołania zwrotne",
@@ -363,7 +373,7 @@
       "subCat": "Inne"
     },
     {
-      "name": "Zablokuj nowe odpowiedzi i wyłącz głosowanie",
+      "name": "Zablokuj nowe odpowiedzi i wyłącz głosy",
       "file": "readonly.md",
       "subCat": "Inne"
     },
@@ -373,12 +383,12 @@
       "subCat": "Inne"
     },
     {
-      "name": "Licznik komentarzy i liczenie wszystkich zagnieżdżonych odpowiedzi",
+      "name": "Liczba komentarzy i liczenie wszystkich zagnieżdżonych odpowiedzi",
       "file": "count-all.md",
       "subCat": "Inne"
     },
     {
-      "name": "Włączanie linków do profili komentujących",
+      "name": "Włącz linki do profili komentujących",
       "file": "enable-commenter-links.md",
       "subCat": "Inne"
     },
@@ -388,7 +398,7 @@
       "subCat": "Inne"
     },
     {
-      "name": "Identyfikatory grup do wzmianek",
+      "name": "Wzmiankowanie identyfikatorów grup",
       "file": "mention-group-ids.md",
       "subCat": "Inne"
     },
@@ -403,7 +413,7 @@
       "subCat": "Inne"
     },
     {
-      "name": "Pokaż odznaki w górnym pasku",
+      "name": "Wyświetlaj odznaki w górnym pasku",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Wygląd i styl"
     }

@@ -8,12 +8,12 @@
       "subCat": "基礎"
     },
     {
-      "name": "留言如何與頁面與文章關聯",
+      "name": "評論如何關聯至頁面與文章",
       "file": "url-id.md",
       "subCat": "基礎"
     },
     {
-      "name": "在不同頁面呈現相同留言",
+      "name": "在不同頁面呈現相同評論",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "基礎"
     },
@@ -48,12 +48,12 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "變更預設大頭貼",
+      "name": "更改預設頭像",
       "file": "default-avatar-src.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "停用大頭貼",
+      "name": "停用頭像",
       "file": "hide-avatars.md",
       "subCat": "外觀與風格"
     },
@@ -63,7 +63,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "從留言連結到頁面",
+      "name": "從評論連結到頁面",
       "file": "url.md",
       "subCat": "外觀與風格"
     },
@@ -73,7 +73,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "啟用所見即所得編輯器",
+      "name": "啟用所見即所得（WYSIWYG）",
       "file": "enable-wysiwyg.md",
       "subCat": "外觀與風格"
     },
@@ -88,17 +88,17 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "決定要呈現哪個頁面",
+      "name": "決定要呈現的頁面",
       "file": "starting-page.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "在不重新載入頁面的情況下切換留言串",
+      "name": "在不重新載入頁面下切換評論串",
       "file": "switching-comment-threads.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "絕對日期（停用友善時間標示）",
+      "name": "絕對日期（停用人性化時間標記）",
       "file": "absolute-dates.md",
       "subCat": "外觀與風格"
     },
@@ -108,22 +108,22 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "新增標頭文字",
+      "name": "新增標題文字",
       "file": "header-html.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "將連結以文字呈現",
+      "name": "將連結呈現為文字",
       "file": "render-links-as-text.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "使用按鈕切換留言",
+      "name": "使用按鈕切換評論",
       "file": "use-show-comments-toggle.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "自訂留言數文字",
+      "name": "自訂評論數量文字",
       "file": "comment-count-format.md",
       "subCat": "外觀與風格"
     },
@@ -148,12 +148,22 @@
       "subCat": "外觀與風格"
     },
     {
+      "name": "停用個人檔案評論",
+      "file": "disable-profile-comments.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "停用個人檔案私訊",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "外觀與風格"
+    },
+    {
       "name": "停用成功訊息",
       "file": "disable-success-message.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "更改 GIF 的內容分級",
+      "name": "變更 GIF 的內容分級",
       "file": "gif-rating.md",
       "subCat": "外觀與風格"
     },
@@ -178,7 +188,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "突顯新留言",
+      "name": "突顯新評論",
       "file": "highlighting-new-comments.md",
       "subCat": "外觀與風格"
     },
@@ -213,24 +223,24 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "啟用留言檢視次數",
+      "name": "啟用評論檢視計數",
       "file": "enable-comment-view-counts.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "立即顯示即時留言",
+      "name": "立即顯示即時評論",
       "file": "show-live-right-away.md",
-      "subCat": "即時留言"
+      "subCat": "即時評論"
     },
     {
-      "name": "停用即時留言",
+      "name": "停用即時評論",
       "file": "disable-live-commenting.md",
-      "subCat": "即時留言"
+      "subCat": "即時評論"
     },
     {
-      "name": "將新的即時留言置於底部",
+      "name": "將新即時評論置於底部",
       "file": "new-comments-to-bottom.md",
-      "subCat": "即時留言"
+      "subCat": "即時評論"
     },
     {
       "name": "啟用無限滾動",
@@ -243,37 +253,37 @@
       "subCat": "分頁與排序"
     },
     {
-      "name": "一次呈現所有留言 - 停用分頁",
+      "name": "一次呈現所有評論 - 停用分頁",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "將回覆框移到留言後方",
+      "name": "將回覆框移至評論之後",
       "file": "input-after-comments.md",
       "subCat": "回覆框"
     },
     {
-      "name": "限制留言長度",
+      "name": "限制評論長度",
       "file": "max-comment-character-length.md",
       "subCat": "回覆框"
     },
     {
-      "name": "停用多行留言",
+      "name": "停用多行評論",
       "file": "use-single-line-comment-input.md",
       "subCat": "回覆框"
     },
     {
-      "name": "限制每位使用者的留言數量",
+      "name": "限制每位使用者的評論數量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回覆框"
     },
     {
-      "name": "禁止新增頂層留言",
+      "name": "禁止新增頂層評論",
       "file": "no-new-root-comments.md",
       "subCat": "回覆框"
     },
     {
-      "name": "回覆最大深度",
+      "name": "最大回覆深度",
       "file": "max-reply-depth.md",
       "subCat": "回覆框"
     },
@@ -283,64 +293,64 @@
       "subCat": "回覆框"
     },
     {
-      "name": "單一登入 (SSO) 概述",
+      "name": "單一登入 (SSO) 概覽",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
       "name": "自訂整合 - 安全單一登入 (SSO)",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
       "name": "自訂整合 - 簡易單一登入 (SSO)",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
-      "name": "使用單一登入保護留言串",
+      "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "單一登入 (SSO)"
     },
     {
-      "name": "允許匿名留言",
+      "name": "允許匿名評論",
       "file": "allow-anon.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
-      "name": "防止匿名留言過期",
+      "name": "防止匿名評論過期",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
       "name": "停用電子郵件輸入欄位",
       "file": "disable-email-inputs.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
-      "name": "停用未驗證標籤",
+      "name": "停用「未驗證」標籤",
       "file": "disable-unverified-label.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
       "name": "允許匿名投票",
       "file": "allow-anon-votes.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
       "name": "設定預設使用者名稱",
       "file": "default-username.md",
-      "subCat": "匿名留言"
+      "subCat": "匿名評論"
     },
     {
       "name": "回呼",
@@ -348,7 +358,7 @@
       "subCat": "其他"
     },
     {
-      "name": "手動定義使用者語系",
+      "name": "手動定義使用者的語系",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -363,7 +373,7 @@
       "subCat": "其他"
     },
     {
-      "name": "禁止新增回覆並停用投票",
+      "name": "阻止新增回覆並停用投票",
       "file": "readonly.md",
       "subCat": "其他"
     },
@@ -373,7 +383,7 @@
       "subCat": "其他"
     },
     {
-      "name": "留言數量與計算所有巢狀回覆",
+      "name": "評論數量與計算所有巢狀回覆",
       "file": "count-all.md",
       "subCat": "其他"
     },
@@ -398,12 +408,12 @@
       "subCat": "其他"
     },
     {
-      "name": "刪除含有回覆的留言",
+      "name": "刪除含有回覆的評論",
       "file": "deleting-comments-with-replies.md",
       "subCat": "其他"
     },
     {
-      "name": "在頂欄顯示徽章",
+      "name": "在頂端工具列顯示徽章",
       "file": "show-badges-in-top-bar.md",
       "subCat": "外觀與風格"
     }

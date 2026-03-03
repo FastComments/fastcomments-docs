@@ -1,5 +1,5 @@
 {
-  "name": "Personnalisations et configuration",
+  "name": "Personnalisation et configuration",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -8,7 +8,7 @@
       "subCat": "Notions de base"
     },
     {
-      "name": "Comment les commentaires sont liés aux pages et aux articles",
+      "name": "Comment les commentaires sont associés aux pages et aux articles",
       "file": "url-id.md",
       "subCat": "Notions de base"
     },
@@ -18,7 +18,7 @@
       "subCat": "Notions de base"
     },
     {
-      "name": "Personnalisation du style",
+      "name": "Styles personnalisés",
       "file": "custom-css.md",
       "subCat": "Apparence"
     },
@@ -28,12 +28,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Suppression de l'image de marque",
+      "name": "Suppression de la marque",
       "file": "remove-branding.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Prise en charge des fonds sombres (mode sombre)",
+      "name": "Prise en charge des arrière-plans sombres (mode sombre)",
       "file": "has-dark-background.md",
       "subCat": "Apparence"
     },
@@ -68,12 +68,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Réduire les réponses par défaut",
+      "name": "Replier les réponses par défaut",
       "file": "collapse-replies.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Activer WYSIWYG",
+      "name": "Activer l'éditeur WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Apparence"
     },
@@ -88,12 +88,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Déterminer quelle page afficher",
+      "name": "Déterminer la page à afficher",
       "file": "starting-page.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Changer de fil de commentaires sans recharger la page",
+      "name": "Changer les fils de commentaires sans recharger la page",
       "file": "switching-comment-threads.md",
       "subCat": "Apparence"
     },
@@ -118,7 +118,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Basculer les commentaires avec un bouton",
+      "name": "Basculer l'affichage des commentaires avec un bouton",
       "file": "use-show-comments-toggle.md",
       "subCat": "Apparence"
     },
@@ -128,7 +128,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver la redirection des images",
+      "name": "Désactiver la redirection d'image",
       "file": "disable-image-redirect.md",
       "subCat": "Apparence"
     },
@@ -148,12 +148,22 @@
       "subCat": "Apparence"
     },
     {
+      "name": "Désactiver les commentaires de profil",
+      "file": "disable-profile-comments.md",
+      "subCat": "Apparence"
+    },
+    {
+      "name": "Désactiver les messages directs de profil",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Apparence"
+    },
+    {
       "name": "Désactiver le message de succès",
       "file": "disable-success-message.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Modifier la classification de contenu des GIFs",
+      "name": "Modifier la classification du contenu des GIF",
       "file": "gif-rating.md",
       "subCat": "Apparence"
     },
@@ -198,7 +208,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver les téléversements d'images",
+      "name": "Désactiver le téléversement d'images",
       "file": "no-image-uploads.md",
       "subCat": "Apparence"
     },
@@ -213,7 +223,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Activer le comptage des vues des commentaires",
+      "name": "Activer le compteur de vues des commentaires",
       "file": "enable-comment-view-counts.md",
       "subCat": "Apparence"
     },
@@ -228,7 +238,7 @@
       "subCat": "Commentaires en direct"
     },
     {
-      "name": "Ajouter les nouveaux commentaires en direct en bas",
+      "name": "Placer les nouveaux commentaires en direct en bas",
       "file": "new-comments-to-bottom.md",
       "subCat": "Commentaires en direct"
     },
@@ -238,12 +248,12 @@
       "subCat": "Pagination et tri"
     },
     {
-      "name": "Modifier l'ordre de tri par défaut",
+      "name": "Modifier la direction de tri par défaut",
       "file": "default-sort-direction.md",
       "subCat": "Pagination et tri"
     },
     {
-      "name": "Afficher tous les commentaires en une fois - désactiver la pagination",
+      "name": "Afficher tous les commentaires en une fois - Désactiver la pagination",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Pagination et tri"
     },
@@ -268,7 +278,7 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Empêcher les nouveaux commentaires de premier niveau",
+      "name": "Empêcher les nouveaux commentaires de niveau supérieur",
       "file": "no-new-root-comments.md",
       "subCat": "Zone de réponse"
     },
@@ -283,7 +293,7 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Vue d'ensemble de l'authentification unique (SSO)",
+      "name": "Aperçu de l'authentification unique (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -328,7 +338,7 @@
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Désactiver l'étiquette non vérifiée",
+      "name": "Désactiver l'étiquette « non vérifié »",
       "file": "disable-unverified-label.md",
       "subCat": "Commentaires anonymes"
     },
@@ -343,7 +353,7 @@
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Rappels",
+      "name": "Rappels (callbacks)",
       "file": "callbacks.md",
       "subCat": "Divers"
     },
@@ -388,17 +398,17 @@
       "subCat": "Divers"
     },
     {
-      "name": "ID des groupes mentionnés",
+      "name": "Mentions des identifiants de groupe",
       "file": "mention-group-ids.md",
       "subCat": "Divers"
     },
     {
-      "name": "Contournement des cookies tiers",
+      "name": "Contourner les cookies tiers",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Divers"
     },
     {
-      "name": "Supprimer des commentaires avec des réponses",
+      "name": "Supprimer les commentaires ayant des réponses",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Divers"
     },
