@@ -2,48 +2,47 @@
 
 FastComments Secure SSO verwendet HMAC-SHA256-Verschlüsselung als Mechanismus zur Implementierung von SSO. Zuerst gehen wir die Gesamtarchitektur durch, liefern Beispiele und detaillierte Schritte.
 
-Es gibt auch einige Dokumentationen zur Migration von anderen Anbietern mit ähnlichen SSO-Mechanismen und den Unterschieden.
+Es gibt außerdem Dokumentation zum Migrationsprozess von anderen Anbietern mit ähnlichen SSO-Mechanismen und zu den Unterschieden.
 
 Der Ablauf sieht folgendermaßen aus:
 
 <div class="screenshot white-bg">
-    <div class="title">Secure SSO Flow</div>
-    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Secure SSO Diagram" />
+    <div class="title">Sicherer SSO-Ablauf</div>
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Sicheres SSO-Diagramm" />
 </div>
 
-Da Secure SSO Full-Stack-Entwicklung beinhaltet, befinden sich vollständige funktionierende Codebeispiele in Java/Spring, NodeJS/Express und reinem PHP derzeit <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">auf GitHub</a>.
+Da Secure SSO Full-Stack-Entwicklung erfordert, sind funktionsfähige Beispielimplementierungen in Java/Spring, NodeJS/Express und reinem PHP derzeit <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">auf GitHub</a>.
 
-Obwohl wir ExpressJS im NodeJS-Beispiel und Spring im Java-Beispiel verwenden, sind in diesen Laufzeitumgebungen keine zusätzlichen Frameworks/Bibliotheken erforderlich, um FastComments SSO zu implementieren – die nativen Crypto-Pakete reichen aus.
+Obwohl wir in dem NodeJS-Beispiel ExpressJS und im Java-Beispiel Spring verwenden, sind in diesen Laufzeitumgebungen für die Implementierung von FastComments SSO keine Frameworks/Bibliotheken erforderlich — die nativen Crypto-Pakete reichen aus.
 
-Sie müssen keine neuen API-Endpunkte mit FastComments SSO schreiben. Verschlüsseln Sie einfach die Benutzerinformationen mit Ihrem geheimen Schlüssel und übergeben Sie die Nutzlast an das Kommentar-Widget.
+Sie müssen keine neuen API-Endpunkte für FastComments SSO schreiben. Verschlüsseln Sie einfach die Informationen des Benutzers mit Ihrem geheimen Schlüssel und übergeben Sie das Payload an das Kommentar-Widget.
 
 #### API-Geheimschlüssel abrufen
 
-Ihr API-Geheimschlüssel kann von <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">dieser Seite</a> abgerufen werden. Sie finden diese Seite auch, indem Sie zu Mein Konto gehen, die Kachel API/SSO anklicken und dann auf "Get API Secret Key" klicken.
+Ihren API-Geheimschlüssel können Sie von <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">dieser Seite</a> abrufen. Sie finden diese Seite außerdem, indem Sie zu "My Account" gehen, auf die Kachel "API/SSO" klicken und dann "API-Geheimschlüssel abrufen" auswählen.
 
 #### Parameter des Kommentar-Widgets
 
-Hochstufige API-Dokumentation für das Kommentar-Widget finden Sie <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">hier</a>.
+Die hochrangige API-Dokumentation für das Kommentar-Widget finden Sie <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">hier</a>.
 
-Lassen Sie uns näher erläutern, was diese Parameter bedeuten.
+Lassen Sie uns näher darauf eingehen, was diese Parameter bedeuten.
 
-Das Kommentar-Widget nimmt ein Konfigurationsobjekt entgegen – dieses übergeben Sie bereits, wenn Sie FastComments verwenden, um Ihre Mandanten-ID (tenantId) zu übergeben.
+Das Kommentar-Widget erhält ein Konfigurationsobjekt — Sie übergeben dieses bereits, wenn Sie FastComments verwenden, um Ihre Kunden-ID (tenantId genannt) zu übermitteln.
 
-Um SSO zu aktivieren, übergeben Sie ein neues "sso"-Objekt, das die folgenden Parameter enthalten muss. Die Werte sollten serverseitig erzeugt werden.
+Um SSO zu aktivieren, übergeben Sie ein neues 'sso'-Objekt, das die folgenden Parameter enthalten muss. Die Werte sollten serverseitig erzeugt werden.
 
-- userDataJSONBase64: Die Benutzerdaten im JSON-Format, die anschließend Base64-codiert werden.
-- verificationHash: Der HMAC-SHA256-Hash, erstellt aus UNIX_TIME_MILLIS + userDataJSONBase64.
-- timestamp: Epoch-Zeitstempel, in **Millisekunden**. Darf nicht in der Zukunft liegen oder mehr als zwei Tage in der Vergangenheit.
-- loginURL: Eine URL, die das Kommentar-Widget anzeigen kann, um den Benutzer anzumelden.
-- logoutURL: Eine URL, die das Kommentar-Widget anzeigen kann, um den Benutzer abzumelden.
-- loginCallback: Wenn anstelle der loginURL bereitgestellt, eine Funktion, die das Kommentar-Widget aufruft, wenn auf die Login-Schaltfläche geklickt wird.
-- logoutCallback: Wenn anstelle der logoutURL bereitgestellt, eine Funktion, die das Kommentar-Widget aufruft, wenn auf die Logout-Schaltfläche geklickt wird.
+- userDataJSONBase64: Die Benutzerdaten im JSON-Format, die anschließend Base64-kodiert werden.
+- verificationHash: Der HMAC-SHA256-Hash, erzeugt aus UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Epoch-Zeitstempel in **Millisekunden**. Darf nicht in der Zukunft liegen oder mehr als zwei Tage in der Vergangenheit.
+- loginURL: Eine URL, die das Kommentar-Widget anzeigen kann, um den Benutzer einzuloggen.
+- logoutURL: Eine URL, die das Kommentar-Widget anzeigen kann, um den Benutzer auszuloggen.
+- loginCallback: Wenn statt der Login-URL angegeben, eine Funktion, die das Kommentar-Widget beim Klicken auf die Login-Schaltfläche aufruft.
+- logoutCallback: Wenn statt der Logout-URL angegeben, eine Funktion, die das Kommentar-Widget beim Klicken auf die Logout-Schaltfläche aufruft.
 
 [code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
 
 #### Das Benutzerobjekt
 
-The User object contains the following schema:
 [inline-code-attrs-start title = 'Das Benutzerobjekt'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
@@ -51,15 +50,15 @@ interface SSOUser {
     id: string;
     /** Erforderlich. Max. 1k Zeichen. Hinweis: Muss eindeutig sein. **/
     email: string;
-    /** Erforderlich. Max. 1k Zeichen. Hinweis: Der Benutzername darf keine E-Mail-Adresse sein. Muss nicht eindeutig sein. **/
+    /** Erforderlich. Max. 1k Zeichen. Hinweis: Der Benutzername darf keine E-Mail sein. Muss nicht eindeutig sein. **/
     username: string;
-    /** Optional. Max. 3k Zeichen für URLs. Standardmäßig wird das Gravatar-Bild basierend auf der E-Mail verwendet. Unterstützt Base64-codierte Bilder; in diesem Fall beträgt das Limit 50k Zeichen. **/ 
+    /** Optional. Max. 3k Zeichen für URLs. Standard: gravatar basierend auf der E-Mail. Unterstützt 64-kodierte Bilder, in diesem Fall liegt das Limit bei 50k Zeichen. **/ 
     avatar?: string;
-    /** Optional. Standardmäßig false. **/
+    /** Optional. Standard: false. **/
     optedInNotifications?: boolean;
-    /** Optional. Standardmäßig false. **/
+    /** Optional. Standard: false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Optional. Max. 100 Zeichen. Dieses Label wird neben dem Namen angezeigt. Standardmäßig Administrator/Moderator, wenn zutreffend. **/
+    /** Optional. Max. 100 Zeichen. Dieses Label wird neben ihrem Namen angezeigt. Standardmäßig Administrator/Moderator, wenn zutreffend. **/
     displayLabel?: string;
     /** Optional. Max. 500 Zeichen. Dies wird anstelle des Benutzernamens angezeigt. **/
     displayName?: string;
@@ -71,24 +70,35 @@ interface SSOUser {
     isAdmin?: boolean;
     /** Optional. Kennzeichnet den Benutzer als Moderator. **/
     isModerator?: boolean;
-    /** Optional, Standard: true. Auf false setzen, um den "activity"-Tab im Profil des Benutzers zu aktivieren. **/
+    /** Optional, Standard: true. Auf false setzen, um den Reiter "Aktivität" im Profil des Benutzers zu aktivieren. **/
     isProfileActivityPrivate?: boolean;
     /** Optional, Standard: false. Auf true setzen, um Profilkommentare zu deaktivieren. **/
     isProfileCommentsPrivate?: boolean;
     /** Optional, Standard: false. Auf true setzen, um Direktnachrichten an diesen Benutzer zu deaktivieren. **/
     isProfileDMDisabled?: boolean;
+    /** Optionale Konfiguration für Benutzer-Badges. **/
+    badgeConfig?: {
+        /** Array globaler Badge-IDs, die zugewiesen werden. Auf 30 Badges begrenzt. Reihenfolge wird beibehalten. **/
+        badgeIds: string[];
+        /** Array von Badge-IDs, die auf die aktuelle Seite (urlId) beschränkt sind. Werden nur auf der zugewiesenen Seite angezeigt. **/
+        pageBadgeIds?: string[];
+        /** Wenn true, ersetzt vorhandene angezeigte Badges. Globale und seitenbezogene Badges werden unabhängig voneinander überschrieben. **/
+        override?: boolean;
+        /** Wenn true, aktualisiert Anzeigeeigenschaften der Badges anhand der Tenant-Konfiguration. **/
+        update?: boolean;
+    };
 }
 [inline-code-end]
 
 #### Moderatoren und Administratoren
 
-Für Admins und Moderatoren übergeben Sie die jeweiligen Flags `isAdmin` bzw. `isModerator` im `SSOUser`-Objekt.
+Für Administratoren und Moderatoren übergeben Sie die jeweiligen Flags `isAdmin` oder `isModerator` im `SSOUser`-Objekt.
 
 #### Benachrichtigungen
 
-Um Benachrichtigungen zu aktivieren oder zu deaktivieren, setzen Sie den Wert von `optedInNotifications` jeweils auf `true` oder `false`. Beim ersten Laden der Seite durch den Benutzer mit diesem Wert in der SSO-Nutzlast werden seine Benachrichtigungseinstellungen aktualisiert.
+Um Benachrichtigungen zu aktivieren oder zu deaktivieren, setzen Sie den Wert von `optedInNotifications` entsprechend auf `true` oder `false`. Beim ersten Laden der Seite mit diesem Wert im SSO-Payload werden die Benachrichtigungseinstellungen des Benutzers aktualisiert.
 
-Wenn Benutzer zudem E-Mail-Benachrichtigungen für Aktivitäten auf Seiten erhalten sollen, für die sie sich angemeldet haben (anstatt nur In-App-Benachrichtigungen), setzen Sie `optedInSubscriptionNotifications` auf `true`.
+Wenn Sie zusätzlich möchten, dass Benutzer Benachrichtigungs-E-Mails für Aktivitäten auf Seiten erhalten, die sie abonniert haben (anstatt nur In-App-Benachrichtigungen), setzen Sie `optedInSubscriptionNotifications` auf `true`.
 
 #### VIP-Benutzer & spezielle Labels
 
@@ -96,12 +106,14 @@ Sie können ein spezielles Label neben dem Namen des Benutzers anzeigen, indem S
 
 #### Nicht authentifizierte Benutzer
 
-Um einen nicht authentifizierten Benutzer darzustellen, füllen Sie einfach weder userDataJSONBase64, verificationHash noch timestamp aus. Geben Sie eine loginURL an.
+Um einen nicht authentifizierten Benutzer darzustellen, lassen Sie userDataJSONBase64, verificationHash und timestamp einfach unbefüllt. Stellen Sie eine loginURL bereit.
 
-Diese Benutzer können nicht kommentieren und erhalten stattdessen eine Login-Nachricht (Nachricht, Link oder Schaltfläche, je nach Konfiguration).
+Diese Benutzer können nicht kommentieren; stattdessen wird ihnen eine Login-Nachricht angezeigt (Nachricht, Link oder Schaltfläche, abhängig von der Konfiguration).
 
 #### Direkte Beispiele zum Serialisieren und Hashen von Benutzerdaten
 
-Mehr Details als Beispiele finden Sie <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier</a> (java) und <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
+Weitere Details und Beispiele finden Sie <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier</a> (java) und <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
 
-Wir verstehen, dass jede Integration ein komplizierter und schwieriger Prozess sein kann. Zögern Sie nicht, sich an Ihren Ansprechpartner zu wenden oder die <a href="https://fastcomments.com/auth/my-account/help" target="_blank">Support-Seite</a> zu nutzen.
+Wir verstehen, dass jede Integration kompliziert und mühsam sein kann. Zögern Sie nicht, sich an Ihren Ansprechpartner zu wenden oder die <a href="https://fastcomments.com/auth/my-account/help" target="_blank">Support-Seite</a> zu nutzen.
+
+---

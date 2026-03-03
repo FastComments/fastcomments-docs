@@ -1,13 +1,13 @@
-`UserBadge` je objekt, ki predstavlja značko, dodeljeno uporabniku v sistemu FastComments.
+`UserBadge` je objekt, ki predstavlja značko dodeljeno uporabniku v sistemu FastComments.
 
-Značke se lahko uporabnikom dodelijo samodejno na podlagi njihove aktivnosti (kot so število komentarjev, čas odgovora, status veterana) ali ročno s strani skrbnikov spletnega mesta.
+Značke se lahko dodelijo uporabnikom samodejno, glede na njihovo dejavnost (na primer število komentarjev, čas odgovora, status veterana) ali ročno s strani skrbnikov spletnega mesta.
 
 Struktura objekta `UserBadge` je naslednja:
 
 [inline-code-attrs-start title = 'Struktura objekta UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Enoličen identifikator te dodelitve uporabniške značke */
+    /** Enolični identifikator te dodelitve značke uporabnika */
     id: string
     /** ID uporabnika, kateremu je ta značka dodeljena */
     userId: string
@@ -15,12 +15,12 @@ export interface UserBadge {
     badgeId: string
     /** ID najemnika, ki je ustvaril/dodelil to značko */
     fromTenantId: string
-    /** Kdaj je bila ta značka ustvarjena (milisekunde od epohe) */
+    /** Kdaj je bila ta značka ustvarjena (milisekunde od Unixove epohe) */
     createdAt?: number
-    /** Kdaj je ta značka prejeta s strani uporabnika (milisekunde od epohe) */
+    /** Kdaj je uporabnik prejel to značko (milisekunde od Unixove epohe) */
     receivedAt?: number
     /** 
-     * Tip značke: 
+     * Vrsta značke: 
      * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
@@ -28,9 +28,9 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Za značke, ki temeljijo na pragih, vrednost praga */
+    /** Za značke, ki temeljijo na pragu, vrednost praga */
     threshold?: number
-    /** Ime/oznaka značke */
+    /** Ime/označba značke */
     name?: string
     /** Podroben opis značke */
     description?: string
@@ -44,13 +44,15 @@ export interface UserBadge {
     borderColor?: string
     /** Barva besedila značke (heksadecimalna koda) */
     textColor?: string
-    /** Dodatna CSS razred za stiliranje */
+    /** Dodatni CSS razred za stiliziranje */
     cssClass?: string
     /** Za veteranske značke, časovni prag v milisekundah */
     veteranUserThresholdMillis?: number
-    /** Ali se ta značka prikazuje ob uporabnikovih komentarjih */
+    /** Ali je ta značka prikazana na uporabnikovih komentarjih */
     displayedOnComments: boolean
     /** Vrstni red prikaza značke */
     order?: number
+    /** Če je nastavljeno, je ta značka prikazana samo na strani z ustreznim urlId. Null za globalne značke. */
+    urlId?: string | null
 }
 [inline-code-end]

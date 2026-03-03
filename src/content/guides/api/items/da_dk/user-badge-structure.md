@@ -1,56 +1,58 @@
-`UserBadge` er et objekt, der repræsenterer et badge tildelt til en bruger i FastComments-systemet.
+`UserBadge` er et objekt, der repræsenterer et badge tildelt en bruger i FastComments-systemet.
 
-Badges kan tildeles brugere automatisk baseret på deres aktivitet (såsom kommentarantal, svartid, veteranstatus) eller manuelt af side-administratorer.
+Badges kan tildeles brugere automatisk baseret på deres aktivitet (såsom antal kommentarer, svartid, veteranstatur) eller manuelt af webstedsadministratorer.
 
 Strukturen for `UserBadge`-objektet er som følger:
 
-[inline-code-attrs-start title = 'UserBadge Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'UserBadge-struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** Unik identifikator for denne bruger-badge-tildeling */
     id: string
-    /** ID of the user this badge is assigned to */
+    /** ID på den bruger, som dette badge er tildelt */
     userId: string
-    /** ID of the badge definition from the tenant's badge catalog */
+    /** ID på badgedefinitionen fra tenantens badge-katalog */
     badgeId: string
-    /** ID of the tenant that created/assigned this badge */
+    /** ID på den tenant, der oprettede/tildelte dette badge */
     fromTenantId: string
-    /** When this badge was created (milliseconds since epoch) */
+    /** Hvornår dette badge blev oprettet (millisekunder siden epoch) */
     createdAt?: number
-    /** When this badge was received by the user (milliseconds since epoch) */
+    /** Hvornår dette badge blev modtaget af brugeren (millisekunder siden epoch) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * Badge-typen: 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
      * 14=Manual
      */
     type: number
-    /** For threshold-based badges, the threshold value */
+    /** For tærskelbaserede badges, tærskelværdien */
     threshold?: number
-    /** The name/label of the badge */
+    /** Navn/etiket på badget */
     name?: string
-    /** Detailed description of the badge */
+    /** Detaljeret beskrivelse af badget */
     description?: string
-    /** The text shown on the badge */
+    /** Teksten vist på badget */
     displayLabel?: string
-    /** URL to an image shown on the badge */
+    /** URL til et billede vist på badget */
     displaySrc?: string
-    /** Background color for the badge (hex code) */
+    /** Baggrundsfarve for badget (hex-kode) */
     backgroundColor?: string
-    /** Border color for the badge (hex code) */
+    /** Kantfarve for badget (hex-kode) */
     borderColor?: string
-    /** Text color for the badge (hex code) */
+    /** Tekstfarve for badget (hex-kode) */
     textColor?: string
-    /** Additional CSS class for styling */
+    /** Yderligere CSS-klasse til styling */
     cssClass?: string
-    /** For veteran badges, the time threshold in milliseconds */
+    /** For veteran-badges, tidsgrænsen i millisekunder */
     veteranUserThresholdMillis?: number
-    /** Whether this badge is displayed on the user's comments */
+    /** Om dette badge vises på brugerens kommentarer */
     displayedOnComments: boolean
-    /** The display order of the badge */
+    /** Visningsrækkefølgen for badget */
     order?: number
+    /** Hvis sat, vises dette badge kun på siden med matchende urlId. Null for globale badges. */
+    urlId?: string | null
 }
 [inline-code-end]

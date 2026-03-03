@@ -1,10 +1,8 @@
-FastComments proporciona una solución SSO fácil de usar. Actualizar la información de un usuario con la integración basada en HMAC es
-tan simple como hacer que el usuario cargue la página con un payload actualizado.
+FastComments proporciona una solución SSO fácil de usar. Actualizar la información de un usuario con la integración basada en HMAC es tan sencillo como hacer que el usuario cargue la página con una carga útil actualizada.
 
-Sin embargo, puede ser deseable gestionar un usuario fuera de ese flujo, para mejorar la consistencia de su aplicación.
+Sin embargo, puede ser deseable gestionar un usuario fuera de ese flujo, para mejorar la coherencia de su aplicación.
 
-La API de Usuario SSO proporciona una forma de hacer CRUD en objetos que llamamos SSOUsers. Estos objetos son diferentes de los Usuarios regulares y
-se mantienen separados por seguridad de tipos.
+La API SSO User proporciona una forma de crear, leer, actualizar y eliminar (CRUD) objetos que llamamos SSOUsers. Estos objetos son diferentes de los Usuarios regulares y se mantienen separados por seguridad de tipos.
 
 La estructura del objeto SSOUser es la siguiente:
 
@@ -23,63 +21,66 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
-    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
+    isAccountOwner?: boolean // Permiso de administrador - los usuarios SSO con esta bandera se facturan como administradores SSO (separados de los usuarios SSO normales)
+    isAdminAdmin?: boolean // Permiso de administrador - los usuarios SSO con esta bandera se facturan como administradores SSO (separados de los usuarios SSO normales)
+    isCommentModeratorAdmin?: boolean // Permiso de moderador - los usuarios SSO con esta bandera se facturan como moderadores SSO (separados de los usuarios SSO normales)
+    /** Si es null, no se aplicará Control de Acceso al usuario. Si es una lista vacía, este usuario no podrá ver ninguna página ni mencionar (@) a otros usuarios. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
+    /** No permitir que otros usuarios vean la actividad de este usuario, incluidos los comentarios, en su perfil. El valor por defecto es true para proporcionar perfiles seguros por defecto. **/
     isProfileActivityPrivate?: boolean
-    /** Don't let other users leave comments on the user's profile, or see existing profile comments. Default false. **/
+    /** No permitir que otros usuarios dejen comentarios en el perfil del usuario, ni ver los comentarios de perfil existentes. Por defecto false. **/
     isProfileCommentsPrivate?: boolean
-    /** Don't let other users send direct messages to this user. Default false. **/
+    /** No permitir que otros usuarios envíen mensajes directos a este usuario. Por defecto false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Optional configuration for user badges. **/
+    /** Configuración opcional para las insignias del usuario. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
+        /** Array de IDs de insignias para asignar al usuario. Limitado a 30 insignias. Se respeta el orden. Estas son insignias globales visibles en todas las páginas. **/
         badgeIds: string[]
-        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        /** Array de IDs de insignias con alcance en la página actual (urlId). Estas insignias solo se muestran en la página donde fueron asignadas. **/
+        pageBadgeIds?: string[]
+        /** Si true, reemplaza todas las insignias mostradas existentes por las proporcionadas. Las insignias globales y con alcance por página se sobrescriben de forma independiente. Si false, añade a las insignias existentes. **/
         override?: boolean
-        /** If true, updates badge display properties from tenant configuration. **/
+        /** Si true, actualiza las propiedades de visualización de las insignias desde la configuración del tenant. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Facturación para Usuarios SSO
+### Facturación para usuarios SSO
 
 Los usuarios SSO se facturan de manera diferente según sus banderas de permisos:
 
-- **Usuarios SSO Regulares**: Los usuarios sin permisos de administrador o moderador se facturan como usuarios SSO regulares
-- **Administradores SSO**: Los usuarios con banderas `isAccountOwner` o `isAdminAdmin` se facturan por separado como Administradores SSO (misma tarifa que los administradores de inquilino regulares)
-- **Moderadores SSO**: Los usuarios con bandera `isCommentModeratorAdmin` se facturan por separado como Moderadores SSO (misma tarifa que los moderadores regulares)
+- **Usuarios SSO regulares**: Los usuarios sin permisos de administrador o moderador se facturan como usuarios SSO regulares
+- **Administradores SSO**: Los usuarios con las banderas `isAccountOwner` o `isAdminAdmin` se facturan por separado como administradores SSO (misma tarifa que los administradores regulares del tenant)
+- **Moderadores SSO**: Los usuarios con la bandera `isCommentModeratorAdmin` se facturan por separado como moderadores SSO (misma tarifa que los moderadores regulares)
 
-**Importante**: Para prevenir doble facturación, el sistema automáticamente deduplica usuarios SSO contra usuarios de inquilino regulares y moderadores por dirección de email. Si un usuario SSO tiene el mismo email que un usuario de inquilino regular o moderador, no serán facturados dos veces.
+**Importante**: Para evitar doble facturación, el sistema desduplicará automáticamente los usuarios SSO frente a los usuarios regulares del tenant y moderadores por dirección de correo electrónico. Si un usuario SSO tiene el mismo correo electrónico que un usuario regular del tenant o un moderador, no se le facturará dos veces.
 
 ### Control de Acceso
 
-Los usuarios pueden dividirse en grupos. Esto es para lo que es el campo `groupIds`, y es opcional.
+Los usuarios se pueden agrupar en grupos. Para ello sirve el campo `groupIds`, y es opcional.
 
-### @Menciones
+### @Mentions
 
-Por defecto `@mentions` usará `username` para buscar otros usuarios sso cuando se escribe el carácter `@`. Si se usa `displayName`, entonces los resultados que coincidan con
-`username` serán ignorados cuando haya una coincidencia para `displayName`, y los resultados de búsqueda de `@mention` usarán `displayName`.
+Por defecto `@mentions` usará `username` para buscar otros usuarios SSO cuando se escriba el carácter `@`. Si se usa `displayName`, entonces se ignorarán los resultados que coincidan con `username` cuando haya una coincidencia para `displayName`, y los resultados de búsqueda de `@mention` usarán `displayName`.
 
 ### Suscripciones
 
-Con FastComments, los usuarios pueden suscribirse a una página haciendo clic en el icono de campana en el widget de comentarios y haciendo clic en Suscribirse.
+Con FastComments, los usuarios pueden suscribirse a una página haciendo clic en el icono de campana en el widget de comentarios y pulsando Suscribirse.
 
-Con un usuario regular, les enviamos emails de notificación basados en sus configuraciones de notificación.
+Con un usuario regular, les enviamos correos electrónicos de notificación según sus ajustes de notificación.
 
-Con Usuarios SSO, dividimos esto para compatibilidad hacia atrás. Los usuarios solo recibirán estos emails de notificación de suscripción adicionales
-si establece `optedInSubscriptionNotifications` a `true`.
+Con usuarios SSO, separamos esto por compatibilidad con versiones anteriores. Los usuarios solo recibirán estos correos electrónicos adicionales de notificación de suscripción si establece `optedInSubscriptionNotifications` en `true`.
 
 ### Insignias
 
-Puede asignar insignias a usuarios SSO usando la propiedad `badgeConfig`. Las insignias son indicadores visuales que aparecen junto al nombre de un usuario en los comentarios.
+Puedes asignar insignias a los usuarios SSO usando la propiedad `badgeConfig`. Las insignias son indicadores visuales que aparecen junto al nombre del usuario en los comentarios.
 
-- `badgeIds` - Un array de IDs de insignias para asignar al usuario. Estos deben ser IDs de insignias válidos creados en su cuenta de FastComments. Limitado a 30 insignias.
-- `override` - Si es verdadero, todas las insignias existentes mostradas en comentarios serán reemplazadas con las proporcionadas. Si es falso u omitido, las insignias proporcionadas se agregarán a cualquier insignia existente.
-- `update` - Si es verdadero, las propiedades de visualización de insignias se actualizarán desde la configuración del inquilino cada vez que el usuario inicie sesión.
+- `badgeIds` - Un array de IDs de insignias para asignar al usuario. Estas son insignias globales visibles en todas las páginas. Deben ser IDs de insignia válidos creados en su cuenta de FastComments. Limitado a 30 insignias.
+- `pageBadgeIds` - Un array opcional de IDs de insignias con alcance en la página actual (`urlId`). Estas insignias solo se muestran en la página donde fueron asignadas. Diferentes páginas pueden tener distintas insignias con alcance por página para el mismo usuario.
+- `override` - Si es true, todas las insignias mostradas existentes serán reemplazadas por las proporcionadas. Las insignias globales y las con alcance por página se sobrescriben de forma independiente — sobrescribir las insignias globales no afecta a las de alcance por página, y viceversa. Si es false u omitido, las insignias proporcionadas se añadirán a las existentes.
+- `update` - Si es true, las propiedades de visualización de las insignias se actualizarán desde la configuración del tenant cada vez que el usuario inicie sesión.
+
+---

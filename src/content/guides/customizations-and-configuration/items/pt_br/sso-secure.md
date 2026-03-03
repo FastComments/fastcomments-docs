@@ -1,109 +1,120 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Secure SSO usa criptografia HMAC-SHA256 como mecanismo para implementar SSO. Primeiro vamos abordar a arquitetura geral, fornecer exemplos e passos detalhados.
+FastComments Secure SSO usa criptografia HMAC-SHA256 como o mecanismo para implementar SSO. Primeiro iremos explicar a arquitetura geral, fornecer exemplos e passos detalhados.
 
-There is also some documentation regarding migrating from other providers with similar SSO mechanisms, and the differences.
+Também há documentação sobre migração de outros provedores com mecanismos de SSO semelhantes, e as diferenças.
 
-The flow looks like this:
+O fluxo é o seguinte:
 
 <div class="screenshot white-bg">
-    <div class="title">Fluxo de SSO Seguro</div>
+    <div class="title">Fluxo SSO Seguro</div>
     <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Diagrama SSO Seguro" />
 </div>
 
-Since Secure SSO involves full-stack development, full working code examples in Java/Spring, NodeJS/Express, and vanilla PHP are currently <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">on GitHub</a>.
+Como o Secure SSO envolve desenvolvimento full-stack, exemplos de código completos e funcionais em Java/Spring, NodeJS/Express e PHP vanilla estão atualmente <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">no GitHub</a>.
 
-Although we use ExpressJS in the NodeJS example and Spring in the Java example there are no frameworks/libraries required in these run-times to implement FastComments SSO - the native crypto packages work.
+Embora usemos ExpressJS no exemplo NodeJS e Spring no exemplo Java, não são necessárias bibliotecas/frames de trabalho nesses runtimes para implementar o FastComments SSO - os pacotes nativos de criptografia funcionam.
 
-You don't have to write any new API endpoints with FastComments SSO. Simply encrypt the user's info using your secret key and pass the payload to the comment widget.
+Você não precisa escrever novos endpoints da API com o FastComments SSO. Simplesmente criptografe as informações do usuário usando sua chave secreta e passe o payload para o widget de comentários.
 
-#### Obtenha sua Chave Secreta da API
+#### Obtenha sua chave secreta da API
 
-Your API Secret can be retrieved from <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">this page</a>. You can find this page also by going to My Account, clicking the API/SSO tile, and then clicking "Get API Secret Key".
+Sua chave secreta da API pode ser recuperada a partir desta <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">página</a>. Você também pode encontrar esta página indo para My Account, clicando no bloco API/SSO e então clicando em "Get API Secret Key".
 
-#### Parâmetros do Widget de Comentários
+#### Parâmetros do widget de comentários
 
-High-level API documentation for the comment widget can be found <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">here</a>.
+A documentação de alto nível da API para o widget de comentários pode ser encontrada <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">aqui</a>.
 
-Let's go into more detail of what these parameters mean.
+Vamos aprofundar o que esses parâmetros significam.
 
-The comment widget takes a configuration object - you already pass this if you're using FastComments to pass your customer id (called tenantId).
+O widget de comentários recebe um objeto de configuração - você já passa isso se estiver usando o FastComments para enviar seu id de cliente (chamado tenantId).
 
-To enable SSO, pass a new "sso" object, which must have the following parameters. The values should be generated server side.
+Para habilitar SSO, passe um novo objeto "sso", que deve ter os seguintes parâmetros. Os valores devem ser gerados no servidor.
 
-- userDataJSONBase64: The user's data in JSON format, which is then Base64 encoded.
-- verificationHash: The HMAC-SHA256 hash created from UNIX_TIME_MILLIS + userDataJSONBase64.
-- timestamp: Epoch timestamp, in **milliseconds**. Must not be in the future, or more than two days in the past.
-- loginURL: A URL that the comment widget can show to log the user in.
-- logoutURL: A URL that the comment widget can show to log the user out.
-- loginCallback: When provided instead of the login URL, a function that the comment widget will invoke when clicking the login button.
-- logoutCallback: When provided instead of the logout URL, a function that the comment widget will invoke when clicking the logout button.
+- userDataJSONBase64: Os dados do usuário em formato JSON, que então são codificados em Base64.
+- verificationHash: O hash HMAC-SHA256 criado a partir de UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Timestamp em epoch, em **milissegundos**. Não deve estar no futuro, nem com mais de dois dias no passado.
+- loginURL: Uma URL que o widget de comentários pode mostrar para autenticar o usuário.
+- logoutURL: Uma URL que o widget de comentários pode mostrar para desconectar o usuário.
+- loginCallback: Quando fornecido em vez do login URL, uma função que o widget de comentários irá invocar ao clicar no botão de login.
+- logoutCallback: Quando fornecido em vez do logout URL, uma função que o widget de comentários irá invocar ao clicar no botão de logout.
 
 [code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
 
-#### O objeto do usuário
+#### O Objeto do Usuário
 
-The User object contains the following schema:
-[inline-code-attrs-start title = 'O objeto do usuário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+The User Object
+[inline-code-attrs-start title = 'O Objeto do Usuário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** Obrigatório. Máx. 1k caracteres. **/
+    /** Obrigatório. Máximo de 1k caracteres. **/
     id: string;
-    /** Obrigatório. Máx. 1k caracteres. Observação: Deve ser único. **/
+    /** Obrigatório. Máximo de 1k caracteres. Observação: Deve ser único. **/
     email: string;
-    /** Obrigatório. Máx. 1k caracteres. Observação: O nome de usuário não pode ser um email. Não precisa ser único. **/
+    /** Obrigatório. Máximo de 1k caracteres. Observação: O nome de usuário não pode ser um e-mail. Não precisa ser único. **/
     username: string;
-    /** Opcional. Máx. 3k caracteres para URLs. O padrão vem do gravatar baseado no email. Suporta imagens codificadas em base64, caso em que o limite é 50k caracteres. **/ 
+    /** Opcional. Máximo de 3k caracteres para URLs. Padrão é do gravatar baseado no email. Suporta imagens codificadas em base64, nesse caso o limite é de 50k caracteres. **/ 
     avatar?: string;
     /** Opcional. Padrão: false. **/
     optedInNotifications?: boolean;
     /** Opcional. Padrão: false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Opcional. Máx. 100 caracteres. Este rótulo será mostrado ao lado do nome. Padrão: Administrador/Moderador quando aplicável. **/
+    /** Opcional. Máximo de 100 caracteres. Este rótulo será mostrado ao lado do nome. Padrão é Administrator/Moderator quando aplicável. **/
     displayLabel?: string;
-    /** Opcional. Máx. 500 caracteres. Isso será mostrado em vez do nome de usuário. **/
+    /** Opcional. Máximo de 500 caracteres. Isso será exibido em vez do username. **/
     displayName?: string;
-    /** Opcional. Máx. 2k caracteres. O nome do usuário será vinculado a este URL. **/
+    /** Opcional. Máximo de 2k caracteres. O nome do usuário será vinculado a este. **/
     websiteUrl?: string;
-    /** Opcional. Até 100 grupos por usuário. Um id de grupo não pode ter mais de 50 caracteres. **/
+    /** Opcional. Até 100 grupos por usuário. Um id de grupo não pode ter mais que 50 caracteres. **/
     groupIds?: string[];
-    /** Opcional. Indica o usuário como administrador. **/
+    /** Opcional. Indica que o usuário é um administrador. **/
     isAdmin?: boolean;
-    /** Opcional. Indica o usuário como moderador. **/
+    /** Opcional. Indica que o usuário é um moderador. **/
     isModerator?: boolean;
-    /** Opcional, padrão true. Defina como false para habilitar a aba "activity" no perfil do usuário. **/
+    /** Opcional, padrão true. Configure como false para habilitar a aba "activity" no perfil do usuário. **/
     isProfileActivityPrivate?: boolean;
-    /** Opcional, padrão false. Defina como true para desativar comentários no perfil. **/
+    /** Opcional, padrão false. Configure como true para desabilitar comentários no perfil. **/
     isProfileCommentsPrivate?: boolean;
-    /** Opcional, padrão false. Defina como true para desativar mensagens diretas para este usuário. **/
+    /** Opcional, padrão false. Configure como true para desabilitar mensagens diretas para este usuário. **/
     isProfileDMDisabled?: boolean;
+    /** Configuração opcional para badges do usuário. **/
+    badgeConfig?: {
+        /** Array de IDs de badges globais a atribuir. Limitado a 30 badges. A ordem é respeitada. **/
+        badgeIds: string[];
+        /** Array de IDs de badges com escopo para a página atual (urlId). Exibido somente na página atribuída. **/
+        pageBadgeIds?: string[];
+        /** Se true, substitui badges exibidos existentes. Global e com escopo de página são sobrescritos independentemente. **/
+        override?: boolean;
+        /** Se true, atualiza propriedades de exibição das badges a partir da configuração do tenant. **/
+        update?: boolean;
+    };
 }
 [inline-code-end]
 
-#### Moderators and Administrators
+#### Moderadores e Administradores
 
-For admins and moderators, pass the respective `isAdmin` or `isModerator` flags in the `SSOUser` object.
+Para admins e moderadores, passe as respectivas flags `isAdmin` ou `isModerator` no objeto `SSOUser`.
 
 #### Notificações
 
-To enable or disable notifications, set the value of `optedInNotifications` to `true` or `false` respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+Para habilitar ou desabilitar notificações, defina o valor de `optedInNotifications` como `true` ou `false`, respectivamente. Na primeira vez que o usuário carregar a página com esse valor no payload SSO, as configurações de notificação dele serão atualizadas.
 
-Additionally, if you want users to receive notification emails for activity on pages they subscribed to (as opposed to just in-app notifications), then set `optedInSubscriptionNotifications` to `true`.
+Além disso, se você quiser que os usuários recebam e-mails de notificação por atividade em páginas às quais se inscreveram (em oposição a apenas notificações no aplicativo), então defina `optedInSubscriptionNotifications` como `true`.
 
-#### Usuários VIP e Rótulos Especiais
+#### Usuários VIP & Rótulos Especiais
 
-You can display a special label next to the user's name by using the optional "displayLabel" field.
+Você pode exibir um rótulo especial ao lado do nome do usuário usando o campo opcional "displayLabel".
 
 #### Usuários não autenticados
 
-To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+Para representar um usuário não autenticado, simplesmente não preencha userDataJSONBase64, verificationHash ou timestamp. Forneça um loginURL.
 
-These users will not be able to comment, and instead will be presented with a login message (message, link, or button, depending on configuration).
+Esses usuários não poderão comentar e, em vez disso, serão apresentados com uma mensagem de login (mensagem, link ou botão, dependendo da configuração).
 
-#### Exemplos diretos para Serializar e Gerar Hash dos Dados do Usuário
+#### Exemplos diretos para serializar e gerar hash dos dados do usuário
 
-More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here</a> (java) and <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here</a> (php).
+Mais detalhes e exemplos <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">aqui</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">aqui</a> (java) e <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">aqui</a> (php).
 
-We understand that any integration can be a complicated and painful process. Don't hesitate to reach out to your representative or use the <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>.
+Entendemos que qualquer integração pode ser um processo complicado e doloroso. Não hesite em contatar seu representante ou usar a <a href="https://fastcomments.com/auth/my-account/help" target="_blank">página de suporte</a>.
 
 ---

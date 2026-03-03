@@ -1,10 +1,12 @@
-FastComments fornisce una soluzione SSO facile da usare. Aggiornare le informazioni di un utente con l'integrazione basata su HMAC è semplice come fare in modo che l'utente carichi la pagina con un payload aggiornato.
+FastComments provides an easy to use SSO solution. Updating a user's information with the HMAC-based integration is
+as simple as having the user load the page with an updated payload.
 
-Tuttavia, potrebbe essere desiderabile gestire un utente al di fuori di quel flusso, per migliorare la coerenza della tua applicazione.
+However, it may be desirable to manage a user outside that flow, to improve consistency of your application.
 
-L'SSO User API fornisce un modo per creare, leggere, aggiornare e cancellare oggetti che chiamiamo SSOUsers. Questi oggetti sono diversi dagli Users regolari e vengono mantenuti separati per sicurezza di tipo.
+The SSO User API provides a way to CRUD objects that we call SSOUsers. These objects are different from regular Users and
+kept separate for type safety.
 
-La struttura dell'oggetto SSOUser è la seguente:
+The structure for the SSOUser object is as follows:
 
 [inline-code-attrs-start title = 'Struttura SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,24 +23,26 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Permesso amministratore - gli SSO users con questo flag vengono fatturati come SSO Admins (separati dagli SSO users regolari)
-    isAdminAdmin?: boolean // Permesso amministratore - gli SSO users con questo flag vengono fatturati come SSO Admins (separati dagli SSO users regolari)
-    isCommentModeratorAdmin?: boolean // Permesso moderatore - gli SSO users con questo flag vengono fatturati come SSO Moderators (separati dagli SSO users regolari)
-    /** Se null, Access Control non verrà applicato all'utente. Se una lista vuota, questo utente non potrà vedere alcuna pagina né usare @mention per altri utenti. **/
+    isAccountOwner?: boolean // Permesso amministratore - gli utenti SSO con questa flag vengono fatturati come Admin SSO (separati dagli utenti SSO regolari)
+    isAdminAdmin?: boolean // Permesso amministratore - gli utenti SSO con questa flag vengono fatturati come Admin SSO (separati dagli utenti SSO regolari)
+    isCommentModeratorAdmin?: boolean // Permesso moderatore - gli utenti SSO con questa flag vengono fatturati come Moderatori SSO (separati dagli utenti SSO regolari)
+    /** Se null, il Controllo Accessi non verrà applicato all'utente. Se una lista vuota, questo utente non potrà vedere alcuna pagina né menzionare altri utenti con @. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Non permettere ad altri utenti di vedere l'attività di questo utente, inclusi i commenti, nel loro profilo. Il valore predefinito è true per fornire profili sicuri di default. **/
+    /** Non permettere ad altri utenti di vedere l'attività di questo utente, inclusi i commenti, nel suo profilo. Il valore predefinito è true per fornire profili sicuri. **/
     isProfileActivityPrivate?: boolean
-    /** Non permettere ad altri utenti di lasciare commenti sul profilo dell'utente, o vedere i commenti esistenti del profilo. Default false. **/
+    /** Non permettere ad altri utenti di lasciare commenti sul profilo di questo utente, né di vedere commenti di profilo esistenti. Predefinito false. **/
     isProfileCommentsPrivate?: boolean
-    /** Non permettere ad altri utenti di inviare messaggi diretti a questo utente. Default false. **/
+    /** Non permettere ad altri utenti di inviare messaggi diretti a questo utente. Predefinito false. **/
     isProfileDMDisabled?: boolean
     karma?: number
     /** Configurazione opzionale per i badge utente. **/
     badgeConfig?: {
-        /** Array di ID dei badge da assegnare all'utente. Limitato a 30 badge. L'ordine è rispettato. **/
+        /** Array di ID dei badge da assegnare all'utente. Limitato a 30 badge. L'ordine è rispettato. Si tratta di badge globali visibili in tutte le pagine. **/
         badgeIds: string[]
-        /** Se true, sostituisce tutti i badge esistenti mostrati con quelli forniti. Se false, aggiunge ai badge esistenti. **/
+        /** Array di ID dei badge limitati alla pagina corrente (urlId). Questi badge sono mostrati solo sulla pagina in cui sono stati assegnati. **/
+        pageBadgeIds?: string[]
+        /** Se true, sostituisce tutti i badge attualmente mostrati con quelli forniti. I badge globali e quelli a livello di pagina sono sovrascritti indipendentemente. Se false, aggiunge ai badge esistenti. **/
         override?: boolean
         /** Se true, aggiorna le proprietà di visualizzazione dei badge dalla configurazione del tenant. **/
         update?: boolean
@@ -48,34 +52,39 @@ interface SSOUser {
 
 ### Billing for SSO Users
 
-Gli SSO users vengono fatturati in modo diverso in base ai loro flag di permesso:
+SSO users are billed differently based on their permission flags:
 
-- **Regular SSO Users**: Utenti senza permessi di admin o moderatore vengono fatturati come regular SSO users
-- **SSO Admins**: Utenti con i flag `isAccountOwner` o `isAdminAdmin` vengono fatturati separatamente come SSO Admins (stessa tariffa degli admin regolari del tenant)
-- **SSO Moderators**: Utenti con il flag `isCommentModeratorAdmin` vengono fatturati separatamente come SSO Moderators (stessa tariffa dei moderatori regolari)
+- **Regular SSO Users**: Users without admin or moderator permissions are billed as regular SSO users
+- **SSO Admins**: Users with `isAccountOwner` or `isAdminAdmin` flags are billed separately as SSO Admins (same rate as regular tenant admins)
+- **SSO Moderators**: Users with `isCommentModeratorAdmin` flag are billed separately as SSO Moderators (same rate as regular moderators)
 
-**Importante**: Per evitare doppia fatturazione, il sistema deduplica automaticamente gli SSO users rispetto agli utenti e moderatori regolari del tenant basandosi sull'indirizzo email. Se un SSO user ha la stessa email di un utente o moderatore regolare del tenant, non verrà fatturato due volte.
+**Important**: To prevent double billing, the system automatically deduplicates SSO users against regular tenant users and moderators by email address. If an SSO user has the same email as a regular tenant user or moderator, they will not be billed twice.
 
 ### Access Control
 
-Gli utenti possono essere suddivisi in gruppi. Questo è lo scopo del campo `groupIds`, ed è opzionale.
+Users can be broken into groups. This is what the `groupIds` field is for, and is optional.
 
-### @Mentions
+### @Menzioni
 
-Di default `@mentions` utilizzerà `username` per cercare altri sso users quando viene digitato il carattere `@`. Se viene utilizzato `displayName`, allora i risultati che corrispondono a `username` saranno ignorati quando c'è una corrispondenza per `displayName`, e i risultati della ricerca per gli `@mention` useranno `displayName`.
+By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
+`username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
 
-### Subscriptions
+### Sottoscrizioni
 
-Con FastComments, gli utenti possono iscriversi a una pagina cliccando l'icona della campanella nel widget dei commenti e selezionando Subscribe.
+With FastComments, users can subscribe to a page by clicking the bell icon in the comment widget and clicking Subscribe.
 
-Con un utente regolare, inviamo loro email di notifica in base alle loro impostazioni di notifica.
+With a regular user, we send them notification emails based on their notification settings.
 
-Con gli SSO Users, abbiamo separato questo comportamento per compatibilità retroattiva. Gli utenti riceveranno queste email di notifica aggiuntive per le subscription solo se imposti `optedInSubscriptionNotifications` su `true`.
+With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
+emails if you set `optedInSubscriptionNotifications` to `true`.
 
-### Badges
+### Badge
 
-Puoi assegnare badge agli SSO users usando la proprietà `badgeConfig`. I badge sono indicatori visivi che appaiono accanto al nome di un utente nei commenti.
+You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
 
-- `badgeIds` - Un array di ID dei badge da assegnare all'utente. Devono essere ID validi di badge creati nel tuo account FastComments. Limitato a 30 badge.
-- `override` - Se true, tutti i badge esistenti visualizzati sui commenti saranno sostituiti con quelli forniti. Se false o omesso, i badge forniti saranno aggiunti a quelli esistenti.
-- `update` - Se true, le proprietà di visualizzazione dei badge verranno aggiornate dalla configurazione del tenant ogni volta che l'utente effettua il login.
+- `badgeIds` - An array of badge IDs to assign to the user. These are global badges visible on all pages. Must be valid badge IDs created in your FastComments account. Limited to 30 badges.
+- `pageBadgeIds` - An optional array of badge IDs scoped to the current page (`urlId`). These badges are only displayed on the page where they were assigned. Different pages can have different page-scoped badges for the same user.
+- `override` - If true, all existing displayed badges will be replaced with the provided ones. Global and page-scoped badges are overridden independently — overriding global badges does not affect page-scoped badges, and vice versa. If false or omitted, the provided badges will be added to any existing badges.
+- `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.
+
+---

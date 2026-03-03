@@ -1,13 +1,14 @@
-`UserBadge` הוא אובייקט שמייצג תג שהוקצה למשתמש במערכת FastComments.
+---
+`UserBadge` הוא אובייקט שמייצג תג שמוקצה למשתמש במערכת FastComments.
 
-ניתן להקצות תגים למשתמשים אוטומטית על בסיס הפעילות שלהם (כגון מספר תגובות, זמן תגובה, מעמד ותיק) או ידנית על ידי מנהלי האתר.
+תגים יכולים להיות מוקצים למשתמשים באופן אוטומטי על בסיס הפעילות שלהם (כגון מספר תגובות, זמן תגובה, סטטוס וותק) או באופן ידני על ידי מנהלי האתר.
 
-המבנה עבור אובייקט `UserBadge` הוא כדלקמן:
+המבנה של האובייקט `UserBadge` הוא כדלקמן:
 
 [inline-code-attrs-start title = 'מבנה UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** מזהה ייחודי להקצאת תג המשתמש הזו */
     id: string
     /** ID of the user this badge is assigned to */
     userId: string
@@ -19,9 +20,9 @@ export interface UserBadge {
     createdAt?: number
     /** When this badge was received by the user (milliseconds since epoch) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * סוג התג: 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
@@ -52,5 +53,8 @@ export interface UserBadge {
     displayedOnComments: boolean
     /** The display order of the badge */
     order?: number
+    /** If set, this badge is only displayed on the page with the matching urlId. Null for global badges. */
+    urlId?: string | null
 }
 [inline-code-end]
+---

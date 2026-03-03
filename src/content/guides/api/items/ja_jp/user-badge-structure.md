@@ -1,8 +1,8 @@
-`UserBadge` は FastComments システムでユーザーに付与されるバッジを表すオブジェクトです。
+`UserBadge` は FastComments システムでユーザーに割り当てられたバッジを表すオブジェクトです。
 
-バッジは、ユーザーのアクティビティ（コメント数、返信時間、ベテランステータスなど）に基づいて自動的に付与されるか、サイト管理者によって手動で付与されます。
+バッジは、ユーザーのアクティビティ（例: コメント数、返信時間、ベテラン状態）に基づいて自動的に割り当てられるか、サイト管理者によって手動で割り当てられます。
 
-The structure for the `UserBadge` object is as follows:
+`UserBadge` オブジェクトの構造は次の通りです：
 
 [inline-code-attrs-start title = 'UserBadge の構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -11,7 +11,7 @@ export interface UserBadge {
     id: string
     /** このバッジが割り当てられているユーザーのID */
     userId: string
-    /** テナントのバッジカタログにあるバッジ定義のID */
+    /** テナントのバッジカタログからのバッジ定義のID */
     badgeId: string
     /** このバッジを作成/割り当てたテナントのID */
     fromTenantId: string
@@ -20,7 +20,7 @@ export interface UserBadge {
     /** ユーザーがこのバッジを受け取った時刻（エポックからのミリ秒） */
     receivedAt?: number
     /** 
-     * バッジの種類: 
+     * バッジのタイプ: 
      * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
@@ -28,21 +28,21 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** 閾値ベースのバッジの場合の閾値 */
+    /** 閾値ベースのバッジの場合の閾値の値 */
     threshold?: number
     /** バッジの名前/ラベル */
     name?: string
-    /** バッジの詳細な説明 */
+    /** バッジの詳細説明 */
     description?: string
     /** バッジに表示されるテキスト */
     displayLabel?: string
-    /** バッジに表示される画像のURL */
+    /** バッジに表示される画像へのURL */
     displaySrc?: string
-    /** バッジの背景色（16進数コード） */
+    /** バッジの背景色（16進コード） */
     backgroundColor?: string
-    /** バッジの枠線色（16進数コード） */
+    /** バッジの境界線色（16進コード） */
     borderColor?: string
-    /** バッジのテキスト色（16進数コード） */
+    /** バッジのテキスト色（16進コード） */
     textColor?: string
     /** スタイリング用の追加CSSクラス */
     cssClass?: string
@@ -52,6 +52,8 @@ export interface UserBadge {
     displayedOnComments: boolean
     /** バッジの表示順序 */
     order?: number
+    /** 設定されている場合、このバッジは一致する urlId を持つページにのみ表示されます。グローバルバッジの場合は null。 */
+    urlId?: string | null
 }
 [inline-code-end]
 ---

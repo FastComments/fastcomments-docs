@@ -1,17 +1,18 @@
+---
 `UserBadge` is een object dat een badge voorstelt die aan een gebruiker is toegewezen in het FastComments-systeem.
 
-Badges kunnen automatisch aan gebruikers worden toegekend op basis van hun activiteit (zoals aantal reacties, reactietijd, veteranenstatus) of handmatig door sitebeheerders.
+Badges kunnen automatisch aan gebruikers worden toegekend op basis van hun activiteit (zoals aantal reacties, reactietijd, Veteran-status) of handmatig door sitebeheerders.
 
 De structuur van het `UserBadge`-object is als volgt:
 
-[inline-code-attrs-start title = 'Structuur van UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'UserBadge-structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
     /** Unieke identificatie voor deze gebruikersbadge-toewijzing */
     id: string
-    /** ID van de gebruiker waaraan deze badge is toegewezen */
+    /** ID van de gebruiker aan wie deze badge is toegewezen */
     userId: string
-    /** ID van de badge-definitie uit de catalogus van de tenant */
+    /** ID van de badge-definitie uit de badgecatalogus van de tenant */
     badgeId: string
     /** ID van de tenant die deze badge heeft gemaakt/toegewezen */
     fromTenantId: string
@@ -28,7 +29,7 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Voor drempelgebaseerde badges, de drempelwaarde */
+    /** Voor op drempel gebaseerde badges, de drempelwaarde */
     threshold?: number
     /** De naam/label van de badge */
     name?: string
@@ -36,7 +37,7 @@ export interface UserBadge {
     description?: string
     /** De tekst die op de badge wordt weergegeven */
     displayLabel?: string
-    /** URL naar een afbeelding die op de badge wordt weergegeven */
+    /** URL naar een afbeelding die op de badge wordt getoond */
     displaySrc?: string
     /** Achtergrondkleur voor de badge (hex-code) */
     backgroundColor?: string
@@ -44,14 +45,16 @@ export interface UserBadge {
     borderColor?: string
     /** Tekstkleur voor de badge (hex-code) */
     textColor?: string
-    /** Aanvullende CSS-klasse voor opmaak */
+    /** Extra CSS-klasse voor styling */
     cssClass?: string
-    /** Voor veteranenbadges, de tijdsdrempel in milliseconden */
+    /** Voor Veteran-badges, de tijdsdrempel in milliseconden */
     veteranUserThresholdMillis?: number
     /** Of deze badge wordt weergegeven bij de reacties van de gebruiker */
     displayedOnComments: boolean
     /** De weergavevolgorde van de badge */
     order?: number
+    /** Als ingesteld, wordt deze badge alleen weergegeven op de pagina met de overeenkomende urlId. Null voor globale badges. */
+    urlId?: string | null
 }
 [inline-code-end]
 ---

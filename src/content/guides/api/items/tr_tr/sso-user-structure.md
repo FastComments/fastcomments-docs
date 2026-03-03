@@ -1,10 +1,8 @@
-FastComments provides an easy to use SSO solution. Updating a user's information with the HMAC-based integration is
-as simple as having the user load the page with an updated payload.
+FastComments kullanımı kolay bir SSO çözümü sağlar. HMAC tabanlı entegrasyon ile bir kullanıcının bilgilerini güncellemek, kullanıcının güncellenmiş payload ile sayfayı yüklemesini sağlamak kadar basittir.
 
-However, it may be desirable to manage a user outside that flow, to improve consistency of your application.
+Bununla birlikte, uygulamanızın tutarlılığını artırmak için bir kullanıcıyı bu akışın dışında yönetmek isteyebilirsiniz.
 
-The SSO User API provides a way to CRUD objects that we call SSOUsers. These objects are different from regular Users and
-kept separate for type safety.
+SSO User API, SSOUsers adını verdiğimiz nesneleri CRUD yapmanın bir yolunu sağlar. Bu nesneler normal Users'dan farklıdır ve tür güvenliği için ayrı tutulur.
 
 The structure for the SSOUser object is as follows:
 
@@ -23,26 +21,28 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Yönetici izni - Bu bayrağa sahip SSO kullanıcıları SSO Admins olarak faturalandırılır (normal SSO kullanıcılarından ayrı)
-    isAdminAdmin?: boolean // Yönetici izni - Bu bayrağa sahip SSO kullanıcıları SSO Admins olarak faturalandırılır (normal SSO kullanıcılarından ayrı)
-    isCommentModeratorAdmin?: boolean // Moderatör izni - Bu bayrağa sahip SSO kullanıcıları SSO Moderators olarak faturalandırılır (normal SSO kullanıcılarından ayrı)
-    /** Eğer null ise, Erişim Kontrolü kullanıcıya uygulanmaz. Eğer boş bir liste ise, bu kullanıcı herhangi bir sayfayı göremeyecek veya diğer kullanıcıları @mention yapamayacaktır. **/
+    isAccountOwner?: boolean // Yönetici izni - Bu işarete sahip SSO kullanıcıları SSO Yönetici olarak faturalandırılır (normal SSO kullanıcılarından ayrı olarak)
+    isAdminAdmin?: boolean // Yönetici izni - Bu işarete sahip SSO kullanıcıları SSO Yönetici olarak faturalandırılır (normal SSO kullanıcılarından ayrı olarak)
+    isCommentModeratorAdmin?: boolean // Moderatör izni - Bu işarete sahip SSO kullanıcıları SSO Moderatör olarak faturalandırılır (normal SSO kullanıcılarından ayrı olarak)
+    /** Eğer null ise, Erişim Kontrolü kullanıcıya uygulanmaz. Eğer boş bir liste ise, bu kullanıcı herhangi bir sayfayı göremeyecek ve diğer kullanıcıları @mention yapamayacaktır. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Diğer kullanıcıların bu kullanıcının profilindeki etkinlikleri, yorumlar dahil, görmesini engelle. Varsayılan olarak güvenli profiller sağlamak için true'dur. **/
+    /** Diğer kullanıcıların bu kullanıcının profilindeki etkinliklerini (yorumlar dahil) görmesine izin verme. Varsayılan olarak güvenli profiller sağlamak için true'dur. **/
     isProfileActivityPrivate?: boolean
-    /** Diğer kullanıcıların kullanıcının profiline yorum bırakmasını veya mevcut profil yorumlarını görmesini engelle. Varsayılan false. **/
+    /** Diğer kullanıcıların bu kullanıcının profiline yorum bırakmasını veya mevcut profil yorumlarını görmesini engelleyin. Varsayılan değer false'tur. **/
     isProfileCommentsPrivate?: boolean
-    /** Diğer kullanıcıların bu kullanıcıya doğrudan mesaj göndermesini engelle. Varsayılan false. **/
+    /** Diğer kullanıcıların bu kullanıcıya doğrudan mesaj göndermesine izin verme. Varsayılan değer false'tur. **/
     isProfileDMDisabled?: boolean
     karma?: number
     /** Kullanıcı rozetleri için isteğe bağlı yapılandırma. **/
     badgeConfig?: {
-        /** Kullanıcıya atanacak rozet ID'lerinden oluşan dizi. 30 rozet ile sınırlıdır. Sıra korunur. **/
+        /** Kullanıcıya atamak için rozet ID'lerinden oluşan dizi. 30 rozet ile sınırlıdır. Sıra korunur. Bunlar tüm sayfalarda görünen genel rozetlerdir. **/
         badgeIds: string[]
-        /** Eğer true ise, görüntülenen mevcut tüm rozetleri sağlananlarla değiştirir. Eğer false ise mevcut rozetlere ekler. **/
+        /** Geçerli sayfaya (urlId) özgü rozet ID'lerinden oluşan isteğe bağlı dizi. Bu rozetler yalnızca atandıkları sayfada gösterilir. **/
+        pageBadgeIds?: string[]
+        /** Eğer true ise, mevcut görüntülenen tüm rozetleri sağlananlarla değiştirir. Genel ve sayfa-özel rozetler bağımsız olarak geçersiz kılınır. Eğer false ise, mevcut rozetlere ekler. **/
         override?: boolean
-        /** Eğer true ise, rozet görüntü özelliklerini kiracı yapılandırmasından günceller. **/
+        /** Eğer true ise, kullanıcı giriş yaptığında rozet görüntüleme özelliklerini kiracı yapılandırmasından günceller. **/
         update?: boolean
     }
 }
@@ -50,38 +50,35 @@ interface SSOUser {
 
 ### Billing for SSO Users
 
-SSO users are billed differently based on their permission flags:
+SSO kullanıcıları izin bayraklarına göre farklı şekilde faturalandırılır:
 
-- **Regular SSO Users**: Users without admin or moderator permissions are billed as regular SSO users
-- **SSO Admins**: Users with `isAccountOwner` or `isAdminAdmin` flags are billed separately as SSO Admins (same rate as regular tenant admins)
-- **SSO Moderators**: Users with `isCommentModeratorAdmin` flag are billed separately as SSO Moderators (same rate as regular moderators)
+- **Regular SSO Users**: Yönetici veya moderatör izni olmayan kullanıcılar normal SSO kullanıcıları olarak faturalandırılır
+- **SSO Admins**: `isAccountOwner` veya `isAdminAdmin` bayraklarına sahip kullanıcılar ayrı olarak SSO Admin olarak faturalandırılır (normal kiracı yöneticileri ile aynı oran)
+- **SSO Moderators**: `isCommentModeratorAdmin` bayrağına sahip kullanıcılar ayrı olarak SSO Moderatör olarak faturalandırılır (normal moderatörlerle aynı oran)
 
-**Important**: To prevent double billing, the system automatically deduplicates SSO users against regular tenant users and moderators by email address. If an SSO user has the same email as a regular tenant user or moderator, they will not be billed twice.
+**Important**: Çifte faturalandırmayı önlemek için sistem, SSO kullanıcılarını e-posta adresine göre normal kiracı kullanıcıları ve moderatörlerle otomatik olarak deduplikasyon yapar. Bir SSO kullanıcısının e-postası bir normal kiracı kullanıcısı veya moderatör ile aynıysa, iki kez faturalandırılmazlar.
 
 ### Access Control
 
-Users can be broken into groups. This is what the `groupIds` field is for, and is optional.
+Kullanıcılar gruplara ayrılabilir. Bunun için `groupIds` alanı vardır ve isteğe bağlıdır.
 
 ### @Mentions
 
-By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
-`username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
+Varsayılan olarak `@mentions`, `@` karakteri yazıldığında diğer sso kullanıcılarını aramak için `username`'i kullanır. Eğer `displayName` kullanılırsa, `displayName` için bir eşleşme olduğunda `username` ile eşleşen sonuçlar göz ardı edilir ve `@mention` arama sonuçları `displayName`'i kullanır.
 
 ### Subscriptions
 
-With FastComments, users can subscribe to a page by clicking the bell icon in the comment widget and clicking Subscribe.
+FastComments ile kullanıcılar, yorum bileşenindeki zil simgesine tıklayıp Abone Ol'a tıklayarak bir sayfaya abone olabilirler.
 
-With a regular user, we send them notification emails based on their notification settings.
+Normal bir kullanıcı ile bildirim ayarlarına göre onlara bildirim e-postaları göndeririz.
 
-With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
-emails if you set `optedInSubscriptionNotifications` to `true`.
+SSO Kullanıcıları ile geriye dönük uyumluluk için bunu böleriz. Kullanıcılar yalnızca `optedInSubscriptionNotifications`'ı `true` olarak ayarlarsanız ek abonelik bildirim e-postaları gönderilecektir.
 
 ### Badges
 
-You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
+SSO kullanıcılara `badgeConfig` özelliğini kullanarak rozet atayabilirsiniz. Rozetler, yorumlarda kullanıcının adı yanında görünen görsel göstergelerdir.
 
-- `badgeIds` - An array of badge IDs to assign to the user. These must be valid badge IDs created in your FastComments account. Limited to 30 badges.
-- `override` - If true, all existing badges displayed on comments will be replaced with the provided ones. If false or omitted, the provided badges will be added to any existing badges.
-- `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.
-
----
+- `badgeIds` - Kullanıcıya atamak için rozet ID'lerinden oluşan dizi. Bunlar tüm sayfalarda görünen genel rozetlerdir. FastComments hesabınızda oluşturulmuş geçerli rozet ID'leri olmalıdır. 30 rozet ile sınırlıdır.
+- `pageBadgeIds` - Geçerli sayfaya (`urlId`) özgü isteğe bağlı rozet ID'leri dizisi. Bu rozetler yalnızca atandıkları sayfada gösterilir. Farklı sayfalar aynı kullanıcı için farklı sayfa-özel rozetlere sahip olabilir.
+- `override` - Eğer true ise, mevcut görüntülenen tüm rozetler sağlananlarla değiştirilecektir. Genel ve sayfa-özel rozetler bağımsız olarak geçersiz kılınır — genel rozetleri geçersiz kılmak sayfa-özel rozetleri etkilemez ve tersi de geçerlidir. Eğer false veya atlanırsa, sağlanan rozetler mevcut rozetlere eklenir.
+- `update` - Eğer true ise, kullanıcı giriş yaptığında rozet görüntüleme özellikleri kiracı yapılandırmasından güncellenecektir.

@@ -1,14 +1,14 @@
-FastComments pruža lako za korišćenje SSO rešenje. Ažuriranje informacija o korisniku pomoću HMAC-bazirane integracije
-je jednostavno kao učitavanje stranice od strane korisnika sa ažuriranim payload-om.
+FastComments пружа лако за коришћење SSO решење. Ажурирање информација о кориснику са HMAC-базираним интеграцијом је
+једнако једноставно као да корисник учита страницу са ажурираном пакетом података.
 
-Međutim, može biti poželjno upravljati korisnikom izvan tog toka, kako bi se poboljšala konzistentnost vaše aplikacije.
+Међутим, може бити пожељно управљати корисником ван тог тока, ради побољшања доследности ваше апликације.
 
-SSO User API pruža način za CRUD objekata koje nazivamo SSOUsers. Ovi objekti se razlikuju od regularnih Users i
-držani su odvojeno radi tip-sigurnosti.
+SSO User API пружа начин да се CRUD-ују објекти које зовемо SSOUsers. Ови објекти се разликују од редовних Users и
+држе се одвојено ради типске сигурности.
 
-Struktura SSOUser objekta je sledeća:
+The structure for the SSOUser object is as follows:
 
-[inline-code-attrs-start title = 'Struktura SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     id: string
@@ -23,63 +23,66 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Administratorska dozvola - SSO korisnici sa ovom oznakom se naplaćuju kao SSO administratori (odvojeno od regularnih SSO korisnika)
-    isAdminAdmin?: boolean // Administratorska dozvola - SSO korisnici sa ovom oznakom se naplaćuju kao SSO administratori (odvojeno od regularnih SSO korisnika)
-    isCommentModeratorAdmin?: boolean // Moderator dozvola - SSO korisnici sa ovom oznakom se naplaćuju kao SSO moderatori (odvojeno od regularnih SSO korisnika)
-    /** Ako je null, Kontrola pristupa se neće primjenjivati na korisnika. Ako je prazan spisak, ovaj korisnik neće moći vidjeti nijednu stranicu niti @pomenuti druge korisnike. **/
+    isAccountOwner?: boolean // Админ дозвола - SSO корисници са овим флагом се наплаћују као SSO Admins (одвојено од редовних SSO корисника)
+    isAdminAdmin?: boolean // Админ дозвола - SSO корисници са овим флагом се наплаћују као SSO Admins (одвојено од редовних SSO корисника)
+    isCommentModeratorAdmin?: boolean // Модераторска дозвола - SSO корисници са овим флагом се наплаћују као SSO Moderators (одвојено од редовних SSO корисника)
+    /** Ако је null, Контрола приступа неће се примењивати на корисника. Ако је празна листа, овај корисник неће моћи да види ниједну страницу нити да @mention-ује друге кориснике. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Ne dozvoljava drugim korisnicima da vide aktivnost ovog korisnika, uključujući komentare, na profilu. Podrazumevana vrednost je true da bi profili bili sigurni. **/
+    /** Не дозволи другим корисницима да виде активност овог корисника, укључујући коментаре, на његовом профилу. Подразумевано је true како би профили по подразумеваној вредности били безбедни. **/
     isProfileActivityPrivate?: boolean
-    /** Ne dozvoljava drugim korisnicima da ostavljaju komentare na korisnikovom profilu, niti da vide postojeće komentare na profilu. Podrazumevano false. **/
+    /** Не дозволи другим корисницима да остављају коментаре на профилу корисника или да виде постојеће коментаре на профилу. Подразумевано је false. **/
     isProfileCommentsPrivate?: boolean
-    /** Ne dozvoljava drugim korisnicima da šalju direktne poruke ovom korisniku. Podrazumevano false. **/
+    /** Не дозволи другим корисницима да шаљу директне поруке овом кориснику. Подразумевано је false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Opcionalna konfiguracija za bedževe korisnika. **/
+    /** Опциона конфигурација за корисничке значке. **/
     badgeConfig?: {
-        /** Niz ID-jeva bedževa koji se dodeljuju korisniku. Ograničeno na 30 bedževa. Redosled se poštuje. **/
+        /** Низ ID-јева значки који се додељују кориснику. Ограничено на 30 значки. Редослед се поштује. Ово су глобалне значке видљиве на свим страницама. **/
         badgeIds: string[]
-        /** Ako je true, zamenjuje sve postojeće prikazane bedževe sa ovim. Ako je false, dodaje ih postojećim bedževima. **/
+        /** Низ ID-јева значки специфичних за текућу страницу (urlId). Ове значке се приказују само на страници где су додељене. **/
+        pageBadgeIds?: string[]
+        /** Ако је true, замењује све постојеће приказане значке наведеним. Глобалне и значке специфичне за страницу се замењују независно. Ако је false, додаје их постојећим значкама. **/
         override?: boolean
-        /** Ako je true, ažurira osobine prikaza bedževa iz konfiguracije tenanta. **/
+        /** Ако је true, ажурира својства приказа значки из конфигурације tenant-а. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Naplata za SSO korisnike
+### Billing for SSO Users
 
-SSO korisnici se naplaćuju drugačije na osnovu njihovih dozvola:
+SSO users are billed differently based on their permission flags:
 
-- **Regular SSO Users**: Korisnici bez administrativnih ili moderatorskih dozvola se naplaćuju kao regularni SSO korisnici
-- **SSO Admins**: Korisnici sa `isAccountOwner` ili `isAdminAdmin` oznakama se naplaćuju odvojeno kao SSO administratori (ista tarifa kao regularni administratori tenanta)
-- **SSO Moderators**: Korisnici sa `isCommentModeratorAdmin` oznakom se naplaćuju odvojeno kao SSO moderatori (ista tarifa kao regularni moderatori)
+- **Regular SSO Users**: Корисници без администраторских или модераторских дозвола се наплаћују као Regular SSO Users
+- **SSO Admins**: Корисници са `isAccountOwner` или `isAdminAdmin` флаговима се наплаћују одвојено као SSO Admins (иста стопа као и код редовних tenant админа)
+- **SSO Moderators**: Корисници са `isCommentModeratorAdmin` флагом се наплаћују одвојено као SSO Moderators (иста стопа као код редовних модератора)
 
-**Važno**: Da bi se izbegla dupla naplata, sistem automatski deduplikuje SSO korisnike naspram regularnih korisnika tenanta i moderatora po email adresi. Ako SSO korisnik ima isti email kao regularni korisnik tenanta ili moderator, neće biti naplaćen dvaput.
+**Важно**: Да би се спречило двоструко наплаћивање, систем аутоматски елиминише дупликате SSO корисника у односу на редовне tenant кориснике и модераторе по адреси е-поште. Ако SSO корисник има исту е-пошту као редован tenant корисник или модератор, неће бити наплаћени два пута.
 
-### Kontrola pristupa
+### Access Control
 
-Korisnici mogu biti razvrstani u grupe. Za to služi polje `groupIds`, i opcionalno je.
+Корисници се могу поделити у групе. За то служи поље `groupIds`, и оно је опционo.
 
 ### @Mentions
 
-Po defaultu `@mentions` će koristiti `username` za pretragu drugih sso korisnika kada se unese karakter `@`. Ako se koristi `displayName`, tada će rezultati koji odgovaraju
-`username` biti ignorisani kada postoji podudaranje za `displayName`, i rezultati pretrage za `@mention` će koristiti `displayName`.
+По подразумеваној вредности `@mentions` ће користити `username` за претрагу других sso корисника када се укуца знак `@`. Ако се користи `displayName`, тада резултати који одговарају `username` ће бити игнорисани када постоји подударање за `displayName`, и резултати претраге за `@mention` ће користити `displayName`.
 
-### Pretplate
+### Subscriptions
 
-Sa FastComments, korisnici se mogu pretplatiti na stranicu klikom na ikonu zvona u widgetu za komentare i klikom na Subscribe.
+У FastComments-у, корисници се могу претплатити на страницу кликом на икону звона у виџету за коментаре и кликом на Subscribe.
 
-Kod regularnog korisnika, šaljemo im email obaveštenja na osnovu njihovih podešavanja obaveštenja.
+За редовног корисника, шаљемо им е-поруке обавештења на основу њихових подешавања обавештења.
 
-Kod SSO korisnika, razdvajamo ovo radi kompatibilnosti unazad. Korisnici će dobijati ova dodatna email obaveštenja o pretplati
-samo ako postavite `optedInSubscriptionNotifications` na `true`.
+За SSO кориснике, ово је разделјено за назадну компатибилност. Корисници ће примати ове додатне е-поруке обавештења о претплати само ако поставите `optedInSubscriptionNotifications` на `true`.
 
-### Bedževi
+### Badges
 
-Možete dodeljivati bedževe SSO korisnicima koristeći svojstvo `badgeConfig`. Bedževi su vizuelni indikatori koji se pojavljuju pored imena korisnika u komentarima.
+Можете доделити значке SSO корисницима користећи својство `badgeConfig`. Значке су визуелни индикатори који се појављују поред имена корисника у коментарима.
 
-- `badgeIds` - Niz ID-jeva bedževa koji se dodeljuju korisniku. Oni moraju biti validni ID-jevi bedževa kreirani na vašem FastComments nalogu. Ograničeno na 30 bedževa.
-- `override` - Ako je true, svi postojeći bedževi prikazani na komentarima biće zamenjeni sa navedenim. Ako je false ili izostavljeno, navedeni bedževi će biti dodati postojećim bedževima.
-- `update` - Ako je true, osobine prikaza bedževa će biti ažurirane iz konfiguracije tenanta kad god se korisnik prijavi.
+- `badgeIds` - Низ ID-јева значки који се додељују кориснику. Ово су глобалне значке видљиве на свим страницама. Морају бити важећи ID-јеви значки креирани на вашем FastComments налогу. Ограничено на 30 значки.
+- `pageBadgeIds` - Опциони низ ID-јева значки специфичних за текућу страницу (`urlId`). Ове значке се приказују само на страници где су додељене. Различите странице могу имати различите значке специфичне за страницу за истог корисника.
+- `override` - Ако је true, све постојеће приказане значке ће бити замењене наведеним. Глобалне и значке специфичне за страницу се замењују независно — замена глобалних значки не утиче на значке специфичне за страницу, и обрнуто. Ако је false или изостављено, наведене значке ће бити додате постојећим значкама.
+- `update` - Ако је true, својства приказа значки ће бити ажурирана из конфигурације tenant-а сваки пут када се корисник пријави.
+
+---

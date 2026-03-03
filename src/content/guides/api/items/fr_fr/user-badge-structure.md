@@ -1,56 +1,58 @@
 `UserBadge` est un objet qui représente un badge attribué à un utilisateur dans le système FastComments.
 
-Les badges peuvent être attribués aux utilisateurs automatiquement en fonction de leur activité (comme le nombre de commentaires, le temps de réponse, le statut de vétéran) ou manuellement par les administrateurs du site.
+Les badges peuvent être attribués aux utilisateurs automatiquement en fonction de leur activité (par exemple le nombre de commentaires, le temps de réponse, le statut de vétéran) ou manuellement par les administrateurs du site.
 
 La structure de l'objet `UserBadge` est la suivante :
 
 [inline-code-attrs-start title = 'Structure de UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** Identifiant unique pour cette attribution de badge utilisateur */
     id: string
-    /** ID of the user this badge is assigned to */
+    /** ID de l'utilisateur auquel ce badge est attribué */
     userId: string
-    /** ID of the badge definition from the tenant's badge catalog */
+    /** ID de la définition du badge depuis le catalogue de badges du tenant */
     badgeId: string
-    /** ID of the tenant that created/assigned this badge */
+    /** ID du tenant qui a créé/assigné ce badge */
     fromTenantId: string
-    /** When this badge was created (milliseconds since epoch) */
+    /** Quand ce badge a été créé (millisecondes depuis l'époque (epoch)) */
     createdAt?: number
-    /** When this badge was received by the user (milliseconds since epoch) */
+    /** Quand ce badge a été reçu par l'utilisateur (millisecondes depuis l'époque (epoch)) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * Le type de badge : 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
      * 14=Manual
      */
     type: number
-    /** For threshold-based badges, the threshold value */
+    /** Pour les badges basés sur un seuil, la valeur du seuil */
     threshold?: number
-    /** The name/label of the badge */
+    /** Le nom/libellé du badge */
     name?: string
-    /** Detailed description of the badge */
+    /** Description détaillée du badge */
     description?: string
-    /** The text shown on the badge */
+    /** Le texte affiché sur le badge */
     displayLabel?: string
-    /** URL to an image shown on the badge */
+    /** URL vers une image affichée sur le badge */
     displaySrc?: string
-    /** Background color for the badge (hex code) */
+    /** Couleur d'arrière-plan du badge (code hexadécimal) */
     backgroundColor?: string
-    /** Border color for the badge (hex code) */
+    /** Couleur de bordure du badge (code hexadécimal) */
     borderColor?: string
-    /** Text color for the badge (hex code) */
+    /** Couleur du texte du badge (code hexadécimal) */
     textColor?: string
-    /** Additional CSS class for styling */
+    /** Classe CSS supplémentaire pour le style */
     cssClass?: string
-    /** For veteran badges, the time threshold in milliseconds */
+    /** Pour les badges vétérans, le seuil de temps en millisecondes */
     veteranUserThresholdMillis?: number
-    /** Whether this badge is displayed on the user's comments */
+    /** Indique si ce badge est affiché sur les commentaires de l'utilisateur */
     displayedOnComments: boolean
-    /** The display order of the badge */
+    /** L'ordre d'affichage du badge */
     order?: number
+    /** Si défini, ce badge n'est affiché que sur la page correspondant à urlId. Null pour les badges globaux. */
+    urlId?: string | null
 }
 [inline-code-end]

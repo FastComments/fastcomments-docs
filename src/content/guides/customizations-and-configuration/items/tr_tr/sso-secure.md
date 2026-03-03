@@ -1,107 +1,118 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Güvenli SSO, SSO'yu uygulamak için mekanizma olarak HMAC-SHA256 şifrelemesini kullanır. Önce genel mimariyi ele alacağız, örnekler sağlayacağız ve ayrıntılı adımları açıklayacağız.
+FastComments Secure SSO, SSO'yu uygulamak için mekanizma olarak HMAC-SHA256 şifrelemesini kullanır. Önce genel mimariyi, örnekleri ve ayrıntılı adımları inceleyeceğiz.
 
-Ayrıca benzer SSO mekanizmalarına sahip diğer sağlayıcılardan geçişle ilgili bazı belgeler ve farklar bulunmaktadır.
+Benzer SSO mekanizmalarına sahip diğer sağlayıcılardan geçişle ve farklarla ilgili bazı belgeler de bulunmaktadır.
 
-Akış şu şekilde görünür:
+The flow looks like this:
 
 <div class="screenshot white-bg">
-    <div class="title">Güvenli SSO Akışı</div>
-    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Güvenli SSO Diyagramı" />
+    <div class="title">Secure SSO Flow</div>
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Secure SSO Diagram" />
 </div>
 
-Güvenli SSO tam yığın geliştirme (full-stack) içerdiği için, Java/Spring, NodeJS/Express ve sade PHP'de tam çalışan kod örnekleri şu anda <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">GitHub'da</a> bulunmaktadır.
+Since Secure SSO involves full-stack development, full working code examples in Java/Spring, NodeJS/Express, and vanilla PHP are currently <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">GitHub'da</a>.
 
-NodeJS örneğinde ExpressJS'i ve Java örneğinde Spring'i kullanmamıza rağmen, FastComments SSO'yu uygulamak için bu çalışma zamanlarında herhangi bir framework/kütüphane zorunlu değildir - yerel crypto paketleri yeterlidir.
+Although we use ExpressJS in the NodeJS example and Spring in the Java example there are no frameworks/libraries required in these run-times to implement FastComments SSO - the native crypto packages work.
 
-FastComments SSO ile herhangi bir yeni API uç noktası yazmanız gerekmez. Kullanıcının bilgilerini gizli anahtarınızı kullanarak şifreleyin ve yükü yorum widget'ına iletin.
+You don't have to write any new API endpoints with FastComments SSO. Simply encrypt the user's info using your secret key and pass the payload to the comment widget.
 
 #### API Gizli Anahtarınızı Alın
 
-API Gizli Anahtarınız <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">bu sayfadan</a> alınabilir. Bu sayfayı ayrıca My Account'a giderek, API/SSO kutucuğuna tıklayarak ve ardından "Get API Secret Key"e tıklayarak da bulabilirsiniz.
+Your API Secret can be retrieved from <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">this page</a>. You can find this page also by going to My Account, clicking the API/SSO tile, and then clicking "Get API Secret Key".
 
-#### Yorum Widget Parametreleri
+#### Yorum Bileşeni Parametreleri
 
-Yorum widget'ı için üst düzey API dokümantasyonu <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">burada</a> bulunabilir.
+High-level API documentation for the comment widget can be found <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">burada</a>.
 
 Bu parametrelerin ne anlama geldiğini daha ayrıntılı inceleyelim.
 
-Yorum widget'ı bir yapılandırma nesnesi alır - FastComments kullanıyorsanız zaten müşteri kimliğinizi (tenantId olarak adlandırılır) geçirmek için bunu sağlıyorsunuz.
+The comment widget takes a configuration object - you already pass this if you're using FastComments to pass your customer id (called tenantId).
 
-SSO'yu etkinleştirmek için, sunucu tarafında oluşturulması gereken aşağıdaki parametrelere sahip yeni bir "sso" nesnesi geçin.
+To enable SSO, pass a new "sso" object, which must have the following parameters. The values should be generated server side.
 
-- userDataJSONBase64: Kullanıcının JSON formatındaki verileri, daha sonra Base64 ile kodlanmış halde.
-- verificationHash: UNIX_TIME_MILLIS + userDataJSONBase64'den oluşturulan HMAC-SHA256 hash.
-- timestamp: Epoch zaman damgası, **milisaniye** cinsinden. Gelecekte olmamalı veya iki günden fazla geçmiş olmamalı.
-- loginURL: Yorum widget'ının kullanıcıyı oturum açması için gösterebileceği bir URL.
-- logoutURL: Yorum widget'ının kullanıcıyı oturum kapatması için gösterebileceği bir URL.
-- loginCallback: Giriş URL'si yerine sağlandığında, yorum widget'ının giriş düğmesine tıklandığında çağıracağı bir fonksiyon.
-- logoutCallback: Çıkış URL'si yerine sağlandığında, yorum widget'ının çıkış düğmesine tıklandığında çağıracağı bir fonksiyon.
+- userDataJSONBase64: The user's data in JSON format, which is then Base64 encoded.
+- verificationHash: The HMAC-SHA256 hash created from UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Epoch timestamp, in **milliseconds**. Must not be in the future, or more than two days in the past.
+- loginURL: A URL that the comment widget can show to log the user in.
+- logoutURL: A URL that the comment widget can show to log the user out.
+- loginCallback: When provided instead of the login URL, a function that the comment widget will invoke when clicking the login button.
+- logoutCallback: When provided instead of the logout URL, a function that the comment widget will invoke when clicking the logout button.
 
 [code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
 
-#### The User Object
+#### Kullanıcı Nesnesi
 
-The User object contains the following schema:
+Kullanıcı nesnesi aşağıdaki şemayı içerir:
 [inline-code-attrs-start title = 'Kullanıcı Nesnesi'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** Zorunlu. Maksimum 1k karakter. **/
+    /** Gerekli. Maksimum 1k karakter. **/
     id: string;
-    /** Zorunlu. Maksimum 1k karakter. Not: Benzersiz olmalıdır. **/
+    /** Gerekli. Maksimum 1k karakter. Not: Benzersiz olmalıdır. **/
     email: string;
-    /** Zorunlu. Maksimum 1k karakter. Not: Kullanıcı adı bir e-posta olamaz. Benzersiz olması gerekmez. **/
+    /** Gerekli. Maksimum 1k karakter. Not: Kullanıcı adı bir e-posta olamaz. Benzersiz olması gerekmez. **/
     username: string;
-    /** İsteğe bağlı. URL'ler için maksimum 3k karakter. Varsayılan, e-posta bazlı gravatardan alınır. 64 kodlu (Base64) resimleri destekler; bu durumda sınır 50k karakterdir. **/ 
+    /** Opsiyonel. URL'ler için maksimum 3k karakter. Varsayılan, e-postaya dayalı gravatar'dandır. 64 ile kodlanmış resimleri destekler; bu durumda limit 50k karakterdir. **/ 
     avatar?: string;
-    /** İsteğe bağlı. Varsayılan false. **/
+    /** Opsiyonel. Varsayılan false. **/
     optedInNotifications?: boolean;
-    /** İsteğe bağlı. Varsayılan false. **/
+    /** Opsiyonel. Varsayılan false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** İsteğe bağlı. Maksimum 100 karakter. Bu etiket isimlerinin yanında gösterilecektir. Uygun olduğunda varsayılan Administrator/Moderator'dür. **/
+    /** Opsiyonel. Maksimum 100 karakter. Bu etiket isimlerinin yanında gösterilecektir. Uygulanabilir olduğunda varsayılan Yönetici/Moderatör'dür. **/
     displayLabel?: string;
-    /** İsteğe bağlı. Maksimum 500 karakter. Bu, kullanıcı adı yerine gösterilecektir. **/
+    /** Opsiyonel. Maksimum 500 karakter. Bu, kullanıcı adı yerine gösterilecektir. **/
     displayName?: string;
-    /** İsteğe bağlı. Maksimum 2k karakter. Kullanıcının adı buraya bağlantı verilir. **/
+    /** Opsiyonel. Maksimum 2k karakter. Kullanıcının adı buraya bağlanacaktır. **/
     websiteUrl?: string;
-    /** İsteğe bağlı. Kullanıcı başına en fazla 100 grup. Bir grup id'si 50 karakterden uzun olamaz. **/
+    /** Opsiyonel. Kullanıcı başına 100 gruba kadar. Bir grup kimliği 50 karakterden uzun olamaz. **/
     groupIds?: string[];
-    /** İsteğe bağlı. Kullanıcıyı yönetici olarak belirtir. **/
+    /** Opsiyonel. Kullanıcıyı yönetici olarak belirtir. **/
     isAdmin?: boolean;
-    /** İsteğe bağlı. Kullanıcıyı moderatör olarak belirtir. **/
+    /** Opsiyonel. Kullanıcıyı moderatör olarak belirtir. **/
     isModerator?: boolean;
-    /** İsteğe bağlı, varsayılan true. Kullanıcının profilindeki "etkinlik" sekmesini etkinleştirmek için false olarak ayarlayın. **/
+    /** Opsiyonel, varsayılan true. Kullanıcının profilindeki "activity" sekmesini etkinleştirmek için false olarak ayarlayın. **/
     isProfileActivityPrivate?: boolean;
-    /** İsteğe bağlı, varsayılan false. Profil yorumlarını devre dışı bırakmak için true olarak ayarlayın. **/
+    /** Opsiyonel, varsayılan false. Profil yorumlarını devre dışı bırakmak için true olarak ayarlayın. **/
     isProfileCommentsPrivate?: boolean;
-    /** İsteğe bağlı, varsayılan false. Bu kullanıcıya doğrudan mesaj göndermeyi devre dışı bırakmak için true olarak ayarlayın. **/
+    /** Opsiyonel, varsayılan false. Bu kullanıcıya doğrudan mesaj göndermeyi devre dışı bırakmak için true olarak ayarlayın. **/
     isProfileDMDisabled?: boolean;
+    /** Kullanıcı rozetleri için opsiyonel yapılandırma. **/
+    badgeConfig?: {
+        /** Atanacak genel rozet kimlikleri dizisi. 30 rozet ile sınırlıdır. Sıra korunur. **/
+        badgeIds: string[];
+        /** Geçerli sayfaya (urlId) özgü rozet kimlikleri dizisi. Yalnızca atandığı sayfada gösterilir. **/
+        pageBadgeIds?: string[];
+        /** True ise gösterilen mevcut rozetlerin yerini alır. Genel ve sayfa-açısına özgü rozetler bağımsız olarak üzerine yazılır. **/
+        override?: boolean;
+        /** True ise, rozet görüntüleme özelliklerini tenant yapılandırmasından günceller. **/
+        update?: boolean;
+    };
 }
 [inline-code-end]
 
-#### Moderators and Administrators
+#### Moderatörler ve Yöneticiler
 
 For admins and moderators, pass the respective `isAdmin` or `isModerator` flags in the `SSOUser` object.
 
-#### Notifications
+#### Bildirimler
 
 To enable or disable notifications, set the value of `optedInNotifications` to `true` or `false` respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
 
-Additionally, if you want users to receive notification emails for activity on pages they subscribed to (as opposed to just in-app notifications), then set `optedInSubscriptionNotifications` to `true`.
+Ayrıca, kullanıcıların yalnızca uygulama içi bildirimler yerine abone oldukları sayfalardaki etkinlikler için bildirim e-postası almalarını istiyorsanız, `optedInSubscriptionNotifications` değerini `true` olarak ayarlayın.
 
-#### VIP Users & Special Labels
+#### VIP Kullanıcılar ve Özel Etiketler
 
 You can display a special label next to the user's name by using the optional "displayLabel" field.
 
-#### Unauthenticated users
+#### Kimlik Doğrulanmamış kullanıcılar
 
 To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
 
 These users will not be able to comment, and instead will be presented with a login message (message, link, or button, depending on configuration).
 
-#### Direct Examples for Serializing and Hashing User Data
+#### Kullanıcı Verilerinin Seri Haline Getirilmesi ve Hash'lenmesi için Doğrudan Örnekler
 
-More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here</a> (java) and <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here</a> (php).
+Daha fazla ayrıntı örnekleri js için <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">burada</a>, java için <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">burada</a> ve php için <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">burada</a>.
 
-We understand that any integration can be a complicated and painful process. Don't hesitate to reach out to your representative or use the <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>.
+We understand that any integration can be a complicated and painful process. Don't hesitate to reach out to your representative or use the <a href="https://fastcomments.com/auth/my-account/help" target="_blank">destek sayfasını</a>.

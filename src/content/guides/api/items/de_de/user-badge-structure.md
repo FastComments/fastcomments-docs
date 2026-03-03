@@ -1,56 +1,58 @@
-`UserBadge` ist ein Objekt, das ein einem Benutzer im FastComments-System zugewiesenes Badge darstellt.
+`UserBadge` ist ein Objekt, das ein Abzeichen repräsentiert, das einem Benutzer im FastComments-System zugewiesen ist.
 
-Badges können Benutzern automatisch basierend auf ihrer Aktivität (wie Kommentaranzahl, Antwortzeit, Veteran-Status) oder manuell von Site-Administratoren zugewiesen werden.
+Abzeichen können Benutzern automatisch aufgrund ihrer Aktivität (z. B. Anzahl der Kommentare, Antwortzeit, Veteranenstatus) oder manuell von Website-Administratoren zugewiesen werden.
 
 Die Struktur des `UserBadge`-Objekts ist wie folgt:
 
-[inline-code-attrs-start title = 'UserBadge Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'UserBadge-Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** Eindeutige Kennung für diese Zuordnung des Benutzerabzeichens */
     id: string
-    /** ID of the user this badge is assigned to */
+    /** ID des Benutzers, dem dieses Abzeichen zugewiesen ist */
     userId: string
-    /** ID of the badge definition from the tenant's badge catalog */
+    /** ID der Abzeichendefinition aus dem Abzeichenkatalog des Mandanten */
     badgeId: string
-    /** ID of the tenant that created/assigned this badge */
+    /** ID des Mandanten, der dieses Abzeichen erstellt/zugewiesen hat */
     fromTenantId: string
-    /** When this badge was created (milliseconds since epoch) */
+    /** Wann dieses Abzeichen erstellt wurde (Millisekunden seit Epoch) */
     createdAt?: number
-    /** When this badge was received by the user (milliseconds since epoch) */
+    /** Wann dieses Abzeichen vom Benutzer erhalten wurde (Millisekunden seit Epoch) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * Der Abzeichentyp: 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
      * 14=Manual
      */
     type: number
-    /** For threshold-based badges, the threshold value */
+    /** Für schwellenbasierte Abzeichen der Schwellenwert */
     threshold?: number
-    /** The name/label of the badge */
+    /** Der Name/Bezeichner des Abzeichens */
     name?: string
-    /** Detailed description of the badge */
+    /** Detaillierte Beschreibung des Abzeichens */
     description?: string
-    /** The text shown on the badge */
+    /** Der auf dem Abzeichen angezeigte Text */
     displayLabel?: string
-    /** URL to an image shown on the badge */
+    /** URL zu einem auf dem Abzeichen angezeigten Bild */
     displaySrc?: string
-    /** Background color for the badge (hex code) */
+    /** Hintergrundfarbe des Abzeichens (Hex-Code) */
     backgroundColor?: string
-    /** Border color for the badge (hex code) */
+    /** Randfarbe des Abzeichens (Hex-Code) */
     borderColor?: string
-    /** Text color for the badge (hex code) */
+    /** Textfarbe des Abzeichens (Hex-Code) */
     textColor?: string
-    /** Additional CSS class for styling */
+    /** Zusätzliche CSS-Klasse zur Gestaltung */
     cssClass?: string
-    /** For veteran badges, the time threshold in milliseconds */
+    /** Für Veteranen-Abzeichen die Zeitgrenze in Millisekunden */
     veteranUserThresholdMillis?: number
-    /** Whether this badge is displayed on the user's comments */
+    /** Ob dieses Abzeichen in den Kommentaren des Benutzers angezeigt wird */
     displayedOnComments: boolean
-    /** The display order of the badge */
+    /** Die Anzeigereihenfolge des Abzeichens */
     order?: number
+    /** Falls gesetzt, wird dieses Abzeichen nur auf der Seite mit der passenden urlId angezeigt. Null für globale Abzeichen. */
+    urlId?: string | null
 }
 [inline-code-end]

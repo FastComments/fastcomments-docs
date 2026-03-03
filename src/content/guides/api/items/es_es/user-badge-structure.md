@@ -1,56 +1,59 @@
 `UserBadge` es un objeto que representa una insignia asignada a un usuario en el sistema FastComments.
 
-Las insignias pueden ser asignadas a usuarios automáticamente basándose en su actividad (como cantidad de comentarios, tiempo de respuesta, estado de veterano) o manualmente por los administradores del sitio.
+Las insignias pueden asignarse a los usuarios automáticamente según su actividad (como el número de comentarios, el tiempo de respuesta, el estado de veterano) o manualmente por los administradores del sitio.
 
 La estructura del objeto `UserBadge` es la siguiente:
 
 [inline-code-attrs-start title = 'Estructura de UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** Identificador único para esta asignación de insignia de usuario */
     id: string
-    /** ID of the user this badge is assigned to */
+    /** ID del usuario al que se asigna esta insignia */
     userId: string
-    /** ID of the badge definition from the tenant's badge catalog */
+    /** ID de la definición de insignia del catálogo de insignias del tenant */
     badgeId: string
-    /** ID of the tenant that created/assigned this badge */
+    /** ID del tenant que creó/asignó esta insignia */
     fromTenantId: string
-    /** When this badge was created (milliseconds since epoch) */
+    /** Cuando se creó esta insignia (milisegundos desde el epoch) */
     createdAt?: number
-    /** When this badge was received by the user (milliseconds since epoch) */
+    /** Cuando el usuario recibió esta insignia (milisegundos desde el epoch) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * El tipo de insignia: 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
      * 14=Manual
      */
     type: number
-    /** For threshold-based badges, the threshold value */
+    /** Para insignias basadas en umbral, el valor del umbral */
     threshold?: number
-    /** The name/label of the badge */
+    /** El nombre/etiqueta de la insignia */
     name?: string
-    /** Detailed description of the badge */
+    /** Descripción detallada de la insignia */
     description?: string
-    /** The text shown on the badge */
+    /** El texto mostrado en la insignia */
     displayLabel?: string
-    /** URL to an image shown on the badge */
+    /** URL de una imagen mostrada en la insignia */
     displaySrc?: string
-    /** Background color for the badge (hex code) */
+    /** Color de fondo de la insignia (código hexadecimal) */
     backgroundColor?: string
-    /** Border color for the badge (hex code) */
+    /** Color de borde de la insignia (código hexadecimal) */
     borderColor?: string
-    /** Text color for the badge (hex code) */
+    /** Color del texto de la insignia (código hexadecimal) */
     textColor?: string
-    /** Additional CSS class for styling */
+    /** Clase CSS adicional para el estilo */
     cssClass?: string
-    /** For veteran badges, the time threshold in milliseconds */
+    /** Para insignias de veterano, el umbral de tiempo en milisegundos */
     veteranUserThresholdMillis?: number
-    /** Whether this badge is displayed on the user's comments */
+    /** Si esta insignia se muestra en los comentarios del usuario */
     displayedOnComments: boolean
-    /** The display order of the badge */
+    /** El orden de visualización de la insignia */
     order?: number
+    /** Si se establece, esta insignia solo se muestra en la página con el urlId correspondiente. Null para insignias globales. */
+    urlId?: string | null
 }
 [inline-code-end]
+---

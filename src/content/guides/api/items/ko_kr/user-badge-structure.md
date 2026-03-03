@@ -32,17 +32,17 @@ export interface UserBadge {
     threshold?: number
     /** 배지의 이름/레이블 */
     name?: string
-    /** 배지에 대한 자세한 설명 */
+    /** 배지의 상세 설명 */
     description?: string
     /** 배지에 표시되는 텍스트 */
     displayLabel?: string
-    /** 배지에 표시되는 이미지의 URL */
+    /** 배지에 표시될 이미지의 URL */
     displaySrc?: string
     /** 배지의 배경색 (헥스 코드) */
     backgroundColor?: string
-    /** 배지의 테두리 색상 (헥스 코드) */
+    /** 배지의 테두리 색 (헥스 코드) */
     borderColor?: string
-    /** 배지의 텍스트 색상 (헥스 코드) */
+    /** 배지의 텍스트 색 (헥스 코드) */
     textColor?: string
     /** 스타일링을 위한 추가 CSS 클래스 */
     cssClass?: string
@@ -52,6 +52,7 @@ export interface UserBadge {
     displayedOnComments: boolean
     /** 배지의 표시 순서 */
     order?: number
+    /** 설정된 경우, 이 배지는 일치하는 urlId를 가진 페이지에만 표시됩니다. 전역 배지의 경우 null. */
+    urlId?: string | null
 }
 [inline-code-end]
----

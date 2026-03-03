@@ -1,12 +1,12 @@
-FastComments giver en letanvendelig SSO-løsning. Opdatering af en brugers information med den HMAC-baserede integration er
-så enkelt som at have brugeren indlæse siden med en opdateret payload.
+FastComments provides an easy to use SSO solution. Updating a user's information with the HMAC-based integration is
+as simple as having the user load the page with an updated payload.
 
-Det kan dog være ønskeligt at administrere en bruger uden for det flow for at forbedre konsistensen af din applikation.
+However, it may be desirable to manage a user outside that flow, to improve consistency of your application.
 
-SSO User API'et giver en måde at CRUD objekter, som vi kalder SSOUsers. Disse objekter er forskellige fra almindelige Users og
-holdes adskilt for typesikkerhed.
+The SSO User API provides a way to CRUD objects that we call SSOUsers. These objects are different from regular Users and
+kept separate for type safety.
 
-Strukturen for SSOUser-objektet er som følger:
+The structure for the SSOUser object is as follows:
 
 [inline-code-attrs-start title = 'SSOUser Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,63 +23,67 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
-    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
+    isAccountOwner?: boolean // Administratorrettighed - SSO users med dette flag faktureres som SSO Admins (separat fra regular SSO users)
+    isAdminAdmin?: boolean // Administratorrettighed - SSO users med dette flag faktureres som SSO Admins (separat fra regular SSO users)
+    isCommentModeratorAdmin?: boolean // Moderatorrettighed - SSO users med dette flag faktureres som SSO Moderators (separat fra regular SSO users)
+    /** Hvis null, vil Access Control ikke blive anvendt på useren. Hvis en tom liste, vil denne user ikke kunne se nogen sider eller @mention andre users. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
+    /** Gør det umuligt for andre users at se denne users aktivitet, inklusive kommentarer, på deres profil. Standard er true for at give sikre profiler som standard. **/
     isProfileActivityPrivate?: boolean
-    /** Don't let other users leave comments on the user's profile, or see existing profile comments. Default false. **/
+    /** Forhindrer andre users i at efterlade kommentarer på userens profil, eller se eksisterende profilkommentarer. Standard er false. **/
     isProfileCommentsPrivate?: boolean
-    /** Don't let other users send direct messages to this user. Default false. **/
+    /** Forhindrer andre users i at sende direkte beskeder til denne user. Standard er false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Optional configuration for user badges. **/
+    /** Valgfri konfiguration for user badges. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
+        /** Array af badge IDs der tildeles useren. Begrænset til 30 badges. Rækkefølgen respekteres. Dette er globale badges synlige på alle sider. **/
         badgeIds: string[]
-        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        /** Array af badge IDs scoped til den aktuelle side (urlId). Disse badges vises kun på den side, hvor de blev tildelt. **/
+        pageBadgeIds?: string[]
+        /** Hvis true, erstattes alle eksisterende viste badges med de angivne. Globale og page-scoped badges overskrives uafhængigt. Hvis false, tilføjes til eksisterende badges. **/
         override?: boolean
-        /** If true, updates badge display properties from tenant configuration. **/
+        /** Hvis true opdateres badge-visningsindstillinger fra tenant-konfigurationen. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Fakturering for SSO-brugere
+### Fakturering for SSO users
 
-SSO-brugere faktureres forskelligt baseret på deres tilladelsesflags:
+SSO users are billed differently based on their permission flags:
 
-- **Almindelige SSO-brugere**: Brugere uden admin- eller moderatortilladelser faktureres som almindelige SSO-brugere
-- **SSO-administratorer**: Brugere med `isAccountOwner` eller `isAdminAdmin` flags faktureres separat som SSO-administratorer (samme sats som almindelige tenant-administratorer)
-- **SSO-moderatorer**: Brugere med `isCommentModeratorAdmin` flag faktureres separat som SSO-moderatorer (samme sats som almindelige moderatorer)
+- **Regular SSO Users**: Users uden admin- eller moderatorrettigheder faktureres som regular SSO users
+- **SSO Admins**: Users med `isAccountOwner` eller `isAdminAdmin` flags faktureres separat som SSO Admins (samme takst som regular tenant admins)
+- **SSO Moderators**: Users med `isCommentModeratorAdmin` flag faktureres separat som SSO Moderators (samme takst som regular moderators)
 
-**Vigtigt**: For at forhindre dobbeltfakturering deduplikerer systemet automatisk SSO-brugere mod almindelige tenant-brugere og moderatorer efter e-mailadresse. Hvis en SSO-bruger har samme e-mail som en almindelig tenant-bruger eller moderator, vil de ikke blive faktureret to gange.
+**Important**: For at forhindre dobbeltfakturering deduplikerer systemet automatisk SSO users i forhold til regular tenant users og moderators ud fra e-mailadressen. Hvis en SSO user har samme email som en regular tenant user eller moderator, vil de ikke blive faktureret to gange.
 
 ### Adgangskontrol
 
-Brugere kan opdeles i grupper. Dette er hvad `groupIds`-feltet er til, og det er valgfrit.
+Users kan opdeles i grupper. Det er det, `groupIds`-feltet er til, og det er valgfrit.
 
-### @Omtaler
+### @Mentions
 
-Som standard vil `@mentions` bruge `username` til at søge efter andre sso-brugere, når `@`-tegnet skrives. Hvis `displayName` bruges, vil resultater, der matcher
-`username`, blive ignoreret, når der er et match for `displayName`, og `@mention` søgeresultaterne vil bruge `displayName`.
+Som standard bruger `@mentions` `username` til at søge efter andre sso users, når tegnet `@` tastes. Hvis `displayName` bruges, vil resultater, der matcher
+`username`, blive ignoreret, når der er et match for `displayName`, og `@mention`-søgeresultaterne vil bruge `displayName`.
 
 ### Abonnementer
 
-Med FastComments kan brugere abonnere på en side ved at klikke på klokkeikonet i kommentar-widget'en og klikke Abonner.
+Med FastComments kan users abonnere på en side ved at klikke på klokkeikonet i kommentar-widgeten og klikke på Subscribe.
 
-Med en almindelig bruger sender vi dem notifikations-e-mails baseret på deres notifikationsindstillinger.
+Med en regular user sender vi dem notifikations-e-mails baseret på deres notifikationsindstillinger.
 
-Med SSO-brugere opdeler vi dette af hensyn til bagudkompatibilitet. Brugere vil kun få sendt disse yderligere abonnementsnotifikations-
-e-mails, hvis du sætter `optedInSubscriptionNotifications` til `true`.
+Med SSO users deler vi dette op for bagudkompatibilitet. Users vil kun modtage disse ekstra abonnementsnotifikations-e-mails, hvis du sætter `optedInSubscriptionNotifications` til `true`.
 
 ### Badges
 
-Du kan tildele badges til SSO-brugere ved hjælp af `badgeConfig`-egenskaben. Badges er visuelle indikatorer, der vises ved siden af en brugers navn i kommentarer.
+Du kan tildele badges til SSO users ved hjælp af `badgeConfig`-egenskaben. Badges er visuelle indikatorer, der vises ved siden af en users navn i kommentarer.
 
-- `badgeIds` - Et array af badge-ID'er til at tildele brugeren. Disse skal være gyldige badge-ID'er oprettet i din FastComments-konto. Begrænset til 30 badges.
-- `override` - Hvis sand, vil alle eksisterende badges, der vises på kommentarer, blive erstattet med de angivne. Hvis falsk eller udeladt, vil de angivne badges blive tilføjet til eventuelle eksisterende badges.
-- `update` - Hvis sand, vil badge-visningsegenskaber blive opdateret fra tenant-konfigurationen, når brugeren logger ind.
+- `badgeIds` - Et array af badge IDs der tildeles useren. Disse er globale badges synlige på alle sider. Must be valid badge IDs created in your FastComments account. Limited to 30 badges.
+- `pageBadgeIds` - Et valgfrit array af badge IDs scoped til den aktuelle side (`urlId`). Disse badges vises kun på den side, hvor de blev tildelt. Forskellige sider kan have forskellige page-scoped badges for samme user.
+- `override` - Hvis true, vil alle eksisterende viste badges blive erstattet med de angivne. Globale og page-scoped badges overskrives uafhængigt — overskrivning af globale badges påvirker ikke page-scoped badges, og omvendt. Hvis false eller udeladt, tilføjes de angivne badges til eventuelle eksisterende badges.
+- `update` - Hvis true, opdateres badge-visningsindstillinger fra tenant-konfigurationen, hver gang user logger ind.
+
+---

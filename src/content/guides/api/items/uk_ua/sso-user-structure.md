@@ -1,10 +1,8 @@
-FastComments provides an easy to use SSO solution. Updating a user's information with the HMAC-based integration is
-as simple as having the user load the page with an updated payload.
+FastComments надає просте у використанні SSO-рішення. Оновлення інформації користувача за допомогою інтеграції на основі HMAC таке ж просте, як завантаження сторінки користувачем з оновленим payload.
 
-However, it may be desirable to manage a user outside that flow, to improve consistency of your application.
+Однак може бути бажано керувати користувачем поза цим потоком, щоб покращити послідовність вашого застосунку.
 
-The SSO User API provides a way to CRUD objects that we call SSOUsers. These objects are different from regular Users and
-kept separate for type safety.
+SSO User API надає спосіб CRUD-операцій над об'єктами, які ми називаємо SSOUsers. Ці об'єкти відрізняються від звичайних Users і зберігаються окремо заради типобезпеки.
 
 The structure for the SSOUser object is as follows:
 
@@ -23,63 +21,66 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Права адміністратора — SSO-користувачі з цим прапорцем виставляються рахунком як SSO-адміністратори (окремо від звичайних SSO-користувачів)
-    isAdminAdmin?: boolean // Права адміністратора — SSO-користувачі з цим прапорцем виставляються рахунком як SSO-адміністратори (окремо від звичайних SSO-користувачів)
-    isCommentModeratorAdmin?: boolean // Права модератора — SSO-користувачі з цим прапорцем виставляються рахунком як SSO-модератори (окремо від звичайних SSO-користувачів)
-    /** Якщо null, контроль доступу не буде застосований до користувача. Якщо порожній список, цей користувач не зможе бачити жодні сторінки або згадувати інших користувачів за допомогою @. **/
+    isAccountOwner?: boolean // Права адміністратора - SSO-користувачі з цим прапором тарифікуються як SSO-адміністратори (окремо від звичайних SSO-користувачів)
+    isAdminAdmin?: boolean // Права адміністратора - SSO-користувачі з цим прапором тарифікуються як SSO-адміністратори (окремо від звичайних SSO-користувачів)
+    isCommentModeratorAdmin?: boolean // Права модератора - SSO-користувачі з цим прапором тарифікуються як SSO-модератори (окремо від звичайних SSO-користувачів)
+    /** Якщо null, контроль доступу не буде застосований до користувача. Якщо порожній список, цей користувач не зможе бачити жодних сторінок або використовувати @mention інших користувачів. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Не дозволяти іншим користувачам бачити активність цього користувача, включно з коментарями, у його профілі. За замовчуванням true, щоб за замовчуванням забезпечити безпечні профілі. **/
+    /** Не дозволяти іншим користувачам бачити активність цього користувача, включно з коментарями, у його профілі. За замовчуванням true для забезпечення захищених профілів. **/
     isProfileActivityPrivate?: boolean
-    /** Не дозволяти іншим користувачам залишати коментарі в профілі цього користувача або бачити наявні коментарі до профілю. За замовчуванням false. **/
+    /** Не дозволяти іншим користувачам залишати коментарі в профілі цього користувача або бачити наявні коментарі профілю. За замовчуванням false. **/
     isProfileCommentsPrivate?: boolean
     /** Не дозволяти іншим користувачам надсилати цьому користувачу приватні повідомлення. За замовчуванням false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Додаткова конфігурація бейджів користувача. **/
+    /** Необов'язкова конфігурація значків користувача. **/
     badgeConfig?: {
-        /** Масив ID бейджів, які призначаються користувачу. Обмеження — 30 бейджів. Порядок зберігається. **/
+        /** Масив ID значків для призначення користувачу. Обмежено 30 значками. Порядок зберігається. Це глобальні значки, видимі на всіх сторінках. **/
         badgeIds: string[]
-        /** Якщо true, замінює всі існуючі відображувані бейджі на надані. Якщо false або відсутній, додає до існуючих бейджів. **/
+        /** Масив ID значків, обмежених поточною сторінкою (urlId). Ці значки відображаються лише на сторінці, де вони були призначені. **/
+        pageBadgeIds?: string[]
+        /** Якщо true, замінює всі існуючі відображувані значки на надані. Глобальні та сторінково-обмежені значки переоприділяються незалежно. Якщо false, додає до наявних значків. **/
         override?: boolean
-        /** Якщо true, оновлює параметри відображення бейджів згідно з конфігурацією орендаря. **/
+        /** Якщо true, оновлює властивості відображення значків згідно з конфігурацією орендаря. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Billing for SSO Users
+### Білінг для SSO-користувачів
 
-SSO users are billed differently based on their permission flags:
+SSO-користувачів тарифікують по-різному залежно від їхніх прапорців дозволів:
 
-- **Regular SSO Users**: Users without admin or moderator permissions are billed as regular SSO users
-- **SSO Admins**: Users with `isAccountOwner` or `isAdminAdmin` flags are billed separately as SSO Admins (same rate as regular tenant admins)
-- **SSO Moderators**: Users with `isCommentModeratorAdmin` flag are billed separately as SSO Moderators (same rate as regular moderators)
+- **Regular SSO Users**: Користувачі без прав адміністратора або модератора тарифікуються як звичайні SSO-користувачі
+- **SSO Admins**: Користувачі з прапорцями `isAccountOwner` або `isAdminAdmin` тарифікуються окремо як SSO Admins (такий же тариф, як для звичайних адмінів орендаря)
+- **SSO Moderators**: Користувачі з прапорцем `isCommentModeratorAdmin` тарифікуються окремо як SSO Moderators (такий же тариф, як для звичайних модераторів)
 
-**Important**: To prevent double billing, the system automatically deduplicates SSO users against regular tenant users and moderators by email address. If an SSO user has the same email as a regular tenant user or moderator, they will not be billed twice.
+**Важливо**: Щоб запобігти подвійній оплаті, система автоматично видаляє дублікати SSO-користувачів у порівнянні зі звичайними користувачами орендаря та модераторами за адресою електронної пошти. Якщо SSO-користувач має ту ж саму електронну пошту, що й звичайний користувач орендаря або модератор, за нього не буде стягнено плату двічі.
 
-### Access Control
+### Контроль доступу
 
-Users can be broken into groups. This is what the `groupIds` field is for, and is optional.
+Користувачів можна розбити на групи. Саме для цього служить поле `groupIds`, і воно необов'язкове.
 
 ### @Mentions
 
-By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
-`username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
+За замовчуванням `@mentions` використовуватиме `username` для пошуку інших sso-користувачів при введенні символу `@`. Якщо використовується `displayName`, то результати, що відповідають `username`, будуть проігноровані, коли є збіг по `displayName`, і результати пошуку @mention використовуватимуть `displayName`.
 
-### Subscriptions
+### Підписки
 
-With FastComments, users can subscribe to a page by clicking the bell icon in the comment widget and clicking Subscribe.
+У FastComments користувачі можуть підписатися на сторінку, клацнувши значок дзвінка у віджеті коментарів і натиснувши Subscribe.
 
-With a regular user, we send them notification emails based on their notification settings.
+Для звичайного користувача ми надсилаємо їм електронні листи з повідомленнями на основі його налаштувань повідомлень.
 
-With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
-emails if you set `optedInSubscriptionNotifications` to `true`.
+Для SSO-користувачів ми розділили це для зворотної сумісності. Користувачі отримуватимуть ці додаткові електронні листи з повідомленнями про підписку лише якщо ви встановите `optedInSubscriptionNotifications` в `true`.
 
-### Badges
+### Значки
 
-You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
+Ви можете призначати значки SSO-користувачам за допомогою властивості `badgeConfig`. Значки — це візуальні індикатори, які з'являються поруч із іменем користувача в коментарях.
 
-- `badgeIds` - An array of badge IDs to assign to the user. These must be valid badge IDs created in your FastComments account. Limited to 30 badges.
-- `override` - If true, all existing badges displayed on comments will be replaced with the provided ones. If false or omitted, the provided badges will be added to any existing badges.
-- `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.
+- `badgeIds` - Масив ID значків для призначення користувачу. Це глобальні значки, видимі на всіх сторінках. Повинні бути дійсними ID значків, створеними у вашому обліковому записі FastComments. Обмежено 30 значками.
+- `pageBadgeIds` - Необов'язковий масив ID значків, обмежених поточною сторінкою (`urlId`). Ці значки відображаються лише на сторінці, де вони були призначені. Різні сторінки можуть мати різні сторінково-обмежені значки для одного й того ж користувача.
+- `override` - Якщо true, всі існуючі відображувані значки будуть замінені на надані. Глобальні та сторінково-обмежені значки переоприділяються незалежно — переоприділення глобальних значків не впливає на сторінково-обмежені, і навпаки. Якщо false або не вказано, надані значки будуть додані до наявних.
+- `update` - Якщо true, властивості відображення значків будуть оновлюватися з конфігурації орендаря щоразу, коли користувач входить в систему.
+
+---

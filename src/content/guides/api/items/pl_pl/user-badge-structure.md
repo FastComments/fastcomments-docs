@@ -1,15 +1,15 @@
-`UserBadge` jest obiektem, który reprezentuje odznakę przypisaną użytkownikowi w systemie FastComments.
+`UserBadge` to obiekt, który reprezentuje odznakę przypisaną użytkownikowi w systemie FastComments.
 
-Odznaki mogą być przydzielane użytkownikom automatycznie na podstawie ich aktywności (takiej jak liczba komentarzy, czas odpowiedzi, status weterana) lub ręcznie przez administratorów strony.
+Odznaki mogą być przypisywane użytkownikom automatycznie na podstawie ich aktywności (takiej jak liczba komentarzy, czas odpowiedzi, status weterana) lub ręcznie przez administratorów serwisu.
 
-Struktura dla obiektu `UserBadge` jest następująca:
+Struktura obiektu `UserBadge` jest następująca:
 
 [inline-code-attrs-start title = 'Struktura UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
     /** Unikalny identyfikator przypisania tej odznaki użytkownikowi */
     id: string
-    /** ID użytkownika, któremu przypisano tę odznakę */
+    /** ID użytkownika, któremu przypisana jest ta odznaka */
     userId: string
     /** ID definicji odznaki z katalogu odznak najemcy */
     badgeId: string
@@ -17,7 +17,7 @@ export interface UserBadge {
     fromTenantId: string
     /** Kiedy ta odznaka została utworzona (milisekundy od epoki) */
     createdAt?: number
-    /** Kiedy użytkownik otrzymał tę odznakę (milisekundy od epoki) */
+    /** Kiedy ta odznaka została otrzymana przez użytkownika (milisekundy od epoki) */
     receivedAt?: number
     /** 
      * Typ odznaki: 
@@ -28,7 +28,7 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Dla odznak opartych na progach, wartość progu */
+    /** Dla odznak opartych na progu, wartość progu */
     threshold?: number
     /** Nazwa/etykieta odznaki */
     name?: string
@@ -38,20 +38,22 @@ export interface UserBadge {
     displayLabel?: string
     /** URL do obrazu wyświetlanego na odznace */
     displaySrc?: string
-    /** Kolor tła odznaki (kod szesnastkowy) */
+    /** Kolor tła odznaki (kod hex) */
     backgroundColor?: string
-    /** Kolor obramowania odznaki (kod szesnastkowy) */
+    /** Kolor obramowania odznaki (kod hex) */
     borderColor?: string
-    /** Kolor tekstu odznaki (kod szesnastkowy) */
+    /** Kolor tekstu odznaki (kod hex) */
     textColor?: string
-    /** Dodatkowa klasa CSS do stylizacji */
+    /** Dodatkowa klasa CSS dla stylowania */
     cssClass?: string
     /** Dla odznak weterana, próg czasu w milisekundach */
     veteranUserThresholdMillis?: number
-    /** Czy ta odznaka jest wyświetlana w komentarzach użytkownika */
+    /** Czy ta odznaka jest wyświetlana przy komentarzach użytkownika */
     displayedOnComments: boolean
     /** Kolejność wyświetlania odznaki */
     order?: number
+    /** Jeśli ustawione, ta odznaka jest wyświetlana tylko na stronie z pasującym urlId. Null dla odznak globalnych. */
+    urlId?: string | null
 }
 [inline-code-end]
 ---

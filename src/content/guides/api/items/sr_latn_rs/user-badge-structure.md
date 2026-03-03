@@ -1,19 +1,19 @@
 `UserBadge` je objekat koji predstavlja značku dodeljenu korisniku u FastComments sistemu.
 
-Značke mogu biti dodeljene korisnicima automatski na osnovu njihove aktivnosti (kao što su broj komentara, vreme odgovora, status veterana) ili ručno od strane administratora sajta.
+Značke mogu biti dodeljene korisnicima automatski na osnovu njihove aktivnosti (kao što su broj komentara, vreme odgovora, veteranski status) ili ručno od strane administratora sajta.
 
-Struktura objekta `UserBadge` je sledeća:
+Struktura za `UserBadge` objekat je sledeća:
 
-[inline-code-attrs-start title = 'Struktura objekta UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
     /** Jedinstveni identifikator za ovu dodelu značke korisniku */
     id: string
-    /** ID korisnika kome je ova značka dodeljena */
+    /** ID korisnika kojem je ova značka dodeljena */
     userId: string
-    /** ID definicije značke iz tenant-ovog kataloga */
+    /** ID definicije značke iz kataloga znački tenanta */
     badgeId: string
-    /** ID tenant-a koji je kreirao/dodelio ovu značku */
+    /** ID tenanta koji je kreirao/dodelio ovu značku */
     fromTenantId: string
     /** Kada je ova značka kreirana (milisekunde od epohe) */
     createdAt?: number
@@ -36,22 +36,24 @@ export interface UserBadge {
     description?: string
     /** Tekst koji se prikazuje na znački */
     displayLabel?: string
-    /** URL do slike koja se prikazuje na znački */
+    /** URL slike koja se prikazuje na znački */
     displaySrc?: string
-    /** Boja pozadine značke (hex kod) */
+    /** Boja pozadine za značku (hex kod) */
     backgroundColor?: string
     /** Boja ivice značke (hex kod) */
     borderColor?: string
-    /** Boja teksta značke (hex kod) */
+    /** Boja teksta na znački (hex kod) */
     textColor?: string
     /** Dodatna CSS klasa za stilizovanje */
     cssClass?: string
     /** Za veteransku značku, vremenski prag u milisekundama */
     veteranUserThresholdMillis?: number
-    /** Da li se ova značka prikazuje na korisnikovim komentarima */
+    /** Da li se ova značka prikazuje na komentarima korisnika */
     displayedOnComments: boolean
     /** Redosled prikaza značke */
     order?: number
+    /** Ako je postavljeno, ova značka se prikazuje samo na stranici sa odgovarajućim urlId. Null za globalne značke. */
+    urlId?: string | null
 }
 [inline-code-end]
 ---

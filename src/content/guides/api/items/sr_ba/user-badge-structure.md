@@ -1,26 +1,26 @@
-`UserBadge` је објекат који представља ознаку додељену кориснику у FastComments систему.
+`UserBadge` je objekat koji predstavlja značku dodijeljenu korisniku u FastComments sistemu.
 
-Ознаке могу бити аутоматски додељене корисницима на основу њихове активности (као што су број коментара, време одговора, статус ветерана) или ручно од стране администратора сајта.
+Značke se mogu automatski dodijeliti korisnicima na osnovu njihove aktivnosti (takve kao broj komentara, vrijeme odgovora, status veterana) ili ručno od strane administratora sajta.
 
-Структура објекта `UserBadge` је следећа:
+Struktura za `UserBadge` objekat je sljedeća:
 
-[inline-code-attrs-start title = 'Структура UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura objekta UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Јединствени идентификатор ове додјеле ознаке кориснику */
+    /** Jedinstveni identifikator za ovu dodjelu značke korisniku */
     id: string
-    /** ID корисника којем је ова ознака додељена */
+    /** ID korisnika kojem je ova značka dodijeljena */
     userId: string
-    /** ID дефиниције ознаке из каталога ознака тенанта */
+    /** ID definicije značke iz kataloga znački tenanta */
     badgeId: string
-    /** ID тенанта који је креирао/доделио ову ознаку */
+    /** ID tenanta koji je kreirao/dodijelio ovu značku */
     fromTenantId: string
-    /** Када је ова ознака креирана (милисекунде од епохе) */
+    /** Kada je ova značka kreirana (milisekunde od epohe) */
     createdAt?: number
-    /** Када је корисник примио ову ознаку (милисекунде од епохе) */
+    /** Kada je ova značka primljena od strane korisnika (milisekunde od epohe) */
     receivedAt?: number
     /** 
-     * Тип ознаке: 
+     * Tip značke: 
      * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
@@ -28,29 +28,31 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** За ознаке засноване на прагу, вредност прага */
+    /** Za značke zasnovane na pragu, vrijednost praga */
     threshold?: number
-    /** Назив/натпис ознаке */
+    /** Naziv/oznaka značke */
     name?: string
-    /** Детаљан опис ознаке */
+    /** Detaljan opis značke */
     description?: string
-    /** Текст који се приказује на ознаци */
+    /** Tekst koji se prikazuje na znački */
     displayLabel?: string
-    /** URL до слике која се приказује на ознаци */
+    /** URL slike prikazane na znački */
     displaySrc?: string
-    /** Боја позадине ознаке (хекс код) */
+    /** Boja pozadine značke (hex kod) */
     backgroundColor?: string
-    /** Боја границе ознаке (хекс код) */
+    /** Boja okvira značke (hex kod) */
     borderColor?: string
-    /** Боја текста на ознаци (хекс код) */
+    /** Boja teksta značke (hex kod) */
     textColor?: string
-    /** Додатна CSS класа за стилизацију */
+    /** Dodatna CSS klasa za stilizovanje */
     cssClass?: string
-    /** За ветеранске ознаке, временски праг у милисекундама */
+    /** Za veteranske značke, vremenski prag u milisekundama */
     veteranUserThresholdMillis?: number
-    /** Да ли се ова ознака приказује на корисниковим коментарима */
+    /** Da li se ova značka prikazuje na korisnikovim komentarima */
     displayedOnComments: boolean
-    /** Редослед приказа ознаке */
+    /** Redoslijed prikaza značke */
     order?: number
+    /** Ako je postavljeno, ova značka se prikazuje samo na stranici sa odgovarajućim urlId. Null za globalne značke. */
+    urlId?: string | null
 }
 [inline-code-end]

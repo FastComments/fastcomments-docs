@@ -1,23 +1,23 @@
-`UserBadge` FastComments sisteminde bir kullanıcıya atanan bir rozeti temsil eden bir nesnedir.
+`UserBadge`, FastComments sisteminde bir kullanıcıya atanan rozeti temsil eden bir nesnedir.
 
-Rozetler, kullanıcı etkinliğine (such as comment count, reply time, veteran status) göre otomatik olarak veya site yöneticileri tarafından elle atanabilir.
+Rozetler, kullanıcı etkinliğine (örneğin yorum sayısı, yanıt süresi, veteran durumu) göre otomatik olarak veya site yöneticileri tarafından manuel olarak kullanıcılara atanabilir.
 
-`The structure for the `UserBadge` object is as follows:` -> `UserBadge` nesnesinin yapısı aşağıdaki gibidir:
+`UserBadge` nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'UserBadge Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Bu kullanıcı rozet atamasının benzersiz tanımlayıcı */
+    /** Bu kullanıcı rozet atamasının benzersiz tanımlayıcısı */
     id: string
-    /** Bu rozetin atandığı kullanıcının ID'si */
+    /** Bu rozeti alan kullanıcının ID'si */
     userId: string
-    /** Kiracının rozet kataloğundan rozet tanımının ID'si */
+    /** Tenant'ın rozet kataloğundan rozet tanımının ID'si */
     badgeId: string
-    /** Bu rozeti oluşturan/atan kiracının ID'si */
+    /** Bu rozeti oluşturan/atan tenant'ın ID'si */
     fromTenantId: string
-    /** Bu rozetin oluşturulduğu zaman (epoch'tan bu yana milisaniye) */
+    /** Bu rozetin oluşturulduğu zaman (epoch'tan itibaren milisaniye) */
     createdAt?: number
-    /** Bu rozetin kullanıcı tarafından alındığı zaman (epoch'tan bu yana milisaniye) */
+    /** Bu rozetin kullanıcı tarafından alındığı zaman (epoch'tan itibaren milisaniye) */
     receivedAt?: number
     /** 
      * Rozet türü: 
@@ -28,7 +28,7 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Eşiğe dayalı rozetler için eşik değeri */
+    /** Eşik tabanlı rozetler için eşik değeri */
     threshold?: number
     /** Rozetin adı/etiketi */
     name?: string
@@ -36,21 +36,24 @@ export interface UserBadge {
     description?: string
     /** Rozette gösterilen metin */
     displayLabel?: string
-    /** Rozette gösterilen resmin URL'si */
+    /** Rozette gösterilen görselin URL'si */
     displaySrc?: string
     /** Rozet için arka plan rengi (hex kodu) */
     backgroundColor?: string
-    /** Rozet için kenarlık rengi (hex kodu) */
+    /** Rozet için çerçeve rengi (hex kodu) */
     borderColor?: string
     /** Rozet için metin rengi (hex kodu) */
     textColor?: string
     /** Stil için ek CSS sınıfı */
     cssClass?: string
-    /** Veteran rozetleri için zaman eşiği (milisaniye) */
+    /** Veteran rozetleri için zaman eşiği (milisaniye cinsinden) */
     veteranUserThresholdMillis?: number
-    /** Bu rozetin kullanıcının yorumlarında görüntülenip görüntülenmediği */
+    /** Bu rozetin kullanıcının yorumlarında gösterilip gösterilmediği */
     displayedOnComments: boolean
     /** Rozetin gösterim sırası */
     order?: number
+    /** Belirlenmişse, bu rozet yalnızca eşleşen urlId'ye sahip sayfada gösterilir. Genel rozetler için null. */
+    urlId?: string | null
 }
 [inline-code-end]
+---

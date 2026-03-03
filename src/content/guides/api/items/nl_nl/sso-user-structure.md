@@ -1,6 +1,6 @@
-FastComments biedt een eenvoudig te gebruiken SSO-oplossing. Het bijwerken van de informatie van een gebruiker met de HMAC-gebaseerde integratie is zo eenvoudig als de gebruiker de pagina laten laden met een bijgewerkte payload.
+FastComments biedt een gebruiksvriendelijke SSO-oplossing. Het bijwerken van de gegevens van een gebruiker met de HMAC-gebaseerde integratie is zo eenvoudig als de gebruiker de pagina laten laden met een bijgewerkte payload.
 
-Het kan echter wenselijk zijn om een gebruiker buiten dat proces te beheren, om de consistentie van uw applicatie te verbeteren.
+Het kan echter wenselijk zijn om een gebruiker buiten die flow te beheren, om de consistentie van uw applicatie te verbeteren.
 
 De SSO User API biedt een manier om CRUD-bewerkingen uit te voeren op objecten die we SSOUsers noemen. Deze objecten verschillen van reguliere Users en worden apart gehouden voor typeveiligheid.
 
@@ -21,26 +21,28 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Bevoegdheid voor beheerder - SSO-gebruikers met deze vlag worden gefactureerd als SSO-beheerders (apart van reguliere SSO-gebruikers)
-    isAdminAdmin?: boolean // Bevoegdheid voor beheerder - SSO-gebruikers met deze vlag worden gefactureerd als SSO-beheerders (apart van reguliere SSO-gebruikers)
-    isCommentModeratorAdmin?: boolean // Bevoegdheid voor moderator - SSO-gebruikers met deze vlag worden gefactureerd als SSO-moderators (apart van reguliere SSO-gebruikers)
-    /** Als null wordt Access Control niet op de gebruiker toegepast. Als het een lege lijst is, kan deze gebruiker geen pagina's zien of andere gebruikers @mentionen. **/
+    isAccountOwner?: boolean // Admin-permissie - SSO-gebruikers met deze vlag worden gefactureerd als SSO Admins (apart van reguliere SSO-gebruikers)
+    isAdminAdmin?: boolean // Admin-permissie - SSO-gebruikers met deze vlag worden gefactureerd als SSO Admins (apart van reguliere SSO-gebruikers)
+    isCommentModeratorAdmin?: boolean // Moderator-permissie - SSO-gebruikers met deze vlag worden gefactureerd als SSO Moderators (apart van reguliere SSO-gebruikers)
+    /** Als null is, wordt Toegangscontrole niet toegepast op de gebruiker. Als het een lege lijst is, kan deze gebruiker geen pagina's zien of andere gebruikers @mentionen. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Voorkom dat andere gebruikers de activiteit van deze gebruiker, inclusief reacties, op zijn/haar profiel zien. Standaard is true om standaard veilige profielen te bieden. **/
+    /** Laat andere gebruikers de activiteit van deze gebruiker, inclusief reacties, niet zien op zijn profiel. Standaard is true om profielen standaard veilig te houden. **/
     isProfileActivityPrivate?: boolean
-    /** Voorkom dat andere gebruikers reacties plaatsen op het profiel van de gebruiker, of bestaande profielreacties zien. Standaard false. **/
+    /** Laat andere gebruikers geen opmerkingen achterlaten op het profiel van de gebruiker, of bestaande profielreacties zien. Standaard false. **/
     isProfileCommentsPrivate?: boolean
-    /** Voorkom dat andere gebruikers directe berichten naar deze gebruiker sturen. Standaard false. **/
+    /** Laat andere gebruikers geen privéberichten naar deze gebruiker sturen. Standaard false. **/
     isProfileDMDisabled?: boolean
     karma?: number
     /** Optionele configuratie voor gebruikersbadges. **/
     badgeConfig?: {
-        /** Array met badge-IDs om aan de gebruiker toe te wijzen. Beperkt tot 30 badges. Volgorde wordt gerespecteerd. **/
+        /** Array met badge-ID's om aan de gebruiker toe te wijzen. Beperkt tot 30 badges. Volgorde wordt gerespecteerd. Dit zijn globale badges zichtbaar op alle pagina's. **/
         badgeIds: string[]
-        /** Als true vervangt dit alle bestaande weergegeven badges door de opgegeven. Als false, worden ze toegevoegd aan bestaande badges. **/
+        /** Array met badge-ID's die zijn gescopeerd naar de huidige pagina (urlId). Deze badges worden alleen weergegeven op de pagina waar ze zijn toegewezen. **/
+        pageBadgeIds?: string[]
+        /** Als true, vervangt dit alle bestaande weergegeven badges door de opgegeven. Globale en pagina-gescopeerde badges worden onafhankelijk overschreven. Als false, worden ze toegevoegd aan bestaande badges. **/
         override?: boolean
-        /** Als true werkt dit de weergave-eigenschappen van badges bij vanuit de tenantconfiguratie. **/
+        /** Als true, worden de weergave-eigenschappen van badges bijgewerkt vanuit de tenantconfiguratie. **/
         update?: boolean
     }
 }
@@ -48,36 +50,35 @@ interface SSOUser {
 
 ### Facturering voor SSO-gebruikers
 
-SSO-gebruikers worden anders gefactureerd afhankelijk van hun permissievlaggen:
+SSO-gebruikers worden verschillend gefactureerd op basis van hun permissievlaggen:
 
-- **Reguliere SSO-gebruikers**: Gebruikers zonder admin- of moderatorrechten worden gefactureerd als reguliere SSO-gebruikers
-- **SSO-beheerders**: Gebruikers met de `isAccountOwner` of `isAdminAdmin` vlaggen worden apart gefactureerd als SSO-beheerders (zelfde tarief als reguliere tenantbeheerders)
-- **SSO-moderators**: Gebruikers met de `isCommentModeratorAdmin` vlag worden apart gefactureerd als SSO-moderators (zelfde tarief als reguliere moderators)
+- **Regular SSO Users**: Gebruikers zonder admin- of moderatorrechten worden gefactureerd als reguliere SSO-gebruikers
+- **SSO Admins**: Gebruikers met `isAccountOwner` of `isAdminAdmin` vlaggen worden apart gefactureerd als SSO Admins (zelfde tarief als reguliere tenant-beheerders)
+- **SSO Moderators**: Gebruikers met de `isCommentModeratorAdmin` vlag worden apart gefactureerd als SSO Moderators (zelfde tarief als reguliere moderators)
 
-**Belangrijk**: Om dubbele facturatie te voorkomen, dedupliceert het systeem automatisch SSO-gebruikers ten opzichte van reguliere tenantgebruikers en moderators op basis van e-mailadres. Als een SSO-gebruiker hetzelfde e-mailadres heeft als een reguliere tenantgebruiker of moderator, zullen ze niet twee keer gefactureerd worden.
+**Belangrijk**: Om dubbele facturering te voorkomen, dedupliceert het systeem automatisch SSO-gebruikers ten opzichte van reguliere tenant-gebruikers en moderators op basis van e-mailadres. Als een SSO-gebruiker hetzelfde e-mailadres heeft als een reguliere tenant-gebruiker of moderator, wordt er niet twee keer gefactureerd.
 
 ### Toegangscontrole
 
-Gebruikers kunnen in groepen worden ingedeeld. Hiervoor is het veld `groupIds` bedoeld, en het is optioneel.
+Gebruikers kunnen in groepen worden verdeeld. Hiervoor is het veld `groupIds` bedoeld, en het is optioneel.
 
-### @Vermeldingen
+### @Mentions
 
-Standaard zal `@mentions` `username` gebruiken om naar andere SSO-gebruikers te zoeken wanneer het `@`-teken wordt getypt. Als `displayName` wordt gebruikt, zullen resultaten die overeenkomen met `username` worden genegeerd wanneer er een match is voor `displayName`, en zullen de `@mention`-zoekresultaten `displayName` gebruiken.
+Standaard zullen `@mentions` `username` gebruiken om andere sso-gebruikers te doorzoeken wanneer het `@` teken wordt getypt. Als `displayName` wordt gebruikt, worden resultaten die overeenkomen met `username` genegeerd wanneer er een overeenkomst is voor `displayName`, en zullen de `@mention`-zoekresultaten `displayName` gebruiken.
 
 ### Abonnementen
 
-Met FastComments kunnen gebruikers zich abonneren op een pagina door op het belpictogram in de commentaarwidget te klikken en op Abonneren te klikken.
+Met FastComments kunnen gebruikers zich op een pagina abonneren door op het belpictogram in de reactie-widget te klikken en op Abonneren te klikken.
 
-Bij een reguliere gebruiker sturen we ze notificatie-e-mails op basis van hun notificatie-instellingen.
+Bij een reguliere gebruiker sturen we notificatie-e-mails op basis van hun notificatie-instellingen.
 
-Bij SSO-gebruikers hebben we dit opgesplitst voor achterwaartse compatibiliteit. Gebruikers zullen deze extra abonnementsmeldingen alleen ontvangen als u `optedInSubscriptionNotifications` op `true` zet.
+Bij SSO-gebruikers splitsen we dit om achterwaartse compatibiliteit te behouden. Gebruikers krijgen deze aanvullende abonnementsmeldings-e-mails alleen als u `optedInSubscriptionNotifications` op `true` zet.
 
 ### Badges
 
-U kunt badges toewijzen aan SSO-gebruikers met de eigenschap `badgeConfig`. Badges zijn visuele indicatoren die naast de naam van een gebruiker bij reacties verschijnen.
+U kunt badges toewijzen aan SSO-gebruikers met behulp van de `badgeConfig`-eigenschap. Badges zijn visuele indicaties die naast de naam van een gebruiker in reacties verschijnen.
 
-- `badgeIds` - Een array met badge-IDs om aan de gebruiker toe te wijzen. Deze moeten geldige badge-IDs zijn die in uw FastComments-account zijn aangemaakt. Beperkt tot 30 badges.
-- `override` - Als true worden alle bestaande badges die bij reacties worden weergegeven vervangen door de opgegeven badges. Als false of weggelaten, worden de opgegeven badges toegevoegd aan eventuele bestaande badges.
-- `update` - Als true worden de weergave-eigenschappen van badges bij elke login van de gebruiker bijgewerkt vanuit de tenantconfiguratie.
-
----
+- `badgeIds` - Een array met badge-ID's om aan de gebruiker toe te wijzen. Dit zijn globale badges zichtbaar op alle pagina's. Moeten geldige badge-IDs zijn die in uw FastComments-account zijn gemaakt. Beperkt tot 30 badges.
+- `pageBadgeIds` - Een optionele array met badge-ID's die zijn gescopeerd naar de huidige pagina (`urlId`). Deze badges worden alleen weergegeven op de pagina waar ze zijn toegewezen. Verschillende pagina's kunnen verschillende pagina-gescopeerde badges hebben voor dezelfde gebruiker.
+- `override` - Als true, worden alle bestaande weergegeven badges vervangen door de opgegeven. Globale en pagina-gescopeerde badges worden onafhankelijk overschreven — het overschrijven van globale badges heeft geen effect op pagina-gescopeerde badges, en omgekeerd. Als false of weggelaten, worden de opgegeven badges toegevoegd aan eventuele bestaande badges.
+- `update` - Als true, worden de weergave-eigenschappen van badges bij elke login van de gebruiker bijgewerkt vanuit de tenantconfiguratie.

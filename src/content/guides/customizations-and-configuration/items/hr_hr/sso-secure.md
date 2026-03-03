@@ -2,106 +2,118 @@
 
 FastComments Secure SSO koristi HMAC-SHA256 enkripciju kao mehanizam za implementaciju SSO. Prvo ćemo proći kroz ukupnu arhitekturu, dati primjere i detaljne korake.
 
-Postoji i dokumentacija u vezi migracije s drugih pružatelja usluga koji imaju slične SSO mehanizme, te razlike.
+Također postoji i dokumentacija koja opisuje migraciju s drugih pružatelja sličnih SSO mehanizama, i razlike.
 
 Tijek izgleda ovako:
 
 <div class="screenshot white-bg">
-    <div class="title">Secure SSO tok</div>
-    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Dijagram Secure SSO" />
+    <div class="title">Tijek sigurnog SSO</div>
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Dijagram sigurnog SSO" />
 </div>
 
-Budući da Secure SSO uključuje full-stack razvoj, puni radni primjeri koda u Java/Spring, NodeJS/Express i vanilla PHP su trenutno <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">na GitHubu</a>.
+Budući da Secure SSO uključuje full-stack razvoj, potpuni radni primjeri koda u Java/Spring, NodeJS/Express i vanilla PHP trenutno su <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">na GitHubu</a>.
 
-Iako koristimo ExpressJS u NodeJS primjeru i Spring u Java primjeru, u tim runtime okruženjima nisu potrebne dodatne biblioteke/okviri za implementaciju FastComments SSO - ugrađeni kriptografski paketi su dovoljni.
+Iako koristimo ExpressJS u NodeJS primjeru i Spring u Java primjeru, u tim runtime-ovima nisu potrebni posebni framework-i/biblioteke za implementaciju FastComments SSO - rade nativni crypto paketi.
 
-Ne morate pisati nove API krajnje točke s FastComments SSO. Jednostavno enkriptirajte korisnikove informacije koristeći svoj tajni ključ i proslijedite payload u komentar widget.
+Ne morate pisati nikakve nove API endpoint-e s FastComments SSO. Jednostavno enkriptirajte informacije o korisniku koristeći svoj tajni ključ i proslijedite payload u comment widget.
 
-#### Nabavite svoj API tajni ključ
+#### Dohvatite svoj API tajni ključ
 
-Svoj API Secret možete dobiti s <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">ove stranice</a>. Ovu stranicu također možete pronaći tako da odete na My Account, kliknete na pločicu API/SSO, a zatim kliknete "Get API Secret Key".
+Vaš API tajni ključ možete dohvatiti s <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">ove stranice</a>. Ovu stranicu također možete pronaći odlaskom na Moj račun, klikom na pločicu API/SSO, a zatim klikom na "Preuzmi API tajni ključ".
 
 #### Parametri widgeta za komentare
 
-Dokumentacija visokog nivoa za API komentarskog widgeta može se pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">ovdje</a>.
+Visokonivodna API dokumentacija za comment widget može se pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">ovdje</a>.
 
-Idemo detaljnije objasniti što ti parametri znače.
+Idemo detaljnije što ti parametri znače.
 
-Komentarski widget prima konfiguracijski objekt - već prosljeđujete ovaj objekt ako koristite FastComments za prosljeđivanje vašeg customer id (nazvan tenantId).
+Comment widget prima konfiguracijski objekt - već prosljeđujete ovaj objekt ako koristite FastComments za prosljeđivanje vašeg identifikatora kupca (koji se zove tenantId).
 
-Da biste omogućili SSO, proslijedite novi objekt "sso", koji mora sadržavati sljedeće parametre. Vrijednosti bi trebale biti generirane na strani servera.
+Da biste omogućili SSO, proslijedite novi objekt "sso", koji mora imati sljedeće parametre. Vrijednosti bi trebale biti generirane na serverskoj strani.
 
-- userDataJSONBase64: Podaci korisnika u JSON formatu, koji su zatim Base64 kodirani.
-- verificationHash: HMAC-SHA256 hash kreiran od UNIX_TIME_MILLIS + userDataJSONBase64.
-- timestamp: Epoch timestamp, u **milisekundama**. Ne smije biti u budućnosti, niti više od dva dana u prošlosti.
-- loginURL: URL koji komentarski widget može prikazati za prijavu korisnika.
-- logoutURL: URL koji komentarski widget može prikazati za odjavu korisnika.
-- loginCallback: Kada je pruženo umjesto login URL-a, funkcija koju će komentarski widget pozvati pri kliku na gumb za prijavu.
-- logoutCallback: Kada je pruženo umjesto logout URL-a, funkcija koju će komentarski widget pozvati pri kliku na gumb za odjavu.
+- userDataJSONBase64: Podaci korisnika u JSON formatu, koji se zatim Base64 enkodiraju.
+- verificationHash: HMAC-SHA256 hash kreiran iz UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Epoch timestamp, u **milisekundama**. Ne smije biti u budućnosti niti stariji više od dva dana.
+- loginURL: URL koji comment widget može prikazati za prijavu korisnika.
+- logoutURL: URL koji comment widget može prikazati za odjavu korisnika.
+- loginCallback: Kada je pruženo umjesto login URL-a, funkcija koju će comment widget pozvati pri kliku na gumb za prijavu.
+- logoutCallback: Kada je pruženo umjesto logout URL-a, funkcija koju će comment widget pozvati pri kliku na gumb za odjavu.
 
 [code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
 
-#### Objekt korisnika
+#### The User Object
 
-The User object contains the following schema:
 [inline-code-attrs-start title = 'Objekt korisnika'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     /** Obavezno. Maksimalno 1k znakova. **/
     id: string;
-    /** Obavezno. Maksimalno 1k znakova. Napomena: Mora biti jedinstven. **/
+    /** Obavezno. Maksimalno 1k znakova. Napomena: Mora biti jedinstveno. **/
     email: string;
-    /** Obavezno. Maksimalno 1k znakova. Napomena: Korisničko ime ne može biti e-adresa. Ne mora biti jedinstveno. **/
+    /** Obavezno. Maksimalno 1k znakova. Napomena: Korisničko ime ne može biti email. Ne mora biti jedinstveno. **/
     username: string;
-    /** Opcionalno. Maks. 3k znakova za URL-ove. Zadano je s gravatara temeljeno na e-pošti. Podržava 64 kodirane slike, u tom slučaju ograničenje je 50k znakova. **/ 
+    /** Opcionalno. Maksimalno 3k znakova za URL-ove. Zadano dolazi iz Gravatara na temelju emaila. Podržava 64 kodirane slike, u kojem slučaju ograničenje je 50k znakova. **/ 
     avatar?: string;
-    /** Opcionalno. Zadano false. **/
+    /** Opcionalno. Zadana vrijednost je false. **/
     optedInNotifications?: boolean;
-    /** Opcionalno. Zadano false. **/
+    /** Opcionalno. Zadana vrijednost je false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Opcionalno. Maks. 100 znakova. Ovaj će se naziv prikazati uz njihovo ime. Zadano je Administrator/Moderator kada je primjenjivo. **/
+    /** Opcionalno. Maksimalno 100 znakova. Ova oznaka će se prikazati pored njihovog imena. Zadano je Administrator/Moderator kad je primjenjivo. **/
     displayLabel?: string;
-    /** Opcionalno. Maks. 500 znakova. Ovo će se prikazati umjesto korisničkog imena. **/
+    /** Opcionalno. Maksimalno 500 znakova. Ovo će se prikazati umjesto korisničkog imena. **/
     displayName?: string;
-    /** Opcionalno. Maks. 2k znakova. Ime korisnika će voditi na ovo. **/
+    /** Opcionalno. Maksimalno 2k znakova. Ime korisnika će voditi na ovu adresu. **/
     websiteUrl?: string;
-    /** Opcionalno. Do 100 grupa po korisniku. ID grupe ne smije biti dulji od 50 znakova. **/
+    /** Opcionalno. Do 100 grupa po korisniku. ID grupe ne smije biti duži od 50 znakova. **/
     groupIds?: string[];
     /** Opcionalno. Označava korisnika kao administratora. **/
     isAdmin?: boolean;
     /** Opcionalno. Označava korisnika kao moderatora. **/
     isModerator?: boolean;
-    /** Opcionalno, zadano true. Postavite na false da omogućite karticu "aktivnost" u korisničkom profilu. **/
+    /** Opcionalno, zadano true. Postavite na false da biste omogućili karticu 'aktivnost' u profilu korisnika. **/
     isProfileActivityPrivate?: boolean;
-    /** Opcionalno, zadano false. Postavite na true da onemogućite komentare na profilu. **/
+    /** Opcionalno, zadano false. Postavite na true da biste onemogućili komentare u profilu. **/
     isProfileCommentsPrivate?: boolean;
-    /** Opcionalno, zadano false. Postavite na true da onemogućite slanje izravnih poruka ovom korisniku. **/
+    /** Opcionalno, zadano false. Postavite na true da biste onemogućili slanje direktnih poruka ovom korisniku. **/
     isProfileDMDisabled?: boolean;
+    /** Opcionalna konfiguracija za značke korisnika. **/
+    badgeConfig?: {
+        /** Niz globalnih ID-ova znački za dodjelu. Ograničeno na 30 znački. Redoslijed se poštuje. **/
+        badgeIds: string[];
+        /** Niz ID-ova znački ograničenih na trenutnu stranicu (urlId). Prikazuju se samo na dodijeljenoj stranici. **/
+        pageBadgeIds?: string[];
+        /** Ako je true, zamjenjuje postojeće prikazane značke. Globalne i na stranici ograničene značke nadjačavaju se neovisno. **/
+        override?: boolean;
+        /** Ako je true, ažurira prikazne osobine znački iz konfiguracije tenanta. **/
+        update?: boolean;
+    };
 }
 [inline-code-end]
 
-#### Moderatori i administratori
+#### Moderators and Administrators
 
-For admins and moderators, pass the respective `isAdmin` or `isModerator` flags in the `SSOUser` object.
+Za administratore i moderatore, proslijedite odgovarajuće flagove `isAdmin` ili `isModerator` u `SSOUser` objektu.
 
-#### Obavijesti
+#### Notifications
 
-To enable or disable notifications, set the value of `optedInNotifications` to `true` or `false` respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+Da biste omogućili ili onemogućili obavijesti, postavite vrijednost `optedInNotifications` na `true` ili `false`. Prvi put kada korisnik učita stranicu s ovom vrijednošću u SSO payloadu, njegove postavke obavijesti bit će ažurirane.
 
-Additionally, if you want users to receive notification emails for activity on pages they subscribed to (as opposed to just in-app notifications), then set `optedInSubscriptionNotifications` to `true`.
+Dodatno, ako želite da korisnici primaju email obavijesti o aktivnostima na stranicama na koje su se pretplatili (za razliku od samo in-app obavijesti), postavite `optedInSubscriptionNotifications` na `true`.
 
-#### VIP korisnici i posebne oznake
+#### VIP Users & Special Labels
 
-You can display a special label next to the user's name by using the optional "displayLabel" field.
+Možete prikazati posebnu oznaku pored imena korisnika koristeći opcionalno polje "displayLabel".
 
 #### Neautentificirani korisnici
 
-To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+Za predstavljanje neautentificiranog korisnika, jednostavno ne popunjavajte userDataJSONBase64, verificationHash niti timestamp. Osigurajte loginURL.
 
-These users will not be able to comment, and instead will be presented with a login message (message, link, or button, depending on configuration).
+Ti korisnici neće moći komentirati, već će im se prikazati poruka za prijavu (poruka, link ili gumb, ovisno o konfiguraciji).
 
 #### Izravni primjeri serijalizacije i hashiranja podataka korisnika
 
-More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovdje</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovdje</a> (java) and <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovdje</a> (php).
+Više detalja i primjeri dostupni su <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovdje</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovdje</a> (java) i <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovdje</a> (php).
 
-Razumijemo da svaka integracija može biti složen i bolan proces. Ne oklijevajte kontaktirati svog predstavnika ili koristiti <a href="https://fastcomments.com/auth/my-account/help" target="_blank">stranicu za podršku</a>.
+Razumijemo da svaka integracija može biti kompliciran i bolan proces. Ne oklijevajte kontaktirati svog predstavnika ili koristiti <a href="https://fastcomments.com/auth/my-account/help" target="_blank">stranicu podrške</a>.
+
+---

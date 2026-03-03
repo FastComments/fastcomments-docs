@@ -1,12 +1,11 @@
-FastComments מספק פתרון SSO קל לשימוש. עדכון מידע משתמש עם אינטגרציה מבוססת HMAC הוא
-פשוט כמו לגרום למשתמש לטעון את העמוד עם מטען מעודכן.
+FastComments מספק פתרון SSO קל לשימוש. עדכון המידע של משתמש בעזרת האינטגרציה מבוססת HMAC הוא
+פשוט כמו לגרום למשתמש לטעון את הדף עם מטען מעודכן.
 
-עם זאת, ייתכן שיהיה רצוי לנהל משתמש מחוץ לזרימה זו, כדי לשפר את עקביות האפליקציה שלך.
+עם זאת, ייתכן ותרצו לנהל משתמש מחוץ לזרימה זו, כדי לשפר את העקביות של היישום שלכם.
 
-ה-API של משתמש SSO מספק דרך לבצע פעולות CRUD על אובייקטים שאנחנו קוראים להם SSOUsers. אובייקטים אלה שונים ממשתמשים רגילים ו
-נשמרים בנפרד לבטיחות טיפוסים.
+ממשק ה-SSO User API מספק דרך לבצע CRUD על אובייקטים שאנו קוראים להם SSOUsers. אובייקטים אלה שונים ממשתמשים רגילים ונשמרים בנפרד למען בטיחות טיפוסים.
 
-המבנה עבור אובייקט SSOUser הוא כדלקמן:
+המבנה של אובייקט SSOUser הוא כדלקמן:
 
 [inline-code-attrs-start title = 'מבנה SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,26 +22,28 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
-    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
+    isAccountOwner?: boolean // הרשאת מנהל - משתמשי SSO עם דגל זה יחויבו כ-SSO Admins (נפרדים ממשתמשי SSO רגילים)
+    isAdminAdmin?: boolean // הרשאת מנהל - משתמשי SSO עם דגל זה יחויבו כ-SSO Admins (נפרדים ממשתמשי SSO רגילים)
+    isCommentModeratorAdmin?: boolean // הרשאת מודרציה - משתמשי SSO עם דגל זה יחויבו כ-SSO Moderators (נפרדים ממשתמשי SSO רגילים)
+    /** אם null, בקרת גישה לא תיושם על המשתמש. אם רשימה ריקה, משתמש זה לא יוכל לראות שום דפים או @mention משתמשים אחרים. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
+    /** אל תאפשר למשתמשים אחרים לראות את פעילות המשתמש הזה, כולל תגובות, בפרופיל שלו. ברירת המחדל היא true כדי לספק פרופילים מאובטחים כברירת מחדל. **/
     isProfileActivityPrivate?: boolean
-    /** Don't let other users leave comments on the user's profile, or see existing profile comments. Default false. **/
+    /** אל תאפשר למשתמשים אחרים להשאיר תגובות בפרופיל של המשתמש, או לראות תגובות פרופיל קיימות. ברירת המחדל false. **/
     isProfileCommentsPrivate?: boolean
-    /** Don't let other users send direct messages to this user. Default false. **/
+    /** אל תאפשר למשתמשים אחרים לשלוח הודעות ישירות למשתמש זה. ברירת המחדל false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Optional configuration for user badges. **/
+    /** תצורה אופציונלית לסמלי המשתמש. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
+        /** מערך מזהי סמלים שיוקצו למשתמש. מוגבל ל-30 סמלים. הסדר נשמר. אלו סמלים גלובליים הנראים בכל הדפים. **/
         badgeIds: string[]
-        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        /** מערך מזהי סמלים המוגדרים לדף הנוכחי (urlId). סמלים אלו מוצגים רק בעמוד שבו הוקצו. **/
+        pageBadgeIds?: string[]
+        /** אם true, מחליף את כל הסמלים המוצגים הקיימים באלו שסופקו. סמלים גלובליים וסמלים ספציפיים לדף מוחלפים באופן עצמאי. אם false, מוסיף לסמלים הקיימים. **/
         override?: boolean
-        /** If true, updates badge display properties from tenant configuration. **/
+        /** אם true, מעדכן תכונות תצוגת הסמל מתצורת השוכר. **/
         update?: boolean
     }
 }
@@ -50,36 +51,35 @@ interface SSOUser {
 
 ### חיוב עבור משתמשי SSO
 
-משתמשי SSO מחויבים בצורה שונה בהתבסס על דגלי ההרשאות שלהם:
+משתמשי SSO מחוייבים באופן שונה בהתאם לדגלי ההרשאה שלהם:
 
-- **משתמשי SSO רגילים**: משתמשים ללא הרשאות מנהל או מנהל תוכן מחויבים כמשתמשי SSO רגילים
-- **מנהלי SSO**: משתמשים עם דגלי `isAccountOwner` או `isAdminAdmin` מחויבים בנפרד כמנהלי SSO (אותו תעריף כמנהלי שוכר רגילים)
-- **מנהלי תוכן SSO**: משתמשים עם דגל `isCommentModeratorAdmin` מחויבים בנפרד כמנהלי תוכן SSO (אותו תעריף כמנהלי תוכן רגילים)
+- **משתמשי SSO רגילים**: משתמשים ללא הרשאות מנהל או מודרציה מחוייבים כמשתמשי SSO רגילים
+- **מנהלי SSO**: משתמשים עם הדגלים `isAccountOwner` או `isAdminAdmin` מחוייבים בנפרד כ-מנהלי SSO (אותו שיעור כמו מנהלי שוכר רגילים)
+- **מודרטורים של SSO**: משתמשים עם הדגל `isCommentModeratorAdmin` מחוייבים בנפרד כ-מודרטורים של SSO (אותו שיעור כמו מודרטורים רגילים)
 
-**חשוב**: כדי למנוע חיוב כפול, המערכת מסירה אוטומטית כפילויות של משתמשי SSO מול משתמשי שוכר רגילים ומנהלי תוכן לפי כתובת אימייל. אם למשתמש SSO יש את אותו אימייל כמו משתמש שוכר רגיל או מנהל תוכן, הוא לא יחויב פעמיים.
+**חשוב**: כדי למנוע חיוב כפול, המערכת מבטלת כפילויות אוטומטית בין משתמשי SSO לבין משתמשי שוכר רגילים ומודרטורים על בסיס כתובת אימייל. אם למשתמש SSO יש את אותה כתובת אימייל כמו משתמש שוכר רגיל או מודרטור, הוא לא יחויב פעמיים.
 
 ### בקרת גישה
 
-ניתן לחלק משתמשים לקבוצות. לשם כך משמש שדה `groupIds`, והוא אופציונלי.
+משתמשים יכולים להיות מחולקים לקבוצות. לזה מיועד השדה `groupIds`, והוא אופציונלי.
 
 ### @אזכורים
 
-כברירת מחדל `@mentions` ישתמש ב-`username` כדי לחפש משתמשי sso אחרים כאשר מקלידים את התו `@`. אם משתמשים ב-`displayName`, אז תוצאות התואמות
-ל-`username` יתעלמו כשיש התאמה ל-`displayName`, ותוצאות החיפוש של `@mention` ישתמשו ב-`displayName`.
+ברירת המחדל `@mentions` ישתמש ב-`username` כדי לחפש משתמשי SSO אחרים כאשר מקלידים את התו `@`. אם משתמשים ב-`displayName`, אז תוצאות התואמות ל-`username` יידחו כאשר יש התאמה ל-`displayName`, ותוצאות החיפוש של ה-`@mention` ישתמשו ב-`displayName`.
 
 ### מנויים
 
-עם FastComments, משתמשים יכולים להירשם לעמוד על ידי לחיצה על סמל הפעמון בווידג'ט התגובות ולחיצה על הירשם.
+ב-FastComments, משתמשים יכולים להירשם לדף על ידי לחיצה על סמל הפעמון בווידג'ט התגובות ולחיצה על הרשמה.
 
-עם משתמש רגיל, אנחנו שולחים להם אימיילי התראות על בסיס הגדרות ההתראות שלהם.
+עם משתמש רגיל, אנו שולחים לו אימיילי התראות על בסיס הגדרות ההתראות שלו.
 
-עם משתמשי SSO, אנחנו מפצלים זאת לתאימות לאחור. משתמשים יקבלו את אימיילי התראות המנוי הנוספים האלה
-רק אם תגדיר `optedInSubscriptionNotifications` ל-`true`.
+עם משתמשי SSO, אנו מפצלים זאת לתאימות לאחור. משתמשים יקבלו הודעות אימייל נוספות אלה רק אם תגדירו את `optedInSubscriptionNotifications` ל-`true`.
 
-### תגים
+### סמלים
 
-אתה יכול להקצות תגים למשתמשי SSO באמצעות מאפיין `badgeConfig`. תגים הם אינדיקטורים חזותיים שמופיעים ליד שם המשתמש בתגובות.
+ניתן להקצות סמלים למשתמשי SSO באמצעות השדה `badgeConfig`. סמלים הם אינדיקטורים ויזואליים המופיעים לצד שם המשתמש בתגובות.
 
-- `badgeIds` - מערך של מזהי תגים להקצאה למשתמש. אלה חייבים להיות מזהי תגים חוקיים שנוצרו בחשבון FastComments שלך. מוגבל ל-30 תגים.
-- `override` - אם true, כל התגים הקיימים המוצגים בתגובות יוחלפו באלה שסופקו. אם false או לא מצוין, התגים שסופקו יתווספו לכל תגים קיימים.
-- `update` - אם true, מאפייני תצוגת התגים יעודכנו מקונפיגורציית השוכר בכל פעם שהמשתמש מתחבר.
+- `badgeIds` - מערך מזהי סמלים שיוקצו למשתמש. אלה סמלים גלובליים הנראים בכל הדפים. חייבים להיות מזהי סמלים תקפים שנוצרו בחשבון FastComments שלך. מוגבלים ל-30 סמלים.
+- `pageBadgeIds` - מערך מזהי סמלים אופציונלי המוגדר לדף הנוכחי (`urlId`). סמלים אלה מוצגים רק בדף שבו הוקצו. דפים שונים יכולים להכיל סמלים ספציפיים לדף שונים עבור אותו משתמש.
+- `override` - אם true, כל הסמלים המוצגים הקיימים יוחלפו באלו שסופקו. סמלים גלובליים וספציפיים לדף מוחלפים באופן עצמאי — החלפה של סמלים גלובליים לא משפיעה על סמלים ספציפיים לדף, ולהפך. אם false או לא צויין, הסמלים שסופקו יתווספו לסמלים הקיימים.
+- `update` - אם true, תכונות תצוגת הסמל יעודכנו מתוך תצורת השוכר כל פעם שהמשתמש ייכנס.

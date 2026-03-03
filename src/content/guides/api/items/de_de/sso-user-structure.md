@@ -1,14 +1,14 @@
-FastComments bietet eine einfach zu verwendende SSO-Lösung. Das Aktualisieren der Benutzerinformationen mit der HMAC-basierten Integration ist
-so einfach wie das Laden der Seite mit einem aktualisierten Payload durch den Benutzer.
+FastComments provides an easy to use SSO solution. Updating a user's information with the HMAC-based integration is
+as simple as having the user load the page with an updated payload.
 
-Es kann jedoch wünschenswert sein, einen Benutzer außerhalb dieses Flows zu verwalten, um die Konsistenz Ihrer Anwendung zu verbessern.
+However, it may be desirable to manage a user outside that flow, to improve consistency of your application.
 
-Die SSO-Benutzer-API bietet eine Möglichkeit, Objekte zu erstellen, zu lesen, zu aktualisieren und zu löschen, die wir SSOUsers nennen. Diese Objekte unterscheiden sich von regulären Benutzern und
-werden aus Gründen der Typsicherheit getrennt gehalten.
+The SSO User API provides a way to CRUD objects that we call SSOUsers. These objects are different from regular Users and
+kept separate for type safety.
 
-Die Struktur des SSOUser-Objekts ist wie folgt:
+The structure for the SSOUser object is as follows:
 
-[inline-code-attrs-start title = 'SSOUser Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'SSOUser-Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     id: string
@@ -23,63 +23,66 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
-    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
-    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
+    isAccountOwner?: boolean // Administratorberechtigung - SSO-Benutzer mit diesem Flag werden als SSO-Administratoren abgerechnet (separat von regulären SSO-Benutzern)
+    isAdminAdmin?: boolean // Administratorberechtigung - SSO-Benutzer mit diesem Flag werden als SSO-Administratoren abgerechnet (separat von regulären SSO-Benutzern)
+    isCommentModeratorAdmin?: boolean // Moderatorberechtigung - SSO-Benutzer mit diesem Flag werden als SSO-Moderatoren abgerechnet (separat von regulären SSO-Benutzern)
+    /** Wenn null, wird keine Zugriffskontrolle auf den Benutzer angewendet. Bei einer leeren Liste kann dieser Benutzer keine Seiten sehen oder andere Benutzer per @mention erwähnen. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
+    /** Verhindert, dass andere Benutzer die Aktivitäten dieses Benutzers (einschließlich Kommentare) in seinem Profil sehen. Standardmäßig true, um Profile von Haus aus sicher zu machen. **/
     isProfileActivityPrivate?: boolean
-    /** Don't let other users leave comments on the user's profile, or see existing profile comments. Default false. **/
+    /** Verhindert, dass andere Benutzer Kommentare im Profil des Benutzers hinterlassen oder vorhandene Profilkommentare sehen. Standardmäßig false. **/
     isProfileCommentsPrivate?: boolean
-    /** Don't let other users send direct messages to this user. Default false. **/
+    /** Verhindert, dass andere Benutzer diesem Benutzer Direktnachrichten senden. Standardmäßig false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Optional configuration for user badges. **/
+    /** Optionale Konfiguration für Benutzerabzeichen. **/
     badgeConfig?: {
-        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. **/
+        /** Array von Abzeichen-IDs, die dem Benutzer zugewiesen werden. Auf 30 Abzeichen begrenzt. Die Reihenfolge wird beibehalten. Dies sind globale Abzeichen, die auf allen Seiten sichtbar sind. **/
         badgeIds: string[]
-        /** If true, replaces all existing displayed badges with the provided ones. If false, adds to existing badges. **/
+        /** Array von Abzeichen-IDs, die auf die aktuelle Seite (urlId) beschränkt sind. Diese Abzeichen werden nur auf der Seite angezeigt, auf der sie vergeben wurden. **/
+        pageBadgeIds?: string[]
+        /** Wenn true, werden alle vorhandenen angezeigten Abzeichen durch die bereitgestellten ersetzt. Globale und seitenbezogene Abzeichen werden unabhängig voneinander überschrieben. Wenn false, werden die bereitgestellten Abzeichen zu den bestehenden hinzugefügt. **/
         override?: boolean
-        /** If true, updates badge display properties from tenant configuration. **/
+        /** Wenn true, werden die Anzeigeeigenschaften der Abzeichen aus der Mandantenkonfiguration aktualisiert. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Abrechnung für SSO-Benutzer
+### Billing for SSO Users
 
-SSO-Benutzer werden je nach ihren Berechtigungsflags unterschiedlich abgerechnet:
+SSO users are billed differently based on their permission flags:
 
-- **Reguläre SSO-Benutzer**: Benutzer ohne Admin- oder Moderatorberechtigungen werden als reguläre SSO-Benutzer abgerechnet
-- **SSO-Admins**: Benutzer mit `isAccountOwner`- oder `isAdminAdmin`-Flags werden separat als SSO-Admins abgerechnet (gleicher Tarif wie reguläre Tenant-Admins)
-- **SSO-Moderatoren**: Benutzer mit `isCommentModeratorAdmin`-Flag werden separat als SSO-Moderatoren abgerechnet (gleicher Tarif wie reguläre Moderatoren)
+- **Regular SSO Users**: Users without admin or moderator permissions are billed as regular SSO users
+- **SSO Admins**: Users with `isAccountOwner` or `isAdminAdmin` flags are billed separately as SSO Admins (same rate as regular tenant admins)
+- **SSO Moderators**: Users with `isCommentModeratorAdmin` flag are billed separately as SSO Moderators (same rate as regular moderators)
 
-**Wichtig**: Um doppelte Abrechnung zu vermeiden, dedupliziert das System automatisch SSO-Benutzer gegen reguläre Tenant-Benutzer und Moderatoren nach E-Mail-Adresse. Wenn ein SSO-Benutzer dieselbe E-Mail wie ein regulärer Tenant-Benutzer oder Moderator hat, wird er nicht doppelt abgerechnet.
+**Important**: To prevent double billing, the system automatically deduplicates SSO users against regular tenant users and moderators by email address. If an SSO user has the same email as a regular tenant user or moderator, they will not be billed twice.
 
-### Zugriffskontrolle
+### Access Control
 
-Benutzer können in Gruppen aufgeteilt werden. Dafür ist das Feld `groupIds` da, und es ist optional.
+Users can be broken into groups. This is what the `groupIds` field is for, and is optional.
 
 ### @Mentions
 
-Standardmäßig verwendet `@mentions` `username`, um nach anderen SSO-Benutzern zu suchen, wenn das `@`-Zeichen eingegeben wird. Wenn `displayName` verwendet wird, werden Ergebnisse, die mit
-`username` übereinstimmen, ignoriert, wenn es eine Übereinstimmung für `displayName` gibt, und die `@mention`-Suchergebnisse verwenden `displayName`.
+By default `@mentions` will use `username` to search for other sso users when the `@` character is typed. If `displayName` is used, then results matching
+`username` will be ignored when there is a match for `displayName`, and the `@mention` search results will use `displayName`.
 
-### Abonnements
+### Subscriptions
 
-Mit FastComments können Benutzer eine Seite abonnieren, indem sie auf das Glockensymbol im Kommentar-Widget klicken und auf Abonnieren klicken.
+With FastComments, users can subscribe to a page by clicking the bell icon in the comment widget and clicking Subscribe.
 
-Bei einem regulären Benutzer senden wir ihm Benachrichtigungs-E-Mails basierend auf seinen Benachrichtigungseinstellungen.
+With a regular user, we send them notification emails based on their notification settings.
 
-Bei SSO-Benutzern teilen wir dies aus Gründen der Abwärtskompatibilität auf. Benutzer erhalten diese zusätzlichen Abonnement-Benachrichtigungs-E-Mails
-nur, wenn Sie `optedInSubscriptionNotifications` auf `true` setzen.
+With SSO Users, we split this up for backwards compatibility. Users will only get sent these additional subscription notification
+emails if you set `optedInSubscriptionNotifications` to `true`.
 
 ### Badges
 
-Sie können SSO-Benutzern Badges über die `badgeConfig`-Eigenschaft zuweisen. Badges sind visuelle Indikatoren, die neben dem Benutzernamen in Kommentaren erscheinen.
+You can assign badges to SSO users using the `badgeConfig` property. Badges are visual indicators that appear next to a user's name in comments.
 
-- `badgeIds` - Ein Array von Badge-IDs, die dem Benutzer zugewiesen werden sollen. Diese müssen gültige Badge-IDs sein, die in Ihrem FastComments-Konto erstellt wurden. Auf 30 Badges begrenzt.
-- `override` - Wenn wahr, werden alle vorhandenen Badges, die in Kommentaren angezeigt werden, durch die bereitgestellten ersetzt. Wenn falsch oder weggelassen, werden die bereitgestellten Badges zu allen vorhandenen Badges hinzugefügt.
-- `update` - Wenn wahr, werden Badge-Anzeigeeigenschaften aus der Tenant-Konfiguration aktualisiert, wann immer sich der Benutzer anmeldet.
+- `badgeIds` - An array of badge IDs to assign to the user. These are global badges visible on all pages. Must be valid badge IDs created in your FastComments account. Limited to 30 badges.
+- `pageBadgeIds` - An optional array of badge IDs scoped to the current page (`urlId`). These badges are only displayed on the page where they were assigned. Different pages can have different page-scoped badges for the same user.
+- `override` - If true, all existing displayed badges will be replaced with the provided ones. Global and page-scoped badges are overridden independently — overriding global badges does not affect page-scoped badges, and vice versa. If false or omitted, the provided badges will be added to any existing badges.
+- `update` - If true, badge display properties will be updated from the tenant configuration whenever the user logs in.

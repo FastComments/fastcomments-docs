@@ -1,8 +1,8 @@
-`UserBadge` je objekt koji predstavlja značku dodijeljenu korisniku u sustavu FastComments.
+`UserBadge` je objekt koji predstavlja značku dodijeljenu korisniku u FastComments sustavu.
 
-Značke se mogu dodijeliti korisnicima automatski na temelju njihove aktivnosti (kao što su broj komentara, vrijeme odgovora, status veterana) ili ručno od strane administratora stranice.
+Značke se mogu automatski dodijeliti korisnicima na temelju njihove aktivnosti (npr. broja komentara, vremena odgovora, statusa veterana) ili ručno od strane administratora stranice.
 
-Struktura objekta `UserBadge` je sljedeća:
+The structure for the `UserBadge` object is as follows:
 
 [inline-code-attrs-start title = 'Struktura UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -11,11 +11,11 @@ export interface UserBadge {
     id: string
     /** ID korisnika kojem je ova značka dodijeljena */
     userId: string
-    /** ID definicije značke iz kataloga znački tenant-a */
+    /** ID definicije značke iz kataloga znački tenanta */
     badgeId: string
-    /** ID tenanta koji je stvorio/dodijelio ovu značku */
+    /** ID tenanta koji je kreirao/dodijelio ovu značku */
     fromTenantId: string
-    /** Kada je ova značka stvorena (milisekunde od epohe) */
+    /** Kada je ova značka kreirana (milisekunde od epohe) */
     createdAt?: number
     /** Kada je ova značka primljena od strane korisnika (milisekunde od epohe) */
     receivedAt?: number
@@ -28,30 +28,31 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Za značke bazirane na pragovima, vrijednost praga */
+    /** Za značke temeljene na pragu, vrijednost praga */
     threshold?: number
-    /** Naziv/oznaka značke */
+    /** Naziv/etiketa značke */
     name?: string
     /** Detaljan opis značke */
     description?: string
-    /** Tekst prikazan na značci */
+    /** Tekst prikazan na znački */
     displayLabel?: string
-    /** URL slike prikazane na značci */
+    /** URL slike koja se prikazuje na znački */
     displaySrc?: string
-    /** Boja pozadine značke (hex kod) */
+    /** Boja pozadine za značku (heksadecimalni kod) */
     backgroundColor?: string
-    /** Boja ruba značke (hex kod) */
+    /** Boja obruba za značku (heksadecimalni kod) */
     borderColor?: string
-    /** Boja teksta značke (hex kod) */
+    /** Boja teksta za značku (heksadecimalni kod) */
     textColor?: string
     /** Dodatna CSS klasa za stiliziranje */
     cssClass?: string
     /** Za veteranske značke, vremenski prag u milisekundama */
     veteranUserThresholdMillis?: number
-    /** Prikazuje li se ova značka na korisnikovim komentarima */
+    /** Prikazuje li se ova značka na komentarima korisnika */
     displayedOnComments: boolean
     /** Redoslijed prikaza značke */
     order?: number
+    /** If set, this badge is only displayed on the page with the matching urlId. Null for global badges. */
+    urlId?: string | null
 }
 [inline-code-end]
----

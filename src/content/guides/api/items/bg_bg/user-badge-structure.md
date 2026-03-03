@@ -1,56 +1,60 @@
+---
 `UserBadge` е обект, който представлява значка, присвоена на потребител в системата FastComments.
 
-Значки могат да бъдат присвоявани на потребители автоматично въз основа на тяхната активност (като брой коментари, време за отговор, ветерански статус) или ръчно от администраторите на сайта.
+Значките могат да бъдат присвоявани на потребителите автоматично въз основа на тяхната активност (например брой коментари, време за отговор, статус на ветеран) или ръчно от администраторите на сайта.
 
 Структурата на обекта `UserBadge` е следната:
 
 [inline-code-attrs-start title = 'Структура на UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Unique identifier for this user badge assignment */
+    /** Уникален идентификатор за това присвояване на значка на потребител */
     id: string
     /** ID of the user this badge is assigned to */
     userId: string
-    /** ID of the badge definition from the tenant's badge catalog */
+    /** ID на дефиницията на значката от каталога със значки на наемателя */
     badgeId: string
-    /** ID of the tenant that created/assigned this badge */
+    /** ID на наемателя, който е създал/присвоил тази значка */
     fromTenantId: string
-    /** When this badge was created (milliseconds since epoch) */
+    /** Кога е създадена тази значка (милисекунди от епохата) */
     createdAt?: number
-    /** When this badge was received by the user (milliseconds since epoch) */
+    /** Кога потребителят е получил тази значка (милисекунди от епохата) */
     receivedAt?: number
-    /**
-     * The badge type:
-     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned,
+    /** 
+     * Тип на значката: 
+     * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
      * 11=ModeratorCommentsMarkedSpam, 12=ModeratorCommentsMarkedNotSpam, 13=RepliedToSpecificPage,
      * 14=Manual
      */
     type: number
-    /** For threshold-based badges, the threshold value */
+    /** За значки, базирани на праг, стойността на прага */
     threshold?: number
-    /** The name/label of the badge */
+    /** Името/етикетът на значката */
     name?: string
-    /** Detailed description of the badge */
+    /** Подробно описание на значката */
     description?: string
-    /** The text shown on the badge */
+    /** Текстът, показван на значката */
     displayLabel?: string
-    /** URL to an image shown on the badge */
+    /** URL към изображение, показвано на значката */
     displaySrc?: string
-    /** Background color for the badge (hex code) */
+    /** Фонов цвят за значката (hex код) */
     backgroundColor?: string
-    /** Border color for the badge (hex code) */
+    /** Цвят на рамката за значката (hex код) */
     borderColor?: string
-    /** Text color for the badge (hex code) */
+    /** Цвят на текста за значката (hex код) */
     textColor?: string
-    /** Additional CSS class for styling */
+    /** Допълнителен CSS клас за стилизиране */
     cssClass?: string
-    /** For veteran badges, the time threshold in milliseconds */
+    /** За ветерански значки, праговото време в милисекунди */
     veteranUserThresholdMillis?: number
-    /** Whether this badge is displayed on the user's comments */
+    /** Дали тази значка се показва върху коментарите на потребителя */
     displayedOnComments: boolean
-    /** The display order of the badge */
+    /** Ред на показване на значката */
     order?: number
+    /** If set, this badge is only displayed on the page with the matching urlId. Null for global badges. */
+    urlId?: string | null
 }
 [inline-code-end]
+---
