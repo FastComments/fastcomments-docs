@@ -148,6 +148,16 @@
       "subCat": "Look and Feel"
     },
     {
+      "name": "Disable Profile Comments",
+      "file": "disable-profile-comments.md",
+      "subCat": "Look and Feel"
+    },
+    {
+      "name": "Disable Profile Direct Messages",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "Look and Feel"
+    },
+    {
       "name": "Disable Success Message",
       "file": "disable-success-message.md",
       "subCat": "Look and Feel"
