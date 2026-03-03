@@ -44,7 +44,7 @@ Pour activer le SSO, fournissez un nouvel objet "sso", qui doit contenir les par
 #### L'objet utilisateur
 
 Le schéma de l'objet User contient les éléments suivants :
-[inline-code-attrs-start title = 'L'objet utilisateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L\'objet utilisateur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
     /** Obligatoire. 1k caractères max. **/

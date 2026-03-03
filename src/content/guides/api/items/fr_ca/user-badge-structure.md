@@ -4,7 +4,7 @@ Les badges peuvent être attribués aux utilisateurs automatiquement en fonction
 
 La structure de l'objet `UserBadge` est la suivante :
 
-[inline-code-attrs-start title = 'Structure de l'objet UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure de l\'objet UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
     /** Identifiant unique pour cette attribution de badge utilisateur */
