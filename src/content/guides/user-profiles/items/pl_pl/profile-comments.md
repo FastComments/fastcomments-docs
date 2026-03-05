@@ -1,130 +1,128 @@
-Komentarze profilowe umożliwiają użytkownikom zostawianie wiadomości bezpośrednio na stronie profilu innego użytkownika, tworząc osobistą ścianę komentarzy lub interakcję w stylu księgi gości.
+Komentarze na profilu umożliwiają użytkownikom zostawianie wiadomości bezpośrednio na stronie profilu innego użytkownika, tworząc osobistą tablicę komentarzy lub interakcję w stylu księgi gości.
 
-### Czym są komentarze profilowe?
+### Czym są komentarze na profilu?
 
-Komentarze profilowe różnią się od zwykłych komentarzy do artykułów:
+Komentarze na profilu różnią się od zwykłych komentarzy do artykułów:
 - Pojawiają się na stronie profilu użytkownika, a nie przy artykułach
-- Są widoczne dla każdego, kto przegląda profil (chyba że ustawienia prywatności to ograniczają)
-- Służą do docenienia, podziękowania lub komunikacji z konkretnymi użytkownikami
+- Są widoczne dla każdego, kto ogląda profil (chyba że ustawienia prywatności to ograniczają)
+- Są sposobem na wyrażenie uznania, podziękowania lub komunikacji z konkretnymi użytkownikami
 - Działają we wszystkich społecznościach FastComments
 
-### Jak zostawić komentarz profilowy
+### Zostawianie komentarza na profilu
 
-Aby skomentować czyjś profil:
+Aby skomentować profil innej osoby:
 
 1. Odwiedź stronę profilu użytkownika
-2. Przejdź do zakładki "Profile Comments"
-3. Użyj pola komentarza, aby napisać swoją wiadomość
+2. Przejdź do zakładki "Komentarze na profilu"
+3. Użyj pola komentarza, aby napisać wiadomość
 4. Prześlij komentarz
 
-**Uwaga:** Ustawienia prywatności właściciela profilu decydują, czy twój komentarz pojawi się od razu, czy wymaga zatwierdzenia.
+**Uwaga:** Ustawienia prywatności właściciela profilu decydują o tym, czy Twój komentarz pojawi się od razu, czy będzie wymagał zatwierdzenia.
 
-### Przeglądanie komentarzy profilowych
+### Przeglądanie komentarzy na profilu
 
 **Na własnym profilu:**
-1. Odwiedź swoją stronę profilu
-2. Kliknij zakładkę "Profile Comments"
-3. Zobacz wszystkie komentarze, które inni zostawili na twoim profilu
+1. Odwiedź stronę swojego profilu
+2. Kliknij zakładkę "Komentarze na profilu"
+3. Zobacz wszystkie komentarze, które inni zostawili na Twoim profilu
 
-**Na profilach innych użytkowników:**
-Komentarze profilowe są widoczne, jeśli użytkownik nie włączył ustawienia "Make Profile Comments Private".
+**Na profilach innych osób:**
+Komentarze na profilu są widoczne, jeśli użytkownik nie włączył ustawienia "Uczyń komentarze profilowe prywatnymi".
 
 ### Zatwierdzanie komentarzy
 
-W zależności od ustawień właściciela profilu (zobacz [Ustawienia prywatności](/guides/user-profiles/privacy-settings)), komentarze mogą:
+W zależności od ustawień właściciela profilu (zob. [Ustawienia prywatności](/guides/user-profiles/privacy-settings)), komentarze mogą:
 
-1. **Pojawiać się natychmiast** - Automatycznie zatwierdzane na podstawie poziomu zaufania lub ustawień zatwierdzania
-2. **Wymagać zatwierdzenia** - Oczekują na sprawdzenie przez właściciela profilu
+1. **Pojawić się natychmiast** - automatycznie zatwierdzone na podstawie poziomu zaufania lub ustawień zatwierdzania
+2. **Wymagać zatwierdzenia** - oczekują na przegląd przez właściciela profilu
 
-Gdy twój komentarz wymaga zatwierdzenia:
-- Zobaczysz wskaźnik statusu oczekującego
+Gdy Twój komentarz wymaga zatwierdzenia:
+- Zobaczysz wskaźnik oczekującego statusu
 - Właściciel profilu otrzyma powiadomienie
 - Po zatwierdzeniu komentarz stanie się widoczny dla innych
 
-### Zarządzanie komentarzami profilowymi na twoim profilu
+### Zarządzanie komentarzami na swoim profilu
 
 Jeśli skonfigurowałeś zatwierdzanie komentarzy (Ręczne zatwierdzanie wszystkich lub Ręczne zatwierdzanie nowych), możesz zarządzać przychodzącymi komentarzami:
 
 **Przez e-mail:**
-Otrzymasz powiadomienia e-mail z linkami zatwierdź/odrzuć dla oczekujących komentarzy. Kliknij link, aby podjąć akcję bezpośrednio z wiadomości e-mail.
+Otrzymasz powiadomienia e-mail z linkami do zatwierdzania/odrzucania oczekujących komentarzy. Kliknij link, aby podjąć działanie bezpośrednio z wiadomości e-mail.
 
-**Z poziomu twojego profilu:**
-1. Odwiedź zakładkę "Profile Comments" na swoim profilu
-2. Zobacz komentarze oczekujące
+**Z poziomu swojego profilu:**
+1. Odwiedź zakładkę "Komentarze na profilu" na swoim profilu
+2. Zobacz oczekujące komentarze
 3. Zatwierdź lub odrzuć każdy komentarz
 
-**Z powiadomień:**
-Uzyskaj dostęp do oczekujących komentarzy z centrum powiadomień w celu szybkiego przeglądu.
+**Z poziomu powiadomień:**
+Szybko przeglądaj oczekujące komentarze z centrum powiadomień.
 
-### Odpowiadanie na komentarze profilowe
+### Odpowiadanie na komentarze na profilu
 
-Gdy ktoś skomentuje twój profil, możesz:
-- Odpowiedzieć bezpośrednio na ich komentarz (tworzy wątek konwersacji)
-- Odwiedzić ich profil i zostawić komentarz w odpowiedzi
-- Wysłać im wiadomość bezpośrednią (DM) (jeśli zezwalają na DM)
+Kiedy ktoś skomentuje Twój profil, możesz:
+- Odpowiedzieć bezpośrednio na jego komentarz (tworzy to wątek konwersacji)
+- Odwiedzić jego profil i zostawić komentarz w odpowiedzi
+- Wysłać mu wiadomość prywatną (jeśli pozwala na wiadomości prywatne)
 
-### Usuwanie komentarzy profilowych
+### Usuwanie komentarzy na profilu
 
 **Na własnym profilu:**
-Możesz usunąć dowolny komentarz pozostawiony na twoim profilu:
+Możesz usunąć dowolny komentarz pozostawiony na Twoim profilu:
 1. Znajdź komentarz, który chcesz usunąć
-2. Kliknij opcję usuń/usuń komentarz
+2. Kliknij opcję usuwania
 3. Potwierdź usunięcie
 
-**Na profilach innych użytkowników:**
-Możesz usuwać swoje własne komentarze, które zostawiłeś na profilach innych osób, ale nie możesz usuwać komentarzy innych osób (chyba że jesteś właścicielem profilu).
+**Na profilach innych osób:**
+Możesz usunąć swoje własne komentarze, które zostawiłeś na profilach innych osób, ale nie możesz usuwać komentarzy innych osób (chyba że jesteś właścicielem profilu).
 
-### Powiadomienia o komentarzach profilowych
+### Powiadomienia o komentarzach na profilu
 
 Otrzymasz powiadomienia, gdy:
-- Ktoś zostawi komentarz na twoim profilu
-- Ktoś odpowie w wątku komentarzy profilowych, w którym bierzesz udział
-- Twój komentarz profilowy zostanie zatwierdzony lub otrzyma odpowiedź
+- Ktoś zostawi komentarz na Twoim profilu
+- Ktoś odpowie w wątku komentarzy profilowych, w którym uczestniczysz
+- Twój komentarz na profilu zostanie zatwierdzony lub na niego odpowiedziano
 
 Zarządzaj preferencjami powiadomień w swoich [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### Prywatność i komentarze profilowe
+### Prywatność i komentarze na profilu
 
-Kontroluj widoczność komentarzy profilowych za pomocą tych ustawień prywatności:
+Kontroluj widoczność komentarzy na profilu za pomocą tych ustawień prywatności:
 
 **Uczyń komentarze profilowe prywatnymi:**
-- Ukrywa zakładkę Profile Comments przed odwiedzającymi
-- Tylko ty możesz zobaczyć komentarze pozostawione na twoim profilu
+- Ukrywa zakładkę Komentarze na profilu przed odwiedzającymi
+- Tylko Ty możesz zobaczyć komentarze pozostawione na Twoim profilu
 - Uniemożliwia dodawanie nowych komentarzy
 
 **Tryby zatwierdzania komentarzy:**
 - Wybierz, kto może komentować bez zatwierdzenia
-- Ustaw różne zasady zatwierdzania dla zaufanych oraz nowych użytkowników
-- Wymagaj ręcznego zatwierdzenia wszystkich komentarzy
+- Ustaw różne zasady zatwierdzania dla zaufanych i nowych użytkowników
+- Wymagaj ręcznego zatwierdzania wszystkich komentarzy
 
-Aby uzyskać więcej informacji, zobacz [Ustawienia prywatności](/guides/user-profiles/privacy-settings).
+Po więcej szczegółów zobacz [Ustawienia prywatności](/guides/user-profiles/privacy-settings).
 
-### Zastosowania komentarzy profilowych
+### Przykłady użycia komentarzy na profilu
 
-Komentarze profilowe są świetne do:
+Komentarze na profilu są świetne do:
 
 - **Dziękowania pomocnym członkom społeczności**
 - **Doceniania wartościowych wkładów**
 - **Budowania relacji z aktywnymi uczestnikami**
-- **Zostawiania referencji lub rekomendacji**
-- **Tworzenia społecznościowego doświadczenia księgi gości**
-- **Okazywania uznania i wyróżnień społeczności**
+- **Pozostawiania referencji lub rekomendacji**
+- **Tworzenia doświadczenia społecznej księgi gości**
+- **Wyrażania uznania i docenienia w społeczności**
 
 ### Najlepsze praktyki
 
 **Przy zostawianiu komentarzy:**
 - Bądź uprzejmy i konstruktywny
-- Dodawaj wartość zamiast ogólnych wiadomości typu "ładny profil"
-- Odnoś się do konkretnych wkładów lub interakcji, gdy to możliwe
+- Dodawaj wartość zamiast ogólnych komentarzy typu "ładny profil"
+- Odwołuj się do konkretnych wkładów lub interakcji, gdy to możliwe
 
 **Przy zarządzaniu swoim profilem:**
-- Ustaw odpowiednie opcje zatwierdzania zgodnie ze swoim komfortem
-- Odpowiadaj na komentarze profilowe, aby zachęcić społeczność do zaangażowania
-- Używaj blokowania, jeśli ktoś wielokrotnie zostawia niewłaściwe komentarze
+- Ustaw odpowiednie zasady zatwierdzania zgodnie z poziomem komfortu
+- Odpowiadaj na komentarze, aby zachęcić do zaangażowania społeczności
+- Używaj blokowania, jeśli ktoś wielokrotnie zamieszcza nieodpowiednie komentarze
 
 **Dla zdrowia społeczności:**
-- Komentarze profilowe podlegają tym samym wytycznym społeczności co komentarze do artykułów
-- Zgłaszaj nieodpowiednie komentarze profilowe, jeśli je napotkasz
-- Moderatorzy mogą podjąć działania wobec komentarzy profilowych, które naruszają zasady
-
----
+- Komentarze na profilu podlegają tym samym wytycznym społeczności co komentarze do artykułów
+- Zgłaszaj nieodpowiednie komentarze na profilu, jeśli je napotkasz
+- Moderatorzy mogą podjąć działania wobec komentarzy na profilu, które naruszają zasady

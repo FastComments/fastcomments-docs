@@ -1,23 +1,23 @@
-Profilkommentarer giver brugere mulighed for at efterlade beskeder direkte på en anden brugers profilsiden og skaber en personlig kommentarmur eller gæstebogslignende interaktion.
+Profilekommentarer gør det muligt for brugere at efterlade beskeder direkte på en anden brugers profilside, hvilket skaber en personlig kommentarside eller gæstebogslignende interaktion.
 
 ### Hvad er profilkommentarer?
 
 Profilkommentarer adskiller sig fra almindelige artikelkommentarer:
 - De vises på en brugers profilsiden, ikke på indholdsartikler
-- De er synlige for alle, der besøger profilen (medmindre privatlivsindstillinger begrænser dette)
-- De er en måde at anerkende, takke eller kommunikere med specifikke brugere
+- De er synlige for alle, der ser profilen (medmindre privatlivsindstillinger begrænser dette)
+- De er en måde at anerkende, takke eller kommunikere med bestemte brugere på
 - De fungerer på tværs af alle FastComments-fællesskaber
 
 ### Efterlade en profilkommentar
 
-For at kommentere nogens profil:
+For at kommentere på nogens profil:
 
 1. Besøg brugerens profilsiden
 2. Gå til fanen "Profilkommentarer"
 3. Brug kommentarboksen til at skrive din besked
 4. Send kommentaren
 
-**Bemærk:** Profilindehaverens privatlivsindstillinger bestemmer, om din kommentar vises med det samme eller kræver godkendelse.
+**Bemærk:** Profilens ejerens privatlivsindstillinger bestemmer, om din kommentar vises med det samme eller kræver godkendelse.
 
 ### Se profilkommentarer
 
@@ -26,27 +26,27 @@ For at kommentere nogens profil:
 2. Klik på fanen "Profilkommentarer"
 3. Se alle kommentarer, andre har efterladt på din profil
 
-**På andre profiler:**
+**På andres profiler:**
 Profilkommentarer er synlige, hvis brugeren ikke har aktiveret indstillingen "Gør profilkommentarer private".
 
 ### Kommentar-godkendelse
 
-Afhængigt af profilindehaverens indstillinger (se [Privatlivsindstillinger](/guides/user-profiles/privacy-settings)) kan kommentarer:
+Afhængigt af profilens ejerens indstillinger (se [Indstillinger for privatliv](/guides/user-profiles/privacy-settings)), kan kommentarer:
 
 1. **Vises med det samme** - Automatisk godkendt baseret på tillidsniveau eller godkendelsesindstillinger
-2. **Kræve godkendelse** - Holdes tilbage til gennemgang af profilejeren
+2. **Kræve godkendelse** - Holdes tilbage, så profilindehaveren kan gennemgå dem
 
 Når din kommentar kræver godkendelse:
 - Du vil se en afventende statusindikator
-- Profilindehaveren modtager en anmeldelse
+- Profilindehaveren modtager en notifikation
 - Når den er godkendt, bliver kommentaren synlig for andre
 
 ### Administrere profilkommentarer på din profil
 
-Hvis du har konfigureret kommentar-godkendelse (Manuel godkendelse af alle eller Manuel godkendelse af nye), kan du administrere indkommende kommentarer:
+Hvis du har konfigureret kommentargodkendelse (Manuelt godkend alle eller Manuelt godkend nye), kan du administrere indkommende kommentarer:
 
 **Via e-mail:**
-Du vil modtage e-mail-notifikationer med godkend-/afvis-links til afventende kommentarer. Klik på linket for at tage handling direkte fra din e-mail.
+Du modtager e-mailnotifikationer med godkend-/afvisningslinks for afventende kommentarer. Klik på linket for at handle direkte fra din e-mail.
 
 **Fra din profil:**
 1. Besøg din profils "Profilkommentarer"-fane
@@ -59,9 +59,9 @@ Få adgang til afventende kommentarer fra dit notifikationscenter for hurtig gen
 ### Besvare profilkommentarer
 
 Når nogen kommenterer på din profil, kan du:
-- Svare direkte på deres kommentar (opretter en samtaletråd)
-- Besøge deres profil og efterlade en kommentar tilbage
-- Sende dem en direkte besked (hvis de tillader private beskeder)
+- Svare direkte på deres kommentar (opretter en samtalerække)
+- Besøge deres profil og efterlade en kommentar til gengæld
+- Sende dem en direkte besked (hvis de tillader DMs)
 
 ### Slette profilkommentarer
 
@@ -71,12 +71,12 @@ Du kan slette enhver kommentar, der er efterladt på din profil:
 2. Klik på slet/fjern-valgmuligheden
 3. Bekræft sletningen
 
-**På andre profiler:**
-Du kan slette dine egne kommentarer, som du har efterladt på andres profiler, men du kan ikke slette andres kommentarer (medmindre du er profilejer).
+**På andres profiler:**
+Du kan slette dine egne kommentarer, som du har efterladt på andres profiler, men du kan ikke slette andres kommentarer (medmindre du er profilindehaveren).
 
 ### Notifikationer om profilkommentarer
 
-Du vil modtage notifikationer når:
+Du vil modtage notifikationer, når:
 - Nogen efterlader en kommentar på din profil
 - Nogen svarer i en profilkommentartråd, du er en del af
 - En profilkommentar, du har efterladt, bliver godkendt eller besvaret
@@ -90,39 +90,39 @@ Styr synligheden af profilkommentarer med disse privatlivsindstillinger:
 **Gør profilkommentarer private:**
 - Skjuler fanen Profilkommentarer for besøgende
 - Kun du kan se kommentarer, der er efterladt på din profil
-- Forhindrer nye kommentarer i at blive postet
+- Forhindrer, at nye kommentarer bliver postet
 
 **Kommentar-godkendelsestilstande:**
 - Vælg, hvem der kan kommentere uden godkendelse
-- Angiv forskellige godkendelsesregler for betroede vs. nye brugere
+- Indstil forskellige godkendelsesregler for betroede vs. nye brugere
 - Kræv manuel godkendelse for alle kommentarer
 
-For flere detaljer, se [Privatlivsindstillinger](/guides/user-profiles/privacy-settings).
+For flere detaljer, se [Indstillinger for privatliv](/guides/user-profiles/privacy-settings).
 
-### Anvendelsesområder for profilkommentarer
+### Anvendelsestilfælde for profilkommentarer
 
 Profilkommentarer er gode til:
 
-- **At takke hjælpsomme fællesskabsmedlemmer**
+- **At takke nyttige fællesskabsmedlemmer**
 - **At anerkende værdifulde bidrag**
 - **At opbygge relationer med aktive deltagere**
 - **At efterlade testimonials eller anbefalinger**
-- **At skabe en social gæstebogsoplevelse**
-- **Fællesskabets anerkendelse og påskønnelse**
+- **At skabe en social gæstebogoplevelse**
+- **Fællesskabets påskønnelse og anerkendelse**
 
 ### Bedste praksis
 
 **Når du efterlader kommentarer:**
 - Vær respektfuld og konstruktiv
 - Tilføj værdi i stedet for blot generiske "fin profil"-beskeder
-- Henvis til specifikke bidrag eller interaktioner, når det er relevant
+- Henvis til specifikke bidrag eller interaktioner, hvor det er relevant
 
 **Når du administrerer din profil:**
-- Indstil passende godkendelsesindstillinger ud fra dit komfortniveau
-- Svar på profilkommentarer for at opmuntre til engagement i fællesskabet
+- Indstil passende godkendelsesindstillinger baseret på dit komfortniveau
+- Svar på profilkommentarer for at opmuntre til fællesskabsengagement
 - Brug blokering, hvis nogen gentagne gange efterlader upassende kommentarer
 
 **For fællesskabets sundhed:**
 - Profilkommentarer følger de samme fællesskabsretningslinjer som artikelkommentarer
 - Rapportér upassende profilkommentarer, hvis du støder på dem
-- Moderatorer kan tage hånd om profilkommentarer, der overtræder reglerne
+- Moderatorer kan tage handling mod profilkommentarer, der overtræder reglerne

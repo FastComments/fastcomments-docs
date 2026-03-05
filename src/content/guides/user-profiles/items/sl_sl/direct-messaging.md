@@ -5,36 +5,36 @@ Neposredno sporočanje (DM) omogoča uporabnikom FastComments zasebne, ena-na-en
 Neposredno sporočanje ponuja:
 - **Zasebne pogovore** med dvema uporabnikoma
 - **Sporočanje v realnem času** z obvestili
-- **Zgodovino pogovorov**, ki se ohrani med sejami
-- **Indikatorje spletnega statusa**, da vidite, kdaj je nekdo na voljo
-- **Sledenje neprebranim sporočilom**, da ostanete na tekočem z novimi sporočili
+- **Zgodovino pogovorov**, ki ostane med sejami
+- **Indikator stanja v spletu**, da vidite, kdaj je kdo na voljo
+- **Sledenje neprebranih sporočil**, da ostanete na tekočem z novimi sporočili
 
 ### Začetek neposrednega sporočanja
 
 Obstaja več načinov za začetek DM pogovora:
 
 **Iz uporabniškega profila:**
-1. Obiščite profil uporabnika
+1. Obiščite uporabnikovo stran profila
 2. Kliknite zavihek "Neposredna sporočila" ali gumb "Pošlji sporočilo"
 3. Vnesite svoje sporočilo in ga pošljite
 
 **Iz komentarja:**
-Nekatere implementacije omogočajo klik na uporabnikovo ime ali avatar za hiter dostop do njegovega profila in možnosti sporočanja.
+Nekatere implementacije omogočajo klik na uporabnikovo ime ali avatar za hiter dostop do njihovega profila in možnosti sporočanja.
 
 **Neposredna povezava:**
-Če imate ID pogovora ali DM preusmeritveno povezavo, lahko do pogovorov dostopate neposredno.
+Če imate ID pogovora ali preusmeritveno povezavo za DM, lahko do pogovorov dostopate neposredno.
 
 ### Dostop do vaših sporočil
 
-Če želite videti vse svoje pogovore v neposrednih sporočilih:
+Za ogled vseh vaših pogovorov z neposrednimi sporočili:
 
 1. Obiščite svojo stran profila
 2. Kliknite zavihek "Neposredna sporočila"
-3. Oglejte si seznam vseh svojih pogovorov
+3. Oglejte si seznam vseh vaših pogovorov
 
 Vsak pogovor prikazuje:
 - Avatar in ime drugega udeleženca
-- Njihov status (na spletu/izven spleta) (zeleni indikator, ko je na spletu)
+- Njihovo stanje v spletu/izven spleta (zeleni indikator, ko so na spletu)
 - Predogled zadnjega sporočila
 - Število neprebranih sporočil (če obstaja)
 - Čas zadnje aktivnosti
@@ -44,55 +44,55 @@ Vsak pogovor prikazuje:
 Ko odprete pogovor, boste videli:
 
 - **Celotno zgodovino sporočil** - Vsa sporočila med vami in drugim uporabnikom
-- **Posodobitve v realnem času** - Nova sporočila se prikažejo takoj preko WebSocket
-- **Spletni status** - Vidite, ali je druga oseba trenutno na spletu
-- **Čas pošiljanja sporočil** - Kdaj je bilo vsako sporočilo poslano
-- **Sestavljanje sporočila** - Besedilno polje za vnašanje in pošiljanje novih sporočil
+- **Posodobitve v realnem času** - Nova sporočila se prikažejo takoj prek WebSocket
+- **Stanje v spletu** - Vidite, ali je druga oseba trenutno na spletu
+- **Časovni žigi sporočil** - Kdaj je bilo vsako sporočilo poslano
+- **Sestavljanje sporočil** - Polje za vnos besedila za pisanje in pošiljanje novih sporočil
 
 ### Obvestila o sporočilih
 
 Prejeli boste obvestila za nova neposredna sporočila:
 
-- **Obvestila v aplikaciji** - števec na vašem profilu
-- **E-poštna obvestila** - glede na vaše nastavitve obveščanja
-- **Opozorila v realnem času** - takojšnja obvestila, ko ste prijavljeni
+- **Obvestila v aplikaciji** - Števec obvestil na vašem profilu
+- **E-poštna obvestila** - Glede na vaše nastavitve obvestil
+- **Opozorila v realnem času** - Takojšnja obvestila, ko ste prijavljeni
 
-Upravljajte nastavitve obvestil v svojih [Nastavitvah računa](https://fastcomments.com/auth/my-account/edit-notifications).
+Upravljajte nastavitve obvestil v vaših [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Zasebnost in blokiranje
 
 **Onemogočanje neposrednih sporočil:**
-Če ne želite prejemati DM-ov, jih lahko popolnoma onemogočite:
-1. Pojdite v Nastavitve zasebnosti na svojem profilu
-2. Omogočite "Onemogoči neposredna sporočila"
-3. Možnost DM bo skrita z vašega profila
+Če ne želite prejemati DM-jev, jih lahko popolnoma onemogočite:
+1. Pojdite v nastavitve zasebnosti na svojem profilu
+2. Vklopite "Onemogoči neposredna sporočila"
+3. Možnost DM bo skrita na vašem profilu
 
-Za več podrobnosti si oglejte [Nastavitve zasebnosti](/guides/user-profiles/privacy-settings).
+Za več podrobnosti si oglejte [Privacy Settings](/guides/user-profiles/privacy-settings).
 
 **Blokiranje uporabnikov:**
-Če vas nekdo nadleguje prek DM:
+Če vas nekdo nadleguje preko DM:
 1. Obiščite njihov profil
 2. Blokirajte uporabnika
-3. Ta oseba vam več ne bo mogla pošiljati sporočil
+3. Ne bodo vam mogli več pošiljati sporočil
 
 Blokirani uporabniki ne morejo:
 - Vam pošiljati neposrednih sporočil
-- Videti vaše dejavnosti
-- Komentirati vašega profila
+- Videti vaše aktivnosti
+- Komentirati na vašem profilu
 - Sodelovati z vami kjerkoli na FastComments
 
 ### Upravljanje pogovorov
 
 **Skrivanje pogovorov:**
-Lahko skrijete pogovore, ki jih ne želite več videti v svojem seznamu pogovorov:
+Lahko skrijete pogovore, ki jih ne želite več videti na seznamu pogovorov:
 1. Odprite zavihek Neposredna sporočila
 2. Poiščite pogovor, ki ga želite skriti
 3. Izberite možnost skrij/arhiviraj
 
-Skriti pogovori se ne prikazujejo v glavnem seznamu, vendar do njih lahko dostopate, če vam druga oseba pošlje novo sporočilo.
+Skriti pogovori se ne bodo prikazovali v vašem glavnem seznamu, vendar so dostopni, če vam druga oseba pošlje novo sporočilo.
 
 **Označevanje kot prebrano:**
-Sporočila se samodejno označijo kot prebrana, ko jih si jih ogledate. Pogovore lahko tudi ročno označite kot prebrane:
+Sporočila se samodejno označijo kot prebrana, ko jih pregledate. Lahko pa tudi ročno označite celoten pogovor kot prebran:
 1. Odprite zavihek Neposredna sporočila
 2. Izberite pogovor
 3. Izberite "Označi kot prebrano"
@@ -102,55 +102,55 @@ To počisti števec neprebranih sporočil za ta pogovor.
 ### Najboljše prakse
 
 **Kdaj uporabljati neposredna sporočila:**
-- Za zasebna dodatna vprašanja
-- Zahvala nekomu za koristne nasvete
-- Pogovor o temah, ki niso vezane na temo, brez zasičenja javnih komentarjev
-- Koordinacija z drugimi člani skupnosti
-- Posredovanje zasebnih povratnih informacij ali predlogov
+- Če želite zasebno postaviti nadaljnja vprašanja
+- Zahvaliti se nekomu za koristne nasvete
+- Razpravljati o neprimernih temah, ne da bi zapolnili javne komentarje
+- Sodelovati z drugimi člani skupnosti
+- Podati zasebne povratne informacije ali predloge
 
-**Etiketa neposrednih sporočil:**
+**Etiketa pri DM-jih:**
 - Bodite spoštljivi in profesionalni
-- Ne pošiljajte vsiljenih sporočil (spam)
-- Spoštujte, če nekdo ne odgovori ali onemogoči DM
-- Ohranjajte pogovore relevantne in konstruktivne
-- Ne delite tujih DM-ov brez dovoljenja
+- Ne pošiljajte vsiljivih sporočil uporabnikom
+- Spoštujte, če nekdo ne odgovori ali onemogoči DM-je
+- Ohranite pogovore relevantne in konstruktivne
+- Ne delite DM-jev drugih brez dovoljenja
 
 **Varnostni nasveti:**
-- Ne delite osebnih podatkov (telefon, naslov itd.), razen če osebi zaupate
-- Blokirajte in prijavite uporabnike, ki nadlegujejo ali zlorabljajo DM
-- Bodite previdni pri sumljivih povezavah ali zahtevah
-- Uporabite funkcijo blokiranja, če se v pogovoru počutite neprijetno
+- Ne delite osebnih podatkov (telefon, naslov itd.), razen če osebo zaupate
+- Blokirajte in prijavite uporabnike, ki nadlegujejo ali zlorabljajo DM-je
+- Pazite na sumljive povezave ali prošnje
+- Uporabite funkcijo blokiranja, če vas kdo spravi v zadrego
 
 ### Omejitve in opombe
 
 **Komu lahko pošiljate sporočila:**
-- Kateremu koli uporabniku FastComments, ki ni onemogočil DM-ov
+- Kateremu koli uporabniku FastComments, ki ni onemogočil DM-jev
 - Uporabnikom, ki vas niso blokirali
 - Uporabnikom v vseh skupnostih FastComments
 
 **Vsebina sporočil:**
 - Podprta so besedilna sporočila
-- Sporočila sledijo enakim pravilom vsebine kot komentarji
-- Neprimerna vsebina je lahko prijavljena
+- Sporočila upoštevajo iste smernice vsebine kot komentarji
+- Neprimerno vsebino je mogoče prijaviti
 
 **Obseg pogovora:**
 - DM pogovori so zasebni med dvema osebama
-- Ni skupinskega sporočanja (trenutno le ena-na-ena)
-- Zgodovina pogovorov se ohranja neomejeno
+- Ni skupinskega sporočanja (trenutno samo ena-na-ena)
+- Zgodovina pogovorov se hrani neomejeno
 
 ### Odpravljanje težav
 
 **Ne morete poslati sporočila?**
-Drugi uporabnik je morda:
+Drugi uporabnik morda:
 - Onemogočil neposredna sporočila v svojih nastavitvah zasebnosti
 - Vas blokiral
 - Izbrisal svoj račun
 
 **Ne prejemate obvestil?**
-Preverite nastavitve obvestil v [Nastavitvah računa](https://fastcomments.com/auth/my-account/edit-notifications), da zagotovite, da so obvestila za DM omogočena.
+Preverite svoje nastavitve obvestil na [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications), da zagotovite, da so obvestila za DM omogočena.
 
 **Sporočila se ne pošiljajo?**
 - Preverite svojo internetno povezavo
 - Osvežite stran in poskusite znova
-- Preverite, ali vas kdo ni blokiral
-- Če težava vztraja, kontaktirajte podporo
+- Prepričajte se, da niste blokirani
+- Obrnite se na podporo, če težava ostaja

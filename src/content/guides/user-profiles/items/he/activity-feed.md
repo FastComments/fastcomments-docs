@@ -1,164 +1,164 @@
-The Activity Feed on User Profiles displays a user's comment history, notifications, and community participation across all FastComments-powered sites.
+פיד הפעילות בפרופילי משתמשים מציג את היסטוריית התגובות של המשתמש, התראות והשתתפות קהילתית בכל האתרים המופעלים על ידי FastComments.
 
-### What is the Activity Feed?
+### מהו פיד הפעילות?
 
-The Activity Feed provides a chronological view of:
-- Comments posted by the user
-- Replies received
-- Mentions and interactions
-- Activity across different communities
-- Real-time updates on user engagement
+פיד הפעילות מספק תצוגה כרונולוגית של:
+- תגובות שפורסמו על ידי המשתמש
+- תגובות שהתקבלו
+- אזכורים ואינטראקציות
+- פעילות בקהילות שונות
+- עדכונים בזמן אמת על מעורבות המשתמש
 
-### Viewing Activity
+### צפייה בפעילות
 
-**Your Own Activity:**
-When viewing your profile, you'll see additional tabs:
-1. **Notifications** - Alerts about replies, mentions, and interactions
-2. **Recent Activity** - Your complete comment history across all sites
+**הפעילות שלך:**
+כאשר אתה צופה בפרופיל שלך, תראה לשוניות נוספות:
+1. **התראות** - התראות לגבי תגובות, אזכורים ואינטראקציות
+2. **פעילות אחרונה** - היסטוריית התגובות המלאה שלך בכל האתרים
 
-**Other Users' Activity:**
-When viewing someone else's profile:
-1. **Recent Activity** - Their public comment history (if not set to private)
+**הפעילות של משתמשים אחרים:**
+כאשר אתה צופה בפרופיל של מישהו אחר:
+1. **פעילות אחרונה** - היסטוריית התגובות הציבורית שלו (אם לא הוגדרה כפרטית)
 
-The activity tab shows where and when users are participating across the FastComments network.
+הלשונית של הפעילות מראה היכן ומתי משתמשים משתתפים ברשת FastComments.
 
-### Notifications Tab
+### לשונית ההתראות
 
-Your Notifications tab displays:
+לשונית ההתראות שלך מציגה:
 
-**What You'll See:**
-- Replies to your comments
-- Mentions of your username
-- Profile comment notifications
-- Direct message alerts
-- Badge achievements
-- Moderation actions on your content
+**מה תראה:**
+- תגובות לתגובות שלך
+- אזכורים של שם המשתמש שלך
+- התראות על תגובות בפרופיל
+- התראות על הודעות ישירות
+- השגות גאווה (Badge) שהושגו
+- פעולות מתאמות תוכן על התכנים שלך
 
-**Notification Features:**
-- **Unread counter** - Shows how many unread notifications you have
-- **Real-time updates** - New notifications appear instantly via WebSocket
-- **Clickable items** - Click any notification to jump to the relevant comment or conversation
-- **Read/unread status** - Visual indicators for which notifications you've seen
+**תכונות ההתראות:**
+- **מונה הודעות שלא נקראו** - מציג כמה התראות שלא נקראת יש לך
+- **עדכונים בזמן אמת** - התראות חדשות מופיעות מיד דרך WebSocket
+- **פריטים ניתנים ללחיצה** - לחץ על כל התראה כדי לקפוץ לתגובה או לשיחה הרלוונטית
+- **מצב נקרא/לא נקרא** - אינדיקטורים ויזואליים למה שהתראות שכבר ראית
 
-**Managing Notifications:**
-- Notifications are marked as read when you view them
-- Configure what types of notifications you receive in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
+**ניהול התראות:**
+- התראות מסומנות כנקראות כאשר אתה מציג אותן
+- הגדר אילו סוגי התראות תקבל ב[הגדרות התראות](https://fastcomments.com/auth/my-account/edit-notifications)
 
-For more details on managing notifications, see the [Notifications Guide](/guides/notifications).
+לפרטים נוספים על ניהול התראות, ראה את [מדריך ההתראות](/guides/notifications).
 
-### Recent Activity Tab
+### לשונית הפעילות האחרונה
 
-The Recent Activity tab shows all comments posted by the user across FastComments communities.
+לשונית הפעילות האחרונה מציגה את כל התגובות שפורסמו על ידי המשתמש בקהילות FastComments.
 
-**What's Displayed:**
-- **Comment content** - The full text of each comment
-- **Context** - Which article/page the comment was on
-- **Timestamp** - When the comment was posted
-- **Community** - Which site or domain the comment belongs to
-- **Engagement** - Votes, replies, and interaction metrics
+**מה מוצג:**
+- **תוכן התגובה** - הטקסט המלא של כל תגובה
+- **הקשר** - באיזה מאמר/דף הופיעה התגובה
+- **חותמת זמן** - מתי התגובה פורסמה
+- **קהילה** - לאיזה אתר או דומיין שייכת התגובה
+- **מעורבות** - הצבעות, תגובות ומדדי אינטראקציה
 
-**Activity Filtering:**
-On your own profile, you can filter activity to show:
-- **All Activity** - Every comment you've posted
-- **Replies to Me** - Only comments that are replies to your comments
+**סינון פעילות:**
+בפרופיל שלך, אתה יכול לסנן פעילות כדי להציג:
+- **כל הפעילות** - כל תגובה שפרסמת
+- **תגובות אליי** - רק תגובות שהן תגובות לתגובות שלך
 
-This makes it easy to focus on conversations where you're directly engaged.
+זה מקל להתמקד בשיחות שבהן אתה מעורב ישירות.
 
-### Community Participation
+### השתתפות בקהילה
 
-The profile also shows which communities the user is active in:
+הפרופיל גם מראה באילו קהילות המשתמש פעיל:
 
-- **Community List** - Sites/domains where the user has commented
-- **Activity Distribution** - How much the user participates in each community
-- **Community Links** - Clickable links to visit those sites
+- **רשימת קהילות** - אתרים/דומיינים שבהם המשתמש הגיב
+- **פיזור פעילות** - עד כמה המשתמש משתתף בכל קהילה
+- **קישורי קהילה** - קישורים ניתנים ללחיצה לביקור באתרים אלה
 
-This helps you understand where a user is most engaged and their areas of interest.
+זה עוזר להבין היכן משתמש פעיל ביותר ומהם תחומי העניין שלו.
 
-### Statistics
+### סטטיסטיקות
 
-User profiles display key statistics:
+פרופילי משתמשים מציגים סטטיסטיקות עיקריות:
 
-**Karma:**
-- A reputation score based on upvotes and community reception
-- Increases when your comments receive upvotes
-- Decreases when comments receive downvotes
-- Reflects overall community appreciation of your contributions
+**קרמה:**
+- ציון מוניטין מבוסס על הצבעות חיוביות וקבלת הקהילה
+- עולה כאשר התגובות שלך מקבלות הצבעות חיוביות
+- יורד כאשר תגובות מקבלות הצבעות שליליות
+- משקף את הערכת הקהילה הכללית לתרומות שלך
 
-**Comment Count:**
-- Total number of comments posted across all communities
-- Includes both top-level comments and replies
-- Updated in real-time as you participate
+**ספירת תגובות:**
+- מספר כולל של תגובות שפורסמו בכל הקהילות
+- כולל גם תגובות ברמה העליונה וגם תשובות
+- מתעדכן בזמן אמת ככל שאתה משתתף
 
-These statistics give a quick overview of a user's engagement level and community standing.
+סטטיסטיקות אלה נותנות תמונה מהירה של רמת המעורבות והמעמד הקהילתי של המשתמש.
 
-### Privacy Controls
+### בקרות פרטיות
 
-Users can control activity visibility through privacy settings:
+משתמשים יכולים לשלוט בנראות הפעילות דרך הגדרות פרטיות:
 
-**Make Profile Activity Private:**
-When enabled:
-- Only you can see your Recent Activity tab
-- Others cannot view your comment history on your profile
-- Your public comments are still visible in their original context (on articles)
-- Only the aggregated activity view on your profile is hidden
+**הפיכת פעילות הפרופיל לפרטית:**
+כאשר מופעלת:
+- רק אתה יכול לראות את לשונית הפעילות האחרונה שלך
+- אחרים לא יכולים לצפות בהיסטוריית התגובות שלך בפרופיל
+- התגובות הציבוריות שלך עדיין נראות בהקשר המקורי שלהן (על מאמרים)
+- רק התצוגה המצטברת של הפעילות בפרופיל מוסתרת
 
-For details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+להרחבה, ראה את [הגדרות פרטיות](/guides/user-profiles/privacy-settings).
 
-### Real-Time Updates
+### עדכונים בזמן אמת
 
-The Activity Feed uses WebSocket technology for real-time updates:
+פיד הפעילות משתמש בטכנולוגיית WebSocket לעדכונים בזמן אמת:
 
-- **Instant notifications** - New replies and mentions appear immediately
-- **Live activity updates** - Recent comments are added as you post
-- **Online status** - See when conversation partners are active
-- **No page refresh needed** - Everything updates automatically
+- **התראות מידיות** - תגובות חדשות ואזכורים מופיעים מיד
+- **עדכוני פעילות חיים** - תגובות אחרונות מתווספות כשאתה מפרסם
+- **מצב מקוון** - ראה מתי שותפי שיחה פעילים
+- **אין צורך ברענון דף** - הכל מתעדכן אוטומטית
 
-### Activity Across Communities
+### פעילות בין קהילות
 
-One of the powerful features of FastComments User Profiles is seeing activity across all communities:
+אחת התכונות החזקות של פרופילי המשתמשים ב-FastComments היא היכולת לראות פעילות בכל הקהילות:
 
-**Benefits:**
-- Discover where users are knowledgeable or active
-- Find users with shared interests across different sites
-- Build reputation across the entire FastComments network
-- See the breadth of community engagement
+**יתרונות:**
+- גלה היכן משתמשים בעלי ידע או פעילות
+- מצא משתמשים עם תחומי עניין משותפים באתרים שונים
+- בנה מוניטין ברחבי כל רשת FastComments
+- ראה את היקף המעורבות הקהילתית
 
-**Examples:**
-- A user active in tech forums and gaming sites
-- Someone who contributes to both news and recipe blogs
-- Community members who participate across related topics
+**דוגמאות:**
+- משתמש פעיל בפורומי טכנולוגיה ואתרי גיימינג
+- מישהו שתורם גם לחדשות וגם לבלוגי מתכונים
+- חברי קהילה שמשתתפים בנושאים קשורים
 
-### Best Practices
+### נהלים מומלצים
 
-**For Viewing Activity:**
-- Check a user's activity to understand their expertise and interests
-- Look at community participation to find common ground
-- Review karma and comment count for engagement level
+**לצפייה בפעילות:**
+- בדוק את פעילות המשתמש כדי להבין את המומחיות והתחביבים שלו
+- הסתכל על השתתפות בקהילה כדי למצוא נקודות משותפות
+- סקור קרמה וספירת תגובות כדי להעריך רמת מעורבות
 
-**For Managing Your Activity:**
-- Set privacy settings that match your comfort level
-- Engage thoughtfully knowing your activity is visible (unless set to private)
-- Use filtering to focus on relevant conversations
-- Keep track of notifications to stay engaged with your conversations
+**לניהול הפעילות שלך:**
+- קבע הגדרות פרטיות שמתאימות לנוחות שלך
+- הייה מעורב בצורה מושכלת בידיעה שהפעילות שלך נראית (אלא אם הוגדרה כפרטית)
+- השתמש בסינון כדי להתמקד בשיחות רלוונטיות
+- עקוב אחרי התראות כדי להישאר מעורב בשיחות שלך
 
-**For Community Building:**
-- Recognize active participants through their activity feed
-- Connect with users who share interests across communities
-- Use activity history to identify valuable community members
+**לבניית קהילה:**
+- הכירו משתתפים פעילים דרך פיד הפעילות שלהם
+- התחברו עם משתמשים שמשתפים תחומי עניין ברחבי הקהילות
+- השתמשו בהיסטוריית הפעילות כדי לזהות חברי קהילה בעלי ערך
 
-### Troubleshooting
+### פתרון תקלות
 
-**Activity Not Showing:**
-- Check if the user has enabled "Make Profile Activity Private"
-- Ensure you're logged in if required
-- Refresh the page if activity seems outdated
+**הפעילות לא מופיעה:**
+- בדוק אם המשתמש הפעיל את "הפוך את פעילות הפרופיל לפרטית"
+- ודא שאתה מחובר אם נדרש
+- רענן את הדף אם הפעילות נראית מיושנת
 
-**Notifications Not Appearing:**
-- Check notification settings in your account
-- Ensure notifications aren't being filtered by your email provider
-- Verify WebSocket connection (look for real-time updates)
+**התראות לא מופיעות:**
+- בדוק הגדרות התראות בחשבונך
+- ודא שהתראות לא מפולטרות על ידי ספק הדוא"ל שלך
+- אמת את חיבור ה-WebSocket (חפש עדכונים בזמן אמת)
 
-**Wrong Activity Displayed:**
-- Clear browser cache and refresh
-- Log out and back in
-- Report any persistent issues to support
+**הפעילות המוצגת שגויה:**
+- נקה את מטמון הדפדפן ורענן
+- התנתק והתחבר שוב
+- דווח על כל בעיה מתמשכת לתמיכה

@@ -1,128 +1,130 @@
-Profile Comments allow users to leave messages directly on another user's profile page, creating a personal comment wall or guestbook-style interaction.
+個人檔案留言允許使用者直接在其他使用者的個人檔案頁面上留下訊息，營造出個人留言牆或訪客留言簿式的互動。
 
-### What Are Profile Comments?
+### 什麼是個人檔案留言？
 
-Profile Comments are different from regular article comments:
-- They appear on a user's profile page, not on content articles
-- They're visible to anyone viewing the profile (unless privacy settings restrict this)
-- They're a way to recognize, thank, or communicate with specific users
-- They work across all FastComments communities
+個人檔案留言不同於一般文章留言：
+- 它們出現在使用者的個人檔案頁面，而不是文章內容上
+- 任何檢視該個人檔案的人都能看到（除非隱私設定限制）
+- 是用來表彰、感謝或與特定使用者溝通的方式
+- 可跨所有 FastComments 社群使用
 
-### Leaving a Profile Comment
+### 留下個人檔案留言
 
-To comment on someone's profile:
+要在某人的個人檔案上留言：
 
-1. Visit the user's profile page
-2. Navigate to the "Profile Comments" tab
-3. Use the comment box to write your message
-4. Submit the comment
+1. 前往該使用者的個人檔案頁面
+2. 導覽到「個人檔案留言」分頁
+3. 使用留言框撰寫您的訊息
+4. 提交留言
 
-**Note:** The profile owner's privacy settings determine whether your comment appears immediately or requires approval.
+**注意：** 個人檔案擁有者的隱私設定決定您的留言是否立即顯示或需要審核。
 
-### Viewing Profile Comments
+### 檢視個人檔案留言
 
-**On Your Own Profile:**
-1. Visit your profile page
-2. Click the "Profile Comments" tab
-3. See all comments others have left on your profile
+**在您自己的個人檔案：**
+1. 前往您的個人檔案頁面
+2. 點選「個人檔案留言」分頁
+3. 查看其他人留在您個人檔案上的所有留言
 
-**On Other Profiles:**
-Profile comments are visible if the user hasn't enabled the "Make Profile Comments Private" setting.
+**在其他人的個人檔案：**
+如果使用者未啟用「將個人檔案留言設為私人」設定，則可以看到個人檔案留言。
 
-### Comment Approval
+### 留言審核
 
-Depending on the profile owner's settings (see [Privacy Settings](/guides/user-profiles/privacy-settings)), comments may:
+根據個人檔案擁有者的設定（請參閱 [隱私設定](/guides/user-profiles/privacy-settings)），留言可能會：
 
-1. **Appear Immediately** - Auto-approved based on trust level or approval settings
-2. **Require Approval** - Held for the profile owner to review
+1. **立即顯示** - 根據信任等級或審核設定自動通過
+2. **需要審核** - 留待個人檔案擁有者審查
 
-When your comment requires approval:
-- You'll see a pending status indicator
-- The profile owner receives a notification
-- Once approved, the comment becomes visible to others
+當您的留言需要審核時：
+- 您會看到待審核狀態指示
+- 個人檔案擁有者會收到通知
+- 一旦通過審核，留言就會對其他人顯示
 
-### Managing Profile Comments on Your Profile
+### 在您的個人檔案上管理個人檔案留言
 
-If you've configured comment approval (Manual Approve All or Manual Approve New), you can manage incoming comments:
+如果您已設定留言審核（全部手動審核或新留言手動審核），您可以管理收到的留言：
 
-**Via Email:**
-You'll receive email notifications with approve/reject links for pending comments. Click the link to take action directly from your email.
+**透過電子郵件：**
+您會收到含有批准/拒絕連結的電子郵件通知，點擊連結即可直接在郵件中採取行動。
 
-**From Your Profile:**
-1. Visit your profile's "Profile Comments" tab
-2. View pending comments
-3. Approve or reject each comment
+**從您的個人檔案：**
+1. 前往您個人檔案的「個人檔案留言」分頁
+2. 查看待審核的留言
+3. 批准或拒絕每則留言
 
-**From Notifications:**
-Access pending comments from your notification center for quick review.
+**從通知：**
+從您的通知中心存取待審核留言以快速審查。
 
-### Responding to Profile Comments
+### 回覆個人檔案留言
 
-When someone comments on your profile, you can:
-- Reply directly to their comment (creates a conversation thread)
-- Visit their profile and leave a comment in return
-- Send them a direct message (if they allow DMs)
+當有人在您的個人檔案留言時，您可以：
+- 直接回覆他們的留言（會建立對話串）
+- 前往他們的個人檔案回覆留言
+- 傳送私人訊息給他們（若他們允許私訊）
 
-### Deleting Profile Comments
+### 刪除個人檔案留言
 
-**On Your Own Profile:**
-You can delete any comment left on your profile:
-1. Find the comment you want to remove
-2. Click the delete/remove option
-3. Confirm deletion
+**在您自己的個人檔案：**
+您可以刪除任何留在您個人檔案上的留言：
+1. 找到您想移除的留言
+2. 點選刪除/移除選項
+3. 確認刪除
 
-**On Other Profiles:**
-You can delete your own comments that you've left on others' profiles, but you cannot delete other people's comments (unless you're the profile owner).
+**在其他人的個人檔案：**
+您可以刪除自己留在他人個人檔案上的留言，但無法刪除他人的留言（除非您為該個人檔案的擁有者）。
 
-### Profile Comment Notifications
+### 個人檔案留言通知
 
-You'll receive notifications when:
-- Someone leaves a comment on your profile
-- Someone replies to a profile comment thread you're part of
-- A profile comment you left is approved or responded to
+當發生以下情況時，您會收到通知：
+- 有人在您的個人檔案上留言
+- 有人回覆您參與的個人檔案留言串
+- 您所留下的個人檔案留言被通過審核或收到回覆
 
-Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
+在您的 [帳戶設定](https://fastcomments.com/auth/my-account/edit-notifications) 中管理通知偏好。
 
-### Privacy and Profile Comments
+### 隱私與個人檔案留言
 
-Control profile comment visibility with these privacy settings:
+使用以下隱私設定來控制個人檔案留言的可見性：
 
-**Make Profile Comments Private:**
-- Hides the Profile Comments tab from visitors
-- Only you can see comments left on your profile
-- Prevents new comments from being posted
+**將個人檔案留言設為私人：**
+- 將「個人檔案留言」分頁對訪客隱藏
+- 只有您可以看到留在您個人檔案上的留言
+- 阻止新的留言被張貼
 
-**Comment Approval Modes:**
-- Choose who can comment without approval
-- Set different approval rules for trusted vs. new users
-- Require manual approval for all comments
+**留言審核模式：**
+- 選擇誰可以在不需審核的情況下留言
+- 為受信任使用者與新使用者設定不同的審核規則
+- 要求所有留言皆需手動審核
 
-For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+更多細節請參閱 [隱私設定](/guides/user-profiles/privacy-settings)。
 
-### Use Cases for Profile Comments
+### 個人檔案留言的使用情境
 
-Profile Comments are great for:
+個人檔案留言很適合用來：
 
-- **Thanking helpful community members**
-- **Recognizing valuable contributions**
-- **Building rapport with active participants**
-- **Leaving testimonials or endorsements**
-- **Creating a social guestbook experience**
-- **Community appreciation and recognition**
+- **感謝社群中提供幫助的成員**
+- **表彰有價值的貢獻**
+- **與活躍參與者建立關係**
+- **留下推薦或背書**
+- **建立社交訪客留言簿體驗**
+- **表達社群的感謝與認可**
 
-### Best Practices
+### 最佳實務
 
-**For Leaving Comments:**
-- Be respectful and constructive
-- Add value rather than just generic "nice profile" messages
-- Reference specific contributions or interactions when applicable
+**撰寫留言時：**
+- 保持禮貌並具建設性
+- 提供有價值的內容，而非只有泛泛的「讚」或「很棒的個人檔案」
+- 如適用，參考具體的貢獻或互動
 
-**For Managing Your Profile:**
-- Set appropriate approval settings based on your comfort level
-- Respond to profile comments to encourage community engagement
-- Use blocking if someone leaves inappropriate comments repeatedly
+**管理個人檔案時：**
+- 根據您的舒適度設定適當的審核選項
+- 回覆個人檔案留言以鼓勵社群互動
+- 若有人反覆留下不當留言，使用封鎖功能
 
-**For Community Health:**
-- Profile comments follow the same community guidelines as article comments
-- Report inappropriate profile comments if you encounter them
-- Moderators can take action on profile comments that violate rules
+**維護社群健康：**
+- 個人檔案留言遵循與文章留言相同的社群準則
+- 如遇不當的個人檔案留言，請檢舉
+- 管理者可對違規的個人檔案留言採取行動
+
+---

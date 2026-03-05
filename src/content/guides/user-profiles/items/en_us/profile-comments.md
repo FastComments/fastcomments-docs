@@ -126,3 +126,5 @@ Profile Comments are great for:
 - Profile comments follow the same community guidelines as article comments
 - Report inappropriate profile comments if you encounter them
 - Moderators can take action on profile comments that violate rules
+
+---

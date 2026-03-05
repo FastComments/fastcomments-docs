@@ -1,71 +1,71 @@
-Direct Messaging (DM) omogućava korisnicima FastComments-a da vode privatne, jedan-na-jedan razgovore međusobno, odvojeno od javnih komentara i interakcija na profilima.
+Direct Messaging (DM) omogućava korisnicima FastComments-a privatne, jedno-na-jedan razgovore jedni s drugima, odvojeno od javnih komentara i interakcija na profilima.
 
-### Šta su Direktne poruke?
+### Šta je Direct Messaging?
 
-Direktne poruke pružaju:
-- **Privatne konverzacije** između dva korisnika
-- **Razmjenu poruka u realnom vremenu** sa obavijestima
-- **Istoriju konverzacija** koja se čuva između sesija
+Direct Messaging pruža:
+- **Privatne razgovore** između dva korisnika
+- **Razmjena poruka u stvarnom vremenu** sa obavještenjima
+- **Istorija razgovora** koja opstaje između sesija
 - **Indikatore online statusa** da vidite kada je neko dostupan
 - **Praćenje nepročitanih poruka** da budete u toku sa novim porukama
 
-### Pokretanje Direktne poruke
+### Pokretanje Direct Message
 
-Postoji nekoliko načina da započnete DM konverzaciju:
+Postoji nekoliko načina da pokrenete DM razgovor:
 
-**Sa korisničkog profila:**
-1. Posjetite stranicu svog profila
-2. Kliknite na karticu „Direktne poruke“ ili dugme „Pošalji poruku“
-3. Otpišite poruku i pošaljite
+**Sa profila korisnika:**
+1. Posjetite stranicu profila korisnika
+2. Kliknite na karticu "Direct Messages" ili dugme "Send Message"
+3. Unesite svoju poruku i pošaljite
 
 **Iz komentara:**
-Neke implementacije omogućavaju klik na ime korisnika ili avatar radi brzog pristupa njihovom profilu i opcijama poruka.
+Neke implementacije omogućavaju klik na ime korisnika ili avatar da brzo pristupite njihovom profilu i opcijama za poruke.
 
 **Direktni link:**
-Ako imate ID konverzacije ili DM preusmjeravajući link, možete direktno pristupiti konverzacijama.
+Ako imate ID razgovora ili DM redirect link, možete direktno pristupiti razgovorima.
 
-### Pristup vašim porukama
+### Pristupanje vašim porukama
 
-Da biste vidjeli sve svoje DM konverzacije:
+Da biste vidjeli sve vaše direktne razgovore:
 
 1. Posjetite stranicu svog profila
-2. Kliknite na karticu „Direktne poruke“
+2. Kliknite na karticu "Direct Messages"
 3. Pogledajte listu svih vaših razgovora
 
-Svaka konverzacija prikazuje:
+Svaki razgovor prikazuje:
 - Avatar i ime drugog učesnika
-- Njihov online/offline status (zelena indikacija kada su na mreži)
+- Njihov online/offline status (zeleni indikator kada je online)
 - Pregled posljednje poruke
 - Broj nepročitanih poruka (ako ih ima)
 - Vremensku oznaku posljednje aktivnosti
 
-### Prikaz razgovora
+### Pregled razgovora
 
-Kada otvorite razgovor, videćete:
+Kada otvorite razgovor, vidjećete:
 
-- **Puna istorija poruka** - Sve poruke između vas i drugog korisnika
-- **Ažuriranja u realnom vremenu** - Nove poruke se pojavljuju odmah putem WebSocket-a
-- **Status na mreži** - Vidite da li je druga osoba trenutno na mreži
-- **Vremenske oznake poruka** - Kada je svaka poruka poslana
-- **Pisanje poruka** - Tekstualno polje za kucanje i slanje novih poruka
+- **Potpunu istoriju poruka** - Sve poruke između vas i drugog korisnika
+- **Ažuriranja u stvarnom vremenu** - Nove poruke se pojavljuju instant putem WebSocket
+- **Online status** - Vidite da li je druga osoba trenutno online
+- **Vremenske oznake poruka** - Kada je svaka poruka poslata
+- **Sastavljanje poruke** - Polje za unos teksta za pisanje i slanje novih poruka
 
-### Obavijesti o porukama
+### Obavještenja o porukama
 
-Dobićete obavijesti za nove direktne poruke:
+Primićete obavještenja za nove direktne poruke:
 
-- **Obavijesti u aplikaciji** - Brojač na vašem profilu
-- **Email obavijesti** - U zavisnosti od vaših postavki obavijesti
-- **Upozorenja u realnom vremenu** - Instant obavijesti kada ste prijavljeni
+- **Obavještenja u aplikaciji** - Brojač (badge) na vašem profilu
+- **Email obavještenja** - U zavisnosti od podešavanja obavještenja
+- **Upozorenja u stvarnom vremenu** - Instant obavještenja kada ste prijavljeni
 
-Podesite preferencije obavijesti u vašim [Postavkama naloga](https://fastcomments.com/auth/my-account/edit-notifications).
+Upravljajte preferencama obavještenja u vašim [Podešavanjima naloga](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatnost i blokiranje
 
-**Onemogućavanje Direktnih poruka:**
-Ako ne želite da primate DM-ove, možete ih u potpunosti onemogućiti:
+**Onemogućavanje direktnih poruka:**
+Ako ne želite primati DM-ove, možete ih potpuno onemogućiti:
 1. Idite na Postavke privatnosti na svom profilu
-2. Omogućite „Onemogući direktne poruke“
-3. Opcija DM-a će biti skrivena sa vašeg profila
+2. Omogućite "Disable Direct Messages"
+3. Opcija DM će biti skrivena sa vašeg profila
 
 Za više detalja, pogledajte [Postavke privatnosti](/guides/user-profiles/privacy-settings).
 
@@ -73,84 +73,84 @@ Za više detalja, pogledajte [Postavke privatnosti](/guides/user-profiles/privac
 Ako vas neko uznemirava putem DM-a:
 1. Posjetite njihov profil
 2. Blokirajte korisnika
-3. Više vam neće moći slati poruke
+3. Oni više neće moći da vam šalju poruke
 
 Blokirani korisnici ne mogu:
 - Slati vam direktne poruke
 - Vidjeti vašu aktivnost
-- Komentarisati vaš profil
+- Komentarisati na vašem profilu
 - Interagovati s vama bilo gdje na FastComments
 
 ### Upravljanje razgovorima
 
 **Sakrivanje razgovora:**
-Možete sakriti razgovore koje više ne želite vidjeti u listi razgovora:
-1. Otvorite karticu „Direktne poruke“
+Možete sakriti razgovore koje više ne želite vidjeti na listi razgovora:
+1. Otvorite svoju karticu Direct Messages
 2. Pronađite razgovor koji želite sakriti
-3. Odaberite opciju sakrij/arhiviraj
+3. Izaberite opciju sakrij/arhiviraj
 
 Skriveni razgovori se neće pojavljivati u vašoj glavnoj listi, ali im se može pristupiti ako druga osoba pošalje novu poruku.
 
 **Označavanje kao pročitano:**
-Poruke se automatski označavaju kao pročitane kada ih pregledate. Također možete ručno označiti cijele razgovore kao pročitane:
-1. Otvorite karticu „Direktne poruke“
-2. Odaberite razgovor
-3. Izaberite „Označi kao pročitano“
+Poruke se automatski označavaju kao pročitane kada ih pogledate. Također možete ručno označiti cijele razgovore kao pročitane:
+1. Otvorite svoju karticu Direct Messages
+2. Izaberite razgovor
+3. Odaberite "Mark as Read"
 
-Ovo briše broj nepročitanih poruka za taj razgovor.
+Ovo briše brojač nepročitanih poruka za taj razgovor.
 
-### Najbolje prakse
+### Dobre prakse
 
-**Kada koristiti Direktne poruke:**
-- Postavljanje dodatnih pitanja privatno
-- Zahvaljivanje nekome za korisne savjete
-- Raspravljanje o temama van teme bez zatrpavanja javnih komentara
-- Koordinacija sa drugim članovima zajednice
-- Davanje privatnih povratnih informacija ili sugestija
+**Kada koristiti Direct Messages:**
+- Postavljati dodatna pitanja privatno
+- Zahvaliti nekome za korisne savjete
+- Raspravljati o off-topic temama bez zagušivanja javnih komentara
+- Koordinisati se sa drugim članovima zajednice
+- Davati privatne povratne informacije ili sugestije
 
-**Etiketa za DM-ove:**
-- Budite pristojni i profesionalni
-- Ne spamujte korisnike neželjenim porukama
-- Poštujte ako neko ne odgovara ili isključi DM-ove
+**Etiketa DM-a:**
+- Budite ljubazni i profesionalni
+- Nemojte slati spam korisnicima sa neželjenim porukama
+- Poštujte ako neko ne odgovara ili onemogući DM-ove
 - Držite razgovore relevantnim i konstruktivnim
 - Ne dijelite tuđe DM-ove bez dozvole
 
-**Savjeti za sigurnost:**
-- Nemojte dijeliti lične informacije (telefon, adresa, itd.) osim ako ne vjerujete osobi
+**Savjeti za bezbjednost:**
+- Ne dijelite lične informacije (telefon, adresa itd.) osim ako ne vjerujete osobi
 - Blokirajte i prijavite korisnike koji uznemiravaju ili zloupotrebljavaju DM-ove
 - Budite oprezni sa sumnjivim linkovima ili zahtjevima
-- Iskoristite opciju blokiranja ako vam neko stvara nelagodu
+- Koristite opciju blokiranja ako vas neko čini nelagodno
 
 ### Ograničenja i napomene
 
-**Kome možete poslati poruku:**
+**Kome možete slati poruke:**
 - Bilo kojem FastComments korisniku koji nije onemogućio DM-ove
 - Korisnicima koji vas nisu blokirali
-- Korisnicima u svim FastComments zajednicama
+- Korisnicima kroz sve FastComments zajednice
 
 **Sadržaj poruka:**
 - Podržane su tekstualne poruke
-- Poruke prate iste politike sadržaja kao i komentari
+- Poruke se pridržavaju istih pravila sadržaja kao i komentari
 - Neprimjeren sadržaj se može prijaviti
 
 **Opseg razgovora:**
-- DM konverzacije su privatne između dvije osobe
-- Nema grupnog dopisivanja (trenutno samo jedan-na-jedan)
-- Istorija konverzacija se čuva neograničeno
+- DM razgovori su privatni između dvije osobe
+- Nema grupnih poruka (trenutno samo jedno-na-jedan)
+- Istorija razgovora se čuva neograničeno
 
 ### Rješavanje problema
 
 **Ne možete poslati poruku?**
-Drugi korisnik je možda:
-- Onemogućio direktne poruke u postavkama privatnosti
+Drugi korisnik možda:
+- Onemogućio direktne poruke u svojim postavkama privatnosti
 - Blokirao vas
-- Izbrisao nalog
+- Izbrisao svoj nalog
 
-**Ne primate obavijesti?**
-Provjerite postavke obavijesti u [Postavkama naloga](https://fastcomments.com/auth/my-account/edit-notifications) kako biste osigurali da su obavijesti za DM omogućene.
+**Ne primate obavještenja?**
+Provjerite podešavanja obavještenja u [Podešavanjima naloga](https://fastcomments.com/auth/my-account/edit-notifications) da osigurate da su DM obavještenja omogućena.
 
 **Poruke se ne šalju?**
 - Provjerite internet konekciju
 - Osvježite stranicu i pokušajte ponovo
-- Provjerite da li ste blokirani
+- Provjerite da niste blokirani
 - Kontaktirajte podršku ako problem potraje

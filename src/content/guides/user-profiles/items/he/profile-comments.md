@@ -1,130 +1,128 @@
-הערות פרופיל מאפשרות למשתמשים להשאיר הודעות ישירות בדף הפרופיל של משתמש אחר, ויוצרות קיר תגובות אישי או אינטראקציה בסגנון ספר אורחים.
+Profile Comments allow users to leave messages directly on another user's profile page, creating a personal comment wall or guestbook-style interaction.
 
-### מהן הערות פרופיל?
+### What Are Profile Comments?
 
-הערות פרופיל שונות מתגובות רגילות למאמרים:
-- הן מופיעות בדף הפרופיל של משתמש, לא במאמרי תוכן
-- הן גלויות לכל מי שצופה בפרופיל (אלא אם הגדרות הפרטיות מגבילות זאת)
-- הן דרך להוקיר, להודות או לתקשר עם משתמשים ספציפיים
-- הן פועלות בכל קהילות FastComments
+Profile Comments are different from regular article comments:
+- They appear on a user's profile page, not on content articles
+- They're visible to anyone viewing the profile (unless privacy settings restrict this)
+- They're a way to recognize, thank, or communicate with specific users
+- They work across all FastComments communities
 
-### השארת הודעת פרופיל
+### Leaving a Profile Comment
 
-כדי להגיב בפרופיל של מישהו:
+To comment on someone's profile:
 
-1. בקר בדף הפרופיל של המשתמש
-2. עבור ללשונית "הערות פרופיל"
-3. השתמש בתיבת התגובה כדי לכתוב את הודעתך
-4. שלח את התגובה
+1. Visit the user's profile page
+2. Navigate to the "Profile Comments" tab
+3. Use the comment box to write your message
+4. Submit the comment
 
-**הערה:** הגדרות הפרטיות של בעל הפרופיל קובעות האם התגובה שלך תופיע מיד או תדרוש אישור.
+**Note:** The profile owner's privacy settings determine whether your comment appears immediately or requires approval.
 
-### צפייה בהערות פרופיל
+### Viewing Profile Comments
 
-**בפרופיל שלך:**
-1. בקר בדף הפרופיל שלך
-2. לחץ על לשונית "הערות פרופיל"
-3. צפה בכל ההערות שאחרים השאירו בפרופיל שלך
+**On Your Own Profile:**
+1. Visit your profile page
+2. Click the "Profile Comments" tab
+3. See all comments others have left on your profile
 
-**בפרופילים אחרים:**
-הערות פרופיל נראות אם המשתמש לא הפעיל את ההגדרה "הפוך את הערות הפרופיל לפרטיות".
+**On Other Profiles:**
+Profile comments are visible if the user hasn't enabled the "Make Profile Comments Private" setting.
 
-### אישור תגובות
+### Comment Approval
 
-בהתאם להגדרות בעל הפרופיל (ראה [הגדרות פרטיות](/guides/user-profiles/privacy-settings)), תגובות עשויות:
+Depending on the profile owner's settings (see [Privacy Settings](/guides/user-profiles/privacy-settings)), comments may:
 
-1. **להופיע מיד** - מאושרות אוטומטית בהתבסס על רמת אמון או הגדרות אישור
-2. **לדרוש אישור** - מוחזקות לבחינת בעל הפרופיל
+1. **Appear Immediately** - Auto-approved based on trust level or approval settings
+2. **Require Approval** - Held for the profile owner to review
 
-כאשר התגובה שלך דורשת אישור:
-- תראה מצביע מצב שהתגובה ממתינה
-- בעל הפרופיל מקבל התראה
-- לאחר אישור, התגובה נהפכת לנראית לאחרים
+When your comment requires approval:
+- You'll see a pending status indicator
+- The profile owner receives a notification
+- Once approved, the comment becomes visible to others
 
-### ניהול הערות פרופיל בפרופיל שלך
+### Managing Profile Comments on Your Profile
 
-אם הגדרת אישור תגובות (אישור ידני לכל או אישור ידני להודעות חדשות), תוכל לנהל תגובות נכנסות:
+If you've configured comment approval (Manual Approve All or Manual Approve New), you can manage incoming comments:
 
-**דרך דואר אלקטרוני:**
-תקבל התראות דוא"ל עם קישורי אישור/דחייה עבור תגובות ממתינות. לחץ על הקישור כדי לפעול ישירות מתוך הדוא"ל.
+**Via Email:**
+You'll receive email notifications with approve/reject links for pending comments. Click the link to take action directly from your email.
 
-**מהפרופיל שלך:**
-1. בקר בלשונית "הערות פרופיל" בפרופיל שלך
-2. צפה בתגובות הממתינות
-3. אשר או דחה כל תגובה
+**From Your Profile:**
+1. Visit your profile's "Profile Comments" tab
+2. View pending comments
+3. Approve or reject each comment
 
-**מההתראות:**
-גש לתגובות הממתינות ממרכז ההתראות שלך לבדיקה מהירה.
+**From Notifications:**
+Access pending comments from your notification center for quick review.
 
-### מענה להערות פרופיל
+### Responding to Profile Comments
 
-כאשר מישהו מגיב לפרופיל שלך, תוכל:
-- להשיב ישירות לתגובתו (יוצר אשכול שיחה)
-- לבקר בפרופיל שלו ולהשאיר תגובה בתמורה
-- לשלוח לו הודעה ישירה (אם הוא מאפשר הודעות פרטיות)
+When someone comments on your profile, you can:
+- Reply directly to their comment (creates a conversation thread)
+- Visit their profile and leave a comment in return
+- Send them a direct message (if they allow DMs)
 
-### מחיקת הערות פרופיל
+### Deleting Profile Comments
 
-**בפרופיל שלך:**
-תוכל למחוק כל תגובה שהושארה בפרופיל שלך:
-1. מצא את התגובה שברצונך להסיר
-2. לחץ על אפשרות המחיקה/הסרה
-3. אשר את המחיקה
+**On Your Own Profile:**
+You can delete any comment left on your profile:
+1. Find the comment you want to remove
+2. Click the delete/remove option
+3. Confirm deletion
 
-**בפרופילים אחרים:**
-תוכל למחוק את התגובות שלך שהשבת בפרופילים של אחרים, אך אינך יכול למחוק תגובות של אנשים אחרים (אלא אם אתה בעל הפרופיל).
+**On Other Profiles:**
+You can delete your own comments that you've left on others' profiles, but you cannot delete other people's comments (unless you're the profile owner).
 
-### התראות על הערות פרופיל
+### Profile Comment Notifications
 
-תקבל התראות כאשר:
-- מישהו משאיר תגובה בפרופיל שלך
-- מישהו עונה על אשכול תגובות פרופיל שבו אתה משתתף
-- תגובת פרופיל שהשארת אושרה או נענתה
+You'll receive notifications when:
+- Someone leaves a comment on your profile
+- Someone replies to a profile comment thread you're part of
+- A profile comment you left is approved or responded to
 
-נהל את העדפות ההתראות ב-[הגדרות חשבון](https://fastcomments.com/auth/my-account/edit-notifications).
+Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### פרטיות והערות פרופיל
+### Privacy and Profile Comments
 
-שלוט בנראות הערות הפרופיל באמצעות הגדרות פרטיות אלה:
+Control profile comment visibility with these privacy settings:
 
-**הפוך את הערות הפרופיל לפרטיות:**
-- מסתיר את לשונית ההערות פרופיל מהמבקרים
-- רק אתה יכול לראות את ההערות שהושארו בפרופיל שלך
-- מונע פרסום תגובות חדשות
+**Make Profile Comments Private:**
+- Hides the Profile Comments tab from visitors
+- Only you can see comments left on your profile
+- Prevents new comments from being posted
 
-**מצבי אישור תגובות:**
-- בחר מי יכול להגיב ללא צורך באישור
-- קבע כללים שונים לאישור עבור משתמשים מהימנים לעומת משתמשים חדשים
-- דרוש אישור ידני לכל התגובות
+**Comment Approval Modes:**
+- Choose who can comment without approval
+- Set different approval rules for trusted vs. new users
+- Require manual approval for all comments
 
-לפרטים נוספים, ראה [הגדרות פרטיות](/guides/user-profiles/privacy-settings).
+For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
 
-### מקרי שימוש להערות פרופיל
+### Use Cases for Profile Comments
 
-הערות פרופיל מצוינות ל-
+Profile Comments are great for:
 
-- **להודות לחברי קהילה מועילים**
-- **לזהות תרומות בעלות ערך**
-- **לבנות קשר עם משתתפים פעילים**
-- **להשאיר המלצות או חסויות**
-- **ליצור חוויית ספר אורחים חברתית**
-- **הערכה והוקרה קהילתית**
+- **Thanking helpful community members**
+- **Recognizing valuable contributions**
+- **Building rapport with active participants**
+- **Leaving testimonials or endorsements**
+- **Creating a social guestbook experience**
+- **Community appreciation and recognition**
 
-### שיטות עבודה מומלצות
+### Best Practices
 
-**להשארת תגובות:**
-- היו מכבדים וקונסטרוקטיביים
-- הוסיפו ערך במקום הודעות גנריות כמו "פרופיל נחמד"
-- התייחסו לתרומות או אינטראקציות ספציפיות כשהתאימו
+**For Leaving Comments:**
+- Be respectful and constructive
+- Add value rather than just generic "nice profile" messages
+- Reference specific contributions or interactions when applicable
 
-**לניהול הפרופיל שלך:**
-- קבעו הגדרות אישור מתאימות לפי רמת הנוחות שלכם
-- השיבו להערות פרופיל כדי לעודד מעורבות קהילתית
-- השתמשו בחסימה אם מישהו משאיר תגובות בלתי הולמות שוב ושוב
+**For Managing Your Profile:**
+- Set appropriate approval settings based on your comfort level
+- Respond to profile comments to encourage community engagement
+- Use blocking if someone leaves inappropriate comments repeatedly
 
-**לבריאות הקהילה:**
-- הערות פרופיל כפופות לאותם כללי קהילה כמו תגובות למאמרים
-- דווח על תגובות פרופיל בלתי הולמות אם נתקלת בהן
-- מודרטורים יכולים לנקוט פעולה נגד תגובות פרופיל שמפרות את הכללים
-
----
+**For Community Health:**
+- Profile comments follow the same community guidelines as article comments
+- Report inappropriate profile comments if you encounter them
+- Moderators can take action on profile comments that violate rules

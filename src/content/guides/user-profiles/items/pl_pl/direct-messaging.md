@@ -1,156 +1,156 @@
-Wiadomości bezpośrednie (DM) pozwalają użytkownikom FastComments prowadzić prywatne, jeden na jednego rozmowy między sobą, oddzielone od publicznych komentarzy i interakcji z profilami.
+Direct Messaging (DM) pozwala użytkownikom FastComments prowadzić prywatne, jeden-na-jeden rozmowy między sobą, oddzielone od publicznych komentarzy i interakcji z profilem.
 
-### Czym są Wiadomości bezpośrednie?
+### What is Direct Messaging?
 
-Wiadomości bezpośrednie zapewniają:
+Direct Messaging zapewnia:
 - **Prywatne rozmowy** między dwoma użytkownikami
 - **Wiadomości w czasie rzeczywistym** z powiadomieniami
 - **Historia rozmów** zachowywana między sesjami
-- **Wskaźniki statusu online** pozwalające zobaczyć, kiedy ktoś jest dostępny
+- **Wskaźniki statusu online** aby zobaczyć, kiedy ktoś jest dostępny
 - **Śledzenie nieprzeczytanych wiadomości** aby być na bieżąco z nowymi wiadomościami
 
-### Rozpoczynanie wiadomości bezpośredniej
+### Starting a Direct Message
 
-Istnieje kilka sposobów na rozpoczęcie rozmowy DM:
+Istnieje kilka sposobów rozpoczęcia rozmowy DM:
 
-**Z profilu użytkownika:**
+**From a User Profile:**
 1. Odwiedź stronę profilu użytkownika
-2. Kliknij kartę "Wiadomości bezpośrednie" lub przycisk "Wyślij wiadomość"
+2. Kliknij kartę "Direct Messages" lub przycisk "Send Message"
 3. Wpisz wiadomość i wyślij
 
-**Z komentarza:**
-W niektórych implementacjach można kliknąć imię użytkownika lub awatar, aby szybko przejść do jego profilu i opcji wysyłania wiadomości.
+**From a Comment:**
+W niektórych wdrożeniach kliknięcie nazwy użytkownika lub awatara pozwala szybko przejść do jego profilu i opcji wysyłania wiadomości.
 
-**Bezpośredni link:**
-Jeśli masz identyfikator konwersacji lub przekierowujący link DM, możesz uzyskać dostęp do konwersacji bezpośrednio.
+**Direct Link:**
+Jeśli masz identyfikator rozmowy lub przekierowujący link DM, możesz uzyskać dostęp do rozmów bezpośrednio.
 
-### Dostęp do Twoich wiadomości
+### Accessing Your Messages
 
-Aby zobaczyć wszystkie swoje rozmowy w wiadomościach bezpośrednich:
+Aby zobaczyć wszystkie swoje rozmowy prywatne:
 
 1. Odwiedź stronę swojego profilu
-2. Kliknij kartę "Wiadomości bezpośrednie"
-3. Zobacz listę wszystkich swoich konwersacji
+2. Kliknij kartę "Direct Messages"
+3. Zobacz listę wszystkich swoich rozmów
 
-Każda konwersacja pokazuje:
-- Awatar i imię drugiego uczestnika
-- Jego status online/offline (zielony wskaźnik, gdy jest online)
+Każda rozmowa pokazuje:
+- Awatar i nazwę drugiego uczestnika
+- Ich status online/offline (zielony wskaźnik, gdy są online)
 - Podgląd ostatniej wiadomości
-- Liczbę nieprzeczytanych wiadomości (jeśli są)
+- Liczbę nieprzeczytanych wiadomości (jeśli istnieją)
 - Znacznik czasu ostatniej aktywności
 
-### Widok konwersacji
+### Conversation View
 
-Po otwarciu konwersacji zobaczysz:
+Po otwarciu rozmowy zobaczysz:
 
 - **Pełna historia wiadomości** - Wszystkie wiadomości między tobą a drugim użytkownikiem
-- **Aktualizacje w czasie rzeczywistym** - Nowe wiadomości pojawiają się natychmiast za pośrednictwem WebSocket
+- **Aktualizacje w czasie rzeczywistym** - Nowe wiadomości pojawiają się natychmiast przez WebSocket
 - **Status online** - Zobacz, czy druga osoba jest obecnie online
 - **Znaczniki czasu wiadomości** - Kiedy każda wiadomość została wysłana
 - **Tworzenie wiadomości** - Pole tekstowe do wpisywania i wysyłania nowych wiadomości
 
-### Powiadomienia o wiadomościach
+### Message Notifications
 
-Otrzymasz powiadomienia o nowych wiadomościach bezpośrednich:
+Otrzymasz powiadomienia o nowych wiadomościach prywatnych:
 
-- **Powiadomienia w aplikacji** - Licznik na ikonie profilu
+- **Powiadomienia w aplikacji** - Licznik z nerką na twoim profilu
 - **Powiadomienia e-mail** - W zależności od ustawień powiadomień
-- **Powiadomienia w czasie rzeczywistym** - Natychmiastowe alerty, gdy jesteś zalogowany
+- **Alerty w czasie rzeczywistym** - Natychmiastowe powiadomienia, gdy jesteś zalogowany
 
-Zarządzaj preferencjami powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications).
+Zarządzaj preferencjami powiadomień w swoich [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### Prywatność i blokowanie
+### Privacy and Blocking
 
-**Wyłączanie wiadomości bezpośrednich:**
-Jeśli nie chcesz otrzymywać DM-ów, możesz je całkowicie wyłączyć:
+**Disabling Direct Messages:**
+Jeśli nie chcesz otrzymywać DM, możesz je całkowicie wyłączyć:
 1. Przejdź do Ustawień prywatności na swoim profilu
-2. Włącz opcję "Wyłącz wiadomości bezpośrednie"
-3. Opcja DM zostanie ukryta z twojego profilu
+2. Włącz "Disable Direct Messages"
+3. Opcja DM zostanie ukryta w twoim profilu
 
-Aby uzyskać więcej szczegółów, zobacz [Ustawienia prywatności](/guides/user-profiles/privacy-settings).
+Aby uzyskać więcej szczegółów, zobacz [Privacy Settings](/guides/user-profiles/privacy-settings).
 
-**Blokowanie użytkowników:**
-Jeśli ktoś nęka cię za pomocą DM:
+**Blocking Users:**
+Jeśli ktoś nęka cię przez DM:
 1. Odwiedź jego profil
 2. Zablokuj użytkownika
-3. Nie będzie on już mógł do ciebie pisać
+3. Nie będzie mógł już do ciebie napisać
 
 Zablokowani użytkownicy nie mogą:
-- Wysyłać ci wiadomości bezpośrednich
+- Wysyłać ci wiadomości prywatnych
 - Widzieć twojej aktywności
 - Komentować twojego profilu
 - Wchodzić z tobą w interakcje gdziekolwiek na FastComments
 
-### Zarządzanie konwersacjami
+### Managing Conversations
 
-**Ukrywanie konwersacji:**
-Możesz ukryć konwersacje, których nie chcesz już widzieć na liście konwersacji:
-1. Otwórz kartę Wiadomości bezpośrednich
-2. Znajdź konwersację do ukrycia
-3. Wybierz opcję ukryj/archiwizuj
+**Hiding Conversations:**
+Możesz ukryć rozmowy, których nie chcesz już widzieć na liście rozmów:
+1. Otwórz kartę Direct Messages
+2. Znajdź rozmowę do ukrycia
+3. Wybierz opcję ukrycia/archiwizacji
 
-Ukryte konwersacje nie będą się pojawiać na twojej głównej liście, ale można do nich wrócić, jeśli druga osoba wyśle nową wiadomość.
+Ukryte rozmowy nie będą wyświetlane na głównej liście, ale można je otworzyć, jeśli druga osoba wyśle nową wiadomość.
 
-**Oznaczanie jako przeczytane:**
-Wiadomości są automatycznie oznaczane jako przeczytane po ich wyświetleniu. Możesz również ręcznie oznaczyć całe konwersacje jako przeczytane:
-1. Otwórz kartę Wiadomości bezpośrednich
-2. Wybierz konwersację
-3. Wybierz "Oznacz jako przeczytane"
+**Marking as Read:**
+Wiadomości są automatycznie oznaczane jako przeczytane po ich obejrzeniu. Możesz także ręcznie oznaczyć całe rozmowy jako przeczytane:
+1. Otwórz kartę Direct Messages
+2. Wybierz rozmowę
+3. Wybierz "Mark as Read"
 
-To usuwa licznik nieprzeczytanych dla tej konwersacji.
+To czyści licznik nieprzeczytanych wiadomości dla tej rozmowy.
 
-### Najlepsze praktyki
+### Best Practices
 
-**Kiedy używać wiadomości bezpośrednich:**
+**When to Use Direct Messages:**
 - Zadawanie prywatnych pytań uzupełniających
-- Podziękowanie komuś za pomocne porady
-- Omawianie tematów niezwiązanych z dyskusją, bez zaśmiecania publicznych komentarzy
+- Podziękowanie komuś za pomocne wskazówki
+- Omawianie tematów niezwiązanych z głównym wątkiem bez zaśmiecania publicznych komentarzy
 - Koordynowanie działań z innymi członkami społeczności
 - Przekazywanie prywatnej opinii lub sugestii
 
-**Etykieta DM:**
+**DM Etiquette:**
 - Bądź uprzejmy i profesjonalny
 - Nie spamuj użytkowników niechcianymi wiadomościami
-- Uszanuj, jeśli ktoś nie odpowiada lub wyłączył DM
-- Trzymaj rozmowy na temat i konstruktywne
-- Nie udostępniaj wiadomości innych bez ich zgody
+- Uszanuj, jeśli ktoś nie odpowiada lub wyłączy DM
+- Utrzymuj rozmowy na temat i konstruktywne
+- Nie udostępniaj cudzych DM bez zgody
 
-**Wskazówki dotyczące bezpieczeństwa:**
-- Nie udostępniaj danych osobowych (telefon, adres itp.), chyba że ufasz tej osobie
-- Blokuj i zgłaszaj użytkowników, którzy nękają lub obrażają w DM
+**Safety Tips:**
+- Nie udostępniaj danych osobowych (telefon, adres itp.), chyba że ufasz osobie
+- Zablokuj i zgłoś użytkowników, którzy nękają lub nadużywają DM
 - Bądź ostrożny wobec podejrzanych linków lub próśb
-- Użyj funkcji blokowania, jeśli ktoś cię niepokoi
+- Użyj funkcji blokowania, jeśli ktoś powoduje u ciebie dyskomfort
 
-### Ograniczenia i uwagi
+### Limitations and Notes
 
-**Do kogo możesz pisać:**
-- Do każdego użytkownika FastComments, który nie wyłączył DM
-- Do użytkowników, którzy cię nie zablokowali
-- Do użytkowników ze wszystkich społeczności FastComments
+**Who Can You Message:**
+- Każdy użytkownik FastComments, który nie wyłączył DM
+- Użytkownicy, którzy cię nie zablokowali
+- Użytkownicy we wszystkich społecznościach FastComments
 
-**Treść wiadomości:**
+**Message Content:**
 - Obsługiwane są wiadomości tekstowe
 - Wiadomości podlegają tym samym zasadom treści co komentarze
 - Nieodpowiednie treści można zgłaszać
 
-**Zakres konwersacji:**
-- Konwersacje DM są prywatne między dwiema osobami
-- Brak grupowych wiadomości (obecnie tylko jeden na jednego)
-- Historia konwersacji jest przechowywana bezterminowo
+**Conversation Scope:**
+- Rozmowy DM są prywatne między dwiema osobami
+- Brak wiadomości grupowych (aktualnie tylko jeden-na-jeden)
+- Historia rozmów jest zachowywana na stałe
 
-### Rozwiązywanie problemów
+### Troubleshooting
 
-**Nie możesz wysłać wiadomości?**
+**Can't Send a Message?**
 Drugi użytkownik mógł:
-- Wyłączyć wiadomości bezpośrednie w ustawieniach prywatności
-- Cię zablokować
+- Wyłączyć wiadomości prywatne w ustawieniach prywatności
+- Zablokować cię
 - Usunąć swoje konto
 
-**Nie otrzymujesz powiadomień?**
-Sprawdź ustawienia powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications), aby upewnić się, że powiadomienia DM są włączone.
+**Not Receiving Notifications?**
+Sprawdź ustawienia powiadomień w [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications), aby upewnić się, że powiadomienia DM są włączone.
 
-**Wiadomości się nie wysyłają?**
-- Sprawdź swoje połączenie internetowe
+**Messages Not Sending?**
+- Sprawdź połączenie z internetem
 - Odśwież stronę i spróbuj ponownie
 - Upewnij się, że nie zostałeś zablokowany
-- Skontaktuj się z pomocą techniczną, jeśli problem będzie się powtarzał
+- Skontaktuj się z pomocą, jeśli problem nadal występuje

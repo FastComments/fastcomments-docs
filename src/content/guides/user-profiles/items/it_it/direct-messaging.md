@@ -1,4 +1,4 @@
-La Messaggistica Diretta (DM) consente agli utenti FastComments di avere conversazioni private, uno-a-uno, separate dai commenti pubblici e dalle interazioni del profilo.
+I Messaggi Diretti (DM) consentono agli utenti FastComments di avere conversazioni private, uno a uno, separate dai commenti pubblici e dalle interazioni del profilo.
 
 ### Che cos'è la Messaggistica Diretta?
 
@@ -7,24 +7,24 @@ La Messaggistica Diretta offre:
 - **Messaggistica in tempo reale** con notifiche
 - **Cronologia delle conversazioni** che persiste tra le sessioni
 - **Indicatori di stato online** per vedere quando qualcuno è disponibile
-- **Tracciamento dei messaggi non letti** per rimanere aggiornati sui nuovi messaggi
+- **Tracciamento dei messaggi non letti** per restare aggiornati sui nuovi messaggi
 
 ### Avviare un Messaggio Diretto
 
 Ci sono diversi modi per avviare una conversazione DM:
 
-**Dalla pagina del profilo utente:**
+**Dal profilo di un utente:**
 1. Visita la pagina del profilo dell'utente
-2. Clicca sulla scheda "Messaggi Diretti" o sul pulsante "Invia Messaggio"
+2. Clicca sulla scheda "Messaggi Diretti" o sul pulsante "Invia messaggio"
 3. Digita il tuo messaggio e invialo
 
 **Da un commento:**
-Alcune implementazioni permettono di cliccare sul nome o sull'avatar di un utente per accedere rapidamente al loro profilo e alle opzioni di messaggistica.
+Alcune implementazioni permettono di cliccare sul nome o sull'avatar di un utente per accedere rapidamente al suo profilo e alle opzioni di messaggistica.
 
 **Link diretto:**
-Se hai un conversation ID o un DM redirect link, puoi accedere alle conversazioni direttamente.
+Se hai un ID conversazione o un link di reindirizzamento DM, puoi accedere direttamente alle conversazioni.
 
-### Accedere ai tuoi messaggi
+### Accesso ai tuoi messaggi
 
 Per visualizzare tutte le tue conversazioni di messaggi diretti:
 
@@ -39,14 +39,14 @@ Ogni conversazione mostra:
 - Il conteggio dei messaggi non letti (se presente)
 - Timestamp dell'ultima attività
 
-### Vista conversazione
+### Vista della conversazione
 
 Quando apri una conversazione, vedrai:
 
 - **Cronologia completa dei messaggi** - Tutti i messaggi tra te e l'altro utente
 - **Aggiornamenti in tempo reale** - I nuovi messaggi appaiono istantaneamente tramite WebSocket
 - **Stato online** - Vedi se l'altra persona è attualmente online
-- **Timestamp dei messaggi** - Quando è stato inviato ogni messaggio
+- **Timestamp dei messaggi** - Quando ogni messaggio è stato inviato
 - **Composizione del messaggio** - Casella di testo per digitare e inviare nuovi messaggi
 
 ### Notifiche dei messaggi
@@ -54,12 +54,12 @@ Quando apri una conversazione, vedrai:
 Riceverai notifiche per i nuovi messaggi diretti:
 
 - **Notifiche in-app** - Contatore badge sul tuo profilo
-- **Notifiche email** - A seconda delle tue impostazioni di notifica
+- **Notifiche via email** - A seconda delle tue impostazioni di notifica
 - **Avvisi in tempo reale** - Notifiche istantanee quando sei connesso
 
-Gestisci le preferenze di notifica in [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications).
+Gestisci le preferenze di notifica nelle tue [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### Privacy e blocchi
+### Privacy e blocco
 
 **Disabilitare i Messaggi Diretti:**
 Se non vuoi ricevere DM, puoi disabilitarli completamente:
@@ -69,11 +69,11 @@ Se non vuoi ricevere DM, puoi disabilitarli completamente:
 
 Per maggiori dettagli, vedi [Impostazioni privacy](/guides/user-profiles/privacy-settings).
 
-**Bloccare utenti:**
+**Bloccare gli utenti:**
 Se qualcuno ti molesta tramite DM:
-1. Visita il loro profilo
+1. Visita il suo profilo
 2. Blocca l'utente
-3. Non potranno più inviarti messaggi
+3. Non potrà più inviarti messaggi
 
 Gli utenti bloccati non possono:
 - Inviarti messaggi diretti
@@ -81,76 +81,76 @@ Gli utenti bloccati non possono:
 - Commentare sul tuo profilo
 - Interagire con te in qualsiasi parte di FastComments
 
-### Gestire le conversazioni
+### Gestione delle conversazioni
 
-**Nascondere conversazioni:**
-Puoi nascondere le conversazioni che non vuoi più vedere nell'elenco delle conversazioni:
+**Nascondere le conversazioni:**
+Puoi nascondere le conversazioni che non vuoi più vedere nella tua lista conversazioni:
 1. Apri la scheda Messaggi Diretti
 2. Trova la conversazione da nascondere
 3. Seleziona l'opzione nascondi/archivia
 
 Le conversazioni nascoste non appariranno nella tua lista principale ma possono essere accessibili se l'altra persona invia un nuovo messaggio.
 
-**Segna come letto:**
-I messaggi vengono contrassegnati automaticamente come letti quando li visualizzi. Puoi anche contrassegnare manualmente intere conversazioni come lette:
+**Segnare come lette:**
+I messaggi vengono automaticamente segnati come letti quando li visualizzi. Puoi anche segnare manualmente intere conversazioni come lette:
 1. Apri la scheda Messaggi Diretti
 2. Seleziona una conversazione
-3. Scegli "Segna come letto"
+3. Scegli "Segna come lette"
 
 Questo azzera il contatore dei non letti per quella conversazione.
 
-### Migliori pratiche
+### Buone pratiche
 
 **Quando usare i Messaggi Diretti:**
-- Per fare domande di follow-up in privato
-- Per ringraziare qualcuno per un consiglio utile
-- Per discutere argomenti off-topic senza intasare i commenti pubblici
-- Per coordinarsi con altri membri della community
-- Per fornire feedback o suggerimenti privati
+- Fare domande di follow-up in privato
+- Ringraziare qualcuno per un consiglio utile
+- Discutere argomenti off-topic senza intasare i commenti pubblici
+- Coordinarsi con altri membri della community
+- Fornire feedback o suggerimenti in privato
 
-**Galateo dei DM:**
+**Netiquette dei DM:**
 - Sii rispettoso e professionale
-- Non inviare spam con messaggi non richiesti
-- Rispetta chi non risponde o disabilita i DM
-- Mantieni le conversazioni rilevanti e costruttive
-- Non condividere i DM di altre persone senza permesso
+- Non inviare spam agli utenti con messaggi non richiesti
+- Rispetta se qualcuno non risponde o disabilita i DM
+- Mantieni le conversazioni pertinenti e costruttive
+- Non condividere i DM altrui senza permesso
 
-**Consigli sulla sicurezza:**
-- Non condividere informazioni personali (telefono, indirizzo, ecc.) a meno che tu non ti fidi della persona
-- Blocca e segnala gli utenti che molestano o abusano tramite DM
+**Consigli di sicurezza:**
+- Non condividere informazioni personali (telefono, indirizzo, ecc.) a meno che non ti fidi della persona
+- Blocca e segnala gli utenti che molestano o abusano dei DM
 - Fai attenzione a link o richieste sospette
 - Usa la funzione di blocco se qualcuno ti mette a disagio
 
 ### Limitazioni e note
 
 **Chi puoi contattare:**
-- Qualsiasi utente FastComments che non abbia disabilitato i DM
+- Qualsiasi utente FastComments che non ha disabilitato i DM
 - Utenti che non ti hanno bloccato
 - Utenti di tutte le community FastComments
 
-**Contenuto del messaggio:**
+**Contenuto dei messaggi:**
 - Sono supportati messaggi di testo
-- I messaggi seguono le stesse politiche sui contenuti dei commenti
-- Il contenuto inappropriato può essere segnalato
+- I messaggi seguono le stesse politiche di contenuto dei commenti
+- Contenuti inappropriati possono essere segnalati
 
-**Ambito della conversazione:**
+**Ambito delle conversazioni:**
 - Le conversazioni DM sono private tra due persone
-- Nessuna messaggistica di gruppo (attualmente solo uno-a-uno)
+- Nessuna messaggistica di gruppo (attualmente solo uno a uno)
 - La cronologia delle conversazioni è conservata indefinitamente
 
 ### Risoluzione dei problemi
 
 **Impossibile inviare un messaggio?**
 L'altro utente potrebbe aver:
-- Disabilitato i messaggi diretti nelle sue impostazioni sulla privacy
+- Disabilitato i messaggi diretti nelle sue impostazioni di privacy
 - Bloccato te
-- Eliminato il proprio account
+- Eliminato il suo account
 
 **Non ricevi le notifiche?**
 Controlla le tue impostazioni di notifica su [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications) per assicurarti che le notifiche DM siano abilitate.
 
 **I messaggi non vengono inviati?**
-- Controlla la tua connessione a internet
+- Controlla la tua connessione internet
 - Ricarica la pagina e riprova
 - Assicurati di non essere stato bloccato
 - Contatta il supporto se il problema persiste

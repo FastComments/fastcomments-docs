@@ -1,156 +1,156 @@
-Direct Messaging (DM) allows FastComments users to have private, one-on-one conversations with each other, separate from public comments and profile interactions.
+Direct Messaging（DM）允許 FastComments 使用者進行私密的一對一對話，與公開評論和個人檔案互動分開。
 
 ### What is Direct Messaging?
 
-Direct Messaging provides:
-- **Private conversations** between two users
-- **Real-time messaging** with notifications
-- **Conversation history** that persists across sessions
-- **Online status** indicators to see when someone is available
-- **Unread message tracking** to stay on top of new messages
+Direct Messaging 提供：
+- **私密對話**，限兩位使用者
+- **即時訊息**與通知
+- **對話記錄**於不同會話間持續保存
+- **在線狀態**指示，查看對方是否可用
+- **未讀訊息追蹤**，隨時掌握新訊息
 
 ### Starting a Direct Message
 
-There are several ways to initiate a DM conversation:
+有數種方式可以啟動 DM 對話：
 
 **From a User Profile:**
-1. Visit the user's profile page
-2. Click the "Direct Messages" tab or "Send Message" button
-3. Type your message and send
+1. 前往該使用者的個人檔案頁面
+2. 點選「Direct Messages」分頁或「Send Message」按鈕
+3. 輸入您的訊息並發送
 
 **From a Comment:**
-Some implementations allow clicking on a user's name or avatar to quickly access their profile and messaging options.
+某些實作允許點擊使用者名稱或頭像，以快速存取其個人檔案和訊息選項。
 
 **Direct Link:**
-If you have a conversation ID or DM redirect link, you can access conversations directly.
+如果您有對話 ID 或 DM 重新導向連結，可以直接存取對話。
 
 ### Accessing Your Messages
 
-To view all your direct message conversations:
+要查看您所有的直接訊息對話：
 
-1. Visit your profile page
-2. Click the "Direct Messages" tab
-3. See a list of all your conversations
+1. 前往您的個人檔案頁面
+2. 點選「Direct Messages」分頁
+3. 查看所有對話的清單
 
-Each conversation shows:
-- The other participant's avatar and name
-- Their online/offline status (green indicator when online)
-- A preview of the last message
-- Unread message count (if any)
-- Timestamp of last activity
+每個對話會顯示：
+- 另一方的頭像和名稱
+- 他們的在線/離線狀態（在線時顯示綠色指示器）
+- 最後一則訊息的預覽
+- 未讀訊息數（若有）
+- 最後活動時間戳
 
 ### Conversation View
 
-When you open a conversation, you'll see:
+當您打開一個對話時，您會看到：
 
-- **Full message history** - All messages between you and the other user
-- **Real-time updates** - New messages appear instantly via WebSocket
-- **Online status** - See if the other person is currently online
-- **Message timestamps** - When each message was sent
-- **Message composition** - Text box to type and send new messages
+- **完整訊息歷史** - 您與另一使用者之間的所有訊息
+- **即時更新** - 新訊息會透過 WebSocket 即時出現
+- **在線狀態** - 查看對方是否目前在線
+- **訊息時間戳記** - 每則訊息的發送時間
+- **訊息撰寫** - 用於輸入並發送新訊息的文字框
 
 ### Message Notifications
 
-You'll receive notifications for new direct messages:
+您會收到新直接訊息的通知：
 
-- **In-app notifications** - Badge counter on your profile
-- **Email notifications** - Depending on your notification settings
-- **Real-time alerts** - Instant notifications when you're logged in
+- **App 內通知** - 您個人檔案上的徽章計數
+- **電子郵件通知** - 視您的通知設定而定
+- **即時提醒** - 當您已登入時的即時通知
 
-Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
+在您的 [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) 管理通知偏好設定。
 
 ### Privacy and Blocking
 
 **Disabling Direct Messages:**
-If you don't want to receive DMs, you can disable them completely:
-1. Go to Privacy Settings on your profile
-2. Enable "Disable Direct Messages"
-3. The DM option will be hidden from your profile
+如果您不想接收 DM，可以完全停用：
+1. 前往您個人檔案的隱私設定
+2. 啟用「Disable Direct Messages」
+3. DM 選項將不會顯示在您的個人檔案上
 
-For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+欲瞭解更多細節，請參閱 [Privacy Settings](/guides/user-profiles/privacy-settings)。
 
 **Blocking Users:**
-If someone is harassing you via DM:
-1. Visit their profile
-2. Block the user
-3. They will no longer be able to message you
+如果有人透過 DM 騷擾您：
+1. 前往他們的個人檔案
+2. 封鎖該使用者
+3. 他們將無法再傳送訊息給您
 
-Blocked users cannot:
-- Send you direct messages
-- See your activity
-- Comment on your profile
-- Interact with you anywhere on FastComments
+被封鎖的使用者無法：
+- 傳送您直接訊息
+- 查看您的活動
+- 在您的個人檔案上留言
+- 在 FastComments 的任何地方與您互動
 
 ### Managing Conversations
 
 **Hiding Conversations:**
-You can hide conversations you no longer want to see in your conversation list:
-1. Open your Direct Messages tab
-2. Find the conversation to hide
-3. Select the hide/archive option
+您可以隱藏不想在對話清單中看到的對話：
+1. 打開您的 Direct Messages 分頁
+2. 找到要隱藏的對話
+3. 選擇隱藏/封存選項
 
-Hidden conversations won't appear in your main list but can be accessed if the other person sends a new message.
+隱藏的對話不會出現在您的主清單中，但若對方發送新訊息仍可存取。
 
 **Marking as Read:**
-Messages are automatically marked as read when you view them. You can also manually mark entire conversations as read:
-1. Open your Direct Messages tab
-2. Select a conversation
-3. Choose "Mark as Read"
+當您查看訊息時，訊息會自動標記為已讀。您也可以手動將整個對話標記為已讀：
+1. 打開您的 Direct Messages 分頁
+2. 選擇一個對話
+3. 選擇「Mark as Read」
 
-This clears the unread counter for that conversation.
+這會清除該對話的未讀計數。
 
 ### Best Practices
 
 **When to Use Direct Messages:**
-- Asking follow-up questions privately
-- Thanking someone for helpful advice
-- Discussing off-topic matters without cluttering public comments
-- Coordinating with other community members
-- Providing private feedback or suggestions
+- 私下詢問後續問題
+- 感謝他人有幫助的建議
+- 討論與主題無關的事項而不造成公開留言區雜亂
+- 與其他社群成員協調事宜
+- 提供私下的回饋或建議
 
 **DM Etiquette:**
-- Be respectful and professional
-- Don't spam users with unsolicited messages
-- Respect if someone doesn't respond or disables DMs
-- Keep conversations relevant and constructive
-- Don't share others' DMs without permission
+- 保持尊重與專業
+- 不要以不請自來的訊息大量騷擾使用者
+- 尊重對方不回覆或停用 DM 的決定
+- 保持對話相關且建設性
+- 未經允許不要分享他人的 DM
 
 **Safety Tips:**
-- Don't share personal information (phone, address, etc.) unless you trust the person
-- Block and report users who harass or abuse DMs
-- Be cautious of suspicious links or requests
-- Use the blocking feature if someone makes you uncomfortable
+- 未經信任前，不要分享個人資訊（電話、地址等）
+- 封鎖並舉報在 DM 中進行騷擾或濫用的使用者
+- 對可疑連結或要求保持謹慎
+- 若有人讓您感到不適，使用封鎖功能
 
 ### Limitations and Notes
 
 **Who Can You Message:**
-- Any FastComments user who hasn't disabled DMs
-- Users who haven't blocked you
-- Users across all FastComments communities
+- 任何未停用 DM 的 FastComments 使用者
+- 未封鎖您的使用者
+- 跨所有 FastComments 社群的使用者
 
 **Message Content:**
-- Text messages are supported
-- Messages follow the same content policies as comments
-- Inappropriate content can be reported
+- 支援文字訊息
+- 訊息遵循與評論相同的內容政策
+- 不當內容可以被舉報
 
 **Conversation Scope:**
-- DM conversations are private between two people
-- No group messaging (currently one-on-one only)
-- Conversation history is preserved indefinitely
+- DM 對話僅限兩人私密交流
+- 目前不支援群組訊息（僅一對一）
+- 對話歷史會永久保存
 
 ### Troubleshooting
 
 **Can't Send a Message?**
-The other user may have:
-- Disabled direct messages in their privacy settings
-- Blocked you
-- Deleted their account
+對方可能已經：
+- 在隱私設定中停用直接訊息
+- 封鎖您
+- 刪除他們的帳號
 
 **Not Receiving Notifications?**
-Check your notification settings at [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) to ensure DM notifications are enabled.
+請在 [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) 檢查您的通知設定，確保 DM 通知已啟用。
 
 **Messages Not Sending?**
-- Check your internet connection
-- Refresh the page and try again
-- Ensure you haven't been blocked
-- Contact support if the problem persists
+- 檢查您的網路連線
+- 重新整理頁面並再試一次
+- 確認您是否已被封鎖
+- 若問題持續，請聯絡支援人員

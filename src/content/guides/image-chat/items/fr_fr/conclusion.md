@@ -1,7 +1,8 @@
+---
 ### Des questions ?
 
-Voilà pour FastComments Image Chat ! Si vous avez des questions, besoin d'aide pour la mise en œuvre, ou des suggestions de fonctionnalités, faites-le nous savoir ci-dessous ou contactez notre équipe d'assistance.
+C'est tout pour FastComments Image Chat ! Si vous avez des questions, besoin d'aide pour l'implémentation, ou des suggestions de fonctionnalités, veuillez nous le faire savoir ci-dessous ou contacter notre équipe d'assistance.
 
-Découvrez la démo en direct sur notre [page de démonstration](https://fastcomments.com/image-chat) pour voir Image Chat en action.
+Découvrez la démo en direct sur notre [page de démonstration](https://fastcomments.com/product/image-chat) pour voir Image Chat en action.
 
 ---

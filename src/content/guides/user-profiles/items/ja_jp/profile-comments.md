@@ -1,128 +1,128 @@
-Profile Comments allow users to leave messages directly on another user's profile page, creating a personal comment wall or guestbook-style interaction.
+プロフィールコメントは、ユーザーが他のユーザーのプロフィールページに直接メッセージを残せる機能で、個人的なコメントウォールやゲストブックのようなやり取りを可能にします。
 
-### What Are Profile Comments?
+### プロフィールコメントとは？
 
-Profile Comments are different from regular article comments:
-- They appear on a user's profile page, not on content articles
-- They're visible to anyone viewing the profile (unless privacy settings restrict this)
-- They're a way to recognize, thank, or communicate with specific users
-- They work across all FastComments communities
+プロフィールコメントは通常の記事コメントとは異なります:
+- コンテンツ記事ではなく、ユーザーのプロフィールページに表示されます
+- プロフィールを閲覧する誰にでも表示されます（プライバシー設定で制限されている場合を除く）
+- 特定のユーザーに感謝や認識を示したり、連絡を取る方法です
+- すべての FastComments コミュニティで機能します
 
-### Leaving a Profile Comment
+### プロフィールにコメントを残す方法
 
-To comment on someone's profile:
+誰かのプロフィールにコメントするには:
 
-1. Visit the user's profile page
-2. Navigate to the "プロフィールコメント" tab
-3. Use the comment box to write your message
-4. Submit the comment
+1. ユーザーのプロフィールページにアクセスする
+2. 「プロフィールコメント」タブに移動する
+3. コメントボックスにメッセージを入力する
+4. コメントを送信する
 
-**Note:** The profile owner's privacy settings determine whether your comment appears immediately or requires approval.
+**注：** プロフィール所有者のプライバシー設定により、コメントが即座に表示されるか、承認が必要になるかが決まります。
 
-### Viewing Profile Comments
+### プロフィールコメントを見る
 
-**On Your Own Profile:**
-1. Visit your profile page
-2. Click the "プロフィールコメント" tab
-3. See all comments others have left on your profile
+**自分のプロフィールで：**
+1. 自分のプロフィールページにアクセスする
+2. 「プロフィールコメント」タブをクリックする
+3. 他のユーザーが残したすべてのコメントを確認する
 
-**On Other Profiles:**
-Profile comments are visible if the user hasn't enabled the "プロフィールコメントを非公開にする" setting.
+**他人のプロフィールで：**
+ユーザーが「プロフィールコメントを非公開にする」設定を有効にしていない場合、プロフィールコメントは表示されます。
 
-### Comment Approval
+### コメントの承認
 
-Depending on the profile owner's settings (see [プライバシー設定](/guides/user-profiles/privacy-settings)), comments may:
+プロフィール所有者の設定（[Privacy Settings](/guides/user-profiles/privacy-settings) を参照）に応じて、コメントは次のようになります:
 
-1. **Appear Immediately** - Auto-approved based on trust level or approval settings
-2. **Require Approval** - Held for the profile owner to review
+1. **即時表示** - 信頼レベルや承認設定に基づいて自動承認されます
+2. **承認が必要** - プロフィール所有者の確認待ちになります
 
-When your comment requires approval:
-- You'll see a pending status indicator
-- The profile owner receives a notification
-- Once approved, the comment becomes visible to others
+コメントが承認待ちになるとき:
+- 保留中のステータス表示が見えます
+- プロフィール所有者に通知が送られます
+- 承認されると、コメントは他のユーザーに表示されます
 
-### Managing Profile Comments on Your Profile
+### 自分のプロフィール上でのプロフィールコメント管理
 
-If you've configured comment approval (「すべて手動承認」または「新規手動承認」), you can manage incoming comments:
+コメント承認を設定している場合（すべて手動承認または新規を手動承認）、受信コメントを管理できます:
 
-**Via Email:**
-You'll receive email notifications with approve/reject links for pending comments. Click the link to take action directly from your email.
+**メール経由で：**
+保留中のコメントについて、承認/拒否リンク付きのメール通知が届きます。メールから直接リンクをクリックして処理できます。
 
-**From Your Profile:**
-1. Visit your profile's "プロフィールコメント" tab
-2. View pending comments
-3. Approve or reject each comment
+**プロフィールから：**
+1. プロフィールの「プロフィールコメント」タブにアクセスする
+2. 保留中のコメントを表示する
+3. 各コメントを承認または拒否する
 
-**From Notifications:**
-Access pending comments from your notification center for quick review.
+**通知から：**
+通知センターから保留中のコメントにアクセスして迅速に確認できます。
 
-### Responding to Profile Comments
+### プロフィールコメントへの返信
 
-When someone comments on your profile, you can:
-- Reply directly to their comment (creates a conversation thread)
-- Visit their profile and leave a comment in return
-- Send them a direct message (if they allow DMs)
+誰かがあなたのプロフィールにコメントしたとき、あなたは:
+- そのコメントに直接返信する（会話スレッドが作成されます）
+- 相手のプロフィールを訪れてお返しにコメントを残す
+- 直接メッセージを送る（相手が DM を許可している場合）
 
-### Deleting Profile Comments
+### プロフィールコメントの削除
 
-**On Your Own Profile:**
-You can delete any comment left on your profile:
-1. Find the comment you want to remove
-2. Click the delete/remove option
-3. Confirm deletion
+**自分のプロフィールで：**
+自分のプロフィールに残された任意のコメントを削除できます:
+1. 削除したいコメントを見つける
+2. 削除/削除オプションをクリックする
+3. 削除を確認する
 
-**On Other Profiles:**
-You can delete your own comments that you've left on others' profiles, but you cannot delete other people's comments (unless you're the profile owner).
+**他人のプロフィールで：**
+他人のプロフィールに残した自分のコメントは削除できますが、他の人のコメントを削除することはできません（プロフィール所有者でない限り）。
 
-### Profile Comment Notifications
+### プロフィールコメントの通知
 
-You'll receive notifications when:
-- Someone leaves a comment on your profile
-- Someone replies to a profile comment thread you're part of
-- A profile comment you left is approved or responded to
+以下の場合に通知が届きます:
+- 誰かがあなたのプロフィールにコメントを残したとき
+- あなたが参加しているプロフィールコメントスレッドに誰かが返信したとき
+- あなたが残したプロフィールコメントが承認されたり返信されたとき
 
-Manage notification preferences in your [アカウント設定](https://fastcomments.com/auth/my-account/edit-notifications).
+通知設定は [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) で管理できます。
 
-### Privacy and Profile Comments
+### プライバシーとプロフィールコメント
 
-Control profile comment visibility with these privacy settings:
+次のプライバシー設定でプロフィールコメントの表示を制御できます：
 
-**Make Profile Comments Private:**
-- Hides the Profile Comments tab from visitors
-- Only you can see comments left on your profile
-- Prevents new comments from being posted
+**プロフィールコメントを非公開にする：**
+- 訪問者からプロフィールコメントタブを隠します
+- あなたのみがあなたのプロフィールに残されたコメントを閲覧できます
+- 新しいコメントの投稿を防ぎます
 
-**Comment Approval Modes:**
-- Choose who can comment without approval
-- Set different approval rules for trusted vs. new users
-- Require manual approval for all comments
+**コメント承認モード：**
+- 承認不要でコメントできるユーザーを選択します
+- 信頼されたユーザーと新しいユーザーで異なる承認ルールを設定します
+- すべてのコメントを手動承認にすることができます
 
-For more details, see [プライバシー設定](/guides/user-profiles/privacy-settings).
+詳細は [Privacy Settings](/guides/user-profiles/privacy-settings) を参照してください。
 
-### Use Cases for Profile Comments
+### プロフィールコメントの利用例
 
-Profile Comments are great for:
+プロフィールコメントは以下に最適です：
 
-- **Thanking helpful community members**
-- **Recognizing valuable contributions**
-- **Building rapport with active participants**
-- **Leaving testimonials or endorsements**
-- **Creating a social guestbook experience**
-- **Community appreciation and recognition**
+- **有益なコミュニティメンバーに感謝を伝える**
+- **価値ある貢献を認める**
+- **積極的な参加者との関係を築く**
+- **推薦や推薦文を残す**
+- **ソーシャルなゲストブック体験を作る**
+- **コミュニティの感謝と称賛**
 
-### Best Practices
+### ベストプラクティス
 
-**For Leaving Comments:**
-- Be respectful and constructive
-- Add value rather than just generic "nice profile" messages
-- Reference specific contributions or interactions when applicable
+**コメントを残すとき：**
+- 丁寧で建設的であること
+- 単なる「いいプロフィール」などの一般的なメッセージではなく価値を付加すること
+- 該当する場合は具体的な貢献ややり取りに言及すること
 
-**For Managing Your Profile:**
-- Set appropriate approval settings based on your comfort level
-- Respond to profile comments to encourage community engagement
-- Use blocking if someone leaves inappropriate comments repeatedly
+**プロフィールを管理するとき：**
+- 自分の快適さに応じた適切な承認設定を行うこと
+- プロフィールコメントに返信してコミュニティの関与を促すこと
+- 誰かが繰り返し不適切なコメントを残す場合はブロックを使用すること
 
-**For Community Health:**
-- Profile comments follow the same community guidelines as article comments
-- Report inappropriate profile comments if you encounter them
-- Moderators can take action on profile comments that violate rules
+**コミュニティの健全性のために：**
+- プロフィールコメントは記事コメントと同じコミュニティガイドラインに従います
+- 不適切なプロフィールコメントを見つけた場合は報告してください
+- ルールに違反するプロフィールコメントに対してはモデレーターが対処できます

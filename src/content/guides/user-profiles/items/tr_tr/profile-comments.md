@@ -1,128 +1,128 @@
-Profil Yorumları, kullanıcıların başka bir kullanıcının profil sayfasına doğrudan mesaj bırakmalarına olanak tanır; kişisel bir yorum duvarı veya ziyaretçi defteri tarzı etkileşim oluşturur.
+Profile Comments allow users to leave messages directly on another user's profile page, creating a personal comment wall or guestbook-style interaction.
 
-### Profil Yorumları Nedir?
+### What Are Profile Comments?
 
-Profil Yorumları normal makale yorumlarından farklıdır:
-- İçerik makalelerinde değil, bir kullanıcının profil sayfasında görünürler
-- Profil sayfasını görüntüleyen herkes tarafından görülebilir (gizlilik ayarları bunu kısıtlamadıkça)
-- Belirli kullanıcıları tanımak, teşekkür etmek veya onlarla iletişim kurmak için bir yoldur
-- Tüm FastComments topluluklarında geçerlidir
+Profile Comments are different from regular article comments:
+- They appear on a user's profile page, not on content articles
+- They're visible to anyone viewing the profile (unless privacy settings restrict this)
+- They're a way to recognize, thank, or communicate with specific users
+- They work across all FastComments communities
 
-### Profil Yorumu Bırakmak
+### Leaving a Profile Comment
 
-Birinin profiline yorum bırakmak için:
+To comment on someone's profile:
 
-1. Kullanıcının profil sayfasını ziyaret edin
-2. "Profil Yorumları" sekmesine gidin
-3. Yorum kutusunu kullanarak mesajınızı yazın
-4. Yorumu gönderin
+1. Visit the user's profile page
+2. Navigate to the "Profile Comments" tab
+3. Use the comment box to write your message
+4. Submit the comment
 
-**Not:** Profil sahibinin gizlilik ayarları, yorumunuzun hemen görünüp görünmeyeceğini veya onay gerektirip gerektirmeyeceğini belirler.
+**Note:** The profile owner's privacy settings determine whether your comment appears immediately or requires approval.
 
-### Profil Yorumlarını Görüntüleme
+### Viewing Profile Comments
 
-**Kendi Profilinizde:**
-1. Profil sayfanızı ziyaret edin
-2. "Profil Yorumları" sekmesine tıklayın
-3. Profilinize diğerlerinin bıraktığı tüm yorumları görün
+**On Your Own Profile:**
+1. Visit your profile page
+2. Click the "Profile Comments" tab
+3. See all comments others have left on your profile
 
-**Diğer Profillerde:**
-Kullanıcı "Profil Yorumlarını Gizli Yap" ayarını etkinleştirmediyse, profil yorumları görünür.
+**On Other Profiles:**
+Profile comments are visible if the user hasn't enabled the "Make Profile Comments Private" setting.
 
-### Yorum Onayı
+### Comment Approval
 
-Profil sahibinin ayarlarına bağlı olarak (bkz. [Gizlilik Ayarları](/guides/user-profiles/privacy-settings)), yorumlar:
+Depending on the profile owner's settings (see [Privacy Settings](/guides/user-profiles/privacy-settings)), comments may:
 
-1. **Hemen Görünür** - Güven seviyesi veya onay ayarlarına göre otomatik onaylanır
-2. **Onay Gerektirir** - Profil sahibinin incelemesi için bekletilir
+1. **Appear Immediately** - Auto-approved based on trust level or approval settings
+2. **Require Approval** - Held for the profile owner to review
 
-Yorumunuz onay gerektirdiğinde:
-- Beklemede durum göstergesi görürsünüz
-- Profil sahibi bir bildirim alır
-- Onaylandığında, yorum başkaları tarafından görünür hale gelir
+When your comment requires approval:
+- You'll see a pending status indicator
+- The profile owner receives a notification
+- Once approved, the comment becomes visible to others
 
-### Profilinizdeki Yorumları Yönetme
+### Managing Profile Comments on Your Profile
 
-Eğer yorum onayı (Tümünü Elle Onayla veya Yeni Olanları Elle Onayla) yapılandırdıysanız, gelen yorumları yönetebilirsiniz:
+If you've configured comment approval (Manual Approve All or Manual Approve New), you can manage incoming comments:
 
-**E-posta Yoluyla:**
-Bekleyen yorumlar için onay/red bağlantıları içeren e-posta bildirimleri alırsınız. İşlem yapmak için e-postanızdaki bağlantıya tıklayın.
+**Via Email:**
+You'll receive email notifications with approve/reject links for pending comments. Click the link to take action directly from your email.
 
-**Profilinizden:**
-1. Profilinizin "Profil Yorumları" sekmesini ziyaret edin
-2. Bekleyen yorumları görüntüleyin
-3. Her yorumu onaylayın veya reddedin
+**From Your Profile:**
+1. Visit your profile's "Profile Comments" tab
+2. View pending comments
+3. Approve or reject each comment
 
-**Bildirimlerden:**
-Hızlı inceleme için bildirim merkezinizden bekleyen yorumlara erişin.
+**From Notifications:**
+Access pending comments from your notification center for quick review.
 
-### Profil Yorumlarına Yanıt Verme
+### Responding to Profile Comments
 
-Birisi profilinize yorum yaptığında:
-- Yorumlarına doğrudan yanıt verebilirsiniz (konuşma dizisi oluşturur)
-- Onların profiline gidip karşılık olarak bir yorum bırakabilirsiniz
-- Doğrudan mesaj gönderebilirsiniz (DM'lere izin veriyorlarsa)
+When someone comments on your profile, you can:
+- Reply directly to their comment (creates a conversation thread)
+- Visit their profile and leave a comment in return
+- Send them a direct message (if they allow DMs)
 
-### Profil Yorumlarını Silme
+### Deleting Profile Comments
 
-**Kendi Profilinizde:**
-Profilinizde bırakılan herhangi bir yorumu silebilirsiniz:
-1. Kaldırmak istediğiniz yorumu bulun
-2. Sil/kaldır seçeneğine tıklayın
-3. Silmeyi onaylayın
+**On Your Own Profile:**
+You can delete any comment left on your profile:
+1. Find the comment you want to remove
+2. Click the delete/remove option
+3. Confirm deletion
 
-**Diğer Profillerde:**
-Başkalarının profillerine bıraktığınız kendi yorumlarınızı silebilirsiniz, ancak başka kişilerin yorumlarını silemezsiniz (profil sahibi olmadığınız sürece).
+**On Other Profiles:**
+You can delete your own comments that you've left on others' profiles, but you cannot delete other people's comments (unless you're the profile owner).
 
-### Profil Yorum Bildirimleri
+### Profile Comment Notifications
 
-Aşağıdaki durumlarda bildirim alırsınız:
-- Birisi profilinize yorum bıraktığında
-- Bir profil yorumu dizisine dahil olduğunuzda birisi yanıt verdiğinde
-- Bıraktığınız bir profil yorumu onaylandığında veya yanıtlandığında
+You'll receive notifications when:
+- Someone leaves a comment on your profile
+- Someone replies to a profile comment thread you're part of
+- A profile comment you left is approved or responded to
 
-Bildirimin tercihlerini [Hesap Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) bölümünden yönetin.
+Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### Gizlilik ve Profil Yorumları
+### Privacy and Profile Comments
 
-Profil yorum görünürlüğünü aşağıdaki gizlilik ayarları ile kontrol edin:
+Control profile comment visibility with these privacy settings:
 
-**Profil Yorumlarını Gizli Yap:**
-- Ziyaretçilerden Profil Yorumları sekmesini gizler
-- Profilinize bırakılan yorumları yalnızca siz görebilirsiniz
-- Yeni yorumların gönderilmesini engeller
+**Make Profile Comments Private:**
+- Hides the Profile Comments tab from visitors
+- Only you can see comments left on your profile
+- Prevents new comments from being posted
 
-**Yorum Onay Modları:**
-- Onay gerektirmeden kimlerin yorum yapabileceğini seçin
-- Güvenilen ve yeni kullanıcılar için farklı onay kuralları belirleyin
-- Tüm yorumlar için manuel onay gerektirin
+**Comment Approval Modes:**
+- Choose who can comment without approval
+- Set different approval rules for trusted vs. new users
+- Require manual approval for all comments
 
-Daha fazla ayrıntı için bkz. [Gizlilik Ayarları](/guides/user-profiles/privacy-settings).
+For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
 
-### Profil Yorumları İçin Kullanım Senaryoları
+### Use Cases for Profile Comments
 
-Profil Yorumları için ideal kullanım alanları:
+Profile Comments are great for:
 
-- **Yardımcı topluluk üyelerine teşekkür etmek**
-- **Değerli katkıları takdir etmek**
-- **Aktif katılımcılarla ilişki kurmak**
-- **Referanslar veya tavsiyeler bırakmak**
-- **Sosyal bir ziyaretçi defteri deneyimi oluşturmak**
-- **Topluluk takdiri ve tanıma**
+- **Thanking helpful community members**
+- **Recognizing valuable contributions**
+- **Building rapport with active participants**
+- **Leaving testimonials or endorsements**
+- **Creating a social guestbook experience**
+- **Community appreciation and recognition**
 
-### En İyi Uygulamalar
+### Best Practices
 
-**Yorum Bırakırken:**
-- Saygılı ve yapıcı olun
-- Sadece genel "güzel profil" mesajları yerine değer katın
-- Uygunsa belirli katkılara veya etkileşimlere atıfta bulunun
+**For Leaving Comments:**
+- Be respectful and constructive
+- Add value rather than just generic "nice profile" messages
+- Reference specific contributions or interactions when applicable
 
-**Profilinizi Yönetirken:**
-- Rahatınıza göre uygun onay ayarlarını yapın
-- Topluluk etkileşimini teşvik etmek için profil yorumlarına yanıt verin
-- Birisi uygunsuz yorumları tekrar tekrar bırakıyorsa engellemeyi kullanın
+**For Managing Your Profile:**
+- Set appropriate approval settings based on your comfort level
+- Respond to profile comments to encourage community engagement
+- Use blocking if someone leaves inappropriate comments repeatedly
 
-**Topluluk Sağlığı İçin:**
-- Profil yorumları, makale yorumlarıyla aynı topluluk yönergelerini takip eder
-- Karşılaştığınız uygunsuz profil yorumlarını bildirin
-- Moderatörler, kuralları ihlal eden profil yorumları hakkında işlem yapabilir
+**For Community Health:**
+- Profile comments follow the same community guidelines as article comments
+- Report inappropriate profile comments if you encounter them
+- Moderators can take action on profile comments that violate rules

@@ -1,12 +1,12 @@
-El Feed de actividad en los perfiles de usuario muestra el historial de comentarios de un usuario, notificaciones y participación en la comunidad en todos los sitios con FastComments.
+El Feed de Actividad en Perfiles de Usuario muestra el historial de comentarios de un usuario, notificaciones y participación en la comunidad en todos los sitios impulsados por FastComments.
 
-### ¿Qué es el Feed de actividad?
+### ¿Qué es el Feed de Actividad?
 
-El Feed de actividad proporciona una vista cronológica de:
+El Feed de Actividad proporciona una vista cronológica de:
 - Comentarios publicados por el usuario
 - Respuestas recibidas
 - Menciones e interacciones
-- Actividad en diferentes comunidades
+- Actividad a través de diferentes comunidades
 - Actualizaciones en tiempo real sobre la participación del usuario
 
 ### Ver la actividad
@@ -14,15 +14,15 @@ El Feed de actividad proporciona una vista cronológica de:
 **Tu propia actividad:**
 Al ver tu perfil, verás pestañas adicionales:
 1. **Notificaciones** - Alertas sobre respuestas, menciones e interacciones
-2. **Actividad reciente** - Tu historial completo de comentarios en todos los sitios
+2. **Actividad Reciente** - Tu historial completo de comentarios en todos los sitios
 
 **Actividad de otros usuarios:**
 Al ver el perfil de otra persona:
-1. **Actividad reciente** - Su historial público de comentarios (si no lo tiene configurado como privado)
+1. **Actividad Reciente** - Su historial público de comentarios (si no está configurado como privado)
 
 La pestaña de actividad muestra dónde y cuándo los usuarios participan en la red de FastComments.
 
-### Pestaña de Notificaciones
+### Pestaña Notificaciones
 
 Tu pestaña de Notificaciones muestra:
 
@@ -32,23 +32,23 @@ Tu pestaña de Notificaciones muestra:
 - Notificaciones de comentarios en el perfil
 - Alertas de mensajes directos
 - Logros de insignias
-- Acciones de moderación en tu contenido
+- Acciones de moderación sobre tu contenido
 
 **Funciones de notificaciones:**
 - **Contador de no leídos** - Muestra cuántas notificaciones no leídas tienes
-- **Actualizaciones en tiempo real** - Nuevas notificaciones aparecen al instante vía WebSocket
+- **Actualizaciones en tiempo real** - Las nuevas notificaciones aparecen instantáneamente vía WebSocket
 - **Elementos clicables** - Haz clic en cualquier notificación para ir al comentario o conversación relevante
 - **Estado leído/no leído** - Indicadores visuales de qué notificaciones has visto
 
 **Gestionar notificaciones:**
-- Las notificaciones se marcan como leídas cuando las visualizas
+- Las notificaciones se marcan como leídas cuando las ves
 - Configura qué tipos de notificaciones recibes en [Configuración de notificaciones](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Para más detalles sobre la gestión de notificaciones, consulta la [Guía de notificaciones](/guides/notifications).
+Para más detalles sobre cómo gestionar notificaciones, consulta la [Guía de notificaciones](/guides/notifications).
 
-### Pestaña de Actividad Reciente
+### Pestaña Actividad Reciente
 
-La pestaña de Actividad reciente muestra todos los comentarios publicados por el usuario en las comunidades de FastComments.
+La pestaña Actividad Reciente muestra todos los comentarios publicados por el usuario en las comunidades de FastComments.
 
 **Qué se muestra:**
 - **Contenido del comentario** - El texto completo de cada comentario
@@ -60,9 +60,9 @@ La pestaña de Actividad reciente muestra todos los comentarios publicados por e
 **Filtrado de actividad:**
 En tu propio perfil, puedes filtrar la actividad para mostrar:
 - **Toda la actividad** - Cada comentario que has publicado
-- **Respuestas a mí** - Solo comentarios que son respuestas a tus comentarios
+- **Respuestas a mí** - Solo los comentarios que son respuestas a tus comentarios
 
-Esto facilita centrarte en las conversaciones en las que estás directamente implicado.
+Esto facilita centrarte en las conversaciones en las que estás directamente involucrado.
 
 ### Participación en la comunidad
 
@@ -93,33 +93,33 @@ Estas estadísticas ofrecen una visión rápida del nivel de participación y la
 
 ### Controles de privacidad
 
-Los usuarios pueden controlar la visibilidad de la actividad mediante la configuración de privacidad:
+Los usuarios pueden controlar la visibilidad de la actividad mediante ajustes de privacidad:
 
 **Hacer privada la actividad del perfil:**
 Cuando está habilitado:
-- Solo tú puedes ver la pestaña de Actividad reciente
+- Solo tú puedes ver tu pestaña Actividad Reciente
 - Otros no pueden ver tu historial de comentarios en tu perfil
 - Tus comentarios públicos siguen siendo visibles en su contexto original (en los artículos)
-- Solo se oculta la vista agregada de actividad en tu perfil
+- Solo la vista agregada de actividad en tu perfil queda oculta
 
-Para más detalles, consulta [Configuración de privacidad](/guides/user-profiles/privacy-settings).
+Para más detalles, consulta [Ajustes de privacidad](/guides/user-profiles/privacy-settings).
 
 ### Actualizaciones en tiempo real
 
-El Feed de actividad utiliza la tecnología WebSocket para actualizaciones en tiempo real:
+El Feed de Actividad usa la tecnología WebSocket para actualizaciones en tiempo real:
 
-- **Notificaciones instantáneas** - Nuevas respuestas y menciones aparecen inmediatamente
+- **Notificaciones instantáneas** - Nuevas respuestas y menciones aparecen de inmediato
 - **Actualizaciones de actividad en vivo** - Los comentarios recientes se añaden a medida que publicas
 - **Estado en línea** - Ve cuándo los participantes de la conversación están activos
-- **No es necesario actualizar la página** - Todo se actualiza automáticamente
+- **No es necesario refrescar la página** - Todo se actualiza automáticamente
 
-### Actividad en varias comunidades
+### Actividad en todas las comunidades
 
-Una de las características potentes de los perfiles de usuario de FastComments es ver la actividad en todas las comunidades:
+Una de las funciones potentes de los Perfiles de Usuario de FastComments es ver la actividad en todas las comunidades:
 
 **Beneficios:**
-- Descubrir dónde los usuarios tienen conocimientos o están activos
-- Encontrar usuarios con intereses comunes en distintos sitios
+- Descubrir dónde los usuarios son conocedores o están activos
+- Encontrar usuarios con intereses compartidos en diferentes sitios
 - Construir reputación en toda la red de FastComments
 - Ver la amplitud de la participación en la comunidad
 
@@ -128,37 +128,37 @@ Una de las características potentes de los perfiles de usuario de FastComments 
 - Alguien que contribuye tanto a noticias como a blogs de recetas
 - Miembros de la comunidad que participan en temas relacionados
 
-### Buenas prácticas
+### Mejores prácticas
 
 **Para ver la actividad:**
 - Revisa la actividad de un usuario para entender su experiencia e intereses
-- Observa la participación por comunidad para encontrar puntos en común
-- Revisa karma y recuento de comentarios para conocer el nivel de participación
+- Observa la participación por comunidades para encontrar puntos en común
+- Revisa el karma y el recuento de comentarios para evaluar el nivel de participación
 
 **Para gestionar tu actividad:**
-- Ajusta la configuración de privacidad según tu nivel de comodidad
-- Participa con cuidado sabiendo que tu actividad es visible (a menos que esté en privado)
+- Ajusta la privacidad según tu nivel de comodidad
+- Participa de forma reflexiva sabiendo que tu actividad es visible (a menos que esté en privado)
 - Usa el filtrado para centrarte en conversaciones relevantes
-- Mantén controladas las notificaciones para estar al tanto de tus conversaciones
+- Mantén el seguimiento de las notificaciones para seguir tus conversaciones
 
 **Para construir comunidad:**
-- Reconoce a los participantes activos mediante su feed de actividad
-- Conecta con usuarios que comparten intereses en varias comunidades
+- Reconoce a los participantes activos a través de su feed de actividad
+- Conecta con usuarios que comparten intereses entre comunidades
 - Usa el historial de actividad para identificar miembros valiosos de la comunidad
 
-### Solución de problemas
+### Resolución de problemas
 
-**La actividad no se muestra:**
-- Comprueba si el usuario ha activado "Hacer privada la actividad del perfil"
-- Asegúrate de haber iniciado sesión si se requiere
+**La actividad no aparece:**
+- Comprueba si el usuario ha habilitado "Hacer privada la actividad del perfil"
+- Asegúrate de haber iniciado sesión si es necesario
 - Actualiza la página si la actividad parece desactualizada
 
 **Las notificaciones no aparecen:**
 - Revisa la configuración de notificaciones en tu cuenta
-- Asegúrate de que las notificaciones no estén siendo filtradas por tu proveedor de correo
+- Asegúrate de que las notificaciones no estén siendo filtradas por tu proveedor de correo electrónico
 - Verifica la conexión WebSocket (busca actualizaciones en tiempo real)
 
-**Se muestra actividad incorrecta:**
+**Actividad mostrada incorrectamente:**
 - Borra la caché del navegador y actualiza
-- Cierra sesión y vuelve a iniciar
-- Reporta cualquier problema persistente al soporte
+- Cierra sesión y vuelve a iniciar sesión
+- Informa cualquier problema persistente al soporte
