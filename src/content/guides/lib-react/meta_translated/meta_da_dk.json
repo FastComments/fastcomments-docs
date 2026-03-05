@@ -1,6 +1,6 @@
 {
   "name": "React-bibliotek",
-  "pageHeader": "FastComments React-bibliotek",
+  "pageHeader": "Tilføj kommentarer til din React-app",
   "itemsOrdered": [
     {
       "name": "Installation",
@@ -11,13 +11,13 @@
     {
       "name": "Eksempler",
       "file": "examples-readme-generated.md",
-      "subCat": "Anvendelse",
+      "subCat": "Brug",
       "type": "readme"
     },
     {
-      "name": "Anvendelse",
+      "name": "Brug",
       "file": "usage-readme-generated.md",
-      "subCat": "Anvendelse",
+      "subCat": "Brug",
       "type": "readme"
     }
   ]

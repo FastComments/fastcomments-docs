@@ -1,9 +1,9 @@
 {
   "name": "Библиотека Android",
-  "pageHeader": "Библиотека FastComments для Android",
+  "pageHeader": "Добавьте комментарии в ваше Android-приложение",
   "itemsOrdered": [
     {
-      "name": "Функции",
+      "name": "Возможности",
       "file": "features-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

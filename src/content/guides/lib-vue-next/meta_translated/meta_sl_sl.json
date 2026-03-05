@@ -1,6 +1,6 @@
 {
-  "name": "Vue 3 knjižnica",
-  "pageHeader": "FastComments Vue 3 knjižnica",
+  "name": "Knjižnica Vue 3",
+  "pageHeader": "Dodajte komentarje v svojo aplikacijo Vue 3",
   "itemsOrdered": [
     {
       "name": "Namestitev",
@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "V produkcijskem okolju",
+      "name": "V produkciji",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Vsi pripomočki in dokumentacija",
+      "name": "Vsi gradniki in dokumentacija",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

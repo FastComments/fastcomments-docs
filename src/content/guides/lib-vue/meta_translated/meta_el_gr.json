@@ -1,11 +1,11 @@
 {
   "name": "Βιβλιοθήκη Vue 2",
-  "pageHeader": "FastComments Βιβλιοθήκη Vue 2",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Vue 2 σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Εισαγωγή",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Ενημέρωση της τρέχουσας σελίδας (Παράδειγμα SPA)",
+      "name": "Ενημέρωση της τρέχουσας σελίδας (παράδειγμα SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Σε Παραγωγή",
+      "name": "Σε παραγωγή",
       "file": "in-production-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

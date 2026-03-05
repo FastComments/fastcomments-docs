@@ -1,6 +1,6 @@
 {
   "name": "Android biblioteka",
-  "pageHeader": "FastComments Android biblioteka",
+  "pageHeader": "Dodajte komentare u svoju Android aplikaciju",
   "itemsOrdered": [
     {
       "name": "Značajke",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Osnovna upotreba",
+      "name": "Osnovno korištenje",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Korištenje",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Integracija chata uživo",
+      "name": "Integracija live chata",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Sveobuhvatno prilagođavanje teme",
+      "name": "Sveobuhvatna prilagodba tema",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

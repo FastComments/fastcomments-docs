@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca Vue 2",
-  "pageHeader": "Biblioteca FastComments para Vue 2",
+  "pageHeader": "Adicione comentários ao seu aplicativo Vue 2",
   "itemsOrdered": [
     {
       "name": "Instalação",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Atualizando a Página Atual (Exemplo de SPA)",
+      "name": "Atualizando a página atual (exemplo de SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Em Produção",
+      "name": "Em produção",
       "file": "in-production-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

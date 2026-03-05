@@ -1,6 +1,6 @@
 {
   "name": "Bibliothèque Android",
-  "pageHeader": "Bibliothèque FastComments pour Android",
+  "pageHeader": "Ajouter des commentaires à votre application Android",
   "itemsOrdered": [
     {
       "name": "Fonctionnalités",
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Intégration du flux",
+      "name": "Intégration de flux",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

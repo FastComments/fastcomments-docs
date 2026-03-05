@@ -1,6 +1,6 @@
 {
   "name": "Android 函式庫",
-  "pageHeader": "FastComments Android 函式庫",
+  "pageHeader": "在您的 Android 應用程式中新增評論",
   "itemsOrdered": [
     {
       "name": "功能",
@@ -17,23 +17,23 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門",
       "type": "readme"
     },
     {
       "name": "基本用法",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "安全的單一登入（SSO）驗證",
+      "name": "安全單一登入 (SSO) 驗證",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "驗證",
+      "subCat": "認證",
       "type": "readme"
     },
     {
-      "name": "Feed 整合",
+      "name": "資訊串流整合",
       "file": "feed-integration-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -47,7 +47,7 @@
     {
       "name": "範例專案",
       "file": "example-projects-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "完整的主題自訂",
+      "name": "完整的主題客製化",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

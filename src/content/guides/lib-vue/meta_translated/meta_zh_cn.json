@@ -1,6 +1,6 @@
 {
   "name": "Vue 2 库",
-  "pageHeader": "FastComments Vue 2 库",
+  "pageHeader": "在您的 Vue 2 应用中添加评论",
   "itemsOrdered": [
     {
       "name": "安装",
@@ -9,15 +9,15 @@
       "type": "readme"
     },
     {
-      "name": "用法",
+      "name": "使用",
       "file": "usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "更新当前页面（单页应用示例）",
+      "name": "更新当前页面（SPA 示例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {

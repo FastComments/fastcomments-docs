@@ -1,6 +1,6 @@
 {
   "name": "React Native-bibliotheek",
-  "pageHeader": "FastComments React Native-bibliotheek",
+  "pageHeader": "Voeg commentaarwidgets toe aan je React Native-app",
   "itemsOrdered": [
     {
       "name": "Installatie",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Gebruik - De Live Reactie-widget",
+      "name": "Gebruik - De live commentaarwidget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"
     },
     {
-      "name": "Gebruik - De Live Chat-widget",
+      "name": "Gebruik - De live chatwidget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"

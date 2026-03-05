@@ -1,7 +1,13 @@
 {
   "name": "Svelte-bibliotheek",
-  "pageHeader": "FastComments Svelte-bibliotheek",
+  "pageHeader": "Opmerkingen toevoegen aan uw Svelte-app",
   "itemsOrdered": [
+    {
+      "name": "Snel aan de slag",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Widgets",
       "file": "widgets-readme-generated.md",

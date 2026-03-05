@@ -1,9 +1,9 @@
 {
   "name": "Βιβλιοθήκη Angular",
-  "pageHeader": "Βιβλιοθήκη FastComments για Angular",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Angular σας",
   "itemsOrdered": [
     {
-      "name": "Δομή του έργου",
+      "name": "Δομή έργου",
       "file": "project-structure-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

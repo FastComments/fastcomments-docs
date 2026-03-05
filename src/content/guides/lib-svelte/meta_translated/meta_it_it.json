@@ -1,7 +1,13 @@
 {
   "name": "Libreria Svelte",
-  "pageHeader": "Libreria Svelte di FastComments",
+  "pageHeader": "Aggiungi commenti alla tua app Svelte",
   "itemsOrdered": [
+    {
+      "name": "Avvio rapido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
     {
       "name": "Widget",
       "file": "widgets-readme-generated.md",

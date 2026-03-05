@@ -1,11 +1,11 @@
 {
   "name": "Βιβλιοθήκη Vue 2",
-  "pageHeader": "Βιβλιοθήκη FastComments για Vue 2",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Vue 2 σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Εισαγωγή",
+      "subCat": "Πρώτα βήματα",
       "type": "readme"
     },
     {

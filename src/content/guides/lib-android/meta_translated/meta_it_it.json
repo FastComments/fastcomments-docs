@@ -1,9 +1,9 @@
 {
   "name": "Libreria Android",
-  "pageHeader": "Libreria FastComments per Android",
+  "pageHeader": "Aggiungi commenti alla tua app Android",
   "itemsOrdered": [
     {
-      "name": "Caratteristiche",
+      "name": "Funzionalità",
       "file": "features-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Utilizzo base",
+      "name": "Utilizzo di base",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"

@@ -1,6 +1,6 @@
 {
   "name": "React Native 库",
-  "pageHeader": "FastComments React Native 库",
+  "pageHeader": "向你的 React Native 应用添加评论小部件",
   "itemsOrdered": [
     {
       "name": "安装",
@@ -15,19 +15,19 @@
       "type": "readme"
     },
     {
-      "name": "用法 - 实时评论组件",
+      "name": "用法 - 实时评论小部件",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "用法 - 实时聊天组件",
+      "name": "用法 - 实时聊天小部件",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "用法 - SSO（单点登录）",
+      "name": "用法 - 单点登录 (SSO)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "用法",
       "type": "readme"

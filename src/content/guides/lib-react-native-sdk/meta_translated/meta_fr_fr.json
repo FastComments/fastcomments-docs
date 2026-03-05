@@ -1,11 +1,11 @@
 {
   "name": "SDK React Native",
-  "pageHeader": "SDK FastComments pour React Native",
+  "pageHeader": "Ajouter des commentaires à votre application React Native",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {

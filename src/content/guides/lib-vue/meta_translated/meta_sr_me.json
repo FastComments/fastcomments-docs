@@ -1,6 +1,6 @@
 {
-  "name": "Библиотека за Vue 2",
-  "pageHeader": "FastComments библиотека за Vue 2",
+  "name": "Vue 2 библиотека",
+  "pageHeader": "Додајте коментаре у вашу Vue 2 апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
@@ -9,15 +9,15 @@
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "Ажурирање тренутне странице (пример SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {

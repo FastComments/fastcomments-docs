@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Vue 3",
-  "pageHeader": "Библиотека FastComments для Vue 3",
+  "pageHeader": "Добавление комментариев в ваше приложение на Vue 3",
   "itemsOrdered": [
     {
       "name": "Установка",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "В продуктивной среде",
+      "name": "В производственной среде",
       "file": "in-production-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

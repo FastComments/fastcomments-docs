@@ -1,11 +1,11 @@
 {
   "name": "Vue 3 библиотека",
-  "pageHeader": "FastComments библиотека за Vue 3",
+  "pageHeader": "Додајте коментаре у вашу Vue 3 апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "За почетак",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {
@@ -15,19 +15,19 @@
       "type": "readme"
     },
     {
-      "name": "Ажурирање тренутне странице (пример за SPA)",
+      "name": "Ажурирање тренутне странице (пример SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Коришћење",
       "type": "readme"
     },
     {
-      "name": "У продукционом окружењу",
+      "name": "У продукцији",
       "file": "in-production-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Сви видџети и документација",
+      "name": "Сви видгети и документација",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

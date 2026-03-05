@@ -1,23 +1,23 @@
 {
   "name": "React библиотека",
-  "pageHeader": "FastComments React библиотека",
+  "pageHeader": "Додајте коментаре у вашу React апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {
       "name": "Примери",
       "file": "examples-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     }
   ]

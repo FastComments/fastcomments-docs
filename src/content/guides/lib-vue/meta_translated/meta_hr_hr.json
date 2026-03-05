@@ -1,11 +1,11 @@
 {
-  "name": "Biblioteka Vue 2",
-  "pageHeader": "FastComments biblioteka za Vue 2",
+  "name": "Vue 2 knjižnica",
+  "pageHeader": "Dodajte komentare u svoju Vue 2 aplikaciju",
   "itemsOrdered": [
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Početak rada",
       "type": "readme"
     },
     {

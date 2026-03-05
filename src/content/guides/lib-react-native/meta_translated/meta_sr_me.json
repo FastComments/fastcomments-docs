@@ -1,6 +1,6 @@
 {
   "name": "React Native библиотека",
-  "pageHeader": "FastComments библиотека за React Native",
+  "pageHeader": "Додајте видгете за коментаре у вашу React Native апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
@@ -9,31 +9,31 @@
       "type": "readme"
     },
     {
-      "name": "Размотрите нативни SDK",
+      "name": "Размислите о нативном SDK-у",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Употреба - видгет за коментаре уживо",
+      "name": "Употреба — видгет за коментаре уживо",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Употреба - видгет за уживо ћаскање",
+      "name": "Употреба — видгет за чет уживо",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Употреба - SSO",
+      "name": "Употреба — једнократна пријава (SSO)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Peer зависности",
+      "name": "Зависности пира",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

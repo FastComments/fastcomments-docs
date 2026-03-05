@@ -1,6 +1,6 @@
 {
-  "name": "Biblioteca de React Native",
-  "pageHeader": "Biblioteca FastComments para React Native",
+  "name": "Biblioteca React Native",
+  "pageHeader": "Añade widgets de comentarios a tu aplicación React Native",
   "itemsOrdered": [
     {
       "name": "Instalación",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Considere el SDK nativo",
+      "name": "Considera el SDK nativo",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Uso - SSO (Inicio de sesión único)",
+      "name": "Uso - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"

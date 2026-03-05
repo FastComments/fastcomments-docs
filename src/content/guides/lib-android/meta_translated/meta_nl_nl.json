@@ -1,6 +1,6 @@
 {
   "name": "Android-bibliotheek",
-  "pageHeader": "FastComments Android-bibliotheek",
+  "pageHeader": "Voeg reacties toe aan uw Android-app",
   "itemsOrdered": [
     {
       "name": "Functies",
@@ -27,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "Beveiligde SSO-authenticatie",
+      "name": "Veilige SSO-authenticatie",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Authenticatie",
       "type": "readme"
     },
     {
-      "name": "Feed-integratie",
+      "name": "Feedintegratie",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Livechat-integratie",
+      "name": "Livechatintegratie",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"

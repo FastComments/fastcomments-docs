@@ -1,7 +1,13 @@
 {
   "name": "ספריית Svelte",
-  "pageHeader": "ספריית Svelte של FastComments",
+  "pageHeader": "הוסף הערות לאפליקציית Svelte שלך",
   "itemsOrdered": [
+    {
+      "name": "התחלה מהירה",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "ווידג'טים",
       "file": "widgets-readme-generated.md",

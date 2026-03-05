@@ -1,6 +1,6 @@
 {
   "name": "Angular 라이브러리",
-  "pageHeader": "FastComments Angular 라이브러리",
+  "pageHeader": "Angular 앱에 댓글 기능 추가하기",
   "itemsOrdered": [
     {
       "name": "프로젝트 구조",

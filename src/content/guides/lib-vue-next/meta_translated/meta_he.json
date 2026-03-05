@@ -1,6 +1,6 @@
 {
   "name": "ספריית Vue 3",
-  "pageHeader": "ספריית FastComments ל-Vue 3",
+  "pageHeader": "הוסף תגובות לאפליקציית ה-Vue 3 שלך",
   "itemsOrdered": [
     {
       "name": "התקנה",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "עדכון העמוד הנוכחי (דוגמה ל-SPA)",
+      "name": "עדכון הדף הנוכחי (דוגמה ל-SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
     },
     {
-      "name": "בסביבת ייצור",
+      "name": "בייצור",
       "file": "in-production-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

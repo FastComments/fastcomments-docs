@@ -1,6 +1,6 @@
 {
   "name": "Android ライブラリ",
-  "pageHeader": "FastComments Android ライブラリ",
+  "pageHeader": "Androidアプリにコメント機能を追加する",
   "itemsOrdered": [
     {
       "name": "機能",
@@ -23,23 +23,23 @@
     {
       "name": "基本的な使い方",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "使い方",
+      "subCat": "使用法",
       "type": "readme"
     },
     {
-      "name": "セキュアな SSO 認証",
+      "name": "セキュアなSSO認証",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
     },
     {
-      "name": "フィード統合",
+      "name": "フィード連携",
       "file": "feed-integration-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "ライブチャット統合",
+      "name": "ライブチャット連携",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -47,7 +47,7 @@
     {
       "name": "サンプルプロジェクト",
       "file": "example-projects-readme-generated.md",
-      "subCat": "使い方",
+      "subCat": "使用法",
       "type": "readme"
     },
     {
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "テーマの包括的なカスタマイズ",
+      "name": "包括的なテーマのカスタマイズ",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

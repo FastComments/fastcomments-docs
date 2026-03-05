@@ -1,6 +1,6 @@
 {
   "name": "Biblioteka React Native",
-  "pageHeader": "Biblioteka FastComments dla React Native",
+  "pageHeader": "Dodaj widżety komentarzy do swojej aplikacji React Native",
   "itemsOrdered": [
     {
       "name": "Instalacja",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Użycie - widżet komentarzy na żywo",
+      "name": "Użycie - Widżet komentarzy na żywo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"
     },
     {
-      "name": "Użycie - widżet czatu na żywo",
+      "name": "Użycie - Widżet czatu na żywo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

@@ -1,11 +1,11 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "FastComments React Native SDK",
+  "pageHeader": "Tilføj kommentarer til din React Native-app",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom i gang",
+      "subCat": "Kom godt i gang",
       "type": "readme"
     },
     {

@@ -1,11 +1,11 @@
 {
   "name": "React 函式庫",
-  "pageHeader": "FastComments React 函式庫",
+  "pageHeader": "在你的 React 應用中加入評論",
   "itemsOrdered": [
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門",
       "type": "readme"
     },
     {

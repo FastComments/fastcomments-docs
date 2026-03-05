@@ -1,11 +1,11 @@
 {
-  "name": "SDK για React Native",
-  "pageHeader": "FastComments SDK για React Native",
+  "name": "React Native SDK",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή React Native σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Πρώτα βήματα",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Στιγμιότυπα",
+      "name": "Στιγμιότυπα οθόνης",
       "file": "screenshots-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

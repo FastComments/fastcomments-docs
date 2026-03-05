@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη Android",
-  "pageHeader": "Βιβλιοθήκη FastComments για Android",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Android σας",
   "itemsOrdered": [
     {
       "name": "Χαρακτηριστικά",
@@ -17,17 +17,17 @@
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Γρήγορη εκκίνηση",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
-      "name": "Βασική χρήση",
+      "name": "Βασική Χρήση",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Ασφαλής SSO Αυθεντικοποίηση",
+      "name": "Ασφαλής Αυθεντικοποίηση SSO",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Αυθεντικοποίηση",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Ενσωμάτωση ζωντανής συνομιλίας",
+      "name": "Ενσωμάτωση Ζωντανής Συνομιλίας",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -51,19 +51,19 @@
       "type": "readme"
     },
     {
-      "name": "Επιλογές διαμόρφωσης",
+      "name": "Επιλογές Διαμόρφωσης",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Διαμόρφωση",
       "type": "readme"
     },
     {
-      "name": "Ολοκληρωμένη προσαρμογή θέματος",
+      "name": "Ολοκληρωμένη Προσαρμογή Θέματος",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Διαχείριση μνήμης",
+      "name": "Διαχείριση Μνήμης",
       "file": "memory-management-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

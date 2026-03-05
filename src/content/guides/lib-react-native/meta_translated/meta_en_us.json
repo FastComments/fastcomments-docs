@@ -1,6 +1,6 @@
 {
   "name": "React Native Library",
-  "pageHeader": "FastComments React Native Library",
+  "pageHeader": "Add Comment Widgets to Your React Native App",
   "itemsOrdered": [
     {
       "name": "Installation",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Consider the Native SDK",
+      "name": "Consider The Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

@@ -1,9 +1,9 @@
 {
   "name": "Бібліотека Android",
-  "pageHeader": "Бібліотека FastComments для Android",
+  "pageHeader": "Додайте коментарі до вашого Android-додатку",
   "itemsOrdered": [
     {
-      "name": "Можливості",
+      "name": "Особливості",
       "file": "features-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Основне використання",
+      "name": "Базове використання",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Інтеграція чату в реальному часі",
+      "name": "Інтеграція живого чату",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

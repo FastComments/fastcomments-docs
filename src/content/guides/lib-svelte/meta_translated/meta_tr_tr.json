@@ -1,7 +1,13 @@
 {
   "name": "Svelte Kütüphanesi",
-  "pageHeader": "FastComments Svelte Kütüphanesi",
+  "pageHeader": "Svelte Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Bileşenler",
       "file": "widgets-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Derleme",
+      "name": "Oluşturma",
       "file": "building-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

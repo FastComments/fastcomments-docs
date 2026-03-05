@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη Vue 3",
-  "pageHeader": "FastComments για Vue 3",
+  "pageHeader": "Προσθέστε Σχόλια στην Εφαρμογή Vue 3",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Ενημέρωση της τρέχουσας σελίδας (παράδειγμα SPA)",
+      "name": "Ενημέρωση της Τρέχουσας Σελίδας (Παράδειγμα SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Όλα τα Widgets και η τεκμηρίωση",
+      "name": "Όλα τα Widgets και η Τεκμηρίωση",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

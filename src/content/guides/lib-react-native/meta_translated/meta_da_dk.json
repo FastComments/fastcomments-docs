@@ -1,11 +1,11 @@
 {
   "name": "React Native-bibliotek",
-  "pageHeader": "FastComments React Native-bibliotek",
+  "pageHeader": "Tilføj kommentar-widgets til din React Native-app",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom i gang",
+      "subCat": "Kom godt i gang",
       "type": "readme"
     },
     {
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Brug - Live-kommentar-widget",
+      "name": "Brug - Live kommentar-widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"
     },
     {
-      "name": "Brug - Live-chat-widget",
+      "name": "Brug - Live chat-widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"

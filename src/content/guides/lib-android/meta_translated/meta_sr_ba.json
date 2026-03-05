@@ -1,6 +1,6 @@
 {
   "name": "Android библиотека",
-  "pageHeader": "FastComments Android библиотека",
+  "pageHeader": "Додавање коментара у вашу Android апликацију",
   "itemsOrdered": [
     {
       "name": "Карактеристике",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Захтеви",
+      "name": "Захтјеви",
       "file": "requirements-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -17,11 +17,11 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Почетак рада",
       "type": "readme"
     },
     {
-      "name": "Основна употреба",
+      "name": "Основно коришћење",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Коришћење",
       "type": "readme"
@@ -39,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Интеграција живог ћаскања",
+      "name": "Интеграција ћаскања уживо",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Примерни пројекти",
+      "name": "Примери пројеката",
       "file": "example-projects-readme-generated.md",
       "subCat": "Коришћење",
       "type": "readme"

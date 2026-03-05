@@ -1,9 +1,9 @@
 {
   "name": "Biblioteca Angular",
-  "pageHeader": "Biblioteca FastComments para Angular",
+  "pageHeader": "Adicione comentários ao seu aplicativo Angular",
   "itemsOrdered": [
     {
-      "name": "Estrutura do Projeto",
+      "name": "Estrutura do projeto",
       "file": "project-structure-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

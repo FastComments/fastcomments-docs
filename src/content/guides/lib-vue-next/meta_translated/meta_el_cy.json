@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη Vue 3",
-  "pageHeader": "Βιβλιοθήκη FastComments για Vue 3",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Vue 3 σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Όλα τα Widgets και η τεκμηρίωση",
+      "name": "Όλα τα widgets και η τεκμηρίωση",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

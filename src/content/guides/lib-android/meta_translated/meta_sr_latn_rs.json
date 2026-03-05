@@ -1,9 +1,9 @@
 {
   "name": "Android biblioteka",
-  "pageHeader": "FastComments Android biblioteka",
+  "pageHeader": "Dodajte komentare u vašu Android aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Funkcionalnosti",
+      "name": "Funkcije",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Osnovna upotreba",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
@@ -47,7 +47,7 @@
     {
       "name": "Primeri projekata",
       "file": "example-projects-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Sveobuhvatno prilagođavanje teme",
+      "name": "Sveobuhvatna prilagodba teme",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Svelte библиотека",
-  "pageHeader": "FastComments Svelte библиотека",
+  "pageHeader": "Додавање коментара у вашу Svelte апликацију",
   "itemsOrdered": [
+    {
+      "name": "Брзи почетак",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "Видџети",
       "file": "widgets-readme-generated.md",

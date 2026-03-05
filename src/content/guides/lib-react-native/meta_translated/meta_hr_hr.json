@@ -1,6 +1,6 @@
 {
   "name": "React Native knjižnica",
-  "pageHeader": "FastComments knjižnica za React Native",
+  "pageHeader": "Dodajte widgete za komentare u svoju React Native aplikaciju",
   "itemsOrdered": [
     {
       "name": "Instalacija",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Razmotrite nativni SDK",
+      "name": "Razmotrite izvorni SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Upotreba - SSO",
+      "name": "Upotreba - Jedinstvena prijava (SSO)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"

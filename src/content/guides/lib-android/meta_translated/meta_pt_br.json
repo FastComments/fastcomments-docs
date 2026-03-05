@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca Android",
-  "pageHeader": "Biblioteca FastComments para Android",
+  "pageHeader": "Adicione Comentários ao Seu App Android",
   "itemsOrdered": [
     {
       "name": "Recursos",
@@ -17,17 +17,17 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Primeiros Passos",
       "type": "readme"
     },
     {
-      "name": "Uso básico",
+      "name": "Uso Básico",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Autenticação SSO segura",
+      "name": "Autenticação SSO Segura",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Autenticação",
       "type": "readme"
@@ -39,31 +39,31 @@
       "type": "readme"
     },
     {
-      "name": "Integração de chat ao vivo",
+      "name": "Integração de Chat ao Vivo",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Projetos de exemplo",
+      "name": "Projetos de Exemplo",
       "file": "example-projects-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Opções de configuração",
+      "name": "Opções de Configuração",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Configuração",
       "type": "readme"
     },
     {
-      "name": "Personalização abrangente de temas",
+      "name": "Personalização Abrangente do Tema",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Gerenciamento de memória",
+      "name": "Gerenciamento de Memória",
       "file": "memory-management-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

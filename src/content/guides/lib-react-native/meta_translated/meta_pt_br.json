@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca React Native",
-  "pageHeader": "Biblioteca FastComments para React Native",
+  "pageHeader": "Adicione widgets de comentários ao seu aplicativo React Native",
   "itemsOrdered": [
     {
       "name": "Instalação",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Uso - Widget de Comentários ao Vivo",
+      "name": "Uso - Widget de Comentário ao Vivo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"

@@ -1,6 +1,6 @@
 {
   "name": "Android-Bibliothek",
-  "pageHeader": "FastComments Android-Bibliothek",
+  "pageHeader": "Kommentare zu Ihrer Android-App hinzufügen",
   "itemsOrdered": [
     {
       "name": "Funktionen",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Grundlegende Nutzung",
+      "name": "Grundlegende Verwendung",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Umfassende Anpassung des Designs",
+      "name": "Umfassende Theme-Anpassung",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

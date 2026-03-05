@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη Svelte",
-  "pageHeader": "Βιβλιοθήκη FastComments για Svelte",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Svelte σας",
   "itemsOrdered": [
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Γραφικά στοιχεία",
       "file": "widgets-readme-generated.md",

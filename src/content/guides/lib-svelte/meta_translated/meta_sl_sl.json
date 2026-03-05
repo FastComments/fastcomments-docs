@@ -1,7 +1,13 @@
 {
   "name": "Svelte knjižnica",
-  "pageHeader": "FastComments knjižnica za Svelte",
+  "pageHeader": "Dodajte komentarje v svojo Svelte aplikacijo",
   "itemsOrdered": [
+    {
+      "name": "Hitri začetek",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Gradniki",
       "file": "widgets-readme-generated.md",
@@ -9,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Razvijanje",
+      "name": "Razvoj",
       "file": "developing-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Gradnja",
+      "name": "Sestavljanje",
       "file": "building-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

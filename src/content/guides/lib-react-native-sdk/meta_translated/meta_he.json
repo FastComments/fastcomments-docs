@@ -1,11 +1,11 @@
 {
   "name": "SDK של React Native",
-  "pageHeader": "SDK של FastComments ל-React Native",
+  "pageHeader": "הוספת תגובות לאפליקציית React Native שלך",
   "itemsOrdered": [
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {

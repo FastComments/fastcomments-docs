@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Vue 2",
-  "pageHeader": "Библиотека FastComments для Vue 2",
+  "pageHeader": "Добавление комментариев в приложение Vue 2",
   "itemsOrdered": [
     {
       "name": "Установка",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "В производственной среде",
+      "name": "В продакшене",
       "file": "in-production-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

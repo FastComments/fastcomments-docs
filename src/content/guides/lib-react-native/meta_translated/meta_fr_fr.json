@@ -1,15 +1,15 @@
 {
   "name": "Bibliothèque React Native",
-  "pageHeader": "Bibliothèque FastComments React Native",
+  "pageHeader": "Ajouter des widgets de commentaires à votre application React Native",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
-      "name": "Prendre en compte le SDK natif",
+      "name": "Considérez le SDK natif",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

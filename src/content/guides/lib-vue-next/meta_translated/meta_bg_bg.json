@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Vue 3",
-  "pageHeader": "FastComments библиотека за Vue 3",
+  "pageHeader": "Добавяне на коментари във вашето Vue 3 приложение",
   "itemsOrdered": [
     {
       "name": "Инсталиране",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Актуализиране на текущата страница (пример с SPA)",
+      "name": "Актуализиране на текущата страница (пример за SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Използване",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Всички джаджи и документация",
+      "name": "Всички уиджети и документация",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

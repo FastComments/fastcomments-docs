@@ -1,6 +1,6 @@
 {
-  "name": "Libreria React Native",
-  "pageHeader": "Libreria FastComments per React Native",
+  "name": "Libreria per React Native",
+  "pageHeader": "Aggiungi widget per i commenti alla tua app React Native",
   "itemsOrdered": [
     {
       "name": "Installazione",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Considera l'SDK nativo",
+      "name": "Valuta l'SDK nativo",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

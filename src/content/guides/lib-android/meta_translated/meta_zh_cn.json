@@ -1,6 +1,6 @@
 {
   "name": "Android 库",
-  "pageHeader": "FastComments Android 库",
+  "pageHeader": "在您的 Android 应用中添加评论",
   "itemsOrdered": [
     {
       "name": "功能",
@@ -17,7 +17,7 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "快速开始",
       "type": "readme"
     },
     {
@@ -27,9 +27,9 @@
       "type": "readme"
     },
     {
-      "name": "安全的单点登录（SSO）认证",
+      "name": "安全单点登录（SSO）认证",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "认证",
+      "subCat": "身份验证",
       "type": "readme"
     },
     {

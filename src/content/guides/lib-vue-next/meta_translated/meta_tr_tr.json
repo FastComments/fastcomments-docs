@@ -1,6 +1,6 @@
 {
   "name": "Vue 3 Kütüphanesi",
-  "pageHeader": "FastComments Vue 3 Kütüphanesi",
+  "pageHeader": "Vue 3 Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
     {
       "name": "Kurulum",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Üretimde",
+      "name": "Üretim Ortamında",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

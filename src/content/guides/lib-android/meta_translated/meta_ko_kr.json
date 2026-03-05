@@ -1,6 +1,6 @@
 {
-  "name": "안드로이드 라이브러리",
-  "pageHeader": "FastComments 안드로이드 라이브러리",
+  "name": "Android 라이브러리",
+  "pageHeader": "Android 앱에 댓글 추가하기",
   "itemsOrdered": [
     {
       "name": "기능",
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "포괄적인 테마 맞춤화",
+      "name": "포괄적인 테마 커스터마이징",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη React Native",
-  "pageHeader": "Βιβλιοθήκη FastComments για React Native",
+  "pageHeader": "Προσθέστε στοιχεία σχολιασμού στην εφαρμογή React Native σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το widget ζωντανών σχολίων",
+      "name": "Χρήση - Το ζωντανό στοιχείο σχολίων",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το widget ζωντανής συνομιλίας",
+      "name": "Χρήση - Το ζωντανό στοιχείο συνομιλίας",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Εξαρτήσεις peer",
+      "name": "Εξαρτήσεις ομότιμων",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

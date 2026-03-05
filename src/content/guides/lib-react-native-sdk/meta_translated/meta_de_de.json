@@ -1,6 +1,6 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "FastComments React Native SDK",
+  "pageHeader": "Kommentare zu Ihrer React Native-App hinzufügen",
   "itemsOrdered": [
     {
       "name": "Installation",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Bildschirmfotos",
+      "name": "Screenshots",
       "file": "screenshots-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

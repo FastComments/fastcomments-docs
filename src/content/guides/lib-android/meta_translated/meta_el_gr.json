@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη Android",
-  "pageHeader": "Βιβλιοθήκη FastComments για Android",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Android σας",
   "itemsOrdered": [
     {
       "name": "Χαρακτηριστικά",
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Ασφαλής Αυθεντικοποίηση SSO",
+      "name": "Ασφαλής Πιστοποίηση SSO",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Αυθεντικοποίηση",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Εκτενής Προσαρμογή Θέματος",
+      "name": "Πλήρης Προσαρμογή Θεμάτων",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

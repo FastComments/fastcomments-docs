@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη React Native",
-  "pageHeader": "Βιβλιοθήκη FastComments για React Native",
+  "pageHeader": "Προσθέστε widgets σχολίων στην εφαρμογή React Native σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Εξετάστε το Native SDK",
+      "name": "Εξετάστε το εγγενές SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Peer εξαρτήσεις",
+      "name": "Εξαρτήσεις peer",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

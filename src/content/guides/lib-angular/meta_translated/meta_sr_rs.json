@@ -1,6 +1,6 @@
 {
-  "name": "Библиотека за Angular",
-  "pageHeader": "FastComments библиотека за Angular",
+  "name": "Angular библиотека",
+  "pageHeader": "Додајте коментаре у вашу Angular апликацију",
   "itemsOrdered": [
     {
       "name": "Структура пројекта",

@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca Svelte",
-  "pageHeader": "Biblioteca FastComments para Svelte",
+  "pageHeader": "Adicione comentários ao seu aplicativo Svelte",
   "itemsOrdered": [
+    {
+      "name": "Início Rápido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
     {
       "name": "Widgets",
       "file": "widgets-readme-generated.md",

@@ -1,6 +1,6 @@
 {
   "name": "Android Kütüphanesi",
-  "pageHeader": "FastComments Android Kütüphanesi",
+  "pageHeader": "Android Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
     {
       "name": "Özellikler",
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Güvenli SSO Kimlik Doğrulama",
+      "name": "Güvenli SSO Kimlik Doğrulaması",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Kimlik Doğrulama",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Kapsamlı Tema Özelleştirme",
+      "name": "Kapsamlı Tema Özelleştirmesi",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

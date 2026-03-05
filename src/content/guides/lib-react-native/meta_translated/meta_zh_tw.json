@@ -1,6 +1,6 @@
 {
   "name": "React Native 函式庫",
-  "pageHeader": "FastComments React Native 函式庫",
+  "pageHeader": "將評論小工具加入您的 React Native 應用程式",
   "itemsOrdered": [
     {
       "name": "安裝",
@@ -15,25 +15,25 @@
       "type": "readme"
     },
     {
-      "name": "使用 - 即時留言元件",
+      "name": "使用 - 即時評論小工具",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "使用 - 即時聊天元件",
+      "name": "使用 - 即時聊天室小工具",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "使用 - 單一登入 (SSO)",
+      "name": "使用 - 單一登入（SSO）",
       "file": "usage-sso-readme-generated.md",
       "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "對等相依",
+      "name": "相依套件",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

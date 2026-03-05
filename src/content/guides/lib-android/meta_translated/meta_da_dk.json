@@ -1,6 +1,6 @@
 {
   "name": "Android-bibliotek",
-  "pageHeader": "FastComments Android-bibliotek",
+  "pageHeader": "Tilføj kommentarer til din Android-app",
   "itemsOrdered": [
     {
       "name": "Funktioner",
@@ -27,9 +27,9 @@
       "type": "readme"
     },
     {
-      "name": "Sikker SSO-godkendelse",
+      "name": "Sikker SSO-autentificering",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "Godkendelse",
+      "subCat": "Autentificering",
       "type": "readme"
     },
     {
@@ -51,13 +51,13 @@
       "type": "readme"
     },
     {
-      "name": "Konfigurationsindstillinger",
+      "name": "Konfigurationsmuligheder",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Konfiguration",
       "type": "readme"
     },
     {
-      "name": "Omfattende tema-tilpasning",
+      "name": "Omfattende tematilpasning",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

@@ -1,6 +1,6 @@
 {
   "name": "Vue 2 라이브러리",
-  "pageHeader": "FastComments Vue 2 라이브러리",
+  "pageHeader": "Vue 2 앱에 댓글 추가하기",
   "itemsOrdered": [
     {
       "name": "설치",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "운영 환경에서",
+      "name": "프로덕션 환경에서",
       "file": "in-production-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека Svelte",
-  "pageHeader": "Библиотека FastComments за Svelte",
+  "name": "Библиотека за Svelte",
+  "pageHeader": "Добавяне на коментари към вашето Svelte приложение",
   "itemsOrdered": [
+    {
+      "name": "Бърз старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Уиджети",
       "file": "widgets-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Разработка",
+      "name": "Разработване",
       "file": "developing-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

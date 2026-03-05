@@ -1,6 +1,6 @@
 {
   "name": "SDK для React Native",
-  "pageHeader": "FastComments SDK для React Native",
+  "pageHeader": "Добавление комментариев в приложение на React Native",
   "itemsOrdered": [
     {
       "name": "Установка",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "О продукте",
+      "name": "О",
       "file": "about-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

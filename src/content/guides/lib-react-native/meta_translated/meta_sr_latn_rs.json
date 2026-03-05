@@ -1,6 +1,6 @@
 {
   "name": "Biblioteka za React Native",
-  "pageHeader": "FastComments biblioteka za React Native",
+  "pageHeader": "Dodajte vidžete za komentare u vašu React Native aplikaciju",
   "itemsOrdered": [
     {
       "name": "Instalacija",
@@ -15,21 +15,21 @@
       "type": "readme"
     },
     {
-      "name": "Upotreba - Live Comment widget",
+      "name": "Korišćenje - vidžet za komentare uživo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "Upotreba",
+      "subCat": "Korišćenje",
       "type": "readme"
     },
     {
-      "name": "Upotreba - Live Chat widget",
+      "name": "Korišćenje - vidžet za čat uživo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "Upotreba",
+      "subCat": "Korišćenje",
       "type": "readme"
     },
     {
-      "name": "Upotreba - SSO",
+      "name": "Korišćenje - SSO",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "Upotreba",
+      "subCat": "Korišćenje",
       "type": "readme"
     },
     {

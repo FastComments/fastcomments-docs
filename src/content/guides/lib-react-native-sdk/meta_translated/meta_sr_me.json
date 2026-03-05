@@ -1,11 +1,11 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "FastComments React Native SDK",
+  "pageHeader": "Додавање коментара у вашу React Native апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {

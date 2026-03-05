@@ -1,6 +1,6 @@
 {
   "name": "Библиотека React Native",
-  "pageHeader": "Библиотека FastComments для React Native",
+  "pageHeader": "Добавление виджетов комментариев в ваше приложение React Native",
   "itemsOrdered": [
     {
       "name": "Установка",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Рассмотрите нативный SDK",
+      "name": "Рассмотрите использование нативного SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

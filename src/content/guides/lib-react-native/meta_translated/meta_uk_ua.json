@@ -1,6 +1,6 @@
 {
   "name": "Бібліотека React Native",
-  "pageHeader": "Бібліотека FastComments для React Native",
+  "pageHeader": "Додайте віджети коментарів у свій додаток React Native",
   "itemsOrdered": [
     {
       "name": "Встановлення",
@@ -15,19 +15,19 @@
       "type": "readme"
     },
     {
-      "name": "Використання — віджет живих коментарів",
+      "name": "Використання - віджет живих коментарів",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Використання — віджет живого чату",
+      "name": "Використання - віджет живого чату",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Використання — єдиний вхід (SSO)",
+      "name": "Використання - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"

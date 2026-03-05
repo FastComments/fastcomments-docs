@@ -1,6 +1,6 @@
 {
   "name": "Vue 3 库",
-  "pageHeader": "FastComments Vue 3 库",
+  "pageHeader": "向你的 Vue 3 应用添加评论",
   "itemsOrdered": [
     {
       "name": "安装",
@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "生产环境",
+      "name": "生产环境中",
       "file": "in-production-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "所有小部件与文档",
+      "name": "所有小部件和文档",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

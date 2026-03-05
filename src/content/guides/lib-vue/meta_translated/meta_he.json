@@ -1,11 +1,11 @@
 {
   "name": "ספריית Vue 2",
-  "pageHeader": "ספריית FastComments עבור Vue 2",
+  "pageHeader": "הוספת תגובות לאפליקציית Vue 2 שלך",
   "itemsOrdered": [
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "עדכון העמוד הנוכחי (דוגמה ל-SPA)",
+      "name": "עדכון הדף הנוכחי (דוגמה ל-SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"

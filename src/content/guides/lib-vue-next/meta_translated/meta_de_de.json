@@ -1,6 +1,6 @@
 {
-  "name": "Vue 3-Bibliothek",
-  "pageHeader": "FastComments Vue 3-Bibliothek",
+  "name": "Vue-3-Bibliothek",
+  "pageHeader": "Kommentare zu Ihrer Vue-3-App hinzufügen",
   "itemsOrdered": [
     {
       "name": "Installation",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "In Produktion",
+      "name": "Im Produktiveinsatz",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

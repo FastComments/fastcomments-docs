@@ -1,7 +1,13 @@
 {
   "name": "Svelte ライブラリ",
-  "pageHeader": "FastComments の Svelte ライブラリ",
+  "pageHeader": "Svelte アプリにコメントを追加する",
   "itemsOrdered": [
+    {
+      "name": "クイックスタート",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
     {
       "name": "ウィジェット",
       "file": "widgets-readme-generated.md",

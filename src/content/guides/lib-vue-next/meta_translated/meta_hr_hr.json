@@ -1,6 +1,6 @@
 {
   "name": "Biblioteka za Vue 3",
-  "pageHeader": "FastComments biblioteka za Vue 3",
+  "pageHeader": "Dodajte komentare u vašu Vue 3 aplikaciju",
   "itemsOrdered": [
     {
       "name": "Instalacija",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Ažuriranje trenutačne stranice (primjer SPA)",
+      "name": "Ažuriranje trenutne stranice (primjer SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Korištenje",
       "type": "readme"

@@ -1,11 +1,11 @@
 {
   "name": "Bibliothèque Vue 2",
-  "pageHeader": "Bibliothèque FastComments pour Vue 2",
+  "pageHeader": "Ajouter des commentaires à votre application Vue 2",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Mise à jour de la page courante (exemple SPA)",
+      "name": "Mise à jour de la page actuelle (exemple SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"

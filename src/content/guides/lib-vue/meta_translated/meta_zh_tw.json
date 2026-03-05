@@ -1,11 +1,11 @@
 {
   "name": "Vue 2 函式庫",
-  "pageHeader": "FastComments Vue 2 函式庫",
+  "pageHeader": "在你的 Vue 2 應用中新增評論",
   "itemsOrdered": [
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速上手",
+      "subCat": "快速開始",
       "type": "readme"
     },
     {
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "更新目前頁面（SPA 範例）",
+      "name": "更新目前頁面（單頁應用範例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "生產環境",
+      "name": "在生產環境中",
       "file": "in-production-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

@@ -1,6 +1,6 @@
 {
   "name": "React Native ライブラリ",
-  "pageHeader": "FastComments React Native ライブラリ",
+  "pageHeader": "React Native アプリにコメントウィジェットを追加する",
   "itemsOrdered": [
     {
       "name": "インストール",
@@ -9,27 +9,27 @@
       "type": "readme"
     },
     {
-      "name": "ネイティブ SDK を検討する",
+      "name": "ネイティブSDKを検討する",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "使用法 - ライブコメントウィジェット",
+      "name": "使い方 - ライブコメントウィジェット",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "使用法",
+      "subCat": "使い方",
       "type": "readme"
     },
     {
-      "name": "使用法 - ライブチャットウィジェット",
+      "name": "使い方 - ライブチャットウィジェット",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "使用法",
+      "subCat": "使い方",
       "type": "readme"
     },
     {
-      "name": "使用法 - SSO（シングルサインオン）",
+      "name": "使い方 - SSO（シングルサインオン）",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "使用法",
+      "subCat": "使い方",
       "type": "readme"
     },
     {

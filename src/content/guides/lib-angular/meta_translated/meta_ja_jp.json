@@ -1,6 +1,6 @@
 {
   "name": "Angular ライブラリ",
-  "pageHeader": "FastComments の Angular ライブラリ",
+  "pageHeader": "Angular アプリにコメントを追加する",
   "itemsOrdered": [
     {
       "name": "プロジェクト構成",

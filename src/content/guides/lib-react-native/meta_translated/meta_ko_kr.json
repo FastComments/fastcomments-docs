@@ -1,6 +1,6 @@
 {
   "name": "React Native 라이브러리",
-  "pageHeader": "FastComments React Native 라이브러리",
+  "pageHeader": "React Native 앱에 댓글 위젯 추가하기",
   "itemsOrdered": [
     {
       "name": "설치",
@@ -15,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "사용법 - 실시간 댓글 위젯",
+      "name": "사용법 - 라이브 댓글 위젯",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"
     },
     {
-      "name": "사용법 - 실시간 채팅 위젯",
+      "name": "사용법 - 라이브 채팅 위젯",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"

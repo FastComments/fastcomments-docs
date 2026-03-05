@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca de Vue 3",
-  "pageHeader": "Biblioteca FastComments para Vue 3",
+  "pageHeader": "Añadir comentarios a tu aplicación Vue 3",
   "itemsOrdered": [
     {
       "name": "Instalación",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Actualizar la página actual (ejemplo SPA)",
+      "name": "Actualizando la página actual (ejemplo SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Todos los widgets y documentación",
+      "name": "Todos los widgets y la documentación",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

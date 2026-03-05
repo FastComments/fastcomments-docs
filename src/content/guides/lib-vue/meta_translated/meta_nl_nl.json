@@ -1,6 +1,6 @@
 {
   "name": "Vue 2-bibliotheek",
-  "pageHeader": "FastComments Vue 2-bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan je Vue 2-app",
   "itemsOrdered": [
     {
       "name": "Installatie",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Bijwerken van de huidige pagina (SPA-voorbeeld)",
+      "name": "De huidige pagina bijwerken (SPA-voorbeeld)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"

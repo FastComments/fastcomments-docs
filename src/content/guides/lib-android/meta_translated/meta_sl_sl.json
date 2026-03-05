@@ -1,9 +1,9 @@
 {
-  "name": "Android knjižnica",
-  "pageHeader": "FastComments Android knjižnica",
+  "name": "Knjiznica za Android",
+  "pageHeader": "Dodajte komentarje v vašo Android aplikacijo",
   "itemsOrdered": [
     {
-      "name": "Funkcije",
+      "name": "Značilnosti",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -27,9 +27,9 @@
       "type": "readme"
     },
     {
-      "name": "Varno SSO preverjanje pristnosti",
+      "name": "Varna SSO avtentikacija",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "Preverjanje pristnosti",
+      "subCat": "Avtentikacija",
       "type": "readme"
     },
     {
@@ -45,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Primeri projektov",
+      "name": "Vzorčni projekti",
       "file": "example-projects-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"

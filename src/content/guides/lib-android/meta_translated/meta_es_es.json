@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca de Android",
-  "pageHeader": "Biblioteca FastComments para Android",
+  "pageHeader": "Añadir comentarios a tu aplicación Android",
   "itemsOrdered": [
     {
       "name": "Características",
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Integración de feeds",
+      "name": "Integración del feed",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Personalización completa del tema",
+      "name": "Personalización integral del tema",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

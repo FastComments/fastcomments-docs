@@ -1,6 +1,6 @@
 {
   "name": "React Native Kütüphanesi",
-  "pageHeader": "FastComments React Native Kütüphanesi",
+  "pageHeader": "React Native Uygulamanıza Yorum Bileşenleri Ekleyin",
   "itemsOrdered": [
     {
       "name": "Kurulum",
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Kullanım - Tek Oturum Açma (SSO)",
+      "name": "Kullanım - SSO (Tek Oturum Açma)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"

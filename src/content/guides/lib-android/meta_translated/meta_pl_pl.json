@@ -1,6 +1,6 @@
 {
   "name": "Biblioteka Androida",
-  "pageHeader": "Biblioteka FastComments dla Androida",
+  "pageHeader": "Dodaj komentarze do swojej aplikacji na Androida",
   "itemsOrdered": [
     {
       "name": "Funkcje",
@@ -17,7 +17,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Rozpoczęcie pracy",
+      "subCat": "Pierwsze kroki",
       "type": "readme"
     },
     {

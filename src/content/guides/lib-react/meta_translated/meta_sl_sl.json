@@ -1,11 +1,11 @@
 {
   "name": "React knjižnica",
-  "pageHeader": "FastComments React knjižnica",
+  "pageHeader": "Dodajte komentarje v vašo React aplikacijo",
   "itemsOrdered": [
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Za začetek",
+      "subCat": "Prvi koraki",
       "type": "readme"
     },
     {

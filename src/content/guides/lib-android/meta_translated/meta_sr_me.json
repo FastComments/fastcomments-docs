@@ -1,6 +1,6 @@
 {
-  "name": "Андроид библиотека",
-  "pageHeader": "FastComments Андроид библиотека",
+  "name": "Android библиотека",
+  "pageHeader": "Додајте коментаре у вашу Android апликацију",
   "itemsOrdered": [
     {
       "name": "Карактеристике",
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Интеграција уживо ћаскања",
+      "name": "Интеграција ћаскања уживо",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Свеобухватно прилагођавање теме",
+      "name": "Свеобухватно прилагођавање тема",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

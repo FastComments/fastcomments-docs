@@ -1,6 +1,6 @@
 {
-  "name": "Библиотека за Android",
-  "pageHeader": "FastComments библиотека за Android",
+  "name": "Android библиотека",
+  "pageHeader": "Добавяне на коментари към вашето Android приложение",
   "itemsOrdered": [
     {
       "name": "Функции",
@@ -23,17 +23,17 @@
     {
       "name": "Основна употреба",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Сигурна SSO автентикация",
+      "name": "Сигурно SSO удостоверяване",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Удостоверяване",
       "type": "readme"
     },
     {
-      "name": "Интеграция на емисия",
+      "name": "Интеграция на емисии",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -47,7 +47,7 @@
     {
       "name": "Примерни проекти",
       "file": "example-projects-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {

@@ -1,11 +1,11 @@
 {
   "name": "Libreria Vue 3",
-  "pageHeader": "Libreria FastComments per Vue 3",
+  "pageHeader": "Aggiungi commenti alla tua app Vue 3",
   "itemsOrdered": [
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Introduzione",
+      "subCat": "Primi passi",
       "type": "readme"
     },
     {
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Aggiornamento della pagina corrente (Esempio SPA)",
+      "name": "Aggiornamento della pagina corrente (esempio SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"

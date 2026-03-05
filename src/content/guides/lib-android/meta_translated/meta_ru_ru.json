@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Android",
-  "pageHeader": "Библиотека FastComments для Android",
+  "pageHeader": "Добавление комментариев в ваше Android-приложение",
   "itemsOrdered": [
     {
       "name": "Возможности",
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Безопасная аутентификация SSO",
+      "name": "Безопасная SSO-аутентификация",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Аутентификация",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Интеграция живого чата",
+      "name": "Интеграция чата в реальном времени",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
