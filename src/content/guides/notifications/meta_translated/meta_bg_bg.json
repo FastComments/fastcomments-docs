@@ -8,7 +8,7 @@
       "subCat": "Обща информация"
     },
     {
-      "name": "Типове известия",
+      "name": "Видове известия",
       "file": "notification-types.md",
       "subCat": "Обща информация"
     },
@@ -20,6 +20,11 @@
     {
       "name": "Конфигуриране на известия за SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Управление на потискането на имейли",
+      "file": "email-suppression-management.md",
       "subCat": "Конфигурация"
     }
   ]

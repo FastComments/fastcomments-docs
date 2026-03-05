@@ -3,7 +3,7 @@
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "מתי FastComments שולחת התראות?",
+      "name": "מתי FastComments שולח התראות?",
       "file": "when-does-fastcomments-send-notifications.md",
       "subCat": "רקע"
     },
@@ -20,6 +20,11 @@
     {
       "name": "הגדרת התראות עבור SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "ניהול השתקת דוא\"ל",
+      "file": "email-suppression-management.md",
       "subCat": "תצורה"
     }
   ]

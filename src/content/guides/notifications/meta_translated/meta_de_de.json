@@ -8,7 +8,7 @@
       "subCat": "Hintergrund"
     },
     {
-      "name": "Benachrichtigungsarten",
+      "name": "Benachrichtigungstypen",
       "file": "notification-types.md",
       "subCat": "Hintergrund"
     },
@@ -20,6 +20,11 @@
     {
       "name": "Benachrichtigungen für SSO konfigurieren",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Verwaltung der E-Mail-Unterdrückung",
+      "file": "email-suppression-management.md",
       "subCat": "Konfiguration"
     }
   ]

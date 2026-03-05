@@ -1,14 +1,14 @@
 {
-  "name": "Обавјештења",
+  "name": "Обавештења",
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "Када FastComments шаље обавјештења?",
+      "name": "Када FastComments шаље обавештења?",
       "file": "when-does-fastcomments-send-notifications.md",
       "subCat": "Позадина"
     },
     {
-      "name": "Типови обавјештења",
+      "name": "Врсте обавештења",
       "file": "notification-types.md",
       "subCat": "Позадина"
     },
@@ -18,8 +18,13 @@
       "subCat": "Конфигурација"
     },
     {
-      "name": "Подешавање обавјештења за SSO",
+      "name": "Конфигурисање обавештења за SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Управљање сузбијањем е-поште",
+      "file": "email-suppression-management.md",
       "subCat": "Конфигурација"
     }
   ]

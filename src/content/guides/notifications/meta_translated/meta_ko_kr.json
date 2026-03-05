@@ -18,8 +18,13 @@
       "subCat": "구성"
     },
     {
-      "name": "SSO를 위한 알림 구성",
+      "name": "SSO용 알림 구성",
       "file": "configuring-notifications-sso.md",
+      "subCat": "구성"
+    },
+    {
+      "name": "이메일 전송 억제 관리",
+      "file": "email-suppression-management.md",
       "subCat": "구성"
     }
   ]

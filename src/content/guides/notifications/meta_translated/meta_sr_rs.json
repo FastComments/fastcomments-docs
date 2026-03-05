@@ -21,6 +21,11 @@
       "name": "Конфигурисање обавештења за SSO",
       "file": "configuring-notifications-sso.md",
       "subCat": "Конфигурација"
+    },
+    {
+      "name": "Управљање блокирањем е-поште",
+      "file": "email-suppression-management.md",
+      "subCat": "Конфигурација"
     }
   ]
 }

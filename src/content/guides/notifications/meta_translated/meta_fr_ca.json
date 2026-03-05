@@ -13,13 +13,18 @@
       "subCat": "Contexte"
     },
     {
-      "name": "Se désabonner",
+      "name": "Désinscription",
       "file": "opting-out-notifications.md",
       "subCat": "Configuration"
     },
     {
-      "name": "Configurer les notifications pour l'authentification unique (SSO)",
+      "name": "Configuration des notifications pour l'authentification unique (SSO)",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Gestion de la suppression des courriels",
+      "file": "email-suppression-management.md",
       "subCat": "Configuration"
     }
   ]

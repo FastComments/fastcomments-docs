@@ -3,23 +3,28 @@
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "¿Cuándo envía FastComments notificaciones?",
+      "name": "¿Cuándo Envía FastComments Notificaciones?",
       "file": "when-does-fastcomments-send-notifications.md",
-      "subCat": "Información general"
+      "subCat": "Antecedentes"
     },
     {
-      "name": "Tipos de notificaciones",
+      "name": "Tipos de Notificación",
       "file": "notification-types.md",
-      "subCat": "Información general"
+      "subCat": "Antecedentes"
     },
     {
-      "name": "Darse de baja",
+      "name": "Darse de Baja",
       "file": "opting-out-notifications.md",
       "subCat": "Configuración"
     },
     {
-      "name": "Configuración de notificaciones para SSO",
+      "name": "Configurar Notificaciones para SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Configuración"
+    },
+    {
+      "name": "Gestión de Supresión de Correo Electrónico",
+      "file": "email-suppression-management.md",
       "subCat": "Configuración"
     }
   ]

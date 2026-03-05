@@ -5,12 +5,12 @@
     {
       "name": "Коли FastComments надсилає сповіщення?",
       "file": "when-does-fastcomments-send-notifications.md",
-      "subCat": "Загальні відомості"
+      "subCat": "Загальна інформація"
     },
     {
       "name": "Типи сповіщень",
       "file": "notification-types.md",
-      "subCat": "Загальні відомості"
+      "subCat": "Загальна інформація"
     },
     {
       "name": "Відмова від сповіщень",
@@ -20,6 +20,11 @@
     {
       "name": "Налаштування сповіщень для SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Налаштування"
+    },
+    {
+      "name": "Керування придушенням електронної пошти",
+      "file": "email-suppression-management.md",
       "subCat": "Налаштування"
     }
   ]

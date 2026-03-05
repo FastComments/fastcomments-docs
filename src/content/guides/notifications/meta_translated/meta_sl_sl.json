@@ -3,7 +3,7 @@
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "Kdaj FastComments pošilja obvestila?",
+      "name": "Kdaj FastComments pošlje obvestila?",
       "file": "when-does-fastcomments-send-notifications.md",
       "subCat": "Ozadje"
     },
@@ -20,6 +20,11 @@
     {
       "name": "Konfiguriranje obvestil za SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Upravljanje blokiranja e-pošte",
+      "file": "email-suppression-management.md",
       "subCat": "Konfiguracija"
     }
   ]

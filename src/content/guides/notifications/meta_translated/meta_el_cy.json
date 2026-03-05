@@ -3,14 +3,14 @@
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "Πότε το FastComments στέλνει ειδοποιήσεις;",
+      "name": "Πότε το FastComments στέλνει ειδοποιήσεις;",
       "file": "when-does-fastcomments-send-notifications.md",
-      "subCat": "Γενικά"
+      "subCat": "Υπόβαθρο"
     },
     {
       "name": "Τύποι ειδοποιήσεων",
       "file": "notification-types.md",
-      "subCat": "Γενικά"
+      "subCat": "Υπόβαθρο"
     },
     {
       "name": "Απενεργοποίηση ειδοποιήσεων",
@@ -20,6 +20,11 @@
     {
       "name": "Διαμόρφωση ειδοποιήσεων για SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Διαχείριση αναστολής ηλεκτρονικού ταχυδρομείου",
+      "file": "email-suppression-management.md",
       "subCat": "Διαμόρφωση"
     }
   ]

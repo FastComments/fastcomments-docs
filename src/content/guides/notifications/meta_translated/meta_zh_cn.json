@@ -18,8 +18,13 @@
       "subCat": "配置"
     },
     {
-      "name": "为 SSO 配置通知",
+      "name": "为单点登录（SSO）配置通知",
       "file": "configuring-notifications-sso.md",
+      "subCat": "配置"
+    },
+    {
+      "name": "电子邮件抑制管理",
+      "file": "email-suppression-management.md",
       "subCat": "配置"
     }
   ]

@@ -13,13 +13,18 @@
       "subCat": "Υπόβαθρο"
     },
     {
-      "name": "Αποεγγραφή",
+      "name": "Απεγγραφή",
       "file": "opting-out-notifications.md",
       "subCat": "Διαμόρφωση"
     },
     {
       "name": "Διαμόρφωση ειδοποιήσεων για SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Διαχείριση καταστολής ηλεκτρονικού ταχυδρομείου",
+      "file": "email-suppression-management.md",
       "subCat": "Διαμόρφωση"
     }
   ]

@@ -3,7 +3,7 @@
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "FastComments ne zaman bildirim gönderir?",
+      "name": "FastComments Ne Zaman Bildirim Gönderir?",
       "file": "when-does-fastcomments-send-notifications.md",
       "subCat": "Arka Plan"
     },
@@ -13,13 +13,18 @@
       "subCat": "Arka Plan"
     },
     {
-      "name": "Bildirimlerden Çıkma",
+      "name": "Bildirimlerden Vazgeçme",
       "file": "opting-out-notifications.md",
       "subCat": "Yapılandırma"
     },
     {
       "name": "SSO için Bildirimleri Yapılandırma",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "E-posta Bastırma Yönetimi",
+      "file": "email-suppression-management.md",
       "subCat": "Yapılandırma"
     }
   ]

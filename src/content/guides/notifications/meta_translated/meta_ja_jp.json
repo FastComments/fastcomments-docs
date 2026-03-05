@@ -13,13 +13,18 @@
       "subCat": "背景"
     },
     {
-      "name": "オプトアウト",
+      "name": "配信停止",
       "file": "opting-out-notifications.md",
       "subCat": "設定"
     },
     {
-      "name": "SSOの通知の設定",
+      "name": "SSOの通知設定",
       "file": "configuring-notifications-sso.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "メール配信抑止の管理",
+      "file": "email-suppression-management.md",
       "subCat": "設定"
     }
   ]

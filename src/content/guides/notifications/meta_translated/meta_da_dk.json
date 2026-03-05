@@ -1,14 +1,14 @@
 {
-  "name": "Underretninger",
+  "name": "Notifikationer",
   "icon": "notifications.png",
   "itemsOrdered": [
     {
-      "name": "Hvornår sender FastComments underretninger?",
+      "name": "Hvornår sender FastComments notifikationer?",
       "file": "when-does-fastcomments-send-notifications.md",
       "subCat": "Baggrund"
     },
     {
-      "name": "Typer af underretninger",
+      "name": "Notifikationstyper",
       "file": "notification-types.md",
       "subCat": "Baggrund"
     },
@@ -18,8 +18,13 @@
       "subCat": "Konfiguration"
     },
     {
-      "name": "Konfiguration af underretninger til SSO",
+      "name": "Konfigurering af notifikationer til SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Administration af e-mail-undertrykkelse",
+      "file": "email-suppression-management.md",
       "subCat": "Konfiguration"
     }
   ]

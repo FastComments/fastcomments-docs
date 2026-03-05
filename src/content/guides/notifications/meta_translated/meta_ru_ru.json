@@ -13,13 +13,18 @@
       "subCat": "Общие сведения"
     },
     {
-      "name": "Отказ от уведомлений",
+      "name": "Отписка",
       "file": "opting-out-notifications.md",
       "subCat": "Настройка"
     },
     {
       "name": "Настройка уведомлений для SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Управление подавлением электронной почты",
+      "file": "email-suppression-management.md",
       "subCat": "Настройка"
     }
   ]

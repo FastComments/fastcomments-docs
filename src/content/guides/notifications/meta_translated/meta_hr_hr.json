@@ -13,13 +13,18 @@
       "subCat": "Pozadina"
     },
     {
-      "name": "Isključivanje obavijesti",
+      "name": "Isključivanje",
       "file": "opting-out-notifications.md",
       "subCat": "Konfiguracija"
     },
     {
       "name": "Konfiguriranje obavijesti za SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Upravljanje suzbijanjem e-pošte",
+      "file": "email-suppression-management.md",
       "subCat": "Konfiguracija"
     }
   ]

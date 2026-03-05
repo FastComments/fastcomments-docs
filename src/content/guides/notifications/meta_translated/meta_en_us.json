@@ -21,6 +21,11 @@
       "name": "Configuring Notifications for SSO",
       "file": "configuring-notifications-sso.md",
       "subCat": "Configuration"
+    },
+    {
+      "name": "Email Suppression Management",
+      "file": "email-suppression-management.md",
+      "subCat": "Configuration"
     }
   ]
 }

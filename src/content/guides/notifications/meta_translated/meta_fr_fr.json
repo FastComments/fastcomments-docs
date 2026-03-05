@@ -18,8 +18,13 @@
       "subCat": "Configuration"
     },
     {
-      "name": "Configurer les notifications pour SSO",
+      "name": "Configuration des notifications pour l'authentification unique (SSO)",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Configuration"
+    },
+    {
+      "name": "Gestion de la suppression des e-mails",
+      "file": "email-suppression-management.md",
       "subCat": "Configuration"
     }
   ]

@@ -5,21 +5,26 @@
     {
       "name": "Quando o FastComments envia notificações?",
       "file": "when-does-fastcomments-send-notifications.md",
-      "subCat": "Contexto"
+      "subCat": "Visão geral"
     },
     {
-      "name": "Tipos de notificações",
+      "name": "Tipos de Notificações",
       "file": "notification-types.md",
-      "subCat": "Contexto"
+      "subCat": "Visão geral"
     },
     {
-      "name": "Optar por não receber",
+      "name": "Cancelar inscrição",
       "file": "opting-out-notifications.md",
       "subCat": "Configuração"
     },
     {
       "name": "Configurando notificações para SSO",
       "file": "configuring-notifications-sso.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Gerenciamento de Supressão de E-mails",
+      "file": "email-suppression-management.md",
       "subCat": "Configuração"
     }
   ]

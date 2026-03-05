@@ -21,6 +21,11 @@
       "name": "Meldingen configureren voor SSO",
       "file": "configuring-notifications-sso.md",
       "subCat": "Configuratie"
+    },
+    {
+      "name": "Beheer van e-mailonderdrukking",
+      "file": "email-suppression-management.md",
+      "subCat": "Configuratie"
     }
   ]
 }
