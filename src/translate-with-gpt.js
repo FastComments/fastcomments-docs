@@ -932,8 +932,15 @@ function buildTaskList(cache, options = {}) {
 
                 const cacheKey = getCacheKey(guideId, locale, filename);
 
-                // Check if translation is needed using cache
-                if (force || !isCached(cache, cacheKey, sourceHash)) {
+                // Check if translated file actually exists on disk
+                const translatedFilePath = path.join(GUIDES_DIR, guideId, 'items', locale, filename);
+                const fileExists = fs.existsSync(translatedFilePath);
+
+                // Re-translate if: forced, file missing from disk, or cache miss/stale
+                if (force || !fileExists || !isCached(cache, cacheKey, sourceHash)) {
+                    if (!fileExists && cache[cacheKey]) {
+                        delete cache[cacheKey];
+                    }
                     tasks.push({ guideId, locale, filename, sourceHash });
                 }
             }
