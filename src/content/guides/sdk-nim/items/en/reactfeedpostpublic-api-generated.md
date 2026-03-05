@@ -19,15 +19,13 @@ Returns: [`Option[ReactFeedPostPublic_200_response]`](https://github.com/FastCom
 [inline-code-start]
 let (response, httpResponse) = client.reactFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "news/article-title",
-  reactBodyParams = ReactBodyParams(),
+  postId = "news/international-earthquake-2026",
+  reactBodyParams = default(ReactBodyParams),
   isUndo = false,
-  broadcastId = "broadcast-456",
+  broadcastId = "broadcast-789",
   sso = ""
 )
 if response.isSome:
-  let result = response.get()
-  echo "Reaction result: ", result
-else:
-  echo "Reaction failed, HTTP response: ", httpResponse
+  let reactResult = response.get()
+  discard reactResult
 [inline-code-end]

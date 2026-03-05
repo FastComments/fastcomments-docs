@@ -13,16 +13,8 @@ Returns: [`Option[CreateSubscriptionAPIResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'createSubscription Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createData = CreateAPIUserSubscriptionData(
-  subscriberId = "user-987",
-  email = "jane.doe@newsreader.com",
-  urlId = "news/local-weather",
-  active = true,
-  tags = @["weather", "local"],
-  frequency = "immediate"
-)
-let (response, httpResponse) = client.createSubscription(tenantId = "my-tenant-123", createAPIUserSubscriptionData = createData)
+let (response, httpResponse) = client.createSubscription(tenantId = "my-tenant-123", createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(userId = "user-789", email = "jane.doe@example.com", subscriptionType = "thread", topics = @["news", "world"], active = true))
 if response.isSome:
   let created = response.get()
-  echo "Created subscription id: ", created.id
+  echo "Subscription created for user: ", created.userId
 [inline-code-end]

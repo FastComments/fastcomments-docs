@@ -1,3 +1,5 @@
+Enable or disable notifications for a specific comment.
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -18,14 +20,13 @@ Returns: [`Option[UpdateUserNotificationStatus_200_response]`](https://github.co
 [inline-code-start]
 let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "notif-456",
-  optedInOrOut = "opted_in",
-  commentId = "cmt-789",
-  sso = "sso-token-abc"
+  notificationId = "",
+  optedInOrOut = "",
+  commentId = "comment-789",
+  sso = ""
 )
+
 if response.isSome:
-  let updatedStatus = response.get()
-  discard updatedStatus
-else:
-  discard httpResponse
+  let updateResp = response.get()
+  discard updateResp
 [inline-code-end]

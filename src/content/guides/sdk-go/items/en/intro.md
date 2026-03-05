@@ -1,6 +1,6 @@
 This is the official Go SDK for FastComments.
 
-Official Go SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Go applications.
 
 ## Repository
 

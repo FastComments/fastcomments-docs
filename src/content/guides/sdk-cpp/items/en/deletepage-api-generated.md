@@ -13,17 +13,18 @@ Returns: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'deletePage Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-456");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-20251122"));
-auto task = api->deletePage(tenantId, pageId)
-    .then([correlationId](pplx::task<std::shared_ptr<DeletePageAPIResponse>> prev) -> std::shared_ptr<DeletePageAPIResponse> {
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+utility::string_t pageId = utility::conversions::to_string_t("page-456");
+boost::optional<utility::string_t> auditNote = utility::conversions::to_string_t("admin@company.com requested deletion");
+api->deletePage(tenantId, pageId)
+    .then([auditNote](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {
         try {
-            auto resp = prev.get();
-            if (resp) return resp;
-            return std::make_shared<DeletePageAPIResponse>();
+            auto resp = t.get();
+            auto result = std::make_shared<DeletePageAPIResponse>(*resp);
+            if (auditNote) {
+                (void)auditNote;
+            }
         } catch (const std::exception&) {
-            return std::make_shared<DeletePageAPIResponse>();
         }
     });
 [inline-code-end]

@@ -2,7 +2,6 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Create Simple SSO token
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -34,7 +33,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Create Secure SSO token
 user = FastComments::SSO::SecureSSOUserData.new(

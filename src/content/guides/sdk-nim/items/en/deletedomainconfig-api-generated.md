@@ -15,8 +15,8 @@ Returns: [`Option[DeleteDomainConfig_200_response]`](https://github.com/FastComm
 [inline-code-start]
 let (response, httpResponse) = client.deleteDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
 if response.isSome:
-  let result = response.get()
-  echo "Deleted domain config result: ", result
+  let deletedConfig = response.get()
+  echo deletedConfig
 else:
-  echo "No response body, HTTP status: ", $httpResponse.status
+  echo "No domain config returned"
 [inline-code-end]

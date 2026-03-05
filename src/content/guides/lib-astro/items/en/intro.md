@@ -1,6 +1,6 @@
 This is the official Astro Library for FastComments.
 
-FastComments commenting widgets for Astro
+Embed live commenting, chat, and review widgets in your Astro site.
 
 ## Repository
 

@@ -12,10 +12,11 @@ Returns: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getPages Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
+let (response, httpResponse) = client.getPages(tenantId = "my-tenant-123")
 if response.isSome:
   let pages = response.get()
-  echo "Received pages response: ", pages
+  echo "Pages received for tenant my-tenant-123"
+  echo pages
 else:
-  echo "No pages returned. HTTP response: ", httpResponse
+  echo "No pages found, HTTP status: ", $httpResponse.status
 [inline-code-end]

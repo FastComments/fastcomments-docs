@@ -18,12 +18,11 @@ Returns: [`Option[BlockFromCommentPublic_200_response]`](https://github.com/Fast
 [inline-code-start]
 let (response, httpResponse) = client.blockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-98765",
+  id = "cmt-2026-0001",
   blockFromCommentParams = BlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = ""
-)
+  userId = "user-7421",
+  anonUserId = "")
 if response.isSome:
   let blocked = response.get()
-  echo "Block confirmed for tenant:", " my-tenant-123"
+  discard blocked
 [inline-code-end]

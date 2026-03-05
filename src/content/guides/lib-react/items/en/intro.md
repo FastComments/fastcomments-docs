@@ -1,6 +1,6 @@
 This is the official React Library for FastComments.
 
-FastComments commenting widgets for React
+Embed live commenting, chat, and review widgets in your React app.
 
 ## Repository
 

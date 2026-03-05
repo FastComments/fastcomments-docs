@@ -13,10 +13,10 @@ Returns: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'getSSOUserByEmail Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
+let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "jane.doe@newsorg.com")
 if response.isSome:
   let ssoUser = response.get()
-  echo "SSO user found: ", ssoUser.email
+  echo "SSO user retrieved for tenant my-tenant-123"
 else:
-  echo "No SSO user found. HTTP status: ", httpResponse.status
+  echo "SSO user not found"
 [inline-code-end]

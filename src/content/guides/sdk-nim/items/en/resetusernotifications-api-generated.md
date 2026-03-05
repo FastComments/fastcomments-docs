@@ -21,13 +21,15 @@ Returns: [`Option[ResetUserNotifications_200_response]`](https://github.com/Fast
 let (response, httpResponse) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
   afterId = "",
-  afterCreatedAt = int64(0),
+  afterCreatedAt = 0'i64,
   unreadOnly = false,
   dmOnly = false,
   noDm = false,
   sso = ""
 )
-
 if response.isSome:
-  let result = response.get()
+  let resetResult = response.get()
+  echo "ResetUserNotifications succeeded: ", resetResult
+else:
+  echo "ResetUserNotifications returned no body, status: ", httpResponse.status
 [inline-code-end]

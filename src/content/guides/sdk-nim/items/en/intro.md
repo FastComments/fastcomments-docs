@@ -1,6 +1,6 @@
 This is the official Nim SDK for FastComments.
 
-Official Nim SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Nim applications.
 
 ## Repository
 

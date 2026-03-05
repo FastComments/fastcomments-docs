@@ -1,6 +1,6 @@
 This is the official Python SDK for FastComments.
 
-Official Python SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Python applications.
 
 ## Repository
 

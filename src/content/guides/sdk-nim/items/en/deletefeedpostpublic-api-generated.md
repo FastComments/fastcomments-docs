@@ -15,12 +15,10 @@ Returns: [`Option[DeleteFeedPostPublic_200_response]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(
-  tenantId = "my-tenant-123",
-  postId = "post-456",
-  broadcastId = "broadcast-789",
-  sso = ""
-)
+let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
 if response.isSome:
-  let result = response.get()
+  let deleted = response.get()
+  discard deleted
+else:
+  discard httpResponse
 [inline-code-end]

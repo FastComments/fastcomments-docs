@@ -1,6 +1,6 @@
 This is the official Vue 3 Library for FastComments.
 
-FastComments commenting widgets for Vue 3
+Embed live commenting, chat, and review widgets in your Vue app.
 
 ## Repository
 

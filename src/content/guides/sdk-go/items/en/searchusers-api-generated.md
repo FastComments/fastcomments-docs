@@ -4,7 +4,7 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
 
@@ -22,13 +22,13 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string | 
+	usernameStartsWith := "usernameStartsWith_example" // string |  (optional)
 	mentionGroupIds := []string{"Inner_example"} // []string |  (optional)
 	sso := "sso_example" // string |  (optional)
 

@@ -15,19 +15,16 @@ Returns: [`GetDomainConfig_200_response`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domainToUpdate = U("comments.myapp.com");
-auto params = std::make_shared<UpdateDomainConfigParams>();
-params->displayName = utility::string_t(U("My App Comments"));
-params->enabled = boost::optional<bool>(true);
-params->contactEmail = boost::optional<utility::string_t>(U("admin@myapp.com"));
-api->putDomainConfig(tenantId, domainToUpdate, *params)
-.then([](pplx::task<std::shared_ptr<GetDomainConfig_200_response>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto updated = resp;
-        }
-    } catch (const std::exception& e) {
-    }
-});
+utility::string_t domainToUpdate = U("comments.example.com");
+UpdateDomainConfigParams updateParams;
+updateParams.enabled = true;
+updateParams.requireModeration = boost::optional<bool>(true);
+updateParams.allowedOrigins = boost::optional<std::vector<utility::string_t>>({U("https://www.example.com"), U("https://app.example.com")});
+updateParams.notificationEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
+auto task = api->putDomainConfig(tenantId, domainToUpdate, updateParams)
+    .then([](std::shared_ptr<GetDomainConfig_200_response> resp){
+        auto updated = std::make_shared<GetDomainConfig_200_response>(*resp);
+        return updated;
+    });
+task.wait();
 [inline-code-end]

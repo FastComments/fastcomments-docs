@@ -21,3 +21,25 @@
 ## Response
 
 Returns: [`GetComments200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetComments200Response.ts)
+
+## Example
+
+[inline-code-attrs-start title = 'getComments Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const commentsResponse: GetComments200Response = await getComments(
+  'tenant_abc123',
+  2,
+  25,
+  0,
+  true,
+  1,
+  3,
+  3,
+  'article-2026',
+  'user_42',
+  undefined,
+  undefined,
+  '#feature-release',
+  'cmt_987654'
+);
+[inline-code-end]

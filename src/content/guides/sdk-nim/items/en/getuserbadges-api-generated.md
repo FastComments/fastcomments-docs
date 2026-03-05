@@ -19,14 +19,16 @@ Returns: [`Option[GetUserBadges_200_response]`](https://github.com/FastComments/
 [inline-code-start]
 let (response, httpResponse) = client.getUserBadges(
   tenantId = "my-tenant-123",
-  userId = "user-789",
-  badgeId = "top-commenter",
+  userId = "user-456",
+  badgeId = "contributor",
   displayedOnComments = true,
-  limit = 50.0,
+  limit = 25.0,
   skip = 0.0
 )
 
 if response.isSome:
   let badges = response.get()
-  echo "Retrieved badges: ", $badges
+  echo "User badges retrieved"
+else:
+  echo "No badges found; HTTP status: ", httpResponse.status
 [inline-code-end]

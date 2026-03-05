@@ -1,6 +1,6 @@
 This is the official Android Library for FastComments.
 
-FastComments commenting widgets for Android
+Embed live commenting, chat, and review widgets in your Android app.
 
 ## Repository
 

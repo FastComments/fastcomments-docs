@@ -39,3 +39,39 @@ urlId
 ## Response
 
 Returns: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublic200Response.ts)
+
+## Example
+
+[inline-code-attrs-start title = 'getCommentsPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const response: GetCommentsPublic200Response = await getCommentsPublic(
+  'tenant_7f3a2c',
+  'https://blog.example.com/posts/2026/new-features',
+  1,
+  'DESC',
+  'sso_jwt_eyJhbGciOiJIUzI1Ni',
+  0,
+  0,
+  25,
+  5,
+  true,
+  undefined,
+  true,
+  false,
+  true,
+  'en-US',
+  'reactions,moderation',
+  false,
+  true,
+  true,
+  3,
+  false,
+  undefined,
+  'new features release',
+  ['release', 'feature'],
+  'user_98765',
+  '{"highlightThreads":true}',
+  undefined,
+  undefined
+);
+[inline-code-end]

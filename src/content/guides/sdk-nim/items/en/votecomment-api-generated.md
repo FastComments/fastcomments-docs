@@ -18,19 +18,17 @@ Returns: [`Option[VoteComment_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'voteComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let voteBody = VoteBodyParams()
+let voteBody = VoteBodyParams(vote = 1)
 let (response, httpResponse) = client.voteComment(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
-  urlId = "news/2025/fastcomments-integration",
+  urlId = "news/article-2026-election",
   broadcastId = "",
   voteBodyParams = voteBody,
   sessionId = "",
   sso = ""
 )
 if response.isSome:
-  let voteResp = response.get()
-  echo "Vote recorded for comment cmt-456789"
-else:
-  echo "Failed to record vote"
+  let result = response.get()
+  echo "Vote response:", $result
 [inline-code-end]

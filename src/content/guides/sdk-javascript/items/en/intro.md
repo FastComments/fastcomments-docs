@@ -1,6 +1,6 @@
 This is the official JavaScript/TypeScript SDK for FastComments.
 
-Official JavaScript/TypeScript SDK for the FastComments API
+Manage comments, users, SSO, and moderation from Node.js or the browser.
 
 ## Repository
 

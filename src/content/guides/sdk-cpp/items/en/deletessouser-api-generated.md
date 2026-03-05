@@ -16,17 +16,17 @@ Returns: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'deleteSSOUser Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t ssoId = U("user@example.com");
-boost::optional<bool> deleteComments = true;
-boost::optional<utility::string_t> commentDeleteMode = U("anonymize");
+utility::string_t id = U("user@example.com");
+boost::optional<bool> deleteComments(true);
+boost::optional<utility::string_t> commentDeleteMode(U("soft_delete"));
 
-api->deleteSSOUser(tenantId, ssoId, deleteComments, commentDeleteMode)
-.then([](pplx::task<std::shared_ptr<DeleteSSOUserAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        auto respCopy = std::make_shared<DeleteSSOUserAPIResponse>(*resp);
-        (void)respCopy;
-    } catch (const std::exception&) {
-    }
-});
+api->deleteSSOUser(tenantId, id, deleteComments, commentDeleteMode)
+    .then([](pplx::task<std::shared_ptr<DeleteSSOUserAPIResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto fallback = std::make_shared<DeleteSSOUserAPIResponse>();
+            if (resp) { (void)resp; } else { (void)fallback; }
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

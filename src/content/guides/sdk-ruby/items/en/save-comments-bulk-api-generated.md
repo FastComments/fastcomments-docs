@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`Array&lt;SaveComment200Response&gt;`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/array&lt;_save_comment200_response&gt;.rb)
+Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comment200_response.rb)
 
 ## Example
 

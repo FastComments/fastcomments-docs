@@ -15,8 +15,8 @@ Returns: [`Option[GetUserNotificationCount_200_response]`](https://github.com/Fa
 [inline-code-start]
 let (response, httpResponse) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "")
 if response.isSome:
-  let notificationData = response.get()
-  echo "Received notification data: ", $notificationData
+  let data = response.get()
+  echo "Unread notifications: ", $data.unreadCount
 else:
-  echo "No notification data returned. HTTP response: ", $httpResponse.status
+  echo "No notification count available"
 [inline-code-end]

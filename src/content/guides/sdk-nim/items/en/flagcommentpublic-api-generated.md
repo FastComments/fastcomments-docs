@@ -17,11 +17,11 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
+  commentId = "cmt-987654",
   isFlagged = false,
   sso = ""
 )
 if response.isSome:
-  let flagResult = response.get()
-  discard flagResult
+  let flagged = response.get()
+  discard flagged
 [inline-code-end]

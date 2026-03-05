@@ -4,7 +4,7 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
 
@@ -21,7 +21,7 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
+let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
 let mentionGroupIds = ["inner_example"] // [String] |  (optional)
 let sso = "sso_example" // String |  (optional)
 

@@ -15,8 +15,8 @@ Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComment
 [inline-code-start]
 let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
 if response.isSome:
-  let domainConfig = response.get()
-  echo "Loaded domain config for tenant my-tenant-123:", $domainConfig
+  let config = response.get()
+  echo "Domain config received"
 else:
-  echo "No domain config; HTTP status:", $httpResponse.status
+  echo "No domain config available"
 [inline-code-end]

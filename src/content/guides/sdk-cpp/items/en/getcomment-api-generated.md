@@ -13,16 +13,13 @@ Returns: [`GetComment_200_response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> maybeId = utility::conversions::to_string_t("comment-98765");
-auto getTask = api->getComment(tenantId, *maybeId)
-    .then([](pplx::task<std::shared_ptr<GetComment_200_response>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetComment_200_response>();
-            return result;
-        } catch (const std::exception&) {
-            return std::make_shared<GetComment_200_response>();
-        }
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-4e9a1b2");
+boost::optional<utility::string_t> ifModifiedSince = U("2026-01-01T00:00:00Z");
+api->getComment(tenantId, commentId)
+    .then([ifModifiedSince](std::shared_ptr<GetComment_200_response> resp) {
+        auto result = resp ? resp : std::make_shared<GetComment_200_response>();
+        if(ifModifiedSince) { auto ims = *ifModifiedSince; (void)ims; }
+        return result;
     });
 [inline-code-end]

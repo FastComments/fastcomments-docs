@@ -3,7 +3,7 @@
 **Important:** You must set your API key on the ApiClient before making authenticated requests. If you don't, requests will fail with a 401 error.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # Create and configure the API client
 config = FastCommentsClient::Configuration.new
@@ -40,7 +40,7 @@ end
 Public endpoints don't require authentication:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 

@@ -12,21 +12,16 @@ Returns: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cp
 
 [inline-code-attrs-start title = 'getPages Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-int main()
-{
-    utility::string_t tenantId = U("my-tenant-123");
-    boost::optional<utility::string_t> statusFilter = U("published");
-    boost::optional<int> pageNumber = 1;
-    auto placeholder = std::make_shared<GetPagesAPIResponse>();
-    api->getPages(tenantId)
-       .then([placeholder](std::shared_ptr<GetPagesAPIResponse> resp) {
-           if (resp) {
-               *placeholder = *resp;
-               auto refs = resp.use_count();
-               (void)refs;
-           }
-       })
-       .wait();
-    return 0;
-}
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<int> pageLimit = 50;
+boost::optional<utility::string_t> cursor = boost::none;
+api->getPages(tenantId).then([tenantId](pplx::task<std::shared_ptr<GetPagesAPIResponse>> task) {
+    try {
+        auto resp = task.get();
+        if(!resp) resp = std::make_shared<GetPagesAPIResponse>();
+        std::wcout << U("Fetched pages for tenant: ") << tenantId << U("\n");
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
+});
 [inline-code-end]

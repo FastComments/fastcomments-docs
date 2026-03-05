@@ -14,13 +14,10 @@ Returns: [`Option[GetFeedPostsStats_200_response]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getFeedPostsStats Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPostsStats(
-  tenantId = "my-tenant-123",
-  postIds = @["news/article-2025-11-22", "opinion/market-trends-452"],
-  sso = ""
-)
-
+let (response, httpResponse) = client.getFeedPostsStats(tenantId = "my-tenant-123", postIds = @["news/article-456", "blog/post-789"], sso = "user-abc-sso-token")
 if response.isSome:
   let stats = response.get()
-  discard stats
+  echo "Received feed posts stats: ", stats
+else:
+  echo "No feed posts stats returned"
 [inline-code-end]

@@ -19,7 +19,7 @@ const id: string = 'email_tpl_42b7a9';
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
   name: 'Comment Flag Notification',
   subject: 'A comment was flagged on acme.com',
-  html: '<p>A comment by {{commenterName}} was flagged. Review at {{moderationUrl}}</p>',
+  html: '<p>A comment by \{{commenterName}} was flagged. Review at \{{moderationUrl}}</p>',
   replyTo: 'noreply@acme.com', // optional field demonstrated
   enabled: true,
   customConfig: { priority: 'high' } // optional custom parameters

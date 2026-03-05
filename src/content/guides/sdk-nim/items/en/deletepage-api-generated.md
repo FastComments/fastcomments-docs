@@ -13,10 +13,10 @@ Returns: [`Option[DeletePageAPIResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'deletePage Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deletePage(tenantId = "site-tenant-456", id = "news/winter-updates-2025")
+let (response, httpResponse) = client.deletePage(tenantId = "my-tenant-123", id = "news/article-title")
 if response.isSome:
   let deleted = response.get()
-  echo "DeletePageAPIResponse:", deleted
+  echo deleted
 else:
-  echo "Delete failed, HTTP response:", httpResponse
+  echo "Deletion failed or no response body"
 [inline-code-end]

@@ -16,23 +16,23 @@ Returns: [`Option[CreateFeedPostPublic_200_response]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var updateParams: UpdateFeedPostParams = UpdateFeedPostParams(
-  title = "Breaking: Service Update",
-  content = "We improved feed performance and UX for all users.",
-  tags = @["performance", "release"],
-  isPublic = true
+let updateParams = UpdateFeedPostParams(
+  title = "Launch: FastComments v2.0",
+  content = "Announcing the v2.0 release with performance and moderation improvements.",
+  visible = true,
+  tags = @["release", "announcement"],
+  priority = 1
 )
 
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "post-456",
+  postId = "news/launch-fastcomments-v2",
   updateFeedPostParams = updateParams,
-  broadcastId = "broadcast-789",
-  sso = "sso-token-abc123"
+  broadcastId = "",
+  sso = ""
 )
 
 if response.isSome:
-  let post = response.get()
-  echo "Updated post title: ", post.title
-  echo "HTTP status: ", httpResponse.status
+  let updated = response.get()
+  echo "Feed post updated successfully"
 [inline-code-end]

@@ -17,8 +17,8 @@ const tenantId: string = "tenant_7a9f2b3d";
 
 const createEmailTemplateBody: CreateEmailTemplateBody = {
   name: "Comment Notification",
-  subject: "New comment on your article: {{postTitle}}",
-  htmlBody: "<p>{{commenterName}} left a comment:</p><blockquote>{{commentText}}</blockquote>",
+  subject: "New comment on your article: \{{postTitle}}",
+  htmlBody: "<p>\{{commenterName}} left a comment:</p><blockquote>\{{commentText}}</blockquote>",
   enabled: true,
   defaultLocale: "en-US",
   metadata: { createdBy: "admin@example.com", purpose: "notify_comment" } // optional extra data

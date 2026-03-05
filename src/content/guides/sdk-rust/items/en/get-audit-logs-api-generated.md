@@ -12,3 +12,21 @@
 ## Response
 
 Returns: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_audit_logs_200_response.rs)
+
+## Example
+
+[inline-code-attrs-start title = 'get_audit_logs Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn fetch_audit_logs() -> Result<(), Error> {
+    let params = GetAuditLogsParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        limit: Some(100.0),
+        skip: Some(0.0),
+        order: Some(models::SortDir::Desc),
+        after: Some(1_641_000_000.0),
+        before: Some(1_641_864_000.0),
+    };
+    let response: GetAuditLogs200Response = get_audit_logs(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

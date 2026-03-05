@@ -15,19 +15,18 @@ Returns: [`GetUserBadgeProgressList_200_response`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<double> limit = boost::optional<double>(50);
-boost::optional<double> skip = boost::optional<double>(0);
+auto tenantId = utility::string_t("my-tenant-123");
+boost::optional<utility::string_t> userId = utility::string_t("user@example.com");
+boost::optional<double> limit = 50.0;
+boost::optional<double> skip = 0.0;
 
 api->getUserBadgeProgressList(tenantId, userId, limit, skip)
-.then([](pplx::task<std::shared_ptr<GetUserBadgeProgressList_200_response>> t){
-    try {
-        auto resp = t.get();
-        auto copied = std::make_shared<GetUserBadgeProgressList_200_response>(*resp);
-        std::cout << "Badge progress entries received\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Failed to get badge progress: " << e.what() << '\n';
-    }
-});
+    .then([](pplx::task<std::shared_ptr<GetUserBadgeProgressList_200_response>> task){
+        try {
+            auto resp = task.get();
+            auto copy = std::make_shared<GetUserBadgeProgressList_200_response>(*resp);
+            (void)copy;
+        } catch (...) {
+        }
+    });
 [inline-code-end]

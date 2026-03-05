@@ -1,6 +1,6 @@
 This is the official Ruby SDK for FastComments.
 
-Official Ruby SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Ruby applications.
 
 ## Repository
 

@@ -17,16 +17,20 @@ Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'updateComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updatableCommentParams = UpdatableCommentParams(content: "Fixed a typo in the second paragraph", tags: @["article-edit", "typo"], isApproved: true)
 let (response, httpResponse) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "comment-456",
-  updatableCommentParams = updatableCommentParams,
+  id = "cmt-456",
+  updatableCommentParams = UpdatableCommentParams(
+    content: "Updated the comment to clarify the timeline",
+    tags: @["clarification", "timeline"],
+    isHidden: false
+  ),
   contextUserId = "user-789",
   doSpamCheck = true,
   isLive = true
 )
+
 if response.isSome:
-  let flagResp = response.get()
-  discard flagResp
+  let updatedComment = response.get()
+  echo "Updated comment received, id: ", updatedComment.id
 [inline-code-end]

@@ -13,20 +13,23 @@ Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto pageData = std::make_shared<CreateAPIPageData>();
-pageData->url = utility::string_t(U("https://example.com/articles/2025-modern-cpp"));
-pageData->title = utility::string_t(U("Modern C++ Patterns"));
-pageData->description = boost::optional<utility::string_t>(utility::string_t(U("Practical patterns for modern C++ development")));
-pageData->authorEmail = boost::optional<utility::string_t>(utility::string_t(U("dev@company.com")));
-pageData->published = boost::optional<bool>(true);
-
-api->addPage(utility::string_t(U("my-tenant-123")), *pageData)
-.then([](pplx::task<std::shared_ptr<AddPageAPIResponse>> t){
+utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pageDataPtr = std::make_shared<CreateAPIPageData>();
+pageDataPtr->url = utility::conversions::to_string_t("https://blog.example.com/posts/2026-product-release");
+pageDataPtr->title = utility::conversions::to_string_t("2026 Product Release");
+pageDataPtr->authorEmail = utility::conversions::to_string_t("author@example.com");
+pageDataPtr->description = boost::optional<utility::string_t>(utility::conversions::to_string_t("Announcing our major 2026 release"));
+pageDataPtr->isPublished = boost::optional<bool>(true);
+api->addPage(tenantId, *pageDataPtr).then([](pplx::task<std::shared_ptr<AddPageAPIResponse>> task){
     try {
-        auto resp = t.get();
-        return resp;
-    } catch (...) {
-        throw;
+        auto resp = task.get();
+        if (resp) {
+            std::cout << "addPage succeeded" << std::endl;
+        } else {
+            std::cout << "addPage returned null response" << std::endl;
+        }
+    } catch (const std::exception &e) {
+        std::cerr << "addPage failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]

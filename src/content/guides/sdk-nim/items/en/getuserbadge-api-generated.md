@@ -14,8 +14,7 @@ Returns: [`Option[GetUserBadge_200_response]`](https://github.com/FastComments/f
 [inline-code-attrs-start title = 'getUserBadge Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getUserBadge(tenantId = "my-tenant-123", id = "")
-
 if response.isSome:
   let badge = response.get()
-  discard badge
+  echo badge
 [inline-code-end]

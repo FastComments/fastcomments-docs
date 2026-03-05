@@ -9,13 +9,11 @@
 | sendEmails | bool | No |  |
 | populateNotifications | bool): (Option[seq[SaveComment_200_response]] | No |  |
 | id | string | No |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| fromName | string | No |  |
 
 ## Response
 
-Returns: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_un_block_comment_public200response.nim)
+Returns: [`Option[FlagCommentPublic_200_response]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_public200response.nim)
 
 ## Example
 
@@ -24,18 +22,14 @@ Returns: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastCo
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = true,
-  doSpamCheck = true,
+  isLive = false,
+  doSpamCheck = false,
   sendEmails = false,
-  populateNotifications = true,
-  id = "batch-20251122",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-456",
-  anonUserId = "anon-789"
+  populateNotifications = false,
+  id = "",
+  fromName = ""
 )
 if response.isSome:
-  let unblocked = response.get()
-  echo "Unblocked response received: ", unblocked
-else:
-  echo "No unblocked response, httpResponse: ", $httpResponse
+  let flagResp = response.get()
+  echo "Flag response received: ", $flagResp
 [inline-code-end]

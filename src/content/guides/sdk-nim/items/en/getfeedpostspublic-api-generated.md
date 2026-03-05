@@ -1,3 +1,8 @@
+
+req
+tenantId
+afterId
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -30,5 +35,7 @@ let (response, httpResponse) = client.getFeedPostsPublic(
 
 if response.isSome:
   let feed = response.get()
-  echo feed
+  echo "Retrieved feed posts"
+else:
+  echo "No feed posts returned"
 [inline-code-end]

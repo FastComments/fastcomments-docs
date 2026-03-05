@@ -1,3 +1,8 @@
+
+req
+tenantId
+afterId
+
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -15,10 +20,14 @@ Returns: [`Option[GetFeedPosts_200_response]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getFeedPosts Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(tenantId = "my-tenant-123", afterId = "post_abc123", limit = 20, tags = @["news", "sports"])
+let (response, httpResponse) = client.getFeedPosts(
+  tenantId = "my-tenant-123",
+  afterId = "",
+  limit = 0,
+  tags = @[]
+)
+
 if response.isSome:
   let feed = response.get()
-  echo "Feed posts retrieved for tenant my-tenant-123"
-else:
-  echo "No feed posts returned, HTTP status: ", $httpResponse.status
+  discard feed
 [inline-code-end]

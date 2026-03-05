@@ -17,26 +17,23 @@ Returns: [`Option[CreateFeedPost_200_response]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'createFeedPost Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createParams = CreateFeedPostParams(
-  content = "We're rolling out realtime comments to all users!",
-  title = "Realtime Comments Rollout",
-  url = "news/realtime-comments-rollout-2025",
-  authorId = "prod-team",
-  tags = @["release", "comments"]
-)
-
 let (response, httpResponse) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = createParams,
-  broadcastId = "broadcast-2025-11",
-  isLive = true,
-  doSpamCheck = true,
+  createFeedPostParams = CreateFeedPostParams(
+    title = "Breaking: Major Storm Hits City",
+    content = "A severe storm caused widespread outages and travel delays across the metro area.",
+    authorId = "author-789",
+    url = "news/major-storm",
+    tags = @["weather", "breaking"],
+    attachments = @[]
+  ),
+  broadcastId = "",
+  isLive = false,
+  doSpamCheck = false,
   skipDupCheck = false
 )
 
 if response.isSome:
   let created = response.get()
-  echo "Feed post created, id: ", $created.id
-else:
-  echo "Failed to create feed post, HTTP status: ", $httpResponse.statusCode
+  echo "Feed post created:", created
 [inline-code-end]

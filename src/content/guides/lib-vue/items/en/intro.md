@@ -1,6 +1,6 @@
 This is the official Vue 2 Library for FastComments.
 
-FastComments commenting widgets for Vue 2
+Embed live commenting, chat, and review widgets in your Vue 2 app.
 
 ## Repository
 

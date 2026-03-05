@@ -38,12 +38,12 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String id = "id_example"; // String | 
-    PickAPICommentUpdatableCommentFields body = new PickAPICommentUpdatableCommentFields(); // PickAPICommentUpdatableCommentFields | 
+    UpdatableCommentParams updatableCommentParams = new UpdatableCommentParams(); // UpdatableCommentParams | 
     String contextUserId = "contextUserId_example"; // String | 
     Boolean doSpamCheck = true; // Boolean | 
     Boolean isLive = true; // Boolean | 
     try {
-      FlagCommentPublic200Response result = apiInstance.updateComment(tenantId, id, body)
+      FlagCommentPublic200Response result = apiInstance.updateComment(tenantId, id, updatableCommentParams)
             .contextUserId(contextUserId)
             .doSpamCheck(doSpamCheck)
             .isLive(isLive)

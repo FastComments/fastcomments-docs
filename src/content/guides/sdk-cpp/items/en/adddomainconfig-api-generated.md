@@ -14,20 +14,18 @@ Returns: [`AddDomainConfig_200_response`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'addDomainConfig Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-AddDomainConfigParams params;
-params.domain = U("comments.example.com");
-params.allowSubdomains = boost::optional<bool>(true);
-params.contactEmail = boost::optional<utility::string_t>(U("admin@example.com"));
-api->addDomainConfig(tenantId, params)
-.then([](pplx::task<std::shared_ptr<AddDomainConfig_200_response>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<AddDomainConfig_200_response>(*resp);
-            (void)copy;
+auto params = std::make_shared<AddDomainConfigParams>();
+params->setDomain(U("comments.example.com"));
+params->setOwnerEmail(utility::string_t(U("admin@example.com")));
+params->setAllowSubdomains(boost::optional<bool>(true));
+params->setAllowedOrigins(std::vector<utility::string_t>{U("https://www.example.com"), U("https://blog.example.com")});
+api->addDomainConfig(tenantId, *params)
+    .then([](pplx::task<std::shared_ptr<AddDomainConfig_200_response>> task) {
+        try {
+            auto resp = task.get();
+            (void)resp;
+        } catch (const std::exception& e) {
+            (void)e;
         }
-    } catch (const std::exception& e) {
-        (void)e;
-    }
-});
+    });
 [inline-code-end]

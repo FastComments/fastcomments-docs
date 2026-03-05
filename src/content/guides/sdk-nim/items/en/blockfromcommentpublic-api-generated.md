@@ -17,9 +17,14 @@ Returns: [`Option[BlockFromCommentPublic_200_response]`](https://github.com/Fast
 [inline-code-start]
 let (response, httpResponse) = client.blockFromCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-987654",
-  publicBlockFromCommentParams = PublicBlockFromCommentParams(),
-  sso = "sso-token-7a9b3c"
+  commentId = "news/article-2026-01-12-comment-789",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(
+    reason = "harassment",
+    durationMinutes = 1440,
+    notifyUsers = false,
+    tags = @["abuse","spam"]
+  ),
+  sso = ""
 )
 if response.isSome:
   let blockResult = response.get()

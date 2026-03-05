@@ -20,17 +20,16 @@ Returns: [`Option[DeleteCommentVote_200_response]`](https://github.com/FastComme
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-789",
+  commentId = "cmt-456",
   voteId = "",
-  urlId = "news/breaking-story-2025",
+  urlId = "news/top-stories/my-article",
   broadcastId = "",
   editKey = "",
   sso = ""
 )
+
 if response.isSome:
   let deleted = response.get()
+  echo "DeleteCommentVote succeeded for comment cmt-456"
   discard deleted
-  echo "Vote removed for comment cmt-789"
-else:
-  echo "No response body returned"
 [inline-code-end]

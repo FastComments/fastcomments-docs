@@ -19,22 +19,14 @@ Returns: [`Option[CreateCommentPublic_200_response]`](https://github.com/FastCom
 [inline-code-start]
 let (response, httpResponse) = client.createCommentPublic(
   tenantId = "my-tenant-123",
-  urlId = "news/breaking-elections-2025",
-  broadcastId = "broadcast-456",
-  commentData = CommentData(
-    content = "Great reporting — thanks for the clear analysis!",
-    authorName = "Jane Doe",
-    authorEmail = "jane.doe@example.com",
-    isVerified = false,
-    tags = @["politics", "analysis"]
-  ),
-  sessionId = "session-789",
-  sso = "sso-token-abc123"
+  urlId = "news/my-article-2026",
+  broadcastId = "",
+  commentData = CommentData(),
+  sessionId = "",
+  sso = ""
 )
 
 if response.isSome:
   let created = response.get()
-  echo "Created comment:", created
-else:
-  echo "No comment returned, HTTP status: ", httpResponse.status`
+  echo "Comment created: ", $created
 [inline-code-end]

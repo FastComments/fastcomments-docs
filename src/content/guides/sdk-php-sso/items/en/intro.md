@@ -1,6 +1,6 @@
 This is the official PHP SSO SDK for FastComments.
 
-PHP SDK for FastComments SSO integration
+Integrate FastComments Single Sign-On in your PHP application.
 
 ## Repository
 

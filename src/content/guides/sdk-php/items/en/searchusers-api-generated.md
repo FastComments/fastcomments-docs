@@ -4,7 +4,7 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
 

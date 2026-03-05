@@ -17,19 +17,29 @@ Returns: [`SaveComment_200_response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'saveComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto createParamsPtr = std::make_shared<CreateCommentParams>();
-createParamsPtr->content = utility::string_t(U("This is a test comment posted via SDK"));
-createParamsPtr->authorEmail = utility::string_t(U("user@example.com"));
-createParamsPtr->threadId = utility::string_t(U("thread-456"));
+auto params = std::make_shared<CreateCommentParams>();
+params->content = utility::conversions::to_string_t("This is a test comment on the product page");
+params->authorEmail = utility::conversions::to_string_t("jane.doe@example.com");
+params->authorName = utility::conversions::to_string_t("Jane Doe");
+params->threadId = utility::conversions::to_string_t("product-123-thread");
+
 boost::optional<bool> isLive(true);
-boost::optional<bool> doSpamCheck(false);
-boost::optional<bool> sendEmails(true);
-boost::optional<bool> populateNotifications(false);
-auto task = api->saveComment(tenantId, *createParamsPtr, isLive, doSpamCheck, sendEmails, populateNotifications)
-.then([](std::shared_ptr<SaveComment_200_response> resp){
-    if (resp) std::cout << "Comment saved successfully\n";
-    else std::cout << "Failed to save comment\n";
+boost::optional<bool> doSpamCheck(true);
+boost::optional<bool> sendEmails(false);
+boost::optional<bool> populateNotifications(true);
+
+api->saveComment(
+    utility::conversions::to_string_t("my-tenant-123"),
+    *params,
+    isLive,
+    doSpamCheck,
+    sendEmails,
+    populateNotifications
+).then([](pplx::task<std::shared_ptr<SaveComment_200_response>> t) {
+    try {
+        auto resp = t.get();
+        (void)resp;
+    } catch (const std::exception&) {
+    }
 });
-task.wait();
 [inline-code-end]

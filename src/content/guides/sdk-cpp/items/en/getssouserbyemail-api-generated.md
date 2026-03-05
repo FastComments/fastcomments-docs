@@ -13,17 +13,18 @@ Returns: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getSSOUserByEmail Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t email = U("user@example.com");
-boost::optional<utility::string_t> includeInactive = boost::optional<utility::string_t>(U("false"));
-api->getSSOUserByEmail(tenantId, email).then([includeInactive](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
-    try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<GetSSOUserByEmailAPIResponse>();
-    } catch (...) {
-        return std::make_shared<GetSSOUserByEmailAPIResponse>();
-    }
-}).then([](std::shared_ptr<GetSSOUserByEmailAPIResponse> finalResp) {
-    (void)finalResp;
-});
+boost::optional<utility::string_t> tenantOpt(U("my-tenant-123"));
+utility::string_t tenantId = tenantOpt.value_or(U("my-tenant-123"));
+utility::string_t email = U("alice@example.com");
+
+api->getSSOUserByEmail(tenantId, email)
+    .then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
+        try {
+            auto resp = t.get();
+            if (resp) {
+                auto userCopy = std::make_shared<GetSSOUserByEmailAPIResponse>(*resp);
+            }
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

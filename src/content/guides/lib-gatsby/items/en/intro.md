@@ -1,6 +1,6 @@
 This is the official GatsbyJS Library for FastComments.
 
-Example GatsbyJS site with FastComments setup
+A working example showing how to add FastComments to a GatsbyJS site.
 
 ## Repository
 

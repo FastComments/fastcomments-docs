@@ -29,22 +29,22 @@ Returns: [`Option[GetComments_200_response]`](https://github.com/FastComments/fa
 let (response, httpResponse) = client.getComments(
   tenantId = "my-tenant-123",
   page = 1,
-  limit = 20,
+  limit = 25,
   skip = 0,
-  asTree = false,
+  asTree = true,
   skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "news/2025-election-night",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
+  limitChildren = 5,
+  maxTreeDepth = 3,
+  urlId = "news/2026/01/important-announcement",
+  userId = "user-789",
+  anonUserId = "anon-456",
+  contextUserId = "ctx-321",
+  hashTag = "release",
   parentId = "",
-  direction = SortDirections.Desc
+  direction = SortDirections.Newest
 )
 
 if response.isSome:
   let comments = response.get()
-  echo "Status: ", httpResponse.status, " Comments: ", comments
+  echo "Fetched comments for url:", " news/2026/01/important-announcement"
 [inline-code-end]

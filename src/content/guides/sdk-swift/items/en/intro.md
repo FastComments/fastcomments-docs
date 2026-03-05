@@ -1,6 +1,6 @@
 This is the official Swift SDK for FastComments.
 
-Official Swift SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Swift applications.
 
 ## Repository
 

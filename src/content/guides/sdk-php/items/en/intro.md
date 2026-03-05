@@ -1,6 +1,6 @@
 This is the official PHP SDK for FastComments.
 
-Official PHP SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your PHP applications.
 
 ## Repository
 

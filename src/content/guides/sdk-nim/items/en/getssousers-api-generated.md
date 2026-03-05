@@ -16,8 +16,5 @@ Returns: [`Option[GetSSOUsers_200_response]`](https://github.com/FastComments/fa
 let (response, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
 if response.isSome:
   let ssoUsers = response.get()
-  echo "Fetched SSO users:"
   echo ssoUsers
-else:
-  echo "No SSO users returned, HTTP status: ", httpResponse.statusCode
 [inline-code-end]

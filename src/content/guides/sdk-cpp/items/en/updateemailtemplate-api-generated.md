@@ -20,7 +20,7 @@ UpdateEmailTemplateBody updateBody;
 boost::optional<utility::string_t> optionalFrom = boost::optional<utility::string_t>(U("no-reply@myapp.com"));
 updateBody.from = optionalFrom;
 updateBody.subject = U("Welcome to MyApp");
-updateBody.html = U("<p>Hi {{displayName}}, welcome to MyApp!</p>");
+updateBody.html = U("<p>Hi \{{displayName}}, welcome to MyApp!</p>");
 auto bodyPtr = std::make_shared<UpdateEmailTemplateBody>(updateBody);
 api->updateEmailTemplate(tenantId, templateId, *bodyPtr)
 .then([](pplx::task<std::shared_ptr<FlagCommentPublic_200_response>> t){

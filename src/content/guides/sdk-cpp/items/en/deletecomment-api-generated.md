@@ -16,16 +16,16 @@ Returns: [`DeleteComment_200_response`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'deleteComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U("moderator@acme.com"));
-boost::optional<bool> isLive = boost::optional<bool>(true);
-api->deleteComment(tenantId, commentId, contextUserId, isLive)
-.then([](pplx::task<std::shared_ptr<DeleteComment_200_response>> t){
+utility::string_t id = U("comment-456");
+boost::optional<utility::string_t> contextUserId{ U("user@example.com") };
+boost::optional<bool> isLive{ true };
+
+api->deleteComment(tenantId, id, contextUserId, isLive)
+.then([](pplx::task<std::shared_ptr<DeleteComment_200_response>> t) {
     try {
         auto resp = t.get();
-        if (resp) {
-            auto processed = std::make_shared<DeleteComment_200_response>(*resp);
-        }
+        auto safeResp = resp ? resp : std::make_shared<DeleteComment_200_response>();
+        (void)safeResp;
     } catch (const std::exception&) {
     }
 });

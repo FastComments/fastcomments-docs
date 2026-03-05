@@ -1,6 +1,6 @@
 This is the official C++ SDK for FastComments.
 
-Official C++ SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your C++ applications.
 
 ## Repository
 

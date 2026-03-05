@@ -18,17 +18,22 @@ Returns: [`GetUserBadges_200_response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getUserBadges Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> userId(utility::conversions::to_string_t("user@example.com"));
-boost::optional<utility::string_t> badgeId(utility::conversions::to_string_t("badge-elite"));
-boost::optional<double> type(1.0);
-boost::optional<bool> displayedOnComments(true);
-boost::optional<double> limit(50.0);
-boost::optional<double> skip(0.0);
-auto resultHolder = std::make_shared<GetUserBadges_200_response>();
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
+boost::optional<utility::string_t> badgeId = boost::optional<utility::string_t>(U("badge-987"));
+boost::optional<double> type = boost::optional<double>(1.0);
+boost::optional<bool> displayedOnComments = boost::optional<bool>(true);
+boost::optional<double> limit = boost::optional<double>(50.0);
+boost::optional<double> skip = boost::optional<double>(0.0);
+
 api->getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)
-.then([&resultHolder](std::shared_ptr<GetUserBadges_200_response> resp){
-    if (resp) resultHolder = resp;
-    return resultHolder;
+.then([](pplx::task<std::shared_ptr<GetUserBadges_200_response>> task){
+    try {
+        auto resp = task.get();
+        if (resp) {
+            auto localCopy = std::make_shared<GetUserBadges_200_response>(*resp);
+            (void)localCopy;
+        }
+    } catch (const std::exception&) {}
 });
 [inline-code-end]

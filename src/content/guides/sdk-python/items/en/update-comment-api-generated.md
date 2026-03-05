@@ -18,7 +18,7 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 [inline-code-start]
 import client
 from client.models.flag_comment_public200_response import FlagCommentPublic200Response
-from client.models.pick_api_comment_updatable_comment_fields import PickAPICommentUpdatableCommentFields
+from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
@@ -45,13 +45,13 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    body = client.PickAPICommentUpdatableCommentFields() # PickAPICommentUpdatableCommentFields | 
+    updatable_comment_params = client.UpdatableCommentParams() # UpdatableCommentParams | 
     context_user_id = 'context_user_id_example' # str |  (optional)
     do_spam_check = True # bool |  (optional)
     is_live = True # bool |  (optional)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, body, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

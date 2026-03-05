@@ -1,6 +1,6 @@
 This is the official React Native SDK for FastComments.
 
-FastComments SDK for React Native applications
+Access the FastComments API directly from your React Native application.
 
 ## Repository
 

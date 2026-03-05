@@ -15,10 +15,11 @@ Returns: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'flagComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagComment(tenantId = "my-tenant-123", id = "cmt-98765", userId = "user-8342", anonUserId = "")
+let (response, httpResponse) = client.flagComment(tenantId = "my-tenant-123", id = "comment-9876", userId = "", anonUserId = "anon-4f2b9c")
+
 if response.isSome:
-  let flagged = response.get()
-  echo "Flagged comment response: ", flagged
+  let flagResult = response.get()
+  echo "Flag succeeded: ", $flagResult
 else:
-  echo "Flag comment failed: ", httpResponse
+  echo "Flag failed, HTTP response status: ", $httpResponse.status
 [inline-code-end]

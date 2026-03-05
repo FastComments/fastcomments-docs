@@ -1,6 +1,6 @@
 This is the official Rust SDK for FastComments.
 
-Official Rust SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Rust applications.
 
 ## Repository
 

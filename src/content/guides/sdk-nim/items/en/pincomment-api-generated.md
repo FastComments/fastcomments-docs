@@ -15,10 +15,8 @@ Returns: [`Option[PinComment_200_response]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'pinComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.pinComment(tenantId = "my-tenant-123", commentId = "cmt-98765", broadcastId = "", sso = "")
+let (response, httpResponse) = client.pinComment(tenantId = "tenant-456", commentId = "cmt-7890", broadcastId = "broadcast-001", sso = "")
 if response.isSome:
-  let pinned = response.get()
-  echo "Pinned comment response received"
-else:
-  echo "No pin response"
+  let pinResult = response.get()
+  discard pinResult
 [inline-code-end]

@@ -13,12 +13,11 @@ Returns: [`Option[GetUserBadgeProgressById_200_response]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "editor-badge-42")
+let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "badge-activity-456")
 if response.isSome:
-  let badgeProgress = response.get()
-  echo "Badge progress received:"
-  echo badgeProgress
+  let progress = response.get()
+  echo "Retrieved badge progress for tenant my-tenant-123"
+  discard progress
 else:
-  echo "No badge progress found for tenant 'my-tenant-123' and id 'editor-badge-42'"
-  echo httpResponse
+  echo "No badge progress found, HTTP status: ", $httpResponse.status
 [inline-code-end]

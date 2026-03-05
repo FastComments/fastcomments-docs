@@ -15,20 +15,25 @@ Returns: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-c
 [inline-code-attrs-start title = 'patchPage Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-9876");
-auto updatePtr = std::make_shared<UpdateAPIPageData>();
-updatePtr->title = utility::string_t(U("About Our Team"));
-updatePtr->slug = utility::string_t(U("about-our-team"));
-updatePtr->enabled = boost::optional<bool>(true);
-updatePtr->description = boost::optional<utility::string_t>(U("Updated team overview and contact information"));
-api->patchPage(tenantId, pageId, *updatePtr)
-.then([](pplx::task<std::shared_ptr<PatchPageAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "Patch successful, page id: " << resp->id << std::endl;
-        }
-    } catch (const std::exception &e) {
+utility::string_t pageId = U("page-456");
+UpdateAPIPageData updateData;
+updateData.title = utility::string_t(U("Homepage - Updated"));
+updateData.slug = boost::optional<utility::string_t>(U("homepage-updated"));
+updateData.published = boost::optional<bool>(true);
+auto fallbackResp = std::make_shared<PatchPageAPIResponse>();
+api->patchPage(tenantId, pageId, updateData)
+.then([](pplx::task<std::shared_ptr<PatchPageAPIResponse>> task)
+{
+    try
+    {
+        auto resp = task.get();
+        if (resp)
+            std::cout << "Patch succeeded" << std::endl;
+        else
+            std::cout << "Patch returned no data" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
         std::cerr << "Patch failed: " << e.what() << std::endl;
     }
 });

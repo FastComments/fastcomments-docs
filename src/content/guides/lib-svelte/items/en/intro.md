@@ -1,6 +1,6 @@
 This is the official Svelte Library for FastComments.
 
-FastComments commenting widgets for Svelte
+Embed live commenting, chat, and review widgets in your Svelte app.
 
 ## Repository
 

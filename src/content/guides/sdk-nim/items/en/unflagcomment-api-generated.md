@@ -17,12 +17,14 @@ Returns: [`Option[FlagComment_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.unFlagComment(
   tenantId = "my-tenant-123",
-  id = "flag-789",
-  userId = "",
+  id = "comment-9876",
+  userId = "user-42",
   anonUserId = ""
 )
 
 if response.isSome:
-  let flagResponse = response.get()
-  echo "Comment unflagged successfully"
+  let flagResp = response.get()
+  echo "Unflag succeeded:", flagResp
+
+echo "HTTP response status:", httpResponse.status
 [inline-code-end]

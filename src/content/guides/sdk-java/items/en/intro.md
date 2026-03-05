@@ -1,6 +1,6 @@
 This is the official Java SDK for FastComments.
 
-Official Java SDK for the FastComments API
+Manage comments, users, SSO, and moderation from your Java applications.
 
 ## Repository
 

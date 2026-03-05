@@ -21,7 +21,7 @@ async fn run() -> Result<(), Error> {
         update_email_template_body: models::UpdateEmailTemplateBody {
             name: Some("Welcome Template".to_string()),
             subject: Some("Welcome to Acme News".to_string()),
-            body_html: Some("<p>Hi {{user_name}}, welcome to Acme News!</p>".to_string()),
+            body_html: Some("<p>Hi \{{user_name}}, welcome to Acme News!</p>".to_string()),
             from_address: Some("no-reply@acme-news.com".to_string()),
             reply_to: Some("support@acme-news.com".to_string()),
             enabled: Some(true),

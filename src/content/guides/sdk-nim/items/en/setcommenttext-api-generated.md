@@ -19,13 +19,16 @@ Returns: [`Option[SetCommentText_200_response]`](https://github.com/FastComments
 [inline-code-start]
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-7890",
-  broadcastId = "broadcast-456",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text = "Updated comment text to fix typos and add clarity."),
-  editKey = "edit-key-abc123",
-  sso = "sso-token-xyz"
+  commentId = "cmt-987654",
+  broadcastId = "bcast-2026-01",
+  commentTextUpdateRequest = CommentTextUpdateRequest(text = "Updated comment text for clarity and formatting"),
+  editKey = "",
+  sso = ""
 )
 
 if response.isSome:
   let updated = response.get()
+  echo "Comment updated:", updated
+else:
+  echo "Update failed, status:", httpResponse.status
 [inline-code-end]

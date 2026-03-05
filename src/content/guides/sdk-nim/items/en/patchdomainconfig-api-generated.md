@@ -14,19 +14,19 @@ Returns: [`Option[GetDomainConfig_200_response]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'patchDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let patchParams = PatchDomainConfigParams(
+  domainName: "comments.mynews.com",
+  enableModeration: true,
+  allowedOrigins: @["https://www.mynews.com", "https://editor.mynews.com"]
+)
+
 let (response, httpResponse) = client.patchDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "news/article-crowdsourcing",
-  patchDomainConfigParams = PatchDomainConfigParams(
-    allowedOrigins = @["https://www.news-site.com"],
-    moderated = true,
-    maxCommentLength = 1000
-  )
+  domainToUpdate = "news/article-title",
+  patchDomainConfigParams = patchParams
 )
 
 if response.isSome:
-  let domainConfig = response.get()
-  echo "Updated domain config received"
-else:
-  echo "No domain config returned"
+  let updated = response.get()
+  echo "Updated domain config for: ", updated.domainName
 [inline-code-end]

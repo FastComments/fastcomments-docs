@@ -15,11 +15,10 @@ Returns: [`Option[DeleteComment_200_response]`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'deleteComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-456abc", contextUserId = "user-789", isLive = true)
+let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "comment-9876", contextUserId = "user-42", isLive = true)
 if response.isSome:
-  let deleted = response.get()
-  discard deleted
-  echo "Delete succeeded"
+  let deletedComment = response.get()
+  discard deletedComment
 else:
-  echo "No delete response"
+  echo "Delete failed, status: ", httpResponse.status
 [inline-code-end]

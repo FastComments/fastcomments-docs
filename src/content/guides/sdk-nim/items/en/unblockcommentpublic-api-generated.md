@@ -16,14 +16,12 @@ Returns: [`Option[UnBlockCommentPublic_200_response]`](https://github.com/FastCo
 [inline-code-attrs-start title = 'unBlockCommentPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockCommentPublic(
-  tenantId = "news-site-456",
-  commentId = "comment-abc123",
-  publicBlockFromCommentParams = PublicBlockFromCommentParams{},
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(reason = "", blockDurationMinutes = 0, notifyUser = false),
   sso = ""
 )
 if response.isSome:
-  let unblocked = response.get()
-  discard unblocked
-else:
-  discard httpResponse
+  let result = response.get()
+  discard result
 [inline-code-end]

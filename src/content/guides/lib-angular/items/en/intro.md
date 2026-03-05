@@ -1,6 +1,6 @@
 This is the official Angular Library for FastComments.
 
-FastComments commenting widgets for Angular
+Embed live commenting, chat, and review widgets in your Angular app.
 
 ## Repository
 
