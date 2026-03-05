@@ -25,6 +25,20 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
+  echo "Generating SDK documentation..."
+  if ! node src/sdk-guide-generator.js; then
+    echo "ERROR: SDK documentation generation failed"
+    exit 1
+  fi
+  echo "SDK documentation generation complete."
+
+  echo "Generating custom styling guide..."
+  if ! node src/custom-styling-guide-generator.js; then
+    echo "ERROR: Custom styling guide generation failed"
+    exit 1
+  fi
+  echo "Custom styling guide generation complete."
+
   # Check for missing translations
   echo "Checking for missing translations..."
   node src/check-translations.js
@@ -61,20 +75,6 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   else
     echo "All translations up to date."
   fi
-
-  echo "Generating SDK documentation..."
-  if ! node src/sdk-guide-generator.js; then
-    echo "ERROR: SDK documentation generation failed"
-    exit 1
-  fi
-  echo "SDK documentation generation complete."
-
-  echo "Generating custom styling guide..."
-  if ! node src/custom-styling-guide-generator.js; then
-    echo "ERROR: Custom styling guide generation failed"
-    exit 1
-  fi
-  echo "Custom styling guide generation complete."
 
   echo "Building content..."
   if ! NODE_OPTIONS="--max-old-space-size=8192" MAX_BROWSERS=1 npm run build-content; then

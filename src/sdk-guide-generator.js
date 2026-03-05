@@ -3,11 +3,7 @@ const path = require('path');
 const SDKCheckoutManager = require('./sdk-checkout-manager');
 const ReadmeDocGenerator = require('./sdk-doc-generators/readme-generator');
 const OpenAPIDocGenerator = require('./sdk-doc-generators/openapi-generator');
-const { hashContent } = require('./translation-snapshot');
-const { loadTranslationCache, GUIDES_DIR: CHECK_GUIDES_DIR } = require('./check-translations');
-
 const GUIDES_DIR = path.join(__dirname, 'content', 'guides');
-const TRANSLATION_CACHE_FILE = path.join(__dirname, 'translation-cache.json');
 
 /**
  * Generates guide structure from SDK documentation
@@ -289,10 +285,6 @@ class SDKGuideGenerator {
             }
         }
 
-        // Update translation cache: for any existing translations, set the
-        // cache hash to the new source hash so they aren't flagged as stale.
-        this.updateTranslationCache();
-
         console.log('SDK guide generation complete!');
 
         // Fail build if there were validation errors
@@ -317,50 +309,6 @@ class SDKGuideGenerator {
         }
     }
 
-    /**
-     * Update translation cache so existing translations aren't flagged as stale
-     * after English source files are regenerated.
-     */
-    updateTranslationCache() {
-        const cache = loadTranslationCache();
-        const sdks = this.checkoutManager.getSDKs();
-        let updated = 0;
-
-        for (const sdk of sdks) {
-            const enDir = path.join(GUIDES_DIR, sdk.id, 'items', 'en');
-            if (!fs.existsSync(enDir)) continue;
-
-            const sourceFiles = fs.readdirSync(enDir).filter(f => f.endsWith('.md'));
-            const itemsDir = path.join(GUIDES_DIR, sdk.id, 'items');
-            let localeDirs;
-            try {
-                localeDirs = fs.readdirSync(itemsDir).filter(d => {
-                    return d !== 'en' && fs.statSync(path.join(itemsDir, d)).isDirectory();
-                });
-            } catch (e) {
-                continue;
-            }
-
-            for (const file of sourceFiles) {
-                const content = fs.readFileSync(path.join(enDir, file), 'utf8');
-                const hash = hashContent(content);
-
-                for (const locale of localeDirs) {
-                    const key = `${sdk.id}/${locale}/${file}`;
-                    const translatedPath = path.join(itemsDir, locale, file);
-                    if (cache[key] && cache[key] !== hash && fs.existsSync(translatedPath)) {
-                        cache[key] = hash;
-                        updated++;
-                    }
-                }
-            }
-        }
-
-        if (updated > 0) {
-            fs.writeFileSync(TRANSLATION_CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
-            console.log(`Updated ${updated} translation cache entries to match new source hashes.`);
-        }
-    }
 }
 
 // Allow running directly from command line
