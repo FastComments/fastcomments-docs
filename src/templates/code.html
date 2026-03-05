@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{#if lang}}{{lang}}{{else}}en{{/if}}">
 <head>
     <title>FastComments Docs</title>
     <meta property="og:title" content="FastComments Documentation"/>
@@ -34,7 +34,7 @@
     </p>
     <h2 class="text-center">Example Code Snippet "{{snippetName}}"</h2>
     <label>
-        <textarea id="code-input">{{{codeHTML}}}</textarea>
+        <textarea id="code-input">{{codeHTML}}</textarea>
     </label>
     <h4>Result</h4>
     <iframe id="iframe" class="example-iframe"></iframe>
