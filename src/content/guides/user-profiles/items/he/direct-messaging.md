@@ -57,7 +57,7 @@ Direct Messaging מספק:
 - התראות דוא"ל - בהתאם להגדרות ההתראות שלך
 - התראות בזמן אמת - התראות מיידיות כשאתה מחובר
 
-נהל העדפות התראות ב-[הגדרות החשבון](https://fastcomments.com/auth/my-account/notification-settings).
+נהל העדפות התראות ב-[הגדרות החשבון](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### פרטיות וחסימה
 
@@ -147,7 +147,7 @@ Direct Messaging מספק:
 - מחק את החשבון שלו
 
 **לא מקבל התראות?**
-בדוק את הגדרות ההתראות שלך ב-[הגדרות החשבון](https://fastcomments.com/auth/my-account/notification-settings) כדי לוודא שהתראות DM מופעלות.
+בדוק את הגדרות ההתראות שלך ב-[הגדרות החשבון](https://fastcomments.com/auth/my-account/edit-notifications) כדי לוודא שהתראות DM מופעלות.
 
 **הודעות לא נשלחות?**
 - בדוק את חיבור האינטרנט שלך

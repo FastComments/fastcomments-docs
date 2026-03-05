@@ -42,7 +42,7 @@
 
 **管理通知：**
 - 查看通知时会将其标记为已读
-- 在 [通知设置](https://fastcomments.com/auth/my-account/notification-settings) 中配置您接收的通知类型
+- 在 [通知设置](https://fastcomments.com/auth/my-account/edit-notifications) 中配置您接收的通知类型
 
 有关管理通知的更多详细信息，请参阅 [通知指南](/guides/notifications)。
 

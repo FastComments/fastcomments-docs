@@ -42,7 +42,7 @@ The Activity Feed on User Profiles displays a user's comment history, notificati
 
 **通知の管理：**
 - 通知は表示した時に既読としてマークされます
-- 受け取りたい通知の種類は[通知設定](https://fastcomments.com/auth/my-account/notification-settings)で設定できます
+- 受け取りたい通知の種類は[通知設定](https://fastcomments.com/auth/my-account/edit-notifications)で設定できます
 
 詳細な通知管理については、[通知ガイド](/guides/notifications)を参照してください。
 

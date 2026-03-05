@@ -42,7 +42,7 @@ Vaš zavihek Obvestila prikazuje:
 
 **Upravljanje obvestil:**
 - Obvestila so označena kot prebrana, ko si jih ogledate
-- Nastavite, katere vrste obvestil želite prejemati v [Nastavitve obvestil](https://fastcomments.com/auth/my-account/notification-settings)
+- Nastavite, katere vrste obvestil želite prejemati v [Nastavitve obvestil](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Za več podrobnosti o upravljanju obvestil si oglejte [Vodnik za obvestila](/guides/notifications).
 

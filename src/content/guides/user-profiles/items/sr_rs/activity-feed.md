@@ -42,7 +42,7 @@
 
 **Управљање обавештењима:**
 - Обавештења се означавају као прочитана када их прегледате
-- Конфигуришите које типове обавештења примате у [Notification Settings](https://fastcomments.com/auth/my-account/notification-settings)
+- Конфигуришите које типове обавештења примате у [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
 За више детаља о управљању обавештењима, погледајте [Notifications Guide](/guides/notifications).
 

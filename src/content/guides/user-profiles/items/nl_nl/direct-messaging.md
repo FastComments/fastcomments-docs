@@ -57,7 +57,7 @@ Je ontvangt meldingen voor nieuwe directe berichten:
 - **E-mailmeldingen** - Afhankelijk van je meldingsinstellingen
 - **Realtime meldingen** - Directe waarschuwingen wanneer je bent ingelogd
 
-Beheer meldingsvoorkeuren in je [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Beheer meldingsvoorkeuren in je [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy en blokkeren
 
@@ -147,7 +147,7 @@ De andere gebruiker heeft mogelijk:
 - Hun account verwijderd
 
 **Ontvang je geen meldingen?**
-Controleer je meldingsinstellingen bij [Account Settings](https://fastcomments.com/auth/my-account/notification-settings) om te zorgen dat DM-meldingen zijn ingeschakeld.
+Controleer je meldingsinstellingen bij [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) om te zorgen dat DM-meldingen zijn ingeschakeld.
 
 **Berichten worden niet verzonden?**
 - Controleer je internetverbinding

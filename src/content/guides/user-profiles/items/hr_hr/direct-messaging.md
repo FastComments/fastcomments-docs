@@ -57,7 +57,7 @@ Dobivat ćete obavijesti o novim izravnim porukama:
 - **E-poštom obavijesti** - Ovisno o vašim postavkama obavijesti
 - **Upozorenja u stvarnom vremenu** - Trenutne obavijesti kada ste prijavljeni
 
-Upravljajte postavkama obavijesti u svojim [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Upravljajte postavkama obavijesti u svojim [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatnost i blokiranje
 
@@ -147,7 +147,7 @@ Drugi korisnik može:
 - Izbrisati svoj račun
 
 **Ne primate obavijesti?**
-Provjerite postavke obavijesti u [Account Settings](https://fastcomments.com/auth/my-account/notification-settings) kako biste osigurali da su obavijesti za DM omogućene.
+Provjerite postavke obavijesti u [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) kako biste osigurali da su obavijesti za DM omogućene.
 
 **Poruke se ne šalju?**
 - Provjerite internetsku vezu

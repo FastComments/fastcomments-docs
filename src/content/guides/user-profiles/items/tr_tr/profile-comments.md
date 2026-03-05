@@ -81,7 +81,7 @@ Aşağıdaki durumlarda bildirim alırsınız:
 - Bir profil yorumu dizisine dahil olduğunuzda birisi yanıt verdiğinde
 - Bıraktığınız bir profil yorumu onaylandığında veya yanıtlandığında
 
-Bildirimin tercihlerini [Hesap Ayarları](https://fastcomments.com/auth/my-account/notification-settings) bölümünden yönetin.
+Bildirimin tercihlerini [Hesap Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) bölümünden yönetin.
 
 ### Gizlilik ve Profil Yorumları
 

@@ -57,7 +57,7 @@ DM 会話を開始する方法はいくつかあります：
 - **メール通知** - 通知設定による
 - **リアルタイムアラート** - ログイン中は即時通知
 
-通知の設定は [アカウント設定](https://fastcomments.com/auth/my-account/notification-settings) で管理できます。
+通知の設定は [アカウント設定](https://fastcomments.com/auth/my-account/edit-notifications) で管理できます。
 
 ### プライバシーとブロック
 
@@ -147,7 +147,7 @@ DM を受け取りたくない場合、完全に無効にできます：
 - アカウントを削除している
 
 **通知が届かない？**
-[アカウント設定](https://fastcomments.com/auth/my-account/notification-settings) で DM 通知が有効になっているか確認してください。
+[アカウント設定](https://fastcomments.com/auth/my-account/edit-notifications) で DM 通知が有効になっているか確認してください。
 
 **メッセージが送信されない？**
 - インターネット接続を確認する

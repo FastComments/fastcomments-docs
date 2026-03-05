@@ -42,7 +42,7 @@ Vaša kartica Obaveštenja prikazuje:
 
 **Upravljanje obaveštenjima:**
 - Obaveštenja se označavaju kao pročitana kada ih pregledate
-- Konfigurišite koje vrste obaveštenja primate u [Podešavanjima obaveštenja](https://fastcomments.com/auth/my-account/notification-settings)
+- Konfigurišite koje vrste obaveštenja primate u [Podešavanjima obaveštenja](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Za više detalja o upravljanju obaveštenjima, pogledajte [Vodič za obaveštenja](/guides/notifications).
 

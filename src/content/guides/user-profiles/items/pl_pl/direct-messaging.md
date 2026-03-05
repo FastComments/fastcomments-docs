@@ -57,7 +57,7 @@ Otrzymasz powiadomienia o nowych wiadomościach bezpośrednich:
 - **Powiadomienia e-mail** - W zależności od ustawień powiadomień
 - **Powiadomienia w czasie rzeczywistym** - Natychmiastowe alerty, gdy jesteś zalogowany
 
-Zarządzaj preferencjami powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/notification-settings).
+Zarządzaj preferencjami powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Prywatność i blokowanie
 
@@ -147,7 +147,7 @@ Drugi użytkownik mógł:
 - Usunąć swoje konto
 
 **Nie otrzymujesz powiadomień?**
-Sprawdź ustawienia powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/notification-settings), aby upewnić się, że powiadomienia DM są włączone.
+Sprawdź ustawienia powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications), aby upewnić się, że powiadomienia DM są włączone.
 
 **Wiadomości się nie wysyłają?**
 - Sprawdź swoje połączenie internetowe

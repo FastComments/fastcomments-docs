@@ -42,7 +42,7 @@ Votre onglet Notifications affiche :
 
 **Gérer les notifications :**
 - Les notifications sont marquées comme lues lorsque vous les consultez
-- Configurez les types de notifications que vous recevez dans [Paramètres de notification](https://fastcomments.com/auth/my-account/notification-settings)
+- Configurez les types de notifications que vous recevez dans [Paramètres de notification](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Pour plus de détails sur la gestion des notifications, consultez le [Guide des notifications](/guides/notifications).
 

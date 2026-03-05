@@ -81,7 +81,7 @@ You'll receive notifications when:
 - Someone replies to a profile comment thread you're part of
 - A profile comment you left is approved or responded to
 
-Manage notification preferences in your [アカウント設定](https://fastcomments.com/auth/my-account/notification-settings).
+Manage notification preferences in your [アカウント設定](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy and Profile Comments
 

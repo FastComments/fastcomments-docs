@@ -82,7 +82,7 @@ Du erhältst Benachrichtigungen, wenn:
 - Jemand auf einen Profilkommentar-Thread, an dem du beteiligt bist, antwortet
 - Ein von dir hinterlassener Profilkommentar genehmigt oder beantwortet wird
 
-Verwalte Benachrichtigungseinstellungen in deinen [Kontoeinstellungen](https://fastcomments.com/auth/my-account/notification-settings).
+Verwalte Benachrichtigungseinstellungen in deinen [Kontoeinstellungen](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Datenschutz und Profilkommentare
 

@@ -57,7 +57,7 @@ Direct Messaging (DM) allows FastComments users to have private, one-on-one conv
 - **电子邮件通知** - 取决于你的通知设置
 - **实时提醒** - 登录时的即时通知
 
-在你的[账户设置](https://fastcomments.com/auth/my-account/notification-settings)中管理通知偏好。
+在你的[账户设置](https://fastcomments.com/auth/my-account/edit-notifications)中管理通知偏好。
 
 ### 隐私和屏蔽
 
@@ -147,7 +147,7 @@ Direct Messaging (DM) allows FastComments users to have private, one-on-one conv
 - 删除了他们的账户
 
 **未收到通知？**
-在[账户设置](https://fastcomments.com/auth/my-account/notification-settings)中检查你的通知设置，确保已启用 DM 通知。
+在[账户设置](https://fastcomments.com/auth/my-account/edit-notifications)中检查你的通知设置，确保已启用 DM 通知。
 
 **消息无法发送？**
 - 检查你的网络连接

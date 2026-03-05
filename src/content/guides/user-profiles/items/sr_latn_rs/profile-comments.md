@@ -81,7 +81,7 @@ Dobićete obaveštenja kada:
 - Neko odgovori na nit komentara na profilu u kojoj učestvujete
 - Komentar na profilu koji ste ostavili bude odobren ili na njega bude odgovoreno
 
-Upravljajte podešavanjima obaveštenja u [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Upravljajte podešavanjima obaveštenja u [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatnost i komentari na profilu
 

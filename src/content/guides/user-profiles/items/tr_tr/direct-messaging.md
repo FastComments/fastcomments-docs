@@ -57,7 +57,7 @@ Yeni doğrudan mesajlar için bildirim alırsınız:
 - **E-posta bildirimleri** - Bildirim ayarlarınıza bağlı olarak
 - **Gerçek zamanlı uyarılar** - Oturum açtığınızda anlık bildirimler
 
-Bildirim tercihlerinizi [Hesap Ayarları](https://fastcomments.com/auth/my-account/notification-settings) bölümünden yönetin.
+Bildirim tercihlerinizi [Hesap Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) bölümünden yönetin.
 
 ### Gizlilik ve Engelleme
 
@@ -147,7 +147,7 @@ Diğer kullanıcı şunları yapmış olabilir:
 - Hesabını silmiş
 
 **Bildirim Almıyor musunuz?**
-DM bildirimlerinin etkin olduğundan emin olmak için [Hesap Ayarları](https://fastcomments.com/auth/my-account/notification-settings) bölümündeki bildirim ayarlarınızı kontrol edin.
+DM bildirimlerinin etkin olduğundan emin olmak için [Hesap Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) bölümündeki bildirim ayarlarınızı kontrol edin.
 
 **Mesajlar Gönderilmiyor mu?**
 - İnternet bağlantınızı kontrol edin

@@ -81,7 +81,7 @@ Vous recevrez des notifications lorsque :
 - Quelqu'un répond à un fil de commentaires de profil auquel vous participez
 - Un commentaire de profil que vous avez laissé est approuvé ou reçoit une réponse
 
-Gérez les préférences de notification dans vos [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Gérez les préférences de notification dans vos [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Confidentialité et commentaires de profil
 

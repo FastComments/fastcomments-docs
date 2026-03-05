@@ -57,7 +57,7 @@ Riceverai notifiche per i nuovi messaggi diretti:
 - **Notifiche email** - A seconda delle tue impostazioni di notifica
 - **Avvisi in tempo reale** - Notifiche istantanee quando sei connesso
 
-Gestisci le preferenze di notifica in [Impostazioni account](https://fastcomments.com/auth/my-account/notification-settings).
+Gestisci le preferenze di notifica in [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy e blocchi
 
@@ -147,7 +147,7 @@ L'altro utente potrebbe aver:
 - Eliminato il proprio account
 
 **Non ricevi le notifiche?**
-Controlla le tue impostazioni di notifica su [Impostazioni account](https://fastcomments.com/auth/my-account/notification-settings) per assicurarti che le notifiche DM siano abilitate.
+Controlla le tue impostazioni di notifica su [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications) per assicurarti che le notifiche DM siano abilitate.
 
 **I messaggi non vengono inviati?**
 - Controlla la tua connessione a internet

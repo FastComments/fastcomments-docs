@@ -81,7 +81,7 @@ Profile Comments дозволјавају корисницима да остав
 - Неко одговори на тхреад коментара на профилу у коме учествујете
 - Коментар на профилу који сте оставили буде одобрен или на њега буде одговорено
 
-Управљајте подешавањима обавештења у свом [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Управљајте подешавањима обавештења у свом [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Приватност и коментари на профилу
 

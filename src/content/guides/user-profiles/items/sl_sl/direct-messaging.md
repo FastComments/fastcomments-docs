@@ -57,7 +57,7 @@ Prejeli boste obvestila za nova neposredna sporočila:
 - **E-poštna obvestila** - glede na vaše nastavitve obveščanja
 - **Opozorila v realnem času** - takojšnja obvestila, ko ste prijavljeni
 
-Upravljajte nastavitve obvestil v svojih [Nastavitvah računa](https://fastcomments.com/auth/my-account/notification-settings).
+Upravljajte nastavitve obvestil v svojih [Nastavitvah računa](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Zasebnost in blokiranje
 
@@ -147,7 +147,7 @@ Drugi uporabnik je morda:
 - Izbrisal svoj račun
 
 **Ne prejemate obvestil?**
-Preverite nastavitve obvestil v [Nastavitvah računa](https://fastcomments.com/auth/my-account/notification-settings), da zagotovite, da so obvestila za DM omogočena.
+Preverite nastavitve obvestil v [Nastavitvah računa](https://fastcomments.com/auth/my-account/edit-notifications), da zagotovite, da so obvestila za DM omogočena.
 
 **Sporočila se ne pošiljajo?**
 - Preverite svojo internetno povezavo

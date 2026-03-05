@@ -81,7 +81,7 @@ Je ontvangt meldingen wanneer:
 - Iemand reageert op een profielreactiedraad waarin je deelneemt
 - Een profielreactie die je hebt achtergelaten wordt goedgekeurd of beantwoord
 
-Beheer meldingsvoorkeuren in je [Accountinstellingen](https://fastcomments.com/auth/my-account/notification-settings).
+Beheer meldingsvoorkeuren in je [Accountinstellingen](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy en Profielreacties
 

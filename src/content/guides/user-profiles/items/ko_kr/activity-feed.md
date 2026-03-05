@@ -42,7 +42,7 @@ The Activity Feed on User Profiles displays a user's comment history, notificati
 
 **Managing Notifications:**
 - 알림은 사용자가 확인하면 읽음으로 표시됩니다
-- 어떤 유형의 알림을 받을지 [알림 설정](https://fastcomments.com/auth/my-account/notification-settings)에서 구성하세요
+- 어떤 유형의 알림을 받을지 [알림 설정](https://fastcomments.com/auth/my-account/edit-notifications)에서 구성하세요
 
 자세한 알림 관리 방법은 [알림 가이드](/guides/notifications)를 참조하세요.
 

@@ -81,7 +81,7 @@ Du vil modtage notifikationer når:
 - Nogen svarer i en profilkommentartråd, du er en del af
 - En profilkommentar, du har efterladt, bliver godkendt eller besvaret
 
-Administrer notifikationspræferencer i dine [Kontoindstillinger](https://fastcomments.com/auth/my-account/notification-settings).
+Administrer notifikationspræferencer i dine [Kontoindstillinger](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatliv og profilkommentarer
 

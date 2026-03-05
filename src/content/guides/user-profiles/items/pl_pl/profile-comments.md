@@ -81,7 +81,7 @@ Otrzymasz powiadomienia, gdy:
 - Ktoś odpowie w wątku komentarzy profilowych, w którym bierzesz udział
 - Twój komentarz profilowy zostanie zatwierdzony lub otrzyma odpowiedź
 
-Zarządzaj preferencjami powiadomień w swoich [Ustawieniach konta](https://fastcomments.com/auth/my-account/notification-settings).
+Zarządzaj preferencjami powiadomień w swoich [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Prywatność i komentarze profilowe
 

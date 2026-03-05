@@ -42,7 +42,7 @@
 
 **Управление уведомлениями:**
 - Уведомления помечаются как прочитанные при их просмотре
-- Настройте, какие типы уведомлений вы получаете, в [Notification Settings](https://fastcomments.com/auth/my-account/notification-settings)
+- Настройте, какие типы уведомлений вы получаете, в [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Для получения дополнительной информации по управлению уведомлениями смотрите [Руководство по уведомлениям](/guides/notifications).
 

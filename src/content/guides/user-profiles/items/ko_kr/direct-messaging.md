@@ -57,7 +57,7 @@ DM 대화를 시작하는 방법은 여러 가지가 있습니다:
 - **이메일 알림** - 알림 설정에 따라
 - **실시간 경고** - 로그인되어 있을 때 즉시 알림
 
-알림 환경설정은 [계정 설정](https://fastcomments.com/auth/my-account/notification-settings)에서 관리하세요.
+알림 환경설정은 [계정 설정](https://fastcomments.com/auth/my-account/edit-notifications)에서 관리하세요.
 
 ### 개인정보 보호 및 차단
 
@@ -147,7 +147,7 @@ DM을 받고 싶지 않은 경우 완전히 비활성화할 수 있습니다:
 - 계정을 삭제함
 
 **알림을 받지 못하나요?**
-DM 알림이 활성화되어 있는지 확인하려면 [계정 설정](https://fastcomments.com/auth/my-account/notification-settings)에서 알림 설정을 확인하세요.
+DM 알림이 활성화되어 있는지 확인하려면 [계정 설정](https://fastcomments.com/auth/my-account/edit-notifications)에서 알림 설정을 확인하세요.
 
 **메시지가 전송되지 않나요?**
 - 인터넷 연결을 확인하세요

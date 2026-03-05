@@ -81,7 +81,7 @@
 - מישהו עונה על אשכול תגובות פרופיל שבו אתה משתתף
 - תגובת פרופיל שהשארת אושרה או נענתה
 
-נהל את העדפות ההתראות ב-[הגדרות חשבון](https://fastcomments.com/auth/my-account/notification-settings).
+נהל את העדפות ההתראות ב-[הגדרות חשבון](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### פרטיות והערות פרופיל
 

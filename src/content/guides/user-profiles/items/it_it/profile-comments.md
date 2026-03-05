@@ -81,7 +81,7 @@ Riceverai notifiche quando:
 - Qualcuno risponde a un thread di commenti del profilo di cui fai parte
 - Un commento del profilo che hai lasciato viene approvato o risposto
 
-Gestisci le preferenze di notifica nelle tue [Impostazioni account](https://fastcomments.com/auth/my-account/notification-settings).
+Gestisci le preferenze di notifica nelle tue [Impostazioni account](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy e Commenti del profilo
 

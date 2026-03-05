@@ -57,7 +57,7 @@
 - **По электронной почте** — В зависимости от ваших настроек уведомлений
 - **Оповещения в реальном времени** — Мгновенные уведомления, когда вы вошли в систему
 
-Настройте параметры уведомлений в ваших [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Настройте параметры уведомлений в ваших [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Конфиденциальность и блокировка
 
@@ -147,7 +147,7 @@
 - Удалить свой аккаунт
 
 **Не получаете уведомления?**
-Проверьте настройки уведомлений в [Account Settings](https://fastcomments.com/auth/my-account/notification-settings), чтобы удостовериться, что уведомления о DM включены.
+Проверьте настройки уведомлений в [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications), чтобы удостовериться, что уведомления о DM включены.
 
 **Сообщения не отправляются?**
 - Проверьте соединение с интернетом

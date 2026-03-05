@@ -42,7 +42,7 @@ La tua scheda Notifiche mostra:
 
 **Gestire le notifiche:**
 - Le notifiche vengono segnate come lette quando le visualizzi
-- Configura quali tipi di notifiche ricevere in [Impostazioni notifiche](https://fastcomments.com/auth/my-account/notification-settings)
+- Configura quali tipi di notifiche ricevere in [Impostazioni notifiche](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Per maggiori dettagli sulla gestione delle notifiche, vedi la [Guida alle notifiche](/guides/notifications).
 

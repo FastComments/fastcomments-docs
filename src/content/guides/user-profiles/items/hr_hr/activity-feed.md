@@ -42,7 +42,7 @@ Vaša kartica Obavijesti prikazuje:
 
 **Upravljanje obavijestima:**
 - Obavijesti se označavaju kao pročitane kada ih pregledate
-- Konfigurirajte koje vrste obavijesti primate u [Postavke obavijesti](https://fastcomments.com/auth/my-account/notification-settings)
+- Konfigurirajte koje vrste obavijesti primate u [Postavke obavijesti](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Za više detalja o upravljanju obavijestima, pogledajte [Vodič za obavijesti](/guides/notifications).
 

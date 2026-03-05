@@ -42,7 +42,7 @@ Pregled aktivnosti na korisničkim profilima prikazuje istoriju komentara korisn
 
 **Управљање обавештењима:**
 - Обавештења се означавају као прочитана када их прегледате
-- Конфигуришите које врсте обавештења примате у [Подешавања обавештења](https://fastcomments.com/auth/my-account/notification-settings)
+- Конфигуришите које врсте обавештења примате у [Подешавања обавештења](https://fastcomments.com/auth/my-account/edit-notifications)
 
 За више детаља о управљању обавештењима, видите [Водич за обавештења](/guides/notifications).
 

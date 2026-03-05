@@ -42,7 +42,7 @@ Ihre Registerkarte "Benachrichtigungen" zeigt:
 
 **Benachrichtigungen verwalten:**
 - Benachrichtigungen werden beim Anzeigen als gelesen markiert
-- Konfigurieren Sie, welche Arten von Benachrichtigungen Sie erhalten in den [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/notification-settings)
+- Konfigurieren Sie, welche Arten von Benachrichtigungen Sie erhalten in den [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Für weitere Details zum Verwalten von Benachrichtigungen siehe den [Benachrichtigungsleitfaden](/guides/notifications).
 

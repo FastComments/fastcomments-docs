@@ -42,7 +42,7 @@ Bildirimler sekmeniz şunları gösterir:
 
 **Bildirimleri Yönetme:**
 - Bildirimler görüntülendiğinde okunmuş olarak işaretlenir
-- Aldığınız bildirim türlerini [Bildirim Ayarları](https://fastcomments.com/auth/my-account/notification-settings) üzerinden yapılandırın
+- Aldığınız bildirim türlerini [Bildirim Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) üzerinden yapılandırın
 
 Bildirimleri yönetme hakkında daha fazla bilgi için [Bildirimler Kılavuzu](/guides/notifications) bölümüne bakın.
 

@@ -42,7 +42,7 @@ Sua aba de Notificações exibe:
 
 **Gerenciando Notificações:**
 - As notificações são marcadas como lidas quando você as visualiza
-- Configure quais tipos de notificações você recebe em [Configurações de Notificações](https://fastcomments.com/auth/my-account/notification-settings)
+- Configure quais tipos de notificações você recebe em [Configurações de Notificações](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Para mais detalhes sobre como gerenciar notificações, veja o [Guia de Notificações](/guides/notifications).
 

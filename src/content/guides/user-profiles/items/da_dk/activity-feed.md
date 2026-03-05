@@ -42,7 +42,7 @@ Din Notifikationer-fane viser:
 
 **Håndtering af notifikationer:**
 - Notifikationer markeres som læst, når du ser dem
-- Konfigurer hvilke typer notifikationer du modtager i [Notifikationsindstillinger](https://fastcomments.com/auth/my-account/notification-settings)
+- Konfigurer hvilke typer notifikationer du modtager i [Notifikationsindstillinger](https://fastcomments.com/auth/my-account/edit-notifications)
 
 For flere detaljer om håndtering af notifikationer, se [Notifikationsguide](/guides/notifications).
 

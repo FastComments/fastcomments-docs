@@ -42,7 +42,7 @@ Tu pestaña de Notificaciones muestra:
 
 **Gestionar notificaciones:**
 - Las notificaciones se marcan como leídas cuando las visualizas
-- Configura qué tipos de notificaciones recibes en [Configuración de notificaciones](https://fastcomments.com/auth/my-account/notification-settings)
+- Configura qué tipos de notificaciones recibes en [Configuración de notificaciones](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Para más detalles sobre la gestión de notificaciones, consulta la [Guía de notificaciones](/guides/notifications).
 

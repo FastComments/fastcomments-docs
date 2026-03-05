@@ -57,7 +57,7 @@ Sie erhalten Benachrichtigungen für neue Direktnachrichten:
 - **E-Mail-Benachrichtigungen** - Je nach Ihren Benachrichtigungseinstellungen
 - **Echtzeitwarnungen** - Sofortige Benachrichtigungen, wenn Sie angemeldet sind
 
-Verwalten Sie Benachrichtigungseinstellungen in Ihren [Kontoeinstellungen](https://fastcomments.com/auth/my-account/notification-settings).
+Verwalten Sie Benachrichtigungseinstellungen in Ihren [Kontoeinstellungen](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Datenschutz und Blockieren
 
@@ -147,7 +147,7 @@ Der andere Benutzer könnte:
 - Sein Konto gelöscht haben
 
 **Erhalte keine Benachrichtigungen?**
-Prüfen Sie Ihre Benachrichtigungseinstellungen unter [Kontoeinstellungen](https://fastcomments.com/auth/my-account/notification-settings), um sicherzustellen, dass DM-Benachrichtigungen aktiviert sind.
+Prüfen Sie Ihre Benachrichtigungseinstellungen unter [Kontoeinstellungen](https://fastcomments.com/auth/my-account/edit-notifications), um sicherzustellen, dass DM-Benachrichtigungen aktiviert sind.
 
 **Nachrichten werden nicht gesendet?**
 - Überprüfen Sie Ihre Internetverbindung

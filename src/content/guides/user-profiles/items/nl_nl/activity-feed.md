@@ -42,7 +42,7 @@ Het tabblad Meldingen toont:
 
 **Meldingen beheren:**
 - Meldingen worden gemarkeerd als gelezen wanneer je ze bekijkt
-- Stel in welke soorten meldingen je wilt ontvangen in [Meldingsinstellingen](https://fastcomments.com/auth/my-account/notification-settings)
+- Stel in welke soorten meldingen je wilt ontvangen in [Meldingsinstellingen](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Voor meer details over het beheren van meldingen, zie de [Gids voor meldingen](/guides/notifications).
 

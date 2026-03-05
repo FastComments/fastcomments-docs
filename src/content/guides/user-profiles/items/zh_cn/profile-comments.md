@@ -81,7 +81,7 @@
 - 有人回复您参与的个人资料评论线程
 - 您留下的个人资料评论被批准或有人回复
 
-在您的 [账户设置](https://fastcomments.com/auth/my-account/notification-settings) 中管理通知偏好。
+在您的 [账户设置](https://fastcomments.com/auth/my-account/edit-notifications) 中管理通知偏好。
 
 ### 隐私与个人资料评论
 

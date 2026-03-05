@@ -58,7 +58,7 @@ Du vil modtage notifikationer for nye direkte beskeder:
 - **E-mail-notifikationer** - Afhængigt af dine notifikationsindstillinger
 - **Realtidsalarmer** - Øjeblikkelige notifikationer når du er logget ind
 
-Administrer dine notifikationspræferencer i dine [Kontoinstillinger](https://fastcomments.com/auth/my-account/notification-settings).
+Administrer dine notifikationspræferencer i dine [Kontoinstillinger](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatliv og blokering
 
@@ -148,7 +148,7 @@ Den anden bruger kan have:
 - Slettet deres konto
 
 **Modtager du ikke notifikationer?**
-Tjek dine notifikationsindstillinger på [Kontoinstillinger](https://fastcomments.com/auth/my-account/notification-settings) for at sikre, at DM-notifikationer er aktiveret.
+Tjek dine notifikationsindstillinger på [Kontoinstillinger](https://fastcomments.com/auth/my-account/edit-notifications) for at sikre, at DM-notifikationer er aktiveret.
 
 **Beskeder bliver ikke sendt?**
 - Tjek din internetforbindelse

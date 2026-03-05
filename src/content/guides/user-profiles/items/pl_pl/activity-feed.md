@@ -42,7 +42,7 @@ Twoja karta Powiadomień wyświetla:
 
 **Zarządzanie powiadomieniami:**
 - Powiadomienia są oznaczane jako przeczytane po ich obejrzeniu
-- Skonfiguruj, jakie typy powiadomień otrzymujesz w [Notification Settings](https://fastcomments.com/auth/my-account/notification-settings)
+- Skonfiguruj, jakie typy powiadomień otrzymujesz w [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Szczegóły dotyczące zarządzania powiadomieniami znajdziesz w [Notifications Guide](/guides/notifications).
 

@@ -57,7 +57,7 @@ Primaćete obaveštenja za nove direktne poruke:
 - **Email obaveštenja** - U zavisnosti od vaših podešavanja obaveštenja
 - **Upozorenja u realnom vremenu** - Instant obaveštenja kada ste prijavljeni
 
-Podesite preference obaveštenja u vašim [Postavkama naloga](https://fastcomments.com/auth/my-account/notification-settings).
+Podesite preference obaveštenja u vašim [Postavkama naloga](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privatnost i blokiranje
 
@@ -147,7 +147,7 @@ Drugi korisnik možda:
 - Izbrisao nalog
 
 **Ne primate obaveštenja?**
-Proverite podešavanja obaveštenja u [Postavkama naloga](https://fastcomments.com/auth/my-account/notification-settings) da biste se uverili da su DM obaveštenja omogućena.
+Proverite podešavanja obaveštenja u [Postavkama naloga](https://fastcomments.com/auth/my-account/edit-notifications) da biste se uverili da su DM obaveštenja omogućena.
 
 **Poruke se ne šalju?**
 - Proverite internet konekciju

@@ -57,7 +57,7 @@ Direct Messaging предоставляет:
 - **Уведомления по электронной почте** - В зависимости от настроек уведомлений
 - **Оповещения в реальном времени** - Мгновенные уведомления, когда вы вошли в систему
 
-Управляйте настройками уведомлений в своих [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Управляйте настройками уведомлений в своих [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Конфиденциальность и блокировка
 
@@ -147,7 +147,7 @@ Direct Messaging предоставляет:
 - Удалить свой аккаунт
 
 **Не приходят уведомления?**
-Проверьте настройки уведомлений в [Account Settings](https://fastcomments.com/auth/my-account/notification-settings), чтобы убедиться, что уведомления о DM включены.
+Проверьте настройки уведомлений в [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications), чтобы убедиться, что уведомления о DM включены.
 
 **Сообщения не отправляются?**
 - Проверьте подключение к интернету

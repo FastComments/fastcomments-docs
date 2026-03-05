@@ -42,7 +42,7 @@ The Activity Feed on User Profiles displays a user's comment history, notificati
 
 **管理通知：**
 - 當您查看通知時，該通知會被標記為已讀
-- 在 [通知設定](https://fastcomments.com/auth/my-account/notification-settings) 中設定您要接收的通知類型
+- 在 [通知設定](https://fastcomments.com/auth/my-account/edit-notifications) 中設定您要接收的通知類型
 
 有關管理通知的更多詳細資訊，請參閱 [通知指南](/guides/notifications)。
 

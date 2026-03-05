@@ -57,7 +57,7 @@ Você receberá notificações para novas mensagens diretas:
 - **Notificações por e-mail** - Dependendo das suas configurações de notificação
 - **Alertas em tempo real** - Notificações instantâneas quando você estiver logado
 
-Gerencie as preferências de notificação em suas [Configurações da Conta](https://fastcomments.com/auth/my-account/notification-settings).
+Gerencie as preferências de notificação em suas [Configurações da Conta](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacidade e Bloqueio
 
@@ -147,7 +147,7 @@ O outro usuário pode ter:
 - Deletado a conta
 
 **Não está recebendo notificações?**
-Verifique suas configurações de notificação em [Configurações da Conta](https://fastcomments.com/auth/my-account/notification-settings) para garantir que as notificações de DM estejam habilitadas.
+Verifique suas configurações de notificação em [Configurações da Conta](https://fastcomments.com/auth/my-account/edit-notifications) para garantir que as notificações de DM estejam habilitadas.
 
 **Mensagens não estão sendo enviadas?**
 - Verifique sua conexão com a internet

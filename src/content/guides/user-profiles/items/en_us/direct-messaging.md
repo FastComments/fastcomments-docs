@@ -57,7 +57,7 @@ You'll receive notifications for new direct messages:
 - **Email notifications** - Depending on your notification settings
 - **Real-time alerts** - Instant notifications when you're logged in
 
-Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/notification-settings).
+Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy and Blocking
 
@@ -147,7 +147,7 @@ The other user may have:
 - Deleted their account
 
 **Not Receiving Notifications?**
-Check your notification settings at [Account Settings](https://fastcomments.com/auth/my-account/notification-settings) to ensure DM notifications are enabled.
+Check your notification settings at [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) to ensure DM notifications are enabled.
 
 **Messages Not Sending?**
 - Check your internet connection
