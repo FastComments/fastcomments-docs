@@ -767,7 +767,7 @@ pre code {
     font-weight: 500;
     font-size: 13px;
     text-overflow: clip;
-    color: #c2cdd9;
+    color: #fff;
 }
 
 .code .line {
@@ -915,7 +915,7 @@ pre code {
     margin: 12px 0;
     padding: 8px 14px;
     background: var(--fc-code-bg);
-    color: #e6edf3;
+    color: #fff;
     font-size: 13px;
     border: 1px solid var(--fc-code-border);
 }
