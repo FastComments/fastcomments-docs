@@ -30,72 +30,72 @@
     {
       "name": "Hoe goedkeuringen werken",
       "file": "moderation-approvals.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Moderatie via e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Filteren",
       "file": "filters.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Zoeken",
       "file": "search.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
-      "name": "Moderatie-links delen",
+      "name": "Delen van moderatielinks",
       "file": "sharing-moderation-links.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
-      "name": "De weergave van reactiedraden",
+      "name": "Reactiedraadweergave",
       "file": "comment-thread-viewer.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Moderatieacties",
       "file": "comment-actions.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Reacties verwijderen",
       "file": "deleting-comments.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Moderatieacties vanuit de reactie-widget",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
-      "name": "Live moderatie",
+      "name": "Live modereren",
       "file": "comment-actions-live.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Gebruikers verbannen",
       "file": "banning-users.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
-      "name": "Gebruikers verbannen met wildcards",
+      "name": "Gebruikers verbannen met jokertekens",
       "file": "banning-users-wildcards.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
-      "name": "Vlaggen",
+      "name": "Rapporteren",
       "file": "flagging.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Bulkacties",
       "file": "bulk-actions.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
     },
     {
       "name": "Moderatiegroepen",
@@ -110,17 +110,22 @@
     {
       "name": "Spamdetectie",
       "file": "spam-detection.md",
-      "subCat": "Spam & Beledigende taal"
+      "subCat": "Spam en grove taal"
     },
     {
-      "name": "Beledigende taal maskeren",
+      "name": "Maskeren van grove taal",
       "file": "profanity-mask.md",
-      "subCat": "Spam & Beledigende taal"
+      "subCat": "Spam en grove taal"
     },
     {
-      "name": "Reactie-logboeken",
+      "name": "Reactielogboeken",
       "file": "comment-logs.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatieproces"
+    },
+    {
+      "name": "Sneltoetsen",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Moderatieproces"
     }
   ]
 }

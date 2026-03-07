@@ -28,74 +28,74 @@
       "subCat": "Moderatorer"
     },
     {
-      "name": "Hvordan godkendelser fungerer",
+      "name": "Sådan fungerer godkendelser",
       "file": "moderation-approvals.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Moderering via e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Filtrering",
       "file": "filters.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Søgning",
       "file": "search.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Deling af moderationslinks",
       "file": "sharing-moderation-links.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
-      "name": "Visning af kommentartråde",
+      "name": "Visning af kommentartråd",
       "file": "comment-thread-viewer.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Moderationshandlinger",
       "file": "comment-actions.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Sletning af kommentarer",
       "file": "deleting-comments.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
-      "name": "Moderationshandlinger fra kommentarwidget",
+      "name": "Moderationshandlinger fra kommentar-widget",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
-      "name": "Moderering i realtid",
+      "name": "Live-moderering",
       "file": "comment-actions-live.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Udelukkelse af brugere",
       "file": "banning-users.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Udelukkelse af brugere med jokertegn",
       "file": "banning-users-wildcards.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
-      "name": "Rapportering",
+      "name": "Anmeldelse",
       "file": "flagging.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Massehandlinger",
       "file": "bulk-actions.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
     },
     {
       "name": "Moderationsgrupper",
@@ -108,19 +108,24 @@
       "subCat": "Konfiguration"
     },
     {
-      "name": "Spamopdagelse",
+      "name": "Spamdetektion",
       "file": "spam-detection.md",
-      "subCat": "Spam og bandeord"
+      "subCat": "Spam og stødende sprog"
     },
     {
-      "name": "Maskering af bandeord",
+      "name": "Maskering af stødende sprog",
       "file": "profanity-mask.md",
-      "subCat": "Spam og bandeord"
+      "subCat": "Spam og stødende sprog"
     },
     {
-      "name": "Kommentarlogfiler",
+      "name": "Kommentarlogs",
       "file": "comment-logs.md",
-      "subCat": "Moderationsproces"
+      "subCat": "Moderationsworkflow"
+    },
+    {
+      "name": "Tastaturgenveje",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Moderationsworkflow"
     }
   ]
 }

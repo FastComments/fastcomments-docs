@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "A página de moderação de comentários",
+      "name": "Página de Moderação de Comentários",
       "file": "moderate-comments-page.md",
       "subCat": "Introdução"
     },
@@ -13,114 +13,119 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Adicionando moderadores",
+      "name": "Adicionando Moderadores",
       "file": "moderators-adding.md",
       "subCat": "Moderadores"
     },
     {
-      "name": "Estatísticas de moderadores",
+      "name": "Estatísticas de Moderadores",
       "file": "moderator-stats.md",
       "subCat": "Moderadores"
     },
     {
-      "name": "Removendo moderadores",
+      "name": "Removendo Moderadores",
       "file": "moderators-removing.md",
       "subCat": "Moderadores"
     },
     {
-      "name": "Como funcionam as aprovações",
+      "name": "Como Funcionam as Aprovações",
       "file": "moderation-approvals.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Moderação por e-mail",
+      "name": "Moderação por E-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
       "name": "Filtragem",
       "file": "filters.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
       "name": "Pesquisa",
       "file": "search.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Compartilhando links de moderação",
+      "name": "Compartilhando Links de Moderação",
       "file": "sharing-moderation-links.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Visualizador da sequência de comentários",
+      "name": "Visualizador de Tópicos de Comentários",
       "file": "comment-thread-viewer.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações de moderação",
+      "name": "Ações de Moderação",
       "file": "comment-actions.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Excluindo comentários",
+      "name": "Excluindo Comentários",
       "file": "deleting-comments.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações de moderação no widget de comentários",
+      "name": "Ações de Moderação no Widget de Comentários",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Moderação em tempo real",
+      "name": "Moderação ao Vivo",
       "file": "comment-actions-live.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Bloqueando usuários",
+      "name": "Banindo Usuários",
       "file": "banning-users.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Bloqueando usuários com curingas",
+      "name": "Banindo Usuários com Curingas",
       "file": "banning-users-wildcards.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
       "name": "Sinalização",
       "file": "flagging.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
       "name": "Ações em massa",
       "file": "bulk-actions.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Grupos de moderação",
+      "name": "Grupos de Moderação",
       "file": "moderation-groups.md",
-      "subCat": "Grupos de moderação"
+      "subCat": "Grupos de Moderação"
     },
     {
-      "name": "Configurações de moderação",
+      "name": "Configurações de Moderação",
       "file": "moderation-settings.md",
       "subCat": "Configuração"
     },
     {
-      "name": "Detecção de spam",
+      "name": "Detecção de Spam",
       "file": "spam-detection.md",
-      "subCat": "Spam e palavrões"
+      "subCat": "Spam e Linguagem Ofensiva"
     },
     {
-      "name": "Mascaramento de palavrões",
+      "name": "Mascarando Profanidade",
       "file": "profanity-mask.md",
-      "subCat": "Spam e palavrões"
+      "subCat": "Spam e Linguagem Ofensiva"
     },
     {
-      "name": "Registros de comentários",
+      "name": "Registros de Comentários",
       "file": "comment-logs.md",
-      "subCat": "Fluxo de moderação"
+      "subCat": "Fluxo de Trabalho de Moderação"
+    },
+    {
+      "name": "Atalhos de Teclado",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Fluxo de Trabalho de Moderação"
     }
   ]
 }

@@ -1,17 +1,19 @@
-With FastComments, there are a number of actions that Admins and Moderators can take on each comment, namely:
+FastComments ile, Yöneticiler ve Moderatörler her yorum üzerinde yapabileceği bir dizi işlem vardır, bunlar şunlardır:
 
-- **Silme** o yorumu
-- **Sil** o yorum + **Kullanıcıyı yasakla** (Kalıcı veya Gölge, daha fazla detay aşağıda)
-- **Düzenle** o yorumu
-- **Oyları ayarla** o yorumun
-- O yorumu **İncelendi** veya **İncelenmedi** olarak işaretle
-- O yorumu **Onaylandı** veya **Onaylanmadı** olarak işaretle
-- O yorumu **Spam** veya **Spam Değil** olarak işaretle
+- **Bu yorumu silme**
+- **Bu yorumu sil** + **Kullanıcıyı yasakla** (Kalıcı veya gölge, daha fazla detay daha sonra)
+- **Bu yorumu düzenle**
+- **Bu yorumun oylarını ayarla**
+- Bu yorumu **İncelendi** veya **İncelenmedi** olarak işaretle
+- Bu yorumu **Onaylandı** veya **Onaylanmadı** olarak işaretle
+- Bu yorumu **Spam** veya **Spam Değil** olarak işaretle
 - Aynı IP adresinden gelen tüm yorumları görüntüle *<sup>1</sup>.
-- Bir yorumun Bayrak Sayısını sıfırla.
+- Bir yorumdaki bayrak sayısını sıfırla.
 
-For example, to keep a comment around but hide it, we can simply mark it as **Not Approved**.
+Örneğin, bir yorumu sistemde tutup gizlemek istiyorsak, onu basitçe **Onaylanmadı** olarak işaretleyebiliriz.
 
-Additionally, Admins and Moderators can pin comments, but this can only be done from the comment thread itself.
+Ayrıca, Yöneticiler ve Moderatörler yorumları sabitleyebilir, ancak bu yalnızca yorum dizisinin kendisinden yapılabilir.
+
+Yukarıdaki tüm işlemler klavye kısayollarıyla da yapılabilir. Ayrıntılar için [Klavye Kısayolları](#keyboard-shortcuts) bölümüne bakın.
 
 *<sup>1</sup> Bu özellik için ham IP adreslerini saklamıyoruz.

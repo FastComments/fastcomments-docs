@@ -1,19 +1,22 @@
-Met FastComments kunnen Beheerders en Moderatoren verschillende acties uitvoeren op elk commentaar, namelijk:
+---
+Met FastComments zijn er een aantal acties die beheerders en moderators op elke reactie kunnen uitvoeren, namelijk:
 
-- **Verwijderen** van dat commentaar
-- **Verwijderen** van dat commentaar + **De gebruiker verbannen** (Permanent of Shadow, meer details later)
-- **Bewerken** van dat commentaar
-- **Stemmen aanpassen** van dat commentaar
-- Markeer dat commentaar als **Gereviewd** of **Niet Gereviewd**
-- Markeer dat commentaar als **Goedgekeurd** of **Niet Goedgekeurd**
-- Markeer dat commentaar als **Spam** of **Geen Spam**
-- Bekijk alle commentaren vanaf hetzelfde IP-adres *<sup>1</sup>.
-- Stel de vlagtelling van een commentaar opnieuw in.
+- **Verwijderen** van die reactie
+- **Verwijderen** van die reactie + **De gebruiker verbannen** (permanent of shadow, meer details later)
+- **Bewerken** van die reactie
+- De stemmen van die reactie aanpassen
+- Markeer die reactie als **Beoordeeld** of **Niet beoordeeld**
+- Markeer die reactie als **Goedgekeurd** of **Niet goedgekeurd**
+- Markeer die reactie als **Spam** of **Geen spam**
+- Bekijk alle reacties vanaf hetzelfde IP-adres *<sup>1</sup>.
+- Reset het aantal vlaggen op een reactie.
 
-Bijvoorbeeld, om een commentaar te behouden maar te verbergen, kunnen we het eenvoudig markeren als **Niet Goedgekeurd**.
+Bijvoorbeeld, om een reactie te behouden maar te verbergen, kunnen we deze simpelweg markeren als **Niet goedgekeurd**.
 
-Daarnaast kunnen Beheerders en Moderatoren commentaren vastpinnen, maar dit kan alleen vanuit de commentaardraad zelf worden gedaan.
+Daarnaast kunnen beheerders en moderators reacties vastpinnen, maar dit kan alleen gedaan worden vanuit de reactiedraad zelf.
 
-*<sup>1</sup> Wij slaan geen ruwe ip-adressen op voor deze functie.
+Al bovenstaande acties zijn ook beschikbaar via sneltoetsen. Zie de sectie [Sneltoetsen](#keyboard-shortcuts) voor details.
+
+*<sup>1</sup> We slaan geen ruwe IP-adressen op voor deze functie.
 
 ---

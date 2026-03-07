@@ -5,30 +5,30 @@
     {
       "name": "評論審核頁面",
       "file": "moderate-comments-page.md",
-      "subCat": "介紹"
+      "subCat": "簡介"
     },
     {
-      "name": "管理員",
+      "name": "審核者",
       "file": "moderators.md",
-      "subCat": "管理員"
+      "subCat": "審核者"
     },
     {
-      "name": "新增管理員",
+      "name": "新增審核者",
       "file": "moderators-adding.md",
-      "subCat": "管理員"
+      "subCat": "審核者"
     },
     {
-      "name": "管理員統計",
+      "name": "審核者統計",
       "file": "moderator-stats.md",
-      "subCat": "管理員"
+      "subCat": "審核者"
     },
     {
-      "name": "移除管理員",
+      "name": "移除審核者",
       "file": "moderators-removing.md",
-      "subCat": "管理員"
+      "subCat": "審核者"
     },
     {
-      "name": "核准機制",
+      "name": "核准流程",
       "file": "moderation-approvals.md",
       "subCat": "審核流程"
     },
@@ -48,7 +48,7 @@
       "subCat": "審核流程"
     },
     {
-      "name": "分享審核連結",
+      "name": "共享審核連結",
       "file": "sharing-moderation-links.md",
       "subCat": "審核流程"
     },
@@ -68,7 +68,7 @@
       "subCat": "審核流程"
     },
     {
-      "name": "評論小工具的審核操作",
+      "name": "評論小工具中的審核操作",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "審核流程"
     },
@@ -78,12 +78,12 @@
       "subCat": "審核流程"
     },
     {
-      "name": "封禁使用者",
+      "name": "封鎖使用者",
       "file": "banning-users.md",
       "subCat": "審核流程"
     },
     {
-      "name": "使用萬用字元封禁使用者",
+      "name": "使用萬用字元封鎖使用者",
       "file": "banning-users-wildcards.md",
       "subCat": "審核流程"
     },
@@ -108,18 +108,23 @@
       "subCat": "設定"
     },
     {
-      "name": "垃圾訊息偵測",
+      "name": "垃圾偵測",
       "file": "spam-detection.md",
-      "subCat": "垃圾與不當用語"
+      "subCat": "垃圾與不雅用語"
     },
     {
-      "name": "遮蔽不當用語",
+      "name": "遮蔽不雅用語",
       "file": "profanity-mask.md",
-      "subCat": "垃圾與不當用語"
+      "subCat": "垃圾與不雅用語"
     },
     {
       "name": "評論記錄",
       "file": "comment-logs.md",
+      "subCat": "審核流程"
+    },
+    {
+      "name": "鍵盤快捷鍵",
+      "file": "keyboard-shortcuts.md",
       "subCat": "審核流程"
     }
   ]

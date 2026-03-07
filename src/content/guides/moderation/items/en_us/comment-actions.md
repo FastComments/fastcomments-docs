@@ -14,4 +14,6 @@ For example, to keep a comment around but hide it, we can simply mark it as **No
 
 Additionally, Admins and Moderators can pin comments, but this can only be done from the comment thread itself.
 
-*<sup>1</sup> We do not store raw ip addresses for this feature.
+All of the above actions are also available via keyboard shortcuts. See the [Keyboard Shortcuts](#keyboard-shortcuts) section for details.
+
+*<sup>1</sup> We do not store raw IP addresses for this feature.

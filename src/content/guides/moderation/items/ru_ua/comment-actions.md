@@ -1,15 +1,19 @@
-С FastComments Администраторы и Модераторы могут выполнять с каждым комментарием ряд действий, а именно:
+В FastComments администраторы и модераторы могут выполнять с каждым комментарием ряд действий, а именно:
 
-- **Удаление** этого комментария
-- **Удалить** этот комментарий + **Забанить пользователя** (постоянно или теневой, подробнее позже)
-- **Редактировать** этот комментарий
-- **Отрегулировать голоса** этого комментария
-- Отметить этот комментарий как **Просмотренный** или **Не просмотренный**
-- Отметить этот комментарий как **Одобренный** или **Не одобренный**
-- Отметить этот комментарий как **Спам** или **Не спам**
-- Просмотреть все комментарии с одного и того же IP-адреса *<sup>1</sup>.
-- Сбросить счётчик флагов у комментария.
+- **Deleting** that comment
+- **Delete** that comment + **Ban the user** (Permanent or Shadow, more details later)
+- **Edit** that comment
+- **Adjust the votes** of that comment
+- Mark that comment **Reviewed** or **Not Reviewed**
+- Mark that comment **Approved** or **Not Approved**
+- Mark that comment as **Spam** or **Not Spam**
+- View all comments from the same IP address *<sup>1</sup>.
+- Reset the Flag Count on a comment.
 
-Например, чтобы сохранить комментарий, но скрыть его, мы можем просто отметить его как **Не одобренный**.
+For example, to keep a comment around but hide it, we can simply mark it as **Not Approved**.
 
-*<sup>1</sup> Мы не храним сырые IP-адреса для этой функции.
+Additionally, Admins and Moderators can pin comments, but this can only be done from the comment thread itself.
+
+All of the above actions are also available via keyboard shortcuts. See the [Горячие клавиши](#keyboard-shortcuts) section for details.
+
+*<sup>1</sup> Мы не храним raw ip addresses для этой функции.

@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "コメントのモデレーションページ",
+      "name": "コメント管理ページ",
       "file": "moderate-comments-page.md",
       "subCat": "はじめに"
     },
@@ -58,7 +58,7 @@
       "subCat": "モデレーションのワークフロー"
     },
     {
-      "name": "モデレーションの操作",
+      "name": "モデレーション操作",
       "file": "comment-actions.md",
       "subCat": "モデレーションのワークフロー"
     },
@@ -83,7 +83,7 @@
       "subCat": "モデレーションのワークフロー"
     },
     {
-      "name": "ワイルドカードによるユーザーの禁止",
+      "name": "ワイルドカードを使ったユーザーの禁止",
       "file": "banning-users-wildcards.md",
       "subCat": "モデレーションのワークフロー"
     },
@@ -110,16 +110,21 @@
     {
       "name": "スパム検出",
       "file": "spam-detection.md",
-      "subCat": "スパムと不適切な表現"
+      "subCat": "スパムと不適切表現"
     },
     {
-      "name": "不適切な表現のマスキング",
+      "name": "不適切表現のマスキング",
       "file": "profanity-mask.md",
-      "subCat": "スパムと不適切な表現"
+      "subCat": "スパムと不適切表現"
     },
     {
       "name": "コメントログ",
       "file": "comment-logs.md",
+      "subCat": "モデレーションのワークフロー"
+    },
+    {
+      "name": "キーボードショートカット",
+      "file": "keyboard-shortcuts.md",
       "subCat": "モデレーションのワークフロー"
     }
   ]

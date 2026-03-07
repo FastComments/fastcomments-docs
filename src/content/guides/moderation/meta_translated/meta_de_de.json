@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Seite zum Moderieren von Kommentaren",
+      "name": "Die Seite zur Moderation von Kommentaren",
       "file": "moderate-comments-page.md",
       "subCat": "Einführung"
     },
@@ -38,7 +38,7 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Filterung",
+      "name": "Filtern",
       "file": "filters.md",
       "subCat": "Moderationsablauf"
     },
@@ -53,7 +53,7 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Kommentar-Thread-Ansicht",
+      "name": "Der Kommentar-Thread-Betrachter",
       "file": "comment-thread-viewer.md",
       "subCat": "Moderationsablauf"
     },
@@ -73,7 +73,7 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Echtzeit-Moderation",
+      "name": "Live-Moderation",
       "file": "comment-actions-live.md",
       "subCat": "Moderationsablauf"
     },
@@ -110,16 +110,21 @@
     {
       "name": "Spam-Erkennung",
       "file": "spam-detection.md",
-      "subCat": "Spam & anstößige Sprache"
+      "subCat": "Spam & beleidigende Sprache"
     },
     {
-      "name": "Fluchwörter maskieren",
+      "name": "Maskierung von Beleidigungen",
       "file": "profanity-mask.md",
-      "subCat": "Spam & anstößige Sprache"
+      "subCat": "Spam & beleidigende Sprache"
     },
     {
       "name": "Kommentarprotokolle",
       "file": "comment-logs.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Tastenkombinationen",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Moderationsablauf"
     }
   ]

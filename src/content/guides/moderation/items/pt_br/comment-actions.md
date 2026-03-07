@@ -1,17 +1,19 @@
-Com o FastComments, há uma série de ações que Administradores e Moderadores podem realizar em cada comentário, a saber:
+Com o FastComments, há uma série de ações que Administradores e Moderadores podem executar em cada comentário, a saber:
 
-- **Excluindo** esse comentário
-- **Excluir** esse comentário + **Banir o usuário** (Permanente ou Shadow, mais detalhes depois)
+- **Excluir** esse comentário
+- **Excluir** esse comentário + **Banir o usuário** (Permanente ou Shadow, mais detalhes abaixo)
 - **Editar** esse comentário
 - **Ajustar os votos** desse comentário
 - Marcar esse comentário como **Revisado** ou **Não Revisado**
 - Marcar esse comentário como **Aprovado** ou **Não Aprovado**
 - Marcar esse comentário como **Spam** ou **Não Spam**
-- Ver todos os comentários do mesmo endereço IP *<sup>1</sup>.
-- Redefinir a contagem de sinalizações em um comentário.
+- Visualizar todos os comentários do mesmo endereço IP *<sup>1</sup>.
+- Redefinir a contagem de denúncias em um comentário.
 
-Por exemplo, para manter um comentário, mas escondê-lo, podemos simplesmente marcá-lo como **Não Aprovado**.
+Por exemplo, para manter um comentário mas ocultá-lo, podemos simplesmente marcá-lo como **Não Aprovado**.
 
-Além disso, Administradores e Moderadores podem fixar comentários, mas isso só pode ser feito a partir do próprio tópico do comentário.
+Além disso, Administradores e Moderadores podem fixar comentários, mas isso só pode ser feito a partir do próprio tópico de comentários.
 
-*<sup>1</sup> Não armazenamos endereços IP brutos para essa funcionalidade.
+Todas as ações acima também estão disponíveis via atalhos de teclado. Veja a seção [Atalhos de Teclado](#keyboard-shortcuts) para detalhes.
+
+*<sup>1</sup> Não armazenamos endereços IP brutos para esse recurso.

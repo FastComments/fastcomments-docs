@@ -68,7 +68,7 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Yorum Bileşeni Üzerinden Moderasyon İşlemleri",
+      "name": "Yorum Bileşeninden Moderasyon İşlemleri",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -78,12 +78,12 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Kullanıcı Yasaklama",
+      "name": "Kullanıcıları Yasaklama",
       "file": "banning-users.md",
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Joker Karakterlerle Kullanıcı Yasaklama",
+      "name": "Yıldız Karakterle Kullanıcı Yasaklama",
       "file": "banning-users-wildcards.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -113,13 +113,18 @@
       "subCat": "Spam ve Küfür"
     },
     {
-      "name": "Küfürü Maskeleme",
+      "name": "Küfürleri Maskeleme",
       "file": "profanity-mask.md",
       "subCat": "Spam ve Küfür"
     },
     {
       "name": "Yorum Kayıtları",
       "file": "comment-logs.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Klavye Kısayolları",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Moderasyon İş Akışı"
     }
   ]
