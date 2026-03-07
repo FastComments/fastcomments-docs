@@ -306,7 +306,7 @@ a:hover {
     font-weight: 450;
     letter-spacing: 0;
     border-radius: var(--fc-radius-sm);
-    border-left: 2px solid transparent;
+    border: 2px solid transparent;
     transition: all 0.15s ease;
 }
 
@@ -319,7 +319,7 @@ a:hover {
 .content-with-sidebar .sidebar .sidebar-item.selected a {
     color: var(--fc-accent);
     background: var(--fc-accent-subtle);
-    border-left-color: var(--fc-accent);
+    border-color: var(--fc-accent);
     font-weight: 600;
 }
 
