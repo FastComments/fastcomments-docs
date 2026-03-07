@@ -19,7 +19,7 @@
                     return;
                 }
                 for (const item of sidebar.querySelectorAll('.sidebar-item')) {
-                    if (item.querySelector('a').textContent.trim() === heading.textContent.trim()) {
+                    if (item.querySelector('a').getAttribute('href') === '#' + heading.id) {
                         item.classList.add('selected');
                         sidebar.scrollTop = item.offsetTop - 200;
                     } else {
