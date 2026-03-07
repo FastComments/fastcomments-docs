@@ -4,5 +4,7 @@ The place where most moderation takes place is the Comment Moderation page. For 
 
 We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+
 Let's go into the features shown here.
 

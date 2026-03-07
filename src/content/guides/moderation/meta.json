@@ -121,6 +121,11 @@
       "name": "Comment Logs",
       "file": "comment-logs.md",
       "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Keyboard Shortcuts",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Moderation Workflow"
     }
   ]
 }
