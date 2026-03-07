@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Stranica za moderisanje komentara",
+      "name": "Stranica za moderaciju komentara",
       "file": "moderate-comments-page.md",
       "subCat": "Uvod"
     },
@@ -43,7 +43,7 @@
       "subCat": "Tok moderacije"
     },
     {
-      "name": "Pretraga",
+      "name": "Pretraživanje",
       "file": "search.md",
       "subCat": "Tok moderacije"
     },
@@ -73,7 +73,7 @@
       "subCat": "Tok moderacije"
     },
     {
-      "name": "Moderacija uživo",
+      "name": "Uživo moderisanje",
       "file": "comment-actions-live.md",
       "subCat": "Tok moderacije"
     },
@@ -83,12 +83,12 @@
       "subCat": "Tok moderacije"
     },
     {
-      "name": "Blokiranje korisnika pomoću zamenskih znakova",
+      "name": "Blokiranje korisnika pomoću džoker znakova",
       "file": "banning-users-wildcards.md",
       "subCat": "Tok moderacije"
     },
     {
-      "name": "Prijavljivanje",
+      "name": "Označavanje",
       "file": "flagging.md",
       "subCat": "Tok moderacije"
     },
@@ -98,12 +98,12 @@
       "subCat": "Tok moderacije"
     },
     {
-      "name": "Grupe za moderaciju",
+      "name": "Grupe moderacije",
       "file": "moderation-groups.md",
-      "subCat": "Grupe za moderaciju"
+      "subCat": "Grupe moderacije"
     },
     {
-      "name": "Postavke moderacije",
+      "name": "Podešavanja moderacije",
       "file": "moderation-settings.md",
       "subCat": "Konfiguracija"
     },
@@ -118,8 +118,13 @@
       "subCat": "Spam i uvredljiv sadržaj"
     },
     {
-      "name": "Zapisnici komentara",
+      "name": "Zapisi o komentarima",
       "file": "comment-logs.md",
+      "subCat": "Tok moderacije"
+    },
+    {
+      "name": "Prečice na tastaturi",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Tok moderacije"
     }
   ]

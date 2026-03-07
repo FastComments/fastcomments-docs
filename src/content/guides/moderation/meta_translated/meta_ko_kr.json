@@ -1,126 +1,131 @@
 {
-  "name": "댓글 관리",
+  "name": "모더레이션",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "댓글 관리 페이지",
+      "name": "댓글 모더레이션 페이지",
       "file": "moderate-comments-page.md",
       "subCat": "소개"
     },
     {
-      "name": "검토자",
+      "name": "모더레이터",
       "file": "moderators.md",
-      "subCat": "검토자"
+      "subCat": "모더레이터"
     },
     {
-      "name": "검토자 추가",
+      "name": "모더레이터 추가",
       "file": "moderators-adding.md",
-      "subCat": "검토자"
+      "subCat": "모더레이터"
     },
     {
-      "name": "검토자 통계",
+      "name": "모더레이터 통계",
       "file": "moderator-stats.md",
-      "subCat": "검토자"
+      "subCat": "모더레이터"
     },
     {
-      "name": "검토자 제거",
+      "name": "모더레이터 제거",
       "file": "moderators-removing.md",
-      "subCat": "검토자"
+      "subCat": "모더레이터"
     },
     {
-      "name": "승인 방식",
+      "name": "승인 처리 방식",
       "file": "moderation-approvals.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "이메일을 통한 검토",
+      "name": "이메일을 통한 모더레이션",
       "file": "moderation-via-email.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "필터링",
       "file": "filters.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "검색",
       "file": "search.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "검토 링크 공유",
+      "name": "모더레이션 링크 공유",
       "file": "sharing-moderation-links.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "댓글 스레드 뷰어",
       "file": "comment-thread-viewer.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "검토 작업",
+      "name": "모더레이션 작업",
       "file": "comment-actions.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "댓글 삭제",
       "file": "deleting-comments.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "댓글 위젯에서의 검토 작업",
+      "name": "댓글 위젯에서의 모더레이션 작업",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "실시간 검토",
+      "name": "실시간 모더레이션",
       "file": "comment-actions-live.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "사용자 차단",
       "file": "banning-users.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "와일드카드로 사용자 차단",
+      "name": "와일드카드를 사용한 사용자 차단",
       "file": "banning-users-wildcards.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "신고",
       "file": "flagging.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
       "name": "일괄 작업",
       "file": "bulk-actions.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
     },
     {
-      "name": "검토 그룹",
+      "name": "모더레이션 그룹",
       "file": "moderation-groups.md",
-      "subCat": "검토 그룹"
+      "subCat": "모더레이션 그룹"
     },
     {
-      "name": "검토 설정",
+      "name": "모더레이션 설정",
       "file": "moderation-settings.md",
-      "subCat": "설정"
+      "subCat": "구성"
     },
     {
       "name": "스팸 감지",
       "file": "spam-detection.md",
-      "subCat": "스팸 및 욕설"
+      "subCat": "스팸 및 비속어"
     },
     {
-      "name": "욕설 마스킹",
+      "name": "비속어 가리기",
       "file": "profanity-mask.md",
-      "subCat": "스팸 및 욕설"
+      "subCat": "스팸 및 비속어"
     },
     {
       "name": "댓글 로그",
       "file": "comment-logs.md",
-      "subCat": "검토 절차"
+      "subCat": "모더레이션 작업 흐름"
+    },
+    {
+      "name": "키보드 단축키",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "모더레이션 작업 흐름"
     }
   ]
 }

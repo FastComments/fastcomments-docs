@@ -13,7 +13,7 @@
       "subCat": "Moderatori"
     },
     {
-      "name": "Aggiungere moderatori",
+      "name": "Aggiunta di moderatori",
       "file": "moderators-adding.md",
       "subCat": "Moderatori"
     },
@@ -23,79 +23,79 @@
       "subCat": "Moderatori"
     },
     {
-      "name": "Rimuovere moderatori",
+      "name": "Rimozione dei moderatori",
       "file": "moderators-removing.md",
       "subCat": "Moderatori"
     },
     {
       "name": "Come funzionano le approvazioni",
       "file": "moderation-approvals.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
-      "name": "Moderazione via email",
+      "name": "Moderazione via e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Filtraggio",
       "file": "filters.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Ricerca",
       "file": "search.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Condivisione dei link di moderazione",
       "file": "sharing-moderation-links.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Visualizzatore dei thread dei commenti",
       "file": "comment-thread-viewer.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Azioni di moderazione",
       "file": "comment-actions.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Eliminazione dei commenti",
       "file": "deleting-comments.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Azioni di moderazione dal widget dei commenti",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Moderazione in tempo reale",
       "file": "comment-actions-live.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
-      "name": "Bloccare utenti",
+      "name": "Blocco degli utenti",
       "file": "banning-users.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
-      "name": "Bloccare utenti con caratteri jolly",
+      "name": "Blocco degli utenti con caratteri jolly",
       "file": "banning-users-wildcards.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Segnalazione",
       "file": "flagging.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Azioni di massa",
       "file": "bulk-actions.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
     },
     {
       "name": "Gruppi di moderazione",
@@ -118,9 +118,14 @@
       "subCat": "Spam e volgarità"
     },
     {
-      "name": "Log dei commenti",
+      "name": "Registri dei commenti",
       "file": "comment-logs.md",
-      "subCat": "Flusso di moderazione"
+      "subCat": "Flusso di lavoro della moderazione"
+    },
+    {
+      "name": "Scorciatoie da tastiera",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Flusso di lavoro della moderazione"
     }
   ]
 }

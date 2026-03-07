@@ -1,5 +1,5 @@
 {
-  "name": "Moderacija",
+  "name": "Moderiranje",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -53,12 +53,12 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Pregledovalnik niti komentarjev",
+      "name": "Pregled nitk komentarjev",
       "file": "comment-thread-viewer.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Dejanja moderiranja",
+      "name": "Ukrepi moderiranja",
       "file": "comment-actions.md",
       "subCat": "Potek moderiranja"
     },
@@ -68,12 +68,12 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Dejanja moderiranja iz pripomočka za komentarje",
+      "name": "Ukrepi moderiranja iz pripomočka za komentarje",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Moderiranje v živo",
+      "name": "Sprotno moderiranje",
       "file": "comment-actions-live.md",
       "subCat": "Potek moderiranja"
     },
@@ -93,7 +93,7 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Masovna dejanja",
+      "name": "Masovni ukrepi",
       "file": "bulk-actions.md",
       "subCat": "Potek moderiranja"
     },
@@ -108,18 +108,23 @@
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Zaznavanje neželene pošte",
+      "name": "Zaznavanje spama",
       "file": "spam-detection.md",
-      "subCat": "Neželena pošta in žaljiva vsebina"
+      "subCat": "Spam in žaljivosti"
     },
     {
-      "name": "Maskiranje žaljivih besed",
+      "name": "Prikrivanje žaljivosti",
       "file": "profanity-mask.md",
-      "subCat": "Neželena pošta in žaljiva vsebina"
+      "subCat": "Spam in žaljivosti"
     },
     {
       "name": "Dnevniki komentarjev",
       "file": "comment-logs.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Tipkovnične bližnjice",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Potek moderiranja"
     }
   ]

@@ -1,17 +1,19 @@
-Sa FastComments, postoji nekoliko akcija koje Administratori i Moderatori mogu preduzeti nad svakim komentarom, a to su:
+With FastComments, there are a number of actions that Admini i Moderatori can take on each comment, namely:
 
 - **Brisanje** tog komentara
 - **Obrisati** taj komentar + **Zabraniti korisnika** (Trajno ili Shadow, više detalja kasnije)
-- **Izmeniti** taj komentar
+- **Urediti** taj komentar
 - **Podesiti glasove** tog komentara
-- Označiti taj komentar kao **Pregledan** ili **Nepregledan**
-- Označiti taj komentar kao **Odobren** ili **Neodobren**
-- Označiti taj komentar kao **Spam** ili **Nije spam**
+- Obeležiti taj komentar kao **Pregledan** ili **Nepregledan**
+- Obeležiti taj komentar kao **Odobren** ili **Nije odobren**
+- Obeležiti taj komentar kao **Spam** ili **Nije spam**
 - Pregledati sve komentare sa iste IP adrese *<sup>1</sup>.
 - Resetovati broj prijava na komentaru.
 
-Na primer, da bismo zadržali komentar, ali ga sakrili, možemo ga jednostavno označiti kao **Neodobren**.
+Na primer, da zadržimo komentar ali ga sakrijemo, jednostavno ga možemo označiti kao **Nije odobren**.
 
-Pored toga, Administratori i Moderatori mogu fiksirati komentare, ali to se može uraditi samo u samoj niti komentara.
+Pored toga, Admini i Moderatori mogu prikačiti komentare, ali to se može uraditi samo iz same niti komentara.
 
-*<sup>1</sup> Ne čuvamo sirove ip adrese za ovu funkciju.
+Sve gore navedene radnje su takođe dostupne putem prečica na tastaturi. Vidi odeljak [Prečice na tastaturi](#keyboard-shortcuts) za detalje.
+
+*<sup>1</sup> Ne čuvamo sirove IP adrese za ovu funkcionalnost.

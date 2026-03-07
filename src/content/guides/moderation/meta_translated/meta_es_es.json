@@ -13,7 +13,7 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Agregar moderadores",
+      "name": "Añadir moderadores",
       "file": "moderators-adding.md",
       "subCat": "Moderadores"
     },
@@ -53,7 +53,7 @@
       "subCat": "Flujo de trabajo de moderación"
     },
     {
-      "name": "Visor de hilos de comentarios",
+      "name": "Visor del hilo de comentarios",
       "file": "comment-thread-viewer.md",
       "subCat": "Flujo de trabajo de moderación"
     },
@@ -88,7 +88,7 @@
       "subCat": "Flujo de trabajo de moderación"
     },
     {
-      "name": "Marcado",
+      "name": "Señalización",
       "file": "flagging.md",
       "subCat": "Flujo de trabajo de moderación"
     },
@@ -120,6 +120,11 @@
     {
       "name": "Registros de comentarios",
       "file": "comment-logs.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Atajos de teclado",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Flujo de trabajo de moderación"
     }
   ]

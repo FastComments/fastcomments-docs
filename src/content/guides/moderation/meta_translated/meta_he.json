@@ -1,34 +1,34 @@
 {
-  "name": "ניהול תגובות",
+  "name": "מודרציה",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "דף ניהול התגובות",
+      "name": "דף ניהול תגובות",
       "file": "moderate-comments-page.md",
       "subCat": "הקדמה"
     },
     {
-      "name": "מפעילי המודרציה",
+      "name": "ממונים",
       "file": "moderators.md",
-      "subCat": "מפעילי המודרציה"
+      "subCat": "ממונים"
     },
     {
-      "name": "הוספת מפעילי המודרציה",
+      "name": "הוספת ממונים",
       "file": "moderators-adding.md",
-      "subCat": "מפעילי המודרציה"
+      "subCat": "ממונים"
     },
     {
-      "name": "סטטיסטיקות מפעילי המודרציה",
+      "name": "סטטיסטיקות ממונים",
       "file": "moderator-stats.md",
-      "subCat": "מפעילי המודרציה"
+      "subCat": "ממונים"
     },
     {
-      "name": "הסרת מפעילי המודרציה",
+      "name": "הסרת ממונים",
       "file": "moderators-removing.md",
-      "subCat": "מפעילי המודרציה"
+      "subCat": "ממונים"
     },
     {
-      "name": "כיצד פועלת מערכת האישור",
+      "name": "כיצד עובדות אישורים",
       "file": "moderation-approvals.md",
       "subCat": "תהליך המודרציה"
     },
@@ -48,12 +48,12 @@
       "subCat": "תהליך המודרציה"
     },
     {
-      "name": "שיתוף קישורי המודרציה",
+      "name": "שיתוף קישורי מודרציה",
       "file": "sharing-moderation-links.md",
       "subCat": "תהליך המודרציה"
     },
     {
-      "name": "צפייה בשרשור התגובות",
+      "name": "צפיית שרשור תגובות",
       "file": "comment-thread-viewer.md",
       "subCat": "תהליך המודרציה"
     },
@@ -68,7 +68,7 @@
       "subCat": "תהליך המודרציה"
     },
     {
-      "name": "פעולות מודרציה מווידג'ט התגובה",
+      "name": "פעולות מודרציה מווידג'ט התגובות",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "תהליך המודרציה"
     },
@@ -93,7 +93,7 @@
       "subCat": "תהליך המודרציה"
     },
     {
-      "name": "פעולות המוניות",
+      "name": "פעולות קבוצתיות",
       "file": "bulk-actions.md",
       "subCat": "תהליך המודרציה"
     },
@@ -120,6 +120,11 @@
     {
       "name": "יומני תגובות",
       "file": "comment-logs.md",
+      "subCat": "תהליך המודרציה"
+    },
+    {
+      "name": "קיצורי מקלדת",
+      "file": "keyboard-shortcuts.md",
       "subCat": "תהליך המודרציה"
     }
   ]

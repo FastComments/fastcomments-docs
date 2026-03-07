@@ -23,79 +23,79 @@
       "subCat": "Modérateurs"
     },
     {
-      "name": "Supprimer des modérateurs",
+      "name": "Retirer des modérateurs",
       "file": "moderators-removing.md",
       "subCat": "Modérateurs"
     },
     {
-      "name": "Comment fonctionnent les approbations",
+      "name": "Fonctionnement des approbations",
       "file": "moderation-approvals.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Modération par e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Filtrage",
       "file": "filters.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Recherche",
       "file": "search.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Partage de liens de modération",
+      "name": "Partage des liens de modération",
       "file": "sharing-moderation-links.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Le visualiseur du fil de commentaires",
+      "name": "Visionneuse du fil de commentaires",
       "file": "comment-thread-viewer.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Actions de modération",
       "file": "comment-actions.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Suppression des commentaires",
+      "name": "Suppression de commentaires",
       "file": "deleting-comments.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Actions de modération depuis le widget de commentaires",
+      "name": "Actions de modération depuis le widget de commentaire",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Modération en temps réel",
+      "name": "Modération en direct",
       "file": "comment-actions-live.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Bannir des utilisateurs",
       "file": "banning-users.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Bannir des utilisateurs avec des caractères génériques",
       "file": "banning-users-wildcards.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Signalement",
       "file": "flagging.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
-      "name": "Actions groupées",
+      "name": "Actions en masse",
       "file": "bulk-actions.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
     },
     {
       "name": "Groupes de modération",
@@ -110,17 +110,22 @@
     {
       "name": "Détection du spam",
       "file": "spam-detection.md",
-      "subCat": "Spam et propos injurieux"
+      "subCat": "Spam et grossièretés"
     },
     {
-      "name": "Masquage des propos injurieux",
+      "name": "Masquage des grossièretés",
       "file": "profanity-mask.md",
-      "subCat": "Spam et propos injurieux"
+      "subCat": "Spam et grossièretés"
     },
     {
-      "name": "Journaux des commentaires",
+      "name": "Historique des commentaires",
       "file": "comment-logs.md",
-      "subCat": "Processus de modération"
+      "subCat": "Flux de modération"
+    },
+    {
+      "name": "Raccourcis clavier",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Flux de modération"
     }
   ]
 }

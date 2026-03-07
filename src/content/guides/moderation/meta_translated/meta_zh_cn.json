@@ -8,24 +8,24 @@
       "subCat": "简介"
     },
     {
-      "name": "版主",
+      "name": "审核员",
       "file": "moderators.md",
-      "subCat": "版主"
+      "subCat": "审核员"
     },
     {
-      "name": "添加版主",
+      "name": "添加审核员",
       "file": "moderators-adding.md",
-      "subCat": "版主"
+      "subCat": "审核员"
     },
     {
-      "name": "版主统计",
+      "name": "审核员统计",
       "file": "moderator-stats.md",
-      "subCat": "版主"
+      "subCat": "审核员"
     },
     {
-      "name": "移除版主",
+      "name": "移除审核员",
       "file": "moderators-removing.md",
-      "subCat": "版主"
+      "subCat": "审核员"
     },
     {
       "name": "批准流程",
@@ -33,7 +33,7 @@
       "subCat": "审核工作流程"
     },
     {
-      "name": "通过电子邮件审核",
+      "name": "通过电子邮件进行审核",
       "file": "moderation-via-email.md",
       "subCat": "审核工作流程"
     },
@@ -68,7 +68,7 @@
       "subCat": "审核工作流程"
     },
     {
-      "name": "评论小部件中的审核操作",
+      "name": "评论小部件的审核操作",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "审核工作流程"
     },
@@ -110,16 +110,21 @@
     {
       "name": "垃圾评论检测",
       "file": "spam-detection.md",
-      "subCat": "垃圾与不当语言"
+      "subCat": "垃圾与脏话"
     },
     {
       "name": "屏蔽脏话",
       "file": "profanity-mask.md",
-      "subCat": "垃圾与不当语言"
+      "subCat": "垃圾与脏话"
     },
     {
       "name": "评论日志",
       "file": "comment-logs.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "键盘快捷键",
+      "file": "keyboard-shortcuts.md",
       "subCat": "审核工作流程"
     }
   ]

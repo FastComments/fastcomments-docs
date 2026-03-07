@@ -1,9 +1,9 @@
 {
-  "name": "Moderacija",
+  "name": "Moderiranje",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Stranica za moderaciju komentara",
+      "name": "Stranica za moderiranje komentara",
       "file": "moderate-comments-page.md",
       "subCat": "Uvod"
     },
@@ -28,99 +28,104 @@
       "subCat": "Moderatori"
     },
     {
-      "name": "Kako funkcionira odobravanje",
+      "name": "Kako funkcioniraju odobrenja",
       "file": "moderation-approvals.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Moderacija putem e-pošte",
+      "name": "Moderiranje putem e-pošte",
       "file": "moderation-via-email.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Filtriranje",
       "file": "filters.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Pretraživanje",
       "file": "search.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Dijeljenje poveznica za moderaciju",
+      "name": "Dijeljenje poveznica za moderiranje",
       "file": "sharing-moderation-links.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Preglednik niti komentara",
       "file": "comment-thread-viewer.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Radnje moderacije",
+      "name": "Radnje moderiranja",
       "file": "comment-actions.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Brisanje komentara",
       "file": "deleting-comments.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Radnje moderacije iz widgeta komentara",
+      "name": "Radnje moderiranja iz widgeta za komentare",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Moderacija uživo",
+      "name": "Uživo moderiranje",
       "file": "comment-actions-live.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Blokiranje korisnika",
       "file": "banning-users.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Blokiranje korisnika pomoću zamjenskih znakova",
       "file": "banning-users-wildcards.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Prijavljivanje",
+      "name": "Označavanje",
       "file": "flagging.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
       "name": "Masovne radnje",
       "file": "bulk-actions.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
     },
     {
-      "name": "Grupe za moderaciju",
+      "name": "Grupe za moderiranje",
       "file": "moderation-groups.md",
-      "subCat": "Grupe za moderaciju"
+      "subCat": "Grupe za moderiranje"
     },
     {
-      "name": "Postavke moderacije",
+      "name": "Postavke moderiranja",
       "file": "moderation-settings.md",
       "subCat": "Konfiguracija"
     },
     {
       "name": "Otkrivanje spama",
       "file": "spam-detection.md",
-      "subCat": "Spam i neprimjereni sadržaj"
+      "subCat": "Spam i psovke"
     },
     {
       "name": "Maskiranje psovki",
       "file": "profanity-mask.md",
-      "subCat": "Spam i neprimjereni sadržaj"
+      "subCat": "Spam i psovke"
     },
     {
-      "name": "Dnevnici komentara",
+      "name": "Zapisi o komentarima",
       "file": "comment-logs.md",
-      "subCat": "Tijek rada moderacije"
+      "subCat": "Tijek moderiranja"
+    },
+    {
+      "name": "Tipkovnički prečaci",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Tijek moderiranja"
     }
   ]
 }

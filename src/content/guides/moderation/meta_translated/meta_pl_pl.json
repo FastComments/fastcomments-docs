@@ -53,12 +53,12 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Podgląd wątku komentarzy",
+      "name": "Przeglądarka wątków komentarzy",
       "file": "comment-thread-viewer.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Działania moderacyjne",
+      "name": "Akcje moderacyjne",
       "file": "comment-actions.md",
       "subCat": "Proces moderacji"
     },
@@ -68,7 +68,7 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Działania moderacyjne z widżetu komentarza",
+      "name": "Akcje moderacyjne z widżetu komentarzy",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Proces moderacji"
     },
@@ -120,6 +120,11 @@
     {
       "name": "Dzienniki komentarzy",
       "file": "comment-logs.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Skróty klawiszowe",
+      "file": "keyboard-shortcuts.md",
       "subCat": "Proces moderacji"
     }
   ]

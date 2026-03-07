@@ -28,74 +28,74 @@
       "subCat": "Modérateurs"
     },
     {
-      "name": "Comment fonctionnent les approbations",
+      "name": "Fonctionnement des approbations",
       "file": "moderation-approvals.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Modération par courriel",
       "file": "moderation-via-email.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Filtrage",
       "file": "filters.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Recherche",
       "file": "search.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Partage des liens de modération",
       "file": "sharing-moderation-links.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Visionneuse du fil de commentaires",
       "file": "comment-thread-viewer.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Actions de modération",
       "file": "comment-actions.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Suppression de commentaires",
       "file": "deleting-comments.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Actions de modération depuis le widget de commentaires",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Modération en direct",
+      "name": "Modération en temps réel",
       "file": "comment-actions-live.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Bannir des utilisateurs",
+      "name": "Interdire des utilisateurs",
       "file": "banning-users.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Bannir des utilisateurs avec des caractères génériques",
+      "name": "Interdire des utilisateurs avec des caractères génériques",
       "file": "banning-users-wildcards.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Signalement",
       "file": "flagging.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Actions groupées",
       "file": "bulk-actions.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Groupes de modération",
@@ -110,17 +110,22 @@
     {
       "name": "Détection du pourriel",
       "file": "spam-detection.md",
-      "subCat": "Pourriel et grossièretés"
+      "subCat": "Pourriel et vulgarité"
     },
     {
-      "name": "Masquage des grossièretés",
+      "name": "Masquage de la vulgarité",
       "file": "profanity-mask.md",
-      "subCat": "Pourriel et grossièretés"
+      "subCat": "Pourriel et vulgarité"
     },
     {
       "name": "Journaux des commentaires",
       "file": "comment-logs.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Raccourcis clavier",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "Processus de modération"
     }
   ]
 }
