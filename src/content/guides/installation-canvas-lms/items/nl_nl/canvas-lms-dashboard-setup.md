@@ -1,25 +1,22 @@
-#### Navigeer naar Canvas LTI Config
+#### Navigate to Canvas LTI Config
 
-Meld u aan bij uw FastComments-account en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Meld u aan bij uw FastComments-account en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mijn account > Canvas LTI-configuratie</a>.
 
-#### Maak een nieuwe LTI-configuratie
+De setuppagina maakt gebruik van een begeleide wizard die u door elke stap leidt. U begint bij **Stap 1: Aanmaken**.
 
-Vink het selectievakje **Enable LTI** aan. De configuratievelden verschijnen:
+#### Create a New LTI Configuration
 
-- **Configuration Name** - een optioneel label om deze configuratie te identificeren (handig als u meerdere Canvas-instanties verbindt).
-- **Platform URL** - de URL van uw Canvas-instantie (bijv. `https://yourschool.instructure.com`). u kunt dit voorlopig leeg laten en invullen nadat u de Developer Key heeft gemaakt.
-- **Client ID** - laat dit voorlopig leeg. u vult dit in nadat u de Developer Key in Canvas heeft aangemaakt.
-- **Deployment ID** - laat dit voorlopig leeg.
-- **Comment Style** - kies tussen Comments, Collab Chat, of Both. Zie [Commenting Styles](#canvas-lms-commenting-styles) voor details.
+Vul de volgende velden in:
 
-Klik op **Add** om de configuratie te maken.
+- **Configuratienaam** - een optioneel label om deze configuratie te identificeren (nuttig als u meerdere Canvas-instanties koppelt).
+- **Platform-URL** - de URL van uw Canvas-instantie (bijv. `https://yourschool.instructure.com`). Dit veld is verplicht.
 
-#### Kopieer de Configuration URLs
+Klik op **Configuratie maken**.
 
-Na het opslaan verschijnen drie URL's:
+#### Copy the Configuration URL
 
-- **Configuration URL** - u plakt dit in Canvas wanneer u de Developer Key maakt.
-- **OIDC Login URL** - gebruikt door Canvas voor de LTI-aanmeldingsstroom (automatisch geconfigureerd via de Configuration URL).
-- **Launch URL** - het eindpunt dat Canvas aanroept wanneer een student FastComments opent (automatisch geconfigureerd via de Configuration URL).
+Nadat u de configuratie hebt gemaakt, gaat de wizard verder naar **Stap 2: Verbinden**. Bovenaan de pagina wordt een opvallende **Configuratie-URL** weergegeven met een **Kopiëren**-knop.
 
-Kopieer de **Configuration URL**. u heeft deze nodig in de volgende stap.
+Kopieer deze URL. U hebt deze nodig in de volgende stap om een Developer Key in Canvas aan te maken.
+
+De pagina toont ook genummerde instructies voor wat u in Canvas moet doen, plus velden om de **Client ID** en de optionele **Deployment ID** in te voeren zodra u deze hebt.

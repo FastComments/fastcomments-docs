@@ -1,25 +1,24 @@
-#### Navigate to Canvas LTI Config
+#### 導航到 Canvas LTI 設定
 
-Log in to your FastComments account and go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">我的帳戶 &gt; Canvas LTI 設定</a>.
+登入您的 FastComments 帳戶並前往 <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">我的帳戶 &gt; Canvas LTI 設定</a>。
 
-#### Create a New LTI Configuration
+設定頁面使用一個引導式精靈帶您完成每個步驟。您將從 **Step 1: Create** 開始。
 
-Check the **Enable LTI** checkbox. The configuration fields will appear:
+#### 建立新的 LTI 設定
 
-- **Configuration Name** - an optional label to identify this configuration (useful if you connect multiple Canvas instances).
-- **Platform URL** - your Canvas instance URL (e.g. `https://yourschool.instructure.com`). You can leave this blank for now and fill it in after creating the Developer Key.
-- **Client ID** - leave this blank for now. You will fill it in after creating the Developer Key in Canvas.
-- **Deployment ID** - leave this blank for now.
-- **Comment Style** - choose between 評論、協作聊天，或兩者。See [Commenting Styles](#canvas-lms-commenting-styles) for details.
+填寫以下欄位：
 
-Click **Add** to create the configuration.
+- **Configuration Name** - 一個可選的標籤，用以識別此設定（若您連接多個 Canvas 實例時很有用）。
+- **Platform URL** - 您的 Canvas 實例網址（例如 `https://yourschool.instructure.com`）。此欄位為必填。
 
-#### Copy the Configuration URLs
+點擊 **建立設定**。
 
-After saving, three URLs will appear:
+#### 複製設定 URL
 
-- **Configuration URL** - you will paste this into Canvas when creating the Developer Key.
-- **OIDC Login URL** - used by Canvas for the LTI login flow (automatically configured via the Configuration URL).
-- **Launch URL** - the endpoint Canvas calls when a student opens FastComments (automatically configured via the Configuration URL).
+建立設定後，精靈會進入 **Step 2: Connect**。頁面頂部會顯示一個醒目的 **Configuration URL**，並附有 **Copy** 按鈕。
 
-Copy the **Configuration URL**. You will need it in the next step.
+複製此 URL。您在下一步建立 Canvas 的 Developer Key 時會需要它。
+
+該頁面也會顯示在 Canvas 中需要執行步驟的編號說明，並在您取得後顯示用以輸入 **Client ID** 及可選 **Deployment ID** 的欄位。
+
+---

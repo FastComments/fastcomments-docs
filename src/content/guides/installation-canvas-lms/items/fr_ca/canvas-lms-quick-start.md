@@ -1,5 +1,6 @@
-1. Connectez-vous à FastComments et allez à <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Cochez **Enable LTI** et cliquez sur **Add**. Copiez l'**Configuration URL** affichée.
-3. Dans Canvas, allez à **Admin > Developer Keys > + Developer Key > LTI Key**. Définissez **Method** sur "Enter URL" et collez la Configuration URL. Enregistrez la clé et définissez son **State** sur **ON**.
-4. Copiez le numéro de **Client ID** depuis le tableau Developer Keys dans Canvas. Collez-le dans le champ **Client ID** de FastComments et cliquez sur **Save**.
-5. Dans votre cours Canvas, allez à **Settings > Navigation**, trouvez **FastComments**, et activez-le. Les commentaires apparaîtront comme un élément de navigation du cours.
+1. Connectez-vous à FastComments et allez à <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mon compte > Configuration LTI Canvas</a>.
+2. Entrez un **Nom de configuration** et votre **URL de la plateforme** (p. ex. `https://yourschool.instructure.com`), puis cliquez sur **Créer la configuration**. L'assistant passe à l'étape 2 et affiche votre **URL de configuration**.
+3. Dans Canvas, allez à **Admin > Developer Keys > + Developer Key > LTI Key**. Réglez **Method** sur « Enter URL » et collez l'URL de configuration. Enregistrez la clé et mettez son **State** sur **ON**.
+4. Copiez le numéro **Client ID** depuis le tableau Developer Keys dans Canvas. De retour dans FastComments, collez-le dans le champ **Client ID** et cliquez sur **Save & Continue**.
+5. Passez en revue le récapitulatif de configuration et cliquez sur **Enable Integration** pour la mettre en production.
+6. Dans votre cours Canvas, allez à **Settings > Navigation**, trouvez **FastComments**, et activez-le. Les commentaires apparaîtront comme un élément de navigation du cours.

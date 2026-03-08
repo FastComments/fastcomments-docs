@@ -2,24 +2,21 @@
 
 FastComments アカウントにログインし、<a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">マイアカウント &gt; Canvas LTI 設定</a> に移動します。
 
-#### 新しい LTI 設定を作成する
+セットアップページは各ステップを案内するウィザードを使用します。**ステップ 1: 作成** から始まります。
 
-「**LTI を有効にする**」チェックボックスをオンにします。設定項目が表示されます:
+#### 新しい LTI 設定を作成
 
-- **Configuration Name** - この設定を識別するためのオプションのラベル（複数の Canvas インスタンスを接続する場合に便利）。
-- **Platform URL** - あなたの Canvas インスタンスの URL（例: `https://yourschool.instructure.com`）。現時点では空欄のままにしておき、Developer Key を作成した後で入力できます。
-- **Client ID** - 現時点では空欄のままにします。Canvas で Developer Key を作成した後に入力します。
-- **Deployment ID** - 現時点では空欄のままにします。
-- **Comment Style** - Comments、Collab Chat、または Both の中から選択します。詳細は [コメントスタイル](#canvas-lms-commenting-styles) を参照してください。
+次の項目を入力してください：
 
-設定を作成するには **追加** をクリックします。
+- **Configuration Name** - この設定を識別するための任意のラベル（複数の Canvas インスタンスを接続する場合に便利）。
+- **Platform URL** - お使いの Canvas インスタンスの URL（例: `https://yourschool.instructure.com`）。この項目は必須です。
 
-#### 設定用 URL をコピーする
+**構成を作成** をクリックします。
 
-保存後、3 つの URL が表示されます:
+#### 構成 URL をコピー
 
-- **Configuration URL** - Developer Key を作成する際に Canvas に貼り付けます。
-- **OIDC Login URL** - Canvas が LTI ログインフローで使用します（Configuration URL 経由で自動的に設定されます）。
-- **Launch URL** - 学生が FastComments を開いたときに Canvas が呼び出すエンドポイントです（Configuration URL 経由で自動的に設定されます）。
+設定を作成すると、ウィザードは **ステップ 2: 接続** に進みます。ページ上部に目立つ **構成 URL** が表示され、**コピー** ボタンが付いています。
 
-**Configuration URL** をコピーしてください。次のステップで必要になります。
+この URL をコピーしてください。次のステップで Canvas に Developer Key を作成する際に必要になります。
+
+ページには Canvas で行う手順が番号付きで表示され、入手後に **Client ID** と任意の **Deployment ID** を入力するための欄も表示されます。

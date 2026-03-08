@@ -1,12 +1,18 @@
 #### Vnesite Client ID v FastComments
 
-Vrnite se na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> v FastComments.
+Vrnite se na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj račun > Konfiguracija Canvas LTI</a> v FastComments. Čarovnik bi moral biti na **Korak 2: Poveži**.
 
-Poiščite vašo konfiguracijo in prilepite **Client ID**, ki ste ga kopirali iz Canvas, v polje **Client ID**.
+Prilepite **Client ID**, ki ste ga kopirali iz Canvas, v polje **Client ID**. Po želji vnesite **Deployment ID**, če vam ga zagotavlja vaš LMS.
 
-Če tega še niste naredili, vnesite vaš **Platform URL** (URL vaše instance Canvas, npr. `https://yourschool.instructure.com`).
+Kliknite **Shrani in nadaljuj**.
 
-Kliknite **Save**.
+#### Omogočite integracijo
+
+Čarovnik napreduje na **Korak 3: Pojdi v živo**. Prikazan je povzetek vaše konfiguracije (ime, URL platforme, Client ID in Deployment ID).
+
+Preverite podrobnosti, nato kliknite **Omogoči integracijo**, da aktivirate LTI povezavo.
+
+Po omogočitvi čarovnik prikaže **Pogled upravljanja**, kjer lahko urejate konfiguracijo, si ogledate vse LTI URL-je ali dodate dodatne namestitve.
 
 #### Namestite zunanjo aplikacijo v Canvas
 
@@ -19,4 +25,4 @@ Kliknite **+ App** in konfigurirajte:
 3. Kliknite **Submit**.
 4. Potrdite namestitev, ko boste pozvani.
 
-FastComments je zdaj nameščen na ravni računa in na voljo vsem predmetom.
+FastComments je sedaj nameščen na ravni računa in na voljo vsem predmetom.

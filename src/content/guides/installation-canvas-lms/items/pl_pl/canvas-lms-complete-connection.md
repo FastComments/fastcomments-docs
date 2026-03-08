@@ -1,16 +1,22 @@
 #### Wprowadź Client ID w FastComments
 
-Wróć do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> w FastComments.
+Wróć do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moje konto > Canvas LTI Config</a> w FastComments. Kreator powinien być na **Krok 2: Połącz**.
 
-Znajdź swoją konfigurację i wklej skopiowany z Canvas **Client ID** do pola **Client ID**.
+Wklej **Client ID**, które skopiowałeś z Canvas, do pola **Client ID**. Opcjonalnie wpisz **Deployment ID**, jeśli Twój LMS go udostępnia.
 
-Jeśli jeszcze tego nie zrobiłeś, wpisz swój **Platform URL** (adres instancji Canvas, np. `https://yourschool.instructure.com`).
+Kliknij **Zapisz i kontynuuj**.
 
-Kliknij **Save**.
+#### Włącz integrację
+
+Kreator przechodzi do **Krok 3: Przejdź na żywo**. Wyświetlone zostanie podsumowanie konfiguracji (nazwa, URL platformy, Client ID i Deployment ID).
+
+Sprawdź szczegóły, a następnie kliknij **Włącz integrację**, aby aktywować połączenie LTI.
+
+Po włączeniu kreator pokaże **Widok zarządzania**, gdzie możesz edytować konfigurację, przeglądać wszystkie adresy URL LTI lub dodać dodatkowe wdrożenia.
 
 #### Zainstaluj aplikację zewnętrzną w Canvas
 
-W Canvas przejdź do **Admin** > wybierz swoje konto > **Settings** > karta **Apps**.
+W Canvas przejdź do **Admin** > wybierz swoje konto > **Ustawienia** > karta **Aplikacje**.
 
 Kliknij **+ App** i skonfiguruj:
 

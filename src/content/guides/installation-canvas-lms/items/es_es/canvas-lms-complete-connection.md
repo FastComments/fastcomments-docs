@@ -1,22 +1,28 @@
-#### Introduce el Client ID en FastComments
+#### Introduzca el Client ID en FastComments
 
-Vuelve a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> en FastComments.
+Vuelva a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mi cuenta > Configuración LTI de Canvas</a> en FastComments. El asistente debería estar en **Paso 2: Conectar**.
 
-Encuentra tu configuración y pega el **Client ID** que copiaste de Canvas en el campo **Client ID**.
+Pegue el **Client ID** que copió de Canvas en el campo **Client ID**. Opcionalmente, introduzca el **Deployment ID** si su LMS proporciona uno.
 
-Si aún no lo has hecho, introduce tu **Platform URL** (la URL de tu instancia de Canvas, p. ej. `https://yourschool.instructure.com`).
+Haga clic en **Guardar y continuar**.
 
-Haz clic en **Save**.
+#### Habilitar la integración
 
-#### Instala la External App en Canvas
+El asistente avanza a **Paso 3: Ir en vivo**. Se muestra un resumen de su configuración (nombre, URL de la plataforma, Client ID y Deployment ID).
 
-En Canvas, ve a **Admin** > selecciona tu cuenta > **Settings** > pestaña **Apps**.
+Revise los detalles y luego haga clic en **Habilitar integración** para activar la conexión LTI.
 
-Haz clic en **+ App** y configura:
+Después de habilitar, el asistente muestra la **Vista de administración** donde puede editar su configuración, ver todas las URL LTI o agregar implementaciones adicionales.
 
-1. Ajusta **Configuration Type** a **By Client ID**.
-2. Pega el **Client ID** de la tabla Developer Keys.
-3. Haz clic en **Submit**.
-4. Confirma la instalación cuando se te solicite.
+#### Instalar la aplicación externa en Canvas
+
+En Canvas, vaya a **Administración** > seleccione su cuenta > **Configuración** > pestaña **Aplicaciones**.
+
+Haga clic en **+ Aplicación** y configure:
+
+1. Establezca **Tipo de configuración** en **Por Client ID**.
+2. Pegue el **Client ID** de la tabla Claves de desarrollador.
+3. Haga clic en **Enviar**.
+4. Confirme la instalación cuando se le solicite.
 
 FastComments ahora está instalado a nivel de cuenta y disponible para todos los cursos.

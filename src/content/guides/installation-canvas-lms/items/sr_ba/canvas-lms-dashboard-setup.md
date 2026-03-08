@@ -1,25 +1,22 @@
 #### Navigate to Canvas LTI Config
 
-Prijavite se na svoj FastComments nalog i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj nalog > Canvas LTI konfiguracija</a>.
+Пријавите се на ваш FastComments налог и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мој налог > Canvas LTI конфигурација</a>.
+
+Страница за подешавање користи водич који вас води кроз сваки корак. Почећете на **Корак 1: Креирање**.
 
 #### Create a New LTI Configuration
 
-Označite polje **Enable LTI**. Pojaviće se polja konfiguracije:
+Попуните следећа поља:
 
-- **Configuration Name** - opciona oznaka za identifikaciju ove konfiguracije (korisno ako povežete više Canvas instanci).
-- **Platform URL** - URL vaše Canvas instance (e.g. `https://yourschool.instructure.com`). Možete ovo ostaviti prazno za sada i popuniti ga nakon kreiranja Developer Key.
-- **Client ID** - za sada ostavite prazno. Popunićete ga nakon kreiranja Developer Key u Canvasu.
-- **Deployment ID** - za sada ostavite prazno.
-- **Comment Style** - izaberite između Comments, Collab Chat, ili Both. Pogledajte [Commenting Styles](#canvas-lms-commenting-styles) za detalje.
+- **Configuration Name** - опционална ознака за идентификацију ове конфигурације (корисно ако повежете више Canvas инстанци).
+- **Platform URL** - ваш URL Canvas инстанце (нпр. `https://yourschool.instructure.com`). Ово поље је обавезно.
 
-Kliknite **Add** da kreirate konfiguraciju.
+Кликните **Креирај конфигурацију**.
 
-#### Copy the Configuration URLs
+#### Copy the Configuration URL
 
-Nakon spremanja, pojaviće se tri URL-a:
+Након креирања конфигурације, чаробњак прелази на **Корак 2: Повезивање**. На врху странице истакнуто је приказан **URL конфигурације** са дугметом **Копирај**.
 
-- **Configuration URL** - zalijepit ćete ovo u Canvas prilikom kreiranja Developer Key.
-- **OIDC Login URL** - Canvas koristi za LTI prijavni tok (automatski konfigurisan putem Configuration URL).
-- **Launch URL** - endpoint koji Canvas poziva kada student otvori FastComments (automatski konfigurisan putem Configuration URL).
+Копирајте овај URL. Биће вам потребан у следећем кораку да креирате Developer Key у Canvas-у.
 
-Kopirajte **Configuration URL**. Trebaće vam u sljedećem koraku.
+Страница такође приказује нумерисана упутства шта треба урадити у Canvas-у, као и поља за унос **Client ID** и опционог **Deployment ID** када их будете имали.

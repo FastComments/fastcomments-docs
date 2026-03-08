@@ -1,25 +1,22 @@
-#### Idite na Canvas LTI Config
+#### Navigate to Canvas LTI Config
 
-Prijavite se na svoj FastComments nalog i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Prijavite se na svoj FastComments nalog i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj nalog > Canvas LTI konfiguracija</a>.
 
-#### Kreirajte novu LTI konfiguraciju
+Stranica za podešavanje koristi vođenog čarobnjaka koji vas vodi kroz svaki korak. Počećete na **Korak 1: Kreiraj**.
 
-Označite polje za potvrdu **Enable LTI**. Pojaviće se polja za konfiguraciju:
+#### Create a New LTI Configuration
 
-- **Configuration Name** - an optional label to identify this configuration (useful if you connect multiple Canvas instances).
-- **Platform URL** - your Canvas instance URL (e.g. `https://yourschool.instructure.com`). You can leave this blank for now and fill it in after creating the Developer Key.
-- **Client ID** - leave this blank for now. You will fill it in after creating the Developer Key in Canvas.
-- **Deployment ID** - leave this blank for now.
-- **Comment Style** - choose between Comments, Collab Chat, or Both. See [Commenting Styles](#canvas-lms-commenting-styles) for details.
+Popunite sledeća polja:
 
-Kliknite **Add** da kreirate konfiguraciju.
+- **Configuration Name** - opcioni naziv za identifikaciju ove konfiguracije (korisno ako povežete više Canvas instanci).
+- **Platform URL** - URL vaše Canvas instance (npr. `https://yourschool.instructure.com`). Ovo polje je obavezno.
 
-#### Kopirajte Configuration URL-ove
+Kliknite **Kreirajte konfiguraciju**.
 
-Nakon čuvanja pojaviće se tri URL-a:
+#### Copy the Configuration URL
 
-- **Configuration URL** - you will paste this into Canvas when creating the Developer Key.
-- **OIDC Login URL** - used by Canvas for the LTI login flow (automatically configured via the Configuration URL).
-- **Launch URL** - the endpoint Canvas calls when a student opens FastComments (automatically configured via the Configuration URL).
+Nakon kreiranja konfiguracije, čarobnjak prelazi na **Korak 2: Povežite**. Na vrhu stranice se ističe **URL konfiguracije** sa dugmetom **Kopiraj**.
 
-Kopirajte **Configuration URL**. Trebaće vam u narednom koraku.
+Kopirajte ovaj URL. Trebaće vam u narednom koraku da kreirate Developer Key u Canvas-u.
+
+Stranica takođe prikazuje numerisane instrukcije šta treba uraditi u Canvas-u, plus polja za unos **Client ID** i opciono **Deployment ID** kada ih budete imali.

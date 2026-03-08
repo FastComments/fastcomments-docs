@@ -1,25 +1,22 @@
-#### Navigate to Canvas LTI Config
+#### Навигирајте до Canvas LTI конфигурације
 
-Пријавите се на ваш FastComments налог и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Пријавите се у свој FastComments налог и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мој налог > Canvas LTI конфигурација</a>.
 
-#### Create a New LTI Configuration
+Страница за подешавање користи вођеног чаробњака који вас корак по корак води. Почећете од **Корак 1: Креирање**.
 
-Означите поље за потврду **Enable LTI**. Пojaviће се поља за конфигурацију:
+#### Креирање нове LTI конфигурације
+
+Попуните следећа поља:
 
 - **Configuration Name** - опционална ознака за идентификацију ове конфигурације (корисно ако повежете више Canvas инстанци).
-- **Platform URL** - URL ваше Canvas инстанце (нпр. `https://yourschool.instructure.com`). Можете оставити ово празно за сада и попунити га након креирања Developer Key.
-- **Client ID** - оставите ово празно за сада. Попунићете га након креирања Developer Key у Canvas.
-- **Deployment ID** - оставите ово празно за сада.
-- **Comment Style** - одаберите између Comments, Collab Chat, или Both. Погледајте [Commenting Styles](#canvas-lms-commenting-styles) за детаље.
+- **Platform URL** - URL ваше Canvas инстанце (нпр. `https://yourschool.instructure.com`). Ово поље је обавезно.
 
-Кликните на **Add** да бисте креирали конфигурацију.
+Кликните на **Креирај конфигурацију**.
 
-#### Copy the Configuration URLs
+#### Копирајте URL конфигурације
 
-Након чувања, појавиће се три URL-а:
+Након креирања конфигурације, чаробњак напредује до **Корак 2: Повезивање**. На врху странице истакнуто је приказан **URL конфигурације** са дугметом **Копирај**.
 
-- **Configuration URL** - налепићете ово у Canvas када креирате Developer Key.
-- **OIDC Login URL** - који Canvas користи за LTI процес пријављивања (аутоматски конфигурисан преко Configuration URL).
-- **Launch URL** - крајња тачка коју Canvas позива када студент отвори FastComments (аутоматски конфигурисана преко Configuration URL).
+Копирајте овај URL. Биће вам потребан у следећем кораку за креирање развојачког кључа у Canvas-у.
 
-Копирајте **Configuration URL**. Биће вам потребан у следећем кораку.
+Страница такође приказује нумерисана упутства шта урадити у Canvas-у, као и поља за унос **Client ID** и опционог **Deployment ID** када их будете имали.

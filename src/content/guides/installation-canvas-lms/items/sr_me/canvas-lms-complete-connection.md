@@ -1,22 +1,28 @@
-#### Unesite Client ID u FastComments
+#### Унесите Client ID у FastComments
 
-Vratite se na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> u FastComments.
+Вратите се на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мој налог > Canvas LTI подешавања</a> у FastComments. Чаробњак треба да буде на **Корак 2: Повезивање**.
 
-Pronađite vašu konfiguraciju i zalijepite **Client ID** koji ste kopirali iz Canvas-a u polje **Client ID**.
+Залепите **Client ID** који сте копирали из Canvas у поље **Client ID**. По жељи унесите **Deployment ID** ако ваш LMS пружа такав.
 
-Ako to već niste uradili, unesite svoj **Platform URL** (URL vaše Canvas instance, npr. `https://yourschool.instructure.com`).
+Кликните **Сачувај и настави**.
 
-Kliknite **Save**.
+#### Омогућите интеграцију
 
-#### Instalirajte External App u Canvas
+Чаробњак се помера на **Корак 3: Иди уживо**. Приказан је преглед ваше конфигурације (име, URL платформе, Client ID и Deployment ID).
 
-U Canvas-u idite na **Admin** > izaberite svoj nalog > **Settings** > kartica **Apps**.
+Прегледајте детаље, па кликните **Омогући интеграцију** да активирате LTI везу.
 
-Kliknite **+ App** i konfigurišite:
+Након омогућавања, чаробњак приказује **Преглед управљања** где можете уређивати вашу конфигурацију, видети све LTI URL-ове или додати додатна размештања.
 
-1. Podesite **Configuration Type** na **By Client ID**.
-2. Zalijepite **Client ID** iz tabele Developer Keys.
-3. Kliknite **Submit**.
-4. Potvrdite instalaciju kada budete upitani.
+#### Инсталирајте спољашњу апликацију у Canvas
 
-FastComments je sada instaliran na nivou naloga i dostupan svim kursevima.
+У Canvas-у идите на **Админ** > изаберите ваш налог > **Подешавања** > картица **Апликације**.
+
+Кликните **+ App** и конфигуришите:
+
+1. Подесите **Configuration Type** на **By Client ID**.
+2. Залепите **Client ID** из табеле Developer Keys.
+3. Кликните **Submit**.
+4. Потврдите инсталацију када вам буде затражено.
+
+FastComments је сада инсталиран на нивоу налога и доступан свим курсевима.

@@ -1,25 +1,22 @@
 #### Canvas LTI Yapılandırmasına Gidin
 
-FastComments hesabınıza giriş yapın ve <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Hesabım > Canvas LTI Yapılandırması</a> bölümüne gidin.
+Hesabınıza FastComments ile giriş yapın ve <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Hesabım > Canvas LTI Yapılandırması</a> sayfasına gidin.
 
-#### Yeni Bir LTI Yapılandırması Oluşturun
+Kurulum sayfası, sizi her adımda yönlendiren bir sihirbaz kullanır. **Adım 1: Oluştur** ile başlayacaksınız.
 
-**Enable LTI** onay kutusunu işaretleyin. Yapılandırma alanları görünecektir:
+#### Yeni bir LTI Yapılandırması Oluşturun
 
-- **Configuration Name** - bu yapılandırmayı tanımlamak için isteğe bağlı bir etiket (birden fazla Canvas örneği bağlarsanız faydalıdır).
-- **Platform URL** - Canvas örneğinizin URL'si (ör. `https://yourschool.instructure.com`). Şu an için bunu boş bırakabilir ve Geliştirici Anahtarını oluşturduktan sonra doldurabilirsiniz.
-- **Client ID** - şu an için bunu boş bırakın. Bunu Canvas'ta Geliştirici Anahtarı oluşturduktan sonra dolduracaksınız.
-- **Deployment ID** - şu an için bunu boş bırakın.
-- **Comment Style** - Comments, Collab Chat veya Both arasından seçim yapın. Ayrıntılar için [Commenting Styles](#canvas-lms-commenting-styles) bölümüne bakın.
+Aşağıdaki alanları doldurun:
 
-Yapılandırmayı oluşturmak için **Add**'e tıklayın.
+- **Configuration Name** - bu yapılandırmayı tanımlamak için isteğe bağlı bir etiket (birden fazla Canvas örneğine bağlanıyorsanız faydalıdır).
+- **Platform URL** - Canvas örneğinizin URL'si (ör. `https://yourschool.instructure.com`). Bu alan zorunludur.
 
-#### Yapılandırma URL'lerini Kopyalayın
+**Yapılandırma Oluştur** düğmesine tıklayın.
 
-Kaydettikten sonra üç URL görünecektir:
+#### Yapılandırma URL'sini Kopyalayın
 
-- **Configuration URL** - bunu Canvas'ta Geliştirici Anahtarı oluştururken yapıştıracaksınız.
-- **OIDC Login URL** - Canvas tarafından LTI giriş akışı için kullanılır (Yapılandırma URL'si aracılığıyla otomatik olarak yapılandırılır).
-- **Launch URL** - bir öğrenci FastComments'i açtığında Canvas'ın çağırdığı uç nokta (Yapılandırma URL'si aracılığıyla otomatik olarak yapılandırılır).
+Yapılandırmayı oluşturduktan sonra, sihirbaz **Adım 2: Bağlan** bölümüne ilerler. Sayfanın üst kısmında belirgin bir **Yapılandırma URL'si** ve bir **Kopyala** düğmesi görüntülenir.
 
-**Configuration URL**'yi kopyalayın. Bir sonraki adımda buna ihtiyacınız olacak.
+Bu URL'yi kopyalayın. Canvas'ta bir Developer Key oluşturmak için bir sonraki adımda buna ihtiyacınız olacak.
+
+Sayfa ayrıca Canvas'ta ne yapmanız gerektiğine dair numaralandırılmış talimatlar ile bunlara sahip olduğunuzda girebileceğiniz **Client ID** ve isteğe bağlı **Deployment ID** alanlarını gösterir.

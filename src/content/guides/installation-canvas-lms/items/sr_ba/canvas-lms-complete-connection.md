@@ -1,22 +1,28 @@
-#### Унесите Client ID у FastComments
+#### Enter the Client ID in FastComments
 
-Вратите се на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> у FastComments.
+Go back to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> in FastComments. The wizard should be on **Step 2: Connect**.
 
-Пронађите своју конфигурацију и налепите **Client ID** који сте копирали из Canvas у поље **Client ID**.
+Paste the **Client ID** you copied from Canvas into the **Client ID** field. Optionally enter the **Deployment ID** if your LMS provides one.
 
-Ако то већ нисте урадили, унесите своју **Platform URL** (URL ваше Canvas инстанце, нпр. `https://yourschool.instructure.com`).
+Click **Save & Continue**.
 
-Кликните **Save**.
+#### Enable the Integration
 
-#### Инсталирајте External App у Canvas
+The wizard advances to **Step 3: Go Live**. A summary of your configuration is shown (name, platform URL, Client ID, and deployment ID).
 
-У Canvas-у идите на **Admin** > изаберите ваш налог > **Settings** > картица **Apps**.
+Review the details, then click **Enable Integration** to activate the LTI connection.
 
-Кликните **+ App** и конфигуришите:
+After enabling, the wizard shows the **Management View** where you can edit your configuration, view all LTI URLs, or add additional deployments.
 
-1. Поставите **Configuration Type** на **By Client ID**.
-2. Налепите **Client ID** из табеле Developer Keys.
-3. Кликните **Submit**.
-4. Потврдите инсталацију када вам буде затражено.
+#### Install the External App in Canvas
 
-FastComments је сада инсталиран на нивоу налога и доступан свим курсевима.
+In Canvas, go to **Admin** > select your account > **Settings** > **Apps** tab.
+
+Click **+ App** and configure:
+
+1. Set **Configuration Type** to **By Client ID**.
+2. Paste the **Client ID** from the Developer Keys table.
+3. Click **Submit**.
+4. Confirm the installation when prompted.
+
+FastComments is now installed at the account level and available to all courses.

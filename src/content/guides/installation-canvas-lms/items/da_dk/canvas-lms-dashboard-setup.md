@@ -1,25 +1,22 @@
-#### Naviger til Canvas LTI Config
+#### Naviger til Canvas LTI-konfiguration
 
-Log ind på din FastComments-konto, og gå til <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Log ind på din FastComments-konto og gå til <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Min konto > Canvas LTI-konfiguration</a>.
+
+Opsætningssiden bruger en vejledt guide, der fører dig gennem hvert trin. Du starter på **Trin 1: Opret**.
 
 #### Opret en ny LTI-konfiguration
 
-Marker afkrydsningsfeltet **Enable LTI**. Konfigurationsfelterne vises:
+Udfyld følgende felter:
 
 - **Configuration Name** - en valgfri etiket til at identificere denne konfiguration (nyttigt hvis du forbinder flere Canvas-instanser).
-- **Platform URL** - din Canvas-instances URL (f.eks. `https://yourschool.instructure.com`). Du kan lade dette stå tomt indtil videre og udfylde det efter at have oprettet Developer Key.
-- **Client ID** - lad dette stå tomt for nu. Du udfylder det efter at have oprettet Developer Key i Canvas.
-- **Deployment ID** - lad dette stå tomt for nu.
-- **Comment Style** - vælg mellem Comments, Collab Chat eller Both. Se [Commenting Styles](#canvas-lms-commenting-styles) for detaljer.
+- **Platform URL** - URL'en til din Canvas-instans (f.eks. `https://yourschool.instructure.com`). Dette felt er påkrævet.
 
-Klik på **Add** for at oprette konfigurationen.
+Klik på **Opret konfiguration**.
 
-#### Kopiér Configuration URLs
+#### Kopier konfigurations-URL'en
 
-Efter gemning vises der tre URL'er:
+Efter at have oprettet konfigurationen går guiden videre til **Trin 2: Tilslut**. En fremtrædende **Konfigurations-URL** vises øverst på siden med en **Kopiér**-knap.
 
-- **Configuration URL** - du indsætter denne i Canvas, når du opretter Developer Key.
-- **OIDC Login URL** - bruges af Canvas til LTI-loginflowet (automatisk konfigureret via Configuration URL).
-- **Launch URL** - endpointet, som Canvas kalder, når en studerende åbner FastComments (automatisk konfigureret via Configuration URL).
+Kopiér denne URL. Du får brug for den i det næste trin for at oprette en udviklernøgle i Canvas.
 
-Kopier **Configuration URL**. Du får brug for den i næste trin.
+Siden viser også nummererede instruktioner for, hvad du skal gøre i Canvas, plus felter til at indtaste **Client ID** og den valgfrie **Deployment ID**, når du har dem.

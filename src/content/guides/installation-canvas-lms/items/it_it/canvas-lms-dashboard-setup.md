@@ -1,25 +1,22 @@
-#### Vai a Canvas LTI Config
+#### Accedere a Configurazione LTI di Canvas
 
-Accedi al tuo account FastComments e vai a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Accedi al tuo account FastComments e vai a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Il mio account &gt; Configurazione LTI Canvas</a>.
 
-#### Crea una Nuova LTI Configuration
+La pagina di configurazione utilizza una procedura guidata che ti accompagna in ogni fase. Inizierai da **Passo 1: Crea**.
 
-Seleziona la casella di controllo **Enable LTI**. Appariranno i campi di configurazione:
+#### Crea una nuova configurazione LTI
 
-- **Configuration Name** - un'etichetta opzionale per identificare questa configurazione (utile se colleghi più istanze di Canvas).
-- **Platform URL** - l'URL della tua istanza Canvas (e.g. `https://yourschool.instructure.com`). Puoi lasciarlo vuoto per ora e compilarlo dopo aver creato la Developer Key.
-- **Client ID** - lascialo vuoto per ora. Lo compilerai dopo aver creato la Developer Key in Canvas.
-- **Deployment ID** - lascialo vuoto per ora.
-- **Comment Style** - scegli tra Comments, Collab Chat, o Both. Vedi [Commenting Styles](#canvas-lms-commenting-styles) per i dettagli.
+Compila i seguenti campi:
 
-Fai clic su **Add** per creare la configurazione.
+- **Configuration Name** - un'etichetta facoltativa per identificare questa configurazione (utile se colleghi più istanze di Canvas).
+- **Platform URL** - l'URL della tua istanza Canvas (e.g. `https://yourschool.instructure.com`). Questo campo è obbligatorio.
 
-#### Copia gli URL della Configurazione
+Fai clic su **Crea configurazione**.
 
-Dopo il salvataggio, appariranno tre URL:
+#### Copia l'URL della configurazione
 
-- **Configuration URL** - lo incollerai in Canvas quando creerai la Developer Key.
-- **OIDC Login URL** - usato da Canvas per il flusso di login LTI (configurato automaticamente tramite la Configuration URL).
-- **Launch URL** - l'endpoint che Canvas chiama quando uno studente apre FastComments (configurato automaticamente tramite la Configuration URL).
+Dopo aver creato la configurazione, la procedura guidata passa a **Passo 2: Connetti**. Un evidente **URL di configurazione** viene mostrato nella parte superiore della pagina con un pulsante **Copia**.
 
-Copia la **Configuration URL**. Ti servirà nel passaggio successivo.
+Copia questo URL. Ti servirà nel passaggio successivo per creare una Developer Key in Canvas.
+
+La pagina mostra anche istruzioni numerate su cosa fare in Canvas, oltre a campi per inserire il **Client ID** e l'opzionale **Deployment ID** una volta che li avrai.

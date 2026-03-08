@@ -1,22 +1,28 @@
 #### Въведете Client ID в FastComments
 
-Върнете се в <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> в FastComments.
+Върнете се в <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> в FastComments. Съветникът трябва да е на **Step 2: Connect**.
 
-Намерете вашата конфигурация и поставете **Client ID**, който копирахте от Canvas, в полето **Client ID**.
+Поставете **Client ID**, който копирахте от Canvas, в полето **Client ID**. По желание въведете **Deployment ID**, ако вашата LMS предоставя такъв.
 
-Ако все още не сте го направили, въведете вашия **Platform URL** (URL адреса на вашия Canvas инстанс, напр. `https://yourschool.instructure.com`).
+Щракнете върху **Save & Continue**.
 
-Кликнете **Save**.
+#### Enable the Integration
+
+Съветникът преминава към **Step 3: Go Live**. Показва се обобщение на конфигурацията ви (име, platform URL, Client ID, и deployment ID).
+
+Прегледайте подробностите, след което щракнете върху **Enable Integration**, за да активирате LTI връзката.
+
+След активиране, съветникът показва **Management View**, където можете да редактирате конфигурацията си, да видите всички LTI URLs или да добавите допълнителни deployments.
 
 #### Инсталирайте външното приложение в Canvas
 
-В Canvas отидете на **Admin** > изберете вашия акаунт > **Settings** > раздела **Apps**.
+В Canvas отидете на **Admin** > изберете своя акаунт > **Settings** > раздела **Apps**.
 
-Кликнете **+ App** и конфигурирайте:
+Щракнете **+ App** и конфигурирайте:
 
 1. Задайте **Configuration Type** на **By Client ID**.
 2. Поставете **Client ID** от таблицата Developer Keys.
-3. Кликнете **Submit**.
+3. Щракнете върху **Submit**.
 4. Потвърдете инсталацията, когато бъдете подканени.
 
 FastComments вече е инсталиран на ниво акаунт и е достъпен за всички курсове.

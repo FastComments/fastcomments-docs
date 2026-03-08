@@ -1,5 +1,6 @@
-1. Prijavite se v FastComments in pojdite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Označite **Enable LTI** in kliknite **Add**. Kopirajte prikazani **Configuration URL**.
-3. V Canvasu pojdite na **Admin > Developer Keys > + Developer Key > LTI Key**. Nastavite **Method** na "Enter URL" in prilepite Configuration URL. Shranite ključ in nastavite njegov **State** na **ON**.
-4. Kopirajte številko **Client ID** iz tabele Developer Keys v Canvasu. Prilepite jo v polje **Client ID** v FastComments in kliknite **Save**.
-5. V vašem predmetu v Canvasu pojdite na **Settings > Navigation**, poiščite **FastComments** in ga omogočite. Komentarji se bodo prikazali kot element navigacije predmeta.
+1. Prijavite se v FastComments in pojdite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj račun > Konfiguracija Canvas LTI</a>.
+2. Vnesite **Ime konfiguracije** in svoj **URL platforme** (npr. `https://yourschool.instructure.com`), nato kliknite **Ustvari konfiguracijo**. Čarovnik preide na 2. korak in prikaže vaš **URL konfiguracije**.
+3. V Canvasu pojdite na **Administrator > Ključi razvijalca > + Ključ razvijalca > LTI ključ**. Nastavite **Metoda** na "Vnesi URL" in prilepite URL konfiguracije. Shrani ključ in nastavite njegovo **Stanje** na **VKLJUČENO**.
+4. Kopirajte številko **Client ID** iz tabele ključev razvijalca v Canvasu. Nazaj v FastComments jo prilepite v polje **Client ID** in kliknite **Shrani in nadaljuj**.
+5. Preglejte povzetek konfiguracije in kliknite **Omogoči integracijo**, da jo aktivirate.
+6. V vašem Canvas tečaju pojdite na **Nastavitve > Navigacija**, poiščite **FastComments** in ga omogočite. Komentarji se bodo pojavili kot element navigacije tečaja.

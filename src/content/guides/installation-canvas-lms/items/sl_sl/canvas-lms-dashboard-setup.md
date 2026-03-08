@@ -1,25 +1,22 @@
 #### Pojdite na Canvas LTI Config
 
-Prijavite se v svoj FastComments račun in pojdite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Prijavite se v svoj račun FastComments in pojdite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj račun > Canvas LTI Config</a>.
 
-#### Create a New LTI Configuration
+Stran za nastavitev uporablja vodeni čarovnik, ki vas popelje skozi vsak korak. Začeli boste pri **Korak 1: Ustvari**.
 
-Označite polje za preverjanje **Enable LTI**. Pojavila se bodo polja konfiguracije:
+#### Ustvarite novo LTI konfiguracijo
 
-- **Configuration Name** - izbirna oznaka za identifikacijo te konfiguracije (uporabno, če povežete več instanc Canvas).
-- **Platform URL** - URL vaše instance Canvas (npr. `https://yourschool.instructure.com`). To lahko za zdaj pustite prazno in ga izpolnite po ustvarjanju Developer Key.
-- **Client ID** - za zdaj pustite prazno. Izpolnili ga boste po ustvarjanju Developer Key v Canvasu.
-- **Deployment ID** - za zdaj pustite prazno.
-- **Comment Style** - izberite med Comments, Collab Chat ali Both. Oglejte si [Slogi komentiranja](#canvas-lms-commenting-styles) za podrobnosti.
+Izpolnite naslednja polja:
 
-Kliknite **Add**, da ustvarite konfiguracijo.
+- **Ime konfiguracije** - izbirna oznaka za identifikacijo te konfiguracije (uporabno, če povežete več instanc Canvas).
+- **Platform URL** - URL vaše instance Canvas (npr. `https://yourschool.instructure.com`). To polje je obvezno.
 
-#### Copy the Configuration URLs
+Kliknite **Ustvari konfiguracijo**.
 
-Po shranjevanju se bodo prikazali trije URL-ji:
+#### Kopirajte URL konfiguracije
 
-- **Configuration URL** - ta boste prilepili v Canvas pri ustvarjanju Developer Key.
-- **OIDC Login URL** - Canvas ga uporablja za LTI prijavni tok (samodejno konfigurirano prek Configuration URL).
-- **Launch URL** - končna točka, ki jo Canvas pokliče, ko študent odpre FastComments (samodejno konfigurirano prek Configuration URL).
+Po ustvarjanju konfiguracije se čarovnik premakne na **Korak 2: Poveži**. Na vrhu strani je prikazan izrazit **URL konfiguracije** z gumbom **Kopiraj**.
 
-Kopirajte **Configuration URL**. Potrebovali ga boste v naslednjem koraku.
+Kopirajte ta URL. Potrebovali ga boste v naslednjem koraku za ustvarjanje Developer Key v Canvas.
+
+Stran prav tako prikazuje oštevilčena navodila, kaj narediti v Canvas, ter polja za vnos **Client ID** in izbirnega **Deployment ID**, ko jih imate.

@@ -1,5 +1,6 @@
-1. Meld u aan bij FastComments en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Vink **Enable LTI** aan en klik op **Add**. Kopieer de weergegeven **Configuration URL**.
-3. Ga in Canvas naar **Admin > Developer Keys > + Developer Key > LTI Key**. Stel **Method** in op "Enter URL" en plak de Configuration URL. Sla de sleutel op en zet de **State** op **ON**.
-4. Kopieer het **Client ID**-nummer uit de Developer Keys-tabel in Canvas. Plak het in het **Client ID**-veld in FastComments en klik op **Save**.
-5. Ga in uw Canvas-cursus naar **Settings > Navigation**, zoek **FastComments** en schakel het in. Reacties verschijnen als een item in de cursusnavigatie.
+1. Log in op FastComments en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mijn account > Canvas LTI-configuratie</a>.
+2. Voer een **Configuratienaam** en uw **Platform-URL** in (bijv. `https://yourschool.instructure.com`), klik vervolgens op **Configuratie aanmaken**. De wizard gaat door naar Stap 2 en toont uw **Configuratie-URL**.
+3. Ga in Canvas naar **Beheer > Ontwikkelaarssleutels > + Ontwikkelaarssleutel > LTI-sleutel**. Stel **Methode** in op "URL invoeren" en plak de Configuratie-URL. Sla de sleutel op en zet de **Status** op **ON**.
+4. Kopieer het **Client ID**-nummer uit de tabel Ontwikkelaarssleutels in Canvas. Ga terug naar FastComments, plak het in het veld **Client ID** en klik op **Opslaan en doorgaan**.
+5. Bekijk de configuratiesamenvatting en klik op **Integratie inschakelen** om live te gaan.
+6. Ga in uw Canvas-cursus naar **Instellingen > Navigatie**, zoek **FastComments** en schakel het in. Reacties verschijnen als een navigatie-item van de cursus.
