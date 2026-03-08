@@ -1,28 +1,28 @@
-#### Enter the Client ID in FastComments
+#### Унесите Client ID у FastComments
 
-Go back to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> in FastComments. The wizard should be on **Step 2: Connect**.
+Вратите се на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">ваш FastComments LTI Config</a>. Чаробњак би требао бити на **Step 2: Connect**.
 
-Paste the **Client ID** you copied from Canvas into the **Client ID** field. Optionally enter the **Deployment ID** if your LMS provides one.
+Залепите **Client ID** који сте копирали из Canvas у поље **Client ID**. Опционо унесите **Deployment ID** ако вам ваш LMS то пружа.
 
-Click **Save & Continue**.
+Кликните **Save & Continue**.
 
-#### Enable the Integration
+#### Омогућите интеграцију
 
-The wizard advances to **Step 3: Go Live**. A summary of your configuration is shown (name, platform URL, Client ID, and deployment ID).
+Чаробњак напредује на **Step 3: Go Live**. Приказано је кратко обавјештење о вашој конфигурацији (name, platform URL, Client ID, and deployment ID).
 
-Review the details, then click **Enable Integration** to activate the LTI connection.
+Прегледајте детаље, затим кликните **Enable Integration** да бисте активирали LTI везу.
 
-After enabling, the wizard shows the **Management View** where you can edit your configuration, view all LTI URLs, or add additional deployments.
+Након омогућавања, чаробњак приказује **Management View** гдје можете уређивати вашу конфигурацију, видјети све LTI URL-ове или додати додатна deployment-а.
 
-#### Install the External App in Canvas
+#### Инсталирајте спољашњу апликацију у Canvas
 
-In Canvas, go to **Admin** > select your account > **Settings** > **Apps** tab.
+У Canvas-у идите на **Admin** > изаберите ваш налог > **Settings** > картица **Apps**.
 
-Click **+ App** and configure:
+Кликните **+ App** и конфигуришите:
 
-1. Set **Configuration Type** to **By Client ID**.
-2. Paste the **Client ID** from the Developer Keys table.
-3. Click **Submit**.
-4. Confirm the installation when prompted.
+1. Поставите **Configuration Type** на **By Client ID**.
+2. Залепите **Client ID** из табеле Developer Keys.
+3. Кликните **Submit**.
+4. Потврдите инсталацију када будете упитани.
 
-FastComments is now installed at the account level and available to all courses.
+FastComments је сада инсталиран на нивоу налога и доступан свим курсевима.

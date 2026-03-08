@@ -1,4 +1,4 @@
-1. Log in to FastComments and go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+1. Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>.
 2. Enter a **Configuration Name** and your **Platform URL** (e.g. `https://yourschool.instructure.com`). Click **Create Configuration**. The wizard advances to Step 2 and shows your **Configuration URL**.
 3. In Canvas, go to **Admin > Developer Keys > + Developer Key > LTI Key**. Set **Method** to "Enter URL" and paste the Configuration URL. Save the key, then set its **State** to **ON** and click **Allow** when prompted.
 4. Copy the **Client ID** number from the Developer Keys table in Canvas. Back in FastComments, paste it into the **Client ID** field and click **Save & Continue**.

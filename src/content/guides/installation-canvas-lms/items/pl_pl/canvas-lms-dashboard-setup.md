@@ -1,31 +1,31 @@
-#### Przejdź do konfiguracji Canvas LTI
+#### Przejdź do konfiguracji LTI
 
-Zaloguj się na swoje konto FastComments i przejdź do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moje konto > Konfiguracja Canvas LTI</a>.
+Przejdź do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">swojej konfiguracji LTI FastComments</a>.
 
-Strona konfiguracji korzysta z kreatora krok po kroku, który prowadzi Cię przez każdy etap. Zaczynasz od **Krok 1: Utwórz**.
+Strona konfiguracji korzysta z kreatora krok po kroku, który przeprowadzi Cię przez każdy etap. Zaczynasz od **Krok 1: Utwórz**.
 
 #### Utwórz nową konfigurację LTI
 
 Wypełnij następujące pola:
 
-- **Configuration Name** - opcjonalna etykieta służąca do identyfikacji tej konfiguracji (przydatne, jeśli łączysz wiele instancji Canvas).
+- **Configuration Name** - opcjonalna etykieta identyfikująca tę konfigurację (przydatne, jeśli podłączysz wiele instancji Canvas).
 - **Platform URL** - adres URL Twojej instancji Canvas (np. `https://yourschool.instructure.com`). To pole jest wymagane.
 
 #### Wybierz miejsca umieszczenia
 
-Pod polem Platform URL możesz wybrać, gdzie FastComments będzie widoczny w Twoich kursach Canvas. Oba miejsca są domyślnie włączone:
+Poniżej pola Platform URL możesz wybrać, gdzie FastComments będzie widoczny w kursach Canvas. Oba miejsca są domyślnie włączone:
 
-- **Assignment View** - komentarze pojawiają się automatycznie pod zadaniami.
-- **Rich Content Editor Button** - instruktorzy mogą osadzać FastComments na Stronach, w Quizach i Ogłoszeniach, używając przycisku na pasku narzędzi w Rich Content Editorze.
+- **Assignment View** - komentarze pojawiają się automatycznie poniżej zadań.
+- **Rich Content Editor Button** - instruktorzy mogą osadzać FastComments na Stronach, w Quizach i Ogłoszeniach, używając przycisku na pasku narzędzi Edytora Rich Content.
 
-Możesz włączyć jedno lub oba. Co najmniej jedno miejsce musi być włączone.
+Możesz włączyć jedno lub oba. Przynajmniej jedno musi być włączone.
 
-Kliknij **Utwórz konfigurację**.
+Kliknij **Create Configuration**.
 
-#### Skopiuj adres URL konfiguracji
+#### Skopiuj URL konfiguracji
 
-Po utworzeniu konfiguracji kreator przechodzi do **Krok 2: Połącz**. Na górze strony wyświetlany jest wyróżniony **Adres URL konfiguracji** z przyciskiem **Kopiuj**.
+Po utworzeniu konfiguracji kreator przejdzie do **Krok 2: Połącz**. Na górze strony wyraźnie wyświetlany jest **Configuration URL** z przyciskiem **Copy**.
 
-Skopiuj ten URL. Będziesz go potrzebować w następnym kroku, aby utworzyć Developer Key w Canvas.
+Skopiuj ten URL. Będziesz go potrzebować w następnym kroku do utworzenia Klucza deweloperskiego w Canvas.
 
-Strona pokazuje także ponumerowane instrukcje, co zrobić w Canvas, oraz pola do wpisania **Client ID** i opcjonalnego **Deployment ID**, gdy je otrzymasz.
+Strona pokazuje także ponumerowane instrukcje, co zrobić w Canvas, oraz pola do wprowadzenia **Client ID** i opcjonalnie **Deployment ID**, gdy już je będziesz mieć.

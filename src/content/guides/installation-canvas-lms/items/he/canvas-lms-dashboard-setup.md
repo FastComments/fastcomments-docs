@@ -1,31 +1,31 @@
-#### נווט אל הגדרות Canvas LTI
+#### Navigate to LTI Config
 
-התחבר לחשבון FastComments שלך ועבור אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">החשבון שלי > הגדרות Canvas LTI</a>.
+Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">תצורת LTI של FastComments שלך</a>.
 
-דף ההגדרה משתמש באשף מודרך שמלווה אותך בכל שלב. תתחיל ב- **שלב 1: צור**.
+The setup page uses a guided wizard that walks you through each step. You will start at **שלב 1: צור**.
 
-#### צור תצורת LTI חדשה
+#### Create a New LTI Configuration
 
-מלא את השדות הבאים:
+Fill in the following fields:
 
-- **Configuration Name** - תווית אופציונלית לזיהוי תצורה זו (שימושית אם אתה מחבר מספר אינסטנציות Canvas).
-- **Platform URL** - כתובת ה-URL של האינסטנציה של Canvas שלך (למשל `https://yourschool.instructure.com`). שדה זה הינו חובה.
+- **Configuration Name** - תווית אופציונלית לזיהוי התצורה הזו (שימושית אם אתה מחבר כמה מופעי Canvas).
+- **Platform URL** - כתובת ה-URL של מופע Canvas שלך (למשל `https://yourschool.instructure.com`). שדה זה נדרש.
 
-#### בחר מיקומים
+#### Choose Placements
 
-מתחת לשדה Platform URL, ניתן לבחור היכן FastComments יופיע בקורסים ב-Canvas. שני המיקומים מופעלים כברירת מחדל:
+Below the Platform URL, you can choose where FastComments appears in your Canvas courses. Both placements are enabled by default:
 
-- **Assignment View** - התגובות מופיעות אוטומטית מתחת למטלות.
-- **Rich Content Editor Button** - מרצים יכולים להטמיע את FastComments בדפים, במבחנים ובהודעות באמצעות כפתור בסרגל הכלים של עורך התוכן העשיר.
+- **Assignment View** - הערות מופיעות אוטומטית מתחת למשימות.
+- **Rich Content Editor Button** - מרצים יכולים להטמיע את FastComments בעמודים, במבחנים ובהודעות באמצעות כפתור בסרגל העורך העשיר.
 
-ניתן להפעיל אחד או את שניהם. לפחות מיקום אחד חייב להיות מופעל.
+You can enable one or both. At least one placement must be enabled.
 
-לחץ על **צור תצורה**.
+Click **צור תצורה**.
 
-#### העתק את כתובת התצורה
+#### Copy the Configuration URL
 
-לאחר יצירת התצורה, האשף מתקדם ל- **שלב 2: התחבר**. כתובת **Configuration URL** מוצגת בחלק העליון של הדף עם כפתור **העתק**.
+After creating the configuration, the wizard advances to **שלב 2: התחבר**. A prominent **כתובת URL של התצורה** is displayed at the top of the page with a **העתק** button.
 
-העתק כתובת URL זו. תזדקק לה בשלב הבא כדי ליצור Developer Key ב-Canvas.
+Copy this URL. You will need it in the next step to create a Developer Key in Canvas.
 
-העמוד גם מציג הוראות ממוספרות לגבי מה לעשות ב-Canvas, וכן שדות להזנת ה-**Client ID** וה-**Deployment ID** האופציונלי ברגע שיש לך אותם.
+The page also shows numbered instructions for what to do in Canvas, plus fields to enter the **Client ID** and optional **Deployment ID** once you have them.

@@ -1,6 +1,6 @@
 #### Enter the Client ID in FastComments
 
-Go back to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> in FastComments. The wizard should be on **Step 2: Connect**.
+Go back to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>. The wizard should be on **Step 2: Connect**.
 
 Paste the **Client ID** you copied from Canvas into the **Client ID** field. Optionally enter the **Deployment ID** if your LMS provides one.
 

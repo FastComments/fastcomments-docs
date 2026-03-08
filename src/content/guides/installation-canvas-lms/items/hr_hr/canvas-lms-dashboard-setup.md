@@ -1,31 +1,31 @@
-#### Navigate to Canvas LTI Config
+#### Navigirajte do LTI konfiguracije
 
-Prijavite se na svoj FastComments račun i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj račun > Canvas LTI konfiguracija</a>.
+Idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">vašu FastComments LTI konfiguraciju</a>.
 
 Stranica za postavljanje koristi vođenog čarobnjaka koji vas vodi kroz svaki korak. Počet ćete na **Korak 1: Kreiraj**.
 
-#### Create a New LTI Configuration
+#### Kreirajte novu LTI konfiguraciju
 
 Ispunite sljedeća polja:
 
-- **Configuration Name** - opcionalna oznaka za identificiranje ove konfiguracije (korisno ako povežete više Canvas instanci).
-- **Platform URL** - URL vaše Canvas instance (npr. `https://yourschool.instructure.com`). Ovo polje je obavezno.
+- **Naziv konfiguracije** - opcionalna oznaka za identificiranje ove konfiguracije (korisno ako povežete više instanci Canvasa).
+- **URL platforme** - URL vaše Canvas instance (npr. `https://yourschool.instructure.com`). Ovo polje je obavezno.
 
-#### Choose Placements
+#### Odaberite pozicije prikaza
 
-Ispod Platform URL-a možete odabrati gdje se FastComments pojavljuje u vašim Canvas tečajevima. Obje lokacije su po zadanom omogućene:
+Ispod polja URL platforme možete odabrati gdje će se FastComments prikazivati u vašim Canvas tečajevima. Obje pozicije su po zadanim postavkama omogućene:
 
-- **Assignment View** - komentari se automatski prikazuju ispod zadataka.
-- **Rich Content Editor Button** - nastavnici mogu ugraditi FastComments na Stranice, Testove i Obavijesti koristeći gumb na alatnoj traci u Rich Content Editoru.
+- **Prikaz zadataka** - komentari se automatski prikazuju ispod zadataka.
+- **Gumb Rich Content Editora** - nastavnici mogu umetnuti FastComments u Stranice, Kvizove i Obavijesti koristeći gumb na alatnoj traci u Rich Content Editoru.
 
-Možete omogućiti jedno ili oba. Mora biti omogućena barem jedna lokacija.
+Možete omogućiti jedno ili oba. Najmanje jedna pozicija mora biti omogućena.
 
 Kliknite **Kreiraj konfiguraciju**.
 
-#### Copy the Configuration URL
+#### Kopirajte URL konfiguracije
 
-Nakon stvaranja konfiguracije, čarobnjak prelazi na **Korak 2: Poveži**. Na vrhu stranice istaknuto je prikazan **URL konfiguracije** s gumbom **Kopiraj**.
+Nakon kreiranja konfiguracije, čarobnjak prelazi na **Korak 2: Poveži**. Na vrhu stranice istaknuti je **URL konfiguracije** koji se prikazuje s gumbom **Kopiraj**.
 
-Kopirajte ovaj URL. Trebat će vam u sljedećem koraku za stvaranje developerskog ključa u Canvasu.
+Kopirajte taj URL. Trebat će vam u sljedećem koraku za kreiranje razvojnog ključa u Canvasu.
 
-Stranica također prikazuje numerirane upute što učiniti u Canvasu, plus polja za unos **Client ID** i neobaveznog **Deployment ID** kada ih dobijete.
+Stranica također prikazuje numerirane upute što napraviti u Canvasu, kao i polja za unos **Client ID** i neobveznog **Deployment ID** nakon što ih dobijete.

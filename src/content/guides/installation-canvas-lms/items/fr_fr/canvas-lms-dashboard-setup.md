@@ -1,31 +1,31 @@
-#### Accédez à la configuration LTI de Canvas
+#### Navigate to LTI Config
 
-Connectez-vous à votre compte FastComments et allez sur <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mon compte > Configuration LTI Canvas</a>.
+Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">votre FastComments LTI Config</a>.
 
-La page de configuration utilise un assistant guidé qui vous accompagne à chaque étape. Vous commencerez à **Étape 1 : Créer**.
+The setup page uses a guided wizard that walks you through each step. You will start at **Step 1: Create**.
 
-#### Créer une nouvelle configuration LTI
+#### Create a New LTI Configuration
 
-Remplissez les champs suivants :
+Fill in the following fields:
 
-- **Nom de la configuration** - un libellé facultatif pour identifier cette configuration (utile si vous connectez plusieurs instances Canvas).
-- **URL de la plateforme** - l'URL de votre instance Canvas (par ex. `https://yourschool.instructure.com`). Ce champ est obligatoire.
+- **Configuration Name** - an optional label to identify this configuration (useful if you connect multiple Canvas instances).
+- **Platform URL** - your Canvas instance URL (e.g. `https://yourschool.instructure.com`). This field is required.
 
-#### Choisir les emplacements
+#### Choose Placements
 
-Sous l'URL de la plateforme, vous pouvez choisir où FastComments apparaît dans vos cours Canvas. Les deux emplacements sont activés par défaut :
+Below the Platform URL, you can choose where FastComments appears in your Canvas courses. Both placements are enabled by default:
 
-- **Affichage des devoirs** - les commentaires apparaissent automatiquement sous les devoirs.
-- **Bouton de l'éditeur de contenu enrichi** - les enseignants peuvent intégrer FastComments dans Pages, Quizzes et Announcements en utilisant le bouton de la barre d'outils de l'éditeur de contenu enrichi.
+- **Assignment View** - comments appear automatically below assignments.
+- **Rich Content Editor Button** - instructors can embed FastComments in Pages, Quizzes, and Announcements using the toolbar button in the Rich Content Editor.
 
-Vous pouvez activer un emplacement ou les deux. Au moins un emplacement doit être activé.
+You can enable one or both. At least one placement must be enabled.
 
-Cliquez sur **Créer la configuration**.
+Click **Create Configuration**.
 
-#### Copier l'URL de configuration
+#### Copy the Configuration URL
 
-Après avoir créé la configuration, l'assistant passe à **Étape 2 : Connecter**. Une **URL de configuration** bien visible est affichée en haut de la page avec un bouton **Copier**.
+After creating the configuration, the wizard advances to **Step 2: Connect**. A prominent **Configuration URL** is displayed at the top of the page with a **Copy** button.
 
-Copiez cette URL. Vous en aurez besoin à l'étape suivante pour créer un Developer Key dans Canvas.
+Copy this URL. You will need it in the next step to create a Developer Key in Canvas.
 
-La page affiche également des instructions numérotées expliquant ce qu'il faut faire dans Canvas, ainsi que des champs pour saisir le **Client ID** et, si nécessaire, le **Deployment ID** une fois que vous les avez.
+The page also shows numbered instructions for what to do in Canvas, plus fields to enter the **Client ID** and optional **Deployment ID** once you have them.

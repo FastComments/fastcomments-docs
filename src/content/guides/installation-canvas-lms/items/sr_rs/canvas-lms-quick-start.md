@@ -1,6 +1,9 @@
-1. Пријавите се на FastComments и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Унесите **Configuration Name** и ваш **Platform URL** (нпр. `https://yourschool.instructure.com`). Изаберите која **Placements** желите да омогућите (Assignment View и/или Editor Button — оба су подразумевано укључена). Кликните на **Create Configuration**. Визард ће прећи на Step 2 и приказати ваш **Configuration URL**.
-3. У Canvas-у идите на **Admin > Developer Keys > + Developer Key > LTI Key**. Подесите **Method** на "Enter URL" и залепите Configuration URL. Сачувајте кључ, затим подесите његово **State** на **ON** и кликните **Allow** када се појави упит.
+---
+1. Идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">вашу FastComments LTI конфигурацију</a>.
+2. Унесите **Configuration Name** и ваш **Platform URL** (нпр. `https://yourschool.instructure.com`). Изаберите која **Placements** да омогућите (Assignment View и/или Editor Button — оба су подразумевано укључена). Кликните **Create Configuration**. Чаробњак прелази на корак 2 и приказује ваш **Configuration URL**.
+3. У Canvas-у идите на **Admin > Developer Keys > + Developer Key > LTI Key**. Поставите **Method** на "Enter URL" и налепите ваш **Configuration URL**. Сачувајте кључ, затим његово **State** поставите на **ON** и кликните **Allow** када будете упитани.
 4. Копирајте број **Client ID** из табеле Developer Keys у Canvas-у. Вратите се у FastComments, налепите га у поље **Client ID** и кликните **Save & Continue**.
-5. Прегледајте резиме конфигурације и кликните на **Enable Integration** да активирате интеграцију.
-6. Инсталирајте External App у Canvas-у (**Admin > Settings > Apps > + App > By Client ID**). Коментари ће се аутоматски приказивати испод задатака, а наставници могу уметнути FastComments у Pages, Quizzes и Announcements преко дугмета на траци алата Rich Content Editor.
+5. Прегледајте сажетак конфигурације и кликните **Enable Integration** да бисте активирали интеграцију.
+6. Инсталирајте External App у Canvas-у (**Admin > Settings > Apps > + App > By Client ID**). Коментари ће се аутоматски појавити испод задатака, а наставници могу уградити FastComments на странице, квизове и обавештења преко дугмета на траци алата Rich Content Editor.
+
+---

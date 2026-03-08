@@ -1,6 +1,6 @@
-1. Увійдіть у FastComments і перейдіть до <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мій обліковий запис > Конфігурація Canvas LTI</a>.
-2. Введіть **Configuration Name** та ваш **Platform URL** (наприклад, `https://yourschool.instructure.com`). Оберіть, які **Placements** увімкнути (Assignment View та/або Editor Button — обидві увімкнені за замовчуванням). Натисніть **Create Configuration**. Майстер перейде до Кроку 2 і покаже ваш **Configuration URL**.
-3. У Canvas перейдіть до **Admin > Developer Keys > + Developer Key > LTI Key**. Встановіть **Method** на "Enter URL" і вставте Configuration URL. Збережіть ключ, потім встановіть його **State** у **ON** та натисніть **Allow**, коли з’явиться запит.
-4. Скопіюйте номер **Client ID** із таблиці Developer Keys у Canvas. Повернувшись до FastComments, вставте його в поле **Client ID** і натисніть **Save & Continue**.
-5. Перегляньте резюме конфігурації та натисніть **Enable Integration**, щоб запустити інтеграцію.
-6. Встановіть Зовнішній додаток у Canvas (**Admin > Settings > Apps > + App > By Client ID**). Коментарі автоматично з’являться під завданнями, а викладачі зможуть вставляти FastComments у Сторінки, Тести та Оголошення через кнопку на панелі інструментів Редактора багатого вмісту.
+1. Перейдіть до <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">вашої конфігурації LTI FastComments</a>.
+2. Введіть **Назву конфігурації** та ваш **URL платформи** (наприклад `https://yourschool.instructure.com`). Виберіть, які **Розміщення** увімкнути (Assignment View та/або Editor Button — обидва увімкнені за замовчуванням). Натисніть **Створити конфігурацію**. Майстер переходить до Кроку 2 і показує ваш **URL конфігурації**.
+3. У Canvas перейдіть до **Admin > Developer Keys > + Developer Key > LTI Key**. Встановіть **Method** на "Enter URL" і вставте URL конфігурації. Збережіть ключ, потім встановіть його **State** в **ON** і натисніть **Allow**, коли з’явиться запит.
+4. Скопіюйте номер **Client ID** з таблиці Developer Keys у Canvas. Повернувшись у FastComments, вставте його в поле **Client ID** і натисніть **Зберегти та продовжити**.
+5. Перегляньте зведення конфігурації та натисніть **Увімкнути інтеграцію**, щоб запустити її.
+6. Встановіть Зовнішній додаток у Canvas (**Admin > Settings > Apps > + App > By Client ID**). Коментарі автоматично з’являться під завданнями, а викладачі можуть вбудовувати FastComments на Сторінки, у Тести та Оголошення через кнопку на панелі інструментів Rich Content Editor.
