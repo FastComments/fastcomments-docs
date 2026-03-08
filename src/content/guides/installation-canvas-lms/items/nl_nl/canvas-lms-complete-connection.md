@@ -1,28 +1,28 @@
-#### Voer de Client ID in in FastComments
+#### Voer de Client ID in bij FastComments
 
-Ga terug naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mijn account > Canvas LTI-configuratie</a> in FastComments. De wizard zou op **Stap 2: Verbinden** moeten staan.
+Ga terug naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">uw FastComments LTI Config</a>. De wizard zou op **Step 2: Connect** moeten staan.
 
-Plak de **Client ID** die je vanuit Canvas hebt gekopieerd in het veld **Client ID**. Voer optioneel de **Deployment ID** in als je LMS deze verstrekt.
+Plak de **Client ID** die u uit Canvas hebt gekopieerd in het veld **Client ID**. Voer optioneel de **Deployment ID** in als uw LMS die levert.
 
-Klik op **Opslaan & Doorgaan**.
+Klik **Save & Continue**.
 
-#### Activeer de integratie
+#### Schakel de Integratie in
 
-De wizard gaat verder naar **Stap 3: Live gaan**. Er wordt een overzicht van je configuratie getoond (naam, platform-URL, Client ID en deployment ID).
+De wizard gaat verder naar **Step 3: Go Live**. Een samenvatting van uw configuratie wordt weergegeven (naam, platform URL, Client ID, en deployment ID).
 
-Controleer de gegevens en klik vervolgens op **Activeer integratie** om de LTI-verbinding te activeren.
+Controleer de gegevens en klik vervolgens op **Enable Integration** om de LTI-verbinding te activeren.
 
-Na het inschakelen toont de wizard de **Beheerweergave**, waar je je configuratie kunt bewerken, alle LTI-URL's kunt bekijken of extra deployments kunt toevoegen.
+Na het inschakelen toont de wizard de **Management View** waar u uw configuratie kunt bewerken, alle LTI URLs kunt bekijken of extra deployments kunt toevoegen.
 
-#### Installeer de externe app in Canvas
+#### Installeer de External App in Canvas
 
-Ga in Canvas naar **Admin** > selecteer je account > **Instellingen** > tabblad **Apps**.
+In Canvas gaat u naar **Admin** > selecteer uw account > **Settings** > **Apps** tab.
 
-Klik op **+ App** en configureer het volgende:
+Klik **+ App** en configureer:
 
-1. Stel **Configuratietype** in op **Op Client ID**.
-2. Plak de **Client ID** uit de tabel Developer Keys.
-3. Klik op **Verzenden**.
+1. Stel **Configuration Type** in op **By Client ID**.
+2. Plak de **Client ID** uit de Developer Keys table.
+3. Klik **Submit**.
 4. Bevestig de installatie wanneer daarom wordt gevraagd.
 
 FastComments is nu op accountniveau geïnstalleerd en beschikbaar voor alle cursussen.

@@ -1,18 +1,18 @@
 #### Insira o Client ID no FastComments
 
-Volte para <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> no FastComments. O assistente deve estar em **Step 2: Connect**.
+Volte para <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">sua configuração LTI do FastComments</a>. O assistente deve estar em **Passo 2: Conectar**.
 
-Cole o **Client ID** que você copiou do Canvas no campo **Client ID**. Opcionalmente, informe o **Deployment ID** se seu LMS fornecer um.
+Cole o **Client ID** que você copiou do Canvas no campo **Client ID**. Opcionalmente, insira o **Deployment ID** se seu LMS fornecer um.
 
-Clique em **Save & Continue**.
+Clique em **Salvar e Continuar**.
 
 #### Ativar a Integração
 
-O assistente avança para **Step 3: Go Live**. Um resumo da sua configuração é exibido (nome, platform URL, Client ID, and deployment ID).
+O assistente avança para **Passo 3: Ir ao vivo**. Um resumo da sua configuração é exibido (nome, platform URL, Client ID e Deployment ID).
 
-Revise os detalhes e clique em **Enable Integration** para ativar a conexão LTI.
+Revise os detalhes e clique em **Ativar Integração** para ativar a conexão LTI.
 
-Após ativar, o assistente exibirá a **Management View**, onde você pode editar sua configuração, ver todas as LTI URLs ou adicionar implantações adicionais.
+Após habilitar, o assistente mostra a **Visão de Gerenciamento** onde você pode editar sua configuração, ver todas as LTI URLs ou adicionar implantações adicionais.
 
 #### Instale o App Externo no Canvas
 
@@ -25,4 +25,4 @@ Clique em **+ App** e configure:
 3. Clique em **Submit**.
 4. Confirme a instalação quando solicitado.
 
-FastComments agora está instalado no nível da conta e disponível para todos os cursos.
+O FastComments agora está instalado em nível de conta e disponível para todos os cursos.

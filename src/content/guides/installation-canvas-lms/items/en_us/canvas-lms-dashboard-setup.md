@@ -1,6 +1,6 @@
-#### Navigate to Canvas LTI Config
+#### Navigate to LTI Config
 
-Log in to your FastComments account and go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>.
 
 The setup page uses a guided wizard that walks you through each step. You will start at **Step 1: Create**.
 

@@ -1,22 +1,22 @@
 #### Введите Client ID в FastComments
 
-Вернитесь на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> в FastComments. Мастер должен быть на **Step 2: Connect**.
+Вернитесь к <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>. Мастер должен быть на **Step 2: Connect**.
 
-Вставьте **Client ID**, скопированный из Canvas, в поле **Client ID**. При желании введите **Deployment ID**, если ваша LMS предоставляет его.
+Вставьте **Client ID**, который вы скопировали из Canvas, в поле **Client ID**. При желании введите **Deployment ID**, если ваша LMS предоставляет его.
 
 Нажмите **Save & Continue**.
 
-#### Включение интеграции
+#### Enable the Integration
 
-Мастер переходит к **Step 3: Go Live**. Отображается сводка вашей конфигурации (name, platform URL, Client ID, and deployment ID).
+Мастер перейдёт к **Step 3: Go Live**. Отображается сводка вашей конфигурации (name, platform URL, Client ID, and deployment ID).
 
-Просмотрите детали, затем нажмите **Enable Integration**, чтобы активировать LTI-подключение.
+Просмотрите данные, затем нажмите **Enable Integration**, чтобы активировать LTI-подключение.
 
-После включения мастер показывает **Management View**, где вы можете редактировать вашу конфигурацию, просматривать все LTI URLs или добавлять дополнительные deployments.
+После включения мастер покажет **Management View**, где вы можете отредактировать конфигурацию, просмотреть все LTI URLs, или добавить дополнительные deployments.
 
-#### Установите внешнее приложение в Canvas
+#### Install the External App in Canvas
 
-В Canvas перейдите в **Admin** > выберите ваш аккаунт > **Settings** > вкладка **Apps**.
+В Canvas перейдите в **Admin** > выберите вашу учетную запись > **Settings** > вкладка **Apps**.
 
 Нажмите **+ App** и настройте:
 
@@ -25,4 +25,4 @@
 3. Нажмите **Submit**.
 4. Подтвердите установку, когда появится запрос.
 
-FastComments теперь установлен на уровне аккаунта и доступен во всех курсах.
+FastComments теперь установлена на уровне аккаунта и доступна во всех курсах.

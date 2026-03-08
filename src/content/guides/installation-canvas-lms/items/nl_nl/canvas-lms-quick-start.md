@@ -1,6 +1,6 @@
-1. Log in op FastComments en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mijn account > Canvas LTI-configuratie</a>.
-2. Voer een **Configuratienaam** en uw **Platform-URL** in (bijv. `https://yourschool.instructure.com`). Kies welke **Plaatsingen** u wilt inschakelen (Opdrachtweergave en/of Editor-knop — beide zijn standaard ingeschakeld). Klik op **Configuratie aanmaken**. De wizard gaat naar Stap 2 en toont uw **Configuratie-URL**.
-3. Ga in Canvas naar **Beheerder > Ontwikkelaarssleutels > + Developer Key > LTI-sleutel**. Stel **Methode** in op "URL invoeren" en plak de Configuratie-URL. Sla de sleutel op, zet vervolgens de **Status** op **AAN** en klik op **Toestaan** wanneer daarom wordt gevraagd.
-4. Kopieer het **Client ID**-nummer uit de tabel Developer Keys in Canvas. Plak het in FastComments in het veld **Client ID** en klik op **Opslaan & Doorgaan**.
-5. Controleer de configuratiesamenvatting en klik op **Integratie inschakelen** om live te gaan.
-6. Installeer de externe app in Canvas (**Beheerder > Instellingen > Apps > + App > Op Client ID**). Reacties verschijnen automatisch onder opdrachten, en docenten kunnen FastComments insluiten op Pagina's, Toetsen en Mededelingen via de knop op de werkbalk van de Rich Content Editor.
+1. Ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">uw FastComments LTI-configuratie</a>.
+2. Voer een **Configuration Name** en uw **Platform URL** in (bijv. `https://yourschool.instructure.com`). Kies welke **Placements** u wilt inschakelen (Assignment View en/of Editor Button — beide zijn standaard ingeschakeld). Klik op **Create Configuration**. De wizard gaat naar Stap 2 en toont uw **Configuration URL**.
+3. Ga in Canvas naar **Admin > Developer Keys > + Developer Key > LTI Key**. Stel **Method** in op "Enter URL" en plak de Configuration URL. Sla de sleutel op, zet vervolgens de **State** op **ON** en klik op **Allow** wanneer daarom wordt gevraagd.
+4. Kopieer het **Client ID**-nummer uit de Developer Keys-tabel in Canvas. Ga terug naar FastComments, plak het in het veld **Client ID** en klik op **Save & Continue**.
+5. Bekijk de configuratiesamenvatting en klik op **Enable Integration** om live te gaan.
+6. Installeer de External App in Canvas (**Admin > Settings > Apps > + App > By Client ID**). Reacties verschijnen automatisch onder opdrachten, en docenten kunnen FastComments insluiten in Pages, Quizzes en Announcements via de knop in de Rich Content Editor-werkbalk.

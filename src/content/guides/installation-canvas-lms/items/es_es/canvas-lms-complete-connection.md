@@ -1,28 +1,28 @@
-#### Introduzca el Client ID en FastComments
+#### Enter the Client ID in FastComments
 
-Vuelva a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mi cuenta > Configuración LTI de Canvas</a> en FastComments. El asistente debería estar en **Paso 2: Conectar**.
+Vuelve a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">tu Configuración LTI de FastComments</a>. El asistente debería estar en **Paso 2: Conectar**.
 
-Pegue el **Client ID** que copió de Canvas en el campo **Client ID**. Opcionalmente, introduzca el **Deployment ID** si su LMS proporciona uno.
+Pega el **Client ID** que copiaste de Canvas en el campo **Client ID**. Opcionalmente introduce el **Deployment ID** si tu LMS proporciona uno.
 
-Haga clic en **Guardar y continuar**.
+Haz clic en **Save & Continue**.
 
-#### Habilitar la integración
+#### Enable the Integration
 
-El asistente avanza a **Paso 3: Ir en vivo**. Se muestra un resumen de su configuración (nombre, URL de la plataforma, Client ID y Deployment ID).
+El asistente avanza a **Paso 3: Ir en vivo**. Se muestra un resumen de tu configuración (nombre, URL de la plataforma, Client ID y deployment ID).
 
-Revise los detalles y luego haga clic en **Habilitar integración** para activar la conexión LTI.
+Revisa los detalles y, a continuación, haz clic en **Enable Integration** para activar la conexión LTI.
 
-Después de habilitar, el asistente muestra la **Vista de administración** donde puede editar su configuración, ver todas las URL LTI o agregar implementaciones adicionales.
+Después de habilitarla, el asistente muestra la **Management View** donde puedes editar tu configuración, ver todas las URLs LTI o añadir implementaciones adicionales.
 
-#### Instalar la aplicación externa en Canvas
+#### Install the External App in Canvas
 
-En Canvas, vaya a **Administración** > seleccione su cuenta > **Configuración** > pestaña **Aplicaciones**.
+En Canvas, ve a **Admin** > selecciona tu cuenta > **Settings** > pestaña **Apps**.
 
-Haga clic en **+ Aplicación** y configure:
+Haz clic en **+ App** y configura:
 
-1. Establezca **Tipo de configuración** en **Por Client ID**.
-2. Pegue el **Client ID** de la tabla Claves de desarrollador.
-3. Haga clic en **Enviar**.
-4. Confirme la instalación cuando se le solicite.
+1. Establece **Configuration Type** en **By Client ID**.
+2. Pega el **Client ID** desde la tabla Developer Keys.
+3. Haz clic en **Submit**.
+4. Confirma la instalación cuando se te solicite.
 
 FastComments ahora está instalado a nivel de cuenta y disponible para todos los cursos.

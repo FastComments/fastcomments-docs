@@ -1,28 +1,28 @@
 #### Geben Sie die Client ID in FastComments ein
 
-Gehen Sie zurück zu <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mein Konto > Canvas LTI-Konfiguration</a> in FastComments. Der Assistent sollte auf **Schritt 2: Verbinden** sein.
+Gehen Sie zurück zu <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Ihre FastComments LTI-Konfiguration</a>. Der Assistent sollte auf **Step 2: Connect** stehen.
 
 Fügen Sie die **Client ID** ein, die Sie aus Canvas kopiert haben, in das Feld **Client ID**. Optional können Sie die **Deployment ID** eingeben, falls Ihr LMS eine bereitstellt.
 
-Klicken Sie auf **Speichern & Weiter**.
+Klicken Sie auf **Save & Continue**.
 
 #### Integration aktivieren
 
-Der Assistent springt zu **Schritt 3: Live gehen**. Eine Zusammenfassung Ihrer Konfiguration wird angezeigt (Name, Plattform-URL, Client ID und Deployment ID).
+Der Assistent wechselt zu **Step 3: Go Live**. Eine Zusammenfassung Ihrer Konfiguration wird angezeigt (Name, Plattform-URL, Client ID und deployment ID).
 
-Überprüfen Sie die Details und klicken Sie dann auf **Integration aktivieren**, um die LTI-Verbindung zu aktivieren.
+Überprüfen Sie die Angaben und klicken Sie dann auf **Enable Integration**, um die LTI-Verbindung zu aktivieren.
 
-Nach der Aktivierung zeigt der Assistent die **Management-Ansicht**, in der Sie Ihre Konfiguration bearbeiten, alle LTI-URLs anzeigen oder zusätzliche Bereitstellungen hinzufügen können.
+Nach dem Aktivieren zeigt der Assistent die **Management View**, in der Sie Ihre Konfiguration bearbeiten, alle LTI-URLs anzeigen oder zusätzliche Deployments hinzufügen können.
 
-#### Externe App in Canvas installieren
+#### Installieren Sie die externe App in Canvas
 
-In Canvas gehen Sie zu **Admin** > wählen Sie Ihr Konto aus > **Einstellungen** > Reiter **Apps**.
+In Canvas gehen Sie zu **Admin** > wählen Sie Ihr Konto aus > **Settings** > Registerkarte **Apps**.
 
 Klicken Sie auf **+ App** und konfigurieren Sie:
 
 1. Setzen Sie **Configuration Type** auf **By Client ID**.
-2. Fügen Sie die **Client ID** aus der Tabelle 'Developer Keys' ein.
+2. Fügen Sie die **Client ID** aus der Tabelle der Developer Keys ein.
 3. Klicken Sie auf **Submit**.
 4. Bestätigen Sie die Installation, wenn Sie dazu aufgefordert werden.
 
-FastComments ist jetzt auf Kontoebene installiert und für alle Kurse verfügbar.
+FastComments ist nun auf Kontoebene installiert und für alle Kurse verfügbar.

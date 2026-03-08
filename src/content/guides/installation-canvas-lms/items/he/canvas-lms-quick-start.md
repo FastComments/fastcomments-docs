@@ -1,6 +1,6 @@
-1. התחבר ל-FastComments ועבור אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">החשבון שלי > תצורת LTI של Canvas</a>.
-2. הזן **Configuration Name** ו-**Platform URL** (למשל `https://yourschool.instructure.com`). בחר אילו **Placements** להפעיל (Assignment View ו/או Editor Button — שניהם מופעלים כברירת מחדל). לחץ על **Create Configuration**. המדריך מתקדם לשלב 2 ומציג את **Configuration URL** שלך.
-3. ב-Canvas, עבור אל **Admin > Developer Keys > + Developer Key > LTI Key**. קבע את **Method** ל-"Enter URL" והדבק את ה-Configuration URL. שמור את המפתח, לאחר מכן קבע את **State** שלו ל-**ON** ולחץ על **Allow** כאשר תתבקש.
+1. גש אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">תצורת LTI של FastComments שלך</a>.
+2. הזן **שם תצורה** ואת **URL של הפלטפורמה** שלך (למשל `https://yourschool.instructure.com`). בחר אילו **מיקומים** לאפשר (תצוגת מטלה ו/או כפתור העורך — שניהם מופעלים כברירת מחדל). לחץ על **צור תצורה**. האשף מתקדם לשלב 2 ומציג את **URL התצורה** שלך.
+3. ב-Canvas, עבור אל **Admin > Developer Keys > + Developer Key > LTI Key**. הגדר את **Method** ל-"Enter URL" והדבק את כתובת ה-URL של התצורה. שמור את המפתח, לאחר מכן הגדר את **State** ל-**ON** ולחץ על **Allow** כאשר תתבקש.
 4. העתק את מספר **Client ID** מטבלת Developer Keys ב-Canvas. חזור ל-FastComments, הדבק אותו בשדה **Client ID** ולחץ על **Save & Continue**.
-5. עיין בסיכום התצורה ולחץ על **Enable Integration** כדי להפוך אותה לזמינה.
-6. התקן את ה-External App ב-Canvas (**Admin > Settings > Apps > + App > By Client ID**). ההערות יופיעו אוטומטית מתחת ל-assignments, ומדריכים יכולים להטמיע את FastComments בדפים, בחידונים ובהודעות באמצעות כפתור סרגל הכלים של Rich Content Editor.
+5. סקור את סיכום התצורה ולחץ על **Enable Integration** כדי להפעיל את האינטגרציה.
+6. התקן את ה-External App ב-Canvas (**Admin > Settings > Apps > + App > By Client ID**). התגובות יופיעו אוטומטית מתחת למטלות, ומרצים יוכלו להטמיע את FastComments בדפים, בחידונים ובהודעות דרך כפתור בסרגל הכלים של Rich Content Editor.
