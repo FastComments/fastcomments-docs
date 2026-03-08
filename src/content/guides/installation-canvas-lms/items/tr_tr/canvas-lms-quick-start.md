@@ -1,9 +1,6 @@
----
-1. FastComments'e giriş yapın ve <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a> sayfasına gidin.
-2. Bir **Configuration Name** ve **Platform URL** (ör. `https://yourschool.instructure.com`) girin, sonra **Create Configuration**'a tıklayın. Sihirbaz Adım 2'ye ilerler ve size **Configuration URL** gösterilir.
-3. Canvas'ta **Admin > Developer Keys > + Developer Key > LTI Key** bölümüne gidin. **Method**'u "Enter URL" olarak ayarlayın ve Configuration URL'i yapıştırın. Anahtarı kaydedin ve **State**'ini **ON** olarak ayarlayın.
-4. Canvas'taki Developer Keys tablosundan **Client ID** numarasını kopyalayın. FastComments'a geri dönün, bunu **Client ID** alanına yapıştırın ve **Save & Continue**'a tıklayın.
-5. Yapılandırma özetini gözden geçirin ve yayına almak için **Enable Integration**'a tıklayın.
-6. Canvas dersinizde **Settings > Navigation** kısmına gidin, **FastComments**'ı bulun ve etkinleştirin. Yorumlar ders gezinti öğesi olarak görünecektir.
-
----
+1. FastComments'e giriş yapın ve <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Hesabım > Canvas LTI Yapılandırması</a>.
+2. Bir **Yapılandırma Adı** ve **Platform URL** (örn. `https://yourschool.instructure.com`) girin. Etkinleştirmek istediğiniz **Yerleşimleri** seçin (Ödev Görünümü ve/veya Düzenleyici Düğmesi — her ikisi varsayılan olarak açıktır). **Yapılandırma Oluştur**'a tıklayın. Sihirbaz Adım 2'ye ilerler ve **Yapılandırma URL**'nizi gösterir.
+3. Canvas'ta **Admin > Developer Keys > + Developer Key > LTI Key**'e gidin. **Yöntem**'i "URL Girin" olarak ayarlayın ve Yapılandırma URL'sini yapıştırın. Anahtarı kaydedin, ardından **Durum**'u **AÇIK** olarak ayarlayın ve istendiğinde **İzin Ver**'e tıklayın.
+4. Canvas'taki Developer Keys tablosundan **Client ID** numarasını kopyalayın. FastComments'e geri dönün, bunu **Client ID** alanına yapıştırın ve **Kaydet ve Devam Et**'e tıklayın.
+5. Yapılandırma özetini gözden geçirin ve canlıya almak için **Entegrasyonu Etkinleştir**'e tıklayın.
+6. Canvas'ta Harici Uygulamayı yükleyin (**Admin > Settings > Apps > + App > Client ID ile**). Yorumlar otomatik olarak ödevlerin altında görünecek ve eğitmenler FastComments'i Sayfalar, Sınavlar ve Duyurular içinde Zengin İçerik Düzenleyicisi araç çubuğu düğmesi aracılığıyla gömebilirler.

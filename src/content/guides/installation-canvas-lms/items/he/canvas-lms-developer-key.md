@@ -1,23 +1,23 @@
 #### פתח את Developer Keys ב-Canvas
 
-התחבר/י ל-Canvas כמנהל/ת. עבור/י אל **Admin** (בסרגל הצד השמאלי) > בחר/י את החשבון שלך > **Developer Keys**.
+התחבר ל-Canvas כמנהל. עבור אל **Admin** (בסרגל הצד השמאלי) > בחר את החשבון שלך > **Developer Keys**.
 
-#### צור מפתח LTI
+#### צור LTI Developer Key
 
 לחץ על **+ Developer Key** ובחר **LTI Key**.
 
 בטופס התצורה:
 
-1. הגדר את **Method** ל‑**Enter URL**.
-2. הדבק את **Configuration URL** שהעתקת מ-FastComments אל שדה ה-URL.
+1. הגדר את **Method** ל-**Enter URL**.
+2. הדבק את ה-**Configuration URL** שהעתקת מ-FastComments בשדה ה-URL.
 3. Canvas יטען את תצורת ה-LTI אוטומטית.
-4. תן למפתח שם (למשל "FastComments").
+4. תן ל-Developer Key שם (למשל "FastComments").
 5. לחץ על **Save**.
 
-#### הפעל את מפתח ה-Developer
+#### הפעל את Developer Key
 
-לאחר השמירה, המפתח החדש יופיע בטבלת Developer Keys עם **State** מוגדר ל‑**OFF**. לחץ על המתג כדי להגדיר אותו ל‑**ON**.
+לאחר השמירה, המפתח החדש יופיע בטבלת Developer Keys כאשר ה-**State** שלו מוגדר כ-**OFF**. לחץ על המתג כדי להגדיר אותו ל-**ON**. יתכן ש-Canvas יבקש אישור — לחץ על **Allow** כדי להפעיל את המפתח.
 
-#### העתק את Client ID
+#### העתק את ה-Client ID
 
-בטבלת Developer Keys מוצג מספרי **Client ID** בעמודת Details (למשל `17000000000042`). העתק מספר זה - תזדקק/י לו בשלב הבא.
+טבלת Developer Keys מציגה **Client ID** מספרי בעמודת Details (למשל `17000000000042`). העתק מספר זה - תזדקק לו בשלב הבא.

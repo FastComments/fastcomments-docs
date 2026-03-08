@@ -1,26 +1,24 @@
-#### Омогућите FastComments у навигацији курса
+#### How Comments Appear in Your Courses
 
-У свом Canvas курсу идите на **Подешавања** > картица **Навигација**.
+Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
 
-Пронађите **FastComments** у списку скривених ставки на дну. Превуците га у списак видљивих ставки (или кликните мени са три тачке и изаберите **Омогући**).
+#### Assignment View
 
-Кликните **Сачувај**. FastComments ће се сада појавити у бочној траци навигације курса.
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-#### Коришћење FastComments у курсу
+Each assignment gets its own separate comment thread.
 
-Када студенти кликну на **FastComments** у навигацији курса, LTI покретање се одвија аутоматски:
+#### Rich Content Editor Button
 
-- Студенти су пријављени преко свог Canvas налога (име, имејл и аватар се синхронизују).
-- Сваки курс добија своју нит коментара.
-- Коментари су уживо и ажурирају се у реалном времену.
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-#### Додавање у појединачне модуле (опционо)
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-Такође можете додати FastComments у појединачне модуле као ставку Спољни алат:
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-1. У модулу кликните на **+** да бисте додали ставку.
-2. Изаберите **Спољни алат**.
-3. Одаберите **FastComments** са списка.
-4. Кликните **Додај ставку**.
+#### Automatic SSO
 
-Ово даје сваком модулу своју посебну нит дискусије.
+In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.

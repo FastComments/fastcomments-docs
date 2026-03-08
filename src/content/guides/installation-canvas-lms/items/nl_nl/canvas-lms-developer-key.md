@@ -1,23 +1,25 @@
-#### Ontwikkelaarssleutels in Canvas openen
+#### Open Developer Keys in Canvas
 
-Meld u aan bij Canvas als beheerder. Ga naar **Beheer** (in de linkerzijbalk) > selecteer uw account > **Ontwikkelaarssleutels**.
+Meld u aan bij Canvas als beheerder. Ga naar **Admin** (in de linkerzijbalk) > selecteer uw account > **Developer Keys**.
 
-#### Maak een LTI-ontwikkelaarsleutel
+#### Maak een LTI Developer Key
 
-Klik op **+ Ontwikkelaarssleutel** en selecteer **LTI-sleutel**.
+Klik op **+ Developer Key** en selecteer **LTI Key**.
 
 In het configuratieformulier:
 
-1. Stel **Methode** in op **URL invoeren**.
-2. Plak de **Configuratie-URL** die u uit FastComments hebt gekopieerd in het URL-veld.
-3. Canvas laadt de LTI-configuratie automatisch.
+1. Stel **Method** in op **Enter URL**.
+2. Plak de **Configuration URL** die u van FastComments hebt gekopieerd in het URL-veld.
+3. Canvas zal de LTI-configuratie automatisch laden.
 4. Geef de sleutel een naam (bijv. "FastComments").
-5. Klik op **Opslaan**.
+5. Klik op **Save**.
 
-#### Schakel de ontwikkelaarsleutel in
+#### Schakel de Developer Key in
 
-Na het opslaan verschijnt de nieuwe sleutel in de tabel Ontwikkelaarssleutels met de **Status** ingesteld op **OFF**. Klik op de schakelaar om deze op **ON** te zetten.
+Na het opslaan verschijnt de nieuwe sleutel in de Developer Keys-tabel met de **State** ingesteld op **UIT**. Klik op de schakelaar om deze op **AAN** te zetten. Canvas kan u vragen dit te bevestigen — klik op **Allow** om de sleutel in te schakelen.
 
-#### Kopieer de Client-ID
+#### Kopieer de Client ID
 
-De tabel Ontwikkelaarssleutels toont een numerieke **Client ID** in de kolom Details (bijv. `17000000000042`). Kopieer dit nummer — u heeft het in de volgende stap nodig.
+De Developer Keys-tabel toont een numerieke **Client ID** in de kolom Details (bijv. `17000000000042`). Kopieer dit nummer — u heeft het in de volgende stap nodig.
+
+---

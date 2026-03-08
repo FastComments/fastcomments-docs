@@ -1,28 +1,24 @@
-#### Omogočite FastComments v navigaciji predmeta
+#### Kako se komentarji prikazujejo v vaših tečajih
 
-V vašem predmetu v Canvas pojdite na **Nastavitve** > zavihek **Navigacija**.
+Ko je LTI integracija omogočena in je zunanja aplikacija nameščena, FastComments deluje samodejno glede na postavitve, ki ste jih konfigurirali:
 
-Poiščite **FastComments** na seznamu skritih elementov na dnu. Povlecite ga na seznam vidnih elementov (ali kliknite meni s tremi pikami in izberite **Omogoči**).
+#### Pogled naloge
 
-Kliknite **Shrani**. FastComments se bo zdaj prikazal v stranski vrstici navigacije predmeta.
+Če je postavitev **Pogled naloge** omogočena, se komentarji samodejno prikažejo pod vsako nalogo v tečaju. Študenti in inštruktorji vidijo razvejeno razdelek komentarjev, ko si ogledajo nalogo — za vsako nalogo ni potrebna dodatna nastavitev.
 
-#### Uporaba FastComments v predmetu
+Vsaka naloga ima svojo ločeno nit komentarjev.
 
-Ko študenti kliknejo **FastComments** v navigaciji predmeta, se LTI zažene samodejno:
+#### Gumb urejevalnika bogate vsebine
 
-- Študenti so prijavljeni prek svojega računa Canvas (ime, e-pošta in avatar se sinhronizirajo).
-- Vsak predmet dobi svojo nit komentarjev.
-- Komentarji so v živo in se posodabljajo v realnem času.
+Če je postavitev **Gumb urejevalnika** omogočena, lahko inštruktorji vgradijo FastComments v katero koli vsebino, ki uporablja Urejevalnik bogate vsebine:
 
-#### Dodajanje v posamezne module (neobvezno)
+1. Uredite **Stran**, **Kviz** ali **Obvestilo**.
+2. V orodni vrstici Urejevalnika bogate vsebine kliknite gumb **FastComments**.
+3. FastComments se samodejno vgradi v vsebino.
+4. Shrani stran.
 
-FastComments lahko dodate tudi v posamezne module kot element **Zunanji pripomoček**:
+Ko si študenti ogledajo stran, se vgrajeni pripomoček FastComments naloži z nitjo komentarjev, ki je edinstvena za to stran.
 
-1. V modulu kliknite **+**, da dodate element.
-2. Izberite **Zunanji pripomoček**.
-3. Izberite **FastComments** s seznama.
-4. Kliknite **Dodaj element**.
+#### Samodejni SSO
 
-To vsakemu modulu omogoči svojo ločeno nit za razpravo.
-
----
+V obeh postavitvah so študenti samodejno prijavljeni prek svojega Canvas računa. Imena, e-poštni naslovi in avatarji se sinhronizirajo prek LTI zagona — ločena prijava ni potrebna.

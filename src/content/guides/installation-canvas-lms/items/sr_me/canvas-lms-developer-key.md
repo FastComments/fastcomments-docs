@@ -1,23 +1,23 @@
-#### Отворите Кључеве за програмере у Canvas
+#### Otvorite Developer Keys u Canvasu
 
-Пријавите се у Canvas као администратор. Идите на **Admin** (у лијевом бочном менију) > изаберите ваш налог > **Developer Keys**.
+Prijavite se u Canvas kao administrator. Idite na **Admin** (u lijevom bočnom meniju) > odaberite svoj nalog > **Developer Keys**.
 
-#### Креирајте LTI кључ за програмере
+#### Kreirajte LTI Developer Key
 
-Кликните **+ Developer Key** и изаберите **LTI Key**.
+Kliknite **+ Developer Key** i odaberite **LTI Key**.
 
-У формулару за конфигурацију:
+U obrascu za konfiguraciju:
 
-1. Подесите **Method** на **Enter URL**.
-2. Залепите **Configuration URL** који сте копирали са FastComments у поље URL.
-3. Canvas ће аутоматски учитати LTI конфигурацију.
-4. Дајте кључу име (нпр. "FastComments").
-5. Кликните **Save**.
+1. Postavite **Method** na **Enter URL**.
+2. Zalijepite **Configuration URL** koji ste kopirali iz FastComments u polje URL.
+3. Canvas će automatski učitati LTI konfiguraciju.
+4. Dajte ključu ime (npr. "FastComments").
+5. Kliknite **Save**.
 
-#### Омогућите кључ за програмере
+#### Omogućite Developer Key
 
-Након чувања, нови кључ ће се појавити у табели Кључеви за програмере са **State** постављеним на **OFF**. Кликните прекидач да бисте га поставили на **ON**.
+Nakon čuvanja, novi ključ će se pojaviti u tabeli Developer Keys sa svojim **State** postavljenim na **OFF**. Kliknite prekidač da ga postavite na **ON**. Canvas može tražiti potvrdu — kliknite **Allow** da omogućite ključ.
 
-#### Копирајте Client ID
+#### Kopirajte Client ID
 
-Табела Кључеви за програмере приказује нумерички **Client ID** у колони Details (нпр. `17000000000042`). Копирајте овај број - биће вам потребан у следећем кораку.
+Tabela Developer Keys prikazuje numerički **Client ID** u koloni Details (npr. `17000000000042`). Kopirajte ovaj broj - trebaće vam u sljedećem koraku.

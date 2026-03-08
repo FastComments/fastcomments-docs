@@ -1,26 +1,24 @@
-#### Ativar o FastComments na Navegação do Curso
+#### Como os Comentários Aparecem nos Seus Cursos
 
-Em seu curso no Canvas, vá para **Configurações** > aba **Navegação**.
+Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
 
-Encontre **FastComments** na lista de itens ocultos na parte inferior. Arraste-o para a lista de itens visíveis (ou clique no menu de três pontos e selecione **Ativar**).
+#### Assignment View
 
-Clique em **Salvar**. O **FastComments** agora aparecerá na barra lateral de navegação do curso.
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-#### Usando o FastComments em um Curso
+Each assignment gets its own separate comment thread.
 
-Quando os estudantes clicam em **FastComments** na navegação do curso, o lançamento LTI acontece automaticamente:
+#### Rich Content Editor Button
 
-- Os estudantes entram com sua conta do Canvas (nome, e-mail e avatar são sincronizados).
-- Cada curso tem seu próprio tópico de comentários.
-- Os comentários são ao vivo e são atualizados em tempo real.
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-#### Adicionando a Módulos Individuais (Opcional)
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-Você também pode adicionar o **FastComments** a módulos individuais como um item de **Ferramenta Externa**:
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-1. Em um módulo, clique em **+** para adicionar um item.
-2. Selecione **Ferramenta Externa**.
-3. Escolha **FastComments** na lista.
-4. Clique em **Adicionar Item**.
+#### SSO Automático
 
-Isso dá a cada módulo seu próprio tópico de discussão separado.
+In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.

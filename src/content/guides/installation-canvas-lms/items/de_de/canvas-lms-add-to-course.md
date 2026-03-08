@@ -1,26 +1,27 @@
-#### FastComments in der Kursnavigation aktivieren
+---
+#### Wie Kommentare in Ihren Kursen angezeigt werden
 
-Gehen Sie in Ihrem Canvas-Kurs zu **Einstellungen** > Registerkarte **Navigation**.
+Sobald die LTI-Integration aktiviert und die externe App installiert ist, funktioniert FastComments automatisch basierend auf den von Ihnen konfigurierten Platzierungen:
 
-Suchen Sie **FastComments** in der Liste der ausgeblendeten Elemente unten. Ziehen Sie es in die Liste der sichtbaren Elemente (oder klicken Sie auf das Drei-Punkte-Menü und wählen Sie **Aktivieren**).
+#### Aufgabenansicht
 
-Klicken Sie auf **Speichern**. FastComments wird nun in der Kursnavigationsseitenleiste angezeigt.
+Wenn die **Aufgabenansicht** Platzierung aktiviert ist, erscheinen Kommentare automatisch unter jeder Aufgabe im Kurs. Studierende und Lehrende sehen einen verschachtelten Kommentarbereich, wenn sie eine Aufgabe ansehen — pro Aufgabe ist keine zusätzliche Einrichtung erforderlich.
 
-#### Verwendung von FastComments in einem Kurs
+Jede Aufgabe erhält ihren eigenen Kommentar-Thread.
 
-Wenn Studierende in der Kursnavigation auf **FastComments** klicken, erfolgt der LTI-Start automatisch:
+#### Schaltfläche des Rich Content Editors
 
-- Studierende werden über ihr Canvas-Konto angemeldet (Name, E-Mail und Avatar werden synchronisiert).
-- Jeder Kurs erhält seinen eigenen Kommentar-Thread.
-- Kommentare sind live und werden in Echtzeit aktualisiert.
+Wenn die **Editor-Schaltfläche** Platzierung aktiviert ist, können Lehrende FastComments in jeden Inhalt einbetten, der den Rich Content Editor verwendet:
 
-#### Hinzufügen zu einzelnen Modulen (optional)
+1. Bearbeiten Sie eine **Seite**, ein **Quiz** oder eine **Ankündigung**.
+2. Klicken Sie in der Symbolleiste des Rich Content Editors auf die **FastComments**-Schaltfläche.
+3. FastComments wird automatisch in den Inhalt eingebettet.
+4. Speichern Sie die Seite.
 
-Sie können FastComments auch als Externes Tool-Element zu einzelnen Modulen hinzufügen:
+Wenn Studierende die Seite ansehen, lädt das eingebettete FastComments-Widget einen für diese Seite eindeutigen Kommentar-Thread.
 
-1. Klicken Sie in einem Modul auf **+**, um ein Element hinzuzufügen.
-2. Wählen Sie **Externes Tool**.
-3. Wählen Sie **FastComments** aus der Liste.
-4. Klicken Sie auf **Element hinzufügen**.
+#### Automatisches SSO
 
-Dadurch erhält jedes Modul seinen eigenen separaten Diskussionsfaden.
+In beiden Platzierungen melden sich Studierende automatisch über ihr Canvas-Konto an. Namen, E-Mails und Avatare werden über den LTI-Launch synchronisiert — keine separate Anmeldung erforderlich.
+
+---

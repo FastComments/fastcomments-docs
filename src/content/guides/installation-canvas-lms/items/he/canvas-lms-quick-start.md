@@ -1,6 +1,6 @@
-1. היכנס ל-FastComments ועבור אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. הזן **Configuration Name** ואת **Platform URL** שלך (למשל `https://yourschool.instructure.com`), ואז לחץ על **Create Configuration**. אשף ההגדרה יעבור לשלב 2 ויציג את **Configuration URL** שלך.
-3. ב-Canvas, עבור אל **Admin > Developer Keys > + Developer Key > LTI Key**. קבע את **Method** ל-"Enter URL" והדבק את ה-Configuration URL. שמור את המפתח והגדר את **State** ל- **ON**.
-4. העתק את מספר ה-**Client ID** מטבלת Developer Keys ב-Canvas. בחזרה ב-FastComments, הדבק אותו בשדה **Client ID** ולחץ על **Save & Continue**.
-5. סקור את סיכום התצורה ולחץ על **Enable Integration** כדי לפרוס אותה בשידור חי.
-6. בקורס שלך ב-Canvas, עבור אל **Settings > Navigation**, מצא את **FastComments**, והפעל אותו. ההערות יופיעו כפריט ניווט בקורס.
+1. התחבר ל-FastComments ועבור אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">החשבון שלי > תצורת LTI של Canvas</a>.
+2. הזן **Configuration Name** ו-**Platform URL** (למשל `https://yourschool.instructure.com`). בחר אילו **Placements** להפעיל (Assignment View ו/או Editor Button — שניהם מופעלים כברירת מחדל). לחץ על **Create Configuration**. המדריך מתקדם לשלב 2 ומציג את **Configuration URL** שלך.
+3. ב-Canvas, עבור אל **Admin > Developer Keys > + Developer Key > LTI Key**. קבע את **Method** ל-"Enter URL" והדבק את ה-Configuration URL. שמור את המפתח, לאחר מכן קבע את **State** שלו ל-**ON** ולחץ על **Allow** כאשר תתבקש.
+4. העתק את מספר **Client ID** מטבלת Developer Keys ב-Canvas. חזור ל-FastComments, הדבק אותו בשדה **Client ID** ולחץ על **Save & Continue**.
+5. עיין בסיכום התצורה ולחץ על **Enable Integration** כדי להפוך אותה לזמינה.
+6. התקן את ה-External App ב-Canvas (**Admin > Settings > Apps > + App > By Client ID**). ההערות יופיעו אוטומטית מתחת ל-assignments, ומדריכים יכולים להטמיע את FastComments בדפים, בחידונים ובהודעות באמצעות כפתור סרגל הכלים של Rich Content Editor.

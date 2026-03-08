@@ -1,26 +1,24 @@
-#### Enable FastComments in Course Navigation
+#### Kako se komentari prikazuju u vašim kursevima
 
-У вашем Canvas курсу идите на **Settings** > **Navigation** таб.
+Kada je LTI integracija omogućena i Eksterni dodatak instaliran, FastComments radi automatski na osnovu odabranih pozicija (placements) koje ste konfigurirali:
 
-Пронађите **FastComments** у листи скривених ставки на дну. Превуците га у листу видљивих ставки (или кликните мени са три тачке и изаберите **Enable**).
+#### Prikaz zadatka
 
-Кликните **Save**. FastComments ће се сада појавити у бочној траци навигације курса.
+Ako je omogućena pozicija **Prikaz zadatka**, komentari se automatski pojavljuju ispod svakog zadatka u kursu. Studenti i instruktori vide prikaz komentara u obliku niti kada pregledaju zadatak — nije potrebna dodatna konfiguracija po zadatku.
 
-#### Using FastComments in a Course
+Svaki zadatak dobija svoju posebnu nit komentara.
 
-Када студенти кликну на **FastComments** у навигацији курса, LTI покретање се одвија аутоматски:
+#### Dugme uređivača bogatog sadržaja
 
-- Студенти се пријављују преко свог Canvas налога (име, имејл и аватар се синхронизују).
-- Сваки курс добија своју нит коментара.
-- Коментари су уживо и ажурирају се у реалном времену.
+Ako je omogućena pozicija **Dugme uređivača**, instruktori mogu ugraditi FastComments u bilo koji sadržaj koji koristi Uređivač bogatog sadržaja:
 
-#### Adding to Individual Modules (Optional)
+1. Uredite **Stranicu**, **Kviz**, ili **Obavještenje**.
+2. U traci sa alatkama Uređivača bogatog sadržaja kliknite na dugme **FastComments**.
+3. FastComments se automatski ugradi u sadržaj.
+4. Sačuvajte stranicu.
 
-Такође можете додати FastComments у појединачне модуле као ставку типа External Tool:
+Kada studenti pregledaju stranicu, ugrađeni FastComments vidžet se učitava sa nitom komentara koja je jedinstvena za tu stranicu.
 
-1. У модулу кликните на **+** да додате ставку.
-2. Изаберите **External Tool**.
-3. Одаберите **FastComments** из листе.
-4. Кликните **Add Item**.
+#### Automatska SSO prijava
 
-Ово даје сваком модулу његову посебну нит за дискусију.
+U obje pozicije, studenti se automatski prijavljuju putem svog Canvas naloga. Imena, e-mail adrese i avatari sinhronizuju se putem LTI pokretanja — nije potrebna posebna prijava.

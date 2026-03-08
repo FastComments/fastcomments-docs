@@ -1,26 +1,24 @@
-#### Omogućite FastComments u navigaciji tečaja
+#### Kako se komentari prikazuju u vašim kolegijima
 
-U svom Canvas tečaju idite na **Postavke** > kartica **Navigacija**.
+Nakon što je LTI integracija omogućena i External App instalirana, FastComments radi automatski na temelju postavki koje ste konfigurirali:
 
-Pronađite **FastComments** na popisu skrivenih stavki pri dnu. Povucite ga u popis vidljivih stavki (ili kliknite izbornik s tri točke i odaberite **Omogući**).
+#### Prikaz zadatka
 
-Kliknite **Spremi**. FastComments će se sada prikazati u bočnoj traci navigacije tečaja.
+Ako je omogućen položaj **Assignment View**, komentari se automatski prikazuju ispod svakog zadatka u kolegiju. Studenti i instruktori vide odjeljak komentara u obliku niti kada pregledavaju zadatak — za svaki zadatak nije potrebna dodatna konfiguracija.
 
-#### Korištenje FastComments u tečaju
+Svaki zadatak dobiva svoju odvojenu nit komentara.
 
-Kada studenti kliknu **FastComments** u navigaciji tečaja, LTI pokretanje se događa automatski:
+#### Gumb uređivača bogatog sadržaja
 
-- Studenti su prijavljeni putem svog Canvas računa (ime, e-pošta i avatar se sinkroniziraju).
-- Svaki tečaj dobiva vlastitu nit komentara.
-- Komentari se prikazuju uživo i ažuriraju se u stvarnom vremenu.
+Ako je omogućen položaj **Editor Button**, nastavnici mogu ugraditi FastComments u bilo koji sadržaj koji koristi Uređivač bogatog sadržaja:
 
-#### Dodavanje u pojedinačne module (opcionalno)
+1. Uredite **Page**, **Quiz**, ili **Announcement**.
+2. U alatnoj traci Uređivača bogatog sadržaja kliknite gumb **FastComments**.
+3. FastComments se automatski umeće u sadržaj.
+4. Spremite stranicu.
 
-Također možete dodati FastComments u pojedinačne module kao stavku Vanjski alat:
+Kada studenti pregledavaju stranicu, ugrađeni FastComments widget se učitava s nitom komentara koja je jedinstvena za tu stranicu.
 
-1. U modulu kliknite **+** za dodavanje stavke.
-2. Odaberite **Vanjski alat**.
-3. Izaberite **FastComments** s popisa.
-4. Kliknite **Dodaj stavku**.
+#### Automatski SSO
 
-Na taj način svaki modul dobiva svoju zasebnu nit za raspravu.
+U oba položaja studenti su automatski prijavljeni putem svog Canvas računa. Imena, e-mail adrese i avatari sinkroniziraju se putem LTI pokretanja — nije potrebna zasebna prijava.

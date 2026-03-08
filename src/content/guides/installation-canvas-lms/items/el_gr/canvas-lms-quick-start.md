@@ -1,6 +1,6 @@
 1. Συνδεθείτε στο FastComments και μεταβείτε στο <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Εισάγετε ένα **Configuration Name** και το **Platform URL** σας (π.χ. `https://yourschool.instructure.com`), στη συνέχεια κάντε κλικ στο **Create Configuration**. Ο οδηγός προχωρά στο Step 2 και εμφανίζει το **Configuration URL** σας.
-3. Στο Canvas, μεταβείτε στο **Admin > Developer Keys > + Developer Key > LTI Key**. Ορίστε το **Method** σε "Enter URL" και επικολλήστε το **Configuration URL**. Αποθηκεύστε το key και θέστε το **State** σε **ON**.
+2. Εισάγετε ένα **Configuration Name** και το **Platform URL** σας (π.χ. `https://yourschool.instructure.com`). Επιλέξτε ποια **Placements** θέλετε να ενεργοποιήσετε (Assignment View και/ή Editor Button — και τα δύο είναι ενεργοποιημένα από προεπιλογή). Κάντε κλικ στο **Create Configuration**. Ο οδηγός προχωρά στο Βήμα 2 και εμφανίζει το **Configuration URL** σας.
+3. Στο Canvas, μεταβείτε στο **Admin > Developer Keys > + Developer Key > LTI Key**. Ορίστε το **Method** σε "Enter URL" και επικολλήστε το Configuration URL. Αποθηκεύστε το key, στη συνέχεια ορίστε το **State** σε **ON** και κάντε κλικ στο **Allow** όταν σας ζητηθεί.
 4. Αντιγράψτε τον αριθμό **Client ID** από τον πίνακα Developer Keys στο Canvas. Επιστρέφοντας στο FastComments, επικολλήστε τον στο πεδίο **Client ID** και κάντε κλικ στο **Save & Continue**.
-5. Ελέγξτε την περίληψη της ρύθμισης και κάντε κλικ στο **Enable Integration** για να ενεργοποιηθεί.
-6. Στο μάθημά σας στο Canvas, μεταβείτε στο **Settings > Navigation**, βρείτε το **FastComments** και ενεργοποιήστε το. Τα σχόλια θα εμφανιστούν ως στοιχείο πλοήγησης του μαθήματος.
+5. Ελέγξτε την περίληψη της διαμόρφωσης και κάντε κλικ στο **Enable Integration** για να ενεργοποιήσετε την ενσωμάτωση.
+6. Εγκαταστήστε το External App στο Canvas (**Admin > Settings > Apps > + App > By Client ID**). Τα σχόλια θα εμφανίζονται αυτόματα κάτω από τις εργασίες, και οι εκπαιδευτές μπορούν να ενσωματώσουν το FastComments σε Pages, Quizzes, και Announcements μέσω του κουμπιού στη γραμμή εργαλείων του Rich Content Editor.

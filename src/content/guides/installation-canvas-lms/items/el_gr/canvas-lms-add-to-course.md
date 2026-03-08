@@ -1,26 +1,24 @@
-#### Ενεργοποίηση FastComments στην Πλοήγηση του Μαθήματος
+#### Πώς εμφανίζονται τα σχόλια στα μαθήματά σας
 
-Στο μάθημά σας στο Canvas, πηγαίνετε στις **Ρυθμίσεις** > καρτέλα **Πλοήγηση**.
+Μόλις η ενσωμάτωση LTI ενεργοποιηθεί και η External App εγκατασταθεί, το FastComments λειτουργεί αυτόματα με βάση τα placements που έχετε ρυθμίσει:
 
-Βρείτε το **FastComments** στη λίστα κρυφών στοιχείων στο κάτω μέρος. Σύρετέ το στη λίστα ορατών στοιχείων (ή κάντε κλικ στο μενού με τις τρεις τελείες και επιλέξτε **Ενεργοποίηση**).
+#### Assignment View
 
-Κάντε κλικ στο **Αποθήκευση**. Το FastComments θα εμφανιστεί τώρα στο πλαϊνό μενού πλοήγησης του μαθήματος.
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-#### Χρήση του FastComments σε ένα μάθημα
+Each assignment gets its own separate comment thread.
 
-Όταν οι φοιτητές κάνουν κλικ στο **FastComments** στην πλοήγηση του μαθήματος, η εκκίνηση LTI γίνεται αυτόματα:
+#### Rich Content Editor Button
 
-- Οι φοιτητές συνδέονται μέσω του λογαριασμού τους στο Canvas (το όνομα, το email και η εικόνα προφίλ συγχρονίζονται).
-- Κάθε μάθημα έχει το δικό του νήμα σχολίων.
-- Τα σχόλια είναι ζωντανά και ενημερώνονται σε πραγματικό χρόνο.
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-#### Προσθήκη σε μεμονωμένες ενότητες (Προαιρετικό)
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-Μπορείτε επίσης να προσθέσετε το FastComments σε μεμονωμένες ενότητες ως στοιχείο Εξωτερικού Εργαλείου:
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-1. Σε μια ενότητα, κάντε κλικ στο **+** για να προσθέσετε ένα στοιχείο.
-2. Επιλέξτε **Εξωτερικό Εργαλείο**.
-3. Επιλέξτε **FastComments** από τη λίστα.
-4. Κάντε κλικ στο **Προσθήκη στοιχείου**.
+#### Αυτόματο SSO
 
-Αυτό δίνει σε κάθε ενότητα το δικό της ξεχωριστό νήμα συζήτησης.
+Σε και τις δύο τοποθετήσεις, οι φοιτητές συνδέονται αυτόματα μέσω του λογαριασμού τους στο Canvas. Τα ονόματα, τα email και τα avatar συγχρονίζονται μέσω του LTI launch — δεν απαιτείται ξεχωριστή σύνδεση.
