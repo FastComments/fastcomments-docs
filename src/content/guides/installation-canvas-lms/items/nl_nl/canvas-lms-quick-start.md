@@ -1,6 +1,6 @@
 1. Log in op FastComments en ga naar <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Mijn account > Canvas LTI-configuratie</a>.
-2. Voer een **Configuratienaam** en uw **Platform-URL** in (bijv. `https://yourschool.instructure.com`), klik vervolgens op **Configuratie aanmaken**. De wizard gaat door naar Stap 2 en toont uw **Configuratie-URL**.
-3. Ga in Canvas naar **Beheer > Ontwikkelaarssleutels > + Ontwikkelaarssleutel > LTI-sleutel**. Stel **Methode** in op "URL invoeren" en plak de Configuratie-URL. Sla de sleutel op en zet de **Status** op **ON**.
-4. Kopieer het **Client ID**-nummer uit de tabel Ontwikkelaarssleutels in Canvas. Ga terug naar FastComments, plak het in het veld **Client ID** en klik op **Opslaan en doorgaan**.
-5. Bekijk de configuratiesamenvatting en klik op **Integratie inschakelen** om live te gaan.
-6. Ga in uw Canvas-cursus naar **Instellingen > Navigatie**, zoek **FastComments** en schakel het in. Reacties verschijnen als een navigatie-item van de cursus.
+2. Voer een **Configuratienaam** en uw **Platform-URL** in (bijv. `https://yourschool.instructure.com`). Kies welke **Plaatsingen** u wilt inschakelen (Opdrachtweergave en/of Editor-knop — beide zijn standaard ingeschakeld). Klik op **Configuratie aanmaken**. De wizard gaat naar Stap 2 en toont uw **Configuratie-URL**.
+3. Ga in Canvas naar **Beheerder > Ontwikkelaarssleutels > + Developer Key > LTI-sleutel**. Stel **Methode** in op "URL invoeren" en plak de Configuratie-URL. Sla de sleutel op, zet vervolgens de **Status** op **AAN** en klik op **Toestaan** wanneer daarom wordt gevraagd.
+4. Kopieer het **Client ID**-nummer uit de tabel Developer Keys in Canvas. Plak het in FastComments in het veld **Client ID** en klik op **Opslaan & Doorgaan**.
+5. Controleer de configuratiesamenvatting en klik op **Integratie inschakelen** om live te gaan.
+6. Installeer de externe app in Canvas (**Beheerder > Instellingen > Apps > + App > Op Client ID**). Reacties verschijnen automatisch onder opdrachten, en docenten kunnen FastComments insluiten op Pagina's, Toetsen en Mededelingen via de knop op de werkbalk van de Rich Content Editor.

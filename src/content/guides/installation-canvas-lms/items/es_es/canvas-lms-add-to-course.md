@@ -1,29 +1,24 @@
----
-#### Habilitar FastComments en la navegación del curso
+#### Cómo aparecen los comentarios en sus cursos
 
-En tu curso de Canvas, ve a **Configuración** > pestaña **Navegación**.
+Una vez que la integración LTI está habilitada y la aplicación externa está instalada, FastComments funciona automáticamente según las ubicaciones que configuró:
 
-Busca **FastComments** en la lista de elementos ocultos en la parte inferior. Arrástralo a la lista de elementos visibles (o haz clic en el menú de tres puntos y selecciona **Habilitar**).
+#### Vista de asignación
 
-Haz clic en **Guardar**. FastComments ahora aparecerá en la barra lateral de navegación del curso.
+Si la ubicación **Vista de asignación** está habilitada, los comentarios aparecen automáticamente debajo de cada asignación en el curso. Estudiantes e instructores ven una sección de comentarios en hilos cuando visualizan una asignación — no se necesita configuración adicional por asignación.
 
-#### Uso de FastComments en un curso
+Cada asignación obtiene su propio hilo de comentarios independiente.
 
-Cuando los estudiantes hagan clic en **FastComments** en la navegación del curso, el lanzamiento LTI se inicia automáticamente:
+#### Botón del editor de contenido enriquecido
 
-- Los estudiantes inician sesión mediante su cuenta de Canvas (nombre, correo electrónico y avatar se sincronizan).
-- Cada curso obtiene su propio hilo de comentarios.
-- Los comentarios son en vivo y se actualizan en tiempo real.
+Si la ubicación **Botón del editor** está habilitada, los instructores pueden incrustar FastComments en cualquier contenido que use el Editor de contenido enriquecido:
 
-#### Agregar a módulos individuales (opcional)
+1. Edite una **Página**, un **Cuestionario**, o un **Anuncio**.
+2. En la barra de herramientas del Editor de contenido enriquecido, haga clic en el botón **FastComments**.
+3. FastComments se incrusta automáticamente en el contenido.
+4. Guarde la página.
 
-También puedes agregar FastComments a módulos individuales como un elemento de **Herramienta externa**:
+Cuando los estudiantes ven la página, el widget incrustado de FastComments se carga con un hilo de comentarios único para esa página.
 
-1. En un módulo, haz clic en **+** para agregar un elemento.
-2. Selecciona **Herramienta externa**.
-3. Elige **FastComments** de la lista.
-4. Haz clic en **Agregar elemento**.
+#### SSO automático
 
-Esto proporciona a cada módulo su propio hilo de discusión independiente.
-
----
+En ambas ubicaciones, los estudiantes inician sesión automáticamente mediante su cuenta de Canvas. Nombres, correos electrónicos y avatares se sincronizan a través del lanzamiento LTI — no se necesita un inicio de sesión separado.

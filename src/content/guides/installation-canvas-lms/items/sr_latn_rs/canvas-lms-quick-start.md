@@ -1,6 +1,6 @@
-1. Prijavite se u FastComments i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Unesite **Configuration Name** i vaš **Platform URL** (e.g. `https://yourschool.instructure.com`), zatim kliknite **Create Configuration**. Čarobnjak prelazi na Korak 2 i prikazuje vaš **Configuration URL**.
-3. U Canvasu, idite na **Admin > Developer Keys > + Developer Key > LTI Key**. Postavite **Method** na "Enter URL" i nalepite Configuration URL. Sačuvajte ključ i postavite njegov **State** na **ON**.
+1. Prijavite se na FastComments i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+2. Unesite **Configuration Name** i vaš **Platform URL** (npr. `https://yourschool.instructure.com`). Izaberite koja **Placements** želite omogućiti (Assignment View and/or Editor Button — oba su on by default). Kliknite **Create Configuration**. Čarobnjak prelazi na Step 2 i prikazuje vaš **Configuration URL**.
+3. U Canvasu, idite na **Admin > Developer Keys > + Developer Key > LTI Key**. Podesite **Method** na "Enter URL" i nalepite **Configuration URL**. Sačuvajte ključ, zatim postavite njegovo **State** na **ON** i kliknite **Allow** kada se zatraži.
 4. Kopirajte broj **Client ID** iz tabele Developer Keys u Canvasu. Vratite se u FastComments, nalepite ga u polje **Client ID** i kliknite **Save & Continue**.
-5. Proverite rezime konfiguracije i kliknite **Enable Integration** da biste aktivirali integraciju.
-6. U vašem Canvas kursu, idite na **Settings > Navigation**, pronađite **FastComments**, i omogućite ga. Komentari će se pojaviti kao stavka u navigaciji kursa.
+5. Pregledajte rezime konfiguracije i kliknite **Enable Integration** da biste je aktivirali.
+6. Instalirajte External App u Canvasu (**Admin > Settings > Apps > + App > By Client ID**). Komentari će se automatski pojaviti ispod zadataka, a instruktori mogu ugraditi FastComments u Pages, Quizzes, i Announcements putem Rich Content Editor toolbar button.

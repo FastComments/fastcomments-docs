@@ -1,26 +1,26 @@
-#### 在課程導覽中啟用 FastComments
+#### 評論如何顯示在您的課程中
 
-在您的 Canvas 課程中，前往 **設定** > **導覽** 標籤。
+一旦啟用 LTI 整合並安裝 External App，FastComments 將根據您設定的放置點自動運作：
 
-在底部的隱藏項目列表中找到 **FastComments**。將它拖到可見項目列表（或點選三個點的選單並選擇 **啟用**）。
+#### Assignment View
 
-點選 **儲存**。FastComments 現在會出現在課程導覽側邊欄。
+如果啟用 **Assignment View** 放置點，評論會自動顯示在課程中每個作業的下方。學生和教師在檢視作業時會看到一個有線程的評論區 — 每個作業不需要額外設定。
 
-#### 在課程中使用 FastComments
+每個作業都會有自己的獨立評論串。
 
-當學生在課程導覽中點選 **FastComments** 時，LTI 會自動啟動：
+#### Rich Content Editor Button
 
-- 學生會自動以其 Canvas 帳戶登入（姓名、電子郵件與大頭貼會同步）。
-- 每個課程會有自己的評論串。
-- 評論為即時更新。
+如果啟用 **Editor Button** 放置點，教師可以將 FastComments 嵌入到任何使用 Rich Content Editor 的內容中：
 
-#### 加入至個別模組（選用）
+1. 編輯 **Page**、**Quiz** 或 **Announcement**。
+2. 在 Rich Content Editor 的工具列中，點選 **FastComments** 按鈕。
+3. FastComments 會自動嵌入內容中。
+4. 儲存頁面。
 
-您也可以將 FastComments 以『外部工具』項目加入個別模組：
+當學生檢視該頁面時，嵌入的 FastComments 小工具會載入，並帶有該頁面專屬的評論串。
 
-1. 在模組中，點選 **+** 以新增項目。
-2. 選擇 **外部工具**。
-3. 從清單中選擇 **FastComments**。
-4. 點選 **新增項目**。
+#### 自動 SSO
 
-這會讓每個模組擁有自己的獨立討論串。
+在這兩種放置方式中，學生會自動透過其 Canvas 帳戶登入。姓名、電子郵件與頭像會透過 LTI 啟動同步 — 不需要另外登入。
+
+---

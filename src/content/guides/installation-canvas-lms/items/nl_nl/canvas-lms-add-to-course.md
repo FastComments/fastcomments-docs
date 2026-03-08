@@ -1,26 +1,24 @@
-#### FastComments inschakelen in de cursusnavigatie
+#### Hoe reacties in uw cursussen verschijnen
 
-Ga in je Canvas-cursus naar **Instellingen** > tabblad **Navigatie**.
+Zodra de LTI-integratie is ingeschakeld en de externe app is geïnstalleerd, werkt FastComments automatisch op basis van de plaatsingen die u hebt geconfigureerd:
 
-Zoek **FastComments** in de lijst met verborgen items onderaan. Sleep het naar de lijst met zichtbare items (of klik op het drie-puntjesmenu en selecteer **Inschakelen**).
+#### Opdrachtweergave
 
-Klik op **Opslaan**. FastComments verschijnt nu in de navigatiezijbalk van de cursus.
+Als de plaatsing **Opdrachtweergave** is ingeschakeld, verschijnen reacties automatisch onder elke opdracht in de cursus. Studenten en docenten zien een draadgedeelte met reacties wanneer ze een opdracht bekijken — er is geen extra configuratie per opdracht nodig.
 
-#### FastComments gebruiken in een cursus
+Elke opdracht krijgt zijn eigen afzonderlijke discussiedraad.
 
-Wanneer studenten op **FastComments** in de cursusnavigatie klikken, wordt de LTI-launch automatisch uitgevoerd:
+#### Knop van de Rijke Inhoudseditor
 
-- Studenten worden aangemeld via hun Canvas-account (naam, e-mail en avatar worden gesynchroniseerd).
-- Elke cursus krijgt zijn eigen discussiedraad.
-- Reacties zijn live en worden in realtime bijgewerkt.
+Als de plaatsing **Editor-knop** is ingeschakeld, kunnen docenten FastComments toevoegen aan alle inhoud die de Editor voor rijke inhoud gebruikt:
 
-#### Toevoegen aan individuele modules (optioneel)
+1. Bewerk een **Pagina**, **Quiz** of **Mededeling**.
+2. Klik in de werkbalk van de Editor voor rijke inhoud op de **FastComments**-knop.
+3. FastComments wordt automatisch in de inhoud ingesloten.
+4. Sla de pagina op.
 
-Je kunt FastComments ook aan individuele modules toevoegen als een item **Externe tool**:
+Wanneer studenten de pagina bekijken, laadt de ingesloten FastComments-widget met een discussiedraad die uniek is voor die pagina.
 
-1. Klik in een module op **+** om een item toe te voegen.
-2. Selecteer **Externe tool**.
-3. Kies **FastComments** uit de lijst.
-4. Klik op **Item toevoegen**.
+#### Automatische SSO
 
-Hierdoor krijgt elke module zijn eigen afzonderlijke discussiedraad.
+In beide plaatsingen worden studenten automatisch aangemeld via hun Canvas-account. Namen, e-mailadressen en avatars worden gesynchroniseerd via de LTI-launch — er is geen aparte aanmelding nodig.

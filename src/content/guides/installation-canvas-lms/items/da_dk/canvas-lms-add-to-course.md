@@ -1,26 +1,24 @@
-#### Aktivér FastComments i kursusnavigationen
+#### Hvordan kommentarer vises i dine kurser
 
-I dit Canvas-kursus, gå til **Indstillinger** > fanen **Navigation**.
+Når LTI-integration er aktiveret og den Eksterne app er installeret, fungerer FastComments automatisk baseret på de placeringer, du har konfigureret:
 
-Find **FastComments** på listen over skjulte elementer nederst. Træk det til listen over synlige elementer (eller klik på tre-punkts-menuen og vælg **Aktivér**).
+#### Opgavevisning
 
-Klik **Gem**. FastComments vil nu vises i kursusnavigationens sidepanel.
+Hvis placeringen **Assignment View** er aktiveret, vises kommentarer automatisk under hver opgave i kurset. Studerende og undervisere ser en trådet kommentarsektion, når de ser en opgave — der er ikke behov for ekstra opsætning pr. opgave.
 
-#### Brug af FastComments i et kursus
+Hver opgave får sin egen separate kommentartråd.
 
-Når studerende klikker **FastComments** i kursusnavigationen, sker the LTI launch automatisk:
+#### Editor-knap
 
-- Studerende logges ind via deres Canvas-konto (navn, e-mail og avatar synkroniseres).
-- Hvert kursus får sin egen kommentartråd.
-- Kommentarer er live og opdateres i realtid.
+Hvis placeringen **Editor Button** er aktiveret, kan undervisere indlejre FastComments i ethvert indhold, der bruger Rich Content Editor:
 
-#### Tilføjelse til enkelte moduler (valgfrit)
+1. Rediger en **Page**, **Quiz**, eller **Announcement**.
+2. I værktøjslinjen i Rich Content Editor skal du klikke på **FastComments**-knappen.
+3. FastComments indlejres automatisk i indholdet.
+4. Gem siden.
 
-Du kan også tilføje FastComments til individuelle moduler som et element **Eksternt værktøj**:
+Når studerende ser siden, indlæses den indlejrede FastComments-widget med en kommentartråd, der er unik for den side.
 
-1. I et modul, klik **+** for at tilføje et element.
-2. Vælg **Eksternt værktøj**.
-3. Vælg **FastComments** fra listen.
-4. Klik **Tilføj element**.
+#### Automatisk SSO
 
-Dette giver hvert modul sin egen separate diskussionstråd.
+I begge placeringer logges studerende automatisk ind via deres Canvas-konto. Navne, e-mails og avatarer synkroniseres gennem LTI-launch — der er ikke behov for separat login.

@@ -1,6 +1,6 @@
-1. Пријавите се на FastComments и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мој налог > Canvas LTI конфигурација</a>.
-2. Унесите **Назив конфигурације** и ваш **URL платформе** (нпр. `https://yourschool.instructure.com`), затим кликните **Креирај конфигурацију**. Чаробњак прелази на Корак 2 и приказује ваш **URL конфигурације**.
-3. У Canvas-у идите на **Admin > Developer Keys > + Developer Key > LTI Key**. Поставите **Методу** на "Enter URL" и налепите URL конфигурације. Сачувајте кључ и поставите његово **Стање** на **ON**.
+1. Пријавите се на FastComments и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
+2. Унесите **Configuration Name** и ваш **Platform URL** (нпр. `https://yourschool.instructure.com`). Изаберите која **Placements** желите да омогућите (Assignment View и/или Editor Button — оба су подразумевано укључена). Кликните на **Create Configuration**. Визард ће прећи на Step 2 и приказати ваш **Configuration URL**.
+3. У Canvas-у идите на **Admin > Developer Keys > + Developer Key > LTI Key**. Подесите **Method** на "Enter URL" и залепите Configuration URL. Сачувајте кључ, затим подесите његово **State** на **ON** и кликните **Allow** када се појави упит.
 4. Копирајте број **Client ID** из табеле Developer Keys у Canvas-у. Вратите се у FastComments, налепите га у поље **Client ID** и кликните **Save & Continue**.
-5. Прегледајте резиме конфигурације и кликните **Enable Integration** да бисте активирали интеграцију.
-6. У свом Canvas курсу идите на **Settings > Navigation**, пронађите **FastComments** и омогућите га. Коментари ће се појавити као ставка у навигацији курса.
+5. Прегледајте резиме конфигурације и кликните на **Enable Integration** да активирате интеграцију.
+6. Инсталирајте External App у Canvas-у (**Admin > Settings > Apps > + App > By Client ID**). Коментари ће се аутоматски приказивати испод задатака, а наставници могу уметнути FastComments у Pages, Quizzes и Announcements преко дугмета на траци алата Rich Content Editor.

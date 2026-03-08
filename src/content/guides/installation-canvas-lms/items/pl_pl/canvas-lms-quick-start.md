@@ -1,6 +1,6 @@
-1. Zaloguj się do FastComments i przejdź do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moje konto > Konfiguracja Canvas LTI</a>.
-2. Wprowadź **Nazwę konfiguracji** i **adres platformy** (np. `https://yourschool.instructure.com`), następnie kliknij **Utwórz konfigurację**. Kreator przejdzie do kroku 2 i wyświetli **Adres konfiguracji**.
-3. W Canvas przejdź do **Administrator > Klucze deweloperskie > + Klucz deweloperski > Klucz LTI**. Ustaw **Metodę** na "Wprowadź URL" i wklej Adres konfiguracji. Zapisz klucz i ustaw jego **Stan** na **WŁĄCZONY**.
-4. Skopiuj numer **ID klienta** z tabeli Kluczy deweloperskich w Canvas. Wróć do FastComments, wklej go w pole **ID klienta** i kliknij **Zapisz i kontynuuj**.
-5. Przejrzyj podsumowanie konfiguracji i kliknij **Włącz integrację**, aby uruchomić ją.
-6. W swoim kursie w Canvas przejdź do **Ustawienia > Nawigacja**, znajdź **FastComments** i włącz go. Komentarze pojawią się jako element nawigacji kursu.
+1. Zaloguj się do FastComments i przejdź do <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moje konto > Konfiguracja LTI Canvas</a>.
+2. Wprowadź **Nazwa konfiguracji** oraz **Platform URL** (np. `https://yourschool.instructure.com`). Wybierz, które **Miejsca wyświetlania** włączyć (Assignment View i/lub Editor Button — oba są domyślnie włączone). Kliknij **Create Configuration**. Kreator przejdzie do Kroku 2 i pokaże Twój **Configuration URL**.
+3. W Canvas przejdź do **Admin > Developer Keys > + Developer Key > LTI Key**. Ustaw **Method** na "Enter URL" i wklej URL konfiguracji. Zapisz klucz, następnie ustaw jego **State** na **ON** i kliknij **Allow**, gdy pojawi się monit.
+4. Skopiuj numer **Client ID** z tabeli Developer Keys w Canvas. Wróć do FastComments, wklej go w pole **Client ID** i kliknij **Save & Continue**.
+5. Przejrzyj podsumowanie konfiguracji i kliknij **Enable Integration**, aby uruchomić integrację.
+6. Zainstaluj Aplikację zewnętrzną w Canvas (**Admin > Settings > Apps > + App > By Client ID**). Komentarze będą automatycznie wyświetlane poniżej zadań, a wykładowcy mogą osadzać FastComments na Stronach, w Quizach i Ogłoszeniach za pomocą przycisku na pasku narzędzi Rich Content Editor.

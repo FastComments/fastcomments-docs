@@ -1,26 +1,26 @@
-#### Enable FastComments in Course Navigation
+#### Kurslarınızda Yorumlar Nasıl Görünür
 
-Canvas dersinizde **Ayarlar** > **Gezinme** sekmesine gidin.
+LTI entegrasyonu etkinleştirildiğinde ve Dış Uygulama yüklendiğinde, FastComments yapılandırdığınız yerleştirmelere göre otomatik olarak çalışır:
 
-Alt kısımdaki gizli öğeler listesinde **FastComments**'ı bulun. Görünür öğeler listesine sürükleyin (veya üç noktalı menüye tıklayıp **Etkinleştir** seçeneğini seçin).
+#### Ödev Görünümü
 
-**Kaydet**'e tıklayın. FastComments artık ders gezinme kenar çubuğunda görünecektir.
+Eğer **Ödev Görünümü** yerleştirmesi etkinleştirilmişse, yorumlar dersin her ödevinin altında otomatik olarak görünür. Öğrenciler ve eğitmenler bir ödevi görüntülediklerinde konu bazlı (threaded) bir yorum bölümü görürler — her ödev için ekstra bir kurulum gerekmez.
 
-#### Using FastComments in a Course
+Her ödevin kendine ait ayrı bir yorum dizisi olur.
 
-Öğrenciler ders gezinmesinde **FastComments**'a tıkladığında, LTI başlatması otomatik olarak gerçekleşir:
+#### Zengin İçerik Düzenleyici Düğmesi
 
-- Öğrenciler Canvas hesaplarıyla oturum açmış olur (isim, e-posta ve avatar senkronize edilir).
-- Her dersin kendi yorum dizisi olur.
-- Yorumlar canlıdır ve gerçek zamanlı olarak güncellenir.
+Eğer **Düzenleyici Düğmesi** yerleştirmesi etkinse, eğitmenler Zengin İçerik Düzenleyiciyi kullanan herhangi bir içeriğe FastComments gömebilirler:
 
-#### Adding to Individual Modules (Optional)
+1. Bir **Sayfa**, **Test** veya **Duyuru** düzenleyin.
+2. Zengin İçerik Düzenleyici araç çubuğunda **FastComments** düğmesine tıklayın.
+3. FastComments içeriğe otomatik olarak gömülür.
+4. Sayfayı kaydedin.
 
-FastComments'i isteğe bağlı olarak bireysel modüllere Harici Araç öğesi olarak da ekleyebilirsiniz:
+Öğrenciler sayfayı görüntülediğinde, gömülü FastComments bileşeni o sayfaya özgü bir yorum dizisiyle yüklenir.
 
-1. Bir modülde, bir öğe eklemek için **+**'ya tıklayın.
-2. **Harici Araç**'ı seçin.
-3. Listeden **FastComments**'ı seçin.
-4. **Öğe Ekle**'ye tıklayın.
+#### Otomatik SSO
 
-Bu, her modüle kendi ayrı tartışma dizisini verir.
+Her iki yerleştirmede de öğrenciler Canvas hesapları üzerinden otomatik olarak oturum açmış olur. İsimler, e-posta adresleri ve avatarlar LTI başlatması aracılığıyla senkronize edilir — ayrı bir giriş gerekmez.
+
+---

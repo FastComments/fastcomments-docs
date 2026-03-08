@@ -1,6 +1,6 @@
 1. Prijavite se u FastComments i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj račun > Canvas LTI konfiguracija</a>.
-2. Unesite **Naziv konfiguracije** i svoju **URL platforme** (npr. `https://yourschool.instructure.com`), zatim kliknite **Kreiraj konfiguraciju**. Čarobnjak prelazi na Korak 2 i prikazuje vašu **URL konfiguracije**.
-3. U Canvasu idite na **Admin > Developer Keys > + Developer Key > LTI Key**. Postavite **Metoda** na "Unesi URL" i zalijepite URL konfiguracije. Spremite ključ i postavite njegovo **Stanje** na **UKLJUČENO**.
+2. Unesite **Naziv konfiguracije** i svoj **URL platforme** (npr. `https://yourschool.instructure.com`). Odaberite koje **Placements** omogućiti (Assignment View i/ili Editor Button — oba su prema zadanim postavkama uključena). Kliknite **Kreiraj konfiguraciju**. Čarobnjak prelazi na Korak 2 i prikazuje vaš **URL konfiguracije**.
+3. U Canvasu idite na **Admin > Developer Keys > + Developer Key > LTI Key**. Postavite **Method** na "Enter URL" i zalijepite URL konfiguracije. Spremite ključ, zatim postavite njegov **State** na **ON** i kliknite **Allow** kada se pojavi upit.
 4. Kopirajte broj **Client ID** iz tablice Developer Keys u Canvasu. Vratite se u FastComments, zalijepite ga u polje **Client ID** i kliknite **Spremi i nastavi**.
-5. Pregledajte sažetak konfiguracije i kliknite **Omogući integraciju** da aktivirate integraciju.
-6. U svom Canvas kolegiju idite na **Postavke > Navigacija**, pronađite **FastComments** i omogućite ga. Komentari će se pojaviti kao stavka u navigaciji kolegija.
+5. Pregledajte sažetak konfiguracije i kliknite **Omogući integraciju** da biste je aktivirali.
+6. Instalirajte External App u Canvasu (**Admin > Settings > Apps > + App > By Client ID**). Komentari će se automatski prikazivati ispod zadataka, a nastavnici mogu ugraditi FastComments u Stranice, Kvizove i Obavijesti putem gumba na alatnoj traci Uređivača bogatog sadržaja.

@@ -1,6 +1,6 @@
-1. Accedi a FastComments e vai a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Inserisci un **Configuration Name** e il tuo **Platform URL** (e.g. `https://yourschool.instructure.com`), quindi clicca **Create Configuration**. La procedura guidata avanza allo Step 2 e mostra la tua **Configuration URL**.
-3. In Canvas, vai su **Admin > Developer Keys > + Developer Key > LTI Key**. Imposta **Method** su "Enter URL" e incolla la Configuration URL. Salva la chiave e imposta il suo **State** su **ON**.
-4. Copia il numero **Client ID** dalla Developer Keys table in Canvas. Torna in FastComments, incollalo nel campo **Client ID** e clicca **Save & Continue**.
-5. Rivedi il riepilogo della configurazione e clicca **Enable Integration** per andare in produzione.
-6. Nel tuo corso Canvas, vai su **Settings > Navigation**, trova **FastComments** e attivalo. I commenti appariranno come voce di navigazione del corso.
+1. Accedi a FastComments e vai a <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Il mio account > Configurazione LTI Canvas</a>.
+2. Inserisci un **Nome della configurazione** e il tuo **URL della piattaforma** (ad esempio `https://yourschool.instructure.com`). Scegli quali **Posizionamenti** abilitare (**Visualizzazione assegnazione** e/o **Pulsante Editor** — entrambi attivati per impostazione predefinita). Clicca **Crea configurazione**. La procedura avanza al Passo 2 e mostra il tuo **URL di configurazione**.
+3. In Canvas, vai su **Admin > Developer Keys > + Developer Key > LTI Key**. Imposta **Method** su "Enter URL" e incolla l'URL di configurazione. Salva la chiave, quindi imposta il suo **State** su **ON** e clicca **Allow** quando richiesto.
+4. Copia il numero del **Client ID** dalla tabella Developer Keys in Canvas. Torna su FastComments, incollalo nel campo **Client ID** e clicca **Salva e continua**.
+5. Rivedi il riepilogo della configurazione e clicca **Abilita integrazione** per attivare il servizio.
+6. Installa l'App esterna in Canvas (**Admin > Settings > Apps > + App > By Client ID**). I commenti appariranno automaticamente sotto le assegnazioni, e gli insegnanti possono incorporare FastComments in Pagine, Quiz e Annunci tramite il pulsante della barra degli strumenti del Rich Content Editor.

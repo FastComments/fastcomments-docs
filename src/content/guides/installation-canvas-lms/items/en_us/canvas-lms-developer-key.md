@@ -16,10 +16,8 @@ In the configuration form:
 
 #### Enable the Developer Key
 
-After saving, the new key will appear in the Developer Keys table with its **State** set to **OFF**. Click the toggle to set it to **ON**.
+After saving, the new key will appear in the Developer Keys table with its **State** set to **OFF**. Click the toggle to set it to **ON**. Canvas may prompt you to confirm — click **Allow** to enable the key.
 
 #### Copy the Client ID
 
 The Developer Keys table shows a numeric **Client ID** in the Details column (e.g. `17000000000042`). Copy this number - you will need it in the next step.
-
----

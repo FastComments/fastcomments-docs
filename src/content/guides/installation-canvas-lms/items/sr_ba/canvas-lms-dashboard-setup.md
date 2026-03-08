@@ -1,22 +1,31 @@
 #### Navigate to Canvas LTI Config
 
-Пријавите се на ваш FastComments налог и идите на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Мој налог > Canvas LTI конфигурација</a>.
+Prijavite se u svoj FastComments nalog i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj nalog > Canvas LTI konfiguracija</a>.
 
-Страница за подешавање користи водич који вас води кроз сваки корак. Почећете на **Корак 1: Креирање**.
+Stranica za podešavanje koristi vođenog čarobnjaka koji vas vodi kroz svaki korak. Počećete na **Korak 1: Kreiraj**.
 
 #### Create a New LTI Configuration
 
-Попуните следећа поља:
+Popunite sljedeća polja:
 
-- **Configuration Name** - опционална ознака за идентификацију ове конфигурације (корисно ако повежете више Canvas инстанци).
-- **Platform URL** - ваш URL Canvas инстанце (нпр. `https://yourschool.instructure.com`). Ово поље је обавезно.
+- **Configuration Name** - opcioni naziv za identifikaciju ove konfiguracije (korisno ako povežete više Canvas instanci).
+- **Platform URL** - URL vaše Canvas instance (npr. `https://yourschool.instructure.com`). Ovo polje je obavezno.
 
-Кликните **Креирај конфигурацију**.
+#### Choose Placements
+
+Ispod Platform URL možete izabrati gdje će se FastComments pojavljivati u vašim Canvas kursovima. Obje lokacije su po defaultu omogućene:
+
+- **Assignment View** - komentari se automatski prikazuju ispod zadataka.
+- **Rich Content Editor Button** - instruktori mogu ugraditi FastComments u Stranice, Kvizove i Obavještenja koristeći dugme na alatnoj traci u Rich Content Editoru.
+
+Možete omogućiti jednu ili obje. Najmanje jedna lokacija mora biti omogućena.
+
+Kliknite **Kreiraj konfiguraciju**.
 
 #### Copy the Configuration URL
 
-Након креирања конфигурације, чаробњак прелази на **Корак 2: Повезивање**. На врху странице истакнуто је приказан **URL конфигурације** са дугметом **Копирај**.
+Nakon kreiranja konfiguracije, čarobnjak prelazi na **Korak 2: Poveži**. Na vrhu stranice istaknuto je prikazan **Configuration URL** sa dugmetom **Kopiraj**.
 
-Копирајте овај URL. Биће вам потребан у следећем кораку да креирате Developer Key у Canvas-у.
+Kopirajte ovaj URL. Trebat će vam u sljedećem koraku za kreiranje Developer Key u Canvasu.
 
-Страница такође приказује нумерисана упутства шта треба урадити у Canvas-у, као и поља за унос **Client ID** и опционог **Deployment ID** када их будете имали.
+Stranica također prikazuje numerisane upute šta treba uraditi u Canvasu, kao i polja za unos **Client ID** i opcionalnog **Deployment ID** kad ih dobijete.

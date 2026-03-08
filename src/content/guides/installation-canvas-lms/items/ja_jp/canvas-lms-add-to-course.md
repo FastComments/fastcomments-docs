@@ -1,26 +1,24 @@
-#### コースナビゲーションで FastComments を有効化
+#### コース内のコメントの表示方法
 
-Canvas のコースで、**設定** > **ナビゲーション** タブに移動します。
+LTI 統合が有効になり External App がインストールされると、FastComments は設定した配置に基づいて自動的に動作します：
 
-下部の非表示アイテム一覧で **FastComments** を見つけます。表示されるアイテム一覧にドラッグするか、三点メニューをクリックして **有効化** を選択します。
+#### Assignment View
 
-**保存** をクリックします。これで FastComments がコースのナビゲーションサイドバーに表示されます。
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-#### コース内で FastComments を使用する
+Each assignment gets its own separate comment thread.
 
-学生がコースナビゲーションで **FastComments** をクリックすると、LTI の起動が自動的に行われます:
+#### Rich Content Editor Button
 
-- 学生は Canvas アカウントでサインインされます（名前、メール、アバターが同期されます）。
-- 各コースにはそれぞれ専用のコメントスレッドが割り当てられます。
-- コメントはライブで、リアルタイムに更新されます。
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-#### 個別モジュールへの追加（オプション）
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-FastComments を個別のモジュールに外部ツール（External Tool）アイテムとして追加することもできます:
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-1. モジュール内で、アイテムを追加するために **+** をクリックします。
-2. **外部ツール（External Tool）** を選択します。
-3. 一覧から **FastComments** を選びます。
-4. **アイテムを追加（Add Item）** をクリックします。
+#### Automatic SSO
 
-これにより、各モジュールに個別のディスカッションスレッドが作成されます。
+In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.

@@ -1,6 +1,6 @@
-1. Log ind på FastComments og gå til <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">My Account > Canvas LTI Config</a>.
-2. Indtast et **Configuration Name** og din **Platform URL** (f.eks. `https://yourschool.instructure.com`), og klik derefter på **Create Configuration**. Guiden går videre til Step 2 og viser din **Configuration URL**.
-3. I Canvas, gå til **Admin > Developer Keys > + Developer Key > LTI Key**. Sæt **Method** til "Enter URL" og indsæt Configuration URL. Gem nøglen og sæt dens **State** til **ON**.
-4. Kopier **Client ID**-nummeret fra Developer Keys-tabellen i Canvas. Tilbage i FastComments indsæt det i feltet **Client ID** og klik **Save & Continue**.
-5. Gennemgå konfigurationsoversigten og klik på **Enable Integration** for at gå live.
-6. I dit Canvas-kursus, gå til **Settings > Navigation**, find **FastComments**, og aktiver det. Kommentarer vises som et kursusnavigationspunkt.
+1. Log ind på FastComments og gå til <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Min konto > Canvas LTI-konfiguration</a>.
+2. Indtast et **Konfigurationsnavn** og din **Platform-URL** (f.eks. `https://yourschool.instructure.com`). Vælg hvilke **Placeringer** der skal aktiveres (Opgavevisning og/eller Redigeringsknap — begge er slået til som standard). Klik på **Opret konfiguration**. Guiden går videre til Trin 2 og viser din **Konfigurations-URL**.
+3. I Canvas, gå til **Admin > Udviklernøgler > + Udviklernøgle > LTI-nøgle**. Sæt **Metode** til "Angiv URL" og indsæt Konfigurations-URL'en. Gem nøglen, sæt derefter dens **Status** til **TIL** og klik på **Tillad**, når du bliver bedt om det.
+4. Kopiér **Client ID**-nummeret fra tabellen Udviklernøgler i Canvas. Tilbage i FastComments indsæt det i feltet **Client ID** og klik på **Gem & Fortsæt**.
+5. Gennemgå konfigurationsoversigten og klik på **Aktivér integration** for at gå live.
+6. Installer den eksterne app i Canvas (**Admin > Indstillinger > Apps > + App > Efter Client ID**). Kommentarer vises automatisk under opgaver, og undervisere kan indlejre FastComments i Sider, Quizzer og Meddelelser via værktøjslinjeknappen i Rich Content Editor.
