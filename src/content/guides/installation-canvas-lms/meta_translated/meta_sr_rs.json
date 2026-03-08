@@ -1,0 +1,52 @@
+{
+  "name": "Инсталација Canvas LMS-а",
+  "pageHeader": "Додајте коментаре у Canvas LMS преко LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Брзи почетак",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Подешавање FastComments контролне табле",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Подешавање Canvas LTI 1.3"
+    },
+    {
+      "name": "Развојни кључ за Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Подешавање Canvas LTI 1.3"
+    },
+    {
+      "name": "Завршите повезивање",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Подешавање Canvas LTI 1.3"
+    },
+    {
+      "name": "Додај у курс",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Подешавање Canvas LTI 1.3"
+    },
+    {
+      "name": "Стилови коментарисања",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Мапирање улога",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Конфигурација"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Решавање проблема"
+    }
+  ]
+}

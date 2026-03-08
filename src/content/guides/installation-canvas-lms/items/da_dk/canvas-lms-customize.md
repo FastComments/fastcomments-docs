@@ -1,0 +1,6 @@
+---
+FastComments er designet til at blive tilpasset, så det matcher dit websted.
+
+Hvis du gerne vil tilføje brugerdefineret styling eller ændre konfigurationen, [se vores tilpasningsdokumentation](/guide-customizations-and-configuration.html) for at lære hvordan.
+
+---

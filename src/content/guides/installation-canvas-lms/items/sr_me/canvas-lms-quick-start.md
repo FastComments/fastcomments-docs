@@ -1,0 +1,5 @@
+1. Prijavite se na FastComments i idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Moj nalog > Canvas LTI konfiguracija</a>.
+2. Označite **Omogući LTI** i kliknite **Dodaj**. Kopirajte prikazani **URL konfiguracije**.
+3. U Canvasu, idite na **Administracija > Ključevi za razvijače > + Ključ za razvijača > LTI ključ**. Podesite **Metoda** na "Unesite URL" i zalijepite URL konfiguracije. Sačuvajte ključ i postavite njegovo **Stanje** na **ON**.
+4. Kopirajte broj **Client ID** iz tabele Ključeva za razvijače u Canvasu. Zalijepite ga u polje **Client ID** u FastComments i kliknite **Sačuvaj**.
+5. U vašem Canvas kursu, idite na **Podešavanja > Navigacija**, pronađite **FastComments**, i omogućite ga. Komentari će se pojaviti kao stavka navigacije kursa.

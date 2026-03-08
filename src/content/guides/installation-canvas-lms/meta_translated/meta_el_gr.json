@@ -1,0 +1,52 @@
+{
+  "name": "Εγκατάσταση Canvas LMS",
+  "pageHeader": "Προσθήκη σχολίων στο Canvas LMS μέσω LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Συνοπτικά"
+    },
+    {
+      "name": "Ρύθμιση πίνακα ελέγχου FastComments",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Ρύθμιση LTI 1.3 για Canvas"
+    },
+    {
+      "name": "Κλειδί προγραμματιστή Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Ρύθμιση LTI 1.3 για Canvas"
+    },
+    {
+      "name": "Ολοκλήρωση της σύνδεσης",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Ρύθμιση LTI 1.3 για Canvas"
+    },
+    {
+      "name": "Προσθήκη σε μάθημα",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Ρύθμιση LTI 1.3 για Canvas"
+    },
+    {
+      "name": "Στυλ σχολιασμού",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Αντιστοίχιση ρόλων",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Διαμόρφωση"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Αντιμετώπιση προβλημάτων"
+    }
+  ]
+}

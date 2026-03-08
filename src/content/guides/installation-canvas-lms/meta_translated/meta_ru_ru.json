@@ -1,0 +1,52 @@
+{
+  "name": "Установка Canvas LMS",
+  "pageHeader": "Добавление комментариев в Canvas LMS через LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Быстрый старт",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Кратко"
+    },
+    {
+      "name": "Настройка панели управления FastComments",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Настройка LTI 1.3 для Canvas"
+    },
+    {
+      "name": "Ключ разработчика Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Настройка LTI 1.3 для Canvas"
+    },
+    {
+      "name": "Завершение подключения",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Настройка LTI 1.3 для Canvas"
+    },
+    {
+      "name": "Добавление в курс",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Настройка LTI 1.3 для Canvas"
+    },
+    {
+      "name": "Стили комментирования",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Сопоставление ролей",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Кастомизация",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Конфигурация"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Устранение неполадок"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Canvas LMS のインストール",
+  "pageHeader": "LTI 1.3 経由で Canvas LMS にコメントを追加",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "クイックスタート",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "要約"
+    },
+    {
+      "name": "FastComments ダッシュボードの設定",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Canvas LTI 1.3 の設定"
+    },
+    {
+      "name": "Canvas 開発者キー",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Canvas LTI 1.3 の設定"
+    },
+    {
+      "name": "接続を完了する",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Canvas LTI 1.3 の設定"
+    },
+    {
+      "name": "コースに追加する",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Canvas LTI 1.3 の設定"
+    },
+    {
+      "name": "コメントのスタイル",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "ロールマッピング",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "canvas-lms-customize.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "トラブルシューティング"
+    }
+  ]
+}

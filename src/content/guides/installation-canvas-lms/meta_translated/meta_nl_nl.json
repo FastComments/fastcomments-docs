@@ -1,0 +1,52 @@
+{
+  "name": "Installatie van Canvas LMS",
+  "pageHeader": "Opmerkingen toevoegen aan Canvas LMS via LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Snelle start",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "FastComments-dashboard instellen",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Canvas LTI 1.3 instellen"
+    },
+    {
+      "name": "Canvas-ontwikkelaarsleutel",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Canvas LTI 1.3 instellen"
+    },
+    {
+      "name": "Verbinding voltooien",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Canvas LTI 1.3 instellen"
+    },
+    {
+      "name": "Toevoegen aan een cursus",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Canvas LTI 1.3 instellen"
+    },
+    {
+      "name": "Opmerkingsstijlen",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Roltoewijzing",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Aanpassing",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Configuratie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Probleemoplossing"
+    }
+  ]
+}

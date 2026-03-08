@@ -1,0 +1,52 @@
+{
+  "name": "Instalacja Canvas LMS",
+  "pageHeader": "Dodaj komentarze do Canvas LMS za pomocą LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Szybki start",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "W skrócie"
+    },
+    {
+      "name": "Konfiguracja panelu FastComments",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Konfiguracja Canvas LTI 1.3"
+    },
+    {
+      "name": "Klucz deweloperski Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Konfiguracja Canvas LTI 1.3"
+    },
+    {
+      "name": "Dokończ połączenie",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Konfiguracja Canvas LTI 1.3"
+    },
+    {
+      "name": "Dodaj do kursu",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Konfiguracja Canvas LTI 1.3"
+    },
+    {
+      "name": "Style komentowania",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Mapowanie ról",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Konfiguracja"
+    },
+    {
+      "name": "Błędy domeny",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Rozwiązywanie problemów"
+    }
+  ]
+}

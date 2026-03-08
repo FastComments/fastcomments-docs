@@ -1,0 +1,52 @@
+{
+  "name": "התקנת Canvas LMS",
+  "pageHeader": "הוספת תגובות ל-Canvas LMS באמצעות LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "התחלה מהירה",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "תקציר"
+    },
+    {
+      "name": "הגדרת לוח הבקרה של FastComments",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "הגדרת Canvas LTI 1.3"
+    },
+    {
+      "name": "מפתח מפתחים של Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "הגדרת Canvas LTI 1.3"
+    },
+    {
+      "name": "השלמת החיבור",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "הגדרת Canvas LTI 1.3"
+    },
+    {
+      "name": "הוספה לקורס",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "הגדרת Canvas LTI 1.3"
+    },
+    {
+      "name": "סגנונות תגובה",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "מיפוי תפקידים",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "canvas-lms-customize.md",
+      "subCat": "תצורה"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "פתרון בעיות"
+    }
+  ]
+}

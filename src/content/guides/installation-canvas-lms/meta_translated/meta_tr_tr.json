@@ -1,0 +1,52 @@
+{
+  "name": "Canvas LMS Kurulumu",
+  "pageHeader": "LTI 1.3 ile Canvas LMS'e Yorum Ekleme",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Özet"
+    },
+    {
+      "name": "FastComments Kontrol Paneli Kurulumu",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Canvas LTI 1.3 Kurulumu"
+    },
+    {
+      "name": "Canvas Geliştirici Anahtarı",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Canvas LTI 1.3 Kurulumu"
+    },
+    {
+      "name": "Bağlantıyı Tamamlayın",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Canvas LTI 1.3 Kurulumu"
+    },
+    {
+      "name": "Derse Ekle",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Canvas LTI 1.3 Kurulumu"
+    },
+    {
+      "name": "Yorum Stilleri",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Rol Eşleme",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Yapılandırma"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Sorun Giderme"
+    }
+  ]
+}

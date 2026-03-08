@@ -1,0 +1,52 @@
+{
+  "name": "Installation af Canvas LMS",
+  "pageHeader": "Tilføj kommentarer til Canvas LMS via LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hurtig start",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Kort fortalt"
+    },
+    {
+      "name": "Opsætning af FastComments-dashboard",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Opsætning af Canvas LTI 1.3"
+    },
+    {
+      "name": "Udviklernøgle til Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Opsætning af Canvas LTI 1.3"
+    },
+    {
+      "name": "Fuldfør forbindelsen",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Opsætning af Canvas LTI 1.3"
+    },
+    {
+      "name": "Tilføj til et kursus",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Opsætning af Canvas LTI 1.3"
+    },
+    {
+      "name": "Kommentarstile",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Kortlægning af roller",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Konfiguration"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Fejlfinding"
+    }
+  ]
+}

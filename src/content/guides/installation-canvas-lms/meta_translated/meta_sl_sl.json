@@ -1,0 +1,52 @@
+{
+  "name": "Namestitev Canvas LMS",
+  "pageHeader": "Dodajanje komentarjev v Canvas LMS prek LTI 1.3",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hitri začetek",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "Na kratko"
+    },
+    {
+      "name": "Nastavitev nadzorne plošče FastComments",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Nastavitev LTI 1.3 za Canvas"
+    },
+    {
+      "name": "Razvojni ključ Canvas",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Nastavitev LTI 1.3 za Canvas"
+    },
+    {
+      "name": "Dokončajte povezavo",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Nastavitev LTI 1.3 za Canvas"
+    },
+    {
+      "name": "Dodaj v predmet",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Nastavitev LTI 1.3 za Canvas"
+    },
+    {
+      "name": "Slogi komentiranja",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Preslikava vlog",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Prilagajanje",
+      "file": "canvas-lms-customize.md",
+      "subCat": "Konfiguracija"
+    },
+    {
+      "name": "Napake domene",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "Odpravljanje težav"
+    }
+  ]
+}
