@@ -1,28 +1,8 @@
-FastComments prend en charge trois styles de commentaires. Vous pouvez configurer cela dans la <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">Configuration LTI Canvas</a> page.
-
-#### Commentaires
-
-Le widget FastComments standard apparaît sur la page. Les utilisateurs peuvent publier des commentaires en fils, répondre, voter et utiliser toutes les fonctionnalités standard.
+FastComments ajoute des commentaires en fil de discussion à vos cours Canvas. Le widget FastComments standard apparaît sur la page. Les utilisateurs peuvent publier des commentaires en fil, répondre, voter et utiliser toutes les fonctionnalités standard.
 
 <div class="screenshot white-bg">
     <div class="title">Widget de commentaires sur une page de cours</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="Commentaires FastComments sur un cours Canvas" />
 </div>
 
-#### Collab Chat
-
-Avec Collab Chat, les utilisateurs sélectionnent du texte sur la page pour lancer des discussions en ligne. Une barre supérieure affiche les utilisateurs en ligne et le nombre de discussions actives. C'est idéal pour la lecture attentive, la relecture par les pairs et les groupes d'étude.
-
-<div class="screenshot white-bg">
-    <div class="title">Collab Chat avec surlignage de texte</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="Collab Chat FastComments sur Canvas" />
-</div>
-
-#### Collab Chat + Commentaires
-
-Les deux modes actifs ensemble. Le widget de commentaires apparaît sous le contenu de la page, et les utilisateurs peuvent également sélectionner du texte pour lancer des discussions en ligne.
-
-<div class="screenshot white-bg">
-    <div class="title">Collab Chat + Commentaires ensemble</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Collab Chat et commentaires FastComments sur Canvas" />
-</div>
+Les commentaires sont attachés à chaque page de cours ou lien de ressource, de sorte que les discussions restent organisées par page, devoir ou module.
