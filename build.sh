@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# Load NVM to ensure consistent Node.js version with production
+# Load NVM and use project-pinned Node.js version
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use
 
 if [ "$PARTIAL_BUILD" != "true" ]; then
   echo "Creating directories..."
