@@ -1,4 +1,4 @@
-1. Download the latest release ZIP from <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub</a>.
+1. Get the plugin from the <a href="https://moodle.org/plugins/local_fastcomments" target="_blank">Moodle Plugin Directory</a>.
 2. Extract it to `<moodle-root>/local/fastcomments`.
 3. Log in as a site admin and visit **Site Administration > Notifications**. Moodle will detect the plugin and run the install.
 4. Go to **Site Administration > Plugins > Local plugins > FastComments** to configure.

@@ -1,10 +1,10 @@
-#### Download the Plugin
+#### Get the Plugin
 
-Download the latest release ZIP file from the <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">FastComments Moodle GitHub repository</a>.
+Get the plugin from the <a href="https://moodle.org/plugins/local_fastcomments" target="_blank">Moodle Plugin Directory</a>. You can install it directly from within Moodle's plugin installer, or download the ZIP and install manually.
 
-#### Extract to Your Moodle Directory
+#### Manual Install: Extract to Your Moodle Directory
 
-Extract the ZIP file into your Moodle installation so the plugin resides at `<moodle-root>/local/fastcomments`. The plugin directory should contain `version.php`, `lib.php`, and other plugin files directly (not nested inside a subfolder).
+If installing manually, extract the ZIP file into your Moodle installation so the plugin resides at `<moodle-root>/local/fastcomments`. The plugin directory should contain `version.php`, `lib.php`, and other plugin files directly (not nested inside a subfolder).
 
 For example:
 
