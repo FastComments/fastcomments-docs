@@ -1,26 +1,24 @@
-#### Enable FastComments in Course Navigation
+#### How Comments Appear in Your Courses
 
-In your Canvas course, go to **Settings** > **Navigation** tab.
+Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
 
-Find **FastComments** in the hidden items list at the bottom. Drag it to the visible items list (or click the three-dot menu and select **Enable**).
+#### Assignment View
 
-Click **Save**. FastComments will now appear in the course navigation sidebar.
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-#### Using FastComments in a Course
+Each assignment gets its own separate comment thread.
 
-When students click **FastComments** in the course navigation, the LTI launch happens automatically:
+#### Rich Content Editor Button
 
-- Students are signed in via their Canvas account (name, email, and avatar are synced).
-- Each course gets its own comment thread.
-- Comments are live and update in real time.
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-#### Adding to Individual Modules (Optional)
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-You can also add FastComments to individual modules as an External Tool item:
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-1. In a module, click **+** to add an item.
-2. Select **External Tool**.
-3. Choose **FastComments** from the list.
-4. Click **Add Item**.
+#### Automatic SSO
 
-This gives each module its own separate discussion thread.
+In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.
