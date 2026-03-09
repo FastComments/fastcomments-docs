@@ -1,23 +1,24 @@
-#### Abrir Developer Keys no Canvas
+#### Abrir Chaves de Desenvolvedor no Canvas
 
-Faça login no Canvas como administrador. Vá para **Admin** (na barra lateral esquerda) > selecione sua conta > **Developer Keys**.
+Faça login no Canvas como administrador. Vá para **Administrador** (na barra lateral esquerda) > selecione sua conta > **Chaves de Desenvolvedor**.
 
-#### Criar um LTI Developer Key
+#### Criar uma Chave de Desenvolvedor LTI
 
-Clique em **+ Developer Key** e selecione **LTI Key**.
+Clique em **+ Chave de Desenvolvedor** e selecione **Chave LTI**.
 
 No formulário de configuração:
 
-1. Defina **Method** para **Enter URL**.
-2. Cole a **Configuration URL** que você copiou do FastComments no campo de URL.
-3. O Canvas carregará a configuração LTI automaticamente.
-4. Dê um nome à chave (por exemplo, "FastComments").
-5. Clique em **Save**.
+1. No campo **URIs de Redirecionamento** (lado esquerdo), cole a **Launch URL** da página de configuração do FastComments.
+2. À direita, defina **Método** como **Inserir URL**.
+3. Cole a **Configuration URL** que você copiou do FastComments no campo **JSON URL**.
+4. O Canvas carregará a configuração LTI automaticamente.
+5. Dê um nome à chave (por exemplo, "FastComments").
+6. Clique em **Salvar**.
 
-#### Habilitar a Developer Key
+#### Ativar a Chave de Desenvolvedor
 
-Após salvar, a nova chave aparecerá na tabela de Developer Keys com seu **State** definido como **OFF**. Clique no botão de alternância para definir como **ON**. O Canvas pode solicitar uma confirmação — clique em **Allow** para habilitar a chave.
+Após salvar, a nova chave aparecerá na tabela de Chaves de Desenvolvedor com seu **Estado** definido como **DESATIVADO**. Clique no interruptor para defini-lo como **ATIVADO**. O Canvas pode solicitar que você confirme — clique em **Permitir** para habilitar a chave.
 
 #### Copiar o Client ID
 
-A tabela de Developer Keys mostra um **Client ID** numérico na coluna Details (por exemplo, `17000000000042`). Copie esse número - você precisará dele na próxima etapa.
+A tabela de Chaves de Desenvolvedor mostra um **Client ID** numérico na coluna Detalhes (por exemplo, `17000000000042`). Copie esse número - você precisará dele na próxima etapa.

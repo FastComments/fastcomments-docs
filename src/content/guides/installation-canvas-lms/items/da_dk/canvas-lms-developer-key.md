@@ -1,23 +1,24 @@
-#### Åbn Udviklernøgler i Canvas
+#### Åbn Developer Keys i Canvas
 
-Log ind på Canvas som administrator. Gå til **Admin** (i venstre sidebjælke) > vælg din konto > **Udviklernøgler**.
+Log ind på Canvas som administrator. Gå til **Admin** (i venstre sidepanel) > vælg din konto > **Developer Keys**.
 
-#### Opret en LTI-udviklernøgle
+#### Opret en LTI Developer Key
 
-Klik på **+ Udviklernøgle** og vælg **LTI-nøgle**.
+Klik på **+ Developer Key** og vælg **LTI Key**.
 
 I konfigurationsformularen:
 
-1. Indstil **Metode** til **Indtast URL**.
-2. Indsæt **Konfigurations-URL'en** du kopierede fra FastComments i URL-feltet.
-3. Canvas indlæser LTI-konfigurationen automatisk.
-4. Giv nøglen et navn (f.eks. "FastComments").
-5. Klik på **Gem**.
+1. I feltet **Redirect URIs** (venstre side), indsæt **Launch URL** fra FastComments' opsætningsside.
+2. Til højre, indstil **Method** til **Enter URL**.
+3. Indsæt **Configuration URL**, som du kopierede fra FastComments, i feltet **JSON URL**.
+4. Canvas indlæser automatisk LTI-konfigurationen.
+5. Giv nøglen et navn (f.eks. "FastComments").
+6. Klik på **Save**.
 
-#### Aktivér udviklernøglen
+#### Aktiver Developer Key
 
-Efter gemning vil den nye nøgle vises i tabellen Udviklernøgler med dens **Status** sat til **OFF**. Klik på kontakten for at sætte den til **ON**. Canvas kan bede dig om at bekræfte — klik **Tillad** for at aktivere nøglen.
+Efter gemning vises den nye nøgle i Developer Keys-tabellen med dens **State** sat til **OFF**. Klik på kontakten for at sætte den til **ON**. Canvas kan bede dig om bekræftelse — klik på **Allow** for at aktivere nøglen.
 
 #### Kopier Client ID
 
-Tabellen Udviklernøgler viser et numerisk **Client ID** i kolonnen Detaljer (f.eks. `17000000000042`). Kopiér dette nummer - du får brug for det i næste trin.
+Developer Keys-tabellen viser et numerisk **Client ID** i Details-kolonnen (f.eks. `17000000000042`). Kopier dette nummer — du får brug for det i næste trin.
