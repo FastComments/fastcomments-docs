@@ -1,23 +1,24 @@
 #### Open Developer Keys in Canvas
 
-Влезте в Canvas като администратор. Отидете в **Admin** (в лявата странична лента) > изберете вашия акаунт > **Developer Keys**.
+Log in to Canvas as an administrator. Go to **Admin** (in the left sidebar) > select your account > **Developer Keys**.
 
 #### Create an LTI Developer Key
 
-Кликнете **+ Developer Key** и изберете **LTI Key**.
+Click **+ Developer Key** and select **LTI Key**.
 
-В конфигурационната форма:
+In the configuration form:
 
-1. Задайте **Method** на **Enter URL**.
-2. Поставете **Configuration URL**, който копирахте от FastComments, в полето URL.
-3. Canvas ще зареди конфигурацията на LTI автоматично.
-4. Дайте име на ключа (например "FastComments").
-5. Кликнете **Save**.
+1. In the **Redirect URIs** field (left side), paste the **Launch URL** from the FastComments setup page.
+2. On the right, set **Method** to **Enter URL**.
+3. Paste the **Configuration URL** you copied from FastComments into the **JSON URL** field.
+4. Canvas will load the LTI configuration automatically.
+5. Give the key a name (e.g. "FastComments").
+6. Click **Save**.
 
 #### Enable the Developer Key
 
-След запазване, новият ключ ще се появи в таблицата Developer Keys със **State** зададено на **OFF**. Кликнете превключвателя, за да го зададете на **ON**. Canvas може да поиска потвърждение — кликнете **Allow**, за да активирате ключа.
+After saving, the new key will appear in the Developer Keys table with its **State** set to **OFF**. Click the toggle to set it to **ON**. Canvas may prompt you to confirm — click **Allow** to enable the key.
 
 #### Copy the Client ID
 
-Таблицата Developer Keys показва числов **Client ID** в колоната Details (например `17000000000042`). Копирайте този номер - ще ви трябва в следващата стъпка.
+The Developer Keys table shows a numeric **Client ID** in the Details column (e.g. `17000000000042`). Copy this number - you will need it in the next step.

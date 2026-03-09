@@ -1,23 +1,24 @@
-#### Otvorite Developer Keys u Canvasu
+#### Отворите Developer Keys у Canvas
 
-Prijavite se u Canvas kao administrator. Idite na **Admin** (u lijevom bočnom meniju) > odaberite svoj nalog > **Developer Keys**.
+Пријавите се у Canvas као администратор. Идите на **Admin** (у левом бочном менију) > изаберите свој налог > **Developer Keys**.
 
-#### Kreirajte LTI Developer Key
+#### Креирање LTI Developer Key
 
-Kliknite **+ Developer Key** i odaberite **LTI Key**.
+Кликните **+ Developer Key** и изаберите **LTI Key**.
 
-U obrascu za konfiguraciju:
+У формулару за конфигурацију:
 
-1. Postavite **Method** na **Enter URL**.
-2. Zalijepite **Configuration URL** koji ste kopirali iz FastComments u polje URL.
-3. Canvas će automatski učitati LTI konfiguraciju.
-4. Dajte ključu ime (npr. "FastComments").
-5. Kliknite **Save**.
+1. У поље **Redirect URIs** (са лијеве стране) налепите **Launch URL** са странице за подешавање FastComments.
+2. На десној страни, поставите **Method** на **Enter URL**.
+3. Залепите **Configuration URL** који сте копирали из FastComments у поље **JSON URL**.
+4. Canvas ће аутоматски учитати LTI конфигурацију.
+5. Дајте кључу име (нпр. "FastComments").
+6. Кликните **Save**.
 
-#### Omogućite Developer Key
+#### Омогућите Developer Key
 
-Nakon čuvanja, novi ključ će se pojaviti u tabeli Developer Keys sa svojim **State** postavljenim na **OFF**. Kliknite prekidač da ga postavite na **ON**. Canvas može tražiti potvrdu — kliknite **Allow** da omogućite ključ.
+Након чувања, нови кључ ће се појавити у табели **Developer Keys** са **State** постављеним на **OFF**. Кликните прекидач да бисте га поставили на **ON**. Canvas можда затражи потврду — кликните **Allow** да бисте омогућили кључ.
 
-#### Kopirajte Client ID
+#### Копирајте Client ID
 
-Tabela Developer Keys prikazuje numerički **Client ID** u koloni Details (npr. `17000000000042`). Kopirajte ovaj broj - trebaće vam u sljedećem koraku.
+Табела **Developer Keys** приказује нумерички **Client ID** у колони Details (нпр. `17000000000042`). Копирајте овај број - биће вам потребан у следећем кораку.

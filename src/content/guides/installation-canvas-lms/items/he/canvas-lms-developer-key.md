@@ -8,16 +8,17 @@
 
 בטופס התצורה:
 
-1. הגדר את **Method** ל-**Enter URL**.
-2. הדבק את ה-**Configuration URL** שהעתקת מ-FastComments בשדה ה-URL.
-3. Canvas יטען את תצורת ה-LTI אוטומטית.
-4. תן ל-Developer Key שם (למשל "FastComments").
-5. לחץ על **Save**.
+1. בשדה **Redirect URIs** (מצד שמאל), הדבק את **Launch URL** מדף ההגדרות של FastComments.
+2. מימין, קבע את **Method** ל-**Enter URL**.
+3. הדבק את **Configuration URL** שהעתקת מ-FastComments לשדה **JSON URL**.
+4. Canvas יטען את תצורת ה-LTI אוטומטית.
+5. תן למפתח שם (למשל "FastComments").
+6. לחץ על **Save**.
 
 #### הפעל את Developer Key
 
-לאחר השמירה, המפתח החדש יופיע בטבלת Developer Keys כאשר ה-**State** שלו מוגדר כ-**OFF**. לחץ על המתג כדי להגדיר אותו ל-**ON**. יתכן ש-Canvas יבקש אישור — לחץ על **Allow** כדי להפעיל את המפתח.
+לאחר השמירה, המפתח החדש יופיע בטבלת Developer Keys כאשר ה-**State** שלו נקבע ל-**OFF**. לחץ על המתג כדי להגדיר אותו ל-**ON**. ייתכן ש-Canvas יבקש ממך לאשר — לחץ על **Allow** כדי להפעיל את המפתח.
 
-#### העתק את ה-Client ID
+#### העתק את Client ID
 
-טבלת Developer Keys מציגה **Client ID** מספרי בעמודת Details (למשל `17000000000042`). העתק מספר זה - תזדקק לו בשלב הבא.
+בטבלת Developer Keys מוצג מספרי **Client ID** בעמודת Details (למשל `17000000000042`). העתק את המספר הזה - תצטרך אותו בשלב הבא.
