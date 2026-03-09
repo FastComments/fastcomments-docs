@@ -1,0 +1,1 @@
+FastComments LTI 1.3 整合已包含在 Flex 及 Pro 方案中，無需額外付費。

@@ -4,9 +4,14 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Pricing",
+      "file": "canvas-lms-plans.md",
+      "subCat": "TL;DR"
+    },
+    {
       "name": "Quick Start",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "TL;DR"
     },
     {
       "name": "FastComments Dashboard Setup",

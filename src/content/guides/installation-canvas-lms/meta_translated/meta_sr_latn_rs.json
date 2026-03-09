@@ -4,29 +4,34 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Cene",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Ukratko"
+    },
+    {
       "name": "Brzi početak",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Ukratko"
     },
     {
-      "name": "Podešavanje nadzorne table FastComments",
+      "name": "Podešavanje FastComments kontrolne table",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Podešavanje Canvas LTI 1.3"
+      "subCat": "Podešavanje LTI 1.3 za Canvas"
     },
     {
       "name": "Razvojni ključ za Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Podešavanje Canvas LTI 1.3"
+      "subCat": "Podešavanje LTI 1.3 za Canvas"
     },
     {
-      "name": "Završite povezivanje",
+      "name": "Dovršite povezivanje",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Podešavanje Canvas LTI 1.3"
+      "subCat": "Podešavanje LTI 1.3 za Canvas"
     },
     {
-      "name": "Dodavanje u kurs",
+      "name": "Dodajte u kurs",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Podešavanje Canvas LTI 1.3"
+      "subCat": "Podešavanje LTI 1.3 za Canvas"
     },
     {
       "name": "Stilovi komentarisanja",

@@ -1,0 +1,1 @@
+האינטגרציה של FastComments LTI 1.3 כלולה בתוכניות Flex and Pro ללא עלות נוספת.

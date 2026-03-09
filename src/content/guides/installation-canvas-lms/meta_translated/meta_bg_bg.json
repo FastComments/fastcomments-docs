@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Ценообразуване",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Накратко"
+    },
+    {
       "name": "Бърз старт",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Накратко"
@@ -11,22 +16,22 @@
     {
       "name": "Настройка на таблото на FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Настройка на Canvas LTI 1.3"
+      "subCat": "Настройка на LTI 1.3 за Canvas"
     },
     {
       "name": "Ключ за разработчик на Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Настройка на Canvas LTI 1.3"
+      "subCat": "Настройка на LTI 1.3 за Canvas"
     },
     {
       "name": "Завършване на връзката",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Настройка на Canvas LTI 1.3"
+      "subCat": "Настройка на LTI 1.3 за Canvas"
     },
     {
       "name": "Добавяне към курс",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Настройка на Canvas LTI 1.3"
+      "subCat": "Настройка на LTI 1.3 за Canvas"
     },
     {
       "name": "Стилове на коментиране",
@@ -44,7 +49,7 @@
       "subCat": "Конфигурация"
     },
     {
-      "name": "Грешки в домейна",
+      "name": "Грешки с домейна",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Отстраняване на неизправности"
     }

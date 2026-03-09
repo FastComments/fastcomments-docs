@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Precios",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Resumen"
+    },
+    {
       "name": "Inicio rápido",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Resumen"
@@ -11,22 +16,22 @@
     {
       "name": "Configuración del panel de FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Configuración de Canvas LTI 1.3"
+      "subCat": "Configuración de LTI 1.3 en Canvas"
     },
     {
       "name": "Clave de desarrollador de Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Configuración de Canvas LTI 1.3"
+      "subCat": "Configuración de LTI 1.3 en Canvas"
     },
     {
       "name": "Completar la conexión",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Configuración de Canvas LTI 1.3"
+      "subCat": "Configuración de LTI 1.3 en Canvas"
     },
     {
       "name": "Añadir a un curso",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Configuración de Canvas LTI 1.3"
+      "subCat": "Configuración de LTI 1.3 en Canvas"
     },
     {
       "name": "Estilos de comentarios",
@@ -34,7 +39,7 @@
       "subCat": "Configuración"
     },
     {
-      "name": "Mapeo de roles",
+      "name": "Asignación de roles",
       "file": "canvas-lms-role-mapping.md",
       "subCat": "Configuración"
     },

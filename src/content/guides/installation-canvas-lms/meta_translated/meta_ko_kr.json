@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "요금",
+      "file": "canvas-lms-plans.md",
+      "subCat": "요약"
+    },
+    {
       "name": "빠른 시작",
       "file": "canvas-lms-quick-start.md",
       "subCat": "요약"
@@ -24,7 +29,7 @@
       "subCat": "Canvas LTI 1.3 설정"
     },
     {
-      "name": "강좌에 추가",
+      "name": "코스에 추가",
       "file": "canvas-lms-add-to-course.md",
       "subCat": "Canvas LTI 1.3 설정"
     },

@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Cenik",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Na kratko"
+    },
+    {
       "name": "Hitri začetek",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Na kratko"
@@ -14,7 +19,7 @@
       "subCat": "Nastavitev LTI 1.3 za Canvas"
     },
     {
-      "name": "Razvojni ključ Canvas",
+      "name": "Razvijalski ključ za Canvas",
       "file": "canvas-lms-developer-key.md",
       "subCat": "Nastavitev LTI 1.3 za Canvas"
     },
@@ -44,7 +49,7 @@
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Napake domene",
+      "name": "Napake domen",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Odpravljanje težav"
     }

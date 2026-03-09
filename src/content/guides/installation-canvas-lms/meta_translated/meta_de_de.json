@@ -4,29 +4,34 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Preise",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Kurzfassung"
+    },
+    {
       "name": "Schnellstart",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Kurzfassung"
     },
     {
-      "name": "FastComments-Dashboard-Einrichtung",
+      "name": "Einrichtung des FastComments-Dashboards",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Canvas LTI 1.3 Einrichtung"
+      "subCat": "Einrichtung von Canvas LTI 1.3"
     },
     {
       "name": "Canvas-Entwicklerschlüssel",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Canvas LTI 1.3 Einrichtung"
+      "subCat": "Einrichtung von Canvas LTI 1.3"
     },
     {
       "name": "Verbindung abschließen",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Canvas LTI 1.3 Einrichtung"
+      "subCat": "Einrichtung von Canvas LTI 1.3"
     },
     {
       "name": "Zu einem Kurs hinzufügen",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Canvas LTI 1.3 Einrichtung"
+      "subCat": "Einrichtung von Canvas LTI 1.3"
     },
     {
       "name": "Kommentarstile",

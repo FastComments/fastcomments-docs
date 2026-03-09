@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "תמחור",
+      "file": "canvas-lms-plans.md",
+      "subCat": "תקציר"
+    },
+    {
       "name": "התחלה מהירה",
       "file": "canvas-lms-quick-start.md",
       "subCat": "תקציר"

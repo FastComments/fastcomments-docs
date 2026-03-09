@@ -1,8 +1,13 @@
 {
   "name": "Инсталација Canvas LMS-а",
-  "pageHeader": "Додајте коментаре у Canvas LMS преко LTI 1.3",
+  "pageHeader": "Додавање коментара у Canvas LMS преко LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
+    {
+      "name": "Цене",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Укратко"
+    },
     {
       "name": "Брзи почетак",
       "file": "canvas-lms-quick-start.md",
@@ -14,7 +19,7 @@
       "subCat": "Подешавање Canvas LTI 1.3"
     },
     {
-      "name": "Развојни кључ за Canvas",
+      "name": "Развојачки кључ за Canvas",
       "file": "canvas-lms-developer-key.md",
       "subCat": "Подешавање Canvas LTI 1.3"
     },
@@ -24,7 +29,7 @@
       "subCat": "Подешавање Canvas LTI 1.3"
     },
     {
-      "name": "Додај у курс",
+      "name": "Додајте у курс",
       "file": "canvas-lms-add-to-course.md",
       "subCat": "Подешавање Canvas LTI 1.3"
     },
@@ -44,7 +49,7 @@
       "subCat": "Конфигурација"
     },
     {
-      "name": "Грешке домена",
+      "name": "Проблеми са доменом",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Решавање проблема"
     }

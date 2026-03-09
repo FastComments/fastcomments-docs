@@ -4,29 +4,34 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Тарифы",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Кратко"
+    },
+    {
       "name": "Быстрый старт",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Кратко"
     },
     {
-      "name": "Настройка панели управления FastComments",
+      "name": "Настройка панели FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Настройка LTI 1.3 для Canvas"
+      "subCat": "Настройка Canvas LTI 1.3"
     },
     {
       "name": "Ключ разработчика Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Настройка LTI 1.3 для Canvas"
+      "subCat": "Настройка Canvas LTI 1.3"
     },
     {
       "name": "Завершение подключения",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Настройка LTI 1.3 для Canvas"
+      "subCat": "Настройка Canvas LTI 1.3"
     },
     {
-      "name": "Добавление в курс",
+      "name": "Добавить в курс",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Настройка LTI 1.3 для Canvas"
+      "subCat": "Настройка Canvas LTI 1.3"
     },
     {
       "name": "Стили комментирования",
@@ -39,7 +44,7 @@
       "subCat": "Конфигурация"
     },
     {
-      "name": "Кастомизация",
+      "name": "Настройка",
       "file": "canvas-lms-customize.md",
       "subCat": "Конфигурация"
     },

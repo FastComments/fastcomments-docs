@@ -1,15 +1,20 @@
 {
   "name": "Canvas LMS 安装",
-  "pageHeader": "通过 LTI 1.3 在 Canvas LMS 中添加评论",
+  "pageHeader": "通过 LTI 1.3 将评论添加到 Canvas LMS",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "快速开始",
-      "file": "canvas-lms-quick-start.md",
-      "subCat": "简要说明"
+      "name": "定价",
+      "file": "canvas-lms-plans.md",
+      "subCat": "要点"
     },
     {
-      "name": "设置 FastComments 仪表板",
+      "name": "快速开始",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "要点"
+    },
+    {
+      "name": "FastComments 仪表板设置",
       "file": "canvas-lms-dashboard-setup.md",
       "subCat": "Canvas LTI 1.3 设置"
     },

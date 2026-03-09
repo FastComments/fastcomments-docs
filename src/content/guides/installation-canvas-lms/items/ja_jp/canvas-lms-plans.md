@@ -1,0 +1,1 @@
+FastComments の LTI 1.3 統合は、Flex と Pro のプランに追加料金なしで含まれています。

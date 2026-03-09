@@ -4,6 +4,11 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "Cennik",
+      "file": "canvas-lms-plans.md",
+      "subCat": "W skrócie"
+    },
+    {
       "name": "Szybki start",
       "file": "canvas-lms-quick-start.md",
       "subCat": "W skrócie"

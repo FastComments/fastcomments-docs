@@ -1,35 +1,40 @@
 {
   "name": "Installazione di Canvas LMS",
-  "pageHeader": "Aggiungere commenti a Canvas LMS tramite LTI 1.3",
+  "pageHeader": "Aggiungere commenti su Canvas LMS tramite LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
+    {
+      "name": "Prezzi",
+      "file": "canvas-lms-plans.md",
+      "subCat": "In breve"
+    },
     {
       "name": "Avvio rapido",
       "file": "canvas-lms-quick-start.md",
       "subCat": "In breve"
     },
     {
-      "name": "Configurazione della dashboard FastComments",
+      "name": "Configurazione della dashboard di FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Configurazione Canvas LTI 1.3"
+      "subCat": "Configurazione LTI 1.3 per Canvas"
     },
     {
       "name": "Chiave sviluppatore di Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Configurazione Canvas LTI 1.3"
+      "subCat": "Configurazione LTI 1.3 per Canvas"
     },
     {
       "name": "Completa la connessione",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Configurazione Canvas LTI 1.3"
+      "subCat": "Configurazione LTI 1.3 per Canvas"
     },
     {
       "name": "Aggiungi a un corso",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Configurazione Canvas LTI 1.3"
+      "subCat": "Configurazione LTI 1.3 per Canvas"
     },
     {
-      "name": "Stili dei commenti",
+      "name": "Stili di commento",
       "file": "canvas-lms-commenting-styles.md",
       "subCat": "Configurazione"
     },

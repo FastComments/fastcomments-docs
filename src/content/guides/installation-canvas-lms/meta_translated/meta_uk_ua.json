@@ -1,15 +1,20 @@
 {
   "name": "Встановлення Canvas LMS",
-  "pageHeader": "Додавання коментарів у Canvas LMS через LTI 1.3",
+  "pageHeader": "Додавання коментарів до Canvas LMS через LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
+    {
+      "name": "Ціни",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Коротко"
+    },
     {
       "name": "Швидкий старт",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Коротко"
     },
     {
-      "name": "Налаштування панелі FastComments",
+      "name": "Налаштування панелі керування FastComments",
       "file": "canvas-lms-dashboard-setup.md",
       "subCat": "Налаштування LTI 1.3 для Canvas"
     },
@@ -19,7 +24,7 @@
       "subCat": "Налаштування LTI 1.3 для Canvas"
     },
     {
-      "name": "Завершити підключення",
+      "name": "Завершення підключення",
       "file": "canvas-lms-complete-connection.md",
       "subCat": "Налаштування LTI 1.3 для Canvas"
     },
@@ -31,20 +36,20 @@
     {
       "name": "Стилі коментування",
       "file": "canvas-lms-commenting-styles.md",
-      "subCat": "Конфігурація"
+      "subCat": "Налаштування"
     },
     {
-      "name": "Відображення ролей",
+      "name": "Відповідність ролей",
       "file": "canvas-lms-role-mapping.md",
-      "subCat": "Конфігурація"
+      "subCat": "Налаштування"
     },
     {
       "name": "Персоналізація",
       "file": "canvas-lms-customize.md",
-      "subCat": "Конфігурація"
+      "subCat": "Налаштування"
     },
     {
-      "name": "Помилки домену",
+      "name": "Помилки доменів",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Усунення неполадок"
     }

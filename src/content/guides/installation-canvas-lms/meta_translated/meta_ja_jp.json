@@ -1,8 +1,13 @@
 {
   "name": "Canvas LMS のインストール",
-  "pageHeader": "LTI 1.3 経由で Canvas LMS にコメントを追加",
+  "pageHeader": "LTI 1.3 を介して Canvas LMS にコメントを追加する",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
+    {
+      "name": "料金",
+      "file": "canvas-lms-plans.md",
+      "subCat": "要約"
+    },
     {
       "name": "クイックスタート",
       "file": "canvas-lms-quick-start.md",
@@ -29,7 +34,7 @@
       "subCat": "Canvas LTI 1.3 の設定"
     },
     {
-      "name": "コメントのスタイル",
+      "name": "コメントスタイル",
       "file": "canvas-lms-commenting-styles.md",
       "subCat": "設定"
     },

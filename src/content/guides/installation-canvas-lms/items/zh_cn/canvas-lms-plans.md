@@ -1,0 +1,1 @@
+FastComments 的 LTI 1.3 集成包含在 Flex 和 Pro 计划中，无需额外费用。

@@ -1,0 +1,1 @@
+De FastComments LTI 1.3-integratie is inbegrepen bij de Flex- en Pro-abonnementen zonder extra kosten.

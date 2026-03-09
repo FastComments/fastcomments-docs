@@ -1,35 +1,40 @@
 {
-  "name": "Installatie van Canvas LMS",
+  "name": "Canvas LMS-installatie",
   "pageHeader": "Opmerkingen toevoegen aan Canvas LMS via LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Snelle start",
+      "name": "Prijzen",
+      "file": "canvas-lms-plans.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Snelstart",
       "file": "canvas-lms-quick-start.md",
       "subCat": "Kort samengevat"
     },
     {
       "name": "FastComments-dashboard instellen",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Canvas LTI 1.3 instellen"
+      "subCat": "Canvas LTI 1.3-configuratie"
     },
     {
-      "name": "Canvas-ontwikkelaarsleutel",
+      "name": "Canvas ontwikkelaarssleutel",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Canvas LTI 1.3 instellen"
+      "subCat": "Canvas LTI 1.3-configuratie"
     },
     {
       "name": "Verbinding voltooien",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Canvas LTI 1.3 instellen"
+      "subCat": "Canvas LTI 1.3-configuratie"
     },
     {
       "name": "Toevoegen aan een cursus",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Canvas LTI 1.3 instellen"
+      "subCat": "Canvas LTI 1.3-configuratie"
     },
     {
-      "name": "Opmerkingsstijlen",
+      "name": "Reactiestijlen",
       "file": "canvas-lms-commenting-styles.md",
       "subCat": "Configuratie"
     },
@@ -39,7 +44,7 @@
       "subCat": "Configuratie"
     },
     {
-      "name": "Aanpassing",
+      "name": "Aanpassingen",
       "file": "canvas-lms-customize.md",
       "subCat": "Configuratie"
     },

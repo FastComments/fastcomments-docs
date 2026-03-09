@@ -1,12 +1,17 @@
 {
   "name": "Canvas LMS 安裝",
-  "pageHeader": "透過 LTI 1.3 在 Canvas LMS 新增評論",
+  "pageHeader": "透過 LTI 1.3 向 Canvas LMS 新增評論",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
+      "name": "價格",
+      "file": "canvas-lms-plans.md",
+      "subCat": "重點摘要"
+    },
+    {
       "name": "快速開始",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "重點速覽"
+      "subCat": "重點摘要"
     },
     {
       "name": "FastComments 儀表板設定",
