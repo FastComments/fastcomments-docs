@@ -8,11 +8,12 @@ Click **+ Developer Key** and select **LTI Key**.
 
 In the configuration form:
 
-1. Set **Method** to **Enter URL**.
-2. Paste the **Configuration URL** you copied from FastComments into the URL field.
-3. Canvas will load the LTI configuration automatically.
-4. Give the key a name (e.g. "FastComments").
-5. Click **Save**.
+1. In the **Redirect URIs** field (left side), paste the **Launch URL** from the FastComments setup page.
+2. On the right, set **Method** to **Enter URL**.
+3. Paste the **Configuration URL** you copied from FastComments into the **JSON URL** field.
+4. Canvas will load the LTI configuration automatically.
+5. Give the key a name (e.g. "FastComments").
+6. Click **Save**.
 
 #### Enable the Developer Key
 
