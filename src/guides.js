@@ -187,12 +187,12 @@ async function buildGuide(guide, index, locale = defaultLocale) {
             items.push(item);
         }
     }
-    await buildGuideFromItems(guide, items, locale);
+    await buildGuideFromItems(guide, items, locale, meta);
 
     return items;
 }
 
-async function buildGuideFromItems(guide, items, locale = defaultLocale) {
+async function buildGuideFromItems(guide, items, locale = defaultLocale, meta = {}) {
     // Check for localized intro first, then fall back to default locale, then root
     let introPath = path.join(GUIDES_DIR, guide.id, 'items', locale, GUIDE_INTRO_FILE_NAME);
     if (!fs.existsSync(introPath)) {
@@ -253,6 +253,23 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
 
     const outputUrl = createGuideLink(guide.id, locale);
     const defaultUrl = createGuideLink(guide.id, defaultLocale);
+
+    let faqJsonLd = null;
+    if (meta.faq && meta.faq.length > 0) {
+        faqJsonLd = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": meta.faq.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.answer
+                }
+            }))
+        });
+    }
+
     fs.writeFileSync(path.join(STATIC_GENERATED_DIR, outputUrl), getCompiledTemplate(path.join(TEMPLATE_DIR, 'page.html'), {
         title: guide.pageHeader ? guide.pageHeader : guide.name,
         content: guideRootHTML,
@@ -262,6 +279,10 @@ async function buildGuideFromItems(guide, items, locale = defaultLocale) {
         alternateLocales,
         availableLocales,
         defaultUrl,
+        description: meta.description || null,
+        canonicalUrl: defaultUrl,
+        faq: meta.faq || null,
+        faqJsonLd,
         stableUrlId: '/' + defaultUrl // Stable urlId for FastComments widgets (same across all locales)
     }), 'utf8');
 }
