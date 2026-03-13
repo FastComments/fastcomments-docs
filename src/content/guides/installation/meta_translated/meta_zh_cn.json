@@ -1,7 +1,22 @@
 {
   "name": "安装",
-  "pageHeader": "在网站上添加评论",
+  "pageHeader": "向网站添加评论",
   "icon": "download.png",
+  "description": "Add a fast, lightweight comment section to any website in under 5 minutes. Works with WordPress, React, Vue, Angular, and plain HTML.",
+  "faq": [
+    {
+      "question": "How do I add comments to my website?",
+      "answer": "Add a comment section by copying a simple code snippet into your HTML page. FastComments works with any website - WordPress, React, Vue, Angular, or plain HTML. Just add the script tag and a target div element."
+    },
+    {
+      "question": "What is the easiest way to add a comment section to a website?",
+      "answer": "The easiest way is to use a comment widget like FastComments. Copy and paste a small JavaScript snippet into your page - no server-side code or build tools required. It takes under 5 minutes."
+    },
+    {
+      "question": "Can I add comments to a static HTML website?",
+      "answer": "Yes. FastComments provides a VanillaJS snippet that works on any static HTML page. Just add the script tag and a div element where you want comments to appear."
+    }
+  ],
   "itemsOrdered": [
     {
       "name": "WordPress",
@@ -9,7 +24,7 @@
       "subCat": "第三方插件"
     },
     {
-      "name": "VanillaJS / HTML 代码片段",
+      "name": "VanillaJS / HTML 片段",
       "file": "vanillajs.md",
       "subCat": "自定义安装"
     },
@@ -54,7 +69,7 @@
       "subCat": "自定义安装"
     },
     {
-      "name": "Notion 与 Google Sites",
+      "name": "Notion 和 Google Sites",
       "file": "oembed.md",
       "subCat": "嵌入到文档中"
     }

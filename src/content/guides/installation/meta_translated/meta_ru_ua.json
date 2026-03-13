@@ -2,6 +2,21 @@
   "name": "Установка",
   "pageHeader": "Добавление комментариев на сайт",
   "icon": "download.png",
+  "description": "Add a fast, lightweight comment section to any website in under 5 minutes. Works with WordPress, React, Vue, Angular, and plain HTML.",
+  "faq": [
+    {
+      "question": "How do I add comments to my website?",
+      "answer": "Add a comment section by copying a simple code snippet into your HTML page. FastComments works with any website - WordPress, React, Vue, Angular, or plain HTML. Just add the script tag and a target div element."
+    },
+    {
+      "question": "What is the easiest way to add a comment section to a website?",
+      "answer": "The easiest way is to use a comment widget like FastComments. Copy and paste a small JavaScript snippet into your page - no server-side code or build tools required. It takes under 5 minutes."
+    },
+    {
+      "question": "Can I add comments to a static HTML website?",
+      "answer": "Yes. FastComments provides a VanillaJS snippet that works on any static HTML page. Just add the script tag and a div element where you want comments to appear."
+    }
+  ],
   "itemsOrdered": [
     {
       "name": "WordPress",
@@ -11,47 +26,47 @@
     {
       "name": "VanillaJS / HTML-сниппет",
       "file": "vanillajs.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Angular",
       "file": "angular.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "React",
       "file": "react.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "React Native",
       "file": "react-native.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Vue",
       "file": "vue.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "TypeScript",
       "file": "typescript.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Несколько экземпляров на одной странице",
       "file": "multiple-instances.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Типичные сценарии использования",
       "file": "installation-common-use-cases.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Отладка распространенных проблем",
       "file": "debugging-common-issues.md",
-      "subCat": "Пользовательские установки"
+      "subCat": "Самостоятельная установка"
     },
     {
       "name": "Notion и Google Sites",
