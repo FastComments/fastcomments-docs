@@ -1,0 +1,48 @@
+{
+  "name": "Модуль Drupal",
+  "pageHeader": "Добавление комментариев на ваш сайт Drupal",
+  "itemsOrdered": [
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Блоки виджетов",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Многоязычность",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Разрешения",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Как это работает",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

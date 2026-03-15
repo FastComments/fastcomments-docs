@@ -1,0 +1,48 @@
+{
+  "name": "Drupal Module",
+  "pageHeader": "Add Comments to Your Drupal Site",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Configuration",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Widget Blocks",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Multilingual",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Permissions",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "How It Works",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Requirements",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

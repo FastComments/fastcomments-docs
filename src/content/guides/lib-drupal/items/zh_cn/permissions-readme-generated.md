@@ -1,0 +1,3 @@
+- **管理 FastComments** - 访问 FastComments 设置表单。
+- **查看 FastComments** - 查看评论小部件所需。
+- **切换 FastComments** - 允许用户通过字段小部件针对每个实体启用/禁用评论。

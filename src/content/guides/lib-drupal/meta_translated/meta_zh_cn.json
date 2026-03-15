@@ -1,0 +1,48 @@
+{
+  "name": "Drupal 模块",
+  "pageHeader": "为您的 Drupal 站点添加评论",
+  "itemsOrdered": [
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "配置",
+      "file": "configuration-readme-generated.md",
+      "subCat": "配置",
+      "type": "readme"
+    },
+    {
+      "name": "小部件区块",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "多语言",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "权限",
+      "file": "permissions-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "工作原理",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "系统要求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

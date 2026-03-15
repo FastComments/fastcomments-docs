@@ -1,0 +1,48 @@
+{
+  "name": "Module Drupal",
+  "pageHeader": "Ajouter des commentaires à votre site Drupal",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Premiers pas",
+      "type": "readme"
+    },
+    {
+      "name": "Configuration",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Blocs de widgets",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Multilingue",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Autorisations",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Comment ça fonctionne",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Exigences",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

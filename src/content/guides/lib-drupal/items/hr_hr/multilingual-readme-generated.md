@@ -1,0 +1,1 @@
+Modul automatski prosljeđuje trenutni jezik Drupal stranice svim widgetima.

@@ -1,0 +1,1 @@
+De module geeft automatisch de huidige taal van de Drupal-site door aan alle widgets.

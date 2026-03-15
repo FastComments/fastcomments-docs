@@ -1,0 +1,48 @@
+{
+  "name": "Moduł Drupala",
+  "pageHeader": "Dodaj komentarze do swojej strony Drupal",
+  "itemsOrdered": [
+    {
+      "name": "Instalacja",
+      "file": "installation-readme-generated.md",
+      "subCat": "Pierwsze kroki",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguracja",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguracja",
+      "type": "readme"
+    },
+    {
+      "name": "Bloki widżetów",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Wielojęzyczność",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Uprawnienia",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Jak to działa",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Wymagania",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    }
+  ]
+}

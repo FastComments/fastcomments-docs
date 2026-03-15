@@ -1,0 +1,48 @@
+{
+  "name": "מודול Drupal",
+  "pageHeader": "הוספת תגובות לאתר ה-Drupal שלך",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה מהירה",
+      "type": "readme"
+    },
+    {
+      "name": "הגדרות",
+      "file": "configuration-readme-generated.md",
+      "subCat": "הגדרות",
+      "type": "readme"
+    },
+    {
+      "name": "בלוקי ווידג'ט",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "רב-לשוני",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "הרשאות",
+      "file": "permissions-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "כיצד זה עובד",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

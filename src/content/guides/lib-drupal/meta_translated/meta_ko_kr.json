@@ -1,0 +1,48 @@
+{
+  "name": "Drupal 모듈",
+  "pageHeader": "Drupal 사이트에 댓글 추가",
+  "itemsOrdered": [
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "설정",
+      "file": "configuration-readme-generated.md",
+      "subCat": "설정",
+      "type": "readme"
+    },
+    {
+      "name": "위젯 블록",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "다국어",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "권한",
+      "file": "permissions-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "작동 방식",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "요구 사항",
+      "file": "requirements-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    }
+  ]
+}
