@@ -2,6 +2,21 @@
   "name": "Εγκατάσταση",
   "pageHeader": "Προσθήκη σχολίων σε έναν ιστότοπο",
   "icon": "download.png",
+  "description": "Add a fast, lightweight comment section to any website in under 5 minutes. Works with WordPress, React, Vue, Angular, and plain HTML.",
+  "faq": [
+    {
+      "question": "How do I add comments to my website?",
+      "answer": "Add a comment section by copying a simple code snippet into your HTML page. FastComments works with any website - WordPress, React, Vue, Angular, or plain HTML. Just add the script tag and a target div element."
+    },
+    {
+      "question": "What is the easiest way to add a comment section to a website?",
+      "answer": "The easiest way is to use a comment widget like FastComments. Copy and paste a small JavaScript snippet into your page - no server-side code or build tools required. It takes under 5 minutes."
+    },
+    {
+      "question": "Can I add comments to a static HTML website?",
+      "answer": "Yes. FastComments provides a VanillaJS snippet that works on any static HTML page. Just add the script tag and a div element where you want comments to appear."
+    }
+  ],
   "itemsOrdered": [
     {
       "name": "WordPress",
@@ -44,12 +59,12 @@
       "subCat": "Προσαρμοσμένες εγκαταστάσεις"
     },
     {
-      "name": "Συνήθεις περιπτώσεις χρήσης",
+      "name": "Συνηθισμένες περιπτώσεις χρήσης",
       "file": "installation-common-use-cases.md",
       "subCat": "Προσαρμοσμένες εγκαταστάσεις"
     },
     {
-      "name": "Αντιμετώπιση συνηθισμένων προβλημάτων",
+      "name": "Αντιμετώπιση κοινών προβλημάτων",
       "file": "debugging-common-issues.md",
       "subCat": "Προσαρμοσμένες εγκαταστάσεις"
     },

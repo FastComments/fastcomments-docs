@@ -1,7 +1,22 @@
 {
   "name": "설치",
-  "pageHeader": "웹사이트에 댓글 추가하기",
+  "pageHeader": "웹사이트에 댓글 추가",
   "icon": "download.png",
+  "description": "Add a fast, lightweight comment section to any website in under 5 minutes. Works with WordPress, React, Vue, Angular, and plain HTML.",
+  "faq": [
+    {
+      "question": "How do I add comments to my website?",
+      "answer": "Add a comment section by copying a simple code snippet into your HTML page. FastComments works with any website - WordPress, React, Vue, Angular, or plain HTML. Just add the script tag and a target div element."
+    },
+    {
+      "question": "What is the easiest way to add a comment section to a website?",
+      "answer": "The easiest way is to use a comment widget like FastComments. Copy and paste a small JavaScript snippet into your page - no server-side code or build tools required. It takes under 5 minutes."
+    },
+    {
+      "question": "Can I add comments to a static HTML website?",
+      "answer": "Yes. FastComments provides a VanillaJS snippet that works on any static HTML page. Just add the script tag and a div element where you want comments to appear."
+    }
+  ],
   "itemsOrdered": [
     {
       "name": "워드프레스",
@@ -11,50 +26,50 @@
     {
       "name": "바닐라 JS / HTML 스니펫",
       "file": "vanillajs.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "앵귤러",
       "file": "angular.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "리액트",
       "file": "react.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "리액트 네이티브",
       "file": "react-native.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "뷰",
       "file": "vue.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "타입스크립트",
       "file": "typescript.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
-      "name": "동일 페이지에서 여러 인스턴스",
+      "name": "같은 페이지에서 여러 인스턴스",
       "file": "multiple-instances.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "일반적인 사용 사례",
       "file": "installation-common-use-cases.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
       "name": "일반적인 문제 디버깅",
       "file": "debugging-common-issues.md",
-      "subCat": "맞춤 설치"
+      "subCat": "사용자 정의 설치"
     },
     {
-      "name": "노션 및 구글 사이트",
+      "name": "Notion 및 Google Sites",
       "file": "oembed.md",
       "subCat": "문서에 삽입"
     }
