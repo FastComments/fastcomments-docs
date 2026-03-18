@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Регион на акаунта (ВНИМАНИЕ: клиенти в ЕС)
 
-Ако сте в ЕС, ще искате да кажете на клиентските уиджети в кой регион се намирате. Вижте [examples/example-eu](/examples/example-eu/src/App.tsx);
+Ако сте в ЕС, ще искате да кажете на клиентските уиджети в кой регион се намирате. Вижте [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 В противен случай, не е необходимо да дефинирате `region`.
 
 ### Уиджетът за брой коментари

@@ -1,6 +1,6 @@
 Існує два способи заборонити користувачам коментувати на вашому сайті за допомогою FastComments.
 
-Перший — якщо ви вже знаєте їхню електронну адресу, ви можете ввести її на <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">сторінці заблокованих користувачів</a>.
+Перший — якщо ви вже знаєте їхню електронну адресу, ви можете ввести її на <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">сторінці заблокованих користувачів</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

@@ -4,4 +4,4 @@
 
 在 "projects" 中你会找到 fastcomments 库。
 
-查看 ngx-fastcomments 的 README 请见 [此处](/projects/fastcomments-angular)
+查看 ngx-fastcomments 的 README 请见 [此处](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)

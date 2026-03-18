@@ -38,7 +38,7 @@ Esto te permite mostrar tus logros más significativos sin saturar tu firma de c
 
 ### Tipos de insignias
 
-Las insignias vienen en varios tipos basados en diferentes categorías de logro. Para un resumen completo de todos los tipos de insignias disponibles y cómo obtenerlas, consulta la [Guía de Insignias](/guides/badges).
+Las insignias vienen en varios tipos basados en diferentes categorías de logro. Para un resumen completo de todos los tipos de insignias disponibles y cómo obtenerlas, consulta la [Guía de Insignias](/guide-badges.html).
 
 Las categorías comunes de insignias incluyen:
 
@@ -90,4 +90,4 @@ Estas insignias aparecen junto a las insignias obtenidas automáticamente en tu 
 
 ### Para más información
 
-Para detalles completos sobre el sistema de insignias, incluidos todos los tipos de insignias, criterios de obtención y configuración administrativa, consulta la completa [Guía de Insignias](/guides/badges).
+Para detalles completos sobre el sistema de insignias, incluidos todos los tipos de insignias, criterios de obtención y configuración administrativa, consulta la completa [Guía de Insignias](/guide-badges.html).

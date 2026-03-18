@@ -31,7 +31,7 @@
 
 ### 댓글 승인
 
-프로필 소유자의 설정에 따라(자세한 내용은 [개인정보 설정](/guides/user-profiles/privacy-settings) 참조), 댓글은 다음과 같을 수 있습니다:
+프로필 소유자의 설정에 따라(자세한 내용은 [개인정보 설정](/guide-user-profiles.html#privacy-settings) 참조), 댓글은 다음과 같을 수 있습니다:
 
 1. **즉시 표시됨** - 신뢰 수준 또는 승인 설정에 따라 자동 승인
 2. **승인 필요** - 프로필 소유자가 검토하도록 보류
@@ -97,7 +97,7 @@
 - 신뢰받는 사용자와 신규 사용자에 대해 다른 승인 규칙을 설정합니다
 - 모든 댓글에 대해 수동 승인을 요구합니다
 
-자세한 내용은 [개인정보 설정](/guides/user-profiles/privacy-settings)을 참조하세요.
+자세한 내용은 [개인정보 설정](/guide-user-profiles.html#privacy-settings)을 참조하세요.
 
 ### 프로필 댓글 사용 사례
 

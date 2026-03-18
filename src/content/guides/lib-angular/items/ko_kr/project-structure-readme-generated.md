@@ -6,5 +6,5 @@ In "src" you will find an application which is simply a demo app to test the lib
 In "projects" you will find the fastcomments library.
 -> "projects"에는 fastcomments 라이브러리가 있습니다.
 
-View the README for ngx-fastcomments [here](/projects/fastcomments-angular)
--> ngx-fastcomments의 README는 [여기](/projects/fastcomments-angular)에서 확인하세요
+View the README for ngx-fastcomments [here](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+-> ngx-fastcomments의 README는 [여기](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)에서 확인하세요

@@ -20,4 +20,4 @@ Du kan bruge værktøjer som [webhook.site](https://webhook.site) eller [ngrok](
 - **Update Event**: Udløses, når en kommentar redigeres. Default method: PUT
 - **Delete Event**: Udløses, når en kommentar slettes. Default method: DELETE
 
-Hver hændelse inkluderer hele kommentardataene i request body'en (se [Datastrukturer](/guides/webhooks/webhooks-structures) for payload-formatet).
+Hver hændelse inkluderer hele kommentardataene i request body'en (se [Datastrukturer](/guide-webhooks.html#webhooks-structures) for payload-formatet).

@@ -31,7 +31,7 @@ Profile comments are visible if the user hasn't enabled the "Make Profile Commen
 
 ### Comment Approval
 
-Depending on the profile owner's settings (see [Privacy Settings](/guides/user-profiles/privacy-settings)), comments may:
+Depending on the profile owner's settings (see [Privacy Settings](/guide-user-profiles.html#privacy-settings)), comments may:
 
 1. **Appear Immediately** - Auto-approved based on trust level or approval settings
 2. **Require Approval** - Held for the profile owner to review
@@ -97,7 +97,7 @@ Control profile comment visibility with these privacy settings:
 - Set different approval rules for trusted vs. new users
 - Require manual approval for all comments
 
-For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+For more details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 ### Use Cases for Profile Comments
 

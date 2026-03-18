@@ -44,7 +44,7 @@
 - 當您檢視通知時，系統會將其標示為已讀
 - 在 [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications) 中設定您要接收的通知類型
 
-欲了解更多有關管理通知的細節，請參閱 [通知指南](/guides/notifications)。
+欲了解更多有關管理通知的細節，請參閱 [通知指南](/guide-notifications.html)。
 
 ### 最近活動分頁
 
@@ -102,7 +102,7 @@
 - 您的公開留言仍會在其原始上下文（文章上）顯示
 - 只有個人檔案上的彙總活動檢視會被隱藏
 
-更多細節請參閱 [隱私設定](/guides/user-profiles/privacy-settings)。
+更多細節請參閱 [隱私設定](/guide-user-profiles.html#privacy-settings)。
 
 ### 即時更新
 

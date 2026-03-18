@@ -5,5 +5,5 @@
 
 "projects" には fastcomments ライブラリがあります。
 
-ngx-fastcomments の README は[こちら](/projects/fastcomments-angular)をご覧ください。
+ngx-fastcomments の README は[こちら](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)をご覧ください。
 ---

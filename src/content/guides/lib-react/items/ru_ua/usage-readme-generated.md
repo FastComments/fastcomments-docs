@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Регион аккаунта (ВНИМАНИЕ: клиенты из ЕС)
 
-Если вы в ЕС, вам нужно указать виджетам клиента, в каком вы регионе. Смотрите [examples/example-eu](/examples/example-eu/src/App.tsx);
+Если вы в ЕС, вам нужно указать виджетам клиента, в каком вы регионе. Смотрите [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 В противном случае определять `region` не обязательно.
 
 ### Виджет количества комментариев

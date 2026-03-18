@@ -1,6 +1,6 @@
 Obstajata dva načina, kako z FastComments preprečiti uporabnikom komentiranje na vaši strani.
 
-Prvi način: če že poznate njihov e-poštni naslov, ga lahko vnesete na strani <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">blokirani uporabniki</a>.
+Prvi način: če že poznate njihov e-poštni naslov, ga lahko vnesete na strani <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">blokirani uporabniki</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

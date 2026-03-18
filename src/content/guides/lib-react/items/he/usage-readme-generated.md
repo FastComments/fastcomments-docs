@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### אזור החשבון (תשומת לב: לקוחות באיחוד האירופי)
 
-אם אתם באיחוד האירופי, רצוי להודיע לווידג'טים של הלקוח באיזה אזור אתם נמצאים. ראו [examples/example-eu](/examples/example-eu/src/App.tsx);
+אם אתם באיחוד האירופי, רצוי להודיע לווידג'טים של הלקוח באיזה אזור אתם נמצאים. ראו [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 אחרת, אין צורך להגדיר את `region`.
 
 ### ווידג'ט ספירת התגובות

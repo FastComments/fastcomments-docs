@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### 帳戶區域（注意：歐盟客戶）
 
-如果您位於歐盟，您需要告知客戶端小工具您所在的區域。請參閱 [examples/example-eu](/examples/example-eu/src/App.tsx);
+如果您位於歐盟，您需要告知客戶端小工具您所在的區域。請參閱 [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 否則，您不必定義 `region`。
 
 ### 留言計數小工具

@@ -1,6 +1,6 @@
 Постоје два начина да забраните корисницима коментарисање на вашем сајту помоћу FastComments.
 
-Први је да, ако већ знате њихову е-пошту, можете је унети на страници <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">забрањени корисници</a>.
+Први је да, ако већ знате њихову е-пошту, можете је унети на страници <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">забрањени корисници</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='Страница забрањених корисника' app-screenshot-end]
 

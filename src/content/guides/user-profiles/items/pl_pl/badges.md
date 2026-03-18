@@ -38,7 +38,7 @@ Dzięki temu możesz zaprezentować swoje najważniejsze osiągnięcia, nie zaś
 
 ### Rodzaje odznak
 
-Odznaki występują w różnych typach w zależności od kategorii osiągnięć. Aby uzyskać pełny przegląd wszystkich dostępnych typów odznak i sposobów ich zdobywania, zobacz [Przewodnik po odznakach](/guides/badges).
+Odznaki występują w różnych typach w zależności od kategorii osiągnięć. Aby uzyskać pełny przegląd wszystkich dostępnych typów odznak i sposobów ich zdobywania, zobacz [Przewodnik po odznakach](/guide-badges.html).
 
 Typowe kategorie odznak obejmują:
 
@@ -90,4 +90,4 @@ Te odznaki pojawiają się obok automatycznie zdobywanych odznak w Twoim profilu
 
 ### Więcej informacji
 
-Aby uzyskać pełne szczegóły dotyczące systemu odznak, w tym wszystkie typy odznak, kryteria zdobywania i konfigurację administracyjną, zobacz obszerny [Przewodnik po odznakach](/guides/badges).
+Aby uzyskać pełne szczegóły dotyczące systemu odznak, w tym wszystkie typy odznak, kryteria zdobywania i konfigurację administracyjną, zobacz obszerny [Przewodnik po odznakach](/guide-badges.html).

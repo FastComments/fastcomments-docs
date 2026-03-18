@@ -20,4 +20,4 @@ Možete koristiti alate kao što su [webhook.site](https://webhook.site) ili [ng
 - **Update Event**: Pokreće se kada je komentar izmenjen. Podrazumevana metoda: PUT
 - **Delete Event**: Pokreće se kada je komentar obrisan. Podrazumevana metoda: DELETE
 
-Svaki događaj uključuje kompletne podatke komentara u telu zahteva (pogledajte [Strukture podataka](/guides/webhooks/webhooks-structures) za format payload-a).
+Svaki događaj uključuje kompletne podatke komentara u telu zahteva (pogledajte [Strukture podataka](/guide-webhooks.html#webhooks-structures) za format payload-a).

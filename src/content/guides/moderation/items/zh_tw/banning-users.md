@@ -1,6 +1,6 @@
 在 FastComments 中有兩種方式可以禁止使用者在您的網站上發表評論。
 
-第一種是如果您已經知道他們的電子郵件，您可以在 <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">被封鎖使用者</a> 頁面輸入。
+第一種是如果您已經知道他們的電子郵件，您可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">被封鎖使用者</a> 頁面輸入。
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='被封鎖使用者頁面' app-screenshot-end]
 

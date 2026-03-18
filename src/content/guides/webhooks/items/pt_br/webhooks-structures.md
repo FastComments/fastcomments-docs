@@ -117,4 +117,4 @@ Cada requisição de webhook inclui os seguintes cabeçalhos:
 | `X-FastComments-Timestamp` | Timestamp Unix (segundos) quando a requisição foi assinada |
 | `X-FastComments-Signature` | Assinatura HMAC-SHA256 (`sha256=<hex>`) |
 
-Veja [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) para informações sobre verificação da assinatura HMAC.
+Veja [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) para informações sobre verificação da assinatura HMAC.

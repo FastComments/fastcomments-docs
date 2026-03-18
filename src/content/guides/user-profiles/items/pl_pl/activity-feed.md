@@ -44,7 +44,7 @@ Zakładka Powiadomienia wyświetla:
 - Powiadomienia są oznaczane jako przeczytane, gdy je wyświetlisz
 - Skonfiguruj, jakie typy powiadomień otrzymujesz w [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Po więcej informacji o zarządzaniu powiadomieniami zobacz [Notifications Guide](/guides/notifications).
+Po więcej informacji o zarządzaniu powiadomieniami zobacz [Notifications Guide](/guide-notifications.html).
 
 ### Zakładka Najnowsza aktywność
 
@@ -102,7 +102,7 @@ Po włączeniu:
 - Twoje publiczne komentarze nadal są widoczne w ich oryginalnym kontekście (na artykułach)
 - Tylko zagregowany widok aktywności na twoim profilu jest ukryty
 
-Szczegóły znajdziesz w [Privacy Settings](/guides/user-profiles/privacy-settings).
+Szczegóły znajdziesz w [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 ### Aktualizacje w czasie rzeczywistym
 

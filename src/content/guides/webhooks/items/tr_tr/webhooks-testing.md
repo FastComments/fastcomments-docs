@@ -20,4 +20,4 @@ Geliştirme sırasında gelen webhook payload'larını incelemek için [webhook.
 - **Update Event**: Bir yorum düzenlendiğinde tetiklenir. Varsayılan yöntem: PUT
 - **Delete Event**: Bir yorum silindiğinde tetiklenir. Varsayılan yöntem: DELETE
 
-Her etkinlik, istek gövdesinde tam yorum verilerini içerir (yük formatı için bkz. [Veri Yapıları](/guides/webhooks/webhooks-structures)).
+Her etkinlik, istek gövdesinde tam yorum verilerini içerir (yük formatı için bkz. [Veri Yapıları](/guide-webhooks.html#webhooks-structures)).

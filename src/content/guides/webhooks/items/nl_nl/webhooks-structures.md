@@ -117,4 +117,4 @@ Elke webhook-request bevat de volgende headers:
 | `X-FastComments-Timestamp` | Unix-tijdstempel (seconden) waarop het verzoek werd ondertekend |
 | `X-FastComments-Signature` | HMAC-SHA256-handtekening (`sha256=<hex>`) |
 
-Zie [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) voor informatie over het verifiëren van de HMAC-handtekening.
+Zie [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) voor informatie over het verifiëren van de HMAC-handtekening.

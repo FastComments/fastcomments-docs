@@ -67,7 +67,7 @@ DM almak istemiyorsanız, bunları tamamen devre dışı bırakabilirsiniz:
 2. "Doğrudan Mesajları Devre Dışı Bırak" seçeneğini etkinleştirin
 3. DM seçeneği profilinizden gizlenecektir
 
-Daha fazla detay için bakınız [Gizlilik Ayarları](/guides/user-profiles/privacy-settings).
+Daha fazla detay için bakınız [Gizlilik Ayarları](/guide-user-profiles.html#privacy-settings).
 
 **Kullanıcı Engelleme:**
 Birisi DM aracılığıyla sizi rahatsız ediyorsa:

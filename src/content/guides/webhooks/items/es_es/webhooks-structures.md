@@ -117,6 +117,6 @@ Cada petición de webhook incluye los siguientes encabezados:
 | `X-FastComments-Timestamp` | Marca de tiempo Unix (segundos) cuando la petición fue firmada |
 | `X-FastComments-Signature` | Firma HMAC-SHA256 (`sha256=<hex>`) |
 
-Consulta [Seguridad y tokens de API](/guides/webhooks/webhooks-api-tokens) para obtener información sobre cómo verificar la firma HMAC.
+Consulta [Seguridad y tokens de API](/guide-webhooks.html#webhooks-api-tokens) para obtener información sobre cómo verificar la firma HMAC.
 
 ---

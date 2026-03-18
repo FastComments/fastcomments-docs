@@ -5,5 +5,5 @@ En "src" encontrarás una aplicación que es simplemente una aplicación de demo
 
 En "projects" encontrarás la biblioteca fastcomments.
 
-Consulta el README de ngx-fastcomments [aquí](/projects/fastcomments-angular)
+Consulta el README de ngx-fastcomments [aquí](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
 ---

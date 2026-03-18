@@ -67,7 +67,7 @@ Direct Messaging 提供：
 2. 启用 “Disable Direct Messages”
 3. DM 选项将从您的资料中隐藏
 
-有关更多细节，请参阅 [Privacy Settings](/guides/user-profiles/privacy-settings)。
+有关更多细节，请参阅 [Privacy Settings](/guide-user-profiles.html#privacy-settings)。
 
 **Blocking Users:**
 如果有人通过私信骚扰您：

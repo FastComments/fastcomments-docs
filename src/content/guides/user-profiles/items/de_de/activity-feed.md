@@ -44,7 +44,7 @@ Ihre Registerkarte "Benachrichtigungen" zeigt:
 - Benachrichtigungen werden als gelesen markiert, wenn Sie sie ansehen
 - Konfigurieren Sie, welche Arten von Benachrichtigungen Sie in den [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/edit-notifications) erhalten
 
-Weitere Details zur Verwaltung von Benachrichtigungen finden Sie im [Benachrichtigungs-Leitfaden](/guides/notifications).
+Weitere Details zur Verwaltung von Benachrichtigungen finden Sie im [Benachrichtigungs-Leitfaden](/guide-notifications.html).
 
 ### Registerkarte 'Aktuelle Aktivität'
 
@@ -102,7 +102,7 @@ Wenn aktiviert:
 - Ihre öffentlichen Kommentare sind weiterhin in ihrem ursprünglichen Kontext sichtbar (in Artikeln)
 - Nur die aggregierte Aktivitätsansicht auf Ihrem Profil ist verborgen
 
-Details finden Sie unter [Datenschutzeinstellungen](/guides/user-profiles/privacy-settings).
+Details finden Sie unter [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
 
 ### Echtzeit-Updates
 

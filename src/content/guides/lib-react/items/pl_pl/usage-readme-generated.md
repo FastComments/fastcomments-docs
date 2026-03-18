@@ -24,7 +24,7 @@ Zobacz przykład i wyjaśnienie [tutaj](https://github.com/FastComments/fastcomm
 
 ### Region konta (UWAGA: klienci z UE)
 
-Jeśli znajdujesz się w UE, powinieneś poinformować widżety klienckie, w jakim jesteś regionie. Zobacz [examples/example-eu](/examples/example-eu/src/App.tsx);
+Jeśli znajdujesz się w UE, powinieneś poinformować widżety klienckie, w jakim jesteś regionie. Zobacz [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 W przeciwnym razie nie musisz definiować `region`.
 
 ### Widżet licznika komentarzy

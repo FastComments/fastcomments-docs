@@ -1,6 +1,6 @@
 使用 FastComments，有两种方法可以禁止用户在您的网站发表评论。
 
-第一种是，如果您已经知道他们的电子邮件，您可以在 <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">封禁用户</a> 页面中输入该电子邮件。
+第一种是，如果您已经知道他们的电子邮件，您可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">封禁用户</a> 页面中输入该电子邮件。
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

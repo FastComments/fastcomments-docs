@@ -31,7 +31,7 @@
 
 ### 留言審核
 
-根據個人檔案擁有者的設定（請參閱 [隱私設定](/guides/user-profiles/privacy-settings)），留言可能會：
+根據個人檔案擁有者的設定（請參閱 [隱私設定](/guide-user-profiles.html#privacy-settings)），留言可能會：
 
 1. **立即顯示** - 根據信任等級或審核設定自動通過
 2. **需要審核** - 留待個人檔案擁有者審查
@@ -97,7 +97,7 @@
 - 為受信任使用者與新使用者設定不同的審核規則
 - 要求所有留言皆需手動審核
 
-更多細節請參閱 [隱私設定](/guides/user-profiles/privacy-settings)。
+更多細節請參閱 [隱私設定](/guide-user-profiles.html#privacy-settings)。
 
 ### 個人檔案留言的使用情境
 

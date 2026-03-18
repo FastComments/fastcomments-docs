@@ -21,6 +21,6 @@ Vous pouvez utiliser des outils comme [webhook.site](https://webhook.site) ou [n
 - **Update Event**: Déclenché lorsqu'un commentaire est édité. Méthode par défaut : PUT
 - **Delete Event**: Déclenché lorsqu'un commentaire est supprimé. Méthode par défaut : DELETE
 
-Chaque événement inclut l'ensemble des données du commentaire dans le corps de la requête (voir [Structures de données](/guides/webhooks/webhooks-structures) pour le format de la charge utile).
+Chaque événement inclut l'ensemble des données du commentaire dans le corps de la requête (voir [Structures de données](/guide-webhooks.html#webhooks-structures) pour le format de la charge utile).
 
 ---

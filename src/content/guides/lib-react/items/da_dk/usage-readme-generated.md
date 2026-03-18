@@ -24,7 +24,7 @@ Se eksemplet og forklaringen [her](https://github.com/FastComments/fastcomments-
 
 ### Konto-region (OPMÆRKSOM: EU-kunder)
 
-Hvis du er i EU, bør du fortælle klient-widgets, hvilken region du befinder dig i. Se [examples/example-eu](/examples/example-eu/src/App.tsx); ellers behøver du ikke definere `region`.
+Hvis du er i EU, bør du fortælle klient-widgets, hvilken region du befinder dig i. Se [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx); ellers behøver du ikke definere `region`.
 
 ### Kommentar-tæller-widgeten
 

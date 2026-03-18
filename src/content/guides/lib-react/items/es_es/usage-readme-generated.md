@@ -24,7 +24,7 @@ Vea el ejemplo y la explicación [aquí](https://github.com/FastComments/fastcom
 
 ### Región de la cuenta (ATENCIÓN: clientes de la UE)
 
-Si está en la UE, querrá indicar a los widgets del cliente en qué región se encuentra. Vea [examples/example-eu](/examples/example-eu/src/App.tsx);
+Si está en la UE, querrá indicar a los widgets del cliente en qué región se encuentra. Vea [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 De lo contrario, no tiene que definir `region`.
 
 ### El widget de recuento de comentarios

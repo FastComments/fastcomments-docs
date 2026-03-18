@@ -1,6 +1,6 @@
 Hay dos maneras de prohibir a usuarios de comentar en su sitio con FastComments.
 
-La primera es si ya conoce su correo electrónico, puede introducirlo en la <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">usuarios prohibidos</a> página.
+La primera es si ya conoce su correo electrónico, puede introducirlo en la <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">usuarios prohibidos</a> página.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

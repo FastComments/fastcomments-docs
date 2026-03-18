@@ -1,6 +1,6 @@
 Der er to måder at forbyde brugere at kommentere på dit site med FastComments.
 
-Den første er, at hvis du allerede kender deres e-mail, kan du indtaste den på siden <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">blokerede brugere</a>.
+Den første er, at hvis du allerede kender deres e-mail, kan du indtaste den på siden <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">blokerede brugere</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

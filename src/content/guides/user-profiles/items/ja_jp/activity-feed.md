@@ -44,7 +44,7 @@
 - 通知は表示すると既読にマークされます
 - 受け取る通知の種類は [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications) で設定できます
 
-通知の管理に関する詳細は [Notifications Guide](/guides/notifications) を参照してください。
+通知の管理に関する詳細は [Notifications Guide](/guide-notifications.html) を参照してください。
 
 ### 最近のアクティビティタブ
 
@@ -102,7 +102,7 @@
 - あなたの公開コメントは元のコンテキスト（記事上）では引き続き表示されます
 - プロフィール上の集約されたアクティビティビューのみが非表示になります
 
-詳細は [Privacy Settings](/guides/user-profiles/privacy-settings) を参照してください。
+詳細は [Privacy Settings](/guide-user-profiles.html#privacy-settings) を参照してください。
 
 ### リアルタイム更新
 

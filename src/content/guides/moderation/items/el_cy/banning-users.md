@@ -1,6 +1,6 @@
 Υπάρχουν δύο τρόποι για να αποκλείσετε χρήστες από το να σχολιάζουν στον ιστότοπό σας με το FastComments.
 
-Ο πρώτος είναι ότι αν ήδη γνωρίζετε το email τους, μπορείτε να το εισάγετε στη σελίδα <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένοι χρήστες</a>.
+Ο πρώτος είναι ότι αν ήδη γνωρίζετε το email τους, μπορείτε να το εισάγετε στη σελίδα <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένοι χρήστες</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

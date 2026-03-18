@@ -116,6 +116,6 @@ Her webhook isteği aşağıdaki başlıkları içerir:
 | `X-FastComments-Timestamp` | İsteğin imzalandığı Unix zaman damgası (saniye) |
 | `X-FastComments-Signature` | HMAC-SHA256 imzası (`sha256=<hex>`) |
 
-HMAC imzasını doğrulama hakkında bilgi için [Güvenlik ve API Anahtarları](/guides/webhooks/webhooks-api-tokens) sayfasına bakın.
+HMAC imzasını doğrulama hakkında bilgi için [Güvenlik ve API Anahtarları](/guide-webhooks.html#webhooks-api-tokens) sayfasına bakın.
 
 ---

@@ -20,4 +20,4 @@ Możesz użyć narzędzi takich jak [webhook.site](https://webhook.site) lub [ng
 - **Zdarzenie aktualizacji**: Wywoływane, gdy komentarz jest edytowany. Domyślna metoda: PUT
 - **Zdarzenie usunięcia**: Wywoływane, gdy komentarz zostanie usunięty. Domyślna metoda: DELETE
 
-Każde zdarzenie zawiera pełne dane komentarza w treści żądania (zobacz [Struktury danych](/guides/webhooks/webhooks-structures) dla formatu danych).
+Każde zdarzenie zawiera pełne dane komentarza w treści żądania (zobacz [Struktury danych](/guide-webhooks.html#webhooks-structures) dla formatu danych).

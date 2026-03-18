@@ -67,7 +67,7 @@ Ako ne želite primati DM-ove, možete ih potpuno onemogućiti:
 2. Omogućite "Disable Direct Messages"
 3. Opcija DM će biti skrivena sa vašeg profila
 
-Za više detalja, pogledajte [Postavke privatnosti](/guides/user-profiles/privacy-settings).
+Za više detalja, pogledajte [Postavke privatnosti](/guide-user-profiles.html#privacy-settings).
 
 **Blokiranje korisnika:**
 Ako vas neko uznemirava putem DM-a:

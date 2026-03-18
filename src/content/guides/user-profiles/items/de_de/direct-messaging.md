@@ -67,7 +67,7 @@ Wenn Sie keine DMs erhalten möchten, können Sie diese vollständig deaktiviere
 2. Aktivieren Sie "Direktnachrichten deaktivieren"
 3. Die DM-Option wird in Ihrem Profil ausgeblendet
 
-Weitere Details finden Sie unter [Datenschutzeinstellungen](/guides/user-profiles/privacy-settings).
+Weitere Details finden Sie unter [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
 
 **Benutzer sperren:**
 Wenn Sie über DM belästigt werden:

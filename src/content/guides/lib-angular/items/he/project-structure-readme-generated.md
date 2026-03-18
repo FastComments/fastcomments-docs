@@ -4,4 +4,4 @@
 
 בתיקייה "projects" תמצא את הספרייה fastcomments.
 
-עיין בקובץ README עבור ngx-fastcomments [כאן](/projects/fastcomments-angular)
+עיין בקובץ README עבור ngx-fastcomments [כאן](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)

@@ -38,7 +38,7 @@ Bu, yorum imzanızı doldurmadan en anlamlı başarılarınızı sergilemenizi s
 
 ### Rozet Türleri
 
-Rozetler, farklı başarı kategorilerine bağlı çeşitli türlerde gelir. Mevcut tüm rozet türleri ve bunları nasıl kazanacağınızın tam bir görünümü için bkz. [Rozetler Kılavuzu](/guides/badges).
+Rozetler, farklı başarı kategorilerine bağlı çeşitli türlerde gelir. Mevcut tüm rozet türleri ve bunları nasıl kazanacağınızın tam bir görünümü için bkz. [Rozetler Kılavuzu](/guide-badges.html).
 
 Yaygın rozet kategorileri şunlardır:
 
@@ -90,4 +90,4 @@ Bu rozetler, profilinizde otomatik kazanılmış rozetlerle birlikte görünür.
 
 ### Daha Fazla Bilgi
 
-Rozet sistemi hakkında tüm ayrıntılar, tüm rozet türleri, kazanma kriterleri ve yönetim yapılandırması için kapsamlı [Rozetler Kılavuzu](/guides/badges) sayfasına bakın.
+Rozet sistemi hakkında tüm ayrıntılar, tüm rozet türleri, kazanma kriterleri ve yönetim yapılandırması için kapsamlı [Rozetler Kılavuzu](/guide-badges.html) sayfasına bakın.

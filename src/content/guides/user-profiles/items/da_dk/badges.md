@@ -38,7 +38,7 @@ Dette giver dig mulighed for at fremvise dine mest betydningsfulde præstationer
 
 ### Badge-typer
 
-Badges findes i forskellige typer baseret på forskellige præstationskategorier. For en komplet oversigt over alle tilgængelige badge-typer og hvordan man optjener dem, se [Badge-guiden](/guides/badges).
+Badges findes i forskellige typer baseret på forskellige præstationskategorier. For en komplet oversigt over alle tilgængelige badge-typer og hvordan man optjener dem, se [Badge-guiden](/guide-badges.html).
 
 Almindelige badge-kategorier inkluderer:
 
@@ -90,4 +90,4 @@ Disse badges vises sammen med automatisk optjente badges på din profil.
 
 ### Flere oplysninger
 
-For fuldstændige oplysninger om badge-systemet, inklusive alle badge-typer, optjeningskriterier og administrativ konfiguration, se den omfattende [Badge-guiden](/guides/badges).
+For fuldstændige oplysninger om badge-systemet, inklusive alle badge-typer, optjeningskriterier og administrativ konfiguration, se den omfattende [Badge-guiden](/guide-badges.html).

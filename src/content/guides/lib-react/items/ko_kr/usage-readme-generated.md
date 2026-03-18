@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Account Region (ATTENTION: EU Customers)
 
-EU에 있는 경우, 클라이언트 위젯에 귀하의 지역을 알려야 합니다. [examples/example-eu](/examples/example-eu/src/App.tsx)를 참조하십시오;
+EU에 있는 경우, 클라이언트 위젯에 귀하의 지역을 알려야 합니다. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx)를 참조하십시오;
 그렇지 않으면 `region`을 정의할 필요가 없습니다.
 
 ### The Comment Count Widget

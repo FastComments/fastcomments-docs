@@ -31,7 +31,7 @@ Komentarji profila so vidni, če uporabnik ni omogočil nastavitve "Naredi komen
 
 ### Odobritev komentarjev
 
-Glede na nastavitve lastnika profila (glej [Nastavitve zasebnosti](/guides/user-profiles/privacy-settings)), se komentarji lahko:
+Glede na nastavitve lastnika profila (glej [Nastavitve zasebnosti](/guide-user-profiles.html#privacy-settings)), se komentarji lahko:
 
 1. **Prikazujejo se takoj** - Samodejno odobreno glede na raven zaupanja ali nastavitve odobritve
 2. **Zahtevajo odobritev** - Zadržano za pregled pri lastniku profila
@@ -97,7 +97,7 @@ Nadzorujte vidnost komentarjev profila s temi nastavitvami zasebnosti:
 - Nastavite različna pravila odobritve za zaupanja vredne in nove uporabnike
 - Zahtevajte ročno odobritev za vse komentarje
 
-Za več podrobnosti glejte [Nastavitve zasebnosti](/guides/user-profiles/privacy-settings).
+Za več podrobnosti glejte [Nastavitve zasebnosti](/guide-user-profiles.html#privacy-settings).
 
 ### Primeri uporabe komentarjev profila
 

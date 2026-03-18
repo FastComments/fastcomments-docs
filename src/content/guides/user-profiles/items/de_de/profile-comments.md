@@ -32,7 +32,7 @@ Profilkommentare sind sichtbar, sofern der Nutzer nicht die Einstellung "Profilk
 
 ### Kommentarfreigabe
 
-Je nach den Einstellungen des Profilinhabers (siehe [Datenschutzeinstellungen](/guides/user-profiles/privacy-settings)) können Kommentare:
+Je nach den Einstellungen des Profilinhabers (siehe [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings)) können Kommentare:
 
 1. **Sofort erscheinen** - Automatisch genehmigt basierend auf Vertrauensstufe oder Genehmigungseinstellungen
 2. **Eine Genehmigung erfordern** - Zur Überprüfung durch den Profilinhaber zurückgehalten
@@ -98,7 +98,7 @@ Kontrollieren Sie die Sichtbarkeit von Profilkommentaren mit diesen Datenschutze
 - Legen Sie unterschiedliche Genehmigungsregeln für vertrauenswürdige vs. neue Nutzer fest
 - Fordern Sie für alle Kommentare manuelle Genehmigung an
 
-Für weitere Details siehe [Datenschutzeinstellungen](/guides/user-profiles/privacy-settings).
+Für weitere Details siehe [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
 
 ### Anwendungsfälle für Profilkommentare
 

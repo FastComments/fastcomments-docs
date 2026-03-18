@@ -31,7 +31,7 @@ Profilkommentarer er synlige, hvis brugeren ikke har aktiveret indstillingen "G�
 
 ### Kommentar-godkendelse
 
-Afhængigt af profilens ejerens indstillinger (se [Indstillinger for privatliv](/guides/user-profiles/privacy-settings)), kan kommentarer:
+Afhængigt af profilens ejerens indstillinger (se [Indstillinger for privatliv](/guide-user-profiles.html#privacy-settings)), kan kommentarer:
 
 1. **Vises med det samme** - Automatisk godkendt baseret på tillidsniveau eller godkendelsesindstillinger
 2. **Kræve godkendelse** - Holdes tilbage, så profilindehaveren kan gennemgå dem
@@ -97,7 +97,7 @@ Styr synligheden af profilkommentarer med disse privatlivsindstillinger:
 - Indstil forskellige godkendelsesregler for betroede vs. nye brugere
 - Kræv manuel godkendelse for alle kommentarer
 
-For flere detaljer, se [Indstillinger for privatliv](/guides/user-profiles/privacy-settings).
+For flere detaljer, se [Indstillinger for privatliv](/guide-user-profiles.html#privacy-settings).
 
 ### Anvendelsestilfælde for profilkommentarer
 

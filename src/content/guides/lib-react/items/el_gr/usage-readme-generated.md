@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Περιοχή Λογαριασμού (ΠΡΟΣΟΧΗ: Πελάτες ΕΕ)
 
-Αν βρίσκεστε στην ΕΕ, θα πρέπει να ενημερώσετε τα client widgets για την περιοχή σας. Δείτε [examples/example-eu](/examples/example-eu/src/App.tsx);
+Αν βρίσκεστε στην ΕΕ, θα πρέπει να ενημερώσετε τα client widgets για την περιοχή σας. Δείτε [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Διαφορετικά, δεν χρειάζεται να ορίσετε `region`.
 
 ### Το widget μέτρησης σχολίων

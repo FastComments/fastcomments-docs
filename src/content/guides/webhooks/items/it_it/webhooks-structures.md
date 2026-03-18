@@ -117,4 +117,4 @@ Ogni richiesta webhook include le seguenti intestazioni:
 | `X-FastComments-Timestamp` | Timestamp Unix (secondi) quando la richiesta è stata firmata |
 | `X-FastComments-Signature` | Firma HMAC-SHA256 (`sha256=<hex>`) |
 
-Vedi [Sicurezza e token API](/guides/webhooks/webhooks-api-tokens) per informazioni sulla verifica della firma HMAC.
+Vedi [Sicurezza e token API](/guide-webhooks.html#webhooks-api-tokens) per informazioni sulla verifica della firma HMAC.

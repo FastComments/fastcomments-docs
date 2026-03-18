@@ -44,7 +44,7 @@ Tu pestaña de Notificaciones muestra:
 - Las notificaciones se marcan como leídas cuando las ves
 - Configura qué tipos de notificaciones recibes en [Configuración de notificaciones](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Para más detalles sobre cómo gestionar notificaciones, consulta la [Guía de notificaciones](/guides/notifications).
+Para más detalles sobre cómo gestionar notificaciones, consulta la [Guía de notificaciones](/guide-notifications.html).
 
 ### Pestaña Actividad Reciente
 
@@ -102,7 +102,7 @@ Cuando está habilitado:
 - Tus comentarios públicos siguen siendo visibles en su contexto original (en los artículos)
 - Solo la vista agregada de actividad en tu perfil queda oculta
 
-Para más detalles, consulta [Ajustes de privacidad](/guides/user-profiles/privacy-settings).
+Para más detalles, consulta [Ajustes de privacidad](/guide-user-profiles.html#privacy-settings).
 
 ### Actualizaciones en tiempo real
 

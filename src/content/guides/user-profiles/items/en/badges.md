@@ -38,7 +38,7 @@ This allows you to showcase your most meaningful achievements without cluttering
 
 ### Badge Types
 
-Badges come in various types based on different achievement categories. For a complete overview of all available badge types and how to earn them, see the [Badges Guide](/guides/badges).
+Badges come in various types based on different achievement categories. For a complete overview of all available badge types and how to earn them, see the [Badges Guide](/guide-badges.html).
 
 Common badge categories include:
 
@@ -90,4 +90,4 @@ These badges appear alongside automatically earned badges on your profile.
 
 ### For More Information
 
-For complete details on the badge system, including all badge types, earning criteria, and administrative configuration, see the comprehensive [Badges Guide](/guides/badges).
+For complete details on the badge system, including all badge types, earning criteria, and administrative configuration, see the comprehensive [Badges Guide](/guide-badges.html).

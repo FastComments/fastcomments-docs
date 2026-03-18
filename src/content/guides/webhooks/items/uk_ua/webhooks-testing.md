@@ -20,4 +20,4 @@
 - **Update Event**: Викликається, коли коментар редагується. Default method: PUT
 - **Delete Event**: Викликається, коли коментар видаляється. Default method: DELETE
 
-Кожна подія містить повні дані коментаря в тілі запиту (див. [Структури даних](/guides/webhooks/webhooks-structures) щодо формату payload).
+Кожна подія містить повні дані коментаря в тілі запиту (див. [Структури даних](/guide-webhooks.html#webhooks-structures) щодо формату payload).

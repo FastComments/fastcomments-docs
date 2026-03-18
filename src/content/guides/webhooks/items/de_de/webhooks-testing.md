@@ -20,4 +20,4 @@ Sie können Werkzeuge wie [webhook.site](https://webhook.site) oder [ngrok](http
 - **Update Event**: Wird ausgelöst, wenn ein Kommentar bearbeitet wird. Standardmethode: PUT
 - **Delete Event**: Wird ausgelöst, wenn ein Kommentar gelöscht wird. Standardmethode: DELETE
 
-Jedes Ereignis enthält die vollständigen Kommentardaten im Anfragekörper (siehe [Datenstrukturen](/guides/webhooks/webhooks-structures) für das Payload-Format).
+Jedes Ereignis enthält die vollständigen Kommentardaten im Anfragekörper (siehe [Datenstrukturen](/guide-webhooks.html#webhooks-structures) für das Payload-Format).

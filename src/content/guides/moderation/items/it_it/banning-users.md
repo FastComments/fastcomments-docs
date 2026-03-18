@@ -1,6 +1,6 @@
 Ci sono due modi per impedire agli utenti di commentare sul tuo sito con FastComments.
 
-Il primo è se conosci già la loro email, puoi inserirla nella pagina <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">utenti bannati</a>.
+Il primo è se conosci già la loro email, puoi inserirla nella pagina <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">utenti bannati</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

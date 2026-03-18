@@ -44,7 +44,7 @@ Votre onglet Notifications affiche :
 - Les notifications sont marquées comme lues lorsque vous les consultez
 - Configurez les types de notifications que vous recevez dans [Paramètres de notification](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Pour plus de détails sur la gestion des notifications, consultez le [Guide des notifications](/guides/notifications).
+Pour plus de détails sur la gestion des notifications, consultez le [Guide des notifications](/guide-notifications.html).
 
 ### Onglet Activité récente
 
@@ -102,7 +102,7 @@ Lorsqu'activé :
 - Vos commentaires publics restent visibles dans leur contexte d'origine (sur les articles)
 - Seule la vue agrégée de l'activité sur votre profil est masquée
 
-Pour plus de détails, consultez les [Paramètres de confidentialité](/guides/user-profiles/privacy-settings).
+Pour plus de détails, consultez les [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings).
 
 ### Mises à jour en temps réel
 

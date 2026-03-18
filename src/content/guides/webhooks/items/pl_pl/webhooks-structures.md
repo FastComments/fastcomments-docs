@@ -116,6 +116,6 @@ Każde żądanie webhook zawiera następujące nagłówki:
 | `X-FastComments-Timestamp` | Znacznik czasu Unix (sekundy) w momencie podpisania żądania |
 | `X-FastComments-Signature` | Podpis HMAC-SHA256 (`sha256=<hex>`) |
 
-Zobacz [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) aby uzyskać informacje o weryfikacji podpisu HMAC.
+Zobacz [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) aby uzyskać informacje o weryfikacji podpisu HMAC.
 
 ---

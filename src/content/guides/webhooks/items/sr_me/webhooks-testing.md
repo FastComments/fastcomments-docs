@@ -20,4 +20,4 @@ Možete koristiti alate kao što su [webhook.site](https://webhook.site) ili [ng
 - **Događaj ažuriranja**: Okida se kada se komentar izmijeni. Zadana metoda: PUT
 - **Događaj brisanja**: Okida se kada se komentar obriše. Zadana metoda: DELETE
 
-Svaki događaj uključuje kompletne podatke komentara u tijelu zahtjeva (pogledajte [Strukture podataka](/guides/webhooks/webhooks-structures) za format payload-a).
+Svaki događaj uključuje kompletne podatke komentara u tijelu zahtjeva (pogledajte [Strukture podataka](/guide-webhooks.html#webhooks-structures) za format payload-a).

@@ -116,4 +116,4 @@ interface CommentUserMention {
 | `X-FastComments-Timestamp` | リクエストが署名された Unix タイムスタンプ（秒） |
 | `X-FastComments-Signature` | HMAC-SHA256 署名（`sha256=<hex>`） |
 
-詳細な HMAC 署名の検証方法は [セキュリティと API トークン](/guides/webhooks/webhooks-api-tokens) を参照してください。
+詳細な HMAC 署名の検証方法は [セキュリティと API トークン](/guide-webhooks.html#webhooks-api-tokens) を参照してください。

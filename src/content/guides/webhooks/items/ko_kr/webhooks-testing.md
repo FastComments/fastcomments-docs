@@ -20,4 +20,4 @@ HMAC 서명 검증을 사용하여 페이로드의 진위를 확인하세요.
 - **Update Event**: 댓글이 편집될 때 트리거됩니다. 기본 메서드: PUT
 - **Delete Event**: 댓글이 삭제될 때 트리거됩니다. 기본 메서드: DELETE
 
-각 이벤트는 요청 본문에 전체 댓글 데이터를 포함합니다 (페이로드 형식은 [데이터 구조](/guides/webhooks/webhooks-structures) 참조).
+각 이벤트는 요청 본문에 전체 댓글 데이터를 포함합니다 (페이로드 형식은 [데이터 구조](/guide-webhooks.html#webhooks-structures) 참조).

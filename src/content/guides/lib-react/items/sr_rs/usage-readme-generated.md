@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Регија налога (ПАЖЊА: корисници из ЕУ)
 
-Ако сте у ЕУ, требало би да клијентским видгетима назначите у којој се регији налазите. Погледајте [examples/example-eu](/examples/example-eu/src/App.tsx);
+Ако сте у ЕУ, требало би да клијентским видгетима назначите у којој се регији налазите. Погледајте [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 У супротном, не морате дефинисати `region`.
 
 ### Видгет броја коментара

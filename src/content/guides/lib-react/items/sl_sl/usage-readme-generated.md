@@ -24,7 +24,7 @@ Primer in razlago glejte [tukaj](https://github.com/FastComments/fastcomments-re
 
 ### Regija računa (POZOR: stranke iz EU)
 
-Če ste v EU, boste želeli obvestiti odjemalske widgete, v kateri regiji ste. Glejte [examples/example-eu](/examples/example-eu/src/App.tsx);
+Če ste v EU, boste želeli obvestiti odjemalske widgete, v kateri regiji ste. Glejte [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 sicer vam ni treba definirati `region`.
 
 ### Pripomoček za štetje komentarjev

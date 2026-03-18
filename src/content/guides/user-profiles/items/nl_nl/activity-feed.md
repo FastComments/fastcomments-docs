@@ -44,7 +44,7 @@ Je tabblad Meldingen toont:
 - Meldingen worden als gelezen gemarkeerd wanneer je ze bekijkt
 - Stel in welke soorten meldingen je ontvangt in [Meldingsinstellingen](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Voor meer details over het beheren van meldingen, zie de [Gids voor meldingen](/guides/notifications).
+Voor meer details over het beheren van meldingen, zie de [Gids voor meldingen](/guide-notifications.html).
 
 ### Tabblad Recente activiteit
 
@@ -102,7 +102,7 @@ Wanneer ingeschakeld:
 - Je publieke reacties blijven nog steeds zichtbaar in hun oorspronkelijke context (op artikelen)
 - Alleen de geaggregeerde activiteitsoverzicht op je profiel is verborgen
 
-Voor details, zie [Privacy-instellingen](/guides/user-profiles/privacy-settings).
+Voor details, zie [Privacy-instellingen](/guide-user-profiles.html#privacy-settings).
 
 ### Realtime-updates
 

@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Регіон облікового запису (УВАГА: клієнти з ЄС)
 
-Якщо ви в ЄС, вам потрібно повідомити клієнтські віджети, у якому ви регіоні. Див. [examples/example-eu](/examples/example-eu/src/App.tsx);
+Якщо ви в ЄС, вам потрібно повідомити клієнтські віджети, у якому ви регіоні. Див. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Інакше вам не потрібно визначати `region`.
 
 ### Віджет лічильника коментарів

@@ -38,7 +38,7 @@ Cela vous permet de mettre en valeur vos réalisations les plus significatives s
 
 ### Types de badges
 
-Les badges existent en différents types basés sur diverses catégories de réalisations. Pour un aperçu complet de tous les types de badges disponibles et comment les obtenir, voir le [Guide des badges](/guides/badges).
+Les badges existent en différents types basés sur diverses catégories de réalisations. Pour un aperçu complet de tous les types de badges disponibles et comment les obtenir, voir le [Guide des badges](/guide-badges.html).
 
 Les catégories de badges courantes incluent :
 
@@ -90,4 +90,4 @@ Ces badges apparaissent aux côtés des badges obtenus automatiquement sur votre
 
 ### Pour plus d'informations
 
-Pour des détails complets sur le système de badges, y compris tous les types de badges, les critères d'obtention et la configuration administrative, voir le guide complet [Guide des badges](/guides/badges).
+Pour des détails complets sur le système de badges, y compris tous les types de badges, les critères d'obtention et la configuration administrative, voir le guide complet [Guide des badges](/guide-badges.html).

@@ -44,7 +44,7 @@ La tua scheda Notifiche mostra:
 - Le notifiche vengono segnate come lette quando le visualizzi
 - Configura quali tipi di notifiche ricevere in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Per maggiori dettagli sulla gestione delle notifiche, vedi la [Guida alle notifiche](/guides/notifications).
+Per maggiori dettagli sulla gestione delle notifiche, vedi la [Guida alle notifiche](/guide-notifications.html).
 
 ### Scheda Attività recente
 
@@ -102,7 +102,7 @@ Quando abilitato:
 - I tuoi commenti pubblici sono ancora visibili nel loro contesto originale (negli articoli)
 - Solo la vista aggregata dell'attività sul tuo profilo è nascosta
 
-Per dettagli, vedi [Impostazioni privacy](/guides/user-profiles/privacy-settings).
+Per dettagli, vedi [Impostazioni privacy](/guide-user-profiles.html#privacy-settings).
 
 ### Aggiornamenti in tempo reale
 

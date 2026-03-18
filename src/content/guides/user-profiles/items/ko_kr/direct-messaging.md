@@ -67,7 +67,7 @@ DM을 받고 싶지 않은 경우 완전히 비활성화할 수 있습니다:
 2. "Disable Direct Messages"를 활성화
 3. 프로필에서 DM 옵션이 숨겨집니다
 
-자세한 내용은 [개인정보 설정](/guides/user-profiles/privacy-settings)을 참조하세요.
+자세한 내용은 [개인정보 설정](/guide-user-profiles.html#privacy-settings)을 참조하세요.
 
 **사용자 차단:**
 누군가 DM으로 괴롭힘을 하는 경우:

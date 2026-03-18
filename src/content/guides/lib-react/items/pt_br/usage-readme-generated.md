@@ -24,7 +24,7 @@ Veja o exemplo e a explicação [aqui](https://github.com/FastComments/fastcomme
 
 ### Account Region (ATTENTION: EU Customers)
 
-Se você está na UE, você deve informar aos widgets do cliente em qual região você está. Veja [examples/example-eu](/examples/example-eu/src/App.tsx);
+Se você está na UE, você deve informar aos widgets do cliente em qual região você está. Veja [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Caso contrário, você não precisa definir `region`.
 
 ### The Comment Count Widget

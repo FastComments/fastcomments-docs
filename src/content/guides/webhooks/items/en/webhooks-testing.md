@@ -20,4 +20,4 @@ You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://n
 - **Update Event**: Triggered when a comment is edited. Default method: PUT
 - **Delete Event**: Triggered when a comment is deleted. Default method: DELETE
 
-Each event includes the full comment data in the request body (see [Data Structures](/guides/webhooks/webhooks-structures) for the payload format).
+Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).

@@ -44,7 +44,7 @@ Zavihek Obvestila prikazuje:
 - Obvestila so označena kot prebrana, ko jih pogledate
 - Nastavite, katere vrste obvestil prejemate v [Nastavitve obvestil](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Za več podrobnosti o upravljanju obvestil si oglejte [Vodnik za obvestila](/guides/notifications).
+Za več podrobnosti o upravljanju obvestil si oglejte [Vodnik za obvestila](/guide-notifications.html).
 
 ### Zavihek Nedavna aktivnost
 
@@ -102,7 +102,7 @@ Ko je omogočeno:
 - Vaši javni komentarji so še vedno vidni v njihovem izvirnem kontekstu (na člankih)
 - Skrbno je skrit samo združen pregled aktivnosti na vašem profilu
 
-Za podrobnosti si oglejte [Nastavitve zasebnosti](/guides/user-profiles/privacy-settings).
+Za podrobnosti si oglejte [Nastavitve zasebnosti](/guide-user-profiles.html#privacy-settings).
 
 ### Posodobitve v realnem času
 

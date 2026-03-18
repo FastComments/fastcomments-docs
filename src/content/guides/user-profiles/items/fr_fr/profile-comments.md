@@ -31,7 +31,7 @@ Les commentaires de profil sont visibles si l'utilisateur n'a pas activé le par
 
 ### Approbation des commentaires
 
-Selon les paramètres du propriétaire du profil (voir [Paramètres de confidentialité](/guides/user-profiles/privacy-settings)), les commentaires peuvent :
+Selon les paramètres du propriétaire du profil (voir [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings)), les commentaires peuvent :
 
 1. **Apparaître immédiatement** - Auto-approuvés en fonction du niveau de confiance ou des paramètres d'approbation
 2. **Nécessiter une approbation** - Mis en attente pour que le propriétaire du profil les consulte
@@ -97,7 +97,7 @@ Contrôlez la visibilité des commentaires de profil avec ces paramètres de con
 - Définissez des règles d'approbation différentes pour les utilisateurs de confiance et les nouveaux utilisateurs
 - Exigez une approbation manuelle pour tous les commentaires
 
-Pour plus de détails, voir [Paramètres de confidentialité](/guides/user-profiles/privacy-settings).
+Pour plus de détails, voir [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings).
 
 ### Cas d'utilisation des commentaires de profil
 

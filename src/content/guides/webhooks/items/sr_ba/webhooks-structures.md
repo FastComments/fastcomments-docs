@@ -116,4 +116,4 @@ interface CommentUserMention {
 | `X-FastComments-Timestamp` | Unix временска ознака (секунде) када је захтјев потписан |
 | `X-FastComments-Signature` | HMAC-SHA256 потпис (`sha256=<hex>`) |
 
-Погледајте [Сигурност и API токени](/guides/webhooks/webhooks-api-tokens) за информације о провјери HMAC потписа.
+Погледајте [Сигурност и API токени](/guide-webhooks.html#webhooks-api-tokens) за информације о провјери HMAC потписа.

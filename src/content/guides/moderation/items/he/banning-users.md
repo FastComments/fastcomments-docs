@@ -1,6 +1,6 @@
 ישנן שתי דרכים לחסום משתמשים מלכתוב תגובות באתר שלך באמצעות FastComments.
 
-הראשונה — אם אתה כבר יודע את כתובת האימייל שלהם, אתה יכול להזין אותה בעמוד ה־<a href="/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a>.
+הראשונה — אם אתה כבר יודע את כתובת האימייל שלהם, אתה יכול להזין אותה בעמוד ה־<a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

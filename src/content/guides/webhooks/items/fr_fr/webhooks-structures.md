@@ -116,4 +116,4 @@ Chaque requête webhook inclut les en-têtes suivants :
 | `X-FastComments-Timestamp` | Horodatage Unix (secondes) correspondant au moment de la signature de la requête |
 | `X-FastComments-Signature` | Signature HMAC-SHA256 (`sha256=<hex>`) |
 
-Voir [Sécurité & jetons d'API](/guides/webhooks/webhooks-api-tokens) pour obtenir des informations sur la vérification de la signature HMAC.
+Voir [Sécurité & jetons d'API](/guide-webhooks.html#webhooks-api-tokens) pour obtenir des informations sur la vérification de la signature HMAC.

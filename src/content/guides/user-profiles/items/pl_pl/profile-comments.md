@@ -31,7 +31,7 @@ Komentarze na profilu są widoczne, jeśli użytkownik nie włączył ustawienia
 
 ### Zatwierdzanie komentarzy
 
-W zależności od ustawień właściciela profilu (zob. [Ustawienia prywatności](/guides/user-profiles/privacy-settings)), komentarze mogą:
+W zależności od ustawień właściciela profilu (zob. [Ustawienia prywatności](/guide-user-profiles.html#privacy-settings)), komentarze mogą:
 
 1. **Pojawić się natychmiast** - automatycznie zatwierdzone na podstawie poziomu zaufania lub ustawień zatwierdzania
 2. **Wymagać zatwierdzenia** - oczekują na przegląd przez właściciela profilu
@@ -97,7 +97,7 @@ Kontroluj widoczność komentarzy na profilu za pomocą tych ustawień prywatno�
 - Ustaw różne zasady zatwierdzania dla zaufanych i nowych użytkowników
 - Wymagaj ręcznego zatwierdzania wszystkich komentarzy
 
-Po więcej szczegółów zobacz [Ustawienia prywatności](/guides/user-profiles/privacy-settings).
+Po więcej szczegółów zobacz [Ustawienia prywatności](/guide-user-profiles.html#privacy-settings).
 
 ### Przykłady użycia komentarzy na profilu
 

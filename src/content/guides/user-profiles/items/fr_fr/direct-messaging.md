@@ -67,7 +67,7 @@ Si vous ne souhaitez pas recevoir de DM, vous pouvez les désactiver complèteme
 2. Activez "Désactiver les messages directs"
 3. L'option DM sera masquée de votre profil
 
-Pour plus de détails, voir [Paramètres de confidentialité](/guides/user-profiles/privacy-settings).
+Pour plus de détails, voir [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings).
 
 **Bloquer des utilisateurs:**
 Si quelqu'un vous harcèle via DM:

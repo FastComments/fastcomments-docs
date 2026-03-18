@@ -31,7 +31,7 @@
 
 ### 评论审核
 
-根据个人资料所有者的设置（参见 [隐私设置](/guides/user-profiles/privacy-settings)），评论可能会：
+根据个人资料所有者的设置（参见 [隐私设置](/guide-user-profiles.html#privacy-settings)），评论可能会：
 
 1. **立即显示** - 根据信任级别或批准设置自动通过
 2. **需要审核** - 被保留供个人资料所有者审核
@@ -97,7 +97,7 @@
 - 为受信任用户与新用户设置不同的审核规则
 - 对所有评论要求手动审核
 
-更多详情，请参见 [隐私设置](/guides/user-profiles/privacy-settings)。
+更多详情，请参见 [隐私设置](/guide-user-profiles.html#privacy-settings)。
 
 ### 个人资料评论的使用场景
 

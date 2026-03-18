@@ -1,6 +1,6 @@
 Il y a deux façons de bannir des utilisateurs afin qu'ils ne puissent pas commenter sur votre site avec FastComments.
 
-La première consiste, si vous connaissez déjà leur courriel, à l'entrer sur la <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">utilisateurs bannis</a> page.
+La première consiste, si vous connaissez déjà leur courriel, à l'entrer sur la <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">utilisateurs bannis</a> page.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

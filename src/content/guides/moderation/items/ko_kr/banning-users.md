@@ -1,6 +1,6 @@
 FastComments에서 사이트에 댓글을 달지 못하도록 사용자를 차단하는 방법은 두 가지가 있습니다.
 
-첫째, 이미 이메일을 알고 있다면 <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">차단된 사용자</a> 페이지에 입력할 수 있습니다.
+첫째, 이미 이메일을 알고 있다면 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">차단된 사용자</a> 페이지에 입력할 수 있습니다.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

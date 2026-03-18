@@ -67,7 +67,7 @@ Direct Messaging 提供：
 2. 啟用「Disable Direct Messages」
 3. DM 選項將不會顯示在您的個人檔案上
 
-欲瞭解更多細節，請參閱 [Privacy Settings](/guides/user-profiles/privacy-settings)。
+欲瞭解更多細節，請參閱 [Privacy Settings](/guide-user-profiles.html#privacy-settings)。
 
 **Blocking Users:**
 如果有人透過 DM 騷擾您：

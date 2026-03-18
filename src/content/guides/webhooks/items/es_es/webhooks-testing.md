@@ -20,4 +20,4 @@ Puedes usar herramientas como [webhook.site](https://webhook.site) o [ngrok](htt
 - **Update Event**: Se desencadena cuando se edita un comentario. Método predeterminado: PUT
 - **Delete Event**: Se desencadena cuando se elimina un comentario. Método predeterminado: DELETE
 
-Cada evento incluye los datos completos del comentario en el cuerpo de la solicitud (consulta [Estructuras de datos](/guides/webhooks/webhooks-structures) para el formato del payload).
+Cada evento incluye los datos completos del comentario en el cuerpo de la solicitud (consulta [Estructuras de datos](/guide-webhooks.html#webhooks-structures) para el formato del payload).

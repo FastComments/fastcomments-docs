@@ -20,4 +20,4 @@ Je kunt tools zoals [webhook.site](https://webhook.site) of [ngrok](https://ngro
 - **Update-gebeurtenis**: Wordt geactiveerd wanneer een reactie wordt bewerkt. Standaardmethode: PUT
 - **Delete-gebeurtenis**: Wordt geactiveerd wanneer een reactie wordt verwijderd. Standaardmethode: DELETE
 
-Elke gebeurtenis bevat de volledige reactiegegevens in de request body (zie [Gegevensstructuren](/guides/webhooks/webhooks-structures) voor het payloadformaat).
+Elke gebeurtenis bevat de volledige reactiegegevens in de request body (zie [Gegevensstructuren](/guide-webhooks.html#webhooks-structures) voor het payloadformaat).

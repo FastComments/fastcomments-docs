@@ -20,4 +20,4 @@ Você pode usar ferramentas como [webhook.site](https://webhook.site) ou [ngrok]
 - **Update Event**: Acionado quando um comentário é editado. Método padrão: PUT
 - **Delete Event**: Acionado quando um comentário é excluído. Método padrão: DELETE
 
-Cada evento inclui todos os dados do comentário no corpo da requisição (veja [Estruturas de Dados](/guides/webhooks/webhooks-structures) para o formato do payload).
+Cada evento inclui todos os dados do comentário no corpo da requisição (veja [Estruturas de Dados](/guide-webhooks.html#webhooks-structures) para o formato do payload).

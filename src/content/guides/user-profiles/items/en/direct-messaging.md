@@ -67,7 +67,7 @@ If you don't want to receive DMs, you can disable them completely:
 2. Enable "Disable Direct Messages"
 3. The DM option will be hidden from your profile
 
-For more details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+For more details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Blocking Users:**
 If someone is harassing you via DM:

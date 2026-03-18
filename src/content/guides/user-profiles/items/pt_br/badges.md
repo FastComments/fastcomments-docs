@@ -38,7 +38,7 @@ Isso permite que você destaque suas conquistas mais relevantes sem sobrecarrega
 
 ### Tipos de Insígnias
 
-As insígnias vêm em vários tipos com base em diferentes categorias de conquista. Para uma visão completa de todos os tipos de insígnias disponíveis e como conquistá-las, veja o [Guia de Insígnias](/guides/badges).
+As insígnias vêm em vários tipos com base em diferentes categorias de conquista. Para uma visão completa de todos os tipos de insígnias disponíveis e como conquistá-las, veja o [Guia de Insígnias](/guide-badges.html).
 
 Categorias comuns de insígnias incluem:
 
@@ -90,4 +90,4 @@ Essas insígnias aparecem junto com as insígnias conquistadas automaticamente n
 
 ### Para Mais Informações
 
-Para detalhes completos sobre o sistema de insígnias, incluindo todos os tipos de insígnias, critérios de conquista e configuração administrativa, veja o abrangente [Guia de Insígnias](/guides/badges).
+Para detalhes completos sobre o sistema de insígnias, incluindo todos os tipos de insígnias, critérios de conquista e configuração administrativa, veja o abrangente [Guia de Insígnias](/guide-badges.html).

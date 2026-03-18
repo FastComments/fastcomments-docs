@@ -67,7 +67,7 @@ Direct Messaging предоставя:
 2. Активирайте "Disable Direct Messages"
 3. Опцията за DM ще бъде скрита от вашия профил
 
-За повече подробности вижте [Privacy Settings](/guides/user-profiles/privacy-settings).
+За повече подробности вижте [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Блокиране на потребители:**
 Ако някой ви тормози чрез DM:

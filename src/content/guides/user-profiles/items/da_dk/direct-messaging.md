@@ -67,7 +67,7 @@ Hvis du ikke ønsker at modtage DMs, kan du deaktivere dem fuldstændigt:
 2. Aktivér "Deaktiver direkte beskeder"
 3. DM-muligheden vil blive skjult fra din profil
 
-For flere oplysninger, se [Privatindstillinger](/guides/user-profiles/privacy-settings).
+For flere oplysninger, se [Privatindstillinger](/guide-user-profiles.html#privacy-settings).
 
 **Blokering af brugere:**
 Hvis nogen chikanerer dig via DM:

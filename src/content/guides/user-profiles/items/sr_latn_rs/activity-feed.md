@@ -44,7 +44,7 @@ Vaša kartica Obaveštenja prikazuje:
 - Obaveštenja se označavaju kao pročitana kada ih pregledate
 - Konfigurišite koje vrste obaveštenja primate u [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Za više detalja o upravljanju obaveštenjima, pogledajte [Vodič za obaveštenja](/guides/notifications).
+Za više detalja o upravljanju obaveštenjima, pogledajte [Vodič za obaveštenja](/guide-notifications.html).
 
 ### Kartica Nedavna aktivnost
 
@@ -102,7 +102,7 @@ Kada je omogućeno:
 - Vaši javni komentari i dalje su vidljivi u njihovom originalnom kontekstu (na člancima)
 - Samo agregovani pregled aktivnosti na vašem profilu je skriven
 
-Za detalje, pogledajte [Privacy Settings](/guides/user-profiles/privacy-settings).
+Za detalje, pogledajte [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 ### Ažuriranja u realnom vremenu
 

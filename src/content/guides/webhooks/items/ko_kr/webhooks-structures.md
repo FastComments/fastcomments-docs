@@ -117,6 +117,6 @@ interface CommentUserMention {
 | `X-FastComments-Timestamp` | 요청이 서명된 시점의 Unix 타임스탬프(초) |
 | `X-FastComments-Signature` | HMAC-SHA256 서명 (`sha256=<hex>`) |
 
-HMAC 서명 검증에 대한 정보는 [보안 및 API 토큰](/guides/webhooks/webhooks-api-tokens)에서 확인하세요.
+HMAC 서명 검증에 대한 정보는 [보안 및 API 토큰](/guide-webhooks.html#webhooks-api-tokens)에서 확인하세요.
 
 ---

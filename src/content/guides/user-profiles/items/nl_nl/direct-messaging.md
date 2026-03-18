@@ -67,7 +67,7 @@ Als je geen DMs wilt ontvangen, kun je ze volledig uitschakelen:
 2. Schakel "Directe berichten uitschakelen" in
 3. De DM-optie wordt verborgen op je profiel
 
-Voor meer details, zie [Privacy Settings](/guides/user-profiles/privacy-settings).
+Voor meer details, zie [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Gebruikers blokkeren:**
 Als iemand je via DM lastigvalt:

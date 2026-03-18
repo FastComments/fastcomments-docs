@@ -20,4 +20,4 @@ When testing your webhook integration, verify the incoming requests include the 
 - **Update Event**: Активира се когато коментарът бъде редактиран. По подразбиране метод: PUT
 - **Delete Event**: Активира се когато коментарът бъде изтрит. По подразбиране метод: DELETE
 
-Each event includes the full comment data in the request body (see [Структури с данни](/guides/webhooks/webhooks-structures) for the payload format).
+Each event includes the full comment data in the request body (see [Структури с данни](/guide-webhooks.html#webhooks-structures) for the payload format).

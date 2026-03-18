@@ -38,7 +38,7 @@ Questo ti permette di mettere in mostra i tuoi risultati più significativi senz
 
 ### Tipi di badge
 
-I badge sono disponibili in diversi tipi basati su differenti categorie di risultati. Per una panoramica completa di tutti i tipi di badge disponibili e di come ottenerli, vedi la [Guida ai Badge](/guides/badges).
+I badge sono disponibili in diversi tipi basati su differenti categorie di risultati. Per una panoramica completa di tutti i tipi di badge disponibili e di come ottenerli, vedi la [Guida ai Badge](/guide-badges.html).
 
 Le categorie di badge più comuni includono:
 
@@ -90,4 +90,4 @@ Questi badge appaiono insieme ai badge ottenuti automaticamente sul tuo profilo.
 
 ### Per ulteriori informazioni
 
-Per dettagli completi sul sistema dei badge, inclusi tutti i tipi di badge, i criteri per ottenerli e la configurazione amministrativa, vedi la completa [Guida ai Badge](/guides/badges).
+Per dettagli completi sul sistema dei badge, inclusi tutti i tipi di badge, i criteri per ottenerli e la configurazione amministrativa, vedi la completa [Guida ai Badge](/guide-badges.html).

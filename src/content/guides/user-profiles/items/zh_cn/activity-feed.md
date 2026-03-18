@@ -44,7 +44,7 @@
 - 当您查看通知时，通知会被标记为已读
 - 在 [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications) 中配置您希望接收的通知类型
 
-有关管理通知的更多详细信息，请参阅 [Notifications Guide](/guides/notifications)。
+有关管理通知的更多详细信息，请参阅 [Notifications Guide](/guide-notifications.html)。
 
 ### 最近活动选项卡
 
@@ -102,7 +102,7 @@
 - 您的公开评论仍将在其原始上下文中可见（在文章上）
 - 仅个人资料上的聚合活动视图会被隐藏
 
-详情请参阅 [Privacy Settings](/guides/user-profiles/privacy-settings)。
+详情请参阅 [Privacy Settings](/guide-user-profiles.html#privacy-settings)。
 
 ### 实时更新
 

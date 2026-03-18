@@ -24,7 +24,7 @@ class Example extends Component {
 
 ### Account Region (ATTENTION: EU Customers)
 
-EU にいる場合、クライアントウィジェットにあなたのリージョンを伝える必要があります。 [examples/example-eu](/examples/example-eu/src/App.tsx) を参照してください;
+EU にいる場合、クライアントウィジェットにあなたのリージョンを伝える必要があります。 [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx) を参照してください;
 それ以外の場合は `region` を定義する必要はありません。
 
 ### The Comment Count Widget

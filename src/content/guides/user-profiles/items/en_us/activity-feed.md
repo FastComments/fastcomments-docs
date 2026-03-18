@@ -44,7 +44,7 @@ Your Notifications tab displays:
 - Notifications are marked as read when you view them
 - Configure what types of notifications you receive in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-For more details on managing notifications, see the [Notifications Guide](/guides/notifications).
+For more details on managing notifications, see the [Notifications Guide](/guide-notifications.html).
 
 ### Recent Activity Tab
 
@@ -102,7 +102,7 @@ When enabled:
 - Your public comments are still visible in their original context (on articles)
 - Only the aggregated activity view on your profile is hidden
 
-For details, see [Privacy Settings](/guides/user-profiles/privacy-settings).
+For details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 ### Real-Time Updates
 

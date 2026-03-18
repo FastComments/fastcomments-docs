@@ -117,6 +117,6 @@ interface CommentUserMention {
 | `X-FastComments-Timestamp` | Unix timestamp (δευτερόλεπτα) όταν υπογράφηκε το αίτημα |
 | `X-FastComments-Signature` | Υπογραφή HMAC-SHA256 (`sha256=<hex>`) |
 
-Δείτε [Security & API Tokens](/guides/webhooks/webhooks-api-tokens) για πληροφορίες σχετικά με την επαλήθευση της υπογραφής HMAC.
+Δείτε [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) για πληροφορίες σχετικά με την επαλήθευση της υπογραφής HMAC.
 
 ---

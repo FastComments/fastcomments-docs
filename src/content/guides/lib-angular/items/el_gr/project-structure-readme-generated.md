@@ -5,5 +5,5 @@
 
 Στον "projects" θα βρείτε τη βιβλιοθήκη fastcomments.
 
-Δείτε το README για το ngx-fastcomments [εδώ](/projects/fastcomments-angular)
+Δείτε το README για το ngx-fastcomments [εδώ](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
 ---

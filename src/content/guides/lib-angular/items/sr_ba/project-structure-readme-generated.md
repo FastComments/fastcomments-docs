@@ -4,4 +4,4 @@
 
 У "projects" ћете пронаћи fastcomments библиотеку.
 
-Погледајте README за ngx-fastcomments [овдје](/projects/fastcomments-angular)
+Погледајте README за ngx-fastcomments [овдје](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)

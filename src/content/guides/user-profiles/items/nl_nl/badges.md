@@ -38,7 +38,7 @@ Dit stelt je in staat je meest betekenisvolle prestaties te tonen zonder je reac
 
 ### Soorten Badges
 
-Badges komen in verschillende types op basis van verschillende prestatiedomeinen. Voor een volledig overzicht van alle beschikbare badgetypes en hoe je ze kunt verdienen, zie de [Gids voor Badges](/guides/badges).
+Badges komen in verschillende types op basis van verschillende prestatiedomeinen. Voor een volledig overzicht van alle beschikbare badgetypes en hoe je ze kunt verdienen, zie de [Gids voor Badges](/guide-badges.html).
 
 Veelvoorkomende badgecategorieën zijn onder andere:
 
@@ -90,4 +90,4 @@ Deze badges verschijnen naast automatisch verdiende badges op je profiel.
 
 ### Voor Meer Informatie
 
-Voor volledige details over het badge-systeem, inclusief alle badgetypes, verdiencriteria en administratieve configuratie, zie de uitgebreide [Gids voor Badges](/guides/badges).
+Voor volledige details over het badge-systeem, inclusief alle badgetypes, verdiencriteria en administratieve configuratie, zie de uitgebreide [Gids voor Badges](/guide-badges.html).

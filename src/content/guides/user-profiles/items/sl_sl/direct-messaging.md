@@ -67,7 +67,7 @@ Upravljajte nastavitve obvestil v vaših [Account Settings](https://fastcomments
 2. Vklopite "Onemogoči neposredna sporočila"
 3. Možnost DM bo skrita na vašem profilu
 
-Za več podrobnosti si oglejte [Privacy Settings](/guides/user-profiles/privacy-settings).
+Za več podrobnosti si oglejte [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Blokiranje uporabnikov:**
 Če vas nekdo nadleguje preko DM:

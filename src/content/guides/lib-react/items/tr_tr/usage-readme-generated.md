@@ -24,7 +24,7 @@ Yorum dizisinin bağlı olduğu sayfa/makale bilgisini güncellemek için yapıl
 
 ### Hesap Bölgesi (DİKKAT: AB Müşterileri)
 
-Eğer AB'deyseniz, istemci widget'larına hangi bölgede olduğunuzu bildirmeniz gerekir. Bakınız [examples/example-eu](/examples/example-eu/src/App.tsx);
+Eğer AB'deyseniz, istemci widget'larına hangi bölgede olduğunuzu bildirmeniz gerekir. Bakınız [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Aksi takdirde `region`'ı tanımlamanıza gerek yoktur.
 
 ### Yorum Sayacı Bileşeni

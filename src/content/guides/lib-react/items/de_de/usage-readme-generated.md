@@ -24,7 +24,7 @@ Siehe das Beispiel und die Erklärung [hier](https://github.com/FastComments/fas
 
 ### Konto-Region (ACHTUNG: EU-Kunden)
 
-Wenn du in der EU bist, solltest du den Client-Widgets mitteilen, in welcher Region du dich befindest. Siehe [examples/example-eu](/examples/example-eu/src/App.tsx);
+Wenn du in der EU bist, solltest du den Client-Widgets mitteilen, in welcher Region du dich befindest. Siehe [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Andernfalls musst du `region` nicht definieren.
 
 ### Das Kommentarzähler-Widget

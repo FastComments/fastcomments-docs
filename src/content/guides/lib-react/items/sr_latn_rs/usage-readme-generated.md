@@ -25,7 +25,7 @@ Pogledajte primer i objašnjenje [ovde](https://github.com/FastComments/fastcomm
 
 ### Region naloga (PAŽNJA: EU korisnici)
 
-Ako ste u EU, želećete da klijent widžetima kažete u kom regionu se nalazite. Pogledajte [examples/example-eu](/examples/example-eu/src/App.tsx);
+Ako ste u EU, želećete da klijent widžetima kažete u kom regionu se nalazite. Pogledajte [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Inače, ne morate definisati `region`.
 
 ### Widžet za broj komentara

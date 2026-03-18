@@ -38,7 +38,7 @@ So können Sie Ihre bedeutendsten Leistungen präsentieren, ohne Ihre Kommentars
 
 ### Abzeichentypen
 
-Abzeichen gibt es in verschiedenen Typen, basierend auf unterschiedlichen Leistungskategorien. Eine vollständige Übersicht aller verfügbaren Abzeichentypen und wie man sie erhält, finden Sie im [Abzeichen-Leitfaden](/guides/badges).
+Abzeichen gibt es in verschiedenen Typen, basierend auf unterschiedlichen Leistungskategorien. Eine vollständige Übersicht aller verfügbaren Abzeichentypen und wie man sie erhält, finden Sie im [Abzeichen-Leitfaden](/guide-badges.html).
 
 Gängige Abzeichenkategorien umfassen:
 
@@ -90,4 +90,4 @@ Diese Abzeichen erscheinen neben automatisch verdienten Abzeichen in Ihrem Profi
 
 ### Weitere Informationen
 
-Für vollständige Details zum Abzeichensystem, einschließlich aller Abzeichentypen, Vergabekriterien und administrativer Konfiguration, lesen Sie den umfassenden [Abzeichen-Leitfaden](/guides/badges).
+Für vollständige Details zum Abzeichensystem, einschließlich aller Abzeichentypen, Vergabekriterien und administrativer Konfiguration, lesen Sie den umfassenden [Abzeichen-Leitfaden](/guide-badges.html).

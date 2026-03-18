@@ -44,7 +44,7 @@ Sua aba de Notificações exibe:
 - As notificações são marcadas como lidas quando você as visualiza
 - Configure quais tipos de notificações você recebe em [Configurações de Notificações](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Para mais detalhes sobre como gerenciar notificações, veja o [Guia de Notificações](/guides/notifications).
+Para mais detalhes sobre como gerenciar notificações, veja o [Guia de Notificações](/guide-notifications.html).
 
 ### Aba Atividade Recente
 
@@ -102,7 +102,7 @@ Quando ativado:
 - Seus comentários públicos ainda são visíveis em seu contexto original (nos artigos)
 - Apenas a visualização agregada de atividade no seu perfil fica oculta
 
-Para detalhes, veja [Configurações de Privacidade](/guides/user-profiles/privacy-settings).
+Para detalhes, veja [Configurações de Privacidade](/guide-user-profiles.html#privacy-settings).
 
 ### Atualizações em Tempo Real
 

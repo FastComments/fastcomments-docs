@@ -4,4 +4,4 @@ U "src" ćete naći aplikaciju koja je jednostavno demo aplikacija za testiranje
 
 U "projects" ćete naći fastcomments biblioteku.
 
-Pogledajte README za ngx-fastcomments [ovde](/projects/fastcomments-angular)
+Pogledajte README za ngx-fastcomments [ovde](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)

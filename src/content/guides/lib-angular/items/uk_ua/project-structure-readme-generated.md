@@ -5,5 +5,5 @@
 
 У "projects" ви знайдете бібліотеку fastcomments.
 
-Перегляньте README для ngx-fastcomments [тут](/projects/fastcomments-angular)
+Перегляньте README для ngx-fastcomments [тут](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
 ---

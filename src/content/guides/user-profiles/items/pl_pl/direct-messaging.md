@@ -67,7 +67,7 @@ Jeśli nie chcesz otrzymywać DM, możesz je całkowicie wyłączyć:
 2. Włącz "Disable Direct Messages"
 3. Opcja DM zostanie ukryta w twoim profilu
 
-Aby uzyskać więcej szczegółów, zobacz [Privacy Settings](/guides/user-profiles/privacy-settings).
+Aby uzyskać więcej szczegółów, zobacz [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Blocking Users:**
 Jeśli ktoś nęka cię przez DM:

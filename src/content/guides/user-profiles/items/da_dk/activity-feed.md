@@ -44,7 +44,7 @@ Din fane Underretninger viser:
 - Underretninger markeres som læst, når du ser dem
 - Konfigurer hvilke typer underretninger du modtager i [Underretningsindstillinger](https://fastcomments.com/auth/my-account/edit-notifications)
 
-For flere detaljer om administration af underretninger, se [Underretningsvejledningen](/guides/notifications).
+For flere detaljer om administration af underretninger, se [Underretningsvejledningen](/guide-notifications.html).
 
 ### Fanen Seneste aktivitet
 
@@ -102,7 +102,7 @@ Når aktiveret:
 - Dine offentlige kommentarer er stadig synlige i deres oprindelige kontekst (på artikler)
 - Kun det aggregerede aktivitetsoversigt på din profil skjules
 
-For detaljer, se [Privatlivsindstillinger](/guides/user-profiles/privacy-settings).
+For detaljer, se [Privatlivsindstillinger](/guide-user-profiles.html#privacy-settings).
 
 ### Opdateringer i realtid
 

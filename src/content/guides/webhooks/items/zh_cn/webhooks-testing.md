@@ -20,4 +20,4 @@
 - **Update Event**: 当编辑评论时触发。默认方法：PUT  
 - **Delete Event**: 当删除评论时触发。默认方法：DELETE
 
-每个事件在请求体中包含完整的评论数据（有关有效载荷格式，请参见 [数据结构](/guides/webhooks/webhooks-structures)）。
+每个事件在请求体中包含完整的评论数据（有关有效载荷格式，请参见 [数据结构](/guide-webhooks.html#webhooks-structures)）。

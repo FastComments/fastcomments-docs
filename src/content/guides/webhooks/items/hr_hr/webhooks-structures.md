@@ -117,6 +117,6 @@ Svaki webhook zahtjev uključuje sljedeća zaglavlja:
 | `X-FastComments-Timestamp` | Unix vremenska oznaka (sekunde) kada je zahtjev potpisan |
 | `X-FastComments-Signature` | HMAC-SHA256 potpis (`sha256=<hex>`) |
 
-Pogledajte [Sigurnost i API tokeni](/guides/webhooks/webhooks-api-tokens) za informacije o provjeri HMAC potpisa.
+Pogledajte [Sigurnost i API tokeni](/guide-webhooks.html#webhooks-api-tokens) za informacije o provjeri HMAC potpisa.
 
 ---

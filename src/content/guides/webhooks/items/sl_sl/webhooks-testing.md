@@ -20,4 +20,4 @@ Med razvojem lahko uporabite orodja, kot so [webhook.site](https://webhook.site)
 - **Update Event**: Sproži se, ko je komentar urejen. Privzeta metoda: PUT
 - **Delete Event**: Sproži se, ko je komentar izbrisan. Privzeta metoda: DELETE
 
-Vsak dogodek vključuje celotne podatke komentarja v telesu zahteve (glejte [Strukture podatkov](/guides/webhooks/webhooks-structures) za format payloada).
+Vsak dogodek vključuje celotne podatke komentarja v telesu zahteve (glejte [Strukture podatkov](/guide-webhooks.html#webhooks-structures) za format payloada).

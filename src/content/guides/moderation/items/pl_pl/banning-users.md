@@ -1,6 +1,6 @@
 Są dwa sposoby na zablokowanie użytkowników przed komentowaniem na Twojej stronie za pomocą FastComments.
 
-Pierwszy to sytuacja, gdy już znasz ich adres e-mail — możesz go wpisać na stronie <a href="/auth/my-account/moderate-comments/banned-users" target="_blank">zablokowani użytkownicy</a>.
+Pierwszy to sytuacja, gdy już znasz ich adres e-mail — możesz go wpisać na stronie <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zablokowani użytkownicy</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 

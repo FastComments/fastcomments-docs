@@ -44,7 +44,7 @@ Bildirimler sekmeniz şunları gösterir:
 - Bildirimler görüntülendiğinde okunmuş olarak işaretlenir
 - Hangi tür bildirimleri almak istediğinizi [Bildirim Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) içinde yapılandırın
 
-Bildirimleri yönetme hakkında daha fazla detay için [Bildirimler Kılavuzu](/guides/notifications) bölümüne bakın.
+Bildirimleri yönetme hakkında daha fazla detay için [Bildirimler Kılavuzu](/guide-notifications.html) bölümüne bakın.
 
 ### Son Etkinlik Sekmesi
 
@@ -102,7 +102,7 @@ Etkinleştirildiğinde:
 - Genel yorumlarınız orijinal bağlamlarında (makalelerde) hala görünür
 - Profilinizdeki toplu etkinlik görünümü gizlenir
 
-Detaylar için [Gizlilik Ayarları](/guides/user-profiles/privacy-settings) bölümüne bakın.
+Detaylar için [Gizlilik Ayarları](/guide-user-profiles.html#privacy-settings) bölümüne bakın.
 
 ### Gerçek Zamanlı Güncellemeler
 

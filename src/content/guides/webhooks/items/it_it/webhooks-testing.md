@@ -20,4 +20,4 @@ Puoi usare strumenti come [webhook.site](https://webhook.site) o [ngrok](https:/
 - **Update Event**: Scatenato quando un commento viene modificato. Metodo predefinito: PUT
 - **Delete Event**: Scatenato quando un commento viene eliminato. Metodo predefinito: DELETE
 
-Ogni evento include tutti i dati del commento nel corpo della richiesta (vedi [Strutture dei dati](/guides/webhooks/webhooks-structures) per il formato del payload).
+Ogni evento include tutti i dati del commento nel corpo della richiesta (vedi [Strutture dei dati](/guide-webhooks.html#webhooks-structures) per il formato del payload).

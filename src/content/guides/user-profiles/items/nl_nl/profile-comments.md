@@ -31,7 +31,7 @@ Profielreacties zijn zichtbaar als de gebruiker de instelling "Profielreacties p
 
 ### Reactiegoedkeuring
 
-Afhankelijk van de instellingen van de profieleigenaar (zie [Privacy-instellingen](/guides/user-profiles/privacy-settings)), kunnen reacties:
+Afhankelijk van de instellingen van de profieleigenaar (zie [Privacy-instellingen](/guide-user-profiles.html#privacy-settings)), kunnen reacties:
 
 1. **Onmiddellijk Verschijnen** - Automatisch goedgekeurd op basis van vertrouwensniveau of goedkeuringsinstellingen
 2. **Goedkeuring Vereisen** - In de wachtrij geplaatst zodat de profieleigenaar ze kan beoordelen
@@ -97,7 +97,7 @@ Beheer de zichtbaarheid van profielreacties met deze privacy-instellingen:
 - Stel verschillende goedkeuringsregels in voor vertrouwde versus nieuwe gebruikers
 - Vereis handmatige goedkeuring voor alle reacties
 
-Voor meer details, zie [Privacy-instellingen](/guides/user-profiles/privacy-settings).
+Voor meer details, zie [Privacy-instellingen](/guide-user-profiles.html#privacy-settings).
 
 ### Gebruiksscenario's voor Profielreacties
 

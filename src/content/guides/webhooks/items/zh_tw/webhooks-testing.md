@@ -20,4 +20,4 @@
 - **Update Event**: Triggered when a comment is edited. Default method: PUT
 - **Delete Event**: Triggered when a comment is deleted. Default method: DELETE
 
-每個事件在請求主體中包含完整的評論資料（有關有效負載格式，請參閱 [Data Structures](/guides/webhooks/webhooks-structures)）。
+每個事件在請求主體中包含完整的評論資料（有關有效負載格式，請參閱 [Data Structures](/guide-webhooks.html#webhooks-structures)）。

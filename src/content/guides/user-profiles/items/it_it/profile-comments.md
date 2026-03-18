@@ -31,7 +31,7 @@ I commenti del profilo sono visibili se l'utente non ha attivato l'impostazione 
 
 ### Approvazione dei Commenti
 
-A seconda delle impostazioni del proprietario del profilo (vedi [Privacy Settings](/guides/user-profiles/privacy-settings)), i commenti possono:
+A seconda delle impostazioni del proprietario del profilo (vedi [Privacy Settings](/guide-user-profiles.html#privacy-settings)), i commenti possono:
 
 1. **Apparire immediatamente** - Approvazione automatica in base al livello di fiducia o alle impostazioni di approvazione
 2. **Richiedere approvazione** - Trattenuti per la revisione da parte del proprietario del profilo
@@ -97,7 +97,7 @@ Controlla la visibilità dei commenti del profilo con queste impostazioni della 
 - Imposta regole di approvazione diverse per utenti fidati e nuovi utenti
 - Richiedi approvazione manuale per tutti i commenti
 
-Per maggiori dettagli, vedi [Privacy Settings](/guides/user-profiles/privacy-settings).
+Per maggiori dettagli, vedi [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 ### Casi d'uso per i Commenti del Profilo
 

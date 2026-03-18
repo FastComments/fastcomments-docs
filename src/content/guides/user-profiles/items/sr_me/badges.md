@@ -38,7 +38,7 @@ Ovo vam omogućava da prikažete najvažnija dostignuća bez zagušenja potpisa 
 
 ### Tipovi znački
 
-Značke dolaze u različitim tipovima zasnovanim na različitim kategorijama dostignuća. Za potpuni pregled svih dostupnih tipova znački i kako ih osvojiti, pogledajte [Vodič za značke](/guides/badges).
+Značke dolaze u različitim tipovima zasnovanim na različitim kategorijama dostignuća. Za potpuni pregled svih dostupnih tipova znački i kako ih osvojiti, pogledajte [Vodič za značke](/guide-badges.html).
 
 Uobičajene kategorije znački uključuju:
 
@@ -90,4 +90,4 @@ Ove značke se pojavljuju zajedno sa automatski osvojenim značkama na vašem pr
 
 ### Za više informacija
 
-Za potpune detalje o sistemu znački, uključujući sve tipove znački, kriterijume za osvajanje i administrativnu konfiguraciju, pogledajte sveobuhvatni [Vodič za značke](/guides/badges).
+Za potpune detalje o sistemu znački, uključujući sve tipove znački, kriterijume za osvajanje i administrativnu konfiguraciju, pogledajte sveobuhvatni [Vodič za značke](/guide-badges.html).

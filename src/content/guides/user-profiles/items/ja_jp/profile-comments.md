@@ -31,7 +31,7 @@
 
 ### コメントの承認
 
-プロフィール所有者の設定（[Privacy Settings](/guides/user-profiles/privacy-settings) を参照）に応じて、コメントは次のようになります:
+プロフィール所有者の設定（[Privacy Settings](/guide-user-profiles.html#privacy-settings) を参照）に応じて、コメントは次のようになります:
 
 1. **即時表示** - 信頼レベルや承認設定に基づいて自動承認されます
 2. **承認が必要** - プロフィール所有者の確認待ちになります
@@ -97,7 +97,7 @@
 - 信頼されたユーザーと新しいユーザーで異なる承認ルールを設定します
 - すべてのコメントを手動承認にすることができます
 
-詳細は [Privacy Settings](/guides/user-profiles/privacy-settings) を参照してください。
+詳細は [Privacy Settings](/guide-user-profiles.html#privacy-settings) を参照してください。
 
 ### プロフィールコメントの利用例
 

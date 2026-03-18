@@ -31,7 +31,7 @@ Komentari na profilu su vidljivi ako korisnik nije uključio podešavanje "Učin
 
 ### Odobravanje komentara
 
-U zavisnosti od podešavanja vlasnika profila (pogledajte [Podešavanja privatnosti](/guides/user-profiles/privacy-settings)), komentari mogu:
+U zavisnosti od podešavanja vlasnika profila (pogledajte [Podešavanja privatnosti](/guide-user-profiles.html#privacy-settings)), komentari mogu:
 
 1. **Pojaviti se odmah** - Automatski odobreni na osnovu nivoa poverenja ili podešavanja odobravanja
 2. **Zahtevati odobrenje** - Zadržani za pregled od strane vlasnika profila
@@ -97,7 +97,7 @@ Kontrolišite vidljivost komentara na profilu pomoću sledećih podešavanja pri
 - Podesite različita pravila odobravanja za pouzdane i nove korisnike
 - Zahtevajte ručno odobravanje za sve komentare
 
-Za više detalja pogledajte [Podešavanja privatnosti](/guides/user-profiles/privacy-settings).
+Za više detalja pogledajte [Podešavanja privatnosti](/guide-user-profiles.html#privacy-settings).
 
 ### Slučajevi upotrebe komentara na profilu
 

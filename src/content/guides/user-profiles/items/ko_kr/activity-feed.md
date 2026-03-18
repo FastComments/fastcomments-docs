@@ -44,7 +44,7 @@
 - 알림은 사용자가 확인하면 읽은 것으로 표시됩니다
 - 수신할 알림 유형은 [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)에서 구성할 수 있습니다
 
-알림 관리를 위한 자세한 내용은 [Notifications Guide](/guides/notifications)를 참조하세요.
+알림 관리를 위한 자세한 내용은 [Notifications Guide](/guide-notifications.html)를 참조하세요.
 
 ### 최근 활동 탭
 
@@ -102,7 +102,7 @@
 - 공개 댓글은 원래의 문맥(기사 등)에서는 여전히 보입니다
 - 프로필의 집계된 활동 보기만 숨겨집니다
 
-자세한 내용은 [Privacy Settings](/guides/user-profiles/privacy-settings)를 참조하세요.
+자세한 내용은 [Privacy Settings](/guide-user-profiles.html#privacy-settings)를 참조하세요.
 
 ### 실시간 업데이트
 

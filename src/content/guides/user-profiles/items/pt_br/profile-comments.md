@@ -31,7 +31,7 @@ Comentários do perfil são visíveis se o usuário não tiver habilitado a conf
 
 ### Aprovação de Comentários
 
-Dependendo das configurações do proprietário do perfil (veja [Configurações de Privacidade](/guides/user-profiles/privacy-settings)), os comentários podem:
+Dependendo das configurações do proprietário do perfil (veja [Configurações de Privacidade](/guide-user-profiles.html#privacy-settings)), os comentários podem:
 
 1. **Aparecer Imediatamente** - Autoaprovados com base no nível de confiança ou nas configurações de aprovação
 2. **Requerer Aprovação** - Retidos para revisão pelo proprietário do perfil
@@ -97,7 +97,7 @@ Controle a visibilidade dos comentários do perfil com estas configurações de 
 - Defina regras de aprovação diferentes para usuários confiáveis vs. novos usuários
 - Exija aprovação manual para todos os comentários
 
-Para mais detalhes, veja [Configurações de Privacidade](/guides/user-profiles/privacy-settings).
+Para mais detalhes, veja [Configurações de Privacidade](/guide-user-profiles.html#privacy-settings).
 
 ### Casos de Uso para Comentários do Perfil
 

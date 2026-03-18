@@ -38,7 +38,7 @@ To vam omogoča, da poudarite svoje najbolj pomembne dosežke, ne da bi preobrem
 
 ### Vrste značk
 
-Značke so različnih vrst, odvisno od kategorij dosežkov. Za popoln pregled vseh razpoložljivih vrst značk in kako jih pridobiti, si oglejte [Vodnik o značkah](/guides/badges).
+Značke so različnih vrst, odvisno od kategorij dosežkov. Za popoln pregled vseh razpoložljivih vrst značk in kako jih pridobiti, si oglejte [Vodnik o značkah](/guide-badges.html).
 
 Pogoste kategorije značk vključujejo:
 
@@ -90,4 +90,4 @@ Te značke se prikažejo skupaj z samodejno zasluženimi značkami na vašem pro
 
 ### Za več informacij
 
-Za popolne podrobnosti o sistemu značk, vključno z vsemi vrstami značk, merili za pridobitev in administrativno konfiguracijo, si oglejte celovit [Vodnik o značkah](/guides/badges).
+Za popolne podrobnosti o sistemu značk, vključno z vsemi vrstami značk, merili za pridobitev in administrativno konfiguracijo, si oglejte celovit [Vodnik o značkah](/guide-badges.html).
