@@ -1,17 +1,17 @@
-Ten endpoint pozwala pobrać rekordy postępów odznak użytkownika na podstawie różnych kryteriów.
+Ten punkt końcowy umożliwia pobranie rekordów postępów odznak użytkownika na podstawie różnych kryteriów.
 
-Przykład żądania:
+Przykładowe żądanie:
 
-[inline-code-attrs-start title = 'Przykład żądania GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lista postępów odznak - przykład GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Możesz dodać różne parametry zapytania, aby filtrować wyniki:
 
-- `userId` - Pobierz postęp dla konkretnego użytkownika
+- `userId` - Pobierz postępy dla konkretnego użytkownika
 - `limit` - Maksymalna liczba rekordów do zwrócenia (domyślnie 30, maks. 200)
-- `skip` - Liczba rekordów do pominęcia (do paginacji)
+- `skip` - Liczba rekordów do pominięcia (do stronicowania)
 
 Przykładowa odpowiedź:
 
@@ -57,7 +57,7 @@ Przykładowa odpowiedź:
 
 Możliwe odpowiedzi z błędem:
 
-[inline-code-attrs-start title = 'Błąd: Brak identyfikatora Tenant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: brak identyfikatora tenanta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +66,7 @@ Możliwe odpowiedzi z błędem:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Błąd: Nieprawidłowy limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: nieprawidłowy limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

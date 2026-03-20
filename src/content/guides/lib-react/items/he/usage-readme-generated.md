@@ -1,10 +1,10 @@
-### הרכיב הראשי של הווידג'ט
+### רכיב הווידג'ט הראשי
 
-הקומפוננטה FastCommentsCommentWidget מכילה את ווידג'ט התגובות החי של FastComments.
+הרכיב FastCommentsCommentWidget מכיל את ווידג'ט התגובות החי של FastComments.
 
-החליפו את "demo" למטה ב-"tenantId" שלכם — זמין [כאן](https://fastcomments.com/auth/my-account/api) באזור הניהול של FastComments.
+החליפו את "demo" למטה ב־"tenantId" שלכם - זמין [כאן](https://fastcomments.com/auth/my-account/api) באזור הניהול של FastComments.
 
-הווידג'ט תומך בהרבה אפשרויות - ראה FastCommentsCommentWidgetConfig ב-src/index.tsx.
+הווידג'ט תומך בהרבה אפשרויות - ראו FastCommentsCommentWidgetConfig ב־src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### עדכון הדף הנוכחי (ל-SPAs)
-כדי לעדכן את הדף/המאמר שאליו מקושר שרשור התגובות צריך לעדכן את פרמטרי התצורה "urlId" ו-"url".
+### עדכון הדף הנוכחי (ליישומי SPA)
+כדי לעדכן את הדף/המאמר שאליו קשור שרשור התגובות יש לעדכן את פרמטרי התצורה "urlId" ו-"url".
 ראו את הדוגמה וההסבר [כאן](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
-### אזור החשבון (תשומת לב: לקוחות באיחוד האירופי)
+### אזור חשבון (תשומת לב: לקוחות באיחוד האירופי)
 
 אם אתם באיחוד האירופי, רצוי להודיע לווידג'טים של הלקוח באיזה אזור אתם נמצאים. ראו [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
-אחרת, אין צורך להגדיר את `region`.
+אחרת, לא חייבים להגדיר את `region`.
 
-### ווידג'ט ספירת התגובות
+### ווידג'ט ספירת ההערות
 
-הקומפוננטה FastCommentsCommentCountWidget מכילה את ווידג'ט ספירת התגובות החי של FastComments.
+הרכיב FastCommentsCommentCountWidget מכיל את ווידג'ט ספירת התגובות החי של FastComments.
 
-החליפו את "demo" למטה ב-"tenantId" שלכם — זמין [כאן](https://fastcomments.com/auth/my-account/api) באזור הניהול של FastComments.
+החליפו את "demo" למטה ב־"tenantId" שלכם - זמין [כאן](https://fastcomments.com/auth/my-account/api) באזור הניהול של FastComments.
 
-ראו את FastCommentsCommentCountConfig ב-src/index.tsx עבור אפשרויות התצורה הנתמכות.
+ראו את FastCommentsCommentCountConfig ב־src/index.tsx לאפשרויות התצורה הנתמכות.
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Native
+### גרסה מקומית (Native)
 
-ליישום מקומי מלא (Native) של FastComments, ראו [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+למימוש מקומי מלא של FastComments, ראו [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-ל-wrapper ל-React Native של ספרייה זו, המשתמש ב-webview, ראו [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+ל־wrapper של React Native עבור ספרייה זו, המשתמש ב‑webview, ראו [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

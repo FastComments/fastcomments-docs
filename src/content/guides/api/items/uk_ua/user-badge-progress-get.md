@@ -1,15 +1,16 @@
-Цей кінцевий пункт дозволяє отримати записи про прогрес значків користувачів на основі різних критеріїв.
+---
+Цей endpoint дозволяє отримувати записи про прогрес значків користувачів на основі різних критеріїв.
 
 Приклад запиту:
 
-[inline-code-attrs-start title = 'Приклад GET-запиту'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список прогресу значків - приклад GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Ви можете додати різні параметри запиту для фільтрування результатів:
+Ви можете додати різні параметри запиту для фільтрації результатів:
 
-- `userId` - Отримати прогрес для конкретного користувача
+- `userId` - Отримати прогрес для певного користувача
 - `limit` - Максимальна кількість записів для повернення (за замовчуванням 30, максимум 200)
 - `skip` - Кількість записів для пропуску (для пагінації)
 
@@ -57,7 +58,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 
 Можливі відповіді з помилкою:
 
-[inline-code-attrs-start title = 'Помилка: відсутній Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: Відсутній Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +67,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Помилка: недійсний limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: Невірний Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -74,3 +75,4 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
+---

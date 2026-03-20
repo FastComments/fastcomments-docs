@@ -1,20 +1,20 @@
-Dieser Endpunkt ermöglicht das Abrufen von Benutzer-Badges basierend auf verschiedenen Kriterien.
+Dieser Endpunkt ermöglicht es Ihnen, Benutzerabzeichen anhand verschiedener Kriterien abzurufen.
 
 Beispielanfrage:
 
-[inline-code-attrs-start title = 'GET Anfrage Beispiel'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Liste der Benutzerabzeichen - GET-Beispiel'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Sie können verschiedene Abfrageparameter hinzufügen, um die Ergebnisse zu filtern:
 
-- `userId` - Badges für einen bestimmten Benutzer abrufen
-- `badgeId` - Instanzen eines bestimmten Badges abrufen
-- `type` - Nach Badge-Typ filtern (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, usw. Siehe UserBadge-Struktur für vollständige Liste)
-- `displayedOnComments` - Filtern, ob das Badge bei Kommentaren angezeigt wird (true/false)
-- `limit` - Maximale Anzahl der zurückzugebenden Badges (Standard 30, max 200)
-- `skip` - Anzahl der zu überspringenden Badges (für Paginierung)
+- `userId` - Abzeichen für einen bestimmten Benutzer abrufen
+- `badgeId` - Instanzen eines bestimmten Abzeichens abrufen
+- `type` - Nach Abzeichen-Typ filtern (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, usw. Siehe die UserBadge-Struktur für die vollständige Liste)
+- `displayedOnComments` - Nach der Anzeige des Abzeichens in Kommentaren filtern (true/false)
+- `limit` - Maximale Anzahl zurückzugebender Abzeichen (Standard 30, max. 200)
+- `skip` - Anzahl der zu überspringenden Abzeichen (für die Paginierung)
 
 Beispielantwort:
 

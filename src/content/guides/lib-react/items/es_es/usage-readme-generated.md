@@ -2,9 +2,9 @@
 
 El componente FastCommentsCommentWidget contiene el widget de comentarios en vivo de FastComments.
 
-Reemplace "demo" abajo con su "tenantId" - disponible [aquí](https://fastcomments.com/auth/my-account/api) en el área de administración de FastComments.
+Reemplace "demo" a continuación por su "tenantId" - disponible [here](https://fastcomments.com/auth/my-account/api) en el área de administración de FastComments.
 
-El widget admite muchas opciones - consulte FastCommentsCommentWidgetConfig en src/index.tsx.
+El widget admite muchas opciones - vea FastCommentsCommentWidgetConfig en src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -19,21 +19,21 @@ class Example extends Component {
 ```
 
 ### Actualizar la página actual (para SPAs)
-Para actualizar la página/artículo al que está vinculada la conversación de comentarios, debe actualizar los parámetros de configuración "urlId" y "url".
-Vea el ejemplo y la explicación [aquí](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
+Para actualizar la página/artículo a la que está vinculado el hilo de comentarios, debe actualizar los parámetros de configuración "urlId" y "url".
+Vea el ejemplo y la explicación [here](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
 ### Región de la cuenta (ATENCIÓN: clientes de la UE)
 
-Si está en la UE, querrá indicar a los widgets del cliente en qué región se encuentra. Vea [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Si está en la UE, deberá indicar a los widgets del cliente en qué región se encuentra. Vea [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 De lo contrario, no tiene que definir `region`.
 
 ### El widget de recuento de comentarios
 
 El componente FastCommentsCommentCountWidget contiene el widget de recuento de comentarios en vivo de FastComments.
 
-Reemplace "demo" abajo con su "tenantId" - disponible [aquí](https://fastcomments.com/auth/my-account/api) en el área de administración de FastComments.
+Reemplace "demo" a continuación por su "tenantId" - disponible [here](https://fastcomments.com/auth/my-account/api) en el área de administración de FastComments.
 
-Consulte FastCommentsCommentCountConfig en src/index.tsx para ver las opciones de configuración compatibles.
+Vea FastCommentsCommentCountConfig en src/index.tsx para las opciones de configuración compatibles.
 
 ```tsx
 import React, { Component } from 'react'

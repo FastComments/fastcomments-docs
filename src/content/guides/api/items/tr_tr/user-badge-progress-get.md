@@ -1,20 +1,19 @@
----
-Bu uç nokta, çeşitli kriterlere göre kullanıcı rozet ilerleme kayıtlarını almanıza olanak tanır.
+Bu uç nokta, çeşitli kriterlere göre kullanıcı rozet ilerleme kayıtlarını getirmenizi sağlar.
 
-Örnek İstek:
+Example Request:
 
-[inline-code-attrs-start title = 'GET İstek Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rozet İlerlemelerini Listeleme - GET Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Sonuçları filtrelemek için çeşitli sorgu parametreleri ekleyebilirsiniz:
+You can add various query parameters to filter the results:
 
-- `userId` - Belirli bir kullanıcı için ilerlemeyi alın
-- `limit` - Döndürülecek maksimum kayıt sayısı (varsayılan 30, maksimum 200)
+- `userId` - Belirli bir kullanıcı için ilerlemeyi getirir
+- `limit` - Döndürülecek maksimum kayıt sayısı (varsayılan 30, maks 200)
 - `skip` - Atlanacak kayıt sayısı (sayfalama için)
 
-Örnek Yanıt:
+Example Response:
 
 [inline-code-attrs-start title = 'Yanıt'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -56,9 +55,9 @@ Sonuçları filtrelemek için çeşitli sorgu parametreleri ekleyebilirsiniz:
 }
 [inline-code-end]
 
-Olası Hata Yanıtları:
+Possible Error Responses:
 
-[inline-code-attrs-start title = 'Hata: Eksik Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Hata: Kiracı Kimliği Eksik'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -75,4 +74,3 @@ Olası Hata Yanıtları:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

@@ -1,24 +1,24 @@
-Овај endpoint вам омогућава да дохватите корисничке значке на основу различитих критеријума.
+Ovaj endpoint vam omogućava da dohvatite bedževe korisnika na osnovu različitih kriterija.
 
-Пример захтева:
+Primjer zahtjeva:
 
-[inline-code-attrs-start title = 'Пример GET захтева'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lista korisničkih bedževa - GET primjer'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Можете додати различите параметре упита да бисте филтрирали резултате:
+Možete dodati razne parametre upita za filtriranje rezultata:
 
-- `userId` - Добија значке за одређеног корисника
-- `badgeId` - Добија инстанце одређене значке
-- `type` - Филтрира по типу значке (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, итд. Погледајте структуру UserBadge за пуну листу)
-- `displayedOnComments` - Филтрира по томе да ли се значка приказује у коментарима (true/false)
-- `limit` - Максималан број значки за враћање (подразумевано 30, максимум 200)
-- `skip` - Број значки које треба прескочити (за пагинацију)
+- `userId` - Dobijte bedževe za određenog korisnika
+- `badgeId` - Dobijte instance određenog bedža
+- `type` - Filtriraj po tipu bedža (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Pogledajte UserBadge strukturu za puni spisak)
+- `displayedOnComments` - Filtriraj po tome da li je bedž prikazan na komentarima (true/false)
+- `limit` - Maksimalan broj bedževa za vratiti (default 30, max 200)
+- `skip` - Broj bedževa koje preskočiti (za paginaciju)
 
-Пример одговора:
+Primjer odgovora:
 
-[inline-code-attrs-start title = 'Одговор'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -60,9 +60,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-Могући одговори о грешкама:
+Mogući odgovori s greškama:
 
-[inline-code-attrs-start title = 'Грешка: Недостаје Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Greška: Nedostaje Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Грешка: Неважећи лимит'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Greška: Neispravan limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

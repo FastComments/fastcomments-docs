@@ -1,19 +1,19 @@
 Este endpoint le permite obtener registros de progreso de insignias de usuario basados en varios criterios.
 
-Ejemplo de Solicitud:
+Ejemplo de solicitud:
 
-[inline-code-attrs-start title = 'Ejemplo de Solicitud GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Listar progreso de insignias - Ejemplo GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Puede agregar varios parámetros de consulta para filtrar los resultados:
 
-- `userId` - Obtener progreso para un usuario específico
-- `limit` - Número máximo de registros a devolver (predeterminado 30, máximo 200)
+- `userId` - Obtener el progreso de un usuario específico
+- `limit` - Número máximo de registros a devolver (por defecto 30, máximo 200)
 - `skip` - Número de registros a omitir (para paginación)
 
-Ejemplo de Respuesta:
+Ejemplo de respuesta:
 
 [inline-code-attrs-start title = 'Respuesta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,9 +55,9 @@ Ejemplo de Respuesta:
 }
 [inline-code-end]
 
-Posibles Respuestas de Error:
+Posibles respuestas de error:
 
-[inline-code-attrs-start title = 'Error: Falta ID de Inquilino'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Falta Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +66,7 @@ Posibles Respuestas de Error:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Error: Límite Inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Límite inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

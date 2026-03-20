@@ -1,9 +1,9 @@
 ---
-Ово је коренски радни простор за fastcomments-angular.
+Ово је основни радни простор за fastcomments-angular.
 
-У "src" ћете пронаћи апликацију која је једноставно демонстрациони пример за тестирање библиотека.
+У "src" ћете пронаћи апликацију која је у ствари демонстрациона за тестирање библиотека.
 
-У "projects" ћете пронаћи fastcomments библиотеку.
+У "projects" ћете пронаћи библиотеку fastcomments.
 
-Погледајте README за ngx-fastcomments [овде](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+Погледајте README за ngx-fastcomments [овде](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
 ---

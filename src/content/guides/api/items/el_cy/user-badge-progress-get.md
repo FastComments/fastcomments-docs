@@ -1,8 +1,8 @@
-Αυτό το endpoint σας επιτρέπει να ανακτήσετε εγγραφές προόδου σημάτων χρηστών με βάση διάφορα κριτήρια.
+Αυτό το τελικό σημείο σας επιτρέπει να ανακτήσετε εγγραφές προόδου κονκάρδων χρηστών με βάση διάφορα κριτήρια.
 
 Παράδειγμα Αιτήματος:
 
-[inline-code-attrs-start title = 'Παράδειγμα Αιτήματος GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Λίστα Προόδου Κονκάρδων - Παράδειγμα GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,12 +10,12 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 Μπορείτε να προσθέσετε διάφορες παραμέτρους ερωτήματος για να φιλτράρετε τα αποτελέσματα:
 
 - `userId` - Λήψη προόδου για συγκεκριμένο χρήστη
-- `limit` - Μέγιστος αριθμός εγγραφών που θα επιστραφούν (προεπιλογή 30, μέγιστο 200)
-- `skip` - Αριθμός εγγραφών που θα παραλειφθούν (για σελιδοποίηση)
+- `limit` - Μέγιστος αριθμός εγγραφών προς επιστροφή (προεπιλογή 30, max 200)
+- `skip` - Αριθμός εγγραφών προς παράλειψη (για σελιδοποίηση)
 
-Παράδειγμα Απάντησης:
+Παράδειγμα Απόκρισης:
 
-[inline-code-attrs-start title = 'Απάντηση'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Απόκριση'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -66,7 +66,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Σφάλμα: Μη Έγκυρο Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σφάλμα: Άκυρο Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

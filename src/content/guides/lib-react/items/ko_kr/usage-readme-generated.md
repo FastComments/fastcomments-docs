@@ -1,10 +1,10 @@
-### The Main Widget Component
+### 메인 위젯 컴포넌트
 
-FastCommentsCommentWidget 컴포넌트는 실시간 FastComments 댓글 위젯을 포함합니다.
+The FastCommentsCommentWidget 컴포넌트에는 라이브 FastComments 댓글 위젯이 포함되어 있습니다.
 
-아래의 "demo"를 FastComments 관리 영역의 [여기](https://fastcomments.com/auth/my-account/api)에 있는 "tenantId"로 바꾸십시오.
+아래의 "demo"를 FastComments 관리자 영역의 [여기](https://fastcomments.com/auth/my-account/api)에서 확인 가능한 당신의 "tenantId"로 바꾸세요.
 
-이 위젯은 많은 옵션을 지원합니다 - src/index.tsx에 있는 FastCommentsCommentWidgetConfig를 참조하십시오.
+위젯은 많은 옵션을 지원합니다 - 지원되는 설정은 src/index.tsx의 FastCommentsCommentWidgetConfig를 참조하세요.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Updating The Current Page (For SPAs)
-댓글 스레드가 연결된 페이지/게시물을 업데이트하려면 구성 파라미터 "urlId"와 "url"을 업데이트해야 합니다.
+### 현재 페이지 업데이트 (SPA용)
+댓글 스레드가 연결된 페이지/기사 정보를 업데이트하려면 구성 매개변수 "urlId"와 "url"을 업데이트해야 합니다.
 예제와 설명은 [여기](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx)를 참조하세요.
 
-### Account Region (ATTENTION: EU Customers)
+### 계정 지역 (주의: EU 고객)
 
-EU에 있는 경우, 클라이언트 위젯에 귀하의 지역을 알려야 합니다. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx)를 참조하십시오;
-그렇지 않으면 `region`을 정의할 필요가 없습니다.
+EU에 계신 경우, 클라이언트 위젯에 어느 지역에 있는지 알려주어야 합니다. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx)를 참조하세요;
+그렇지 않은 경우 `region`을 정의할 필요가 없습니다.
 
-### The Comment Count Widget
+### 댓글 카운트 위젯
 
-FastCommentsCommentCountWidget 컴포넌트는 실시간 FastComments 댓글 수 위젯을 포함합니다.
+The FastCommentsCommentCountWidget 컴포넌트에는 라이브 FastComments 댓글 수 위젯이 포함되어 있습니다.
 
-아래의 "demo"를 FastComments 관리 영역의 [여기](https://fastcomments.com/auth/my-account/api)에 있는 "tenantId"로 바꾸십시오.
+아래의 "demo"를 FastComments 관리자 영역의 [여기](https://fastcomments.com/auth/my-account/api)에서 확인 가능한 당신의 "tenantId"로 바꾸세요.
 
-지원되는 구성 옵션은 src/index.tsx의 FastCommentsCommentCountConfig를 참조하십시오.
+지원되는 구성 옵션은 src/index.tsx의 FastCommentsCommentCountConfig를 참조하세요.
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Native
+### 네이티브
 
-FastComments의 완전한 네이티브 구현은 [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk)를 참조하십시오.
+FastComments를 완전히 네이티브로 구현하려면 [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk)를 참조하세요.
 
-웹뷰를 사용하는 이 라이브러리의 React Native 래퍼는 [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native)를 참조하십시오.
+웹뷰를 사용하는 이 라이브러리의 React Native 래퍼는 [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native)를 참조하세요.

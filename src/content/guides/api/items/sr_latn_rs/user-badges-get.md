@@ -1,22 +1,22 @@
-Ovaj endpoint vam omogućava da preuzmete korisničke značke na osnovu različitih kriterijuma.
+Ovaj endpoint vam omogućava da preuzmete korisničke bedževe na osnovu različitih kriterijuma.
 
-Primer zahteva:
+Example Request:
 
-[inline-code-attrs-start title = 'Primer GET zahteva'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lista korisničkih bedževa - primer GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Možete dodati različite query parametre da biste filtrirali rezultate:
+You can add various query parameters to filter the results:
 
-- `userId` - Dobijte značke za određenog korisnika
-- `badgeId` - Dobijte instance određene značke
-- `type` - Filtrirajte po tipu značke (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtrirajte po tome da li se značka prikazuje na komentarima (true/false)
-- `limit` - Maksimalan broj znački koji će biti vraćen (podrazumevano 30, max 200)
-- `skip` - Broj znački koje će biti preskočene (za paginaciju)
+- `userId` - Pribavite bedževe za određenog korisnika
+- `badgeId` - Pribavite instance određenog bedža
+- `type` - Filtrirajte po tipu bedža (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Filtrirajte po tome da li se bedž prikazuje na komentarima (true/false)
+- `limit` - Maksimalan broj bedževa za vraćanje (podrazumevano 30, max 200)
+- `skip` - Broj bedževa koje treba preskočiti (za paginaciju)
 
-Primer odgovora:
+Example Response:
 
 [inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,7 +60,7 @@ Primer odgovora:
 }
 [inline-code-end]
 
-Mogući odgovori sa greškom:
+Possible Error Responses:
 
 [inline-code-attrs-start title = 'Greška: Nedostaje Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,19 +1,19 @@
-Ова крајња тачка вам омогућава да преузмете записе напретка значки корисника на основу различитих критеријума.
+Овај ендпоинт вам омогућава да преузмете записе о напретку значки корисника на основу различитих критеријума.
 
-Пример захтева:
+Примјер захтјева:
 
-[inline-code-attrs-start title = 'Пример GET захтева'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Листа напретка значки - GET примјер'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Можете додати различите параметре упита да бисте филтрирали резултате:
 
-- `userId` - Добијте напретак за одређеног корисника
-- `limit` - Максималан број записа за враћање (подразумевано 30, највише 200)
+- `userId` - Добијте напредак за одређеног корисника
+- `limit` - Максималан број записа који ће бити враћени (подразумјевано 30, максимум 200)
 - `skip` - Број записа које треба прескочити (за пагинацију)
 
-Пример одговора:
+Примјер одговора:
 
 [inline-code-attrs-start title = 'Одговор'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,9 +55,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-Могући одговори са грешком:
+Могући одговори у случају грешке:
 
-[inline-code-attrs-start title = 'Грешка: Недостаје идентификатор тенанта'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Недостаје Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

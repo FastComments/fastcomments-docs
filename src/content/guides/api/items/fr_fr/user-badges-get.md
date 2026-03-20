@@ -1,22 +1,22 @@
-Ce endpoint vous permet de récupérer les badges utilisateur selon divers critères.
+This endpoint allows you to fetch user badges based on various criteria.
 
-Exemple de Requête :
+Exemple de requête :
 
-[inline-code-attrs-start title = 'Exemple de Requête GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Liste des badges utilisateur - Exemple GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Vous pouvez ajouter divers paramètres de requête pour filtrer les résultats :
+You can add various query parameters to filter the results:
 
-- `userId` - Obtenir les badges pour un utilisateur spécifique
-- `badgeId` - Obtenir les instances d'un badge spécifique
-- `type` - Filtrer par type de badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Voir la structure UserBadge pour la liste complète)
-- `displayedOnComments` - Filtrer par l'affichage du badge sur les commentaires (true/false)
-- `limit` - Nombre maximum de badges à retourner (par défaut 30, max 200)
+- `userId` - Récupérer les badges d'un utilisateur spécifique
+- `badgeId` - Récupérer les instances d'un badge spécifique
+- `type` - Filtrer par type de badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Filtrer selon que le badge est affiché sur les commentaires (true/false)
+- `limit` - Nombre maximum de badges à renvoyer (par défaut 30, max 200)
 - `skip` - Nombre de badges à ignorer (pour la pagination)
 
-Exemple de Réponse :
+Exemple de réponse :
 
 [inline-code-attrs-start title = 'Réponse'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Exemple de Réponse :
 }
 [inline-code-end]
 
-Réponses d'Erreur Possibles :
+Réponses d'erreur possibles :
 
-[inline-code-attrs-start title = 'Erreur: ID de Locataire Manquant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erreur : Identifiant du locataire manquant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Réponses d'Erreur Possibles :
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erreur: Limite Invalide'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erreur : Limite invalide'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

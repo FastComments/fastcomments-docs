@@ -1,22 +1,22 @@
-이 엔드포인트를 사용하면 다양한 기준으로 사용자 배지를 가져올 수 있습니다.
+이 엔드포인트를 통해 다양한 기준으로 사용자 배지를 가져올 수 있습니다.
 
-Example Request:
+예제 요청:
 
-[inline-code-attrs-start title = 'GET 요청 예시'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '사용자 배지 목록 - GET 예제'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+다음과 같은 쿼리 매개변수를 추가하여 결과를 필터링할 수 있습니다:
 
 - `userId` - 특정 사용자의 배지를 가져옵니다
 - `badgeId` - 특정 배지의 인스턴스를 가져옵니다
-- `type` - 배지 유형별로 필터링 (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `type` - 배지 유형으로 필터링 (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
 - `displayedOnComments` - 배지가 댓글에 표시되는지 여부로 필터링 (true/false)
-- `limit` - 반환할 배지의 최대 개수 (기본값 30, 최대 200)
+- `limit` - 반환할 배지의 최대 수 (기본값 30, 최대 200)
 - `skip` - 건너뛸 배지 수 (페이지네이션용)
 
-Example Response:
+예제 응답:
 
 [inline-code-attrs-start title = '응답'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+가능한 오류 응답:
 
-[inline-code-attrs-start title = '오류: 누락된 테넌트 ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '오류: Tenant ID 누락'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = '오류: 잘못된 limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '오류: 잘못된 limit 값'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

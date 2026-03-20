@@ -1,7 +1,7 @@
 Това е основното работно пространство за fastcomments-angular.
 
-В "src" ще намерите приложение, което е просто демо приложение за тестване на библиотеките.
+В "src" ще намерите приложение, което е просто демонстрационно приложение за тестване на библиотеките.
 
 В "projects" ще намерите библиотеката fastcomments.
 
-Прегледайте README за ngx-fastcomments [тук](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+Вижте README за ngx-fastcomments [тук](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)

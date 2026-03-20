@@ -1,22 +1,22 @@
-Цей endpoint дозволяє отримувати бейджі користувачів на основі різних критеріїв.
+Цей кінцевий пункт API дозволяє отримувати значки користувачів за різними критеріями.
 
-Example Request:
+Приклад запиту:
 
-[inline-code-attrs-start title = 'Приклад GET-запиту'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список значків користувача - приклад GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Ви можете додати різні параметри запиту, щоб відфільтрувати результати:
 
-- `userId` - Отримати бейджі для конкретного користувача
-- `badgeId` - Отримати екземпляри конкретного бейджа
-- `type` - Фільтрувати за типом бейджа (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Фільтрувати за тим, чи відображається бейдж у коментарях (true/false)
-- `limit` - Максимальна кількість бейджів для повернення (за замовчуванням 30, максимум 200)
-- `skip` - Кількість бейджів для пропуску (для пагінації)
+- `userId` - Отримати значки для певного користувача
+- `badgeId` - Отримати екземпляри певного значка
+- `type` - Фільтрувати за типом значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Фільтрувати за тим, чи відображається значок у коментарях (true/false)
+- `limit` - Максимальна кількість значків для повернення (за замовчуванням 30, макс. 200)
+- `skip` - Кількість значків для пропуску (для пагінації)
 
-Example Response:
+Приклад відповіді:
 
 [inline-code-attrs-start title = 'Відповідь'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Можливі відповіді з помилками:
 
-[inline-code-attrs-start title = 'Помилка: Відсутній Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: відсутній Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Помилка: Неприпустимий ліміт'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: Неприпустимий limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

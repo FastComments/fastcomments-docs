@@ -1,7 +1,7 @@
 Bu, fastcomments-angular için kök çalışma alanıdır.
 
-In "src" you will find an application which is simply a demo app to test the libraries.
+In "src" dizininde, kütüphaneleri test etmek için sadece bir demo uygulaması bulacaksınız.
 
-In "projects" you will find the fastcomments library.
+In "projects" dizininde fastcomments kütüphanesini bulacaksınız.
 
-ngx-fastcomments için README dosyasını [burada](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular) görüntüleyin
+ngx-fastcomments için README dosyasını [burada](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular) görüntüleyin.

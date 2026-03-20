@@ -1,20 +1,19 @@
----
-このエンドポイントは、さまざまな条件に基づいてユーザーのバッジ進捗レコードを取得するためのものです。
+このエンドポイントは、さまざまな条件に基づいてユーザーバッジの進捗レコードを取得するためのものです。
 
-リクエスト例:
+Example Request:
 
-[inline-code-attrs-start title = 'GET リクエストの例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'バッジ進捗一覧 - GET 例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-結果をフィルタリングするために、さまざまなクエリパラメータを追加できます:
+You can add various query parameters to filter the results:
 
-- `userId` - 特定のユーザーの進捗を取得
-- `limit` - 返されるレコードの最大数 (デフォルト 30、最大 200)
-- `skip` - スキップするレコード数 (ページネーション用)
+- `userId` - 特定のユーザーの進捗を取得する
+- `limit` - 返されるレコードの最大数（デフォルト 30、最大 200）
+- `skip` - スキップするレコード数（ページネーション用）
 
-レスポンス例:
+Example Response:
 
 [inline-code-attrs-start title = 'レスポンス'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -56,9 +55,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-考えられるエラー応答:
+Possible Error Responses:
 
-[inline-code-attrs-start title = 'エラー: Tenant ID がありません'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: テナントIDが欠落'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -67,7 +66,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'エラー: 無効な Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: 無効な limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -75,4 +74,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

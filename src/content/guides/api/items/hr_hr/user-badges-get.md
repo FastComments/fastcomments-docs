@@ -1,8 +1,8 @@
-Ovaj endpoint omogućuje dohvat korisničkih znački na temelju raznih kriterija.
+Ovaj endpoint omogućava dohvaćanje korisničkih znački na temelju različitih kriterija.
 
 Primjer zahtjeva:
 
-[inline-code-attrs-start title = 'Primjer GET zahtjeva'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Popis korisničkih znački - GET primjer'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -11,10 +11,10 @@ Možete dodati različite parametre upita za filtriranje rezultata:
 
 - `userId` - Dohvati značke za određenog korisnika
 - `badgeId` - Dohvati instance određene značke
-- `type` - Filtriraj po tipu značke (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtriraj prema tome je li značka prikazana u komentarima (true/false)
+- `type` - Filtriraj po tipu značke (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, itd. Pogledajte strukturu UserBadge za puni popis)
+- `displayedOnComments` - Filtriraj po tome je li značka prikazana na komentarima (true/false)
 - `limit` - Maksimalan broj znački za vraćanje (zadano 30, max 200)
-- `skip` - Broj znački koje treba preskočiti (za paginaciju)
+- `skip` - Broj znački za preskakanje (za paginaciju)
 
 Primjer odgovora:
 

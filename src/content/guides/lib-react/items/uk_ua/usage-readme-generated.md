@@ -2,9 +2,9 @@
 
 Компонент FastCommentsCommentWidget містить живий віджет коментарів FastComments.
 
-Замініть "demo" нижче на ваш "tenantId" - доступний [тут](https://fastcomments.com/auth/my-account/api) в адмін-панелі FastComments.
+Замініть "demo" нижче на ваш "tenantId" — доступний [тут](https://fastcomments.com/auth/my-account/api) в адміністративній частині FastComments.
 
-Віджет підтримує багато опцій — див. FastCommentsCommentWidgetConfig у src/index.tsx.
+Віджет підтримує безліч налаштувань — див. FastCommentsCommentWidgetConfig у src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Оновлення поточної сторінки (для SPA)
-Щоб оновити сторінку/статтю, до якої прив’язана тред коментарів, ви повинні оновити параметри конфігурації "urlId" і "url".
+### Оновлення поточної сторінки (для SPA-додатків)
+Щоб оновити сторінку/статтю, до якої прив'язана нитка коментарів, потрібно оновити параметри конфігурації "urlId" та "url".
 Див. приклад та пояснення [тут](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
 ### Регіон облікового запису (УВАГА: клієнти з ЄС)
 
-Якщо ви в ЄС, вам потрібно повідомити клієнтські віджети, у якому ви регіоні. Див. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Якщо ви в ЄС, варто вказати клієнтським віджетам ваш регіон. Див. [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Інакше вам не потрібно визначати `region`.
 
 ### Віджет лічильника коментарів
 
 Компонент FastCommentsCommentCountWidget містить живий віджет підрахунку коментарів FastComments.
 
-Замініть "demo" нижче на ваш "tenantId" - доступний [тут](https://fastcomments.com/auth/my-account/api) в адмін-панелі FastComments.
+Замініть "demo" нижче на ваш "tenantId" — доступний [тут](https://fastcomments.com/auth/my-account/api) в адміністративній частині FastComments.
 
-Див. FastCommentsCommentCountConfig у src/index.tsx щодо підтримуваних опцій конфігурації.
+Див. FastCommentsCommentCountConfig у src/index.tsx для підтримуваних параметрів конфігурації.
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Нативна інтеграція
+### Нативна реалізація
 
 Для повністю нативної реалізації FastComments див. [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-Для обгортки цієї бібліотеки для React Native, що використовує webview, див. [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Для оболонки цієї бібліотеки для React Native, що використовує webview, див. [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

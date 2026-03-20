@@ -1,10 +1,10 @@
-### Den primære widget-komponent
+### Hoved-widget-komponenten
 
-Komponenten FastCommentsCommentWidget indeholder den live FastComments-kommentar-widget.
+The FastCommentsCommentWidget component indeholder den live FastComments kommentar-widget.
 
-Erstat "demo" nedenfor med dit "tenantId" - tilgængeligt [her](https://fastcomments.com/auth/my-account/api) i FastComments administrationsområdet.
+Erstat "demo" nedenfor med din "tenantId" - tilgængelig [her](https://fastcomments.com/auth/my-account/api) i FastComments administrationsområdet.
 
-Widgetten understøtter mange indstillinger - se FastCommentsCommentWidgetConfig i src/index.tsx.
+Widget'en understøtter mange muligheder - se FastCommentsCommentWidgetConfig i src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -22,15 +22,16 @@ class Example extends Component {
 For at opdatere den side/artikel, som kommentartråden er knyttet til, skal du opdatere konfigurationsparametrene "urlId" og "url".
 Se eksemplet og forklaringen [her](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
-### Konto-region (OPMÆRKSOM: EU-kunder)
+### Kontoregion (VIGTIGT: EU-kunder)
 
-Hvis du er i EU, bør du fortælle klient-widgets, hvilken region du befinder dig i. Se [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx); ellers behøver du ikke definere `region`.
+Hvis du er i EU, bør du angive over for klient-widgets, hvilken region du befinder dig i. Se [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Ellers behøver du ikke definere `region`.
 
-### Kommentar-tæller-widgeten
+### Kommentaroptællings-widgeten
 
-Komponenten FastCommentsCommentCountWidget indeholder den live FastComments-kommentar-tæller-widget.
+The FastCommentsCommentCountWidget component indeholder den live FastComments kommentaroptællings-widget.
 
-Erstat "demo" nedenfor med dit "tenantId" - tilgængeligt [her](https://fastcomments.com/auth/my-account/api) i FastComments administrationsområdet.
+Erstat "demo" nedenfor med din "tenantId" - tilgængelig [her](https://fastcomments.com/auth/my-account/api) i FastComments administrationsområdet.
 
 Se FastCommentsCommentCountConfig i src/index.tsx for de understøttede konfigurationsmuligheder.
 
@@ -46,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Native
+### Nativ
 
-For en fuldstændig native-implementering af FastComments, se [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+For en fuldstændig nativ implementering af FastComments, se [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-For en React Native-wrapper af dette bibliotek, som bruger en webview, se [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+For en React Native-wrapper af dette bibliotek, der benytter en webview, se [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

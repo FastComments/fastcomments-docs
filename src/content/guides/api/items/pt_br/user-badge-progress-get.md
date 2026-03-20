@@ -1,19 +1,19 @@
-Este endpoint permite buscar registros de progresso de distintivos de usuários com base em vários critérios.
+Este endpoint permite que você recupere registros de progresso de badges de usuário com base em vários critérios.
 
-Exemplo de requisição:
+Exemplo de Requisição:
 
-[inline-code-attrs-start title = 'Exemplo de requisição GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Listar Progresso de Badges - Exemplo GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Você pode adicionar vários parâmetros de consulta para filtrar os resultados:
 
-- `userId` - Obter progresso de um usuário específico
+- `userId` - Obter progresso para um usuário específico
 - `limit` - Número máximo de registros a retornar (padrão 30, máximo 200)
-- `skip` - Número de registros a pular (para paginação)
+- `skip` - Número de registros a ignorar (para paginação)
 
-Exemplo de resposta:
+Exemplo de Resposta:
 
 [inline-code-attrs-start title = 'Resposta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,7 +55,7 @@ Exemplo de resposta:
 }
 [inline-code-end]
 
-Possíveis respostas de erro:
+Possíveis Respostas de Erro:
 
 [inline-code-attrs-start title = 'Erro: Tenant ID ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -66,7 +66,7 @@ Possíveis respostas de erro:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erro: Limite inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: Limite Inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

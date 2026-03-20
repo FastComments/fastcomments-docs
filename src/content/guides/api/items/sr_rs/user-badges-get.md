@@ -1,8 +1,8 @@
-Овај крајњи пункт вам омогућава да преузмете значке корисника на основу различитих критеријума.
+Ова крајња тачка вам омогућава да преузмете значке корисника на основу различитих критеријума.
 
 Пример захтева:
 
-[inline-code-attrs-start title = 'Пример GET захтева'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Списак корисничких значки - пример GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,11 +10,11 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 Можете додати различите параметре упита да филтрирате резултате:
 
 - `userId` - Добијте значке за одређеног корисника
-- `badgeId` - Добијте инстанце одређене значке
-- `type` - Филтрирајте по типу значке (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, итд. Видите UserBadge структуру за пуну листу)
-- `displayedOnComments` - Филтрирајте по томе да ли се значка приказује на коментарима (true/false)
-- `limit` - Максималан број значки за поврат (подразумевано 30, максимум 200)
-- `skip` - Број значки које треба прескочити (за пагинацију)
+- `badgeId` - Добијте појаве одређене значке
+- `type` - Филтрирајте по типу значке (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, итд. Погледајте UserBadge структуру за целу листу)
+- `displayedOnComments` - Филтрирајте по томе да ли је значка приказана на коментарима (true/false)
+- `limit` - Максималан број значки за враћање (подразумевано 30, максимум 200)
+- `skip` - Број значки које ће се прескочити (за пагинацију)
 
 Пример одговора:
 
@@ -71,7 +71,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Грешка: Неважећи параметар limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Неважећи limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

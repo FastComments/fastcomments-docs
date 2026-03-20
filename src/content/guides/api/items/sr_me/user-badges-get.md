@@ -1,19 +1,19 @@
-Ова крајња тачка вам омогућава да преузмете значке корисника на основу различитих критеријума.
+Ова крајња тачка вам омогућава преузимање корисничких значки на основу различитих критеријума.
 
 Example Request:
 
-[inline-code-attrs-start title = 'Пример GET захтјева'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Листа корисничких значки - GET пример'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Можете додати различите параметре упита да филтрирате резултате:
 
-- `userId` - Добијте значке за специфичног корисника
+- `userId` - Добијте значке за одређеног корисника
 - `badgeId` - Добијте инстанце одређене значке
-- `type` - Филтрирајте по типу значке (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Филтрирајте по томе да ли је значка приказана на коментарима (true/false)
-- `limit` - Максималан број значки које се враћају (подразумевано 30, максимум 200)
+- `type` - Филтрирајте по типу значке (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, итд. Погледајте UserBadge структуру за пуну листу)
+- `displayedOnComments` - Филтрирајте према томе да ли је значка приказана на коментарима (true/false)
+- `limit` - Максималан број значки које ће бити враћене (подразумевано 30, максимум 200)
 - `skip` - Број значки које треба прескочити (за пагинацију)
 
 Example Response:
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Грешка: Неисправан limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Неважећи Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

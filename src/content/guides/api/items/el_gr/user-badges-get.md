@@ -1,24 +1,24 @@
-Αυτό το endpoint σας επιτρέπει να ανακτήσετε σήματα χρηστών με βάση διάφορα κριτήρια.
+Αυτό το endpoint σας επιτρέπει να ανακτήσετε τα badges χρηστών βάσει διαφόρων κριτηρίων.
 
 Παράδειγμα Αιτήματος:
 
-[inline-code-attrs-start title = 'Παράδειγμα Αιτήματος GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Λίστα Badges Χρηστών - Παράδειγμα GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Μπορείτε να προσθέσετε διάφορες παραμέτρους ερωτήματος για να φιλτράρετε τα αποτελέσματα:
+Μπορείτε να προσθέσετε διάφορες παραμέτρους query για να φιλτράρετε τα αποτελέσματα:
 
-- `userId` - Λήψη σημάτων για συγκεκριμένο χρήστη
-- `badgeId` - Λήψη περιπτώσεων συγκεκριμένου σήματος
-- `type` - Φιλτράρισμα κατά τύπο σήματος (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, κλπ. Δείτε τη δομή UserBadge για πλήρη λίστα)
-- `displayedOnComments` - Φιλτράρισμα κατά το αν το σήμα εμφανίζεται στα σχόλια (true/false)
-- `limit` - Μέγιστος αριθμός σημάτων που θα επιστραφούν (προεπιλογή 30, μέγιστο 200)
-- `skip` - Αριθμός σημάτων που θα παραλειφθούν (για σελιδοποίηση)
+- `userId` - Λήψη badges για συγκεκριμένο χρήστη
+- `badgeId` - Λήψη περιπτώσεων ενός συγκεκριμένου badge
+- `type` - Φιλτράρισμα κατά τύπο badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, κ.λπ. Δείτε τη δομή UserBadge για την πλήρη λίστα)
+- `displayedOnComments` - Φιλτράρισμα ανάλογα με το αν το badge εμφανίζεται στα σχόλια (true/false)
+- `limit` - Μέγιστος αριθμός badges για επιστροφή (προεπιλογή 30, μέγιστο 200)
+- `skip` - Αριθμός badges που θα παραλειφθούν (για σελιδοποίηση)
 
-Παράδειγμα Απάντησης:
+Παράδειγμα Απόκρισης:
 
-[inline-code-attrs-start title = 'Απάντηση'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Απόκριση'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -62,7 +62,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 
 Πιθανές Απαντήσεις Σφάλματος:
 
-[inline-code-attrs-start title = 'Σφάλμα: Λείπει το Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σφάλμα: Λείπει Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Σφάλμα: Μη Έγκυρο Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σφάλμα: Μη έγκυρο limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

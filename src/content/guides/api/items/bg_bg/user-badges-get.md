@@ -1,22 +1,22 @@
-Тази крайна точка ви позволява да извличате потребителски значки въз основа на различни критерии.
+Този крайна точка ви позволява да извличате потребителски значки въз основа на различни критерии.
 
-Примерна заявка:
+Example Request:
 
-[inline-code-attrs-start title = 'Пример за GET заявка'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Списък на потребителските значки - пример (GET)'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Можете да добавите различни параметри на заявката за филтриране на резултатите:
+You can add various query parameters to filter the results:
 
 - `userId` - Вземете значки за конкретен потребител
-- `badgeId` - Вземете инстанции на конкретна значка
-- `type` - Филтриране по тип значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies и т.н. Вижте структурата на UserBadge за пълен списък)
-- `displayedOnComments` - Филтриране по това дали значката се показва в коментарите (true/false)
-- `limit` - Максимален брой значки за връщане (по подразбиране 30, максимум 200)
-- `skip` - Брой значки за пропускане (за пагинация)
+- `badgeId` - Вземете екземпляри на конкретна значка
+- `type` - Филтрирайте по тип на значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Филтрирайте дали значката се показва върху коментарите (true/false)
+- `limit` - Максимален брой значки за връщане (default 30, max 200)
+- `skip` - Брой значки за пропускане (for pagination)
 
-Примерен отговор:
+Example Response:
 
 [inline-code-attrs-start title = 'Отговор'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-Възможни отговори за грешка:
+Possible Error Responses:
 
-[inline-code-attrs-start title = 'Грешка: Липсващ Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Липсва Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Грешка: Невалиден лимит'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Невалиден Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

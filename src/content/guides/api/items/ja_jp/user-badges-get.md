@@ -1,22 +1,22 @@
-このエンドポイントでは、さまざまな条件でユーザーバッジを取得できます。
+このエンドポイントは、さまざまな条件に基づいてユーザーのバッジを取得するためのものです。
 
-Example Request:
+リクエスト例:
 
-[inline-code-attrs-start title = 'GETリクエストの例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ユーザーバッジ一覧 - GET 例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-結果を絞り込むために、さまざまなクエリパラメータを追加できます：
+結果を絞り込むために、さまざまなクエリパラメータを追加できます:
 
 - `userId` - 特定のユーザーのバッジを取得
 - `badgeId` - 特定のバッジのインスタンスを取得
-- `type` - バッジのタイプでフィルタ (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, など。完全な一覧は UserBadge 構造を参照してください)
-- `displayedOnComments` - バッジがコメントに表示されるかどうかでフィルタ (true/false)
-- `limit` - 返されるバッジの最大数 (デフォルト 30、最大 200)
-- `skip` - スキップするバッジ数（ページネーション用）
+- `type` - バッジの種類で絞り込む（0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, など。完全な一覧は UserBadge 構造を参照してください）
+- `displayedOnComments` - バッジがコメント上に表示されるかどうかで絞り込む（true/false）
+- `limit` - 返されるバッジの最大数（デフォルト 30、最大 200）
+- `skip` - スキップするバッジの数（ページネーション用）
 
-Example Response:
+レスポンス例:
 
 [inline-code-attrs-start title = 'レスポンス'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,7 +60,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+考えられるエラー応答:
 
 [inline-code-attrs-start title = 'エラー: テナントIDがありません'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

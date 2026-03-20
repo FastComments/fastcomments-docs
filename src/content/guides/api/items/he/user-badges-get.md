@@ -1,20 +1,20 @@
-נקודת קצה זו מאפשרת לך לאחזר תגי משתמש על בסיס קריטריונים שונים.
+נקודת קצה זו מאפשרת לך לשאוב תגי משתמשים לפי קריטריונים שונים.
 
 דוגמת בקשה:
 
-[inline-code-attrs-start title = 'דוגמת בקשת GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'רשימת תגי משתמשים - דוגמת GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-אתה יכול להוסיף פרמטרי שאילתה שונים כדי לסנן את התוצאות:
+ניתן להוסיף פרמטרי שאילתה שונים כדי לסנן את התוצאות:
 
-- `userId` - קבל תגים למשתמש ספציפי
+- `userId` - קבל תגים עבור משתמש מסוים
 - `badgeId` - קבל מופעים של תג ספציפי
-- `type` - סנן לפי סוג תג (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, וכו'. ראה מבנה UserBadge לרשימה מלאה)
-- `displayedOnComments` - סנן לפי האם התג מוצג בתגובות (true/false)
-- `limit` - מספר מקסימלי של תגים להחזרה (ברירת מחדל 30, מקסימום 200)
-- `skip` - מספר תגים לדלג עליהם (לעימוד)
+- `type` - סנן לפי סוג תג (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, וכו'. ראה את מבנה UserBadge לרשימה מלאה)
+- `displayedOnComments` - סנן לפי האם התג מוצג על תגובות (true/false)
+- `limit` - מספר מקסימלי של תגי להחזיר (ברירת מחדל 30, מקסימום 200)
+- `skip` - מספר תגיות לדלג (למטרות עימוד)
 
 דוגמת תגובה:
 
@@ -62,7 +62,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 
 תגובות שגיאה אפשריות:
 
-[inline-code-attrs-start title = 'שגיאה: מזהה שוכר חסר'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'שגיאה: חסר Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

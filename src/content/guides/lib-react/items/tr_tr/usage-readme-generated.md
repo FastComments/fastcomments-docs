@@ -2,9 +2,9 @@
 
 FastCommentsCommentWidget bileşeni canlı FastComments yorum widget'ını içerir.
 
-Aşağıdaki "demo"yu FastComments yönetici alanında [burada](https://fastcomments.com/auth/my-account/api) bulunan "tenantId" değerinizle değiştirin.
+Aşağıdaki "demo"yu "tenantId"niz ile değiştirin - FastComments yönetim alanında [burada](https://fastcomments.com/auth/my-account/api) bulunabilir.
 
-Widget çok sayıda seçeneği destekler - bkz. FastCommentsCommentWidgetConfig in src/index.tsx.
+Widget birçok seçeneği destekler - desteklenen seçenekler için src/index.tsx içindeki FastCommentsCommentWidgetConfig'e bakın.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Geçerli Sayfayı Güncelleme (SPA'lar için)
-Yorum dizisinin bağlı olduğu sayfa/makale bilgisini güncellemek için yapılandırma parametreleri "urlId" ve "url" değerlerini güncellemelisiniz.
-Örneği ve açıklamayı [burada](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx) görün.
+### Geçerli Sayfanın Güncellenmesi (SPA'lar için)
+Yorum dizisinin bağlı olduğu sayfa/makale güncellenecekse yapılandırma parametreleri "urlId" ve "url" güncellenmelidir.
+Örnek ve açıklama için [buraya](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx) bakın.
 
 ### Hesap Bölgesi (DİKKAT: AB Müşterileri)
 
-Eğer AB'deyseniz, istemci widget'larına hangi bölgede olduğunuzu bildirmeniz gerekir. Bakınız [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
-Aksi takdirde `region`'ı tanımlamanıza gerek yoktur.
+Eğer AB'deyseniz, istemci widget'larına hangi bölgede olduğunuzu belirtmek isteyeceksiniz. Örneğe bakın [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Aksi takdirde `region`'u tanımlamanıza gerek yoktur.
 
-### Yorum Sayacı Bileşeni
+### Yorum Sayacı Widget'ı
 
-FastCommentsCommentCountWidget bileşeni canlı FastComments yorum sayacı widget'ını içerir.
+FastCommentsCommentCountWidget bileşeni canlı FastComments yorum sayısı widget'ını içerir.
 
-Aşağıdaki "demo"yu FastComments yönetici alanında [burada](https://fastcomments.com/auth/my-account/api) bulunan "tenantId" değerinizle değiştirin.
+Aşağıdaki "demo"yu "tenantId"niz ile değiştirin - FastComments yönetim alanında [burada](https://fastcomments.com/auth/my-account/api) bulunabilir.
 
-Desteklenen yapılandırma seçenekleri için FastCommentsCommentCountConfig'e src/index.tsx içinde bakın.
+Desteklenen yapılandırma seçenekleri için src/index.tsx içindeki FastCommentsCommentCountConfig'e bakın.
 
 ```tsx
 import React, { Component } from 'react'
@@ -49,6 +49,6 @@ class Example extends Component {
 
 ### Yerel
 
-FastComments'in tamamen yerel bir uygulaması için bkz. [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+FastComments'ın tamamen yerel bir uygulaması için bkz. [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-Bu kütüphanın bir webview kullanan React Native sarmalayıcısı için bkz. [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Bu kütüphanenin bir webview kullanarak React Native sarmalayıcısı için bkz. [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

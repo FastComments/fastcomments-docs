@@ -1,9 +1,9 @@
 ---
 これは fastcomments-angular のルートワークスペースです。
 
-"src" にはライブラリをテストするための単純なデモアプリケーションがあります。
+"src" には、ライブラリをテストするための単純なデモアプリケーションが含まれています。
 
-"projects" には fastcomments ライブラリがあります。
+"projects" には fastcomments ライブラリが含まれています。
 
-ngx-fastcomments の README は[こちら](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)をご覧ください。
+ngx-fastcomments の README は [ここ](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular) を参照してください。
 ---

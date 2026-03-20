@@ -1,17 +1,17 @@
-Этот endpoint позволяет получить записи о прогрессе бейджей пользователей по различным критериям.
+Этот endpoint позволяет получить записи прогресса бейджей пользователей на основе различных критериев.
 
 Пример запроса:
 
-[inline-code-attrs-start title = 'Пример GET-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список прогресса бейджей — пример GET-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Вы можете добавить различные параметры запроса для фильтрации результатов:
+Вы можете добавить различные query-параметры для фильтрации результатов:
 
 - `userId` - Получить прогресс для конкретного пользователя
-- `limit` - Максимальное количество записей для возврата (по умолчанию 30, максимум 200)
-- `skip` - Число записей для пропуска (для пагинации)
+- `limit` - Максимальное количество записей для возвращения (по умолчанию 30, максимум 200)
+- `skip` - Количество записей для пропуска (для постраничной навигации)
 
 Пример ответа:
 
@@ -55,9 +55,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-Возможные ответы с ошибками:
+Возможные ответы об ошибке:
 
-[inline-code-attrs-start title = 'Ошибка: отсутствует ID арендатора'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ошибка: отсутствует Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

@@ -1,10 +1,10 @@
-### The Main Widget Component
+### メインウィジェットコンポーネント
 
-The FastCommentsCommentWidget component はライブの FastComments コメントウィジェットを含みます。
+The FastCommentsCommentWidget component contains the live FastComments comment widget.
 
-下の "demo" をあなたの "tenantId" に置き換えてください - FastComments 管理画面の [ここ](https://fastcomments.com/auth/my-account/api) で入手できます。
+下の "demo" をあなたの "tenantId" に置き換えてください - FastComments 管理画面の [こちら](https://fastcomments.com/auth/my-account/api) で確認できます。
 
-ウィジェットはいくつものオプションをサポートしています - 詳しくは src/index.tsx の FastCommentsCommentWidgetConfig を参照してください。
+このウィジェットは多くのオプションをサポートしています - 詳細は src/index.tsx の FastCommentsCommentWidgetConfig を参照してください。
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Updating The Current Page (For SPAs)
-コメントスレッドが紐づいているページ／記事を更新するには、設定パラメーター "urlId" と "url" を更新する必要があります。
+### 現在のページの更新（SPAの場合）
+コメントスレッドが紐付いているページ/記事を更新するには、設定パラメータの "urlId" と "url" を更新する必要があります。
 例と説明は [こちら](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx) を参照してください。
 
-### Account Region (ATTENTION: EU Customers)
+### アカウントのリージョン（注意：EUのお客様）
 
-EU にいる場合、クライアントウィジェットにあなたのリージョンを伝える必要があります。 [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx) を参照してください;
-それ以外の場合は `region` を定義する必要はありません。
+EU にいる場合、クライアントウィジェットにリージョンを指定する必要があります。See [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+それ以外の場合、`region` を定義する必要はありません。
 
-### The Comment Count Widget
+### コメントカウントウィジェット
 
-The FastCommentsCommentCountWidget component はライブの FastComments コメント数ウィジェットを含みます。
+The FastCommentsCommentCountWidget component contains the live FastComments comment count widget.
 
-下の "demo" をあなたの "tenantId" に置き換えてください - FastComments 管理画面の [ここ](https://fastcomments.com/auth/my-account/api) で入手できます。
+下の "demo" をあなたの "tenantId" に置き換えてください - FastComments 管理画面の [こちら](https://fastcomments.com/auth/my-account/api) で確認できます。
 
-サポートされている設定オプションについては src/index.tsx の FastCommentsCommentCountConfig を参照してください。
+サポートされている設定オプションは src/index.tsx の FastCommentsCommentCountConfig を参照してください。
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Native
+### ネイティブ
 
-FastComments を完全にネイティブで実装する方法については [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk) を参照してください。
+FastComments を完全にネイティブで実装する場合は、[fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk) を参照してください。
 
-このライブラリの React Native ラッパー（WebView を使用）については [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native) を参照してください。
+このライブラリの React Native ラッパー（webview を使用）については、[fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native) を参照してください。

@@ -1,22 +1,22 @@
-Bu uç nokta, çeşitli kriterlere göre kullanıcı rozetlerini almanıza olanak tanır.
+Bu uç nokta, çeşitli kriterlere göre kullanıcı rozetlerini getirmenize olanak tanır.
 
-Example Request:
+Örnek İstek:
 
-[inline-code-attrs-start title = 'GET İstek Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kullanıcı Rozetlerini Listele - GET Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Sonuçları filtrelemek için çeşitli sorgu parametreleri ekleyebilirsiniz:
 
-- `userId` - Belirli bir kullanıcıya ait rozetleri al
-- `badgeId` - Belirli bir rozete ait örnekleri al
-- `type` - Rozet türüne göre filtrele (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, vb. Tam liste için UserBadge yapısına bakın)
-- `displayedOnComments` - Rozetin yorumlarda gösterilip gösterilmediğine göre filtrele (true/false)
+- `userId` - Belirli bir kullanıcı için rozetleri alın
+- `badgeId` - Belirli bir rozete ait örnekleri alın
+- `type` - Rozet türüne göre filtreleyin (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, vb. Tam liste için UserBadge yapısına bakın)
+- `displayedOnComments` - Rozetin yorumlarda görüntülenip görüntülenmediğine göre filtreleyin (true/false)
 - `limit` - Döndürülecek maksimum rozet sayısı (varsayılan 30, maksimum 200)
-- `skip` - Atlanacak rozet sayısı (sayfalandırma için)
+- `skip` - Atlanacak rozet sayısı (sayfalama için)
 
-Example Response:
+Örnek Yanıt:
 
 [inline-code-attrs-start title = 'Yanıt'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Olası Hata Yanıtları:
 
-[inline-code-attrs-start title = 'Hata: Eksik Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Hata: Tenant ID Eksik'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

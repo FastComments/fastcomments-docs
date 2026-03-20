@@ -1,8 +1,8 @@
-Deze endpoint stelt je in staat gebruikersbadges op te halen op basis van verschillende criteria.
+Dit endpoint stelt je in staat gebruikersbadges op te halen op basis van verschillende criteria.
 
 Voorbeeldverzoek:
 
-[inline-code-attrs-start title = 'Voorbeeld GET-verzoek'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lijst Gebruikersbadges - GET Voorbeeld'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,13 +10,13 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 Je kunt verschillende queryparameters toevoegen om de resultaten te filteren:
 
 - `userId` - Haal badges op voor een specifieke gebruiker
-- `badgeId` - Haal instanties van een specifieke badge op
-- `type` - Filter op badgetype (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Zie de UserBadge-structuur voor de volledige lijst)
-- `displayedOnComments` - Filter op of de badge wordt getoond bij reacties (true/false)
-- `limit` - Maximaal aantal badges om terug te geven (standaard 30, max 200)
+- `badgeId` - Haal exemplaren van een specifieke badge op
+- `type` - Filter op badgetype (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, enz. Zie UserBadge-structuur voor volledige lijst)
+- `displayedOnComments` - Filter op of de badge zichtbaar is bij reacties (true/false)
+- `limit` - Maximum aantal badges om terug te geven (standaard 30, max 200)
 - `skip` - Aantal badges om over te slaan (voor paginering)
 
-Voorbeeldantwoord:
+Voorbeeldrespons:
 
 [inline-code-attrs-start title = 'Respons'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -62,7 +62,7 @@ Voorbeeldantwoord:
 
 Mogelijke foutreacties:
 
-[inline-code-attrs-start title = 'Fout: Ontbrekend Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fout: Ontbrekende Tenant-ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

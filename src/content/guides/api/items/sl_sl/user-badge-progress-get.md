@@ -1,9 +1,8 @@
----
-Ta končna točka vam omogoča pridobitev zapisov o napredku uporabniških značk na podlagi različnih kriterijev.
+Ta končna točka vam omogoča pridobiti zapise o napredku uporabniških značk glede na različna merila.
 
 Primer zahteve:
 
-[inline-code-attrs-start title = 'Primer GET zahteve'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Seznam napredka značk - primer GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -67,7 +66,7 @@ Možni odgovori z napako:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Napaka: Neveljaven limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: Neveljavna omejitev'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -75,4 +74,3 @@ Možni odgovori z napako:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

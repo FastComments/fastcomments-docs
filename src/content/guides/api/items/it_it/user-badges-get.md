@@ -1,18 +1,19 @@
-Questo endpoint consente di recuperare i badge degli utenti in base a diversi criteri.
+---
+Questo endpoint consente di recuperare i badge degli utenti in base a vari criteri.
 
 Esempio di richiesta:
 
-[inline-code-attrs-start title = 'Esempio di richiesta GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Elenco Badge Utente - Esempio GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Puoi aggiungere vari parametri di query per filtrare i risultati:
 
-- `userId` - Ottieni badge per un utente specifico
-- `badgeId` - Ottieni istanze di un badge specifico
-- `type` - Filtra per tipo di badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtra se il badge è visualizzato nei commenti (true/false)
+- `userId` - Ottieni i badge per uno specifico utente
+- `badgeId` - Ottieni le istanze di uno specifico badge
+- `type` - Filtra per tipo di badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Vedi la struttura UserBadge per l'elenco completo)
+- `displayedOnComments` - Filtra in base a se il badge è visualizzato nei commenti (true/false)
 - `limit` - Numero massimo di badge da restituire (default 30, max 200)
 - `skip` - Numero di badge da saltare (per la paginazione)
 
@@ -79,3 +80,4 @@ Possibili risposte di errore:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
+---

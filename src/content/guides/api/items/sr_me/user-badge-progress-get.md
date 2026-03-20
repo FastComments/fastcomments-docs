@@ -1,8 +1,8 @@
-Ова крајња тачка вам омогућава да преузмете записе о напретку ознака корисника на основу различитих критеријума.
+Овај ендпоинт вам омогућава да преузмете записе о напретку значки корисника на основу различитих критеријума.
 
 Пример захтева:
 
-[inline-code-attrs-start title = 'Пример GET захтева'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Листа напретка значки - пример (GET)'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,8 +10,8 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 Можете додати различите параметре упита да филтрирате резултате:
 
 - `userId` - Добијте напредак за одређеног корисника
-- `limit` - Максималан број записа за враћање (подразумевано 30, максимум 200)
-- `skip` - Број записа које треба прескочити (за пагинацију)
+- `limit` - Максималан број записа који ће бити враћени (подразумевано 30, максимум 200)
+- `skip` - Број записа који треба прескочити (за пагинацију)
 
 Пример одговора:
 
@@ -66,7 +66,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Грешка: Неважећи Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Invalid Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

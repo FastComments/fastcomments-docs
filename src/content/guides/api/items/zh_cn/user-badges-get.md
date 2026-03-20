@@ -3,7 +3,7 @@
 
 示例请求：
 
-[inline-code-attrs-start title = 'GET 请求示例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '列出用户徽章 - GET 示例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -12,10 +12,10 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 
 - `userId` - 获取特定用户的徽章
 - `badgeId` - 获取特定徽章的实例
-- `type` - 按徽章类型筛选 (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - 按徽章是否显示在评论中筛选 (true/false)
-- `limit` - 返回的徽章最大数量（默认 30，最大 200）
-- `skip` - 要跳过的徽章数量（用于分页）
+- `type` - 按徽章类型过滤 (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - 按徽章是否显示在评论中过滤 (true/false)
+- `limit` - 返回的徽章最大数量 (默认 30, 最大 200)
+- `skip` - 要跳过的徽章数量 (用于分页)
 
 示例响应：
 
@@ -63,7 +63,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 
 可能的错误响应：
 
-[inline-code-attrs-start title = '错误：缺少 Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '错误: 缺少租户 ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -72,7 +72,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = '错误：无效的 limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '错误: 无效的限制'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

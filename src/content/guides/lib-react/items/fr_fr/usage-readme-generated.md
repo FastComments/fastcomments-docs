@@ -1,10 +1,10 @@
 ### Le composant principal du widget
 
-Le composant FastCommentsCommentWidget contient le widget de commentaires FastComments en temps réel.
+Le composant FastCommentsCommentWidget contient le widget de commentaires FastComments en direct.
 
-Remplacez "demo" ci‑dessous par votre "tenantId" — disponible [ici](https://fastcomments.com/auth/my-account/api) dans la zone d'administration FastComments.
+Remplacez "demo" ci‑dessous par votre "tenantId" - disponible [ici](https://fastcomments.com/auth/my-account/api) dans la zone d'administration FastComments.
 
-Le widget prend en charge de nombreuses options — voir FastCommentsCommentWidgetConfig dans src/index.tsx.
+Le widget prend en charge de nombreuses options - voir FastCommentsCommentWidgetConfig dans src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,20 +18,20 @@ class Example extends Component {
 }
 ```
 
-### Mise à jour de la page courante (pour les SPA)
-Pour mettre à jour la page/article auquel le fil de commentaires est rattaché, vous devez mettre à jour les paramètres de configuration "urlId" et "url".
+### Mettre à jour la page courante (pour les SPAs)
+Pour mettre à jour la page/article auquel le fil de commentaires est lié, vous devez mettre à jour les paramètres de configuration "urlId" et "url".
 Voir l'exemple et l'explication [ici](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
-### Région du compte (ATTENTION : clients de l'UE)
+### Région du compte (ATTENTION : clients UE)
 
-Si vous êtes dans l'UE, vous devrez indiquer aux widgets clients dans quelle région vous vous trouvez. Voir [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx) ;
-Sinon, vous n'êtes pas obligé de définir `region`.
+Si vous êtes dans l'UE, vous devrez indiquer aux widgets clients dans quelle région vous vous trouvez. Voir [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Sinon, vous n'avez pas à définir `region`.
 
-### Le widget de compteur de commentaires
+### Le widget de comptage des commentaires
 
-Le composant FastCommentsCommentCountWidget contient le widget de comptage de commentaires FastComments en temps réel.
+Le composant FastCommentsCommentCountWidget contient le widget de comptage des commentaires FastComments en direct.
 
-Remplacez "demo" ci‑dessous par votre "tenantId" — disponible [ici](https://fastcomments.com/auth/my-account/api) dans la zone d'administration FastComments.
+Remplacez "demo" ci‑dessous par votre "tenantId" - disponible [ici](https://fastcomments.com/auth/my-account/api) dans la zone d'administration FastComments.
 
 Voir FastCommentsCommentCountConfig dans src/index.tsx pour les options de configuration prises en charge.
 
@@ -47,7 +47,7 @@ class Example extends Component {
 }
 ```
 
-### Native
+### Natif
 
 Pour une implémentation entièrement native de FastComments, voir [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 

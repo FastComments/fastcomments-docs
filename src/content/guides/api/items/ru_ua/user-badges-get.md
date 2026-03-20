@@ -1,23 +1,22 @@
----
-This endpoint allows you to fetch user badges based on various criteria.
+Этот эндпоинт позволяет получать значки пользователя на основе различных критериев.
 
-Пример запроса:
+Example Request:
 
-[inline-code-attrs-start title = 'Пример GET-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список значков пользователя - пример GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Вы можете добавить различные параметры запроса для фильтрации результатов:
+You can add various query parameters to filter the results:
 
 - `userId` - Получить значки для конкретного пользователя
 - `badgeId` - Получить экземпляры конкретного значка
-- `type` - Фильтровать по типу значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Фильтровать по тому, отображается ли значок в комментариях (true/false)
-- `limit` - Максимальное количество возвращаемых значков (по умолчанию 30, макс 200)
-- `skip` - Количество пропускаемых значков (для пагинации)
+- `type` - Фильтр по типу значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Фильтрация по тому, отображается ли значок в комментариях (true/false)
+- `limit` - Максимальное количество возвращаемых значков (по умолчанию 30, максимум 200)
+- `skip` - Количество значков, которые необходимо пропустить (для пагинации)
 
-Пример ответа:
+Example Response:
 
 [inline-code-attrs-start title = 'Ответ'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,7 +60,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-Возможные ответы об ошибке:
+Possible Error Responses:
 
 [inline-code-attrs-start title = 'Ошибка: отсутствует Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -80,4 +79,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

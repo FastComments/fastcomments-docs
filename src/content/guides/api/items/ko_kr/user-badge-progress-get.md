@@ -1,19 +1,20 @@
-이 엔드포인트는 다양한 기준에 따라 사용자 배지 진행 기록을 가져올 수 있습니다.
+---
+이 엔드포인트는 다양한 기준에 따라 사용자 배지 진행 기록을 가져올 수 있게 해줍니다.
 
-Example Request:
+예제 요청:
 
-[inline-code-attrs-start title = 'GET 요청 예시'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '배지 진행 목록 - GET 예제'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-결과를 필터링하기 위해 다양한 쿼리 매개변수를 추가할 수 있습니다:
+결과를 필터링하기 위해 다양한 쿼리 파라미터를 추가할 수 있습니다:
 
 - `userId` - 특정 사용자의 진행 상황을 가져옵니다
 - `limit` - 반환할 최대 레코드 수 (기본값 30, 최대 200)
 - `skip` - 건너뛸 레코드 수 (페이지네이션용)
 
-Example Response:
+예제 응답:
 
 [inline-code-attrs-start title = '응답'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,7 +56,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+가능한 오류 응답:
 
 [inline-code-attrs-start title = '오류: 누락된 Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -74,3 +75,4 @@ Possible Error Responses:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
+---

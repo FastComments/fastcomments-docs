@@ -1,8 +1,8 @@
-Эта конечная точка позволяет получать записи прогресса по значкам пользователей по различным критериям.
+Этот endpoint позволяет получить записи прогресса значков пользователей по различным критериям.
 
 Пример запроса:
 
-[inline-code-attrs-start title = 'Пример GET-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список прогресса значков - пример GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,8 +10,8 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 Вы можете добавить различные параметры запроса для фильтрации результатов:
 
 - `userId` - Получить прогресс для конкретного пользователя
-- `limit` - Максимальное число записей для возвращения (по умолчанию 30, максимум 200)
-- `skip` - Количество записей для пропуска (для пагинации)
+- `limit` - Максимальное количество записей для возврата (по умолчанию 30, максимум 200)
+- `skip` - Количество записей для пропуска (для постраничной навигации)
 
 Пример ответа:
 
@@ -57,7 +57,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 
 Возможные ответы с ошибками:
 
-[inline-code-attrs-start title = 'Ошибка: Отсутствует параметр tenantId'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ошибка: отсутствует Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +66,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Ошибка: Неверное значение параметра limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ошибка: недопустимый limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

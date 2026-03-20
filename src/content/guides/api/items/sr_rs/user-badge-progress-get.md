@@ -1,21 +1,21 @@
-Ovaj endpoint vam omogućava da dohvatite zapise o napretku korisničkih znački na osnovu različitih kriterijuma.
+Овај крајњи ендпоинт вам омогућава да преузмете записе о напретку корисничких значки на основу разних критеријума.
 
-Primer zahteva:
+Пример захтева:
 
-[inline-code-attrs-start title = 'Primer GET zahteva'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Листа напретка значки - GET пример'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Možete dodati razne parametre upita da filtrirate rezultate:
+Можете додати различите параметре упита да бисте филтрирали резултате:
 
-- `userId` - Dohvata napredak za konkretnog korisnika
-- `limit` - Maksimalan broj zapisa za vraćanje (podrazumevano 30, maksimum 200)
-- `skip` - Broj zapisa za preskakanje (za paginaciju)
+- `userId` - Добијте напредак за одређеног корисника
+- `limit` - Максималан број записа за повратак (подразумевано 30, максимум 200)
+- `skip` - Број записа које треба прескочити (за пагинацију)
 
-Primer odgovora:
+Пример одговора:
 
-[inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -55,9 +55,9 @@ Primer odgovora:
 }
 [inline-code-end]
 
-Mogući odgovori sa greškom:
+Могући одговори са грешком:
 
-[inline-code-attrs-start title = 'Greška: Nedostaje ID tenanta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Недостаје Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +66,7 @@ Mogući odgovori sa greškom:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Greška: Nevažeći limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Грешка: Неважећи Limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

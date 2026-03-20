@@ -1,9 +1,9 @@
 ---
 Это корневое рабочее пространство для fastcomments-angular.
 
-В "src" вы найдёте приложение, которое является просто демонстрационным приложением для тестирования библиотек.
+В "src" вы найдете приложение, которое является простым демонстрационным приложением для тестирования библиотек.
 
-В "projects" вы найдёте библиотеку fastcomments.
+В "projects" вы найдете библиотеку fastcomments.
 
-Ознакомьтесь с README для ngx-fastcomments [здесь](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+Просмотрите README для ngx-fastcomments [здесь](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
 ---

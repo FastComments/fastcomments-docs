@@ -1,7 +1,7 @@
 To jest główne środowisko robocze dla fastcomments-angular.
 
-W katalogu "src" znajdziesz aplikację, która jest po prostu aplikacją demonstracyjną do testowania bibliotek.
+W "src" znajdziesz aplikację, która jest po prostu aplikacją demonstracyjną do testowania bibliotek.
 
-W katalogu "projects" znajdziesz bibliotekę fastcomments.
+W "projects" znajdziesz bibliotekę fastcomments.
 
-Zobacz README dla ngx-fastcomments [tutaj](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+Zobacz plik README dla ngx-fastcomments [tutaj](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)

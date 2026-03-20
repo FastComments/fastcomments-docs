@@ -1,9 +1,7 @@
----
-Questo è lo workspace principale per fastcomments-angular.
+Questo è lo spazio di lavoro principale per fastcomments-angular.
 
-In "src" troverai un'applicazione che è semplicemente un'app demo per testare le librerie.
+In "src" troverai un'applicazione che è semplicemente un'app di esempio per testare le librerie.
 
 In "projects" troverai la libreria fastcomments.
 
-Vedi il README per ngx-fastcomments [qui](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
----
+Consulta il README di ngx-fastcomments [qui](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)

@@ -1,10 +1,10 @@
-### Главна компонента видџета
+### Glavna komponenta widgeta
 
-Компонента FastCommentsCommentWidget садржи уживо FastComments видџет за коментаре.
+Komponenta FastCommentsCommentWidget sadrži uživo FastComments komentar widget.
 
-Замијените "demo" испод са вашим "tenantId" - доступан [овдје](https://fastcomments.com/auth/my-account/api) у FastComments админ подручју.
+Zamijenite "demo" ispod sa vašim "tenantId" - dostupno [ovdje](https://fastcomments.com/auth/my-account/api) u FastComments administratorskom području.
 
-Видџет подржава доста опција - погледајте FastCommentsCommentWidgetConfig у src/index.tsx.
+Widget podržava mnogo opcija - pogledajte FastCommentsCommentWidgetConfig u src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Ажурирање тренутне странице (за SPA)
-Да бисте ажурирали страницу/чланак на који је нит коментара везана, морате ажурирати конфигурационе параметре "urlId" и "url".
-Погледајте примјер и објашњење [овдје](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
+### Ažuriranje trenutne stranice (za SPA-ove)
+Da biste ažurirali stranicu/članak na koji je komentar nit vezana, morate ažurirati konfiguracione parametre "urlId" i "url".
+Pogledajte primjer i objašnjenje [ovdje](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
-### Регион налога (ПАЖЊА: EU корисници)
+### Account Region (PAŽNJA: EU korisnici)
 
-Ако се налазите у ЕУ, требате обавијестити клијент видџете у којем сте региону. Погледајте [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
-У супротном, не морате дефинисати `region`.
+Ako ste u EU, trebate klijentskim widgetima reći u kojoj regiji se nalazite. Pogledajte [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+U suprotnom, ne morate definirati `region`.
 
-### Видџет за број коментара
+### Widget za broj komentara
 
-Компонента FastCommentsCommentCountWidget садржи уживо FastComments видџет за број коментара.
+Komponenta FastCommentsCommentCountWidget sadrži uživo FastComments widget za broj komentara.
 
-Замијените "demo" испод са вашим "tenantId" - доступан [овдје](https://fastcomments.com/auth/my-account/api) у FastComments админ подручју.
+Zamijenite "demo" ispod sa vašim "tenantId" - dostupno [ovdje](https://fastcomments.com/auth/my-account/api) u FastComments administratorskom području.
 
-Погледајте FastCommentsCommentCountConfig у src/index.tsx за подржане конфигурационе опције.
+Pogledajte FastCommentsCommentCountConfig u src/index.tsx za podržane konfiguracione opcije.
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Nativno
+### Native
 
-За потпуно нативну имплементацију FastComments, погледајте [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+Za potpuno nativnu implementaciju FastComments, pogledajte [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-За React Native wrapper ове библиотеке, користећи webview, погледајте [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Za React Native omotač ove biblioteke, koji koristi webview, pogledajte [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

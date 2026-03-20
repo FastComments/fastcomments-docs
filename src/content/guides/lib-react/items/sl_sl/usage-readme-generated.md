@@ -1,10 +1,10 @@
-### Glavna komponenta pripomočka
+### Glavna komponenta gradnika
 
-Komponenta FastCommentsCommentWidget vsebuje v živo FastComments komentarni pripomoček.
+Komponenta FastCommentsCommentWidget vsebuje v živo FastComments komentarni gradnik.
 
-Zamenjajte "demo" spodaj z vašim "tenantId" - na voljo [tukaj](https://fastcomments.com/auth/my-account/api) v skrbniškem območju FastComments.
+Zamenjajte "demo" spodaj z vašim "tenantId" - na voljo [tukaj](https://fastcomments.com/auth/my-account/api) v administracijskem območju FastComments.
 
-Pripomoček podpira veliko možnosti - glejte FastCommentsCommentWidgetConfig v src/index.tsx.
+Gradnik podpira veliko možnosti - oglejte si FastCommentsCommentWidgetConfig v src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -19,21 +19,21 @@ class Example extends Component {
 ```
 
 ### Posodabljanje trenutne strani (za SPA-je)
-Če želite posodobiti stran/članek, s katerim je nit komentarjev povezana, morate posodobiti konfiguracijske parametre "urlId" in "url".
-Primer in razlago glejte [tukaj](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
+Če želite posodobiti stran/članek, na katerega je vezana nit komentarjev, morate posodobiti konfiguracijske parametre "urlId" in "url".
+Poglejte primer in razlago [tukaj](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
 ### Regija računa (POZOR: stranke iz EU)
 
-Če ste v EU, boste želeli obvestiti odjemalske widgete, v kateri regiji ste. Glejte [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
-sicer vam ni treba definirati `region`.
+Če ste v EU, boste želeli obvestiti odjemalske gradnike, v kateri regiji se nahajate. Oglejte si [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Sicer vam ni treba definirati `region`.
 
-### Pripomoček za štetje komentarjev
+### Gradnik za štetje komentarjev
 
-Komponenta FastCommentsCommentCountWidget vsebuje v živo FastComments pripomoček za štetje komentarjev.
+Komponenta FastCommentsCommentCountWidget vsebuje v živo FastComments gradnik za štetje komentarjev.
 
-Zamenjajte "demo" spodaj z vašim "tenantId" - na voljo [tukaj](https://fastcomments.com/auth/my-account/api) v skrbniškem območju FastComments.
+Zamenjajte "demo" spodaj z vašim "tenantId" - na voljo [tukaj](https://fastcomments.com/auth/my-account/api) v administracijskem območju FastComments.
 
-Za podprte konfiguracijske možnosti glejte FastCommentsCommentCountConfig v src/index.tsx.
+Podprte možnosti konfiguracije si oglejte v FastCommentsCommentCountConfig v src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Nativno
+### Native
 
-Za popolnoma nativno implementacijo FastComments glejte [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+Za popolnoma nativno implementacijo FastComments si oglejte [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-Za React Native ovojnico te knjižnice, ki uporablja webview, glejte [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Za React Native ovojnico te knjižnice, ki uporablja webview, si oglejte [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

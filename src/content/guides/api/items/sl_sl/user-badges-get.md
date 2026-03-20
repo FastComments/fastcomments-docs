@@ -1,22 +1,22 @@
-Ta končna točka vam omogoča pridobivanje značk uporabnikov na podlagi različnih kriterijev.
+Ta končna točka omogoča pridobivanje uporabniških značk glede na različna merila.
 
-Example Request:
+Primer zahteve:
 
-[inline-code-attrs-start title = 'Primer GET zahteve'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Seznam uporabniških značk - primer GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Lahko dodate različne query parametre za filtriranje rezultatov:
 
 - `userId` - Pridobi značke za določenega uporabnika
 - `badgeId` - Pridobi primere določene značke
-- `type` - Filtriraj po tipu značke (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Glejte strukturo UserBadge za celoten seznam)
+- `type` - Filtriraj po tipu značke (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Oglejte si strukturo UserBadge za celoten seznam)
 - `displayedOnComments` - Filtriraj glede na to, ali je značka prikazana pri komentarjih (true/false)
-- `limit` - Največje število značk za vrniti (privzeto 30, max 200)
-- `skip` - Število značk za preskočiti (za pagination)
+- `limit` - Maksimalno število značk, ki se vrnejo (privzeto 30, max 200)
+- `skip` - Število značk za preskočiti (za paginacijo)
 
-Example Response:
+Primer odgovora:
 
 [inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Možni odgovori z napakami:
 
-[inline-code-attrs-start title = 'Napaka: Manjkajoči ID najemnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: manjkajoči ID najemnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Napaka: Neveljaven limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: neveljaven limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

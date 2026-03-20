@@ -1,19 +1,19 @@
-נקודת קצה זו מאפשרת לך לאחזר רשומות התקדמות תג משתמש על בסיס קריטריונים שונים.
+נקודת קצה זו מאפשרת לך לשלוף רשומות של התקדמות תגי משתמש בהתבסס על קריטריונים שונים.
 
-דוגמת בקשה:
+Example Request:
 
-[inline-code-attrs-start title = 'דוגמת בקשת GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'רשימת התקדמות תג - דוגמת GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-אתה יכול להוסיף פרמטרי שאילתה שונים כדי לסנן את התוצאות:
+ניתן להוסיף פרמטרי שאילתה שונים כדי לסנן את התוצאות:
 
-- `userId` - קבל התקדמות למשתמש ספציפי
+- `userId` - קבל התקדמות עבור משתמש ספציפי
 - `limit` - מספר מקסימלי של רשומות להחזרה (ברירת מחדל 30, מקסימום 200)
-- `skip` - מספר רשומות לדלג עליהן (לעימוד)
+- `skip` - מספר רשומות לדלג (לעימוד)
 
-דוגמת תגובה:
+Example Response:
 
 [inline-code-attrs-start title = 'תגובה'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,9 +55,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-תגובות שגיאה אפשריות:
+Possible Error Responses:
 
-[inline-code-attrs-start title = 'שגיאה: מזהה שוכר חסר'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'שגיאה: מזהה השוכר חסר'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -66,7 +66,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'שגיאה: limit לא חוקי'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'שגיאה: ערך limit לא תקין'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

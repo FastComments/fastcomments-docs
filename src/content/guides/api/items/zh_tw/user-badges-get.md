@@ -1,22 +1,22 @@
-此端點允許您根據各種條件取得使用者徽章。
+此端點允許您根據各種條件擷取使用者徽章。
 
-Example Request:
+範例請求：
 
-[inline-code-attrs-start title = 'GET 請求範例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '列出使用者徽章 - GET 範例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+您可以新增各種查詢參數以篩選結果：
 
 - `userId` - 取得特定使用者的徽章
 - `badgeId` - 取得特定徽章的實例
 - `type` - 依徽章類型篩選 (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - 根據徽章是否顯示於評論上篩選 (true/false)
-- `limit` - 要返回的徽章最多數量 (預設 30, max 200)
-- `skip` - 要跳過的徽章數量 (for pagination)
+- `displayedOnComments` - 依徽章是否顯示在留言上篩選 (true/false)
+- `limit` - 要返回的徽章最大數量（預設 30，最大 200）
+- `skip` - 跳過的徽章數量（用於分頁）
 
-Example Response:
+範例回應：
 
 [inline-code-attrs-start title = '回應'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,7 +60,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+可能的錯誤回應：
 
 [inline-code-attrs-start title = '錯誤：缺少租戶 ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,22 +1,23 @@
-Este endpoint permite recuperar crachás de usuário com base em vários critérios.
+---
+Este endpoint permite recuperar as insígnias de usuários com base em vários critérios.
 
-Example Request:
+Exemplo de requisição:
 
-[inline-code-attrs-start title = 'Exemplo de requisição GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Listar Insígnias de Usuário - Exemplo GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Você pode adicionar vários parâmetros de consulta para filtrar os resultados:
 
-- `userId` - Obter os crachás de um usuário específico
-- `badgeId` - Obter instâncias de um crachá específico
-- `type` - Filtrar por tipo de crachá (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtrar se o crachá é exibido nos comentários (true/false)
-- `limit` - Número máximo de crachás a retornar (padrão 30, máximo 200)
-- `skip` - Número de crachás a pular (para paginação)
+- `userId` - Obter insígnias para um usuário específico
+- `badgeId` - Obter instâncias de uma insígnia específica
+- `type` - Filtrar por tipo de insígnia (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Veja a estrutura UserBadge para a lista completa)
+- `displayedOnComments` - Filtrar por se a insígnia é exibida em comentários (true/false)
+- `limit` - Número máximo de insígnias a retornar (padrão 30, máximo 200)
+- `skip` - Número de insígnias a ignorar (para paginação)
 
-Example Response:
+Exemplo de resposta:
 
 [inline-code-attrs-start title = 'Resposta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +61,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Possíveis respostas de erro:
 
-[inline-code-attrs-start title = 'Erro: Tenant ID ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: ID do Tenant ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -79,3 +80,4 @@ Possible Error Responses:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
+---

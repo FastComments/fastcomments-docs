@@ -1,22 +1,22 @@
-Este endpoint le permite obtener insignias de usuario basadas en varios criterios.
+This endpoint allows you to fetch user badges based on various criteria.
 
-Ejemplo de Solicitud:
+Example Request:
 
-[inline-code-attrs-start title = 'Ejemplo de Solicitud GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Listar insignias de usuario - Ejemplo GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Puede agregar varios parámetros de consulta para filtrar los resultados:
+You can add various query parameters to filter the results:
 
-- `userId` - Obtener insignias para un usuario específico
+- `userId` - Obtener insignias de un usuario específico
 - `badgeId` - Obtener instancias de una insignia específica
-- `type` - Filtrar por tipo de insignia (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Ver estructura de UserBadge para la lista completa)
-- `displayedOnComments` - Filtrar por si la insignia se muestra en comentarios (true/false)
+- `type` - Filtrar por tipo de insignia (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Filtrar según si la insignia se muestra en los comentarios (true/false)
 - `limit` - Número máximo de insignias a devolver (predeterminado 30, máximo 200)
 - `skip` - Número de insignias a omitir (para paginación)
 
-Ejemplo de Respuesta:
+Example Response:
 
 [inline-code-attrs-start title = 'Respuesta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Ejemplo de Respuesta:
 }
 [inline-code-end]
 
-Posibles Respuestas de Error:
+Possible Error Responses:
 
-[inline-code-attrs-start title = 'Error: Falta ID de Inquilino'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Falta Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Posibles Respuestas de Error:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Error: Límite Inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Límite inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

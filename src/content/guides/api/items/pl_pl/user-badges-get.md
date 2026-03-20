@@ -1,8 +1,8 @@
-Ten punkt końcowy pozwala pobrać odznaki użytkowników na podstawie różnych kryteriów.
+Ten endpoint pozwala pobrać odznaki użytkowników na podstawie różnych kryteriów.
 
 Przykładowe żądanie:
 
-[inline-code-attrs-start title = 'Przykład żądania GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lista odznak użytkownika - przykład GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
@@ -10,10 +10,10 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 Możesz dodać różne parametry zapytania, aby filtrować wyniki:
 
 - `userId` - Pobierz odznaki dla konkretnego użytkownika
-- `badgeId` - Pobierz wystąpienia konkretnej odznaki
-- `type` - Filtruj według typu odznaki (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, itd. Zobacz strukturę UserBadge, aby poznać pełną listę)
+- `badgeId` - Pobierz instancje określonej odznaki
+- `type` - Filtruj według typu odznaki (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
 - `displayedOnComments` - Filtruj według tego, czy odznaka jest wyświetlana przy komentarzach (true/false)
-- `limit` - Maksymalna liczba zwracanych odznak (domyślnie 30, maks. 200)
+- `limit` - Maksymalna liczba zwracanych odznak (domyślnie 30, maksymalnie 200)
 - `skip` - Liczba odznak do pominięcia (do paginacji)
 
 Przykładowa odpowiedź:
@@ -60,9 +60,9 @@ Przykładowa odpowiedź:
 }
 [inline-code-end]
 
-Możliwe odpowiedzi z błędem:
+Możliwe odpowiedzi błędów:
 
-[inline-code-attrs-start title = 'Błąd: Brak Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: Brak identyfikatora Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

@@ -1,7 +1,9 @@
-זהו סביבת העבודה הראשית עבור fastcomments-angular.
+---
+זוהי סביבת העבודה הראשית של fastcomments-angular.
 
-בתיקייה "src" תמצא אפליקציה שהיא פשוט אפליקציית דמו לבדיקת הספריות.
+ב "src" תמצאו יישום שהוא פשוט אפליקציית דמו לבדיקת הספריות.
 
-בתיקייה "projects" תמצא את הספרייה fastcomments.
+ב "projects" תמצאו את ספריית fastcomments.
 
-עיין בקובץ README עבור ngx-fastcomments [כאן](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
+ראו את ה-README של ngx-fastcomments [כאן](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
+---

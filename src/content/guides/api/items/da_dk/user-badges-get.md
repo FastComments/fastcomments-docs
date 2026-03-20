@@ -1,22 +1,22 @@
-Dette endpoint giver dig mulighed for at hente bruger-badges baseret på forskellige kriterier.
+Dette endepunkt giver dig mulighed for at hente bruger-badges baseret på forskellige kriterier.
 
-Eksempel på Anmodning:
+Example Request:
 
-[inline-code-attrs-start title = 'GET Anmodningseksempel'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Liste over bruger-badges - GET-eksempel'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
 Du kan tilføje forskellige forespørgselsparametre for at filtrere resultaterne:
 
-- `userId` - Hent badges for en specifik bruger
-- `badgeId` - Hent forekomster af et specifikt badge
-- `type` - Filtrer efter badge-type (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, osv. Se UserBadge-strukturen for fuld liste)
-- `displayedOnComments` - Filtrer efter om badge'et vises på kommentarer (true/false)
-- `limit` - Maksimalt antal badges at returnere (standard 30, maks 200)
-- `skip` - Antal badges at springe over (til paginering)
+- `userId` - Få badges for en specifik bruger
+- `badgeId` - Få forekomster af et specifikt badge
+- `type` - Filtrer efter badge-type (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, osv. Se UserBadge-strukturen for den fulde liste)
+- `displayedOnComments` - Filtrer efter om badge vises på kommentarer (true/false)
+- `limit` - Maksimalt antal badges der returneres (standard 30, maks 200)
+- `skip` - Antal badges der springes over (til paginering)
 
-Eksempel på Svar:
+Example Response:
 
 [inline-code-attrs-start title = 'Svar'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Eksempel på Svar:
 }
 [inline-code-end]
 
-Mulige Fejlsvar:
+Mulige fejlresponser:
 
-[inline-code-attrs-start title = 'Fejl: Manglende Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fejl: Manglende lejer-id'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Mulige Fejlsvar:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Fejl: Ugyldig Grænse'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fejl: Ugyldig grænse'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

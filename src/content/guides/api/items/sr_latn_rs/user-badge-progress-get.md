@@ -1,16 +1,16 @@
-Ovaj endpoint vam omogućava da dohvatite zapise o napretku korisničkih znački na osnovu različitih kriterijuma.
+Ovaj endpoint vam omogućava da dohvatite zapise o napretku korisničkih bedževa na osnovu različitih kriterijuma.
 
 Primer zahteva:
 
-[inline-code-attrs-start title = 'Primer GET zahteva'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Lista napretka bedževa - primer GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Možete dodati razne parametre upita da filtrirate rezultate:
+Možete dodati različite query parametre za filtriranje rezultata:
 
-- `userId` - Dobijte napredak za određenog korisnika
-- `limit` - Maksimalan broj zapisa za vraćanje (podrazumevano 30, maksimum 200)
+- `userId` - Pribavite napredak za određenog korisnika
+- `limit` - Maksimalan broj zapisa za vraćanje (podrazumevano 30, maksimalno 200)
 - `skip` - Broj zapisa koje treba preskočiti (za paginaciju)
 
 Primer odgovora:
@@ -55,7 +55,7 @@ Primer odgovora:
 }
 [inline-code-end]
 
-Mogući odgovori sa greškom:
+Mogući odgovori u slučaju greške:
 
 [inline-code-attrs-start title = 'Greška: Nedostaje Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,9 +1,7 @@
----
-Αυτός είναι ο root workspace για το fastcomments-angular.
+Αυτός είναι ο βασικός χώρος εργασίας για το fastcomments-angular.
 
-Στον "src" θα βρείτε μια εφαρμογή η οποία είναι απλώς μια εφαρμογή επίδειξης για να δοκιμάσετε τις βιβλιοθήκες.
+Στο "src" θα βρείτε μια εφαρμογή που είναι απλώς μια παραδειγματική εφαρμογή για τη δοκιμή των βιβλιοθηκών.
 
-Στον "projects" θα βρείτε τη βιβλιοθήκη fastcomments.
+Στο "projects" θα βρείτε τη βιβλιοθήκη fastcomments.
 
-Δείτε το README για το ngx-fastcomments [εδώ](https://github.com/FastComments/fastcomments-angular/tree/master/projects/fastcomments-angular)
----
+Δείτε το README για το ngx-fastcomments [εδώ](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)

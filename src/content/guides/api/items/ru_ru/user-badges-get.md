@@ -1,20 +1,20 @@
-Этот endpoint позволяет получить пользовательские бейджи по различным критериям.
+Этот endpoint позволяет получить пользовательские значки по различным критериям.
 
 Пример запроса:
 
-[inline-code-attrs-start title = 'Пример GET-запроса'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Список значков пользователя - пример GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-Вы можете добавить различные параметры запроса для фильтрации результатов:
+Вы можете добавить различные query-параметры для фильтрации результатов:
 
-- `userId` - Получить бейджи для конкретного пользователя
-- `badgeId` - Получить экземпляры конкретного бейджа
-- `type` - Фильтровать по типу бейджа (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Фильтровать по тому, отображается ли бейдж на комментариях (true/false)
-- `limit` - Максимальное число возвращаемых бейджей (по умолчанию 30, макс. 200)
-- `skip` - Количество бейджей, которые нужно пропустить (для пагинации)
+- `userId` - Получить значки для конкретного пользователя
+- `badgeId` - Получить экземпляры определенного значка
+- `type` - Фильтровать по типу значка (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `displayedOnComments` - Фильтровать по тому, отображается ли значок в комментариях (true/false)
+- `limit` - Максимальное количество возвращаемых значков (по умолчанию 30, макс. 200)
+- `skip` - Количество значков для пропуска (для пагинации)
 
 Пример ответа:
 
@@ -60,9 +60,9 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-Возможные ответы об ошибке:
+Возможные ответы с ошибкой:
 
-[inline-code-attrs-start title = 'Ошибка: Отсутствует ID арендатора'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ошибка: Отсутствует Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Ошибка: Неверный лимит'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ошибка: Недопустимый limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
