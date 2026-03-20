@@ -333,22 +333,30 @@ async function processTranslations(tasks, client, options = {}) {
                     continue;
                 }
 
-                const translation = await client.translate(source, locale, `${guideId}/${locale}/${filename}`);
+                // en_us is just English — copy source directly instead of translating
+                let translation;
+                if (locale === 'en_us') {
+                    translation = source;
+                } else {
+                    translation = await client.translate(source, locale, `${guideId}/${locale}/${filename}`);
+                }
 
                 if (!translation) {
                     results.failed++;
                     continue;
                 }
 
-                // Validate translation
-                const validation = client.validateTranslation(source, translation);
-                if (!validation.valid) {
-                    console.warn(`  [warning] Inline-code mismatch in ${guideId}/${locale}/${filename}`);
-                    results.validationErrors.push({
-                        guideId, locale, filename,
-                        expected: validation.sourceCounts,
-                        actual: validation.translationCounts
-                    });
+                // Validate translation (skip for en_us since it's a direct copy)
+                if (locale !== 'en_us') {
+                    const validation = client.validateTranslation(source, translation);
+                    if (!validation.valid) {
+                        console.warn(`  [warning] Inline-code mismatch in ${guideId}/${locale}/${filename}`);
+                        results.validationErrors.push({
+                            guideId, locale, filename,
+                            expected: validation.sourceCounts,
+                            actual: validation.translationCounts
+                        });
+                    }
                 }
 
                 // Save translation
@@ -582,7 +590,9 @@ async function processUITranslations(client, options = {}) {
         if (missing.length > 0) parts.push(`${missing.length} missing`);
         if (stale.length > 0) parts.push(`${stale.length} stale`);
         console.log(`  Translating ${allKeys.length} UI string(s) for ${locale} (${localeName}) [${parts.join(', ')}]...`);
-        const translated = await translateUIStrings(locale, toTranslate, client);
+
+        // en_us is just English — copy source directly instead of translating
+        const translated = locale === 'en_us' ? toTranslate : await translateUIStrings(locale, toTranslate, client);
 
         if (translated) {
             // Merge with existing translations for this locale
@@ -858,7 +868,14 @@ async function processMetaJsonTranslations(client, options = {}) {
                 }
 
                 const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-                const translatedMeta = await translateMetaJson(guideId, locale, meta, client);
+
+                // en_us is just English — copy source directly instead of translating
+                let translatedMeta;
+                if (locale === 'en_us') {
+                    translatedMeta = meta;
+                } else {
+                    translatedMeta = await translateMetaJson(guideId, locale, meta, client);
+                }
 
                 if (!translatedMeta) {
                     results.failed++;
