@@ -157,10 +157,9 @@ class BaseDocGenerator {
         const linkRegex = /(!?)\[([^\]]+)\]\(([^)]+)\)/g;
 
         return markdown.replace(linkRegex, (match, isImage, text, url) => {
-            // Skip absolute URLs and root-relative paths
+            // Skip absolute URLs
             if (url.startsWith('http://') ||
-                url.startsWith('https://') ||
-                url.startsWith('/')) {
+                url.startsWith('https://')) {
                 return match;
             }
 
@@ -171,14 +170,13 @@ class BaseDocGenerator {
                 return `${isImage}[${text}](#${sanitizedAnchor})`;
             }
 
-            // This is a relative link - convert it
-            // Resolve the path relative to the base path
+            // Convert root-relative paths (/foo/bar) to repo-root-relative
             let resolvedPath;
-            if (url.startsWith('./') || url.startsWith('../')) {
-                // Use path.join to properly resolve relative paths
+            if (url.startsWith('/')) {
+                resolvedPath = url.substring(1); // strip leading slash — it's relative to repo root
+            } else if (url.startsWith('./') || url.startsWith('../')) {
                 resolvedPath = path.posix.join(basePath, url);
             } else {
-                // No ./ or ../ prefix, treat as relative to base path
                 resolvedPath = path.posix.join(basePath, url);
             }
 
