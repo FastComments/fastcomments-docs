@@ -9,7 +9,7 @@ Go to `Insert` in the top left:
 
 Then scroll the left hand sidebar down and mouse over `Utility`.
 
-Next you'll want to *click and drag* the `Utility` block to the end of your blog.
+Next you'll want to *click and drag* the `Embed` block to the end of your blog.
 
 It's important you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
 outside of your blog and you'll have to drag it around later.
