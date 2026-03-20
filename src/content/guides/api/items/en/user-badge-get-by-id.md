@@ -2,7 +2,7 @@ This endpoint allows you to fetch a specific user badge by its unique ID.
 
 Example Request:
 
-[inline-code-attrs-start title = 'GET Request Example'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Get User Badge by ID - GET Example'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]

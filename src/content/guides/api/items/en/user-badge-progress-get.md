@@ -2,7 +2,7 @@ This endpoint allows you to fetch user badge progress records based on various c
 
 Example Request:
 
-[inline-code-attrs-start title = 'GET Request Example'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'List Badge Progress - GET Example'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
