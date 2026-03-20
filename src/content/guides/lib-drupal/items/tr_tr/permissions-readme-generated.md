@@ -1,0 +1,3 @@
+- **FastComments'i Yönet** - FastComments ayar formuna erişim.
+- **FastComments'i Görüntüle** - Yorum widget'ını görmek için gereklidir.
+- **FastComments'i Aç/Kapa** - Kullanıcıların alan widget'ı aracılığıyla her varlık için yorumları etkinleştirmesine/devre dışı bırakmasına izin verir.

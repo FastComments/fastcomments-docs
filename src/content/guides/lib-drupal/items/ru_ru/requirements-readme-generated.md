@@ -1,0 +1,5 @@
+---
+- Drupal 10 или 11
+- PHP 8.1+
+- Учетная запись [FastComments](https://fastcomments.com)
+---

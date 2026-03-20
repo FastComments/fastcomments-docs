@@ -1,0 +1,48 @@
+{
+  "name": "Модул за Drupal",
+  "pageHeader": "Добавяне на коментари към вашия сайт Drupal",
+  "itemsOrdered": [
+    {
+      "name": "Инсталиране",
+      "file": "installation-readme-generated.md",
+      "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Уиджет блокове",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Многоезичност",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Разрешения",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Как работи",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Изисквания",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

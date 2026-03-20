@@ -1,0 +1,48 @@
+{
+  "name": "Drupal Modülü",
+  "pageHeader": "Drupal Sitenize Yorumlar Ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Widget Blokları",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Çok Dilli",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "İzinler",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Nasıl Çalışır",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Gereksinimler",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    }
+  ]
+}

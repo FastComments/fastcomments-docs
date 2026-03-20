@@ -1,0 +1,48 @@
+{
+  "name": "Drupal-module",
+  "pageHeader": "Voeg reacties toe aan uw Drupal-site",
+  "itemsOrdered": [
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Configuratie",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Widgetblokken",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Meertalig",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Machtigingen",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Hoe het werkt",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Vereisten",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

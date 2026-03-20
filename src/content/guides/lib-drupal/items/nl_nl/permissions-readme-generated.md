@@ -1,0 +1,3 @@
+- **Beheer FastComments** - Toegang tot het instellingenformulier van FastComments.
+- **Bekijk FastComments** - Vereist om de reactie-widget te zien.
+- **Schakel FastComments in/uit** - Maakt het gebruikers mogelijk reacties per entiteit in of uit te schakelen via de veldwidget.

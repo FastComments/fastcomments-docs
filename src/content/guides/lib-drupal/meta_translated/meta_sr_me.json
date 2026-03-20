@@ -1,0 +1,48 @@
+{
+  "name": "Drupal модул",
+  "pageHeader": "Додајте коментаре на ваш Drupal сајт",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Конфигурација",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Конфигурација",
+      "type": "readme"
+    },
+    {
+      "name": "Видџет блокови",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Вишејезичност",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Дозволе",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Како функционише",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Захтјеви",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+---
+- Drupal 10 ili 11
+- PHP 8.1+
+- Račun na [FastComments](https://fastcomments.com)
+---

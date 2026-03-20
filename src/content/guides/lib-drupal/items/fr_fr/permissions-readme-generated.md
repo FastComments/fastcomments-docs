@@ -1,0 +1,3 @@
+- **Administer FastComments** - Accès au formulaire des paramètres de FastComments.
+- **View FastComments** - Nécessaire pour voir le widget de commentaires.
+- **Toggle FastComments** - Permet aux utilisateurs d'activer/désactiver les commentaires par entité via le widget du champ.

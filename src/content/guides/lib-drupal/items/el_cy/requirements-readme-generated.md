@@ -1,0 +1,3 @@
+- Drupal 10 ή 11
+- PHP 8.1+
+- Ένας λογαριασμός [FastComments](https://fastcomments.com)

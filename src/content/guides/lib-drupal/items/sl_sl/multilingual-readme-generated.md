@@ -1,0 +1,1 @@
+Modul samodejno posreduje trenutni jezik spletnega mesta Drupal vsem gradnikom.

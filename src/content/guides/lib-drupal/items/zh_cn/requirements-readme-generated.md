@@ -1,0 +1,5 @@
+---
+- Drupal 10 或 11
+- PHP 8.1+
+- 一个 [FastComments](https://fastcomments.com) 账户
+---

@@ -1,0 +1,1 @@
+Modul automatski prosleđuje jezik trenutnog Drupal sajta svim vidžetima.

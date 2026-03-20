@@ -1,0 +1,3 @@
+- **Administer FastComments** - 存取 FastComments 的設定表單。
+- **View FastComments** - 需要此權限才能查看評論小工具。
+- **Toggle FastComments** - 允許使用者透過欄位小工具針對每個實體啟用或停用評論。

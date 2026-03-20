@@ -1,0 +1,1 @@
+The module automatically passes the current Drupal site language to all widgets.

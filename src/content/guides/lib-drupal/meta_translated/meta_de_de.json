@@ -1,0 +1,48 @@
+{
+  "name": "Drupal-Modul",
+  "pageHeader": "Kommentare zu Ihrer Drupal-Website hinzufügen",
+  "itemsOrdered": [
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "configuration-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Widget-Blöcke",
+      "file": "widget-blocks-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Mehrsprachig",
+      "file": "multilingual-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Berechtigungen",
+      "file": "permissions-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Funktionsweise",
+      "file": "how-it-works-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Anforderungen",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}
