@@ -15,7 +15,7 @@
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
 
-[inline-code-attrs-start title = 'Об'єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об\'єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** Ідентифікатор коментаря. **/
