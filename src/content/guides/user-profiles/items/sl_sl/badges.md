@@ -1,8 +1,8 @@
-Značke so vizualna priznanja, ki se prikažejo na vašem uporabniškem profilu in prepoznavajo vaše prispevke in aktivnost v skupnostih FastComments.
+Značke so vizualna priznanja, ki se pojavijo na vašem uporabniškem profilu in prepoznavajo vaše prispevke ter dejavnost v skupnostih FastComments.
 
 ### Kaj so značke?
 
-Značke so priznanja, ki jih pridobite za različne dejavnosti, kot so:
+Značke so prislužena priznanja za različne dejavnosti, kot so:
 - Število objavljenih komentarjev
 - Prejeti všečki
 - Ustvarjeni odgovori
@@ -10,84 +10,84 @@ Značke so priznanja, ki jih pridobite za različne dejavnosti, kot so:
 - Čas kot član skupnosti
 - Posebni dosežki
 
-Vsaka značka se prikaže na vašem profilu in se lahko po izbiri prikaže poleg vašega imena v komentarjih.
+Vsaka značka se prikaže na vašem profilu in se lahko po želji prikaže tudi ob vašem imenu v komentarjih.
 
 ### Ogled vaših značk
 
-Zaslužene značke se prikažejo na strani vašega profila v glavi. Obstajata dve kategoriji:
+Prislužene značke se prikažejo na strani vašega profila v razdelku glave. Obstajata dve kategoriji:
 
-1. **Zaslužene značke** - Značke, ki ste jih v celoti pridobili in odklenili
-2. **V teku** - Značke, za katere delate, z vrsticami napredka, ki kažejo, kako blizu ste
+1. **Prislužene značke** - Značke, ki ste jih v celoti prislužili in odklenili
+2. **V teku** - Značke, na katerih delate, z vrivicami napredka, ki kažejo, kako blizu ste
 
 ### Prikaz značk
 
 Imate popoln nadzor nad tem, kako se značke prikazujejo:
 
 **Na vašem profilu:**
-Vse zaslužene značke so prikazane v glavi vašega profila, da jih lahko vidijo drugi.
+Vse prislužene značke so prikazane v glavi vašega profila, da jih vidijo drugi.
 
-**V vaših komentarjih:**
-Lahko izberete, katere značke se prikažejo poleg vašega imena, ko komentirate:
+**Ob vaših komentarjih:**
+Lahko izbirate, katere značke se prikažejo ob vašem imenu, ko komentirate:
 
-1. Obiščite svojo stran profila
-2. Kliknite "Upravljanje značk" ali odprite pogovorno okno za upravljanje značk
-3. Vklopite ali izklopite, katere značke naj se prikazujejo v vaših komentarjih
-4. Ponovno razporedite značke z vlečenjem, da nastavite prednost prikaza
+1. Obiščite stran svojega profila
+2. Kliknite "Upravljaj značke" ali odprite okno za upravljanje značk
+3. Preklopite, katere značke naj se prikazujejo ob vaših komentarjih
+4. Značke prerazporedite z vlečenjem, da nastavite prednost prikaza
 
-To vam omogoča, da poudarite svoje najbolj pomembne dosežke, ne da bi preobremenili podpis v komentarjih.
+To vam omogoča izpostaviti vaše najbolj pomembne dosežke, ne da bi zasedali prostor v podpisu vašega komentarja.
 
 ### Vrste značk
 
-Značke so različnih vrst, odvisno od kategorij dosežkov. Za popoln pregled vseh razpoložljivih vrst značk in kako jih pridobiti, si oglejte [Vodnik o značkah](/guide-badges.html).
+Značke so različnih vrst glede na različne kategorije dosežkov. Za popoln pregled vseh razpoložljivih vrst značk in kako jih pridobiti, si oglejte [Vodnik o značkah](/guide-badges.html).
 
 Pogoste kategorije značk vključujejo:
 
-- **Značke za vpletenost** - Temeljijo na številu komentarjev, odgovorih in interakciji
-- **Kakovostne značke** - Temeljijo na všečkih in sprejetju v skupnosti
-- **Časovno pogojene značke** - Status veterana, aktivnost ponoči
-- **Moderatorske značke** - Priznanje za moderacijska dejanja
-- **Posebne značke** - Ročno dodeljene ali specifične dosežke skupnosti
+- **Značke za vključenost** - Temeljijo na številu komentarjev, odgovorih in interakcijah
+- **Kakovostne značke** - Temeljijo na všečkih in sprejetosti v skupnosti
+- **Časovne značke** - Status veterana, aktivnost ponoči
+- **Moderatorske značke** - Priznanje za moderatorska dejanja
+- **Posebne značke** - Ročno dodeljene ali značilne za določene skupnosti
 
-### Značke, specifične za skupnost
+### Značke specifične za skupnost
 
 Značke lahko pridobite v različnih skupnostih FastComments:
 
-- **Globalne značke** - Pridobljene prek uporabe FastComments na vseh mestih
-- **Skupnostne značke** - Pridobljene znotraj posameznih spletnih mest/tenantov
+- **Globalne značke** - Prislužene v celotni uporabi FastComments
+- **Značke skupnosti** - Prislužene znotraj določenih spletnih mest/tenantov
 
-Vaš profil prikazuje, katera skupnost je dodelila posamezno značko, kar obiskovalcem pomaga razumeti vaše področje strokovnosti in sodelovanja.
+Vaš profil prikaže, katera skupnost je dodelila posamezno značko, kar obiskovalcem pomaga razumeti vaše področje strokovnosti in sodelovanja.
 
 ### Sledenje napredku značk
 
-Za značke, ki jih še niste v celoti pridobili, vaš profil prikazuje:
+Za značke, ki jih še niste popolnoma prislužili, vaš profil prikazuje:
 
 - **Vrstica napredka** - Vizualni indikator, kako blizu ste pridobitve značke
 - **Zahteve** - Kaj morate storiti, da odklenete značko
-- **Kontekst skupnosti** - S katero skupnostjo je značka povezana
+- **Skupnostni kontekst** - S katero skupnostjo je značka povezana
 
 To spodbuja nadaljnje sodelovanje in vam daje jasne cilje, proti katerim lahko delate.
 
 ### Prilagajanje prikaza značk
 
-**Red značk:**
-Značke lahko prerazporedite, da nadzorujete, katere se prikažejo prve. Red, ki ga nastavite, določa:
-- Prednost v prikazu na profilu
-- Katerih značk bo prikazanih v prostorih z omejenim prikazom
-- Osebne preference za izpostavljanje dosežkov
+**Vrstni red značk:**
+Značke lahko prerazporedite, da nadzorujete, katere se prikazujejo prve. Vrstni red, ki ga določite, vpliva na:
+- Prednost v prikazu profila
+- Katera značka se prikaže v primerih omejenega prostora
+- Osebne preference za izpostavitev dosežkov
 
 **Vidnost:**
-Posamezne značke lahko vklapljate/izklapljate za prikaz v komentarjih, medtem ko ostanejo vidne na vašem profilu.
+Posamične značke vklapljate/izklapljate za prikaz ob komentarjih, medtem ko ostanejo vidne na vašem profilu.
 
-### Ročno dodeljene značke
+### Ročne značke
 
-Skupnostni skrbniki lahko podelijo posebne ročno dodeljene značke za prepoznavanje:
-- Posebnih prispevkov
-- Zmagovalcev natečajev
-- VIP članov
-- Prilagojenih dosežkov
+Skrbniki skupnosti lahko dodelijo posebne ročne značke, da prepoznajo:
+- Posebne prispevke
+- Zmagovalce tekmovanj
+- VIP člane
+- Prilagojene dosežke
 
-Te značke se prikažejo skupaj z samodejno zasluženimi značkami na vašem profilu.
+Te značke se na vašem profilu pojavijo skupaj z avtomatsko prisluženimi značkami.
 
 ### Za več informacij
 
-Za popolne podrobnosti o sistemu značk, vključno z vsemi vrstami značk, merili za pridobitev in administrativno konfiguracijo, si oglejte celovit [Vodnik o značkah](/guide-badges.html).
+Za popolne podrobnosti o sistemu značk, vključno z vsemi vrstami značk, kriteriji za pridobitev in administrativno konfiguracijo, si oglejte obsežen [Vodnik o značkah](/guide-badges.html).

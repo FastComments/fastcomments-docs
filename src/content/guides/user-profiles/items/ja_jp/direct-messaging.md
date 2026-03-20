@@ -1,156 +1,156 @@
-Direct Messaging (DM) allows FastComments users to have private, one-on-one conversations with each other, separate from public comments and profile interactions.
+ダイレクトメッセージ（DM）は、FastComments ユーザーが公開コメントやプロフィール上のやり取りとは別に、プライベートな1対1の会話を行える機能です。
 
 ### What is Direct Messaging?
 
-Direct Messaging provides:
-- **Private conversations** between two users
-- **Real-time messaging** with notifications
-- **Conversation history** that persists across sessions
-- **Online status** indicators to see when someone is available
-- **Unread message tracking** to stay on top of new messages
+ダイレクトメッセージは次を提供します:
+- **2人間のプライベートな会話**
+- **リアルタイムメッセージング** と通知
+- **セッションをまたいで保持される会話履歴**
+- **オンラインステータス**（相手が利用可能かどうかを確認）
+- **未読メッセージの追跡**（新しいメッセージを見逃さない）
 
 ### Starting a Direct Message
 
-There are several ways to initiate a DM conversation:
+DM会話を開始する方法はいくつかあります:
 
 **From a User Profile:**
-1. Visit the user's profile page
-2. Click the "Direct Messages" tab or "Send Message" button
-3. Type your message and send
+1. ユーザーのプロフィールページを開く
+2. 「Direct Messages」タブまたは「Send Message」ボタンをクリック
+3. メッセージを入力して送信
 
 **From a Comment:**
-Some implementations allow clicking on a user's name or avatar to quickly access their profile and messaging options.
+一部の実装では、ユーザー名やアバターをクリックしてプロフィールやメッセージオプションに素早くアクセスできます。
 
 **Direct Link:**
-If you have a conversation ID or DM redirect link, you can access conversations directly.
+会話IDやDMリダイレクトリンクがあれば、会話に直接アクセスできます。
 
 ### Accessing Your Messages
 
-To view all your direct message conversations:
+すべてのダイレクトメッセージ会話を表示するには:
 
-1. Visit your profile page
-2. Click the "Direct Messages" tab
-3. See a list of all your conversations
+1. 自分のプロフィールページを開く
+2. 「Direct Messages」タブをクリック
+3. すべての会話の一覧が表示されます
 
-Each conversation shows:
-- The other participant's avatar and name
-- Their online/offline status (green indicator when online)
-- A preview of the last message
-- Unread message count (if any)
-- Timestamp of last activity
+各会話には次が表示されます:
+- 相手のアバターと名前
+- オンライン/オフラインの状態（オンライン時は緑のインジケーター）
+- 最後のメッセージのプレビュー
+- 未読メッセージ数（ある場合）
+- 最終アクティビティのタイムスタンプ
 
 ### Conversation View
 
-When you open a conversation, you'll see:
+会話を開くと、次が表示されます:
 
-- **Full message history** - All messages between you and the other user
-- **Real-time updates** - New messages appear instantly via WebSocket
-- **Online status** - See if the other person is currently online
-- **Message timestamps** - When each message was sent
-- **Message composition** - Text box to type and send new messages
+- **全メッセージ履歴** - あなたと相手の間のすべてのメッセージ
+- **リアルタイム更新** - 新しいメッセージはWebSocketを介して瞬時に表示されます
+- **オンラインステータス** - 相手が現在オンラインか確認できます
+- **メッセージのタイムスタンプ** - 各メッセージが送信された時刻
+- **メッセージ作成** - メッセージを入力して送信するテキストボックス
 
 ### Message Notifications
 
-You'll receive notifications for new direct messages:
+新しいダイレクトメッセージの通知を受け取ります:
 
-- **In-app notifications** - Badge counter on your profile
-- **Email notifications** - Depending on your notification settings
-- **Real-time alerts** - Instant notifications when you're logged in
+- **アプリ内通知** - プロフィールのバッジカウンター
+- **メール通知** - 通知設定に応じて
+- **リアルタイムアラート** - ログイン中に即時通知
 
-Manage notification preferences in your [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
+通知の設定はあなたの [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) で管理できます。
 
 ### Privacy and Blocking
 
 **Disabling Direct Messages:**
-If you don't want to receive DMs, you can disable them completely:
-1. Go to Privacy Settings on your profile
-2. Enable "Disable Direct Messages"
-3. The DM option will be hidden from your profile
+DMを受け取りたくない場合は、完全に無効にできます:
+1. プロフィールのプライバシー設定に移動
+2. 「Disable Direct Messages」を有効にする
+3. プロフィールからDMオプションが非表示になります
 
-For more details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
+詳細は [Privacy Settings](/guide-user-profiles.html#privacy-settings) を参照してください。
 
 **Blocking Users:**
-If someone is harassing you via DM:
-1. Visit their profile
-2. Block the user
-3. They will no longer be able to message you
+DMで嫌がらせを受けている場合:
+1. 相手のプロフィールを開く
+2. ユーザーをブロックする
+3. そのユーザーはあなたにメッセージを送れなくなります
 
-Blocked users cannot:
-- Send you direct messages
-- See your activity
-- Comment on your profile
-- Interact with you anywhere on FastComments
+ブロックされたユーザーは次のことができません:
+- あなたにダイレクトメッセージを送る
+- あなたの活動を表示する
+- あなたのプロフィールにコメントする
+- FastComments上であなたとどこでもやり取りする
 
 ### Managing Conversations
 
 **Hiding Conversations:**
-You can hide conversations you no longer want to see in your conversation list:
-1. Open your Direct Messages tab
-2. Find the conversation to hide
-3. Select the hide/archive option
+会話リストに表示したくない会話を非表示にできます:
+1. Direct Messages タブを開く
+2. 非表示にしたい会話を見つける
+3. 非表示/アーカイブオプションを選択
 
-Hidden conversations won't appear in your main list but can be accessed if the other person sends a new message.
+非表示の会話はメインリストには表示されませんが、相手が新しいメッセージを送信するとアクセス可能になります。
 
 **Marking as Read:**
-Messages are automatically marked as read when you view them. You can also manually mark entire conversations as read:
-1. Open your Direct Messages tab
-2. Select a conversation
-3. Choose "Mark as Read"
+メッセージは閲覧すると自動的に既読になります。会話全体を手動で既読にすることもできます:
+1. Direct Messages タブを開く
+2. 会話を選択
+3. 「Mark as Read」を選択
 
-This clears the unread counter for that conversation.
+これによりその会話の未読カウンターがクリアされます。
 
 ### Best Practices
 
 **When to Use Direct Messages:**
-- Asking follow-up questions privately
-- Thanking someone for helpful advice
-- Discussing off-topic matters without cluttering public comments
-- Coordinating with other community members
-- Providing private feedback or suggestions
+- フォローアップの質問をプライベートに行うとき
+- 助けてもらったことへの感謝を伝えるとき
+- 公開コメントを乱さずにオフトピックな話題を話すとき
+- コミュニティメンバーと調整するとき
+- プライベートなフィードバックや提案を行うとき
 
 **DM Etiquette:**
-- Be respectful and professional
-- Don't spam users with unsolicited messages
-- Respect if someone doesn't respond or disables DMs
-- Keep conversations relevant and constructive
-- Don't share others' DMs without permission
+- 敬意とプロフェッショナルさを持って接する
+- 望まれないメッセージでユーザーにスパムを送らない
+- 返信がない、またはDMを無効にしている場合はそれを尊重する
+- 会話を関連性があり建設的に保つ
+- 他人のDMを許可なく共有しない
 
 **Safety Tips:**
-- Don't share personal information (phone, address, etc.) unless you trust the person
-- Block and report users who harass or abuse DMs
-- Be cautious of suspicious links or requests
-- Use the blocking feature if someone makes you uncomfortable
+- 相手を信用しない限り、個人情報（電話番号、住所など）を共有しない
+- DMで嫌がらせや虐待を受けたらブロックと通報を行う
+- 不審なリンクや要求に注意する
+- 誰かが不快にさせる場合はブロック機能を使用する
 
 ### Limitations and Notes
 
 **Who Can You Message:**
-- Any FastComments user who hasn't disabled DMs
-- Users who haven't blocked you
-- Users across all FastComments communities
+- DMを無効にしていない任意のFastCommentsユーザー
+- あなたをブロックしていないユーザー
+- すべてのFastCommentsコミュニティにまたがるユーザー
 
 **Message Content:**
-- Text messages are supported
-- Messages follow the same content policies as comments
-- Inappropriate content can be reported
+- テキストメッセージがサポートされます
+- メッセージはコメントと同じコンテンツポリシーに従います
+- 不適切な内容は報告可能です
 
 **Conversation Scope:**
-- DM conversations are private between two people
-- No group messaging (currently one-on-one only)
-- Conversation history is preserved indefinitely
+- DM会話は2人間のプライベートなやり取りです
+- グループメッセージはなし（現時点では1対1のみ）
+- 会話履歴は無期限に保持されます
 
 ### Troubleshooting
 
 **Can't Send a Message?**
-The other user may have:
-- Disabled direct messages in their privacy settings
-- Blocked you
-- Deleted their account
+相手が次のいずれかである可能性があります:
+- プライバシー設定でダイレクトメッセージを無効にしている
+- あなたをブロックしている
+- アカウントを削除している
 
 **Not Receiving Notifications?**
-Check your notification settings at [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) to ensure DM notifications are enabled.
+[Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) でDM通知が有効になっているか確認してください。
 
 **Messages Not Sending?**
-- Check your internet connection
-- Refresh the page and try again
-- Ensure you haven't been blocked
-- Contact support if the problem persists
+- インターネット接続を確認する
+- ページをリフレッシュして再試行する
+- ブロックされていないか確認する
+- 問題が続く場合はサポートに連絡する

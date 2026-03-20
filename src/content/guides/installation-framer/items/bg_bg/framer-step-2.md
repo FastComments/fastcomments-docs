@@ -1,40 +1,42 @@
-Сега ще добавим блок `Embed`.
+Сега нека добавим `Embed` блок.
 
-Отидете до `Insert` в горния ляв ъгъл:
+Go to `Insert` in the top left:
 
 <div class="screenshot white-bg">
     <div class="title">Кликнете върху Insert</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Кликнете върху Insert" />
 </div>
 
-След това превъртете лявата странична лента надолу и преместете курсора върху `Utility`.
+Then scroll the left hand sidebar down and mouse over `Utility`.
 
-След това ще трябва да *кликнете и плъзнете* блока `Utility` до края на вашия блог.
+Next you'll want to *click and drag* the `Embed` block to the end of your blog.
 
-Важно е да *кликнете и плъзнете* както е показано, а не просто да кликнете върху него. Ако просто кликнете, Framer ще го вмъкне извън вашия блог и ще трябва да го местите по-късно.
+It's important you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
+извън вашия блог и ще трябва да го преместите по-късно.
 
 <div class="screenshot white-bg">
-    <div class="title">Намерете Embed джаджата</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Намерете Embed джаджата" />
+    <div class="title">Намерете Embed Widget</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Намерете Embed Widget" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Плъзнете и пуснете Embed джаджата</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Плъзнете и пуснете Embed джаджата" />
+    <div class="title">Плъзнете и пуснете Embed Widget</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Плъзнете и пуснете Embed Widget" />
 </div>
 
-Сега ще имате празна Embed джаджа, и когато я изберете ще се появи странична лента вдясно. Можете да разширите страничната лента и ще видите нещо подобно:
+Now you'll have an empty Embed widget, and when you select it you'll get a sidebar on the right. You can expand the sidebar, and you'll see
+something like this:
 
 <div class="screenshot white-bg">
     <div class="title">Отворете настройките на Embed</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Отворете настройките на Embed" />
 </div>
 
-Сега нека променим типа на `Embed` джаджата на `HTML`:
+Now let's change the `Embed` widget type to `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Настройте като HTML джаджа</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Настройте като HTML джаджа" />
+    <div class="title">Задайте като HTML уиджет</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Задайте като HTML уиджет" />
 </div>
 
-Сега сте готови за фрагмента с код на FastComments Framer в следващата стъпка.
+Now you're ready for the FastComments Framer Code snippet in the next step.

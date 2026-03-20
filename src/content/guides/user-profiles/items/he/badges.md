@@ -1,93 +1,93 @@
-Badges are visual achievements that appear on your User Profile, recognizing your contributions and activity across FastComments communities.
+תגים הם הישגים חזותיים המופיעים בפרופיל המשתמש שלך, ומכירים בתרומותיך ובפעילותך בקהילות של FastComments.
 
-### What Are Badges?
+### מה הם תגי ההישג?
 
-Badges are earned recognition for various activities such as:
-- Number of comments posted
-- Upvotes received
-- Replies generated
-- Moderator actions
-- Time as a community member
-- Special achievements
+תגים הם הכרה שהושגה עבור פעילויות שונות כגון:
+- מספר התגובות שפורסמו
+- הצבעות חיוביות שהתקבלו
+- מספר התגובות שנוצרו
+- פעולות של מנהל/מוניטור
+- משך הזמן כחבר קהילה
+- הישגים מיוחדים
 
-Each badge displays on your profile and can optionally appear next to your name in comments.
+כל תג מוצג בפרופיל שלך ויכול להופיע אופציונלית לצד שמך בתגובות.
 
-### Viewing Your Badges
+### צפייה בתגי ההישג שלך
 
-Your earned badges appear on your profile page in the header section. There are two categories:
+תגי ההישג שהשגת מופיעים בעמוד הפרופיל שלך בחלק הכותרת. יש שתי קטגוריות:
 
-1. **Earned Badges** - Badges you've fully earned and unlocked
-2. **In Progress** - Badges you're working toward, with progress bars showing how close you are
+1. **תגי הישג שהושגו** - תגי הישג שהשגת במלואם ופתחת
+2. **בתהליך** - תגי הישג שאתה עובד להשיגם, עם סרגלי התקדמות שמראים כמה קרוב אתה
 
-### Badge Display
+### תצוגת התגים
 
-You have full control over how badges appear:
+יש לך שליטה מלאה על אופן הופעת התגים:
 
-**On Your Profile:**
-All earned badges are displayed on your profile header for others to see.
+**בפרופיל שלך:**
+כל תגי ההישג שהושגו מוצגים בכותרת הפרופיל שלך כדי שאחרים יוכלו לראות אותם.
 
-**On Your Comments:**
-You can choose which badges appear next to your name when you comment:
+**בתגובות שלך:**
+אתה יכול לבחור אילו תגי הישג יופיעו לצד שמך כאשר אתה מגיב:
 
-1. Visit your profile page
-2. Click "Manage Badges" or access the badge management dialog
-3. Toggle which badges should appear on your comments
-4. Reorder badges by dragging them to set display priority
+1. בקר בעמוד הפרופיל שלך
+2. לחץ על "נהל תגי הישג" או פתח את דיאלוג ניהול התגים
+3. אפשר או השבת אילו תגי הישג אמורים להופיע בתגובות שלך
+4. שנה את סדר התגים על-ידי גרירתם כדי לקבוע עדיפות תצוגה
 
-This allows you to showcase your most meaningful achievements without cluttering your comment signature.
+זה מאפשר לך להבליט את הישגיך המשמעותיים ביותר מבלי להעמיס על חתימת התגובה שלך.
 
-### Badge Types
+### סוגי תגי ההישג
 
-Badges come in various types based on different achievement categories. For a complete overview of all available badge types and how to earn them, see the [Badges Guide](/guide-badges.html).
+תגים מגיעים בסוגים שונים המבוססים על קטגוריות הישג שונות. לקבלת סקירה מלאה של כל סוגי התגים הזמינים וכיצד להשיג אותם, ראה את ה[מדריך תגי ההישג](/guide-badges.html).
 
-Common badge categories include:
+קטגוריות תגי ההישג הנפוצות כוללות:
 
-- **Engagement Badges** - Based on comment count, replies, and interaction
-- **Quality Badges** - Based on upvotes and community reception
-- **Time-Based Badges** - Veteran status, night owl activity
-- **Moderator Badges** - Recognition for moderation actions
-- **Special Badges** - Manually awarded or community-specific achievements
+- **תגי מעורבות** - מבוססים על מספר תגובות, תשובות ואינטראקציה
+- **תגי איכות** - מבוססים על הצבעות חיוביות וקבלת הקהילה
+- **תגי מבוססי זמן** - סטטוס ותיק, פעילות בשעות הלילה
+- **תגי מנהל** - הכרה על פעולות ניהול/מודרציה
+- **תגים מיוחדים** - מוענקים ידנית או הישגים ספציפיים לקהילה
 
-### Community-Specific Badges
+### תגי הישג ספציפיים לקהילה
 
-Badges can be earned across different FastComments communities:
+ניתן להרוויח תגי הישג בקהילות שונות של FastComments:
 
-- **Global Badges** - Earned across all FastComments usage
-- **Community Badges** - Earned within specific sites/tenants
+- **תגים גלובליים** - נרכשים בכל שימוש ב-FastComments
+- **תגי קהילה** - נרכשים בתוך אתרים/שכנים ספציפיים
 
-Your profile shows which community awarded each badge, helping visitors understand your areas of expertise and participation.
+הפרופיל שלך מציג איזו קהילה העניקה כל תג, כדי לעזור למבקרים להבין את תחומי המומחיות וההשתתפות שלך.
 
-### Badge Progress Tracking
+### מעקב התקדמות תגי ההישג
 
-For badges you haven't fully earned yet, your profile shows:
+עבור תגי הישג שטרם השגת במלואם, הפרופיל שלך מציג:
 
-- **Progress Bar** - Visual indicator of how close you are to earning the badge
-- **Requirements** - What you need to do to unlock the badge
-- **Community Context** - Which community the badge is associated with
+- **סרגל התקדמות** - אינדיקатор חזותי של כמה קרוב אתה להשגת התג
+- **דרישות** - מה עליך לעשות כדי לפתוח את התג
+- **הקשר קהילתי** - איזו קהילה התג קשור אליה
 
-This motivates continued participation and gives you clear goals to work toward.
+זה מעודד המשך השתתפות ומעניק לך מטרות ברורות לעבודה עליהן.
 
-### Customizing Badge Display
+### התאמת תצוגת התגים
 
-**Badge Order:**
-You can reorder badges to control which appear first. The order you set determines:
-- Priority in the profile display
-- Which badges show in limited space situations
-- Personal preference for highlighting achievements
+**סדר התגים:**
+אתה יכול לשנות את סדר התגים כדי לשלוט אילו מהם יופיעו ראשונים. הסדר שאתה קובע קובע:
+- עדיפות בתצוגת הפרופיל
+- אילו תגיות יוצגו כאשר המקום מוגבל
+- העדפה אישית להבלטת הישגים
 
-**Visibility:**
-Toggle individual badges on/off for comment display while keeping them visible on your profile.
+**נראות:**
+הפעל או השבת תגיות בודדות להצגה בתגובות, תוך שמירה על כך שהן יישארו נראות בפרופיל שלך.
 
-### Manual Badges
+### תגי הישג שמוענקים ידנית
 
-Community administrators can award special manual badges to recognize:
-- Special contributions
-- Contest winners
-- VIP members
-- Custom achievements
+מנהל/י הקהילה יכולים להעניק תגי הישג מיוחדים שניתנים ידנית כדי להכיר ב:
+- תרומות מיוחדות
+- מנצחי תחרויות
+- חברי VIP
+- הישגים מותאמים אישית
 
-These badges appear alongside automatically earned badges on your profile.
+תגים אלו מופיעים לצד תגי ההישג שהושגו באופן אוטומטי בפרופיל שלך.
 
-### For More Information
+### למידע נוסף
 
-For complete details on the badge system, including all badge types, earning criteria, and administrative configuration, see the comprehensive [Badges Guide](/guide-badges.html).
+לקבלת מידע מפורט על מערכת התגים, כולל כל סוגי התגים, קריטריוני ההשגה והגדרות ניהול, ראה את המדריך המקיף [מדריך תגי ההישג](/guide-badges.html).

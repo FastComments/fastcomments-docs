@@ -1,93 +1,95 @@
-Rozetler, Kullanıcı Profilinizde görünen görsel başarılar olup FastComments topluluklarındaki katkılarınızı ve etkinliğinizi tanır.
+Rozetler, FastComments topluluklarındaki katkılarınızı ve etkinliğinizi tanıyan, Kullanıcı Profilinizde görünen görsel başarımlardır.
 
 ### Rozetler Nedir?
 
-Rozetler, şu tür çeşitli etkinlikler için kazanılan tanınırlıklardır:
-- Yapılan yorum sayısı
-- Alınan oylar
+Rozetler şu gibi çeşitli etkinlikler için kazanılan tanınmalardır:
+- Gönderilen yorum sayısı
+- Alınan oylar (upvote)
 - Oluşturulan yanıtlar
-- Moderasyon işlemleri
+- Moderatör işlemleri
 - Topluluk üyesi olarak geçirilen süre
 - Özel başarılar
 
-Her rozet profilinizde görüntülenir ve isteğe bağlı olarak yorumlarınızda adınızın yanında gösterilebilir.
+Her rozet profilinizde görüntülenir ve isteğe bağlı olarak yorumlarda adınızın yanında görünebilir.
 
 ### Rozetlerinizi Görüntüleme
 
 Kazanılmış rozetleriniz profil sayfanızın başlık bölümünde görünür. İki kategori vardır:
 
-1. **Kazanılan Rozetler** - Tamamen kazandığınız ve kilidini açtığınız rozetler
-2. **Devam Edenler** - Üzerinde çalıştığınız rozetler; ilerleme çubukları ne kadar yakın olduğunuzu gösterir
+1. **Kazanılan Rozetler** - Tamamen kazandığınız ve kilidini açtığınız rozetler  
+2. **Devam Eden** - Hedeflediğiniz rozetler; ilerleme çubukları ne kadar yakın olduğunuzu gösterir
 
-### Rozet Görüntüleme
+### Rozet Görünümü
 
-Rozetlerin nasıl görüneceği üzerinde tam kontrole sahipsiniz:
+Rozetlerin nasıl göründüğü üzerinde tam kontrole sahipsiniz:
 
 **Profilinizde:**
-Tüm kazanılmış rozetler, diğerlerinin görmesi için profil başlığınızda gösterilir.
+Tüm kazanılmış rozetler profil başlığınızda başkalarının görmesi için gösterilir.
 
 **Yorumlarınızda:**
 Yorum yaptığınızda adınızın yanında hangi rozetlerin görüneceğini seçebilirsiniz:
 
 1. Profil sayfanızı ziyaret edin
 2. "Rozetleri Yönet"e tıklayın veya rozet yönetim iletişim kutusuna erişin
-3. Yorumlarınızda görünmesini istediğiniz rozetleri açıp kapatın
-4. Görüntüleme önceliğini ayarlamak için rozetleri sürükleyerek yeniden sıralayın
+3. Yorumlarınızda hangi rozetlerin görünmesi gerektiğini açıp kapatın
+4. Görüntü önceliğini ayarlamak için rozetleri sürükleyerek yeniden sıralayın
 
-Bu, yorum imzanızı doldurmadan en anlamlı başarılarınızı sergilemenizi sağlar.
+Bu, yorum imzanızı karıştırmadan en anlamlı başarılarınızı sergilemenizi sağlar.
 
 ### Rozet Türleri
 
-Rozetler, farklı başarı kategorilerine bağlı çeşitli türlerde gelir. Mevcut tüm rozet türleri ve bunları nasıl kazanacağınızın tam bir görünümü için bkz. [Rozetler Kılavuzu](/guide-badges.html).
+Rozetler, farklı başarı kategorilerine göre çeşitli türlerde gelir. Mevcut tüm rozet türlerinin ve bunları nasıl kazanacağınızın tam bir genel görünümü için bkz. [Rozetler Kılavuzu](/guide-badges.html).
 
 Yaygın rozet kategorileri şunlardır:
 
-- **Etkileşim Rozetleri** - Yorum sayısı, yanıtlar ve etkileşimlere göre
-- **Kalite Rozetleri** - Oylar ve topluluk tarafından kabul edilme kriterlerine göre
-- **Zamana Dayalı Rozetler** - Veteran statüsü, gece kuşu etkinliği
-- **Moderatör Rozetleri** - Moderasyon işlemleri için tanınma
+- **Etkileşim Rozetleri** - Yorum sayısı, yanıtlar ve etkileşimlere dayalı  
+- **Kalite Rozetleri** - Oylar (upvote) ve toplumun kabulüne dayalı  
+- **Zamana Dayalı Rozetler** - Veteran statüsü, gece kuşu etkinliği  
+- **Moderatör Rozetleri** - Moderasyon işlemleri için tanınma  
 - **Özel Rozetler** - Manuel olarak verilen veya topluluğa özgü başarılar
 
 ### Topluluğa Özgü Rozetler
 
 Rozetler farklı FastComments topluluklarında kazanılabilir:
 
-- **Genel Rozetler** - Tüm FastComments kullanımında kazanılanlar
-- **Topluluk Rozetleri** - Belirli site/tenant içinde kazanılanlar
+- **Küresel Rozetler** - Tüm FastComments kullanımında kazanılır  
+- **Topluluk Rozetleri** - Belirli sites/tenants içinde kazanılır
 
-Profiliniz, her rozetin hangi topluluk tarafından verildiğini gösterir; bu sayede ziyaretçiler uzmanlık ve katılım alanlarınızı anlayabilir.
+Profiliniz, hangi topluluğun her rozeti verdiğini gösterir; bu, ziyaretçilerin uzmanlık ve katılım alanlarınızı anlamasına yardımcı olur.
 
 ### Rozet İlerleme Takibi
 
 Henüz tamamen kazanmadığınız rozetler için profiliniz şunları gösterir:
 
-- **İlerleme Çubuğu** - Rozeti kazanmanıza ne kadar yaklaştığınızı görsel olarak gösterir
-- **Gereksinimler** - Rozetin kilidini açmak için ne yapmanız gerektiği
-- **Topluluk Bağlamı** - Rozetin ilişkilendirildiği topluluk
+- **İlerleme Çubuğu** - Rozeti kazanmanıza ne kadar yaklaştığınızı görsel olarak gösterir  
+- **Gereksinimler** - Rozetin kilidini açmak için yapmanız gerekenler  
+- **Topluluk Bağlamı** - Rozetin hangi toplulukla ilişkilendirildiği
 
 Bu, devam eden katılımı teşvik eder ve üzerinde çalışmanız için net hedefler sunar.
 
-### Rozet Görüntülemeyi Özelleştirme
+### Rozet Görünümünü Özelleştirme
 
-**Rozet Sıralaması:**
-Rozetlerin hangi sırada görüneceğini kontrol etmek için yeniden sıralama yapabilirsiniz. Ayarladığınız sıra şunları belirler:
+**Rozet Sırası:**  
+Rozetlerin hangi sırayla görüneceğini kontrol etmek için bunları yeniden sıralayabilirsiniz. Ayarladığınız sıra şunları belirler:
 - Profil görüntülemede öncelik
 - Sınırlı alan durumlarında hangi rozetlerin gösterileceği
-- Başarıları vurgulama için kişisel tercih
+- Başarıları vurgulama konusunda kişisel tercih
 
-**Görünürlük:**
-Profilinizde görünür tutarken, yorum görüntüleme için bireysel rozetleri açıp kapatın.
+**Görünürlük:**  
+Profilinizde görünür tutarken, yorum görüntüsü için bireysel rozetleri açıp kapatabilirsiniz.
 
 ### Manuel Rozetler
 
-Topluluk yöneticileri, şu amaçlarla özel manuel rozetler verebilir:
+Topluluk yöneticileri aşağıdakileri tanımak için özel manuel rozetler verebilir:
 - Özel katkılar
 - Yarışma kazananları
 - VIP üyeler
 - Özel başarılar
 
-Bu rozetler, profilinizde otomatik kazanılmış rozetlerle birlikte görünür.
+Bu rozetler, profilinizde otomatik olarak kazanılmış rozetlerin yanında görünür.
 
-### Daha Fazla Bilgi
+### Daha Fazla Bilgi İçin
 
-Rozet sistemi hakkında tüm ayrıntılar, tüm rozet türleri, kazanma kriterleri ve yönetim yapılandırması için kapsamlı [Rozetler Kılavuzu](/guide-badges.html) sayfasına bakın.
+Rozet sistemi hakkında tüm rozet türleri, kazanma kriterleri ve yönetim yapılandırması dahil olmak üzere eksiksiz bilgiler için kapsamlı [Rozetler Kılavuzu](/guide-badges.html) bölümüne bakın.
+
+---

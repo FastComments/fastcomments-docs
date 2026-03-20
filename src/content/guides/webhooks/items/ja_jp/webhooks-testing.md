@@ -1,25 +1,25 @@
-Webhooks 管理画面には各イベントタイプ（作成、更新、削除）に対して `Send Test Payload` ボタンがあります。作成イベントと更新イベントはダミーの `WebhookComment` オブジェクトを送信しますが、削除イベントをテストする場合は ID のみを含むダミーのリクエストボディが送信されます。
+In the Webhooks admin there are `Send Test Payload` buttons for each event type (Create, Update, Delete). The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
 
 ## ペイロードの検証
 
-Webhook 統合をテストする際、受信リクエストに以下のヘッダーが含まれていることを確認してください:
+Webhook 統合をテストする際、受信リクエストに次のヘッダーが含まれていることを確認してください:
 
-1. **`token`** - あなたの API Secret
+1. **`token`** - あなたの API シークレット
 2. **`X-FastComments-Timestamp`** - Unix タイムスタンプ（秒）
 3. **`X-FastComments-Signature`** - HMAC-SHA256 署名
 
-ペイロードが正当であることを確認するために HMAC 署名の検証を使用してください。
+HMAC 署名の検証を使用して、ペイロードが正当であることを確認してください。
 
-## テスト用ツール
+## テストツール
 
-開発中に受信する webhook ペイロードを確認するために、[webhook.site](https://webhook.site) や [ngrok](https://ngrok.com) のようなツールを使用できます。
+開発中に受信する webhook ペイロードを検査するために、[webhook.site](https://webhook.site) や [ngrok](https://ngrok.com) などのツールを使用できます。
 
-## イベントタイプ
+## Event Types
 
-- **作成イベント**: 新しいコメントが作成されたときにトリガーされます。デフォルトのメソッド: PUT
-- **更新イベント**: コメントが編集されたときにトリガーされます。デフォルトのメソッド: PUT
-- **削除イベント**: コメントが削除されたときにトリガーされます。デフォルトのメソッド: DELETE
+- **Create Event**: Triggered when a new comment is created. Default method: PUT
+- **Update Event**: Triggered when a comment is edited. Default method: PUT
+- **Delete Event**: Triggered when a comment is deleted. Default method: DELETE
 
-各イベントはリクエストボディに完全なコメントデータを含みます（ペイロードの形式については [Data Structures](/guide-webhooks.html#webhooks-structures) を参照してください）。
+各イベントはリクエストボディに完全なコメントデータを含みます（ペイロード形式については [データ構造](/guide-webhooks.html#webhooks-structures) を参照してください）。
 
 ---

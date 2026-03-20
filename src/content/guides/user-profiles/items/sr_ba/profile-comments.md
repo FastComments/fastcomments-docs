@@ -1,128 +1,128 @@
-Profile Comments омогућавају корисницима да оставе поруке директно на профилној страници другог корисника, стварајући лични зид коментара или гостинску књигу.
+Komentari na profilu omogućavaju korisnicima da ostave poruke direktno na profilu drugog korisnika, stvarajući lični zid komentara ili interakciju u stilu knjige gostiju.
 
-### Шта су Profile Comments?
+### Šta su komentari na profilu?
 
-Profile Comments се разликују од обичних коментара на чланцима:
-- Појављују се на профилној страници корисника, а не на чланцима
-- Видљиви су свима који прегледају профил (осим ако поставке приватности то не ограниче)
-- Начин су да признајете, захвалите или комуницирате са одређеним корисницима
-- Раде у свим FastComments заједницама
+Komentari na profilu se razlikuju od običnih komentara na člancima:
+- Pojavljuju se na stranici korisnikovog profila, ne na člancima
+- Vidljivi su svima koji pregledaju profil (osim ako podešavanja privatnosti to ne ograniče)
+- Predstavljaju način da se prepozna, zahvali ili komunicira sa određenim korisnicima
+- Funkcionišu u svim FastComments zajednicama
 
-### Остављање коментара на профилу
+### Ostavljanje komentara na profilu
 
-Да бисте коментарисали нечији профил:
+Da biste ostavili komentar na tuđem profilu:
 
-1. Посетите профилну страницу корисника
-2. Идите на картицу "Profile Comments"
-3. Искористите поље за коментар да напишете поруку
-4. Пошаљите коментар
+1. Posjetite stranicu korisnikovog profila
+2. Otvorite karticu "Komentari na profilu"
+3. Koristite polje za komentar da napišete svoju poruku
+4. Pošaljite komentar
 
-**Напомена:** Подешавања приватности власника профила одређују да ли ће ваш коментар бити видљив одмах или ће захтијевати одобрење.
+**Napomena:** Podešavanja privatnosti vlasnika profila određuju da li će vaš komentar biti odmah vidljiv ili će zahtijevati odobrenje.
 
-### Прегледање коментара на профилу
+### Pregled komentara na profilu
 
-**На вашем профилу:**
-1. Посетите своју профилну страницу
-2. Кликните на картицу "Profile Comments"
-3. Видите све коментаре које су други оставили на вашем профилу
+**Na vašem profilu:**
+1. Posjetite svoju stranicu profila
+2. Kliknite karticu "Komentari na profilu"
+3. Pogledajte sve komentare koje su drugi ostavili na vašem profilu
 
-**На туђим профилима:**
-Коментари на профилу су видљиви ако корисник није омогућио поставку "Make Profile Comments Private".
+**Na tuđim profilima:**
+Komentari na profilu su vidljivi ako korisnik nije omogućio podešavanje "Učini komentare na profilu privatnim".
 
-### Одобрење коментара
+### Odobravanje komentara
 
-У зависности од подешавања власника профила (види [Подешавања приватности](/guide-user-profiles.html#privacy-settings)), коментари могу:
+U zavisnosti od podešavanja vlasnika profila (pogledajte [Podešavanja privatnosti](/guide-user-profiles.html#privacy-settings)), komentari mogu:
 
-1. **Појавити се одмах** - Аутоматски одобрени у зависности од нивоа повјерења или поставки одобрења
-2. **Захтијевати одобрење** - Задржани на преглед од стране власника профила
+1. **Pojaviti se odmah** - Automatski odobreni na osnovu nivoa povjerenja ili podešavanja odobravanja
+2. **Zahtijevati odobrenje** - Zadržani na pregled vlasnika profila
 
-Када ваш коментар захтијева одобрење:
-- Видећете индикатор стања на чекању
-- Власник профила добија обавијест
-- Након одобрења, коментар постаје видљив осталима
+Kada vaš komentar zahtijeva odobrenje:
+- Vidjećete indikator statusa na čekanju
+- Vlasnik profila dobija obavještenje
+- Kada bude odobren, komentar postaje vidljiv drugima
 
-### Управљање коментарима на вашем профилу
+### Upravljanje komentarima na vašem profilu
 
-Ако сте конфигурисали одобрење коментара (Manual Approve All или Manual Approve New), можете управљати долазним коментарима:
+Ako ste konfigurirali odobravanje komentara (Ručno odobravanje svih ili Ručno odobravanje novih), možete upravljati dolaznim komentarima:
 
-**Преко е-поште:**
-Добиваћете е-маил обавијести са везама за одобрење/одбијање за коментаре на чекању. Кликните везу да дјелујете директно из е-поште.
+**Putem e-pošte:**
+Dobićete obavještenja putem e-pošte sa linkovima za odobravanje/odbacivanje za komentare na čekanju. Kliknite link da postupite direktno iz vaše e-pošte.
 
-**Са вашег профила:**
-1. Посетите картицу "Profile Comments" на вашем профилу
-2. Погледајте коментаре на чекању
-3. Одобрите или одбијте сваки коментар
+**Sa vašeg profila:**
+1. Posjetite karticu "Komentari na profilu" na vašem profilu
+2. Pregledajte komentare na čekanju
+3. Odobrite ili odbacite svaki komentar
 
-**Из обавијести:**
-Приступите коментарима на чекању из центра за обавијести за брз преглед.
+**Iz obavještenja:**
+Pristupite komentarima na čekanju iz centra obavještenja radi brzog pregleda.
 
-### Одговарање на коментаре на профилу
+### Odgovaranje na komentare na profilu
 
-Када неко коментарише на вашем профилу, можете:
-- Одговорити директно на њихов коментар (ствара разговор)
-- Посјетити њихов профил и узвратити коментаром
-- Послати им директну поруку (ако дозвољавају ДМ)
+Kada neko komentariše na vaš profil, možete:
+- Odgovoriti direktno na njihov komentar (stvara razgovor)
+- Posjetiti njihov profil i ostaviti komentar zauzvrat
+- Poslati im direktnu poruku (ako dozvole DMs)
 
-### Брисање коментара на профилу
+### Brisanje komentara na profilu
 
-**На вашем профилу:**
-Можете обрисати било који коментар остављен на вашем профилу:
-1. Пронађите коментар који желите уклонити
-2. Кликните опцију за брисање/уклањање
-3. Потврдите брисање
+**Na vašem profilu:**
+Možete obrisati bilo koji komentar ostavljen na vašem profilu:
+1. Pronađite komentar koji želite ukloniti
+2. Kliknite opciju za brisanje/uklanjanje
+3. Potvrdite brisanje
 
-**На туђим профилима:**
-Можете обрисати само своје коментаре које сте оставили на туђим профилима, али не можете обрисати туђе коментаре (осим ако сте власник профила).
+**Na tuđim profilima:**
+Možete obrisati vlastite komentare koje ste ostavili na tuđim profilima, ali ne možete brisati tuđe komentare (osim ako ste vlasnik profila).
 
-### Обавијести о коментарима на профилу
+### Obavještenja o komentarima na profilu
 
-Добићете обавијести када:
-- Неко остави коментар на вашем профилу
-- Неко одговори на нит коментара на профилу у којој учествујете
-- Коментар који сте оставили на профилу буде одобрен или на који је одговорено
+Dobićete obavještenja kada:
+- Neko ostavi komentar na vašem profilu
+- Neko odgovori na nit komentara na profilu u kojoj učestvujete
+- Komentar na profilu koji ste ostavili bude odobren ili na njega bude odgovoreno
 
-Управљајте преференцама обавијештавања у вашим [Подешавањима налога](https://fastcomments.com/auth/my-account/edit-notifications).
+Upravljajte preferencijama obavještenja u vašim [Postavkama računa](https://fastcomments.com/auth/my-account/edit-notifications).
 
-### Приватност и коментари на профилу
+### Privatnost i komentari na profilu
 
-Контролишите видљивост коментара на профилу помоћу ових подешавања приватности:
+Kontrolišite vidljivost komentara na profilu pomoću ovih podešavanja privatnosti:
 
-**Make Profile Comments Private:**
-- Сакрива картицу Profile Comments од посјетилаца
-- Само ви можете видјети коментаре остављене на вашем профилу
-- Онемогућава објављивање нових коментара
+**Učini komentare na profilu privatnim:**
+- Sakriva karticu Komentari na profilu od posjetilaca
+- Samo vi možete vidjeti komentare ostavljene na vašem profilu
+- Sprečava objavljivanje novih komentara
 
-**Режими одобрења коментара:**
-- Одаберите ко може коментарисати без одобрења
-- Поставите различита правила одобрења за повјерљиве у односу на нове кориснике
-- Захтијевајте ручно одобрење за све коментаре
+**Načini odobravanja komentara:**
+- Izaberite ko može komentarisati bez odobrenja
+- Postavite različita pravila odobravanja za pouzdane naspram novih korisnika
+- Zahtijevajte ručno odobravanje za sve komentare
 
-За више детаља, погледајте [Подешавања приватности](/guide-user-profiles.html#privacy-settings).
+Za više detalja, pogledajte [Podešavanja privatnosti](/guide-user-profiles.html#privacy-settings).
 
-### Примјене за коментаре на профилу
+### Primjeri upotrebe komentara na profilu
 
-Коментари на профилу су одлични за:
+Komentari na profilu su odlični za:
 
-- **Захвалу корисницима који помажу заједници**
-- **Признавање вриједних доприноса**
-- **Изградњу односа са активним учесницима**
-- **Остављање свједочанстава или препорука**
-- **Стварање друштвеног искуства гостинске књиге**
-- **Захвалност и признање у заједници**
+- **Zahvaljivanje korisnim članovima zajednice**
+- **Prepoznavanje vrijednih doprinosa**
+- **Izgradnju odnosa sa aktivnim učesnicima**
+- **Ostavljanje svjedočanstava ili preporuka**
+- **Stvaranje društvenog iskustva knjige gostiju**
+- **Zahvalnost i priznanje zajednice**
 
-### Најбоље праксе
+### Najbolje prakse
 
-**Приликом остављања коментара:**
-- Будите уважавани и конструктивни
-- Додајте вриједност уместо општих порука типа "леп профил"
-- Упутите се на конкретне доприносе или интеракције када је примјенљиво
+**Za ostavljanje komentara:**
+- Budite pristojni i konstruktivni
+- Dodajte vrijednost umjesto generičkih poruka tipa "lijep profil"
+- Referišite se na konkretne doprinose ili interakcije kada je to primjenjivo
 
-**Приликом управљања профилом:**
-- Поставите одговарајућа подешавања одобрења у складу са својим нивоом удобности
-- Одговарајте на коментаре на профилу како бисте охрабрили укљученост заједнице
-- Користите блокирање ако неко поново оставља неприкладне коментаре
+**Za upravljanje vašim profilom:**
+- Postavite odgovarajuća podešavanja odobravanja prema svom nivou udobnosti
+- Odgovarajte na komentare na profilu kako biste podstakli angažman zajednice
+- Koristite blokiranje ako neko više puta ostavlja neprikladne komentare
 
-**За здравље заједнице:**
-- Коментари на профилу прате иста правила заједнице као и коментари на чланцима
-- Пријавите неприкладне коментаре на профилу ако их примјетите
-- Модератори могу предузети мјере против коментара на профилу који крше правила
+**Za zdravlje zajednice:**
+- Komentari na profilu prate ista pravila zajednice kao i komentari na člancima
+- Prijavite neprikladne komentare na profilu ako ih primijetite
+- Moderatori mogu poduzeti mjere protiv komentara na profilu koji krše pravila

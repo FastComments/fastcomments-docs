@@ -1,18 +1,18 @@
-Webhook'lar aracılığıyla gönderilen tek yapı aşağıda TypeScript ile özetlenen WebhookComment nesnesidir.
+Webhook'lar aracılığıyla gönderilen tek yapı aşağıda TypeScript olarak özetlenen WebhookComment nesnesidir.
 
 #### WebhookComment Nesnesi Yapısı
 
 ##### "Create" Olay Yapısı
-"create" olay isteği gövdesi bir WebhookComment nesnesidir.
+"create" olayının istek gövdesi bir WebhookComment nesnesidir.
 
 ##### "Update" Olay Yapısı
-"update" olay isteği gövdesi bir WebhookComment nesnesidir.
+"update" olayının istek gövdesi bir WebhookComment nesnesidir.
 
 ##### "Delete" Olay Yapısı
-"delete" olay isteği gövdesi bir WebhookComment nesnesidir.
+"delete" olayının istek gövdesi bir WebhookComment nesnesidir.
 
-    14 Kasım 2023 itibarıyla değişiklik
-    Daha önce "delete" olay isteği gövdesi yalnızca yorum id'sini içeriyordu. Artık silme anındaki tam yorumu içerir.
+    14 Kasım 2023 tarihi itibarıyla değişiklik
+    Önceden "delete" olayının istek gövdesi yalnızca yorum id'sini içeriyordu. Artık silinme anındaki tam yorumu içeriyor.
 
 
 [inline-code-attrs-start title = 'WebhookComment Nesnesi'; type = 'typescript'; inline-code-attrs-end]
@@ -22,53 +22,53 @@ interface WebhookComment {
     id: string
     /** Yorum dizisini tanımlayan id veya URL. Normalleştirilmiş. **/
     urlId: string
-    /** Yorumun bırakıldığı yeri gösteren URL. **/
+    /** Yorumun bırakıldığı yere işaret eden URL. **/
     url?: string
-    /** Yorumu bırakan kullanıcı id'si. SSO ise, tenant id ile öneklenmiş. **/
+    /** Yorumu bırakan kullanıcı id'si. SSO ise tenant id ile öneklenmiş olur. **/
     userId?: string
     /** Yorumu bırakan kullanıcının e-postası. **/
     commenterEmail?: string
-    /** Yorum widget'ında görünen kullanıcı adı. SSO ile displayName olabilir. **/
+    /** Yorum bileşeninde görünen kullanıcı adı. SSO ile displayName olabilir. **/
     commenterName: string
     /** Ham yorum metni. **/
     comment: string
-    /** Ayrıştırıldıktan sonraki yorum metni. **/
+    /** Ayrıştırıldıktan sonra yorum metni. **/
     commentHTML: string
     /** Yorumun harici id'si. **/
     externalId?: string
     /** Üst yorumun id'si. **/
     parentId?: string | null
-    /** Yorumun bırakıldığı UTC tarih. **/
+    /** Yorumun bırakıldığı UTC tarihi. **/
     date: UTC_ISO_DateString
-    /** Oyların (yukarı - aşağı) toplamı. **/
+    /** Oyların birleşik karması (yukarı - aşağı). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Kullanıcı yorum yaparken giriş yapmışsa, yorumu doğrulanmışsa veya yorum bırakılırken oturum doğrulaması yapılmışsa true. **/
+    /** Kullanıcı yorumu yazarken giriş yaptıysa, yorumu doğruladıysa veya yorum bırakılırken oturumunu doğruladıysa true. **/
     verified: boolean
     /** Yorumun doğrulandığı tarih. **/
     verifiedDate?: number
-    /** Bir moderatör yorum'u incelendi olarak işaretlediyse. **/
+    /** Moderatörün yorumu incelendi olarak işaretleyip işaretlemediği. **/
     reviewed: boolean
-    /** Avatarın konumu veya base64 kodlaması. Yalnızca SSO ile base64 olarak gönderildiyse base64 olur. **/
+    /** Avatarın konumu veya base64 kodlaması. Sadece SSO ile base64 olarak gönderildiyse base64 olacaktır. **/
     avatarSrc?: string
-    /** Yorum manuel veya otomatik olarak spam olarak işaretlendi mi? **/
+    /** Yorum manuel mi yoksa otomatik olarak spam olarak mı işaretlendi? **/
     isSpam: boolean
-    /** Yorum otomatik olarak spam olarak işaretlendi mi? **/
+    /** Yorum otomatik olarak spam olarak mı işaretlendi? **/
     aiDeterminedSpam: boolean
-    /** Yorumda görseller var mı? **/
+    /** Yorumda resimler var mı? **/
     hasImages: boolean
-    /** "Most Relevant" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** Yorumun "En İlgili" sıralama yönü için bulunduğu sayfa numarası. **/
     pageNumber: number
-    /** "Oldest First" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** Yorumun "En Eski İlk" sıralama yönü için bulunduğu sayfa numarası. **/
     pageNumberOF: number
-    /** "Newest First" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** Yorumun "En Yeni İlk" sıralama yönü için bulunduğu sayfa numarası. **/
     pageNumberNF: number
-    /** Yorum otomatik veya manuel olarak onaylandı mı? **/
+    /** Yorum otomatik olarak mı yoksa manuel olarak mı onaylandı? **/
     approved: boolean
-    /** Yorum yazılırken kullanıcının yerel ayar kodu (format: en_us). **/
+    /** Yorum yazıldığında kullanıcının yerel kodu (format: en_us). **/
     locale: string
-    /** Yoruma yazılan ve başarıyla ayrıştırılan @mention'lar. **/
+    /** Yorumda yazılan ve başarıyla ayrıştırılan @mention'lar. **/
     mentions?: CommentUserMention[]
     /** Yorumun geldiği alan adı. **/
     domain?: string
@@ -77,33 +77,33 @@ interface WebhookComment {
 }
 [inline-code-end]
 
-Kullanıcılar bir yorumda etiketlendiğinde, bilgiler `mentions` adlı bir listede saklanır. O listedeki her nesne aşağıdaki yapıya sahiptir.
+Kullanıcılar bir yorumda etiketlendiğinde, bilgiler `mentions` adlı bir listede saklanır. Bu listedeki her nesnenin yapısı aşağıdaki gibidir.
 
-[inline-code-attrs-start title = 'Webhook Mentions Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook Mention Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Kullanıcı id'si. SSO kullanıcıları için, tenant id öneklenmiş olacaktır. **/
+    /** Kullanıcı id'si. SSO kullanıcıları için tenant id ile öneklenmiş olacaktır. **/
     id: string
-    /** @ sembolü dahil son @mention etiket metni. **/
+    /** Son @mention etiket metni, @ sembolü dahil. **/
     tag: string
-    /** @ sembolü dahil orijinal @mention etiket metni. **/
+    /** Orijinal @mention etiket metni, @ sembolü dahil. **/
     rawTag: string
-    /** Hangi tip kullanıcının etiketlendiği. user = FastComments.com hesabı. sso = SSOUser. **/
+    /** Hangi tür kullanıcı etiketlendi. user = FastComments.com hesabı. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Kullanıcı bildirimleri kapatmış olsa bile, bu yine de true olarak ayarlanır. **/
+    /** Kullanıcı bildirimlerden çıkmış olsa bile bu yine de true olarak ayarlanır. **/
     sent: boolean
 }
 [inline-code-end]
 
 #### HTTP Yöntemleri
 
-Yönetici panelinde her webhook olay türü için HTTP yöntemini yapılandırabilirsiniz:
+Her webhook olay türü için HTTP metodunu yönetici panelinden yapılandırabilirsiniz:
 
-- **Create Event**: POST veya PUT (varsayılan: PUT)
-- **Update Event**: POST veya PUT (varsayılan: PUT)
-- **Delete Event**: DELETE, POST veya PUT (varsayılan: DELETE)
+- **Oluşturma Olayı**: POST veya PUT (varsayılan: PUT)
+- **Güncelleme Olayı**: POST veya PUT (varsayılan: PUT)
+- **Silme Olayı**: DELETE, POST veya PUT (varsayılan: DELETE)
 
-Tüm istekler bir ID içerdiğinden, Create ve Update işlemleri varsayılan olarak idempotenttir (PUT). Aynı Create veya Update isteğini tekrarlamak, sizin tarafınızda yinelenen nesneler oluşturmemelidir.
+Tüm istekler bir ID içerdiğinden, Create ve Update işlemleri varsayılan olarak idempotenttir (PUT). Aynı Create veya Update isteğinin tekrarlanması, tarafınızda çift nesneler oluşturmamalıdır.
 
 #### İstek Başlıkları
 
@@ -116,6 +116,4 @@ Her webhook isteği aşağıdaki başlıkları içerir:
 | `X-FastComments-Timestamp` | İsteğin imzalandığı Unix zaman damgası (saniye) |
 | `X-FastComments-Signature` | HMAC-SHA256 imzası (`sha256=<hex>`) |
 
-HMAC imzasını doğrulama hakkında bilgi için [Güvenlik ve API Anahtarları](/guide-webhooks.html#webhooks-api-tokens) sayfasına bakın.
-
----
+HMAC imzasını doğrulama hakkında bilgi için [Güvenlik ve API Jetonları](/guide-webhooks.html#webhooks-api-tokens) sayfasına bakın.

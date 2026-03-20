@@ -1,17 +1,17 @@
 現在，我們來新增一個 `Embed` 區塊。
 
-前往左上角的 `Insert`：
+到左上角的 `Insert`：
 
 <div class="screenshot white-bg">
     <div class="title">點選 Insert</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="點選 Insert" />
 </div>
 
-接著將左側邊欄向下捲動，並把滑鼠移到 `Utility` 上。
+然後向下捲動左側側邊欄並將滑鼠移到 `Utility`。
 
-Next you'll want to *click and drag* the `Utility` block to the end of your blog.
+接著你需要 *點擊並拖曳* `Embed` 區塊到你的部落格末端。
 
-重要的是要如圖示*按下並拖曳*，而不是僅僅點擊。如果你只是點擊，Framer 會把它插入到你的部落格外面，之後你還得再把它拖曳回來。
+重要的是要像示範那樣 *點擊並拖曳*，而不是只點擊。如果你只是點擊，Framer 會把它插入到你的部落格之外，之後你就必須再拖動它。
 
 <div class="screenshot white-bg">
     <div class="title">找到 Embed 小工具</div>
@@ -23,19 +23,18 @@ Next you'll want to *click and drag* the `Utility` block to the end of your blog
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="拖放 Embed 小工具" />
 </div>
 
-現在你會有一個空的 Embed 小工具，當你選取它時，右側會出現一個側邊欄。你可以展開側邊欄，然後你會看到
-類似以下的畫面：
+現在你會看到一個空的 Embed 小工具，選取它時右側會出現一個側邊欄。你可以展開側邊欄，就會看到類似以下內容：
 
 <div class="screenshot white-bg">
     <div class="title">開啟 Embed 設定</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="開啟 Embed 設定" />
 </div>
 
-現在將 `Embed` 小工具類型改為 `HTML`：
+現在把 `Embed` 小工具類型改為 `HTML`：
 
 <div class="screenshot white-bg">
     <div class="title">設為 HTML 小工具</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="設為 HTML 小工具" />
 </div>
 
-現在你已準備好在下一步加入 FastComments Framer 代碼片段。
+現在你已準備好下一步要加入的 FastComments Framer 程式碼片段。

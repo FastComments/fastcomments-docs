@@ -1,23 +1,24 @@
-Υπάρχουν δύο τρόποι για να αποκλείσετε χρήστες από το να σχολιάζουν στον ιστότοπό σας με το FastComments.
+Υπάρχουν δύο τρόποι για να απαγορεύσετε σε χρήστες να σχολιάζουν στην ιστοσελίδα σας με το FastComments.
 
-Ο πρώτος είναι ότι αν ήδη γνωρίζετε το email τους, μπορείτε να το εισάγετε στη σελίδα <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένοι χρήστες</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένων χρηστών</a> page.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-Αυτή η σελίδα είναι προσβάσιμη μέσω Διαχείριση σχολίων -> Απαγορευμένοι χρήστες
+This page can be accessed via Διαχείριση σχολίων -> Απαγορευμένοι χρήστες
 
-Όταν προχωρήσουμε στον αποκλεισμό ενός χρήστη, μπορούμε να επιλέξουμε τον τύπο — είτε Μόνιμος είτε Μόνιμος σκιώδης αποκλεισμός:
+When we go to ban a user, we can pick a type, either Permanent or Μόνιμη Σκιώδης Απαγόρευση:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-Ο δεύτερος τρόπος για να αποκλείσετε έναν χρήστη είναι κάνοντας κλικ στο κουμπί αποκλεισμού που βρίσκεται σε κάθε σχόλιο στη σελίδα Διαχείρισης Σχολίων.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Σελίδα Διαχείρισης Σχολίων.
 
-Όταν κάνετε κλικ στο κουμπί αποκλεισμού, θα σας παρουσιαστούν κάποιες επιλογές, όπου μπορείτε να καθορίσετε τον τύπο και τη διάρκεια του αποκλεισμού.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### Σκιώδεις Αποκλεισμοί
+### Σκιώδεις Απαγορεύσεις
 
-Ο σκιώδης αποκλεισμός είναι ένας τύπος αποκλεισμού που κάνει να φαίνεται ότι το σχόλιο ή η ψήφος του χρήστη αποθηκεύτηκε επιτυχώς, ενώ στην πραγματικότητα δεν αποθηκεύτηκε. Αυτό μπορεί να είναι επιθυμητό σε ορισμένες περιπτώσεις.
+Η σκιώδης απαγόρευση είναι ένας τύπος απαγόρευσης που δημιουργεί την εντύπωση ότι το σχόλιο ή η ψήφος του χρήστη αποθηκεύτηκε επιτυχώς, ενώ στην πραγματικότητα δεν αποθηκεύτηκε. Αυτό μπορεί να είναι
+επιθυμητό σε ορισμένες περιπτώσεις.
 
-### Αποκλεισμός Μέσω Διεύθυνσης IP
+### Απαγόρευση μέσω διεύθυνσης IP
 
-Εκτός εάν ένας tenant επιθυμεί να εξαιρεθεί, το FastComments υποστηρίζει τον αποκλεισμό μέσω IP αποθηκεύοντας μια κατακερματισμένη (hashed) έκδοση της διεύθυνσης IP του σχολιαστή.
+Εκτός αν ο tenant επιθυμεί να εξαιρεθεί, το FastComments υποστηρίζει την απαγόρευση μέσω IP αποθηκεύοντας μια κατακερματισμένη έκδοση της διεύθυνσης IP του σχολιαστή.

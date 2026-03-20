@@ -1,6 +1,6 @@
-现在，让我们添加一个 `Embed` 块。
+现在，让我们添加一个 `Embed` 小部件。
 
-Go to `Insert` in the top left:
+转到左上角的 `Insert`：
 
 <div class="screenshot white-bg">
     <div class="title">单击 Insert</div>
@@ -9,10 +9,9 @@ Go to `Insert` in the top left:
 
 然后向下滚动左侧边栏并将鼠标移到 `Utility` 上。
 
-Next you'll want to *click and drag* the `Utility` block to the end of your blog.
+接下来你需要*点击并拖动* `Embed` 小部件到博客的末尾。
 
-重要的是要像示例那样*点击并拖动*，而不是只是点击。如果你只是点击，Framer 会把它插入到你的博客之外，
-你之后就必须手动拖动它。
+重要的是你要像示例那样*点击并拖动*，而不是只点击它。如果你只是点击，Framer 会将其插入到博客之外，之后你就得再去拖动它。
 
 <div class="screenshot white-bg">
     <div class="title">定位 Embed 小部件</div>
@@ -24,8 +23,7 @@ Next you'll want to *click and drag* the `Utility` block to the end of your blog
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="拖放 Embed 小部件" />
 </div>
 
-现在你会看到一个空的 Embed 小部件，当你选中它时，右侧会出现一个边栏。你可以展开该边栏，你会看到
-类似这样的内容：
+现在你会有一个空的 Embed 小部件，选中它时右侧会出现一个侧边栏。你可以展开侧边栏，会看到类似如下内容：
 
 <div class="screenshot white-bg">
     <div class="title">打开 Embed 设置</div>
@@ -39,6 +37,6 @@ Next you'll want to *click and drag* the `Utility` block to the end of your blog
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="设置为 HTML 小部件" />
 </div>
 
-现在你已准备好进行下一步中的 FastComments Framer 代码片段。
+现在你已为下一步的 FastComments Framer 代码片段做好准备。
 
 ---

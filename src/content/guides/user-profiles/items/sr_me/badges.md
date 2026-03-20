@@ -1,93 +1,93 @@
-Značke su vizuelna priznanja koja se pojavljuju na vašem korisničkom profilu, prepoznajući vaš doprinos i aktivnost u FastComments zajednicama.
+Значке су визуелна признања која се појављују на вашем корисничком профилу, препознајући ваш допринос и активност у FastComments заједницама.
 
-### Šta su značke?
+### Шта су значке?
 
-Značke su priznanja koja se stiču za različite aktivnosti kao što su:
-- Broj postavljenih komentara
-- Dobijeni lajkovi
-- Generisani odgovori
-- Moderatorske akcije
-- Vrijeme kao član zajednice
-- Posebna dostignuća
+Значке су заслужено признање за различите активности као што су:
+- Број послатих коментара
+- Примљени позитивни гласови
+- Генерисани одговори
+- Акције модератора
+- Време као члан заједнице
+- Посебна достигнућа
 
-Svaka značka se prikazuje na vašem profilu i može se opcionalno pojaviti pored vašeg imena u komentarima.
+Свака значка се приказује на вашем профилу и може опционално да се појави поред вашег имена у коментарима.
 
-### Pregled vaših znački
+### Преглед ваших значки
 
-Osvojene značke se prikazuju na stranici vašeg profila u zaglavlju. Postoje dvije kategorije:
+Ваше освојене значке се појављују на страници вашег профила у заглављу. Постоје две категорије:
 
-1. **Osvojene značke** - Značke koje ste u potpunosti osvojili i otključali
-2. **U toku** - Značke na kojima radite, sa trakama napretka koje pokazuju koliko ste blizu
+1. **Освојене значке** - Значке које сте у потпуности освојили и откључали
+2. **У току** - Значке на које радите, са тракама напретка које показују колико сте близу
 
-### Prikaz znački
+### Приказ значки
 
-Imate potpunu kontrolu nad načinom prikaza znački:
+Имате потпуну контролу над тим како се значке приказују:
 
-**Na vašem profilu:**
-Sve osvojene značke su prikazane u zaglavlju vašeg profila da ih drugi vide.
+**На вашем профилу:**
+Све освојеине значке су приказане у заглављу вашег профила да би их други видели.
 
-**U vašim komentarima:**
-Možete izabrati koje značke će se prikazivati pored vašeg imena kada komentarišete:
+**У вашим коментарима:**
+Можете одабрати које значке ће се појављивати поред вашег имена када коментаришете:
 
-1. Posjetite stranicu svog profila
-2. Kliknite "Upravljaj značkama" ili pristupite dijalogu za upravljanje značkama
-3. Uključite/isključite koje značke bi trebalo da se pojavljuju u vašim komentarima
-4. Promijenite redoslijed znački prevlačenjem kako biste postavili prioritet prikaza
+1. Посетите страницу вашег профила
+2. Кликните "Управљајте значкама" или приступите дијалогу за управљање значкама
+3. Укључите/исклучите које значке треба да се појављују уз ваше коментаре
+4. Преуредите значке превлачењем да бисте подесили приоритет приказа
 
-Ovo vam omogućava da prikažete najvažnija dostignuća bez zagušenja potpisa vašeg komentara.
+Ово вам омогућава да истакнете најзначајнија достигнућа без преоптерећења вашег коментарског потписа.
 
-### Tipovi znački
+### Врсте значки
 
-Značke dolaze u različitim tipovima zasnovanim na različitim kategorijama dostignuća. Za potpuni pregled svih dostupnih tipova znački i kako ih osvojiti, pogledajte [Vodič za značke](/guide-badges.html).
+Значке долазе у различитим типовима заснованим на различитим категоријама достигнућа. За комплетан преглед свих доступних типова значки и начина на који их освајате, погледајте [Водич за значке](/guide-badges.html).
 
-Uobičajene kategorije znački uključuju:
+Честе категорије значки укључују:
 
-- **Značke angažmana** - Bazirano na broju komentara, odgovorima i interakciji
-- **Značke kvaliteta** - Bazirano na lajkovima i prijemu od zajednice
-- **Vremenski zasnovane značke** - Status veterana, aktivnost noću
-- **Moderatorske značke** - Priznanje za moderacione akcije
-- **Specijalne značke** - Ručno dodijeljene ili specifične za zajednicu nagrade
+- **Значке за ангажман** - Засновано на броју коментара, одговора и интеракцијама
+- **Значке квалитета** - Засновано на позитивним гласовима и пријему у заједници
+- **Временске значке** - Статус ветерана, ноћна активност
+- **Значке модератора** - Признање за модераторске акције
+- **Посебне значке** - Ручно додељене или специфичне за заједницу
 
-### Značke specifične za zajednicu
+### Значке специфичне за заједницу
 
-Značke se mogu osvojiti u različitim FastComments zajednicama:
+Значке се могу освојити у различитим FastComments заједницама:
 
-- **Globalne značke** - Osvojene kroz korišćenje FastComments sistema širom
-- **Značke zajednice** - Osvojene unutar specifičnih sites/tenants
+- **Глобалне значке** - Освојене у оквиру целокупне употребе FastComments
+- **Заједничке значке** - Освојене у оквиру одређених сајтова/налога
 
-Vaš profil pokazuje koja zajednica je dodijelila svaku značku, pomažući posjetiocima da razumiju vaše oblasti stručnosti i učešća.
+Ваш профил показује која заједница је доделила сваку значку, што помаже посетиоцима да разумеју ваше области стручности и учешћа.
 
-### Praćenje napretka znački
+### Праћење напретка значки
 
-Za značke koje još niste u potpunosti osvojili, vaš profil prikazuje:
+За значке које још нисте у потпуности освојили, ваш профил показује:
 
-- **Traka napretka** - Vizuelni indikator koliko ste blizu osvajanja značke
-- **Zahtjevi** - Šta trebate učiniti da otključate značku
-- **Kontekst zajednice** - Sa kojom zajednicom je značka povezana
+- **Трака напретка** - Визуелни индикатор колико сте близу освајања значке
+- **Захтеви** - Шта треба да урадите да бисте откључали значку
+- **Контекст заједнице** - Са којом је заједницом значка повезана
 
-Ovo motiviše dalji angažman i daje vam jasne ciljeve prema kojima možete raditi.
+Ово мотивише да наставите са учешћем и даје вам јасне циљеве ка којима треба да тежите.
 
-### Prilagođavanje prikaza znački
+### Прилагођавање приказа значки
 
-**Redoslijed znački:**
-Možete promijeniti redoslijed znački kako biste kontrolisali koje se prikazuju prve. Redoslijed koji postavite određuje:
-- Prioritet u prikazu na profilu
-- Koje značke se prikazuju u situacijama sa ograničenim prostorom
-- Lični prioritet za isticanje dostignuća
+**Редослед значки:**
+Можете преуредити значке да бисте контролисали које се приказују прво. Редослед који поставите одређује:
+- Приоритет приликом приказа у профилу
+- Које значке се приказују у условима ограниченог простора
+- Личну преференцију за истицање достигнућа
 
-**Vidljivost:**
-Prebacite pojedinačne značke uključeno/isključeno za prikaz u komentarima dok ih zadržavate vidljivim na svom profilu.
+**Видљивост:**
+Укључите/исклучите појединачне значке за приказ у коментарима, док их задржавате видљивим на вашем профилу.
 
-### Ručno dodijeljene značke
+### Ручне значке
 
-Administratori zajednice mogu dodijeliti posebne ručne značke kako bi prepoznali:
-- Posebne doprinose
-- Pobjednike takmičenja
-- VIP članove
-- Prilagođena dostignuća
+Администратори заједнице могу доделити посебне ручне значке како би признали:
+- Посебне доприносе
+- Победнике такмичења
+- ВИП чланове
+- Прилагођена достигнућа
 
-Ove značke se pojavljuju zajedno sa automatski osvojenim značkama na vašem profilu.
+Ове значке се појављују заједно са аутоматски освојеним значкама на вашем профилу.
 
-### Za više informacija
+### За више информација
 
-Za potpune detalje o sistemu znački, uključujući sve tipove znački, kriterijume za osvajanje i administrativnu konfiguraciju, pogledajte sveobuhvatni [Vodič za značke](/guide-badges.html).
+За комплетне детаље о систему значки, укључујући све типове значки, критеријуме за освајање и административну конфигурацију, погледајте обухватни [Водич за значке](/guide-badges.html).

@@ -1,164 +1,164 @@
-Фид активности на корисничким профилима приказује историју коментара корисника, обавештења и учешће у заједници на свим сајтовима које покреће FastComments.
+The Activity Feed on User Profiles displays a user's comment history, notifications, and community participation across all FastComments-powered sites.
 
-### Шта је Фид активности?
+### Šta je Tok aktivnosti?
 
-Фид активности пружа хронолошки приказ:
-- Коментара које је корисник поставио
-- Одговора које је примио
-- Помена и интеракција
-- Активности у различитим заједницама
-- Реал-тајм ажурирања о корисничком ангажману
+Tok aktivnosti pruža hronološki pregled:
+- Komentara koje je korisnik objavio
+- Odgovora koje je primio
+- Pominjanja i interakcija
+- Aktivnosti u različitim zajednicama
+- Ažuriranja u realnom vremenu o angažmanu korisnika
 
-### Преглед активности
+### Pregled aktivnosti
 
-**Ваша активност:**
-Када гледате свој профил, видећете додатне картице:
-1. **Обавештења** - Упозорења о одговорима, поменама и интеракцијама
-2. **Недавна активност** - Ваша комплетна историја коментара на свим сајтовима
+**Vaša sopstvena aktivnost:**
+Kada gledate svoj profil, videćete dodatne kartice:
+1. **Obaveštenja** - Upozorenja o odgovorima, pominjanjima i interakcijama
+2. **Nedavna aktivnost** - Vaša kompletna istorija komentara na svim sajtovima
 
-**Активност других корисника:**
-Када гледате профил неког другог:
-1. **Недавна активност** - Њихова јавна историја коментара (ако није подешено као приватно)
+**Aktivnost drugih korisnika:**
+Kada gledate profil druge osobe:
+1. **Nedavna aktivnost** - Njihova javna istorija komentara (ako nije podešeno kao privatno)
 
-Картица активности показује где и када корисници учествују у оквиру FastComments мреже.
+Kartica aktivnosti prikazuje gde i kada korisnici učestvuju širom FastComments mreže.
 
-### Картица обавештења
+### Kartica Obaveštenja
 
-Ваша картица Обавештења приказује:
+Vaša kartica Obaveštenja prikazuje:
 
-**Шта ћете видети:**
-- Одговоре на ваше коментаре
-- Помене вашег корисничког имена
-- Обавештења о коментарима на профилу
-- Упозорења о директним порукама
-- Награде и значке
-- Модераторске акције на вашем садржају
+**Šta ćete videti:**
+- Odgovore na vaše komentare
+- Pominjanja vašeg korisničkog imena
+- Obaveštenja o komentarima na profilu
+- Upozorenja o direktnim porukama
+- Postignuća u vidu znački
+- Moderatorske akcije na vašem sadržaju
 
-**Функције обавештења:**
-- **Бројач непрочитаних** - Приказује колико непрочитаних обавештења имате
-- **Реал-тајм ажурирања** - Нова обавештења се појављују одмах преко WebSocket-а
-- **Кликабилни елементи** - Кликните било које обавештење да бисте отишли до релевантног коментара или конверзације
-- **Статус прочитано/непрочитано** - Визуелни индикатори за обавештења која сте видели
+**Mogućnosti obaveštenja:**
+- **Brojač nepročitanih** - Prikazuje koliko nepročitanih obaveštenja imate
+- **Ažuriranja u realnom vremenu** - Nova obaveštenja se pojavljuju odmah putem WebSocket-a
+- **Klikabilne stavke** - Kliknite bilo koje obaveštenje da biste skočili do relevantnog komentara ili konverzacije
+- **Status pročitano/nepročitano** - Vizuelni indikatori koji pokazuju koja obaveštenja ste videli
 
-**Управљање обавештењима:**
-- Обавештења се означавају као прочитана када их прегледате
-- Конфигуришите које типове обавештења примате у [Подешавања обавештења](https://fastcomments.com/auth/my-account/edit-notifications)
+**Upravljanje obaveštenjima:**
+- Obaveštenja se označavaju kao pročitana kada ih pregledate
+- Konfigurišite koje vrste obaveštenja primate u [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-За више детаља о управљању обавештењима, погледајте [Водич за обавештења](/guide-notifications.html).
+Za više detalja o upravljanju obaveštenjima, pogledajte [Notifications Guide](/guide-notifications.html).
 
-### Картица недавне активности
+### Kartica Nedavna aktivnost
 
-Картица Недавна активност приказује све коментаре које је корисник поставио у оквиру FastComments заједница.
+Kartica Nedavna aktivnost prikazuje sve komentare koje je korisnik objavio širom FastComments zajednica.
 
-**Шта се приказује:**
-- **Садржај коментара** - Цео текст сваког коментара
-- **Контекст** - На којој је чланку/страници коментар био
-- **Тајмстамп** - Када је коментар постављен
-- **Заједница** - На који сајт или домен коментар припада
-- **Ангажман** - Гласови, одговори и метрике интеракције
+**Šta se prikazuje:**
+- **Sadržaj komentara** - Cela tekstualna poruka svakog komentara
+- **Kontekst** - Na kojoj je članku/stranici komentar bio
+- **Vremenska oznaka** - Kada je komentar objavljen
+- **Zajednica** - Kom sajtu ili domenu komentar pripada
+- **Angažman** - Glasovi, odgovori i metrički podaci o interakcijama
 
-**Филтрирање активности:**
-На вашем профилу можете филтрирати активност да прикажете:
-- **Све активности** - Све коментаре које сте поставили
-- **Одговори мени** - Само коментаре који су одговори на ваше коментаре
+**Filtriranje aktivnosti:**
+Na vašem profilu možete filtrirati aktivnost da prikaže:
+- **Sva aktivnost** - Svaki komentar koji ste objavili
+- **Odgovori meni** - Samo komentare koji su odgovori na vaše komentare
 
-Ово олакшава фокусирање на конверзације у којима сте директно укључени.
+Ovo olakšava fokusiranje na razgovore u kojima ste direktno uključeni.
 
-### Учествовање у заједници
+### Učešće u zajednici
 
-Профил такође показује у којим заједницама је корисник активан:
+Profil takođe prikazuje u kojim zajednicama je korisnik aktivan:
 
-- **Листа заједница** - Сајтови/домене где је корисник коментарисао
-- **Расподела активности** - Колико корисник учествује у свакој заједници
-- **Линкови ка заједницама** - Кликабилни линкови за посету тим сајтовима
+- **Lista zajednica** - Sajtovi/domeni gde je korisnik komentarisao
+- **Raspodela aktivnosti** - Koliko korisnik učestvuje u svakoj zajednici
+- **Linkovi ka zajednicama** - Klikabilni linkovi za posetu tim sajtovima
 
-Ово помаже да разумете где је корисник највише ангажован и његова интересовања.
+Ovo pomaže da razumete gde je korisnik najviše angažovan i koja su mu interesovanja.
 
-### Статистика
+### Statistika
 
-Кориснички профили приказују кључну статистику:
+Korisnički profili prikazuju ključne statistike:
 
-**Карма:**
-- Резултат репутације базиран на лајковима и прихватању од стране заједнице
-- Повећава се када ваши коментари добију лајкове
-- Смањује се када коментари добију дизлајкове
-- Одражава укупно поимање ваших доприноса у заједници
+**Karma:**
+- Skor reputacije zasnovan na pozitivnim ocenama i prihvatanju u zajednici
+- Povećava se kada vaši komentari dobiju pozitivne ocene
+- Smanjuje se kada komentari dobiju negativne ocene
+- Održava opšti prikaz vrednovanja vaših doprinosa u zajednici
 
-**Број коментара:**
-- Укупан број коментара постављених на свим заједницама
-- Укључује и коментаре највишег нивоа и одговоре
-- Ажурира се у реалном времену док учествујете
+**Broj komentara:**
+- Ukupan broj komentara postavljenih širom svih zajednica
+- Uključuje i komentare na vrhu i odgovore
+- Ažurira se u realnom vremenu dok učestvujete
 
-Ове статистике пружају брз преглед нивоа ангажмана корисника и његовог положаја у заједници.
+Ove statistike daju brz pregled nivoa angažmana korisnika i njegovog statusa u zajednici.
 
-### Контрола приватности
+### Kontrole privatnosti
 
-Корисници могу контролисати видљивост активности преко подешавања приватности:
+Korisnici mogu kontrolisati vidljivost aktivnosti kroz podešavanja privatnosti:
 
-**Учини профилну активност приватном:**
-Када је омогућено:
-- Само ви можете видети вашу картицу Недавна активност
-- Други не могу видети вашу историју коментара на вашем профилу
-- Ваши јавни коментари су и даље видљиви у њиховом оригиналном контексту (на чланцима)
-- Само агрегатни приказ активности на вашем профилу је скривен
+**Učini aktivnost profila privatnom:**
+Kada je omogućeno:
+- Samo vi možete videti vašu karticu Nedavna aktivnost
+- Drugi ne mogu videti vašu istoriju komentara na vašem profilu
+- Vaši javni komentari su i dalje vidljivi u njihovom originalnom kontekstu (na člancima)
+- Samo agregirani prikaz aktivnosti na vašem profilu je sakriven
 
-За детаље, погледајте [Подешавања приватности](/guide-user-profiles.html#privacy-settings).
+Za detalje, pogledajte [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
-### Реал-тајм ажурирања
+### Ažuriranja u realnom vremenu
 
-Фид активности користи WebSocket технологију за реал-тајм ажурирања:
+Tok aktivnosti koristi WebSocket tehnologiju za ažuriranja u realnom vremenu:
 
-- **Инстант обавештења** - Нови одговори и помене се појављују одмах
-- **Лајв ажурирања активности** - Недавни коментари се додају док их постављате
-- **Онлајн статус** - Видите када су партнери у конверзацији активни
-- **Нема потребе за рефрешовањем странице** - Све се аутоматски ажурира
+- **Instant obaveštenja** - Novi odgovori i pominjanja se pojavljuju odmah
+- **Ažuriranja aktivnosti uživo** - Nedavni komentari se dodaju dok ih objavljujete
+- **Status online** - Vidite kada su partneri u konverzaciji aktivni
+- **Nije potrebna osvežavanja stranice** - Sve se automatski ažurira
 
-### Активност преко заједница
+### Aktivnost preko zajednica
 
-Једна од снажних особина FastComments корисничких профила је преглед активности у оквиру свих заједница:
+Jedna od moćnih funkcija FastComments korisničkih profila je mogućnost pregleda aktivnosti kroz sve zajednice:
 
-**Предности:**
-- Откријте где су корисници стручни или активни
-- Пронађите кориснике са заједничким интересовањима на различитим сајтовима
-- Градите репутацију у оквиру целе FastComments мреже
-- Видите обим ангажмана у заједници
+**Prednosti:**
+- Otkrijte gde su korisnici stručni ili aktivni
+- Pronađite korisnike sa zajedničkim interesovanjima na različitim sajtovima
+- Gradite reputaciju preko cele FastComments mreže
+- Vidite širinu angažmana u zajednici
 
-**Примери:**
-- Корисник активан на техничким форумима и сајтовима за гејминг
-- Неко ко доприноси и новинским и кулинарским блоговима
-- Чланови заједнице који учествују у повезаним темама на више места
+**Primeri:**
+- Korisnik aktivan na forumima o tehnologiji i sajtovima o igrama
+- Neko ko doprinosi i novinskim i receptnim blogovima
+- Članovi zajednice koji učestvuju u srodnim temama
 
-### Најбоље праксе
+### Najbolje prakse
 
-**За преглед активности:**
-- Погледајте корисникову активност да бисте разумели његову експертизу и интересовања
-- Погледајте учешће у заједницама да нађете заједничке теме
-- Прегледајте карму и број коментара за ниво ангажмана
+**Za pregled aktivnosti:**
+- Proverite nečiju aktivnost da biste razumeli njihovu stručnost i interesovanja
+- Pogledajte učešće u zajednicama da biste pronašli zajedničke teme
+- Pregledajte karmu i broj komentara za nivo angažmana
 
-**За управљање вашом активношћу:**
-- Подесите подешавања приватности у складу са вашим нивоом комфора
-- Укључујте се промишљено знајући да је ваша активност видљива (осим ако није подешена као приватна)
-- Користите филтре да се фокусирате на релевантне конверзације
-- Праћењем обавештења останите ангажовани у конверзацијама
+**Za upravljanje svojom aktivnošću:**
+- Podesite privatnost u skladu sa svojim osećajem bezbednosti
+- Uključujte se promišljeno znajući da je vaša aktivnost vidljiva (osim ako nije privatna)
+- Koristite filtriranje da se fokusirate na relevantne razgovore
+- Pratite obaveštenja da biste ostali uključeni u konverzacije
 
-**За изградњу заједнице:**
-- Препознавајте активне учеснике преко њиховог фида активности
-- Повежите се са корисницима који деле интересовања у различитим заједницама
-- Користите историју активности да идентификујете вредне чланове заједнице
+**Za izgradnju zajednice:**
+- Prepoznajte aktivne učesnike kroz njihov tok aktivnosti
+- Povežite se sa korisnicima koji dele interesovanja preko zajednica
+- Koristite istoriju aktivnosti da identifikujete vredne članove zajednice
 
-### Решавање проблема
+### Otklanjanje problema
 
-**Активност се не приказује:**
-- Проверите да ли је корисник омогућио "Учини профилну активност приватном"
-- Уверите се да сте пријављени ако је потребно
-- Рефрешујте страницу ако активност делује застарело
+**Aktivnost se ne prikazuje:**
+- Proverite da li je korisnik omogućio "Učini aktivnost profila privatnom"
+- Uverite se da ste prijavljeni ako je potrebno
+- Osvežite stranicu ako aktivnost deluje zastarelo
 
-**Обавештења се не појављују:**
-- Проверите подешавања обавештења на вашем налогу
-- Уверите се да обавештења нису филтрирана од стране вашег провајдера е-поште
-- Потврдите WebSocket везу (проверите да ли има реал-тајм ажурирања)
+**Obaveštenja se ne pojavljuju:**
+- Proverite podešavanja obaveštenja na svom nalogu
+- Uverite se da obaveštenja nisu filtrirana od strane vašeg provajdera e-pošte
+- Proverite WebSocket konekciju (potražite ažuriranja u realnom vremenu)
 
-**Приказује се погрешна активност:**
-- Обришите кеш прегледача и освежите страницу
-- Одјавите се и поново пријавите
-- Пријавите све упорне проблеме подршци
+**Prikazuje se pogrešna aktivnost:**
+- Očistite keš pregledača i osvežite
+- Odjavite se i ponovo prijavite
+- Prijavite sve uporne probleme podršci

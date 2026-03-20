@@ -1,164 +1,164 @@
 The Activity Feed on User Profiles displays a user's comment history, notifications, and community participation across all FastComments-powered sites.
 
-### Czym jest kanał aktywności?
+### What is the Activity Feed?
 
-Kanał aktywności zapewnia chronologiczny widok:
-- Komentarzy zamieszczonych przez użytkownika
-- Otrzymanych odpowiedzi
-- Wzmiankowań i interakcji
-- Aktywności w różnych społecznościach
-- Aktualizacji w czasie rzeczywistym dotyczących zaangażowania użytkownika
+The Activity Feed provides a chronological view of:
+- Comments posted by the user
+- Replies received
+- Mentions and interactions
+- Activity across different communities
+- Real-time updates on user engagement
 
-### Wyświetlanie aktywności
+### Viewing Activity
 
-**Twoja własna aktywność:**
-Podglądając swój profil, zobaczysz dodatkowe zakładki:
-1. **Powiadomienia** - Alerty o odpowiedziach, wzmiankach i interakcjach
-2. **Najnowsza aktywność** - Twoja pełna historia komentarzy na wszystkich stronach
+**Your Own Activity:**
+When viewing your profile, you'll see additional tabs:
+1. **Notifications** - Alerts about replies, mentions, and interactions
+2. **Recent Activity** - Your complete comment history across all sites
 
-**Aktywność innych użytkowników:**
-Podglądając profil innej osoby:
-1. **Najnowsza aktywność** - Ich publiczna historia komentarzy (jeśli nie ustawiono prywatności)
+**Other Users' Activity:**
+When viewing someone else's profile:
+1. **Recent Activity** - Their public comment history (if not set to private)
 
-Zakładka aktywności pokazuje, gdzie i kiedy użytkownicy uczestniczą w sieci FastComments.
+The activity tab shows where and when users are participating across the FastComments network.
 
-### Zakładka Powiadomienia
+### Notifications Tab
 
-Zakładka Powiadomienia wyświetla:
+Your Notifications tab displays:
 
-**Co zobaczysz:**
-- Odpowiedzi na twoje komentarze
-- Wzmianki twojej nazwy użytkownika
-- Powiadomienia o komentarzach na profilu
-- Alerty o wiadomościach bezpośrednich
-- Osiągnięcia w postaci odznak
-- Działania moderacyjne dotyczące twoich treści
+**What You'll See:**
+- Replies to your comments
+- Mentions of your username
+- Profile comment notifications
+- Direct message alerts
+- Badge achievements
+- Moderation actions on your content
 
-**Funkcje powiadomień:**
-- **Licznik nieprzeczytanych** - Pokazuje, ile masz nieprzeczytanych powiadomień
-- **Aktualizacje w czasie rzeczywistym** - Nowe powiadomienia pojawiają się natychmiast przez WebSocket
-- **Elementy klikalne** - Kliknij dowolne powiadomienie, aby przejść do odpowiedniego komentarza lub rozmowy
-- **Status przeczytane/nieprzeczytane** - Wizualne wskaźniki, które powiadomienia widziałeś
+**Notification Features:**
+- **Unread counter** - Shows how many unread notifications you have
+- **Real-time updates** - New notifications appear instantly via WebSocket
+- **Clickable items** - Click any notification to jump to the relevant comment or conversation
+- **Read/unread status** - Visual indicators for which notifications you've seen
 
-**Zarządzanie powiadomieniami:**
-- Powiadomienia są oznaczane jako przeczytane, gdy je wyświetlisz
-- Skonfiguruj, jakie typy powiadomień otrzymujesz w [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
+**Managing Notifications:**
+- Notifications are marked as read when you view them
+- Configure what types of notifications you receive in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Po więcej informacji o zarządzaniu powiadomieniami zobacz [Notifications Guide](/guide-notifications.html).
+For more details on managing notifications, see the [Notifications Guide](/guide-notifications.html).
 
-### Zakładka Najnowsza aktywność
+### Recent Activity Tab
 
-Zakładka Najnowsza aktywność pokazuje wszystkie komentarze zamieszczone przez użytkownika w społecznościach FastComments.
+The Recent Activity tab shows all comments posted by the user across FastComments communities.
 
-**Co jest wyświetlane:**
-- **Treść komentarza** - Pełny tekst każdego komentarza
-- **Kontekst** - Na jakim artykule/stronie znajdował się komentarz
-- **Znacznik czasu** - Kiedy komentarz został zamieszczony
-- **Społeczność** - Do której strony lub domeny należy komentarz
-- **Zaangażowanie** - Głosy, odpowiedzi i metryki interakcji
+**What's Displayed:**
+- **Comment content** - The full text of each comment
+- **Context** - Which article/page the comment was on
+- **Timestamp** - When the comment was posted
+- **Community** - Which site or domain the comment belongs to
+- **Engagement** - Votes, replies, and interaction metrics
 
-**Filtrowanie aktywności:**
-Na swoim profilu możesz filtrować aktywność, aby pokazać:
-- **Cała aktywność** - Wszystkie komentarze, które zamieściłeś
-- **Odpowiedzi do mnie** - Tylko komentarze będące odpowiedziami na twoje komentarze
+**Activity Filtering:**
+On your own profile, you can filter activity to show:
+- **All Activity** - Every comment you've posted
+- **Replies to Me** - Only comments that are replies to your comments
 
-To ułatwia skupienie się na rozmowach, w których jesteś bezpośrednio zaangażowany.
+This makes it easy to focus on conversations where you're directly engaged.
 
-### Uczestnictwo w społecznościach
+### Community Participation
 
-Profil pokazuje również, w jakich społecznościach użytkownik jest aktywny:
+The profile also shows which communities the user is active in:
 
-- **Lista społeczności** - Strony/domeny, na których użytkownik komentował
-- **Rozkład aktywności** - Jak dużo użytkownik uczestniczy w każdej społeczności
-- **Linki do społeczności** - Klikalne linki prowadzące do tych stron
+- **Community List** - Sites/domains where the user has commented
+- **Activity Distribution** - How much the user participates in each community
+- **Community Links** - Clickable links to visit those sites
 
-To pomaga zrozumieć, gdzie użytkownik jest najbardziej zaangażowany i jakie ma zainteresowania.
+This helps you understand where a user is most engaged and their areas of interest.
 
-### Statystyki
+### Statistics
 
-Profile użytkowników wyświetlają kluczowe statystyki:
+User profiles display key statistics:
 
 **Karma:**
-- Wskaźnik reputacji oparty na polubieniach i odbiorze przez społeczność
-- Rosnący, gdy twoje komentarze otrzymują głosy pozytywne
-- Malejący, gdy komentarze otrzymują głosy negatywne
-- Odzwierciedla ogólne uznanie społeczności dla twoich wkładów
+- A reputation score based on upvotes and community reception
+- Increases when your comments receive upvotes
+- Decreases when comments receive downvotes
+- Reflects overall community appreciation of your contributions
 
-**Liczba komentarzy:**
-- Całkowita liczba komentarzy zamieszczonych we wszystkich społecznościach
-- Obejmuje zarówno komentarze najwyższego poziomu, jak i odpowiedzi
-- Aktualizowana w czasie rzeczywistym w miarę twojego udziału
+**Comment Count:**
+- Total number of comments posted across all communities
+- Includes both top-level comments and replies
+- Updated in real-time as you participate
 
-Te statystyki dają szybki przegląd poziomu zaangażowania użytkownika i jego pozycji w społeczności.
+These statistics give a quick overview of a user's engagement level and community standing.
 
-### Kontrola prywatności
+### Privacy Controls
 
-Użytkownicy mogą kontrolować widoczność aktywności za pomocą ustawień prywatności:
+Users can control activity visibility through privacy settings:
 
-**Ustawienie prywatności aktywności profilu:**
-Po włączeniu:
-- Tylko ty możesz zobaczyć swoją zakładkę Najnowsza aktywność
-- Inni nie mogą przeglądać twojej historii komentarzy na profilu
-- Twoje publiczne komentarze nadal są widoczne w ich oryginalnym kontekście (na artykułach)
-- Tylko zagregowany widok aktywności na twoim profilu jest ukryty
+**Make Profile Activity Private:**
+When enabled:
+- Only you can see your Recent Activity tab
+- Others cannot view your comment history on your profile
+- Your public comments are still visible in their original context (on articles)
+- Only the aggregated activity view on your profile is hidden
 
-Szczegóły znajdziesz w [Privacy Settings](/guide-user-profiles.html#privacy-settings).
+For details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
-### Aktualizacje w czasie rzeczywistym
+### Real-Time Updates
 
-Kanał aktywności korzysta z technologii WebSocket do aktualizacji w czasie rzeczywistym:
+The Activity Feed uses WebSocket technology for real-time updates:
 
-- **Natychmiastowe powiadomienia** - Nowe odpowiedzi i wzmianki pojawiają się od razu
-- **Żywe aktualizacje aktywności** - Najnowsze komentarze są dodawane w momencie ich publikacji
-- **Status online** - Zobacz, kiedy partnerzy rozmowy są aktywni
-- **Brak potrzeby odświeżania strony** - Wszystko aktualizuje się automatycznie
+- **Instant notifications** - New replies and mentions appear immediately
+- **Live activity updates** - Recent comments are added as you post
+- **Online status** - See when conversation partners are active
+- **No page refresh needed** - Everything updates automatically
 
-### Aktywność w różnych społecznościach
+### Activity Across Communities
 
-Jedną z mocnych cech profili użytkowników FastComments jest możliwość przeglądania aktywności we wszystkich społecznościach:
+One of the powerful features of FastComments User Profiles is seeing activity across all communities:
 
-**Korzyści:**
-- Odkryj, gdzie użytkownicy mają wiedzę lub są aktywni
-- Znajdź użytkowników o podobnych zainteresowaniach na różnych stronach
-- Buduj reputację w całej sieci FastComments
-- Zobacz zakres zaangażowania w społecznościach
+**Benefits:**
+- Discover where users are knowledgeable or active
+- Find users with shared interests across different sites
+- Build reputation across the entire FastComments network
+- See the breadth of community engagement
 
-**Przykłady:**
-- Użytkownik aktywny na forach technologicznych i stronach o grach
-- Osoba, która publikuje zarówno na stronach z wiadomościami, jak i na blogach kulinarnych
-- Członkowie społeczności uczestniczący w pokrewnych tematach
+**Examples:**
+- A user active in tech forums and gaming sites
+- Someone who contributes to both news and recipe blogs
+- Community members who participate across related topics
 
-### Najlepsze praktyki
+### Best Practices
 
-**Do przeglądania aktywności:**
-- Sprawdź aktywność użytkownika, aby zrozumieć jego ekspercką wiedzę i zainteresowania
-- Zwróć uwagę na uczestnictwo w społecznościach, aby znaleźć wspólne tematy
-- Przejrzyj karmę i liczbę komentarzy, aby ocenić poziom zaangażowania
+**For Viewing Activity:**
+- Check a user's activity to understand their expertise and interests
+- Look at community participation to find common ground
+- Review karma and comment count for engagement level
 
-**Do zarządzania własną aktywnością:**
-- Ustaw preferencje prywatności zgodnie z własnym komfortem
-- Angażuj się świadomie, wiedząc, że twoja aktywność jest widoczna (chyba że ustawisz prywatność)
-- Używaj filtrów, aby skupić się na istotnych rozmowach
-- Śledź powiadomienia, aby utrzymywać kontakt w rozmowach
+**For Managing Your Activity:**
+- Set privacy settings that match your comfort level
+- Engage thoughtfully knowing your activity is visible (unless set to private)
+- Use filtering to focus on relevant conversations
+- Keep track of notifications to stay engaged with your conversations
 
-**Dla budowania społeczności:**
-- Doceniaj aktywnych uczestników przez ich kanał aktywności
-- Nawiązuj kontakty z użytkownikami o podobnych zainteresowaniach w różnych społecznościach
-- Wykorzystaj historię aktywności do identyfikowania wartościowych członków społeczności
+**For Community Building:**
+- Recognize active participants through their activity feed
+- Connect with users who share interests across communities
+- Use activity history to identify valuable community members
 
-### Rozwiązywanie problemów
+### Troubleshooting
 
-**Aktywność się nie wyświetla:**
-- Sprawdź, czy użytkownik włączył ustawienie "Ustaw prywatność aktywności profilu"
-- Upewnij się, że jesteś zalogowany, jeśli jest to wymagane
-- Odśwież stronę, jeśli aktywność wydaje się nieaktualna
+**Activity Not Showing:**
+- Check if the user has enabled "Make Profile Activity Private"
+- Ensure you're logged in if required
+- Refresh the page if activity seems outdated
 
-**Powiadomienia się nie pojawiają:**
-- Sprawdź ustawienia powiadomień w swoim koncie
-- Upewnij się, że powiadomienia nie są filtrowane przez dostawcę poczty
-- Zweryfikuj połączenie WebSocket (poszukaj aktualizacji w czasie rzeczywistym)
+**Notifications Not Appearing:**
+- Check notification settings in your account
+- Ensure notifications aren't being filtered by your email provider
+- Verify WebSocket connection (look for real-time updates)
 
-**Wyświetlana jest błędna aktywność:**
-- Wyczyść pamięć podręczną przeglądarki i odśwież
-- Wyloguj się i zaloguj ponownie
-- Zgłoś wszelkie uporczywe problemy do wsparcia
+**Wrong Activity Displayed:**
+- Clear browser cache and refresh
+- Log out and back in
+- Report any persistent issues to support

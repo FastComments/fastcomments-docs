@@ -1,18 +1,18 @@
-V skrbniku Webhooks so gumbi `Send Test Payload` za vsako vrsto dogodka (Create, Update, Delete). Dogodka Create in Update pošljeta lažen objekt WebhookComment, medtem ko bo pri testiranju Delete poslano lažno telo zahteve z le ID-jem.
+V skrbniškem vmesniku Webhooks so gumbi `Send Test Payload` za vsako vrsto dogodka (Create, Update, Delete). Dogodki Create in Update pošljejo testni objekt WebhookComment, medtem ko bo pri testiranju Delete poslan testni telo zahteve, ki vsebuje le ID.
 
-## Preverjanje payloadov
+## Preverjanje obremenitev
 
-Ko testirate integracijo webhooka, preverite, da dohodne zahteve vsebujejo naslednje glave:
+Pri testiranju vaše webhook integracije preverite, ali dohodni zahtevki vsebujejo naslednje glave:
 
-1. **`token`** - Vaš API skrivni ključ
-2. **`X-FastComments-Timestamp`** - Unix časovni žig (sekunde)
+1. **`token`** - Vaša API skrivnost
+2. **`X-FastComments-Timestamp`** - Unix časovni žig (v sekundah)
 3. **`X-FastComments-Signature`** - HMAC-SHA256 podpis
 
-Uporabite preverjanje HMAC podpisa, da zagotovite pristnost payloadov.
+Uporabite preverjanje HMAC podpisa, da zagotovite pristnost podatkov.
 
 ## Orodja za testiranje
 
-Med razvojem lahko uporabite orodja, kot so [webhook.site](https://webhook.site) ali [ngrok](https://ngrok.com), za pregled dohodnih webhook payloadov.
+Med razvojem lahko za pregled vsebine dohodnih webhook zahtevkov uporabite orodja, kot so [webhook.site](https://webhook.site) ali [ngrok](https://ngrok.com).
 
 ## Vrste dogodkov
 
@@ -20,4 +20,4 @@ Med razvojem lahko uporabite orodja, kot so [webhook.site](https://webhook.site)
 - **Update Event**: Sproži se, ko je komentar urejen. Privzeta metoda: PUT
 - **Delete Event**: Sproži se, ko je komentar izbrisan. Privzeta metoda: DELETE
 
-Vsak dogodek vključuje celotne podatke komentarja v telesu zahteve (glejte [Strukture podatkov](/guide-webhooks.html#webhooks-structures) za format payloada).
+Vsak dogodek vključuje polne podatke komentarja v telesu zahtevka (glejte [Strukture podatkov](/guide-webhooks.html#webhooks-structures) za format podatkov).

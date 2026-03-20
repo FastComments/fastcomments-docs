@@ -1,12 +1,12 @@
-Abzeichen sind visuelle Auszeichnungen, die in Ihrem Benutzerprofil angezeigt werden und Ihre Beiträge und Aktivitäten in den FastComments-Communities anerkennen.
+Abzeichen sind visuelle Errungenschaften, die in Ihrem Benutzerprofil angezeigt werden und Ihre Beiträge und Aktivitäten in FastComments-Communities anerkennen.
 
 ### Was sind Abzeichen?
 
 Abzeichen sind verdiente Anerkennungen für verschiedene Aktivitäten wie:
-- Anzahl der geposteten Kommentare
+- Anzahl der veröffentlichten Kommentare
 - Erhaltene Upvotes
 - Erzeugte Antworten
-- Moderatorenaktionen
+- Moderationsaktionen
 - Zeit als Community-Mitglied
 - Besondere Leistungen
 
@@ -17,77 +17,77 @@ Jedes Abzeichen wird in Ihrem Profil angezeigt und kann optional neben Ihrem Nam
 Ihre verdienten Abzeichen erscheinen auf Ihrer Profilseite im Kopfbereich. Es gibt zwei Kategorien:
 
 1. **Verdiente Abzeichen** - Abzeichen, die Sie vollständig verdient und freigeschaltet haben
-2. **In Arbeit** - Abzeichen, an denen Sie noch arbeiten, mit Fortschrittsbalken, die zeigen, wie nah Sie dran sind
+2. **In Arbeit** - Abzeichen, an denen Sie arbeiten, mit Fortschrittsbalken, die zeigen, wie nah Sie dran sind
 
-### Anzeige von Abzeichen
+### Anzeige der Abzeichen
 
 Sie haben die volle Kontrolle darüber, wie Abzeichen angezeigt werden:
 
 **In Ihrem Profil:**
-Alle verdienten Abzeichen werden im Header Ihres Profils für andere sichtbar angezeigt.
+Alle verdienten Abzeichen werden im Kopfbereich Ihres Profils für andere sichtbar angezeigt.
 
-**Neben Ihren Kommentaren:**
-Sie können auswählen, welche Abzeichen neben Ihrem Namen erscheinen, wenn Sie kommentieren:
+**In Ihren Kommentaren:**
+Sie können auswählen, welche Abzeichen neben Ihrem Namen angezeigt werden, wenn Sie kommentieren:
 
-1. Rufen Sie Ihre Profilseite auf
-2. Klicken Sie auf "Abzeichen verwalten" oder öffnen Sie den Dialog zur Abzeichenverwaltung
-3. Wählen Sie aus, welche Abzeichen in Ihren Kommentaren angezeigt werden sollen
-4. Ordnen Sie Abzeichen per Drag & Drop neu, um die Anzeigepriorität festzulegen
+1. Besuchen Sie Ihre Profilseite
+2. Klicken Sie auf "Abzeichen verwalten" oder öffnen Sie den Abzeichenverwaltungsdialog
+3. Schalten Sie um, welche Abzeichen in Ihren Kommentaren angezeigt werden sollen
+4. Ordnen Sie Abzeichen neu per Ziehen, um die Anzeigepriorität festzulegen
 
-So können Sie Ihre bedeutendsten Leistungen präsentieren, ohne Ihre Kommentarsignatur zu überladen.
+So können Sie Ihre wichtigsten Leistungen zeigen, ohne Ihre Kommentarsignatur zu überladen.
 
 ### Abzeichentypen
 
-Abzeichen gibt es in verschiedenen Typen, basierend auf unterschiedlichen Leistungskategorien. Eine vollständige Übersicht aller verfügbaren Abzeichentypen und wie man sie erhält, finden Sie im [Abzeichen-Leitfaden](/guide-badges.html).
+Abzeichen gibt es in verschiedenen Typen, basierend auf unterschiedlichen Leistungskategorien. Eine vollständige Übersicht aller verfügbaren Abzeichentypen und wie man sie verdient, finden Sie im [Badge-Leitfaden](/guide-badges.html).
 
-Gängige Abzeichenkategorien umfassen:
+Häufige Abzeichenkategorien sind:
 
-- **Engagement-Abzeichen** - Basierend auf Kommentaranzahl, Antworten und Interaktionen
-- **Qualitäts-Abzeichen** - Basierend auf Upvotes und der Resonanz der Community
-- **Zeitbasierte Abzeichen** - Veteranenstatus, Aktivität in der Nacht
+- **Engagement-Abzeichen** - Basierend auf Kommentaranzahl, Antworten und Interaktion
+- **Qualitätsabzeichen** - Basierend auf Upvotes und Community-Aufnahme
+- **Zeitbasierte Abzeichen** - Veteranenstatus, nächtliche Aktivität
 - **Moderator-Abzeichen** - Anerkennung für Moderationsaktionen
-- **Spezielle Abzeichen** - Manuell vergebene oder communityspezifische Leistungen
+- **Spezialabzeichen** - Manuell verliehen oder community-spezifische Leistungen
 
 ### Community-spezifische Abzeichen
 
 Abzeichen können in verschiedenen FastComments-Communities verdient werden:
 
-- **Globale Abzeichen** - Über die gesamte Nutzung von FastComments verdient
-- **Community-Abzeichen** - Innerhalb bestimmter Sites/Tenants verdient
+- **Globale Abzeichen** - Auf der gesamten FastComments-Plattform verdient
+- **Community-Abzeichen** - Innerhalb bestimmter Seiten/Mandanten verdient
 
-Ihr Profil zeigt, welche Community jedes Abzeichen verliehen hat, damit Besucher Ihre Fachgebiete und Teilnahme besser verstehen.
+Ihr Profil zeigt, welche Community jedes Abzeichen verliehen hat, damit Besucher Ihre Fachgebiete und Beteiligung verstehen.
 
-### Fortschrittsverfolgung bei Abzeichen
+### Abzeichen-Fortschrittsverfolgung
 
 Für Abzeichen, die Sie noch nicht vollständig verdient haben, zeigt Ihr Profil:
 
-- **Fortschrittsbalken** - Visuelle Anzeige, wie nah Sie dran sind, das Abzeichen zu erhalten
+- **Fortschrittsbalken** - Visuelle Anzeige, wie nah Sie daran sind, das Abzeichen zu erhalten
 - **Anforderungen** - Was Sie tun müssen, um das Abzeichen freizuschalten
 - **Community-Kontext** - Mit welcher Community das Abzeichen verknüpft ist
 
-Dies motiviert zu weiterer Teilnahme und gibt Ihnen klare Ziele.
+Dies motiviert zur weiteren Teilnahme und gibt Ihnen klare Ziele.
 
-### Anpassung der Abzeichenanzeige
+### Anpassen der Abzeichenanzeige
 
 **Reihenfolge der Abzeichen:**
-Sie können Abzeichen neu anordnen, um zu steuern, welche zuerst angezeigt werden. Die von Ihnen festgelegte Reihenfolge bestimmt:
+Sie können die Reihenfolge der Abzeichen ändern, um zu steuern, welche zuerst angezeigt werden. Die von Ihnen festgelegte Reihenfolge bestimmt:
 - Priorität in der Profilanzeige
-- Welche Abzeichen in platzbegrenzten Situationen angezeigt werden
+- Welche Abzeichen in Situationen mit begrenztem Platz angezeigt werden
 - Persönliche Präferenz zur Hervorhebung von Leistungen
 
 **Sichtbarkeit:**
-Schalten Sie einzelne Abzeichen für die Anzeige in Kommentaren ein oder aus, während sie in Ihrem Profil weiterhin sichtbar bleiben.
+Schalten Sie einzelne Abzeichen ein/aus für die Anzeige in Kommentaren, während sie weiterhin in Ihrem Profil sichtbar bleiben.
 
 ### Manuelle Abzeichen
 
-Community-Administratoren können spezielle manuelle Abzeichen vergeben, um anzuerkennen:
+Community-Administratoren können spezielle manuelle Abzeichen vergeben, um zu würdigen:
 - Besondere Beiträge
-- Wettbewerbssieger
+- Gewinner von Wettbewerben
 - VIP-Mitglieder
-- Individuelle Leistungen
+- Benutzerdefinierte Erfolge
 
 Diese Abzeichen erscheinen neben automatisch verdienten Abzeichen in Ihrem Profil.
 
 ### Weitere Informationen
 
-Für vollständige Details zum Abzeichensystem, einschließlich aller Abzeichentypen, Vergabekriterien und administrativer Konfiguration, lesen Sie den umfassenden [Abzeichen-Leitfaden](/guide-badges.html).
+Für vollständige Informationen zum Abzeichensystem, einschließlich aller Abzeichentypen, Verdienstkriterien und administrativer Konfiguration, lesen Sie den umfassenden [Badge-Leitfaden](/guide-badges.html).

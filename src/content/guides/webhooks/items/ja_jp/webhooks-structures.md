@@ -1,119 +1,119 @@
-唯一ウェブフック経由で送信される構造は、以下の TypeScript で示された WebhookComment オブジェクトです。
+Webhookを介して送信される構造は、下記にTypeScriptで示した WebhookComment オブジェクトのみです。
 
 #### WebhookComment オブジェクトの構造
 
-##### "Create" イベントの構造
+##### "create" イベントの構造
 "create" イベントのリクエストボディは WebhookComment オブジェクトです。
 
-##### "Update" イベントの構造
+##### "update" イベントの構造
 "update" イベントのリクエストボディは WebhookComment オブジェクトです。
 
-##### "Delete" イベントの構造
+##### "delete" イベントの構造
 "delete" イベントのリクエストボディは WebhookComment オブジェクトです。
 
     2023年11月14日の変更
-    以前は "delete" イベントのリクエストボディにはコメントの id のみが含まれていました。現在は削除時のフルコメントが含まれます。
+    以前は "delete" イベントのリクエストボディはコメントIDのみを含んでいました。新しくなり、削除時の完全なコメントを含むようになりました。
 
 
 [inline-code-attrs-start title = 'WebhookComment オブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** コメントの id **/
+    /** コメントのID。 **/
     id: string
-    /** コメントスレッドを識別する id または URL。正規化済み。 **/
+    /** コメントスレッドを識別するIDまたはURL。正規化済み。 **/
     urlId: string
-    /** コメントが残された場所を指す URL。 **/
+    /** コメントが投稿された場所を指すURL。 **/
     url?: string
-    /** コメントを残したユーザーの id。SSO の場合はテナント id がプレフィックスとして付与されます。 **/
+    /** コメントを投稿したユーザーのID。SSOの場合、テナントIDがプレフィックスされる。 **/
     userId?: string
-    /** コメントを残したユーザーのメールアドレス。 **/
+    /** コメントを残したユーザーのメール。 **/
     commenterEmail?: string
-    /** コメントウィジェットに表示されるユーザー名。SSO の場合は displayName であることがあります。 **/
+    /** コメントウィジェットに表示されるユーザー名。SSOではdisplayNameになることがある。 **/
     commenterName: string
-    /** 生のコメントテキスト。 **/
+    /** 未加工のコメントテキスト。 **/
     comment: string
-    /** 解析後のコメントテキスト。 **/
+    /** パース後のコメントテキスト。 **/
     commentHTML: string
-    /** コメントの外部 id。 **/
+    /** 外部コメントID。 **/
     externalId?: string
-    /** 親コメントの id。 **/
+    /** 親コメントのID。 **/
     parentId?: string | null
-    /** コメントが残された UTC 日時。 **/
+    /** コメントが残されたUTC日時。 **/
     date: UTC_ISO_DateString
     /** 投票の合計カルマ（賛成 - 反対）。 **/
     votes: number
     votesUp: number
     votesDown: number
-    /** ユーザーがコメント時にログインしていた、またはコメントが検証されていた、あるいはコメント時にセッションが検証されていた場合は true。 **/
+    /** コメント投稿時にユーザーがログインしていた、またはコメントが認証済みである、あるいはセッションが検証されていた場合はtrue。 **/
     verified: boolean
     /** コメントが検証された日時。 **/
     verifiedDate?: number
     /** モデレーターがコメントを確認済みにしたかどうか。 **/
     reviewed: boolean
-    /** アバターの場所、または base64 エンコード。SSO で渡された値が base64 の場合のみ base64 になります。 **/
+    /** アバターの場所、またはbase64エンコード。SSOで渡された値がbase64だった場合のみbase64になる。 **/
     avatarSrc?: string
-    /** コメントが手動または自動でスパムとマークされたか？ **/
+    /** コメントが手動または自動でスパムとしてマークされたかどうか。 **/
     isSpam: boolean
-    /** コメントが自動的にスパムと判定されたか？ **/
+    /** コメントが自動的にスパムとマークされたかどうか。 **/
     aiDeterminedSpam: boolean
-    /** コメントに画像が含まれているか？ **/
+    /** コメント内に画像があるかどうか。 **/
     hasImages: boolean
-    /** 「最も関連性の高い」ソート方向でのコメントのページ番号。 **/
+    /** 「Most Relevant」ソート順でのコメントのページ番号。 **/
     pageNumber: number
-    /** 「古い順」ソート方向でのコメントのページ番号。 **/
+    /** 「Oldest First」ソート順でのコメントのページ番号。 **/
     pageNumberOF: number
-    /** 「新しい順」ソート方向でのコメントのページ番号。 **/
+    /** 「Newest First」ソート順でのコメントのページ番号。 **/
     pageNumberNF: number
-    /** コメントが自動的または手動で承認されたか？ **/
+    /** コメントが自動的にまたは手動で承認されたかどうか。 **/
     approved: boolean
-    /** コメント作成時のユーザーのロケールコード（形式: en_us）。 **/
+    /** コメントが書かれたときのユーザーのロケールコード（形式: en_us）。 **/
     locale: string
-    /** コメント内で書かれ、正常に解析された @mentions。 **/
+    /** コメント内で書かれ、正常にパースされた@mentions。 **/
     mentions?: CommentUserMention[]
-    /** コメントの元のドメイン。 **/
+    /** コメントが投稿されたドメイン。 **/
     domain?: string
-    /** このコメントに関連付けられたモデレーショングループの id のオプションリスト。 **/
+    /** このコメントに関連付けられたモデレーショングループIDの任意のリスト。 **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-ユーザーがコメント内でタグ付けされた場合、その情報は `mentions` というリストに格納されます。そのリスト内の各オブジェクトは以下の構造を持ちます。
+ユーザーがコメント内でタグ付けされると、その情報は `mentions` というリストに保存されます。そのリスト内の各オブジェクトは次の構造を持ちます。
 
 [inline-code-attrs-start title = 'Webhook メンションオブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** ユーザー id。SSO ユーザーの場合、テナント id がプレフィックスとして付与されます。 **/
+    /** ユーザーID。SSOユーザーの場合、テナントIDがプレフィックスされる。 **/
     id: string
-    /** 最終的な @mention タグのテキスト（@ 記号を含む）。 **/
+    /** 最終的な@mentionタグのテキスト（@記号を含む）。 **/
     tag: string
-    /** 元の @mention タグのテキスト（@ 記号を含む）。 **/
+    /** 元の@mentionタグのテキスト（@記号を含む）。 **/
     rawTag: string
-    /** タグ付けされたユーザーの種類。user = FastComments.com アカウント、sso = SSOUser。 **/
+    /** タグ付けされたユーザーのタイプ。user = FastComments.comアカウント、sso = SSOUser。 **/
     type: 'user'|'sso'
-    /** ユーザーが通知をオプトアウトしている場合でも、これは true に設定されます。 **/
+    /** ユーザーが通知をオプトアウトしても、これはtrueのままになる。 **/
     sent: boolean
 }
 [inline-code-end]
 
 #### HTTP メソッド
 
-管理パネルで各ウェブフックイベントタイプの HTTP メソッドを設定できます:
+管理パネルで各WebhookイベントタイプのHTTPメソッドを設定できます：
 
-- **Create Event**: POST または PUT (デフォルト: PUT)
-- **Update Event**: POST または PUT (デフォルト: PUT)
-- **Delete Event**: DELETE、POST、または PUT (デフォルト: DELETE)
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-すべてのリクエストが ID を含むため、Create および Update 操作はデフォルトで冪等（PUT）です。同じ Create または Update リクエストを繰り返しても、あなたの側でオブジェクトが重複して作成されることはないはずです。
+すべてのリクエストがIDを含むため、CreateおよびUpdate操作はデフォルトで冪等（PUT）です。同じCreateまたはUpdateリクエストを繰り返しても、あなたの側で重複したオブジェクトが作成されるべきではありません。
 
 #### リクエストヘッダー
 
-各ウェブフックリクエストには次のヘッダーが含まれます:
+各Webhookリクエストには以下のヘッダーが含まれます：
 
-| ヘッダー | 説明 |
+| Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | あなたの API シークレット |
-| `X-FastComments-Timestamp` | リクエストが署名された Unix タイムスタンプ（秒） |
-| `X-FastComments-Signature` | HMAC-SHA256 署名（`sha256=<hex>`） |
+| `token` | あなたのAPIシークレット |
+| `X-FastComments-Timestamp` | リクエストが署名された時刻のUnixタイムスタンプ（秒） |
+| `X-FastComments-Signature` | HMAC-SHA256署名 (`sha256=<hex>`) |
 
-詳細な HMAC 署名の検証方法は [セキュリティと API トークン](/guide-webhooks.html#webhooks-api-tokens) を参照してください。
+HMAC署名の検証に関する情報は [セキュリティとAPIトークン](/guide-webhooks.html#webhooks-api-tokens) を参照してください。

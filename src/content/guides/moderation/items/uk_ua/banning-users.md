@@ -1,23 +1,23 @@
 Існує два способи заборонити користувачам коментувати на вашому сайті за допомогою FastComments.
 
-Перший — якщо ви вже знаєте їхню електронну адресу, ви можете ввести її на <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">сторінці заблокованих користувачів</a>.
+Перший — якщо ви вже знаєте їхню електронну адресу, ви можете ввести її на сторінці <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">забанованих користувачів</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='Сторінка забанованих користувачів' app-screenshot-end]
 
-Ця сторінка доступна через Moderate Comments -> Banned Users
+До цієї сторінки можна потрапити через Модерація коментарів -> Заблоковані користувачі
 
-Коли ми йдемо блокувати користувача, ми можемо вибрати тип, або Permanent, або Permanent Shadow Ban:
+Коли ми збираємося забанити користувача, ми можемо обрати тип, або Постійний, або Постійний прихований бан:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Забанування користувача' app-screenshot-end]
 
-Другий спосіб заблокувати користувача — натиснути кнопку бану, яка розміщена біля кожного коментаря на сторінці Comment Moderation.
+Другий спосіб забанити користувача — натиснути кнопку бану, яка розміщена поруч із кожним коментарем на сторінці Модерації коментарів.
 
-Коли ми натискаємо кнопку бану, вам буде показано кілька опцій, де можна вказати тип і тривалість бану.
+Коли ми натискаємо кнопку бану, з'являться опції, де можна вказати тип бану та тривалість.
 
-### Shadow Bans
+### Приховані бани
 
-Тіньовий бан — це тип блокування, який створює враження, що коментар або голос користувача було успішно збережено, тоді як насправді це не так. Це може бути доцільним у певних ситуаціях.
+Прихований бан — це тип блокування, який створює враження, що коментар або голос користувача було успішно збережено, тоді як фактично цього не сталося. Це може бути бажаним у певних ситуаціях.
 
-### Banning Via IP Address
+### Блокування за IP-адресою
 
-Якщо tenant не бажає відмовитися від цього, FastComments підтримує блокування за IP шляхом збереження хешованої версії IP-адреси коментатора.
+Якщо орендар (tenant) не бажає відмовлятися, FastComments підтримує блокування за IP шляхом збереження хешованої версії IP-адреси коментатора.

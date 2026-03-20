@@ -1,122 +1,120 @@
 המבנה היחיד שנשלח דרך webhooks הוא האובייקט WebhookComment, המתואר ב-TypeScript למטה.
 
-#### מבנה ה-WebhookComment
+#### מבנה אובייקט WebhookComment
 
 ##### מבנה האירוע "create"
-גוף הבקשה של אירוע ה-"create" הוא אובייקט WebhookComment.
+גוף הבקשה של אירוע "create" הוא אובייקט WebhookComment.
 
 ##### מבנה האירוע "update"
-גוף הבקשה של אירוע ה-"update" הוא אובייקט WebhookComment.
+גוף הבקשה של אירוע "update" הוא אובייקט WebhookComment.
 
 ##### מבנה האירוע "delete"
-גוף הבקשה של אירוע ה-"delete" הוא אובייקט WebhookComment.
+גוף הבקשה של אירוע "delete" הוא אובייקט WebhookComment.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    שינוי מתאריך 14 בנובמבר 2023
+    בעבר גוף הבקשה של אירוע "delete" הכיל רק את מזהה ההערה. כעת הוא מכיל את ההערה המלאה בזמן המחיקה.
 
 
 [inline-code-attrs-start title = 'אובייקט WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** ה-id של התגובה. **/
+    /** המזהה של ההערה. **/
     id: string
-    /** ה-id או ה-URL שמזהה את שרשור התגובות. מנורמל. **/
+    /** המזהה או ה-URL שמזהה את שרשור ההערות. מנורמל. **/
     urlId: string
-    /** ה-URL המצביע היכן הושארה התגובה. **/
+    /** ה-URL שמצביע על המקום שבו הושארה ההערה. **/
     url?: string
-    /** ה-id של המשתמש שהשאיר את התגובה. אם SSO, יהיה עם קידומת מזהה ה-tenant. **/
+    /** המזהה של המשתמש שהשאיר את ההערה. אם SSO, מקדים אותו ב-tenant id. **/
     userId?: string
-    /** הדוא"ל של המשתמש שהשאיר את התגובה. **/
+    /** הדוא"ל של המשתמש שהשאיר את ההערה. **/
     commenterEmail?: string
-    /** השם של המשתמש שמופיע בווידג'ט התגובות. ב-SSO, יכול להיות displayName. **/
+    /** השם של המשתמש שמוצג בווידג'ט ההערות. עם SSO, יכול להיות displayName. **/
     commenterName: string
-    /** טקסט התגובה הגולמי. **/
+    /** הטקסט הגולמי של ההערה. **/
     comment: string
-    /** טקסט התגובה לאחר עיבוד. **/
+    /** הטקסט של ההערה לאחר ניתוח. **/
     commentHTML: string
-    /** id חיצוני של התגובה. **/
+    /** מזהה חיצוני של ההערה. **/
     externalId?: string
-    /** ה-id של תגובת האב. **/
+    /** המזהה של ההערה האב. **/
     parentId?: string | null
-    /** תאריך UTC שבו הושארה התגובה. **/
+    /** התאריך ב-UTC כאשר הושארה ההערה. **/
     date: UTC_ISO_DateString
-    /** קארמה משולבת (up - down) של ההצבעות. **/
+    /** הקארמה המשולבת (up - down) של ההצבעות. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** true אם המשתמש היה מחובר כשהגיב, או אם אימת את התגובה, או אם אימת את הסשן שלו בעת השארת התגובה. **/
+    /** true אם המשתמש היה מחובר כשפרסם את ההערה, או אם אימת את ההערה, או אם אימת את המפגש שלו כשההערה הושארה. **/
     verified: boolean
-    /** התאריך שבו התגובה אומתה. **/
+    /** התאריך בו ההערה אומתה. **/
     verifiedDate?: number
-    /** אם מודרטור סמן את התגובה כנבדקה. **/
+    /** אם ממדרטור סומנה ההערה כ"נבדקה". **/
     reviewed: boolean
-    /** המיקום, או קידוד base64, של האוואטר. יהיה base64 רק אם זו הייתה הערך שנשלח ב-SSO. **/
+    /** המיקום, או הקידוד base64, של האווטאר. יהיה base64 רק אם זה הערך שנשלח עם SSO. **/
     avatarSrc?: string
-    /** האם התגובה סומנה כספאם ידנית או אוטומטית? **/
+    /** האם ההערה סומנה כספאם באופן ידני או אוטומטי? **/
     isSpam: boolean
-    /** האם התגובה סומנה כספאם באופן אוטומטי? **/
+    /** האם ההערה סומנה כספאם באופן אוטומטי? **/
     aiDeterminedSpam: boolean
-    /** האם יש תמונות בתגובה? **/
+    /** האם יש תמונות בהערה? **/
     hasImages: boolean
-    /** מספר העמוד שבו נמצאת התגובה עבור כיוון המיון "Most Relevant". **/
+    /** מספר העמוד שבו נמצאת ההערה עבור כיוון המיון "הכי רלוונטי". **/
     pageNumber: number
-    /** מספר העמוד שבו נמצאת התגובה עבור כיוון המיון "Oldest First". **/
+    /** מספר העמוד שבו נמצאת ההערה עבור כיוון המיון "הישנים ביותר תחילה". **/
     pageNumberOF: number
-    /** מספר העמוד שבו נמצאת התגובה עבור כיוון המיון "Newest First". **/
+    /** מספר העמוד שבו נמצאת ההערה עבור כיוון המיון "החדשים ביותר תחילה". **/
     pageNumberNF: number
-    /** האם התגובה אושרה אוטומטית או ידנית? **/
+    /** האם ההערה אושרה באופן אוטומטי או ידני? **/
     approved: boolean
-    /** קוד השפה/אזור (פורמט: en_us) של המשתמש כאשר נכתבה התגובה. **/
+    /** קוד השפה/לוקל (פורמט: en_us) של המשתמש כאשר נכתבה ההערה. **/
     locale: string
-    /** ה-@mentions שנכתבו בתגובה ונותחו בהצלחה. **/
+    /** ה-@mentions שנכתבו בהערה ונותחו בהצלחה. **/
     mentions?: CommentUserMention[]
-    /** הדומיין שממנו הגיעה התגובה. **/
+    /** הדומיין שממנו ההערה. **/
     domain?: string
-    /** רשימה אופציונלית של מזהי קבוצות המודרציה המשויכים לתגובה זו. **/
+    /** רשימה אופציונלית של מזהי קבוצות המודרציה המשויכים להערה זו. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+כאשר משתמשים מתוייגים בהערה, המידע מאוחסן ברשימה שנקראת `mentions`. כל אובייקט ברשימה זו
+יש את המבנה הבא.
 
-[inline-code-attrs-start title = 'אובייקט המאזכרים של Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט הזכרת משתמשים של Webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** ה-id של המשתמש. עבור משתמשי SSO, יהיה עם קידומת מזהה ה-tenant שלכם. **/
+    /** מזהה המשתמש. עבור משתמשי SSO, יהיה מקודם ב-tenant id שלכם. **/
     id: string
-    /** הטקסט הסופי של תג ה-@, כולל סימן ה-@. **/
+    /** הטקסט הסופי של תגית ה-@mention, כולל סמל ה-@. **/
     tag: string
-    /** הטקסט המקורי של תג ה-@, כולל סימן ה-@. **/
+    /** הטקסט המקורי של תגית ה-@mention, כולל סמל ה-@. **/
     rawTag: string
-    /** סוג המשתמש שסומן. user = חשבון FastComments.com. sso = SSOUser. **/
+    /** איזה סוג משתמש זוהה בתג. user = חשבון FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** אם המשתמש בחר לא לקבל התראות, ערך זה עדיין יוגדר כ-true. **/
+    /** אם המשתמש בחר שלא לקבל התראות, זה עדיין יוגדר כ-true. **/
     sent: boolean
 }
 [inline-code-end]
 
 #### שיטות HTTP
 
-ניתן להגדיר את שיטת ה-HTTP עבור כל סוג אירוע webhook בלוח הניהול:
+אתה יכול להגדיר את שיטת ה-HTTP לכל סוג אירוע webhook בלוח הניהול:
 
-- **אירוע Create**: POST או PUT (ברירת מחדל: PUT)
-- **אירוע Update**: POST או PUT (ברירת מחדל: PUT)
-- **אירוע Delete**: DELETE, POST, או PUT (ברירת מחדל: DELETE)
+- **Create Event**: POST או PUT (ברירת מחדל: PUT)
+- **Update Event**: POST או PUT (ברירת מחדל: PUT)
+- **Delete Event**: DELETE, POST, או PUT (ברירת מחדל: DELETE)
 
-מאחר שכל הבקשות מכילות מזהה, פעולות Create ו-Update הן אידמפוטנטיות כברירת מחדל (PUT). חזרה על אותה בקשת Create או Update לא אמורה ליצור אובייקטים כפולים בצד שלכם.
+מכיוון שכל הבקשות מכילות מזהה, פעולות Create ו-Update הן אידמופטנטיות כברירת מחדל (PUT). חזרה על אותה בקשת Create או Update לא אמורה ליצור עצמים כפולים אצלכם.
 
-#### כותרות הבקשה
+#### כותרות בקשה
 
 כל בקשת webhook כוללת את הכותרות הבאות:
 
-| כותרת | תיאור |
+| Header | תיאור |
 |--------|-------------|
 | `Content-Type` | `application/json` |
 | `token` | סוד ה-API שלך |
-| `X-FastComments-Timestamp` | חותמת זמן Unix (בשניות) כאשר הבקשה נחתמה |
+| `X-FastComments-Timestamp` | חותמת זמן של Unix (שניות) כאשר הבקשה נחתמה |
 | `X-FastComments-Signature` | חתימת HMAC-SHA256 (`sha256=<hex>`) |
 
-ראה [אבטחה ומפתחות API](/guide-webhooks.html#webhooks-api-tokens) למידע על אימות חתימת HMAC.
-
----
+ראו [אבטחה וטוקנים של API](/guide-webhooks.html#webhooks-api-tokens) למידע על אימות חתימת HMAC.

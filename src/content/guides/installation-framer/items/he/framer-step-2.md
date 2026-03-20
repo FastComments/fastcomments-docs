@@ -1,7 +1,7 @@
 ---
-Now, בואו נוסיף בלוק `Embed`.
+עכשיו, נוסיף בלוק `Embed`.
 
-עבור אל `Insert` בפינה השמאלית עליונה:
+גש ל-`Insert` בפינה השמאלית העליונה:
 
 <div class="screenshot white-bg">
     <div class="title">לחץ על Insert</div>
@@ -10,34 +10,34 @@ Now, בואו נוסיף בלוק `Embed`.
 
 לאחר מכן גלול את סרגל הצד השמאלי כלפי מטה והעבר את העכבר מעל `Utility`.
 
-בשלב הבא תרצה *ללחוץ ולגרור* את הבלוק `Utility` לסוף הבלוג שלך.
+לאחר מכן תרצה *ללחוץ ולגרור* את בלוק ה-`Embed` לסוף הבלוג שלך.
 
-חשוב *ללחוץ ולגרור* כפי שמוצג, ולא רק ללחוץ. אם תלחץ רק, Framer ידביק אותו מחוץ לבלוג שלך ותצטרך לגרור אותו מאוחר יותר.
+חשוב *ללחוץ ולגרור* כפי שמוצג, ולא סתם ללחוץ עליו. אם תקליק רק עליו, Framer יכניס אותו מחוץ לבלוג שלך ותצטרך לגרור אותו מאוחר יותר.
 
 <div class="screenshot white-bg">
-    <div class="title">אתר את ה-Embed Widget</div>
+    <div class="title">Locate Embed Widget</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Locate Embed Widget" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">גרור ושחרר את ה-Embed Widget</div>
+    <div class="title">Drag and Drop Embed Widget</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Drag and Drop Embed Widget" />
 </div>
 
-עכשיו יהיה לך וידג'ט ריק מסוג `Embed`, וכאשר תבחר אותו תקבל סרגל צד מימין. תוכל להרחיב את סרגל הצד, ותראה משהו כזה:
+עכשיו יהיה לך ווידג'ט Embed ריק, וכאשר תבחר אותו תקבל סרגל צד בצד ימין. ניתן להרחיב את סרגל הצד, ותראה משהו כזה:
 
 <div class="screenshot white-bg">
-    <div class="title">פתח הגדרות ה-Embed</div>
+    <div class="title">Open Embed Settings</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Open Embed Settings" />
 </div>
 
-עכשיו נשנה את סוג הווידג'ט `Embed` ל־`HTML`:
+עכשיו נשנה את סוג הווידג'ט ה-`Embed` ל-`HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">הגדר כווידג'ט HTML</div>
+    <div class="title">Set as HTML Widget</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Set as HTML Widget" />
 </div>
 
-כעת אתה מוכן לקטע הקוד של FastComments Framer בצעד הבא.
+עכשיו אתה מוכן לקטע הקוד של FastComments עבור Framer בשלב הבא.
 
 ---

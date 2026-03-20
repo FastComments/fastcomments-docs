@@ -1,30 +1,30 @@
-Jedina struktura koja se šalje putem webhookova je objekt WebhookComment, prikazan u TypeScriptu u nastavku.
+Jedina struktura poslana putem webhookova je objekt WebhookComment, prikazan u TypeScriptu u nastavku.
 
 #### Struktura objekta WebhookComment
 
-##### Struktura događaja "create"
+##### Struktura događaja "Create"
 Tijelo zahtjeva za događaj "create" je objekt WebhookComment.
 
-##### Struktura događaja "update"
+##### Struktura događaja "Update"
 Tijelo zahtjeva za događaj "update" je objekt WebhookComment.
 
-##### Struktura događaja "delete"
+##### Struktura događaja "Delete"
 Tijelo zahtjeva za događaj "delete" je objekt WebhookComment.
 
     Promjena od 14. studenog 2023.
-    Ranije je tijelo zahtjeva za događaj "delete" sadržavalo samo id komentara. Sada sadrži puni komentar u trenutku brisanja.
+    Prethodno je tijelo zahtjeva za događaj "delete" sadržavalo samo id komentara. Sada sadrži cijeli komentar u trenutku brisanja.
 
 
 [inline-code-attrs-start title = 'Objekt WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** ID komentara. **/
+    /** Id komentara. **/
     id: string
     /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** URL koji upućuje na mjesto gdje je komentar ostavljen. **/
+    /** URL koji pokazuje gdje je komentar ostavljen. **/
     url?: string
-    /** ID korisnika koji je ostavio komentar. Ako je SSO, prefiksan s tenant id. **/
+    /** Id korisnika koji je ostavio komentar. Ako je SSO, prefiksan s tenant id. **/
     userId?: string
     /** Email korisnika koji je ostavio komentar. **/
     commenterEmail?: string
@@ -34,23 +34,23 @@ interface WebhookComment {
     comment: string
     /** Tekst komentara nakon parsiranja. **/
     commentHTML: string
-    /** Vanjski ID komentara. **/
+    /** Vanjski id komentara. **/
     externalId?: string
-    /** ID roditeljskog komentara. **/
+    /** Id roditeljskog komentara. **/
     parentId?: string | null
     /** UTC datum kada je komentar ostavljen. **/
     date: UTC_ISO_DateString
-    /** Kombinirani karma (za - protiv) glasova. **/
+    /** Kombinirani karma (up - down) glasova. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True ako je korisnik bio prijavljen kad je komentirao, ili su potvrdili komentar, ili su potvrdili svoju sesiju kada je komentar ostavljen. **/
+    /** True ako je korisnik bio prijavljen kad je komentirao, ili je verificirao komentar, ili je verificirao svoju sesiju kad je komentar ostavljen. **/
     verified: boolean
-    /** Datum kada je komentar potvrđen. **/
+    /** Datum kada je komentar verificiran. **/
     verifiedDate?: number
     /** Ako je moderator označio komentar kao pregledan. **/
     reviewed: boolean
-    /** Lokacija ili base64 enkodiranje avatara. Bit će base64 samo ako je ta vrijednost proslijeđena s SSO. **/
+    /** Lokacija ili base64 kodiranje avatara. Bit će base64 samo ako je ta vrijednost poslana s SSO. **/
     avatarSrc?: string
     /** Je li komentar ručno ili automatski označen kao spam? **/
     isSpam: boolean
@@ -58,21 +58,21 @@ interface WebhookComment {
     aiDeterminedSpam: boolean
     /** Ima li u komentaru slika? **/
     hasImages: boolean
-    /** Broj stranice na kojoj se komentar nalazi za smjer sortiranja "Most Relevant". **/
+    /** Broj stranice na kojoj se komentar nalazi za sortiranje "Most Relevant". **/
     pageNumber: number
-    /** Broj stranice na kojoj se komentar nalazi za smjer sortiranja "Oldest First". **/
+    /** Broj stranice za sortiranje "Oldest First". **/
     pageNumberOF: number
-    /** Broj stranice na kojoj se komentar nalazi za smjer sortiranja "Newest First". **/
+    /** Broj stranice za sortiranje "Newest First". **/
     pageNumberNF: number
     /** Je li komentar odobren automatski ili ručno? **/
     approved: boolean
-    /** Kôd lokalizacije (format: en_us) korisnika kada je komentar napisan. **/
+    /** Kod lokalizacije (format: en_us) korisnika kad je komentar pisan. **/
     locale: string
-    /** @mentioni navedeni u komentaru koji su uspješno parsirani. **/
+    /** @mentions napisani u komentaru koji su uspješno parsirani. **/
     mentions?: CommentUserMention[]
-    /** Domen odakle je komentar. **/
+    /** Domen od kojeg komentar potječe. **/
     domain?: string
-    /** Opcionalna lista ID-eva grupa za moderaciju povezanih s ovim komentarom. **/
+    /** Opcionalna lista id-eva moderacijskih grupa povezanih s ovim komentarom. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
@@ -80,31 +80,31 @@ interface WebhookComment {
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
-[inline-code-attrs-start title = 'Objekt spominjanja u webhooku'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objekt spominjanja webhooka'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** ID korisnika. Za SSO korisnike bit će prefiksan vašim tenant id. **/
+    /** Id korisnika. Za SSO korisnike, bit će prefiksan vašim tenant id. **/
     id: string
-    /** Konačni tekst @mention taga, uključujući simbol @. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Izvorni tekst @mention taga, uključujući simbol @. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Koja vrsta korisnika je označena. user = FastComments.com račun. sso = SSOUser. **/
+    /** Kakav tip korisnika je bio označen. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Ako se korisnik odjavi od obavijesti, ovo će i dalje biti postavljeno na true. **/
+    /** Ako se korisnik odjavi od notifikacija, ovo će i dalje biti postavljeno na true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP metode
+#### HTTP Metode
 
 Možete konfigurirati HTTP metodu za svaku vrstu webhook događaja u administratorskom sučelju:
 
 - **Create Event**: POST ili PUT (zadano: PUT)
 - **Update Event**: POST ili PUT (zadano: PUT)
-- **Delete Event**: DELETE, POST, ili PUT (zadano: DELETE)
+- **Delete Event**: DELETE, POST ili PUT (zadano: DELETE)
 
-Budući da svi zahtjevi sadrže ID, operacije Create i Update su po defaultu idempotentne (PUT). Ponavljanje istog Create ili Update zahtjeva ne bi trebalo stvarati duplikate objekata na vašoj strani.
+Budući da svi zahtjevi sadrže ID, operacije Create i Update su po defaultu idempotentne (PUT). Ponavljanje istog Create ili Update zahtjeva ne bi trebalo stvoriti duplicirane objekte na vašoj strani.
 
 #### Zaglavlja zahtjeva
 
@@ -113,8 +113,8 @@ Svaki webhook zahtjev uključuje sljedeća zaglavlja:
 | Zaglavlje | Opis |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Vaš API Secret |
-| `X-FastComments-Timestamp` | Unix vremenska oznaka (sekunde) kada je zahtjev potpisan |
+| `token` | Vaš API tajni ključ |
+| `X-FastComments-Timestamp` | Unix timestamp (sekunde) kada je zahtjev potpisan |
 | `X-FastComments-Signature` | HMAC-SHA256 potpis (`sha256=<hex>`) |
 
 Pogledajte [Sigurnost i API tokeni](/guide-webhooks.html#webhooks-api-tokens) za informacije o provjeri HMAC potpisa.

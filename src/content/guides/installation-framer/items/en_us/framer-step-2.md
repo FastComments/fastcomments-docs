@@ -1,17 +1,17 @@
 Now, let's add an `Embed` block.
 
-Go to `Insert` in the top-left:
+Go to `Insert` in the top left:
 
 <div class="screenshot white-bg">
     <div class="title">Click Insert</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Click Insert" />
 </div>
 
-Then scroll the left-hand sidebar down and hover over `Utility`.
+Then scroll the left hand sidebar down and mouse over `Utility`.
 
-Next you'll want to *click and drag* the `Utility` block to the end of your blog.
+Next you'll want to *click and drag* the `Embed` block to the end of your blog.
 
-It's important that you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
+It's important you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
 outside of your blog and you'll have to drag it around later.
 
 <div class="screenshot white-bg">

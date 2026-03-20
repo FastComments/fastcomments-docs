@@ -1,23 +1,23 @@
-U Webhooks administraciji postoje dugmad `Send Test Payload` za svaki tip događaja (Kreiranje, Ažuriranje, Brisanje). Događaji Kreiranja i Ažuriranja šalju lažni objekat `WebhookComment`, dok testiranje Brisanja šalje lažno tijelo zahtjeva sa samo jednim ID-jem.
+У Webhooks административном панелу постоје дугмад `Send Test Payload` за сваки тип догађаја (Create, Update, Delete). Догађаји Create и Update шаљу примерни објекат WebhookComment, док тестирање Delete шаље примеро тело захтева са само ID-јем.
 
-## Provjera payload-ova
+## Верификација података захтева
 
-Prilikom testiranja vaše webhook integracije, provjerite da dolazni zahtjevi sadrže sljedeća zaglavlja:
+Приликом тестирања ваше webhook интеграције, провјерите да долазни захтјеви садрже сљедећа заглавља:
 
-1. **`token`** - Vaš API tajni ključ
-2. **`X-FastComments-Timestamp`** - Unix vremenska oznaka (sekunde)
-3. **`X-FastComments-Signature`** - HMAC-SHA256 potpis
+1. **`token`** - Ваша API тајна
+2. **`X-FastComments-Timestamp`** - Unix временски печат (секунде)
+3. **`X-FastComments-Signature`** - HMAC-SHA256 потпис
 
-Koristite verifikaciju HMAC potpisa da biste osigurali da su payload-ovi autentični.
+Користите верификацију HMAC потписа да бисте потврдили да су подаци захтјева аутентични.
 
-## Alati za testiranje
+## Алати за тестирање
 
-Možete koristiti alate kao što su [webhook.site](https://webhook.site) ili [ngrok](https://ngrok.com) da pregledate dolazne webhook payload-ove tokom razvoja.
+Можете користити алате као што су [webhook.site](https://webhook.site) или [ngrok](https://ngrok.com) да бисте инспектовали долазне податке вебхука током развоја.
 
-## Tipovi događaja
+## Типови догађаја
 
-- **Događaj kreiranja**: Okida se kada se kreira novi komentar. Zadana metoda: PUT
-- **Događaj ažuriranja**: Okida se kada se komentar izmijeni. Zadana metoda: PUT
-- **Događaj brisanja**: Okida se kada se komentar obriše. Zadana metoda: DELETE
+- **Create Event**: Покреће се када је креиран нови коментар. Подразумевани метод: PUT
+- **Update Event**: Покреће се када је коментар измијењен. Подразумевани метод: PUT
+- **Delete Event**: Покреће се када је коментар избрисан. Подразумевани метод: DELETE
 
-Svaki događaj uključuje kompletne podatke komentara u tijelu zahtjeva (pogledajte [Strukture podataka](/guide-webhooks.html#webhooks-structures) za format payload-a).
+Сваки догађај садржи комплетне податке коментара у телу захтјева (погледајте [Структуре података](/guide-webhooks.html#webhooks-structures) за формат података).

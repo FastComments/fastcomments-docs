@@ -1,164 +1,164 @@
-사용자 프로필의 활동 피드(Activity Feed)는 사용자의 댓글 기록, 알림 및 FastComments가 적용된 모든 사이트에서의 커뮤니티 참여를 표시합니다.
+The Activity Feed on User Profiles displays a user's comment history, notifications, and community participation across all FastComments-powered sites.
 
-### 활동 피드란?
+### What is the Activity Feed?
 
-활동 피드는 다음의 연대기적 보기를 제공합니다:
-- 사용자가 게시한 댓글
-- 받은 답글
-- 멘션 및 상호작용
-- 다양한 커뮤니티에서의 활동
-- 사용자 참여에 대한 실시간 업데이트
+The Activity Feed provides a chronological view of:
+- Comments posted by the user
+- Replies received
+- Mentions and interactions
+- Activity across different communities
+- Real-time updates on user engagement
 
-### 활동 보기
+### Viewing Activity
 
-**자신의 활동:**
-프로필을 볼 때 추가 탭이 표시됩니다:
-1. **Notifications(알림)** - 답글, 멘션 및 상호작용에 대한 알림
-2. **Recent Activity(최근 활동)** - 모든 사이트에 걸친 전체 댓글 기록
+**Your Own Activity:**
+When viewing your profile, you'll see additional tabs:
+1. **Notifications** - Alerts about replies, mentions, and interactions
+2. **Recent Activity** - Your complete comment history across all sites
 
-**다른 사용자의 활동:**
-다른 사람의 프로필을 볼 때:
-1. **Recent Activity(최근 활동)** - 그 사용자의 공개 댓글 기록(비공개로 설정하지 않은 경우)
+**Other Users' Activity:**
+When viewing someone else's profile:
+1. **Recent Activity** - Their public comment history (if not set to private)
 
-활동 탭은 사용자가 FastComments 네트워크 전반에서 어디에서 언제 참여했는지 보여줍니다.
+The activity tab shows where and when users are participating across the FastComments network.
 
-### 알림 탭
+### Notifications Tab
 
-알림 탭에는 다음이 표시됩니다:
+Your Notifications tab displays:
 
-**표시 항목:**
-- 댓글에 대한 답글
-- 사용자명 멘션
-- 프로필 댓글 알림
-- 다이렉트 메시지 알림
-- 배지 획득 알림
-- 콘텐츠에 대한 관리 조치
+**What You'll See:**
+- Replies to your comments
+- Mentions of your username
+- Profile comment notifications
+- Direct message alerts
+- Badge achievements
+- Moderation actions on your content
 
-**알림 기능:**
-- **읽지 않은 개수 표시** - 읽지 않은 알림 수를 표시합니다
-- **실시간 업데이트** - 새로운 알림이 WebSocket을 통해 즉시 표시됩니다
-- **클릭 가능한 항목** - 알림을 클릭하면 관련 댓글이나 대화로 이동합니다
-- **읽음/읽지 않음 상태** - 어느 알림을 보았는지 시각적 표시
+**Notification Features:**
+- **Unread counter** - Shows how many unread notifications you have
+- **Real-time updates** - New notifications appear instantly via WebSocket
+- **Clickable items** - Click any notification to jump to the relevant comment or conversation
+- **Read/unread status** - Visual indicators for which notifications you've seen
 
-**알림 관리:**
-- 알림은 사용자가 확인하면 읽은 것으로 표시됩니다
-- 수신할 알림 유형은 [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)에서 구성할 수 있습니다
+**Managing Notifications:**
+- Notifications are marked as read when you view them
+- Configure what types of notifications you receive in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
-알림 관리를 위한 자세한 내용은 [Notifications Guide](/guide-notifications.html)를 참조하세요.
+For more details on managing notifications, see the [Notifications Guide](/guide-notifications.html).
 
-### 최근 활동 탭
+### Recent Activity Tab
 
-최근 활동 탭은 사용자가 FastComments 커뮤니티 전반에 게시한 모든 댓글을 표시합니다.
+The Recent Activity tab shows all comments posted by the user across FastComments communities.
 
-**표시 항목:**
-- **댓글 내용** - 각 댓글의 전체 텍스트
-- **문맥** - 댓글이 달린 기사/페이지
-- **타임스탬프** - 댓글이 게시된 시간
-- **커뮤니티** - 댓글이 속한 사이트 또는 도메인
-- **참여** - 투표, 답글 및 상호작용 지표
+**What's Displayed:**
+- **Comment content** - The full text of each comment
+- **Context** - Which article/page the comment was on
+- **Timestamp** - When the comment was posted
+- **Community** - Which site or domain the comment belongs to
+- **Engagement** - Votes, replies, and interaction metrics
 
-**활동 필터링:**
-자신의 프로필에서는 활동을 필터링하여 표시할 수 있습니다:
-- **All Activity(모든 활동)** - 사용자가 게시한 모든 댓글
-- **Replies to Me(내게 달린 답글)** - 사용자의 댓글에 대한 답글만
+**Activity Filtering:**
+On your own profile, you can filter activity to show:
+- **All Activity** - Every comment you've posted
+- **Replies to Me** - Only comments that are replies to your comments
 
-이를 통해 사용자가 직접 참여한 대화에 집중하기 쉽습니다.
+This makes it easy to focus on conversations where you're directly engaged.
 
-### 커뮤니티 참여
+### Community Participation
 
-프로필에는 사용자가 활동하는 커뮤니티도 표시됩니다:
+The profile also shows which communities the user is active in:
 
-- **커뮤니티 목록** - 사용자가 댓글을 남긴 사이트/도메인
-- **활동 분포** - 각 커뮤니티에서 사용자가 얼마나 활동하는지
-- **커뮤니티 링크** - 해당 사이트로 이동할 수 있는 클릭 가능한 링크
+- **Community List** - Sites/domains where the user has commented
+- **Activity Distribution** - How much the user participates in each community
+- **Community Links** - Clickable links to visit those sites
 
-이를 통해 사용자가 어디에 가장 활발히 참여하는지와 관심 분야를 파악할 수 있습니다.
+This helps you understand where a user is most engaged and their areas of interest.
 
-### 통계
+### Statistics
 
-사용자 프로필은 주요 통계를 표시합니다:
+User profiles display key statistics:
 
 **Karma:**
-- 추천(업보트) 및 커뮤니티 반응을 기반으로 한 평판 점수
-- 댓글이 업보트를 받을 때 증가
-- 댓글이 다운보트를 받을 때 감소
-- 기여에 대한 전체적인 커뮤니티 평가를 반영
+- A reputation score based on upvotes and community reception
+- Increases when your comments receive upvotes
+- Decreases when comments receive downvotes
+- Reflects overall community appreciation of your contributions
 
-**Comment Count(댓글 수):**
-- 모든 커뮤니티에 걸쳐 게시된 총 댓글 수
-- 최상위 댓글과 답글 모두 포함
-- 사용자가 참여할 때 실시간으로 업데이트
+**Comment Count:**
+- Total number of comments posted across all communities
+- Includes both top-level comments and replies
+- Updated in real-time as you participate
 
-이 통계는 사용자의 참여 수준과 커뮤니티 내 위치를 빠르게 파악할 수 있게 합니다.
+These statistics give a quick overview of a user's engagement level and community standing.
 
-### 개인정보 제어
+### Privacy Controls
 
-사용자는 개인정보 설정을 통해 활동 가시성을 제어할 수 있습니다:
+Users can control activity visibility through privacy settings:
 
-**프로필 활동을 비공개로 설정:**
-활성화하면:
-- 최근 활동 탭은 본인만 볼 수 있습니다
-- 다른 사람은 프로필에서 사용자의 댓글 기록을 볼 수 없습니다
-- 공개 댓글은 원래의 문맥(기사 등)에서는 여전히 보입니다
-- 프로필의 집계된 활동 보기만 숨겨집니다
+**Make Profile Activity Private:**
+When enabled:
+- Only you can see your Recent Activity tab
+- Others cannot view your comment history on your profile
+- Your public comments are still visible in their original context (on articles)
+- Only the aggregated activity view on your profile is hidden
 
-자세한 내용은 [Privacy Settings](/guide-user-profiles.html#privacy-settings)를 참조하세요.
+For details, see [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
-### 실시간 업데이트
+### Real-Time Updates
 
-활동 피드는 실시간 업데이트를 위해 WebSocket 기술을 사용합니다:
+The Activity Feed uses WebSocket technology for real-time updates:
 
-- **즉시 알림** - 새로운 답글과 멘션이 즉시 표시됩니다
-- **라이브 활동 업데이트** - 댓글을 게시하면 최근 활동이 추가됩니다
-- **온라인 상태** - 대화 상대가 활성 상태인지 확인할 수 있습니다
-- **페이지 새로고침 불필요** - 모든 항목이 자동으로 업데이트됩니다
+- **Instant notifications** - New replies and mentions appear immediately
+- **Live activity updates** - Recent comments are added as you post
+- **Online status** - See when conversation partners are active
+- **No page refresh needed** - Everything updates automatically
 
-### 커뮤니티 전반의 활동
+### Activity Across Communities
 
-FastComments 사용자 프로필의 강력한 기능 중 하나는 모든 커뮤니티에 걸친 활동을 확인할 수 있다는 점입니다:
+One of the powerful features of FastComments User Profiles is seeing activity across all communities:
 
-**이점:**
-- 사용자가 어디에 대해 전문 지식이 있거나 활발한지 발견할 수 있습니다
-- 여러 사이트에서 공통 관심사를 가진 사용자를 찾을 수 있습니다
-- 전체 FastComments 네트워크에서 평판을 쌓을 수 있습니다
-- 커뮤니티 참여의 폭을 확인할 수 있습니다
+**Benefits:**
+- Discover where users are knowledgeable or active
+- Find users with shared interests across different sites
+- Build reputation across the entire FastComments network
+- See the breadth of community engagement
 
-**예시:**
-- 기술 포럼과 게임 사이트에서 활동적인 사용자
-- 뉴스와 레시피 블로그 모두에 기여하는 사람
-- 관련 주제에 걸쳐 참여하는 커뮤니티 구성원
+**Examples:**
+- A user active in tech forums and gaming sites
+- Someone who contributes to both news and recipe blogs
+- Community members who participate across related topics
 
-### 모범 사례
+### Best Practices
 
-**활동 보기 시:**
-- 사용자의 전문성과 관심사를 이해하기 위해 활동을 확인하세요
-- 공통점을 찾기 위해 커뮤니티 참여를 살펴보세요
-- 참여 수준을 파악하려면 카르마와 댓글 수를 검토하세요
+**For Viewing Activity:**
+- Check a user's activity to understand their expertise and interests
+- Look at community participation to find common ground
+- Review karma and comment count for engagement level
 
-**자신의 활동 관리 시:**
-- 편안한 수준에 맞게 개인정보 설정을 구성하세요
-- 활동이 표시된다는 점을 인지하고 신중하게 참여하세요(비공개로 설정하지 않은 경우)
-- 관련 대화에 집중하려면 필터를 사용하세요
-- 대화에 계속 참여하려면 알림을 확인하세요
+**For Managing Your Activity:**
+- Set privacy settings that match your comfort level
+- Engage thoughtfully knowing your activity is visible (unless set to private)
+- Use filtering to focus on relevant conversations
+- Keep track of notifications to stay engaged with your conversations
 
-**커뮤니티 형성 시:**
-- 활동 피드를 통해 활발한 참여자를 인식하세요
-- 다양한 커뮤니티에서 관심사를 공유하는 사용자와 연결하세요
-- 활동 기록을 사용하여 가치 있는 커뮤니티 구성원을 식별하세요
+**For Community Building:**
+- Recognize active participants through their activity feed
+- Connect with users who share interests across communities
+- Use activity history to identify valuable community members
 
-### 문제 해결
+### Troubleshooting
 
-**활동이 표시되지 않을 때:**
-- 사용자가 "프로필 활동 비공개"를 활성화했는지 확인하세요
-- 필요한 경우 로그인되어 있는지 확인하세요
-- 활동이 오래된 것처럼 보이면 페이지를 새로고침하세요
+**Activity Not Showing:**
+- Check if the user has enabled "Make Profile Activity Private"
+- Ensure you're logged in if required
+- Refresh the page if activity seems outdated
 
-**알림이 나타나지 않을 때:**
-- 계정의 알림 설정을 확인하세요
-- 알림이 이메일 제공업체에 의해 필터링되지 않는지 확인하세요
-- WebSocket 연결을 확인하세요(실시간 업데이트 확인)
+**Notifications Not Appearing:**
+- Check notification settings in your account
+- Ensure notifications aren't being filtered by your email provider
+- Verify WebSocket connection (look for real-time updates)
 
-**잘못된 활동이 표시될 때:**
-- 브라우저 캐시를 지우고 새로고침하세요
-- 로그아웃한 후 다시 로그인하세요
-- 지속적인 문제가 있으면 지원팀에 보고하세요
+**Wrong Activity Displayed:**
+- Clear browser cache and refresh
+- Log out and back in
+- Report any persistent issues to support

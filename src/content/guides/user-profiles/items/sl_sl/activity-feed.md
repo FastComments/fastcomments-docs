@@ -1,76 +1,76 @@
-The Activity Feed on User Profiles displays a user's comment history, notifications, and community participation across all FastComments-powered sites.
+Vir aktivnosti na uporabniških profilih prikazuje zgodovino komentarjev uporabnika, obvestila in sodelovanje v skupnostih na vseh spletnih mestih, ki poganjajo FastComments.
 
-### Kaj je Vir aktivnosti?
+### Kaj je vir aktivnosti?
 
-Vir aktivnosti ponuja kronološki pregled:
-- Komentarji, objavljeni s strani uporabnika
-- Prejeti odgovori
-- Omembe in interakcije
-- Aktivnost v različnih skupnostih
-- Posodobitve v realnem času o angažiranju uporabnika
+Vir aktivnosti nudi kronološki pregled:
+- Komentarjev, ki jih je objavil uporabnik
+- Prejetih odgovorov
+- Omenitev in interakcij
+- Dejavnosti v različnih skupnostih
+- Posodobitev v realnem času o vključenosti uporabnika
 
-### Ogled aktivnosti
+### Ogled dejavnosti
 
-**Vaša lastna aktivnost:**
-Ko gledate svoj profil, boste videli dodatne zavihke:
+**Vaša lastna dejavnost:**
+Ko si ogledate svoj profil, boste videli dodatne zavihke:
 1. **Obvestila** - Opozorila o odgovorih, omembah in interakcijah
-2. **Nedavna aktivnost** - Vaša celotna zgodovina komentarjev na vseh straneh
+2. **Nedavna dejavnost** - Vaša popolna zgodovina komentarjev na vseh spletnih mestih
 
-**Aktivnost drugih uporabnikov:**
-Ko gledate profil druge osebe:
-1. **Nedavna aktivnost** - Njihova javna zgodovina komentarjev (če ni nastavljena kot zasebna)
+**Dejavnost drugih uporabnikov:**
+Ko si ogledate profil druge osebe:
+1. **Nedavna dejavnost** - Njihova javna zgodovina komentarjev (če ni nastavljena kot zasebna)
 
-Zavihek aktivnosti prikazuje, kje in kdaj uporabniki sodelujejo v omrežju FastComments.
+Zavihek dejavnosti prikazuje, kje in kdaj uporabniki sodelujejo v omrežju FastComments.
 
-### Zavihek Obvestila
+### Zavihek obvestil
 
-Zavihek Obvestila prikazuje:
+Vaš zavihek Obvestila prikazuje:
 
 **Kaj boste videli:**
-- Odgovori na vaše komentarje
-- Omembe vašega uporabniškega imena
+- Odgovore na vaše komentarje
+- Omenitve vašega uporabniškega imena
 - Obvestila o komentarjih na profilu
 - Opozorila o neposrednih sporočilih
-- Dosežki značk
-- Moderatorska dejanja na vaši vsebini
+- Dosežke značk
+- Ukrepe moderacije na vaši vsebini
 
 **Funkcije obvestil:**
-- **Števec neprebranih** - Prikazuje, koliko neprebranih obvestil imate
-- **Posodobitve v realnem času** - Nova obvestila se pojavijo takoj preko WebSocket
-- **Klikabilni elementi** - Kliknite katerokoli obvestilo, da skočite na ustrezen komentar ali pogovor
-- **Status prebrano/neprebrano** - Vizualni indikatorji, katera obvestila ste si že ogledali
+- **Števec neprebranih** - Prikaže, koliko neprebranih obvestil imate
+- **Posodobitve v realnem času** - Nova obvestila se pojavijo takoj prek WebSocket
+- **Klikljivi elementi** - Kliknite katero koli obvestilo, da skočite do ustreznega komentarja ali pogovora
+- **Stanje prebrano/neprebrano** - Vizualni indikatorji, katera obvestila ste že videli
 
 **Upravljanje obvestil:**
-- Obvestila so označena kot prebrana, ko jih pogledate
-- Nastavite, katere vrste obvestil prejemate v [Nastavitve obvestil](https://fastcomments.com/auth/my-account/edit-notifications)
+- Obvestila se označijo kot prebrana, ko si jih ogledate
+- Konfigurirajte, katere vrste obvestil prejemate v [Nastavitve obvestil](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Za več podrobnosti o upravljanju obvestil si oglejte [Vodnik za obvestila](/guide-notifications.html).
 
-### Zavihek Nedavna aktivnost
+### Zavihek nedavne dejavnosti
 
-Zavihek Nedavna aktivnost prikazuje vse komentarje, ki jih je uporabnik objavil v skupnostih FastComments.
+Zavihek Nedavna dejavnost prikazuje vse komentarje, ki jih je uporabnik objavil v skupnostih FastComments.
 
-**Kaj je prikazano:**
+**Kaj se prikaže:**
 - **Vsebina komentarja** - Celotno besedilo vsakega komentarja
 - **Kontekst** - Na katerem članku/strani je bil komentar
-- **Časovna oznaka** - Kdaj je bil komentar objavljen
-- **Skupnost** - Na katero spletno mesto ali domeno komentar pripada
-- **Vključenost** - Glasovi, odgovori in metrične vrednosti interakcij
+- **Časovni žig** - Kdaj je bil komentar objavljen
+- **Skupnost** - Na katero spletno mesto ali domeno pripada komentar
+- **Vključenost** - Glasovi, odgovori in metrike interakcije
 
-**Filtriranje aktivnosti:**
-Na svojem profilu lahko aktivnost filtrirate, da prikažete:
-- **Vsa aktivnost** - Vsi komentarji, ki ste jih objavili
-- **Odgovori meni** - Samo komentarje, ki so odgovori na vaše komentarje
+**Filtriranje dejavnosti:**
+Na vašem profilu lahko dejavnost filtrirate tako, da prikažete:
+- **Vsa dejavnost** - Vsak komentar, ki ste ga objavili
+- **Odgovori name** - Samo komentarje, ki so odgovori na vaše komentarje
 
-To olajša osredotočanje na pogovore, kjer ste neposredno vključeni.
+To olajša osredotočanje na pogovore, v katerih ste neposredno vključeni.
 
 ### Sodelovanje v skupnostih
 
 Profil prav tako prikazuje, v katerih skupnostih je uporabnik aktiven:
 
 - **Seznam skupnosti** - Spletna mesta/domene, kjer je uporabnik komentiral
-- **Porazdelitev aktivnosti** - Koliko uporabnik sodeluje v vsaki skupnosti
-- **Povezave skupnosti** - Klikabilne povezave za obisk teh spletnih mest
+- **Porazdelitev dejavnosti** - Koliko uporabnik sodeluje v vsaki skupnosti
+- **Povezave do skupnosti** - Klikljive povezave za obisk teh strani
 
 To vam pomaga razumeti, kje je uporabnik najbolj vključen in njegova področja zanimanja.
 
@@ -79,86 +79,86 @@ To vam pomaga razumeti, kje je uporabnik najbolj vključen in njegova področja 
 Uporabniški profili prikazujejo ključne statistike:
 
 **Karma:**
-- Ocena ugleda, osnovana na glasovih navzgor in sprejetju v skupnosti
-- Poveča se, ko vaši komentarji dobijo glasove navzgor
-- Zmanjša se, ko komentarji dobijo glasove navzdol
+- Ocena ugleda na podlagi pozitivnih glasov in sprejema v skupnosti
+- Narašča, ko vaši komentarji prejmejo glasove navzgor
+- Zmanjša se, ko komentarji prejmejo glasove navzdol
 - Odraža splošno priznanje skupnosti za vaše prispevke
 
 **Število komentarjev:**
 - Skupno število komentarjev, objavljenih v vseh skupnostih
-- Vključuje tako komentarje na vrhu kot odgovore
+- Vključuje tako komentarje prve ravni kot odgovore
 - Posodablja se v realnem času, ko sodelujete
 
-Te statistike dajo hiter vpogled v stopnjo angažiranosti uporabnika in njegovo mesto v skupnosti.
+Te statistike dajo hiter pregled stopnje vključenosti uporabnika in njegovega položaja v skupnosti.
 
 ### Nadzor zasebnosti
 
-Uporabniki lahko nadzorujejo vidnost aktivnosti preko nastavitev zasebnosti:
+Uporabniki lahko nadzorujejo vidnost dejavnosti preko nastavitev zasebnosti:
 
-**Naredi aktivnost profila zasebno:**
+**Naredite dejavnost profila zasebno:**
 Ko je omogočeno:
-- Samo vi lahko vidite zavihek Nedavna aktivnost
+- Samo vi lahko vidite zavihek Nedavna dejavnost
 - Drugi ne morejo videti vaše zgodovine komentarjev na vašem profilu
-- Vaši javni komentarji so še vedno vidni v njihovem izvirnem kontekstu (na člankih)
-- Skrbno je skrit samo združen pregled aktivnosti na vašem profilu
+- Vaši javni komentarji so še vedno vidni v njihovem izvorni kontekst (na člankih)
+- Samo združen pogled dejavnosti na vašem profilu je skrit
 
-Za podrobnosti si oglejte [Nastavitve zasebnosti](/guide-user-profiles.html#privacy-settings).
+Za podrobnosti glejte [Nastavitve zasebnosti](/guide-user-profiles.html#privacy-settings).
 
 ### Posodobitve v realnem času
 
 Vir aktivnosti uporablja tehnologijo WebSocket za posodobitve v realnem času:
 
 - **Takojšnja obvestila** - Novi odgovori in omembe se pojavijo takoj
-- **Žive posodobitve aktivnosti** - Nedavni komentarji se dodajo, ko jih objavite
+- **Žive posodobitve dejavnosti** - Nedavni komentarji se dodajo, ko jih objavite
 - **Spletni status** - Oglejte si, kdaj so sogovorniki aktivni
-- **Brez osveževanja strani** - Vse se posodobi samodejno
+- **Ni potrebe po osvežitvi strani** - Vse se samodejno posodobi
 
-### Aktivnost v različnih skupnostih
+### Dejavnost v različnih skupnostih
 
-Ena izmed zmogljivih funkcij uporabniških profilov FastComments je ogled aktivnosti po vseh skupnostih:
+Ena izmed močnih funkcij uporabniških profilov FastComments je prikaz dejavnosti v vseh skupnostih:
 
 **Prednosti:**
-- Odkrijte, kje so uporabniki strokovni ali dejavni
+- Odkrijte, kje so uporabniki strokovni ali aktivni
 - Najdite uporabnike s skupnimi interesi na različnih straneh
-- Zgradite ugled skozi celotno omrežje FastComments
-- Oglejte si širino vključenosti v skupnost
+- Gradite ugled po celotnem omrežju FastComments
+- Oglejte si obseg sodelovanja v skupnosti
 
 **Primeri:**
-- Uporabnik, aktiven na tehnoloških forumih in igralniških straneh
-- Nekdo, ki prispeva tako k novicam kot receptnim blogom
-- Člani skupnosti, ki sodelujejo v povezani tematiki
+- Uporabnik, aktiven v tehnoloških forumih in na straneh za igre
+- Nekdo, ki prispeva tako k novicam kot receptom
+- Člani skupnosti, ki sodelujejo na sorodnih temah
 
 ### Najboljše prakse
 
-**Za ogled aktivnosti:**
-- Preverite uporabnikovo aktivnost, da razumete njihovo strokovnost in zanimanja
-- Poglejte sodelovanje v skupnostih, da najdete skupne točke
-- Preglejte karmo in število komentarjev za oceno stopnje angažiranosti
+**Za ogled dejavnosti:**
+- Preverite dejavnost uporabnika, da razumete njihovo strokovnost in interese
+- Oglejte si sodelovanje v skupnostih, da najdete skupne točke
+- Preverite karma in število komentarjev za raven vključenosti
 
-**Za upravljanje svoje aktivnosti:**
-- Nastavite nastavitve zasebnosti, ki ustrezajo vaši ravni udobja
-- Sodelujte premišljeno, saj je vaša aktivnost vidna (razen če je nastavljena kot zasebna)
-- Uporabite filtriranje, da se osredotočite na relevantne pogovore
+**Za upravljanje vaše dejavnosti:**
+- Nastavite nastavitve zasebnosti, ki ustrezajo vaši stopnji udobja
+- Sodelujte premišljeno, saj je vaša dejavnost vidna (razen če je nastavljena kot zasebna)
+- Uporabite filtriranje za osredotočanje na relevantne pogovore
 - Spremljajte obvestila, da ostanete vključeni v svoje pogovore
 
 **Za gradnjo skupnosti:**
 - Prepoznajte aktivne udeležence preko njihovega vira aktivnosti
 - Povežite se z uporabniki, ki delijo interese v različnih skupnostih
-- Uporabite zgodovino aktivnosti za identifikacijo dragocenih članov skupnosti
+- Uporabite zgodovino dejavnosti za prepoznavanje dragocenih članov skupnosti
 
 ### Odpravljanje težav
 
-**Aktivnost se ne prikazuje:**
-- Preverite, ali je uporabnik omogočil "Naredi aktivnost profila zasebno"
-- Poskrbite, da ste prijavljeni, če je to zahtevano
-- Osvežite stran, če se aktivnost zdi zastarela
+**Dejavnost se ne prikazuje:**
+- Preverite, ali je uporabnik omogočil "Naredite dejavnost profila zasebno"
+- Prepričajte se, da ste prijavljeni, če je to zahtevano
+- Osvežite stran, če se dejavnost zdi zastarela
 
-**Obvestila se ne pojavljajo:**
+**Obvestila se ne prikazujejo:**
 - Preverite nastavitve obvestil v vašem računu
-- Poskrbite, da obvestila niso filtrirana s strani vašega ponudnika e-pošte
-- Preverite WebSocket povezavo (poiščite posodobitve v realnem času)
+- Prepričajte se, da obvestila niso filtrirana s strani vašega ponudnika e-pošte
+- Preverite povezavo WebSocket (poglejte za posodobitvami v realnem času)
 
-**Prikazana napačna aktivnost:**
-- Počistite predpomnilnik brskalnika in osvežite stran
-- Odjavite se in ponovno prijavite
-- Poročajte o vsaki vztrajajoči težavi podpori
+**Prikazana napačna dejavnost:**
+- Počistite predpomnilnik brskalnika in osvežite
+- Odjavite se in se ponovno prijavite
+- Vztrajne težave prijavite podpori

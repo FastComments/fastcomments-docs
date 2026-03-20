@@ -1,15 +1,15 @@
-Il Feed attività nei Profili Utente mostra la cronologia dei commenti di un utente, le notifiche e la partecipazione alle comunità su tutti i siti alimentati da FastComments.
+Il Feed Attività nei Profili Utente mostra la cronologia dei commenti di un utente, le notifiche e la partecipazione alla comunità su tutti i siti che usano FastComments.
 
-### Cos'è il Feed attività?
+### Che cos'è il Feed Attività?
 
-Il Feed attività fornisce una visuale cronologica di:
+Il Feed Attività fornisce una vista cronologica di:
 - Commenti pubblicati dall'utente
 - Risposte ricevute
 - Menzioni e interazioni
 - Attività attraverso diverse comunità
 - Aggiornamenti in tempo reale sull'engagement dell'utente
 
-### Visualizzazione dell'attività
+### Visualizzare l'attività
 
 **La tua attività:**
 Quando visualizzi il tuo profilo, vedrai schede aggiuntive:
@@ -18,7 +18,7 @@ Quando visualizzi il tuo profilo, vedrai schede aggiuntive:
 
 **Attività di altri utenti:**
 Quando visualizzi il profilo di qualcun altro:
-1. **Attività recente** - La loro cronologia di commenti pubblici (se non impostata come privata)
+1. **Attività recente** - La loro cronologia pubblica dei commenti (se non impostata come privata)
 
 La scheda attività mostra dove e quando gli utenti partecipano nella rete FastComments.
 
@@ -28,20 +28,20 @@ La tua scheda Notifiche mostra:
 
 **Cosa vedrai:**
 - Risposte ai tuoi commenti
-- Menzioni del tuo username
-- Notifiche sui commenti del profilo
+- Menzioni del tuo nome utente
+- Notifiche di commenti sul profilo
 - Avvisi di messaggi diretti
 - Riconoscimenti di badge
 - Azioni di moderazione sui tuoi contenuti
 
 **Funzionalità delle notifiche:**
 - **Contatore non letti** - Mostra quante notifiche non lette hai
-- **Aggiornamenti in tempo reale** - Nuove notifiche appaiono istantaneamente tramite WebSocket
-- **Elementi cliccabili** - Clicca su una notifica per andare al commento o alla conversazione rilevante
-- **Stato letto/non letto** - Indicatori visivi per le notifiche che hai visto
+- **Aggiornamenti in tempo reale** - Le nuove notifiche appaiono istantaneamente tramite WebSocket
+- **Elementi cliccabili** - Clicca qualsiasi notifica per saltare al commento o alla conversazione rilevante
+- **Stato letto/non letto** - Indicatori visivi per quali notifiche hai visto
 
-**Gestire le notifiche:**
-- Le notifiche vengono segnate come lette quando le visualizzi
+**Gestione delle notifiche:**
+- Le notifiche vengono contrassegnate come lette quando le visualizzi
 - Configura quali tipi di notifiche ricevere in [Notification Settings](https://fastcomments.com/auth/my-account/edit-notifications)
 
 Per maggiori dettagli sulla gestione delle notifiche, vedi la [Guida alle notifiche](/guide-notifications.html).
@@ -53,18 +53,18 @@ La scheda Attività recente mostra tutti i commenti pubblicati dall'utente nelle
 **Cosa viene mostrato:**
 - **Contenuto del commento** - Il testo completo di ogni commento
 - **Contesto** - Su quale articolo/pagina era il commento
-- **Marca temporale** - Quando il commento è stato pubblicato
+- **Timestamp** - Quando è stato pubblicato il commento
 - **Comunità** - A quale sito o dominio appartiene il commento
 - **Coinvolgimento** - Voti, risposte e metriche di interazione
 
 **Filtraggio dell'attività:**
-Sul tuo profilo, puoi filtrare l'attività per mostrare:
+Sul tuo profilo puoi filtrare l'attività per mostrare:
 - **Tutta l'attività** - Ogni commento che hai pubblicato
 - **Risposte a me** - Solo i commenti che sono risposte ai tuoi commenti
 
-Questo rende semplice concentrarsi sulle conversazioni in cui sei direttamente coinvolto.
+Questo facilita concentrare l'attenzione sulle conversazioni in cui sei direttamente coinvolto.
 
-### Partecipazione alle comunità
+### Partecipazione alla comunità
 
 Il profilo mostra anche in quali comunità l'utente è attivo:
 
@@ -72,24 +72,24 @@ Il profilo mostra anche in quali comunità l'utente è attivo:
 - **Distribuzione dell'attività** - Quanto l'utente partecipa in ciascuna comunità
 - **Link alle comunità** - Link cliccabili per visitare quei siti
 
-Questo ti aiuta a capire dove un utente è più coinvolto e i suoi ambiti di interesse.
+Questo aiuta a capire dove un utente è maggiormente coinvolto e i suoi ambiti di interesse.
 
 ### Statistiche
 
 I profili utente mostrano statistiche chiave:
 
 **Karma:**
-- Un punteggio di reputazione basato su upvote e ricezione dalla comunità
-- Aumenta quando i tuoi commenti ricevono upvote
-- Diminuisce quando i commenti ricevono downvote
+- Un punteggio di reputazione basato sui voti positivi e sull'accoglienza della comunità
+- Aumenta quando i tuoi commenti ricevono voti positivi
+- Diminuisce quando i commenti ricevono voti negativi
 - Riflette l'apprezzamento complessivo della comunità per i tuoi contributi
 
 **Conteggio commenti:**
 - Numero totale di commenti pubblicati in tutte le comunità
 - Include sia commenti di primo livello che risposte
-- Aggiornato in tempo reale man mano che partecipi
+- Aggiornato in tempo reale mentre partecipi
 
-Queste statistiche offrono una panoramica rapida del livello di coinvolgimento e della posizione nella comunità di un utente.
+Queste statistiche offrono una panoramica rapida del livello di coinvolgimento e della posizione dell'utente nella comunità.
 
 ### Controlli della privacy
 
@@ -98,58 +98,58 @@ Gli utenti possono controllare la visibilità dell'attività tramite le impostaz
 **Rendi privata l'attività del profilo:**
 Quando abilitato:
 - Solo tu puoi vedere la tua scheda Attività recente
-- Altri non possono visualizzare la cronologia dei tuoi commenti sul tuo profilo
-- I tuoi commenti pubblici sono ancora visibili nel loro contesto originale (negli articoli)
-- Solo la vista aggregata dell'attività sul tuo profilo è nascosta
+- Altri non possono visualizzare la tua cronologia dei commenti sul profilo
+- I tuoi commenti pubblici sono comunque visibili nel loro contesto originale (sugli articoli)
+- Solo la visualizzazione aggregata dell'attività sul tuo profilo è nascosta
 
-Per dettagli, vedi [Impostazioni privacy](/guide-user-profiles.html#privacy-settings).
+Per dettagli, vedi [Impostazioni sulla privacy](/guide-user-profiles.html#privacy-settings).
 
 ### Aggiornamenti in tempo reale
 
-Il Feed attività utilizza la tecnologia WebSocket per aggiornamenti in tempo reale:
+Il Feed Attività usa la tecnologia WebSocket per aggiornamenti in tempo reale:
 
 - **Notifiche istantanee** - Nuove risposte e menzioni appaiono immediatamente
-- **Aggiornamenti di attività live** - I commenti recenti vengono aggiunti mentre pubblichi
-- **Stato online** - Vedi quando i partecipanti alla conversazione sono attivi
-- **Nessun aggiornamento della pagina necessario** - Tutto si aggiorna automaticamente
+- **Aggiornamenti attività live** - I commenti recenti vengono aggiunti mentre pubblichi
+- **Stato online** - Vedi quando i partner di conversazione sono attivi
+- **Non è necessario aggiornare la pagina** - Tutto si aggiorna automaticamente
 
-### Attività attraverso le comunità
+### Attività tra le comunità
 
-Una delle funzionalità potenti dei Profili Utente di FastComments è vedere l'attività attraverso tutte le comunità:
+Una delle funzionalità potenti dei Profili Utente FastComments è vedere l'attività attraverso tutte le comunità:
 
 **Vantaggi:**
 - Scoprire dove gli utenti sono competenti o attivi
-- Trovare utenti con interessi comuni su siti diversi
-- Costruire reputazione sull'intera rete FastComments
-- Vedere l'ampiezza del coinvolgimento nella comunità
+- Trovare utenti con interessi condivisi su siti diversi
+- Costruire reputazione su tutta la rete FastComments
+- Vedere l'ampiezza dell'impegno nella comunità
 
 **Esempi:**
-- Un utente attivo in forum tecnologici e siti di gaming
-- Qualcuno che contribuisce sia a blog di notizie che di ricette
-- Membri della comunità che partecipano a topic correlati
+- Un utente attivo nei forum tech e nei siti di gaming
+- Qualcuno che contribuisce sia a notizie sia a blog di ricette
+- Membri della comunità che partecipano su argomenti correlati
 
 ### Best Practices
 
 **Per visualizzare l'attività:**
-- Controlla l'attività di un utente per capire la sua esperienza e i suoi interessi
+- Controlla l'attività di un utente per capire la sua competenza e i suoi interessi
 - Guarda la partecipazione alle comunità per trovare punti in comune
-- Esamina karma e conteggio commenti per il livello di engagement
+- Esamina karma e conteggio commenti per il livello di coinvolgimento
 
 **Per gestire la tua attività:**
-- Imposta le impostazioni sulla privacy in base al tuo livello di comfort
+- Imposta le impostazioni della privacy che corrispondono al tuo livello di comfort
 - Partecipa con attenzione sapendo che la tua attività è visibile (a meno che non sia impostata come privata)
-- Usa il filtraggio per concentrarti sulle conversazioni rilevanti
-- Tieni traccia delle notifiche per rimanere coinvolto nelle tue conversazioni
+- Usa i filtri per concentrarti sulle conversazioni rilevanti
+- Tieni traccia delle notifiche per restare coinvolto nelle tue conversazioni
 
 **Per costruire la comunità:**
-- Riconosci i partecipanti attivi tramite il loro feed attività
-- Connettiti con utenti che condividono interessi attraverso le comunità
-- Usa la storia delle attività per identificare membri di valore per la comunità
+- Riconosci i partecipanti attivi attraverso il loro feed attività
+- Connettiti con utenti che condividono interessi tra le comunità
+- Usa la cronologia dell'attività per identificare membri di valore della comunità
 
 ### Risoluzione dei problemi
 
-**Attività non mostrata:**
-- Controlla se l'utente ha abilitato "Rendi privata l'attività del profilo"
+**Attività non visualizzata:**
+- Verifica se l'utente ha abilitato "Rendi privata l'attività del profilo"
 - Assicurati di essere loggato se richiesto
 - Aggiorna la pagina se l'attività sembra obsoleta
 
@@ -158,7 +158,7 @@ Una delle funzionalità potenti dei Profili Utente di FastComments è vedere l'a
 - Verifica che le notifiche non siano filtrate dal tuo provider email
 - Verifica la connessione WebSocket (controlla la presenza di aggiornamenti in tempo reale)
 
-**Attività sbagliata mostrata:**
-- Pulisci la cache del browser e aggiorna
-- Disconnettiti e riconnettiti
+**Attività errata visualizzata:**
+- Svuota la cache del browser e aggiorna
+- Esci e rientra
 - Segnala eventuali problemi persistenti al supporto

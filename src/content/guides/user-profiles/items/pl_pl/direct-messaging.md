@@ -1,17 +1,17 @@
-Direct Messaging (DM) pozwala użytkownikom FastComments prowadzić prywatne, jeden-na-jeden rozmowy między sobą, oddzielone od publicznych komentarzy i interakcji z profilem.
+Direct Messaging (DM) pozwala użytkownikom FastComments na prywatne, jeden-na-jeden rozmowy między sobą, oddzielone od publicznych komentarzy i interakcji na profilach.
 
 ### What is Direct Messaging?
 
-Direct Messaging zapewnia:
+Wiadomości bezpośrednie zapewniają:
 - **Prywatne rozmowy** między dwoma użytkownikami
 - **Wiadomości w czasie rzeczywistym** z powiadomieniami
-- **Historia rozmów** zachowywana między sesjami
-- **Wskaźniki statusu online** aby zobaczyć, kiedy ktoś jest dostępny
+- **Historia konwersacji** zachowywana między sesjami
+- **Wskaźniki statusu online** pozwalające zobaczyć, kiedy ktoś jest dostępny
 - **Śledzenie nieprzeczytanych wiadomości** aby być na bieżąco z nowymi wiadomościami
 
 ### Starting a Direct Message
 
-Istnieje kilka sposobów rozpoczęcia rozmowy DM:
+Istnieje kilka sposobów na rozpoczęcie rozmowy DM:
 
 **From a User Profile:**
 1. Odwiedź stronę profilu użytkownika
@@ -19,113 +19,113 @@ Istnieje kilka sposobów rozpoczęcia rozmowy DM:
 3. Wpisz wiadomość i wyślij
 
 **From a Comment:**
-W niektórych wdrożeniach kliknięcie nazwy użytkownika lub awatara pozwala szybko przejść do jego profilu i opcji wysyłania wiadomości.
+Niektóre implementacje pozwalają na kliknięcie nazwy użytkownika lub awatara, aby szybko uzyskać dostęp do ich profilu i opcji wiadomości.
 
 **Direct Link:**
-Jeśli masz identyfikator rozmowy lub przekierowujący link DM, możesz uzyskać dostęp do rozmów bezpośrednio.
+Jeśli masz identyfikator rozmowy lub przekierowujący link do DM, możesz uzyskać dostęp do rozmowy bezpośrednio.
 
 ### Accessing Your Messages
 
-Aby zobaczyć wszystkie swoje rozmowy prywatne:
+Aby zobaczyć wszystkie swoje rozmowy w wiadomościach bezpośrednich:
 
-1. Odwiedź stronę swojego profilu
+1. Odwiedź swoją stronę profilu
 2. Kliknij kartę "Direct Messages"
 3. Zobacz listę wszystkich swoich rozmów
 
 Każda rozmowa pokazuje:
 - Awatar i nazwę drugiego uczestnika
-- Ich status online/offline (zielony wskaźnik, gdy są online)
+- Ich status online/offline (zielony wskaźnik, gdy online)
 - Podgląd ostatniej wiadomości
-- Liczbę nieprzeczytanych wiadomości (jeśli istnieją)
+- Liczbę nieprzeczytanych wiadomości (jeśli są)
 - Znacznik czasu ostatniej aktywności
 
 ### Conversation View
 
-Po otwarciu rozmowy zobaczysz:
+Kiedy otworzysz rozmowę, zobaczysz:
 
-- **Pełna historia wiadomości** - Wszystkie wiadomości między tobą a drugim użytkownikiem
+- **Pełna historia wiadomości** - Wszystkie wiadomości między Tobą a drugim użytkownikiem
 - **Aktualizacje w czasie rzeczywistym** - Nowe wiadomości pojawiają się natychmiast przez WebSocket
-- **Status online** - Zobacz, czy druga osoba jest obecnie online
+- **Status online** - Zobacz, czy druga osoba jest aktualnie online
 - **Znaczniki czasu wiadomości** - Kiedy każda wiadomość została wysłana
 - **Tworzenie wiadomości** - Pole tekstowe do wpisywania i wysyłania nowych wiadomości
 
 ### Message Notifications
 
-Otrzymasz powiadomienia o nowych wiadomościach prywatnych:
+Otrzymasz powiadomienia o nowych wiadomościach bezpośrednich:
 
-- **Powiadomienia w aplikacji** - Licznik z nerką na twoim profilu
+- **Powiadomienia w aplikacji** - Licznik (badge) na Twoim profilu
 - **Powiadomienia e-mail** - W zależności od ustawień powiadomień
 - **Alerty w czasie rzeczywistym** - Natychmiastowe powiadomienia, gdy jesteś zalogowany
 
-Zarządzaj preferencjami powiadomień w swoich [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications).
+Zarządzaj preferencjami powiadomień w swoich [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Privacy and Blocking
 
 **Disabling Direct Messages:**
 Jeśli nie chcesz otrzymywać DM, możesz je całkowicie wyłączyć:
 1. Przejdź do Ustawień prywatności na swoim profilu
-2. Włącz "Disable Direct Messages"
-3. Opcja DM zostanie ukryta w twoim profilu
+2. Włącz opcję "Disable Direct Messages"
+3. Opcja DM zostanie ukryta z Twojego profilu
 
-Aby uzyskać więcej szczegółów, zobacz [Privacy Settings](/guide-user-profiles.html#privacy-settings).
+Więcej szczegółów znajdziesz w [Privacy Settings](/guide-user-profiles.html#privacy-settings).
 
 **Blocking Users:**
-Jeśli ktoś nęka cię przez DM:
-1. Odwiedź jego profil
+Jeśli ktoś nęka Cię za pomocą DM:
+1. Odwiedź ich profil
 2. Zablokuj użytkownika
-3. Nie będzie mógł już do ciebie napisać
+3. Nie będą już mogli wysyłać Ci wiadomości
 
 Zablokowani użytkownicy nie mogą:
-- Wysyłać ci wiadomości prywatnych
-- Widzieć twojej aktywności
-- Komentować twojego profilu
-- Wchodzić z tobą w interakcje gdziekolwiek na FastComments
+- Wysyłać Ci wiadomości bezpośrednich
+- Widzieć Twojej aktywności
+- Komentować Twojego profilu
+- Wchodzić z Tobą w interakcje gdziekolwiek na FastComments
 
 ### Managing Conversations
 
 **Hiding Conversations:**
-Możesz ukryć rozmowy, których nie chcesz już widzieć na liście rozmów:
+Możesz ukryć rozmowy, których nie chcesz już widzieć na liście konwersacji:
 1. Otwórz kartę Direct Messages
-2. Znajdź rozmowę do ukrycia
-3. Wybierz opcję ukrycia/archiwizacji
+2. Znajdź rozmowę, którą chcesz ukryć
+3. Wybierz opcję ukryj/archiwizuj
 
-Ukryte rozmowy nie będą wyświetlane na głównej liście, ale można je otworzyć, jeśli druga osoba wyśle nową wiadomość.
+Ukryte rozmowy nie będą widoczne na głównej liście, ale można je uzyskać, jeśli druga osoba wyśle nową wiadomość.
 
 **Marking as Read:**
-Wiadomości są automatycznie oznaczane jako przeczytane po ich obejrzeniu. Możesz także ręcznie oznaczyć całe rozmowy jako przeczytane:
+Wiadomości są automatycznie oznaczane jako przeczytane, gdy je wyświetlisz. Możesz też ręcznie oznaczyć całe konwersacje jako przeczytane:
 1. Otwórz kartę Direct Messages
 2. Wybierz rozmowę
 3. Wybierz "Mark as Read"
 
-To czyści licznik nieprzeczytanych wiadomości dla tej rozmowy.
+To zeruje licznik nieprzeczytanych wiadomości dla tej rozmowy.
 
 ### Best Practices
 
 **When to Use Direct Messages:**
-- Zadawanie prywatnych pytań uzupełniających
-- Podziękowanie komuś za pomocne wskazówki
-- Omawianie tematów niezwiązanych z głównym wątkiem bez zaśmiecania publicznych komentarzy
-- Koordynowanie działań z innymi członkami społeczności
+- Zadawanie dodatkowych pytań prywatnie
+- Podziękowanie komuś za pomocne rady
+- Omawianie spraw niezwiązanych z tematem, bez zaśmiecania publicznych komentarzy
+- Koordynowanie z innymi członkami społeczności
 - Przekazywanie prywatnej opinii lub sugestii
 
 **DM Etiquette:**
 - Bądź uprzejmy i profesjonalny
 - Nie spamuj użytkowników niechcianymi wiadomościami
 - Uszanuj, jeśli ktoś nie odpowiada lub wyłączy DM
-- Utrzymuj rozmowy na temat i konstruktywne
-- Nie udostępniaj cudzych DM bez zgody
+- Trzymaj rozmowy na temat i konstruktywne
+- Nie udostępniaj czyichś wiadomości bez pozwolenia
 
 **Safety Tips:**
-- Nie udostępniaj danych osobowych (telefon, adres itp.), chyba że ufasz osobie
+- Nie udostępniaj danych osobowych (telefon, adres itp.), chyba że ufasz tej osobie
 - Zablokuj i zgłoś użytkowników, którzy nękają lub nadużywają DM
 - Bądź ostrożny wobec podejrzanych linków lub próśb
-- Użyj funkcji blokowania, jeśli ktoś powoduje u ciebie dyskomfort
+- Użyj funkcji blokowania, jeśli ktoś Cię niepokoi
 
 ### Limitations and Notes
 
 **Who Can You Message:**
 - Każdy użytkownik FastComments, który nie wyłączył DM
-- Użytkownicy, którzy cię nie zablokowali
+- Użytkownicy, którzy Cię nie zablokowali
 - Użytkownicy we wszystkich społecznościach FastComments
 
 **Message Content:**
@@ -135,22 +135,22 @@ To czyści licznik nieprzeczytanych wiadomości dla tej rozmowy.
 
 **Conversation Scope:**
 - Rozmowy DM są prywatne między dwiema osobami
-- Brak wiadomości grupowych (aktualnie tylko jeden-na-jeden)
-- Historia rozmów jest zachowywana na stałe
+- Brak wiadomości grupowych (obecnie tylko jeden-na-jeden)
+- Historia rozmów jest przechowywana bezterminowo
 
 ### Troubleshooting
 
 **Can't Send a Message?**
-Drugi użytkownik mógł:
-- Wyłączyć wiadomości prywatne w ustawieniach prywatności
-- Zablokować cię
-- Usunąć swoje konto
+Druga osoba mogła:
+- Wyłączyć wiadomości bezpośrednie w ustawieniach prywatności
+- Zablokować Cię
+- Usunąć konto
 
 **Not Receiving Notifications?**
-Sprawdź ustawienia powiadomień w [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications), aby upewnić się, że powiadomienia DM są włączone.
+Sprawdź ustawienia powiadomień w [Ustawieniach konta](https://fastcomments.com/auth/my-account/edit-notifications), aby upewnić się, że powiadomienia DM są włączone.
 
 **Messages Not Sending?**
-- Sprawdź połączenie z internetem
+- Sprawdź połączenie internetowe
 - Odśwież stronę i spróbuj ponownie
 - Upewnij się, że nie zostałeś zablokowany
-- Skontaktuj się z pomocą, jeśli problem nadal występuje
+- Skontaktuj się z pomocą, jeśli problem będzie się utrzymywał

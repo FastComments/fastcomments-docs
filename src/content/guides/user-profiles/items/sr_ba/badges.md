@@ -1,93 +1,93 @@
-Značke su vizuelna postignuća koja se pojavljuju na vašem Korisničkom profilu i prepoznaju vaš doprinos i aktivnost u FastComments zajednicama.
+Bedževi su vizuelna dostignuća koja se pojavljuju na vašem korisničkom profilu, prepoznajući vaše doprinose i aktivnost u FastComments zajednicama.
 
-### Šta su značke?
+### Šta su bedževi?
 
-Značke su zasluženo priznanje za različite aktivnosti kao što su:
-- Broj objavljenih komentara
-- Broj dobijenih glasova (upvotova)
-- Generisani odgovori
-- Akcije moderatora
-- Vreme kao član zajednice
-- Posebna postignuća
+Bedževi su zasluženo priznanje za različite aktivnosti kao što su:
+- Broj postavljenih komentara
+- Primljeni lajkovi (upvotes)
+- Broj odgovora koje ste generisali
+- Moderatorske akcije
+- Vrijeme provedeno kao član zajednice
+- Specijalna dostignuća
 
-Svaka značka se prikazuje na vašem profilu i opcionalno se može pojaviti pored vašeg imena u komentarima.
+Svaki bedž se prikazuje na vašem profilu i može se opcionalno pojaviti pored vašeg imena u komentarima.
 
-### Pregled vaših znački
+### Pregled vaših bedževa
 
-Zaslužene značke se pojavljuju na stranici vašeg profila u zaglavlju. Postoje dvije kategorije:
+Osvojeni bedževi se pojavljuju na stranici vašeg profila u zaglavlju. Postoje dvije kategorije:
 
-1. **Osvojene značke** - Značke koje ste u potpunosti osvojili i otključali
-2. **U toku** - Značke na kojima radite, sa trakama napretka koje pokazuju koliko vam nedostaje
+1. **Osvojeni bedževi** - Bedževi koje ste u potpunosti osvojili i otključali
+2. **U toku** - Bedževi na kojima radite, sa trakama napretka koje pokazuju koliko ste blizu
 
-### Prikaz znački
+### Prikaz bedževa
 
-Imate potpunu kontrolu nad načinom prikaza znački:
+Imate potpunu kontrolu nad načinom na koji se bedževi prikazuju:
 
 **Na vašem profilu:**
-Sve osvojene značke se prikazuju u zaglavlju vašeg profila da bi ih drugi vidjeli.
+Svi osvojeni bedževi prikazani su u zaglavlju vašeg profila da ih drugi vide.
 
 **U vašim komentarima:**
-Možete izabrati koje će se značke prikazivati pored vašeg imena kada komentarišete:
+Možete izabrati koji bedževi će se pojavljivati pored vašeg imena kada komentarišete:
 
-1. Posjetite stranicu vašeg profila
-2. Kliknite "Upravljanje značkama" ili pristupite dijalogu za upravljanje značkama
-3. Prebacite koje značke treba da se prikazuju uz vaše komentare
-4. Poredajte značke prevlačenjem da postavite prioritet prikaza
+1. Posjetite stranicu svog profila
+2. Kliknite "Upravljaj bedževima" ili pristupite dijalogu za upravljanje bedževima
+3. Uključite/isključite koji bedževi treba da se prikazuju u vašim komentarima
+4. Preuredite bedževe povlačenjem da biste postavili prioritet prikaza
 
-Ovo vam omogućava da istaknete najvažnija postignuća bez zatrpavanja potpisa vašeg komentara.
+Ovo vam omogućava da istaknete najznačajnija dostignuća bez zagušenja potpisa vašeg komentara.
 
-### Tipovi znački
+### Vrste bedževa
 
-Značke dolaze u različitim tipovima na osnovu raznih kategorija postignuća. Za kompletan pregled svih dostupnih tipova znački i kako ih osvojiti, pogledajte [Vodič za značke](/guide-badges.html).
+Postoje različite vrste bedževa zasnovane na različitim kategorijama dostignuća. Za potpuni pregled svih dostupnih vrsta bedževa i kako ih osvojiti, pogledajte [Vodič za bedževe](/guide-badges.html).
 
-Česte kategorije znački uključuju:
+Uobičajene kategorije bedževa uključuju:
 
-- **Značke angažmana** - Na osnovu broja komentara, odgovora i interakcija
-- **Značke kvaliteta** - Na osnovu upvotova i prihvatanja od strane zajednice
-- **Značke zasnovane na vremenu** - Status veterana, aktivnost noću
-- **Značke moderatora** - Prepoznavanje za moderacijske akcije
-- **Specijalne značke** - Ručno dodijeljene ili specifične za zajednicu postignuća
+- **Bedževi za angažman** - Na osnovu broja komentara, odgovora i interakcije
+- **Bedževi za kvalitet** - Na osnovu lajkova i prihvatanja u zajednici
+- **Bedževi zasnovani na vremenu** - Status veterana, aktivnost noću
+- **Moderatorski bedževi** - Priznanje za moderacione akcije
+- **Specijalni bedževi** - Ručno dodijeljeni ili specifična dostignuća zajednice
 
-### Značke specifične za zajednicu
+### Bedževi specifični za zajednicu
 
-Značke se mogu osvojiti u različitim FastComments zajednicama:
+Bedževi se mogu osvojiti u različitim FastComments zajednicama:
 
-- **Globalne značke** - Osvojene kroz korištenje FastComments širom
-- **Značke zajednice** - Osvojene unutar određenih sajtova/tenant-a
+- **Globalni bedževi** - Osvojeni kroz sve korištenje FastCommentsa
+- **Bedževi zajednice** - Osvojeni unutar određenih sajtova/tenanta
 
-Vaš profil pokazuje koja je zajednica dodijelila svaku značku, pomažući posjetiocima da razumiju vaše oblasti ekspertize i učešća.
+Vaš profil prikazuje koja zajednica je dodijelila svaki bedž, pomažući posjetiocima da razumiju vaša područja stručnosti i učešća.
 
-### Praćenje napretka znački
+### Praćenje napretka bedževa
 
-Za značke koje još niste u potpunosti osvojili, vaš profil prikazuje:
+Za bedževe koje još niste u potpunosti osvojili, vaš profil prikazuje:
 
-- **Traka napretka** - Vizuelni indikator koliko ste blizu osvajanja značke
-- **Zahtjevi** - Šta trebate uraditi da otključate značku
-- **Kontekst zajednice** - Sa kojom je zajednicom vezana značka
+- **Traka napretka** - Vizuelni pokazatelj koliko ste blizu osvajanju bedža
+- **Zahjevi** - Šta trebate učiniti da otključate bedž
+- **Kontekst zajednice** - Sa kojom zajednicom je bedž povezan
 
-Ovo motiviše dalji angažman i daje vam jasne ciljeve ka kojima možete raditi.
+Ovo motiviše nastavak učešća i daje vam jasne ciljeve prema kojima da težite.
 
-### Prilagođavanje prikaza znački
+### Prilagođavanje prikaza bedževa
 
-**Redoslijed znački:**
-Možete promijeniti redoslijed znački da kontrolišete koje se pojavljuju prve. Redoslijed koji postavite određuje:
+**Redoslijed bedževa:**
+Možete preurediti bedževe da kontrolišete koji se pojavljuju prvi. Redoslijed koji postavite određuje:
 - Prioritet u prikazu profila
-- Koje značke se prikazuju u situacijama ograničenog prostora
-- Ličnu preferencu za isticanje postignuća
+- Koji se bedževi prikazuju u situacijama sa ograničenim prostorom
+- Ličnu preferencu za isticanje dostignuća
 
 **Vidljivost:**
-Prebacite pojedinačne značke uključeno/isključeno za prikaz u komentarima, dok ih zadržavate vidljivim na svom profilu.
+Uključite ili isključite pojedinačne bedževe za prikaz u komentarima, dok ih istovremeno zadržavate vidljivim na svom profilu.
 
-### Ručno dodijeljene značke
+### Ručno dodijeljeni bedževi
 
-Administratori zajednice mogu dodijeliti posebne ručno dodijeljene značke kako bi prepoznali:
+Administratori zajednice mogu dodijeliti posebne ručne bedževe kako bi prepoznali:
 - Posebne doprinose
 - Pobjednike takmičenja
 - VIP članove
-- Prilagođena postignuća
+- Prilagođena dostignuća
 
-Ove značke se pojavljuju uz automatski osvojene značke na vašem profilu.
+Ovi bedževi se pojavljuju zajedno sa automatski osvojenim bedževima na vašem profilu.
 
 ### Za više informacija
 
-Za kompletne detalje o sistemu znački, uključujući sve tipove znački, kriterije za osvajanje i administrativnu konfiguraciju, pogledajte sveobuhvatni [Vodič za značke](/guide-badges.html).
+Za potpune detalje o sistemu bedževa, uključujući sve vrste bedževa, kriterije za osvajanje i administrativnu konfiguraciju, pogledajte sveobuhvatni [Vodič za bedževe](/guide-badges.html).

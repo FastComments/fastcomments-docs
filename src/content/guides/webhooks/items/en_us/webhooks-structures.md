@@ -11,7 +11,7 @@ The "update" event request body is a WebhookComment object.
 ##### The "Delete" Event Structure
 The "delete" event request body is a WebhookComment object.
 
-    Change as of Nov 14th 2023
+    Change as of Nov 14, 2023
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
 
@@ -44,7 +44,7 @@ interface WebhookComment {
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** True if the user was logged in when they commented, or they verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
     /** Date when the comment was verified. **/
     verifiedDate?: number

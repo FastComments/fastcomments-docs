@@ -1,23 +1,23 @@
-Obstajata dva načina, kako z FastComments preprečiti uporabnikom komentiranje na vaši strani.
+Obstajata dva načina, kako uporabnikom prepovedati komentiranje na vaši strani z FastComments.
 
-Prvi način: če že poznate njihov e-poštni naslov, ga lahko vnesete na strani <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">blokirani uporabniki</a>.
+Prvi je, da če že poznate njihov e-poštni naslov, ga lahko vnesete na <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">stran prepovedanih uporabnikov</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-Do te strani lahko dostopate preko Moderiranje komentarjev -> Blokirani uporabniki
+Do te strani dostopate preko Moderiranje komentarjev -> Prepovedani uporabniki
 
-Ko blokiramo uporabnika, lahko izberemo vrsto: trajna ali prikrita (shadow) blokada:
+Ko želimo uporabnika prepovedati, lahko izberemo vrsto, bodisi trajna prepoved ali trajna senčna prepoved:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-Drugi način za blokiranje uporabnika je s klikom gumba za blokiranje, ki je nameščen pri vsakem komentarju na strani za moderiranje komentarjev.
+Drugi način za prepoved uporabnika je s klikom na gumb za prepoved, ki je nameščen pri vsakem komentarju na strani za moderiranje komentarjev.
 
-Ko kliknete gumb za blokiranje, se prikažejo nekatere možnosti, kjer lahko določite vrsto in trajanje blokade.
+Ko kliknemo gumb za prepoved, se prikažejo možnosti, kjer lahko določimo vrsto prepovedi in njen čas trajanja.
 
-### Prikrite blokade
+### Senčne prepovedi
 
-Prikrita blokada je vrsta blokade, ki daje videz, da je bil uporabnikov komentar ali glas uspešno shranjen, čeprav v resnici ni bil. To je lahko zaželeno v določenih primerih.
+Senčna prepoved je vrsta prepovedi, ki daje vtis, da je uporabnikov komentar ali glas uspešno shranjen, čeprav v resnici ni bil. To je lahko zaželeno v določenih primerih.
 
-### Blokiranje prek IP naslova
+### Prepoved po IP naslovu
 
-Razen če si najemnik ne želi odklopiti, FastComments podpira blokiranje po IP-ju s shranjevanjem zgoščene (hashed) različice IP naslova komentatorja.
+Razen če najemnik ne želi izstopiti iz te možnosti, FastComments podpira prepovedovanje po IP naslovu tako, da shrani heširano različico IP naslova komentatorja.

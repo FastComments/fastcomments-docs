@@ -1,42 +1,42 @@
 이제 `Embed` 블록을 추가해 보겠습니다.
 
-Go to `Insert` in the top left:
+왼쪽 상단에서 `Insert`로 이동하세요:
 
 <div class="screenshot white-bg">
-    <div class="title">Insert를 클릭하세요</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Click Insert" />
+    <div class="title">Insert 클릭</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Insert 클릭" />
 </div>
 
-Then scroll the left hand sidebar down and mouse over `Utility`.
+그런 다음 왼쪽 사이드바를 아래로 스크롤하고 `Utility` 위에 마우스를 올리세요.
 
-Next you'll want to *click and drag* the `Utility` block to the end of your blog.
+다음으로 블로그 끝 부분에 `Embed` 블록을 *클릭하고 드래그*하세요.
 
-It's important you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
-outside of your blog and you'll have to drag it around later.
+중요한 것은 보여진 것처럼 *클릭하고 드래그*하는 것이며, 그냥 클릭만 하면 안 됩니다. 그냥 클릭하면 Framer가 블로그 밖에 삽입하여 나중에 다시 끌어다 놓아야 합니다.
 
 <div class="screenshot white-bg">
     <div class="title">Embed 위젯 찾기</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Locate Embed Widget" />
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Embed 위젯 찾기" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Embed 위젯 드래그 앤 드롭</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Drag and Drop Embed Widget" />
+    <div class="title">Embed 위젯 끌어다 놓기</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Embed 위젯 끌어다 놓기" />
 </div>
 
-Now you'll have an empty Embed widget, and when you select it you'll get a sidebar on the right. You can expand the sidebar, and you'll see
-something like this:
+이제 빈 Embed 위젯이 생기고, 선택하면 오른쪽에 사이드바가 표시됩니다. 사이드바를 확장하면 다음과 유사한 화면을 볼 수 있습니다:
 
 <div class="screenshot white-bg">
     <div class="title">Embed 설정 열기</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Open Embed Settings" />
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Embed 설정 열기" />
 </div>
 
-Now let's change the `Embed` widget type to `HTML`:
+이제 `Embed` 위젯 유형을 `HTML`로 변경하겠습니다:
 
 <div class="screenshot white-bg">
     <div class="title">HTML 위젯으로 설정</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Set as HTML Widget" />
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="HTML 위젯으로 설정" />
 </div>
 
-Now you're ready for the FastComments Framer Code snippet in the next step.
+이제 다음 단계의 FastComments Framer 코드 스니펫을 적용할 준비가 되었습니다.
+
+---

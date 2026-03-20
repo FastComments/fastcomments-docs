@@ -7,34 +7,34 @@
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Кликните на Insert" />
 </div>
 
-Затим спустите леви бочни панел и поставите курсор миша преко `Utility`.
+Затим скролујте бочни панел са леве стране надоле и доведите курсор преко `Utility`.
 
-Даље, морате *кликнути и превући* `Utility` блок до краја вашег блога.
+Даље, треба да *кликнете и превучете* `Embed` блок до краја вашег блога.
 
-Важно је да *кликнете и превучете* као што је показано, а не само да га кликнете. Ако га само кликнете, Framer ће га уметнути ван вашег блога и касније ћете морати да га премештате.
+Важно је да *кликнете и превучете* како је приказано, а не само да га кликнете. Ако га само кликнете, Framer ће га уметнути ван вашег блога и касније ћете морати да га померате.
 
 <div class="screenshot white-bg">
-    <div class="title">Пронађите Embed видџет</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Пронађите Embed видџет" />
+    <div class="title">Пронађите Embed видгет</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Пронађите Embed видгет" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Превуците и испустите Embed видџет</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Превуците и испустите Embed видџет" />
+    <div class="title">Превуците и испустите Embed видгет</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Превуците и испустите Embed видгет" />
 </div>
 
-Сада ћете имати празан Embed видџет, и када га изаберете појавиће се бочни панел с десне стране. Можете проширити бочни панел, и видећете нешто овако:
+Сада ћете имати празан Embed видгет, а када га изаберете појавиће вам се бочни панел са десне стране. Можете проширити бочни панел и видећете нешто слично овоме:
 
 <div class="screenshot white-bg">
-    <div class="title">Отворите подешавања Embed</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Отворите подешавања Embed" />
+    <div class="title">Отворите поставке Embed</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Отворите поставке Embed" />
 </div>
 
-Сада хајде да променимо тип `Embed` видџета у `HTML`:
+Сада хајде да променимо тип `Embed` видгета у `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Поставите као HTML видџет</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Поставите као HTML видџет" />
+    <div class="title">Поставите као HTML видгет</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Поставите као HTML видгет" />
 </div>
 
-Сада сте спремни за FastComments Framer исечак кода у следећем кораку.
+Сада сте спремни за FastComments Framer Code snippet у следећем кораку.

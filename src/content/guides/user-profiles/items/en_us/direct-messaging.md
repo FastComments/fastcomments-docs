@@ -154,5 +154,3 @@ Check your notification settings at [Account Settings](https://fastcomments.com/
 - Refresh the page and try again
 - Ensure you haven't been blocked
 - Contact support if the problem persists
-
----

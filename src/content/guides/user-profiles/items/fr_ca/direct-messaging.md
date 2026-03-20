@@ -1,40 +1,40 @@
-La messagerie directe (DM) permet aux utilisateurs de FastComments d'avoir des conversations privées et individuelles entre eux, séparées des commentaires publics et des interactions de profil.
+La Messagerie directe (DM) permet aux utilisateurs de FastComments d'avoir des conversations privées en tête-à-tête, séparées des commentaires publics et des interactions de profil.
 
-### Qu'est-ce que la messagerie directe?
+### Qu'est-ce que la Messagerie directe ?
 
-La messagerie directe offre :
+La Messagerie directe offre :
 - **Conversations privées** entre deux utilisateurs
 - **Messagerie en temps réel** avec notifications
-- **Historique des conversations** qui persiste entre les sessions
+- **Historique des conversations** persistant entre les sessions
 - **Indicateurs de statut en ligne** pour voir quand quelqu'un est disponible
-- **Suivi des messages non lus** pour rester à jour sur les nouveaux messages
+- **Suivi des messages non lus** pour rester au courant des nouveaux messages
 
-### Démarrer une conversation en messagerie directe
+### Démarrer un message direct
 
 Il existe plusieurs façons d'initier une conversation DM :
 
 **Depuis un profil utilisateur :**
 1. Visitez la page de profil de l'utilisateur
-2. Cliquez sur l'onglet « Messages directs » ou le bouton « Envoyer un message »
+2. Cliquez sur l'onglet "Messages directs" ou le bouton "Envoyer un message"
 3. Tapez votre message et envoyez
 
 **Depuis un commentaire :**
 Certaines implémentations permettent de cliquer sur le nom ou l'avatar d'un utilisateur pour accéder rapidement à son profil et aux options de messagerie.
 
 **Lien direct :**
-Si vous avez un identifiant de conversation ou un lien de redirection DM, vous pouvez accéder directement aux conversations.
+Si vous avez un ID de conversation ou un lien de redirection DM, vous pouvez accéder directement aux conversations.
 
 ### Accéder à vos messages
 
-Pour voir toutes vos conversations en messagerie directe :
+Pour voir toutes vos conversations de messagerie directe :
 
 1. Visitez votre page de profil
-2. Cliquez sur l'onglet « Messages directs »
+2. Cliquez sur l'onglet "Messages directs"
 3. Voyez la liste de toutes vos conversations
 
 Chaque conversation affiche :
 - L'avatar et le nom de l'autre participant
-- Leur statut en ligne/hors ligne (indicateur vert lorsqu'ils sont en ligne)
+- Leur statut en ligne/hors ligne (indicateur vert lorsqu'il est en ligne)
 - Un aperçu du dernier message
 - Le nombre de messages non lus (le cas échéant)
 - L'horodatage de la dernière activité
@@ -45,9 +45,9 @@ Lorsque vous ouvrez une conversation, vous verrez :
 
 - **Historique complet des messages** - Tous les messages entre vous et l'autre utilisateur
 - **Mises à jour en temps réel** - Les nouveaux messages apparaissent instantanément via WebSocket
-- **Statut en ligne** - Voyez si l'autre personne est actuellement en ligne
+- **Statut en ligne** - Voir si l'autre personne est actuellement en ligne
 - **Horodatages des messages** - Quand chaque message a été envoyé
-- **Composition de message** - Zone de texte pour taper et envoyer de nouveaux messages
+- **Composition du message** - Zone de texte pour taper et envoyer de nouveaux messages
 
 ### Notifications de message
 
@@ -61,16 +61,16 @@ Gérez les préférences de notification dans vos [Paramètres du compte](https:
 
 ### Confidentialité et blocage
 
-**Désactiver la messagerie directe :**
-Si vous ne voulez pas recevoir de DM, vous pouvez les désactiver complètement :
+**Désactiver les messages directs :**
+Si vous ne souhaitez pas recevoir de DM, vous pouvez les désactiver complètement :
 1. Allez dans les Paramètres de confidentialité sur votre profil
-2. Activez « Désactiver la messagerie directe »
-3. L'option DM sera cachée de votre profil
+2. Activez "Désactiver les messages directs"
+3. L'option de DM sera cachée sur votre profil
 
-Pour plus de détails, consultez les [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings).
+Pour plus de détails, voir [Paramètres de confidentialité](/guide-user-profiles.html#privacy-settings).
 
 **Bloquer des utilisateurs :**
-Si quelqu'un vous harcèle via la messagerie directe :
+Si quelqu'un vous harcèle via DM :
 1. Visitez son profil
 2. Bloquez l'utilisateur
 3. Il ne pourra plus vous envoyer de messages
@@ -89,35 +89,35 @@ Vous pouvez masquer les conversations que vous ne voulez plus voir dans votre li
 2. Trouvez la conversation à masquer
 3. Sélectionnez l'option masquer/archiver
 
-Les conversations masquées n'apparaîtront pas dans votre liste principale mais peuvent être accessibles si l'autre personne envoie un nouveau message.
+Les conversations masquées n'apparaîtront pas dans votre liste principale, mais peuvent être consultées si l'autre personne envoie un nouveau message.
 
 **Marquer comme lu :**
 Les messages sont automatiquement marqués comme lus lorsque vous les consultez. Vous pouvez aussi marquer manuellement des conversations entières comme lues :
 1. Ouvrez votre onglet Messages directs
 2. Sélectionnez une conversation
-3. Choisissez « Marquer comme lu »
+3. Choisissez "Marquer comme lu"
 
 Cela efface le compteur de non lus pour cette conversation.
 
 ### Bonnes pratiques
 
-**Quand utiliser la messagerie directe :**
+**Quand utiliser la Messagerie directe :**
 - Poser des questions de suivi en privé
-- Remercier quelqu'un pour des conseils utiles
+- Remercier quelqu'un pour un conseil utile
 - Discuter de sujets hors-sujet sans encombrer les commentaires publics
 - Se coordonner avec d'autres membres de la communauté
-- Fournir des commentaires ou suggestions privés
+- Fournir des retours ou des suggestions en privé
 
-**Étiquette pour les DM :**
+**Étiquette des messages directs :**
 - Soyez respectueux et professionnel
-- N'envoyez pas de messages non sollicités ou en masse
+- Ne spammez pas les utilisateurs avec des messages non sollicités
 - Respectez le fait que quelqu'un puisse ne pas répondre ou désactiver les DM
 - Gardez les conversations pertinentes et constructives
-- Ne partagez pas les DM d'autrui sans permission
+- Ne partagez pas les DM d'autres personnes sans leur permission
 
 **Conseils de sécurité :**
 - Ne partagez pas d'informations personnelles (téléphone, adresse, etc.) à moins de faire confiance à la personne
-- Bloquez et signalez les utilisateurs qui harcèlent ou abusent via les DM
+- Bloquez et signalez les utilisateurs qui harcèlent ou abusent via DM
 - Soyez prudent avec les liens ou demandes suspectes
 - Utilisez la fonction de blocage si quelqu'un vous met mal à l'aise
 
@@ -135,22 +135,22 @@ Cela efface le compteur de non lus pour cette conversation.
 
 **Portée des conversations :**
 - Les conversations DM sont privées entre deux personnes
-- Pas de messagerie de groupe (actuellement seulement un-à-un)
+- Pas de messagerie de groupe (actuellement uniquement en tête-à-tête)
 - L'historique des conversations est conservé indéfiniment
 
 ### Dépannage
 
 **Impossible d'envoyer un message ?**
 L'autre utilisateur peut avoir :
-- Désactivé la messagerie directe dans ses paramètres de confidentialité
+- Désactivé les messages directs dans ses paramètres de confidentialité
 - Vous avoir bloqué
 - Supprimé son compte
 
 **Vous ne recevez pas de notifications ?**
-Vérifiez vos paramètres de notification dans les [Paramètres du compte](https://fastcomments.com/auth/my-account/edit-notifications) pour vous assurer que les notifications DM sont activées.
+Vérifiez vos paramètres de notification dans [Paramètres du compte](https://fastcomments.com/auth/my-account/edit-notifications) pour vous assurer que les notifications DM sont activées.
 
 **Les messages ne s'envoient pas ?**
 - Vérifiez votre connexion Internet
 - Actualisez la page et réessayez
-- Assurez-vous que vous n'avez pas été bloqué
+- Assurez-vous de ne pas avoir été bloqué
 - Contactez le support si le problème persiste

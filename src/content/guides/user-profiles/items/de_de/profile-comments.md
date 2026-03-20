@@ -1,131 +1,130 @@
----
-Profilkommentare ermöglichen es Nutzern, direkt auf der Profilseite eines anderen Nutzers Nachrichten zu hinterlassen und so eine persönliche Kommentarmauer oder ein Gästebuch-ähnliches Interaktionsfeld zu schaffen.
+Profilkommentare ermöglichen es Benutzern, direkt auf der Profilseite eines anderen Nutzers Nachrichten zu hinterlassen und so eine persönliche Kommentarwand beziehungsweise ein Gästebuch-artiges Erlebnis zu schaffen.
 
 ### Was sind Profilkommentare?
 
 Profilkommentare unterscheiden sich von normalen Artikelkommentaren:
 - Sie erscheinen auf der Profilseite eines Nutzers, nicht in Inhaltsartikeln
 - Sie sind für jeden sichtbar, der das Profil ansieht (es sei denn, die Datenschutzeinstellungen schränken dies ein)
-- Sie sind eine Möglichkeit, bestimmte Nutzer zu würdigen, zu danken oder mit ihnen zu kommunizieren
+- Sie dienen dazu, bestimmten Nutzern Anerkennung zu zeigen, zu danken oder mit ihnen zu kommunizieren
 - Sie funktionieren in allen FastComments-Communities
 
 ### Einen Profilkommentar hinterlassen
 
-Um auf dem Profil einer Person zu kommentieren:
+Um auf dem Profil von jemandem zu kommentieren:
 
-1. Besuchen Sie die Profilseite des Nutzers
-2. Wechseln Sie zum Tab "Profilkommentare"
-3. Verwenden Sie das Kommentarfeld, um Ihre Nachricht zu schreiben
-4. Senden Sie den Kommentar ab
+1. Besuche die Profilseite des Nutzers
+2. Wechsle zum Tab "Profilkommentare"
+3. Nutze das Kommentarfeld, um deine Nachricht zu schreiben
+4. Sende den Kommentar ab
 
-**Hinweis:** Die Datenschutzeinstellungen des Profilinhabers bestimmen, ob Ihr Kommentar sofort erscheint oder eine Genehmigung erfordert.
+**Hinweis:** Die Datenschutzeinstellungen des Profilinhabers bestimmen, ob dein Kommentar sofort erscheint oder eine Genehmigung erfordert.
 
-### Profilkommentare anzeigen
+### Profilkommentare ansehen
 
-**Auf Ihrem eigenen Profil:**
-1. Besuchen Sie Ihre Profilseite
-2. Klicken Sie auf den Tab "Profilkommentare"
-3. Sehen Sie alle Kommentare, die andere auf Ihrem Profil hinterlassen haben
+**Auf deinem eigenen Profil:**
+1. Besuche deine Profilseite
+2. Klicke auf den Tab "Profilkommentare"
+3. Sieh dir alle Kommentare an, die andere auf deinem Profil hinterlassen haben
 
 **Auf anderen Profilen:**
-Profilkommentare sind sichtbar, sofern der Nutzer nicht die Einstellung "Profilkommentare privat machen" aktiviert hat.
+Profilkommentare sind sichtbar, wenn der Nutzer nicht die Einstellung "Profilkommentare privat machen" aktiviert hat.
 
-### Kommentarfreigabe
+### Kommentar-Genehmigung
 
 Je nach den Einstellungen des Profilinhabers (siehe [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings)) können Kommentare:
 
 1. **Sofort erscheinen** - Automatisch genehmigt basierend auf Vertrauensstufe oder Genehmigungseinstellungen
-2. **Eine Genehmigung erfordern** - Zur Überprüfung durch den Profilinhaber zurückgehalten
+2. **Genehmigung erfordern** - Zur Überprüfung dem Profilinhaber vorenthalten
 
-Wenn Ihr Kommentar eine Genehmigung benötigt:
-- Sie sehen einen Statusindikator "Ausstehend"
+Wenn dein Kommentar eine Genehmigung erfordert:
+- Siehst du eine Anzeige mit dem Status "ausstehend"
 - Der Profilinhaber erhält eine Benachrichtigung
 - Nach der Genehmigung wird der Kommentar für andere sichtbar
 
-### Profilkommentare auf Ihrem Profil verwalten
+### Verwaltung von Profilkommentaren auf deinem Profil
 
-Wenn Sie die Kommentarfreigabe konfiguriert haben (Manuelle Genehmigung aller oder Manuelle Genehmigung neuer), können Sie eingehende Kommentare verwalten:
+Wenn du die Kommentar-Genehmigung konfiguriert hast (Manuelle Freigabe aller oder Manuelle Freigabe neuer), kannst du eingehende Kommentare verwalten:
 
 **Per E-Mail:**
-Sie erhalten E-Mail-Benachrichtigungen mit Links zum Genehmigen/Ablehnen für ausstehende Kommentare. Klicken Sie auf den Link, um direkt aus Ihrer E-Mail heraus zu handeln.
+Du erhältst E-Mail-Benachrichtigungen mit Links zum Genehmigen/Ablehnen für ausstehende Kommentare. Klicke auf den Link, um direkt aus deiner E-Mail zu handeln.
 
-**Von Ihrem Profil:**
-1. Besuchen Sie den Tab "Profilkommentare" in Ihrem Profil
-2. Sehen Sie ausstehende Kommentare ein
-3. Genehmigen oder lehnen Sie jeden Kommentar ab
+**Von deinem Profil aus:**
+1. Besuche den Tab "Profilkommentare" deines Profils
+2. Sieh dir ausstehende Kommentare an
+3. Genehmige oder lehne jeden Kommentar ab
 
-**Aus Benachrichtigungen:**
-Greifen Sie aus Ihrem Benachrichtigungszentrum auf ausstehende Kommentare zu, um sie schnell zu überprüfen.
+**Über Benachrichtigungen:**
+Greife über dein Benachrichtigungszentrum auf ausstehende Kommentare zu, um eine schnelle Prüfung vorzunehmen.
 
 ### Auf Profilkommentare antworten
 
-Wenn jemand auf Ihrem Profil kommentiert, können Sie:
-- Direkt auf seinen Kommentar antworten (erstellt einen Konversationsstrang)
-- Sein Profil besuchen und ihm zur Antwort ebenfalls einen Kommentar hinterlassen
-- Ihm eine Direktnachricht senden (falls er DMs erlaubt)
+Wenn jemand auf deinem Profil kommentiert, kannst du:
+- Direkt auf dessen Kommentar antworten (erstellt einen Gesprächsverlauf)
+- Sein Profil besuchen und im Gegenzug einen Kommentar hinterlassen
+- Ihm eine direkte Nachricht senden (falls er Direktnachrichten erlaubt)
 
 ### Profilkommentare löschen
 
-**Auf Ihrem eigenen Profil:**
-Sie können jeden Kommentar löschen, der auf Ihrem Profil hinterlassen wurde:
-1. Finden Sie den Kommentar, den Sie entfernen möchten
-2. Klicken Sie auf die Option Löschen/Entfernen
-3. Bestätigen Sie die Löschung
+**Auf deinem eigenen Profil:**
+Du kannst jeden Kommentar löschen, der auf deinem Profil hinterlassen wurde:
+1. Finde den Kommentar, den du entfernen möchtest
+2. Klicke auf die Option löschen/entfernen
+3. Bestätige die Löschung
 
 **Auf anderen Profilen:**
-Sie können Ihre eigenen Kommentare löschen, die Sie auf anderen Profilen hinterlassen haben, aber Sie können nicht die Kommentare anderer Personen löschen (es sei denn, Sie sind der Profilinhaber).
+Du kannst deine eigenen Kommentare löschen, die du auf den Profilen anderer hinterlassen hast, aber du kannst nicht die Kommentare anderer Personen löschen (es sei denn, du bist der Profilinhaber).
 
 ### Benachrichtigungen zu Profilkommentaren
 
-Sie erhalten Benachrichtigungen, wenn:
-- Jemand einen Kommentar auf Ihrem Profil hinterlässt
-- Jemand auf einen Profilkommentar-Thread, an dem Sie beteiligt sind, antwortet
-- Ein Profilkommentar, den Sie hinterlassen haben, genehmigt oder beantwortet wird
+Du erhältst Benachrichtigungen, wenn:
+- Jemand einen Kommentar auf deinem Profil hinterlässt
+- Jemand auf einen Profilkommentar-Thread antwortet, an dem du beteiligt bist
+- Ein Profilkommentar, den du hinterlassen hast, genehmigt oder beantwortet wird
 
-Verwalten Sie Benachrichtigungseinstellungen in Ihren [Kontoeinstellungen](https://fastcomments.com/auth/my-account/edit-notifications).
+Verwalte die Benachrichtigungseinstellungen in deinen [Kontoeinstellungen](https://fastcomments.com/auth/my-account/edit-notifications).
 
 ### Datenschutz und Profilkommentare
 
-Kontrollieren Sie die Sichtbarkeit von Profilkommentaren mit diesen Datenschutzeinstellungen:
+Steuere die Sichtbarkeit von Profilkommentaren mit diesen Datenschutzeinstellungen:
 
 **Profilkommentare privat machen:**
 - Verbirgt den Tab "Profilkommentare" vor Besuchern
-- Nur Sie können Kommentare sehen, die auf Ihrem Profil hinterlassen wurden
-- Verhindert das Posten neuer Kommentare
+- Nur du kannst die auf deinem Profil hinterlassenen Kommentare sehen
+- Verhindert, dass neue Kommentare gepostet werden
 
-**Modi der Kommentarfreigabe:**
-- Wählen Sie, wer ohne Genehmigung kommentieren kann
-- Legen Sie unterschiedliche Genehmigungsregeln für vertrauenswürdige vs. neue Nutzer fest
-- Fordern Sie für alle Kommentare manuelle Genehmigung an
+**Modi zur Kommentar-Genehmigung:**
+- Wähle, wer ohne Genehmigung kommentieren kann
+- Lege unterschiedliche Genehmigungsregeln für vertrauenswürdige vs. neue Nutzer fest
+- Erfordere manuelle Genehmigung für alle Kommentare
 
 Für weitere Details siehe [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
 
 ### Anwendungsfälle für Profilkommentare
 
-Profilkommentare eignen sich hervorragend für:
+Profilkommentare sind ideal für:
 
 - **Dank an hilfreiche Community-Mitglieder**
 - **Anerkennung wertvoller Beiträge**
 - **Aufbau von Beziehungen zu aktiven Teilnehmern**
 - **Hinterlassen von Testimonials oder Empfehlungen**
-- **Schaffung eines sozialen Gästbuch-Erlebnisses**
+- **Schaffung eines sozialen Gästebuch-Erlebnisses**
 - **Wertschätzung und Anerkennung in der Community**
 
-### Beste Praktiken
+### Beste Vorgehensweisen
 
 **Beim Hinterlassen von Kommentaren:**
-- Seien Sie respektvoll und konstruktiv
-- Fügen Sie Mehrwert hinzu statt nur allgemeiner "tolles Profil"-Nachrichten
-- Beziehen Sie sich, wenn möglich, auf konkrete Beiträge oder Interaktionen
+- Sei respektvoll und konstruktiv
+- Füge Mehrwert hinzu anstatt nur generische "schönes Profil"-Nachrichten
+- Beziehe dich, wenn möglich, auf konkrete Beiträge oder Interaktionen
 
-**Beim Verwalten Ihres Profils:**
-- Stellen Sie angemessene Genehmigungseinstellungen basierend auf Ihrem Komfortlevel ein
-- Antworten Sie auf Profilkommentare, um das Engagement in der Community zu fördern
-- Nutzen Sie das Blockieren, wenn jemand wiederholt unangemessene Kommentare hinterlässt
+**Bei der Verwaltung deines Profils:**
+- Wähle angemessene Genehmigungseinstellungen entsprechend deinem Komfortniveau
+- Antworte auf Profilkommentare, um Community-Engagement zu fördern
+- Nutze das Blockieren, wenn jemand wiederholt unangemessene Kommentare hinterlässt
 
 **Für die Gesundheit der Community:**
-- Profilkommentare folgen denselben Community-Richtlinien wie Artikelkommentare
-- Melden Sie unangemessene Profilkommentare, wenn Sie ihnen begegnen
+- Profilkommentare unterliegen denselben Community-Richtlinien wie Artikelkommentare
+- Melde unangemessene Profilkommentare, wenn du auf welche stößt
 - Moderatoren können Maßnahmen gegen Profilkommentare ergreifen, die gegen Regeln verstoßen
 
 ---

@@ -1,23 +1,26 @@
-Der er to måder at forbyde brugere at kommentere på dit site med FastComments.
+Der er to måder at udelukke brugere fra at kommentere på dit websted med FastComments.
 
-Den første er, at hvis du allerede kender deres e-mail, kan du indtaste den på siden <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">blokerede brugere</a>.
+Den første er, hvis du allerede kender deres e-mail, kan du indtaste den på <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">siden for blokerede brugere</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-Denne side er tilgængelig via Moderér kommentarer -> Blokerede brugere
+Denne side kan tilgås via Moderer kommentarer -> Blokerede brugere
 
-Når vi går ind for at blokere en bruger, kan vi vælge en type, enten Permanent eller Permanent Shadow Ban:
+Når vi går ind for at udelukke en bruger, kan vi vælge en type, enten Permanent eller Permanent Shadow Ban:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-Den anden måde at blokere en bruger på er ved at klikke på blokér-knappen, som er placeret på hver kommentar på siden Moderér kommentarer.
+Den anden måde at udelukke en bruger på er ved at klikke på forbudsknappen, der er placeret på hver kommentar på siden Comment Moderation.
 
-Når vi klikker på blokér-knappen, præsenteres du for nogle muligheder, hvor vi kan angive typen af blokering og varigheden.
+Når vi klikker på forbudsknappen, får du vist nogle muligheder, hvor vi kan angive forbudstype og varighed.
 
-### Skyggebaner
+### Shadow Bans
 
-En skyggeban er en type blokering, der får det til at se ud som om brugerens kommentar eller stemme blev gemt succesfuldt, når den i virkeligheden ikke blev det. Dette kan være ønskeligt i visse situationer.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
-### Blokering via IP-adresse
+### Banning Via IP Address
 
 Medmindre en tenant ønsker at fravælge det, understøtter FastComments blokering via IP ved at gemme en hashet version af kommentatorens IP-adresse.
+
+---

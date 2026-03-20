@@ -1,158 +1,158 @@
-Direct Messaging (DM) 允许 FastComments 用户进行私密的一对一对话，独立于公开评论和个人资料互动。
+Direct Messaging (DM) 允许 FastComments 用户之间进行私密的一对一对话，独立于公开评论和资料互动。
 
-### What is Direct Messaging?
+### 什么是 Direct Messaging?
 
 Direct Messaging 提供：
-- **两位用户之间的私密对话**
+- **两位用户之间的私人对话**
 - **实时消息** 与通知
-- **会话历史** 在会话之间持续保存
-- **在线状态** 指示以查看某人何时可用
-- **未读消息追踪** 以便随时掌握新消息
+- **对话历史** 在会话间持久保存
+- **在线状态** 指示某人何时可用
+- **未读消息跟踪** 以便掌握新消息
 
-### Starting a Direct Message
+### 发起 Direct Message
 
-有几种方式可以发起 DM 对话：
+有几种方式可以开始 DM 对话：
 
-**From a User Profile:**
+**从用户资料：**
 1. 访问该用户的资料页面
-2. 点击 “Direct Messages” 选项卡或 “Send Message” 按钮
-3. 输入您的消息并发送
+2. 点击“Direct Messages”选项卡或“Send Message”按钮
+3. 输入你的消息并发送
 
-**From a Comment:**
+**从评论：**
 某些实现允许点击用户的姓名或头像以快速访问其资料和消息选项。
 
-**Direct Link:**
-如果您有会话 ID 或 DM 重定向链接，您可以直接访问会话。
+**直接链接：**
+如果你有会话 ID 或 DM 重定向链接，你可以直接访问会话。
 
-### Accessing Your Messages
+### 访问你的消息
 
-要查看您所有的私信会话：
+要查看你所有的私信对话：
 
-1. 访问您的资料页面
-2. 点击 “Direct Messages” 选项卡
-3. 查看您所有会话的列表
+1. 访问你的资料页面
+2. 点击“Direct Messages”选项卡
+3. 查看你所有会话的列表
 
 每个会话显示：
 - 对方的头像和姓名
 - 他们的在线/离线状态（在线时为绿色指示）
 - 最后一条消息的预览
-- 未读消息计数（如果有）
-- 上次活动的时间戳
+- 未读消息计数（如有）
+- 最后活动的时间戳
 
-### Conversation View
+### 会话视图
 
-当您打开一个会话时，您将看到：
+打开会话时，你会看到：
 
-- **完整的消息历史** - 您与对方之间的所有消息
-- **实时更新** - 新消息通过 WebSocket 即时出现
-- **在线状态** - 查看对方当前是否在线
+- **完整的消息历史** - 你与对方之间的所有消息
+- **实时更新** - 通过 WebSocket 新消息会即时出现
+- **在线状态** - 查看对方是否当前在线
 - **消息时间戳** - 每条消息的发送时间
 - **消息撰写** - 用于输入并发送新消息的文本框
 
-### Message Notifications
+### 消息通知
 
-您将收到新私信的通知：
+你会收到新私信的通知：
 
-- **应用内通知** - 您的资料上的徽章计数
-- **电子邮件通知** - 取决于您的通知设置
-- **实时提醒** - 当您已登录时的即时通知
+- **应用内通知** - 资料上的徽章计数
+- **邮件通知** - 取决于你的通知设置
+- **实时提醒** - 当你已登录时的即时通知
 
-在您的 [帐户设置](https://fastcomments.com/auth/my-account/edit-notifications) 中管理通知偏好。
+在你的 [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) 中管理通知偏好。
 
-### Privacy and Blocking
+### 隐私与拉黑
 
-**Disabling Direct Messages:**
-如果您不想收到私信，可以完全禁用它们：
-1. 转到您资料的隐私设置
-2. 启用 “Disable Direct Messages”
-3. DM 选项将从您的资料中隐藏
+**禁用 Direct Messages：**
+如果你不想接收 DM，你可以完全禁用它们：
+1. 在你的资料中前往隐私设置
+2. 启用“Disable Direct Messages”
+3. DM 选项将从你的资料中隐藏
 
-有关更多细节，请参阅 [Privacy Settings](/guide-user-profiles.html#privacy-settings)。
+更多详情，请参见 [Privacy Settings](/guide-user-profiles.html#privacy-settings)。
 
-**Blocking Users:**
-如果有人通过私信骚扰您：
+**拉黑用户：**
+如果有人通过私信骚扰你：
 1. 访问他们的资料
-2. 屏蔽该用户
-3. 他们将无法再向您发送消息
+2. 拉黑该用户
+3. 他们将无法再向你发送消息
 
-被屏蔽的用户不能：
-- 向您发送私信
-- 查看您的活动
-- 在您的资料上发表评论
-- 在 FastComments 的任何地方与您互动
+被拉黑的用户不能：
+- 向你发送私信
+- 查看你的活动
+- 在你的资料上发表评论
+- 在 FastComments 上的任何地方与你互动
 
-### Managing Conversations
+### 管理会话
 
-**Hiding Conversations:**
-您可以隐藏不想在会话列表中看到的会话：
-1. 打开您的 Direct Messages 选项卡
+**隐藏会话：**
+你可以隐藏你不想在会话列表中看到的会话：
+1. 打开你的 Direct Messages 选项卡
 2. 找到要隐藏的会话
 3. 选择隐藏/存档选项
 
-隐藏的会话不会出现在主列表中，但如果对方发送新消息，仍然可以访问。
+隐藏的会话不会出现在你的主列表中，但如果对方发送新消息仍可访问。
 
-**Marking as Read:**
-当您查看消息时，消息会自动标记为已读。您也可以手动将整段会话标为已读：
-1. 打开您的 Direct Messages 选项卡
+**标记为已读：**
+当你查看消息时，消息会自动被标记为已读。你也可以手动将整个会话标记为已读：
+1. 打开你的 Direct Messages 选项卡
 2. 选择一个会话
-3. 选择 “Mark as Read”
+3. 选择“标记为已读”
 
-这将清除此会话的未读计数。
+这会清除此会话的未读计数。
 
-### Best Practices
+### 最佳实践
 
-**When to Use Direct Messages:**
-- 私下询问后续问题
-- 感谢某人的有用建议
-- 讨论与主题无关的事项而不使公开评论混乱
+**何时使用 Direct Messages：**
+- 私下提出后续问题
+- 感谢某人的有帮助建议
+- 讨论与主题无关的事项而不打扰公开评论
 - 与其他社区成员协调
-- 提供私密反馈或建议
+- 提供私人反馈或建议
 
-**DM Etiquette:**
-- 保持尊重和专业
-- 不要用未经请求的消息骚扰用户
-- 尊重他人不回复或禁用私信的决定
-- 使对话相关且具有建设性
-- 未经允许不要分享他人的私信
+**DM 礼仪：**
+- 保持尊重与专业
+- 不要向用户发送垃圾或未经请求的信息
+- 如果有人不回复或禁用 DM，请尊重他们
+- 保持对话相关且具有建设性
+- 未经许可不要分享他人的私信
 
-**Safety Tips:**
-- 除非信任对方，否则不要分享个人信息（电话、地址等）
-- 屏蔽并举报通过私信骚扰或虐待的用户
-- 对可疑链接或请求保持警惕
-- 如果有人让您感到不适，请使用屏蔽功能
+**安全提示：**
+- 除非你信任对方，否则不要分享个人信息（电话、地址等）
+- 拉黑并举报通过私信骚扰或辱骂的用户
+- 对可疑的链接或请求保持警惕
+- 如果有人让你感到不适，请使用拉黑功能
 
-### Limitations and Notes
+### 限制与说明
 
-**Who Can You Message:**
-- 任何未禁用私信的 FastComments 用户
-- 未屏蔽您的用户
+**你可以给谁发消息：**
+- 任何未禁用 DM 的 FastComments 用户
+- 未将你拉黑的用户
 - 跨所有 FastComments 社区的用户
 
-**Message Content:**
+**消息内容：**
 - 支持文本消息
 - 消息遵循与评论相同的内容政策
 - 不当内容可以被举报
 
-**Conversation Scope:**
-- DM 会话在两人之间是私密的
-- 目前没有群组消息功能（仅限一对一）
+**会话范围：**
+- DM 对话为两人之间的私人对话
+- 无群聊功能（目前仅一对一）
 - 会话历史会被无限期保存
 
-### Troubleshooting
+### 故障排查
 
-**Can't Send a Message?**
+**无法发送消息？**
 对方可能已：
-- 在其隐私设置中禁用私信
-- 屏蔽了您
+- 在隐私设置中禁用私信
+- 将你拉黑
 - 删除了他们的账户
 
-**Not Receiving Notifications?**
-在 [帐户设置](https://fastcomments.com/auth/my-account/edit-notifications) 中检查您的通知设置，确保已启用 DM 通知。
+**未收到通知？**
+在 [Account Settings](https://fastcomments.com/auth/my-account/edit-notifications) 检查你的通知设置，确保已启用 DM 通知。
 
-**Messages Not Sending?**
-- 检查您的网络连接
+**消息无法发送？**
+- 检查你的网络连接
 - 刷新页面并重试
-- 确保您未被屏蔽
+- 确保你没有被拉黑
 - 如果问题持续，请联系支持
 
 ---

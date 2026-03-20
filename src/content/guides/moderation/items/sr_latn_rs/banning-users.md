@@ -1,23 +1,23 @@
 Postoje dva načina da zabranite korisnicima da komentarišu na vašem sajtu koristeći FastComments.
 
-Prvi način je, ako već znate njihov email, možete ga uneti na <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">stranici zabranjenih korisnika</a>.
+Prvi je da, ako već znate njihovu email adresu, možete je uneti na <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">stranici zabranjenih korisnika</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='Stranica zabranjenih korisnika' app-screenshot-end]
 
-Na ovu stranicu se može pristupiti putem Moderacija komentara -> Zabranjeni korisnici
+Ova stranica je dostupna preko Moderacija komentara -> Zabranjeni korisnici
 
-Kada želimo da zabranimo korisnika, možemo izabrati tip: ili Permanent ili Permanent Shadow Ban:
+Kada želimo da zabraniimo korisnika, možemo izabrati tip, ili Trajna ili Trajna skrivena zabrana:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Zabrana korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banovanje korisnika' app-screenshot-end]
 
 Drugi način da zabranite korisnika je klikom na dugme za zabranu koje se nalazi na svakom komentaru na stranici Moderacija komentara.
 
-Kada kliknete na dugme za zabranu, biće vam prikazane opcije u kojima možemo odrediti tip zabrane i njenog trajanja.
+Kada kliknemo dugme za zabranu, biće vam prikazane opcije gde možemo odrediti tip zabrane i trajanje.
 
-### Shadow banovi
+### Skrivena zabrana
 
-Shadow-ban je tip zabrane koji stvara utisak da je korisnikov komentar ili glas uspešno sačuvan, iako to zapravo nije slučaj. Ovo može biti poželjno u određenim situacijama.
+Skrivena zabrana je vrsta zabrane koja stvara utisak da je korisnikov komentar ili glas uspešno sačuvan, iako to zapravo nije bio slučaj. To može biti poželjno u određenim situacijama.
 
-### Zabrana putem IP adrese
+### Zabrana po IP adresi
 
-Osim ako tenant ne želi da se isključi, FastComments podržava zabranu po IP adresi čuvanjem hashovane verzije IP adrese komentatora.
+Ukoliko zakupac ne odluči da se isključi, FastComments podržava zabranu po IP adresi tako što čuva hešovanu verziju IP adrese osobe koja komentariše.

@@ -1,95 +1,95 @@
-Der Aktivitäts-Feed in Benutzerprofilen zeigt die Kommentarhistorie eines Benutzers, Benachrichtigungen und Community-Teilnahme über alle Sites, die FastComments verwenden.
+Der Aktivitäts-Feed in Benutzerprofilen zeigt die Kommentarhistorie eines Benutzers, Benachrichtigungen und Community-Teilnahmen über alle von FastComments betriebenen Websites hinweg.
 
 ### Was ist der Aktivitäts-Feed?
 
 Der Aktivitäts-Feed bietet eine chronologische Ansicht von:
-- Vom Benutzer geposteten Kommentaren
-- Erhaltenen Antworten
+- Vom Benutzer verfasste Kommentare
+- Erhaltene Antworten
 - Erwähnungen und Interaktionen
 - Aktivitäten in verschiedenen Communities
 - Echtzeit-Updates zum Nutzerengagement
 
 ### Aktivität anzeigen
 
-**Ihre eigene Aktivität:**
-Beim Betrachten Ihres Profils sehen Sie zusätzliche Registerkarten:
-1. **Benachrichtigungen** - Warnungen zu Antworten, Erwähnungen und Interaktionen
-2. **Aktuelle Aktivität** - Ihre vollständige Kommentarhistorie über alle Sites hinweg
+**Die eigene Aktivität:**
+Beim Anzeigen Ihres Profils sehen Sie zusätzliche Registerkarten:
+1. **Benachrichtigungen** - Alerts zu Antworten, Erwähnungen und Interaktionen
+2. **Aktuelle Aktivitäten** - Ihre komplette Kommentarhistorie über alle Sites hinweg
 
 **Aktivität anderer Benutzer:**
-Beim Betrachten des Profils einer anderen Person:
-1. **Aktuelle Aktivität** - Ihre öffentliche Kommentarhistorie (falls nicht auf privat gesetzt)
+Beim Anzeigen des Profils einer anderen Person:
+1. **Aktuelle Aktivitäten** - Deren öffentliche Kommentarhistorie (sofern nicht auf privat gesetzt)
 
 Die Aktivitäts-Registerkarte zeigt, wo und wann Benutzer im FastComments-Netzwerk aktiv sind.
 
-### Registerkarte 'Benachrichtigungen'
+### Registerkarte "Benachrichtigungen"
 
 Ihre Registerkarte "Benachrichtigungen" zeigt:
 
 **Was Sie sehen werden:**
 - Antworten auf Ihre Kommentare
 - Erwähnungen Ihres Benutzernamens
-- Profilkommentar-Benachrichtigungen
-- Direktnachrichten-Warnungen
-- Badge-Erfolge
-- Moderationsmaßnahmen zu Ihren Inhalten
+- Benachrichtigungen zu Profilkommentaren
+- Direktnachrichten-Benachrichtigungen
+- Errungenschaften/Abzeichen
+- Moderationsmaßnahmen an Ihren Inhalten
 
-**Benachrichtigungsfunktionen:**
-- **Zähler für ungelesene Benachrichtigungen** - Zeigt an, wie viele ungelesene Benachrichtigungen Sie haben
+**Funktionen der Benachrichtigungen:**
+- **Ungelesen-Zähler** - Zeigt an, wie viele ungelesene Benachrichtigungen Sie haben
 - **Echtzeit-Updates** - Neue Benachrichtigungen erscheinen sofort über WebSocket
-- **Klickbare Elemente** - Klicken Sie auf eine Benachrichtigung, um zum relevanten Kommentar oder zur Konversation zu springen
-- **Gelesen/ungelesen-Status** - Visuelle Indikatoren für welche Benachrichtigungen Sie bereits gesehen haben
+- **Klickbare Elemente** - Klicken Sie eine Benachrichtigung an, um zum relevanten Kommentar oder Gespräch zu springen
+- **Gelesen/Ungelesen-Status** - Visuelle Indikatoren dafür, welche Benachrichtigungen Sie gesehen haben
 
-**Benachrichtigungen verwalten:**
+**Verwalten von Benachrichtigungen:**
 - Benachrichtigungen werden als gelesen markiert, wenn Sie sie ansehen
-- Konfigurieren Sie, welche Arten von Benachrichtigungen Sie in den [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/edit-notifications) erhalten
+- Konfigurieren Sie, welche Arten von Benachrichtigungen Sie erhalten in [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/edit-notifications)
 
-Weitere Details zur Verwaltung von Benachrichtigungen finden Sie im [Benachrichtigungs-Leitfaden](/guide-notifications.html).
+Für weitere Details zum Verwalten von Benachrichtigungen siehe die [Anleitung zu Benachrichtigungen](/guide-notifications.html).
 
-### Registerkarte 'Aktuelle Aktivität'
+### Registerkarte "Aktuelle Aktivitäten"
 
-Die Registerkarte "Aktuelle Aktivität" zeigt alle vom Benutzer in FastComments-Communities geposteten Kommentare.
+Die Registerkarte "Aktuelle Aktivitäten" zeigt alle Kommentare, die der Benutzer in FastComments-Communities gepostet hat.
 
 **Was angezeigt wird:**
-- **Kommentarinhalt** - Der vollständige Text jedes Kommentars
-- **Kontext** - Auf welchem Artikel/ welcher Seite der Kommentar stand
-- **Zeitstempel** - Wann der Kommentar gepostet wurde
+- **Kommentarinhalt** - Der Volltext jedes Kommentars
+- **Kontext** - Auf welchem Artikel/auf welcher Seite der Kommentar war
+- **Zeitstempel** - Wann der Kommentar veröffentlicht wurde
 - **Community** - Zu welcher Site oder Domain der Kommentar gehört
-- **Engagement** - Stimmen, Antworten und Interaktionsmetriken
+- **Interaktion** - Stimmen, Antworten und Interaktionsmetriken
 
-**Aktivitätsfilter:**
-In Ihrem eigenen Profil können Sie die Aktivität filtern, um anzuzeigen:
-- **Alle Aktivitäten** - Jeder Kommentar, den Sie gepostet haben
+**Filterung der Aktivitäten:**
+In Ihrem eigenen Profil können Sie die Aktivitäten filtern, um anzuzeigen:
+- **Alle Aktivitäten** - Jeden von Ihnen geposteten Kommentar
 - **Antworten an mich** - Nur Kommentare, die Antworten auf Ihre Kommentare sind
 
-So können Sie sich auf Gespräche konzentrieren, an denen Sie direkt beteiligt sind.
+So können Sie sich leicht auf Unterhaltungen konzentrieren, an denen Sie direkt beteiligt sind.
 
 ### Community-Teilnahme
 
-Das Profil zeigt auch, in welchen Communities der Benutzer aktiv ist:
+Im Profil wird auch angezeigt, in welchen Communities der Benutzer aktiv ist:
 
 - **Community-Liste** - Sites/Domains, auf denen der Benutzer kommentiert hat
 - **Aktivitätsverteilung** - Wie stark der Benutzer in jeder Community teilnimmt
 - **Community-Links** - Klickbare Links, um diese Sites zu besuchen
 
-Das hilft zu verstehen, wo ein Benutzer am meisten engagiert ist und welche Interessen er hat.
+Dies hilft zu verstehen, wo ein Benutzer am stärksten engagiert ist und welche Interessengebiete er hat.
 
 ### Statistiken
 
-Benutzerprofile zeigen wichtige Statistiken:
+Benutzerprofile zeigen wichtige Statistiken an:
 
 **Karma:**
-- Ein Reputationswert basierend auf Upvotes und der Resonanz in der Community
-- Steigt, wenn Ihre Kommentare Upvotes erhalten
-- Fällt, wenn Kommentare Downvotes erhalten
-- Spiegelt die allgemeine Wertschätzung der Community für Ihre Beiträge wider
+- Ein Reputationswert basierend auf Upvotes und der Aufnahme in der Community
+- Erhöht sich, wenn Ihre Kommentare Upvotes erhalten
+- Verringert sich, wenn Kommentare Downvotes erhalten
+- Spiegelt die allgemeine Wertschätzung Ihrer Beiträge durch die Community wider
 
 **Anzahl der Kommentare:**
-- Gesamtanzahl der Kommentare, die in allen Communities gepostet wurden
-- Beinhaltet sowohl Top-Level-Kommentare als auch Antworten
-- In Echtzeit aktualisiert, während Sie teilnehmen
+- Gesamtanzahl der über alle Communities geposteten Kommentare
+- Einschließlich sowohl Top-Level-Kommentaren als auch Antworten
+- Wird in Echtzeit aktualisiert, während Sie teilnehmen
 
-Diese Statistiken geben einen schnellen Überblick über das Engagement eines Benutzers und seine Stellung in der Community.
+Diese Statistiken geben einen schnellen Überblick über das Engagement und den Status eines Benutzers in der Community.
 
 ### Datenschutzeinstellungen
 
@@ -97,68 +97,68 @@ Benutzer können die Sichtbarkeit ihrer Aktivitäten über Datenschutzeinstellun
 
 **Profilaktivität privat machen:**
 Wenn aktiviert:
-- Nur Sie können Ihre Registerkarte "Aktuelle Aktivität" sehen
+- Nur Sie können Ihre Registerkarte "Aktuelle Aktivitäten" sehen
 - Andere können Ihre Kommentarhistorie in Ihrem Profil nicht einsehen
-- Ihre öffentlichen Kommentare sind weiterhin in ihrem ursprünglichen Kontext sichtbar (in Artikeln)
-- Nur die aggregierte Aktivitätsansicht auf Ihrem Profil ist verborgen
+- Ihre öffentlichen Kommentare sind weiterhin in ihrem ursprünglichen Kontext sichtbar (auf Artikeln)
+- Es ist nur die aggregierte Aktivitätsansicht in Ihrem Profil verborgen
 
-Details finden Sie unter [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
+Für Details siehe [Datenschutzeinstellungen](/guide-user-profiles.html#privacy-settings).
 
 ### Echtzeit-Updates
 
 Der Aktivitäts-Feed verwendet WebSocket-Technologie für Echtzeit-Updates:
 
-- **Sofortige Benachrichtigungen** - Neue Antworten und Erwähnungen erscheinen sofort
+- **Sofortige Benachrichtigungen** - Neue Antworten und Erwähnungen erscheinen unmittelbar
 - **Live-Aktivitäts-Updates** - Aktuelle Kommentare werden hinzugefügt, sobald Sie posten
-- **Online-Status** - Sehen Sie, wann Konversationspartner aktiv sind
-- **Keine Seitenaktualisierung erforderlich** - Alles aktualisiert sich automatisch
+- **Online-Status** - Sehen Sie, wann Gesprächspartner aktiv sind
+- **Kein Seiten-Reload nötig** - Alles wird automatisch aktualisiert
 
-### Aktivität in mehreren Communities
+### Aktivitäten über Communities hinweg
 
-Eine der leistungsstarken Funktionen der FastComments-Benutzerprofile ist die Anzeige der Aktivität über alle Communities hinweg:
+Eine der mächtigen Funktionen der FastComments-Benutzerprofile ist die Anzeige von Aktivitäten über alle Communities hinweg:
 
 **Vorteile:**
-- Entdecken, in welchen Bereichen Benutzer sachkundig oder aktiv sind
-- Finden Sie Benutzer mit gemeinsamen Interessen auf verschiedenen Sites
+- Entdecken, wo Benutzer fachkundig oder aktiv sind
+- Finden von Benutzern mit gemeinsamen Interessen auf verschiedenen Sites
 - Aufbau von Reputation im gesamten FastComments-Netzwerk
-- Sehen Sie die Bandbreite des Community-Engagements
+- Erkennen der Bandbreite des Community-Engagements
 
 **Beispiele:**
 - Ein Benutzer, der in Tech-Foren und Gaming-Sites aktiv ist
-- Jemand, der sowohl zu Nachrichten- als auch zu Rezeptblogs beiträgt
-- Community-Mitglieder, die sich über verwandte Themen in mehreren Bereichen beteiligen
+- Jemand, der sowohl zu News- als auch zu Rezeptblogs beiträgt
+- Community-Mitglieder, die in verwandten Themenbereichen aktiv sind
 
 ### Beste Vorgehensweisen
 
-**Beim Anzeigen von Aktivitäten:**
-- Überprüfen Sie die Aktivität eines Benutzers, um seine Fachkenntnisse und Interessen zu verstehen
-- Schauen Sie sich die Community-Teilnahme an, um gemeinsame Anknüpfungspunkte zu finden
-- Überprüfen Sie Karma und Kommentaranzahl, um das Engagement einzuschätzen
+**Beim Betrachten von Aktivitäten:**
+- Prüfen Sie die Aktivitäten eines Benutzers, um dessen Fachkenntnis und Interessen zu verstehen
+- Schauen Sie sich die Community-Teilnahme an, um Gemeinsamkeiten zu finden
+- Überprüfen Sie Karma und Kommentaranzahl, um das Engagement-Level zu beurteilen
 
-**Zum Verwalten Ihrer Aktivität:**
-- Stellen Sie Datenschutzeinstellungen ein, die Ihrem Komfortniveau entsprechen
-- Beteiligen Sie sich bedacht, da Ihre Aktivität sichtbar ist (es sei denn, Sie haben sie privat gestellt)
-- Verwenden Sie Filter, um sich auf relevante Gespräche zu konzentrieren
-- Behalten Sie Benachrichtigungen im Auge, um in Ihren Gesprächen aktiv zu bleiben
+**Beim Verwalten Ihrer Aktivitäten:**
+- Stellen Sie Datenschutzeinstellungen so ein, dass sie Ihrem Komfort entsprechen
+- Kommentieren Sie bedacht, da Ihre Aktivitäten sichtbar sind (sofern nicht privat)
+- Verwenden Sie Filter, um sich auf relevante Unterhaltungen zu konzentrieren
+- Behalten Sie Benachrichtigungen im Blick, um mit Ihren Unterhaltungen engagiert zu bleiben
 
-**Für den Aufbau von Communities:**
+**Beim Aufbau von Communities:**
 - Erkennen Sie aktive Teilnehmer anhand ihres Aktivitäts-Feeds
-- Verbinden Sie sich mit Benutzern, die Interessen über Communities hinweg teilen
-- Verwenden Sie die Aktivitätsgeschichte, um wertvolle Community-Mitglieder zu identifizieren
+- Vernetzen Sie sich mit Nutzern, die Interessen über Communities hinweg teilen
+- Nutzen Sie die Aktivitätshistorie, um wertvolle Community-Mitglieder zu identifizieren
 
 ### Fehlerbehebung
 
-**Aktivität wird nicht angezeigt:**
-- Überprüfen Sie, ob der Benutzer "Profilaktivität privat machen" aktiviert hat
+**Aktivitäten werden nicht angezeigt:**
+- Prüfen Sie, ob der Benutzer "Profilaktivität privat machen" aktiviert hat
 - Stellen Sie sicher, dass Sie eingeloggt sind, falls erforderlich
-- Aktualisieren Sie die Seite, wenn die Aktivität veraltet erscheint
+- Aktualisieren Sie die Seite, wenn Aktivitäten veraltet erscheinen
 
-**Benachrichtigungen werden nicht angezeigt:**
-- Überprüfen Sie die Benachrichtigungseinstellungen in Ihrem Konto
-- Stellen Sie sicher, dass Benachrichtigungen nicht von Ihrem E-Mail-Anbieter gefiltert werden
+**Benachrichtigungen erscheinen nicht:**
+- Prüfen Sie die Benachrichtigungseinstellungen in Ihrem Konto
+- Stellen Sie sicher, dass Benachrichtigungen nicht von Ihrem E-Mail-Provider gefiltert werden
 - Überprüfen Sie die WebSocket-Verbindung (achten Sie auf Echtzeit-Updates)
 
-**Falsche Aktivität angezeigt:**
-- Browser-Cache leeren und Seite aktualisieren
-- Abmelden und erneut anmelden
-- Melden Sie anhaltende Probleme dem Support
+**Falsche Aktivitäten angezeigt:**
+- Leeren Sie den Browser-Cache und aktualisieren Sie die Seite
+- Melden Sie sich ab und wieder an
+- Melden Sie anhaltende Probleme an den Support

@@ -1,23 +1,23 @@
-Są dwa sposoby na zablokowanie użytkowników przed komentowaniem na Twojej stronie za pomocą FastComments.
+Są dwa sposoby zablokowania użytkowników przed komentowaniem na Twojej stronie przy użyciu FastComments.
 
-Pierwszy to sytuacja, gdy już znasz ich adres e-mail — możesz go wpisać na stronie <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zablokowani użytkownicy</a>.
+Pierwszy to sytuacja, gdy znasz już ich adres e-mail — możesz wpisać go na stronie <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zablokowanych użytkowników</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-Do tej strony można przejść przez Moderuj komentarze -> Zablokowani użytkownicy
+Do tej strony można przejść przez Moderowanie komentarzy -> Zablokowani użytkownicy
 
-Gdy chcemy zablokować użytkownika, możemy wybrać typ: Trwały lub Trwały shadow ban:
+Kiedy chcemy zablokować użytkownika, możemy wybrać typ blokady: Trwała lub Trwały Shadow Ban:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-Drugim sposobem zablokowania użytkownika jest kliknięcie przycisku blokowania umieszczonego przy każdym komentarzu na stronie Moderacja komentarzy.
+Drugim sposobem zablokowania użytkownika jest kliknięcie przycisku blokady, który znajduje się przy każdym komentarzu na stronie Moderowanie komentarzy.
 
-Po kliknięciu przycisku blokowania pojawią się opcje, w których możemy określić typ blokady i czas jej trwania.
+Po kliknięciu przycisku blokady zobaczysz kilka opcji, w których można określić typ i czas trwania blokady.
 
-### Bany w cieniu
+### Shadow Bany
 
-Ban w cieniu to rodzaj blokady, która sprawia, że wygląda na to, iż komentarz lub głos użytkownika został pomyślnie zapisany, podczas gdy w rzeczywistości tak nie jest. Może to być pożądane w niektórych sytuacjach.
+Shadow-ban to rodzaj blokady, który sprawia wrażenie, że komentarz lub głos użytkownika zostały pomyślnie zapisane, podczas gdy w rzeczywistości tak nie jest. Może to być pożądane w niektórych sytuacjach.
 
 ### Blokowanie przez adres IP
 
-O ile najemca nie zrezygnuje, FastComments obsługuje blokowanie po adresie IP, przechowując zhashowaną wersję adresu IP komentującego.
+O ile tenant nie zrezygnuje, FastComments obsługuje blokowanie przez adres IP, przechowując zahaszowaną wersję adresu IP komentującego.

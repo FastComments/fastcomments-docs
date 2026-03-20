@@ -1,6 +1,6 @@
 Теперь давайте добавим блок `Embed`.
 
-Перейдите в `Insert` в верхнем левом углу:
+Перейдите в `Insert` в левом верхнем углу:
 
 <div class="screenshot white-bg">
     <div class="title">Нажмите Insert</div>
@@ -9,9 +9,9 @@
 
 Затем прокрутите левую боковую панель вниз и наведите курсор на `Utility`.
 
-Далее вам нужно *щелкнуть и перетащить* блок `Utility` в конец вашего блога.
+Далее вам нужно *нажать и перетащить* блок `Embed` до конца вашего блога.
 
-Важно именно *щелкнуть и перетащить*, как показано, а не просто щелкнуть. Если вы просто щелкнете, Framer вставит его вне вашего блога и вам придётся перемещать его позже.
+Важно *нажать и перетащить*, как показано, а не просто нажать. Если вы просто нажмёте, Framer вставит его вне вашего блога, и вам придётся потом перетаскивать его.
 
 <div class="screenshot white-bg">
     <div class="title">Найдите виджет Embed</div>
@@ -23,18 +23,18 @@
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Перетащите виджет Embed" />
 </div>
 
-Теперь у вас будет пустой виджет Embed, и при его выделении появится боковая панель справа. Вы можете развернуть панель, и увидите примерно следующее:
+Теперь у вас будет пустой виджет Embed, и при его выборе вы увидите боковую панель справа. Вы можете развернуть боковую панель, и увидите нечто подобное:
 
 <div class="screenshot white-bg">
     <div class="title">Откройте настройки Embed</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Откройте настройки Embed" />
 </div>
 
-Теперь изменим тип виджета `Embed` на `HTML`:
+Теперь давайте изменим тип виджета `Embed` на `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Установите как HTML-виджет</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Установите как HTML-виджет" />
+    <div class="title">Установите как виджет HTML</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Установите как виджет HTML" />
 </div>
 
-Теперь вы готовы к фрагменту кода FastComments для Framer на следующем шаге.
+Теперь вы готовы к фрагменту кода FastComments для Framer в следующем шаге.

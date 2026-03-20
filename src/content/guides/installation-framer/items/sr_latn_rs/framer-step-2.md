@@ -3,40 +3,39 @@ Sada ćemo dodati `Embed` blok.
 Idite na `Insert` u gornjem levom uglu:
 
 <div class="screenshot white-bg">
-    <div class="title">Click Insert</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Click Insert" />
+    <div class="title">Kliknite Insert</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-click-insert.png" alt="Kliknite Insert" />
 </div>
 
-Zatim spustite levi bočni meni i pređite mišem preko `Utility`.
+Zatim pomerite levu bočnu traku nadole i pređite mišem preko `Utility`.
 
-Sledeće, treba da *kliknete i prevučete* `Utility` blok do kraja vašeg bloga.
+Next you'll want to *click and drag* the `Embed` block to the end of your blog.
 
-Važno je da *kliknete i prevučete* kako je prikazano, a ne samo da kliknete. Ako samo kliknete, Framer će ga ubaciti van vašeg bloga i moraćete kasnije da ga pomerate.
+It's important you *click and drag* as shown, and not just click it. If you just click it, then Framer will insert it
+outside of your blog and you'll have to drag it around later.
 
 <div class="screenshot white-bg">
-    <div class="title">Locate Embed Widget</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Locate Embed Widget" />
+    <div class="title">Pronađite Embed vidžet</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-insert-embed.png" alt="Pronađite Embed vidžet" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Drag and Drop Embed Widget</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Drag and Drop Embed Widget" />
+    <div class="title">Prevucite i otpustite Embed vidžet</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-drop-embed.png" alt="Prevucite i otpustite Embed vidžet" />
 </div>
 
-Sada ćete imati prazan Embed widget, i kada ga izaberete dobićete bočni meni sa desne strane. Možete proširiti bočni meni, i videćete nešto ovako:
+Sada ćete imati prazan Embed vidžet, i kada ga izaberete pojaviće se bočna traka sa desne strane. Možete proširiti bočnu traku, i videćete nešto ovako:
 
 <div class="screenshot white-bg">
-    <div class="title">Open Embed Settings</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Open Embed Settings" />
+    <div class="title">Otvorite podešavanja Embed-a</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-embed-sidebar.png" alt="Otvorite podešavanja Embed-a" />
 </div>
 
-Sada hajde da promenimo tip `Embed` widget-a u `HTML`:
+Sada promenimo tip `Embed` vidžeta u `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Set as HTML Widget</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Set as HTML Widget" />
+    <div class="title">Postavite kao HTML vidžet</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-2-switch-to-html.png" alt="Postavite kao HTML vidžet" />
 </div>
 
-Sada ste spremni za FastComments Framer Code snippet u sledećem koraku.
-
----
+Sada ste spremni za FastComments Framer isječak koda u sledećem koraku.

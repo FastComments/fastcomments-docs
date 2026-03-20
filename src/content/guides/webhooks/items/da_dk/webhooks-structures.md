@@ -1,34 +1,34 @@
-Den eneste struktur sendt via webhooks er WebhookComment-objektet, beskrevet i TypeScript nedenfor.
+Den eneste struktur, der sendes via webhooks, er WebhookComment-objektet, beskrevet i TypeScript nedenfor.
 
 #### WebhookComment-objektets struktur
 
-##### Strukturen for "create"-begivenheden
-Requestbodyen for "create"-begivenheden er et WebhookComment-objekt.
+##### Struktur for "Create"-hændelsen
+Request-body'en for "create"-hændelsen er et WebhookComment-objekt.
 
-##### Strukturen for "update"-begivenheden
-Requestbodyen for "update"-begivenheden er et WebhookComment-objekt.
+##### Struktur for "Update"-hændelsen
+Request-body'en for "update"-hændelsen er et WebhookComment-objekt.
 
-##### Strukturen for "delete"-begivenheden
-Requestbodyen for "delete"-begivenheden er et WebhookComment-objekt.
+##### Struktur for "Delete"-hændelsen
+Request-body'en for "delete"-hændelsen er et WebhookComment-objekt.
 
     Ændring pr. 14. nov. 2023
-    Tidligere indeholdt requestbodyen for "delete"-begivenheden kun kommentar-id'et. Den indeholder nu hele kommentaren på tidspunktet for sletningen.
+    Tidligere indeholdt request-body'en for "delete"-hændelsen kun kommentarens id. Den indeholder nu den fulde kommentar på tidspunktet for sletningen.
 
 
 [inline-code-attrs-start title = 'WebhookComment-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** Id'et på kommentaren. **/
+    /** Kommentarens id. **/
     id: string
-    /** Id'et eller URL'en, der identificerer kommentartråden. Normaliseret. **/
+    /** Id'et eller URL'en, der identificerer kommentartræet. Normaliseret. **/
     urlId: string
     /** URL'en, der peger på hvor kommentaren blev efterladt. **/
     url?: string
-    /** Bruger-id'et der skrev kommentaren. Hvis SSO, præfikset med tenant-id. **/
+    /** Bruger-id'et for den, der skrev kommentaren. Hvis SSO, er det præfikset med tenant-id. **/
     userId?: string
-    /** Emailen på brugeren, der skrev kommentaren. **/
+    /** E-mailen på brugeren, der skrev kommentaren. **/
     commenterEmail?: string
-    /** Navnet på brugeren, som vises i kommentarboksen. Ved SSO kan det være displayName. **/
+    /** Navnet på brugeren, som vises i kommentærwidget'en. Ved SSO kan det være displayName. **/
     commenterName: string
     /** Rå kommentartekst. **/
     comment: string
@@ -36,58 +36,58 @@ interface WebhookComment {
     commentHTML: string
     /** Eksternt id for kommentaren. **/
     externalId?: string
-    /** Id'et på forældrekommentaren. **/
+    /** Id'et på forælderkommentaren. **/
     parentId?: string | null
-    /** UTC-datoen da kommentaren blev skrevet. **/
+    /** UTC-datoen hvor kommentaren blev skrevet. **/
     date: UTC_ISO_DateString
-    /** Kombineret karma (op - ned) fra stemmerne. **/
+    /** Kombineret karma (op - ned) af stemmer. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Sandt hvis brugeren var logget ind, da de kommenterede, eller hvis de verificerede kommentaren, eller hvis de bekræftede deres session, da kommentaren blev efterladt. **/
+    /** Sandt hvis brugeren var logget ind, da de kommenterede, eller hvis deres kommentar var verificeret, eller hvis de verificerede deres session, da kommentaren blev skrevet. **/
     verified: boolean
-    /** Dato for hvornår kommentaren blev verificeret. **/
+    /** Datoen hvor kommentaren blev verificeret. **/
     verifiedDate?: number
     /** Hvis en moderator markerede kommentaren som gennemgået. **/
     reviewed: boolean
-    /** Placeringen, eller base64-enkodningen, af avataren. Vil kun være base64 hvis det var den værdi, der blev sendt med SSO. **/
+    /** Placeringen eller base64-encodningen af avataren. Vil kun være base64 hvis det var den værdi, der blev sendt med SSO. **/
     avatarSrc?: string
-    /** Blev kommentaren manuelt eller automatisk markeret som spam? **/
+    /** Blev kommentaren markeret som spam manuelt eller automatisk? **/
     isSpam: boolean
     /** Blev kommentaren automatisk markeret som spam? **/
     aiDeterminedSpam: boolean
     /** Er der billeder i kommentaren? **/
     hasImages: boolean
-    /** Sidenummeret kommentaren er på for sorteringsretningen "Most Relevant". **/
+    /** Sidetallet kommentaren er på for sorteringsretningen "Most Relevant". **/
     pageNumber: number
-    /** Sidenummeret kommentaren er på for sorteringsretningen "Oldest First". **/
+    /** Sidetallet kommentaren er på for sorteringsretningen "Oldest First". **/
     pageNumberOF: number
-    /** Sidenummeret kommentaren er på for sorteringsretningen "Newest First". **/
+    /** Sidetallet kommentaren er på for sorteringsretningen "Newest First". **/
     pageNumberNF: number
     /** Blev kommentaren godkendt automatisk eller manuelt? **/
     approved: boolean
-    /** Lokale-koden (format: en_us) for brugeren da kommentaren blev skrevet. **/
+    /** Sprogkode (format: en_us) for brugeren da kommentaren blev skrevet. **/
     locale: string
-    /** De @mentions skrevet i kommentaren, som blev korrekt fortolket. **/
+    /** De @mentions skrevet i kommentaren, der blev korrekt analyseret. **/
     mentions?: CommentUserMention[]
     /** Domænet kommentaren kommer fra. **/
     domain?: string
-    /** Den valgfrie liste over moderationsgruppe-id'er forbundet med denne kommentar. **/
+    /** Den valgfrie liste af moderation group ids associeret med denne kommentar. **/
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
 
-Når brugere tagges i en kommentar, gemmes oplysningerne i en liste kaldet `mentions`. Hvert objekt i den liste
+Når brugere tagges i en kommentar, gemmes informationen i en liste kaldet `mentions`. Hvert objekt i den liste
 har følgende struktur.
 
 [inline-code-attrs-start title = 'Webhook Mentions-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Brugerens id. For SSO-brugere vil dette have dit tenant-id som præfiks. **/
+    /** Bruger-id'et. For SSO-brugere vil dette være præfikset med dit tenant-id. **/
     id: string
     /** Den endelige @mention-tagtekst, inklusive @-symbolet. **/
     tag: string
-    /** Den oprindelige @mention-tagtekst, inklusive @-symbolet. **/
+    /** Den originale @mention-tagtekst, inklusive @-symbolet. **/
     rawTag: string
     /** Hvilken type bruger der blev tagget. user = FastComments.com-konto. sso = SSOUser. **/
     type: 'user'|'sso'
@@ -98,25 +98,23 @@ interface CommentUserMention {
 
 #### HTTP-metoder
 
-Du kan konfigurere HTTP-metoden for hver webhook-begivenhedstype i administrationspanelet:
+Du kan konfigurere HTTP-metoden for hver webhook-hændelsestype i adminpanelet:
 
-- **Oprettelsesbegivenhed**: POST eller PUT (standard: PUT)
-- **Opdateringsbegivenhed**: POST eller PUT (standard: PUT)
-- **Sletningsbegivenhed**: DELETE, POST, eller PUT (standard: DELETE)
+- **Create Event**: POST eller PUT (standard: PUT)
+- **Update Event**: POST eller PUT (standard: PUT)
+- **Delete Event**: DELETE, POST eller PUT (standard: DELETE)
 
-Da alle forespørgsler indeholder et ID, er Create- og Update-operationer idempotente som standard (PUT). Gentagelse af samme Create- eller Update-forespørgsel bør ikke oprette dublerede objekter på din side.
+Da alle requests indeholder et ID, er Create- og Update-operationer idempotente som standard (PUT). Gentagelse af samme Create- eller Update-request bør ikke skabe duplikerede objekter hos dig.
 
-#### Anmodningsoverskrifter
+#### Request-headere
 
-Hver webhook-forespørgsel inkluderer følgende headers:
+Hver webhook-request indeholder følgende headere:
 
-| Header | Description |
+| Header | Beskrivelse |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Din API-secret |
-| `X-FastComments-Timestamp` | Unix-timestamp (sekunder) da forespørgslen blev underskrevet |
+| `token` | Din API Secret |
+| `X-FastComments-Timestamp` | Unix-timestamp (sekunder) hvor requesten blev signeret |
 | `X-FastComments-Signature` | HMAC-SHA256-signatur (`sha256=<hex>`) |
 
-Se [Sikkerhed & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for oplysninger om verifikation af HMAC-signaturen.
-
----
+Se [Sikkerhed & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information om verifikation af HMAC-signaturen.
