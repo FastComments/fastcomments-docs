@@ -1,67 +1,86 @@
-Виджет «Top Pages» отображает список ваших страниц с наибольшим количеством комментариев.
+The Most Discussed Pages Widget displays a ranked list of your most commented pages. It includes a heading, numbered ranks, comment counts with icons, last activity dates, and automatic dark mode detection.
 
-Этот виджет содержит минимальные стили по умолчанию и разработан так, чтобы его было легко настроить с помощью ваших собственных CSS.
+## Basic Installation
 
-## Структура виджета
-
-Виджет выводится со следующей HTML-структурой:
-
-```html
-<div class="fastcomments-top-pages">
-    <div class="page">
-        <a class="title-link" href="...">Page Title (42)</a>
-    </div>
-    <!-- More pages... -->
-</div>
-```
-
-## Справочник CSS по умолчанию для виджета «Top Pages»
-
-Виджет содержит следующий минимальный набор стилей по умолчанию:
-
-[inline-code-attrs-start title = 'CSS по умолчанию для виджета «Top Pages»'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Установка виджета «Наиболее обсуждаемые страницы»'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-top-pages {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+<script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
+<div id="fastcomments-widget-top-pages"></div>
+<script>
+    FastCommentsTopPagesV2(document.getElementById('fastcomments-widget-top-pages'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## Configuration Options
+
+- **tenantId** (required): Ваш идентификатор арендатора FastComments
+- **hasDarkBackground** (optional): Принудительно включает стили для тёмного фона. Если не задано, определяется автоматически по фону страницы
+
+## Widget Structure
+
+The widget renders with the following HTML structure:
+
+[inline-code-attrs-start title = 'HTML-структура виджета «Наиболее обсуждаемые страницы»'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<div class="fc-tp2">
+    <div class="fc-tp2-heading">Most Discussed Pages</div>
+    <div class="fc-tp2-list">
+        <div class="fc-tp2-item">
+            <div class="fc-tp2-rank">1</div>
+            <div class="fc-tp2-detail">
+                <a class="fc-tp2-title" href="...">Page Title</a>
+                <span class="fc-tp2-activity">Last activity Mar 21, 2026</span>
+            </div>
+            <div class="fc-tp2-count">42</div>
+        </div>
+    </div>
+</div>
+[inline-code-end]
+
+## Default CSS Reference
+
+[inline-code-attrs-start title = 'CSS по умолчанию для виджета «Наиболее обсуждаемые страницы»'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
 }
-.fastcomments-top-pages .page {
-    padding-top: 5px;
+.fc-tp2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-tp2-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-tp2-item:last-child { border-bottom: none; }
+.fc-tp2-rank { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; font-weight: 700; background: #f0f0f0; color: #888; }
+.fc-tp2-title { font-size: 13px; font-weight: 500; color: #1a1a1a; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-tp2-activity { font-size: 11px; color: #999; }
+.fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
+[inline-code-end]
+
+## Customization Examples
+
+### Remove the Rank Badges
+
+[inline-code-attrs-start title = 'Удалить бейджи ранга'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2-rank {
+    display: none !important;
 }
 [inline-code-end]
 
-## Примеры настройки
+### Remove the Container Border
 
-### Добавление стилей для ссылок
-```css
-.fastcomments-top-pages .title-link {
-    color: #0066cc !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
+[inline-code-attrs-start title = 'Удалить границу контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    border: none !important;
+    box-shadow: none !important;
 }
-
-.fastcomments-top-pages .title-link:hover {
-    text-decoration: underline !important;
-}
-```
-
-### Добавление границ между страницами
-```css
-.fastcomments-top-pages .page {
-    border-bottom: 1px solid #eee !important;
-    padding: 10px 0 !important;
-}
-
-.fastcomments-top-pages .page:last-child {
-    border-bottom: none !important;
-}
-```
-
-### Стилизация счётчика комментариев
-```css
-.fastcomments-top-pages .title-link {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-```
+[inline-code-end]
 
 ---

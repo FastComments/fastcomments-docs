@@ -1,23 +1,29 @@
-Postoje dva načina da zabranite korisnicima da komentarišu na vašem sajtu koristeći FastComments.
+Postoje dva načina da se korisnicima zabrani komentarisanje na vašem sajtu uz FastComments.
 
-Prvi je da, ako već znate njihovu email adresu, možete je uneti na <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">stranici zabranjenih korisnika</a>.
+Prvi je da, ako već znate njihov email, možete ga uneti na strani <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zabranjeni korisnici</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='Stranica zabranjenih korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-Ova stranica je dostupna preko Moderacija komentara -> Zabranjeni korisnici
+Na ovu stranicu se može pristupiti putem Moderacija komentara -> Zabranjeni korisnici
 
-Kada želimo da zabraniimo korisnika, možemo izabrati tip, ili Trajna ili Trajna skrivena zabrana:
+Kada idemo da zabrani korisnika, možemo izabrati tip, bilo Permanent ili Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banovanje korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-Drugi način da zabranite korisnika je klikom na dugme za zabranu koje se nalazi na svakom komentaru na stranici Moderacija komentara.
+Drugi način za zabranu korisnika je klikom na dugme za zabranu koje se nalazi na svakom komentaru na stranici za moderaciju komentara.
 
-Kada kliknemo dugme za zabranu, biće vam prikazane opcije gde možemo odrediti tip zabrane i trajanje.
+Kada kliknemo dugme za zabranu, biće vam prikazane neke opcije, gde možemo odrediti tip zabrane i trajanje.
 
-### Skrivena zabrana
+### Email aliasi
 
-Skrivena zabrana je vrsta zabrane koja stvara utisak da je korisnikov komentar ili glas uspešno sačuvan, iako to zapravo nije bio slučaj. To može biti poželjno u određenim situacijama.
+Kada se korisnik zabrani po emailu, FastComments automatski ignoriše `+` alias-e. Na primer, zabrana `user+alias@gmail.com` će
+takođe zabraniti `user@gmail.com` i bilo koju drugu `+` varijaciju te adrese, kao što je `user+other@gmail.com`.
 
-### Zabrana po IP adresi
+### Shadow banovi
 
-Ukoliko zakupac ne odluči da se isključi, FastComments podržava zabranu po IP adresi tako što čuva hešovanu verziju IP adrese osobe koja komentariše.
+Shadow-ban je tip zabrane koji stvara utisak da je komentar ili glas korisnika uspešno sačuvan, kada zapravo nije. Ovo može biti
+poželjno u određenim situacijama.
+
+### Zabrana putem IP adrese
+
+Osim ako tenant ne želi da se isključi, FastComments podržava zabranu putem IP-a čuvanjem heširane verzije IP adrese komentatora.

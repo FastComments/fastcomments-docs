@@ -1,0 +1,11 @@
+{
+  "name": "Widget Πρόσφατων Συζητήσεων",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση Widget Πρόσφατων Συζητήσεων",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Εγκατάσταση"
+    }
+  ]
+}

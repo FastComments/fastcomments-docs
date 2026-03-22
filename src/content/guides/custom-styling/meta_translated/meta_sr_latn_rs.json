@@ -6,10 +6,10 @@
     {
       "name": "Kako prilagoditi stilove",
       "file": "comment-widget-instructions.md",
-      "subCat": "Početak rada"
+      "subCat": "Početak"
     },
     {
-      "name": "Referenca stilizovanja komentarskog widgeta (v2, najnovije)",
+      "name": "Referenca za stilizovanje komentarskog widgeta (v2, najnovije)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Stilizovanje widgeta"
     },
@@ -19,14 +19,19 @@
       "subCat": "Stilizovanje widgeta"
     },
     {
-      "name": "Stilizovanje widgeta za najposećenije stranice",
+      "name": "Stilizovanje widgeta za najdiskutovanije stranice",
       "file": "top-pages-widget.md",
       "subCat": "Stilizovanje widgeta"
     },
     {
-      "name": "Druge frontend biblioteke",
+      "name": "Stilizovanje widgeta za najnovije diskusije",
+      "file": "recent-discussions-widget.md",
+      "subCat": "Stilizovanje widgeta"
+    },
+    {
+      "name": "Ostale frontend biblioteke",
       "file": "other-frontend-libraries.md",
-      "subCat": "Druge frontend biblioteke"
+      "subCat": "Ostale frontend biblioteke"
     }
   ]
 }

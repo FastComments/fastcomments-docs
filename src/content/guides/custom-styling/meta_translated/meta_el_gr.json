@@ -4,29 +4,34 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Πώς να Προσαρμόσετε τα Στυλ",
+      "name": "Πώς να προσαρμόσετε τα στυλ",
       "file": "comment-widget-instructions.md",
       "subCat": "Εισαγωγή"
     },
     {
-      "name": "Αναφορά Στυλ Widget Σχολίων (v2, τελευταία)",
+      "name": "Αναφορά Στυλ Widget Σχολίων (v2, πιο πρόσφατη έκδοση)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Στυλ Widget"
     },
     {
-      "name": "Στυλ Widget Πρόσφατων Σχολίων",
+      "name": "Στυλ Widget για Πρόσφατα Σχόλια",
       "file": "recent-comments-widget.md",
       "subCat": "Στυλ Widget"
     },
     {
-      "name": "Στυλ Widget Κορυφαίων Σελίδων",
+      "name": "Στυλ Widget για τις Πιο Συζητημένες Σελίδες",
       "file": "top-pages-widget.md",
       "subCat": "Στυλ Widget"
     },
     {
-      "name": "Άλλες Βιβλιοθήκες Frontend",
+      "name": "Στυλ Widget για Πρόσφατες Συζητήσεις",
+      "file": "recent-discussions-widget.md",
+      "subCat": "Στυλ Widget"
+    },
+    {
+      "name": "Άλλες βιβλιοθήκες frontend",
       "file": "other-frontend-libraries.md",
-      "subCat": "Άλλες Βιβλιοθήκες Frontend"
+      "subCat": "Άλλες βιβλιοθήκες frontend"
     }
   ]
 }

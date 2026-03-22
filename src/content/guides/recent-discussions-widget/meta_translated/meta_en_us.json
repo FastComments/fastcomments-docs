@@ -1,0 +1,11 @@
+{
+  "name": "Recent Discussions Widget",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Recent Discussions Widget Installation",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Installation"
+    }
+  ]
+}

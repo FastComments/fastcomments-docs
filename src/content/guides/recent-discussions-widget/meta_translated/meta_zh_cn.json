@@ -1,0 +1,11 @@
+{
+  "name": "最近讨论小部件",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "最近讨论小部件安装",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "安装"
+    }
+  ]
+}

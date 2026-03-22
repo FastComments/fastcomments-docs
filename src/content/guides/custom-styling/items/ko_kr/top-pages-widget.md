@@ -1,67 +1,87 @@
-상위 페이지 위젯은 댓글이 가장 많은 페이지 목록을 표시합니다.
+---
+가장 많이 논의된 페이지 위젯은 댓글이 가장 많은 페이지를 순위별로 표시합니다. 헤딩, 번호 매겨진 순위, 아이콘이 있는 댓글 수, 마지막 활동 날짜 및 자동 다크 모드 감지를 포함합니다.
 
-이 위젯은 최소한의 기본 스타일링을 포함하며 사용자가 직접 CSS로 쉽게 커스터마이즈할 수 있도록 설계되어 있습니다.
+## 기본 설치
+
+[inline-code-attrs-start title = '가장 많이 논의된 페이지 위젯 설치'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
+<div id="fastcomments-widget-top-pages"></div>
+<script>
+    FastCommentsTopPagesV2(document.getElementById('fastcomments-widget-top-pages'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## 구성 옵션
+
+- **tenantId** (required): Your FastComments tenant ID
+- **hasDarkBackground** (optional): 다크 모드 스타일을 강제 적용합니다. 설정하지 않으면 페이지 배경에서 자동으로 감지됩니다
 
 ## 위젯 구조
 
-위젯은 다음과 같은 HTML 구조로 렌더링됩니다:
+위젯은 다음 HTML 구조로 렌더링됩니다:
 
-```html
-<div class="fastcomments-top-pages">
-    <div class="page">
-        <a class="title-link" href="...">Page Title (42)</a>
-    </div>
-    <!-- More pages... -->
-</div>
-```
-
-## 상위 페이지 기본 CSS 참고
-
-이 위젯은 다음과 같은 최소한의 기본 스타일을 포함합니다:
-
-[inline-code-attrs-start title = '상위 페이지 위젯 기본 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '가장 많이 논의된 페이지 위젯 HTML 구조'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-top-pages {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+<div class="fc-tp2">
+    <div class="fc-tp2-heading">Most Discussed Pages</div>
+    <div class="fc-tp2-list">
+        <div class="fc-tp2-item">
+            <div class="fc-tp2-rank">1</div>
+            <div class="fc-tp2-detail">
+                <a class="fc-tp2-title" href="...">Page Title</a>
+                <span class="fc-tp2-activity">Last activity Mar 21, 2026</span>
+            </div>
+            <div class="fc-tp2-count">42</div>
+        </div>
+    </div>
+</div>
+[inline-code-end]
+
+## 기본 CSS 참조
+
+[inline-code-attrs-start title = '가장 많이 논의된 페이지 위젯 기본 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
 }
-.fastcomments-top-pages .page {
-    padding-top: 5px;
+.fc-tp2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-tp2-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-tp2-item:last-child { border-bottom: none; }
+.fc-tp2-rank { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; font-weight: 700; background: #f0f0f0; color: #888; }
+.fc-tp2-title { font-size: 13px; font-weight: 500; color: #1a1a1a; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-tp2-activity { font-size: 11px; color: #999; }
+.fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
+[inline-code-end]
+
+## 맞춤 설정 예제
+
+### 순위 배지 제거
+
+[inline-code-attrs-start title = '순위 배지 제거'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2-rank {
+    display: none !important;
 }
 [inline-code-end]
 
-## 사용자 지정 예제
+### 컨테이너 테두리 제거
 
-### 링크에 스타일 추가
-```css
-.fastcomments-top-pages .title-link {
-    color: #0066cc !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
+[inline-code-attrs-start title = '컨테이너 테두리 제거'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    border: none !important;
+    box-shadow: none !important;
 }
-
-.fastcomments-top-pages .title-link:hover {
-    text-decoration: underline !important;
-}
-```
-
-### 페이지 사이에 테두리 추가
-```css
-.fastcomments-top-pages .page {
-    border-bottom: 1px solid #eee !important;
-    padding: 10px 0 !important;
-}
-
-.fastcomments-top-pages .page:last-child {
-    border-bottom: none !important;
-}
-```
-
-### 댓글 수 스타일 지정
-```css
-.fastcomments-top-pages .title-link {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-```
+[inline-code-end]
 
 ---

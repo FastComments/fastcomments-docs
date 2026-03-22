@@ -9,7 +9,7 @@
       "subCat": "Kom godt i gang"
     },
     {
-      "name": "Stylingreference for kommentar-widget (v2, nyeste)",
+      "name": "Reference for styling af kommentar-widget (v2, seneste)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Widget-styling"
     },
@@ -19,8 +19,13 @@
       "subCat": "Widget-styling"
     },
     {
-      "name": "Widget-styling for top-sider",
+      "name": "Widget-styling for mest diskuterede sider",
       "file": "top-pages-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Widget-styling for seneste diskussioner",
+      "file": "recent-discussions-widget.md",
       "subCat": "Widget-styling"
     },
     {

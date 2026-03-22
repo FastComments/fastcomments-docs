@@ -1,67 +1,86 @@
-Top Pagesウィジェットは、コメント数が最も多いページの一覧を表示します。
+最も議論されたページ ウィジェットは、コメント数の多いページをランク付きリストで表示します。見出し、番号付きランク、アイコン付きのコメント数、最終アクティビティの日付、および自動ダークモード検出が含まれます。
 
-このウィジェットには最小限のデフォルトスタイルが含まれており、独自のCSSで簡単にカスタマイズできるように設計されています。
+## 基本的なインストール
 
-## ウィジェットの構造
+[inline-code-attrs-start title = '最も議論されたページ ウィジェットのインストール'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
+<div id="fastcomments-widget-top-pages"></div>
+<script>
+    FastCommentsTopPagesV2(document.getElementById('fastcomments-widget-top-pages'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## 設定オプション
+
+- **tenantId** (必須): あなたの FastComments テナント ID
+- **hasDarkBackground** (任意): ダークモードのスタイリングを強制します。未設定の場合はページの背景から自動検出されます
+
+## ウィジェット構造
 
 ウィジェットは次のHTML構造でレンダリングされます:
 
-```html
-<div class="fastcomments-top-pages">
-    <div class="page">
-        <a class="title-link" href="...">Page Title (42)</a>
-    </div>
-    <!-- More pages... -->
-</div>
-```
-
-## Top Pages のデフォルトCSS参照
-
-ウィジェットには次の最小限のデフォルトスタイルが含まれます:
-
-[inline-code-attrs-start title = 'Top Pages ウィジェットのデフォルト CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最も議論されたページ ウィジェットのHTML構造'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-top-pages {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+<div class="fc-tp2">
+    <div class="fc-tp2-heading">Most Discussed Pages</div>
+    <div class="fc-tp2-list">
+        <div class="fc-tp2-item">
+            <div class="fc-tp2-rank">1</div>
+            <div class="fc-tp2-detail">
+                <a class="fc-tp2-title" href="...">Page Title</a>
+                <span class="fc-tp2-activity">Last activity Mar 21, 2026</span>
+            </div>
+            <div class="fc-tp2-count">42</div>
+        </div>
+    </div>
+</div>
+[inline-code-end]
+
+## デフォルトのCSS参照
+
+[inline-code-attrs-start title = '最も議論されたページ ウィジェットのデフォルトのCSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
 }
-.fastcomments-top-pages .page {
-    padding-top: 5px;
-}
+.fc-tp2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-tp2-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-tp2-item:last-child { border-bottom: none; }
+.fc-tp2-rank { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; font-weight: 700; background: #f0f0f0; color: #888; }
+.fc-tp2-title { font-size: 13px; font-weight: 500; color: #1a1a1a; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-tp2-activity { font-size: 11px; color: #999; }
+.fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
 ## カスタマイズ例
 
-### リンクにスタイルを追加
-```css
-.fastcomments-top-pages .title-link {
-    color: #0066cc !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-}
+### ランクバッジを削除
 
-.fastcomments-top-pages .title-link:hover {
-    text-decoration: underline !important;
+[inline-code-attrs-start title = 'ランクバッジを削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2-rank {
+    display: none !important;
 }
-```
+[inline-code-end]
 
-### ページ間にボーダーを追加
-```css
-.fastcomments-top-pages .page {
-    border-bottom: 1px solid #eee !important;
-    padding: 10px 0 !important;
-}
+### コンテナのボーダーを削除
 
-.fastcomments-top-pages .page:last-child {
-    border-bottom: none !important;
+[inline-code-attrs-start title = 'コンテナのボーダーを削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    border: none !important;
+    box-shadow: none !important;
 }
-```
-
-### コメント数のスタイル
-```css
-.fastcomments-top-pages .title-link {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-```
+[inline-code-end]
 
 ---

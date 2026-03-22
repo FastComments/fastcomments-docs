@@ -1,67 +1,84 @@
-Widżet Najpopularniejsze strony wyświetla listę twoich najbardziej komentowanych stron.
+Widżet Najbardziej Dyskutowanych Stron wyświetla uszeregowaną listę stron z największą liczbą komentarzy. Zawiera nagłówek, numerowane pozycje, liczniki komentarzy z ikonami, daty ostatniej aktywności oraz automatyczne wykrywanie trybu ciemnego.
 
-Ten widżet zawiera minimalne domyślne style i został zaprojektowany tak, aby można go było łatwo dostosować za pomocą własnego CSS.
+## Podstawowa instalacja
+
+[inline-code-attrs-start title = 'Instalacja widżetu Najbardziej Dyskutowanych Stron'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
+<div id="fastcomments-widget-top-pages"></div>
+<script>
+    FastCommentsTopPagesV2(document.getElementById('fastcomments-widget-top-pages'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## Opcje konfiguracji
+
+- **tenantId** (wymagane): Twój identyfikator tenant FastComments
+- **hasDarkBackground** (opcjonalne): Wymusza stylizację w trybie ciemnym. Jeśli nie ustawiono, wykrywane automatycznie na podstawie tła strony
 
 ## Struktura widżetu
 
-Widżet renderuje się przy następującej strukturze HTML:
+Widżet renderuje się z następującą strukturą HTML:
 
-```html
-<div class="fastcomments-top-pages">
-    <div class="page">
-        <a class="title-link" href="...">Page Title (42)</a>
-    </div>
-    <!-- More pages... -->
-</div>
-```
-
-## Domyślne style CSS widżetu Najpopularniejsze strony
-
-Widżet zawiera następujące minimalne domyślne style:
-
-[inline-code-attrs-start title = 'Domyślne style CSS widżetu Najpopularniejsze strony'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HTML widżetu Najbardziej Dyskutowanych Stron'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-top-pages {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+<div class="fc-tp2">
+    <div class="fc-tp2-heading">Most Discussed Pages</div>
+    <div class="fc-tp2-list">
+        <div class="fc-tp2-item">
+            <div class="fc-tp2-rank">1</div>
+            <div class="fc-tp2-detail">
+                <a class="fc-tp2-title" href="...">Page Title</a>
+                <span class="fc-tp2-activity">Last activity Mar 21, 2026</span>
+            </div>
+            <div class="fc-tp2-count">42</div>
+        </div>
+    </div>
+</div>
+[inline-code-end]
+
+## Domyślny CSS widżetu (referencja)
+
+[inline-code-attrs-start title = 'Domyślny CSS widżetu Najbardziej Dyskutowanych Stron'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
 }
-.fastcomments-top-pages .page {
-    padding-top: 5px;
-}
+.fc-tp2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-tp2-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-tp2-item:last-child { border-bottom: none; }
+.fc-tp2-rank { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; font-weight: 700; background: #f0f0f0; color: #888; }
+.fc-tp2-title { font-size: 13px; font-weight: 500; color: #1a1a1a; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-tp2-activity { font-size: 11px; color: #999; }
+.fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
 ## Przykłady dostosowania
 
-### Dodawanie stylów do linków
-```css
-.fastcomments-top-pages .title-link {
-    color: #0066cc !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-}
+### Usuń odznaki rangi
 
-.fastcomments-top-pages .title-link:hover {
-    text-decoration: underline !important;
+[inline-code-attrs-start title = 'Usuń odznaki rangi'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2-rank {
+    display: none !important;
 }
-```
+[inline-code-end]
 
-### Dodawanie obramowań między stronami
-```css
-.fastcomments-top-pages .page {
-    border-bottom: 1px solid #eee !important;
-    padding: 10px 0 !important;
+### Usuń obramowanie kontenera
+
+[inline-code-attrs-start title = 'Usuń obramowanie kontenera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    border: none !important;
+    box-shadow: none !important;
 }
-
-.fastcomments-top-pages .page:last-child {
-    border-bottom: none !important;
-}
-```
-
-### Stylowanie liczby komentarzy
-```css
-.fastcomments-top-pages .title-link {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-```
-
----
+[inline-code-end]

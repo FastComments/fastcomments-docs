@@ -9,7 +9,7 @@
       "subCat": "Primeros pasos"
     },
     {
-      "name": "Referencia de estilos del widget de comentarios (v2, última versión)",
+      "name": "Referencia de estilos del widget de comentarios (v2, más reciente)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Estilos del widget"
     },
@@ -19,8 +19,13 @@
       "subCat": "Estilos del widget"
     },
     {
-      "name": "Estilos del widget de páginas principales",
+      "name": "Estilos del widget de páginas más discutidas",
       "file": "top-pages-widget.md",
+      "subCat": "Estilos del widget"
+    },
+    {
+      "name": "Estilos del widget de discusiones recientes",
+      "file": "recent-discussions-widget.md",
       "subCat": "Estilos del widget"
     },
     {

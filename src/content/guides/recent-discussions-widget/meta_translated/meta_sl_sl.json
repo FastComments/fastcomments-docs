@@ -1,0 +1,11 @@
+{
+  "name": "Pripomoček za nedavne razprave",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Namestitev pripomočka za nedavne razprave",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Namestitev"
+    }
+  ]
+}

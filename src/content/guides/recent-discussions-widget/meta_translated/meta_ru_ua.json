@@ -1,0 +1,11 @@
+{
+  "name": "Виджет последних обсуждений",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Установка виджета последних обсуждений",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Установка"
+    }
+  ]
+}

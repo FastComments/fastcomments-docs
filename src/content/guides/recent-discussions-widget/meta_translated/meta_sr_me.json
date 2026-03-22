@@ -1,0 +1,11 @@
+{
+  "name": "Виџет за недавне дискусије",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Инсталација виџета за недавне дискусије",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Инсталација"
+    }
+  ]
+}

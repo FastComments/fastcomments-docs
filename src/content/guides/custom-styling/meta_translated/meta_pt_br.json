@@ -19,8 +19,13 @@
       "subCat": "Estilização do Widget"
     },
     {
-      "name": "Estilização do Widget de Páginas Principais",
+      "name": "Estilização do Widget de Páginas Mais Discutidas",
       "file": "top-pages-widget.md",
+      "subCat": "Estilização do Widget"
+    },
+    {
+      "name": "Estilização do Widget de Discussões Recentes",
+      "file": "recent-discussions-widget.md",
       "subCat": "Estilização do Widget"
     },
     {

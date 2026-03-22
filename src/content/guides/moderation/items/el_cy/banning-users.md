@@ -1,24 +1,27 @@
-Υπάρχουν δύο τρόποι για να απαγορεύσετε σε χρήστες να σχολιάζουν στην ιστοσελίδα σας με το FastComments.
+Υπάρχουν δύο τρόποι για να απαγορεύσετε σε χρήστες να σχολιάζουν στον ιστότοπό σας με το FastComments.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένων χρηστών</a> page.
+Ο πρώτος είναι ότι, εάν ήδη γνωρίζετε το email τους, μπορείτε να το εισάγετε στη σελίδα <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">απαγορευμένοι χρήστες</a>.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
 
-This page can be accessed via Διαχείριση σχολίων -> Απαγορευμένοι χρήστες
+Αυτή η σελίδα είναι προσβάσιμη μέσω Διαχείριση σχολίων -> Απαγορευμένοι χρήστες
 
-When we go to ban a user, we can pick a type, either Permanent or Μόνιμη Σκιώδης Απαγόρευση:
+Όταν προχωράμε στην απαγόρευση ενός χρήστη, μπορούμε να επιλέξουμε έναν τύπο, είτε Μόνιμη είτε Μόνιμη σκιώδης απαγόρευση:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Σελίδα Διαχείρισης Σχολίων.
+Ο δεύτερος τρόπος για να απαγορεύσετε έναν χρήστη είναι πατώντας το κουμπί απαγόρευσης που υπάρχει σε κάθε σχόλιο στη σελίδα Διαχείρισης σχολίων.
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+Όταν πατάτε το κουμπί απαγόρευσης, θα σας παρουσιαστούν κάποιες επιλογές, όπου μπορούμε να καθορίσουμε τον τύπο της απαγόρευσης και τη διάρκεια.
+
+### Ψευδώνυμα Email
+
+Όταν απαγορεύετε έναν χρήστη με βάση το email, το FastComments αγνοεί αυτόματα τα ψευδώνυμα με `+`. Για παράδειγμα, η απαγόρευση του `user+alias@gmail.com` θα απαγορεύσει επίσης το `user@gmail.com` και οποιαδήποτε άλλη παραλλαγή με `+` αυτής της διεύθυνσης, όπως `user+other@gmail.com`.
 
 ### Σκιώδεις Απαγορεύσεις
 
-Η σκιώδης απαγόρευση είναι ένας τύπος απαγόρευσης που δημιουργεί την εντύπωση ότι το σχόλιο ή η ψήφος του χρήστη αποθηκεύτηκε επιτυχώς, ενώ στην πραγματικότητα δεν αποθηκεύτηκε. Αυτό μπορεί να είναι
-επιθυμητό σε ορισμένες περιπτώσεις.
+Η σκιώδης απαγόρευση είναι ένας τύπος απαγόρευσης που δημιουργεί την εικόνα ότι το σχόλιο ή η ψήφος του χρήστη αποθηκεύτηκε επιτυχώς, ενώ στην πραγματικότητα δεν αποθηκεύτηκε. Αυτό μπορεί να είναι επιθυμητό σε ορισμένες περιπτώσεις.
 
-### Απαγόρευση μέσω διεύθυνσης IP
+### Απαγόρευση μέσω Διεύθυνσης IP
 
-Εκτός αν ο tenant επιθυμεί να εξαιρεθεί, το FastComments υποστηρίζει την απαγόρευση μέσω IP αποθηκεύοντας μια κατακερματισμένη έκδοση της διεύθυνσης IP του σχολιαστή.
+Εκτός εάν ένας πελάτης επιθυμεί να εξαιρεθεί, το FastComments υποστηρίζει την απαγόρευση μέσω IP αποθηκεύοντας μια κατακερματισμένη (hashed) έκδοση της διεύθυνσης IP του σχολιαστή.

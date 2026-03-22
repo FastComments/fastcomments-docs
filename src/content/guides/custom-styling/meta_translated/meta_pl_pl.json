@@ -1,6 +1,6 @@
 {
-  "name": "Niestandardowe style",
-  "pageHeader": "Przewodnik po niestandardowych stylach",
+  "name": "Dostosowywanie stylów",
+  "pageHeader": "Przewodnik po dostosowywaniu stylów",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -9,19 +9,24 @@
       "subCat": "Pierwsze kroki"
     },
     {
-      "name": "Referencja stylów widgetu komentarzy (v2, najnowsza)",
+      "name": "Referencja stylów widżetu komentarzy (v2, najnowsza)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Stylizacja widgetów"
+      "subCat": "Stylowanie widżetu"
     },
     {
-      "name": "Stylizacja widgetu 'Najnowsze komentarze'",
+      "name": "Stylowanie widżetu najnowszych komentarzy",
       "file": "recent-comments-widget.md",
-      "subCat": "Stylizacja widgetów"
+      "subCat": "Stylowanie widżetu"
     },
     {
-      "name": "Stylizacja widgetu 'Najpopularniejsze strony'",
+      "name": "Stylowanie widżetu najczęściej dyskutowanych stron",
       "file": "top-pages-widget.md",
-      "subCat": "Stylizacja widgetów"
+      "subCat": "Stylowanie widżetu"
+    },
+    {
+      "name": "Stylowanie widżetu najnowszych dyskusji",
+      "file": "recent-discussions-widget.md",
+      "subCat": "Stylowanie widżetu"
     },
     {
       "name": "Inne biblioteki frontendowe",

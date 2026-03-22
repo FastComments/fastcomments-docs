@@ -9,24 +9,29 @@
       "subCat": "Aan de slag"
     },
     {
-      "name": "Referentie voor styling van de Reacties-widget (v2, nieuwste)",
+      "name": "Referentie voor styling van reactie-widget (v2, nieuwste)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Widget-styling"
     },
     {
-      "name": "Styling van de widget Recente reacties",
+      "name": "Styling van widget voor recente reacties",
       "file": "recent-comments-widget.md",
       "subCat": "Widget-styling"
     },
     {
-      "name": "Styling van de widget Toppagina's",
+      "name": "Styling van widget voor meest besproken pagina's",
       "file": "top-pages-widget.md",
       "subCat": "Widget-styling"
     },
     {
-      "name": "Andere frontend-bibliotheken",
+      "name": "Styling van widget voor recente discussies",
+      "file": "recent-discussions-widget.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Andere front-endbibliotheken",
       "file": "other-frontend-libraries.md",
-      "subCat": "Andere frontend-bibliotheken"
+      "subCat": "Andere front-endbibliotheken"
     }
   ]
 }

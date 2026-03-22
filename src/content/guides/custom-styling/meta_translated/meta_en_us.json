@@ -19,8 +19,13 @@
       "subCat": "Widget Styling"
     },
     {
-      "name": "Top Pages Widget Styling",
+      "name": "Most Discussed Pages Widget Styling",
       "file": "top-pages-widget.md",
+      "subCat": "Widget Styling"
+    },
+    {
+      "name": "Recent Discussions Widget Styling",
+      "file": "recent-discussions-widget.md",
       "subCat": "Widget Styling"
     },
     {

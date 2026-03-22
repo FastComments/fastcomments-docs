@@ -1,122 +1,104 @@
-Виджет «Последние комментарии» отображает список самых новых комментариев на вашем сайте или для конкретной страницы.
+Виджет последних комментариев отображает список самых последних комментариев по всему вашему сайту или для конкретной страницы. Он включает заголовок, округлённые аватары, превью комментариев, кликабельные даты с глубокими ссылками на комментарий и автоматическое определение тёмной темы.
 
-Этот виджет содержит минимальные стили по умолчанию и разработан так, чтобы его было легко настроить с помощью вашего CSS.
+## Базовая установка
+
+[inline-code-attrs-start title = 'Установка виджета последних комментариев'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-start]
+<script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
+<div id="fastcomments-widget-recent-comments"></div>
+<script>
+    FastCommentsRecentCommentsV2(document.getElementById('fastcomments-widget-recent-comments'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## Параметры конфигурации
+
+- **tenantId** (required): Ваш идентификатор арендатора FastComments
+- **urlId** (optional): Фильтрация по одной странице. Оставьте null для всех страниц
+- **count** (optional): Количество отображаемых комментариев. По умолчанию `10`
+- **hasDarkBackground** (optional): Принудительное применение стилей тёмной темы. Если не указано, определяется автоматически по фону страницы
 
 ## Структура виджета
 
-Виджет рендерится со следующей HTML-структурой:
+Виджет отображается со следующей HTML-структурой:
 
-```html
-<div class="fastcomments-recent-comments">
-    <div class="comment">
-        <div class="user-details">
-            <img src="..." alt="Avatar" class="avatar" />
-            <span class="user-name">Username</span>
-            <span class="reply-date-time">2 hours ago</span>
-        </div>
-        <div class="comment-text">Comment content...</div>
-        <div class="link-wrapper">
-            <a class="link" href="...">Page Title</a>
+[inline-code-attrs-start title = 'HTML-структура виджета последних комментариев'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<div class="fc-rc2">
+    <div class="fc-rc2-heading">Recent Comments</div>
+    <div class="fc-rc2-list">
+        <div class="fc-rc2-card">
+            <div class="fc-rc2-header">
+                <img class="fc-rc2-avatar" src="..." alt="Avatar" />
+                <div class="fc-rc2-meta">
+                    <span class="fc-rc2-name">Username</span>
+                    <a class="fc-rc2-date" href="...">2 hours ago</a>
+                </div>
+            </div>
+            <div class="fc-rc2-body">Comment preview...</div>
+            <a class="fc-rc2-page-link" href="...">Page Title</a>
         </div>
     </div>
-    <!-- More comments... -->
 </div>
-```
+[inline-code-end]
 
-## Справочный CSS по умолчанию для виджета «Последние комментарии»
+## CSS по умолчанию
 
-Виджет включает следующий минимальный стиль по умолчанию:
-
-[inline-code-attrs-start title = 'CSS по умолчанию для виджета «Последние комментарии»'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS по умолчанию для виджета последних комментариев'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-recent-comments {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+.fc-rc2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-align: left;
-}
-.fastcomments-recent-comments .comment {
-    padding-top: 5px;
-}
-.fastcomments-recent-comments .comment .user-details img {
-    width: 20px;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-.fastcomments-recent-comments .comment .user-details .user-name {
-    vertical-align: middle;
-    font-size: 12px;
-}
-.fastcomments-recent-comments .comment .user-details .reply-date-time {
-    vertical-align: middle;
-    padding-left: 5px;
-    font-size: 10px;
-}
-.fastcomments-recent-comments .comment .comment-text {
-    position: relative;
-    line-height: 22px;
-    font-size: 14px;
-    text-align: justify;
-    margin: 8px -1em 8px 0;
-    padding-right: 1em;
-}
-.fastcomments-recent-comments .comment .comment-text .inline-image {
-    display: block;
-    max-width: 500px;
-    margin: 3px 0 3px 0;
-}
-.fastcomments-recent-comments .comment .comment-text .inline-image img {
-    max-width: 100%;
-    max-height: 400px;
-}
-.fastcomments-recent-comments .comment .comment-text:before {
-    position: absolute;
-    content: "...";
-    right: 0;
-    bottom: 0;
-}
-.fastcomments-recent-comments .comment .comment-text:after {
-    position: absolute;
-    content: "";
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
     background: #fff;
 }
-.fastcomments-recent-comments .comment > .link-wrapper {
-    margin: 5px 0 0 0;
-}
-.fastcomments-recent-comments .comment > .link-wrapper .link {
-    font-size: 13px;
-}
+.fc-rc2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-rc2-card { padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-rc2-card:last-child { border-bottom: none; }
+.fc-rc2-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.fc-rc2-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.fc-rc2-name { font-size: 13px; font-weight: 600; }
+.fc-rc2-date { font-size: 11.5px; color: #999; text-decoration: none; }
+.fc-rc2-body { font-size: 14px; line-height: 1.55; color: #444; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fc-rc2-page-link { display: inline-block; margin-top: 6px; font-size: 12px; color: #777; text-decoration: none; }
+.fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
 ## Примеры настройки
 
 ### Изменение размера аватара
-```css
-.fastcomments-recent-comments .comment .user-details img {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 50%;
-}
-```
 
-### Изменение усечения текста комментария
-Стили по умолчанию используют CSS-трюки для усечения длинных комментариев с помощью "...". Чтобы отключить:
-
-```css
-.fastcomments-recent-comments .comment .comment-text:before,
-.fastcomments-recent-comments .comment .comment-text:after {
-    display: none !important;
+[inline-code-attrs-start title = 'Изменение размера аватара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-rc2-avatar {
+    width: 40px !important;
+    height: 40px !important;
 }
-```
+[inline-code-end]
 
-### Добавить границу комментариям
-```css
-.fastcomments-recent-comments .comment {
-    border-bottom: 1px solid #eee !important;
-    padding-bottom: 10px !important;
+### Показать больше строк текста комментария
+
+[inline-code-attrs-start title = 'Показать больше строк комментария'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-rc2-body {
+    -webkit-line-clamp: 5 !important;
 }
-```
+[inline-code-end]
+
+### Удалить границу контейнера
+
+[inline-code-attrs-start title = 'Удалить границу контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-rc2 {
+    border: none !important;
+    box-shadow: none !important;
+}
+[inline-code-end]
 
 ---

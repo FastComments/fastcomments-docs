@@ -1,65 +1,86 @@
-Pripomoček Najbolj komentirane strani prikazuje seznam vaših strani z največ komentarji.
+Gradnik Najbolj komentirane strani prikaže rangiran seznam vaših najbolj komentiranih strani. Vključuje naslov, oštevilčene uvrstitve, število komentarjev z ikonami, datume zadnjih aktivnosti in samodejno zaznavanje temnega načina.
 
-Ta pripomoček vključuje minimalno privzeto oblikovanje in je zasnovan tako, da ga lahko zlahka prilagodite s svojim CSS-jem.
+## Osnovna namestitev
 
-## Struktura pripomočka
-
-Pripomoček se izriše z naslednjo HTML strukturo:
-
-```html
-<div class="fastcomments-top-pages">
-    <div class="page">
-        <a class="title-link" href="...">Page Title (42)</a>
-    </div>
-    <!-- More pages... -->
-</div>
-```
-
-## Privzeta CSS referenca pripomočka Najbolj komentirane strani
-
-[inline-code-attrs-start title = 'Privzeta CSS pripomočka Najbolj komentirane strani'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Namestitev gradnika Najbolj komentirane strani'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
-.fastcomments-top-pages {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+<script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
+<div id="fastcomments-widget-top-pages"></div>
+<script>
+    FastCommentsTopPagesV2(document.getElementById('fastcomments-widget-top-pages'), {
+        tenantId: 'demo'
+    });
+</script>
+[inline-code-end]
+
+## Možnosti konfiguracije
+
+- **tenantId** (required): vaš FastComments tenant ID
+- **hasDarkBackground** (optional): Prisili temno oblikovanje. Če ni nastavljeno, se samodejno zazna iz ozadja strani
+
+## Struktura gradnika
+
+Gradnik se prikaže z naslednjo HTML strukturo:
+
+[inline-code-attrs-start title = 'HTML struktura gradnika Najbolj komentirane strani'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<div class="fc-tp2">
+    <div class="fc-tp2-heading">Most Discussed Pages</div>
+    <div class="fc-tp2-list">
+        <div class="fc-tp2-item">
+            <div class="fc-tp2-rank">1</div>
+            <div class="fc-tp2-detail">
+                <a class="fc-tp2-title" href="...">Page Title</a>
+                <span class="fc-tp2-activity">Last activity Mar 21, 2026</span>
+            </div>
+            <div class="fc-tp2-count">42</div>
+        </div>
+    </div>
+</div>
+[inline-code-end]
+
+## Privzeta referenca CSS
+
+[inline-code-attrs-start title = 'Privzeti CSS gradnika Najbolj komentirane strani'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
 }
-.fastcomments-top-pages .page {
-    padding-top: 5px;
-}
+.fc-tp2-heading { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.fc-tp2-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.fc-tp2-item:last-child { border-bottom: none; }
+.fc-tp2-rank { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; font-weight: 700; background: #f0f0f0; color: #888; }
+.fc-tp2-title { font-size: 13px; font-weight: 500; color: #1a1a1a; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-tp2-activity { font-size: 11px; color: #999; }
+.fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
 ## Primeri prilagoditev
 
-### Dodaj slog povezavam
-```css
-.fastcomments-top-pages .title-link {
-    color: #0066cc !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-}
+### Odstranite značke uvrstitve
 
-.fastcomments-top-pages .title-link:hover {
-    text-decoration: underline !important;
+[inline-code-attrs-start title = 'Odstranite značke uvrstitve'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2-rank {
+    display: none !important;
 }
-```
+[inline-code-end]
 
-### Dodaj obrobe med stranmi
-```css
-.fastcomments-top-pages .page {
-    border-bottom: 1px solid #eee !important;
-    padding: 10px 0 !important;
-}
+### Odstranite obrobo vsebnika
 
-.fastcomments-top-pages .page:last-child {
-    border-bottom: none !important;
+[inline-code-attrs-start title = 'Odstranite obrobo vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+.fc-tp2 {
+    border: none !important;
+    box-shadow: none !important;
 }
-```
-
-### Stiliziraj število komentarjev
-```css
-.fastcomments-top-pages .title-link {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-```
+[inline-code-end]
 
 ---

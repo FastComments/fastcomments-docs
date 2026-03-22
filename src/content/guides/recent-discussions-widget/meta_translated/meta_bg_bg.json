@@ -1,0 +1,11 @@
+{
+  "name": "Уиджет за последни дискусии",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Инсталиране на уиджета за последни дискусии",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Инсталиране"
+    }
+  ]
+}

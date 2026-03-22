@@ -1,0 +1,11 @@
+{
+  "name": "最近のディスカッションウィジェット",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "最近のディスカッションウィジェットのインストール",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "インストール"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "최근 토론 위젯",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "최근 토론 위젯 설치",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "설치"
+    }
+  ]
+}

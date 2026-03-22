@@ -4,7 +4,7 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "So passen Sie Styles an",
+      "name": "So passen Sie Stile an",
       "file": "comment-widget-instructions.md",
       "subCat": "Erste Schritte"
     },
@@ -14,13 +14,18 @@
       "subCat": "Widget-Styling"
     },
     {
-      "name": "Styling des Widgets für neueste Kommentare",
+      "name": "Styling des 'Neueste Kommentare'-Widgets",
       "file": "recent-comments-widget.md",
       "subCat": "Widget-Styling"
     },
     {
-      "name": "Styling des Widgets für Top-Seiten",
+      "name": "Styling des Widgets für meistdiskutierte Seiten",
       "file": "top-pages-widget.md",
+      "subCat": "Widget-Styling"
+    },
+    {
+      "name": "Styling des Widgets für aktuelle Diskussionen",
+      "file": "recent-discussions-widget.md",
       "subCat": "Widget-Styling"
     },
     {

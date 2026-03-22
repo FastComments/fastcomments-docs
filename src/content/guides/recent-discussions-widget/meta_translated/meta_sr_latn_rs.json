@@ -1,0 +1,11 @@
+{
+  "name": "Vidžet za najnovije diskusije",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Instalacija vidžeta za najnovije diskusije",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Instalacija"
+    }
+  ]
+}

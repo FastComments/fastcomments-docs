@@ -9,19 +9,24 @@
       "subCat": "Premiers pas"
     },
     {
-      "name": "Référence de style du widget de commentaires (v2, dernière version)",
+      "name": "Référence de style du widget de commentaires (v2, la plus récente)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Style du widget"
+      "subCat": "Stylisation du widget"
     },
     {
-      "name": "Style du widget des commentaires récents",
+      "name": "Stylisation du widget des commentaires récents",
       "file": "recent-comments-widget.md",
-      "subCat": "Style du widget"
+      "subCat": "Stylisation du widget"
     },
     {
-      "name": "Style du widget des pages populaires",
+      "name": "Stylisation du widget des pages les plus commentées",
       "file": "top-pages-widget.md",
-      "subCat": "Style du widget"
+      "subCat": "Stylisation du widget"
+    },
+    {
+      "name": "Stylisation du widget des discussions récentes",
+      "file": "recent-discussions-widget.md",
+      "subCat": "Stylisation du widget"
     },
     {
       "name": "Autres bibliothèques front-end",

@@ -1,0 +1,11 @@
+{
+  "name": "Widget til seneste diskussioner",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Installation af Widget til seneste diskussioner",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Installation"
+    }
+  ]
+}

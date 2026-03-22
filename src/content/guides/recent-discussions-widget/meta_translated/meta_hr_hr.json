@@ -1,0 +1,11 @@
+{
+  "name": "Widget za nedavne rasprave",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Instalacija widgeta za nedavne rasprave",
+      "file": "recent-discussions-widget-installation.md",
+      "subCat": "Instalacija"
+    }
+  ]
+}
