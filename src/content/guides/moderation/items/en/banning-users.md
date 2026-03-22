@@ -14,6 +14,11 @@ The second way to ban a user is by clicking the ban button that is placed on eac
 
 When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
+### Email Aliases
+
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+
 ### Shadow Bans
 
 A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
