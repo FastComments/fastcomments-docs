@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 型別 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,10 +13,11 @@
 
 [inline-code-attrs-start title = 'deleteQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const questionResultId: string = '6f1a2b3c-4d5e-6789-abcd-ef0123456789';
-const deletedResult: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, questionResultId);
-console.log(deletedResult);
+const tenantId: string = "org-82479";
+const questionId: string = "q-6a3d2e1f";
+const includeArchived?: boolean = false; // 選填參數，示範替代目標的選擇
+const targetId: string = includeArchived ? "q-archived-112233" : questionId;
+const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, targetId);
 [inline-code-end]
 
 ---

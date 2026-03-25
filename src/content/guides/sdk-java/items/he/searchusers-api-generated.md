@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
-| usernameStartsWith | string | query | כן |  |
+| usernameStartsWith | string | query | לא |  |
 | mentionGroupIds | array | query | לא |  |
 | sso | string | query | לא |  |
+| searchSection | string | query | לא |  |
 
 ## תגובה
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

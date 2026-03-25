@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Όχι |  |
 | bulkCreateHashTagsBody | BulkCreateHashTagsBody | Όχι |  |
@@ -11,20 +11,33 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'addHashTagsBulk Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_3f2b9a';
-  const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-    tags: [
-      { name: 'performance', description: 'Comments about site performance', visibleToModeratorsOnly: false },
-      { name: 'feature-request', description: 'Requests for new features', visibleToModeratorsOnly: true }
-    ]
-  };
-  const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-  const resultWithNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
-  console.log(result, resultWithNoTenant);
-})();
-[inline-code-end]
+// Δημιουργία αναγνωριστικού tenant (προαιρετική παράμετρος)
+const tenantId: string = "tenant_9f8c2b7a";
 
----
+// Προετοιμασία μεμονωμένων καταχωρήσεων ετικετών
+const tag1: BulkCreateHashTagsBodyTagsInner = {
+  name: "product-feedback",
+  label: "Product Feedback",
+  color: "#1f8a70",
+  description: "User suggestions and enhancement requests",
+  isActive: true
+};
+
+const tag2: BulkCreateHashTagsBodyTagsInner = {
+  name: "bug-report",
+  label: "Bug Report",
+  color: "#d64545",
+  description: "User-reported defects and issues",
+  isActive: true
+};
+
+// Σώμα για μαζική δημιουργία (προαιρετική παράμετρος)
+const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
+  tags: [tag1, tag2]
+};
+
+// Κλήση της παγκόσμιας ασύγχρονης συνάρτησης και ανάθεση τυποποιημένου αποτελέσματος
+const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
+[inline-code-end]

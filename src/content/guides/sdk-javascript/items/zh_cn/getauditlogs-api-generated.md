@@ -1,16 +1,32 @@
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| limit | number | 否 |  |
-| skip | number | 否 |  |
-| order | SORTDIR | 否 |  |
-| after | number | 否 |  |
-| before | number | 否 |  |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| order | SORTDIR | No |  |
+| after | number | No |  |
+| before | number | No |  |
 
 ## 响应
 
-返回: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogs200Response.ts)
+返回：[`GetAuditLogs200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogs200Response.ts)
+
+## 示例
+
+[inline-code-attrs-start title = 'getAuditLogs 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function main(): Promise<void> {
+  const tenantId: string = 'tenant_9b8f6c';
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = 'desc';
+  const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after);
+  console.log(response);
+}
+main();
+[inline-code-end]
 
 ---

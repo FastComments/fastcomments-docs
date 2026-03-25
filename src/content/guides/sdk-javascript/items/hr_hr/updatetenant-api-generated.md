@@ -14,22 +14,15 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primjer updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_01H4ZQ7KABCD";
-const id: string = "site_9f8e7d6c";
-const apiDomainConfiguration: APIDomainConfiguration = {
-  primaryDomain: "comments.acme.com",
-  allowSubdomains: true
-};
-const billingInfo: BillingInfo = {
-  planName: "Business",
-  billingContactEmail: "billing@acme.com",
-  seats: 25
-};
+const tenantId: string = "tenant_4821";
+const id: string = "flag_7b9e";
+const billingInfo: BillingInfo | undefined = undefined; // neobavezno, izostavite da zadržite trenutnu naplatu
 const updateTenantBody: UpdateTenantBody = {
-  displayName: "Acme Corporation Comments",
-  apiDomainConfiguration,
-  billingInfo, // neobavezni parametar (prikazan)
-  enableModeration: true
+  name: "Acme News Comments",
+  defaultDomain: "comments.acme.com",
+  ...(billingInfo ? { billingInfo } : {})
 };
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
+
+---

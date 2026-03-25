@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -14,9 +14,20 @@
 
 [inline-code-attrs-start title = 'updateQuestionConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-82b3a';
-const id: string = 'qst-20260112';
-const updateQuestionConfigBody: UpdateQuestionConfigBody = { label: 'Age verification', required: true, renderingType: 'singleChoice', customOptions: [{ value: '18-24', label: '18–24' }] } as UpdateQuestionConfigBody;
+const tenantId: string = 'tenant_42e8b';
+const id: string = 'question_9f4a2';
+const updateQuestionConfigBody: UpdateQuestionConfigBody = {
+  questionText: 'How helpful was this article?',
+  description: 'Shown to users below the question (optional)',
+  required: true,
+  renderingType: 'Likert' as QuestionRenderingType,
+  customOptions: [
+    { label: 'Very helpful', value: '5' } as QuestionConfigCustomOptionsInner,
+    { label: 'Somewhat helpful', value: '3' } as QuestionConfigCustomOptionsInner,
+    { label: 'Not helpful', value: '1' } as QuestionConfigCustomOptionsInner
+  ],
+  whenSave: 'notify' as QuestionWhenSave
+};
 const result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);
 [inline-code-end]
 

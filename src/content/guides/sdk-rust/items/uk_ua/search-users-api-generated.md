@@ -1,15 +1,34 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| url_id | String | Так |  |
-| username_starts_with | String | Так |  |
-| mention_group_ids | Vec<String> | Ні |  |
-| sso | String | Ні |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| username_starts_with | String | No |  |
+| mention_group_ids | Vec<String> | No |  |
+| sso | String | No |  |
+| search_section | String | No |  |
 
 ## Відповідь
 
 Повертає: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/search_users_200_response.rs)
+
+## Приклад
+
+[inline-code-attrs-start title = 'search_users Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run_search() -> Result<SearchUsers200Response, Error> {
+    let params: SearchUsersParams = SearchUsersParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: String::from("news/article-2026-03-25-launch"),
+        username_starts_with: Some(String::from("alex")),
+        mention_group_ids: Some(vec![String::from("team-marketing"), String::from("team-product")]),
+        sso: Some(String::from("okta")),
+        search_section: Some(String::from("comments")),
+    };
+    let search_result: SearchUsers200Response = search_users(&configuration, params).await?;
+    Ok(search_result)
+}
+[inline-code-end]
 
 ---

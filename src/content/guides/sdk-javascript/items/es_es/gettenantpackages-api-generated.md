@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | skip | number | No |  |
@@ -13,10 +13,10 @@ Devuelve: [`GetTenantPackages200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3a9c2d';
-const skip: number = 25;
-const packagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId);
-const pagedPackagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);
+const tenantId: string = "tenant_7f8e3b4c";
+const skip: number = 20;
+const packagesDefault: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);
 [inline-code-end]
 
 ---

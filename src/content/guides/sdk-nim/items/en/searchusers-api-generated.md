@@ -7,6 +7,7 @@
 | usernameStartsWith | string | No |  |
 | mentionGroupIds | seq[string] | No |  |
 | sso | string | No |  |
+| searchSection | string | No |  |
 
 ## Response
 
@@ -18,14 +19,13 @@ Returns: [`Option[SearchUsers_200_response]`](https://github.com/FastComments/fa
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/best-tech-2026",
-  usernameStartsWith = "jo",
-  mentionGroupIds = @["group-editors", "group-moderators"],
-  sso = "okta"
+  urlId = "news/2026/ai-product-launch",
+  usernameStartsWith = "",
+  mentionGroupIds = @[],
+  sso = "",
+  searchSection = ""
 )
 if response.isSome:
   let users = response.get()
-  echo "Search returned:", users
-else:
-  echo "No users found, HTTP status:", httpResponse.status
+  echo "Received users:", users.toString()
 [inline-code-end]

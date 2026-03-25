@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Da |  |
@@ -13,19 +13,15 @@ Vraća: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'Primer createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_live_7f8b3c2a";
-const customOptions: QuestionConfigCustomOptionsInner[] = [
-  { value: "under18", label: "Under 18" },
-  { value: "18-24", label: "18-24" },
-  { value: "25-34", label: "25-34", defaultSelected: true }
-];
+const tenantId: string = "tenant_9f8b2c";
+const option: QuestionConfigCustomOptionsInner = { id: "opt_yes", label: "Yes, helpful", value: "yes" };
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  key: "age_range",
-  label: "What is your age range?",
-  required: false, // opciono: pokaži izostavljena naspram uključenih opcionih polja
-  renderingType: QuestionRenderingType.Dropdown,
-  options: customOptions,
-  whenSave: QuestionWhenSave.Always
+  title: "Article usefulness",
+  prompt: "Was this article helpful?",
+  type: "singleChoice",
+  required: false, // primer neobaveznog parametra
+  options: [option],
+  saveBehavior: "immediate"
 };
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]

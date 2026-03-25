@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | create_moderator_body | models::CreateModeratorBody | Так |  |
@@ -11,22 +11,21 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'create_moderator Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад create_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_create_moderator() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: CreateModeratorParams = CreateModeratorParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
+        tenant_id: String::from("acme-corp-tenant"),
         create_moderator_body: models::CreateModeratorBody {
-            email: "jane.doe@acme.com".to_owned(),
-            display_name: "Jane Doe".to_owned(),
-            role: Some("moderator".to_owned()),
+            username: String::from("jane.moderator"),
+            email: String::from("jane.moderator@acme.com"),
+            display_name: Some(String::from("Jane Moderator")),
+            sections: Some(vec![String::from("news/article"), String::from("forums/general")]),
             active: Some(true),
-            notes: Some("Handles product and support forums".to_owned()),
-            permissions: Some(vec!["approve_comment".to_owned(), "delete_comment".to_owned()]),
+            notes: Some(String::from("Senior moderator, PST timezone")),
         },
     };
-
-    let _response: CreateModerator200Response = create_moderator(&configuration, params).await?;
+    let response: CreateModerator200Response = create_moderator(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

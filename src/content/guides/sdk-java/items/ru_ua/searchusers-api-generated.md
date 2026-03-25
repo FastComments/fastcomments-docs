@@ -1,12 +1,13 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Да |  |
+| usernameStartsWith | string | query | Нет |  |
 | mentionGroupIds | array | query | Нет |  |
 | sso | string | query | Нет |  |
+| searchSection | string | query | Нет |  |
 
 ## Ответ
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

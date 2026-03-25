@@ -1,22 +1,23 @@
 ## Parameters
 
-| Name | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
-| usernameStartsWith | string | query | Ja |  |
+| usernameStartsWith | string | query | Nee |  |
 | mentionGroupIds | array | query | Nee |  |
 | sso | string | query | Nee |  |
+| searchSection | string | query | Nee |  |
 
 ## Respons
 
-Geeft terug: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+Retourneert: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'searchUsers Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

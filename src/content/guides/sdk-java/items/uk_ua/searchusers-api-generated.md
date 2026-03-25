@@ -1,12 +1,13 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
-| usernameStartsWith | string | query | Так |  |
+| usernameStartsWith | string | query | Ні |  |
 | mentionGroupIds | array | query | Ні |  |
 | sso | string | query | Ні |  |
+| searchSection | string | query | Ні |  |
 
 ## Відповідь
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

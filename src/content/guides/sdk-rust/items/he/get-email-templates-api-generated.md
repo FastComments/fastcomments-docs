@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | skip | f64 | לא |  |
@@ -16,7 +17,7 @@
 async fn fetch_email_templates() -> Result<GetEmailTemplates200Response, Error> {
     let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
     let templates: GetEmailTemplates200Response = get_email_templates(&configuration, params).await?;
     Ok(templates)

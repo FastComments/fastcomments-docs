@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
-| skip | f64 | 아니요 |  |
+| skip | f64 | 아니오 |  |
 
 ## 응답
 
@@ -13,13 +13,14 @@
 
 [inline-code-attrs-start title = 'get_tenant_users 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_tenant_users() -> Result<GetTenantUsers200Response, Error> {
+async fn example_get_tenant_users() -> Result<(), Error> {
     let params: GetTenantUsersParams = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(10.0),
+        skip: Some(20.0),
     };
-    let response: GetTenantUsers200Response = get_tenant_users(&configuration, params).await?;
-    Ok(response)
+    let users: GetTenantUsers200Response = get_tenant_users(&configuration, params).await?;
+    let _users = users;
+    Ok(())
 }
 [inline-code-end]
 

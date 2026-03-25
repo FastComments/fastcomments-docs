@@ -1,6 +1,6 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | urlId | string | Tak |  |
@@ -11,13 +11,13 @@ Zwraca: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // opcjonalny parametr zapytania
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Jeśli istniałby opcjonalny parametr, np. includeHidden, można by go użyć w ten sposób:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

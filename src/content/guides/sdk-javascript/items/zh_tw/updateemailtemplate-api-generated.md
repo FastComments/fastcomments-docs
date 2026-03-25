@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -14,17 +15,16 @@
 
 [inline-code-attrs-start title = 'updateEmailTemplate 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = 'email_tpl_42b7a9';
+const tenantId: string = "tenant_76a4b2";
+const id: string = "template_9f3c1e";
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  name: 'Comment Flag Notification',
-  subject: 'A comment was flagged on acme.com',
-  html: '<p>A comment by {{commenterName}} was flagged. Review at {{moderationUrl}}</p>',
-  replyTo: 'noreply@acme.com', // 示範可選欄位
-  enabled: true,
-  customConfig: { priority: 'high' } // 可選的自訂參數
+  name: "Comment Flag Notification",
+  subject: "A comment was flagged on your-site.com",
+  bodyHtml: "<p>Admin,</p><p>User \{{commenterName}} flagged a comment: “\{{commentText}}”</p>",
+  isEnabled: true,
+  description: "Email sent to moderators when a comment is flagged (optional field included)"
 };
-const response: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
+const result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
 [inline-code-end]
 
 ---

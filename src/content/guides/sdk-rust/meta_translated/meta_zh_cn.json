@@ -1,6 +1,6 @@
 {
   "name": "Rust SDK",
-  "pageHeader": "FastComments 的 Rust SDK",
+  "pageHeader": "FastComments Rust SDK",
   "itemsOrdered": [
     {
       "name": "安装",
@@ -45,7 +45,7 @@
       "type": "api"
     },
     {
-      "name": "在公开评论中屏蔽",
+      "name": "从评论中屏蔽（公开）",
       "file": "block-from-comment-public-api-generated.md",
       "subCat": "从评论屏蔽",
       "type": "api"
@@ -225,63 +225,63 @@
       "type": "api"
     },
     {
-      "name": "替换域配置",
+      "name": "替换/添加域配置",
       "file": "put-domain-config-api-generated.md",
       "subCat": "域配置",
       "type": "api"
     },
     {
-      "name": "创建邮件模板",
+      "name": "创建电子邮件模板",
       "file": "create-email-template-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "删除邮件模板",
+      "name": "删除电子邮件模板",
       "file": "delete-email-template-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "删除邮件模板渲染错误",
+      "name": "删除电子邮件模板渲染错误",
       "file": "delete-email-template-render-error-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "获取邮件模板",
+      "name": "获取电子邮件模板",
       "file": "get-email-template-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "获取邮件模板定义",
+      "name": "获取电子邮件模板定义",
       "file": "get-email-template-definitions-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "获取邮件模板渲染错误",
+      "name": "获取电子邮件模板渲染错误",
       "file": "get-email-template-render-errors-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "获取邮件模板列表",
+      "name": "获取电子邮件模板列表",
       "file": "get-email-templates-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "渲染邮件模板",
+      "name": "渲染电子邮件模板",
       "file": "render-email-template-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
-      "name": "更新邮件模板",
+      "name": "更新电子邮件模板",
       "file": "update-email-template-api-generated.md",
-      "subCat": "邮件模板",
+      "subCat": "电子邮件模板",
       "type": "api"
     },
     {
@@ -315,7 +315,7 @@
       "type": "api"
     },
     {
-      "name": "获取动态帖子",
+      "name": "获取动态帖子列表",
       "file": "get-feed-posts-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
@@ -339,7 +339,7 @@
       "type": "api"
     },
     {
-      "name": "对公开动态帖子进行反应",
+      "name": "公开发表动态帖子反应",
       "file": "react-feed-post-public-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
@@ -351,13 +351,13 @@
       "type": "api"
     },
     {
-      "name": "更新公开动态帖子",
+      "name": "公开更新动态帖子",
       "file": "update-feed-post-public-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
     },
     {
-      "name": "标记公开评论",
+      "name": "公开标记评论",
       "file": "flag-comment-public-api-generated.md",
       "subCat": "标记评论",
       "type": "api"
@@ -447,7 +447,7 @@
       "type": "api"
     },
     {
-      "name": "获取通知",
+      "name": "获取通知列表",
       "file": "get-notifications-api-generated.md",
       "subCat": "通知",
       "type": "api"
@@ -471,7 +471,7 @@
       "type": "api"
     },
     {
-      "name": "通过 URL ID 获取页面",
+      "name": "通过 URLID 获取页面",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "页面",
       "type": "api"
@@ -489,99 +489,99 @@
       "type": "api"
     },
     {
-      "name": "删除待处理的 webhook 事件",
+      "name": "删除待处理的 Webhook 事件",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "待处理的 webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理 webhook 事件计数",
+      "name": "获取待处理的 Webhook 事件计数",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "待处理的 webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理的 webhook 事件",
+      "name": "获取待处理的 Webhook 事件列表",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "待处理的 webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "创建问卷配置",
+      "name": "创建问题配置",
       "file": "create-question-config-api-generated.md",
-      "subCat": "问卷配置",
+      "subCat": "问题配置",
       "type": "api"
     },
     {
-      "name": "删除问卷配置",
+      "name": "删除问题配置",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "问卷配置",
+      "subCat": "问题配置",
       "type": "api"
     },
     {
-      "name": "获取问卷配置",
+      "name": "获取问题配置",
       "file": "get-question-config-api-generated.md",
-      "subCat": "问卷配置",
+      "subCat": "问题配置",
       "type": "api"
     },
     {
-      "name": "获取问卷配置列表",
+      "name": "获取问题配置列表",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "问卷配置",
+      "subCat": "问题配置",
       "type": "api"
     },
     {
-      "name": "更新问卷配置",
+      "name": "更新问题配置",
       "file": "update-question-config-api-generated.md",
-      "subCat": "问卷配置",
+      "subCat": "问题配置",
       "type": "api"
     },
     {
-      "name": "创建问卷结果",
+      "name": "创建问题结果",
       "file": "create-question-result-api-generated.md",
-      "subCat": "问卷结果",
+      "subCat": "问题结果",
       "type": "api"
     },
     {
-      "name": "删除问卷结果",
+      "name": "删除问题结果",
       "file": "delete-question-result-api-generated.md",
-      "subCat": "问卷结果",
+      "subCat": "问题结果",
       "type": "api"
     },
     {
-      "name": "获取问卷结果",
+      "name": "获取问题结果",
       "file": "get-question-result-api-generated.md",
-      "subCat": "问卷结果",
+      "subCat": "问题结果",
       "type": "api"
     },
     {
-      "name": "获取问卷结果列表",
+      "name": "获取问题结果列表",
       "file": "get-question-results-api-generated.md",
-      "subCat": "问卷结果",
+      "subCat": "问题结果",
       "type": "api"
     },
     {
-      "name": "更新问卷结果",
+      "name": "更新问题结果",
       "file": "update-question-result-api-generated.md",
-      "subCat": "问卷结果",
+      "subCat": "问题结果",
       "type": "api"
     },
     {
-      "name": "聚合问卷结果",
+      "name": "聚合问题结果",
       "file": "aggregate-question-results-api-generated.md",
-      "subCat": "问卷结果汇总",
+      "subCat": "问题结果聚合",
       "type": "api"
     },
     {
-      "name": "批量聚合问卷结果",
+      "name": "批量聚合问题结果",
       "file": "bulk-aggregate-question-results-api-generated.md",
-      "subCat": "问卷结果汇总",
+      "subCat": "问题结果聚合",
       "type": "api"
     },
     {
-      "name": "将评论与问卷结果合并",
+      "name": "将评论与问题结果合并",
       "file": "combine-comments-with-question-results-api-generated.md",
-      "subCat": "问卷结果汇总",
+      "subCat": "问题结果聚合",
       "type": "api"
     },
     {
@@ -597,13 +597,13 @@
       "type": "api"
     },
     {
-      "name": "通过邮箱获取单点登录用户",
+      "name": "按电子邮件获取单点登录用户",
       "file": "get-sso-user-by-email-api-generated.md",
       "subCat": "单点登录用户",
       "type": "api"
     },
     {
-      "name": "通过 ID 获取单点登录用户",
+      "name": "按 ID 获取单点登录用户",
       "file": "get-sso-user-by-id-api-generated.md",
       "subCat": "单点登录用户",
       "type": "api"
@@ -621,7 +621,7 @@
       "type": "api"
     },
     {
-      "name": "替换单点登录用户",
+      "name": "替换/添加单点登录用户",
       "file": "put-sso-user-api-generated.md",
       "subCat": "单点登录用户",
       "type": "api"
@@ -641,6 +641,12 @@
     {
       "name": "获取订阅列表",
       "file": "get-subscriptions-api-generated.md",
+      "subCat": "订阅",
+      "type": "api"
+    },
+    {
+      "name": "更新订阅",
+      "file": "update-subscription-api-generated.md",
       "subCat": "订阅",
       "type": "api"
     },
@@ -759,19 +765,43 @@
       "type": "api"
     },
     {
+      "name": "更改工单状态",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "创建工单",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "获取工单",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "获取工单列表",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
       "name": "上传图片",
       "file": "upload-image-api-generated.md",
       "subCat": "上传图片",
       "type": "api"
     },
     {
-      "name": "通过 ID 获取用户徽章进度",
+      "name": "按 ID 获取用户徽章进度",
       "file": "get-user-badge-progress-by-id-api-generated.md",
       "subCat": "用户徽章进度",
       "type": "api"
     },
     {
-      "name": "通过用户 ID 获取用户徽章进度",
+      "name": "按用户 ID 获取用户徽章进度",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
       "subCat": "用户徽章进度",
       "type": "api"
@@ -819,7 +849,7 @@
       "type": "api"
     },
     {
-      "name": "获取用户通知",
+      "name": "获取用户通知列表",
       "file": "get-user-notifications-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
@@ -837,13 +867,13 @@
       "type": "api"
     },
     {
-      "name": "更新用户评论订阅状态",
+      "name": "更新用户评论订阅状态（通知）",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
     },
     {
-      "name": "更新用户页面订阅状态",
+      "name": "更新用户页面订阅状态（通知）",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
       "subCat": "用户通知",
       "type": "api"
@@ -855,7 +885,7 @@
       "type": "api"
     },
     {
-      "name": "获取用户在线状态",
+      "name": "获取用户在线状态列表",
       "file": "get-user-presence-statuses-api-generated.md",
       "subCat": "用户在线状态",
       "type": "api"

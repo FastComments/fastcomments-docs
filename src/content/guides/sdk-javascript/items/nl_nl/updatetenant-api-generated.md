@@ -1,12 +1,12 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| updateTenantBody | UpdateTenantBody | Ja |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,22 +14,13 @@ Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'updateTenant Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_01H4ZQ7KABCD";
-const id: string = "site_9f8e7d6c";
-const apiDomainConfiguration: APIDomainConfiguration = {
-  primaryDomain: "comments.acme.com",
-  allowSubdomains: true
-};
-const billingInfo: BillingInfo = {
-  planName: "Business",
-  billingContactEmail: "billing@acme.com",
-  seats: 25
-};
+const tenantId: string = "tenant_4821";
+const id: string = "flag_7b9e";
+const billingInfo: BillingInfo | undefined = undefined; // optioneel, weglaten om huidige facturering te behouden
 const updateTenantBody: UpdateTenantBody = {
-  displayName: "Acme Corporation Comments",
-  apiDomainConfiguration,
-  billingInfo, // optionele parameter ter demonstratie
-  enableModeration: true
+  name: "Acme News Comments",
+  defaultDomain: "comments.acme.com",
+  ...(billingInfo ? { billingInfo } : {})
 };
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]

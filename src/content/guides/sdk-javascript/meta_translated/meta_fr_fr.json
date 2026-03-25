@@ -1,21 +1,21 @@
 {
   "name": "SDK JavaScript/TypeScript",
-  "pageHeader": "FastComments SDK JavaScript/TypeScript",
+  "pageHeader": "SDK JavaScript/TypeScript de FastComments",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
       "name": "Documentation de l'API",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "Référence API",
+      "subCat": "Référence de l'API",
       "type": "readme"
     },
     {
-      "name": "Compatibilité navigateur vs serveur",
+      "name": "Compatibilité Navigateur vs Serveur",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -27,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "API publiques vs sécurisées",
+      "name": "APIs publiques vs sécurisées",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "Référence API",
+      "subCat": "Référence de l'API",
       "type": "readme"
     },
     {
-      "name": "Intégration SSO (Authentification unique)",
+      "name": "Intégration SSO (authentification unique)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -77,13 +77,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloquer depuis un commentaire",
+      "subCat": "Blocage depuis commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloquer depuis un commentaire",
+      "subCat": "Blocage depuis commentaire",
       "type": "api"
     },
     {
@@ -329,67 +329,67 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publications du flux",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Signaler le commentaire",
+      "subCat": "Signaler un commentaire",
       "type": "api"
     },
     {
@@ -569,31 +569,31 @@
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de questions",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de questions",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de questions",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de questions",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de questions",
       "type": "api"
     },
     {
@@ -671,6 +671,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnements",
       "type": "api"
     },
@@ -789,6 +795,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Téléverser une image",
@@ -797,19 +827,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {

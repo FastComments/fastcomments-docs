@@ -1,14 +1,15 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Ναι |  |
+| urlId | string | query | Ναι |  |
+| usernameStartsWith | string | query | Όχι |  |
+| mentionGroupIds | array | query | Όχι |  |
+| sso | string | query | Όχι |  |
+| searchSection | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users200_response.py)
 
@@ -21,25 +22,26 @@ from client.models.search_users200_response import SearchUsers200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Ορισμός του host είναι προαιρετικός και έχει προεπιλεγμένη τιμή https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Εισέλθετε σε ένα context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
+    username_starts_with = 'username_starts_with_example' # str |  (προαιρετικό)
     mention_group_ids = ['mention_group_ids_example'] # List[str] |  (προαιρετικό)
     sso = 'sso_example' # str |  (προαιρετικό)
+    search_section = 'search_section_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

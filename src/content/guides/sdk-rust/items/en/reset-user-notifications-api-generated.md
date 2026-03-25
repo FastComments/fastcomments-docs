@@ -18,19 +18,18 @@ Returns: [`ResetUserNotifications200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'reset_user_notifications Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
+async fn run_reset() -> Result<(), Error> {
     let params: ResetUserNotificationsParams = ResetUserNotificationsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("notification-87b2".to_string()),
-        after_created_at: Some(1672531200i64),
+        after_id: Some("notif_987654321".to_string()),
+        after_created_at: Some(1672531200),
         unread_only: Some(true),
         dm_only: Some(false),
         no_dm: Some(false),
-        sso: Some("alice@acme.com".to_string()),
+        sso: Some("sso-enterprise".to_string()),
     };
-    let resp: ResetUserNotifications200Response =
-        reset_user_notifications(&configuration, params).await?;
-    let _resp = resp;
+    let resp: ResetUserNotifications200Response = reset_user_notifications(&configuration, params).await?;
+    let _ = resp;
     Ok(())
 }
 [inline-code-end]

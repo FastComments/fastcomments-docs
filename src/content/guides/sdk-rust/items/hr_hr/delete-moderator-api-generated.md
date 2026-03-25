@@ -1,10 +1,10 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| send_email | String | No |  |
+| tenant_id | String | Da |  |
+| id | String | Da |  |
+| send_email | String | Ne |  |
 
 ## Odgovor
 
@@ -12,16 +12,17 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za delete_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_moderator Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteModeratorParams = DeleteModeratorParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-1234".to_string(),
-        send_email: Some("true".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("moderator-9876"),
+        send_email: Some(String::from("true")),
     };
-    let response: FlagCommentPublic200Response = delete_moderator(configuration, params).await?;
-    Ok(response)
+
+    let response: FlagCommentPublic200Response = delete_moderator(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

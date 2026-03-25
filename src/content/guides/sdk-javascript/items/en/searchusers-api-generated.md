@@ -7,6 +7,7 @@
 | usernameStartsWith | string | No |  |
 | mentionGroupIds | Array<string> | No |  |
 | sso | string | No |  |
+| searchSection | SearchUsersSearchSectionEnum | No |  |
 
 ## Response
 
@@ -16,11 +17,11 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'searchUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-42';
-const urlId: string = 'news-2026-01-12-top-story';
-const usernameStartsWith: string = 'sara';
-const mentionGroupIds: Array<string> = ['editors', 'community-managers'];
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.payload';
-
-const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);
+const tenantId: string = 'tenant_8392';
+const urlId: string = 'articles/2026/03/25/fastcomments-release';
+const usernameStartsWith: string = 'jo';
+const mentionGroupIds: Array<string> = ['editors', 'senior-writers'];
+const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.ALL;
+const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);
 [inline-code-end]

@@ -5,24 +5,26 @@
 | tenantId | string | Ja |  |
 | createTenantPackageBody | CreateTenantPackageBody | Ja |  |
 
-## Svar
+## Respons
 
 Returnerer: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'createTenantPackage-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b1a9c";
-const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
-const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const tenantId: string = 'tenant_acme_001';
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Premium Plus",
-  tenantPackage,
-  customConfig,
-  notes: "Enable advanced moderation and image uploads" // valgfrit parameter demonstreret
+  packageName: 'Standard Moderation',
+  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
+  maxCommentsPerMinute: 50,
+  allowAnonymousComments: false, // valgfrit parameter angivet
+  // valgfri felter udeladt: f.eks. avancerede moderatorregler, brugerdefineret CSS
+  customConfigParameters: {
+    enableProfanityFilter: true,
+    imageContentProfanityLevel: 'medium' // illustrativ værdi; bruger CustomConfigParameters-struktur
+  }
 };
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+console.log(response);
 [inline-code-end]
-
----

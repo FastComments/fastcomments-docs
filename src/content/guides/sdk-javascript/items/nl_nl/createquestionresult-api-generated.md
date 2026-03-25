@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createQuestionResultBody | CreateQuestionResultBody | Ja |  |
 
-## Response
+## Respons
 
 Retourneert: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
 
@@ -13,14 +13,16 @@ Retourneert: [`CreateQuestionResult200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'createQuestionResult Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7a3c_us-east-1";
-const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const tenantId: string = "tenant-72b1f4";
+const meta: MetaItem[] = [{ key: "platform", value: "web" }];
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_42",
-  commenterId: "user_1984",
-  answer: "yes",
-  score: 4,
-  meta: [metaItem] // optionele metadata ter demonstratie
-} as CreateQuestionResultBody;
+  questionId: "question-83472",
+  commenterId: "user-5521",
+  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
+  meta, // optionele metadata
+  note: "Follow-up requested" // optionele parameter gedemonstreerd
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
+
+---

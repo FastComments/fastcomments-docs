@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | page | f64 | Όχι |  |
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_hash_tags'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTags200Response, Error> {
+async fn fetch_hash_tags() -> Result<GetHashTags200Response, Error> {
     let params: GetHashTagsParams = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(1.0_f64),
+        page: Some(1.0),
     };
     let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;
     Ok(response)

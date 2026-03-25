@@ -13,15 +13,13 @@ Returns: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'get_user_badge_progress_by_id Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_badge_progress() -> Result<(), Error> {
-    let params: GetUserBadgeProgressByIdParams = GetUserBadgeProgressByIdParams {
+async fn example_get_badge_progress() -> Result<GetUserBadgeProgressById200Response, Error> {
+    let cfg: &configuration::Configuration = &configuration;
+    let params = GetUserBadgeProgressByIdParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "badge-7f3a2e9".to_string(),
-        include_history: Some(true),
+        id: "badge-007-community-builder".to_string(),
     };
-    let progress: GetUserBadgeProgressById200Response =
-        get_user_badge_progress_by_id(configuration, params).await?;
-    println!("{:#?}", progress);
-    Ok(())
+    let response: GetUserBadgeProgressById200Response = get_user_badge_progress_by_id(cfg, params).await?;
+    Ok(response)
 }
 [inline-code-end]

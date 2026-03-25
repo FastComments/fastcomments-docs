@@ -13,11 +13,11 @@ Döndürür: [`GetVotes200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getVotes Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // isteğe bağlı sorgu parametresi
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Eğer bir isteğe bağlı parametre olsaydı, ör. includeHidden, şu şekilde kullanılabilirdi:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

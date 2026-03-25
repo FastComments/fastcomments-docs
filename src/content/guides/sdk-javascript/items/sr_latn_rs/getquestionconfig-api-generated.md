@@ -2,8 +2,8 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
 ## Odgovor
 
@@ -11,15 +11,17 @@ Vraća: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-47';
-const questionId: string = 'q-2026-01-12-01';
-const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);
-function summarizeConfig(cfg: GetQuestionConfig200Response, includeMetadata?: boolean): QuestionConfig | undefined {
-  // includeMetadata je opcionalno; implementacija je izostavljena radi sažetka
-  return undefined;
+const tenantId: string = 'acme-tenant-92';
+const id: string = 'question-2026-07-42';
+const response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
+
+function summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {
+  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';
 }
-const summarizedWithMeta: QuestionConfig | undefined = summarizeConfig(result, true);
-const summarizedDefault: QuestionConfig | undefined = summarizeConfig(result);
+
+const summary: string = summarize(response);
 [inline-code-end]
+
+---

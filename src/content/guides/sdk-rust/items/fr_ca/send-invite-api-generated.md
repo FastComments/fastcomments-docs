@@ -1,28 +1,29 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Nom | Type | Requis | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | id | String | Oui |  |
 | from_name | String | Oui |  |
 
 ## Réponse
 
-Retourne : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de send_invite'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: SendInviteParams = SendInviteParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "articles/2026/01/ai-news-12345".to_string(),
-    from_name: "Acme Newsroom".to_string(),
-    reply_to: Some("editorial@acme.com".to_string()),
-    message: Some("You have been invited to moderate comments on this article.".to_string()),
-};
-
-let invite_response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;
+async fn send_invite_example() -> Result<FlagCommentPublic200Response, Error> {
+    let params: SendInviteParams = SendInviteParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article-2026-03-25-modern-rust".to_string(),
+        from_name: "Acme Newsroom".to_string(),
+        message: Some("Please join the discussion on this article.".to_string()),
+    };
+    let response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
 
 ---

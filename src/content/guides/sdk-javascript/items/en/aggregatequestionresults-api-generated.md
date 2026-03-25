@@ -18,18 +18,19 @@ Returns: [`AggregateQuestionResults200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f3b7c2d";
-const questionIds: Array<string> = ["q_prod_feature_vote", "q_ui_satisfaction"];
-const urlId: string = "url_5f7a2c1e";
-const startDate: Date = new Date("2025-01-01T00:00:00Z");
+const tenantId: string = 'tenant_acme_98765';
+const questionIds: Array<string> = ['q-102', 'q-103'];
+const urlId: string = 'url_55b3';
+const timeBucket: AggregateTimeBucket = { unit: 'day', size: 7 };
+const startDate: Date = new Date('2026-01-01T00:00:00Z');
 const forceRecalculate: boolean = true;
 
 const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
   tenantId,
-  undefined,
+  undefined, // questionId omitted, using questionIds instead
   questionIds,
   urlId,
-  undefined,
+  timeBucket,
   startDate,
   forceRecalculate
 );

@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createTenantPackageBody | CreateTenantPackageBody | Да |  |
@@ -13,16 +13,20 @@
 
 [inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b1a9c";
-const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
-const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const tenantId: string = 'tenant_acme_001';
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Premium Plus",
-  tenantPackage,
-  customConfig,
-  notes: "Enable advanced moderation and image uploads" // необязательный параметр (пример)
+  packageName: 'Standard Moderation',
+  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
+  maxCommentsPerMinute: 50,
+  allowAnonymousComments: false, // необязательный параметр, передан
+  // необязательные поля опущены: например, расширенные правила модерации, пользовательский CSS
+  customConfigParameters: {
+    enableProfanityFilter: true,
+    imageContentProfanityLevel: 'medium' // иллюстративное значение; использует структуру CustomConfigParameters
+  }
 };
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+console.log(response);
 [inline-code-end]
 
 ---

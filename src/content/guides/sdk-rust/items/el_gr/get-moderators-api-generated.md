@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| skip | f64 | No |  |
+| tenant_id | String | Ναι |  |
+| skip | f64 | Όχι |  |
 
 ## Απόκριση
 
@@ -19,8 +18,7 @@ async fn run() -> Result<(), Error> {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
-    let _moderators = moderators;
+    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

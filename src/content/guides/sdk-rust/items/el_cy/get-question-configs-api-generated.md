@@ -1,13 +1,14 @@
+---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | skip | f64 | Όχι |  |
 
-## Επιστρέφει
+## Απόκριση
 
-Returns: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_200_response.rs)
+Επιστρέφει: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_200_response.rs)
 
 ## Παράδειγμα
 
@@ -19,7 +20,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

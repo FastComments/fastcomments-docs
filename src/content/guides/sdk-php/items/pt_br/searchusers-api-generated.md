@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
-| usernameStartsWith | string | query | Sim |  |
+| usernameStartsWith | string | query | Não |  |
 | mentionGroupIds | array | query | Não |  |
 | sso | string | query | Não |  |
+| searchSection | string | query | Não |  |
 
 ## Resposta
 
@@ -22,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se quiser usar um cliente HTTP personalizado, forneça um cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional; `GuzzleHttp\Client` será usado por padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
 $tenant_id = 'tenant_id_example'; // string
@@ -31,13 +32,12 @@ $url_id = 'url_id_example'; // string
 $username_starts_with = 'username_starts_with_example'; // string
 $mention_group_ids = array('mention_group_ids_example'); // string[]
 $sso = 'sso_example'; // string
+$search_section = 'search_section_example'; // string
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

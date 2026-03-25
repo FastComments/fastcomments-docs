@@ -7,6 +7,7 @@
 | usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Response
 
@@ -31,10 +32,11 @@ func main() {
 	usernameStartsWith := "usernameStartsWith_example" // string |  (optional)
 	mentionGroupIds := []string{"Inner_example"} // []string |  (optional)
 	sso := "sso_example" // string |  (optional)
+	searchSection := "searchSection_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).SearchSection(searchSection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

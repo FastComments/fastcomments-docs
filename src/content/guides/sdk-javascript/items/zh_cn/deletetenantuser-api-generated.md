@@ -1,7 +1,7 @@
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
-|------|------|------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | deleteComments | string | 否 |  |
@@ -9,18 +9,17 @@
 
 ## 响应
 
-返回： [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteTenantUser 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const id: string = 'user_4e5f6a7b';
+const tenantId: string = '4f3a9b2e-1c6a-4f7b-9e2a-0b8d6f1c2a3e';
+const userId: string = '9d2f7b3a-5c4e-48a2-b1f0-6c7d8e9f0a12';
 const deleteComments: string = 'true';
-const commentDeleteMode: string = 'hard';
-
-const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+const commentDeleteMode: string = 'permanent';
+const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, userId, deleteComments, commentDeleteMode);
 [inline-code-end]
 
 ---

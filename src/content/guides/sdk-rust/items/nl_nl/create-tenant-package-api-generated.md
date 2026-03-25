@@ -2,38 +2,31 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| create_tenant_package_body | models::CreateTenantPackageBody | Yes |  |
+| tenant_id | String | Ja |  |
+| create_tenant_package_body | models::CreateTenantPackageBody | Ja |  |
 
 ## Antwoord
 
-Retourneert: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_200_response.rs)
+Geeft terug: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_200_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'create_tenant_package Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_create_package() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: CreateTenantPackageParams = CreateTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_tenant_package_body: models::CreateTenantPackageBody {
-            name: "Acme News Package".to_string(),
-            description: Some("Moderated comments for Acme News articles".to_string()),
-            plan: Some("standard".to_string()),
-            allow_gifs: Some(true),
-            gif_rating: Some(GifRating::GeneralAudience),
+            name: "Acme Standard Moderation".to_string(),
+            description: Some("Standard moderation package for news and blog sites".to_string()),
+            enabled: Some(true),
+            custom_config: Some(CustomConfigParameters { max_comment_length: Some(1000), require_moderation: Some(true) }),
+            gif_rating: Some(GifRating::PG13),
             image_content_profanity_level: Some(ImageContentProfanityLevel::Moderate),
-            sso_security_level: Some(SsoSecurityLevel::Strict),
-            custom_config: Some(CustomConfigParameters {
-                max_comment_length: Some(1000),
-                require_moderation: Some(true),
-            }),
+            tos: Some(TosConfig { require_acceptance: Some(true), tos_url: Some("https://acme.example.com/terms".to_string()) }),
         },
     };
     let response: CreateTenantPackage200Response = create_tenant_package(&configuration, params).await?;
-    let _package: TenantPackage = response.0;
     Ok(())
 }
 [inline-code-end]
-
----

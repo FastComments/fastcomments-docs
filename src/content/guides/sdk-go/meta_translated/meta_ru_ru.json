@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Агрегировать",
+      "name": "Агрегация",
       "file": "aggregate-api-generated.md",
       "subCat": "Агрегация",
       "type": "api"
@@ -27,7 +27,7 @@
       "type": "api"
     },
     {
-      "name": "Блокировать по комментарию (публично)",
+      "name": "Заблокировать пользователя по комментарию (публично)",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Блокировка по комментарию",
       "type": "api"
@@ -39,9 +39,9 @@
       "type": "api"
     },
     {
-      "name": "Проверенные комментарии на блокировку",
+      "name": "Проверка комментариев на наличие блокировок",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Проверка комментариев на блокировку",
+      "subCat": "Проверка заблокированных комментариев",
       "type": "api"
     },
     {
@@ -51,7 +51,7 @@
       "type": "api"
     },
     {
-      "name": "Создать комментарий (публично)",
+      "name": "Создать публичный комментарий",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -63,7 +63,7 @@
       "type": "api"
     },
     {
-      "name": "Удалить комментарий (публично)",
+      "name": "Удалить публичный комментарий",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -75,7 +75,7 @@
       "type": "api"
     },
     {
-      "name": "Пожаловаться на комментарий",
+      "name": "Пометить комментарий",
       "file": "flagcomment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -93,7 +93,7 @@
       "type": "api"
     },
     {
-      "name": "Получить комментарии (публично)",
+      "name": "Получить публичные комментарии",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -135,7 +135,7 @@
       "type": "api"
     },
     {
-      "name": "Задать текст комментария",
+      "name": "Установить текст комментария",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -147,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "Снять жалобу с комментария",
+      "name": "Снять пометку с комментария",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Комментарии",
       "type": "api"
@@ -195,19 +195,19 @@
       "type": "api"
     },
     {
-      "name": "Получить конфигурации домена",
+      "name": "Получить конфигурации доменов",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
-      "name": "Частично обновить конфигурацию домена",
+      "name": "Частичное обновление конфигурации домена",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
-      "name": "Полностью обновить конфигурацию домена",
+      "name": "Полное обновление конфигурации домена",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Конфигурации домена",
       "type": "api"
@@ -285,13 +285,13 @@
       "type": "api"
     },
     {
-      "name": "Создать запись в ленте (публично)",
+      "name": "Создать публичную запись в ленте",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Удалить запись в ленте (публично)",
+      "name": "Удалить публичную запись в ленте",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
@@ -303,7 +303,7 @@
       "type": "api"
     },
     {
-      "name": "Получить записи ленты (публично)",
+      "name": "Получить публичные записи ленты",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
@@ -315,13 +315,13 @@
       "type": "api"
     },
     {
-      "name": "Получить реакции пользователя (публично)",
+      "name": "Получить публичные реакции пользователей",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
     },
     {
-      "name": "Поставить реакцию на запись (публично)",
+      "name": "Поставить публичную реакцию к записи ленты",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
@@ -333,7 +333,7 @@
       "type": "api"
     },
     {
-      "name": "Обновить запись ленты (публично)",
+      "name": "Обновить публичную запись ленты",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Посты ленты",
       "type": "api"
@@ -369,7 +369,7 @@
       "type": "api"
     },
     {
-      "name": "Частично обновить хэштег",
+      "name": "Частичное обновление хэштега",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Хэштеги",
       "type": "api"
@@ -465,7 +465,7 @@
       "type": "api"
     },
     {
-      "name": "Частично обновить страницу",
+      "name": "Частичное обновление страницы",
       "file": "patchpage-api-generated.md",
       "subCat": "Страницы",
       "type": "api"
@@ -549,7 +549,7 @@
       "type": "api"
     },
     {
-      "name": "Агрегировать результаты вопросов",
+      "name": "Агрегация результатов вопросов",
       "file": "aggregatequestionresults-api-generated.md",
       "subCat": "Агрегация результатов вопросов",
       "type": "api"
@@ -579,7 +579,7 @@
       "type": "api"
     },
     {
-      "name": "Получить SSO-пользователя по email",
+      "name": "Получить SSO-пользователя по электронной почте",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSO-пользователи",
       "type": "api"
@@ -597,13 +597,13 @@
       "type": "api"
     },
     {
-      "name": "Частично обновить SSO-пользователя",
+      "name": "Частичное обновление SSO-пользователя",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO-пользователи",
       "type": "api"
     },
     {
-      "name": "Полностью обновить SSO-пользователя",
+      "name": "Полное обновление SSO-пользователя",
       "file": "putssouser-api-generated.md",
       "subCat": "SSO-пользователи",
       "type": "api"
@@ -627,13 +627,19 @@
       "type": "api"
     },
     {
+      "name": "Обновить подписку",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Подписки",
+      "type": "api"
+    },
+    {
       "name": "Получить ежедневное использование тенанта",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Ежедневное использование тенанта",
       "type": "api"
     },
     {
-      "name": "Создать пакет для тенанта",
+      "name": "Создать пакет тенанта",
       "file": "createtenantpackage-api-generated.md",
       "subCat": "Пакеты тенанта",
       "type": "api"
@@ -741,13 +747,37 @@
       "type": "api"
     },
     {
+      "name": "Изменить состояние тикета",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тикеты",
+      "type": "api"
+    },
+    {
+      "name": "Создать тикет",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тикеты",
+      "type": "api"
+    },
+    {
+      "name": "Получить тикет",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тикеты",
+      "type": "api"
+    },
+    {
+      "name": "Получить тикеты",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тикеты",
+      "type": "api"
+    },
+    {
       "name": "Загрузить изображение",
       "file": "uploadimage-api-generated.md",
       "subCat": "Загрузка изображения",
       "type": "api"
     },
     {
-      "name": "Получить прогресс бейджа по ID",
+      "name": "Получить прогресс бейджа пользователя по ID",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "Прогресс бейджа пользователя",
       "type": "api"
@@ -759,7 +789,7 @@
       "type": "api"
     },
     {
-      "name": "Получить список прогресса бейджей пользователей",
+      "name": "Получить список прогресса бейджей пользователя",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "Прогресс бейджа пользователя",
       "type": "api"
@@ -807,7 +837,7 @@
       "type": "api"
     },
     {
-      "name": "Сбросить счетчик уведомлений пользователя",
+      "name": "Сбросить количество уведомлений пользователя",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"
@@ -831,7 +861,7 @@
       "type": "api"
     },
     {
-      "name": "Обновить статус уведомления пользователя",
+      "name": "Обновить статус уведомлений пользователя",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Уведомления пользователя",
       "type": "api"

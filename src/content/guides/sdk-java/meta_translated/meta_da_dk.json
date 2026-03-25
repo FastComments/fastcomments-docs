@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Hurtigstart",
+      "name": "Hurtig start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Aggreger",
+      "name": "aggreger",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregering",
       "type": "api"
@@ -35,19 +35,19 @@
     {
       "name": "blokérFraKommentarOffentlig",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokér fra kommentar",
+      "subCat": "Bloker fra kommentar",
       "type": "api"
     },
     {
-      "name": "fjernBlokeringAfKommentarOffentlig",
+      "name": "ophævBlokeringKommentarOffentlig",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokér fra kommentar",
+      "subCat": "Bloker fra kommentar",
       "type": "api"
     },
     {
-      "name": "kontrollerKommentarerForBlokerede",
+      "name": "tjekKommentarerForBlokering",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Kontroller blokerede kommentarer",
+      "subCat": "Tjek blokerede kommentarer",
       "type": "api"
     },
     {
@@ -111,7 +111,7 @@
       "type": "api"
     },
     {
-      "name": "hentBrugernavneForKommentarStemmer",
+      "name": "hentKommentarStemmeBrugernavne",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
@@ -153,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "fjernMarkeringAfKommentar",
+      "name": "fjernFlagPåKommentar",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
@@ -221,133 +221,133 @@
     {
       "name": "opretEmailSkabelon",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
       "name": "sletEmailSkabelon",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
-      "name": "sletEmailSkabelonGengivelsesFejl",
+      "name": "sletRenderingsfejlForEmailSkabelon",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
       "name": "hentEmailSkabelon",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
       "name": "hentEmailSkabelonDefinitioner",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
-      "name": "hentEmailSkabelonGengivelsesFejl",
+      "name": "hentRenderingsfejlForEmailSkabeloner",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
       "name": "hentEmailSkabeloner",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
-      "name": "gengivEmailSkabelon",
+      "name": "renderEmailSkabelon",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
       "name": "opdaterEmailSkabelon",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "E-mailskabeloner",
+      "subCat": "E-mail-skabeloner",
       "type": "api"
     },
     {
-      "name": "hentHændelseslog",
+      "name": "hentBegivenhedslog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Hændelseslog",
+      "subCat": "Begivenhedslog",
       "type": "api"
     },
     {
-      "name": "hentGlobalHændelseslog",
+      "name": "hentGlobalBegivenhedslog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Hændelseslog",
+      "subCat": "Begivenhedslog",
       "type": "api"
     },
     {
       "name": "opretFeedIndlæg",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "opretFeedIndlægOffentlig",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "sletFeedIndlægOffentlig",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "hentFeedIndlæg",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "hentFeedIndlægOffentlig",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "hentFeedIndlægStatistik",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "hentBrugerReaktionerOffentlig",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
-      "name": "reaktérPåFeedIndlægOffentlig",
+      "name": "reagerPåFeedIndlægOffentlig",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "opdaterFeedIndlæg",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "opdaterFeedIndlægOffentlig",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feedindlæg",
+      "subCat": "Feed-indlæg",
       "type": "api"
     },
     {
       "name": "markerKommentarOffentlig",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Markér kommentar",
+      "subCat": "Marker kommentar",
       "type": "api"
     },
     {
@@ -419,13 +419,13 @@
     {
       "name": "sletNotifikationstælling",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationstælling",
       "type": "api"
     },
     {
       "name": "hentCachetNotifikationstælling",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationstælling",
       "type": "api"
     },
     {
@@ -459,7 +459,7 @@
       "type": "api"
     },
     {
-      "name": "hentSideEfterURLId",
+      "name": "hentSideVedURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Sider",
       "type": "api"
@@ -471,105 +471,105 @@
       "type": "api"
     },
     {
-      "name": "opdaterSideDelvist",
+      "name": "opdaterDelvistSide",
       "file": "patchpage-api-generated.md",
       "subCat": "Sider",
       "type": "api"
     },
     {
-      "name": "sletVentendeWebhookHændelse",
+      "name": "sletVentendeWebhookBegivenhed",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Ventende Webhook-begivenheder",
       "type": "api"
     },
     {
-      "name": "hentAntalVentendeWebhookHændelser",
+      "name": "hentAntalVentendeWebhookBegivenheder",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Ventende Webhook-begivenheder",
       "type": "api"
     },
     {
-      "name": "hentVentendeWebhookHændelser",
+      "name": "hentVentendeWebhookBegivenheder",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Ventende Webhook-begivenheder",
       "type": "api"
     },
     {
-      "name": "opretSpørgsmålskonfiguration",
+      "name": "opretSpørgsmålsKonfiguration",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Spørgsmålskonfigurationer",
       "type": "api"
     },
     {
-      "name": "sletSpørgsmålskonfiguration",
+      "name": "sletSpørgsmålsKonfiguration",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Spørgsmålskonfigurationer",
       "type": "api"
     },
     {
-      "name": "hentSpørgsmålskonfiguration",
+      "name": "hentSpørgsmålsKonfiguration",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Spørgsmålskonfigurationer",
       "type": "api"
     },
     {
-      "name": "hentSpørgsmålskonfigurationer",
+      "name": "hentSpørgsmålsKonfigurationer",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Spørgsmålskonfigurationer",
       "type": "api"
     },
     {
-      "name": "opdaterSpørgsmålskonfiguration",
+      "name": "opdaterSpørgsmålsKonfiguration",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Spørgsmålskonfigurationer",
       "type": "api"
     },
     {
-      "name": "opretSpørgeresultat",
+      "name": "opretSpørgsmålsResultat",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Spørgeresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
-      "name": "sletSpørgeresultat",
+      "name": "sletSpørgsmålsResultat",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Spørgeresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
-      "name": "hentSpørgeresultat",
+      "name": "hentSpørgsmålsResultat",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Spørgeresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
-      "name": "hentSpørgeresultater",
+      "name": "hentSpørgsmålsResultater",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Spørgeresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
-      "name": "opdaterSpørgeresultat",
+      "name": "opdaterSpørgsmålsResultat",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Spørgeresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
-      "name": "aggregerSpørgeresultater",
+      "name": "aggregerSpørgsmålsResultater",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregéring",
       "type": "api"
     },
     {
-      "name": "aggregerSpørgeresultaterBulk",
+      "name": "bulkAggregerSpørgsmålsResultater",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregéring",
       "type": "api"
     },
     {
-      "name": "kombinérKommentarerMedSpørgeresultater",
+      "name": "kombinerKommentarerMedSpørgsmålsResultater",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregéring",
       "type": "api"
     },
     {
@@ -603,7 +603,7 @@
       "type": "api"
     },
     {
-      "name": "opdaterSSOBrugerDelvist",
+      "name": "opdaterDelvistSSOBruger",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO-brugere",
       "type": "api"
@@ -633,117 +633,147 @@
       "type": "api"
     },
     {
-      "name": "hentLejersDagligeForbrug",
+      "name": "opdaterAbonnement",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementer",
+      "type": "api"
+    },
+    {
+      "name": "hentLejerDagligeForbrug",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Lejers daglige forbrug",
+      "subCat": "Lejer dagligt forbrug",
       "type": "api"
     },
     {
-      "name": "opretTenantPakke",
+      "name": "opretLejerPakke",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "sletTenantPakke",
+      "name": "sletLejerPakke",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "hentTenantPakke",
+      "name": "hentLejerPakke",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "hentTenantPakker",
+      "name": "hentLejerPakker",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "erstatTenantPakke",
+      "name": "erstatLejerPakke",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "opdaterTenantPakke",
+      "name": "opdaterLejerPakke",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakker",
+      "subCat": "Lejerpakker",
       "type": "api"
     },
     {
-      "name": "opretTenantBruger",
+      "name": "opretLejerBruger",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "sletTenantBruger",
+      "name": "sletLejerBruger",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "hentTenantBruger",
+      "name": "hentLejerBruger",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "hentTenantBrugere",
+      "name": "hentLejerbrugere",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "erstatTenantBruger",
+      "name": "erstatLejerBruger",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "sendLoginLink",
+      "name": "sendLoginlink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "opdaterTenantBruger",
+      "name": "opdaterLejerBruger",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Tenant-brugere",
+      "subCat": "Lejerbrugere",
       "type": "api"
     },
     {
-      "name": "opretTenant",
+      "name": "opretLejer",
       "file": "createtenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Lejere",
       "type": "api"
     },
     {
-      "name": "sletTenant",
+      "name": "sletLejer",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Lejere",
       "type": "api"
     },
     {
-      "name": "hentTenant",
+      "name": "hentLejer",
       "file": "gettenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Lejere",
       "type": "api"
     },
     {
-      "name": "hentTenants",
+      "name": "hentLejere",
       "file": "gettenants-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Lejere",
       "type": "api"
     },
     {
-      "name": "opdaterTenant",
+      "name": "opdaterLejer",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Lejere",
+      "type": "api"
+    },
+    {
+      "name": "ændrBilletStatus",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "opretBillet",
+      "file": "createticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "hentBillet",
+      "file": "getticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "hentBilletter",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Billetter",
       "type": "api"
     },
     {
@@ -753,49 +783,49 @@
       "type": "api"
     },
     {
-      "name": "hentBrugerBadgeFremskridtEfterId",
+      "name": "hentBrugerbadgeFremgangEfterId",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Brugerbadge-fremskridt",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
-      "name": "hentBrugerBadgeFremskridtEfterBrugerId",
+      "name": "hentBrugerbadgeFremgangEfterBrugerId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Brugerbadge-fremskridt",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
-      "name": "hentBrugerBadgeFremskridtListe",
+      "name": "hentBrugerbadgeFremgangsListe",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Brugerbadge-fremskridt",
+      "subCat": "Brugerbadge-fremgang",
       "type": "api"
     },
     {
-      "name": "opretBrugerBadge",
+      "name": "opretBrugerbadge",
       "file": "createuserbadge-api-generated.md",
       "subCat": "Brugerbadges",
       "type": "api"
     },
     {
-      "name": "sletBrugerBadge",
+      "name": "sletBrugerbadge",
       "file": "deleteuserbadge-api-generated.md",
       "subCat": "Brugerbadges",
       "type": "api"
     },
     {
-      "name": "hentBrugerBadge",
+      "name": "hentBrugerbadge",
       "file": "getuserbadge-api-generated.md",
       "subCat": "Brugerbadges",
       "type": "api"
     },
     {
-      "name": "hentBrugerBadges",
+      "name": "hentBrugerbadges",
       "file": "getuserbadges-api-generated.md",
       "subCat": "Brugerbadges",
       "type": "api"
     },
     {
-      "name": "opdaterBrugerBadge",
+      "name": "opdaterBrugerbadge",
       "file": "updateuserbadge-api-generated.md",
       "subCat": "Brugerbadges",
       "type": "api"
@@ -845,7 +875,7 @@
     {
       "name": "hentBrugerTilstedeværelsesStatusser",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Bruger-tilstedeværelsesstatus",
+      "subCat": "Bruger tilstedeværelsesstatus",
       "type": "api"
     },
     {

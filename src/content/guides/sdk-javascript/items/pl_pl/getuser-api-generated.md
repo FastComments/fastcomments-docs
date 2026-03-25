@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
@@ -11,13 +11,12 @@ Zwraca: [`GetUser200Response`](https://github.com/FastComments/fastcomments-sdk-
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getUser Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-publishing-42";
-const userIdOptional: string | undefined = "user_9d7b4c"; // może być niezdefiniowane w niektórych przepływach (opcjonalne)
-const id: string = userIdOptional ?? "user_default_0001";
-const result: GetUser200Response = await getUser(tenantId, id);
-console.log(result);
+const tenantId: string = 'tenant_7b3f42';
+const id: string = 'user_9c4d2a';
+const userResponse: GetUser200Response = await getUser(tenantId, id);
+console.log(userResponse);
 [inline-code-end]
 
 ---

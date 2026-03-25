@@ -11,7 +11,7 @@ Retorna: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastc
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'get_question_configs Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
@@ -19,7 +19,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

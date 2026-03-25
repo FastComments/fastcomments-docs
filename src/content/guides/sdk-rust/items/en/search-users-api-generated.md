@@ -7,6 +7,7 @@
 | username_starts_with | String | No |  |
 | mention_group_ids | Vec<String> | No |  |
 | sso | String | No |  |
+| search_section | String | No |  |
 
 ## Response
 
@@ -16,15 +17,16 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'search_users Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn perform_user_search() -> Result<SearchUsers200Response, Error> {
+async fn run_search() -> Result<SearchUsers200Response, Error> {
     let params: SearchUsersParams = SearchUsersParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article-2026".to_string(),
-        username_starts_with: Some("jo".to_string()),
-        mention_group_ids: Some(vec!["editors".to_string(), "authors".to_string()]),
-        sso: Some("saml".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: String::from("news/article-2026-03-25-launch"),
+        username_starts_with: Some(String::from("alex")),
+        mention_group_ids: Some(vec![String::from("team-marketing"), String::from("team-product")]),
+        sso: Some(String::from("okta")),
+        search_section: Some(String::from("comments")),
     };
-    let response: SearchUsers200Response = search_users(&configuration, params).await?;
-    Ok(response)
+    let search_result: SearchUsers200Response = search_users(&configuration, params).await?;
+    Ok(search_result)
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 说明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -8,22 +8,20 @@
 
 ## 响应
 
-返回: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+返回：[`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateTenantPackage 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f1c9b';
-const packageId: string = 'pkg_premium_v2';
-const customConfig: CustomConfigParameters = { enableRichText: true, maxImagesPerComment: 5 };
+const tenantId: string = "tenant_3b7f9d-prod";
+const id: string = "pkg_enterprise_2026";
 const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: 'Premium Moderation Package',
-  enabled: true,
-  description: 'Adds advanced spam rules, image moderation and priority support',
-  customConfigParameters: customConfig
-};
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, packageId, updateTenantPackageBody);
+  name: "Enterprise Plus",
+  isActive: true,
+  // 有意省略可选字段 (例如, description, limits)
+} as UpdateTenantPackageBody;
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Snelstart",
+      "name": "Snel aan de slag",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -41,157 +41,157 @@
     {
       "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
-      "subCat": "Auditlogs",
+      "subCat": "Auditlogboeken",
       "type": "api"
     },
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Blokkeren via opmerking",
+      "subCat": "Blokkeren van reactie",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Blokkeren via opmerking",
+      "subCat": "Blokkeren van reactie",
       "type": "api"
     },
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde opmerkingen",
+      "subCat": "Controleer geblokkeerde reacties",
       "type": "api"
     },
     {
       "name": "block_user_from_comment",
       "file": "block-user-from-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "create_comment_public",
       "file": "create-comment-public-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "delete_comment",
       "file": "delete-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "delete_comment_public",
       "file": "delete-comment-public-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "delete_comment_vote",
       "file": "delete-comment-vote-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "flag_comment",
       "file": "flag-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "get_comment",
       "file": "get-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "get_comment_text",
       "file": "get-comment-text-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "get_comment_vote_user_names",
       "file": "get-comment-vote-user-names-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "get_comments",
       "file": "get-comments-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "get_comments_public",
       "file": "get-comments-public-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "lock_comment",
       "file": "lock-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "pin_comment",
       "file": "pin-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "save_comment",
       "file": "save-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "save_comments_bulk",
       "file": "save-comments-bulk-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "set_comment_text",
       "file": "set-comment-text-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "un_block_user_from_comment",
       "file": "un-block-user-from-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "un_flag_comment",
       "file": "un-flag-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "un_lock_comment",
       "file": "un-lock-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "un_pin_comment",
       "file": "un-pin-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "update_comment",
       "file": "update-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
       "name": "vote_comment",
       "file": "vote-comment-api-generated.md",
-      "subCat": "Opmerkingen",
+      "subCat": "Reacties",
       "type": "api"
     },
     {
@@ -299,67 +299,67 @@
     {
       "name": "create_feed_post",
       "file": "create-feed-post-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "create_feed_post_public",
       "file": "create-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "delete_feed_post_public",
       "file": "delete-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts",
       "file": "get-feed-posts-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts_public",
       "file": "get-feed-posts-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts_stats",
       "file": "get-feed-posts-stats-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_user_reacts_public",
       "file": "get-user-reacts-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "react_feed_post_public",
       "file": "react-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "update_feed_post",
       "file": "update-feed-post-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "update_feed_post_public",
       "file": "update-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Opmerking markeren",
+      "subCat": "Opmerking melden",
       "type": "api"
     },
     {
@@ -431,13 +431,13 @@
     {
       "name": "delete_notification_count",
       "file": "delete-notification-count-api-generated.md",
-      "subCat": "Aantal meldingen",
+      "subCat": "Meldingsaantal",
       "type": "api"
     },
     {
       "name": "get_cached_notification_count",
       "file": "get-cached-notification-count-api-generated.md",
-      "subCat": "Aantal meldingen",
+      "subCat": "Meldingsaantal",
       "type": "api"
     },
     {
@@ -645,9 +645,15 @@
       "type": "api"
     },
     {
+      "name": "update_subscription",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "Abonnementen",
+      "type": "api"
+    },
+    {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "Dagelijks gebruik tenant",
+      "subCat": "Dagelijks gebruik per tenant",
       "type": "api"
     },
     {
@@ -759,6 +765,30 @@
       "type": "api"
     },
     {
+      "name": "change_ticket_state",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "create_ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "get_ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "get_tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
       "subCat": "Afbeelding uploaden",
@@ -767,19 +797,19 @@
     {
       "name": "get_user_badge_progress_by_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadge-voortgang",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_by_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadge-voortgang",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_list",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadge-voortgang",
       "type": "api"
     },
     {
@@ -857,13 +887,13 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatussen",
+      "subCat": "Aanwezigheidsstatus gebruikers",
       "type": "api"
     },
     {
       "name": "search_users",
       "file": "search-users-api-generated.md",
-      "subCat": "Zoeken naar gebruikers",
+      "subCat": "Gebruikers zoeken",
       "type": "api"
     },
     {

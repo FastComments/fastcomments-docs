@@ -12,12 +12,13 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für sendLoginLink'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendLoginLink Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const id: string = 'user_9f3b2a';
-const redirectURL: string = 'https://app.example.com/onboard?source=login-email';
-const result: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
+const tenantId: string = "tenant_12a9f3b7";
+const id: string = "user_84b2c7d1";
+const redirectURL: string = "https://app.mycompany.com/welcome?ref=login_email";
+const resultWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);
+const resultWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
 [inline-code-end]
 
 ---

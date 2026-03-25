@@ -1,16 +1,17 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | 位置 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | urlId | string | query | はい |  |
-| usernameStartsWith | string | query | はい |  |
+| usernameStartsWith | string | query | いいえ |  |
 | mentionGroupIds | array | query | いいえ |  |
 | sso | string | query | いいえ |  |
+| searchSection | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
+返却値: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
 
 ## 例
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

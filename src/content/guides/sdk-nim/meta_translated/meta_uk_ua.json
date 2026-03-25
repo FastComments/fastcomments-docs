@@ -1,6 +1,6 @@
 {
-  "name": "Nim SDK",
-  "pageHeader": "FastComments Nim SDK",
+  "name": "SDK для Nim",
+  "pageHeader": "FastComments SDK для Nim",
   "itemsOrdered": [
     {
       "name": "Вимоги",
@@ -47,7 +47,7 @@
     {
       "name": "Агрегувати",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегація",
+      "subCat": "Агрегування",
       "type": "api"
     },
     {
@@ -57,13 +57,13 @@
       "type": "api"
     },
     {
-      "name": "Заблокувати через коментар (публічний)",
+      "name": "Заблокувати через публічний коментар",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Блокування через коментар",
       "type": "api"
     },
     {
-      "name": "Розблокувати коментар (публічний)",
+      "name": "Розблокувати публічний коментар",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Блокування через коментар",
       "type": "api"
@@ -147,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "Прикріпити коментар",
+      "name": "Закріпити коментар",
       "file": "pincomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
@@ -159,7 +159,7 @@
       "type": "api"
     },
     {
-      "name": "Зберегти коментарі (масово)",
+      "name": "Масове збереження коментарів",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
@@ -209,37 +209,37 @@
     {
       "name": "Додати конфігурацію домену",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "Видалити конфігурацію домену",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "Отримати конфігурацію домену",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "Отримати конфігурації доменів",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "Часткове оновлення конфігурації домену",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
-      "name": "Замінити конфігурацію домену",
+      "name": "Повне оновлення конфігурації домену",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Налаштування домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
@@ -255,7 +255,7 @@
       "type": "api"
     },
     {
-      "name": "Видалити помилку рендерингу шаблону листа",
+      "name": "Видалити помилку рендерингу шаблону електронного листа",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Шаблони електронних листів",
       "type": "api"
@@ -267,13 +267,13 @@
       "type": "api"
     },
     {
-      "name": "Отримати визначення шаблонів листів",
+      "name": "Отримати визначення шаблонів електронних листів",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Шаблони електронних листів",
       "type": "api"
     },
     {
-      "name": "Отримати помилки рендерингу шаблонів листів",
+      "name": "Отримати помилки рендерингу шаблонів електронних листів",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Шаблони електронних листів",
       "type": "api"
@@ -309,67 +309,67 @@
       "type": "api"
     },
     {
-      "name": "Створити пост стрічки",
+      "name": "Створити запис стрічки",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Створити публічний пост стрічки",
+      "name": "Створити публічний запис стрічки",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Видалити публічний пост стрічки",
+      "name": "Видалити публічний запис стрічки",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Отримати пости стрічки",
+      "name": "Отримати записи стрічки",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Отримати публічні пости стрічки",
+      "name": "Отримати публічні записи стрічки",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Отримати статистику постів стрічки",
+      "name": "Отримати статистику записів стрічки",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Отримати реакції користувача (публічні)",
+      "name": "Отримати публічні реакції користувача",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Залишити реакцію на публічному пості",
+      "name": "Зареагувати на публічний запис стрічки",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Оновити пост стрічки",
+      "name": "Оновити запис стрічки",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Оновити публічний пост стрічки",
+      "name": "Оновити публічний запис стрічки",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Записи стрічки",
       "type": "api"
     },
     {
-      "name": "Позначити коментар (публічний)",
+      "name": "Позначити публічний коментар",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Позначення коментаря",
       "type": "api"
@@ -381,7 +381,7 @@
       "type": "api"
     },
     {
-      "name": "Додати хештеги (масово)",
+      "name": "Масове додавання хештегів",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
@@ -435,15 +435,15 @@
       "type": "api"
     },
     {
-      "name": "Видалити кількість сповіщень",
+      "name": "Видалити лічильник сповіщень",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Кількість сповіщень",
+      "subCat": "Лічильник сповіщень",
       "type": "api"
     },
     {
-      "name": "Отримати кешовану кількість сповіщень",
+      "name": "Отримати кешований лічильник сповіщень",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Кількість сповіщень",
+      "subCat": "Лічильник сповіщень",
       "type": "api"
     },
     {
@@ -477,7 +477,7 @@
       "type": "api"
     },
     {
-      "name": "Отримати сторінку за URL/ID",
+      "name": "Отримати сторінку за URL-ідентифікатором",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
@@ -513,49 +513,49 @@
       "type": "api"
     },
     {
-      "name": "Створити конфігурацію питання",
+      "name": "Створити конфігурацію запитання",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації запитань",
       "type": "api"
     },
     {
-      "name": "Видалити конфігурацію питання",
+      "name": "Видалити конфігурацію запитання",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації запитань",
       "type": "api"
     },
     {
-      "name": "Отримати конфігурацію питання",
+      "name": "Отримати конфігурацію запитання",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації запитань",
       "type": "api"
     },
     {
       "name": "Отримати конфігурації запитань",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації запитань",
       "type": "api"
     },
     {
-      "name": "Оновити конфігурацію питання",
+      "name": "Оновити конфігурацію запитання",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації запитань",
       "type": "api"
     },
     {
-      "name": "Створити результат питання",
+      "name": "Створити результат запитання",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Результати запитань",
       "type": "api"
     },
     {
-      "name": "Видалити результат питання",
+      "name": "Видалити результат запитання",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Результати запитань",
       "type": "api"
     },
     {
-      "name": "Отримати результат питання",
+      "name": "Отримати результат запитання",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Результати запитань",
       "type": "api"
@@ -567,7 +567,7 @@
       "type": "api"
     },
     {
-      "name": "Оновити результат питання",
+      "name": "Оновити результат запитання",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Результати запитань",
       "type": "api"
@@ -591,45 +591,45 @@
       "type": "api"
     },
     {
-      "name": "Додати користувача SSO",
+      "name": "Додати SSO-користувача",
       "file": "addssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Видалити користувача SSO",
+      "name": "Видалити SSO-користувача",
       "file": "deletessouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Отримати користувача SSO за email",
+      "name": "Отримати SSO-користувача за електронною поштою",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Отримати користувача SSO за id",
+      "name": "Отримати SSO-користувача за ідентифікатором",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Отримати користувачів SSO",
+      "name": "Отримати SSO-користувачів",
       "file": "getssousers-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Часткове оновлення користувача SSO",
+      "name": "Часткове оновлення SSO-користувача",
       "file": "patchssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
-      "name": "Замінити користувача SSO",
+      "name": "Повне оновлення SSO-користувача",
       "file": "putssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO-користувачі",
       "type": "api"
     },
     {
@@ -651,117 +651,147 @@
       "type": "api"
     },
     {
-      "name": "Отримати щоденне використання тенанта",
+      "name": "Оновити підписку",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Підписки",
+      "type": "api"
+    },
+    {
+      "name": "Отримати щоденне використання орендаря",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Щоденне використання тенанта",
+      "subCat": "Щоденне використання орендаря",
       "type": "api"
     },
     {
-      "name": "Створити пакет тенанта",
+      "name": "Створити пакет орендаря",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Видалити пакет тенанта",
+      "name": "Видалити пакет орендаря",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Отримати пакет тенанта",
+      "name": "Отримати пакет орендаря",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Отримати пакети тенанта",
+      "name": "Отримати пакети орендарів",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Замінити пакет тенанта",
+      "name": "Замінити пакет орендаря",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Оновити пакет тенанта",
+      "name": "Оновити пакет орендаря",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендарів",
       "type": "api"
     },
     {
-      "name": "Створити користувача тенанта",
+      "name": "Створити користувача орендаря",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Видалити користувача тенанта",
+      "name": "Видалити користувача орендаря",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Отримати користувача тенанта",
+      "name": "Отримати користувача орендаря",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Отримати користувачів тенанта",
+      "name": "Отримати користувачів орендаря",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Замінити користувача тенанта",
+      "name": "Замінити користувача орендаря",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "Надіслати посилання для входу",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Оновити користувача тенанта",
+      "name": "Оновити користувача орендаря",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "Створити тенанта",
+      "name": "Створити орендаря",
       "file": "createtenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "Видалити тенанта",
+      "name": "Видалити орендаря",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "Отримати тенанта",
+      "name": "Отримати орендаря",
       "file": "gettenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "Отримати тенантів",
+      "name": "Отримати орендарів",
       "file": "gettenants-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "Оновити тенанта",
+      "name": "Оновити орендаря",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "Змінити стан тікета",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тікети",
+      "type": "api"
+    },
+    {
+      "name": "Створити тікет",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тікети",
+      "type": "api"
+    },
+    {
+      "name": "Отримати тікет",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тікети",
+      "type": "api"
+    },
+    {
+      "name": "Отримати тікети",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тікети",
       "type": "api"
     },
     {
@@ -771,51 +801,51 @@
       "type": "api"
     },
     {
-      "name": "Отримати прогрес значка користувача за id",
+      "name": "Отримати прогрес бейджа користувача за ідентифікатором",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Прогрес значка користувача",
+      "subCat": "Прогрес бейджа користувача",
       "type": "api"
     },
     {
-      "name": "Отримати прогрес значка за id користувача",
+      "name": "Отримати прогрес бейджа користувача за ID користувача",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Прогрес значка користувача",
+      "subCat": "Прогрес бейджа користувача",
       "type": "api"
     },
     {
-      "name": "Отримати список прогресу значків користувача",
+      "name": "Отримати список прогресу бейджів користувача",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Прогрес значка користувача",
+      "subCat": "Прогрес бейджа користувача",
       "type": "api"
     },
     {
-      "name": "Створити значок користувача",
+      "name": "Створити бейдж користувача",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувача",
       "type": "api"
     },
     {
-      "name": "Видалити значок користувача",
+      "name": "Видалити бейдж користувача",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувача",
       "type": "api"
     },
     {
-      "name": "Отримати значок користувача",
+      "name": "Отримати бейдж користувача",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувача",
       "type": "api"
     },
     {
-      "name": "Отримати значки користувача",
+      "name": "Отримати бейджі користувача",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувача",
       "type": "api"
     },
     {
-      "name": "Оновити значок користувача",
+      "name": "Оновити бейдж користувача",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувача",
       "type": "api"
     },
     {
@@ -831,7 +861,7 @@
       "type": "api"
     },
     {
-      "name": "Скинути кількість сповіщень користувача",
+      "name": "Скинути лічильник сповіщень користувача",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Сповіщення користувача",
       "type": "api"
@@ -843,13 +873,13 @@
       "type": "api"
     },
     {
-      "name": "Оновити статус підписки користувача на сповіщення про коментарі",
+      "name": "Оновити статус підписки користувача на коментарі",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Сповіщення користувача",
       "type": "api"
     },
     {
-      "name": "Оновити статус підписки користувача на сповіщення сторінки",
+      "name": "Оновити статус підписки користувача на сторінки",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Сповіщення користувача",
       "type": "api"
@@ -863,7 +893,7 @@
     {
       "name": "Отримати статуси присутності користувачів",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статуси присутності користувача",
+      "subCat": "Статус присутності користувача",
       "type": "api"
     },
     {

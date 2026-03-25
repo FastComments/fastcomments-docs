@@ -1,14 +1,30 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Da |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublic200Response.ts)
+Vraća: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublic200Response.ts)
+
+## Primjer
+
+[inline-code-attrs-start title = 'Primjer blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "site_7f9b2e";
+const commentId: string = "comment_2026-03-25_001";
+const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
+  reason: "Repeated harassment and targeted abuse",
+  blockDurationDays: 90,
+  includeHistory: true,
+  notifyModeratorTeam: true
+};
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature";
+const result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+[inline-code-end]
 
 ---

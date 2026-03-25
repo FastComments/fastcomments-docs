@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Γρήγορη Έναρξη",
+      "name": "Γρήγορη εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -39,865 +39,895 @@
       "type": "readme"
     },
     {
-      "name": "Τεκμηρίωση για το FastComments",
+      "name": "Τεκμηρίωση για το fastcomments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Συσσωμάτωση",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Συγκέντρωση",
+      "subCat": "Συγκεντρωτικά",
       "type": "api"
     },
     {
-      "name": "Λήψη αρχείων ελέγχου",
+      "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Αρχεία ελέγχου",
+      "subCat": "Αρχεία Ελέγχου",
       "type": "api"
     },
     {
-      "name": "Αποκλεισμός από δημόσιο σχόλιο",
+      "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Αποκλεισμός από σχόλιο",
+      "subCat": "Αποκλεισμός από Σχόλιο",
       "type": "api"
     },
     {
-      "name": "Αναίρεση αποκλεισμού δημόσιου σχολίου",
+      "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Αποκλεισμός από σχόλιο",
+      "subCat": "Αποκλεισμός από Σχόλιο",
       "type": "api"
     },
     {
-      "name": "Έλεγχος σχολίων για αποκλεισμένα",
+      "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Έλεγχος αποκλεισμένων σχολίων",
+      "subCat": "Έλεγχος Αποκλεισμένων Σχολίων",
       "type": "api"
     },
     {
-      "name": "Αποκλεισμός χρήστη από σχόλιο",
+      "name": "blockUserFromComment",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Δημιουργία δημόσιου σχολίου",
+      "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Διαγραφή σχολίου",
+      "name": "deleteComment",
       "file": "deletecomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Διαγραφή δημόσιου σχολίου",
+      "name": "deleteCommentPublic",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Διαγραφή ψήφου σχολίου",
+      "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Σήμανση σχολίου",
+      "name": "flagComment",
       "file": "flagcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Λήψη σχολίου",
+      "name": "getComment",
       "file": "getcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Λήψη σχολίων",
+      "name": "getComments",
       "file": "getcomments-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Λήψη δημόσιων σχολίων",
+      "name": "getCommentsPublic",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Λήψη κειμένου σχολίου",
+      "name": "getCommentText",
       "file": "getcommenttext-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Λήψη ονομάτων χρηστών που ψήφισαν σχόλιο",
+      "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Κλείδωμα σχολίου",
+      "name": "lockComment",
       "file": "lockcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Καρφίτσωμα σχολίου",
+      "name": "pinComment",
       "file": "pincomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Αποθήκευση σχολίου",
+      "name": "saveComment",
       "file": "savecomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Μαζική αποθήκευση σχολίων",
+      "name": "saveCommentsBulk",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Ορισμός κειμένου σχολίου",
+      "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Άρση αποκλεισμού χρήστη από σχόλιο",
+      "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Αφαίρεση σήμανσης σχολίου",
+      "name": "unFlagComment",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Ξεκλείδωμα σχολίου",
+      "name": "unLockComment",
       "file": "unlockcomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Αφαίρεση καρφίτσας σχολίου",
+      "name": "unPinComment",
       "file": "unpincomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση σχολίου",
+      "name": "updateComment",
       "file": "updatecomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Ψήφος σχολίου",
+      "name": "voteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Σχόλια",
       "type": "api"
     },
     {
-      "name": "Προσθήκη ρύθμισης domain",
+      "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Διαγραφή ρύθμισης domain",
+      "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Λήψη ρύθμισης domain",
+      "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Λήψη ρυθμίσεων domain",
+      "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση ρύθμισης domain (patch)",
+      "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Αντικατάσταση ρύθμισης domain (put)",
+      "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Domain",
       "type": "api"
     },
     {
-      "name": "Δημιουργία προτύπου email",
+      "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Διαγραφή προτύπου email",
+      "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Διαγραφή σφάλματος απόδοσης προτύπου email",
+      "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Λήψη προτύπου email",
+      "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Λήψη ορισμών προτύπου email",
+      "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Λήψη σφαλμάτων απόδοσης προτύπων email",
+      "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Λήψη προτύπων email",
+      "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Απόδοση προτύπου email",
+      "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση προτύπου email",
+      "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "Πρότυπα Email",
       "type": "api"
     },
     {
-      "name": "Λήψη αρχείου συμβάντων",
+      "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
       "subCat": "Αρχείο Συμβάντων",
       "type": "api"
     },
     {
-      "name": "Λήψη παγκόσμιου αρχείου συμβάντων",
+      "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "Αρχείο Συμβάντων",
       "type": "api"
     },
     {
-      "name": "Δημιουργία ανάρτησης Feed",
+      "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Δημιουργία δημόσιας ανάρτησης Feed",
+      "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Διαγραφή δημόσιας ανάρτησης Feed",
+      "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Λήψη αναρτήσεων Feed",
+      "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Λήψη δημόσιων αναρτήσεων Feed",
+      "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Λήψη στατιστικών αναρτήσεων Feed",
+      "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Λήψη δημόσιων αντιδράσεων χρήστη",
+      "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Αντίδραση σε δημόσια ανάρτηση Feed",
+      "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση ανάρτησης Feed",
+      "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση δημόσιας ανάρτησης Feed",
+      "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Αναρτήσεις Feed",
       "type": "api"
     },
     {
-      "name": "Σήμανση δημόσιου σχολίου",
+      "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Σήμανση σχολίου",
+      "subCat": "Επισήμανση Σχολίου",
       "type": "api"
     },
     {
-      "name": "Προσθήκη hashtag",
+      "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "Μαζική προσθήκη hashtags",
+      "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "Διαγραφή hashtag",
+      "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "Λήψη hashtags",
+      "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση hashtag (patch)",
+      "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
     },
     {
-      "name": "Δημιουργία διαχειριστή",
+      "name": "createModerator",
       "file": "createmoderator-api-generated.md",
       "subCat": "Διαχειριστές",
       "type": "api"
     },
     {
-      "name": "Διαγραφή διαχειριστή",
+      "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
       "subCat": "Διαχειριστές",
       "type": "api"
     },
     {
-      "name": "Λήψη διαχειριστή",
+      "name": "getModerator",
       "file": "getmoderator-api-generated.md",
       "subCat": "Διαχειριστές",
       "type": "api"
     },
     {
-      "name": "Λήψη διαχειριστών",
+      "name": "getModerators",
       "file": "getmoderators-api-generated.md",
       "subCat": "Διαχειριστές",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση διαχειριστή",
+      "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
       "subCat": "Διαχειριστές",
       "type": "api"
     },
     {
-      "name": "Διαγραφή αριθμού ειδοποιήσεων",
+      "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Αριθμός Ειδοποιήσεων",
+      "subCat": "Πλήθος Ειδοποιήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη προσωρινά αποθηκευμένου αριθμού ειδοποιήσεων",
+      "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Αριθμός Ειδοποιήσεων",
+      "subCat": "Πλήθος Ειδοποιήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη αριθμού ειδοποιήσεων",
+      "name": "getNotificationCount",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Ειδοποιήσεις",
       "type": "api"
     },
     {
-      "name": "Λήψη ειδοποιήσεων",
+      "name": "getNotifications",
       "file": "getnotifications-api-generated.md",
       "subCat": "Ειδοποιήσεις",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση ειδοποίησης",
+      "name": "updateNotification",
       "file": "updatenotification-api-generated.md",
       "subCat": "Ειδοποιήσεις",
       "type": "api"
     },
     {
-      "name": "Προσθήκη σελίδας",
+      "name": "addPage",
       "file": "addpage-api-generated.md",
       "subCat": "Σελίδες",
       "type": "api"
     },
     {
-      "name": "Διαγραφή σελίδας",
+      "name": "deletePage",
       "file": "deletepage-api-generated.md",
       "subCat": "Σελίδες",
       "type": "api"
     },
     {
-      "name": "Λήψη σελίδας με URL/ID",
+      "name": "getPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Σελίδες",
       "type": "api"
     },
     {
-      "name": "Λήψη σελίδων",
+      "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Σελίδες",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση σελίδας (patch)",
+      "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Σελίδες",
       "type": "api"
     },
     {
-      "name": "Διαγραφή εκκρεμούς συμβάντος webhook",
+      "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Εκκρεμή συμβάντα webhook",
+      "subCat": "Εκκρεμή Γεγονότα Webhook",
       "type": "api"
     },
     {
-      "name": "Λήψη αριθμού εκκρεμών συμβάντων webhook",
+      "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Εκκρεμή συμβάντα webhook",
+      "subCat": "Εκκρεμή Γεγονότα Webhook",
       "type": "api"
     },
     {
-      "name": "Λήψη εκκρεμών συμβάντων webhook",
+      "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Εκκρεμή συμβάντα webhook",
+      "subCat": "Εκκρεμή Γεγονότα Webhook",
       "type": "api"
     },
     {
-      "name": "Δημιουργία ρύθμισης ερώτησης",
+      "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Διαγραφή ρύθμισης ερώτησης",
+      "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη ρύθμισης ερώτησης",
+      "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη ρυθμίσεων ερώτησης",
+      "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Ρυθμίσεις Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση ρύθμισης ερώτησης",
+      "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Ρυθμίσεις Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Δημιουργία αποτελέσματος ερώτησης",
+      "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Διαγραφή αποτελέσματος ερώτησης",
+      "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη αποτελέσματος ερώτησης",
+      "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Λήψη αποτελεσμάτων ερωτήσεων",
+      "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση αποτελέσματος ερώτησης",
+      "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Συσσωμάτωση αποτελεσμάτων ερωτήσεων",
+      "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Συσσωμάτωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Συγκεντρωτικά Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Μαζική συσσωμάτωση αποτελεσμάτων ερωτήσεων",
+      "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Συσσωμάτωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Συγκεντρωτικά Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Συνδυασμός σχολίων με αποτελέσματα ερωτήσεων",
+      "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Συσσωμάτωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Συγκεντρωτικά Αποτελέσματα Ερωτήσεων",
       "type": "api"
     },
     {
-      "name": "Προσθήκη χρήστη SSO",
+      "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Διαγραφή χρήστη SSO",
+      "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Λήψη χρήστη SSO με email",
+      "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Λήψη χρήστη SSO με ID",
+      "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Λήψη χρηστών SSO",
+      "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση χρήστη SSO (patch)",
+      "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Αντικατάσταση χρήστη SSO (put)",
+      "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
       "subCat": "Χρήστες SSO",
       "type": "api"
     },
     {
-      "name": "Δημιουργία συνδρομής",
+      "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
       "subCat": "Συνδρομές",
       "type": "api"
     },
     {
-      "name": "Διαγραφή συνδρομής",
+      "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
       "subCat": "Συνδρομές",
       "type": "api"
     },
     {
-      "name": "Λήψη συνδρομών",
+      "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Συνδρομές",
       "type": "api"
     },
     {
-      "name": "Λήψη ημερήσιας χρήσης tenant",
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Συνδρομές",
+      "type": "api"
+    },
+    {
+      "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Ημερήσια Χρήση Tenant",
+      "subCat": "Ημερήσια Χρήση Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Δημιουργία πακέτου tenant",
+      "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Διαγραφή πακέτου tenant",
+      "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Λήψη πακέτου tenant",
+      "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Λήψη πακέτων tenant",
+      "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Αντικατάσταση πακέτου tenant",
+      "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση πακέτου tenant",
+      "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Πακέτα Tenant",
+      "subCat": "Πακέτα Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Δημιουργία χρήστη tenant",
+      "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Διαγραφή χρήστη tenant",
+      "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Λήψη χρήστη tenant",
+      "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Λήψη χρηστών tenant",
+      "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Αντικατάσταση χρήστη tenant",
+      "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Αποστολή συνδέσμου εισόδου",
+      "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση χρήστη tenant",
+      "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Χρήστες Tenant",
+      "subCat": "Χρήστες Οργανισμού",
       "type": "api"
     },
     {
-      "name": "Δημιουργία tenant",
+      "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Οργανισμοί",
       "type": "api"
     },
     {
-      "name": "Διαγραφή tenant",
+      "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Οργανισμοί",
       "type": "api"
     },
     {
-      "name": "Λήψη tenant",
+      "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Οργανισμοί",
       "type": "api"
     },
     {
-      "name": "Λήψη tenants",
+      "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Οργανισμοί",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση tenant",
+      "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Οργανισμοί",
       "type": "api"
     },
     {
-      "name": "Μεταφόρτωση εικόνας",
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Εισιτήρια",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Εισιτήρια",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Εισιτήρια",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Εισιτήρια",
+      "type": "api"
+    },
+    {
+      "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Μεταφόρτωση Εικόνας",
       "type": "api"
     },
     {
-      "name": "Λήψη προόδου σήματος χρήστη κατά ID",
+      "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Πρόοδος Σήματος Χρήστη",
+      "subCat": "Πρόοδος Διακριτικών Χρήστη",
       "type": "api"
     },
     {
-      "name": "Λήψη προόδου σήματος χρήστη κατά ID χρήστη",
+      "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Πρόοδος Σήματος Χρήστη",
+      "subCat": "Πρόοδος Διακριτικών Χρήστη",
       "type": "api"
     },
     {
-      "name": "Λήψη λίστας προόδου σημάτων χρήστη",
+      "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Πρόοδος Σήματος Χρήστη",
+      "subCat": "Πρόοδος Διακριτικών Χρήστη",
       "type": "api"
     },
     {
-      "name": "Δημιουργία σήματος χρήστη",
+      "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Σήματα Χρήστη",
+      "subCat": "Διακριτικά Χρηστών",
       "type": "api"
     },
     {
-      "name": "Διαγραφή σήματος χρήστη",
+      "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Σήματα Χρήστη",
+      "subCat": "Διακριτικά Χρηστών",
       "type": "api"
     },
     {
-      "name": "Λήψη σήματος χρήστη",
+      "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Σήματα Χρήστη",
+      "subCat": "Διακριτικά Χρηστών",
       "type": "api"
     },
     {
-      "name": "Λήψη σημάτων χρήστη",
+      "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Σήματα Χρήστη",
+      "subCat": "Διακριτικά Χρηστών",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση σήματος χρήστη",
+      "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Σήματα Χρήστη",
+      "subCat": "Διακριτικά Χρηστών",
       "type": "api"
     },
     {
-      "name": "Λήψη αριθμού ειδοποιήσεων χρήστη",
+      "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Λήψη ειδοποιήσεων χρήστη",
+      "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Επαναφορά αριθμού ειδοποιήσεων χρήστη",
+      "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Επαναφορά ειδοποιήσεων χρήστη",
+      "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση κατάστασης συνδρομής σχολίων ειδοποιήσεων χρήστη",
+      "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση κατάστασης συνδρομής σελίδας ειδοποιήσεων χρήστη",
+      "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Ενημέρωση κατάστασης ειδοποίησης χρήστη",
+      "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Ειδοποιήσεις Χρήστη",
       "type": "api"
     },
     {
-      "name": "Λήψη καταστάσεων παρουσίας χρηστών",
+      "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "Κατάσταση Παρουσίας Χρήστη",
       "type": "api"
     },
     {
-      "name": "Αναζήτηση χρηστών",
+      "name": "searchUsers",
       "file": "searchusers-api-generated.md",
       "subCat": "Αναζήτηση Χρηστών",
       "type": "api"
     },
     {
-      "name": "Λήψη χρήστη",
+      "name": "getUser",
       "file": "getuser-api-generated.md",
       "subCat": "Χρήστες",
       "type": "api"
     },
     {
-      "name": "Δημιουργία ψήφου",
+      "name": "createVote",
       "file": "createvote-api-generated.md",
       "subCat": "Ψηφοφορίες",
       "type": "api"
     },
     {
-      "name": "Διαγραφή ψήφου",
+      "name": "deleteVote",
       "file": "deletevote-api-generated.md",
       "subCat": "Ψηφοφορίες",
       "type": "api"
     },
     {
-      "name": "Λήψη ψήφων",
+      "name": "getVotes",
       "file": "getvotes-api-generated.md",
       "subCat": "Ψηφοφορίες",
       "type": "api"
     },
     {
-      "name": "Λήψη ψήφων για χρήστη",
+      "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Ψηφοφορίες",
       "type": "api"

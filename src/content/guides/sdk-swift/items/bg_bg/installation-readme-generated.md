@@ -1,16 +1,16 @@
 ### Swift Package Manager
 
-Добавете следното в файла `Package.swift`:
+Добавете следното във файла си `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "0.0.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
 ]
 ```
 
 Или в Xcode:
-1. Файл > Добавяне на пакети...
-2. Въведете URL на хранилището: `https://github.com/fastcomments/fastcomments-swift.git`
+1. File > Add Packages...
+2. Въведете URL адреса на хранилището: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Изберете версията, която искате да използвате
 
 ### Изисквания

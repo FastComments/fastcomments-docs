@@ -17,13 +17,13 @@
     {
       "name": "Компатибилност прегледача и сервера",
       "file": "browser-vs-server-compatibility-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
@@ -33,39 +33,39 @@
       "type": "readme"
     },
     {
-      "name": "Интеграција SSO (једнократно пријављивање)",
+      "name": "SSO (једнократно пријављивање) интеграција",
       "file": "sso-single-sign-on-integration-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
-      "name": "Уобичајени случајеви употребе",
+      "name": "Чести случајеви употребе",
       "file": "common-use-cases-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
       "name": "Догађаји уживо (ажурирања у реалном времену)",
       "file": "live-events-real-time-updates-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
-      "name": "Идентификатори преноса",
+      "name": "Идентификатори емитовања",
       "file": "broadcast-ids-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
       "name": "Обрада грешака",
       "file": "error-handling-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Документaција",
       "type": "readme"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегација",
+      "subCat": "Агрегирање",
       "type": "api"
     },
     {
@@ -77,13 +77,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Блокирање са коментара",
+      "subCat": "Блокирање по коментару",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Блокирање са коментара",
+      "subCat": "Блокирање по коментару",
       "type": "api"
     },
     {
@@ -389,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Означи коментар",
+      "subCat": "Пријављивање коментара",
       "type": "api"
     },
     {
@@ -521,19 +521,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Чекајући webhook догађаји",
+      "subCat": "Очекујући webhook догађаји",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Чекајући webhook догађаји",
+      "subCat": "Очекујући webhook догађаји",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Чекајући webhook догађаји",
+      "subCat": "Очекујући webhook догађаји",
       "type": "api"
     },
     {
@@ -675,6 +675,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Дневна употреба тенанта",
@@ -789,57 +795,81 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Отпреми слику",
+      "subCat": "Отпремање слике",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Напредак корисничке ознаке",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Напредак корисничке ознаке",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Напредак корисничке ознаке",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Корисничке значке",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Корисничке значке",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Корисничке значке",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Корисничке значке",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Корисничке значке",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {

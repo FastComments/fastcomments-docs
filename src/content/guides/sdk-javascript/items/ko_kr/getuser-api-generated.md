@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,11 +13,10 @@
 
 [inline-code-attrs-start title = 'getUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-publishing-42";
-const userIdOptional: string | undefined = "user_9d7b4c"; // 일부 흐름에서는 undefined일 수 있음(선택 사항)
-const id: string = userIdOptional ?? "user_default_0001";
-const result: GetUser200Response = await getUser(tenantId, id);
-console.log(result);
+const tenantId: string = 'tenant_7b3f42';
+const id: string = 'user_9c4d2a';
+const userResponse: GetUser200Response = await getUser(tenantId, id);
+console.log(userResponse);
 [inline-code-end]
 
 ---

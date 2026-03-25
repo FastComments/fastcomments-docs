@@ -1,12 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
-| usernameStartsWith | string | query | כן |  |
+| usernameStartsWith | string | query | לא |  |
 | mentionGroupIds | array | query | לא |  |
 | sso | string | query | לא |  |
+| searchSection | string | query | לא |  |
 
 ## תגובה
 
@@ -14,18 +15,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות הבאות עדיין בבטא. עבור כל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
+let usernameStartsWith = "usernameStartsWith_example" // String |  (אופציונלי)
 let mentionGroupIds = ["inner_example"] // [String] |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
+let searchSection = "searchSection_example" // String |  (אופציונלי)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

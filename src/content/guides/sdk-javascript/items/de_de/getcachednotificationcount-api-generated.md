@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Required | Description |
+| Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -13,12 +13,10 @@ Gibt zurück: [`GetCachedNotificationCount200Response`](https://github.com/FastC
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const baseNotificationId: string = 'notif-000123';
-const idSuffix: string | undefined = undefined; // Beispiel für optionalen Parameter
-const notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);
-console.log(result);
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'user_00012345';
+const includeUnreadOnly: boolean | undefined = true; // optionales Parameter-Flag (dargestellt)
+const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
 [inline-code-end]
 
 ---

@@ -5,19 +5,17 @@
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 
-## Respons
+## Svar
 
 Returnerer: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getVotes Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotes-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
-const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Hvis en valgfri parameter fandtes, f.eks. includeHidden, kunne den bruges sådan:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
-[inline-code-end]
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // valgfri forespørgselsparameter
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
 
----
+const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+[inline-code-end]

@@ -11,7 +11,7 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Začetek uporabe",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {
@@ -23,7 +23,7 @@
     {
       "name": "Klici API: sinhroni in asinhroni",
       "file": "making-api-calls-synchronous-vs-asynchronous-readme-generated.md",
-      "subCat": "API referenca",
+      "subCat": "Referenca API-ja",
       "type": "readme"
     },
     {
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Dokumentacija za fastcomments",
+      "name": "Dokumentacija za FastComments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -59,13 +59,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokiranje iz komentarja",
+      "subCat": "Blokiranje zaradi komentarja",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokiranje iz komentarja",
+      "subCat": "Blokiranje zaradi komentarja",
       "type": "api"
     },
     {
@@ -365,7 +365,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označevanje komentarjev",
+      "subCat": "Prijava komentarja",
       "type": "api"
     },
     {
@@ -497,19 +497,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Čakajoči Webhook dogodki",
+      "subCat": "Čakajoči dogodki webhooka",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Čakajoči Webhook dogodki",
+      "subCat": "Čakajoči dogodki webhooka",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Čakajoči Webhook dogodki",
+      "subCat": "Čakajoči dogodki webhooka",
       "type": "api"
     },
     {
@@ -651,6 +651,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Naročnine",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Dnevna uporaba najemnika",
@@ -765,6 +771,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Naloži sliko",
@@ -791,31 +821,31 @@
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Značke uporabnika",
+      "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Značke uporabnika",
+      "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Značke uporabnika",
+      "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Značke uporabnika",
+      "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Značke uporabnika",
+      "subCat": "Uporabniške značke",
       "type": "api"
     },
     {

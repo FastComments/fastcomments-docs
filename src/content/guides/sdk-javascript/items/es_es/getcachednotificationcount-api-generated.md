@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Respuesta
 
@@ -13,12 +13,10 @@ Devuelve: [`GetCachedNotificationCount200Response`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'Ejemplo de getCachedNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const baseNotificationId: string = 'notif-000123';
-const idSuffix: string | undefined = undefined; // ejemplo de parámetro opcional
-const notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);
-console.log(result);
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'user_00012345';
+const includeUnreadOnly: boolean | undefined = true; // bandera de parámetro opcional (demostrado)
+const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
 [inline-code-end]
 
 ---

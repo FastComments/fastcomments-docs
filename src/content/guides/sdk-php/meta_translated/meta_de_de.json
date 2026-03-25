@@ -1,6 +1,6 @@
 {
-  "name": "PHP-SDK",
-  "pageHeader": "FastComments PHP-SDK",
+  "name": "PHP SDK",
+  "pageHeader": "FastComments PHP SDK",
   "itemsOrdered": [
     {
       "name": "Installation & Verwendung",
@@ -335,7 +335,7 @@
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed-Beitragsstatistiken",
+      "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
@@ -651,6 +651,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Tägliche Nutzung des Mandanten",
@@ -695,43 +701,43 @@
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
@@ -765,6 +771,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Bild hochladen",
@@ -773,19 +803,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Fortschritt des Benutzerabzeichens",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Fortschritt des Benutzerabzeichens",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Fortschritt des Benutzerabzeichens",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
@@ -863,7 +893,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Präsenzstatus der Benutzer",
+      "subCat": "Benutzer-Präsenzstatus",
       "type": "api"
     },
     {
@@ -881,25 +911,25 @@
     {
       "name": "createVote",
       "file": "createvote-api-generated.md",
-      "subCat": "Abstimmungen",
+      "subCat": "Stimmen",
       "type": "api"
     },
     {
       "name": "deleteVote",
       "file": "deletevote-api-generated.md",
-      "subCat": "Abstimmungen",
+      "subCat": "Stimmen",
       "type": "api"
     },
     {
       "name": "getVotes",
       "file": "getvotes-api-generated.md",
-      "subCat": "Abstimmungen",
+      "subCat": "Stimmen",
       "type": "api"
     },
     {
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
-      "subCat": "Abstimmungen",
+      "subCat": "Stimmen",
       "type": "api"
     }
   ]

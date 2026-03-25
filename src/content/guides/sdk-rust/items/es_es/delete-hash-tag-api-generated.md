@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
-|------|------|----------|-------------|
+| Name | Type | Obligatorio | Descripción |
+|------|------|------------|-------------|
 | tag | String | Sí |  |
 | tenant_id | String | No |  |
 | delete_hash_tag_request | models::DeleteHashTagRequest | No |  |
@@ -12,16 +12,16 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'delete_hash_tag Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de delete_hash_tag'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteHashTagParams = DeleteHashTagParams {
-        tag: "news/politics".to_string(),
-        tenant_id: Some("acme-corp-tenant".to_string()),
-        delete_hash_tag_request: Some(models::DeleteHashTagRequest::default()),
+async fn run_delete_tag(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {
+    let params = DeleteHashTagParams {
+        tag: "news/world-climate".to_owned(),
+        tenant_id: Some("acme-corp-tenant".to_owned()),
+        delete_hash_tag_request: None,
     };
-    let response: FlagCommentPublic200Response = delete_hash_tag(&configuration, params).await?;
-    Ok(())
+    let response: FlagCommentPublic200Response = delete_hash_tag(configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

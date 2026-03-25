@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
@@ -14,14 +14,14 @@
 
 [inline-code-attrs-start title = 'Пример за delete_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_vote() -> Result<(), Error> {
+async fn delete_vote_example() -> Result<DeleteCommentVote200Response, Error> {
     let params: DeleteVoteParams = DeleteVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/67890/comment/12345".to_string(),
-        edit_key: Some("user-editkey-7f3b".to_string()),
+        id: "comment-98765".to_string(),
+        edit_key: Some("edit-4f2b9c".to_string()),
     };
     let response: DeleteCommentVote200Response = delete_vote(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

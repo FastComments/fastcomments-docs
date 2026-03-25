@@ -13,12 +13,13 @@ Returns: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'get_tenant_users Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_tenant_users() -> Result<GetTenantUsers200Response, Error> {
+async fn example_get_tenant_users() -> Result<(), Error> {
     let params: GetTenantUsersParams = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(10.0),
+        skip: Some(20.0),
     };
-    let response: GetTenantUsers200Response = get_tenant_users(&configuration, params).await?;
-    Ok(response)
+    let users: GetTenantUsers200Response = get_tenant_users(&configuration, params).await?;
+    let _users = users;
+    Ok(())
 }
 [inline-code-end]

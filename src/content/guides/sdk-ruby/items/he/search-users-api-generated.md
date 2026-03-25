@@ -1,12 +1,13 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
-| usernameStartsWith | string | query | כן |  |
+| usernameStartsWith | string | query | לא |  |
 | mentionGroupIds | array | query | לא |  |
 | sso | string | query | לא |  |
+| searchSection | string | query | לא |  |
 
 ## תגובה
 
@@ -14,23 +15,24 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
-tenant_id = 'tenant_id_example' # מחרוזת | 
-url_id = 'url_id_example' # מחרוזת | 
-username_starts_with = 'username_starts_with_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
 opts = {
-  mention_group_ids: ['inner_example'], # מערך<מחרוזת> | 
-  sso: 'sso_example' # מחרוזת | 
+  username_starts_with: 'username_starts_with_example', # String | 
+  mention_group_ids: ['inner_example'], # Array<String> | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
   
-  result = api_instance.search_users(tenant_id, url_id, username_starts_with, opts)
+  result = api_instance.search_users(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"

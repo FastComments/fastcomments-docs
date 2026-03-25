@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Aggregate",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregate",
       "type": "api"
@@ -353,31 +353,31 @@
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Hashtags",
+      "subCat": "Hash Tags",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Hashtags",
+      "subCat": "Hash Tags",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Hashtags",
+      "subCat": "Hash Tags",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Hashtags",
+      "subCat": "Hash Tags",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Hashtags",
+      "subCat": "Hash Tags",
       "type": "api"
     },
     {
@@ -633,6 +633,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Tenant Daily Usage",
@@ -744,6 +750,30 @@
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
       "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
       "type": "api"
     },
     {

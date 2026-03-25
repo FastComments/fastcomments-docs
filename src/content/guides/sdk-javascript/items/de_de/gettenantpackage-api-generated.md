@@ -2,8 +2,8 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
 
 ## Antwort
 
@@ -13,11 +13,10 @@ Gibt zurück: [`GetTenantPackage200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getTenantPackage Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_westus_01';
-const packageId: string = 'pkg_premium_annual_2026';
-interface FetchOptions { includeArchived?: boolean }
-const options: FetchOptions = { includeArchived: false };
-const result: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);
+const tenantId: string = 'tenant_7f3b2c8';
+const packageId: string = 'pkg_standard_2026';
+const requestOptions: { includeConfig?: boolean } = { includeConfig: true };
+const packageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);
 [inline-code-end]
 
 ---

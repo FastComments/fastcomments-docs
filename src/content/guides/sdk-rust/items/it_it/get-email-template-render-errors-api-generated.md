@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
+|------|------|--------------|-------------|
 | tenant_id | String | Sì |  |
 | id | String | Sì |  |
 | skip | f64 | No |  |
@@ -14,13 +14,13 @@ Restituisce: [`GetEmailTemplateRenderErrors200Response`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'Esempio di get_email_template_render_errors'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_call() -> Result<(), Error> {
+async fn run_example() -> Result<(), Error> {
     let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
         skip: Some(10.0),
     };
-    let _response: GetEmailTemplateRenderErrors200Response =
+    let response: GetEmailTemplateRenderErrors200Response =
         get_email_template_render_errors(&configuration, params).await?;
     Ok(())
 }

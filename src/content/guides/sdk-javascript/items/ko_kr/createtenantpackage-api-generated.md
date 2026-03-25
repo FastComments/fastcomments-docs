@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantPackageBody | CreateTenantPackageBody | 예 |  |
@@ -13,16 +13,18 @@
 
 [inline-code-attrs-start title = 'createTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b1a9c";
-const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
-const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const tenantId: string = 'tenant_acme_001';
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Premium Plus",
-  tenantPackage,
-  customConfig,
-  notes: "Enable advanced moderation and image uploads" // 선택적 매개변수 예시
+  packageName: 'Standard Moderation',
+  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
+  maxCommentsPerMinute: 50,
+  allowAnonymousComments: false, // 제공된 선택적 매개변수
+  // 선택적 필드 생략: 예: 고급 중재 규칙, custom CSS
+  customConfigParameters: {
+    enableProfanityFilter: true,
+    imageContentProfanityLevel: 'medium' // 예시 값; CustomConfigParameters 형태 사용
+  }
 };
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+console.log(response);
 [inline-code-end]
-
----

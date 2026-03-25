@@ -13,16 +13,20 @@ Restituisce: [`CreateTenantPackage200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'Esempio di createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b1a9c";
-const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
-const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const tenantId: string = 'tenant_acme_001';
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Premium Plus",
-  tenantPackage,
-  customConfig,
-  notes: "Enable advanced moderation and image uploads" // parametro opzionale dimostrativo
+  packageName: 'Standard Moderation',
+  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
+  maxCommentsPerMinute: 50,
+  allowAnonymousComments: false, // parametro opzionale fornito
+  // campi opzionali omessi: p.es., regole di moderazione avanzate, CSS personalizzati
+  customConfigParameters: {
+    enableProfanityFilter: true,
+    imageContentProfanityLevel: 'medium' // valore illustrativo; usa la struttura CustomConfigParameters
+  }
 };
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+console.log(response);
 [inline-code-end]
 
 ---

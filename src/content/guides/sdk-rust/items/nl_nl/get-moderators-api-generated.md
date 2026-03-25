@@ -1,3 +1,4 @@
+---
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -5,7 +6,7 @@
 | tenant_id | String | Ja |  |
 | skip | f64 | Nee |  |
 
-## Respons
+## Reactie
 
 Retourneert: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderators_200_response.rs)
 
@@ -18,8 +19,7 @@ async fn run() -> Result<(), Error> {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
-    let _moderators = moderators;
+    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -1,11 +1,11 @@
 {
   "name": "SDK Swift",
-  "pageHeader": "SDK Swift de FastComments",
+  "pageHeader": "FastComments SDK pour Swift",
   "itemsOrdered": [
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "API publiques et sécurisées",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Référence de l'API",
       "type": "readme"
     },
     {
-      "name": "Effectuer des appels à l'API",
+      "name": "Effectuer des appels API",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Référence de l'API",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Notes",
+      "name": "Remarques",
       "file": "notes-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -59,13 +59,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocage depuis un commentaire",
+      "subCat": "Bloquer depuis un commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocage depuis un commentaire",
+      "subCat": "Bloquer depuis un commentaire",
       "type": "api"
     },
     {
@@ -299,13 +299,13 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Journal des événements",
+      "subCat": "Journal d'événements",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Journal des événements",
+      "subCat": "Journal d'événements",
       "type": "api"
     },
     {
@@ -521,79 +521,79 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de la question",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de la question",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de la question",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de la question",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Résultats des questions",
+      "subCat": "Résultats de la question",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de la question",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de la question",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de la question",
       "type": "api"
     },
     {
@@ -653,6 +653,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnements",
       "type": "api"
     },
@@ -771,6 +777,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Téléverser une image",
@@ -779,19 +809,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Progression des badges utilisateur",
+      "subCat": "Progression du badge utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Progression des badges utilisateur",
+      "subCat": "Progression du badge utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Progression des badges utilisateur",
+      "subCat": "Progression du badge utilisateur",
       "type": "api"
     },
     {
@@ -869,7 +899,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Statuts de présence utilisateur",
+      "subCat": "Statuts de présence des utilisateurs",
       "type": "api"
     },
     {

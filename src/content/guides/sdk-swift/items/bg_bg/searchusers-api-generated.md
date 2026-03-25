@@ -2,11 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| usernameStartsWith | string | query | Не |  |
+| mentionGroupIds | array | query | Не |  |
+| sso | string | query | Не |  |
+| searchSection | string | query | Не |  |
 
 ## Отговор
 
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'Пример за searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти на код все още са бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примерни кодове все още са бета. За проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
-let mentionGroupIds = ["inner_example"] // [String] |  (по избор)
-let sso = "sso_example" // String |  (по избор)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (незадължително)
+let mentionGroupIds = ["inner_example"] // [String] |  (незадължително)
+let sso = "sso_example" // String |  (незадължително)
+let searchSection = "searchSection_example" // String |  (незадължително)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

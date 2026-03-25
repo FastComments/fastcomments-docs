@@ -1,21 +1,23 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
+Враћа: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
 
-## Primjer
+## Примјер
 
-[inline-code-attrs-start title = 'getVotes Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotes Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // опционални параметар упита
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Ako bi postojao opcionalan parametar, npr. includeHidden, mogao bi se koristiti ovako:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
+
+---

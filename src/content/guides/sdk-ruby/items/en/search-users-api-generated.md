@@ -7,6 +7,7 @@
 | usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Response
 
@@ -25,7 +26,8 @@ url_id = 'url_id_example' # String |
 opts = {
   username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin

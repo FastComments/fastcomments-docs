@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 
@@ -13,10 +13,10 @@ Restituisce: [`GetCachedNotificationCount200Response`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'Esempio di getCachedNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const baseNotificationId: string = 'notif-000123';
-const idSuffix: string | undefined = undefined; // esempio di parametro opzionale
-const notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);
-console.log(result);
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'user_00012345';
+const includeUnreadOnly: boolean | undefined = true; // flag del parametro opzionale (dimostrato)
+const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
 [inline-code-end]
+
+---

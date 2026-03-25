@@ -19,9 +19,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]
-
----

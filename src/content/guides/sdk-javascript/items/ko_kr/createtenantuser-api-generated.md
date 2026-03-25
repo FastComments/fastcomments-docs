@@ -1,7 +1,6 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantUserBody | CreateTenantUserBody | 예 |  |
@@ -14,13 +13,12 @@
 
 [inline-code-attrs-start title = 'createTenantUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9a8c7e4b";
+const tenantId: string = 'tenant_6f4b2c';
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "julia.smith@acme-corp.com",
-  displayName: "Julia Smith",
-  sendInviteEmail: true, // 선택적 매개변수 예시
-  locale: "en-US",
-  metadata: { department: "Customer Success" }
+  email: 'sara.kim@example.com',
+  displayName: 'Sara Kim',
+  role: 'moderator',
+  notifyOnMentions: true
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]

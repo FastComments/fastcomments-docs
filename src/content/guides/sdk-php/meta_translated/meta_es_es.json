@@ -1,6 +1,6 @@
 {
   "name": "SDK de PHP",
-  "pageHeader": "FastComments SDK para PHP",
+  "pageHeader": "FastComments SDK de PHP",
   "itemsOrdered": [
     {
       "name": "Instalación y uso",
@@ -141,7 +141,7 @@
       "type": "api"
     },
     {
-      "name": "fijarComentario",
+      "name": "anclarComentario",
       "file": "pincomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -153,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "guardarComentariosEnBloque",
+      "name": "guardarComentariosEnLote",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -183,7 +183,7 @@
       "type": "api"
     },
     {
-      "name": "desfijarComentario",
+      "name": "desanclarComentario",
       "file": "unpincomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -201,37 +201,37 @@
       "type": "api"
     },
     {
-      "name": "agregarConfiguraciónDeDominio",
+      "name": "agregarConfiguraciónDominio",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
     },
     {
-      "name": "eliminarConfiguraciónDeDominio",
+      "name": "eliminarConfiguraciónDominio",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
     },
     {
-      "name": "obtenerConfiguraciónDeDominio",
+      "name": "obtenerConfiguraciónDominio",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
     },
     {
-      "name": "obtenerConfiguracionesDeDominio",
+      "name": "obtenerConfiguracionesDominio",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
     },
     {
-      "name": "actualizarParcialmenteConfiguraciónDeDominio",
+      "name": "actualizarParcialConfiguraciónDominio",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
     },
     {
-      "name": "reemplazarConfiguraciónDeDominio",
+      "name": "reemplazarConfiguraciónDominio",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
@@ -249,7 +249,7 @@
       "type": "api"
     },
     {
-      "name": "eliminarErrorDeRenderizadoDePlantillaDeCorreo",
+      "name": "eliminarErrorRenderizadoPlantillaDeCorreo",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Plantillas de correo",
       "type": "api"
@@ -267,7 +267,7 @@
       "type": "api"
     },
     {
-      "name": "obtenerErroresDeRenderizadoDePlantillasDeCorreo",
+      "name": "obtenerErroresDeRenderizadoPlantillaDeCorreo",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Plantillas de correo",
       "type": "api"
@@ -303,37 +303,37 @@
       "type": "api"
     },
     {
-      "name": "crearPublicaciónDelFeed",
+      "name": "crearPublicaciónDeFeed",
       "file": "createfeedpost-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "crearPublicaciónDelFeedPública",
+      "name": "crearPublicaciónDeFeedPública",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "eliminarPublicaciónDelFeedPública",
+      "name": "eliminarPublicaciónDeFeedPública",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "obtenerPublicacionesDelFeed",
+      "name": "obtenerPublicacionesDeFeed",
       "file": "getfeedposts-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "obtenerPublicacionesDelFeedPúblicas",
+      "name": "obtenerPublicacionesDeFeedPúblicas",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "obtenerEstadísticasDePublicacionesDelFeed",
+      "name": "obtenerEstadísticasPublicacionesDeFeed",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -345,19 +345,19 @@
       "type": "api"
     },
     {
-      "name": "reaccionarPublicaciónDelFeedPública",
+      "name": "reaccionarPublicaciónDeFeedPública",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "actualizarPublicaciónDelFeed",
+      "name": "actualizarPublicaciónDeFeed",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "actualizarPublicaciónDelFeedPública",
+      "name": "actualizarPublicaciónDeFeedPública",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -375,7 +375,7 @@
       "type": "api"
     },
     {
-      "name": "agregarHashtagsEnBloque",
+      "name": "agregarHashtagsEnLote",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
@@ -393,7 +393,7 @@
       "type": "api"
     },
     {
-      "name": "actualizarParcialmenteHashtag",
+      "name": "actualizarParcialHashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
@@ -435,19 +435,19 @@
       "type": "api"
     },
     {
-      "name": "eliminarRecuentoDeNotificaciones",
+      "name": "eliminarContadorDeNotificaciones",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Recuento de notificaciones",
+      "subCat": "Contador de notificaciones",
       "type": "api"
     },
     {
-      "name": "obtenerRecuentoDeNotificacionesEnCaché",
+      "name": "obtenerContadorDeNotificacionesEnCaché",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Recuento de notificaciones",
+      "subCat": "Contador de notificaciones",
       "type": "api"
     },
     {
-      "name": "obtenerRecuentoDeNotificaciones",
+      "name": "obtenerContadorDeNotificaciones",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Notificaciones",
       "type": "api"
@@ -477,7 +477,7 @@
       "type": "api"
     },
     {
-      "name": "obtenerPáginaPorIDURL",
+      "name": "obtenerPáginaPorIdURL",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
@@ -489,7 +489,7 @@
       "type": "api"
     },
     {
-      "name": "actualizarParcialmentePágina",
+      "name": "actualizarParcialPágina",
       "file": "patchpage-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
@@ -497,19 +497,19 @@
     {
       "name": "eliminarEventoWebhookPendiente",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos webhook pendientes",
       "type": "api"
     },
     {
-      "name": "obtenerRecuentoDeEventosWebhookPendientes",
+      "name": "obtenerContadorDeEventosWebhookPendientes",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos webhook pendientes",
       "type": "api"
     },
     {
       "name": "obtenerEventosWebhookPendientes",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos webhook pendientes",
       "type": "api"
     },
     {
@@ -579,7 +579,7 @@
       "type": "api"
     },
     {
-      "name": "agregarEnBloqueResultadosDePreguntas",
+      "name": "agregarResultadosDePreguntasEnLote",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Agregación de resultados de preguntas",
       "type": "api"
@@ -609,7 +609,7 @@
       "type": "api"
     },
     {
-      "name": "obtenerUsuarioSSOPorID",
+      "name": "obtenerUsuarioSSOPorId",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -621,7 +621,7 @@
       "type": "api"
     },
     {
-      "name": "actualizarParcialmenteUsuarioSSO",
+      "name": "actualizarParcialUsuarioSSO",
       "file": "patchssouser-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -651,117 +651,147 @@
       "type": "api"
     },
     {
-      "name": "obtenerUsosDiariosDelArrendatario",
+      "name": "actualizarSuscripción",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "obtenerUsosDiariosDelInquilino",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Uso diario del arrendatario",
+      "subCat": "Uso diario del inquilino",
       "type": "api"
     },
     {
-      "name": "crearPaqueteDelArrendatario",
+      "name": "crearPaqueteDelInquilino",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "eliminarPaqueteDelArrendatario",
+      "name": "eliminarPaqueteDelInquilino",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "obtenerPaqueteDelArrendatario",
+      "name": "obtenerPaqueteDelInquilino",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "obtenerPaquetesDelArrendatario",
+      "name": "obtenerPaquetesDelInquilino",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "reemplazarPaqueteDelArrendatario",
+      "name": "reemplazarPaqueteDelInquilino",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "actualizarPaqueteDelArrendatario",
+      "name": "actualizarPaqueteDelInquilino",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paquetes del arrendatario",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
-      "name": "crearUsuarioDelArrendatario",
+      "name": "crearUsuarioDelInquilino",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "eliminarUsuarioDelArrendatario",
+      "name": "eliminarUsuarioDelInquilino",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "obtenerUsuarioDelArrendatario",
+      "name": "obtenerUsuarioDelInquilino",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "obtenerUsuariosDelArrendatario",
+      "name": "obtenerUsuariosDelInquilino",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "reemplazarUsuarioDelArrendatario",
+      "name": "reemplazarUsuarioDelInquilino",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "enviarEnlaceDeInicioDeSesión",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "actualizarUsuarioDelArrendatario",
+      "name": "actualizarUsuarioDelInquilino",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Usuarios del arrendatario",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
-      "name": "crearArrendatario",
+      "name": "crearInquilino",
       "file": "createtenant-api-generated.md",
-      "subCat": "Arrendatarios",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
-      "name": "eliminarArrendatario",
+      "name": "eliminarInquilino",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Arrendatarios",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
-      "name": "obtenerArrendatario",
+      "name": "obtenerInquilino",
       "file": "gettenant-api-generated.md",
-      "subCat": "Arrendatarios",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
-      "name": "obtenerArrendatarios",
+      "name": "obtenerInquilinos",
       "file": "gettenants-api-generated.md",
-      "subCat": "Arrendatarios",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
-      "name": "actualizarArrendatario",
+      "name": "actualizarInquilino",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Arrendatarios",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "cambiarEstadoDelTicket",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "crearTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "obtenerTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "obtenerTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
@@ -771,19 +801,19 @@
       "type": "api"
     },
     {
-      "name": "obtenerProgresoInsigniaUsuarioPorID",
+      "name": "obtenerProgresoDeInsigniaDeUsuarioPorId",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "Progreso de insignia de usuario",
       "type": "api"
     },
     {
-      "name": "obtenerProgresoInsigniaPorIDDeUsuario",
+      "name": "obtenerProgresoDeInsigniaPorIdDeUsuario",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Progreso de insignia de usuario",
       "type": "api"
     },
     {
-      "name": "obtenerListaDeProgresoDeInsigniasDeUsuario",
+      "name": "obtenerListaDeProgresosDeInsigniasDeUsuario",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "Progreso de insignia de usuario",
       "type": "api"
@@ -819,7 +849,7 @@
       "type": "api"
     },
     {
-      "name": "obtenerRecuentoDeNotificacionesDeUsuario",
+      "name": "obtenerContadorDeNotificacionesDeUsuario",
       "file": "getusernotificationcount-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
@@ -831,31 +861,31 @@
       "type": "api"
     },
     {
-      "name": "restablecerRecuentoDeNotificacionesDeUsuario",
+      "name": "reiniciarContadorDeNotificacionesDeUsuario",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "restablecerNotificacionesDeUsuario",
+      "name": "reiniciarNotificacionesDeUsuario",
       "file": "resetusernotifications-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "actualizarEstadoSuscripciónComentariosDeNotificacionesDelUsuario",
+      "name": "actualizarEstadoSuscripciónComentariosDeNotificacionesDeUsuario",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "actualizarEstadoSuscripciónPáginasDeNotificacionesDelUsuario",
+      "name": "actualizarEstadoSuscripciónPáginaDeNotificacionesDeUsuario",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "actualizarEstadoDeNotificacionesDeUsuario",
+      "name": "actualizarEstadoDeNotificaciónDeUsuario",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
@@ -897,7 +927,7 @@
       "type": "api"
     },
     {
-      "name": "obtenerVotosDelUsuario",
+      "name": "obtenerVotosParaUsuario",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Votos",
       "type": "api"

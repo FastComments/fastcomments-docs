@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | errorId | string | Ja |  |
@@ -12,12 +12,14 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a9c";
-const id: string = "template_4a1c9f7e";
-const errorId: string = "err_20260112_abc123";
+const tenantId: string = 'tenant_7f3b4c2a';
+const templateEnvironment: string | undefined = 'production'; // optionaler Umgebungsselektor
+const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
+const errorId: string = 'err_5a9d2f1c';
 const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+console.log(result);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 
@@ -8,12 +8,13 @@
 
 Враћа: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitions200Response.ts)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-78f2';
-const emailTemplates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+const tenantId: string = 'tenant_acme_eu_01';
+const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+console.log('Email template definitions loaded for', tenantId, templates);
 [inline-code-end]
 
 ---

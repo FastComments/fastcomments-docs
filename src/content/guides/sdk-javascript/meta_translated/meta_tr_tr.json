@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Genel ve Güvenli API'ler",
+      "name": "Açık ve Güvenli API'ler",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API Referansı",
       "type": "readme"
@@ -71,7 +71,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Denetim Günlükleri",
+      "subCat": "Denetim Kayıtları",
       "type": "api"
     },
     {
@@ -227,37 +227,37 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Etki Alanı Yapılandırmaları",
       "type": "api"
     },
     {
@@ -317,13 +317,13 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Olay Kaydı",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Olay Kaydı",
       "type": "api"
     },
     {
@@ -521,19 +521,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Bekleyen Webhook Etkinlikleri",
+      "subCat": "Bekleyen Webhook Olayları",
       "type": "api"
     },
     {
@@ -675,6 +675,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonelikler",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Kiracı Günlük Kullanımı",
@@ -789,6 +795,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Resim Yükle",
@@ -887,7 +917,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Kullanıcı Çevrimiçi Durumları",
+      "subCat": "Kullanıcı Varlık Durumu",
       "type": "api"
     },
     {

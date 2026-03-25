@@ -1,11 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | כן |  |
 
-## תשובה
+## תגובה
 
 מחזיר: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
 
@@ -13,11 +13,11 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // פרמטר שאילתה אופציונלי
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// אם קיים פרמטר אופציונלי, לדוגמה includeHidden, ניתן להשתמש בו כך:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

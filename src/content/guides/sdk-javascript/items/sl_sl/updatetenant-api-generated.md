@@ -1,13 +1,13 @@
 ---
 ## Parametri
 
-| Name | Type | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantBody | UpdateTenantBody | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateTenantBody | UpdateTenantBody | Da |  |
 
-## Odgovor
+## Response
 
 Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -15,22 +15,13 @@ Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primer uporabe updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_01H4ZQ7KABCD";
-const id: string = "site_9f8e7d6c";
-const apiDomainConfiguration: APIDomainConfiguration = {
-  primaryDomain: "comments.acme.com",
-  allowSubdomains: true
-};
-const billingInfo: BillingInfo = {
-  planName: "Business",
-  billingContactEmail: "billing@acme.com",
-  seats: 25
-};
+const tenantId: string = "tenant_4821";
+const id: string = "flag_7b9e";
+const billingInfo: BillingInfo | undefined = undefined; // neobvezno; izpustite, da ohranite trenutne podatke o obračunu
 const updateTenantBody: UpdateTenantBody = {
-  displayName: "Acme Corporation Comments",
-  apiDomainConfiguration,
-  billingInfo, // neobvezen parameter (prikazan)
-  enableModeration: true
+  name: "Acme News Comments",
+  defaultDomain: "comments.acme.com",
+  ...(billingInfo ? { billingInfo } : {})
 };
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]

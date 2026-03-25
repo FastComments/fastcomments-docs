@@ -16,28 +16,32 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'update_feed_post_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = UpdateFeedPostPublicParams {
+let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    post_id: "news/article-12345".to_string(),
+    post_id: "news/article-2026-03-25".to_string(),
     update_feed_post_params: models::UpdateFeedPostParams {
-        title: Some("Acme launches unified search".to_string()),
-        content: Some("Acme Corp released a unified search feature that improves discovery across products.".to_string()),
-        links: Some(vec![
-            models::FeedPostLink { url: "https://acme.com/blog/unified-search".to_string(), title: Some("Read the announcement".to_string()) }
-        ]),
-        media: Some(vec![
+        title: "Acme Widget Launch".to_string(),
+        body: "Acme today launched the next-generation Widget with improved performance and battery life.".to_string(),
+        tags: vec!["product".to_string(), "launch".to_string()],
+        media: vec![
             models::FeedPostMediaItem {
-                id: Some("media-1122".to_string()),
-                caption: Some("Feature screenshot".to_string()),
-                assets: Some(vec![
-                    models::FeedPostMediaItemAsset { url: "https://cdn.acme.com/images/feature-1122.jpg".to_string(), mime_type: Some("image/jpeg".to_string()) }
-                ])
+                url: "https://cdn.acme.com/images/widget-launch.jpg".to_string(),
+                asset: Some(models::FeedPostMediaItemAsset {
+                    mime_type: "image/jpeg".to_string(),
+                    size: Some(142000),
+                }),
             }
-        ]),
-        is_published: Some(true),
+        ],
+        links: vec![
+            models::FeedPostLink {
+                url: "https://acme.com/blog/widget-launch".to_string(),
+                title: Some("Read the full announcement".to_string()),
+            }
+        ],
     },
-    broadcast_id: Some("broadcast-789".to_string()),
-    sso: Some("sso-token-abc".to_string()),
+    broadcast_id: Some("broadcast-2026-03".to_string()),
+    sso: Some("sso-token-9f8e7d".to_string()),
 };
-let response: CreateFeedPostPublic200Response = update_feed_post_public(&configuration, params).await?;
+
+let response: CreateFeedPostPublic200Response = update_feed_post_public(configuration, params).await?;
 [inline-code-end]

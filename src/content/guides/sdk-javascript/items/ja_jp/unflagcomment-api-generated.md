@@ -1,7 +1,6 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
@@ -11,5 +10,16 @@
 ## レスポンス
 
 戻り値: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagComment200Response.ts)
+
+## 例
+
+[inline-code-attrs-start title = 'unFlagComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'acme-tenant-001';
+const commentId: string = 'cmt_9f8e7d6c';
+const userId: string = 'user_72b4a1c9';
+const anonUserId: string = 'anon_3d2c1b0a';
+const response: FlagComment200Response = await unFlagComment(tenantId, commentId, userId, anonUserId);
+[inline-code-end]
 
 ---

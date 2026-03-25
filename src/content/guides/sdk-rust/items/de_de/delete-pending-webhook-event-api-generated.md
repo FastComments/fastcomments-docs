@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenant_id | String | Ja |  |
 | id | String | Ja |  |
 
@@ -13,14 +13,14 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'delete_pending_webhook_event Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
-    let event_id_opt: Option<String> = Some("webhook-event/news-article-2026-01-10-1234".to_string());
-    let event_id: String = event_id_opt.unwrap();
+async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+    let audit_note: Option<String> = Some("removed duplicate webhook event".to_string());
     let params: DeletePendingWebhookEventParams = DeletePendingWebhookEventParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: event_id,
+        id: "9f8b7a6c-1234-4b8d-9c3a-0e1f2d3c4b5a".to_string(),
     };
     let response: FlagCommentPublic200Response = delete_pending_webhook_event(&configuration, params).await?;
+    let _ = audit_note;
     Ok(response)
 }
 [inline-code-end]

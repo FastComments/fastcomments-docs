@@ -1,12 +1,14 @@
+---
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Да |  |
+| usernameStartsWith | string | query | Не |  |
 | mentionGroupIds | array | query | Не |  |
 | sso | string | query | Не |  |
+| searchSection | string | query | Не |  |
 
 ## Отговор
 
@@ -22,19 +24,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string | 
-	mentionGroupIds := []string{"Inner_example"} // []string |  (незадължително)
-	sso := "sso_example" // string |  (незадължително)
+	usernameStartsWith := "usernameStartsWith_example" // string |  (не е задължително)
+	mentionGroupIds := []string{"Inner_example"} // []string |  (не е задължително)
+	sso := "sso_example" // string |  (не е задължително)
+	searchSection := "searchSection_example" // string |  (не е задължително)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).SearchSection(searchSection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

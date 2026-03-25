@@ -1,13 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | skip | f64 | 否 |  |
 
 ## 响应
 
-返回：[`GetModerators200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderators_200_response.rs)
+返回: [`GetModerators200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderators_200_response.rs)
 
 ## 示例
 
@@ -18,8 +18,7 @@ async fn run() -> Result<(), Error> {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
-    let _moderators = moderators;
+    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

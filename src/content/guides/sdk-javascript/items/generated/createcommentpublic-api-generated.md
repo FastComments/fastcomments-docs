@@ -17,15 +17,16 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_92b4f3";
-const urlId: string = "https://www.news-site.com/articles/2026/typescript-updates";
-const broadcastId: string = "broadcast_live_20260112";
+const tenantId: string = 'tenant_prod_42';
+const urlId: string = 'article-2026-03-25-tech-deep-dive';
+const broadcastId: string = 'live-broadcast-001';
+const sessionId: string = 'sess_9f8e7d6a3b';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
 const commentData: CommentData = {
-  body: "Great updates — the stricter inference and tooling improvements will help a lot.",
-  author: { name: "Jordan Lee", avatarUrl: "https://avatars.example.com/jordan.jpg" },
-  metadata: { client: "web", editor: "rich-text" }
+  content: 'Great reporting — appreciated the depth on performance tradeoffs.',
+  authorName: 'Jordan M.',
+  language: 'en-US',
+  metadata: { client: 'web' }
 };
-const sessionId: string = "sess_7a9c2d4b";
-const sso: string = "sso_token_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
 const result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);
 [inline-code-end]

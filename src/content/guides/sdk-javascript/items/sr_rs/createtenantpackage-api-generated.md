@@ -1,9 +1,10 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Name | Type | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
+| tenantId | string | Да |  |
+| createTenantPackageBody | CreateTenantPackageBody | Да |  |
 
 ## Одговор
 
@@ -13,16 +14,20 @@
 
 [inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b1a9c";
-const tenantPackage: TenantPackage = { id: "pkg_001", name: "Premium Plan", seats: 100 };
-const customConfig: CustomConfigParameters = { enableImages: true, maxImageSizeMb: 10 };
+const tenantId: string = 'tenant_acme_001';
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: "Premium Plus",
-  tenantPackage,
-  customConfig,
-  notes: "Enable advanced moderation and image uploads" // опциони параметар (демонстрирано)
+  packageName: 'Standard Moderation',
+  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
+  maxCommentsPerMinute: 50,
+  allowAnonymousComments: false, // опциони параметар наведен
+  // опциони поља су изостављена: нпр. напредна правила модерације, прилагођени CSS
+  customConfigParameters: {
+    enableProfanityFilter: true,
+    imageContentProfanityLevel: 'medium' // илустративна вредност; користи облик CustomConfigParameters
+  }
 };
-const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
+console.log(response);
 [inline-code-end]
 
 ---

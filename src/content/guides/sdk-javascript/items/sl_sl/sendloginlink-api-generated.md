@@ -1,10 +1,10 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| redirectURL | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| redirectURL | string | No |  |
 
 ## Odgovor
 
@@ -12,12 +12,13 @@ Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomme
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer sendLoginLink'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer uporabe sendLoginLink'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const id: string = 'user_9f3b2a';
-const redirectURL: string = 'https://app.example.com/onboard?source=login-email';
-const result: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
+const tenantId: string = "tenant_12a9f3b7";
+const id: string = "user_84b2c7d1";
+const redirectURL: string = "https://app.mycompany.com/welcome?ref=login_email";
+const resultWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);
+const resultWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);
 [inline-code-end]
 
 ---

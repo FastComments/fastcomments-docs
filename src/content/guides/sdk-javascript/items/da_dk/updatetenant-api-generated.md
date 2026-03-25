@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -12,24 +12,15 @@ Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fas
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_01H4ZQ7KABCD";
-const id: string = "site_9f8e7d6c";
-const apiDomainConfiguration: APIDomainConfiguration = {
-  primaryDomain: "comments.acme.com",
-  allowSubdomains: true
-};
-const billingInfo: BillingInfo = {
-  planName: "Business",
-  billingContactEmail: "billing@acme.com",
-  seats: 25
-};
+const tenantId: string = "tenant_4821";
+const id: string = "flag_7b9e";
+const billingInfo: BillingInfo | undefined = undefined; // valgfri, udelad for at beholde nuværende fakturering
 const updateTenantBody: UpdateTenantBody = {
-  displayName: "Acme Corporation Comments",
-  apiDomainConfiguration,
-  billingInfo, // valgfrit parameter demonstreret
-  enableModeration: true
+  name: "Acme News Comments",
+  defaultDomain: "comments.acme.com",
+  ...(billingInfo ? { billingInfo } : {})
 };
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]

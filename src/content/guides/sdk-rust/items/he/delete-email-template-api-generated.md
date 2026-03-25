@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | id | String | כן |  |
@@ -13,13 +13,14 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-delete_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_template() -> Result<(), Error> {
     let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
     };
+    let confirm_deletion: Option<bool> = Some(true);
     let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
 

@@ -15,11 +15,11 @@ Returns: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3a2b9c-4d5e-6f7a-8b9c-0d1e2f3a4b5c';
-const postId: string = 'post_74b3c9d2-1a6f-4e5d-9c3b-2a1e0f6d7c8b';
-const broadcastId: string = 'broadcast_2026-01-12_01';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMjMiLCJleHAiOjE3MDAwMDAwMDB9.dummySignature12345';
+const tenantId: string = "tenant_5f8a9b3c";
+const postId: string = "post_a1b2c3d4";
+const broadcastId: string = "broadcast_2026-03-25T10:00:00Z";
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwiaWF0IjoxNjE5MjM5MjAwfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
-const responseWithAll: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
-const responseRequiredOnly: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId);
+const resultWithOptional: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+const resultRequiredOnly: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId);
 [inline-code-end]

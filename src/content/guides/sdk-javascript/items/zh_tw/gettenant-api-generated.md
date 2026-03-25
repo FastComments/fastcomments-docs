@@ -1,23 +1,24 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 回應
 
-回傳: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenant200Response.ts)
+Returns: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenant200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getTenant 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp";
-const id: string = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
-interface GetOptions { includeDeleted?: boolean; locale?: string; }
-const options: GetOptions = { locale: "en-US" };
-const result: GetTenant200Response = await getTenant(tenantId, id);
+const tenantId: string = "tenant_9f4b2c1a";
+const idOverride: string | undefined = undefined; // 可選的覆寫（若可用）
+const id: string = idOverride ?? "site_3e7a6b2f";
+const response: GetTenant200Response = await getTenant(tenantId, id);
+console.log(response);
 [inline-code-end]
 
 ---

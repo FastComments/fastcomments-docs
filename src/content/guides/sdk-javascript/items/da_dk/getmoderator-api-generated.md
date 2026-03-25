@@ -13,9 +13,9 @@ Returnerer: [`GetModerator200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getModerator Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // valgfri kilde (kan være undefined)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

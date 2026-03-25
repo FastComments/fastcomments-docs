@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,10 +13,11 @@
 
 [inline-code-attrs-start title = 'deleteQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const questionResultId: string = '6f1a2b3c-4d5e-6789-abcd-ef0123456789';
-const deletedResult: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, questionResultId);
-console.log(deletedResult);
+const tenantId: string = "org-82479";
+const questionId: string = "q-6a3d2e1f";
+const includeArchived?: boolean = false; // 대체 대상 선택을 시연하는 선택적 매개변수
+const targetId: string = includeArchived ? "q-archived-112233" : questionId;
+const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, targetId);
 [inline-code-end]
 
 ---

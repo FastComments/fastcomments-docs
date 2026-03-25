@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必要 | 描述 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -14,14 +15,17 @@
 
 [inline-code-attrs-start title = 'updateQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f2b9';
-const id: string = 'question_3a7c1d';
+const tenantId: string = 'tenant_7f8b3c';
+const id: string = 'questionResult_4621';
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  result: { verdict: 'helpful', confidence: 0.92 },
-  reviewer: { id: 'mod_102', name: 'Aisha Rahman' },
-  notifyUser: true // 包含可選參數
-};
-const response: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+  questionId: 'q_1024',
+  result: 'flagged',
+  score: 0.92,
+  notes: 'Automated moderation flagged for review',
+  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // 可選的元資料
+  status: { code: 'review_pending' } as APIStatus
+} as UpdateQuestionResultBody;
+const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 
 ---

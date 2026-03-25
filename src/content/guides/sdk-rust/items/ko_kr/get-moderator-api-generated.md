@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
@@ -13,11 +13,11 @@
 
 [inline-code-attrs-start title = 'get_moderator 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetModeratorParams = GetModeratorParams {
+async fn run() -> Result<(), Error> {
+    let params = GetModeratorParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-42".to_string(),
-        include: Some(vec!["roles".to_string(), "recent_comments".to_string()]),
+        id: "moderator-4521".to_string(),
+        include_permissions: Some(true),
     };
     let moderator: GetModerator200Response = get_moderator(&configuration, params).await?;
     println!("{:#?}", moderator);

@@ -14,14 +14,16 @@ Returns: [`GetUserPresenceStatuses200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'get_user_presence_statuses Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let user_ids: Option<String> = Some("user-123,user-456".to_string());
-    let params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id_ws: "news/article".to_string(),
-        user_ids: user_ids.unwrap_or_else(|| "user-123".to_string()),
+async fn run() -> Result<GetUserPresenceStatuses200Response, Error> {
+    let tenant_id: String = "acme-corp-tenant".to_string();
+    let url_id_ws: String = "news/article".to_string();
+    let user_ids_opt: Option<String> = Some("user123,user456,user789".to_string());
+    let params = GetUserPresenceStatusesParams {
+        tenant_id,
+        url_id_ws,
+        user_ids: user_ids_opt.unwrap(),
     };
     let presence: GetUserPresenceStatuses200Response = get_user_presence_statuses(&configuration, params).await?;
-    Ok(())
+    Ok(presence)
 }
 [inline-code-end]

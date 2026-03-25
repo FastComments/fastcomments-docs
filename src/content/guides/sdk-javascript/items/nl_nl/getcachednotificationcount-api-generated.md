@@ -1,11 +1,11 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCount200Response.ts)
 
@@ -13,12 +13,10 @@ Retourneert: [`GetCachedNotificationCount200Response`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const baseNotificationId: string = 'notif-000123';
-const idSuffix: string | undefined = undefined; // voorbeeld van optionele parameter
-const notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);
-console.log(result);
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'user_00012345';
+const includeUnreadOnly: boolean | undefined = true; // optionele parametervlag (gedemonstreerd)
+const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
 [inline-code-end]
 
 ---

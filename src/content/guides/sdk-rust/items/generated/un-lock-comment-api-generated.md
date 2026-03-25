@@ -15,15 +15,15 @@ Returns: [`LockComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'un_lock_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_unlock() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: UnLockCommentParams = UnLockCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-9f2b4a".to_string(),
-        broadcast_id: "news/world/2026/01/12/live-roundup".to_string(),
-        sso: Some("sso-token-abc123".to_string()),
+        comment_id: "cmt-987654321".to_string(),
+        broadcast_id: "news/world-update-2026-04-25".to_string(),
+        sso: Some("sso-token-abcdef123456".to_string()),
     };
     let response: LockComment200Response = un_lock_comment(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _ = response;
     Ok(())
 }
 [inline-code-end]

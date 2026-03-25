@@ -281,13 +281,13 @@
     {
       "name": "get_event_log",
       "file": "get-event-log-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
       "name": "get_global_event_log",
       "file": "get-global-event-log-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
@@ -353,37 +353,37 @@
     {
       "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Yorumu Bildir",
+      "subCat": "Yorumu İşaretle",
       "type": "api"
     },
     {
       "name": "add_hash_tag",
       "file": "add-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "add_hash_tags_bulk",
       "file": "add-hash-tags-bulk-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "delete_hash_tag",
       "file": "delete-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "get_hash_tags",
       "file": "get-hash-tags-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "patch_hash_tag",
       "file": "patch-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
@@ -639,6 +639,12 @@
       "type": "api"
     },
     {
+      "name": "update_subscription",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "Abonelikler",
+      "type": "api"
+    },
+    {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
       "subCat": "Kiracı Günlük Kullanımı",
@@ -753,9 +759,33 @@
       "type": "api"
     },
     {
+      "name": "change_ticket_state",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "create_ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "get_ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
+      "name": "get_tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Destek Talepleri",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
-      "subCat": "Resim Yükle",
+      "subCat": "Resim Yükleme",
       "type": "api"
     },
     {
@@ -851,7 +881,7 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Kullanıcı Bulunma Durumu",
+      "subCat": "Kullanıcı Varlık Durumları",
       "type": "api"
     },
     {

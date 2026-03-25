@@ -13,13 +13,12 @@ Returns: [`ResetUserNotifications200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'reset_user_notification_count Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<ResetUserNotifications200Response, Error> {
+async fn run_reset_user_notification_count() -> Result<ResetUserNotifications200Response, Error> {
     let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        sso: Some("john.doe@acme.com".to_string()),
+        tenant_id: "acme-news-tenant".to_string(),
+        sso: Some("user-9876-token".to_string()),
     };
-    let response: ResetUserNotifications200Response =
-        reset_user_notification_count(&configuration, params).await?;
+    let response: ResetUserNotifications200Response = reset_user_notification_count(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

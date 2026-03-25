@@ -35,13 +35,13 @@
     {
       "name": "agregiraj",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregacija",
+      "subCat": "Agregiranje",
       "type": "api"
     },
     {
-      "name": "pridobi_revizijske_zapise",
+      "name": "pridobi_revizijske_dnevnike",
       "file": "get-audit-logs-api-generated.md",
-      "subCat": "Revizijski zapisi",
+      "subCat": "Dnevniki revizije",
       "type": "api"
     },
     {
@@ -57,7 +57,7 @@
       "type": "api"
     },
     {
-      "name": "preverjeni_komentarji_za_blokiranje",
+      "name": "preveri_komentarje_za_blokirane",
       "file": "checked-comments-for-blocked-api-generated.md",
       "subCat": "Preveri blokirane komentarje",
       "type": "api"
@@ -87,13 +87,13 @@
       "type": "api"
     },
     {
-      "name": "izbriši_glas_komentarja",
+      "name": "izbriši_glas_za_komentar",
       "file": "delete-comment-vote-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
     },
     {
-      "name": "prijavi_komentar",
+      "name": "označi_komentar",
       "file": "flag-comment-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
@@ -111,7 +111,7 @@
       "type": "api"
     },
     {
-      "name": "pridobi_imena_uporabnikov_glasov_komentarja",
+      "name": "pridobi_imena_uporabnikov_glasu_komentarja",
       "file": "get-comment-vote-user-names-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
@@ -147,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "shrani_komentarje_množično",
+      "name": "shrani_komentarje_v_masnem",
       "file": "save-comments-bulk-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
@@ -165,19 +165,19 @@
       "type": "api"
     },
     {
-      "name": "odstrani_prijavo_komentarja",
+      "name": "odstrani_oznako_komentarja",
       "file": "un-flag-comment-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
     },
     {
-      "name": "odzakleni_komentar",
+      "name": "odkleni_komentar",
       "file": "un-lock-comment-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
     },
     {
-      "name": "odstrani_pripnitev_komentarja",
+      "name": "odpripni_komentar",
       "file": "un-pin-comment-api-generated.md",
       "subCat": "Komentarji",
       "type": "api"
@@ -195,93 +195,93 @@
       "type": "api"
     },
     {
-      "name": "dodaj_nastavitev_domene",
+      "name": "dodaj_konfiguracijo_domena",
       "file": "add-domain-config-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "izbriši_nastavitev_domene",
+      "name": "izbriši_konfiguracijo_domena",
       "file": "delete-domain-config-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "pridobi_nastavitev_domene",
+      "name": "pridobi_konfiguracijo_domena",
       "file": "get-domain-config-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "pridobi_nastavitve_domen",
+      "name": "pridobi_konfiguracije_domen",
       "file": "get-domain-configs-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "spremeni_nastavitev_domene",
+      "name": "posodobi_delno_konfiguracijo_domena",
       "file": "patch-domain-config-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "zamenjaj_nastavitev_domene",
+      "name": "zamenjaj_konfiguracijo_domena",
       "file": "put-domain-config-api-generated.md",
-      "subCat": "Nastavitve domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
-      "name": "ustvari_predlogo_e_pošte",
+      "name": "ustvari_email_predlogo",
       "file": "create-email-template-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "izbriši_predlogo_e_pošte",
+      "name": "izbriši_email_predlogo",
       "file": "delete-email-template-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "izbriši_napako_renderiranja_predloge_e_pošte",
+      "name": "izbriši_napako_upodabljanja_email_predloge",
       "file": "delete-email-template-render-error-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "pridobi_predlogo_e_pošte",
+      "name": "pridobi_email_predlogo",
       "file": "get-email-template-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "pridobi_definicije_predlog_e_pošte",
+      "name": "pridobi_definicije_email_predlog",
       "file": "get-email-template-definitions-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "pridobi_napake_renderiranja_predlog_e_pošte",
+      "name": "pridobi_napake_upodabljanja_email_predlog",
       "file": "get-email-template-render-errors-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "pridobi_predloge_e_pošte",
+      "name": "pridobi_email_predloge",
       "file": "get-email-templates-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "upodobi_predlogo_e_pošte",
+      "name": "upodobi_email_predlogo",
       "file": "render-email-template-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
-      "name": "posodobi_predlogo_e_pošte",
+      "name": "posodobi_email_predlogo",
       "file": "update-email-template-api-generated.md",
-      "subCat": "Predloge e-pošte",
+      "subCat": "E-poštne predloge",
       "type": "api"
     },
     {
@@ -327,19 +327,19 @@
       "type": "api"
     },
     {
-      "name": "pridobi_statistiko_objav_vira",
+      "name": "pridobi_statistike_objav_vira",
       "file": "get-feed-posts-stats-api-generated.md",
       "subCat": "Objave vira",
       "type": "api"
     },
     {
-      "name": "pridobi_uporabniške_reakcije_javno",
+      "name": "pridobi_javne_reakcije_uporabnika",
       "file": "get-user-reacts-public-api-generated.md",
       "subCat": "Objave vira",
       "type": "api"
     },
     {
-      "name": "reagiraj_na_objavo_vira_javno",
+      "name": "oddaj_reakcijo_na_objavo_vira_javno",
       "file": "react-feed-post-public-api-generated.md",
       "subCat": "Objave vira",
       "type": "api"
@@ -357,9 +357,9 @@
       "type": "api"
     },
     {
-      "name": "prijavi_komentar_javno",
+      "name": "označi_komentar_javno",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Prijava komentarja",
+      "subCat": "Označi komentar",
       "type": "api"
     },
     {
@@ -369,7 +369,7 @@
       "type": "api"
     },
     {
-      "name": "dodaj_hashtage_množično",
+      "name": "masovno_dodajanje_hashtagov",
       "file": "add-hash-tags-bulk-api-generated.md",
       "subCat": "Hashtagi",
       "type": "api"
@@ -387,7 +387,7 @@
       "type": "api"
     },
     {
-      "name": "spremeni_hashtag",
+      "name": "posodobi_delno_hashtag",
       "file": "patch-hash-tag-api-generated.md",
       "subCat": "Hashtagi",
       "type": "api"
@@ -471,7 +471,7 @@
       "type": "api"
     },
     {
-      "name": "pridobi_stran_po_urlid",
+      "name": "pridobi_stran_po_url_id",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "Strani",
       "type": "api"
@@ -483,13 +483,13 @@
       "type": "api"
     },
     {
-      "name": "spremeni_stran",
+      "name": "posodobi_delno_stran",
       "file": "patch-page-api-generated.md",
       "subCat": "Strani",
       "type": "api"
     },
     {
-      "name": "izbriši_čakajoči_webhook_dogodek",
+      "name": "izbriši_čakajoč_webhook_dogodek",
       "file": "delete-pending-webhook-event-api-generated.md",
       "subCat": "Čakajoči webhook dogodki",
       "type": "api"
@@ -507,79 +507,79 @@
       "type": "api"
     },
     {
-      "name": "ustvari_nastavitev_vprašanja",
+      "name": "ustvari_konfiguracijo_vprasanja",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
-      "name": "izbriši_nastavitev_vprašanja",
+      "name": "izbriši_konfiguracijo_vprasanja",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
-      "name": "pridobi_nastavitev_vprašanja",
+      "name": "pridobi_konfiguracijo_vprasanja",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
-      "name": "pridobi_nastavitve_vprašanj",
+      "name": "pridobi_konfiguracije_vprasanj",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
-      "name": "posodobi_nastavitev_vprašanja",
+      "name": "posodobi_konfiguracijo_vprasanja",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
-      "name": "ustvari_rezultat_vprašanja",
+      "name": "ustvari_rezultat_vprasanja",
       "file": "create-question-result-api-generated.md",
       "subCat": "Rezultati vprašanj",
       "type": "api"
     },
     {
-      "name": "izbriši_rezultat_vprašanja",
+      "name": "izbriši_rezultat_vprasanja",
       "file": "delete-question-result-api-generated.md",
       "subCat": "Rezultati vprašanj",
       "type": "api"
     },
     {
-      "name": "pridobi_rezultat_vprašanja",
+      "name": "pridobi_rezultat_vprasanja",
       "file": "get-question-result-api-generated.md",
       "subCat": "Rezultati vprašanj",
       "type": "api"
     },
     {
-      "name": "pridobi_rezultate_vprašanj",
+      "name": "pridobi_rezultate_vprasanj",
       "file": "get-question-results-api-generated.md",
       "subCat": "Rezultati vprašanj",
       "type": "api"
     },
     {
-      "name": "posodobi_rezultat_vprašanja",
+      "name": "posodobi_rezultat_vprasanja",
       "file": "update-question-result-api-generated.md",
       "subCat": "Rezultati vprašanj",
       "type": "api"
     },
     {
-      "name": "agregiraj_rezultate_vprašanj",
+      "name": "agregiraj_rezultate_vprasanj",
       "file": "aggregate-question-results-api-generated.md",
       "subCat": "Agregacija rezultatov vprašanj",
       "type": "api"
     },
     {
-      "name": "množično_agregiraj_rezultate_vprašanj",
+      "name": "masovna_agregacija_rezultatov_vprasanj",
       "file": "bulk-aggregate-question-results-api-generated.md",
       "subCat": "Agregacija rezultatov vprašanj",
       "type": "api"
     },
     {
-      "name": "združi_komentarje_z_rezultati_vprašanj",
+      "name": "združi_komentarje_z_rezultati_vprasanj",
       "file": "combine-comments-with-question-results-api-generated.md",
       "subCat": "Agregacija rezultatov vprašanj",
       "type": "api"
@@ -615,7 +615,7 @@
       "type": "api"
     },
     {
-      "name": "spremeni_sso_uporabnika",
+      "name": "posodobi_delno_sso_uporabnika",
       "file": "patch-sso-user-api-generated.md",
       "subCat": "SSO uporabniki",
       "type": "api"
@@ -645,7 +645,13 @@
       "type": "api"
     },
     {
-      "name": "pridobi_dnevne_porabe_najemnika",
+      "name": "posodobi_naročnino",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "Naročnine",
+      "type": "api"
+    },
+    {
+      "name": "pridobi_dnevne_uporabe_najemnika",
       "file": "get-tenant-daily-usages-api-generated.md",
       "subCat": "Dnevna uporaba najemnika",
       "type": "api"
@@ -759,61 +765,85 @@
       "type": "api"
     },
     {
+      "name": "spremeni_stanje_vstopnice",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "ustvari_vstopnico",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "pridobi_vstopnico",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "pridobi_vstopnice",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
       "name": "naloži_sliko",
       "file": "upload-image-api-generated.md",
       "subCat": "Naloži sliko",
       "type": "api"
     },
     {
-      "name": "pridobi_napredek_značke_uporabnika_po_id",
+      "name": "pridobi_napredek_znacke_po_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
-      "name": "pridobi_napredek_značke_po_id_uporabnika",
+      "name": "pridobi_napredek_znacke_po_id_uporabnika",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
-      "name": "pridobi_seznam_napredka_značke_uporabnika",
+      "name": "pridobi_seznam_napredkov_znacke_uporabnika",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
-      "name": "ustvari_uporabniško_značko",
+      "name": "ustvari_znacko_uporabnika",
       "file": "create-user-badge-api-generated.md",
       "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
-      "name": "izbriši_uporabniško_značko",
+      "name": "izbriši_znacko_uporabnika",
       "file": "delete-user-badge-api-generated.md",
       "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
-      "name": "pridobi_uporabniško_značko",
+      "name": "pridobi_znacko_uporabnika",
       "file": "get-user-badge-api-generated.md",
       "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
-      "name": "pridobi_uporabniške_značke",
+      "name": "pridobi_znacke_uporabnika",
       "file": "get-user-badges-api-generated.md",
       "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
-      "name": "posodobi_uporabniško_značko",
+      "name": "posodobi_znacko_uporabnika",
       "file": "update-user-badge-api-generated.md",
       "subCat": "Uporabniške značke",
       "type": "api"
     },
     {
-      "name": "pridobi_števec_obvestil_uporabnika",
+      "name": "pridobi_število_uporabniških_obvestil",
       "file": "get-user-notification-count-api-generated.md",
       "subCat": "Uporabniška obvestila",
       "type": "api"
@@ -825,7 +855,7 @@
       "type": "api"
     },
     {
-      "name": "ponastavi_števec_obvestil_uporabnika",
+      "name": "ponastavi_števec_uporabniških_obvestil",
       "file": "reset-user-notification-count-api-generated.md",
       "subCat": "Uporabniška obvestila",
       "type": "api"
@@ -837,31 +867,31 @@
       "type": "api"
     },
     {
-      "name": "posodobi_status_naročnine_na_komentarje_uporabnika",
+      "name": "posodobi_status_naročnine_na_komentar",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
       "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
-      "name": "posodobi_status_naročnine_na_stran_uporabnika",
+      "name": "posodobi_status_naročnine_na_stran",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
       "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
-      "name": "posodobi_status_obvestila_uporabnika",
+      "name": "posodobi_status_uporabniškega_obvestila",
       "file": "update-user-notification-status-api-generated.md",
       "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
-      "name": "pridobi_stanja_prisotnosti_uporabnikov",
+      "name": "pridobi_statuse_prisotnosti_uporabnikov",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Stanja prisotnosti uporabnika",
+      "subCat": "Status prisotnosti uporabnika",
       "type": "api"
     },
     {
-      "name": "iskanje_uporabnikov",
+      "name": "išči_uporabnike",
       "file": "search-users-api-generated.md",
       "subCat": "Iskanje uporabnikov",
       "type": "api"
@@ -873,13 +903,13 @@
       "type": "api"
     },
     {
-      "name": "ustvari_glasovanje",
+      "name": "ustvari_glas",
       "file": "create-vote-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"
     },
     {
-      "name": "izbriši_glasovanje",
+      "name": "izbriši_glas",
       "file": "delete-vote-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"

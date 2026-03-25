@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
@@ -17,22 +17,19 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 async fn run_replace_package() -> Result<FlagCommentPublic200Response, Error> {
     let params: ReplaceTenantPackageParams = ReplaceTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "package-basic-2026".to_string(),
+        id: "enterprise-package-2026".to_string(),
         replace_tenant_package_body: models::ReplaceTenantPackageBody {
-            name: "Moderation Basic".to_string(),
-            description: Some("Standard moderation package for news sites".to_string()),
-            enabled: Some(true),
-            plan: Some("standard".to_string()),
-            custom_config_parameters: Some(models::CustomConfigParameters {
-                max_comment_length: Some(1000),
-                allow_images: Some(true),
-            }),
-            vote_style: Some(models::VoteStyle::Thumbs),
+            name: "Acme Enterprise".to_string(),
+            plan: "enterprise".to_string(),
+            seats: Some(50),
+            allowed_domains: Some(vec![
+                "acme.com".to_string(),
+                "news.acme.com".to_string(),
+            ]),
         },
     };
-    let response = replace_tenant_package(&configuration, params).await?;
+
+    let response: FlagCommentPublic200Response = replace_tenant_package(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]
-
----

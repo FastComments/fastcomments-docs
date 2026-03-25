@@ -1,31 +1,35 @@
----
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | create_email_template_body | models::CreateEmailTemplateBody | Oui |  |
 
 ## Réponse
 
-Retourne: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_email_template_200_response.rs)
+Renvoie : [`CreateEmailTemplate200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_email_template_200_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple create_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de create_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateEmailTemplateParams = CreateEmailTemplateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_email_template_body: models::CreateEmailTemplateBody {
-        name: "New Comment Notification".to_string(),
-        subject: "New comment on your article".to_string(),
-        html_body: "<p>A new comment was posted on <strong>{article_title}</strong>.</p>".to_string(),
-        text_body: Some("A new comment was posted on {article_title}.".to_string()),
-        from_email: Some("no-reply@acme-news.com".to_string()),
-        enabled: Some(true),
-    },
-};
-let response: CreateEmailTemplate200Response = create_email_template(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: CreateEmailTemplateParams = CreateEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".into(),
+        create_email_template_body: models::CreateEmailTemplateBody {
+            name: "Article Comment Notification".into(),
+            subject: "New comment on your article".into(),
+            body_html: "<p>Hi \{{recipient_name}},</p><p>\{{comment_author}} left a comment on your article \"\{{article_title}}\".</p>".into(),
+            from_name: Some("Acme News".into()),
+            from_email: Some("notifications@acme.example".into()),
+            reply_to: Some("no-reply@acme.example".into()),
+            enabled: Some(true),
+            tags: Some(vec!["comments".into(), "notifications".into()]),
+        },
+    };
+    let response: CreateEmailTemplate200Response = create_email_template(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

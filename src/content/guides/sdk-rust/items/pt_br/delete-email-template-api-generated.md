@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|------------|-------------|
 | tenant_id | String | Sim |  |
 | id | String | Sim |  |
 
@@ -11,15 +11,16 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de delete_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_template() -> Result<(), Error> {
     let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
     };
+    let confirm_deletion: Option<bool> = Some(true);
     let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
 

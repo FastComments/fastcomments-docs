@@ -1,6 +1,6 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Sim |  |
 | skip | f64 | Não |  |
@@ -16,7 +16,7 @@ Retorna: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastco
 async fn fetch_email_templates() -> Result<GetEmailTemplates200Response, Error> {
     let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
     let templates: GetEmailTemplates200Response = get_email_templates(&configuration, params).await?;
     Ok(templates)

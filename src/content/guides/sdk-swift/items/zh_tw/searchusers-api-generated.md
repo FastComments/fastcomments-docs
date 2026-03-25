@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
-| usernameStartsWith | string | query | 是 |  |
+| usernameStartsWith | string | query | 否 |  |
 | mentionGroupIds | array | query | 否 |  |
 | sso | string | query | 否 |  |
+| searchSection | string | query | 否 |  |
 
 ## 回應
 
@@ -21,11 +22,12 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
+let usernameStartsWith = "usernameStartsWith_example" // String |  (選用)
 let mentionGroupIds = ["inner_example"] // [String] |  (選用)
 let sso = "sso_example" // String |  (選用)
+let searchSection = "searchSection_example" // String |  (選用)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return

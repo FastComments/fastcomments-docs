@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | skip | number | No |  |
@@ -13,9 +13,9 @@ Devuelve: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'Ejemplo de getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42a7b9';
-const firstPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const secondPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 50);
+const tenantId: string = "tenant_acme_9876";
+const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
 [inline-code-end]
 
 ---

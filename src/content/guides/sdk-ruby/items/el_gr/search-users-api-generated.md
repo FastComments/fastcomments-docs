@@ -2,13 +2,14 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| usernameStartsWith | string | query | Ναι |  |
-| mentionGroupIds | array | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
 
@@ -22,19 +23,18 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
-username_starts_with = 'username_starts_with_example' # String | 
 opts = {
+  username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
   
-  result = api_instance.search_users(tenant_id, url_id, username_starts_with, opts)
+  result = api_instance.search_users(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
 end
 [inline-code-end]
-
----

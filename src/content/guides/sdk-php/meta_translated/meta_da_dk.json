@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "API-endepunkter",
+      "name": "API-endpunkter",
       "file": "api-endpoints-readme-generated.md",
       "subCat": "API-reference",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Autorisering",
+      "name": "Autorisation",
       "file": "authorization-readme-generated.md",
       "subCat": "Autentificering",
       "type": "readme"
@@ -65,7 +65,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Tjek blokerede kommentarer",
+      "subCat": "Kontroller blokerede kommentarer",
       "type": "api"
     },
     {
@@ -305,61 +305,61 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feed-indlæg",
+      "subCat": "Feedindlæg",
       "type": "api"
     },
     {
@@ -437,13 +437,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Notifikationstælling",
+      "subCat": "Antal notifikationer",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Notifikationstælling",
+      "subCat": "Antal notifikationer",
       "type": "api"
     },
     {
@@ -545,49 +545,49 @@
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Spørgsmålresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Spørgsmålresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Spørgsmålresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Spørgsmålresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Spørgsmålresultater",
+      "subCat": "Spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgsmålresultater",
+      "subCat": "Aggregering af spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgsmålresultater",
+      "subCat": "Aggregering af spørgsmålsresultater",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgsmålresultater",
+      "subCat": "Aggregering af spørgsmålsresultater",
       "type": "api"
     },
     {
@@ -651,117 +651,147 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementer",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Lejers daglige forbrug",
+      "subCat": "Tenant - dagligt forbrug",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Tenant-pakker",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Tenant-brugere",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Lejere",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Lejere",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Lejere",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Lejere",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Lejere",
+      "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Billetter",
       "type": "api"
     },
     {
@@ -773,19 +803,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremskridt",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremskridt",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremskridt",
       "type": "api"
     },
     {
@@ -863,13 +893,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Bruger tilstedeværelsesstatus",
+      "subCat": "Bruger-tilstedeværelsesstatus",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Søg efter brugere",
+      "subCat": "Brugersøgning",
       "type": "api"
     },
     {

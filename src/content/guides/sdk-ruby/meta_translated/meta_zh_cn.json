@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "备注",
+      "name": "说明",
       "file": "notes-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "SSO 使用",
       "file": "sso-usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
@@ -39,15 +39,15 @@
       "type": "api"
     },
     {
-      "name": "从公开评论中屏蔽",
+      "name": "从评论屏蔽",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "从评论中屏蔽",
+      "subCat": "从评论屏蔽",
       "type": "api"
     },
     {
       "name": "取消屏蔽公开评论",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "从评论中屏蔽",
+      "subCat": "从评论屏蔽",
       "type": "api"
     },
     {
@@ -57,7 +57,7 @@
       "type": "api"
     },
     {
-      "name": "从评论中屏蔽用户",
+      "name": "从评论屏蔽用户",
       "file": "block-user-from-comment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -105,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "获取评论投票用户名称",
+      "name": "获取评论投票用户名",
       "file": "get-comment-vote-user-names-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -153,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "取消从评论中屏蔽用户",
+      "name": "取消对评论用户的屏蔽",
       "file": "un-block-user-from-comment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -183,7 +183,7 @@
       "type": "api"
     },
     {
-      "name": "为评论投票",
+      "name": "对评论投票",
       "file": "vote-comment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -219,7 +219,7 @@
       "type": "api"
     },
     {
-      "name": "覆盖域配置",
+      "name": "替换域配置",
       "file": "put-domain-config-api-generated.md",
       "subCat": "域配置",
       "type": "api"
@@ -293,65 +293,65 @@
     {
       "name": "创建动态帖子",
       "file": "create-feed-post-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "创建公开动态帖子",
       "file": "create-feed-post-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "删除公开动态帖子",
       "file": "delete-feed-post-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "获取动态帖子",
       "file": "get-feed-posts-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "获取公开动态帖子",
       "file": "get-feed-posts-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "获取动态帖子统计",
       "file": "get-feed-posts-stats-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "获取用户公开反应",
       "file": "get-user-reacts-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
-      "name": "公开动态帖子反应",
+      "name": "对公开动态帖子进行反应",
       "file": "react-feed-post-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "更新动态帖子",
       "file": "update-feed-post-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
       "name": "更新公开动态帖子",
       "file": "update-feed-post-public-api-generated.md",
-      "subCat": "动态帖子",
+      "subCat": "Feed 帖子",
       "type": "api"
     },
     {
-      "name": "标记公开评论",
+      "name": "公开标记评论",
       "file": "flag-comment-public-api-generated.md",
       "subCat": "标记评论",
       "type": "api"
@@ -465,7 +465,7 @@
       "type": "api"
     },
     {
-      "name": "通过 URL ID 获取页面",
+      "name": "通过 URLID 获取页面",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "页面",
       "type": "api"
@@ -483,21 +483,21 @@
       "type": "api"
     },
     {
-      "name": "删除待处理的 Webhook 事件",
+      "name": "删除待处理 Webhook 事件",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理的 Webhook 事件计数",
+      "name": "获取待处理 Webhook 事件计数",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理的 Webhook 事件",
+      "name": "获取待处理 Webhook 事件",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "待处理的 Webhook 事件",
+      "subCat": "待处理 Webhook 事件",
       "type": "api"
     },
     {
@@ -615,7 +615,7 @@
       "type": "api"
     },
     {
-      "name": "覆盖 SSO 用户",
+      "name": "替换 SSO 用户",
       "file": "put-sso-user-api-generated.md",
       "subCat": "SSO 用户",
       "type": "api"
@@ -639,9 +639,15 @@
       "type": "api"
     },
     {
-      "name": "获取租户日使用情况",
+      "name": "更新订阅",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "订阅",
+      "type": "api"
+    },
+    {
+      "name": "获取租户每日使用情况",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "租户日使用情况",
+      "subCat": "租户每日使用情况",
       "type": "api"
     },
     {
@@ -750,6 +756,30 @@
       "name": "更新租户",
       "file": "update-tenant-api-generated.md",
       "subCat": "租户",
+      "type": "api"
+    },
+    {
+      "name": "更改工单状态",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "创建工单",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "获取工单",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "获取工单列表",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "工单",
       "type": "api"
     },
     {

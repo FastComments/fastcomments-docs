@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Remarques",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -251,7 +251,7 @@
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Erreurs de rendu des modèles de courriel",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
@@ -275,73 +275,73 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Journal des événements",
+      "subCat": "Journal d'événements",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Journal des événements",
+      "subCat": "Journal d'événements",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
@@ -479,49 +479,49 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements Webhook en attente",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements Webhook en attente",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements Webhook en attente",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurations des questions",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
@@ -629,6 +629,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnements",
       "type": "api"
     },
@@ -747,6 +753,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Téléverser une image",
@@ -803,49 +833,49 @@
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Notifications utilisateur",
+      "subCat": "Notifications de l'utilisateur",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Statuts de présence des utilisateurs",
+      "subCat": "Statuts de présence utilisateur",
       "type": "api"
     },
     {

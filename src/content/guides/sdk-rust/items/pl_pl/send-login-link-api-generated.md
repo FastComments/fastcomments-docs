@@ -1,10 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Name | Type | Wymagane | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| id | String | Tak |  |
-| redirect_url | String | Nie |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| redirect_url | String | No |  |
 
 ## Odpowiedź
 
@@ -14,11 +14,11 @@ Zwraca: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Przykład send_login_link'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_send_login_link() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "jane.doe@acme.com".to_string(),
-        redirect_url: Some("https://acme.example.com/dashboard".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("user-98765"),
+        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
     };
     let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
     Ok(response)

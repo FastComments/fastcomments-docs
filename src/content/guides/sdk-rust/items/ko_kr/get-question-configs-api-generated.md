@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
-| skip | f64 | 아니오 |  |
+| skip | f64 | 아니요 |  |
 
 ## 응답
 
@@ -19,7 +19,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

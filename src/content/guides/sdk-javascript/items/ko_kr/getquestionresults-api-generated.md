@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 아니요 |  |
@@ -18,13 +18,13 @@
 
 [inline-code-attrs-start title = 'getQuestionResults 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const urlId: string = 'news/2025/fastcomments-release';
-const userId: string = 'user_8b7f3c';
-const startDate: string = '2025-01-01T00:00:00Z';
-const questionIds: string = 'q123,q124';
-const skip: number = 20;
-const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);
-[inline-code-end]
+const tenantId: string = "tenant_acme_001";
+const urlId: string = "articles/product-launch-2026";
+const userId: string = "user_2048";
+const startDate: string = "2026-03-01T00:00:00Z";
+const questionId: string | undefined = undefined;
+const questionIds: string | undefined = "q_101,q_102";
+const skip: number | undefined = 0;
 
----
+const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);
+[inline-code-end]

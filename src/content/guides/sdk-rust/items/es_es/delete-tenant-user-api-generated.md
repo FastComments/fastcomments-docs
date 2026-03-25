@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
@@ -18,11 +18,13 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 async fn run() -> Result<FlagCommentPublic200Response, Error> {
     let params: DeleteTenantUserParams = DeleteTenantUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-12345".to_string(),
+        id: "user-9876".to_string(),
         delete_comments: Some("true".to_string()),
-        comment_delete_mode: Some("cascade".to_string()),
+        comment_delete_mode: Some("permanent".to_string()),
     };
-    let resp: FlagCommentPublic200Response = delete_tenant_user(&configuration, params).await?;
-    Ok(resp)
+    let response: FlagCommentPublic200Response = delete_tenant_user(&configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
+
+---

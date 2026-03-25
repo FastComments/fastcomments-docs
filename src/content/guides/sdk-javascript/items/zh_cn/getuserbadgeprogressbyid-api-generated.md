@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -8,6 +7,14 @@
 
 ## 响应
 
-返回： [`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressById200Response.ts)
+返回：[`GetUserBadgeProgressById200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressById200Response.ts)
 
----
+## 示例
+
+[inline-code-attrs-start title = 'getUserBadgeProgressById 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const optionalTenantSuffix: string | undefined = undefined;
+const tenantId: string = `5f8d0d55-1234-4ab1-9e2a-3f2b5c6d7e8f${optionalTenantSuffix ?? ''}`;
+const id: string = '3a2b1c4d-5678-4ef0-9abc-def123456789';
+const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);
+[inline-code-end]

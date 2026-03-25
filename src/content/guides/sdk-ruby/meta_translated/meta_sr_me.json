@@ -3,39 +3,39 @@
   "pageHeader": "FastComments Ruby SDK",
   "itemsOrdered": [
     {
-      "name": "Инсталација",
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Почетак рада",
       "type": "readme"
     },
     {
-      "name": "Брзи почетак",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Напомене",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Коришћење SSO",
+      "name": "SSO Usage",
       "file": "sso-usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегација",
+      "subCat": "Агрегирање",
       "type": "api"
     },
     {
       "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
-      "subCat": "Аудит логови",
+      "subCat": "Дневници ревизије",
       "type": "api"
     },
     {
@@ -53,7 +53,7 @@
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Провера блокираних коментара",
+      "subCat": "Провјера блокираних коментара",
       "type": "api"
     },
     {
@@ -353,7 +353,7 @@
     {
       "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Пријави коментар",
+      "subCat": "Означи коментар",
       "type": "api"
     },
     {
@@ -485,19 +485,19 @@
     {
       "name": "delete_pending_webhook_event",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "Неразрешени вебхук догађаји",
+      "subCat": "Очекујући вебхук догађаји",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_event_count",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "Неразрешени вебхук догађаји",
+      "subCat": "Очекујући вебхук догађаји",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_events",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "Неразрешени вебхук догађаји",
+      "subCat": "Очекујући вебхук догађаји",
       "type": "api"
     },
     {
@@ -639,6 +639,12 @@
       "type": "api"
     },
     {
+      "name": "update_subscription",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
       "subCat": "Дневна употреба тенанта",
@@ -753,9 +759,33 @@
       "type": "api"
     },
     {
+      "name": "change_ticket_state",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "create_ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "get_ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "get_tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
-      "subCat": "Отпремање слике",
+      "subCat": "Отпреми слику",
       "type": "api"
     },
     {
@@ -779,79 +809,79 @@
     {
       "name": "create_user_badge",
       "file": "create-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Корисничке ознаке",
       "type": "api"
     },
     {
       "name": "delete_user_badge",
       "file": "delete-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Корисничке ознаке",
       "type": "api"
     },
     {
       "name": "get_user_badge",
       "file": "get-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Корисничке ознаке",
       "type": "api"
     },
     {
       "name": "get_user_badges",
       "file": "get-user-badges-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Корисничке ознаке",
       "type": "api"
     },
     {
       "name": "update_user_badge",
       "file": "update-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Корисничке ознаке",
       "type": "api"
     },
     {
       "name": "get_user_notification_count",
       "file": "get-user-notification-count-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "get_user_notifications",
       "file": "get-user-notifications-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "reset_user_notification_count",
       "file": "reset-user-notification-count-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "reset_user_notifications",
       "file": "reset-user-notifications-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "update_user_notification_comment_subscription_status",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "update_user_notification_page_subscription_status",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "update_user_notification_status",
       "file": "update-user-notification-status-api-generated.md",
-      "subCat": "Обавештења корисника",
+      "subCat": "Корисничка обавештења",
       "type": "api"
     },
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Статус присутности корисника",
+      "subCat": "Статуси присутности корисника",
       "type": "api"
     },
     {

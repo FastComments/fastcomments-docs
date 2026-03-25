@@ -1,13 +1,29 @@
----
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createUserBadgeParams | CreateUserBadgeParams | Da |  |
+| tenantId | string | Yes |  |
+| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
 
 ## Odgovor
 
 Vraća: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadge200Response.ts)
 
----
+## Primjer
+
+[inline-code-attrs-start title = 'createUserBadge Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_84f3b2';
+const createUserBadgeParams: CreateUserBadgeParams = {
+  name: 'Top Contributor',
+  slug: 'top-contributor',
+  imageUrl: 'https://assets.fastcomments.com/badges/top-contributor.png',
+  description: 'Awarded for 100 helpful comments',
+  active: true,
+  criteria: { commentsCount: 100 }, // neobavezni kriteriji
+  displayOrder: 10,
+  metadata: { featured: true } // neobavezni metapodaci
+};
+const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
+console.log(result);
+[inline-code-end]

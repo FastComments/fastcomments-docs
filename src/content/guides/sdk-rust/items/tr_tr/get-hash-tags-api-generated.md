@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -14,10 +13,10 @@ Döndürür: [`GetHashTags200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'get_hash_tags Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTags200Response, Error> {
+async fn fetch_hash_tags() -> Result<GetHashTags200Response, Error> {
     let params: GetHashTagsParams = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(1.0_f64),
+        page: Some(1.0),
     };
     let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;
     Ok(response)

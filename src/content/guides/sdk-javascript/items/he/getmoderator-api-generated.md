@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -11,11 +11,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // מקור אופציונלי (יכול להיות undefined)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

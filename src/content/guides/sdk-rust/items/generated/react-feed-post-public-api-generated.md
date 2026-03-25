@@ -19,11 +19,12 @@ Returns: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fast
 [inline-code-start]
 let params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    post_id: "news/article-2026-01-12".to_string(),
+    post_id: "news/world/2026-election".to_string(),
     react_body_params: models::ReactBodyParams { reaction: "like".to_string() },
     is_undo: Some(false),
-    broadcast_id: Some("broadcast-20260112-1".to_string()),
-    sso: Some("sso-secure-token-42".to_string()),
+    broadcast_id: Some("broadcast-2026-03-25".to_string()),
+    sso: Some("sso-token-6f4e2b".to_string()),
 };
-let response: ReactFeedPostPublic200Response = react_feed_post_public(configuration, params).await?;
+
+let response: ReactFeedPostPublic200Response = react_feed_post_public(&configuration, params).await?;
 [inline-code-end]

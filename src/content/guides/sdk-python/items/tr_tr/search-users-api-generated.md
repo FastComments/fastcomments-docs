@@ -1,13 +1,13 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
-| usernameStartsWith | string | query | Evet |  |
+| usernameStartsWith | string | query | Hayır |  |
 | mentionGroupIds | array | query | Hayır |  |
 | sso | string | query | Hayır |  |
+| searchSection | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -22,25 +22,26 @@ from client.models.search_users200_response import SearchUsers200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com
-# Tüm desteklenen yapılandırma parametrelerinin bir listesi için configuration.py dosyasına bakın.
+# Sunucu tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisinin bir örneği ile bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    username_starts_with = 'username_starts_with_example' # str |  (isteğe bağlı)
+    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (isteğe bağlı)
+    sso = 'sso_example' # str |  (isteğe bağlı)
+    search_section = 'search_section_example' # str |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

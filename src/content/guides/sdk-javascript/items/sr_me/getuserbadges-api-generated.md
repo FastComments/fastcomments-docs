@@ -1,17 +1,33 @@
-## Параметри
+---
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
-| badgeId | string | Не |  |
-| type | number | Не |  |
-| displayedOnComments | boolean | Не |  |
-| limit | number | Не |  |
-| skip | number | Не |  |
+| tenantId | string | Da |  |
+| userId | string | Ne |  |
+| badgeId | string | Ne |  |
+| type | number | Ne |  |
+| displayedOnComments | boolean | Ne |  |
+| limit | number | Ne |  |
+| skip | number | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadges200Response.ts)
+Vraća: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadges200Response.ts)
+
+## Primjer
+
+[inline-code-attrs-start title = 'getUserBadges Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_acme_01';
+const userId: string = 'user_5f4d3c2a';
+const badgeId: string = 'badge_top_contributor';
+const type: number = 1;
+const displayedOnComments: boolean = true;
+const limit: number = 50;
+const skip: number = 0;
+
+const result: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);
+[inline-code-end]
 
 ---

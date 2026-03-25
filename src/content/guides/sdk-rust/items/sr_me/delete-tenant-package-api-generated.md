@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
@@ -13,12 +13,14 @@
 
 [inline-code-attrs-start title = 'delete_tenant_package Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteTenantPackageParams = DeleteTenantPackageParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "pkg-news-comments-2025-01".to_string(),
-    cascade: Some(true),
-};
-let response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;
+async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+    let params: DeleteTenantPackageParams = DeleteTenantPackageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article-comments-package-2026-03".to_string(),
+    };
+    let response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
 
 ---

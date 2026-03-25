@@ -627,6 +627,12 @@
       "type": "api"
     },
     {
+      "name": "UpdateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Subscriptions",
+      "type": "api"
+    },
+    {
       "name": "GetTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Tenant Daily Usage",
@@ -738,6 +744,30 @@
       "name": "UpdateTenant",
       "file": "updatetenant-api-generated.md",
       "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "ChangeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "CreateTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "GetTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "GetTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
       "type": "api"
     },
     {

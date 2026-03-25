@@ -1,7 +1,7 @@
 ---
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -10,22 +10,22 @@
 
 ## Respons
 
-Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Geeft terug: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'updateTenantUser Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const id: string = 'user_7a9d1c';
-const updateComments: string = 'Promoted to moderator and updated contact email';
+const tenantId: string = "tenant_8f3b2a9d";
+const id: string = "user_52c9f1ab";
 const updateTenantUserBody: UpdateTenantUserBody = {
-  email: 'jane.doe+mod@example.com',
-  displayName: 'Jane D.',
-  roles: ['moderator'],
-  isBanned: false,
-  metadata: { department: 'community' }
+  email: "jane.doe@example.com",
+  displayName: "Jane Doe",
+  roles: ["moderator"],
+  isActive: true,
+  metadata: { signupSource: "sso", locale: "en-US" }
 };
+const updateComments: string = "Promoted to moderator and updated display name";
 const result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
 [inline-code-end]
 

@@ -4,7 +4,7 @@ Tilføj følgende til din `Package.swift`-fil:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "0.0.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
 ]
 ```
 

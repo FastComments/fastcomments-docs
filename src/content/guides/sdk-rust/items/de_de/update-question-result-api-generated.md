@@ -1,8 +1,8 @@
 ---
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|----------|-------------|
 | tenant_id | String | Ja |  |
 | id | String | Ja |  |
 | update_question_result_body | models::UpdateQuestionResultBody | Ja |  |
@@ -13,23 +13,21 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'update_question_result Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für update_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {
-        question_id: "q-12345".to_string(),
-        result: true,
-        comment: Some("Marked by moderator after review".to_string()),
-    };
-
+async fn run_update_question_result() -> Result<(), Error> {
     let params: UpdateQuestionResultParams = UpdateQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/98765".to_string(),
-        update_question_result_body: body,
+        id: "news/article/2026/03/25/12345".to_string(),
+        update_question_result_body: models::UpdateQuestionResultBody {
+            question_id: Some("q-987".to_string()),
+            result: Some(true),
+            reviewer_id: Some("moderator-7".to_string()),
+            notes: Some("Marked as resolved after editorial review".to_string()),
+        },
     };
-
     let response: FlagCommentPublic200Response = update_question_result(&configuration, params).await?;
-    println!("{:#?}", response);
+    println!("update result: {:?}", response);
     Ok(())
 }
 [inline-code-end]

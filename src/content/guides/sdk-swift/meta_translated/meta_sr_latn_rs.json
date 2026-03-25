@@ -5,7 +5,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -27,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "Slanje API poziva",
+      "name": "Pozivanje API-ja",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Referenca API-ja",
       "type": "readme"
     },
     {
-      "name": "Česti problemi",
+      "name": "Uobičajeni problemi",
       "file": "common-issues-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -51,21 +51,21 @@
       "type": "api"
     },
     {
-      "name": "Dohvati audit logove",
+      "name": "Dobavi zapisnike revizije",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Audit logovi",
+      "subCat": "Zapisnici revizije",
       "type": "api"
     },
     {
       "name": "Blokiraj iz komentara (javno)",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokiranje iz komentara",
+      "subCat": "Blokiraj iz komentara",
       "type": "api"
     },
     {
-      "name": "Ukloni blokadu komentara (javno)",
+      "name": "Odblokiraj komentar (javno)",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokiranje iz komentara",
+      "subCat": "Blokiraj iz komentara",
       "type": "api"
     },
     {
@@ -105,37 +105,37 @@
       "type": "api"
     },
     {
-      "name": "Označi komentar",
+      "name": "Prijavi komentar",
       "file": "flagcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Dohvati komentar",
+      "name": "Dobavi komentar",
       "file": "getcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Dohvati komentare",
+      "name": "Dobavi komentare",
       "file": "getcomments-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Dohvati komentare (javno)",
+      "name": "Dobavi komentare (javno)",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Dohvati tekst komentara",
+      "name": "Dobavi tekst komentara",
       "file": "getcommenttext-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Dohvati korisnička imena koja su glasala za komentar",
+      "name": "Dobavi korisnička imena glasova za komentar",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
@@ -159,7 +159,7 @@
       "type": "api"
     },
     {
-      "name": "Masovno sačuvaj komentare",
+      "name": "Sačuvaj komentare masovno",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
@@ -171,13 +171,13 @@
       "type": "api"
     },
     {
-      "name": "Otblokiraj korisnika iz komentara",
+      "name": "Odblokiraj korisnika iz komentara",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
     },
     {
-      "name": "Ukloni oznaku komentara",
+      "name": "Ukloni prijavu komentara",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Komentari",
       "type": "api"
@@ -219,189 +219,189 @@
       "type": "api"
     },
     {
-      "name": "Dohvati konfiguraciju domena",
+      "name": "Dobavi konfiguraciju domena",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "Dohvati konfiguracije domena",
+      "name": "Dobavi konfiguracije domena",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "Izmeni konfiguraciju domena (PATCH)",
+      "name": "Delimično izmeni konfiguraciju domena",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "Zameni konfiguraciju domena (PUT)",
+      "name": "Zameni konfiguraciju domena",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Konfiguracije domena",
       "type": "api"
     },
     {
-      "name": "Kreiraj šablon e-pošte",
+      "name": "Kreiraj email šablon",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Obriši šablon e-pošte",
+      "name": "Obriši email šablon",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Obriši grešku renderovanja šablona",
+      "name": "Obriši grešku pri renderovanju email šablona",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Dohvati šablon e-pošte",
+      "name": "Dobavi email šablon",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Dohvati definicije šablona e-pošte",
+      "name": "Dobavi definicije email šablona",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Dohvati greške renderovanja šablona e-pošte",
+      "name": "Dobavi greške pri renderovanju email šablona",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Dohvati šablone e-pošte",
+      "name": "Dobavi email šablone",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Renderuj šablon e-pošte",
+      "name": "Renderuj email šablon",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Ažuriraj šablon e-pošte",
+      "name": "Ažuriraj email šablon",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Šabloni e-pošte",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
-      "name": "Dohvati dnevnik događaja",
+      "name": "Dobavi dnevnik događaja",
       "file": "geteventlog-api-generated.md",
       "subCat": "Dnevnik događaja",
       "type": "api"
     },
     {
-      "name": "Dohvati globalni dnevnik događaja",
+      "name": "Dobavi globalni dnevnik događaja",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "Dnevnik događaja",
       "type": "api"
     },
     {
-      "name": "Kreiraj feed objavu",
+      "name": "Kreiraj objavu u feedu",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Kreiraj feed objavu (javno)",
+      "name": "Kreiraj objavu u feedu (javno)",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Obriši feed objavu (javno)",
+      "name": "Obriši objavu u feedu (javno)",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Dohvati feed objave",
+      "name": "Dobavi objave u feedu",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Dohvati feed objave (javno)",
+      "name": "Dobavi objave u feedu (javno)",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Dohvati statistiku feed objava",
+      "name": "Dobavi statistiku objava u feedu",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Dohvati reakcije korisnika (javno)",
+      "name": "Dobavi reakcije korisnika (javno)",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Reaguj na feed objavu (javno)",
+      "name": "Reaguj na objavu u feedu (javno)",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Ažuriraj feed objavu",
+      "name": "Ažuriraj objavu u feedu",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Ažuriraj feed objavu (javno)",
+      "name": "Ažuriraj objavu u feedu (javno)",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feed objave",
+      "subCat": "Objave u feedu",
       "type": "api"
     },
     {
-      "name": "Označi komentar (javno)",
+      "name": "Prijavi komentar (javno)",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označi komentar",
+      "subCat": "Prijava komentara",
       "type": "api"
     },
     {
-      "name": "Dodaj haštag",
+      "name": "Dodaj heštag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Haštagovi",
+      "subCat": "Heštagovi",
       "type": "api"
     },
     {
-      "name": "Masovno dodaj haštagove",
+      "name": "Dodaj heštagove masovno",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Haštagovi",
+      "subCat": "Heštagovi",
       "type": "api"
     },
     {
-      "name": "Obriši haštag",
+      "name": "Obriši heštag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Haštagovi",
+      "subCat": "Heštagovi",
       "type": "api"
     },
     {
-      "name": "Dohvati haštagove",
+      "name": "Dobavi heštagove",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Haštagovi",
+      "subCat": "Heštagovi",
       "type": "api"
     },
     {
-      "name": "Izmeni haštag (PATCH)",
+      "name": "Delimično izmeni heštag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Haštagovi",
+      "subCat": "Heštagovi",
       "type": "api"
     },
     {
@@ -417,19 +417,19 @@
       "type": "api"
     },
     {
-      "name": "Dohvati moderatora",
+      "name": "Dobavi moderatora",
       "file": "getmoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Dohvati moderatore",
+      "name": "Dobavi moderatore",
       "file": "getmoderators-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Pošalji poziv",
+      "name": "Pošalji pozivnicu",
       "file": "sendinvite-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
@@ -447,19 +447,19 @@
       "type": "api"
     },
     {
-      "name": "Dohvati keširani broj obaveštenja",
+      "name": "Dobavi keširani broj obaveštenja",
       "file": "getcachednotificationcount-api-generated.md",
       "subCat": "Broj obaveštenja",
       "type": "api"
     },
     {
-      "name": "Dohvati broj obaveštenja",
+      "name": "Dobavi broj obaveštenja",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Obaveštenja",
       "type": "api"
     },
     {
-      "name": "Dohvati obaveštenja",
+      "name": "Dobavi obaveštenja",
       "file": "getnotifications-api-generated.md",
       "subCat": "Obaveštenja",
       "type": "api"
@@ -483,39 +483,39 @@
       "type": "api"
     },
     {
-      "name": "Dohvati stranicu po URL ID-u",
+      "name": "Dobavi stranicu po URL ID-u",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "Dohvati stranice",
+      "name": "Dobavi stranice",
       "file": "getpages-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "Izmeni stranicu (PATCH)",
+      "name": "Delimično izmeni stranicu",
       "file": "patchpage-api-generated.md",
       "subCat": "Stranice",
       "type": "api"
     },
     {
-      "name": "Obriši neobrađeni webhook događaj",
+      "name": "Obriši čekajući webhook događaj",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Čekajući webhook događaji",
       "type": "api"
     },
     {
-      "name": "Dohvati broj neobrađenih webhook događaja",
+      "name": "Dobavi broj čekajućih webhook događaja",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Čekajući webhook događaji",
       "type": "api"
     },
     {
-      "name": "Dohvati neobrađene webhook događaje",
+      "name": "Dobavi čekajuće webhook događaje",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Čekajući webhook događaji",
       "type": "api"
     },
     {
@@ -531,13 +531,13 @@
       "type": "api"
     },
     {
-      "name": "Dohvati konfiguraciju pitanja",
+      "name": "Dobavi konfiguraciju pitanja",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Konfiguracije pitanja",
       "type": "api"
     },
     {
-      "name": "Dohvati konfiguracije pitanja",
+      "name": "Dobavi konfiguracije pitanja",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Konfiguracije pitanja",
       "type": "api"
@@ -561,13 +561,13 @@
       "type": "api"
     },
     {
-      "name": "Dohvati rezultat pitanja",
+      "name": "Dobavi rezultat pitanja",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
     },
     {
-      "name": "Dohvati rezultate pitanja",
+      "name": "Dobavi rezultate pitanja",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Rezultati pitanja",
       "type": "api"
@@ -609,31 +609,31 @@
       "type": "api"
     },
     {
-      "name": "Dohvati SSO korisnika po e-pošti",
+      "name": "Dobavi SSO korisnika po emailu",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "Dohvati SSO korisnika po ID-u",
+      "name": "Dobavi SSO korisnika po ID-u",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "Dohvati SSO korisnike",
+      "name": "Dobavi SSO korisnike",
       "file": "getssousers-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "Izmeni SSO korisnika (PATCH)",
+      "name": "Delimično izmeni SSO korisnika",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
     },
     {
-      "name": "Zameni SSO korisnika (PUT)",
+      "name": "Zameni SSO korisnika",
       "file": "putssouser-api-generated.md",
       "subCat": "SSO korisnici",
       "type": "api"
@@ -651,13 +651,19 @@
       "type": "api"
     },
     {
-      "name": "Dohvati pretplate",
+      "name": "Dobavi pretplate",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Pretplate",
       "type": "api"
     },
     {
-      "name": "Dohvati dnevnu upotrebu tenanta",
+      "name": "Ažuriraj pretplatu",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Pretplate",
+      "type": "api"
+    },
+    {
+      "name": "Dobavi dnevne upotrebe tenanta",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Dnevna upotreba tenanta",
       "type": "api"
@@ -665,37 +671,37 @@
     {
       "name": "Kreiraj paket tenanta",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
       "name": "Obriši paket tenanta",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
-      "name": "Dohvati paket tenanta",
+      "name": "Dobavi paket tenanta",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
-      "name": "Dohvati pakete tenanta",
+      "name": "Dobavi pakete tenanta",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
       "name": "Zameni paket tenanta",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
       "name": "Ažuriraj paket tenanta",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Tenant paketi",
+      "subCat": "Paketi tenanta",
       "type": "api"
     },
     {
@@ -711,13 +717,13 @@
       "type": "api"
     },
     {
-      "name": "Dohvati korisnika tenanta",
+      "name": "Dobavi korisnika tenanta",
       "file": "gettenantuser-api-generated.md",
       "subCat": "Korisnici tenanta",
       "type": "api"
     },
     {
-      "name": "Dohvati korisnike tenanta",
+      "name": "Dobavi korisnike tenanta",
       "file": "gettenantusers-api-generated.md",
       "subCat": "Korisnici tenanta",
       "type": "api"
@@ -753,13 +759,13 @@
       "type": "api"
     },
     {
-      "name": "Dohvati tenanta",
+      "name": "Dobavi tenanta",
       "file": "gettenant-api-generated.md",
       "subCat": "Tenanti",
       "type": "api"
     },
     {
-      "name": "Dohvati tenante",
+      "name": "Dobavi tenante",
       "file": "gettenants-api-generated.md",
       "subCat": "Tenanti",
       "type": "api"
@@ -771,103 +777,127 @@
       "type": "api"
     },
     {
+      "name": "Promeni stanje tiketa",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tiketi",
+      "type": "api"
+    },
+    {
+      "name": "Kreiraj tiket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tiketi",
+      "type": "api"
+    },
+    {
+      "name": "Dobavi tiket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tiketi",
+      "type": "api"
+    },
+    {
+      "name": "Dobavi tikete",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tiketi",
+      "type": "api"
+    },
+    {
       "name": "Otpremi sliku",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Otpremi sliku",
+      "subCat": "Otpremanje slike",
       "type": "api"
     },
     {
-      "name": "Dohvati napredak značke po ID-u",
+      "name": "Dobavi napredak bedža korisnika po ID-u",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak bedža korisnika",
       "type": "api"
     },
     {
-      "name": "Dohvati napredak značke po ID-u korisnika",
+      "name": "Dobavi napredak bedža po korisničkom ID-u",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak bedža korisnika",
       "type": "api"
     },
     {
-      "name": "Dohvati listu napretka znački",
+      "name": "Dobavi listu napretka bedža korisnika",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak bedža korisnika",
       "type": "api"
     },
     {
-      "name": "Kreiraj značku korisnika",
+      "name": "Kreiraj bedž korisnika",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Bedževi korisnika",
       "type": "api"
     },
     {
-      "name": "Obriši značku korisnika",
+      "name": "Obriši bedž korisnika",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Bedževi korisnika",
       "type": "api"
     },
     {
-      "name": "Dohvati značku korisnika",
+      "name": "Dobavi bedž korisnika",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Bedževi korisnika",
       "type": "api"
     },
     {
-      "name": "Dohvati značke korisnika",
+      "name": "Dobavi bedževe korisnika",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Bedževi korisnika",
       "type": "api"
     },
     {
-      "name": "Ažuriraj značku korisnika",
+      "name": "Ažuriraj bedž korisnika",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Bedževi korisnika",
       "type": "api"
     },
     {
-      "name": "Dohvati broj obaveštenja korisnika",
+      "name": "Dobavi broj korisničkih obaveštenja",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Dohvati obaveštenja korisnika",
+      "name": "Dobavi korisnička obaveštenja",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Resetuj broj obaveštenja korisnika",
+      "name": "Resetuj broj korisničkih obaveštenja",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Resetuj obaveštenja korisnika",
+      "name": "Resetuj korisnička obaveštenja",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Ažuriraj status pretplate korisnika na obaveštenja o komentarima",
+      "name": "Ažuriraj status pretplate na obaveštenja o komentarima za korisnika",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Ažuriraj status pretplate korisnika na obaveštenja o stranici",
+      "name": "Ažuriraj status pretplate na obaveštenja o stranici za korisnika",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Ažuriraj status obaveštenja korisnika",
+      "name": "Ažuriraj status korisničkog obaveštenja",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Obaveštenja korisnika",
+      "subCat": "Korisnička obaveštenja",
       "type": "api"
     },
     {
-      "name": "Dohvati statuse prisutnosti korisnika",
+      "name": "Dobavi statuse prisutnosti korisnika",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "Status prisutnosti korisnika",
       "type": "api"
@@ -879,7 +909,7 @@
       "type": "api"
     },
     {
-      "name": "Dohvati korisnika",
+      "name": "Dobavi korisnika",
       "file": "getuser-api-generated.md",
       "subCat": "Korisnici",
       "type": "api"
@@ -897,13 +927,13 @@
       "type": "api"
     },
     {
-      "name": "Dohvati glasove",
+      "name": "Dobavi glasove",
       "file": "getvotes-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"
     },
     {
-      "name": "Dohvati glasove za korisnika",
+      "name": "Dobavi glasove za korisnika",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Glasovi",
       "type": "api"

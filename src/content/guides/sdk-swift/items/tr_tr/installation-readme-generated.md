@@ -4,7 +4,7 @@ Aşağıdakileri `Package.swift` dosyanıza ekleyin:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "0.0.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
 ]
 ```
 

@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
@@ -12,11 +12,11 @@ Returnerer: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'createSubscription Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(pageTitle: "pageTitle_example", url: "url_example", urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example") // CreateAPIUserSubscriptionData | 
+let createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(notificationFrequency: 123, pageTitle: "pageTitle_example", url: "url_example", urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example") // CreateAPIUserSubscriptionData | 
 
 DefaultAPI.createSubscription(tenantId: tenantId, createAPIUserSubscriptionData: createAPIUserSubscriptionData) { (response, error) in
     guard error == nil else {
@@ -29,5 +29,3 @@ DefaultAPI.createSubscription(tenantId: tenantId, createAPIUserSubscriptionData:
     }
 }
 [inline-code-end]
-
----

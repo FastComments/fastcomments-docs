@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -13,8 +13,10 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primer deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-8a9c2b';
-const packageId: string = 'pkg-47f3c9';
+const tenantId: string = 'tenant_acme_corp_987';
+const packageId: string = 'pkg_pro_2026_01';
+type DeleteOptions = { force?: boolean; notify?: boolean };
+const options: DeleteOptions = { force: true }; // demonstracija opcionih parametara
 const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 

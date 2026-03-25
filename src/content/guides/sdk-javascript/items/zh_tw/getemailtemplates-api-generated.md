@@ -1,22 +1,26 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | skip | number | 否 |  |
 
 ## 回應
 
-回傳：[`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplates200Response.ts)
+回傳: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplates200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getEmailTemplates 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f4d2b7c';
-const responseWithoutSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
-const skip: number = 20;
-const responseWithSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
+async function main(): Promise<void> {
+  const tenantId: string = 'tenant_5f3a9c2b';
+  const templates: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
+  const skip: number = 20;
+  const pagedTemplates: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
+  console.log(templates, pagedTemplates);
+}
+main();
 [inline-code-end]
 
 ---

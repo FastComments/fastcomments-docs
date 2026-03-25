@@ -1,27 +1,27 @@
 ## 參數
 
-| 名稱 | 型別 | 必要 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createQuestionResultBody | CreateQuestionResultBody | 是 |  |
 
 ## 回應
 
-回傳：[`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
+回傳: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7a3c_us-east-1";
-const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const tenantId: string = "tenant-72b1f4";
+const meta: MetaItem[] = [{ key: "platform", value: "web" }];
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_42",
-  commenterId: "user_1984",
-  answer: "yes",
-  score: 4,
-  meta: [metaItem] // 示範可選的元資料
-} as CreateQuestionResultBody;
+  questionId: "question-83472",
+  commenterId: "user-5521",
+  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
+  meta, // 可選的 metadata
+  note: "Follow-up requested" // 示範的可選參數
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

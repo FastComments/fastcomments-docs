@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| createQuestionResultBody | CreateQuestionResultBody | Ja |  |
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
 ## Svar
 
@@ -13,15 +13,15 @@ Returnerer: [`CreateQuestionResult200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'createQuestionResult Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7a3c_us-east-1";
-const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const tenantId: string = "tenant-72b1f4";
+const meta: MetaItem[] = [{ key: "platform", value: "web" }];
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_42",
-  commenterId: "user_1984",
-  answer: "yes",
-  score: 4,
-  meta: [metaItem] // valgfri metadata demonstreret
-} as CreateQuestionResultBody;
+  questionId: "question-83472",
+  commenterId: "user-5521",
+  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
+  meta, // valgfri metadata
+  note: "Follow-up requested" // valgfri parameter demonstreret
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

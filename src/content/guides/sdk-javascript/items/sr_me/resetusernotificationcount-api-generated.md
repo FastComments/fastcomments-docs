@@ -1,13 +1,25 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
+Враћа: [`ResetUserNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotifications200Response.ts)
+
+## Примјер
+
+[inline-code-attrs-start title = 'resetUserNotificationCount Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+(async () => {
+  const tenantId: string = "tenant_9f3b2c4a";
+  const ssoToken: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9._sample_payload_.signature";
+  const responseWithSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);
+  const responseWithoutSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);
+  console.log(responseWithSSO, responseWithoutSSO);
+})();
+[inline-code-end]
 
 ---

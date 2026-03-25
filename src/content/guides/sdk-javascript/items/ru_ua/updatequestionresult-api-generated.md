@@ -2,9 +2,9 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
 
 ## Ответ
 
@@ -14,14 +14,17 @@
 
 [inline-code-attrs-start title = 'Пример updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f2b9';
-const id: string = 'question_3a7c1d';
+const tenantId: string = 'tenant_7f8b3c';
+const id: string = 'questionResult_4621';
 const updateQuestionResultBody: UpdateQuestionResultBody = {
-  result: { verdict: 'helpful', confidence: 0.92 },
-  reviewer: { id: 'mod_102', name: 'Aisha Rahman' },
-  notifyUser: true // необязательный параметр включён
-};
-const response: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+  questionId: 'q_1024',
+  result: 'flagged',
+  score: 0.92,
+  notes: 'Automated moderation flagged for review',
+  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // необязательные метаданные
+  status: { code: 'review_pending' } as APIStatus
+} as UpdateQuestionResultBody;
+const result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
 [inline-code-end]
 
 ---

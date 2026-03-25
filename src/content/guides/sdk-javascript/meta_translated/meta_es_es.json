@@ -5,13 +5,13 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Introducción",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {
       "name": "Documentación de la API",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "Referencia de la API",
+      "subCat": "Referencia de API",
       "type": "readme"
     },
     {
@@ -29,7 +29,7 @@
     {
       "name": "APIs públicas vs seguras",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "Referencia de la API",
+      "subCat": "Referencia de API",
       "type": "readme"
     },
     {
@@ -45,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Eventos en vivo (Actualizaciones en tiempo real)",
+      "name": "Eventos en vivo (actualizaciones en tiempo real)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -263,55 +263,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
@@ -461,13 +461,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Recuento de notificaciones",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Recuento de notificaciones",
       "type": "api"
     },
     {
@@ -675,117 +675,147 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Uso diario del tenant",
+      "subCat": "Uso diario del inquilino",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paquetes del tenant",
+      "subCat": "Paquetes del inquilino",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Usuarios del tenant",
+      "subCat": "Usuarios del inquilino",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Inquilinos",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Inquilinos",
+      "type": "api"
+    },
+    {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
@@ -887,7 +917,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Estado de presencia de usuario",
+      "subCat": "Estado de presencia del usuario",
       "type": "api"
     },
     {

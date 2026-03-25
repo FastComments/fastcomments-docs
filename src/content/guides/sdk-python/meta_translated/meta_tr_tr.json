@@ -1,6 +1,6 @@
 {
-  "name": "Python Yazılım Geliştirme Kiti",
-  "pageHeader": "FastComments Python Yazılım Geliştirme Kiti",
+  "name": "Python SDK",
+  "pageHeader": "FastComments Python SDK",
   "itemsOrdered": [
     {
       "name": "Kurulum",
@@ -41,13 +41,13 @@
     {
       "name": "Yorumdan Engelle (Genel)",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumdan Engelle",
       "type": "api"
     },
     {
-      "name": "Yorum Engellemesini Kaldır (Genel)",
+      "name": "Yorumu Engel Kaldır (Genel)",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumdan Engelle",
       "type": "api"
     },
     {
@@ -57,7 +57,7 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcıyı Yoruma Göre Engelle",
+      "name": "Yoruma Göre Kullanıcıyı Engelle",
       "file": "block-user-from-comment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -87,7 +87,7 @@
       "type": "api"
     },
     {
-      "name": "Yorumu Bildir",
+      "name": "Yorumu İşaretle",
       "file": "flag-comment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -105,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "Yorum Oyu Veren Kullanıcı İsimlerini Al",
+      "name": "Yorum Oy Veren Kullanıcı İsimlerini Al",
       "file": "get-comment-vote-user-names-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -153,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcının Yoruma Göre Engellemesini Kaldır",
+      "name": "Yoruma Göre Kullanıcının Engelini Kaldır",
       "file": "un-block-user-from-comment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -165,13 +165,13 @@
       "type": "api"
     },
     {
-      "name": "Yorum Kilidini Aç",
+      "name": "Yorumun Kilidini Aç",
       "file": "un-lock-comment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
     },
     {
-      "name": "Yorum Sabitlemesini Kaldır",
+      "name": "Yorumu Sabitlemeyi Kaldır",
       "file": "un-pin-comment-api-generated.md",
       "subCat": "Yorumlar",
       "type": "api"
@@ -189,39 +189,39 @@
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırması Ekle",
+      "name": "Alan Adı Yapılandırması Ekle",
       "file": "add-domain-config-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırmasını Sil",
+      "name": "Alan Adı Yapılandırmasını Sil",
       "file": "delete-domain-config-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırmasını Al",
+      "name": "Alan Adı Yapılandırmasını Al",
       "file": "get-domain-config-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırmalarını Al",
+      "name": "Alan Adı Yapılandırmalarını Al",
       "file": "get-domain-configs-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırmasını Kısmi Güncelle",
+      "name": "Alan Adı Yapılandırmasını Kısmi Güncelle",
       "file": "patch-domain-config-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
-      "name": "Alan Yapılandırmasını Değiştir",
+      "name": "Alan Adı Yapılandırmasını Tam Değiştir",
       "file": "put-domain-config-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
@@ -279,15 +279,15 @@
       "type": "api"
     },
     {
-      "name": "Olay Günlüğünü Al",
+      "name": "Etkinlik Günlüğünü Al",
       "file": "get-event-log-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
-      "name": "Genel Olay Günlüğünü Al",
+      "name": "Genel Etkinlik Günlüğünü Al",
       "file": "get-global-event-log-api-generated.md",
-      "subCat": "Olay Günlüğü",
+      "subCat": "Etkinlik Günlüğü",
       "type": "api"
     },
     {
@@ -351,9 +351,9 @@
       "type": "api"
     },
     {
-      "name": "Yorumu Bildir (Genel)",
+      "name": "Yorumu İşaretle (Genel)",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Yorumu Bildir",
+      "subCat": "Yorumu İşaretle",
       "type": "api"
     },
     {
@@ -363,13 +363,13 @@
       "type": "api"
     },
     {
-      "name": "Hashtagleri Toplu Ekle",
+      "name": "Hashtag'leri Toplu Ekle",
       "file": "add-hash-tags-bulk-api-generated.md",
       "subCat": "Hashtag'ler",
       "type": "api"
     },
     {
-      "name": "Hashtag'i Sil",
+      "name": "Hashtag Sil",
       "file": "delete-hash-tag-api-generated.md",
       "subCat": "Hashtag'ler",
       "type": "api"
@@ -447,7 +447,7 @@
       "type": "api"
     },
     {
-      "name": "Bildirim Güncelle",
+      "name": "Bildirimi Güncelle",
       "file": "update-notification-api-generated.md",
       "subCat": "Bildirimler",
       "type": "api"
@@ -465,7 +465,7 @@
       "type": "api"
     },
     {
-      "name": "URL ID'ye Göre Sayfayı Al",
+      "name": "URL Kimliğine Göre Sayfayı Al",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "Sayfalar",
       "type": "api"
@@ -563,19 +563,19 @@
     {
       "name": "Soru Sonuçlarını Topla",
       "file": "aggregate-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplama",
       "type": "api"
     },
     {
-      "name": "Soru Sonuçlarını Toplu Topla",
+      "name": "Soru Sonuçlarını Toplu Toplama",
       "file": "bulk-aggregate-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplama",
       "type": "api"
     },
     {
       "name": "Yorumları Soru Sonuçlarıyla Birleştir",
       "file": "combine-comments-with-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplaması",
+      "subCat": "Soru Sonuçları Toplama",
       "type": "api"
     },
     {
@@ -615,7 +615,7 @@
       "type": "api"
     },
     {
-      "name": "SSO Kullanıcısını Değiştir",
+      "name": "SSO Kullanıcısını Tam Değiştir",
       "file": "put-sso-user-api-generated.md",
       "subCat": "SSO Kullanıcıları",
       "type": "api"
@@ -635,6 +635,12 @@
     {
       "name": "Abonelikleri Al",
       "file": "get-subscriptions-api-generated.md",
+      "subCat": "Abonelikler",
+      "type": "api"
+    },
+    {
+      "name": "Aboneliği Güncelle",
+      "file": "update-subscription-api-generated.md",
       "subCat": "Abonelikler",
       "type": "api"
     },
@@ -753,25 +759,49 @@
       "type": "api"
     },
     {
+      "name": "Bilet Durumunu Değiştir",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Biletler",
+      "type": "api"
+    },
+    {
+      "name": "Bilet Oluştur",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Biletler",
+      "type": "api"
+    },
+    {
+      "name": "Bileti Al",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Biletler",
+      "type": "api"
+    },
+    {
+      "name": "Biletleri Al",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Biletler",
+      "type": "api"
+    },
+    {
       "name": "Resim Yükle",
       "file": "upload-image-api-generated.md",
       "subCat": "Resim Yükle",
       "type": "api"
     },
     {
-      "name": "ID'ye Göre Kullanıcı Rozet İlerlemesini Al",
+      "name": "Rozet İlerlemesini ID'ye Göre Al",
       "file": "get-user-badge-progress-by-id-api-generated.md",
       "subCat": "Kullanıcı Rozet İlerlemesi",
       "type": "api"
     },
     {
-      "name": "Kullanıcı ID'sine Göre Rozet İlerlemesini Al",
+      "name": "Rozet İlerlemesini Kullanıcı ID'sine Göre Al",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
       "subCat": "Kullanıcı Rozet İlerlemesi",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Rozet İlerleme Listesini Al",
+      "name": "Kullanıcı Rozet İlerlemesi Listesini Al",
       "file": "get-user-badge-progress-list-api-generated.md",
       "subCat": "Kullanıcı Rozet İlerlemesi",
       "type": "api"
@@ -831,13 +861,13 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcı Bildirim Yorum Abonelik Durumunu Güncelle",
+      "name": "Kullanıcı Yorum Aboneliği Durumunu Güncelle",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
       "subCat": "Kullanıcı Bildirimleri",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Bildirim Sayfa Abonelik Durumunu Güncelle",
+      "name": "Kullanıcı Sayfa Aboneliği Durumunu Güncelle",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
       "subCat": "Kullanıcı Bildirimleri",
       "type": "api"
@@ -849,13 +879,13 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcı Varlık Durumlarını Al",
+      "name": "Kullanıcı Bulunma Durumlarını Al",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Kullanıcı Varlık Durumu",
+      "subCat": "Kullanıcı Bulunma Durumu",
       "type": "api"
     },
     {
-      "name": "Kullanıcı Ara",
+      "name": "Kullanıcıları Ara",
       "file": "search-users-api-generated.md",
       "subCat": "Kullanıcı Arama",
       "type": "api"
@@ -873,7 +903,7 @@
       "type": "api"
     },
     {
-      "name": "Oyu Sil",
+      "name": "Oy Sil",
       "file": "delete-vote-api-generated.md",
       "subCat": "Oylar",
       "type": "api"
@@ -885,7 +915,7 @@
       "type": "api"
     },
     {
-      "name": "Kullanıcı İçin Oyları Al",
+      "name": "Kullanıcıya Ait Oyları Al",
       "file": "get-votes-for-user-api-generated.md",
       "subCat": "Oylar",
       "type": "api"

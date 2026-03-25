@@ -6,20 +6,19 @@
 | id | string | Ja |  |
 | editKey | string | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVote200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b21c9';
-const id: string = 'vote_4a2d9f1b';
-const editKey: string = 'edit_92b7c6a1';
-
-const resultWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);
-const resultWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
+const tenantId: string = "tenant_7c3f2b4a";
+const voteId: string = "vote_4f8d9a11";
+const editKey: string = "edit_2b9f8c";
+const resultWithoutKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId);
+const resultWithKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId, editKey);
 [inline-code-end]
 
 ---

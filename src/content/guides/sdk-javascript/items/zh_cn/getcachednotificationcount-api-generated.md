@@ -1,24 +1,22 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 
 ## 响应
 
-返回：[`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCount200Response.ts)
+返回: [`GetCachedNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCount200Response.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCachedNotificationCount 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const baseNotificationId: string = 'notif-000123';
-const idSuffix: string | undefined = undefined; // 可选参数示例
-const notificationId: string = idSuffix ? `${baseNotificationId}-${idSuffix}` : baseNotificationId;
-const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, notificationId);
-console.log(result);
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'user_00012345';
+const includeUnreadOnly: boolean | undefined = true; // 可选参数标志（示例）
+const result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);
 [inline-code-end]
 
 ---

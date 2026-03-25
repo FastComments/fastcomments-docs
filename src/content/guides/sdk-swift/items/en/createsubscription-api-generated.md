@@ -16,7 +16,7 @@ Returns: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(pageTitle: "pageTitle_example", url: "url_example", urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example") // CreateAPIUserSubscriptionData | 
+let createAPIUserSubscriptionData = CreateAPIUserSubscriptionData(notificationFrequency: 123, pageTitle: "pageTitle_example", url: "url_example", urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example") // CreateAPIUserSubscriptionData | 
 
 DefaultAPI.createSubscription(tenantId: tenantId, createAPIUserSubscriptionData: createAPIUserSubscriptionData) { (response, error) in
     guard error == nil else {

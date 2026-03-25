@@ -1,6 +1,6 @@
 ### Maven
 
-将 Repsy 仓库添加到您项目的 POM：
+将 Repsy 仓库添加到项目的 POM 文件：
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@
 </repositories>
 ```
 
-然后添加您需要的依赖：
+然后添加你需要的依赖：
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- API 客户端 -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- 核心库（包含 SSO） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub 库（用于实时事件） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-将 Repsy 仓库添加到您的 build.gradle 文件：
+将 Repsy 仓库添加到你的 build.gradle 文件：
 
 ```groovy
 repositories {
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:0.0.2"
+    // API 客户端
+    implementation "com.fastcomments:client:1.3.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    // 核心库（包含 SSO）
+    implementation "com.fastcomments:core:1.3.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    // PubSub 库（用于实时事件）
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
 ### 库内容
 
-该库包含三个模块：生成的 API 客户端、包含手工编写实用工具以简化与 API 交互的核心 Java 库，以及用于订阅变更推送的 `pubsub` 模块。
+此库包含三个模块。生成的 API 客户端、包含手写实用工具以简化与 API 交互的核心 Java 库，以及用于订阅更改推送的 `pubsub` 模块。
 
 - [API 客户端库文档](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [核心库文档（含 SSO 示例）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [核心库文档，包括 SSO 示例](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [PubSub 库文档](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### 公共 API 与 受保护 API
+### 公共与受保护的 API
 
-对于 API 客户端，有两个类：`DefaultApi` 和 `PublicApi`。`DefaultApi` 包含需要使用您的 API 密钥的方法，而 `PublicApi` 包含可直接从浏览器/移动设备等在无身份验证情况下调用的 API。
+对于 API 客户端，有两个类，`DefaultApi` 和 `PublicApi`。`DefaultApi` 包含需要你的 API 密钥的方法，而 `PublicApi` 包含可以直接从浏览器/移动设备等在无身份验证情况下调用的 API 调用。

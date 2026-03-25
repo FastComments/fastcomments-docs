@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -13,10 +14,11 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b2f6a-4b2f6a2d";
-const templateId: string = "email_template_9f8b7c3e";
+const tenantId: string = 'tenant_7f4c9d1e';
+const templateId: string = 'tmpl_welcome_2024-03';
+const notifyAdmin: boolean | undefined = true; // דוגמה לפרמטר אופציונלי
+
 const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
-const status: APIStatus | undefined = result?.status
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 {
   "name": "Java SDK",
-  "pageHeader": "FastComments の Java SDK",
+  "pageHeader": "FastComments Java SDK",
   "itemsOrdered": [
     {
       "name": "インストール",
@@ -39,15 +39,15 @@
       "type": "api"
     },
     {
-      "name": "公開コメントのブロックを解除",
+      "name": "コメントのブロック解除（公開）",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "コメントからブロック",
       "type": "api"
     },
     {
-      "name": "ブロックされたコメントのチェック",
+      "name": "ブロック対象コメントの確認",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "ブロック済みコメントの確認",
+      "subCat": "ブロックされたコメントの確認",
       "type": "api"
     },
     {
@@ -57,7 +57,7 @@
       "type": "api"
     },
     {
-      "name": "公開コメントを作成",
+      "name": "コメントを作成（公開）",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -69,19 +69,19 @@
       "type": "api"
     },
     {
-      "name": "公開コメントを削除",
+      "name": "コメントを削除（公開）",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントの投票を削除",
+      "name": "コメント投票を削除",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを通報",
+      "name": "コメントをフラグ",
       "file": "flagcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -99,7 +99,7 @@
       "type": "api"
     },
     {
-      "name": "公開コメントを取得",
+      "name": "コメント一覧を取得（公開）",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -147,25 +147,25 @@
       "type": "api"
     },
     {
-      "name": "コメントからユーザーのブロックを解除",
+      "name": "コメントからユーザーのブロック解除",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "通報を取り消す",
+      "name": "コメントのフラグを解除",
       "file": "unflagcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントのロックを解除",
+      "name": "コメントのロック解除",
       "file": "unlockcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントのピンを外す",
+      "name": "コメントのピン解除",
       "file": "unpincomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -231,7 +231,7 @@
       "type": "api"
     },
     {
-      "name": "メールテンプレートのレンダリングエラーを削除",
+      "name": "メールテンプレートレンダーエラーを削除",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
@@ -249,7 +249,7 @@
       "type": "api"
     },
     {
-      "name": "メールテンプレートのレンダリングエラーを取得",
+      "name": "メールテンプレートレンダーエラーを取得",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
@@ -291,13 +291,13 @@
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を作成",
+      "name": "フィード投稿を作成（公開）",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を削除",
+      "name": "フィード投稿を削除（公開）",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -309,7 +309,7 @@
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を取得",
+      "name": "フィード投稿を取得（公開）",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -321,13 +321,13 @@
       "type": "api"
     },
     {
-      "name": "公開ユーザーリアクションを取得",
+      "name": "ユーザーのリアクションを取得（公開）",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿にリアクション",
+      "name": "フィード投稿にリアクション（公開）",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -339,15 +339,15 @@
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を更新",
+      "name": "フィード投稿を更新（公開）",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開コメントを通報",
+      "name": "コメントをフラグ（公開）",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "コメントの通報",
+      "subCat": "コメントをフラグ",
       "type": "api"
     },
     {
@@ -477,19 +477,19 @@
       "type": "api"
     },
     {
-      "name": "保留中Webhookイベントを削除",
+      "name": "保留中のWebhookイベントを削除",
       "file": "deletependingwebhookevent-api-generated.md",
       "subCat": "保留中のWebhookイベント",
       "type": "api"
     },
     {
-      "name": "保留中Webhookイベント数を取得",
+      "name": "保留中のWebhookイベント数を取得",
       "file": "getpendingwebhookeventcount-api-generated.md",
       "subCat": "保留中のWebhookイベント",
       "type": "api"
     },
     {
-      "name": "保留中Webhookイベントを取得",
+      "name": "保留中のWebhookイベントを取得",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "保留中のWebhookイベント",
       "type": "api"
@@ -633,9 +633,15 @@
       "type": "api"
     },
     {
+      "name": "サブスクリプションを更新",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "サブスクリプション",
+      "type": "api"
+    },
+    {
       "name": "テナントの日次使用量を取得",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "テナントの日次使用量",
+      "subCat": "テナント日別使用量",
       "type": "api"
     },
     {
@@ -747,6 +753,30 @@
       "type": "api"
     },
     {
+      "name": "チケット状態を変更",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "チケット",
+      "type": "api"
+    },
+    {
+      "name": "チケットを作成",
+      "file": "createticket-api-generated.md",
+      "subCat": "チケット",
+      "type": "api"
+    },
+    {
+      "name": "チケットを取得",
+      "file": "getticket-api-generated.md",
+      "subCat": "チケット",
+      "type": "api"
+    },
+    {
+      "name": "チケット一覧を取得",
+      "file": "gettickets-api-generated.md",
+      "subCat": "チケット",
+      "type": "api"
+    },
+    {
       "name": "画像をアップロード",
       "file": "uploadimage-api-generated.md",
       "subCat": "画像アップロード",
@@ -843,9 +873,9 @@
       "type": "api"
     },
     {
-      "name": "ユーザーのプレゼンスステータスを取得",
+      "name": "ユーザー接続状況を取得",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "ユーザーのプレゼンス状況",
+      "subCat": "ユーザー接続状況",
       "type": "api"
     },
     {

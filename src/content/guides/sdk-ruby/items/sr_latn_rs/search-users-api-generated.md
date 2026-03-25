@@ -1,12 +1,13 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
-| usernameStartsWith | string | query | Da |  |
+| usernameStartsWith | string | query | Ne |  |
 | mentionGroupIds | array | query | Ne |  |
 | sso | string | query | Ne |  |
+| searchSection | string | query | Ne |  |
 
 ## Odgovor
 
@@ -22,15 +23,16 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
-username_starts_with = 'username_starts_with_example' # String | 
 opts = {
+  username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
   
-  result = api_instance.search_users(tenant_id, url_id, username_starts_with, opts)
+  result = api_instance.search_users(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"

@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 
@@ -12,8 +12,9 @@
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-78f2';
-const emailTemplates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+const tenantId: string = 'tenant_acme_eu_01';
+const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+console.log('Email template definitions loaded for', tenantId, templates);
 [inline-code-end]
 
 ---

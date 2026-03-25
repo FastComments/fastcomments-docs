@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Browser- vs servercompatibiliteit",
+      "name": "Browser- vs Server-compatibiliteit",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -39,19 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Veelvoorkomende use-cases",
+      "name": "Veelvoorkomende gebruiksgevallen",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Live-evenementen (realtime updates)",
+      "name": "Live-evenementen (Realtime-updates)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "Broadcast-ID's",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -77,19 +77,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van reactie",
+      "subCat": "Blokkeren van opmerking",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van reactie",
+      "subCat": "Blokkeren van opmerking",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde reacties",
+      "subCat": "Controleren op geblokkeerde opmerkingen",
       "type": "api"
     },
     {
@@ -389,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Reactie rapporteren",
+      "subCat": "Opmerking markeren",
       "type": "api"
     },
     {
@@ -425,37 +425,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
@@ -521,19 +521,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "Wachtende webhook-gebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "Wachtende webhook-gebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "Wachtende webhook-gebeurtenissen",
       "type": "api"
     },
     {
@@ -675,87 +675,93 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementen",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dagelijks gebruik tenant",
+      "subCat": "Dagelijks gebruik per tenant",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Tenant-pakketten",
+      "subCat": "Tenantpakketten",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Tenant-gebruikers",
+      "subCat": "Tenantgebruikers",
       "type": "api"
     },
     {
@@ -786,6 +792,30 @@
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
       "subCat": "Tenants",
+      "type": "api"
+    },
+    {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
       "type": "api"
     },
     {
@@ -887,13 +917,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatus gebruiker",
+      "subCat": "Aanwezigheidsstatussen",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Gebruiker zoeken",
+      "subCat": "Gebruikers zoeken",
       "type": "api"
     },
     {

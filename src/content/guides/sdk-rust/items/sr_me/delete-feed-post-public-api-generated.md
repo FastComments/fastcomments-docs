@@ -1,12 +1,31 @@
-## Параметри
+---
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| post_id | String | Да |  |
-| broadcast_id | String | Не |  |
-| sso | String | Не |  |
+| tenant_id | String | Da |  |
+| post_id | String | Da |  |
+| broadcast_id | String | Ne |  |
+| sso | String | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_feed_post_public_200_response.rs)
+Vraća: [`DeleteFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_feed_post_public_200_response.rs)
+
+## Primjer
+
+[inline-code-attrs-start title = 'delete_feed_post_public Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<(), Error> {
+    let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        post_id: "news/article-2026-03-25-12345".to_string(),
+        broadcast_id: Some("broadcast-9876".to_string()),
+        sso: Some("user-42-sso-token".to_string()),
+    };
+    let response: DeleteFeedPostPublic200Response = delete_feed_post_public(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -14,18 +14,21 @@
 
 [inline-code-attrs-start title = 'update_moderator 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateModeratorParams = UpdateModeratorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "moderator-12345".to_string(),
-    update_moderator_body: models::UpdateModeratorBody {
-        username: "jane.doe".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        email: Some("jane.doe@acme.com".to_string()),
-        is_active: Some(true),
-        permissions: Some(vec!["moderate_comments".to_string(), "view_reports".to_string()]),
-    },
-};
-let response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: UpdateModeratorParams = UpdateModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "moderator-987".to_string(),
+        update_moderator_body: models::UpdateModeratorBody {
+            username: Some("jane.doe".to_string()),
+            email: Some("jane.doe@acme.com".to_string()),
+            role: Some("senior_moderator".to_string()),
+            active: Some(true),
+            notes: Some("Promoted after successful trial period".to_string()),
+        },
+    };
+    let response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

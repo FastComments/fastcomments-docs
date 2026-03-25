@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Adı | Tür | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tag | string | Evet |  |
 | tenantId | string | Hayır |  |
@@ -14,10 +14,10 @@ Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteHashTag Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = 'breaking-news';
-const tenantId: string = 'tenant_42';
-const deleteReq: DeleteHashTagRequest = { removedBy: 'moderator_jane', reason: 'off-topic for this community', deleteAssociatedComments: true } as DeleteHashTagRequest;
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteReq);
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_12345";
+const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
 [inline-code-end]
 
 ---

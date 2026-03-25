@@ -1,38 +1,49 @@
+---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | create_tenant_body | models::CreateTenantBody | Ναι |  |
 
-## Response
+## Απόκριση
 
 Επιστρέφει: [`CreateTenant200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_200_response.rs)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'create_tenant Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα create_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: CreateTenantParams = CreateTenantParams {
-        tenant_id: "acme-news-tenant".to_string(),
+        tenant_id: "acme-corp-tenant".to_string(),
         create_tenant_body: models::CreateTenantBody {
-            name: "Acme News".to_string(),
-            domain: Some("news.acme.com".to_string()),
+            name: "Acme Corporation".to_string(),
+            primary_domain: Some("acme.example.com".to_string()),
+            admin_email: Some("admin@acme.example.com".to_string()),
             api_domain_configuration: Some(models::ApiDomainConfiguration {
-                domain: "api.news.acme.com".to_string(),
-                enforce_https: true,
+                primary_domain: Some("acme.example.com".to_string()),
+                allowed_origins: Some(vec![
+                    "https://acme.example.com".to_string(),
+                    "https://www.acme.com".to_string()
+                ]),
+                ..Default::default()
             }),
             billing_info: Some(models::BillingInfo {
-                contact_email: "billing@acme.com".to_string(),
-                plan_id: "pro_monthly".to_string(),
+                plan: "business".to_string(),
+                company_name: Some("Acme Corporation".to_string()),
+                contact_email: Some("billing@acme.example.com".to_string()),
+                ..Default::default()
             }),
-            imported_site_type: Some(models::ImportedSiteType::Articles),
+            imported_sites: Some(vec![models::ImportedSiteType {
+                site_id: "news/site-1".to_string(),
+                origin: Some("https://news.acme.com".to_string()),
+                ..Default::default()
+            }]),
             ..Default::default()
         },
     };
-
-    let created: CreateTenant200Response = create_tenant(&configuration, params).await?;
+    let response: CreateTenant200Response = create_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

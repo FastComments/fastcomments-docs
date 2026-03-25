@@ -18,12 +18,13 @@ Returns: [`GetUserBadges200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'getUserBadges Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'site_8a12c9f';
-  const displayedOnComments: boolean = true;
-  const limit: number = 15;
-  const skip: number = 0;
-  const response: GetUserBadges200Response = await getUserBadges(tenantId, undefined, undefined, undefined, displayedOnComments, limit, skip);
-  console.log(response);
-})();
+const tenantId: string = 'tenant_acme_01';
+const userId: string = 'user_5f4d3c2a';
+const badgeId: string = 'badge_top_contributor';
+const type: number = 1;
+const displayedOnComments: boolean = true;
+const limit: number = 50;
+const skip: number = 0;
+
+const result: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);
 [inline-code-end]

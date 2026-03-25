@@ -1,30 +1,28 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| urlId | string | Ne |  |
-| fromCommentId | string | Ne |  |
-| viewed | boolean | Ne |  |
-| type | string | Ne |  |
+| tenantId | string | Да |  |
+| userId | string | Не |  |
+| urlId | string | Не |  |
+| fromCommentId | string | Не |  |
+| viewed | boolean | Не |  |
+| type | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCount200Response.ts)
+Враћа: [`GetNotificationCount200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCount200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getNotificationCount Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a9b7c';
-const userId: string = 'user_42b3c';
-const urlId: string = 'https://blog.example.com/posts/introducing-new-editor';
-const fromCommentId: string | undefined = undefined;
+const tenantId: string = 'tenant_abc123';
+const userId: string = 'user_987654321';
+const urlId: string = 'https://example.com/news/2026/new-features';
 const viewed: boolean = false;
-const type: string = 'mention';
-const result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);
+const type: string = 'reply';
+const notificationCountResponse: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, undefined, viewed, type);
 [inline-code-end]
 
 ---

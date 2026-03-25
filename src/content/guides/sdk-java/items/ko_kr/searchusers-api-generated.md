@@ -1,14 +1,15 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| usernameStartsWith | string | query | 예 |  |
-| mentionGroupIds | array | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| usernameStartsWith | string | query | 아니요 |  |
+| mentionGroupIds | array | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
+| searchSection | string | query | 아니요 |  |
 
-## 응답
+## Response
 
 반환: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SearchUsers200Response.java)
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

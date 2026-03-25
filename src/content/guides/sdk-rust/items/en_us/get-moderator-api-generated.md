@@ -13,11 +13,11 @@ Returns: [`GetModerator200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'get_moderator Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetModeratorParams = GetModeratorParams {
+async fn run() -> Result<(), Error> {
+    let params = GetModeratorParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-42".to_string(),
-        include: Some(vec!["roles".to_string(), "recent_comments".to_string()]),
+        id: "moderator-4521".to_string(),
+        include_permissions: Some(true),
     };
     let moderator: GetModerator200Response = get_moderator(&configuration, params).await?;
     println!("{:#?}", moderator);

@@ -1,11 +1,12 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -13,8 +14,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-8a9c2b';
-const packageId: string = 'pkg-47f3c9';
+const tenantId: string = 'tenant_acme_corp_987';
+const packageId: string = 'pkg_pro_2026_01';
+type DeleteOptions = { force?: boolean; notify?: boolean };
+const options: DeleteOptions = { force: true }; // επιδεικνύονται προαιρετικές παράμετροι
 const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 

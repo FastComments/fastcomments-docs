@@ -17,23 +17,23 @@ Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'save_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let create_comment_params: models::CreateCommentParams = models::CreateCommentParams {
-    content: "I found this article very insightful and well-researched.".to_string(),
-    url: "https://news.example.com/articles/2026/fast-comments".to_string(),
-    author_name: Some("Jane Doe".to_string()),
-    author_email: Some("jane.doe@example.com".to_string()),
+let create_comment: models::CreateCommentParams = models::CreateCommentParams {
+    thread_key: "news/article/2026/03/25/budget-reform".to_string(),
+    body: "Great breakdown of the proposed changes — very informative and balanced.".to_string(),
+    user_name: Some("Jane Doe".to_string()),
+    user_email: Some("jane.doe@acme-corp.com".to_string()),
+    user_id: Some("user-9876".to_string()),
     parent_id: None,
-    tags: Some(vec!["technology".to_string(), "opinion".to_string()]),
 };
 
-let params: SaveCommentParams = SaveCommentParams {
+let save_params: SaveCommentParams = SaveCommentParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    create_comment_params,
+    create_comment_params: create_comment,
     is_live: Some(true),
     do_spam_check: Some(true),
     send_emails: Some(false),
     populate_notifications: Some(true),
 };
 
-let response: SaveComment200Response = save_comment(&configuration, params).await?;
+let saved: SaveComment200Response = save_comment(&configuration, save_params).await?;
 [inline-code-end]

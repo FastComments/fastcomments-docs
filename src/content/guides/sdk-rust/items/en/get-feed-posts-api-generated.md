@@ -23,11 +23,11 @@ Returns: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomment
 async fn run() -> Result<(), Error> {
     let params: GetFeedPostsParams = GetFeedPostsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("post_12345".to_string()),
+        after_id: Some("post_98765".to_string()),
         limit: Some(20),
-        tags: Some(vec!["news".to_string(), "product-updates".to_string()]),
+        tags: Some(vec!["news".to_string(), "technology".to_string()]),
     };
-    let feed: GetFeedPosts200Response = get_feed_posts(configuration, params).await?;
+    let feed: GetFeedPosts200Response = get_feed_posts(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

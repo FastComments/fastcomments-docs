@@ -1,10 +1,11 @@
+---
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| deleteHashTagRequest | DeleteHashTagRequest | No |  |
+| tag | string | 是 |  |
+| tenantId | string | 否 |  |
+| deleteHashTagRequest | DeleteHashTagRequest | 否 |  |
 
 ## 回應
 
@@ -14,10 +15,10 @@
 
 [inline-code-attrs-start title = 'deleteHashTag 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = 'breaking-news';
-const tenantId: string = 'tenant_42';
-const deleteReq: DeleteHashTagRequest = { removedBy: 'moderator_jane', reason: 'off-topic for this community', deleteAssociatedComments: true } as DeleteHashTagRequest;
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteReq);
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_12345";
+const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
 [inline-code-end]
 
 ---

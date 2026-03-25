@@ -9,57 +9,57 @@
       "type": "readme"
     },
     {
-      "name": "API Documentation",
+      "name": "API-dokumentation",
       "file": "api-documentation-readme-generated.md",
       "subCat": "API-reference",
       "type": "readme"
     },
     {
-      "name": "Browser vs Server Compatibility",
+      "name": "Browser- vs. serverkompatibilitet",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Usage",
+      "name": "Brug",
       "file": "usage-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "Offentlige vs. sikrede API'er",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "Offentlige vs. sikrede API'er",
+      "subCat": "API-reference",
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On) Integration",
+      "name": "SSO (Single Sign-On) integration",
       "file": "sso-single-sign-on-integration-readme-generated.md",
-      "subCat": "SSO (Single Sign-On) integration",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Common Use Cases",
+      "name": "Almindelige brugstilfælde",
       "file": "common-use-cases-readme-generated.md",
-      "subCat": "Almindelige brugsscenarier",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Live Events (Real-time Updates)",
+      "name": "Live-hændelser (opdateringer i realtid)",
       "file": "live-events-real-time-updates-readme-generated.md",
-      "subCat": "Live-hændelser (opdateringer i realtid)",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "Broadcast-ID'er",
       "file": "broadcast-ids-readme-generated.md",
-      "subCat": "Broadcast-ID'er",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Error Handling",
+      "name": "Fejlhåndtering",
       "file": "error-handling-readme-generated.md",
-      "subCat": "Fejlhåndtering",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
@@ -389,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Marker kommentar",
+      "subCat": "Flag kommentar",
       "type": "api"
     },
     {
@@ -521,19 +521,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Afventende webhook-hændelser",
+      "subCat": "Ventende webhook-hændelser",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Afventende webhook-hændelser",
+      "subCat": "Ventende webhook-hændelser",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Afventende webhook-hændelser",
+      "subCat": "Ventende webhook-hændelser",
       "type": "api"
     },
     {
@@ -675,9 +675,15 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementer",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Lejers daglige forbrug",
+      "subCat": "Lejerens daglige forbrug",
       "type": "api"
     },
     {
@@ -789,6 +795,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Sager",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Sager",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Sager",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Sager",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Upload billede",
@@ -887,7 +917,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Brugertilstedeværelsesstatus",
+      "subCat": "Bruger-tilstedeværelsesstatus",
       "type": "api"
     },
     {

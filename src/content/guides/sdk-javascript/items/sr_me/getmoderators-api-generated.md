@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Не |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Одговор
 
@@ -13,8 +13,7 @@
 
 [inline-code-attrs-start title = 'getModerators Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_corp_7f9b2a";
+const tenantId: string = 'tenant-12345-prod';
 const moderatorsPage1: GetModerators200Response = await getModerators(tenantId);
-const skip: number = 50;
-const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, skip);
+const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, 50);
 [inline-code-end]

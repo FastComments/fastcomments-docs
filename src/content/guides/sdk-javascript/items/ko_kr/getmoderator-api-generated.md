@@ -13,9 +13,9 @@
 
 [inline-code-attrs-start title = 'getModerator 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // 선택적 소스(정의되지 않을 수 있음)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

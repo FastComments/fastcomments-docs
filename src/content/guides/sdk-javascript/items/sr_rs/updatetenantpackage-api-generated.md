@@ -12,18 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantPackage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f1c9b';
-const packageId: string = 'pkg_premium_v2';
-const customConfig: CustomConfigParameters = { enableRichText: true, maxImagesPerComment: 5 };
+const tenantId: string = "tenant_3b7f9d-prod";
+const id: string = "pkg_enterprise_2026";
 const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: 'Premium Moderation Package',
-  enabled: true,
-  description: 'Adds advanced spam rules, image moderation and priority support',
-  customConfigParameters: customConfig
-};
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, packageId, updateTenantPackageBody);
+  name: "Enterprise Plus",
+  isActive: true,
+  // опционална поља намерно изостављена (нпр. description, limits)
+} as UpdateTenantPackageBody;
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

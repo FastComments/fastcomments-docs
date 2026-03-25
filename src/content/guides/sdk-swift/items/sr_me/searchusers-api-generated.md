@@ -1,12 +1,14 @@
+---
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Да |  |
+| usernameStartsWith | string | query | Не |  |
 | mentionGroupIds | array | query | Не |  |
 | sso | string | query | Не |  |
+| searchSection | string | query | Не |  |
 
 ## Одговор
 
@@ -21,11 +23,12 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
+let usernameStartsWith = "usernameStartsWith_example" // String |  (опционо)
 let mentionGroupIds = ["inner_example"] // [String] |  (опционо)
 let sso = "sso_example" // String |  (опционо)
+let searchSection = "searchSection_example" // String |  (опционо)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return

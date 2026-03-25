@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createQuestionResultBody | CreateQuestionResultBody | Da |  |
@@ -13,15 +14,15 @@ Vrne: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7a3c_us-east-1";
-const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const tenantId: string = "tenant-72b1f4";
+const meta: MetaItem[] = [{ key: "platform", value: "web" }];
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_42",
-  commenterId: "user_1984",
-  answer: "yes",
-  score: 4,
-  meta: [metaItem] // prikazani neobvezni metapodatki
-} as CreateQuestionResultBody;
+  questionId: "question-83472",
+  commenterId: "user-5521",
+  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
+  meta, // neobvezni metapodatki
+  note: "Follow-up requested" // prikazan neobvezni parameter
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

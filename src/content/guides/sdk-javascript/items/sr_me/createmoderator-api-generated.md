@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createModeratorBody | CreateModeratorBody | Да |  |
@@ -13,16 +13,16 @@
 
 [inline-code-attrs-start title = 'createModerator Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_us-east_01";
+const tenantId: string = 'tenant_7d9f2b4a';
+const customConfig: CustomConfigParameters = { timezone: 'UTC', moderationQueueEnabled: true };
 const createModeratorBody: CreateModeratorBody = {
-  email: "maria.lopez+mod@fastcompany.com",
-  username: "mlopez_mod",
-  displayName: "Maria Lopez",
-  roles: ["content_moderator"],
-  notifyOnReports: true,
-  metadata: { region: "us-east", team: "community" }
+  email: 'jane.martin@publisher.com',
+  displayName: 'Jane Martin',
+  roles: ['moderator'],
+  sendWelcomeEmail: true,
+  customConfig
 };
-const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+const response: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]
 
 ---

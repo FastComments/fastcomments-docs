@@ -1,7 +1,7 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 
@@ -13,11 +13,9 @@
 
 [inline-code-attrs-start title = 'getVotes 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
-const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// 如果存在可選參數，例如 includeHidden，可能會像這樣使用：
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
-[inline-code-end]
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // 可選的查詢參數
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
 
----
+const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+[inline-code-end]

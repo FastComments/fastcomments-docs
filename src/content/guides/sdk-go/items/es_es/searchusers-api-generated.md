@@ -1,12 +1,13 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | ruta | Sí |  |
-| urlId | string | consulta | Sí |  |
-| usernameStartsWith | string | consulta | Sí |  |
-| mentionGroupIds | array | consulta | No |  |
-| sso | string | consulta | No |  |
+| tenantId | string | path | Sí |  |
+| urlId | string | query | Sí |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Respuesta
 
@@ -22,19 +23,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string | 
+	usernameStartsWith := "usernameStartsWith_example" // string |  (opcional)
 	mentionGroupIds := []string{"Inner_example"} // []string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
+	searchSection := "searchSection_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).SearchSection(searchSection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | meta | String | 아니오 |  |
@@ -16,11 +16,12 @@
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetTenantsParams = GetTenantsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        meta: Some(String::from("include=domains,settings")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        meta: Some("news/article".to_string()),
         skip: Some(10.0),
     };
     let response: GetTenants200Response = get_tenants(&configuration, params).await?;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

@@ -1,11 +1,12 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantUserBody | UpdateTenantUserBody | Yes |  |
-| updateComments | string | No |  |
+| tenantId | string | Ναι |  |
+| id | string | Ναι |  |
+| updateTenantUserBody | UpdateTenantUserBody | Ναι |  |
+| updateComments | string | Όχι |  |
 
 ## Απόκριση
 
@@ -15,16 +16,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const id: string = 'user_7a9d1c';
-const updateComments: string = 'Promoted to moderator and updated contact email';
+const tenantId: string = "tenant_8f3b2a9d";
+const id: string = "user_52c9f1ab";
 const updateTenantUserBody: UpdateTenantUserBody = {
-  email: 'jane.doe+mod@example.com',
-  displayName: 'Jane D.',
-  roles: ['moderator'],
-  isBanned: false,
-  metadata: { department: 'community' }
+  email: "jane.doe@example.com",
+  displayName: "Jane Doe",
+  roles: ["moderator"],
+  isActive: true,
+  metadata: { signupSource: "sso", locale: "en-US" }
 };
+const updateComments: string = "Promoted to moderator and updated display name";
 const result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
 [inline-code-end]
 

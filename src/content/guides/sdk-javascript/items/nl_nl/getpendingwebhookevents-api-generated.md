@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Vereist | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Nee |  |
@@ -11,27 +11,29 @@
 | attemptCountGT | number | Nee |  |
 | skip | number | Nee |  |
 
-## Response
+## Respons
 
-Geeft terug: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
+Retourneert: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEvents200Response.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_78b2f1";
-const commentId: string = "cmt_0042";
-const eventType: string = "comment.created";
-const domain: string = "blog.example.com";
-const attemptCountGT: number = 1;
-const skip: number = 0;
+const tenantId: string = 'tenant_9b3f7c';
+const commentId: string | undefined = undefined;
+const externalId: string | undefined = 'external-572a';
+const eventType: string | undefined = 'comment.updated';
+const type: string | undefined = 'outbound';
+const domain: string | undefined = 'reviews.example.com';
+const attemptCountGT: number | undefined = 1;
+const skip: number | undefined = 20;
 
-const pending: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
+const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
   tenantId,
   commentId,
-  undefined, // externalId
+  externalId,
   eventType,
-  undefined, // type
+  type,
   domain,
   attemptCountGT,
   skip

@@ -1,5 +1,5 @@
 {
-  "name": "SDK per Swift",
+  "name": "SDK Swift",
   "pageHeader": "FastComments SDK per Swift",
   "itemsOrdered": [
     {
@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "API pubbliche vs protette",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "Effettuare chiamate API",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
@@ -53,7 +53,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Registri di audit",
+      "subCat": "Log di audit",
       "type": "api"
     },
     {
@@ -521,61 +521,61 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni delle domande",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni delle domande",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni delle domande",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni delle domande",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni delle domande",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati delle domande",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati delle domande",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati delle domande",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati delle domande",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati delle domande",
       "type": "api"
     },
     {
@@ -641,19 +641,25 @@
     {
       "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
@@ -701,43 +707,43 @@
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Utenti tenant",
+      "subCat": "Utenti del tenant",
       "type": "api"
     },
     {
@@ -771,6 +777,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Carica immagine",
@@ -779,19 +809,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Avanzamento badge utente",
+      "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Avanzamento badge utente",
+      "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Avanzamento badge utente",
+      "subCat": "Progresso badge utente",
       "type": "api"
     },
     {

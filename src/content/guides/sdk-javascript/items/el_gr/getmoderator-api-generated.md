@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Type | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
@@ -11,11 +11,11 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerator Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // προαιρετική πηγή (μπορεί να είναι undefined)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

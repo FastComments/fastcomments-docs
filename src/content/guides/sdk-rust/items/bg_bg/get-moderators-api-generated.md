@@ -11,15 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderators Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetModeratorsParams = GetModeratorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
-    let _moderators = moderators;
+    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

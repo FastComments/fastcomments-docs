@@ -1,6 +1,7 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | id | String | Ναι |  |
@@ -13,10 +14,11 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα delete_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_notification_count(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {
+async fn run() -> Result<FlagCommentPublic200Response, Error> {
     let params: DeleteNotificationCountParams = DeleteNotificationCountParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "notification-9f8b7a6".to_string(),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("notification-9876"),
+        user_id: Some(String::from("user-1234")),
     };
     let response: FlagCommentPublic200Response = delete_notification_count(configuration, params).await?;
     Ok(response)

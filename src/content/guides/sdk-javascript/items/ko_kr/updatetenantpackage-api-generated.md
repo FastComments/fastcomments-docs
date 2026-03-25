@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -14,16 +14,14 @@
 
 [inline-code-attrs-start title = 'updateTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f1c9b';
-const packageId: string = 'pkg_premium_v2';
-const customConfig: CustomConfigParameters = { enableRichText: true, maxImagesPerComment: 5 };
+const tenantId: string = "tenant_3b7f9d-prod";
+const id: string = "pkg_enterprise_2026";
 const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: 'Premium Moderation Package',
-  enabled: true,
-  description: 'Adds advanced spam rules, image moderation and priority support',
-  customConfigParameters: customConfig
-};
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, packageId, updateTenantPackageBody);
+  name: "Enterprise Plus",
+  isActive: true,
+  // 선택적 필드는 의도적으로 생략됨(예: description, limits)
+} as UpdateTenantPackageBody;
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

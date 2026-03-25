@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 型別 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | skip | f64 | 否 |  |
@@ -13,12 +13,12 @@
 
 [inline-code-attrs-start title = 'get_tenant_packages 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let _packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
+    let packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

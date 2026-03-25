@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Response
 
@@ -34,12 +35,13 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
+    username_starts_with = 'username_starts_with_example' # str |  (optional)
     mention_group_ids = ['mention_group_ids_example'] # List[str] |  (optional)
     sso = 'sso_example' # str |  (optional)
+    search_section = 'search_section_example' # str |  (optional)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

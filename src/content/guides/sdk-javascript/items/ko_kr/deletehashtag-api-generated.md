@@ -1,10 +1,10 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tag | string | 예 |  |
-| tenantId | string | 아니요 |  |
-| deleteHashTagRequest | DeleteHashTagRequest | 아니요 |  |
+| tenantId | string | 아니오 |  |
+| deleteHashTagRequest | DeleteHashTagRequest | 아니오 |  |
 
 ## 응답
 
@@ -14,10 +14,10 @@
 
 [inline-code-attrs-start title = 'deleteHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = 'breaking-news';
-const tenantId: string = 'tenant_42';
-const deleteReq: DeleteHashTagRequest = { removedBy: 'moderator_jane', reason: 'off-topic for this community', deleteAssociatedComments: true } as DeleteHashTagRequest;
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteReq);
+const tag: string = "breaking-news";
+const tenantId: string = "tenant_12345";
+const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
 [inline-code-end]
 
 ---

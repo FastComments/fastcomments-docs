@@ -1,10 +1,10 @@
 ### Swift Package Manager
 
-Dodajte sledeće u svoj `Package.swift` fajl:
+Dodajte sledeće u vaš fajl `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "0.0.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "1.2.1")
 ]
 ```
 

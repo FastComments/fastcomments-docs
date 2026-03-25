@@ -13,11 +13,11 @@ Vraća: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'Primjer getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // neobavezni parametar upita
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Ako bi postojao opcionalni parametar, npr. includeHidden, mogao bi se koristiti ovako:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

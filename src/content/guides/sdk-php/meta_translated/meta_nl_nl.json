@@ -3,7 +3,7 @@
   "pageHeader": "FastComments PHP SDK",
   "itemsOrdered": [
     {
-      "name": "Installatie en gebruik",
+      "name": "Installatie & Gebruik",
       "file": "installation-usage-readme-generated.md",
       "subCat": "Aan de slag",
       "type": "readme"
@@ -47,25 +47,25 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Auditlogboeken",
+      "subCat": "Auditlogs",
       "type": "api"
     },
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde opmerkingen",
+      "subCat": "Controleer geblokkeerde reacties",
       "type": "api"
     },
     {
@@ -305,67 +305,67 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Opmerking markeren",
+      "subCat": "Rapporteer reactie",
       "type": "api"
     },
     {
@@ -401,37 +401,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Moderators",
+      "subCat": "Moderatoren",
       "type": "api"
     },
     {
@@ -651,9 +651,15 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementen",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dagelijks gebruik van tenant",
+      "subCat": "Dagelijks gebruik tenant",
       "type": "api"
     },
     {
@@ -765,6 +771,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Afbeelding uploaden",
@@ -863,7 +893,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Gebruikersaanwezigheidsstatus",
+      "subCat": "Aanwezigheidsstatus gebruikers",
       "type": "api"
     },
     {

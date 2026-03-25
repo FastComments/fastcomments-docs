@@ -1,12 +1,13 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
-| usernameStartsWith | string | query | Sí |  |
+| usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Respuesta
 
@@ -22,26 +23,29 @@ from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para ver la lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Abra un contexto con una instancia del cliente de la API
+# Entre en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Cree una instancia de la clase API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
+    username_starts_with = 'username_starts_with_example' # str |  (opcional)
     mention_group_ids = ['mention_group_ids_example'] # List[str] |  (opcional)
     sso = 'sso_example' # str |  (opcional)
+    search_section = 'search_section_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->search_users: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,8 +1,9 @@
-启用或禁用页面的通知。当用户订阅页面时，会为新的根评论创建通知，并且
+---
+为页面启用或禁用通知。当用户订阅页面时，会为新的根评论创建通知，并且还
 
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | url_id | String | 是 |  |
@@ -14,3 +15,23 @@
 ## 响应
 
 返回: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_status_200_response.rs)
+
+## 示例
+
+[inline-code-attrs-start title = 'update_user_notification_page_subscription_status 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<UpdateUserNotificationStatus200Response, Error> {
+    let params = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: String::from("article-12345"),
+        url: String::from("https://news.acme.com/articles/2026/03/25/advances-in-ai"),
+        page_title: String::from("Advances in AI: What to Expect in 2026"),
+        subscribed_or_unsubscribed: String::from("subscribed"),
+        sso: Some(String::from("user-jwt-xyz123")),
+    };
+    let response = update_user_notification_page_subscription_status(&configuration, params).await?;
+    Ok(response)
+}
+[inline-code-end]
+
+---

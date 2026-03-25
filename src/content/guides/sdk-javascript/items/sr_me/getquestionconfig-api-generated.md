@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -11,17 +11,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getQuestionConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-47';
-const questionId: string = 'q-2026-01-12-01';
-const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);
-function summarizeConfig(cfg: GetQuestionConfig200Response, includeMetadata?: boolean): QuestionConfig | undefined {
-  // includeMetadata је опционалан; имплементација изостављена ради краткоће
-  return undefined;
+const tenantId: string = 'acme-tenant-92';
+const id: string = 'question-2026-07-42';
+const response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
+
+function summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {
+  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';
 }
-const summarizedWithMeta: QuestionConfig | undefined = summarizeConfig(result, true);
-const summarizedDefault: QuestionConfig | undefined = summarizeConfig(result);
+
+const summary: string = summarize(response);
 [inline-code-end]
 
 ---

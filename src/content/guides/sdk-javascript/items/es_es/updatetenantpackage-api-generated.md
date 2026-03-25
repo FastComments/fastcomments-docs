@@ -1,10 +1,10 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
+| tenantId | string | Sí |  |
+| id | string | Sí |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Sí |  |
 
 ## Respuesta
 
@@ -14,16 +14,14 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f1c9b';
-const packageId: string = 'pkg_premium_v2';
-const customConfig: CustomConfigParameters = { enableRichText: true, maxImagesPerComment: 5 };
+const tenantId: string = "tenant_3b7f9d-prod";
+const id: string = "pkg_enterprise_2026";
 const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: 'Premium Moderation Package',
-  enabled: true,
-  description: 'Adds advanced spam rules, image moderation and priority support',
-  customConfigParameters: customConfig
-};
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, packageId, updateTenantPackageBody);
+  name: "Enterprise Plus",
+  isActive: true,
+  // campos opcionales omitidos intencionalmente (p. ej., description, limits)
+} as UpdateTenantPackageBody;
+const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]
 
 ---

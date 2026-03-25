@@ -1,29 +1,29 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| from_name | String | Да |  |
+| tenant_id | String | Da |  |
+| id | String | Da |  |
+| from_name | String | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'send_invite Примјер'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer send_invite'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: SendInviteParams = SendInviteParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "articles/2026/01/ai-news-12345".to_string(),
-    from_name: "Acme Newsroom".to_string(),
-    reply_to: Some("editorial@acme.com".to_string()),
-    message: Some("You have been invited to moderate comments on this article.".to_string()),
-};
-
-let invite_response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;
+async fn send_invite_example() -> Result<FlagCommentPublic200Response, Error> {
+    let params: SendInviteParams = SendInviteParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article-2026-03-25-modern-rust".to_string(),
+        from_name: "Acme Newsroom".to_string(),
+        message: Some("Please join the discussion on this article.".to_string()),
+    };
+    let response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
 
 ---

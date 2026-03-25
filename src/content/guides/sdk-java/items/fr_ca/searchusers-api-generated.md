@@ -1,12 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
-| usernameStartsWith | string | query | Oui |  |
+| usernameStartsWith | string | query | Non |  |
 | mentionGroupIds | array | query | Non |  |
 | sso | string | query | Non |  |
+| searchSection | string | query | Non |  |
 
 ## Réponse
 
@@ -16,7 +17,7 @@ Retourne : [`SearchUsers200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Exemple de searchUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes:
+// Importation des classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

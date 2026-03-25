@@ -1,11 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| replace_tenant_user_body | models::ReplaceTenantUserBody | Yes |  |
-| update_comments | String | No |  |
+| tenant_id | String | כן |  |
+| id | String | כן |  |
+| replace_tenant_user_body | models::ReplaceTenantUserBody | כן |  |
+| update_comments | String | לא |  |
 
 ## תגובה
 
@@ -13,22 +13,20 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של replace_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-replace_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let replace_tenant_user_body: models::ReplaceTenantUserBody = models::ReplaceTenantUserBody {
-    external_id: Some("acct-834".to_string()),
-    email: Some("jane.doe@acme-news.com".to_string()),
-    display_name: Some("Jane Doe".to_string()),
-    role: Some("moderator".to_string()),
-};
 let params: ReplaceTenantUserParams = ReplaceTenantUserParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    id: "user-834".to_string(),
-    replace_tenant_user_body,
+    id: "user-42".to_string(),
+    replace_tenant_user_body: models::ReplaceTenantUserBody {
+        user_id: "user-42".to_string(),
+        display_name: "Jane Doe".to_string(),
+        email: "jane.doe@acme.com".to_string(),
+        roles: vec!["moderator".to_string()],
+    },
     update_comments: Some("true".to_string()),
 };
-let resp: FlagCommentPublic200Response = replace_tenant_user(cfg, params).await?;
+let response: FlagCommentPublic200Response = replace_tenant_user(&configuration, params).await?
 [inline-code-end]
 
 ---

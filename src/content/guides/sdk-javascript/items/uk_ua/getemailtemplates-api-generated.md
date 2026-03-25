@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| skip | number | Ні |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Відповідь
 
@@ -13,10 +13,14 @@
 
 [inline-code-attrs-start title = 'Приклад getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f4d2b7c';
-const responseWithoutSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
-const skip: number = 20;
-const responseWithSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
+async function main(): Promise<void> {
+  const tenantId: string = 'tenant_5f3a9c2b';
+  const templates: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
+  const skip: number = 20;
+  const pagedTemplates: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
+  console.log(templates, pagedTemplates);
+}
+main();
 [inline-code-end]
 
 ---

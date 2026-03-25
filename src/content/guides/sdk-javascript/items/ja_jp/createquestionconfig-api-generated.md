@@ -2,30 +2,26 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | はい |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## レスポンス
 
-戻り値: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfig200Response.ts)
+返却値: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfig200Response.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'createQuestionConfig の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_live_7f8b3c2a";
-const customOptions: QuestionConfigCustomOptionsInner[] = [
-  { value: "under18", label: "Under 18" },
-  { value: "18-24", label: "18-24" },
-  { value: "25-34", label: "25-34", defaultSelected: true }
-];
+const tenantId: string = "tenant_9f8b2c";
+const option: QuestionConfigCustomOptionsInner = { id: "opt_yes", label: "Yes, helpful", value: "yes" };
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  key: "age_range",
-  label: "What is your age range?",
-  required: false, // 任意: 省略した場合と含めた場合の任意フィールドを示す
-  renderingType: QuestionRenderingType.Dropdown,
-  options: customOptions,
-  whenSave: QuestionWhenSave.Always
+  title: "Article usefulness",
+  prompt: "Was this article helpful?",
+  type: "singleChoice",
+  required: false, // オプションのパラメータの例
+  options: [option],
+  saveBehavior: "immediate"
 };
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]

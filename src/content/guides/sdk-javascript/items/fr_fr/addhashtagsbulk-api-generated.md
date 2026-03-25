@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenantId | string | Non |  |
 | bulkCreateHashTagsBody | BulkCreateHashTagsBody | Non |  |
@@ -11,20 +11,35 @@ Renvoie: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomm
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple pour addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_3f2b9a';
-  const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-    tags: [
-      { name: 'performance', description: 'Comments about site performance', visibleToModeratorsOnly: false },
-      { name: 'feature-request', description: 'Requests for new features', visibleToModeratorsOnly: true }
-    ]
-  };
-  const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-  const resultWithNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
-  console.log(result, resultWithNoTenant);
-})();
+// Crée l'identifiant du locataire (paramètre optionnel)
+const tenantId: string = "tenant_9f8c2b7a";
+
+// Préparer les entrées de tags individuelles
+const tag1: BulkCreateHashTagsBodyTagsInner = {
+  name: "product-feedback",
+  label: "Product Feedback",
+  color: "#1f8a70",
+  description: "User suggestions and enhancement requests",
+  isActive: true
+};
+
+const tag2: BulkCreateHashTagsBodyTagsInner = {
+  name: "bug-report",
+  label: "Bug Report",
+  color: "#d64545",
+  description: "User-reported defects and issues",
+  isActive: true
+};
+
+// Corps pour la création en masse (paramètre optionnel)
+const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
+  tags: [tag1, tag2]
+};
+
+// Appeler la fonction asynchrone globale et affecter le résultat typé
+const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
 [inline-code-end]
 
 ---

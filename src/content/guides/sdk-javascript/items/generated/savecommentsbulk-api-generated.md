@@ -17,19 +17,26 @@ Returns: `Array<SaveComment200Response`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_922';
-const mention: CommentUserMentionInfo = { userId: 'u-204', displayName: 'Maria Gomez', username: 'maria.g' };
-const hashtag: CommentUserHashTagInfo = { tag: 'frontend', indices: [45, 53] };
-const createCommentParams: Array<CreateCommentParams> = [
+const tenantId: string = 'acme-corp-01';
+const mentions1: CommentUserMentionInfo[] = [{ userId: 'user-123', displayName: 'Jane Doe' }];
+const hashtags1: CommentUserHashTagInfo[] = [{ tag: 'typescript' }];
+const createCommentParams: CreateCommentParams[] = [
   {
-    content: 'I replaced the legacy DOM manipulation with a small component — performance improved by ~30%.',
-    authorName: 'Samuel Park',
-    authorEmail: 'samuel.park@devteam.io',
-    permalink: '/guides/performance-tuning',
-    createdAt: '2026-01-11T09:15:00Z',
-    userMentions: [mention],
-    userHashtags: [hashtag]
+    content: 'Great insights on async/await patterns.',
+    authorName: 'John Smith',
+    authorEmail: 'john.smith@acme.com',
+    externalId: 'comment-001',
+    createdAt: '2026-03-25T10:15:00Z',
+    userMentions: mentions1,
+    userHashTags: hashtags1
+  },
+  {
+    content: 'I prefer using Promise.all for bulk ops.',
+    authorName: 'Emily Turner',
+    authorEmail: 'emily.turner@acme.com',
+    externalId: 'comment-002',
+    createdAt: '2026-03-25T10:20:00Z'
   }
 ];
-const responses: Array<SaveComment200Response> = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);
+const result: SaveComment200Response[] = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);
 [inline-code-end]

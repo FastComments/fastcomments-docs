@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 
@@ -10,10 +10,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-78f2';
-const emailTemplates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+const tenantId: string = 'tenant_acme_eu_01';
+const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+console.log('Email template definitions loaded for', tenantId, templates);
 [inline-code-end]
 
 ---

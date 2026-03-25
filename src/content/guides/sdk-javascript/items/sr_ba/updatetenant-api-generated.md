@@ -1,6 +1,6 @@
-## Parameters
+## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -12,26 +12,15 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_01H4ZQ7KABCD";
-const id: string = "site_9f8e7d6c";
-const apiDomainConfiguration: APIDomainConfiguration = {
-  primaryDomain: "comments.acme.com",
-  allowSubdomains: true
-};
-const billingInfo: BillingInfo = {
-  planName: "Business",
-  billingContactEmail: "billing@acme.com",
-  seats: 25
-};
+const tenantId: string = "tenant_4821";
+const id: string = "flag_7b9e";
+const billingInfo: BillingInfo | undefined = undefined; // opcionalno, izostavite da zadržite trenutne informacije o naplati
 const updateTenantBody: UpdateTenantBody = {
-  displayName: "Acme Corporation Comments",
-  apiDomainConfiguration,
-  billingInfo, // prikazan opcioni parametar
-  enableModeration: true
+  name: "Acme News Comments",
+  defaultDomain: "comments.acme.com",
+  ...(billingInfo ? { billingInfo } : {})
 };
 const result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);
 [inline-code-end]
-
----

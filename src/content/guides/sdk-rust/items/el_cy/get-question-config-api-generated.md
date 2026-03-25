@@ -5,7 +5,7 @@
 | tenant_id | String | Ναι |  |
 | id | String | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_200_response.rs)
 
@@ -13,19 +13,14 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_config() -> Result<(), Error> {
-    let tenant_env: Option<&str> = Some("prod");
-    let tenant_id: String = match tenant_env {
-        Some(env) => format!("acme-corp-tenant-{}", env),
-        None => "acme-corp-tenant".to_string(),
-    };
+async fn run_get_question_config() -> Result<GetQuestionConfig200Response, Error> {
+    let tenant: Option<String> = Some("acme-corp-tenant".to_string());
     let params: GetQuestionConfigParams = GetQuestionConfigParams {
-        tenant_id,
-        id: "news/article/2026/01/12-politics".to_string(),
+        tenant_id: tenant.unwrap(),
+        id: "news/article/2026/03/25/space-launch".to_string(),
     };
     let response: GetQuestionConfig200Response = get_question_config(&configuration, params).await?;
-    let _status: ApiStatus = response.0;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

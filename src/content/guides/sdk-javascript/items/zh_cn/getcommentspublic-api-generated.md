@@ -4,8 +4,8 @@ urlId
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 | page | number | 否 |  |
@@ -37,6 +37,44 @@ urlId
 
 ## 响应
 
-返回: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublic200Response.ts)
+返回：[`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublic200Response.ts)
+
+## 示例
+
+[inline-code-attrs-start title = 'getCommentsPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_eu-west_01';
+const urlId: string = 'https://www.financialtimes.com/articles/2026/market-update-q1';
+const response: GetCommentsPublic200Response = await getCommentsPublic(
+  tenantId,
+  urlId,
+  2,
+  undefined,
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.tokenPayload.signature',
+  undefined,
+  0,
+  50,
+  5,
+  true,
+  undefined,
+  true,
+  false,
+  true,
+  'en-US',
+  'reactions,moderation',
+  false,
+  true,
+  true,
+  3,
+  false,
+  undefined,
+  'performance',
+  ['feature','fastcomments'],
+  'user_9876',
+  undefined,
+  undefined,
+  undefined
+);
+[inline-code-end]
 
 ---

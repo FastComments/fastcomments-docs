@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -13,13 +13,14 @@
 
 [inline-code-attrs-start title = 'delete_email_template 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_template() -> Result<(), Error> {
     let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
     };
+    let confirm_deletion: Option<bool> = Some(true);
     let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
 

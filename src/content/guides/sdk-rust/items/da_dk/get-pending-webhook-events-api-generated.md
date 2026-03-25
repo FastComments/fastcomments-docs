@@ -1,7 +1,8 @@
+---
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
+| Navn | Type | Obligatorisk | Beskrivelse |
+|------|------|--------------|-------------|
 | tenant_id | String | Ja |  |
 | comment_id | String | Nej |  |
 | external_id | String | Nej |  |
@@ -18,17 +19,19 @@ Returnerer: [`GetPendingWebhookEvents200Response`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'get_pending_webhook_events Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPendingWebhookEventsParams = GetPendingWebhookEventsParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    comment_id: Some("cmt-12345".to_string()),
-    external_id: Some("article-98765".to_string()),
-    event_type: Some("comment.create".to_string()),
-    domain: Some("news.example.com".to_string()),
-    attempt_count_gt: Some(1.0),
-    skip: Some(0.0),
-};
-
-let pending: GetPendingWebhookEvents200Response = get_pending_webhook_events(&configuration, params).await?;
+async fn fetch_pending_webhook_events() -> Result<GetPendingWebhookEvents200Response, Error> {
+    let params: GetPendingWebhookEventsParams = GetPendingWebhookEventsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: Some("cmt-2026-04-01-001".to_string()),
+        external_id: Some("news/article-42".to_string()),
+        event_type: Some("comment.created".to_string()),
+        domain: Some("news.example.com".to_string()),
+        attempt_count_gt: Some(1.0),
+        skip: Some(0.0),
+    };
+    let response: GetPendingWebhookEvents200Response = get_pending_webhook_events(&configuration, params).await?;
+    Ok(response)
+}
 [inline-code-end]
 
 ---

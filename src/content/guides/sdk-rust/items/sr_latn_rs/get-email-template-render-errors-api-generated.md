@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| skip | f64 | No |  |
+| tenant_id | String | Da |  |
+| id | String | Da |  |
+| skip | f64 | Ne |  |
 
 ## Odgovor
 
@@ -14,13 +14,13 @@ Vraća: [`GetEmailTemplateRenderErrors200Response`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'get_email_template_render_errors Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_call() -> Result<(), Error> {
+async fn run_example() -> Result<(), Error> {
     let params: GetEmailTemplateRenderErrorsParams = GetEmailTemplateRenderErrorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
         skip: Some(10.0),
     };
-    let _response: GetEmailTemplateRenderErrors200Response =
+    let response: GetEmailTemplateRenderErrors200Response =
         get_email_template_render_errors(&configuration, params).await?;
     Ok(())
 }

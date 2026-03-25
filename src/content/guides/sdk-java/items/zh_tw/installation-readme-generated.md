@@ -1,6 +1,6 @@
 ### Maven
 
-將 Repsy 儲存庫新增到您專案的 POM：
+將 Repsy 儲存庫新增到您專案的 POM 檔案：
 
 ```xml
 <repositories>
@@ -12,29 +12,29 @@
 </repositories>
 ```
 
-然後新增您需要的相依項：
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- API 用戶端 -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- 核心函式庫（包含 SSO） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub 函式庫（用於即時事件） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,26 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:0.0.2"
+    // API 用戶端
+    implementation "com.fastcomments:client:1.3.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    // 核心函式庫（包含 SSO）
+    implementation "com.fastcomments:core:1.3.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    // PubSub 函式庫（用於即時事件）
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
 ### Library Contents
 
-此函式庫包含三個模組。自動產生的 API 用戶端、包含手工撰寫工具以便更容易使用 API 的核心 Java 函式庫，以及用於訂閱變更串流的 `pubsub` 模組。
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API 用戶端函式庫文件](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [核心函式庫文件，包含 SSO 範例](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub 函式庫文件](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 公開與受保護的 API
 
-對於 API 用戶端，有兩個類別，`DefaultApi` 與 `PublicApi`。`DefaultApi` 包含需要您 API 金鑰的方法，而 `PublicApi` 包含可直接從瀏覽器/行動裝置等發出且不需驗證的 api 呼叫。
+對於 API 用戶端，有兩個類別，`DefaultApi` 和 `PublicApi`。`DefaultApi` 包含需要您的 API 金鑰的方法，而 `PublicApi` 包含可以直接從瀏覽器／行動裝置等在未經驗證的情況下呼叫的 API。

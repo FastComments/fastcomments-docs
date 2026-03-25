@@ -1,10 +1,10 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
-| redirect_url | String | 아니요 |  |
+| redirect_url | String | 아니오 |  |
 
 ## 응답
 
@@ -12,13 +12,13 @@
 
 ## 예제
 
-[inline-code-attrs-start title = 'send_login_link 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'send_login_link Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_send_login_link() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "jane.doe@acme.com".to_string(),
-        redirect_url: Some("https://acme.example.com/dashboard".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("user-98765"),
+        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
     };
     let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
     Ok(response)

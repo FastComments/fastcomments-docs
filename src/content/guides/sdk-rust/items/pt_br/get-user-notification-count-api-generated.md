@@ -1,12 +1,27 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Sim |  |
 | sso | String | Não |  |
 
 ## Resposta
 
 Retorna: [`GetUserNotificationCount200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notification_count_200_response.rs)
+
+## Exemplo
+
+[inline-code-attrs-start title = 'Exemplo de get_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example_user_notification_count() -> Result<(), Error> {
+    let params: GetUserNotificationCountParams = GetUserNotificationCountParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        sso: Some(String::from("sso-jwt-abc123")),
+    };
+    let _response: GetUserNotificationCount200Response =
+        get_user_notification_count(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]
 
 ---

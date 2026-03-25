@@ -13,8 +13,10 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-8a9c2b';
-const packageId: string = 'pkg-47f3c9';
+const tenantId: string = 'tenant_acme_corp_987';
+const packageId: string = 'pkg_pro_2026_01';
+type DeleteOptions = { force?: boolean; notify?: boolean };
+const options: DeleteOptions = { force: true }; // parametri opzionali dimostrati
 const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 

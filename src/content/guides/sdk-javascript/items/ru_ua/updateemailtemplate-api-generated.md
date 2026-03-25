@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -14,15 +14,14 @@
 
 [inline-code-attrs-start title = 'Пример updateEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const id: string = 'email_tpl_42b7a9';
+const tenantId: string = "tenant_76a4b2";
+const id: string = "template_9f3c1e";
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  name: 'Comment Flag Notification',
-  subject: 'A comment was flagged on acme.com',
-  html: '<p>A comment by {{commenterName}} was flagged. Review at {{moderationUrl}}</p>',
-  replyTo: 'noreply@acme.com', // необязательное поле (демонстрация)
-  enabled: true,
-  customConfig: { priority: 'high' } // необязательные пользовательские параметры
+  name: "Comment Flag Notification",
+  subject: "A comment was flagged on your-site.com",
+  bodyHtml: "<p>Admin,</p><p>User \{{commenterName}} flagged a comment: “\{{commentText}}”</p>",
+  isEnabled: true,
+  description: "Email sent to moderators when a comment is flagged (optional field included)"
 };
-const response: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
+const result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
 [inline-code-end]

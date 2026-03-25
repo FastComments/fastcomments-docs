@@ -20,21 +20,21 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Ядро библиотеки (включает SSO) -->
+    <!-- Библиотека Core (включает SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
     <!-- Библиотека PubSub (для событий в реальном времени) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // Клиент API
-    implementation "com.fastcomments:client:0.0.2"
+    implementation "com.fastcomments:client:1.3.1"
     
-    // Ядро библиотеки (включает SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    // Библиотека Core (включает SSO)
+    implementation "com.fastcomments:core:1.3.1"
     
     // Библиотека PubSub (для событий в реальном времени)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
-### Library Contents
+### Содержимое библиотеки
 
 This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
 to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [Документация клиентской библиотеки API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документация основной библиотеки, включая примеры SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документация библиотеки API-клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация Core-библиотеки, включая примеры SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документация библиотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Публичные и защищённые API
 
 For the API client, there are two classes, `DefaultApi` and `PublicApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
 that can be made directly from a browser/mobile device/etc without authentication.

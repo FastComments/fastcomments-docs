@@ -1,7 +1,7 @@
 ---
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | skip | number | Nie |  |
@@ -12,11 +12,11 @@ Zwraca: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastco
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład użycia getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42a7b9';
-const firstPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const secondPage: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 50);
+const tenantId: string = "tenant_acme_9876";
+const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
 [inline-code-end]
 
 ---

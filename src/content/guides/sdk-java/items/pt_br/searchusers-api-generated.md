@@ -1,12 +1,13 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
-| usernameStartsWith | string | query | Sim |  |
+| usernameStartsWith | string | query | Não |  |
 | mentionGroupIds | array | query | Não |  |
 | sso | string | query | Não |  |
+| searchSection | string | query | Não |  |
 
 ## Resposta
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

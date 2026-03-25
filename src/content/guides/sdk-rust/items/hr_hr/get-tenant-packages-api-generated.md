@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | skip | f64 | Ne |  |
@@ -11,14 +11,16 @@ Vraća: [`GetTenantPackages200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_packages Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let _packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
+    let packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
+
+---

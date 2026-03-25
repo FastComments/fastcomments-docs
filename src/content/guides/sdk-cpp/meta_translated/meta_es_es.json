@@ -1,6 +1,6 @@
 {
   "name": "SDK de C++",
-  "pageHeader": "FastComments SDK de C++",
+  "pageHeader": "SDK de FastComments para C++",
   "itemsOrdered": [
     {
       "name": "Requisitos",
@@ -11,7 +11,7 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Comenzando",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Realizar llamadas API: Síncronas vs Asíncronas",
+      "name": "Realizar llamadas a la API: Sincrónicas vs Asíncronas",
       "file": "making-api-calls-synchronous-vs-asynchronous-readme-generated.md",
       "subCat": "Referencia de API",
       "type": "readme"
@@ -39,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Documentación para fastcomments",
+      "name": "Documentación de FastComments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Agregar/Agregar datos",
+      "name": "Agregación",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregación",
       "type": "api"
@@ -57,13 +57,13 @@
       "type": "api"
     },
     {
-      "name": "Bloquear desde comentario (público)",
+      "name": "Bloquear desde comentario público",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Bloquear desde comentario",
       "type": "api"
     },
     {
-      "name": "Desbloquear comentario (público)",
+      "name": "Desbloquear comentario público",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Bloquear desde comentario",
       "type": "api"
@@ -81,7 +81,7 @@
       "type": "api"
     },
     {
-      "name": "Crear comentario (público)",
+      "name": "Crear comentario público",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -93,7 +93,7 @@
       "type": "api"
     },
     {
-      "name": "Eliminar comentario (público)",
+      "name": "Eliminar comentario público",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -123,7 +123,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener comentarios (públicos)",
+      "name": "Obtener comentarios públicos",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -135,7 +135,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener nombres de usuarios que votaron",
+      "name": "Obtener nombres de usuarios que votaron el comentario",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -147,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "Fijar comentario",
+      "name": "Anclar comentario",
       "file": "pincomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -165,13 +165,13 @@
       "type": "api"
     },
     {
-      "name": "Desbloquear usuario por comentario",
+      "name": "Desbloquear usuario del comentario",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
     },
     {
-      "name": "Quitar marca al comentario",
+      "name": "Desmarcar comentario",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -183,7 +183,7 @@
       "type": "api"
     },
     {
-      "name": "Desfijar comentario",
+      "name": "Desanclar comentario",
       "file": "unpincomment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -225,7 +225,7 @@
       "type": "api"
     },
     {
-      "name": "Actualizar parcialmente configuración de dominio",
+      "name": "Modificar parcialmente configuración de dominio",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
@@ -261,13 +261,13 @@
       "type": "api"
     },
     {
-      "name": "Obtener definiciones de plantillas de correo",
+      "name": "Obtener definiciones de plantilla de correo",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Plantillas de correo",
       "type": "api"
     },
     {
-      "name": "Obtener errores de renderizado de plantillas de correo",
+      "name": "Obtener errores de renderizado de plantilla de correo",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Plantillas de correo",
       "type": "api"
@@ -309,13 +309,13 @@
       "type": "api"
     },
     {
-      "name": "Crear publicación del feed (pública)",
+      "name": "Crear publicación del feed pública",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "Eliminar publicación del feed (pública)",
+      "name": "Eliminar publicación del feed pública",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -327,7 +327,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener publicaciones del feed (públicas)",
+      "name": "Obtener publicaciones del feed públicas",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -339,13 +339,13 @@
       "type": "api"
     },
     {
-      "name": "Obtener reacciones de usuarios (públicas)",
+      "name": "Obtener reacciones de usuario públicas",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "Reaccionar a publicación del feed (pública)",
+      "name": "Reaccionar a publicación del feed pública",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -357,13 +357,13 @@
       "type": "api"
     },
     {
-      "name": "Actualizar publicación del feed (pública)",
+      "name": "Actualizar publicación del feed pública",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "Marcar comentario (público)",
+      "name": "Marcar comentario público",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Marcar comentario",
       "type": "api"
@@ -375,7 +375,7 @@
       "type": "api"
     },
     {
-      "name": "Agregar hashtags en bloque",
+      "name": "Agregar hashtags en lote",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
@@ -393,7 +393,7 @@
       "type": "api"
     },
     {
-      "name": "Actualizar parcialmente hashtag",
+      "name": "Modificar parcialmente hashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
@@ -489,27 +489,27 @@
       "type": "api"
     },
     {
-      "name": "Actualizar parcialmente página",
+      "name": "Modificar parcialmente página",
       "file": "patchpage-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
     },
     {
-      "name": "Eliminar evento webhook pendiente",
+      "name": "Eliminar evento de webhook pendiente",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Eventos webhook pendientes",
+      "subCat": "Eventos de webhook pendientes",
       "type": "api"
     },
     {
-      "name": "Obtener conteo de eventos webhook pendientes",
+      "name": "Obtener conteo de eventos de webhook pendientes",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Eventos webhook pendientes",
+      "subCat": "Eventos de webhook pendientes",
       "type": "api"
     },
     {
-      "name": "Obtener eventos webhook pendientes",
+      "name": "Obtener eventos de webhook pendientes",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Eventos webhook pendientes",
+      "subCat": "Eventos de webhook pendientes",
       "type": "api"
     },
     {
@@ -603,7 +603,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener usuario SSO por correo electrónico",
+      "name": "Obtener usuario SSO por correo",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -621,7 +621,7 @@
       "type": "api"
     },
     {
-      "name": "Actualizar parcialmente usuario SSO",
+      "name": "Modificar parcialmente usuario SSO",
       "file": "patchssouser-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -647,6 +647,12 @@
     {
       "name": "Obtener suscripciones",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "Actualizar suscripción",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Suscripciones",
       "type": "api"
     },
@@ -765,25 +771,49 @@
       "type": "api"
     },
     {
+      "name": "Cambiar estado del ticket",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Crear ticket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Obtener ticket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Obtener tickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "Subir imagen",
       "file": "uploadimage-api-generated.md",
       "subCat": "Subir imagen",
       "type": "api"
     },
     {
-      "name": "Obtener progreso de insignia de usuario por ID",
+      "name": "Obtener progreso de insignia por ID",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "Progreso de insignias de usuario",
       "type": "api"
     },
     {
-      "name": "Obtener progreso de insignia de usuario por ID de usuario",
+      "name": "Obtener progreso de insignia por ID de usuario",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Progreso de insignias de usuario",
       "type": "api"
     },
     {
-      "name": "Obtener lista de progreso de insignias de usuario",
+      "name": "Obtener lista de progreso de insignias",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "Progreso de insignias de usuario",
       "type": "api"
@@ -843,13 +873,13 @@
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a comentarios de notificación del usuario",
+      "name": "Actualizar estado de suscripción a notificaciones de comentarios del usuario",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a páginas de notificación del usuario",
+      "name": "Actualizar estado de suscripción a notificaciones de página del usuario",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Notificaciones de usuario",
       "type": "api"
@@ -863,7 +893,7 @@
     {
       "name": "Obtener estados de presencia de usuario",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Estado de presencia del usuario",
+      "subCat": "Estado de presencia de usuario",
       "type": "api"
     },
     {

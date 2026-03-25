@@ -2,13 +2,13 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Не |  |
+| externalId | string | Не |  |
+| eventType | string | Не |  |
+| type | string | Не |  |
+| domain | string | Не |  |
+| attemptCountGT | number | Не |  |
 
 ## Одговор
 
@@ -16,29 +16,22 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_9c3b2b';
-  const commentId: string = 'cmt_f4a1b2';
-  const externalId: string = 'ext-789';
-  const eventType: string = 'comment.created';
-  const type: string = 'delivery';
-  const domain: string = 'app.example.com';
-  const attemptCountGT: number = 2;
-
-  const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
-    tenantId,
-    commentId,
-    externalId,
-    eventType,
-    type,
-    domain,
-    attemptCountGT
-  );
-
-  console.log(result);
-})();
+const tenantId: string = "tenant_8d3b7a2f";
+const commentId: string | undefined = "comment_79a2b";
+const eventType: string | undefined = "comment.created";
+const domain: string | undefined = "forum.acme-corp.com";
+const attemptCountGT: number | undefined = 1;
+const result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(
+  tenantId,
+  commentId,
+  undefined,
+  eventType,
+  undefined,
+  domain,
+  attemptCountGT
+);
 [inline-code-end]
 
 ---

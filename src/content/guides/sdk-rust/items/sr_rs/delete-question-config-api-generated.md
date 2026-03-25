@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
@@ -11,16 +11,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'delete_question_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример delete_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+pub async fn run_delete_question_config() -> Result<FlagCommentPublic200Response, Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-comments-config-2025".to_string(),
-        force: Some(true),
+        id: "question-config-8742".to_string(),
     };
     let response: FlagCommentPublic200Response = delete_question_config(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

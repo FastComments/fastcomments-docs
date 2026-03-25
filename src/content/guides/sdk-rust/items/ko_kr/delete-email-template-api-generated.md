@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | 예 |  |
+| id | String | 예 |  |
 
 ## 응답
 
@@ -13,13 +13,14 @@
 
 [inline-code-attrs-start title = 'delete_email_template 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_template() -> Result<(), Error> {
     let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
     };
+    let confirm_deletion: Option<bool> = Some(true);
     let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
 

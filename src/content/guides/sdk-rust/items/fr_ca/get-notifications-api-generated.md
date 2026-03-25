@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | user_id | String | Non |  |
@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Renvoie: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_200_response.rs)
+Renvoie : [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_200_response.rs)
 
 ## Exemple
 
@@ -19,17 +19,14 @@ Renvoie: [`GetNotifications200Response`](https://github.com/FastComments/fastcom
 [inline-code-start]
 async fn fetch_notifications() -> Result<(), Error> {
     let params: GetNotificationsParams = GetNotificationsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-1234".to_string()),
-        url_id: Some("news/politics/article-2026-01-12".to_string()),
-        from_comment_id: Some("cmt-98765".to_string()),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        user_id: Some("user-12345".to_owned()),
+        url_id: Some("news/article/2026/03/25/major-update".to_owned()),
+        from_comment_id: Some("cmt-98765".to_owned()),
         viewed: Some(false),
         skip: Some(0.0),
     };
     let notifications: GetNotifications200Response = get_notifications(&configuration, params).await?;
-    let _ = notifications;
     Ok(())
 }
 [inline-code-end]
-
----

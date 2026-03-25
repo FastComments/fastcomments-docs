@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | urlId | string | query | はい |  |
-| usernameStartsWith | string | query | はい |  |
+| usernameStartsWith | string | query | いいえ |  |
 | mentionGroupIds | array | query | いいえ |  |
 | sso | string | query | いいえ |  |
+| searchSection | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -21,11 +22,12 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
-let mentionGroupIds = ["inner_example"] // [String] |  (オプション)
-let sso = "sso_example" // String |  (オプション)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (任意)
+let mentionGroupIds = ["inner_example"] // [String] |  (任意)
+let sso = "sso_example" // String |  (任意)
+let searchSection = "searchSection_example" // String |  (任意)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return

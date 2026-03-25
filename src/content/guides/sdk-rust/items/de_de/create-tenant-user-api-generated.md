@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenant_id | String | Ja |  |
 | create_tenant_user_body | models::CreateTenantUserBody | Ja |  |
 
@@ -13,17 +13,18 @@ Gibt zurück: [`CreateTenantUser200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'create_tenant_user Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let create_tenant_user_body: models::CreateTenantUserBody = models::CreateTenantUserBody {
-    email: "jane.doe@acme.com".to_string(),
-    display_name: Some("Jane Doe".to_string()),
-    role: Some("moderator".to_string()),
-    external_id: Some("acme-12345".to_string()),
-    subscribed_to_digest: Some(false),
-};
 let params: CreateTenantUserParams = CreateTenantUserParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    create_tenant_user_body,
+    create_tenant_user_body: models::CreateTenantUserBody {
+        username: "jane.doe".to_string(),
+        email: "jane.doe@acme.com".to_string(),
+        display_name: Some("Jane Doe".to_string()),
+        roles: Some(vec!["reader".to_string(), "commenter".to_string()]),
+        locale: Some("en-US".to_string()),
+        is_verified: Some(true),
+    },
 };
+
 let response: CreateTenantUser200Response = create_tenant_user(&configuration, params).await?;
 [inline-code-end]
 

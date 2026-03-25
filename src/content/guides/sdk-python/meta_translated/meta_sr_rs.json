@@ -29,7 +29,7 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегирање",
+      "subCat": "Агрегација",
       "type": "api"
     },
     {
@@ -353,7 +353,7 @@
     {
       "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Означавање коментара",
+      "subCat": "Пријави коментар",
       "type": "api"
     },
     {
@@ -485,49 +485,49 @@
     {
       "name": "delete_pending_webhook_event",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "Чекајући вебхук догађаји",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_event_count",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "Чекајући вебхук догађаји",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "get_pending_webhook_events",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "Чекајући вебхук догађаји",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "create_question_config",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "delete_question_config",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "get_question_config",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "get_question_configs",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "update_question_config",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
@@ -635,6 +635,12 @@
     {
       "name": "get_subscriptions",
       "file": "get-subscriptions-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
+      "name": "update_subscription",
+      "file": "update-subscription-api-generated.md",
       "subCat": "Претплате",
       "type": "api"
     },
@@ -753,57 +759,81 @@
       "type": "api"
     },
     {
+      "name": "change_ticket_state",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "create_ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "get_ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "get_tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
-      "subCat": "Отпреми слику",
+      "subCat": "Отпремање слике",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_by_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Напредак ознаке корисника",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_by_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Напредак ознаке корисника",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_list",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Напредак ознаке корисника",
+      "subCat": "Напредак значке корисника",
       "type": "api"
     },
     {
       "name": "create_user_badge",
       "file": "create-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "delete_user_badge",
       "file": "delete-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "get_user_badge",
       "file": "get-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "get_user_badges",
       "file": "get-user-badges-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {
       "name": "update_user_badge",
       "file": "update-user-badge-api-generated.md",
-      "subCat": "Ознаке корисника",
+      "subCat": "Значке корисника",
       "type": "api"
     },
     {

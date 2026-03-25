@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,10 +13,11 @@
 
 [inline-code-attrs-start title = 'deleteEmailTemplate 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b2f6a-4b2f6a2d";
-const templateId: string = "email_template_9f8b7c3e";
+const tenantId: string = 'tenant_7f4c9d1e';
+const templateId: string = 'tmpl_welcome_2024-03';
+const notifyAdmin: boolean | undefined = true; // 可选参数示例
+
 const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
-const status: APIStatus | undefined = result?.status
 [inline-code-end]
 
 ---

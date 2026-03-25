@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenant_id | String | はい |  |
 | page | f64 | いいえ |  |
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'get_hash_tags の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTags200Response, Error> {
+async fn fetch_hash_tags() -> Result<GetHashTags200Response, Error> {
     let params: GetHashTagsParams = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(1.0_f64),
+        page: Some(1.0),
     };
     let response: GetHashTags200Response = get_hash_tags(&configuration, params).await?;
     Ok(response)

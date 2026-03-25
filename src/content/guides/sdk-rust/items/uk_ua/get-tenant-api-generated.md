@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
@@ -14,14 +13,14 @@
 
 [inline-code-attrs-start title = 'Приклад get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenant() -> Result<(), Error> {
+async fn run_get_tenant() -> Result<GetTenant200Response, Error> {
     let params: GetTenantParams = GetTenantParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("news/article"),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/site-42".to_string(),
+        expand: Some(vec!["domains".to_string(), "billing".to_string()]),
     };
-    let include_metadata: Option<bool> = Some(true);
-    let tenant_response: GetTenant200Response = get_tenant(&configuration, params).await?;
-    Ok(())
+    let tenant: GetTenant200Response = get_tenant(&configuration, params).await?;
+    Ok(tenant)
 }
 [inline-code-end]
 

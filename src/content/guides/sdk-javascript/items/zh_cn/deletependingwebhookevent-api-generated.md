@@ -13,10 +13,13 @@
 
 [inline-code-attrs-start title = 'deletePendingWebhookEvent 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4e2b';
-const pendingEventId: string = '9f7b6a8c-3b2a-4c0d-a8e5-1234567890ab';
-const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, pendingEventId);
-console.log(result);
+(async () => {
+  const tenantId: string = 'tenant_42f7c9b1';
+  const id: string = 'pending_webhook_ev_8f3b9a2d';
+  const reason?: string = undefined; // 可选参数示例（函数不需要）
+  const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

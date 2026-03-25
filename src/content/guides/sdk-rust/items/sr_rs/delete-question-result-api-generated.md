@@ -1,9 +1,9 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Одговор
 
@@ -11,16 +11,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример delete_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_question_result Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<(), Error> {
+async fn run_delete_question_result() -> Result<(), Error> {
     let params: DeleteQuestionResultParams = DeleteQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/12345/question/67890".to_string(),
-        dry_run: Some(false),
-        request_id: Some("req-20260112-7a3b".to_string()),
+        id: "qres-news/article-2026-03-25-9a8b7c".to_string(),
     };
     let response: FlagCommentPublic200Response = delete_question_result(&configuration, params).await?;
+    let _response = response;
     Ok(())
 }
 [inline-code-end]

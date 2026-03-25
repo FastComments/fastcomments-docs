@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -9,28 +9,26 @@
 
 ## Odgovor
 
-Vrne: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Vrača: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer update_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za update_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_user_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+async fn run_update_tenant_user(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {
     let params: UpdateTenantUserParams = UpdateTenantUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-78b2".to_string(),
+        id: "user-7b9f".to_string(),
         update_tenant_user_body: models::UpdateTenantUserBody {
-            username: "jdoe".to_string(),
-            display_name: "John Doe".to_string(),
-            email: "john.doe@acme.com".to_string(),
-            roles: vec!["moderator".to_string()],
-            suspended: false,
+            email: Some("jane.doe@acme.com".to_string()),
+            display_name: Some("Jane Doe".to_string()),
+            username: Some("jdoe".to_string()),
+            role: Some("moderator".to_string()),
         },
-        update_comments: Some("Promoted to moderator for community moderation".to_string()),
+        update_comments: Some("Promoted to moderator to handle flagged comments".to_string()),
     };
-    let response: FlagCommentPublic200Response = update_tenant_user(configuration, params).await?;
-    println!("updated user response status: {:?}", response);
-    Ok(())
+    let response = update_tenant_user(configuration, params).await?;
+    Ok(response)
 }
 [inline-code-end]
 

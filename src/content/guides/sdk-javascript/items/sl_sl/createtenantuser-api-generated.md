@@ -1,25 +1,24 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantUserBody | CreateTenantUserBody | Da |  |
 
 ## Odgovor
 
-Vrača: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
+Vrne: [`CreateTenantUser200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUser200Response.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9a8c7e4b";
+const tenantId: string = 'tenant_6f4b2c';
 const createTenantUserBody: CreateTenantUserBody = {
-  email: "julia.smith@acme-corp.com",
-  displayName: "Julia Smith",
-  sendInviteEmail: true, // prikazan neobvezen parameter
-  locale: "en-US",
-  metadata: { department: "Customer Success" }
+  email: 'sara.kim@example.com',
+  displayName: 'Sara Kim',
+  role: 'moderator',
+  notifyOnMentions: true
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]

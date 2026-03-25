@@ -1,29 +1,29 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| user_id | String | Не |  |
-| anon_user_id | String | Не |  |
+| tenant_id | String | Da |  |
+| url_id | String | Da |  |
+| user_id | String | Ne |  |
+| anon_user_id | String | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_votes_for_user_200_response.rs)
+Vraća: [`GetVotesForUser200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_votes_for_user_200_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример get_votes_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_votes_for_user Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_votes() -> Result<GetVotesForUser200Response, Error> {
-    let params = GetVotesForUserParams {
+async fn example_get_votes_for_user() -> Result<(), Error> {
+    let params: GetVotesForUserParams = GetVotesForUserParams {
         tenant_id: String::from("acme-corp-tenant"),
-        url_id: String::from("news/2026/01/12/breaking-tech"),
-        user_id: Some(String::from("user-78a3")),
-        anon_user_id: Some(String::from("anon-4f2b")),
+        url_id: String::from("news/article-2026-03-fastcomments-launch"),
+        user_id: Some(String::from("user_12345")),
+        anon_user_id: Some(String::from("anon_9f2e7b")),
     };
-    let response: GetVotesForUser200Response = get_votes_for_user(&configuration, params).await?;
-    Ok(response)
+    let votes: GetVotesForUser200Response = get_votes_for_user(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,12 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
-| usernameStartsWith | string | query | 是 |  |
+| usernameStartsWith | string | query | 否 |  |
 | mentionGroupIds | array | query | 否 |  |
 | sso | string | query | 否 |  |
+| searchSection | string | query | 否 |  |
 
 ## 响应
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -50,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

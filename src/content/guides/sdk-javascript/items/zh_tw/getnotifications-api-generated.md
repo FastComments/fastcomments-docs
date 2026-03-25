@@ -1,6 +1,7 @@
+---
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | userId | string | 否 |  |
@@ -12,23 +13,20 @@
 
 ## 回應
 
-回傳：[`GetNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotifications200Response.ts)
+回傳: [`GetNotifications200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotifications200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getNotifications 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8f3b1a2c';
-  const userId: string = 'user_42';
-  const urlId: string = 'https://news.example.com/articles/2026/01/11/comment-thread';
-  const fromCommentId: string = 'cmt_9a7b';
-  const viewed: boolean = false;
-  const type: string = 'mention';
-  const skip: number = 0;
-  const response: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);
-  console.log(response);
-})();
+const tenantId: string = "tenant_84b3f2";
+const userId: string = "user_1279";
+const urlId: string = "https://www.example.com/articles/2026/03/25/new-feature";
+const fromCommentId: string = "cmt_5421";
+const viewed: boolean = false;
+const type: string = "mention";
+const skip: number = 0;
+const notifications: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);
 [inline-code-end]
 
 ---

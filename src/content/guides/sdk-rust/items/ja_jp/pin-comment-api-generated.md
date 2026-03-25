@@ -1,15 +1,27 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| comment_id | String | はい |  |
-| broadcast_id | String | はい |  |
-| sso | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| sso | String | No |  |
 
 ## レスポンス
 
-返却値: [`PinComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pin_comment_200_response.rs)
+戻り値: [`PinComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pin_comment_200_response.rs)
+
+## 例
+
+[inline-code-attrs-start title = 'pin_comment の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let params: PinCommentParams = PinCommentParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    comment_id: "cmt-987654321".to_string(),
+    broadcast_id: "news/article/2026-03-25".to_string(),
+    sso: Some("user-12345-ssotoken".to_string()),
+};
+let response: PinComment200Response = pin_comment(&configuration, params).await?;
+[inline-code-end]
 
 ---

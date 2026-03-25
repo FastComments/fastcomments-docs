@@ -1,26 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| meta | String | Не |  |
-| skip | f64 | Не |  |
+| tenant_id | String | Da |  |
+| meta | String | Ne |  |
+| skip | f64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_200_response.rs)
+Vraća: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_200_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_tenants Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenants Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetTenantsParams = GetTenantsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        meta: Some(String::from("include=domains,settings")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        meta: Some("news/article".to_string()),
         skip: Some(10.0),
     };
     let response: GetTenants200Response = get_tenants(&configuration, params).await?;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

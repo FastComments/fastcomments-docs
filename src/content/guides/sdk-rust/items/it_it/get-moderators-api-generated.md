@@ -11,15 +11,14 @@ Restituisce: [`GetModerators200Response`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetModeratorsParams = GetModeratorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
-    let _moderators = moderators;
+    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

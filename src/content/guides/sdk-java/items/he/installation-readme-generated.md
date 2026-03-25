@@ -1,6 +1,6 @@
 ### Maven
 
-הוסף את מאגר Repsy ל-POM של הפרויקט שלך:
+הוסף את המאגר Repsy ל-POM של הפרויקט שלך:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-לאחר מכן הוסף את התלויות הדרושות:
+לאחר מכן הוסף את התלויות שאתה צריך:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-הוסף את מאגר Repsy לקובץ build.gradle שלך:
+הוסף את המאגר Repsy לקובץ build.gradle שלך:
 
 ```groovy
 repositories {
@@ -53,24 +53,24 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:0.0.2"
+    implementation "com.fastcomments:client:1.3.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    implementation "com.fastcomments:core:1.3.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
-### Library Contents
+### תכולת הספרייה
 
-הספרייה מכילה שלושה מודולים. לקוח ה-API שנוצר, ספריית Java מרכזית המכילה כלי עזר שנכתבו ידנית כדי להקל על העבודה עם ה-API, והמודול `pubsub` שהוא ספרייה למנוי לזרמי שינויים.
+ספרייה זו מכילה שלושה מודולים. לקוח ה-API שנוצר, ספריית ה-Java הליבתית שמכילה כלים שנכתבו ידנית כדי להקל על העבודה עם ה-API, ומודול ה-`pubsub` שהוא ספרייה למנויים על זרמי שינויים.
 
 - [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [תיעוד הספרייה המרכזית, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [תיעוד ספריית ה-Core, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [תיעוד ספריית PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### ממשקי API ציבוריים לעומת מאובטחים
 
-ללקוח ה-API יש שתי מחלקות, `DefaultApi` ו-`PublicApi`. ה-`DefaultApi` מכילה שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכילה קריאות API שניתן לבצע ישירות מהדפדפן/מכשיר נייד/וכו' ללא אימות.
+עבור לקוח ה-API קיימות שתי מחלקות, `DefaultApi` ו-`PublicApi`. ה-`DefaultApi` מכיל שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכיל קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.

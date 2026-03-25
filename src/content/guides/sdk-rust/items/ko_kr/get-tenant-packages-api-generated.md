@@ -1,9 +1,9 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
-| skip | f64 | 아니오 |  |
+| skip | f64 | 아니요 |  |
 
 ## 응답
 
@@ -13,12 +13,12 @@
 
 [inline-code-attrs-start title = 'get_tenant_packages 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let _packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
+    let packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

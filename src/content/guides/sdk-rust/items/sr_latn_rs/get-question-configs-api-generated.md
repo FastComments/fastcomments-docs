@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | skip | f64 | Ne |  |
@@ -19,7 +19,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

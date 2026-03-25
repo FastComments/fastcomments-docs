@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -11,12 +12,12 @@ Vraća: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_email_templates Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_email_templates() -> Result<GetEmailTemplates200Response, Error> {
     let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
     let templates: GetEmailTemplates200Response = get_email_templates(&configuration, params).await?;
     Ok(templates)

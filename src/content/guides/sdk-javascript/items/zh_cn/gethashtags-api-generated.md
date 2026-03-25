@@ -13,10 +13,8 @@
 
 [inline-code-attrs-start title = 'getHashTags 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-7a9f";
-  const tagsPage1: GetHashTags200Response = await getHashTags(tenantId);
-  const tagsPage2: GetHashTags200Response = await getHashTags(tenantId, 2);
-  console.log(tagsPage1, tagsPage2);
-})();
+const tenantId: string = 'acme-tenant-42';
+const pageNumber: number = 2;
+const responseWithPage: GetHashTags200Response = await getHashTags(tenantId, pageNumber);
+const responseWithoutPage: GetHashTags200Response = await getHashTags(tenantId);
 [inline-code-end]

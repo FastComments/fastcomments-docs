@@ -17,18 +17,23 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'create_comment_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateCommentPublicParams = CreateCommentPublicParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    url_id: "news/article/2026/fastcomments-launch".to_string(),
-    broadcast_id: "live-2026-01-12".to_string(),
-    comment_data: models::CommentData {
-        content: "Excited about the launch — congrats to the team!".to_string(),
-        user_display_name: Some("Jane Doe".to_string()),
-        attachments: Vec::new(),
-        mentions: Vec::new(),
-    },
-    session_id: Some("sess_01HXYZabc123".to_string()),
-    sso: Some("sso-token-987654".to_string()),
-};
-let response: CreateCommentPublic200Response = create_comment_public(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: CreateCommentPublicParams = CreateCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/politics/2026-election-coverage".to_string(),
+        broadcast_id: "live-coverage-2026-03-25".to_string(),
+        comment_data: models::CommentData {
+            content: "Insightful piece — appreciate the depth of reporting.".to_string(),
+            author_name: Some("Jane Doe".to_string()),
+            author_email: Some("jane.doe@acme.com".to_string()),
+            is_anonymous: Some(false),
+            parent_id: None,
+            metadata: None,
+        },
+        session_id: Some("sess_6f7e8d9c".to_string()),
+        sso: Some("sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9".to_string()),
+    };
+    let resp: CreateCommentPublic200Response = create_comment_public(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

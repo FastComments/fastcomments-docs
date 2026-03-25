@@ -1,10 +1,9 @@
----
 Ativar ou desativar notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas
 para novos comentários raiz, e também
 
 ## Parâmetros
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Obrigatório | Descrição |
 |------|------|----------|-------------|
 | tenant_id | String | Sim |  |
 | url_id | String | Sim |  |
@@ -16,5 +15,23 @@ para novos comentários raiz, e também
 ## Resposta
 
 Retorna: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_status_200_response.rs)
+
+## Exemplo
+
+[inline-code-attrs-start title = 'Exemplo de update_user_notification_page_subscription_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<UpdateUserNotificationStatus200Response, Error> {
+    let params = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        url_id: String::from("article-12345"),
+        url: String::from("https://news.acme.com/articles/2026/03/25/advances-in-ai"),
+        page_title: String::from("Advances in AI: What to Expect in 2026"),
+        subscribed_or_unsubscribed: String::from("subscribed"),
+        sso: Some(String::from("user-jwt-xyz123")),
+    };
+    let response = update_user_notification_page_subscription_status(&configuration, params).await?;
+    Ok(response)
+}
+[inline-code-end]
 
 ---

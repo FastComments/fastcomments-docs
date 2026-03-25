@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
-| usernameStartsWith | string | query | כן |  |
+| usernameStartsWith | string | query | לא |  |
 | mentionGroupIds | array | query | לא |  |
 | sso | string | query | לא |  |
+| searchSection | string | query | לא |  |
 
 ## תגובה
 
@@ -22,19 +23,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string | 
-	mentionGroupIds := []string{"Inner_example"} // []string |  (אופציונלי)
-	sso := "sso_example" // string |  (אופציונלי)
+	tenantId := "tenantId_example" // מחרוזת | 
+	urlId := "urlId_example" // מחרוזת | 
+	usernameStartsWith := "usernameStartsWith_example" // מחרוזת |  (אופציונלי)
+	mentionGroupIds := []string{"Inner_example"} // []מחרוזת |  (אופציונלי)
+	sso := "sso_example" // מחרוזת |  (אופציונלי)
+	searchSection := "searchSection_example" // מחרוזת |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).SearchSection(searchSection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

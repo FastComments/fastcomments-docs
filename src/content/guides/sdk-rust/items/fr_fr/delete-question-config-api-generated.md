@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | id | String | Oui |  |
@@ -11,16 +11,15 @@ Renvoie : [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'delete_question_config Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de delete_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+pub async fn run_delete_question_config() -> Result<FlagCommentPublic200Response, Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-comments-config-2025".to_string(),
-        force: Some(true),
+        id: "question-config-8742".to_string(),
     };
     let response: FlagCommentPublic200Response = delete_question_config(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

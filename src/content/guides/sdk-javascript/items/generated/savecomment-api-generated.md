@@ -17,16 +17,16 @@ Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'saveComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_92b3c";
-const mention: CommentUserMentionInfo = { userId: "u842", displayName: "Alex Chen" };
-const hashtag: CommentUserHashTagInfo = { tag: "performance" };
+const tenantId: string = 'tenant_acme_001';
 const createCommentParams: CreateCommentParams = {
-  threadId: "article-frontend-performance-2026",
-  content: "Performance improvements look great — shipped this in prod and saw a 12% render time reduction.",
-  authorName: "Jordan Harper",
-  authorEmail: "jordan.harper@example.com",
-  mentions: [mention],
-  hashtags: [hashtag]
-};
-const result: SaveComment200Response = await saveComment(tenantId, createCommentParams, true, true, false, true);
+  content: 'Great article — helped me fix a production issue in minutes.',
+  url: 'https://app.acme.com/blog/performance-tips',
+  author: { name: 'Maya Chen', email: 'maya.chen@acme.com' },
+  metadata: { locale: 'en-US', appVersion: '4.2.1' }
+} as CreateCommentParams;
+const isLive: boolean = true;
+const doSpamCheck: boolean = true;
+const sendEmails: boolean = false;
+const populateNotifications: boolean = true;
+const result: SaveComment200Response = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
 [inline-code-end]

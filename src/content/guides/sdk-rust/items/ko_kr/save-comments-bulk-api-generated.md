@@ -1,17 +1,42 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+|------|------|------|------|
 | tenant_id | String | 예 |  |
 | create_comment_params | Vec<models::CreateCommentParams> | 예 |  |
-| is_live | bool | 아니요 |  |
-| do_spam_check | bool | 아니요 |  |
-| send_emails | bool | 아니요 |  |
-| populate_notifications | bool | 아니요 |  |
+| is_live | bool | 아니오 |  |
+| do_spam_check | bool | 아니오 |  |
+| send_emails | bool | 아니오 |  |
+| populate_notifications | bool | 아니오 |  |
 
 ## 응답
 
 반환: `Vec<models::SaveComment200Response>`
 
----
+## 예제
+
+[inline-code-attrs-start title = 'save_comments_bulk 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let params: SaveCommentsBulkParams = SaveCommentsBulkParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_comment_params: vec![
+        models::CreateCommentParams {
+            thread_id: "news/article-2026-election".to_string(),
+            text: "Insightful reporting — thanks for the coverage!".to_string(),
+            author_name: "Jane Doe".to_string(),
+            author_email: "jane.doe@example.com".to_string(),
+        },
+        models::CreateCommentParams {
+            thread_id: "news/article-2026-election".to_string(),
+            text: "I disagree with the premise of this piece.".to_string(),
+            author_name: "John Smith".to_string(),
+            author_email: "john.smith@example.org".to_string(),
+        },
+    ],
+    is_live: Some(true),
+    do_spam_check: Some(true),
+    send_emails: Some(false),
+    populate_notifications: Some(true),
+};
+let saved: Vec<models::SaveComment200Response> = save_comments_bulk(&configuration, params).await?;
+[inline-code-end]

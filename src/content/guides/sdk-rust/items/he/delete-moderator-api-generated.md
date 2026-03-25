@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | id | String | כן |  |
@@ -12,16 +12,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'delete_moderator דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-delete_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteModeratorParams = DeleteModeratorParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "moderator-1234".to_string(),
-        send_email: Some("true".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("moderator-9876"),
+        send_email: Some(String::from("true")),
     };
-    let response: FlagCommentPublic200Response = delete_moderator(configuration, params).await?;
-    Ok(response)
+
+    let response: FlagCommentPublic200Response = delete_moderator(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

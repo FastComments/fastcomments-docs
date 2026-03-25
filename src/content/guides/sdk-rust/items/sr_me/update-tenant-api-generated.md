@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_tenant_body | models::UpdateTenantBody | Yes |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| update_tenant_body | models::UpdateTenantBody | Да |  |
 
 ## Одговор
 
@@ -12,31 +12,29 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример update_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_tenant Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update_tenant() -> Result<FlagCommentPublic200Response, Error> {
-    let params: UpdateTenantParams = UpdateTenantParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: "site-42".to_owned(),
-        update_tenant_body: models::UpdateTenantBody {
-            name: Some("Acme Corporation".to_string()),
-            default_site: Some("news/article".to_string()),
-            allowed_origins: Some(vec![
-                "https://www.acme.com".to_string(),
-                "https://blog.acme.com".to_string(),
-            ]),
-            invite_only: Some(false),
-            api_domain_configuration: Some(ApiDomainConfiguration {
-                domain: "comments.acme.com".to_string(),
-                secure: Some(true),
-                ..Default::default()
-            }),
-            ..Default::default()
-        },
-    };
-    let response: FlagCommentPublic200Response = update_tenant(&configuration, params).await?;
-    Ok(response)
-}
+let params: UpdateTenantParams = UpdateTenantParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    id: "site-42".to_string(),
+    update_tenant_body: models::UpdateTenantBody {
+        name: Some("Acme Corporation".to_string()),
+        api_domain_configuration: Some(models::ApiDomainConfiguration {
+            primary_domain: Some("comments.acme.com".to_string()),
+            allowed_domains: Some(vec!["acme.com".to_string(), "www.acme.com".to_string()]),
+        }),
+        billing_info: Some(models::BillingInfo {
+            plan: Some("business".to_string()),
+            billing_contact_email: Some("billing@acme.com".to_string()),
+        }),
+        sso_security_level: Some(models::SsoSecurityLevel::Strict),
+        custom_config_parameters: Some(models::CustomConfigParameters {
+            max_comment_length: Some(2000),
+            enable_moderation_queue: Some(true),
+        }),
+    },
+};
+let response: FlagCommentPublic200Response = update_tenant(&configuration, params).await?;
 [inline-code-end]
 
 ---

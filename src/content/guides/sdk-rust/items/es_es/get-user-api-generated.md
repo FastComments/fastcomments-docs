@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
@@ -13,14 +13,13 @@ Devuelve: [`GetUser200Response`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'Ejemplo de get_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_user() -> Result<(), Error> {
-    let maybe_id: Option<String> = Some("user-6412".to_owned());
+pub async fn run_get_user_example() -> Result<(), Error> {
+    let tenant: Option<String> = Some("acme-corp-tenant".to_string());
     let params: GetUserParams = GetUserParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: maybe_id.unwrap(),
+        tenant_id: tenant.unwrap(),
+        id: "user-9f8b3c".to_string(),
     };
-    let user_response: GetUser200Response = get_user(&configuration, params).await?;
-    println!("{:#?}", user_response);
+    let user: GetUser200Response = get_user(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

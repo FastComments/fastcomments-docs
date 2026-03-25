@@ -1,14 +1,26 @@
-## Параметри
+---
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| userId | string | Ne |  |
+| anonUserId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagComment200Response.ts)
+Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagComment200Response.ts)
+
+## Primjer
+
+[inline-code-attrs-start title = 'Primjer unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'acme-tenant-001';
+const commentId: string = 'cmt_9f8e7d6c';
+const userId: string = 'user_72b4a1c9';
+const anonUserId: string = 'anon_3d2c1b0a';
+const response: FlagComment200Response = await unFlagComment(tenantId, commentId, userId, anonUserId);
+[inline-code-end]
 
 ---

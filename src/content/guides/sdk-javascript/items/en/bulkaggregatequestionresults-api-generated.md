@@ -14,20 +14,14 @@ Returns: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_48d3a2b1";
-const requestItem: BulkAggregateQuestionItem = {
-  questionId: "q-7890",
-  metric: "response_count",
-  timeBuckets: [
-    {
-      start: "2025-01-01T00:00:00Z",
-      end: "2025-01-07T23:59:59Z"
-    }
-  ]
-};
+const tenantId: string = "tenant_live_7c9d";
 const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-  items: [requestItem],
-  includeTotals: true
+  items: [
+    { questionId: "q_feedback_rating", includeSubQuestions: false, filters: { locale: "en-US" } }
+  ],
+  timeBuckets: [
+    { granularity: "day", startUtc: "2026-03-01T00:00:00Z", endUtc: "2026-03-15T00:00:00Z" }
+  ]
 };
 const forceRecalculate: boolean = true;
 const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);

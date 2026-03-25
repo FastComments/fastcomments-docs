@@ -14,16 +14,16 @@ Returns: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'get_feed_posts_stats Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_stats() -> Result<GetFeedPostsStats200Response, Error> {
+async fn fetch_feed_stats() -> Result<(), Error> {
     let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: vec![
-            "news/2026/space-launch".to_string(),
-            "blog/tech/rust-1-75".to_string(),
+            "news/article/2026/03/25/product-launch".to_string(),
+            "blog/product-updates/q1-2026".to_string(),
         ],
-        sso: Some("user-12345-sso-token".to_string()),
+        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.examplepayload.signature".to_string()),
     };
     let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;
-    Ok(stats)
+    Ok(())
 }
 [inline-code-end]

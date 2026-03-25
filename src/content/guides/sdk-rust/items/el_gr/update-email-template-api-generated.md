@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | id | String | Ναι |  |
@@ -14,27 +14,20 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα update_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example_update_email_template() -> Result<FlagCommentPublic200Response, Error> {
     let params: UpdateEmailTemplateParams = UpdateEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "welcome-template-001".to_string(),
+        id: "welcome-email-template".to_string(),
         update_email_template_body: models::UpdateEmailTemplateBody {
-            name: Some("Welcome Template".to_string()),
-            subject: Some("Welcome to Acme News".to_string()),
-            body_html: Some("<p>Hi {{user_name}}, welcome to Acme News!</p>".to_string()),
-            from_address: Some("no-reply@acme-news.com".to_string()),
-            reply_to: Some("support@acme-news.com".to_string()),
+            subject: "Welcome to Acme News".to_string(),
+            html_body: "<h1>Welcome, \{{user_name}}</h1><p>Thanks for joining Acme.</p>".to_string(),
+            plain_body: Some("Welcome, \{{user_name}}!\nThanks for joining Acme.".to_string()),
             enabled: Some(true),
-            language: Some("en-US".to_string()),
-            custom_config: Some(models::CustomConfigParameters {
-                tracking_pixel_url: Some("https://acme-news.com/pixel".to_string()),
-            }),
+            from_name: Some("Acme Support <support@acme.com>".to_string()),
         },
     };
-
     let response: FlagCommentPublic200Response = update_email_template(&configuration, params).await?;
-    let _ = response;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

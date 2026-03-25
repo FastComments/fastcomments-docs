@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | comment_id | String | Не |  |
@@ -15,19 +15,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_pending_webhook_event_count Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_pending_webhook_event_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GetPendingWebhookEventCount200Response, Error> {
+async fn fetch_pending_webhook_count(configuration: &configuration::Configuration) -> Result<GetPendingWebhookEventCount200Response, Error> {
     let params: GetPendingWebhookEventCountParams = GetPendingWebhookEventCountParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: Some("cmt-12345".to_string()),
-        external_id: Some("news/article-98765".to_string()),
-        event_type: Some("comment.created".to_string()),
-        domain: Some("news.example.com".to_string()),
-        attempt_count_gt: Some(2.0),
+        tenant_id: String::from("acme-corp-tenant"),
+        comment_id: Some(String::from("cmt-12345")),
+        external_id: Some(String::from("ext-67890")),
+        event_type: Some(String::from("comment_posted")),
+        domain: Some(String::from("news.example.com")),
+        attempt_count_gt: Some(3.0),
     };
-    let response: GetPendingWebhookEventCount200Response =
-        get_pending_webhook_event_count(&configuration, params).await?;
+    let response: GetPendingWebhookEventCount200Response = get_pending_webhook_event_count(configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

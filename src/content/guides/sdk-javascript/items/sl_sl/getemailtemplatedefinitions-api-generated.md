@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 
@@ -12,8 +13,9 @@ Vrne: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Primer getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-78f2';
-const emailTemplates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+const tenantId: string = 'tenant_acme_eu_01';
+const templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
+console.log('Email template definitions loaded for', tenantId, templates);
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 {
-  "name": "C++ 開發套件",
-  "pageHeader": "FastComments C++ 開發套件",
+  "name": "C++ SDK",
+  "pageHeader": "FastComments C++ SDK",
   "itemsOrdered": [
     {
       "name": "需求",
@@ -11,17 +11,17 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門",
       "type": "readme"
     },
     {
-      "name": "快速上手",
+      "name": "快速開始",
       "file": "quick-start-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "呼叫 API：同步 vs 非同步",
+      "name": "發出 API 呼叫：同步與非同步",
       "file": "making-api-calls-synchronous-vs-asynchronous-readme-generated.md",
       "subCat": "API 參考",
       "type": "readme"
@@ -45,9 +45,9 @@
       "type": "readme"
     },
     {
-      "name": "聚合",
+      "name": "彙總",
       "file": "aggregate-api-generated.md",
-      "subCat": "聚合",
+      "subCat": "彙總",
       "type": "api"
     },
     {
@@ -57,147 +57,147 @@
       "type": "api"
     },
     {
-      "name": "從留言封鎖（公開）",
+      "name": "封鎖（來自公開評論）",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "從留言封鎖",
+      "subCat": "從評論封鎖",
       "type": "api"
     },
     {
-      "name": "取消封鎖公開留言",
+      "name": "取消封鎖公開評論",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "從留言封鎖",
+      "subCat": "從評論封鎖",
       "type": "api"
     },
     {
-      "name": "檢查被封鎖的留言",
+      "name": "檢查被封鎖的評論",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "檢查被封鎖的留言",
+      "subCat": "檢查被封鎖評論",
       "type": "api"
     },
     {
-      "name": "從留言封鎖使用者",
+      "name": "封鎖使用者（來自評論）",
       "file": "blockuserfromcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "建立公開留言",
+      "name": "建立公開評論",
       "file": "createcommentpublic-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "刪除留言",
+      "name": "刪除評論",
       "file": "deletecomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "刪除公開留言",
+      "name": "刪除公開評論",
       "file": "deletecommentpublic-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "刪除留言投票",
+      "name": "刪除評論投票",
       "file": "deletecommentvote-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "舉報留言",
+      "name": "檢舉評論",
       "file": "flagcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取得留言",
+      "name": "取得評論",
       "file": "getcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取得留言列表",
+      "name": "取得多則評論",
       "file": "getcomments-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取得公開留言",
+      "name": "取得公開評論",
       "file": "getcommentspublic-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取得留言內容",
+      "name": "取得評論文字",
       "file": "getcommenttext-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取得留言投票使用者名稱",
+      "name": "取得評論投票使用者名稱",
       "file": "getcommentvoteusernames-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "鎖定留言",
+      "name": "鎖定評論",
       "file": "lockcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "置頂留言",
+      "name": "置頂評論",
       "file": "pincomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "儲存留言",
+      "name": "儲存評論",
       "file": "savecomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "設定留言內容",
+      "name": "設定評論文字",
       "file": "setcommenttext-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取消從留言封鎖使用者",
+      "name": "取消封鎖（來自評論）的使用者",
       "file": "unblockuserfromcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取消舉報留言",
+      "name": "取消檢舉評論",
       "file": "unflagcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "解鎖留言",
+      "name": "解除鎖定評論",
       "file": "unlockcomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "取消置頂留言",
+      "name": "取消置頂評論",
       "file": "unpincomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "更新留言",
+      "name": "更新評論",
       "file": "updatecomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
-      "name": "對留言投票",
+      "name": "對評論投票",
       "file": "votecomment-api-generated.md",
-      "subCat": "留言",
+      "subCat": "評論",
       "type": "api"
     },
     {
@@ -219,7 +219,7 @@
       "type": "api"
     },
     {
-      "name": "取得網域設定列表",
+      "name": "取得網域設定清單",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "網域設定",
       "type": "api"
@@ -231,7 +231,7 @@
       "type": "api"
     },
     {
-      "name": "放置/覆寫網域設定",
+      "name": "覆寫網域設定",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "網域設定",
       "type": "api"
@@ -273,7 +273,7 @@
       "type": "api"
     },
     {
-      "name": "取得電子郵件範本列表",
+      "name": "取得電子郵件範本清單",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "電子郵件範本",
       "type": "api"
@@ -291,15 +291,15 @@
       "type": "api"
     },
     {
-      "name": "取得事件記錄",
+      "name": "取得事件日誌",
       "file": "geteventlog-api-generated.md",
-      "subCat": "事件記錄",
+      "subCat": "事件日誌",
       "type": "api"
     },
     {
-      "name": "取得全域事件記錄",
+      "name": "取得全域事件日誌",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "事件記錄",
+      "subCat": "事件日誌",
       "type": "api"
     },
     {
@@ -339,13 +339,13 @@
       "type": "api"
     },
     {
-      "name": "取得使用者回應（公開）",
+      "name": "取得使用者公開反應",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "動態貼文",
       "type": "api"
     },
     {
-      "name": "對公開動態貼文回應",
+      "name": "對公開動態貼文反應",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "動態貼文",
       "type": "api"
@@ -363,9 +363,9 @@
       "type": "api"
     },
     {
-      "name": "公開舉報留言",
+      "name": "檢舉公開評論",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "舉報留言",
+      "subCat": "檢舉評論",
       "type": "api"
     },
     {
@@ -387,7 +387,7 @@
       "type": "api"
     },
     {
-      "name": "取得標籤列表",
+      "name": "取得標籤",
       "file": "gethashtags-api-generated.md",
       "subCat": "標籤",
       "type": "api"
@@ -417,7 +417,7 @@
       "type": "api"
     },
     {
-      "name": "取得管理員列表",
+      "name": "取得管理員清單",
       "file": "getmoderators-api-generated.md",
       "subCat": "管理員",
       "type": "api"
@@ -477,13 +477,13 @@
       "type": "api"
     },
     {
-      "name": "依 URLId 取得頁面",
+      "name": "以 URL ID 取得頁面",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "頁面",
       "type": "api"
     },
     {
-      "name": "取得頁面列表",
+      "name": "取得頁面清單",
       "file": "getpages-api-generated.md",
       "subCat": "頁面",
       "type": "api"
@@ -497,19 +497,19 @@
     {
       "name": "刪除待處理的 Webhook 事件",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "待處理的 Webhook 事件",
+      "subCat": "待處理 Webhook 事件",
       "type": "api"
     },
     {
-      "name": "取得待處理 Webhook 事件計數",
+      "name": "取得待處理 Webhook 事件數量",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "待處理的 Webhook 事件",
+      "subCat": "待處理 Webhook 事件",
       "type": "api"
     },
     {
       "name": "取得待處理的 Webhook 事件",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "待處理的 Webhook 事件",
+      "subCat": "待處理 Webhook 事件",
       "type": "api"
     },
     {
@@ -531,7 +531,7 @@
       "type": "api"
     },
     {
-      "name": "取得問題設定列表",
+      "name": "取得問題設定清單",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "問題設定",
       "type": "api"
@@ -561,7 +561,7 @@
       "type": "api"
     },
     {
-      "name": "取得問題結果列表",
+      "name": "取得問題結果清單",
       "file": "getquestionresults-api-generated.md",
       "subCat": "問題結果",
       "type": "api"
@@ -585,7 +585,7 @@
       "type": "api"
     },
     {
-      "name": "將留言與問題結果合併",
+      "name": "將評論與問題結果合併",
       "file": "combinecommentswithquestionresults-api-generated.md",
       "subCat": "問題結果彙總",
       "type": "api"
@@ -593,43 +593,43 @@
     {
       "name": "新增 SSO 使用者",
       "file": "addssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
       "name": "刪除 SSO 使用者",
       "file": "deletessouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
-      "name": "依電子郵件取得 SSO 使用者",
+      "name": "以電子郵件取得 SSO 使用者",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
-      "name": "依 Id 取得 SSO 使用者",
+      "name": "以 ID 取得 SSO 使用者",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
-      "name": "取得 SSO 使用者列表",
+      "name": "取得 SSO 使用者清單",
       "file": "getssousers-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
       "name": "部分更新 SSO 使用者",
       "file": "patchssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
-      "name": "放置/覆寫 SSO 使用者",
+      "name": "覆寫 SSO 使用者",
       "file": "putssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "SSO 使用者",
       "type": "api"
     },
     {
@@ -645,8 +645,14 @@
       "type": "api"
     },
     {
-      "name": "取得訂閱列表",
+      "name": "取得訂閱清單",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "訂閱",
+      "type": "api"
+    },
+    {
+      "name": "更新訂閱",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "訂閱",
       "type": "api"
     },
@@ -675,13 +681,13 @@
       "type": "api"
     },
     {
-      "name": "取得租戶方案列表",
+      "name": "取得租戶方案清單",
       "file": "gettenantpackages-api-generated.md",
       "subCat": "租戶方案",
       "type": "api"
     },
     {
-      "name": "替換租戶方案",
+      "name": "取代租戶方案",
       "file": "replacetenantpackage-api-generated.md",
       "subCat": "租戶方案",
       "type": "api"
@@ -711,13 +717,13 @@
       "type": "api"
     },
     {
-      "name": "取得租戶使用者列表",
+      "name": "取得租戶使用者清單",
       "file": "gettenantusers-api-generated.md",
       "subCat": "租戶使用者",
       "type": "api"
     },
     {
-      "name": "替換租戶使用者",
+      "name": "取代租戶使用者",
       "file": "replacetenantuser-api-generated.md",
       "subCat": "租戶使用者",
       "type": "api"
@@ -753,7 +759,7 @@
       "type": "api"
     },
     {
-      "name": "取得租戶列表",
+      "name": "取得租戶清單",
       "file": "gettenants-api-generated.md",
       "subCat": "租戶",
       "type": "api"
@@ -765,25 +771,49 @@
       "type": "api"
     },
     {
+      "name": "更改工單狀態",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "工單",
+      "type": "api"
+    },
+    {
+      "name": "建立工單",
+      "file": "createticket-api-generated.md",
+      "subCat": "工單",
+      "type": "api"
+    },
+    {
+      "name": "取得工單",
+      "file": "getticket-api-generated.md",
+      "subCat": "工單",
+      "type": "api"
+    },
+    {
+      "name": "取得工單清單",
+      "file": "gettickets-api-generated.md",
+      "subCat": "工單",
+      "type": "api"
+    },
+    {
       "name": "上傳圖片",
       "file": "uploadimage-api-generated.md",
       "subCat": "上傳圖片",
       "type": "api"
     },
     {
-      "name": "依 Id 取得使用者徽章進度",
+      "name": "以 ID 取得使用者徽章進度",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "使用者徽章進度",
       "type": "api"
     },
     {
-      "name": "依使用者 Id 取得使用者徽章進度",
+      "name": "以使用者 ID 取得徽章進度",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "使用者徽章進度",
       "type": "api"
     },
     {
-      "name": "取得使用者徽章進度列表",
+      "name": "取得使用者徽章進度清單",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "使用者徽章進度",
       "type": "api"
@@ -807,7 +837,7 @@
       "type": "api"
     },
     {
-      "name": "取得使用者徽章列表",
+      "name": "取得使用者徽章清單",
       "file": "getuserbadges-api-generated.md",
       "subCat": "使用者徽章",
       "type": "api"
@@ -843,13 +873,13 @@
       "type": "api"
     },
     {
-      "name": "更新使用者留言訂閱通知狀態",
+      "name": "更新使用者評論訂閱狀態",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "使用者通知",
       "type": "api"
     },
     {
-      "name": "更新使用者頁面訂閱通知狀態",
+      "name": "更新使用者頁面訂閱狀態",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "使用者通知",
       "type": "api"
@@ -861,7 +891,7 @@
       "type": "api"
     },
     {
-      "name": "取得使用者在線狀態列表",
+      "name": "取得使用者在線狀態",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "使用者在線狀態",
       "type": "api"

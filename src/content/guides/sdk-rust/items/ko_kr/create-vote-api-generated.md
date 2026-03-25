@@ -5,8 +5,8 @@
 | tenant_id | String | 예 |  |
 | comment_id | String | 예 |  |
 | direction | String | 예 |  |
-| user_id | String | 아니요 |  |
-| anon_user_id | String | 아니요 |  |
+| user_id | String | 아니오 |  |
+| anon_user_id | String | 아니오 |  |
 
 ## 응답
 
@@ -16,16 +16,18 @@
 
 [inline-code-attrs-start title = 'create_vote 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_vote() -> Result<VoteComment200Response, Error> {
+async fn example_create_vote() -> Result<(), Error> {
     let params: CreateVoteParams = CreateVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/2026/01/12/local-election-12345".to_string(),
+        comment_id: "news/article/12345".to_string(),
         direction: "up".to_string(),
-        user_id: Some("user_9876".to_string()),
-        anon_user_id: None,
+        user_id: Some("user-9876".to_string()),
+        anon_user_id: Some("anon-01-abcdef".to_string()),
     };
+
     let response: VoteComment200Response = create_vote(&configuration, params).await?;
-    Ok(response)
+    println!("{:?}", response);
+    Ok(())
 }
 [inline-code-end]
 

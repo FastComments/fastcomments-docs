@@ -5,7 +5,7 @@
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`GetModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerator200Response.ts)
 
@@ -13,9 +13,9 @@ Retourneert: [`GetModerator200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getModerator Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // optionele bron (kan undefined zijn)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

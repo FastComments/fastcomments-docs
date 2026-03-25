@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Obbligatorio | Descrizione |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
@@ -12,12 +12,15 @@ Restituisce: [`GetEmailTemplateRenderErrors200Response`](https://github.com/Fast
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getEmailTemplateRenderErrors'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getEmailTemplateRenderErrors'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7b3f2a9c";
-const id: string = "tmpl_4f1b2c9e";
-const skip: number = 25;
-const result: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);
+(async () => {
+  const tenantId: string = 'acme-tenant-42';
+  const id: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  const skip: number = 20;
+  const result: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

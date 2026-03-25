@@ -1,12 +1,13 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
-| usernameStartsWith | string | query | Так |  |
+| usernameStartsWith | string | query | Ні |  |
 | mentionGroupIds | array | query | Ні |  |
 | sso | string | query | Ні |  |
+| searchSection | string | query | Ні |  |
 
 ## Відповідь
 
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'Приклад searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще в бета-версії. Якщо виникли проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще в бета-версії. У разі будь-яких проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String | 
+let usernameStartsWith = "usernameStartsWith_example" // String |  (необов'язково)
 let mentionGroupIds = ["inner_example"] // [String] |  (необов'язково)
 let sso = "sso_example" // String |  (необов'язково)
+let searchSection = "searchSection_example" // String |  (необов'язково)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

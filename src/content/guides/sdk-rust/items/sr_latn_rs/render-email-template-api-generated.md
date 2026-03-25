@@ -1,10 +1,10 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| render_email_template_body | models::RenderEmailTemplateBody | Yes |  |
-| locale | String | No |  |
+| tenant_id | String | Da |  |
+| render_email_template_body | models::RenderEmailTemplateBody | Da |  |
+| locale | String | Ne |  |
 
 ## Odgovor
 
@@ -12,22 +12,26 @@ Vraća: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer render_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'render_email_template Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: RenderEmailTemplateParams = RenderEmailTemplateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    render_email_template_body: models::RenderEmailTemplateBody {
-        template_id: "comment-notification".to_string(),
-        subject: Some("New comment on your article".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<RenderEmailTemplate200Response, Error> {
+    let body = models::RenderEmailTemplateBody {
+        template_key: "welcome_email".to_string(),
+        subject: "Welcome to Acme News".to_string(),
+        from_address: "noreply@acme.com".to_string(),
         placeholders: std::collections::HashMap::from([
-            ("article_title".to_string(), "Rust Gains Momentum in 2026".to_string()),
-            ("comment_author".to_string(), "Jane Doe".to_string()),
-            ("comment_snippet".to_string(), "Great insights — thanks for sharing!".to_string()),
+            ("user_name".to_string(), "Jane Doe".to_string()),
+            ("article_title".to_string(), "Breaking News: Rust Adoption Soars".to_string()),
         ]),
-    },
-    locale: Some("en-US".to_string()),
-};
-let rendered: RenderEmailTemplate200Response = render_email_template(&configuration, params).await?;
+    };
+    let params = RenderEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        render_email_template_body: body,
+        locale: Some("en-US".to_string()),
+    };
+    let rendered: RenderEmailTemplate200Response = render_email_template(configuration, params).await?;
+    Ok(rendered)
+}
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | meta | String | 否 |  |
@@ -16,11 +16,12 @@
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetTenantsParams = GetTenantsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        meta: Some(String::from("include=domains,settings")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        meta: Some("news/article".to_string()),
         skip: Some(10.0),
     };
     let response: GetTenants200Response = get_tenants(&configuration, params).await?;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 说明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -8,17 +8,17 @@
 
 ## 响应
 
-返回： [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+返回：[`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'send_login_link 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_send_login_link() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "jane.doe@acme.com".to_string(),
-        redirect_url: Some("https://acme.example.com/dashboard".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("user-98765"),
+        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
     };
     let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
     Ok(response)

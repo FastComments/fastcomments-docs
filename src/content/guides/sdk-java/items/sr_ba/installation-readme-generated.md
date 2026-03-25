@@ -1,6 +1,6 @@
 ### Maven
 
-Додајте Repsy репозиторијум у POM вашег пројекта:
+Dodajte Repsy repozitorij u POM vašeg projekta:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Затим додајте зависности које су вам потребне:
+Zatim dodajte zavisnosti koje su vam potrebne:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Додајте Repsy репозиторијум у ваш build.gradle фајл:
+Dodajte Repsy repozitorij u vašu build.gradle datoteku:
 
 ```groovy
 repositories {
@@ -53,24 +53,24 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:0.0.2"
+    implementation "com.fastcomments:client:1.3.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    implementation "com.fastcomments:core:1.3.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
-### Садржај библиотеке
+### Sadržaj biblioteke
 
-Ова библиотека садржи три модула. Генерисани API клијент, основна Java библиотека која садржи ручно написане помоћне алате да би рад са API-јем био једноставнији, и модул `pubsub` који је библиотека за претплату на фидове промјена.
+Ova biblioteka sadrži tri modula. Generisani API klijent, osnovna Java biblioteka koja sadrži ručno napisane utilitete za olakšavanje rada sa API-jem, i modul `pubsub` koji je biblioteka za pretplatu na feedove promjena.
 
-- [Документација API клијент библиотеке](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документација Core библиотеке, укључујући примјере SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Документација PubSub библиотеке](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentacija API klijenta](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Dokumentacija Core biblioteke, uključujući primjere SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacija PubSub biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Јавни и заштићени API-ји
+### Javni i Zaštićeni API-ji
 
-За API клијент постоје две класе, `DefaultApi` и `PublicApi`. `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи позиве API-ја које се могу извршити директно из прегледача/мобилног уређаја/итд. без аутентификације.
+Za API klijent postoje dvije klase, `DefaultApi` i `PublicApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži API pozive koji se mogu izvršiti direktno iz preglednika/mobilnog uređaja/itd bez autentifikacije.

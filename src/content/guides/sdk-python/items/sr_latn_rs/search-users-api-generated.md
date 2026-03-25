@@ -1,12 +1,14 @@
+---
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| usernameStartsWith | string | query | Da |  |
-| mentionGroupIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Odgovor
 
@@ -28,18 +30,19 @@ configuration = client.Configuration(
 )
 
 
-# Uđite u kontekst koristeći instancu API klijenta
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    username_starts_with = 'username_starts_with_example' # str |  (opciono)
+    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (opciono)
+    sso = 'sso_example' # str |  (opciono)
+    search_section = 'search_section_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

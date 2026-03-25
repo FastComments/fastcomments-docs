@@ -1,15 +1,15 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| commentId | string | 아니요 |  |
-| externalId | string | 아니요 |  |
-| eventType | string | 아니요 |  |
-| type | string | 아니요 |  |
-| domain | string | 아니요 |  |
-| attemptCountGT | number | 아니요 |  |
-| skip | number | 아니요 |  |
+| commentId | string | 아니오 |  |
+| externalId | string | 아니오 |  |
+| eventType | string | 아니오 |  |
+| type | string | 아니오 |  |
+| domain | string | 아니오 |  |
+| attemptCountGT | number | 아니오 |  |
+| skip | number | 아니오 |  |
 
 ## 응답
 
@@ -19,19 +19,21 @@
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_78b2f1";
-const commentId: string = "cmt_0042";
-const eventType: string = "comment.created";
-const domain: string = "blog.example.com";
-const attemptCountGT: number = 1;
-const skip: number = 0;
+const tenantId: string = 'tenant_9b3f7c';
+const commentId: string | undefined = undefined;
+const externalId: string | undefined = 'external-572a';
+const eventType: string | undefined = 'comment.updated';
+const type: string | undefined = 'outbound';
+const domain: string | undefined = 'reviews.example.com';
+const attemptCountGT: number | undefined = 1;
+const skip: number | undefined = 20;
 
-const pending: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
+const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
   tenantId,
   commentId,
-  undefined, // externalId (외부 ID)
+  externalId,
   eventType,
-  undefined, // type (유형)
+  type,
   domain,
   attemptCountGT,
   skip

@@ -1,15 +1,30 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必需 | 說明 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| dir | number | 是 |  |
-| sso | string | 否 |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| dir | number | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNames200Response.ts)
+回傳：[`GetCommentVoteUserNames200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNames200Response.ts)
+
+## 範例
+
+[inline-code-attrs-start title = 'getCommentVoteUserNames 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+(async () => {
+  const tenantId: string = 'tenant_4f2c1e';
+  const commentId: string = 'cmt_9a7b3d';
+  const dir: number = 1;
+  const resultUpvotes: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
+  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakepayload.signature';
+  const dirDown: number = -1;
+  const resultDownvotes: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dirDown, sso);
+  console.log(resultUpvotes, resultDownvotes);
+})();
+[inline-code-end]
 
 ---

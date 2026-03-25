@@ -15,21 +15,15 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateNotification Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_86a7b3";
-const id: string = "notif_20260112_01";
-const userId: string = "moderator_42";
+const tenantId: string = 'tenant_prod_8f4b2c';
+const id: string = 'notification_61a2e9';
+const userId: string = 'moderator_107';
 const updateNotificationBody: UpdateNotificationBody = {
-  name: "Flagged comment alert",
+  name: 'Flagged Comment Notification',
   enabled: true,
-  channels: ["email"],
-  recipients: ["mod-team@news-site.com"],
-  threshold: 1
+  channels: ['email', 'inbox'],
+  templateId: 'tmpl_mod_alerts_01',
+  severity: 'high'
 };
-
-(async () => {
-  const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
-  console.log(result);
-})();
+const result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);
 [inline-code-end]
-
----

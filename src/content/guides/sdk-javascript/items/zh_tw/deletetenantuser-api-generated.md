@@ -1,11 +1,11 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| deleteComments | string | No |  |
-| commentDeleteMode | string | No |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| deleteComments | string | 否 |  |
+| commentDeleteMode | string | 否 |  |
 
 ## 回應
 
@@ -15,12 +15,11 @@
 
 [inline-code-attrs-start title = 'deleteTenantUser 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const id: string = 'user_4e5f6a7b';
+const tenantId: string = '4f3a9b2e-1c6a-4f7b-9e2a-0b8d6f1c2a3e';
+const userId: string = '9d2f7b3a-5c4e-48a2-b1f0-6c7d8e9f0a12';
 const deleteComments: string = 'true';
-const commentDeleteMode: string = 'hard';
-
-const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+const commentDeleteMode: string = 'permanent';
+const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, userId, deleteComments, commentDeleteMode);
 [inline-code-end]
 
 ---

@@ -14,21 +14,31 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'update_feed_post Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<FlagCommentPublic200Response, Error> {
+async fn update_post_example() -> Result<(), Error> {
     let params: UpdateFeedPostParams = UpdateFeedPostParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-01-12-123".to_string(),
+        id: "news/rocket-launch-2026".to_string(),
         feed_post: models::FeedPost {
-            title: "Major Product Launch".to_string(),
-            content: Some("Acme has launched its next-gen widget with improved performance and battery life.".to_string()),
-            author_id: Some("editor-42".to_string()),
-            links: Some(vec![models::FeedPostLink { url: "https://acme.com/product".to_string(), title: Some("Product page".to_string()) }]),
-            media: Some(vec![models::FeedPostMediaItem { url: "https://cdn.acme.com/images/widget.jpg".to_string(), asset: Some(models::FeedPostMediaItemAsset { src: Some("https://cdn.acme.com/assets/widget.jpg".to_string()) }) }]),
-            published: Some(true),
-        },
+            title: Some("Rocket Launch Successful".to_string()),
+            body: Some("Acme Rockets launched the Atlas X at 10:00 UTC with no anomalies.".to_string()),
+            author: Some("Acme Newsroom".to_string()),
+            media: Some(vec![
+                models::FeedPostMediaItem {
+                    url: Some("https://cdn.acme.com/images/launch.jpg".to_string()),
+                    caption: Some("Moments before liftoff".to_string()),
+                    asset: None
+                }
+            ]),
+            links: Some(vec![
+                models::FeedPostLink {
+                    title: Some("Detailed Coverage".to_string()),
+                    url: Some("https://news.acme.com/coverage/atlas-x-launch".to_string())
+                }
+            ]),
+            published: Some(true)
+        }
     };
-
     let response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]

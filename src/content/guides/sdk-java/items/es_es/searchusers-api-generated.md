@@ -1,12 +1,13 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
-| usernameStartsWith | string | query | Sí |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| urlId | string | consulta | Sí |  |
+| usernameStartsWith | string | consulta | No |  |
+| mentionGroupIds | array | consulta | No |  |
+| sso | string | consulta | No |  |
+| searchSection | string | consulta | No |  |
 
 ## Respuesta
 
@@ -34,10 +35,13 @@ public class Example {
     String usernameStartsWith = "usernameStartsWith_example"; // String | 
     List<String> mentionGroupIds = Arrays.asList(); // List<String> | 
     String sso = "sso_example"; // String | 
+    String searchSection = "fast"; // String | 
     try {
-      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId, usernameStartsWith)
+      SearchUsers200Response result = apiInstance.searchUsers(tenantId, urlId)
+            .usernameStartsWith(usernameStartsWith)
             .mentionGroupIds(mentionGroupIds)
             .sso(sso)
+            .searchSection(searchSection)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

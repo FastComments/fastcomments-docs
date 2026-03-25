@@ -1,29 +1,35 @@
+---
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| id | String | Ja |  |
-| update_moderator_body | models::UpdateModeratorBody | Ja |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_moderator_body | models::UpdateModeratorBody | Yes |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
+Retourneert: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'update_moderator Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateModeratorParams = UpdateModeratorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "moderator-12345".to_string(),
-    update_moderator_body: models::UpdateModeratorBody {
-        username: "jane.doe".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        email: Some("jane.doe@acme.com".to_string()),
-        is_active: Some(true),
-        permissions: Some(vec!["moderate_comments".to_string(), "view_reports".to_string()]),
-    },
-};
-let response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;
+async fn run() -> Result<(), Error> {
+    let params: UpdateModeratorParams = UpdateModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "moderator-987".to_string(),
+        update_moderator_body: models::UpdateModeratorBody {
+            username: Some("jane.doe".to_string()),
+            email: Some("jane.doe@acme.com".to_string()),
+            role: Some("senior_moderator".to_string()),
+            active: Some(true),
+            notes: Some("Promoted after successful trial period".to_string()),
+        },
+    };
+    let response: FlagCommentPublic200Response = update_moderator(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
+
+---

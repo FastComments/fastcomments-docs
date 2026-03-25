@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| id | String | Ja |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Response
+## Antwoord
 
 Geeft terug: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_public_200_response.rs)
 
@@ -13,12 +13,15 @@ Geeft terug: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'delete_email_template Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {
+async fn run_delete_template() -> Result<(), Error> {
     let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "welcome-email-template".to_string(),
     };
+    let confirm_deletion: Option<bool> = Some(true);
     let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 {
   "name": "SDK PHP",
-  "pageHeader": "SDK PHP de FastComments",
+  "pageHeader": "SDK FastComments pour PHP",
   "itemsOrdered": [
     {
       "name": "Installation et utilisation",
@@ -53,13 +53,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloquer depuis un commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloquer depuis un commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
@@ -239,67 +239,67 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Journal d'événements",
+      "subCat": "Journal des événements",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Journal d'événements",
+      "subCat": "Journal des événements",
       "type": "api"
     },
     {
@@ -365,7 +365,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Signaler un commentaire",
+      "subCat": "Signalement de commentaire",
       "type": "api"
     },
     {
@@ -515,31 +515,31 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations des questions",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations des questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations des questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations des questions",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations des questions",
       "type": "api"
     },
     {
@@ -647,6 +647,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnements",
       "type": "api"
     },
@@ -765,6 +771,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Téléverser une image",
@@ -863,7 +893,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Statuts de présence utilisateur",
+      "subCat": "Statuts de présence des utilisateurs",
       "type": "api"
     },
     {

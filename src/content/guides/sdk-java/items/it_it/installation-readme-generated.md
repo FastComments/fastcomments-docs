@@ -12,29 +12,29 @@ Aggiungi il repository Repsy al POM del tuo progetto:
 </repositories>
 ```
 
-Aggiungi quindi le dipendenze necessarie:
+Quindi aggiungi le dipendenze di cui hai bisogno:
 
 ```xml
 <dependencies>
-    <!-- Client API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Libreria Core (include SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Libreria PubSub (per eventi in tempo reale) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // Client API
-    implementation "com.fastcomments:client:0.0.2"
+    // API Client
+    implementation "com.fastcomments:client:1.3.1"
     
-    // Libreria Core (include SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:1.3.1"
     
-    // Libreria PubSub (per eventi in tempo reale)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
-### Contenuti della libreria
+### Contenuto della libreria
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utility scritte a mano per semplificare il lavoro con l'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed delle modifiche.
+Questa libreria contiene tre moduli. Il client API generato, la libreria core Java che contiene utility scritte a mano per facilitare il lavoro con l'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
 
-- [Documentazione della libreria Client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentazione della libreria Core, inclusi esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentazione della libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentazione libreria client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentazione libreria Core, inclusi esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentazione libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API pubbliche vs protette
+### API Pubbliche vs Protette
 
 Per il client API, ci sono due classi, `DefaultApi` e `PublicApi`. `DefaultApi` contiene metodi che richiedono la tua chiave API, e `PublicApi` contiene chiamate API che possono essere effettuate direttamente da un browser/dispositivo mobile/etc. senza autenticazione.

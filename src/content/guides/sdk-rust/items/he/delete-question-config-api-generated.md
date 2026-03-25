@@ -1,7 +1,6 @@
----
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | id | String | כן |  |
@@ -12,16 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_question_config דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+pub async fn run_delete_question_config() -> Result<FlagCommentPublic200Response, Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-comments-config-2025".to_string(),
-        force: Some(true),
+        id: "question-config-8742".to_string(),
     };
     let response: FlagCommentPublic200Response = delete_question_config(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]
 

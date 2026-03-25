@@ -3,10 +3,10 @@
 | 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
-| year_number | f64 | 아니오 |  |
-| month_number | f64 | 아니오 |  |
-| day_number | f64 | 아니오 |  |
-| skip | f64 | 아니오 |  |
+| year_number | f64 | 아니요 |  |
+| month_number | f64 | 아니요 |  |
+| day_number | f64 | 아니요 |  |
+| skip | f64 | 아니요 |  |
 
 ## 응답
 
@@ -16,15 +16,15 @@
 
 [inline-code-attrs-start title = 'get_tenant_daily_usages 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GetTenantDailyUsages200Response, Error> {
-    let params: GetTenantDailyUsagesParams = GetTenantDailyUsagesParams {
+async fn example_get_usage() -> Result<GetTenantDailyUsages200Response, Error> {
+    let params = GetTenantDailyUsagesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        year_number: Some(2024.0),
-        month_number: Some(9.0),
-        day_number: Some(15.0),
+        year_number: Some(2026.0),
+        month_number: Some(3.0),
+        day_number: Some(25.0),
         skip: Some(0.0),
     };
-    let response: GetTenantDailyUsages200Response = get_tenant_daily_usages(&configuration, params).await?;
+    let response = get_tenant_daily_usages(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]

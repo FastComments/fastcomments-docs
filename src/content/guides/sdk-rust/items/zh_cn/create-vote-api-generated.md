@@ -1,31 +1,33 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| comment_id | String | 是 |  |
-| direction | String | 是 |  |
-| user_id | String | 否 |  |
-| anon_user_id | String | 否 |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| direction | String | Yes |  |
+| user_id | String | No |  |
+| anon_user_id | String | No |  |
 
-## 响应
+## 返回
 
-返回：[`VoteComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_comment_200_response.rs)
+返回: [`VoteComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_comment_200_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'create_vote 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_vote() -> Result<VoteComment200Response, Error> {
+async fn example_create_vote() -> Result<(), Error> {
     let params: CreateVoteParams = CreateVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/2026/01/12/local-election-12345".to_string(),
+        comment_id: "news/article/12345".to_string(),
         direction: "up".to_string(),
-        user_id: Some("user_9876".to_string()),
-        anon_user_id: None,
+        user_id: Some("user-9876".to_string()),
+        anon_user_id: Some("anon-01-abcdef".to_string()),
     };
+
     let response: VoteComment200Response = create_vote(&configuration, params).await?;
-    Ok(response)
+    println!("{:?}", response);
+    Ok(())
 }
 [inline-code-end]
 

@@ -2,10 +2,10 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| urlId | string | Ja |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotes200Response.ts)
 
@@ -13,11 +13,11 @@ Retourneert: [`GetVotes200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getVotes Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // optionele queryparameter
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Als er een optionele parameter bestond, bijvoorbeeld includeHidden, zou die als volgt gebruikt kunnen worden:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

@@ -7,6 +7,7 @@
 | usernameStartsWith | string | query | No |  |
 | mentionGroupIds | array | query | No |  |
 | sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Response
 
@@ -24,8 +25,9 @@ let urlId = "urlId_example" // String |
 let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
 let mentionGroupIds = ["inner_example"] // [String] |  (optional)
 let sso = "sso_example" // String |  (optional)
+let searchSection = "searchSection_example" // String |  (optional)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
     guard error == nil else {
         print(error)
         return

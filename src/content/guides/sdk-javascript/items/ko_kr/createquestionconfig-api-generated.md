@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | 예 |  |
@@ -13,21 +13,15 @@
 
 [inline-code-attrs-start title = 'createQuestionConfig 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_live_7f8b3c2a";
-const customOptions: QuestionConfigCustomOptionsInner[] = [
-  { value: "under18", label: "Under 18" },
-  { value: "18-24", label: "18-24" },
-  { value: "25-34", label: "25-34", defaultSelected: true }
-];
+const tenantId: string = "tenant_9f8b2c";
+const option: QuestionConfigCustomOptionsInner = { id: "opt_yes", label: "Yes, helpful", value: "yes" };
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  key: "age_range",
-  label: "What is your age range?",
-  required: false, // 선택적: 선택적 필드를 생략한 경우와 포함한 경우를 보여줍니다
-  renderingType: QuestionRenderingType.Dropdown,
-  options: customOptions,
-  whenSave: QuestionWhenSave.Always
+  title: "Article usefulness",
+  prompt: "Was this article helpful?",
+  type: "singleChoice",
+  required: false, // 선택적 매개변수 예시
+  options: [option],
+  saveBehavior: "immediate"
 };
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
-
----

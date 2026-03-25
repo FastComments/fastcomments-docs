@@ -13,21 +13,13 @@ Returns: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addHashTag Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b2f6c2b';
-const createBody: CreateHashTagBody = {
-  tag: 'feature-request',
+const tenantId: string = 'tenant_acme_01';
+const createHashTagBody: CreateHashTagBody = {
+  name: 'feature-request',
   label: 'Feature Request',
-  description: 'Requests for new functionality in the web client',
-  isActive: true,
-  visibility: 'public',
-  allowedDomains: ['example.com', 'internal.example.com']
+  color: '#FF5722',
+  enabled: true
 };
-const result: AddHashTag200Response = await addHashTag(tenantId, createBody);
-const resultWithoutTenant: AddHashTag200Response = await addHashTag(undefined, {
-  tag: 'bug',
-  label: 'Bug',
-  description: 'Use for reproducible bugs reported by users',
-  isActive: true,
-  visibility: 'public'
-});
+const response: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
+const responseWithoutTenant: AddHashTag200Response = await addHashTag(undefined, createHashTagBody);
 [inline-code-end]

@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| errorId | string | Da |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| errorId | string | Yes |  |
 
 ## Odgovor
 
@@ -12,12 +12,14 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a9c";
-const id: string = "template_4a1c9f7e";
-const errorId: string = "err_20260112_abc123";
+const tenantId: string = 'tenant_7f3b4c2a';
+const templateEnvironment: string | undefined = 'production'; // opcioni selektor okruženja
+const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
+const errorId: string = 'err_5a9d2f1c';
 const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+console.log(result);
 [inline-code-end]
 
 ---

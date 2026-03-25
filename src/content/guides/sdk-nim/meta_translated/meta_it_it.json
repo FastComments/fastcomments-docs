@@ -1,6 +1,6 @@
 {
-  "name": "SDK per Nim",
-  "pageHeader": "FastComments SDK per Nim",
+  "name": "Nim SDK",
+  "pageHeader": "FastComments Nim SDK",
   "itemsOrdered": [
     {
       "name": "Requisiti",
@@ -39,865 +39,895 @@
       "type": "readme"
     },
     {
-      "name": "Documentazione per FastComments",
+      "name": "Documentazione per fastcomments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Aggregazione",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregazione",
       "type": "api"
     },
     {
-      "name": "Recupera log audit",
+      "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
       "subCat": "Log di audit",
       "type": "api"
     },
     {
-      "name": "Blocca da commento pubblico",
+      "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocco dal commento",
+      "subCat": "Blocco da commento",
       "type": "api"
     },
     {
-      "name": "Sblocca commento pubblico",
+      "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocco dal commento",
+      "subCat": "Blocco da commento",
       "type": "api"
     },
     {
-      "name": "Verifica commenti bloccati",
+      "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Verifica commenti bloccati",
+      "subCat": "Controlla commenti bloccati",
       "type": "api"
     },
     {
-      "name": "Blocca utente da commento",
+      "name": "blockUserFromComment",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Crea commento pubblico",
+      "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Elimina commento",
+      "name": "deleteComment",
       "file": "deletecomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Elimina commento pubblico",
+      "name": "deleteCommentPublic",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Elimina voto al commento",
+      "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Segnala commento",
+      "name": "flagComment",
       "file": "flagcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Recupera commento",
+      "name": "getComment",
       "file": "getcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Recupera commenti",
+      "name": "getComments",
       "file": "getcomments-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Recupera commenti pubblici",
+      "name": "getCommentsPublic",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Recupera testo del commento",
+      "name": "getCommentText",
       "file": "getcommenttext-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Recupera nomi utenti che hanno votato il commento",
+      "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Blocca commento",
+      "name": "lockComment",
       "file": "lockcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Fissa commento",
+      "name": "pinComment",
       "file": "pincomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Salva commento",
+      "name": "saveComment",
       "file": "savecomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Salva commenti in blocco",
+      "name": "saveCommentsBulk",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Imposta testo del commento",
+      "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Sblocca utente dal commento",
+      "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Rimuovi segnalazione del commento",
+      "name": "unFlagComment",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Sblocca commento",
+      "name": "unLockComment",
       "file": "unlockcomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Rimuovi fissaggio commento",
+      "name": "unPinComment",
       "file": "unpincomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Aggiorna commento",
+      "name": "updateComment",
       "file": "updatecomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Vota commento",
+      "name": "voteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Commenti",
       "type": "api"
     },
     {
-      "name": "Aggiungi configurazione dominio",
+      "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Elimina configurazione dominio",
+      "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Recupera configurazione dominio",
+      "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Recupera configurazioni dominio",
+      "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Applica patch a configurazione dominio",
+      "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Sostituisci configurazione dominio",
+      "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Configurazioni dominio",
       "type": "api"
     },
     {
-      "name": "Crea modello email",
+      "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Elimina modello email",
+      "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Elimina errore di rendering del modello email",
+      "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Recupera modello email",
+      "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Recupera definizioni modelli email",
+      "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Recupera errori di rendering dei modelli email",
+      "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Recupera modelli email",
+      "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Renderizza modello email",
+      "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Aggiorna modello email",
+      "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "Modelli email",
       "type": "api"
     },
     {
-      "name": "Recupera registro eventi",
+      "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
       "subCat": "Registro eventi",
       "type": "api"
     },
     {
-      "name": "Recupera registro eventi globale",
+      "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "Registro eventi",
       "type": "api"
     },
     {
-      "name": "Crea post feed",
+      "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Crea post feed pubblico",
+      "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Elimina post feed pubblico",
+      "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Recupera post feed",
+      "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Recupera post feed pubblici",
+      "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Recupera statistiche post feed",
+      "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Recupera reazioni degli utenti pubbliche",
+      "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Reagisci a post feed pubblico",
+      "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Aggiorna post feed",
+      "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Aggiorna post feed pubblico",
+      "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Post feed",
+      "subCat": "Post del feed",
       "type": "api"
     },
     {
-      "name": "Segnala commento pubblico",
+      "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Segnala commento",
       "type": "api"
     },
     {
-      "name": "Aggiungi hashtag",
+      "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
       "subCat": "Hashtag",
       "type": "api"
     },
     {
-      "name": "Aggiungi hashtag in blocco",
+      "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Hashtag",
       "type": "api"
     },
     {
-      "name": "Elimina hashtag",
+      "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
       "subCat": "Hashtag",
       "type": "api"
     },
     {
-      "name": "Recupera hashtag",
+      "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
       "subCat": "Hashtag",
       "type": "api"
     },
     {
-      "name": "Applica patch a hashtag",
+      "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtag",
       "type": "api"
     },
     {
-      "name": "Crea moderatore",
+      "name": "createModerator",
       "file": "createmoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Elimina moderatore",
+      "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Recupera moderatore",
+      "name": "getModerator",
       "file": "getmoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Recupera moderatori",
+      "name": "getModerators",
       "file": "getmoderators-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Aggiorna moderatore",
+      "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
       "subCat": "Moderatori",
       "type": "api"
     },
     {
-      "name": "Elimina conteggio notifiche",
+      "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
       "subCat": "Conteggio notifiche",
       "type": "api"
     },
     {
-      "name": "Recupera conteggio notifiche in cache",
+      "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
       "subCat": "Conteggio notifiche",
       "type": "api"
     },
     {
-      "name": "Recupera conteggio notifiche",
+      "name": "getNotificationCount",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Notifiche",
       "type": "api"
     },
     {
-      "name": "Recupera notifiche",
+      "name": "getNotifications",
       "file": "getnotifications-api-generated.md",
       "subCat": "Notifiche",
       "type": "api"
     },
     {
-      "name": "Aggiorna notifica",
+      "name": "updateNotification",
       "file": "updatenotification-api-generated.md",
       "subCat": "Notifiche",
       "type": "api"
     },
     {
-      "name": "Aggiungi pagina",
+      "name": "addPage",
       "file": "addpage-api-generated.md",
       "subCat": "Pagine",
       "type": "api"
     },
     {
-      "name": "Elimina pagina",
+      "name": "deletePage",
       "file": "deletepage-api-generated.md",
       "subCat": "Pagine",
       "type": "api"
     },
     {
-      "name": "Recupera pagina per URL/ID",
+      "name": "getPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Pagine",
       "type": "api"
     },
     {
-      "name": "Recupera pagine",
+      "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Pagine",
       "type": "api"
     },
     {
-      "name": "Applica patch a pagina",
+      "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Pagine",
       "type": "api"
     },
     {
-      "name": "Elimina evento webhook in sospeso",
+      "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
       "subCat": "Eventi webhook in sospeso",
       "type": "api"
     },
     {
-      "name": "Recupera conteggio eventi webhook in sospeso",
+      "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
       "subCat": "Eventi webhook in sospeso",
       "type": "api"
     },
     {
-      "name": "Recupera eventi webhook in sospeso",
+      "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "Eventi webhook in sospeso",
       "type": "api"
     },
     {
-      "name": "Crea configurazione domanda",
+      "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Configurazioni domande",
       "type": "api"
     },
     {
-      "name": "Elimina configurazione domanda",
+      "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Configurazioni domande",
       "type": "api"
     },
     {
-      "name": "Recupera configurazione domanda",
+      "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Configurazioni domande",
       "type": "api"
     },
     {
-      "name": "Recupera configurazioni domande",
+      "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Configurazioni domande",
       "type": "api"
     },
     {
-      "name": "Aggiorna configurazione domanda",
+      "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Configurazioni domande",
       "type": "api"
     },
     {
-      "name": "Crea risultato domanda",
+      "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Risultati domande",
       "type": "api"
     },
     {
-      "name": "Elimina risultato domanda",
+      "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Risultati domande",
       "type": "api"
     },
     {
-      "name": "Recupera risultato domanda",
+      "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Risultati domande",
       "type": "api"
     },
     {
-      "name": "Recupera risultati domande",
+      "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Risultati domande",
       "type": "api"
     },
     {
-      "name": "Aggiorna risultato domanda",
+      "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Risultati domande",
       "type": "api"
     },
     {
-      "name": "Aggregazione risultati domande",
+      "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
       "subCat": "Aggregazione risultati domande",
       "type": "api"
     },
     {
-      "name": "Aggregazione risultati domande in blocco",
+      "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Aggregazione risultati domande",
       "type": "api"
     },
     {
-      "name": "Combina commenti con risultati delle domande",
+      "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
       "subCat": "Aggregazione risultati domande",
       "type": "api"
     },
     {
-      "name": "Aggiungi utente SSO",
+      "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Elimina utente SSO",
+      "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Recupera utente SSO per email",
+      "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Recupera utente SSO per ID",
+      "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Recupera utenti SSO",
+      "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Applica patch a utente SSO",
+      "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Sostituisci utente SSO",
+      "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
       "subCat": "Utenti SSO",
       "type": "api"
     },
     {
-      "name": "Crea sottoscrizione",
+      "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
       "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
-      "name": "Elimina sottoscrizione",
+      "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
       "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
-      "name": "Recupera sottoscrizioni",
+      "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
-      "name": "Recupera utilizzi giornalieri del tenant",
-      "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Utilizzo giornaliero del tenant",
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
-      "name": "Crea pacchetto tenant",
+      "name": "getTenantDailyUsages",
+      "file": "gettenantdailyusages-api-generated.md",
+      "subCat": "Utilizzo giornaliero tenant",
+      "type": "api"
+    },
+    {
+      "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Elimina pacchetto tenant",
+      "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Recupera pacchetto tenant",
+      "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Recupera pacchetti tenant",
+      "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Sostituisci pacchetto tenant",
+      "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Aggiorna pacchetto tenant",
+      "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
       "subCat": "Pacchetti tenant",
       "type": "api"
     },
     {
-      "name": "Crea utente tenant",
+      "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Elimina utente tenant",
+      "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Recupera utente tenant",
+      "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Recupera utenti tenant",
+      "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Sostituisci utente tenant",
+      "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Invia link di accesso",
+      "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Aggiorna utente tenant",
+      "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
       "subCat": "Utenti tenant",
       "type": "api"
     },
     {
-      "name": "Crea tenant",
+      "name": "createTenant",
       "file": "createtenant-api-generated.md",
       "subCat": "Tenant",
       "type": "api"
     },
     {
-      "name": "Elimina tenant",
+      "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
       "subCat": "Tenant",
       "type": "api"
     },
     {
-      "name": "Recupera tenant",
+      "name": "getTenant",
       "file": "gettenant-api-generated.md",
       "subCat": "Tenant",
       "type": "api"
     },
     {
-      "name": "Recupera tenant",
+      "name": "getTenants",
       "file": "gettenants-api-generated.md",
       "subCat": "Tenant",
       "type": "api"
     },
     {
-      "name": "Aggiorna tenant",
+      "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
       "subCat": "Tenant",
       "type": "api"
     },
     {
-      "name": "Carica immagine",
-      "file": "uploadimage-api-generated.md",
-      "subCat": "Carica immagine",
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Ticket",
       "type": "api"
     },
     {
-      "name": "Recupera progresso badge utente per ID",
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Ticket",
+      "type": "api"
+    },
+    {
+      "name": "uploadImage",
+      "file": "uploadimage-api-generated.md",
+      "subCat": "Caricamento immagine",
+      "type": "api"
+    },
+    {
+      "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
-      "name": "Recupera progresso badge utente per user ID",
+      "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
-      "name": "Recupera lista progressi badge utente",
+      "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
-      "name": "Crea badge utente",
+      "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
       "subCat": "Badge utente",
       "type": "api"
     },
     {
-      "name": "Elimina badge utente",
+      "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
       "subCat": "Badge utente",
       "type": "api"
     },
     {
-      "name": "Recupera badge utente",
+      "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
       "subCat": "Badge utente",
       "type": "api"
     },
     {
-      "name": "Recupera badge utente",
+      "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
       "subCat": "Badge utente",
       "type": "api"
     },
     {
-      "name": "Aggiorna badge utente",
+      "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
       "subCat": "Badge utente",
       "type": "api"
     },
     {
-      "name": "Recupera conteggio notifiche utente",
+      "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Recupera notifiche utente",
+      "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Reimposta conteggio notifiche utente",
+      "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Reimposta notifiche utente",
+      "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Aggiorna stato sottoscrizione notifiche commento utente",
+      "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Aggiorna stato sottoscrizione notifiche pagina utente",
+      "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Aggiorna stato notifica utente",
+      "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Notifiche utente",
       "type": "api"
     },
     {
-      "name": "Recupera stati di presenza utente",
+      "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "Stato presenza utente",
       "type": "api"
     },
     {
-      "name": "Cerca utenti",
+      "name": "searchUsers",
       "file": "searchusers-api-generated.md",
       "subCat": "Ricerca utenti",
       "type": "api"
     },
     {
-      "name": "Recupera utente",
+      "name": "getUser",
       "file": "getuser-api-generated.md",
       "subCat": "Utenti",
       "type": "api"
     },
     {
-      "name": "Crea voto",
+      "name": "createVote",
       "file": "createvote-api-generated.md",
       "subCat": "Voti",
       "type": "api"
     },
     {
-      "name": "Elimina voto",
+      "name": "deleteVote",
       "file": "deletevote-api-generated.md",
       "subCat": "Voti",
       "type": "api"
     },
     {
-      "name": "Recupera voti",
+      "name": "getVotes",
       "file": "getvotes-api-generated.md",
       "subCat": "Voti",
       "type": "api"
     },
     {
-      "name": "Recupera voti per utente",
+      "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Voti",
       "type": "api"

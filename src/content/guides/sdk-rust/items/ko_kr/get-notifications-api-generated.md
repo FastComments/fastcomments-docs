@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
-| user_id | String | 아니요 |  |
-| url_id | String | 아니요 |  |
-| from_comment_id | String | 아니요 |  |
-| viewed | bool | 아니요 |  |
-| skip | f64 | 아니요 |  |
+| user_id | String | 아니오 |  |
+| url_id | String | 아니오 |  |
+| from_comment_id | String | 아니오 |  |
+| viewed | bool | 아니오 |  |
+| skip | f64 | 아니오 |  |
 
 ## 응답
 
@@ -19,15 +19,14 @@
 [inline-code-start]
 async fn fetch_notifications() -> Result<(), Error> {
     let params: GetNotificationsParams = GetNotificationsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-1234".to_string()),
-        url_id: Some("news/politics/article-2026-01-12".to_string()),
-        from_comment_id: Some("cmt-98765".to_string()),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        user_id: Some("user-12345".to_owned()),
+        url_id: Some("news/article/2026/03/25/major-update".to_owned()),
+        from_comment_id: Some("cmt-98765".to_owned()),
         viewed: Some(false),
         skip: Some(0.0),
     };
     let notifications: GetNotifications200Response = get_notifications(&configuration, params).await?;
-    let _ = notifications;
     Ok(())
 }
 [inline-code-end]

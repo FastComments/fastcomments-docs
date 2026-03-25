@@ -29,19 +29,19 @@
     {
       "name": "Zablokuj z komentarza (publiczne)",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokada z komentarza",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
       "name": "Odblokuj komentarz (publiczne)",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokada z komentarza",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
       "name": "Sprawdź komentarze pod kątem zablokowania",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Sprawdź zablokowane komentarze",
+      "subCat": "Sprawdzanie zablokowanych komentarzy",
       "type": "api"
     },
     {
@@ -105,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "Pobierz nazwy użytkowników głosujących na komentarz",
+      "name": "Pobierz nazwy użytkowników, którzy oddali głosy na komentarz",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
@@ -159,19 +159,19 @@
       "type": "api"
     },
     {
-      "name": "Usuń przypięcie komentarza",
+      "name": "Odepnij komentarz",
       "file": "unpincomment-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj komentarz",
+      "name": "Aktualizuj komentarz",
       "file": "updatecomment-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
     },
     {
-      "name": "Głosuj na komentarz",
+      "name": "Oddaj głos na komentarz",
       "file": "votecomment-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
@@ -201,7 +201,7 @@
       "type": "api"
     },
     {
-      "name": "Modyfikuj konfigurację domeny",
+      "name": "Częściowo zaktualizuj konfigurację domeny",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Konfiguracje domen",
       "type": "api"
@@ -255,13 +255,13 @@
       "type": "api"
     },
     {
-      "name": "Renderuj szablon e-mail",
+      "name": "Wyrenderuj szablon e-mail",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "Szablony e-mail",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj szablon e-mail",
+      "name": "Aktualizuj szablon e-mail",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "Szablony e-mail",
       "type": "api"
@@ -279,69 +279,69 @@
       "type": "api"
     },
     {
-      "name": "Utwórz post w kanale",
+      "name": "Utwórz post",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Utwórz publiczny post w kanale",
+      "name": "Utwórz post (publiczny)",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Usuń publiczny post w kanale",
+      "name": "Usuń post (publiczny)",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Pobierz posty kanału",
+      "name": "Pobierz posty",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Pobierz publiczne posty kanału",
+      "name": "Pobierz posty (publiczne)",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Pobierz statystyki postów kanału",
+      "name": "Pobierz statystyki postów",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
       "name": "Pobierz reakcje użytkownika (publiczne)",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Reaguj na publiczny post kanału",
+      "name": "Zareaguj na post (publiczny)",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj post kanału",
+      "name": "Aktualizuj post",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj publiczny post kanału",
+      "name": "Aktualizuj post (publiczny)",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Posty kanału",
+      "subCat": "Posty",
       "type": "api"
     },
     {
       "name": "Zgłoś komentarz (publicznie)",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Zgłoś komentarz",
+      "subCat": "Zgłaszanie komentarzy",
       "type": "api"
     },
     {
@@ -369,7 +369,7 @@
       "type": "api"
     },
     {
-      "name": "Modyfikuj hashtag",
+      "name": "Częściowo zaktualizuj hashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtagi",
       "type": "api"
@@ -405,7 +405,7 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj moderatora",
+      "name": "Aktualizuj moderatora",
       "file": "updatemoderator-api-generated.md",
       "subCat": "Moderatorzy",
       "type": "api"
@@ -413,13 +413,13 @@
     {
       "name": "Usuń licznik powiadomień",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Licznik powiadomień",
+      "subCat": "Liczba powiadomień",
       "type": "api"
     },
     {
-      "name": "Pobierz zbuforowany licznik powiadomień",
+      "name": "Pobierz zbuforowaną liczbę powiadomień",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Licznik powiadomień",
+      "subCat": "Liczba powiadomień",
       "type": "api"
     },
     {
@@ -435,7 +435,7 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj powiadomienie",
+      "name": "Aktualizuj powiadomienie",
       "file": "updatenotification-api-generated.md",
       "subCat": "Powiadomienia",
       "type": "api"
@@ -453,7 +453,7 @@
       "type": "api"
     },
     {
-      "name": "Pobierz stronę po URL/ID",
+      "name": "Pobierz stronę po identyfikatorze URL",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Strony",
       "type": "api"
@@ -465,7 +465,7 @@
       "type": "api"
     },
     {
-      "name": "Modyfikuj stronę",
+      "name": "Częściowo zaktualizuj stronę",
       "file": "patchpage-api-generated.md",
       "subCat": "Strony",
       "type": "api"
@@ -513,7 +513,7 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj konfigurację pytania",
+      "name": "Aktualizuj konfigurację pytania",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Konfiguracje pytań",
       "type": "api"
@@ -543,7 +543,7 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj wynik pytania",
+      "name": "Aktualizuj wynik pytania",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Wyniki pytań",
       "type": "api"
@@ -585,7 +585,7 @@
       "type": "api"
     },
     {
-      "name": "Pobierz użytkownika SSO po ID",
+      "name": "Pobierz użytkownika SSO po identyfikatorze",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "Użytkownicy SSO",
       "type": "api"
@@ -597,7 +597,7 @@
       "type": "api"
     },
     {
-      "name": "Modyfikuj użytkownika SSO",
+      "name": "Częściowo zaktualizuj użytkownika SSO",
       "file": "patchssouser-api-generated.md",
       "subCat": "Użytkownicy SSO",
       "type": "api"
@@ -627,7 +627,13 @@
       "type": "api"
     },
     {
-      "name": "Pobierz dzienne użycie najemcy",
+      "name": "Aktualizuj subskrypcję",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Subskrypcje",
+      "type": "api"
+    },
+    {
+      "name": "Pobierz dzienne użycia najemców",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Dzienne użycie najemcy",
       "type": "api"
@@ -663,7 +669,7 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj pakiet najemcy",
+      "name": "Aktualizuj pakiet najemcy",
       "file": "updatetenantpackage-api-generated.md",
       "subCat": "Pakiety najemcy",
       "type": "api"
@@ -699,13 +705,13 @@
       "type": "api"
     },
     {
-      "name": "Wyślij link do logowania",
+      "name": "Wyślij link logowania",
       "file": "sendloginlink-api-generated.md",
       "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj użytkownika najemcy",
+      "name": "Aktualizuj użytkownika najemcy",
       "file": "updatetenantuser-api-generated.md",
       "subCat": "Użytkownicy najemcy",
       "type": "api"
@@ -735,9 +741,33 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj najemcę",
+      "name": "Aktualizuj najemcę",
       "file": "updatetenant-api-generated.md",
       "subCat": "Najemcy",
+      "type": "api"
+    },
+    {
+      "name": "Zmień stan zgłoszenia",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Zgłoszenia",
+      "type": "api"
+    },
+    {
+      "name": "Utwórz zgłoszenie",
+      "file": "createticket-api-generated.md",
+      "subCat": "Zgłoszenia",
+      "type": "api"
+    },
+    {
+      "name": "Pobierz zgłoszenie",
+      "file": "getticket-api-generated.md",
+      "subCat": "Zgłoszenia",
+      "type": "api"
+    },
+    {
+      "name": "Pobierz zgłoszenia",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Zgłoszenia",
       "type": "api"
     },
     {
@@ -747,13 +777,13 @@
       "type": "api"
     },
     {
-      "name": "Pobierz postęp odznaki użytkownika po ID",
+      "name": "Pobierz postęp odznaki użytkownika według identyfikatora",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "Postęp odznaki użytkownika",
       "type": "api"
     },
     {
-      "name": "Pobierz postęp odznaki użytkownika po ID użytkownika",
+      "name": "Pobierz postęp odznaki użytkownika po identyfikatorze użytkownika",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "Postęp odznaki użytkownika",
       "type": "api"
@@ -767,31 +797,31 @@
     {
       "name": "Utwórz odznakę użytkownika",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "Usuń odznakę użytkownika",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "Pobierz odznakę użytkownika",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "Pobierz odznaki użytkownika",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj odznakę użytkownika",
+      "name": "Aktualizuj odznakę użytkownika",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
@@ -819,25 +849,25 @@
       "type": "api"
     },
     {
-      "name": "Zaktualizuj status subskrypcji powiadomień o komentarzu użytkownika",
+      "name": "Aktualizuj status subskrypcji komentarzy powiadomień użytkownika",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Powiadomienia użytkownika",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj status subskrypcji powiadomień o stronie",
+      "name": "Aktualizuj status subskrypcji stron powiadomień użytkownika",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Powiadomienia użytkownika",
       "type": "api"
     },
     {
-      "name": "Zaktualizuj status powiadomienia użytkownika",
+      "name": "Aktualizuj status powiadomienia użytkownika",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "Powiadomienia użytkownika",
       "type": "api"
     },
     {
-      "name": "Pobierz statusy obecności użytkowników",
+      "name": "Pobierz statusy obecności użytkownika",
       "file": "getuserpresencestatuses-api-generated.md",
       "subCat": "Status obecności użytkownika",
       "type": "api"

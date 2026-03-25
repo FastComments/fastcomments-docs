@@ -1,21 +1,24 @@
-## Параметри
+---
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| sendEmail | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| sendEmail | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-987';
-const moderatorId: string = 'mod-78b2c9a4-3f1e-4d6a';
+const tenantId: string = 'tenant_9f3b2d4a6c';
+const moderatorId: string = 'moderator_84a1b9c2';
 const sendEmail: string = 'true';
 const result: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);
 [inline-code-end]
+
+---

@@ -11,6 +11,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**aggregateQuestionResults**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#aggregatequestionresults) | **GET** /api/v1/question-results-aggregation | 
 *DefaultApi* | [**blockUserFromComment**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#blockuserfromcomment) | **POST** /api/v1/comments/{id}/block | 
 *DefaultApi* | [**bulkAggregateQuestionResults**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#bulkaggregatequestionresults) | **POST** /api/v1/question-results-aggregation/bulk | 
+*DefaultApi* | [**changeTicketState**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#changeticketstate) | **PATCH** /api/v1/tickets/{id}/state | 
 *DefaultApi* | [**combineCommentsWithQuestionResults**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#combinecommentswithquestionresults) | **GET** /api/v1/question-results-aggregation/combine/comments | 
 *DefaultApi* | [**createEmailTemplate**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createemailtemplate) | **POST** /api/v1/email-templates | 
 *DefaultApi* | [**createFeedPost**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createfeedpost) | **POST** /api/v1/feed-posts | 
@@ -21,6 +22,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenant) | **POST** /api/v1/tenants | 
 *DefaultApi* | [**createTenantPackage**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenantpackage) | **POST** /api/v1/tenant-packages | 
 *DefaultApi* | [**createTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenantuser) | **POST** /api/v1/tenant-users | 
+*DefaultApi* | [**createTicket**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createticket) | **POST** /api/v1/tickets | 
 *DefaultApi* | [**createUserBadge**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createuserbadge) | **POST** /api/v1/user-badges | 
 *DefaultApi* | [**createVote**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createvote) | **POST** /api/v1/votes | 
 *DefaultApi* | [**deleteComment**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#deletecomment) | **DELETE** /api/v1/comments/{id} | 
@@ -77,6 +79,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#gettenantuser) | **GET** /api/v1/tenant-users/{id} | 
 *DefaultApi* | [**getTenantUsers**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#gettenantusers) | **GET** /api/v1/tenant-users | 
 *DefaultApi* | [**getTenants**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#gettenants) | **GET** /api/v1/tenants | 
+*DefaultApi* | [**getTicket**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#getticket) | **GET** /api/v1/tickets/{id} | 
+*DefaultApi* | [**getTickets**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#gettickets) | **GET** /api/v1/tickets | 
 *DefaultApi* | [**getUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#getuser) | **GET** /api/v1/users/{id} | 
 *DefaultApi* | [**getUserBadge**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#getuserbadge) | **GET** /api/v1/user-badges/{id} | 
 *DefaultApi* | [**getUserBadgeProgressById**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#getuserbadgeprogressbyid) | **GET** /api/v1/user-badge-progress/{id} | 
@@ -107,6 +111,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**updateNotification**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatenotification) | **PATCH** /api/v1/notifications/{id} | 
 *DefaultApi* | [**updateQuestionConfig**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatequestionconfig) | **PATCH** /api/v1/question-configs/{id} | 
 *DefaultApi* | [**updateQuestionResult**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatequestionresult) | **PATCH** /api/v1/question-results/{id} | 
+*DefaultApi* | [**updateSubscription**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatesubscription) | **PATCH** /api/v1/subscriptions/{id} | 
 *DefaultApi* | [**updateTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenant) | **PATCH** /api/v1/tenants/{id} | 
 *DefaultApi* | [**updateTenantPackage**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenantpackage) | **PATCH** /api/v1/tenant-packages/{id} | 
 *DefaultApi* | [**updateTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenantuser) | **PATCH** /api/v1/tenant-users/{id} | 

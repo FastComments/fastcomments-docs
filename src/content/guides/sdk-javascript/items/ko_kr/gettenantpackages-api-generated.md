@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | skip | number | 아니오 |  |
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'getTenantPackages 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f3a9c2d';
-const skip: number = 25;
-const packagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId);
-const pagedPackagesResponse: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);
+const tenantId: string = "tenant_7f8e3b4c";
+const skip: number = 20;
+const packagesDefault: GetTenantPackages200Response = await getTenantPackages(tenantId);
+const packagesWithSkip: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);
 [inline-code-end]
 
 ---

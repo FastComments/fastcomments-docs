@@ -2,8 +2,8 @@
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| create_tenant_user_body | models::CreateTenantUserBody | Yes |  |
+| tenant_id | String | Sí |  |
+| create_tenant_user_body | models::CreateTenantUserBody | Sí |  |
 
 ## Respuesta
 
@@ -11,20 +11,19 @@ Devuelve: [`CreateTenantUser200Response`](https://github.com/FastComments/fastco
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'create_tenant_user Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de create_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let create_tenant_user_body: models::CreateTenantUserBody = models::CreateTenantUserBody {
-    email: "jane.doe@acme.com".to_string(),
-    display_name: Some("Jane Doe".to_string()),
-    role: Some("moderator".to_string()),
-    external_id: Some("acme-12345".to_string()),
-    subscribed_to_digest: Some(false),
-};
 let params: CreateTenantUserParams = CreateTenantUserParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    create_tenant_user_body,
+    create_tenant_user_body: models::CreateTenantUserBody {
+        username: "jane.doe".to_string(),
+        email: "jane.doe@acme.com".to_string(),
+        display_name: Some("Jane Doe".to_string()),
+        roles: Some(vec!["reader".to_string(), "commenter".to_string()]),
+        locale: Some("en-US".to_string()),
+        is_verified: Some(true),
+    },
 };
+
 let response: CreateTenantUser200Response = create_tenant_user(&configuration, params).await?;
 [inline-code-end]
-
----

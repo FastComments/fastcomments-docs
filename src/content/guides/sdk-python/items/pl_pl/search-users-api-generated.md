@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
 | urlId | string | query | Tak |  |
-| usernameStartsWith | string | query | Tak |  |
+| usernameStartsWith | string | query | Nie |  |
 | mentionGroupIds | array | query | Nie |  |
 | sso | string | query | Nie |  |
+| searchSection | string | query | Nie |  |
 
 ## Odpowiedź
 
@@ -21,7 +22,7 @@ from client.models.search_users200_response import SearchUsers200Response
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zdefiniowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -34,12 +35,13 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str | 
+    username_starts_with = 'username_starts_with_example' # str |  (opcjonalne)
     mention_group_ids = ['mention_group_ids_example'] # List[str] |  (opcjonalne)
     sso = 'sso_example' # str |  (opcjonalne)
+    search_section = 'search_section_example' # str |  (opcjonalne)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with, mention_group_ids=mention_group_ids, sso=sso)
+        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

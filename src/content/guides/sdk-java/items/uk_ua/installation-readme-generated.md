@@ -12,36 +12,36 @@
 </repositories>
 ```
 
-Потім додайте необхідні залежності:
+Потім додайте залежності, які вам потрібні:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Клієнт API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Основна бібліотека (включає SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Бібліотека PubSub (для подій у реальному часі) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>0.0.2</version>
+        <version>1.3.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Додайте репозиторій Repsy у файл build.gradle:
+Додайте репозиторій Repsy до файлу build.gradle:
 
 ```groovy
 repositories {
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:0.0.2"
+    // Клієнт API
+    implementation "com.fastcomments:client:1.3.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:0.0.2"
+    // Основна бібліотека (включає SSO)
+    implementation "com.fastcomments:core:1.3.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:0.0.2"
+    // Бібліотека PubSub (для подій у реальному часі)
+    implementation "com.fastcomments:pubsub:1.3.1"
 }
 ```
 
-### Вміст бібліотеки
+### Зміст бібліотеки
 
-Ця бібліотека містить три модулі. Згенерований клієнт API, основна бібліотека Java, яка містить вручну написані утиліти для полегшення роботи з API, та модуль `pubsub`, який є бібліотекою для підписки на потоки змін.
+Ця бібліотека містить три модулі. Згенерований клієнт API, базова Java-бібліотека, яка містить вручну написані утиліти для спрощення роботи з API, та модуль `pubsub`, який є бібліотекою для підписки на потоки змін.
 
-- [Документація клієнтської бібліотеки API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документація бібліотеки клієнта API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Документація основної бібліотеки, включно з прикладами SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документація бібліотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Публічні та захищені API
 
-Для клієнта API існують два класи, `DefaultApi` та `PublicApi`. `DefaultApi` містить методи, які вимагають вашого API-ключа, а `PublicApi` містить виклики API, які можна виконувати без автентифікації безпосередньо з браузера/мобільного пристрою/тощо.
+Для клієнта API є два класи, `DefaultApi` та `PublicApi`. `DefaultApi` містить методи, які вимагають вашого API-ключа, а `PublicApi` містить виклики API, які можна виконувати безпосередньо з браузера/мобільного пристрою тощо без автентифікації.

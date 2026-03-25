@@ -1,16 +1,17 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
-| usernameStartsWith | string | query | Ja |  |
+| usernameStartsWith | string | query | Nee |  |
 | mentionGroupIds | array | query | Nee |  |
 | sso | string | query | Nee |  |
+| searchSection | string | query | Nee |  |
 
-## Respons
+## Antwoord
 
-Geeft terug: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
+Retourneert: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users200_response.rb)
 
 ## Voorbeeld
 
@@ -22,15 +23,16 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
-username_starts_with = 'username_starts_with_example' # String | 
 opts = {
+  username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
   
-  result = api_instance.search_users(tenant_id, url_id, username_starts_with, opts)
+  result = api_instance.search_users(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"

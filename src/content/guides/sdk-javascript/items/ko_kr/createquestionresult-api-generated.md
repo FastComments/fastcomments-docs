@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -14,15 +13,15 @@
 
 [inline-code-attrs-start title = 'createQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7a3c_us-east-1";
-const metaItem: MetaItem = { key: "referrer", value: "/blog/how-to-comment" };
+const tenantId: string = "tenant-72b1f4";
+const meta: MetaItem[] = [{ key: "platform", value: "web" }];
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_42",
-  commenterId: "user_1984",
-  answer: "yes",
-  score: 4,
-  meta: [metaItem] // 선택적 메타데이터 예시
-} as CreateQuestionResultBody;
+  questionId: "question-83472",
+  commenterId: "user-5521",
+  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
+  meta, // 선택적 메타데이터
+  note: "Follow-up requested" // 선택적 매개변수 예시
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

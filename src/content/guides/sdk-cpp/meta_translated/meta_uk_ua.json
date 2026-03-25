@@ -1,6 +1,6 @@
 {
   "name": "C++ SDK",
-  "pageHeader": "SDK C++ для FastComments",
+  "pageHeader": "FastComments C++ SDK",
   "itemsOrdered": [
     {
       "name": "Вимоги",
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Виклики API: синхронні та асинхронні",
+      "name": "Виконання викликів API: синхронно та асинхронно",
       "file": "making-api-calls-synchronous-vs-asynchronous-readme-generated.md",
       "subCat": "Довідник API",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Документація для FastComments",
+      "name": "Документація для fastcomments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -47,7 +47,7 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегація",
+      "subCat": "Агрегування",
       "type": "api"
     },
     {
@@ -203,37 +203,37 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Конфігурації домену",
+      "subCat": "Конфігурації доменів",
       "type": "api"
     },
     {
@@ -497,97 +497,97 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікувані вебхук-події",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікувані вебхук-події",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікувані вебхук-події",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Конфігурації запитань",
+      "subCat": "Налаштування питань",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Конфігурації запитань",
+      "subCat": "Налаштування питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Конфігурації запитань",
+      "subCat": "Налаштування питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Конфігурації запитань",
+      "subCat": "Налаштування питань",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Конфігурації запитань",
+      "subCat": "Налаштування питань",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Агрегування результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Агрегування результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Агрегування результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
@@ -651,117 +651,147 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Підписки",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Щоденне використання тенанта",
+      "subCat": "Щоденне використання орендаря",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Пакети тенанта",
+      "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Користувачі тенанта",
+      "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Тенанти",
+      "subCat": "Орендарі",
+      "type": "api"
+    },
+    {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тикети",
       "type": "api"
     },
     {
@@ -791,31 +821,31 @@
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Значки користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Значки користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Значки користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Значки користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Значки користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {

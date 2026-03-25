@@ -2,15 +2,16 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| usernameStartsWith | string | query | 否 |  |
+| mentionGroupIds | array | query | 否 |  |
+| sso | string | query | 否 |  |
+| searchSection | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
+回傳： [`SearchUsers200Response`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsers200Response.php)
 
 ## 範例
 
@@ -22,7 +23,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果想使用自訂的 HTTP 客戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 若要使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
@@ -31,9 +32,10 @@ $url_id = 'url_id_example'; // string
 $username_starts_with = 'username_starts_with_example'; // string
 $mention_group_ids = array('mention_group_ids_example'); // string[]
 $sso = 'sso_example'; // string
+$search_section = 'search_section_example'; // string
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

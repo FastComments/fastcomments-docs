@@ -27,25 +27,25 @@
       "type": "api"
     },
     {
-      "name": "Benutzer vom Kommentar blockieren (öffentlich)",
+      "name": "Vom Kommentar blockieren (öffentlich)",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar blockieren",
+      "subCat": "Vom Kommentar sperren",
       "type": "api"
     },
     {
-      "name": "Kommentar-Blockierung aufheben (öffentlich)",
+      "name": "Kommentar entsperren (öffentlich)",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar blockieren",
+      "subCat": "Vom Kommentar sperren",
       "type": "api"
     },
     {
-      "name": "Auf Blockierung geprüfte Kommentare",
+      "name": "Auf blockierte Kommentare prüfen",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Blockierte Kommentare prüfen",
       "type": "api"
     },
     {
-      "name": "Benutzer vom Kommentar blockieren",
+      "name": "Benutzer vom Kommentar sperren",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -69,7 +69,7 @@
       "type": "api"
     },
     {
-      "name": "Kommentarstimme löschen",
+      "name": "Kommentar-Stimme löschen",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -105,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "Benutzernamen der Kommentarstimmen abrufen",
+      "name": "Nutzernamen von Kommentarstimmen abrufen",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -117,7 +117,7 @@
       "type": "api"
     },
     {
-      "name": "Kommentar anpinnen",
+      "name": "Kommentar anheften",
       "file": "pincomment-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -135,7 +135,7 @@
       "type": "api"
     },
     {
-      "name": "Kommentartext setzen",
+      "name": "Kommentartext festlegen",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -147,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "Kommentarmeldung aufheben",
+      "name": "Kommentar-Meldung aufheben",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -159,7 +159,7 @@
       "type": "api"
     },
     {
-      "name": "Kommentar entpinnen",
+      "name": "Anheftung des Kommentars entfernen",
       "file": "unpincomment-api-generated.md",
       "subCat": "Kommentare",
       "type": "api"
@@ -225,7 +225,7 @@
       "type": "api"
     },
     {
-      "name": "E-Mail-Vorlagen-Renderfehler löschen",
+      "name": "Render-Fehler der E-Mail-Vorlage löschen",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "E-Mail-Vorlagen",
       "type": "api"
@@ -243,7 +243,7 @@
       "type": "api"
     },
     {
-      "name": "Renderfehler der E-Mail-Vorlagen abrufen",
+      "name": "Render-Fehler der E-Mail-Vorlagen abrufen",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "E-Mail-Vorlagen",
       "type": "api"
@@ -279,61 +279,61 @@
       "type": "api"
     },
     {
-      "name": "Feed-Beitrag erstellen",
+      "name": "Feedbeitrag erstellen",
       "file": "createfeedpost-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beitrag erstellen (öffentlich)",
+      "name": "Feedbeitrag erstellen (öffentlich)",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beitrag löschen (öffentlich)",
+      "name": "Feedbeitrag löschen (öffentlich)",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beiträge abrufen",
+      "name": "Feedbeiträge abrufen",
       "file": "getfeedposts-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beiträge abrufen (öffentlich)",
+      "name": "Feedbeiträge abrufen (öffentlich)",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beitragsstatistiken abrufen",
+      "name": "Statistiken zu Feedbeiträgen abrufen",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Benutzerreaktionen (öffentlich) abrufen",
+      "name": "Benutzerreaktionen abrufen (öffentlich)",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Auf Feed-Beitrag reagieren (öffentlich)",
+      "name": "Auf Feedbeitrag reagieren (öffentlich)",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beitrag aktualisieren",
+      "name": "Feedbeitrag aktualisieren",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
     },
     {
-      "name": "Feed-Beitrag aktualisieren (öffentlich)",
+      "name": "Feedbeitrag aktualisieren (öffentlich)",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "Feed-Beiträge",
       "type": "api"
@@ -413,17 +413,17 @@
     {
       "name": "Benachrichtigungszähler löschen",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
-      "name": "Zwischengespeicherte Benachrichtigungsanzahl abrufen",
+      "name": "Zwischengespeicherten Benachrichtigungszähler abrufen",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
-      "name": "Benachrichtigungsanzahl abrufen",
+      "name": "Anzahl der Benachrichtigungen abrufen",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "Benachrichtigungen",
       "type": "api"
@@ -551,19 +551,19 @@
     {
       "name": "Frageergebnisse aggregieren",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
       "name": "Frageergebnisse stapelweise aggregieren",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
       "name": "Kommentare mit Frageergebnissen kombinieren",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
@@ -579,13 +579,13 @@
       "type": "api"
     },
     {
-      "name": "SSO-Benutzer per E-Mail abrufen",
+      "name": "SSO-Benutzer nach E-Mail abrufen",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSO-Benutzer",
       "type": "api"
     },
     {
-      "name": "SSO-Benutzer per ID abrufen",
+      "name": "SSO-Benutzer nach ID abrufen",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "SSO-Benutzer",
       "type": "api"
@@ -623,6 +623,12 @@
     {
       "name": "Abonnements abrufen",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Abonnements",
+      "type": "api"
+    },
+    {
+      "name": "Abonnement aktualisieren",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Abonnements",
       "type": "api"
     },
@@ -669,55 +675,55 @@
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer erstellen",
+      "name": "Mandanten-Benutzer erstellen",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer löschen",
+      "name": "Mandanten-Benutzer löschen",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer abrufen",
+      "name": "Mandanten-Benutzer abrufen",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer abrufen",
+      "name": "Mandanten-Benutzer abrufen",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer ersetzen",
+      "name": "Mandanten-Benutzer ersetzen",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
       "name": "Login-Link senden",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandantenbenutzer aktualisieren",
+      "name": "Mandanten-Benutzer aktualisieren",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Mandantenbenutzer",
+      "subCat": "Mandanten-Benutzer",
       "type": "api"
     },
     {
-      "name": "Mandanten erstellen",
+      "name": "Mandant erstellen",
       "file": "createtenant-api-generated.md",
       "subCat": "Mandanten",
       "type": "api"
     },
     {
-      "name": "Mandanten löschen",
+      "name": "Mandant löschen",
       "file": "deletetenant-api-generated.md",
       "subCat": "Mandanten",
       "type": "api"
@@ -741,57 +747,81 @@
       "type": "api"
     },
     {
+      "name": "Ticket-Status ändern",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Ticket erstellen",
+      "file": "createticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Ticket abrufen",
+      "file": "getticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Tickets abrufen",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "Bild hochladen",
       "file": "uploadimage-api-generated.md",
       "subCat": "Bild hochladen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge-Fortschritt per ID abrufen",
+      "name": "Fortschritt des Benutzerabzeichens nach ID abrufen",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Benutzer-Badge-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge-Fortschritt per Benutzer-ID abrufen",
+      "name": "Fortschritt des Benutzerabzeichens nach Benutzer-ID abrufen",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Benutzer-Badge-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Liste des Benutzer-Badge-Fortschritts abrufen",
+      "name": "Liste des Fortschritts der Benutzerabzeichen abrufen",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Benutzer-Badge-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge erstellen",
+      "name": "Benutzerabzeichen erstellen",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Benutzer-Badges",
+      "subCat": "Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge löschen",
+      "name": "Benutzerabzeichen löschen",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Benutzer-Badges",
+      "subCat": "Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge abrufen",
+      "name": "Benutzerabzeichen abrufen",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Benutzer-Badges",
+      "subCat": "Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badges abrufen",
+      "name": "Benutzerabzeichen abrufen",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Benutzer-Badges",
+      "subCat": "Benutzerabzeichen",
       "type": "api"
     },
     {
-      "name": "Benutzer-Badge aktualisieren",
+      "name": "Benutzerabzeichen aktualisieren",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Benutzer-Badges",
+      "subCat": "Benutzerabzeichen",
       "type": "api"
     },
     {
@@ -807,25 +837,25 @@
       "type": "api"
     },
     {
-      "name": "Benutzerbenachrichtigungszähler zurücksetzen",
+      "name": "Benutzer-Benachrichtigungszähler zurücksetzen",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "Benutzerbenachrichtigungen",
       "type": "api"
     },
     {
-      "name": "Benutzerbenachrichtigungen zurücksetzen",
+      "name": "Benachrichtigungen des Benutzers zurücksetzen",
       "file": "resetusernotifications-api-generated.md",
       "subCat": "Benutzerbenachrichtigungen",
       "type": "api"
     },
     {
-      "name": "Status des Kommentar-Abonnements für Benutzerbenachrichtigungen aktualisieren",
+      "name": "Kommentar-Abonnementstatus des Benutzers aktualisieren",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Benutzerbenachrichtigungen",
       "type": "api"
     },
     {
-      "name": "Status des Seiten-Abonnements für Benutzerbenachrichtigungen aktualisieren",
+      "name": "Seiten-Abonnementstatus des Benutzers aktualisieren",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Benutzerbenachrichtigungen",
       "type": "api"
@@ -837,9 +867,9 @@
       "type": "api"
     },
     {
-      "name": "Präsenzstatus der Benutzer abrufen",
+      "name": "Anwesenheitsstatus der Benutzer abrufen",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Benutzer-Präsenzstatus",
+      "subCat": "Anwesenheitsstatus der Benutzer",
       "type": "api"
     },
     {

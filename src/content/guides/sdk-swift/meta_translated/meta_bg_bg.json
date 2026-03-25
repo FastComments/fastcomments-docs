@@ -3,43 +3,43 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
-      "name": "Инсталиране",
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Първи стъпки",
       "type": "readme"
     },
     {
-      "name": "Съдържание на библиотеката",
+      "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Бърз старт",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Публични и защитени API",
+      "name": "Public vs Secured APIs",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Референция на API",
       "type": "readme"
     },
     {
-      "name": "Извършване на API повиквания",
+      "name": "Making API Calls",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Референция на API",
       "type": "readme"
     },
     {
-      "name": "Чести проблеми",
+      "name": "Common Issues",
       "file": "common-issues-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Бележки",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -53,7 +53,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Одитни журнали",
+      "subCat": "Дневници на одита",
       "type": "api"
     },
     {
@@ -245,67 +245,67 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Имейл шаблони",
+      "subCat": "Шаблони за имейли",
       "type": "api"
     },
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Журнал на събитията",
+      "subCat": "Регистър на събитията",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Журнал на събитията",
+      "subCat": "Регистър на събитията",
       "type": "api"
     },
     {
@@ -371,7 +371,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Докладване на коментар",
+      "subCat": "Отбелязване на коментар",
       "type": "api"
     },
     {
@@ -443,31 +443,31 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Брой известия",
+      "subCat": "Брой уведомления",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Брой известия",
+      "subCat": "Брой уведомления",
       "type": "api"
     },
     {
       "name": "getNotificationCount",
       "file": "getnotificationcount-api-generated.md",
-      "subCat": "Известия",
+      "subCat": "Уведомления",
       "type": "api"
     },
     {
       "name": "getNotifications",
       "file": "getnotifications-api-generated.md",
-      "subCat": "Известия",
+      "subCat": "Уведомления",
       "type": "api"
     },
     {
       "name": "updateNotification",
       "file": "updatenotification-api-generated.md",
-      "subCat": "Известия",
+      "subCat": "Уведомления",
       "type": "api"
     },
     {
@@ -503,19 +503,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Изчакващи webhook събития",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Изчакващи webhook събития",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Чакащи webhook събития",
+      "subCat": "Изчакващи webhook събития",
       "type": "api"
     },
     {
@@ -581,19 +581,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Агрегация на резултатите от въпроси",
+      "subCat": "Агрегиране на резултати от въпроси",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Агрегация на резултатите от въпроси",
+      "subCat": "Агрегиране на резултати от въпроси",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Агрегация на резултатите от въпроси",
+      "subCat": "Агрегиране на резултати от въпроси",
       "type": "api"
     },
     {
@@ -653,6 +653,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Абонаменти",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Абонаменти",
       "type": "api"
     },
@@ -771,6 +777,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Качване на изображение",
@@ -827,49 +857,49 @@
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Потребителски известия",
+      "subCat": "Потребителски уведомления",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статуси на присъствие на потребителите",
+      "subCat": "Статуси на присъствие на потребителя",
       "type": "api"
     },
     {

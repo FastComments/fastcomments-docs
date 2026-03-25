@@ -1,7 +1,7 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|------|-------------|
+| 이름 | 형식 | 필수 | 설명 |
+|------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 
@@ -13,11 +13,11 @@
 
 [inline-code-attrs-start title = 'getTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp";
-const id: string = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
-interface GetOptions { includeDeleted?: boolean; locale?: string; }
-const options: GetOptions = { locale: "en-US" };
-const result: GetTenant200Response = await getTenant(tenantId, id);
+const tenantId: string = "tenant_9f4b2c1a";
+const idOverride: string | undefined = undefined; // 선택적 재정의(가능한 경우)
+const id: string = idOverride ?? "site_3e7a6b2f";
+const response: GetTenant200Response = await getTenant(tenantId, id);
+console.log(response);
 [inline-code-end]
 
 ---

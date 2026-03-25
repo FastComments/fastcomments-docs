@@ -1,12 +1,12 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | updateModeratorBody | UpdateModeratorBody | Sim |  |
 
-## Resposta
+## Response
 
 Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,16 +14,16 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemplo de updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = '4f8a9c2e-3b6d-4d9e-8c2f-1a2b3c4d5e6f';
-const id: string = 'mod_92a7c4';
-const updateModeratorBodyMinimal: UpdateModeratorBody = { displayName: 'Sophia Patel' };
-const updateModeratorBodyWithOptional: UpdateModeratorBody = {
-  displayName: 'Sophia Patel',
-  email: 'sophia.patel@newsroom.example',
-  permissions: ['remove_comments', 'ban_user'],
-  notifyOnFlag: true // parâmetro opcional demonstrado
+const tenantId: string = "acme-enterprises-42";
+const id: string = "moderator_517";
+const updateModeratorBody: UpdateModeratorBody = {
+  displayName: "Sofia Martinez",
+  email: "sofia.martinez@acme.com",
+  permissions: ["approve_comments", "flag_spam", "suspend_users"],
+  active: true,
+  avatarUrl: "https://cdn.acme.com/avatars/sofia.jpg" // campo opcional demonstrado
 };
-const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBodyWithOptional);
+const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);
 [inline-code-end]
 
 ---

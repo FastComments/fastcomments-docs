@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| id | String | 예 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## 응답
 
@@ -13,13 +13,13 @@
 
 [inline-code-attrs-start title = 'get_tenant_package 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant_package(configuration: &configuration::Configuration) -> Result<GetTenantPackage200Response, Error> {
+async fn fetch_tenant_package() -> Result<GetTenantPackage200Response, Error> {
     let params: GetTenantPackageParams = GetTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "premium-plan".to_string(),
-        include_details: Some(true),
+        id: "package-basic-2026".to_string(),
     };
-    let package: GetTenantPackage200Response = get_tenant_package(configuration, params).await?;
+    let include_metadata: Option<bool> = Some(true);
+    let package: GetTenantPackage200Response = get_tenant_package(&configuration, params).await?;
     Ok(package)
 }
 [inline-code-end]

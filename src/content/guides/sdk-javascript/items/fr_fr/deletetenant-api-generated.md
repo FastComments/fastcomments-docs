@@ -1,10 +1,10 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Oui |  |
-| sure | string | Non |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sure | string | No |  |
 
 ## Réponse
 
@@ -12,14 +12,14 @@ Renvoie: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple pour deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7b3f1a9e";
-const id: string = "flag_9c4d2b1a";
-const sure: string = "yes_confirm_delete";
+const tenantId: string = "tenant_7f3d2c";
+const id: string = "flag_8392b1a7";
+const sure: string = "confirmed";
 
-const result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
-console.log(result);
+const responseWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
+const responseWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
 [inline-code-end]
 
 ---

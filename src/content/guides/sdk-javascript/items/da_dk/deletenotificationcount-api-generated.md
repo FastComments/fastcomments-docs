@@ -5,17 +5,17 @@
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Svar
+## Respons
 
 Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteNotificationCount Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3a1b2c4d9e';
-const notificationId: string = 'notif_8c9d0a1b2f3e4b7';
-const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, notificationId);
+const tenantSuffix: string | undefined = undefined;
+const tenantId: string = tenantSuffix ? `tenant-${tenantSuffix}` : 'tenant-9142a7';
+const id: string = '3f9b2a44-1c2e-4d3b-9f6a-8e7c6d5b2a1f';
+const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, id);
+console.log(result);
 [inline-code-end]
-
----

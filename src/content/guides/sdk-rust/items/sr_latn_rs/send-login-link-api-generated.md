@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| redirect_url | String | Ne |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| redirect_url | String | No |  |
 
 ## Odgovor
 
@@ -12,17 +12,15 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer send_login_link'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer slanja linka za prijavu'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_send_login_link() -> Result<FlagCommentPublic200Response, Error> {
+async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {
     let params: SendLoginLinkParams = SendLoginLinkParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "jane.doe@acme.com".to_string(),
-        redirect_url: Some("https://acme.example.com/dashboard".to_string()),
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("user-98765"),
+        redirect_url: Some(String::from("https://acme.example.com/dashboard")),
     };
     let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;
     Ok(response)
 }
 [inline-code-end]
-
----

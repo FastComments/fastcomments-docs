@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -13,8 +13,10 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-8a9c2b';
-const packageId: string = 'pkg-47f3c9';
+const tenantId: string = 'tenant_acme_corp_987';
+const packageId: string = 'pkg_pro_2026_01';
+type DeleteOptions = { force?: boolean; notify?: boolean };
+const options: DeleteOptions = { force: true }; // parámetros opcionales demostrados
 const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 

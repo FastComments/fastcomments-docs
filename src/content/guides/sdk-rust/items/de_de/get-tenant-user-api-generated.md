@@ -2,8 +2,8 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | Ja |  |
+| id | String | Ja |  |
 
 ## Antwort
 
@@ -16,10 +16,11 @@ Gibt zurück: [`GetTenantUser200Response`](https://github.com/FastComments/fastc
 async fn run() -> Result<(), Error> {
     let params: GetTenantUserParams = GetTenantUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-7a3f2b".to_string(),
+        id: "user-9a4f2e".to_string(),
+        expand: Some(vec!["roles".to_string(), "preferences".to_string()]),
     };
-    let include_related: Option<String> = Some("roles,preferences".to_string());
-    let response: GetTenantUser200Response = get_tenant_user(&configuration, params).await?;
+    let user_response: GetTenantUser200Response = get_tenant_user(&configuration, params).await?;
+    println!("{:#?}", user_response);
     Ok(())
 }
 [inline-code-end]

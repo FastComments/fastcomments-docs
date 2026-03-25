@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | userId | string | Hayır |  |
@@ -17,13 +17,10 @@ Döndürür: [`GetNotificationCount200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getNotificationCount Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a9b7c';
-const userId: string = 'user_42b3c';
-const urlId: string = 'https://blog.example.com/posts/introducing-new-editor';
-const fromCommentId: string | undefined = undefined;
+const tenantId: string = 'tenant_abc123';
+const userId: string = 'user_987654321';
+const urlId: string = 'https://example.com/news/2026/new-features';
 const viewed: boolean = false;
-const type: string = 'mention';
-const result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);
+const type: string = 'reply';
+const notificationCountResponse: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, undefined, viewed, type);
 [inline-code-end]
-
----

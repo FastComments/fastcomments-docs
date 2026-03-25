@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Biblioteksindhold",
+      "name": "Bibliotekets indhold",
       "file": "library-contents-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "Offentlige vs sikrede API'er",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API-reference",
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "Foretage API-opkald",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API-reference",
       "type": "readme"
@@ -53,7 +53,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Audit-logfiler",
+      "subCat": "Audit-logge",
       "type": "api"
     },
     {
@@ -443,13 +443,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationstælling",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationstælling",
       "type": "api"
     },
     {
@@ -657,6 +657,12 @@
       "type": "api"
     },
     {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "Abonnementer",
+      "type": "api"
+    },
+    {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Lejer dagligt forbrug",
@@ -771,6 +777,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Billetter",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Upload billede",
@@ -779,19 +809,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremdrift",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremdrift",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge-fremdrift",
       "type": "api"
     },
     {
@@ -869,7 +899,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Brugertilstedeværelsesstatus",
+      "subCat": "Bruger tilstedeværelsesstatus",
       "type": "api"
     },
     {

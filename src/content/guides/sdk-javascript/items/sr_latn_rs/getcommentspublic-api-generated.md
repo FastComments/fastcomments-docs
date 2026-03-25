@@ -4,7 +4,7 @@ urlId
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -39,4 +39,40 @@ urlId
 
 Vraća: [`GetCommentsPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublic200Response.ts)
 
----
+## Primer
+
+[inline-code-attrs-start title = 'getCommentsPublic Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_eu-west_01';
+const urlId: string = 'https://www.financialtimes.com/articles/2026/market-update-q1';
+const response: GetCommentsPublic200Response = await getCommentsPublic(
+  tenantId,
+  urlId,
+  2,
+  undefined,
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.tokenPayload.signature',
+  undefined,
+  0,
+  50,
+  5,
+  true,
+  undefined,
+  true,
+  false,
+  true,
+  'en-US',
+  'reactions,moderation',
+  false,
+  true,
+  true,
+  3,
+  false,
+  undefined,
+  'performance',
+  ['feature','fastcomments'],
+  'user_9876',
+  undefined,
+  undefined,
+  undefined
+);
+[inline-code-end]

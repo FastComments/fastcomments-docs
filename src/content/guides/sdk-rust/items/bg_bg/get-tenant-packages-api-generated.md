@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | skip | f64 | Не |  |
@@ -11,14 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_packages Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let _packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
+    let packages: GetTenantPackages200Response = get_tenant_packages(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

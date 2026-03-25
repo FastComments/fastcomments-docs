@@ -15,15 +15,14 @@ Returns: [`FlagComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'un_flag_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn main() -> Result<(), Error> {
-    let params: UnFlagCommentParams = UnFlagCommentParams {
-        tenant_id: String::from("acme-news-tenant"),
-        id: String::from("news/article/2026/01/12/breaking#c12345"),
-        user_id: Some(String::from("user-9876")),
+async fn example_unflag_comment() -> Result<FlagComment200Response, Error> {
+    let params = UnFlagCommentParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("news/article/comment-12345"),
+        user_id: Some(String::from("reader-987")),
         anon_user_id: None,
     };
-
     let response: FlagComment200Response = un_flag_comment(&configuration, params).await?;
-    Ok(())
+    Ok(response)
 }
 [inline-code-end]

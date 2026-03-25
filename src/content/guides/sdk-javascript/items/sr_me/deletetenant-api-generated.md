@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -12,14 +13,14 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7b3f1a9e";
-const id: string = "flag_9c4d2b1a";
-const sure: string = "yes_confirm_delete";
+const tenantId: string = "tenant_7f3d2c";
+const id: string = "flag_8392b1a7";
+const sure: string = "confirmed";
 
-const result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
-console.log(result);
+const responseWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
+const responseWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
 [inline-code-end]
 
 ---

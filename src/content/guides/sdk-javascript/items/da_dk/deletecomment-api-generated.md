@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -10,5 +10,16 @@
 ## Svar
 
 Returnerer: [`DeleteComment200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteComment200Response.ts)
+
+## Eksempel
+
+[inline-code-attrs-start title = 'Eksempel på deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_7b3f2a';
+const commentId: string = 'cmt_8a1f4d2b';
+const contextUserId: string = 'user_102';
+const isLive: boolean = true;
+const result: DeleteComment200Response = await deleteComment(tenantId, commentId, contextUserId, isLive);
+[inline-code-end]
 
 ---

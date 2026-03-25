@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Richiesto | Descrizione |
 |------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
@@ -11,11 +11,11 @@ Restituisce: [`GetModerator200Response`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_eu_4f8d2b9e";
-const maybeModeratorId: string | undefined = "mod_91c3b7a2"; // origine opzionale (potrebbe essere undefined)
-const moderator: GetModerator200Response = await getModerator(tenantId, maybeModeratorId!);
+const tenantId: string = 'acme-corp-tenant-123';
+const id: string = 'mod-987654321';
+const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]
 
 ---

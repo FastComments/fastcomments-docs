@@ -1,27 +1,27 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 回應
 
-回傳：[`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfig200Response.ts)
+回傳: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfig200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getQuestionConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-47';
-const questionId: string = 'q-2026-01-12-01';
-const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, questionId);
-function summarizeConfig(cfg: GetQuestionConfig200Response, includeMetadata?: boolean): QuestionConfig | undefined {
-  // includeMetadata 是可選的；為簡潔省略實作
-  return undefined;
+const tenantId: string = 'acme-tenant-92';
+const id: string = 'question-2026-07-42';
+const response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
+
+function summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {
+  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';
 }
-const summarizedWithMeta: QuestionConfig | undefined = summarizeConfig(result, true);
-const summarizedDefault: QuestionConfig | undefined = summarizeConfig(result);
+
+const summary: string = summarize(response);
 [inline-code-end]
 
 ---

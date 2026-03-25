@@ -1,15 +1,30 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| user_id | String | Ne |  |
-| anon_user_id | String | Ne |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| user_id | String | Не |  |
+| anon_user_id | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_200_response.rs)
+Враћа: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_200_response.rs)
+
+## Пример
+
+[inline-code-attrs-start title = 'flag_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<FlagComment200Response, Error> {
+    let params: FlagCommentParams = FlagCommentParams {
+        tenant_id: "acme-news-tenant".to_string(),
+        id: "comment-20260325-842".to_string(),
+        user_id: Some("user-7b2f3d".to_string()),
+        anon_user_id: Some("anon-1a2b3c".to_string()),
+    };
+    let resp: FlagComment200Response = flag_comment(&configuration, params).await?;
+    Ok(resp)
+}
+[inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Sí |  |
@@ -13,19 +13,15 @@ Devuelve: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Ejemplo de createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_live_7f8b3c2a";
-const customOptions: QuestionConfigCustomOptionsInner[] = [
-  { value: "under18", label: "Under 18" },
-  { value: "18-24", label: "18-24" },
-  { value: "25-34", label: "25-34", defaultSelected: true }
-];
+const tenantId: string = "tenant_9f8b2c";
+const option: QuestionConfigCustomOptionsInner = { id: "opt_yes", label: "Yes, helpful", value: "yes" };
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  key: "age_range",
-  label: "What is your age range?",
-  required: false, // opcional: demostrar campos opcionales omitidos vs incluidos
-  renderingType: QuestionRenderingType.Dropdown,
-  options: customOptions,
-  whenSave: QuestionWhenSave.Always
+  title: "Article usefulness",
+  prompt: "Was this article helpful?",
+  type: "singleChoice",
+  required: false, // parámetro opcional demostrado
+  options: [option],
+  saveBehavior: "immediate"
 };
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]

@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Agregación",
+      "name": "Agregar",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregación",
       "type": "api"
@@ -63,7 +63,7 @@
       "type": "api"
     },
     {
-      "name": "Bloquear usuario desde comentario",
+      "name": "Bloquear usuario por comentario",
       "file": "block-user-from-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -93,7 +93,7 @@
       "type": "api"
     },
     {
-      "name": "Reportar comentario",
+      "name": "Marcar comentario",
       "file": "flag-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -135,7 +135,7 @@
       "type": "api"
     },
     {
-      "name": "Fijar comentario",
+      "name": "Anclar comentario",
       "file": "pin-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -159,13 +159,13 @@
       "type": "api"
     },
     {
-      "name": "Desbloquear usuario desde comentario",
+      "name": "Desbloquear usuario por comentario",
       "file": "un-block-user-from-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
     },
     {
-      "name": "Quitar reporte de comentario",
+      "name": "Quitar marca al comentario",
       "file": "un-flag-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -177,7 +177,7 @@
       "type": "api"
     },
     {
-      "name": "Desfijar comentario",
+      "name": "Desanclar comentario",
       "file": "un-pin-comment-api-generated.md",
       "subCat": "Comentarios",
       "type": "api"
@@ -219,7 +219,7 @@
       "type": "api"
     },
     {
-      "name": "Modificar parcialmente configuración de dominio",
+      "name": "Actualizar parcialmente configuración de dominio",
       "file": "patch-domain-config-api-generated.md",
       "subCat": "Configuraciones de dominio",
       "type": "api"
@@ -291,7 +291,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener registro de eventos global",
+      "name": "Obtener registro global de eventos",
       "file": "get-global-event-log-api-generated.md",
       "subCat": "Registro de eventos",
       "type": "api"
@@ -333,7 +333,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener reacciones de usuarios públicas",
+      "name": "Obtener reacciones de usuario públicas",
       "file": "get-user-reacts-public-api-generated.md",
       "subCat": "Publicaciones del feed",
       "type": "api"
@@ -357,9 +357,9 @@
       "type": "api"
     },
     {
-      "name": "Reportar comentario público",
+      "name": "Marcar comentario público",
       "file": "flag-comment-public-api-generated.md",
-      "subCat": "Reportar comentario",
+      "subCat": "Marcar comentario",
       "type": "api"
     },
     {
@@ -387,7 +387,7 @@
       "type": "api"
     },
     {
-      "name": "Modificar hashtag parcialmente",
+      "name": "Actualizar parcialmente hashtag",
       "file": "patch-hash-tag-api-generated.md",
       "subCat": "Hashtags",
       "type": "api"
@@ -471,7 +471,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener página por URL ID",
+      "name": "Obtener página por URLID",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
@@ -483,57 +483,57 @@
       "type": "api"
     },
     {
-      "name": "Modificar página parcialmente",
+      "name": "Actualizar parcialmente página",
       "file": "patch-page-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
     },
     {
-      "name": "Eliminar evento de webhook pendiente",
+      "name": "Eliminar evento pendiente de webhook",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos pendientes de webhook",
       "type": "api"
     },
     {
-      "name": "Obtener contador de eventos de webhook pendientes",
+      "name": "Obtener contador de eventos pendientes de webhook",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos pendientes de webhook",
       "type": "api"
     },
     {
-      "name": "Obtener eventos de webhook pendientes",
+      "name": "Obtener eventos pendientes de webhook",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "Eventos de webhook pendientes",
+      "subCat": "Eventos pendientes de webhook",
       "type": "api"
     },
     {
       "name": "Crear configuración de pregunta",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Configuraciones de pregunta",
+      "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
       "name": "Eliminar configuración de pregunta",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Configuraciones de pregunta",
+      "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
       "name": "Obtener configuración de pregunta",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Configuraciones de pregunta",
+      "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
       "name": "Obtener configuraciones de preguntas",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Configuraciones de pregunta",
+      "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
       "name": "Actualizar configuración de pregunta",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Configuraciones de pregunta",
+      "subCat": "Configuraciones de preguntas",
       "type": "api"
     },
     {
@@ -615,7 +615,7 @@
       "type": "api"
     },
     {
-      "name": "Modificar usuario SSO parcialmente",
+      "name": "Actualizar parcialmente usuario SSO",
       "file": "patch-sso-user-api-generated.md",
       "subCat": "Usuarios SSO",
       "type": "api"
@@ -641,6 +641,12 @@
     {
       "name": "Obtener suscripciones",
       "file": "get-subscriptions-api-generated.md",
+      "subCat": "Suscripciones",
+      "type": "api"
+    },
+    {
+      "name": "Actualizar suscripción",
+      "file": "update-subscription-api-generated.md",
       "subCat": "Suscripciones",
       "type": "api"
     },
@@ -759,6 +765,30 @@
       "type": "api"
     },
     {
+      "name": "Cambiar estado del ticket",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Crear ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Obtener ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "Obtener tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "Subir imagen",
       "file": "upload-image-api-generated.md",
       "subCat": "Subir imagen",
@@ -815,49 +845,49 @@
     {
       "name": "Obtener contador de notificaciones del usuario",
       "file": "get-user-notification-count-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
       "name": "Obtener notificaciones del usuario",
       "file": "get-user-notifications-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
       "name": "Restablecer contador de notificaciones del usuario",
       "file": "reset-user-notification-count-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
       "name": "Restablecer notificaciones del usuario",
       "file": "reset-user-notifications-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a comentarios (notificaciones de usuario)",
+      "name": "Actualizar estado de suscripción a comentarios del usuario",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de suscripción a páginas (notificaciones de usuario)",
+      "name": "Actualizar estado de suscripción a páginas del usuario",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
-      "name": "Actualizar estado de notificación de usuario",
+      "name": "Actualizar estado de notificación del usuario",
       "file": "update-user-notification-status-api-generated.md",
-      "subCat": "Notificaciones de usuario",
+      "subCat": "Notificaciones del usuario",
       "type": "api"
     },
     {
       "name": "Obtener estados de presencia de usuario",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Estado de presencia de usuario",
+      "subCat": "Estados de presencia de usuario",
       "type": "api"
     },
     {
@@ -891,7 +921,7 @@
       "type": "api"
     },
     {
-      "name": "Obtener votos del usuario",
+      "name": "Obtener votos para el usuario",
       "file": "get-votes-for-user-api-generated.md",
       "subCat": "Votos",
       "type": "api"

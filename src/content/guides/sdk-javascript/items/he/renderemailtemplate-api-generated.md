@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | כן |  |
@@ -12,21 +12,21 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-7f3';
+const tenantId: string = 'tenant_b6f3c2';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'new-comment-notification',
-  recipientEmail: 'jane.doe@acme.com',
-  variables: {
-    commenterName: 'Samir Patel',
-    commentText: 'I found this article really helpful — thanks for sharing!',
-    threadUrl: 'https://acme.com/blog/123#comments'
-  },
-  includeUnsubscribeLink: true
+  templateId: 'comment-notification',
+  recipient: { name: 'Ava Thompson', email: 'ava.thompson@publisher.com' },
+  context: {
+    siteName: 'City Gazette',
+    commentText: 'Thanks for the in-depth coverage — very helpful.',
+    articleTitle: 'Downtown Redevelopment Plan Advances',
+    threadUrl: 'https://citygazette.example/articles/2026/redevelopment#comments'
+  }
 };
 const locale: string = 'en-US';
-const response: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
+const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
 [inline-code-end]
 
 ---

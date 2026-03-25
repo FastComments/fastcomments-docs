@@ -13,11 +13,9 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
-const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Εάν υπήρχε προαιρετική παράμετρος, π.χ. includeHidden, θα μπορούσε να χρησιμοποιηθεί ως εξής:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
-[inline-code-end]
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // προαιρετική παράμετρος ερωτήματος
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
 
----
+const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+[inline-code-end]

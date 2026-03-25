@@ -6,7 +6,7 @@
 | id | string | Ja |  |
 | sure | string | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,12 +14,12 @@ Returnerer: [`FlagCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'deleteTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7b3f1a9e";
-const id: string = "flag_9c4d2b1a";
-const sure: string = "yes_confirm_delete";
+const tenantId: string = "tenant_7f3d2c";
+const id: string = "flag_8392b1a7";
+const sure: string = "confirmed";
 
-const result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
-console.log(result);
+const responseWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
+const responseWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
 [inline-code-end]
 
 ---

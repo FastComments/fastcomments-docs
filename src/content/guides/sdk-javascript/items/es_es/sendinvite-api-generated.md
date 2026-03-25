@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -14,8 +14,12 @@ Devuelve: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Ejemplo de sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-004';
-const id: string = 'comment_9b7f3a2c';
-const fromName: string = 'María Hernández';
-const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
+const tenantId: string = 'tenant_acme-42';
+const id: string = 'comment_8f3b21a7';
+const fromName: string = 'Elena Morales';
+const replyToEmail: string | undefined = undefined;
+
+const result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, replyToEmail);
 [inline-code-end]
+
+---

@@ -1,16 +1,33 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
-| body | PickAPICommentUpdatableCommentFields | はい |  |
+| updatableCommentParams | UpdatableCommentParams | はい |  |
 | contextUserId | string | いいえ |  |
 | doSpamCheck | boolean | いいえ |  |
 | isLive | boolean | いいえ |  |
 
 ## レスポンス
 
-返却値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+戻り値: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+
+## 例
+
+[inline-code-attrs-start title = 'updateComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_acme_corp_01";
+const id: string = "comment_20260325_4592";
+const updatableCommentParams: UpdatableCommentParams = {
+  body: "Updated the response to include a link to the RFC and fixed a typo in the second paragraph.",
+  editedByUserId: "user_8721",
+  isVisible: true
+};
+const contextUserId: string = "user_8721";
+const doSpamCheck: boolean = true;
+const isLive: boolean = true;
+const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
+[inline-code-end]
 
 ---

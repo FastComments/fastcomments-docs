@@ -4,9 +4,10 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
-| usernameStartsWith | string | query | Так |  |
+| usernameStartsWith | string | query | Ні |  |
 | mentionGroupIds | array | query | Ні |  |
 | sso | string | query | Ні |  |
+| searchSection | string | query | Ні |  |
 
 ## Відповідь
 
@@ -22,24 +23,27 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID/client"
+	openapiclient "github.com/fastcomments/fastcomments-go/client"
 )
 
 func main() {
 	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	usernameStartsWith := "usernameStartsWith_example" // string | 
+	usernameStartsWith := "usernameStartsWith_example" // string |  (необов'язково)
 	mentionGroupIds := []string{"Inner_example"} // []string |  (необов'язково)
 	sso := "sso_example" // string |  (необов'язково)
+	searchSection := "searchSection_example" // string |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).Execute()
+	resp, r, err := apiClient.PublicAPI.SearchUsers(context.Background(), tenantId).UrlId(urlId).UsernameStartsWith(usernameStartsWith).MentionGroupIds(mentionGroupIds).Sso(sso).SearchSection(searchSection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.SearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `SearchUsers`: SearchUsers200Response
+	// response from `SearchUsers`: SearchUsers200Response
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.SearchUsers`: %v\n", resp)
 }
 [inline-code-end]
+
+---

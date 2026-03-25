@@ -13,11 +13,12 @@
 
 [inline-code-attrs-start title = 'Приклад getTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f7d4b2a-1c3e";
-const id: string = "user_6a12b3c4d5";
-const includeProfile: boolean | undefined = true; // приклад необов'язкового параметра
-const response: GetTenantUser200Response = await getTenantUser(tenantId, id);
-console.log("Tenant user fetched", response);
+const tenantId: string = 'tenant_fc5a9b2c';
+const userId: string = 'user_0a12b3';
+const result: GetTenantUser200Response = await getTenantUser(tenantId, userId);
+const user: User | undefined = (result as any).user; // accessing payload
+const userEmail: string | undefined = user?.email;
+console.log('Fetched user email:', userEmail);
 [inline-code-end]
 
 ---

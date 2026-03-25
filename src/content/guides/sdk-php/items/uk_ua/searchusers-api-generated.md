@@ -2,11 +2,12 @@
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| usernameStartsWith | string | query | Yes |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Так |  |
+| urlId | string | query | Так |  |
+| usernameStartsWith | string | query | Ні |  |
+| mentionGroupIds | array | query | Ні |  |
+| sso | string | query | Ні |  |
+| searchSection | string | query | Ні |  |
 
 ## Відповідь
 
@@ -14,7 +15,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'searchUsers Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад searchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,7 +23,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
@@ -31,9 +32,10 @@ $url_id = 'url_id_example'; // string
 $username_starts_with = 'username_starts_with_example'; // string
 $mention_group_ids = array('mention_group_ids_example'); // string[]
 $sso = 'sso_example'; // string
+$search_section = 'search_section_example'; // string
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

@@ -2,16 +2,31 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
-| badgeId | string | Не |  |
-| type | number | Не |  |
-| displayedOnComments | boolean | Не |  |
-| limit | number | Не |  |
-| skip | number | Не |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| badgeId | string | No |  |
+| type | number | No |  |
+| displayedOnComments | boolean | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## Одговор
 
 Враћа: [`GetUserBadges200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadges200Response.ts)
+
+## Пример
+
+[inline-code-attrs-start title = 'getUserBadges Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'tenant_acme_01';
+const userId: string = 'user_5f4d3c2a';
+const badgeId: string = 'badge_top_contributor';
+const type: number = 1;
+const displayedOnComments: boolean = true;
+const limit: number = 50;
+const skip: number = 0;
+
+const result: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);
+[inline-code-end]
 
 ---

@@ -14,20 +14,17 @@ Returns: [`UpdateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'update_user_badge Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_badge_example() -> Result<(), Error> {
-    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "badge-top-commenter-001".to_string(),
-        update_user_badge_params: models::UpdateUserBadgeParams {
-            title: Some("Top Commenter".to_string()),
-            description: Some("Awarded for 100+ comments across news and opinion sections".to_string()),
-            enabled: Some(true),
-            icon_url: Some("https://cdn.acme-corp.com/assets/badges/top-commenter.png".to_string()),
-            color: Some("#FFD700".to_string()),
-            min_comments: Some(100),
-        },
-    };
-    let response: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;
-    Ok(())
-}
+let params: UpdateUserBadgeParams = UpdateUserBadgeParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    id: "badge-verified-001".to_string(),
+    update_user_badge_params: models::UpdateUserBadgeParams {
+        name: Some("Verified Contributor".to_string()),
+        description: Some("Awarded for consistent, high-quality contributions".to_string()),
+        icon_url: Some("https://assets.acme.com/badges/verified.png".to_string()),
+        color_hex: Some("#1E90FF".to_string()),
+        min_posts: Some(100u32),
+        active: Some(true),
+    },
+};
+let response: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;
 [inline-code-end]

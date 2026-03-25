@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| skip | number | 아니요 |  |
+| skip | number | 아니오 |  |
 
 ## 응답
 
@@ -13,10 +13,9 @@
 
 [inline-code-attrs-start title = 'getModerators 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_corp_7f9b2a";
+const tenantId: string = 'tenant-12345-prod';
 const moderatorsPage1: GetModerators200Response = await getModerators(tenantId);
-const skip: number = 50;
-const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, skip);
+const moderatorsPage2: GetModerators200Response = await getModerators(tenantId, 50);
 [inline-code-end]
 
 ---

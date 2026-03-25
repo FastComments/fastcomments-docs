@@ -17,14 +17,15 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_82b1c4";
-const commentId: string = "cmt_9f3b2a1";
+const tenantId: string = "tenant_acme_corp_01";
+const id: string = "comment_20260325_4592";
 const updatableCommentParams: UpdatableCommentParams = {
-  content: "Thanks — I've clarified the timeline and fixed the source link.",
-  metadata: { editedBy: "moderator_12", editReason: "clarity" }
+  body: "Updated the response to include a link to the RFC and fixed a typo in the second paragraph.",
+  editedByUserId: "user_8721",
+  isVisible: true
 };
-const contextUserId: string = "user_47a2b";
+const contextUserId: string = "user_8721";
 const doSpamCheck: boolean = true;
-const isLive: boolean = false;
-const result: FlagCommentPublic200Response = await updateComment(tenantId, commentId, updatableCommentParams, contextUserId, doSpamCheck, isLive);
+const isLive: boolean = true;
+const result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
 [inline-code-end]

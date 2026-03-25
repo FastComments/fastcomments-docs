@@ -13,18 +13,31 @@ Vraća: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Primer addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_3f2b9a';
-  const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-    tags: [
-      { name: 'performance', description: 'Comments about site performance', visibleToModeratorsOnly: false },
-      { name: 'feature-request', description: 'Requests for new features', visibleToModeratorsOnly: true }
-    ]
-  };
-  const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-  const resultWithNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBody);
-  console.log(result, resultWithNoTenant);
-})();
-[inline-code-end]
+// Kreirajte identifikator tenanta (opcioni parametar)
+const tenantId: string = "tenant_9f8c2b7a";
 
----
+// Pripremite pojedinačne unose tagova
+const tag1: BulkCreateHashTagsBodyTagsInner = {
+  name: "product-feedback",
+  label: "Product Feedback",
+  color: "#1f8a70",
+  description: "User suggestions and enhancement requests",
+  isActive: true
+};
+
+const tag2: BulkCreateHashTagsBodyTagsInner = {
+  name: "bug-report",
+  label: "Bug Report",
+  color: "#d64545",
+  description: "User-reported defects and issues",
+  isActive: true
+};
+
+// Telo za masovno kreiranje (opcioni parametar)
+const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
+  tags: [tag1, tag2]
+};
+
+// Pozovite globalnu asinhronu funkciju i dodelite tipizovan rezultat
+const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
+[inline-code-end]

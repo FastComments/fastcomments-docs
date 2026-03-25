@@ -1,7 +1,7 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|------|-------------|
 | tenant_id | String | 是 |  |
 | user_id | String | 否 |  |
 | url_id | String | 否 |  |
@@ -19,15 +19,14 @@
 [inline-code-start]
 async fn fetch_notifications() -> Result<(), Error> {
     let params: GetNotificationsParams = GetNotificationsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-1234".to_string()),
-        url_id: Some("news/politics/article-2026-01-12".to_string()),
-        from_comment_id: Some("cmt-98765".to_string()),
+        tenant_id: "acme-corp-tenant".to_owned(),
+        user_id: Some("user-12345".to_owned()),
+        url_id: Some("news/article/2026/03/25/major-update".to_owned()),
+        from_comment_id: Some("cmt-98765".to_owned()),
         viewed: Some(false),
         skip: Some(0.0),
     };
     let notifications: GetNotifications200Response = get_notifications(&configuration, params).await?;
-    let _ = notifications;
     Ok(())
 }
 [inline-code-end]

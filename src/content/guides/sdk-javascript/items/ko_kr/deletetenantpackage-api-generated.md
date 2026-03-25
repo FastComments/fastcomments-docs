@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -14,8 +13,10 @@
 
 [inline-code-attrs-start title = 'deleteTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc-tenant-8a9c2b';
-const packageId: string = 'pkg-47f3c9';
+const tenantId: string = 'tenant_acme_corp_987';
+const packageId: string = 'pkg_pro_2026_01';
+type DeleteOptions = { force?: boolean; notify?: boolean };
+const options: DeleteOptions = { force: true }; // 선택적 매개변수 예시
 const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 

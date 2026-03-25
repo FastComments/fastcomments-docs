@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -11,13 +11,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_corp";
-const id: string = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
-interface GetOptions { includeDeleted?: boolean; locale?: string; }
-const options: GetOptions = { locale: "en-US" };
-const result: GetTenant200Response = await getTenant(tenantId, id);
+const tenantId: string = "tenant_9f4b2c1a";
+const idOverride: string | undefined = undefined; // החלפה אופציונלית, אם זמינה
+const id: string = idOverride ?? "site_3e7a6b2f";
+const response: GetTenant200Response = await getTenant(tenantId, id);
+console.log(response);
 [inline-code-end]
 
 ---

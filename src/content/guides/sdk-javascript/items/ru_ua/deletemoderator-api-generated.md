@@ -1,10 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| sendEmail | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sendEmail | string | No |  |
 
 ## Ответ
 
@@ -12,10 +12,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'deleteModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-987';
-const moderatorId: string = 'mod-78b2c9a4-3f1e-4d6a';
+const tenantId: string = 'tenant_9f3b2d4a6c';
+const moderatorId: string = 'moderator_84a1b9c2';
 const sendEmail: string = 'true';
 const result: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);
 [inline-code-end]

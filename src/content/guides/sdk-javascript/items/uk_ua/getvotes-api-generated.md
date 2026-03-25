@@ -1,4 +1,4 @@
-## Parameters
+## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
@@ -13,11 +13,11 @@
 
 [inline-code-attrs-start title = 'Приклад getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b3c_prod';
-const urlId: string = '/news/2026/typescript-ecosystem-update';
+const tenantId: string = 'acme-corp-8f3b';
+const refCampaign: string | undefined = 'newsletter-march2026'; // необов'язковий параметр запиту
+const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
+
 const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-// Якщо б існував необов'язковий параметр, наприклад includeHidden, його можна було б використовувати так:
-// const votesWithHidden: GetVotes200Response = await getVotes(tenantId, urlId, { includeHidden: true });
 [inline-code-end]
 
 ---

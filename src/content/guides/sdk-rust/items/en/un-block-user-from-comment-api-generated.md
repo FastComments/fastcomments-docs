@@ -16,16 +16,19 @@ Returns: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'un_block_user_from_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {
-        tenant_id: "acme-media-tenant".to_string(),
-        id: "news/world/article-2026-01-12/comment-9f8e7d".to_string(),
-        un_block_from_comment_params: models::UnBlockFromCommentParams::default(),
-        user_id: Some("user-42a7".to_string()),
-        anon_user_id: Some("anon-7x9y".to_string()),
+async fn run_unblock() -> Result<UnBlockCommentPublic200Response, Error> {
+    let unblock_body: models::UnBlockFromCommentParams = models::UnBlockFromCommentParams {
+        reason: Some(String::from("False positive - reviewed by moderator")),
+        moderator_id: Some(String::from("moderator-42")),
     };
-    let response: UnBlockCommentPublic200Response =
-        un_block_user_from_comment(&configuration, params).await?;
-    Ok(())
+    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {
+        tenant_id: String::from("acme-corp-tenant"),
+        id: String::from("news/article/comments/abc123"),
+        un_block_from_comment_params: unblock_body,
+        user_id: Some(String::from("user-9876")),
+        anon_user_id: Some(String::from("anon-5f4d")),
+    };
+    let result: UnBlockCommentPublic200Response = un_block_user_from_comment(&configuration, params).await?;
+    Ok(result)
 }
 [inline-code-end]

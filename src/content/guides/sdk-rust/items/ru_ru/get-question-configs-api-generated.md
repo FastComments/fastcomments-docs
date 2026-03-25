@@ -1,17 +1,18 @@
+---
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Type | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | skip | f64 | Нет |  |
 
-## Ответ
+## Response
 
 Возвращает: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_200_response.rs)
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_question_configs Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
@@ -19,7 +20,7 @@ async fn run() -> Result<(), Error> {
         skip: Some(10.0),
     };
     let response: GetQuestionConfigs200Response = get_question_configs(&configuration, params).await?;
-    let _cfgs: GetQuestionConfigs200Response = response;
+    println!("{:#?}", response);
     Ok(())
 }
 [inline-code-end]

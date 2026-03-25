@@ -5,11 +5,11 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {
-      "name": "Садржај библиотеке",
+      "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -21,15 +21,15 @@
       "type": "readme"
     },
     {
-      "name": "Јавни и заштићени API-ји",
+      "name": "Јавни vs Заштићени APIs",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "Референца API-ја",
+      "subCat": "Референца АПИ-ја",
       "type": "readme"
     },
     {
-      "name": "Извршавање API позива",
+      "name": "Прављење позива АПИ-ја",
       "file": "making-api-calls-readme-generated.md",
-      "subCat": "Референца API-ја",
+      "subCat": "Референца АПИ-ја",
       "type": "readme"
     },
     {
@@ -45,15 +45,15 @@
       "type": "readme"
     },
     {
-      "name": "Агрегација",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегација",
+      "subCat": "Агрегирање",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Дневници ревизија",
+      "subCat": "Дневници ревизије",
       "type": "api"
     },
     {
@@ -311,67 +311,67 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Објаве фида",
+      "subCat": "Објаве",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Означи коментар",
+      "subCat": "Пријави коментар",
       "type": "api"
     },
     {
@@ -503,49 +503,49 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Догађаји вебхука на чекању",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Догађаји вебхука на чекању",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Догађаји вебхука на чекању",
+      "subCat": "Необрађени вебхук догађаји",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
@@ -653,6 +653,12 @@
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
+      "subCat": "Претплате",
+      "type": "api"
+    },
+    {
+      "name": "updateSubscription",
+      "file": "updatesubscription-api-generated.md",
       "subCat": "Претплате",
       "type": "api"
     },
@@ -771,6 +777,30 @@
       "type": "api"
     },
     {
+      "name": "changeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "createTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
+      "name": "getTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "Тикети",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Отпремање слике",
@@ -779,19 +809,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Напредак значке корисника",
+      "subCat": "Напредак значки корисника",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Напредак значке корисника",
+      "subCat": "Напредак значки корисника",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Напредак значке корисника",
+      "subCat": "Напредак значки корисника",
       "type": "api"
     },
     {
@@ -869,7 +899,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статуси присутности корисника",
+      "subCat": "Статус присуства корисника",
       "type": "api"
     },
     {

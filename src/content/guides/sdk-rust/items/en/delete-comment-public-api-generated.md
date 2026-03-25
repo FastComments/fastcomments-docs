@@ -16,15 +16,15 @@ Returns: [`DeleteCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'delete_comment_public Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<DeleteCommentPublic200Response, Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteCommentPublicParams = DeleteCommentPublicParams {
         tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("cmt-12345"),
-        broadcast_id: String::from("news/article/2026-01-12"),
-        edit_key: Some(String::from("editkey-abc123")),
-        sso: Some(String::from("ssotoken-xyz789")),
+        comment_id: String::from("news/article/2026/03/interesting-story#cmt-67890"),
+        broadcast_id: String::from("news-article-12345"),
+        edit_key: Some(String::from("editkey-3f2b9a")),
+        sso: Some(String::from("sso-jwt-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")),
     };
-    let deleted: DeleteCommentPublic200Response = delete_comment_public(configuration, params).await?;
-    Ok(deleted)
+    let response: DeleteCommentPublic200Response = delete_comment_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

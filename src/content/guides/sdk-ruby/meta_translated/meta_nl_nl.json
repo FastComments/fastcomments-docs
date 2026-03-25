@@ -41,19 +41,19 @@
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Blokkeren vanaf reactie",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Blokkeren vanaf reactie",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde reacties",
+      "subCat": "Geblokkeerde reacties controleren",
       "type": "api"
     },
     {
@@ -293,61 +293,61 @@
     {
       "name": "create_feed_post",
       "file": "create-feed-post-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "create_feed_post_public",
       "file": "create-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "delete_feed_post_public",
       "file": "delete-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts",
       "file": "get-feed-posts-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts_public",
       "file": "get-feed-posts-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_feed_posts_stats",
       "file": "get-feed-posts-stats-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "get_user_reacts_public",
       "file": "get-user-reacts-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "react_feed_post_public",
       "file": "react-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "update_feed_post",
       "file": "update-feed-post-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "update_feed_post_public",
       "file": "update-feed-post-public-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
@@ -639,9 +639,15 @@
       "type": "api"
     },
     {
+      "name": "update_subscription",
+      "file": "update-subscription-api-generated.md",
+      "subCat": "Abonnementen",
+      "type": "api"
+    },
+    {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "Dagelijks gebruik van tenant",
+      "subCat": "Dagelijks gebruik tenant",
       "type": "api"
     },
     {
@@ -753,6 +759,30 @@
       "type": "api"
     },
     {
+      "name": "change_ticket_state",
+      "file": "change-ticket-state-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "create_ticket",
+      "file": "create-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "get_ticket",
+      "file": "get-ticket-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "get_tickets",
+      "file": "get-tickets-api-generated.md",
+      "subCat": "Tickets",
+      "type": "api"
+    },
+    {
       "name": "upload_image",
       "file": "upload-image-api-generated.md",
       "subCat": "Afbeelding uploaden",
@@ -851,7 +881,7 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Gebruikersaanwezigheidsstatus",
+      "subCat": "Aanwezigheidsstatussen",
       "type": "api"
     },
     {
