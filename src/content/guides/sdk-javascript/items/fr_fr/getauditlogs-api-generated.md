@@ -15,7 +15,7 @@ Renvoie : [`GetAuditLogs200Response`](https://github.com/FastComments/fastcommen
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function main(): Promise<void> {
   const tenantId: string = 'tenant_9b8f6c';

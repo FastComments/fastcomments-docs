@@ -15,7 +15,7 @@ Retourne : [`FlagCommentPublic200Response`](https://github.com/FastComments/fast
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_acme_corp_01";
 const id: string = "comment_20260325_4592";

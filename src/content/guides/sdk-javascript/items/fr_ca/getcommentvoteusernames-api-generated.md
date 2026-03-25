@@ -13,7 +13,7 @@ Renvoie : [`GetCommentVoteUserNames200Response`](https://github.com/FastComments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de getCommentVoteUserNames'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de getCommentVoteUserNames'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = 'tenant_4f2c1e';

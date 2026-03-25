@@ -14,7 +14,7 @@ Renvoie : [`Option[GetTickets_200_response]`](https://github.com/FastComments/fa
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de getTickets'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de getTickets'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-456", state = 1.0, skip = 0.0, limit = 50.0)
 if response.isSome:
