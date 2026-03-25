@@ -2,7 +2,7 @@ De Most Discussed Pages Widget toont een gerangschikte lijst van uw meest bespro
 
 ## Basisinstallatie
 
-[inline-code-attrs-start title = 'Installatie van de widget \'Meest besproken pagina\'s''; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installatie van de widget Meest besproken pagina\'s'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -22,7 +22,7 @@ De Most Discussed Pages Widget toont een gerangschikte lijst van uw meest bespro
 
 De widget rendert met de volgende HTML-structuur:
 
-[inline-code-attrs-start title = 'HTML-structuur van de widget \'Meest besproken pagina\'s''; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-structuur van de widget Meest besproken pagina\'s'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -41,7 +41,7 @@ De widget rendert met de volgende HTML-structuur:
 
 ## Standaard CSS-referentie
 
-[inline-code-attrs-start title = 'Standaard-CSS van de widget \'Meest besproken pagina\'s''; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Standaard-CSS van de widget Meest besproken pagina\'s'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
