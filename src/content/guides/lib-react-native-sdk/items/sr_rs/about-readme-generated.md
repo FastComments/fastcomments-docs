@@ -1,16 +1,17 @@
-Ova biblioteka је potpuna react-native implementacija [FastComments](https://fastcomments.com).
+---
+Ова библиотека је потпуна react-native имплементација [FastComments](https://fastcomments.com).
 
-Podržava live komentarisanje, chat, threads, emoticons, notifications, SSO, skins, и potpunu prilagodbu прослеђивањем stylesheet objekta. Svi assets
-takođe se mogu prilagoditi, и podržava prebacivanje različitih assets у зависности од dark mode.
+Подржава коментарисање у реалном времену, ћаскање, теме (threads), емотиконе, обавештења, SSO, скинове и потпуно прилагођавање прослеђивањем stylesheet објекта. Сви assets такође се могу прилагодити, и подржава пребацивање различитих assets у зависности од dark mode-а.
 
-Prednost ove biblioteke je што је флексибилнија, и не захтева webview, као `fastcomments-react-native` wrapper.
+Предност ове библиотеке је што је флексибилнија од wrapper-а `fastcomments-react-native`. Коментари се рендерују помоћу нативних компоненти уместо унутар webview-а. Напомена: `react-native-webview` је и даље потребан као транзитивна зависност rich text едитора (`@10play/tentap-editor`).
 
-Sve radi на FastComments backend-u, тако да само треба да интегришете UI:
+Све то ради на FastComments backend-у, тако да вам је потребно само да уградите UI:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Pogledajte [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) за више примера.
+Погледајте [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) за више примера.
 
-Dodajte live chat u vašu postojeću React Native aplikaciju, или čak izgradite društvenu mrežu!
+Додајте ћаскање у реалном времену у вашу постојећу React Native апликацију, или чак изградите друштвену мрежу!
+---

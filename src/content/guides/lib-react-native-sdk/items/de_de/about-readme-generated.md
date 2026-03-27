@@ -1,11 +1,11 @@
 Diese Bibliothek ist eine vollständige react-native-Implementierung von [FastComments](https://fastcomments.com).
 
-Sie unterstützt Live-Kommentare, Chat, Threads, Emoticons, Benachrichtigungen, SSO, Skins und vollständige Anpassung durch Übergabe eines Stylesheet-Objekts. Alle Assets
-können ebenfalls angepasst werden, und es wird unterstützt, verschiedene Assets basierend auf dem Dunkelmodus umzuschalten.
+Sie unterstützt Live-Kommentare, Chat, Threads, Emojis, Benachrichtigungen, SSO, Skins und vollständige Anpassung durch Übergeben eines Stylesheet-Objekts. Alle Assets
+können ebenfalls angepasst werden, und sie unterstützt das Umschalten verschiedener Assets basierend auf dem Dunkelmodus.
 
-Der Vorteil dieser Bibliothek ist, dass sie flexibler ist und kein WebView benötigt, wie der Wrapper `fastcomments-react-native`.
+Der Vorteil dieser Bibliothek besteht darin, dass sie flexibler ist als der Wrapper `fastcomments-react-native`. Kommentare werden mit nativen Komponenten gerendert, statt in einer Webview. Hinweis: `react-native-webview` wird weiterhin als transitive Abhängigkeit des Rich-Text-Editors (`@10play/tentap-editor`) benötigt.
 
-Alles läuft auf dem FastComments-Backend, sodass Sie nur die UI integrieren müssen:
+Alles läuft auf dem FastComments-Backend, sodass Sie nur die Benutzeroberfläche integrieren müssen:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
