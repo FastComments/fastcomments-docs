@@ -43,3 +43,18 @@ to anyone who can view the source code of a page!
 
 - Query Param: `API_KEY`
 - Query Param: `tenantId`
+
+### Reading Your Own Writes
+
+FastComments provides Active-Active availability. Requests from your datacenter are routed to [the nearest point of presence](https://sophon.fastcomments.com/) to yours. This is automatic, and normally you can observe read-your-write semantics. If you want to be sure to read your own writes, you can pin your requests to a certain region by using that region as its API host (however this is not usually needed for most integrations):
+
+- gdc-oregon.fastcomments.com
+- gdc-virginia.fastcomments.com
+- gdc-singapore.fastcomments.com
+- gdc-falkenstein2.fastcomments.com
+- gdc-sao-paulo.fastcomments.com
+- eudc-helsinki2.fastcomments.com
+- eudc-limburg.fastcomments.com
+- eudc-france.fastcomments.com
+
+Note that if you do this you may want to define a fallback, as we have deprecated entrypoint nodes in the past and use new names for the switchover.
