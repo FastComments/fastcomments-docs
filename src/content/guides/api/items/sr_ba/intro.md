@@ -1,16 +1,16 @@
 ### FastComments API
 
-FastComments pruža API za interakciju sa mnogim resursima. Napravite integracije sa našom platformom, ili čak izradite vlastite klijente!
+FastComments пружа API за интеракцију са бројним ресурсима. Направите интеграције са нашом платформом, или чак изградите своје клијенте!
 
-U ovoj dokumentaciji naći ćete sve podržane resurse koje API dokumentuje zajedno sa tipovima zahtjeva i odgovora.
+У овој документацији наћи ћете све ресурсе које API подржава, документоване са типовима захтјева и одговора.
 
-Za Enterprise korisnike, sav pristup API-ju se bilježi u Dnevniku revizije.
+За Enterprise купце, сав приступ API-ју се бележи у дневнику ревизије.
 
-### Generisani SDK-ovi
+### Генерисани SDK-ови
 
-FastComments sada generiše [API Spec](https://fastcomments.com/js/swagger.json) iz našeg koda (ovo još nije kompletno, ali uključuje mnoge API-je).
+FastComments сада генерише [API спецификација](https://fastcomments.com/js/swagger.json) из нашег кода (ово још није у потпуности завршено, али укључује многе API-је).
 
-Također sada imamo SDK-ove za popularne jezike:
+Такођер сада имамо SDK-ове за популарне језике:
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -24,20 +24,37 @@ Također sada imamo SDK-ove za popularne jezike:
 - [fastcomments-rust](./guide-sdk-rust.html)
 - [fastcomments-swift](./guide-sdk-swift.html)
 
-### Autentifikacija
+### Аутентификација
 
-API se autentifikuje tako što proslijedite svoj [API ključ](https://fastcomments.com/auth/my-account/api-secret) kao ili `X-API-KEY` zaglavlje ili `API_KEY` parametar upita. Također će vam trebati vaš `tenantId` za pozive API-ja. To se može dobiti na istoj stranici kao i vaš API ključ.
+API се аутентификује прослеђивањем вашег [api key](https://fastcomments.com/auth/my-account/api-secret) као или `X-API-KEY` заглавље или `API_KEY` query параметар. Такођер ће вам требати ваш `tenantId`
+за прављење API позива. Ово се може преузети са исте странице као и ваш api key.
 
-### Napomena o sigurnosti
+### Напомена о безбједности
 
-Ove rute su namijenjene da se pozivaju sa **servera**. __NEMOJTE__ ih pozivati iz preglednika. Time ćete otkriti vaš API ključ - to će omogućiti potpuni pristup vašem nalogu svima koji mogu vidjeti izvorni kod stranice!
+Ове руте су намјењене за позивање са **сервера**. __НЕ ПОВЛАЧИТЕ__ их из браузера. То ће открити ваш API key - ово ће пружити пун приступ вашем налогу
+сваком ко може видјети исходни код странице!
 
-#### Authentication Option One - Headers
+#### Опција аутентификације једна - Заглавља
 
-- Zaglavlje: `X-API-KEY`
-- Zaglavlje: `X-TENANT-ID`
+- Заглавље: `X-API-KEY`
+- Заглавље: `X-TENANT-ID`
 
-#### Authentication Option Two - Query Parameters
+#### Опција аутентификације два - Параметри упита
 
-- Parametar upita: `API_KEY`
-- Parametar upita: `tenantId`
+- Query Param: `API_KEY`
+- Query Param: `tenantId`
+
+### Читање сопствених уписа
+
+FastComments обезбјеђује Active-Active доступност. Захтјеви из вашег дата центра усмјеравају се ка [најближоj тачки присуства](https://sophon.fastcomments.com/) у односу на ваш. Ово је аутоматско, и обично се обезбјеђује семантика да ћете моћи прочитати сопствене уписе. Ако желите бити сигурни да ћете читати своје уписе, можете фиксирати своје захтјеве на одређени регион користећи тај регион као API хост (међутим ово обично није потребно за већину интеграција):
+
+- gdc-oregon.fastcomments.com
+- gdc-virginia.fastcomments.com
+- gdc-singapore.fastcomments.com
+- gdc-falkenstein2.fastcomments.com
+- gdc-sao-paulo.fastcomments.com
+- eudc-helsinki2.fastcomments.com
+- eudc-limburg.fastcomments.com
+- eudc-france.fastcomments.com
+
+Имајте на уму да, ако то урадите, можда ћете желети дефинисати резервну опцију (fallback), јер смо у прошлости застарили улазне чворове и користили нова имена за пребацивање.

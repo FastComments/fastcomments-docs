@@ -1,14 +1,14 @@
-### API FastComments
+### FastComments API
 
-FastComments nudi API za interakcijo z mnogimi viri. Zgradite integracije z našo platformo ali celo ustvarite svoje lastne odjemalce!
+FastComments zagotavlja API za interakcijo z mnogimi viri. Ustvarite integracije z našo platformo ali celo napišite svoje lastne odjemalce!
 
-V tej dokumentaciji najdete vse vire, ki jih API podpira, dokumentirane z njihovimi tipi zahtevkov in odgovorov.
+V tej dokumentaciji boste našli vse vire, ki jih API podpira, dokumentirane z njihovimi tipi zahtevkov in odgovorov.
 
-Za Enterprise naročnike je ves dostop do API zabeležen v revizijskem dnevniku.
+Za Enterprise stranke se celoten dostop do API beleži v revizijski dnevnik.
 
 ### Generirani SDK-ji
 
-FastComments sedaj generira [API specifikacijo](https://fastcomments.com/js/swagger.json) iz naše kode (to še ni popolno, vendar vključuje mnoge API-je).
+FastComments zdaj iz naše kode generira [Specifikacija API](https://fastcomments.com/js/swagger.json) (to še ni popolno, vendar vključuje številne API-je).
 
 Imamo tudi SDK-je za priljubljene jezike:
 
@@ -26,21 +26,33 @@ Imamo tudi SDK-je za priljubljene jezike:
 
 ### Avtentikacija
 
-API se avtenticira tako, da posredujete svoj [API ključ](https://fastcomments.com/auth/my-account/api-secret) bodisi kot `X-API-KEY` header ali `API_KEY` query parameter. Za klice API boste potrebovali tudi svoj `tenantId`
-za izvajanje klicev API. To lahko pridobite na isti strani kot svoj API ključ.
+API se avtenticira tako, da posredujete svoj [api key](https://fastcomments.com/auth/my-account/api-secret) bodisi kot glavo `X-API-KEY` ali kot parameter poizvedbe `API_KEY`. Za klice API potrebujete tudi svoj `tenantId`. Ta ga lahko pridobite na isti strani kot svoj api key.
 
-### Varnostno opozorilo
+### Varnostno obvestilo
 
-Te poti so namenjene klicanju z **strežnika**. __NE__ jih kličite iz brskalnika. S tem boste razkrili svoj API ključ - to bo vsakomur, ki si lahko ogleda izvorno kodo strani, omogočilo popoln dostop do vašega računa!
+Ti končni točki so namenjeni klicem iz **strežnika**. __NE__ jih kličite iz brskalnika. Če to storite, boste razkrili svoj API ključ — to bo kdorkoli, ki lahko vidi izvorno kodo strani, dobil popoln dostop do vašega računa!
 
-#### Authentication Option One - Headers
+#### Avtentikacijska možnost ena - Glave
 
 - Glava: `X-API-KEY`
 - Glava: `X-TENANT-ID`
 
-#### Authentication Option Two - Query Parameters
+#### Avtentikacijska možnost dva - Parametri poizvedbe
 
 - Parameter poizvedbe: `API_KEY`
 - Parameter poizvedbe: `tenantId`
 
----
+### Branje lastnih zapisov
+
+FastComments zagotavlja Active-Active razpoložljivost. Zahteve iz vašega podatkovnega centra so usmerjene na [najbližjo točko prisotnosti](https://sophon.fastcomments.com/) vaši. To je samodejno in običajno lahko opazite semantiko "preberi-svoj-zapis". Če želite biti prepričani, da boste prebrali svoje zapise, lahko svoje zahteve pripnete na določeno regijo tako, da za gostitelja API uporabite to regijo (vendar to za večino integracij običajno ni potrebno):
+
+- gdc-oregon.fastcomments.com
+- gdc-virginia.fastcomments.com
+- gdc-singapore.fastcomments.com
+- gdc-falkenstein2.fastcomments.com
+- gdc-sao-paulo.fastcomments.com
+- eudc-helsinki2.fastcomments.com
+- eudc-limburg.fastcomments.com
+- eudc-france.fastcomments.com
+
+Upoštevajte, da boste morda želeli določiti rezervno možnost (fallback), saj smo v preteklosti označili nekatere vstopne točke kot zastarele in za preklop uporabljamo nova imena.
