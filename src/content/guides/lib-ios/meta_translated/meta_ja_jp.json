@@ -1,0 +1,138 @@
+{
+  "name": "iOS ライブラリ",
+  "pageHeader": "iOSアプリにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "機能",
+      "file": "features-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "要件",
+      "file": "requirements-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "認証（SSO）",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "認証",
+      "type": "readme"
+    },
+    {
+      "name": "スレッドコメント",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ライブチャット",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ソーシャルフィード",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "テーマ",
+      "file": "theming-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "カスタムツールバーのボタン",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "モデレーション",
+      "file": "moderation-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "リアルタイム更新",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ページネーション",
+      "file": "pagination-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "状態と可観測性",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "EUリージョン",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "クリーンアップ",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "画像アップロード",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ユーザーメンション",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "コメントの編集と削除",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "エラー処理",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ローカリゼーション",
+      "file": "localization-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルアプリ",
+      "file": "example-app-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    }
+  ]
+}

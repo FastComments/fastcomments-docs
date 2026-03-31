@@ -1,0 +1,138 @@
+{
+  "name": "iOS библиотека",
+  "pageHeader": "Додајте коментаре у вашу iOS апликацију",
+  "itemsOrdered": [
+    {
+      "name": "Карактеристике",
+      "file": "features-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Захтеви",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак",
+      "type": "readme"
+    },
+    {
+      "name": "Брзи почетак",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Аутентификација (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Аутентификација",
+      "type": "readme"
+    },
+    {
+      "name": "Коментари у нитима",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Разговор уживо",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Друштвени фид",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Прилагођавање изгледа",
+      "file": "theming-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Прилагођени тастери на траци са алаткама",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Модерација",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Ажурирања у реалном времену",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Пагинација",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Стање и опсервабилност",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Регион ЕУ",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Чишћење",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Отпремање слика",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Помена корисника",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Уређивање и брисање коментара",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Обрада грешака",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Локализација",
+      "file": "localization-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Пример апликације",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    }
+  ]
+}

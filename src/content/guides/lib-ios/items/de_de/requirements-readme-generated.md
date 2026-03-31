@@ -1,0 +1,3 @@
+- iOS 16+ oder macOS 14+
+- Swift 5.9+
+- SwiftUI

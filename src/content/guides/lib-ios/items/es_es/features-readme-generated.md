@@ -1,0 +1,15 @@
+- Árboles de comentarios con hilos anidados y paginación
+- Feed social con creación de publicaciones, reacciones y adjuntos multimedia
+- Modo de chat en vivo con desplazamiento automático y separadores por fecha
+- Actualizaciones en tiempo real vía WebSocket (nuevos comentarios, votos, presencia)
+- Inicio de sesión único (SSO simple para pruebas, SSO seguro para producción)
+- Edición de texto enriquecido con negrita, cursiva, código y @menciones
+- Votación con estilos configurables (flechas arriba/abajo o corazones)
+- Acciones de moderación: marcar, fijar, cerrar, bloquear
+- Tematización integral con ajustes predefinidos y personalización total
+- Botones personalizados de la barra de herramientas para comentarios y creación de publicaciones en el feed
+- Subidas de imágenes
+- Soporte para la región de la UE
+- Presencia de usuario (indicadores conectado/desconectado)
+- Filtrado del feed por etiquetas
+- Soporte de localización

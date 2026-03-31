@@ -1,0 +1,15 @@
+- Alberi di commenti gerarchici con risposte annidate e paginazione
+- Feed sociale con creazione di post, reazioni e allegati multimediali
+- Modalità chat live con scorrimento automatico e separatori di data
+- Aggiornamenti in tempo reale via WebSocket (nuovi commenti, voti, presenza)
+- Single Sign-On (SSO semplice per i test, SSO sicuro per la produzione)
+- Editor di testo ricco con grassetto, corsivo, codice e @menzioni
+- Votazione con stili configurabili (frecce su/giù o cuori)
+- Azioni di moderazione: segnala, fissa, chiudi, blocca
+- Temi completamente personalizzabili con preset e personalizzazione completa
+- Pulsanti personalizzati nella barra degli strumenti per i commenti e la creazione di post nel feed
+- Caricamento immagini
+- Supporto per la regione UE
+- Presenza utenti (indicatori online/offline)
+- Filtraggio del feed basato sui tag
+- Supporto alla localizzazione

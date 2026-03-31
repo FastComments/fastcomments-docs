@@ -1,0 +1,138 @@
+{
+  "name": "Βιβλιοθήκη iOS",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή iOS σας",
+  "itemsOrdered": [
+    {
+      "name": "Χαρακτηριστικά",
+      "file": "features-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Αυθεντικοποίηση (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Αυθεντικοποίηση",
+      "type": "readme"
+    },
+    {
+      "name": "Σχόλια με νήματα",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή συνομιλία",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κοινωνική ροή",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Θεματοποίηση",
+      "file": "theming-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Προσαρμοσμένα κουμπιά γραμμής εργαλείων",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Διαχείριση",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ενημερώσεις σε πραγματικό χρόνο",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Σελιδοποίηση",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση και παρατηρησιμότητα",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Περιοχή ΕΕ",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Καθαρισμός",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Μεταφορτώσεις εικόνων",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Αναφορές χρηστών",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Επεξεργασία και διαγραφή σχολίων",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Διαχείριση σφαλμάτων",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Τοπικοποίηση",
+      "file": "localization-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Παράδειγμα εφαρμογής",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    }
+  ]
+}

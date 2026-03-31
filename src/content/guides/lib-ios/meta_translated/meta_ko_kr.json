@@ -1,0 +1,138 @@
+{
+  "name": "iOS 라이브러리",
+  "pageHeader": "iOS 앱에 댓글 추가하기",
+  "itemsOrdered": [
+    {
+      "name": "기능",
+      "file": "features-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "요구사항",
+      "file": "requirements-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "인증(SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "인증",
+      "type": "readme"
+    },
+    {
+      "name": "스레드 댓글",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "실시간 채팅",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "소셜 피드",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "테마 설정",
+      "file": "theming-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "사용자 정의 툴바 버튼",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "모더레이션",
+      "file": "moderation-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "실시간 업데이트",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "페이지네이션",
+      "file": "pagination-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "상태 및 관찰성",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "EU 리전",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "정리",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "이미지 업로드",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "사용자 언급",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "댓글 편집 및 삭제",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "오류 처리",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "현지화",
+      "file": "localization-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "예제 앱",
+      "file": "example-app-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    }
+  ]
+}

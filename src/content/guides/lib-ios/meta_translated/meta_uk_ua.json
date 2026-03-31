@@ -1,0 +1,138 @@
+{
+  "name": "Бібліотека для iOS",
+  "pageHeader": "Додайте коментарі до вашого iOS-додатка",
+  "itemsOrdered": [
+    {
+      "name": "Функції",
+      "file": "features-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Аутентифікація (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Аутентифікація",
+      "type": "readme"
+    },
+    {
+      "name": "Вкладені коментарі",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий чат",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Соціальна стрічка",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Теми оформлення",
+      "file": "theming-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Користувацькі кнопки панелі інструментів",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Модерація",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Оновлення в реальному часі",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Пагінація",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Стан і спостережуваність",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Регіон ЄС",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Очищення",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Завантаження зображень",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Згадки користувачів",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Редагування та видалення коментарів",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Обробка помилок",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Локалізація",
+      "file": "localization-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Приклад застосунку",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    }
+  ]
+}

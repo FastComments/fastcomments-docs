@@ -1,0 +1,138 @@
+{
+  "name": "iOS knjižnica",
+  "pageHeader": "Dodavanje komentara u vašu iOS aplikaciju",
+  "itemsOrdered": [
+    {
+      "name": "Značajke",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Zahtjevi",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Instalacija",
+      "file": "installation-readme-generated.md",
+      "subCat": "Početak rada",
+      "type": "readme"
+    },
+    {
+      "name": "Brzi početak",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Autentifikacija (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Autentifikacija",
+      "type": "readme"
+    },
+    {
+      "name": "Komentari u nitima",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Razgovor uživo",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Društveni feed",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Teme",
+      "file": "theming-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Prilagođeni gumbi na alatnoj traci",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Moderacija",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Ažuriranja u stvarnom vremenu",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Straničenje",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Stanje i observabilnost",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Regija EU",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Čišćenje",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Prijenos slika",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Označavanje korisnika",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Uređivanje i brisanje komentara",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Rukovanje pogreškama",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Lokalizacija",
+      "file": "localization-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Primjer aplikacije",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Upotreba",
+      "type": "readme"
+    }
+  ]
+}

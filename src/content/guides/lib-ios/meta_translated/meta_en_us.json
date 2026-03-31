@@ -1,0 +1,138 @@
+{
+  "name": "iOS Library",
+  "pageHeader": "Add Comments to Your iOS App",
+  "itemsOrdered": [
+    {
+      "name": "Features",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Requirements",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Quick Start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Authentication (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Authentication",
+      "type": "readme"
+    },
+    {
+      "name": "Threaded Comments",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live Chat",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Social Feed",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Theming",
+      "file": "theming-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Custom Toolbar Buttons",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Moderation",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Real-Time Updates",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Pagination",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "State and Observability",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "EU Region",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Cleanup",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Image Uploads",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "User Mentions",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Editing and Deleting Comments",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Error Handling",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Localization",
+      "file": "localization-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Example App",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    }
+  ]
+}
