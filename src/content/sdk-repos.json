@@ -190,6 +190,16 @@
       "description": "Embed live commenting, chat, and review widgets in your Android app."
     },
     {
+      "id": "lib-ios",
+      "name": "iOS Library",
+      "pageHeader": "Add Comments to Your iOS App",
+      "repo": "https://github.com/FastComments/fastcomments-ios",
+      "branch": "main",
+      "language": "swift",
+      "docGenerators": ["readme"],
+      "description": "Embed live commenting, chat, and review widgets in your iOS app."
+    },
+    {
       "id": "lib-react-native",
       "name": "React Native Library",
       "pageHeader": "Add Comment Widgets to Your React Native App",
