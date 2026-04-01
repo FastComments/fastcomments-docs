@@ -12,29 +12,29 @@ Adicione o repositório Repsy ao POM do seu projeto:
 </repositories>
 ```
 
-Em seguida, adicione as dependências necessárias:
+Em seguida, adicione as dependências que você precisa:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Cliente da API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Biblioteca Core (inclui SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Biblioteca PubSub (para eventos ao vivo) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:1.3.1"
+    // Cliente da API
+    implementation "com.fastcomments:client:1.3.2"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    // Biblioteca Core (inclui SSO)
+    implementation "com.fastcomments:core:1.3.2"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    // Biblioteca PubSub (para eventos ao vivo)
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
 ### Conteúdo da Biblioteca
 
-Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca Java core que contém utilitários escritos à mão para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinar feeds de alterações.
+Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca Java core que contém utilitários escritos manualmente para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinar feeds de alteração.
 
-- [Documentação da Biblioteca do Cliente de API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentação da Biblioteca Core, incluindo Exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentação da Biblioteca do Cliente da API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentação da Biblioteca Core, incluindo exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Documentação da Biblioteca PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### APIs Públicas vs Seguras
+### APIs Públicas vs APIs Protegidas
 
-Para o cliente de API, existem duas classes, `DefaultApi` e `PublicApi`. A `DefaultApi` contém métodos que exigem sua chave de API, e a `PublicApi` contém chamadas de API que podem ser feitas diretamente de um navegador/dispositivo móvel/etc. sem autenticação.
+Para o cliente de API, existem duas classes, `DefaultApi` e `PublicApi`. A `DefaultApi` contém métodos que requerem sua chave de API, e a `PublicApi` contém chamadas de API que podem ser feitas diretamente de um navegador/dispositivo móvel/etc sem autenticação.

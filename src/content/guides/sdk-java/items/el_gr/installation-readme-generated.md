@@ -20,28 +20,28 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
     <!-- Βασική Βιβλιοθήκη (περιλαμβάνει SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη PubSub (για ζωντανά γεγονότα) -->
+    <!-- Βιβλιοθήκη PubSub (για live συμβάντα) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Προσθέστε το αποθετήριο Repsy στο αρχείο build.gradle σας:
+Προσθέστε το αποθετήριο Repsy στο αρχείο build.gradle:
 
 ```groovy
 repositories {
@@ -53,26 +53,24 @@ repositories {
 
 dependencies {
     // Πελάτης API
-    implementation "com.fastcomments:client:1.3.1"
+    implementation "com.fastcomments:client:1.3.2"
     
     // Βασική Βιβλιοθήκη (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    implementation "com.fastcomments:core:1.3.2"
     
-    // Βιβλιοθήκη PubSub (για ζωντανά γεγονότα)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    // Βιβλιοθήκη PubSub (για live συμβάντα)
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Library Contents
+### Περιεχόμενα Βιβλιοθήκης
 
-Αυτή η βιβλιοθήκη περιέχει τρία modules. Ο παραγόμενος πελάτης API, η βασική Java βιβλιοθήκη που περιέχει χειροποίητες βοηθητικές λειτουργίες
-για να κάνει την εργασία με το API πιο εύκολη, και το module `pubsub` το οποίο είναι μια βιβλιοθήκη για συνδρομή σε change feeds.
+Αυτή η βιβλιοθήκη περιέχει τρία modules. Ο παραγόμενος πελάτης API, η βασική Java βιβλιοθήκη που περιέχει χειρογραμμένα βοηθητικά εργαλεία για να διευκολύνουν τη δουλειά με το API, και το module `pubsub` το οποίο είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
 
-- [Τεκμηρίωση βιβλιοθήκης API Client](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση βασικής βιβλιοθήκης, συμπεριλαμβανομένων παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Τεκμηρίωση βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Περιλαμβάνει Παραδείγματα SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Τεκμηρίωση Βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Δημόσια έναντι Προστατευμένων API
 
-Για τον πελάτη API, υπάρχουν δύο κλάσεις, `DefaultApi` και `PublicApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, και η `PublicApi` περιέχει κλήσεις API
-που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς αυθεντικοποίηση.
+Για τον πελάτη API, υπάρχουν δύο κλάσεις, `DefaultApi` και `PublicApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, ενώ η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από έναν browser/συσκευή κινητού/κ.λπ. χωρίς έλεγχο ταυτότητας.

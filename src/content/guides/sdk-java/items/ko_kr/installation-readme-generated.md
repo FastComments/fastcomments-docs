@@ -20,21 +20,21 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
@@ -53,24 +53,24 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:1.3.1"
+    implementation "com.fastcomments:client:1.3.2"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    implementation "com.fastcomments:core:1.3.2"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Library Contents
+### 라이브러리 구성
 
-이 라이브러리는 세 개의 모듈을 포함합니다. 생성된 API 클라이언트, API 작업을 더 쉽게 해주기 위해 수작업으로 작성된 유틸리티를 포함하는 코어 Java 라이브러리, 그리고 변경 피드를 구독하기 위한 라이브러리인 `pubsub` 모듈입니다.
+이 라이브러리에는 세 개의 모듈이 포함되어 있습니다. 생성된 API 클라이언트, API 작업을 더 쉽게 해주는 수작업으로 작성된 유틸리티를 포함하는 코어 Java 라이브러리, 그리고 변경 피드를 구독하기 위한 라이브러리인 `pubsub` 모듈입니다.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 공개 vs 보호된 API
 
-API 클라이언트에는 `DefaultApi`와 `PublicApi`의 두 클래스가 있습니다. `DefaultApi`는 API 키가 필요한 메서드를 포함하고, `PublicApi`는 브라우저/모바일 기기 등에서 인증 없이 직접 호출할 수 있는 API 호출들을 포함합니다.
+API 클라이언트에는 `DefaultApi`와 `PublicApi`의 두 클래스가 있습니다. `DefaultApi`는 API 키가 필요한 메서드를 포함하고, `PublicApi`는 브라우저/모바일 기기 등에서 인증 없이 직접 호출할 수 있는 API 호출을 포함합니다.

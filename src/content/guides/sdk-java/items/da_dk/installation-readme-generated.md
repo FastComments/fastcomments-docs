@@ -1,6 +1,6 @@
 ### Maven
 
-Tilføj Repsy-repositoryet til dit projekts POM:
+Tilføj Repsy repository til dit projekts POM:
 
 ```xml
 <repositories>
@@ -16,32 +16,32 @@ Tilføj derefter de afhængigheder, du har brug for:
 
 ```xml
 <dependencies>
-    <!-- API-klient -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Core-bibliotek (inkluderer SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- PubSub-bibliotek (til live-begivenheder) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Tilføj Repsy-repositoryet til din build.gradle-fil:
+Tilføj Repsy repository til din build.gradle-fil:
 
 ```groovy
 repositories {
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // API-klient
-    implementation "com.fastcomments:client:1.3.1"
+    // API Client
+    implementation "com.fastcomments:client:1.3.2"
     
-    // Core-bibliotek (inkluderer SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:1.3.2"
     
-    // PubSub-bibliotek (til live-begivenheder)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Bibliotekets indhold
+### Biblioteksindhold
 
-Dette bibliotek indeholder tre moduler. Den genererede API-klient, det centrale Java-bibliotek, som indeholder håndskrevne hjælpefunktioner for at gøre arbejdet med API'et nemmere, og `pubsub`-modulet, som er et bibliotek til at abonnere på ændringsfeeds.
+Dette bibliotek indeholder tre moduler. Den genererede API-klient, det centrale Java-bibliotek som indeholder håndskrevne hjælpefunktioner til at gøre arbejdet med API'et nemmere, og `pubsub` modulet som er et bibliotek til at abonnere på ændringsfeeds.
 
-- [API-klientbibliotekets dokumentation](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core-bibliotekets dokumentation, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub-bibliotekets dokumentation](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentation for API-klientbiblioteket](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Dokumentation for Core-biblioteket, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentation for PubSub-biblioteket](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Offentlige vs. sikrede API'er
+### Offentlige vs. Sikrede API'er
 
-For API-klienten findes der to klasser, `DefaultApi` og `PublicApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder API-kald, der kan foretages direkte fra en browser/mobilenhed osv. uden autentificering.
+For API-klienten findes der to klasser, `DefaultApi` og `PublicApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder API-kald, som kan foretages direkte fra en browser/mobile enhed/etc uden autentificering.
