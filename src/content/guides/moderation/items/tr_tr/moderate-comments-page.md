@@ -1,9 +1,11 @@
-Çoğu moderasyonun yapıldığı yer Yorum Moderasyonu sayfasıdır. Örneğin, işte mevcut demo hesabımızın bir ekran görüntüsü:
+Çoğu moderasyon işleminin yapıldığı yer, Yorum Moderasyonu sayfasıdır. Örneğin, işte mevcut demo hesabımızın bir ekran görüntüsü:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
 
-Ekran görüntüsünü makul bir boyutta tutmak için sayfa başına gösterilecek öğe sayısını üç olarak ayarladık. Uygulamada, varsayılan olarak sayfa başına 50 yorum ile çalışırsınız.
+Bu ekran görüntüsünü makul bir boyutta tutmak için sayfa başına gösterim sayısını üç olarak ayarladık. Gerçek kullanımda varsayılan olarak sayfa başına 50 yorumla çalışırsınız.
 
-Moderasyon sayfası ayrıca, yorumlar arasında gezinmek ve fare kullanmadan işlemler gerçekleştirmek için [Klavye Kısayolları](#keyboard-shortcuts) desteği sunar. Tüm kullanılabilir kısayolları görmek için moderasyon sayfasında **?** tuşuna basın.
+Moderasyon sayfası ayrıca yorumlar arasında gezinmek ve fare kullanmadan eylemler gerçekleştirmek için [Klavye Kısayollarını](#keyboard-shortcuts) destekler. Tüm kullanılabilir kısayolları görmek için moderasyon sayfasında **?** tuşuna basın.
 
-Burada gösterilen özellikleri inceleyelim.
+Sayfa ayrıca **canlıdır** — mevcut filtrelerinizle eşleşen yeni yorumlar geldiğinde, sizi uyaran bir bildirim çubuğu üstte görünür. Ayrıntılar için [Canlı Moderasyon](#live-moderating) bölümüne bakın.
+
+Burada gösterilen özelliklere geçelim.
