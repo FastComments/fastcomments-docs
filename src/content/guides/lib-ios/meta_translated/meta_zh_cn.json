@@ -1,0 +1,138 @@
+{
+  "name": "iOS 库",
+  "pageHeader": "在您的 iOS 应用中添加评论",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "要求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "快速开始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "身份验证（SSO）",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "身份验证",
+      "type": "readme"
+    },
+    {
+      "name": "线程式评论",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时聊天",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "社交动态",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "主题",
+      "file": "theming-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "自定义工具栏按钮",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "审核",
+      "file": "moderation-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时更新",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "分页",
+      "file": "pagination-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "状态与可观测性",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "欧盟区域",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "清理",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "图片上传",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "用户提及",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "编辑与删除评论",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "错误处理",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "本地化",
+      "file": "localization-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "示例应用",
+      "file": "example-app-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    }
+  ]
+}

@@ -16,25 +16,25 @@
 
 ```xml
 <dependencies>
-    <!-- Πελάτης API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη Core (περιλαμβάνει SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη PubSub (για ζωντανά γεγονότα) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
@@ -52,25 +52,25 @@ repositories {
 }
 
 dependencies {
-    // Πελάτης API
-    implementation "com.fastcomments:client:1.3.1"
+    // API Client
+    implementation "com.fastcomments:client:1.3.2"
     
-    // Βιβλιοθήκη Core (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:1.3.2"
     
-    // Βιβλιοθήκη PubSub (για ζωντανά γεγονότα)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Περιεχόμενο Βιβλιοθήκης
+### Περιεχόμενα Βιβλιοθήκης
 
-Αυτή η βιβλιοθήκη περιέχει τρία modules. Ο παραγόμενος πελάτης API, η βασική βιβλιοθήκη Java που περιέχει χειρόγραφα βοηθητικά εργαλεία για να γίνεται ευκολότερη η εργασία με το API, και το `pubsub` module το οποίο είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
+Αυτή η βιβλιοθήκη περιέχει τρεις μονάδες. Ο παραγόμενος πελάτης API, η βασική βιβλιοθήκη Java που περιλαμβάνει χειροποίητα βοηθητικά εργαλεία για να διευκολύνει την εργασία με το API, και η μονάδα `pubsub` η οποία είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
 
-- [Τεκμηρίωση Βιβλιοθήκης API Client](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση Core Library, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Τεκμηρίωση Βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Δημόσια vs Προστατευμένα API
+### Δημόσια vs Ασφαλή API
 
 Για τον πελάτη API, υπάρχουν δύο κλάσεις, `DefaultApi` και `PublicApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, και η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς αυθεντικοποίηση.

@@ -1,0 +1,138 @@
+{
+  "name": "iOS-bibliotheek",
+  "pageHeader": "Voeg reacties toe aan uw iOS-app",
+  "itemsOrdered": [
+    {
+      "name": "Functies",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Vereisten",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installatie",
+      "file": "installation-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Snelle start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Authenticatie (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Authenticatie",
+      "type": "readme"
+    },
+    {
+      "name": "Geneste reacties",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Livechat",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Sociale feed",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Thema's",
+      "file": "theming-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Aangepaste werkbalkknoppen",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Moderatie",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Realtime-updates",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Paginering",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Status en observeerbaarheid",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "EU-regio",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Opschoning",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Afbeeldingen uploaden",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Gebruikersvermeldingen",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Reacties bewerken en verwijderen",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Foutafhandeling",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Lokalisatie",
+      "file": "localization-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeeldapp",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    }
+  ]
+}

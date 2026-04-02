@@ -1,0 +1,17 @@
+---
+- Verschachtelte Kommentar-Threads mit Antworten auf mehreren Ebenen und Paginierung
+- Sozialer Feed mit Beitragserstellung, Reaktionen und Medienanhängen
+- Live-Chat-Modus mit automatischem Scrollen und Datums-Trennzeichen
+- Echtzeit-Updates über WebSocket (neue Kommentare, Stimmen, Präsenz)
+- Single Sign-On (einfaches SSO für Tests, sicheres SSO für die Produktion)
+- Rich-Text-Bearbeitung mit Fett, Kursiv, Code und @Erwähnungen
+- Abstimmung mit konfigurierbaren Stilen (Pfeile hoch/runter oder Herzen)
+- Moderationsaktionen: melden, anpinnen, sperren, blockieren
+- Umfassendes Theming mit Voreinstellungen und vollständiger Anpassung
+- Benutzerdefinierte Symbolleisten-Schaltflächen für Kommentare und das Erstellen von Feed-Beiträgen
+- Bild-Uploads
+- Unterstützung für die EU-Region
+- Benutzerpräsenz (Online-/Offline-Indikatoren)
+- Tag-basierte Feed-Filterung
+- Unterstützung für Lokalisierung
+---

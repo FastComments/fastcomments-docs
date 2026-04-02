@@ -1,0 +1,138 @@
+{
+  "name": "iOS 函式庫",
+  "pageHeader": "在你的 iOS 應用新增留言",
+  "itemsOrdered": [
+    {
+      "name": "功能",
+      "file": "features-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "需求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "入門",
+      "type": "readme"
+    },
+    {
+      "name": "快速開始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "驗證（SSO）",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "驗證",
+      "type": "readme"
+    },
+    {
+      "name": "分層留言",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "即時聊天",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "社群動態",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "主題設定",
+      "file": "theming-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "自訂工具列按鈕",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "內容審核",
+      "file": "moderation-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "即時更新",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "分頁",
+      "file": "pagination-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "狀態與可觀察性",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "歐盟區域",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "清理",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "圖片上傳",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "使用者提及",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "編輯與刪除留言",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "錯誤處理",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "在地化",
+      "file": "localization-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "範例應用程式",
+      "file": "example-app-readme-generated.md",
+      "subCat": "使用方式",
+      "type": "readme"
+    }
+  ]
+}

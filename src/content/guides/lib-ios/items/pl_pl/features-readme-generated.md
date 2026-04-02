@@ -1,0 +1,15 @@
+- Drzewiaste wątki komentarzy z zagnieżdżonymi odpowiedziami i paginacją
+- Kanał społecznościowy z tworzeniem postów, reakcjami i załącznikami multimedialnymi
+- Tryb czatu na żywo z automatycznym przewijaniem i separatorami dat
+- Aktualizacje w czasie rzeczywistym poprzez WebSocket (nowe komentarze, głosy, obecność)
+- Logowanie jednokrotne (Simple SSO do testów, Secure SSO do produkcji)
+- Edytor tekstu sformatowanego z pogrubieniem, kursywą, kodem i @wzmiankami
+- Głosowanie z konfigurowalnymi stylami (strzałki góra/dół lub serduszka)
+- Działania moderacyjne: zgłoś, przypnij, zamknij, zablokuj
+- Kompleksowe motywy z presetami i pełną możliwością dostosowania
+- Niestandardowe przyciski paska narzędzi do tworzenia komentarzy i postów w kanale
+- Przesyłanie obrazów
+- Obsługa regionu UE
+- Obecność użytkowników (wskaźniki online/offline)
+- Filtrowanie kanału oparte na tagach
+- Obsługa lokalizacji

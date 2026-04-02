@@ -1,0 +1,15 @@
+- Threaded comment trees with nested replies and pagination
+- Social feed with post creation, reactions, and media attachments
+- Live chat mode with auto-scroll and date separators
+- Real-time updates via WebSocket (new comments, votes, presence)
+- Single Sign-On (Simple SSO for testing, Secure SSO for production)
+- Rich text editing with bold, italic, code, and @mentions
+- Voting with configurable styles (up/down arrows or hearts)
+- Moderation actions: flag, pin, lock, block
+- Comprehensive theming with presets and full customization
+- Custom toolbar buttons for comments and feed post creation
+- Image uploads
+- EU region support
+- User presence (online/offline indicators)
+- Tag-based feed filtering
+- Localization support

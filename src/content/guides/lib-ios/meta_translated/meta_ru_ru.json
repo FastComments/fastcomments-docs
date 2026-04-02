@@ -1,0 +1,138 @@
+{
+  "name": "Библиотека iOS",
+  "pageHeader": "Добавление комментариев в ваше iOS-приложение",
+  "itemsOrdered": [
+    {
+      "name": "Возможности",
+      "file": "features-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Аутентификация (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Аутентификация",
+      "type": "readme"
+    },
+    {
+      "name": "Вложенные комментарии",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Чат в реальном времени",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Социальная лента",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Настройка темы",
+      "file": "theming-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Пользовательские кнопки панели инструментов",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Модерация",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Обновления в реальном времени",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Пагинация",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Состояние и наблюдаемость",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Регион ЕС",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Очистка",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Загрузка изображений",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Упоминания пользователей",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Редактирование и удаление комментариев",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Обработка ошибок",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Локализация",
+      "file": "localization-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Пример приложения",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    }
+  ]
+}

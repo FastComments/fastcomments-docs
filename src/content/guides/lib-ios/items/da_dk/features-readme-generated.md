@@ -1,0 +1,15 @@
+- Trådede kommentartræer med indlejrede svar og sideinddeling
+- Socialt feed med oprettelse af indlæg, reaktioner og medievedhæftninger
+- Live chat-tilstand med automatisk rulning og dataseparatorer
+- Realtidsopdateringer via WebSocket (nye kommentarer, stemmer, tilstedeværelse)
+- Single Sign-On (Simple SSO til test, Secure SSO til produktion)
+- Rig tekstredigering med fed, kursiv, kode og @mentions
+- Afstemning med konfigurerbare stilarter (op-/ned-pile eller hjerter)
+- Moderationshandlinger: marker, fastgør, lås, bloker
+- Omfattende temaindstillinger med forudindstillinger og fuld tilpasning
+- Egendefinerede værktøjslinjeknapper til kommentarer og oprettelse af feed-indlæg
+- Upload af billeder
+- Understøttelse af EU-regionen
+- Brugertilstedeværelse (online/offline-indikatorer)
+- Tag-baseret feedfiltrering
+- Understøttelse af lokalisering

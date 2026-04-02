@@ -1,6 +1,6 @@
 ### Maven
 
-Repsy deposunu projenizin POM dosyasına ekleyin:
+Projenizin POM dosyasına Repsy deposunu ekleyin:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Repsy deposunu projenizin POM dosyasına ekleyin:
 </repositories>
 ```
 
-Ardından ihtiyacınız olan bağımlılıkları ekleyin:
+Sonra ihtiyacınız olan bağımlılıkları ekleyin:
 
 ```xml
 <dependencies>
@@ -20,21 +20,21 @@ Ardından ihtiyacınız olan bağımlılıkları ekleyin:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
     <!-- Çekirdek Kütüphane (SSO içerir) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- PubSub Kütüphanesi (canlı etkinlikler için) -->
+    <!-- PubSub Kütüphanesi (canlı olaylar için) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
@@ -53,25 +53,24 @@ repositories {
 
 dependencies {
     // API İstemcisi
-    implementation "com.fastcomments:client:1.3.1"
+    implementation "com.fastcomments:client:1.3.2"
     
     // Çekirdek Kütüphane (SSO içerir)
-    implementation "com.fastcomments:core:1.3.1"
+    implementation "com.fastcomments:core:1.3.2"
     
     // PubSub Kütüphanesi (canlı etkinlikler için)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Library Contents
+### Kütüphane İçeriği
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Bu kütüphane üç modül içerir. Oluşturulmuş API istemcisi, API ile çalışmayı kolaylaştırmak için elle yazılmış yardımcılar içeren çekirdek Java kütüphanesi ve değişiklik akışlarına abonelik için bir kütüphane olan `pubsub` modülü.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Çekirdek Kütüphane Belgeleri, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Genel vs Güvenli API'ler
 
-API istemcisi için iki sınıf vardır: `DefaultApi` ve `PublicApi`. `DefaultApi` API anahtarınızı gerektiren yöntemleri içerir ve `PublicApi` kimlik doğrulama olmadan doğrudan bir tarayıcı/telefon/vesaire üzerinden yapılabilecek API çağrılarını içerir.
+API istemcisi için iki sınıf vardır: `DefaultApi` ve `PublicApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerir; `PublicApi` ise kimlik doğrulama olmadan bir tarayıcı/taşınabilir cihaz vb. üzerinden doğrudan yapılabilen API çağrılarını içerir.

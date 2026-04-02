@@ -1,0 +1,138 @@
+{
+  "name": "Bibliothèque iOS",
+  "pageHeader": "Ajouter des commentaires à votre application iOS",
+  "itemsOrdered": [
+    {
+      "name": "Fonctionnalités",
+      "file": "features-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Exigences",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prise en main",
+      "type": "readme"
+    },
+    {
+      "name": "Démarrage rapide",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Authentification (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Authentification",
+      "type": "readme"
+    },
+    {
+      "name": "Commentaires en fil de discussion",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Clavardage en direct",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Fil social",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Personnalisation du thème",
+      "file": "theming-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Boutons personnalisés de la barre d'outils",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Modération",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Mises à jour en temps réel",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Pagination",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "État et observabilité",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Région UE",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Nettoyage",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Téléversement d'images",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Mentions d'utilisateurs",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Modification et suppression de commentaires",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Gestion des erreurs",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Localisation",
+      "file": "localization-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Exemple d'application",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Utilisation",
+      "type": "readme"
+    }
+  ]
+}

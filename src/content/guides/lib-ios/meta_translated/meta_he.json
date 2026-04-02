@@ -1,0 +1,138 @@
+{
+  "name": "ספריית iOS",
+  "pageHeader": "הוסף תגובות לאפליקציית iOS שלך",
+  "itemsOrdered": [
+    {
+      "name": "תכונות",
+      "file": "features-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "התחלה מהירה",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "אימות (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "אימות",
+      "type": "readme"
+    },
+    {
+      "name": "תגובות מקוננות",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "צ'אט חי",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "פיד חברתי",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "ערכות נושא",
+      "file": "theming-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "כפתורי סרגל כלים מותאמים",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "פיקוח",
+      "file": "moderation-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "עדכונים בזמן אמת",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "עימוד",
+      "file": "pagination-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב ותצפית",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "אזור האיחוד האירופי",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "ניקוי",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "העלאת תמונות",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "אזכורים למשתמשים",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "עריכה ומחיקה של תגובות",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "טיפול בשגיאות",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "לוקליזציה",
+      "file": "localization-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "אפליקציית דוגמה",
+      "file": "example-app-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    }
+  ]
+}

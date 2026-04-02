@@ -1,6 +1,6 @@
 ### Maven
 
-Ajoutez le dépôt Repsy au POM de votre projet :
+Ajoutez le dépôt Repsy au POM de votre projet:
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@ Ajoutez le dépôt Repsy au POM de votre projet :
 </repositories>
 ```
 
-Ensuite, ajoutez les dépendances dont vous avez besoin :
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Client API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Bibliothèque Core (inclut SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Bibliothèque PubSub (pour les événements en direct) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>1.3.1</version>
+        <version>1.3.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Ajoutez le dépôt Repsy à votre fichier build.gradle :
+Ajoutez le dépôt Repsy à votre fichier build.gradle:
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:1.3.1"
+    // Client API
+    implementation "com.fastcomments:client:1.3.2"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:1.3.1"
+    // Bibliothèque Core (inclut SSO)
+    implementation "com.fastcomments:core:1.3.2"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:1.3.1"
+    // Bibliothèque PubSub (pour les événements en direct)
+    implementation "com.fastcomments:pubsub:1.3.2"
 }
 ```
 
-### Library Contents
+### Contenu de la bibliothèque
 
-Cette bibliothèque contient trois modules. Le client API généré, la bibliothèque Java core qui contient des utilitaires écrits à la main
+Cette bibliothèque contient trois modules. Le client API généré, la bibliothèque Java Core qui contient des utilitaires écrits à la main
 pour faciliter le travail avec l'API, et le module `pubsub` qui est une bibliothèque pour s'abonner aux flux de changements.
 
-- [Documentation de la bibliothèque du client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Docs de la bibliothèque client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Documentation de la bibliothèque Core, y compris des exemples SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentation de la bibliothèque PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Docs de la bibliothèque PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### APIs publiques vs sécurisées
 
-Pour le client API, il y a deux classes, `DefaultApi` et `PublicApi`. La `DefaultApi` contient des méthodes qui nécessitent votre clé API, et `PublicApi` contient des appels d'API
-qui peuvent être effectués directement depuis un navigateur, un appareil mobile, etc. sans authentification.
+Pour le client API, il y a deux classes, `DefaultApi` et `PublicApi`. `DefaultApi` contient des méthodes qui requièrent votre clé API, et `PublicApi` contient des
+appels d'API qui peuvent être effectués directement depuis un navigateur/appareil mobile/etc. sans authentification.

@@ -1,0 +1,15 @@
+- Geneste reactiestructuren met geneste antwoorden en paginering
+- Sociale feed met berichtcreatie, reacties en mediabijlagen
+- Live chat-modus met automatisch scrollen en datumscheiders
+- Realtime-updates via WebSocket (nieuwe reacties, stemmen, aanwezigheid)
+- Single Sign-On (Eenvoudige SSO voor testen, Veilige SSO voor productie)
+- Rijke tekstbewerking met vet, cursief, code en @mentions
+- Stemmen met configureerbare stijlen (pijlen omhoog/omlaag of harten)
+- Moderatieacties: markeren, vastzetten, vergrendelen, blokkeren
+- Uitgebreide theming met presets en volledige aanpassing
+- Aangepaste knoppen in de werkbalk voor reacties en het aanmaken van feedberichten
+- Afbeeldingsuploads
+- Ondersteuning voor de EU-regio
+- Gebruikersaanwezigheid (online/offline-indicatoren)
+- Tag-gebaseerde feedfiltering
+- Ondersteuning voor lokalisatie

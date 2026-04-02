@@ -1,0 +1,138 @@
+{
+  "name": "iOS Kütüphanesi",
+  "pageHeader": "iOS Uygulamanıza Yorum Ekleme",
+  "itemsOrdered": [
+    {
+      "name": "Özellikler",
+      "file": "features-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Gereksinimler",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "installation-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kimlik Doğrulama (SSO)",
+      "file": "authentication-sso-readme-generated.md",
+      "subCat": "Kimlik Doğrulama",
+      "type": "readme"
+    },
+    {
+      "name": "Dallanmış Yorumlar",
+      "file": "threaded-comments-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Canlı Sohbet",
+      "file": "live-chat-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Sosyal Akış",
+      "file": "social-feed-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Tema Özelleştirme",
+      "file": "theming-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Özel Araç Çubuğu Düğmeleri",
+      "file": "custom-toolbar-buttons-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Moderasyon",
+      "file": "moderation-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Gerçek Zamanlı Güncellemeler",
+      "file": "real-time-updates-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Sayfalandırma",
+      "file": "pagination-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Durum ve Gözlemlenebilirlik",
+      "file": "state-and-observability-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "AB Bölgesi",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Temizlik",
+      "file": "cleanup-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Resim Yüklemeleri",
+      "file": "image-uploads-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanıcı Etiketlemeleri",
+      "file": "user-mentions-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Yorumları Düzenleme ve Silme",
+      "file": "editing-and-deleting-comments-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Hata Yönetimi",
+      "file": "error-handling-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Yerelleştirme",
+      "file": "localization-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Örnek Uygulama",
+      "file": "example-app-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    }
+  ]
+}

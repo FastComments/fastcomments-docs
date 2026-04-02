@@ -1,0 +1,15 @@
+- Arbres de commentaires en fil avec réponses imbriquées et pagination
+- Fil social avec création de publications, réactions et pièces jointes multimédia
+- Mode de chat en direct avec défilement automatique et séparateurs de date
+- Mises à jour en temps réel via WebSocket (nouveaux commentaires, votes, présence)
+- Authentification unique (SSO simple pour les tests, SSO sécurisé pour la production)
+- Édition de texte enrichi avec gras, italique, code et @mentions
+- Système de vote avec styles configurables (flèches haut/bas ou cœurs)
+- Actions de modération : signaler, épingler, verrouiller, bloquer
+- Thématisation complète avec préréglages et personnalisation intégrale
+- Boutons personnalisés dans la barre d'outils pour les commentaires et la création de publications du fil
+- Téléversements d'images
+- Prise en charge de la région UE
+- Présence des utilisateurs (indicateurs en ligne/hors ligne)
+- Filtrage du fil par étiquettes
+- Prise en charge de la localisation
