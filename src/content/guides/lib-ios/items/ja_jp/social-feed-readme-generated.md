@@ -1,7 +1,6 @@
----
 フィードシステムは独立した SDK (`FastCommentsFeedSDK`) で、専用のビューを持ちます。
 
-### Loading and Displaying the Feed
+### フィードの読み込みと表示
 
 ```swift
 struct FeedPage: View {
@@ -28,28 +27,29 @@ struct FeedPage: View {
                 // 共有シートを表示する
             }
             .onUserClick { context, userInfo, source in
-                // ユーザープロフィールへ遷移する
+                // ユーザープロファイルへ遷移する
             }
             .onMediaClick { mediaItem, index in
-                // 全画面画像ビューアを表示する
+                // フルスクリーンの画像ビューアを表示する
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-The feed view includes pull-to-refresh and infinite scroll automatically.
+フィードビューにはプル・トゥ・リフレッシュと無限スクロールが自動的に含まれます。
+画面のライフサイクルに戻る場合は `loadIfNeeded()` を使用してください。既存または復元されたフィードがページ1にリセットされるのを防ぎます。
 
-### Creating Posts
+### 投稿の作成
 
-Use `FeedPostCreateView` to present a post creation form:
+投稿作成フォームを表示するには `FeedPostCreateView` を使用します:
 
 ```swift
 @State private var showCreatePost = false
 
-// ビューの本文内で:
+// In your view body:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -64,21 +64,21 @@ Use `FeedPostCreateView` to present a post creation form:
 }
 ```
 
-### Reacting to Posts
+### 投稿へのリアクション
 
-The SDK handles reactions with optimistic updates:
+SDKは楽観的更新でリアクションを処理します:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// リアクション状態を確認する
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Opening Comments on a Post
+### 投稿のコメントを開く
 
-Use `CommentsSheet` to display comments for a feed post. It creates a `FastCommentsSDK` instance internally using the feed SDK's config:
+フィード投稿のコメントを表示するには `CommentsSheet` を使用します。これはフィードSDKの設定を使用して内部で `FastCommentsSDK` インスタンスを作成します:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -88,15 +88,15 @@ Use `CommentsSheet` to display comments for a feed post. It creates a `FastComme
 }
 ```
 
-Note: `FeedPost` must conform to `Identifiable` for `.sheet(item:)`. Add this extension:
+注意: `.sheet(item:)` には `FeedPost` が `Identifiable` に準拠している必要があります。この拡張を追加してください:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Tag-Based Feed Filtering
+### タグベースのフィードフィルタリング
 
-Implement the `TagSupplier` protocol to filter feed posts by tags:
+タグでフィード投稿をフィルタリングするには `TagSupplier` プロトコルを実装します:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -109,25 +109,25 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Return `nil` for an unfiltered global feed.
+フィルタリングされていないグローバルフィードの場合は `nil` を返してください。
 
-### Saving and Restoring Feed State
+### フィード状態の保存と復元
 
-Preserve pagination state across view lifecycle events:
+ビューのライフサイクルイベント間でページネーション状態を保持します:
 
 ```swift
 let state = sdk.savePaginationState()
-// 後で...
+// Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Deleting Posts
+画面が一時的に非表示になる場合、フィードビューはライブ更新を自動的に一時停止し、再表示時に読み込んだ投稿をクリアせずに再開します。SDKインスタンスを本当に使い終わったときだけ `sdk.cleanup()` を呼び出してください。
+
+### 投稿の削除
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

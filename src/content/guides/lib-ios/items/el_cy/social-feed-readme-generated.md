@@ -1,5 +1,4 @@
----
-Το σύστημα ροής είναι ένα ξεχωριστό SDK (`FastCommentsFeedSDK`) με το δικό του view.
+Το σύστημα ροής είναι ένα ξεχωριστό SDK (`FastCommentsFeedSDK`) με τη δική του προβολή.
 
 ### Φόρτωση και Εμφάνιση της Ροής
 
@@ -25,31 +24,32 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Present share sheet
+                // Εμφάνιση φύλλου κοινοποίησης
             }
             .onUserClick { context, userInfo, source in
-                // Navigate to user profile
+                // Πλοήγηση στο προφίλ χρήστη
             }
             .onMediaClick { mediaItem, index in
-                // Present full-screen image viewer
+                // Εμφάνιση προβολέα εικόνας σε πλήρη οθόνη
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Το view της ροής περιλαμβάνει αυτόματα λειτουργία pull-to-refresh και infinite scroll.
+Η προβολή ροής περιλαμβάνει σύρσιμο για ανανέωση (pull-to-refresh) και ατέρμονη κύλιση αυτόματα.
+Χρησιμοποιήστε `loadIfNeeded()` για επανείσοδο στο lifecycle της οθόνης ώστε μια υπάρχουσα ή επαναφερθείσα ροή να μην επανέρχεται στην σελίδα 1.
 
 ### Δημιουργία Δημοσιεύσεων
 
-Χρησιμοποιήστε το `FeedPostCreateView` για να εμφανίσετε μια φόρμα δημιουργίας δημοσίευσης:
+Χρησιμοποιήστε `FeedPostCreateView` για να εμφανίσετε μια φόρμα δημιουργίας δημοσίευσης:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// Στο σώμα της προβολής σας:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -66,7 +66,7 @@ struct FeedPage: View {
 
 ### Αντίδραση σε Δημοσιεύσεις
 
-Το SDK διαχειρίζεται τις αντιδράσεις με οπτιμιστικές ενημερώσεις:
+Το SDK χειρίζεται τις αντιδράσεις με αισιόδοξες ενημερώσεις (optimistic updates):
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
@@ -76,27 +76,27 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Άνοιγμα σχολίων σε μια δημοσίευση
+### Άνοιγμα Σχολίων για μια Δημοσίευση
 
-Χρησιμοποιήστε το `CommentsSheet` για να εμφανίσετε τα σχόλια μιας δημοσίευσης στη ροή. Δημιουργεί εσωτερικά ένα στιγμιότυπο `FastCommentsSDK` χρησιμοποιώντας τη διαμόρφωση (config) του feed SDK:
+Χρησιμοποιήστε `CommentsSheet` για να εμφανίσετε σχόλια για μια δημοσίευση στη ροή. Δημιουργεί εσωτερικά ένα instance `FastCommentsSDK` χρησιμοποιώντας το config του feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Handle user click
+        // Διαχείριση κλικ χρήστη
     })
 }
 ```
 
-Σημείωση: `FeedPost` πρέπει να συμμορφώνεται με `Identifiable` για `.sheet(item:)`. Προσθέστε αυτήν την επέκταση:
+Σημείωση: `FeedPost` πρέπει να συμμορφώνεται με το `Identifiable` για το `.sheet(item:)`. Προσθέστε αυτή την επέκταση:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Φιλτράρισμα ροής με βάση τις ετικέτες
+### Φιλτράρισμα Ροής με Βάση τις Ετικέτες
 
-Υλοποιήστε το πρωτόκολλο `TagSupplier` για να φιλτράρετε τις δημοσιεύσεις της ροής κατά ετικέτες:
+Υλοποιήστε το πρωτόκολλο `TagSupplier` για να φιλτράρετε δημοσιεύσεις ροής με βάση ετικέτες:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -109,17 +109,20 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Επιστρέψτε `nil` για μια παγκόσμια ροή χωρίς φίλτρο.
+Επιστρέψτε `nil` για μια μη φιλτραρισμένη παγκόσμια ροή.
 
-### Αποθήκευση και Επαναφορά Κατάστασης της Ροής
+### Αποθήκευση και Επαναφορά Κατάστασης Ροής
 
-Διατηρήστε την κατάσταση σελιδοποίησης (pagination) ανάμεσα σε συμβάντα κύκλου ζωής του view:
+Διατηρήστε την κατάσταση σελιδοποίησης (pagination) κατά τα γεγονότα lifecycle της προβολής:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Αν η οθόνη σας εξαφανιστεί προσωρινά, η προβολή ροής διακόπτει αυτόματα τις ζωντανές ενημερώσεις και τις επαναλαμβάνει όταν επανεμφανιστεί χωρίς να διαγράψει τις φορτωμένες δημοσιεύσεις. Καλέστε `sdk.cleanup()` μόνο όταν έχετε πραγματικά τελειώσει με το instance του SDK.
 
 ### Διαγραφή Δημοσιεύσεων
 
@@ -128,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

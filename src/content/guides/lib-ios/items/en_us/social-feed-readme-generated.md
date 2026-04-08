@@ -33,13 +33,14 @@ struct FeedPage: View {
                 // Present full-screen image viewer
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
 The feed view includes pull-to-refresh and infinite scroll automatically.
+Use `loadIfNeeded()` for screen lifecycle re-entry so an existing or restored feed does not reset back to page 1.
 
 ### Creating Posts
 
@@ -118,7 +119,10 @@ Preserve pagination state across view lifecycle events:
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+If your screen disappears temporarily, the feed view pauses live updates automatically and resumes them on re-appear without clearing loaded posts. Call `sdk.cleanup()` only when you are truly done with the SDK instance.
 
 ### Deleting Posts
 

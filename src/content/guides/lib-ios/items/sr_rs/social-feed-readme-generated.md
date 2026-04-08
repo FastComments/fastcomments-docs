@@ -1,6 +1,6 @@
-Систем фида је посебан SDK (`FastCommentsFeedSDK`) са својим приказом.
+Sistem feed-a je odvojen SDK (`FastCommentsFeedSDK`) sa sopstvenim prikazom.
 
-### Учитавање и приказивање фида
+### Učitavanje i prikaz feed-a
 
 ```swift
 struct FeedPage: View {
@@ -24,31 +24,32 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Прикажи дијалог за дељење
+                // Prikaži sheet za deljenje
             }
             .onUserClick { context, userInfo, source in
-                // Навигирај до корисничког профила
+                // Navigirajte do profila korisnika
             }
             .onMediaClick { mediaItem, index in
-                // Прикажи прегледач слика преко целог екрана
+                // Prikaži pregled slika preko celog ekrana
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Преглед фида аутоматски садржи повлачење за освежавање и бесконачно скроловање.
+Prikaz feed-a automatski uključuje povlačenje za osvežavanje i beskonačno skrolovanje.
+Koristite `loadIfNeeded()` pri ponovnom ulasku u životni ciklus ekrana kako postojeći ili vraćeni feed ne bi bio resetovan na stranicu 1.
 
-### Креирање објава
+### Kreiranje objava
 
-Користите `FeedPostCreateView` да прикажете форму за креирање објаве:
+Koristite `FeedPostCreateView` da prikažete formu za kreiranje objave:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// U telu vašeg prikaza:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,39 +64,39 @@ struct FeedPage: View {
 }
 ```
 
-### Реакције на објаве
+### Reakcije na objave
 
-SDK рукује реакцијама са оптимистичким ажурирањима:
+SDK obrađuje reakcije sa optimističkim ažuriranjima:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Check reaction state
+// Proverite stanje reakcije
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Отварање коментара за објаву
+### Otvaranje komentara na objavi
 
-Користите `CommentsSheet` за приказ коментара за објаву из фида. Он интерно креира инстанцу `FastCommentsSDK` користећи конфигурацију фид SDK-а:
+Koristite `CommentsSheet` za prikaz komentara za feed objavu. Interno kreira instancu `FastCommentsSDK` koristeći konfiguraciju feed SDK-a:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Обради кликање на корисника
+        // Obradite klik korisnika
     })
 }
 ```
 
-Напомена: `FeedPost` мора да подржава `Identifiable` за `.sheet(item:)`. Додајте ово проширење:
+Napomena: `FeedPost` mora da implementira `Identifiable` za `.sheet(item:)`. Dodajte ovo proširenje:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Филтрирање фида по таговима
+### Filtriranje feed-a po tagovima
 
-Имплементирајте протокол `TagSupplier` да бисте филтрирали објаве у фиду по таговима:
+Implementirajte protokol `TagSupplier` da filtrirate feed objave po tagovima:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -108,22 +109,28 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Вратите `nil` да бисте добили нефилтрирани глобални фид.
+Vratite `nil` za nefiltriran globalni feed.
 
-### Чување и враћање стања фида
+### Čuvanje i vraćanje stanja feed-a
 
-Чувајте стање пагинације кроз догађаје животног циклуса приказа:
+Sačuvajte stanje paginacije kroz događaje životnog ciklusa prikaza:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Брисање објава
+Ako se vaš ekran privremeno sakrije, prikaz feed-a automatski pauzira ažuriranja uživo i nastavlja ih prilikom ponovnog pojavljivanja bez brisanja učitanih objava. Pozovite `sdk.cleanup()` samo kada ste zaista završili sa instancom SDK-a.
+
+### Brisanje objava
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
+
+---
+---

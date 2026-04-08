@@ -1,4 +1,4 @@
-Das Feed-System ist ein separates SDK (`FastCommentsFeedSDK`) mit eigener Ansicht.
+Das Feed-System ist ein separates SDK (`FastCommentsFeedSDK`) mit einer eigenen Ansicht.
 
 ### Laden und Anzeigen des Feeds
 
@@ -33,22 +33,22 @@ struct FeedPage: View {
                 // Vollbild-Bildbetrachter anzeigen
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Die Feed-Ansicht umfasst automatisch Pull-to-Refresh und unbegrenztes Scrollen.
+Die Feed-Ansicht enthält automatisch Pull-to-Refresh und unendliches Scrollen. Verwende `loadIfNeeded()` beim Wiedereintritt in den Bildschirm-Lifecycle, damit ein vorhandener oder wiederhergestellter Feed nicht zurück auf Seite 1 gesetzt wird.
 
-### Erstellen von Beiträgen
+### Beiträge erstellen
 
-Verwenden Sie `FeedPostCreateView`, um ein Formular zum Erstellen von Beiträgen anzuzeigen:
+Verwende `FeedPostCreateView`, um ein Formular zum Erstellen eines Beitrags anzuzeigen:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// In deinem View-Body:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,7 +63,7 @@ Verwenden Sie `FeedPostCreateView`, um ein Formular zum Erstellen von Beiträgen
 }
 ```
 
-### Reagieren auf Beiträge
+### Auf Beiträge reagieren
 
 Das SDK verwaltet Reaktionen mit optimistischen Updates:
 
@@ -77,7 +77,7 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 
 ### Kommentare zu einem Beitrag öffnen
 
-Verwenden Sie `CommentsSheet`, um Kommentare für einen Feed-Beitrag anzuzeigen. Es erstellt intern eine `FastCommentsSDK`-Instanz unter Verwendung der Konfiguration des Feed-SDKs:
+Verwende `CommentsSheet`, um Kommentare zu einem Feed-Beitrag anzuzeigen. Es erstellt intern eine `FastCommentsSDK`-Instanz unter Verwendung der Konfiguration des Feed-SDKs:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -87,15 +87,15 @@ Verwenden Sie `CommentsSheet`, um Kommentare für einen Feed-Beitrag anzuzeigen.
 }
 ```
 
-Hinweis: `FeedPost` muss `Identifiable` für `.sheet(item:)` entsprechen. Fügen Sie diese Erweiterung hinzu:
+Hinweis: `FeedPost` muss `Identifiable` entsprechen für `.sheet(item:)`. Füge diese Extension hinzu:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Tag-basiertes Filtern des Feeds
+### Tag-basierte Feed-Filterung
 
-Implementieren Sie das `TagSupplier`-Protokoll, um Feed-Beiträge nach Tags zu filtern:
+Implementiere das `TagSupplier`-Protokoll, um Feed-Beiträge nach Tags zu filtern:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -108,17 +108,20 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Geben Sie `nil` für einen ungefilterten globalen Feed zurück.
+Gib `nil` für einen ungefilterten globalen Feed zurück.
 
 ### Speichern und Wiederherstellen des Feed-Zustands
 
-Bewahren Sie den Paginierungszustand über den Lebenszyklus der Ansicht hinweg auf:
+Bewahre den Paginierungszustand über View-Lifecycle-Ereignisse hinweg auf:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Wenn dein Bildschirm vorübergehend verschwindet, pausiert die Feed-Ansicht automatisch Live-Updates und setzt sie beim Wiedererscheinen fort, ohne geladene Beiträge zu löschen. Rufe `sdk.cleanup()` nur auf, wenn du die SDK-Instanz wirklich nicht mehr benötigst.
 
 ### Beiträge löschen
 
@@ -127,3 +130,6 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
+
+---
+---

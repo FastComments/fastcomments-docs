@@ -24,22 +24,23 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Prikaži delilni list
+                // Predstavi delitveni list
             }
             .onUserClick { context, userInfo, source in
-                // Pojdi na profil uporabnika
+                // Odpri profil uporabnika
             }
             .onMediaClick { mediaItem, index in
-                // Prikaži pregledovalnik slike na celotnem zaslonu
+                // Prikaži slikovni pregledovalnik na celotnem zaslonu
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Pogled feeda samodejno podpira vlečenje za osvežitev in neskončno pomikanje.
+Pogled feeda samodejno vključuje potegni-za-osvežitev in neskončno pomikanje.
+Uporabite `loadIfNeeded()` ob ponovnem vstopu v življenjski cikel zaslona, da obstoječ ali obnovljen feed ne bo ponastavljen nazaj na stran 1.
 
 ### Ustvarjanje objav
 
@@ -75,25 +76,25 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Odpiranje komentarjev na objavi
+### Odprtje komentarjev pri objavi
 
-Uporabite `CommentsSheet` za prikaz komentarjev pri feed objavi. Znotraj ustvari primer `FastCommentsSDK` z uporabo konfiguracije feed SDK-ja:
+Uporabite `CommentsSheet` za prikaz komentarjev pri feed objavi. Notranje ustvari primerek `FastCommentsSDK` z uporabo konfiguracije feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Obdelaj klik uporabnika
+        // Obravnava klika uporabnika
     })
 }
 ```
 
-Opomba: `FeedPost` mora ustrezati protokolu `Identifiable` za `.sheet(item:)`. Dodajte to razširitev:
+Opomba: `FeedPost` se mora ujemati z `Identifiable` za `.sheet(item:)`. Dodajte to razširitev:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filtriranje feeda na podlagi oznak
+### Filtriranje feeda po oznakah
 
 Implementirajte protokol `TagSupplier` za filtriranje feed objav po oznakah:
 
@@ -108,17 +109,20 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Vrnite `nil` za nefiltriran globalni feed.
+Za nefiltriran globalni feed vrnite `nil`.
 
 ### Shranjevanje in obnavljanje stanja feeda
 
-Ohranite stanje paginacije med dogodki življenjskega cikla pogleda:
+Ohranjajte stanje paginacije med dogodki življenjskega cikla pogleda:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Če vaš zaslon začasno izgine, pogled feeda samodejno začasno ustavi posodobitve v živo in jih nadaljuje ob ponovnem prikazu brez brisanja naloženih objav. Pokličite `sdk.cleanup()` le, ko ste res končali s primestkom SDK.
 
 ### Brisanje objav
 

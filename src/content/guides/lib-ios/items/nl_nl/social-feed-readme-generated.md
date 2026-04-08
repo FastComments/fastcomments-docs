@@ -1,4 +1,3 @@
----
 Het feed-systeem is een aparte SDK (`FastCommentsFeedSDK`) met zijn eigen weergave.
 
 ### Laden en weergeven van de feed
@@ -25,7 +24,7 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Toon deelvenster
+                // Toon het deelvenster
             }
             .onUserClick { context, userInfo, source in
                 // Navigeer naar gebruikersprofiel
@@ -34,22 +33,23 @@ struct FeedPage: View {
                 // Toon afbeeldingsviewer op volledig scherm
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
 De feed-weergave bevat automatisch pull-to-refresh en infinite scroll.
+Gebruik `loadIfNeeded()` bij het terugkeren in de lifecycle van het scherm, zodat een bestaande of herstelde feed niet teruggezet wordt naar pagina 1.
 
 ### Berichten maken
 
-Gebruik `FeedPostCreateView` om een formulier voor het aanmaken van een bericht weer te geven:
+Gebruik `FeedPostCreateView` om een formulier voor het maken van een bericht te tonen:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// In de body van je view:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -76,14 +76,14 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Reacties openen bij een bericht
+### Reacties op een bericht openen
 
-Gebruik `CommentsSheet` om reacties voor een feed-bericht weer te geven. Het maakt intern een `FastCommentsSDK`-instantie aan met de configuratie van de feed SDK:
+Gebruik `CommentsSheet` om reacties voor een feed-bericht weer te geven. Deze maakt intern een `FastCommentsSDK`-instantie aan met de config van de feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Verwerk gebruikersklik
+        // Behandel gebruikersklik
     })
 }
 ```
@@ -94,7 +94,7 @@ Opmerking: `FeedPost` moet voldoen aan `Identifiable` voor `.sheet(item:)`. Voeg
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filteren van de feed op basis van tags
+### Feedfiltering op basis van tags
 
 Implementeer het `TagSupplier`-protocol om feed-berichten op tags te filteren:
 
@@ -111,15 +111,18 @@ sdk.tagSupplier = TeamTagSupplier()
 
 Geef `nil` terug voor een niet-gefilterde globale feed.
 
-### Feedstatus opslaan en herstellen
+### Feed-status opslaan en herstellen
 
-Behoud de pagineringstoestand tijdens levenscyclusgebeurtenissen van de view:
+Behoud de paginatoestand over weergave-levenscyclusgebeurtenissen:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Als je scherm tijdelijk verdwijnt, pauzeert de feed-weergave automatisch live-updates en hervat deze bij terugkeer zonder geladen berichten te wissen. Roep `sdk.cleanup()` alleen aan wanneer je echt klaar bent met de SDK-instantie.
 
 ### Berichten verwijderen
 
@@ -128,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

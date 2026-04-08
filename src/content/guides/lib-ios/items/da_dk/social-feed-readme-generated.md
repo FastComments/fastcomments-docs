@@ -30,25 +30,25 @@ struct FeedPage: View {
                 // Naviger til brugerprofil
             }
             .onMediaClick { mediaItem, index in
-                // Vis billedviser i fuld skærm
+                // Vis billedfremviser i fuld skærm
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Feed-visningen inkluderer pull-to-refresh og automatisk uendelig scroll.
+Feed-visningen inkluderer automatisk træk-for-at-opdatere og uendelig rullefunktion. Brug `loadIfNeeded()` ved genindtreden i skærmens livscyklus, så et eksisterende eller gendannet feed ikke nulstilles til side 1.
 
-### Oprette indlæg
+### Oprettelse af indlæg
 
 Brug `FeedPostCreateView` til at vise en formular til oprettelse af indlæg:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// I din view-krop:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,26 +63,26 @@ Brug `FeedPostCreateView` til at vise en formular til oprettelse af indlæg:
 }
 ```
 
-### Reagere på indlæg
+### Reaktioner på indlæg
 
 SDK'en håndterer reaktioner med optimistiske opdateringer:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Check reaction state
+// Kontroller reaktionstilstand
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Åbne kommentarer for et indlæg
+### Åbning af kommentarer på et indlæg
 
 Brug `CommentsSheet` til at vise kommentarer for et feed-indlæg. Den opretter internt en `FastCommentsSDK`-instans ved hjælp af feed-SDK'ens konfiguration:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Håndter klik på bruger
+        // Håndter brugerklik
     })
 }
 ```
@@ -93,7 +93,7 @@ Bemærk: `FeedPost` skal overholde `Identifiable` for `.sheet(item:)`. Tilføj d
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Tag-baseret filtrering af feed
+### Tag-baseret feed-filtrering
 
 Implementer `TagSupplier`-protokollen for at filtrere feed-indlæg efter tags:
 
@@ -108,25 +108,25 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Returnér `nil` for et ufiltreret globalt feed.
+Returner `nil` for et ufiltreret globalt feed.
 
 ### Gemme og gendanne feed-tilstand
 
-Bevar pagineringsstatus på tværs af visningens livscyklus-begivenheder:
+Bevar pagineringsstatus på tværs af visningens livscyklus-hændelser:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Slette indlæg
+Hvis din skærm forsvinder midlertidigt, pauser feed-visningen automatisk live-opdateringer og genoptager dem ved genfremvisning uden at fjerne indlæste indlæg. Kald kun `sdk.cleanup()` når du virkelig er færdig med SDK-instansen.
+
+### Sletning af indlæg
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

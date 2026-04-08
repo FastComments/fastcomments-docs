@@ -1,6 +1,6 @@
-O sistema de feed é um SDK separado (`FastCommentsFeedSDK`) com sua própria view.
+O sistema de feed é um SDK separado (`FastCommentsFeedSDK`) com sua própria visualização.
 
-### Carregando e Exibindo o Feed
+### Loading and Displaying the Feed
 
 ```swift
 struct FeedPage: View {
@@ -33,15 +33,16 @@ struct FeedPage: View {
                 // Apresentar visualizador de imagem em tela cheia
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-A visualização do feed inclui pull-to-refresh e rolagem infinita automaticamente.
+A visualização do feed inclui pull-to-refresh e infinite scroll automaticamente.
+Use `loadIfNeeded()` para reentrada no ciclo de vida da tela para que um feed existente ou restaurado não seja resetado para a página 1.
 
-### Criando Posts
+### Creating Posts
 
 Use `FeedPostCreateView` para apresentar um formulário de criação de post:
 
@@ -63,9 +64,9 @@ Use `FeedPostCreateView` para apresentar um formulário de criação de post:
 }
 ```
 
-### Reagindo a Posts
+### Reacting to Posts
 
-O SDK lida com reações com atualizações otimistas:
+O SDK lida com reações usando atualizações otimistas:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
@@ -75,25 +76,25 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Abrindo Comentários em um Post
+### Opening Comments on a Post
 
-Use `CommentsSheet` para exibir comentários de um post do feed. Ele cria internamente uma instância de `FastCommentsSDK` usando a config do feed SDK:
+Use `CommentsSheet` para exibir comentários de um post do feed. Ele cria uma instância de `FastCommentsSDK` internamente usando a config do feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Lidar com clique do usuário
+        // Handle user click
     })
 }
 ```
 
-Nota: `FeedPost` deve conformar ao `Identifiable` para `.sheet(item:)`. Adicione esta extensão:
+Note: `FeedPost` must conform to `Identifiable` for `.sheet(item:)`. Add this extension:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filtragem do Feed por Tags
+### Tag-Based Feed Filtering
 
 Implemente o protocolo `TagSupplier` para filtrar posts do feed por tags:
 
@@ -110,23 +111,23 @@ sdk.tagSupplier = TeamTagSupplier()
 
 Retorne `nil` para um feed global sem filtro.
 
-### Salvando e Restaurando o Estado do Feed
+### Saving and Restoring Feed State
 
-Preserve o estado de paginação durante eventos do ciclo de vida da view:
+Preserve o estado de paginação através dos eventos de ciclo de vida da view:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Excluindo Posts
+Se sua tela desaparecer temporariamente, a visualização do feed pausa atualizações ao vivo automaticamente e as retoma ao reaparecer sem limpar os posts carregados. Chame `sdk.cleanup()` somente quando você realmente terminar com a instância do SDK.
+
+### Deleting Posts
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

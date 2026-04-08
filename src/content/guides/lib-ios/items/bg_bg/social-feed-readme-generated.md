@@ -1,4 +1,4 @@
-Системата за емисии е отделен SDK (`FastCommentsFeedSDK`) с собствен изглед.
+Системата за емисия е отделен SDK (`FastCommentsFeedSDK`) с собствен изглед.
 
 ### Зареждане и показване на емисията
 
@@ -27,19 +27,20 @@ struct FeedPage: View {
                 // Покажете лист за споделяне
             }
             .onUserClick { context, userInfo, source in
-                // Навигирайте към потребителския профил
+                // Навигирайте до профила на потребителя
             }
             .onMediaClick { mediaItem, index in
-                // Покажете разглеждане на изображение на цял екран
+                // Покажете изображение на цял екран
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Изгледът на емисията включва автоматично издърпване за опресняване и безкрайно превъртане.
+Изгледът на емисията включва автоматично опресняване чрез издърпване и безкрайно превъртане.
+Използвайте `loadIfNeeded()` при връщане в жизнения цикъл на екрана, за да предотвратите нулиране на вече заредена или възстановена емисия обратно на страница 1.
 
 ### Създаване на публикации
 
@@ -48,7 +49,7 @@ struct FeedPage: View {
 ```swift
 @State private var showCreatePost = false
 
-// В тялото на вашия изглед:
+// In your view body:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -65,7 +66,7 @@ struct FeedPage: View {
 
 ### Реакции към публикации
 
-SDK-а обработва реакциите с оптимистични актуализации:
+SDK обработва реакциите с оптимистични ъпдейти:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
@@ -77,7 +78,7 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 
 ### Отваряне на коментари за публикация
 
-Използвайте `CommentsSheet`, за да покажете коментарите за публикация в емисията. Той създава вътрешно екземпляр на `FastCommentsSDK`, като използва конфигурацията на feed SDK-а:
+Използвайте `CommentsSheet`, за да покажете коментарите за публикация в емисията. Той създава вътрешно инстанция `FastCommentsSDK`, използвайки конфигурацията на feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -87,15 +88,15 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 }
 ```
 
-Забележка: `FeedPost` трябва да съответства на `Identifiable`, за да може да се използва `.sheet(item:)`. Добавете това разширение:
+Забележка: `FeedPost` трябва да съответства на `Identifiable` за `.sheet(item:)`. Добавете това разширение:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Филтриране на емисията по тагове
+### Филтриране на емисия по тагове
 
-Имплементирайте протокола `TagSupplier`, за да филтрирате публикациите в емисията по тагове:
+Реализирайте протокола `TagSupplier`, за да филтрирате публикациите в емисията по тагове:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -112,13 +113,16 @@ sdk.tagSupplier = TeamTagSupplier()
 
 ### Запазване и възстановяване на състоянието на емисията
 
-Запазете състоянието на страниране между събитията от жизнения цикъл на изгледа:
+Запазете състоянието на пагинацията през събития от жизнения цикъл на изгледа:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Ако вашият екран изчезне временно, изгледът на емисията автоматично паузира живите ъпдейти и ги възобновява при повторно появяване без да изчиства заредените публикации. Извиквайте `sdk.cleanup()` само когато наистина сте приключили с инстанцията на SDK.
 
 ### Изтриване на публикации
 
@@ -127,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----
