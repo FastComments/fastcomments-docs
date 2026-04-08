@@ -2,8 +2,10 @@ Kraj, kjer poteka večina moderiranja, je stran za moderiranje komentarjev. Na p
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
 
-Število komentarjev na stran smo nastavili na tri, da je ta posnetek zaslona primerne velikosti. V praksi boste privzeto delali s 50 komentarji na stran.
+Za ta posnetek zaslona smo nastavili število na stran na tri, da je velikost primerna. V praksi boste privzeto delali z 50 komentarji na stran.
 
-Stran za moderiranje podpira tudi [Tipkovne bližnjice](#keyboard-shortcuts) za premikanje med komentarji in izvajanje dejanj brez uporabe miške. Pritisnite **?** na strani za moderiranje, da si ogledate vse razpoložljive bližnjice.
+Stran za moderiranje podpira tudi [tipkovne bližnjice](#keyboard-shortcuts) za premikanje med komentarji in izvajanje dejanj brez uporabe miške. Na strani za moderiranje pritisnite **?**, da si ogledate vse razpoložljive bližnjice.
 
-Oglejmo si funkcije, prikazane tukaj.
+Stran je tudi **v živo** — ko prispejo novi komentarji, ki ustrezajo vašim trenutnim filtrom, se na vrhu pojavi pasica, ki vas opozori. Za podrobnosti glejte [Živo moderiranje](#live-moderating).
+
+Poglejmo si funkcije, prikazane tukaj.

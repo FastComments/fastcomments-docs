@@ -1,4 +1,4 @@
-The feed system is a separate SDK (`FastCommentsFeedSDK`) with its own view.
+המערכת של הפיד היא SDK נפרד (`FastCommentsFeedSDK`) עם תצוגה משלה.
 
 ### טעינה והצגת הפיד
 
@@ -24,31 +24,32 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Present share sheet
+                // הצג גליון שיתוף
             }
             .onUserClick { context, userInfo, source in
-                // Navigate to user profile
+                // נווט לפרופיל המשתמש
             }
             .onMediaClick { mediaItem, index in
-                // Present full-screen image viewer
+                // הצג מציג תמונה במסך מלא
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-תצוגת הפיד כוללת משיכה לרענון וגלילה אינסופית באופן אוטומטי.
+תצוגת הפיד כוללת משיכה לרענון וגלילה אינסופית אוטומטית.
+השתמש ב-`loadIfNeeded()` בעת חידוש מחזור חיי המסך כדי שפיד קיים או משוחזר לא יאופס חזרה לדף 1.
 
 ### יצירת פוסטים
 
-Use `FeedPostCreateView` to present a post creation form:
+השתמש ב-`FeedPostCreateView` להצגת טופס יצירת פוסט:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// בגוף התצוגה שלך:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,39 +64,39 @@ Use `FeedPostCreateView` to present a post creation form:
 }
 ```
 
-### תגובות לפוסטים
+### תגובה לפוסטים
 
-The SDK handles reactions with optimistic updates:
+ה-SDK מטפל בתגובות עם עדכונים אופטימיסטיים:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Check reaction state
+// בדוק את מצב התגובה
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### פתיחת תגובות לפוסט
+### פתיחת תגובות על פוסט
 
-Use `CommentsSheet` to display comments for a feed post. It creates a `FastCommentsSDK` instance internally using the feed SDK's config:
+השתמש ב-`CommentsSheet` כדי להציג תגובות עבור פוסט בפיד. הוא יוצר מופע של `FastCommentsSDK` פנימית באמצעות הקונפיגורציה של ה-feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Handle user click
+        // טיפול בלחיצה על משתמש
     })
 }
 ```
 
-הערה: `FeedPost` חייב להתאים לפרוטוקול `Identifiable` עבור `.sheet(item:)`. הוסף את ההרחבה הזו:
+הערה: `FeedPost` חייב להתאים ל-`Identifiable` עבור `.sheet(item:)`. הוסף את ההרחבה הבאה:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### סינון פיד מבוסס תגיות
+### סינון פיד לפי תגיות
 
-Implement the `TagSupplier` protocol to filter feed posts by tags:
+ממש את פרוטוקול `TagSupplier` כדי לסנן פוסטים בפיד לפי תגיות:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -108,17 +109,20 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-החזר `nil` כדי לקבל פיד גלובלי ללא סינון.
+החזר `nil` עבור פיד גלובלי ללא סינון.
 
 ### שמירה ושחזור מצב הפיד
 
-Preserve pagination state across view lifecycle events:
+שמור את מצב הדפדוף (pagination) בין אירועי מחזור חיי התצוגה:
 
 ```swift
 let state = sdk.savePaginationState()
-// Later...
+// מאוחר יותר...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+אם המסך שלך נעלם זמנית, תצוגת הפיד עוצרת עדכונים חיים אוטומטית וממשיכה אותם בהופעה חוזרת מבלי לנקות פוסטים שהוטענו. קרא ל-`sdk.cleanup()` רק כשתהיה באמת גמור עם מופע ה-SDK.
 
 ### מחיקת פוסטים
 
@@ -127,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

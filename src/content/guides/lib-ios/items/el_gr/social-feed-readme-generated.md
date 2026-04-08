@@ -27,19 +27,20 @@ struct FeedPage: View {
                 // Εμφάνιση φύλλου κοινής χρήσης
             }
             .onUserClick { context, userInfo, source in
-                // Μετάβαση στο προφίλ χρήστη
+                // Πλοήγηση στο προφίλ χρήστη
             }
             .onMediaClick { mediaItem, index in
-                // Εμφάνιση προβολέα εικόνων σε πλήρη οθόνη
+                // Εμφάνιση προβολέα εικόνας πλήρους οθόνης
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Η προβολή ροής περιλαμβάνει αυτόματα σύρσιμο για ανανέωση (pull-to-refresh) και απεριόριστη κύλιση.
+Η προβολή της ροής περιλαμβάνει αυτόματα pull-to-refresh και infinite scroll.
+Χρησιμοποιήστε `loadIfNeeded()` για επανείσοδο στον κύκλο ζωής της οθόνης ώστε μια υπάρχουσα ή αποκαταστημένη ροή να μην επανεκκινηθεί στην σελίδα 1.
 
 ### Δημιουργία Αναρτήσεων
 
@@ -48,7 +49,7 @@ struct FeedPage: View {
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// Στο σώμα της προβολής σας:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,9 +64,9 @@ struct FeedPage: View {
 }
 ```
 
-### Αντιδράσεις σε Αναρτήσεις
+### Αντίδραση σε Αναρτήσεις
 
-Το SDK χειρίζεται τις αντιδράσεις με αισιόδοξες ενημερώσεις (optimistic updates):
+Το SDK χειρίζεται τις αντιδράσεις με optimistic updates:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
@@ -75,27 +76,27 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Άνοιγμα Σχολίων σε Ανάρτηση
+### Άνοιγμα Σχολίων για μια Ανάρτηση
 
-Χρησιμοποιήστε το `CommentsSheet` για να εμφανίσετε σχόλια για μια ανάρτηση ροής. Αυτό δημιουργεί εσωτερικά ένα στιγμιότυπο `FastCommentsSDK` χρησιμοποιώντας τη διαμόρφωση (config) του feed SDK:
+Χρησιμοποιήστε το `CommentsSheet` για να εμφανίσετε σχόλια για μια ανάρτηση στη ροή. Δημιουργεί μια εσωτερική παρουσία `FastCommentsSDK` χρησιμοποιώντας το config του feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Χειρισμός κλικ χρήστη
+        // Διαχείριση κλικ του χρήστη
     })
 }
 ```
 
-Σημείωση: `FeedPost` πρέπει να συμμορφώνεται με `Identifiable` για `.sheet(item:)`. Προσθέστε αυτήν την επέκταση:
+Σημείωση: `FeedPost` πρέπει να συμμορφώνεται με το `Identifiable` για `.sheet(item:)`. Προσθέστε αυτήν την επέκταση:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Φιλτράρισμα ροής βάσει ετικετών
+### Φιλτράρισμα Ροής με Ετικέτες
 
-Υλοποιήστε το πρωτόκολλο `TagSupplier` για να φιλτράρετε τις αναρτήσεις της ροής βάσει ετικετών:
+Υλοποιήστε το πρωτόκολλο `TagSupplier` για να φιλτράρετε τις αναρτήσεις της ροής κατά ετικέτες:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -112,13 +113,16 @@ sdk.tagSupplier = TeamTagSupplier()
 
 ### Αποθήκευση και Επαναφορά Κατάστασης Ροής
 
-Διατηρήστε την κατάσταση σελιδοποίησης κατά τη διάρκεια των γεγονότων του κύκλου ζωής της προβολής:
+Διατηρήστε την κατάσταση σελιδοποίησης κατά τα γεγονότα του κύκλου ζωής της προβολής:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Αν η οθόνη σας εξαφανιστεί προσωρινά, η προβολή της ροής παγώνει αυτόματα τις ενημερώσεις σε πραγματικό χρόνο και τις επαναφέρει όταν εμφανιστεί ξανά χωρίς να καθαρίσει τις φορτωμένες αναρτήσεις. Καλείτε `sdk.cleanup()` μόνο όταν τελείως ολοκληρώσετε με το instance του SDK.
 
 ### Διαγραφή Αναρτήσεων
 
@@ -127,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

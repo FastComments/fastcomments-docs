@@ -1,5 +1,5 @@
 ---
-Система ленты — отдельный SDK (`FastCommentsFeedSDK`) с собственным представлением.
+Система ленты — отдельный SDK (`FastCommentsFeedSDK`) с собственным видом.
 
 ### Загрузка и отображение ленты
 
@@ -25,22 +25,23 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Показать панель шаринга
+                // Отобразить панель обмена
             }
             .onUserClick { context, userInfo, source in
                 // Перейти к профилю пользователя
             }
             .onMediaClick { mediaItem, index in
-                // Открыть полноэкранный просмотр изображений
+                // Показать просмотрщик изображений на весь экран
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Представление ленты автоматически поддерживает жест «потянуть для обновления» и бесконечную прокрутку.
+Просмотр ленты включает pull-to-refresh и бесконечную прокрутку автоматически.
+Вызывайте `loadIfNeeded()` при повторном появлении экрана в жизненном цикле, чтобы существующая или восстановленная лента не сбрасывалась на страницу 1.
 
 ### Создание постов
 
@@ -49,7 +50,7 @@ struct FeedPage: View {
 ```swift
 @State private var showCreatePost = false
 
-// В теле вашего представления:
+// В теле вашего view:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -66,19 +67,19 @@ struct FeedPage: View {
 
 ### Реакции на посты
 
-SDK обрабатывает реакции с оптимистическим обновлением:
+SDK обрабатывает реакции с оптимистичными обновлениями:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Проверить состояние реакции
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
 ### Открытие комментариев к посту
 
-Используйте `CommentsSheet` для отображения комментариев к посту ленты. Он создаёт экземпляр `FastCommentsSDK` внутри, используя конфигурацию SDK ленты:
+Используйте `CommentsSheet` для отображения комментариев к посту в ленте. Он создаёт экземпляр `FastCommentsSDK` внутри, используя конфиг feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -88,7 +89,7 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 }
 ```
 
-Примечание: `FeedPost` должен соответствовать протоколу `Identifiable` для использования `.sheet(item:)`. Добавьте это расширение:
+Note: `FeedPost` must conform to `Identifiable` for `.sheet(item:)`. Add this extension:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
@@ -96,7 +97,7 @@ extension FeedPost: @retroactive Identifiable {}
 
 ### Фильтрация ленты по тегам
 
-Реализуйте протокол `TagSupplier`, чтобы фильтровать посты ленты по тегам:
+Реализуйте протокол `TagSupplier` для фильтрации постов ленты по тегам:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -117,9 +118,12 @@ sdk.tagSupplier = TeamTagSupplier()
 
 ```swift
 let state = sdk.savePaginationState()
-// Позже...
+// Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Если ваш экран временно исчезает, просмотр ленты приостанавливает живые обновления автоматически и возобновляет их при повторном появлении без очистки загруженных постов. Вызывайте `sdk.cleanup()` только тогда, когда вы действительно завершили работу с экземпляром SDK.
 
 ### Удаление постов
 

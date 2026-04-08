@@ -1,13 +1,11 @@
----
-Mjesto gdje se većina moderiranja odvija je stranica za moderisanje komentara. Na primjer, ovdje je snimak ekrana našeg trenutnog demo naloga:
+Место где се обавља већина модерирања је страница за модерирање коментара. На примјер, ево снимка екрана нашег тренутног демонстрационог налога:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
 
-Postavili smo broj komentara po stranici na tri kako bi ovaj snimak ekrana bio razumnije veličine. U praksi biste po zadanim postavkama radili sa 50 komentara po stranici.
+Поставили смо број по страници на три како би овај снимак екрана био разумних димензија. У пракси, по задатим поставкама бавили бисте се са 50 коментара по страници.
 
-Stranica za moderisanje takođe podržava [Prečice na tastaturi](#keyboard-shortcuts) za navigaciju između komentara i izvođenje radnji bez korištenja miša. Pritisnite **?** na stranici za moderisanje da vidite sve dostupne prečice.
+Страница за модерирање такође подржава [Пречице на тастатури](#keyboard-shortcuts) за навигацију између коментара и извршавање радњи без коришћења миша. Притисните **?** на страници за модерирање да бисте видјели све доступне пречице.
 
-Hajde da prođemo kroz funkcije prikazane ovdje.
+Страница је такођер **уживо** — када стигну нови коментари који се подударају са вашим тренутним филтерима, на врху се појави банер који вас обавјештава. Погледајте [Уживо модерирање](#live-moderating) за детаље.
 
-
----
+Хајде да прођемо кроз функције приказане овде.

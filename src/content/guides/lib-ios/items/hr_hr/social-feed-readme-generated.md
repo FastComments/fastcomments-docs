@@ -24,26 +24,26 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Prikaži dijaloški okvir za dijeljenje
+                // Prikaži prozor za dijeljenje
             }
             .onUserClick { context, userInfo, source in
-                // Navigiraj do korisničkog profila
+                // Navigiraj na korisnički profil
             }
             .onMediaClick { mediaItem, index in
-                // Prikaži pregled slike preko cijelog zaslona
+                // Prikaži preglednik slika preko cijelog zaslona
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Prikaz feeda automatski uključuje povlačenje za osvježavanje i beskonačno skrolanje.
+Prikaz feeda automatski uključuje povlačenje za osvježavanje i beskonačno pomicanje. Koristite `loadIfNeeded()` pri ponovnom ulasku u životni ciklus zaslona kako biste spriječili da postojeći ili vraćeni feed bude resetiran na stranicu 1.
 
 ### Kreiranje objava
 
-Koristite `FeedPostCreateView` za prikaz obrasca za stvaranje objave:
+Upotrijebite `FeedPostCreateView` za prikaz obrasca za kreiranje objave:
 
 ```swift
 @State private var showCreatePost = false
@@ -65,19 +65,19 @@ Koristite `FeedPostCreateView` za prikaz obrasca za stvaranje objave:
 
 ### Reakcije na objave
 
-SDK upravlja reakcijama koristeći optimistička ažuriranja:
+SDK upravlja reakcijama s optimističkim ažuriranjima:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Provjeri stanje reakcije
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Otvaranje komentara na objavu
+### Otvaranje komentara za objavu
 
-Koristite `CommentsSheet` za prikaz komentara za objavu u feedu. Interno stvara instancu `FastCommentsSDK` koristeći konfiguraciju feed SDK-a:
+Upotrijebite `CommentsSheet` za prikaz komentara za objavu u feedu. Interno kreira instancu `FastCommentsSDK` koristeći konfiguraciju feed SDK-a:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -87,15 +87,15 @@ Koristite `CommentsSheet` za prikaz komentara za objavu u feedu. Interno stvara 
 }
 ```
 
-Napomena: `FeedPost` mora implementirati `Identifiable` radi korištenja `.sheet(item:)`. Dodajte ovo proširenje:
+Napomena: `FeedPost` mora zadovoljiti `Identifiable` za `.sheet(item:)`. Dodajte ovo proširenje:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filtriranje feeda prema tagovima
+### Filtriranje feeda po oznakama
 
-Implementirajte protokol `TagSupplier` za filtriranje objava u feedu prema tagovima:
+Implementirajte protokol `TagSupplier` za filtriranje objava u feedu po oznakama:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -108,7 +108,7 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Vrati `nil` za nefiltrirani globalni feed.
+Vratite `nil` za nefiltrirani globalni feed.
 
 ### Spremanje i vraćanje stanja feeda
 
@@ -116,9 +116,12 @@ Sačuvajte stanje paginacije kroz događaje životnog ciklusa prikaza:
 
 ```swift
 let state = sdk.savePaginationState()
-// Kasnije...
+// Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Ako se vaš zaslon privremeno sakrije, prikaz feeda automatski pauzira uživo ažuriranja i nastavlja ih pri ponovnom pojavljivanju bez brisanja učitanih objava. Pozovite `sdk.cleanup()` samo kada ste zaista gotovi s instancom SDK-a.
 
 ### Brisanje objava
 
@@ -127,6 +130,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

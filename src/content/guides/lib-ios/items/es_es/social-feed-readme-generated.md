@@ -1,3 +1,4 @@
+---
 El sistema de feed es un SDK separado (`FastCommentsFeedSDK`) con su propia vista.
 
 ### Carga y visualización del feed
@@ -24,31 +25,32 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Presentar hoja de compartir
+                // Present share sheet
             }
             .onUserClick { context, userInfo, source in
-                // Navegar al perfil de usuario
+                // Navigate to user profile
             }
             .onMediaClick { mediaItem, index in
-                // Presentar visor de imágenes a pantalla completa
+                // Present full-screen image viewer
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-La vista de feed incluye arrastrar para actualizar (pull-to-refresh) y desplazamiento infinito automáticamente.
+La vista del feed incluye pull-to-refresh e infinite scroll automáticamente.
+Usa `loadIfNeeded()` para la reentrada del ciclo de vida de la pantalla para que un feed existente o restaurado no se reinicie a la página 1.
 
-### Crear publicaciones
+### Creación de publicaciones
 
 Usa `FeedPostCreateView` para presentar un formulario de creación de publicaciones:
 
 ```swift
 @State private var showCreatePost = false
 
-// En el cuerpo de tu vista:
+// In your view body:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,31 +65,31 @@ Usa `FeedPostCreateView` para presentar un formulario de creación de publicacio
 }
 ```
 
-### Reaccionar a publicaciones
+### Reacciones a publicaciones
 
-El SDK gestiona las reacciones con actualizaciones optimistas:
+El SDK maneja las reacciones con actualizaciones optimistas:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Comprobar estado de reacción
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Abrir comentarios de una publicación
+### Abrir comentarios en una publicación
 
-Usa `CommentsSheet` para mostrar los comentarios de una publicación del feed. Crea una instancia de `FastCommentsSDK` internamente usando la configuración del feed SDK:
+Usa `CommentsSheet` para mostrar los comentarios de una publicación del feed. Crea internamente una instancia de `FastCommentsSDK` usando la configuración del feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Manejar clic en el usuario
+        // Handle user click
     })
 }
 ```
 
-Nota: `FeedPost` debe ajustarse a `Identifiable` para `.sheet(item:)`. Añade esta extensión:
+Nota: `FeedPost` debe conformar a `Identifiable` para `.sheet(item:)`. Añade esta extensión:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
@@ -108,19 +110,22 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Devuelve `nil` para un feed global sin filtrar.
+Devuelve `nil` para un feed global sin filtros.
 
 ### Guardar y restaurar el estado del feed
 
-Preserva el estado de paginación a través de eventos del ciclo de vida de la vista:
+Preserva el estado de la paginación a través de los eventos del ciclo de vida de la vista:
 
 ```swift
 let state = sdk.savePaginationState()
-// Más tarde...
+// Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Eliminar publicaciones
+Si tu pantalla desaparece temporalmente, la vista del feed pausa las actualizaciones en vivo automáticamente y las reanuda al reaparecer sin borrar las publicaciones cargadas. Llama a `sdk.cleanup()` solo cuando realmente hayas terminado con la instancia del SDK.
+
+### Eliminación de publicaciones
 
 ```swift
 sdk.onPostDeleted = { postId in

@@ -1,6 +1,6 @@
 Le système de flux est un SDK distinct (`FastCommentsFeedSDK`) avec sa propre vue.
 
-### Chargement et affichage du flux
+### Loading and Displaying the Feed
 
 ```swift
 struct FeedPage: View {
@@ -24,31 +24,32 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Afficher la feuille de partage
+                // Présenter la feuille de partage
             }
             .onUserClick { context, userInfo, source in
                 // Naviguer vers le profil de l'utilisateur
             }
             .onMediaClick { mediaItem, index in
-                // Afficher le visualiseur d'images en plein écran
+                // Présenter le visualiseur d'image en plein écran
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-La vue du flux inclut automatiquement le balayage pour rafraîchir et le défilement infini.
+La vue du flux inclut automatiquement le pull-to-refresh et le défilement infini.
+Utilisez `loadIfNeeded()` lors de la réapparition du cycle de vie de l'écran afin qu'un flux existant ou restauré ne revienne pas à la page 1.
 
-### Création de publications
+### Creating Posts
 
 Utilisez `FeedPostCreateView` pour présenter un formulaire de création de publication :
 
 ```swift
 @State private var showCreatePost = false
 
-// Dans le corps de votre vue :
+// In your view body:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -63,39 +64,39 @@ Utilisez `FeedPostCreateView` pour présenter un formulaire de création de publ
 }
 ```
 
-### Réagir aux publications
+### Reacting to Posts
 
 Le SDK gère les réactions avec des mises à jour optimistes :
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Vérifier l'état de la réaction
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Ouvrir les commentaires d'une publication
+### Opening Comments on a Post
 
-Utilisez `CommentsSheet` pour afficher les commentaires d'une publication du flux. Il crée en interne une instance de `FastCommentsSDK` en utilisant la configuration du SDK de flux :
+Utilisez `CommentsSheet` pour afficher les commentaires d'une publication du flux. Il crée une instance `FastCommentsSDK` en interne en utilisant la config du SDK de flux :
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Gérer le clic sur l'utilisateur
+        // Handle user click
     })
 }
 ```
 
-Remarque : `FeedPost` doit se conformer à `Identifiable` pour `.sheet(item:)`. Ajoutez cette extension :
+Note : `FeedPost` doit se conformer à `Identifiable` pour `.sheet(item:)`. Ajoutez cette extension :
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filtrage du flux par étiquettes
+### Tag-Based Feed Filtering
 
-Implémentez le protocole `TagSupplier` pour filtrer les publications du flux par étiquettes :
+Implémentez le protocole `TagSupplier` pour filtrer les publications du flux par tags :
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -110,23 +111,23 @@ sdk.tagSupplier = TeamTagSupplier()
 
 Retournez `nil` pour un flux global non filtré.
 
-### Sauvegarde et restauration de l'état du flux
+### Saving and Restoring Feed State
 
-Conservez l'état de la pagination lors des événements du cycle de vie de la vue :
+Conservez l'état de la pagination entre les événements du cycle de vie de la vue :
 
 ```swift
 let state = sdk.savePaginationState()
-// Plus tard...
+// Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Suppression de publications
+Si votre écran disparaît temporairement, la vue du flux met automatiquement en pause les mises à jour en direct et les reprend à la réapparition sans effacer les publications chargées. Appelez `sdk.cleanup()` uniquement lorsque vous avez vraiment terminé avec l'instance du SDK.
+
+### Deleting Posts
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

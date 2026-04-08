@@ -1,6 +1,6 @@
-Feed систем је посебан SDK (`FastCommentsFeedSDK`) са својим приказом.
+Feed систем је одвојен SDK (`FastCommentsFeedSDK`) са својим властим приказом.
 
-### Учитавање и приказивање фида
+### Учитавање и приказ фид-а
 
 ```swift
 struct FeedPage: View {
@@ -24,26 +24,27 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // Прикажи таблу за дељење
+                // Прикажи sheet за дељење
             }
             .onUserClick { context, userInfo, source in
                 // Навигирај до корисничког профила
             }
             .onMediaClick { mediaItem, index in
-                // Прикажи приказивач слика преко целог екрана
+                // Прикажи прегледач слике преко целог екрана
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Приказ фида аутоматски садржи повлачење за освежавање и бесконачно скроловање.
+Фид приказ укључује pull-to-refresh и бесконачно скроловање аутоматски.
+Користите `loadIfNeeded()` за поновни улазак у животни циклус екрана тако да постојећи или враћени фид не буде враћен на страницу 1.
 
-### Креирање објава
+### Креирање постова
 
-Користите `FeedPostCreateView` да прикажете формулар за креирање објаве:
+Користите `FeedPostCreateView` да прикажете форму за креирање поста:
 
 ```swift
 @State private var showCreatePost = false
@@ -63,9 +64,9 @@ struct FeedPage: View {
 }
 ```
 
-### Реакције на објаве
+### Реакције на постове
 
-SDK управља реакцијама са оптимистичким ажурирањима:
+SDK управља реакцијама уз оптимистичка ажурирања:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
@@ -75,27 +76,27 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Отварање коментара за објаву
+### Отварање коментара на пост
 
-Користите `CommentsSheet` да прикажете коментаре за објаву у фиду. Он интерно креира инстанцу `FastCommentsSDK` користећи конфигурацију feed SDK-а:
+Користите `CommentsSheet` да прикажете коментаре за пост у фид-у. Он креира `FastCommentsSDK` инстанцу интерно користећи конфигурацију фид SDK-а:
 
 ```swift
 .sheet(item: $commentsPost) { post in
     CommentsSheet(post: post, feedSDK: sdk, onUserClick: { context, userInfo, source in
-        // Обради кликање на корисника
+        // Обрадити клик на корисника
     })
 }
 ```
 
-Напомена: `FeedPost` мора да имплементира `Identifiable` за `.sheet(item:)`. Додајте ово проширење:
+Напомена: `FeedPost` мора да се придржава `Identifiable` за `.sheet(item:)`. Додајте ово проширење:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Филтрирање фида по таговима
+### Филтрирање фид-а по таговима
 
-Имплементирајте протокол `TagSupplier` да бисте филтрирали објаве у фиду по таговима:
+Имплементирајте протокол `TagSupplier` да бисте филтрирали постове фид-а по таговима:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -110,7 +111,7 @@ sdk.tagSupplier = TeamTagSupplier()
 
 Вратите `nil` за нефилтрирани глобални фид.
 
-### Сачување и враћање стања фида
+### Чување и враћање стања фид-а
 
 Сачувајте стање пагинације преко догађаја животног циклуса приказа:
 
@@ -118,9 +119,12 @@ sdk.tagSupplier = TeamTagSupplier()
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
 
-### Брисање објава
+Ако ваш екран привремено нестане, фид приказ аутоматски паузира live ажурирања и наставља их при поновном појављивању без брисања учитаних постова. Позовите `sdk.cleanup()` само када сте заиста завршили са инстанцом SDK-а.
+
+### Брисање постова
 
 ```swift
 sdk.onPostDeleted = { postId in

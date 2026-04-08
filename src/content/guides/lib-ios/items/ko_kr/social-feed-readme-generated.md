@@ -33,13 +33,13 @@ struct FeedPage: View {
                 // 전체 화면 이미지 뷰어 표시
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-피드 뷰는 자동으로 풀 투 리프레시(pull-to-refresh)와 무한 스크롤을 포함합니다.
+피드 뷰에는 풀 투 리프레시 및 무한 스크롤이 자동으로 포함됩니다. 화면 라이프사이클 재진입 시 기존 또는 복원된 피드가 페이지 1로 다시 설정되지 않도록 `loadIfNeeded()`를 사용하세요.
 
 ### 게시물 생성
 
@@ -70,14 +70,14 @@ SDK는 낙관적 업데이트(optimistic updates)로 반응을 처리합니다:
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// 반응 상태 확인
+// Check reaction state
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
 ### 게시물의 댓글 열기
 
-피드 게시물의 댓글을 표시하려면 `CommentsSheet`를 사용하세요. 이 컴포넌트는 내부적으로 feed SDK의 구성(config)을 사용하여 `FastCommentsSDK` 인스턴스를 생성합니다:
+피드 게시물의 댓글을 표시하려면 `CommentsSheet`를 사용하세요. 이는 내부적으로 피드 SDK의 설정을 사용하여 `FastCommentsSDK` 인스턴스를 생성합니다:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -87,7 +87,7 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 }
 ```
 
-참고: `FeedPost`가 `.sheet(item:)`에 사용되려면 `Identifiable`을 준수해야 합니다. 다음 익스텐션을 추가하세요:
+참고: `.sheet(item:)`을(를) 사용하려면 `FeedPost`가 `Identifiable`를 준수해야 합니다. 다음 확장(extension)을 추가하세요:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
@@ -95,7 +95,7 @@ extension FeedPost: @retroactive Identifiable {}
 
 ### 태그 기반 피드 필터링
 
-태그로 피드 게시물을 필터링하려면 `TagSupplier` 프로토콜을 구현하세요:
+피드 게시물을 태그로 필터링하려면 `TagSupplier` 프로토콜을 구현하세요:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -112,13 +112,16 @@ sdk.tagSupplier = TeamTagSupplier()
 
 ### 피드 상태 저장 및 복원
 
-뷰 수명 주기 이벤트 전반에 걸쳐 페이지네이션 상태를 보존하세요:
+뷰 라이프사이클 이벤트 전반에 걸쳐 페이지네이션 상태를 보존하세요:
 
 ```swift
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+화면이 일시적으로 사라지는 경우, 피드 뷰는 라이브 업데이트를 자동으로 일시 중지하고 다시 나타날 때 로드된 게시물을 지우지 않고 업데이트를 재개합니다. SDK 인스턴스를 완전히 더 이상 사용하지 않을 때만 `sdk.cleanup()`을 호출하세요.
 
 ### 게시물 삭제
 
@@ -127,3 +130,6 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
+
+---
+---

@@ -1,6 +1,6 @@
-System feedów to oddzielne SDK (`FastCommentsFeedSDK`) z własnym widokiem.
+System kanału jest oddzielnym SDK (`FastCommentsFeedSDK`) z własnym widokiem.
 
-### Ładowanie i wyświetlanie feedu
+### Ładowanie i wyświetlanie kanału
 
 ```swift
 struct FeedPage: View {
@@ -30,20 +30,21 @@ struct FeedPage: View {
                 // Przejdź do profilu użytkownika
             }
             .onMediaClick { mediaItem, index in
-                // Pokaż przeglądarkę obrazów na pełnym ekranie
+                // Pokaż przeglądarkę obrazów w trybie pełnoekranowym
             }
             .task {
-                try? await sdk.load()
+                try? await sdk.loadIfNeeded()
             }
     }
 }
 ```
 
-Widok feedu automatycznie obsługuje pull-to-refresh i nieskończone przewijanie.
+Widok kanału automatycznie obsługuje pull-to-refresh i nieskończone przewijanie.
+Użyj `loadIfNeeded()` przy ponownym wejściu w cykl życia ekranu, aby istniejący lub przywrócony kanał nie został zresetowany do strony 1.
 
 ### Tworzenie postów
 
-Użyj `FeedPostCreateView`, aby pokazać formularz tworzenia postu:
+Użyj `FeedPostCreateView`, aby wyświetlić formularz tworzenia postu:
 
 ```swift
 @State private var showCreatePost = false
@@ -75,9 +76,9 @@ let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Otwieranie komentarzy do posta
+### Otwieranie komentarzy dla postu
 
-Użyj `CommentsSheet`, aby wyświetlić komentarze dla posta z feedu. Tworzy ona wewnętrznie instancję `FastCommentsSDK` używając konfiguracji feed SDK:
+Użyj `CommentsSheet`, aby wyświetlić komentarze dla posta z kanału. Tworzy on instancję `FastCommentsSDK` wewnętrznie, używając konfiguracji feed SDK:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -87,15 +88,15 @@ Użyj `CommentsSheet`, aby wyświetlić komentarze dla posta z feedu. Tworzy ona
 }
 ```
 
-Uwaga: `FeedPost` musi implementować protokół `Identifiable` dla `.sheet(item:)`. Dodaj to rozszerzenie:
+Uwaga: `FeedPost` musi implementować `Identifiable` dla `.sheet(item:)`. Dodaj to rozszerzenie:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Filtrowanie feedu według tagów
+### Filtrowanie kanału na podstawie tagów
 
-Zaimplementuj protokół `TagSupplier`, aby filtrować posty feedu według tagów:
+Zaimplementuj protokół `TagSupplier`, aby filtrować posty kanału według tagów:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -108,9 +109,9 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Zwróć `nil`, aby uzyskać niefiltrowany, globalny feed.
+Zwróć `nil` dla niefiltrowanego globalnego kanału.
 
-### Zapisywanie i przywracanie stanu feedu
+### Zapis i przywracanie stanu kanału
 
 Zachowaj stan paginacji pomiędzy zdarzeniami cyklu życia widoku:
 
@@ -118,7 +119,10 @@ Zachowaj stan paginacji pomiędzy zdarzeniami cyklu życia widoku:
 let state = sdk.savePaginationState()
 // Later...
 sdk.restorePaginationState(state)
+try? await sdk.loadIfNeeded()
 ```
+
+Jeśli twój ekran znika tymczasowo, widok kanału automatycznie wstrzymuje aktualizacje na żywo i wznawia je po ponownym pojawieniu się bez usuwania załadowanych postów. Wywołuj `sdk.cleanup()` tylko wtedy, gdy naprawdę kończysz korzystanie z instancji SDK.
 
 ### Usuwanie postów
 
@@ -127,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----
