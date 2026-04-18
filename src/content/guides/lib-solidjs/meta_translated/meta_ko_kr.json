@@ -3,6 +3,12 @@
   "pageHeader": "SolidJS 앱에 댓글 추가",
   "itemsOrdered": [
     {
+      "name": "라이브 데모",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "설치",
       "file": "install-readme-generated.md",
       "subCat": "시작하기",
@@ -15,9 +21,9 @@
       "type": "readme"
     },
     {
-      "name": "구성 변경에 반응하기 (명령형 핸들)",
+      "name": "설정 변경에 반응하기 (명령형 핸들)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
-      "subCat": "구성",
+      "subCat": "설정",
       "type": "readme"
     },
     {

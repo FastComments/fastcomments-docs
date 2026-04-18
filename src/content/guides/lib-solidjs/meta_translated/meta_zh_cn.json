@@ -1,7 +1,13 @@
 {
   "name": "SolidJS 库",
-  "pageHeader": "向你的 SolidJS 应用添加评论",
+  "pageHeader": "向您的 SolidJS 应用添加评论",
   "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "install-readme-generated.md",

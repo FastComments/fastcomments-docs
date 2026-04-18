@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer SolidJS-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "Live-Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Erste Schritte",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Auf Konfigurationsänderungen reagieren (imperatives Handle)",
+      "name": "Auf Konfigurationsänderungen reagieren (imperative Schnittstelle)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Konfiguration",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Beispiele",
+      "name": "Präsentation",
       "file": "showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Erstellen",
+      "name": "Erstellung",
       "file": "build-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

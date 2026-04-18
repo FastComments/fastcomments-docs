@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u svoju SolidJS aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
       "subCat": "Početak rada",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Reagiranje na promjene konfiguracije (imperativno sučelje)",
+      "name": "Reagiranje na promjene konfiguracije (imperativni pristup)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Konfiguracija",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Izgradnja",
+      "name": "Izrada",
       "file": "build-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

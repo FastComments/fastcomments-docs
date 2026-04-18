@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji SolidJS",
   "itemsOrdered": [
     {
+      "name": "Demo na żywo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Instalacja",
       "file": "install-readme-generated.md",
       "subCat": "Pierwsze kroki",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Reagowanie na zmiany konfiguracji (uchwyt imperatywny)",
+      "name": "Reagowanie na zmiany konfiguracji (imperatywny uchwyt)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Konfiguracja",
       "type": "readme"

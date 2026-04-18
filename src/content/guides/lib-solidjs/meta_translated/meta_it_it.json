@@ -3,7 +3,13 @@
   "pageHeader": "Aggiungi commenti alla tua app SolidJS",
   "itemsOrdered": [
     {
-      "name": "Installa",
+      "name": "Demo dal vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Installazione",
       "file": "install-readme-generated.md",
       "subCat": "Primi passi",
       "type": "readme"

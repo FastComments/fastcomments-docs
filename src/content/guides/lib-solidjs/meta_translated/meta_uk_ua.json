@@ -1,7 +1,13 @@
 {
   "name": "Бібліотека SolidJS",
-  "pageHeader": "Додайте коментарі до вашого додатка SolidJS",
+  "pageHeader": "Додайте коментарі до вашого застосунку SolidJS",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Встановлення",
       "file": "install-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Реагування на зміни конфігурації (імперативне керування)",
+      "name": "Реагування на зміни конфігурації (імперативний обробник)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Налаштування",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Демонстрація",
+      "name": "Приклади",
       "file": "showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

@@ -1,0 +1,1 @@
+Перегляньте всі віджети в режимі реального часу за адресою <https://fastcomments.com/commenting-system-for-solidjs>.

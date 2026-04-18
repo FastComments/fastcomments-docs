@@ -1,11 +1,17 @@
 {
-  "name": "SolidJS biblioteka",
+  "name": "Biblioteka SolidJS",
   "pageHeader": "Dodajte komentare u vašu SolidJS aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Početak rada",
       "type": "readme"
     },
     {

@@ -3,9 +3,15 @@
   "pageHeader": "Προσθήκη σχολίων στην εφαρμογή SolidJS σας",
   "itemsOrdered": [
     {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Εγκατάσταση",
       "file": "install-readme-generated.md",
-      "subCat": "Εισαγωγή",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
@@ -15,9 +21,9 @@
       "type": "readme"
     },
     {
-      "name": "Αντιδρώντας σε αλλαγές ρυθμίσεων (προγραμματιστικός χειρισμός)",
+      "name": "Αντιδρώντας σε αλλαγές διαμόρφωσης (προστακτικό χειριστήριο)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
-      "subCat": "Ρυθμίσεις",
+      "subCat": "Διαμόρφωση",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Δημιουργία",
+      "name": "Κατασκευή",
       "file": "build-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

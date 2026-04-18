@@ -1,17 +1,23 @@
 {
   "name": "SolidJS библиотека",
-  "pageHeader": "Додајте коментаре у вашу SolidJS апликацију",
+  "pageHeader": "Додавање коментара у вашу SolidJS апликацију",
   "itemsOrdered": [
     {
-      "name": "Инсталација",
-      "file": "install-readme-generated.md",
-      "subCat": "Почетак рада",
+      "name": "Демонстрација уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Употреба",
+      "name": "Инсталација",
+      "file": "install-readme-generated.md",
+      "subCat": "Почетак",
+      "type": "readme"
+    },
+    {
+      "name": "Коришћење",
       "file": "usage-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Приказ примјера",
+      "name": "Примјери",
       "file": "showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

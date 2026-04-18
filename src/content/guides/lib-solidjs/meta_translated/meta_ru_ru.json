@@ -1,7 +1,13 @@
 {
   "name": "Библиотека SolidJS",
-  "pageHeader": "Добавление комментариев в ваше приложение на SolidJS",
+  "pageHeader": "Добавьте комментарии в ваше приложение на SolidJS",
   "itemsOrdered": [
+    {
+      "name": "Живая демонстрация",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Установка",
       "file": "install-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Демонстрация",
+      "name": "Примеры",
       "file": "showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
