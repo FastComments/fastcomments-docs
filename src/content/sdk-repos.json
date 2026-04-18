@@ -270,6 +270,16 @@
       "description": "Embed live commenting, chat, and review widgets in your Svelte app."
     },
     {
+      "id": "lib-solidjs",
+      "name": "SolidJS Library",
+      "pageHeader": "Add Comments to Your SolidJS App",
+      "repo": "https://github.com/FastComments/fastcomments-solidjs",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "Embed live commenting, chat, and review widgets in your SolidJS app."
+    },
+    {
       "id": "lib-astro",
       "name": "Astro Library",
       "pageHeader": "Add Comments to Your Astro Site",
