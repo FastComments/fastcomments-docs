@@ -1,11 +1,17 @@
 {
   "name": "Bibliothèque React Native",
-  "pageHeader": "Ajoutez des widgets de commentaires à votre application React Native",
+  "pageHeader": "Ajouter des widgets de commentaires à votre application React Native",
   "itemsOrdered": [
+    {
+      "name": "Démonstration en direct",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
@@ -15,26 +21,32 @@
       "type": "readme"
     },
     {
-      "name": "Utilisation - Le widget de commentaires en direct",
+      "name": "Utilisation - Widget de commentaires en direct",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
     },
     {
-      "name": "Utilisation - Le widget de clavardage en direct",
+      "name": "Utilisation - Widget de chat en direct",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
     },
     {
-      "name": "Utilisation - Authentification unique (SSO)",
+      "name": "Utilisation - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
     },
     {
-      "name": "Dépendances peer",
+      "name": "Dépendances de pairs",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Statut de maintenance",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

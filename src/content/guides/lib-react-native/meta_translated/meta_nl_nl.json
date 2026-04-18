@@ -1,7 +1,13 @@
 {
   "name": "React Native-bibliotheek",
-  "pageHeader": "Voeg commentaarwidgets toe aan je React Native-app",
+  "pageHeader": "Voeg reactie-widgets toe aan uw React Native-app",
   "itemsOrdered": [
+    {
+      "name": "Live demonstratie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Installatie",
       "file": "installation-readme-generated.md",
@@ -9,19 +15,19 @@
       "type": "readme"
     },
     {
-      "name": "Overweeg de Native SDK",
+      "name": "Overweeg de native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Gebruik - De live commentaarwidget",
+      "name": "Gebruik - De live reactie-widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"
     },
     {
-      "name": "Gebruik - De live chatwidget",
+      "name": "Gebruik - De live chat-widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Peer-afhankelijkheden",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     }

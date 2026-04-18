@@ -1,11 +1,17 @@
 {
-  "name": "React Native библиотека",
-  "pageHeader": "Додајте виџете за коментаре у вашу React Native апликацију",
+  "name": "Библиотека за React Native",
+  "pageHeader": "Додајте видгете за коментаре у вашу React Native апликацију",
   "itemsOrdered": [
+    {
+      "name": "Демонстрација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {
@@ -15,26 +21,32 @@
       "type": "readme"
     },
     {
-      "name": "Коришћење - Виџет за коментаре уживо",
+      "name": "Употреба - Видгет за коментаре уживо",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Коришћење - Виџет за уживо ћаскање",
+      "name": "Употреба - Видгет за ћаскање уживо",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Коришћење - SSO",
+      "name": "Употреба - SSO",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "Peer зависности",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

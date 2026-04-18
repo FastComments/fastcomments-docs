@@ -1,7 +1,13 @@
 {
   "name": "Библиотека за React Native",
-  "pageHeader": "Добавете джаджи за коментари към вашето React Native приложение",
+  "pageHeader": "Добавете компоненти за коментари към вашето приложение React Native",
   "itemsOrdered": [
+    {
+      "name": "Демонстрация на живо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Инсталиране",
       "file": "installation-readme-generated.md",
@@ -9,32 +15,38 @@
       "type": "readme"
     },
     {
-      "name": "Вземете предвид Native SDK",
+      "name": "Разгледайте Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Използване - Жива джаджа за коментари",
+      "name": "Употреба - Компонент за коментари в реално време",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Използване - Жива джаджа за чат",
+      "name": "Употреба - Компонент за чат в реално време",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Използване - SSO",
+      "name": "Употреба - Еднократно влизане (SSO)",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "Peer зависимости",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус на поддръжката",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

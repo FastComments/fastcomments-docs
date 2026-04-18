@@ -3,6 +3,12 @@
   "pageHeader": "Kommentar-Widgets zu Ihrer React Native-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "Live-Demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Erste Schritte",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Verwendung - Live-Kommentar-Widget",
+      "name": "Verwendung - Das Live-Kommentar-Widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
     },
     {
-      "name": "Verwendung - Live-Chat-Widget",
+      "name": "Verwendung - Das Live-Chat-Widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Peer-Abhängigkeiten",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Wartungsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     }

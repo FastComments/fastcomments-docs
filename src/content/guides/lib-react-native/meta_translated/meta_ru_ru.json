@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека React Native",
-  "pageHeader": "Добавление виджетов комментариев в ваше приложение React Native",
+  "name": "Библиотека для React Native",
+  "pageHeader": "Добавьте виджеты комментариев в ваше приложение React Native",
   "itemsOrdered": [
+    {
+      "name": "Демонстрация в реальном времени",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Установка",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Рассмотрите использование нативного SDK",
+      "name": "Рассмотрите возможность использования нативного SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Использование — SSO (единый вход)",
+      "name": "Использование — SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Использование",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Peer-зависимости",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус поддержки",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

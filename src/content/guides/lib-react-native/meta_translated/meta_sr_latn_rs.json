@@ -3,9 +3,15 @@
   "pageHeader": "Dodajte vidžete za komentare u vašu React Native aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Prikaz uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -15,26 +21,32 @@
       "type": "readme"
     },
     {
-      "name": "Korišćenje - vidžet za komentare uživo",
+      "name": "Upotreba - Vidžet za komentare uživo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Korišćenje - vidžet za čat uživo",
+      "name": "Upotreba - Vidžet za ćaskanje uživo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Korišćenje - SSO",
+      "name": "Upotreba - SSO",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
       "name": "Peer zavisnosti",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

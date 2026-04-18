@@ -1,7 +1,13 @@
 {
   "name": "React Native 库",
-  "pageHeader": "向你的 React Native 应用添加评论小部件",
+  "pageHeader": "向您的 React Native 应用添加评论小部件",
   "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
@@ -9,25 +15,25 @@
       "type": "readme"
     },
     {
-      "name": "考虑原生 SDK",
+      "name": "考虑使用原生 SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "用法 - 实时评论小部件",
+      "name": "使用 - 实时评论小部件",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "用法 - 实时聊天小部件",
+      "name": "使用 - 实时聊天小部件",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "用法 - 单点登录 (SSO)",
+      "name": "使用 - 单点登录 (SSO)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "用法",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "对等依赖",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     }

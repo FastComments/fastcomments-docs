@@ -3,6 +3,12 @@
   "pageHeader": "Adicione widgets de comentários ao seu aplicativo React Native",
   "itemsOrdered": [
     {
+      "name": "Demonstração ao vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
       "subCat": "Primeiros passos",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Uso - Widget de Comentário ao Vivo",
+      "name": "Uso - Widget de comentários ao vivo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Uso - Widget de Chat ao Vivo",
+      "name": "Uso - Widget de bate-papo ao vivo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Dependências peer",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     }

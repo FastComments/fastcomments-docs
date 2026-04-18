@@ -3,6 +3,12 @@
   "pageHeader": "Tilføj kommentar-widgets til din React Native-app",
   "itemsOrdered": [
     {
+      "name": "Live-demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Kom godt i gang",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Brug - Live kommentar-widget",
+      "name": "Brug - Live-kommentar-widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"
     },
     {
-      "name": "Brug - Live chat-widget",
+      "name": "Brug - Live-chat-widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Peer-afhængigheder",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Vedligeholdelsesstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     }

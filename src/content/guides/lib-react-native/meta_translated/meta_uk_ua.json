@@ -1,7 +1,13 @@
 {
   "name": "Бібліотека React Native",
-  "pageHeader": "Додайте віджети коментарів у свій додаток React Native",
+  "pageHeader": "Додайте віджети коментарів до вашого додатка React Native",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Використання - SSO",
+      "name": "Використання - SSO (єдиний вхід)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Peer-залежності",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Статус підтримки",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     }

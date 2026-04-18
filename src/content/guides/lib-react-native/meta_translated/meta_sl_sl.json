@@ -1,15 +1,21 @@
 {
-  "name": "Knjižnica React Native",
+  "name": "Knjižnica za React Native",
   "pageHeader": "Dodajte pripomočke za komentarje v svojo aplikacijo React Native",
   "itemsOrdered": [
     {
-      "name": "Namestitev",
-      "file": "installation-readme-generated.md",
-      "subCat": "Za začetek",
+      "name": "Predstavitev v živo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Upoštevajte izvorni SDK",
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Razmislite o uporabi izvornega SDK-ja",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -27,14 +33,20 @@
       "type": "readme"
     },
     {
-      "name": "Uporaba - enkratna prijava (SSO)",
+      "name": "Uporaba - SSO (enotna prijava)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Odvisnosti vrstnikov",
+      "name": "Peer odvisnosti",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Stanje vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

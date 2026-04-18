@@ -1,7 +1,13 @@
 {
-  "name": "Libreria per React Native",
-  "pageHeader": "Aggiungi widget per i commenti alla tua app React Native",
+  "name": "Libreria React Native",
+  "pageHeader": "Aggiungi widget per commenti alla tua app React Native",
   "itemsOrdered": [
+    {
+      "name": "Dimostrazione in diretta",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Utilizzo - Widget commenti in tempo reale",
+      "name": "Utilizzo - Il widget dei commenti in tempo reale",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
     },
     {
-      "name": "Utilizzo - Widget chat in tempo reale",
+      "name": "Utilizzo - Il widget di chat in tempo reale",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Dipendenze peer",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Stato di manutenzione",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     }

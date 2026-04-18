@@ -3,38 +3,50 @@
   "pageHeader": "Додајте видгете за коментаре у вашу React Native апликацију",
   "itemsOrdered": [
     {
+      "name": "Демонстрација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
       "subCat": "Почетак рада",
       "type": "readme"
     },
     {
-      "name": "Размислите о нативном SDK-у",
+      "name": "Размотрите нативни SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Употреба — видгет за коментаре уживо",
+      "name": "Употреба - видгет за коментаре уживо",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Употреба — видгет за чет уживо",
+      "name": "Употреба - видгет за ћаскање уживо",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Употреба — једнократна пријава (SSO)",
+      "name": "Употреба - SSO (једнократно пријављивање)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Зависности пира",
+      "name": "Зависности вршњака",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

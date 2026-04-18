@@ -1,7 +1,13 @@
 {
   "name": "React Native Kütüphanesi",
-  "pageHeader": "React Native Uygulamanıza Yorum Bileşenleri Ekleyin",
+  "pageHeader": "React Native Uygulamanıza Yorum Widget'ları Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
@@ -9,25 +15,25 @@
       "type": "readme"
     },
     {
-      "name": "Yerel SDK'yı Değerlendirin",
+      "name": "Yerel SDK'yı Kullanmayı Düşünün",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
-      "name": "Kullanım - Canlı Yorum Bileşeni",
+      "name": "Kullanım - Canlı Yorum Widget'ı",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"
     },
     {
-      "name": "Kullanım - Canlı Sohbet Bileşeni",
+      "name": "Kullanım - Canlı Sohbet Widget'ı",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"
     },
     {
-      "name": "Kullanım - SSO (Tek Oturum Açma)",
+      "name": "Kullanım - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "Eş Bağımlılıklar",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     }

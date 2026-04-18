@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη React Native",
-  "pageHeader": "Προσθέστε στοιχεία σχολιασμού στην εφαρμογή React Native σας",
+  "pageHeader": "Προσθέστε widgets σχολίων στην εφαρμογή React Native σας",
   "itemsOrdered": [
+    {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
@@ -9,32 +15,38 @@
       "type": "readme"
     },
     {
-      "name": "Εξετάστε το εγγενές SDK",
+      "name": "Εξετάστε το Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το ζωντανό στοιχείο σχολίων",
+      "name": "Χρήση - Το ζωντανό widget σχολίων",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το ζωντανό στοιχείο συνομιλίας",
+      "name": "Χρήση - Το ζωντανό widget συνομιλίας",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Ενιαία Σύνδεση (SSO)",
+      "name": "Χρήση - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Εξαρτήσεις ομότιμων",
+      "name": "Εξαρτήσεις peer",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     }

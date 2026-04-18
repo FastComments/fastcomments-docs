@@ -1,7 +1,13 @@
 {
   "name": "React Native 라이브러리",
-  "pageHeader": "React Native 앱에 댓글 위젯 추가하기",
+  "pageHeader": "React Native 앱에 댓글 위젯 추가",
   "itemsOrdered": [
+    {
+      "name": "라이브 쇼케이스",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
     {
       "name": "설치",
       "file": "installation-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "사용법 - SSO",
+      "name": "사용법 - SSO(싱글 사인온)",
       "file": "usage-sso-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"
@@ -35,6 +41,12 @@
     {
       "name": "피어 의존성",
       "file": "peer-dependencies-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "유지보수 상태",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     }
