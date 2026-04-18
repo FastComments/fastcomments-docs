@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Виџети",
+      "name": "Видџети",
       "file": "widgets-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -23,6 +23,12 @@
     {
       "name": "Изградња",
       "file": "building-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

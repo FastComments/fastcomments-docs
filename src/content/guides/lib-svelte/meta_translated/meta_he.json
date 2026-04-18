@@ -1,6 +1,6 @@
 {
   "name": "ספריית Svelte",
-  "pageHeader": "הוסף הערות לאפליקציית Svelte שלך",
+  "pageHeader": "הוסף תגובות לאפליקציית Svelte שלך",
   "itemsOrdered": [
     {
       "name": "התחלה מהירה",
@@ -23,6 +23,12 @@
     {
       "name": "בנייה",
       "file": "building-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב תחזוקה",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     }

@@ -1,6 +1,6 @@
 {
   "name": "Svelte 函式庫",
-  "pageHeader": "在你的 Svelte 應用中新增評論",
+  "pageHeader": "為你的 Svelte 應用新增留言功能",
   "itemsOrdered": [
     {
       "name": "快速開始",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "小工具",
+      "name": "元件",
       "file": "widgets-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -23,6 +23,12 @@
     {
       "name": "建置",
       "file": "building-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     }

@@ -1,0 +1,48 @@
+{
+  "name": "Next.js biblioteka",
+  "pageHeader": "Dodajte komentare u vašu Next.js aplikaciju",
+  "itemsOrdered": [
+    {
+      "name": "Instalacija",
+      "file": "install-readme-generated.md",
+      "subCat": "Početak rada",
+      "type": "readme"
+    },
+    {
+      "name": "Brzi početak",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Komponente",
+      "file": "components-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Postavljanje na Vercel",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Primer projekta",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Korišćenje",
+      "type": "readme"
+    },
+    {
+      "name": "Linkovi",
+      "file": "links-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    }
+  ]
+}

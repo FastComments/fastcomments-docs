@@ -1,0 +1,3 @@
+- [Документація FastComments](https://docs.fastcomments.com)
+- [Налаштування та конфігурація](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Документація Next.js](https://nextjs.org/docs)

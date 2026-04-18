@@ -1,6 +1,6 @@
 {
   "name": "Svelte библиотека",
-  "pageHeader": "Додавање коментара у вашу Svelte апликацију",
+  "pageHeader": "Додајте коментаре у вашу Svelte апликацију",
   "itemsOrdered": [
     {
       "name": "Брзи почетак",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Видгети",
+      "name": "Виџети",
       "file": "widgets-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -23,6 +23,12 @@
     {
       "name": "Изградња",
       "file": "building-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

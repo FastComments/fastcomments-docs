@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Svelte",
-  "pageHeader": "Добавьте комментарии в ваше Svelte-приложение",
+  "pageHeader": "Добавление комментариев в ваше приложение Svelte",
   "itemsOrdered": [
     {
       "name": "Быстрый старт",
@@ -23,6 +23,12 @@
     {
       "name": "Сборка",
       "file": "building-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус поддержки",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

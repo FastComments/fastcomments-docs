@@ -1,0 +1,48 @@
+{
+  "name": "Libreria Next.js",
+  "pageHeader": "Aggiungi commenti alla tua app Next.js",
+  "itemsOrdered": [
+    {
+      "name": "Installazione",
+      "file": "install-readme-generated.md",
+      "subCat": "Primi passi",
+      "type": "readme"
+    },
+    {
+      "name": "Avvio rapido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Componenti",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Distribuzioni Vercel",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Progetto di esempio",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Utilizzo",
+      "type": "readme"
+    },
+    {
+      "name": "Collegamenti",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Stato della manutenzione",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+- [Документација за FastComments](https://docs.fastcomments.com)
+- [Прилагођавање и конфигурација](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Документација за Next.js](https://nextjs.org/docs)

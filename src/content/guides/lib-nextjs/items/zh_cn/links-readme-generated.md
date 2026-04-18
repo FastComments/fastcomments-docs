@@ -1,0 +1,3 @@
+- [FastComments 文档](https://docs.fastcomments.com)
+- [自定义与配置](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Next.js 文档](https://nextjs.org/docs)

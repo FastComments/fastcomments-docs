@@ -1,0 +1,48 @@
+{
+  "name": "ספריית Next.js",
+  "pageHeader": "הוספת תגובות לאפליקציית Next.js שלך",
+  "itemsOrdered": [
+    {
+      "name": "התקנה",
+      "file": "install-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "התחלה מהירה",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "רכיבים",
+      "file": "components-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "פריסות ב-Vercel",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "פרויקט לדוגמה",
+      "file": "example-project-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "קישורים",
+      "file": "links-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב תחזוקה",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

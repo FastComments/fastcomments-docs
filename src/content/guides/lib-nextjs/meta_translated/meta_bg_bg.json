@@ -1,0 +1,48 @@
+{
+  "name": "Библиотека Next.js",
+  "pageHeader": "Добавяне на коментари към вашето Next.js приложение",
+  "itemsOrdered": [
+    {
+      "name": "Инсталиране",
+      "file": "install-readme-generated.md",
+      "subCat": "Първи стъпки",
+      "type": "readme"
+    },
+    {
+      "name": "Бърз старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненти",
+      "file": "components-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Разгръщане в Vercel",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Примерен проект",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Използване",
+      "type": "readme"
+    },
+    {
+      "name": "Връзки",
+      "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус на поддръжката",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

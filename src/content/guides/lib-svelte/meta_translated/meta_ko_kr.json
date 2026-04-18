@@ -15,14 +15,20 @@
       "type": "readme"
     },
     {
-      "name": "개발하기",
+      "name": "개발",
       "file": "developing-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "빌드하기",
+      "name": "빌드",
       "file": "building-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "유지 관리 상태",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     }

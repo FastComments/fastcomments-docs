@@ -1,5 +1,5 @@
 {
-  "name": "Biblioteca Svelte",
+  "name": "Biblioteca de Svelte",
   "pageHeader": "Añadir comentarios a tu aplicación Svelte",
   "itemsOrdered": [
     {
@@ -23,6 +23,12 @@
     {
       "name": "Construcción",
       "file": "building-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Estado de mantenimiento",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     }

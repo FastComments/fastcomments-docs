@@ -1,0 +1,48 @@
+{
+  "name": "Next.js ライブラリ",
+  "pageHeader": "Next.js アプリにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "インストール",
+      "file": "install-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "コンポーネント",
+      "file": "components-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "Vercel デプロイ",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルプロジェクト",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "リンク",
+      "file": "links-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "メンテナンス状況",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

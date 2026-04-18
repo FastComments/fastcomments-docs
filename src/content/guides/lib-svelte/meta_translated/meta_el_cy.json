@@ -1,6 +1,6 @@
 {
   "name": "Βιβλιοθήκη Svelte",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Svelte σας",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Svelte σας",
   "itemsOrdered": [
     {
       "name": "Γρήγορη Εκκίνηση",
@@ -23,6 +23,12 @@
     {
       "name": "Κατασκευή",
       "file": "building-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση Συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     }

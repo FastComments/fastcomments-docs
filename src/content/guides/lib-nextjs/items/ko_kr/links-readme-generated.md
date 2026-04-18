@@ -1,0 +1,5 @@
+---
+- [FastComments 문서](https://docs.fastcomments.com)
+- [맞춤 설정 및 구성](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Next.js 문서](https://nextjs.org/docs)
+---

@@ -1,6 +1,6 @@
 {
   "name": "Svelte Kütüphanesi",
-  "pageHeader": "Svelte Uygulamanıza Yorum Ekleyin",
+  "pageHeader": "Svelte Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
     {
       "name": "Hızlı Başlangıç",
@@ -23,6 +23,12 @@
     {
       "name": "Oluşturma",
       "file": "building-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     }

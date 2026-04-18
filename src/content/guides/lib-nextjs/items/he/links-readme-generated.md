@@ -1,0 +1,3 @@
+- [תיעוד FastComments](https://docs.fastcomments.com)
+- [התאמה אישית וקונפיגורציה](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [תיעוד Next.js](https://nextjs.org/docs)

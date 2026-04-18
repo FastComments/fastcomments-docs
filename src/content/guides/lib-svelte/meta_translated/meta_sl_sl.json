@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Gradniki",
+      "name": "Pripomočki",
       "file": "widgets-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -21,8 +21,14 @@
       "type": "readme"
     },
     {
-      "name": "Sestavljanje",
+      "name": "Gradnja",
       "file": "building-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

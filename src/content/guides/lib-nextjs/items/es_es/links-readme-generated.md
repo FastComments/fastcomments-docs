@@ -1,0 +1,5 @@
+---
+- [Documentación de FastComments](https://docs.fastcomments.com)
+- [Personalización y configuración](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Documentación de Next.js](https://nextjs.org/docs)
+---

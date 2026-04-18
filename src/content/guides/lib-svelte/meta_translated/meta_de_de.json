@@ -25,6 +25,12 @@
       "file": "building-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
+    },
+    {
+      "name": "Wartungsstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
     }
   ]
 }

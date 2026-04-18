@@ -1,0 +1,48 @@
+{
+  "name": "Next.js 库",
+  "pageHeader": "在你的 Next.js 应用中添加评论",
+  "itemsOrdered": [
+    {
+      "name": "安装",
+      "file": "install-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "快速开始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "组件",
+      "file": "components-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "Vercel 部署",
+      "file": "vercel-deployments-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "示例项目",
+      "file": "example-project-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "链接",
+      "file": "links-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

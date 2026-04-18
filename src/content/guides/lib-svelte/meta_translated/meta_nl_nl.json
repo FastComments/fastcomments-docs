@@ -1,6 +1,6 @@
 {
   "name": "Svelte-bibliotheek",
-  "pageHeader": "Opmerkingen toevoegen aan uw Svelte-app",
+  "pageHeader": "Voeg opmerkingen toe aan je Svelte-app",
   "itemsOrdered": [
     {
       "name": "Snel aan de slag",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Ontwikkelen",
+      "name": "Ontwikkeling",
       "file": "developing-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -23,6 +23,12 @@
     {
       "name": "Bouwen",
       "file": "building-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     }
