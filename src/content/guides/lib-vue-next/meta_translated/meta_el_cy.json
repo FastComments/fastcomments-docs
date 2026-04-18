@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη Vue 3",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Vue 3 σας",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Vue 3 σας",
   "itemsOrdered": [
+    {
+      "name": "Ζωντανή Επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
@@ -21,14 +27,20 @@
       "type": "readme"
     },
     {
-      "name": "Σε παραγωγή",
+      "name": "Σε Παραγωγή",
       "file": "in-production-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Όλα τα widgets και η τεκμηρίωση",
+      "name": "Όλα τα Widgets και η Τεκμηρίωση",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση Συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },

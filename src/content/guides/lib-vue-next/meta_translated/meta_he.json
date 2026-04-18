@@ -1,11 +1,17 @@
 {
   "name": "ספריית Vue 3",
-  "pageHeader": "הוסף תגובות לאפליקציית ה-Vue 3 שלך",
+  "pageHeader": "הוספת תגובות לאפליקציית Vue 3 שלך",
   "itemsOrdered": [
+    {
+      "name": "תצוגה חיה",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "עדכון הדף הנוכחי (דוגמה ל-SPA)",
+      "name": "עדכון העמוד הנוכחי (דוגמת SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
     },
     {
-      "name": "בייצור",
+      "name": "בסביבת ייצור",
       "file": "in-production-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "כל הווידג'טים והתיעוד",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב תחזוקה",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },

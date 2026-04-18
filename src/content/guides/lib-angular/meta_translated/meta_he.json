@@ -1,10 +1,16 @@
 {
   "name": "ספריית Angular",
-  "pageHeader": "הוסף הערות לאפליקציית Angular שלך",
+  "pageHeader": "הוספת הערות לאפליקציית Angular שלך",
   "itemsOrdered": [
     {
       "name": "מבנה הפרויקט",
       "file": "project-structure-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב התחזוקה",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     }

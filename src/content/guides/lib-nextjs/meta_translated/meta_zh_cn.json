@@ -3,9 +3,15 @@
   "pageHeader": "在你的 Next.js 应用中添加评论",
   "itemsOrdered": [
     {
+      "name": "实时展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
       "name": "安装",
       "file": "install-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "快速开始",
       "type": "readme"
     },
     {

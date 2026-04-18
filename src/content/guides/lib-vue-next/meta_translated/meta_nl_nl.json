@@ -1,7 +1,13 @@
 {
   "name": "Vue 3-bibliotheek",
-  "pageHeader": "Voeg reacties toe aan je Vue 3-app",
+  "pageHeader": "Voeg reacties toe aan uw Vue 3-app",
   "itemsOrdered": [
+    {
+      "name": "Live-demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Installatie",
       "file": "installation-readme-generated.md",
@@ -29,6 +35,12 @@
     {
       "name": "Alle widgets en documentatie",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },

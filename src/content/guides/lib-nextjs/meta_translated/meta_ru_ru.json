@@ -3,6 +3,12 @@
   "pageHeader": "Добавьте комментарии в ваше приложение Next.js",
   "itemsOrdered": [
     {
+      "name": "Живая демонстрация",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Установка",
       "file": "install-readme-generated.md",
       "subCat": "Начало работы",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Развёртывания на Vercel",
+      "name": "Развертывания на Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус обслуживания",
+      "name": "Статус поддержки",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

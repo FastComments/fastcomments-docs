@@ -1,11 +1,17 @@
 {
   "name": "Βιβλιοθήκη React",
-  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή React σας",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή React σας",
   "itemsOrdered": [
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Ξεκινώντας",
+      "subCat": "Πρώτα βήματα",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Χρήση",
       "file": "usage-readme-generated.md",
       "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
       "type": "readme"
     }
   ]

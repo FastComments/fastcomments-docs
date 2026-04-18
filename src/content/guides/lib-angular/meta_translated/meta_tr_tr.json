@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
     }
   ]
 }

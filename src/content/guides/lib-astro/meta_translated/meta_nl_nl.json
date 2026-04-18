@@ -1,9 +1,15 @@
 {
   "name": "Astro-bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan je Astro-site",
+  "pageHeader": "Voeg reacties toe aan je Astro-site",
   "itemsOrdered": [
     {
-      "name": "Installatie",
+      "name": "Live demonstratie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installeren",
       "file": "install-readme-generated.md",
       "subCat": "Aan de slag",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "Links",
       "file": "links-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     }

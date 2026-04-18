@@ -3,13 +3,19 @@
   "pageHeader": "Tilføj kommentarer til dit Astro-websted",
   "itemsOrdered": [
     {
-      "name": "Installer",
+      "name": "Live-præsentation",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Kom godt i gang",
       "type": "readme"
     },
     {
-      "name": "Hurtig start",
+      "name": "Hurtigstart",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "Links",
       "file": "links-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Vedligeholdelsesstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     }

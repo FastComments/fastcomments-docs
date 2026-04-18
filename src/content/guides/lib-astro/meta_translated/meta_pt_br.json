@@ -3,13 +3,19 @@
   "pageHeader": "Adicione comentários ao seu site Astro",
   "itemsOrdered": [
     {
-      "name": "Instalação",
-      "file": "install-readme-generated.md",
-      "subCat": "Primeiros Passos",
+      "name": "Demonstração ao vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Início Rápido",
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Início rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Projeto de Exemplo",
+      "name": "Projeto de exemplo",
       "file": "example-project-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "Links",
       "file": "links-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     }

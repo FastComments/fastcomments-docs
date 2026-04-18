@@ -3,6 +3,12 @@
   "pageHeader": "Добавьте комментарии в ваше приложение Next.js",
   "itemsOrdered": [
     {
+      "name": "Живая демонстрация",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Установка",
       "file": "install-readme-generated.md",
       "subCat": "Начало работы",
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус поддержки",
+      "name": "Статус обслуживания",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

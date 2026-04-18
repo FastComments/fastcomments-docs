@@ -1,11 +1,17 @@
 {
   "name": "React knjižnica",
-  "pageHeader": "Dodajte komentarje v vašo React aplikacijo",
+  "pageHeader": "Dodajte komentarje v svojo React aplikacijo",
   "itemsOrdered": [
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Prvi koraki",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Predstavitev v živo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Uporaba",
       "file": "usage-readme-generated.md",
       "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Status vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

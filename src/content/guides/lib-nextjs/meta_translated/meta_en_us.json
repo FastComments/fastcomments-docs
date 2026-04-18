@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your Next.js App",
   "itemsOrdered": [
     {
+      "name": "Live Showcase",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Install",
       "file": "install-readme-generated.md",
       "subCat": "Getting Started",

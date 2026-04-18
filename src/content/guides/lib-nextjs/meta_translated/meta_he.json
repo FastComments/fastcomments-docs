@@ -3,6 +3,12 @@
   "pageHeader": "הוספת תגובות לאפליקציית Next.js שלך",
   "itemsOrdered": [
     {
+      "name": "הדגמה חיה",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
       "name": "התקנה",
       "file": "install-readme-generated.md",
       "subCat": "התחלה",

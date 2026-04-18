@@ -3,9 +3,15 @@
   "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Vue 2 σας",
   "itemsOrdered": [
     {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Πρώτα βήματα",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
@@ -23,6 +29,12 @@
     {
       "name": "Σε παραγωγή",
       "file": "in-production-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     }

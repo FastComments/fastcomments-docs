@@ -3,6 +3,12 @@
   "pageHeader": "Astro 사이트에 댓글 추가하기",
   "itemsOrdered": [
     {
+      "name": "라이브 쇼케이스",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "설치",
       "file": "install-readme-generated.md",
       "subCat": "시작하기",
@@ -29,6 +35,12 @@
     {
       "name": "링크",
       "file": "links-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "유지보수 상태",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     }

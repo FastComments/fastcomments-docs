@@ -3,9 +3,15 @@
   "pageHeader": "Ajouter des commentaires à votre application Vue 2",
   "itemsOrdered": [
     {
+      "name": "Démonstration en direct",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
@@ -23,6 +29,12 @@
     {
       "name": "En production",
       "file": "in-production-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Statut de maintenance",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

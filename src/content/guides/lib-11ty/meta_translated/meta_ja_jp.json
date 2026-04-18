@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy（11ty）ライブラリ",
+  "pageHeader": "Eleventy（11ty）サイトにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "ライブショーケース",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "install-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ショートコード",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "プラグインオプション",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "手動での使用（プラグインなし）",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルプロジェクト",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "リンク",
+      "file": "links-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "メンテナンス状況",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

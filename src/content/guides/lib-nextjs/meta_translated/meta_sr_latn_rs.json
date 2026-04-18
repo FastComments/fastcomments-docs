@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u vašu Next.js aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Prikaz uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
       "subCat": "Početak rada",
@@ -29,7 +35,7 @@
     {
       "name": "Primer projekta",
       "file": "example-project-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {

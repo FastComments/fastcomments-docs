@@ -9,15 +9,27 @@
       "type": "readme"
     },
     {
-      "name": "Примери",
-      "file": "examples-readme-generated.md",
-      "subCat": "Коришћење",
+      "name": "Презентација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Примери",
+      "file": "examples-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     }
   ]

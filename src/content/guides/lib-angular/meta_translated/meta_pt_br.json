@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
     }
   ]
 }

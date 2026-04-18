@@ -3,6 +3,12 @@
   "pageHeader": "Voeg opmerkingen toe aan je Vue 2-app",
   "itemsOrdered": [
     {
+      "name": "Live demonstratie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
       "name": "Installatie",
       "file": "installation-readme-generated.md",
       "subCat": "Aan de slag",
@@ -23,6 +29,12 @@
     {
       "name": "In productie",
       "file": "in-production-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     }

@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Dimostrazione dal vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Esempi",
       "file": "examples-readme-generated.md",
       "subCat": "Utilizzo",
@@ -18,6 +24,12 @@
       "name": "Utilizzo",
       "file": "usage-readme-generated.md",
       "subCat": "Utilizzo",
+      "type": "readme"
+    },
+    {
+      "name": "Stato di manutenzione",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentazione",
       "type": "readme"
     }
   ]

@@ -1,11 +1,17 @@
 {
-  "name": "Biblioteka React",
-  "pageHeader": "Dodaj komentarze do swojej aplikacji React",
+  "name": "Biblioteka Reacta",
+  "pageHeader": "Dodaj komentarze do aplikacji React",
   "itemsOrdered": [
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
       "subCat": "Pierwsze kroki",
+      "type": "readme"
+    },
+    {
+      "name": "Prezentacja na żywo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Użycie",
       "file": "usage-readme-generated.md",
       "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Status utrzymania",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacja",
       "type": "readme"
     }
   ]

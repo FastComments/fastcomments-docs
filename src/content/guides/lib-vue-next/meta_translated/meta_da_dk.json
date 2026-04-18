@@ -3,6 +3,12 @@
   "pageHeader": "Tilføj kommentarer til din Vue 3-app",
   "itemsOrdered": [
     {
+      "name": "Live-demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Kom godt i gang",
@@ -29,6 +35,12 @@
     {
       "name": "Alle widgets og dokumentation",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Vedligeholdelsesstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },

@@ -1,1 +1,1 @@
-Troverai esempi per vari casi d'uso (modalità scura, paginazione, ecc.) nella cartella examples. Ogni esempio può essere configurato con `npm install` e avviato con `npm run start`.
+I singoli casi d'uso (modalità scura, paginazione, ecc.) si trovano nelle rispettive cartelle sotto `examples/`. Ciascuno può essere configurato con `npm install` e avviato con `npm start`.

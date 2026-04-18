@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека Next.js",
+  "name": "Next.js библиотека",
   "pageHeader": "Добавяне на коментари към вашето Next.js приложение",
   "itemsOrdered": [
+    {
+      "name": "Демонстрация на живо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",

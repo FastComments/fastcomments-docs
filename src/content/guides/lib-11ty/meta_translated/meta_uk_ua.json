@@ -1,0 +1,60 @@
+{
+  "name": "Бібліотека Eleventy (11ty)",
+  "pageHeader": "Додавання коментарів до вашого сайту Eleventy (11ty)",
+  "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "install-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Шорткоди",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Параметри плагіна",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Налаштування",
+      "type": "readme"
+    },
+    {
+      "name": "Ручне використання (без плагіна)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Приклад проєкту",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Посилання",
+      "file": "links-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Статус підтримки",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    }
+  ]
+}

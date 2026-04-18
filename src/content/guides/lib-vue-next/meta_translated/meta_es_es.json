@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca de Vue 3",
-  "pageHeader": "Añadir comentarios a tu aplicación Vue 3",
+  "pageHeader": "Añade comentarios a tu aplicación Vue 3",
   "itemsOrdered": [
+    {
+      "name": "Demostración en vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Actualizando la página actual (ejemplo SPA)",
+      "name": "Actualizar la página actual (ejemplo SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -27,8 +33,14 @@
       "type": "readme"
     },
     {
-      "name": "Todos los widgets y la documentación",
+      "name": "Todos los widgets y documentación",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Estado de mantenimiento",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },

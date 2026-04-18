@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Next.js-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "Live-Demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Erste Schritte",

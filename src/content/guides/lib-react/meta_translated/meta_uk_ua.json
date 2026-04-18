@@ -1,11 +1,17 @@
 {
   "name": "Бібліотека React",
-  "pageHeader": "Додайте коментарі до вашого React-додатка",
+  "pageHeader": "Додайте коментарі до вашого додатку на React",
   "itemsOrdered": [
     {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",
       "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Онлайн-демонстрація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Використання",
       "file": "usage-readme-generated.md",
       "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Стан підтримки",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документація",
       "type": "readme"
     }
   ]

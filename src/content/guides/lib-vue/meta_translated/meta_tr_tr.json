@@ -1,7 +1,13 @@
 {
   "name": "Vue 2 Kütüphanesi",
-  "pageHeader": "Vue 2 Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Vue 2 Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
@@ -21,8 +27,14 @@
       "type": "readme"
     },
     {
-      "name": "Üretim Ortamında",
+      "name": "Canlı Ortamda",
       "file": "in-production-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     }

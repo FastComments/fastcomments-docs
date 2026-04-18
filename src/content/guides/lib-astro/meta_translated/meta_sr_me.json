@@ -1,9 +1,15 @@
 {
   "name": "Astro библиотека",
-  "pageHeader": "Додајте коментаре на ваш Astro сајт",
+  "pageHeader": "Додавање коментара на ваш Astro сајт",
   "itemsOrdered": [
     {
-      "name": "Инсталација",
+      "name": "Демонстрација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталирање",
       "file": "install-readme-generated.md",
       "subCat": "Почетак рада",
       "type": "readme"
@@ -23,12 +29,18 @@
     {
       "name": "Пример пројекта",
       "file": "example-project-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
       "type": "readme"
     },
     {
       "name": "Линкови",
       "file": "links-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

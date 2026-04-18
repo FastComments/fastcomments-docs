@@ -1,11 +1,17 @@
 {
   "name": "Bibliothèque Vue 3",
-  "pageHeader": "Ajoutez des commentaires à votre application Vue 3",
+  "pageHeader": "Ajouter des commentaires à votre application Vue 3",
   "itemsOrdered": [
+    {
+      "name": "Démonstration en direct",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
@@ -29,6 +35,12 @@
     {
       "name": "Tous les widgets et la documentation",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "État de maintenance",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },

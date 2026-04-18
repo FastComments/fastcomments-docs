@@ -1,10 +1,16 @@
 {
-  "name": "Knjižnica Angular",
+  "name": "Knjižnica za Angular",
   "pageHeader": "Dodajte komentarje v svojo Angular aplikacijo",
   "itemsOrdered": [
     {
       "name": "Struktura projekta",
       "file": "project-structure-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

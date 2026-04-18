@@ -1,11 +1,17 @@
 {
   "name": "Библиотека React",
-  "pageHeader": "Добавление комментариев в приложение React",
+  "pageHeader": "Добавьте комментарии в ваше приложение React",
   "itemsOrdered": [
     {
       "name": "Установка",
       "file": "installation-readme-generated.md",
       "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Живая демонстрация",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Использование",
       "file": "usage-readme-generated.md",
       "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Статус поддержки",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     }
   ]

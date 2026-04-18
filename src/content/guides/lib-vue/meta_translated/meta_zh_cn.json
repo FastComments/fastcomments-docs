@@ -1,7 +1,13 @@
 {
   "name": "Vue 2 库",
-  "pageHeader": "在您的 Vue 2 应用中添加评论",
+  "pageHeader": "向你的 Vue 2 应用添加评论",
   "itemsOrdered": [
+    {
+      "name": "实时展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
@@ -9,20 +15,26 @@
       "type": "readme"
     },
     {
-      "name": "使用",
+      "name": "用法",
       "file": "usage-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "用法",
       "type": "readme"
     },
     {
       "name": "更新当前页面（SPA 示例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "用法",
       "type": "readme"
     },
     {
       "name": "生产环境",
       "file": "in-production-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     }

@@ -1,7 +1,13 @@
 {
   "name": "Библиотека Astro",
-  "pageHeader": "Добавяне на коментари към вашия Astro сайт",
+  "pageHeader": "Добавяне на коментари към вашия сайт на Astro",
   "itemsOrdered": [
+    {
+      "name": "Живо демо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",
@@ -29,6 +35,12 @@
     {
       "name": "Връзки",
       "file": "links-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус на поддръжката",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

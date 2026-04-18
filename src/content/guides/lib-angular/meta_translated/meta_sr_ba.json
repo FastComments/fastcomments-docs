@@ -1,10 +1,16 @@
 {
   "name": "Angular библиотека",
-  "pageHeader": "Додајте коментаре у вашу Angular апликацију",
+  "pageHeader": "Додавање коментара у вашу Angular апликацију",
   "itemsOrdered": [
     {
       "name": "Структура пројекта",
       "file": "project-structure-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

@@ -1,0 +1,60 @@
+{
+  "name": "ספריית Eleventy (11ty)",
+  "pageHeader": "הוסף תגובות לאתר Eleventy (11ty) שלך",
+  "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "install-readme-generated.md",
+      "subCat": "התחלת עבודה",
+      "type": "readme"
+    },
+    {
+      "name": "התחלה מהירה",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "שורטקודים",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "אפשרויות התוסף",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "תצורה",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש ידני (ללא התוסף)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "פרויקט לדוגמה",
+      "file": "example-project-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "קישורים",
+      "file": "links-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מצב תחזוקה",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

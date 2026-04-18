@@ -1,1 +1,3 @@
-Sie finden Beispiele für verschiedene Anwendungsfälle (Dunkelmodus, Paginierung usw.) im Ordner examples. Jedes Beispiel kann mit `npm install` eingerichtet und mit `npm run start` gestartet werden.
+---
+Einzelne Anwendungsfälle (Dunkelmodus, Paginierung, usw.) befinden sich in eigenen Ordnern unter `examples/`. Jeder kann mit `npm install` eingerichtet und mit `npm start` gestartet werden.
+---

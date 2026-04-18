@@ -1,0 +1,3 @@
+Esses componentes são wrappers em torno dos nossos componentes principais do VanillaJS. Podemos atualizar automaticamente esses componentes (corrigir bugs, adicionar recursos) sem publicar esta biblioteca, então, embora ela possa não ser publicada por um tempo, isso não significa que o FastComments não esteja em desenvolvimento ativo! Sinta-se à vontade para conferir [nosso blog](https://blog.fastcomments.com/) para atualizações.
+
+Alterações incompatíveis na API ou novos recursos jamais serão enviados para a biblioteca core subjacente sem um aumento de versão nesta biblioteca.

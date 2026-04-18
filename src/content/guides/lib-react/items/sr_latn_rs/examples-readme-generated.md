@@ -1,3 +1,1 @@
----
-U folderu examples naći ćete primere za razne upotrebe (tamni režim, paginacija, itd.). Svaki primer može biti podešen pomoću `npm install` i pokrenut sa `npm run start`.
----
+Pojedinačni slučajevi upotrebe (tamni režim, paginacija, itd.) nalaze se u svojim folderima pod `examples/`. Svaki se može postaviti pomoću `npm install` i pokrenuti pomoću `npm start`.

@@ -3,6 +3,12 @@
   "pageHeader": "Añade comentarios a tu sitio de Astro",
   "itemsOrdered": [
     {
+      "name": "Demostración en vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
       "name": "Instalar",
       "file": "install-readme-generated.md",
       "subCat": "Primeros pasos",
@@ -29,6 +35,12 @@
     {
       "name": "Enlaces",
       "file": "links-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Estado de mantenimiento",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     }

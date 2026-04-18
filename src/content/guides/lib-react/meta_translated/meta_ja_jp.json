@@ -1,11 +1,17 @@
 {
-  "name": "React ライブラリ",
+  "name": "Reactライブラリ",
   "pageHeader": "Reactアプリにコメントを追加する",
   "itemsOrdered": [
     {
       "name": "インストール",
       "file": "installation-readme-generated.md",
       "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "ライブデモ",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "ドキュメント",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "使い方",
       "file": "usage-readme-generated.md",
       "subCat": "使い方",
+      "type": "readme"
+    },
+    {
+      "name": "メンテナンス状況",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "ドキュメント",
       "type": "readme"
     }
   ]

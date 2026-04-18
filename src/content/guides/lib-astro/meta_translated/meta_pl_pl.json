@@ -1,7 +1,13 @@
 {
   "name": "Biblioteka Astro",
-  "pageHeader": "Dodaj komentarze do swojej strony Astro",
+  "pageHeader": "Dodaj komentarze do swojej witryny Astro",
   "itemsOrdered": [
+    {
+      "name": "Pokaz na żywo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
     {
       "name": "Instalacja",
       "file": "install-readme-generated.md",
@@ -29,6 +35,12 @@
     {
       "name": "Linki",
       "file": "links-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Status utrzymania",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     }

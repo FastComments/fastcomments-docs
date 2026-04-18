@@ -1,7 +1,13 @@
 {
   "name": "Astro ライブラリ",
-  "pageHeader": "あなたの Astro サイトにコメントを追加する",
+  "pageHeader": "Astro サイトにコメントを追加する",
   "itemsOrdered": [
+    {
+      "name": "ライブショーケース",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
     {
       "name": "インストール",
       "file": "install-readme-generated.md",
@@ -23,12 +29,18 @@
     {
       "name": "サンプルプロジェクト",
       "file": "example-project-readme-generated.md",
-      "subCat": "使い方",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {
       "name": "リンク",
       "file": "links-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "メンテナンス状況",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     }

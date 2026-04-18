@@ -1,10 +1,16 @@
 {
   "name": "Βιβλιοθήκη Angular",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Angular σας",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Angular σας",
   "itemsOrdered": [
     {
       "name": "Δομή έργου",
       "file": "project-structure-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     }

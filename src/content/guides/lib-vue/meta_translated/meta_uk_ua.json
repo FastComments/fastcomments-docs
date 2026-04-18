@@ -1,7 +1,13 @@
 {
   "name": "Бібліотека Vue 2",
-  "pageHeader": "Додайте коментарі до вашого додатка Vue 2",
+  "pageHeader": "Додайте коментарі до вашого додатка на Vue 2",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",
@@ -23,6 +29,12 @@
     {
       "name": "У виробничому середовищі",
       "file": "in-production-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Стан підтримки",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     }

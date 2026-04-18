@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Vue 2-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "Live-Demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Erste Schritte",
@@ -21,8 +27,14 @@
       "type": "readme"
     },
     {
-      "name": "Im Produktivbetrieb",
+      "name": "In Produktion",
       "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Wartungsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     }

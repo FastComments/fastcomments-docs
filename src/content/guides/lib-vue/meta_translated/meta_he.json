@@ -1,11 +1,17 @@
 {
   "name": "ספריית Vue 2",
-  "pageHeader": "הוספת תגובות לאפליקציית Vue 2 שלך",
+  "pageHeader": "הוסף תגובות לאפליקציית Vue 2 שלך",
   "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה",
+      "subCat": "התחלת עבודה",
       "type": "readme"
     },
     {
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "עדכון הדף הנוכחי (דוגמה ל-SPA)",
+      "name": "עדכון הדף הנוכחי (דוגמת SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
@@ -23,6 +29,12 @@
     {
       "name": "בסביבת ייצור",
       "file": "in-production-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "סטטוס תחזוקה",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     }

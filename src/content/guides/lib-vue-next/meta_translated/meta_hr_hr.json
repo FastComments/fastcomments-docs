@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteka za Vue 3",
-  "pageHeader": "Dodajte komentare u vašu Vue 3 aplikaciju",
+  "name": "Vue 3 biblioteka",
+  "pageHeader": "Dodajte komentare u svoju Vue 3 aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "Prikaz uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
@@ -29,6 +35,12 @@
     {
       "name": "Svi widgeti i dokumentacija",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },

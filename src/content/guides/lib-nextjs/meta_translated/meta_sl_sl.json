@@ -1,11 +1,17 @@
 {
   "name": "Knjižnica Next.js",
-  "pageHeader": "Dodajte komentarje v svojo Next.js aplikacijo",
+  "pageHeader": "Dodaj komentarje v svojo aplikacijo Next.js",
   "itemsOrdered": [
+    {
+      "name": "Predstavitev v živo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Namestitev",
       "file": "install-readme-generated.md",
-      "subCat": "Uvod",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {

@@ -1,3 +1,1 @@
----
-examples klasöründe çeşitli kullanım senaryoları (karanlık mod, sayfalama, vb.) için örnekler bulacaksınız. Her örnek `npm install` ile kurulabilir ve `npm run start` ile başlatılabilir.
----
+Bireysel kullanım örnekleri (karanlık mod, sayfalama vb.) `examples/` altındaki kendi klasörlerinde bulunur. Her biri `npm install` ile kurulabilir ve `npm start` ile başlatılabilir.

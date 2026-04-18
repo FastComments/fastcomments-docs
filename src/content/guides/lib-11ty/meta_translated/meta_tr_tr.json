@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy (11ty) Kütüphanesi",
+  "pageHeader": "Eleventy (11ty) Sitenize Yorum Ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Kısa Kodlar",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Eklenti Seçenekleri",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Manuel Kullanım (eklenti olmadan)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Örnek Proje",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Bağlantılar",
+      "file": "links-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    }
+  ]
+}

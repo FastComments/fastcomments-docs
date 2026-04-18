@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Prikaz uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Primeri",
       "file": "examples-readme-generated.md",
       "subCat": "Upotreba",
@@ -18,6 +24,12 @@
       "name": "Upotreba",
       "file": "usage-readme-generated.md",
       "subCat": "Upotreba",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

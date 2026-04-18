@@ -1,7 +1,13 @@
 {
   "name": "Next.js Kütüphanesi",
-  "pageHeader": "Next.js Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Next.js Uygulamanıza Yorum Ekle",
   "itemsOrdered": [
+    {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Kurulum",
       "file": "install-readme-generated.md",

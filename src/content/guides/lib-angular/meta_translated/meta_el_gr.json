@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
     }
   ]
 }

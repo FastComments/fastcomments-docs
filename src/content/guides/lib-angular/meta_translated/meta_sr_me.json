@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
     }
   ]
 }

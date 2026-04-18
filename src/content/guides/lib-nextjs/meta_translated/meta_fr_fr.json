@@ -3,9 +3,15 @@
   "pageHeader": "Ajoutez des commentaires à votre application Next.js",
   "itemsOrdered": [
     {
+      "name": "Démonstration en direct",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "install-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Déploiements Vercel",
+      "name": "Déploiements sur Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

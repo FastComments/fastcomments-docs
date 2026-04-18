@@ -3,21 +3,27 @@
   "pageHeader": "Додајте коментаре у вашу Vue 3 апликацију",
   "itemsOrdered": [
     {
-      "name": "Инсталација",
-      "file": "installation-readme-generated.md",
-      "subCat": "Почетак",
+      "name": "Демонстрација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
+      "type": "readme"
+    },
+    {
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "Ажурирање тренутне странице (пример SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
@@ -29,6 +35,12 @@
     {
       "name": "Сви видгети и документација",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },

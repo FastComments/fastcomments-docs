@@ -1,7 +1,13 @@
 {
   "name": "Бібліотека Vue 3",
-  "pageHeader": "Додайте коментарі у свій додаток Vue 3",
+  "pageHeader": "Додайте коментарі до вашого додатку на Vue 3",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",
@@ -27,8 +33,14 @@
       "type": "readme"
     },
     {
-      "name": "Усі віджети та документація",
+      "name": "Всі віджети та документація",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Статус обслуговування",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },

@@ -1,1 +1,1 @@
-Encontrarás ejemplos para varios casos de uso (modo oscuro, paginación, etc.) en la carpeta examples. Cada ejemplo puede configurarse con `npm install` y iniciarse con `npm run start`.
+Los casos de uso individuales (modo oscuro, paginación, etc.) se encuentran en sus propias carpetas dentro de `examples/`. Cada uno puede configurarse con `npm install` y iniciarse con `npm start`.

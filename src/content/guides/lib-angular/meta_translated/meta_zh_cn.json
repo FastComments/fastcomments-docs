@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
     }
   ]
 }

@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your Vue 2 App",
   "itemsOrdered": [
     {
+      "name": "Live Showcase",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Getting Started",
@@ -23,6 +29,12 @@
     {
       "name": "In Production",
       "file": "in-production-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Maintenance Status",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     }

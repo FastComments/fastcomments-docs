@@ -3,13 +3,19 @@
   "pageHeader": "Tilføj kommentarer til din Next.js-app",
   "itemsOrdered": [
     {
-      "name": "Installation",
+      "name": "Live-fremvisning",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installér",
       "file": "install-readme-generated.md",
       "subCat": "Kom godt i gang",
       "type": "readme"
     },
     {
-      "name": "Kom godt i gang",
+      "name": "Hurtig start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Udrulninger på Vercel",
+      "name": "Vercel-udrulninger",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Astro knjižnica",
-  "pageHeader": "Dodajte komentare na svoju Astro stranicu",
+  "pageHeader": "Dodavanje komentara na vašu Astro stranicu",
   "itemsOrdered": [
+    {
+      "name": "Demonstracija uživo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
@@ -29,6 +35,12 @@
     {
       "name": "Poveznice",
       "file": "links-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status održavanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

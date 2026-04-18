@@ -1,11 +1,17 @@
 {
   "name": "React 函式庫",
-  "pageHeader": "在你的 React 應用中加入評論",
+  "pageHeader": "在您的 React 應用程式新增評論",
   "itemsOrdered": [
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "快速上手",
+      "type": "readme"
+    },
+    {
+      "name": "即時展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文件",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "用法",
       "file": "usage-readme-generated.md",
       "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文件",
       "type": "readme"
     }
   ]

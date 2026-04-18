@@ -3,9 +3,15 @@
   "pageHeader": "Ajouter des commentaires à votre application Next.js",
   "itemsOrdered": [
     {
+      "name": "Démonstration en direct",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "install-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Exemple de projet",
+      "name": "Projet d'exemple",
       "file": "example-project-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "État de maintenance",
+      "name": "Statut de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

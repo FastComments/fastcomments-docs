@@ -1,7 +1,13 @@
 {
   "name": "Vue 3 库",
-  "pageHeader": "向你的 Vue 3 应用添加评论",
+  "pageHeader": "在您的 Vue 3 应用中添加评论",
   "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
@@ -9,19 +15,19 @@
       "type": "readme"
     },
     {
-      "name": "用法",
+      "name": "使用",
       "file": "usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "更新当前页面（SPA 示例）",
+      "name": "更新当前页面（单页应用示例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "生产环境中",
+      "name": "在生产环境中",
       "file": "in-production-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "所有小部件和文档",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },

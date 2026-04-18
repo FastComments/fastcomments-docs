@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy (11ty) Bibliotheek",
+  "pageHeader": "Voeg reacties toe aan je Eleventy (11ty)-site",
+  "itemsOrdered": [
+    {
+      "name": "Live demonstratie",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Installatie",
+      "file": "install-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Snel aan de slag",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Plugin-opties",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Handmatig gebruik (zonder de plugin)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeeldproject",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Onderhoudsstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека за Vue 2",
-  "pageHeader": "Додајте коментаре у вашу Vue 2 апликацију",
+  "name": "Vue 2 библиотека",
+  "pageHeader": "Додавање коментара у вашу Vue 2 апликацију",
   "itemsOrdered": [
+    {
+      "name": "Живи приказ",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Ажурирање тренутне странице (пример SPA)",
+      "name": "Ажурирање текуће странице (пример једностраничне апликације)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Коришћење",
       "type": "readme"
@@ -23,6 +29,12 @@
     {
       "name": "У продукцији",
       "file": "in-production-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     }

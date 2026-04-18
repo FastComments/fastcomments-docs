@@ -1,1 +1,1 @@
-V mapi examples boste našli primere za različne načine uporabe (temni način, straničenje itd.). Vsak primer lahko nastavite z `npm install` in zaženete z `npm run start`.
+Posamezni primeri uporabe (temni način, straničenje itd.) se nahajajo v svojih mapah pod `examples/`. Vsak lahko nastavite z `npm install` in ga zaženete z `npm start`.

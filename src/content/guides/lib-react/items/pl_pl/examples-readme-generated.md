@@ -1,1 +1,1 @@
-Znajdziesz przykłady dla różnych przypadków użycia (tryb ciemny, paginacja itp.) w folderze examples. Każdy przykład można przygotować przez `npm install` i uruchomić za pomocą `npm run start`.
+Pojedyncze przypadki użycia (tryb ciemny, paginacja itp.) znajdują się w swoich własnych folderach pod `examples/`. Każdy z nich można skonfigurować poleceniem `npm install` i uruchomić poleceniem `npm start`.

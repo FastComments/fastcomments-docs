@@ -1,0 +1,60 @@
+{
+  "name": "Βιβλιοθήκη Eleventy (11ty)",
+  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας Eleventy (11ty)",
+  "itemsOrdered": [
+    {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Συντομεύσεις",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Επιλογές προσθέτου",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Διαμόρφωση",
+      "type": "readme"
+    },
+    {
+      "name": "Χειροκίνητη χρήση (χωρίς το πρόσθετο)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Παράδειγμα έργου",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Σύνδεσμοι",
+      "file": "links-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

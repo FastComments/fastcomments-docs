@@ -1,0 +1,3 @@
+- [FastComments dokumentacija](https://docs.fastcomments.com)
+- [Prilagođavanje & konfiguracija](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Eleventy dokumentacija](https://www.11ty.dev/docs/)

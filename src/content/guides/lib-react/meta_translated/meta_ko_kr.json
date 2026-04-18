@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "라이브 데모",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "예제",
       "file": "examples-readme-generated.md",
       "subCat": "사용법",
@@ -18,6 +24,12 @@
       "name": "사용법",
       "file": "usage-readme-generated.md",
       "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "유지 관리 상태",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "문서",
       "type": "readme"
     }
   ]

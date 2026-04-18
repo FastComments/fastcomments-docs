@@ -1,7 +1,13 @@
 {
   "name": "Библиотека Vue 2",
-  "pageHeader": "Добавление комментариев в приложение Vue 2",
+  "pageHeader": "Добавление комментариев в ваше приложение Vue 2",
   "itemsOrdered": [
+    {
+      "name": "Живая демонстрация",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Установка",
       "file": "installation-readme-generated.md",
@@ -21,8 +27,14 @@
       "type": "readme"
     },
     {
-      "name": "В продакшене",
+      "name": "В рабочей среде",
       "file": "in-production-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус обслуживания",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

@@ -1,11 +1,17 @@
 {
-  "name": "Libreria Astro",
+  "name": "Libreria di Astro",
   "pageHeader": "Aggiungi commenti al tuo sito Astro",
   "itemsOrdered": [
     {
-      "name": "Installa",
+      "name": "Dimostrazione dal vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Installazione",
       "file": "install-readme-generated.md",
-      "subCat": "Introduzione",
+      "subCat": "Primi passi",
       "type": "readme"
     },
     {
@@ -27,8 +33,14 @@
       "type": "readme"
     },
     {
-      "name": "Link",
+      "name": "Collegamenti",
       "file": "links-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Stato di manutenzione",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     }

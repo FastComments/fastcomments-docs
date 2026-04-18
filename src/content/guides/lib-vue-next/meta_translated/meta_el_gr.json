@@ -1,11 +1,17 @@
 {
   "name": "Βιβλιοθήκη Vue 3",
-  "pageHeader": "Προσθέστε Σχόλια στην Εφαρμογή Vue 3",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Vue 3 σας",
   "itemsOrdered": [
+    {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Ξεκινώντας",
+      "subCat": "Εισαγωγή",
       "type": "readme"
     },
     {
@@ -15,20 +21,26 @@
       "type": "readme"
     },
     {
-      "name": "Ενημέρωση της Τρέχουσας Σελίδας (Παράδειγμα SPA)",
+      "name": "Ενημέρωση της τρέχουσας σελίδας (παράδειγμα SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Σε Παραγωγή",
+      "name": "Σε παραγωγή",
       "file": "in-production-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Όλα τα Widgets και η Τεκμηρίωση",
+      "name": "Όλα τα widgets και η τεκμηρίωση",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατάσταση συντήρησης",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },

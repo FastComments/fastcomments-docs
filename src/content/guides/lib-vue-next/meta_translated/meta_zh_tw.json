@@ -1,7 +1,13 @@
 {
   "name": "Vue 3 函式庫",
-  "pageHeader": "在你的 Vue 3 應用中新增留言",
+  "pageHeader": "在你的 Vue 3 應用中加入留言",
   "itemsOrdered": [
+    {
+      "name": "即時展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
@@ -9,26 +15,32 @@
       "type": "readme"
     },
     {
-      "name": "使用",
+      "name": "用法",
       "file": "usage-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "更新當前頁面（單頁應用範例）",
+      "name": "更新當前頁面（SPA 範例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "在生產環境中",
+      "name": "正式環境中",
       "file": "in-production-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "所有元件與文件",
+      "name": "所有小工具與文件",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },

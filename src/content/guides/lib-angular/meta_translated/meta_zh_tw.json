@@ -1,10 +1,16 @@
 {
   "name": "Angular 函式庫",
-  "pageHeader": "在你的 Angular 應用程式中新增註解",
+  "pageHeader": "在您的 Angular 應用中新增註解",
   "itemsOrdered": [
     {
       "name": "專案結構",
       "file": "project-structure-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     }

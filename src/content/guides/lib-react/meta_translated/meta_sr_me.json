@@ -1,6 +1,6 @@
 {
   "name": "React библиотека",
-  "pageHeader": "Додајте коментаре у вашу React апликацију",
+  "pageHeader": "Додавање коментара у вашу React апликацију",
   "itemsOrdered": [
     {
       "name": "Инсталација",
@@ -9,15 +9,27 @@
       "type": "readme"
     },
     {
-      "name": "Примери",
-      "file": "examples-readme-generated.md",
-      "subCat": "Употреба",
+      "name": "Демонстрација уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Употреба",
+      "name": "Примјери",
+      "file": "examples-readme-generated.md",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Коришћење",
       "file": "usage-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     }
   ]

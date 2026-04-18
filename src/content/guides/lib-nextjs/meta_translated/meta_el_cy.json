@@ -3,13 +3,19 @@
   "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Next.js σας",
   "itemsOrdered": [
     {
+      "name": "Ζωντανή Επίδειξη",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Εγκατάσταση",
       "file": "install-readme-generated.md",
       "subCat": "Πρώτα βήματα",
       "type": "readme"
     },
     {
-      "name": "Γρήγορη εκκίνηση",
+      "name": "Γρήγορη Εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Παράδειγμα έργου",
+      "name": "Παράδειγμα Έργου",
       "file": "example-project-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Κατάσταση συντήρησης",
+      "name": "Κατάσταση Συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

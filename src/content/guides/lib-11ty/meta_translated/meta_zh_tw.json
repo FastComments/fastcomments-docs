@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy (11ty) 函式庫",
+  "pageHeader": "在你的 Eleventy (11ty) 網站新增留言",
+  "itemsOrdered": [
+    {
+      "name": "線上示範",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "install-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "快速上手",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "短碼",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "外掛選項",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "手動使用（不使用外掛）",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "使用方式",
+      "type": "readme"
+    },
+    {
+      "name": "範例專案",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用方式",
+      "type": "readme"
+    },
+    {
+      "name": "連結",
+      "file": "links-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "維護狀態",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

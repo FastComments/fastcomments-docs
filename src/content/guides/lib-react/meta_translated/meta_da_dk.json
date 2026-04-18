@@ -5,7 +5,13 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Live-demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
@@ -18,6 +24,12 @@
       "name": "Brug",
       "file": "usage-readme-generated.md",
       "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Vedligeholdelsesstatus",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     }
   ]

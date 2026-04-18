@@ -7,6 +7,12 @@
       "file": "project-structure-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
+    },
+    {
+      "name": "メンテナンス状況",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
     }
   ]
 }

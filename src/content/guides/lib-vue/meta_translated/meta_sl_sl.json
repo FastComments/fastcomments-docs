@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentarje v svojo aplikacijo Vue 2",
   "itemsOrdered": [
     {
+      "name": "Predstavitev v živo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
       "subCat": "Začetek",
@@ -23,6 +29,12 @@
     {
       "name": "V produkciji",
       "file": "in-production-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Status vzdrževanja",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     }

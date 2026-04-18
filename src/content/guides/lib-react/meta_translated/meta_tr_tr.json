@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
       "name": "Örnekler",
       "file": "examples-readme-generated.md",
       "subCat": "Kullanım",
@@ -18,6 +24,12 @@
       "name": "Kullanım",
       "file": "usage-readme-generated.md",
       "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Belgeler",
       "type": "readme"
     }
   ]

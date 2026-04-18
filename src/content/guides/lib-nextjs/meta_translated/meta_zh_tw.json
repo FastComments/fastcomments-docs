@@ -1,11 +1,17 @@
 {
   "name": "Next.js 函式庫",
-  "pageHeader": "在你的 Next.js 應用中加入評論",
+  "pageHeader": "在你的 Next.js 應用中新增留言功能",
   "itemsOrdered": [
+    {
+      "name": "線上示範",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "安裝",
       "file": "install-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "開始使用",
       "type": "readme"
     },
     {

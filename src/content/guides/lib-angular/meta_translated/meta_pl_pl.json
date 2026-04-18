@@ -1,10 +1,16 @@
 {
-  "name": "Biblioteka Angulara",
-  "pageHeader": "Dodaj komentarze do swojej aplikacji w Angularze",
+  "name": "Biblioteka Angular",
+  "pageHeader": "Dodaj komentarze do aplikacji Angular",
   "itemsOrdered": [
     {
       "name": "Struktura projektu",
       "file": "project-structure-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Status utrzymania",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     }

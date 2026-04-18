@@ -1,7 +1,13 @@
 {
-  "name": "Vue-3-Bibliothek",
+  "name": "Vue 3-Bibliothek",
   "pageHeader": "Kommentare zu Ihrer Vue-3-App hinzufügen",
   "itemsOrdered": [
+    {
+      "name": "Live-Demo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Aktualisieren der aktuellen Seite (SPA-Beispiel)",
+      "name": "Aktualisierung der aktuellen Seite (SPA-Beispiel)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
     },
     {
-      "name": "Im Produktiveinsatz",
+      "name": "In Produktion",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -29,6 +35,12 @@
     {
       "name": "Alle Widgets und Dokumentation",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Wartungsstatus",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },

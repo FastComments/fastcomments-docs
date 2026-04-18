@@ -1,0 +1,60 @@
+{
+  "name": "Biblioteca do Eleventy (11ty)",
+  "pageHeader": "Adicione comentários ao seu site Eleventy (11ty)",
+  "itemsOrdered": [
+    {
+      "name": "Demonstração ao vivo",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Início rápido",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Opções do plugin",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Configuração",
+      "type": "readme"
+    },
+    {
+      "name": "Uso manual (sem o plugin)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Projeto de exemplo",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Status de manutenção",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    }
+  ]
+}

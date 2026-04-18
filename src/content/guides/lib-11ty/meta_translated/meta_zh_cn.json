@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy（11ty）库",
+  "pageHeader": "向你的 Eleventy（11ty）站点添加评论",
+  "itemsOrdered": [
+    {
+      "name": "在线展示",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "install-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "快速开始",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "短代码",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "插件选项",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "配置",
+      "type": "readme"
+    },
+    {
+      "name": "手动使用（不使用插件）",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "示例项目",
+      "file": "example-project-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "链接",
+      "file": "links-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "维护状态",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

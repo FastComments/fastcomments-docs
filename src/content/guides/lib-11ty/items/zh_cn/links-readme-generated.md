@@ -1,0 +1,5 @@
+---
+- [FastComments 文档](https://docs.fastcomments.com)
+- [自定义与配置](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Eleventy 文档](https://www.11ty.dev/docs/)
+---

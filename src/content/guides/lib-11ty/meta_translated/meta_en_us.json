@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy (11ty) Library",
+  "pageHeader": "Add Comments to Your Eleventy (11ty) Site",
+  "itemsOrdered": [
+    {
+      "name": "Live Showcase",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Install",
+      "file": "install-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Quick Start",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Shortcodes",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Plugin Options",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Manual Usage (without the plugin)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Example Project",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Links",
+      "file": "links-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Maintenance Status",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

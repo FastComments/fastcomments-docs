@@ -1,0 +1,60 @@
+{
+  "name": "Eleventy (11ty) библиотека",
+  "pageHeader": "Додајте коментаре на ваш Eleventy (11ty) сајт",
+  "itemsOrdered": [
+    {
+      "name": "Преглед уживо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "install-readme-generated.md",
+      "subCat": "Почетак",
+      "type": "readme"
+    },
+    {
+      "name": "Брзи почетак",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Кратки кодови",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Опције плагина",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "Конфигурација",
+      "type": "readme"
+    },
+    {
+      "name": "Ручна употреба (без плагина)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Пример пројекта",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Линкови",
+      "file": "links-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Статус одржавања",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    }
+  ]
+}

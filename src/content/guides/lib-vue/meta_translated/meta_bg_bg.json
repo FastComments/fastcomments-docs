@@ -1,7 +1,13 @@
 {
   "name": "Библиотека за Vue 2",
-  "pageHeader": "Добавяне на коментари към вашето приложение Vue 2",
+  "pageHeader": "Добавяне на коментари към вашето приложение на Vue 2",
   "itemsOrdered": [
+    {
+      "name": "Демонстрация на живо",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Инсталиране",
       "file": "installation-readme-generated.md",
@@ -15,14 +21,20 @@
       "type": "readme"
     },
     {
-      "name": "Актуализиране на текущата страница (пример с SPA)",
+      "name": "Актуализиране на текущата страница (пример за SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Използване",
       "type": "readme"
     },
     {
-      "name": "В продукционна среда",
+      "name": "В продукция",
       "file": "in-production-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Статус на поддръжката",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     }

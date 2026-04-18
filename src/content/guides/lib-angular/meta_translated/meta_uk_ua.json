@@ -1,10 +1,16 @@
 {
   "name": "Бібліотека Angular",
-  "pageHeader": "Додайте коментарі до вашого додатка Angular",
+  "pageHeader": "Додайте коментарі до вашого застосунку Angular",
   "itemsOrdered": [
     {
       "name": "Структура проєкту",
       "file": "project-structure-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Статус підтримки",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     }

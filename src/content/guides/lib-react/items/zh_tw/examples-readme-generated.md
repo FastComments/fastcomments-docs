@@ -1,1 +1,3 @@
-您會在 examples 資料夾中找到各種使用情境的範例（黑暗模式、分頁等）。每個範例可以透過 `npm install` 進行設定，並使用 `npm run start` 啟動。
+---
+各別用例（暗色模式、分頁等）各自位於 `examples/` 底下的資料夾中。每個都可以透過 `npm install` 設定，然後用 `npm start` 啟動。
+---

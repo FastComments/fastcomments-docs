@@ -3,6 +3,12 @@
   "pageHeader": "Next.js アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "ライブショーケース",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "インストール",
       "file": "install-readme-generated.md",
       "subCat": "はじめに",

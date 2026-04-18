@@ -3,6 +3,12 @@
   "pageHeader": "Vue 3 Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
     {
+      "name": "Canlı Gösterim",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
       "subCat": "Başlarken",
@@ -29,6 +35,12 @@
     {
       "name": "Tüm Widget'lar ve Dokümantasyon",
       "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Bakım Durumu",
+      "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     },
