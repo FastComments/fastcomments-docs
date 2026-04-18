@@ -3,7 +3,13 @@
   "pageHeader": "Додајте коментаре у вашу Next.js апликацију",
   "itemsOrdered": [
     {
-      "name": "Уживо демонстрација",
+      "name": "Демонстрација уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Презентација уживо",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -27,15 +33,15 @@
       "type": "readme"
     },
     {
-      "name": "Распоређивање на Vercel",
+      "name": "Размјештања на Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Пример пројекта",
+      "name": "Примјер пројекта",
       "file": "example-project-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
       "type": "readme"
     },
     {

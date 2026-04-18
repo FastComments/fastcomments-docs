@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteka za Eleventy (11ty)",
+  "name": "Biblioteka Eleventy (11ty)",
   "pageHeader": "Dodajte komentare na vaš Eleventy (11ty) sajt",
   "itemsOrdered": [
+    {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Prikaz uživo",
       "file": "live-showcase-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Shortcode-ovi",
+      "name": "Kratki kodovi",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -35,13 +41,13 @@
     {
       "name": "Ručno korišćenje (bez dodatka)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
-      "subCat": "Upotreba",
+      "subCat": "Korišćenje",
       "type": "readme"
     },
     {
       "name": "Primer projekta",
       "file": "example-project-readme-generated.md",
-      "subCat": "Upotreba",
+      "subCat": "Korišćenje",
       "type": "readme"
     },
     {

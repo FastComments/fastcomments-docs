@@ -1,7 +1,13 @@
 {
   "name": "Next.js-bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan je Next.js-app",
+  "pageHeader": "Voeg reacties toe aan je Next.js-app",
   "itemsOrdered": [
+    {
+      "name": "Live demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Live demonstratie",
       "file": "live-showcase-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Snel aan de slag",
+      "name": "Snelle start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"

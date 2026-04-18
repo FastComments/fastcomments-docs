@@ -1,7 +1,13 @@
 {
   "name": "Библиотека Angular",
-  "pageHeader": "Добавление комментариев в ваше приложение Angular",
+  "pageHeader": "Добавьте комментарии в ваше приложение Angular",
   "itemsOrdered": [
+    {
+      "name": "Живая демонстрация",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Структура проекта",
       "file": "project-structure-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус обслуживания",
+      "name": "Статус поддержки",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

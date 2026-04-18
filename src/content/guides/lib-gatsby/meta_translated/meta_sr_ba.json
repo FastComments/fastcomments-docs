@@ -1,17 +1,23 @@
 {
-  "name": "GatsbyJS библиотека",
-  "pageHeader": "Додај коментаре на свој GatsbyJS сајт",
+  "name": "GatsbyJS biblioteka",
+  "pageHeader": "Dodajte komentare na vaš GatsbyJS sajt",
   "itemsOrdered": [
     {
-      "name": "🚀 Брзи почетак",
-      "file": "quick-start-readme-generated.md",
-      "subCat": "Документација",
+      "name": "Demonstracija uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Примери",
+      "name": "🚀 Brzi početak",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Primjeri",
       "file": "examples-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Korištenje",
       "type": "readme"
     }
   ]

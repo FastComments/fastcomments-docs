@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji Next.js",
   "itemsOrdered": [
     {
+      "name": "Demo na żywo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Prezentacja na żywo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Status konserwacji",
+      "name": "Status utrzymania",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"

@@ -3,7 +3,13 @@
   "pageHeader": "Aggiungi commenti alla tua app Next.js",
   "itemsOrdered": [
     {
-      "name": "Anteprima dal vivo",
+      "name": "Demo dal vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Vetrina dal vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Installazione",
       "file": "install-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Per iniziare",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Deployment su Vercel",
+      "name": "Distribuzioni su Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

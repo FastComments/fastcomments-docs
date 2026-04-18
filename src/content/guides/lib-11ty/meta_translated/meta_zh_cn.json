@@ -3,6 +3,12 @@
   "pageHeader": "向你的 Eleventy（11ty）站点添加评论",
   "itemsOrdered": [
     {
+      "name": "在线演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
       "name": "在线展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文档",
@@ -35,13 +41,13 @@
     {
       "name": "手动使用（不使用插件）",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
       "name": "示例项目",
       "file": "example-project-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {

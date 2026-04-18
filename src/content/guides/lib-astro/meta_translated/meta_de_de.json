@@ -4,6 +4,12 @@
   "itemsOrdered": [
     {
       "name": "Live-Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-Showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

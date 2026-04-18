@@ -1,7 +1,13 @@
 {
   "name": "React 库",
-  "pageHeader": "向你的 React 应用添加评论功能",
+  "pageHeader": "向你的 React 应用添加评论",
   "itemsOrdered": [
+    {
+      "name": "在线演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "在线演示",
+      "name": "实时展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

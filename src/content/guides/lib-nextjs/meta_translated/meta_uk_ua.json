@@ -3,7 +3,13 @@
   "pageHeader": "Додайте коментарі до вашого додатка Next.js",
   "itemsOrdered": [
     {
-      "name": "Онлайн-демонстрація",
+      "name": "Жива демонстрація",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

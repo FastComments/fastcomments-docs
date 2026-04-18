@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca de React",
-  "pageHeader": "Añadir comentarios a tu aplicación React",
+  "pageHeader": "Agregar comentarios a tu aplicación React",
   "itemsOrdered": [
+    {
+      "name": "Demostración en vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Demostración en vivo",
+      "name": "Presentación en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

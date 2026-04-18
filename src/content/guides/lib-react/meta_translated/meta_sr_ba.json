@@ -1,7 +1,13 @@
 {
   "name": "React библиотека",
-  "pageHeader": "Додавање коментара у вашу React апликацију",
+  "pageHeader": "Додајте коментаре у вашу React апликацију",
   "itemsOrdered": [
+    {
+      "name": "Демо уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Демонстрација уживо",
+      "name": "Приказ уживо",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

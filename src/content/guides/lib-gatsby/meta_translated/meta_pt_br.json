@@ -3,6 +3,12 @@
   "pageHeader": "Adicione comentários ao seu site GatsbyJS",
   "itemsOrdered": [
     {
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
       "name": "🚀 Início rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",

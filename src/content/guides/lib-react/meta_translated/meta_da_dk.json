@@ -3,13 +3,19 @@
   "pageHeader": "Tilføj kommentarer til din React-app",
   "itemsOrdered": [
     {
-      "name": "Installation",
-      "file": "installation-readme-generated.md",
-      "subCat": "Kom i gang",
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Live-demo",
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Live-præsentation",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

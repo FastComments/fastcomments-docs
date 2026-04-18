@@ -3,13 +3,19 @@
   "pageHeader": "Добавьте комментарии в ваше приложение React",
   "itemsOrdered": [
     {
+      "name": "Живая демонстрация",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Установка",
       "file": "installation-readme-generated.md",
       "subCat": "Начало работы",
       "type": "readme"
     },
     {
-      "name": "Живая демонстрация",
+      "name": "Демонстрация в реальном времени",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

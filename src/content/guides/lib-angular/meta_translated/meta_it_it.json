@@ -3,6 +3,12 @@
   "pageHeader": "Aggiungi commenti alla tua app Angular",
   "itemsOrdered": [
     {
+      "name": "Demo dal vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Struttura del progetto",
       "file": "project-structure-readme-generated.md",
       "subCat": "Documentazione",

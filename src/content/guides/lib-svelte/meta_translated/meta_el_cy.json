@@ -3,13 +3,19 @@
   "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Svelte σας",
   "itemsOrdered": [
     {
-      "name": "Γρήγορη Εκκίνηση",
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Γραφικά Στοιχεία",
+      "name": "Γραφικά στοιχεία",
       "file": "widgets-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -21,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "Κατασκευή",
+      "name": "Δημιουργία",
       "file": "building-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Κατάσταση Συντήρησης",
+      "name": "Κατάσταση συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

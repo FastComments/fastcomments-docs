@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteka Angular",
-  "pageHeader": "Dodaj komentarze do aplikacji Angular",
+  "name": "Biblioteka Angulara",
+  "pageHeader": "Dodaj komentarze do swojej aplikacji w Angularze",
   "itemsOrdered": [
+    {
+      "name": "Demo na żywo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
     {
       "name": "Struktura projektu",
       "file": "project-structure-readme-generated.md",

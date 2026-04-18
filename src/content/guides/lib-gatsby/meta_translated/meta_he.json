@@ -1,7 +1,13 @@
 {
   "name": "ספריית GatsbyJS",
-  "pageHeader": "הוסף תגובות לאתר ה-GatsbyJS שלך",
+  "pageHeader": "הוספת תגובות לאתר ה-GatsbyJS שלך",
   "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "🚀 התחלה מהירה",
       "file": "quick-start-readme-generated.md",

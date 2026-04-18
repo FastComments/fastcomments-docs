@@ -1,0 +1,1 @@
+Essayez tous les widgets en direct à <https://fastcomments.com/commenting-system-for-11ty>.

@@ -1,0 +1,1 @@
+נסה כל ווידג'ט בשידור חי ב־<https://fastcomments.com/commenting-system-for-astro>.

@@ -3,13 +3,19 @@
   "pageHeader": "Ajouter des commentaires à votre application React",
   "itemsOrdered": [
     {
-      "name": "Installation",
-      "file": "installation-readme-generated.md",
-      "subCat": "Premiers pas",
+      "name": "Démo en direct",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Démonstration en direct",
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prise en main",
+      "type": "readme"
+    },
+    {
+      "name": "Présentation en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "État de maintenance",
+      "name": "Statut de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Svelte 库",
-  "pageHeader": "在你的 Svelte 应用中添加评论",
+  "pageHeader": "向你的 Svelte 应用添加评论功能",
   "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "快速开始",
       "file": "quick-start-readme-generated.md",

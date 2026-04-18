@@ -3,6 +3,12 @@
   "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Angular σας",
   "itemsOrdered": [
     {
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Δομή έργου",
       "file": "project-structure-readme-generated.md",
       "subCat": "Τεκμηρίωση",

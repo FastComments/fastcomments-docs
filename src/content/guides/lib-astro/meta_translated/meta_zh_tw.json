@@ -1,9 +1,15 @@
 {
   "name": "Astro 函式庫",
-  "pageHeader": "在您的 Astro 網站新增留言",
+  "pageHeader": "在你的 Astro 網站新增評論",
   "itemsOrdered": [
     {
-      "name": "即時展示",
+      "name": "線上示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "線上展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "安裝",
       "file": "install-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門",
       "type": "readme"
     },
     {

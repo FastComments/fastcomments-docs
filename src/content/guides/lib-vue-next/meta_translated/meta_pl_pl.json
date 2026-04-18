@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji Vue 3",
   "itemsOrdered": [
     {
+      "name": "Demo na żywo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Prezentacja na żywo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Aktualizacja bieżącej strony (przykład SPA)",
+      "name": "Aktualizowanie bieżącej strony (przykład SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

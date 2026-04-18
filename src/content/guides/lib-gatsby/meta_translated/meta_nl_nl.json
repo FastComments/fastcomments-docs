@@ -3,6 +3,12 @@
   "pageHeader": "Voeg reacties toe aan je GatsbyJS-site",
   "itemsOrdered": [
     {
+      "name": "Live demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
       "name": "🚀 Snel aan de slag",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",

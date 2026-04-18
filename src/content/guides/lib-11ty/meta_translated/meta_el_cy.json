@@ -4,6 +4,12 @@
   "itemsOrdered": [
     {
       "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή παρουσίαση",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Εγκατάσταση",
       "file": "install-readme-generated.md",
-      "subCat": "Εισαγωγή",
+      "subCat": "Πρώτα βήματα",
       "type": "readme"
     },
     {
@@ -21,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "Συντομεύσεις",
+      "name": "Συντομοκώδικες",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Επιλογές προσθέτου",
+      "name": "Επιλογές πρόσθετου",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Διαμόρφωση",
       "type": "readme"

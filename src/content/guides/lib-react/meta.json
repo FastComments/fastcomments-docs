@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your React App",
   "itemsOrdered": [
     {
+      "name": "Live Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Getting Started",

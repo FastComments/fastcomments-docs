@@ -3,6 +3,12 @@
   "pageHeader": "Adicione comentários ao seu aplicativo Svelte",
   "itemsOrdered": [
     {
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
       "name": "Início Rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",

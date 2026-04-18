@@ -4,6 +4,12 @@
   "itemsOrdered": [
     {
       "name": "Démonstration en direct",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Vitrine en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "État de maintenance",
+      "name": "Statut de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

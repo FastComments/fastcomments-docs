@@ -1,9 +1,15 @@
 {
-  "name": "Eleventy (11ty) библиотека",
+  "name": "Библиотека Eleventy (11ty)",
   "pageHeader": "Додајте коментаре на ваш Eleventy (11ty) сајт",
   "itemsOrdered": [
     {
-      "name": "Преглед уживо",
+      "name": "Демонстрација уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Приказ уживо",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Инсталација",
       "file": "install-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Почетак рада",
       "type": "readme"
     },
     {
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "Кратки кодови",
+      "name": "Шорткодови",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Опције плагина",
+      "name": "Опције додатка",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Конфигурација",
       "type": "readme"
     },
     {
-      "name": "Ручна употреба (без плагина)",
+      "name": "Ручна употреба (без додатка)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"

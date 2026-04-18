@@ -1,9 +1,15 @@
 {
-  "name": "Eleventy (11ty) Bibliothek",
-  "pageHeader": "Fügen Sie Kommentare zu Ihrer Eleventy (11ty)-Website hinzu",
+  "name": "Eleventy (11ty)-Bibliothek",
+  "pageHeader": "Kommentare zu Ihrer Eleventy-(11ty)-Website hinzufügen",
   "itemsOrdered": [
     {
       "name": "Live-Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-Präsentation",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Kurzcodes",
+      "name": "Shortcodes",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Manuelle Nutzung (ohne Plugin)",
+      "name": "Manuelle Verwendung (ohne Plugin)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"

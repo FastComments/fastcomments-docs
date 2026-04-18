@@ -1,7 +1,13 @@
 {
   "name": "Svelte 函式庫",
-  "pageHeader": "為你的 Svelte 應用新增留言功能",
+  "pageHeader": "在你的 Svelte 應用中新增評論",
   "itemsOrdered": [
+    {
+      "name": "即時示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "快速開始",
       "file": "quick-start-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "元件",
+      "name": "小工具",
       "file": "widgets-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

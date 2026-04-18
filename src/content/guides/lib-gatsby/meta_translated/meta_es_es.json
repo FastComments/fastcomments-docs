@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca de GatsbyJS",
-  "pageHeader": "Agregar comentarios a tu sitio GatsbyJS",
+  "pageHeader": "Añadir comentarios a tu sitio GatsbyJS",
   "itemsOrdered": [
+    {
+      "name": "Demostración en vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "🚀 Inicio rápido",
       "file": "quick-start-readme-generated.md",

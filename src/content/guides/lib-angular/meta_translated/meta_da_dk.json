@@ -3,6 +3,12 @@
   "pageHeader": "Tilføj kommentarer til din Angular-app",
   "itemsOrdered": [
     {
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Projektstruktur",
       "file": "project-structure-readme-generated.md",
       "subCat": "Dokumentation",

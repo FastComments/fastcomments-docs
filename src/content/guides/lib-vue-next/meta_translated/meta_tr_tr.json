@@ -3,6 +3,12 @@
   "pageHeader": "Vue 3 Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
     {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokümantasyon",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Mevcut Sayfayı Güncelleme (SPA Örneği)",
+      "name": "Mevcut Sayfanın Güncellenmesi (SPA Örneği)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"

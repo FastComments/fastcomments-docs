@@ -3,6 +3,12 @@
   "pageHeader": "Next.js アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "ライブデモ",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "ライブショーケース",
       "file": "live-showcase-readme-generated.md",
       "subCat": "ドキュメント",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Vercel デプロイ",
+      "name": "Vercel へのデプロイ",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -35,7 +41,7 @@
     {
       "name": "サンプルプロジェクト",
       "file": "example-project-readme-generated.md",
-      "subCat": "使い方",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {

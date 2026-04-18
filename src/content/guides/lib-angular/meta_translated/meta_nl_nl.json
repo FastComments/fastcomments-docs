@@ -1,7 +1,13 @@
 {
   "name": "Angular-bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan uw Angular-app",
+  "pageHeader": "Voeg opmerkingen toe aan je Angular-app",
   "itemsOrdered": [
+    {
+      "name": "Live demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Projectstructuur",
       "file": "project-structure-readme-generated.md",

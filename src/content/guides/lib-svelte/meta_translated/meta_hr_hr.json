@@ -1,7 +1,13 @@
 {
-  "name": "Svelte knjižnica",
+  "name": "Svelte biblioteka",
   "pageHeader": "Dodajte komentare u svoju Svelte aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Brzi početak",
       "file": "quick-start-readme-generated.md",

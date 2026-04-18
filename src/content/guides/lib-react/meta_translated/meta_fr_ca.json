@@ -3,13 +3,19 @@
   "pageHeader": "Ajouter des commentaires à votre application React",
   "itemsOrdered": [
     {
+      "name": "Démonstration en direct",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Premiers pas",
       "type": "readme"
     },
     {
-      "name": "Démonstration en direct",
+      "name": "Vitrine en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

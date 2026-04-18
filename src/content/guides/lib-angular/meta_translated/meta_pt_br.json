@@ -3,13 +3,19 @@
   "pageHeader": "Adicione comentários ao seu aplicativo Angular",
   "itemsOrdered": [
     {
-      "name": "Estrutura do projeto",
+      "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Estrutura do Projeto",
       "file": "project-structure-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Status de manutenção",
+      "name": "Status de Manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

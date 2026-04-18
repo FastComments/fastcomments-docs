@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Angular-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "Live-Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Projektstruktur",
       "file": "project-structure-readme-generated.md",
       "subCat": "Dokumentation",

@@ -1,15 +1,21 @@
 {
   "name": "Библиотека за Vue 3",
-  "pageHeader": "Добавяне на коментари към вашето приложение Vue 3",
+  "pageHeader": "Добавете коментари към вашето приложение Vue 3",
   "itemsOrdered": [
     {
-      "name": "Демонстрация на живо",
+      "name": "Демо на живо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живо представяне",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Инсталиране",
+      "name": "Инсталация",
       "file": "installation-readme-generated.md",
       "subCat": "Първи стъпки",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Актуализиране на текущата страница (пример с SPA)",
+      "name": "Актуализиране на текущата страница (пример за SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Използване",
       "type": "readme"

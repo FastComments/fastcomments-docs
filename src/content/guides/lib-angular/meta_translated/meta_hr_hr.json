@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u svoju Angular aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Struktura projekta",
       "file": "project-structure-readme-generated.md",
       "subCat": "Dokumentacija",

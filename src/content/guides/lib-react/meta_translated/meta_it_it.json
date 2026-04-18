@@ -3,13 +3,19 @@
   "pageHeader": "Aggiungi commenti alla tua app React",
   "itemsOrdered": [
     {
+      "name": "Demo dal vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
       "subCat": "Primi passi",
       "type": "readme"
     },
     {
-      "name": "Dimostrazione dal vivo",
+      "name": "Vetrina live",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

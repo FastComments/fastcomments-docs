@@ -3,15 +3,21 @@
   "pageHeader": "Додајте коментаре на ваш GatsbyJS сајт",
   "itemsOrdered": [
     {
+      "name": "Уживо демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
       "name": "🚀 Брзи почетак",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Примери",
+      "name": "Примјери",
       "file": "examples-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     }
   ]

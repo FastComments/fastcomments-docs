@@ -4,6 +4,12 @@
   "itemsOrdered": [
     {
       "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "תצוגה חיה",
       "file": "live-showcase-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "התקנה",
       "file": "install-readme-generated.md",
-      "subCat": "התחלת העבודה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {

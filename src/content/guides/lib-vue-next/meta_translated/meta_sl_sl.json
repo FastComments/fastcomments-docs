@@ -1,7 +1,13 @@
 {
   "name": "Knjižnica Vue 3",
-  "pageHeader": "Dodajte komentarje v svojo Vue 3 aplikacijo",
+  "pageHeader": "Dodajte komentarje v svojo aplikacijo Vue 3",
   "itemsOrdered": [
+    {
+      "name": "Demonstracija v živo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Predstavitev v živo",
       "file": "live-showcase-readme-generated.md",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Posodabljanje trenutne strani (primer SPA)",
+      "name": "Posodabljanje trenutne strani (primer enostranske aplikacije)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Vsi pripomočki in dokumentacija",
+      "name": "Vsi gradniki in dokumentacija",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

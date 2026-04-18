@@ -1,7 +1,13 @@
 {
   "name": "Svelte Kütüphanesi",
-  "pageHeader": "Svelte Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Svelte Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Hızlı Başlangıç",
       "file": "quick-start-readme-generated.md",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Oluşturma",
+      "name": "Derleme",
       "file": "building-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

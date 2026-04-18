@@ -1,7 +1,13 @@
 {
   "name": "GatsbyJS 函式庫",
-  "pageHeader": "在你的 GatsbyJS 網站新增評論",
+  "pageHeader": "在你的 GatsbyJS 網站新增留言",
   "itemsOrdered": [
+    {
+      "name": "線上示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "🚀 快速開始",
       "file": "quick-start-readme-generated.md",

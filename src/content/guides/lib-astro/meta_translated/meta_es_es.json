@@ -1,15 +1,21 @@
 {
   "name": "Biblioteca de Astro",
-  "pageHeader": "Añade comentarios a tu sitio de Astro",
+  "pageHeader": "Añade comentarios a tu sitio Astro",
   "itemsOrdered": [
     {
       "name": "Demostración en vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Presentación en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Instalar",
+      "name": "Instalación",
       "file": "install-readme-generated.md",
       "subCat": "Primeros pasos",
       "type": "readme"

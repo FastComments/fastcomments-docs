@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej witryny Eleventy (11ty)",
   "itemsOrdered": [
     {
+      "name": "Demo na żywo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Prezentacja na żywo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacja",

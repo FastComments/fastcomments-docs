@@ -1,7 +1,13 @@
 {
   "name": "Angular 函式庫",
-  "pageHeader": "在您的 Angular 應用中新增註解",
+  "pageHeader": "為你的 Angular 應用新增留言功能",
   "itemsOrdered": [
+    {
+      "name": "即時示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "專案結構",
       "file": "project-structure-readme-generated.md",

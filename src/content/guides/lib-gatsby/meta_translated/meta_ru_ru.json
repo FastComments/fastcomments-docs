@@ -1,7 +1,13 @@
 {
   "name": "Библиотека GatsbyJS",
-  "pageHeader": "Добавьте комментарии на ваш сайт GatsbyJS",
+  "pageHeader": "Добавьте комментарии на свой сайт GatsbyJS",
   "itemsOrdered": [
+    {
+      "name": "Онлайн-демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "🚀 Быстрый старт",
       "file": "quick-start-readme-generated.md",

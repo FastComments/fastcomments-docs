@@ -1,0 +1,1 @@
+Спробуйте кожен віджет наживо на <https://fastcomments.com/commenting-system-for-astro>.

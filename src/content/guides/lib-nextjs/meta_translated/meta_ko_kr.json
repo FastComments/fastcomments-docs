@@ -3,6 +3,12 @@
   "pageHeader": "Next.js 앱에 댓글 추가하기",
   "itemsOrdered": [
     {
+      "name": "라이브 데모",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "라이브 쇼케이스",
       "file": "live-showcase-readme-generated.md",
       "subCat": "문서",
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "유지 관리 상태",
+      "name": "유지관리 상태",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

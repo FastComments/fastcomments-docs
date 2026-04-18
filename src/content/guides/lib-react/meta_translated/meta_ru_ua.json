@@ -3,13 +3,19 @@
   "pageHeader": "Добавьте комментарии в ваше React-приложение",
   "itemsOrdered": [
     {
+      "name": "Онлайн-демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Установка",
       "file": "installation-readme-generated.md",
       "subCat": "Начало работы",
       "type": "readme"
     },
     {
-      "name": "Онлайн-демонстрация",
+      "name": "Живая демонстрация",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

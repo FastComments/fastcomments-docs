@@ -1,9 +1,15 @@
 {
   "name": "ספריית Eleventy (11ty)",
-  "pageHeader": "הוסף תגובות לאתר Eleventy (11ty) שלך",
+  "pageHeader": "הוספת תגובות לאתר Eleventy (11ty) שלך",
   "itemsOrdered": [
     {
       "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "תצוגה חיה",
       "file": "live-showcase-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "התקנה",
       "file": "install-readme-generated.md",
-      "subCat": "התחלת עבודה",
+      "subCat": "התחלה מהירה",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "שורטקודים",
+      "name": "קיצורי קוד",
       "file": "shortcodes-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

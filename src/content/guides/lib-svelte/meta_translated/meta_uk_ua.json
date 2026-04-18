@@ -1,7 +1,13 @@
 {
   "name": "Бібліотека Svelte",
-  "pageHeader": "Додайте коментарі до вашого застосунку Svelte",
+  "pageHeader": "Додайте коментарі до вашого додатка Svelte",
   "itemsOrdered": [
+    {
+      "name": "Жива демонстрація",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Швидкий старт",
       "file": "quick-start-readme-generated.md",

@@ -1,0 +1,1 @@
+נסה את כל הווידג'טים באופן חי ב־<https://fastcomments.com/commenting-system-for-vue>.

@@ -1,7 +1,13 @@
 {
-  "name": "React knjižnica",
+  "name": "React biblioteka",
   "pageHeader": "Dodajte komentare u svoju React aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Demonstracija uživo",
+      "name": "Prikaz uživo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -1,0 +1,1 @@
+Спробуйте кожен віджет онлайн на <https://fastcomments.com/commenting-system-for-nextjs>.

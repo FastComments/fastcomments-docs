@@ -3,7 +3,13 @@
   "pageHeader": "Добавяне на коментари към вашия сайт Eleventy (11ty)",
   "itemsOrdered": [
     {
-      "name": "Демонстрация на живо",
+      "name": "Демо на живо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живо представяне",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -27,21 +33,21 @@
       "type": "readme"
     },
     {
-      "name": "Настройки на плъгина",
+      "name": "Опции на плъгина",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Конфигурация",
       "type": "readme"
     },
     {
-      "name": "Ръчна употреба (без плъгина)",
+      "name": "Ръчно използване (без плъгин)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Използване",
       "type": "readme"
     },
     {
       "name": "Примерен проект",
       "file": "example-project-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Използване",
       "type": "readme"
     },
     {

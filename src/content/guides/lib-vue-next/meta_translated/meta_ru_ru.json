@@ -1,9 +1,15 @@
 {
   "name": "Библиотека Vue 3",
-  "pageHeader": "Добавьте комментарии в ваше приложение на Vue 3",
+  "pageHeader": "Добавьте комментарии в ваше приложение Vue 3",
   "itemsOrdered": [
     {
       "name": "Живая демонстрация",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Показ в реальном времени",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "В производственной среде",
+      "name": "В рабочей среде",
       "file": "in-production-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус поддержки",
+      "name": "Статус обслуживания",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Next.js Kütüphanesi",
-  "pageHeader": "Next.js Uygulamanıza Yorum Ekle",
+  "pageHeader": "Next.js Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",

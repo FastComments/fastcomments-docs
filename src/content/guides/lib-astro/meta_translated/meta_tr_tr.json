@@ -3,9 +3,15 @@
   "pageHeader": "Astro Sitenize Yorum Ekleyin",
   "itemsOrdered": [
     {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
+    {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",
-      "subCat": "Dokümantasyon",
+      "subCat": "Belgeler",
       "type": "readme"
     },
     {
@@ -17,13 +23,13 @@
     {
       "name": "Hızlı Başlangıç",
       "file": "quick-start-readme-generated.md",
-      "subCat": "Dokümantasyon",
+      "subCat": "Belgeler",
       "type": "readme"
     },
     {
       "name": "Bileşenler",
       "file": "components-readme-generated.md",
-      "subCat": "Dokümantasyon",
+      "subCat": "Belgeler",
       "type": "readme"
     },
     {
@@ -35,13 +41,13 @@
     {
       "name": "Bağlantılar",
       "file": "links-readme-generated.md",
-      "subCat": "Dokümantasyon",
+      "subCat": "Belgeler",
       "type": "readme"
     },
     {
       "name": "Bakım Durumu",
       "file": "maintenance-status-readme-generated.md",
-      "subCat": "Dokümantasyon",
+      "subCat": "Belgeler",
       "type": "readme"
     }
   ]

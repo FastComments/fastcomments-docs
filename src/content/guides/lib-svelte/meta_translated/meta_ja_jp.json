@@ -3,6 +3,12 @@
   "pageHeader": "Svelte アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "ライブデモ",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "クイックスタート",
       "file": "quick-start-readme-generated.md",
       "subCat": "ドキュメント",

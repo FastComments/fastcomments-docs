@@ -3,13 +3,19 @@
   "pageHeader": "Dodajte komentare u vašu Svelte aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Brzi početak",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Vidžeti",
+      "name": "Widgeti",
       "file": "widgets-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "ספריית Angular",
-  "pageHeader": "הוספת הערות לאפליקציית Angular שלך",
+  "pageHeader": "הוסף תגובות לאפליקציית Angular שלך",
   "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "מבנה הפרויקט",
       "file": "project-structure-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "מצב התחזוקה",
+      "name": "מצב תחזוקה",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

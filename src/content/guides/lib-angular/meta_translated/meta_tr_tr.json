@@ -1,7 +1,13 @@
 {
   "name": "Angular Kütüphanesi",
-  "pageHeader": "Angular Uygulamanıza Yorum Ekleyin",
+  "pageHeader": "Angular Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Proje Yapısı",
       "file": "project-structure-readme-generated.md",

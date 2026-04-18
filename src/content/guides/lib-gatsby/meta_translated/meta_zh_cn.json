@@ -1,7 +1,13 @@
 {
   "name": "GatsbyJS 库",
-  "pageHeader": "向你的 GatsbyJS 站点添加评论",
+  "pageHeader": "向您的 GatsbyJS 站点添加评论",
   "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "🚀 快速开始",
       "file": "quick-start-readme-generated.md",

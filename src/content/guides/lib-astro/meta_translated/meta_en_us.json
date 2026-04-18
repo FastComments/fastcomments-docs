@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your Astro Site",
   "itemsOrdered": [
     {
+      "name": "Live Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Live Showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",

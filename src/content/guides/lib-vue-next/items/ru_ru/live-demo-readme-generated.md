@@ -1,0 +1,1 @@
+Попробуйте все виджеты вживую на <https://fastcomments.com/commenting-system-for-vue>.

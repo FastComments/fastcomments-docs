@@ -3,13 +3,19 @@
   "pageHeader": "הוספת תגובות לאפליקציית React שלך",
   "itemsOrdered": [
     {
-      "name": "התקנה",
-      "file": "installation-readme-generated.md",
-      "subCat": "התחלה",
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "הדגמה חיה",
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה מהירה",
+      "type": "readme"
+    },
+    {
+      "name": "תצוגה חיה",
       "file": "live-showcase-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

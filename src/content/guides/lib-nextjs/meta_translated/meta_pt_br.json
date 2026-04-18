@@ -4,6 +4,12 @@
   "itemsOrdered": [
     {
       "name": "Demonstração ao vivo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Apresentação ao vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Implantações na Vercel",
+      "name": "Implantações no Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

@@ -3,13 +3,19 @@
   "pageHeader": "Додајте коментаре у вашу React апликацију",
   "itemsOrdered": [
     {
-      "name": "Инсталација",
-      "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "name": "Уживо демо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Презентација уживо",
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Како почети",
+      "type": "readme"
+    },
+    {
+      "name": "Уживо приказ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -17,13 +23,13 @@
     {
       "name": "Примери",
       "file": "examples-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
       "type": "readme"
     },
     {
-      "name": "Употреба",
+      "name": "Коришћење",
       "file": "usage-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Коришћење",
       "type": "readme"
     },
     {

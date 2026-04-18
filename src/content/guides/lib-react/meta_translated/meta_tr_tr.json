@@ -1,7 +1,13 @@
 {
   "name": "React Kütüphanesi",
-  "pageHeader": "React Uygulamanıza Yorum Ekleme",
+  "pageHeader": "React Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Canlı Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Belgeler",
+      "type": "readme"
+    },
     {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",

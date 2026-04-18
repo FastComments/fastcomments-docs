@@ -1,7 +1,13 @@
 {
   "name": "GatsbyJS 라이브러리",
-  "pageHeader": "GatsbyJS 사이트에 댓글 추가하기",
+  "pageHeader": "GatsbyJS 사이트에 댓글 추가",
   "itemsOrdered": [
+    {
+      "name": "라이브 데모",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
     {
       "name": "🚀 빠른 시작",
       "file": "quick-start-readme-generated.md",

@@ -1,9 +1,15 @@
 {
-  "name": "Библиотека Vue 3",
-  "pageHeader": "Додавање коментара у вашу Vue 3 апликацију",
+  "name": "Vue 3 библиотека",
+  "pageHeader": "Додајте коментаре у вашу Vue 3 апликацију",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "Демо уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Приказ уживо",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Како почети",
+      "subCat": "Почетак",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Сви видгети и документација",
+      "name": "Сви виџети и документација",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

@@ -3,6 +3,12 @@
   "pageHeader": "Angular アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "ライブデモ",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "プロジェクト構成",
       "file": "project-structure-readme-generated.md",
       "subCat": "ドキュメント",

@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u vašu Vue 3 aplikaciju",
   "itemsOrdered": [
     {
+      "name": "Demo uživo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Prikaz uživo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",

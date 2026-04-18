@@ -3,13 +3,19 @@
   "pageHeader": "Tilføj kommentarer til din Next.js-app",
   "itemsOrdered": [
     {
-      "name": "Live-fremvisning",
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-præsentation",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Installér",
+      "name": "Installer",
       "file": "install-readme-generated.md",
       "subCat": "Kom godt i gang",
       "type": "readme"

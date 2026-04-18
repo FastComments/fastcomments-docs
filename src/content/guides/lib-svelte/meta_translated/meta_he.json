@@ -3,6 +3,12 @@
   "pageHeader": "הוסף תגובות לאפליקציית Svelte שלך",
   "itemsOrdered": [
     {
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
       "name": "התחלה מהירה",
       "file": "quick-start-readme-generated.md",
       "subCat": "תיעוד",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "מצב תחזוקה",
+      "name": "סטטוס תחזוקה",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

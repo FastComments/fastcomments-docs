@@ -3,6 +3,12 @@
   "pageHeader": "Vue 3 アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "ライブデモ",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "ライブショーケース",
       "file": "live-showcase-readme-generated.md",
       "subCat": "ドキュメント",
@@ -15,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "使用方法",
+      "name": "使い方",
       "file": "usage-readme-generated.md",
-      "subCat": "使用方法",
+      "subCat": "使い方",
       "type": "readme"
     },
     {
-      "name": "現在のページを更新する（SPAの例）",
+      "name": "現在のページを更新する（SPA の例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "使用方法",
+      "subCat": "使い方",
       "type": "readme"
     },
     {
-      "name": "本番環境で",
+      "name": "本番環境での運用",
       "file": "in-production-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

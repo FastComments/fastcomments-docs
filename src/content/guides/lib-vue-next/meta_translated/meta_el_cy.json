@@ -3,7 +3,13 @@
   "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Vue 3 σας",
   "itemsOrdered": [
     {
-      "name": "Ζωντανή Επίδειξη",
+      "name": "Ζωντανή επίδειξη",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή παρουσίαση",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -27,19 +33,19 @@
       "type": "readme"
     },
     {
-      "name": "Σε Παραγωγή",
+      "name": "Σε παραγωγή",
       "file": "in-production-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Όλα τα Widgets και η Τεκμηρίωση",
+      "name": "Όλα τα widgets και η τεκμηρίωση",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Κατάσταση Συντήρησης",
+      "name": "Κατάσταση συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

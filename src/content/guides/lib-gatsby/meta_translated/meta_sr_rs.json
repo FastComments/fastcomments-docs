@@ -1,7 +1,13 @@
 {
   "name": "GatsbyJS библиотека",
-  "pageHeader": "Додајте коментаре на вашем GatsbyJS сајту",
+  "pageHeader": "Додајте коментаре на ваш GatsbyJS сајт",
   "itemsOrdered": [
+    {
+      "name": "Демо уживо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
     {
       "name": "🚀 Брзи почетак",
       "file": "quick-start-readme-generated.md",

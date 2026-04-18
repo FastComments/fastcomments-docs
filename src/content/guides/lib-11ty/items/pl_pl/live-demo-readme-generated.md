@@ -1,0 +1,1 @@
+Wypróbuj każdy widżet na żywo na <https://fastcomments.com/commenting-system-for-11ty>.

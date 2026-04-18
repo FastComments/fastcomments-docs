@@ -3,6 +3,12 @@
   "pageHeader": "Добавяне на коментари към вашето Angular приложение",
   "itemsOrdered": [
     {
+      "name": "Демонстрация на живо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Структура на проекта",
       "file": "project-structure-readme-generated.md",
       "subCat": "Документация",

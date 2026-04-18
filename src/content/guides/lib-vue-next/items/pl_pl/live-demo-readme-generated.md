@@ -1,0 +1,1 @@
+Wypróbuj każdy widżet na żywo pod adresem <https://fastcomments.com/commenting-system-for-vue>.
