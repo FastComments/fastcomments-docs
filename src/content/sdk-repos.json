@@ -290,6 +290,16 @@
       "description": "A working example showing how to add FastComments to a GatsbyJS site."
     },
     {
+      "id": "lib-nextjs",
+      "name": "Next.js Library",
+      "pageHeader": "Add Comments to Your Next.js App",
+      "repo": "https://github.com/FastComments/fastcomments-nextjs",
+      "branch": "main",
+      "language": "javascript",
+      "docGenerators": ["readme"],
+      "description": "Embed live commenting, chat, and review widgets in your Next.js app."
+    },
+    {
       "id": "lib-laravel",
       "name": "Laravel Package",
       "pageHeader": "Add Comments to Your Laravel App",
