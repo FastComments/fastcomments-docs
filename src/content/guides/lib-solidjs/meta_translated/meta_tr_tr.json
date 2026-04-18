@@ -1,0 +1,42 @@
+{
+  "name": "SolidJS Kütüphanesi",
+  "pageHeader": "SolidJS Uygulamanıza Yorum Ekleyin",
+  "itemsOrdered": [
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
+      "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Kullanım",
+      "file": "usage-readme-generated.md",
+      "subCat": "Kullanım",
+      "type": "readme"
+    },
+    {
+      "name": "Yapılandırma değişikliklerine tepki verme (imperatif handle)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Yapılandırma",
+      "type": "readme"
+    },
+    {
+      "name": "Bileşenler",
+      "file": "components-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Örnekler",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Derleme",
+      "file": "build-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    }
+  ]
+}

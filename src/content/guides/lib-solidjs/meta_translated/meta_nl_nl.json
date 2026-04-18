@@ -1,0 +1,42 @@
+{
+  "name": "SolidJS-bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan je SolidJS-app",
+  "itemsOrdered": [
+    {
+      "name": "Installeren",
+      "file": "install-readme-generated.md",
+      "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Gebruik",
+      "file": "usage-readme-generated.md",
+      "subCat": "Gebruik",
+      "type": "readme"
+    },
+    {
+      "name": "Reageren op configuratiewijzigingen (imperatieve handle)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Componenten",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Voorbeelden",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Bouwen",
+      "file": "build-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    }
+  ]
+}

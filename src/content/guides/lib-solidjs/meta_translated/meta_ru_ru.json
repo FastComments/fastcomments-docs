@@ -1,0 +1,42 @@
+{
+  "name": "Библиотека SolidJS",
+  "pageHeader": "Добавление комментариев в ваше приложение на SolidJS",
+  "itemsOrdered": [
+    {
+      "name": "Установка",
+      "file": "install-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Использование",
+      "file": "usage-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Реагирование на изменения конфигурации (императивный обработчик)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Компоненты",
+      "file": "components-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Демонстрация",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Сборка",
+      "file": "build-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    }
+  ]
+}

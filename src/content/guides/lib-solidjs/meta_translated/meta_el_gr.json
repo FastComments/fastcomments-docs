@@ -1,0 +1,42 @@
+{
+  "name": "Βιβλιοθήκη SolidJS",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή SolidJS σας",
+  "itemsOrdered": [
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Χρήση",
+      "file": "usage-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Αντιδρώντας σε αλλαγές διαμόρφωσης (απευθείας χειρισμός)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Διαμόρφωση",
+      "type": "readme"
+    },
+    {
+      "name": "Συστατικά",
+      "file": "components-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Επίδειξη",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Κατασκευή",
+      "file": "build-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    }
+  ]
+}

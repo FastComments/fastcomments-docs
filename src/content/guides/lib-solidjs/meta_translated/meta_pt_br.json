@@ -1,0 +1,42 @@
+{
+  "name": "Biblioteca SolidJS",
+  "pageHeader": "Adicione comentários ao seu app SolidJS",
+  "itemsOrdered": [
+    {
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Uso",
+      "file": "usage-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Reagindo a alterações de configuração (manipulador imperativo)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Configuração",
+      "type": "readme"
+    },
+    {
+      "name": "Componentes",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Demonstração",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Compilação",
+      "file": "build-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    }
+  ]
+}
