@@ -1,15 +1,15 @@
 {
   "name": "Βιβλιοθήκη Next.js",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Next.js σας",
+  "pageHeader": "Προσθέστε Σχόλια στην Εφαρμογή Next.js σας",
   "itemsOrdered": [
     {
-      "name": "Ζωντανή επίδειξη",
+      "name": "Ζωντανή Επίδειξη",
       "file": "live-demo-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Ζωντανή παρουσίαση",
+      "name": "Ζωντανή Παρουσίαση",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -17,11 +17,17 @@
     {
       "name": "Εγκατάσταση",
       "file": "install-readme-generated.md",
-      "subCat": "Πρώτα βήματα",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
-      "name": "Γρήγορη εκκίνηση",
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη Εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Αναπτύξεις στο Vercel",
+      "name": "Αναπτύξεις Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Παραδειγματικό έργο",
+      "name": "Παράδειγμα Έργου",
       "file": "example-project-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Κατάσταση συντήρησης",
+      "name": "Κατάσταση Συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

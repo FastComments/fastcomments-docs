@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Live-Präsentation",
+      "name": "Live-Showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -18,6 +18,12 @@
       "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Voraussetzungen",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {

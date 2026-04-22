@@ -1,6 +1,6 @@
 {
   "name": "Next.js 函式庫",
-  "pageHeader": "在你的 Next.js 應用中加入評論",
+  "pageHeader": "在你的 Next.js 應用中新增評論",
   "itemsOrdered": [
     {
       "name": "即時示範",
@@ -17,7 +17,13 @@
     {
       "name": "安裝",
       "file": "install-readme-generated.md",
-      "subCat": "快速上手",
+      "subCat": "入門",
+      "type": "readme"
+    },
+    {
+      "name": "需求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文件",
       "type": "readme"
     },
     {
@@ -41,7 +47,7 @@
     {
       "name": "範例專案",
       "file": "example-project-readme-generated.md",
-      "subCat": "使用方式",
+      "subCat": "使用",
       "type": "readme"
     },
     {

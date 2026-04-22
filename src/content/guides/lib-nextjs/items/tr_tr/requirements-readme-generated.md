@@ -1,0 +1,4 @@
+---
+- Next.js 13, 14, 15, veya 16
+- React 18 veya 19
+---

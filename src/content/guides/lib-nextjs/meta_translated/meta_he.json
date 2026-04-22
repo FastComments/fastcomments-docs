@@ -1,6 +1,6 @@
 {
   "name": "ספריית Next.js",
-  "pageHeader": "הוספת תגובות לאפליקציית Next.js שלך",
+  "pageHeader": "הוסף תגובות לאפליקציית Next.js שלך",
   "itemsOrdered": [
     {
       "name": "הדגמה חיה",
@@ -18,6 +18,12 @@
       "name": "התקנה",
       "file": "install-readme-generated.md",
       "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
       "type": "readme"
     },
     {

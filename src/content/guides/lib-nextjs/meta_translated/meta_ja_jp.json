@@ -21,6 +21,12 @@
       "type": "readme"
     },
     {
+      "name": "要件",
+      "file": "requirements-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "クイックスタート",
       "file": "quick-start-readme-generated.md",
       "subCat": "ドキュメント",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Vercel へのデプロイ",
+      "name": "Vercel デプロイ",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

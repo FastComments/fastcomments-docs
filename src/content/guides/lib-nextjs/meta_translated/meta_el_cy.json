@@ -21,6 +21,12 @@
       "type": "readme"
     },
     {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Γρήγορη εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",

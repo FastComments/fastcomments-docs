@@ -1,6 +1,6 @@
 {
   "name": "Бібліотека Next.js",
-  "pageHeader": "Додайте коментарі до вашого додатка Next.js",
+  "pageHeader": "Додайте коментарі до вашого застосунку Next.js",
   "itemsOrdered": [
     {
       "name": "Жива демонстрація",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Живий показ",
+      "name": "Жива презентація",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -18,6 +18,12 @@
       "name": "Встановлення",
       "file": "install-readme-generated.md",
       "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус обслуговування",
+      "name": "Статус підтримки",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

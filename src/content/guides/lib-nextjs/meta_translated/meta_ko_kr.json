@@ -1,6 +1,6 @@
 {
   "name": "Next.js 라이브러리",
-  "pageHeader": "Next.js 앱에 댓글 추가하기",
+  "pageHeader": "Next.js 앱에 댓글 추가",
   "itemsOrdered": [
     {
       "name": "라이브 데모",
@@ -18,6 +18,12 @@
       "name": "설치",
       "file": "install-readme-generated.md",
       "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "요구 사항",
+      "file": "requirements-readme-generated.md",
+      "subCat": "문서",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "유지관리 상태",
+      "name": "유지 관리 상태",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
