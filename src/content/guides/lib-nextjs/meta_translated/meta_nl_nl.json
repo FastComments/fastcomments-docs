@@ -1,6 +1,6 @@
 {
   "name": "Next.js-bibliotheek",
-  "pageHeader": "Voeg reacties toe aan je Next.js-app",
+  "pageHeader": "Voeg opmerkingen toe aan je Next.js-app",
   "itemsOrdered": [
     {
       "name": "Live demo",
@@ -15,9 +15,15 @@
       "type": "readme"
     },
     {
-      "name": "Installeren",
+      "name": "Installatie",
       "file": "install-readme-generated.md",
       "subCat": "Aan de slag",
+      "type": "readme"
+    },
+    {
+      "name": "Vereisten",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentatie",
       "type": "readme"
     },
     {

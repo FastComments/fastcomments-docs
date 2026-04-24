@@ -1,5 +1,5 @@
 {
-  "name": "Biblioteca Next.js",
+  "name": "Biblioteca de Next.js",
   "pageHeader": "Añadir comentarios a tu aplicación Next.js",
   "itemsOrdered": [
     {
@@ -18,6 +18,12 @@
       "name": "Instalación",
       "file": "install-readme-generated.md",
       "subCat": "Primeros pasos",
+      "type": "readme"
+    },
+    {
+      "name": "Requisitos",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentación",
       "type": "readme"
     },
     {

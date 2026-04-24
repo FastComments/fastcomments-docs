@@ -1,6 +1,6 @@
 {
   "name": "Библиотека Next.js",
-  "pageHeader": "Добавьте комментарии в ваше приложение Next.js",
+  "pageHeader": "Добавление комментариев в ваше приложение Next.js",
   "itemsOrdered": [
     {
       "name": "Онлайн-демо",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Живая демонстрация",
+      "name": "Живой показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -18,6 +18,12 @@
       "name": "Установка",
       "file": "install-readme-generated.md",
       "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Развёртывания на Vercel",
+      "name": "Развёртывание на Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус обслуживания",
+      "name": "Статус поддержки",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -1,0 +1,48 @@
+{
+  "name": "ספריית SolidJS",
+  "pageHeader": "הוסף תגובות לאפליקציית SolidJS שלך",
+  "itemsOrdered": [
+    {
+      "name": "הדגמה חיה",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "install-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "שימוש",
+      "file": "usage-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "תגובה לשינויים בתצורה (טיפול אימפרטיבי)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "תצורה",
+      "type": "readme"
+    },
+    {
+      "name": "רכיבים",
+      "file": "components-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "הצגה",
+      "file": "showcase-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "בנייה",
+      "file": "build-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    }
+  ]
+}

@@ -9,15 +9,21 @@
       "type": "readme"
     },
     {
-      "name": "Live-præsentation",
+      "name": "Live-showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Installer",
+      "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Krav",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {

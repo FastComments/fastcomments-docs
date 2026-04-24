@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Présentation en direct",
+      "name": "Vitrine en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -18,6 +18,12 @@
       "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Premiers pas",
+      "type": "readme"
+    },
+    {
+      "name": "Prérequis",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "État de maintenance",
+      "name": "Statut de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

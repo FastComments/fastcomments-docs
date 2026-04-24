@@ -1,0 +1,48 @@
+{
+  "name": "SolidJS Library",
+  "pageHeader": "Add Comments to Your SolidJS App",
+  "itemsOrdered": [
+    {
+      "name": "Live Demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Install",
+      "file": "install-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Usage",
+      "file": "usage-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Reacting to config changes (imperative handle)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Components",
+      "file": "components-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Showcase",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Build",
+      "file": "build-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    }
+  ]
+}

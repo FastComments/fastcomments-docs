@@ -1,0 +1,48 @@
+{
+  "name": "SolidJS ライブラリ",
+  "pageHeader": "SolidJS アプリにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "ライブデモ",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "install-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "使用方法",
+      "file": "usage-readme-generated.md",
+      "subCat": "使用方法",
+      "type": "readme"
+    },
+    {
+      "name": "設定変更への反応（命令的ハンドル）",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "コンポーネント",
+      "file": "components-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ショーケース",
+      "file": "showcase-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ビルド",
+      "file": "build-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    }
+  ]
+}

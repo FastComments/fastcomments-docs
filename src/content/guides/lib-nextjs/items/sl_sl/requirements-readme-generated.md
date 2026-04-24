@@ -1,0 +1,2 @@
+- Next.js 13, 14, 15 ali 16
+- React 18 ali 19

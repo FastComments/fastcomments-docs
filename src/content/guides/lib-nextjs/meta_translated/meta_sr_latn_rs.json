@@ -17,7 +17,13 @@
     {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Početak rada",
+      "type": "readme"
+    },
+    {
+      "name": "Zahtevi",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Postavljanje na Vercel",
+      "name": "Raspoređivanja na Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

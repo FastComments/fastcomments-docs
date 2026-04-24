@@ -21,6 +21,12 @@
       "type": "readme"
     },
     {
+      "name": "Requisitos",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
       "name": "Início rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",

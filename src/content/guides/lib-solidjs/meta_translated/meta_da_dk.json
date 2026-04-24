@@ -1,0 +1,48 @@
+{
+  "name": "SolidJS-bibliotek",
+  "pageHeader": "Tilføj kommentarer til din SolidJS-app",
+  "itemsOrdered": [
+    {
+      "name": "Live-demo",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installér",
+      "file": "install-readme-generated.md",
+      "subCat": "Kom godt i gang",
+      "type": "readme"
+    },
+    {
+      "name": "Brug",
+      "file": "usage-readme-generated.md",
+      "subCat": "Brug",
+      "type": "readme"
+    },
+    {
+      "name": "Reager på konfigurationsændringer (imperativ håndtering)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Komponenter",
+      "file": "components-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Præsentation",
+      "file": "showcase-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Byg",
+      "file": "build-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    }
+  ]
+}

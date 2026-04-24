@@ -1,0 +1,48 @@
+{
+  "name": "SolidJS 库",
+  "pageHeader": "向您的 SolidJS 应用添加评论",
+  "itemsOrdered": [
+    {
+      "name": "实时演示",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "install-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
+      "name": "用法",
+      "file": "usage-readme-generated.md",
+      "subCat": "用法",
+      "type": "readme"
+    },
+    {
+      "name": "响应配置更改（命令式句柄）",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "配置",
+      "type": "readme"
+    },
+    {
+      "name": "组件",
+      "file": "components-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "展示",
+      "file": "showcase-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "构建",
+      "file": "build-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    }
+  ]
+}

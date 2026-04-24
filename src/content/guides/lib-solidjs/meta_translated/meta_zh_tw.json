@@ -1,0 +1,48 @@
+{
+  "name": "SolidJS 函式庫",
+  "pageHeader": "在你的 SolidJS 應用中新增評論",
+  "itemsOrdered": [
+    {
+      "name": "即時示範",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "install-readme-generated.md",
+      "subCat": "快速開始",
+      "type": "readme"
+    },
+    {
+      "name": "使用",
+      "file": "usage-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "回應設定變更（命令式處理）",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "元件",
+      "file": "components-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "展示",
+      "file": "showcase-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "建置",
+      "file": "build-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    }
+  ]
+}

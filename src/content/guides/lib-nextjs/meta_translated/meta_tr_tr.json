@@ -1,6 +1,6 @@
 {
   "name": "Next.js Kütüphanesi",
-  "pageHeader": "Next.js Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Next.js Uygulamanıza Yorum Ekleme",
   "itemsOrdered": [
     {
       "name": "Canlı Demo",
@@ -18,6 +18,12 @@
       "name": "Kurulum",
       "file": "install-readme-generated.md",
       "subCat": "Başlarken",
+      "type": "readme"
+    },
+    {
+      "name": "Gereksinimler",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {

@@ -1,15 +1,15 @@
 {
-  "name": "Next.js biblioteka",
-  "pageHeader": "Dodajte komentare u svoju Next.js aplikaciju",
+  "name": "Next.js knjižnica",
+  "pageHeader": "Dodajte komentare u vašu Next.js aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Demo uživo",
+      "name": "Demonstracija uživo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Prikaz uživo",
+      "name": "Prezentacija uživo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -18,6 +18,12 @@
       "name": "Instalacija",
       "file": "install-readme-generated.md",
       "subCat": "Početak rada",
+      "type": "readme"
+    },
+    {
+      "name": "Zahtjevi",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Vercel implementacije",
+      "name": "Postavljanje na Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

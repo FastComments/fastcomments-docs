@@ -17,7 +17,13 @@
     {
       "name": "Installazione",
       "file": "install-readme-generated.md",
-      "subCat": "Per iniziare",
+      "subCat": "Primi passi",
+      "type": "readme"
+    },
+    {
+      "name": "Requisiti",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentazione",
       "type": "readme"
     },
     {

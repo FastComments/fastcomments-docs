@@ -1,6 +1,6 @@
 {
   "name": "Bibliothèque Next.js",
-  "pageHeader": "Ajoutez des commentaires à votre application Next.js",
+  "pageHeader": "Ajouter des commentaires à votre application Next.js",
   "itemsOrdered": [
     {
       "name": "Démo en direct",
@@ -17,7 +17,13 @@
     {
       "name": "Installation",
       "file": "install-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
+      "type": "readme"
+    },
+    {
+      "name": "Prérequis",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
       "type": "readme"
     },
     {
