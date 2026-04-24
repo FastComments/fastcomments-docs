@@ -1,5 +1,0 @@
----
-- Drupal 10 veya 11
-- PHP 8.1+
-- Bir [FastComments](https://fastcomments.com) hesabı
----

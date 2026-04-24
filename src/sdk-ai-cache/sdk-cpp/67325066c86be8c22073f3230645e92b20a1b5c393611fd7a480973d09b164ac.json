@@ -1,0 +1,9 @@
+{
+  "method": "getTicket",
+  "signatureHash": "67325066c86be8c22073f3230645e92b20a1b5c393611fd7a480973d09b164ac",
+  "generatedAt": "2026-04-24T23:23:11.301Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t ticketId = U(\"ticket-456\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getTicket(tenantId, ticketId, userId)\n.then([](pplx::task<std::shared_ptr<GetTicket_200_response>> t) {\n    try {\n        auto resp = t.get();\n        auto wrapped = std::make_shared<std::shared_ptr<GetTicket_200_response>>(resp);\n        if (*wrapped) {\n            std::cout << \"Ticket retrieved\\n\";\n        } else {\n            std::cout << \"No ticket\\n\";\n        }\n    } catch (const std::exception &e) {\n        std::cerr << \"Error: \" << e.what() << '\\n';\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 341,
+  "completionTokens": 1921
+}

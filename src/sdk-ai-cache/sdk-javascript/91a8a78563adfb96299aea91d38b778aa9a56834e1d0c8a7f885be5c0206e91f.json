@@ -1,0 +1,9 @@
+{
+  "method": "createTenant",
+  "signatureHash": "91a8a78563adfb96299aea91d38b778aa9a56834e1d0c8a7f885be5c0206e91f",
+  "generatedAt": "2026-04-24T23:23:37.458Z",
+  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst createTenantBody: CreateTenantBody = {\n  name: 'Acme Corporation',\n  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,\n  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo\n  // optional fields like ssoConfig or customConfig are intentionally omitted\n} as CreateTenantBody;\n\nconst result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 1412
+}

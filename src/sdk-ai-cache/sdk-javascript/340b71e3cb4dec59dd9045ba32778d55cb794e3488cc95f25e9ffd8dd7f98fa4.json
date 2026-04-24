@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "340b71e3cb4dec59dd9045ba32778d55cb794e3488cc95f25e9ffd8dd7f98fa4",
+  "generatedAt": "2026-04-24T23:23:51.336Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_8f3a2b4c9d01\";\n  const packageId: string = \"pkg_2026-04-security-patch\";\n  const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 848
+}

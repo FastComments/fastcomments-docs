@@ -1,3 +1,0 @@
-- **Administer FastComments** - Dostęp do formularza ustawień FastComments.
-- **View FastComments** - Wymagane, aby zobaczyć widżet komentowania.
-- **Toggle FastComments** - Pozwala użytkownikom włączać/wyłączać komentarze dla każdej encji za pomocą widżetu pola.

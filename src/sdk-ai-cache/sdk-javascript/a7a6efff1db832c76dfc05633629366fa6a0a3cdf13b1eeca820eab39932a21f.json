@@ -1,0 +1,9 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "a7a6efff1db832c76dfc05633629366fa6a0a3cdf13b1eeca820eab39932a21f",
+  "generatedAt": "2026-04-24T23:23:28.603Z",
+  "codeExample": "const tenantId: string | undefined = undefined;\nconst createHashTagBody: CreateHashTagBody = {\n  name: 'release-2026',\n  description: 'Feedback and bug reports for the April 2026 product release',\n  synonyms: ['v2-release', 'launch-2026'],\n  color: '#1d72b8',\n  isActive: true,\n  createdBy: 'product.manager@acme-corp.com'\n};\nconst result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1212
+}

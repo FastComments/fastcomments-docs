@@ -1,0 +1,9 @@
+{
+  "method": "createTicket",
+  "signatureHash": "dafe0696f9bebf43686cc31ded9d12f7d8910f0d34aa9f9a8ef03706f6b5a3a5",
+  "generatedAt": "2026-04-24T23:23:07.942Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user@example.com\");\nauto bodyPtr = std::make_shared<CreateTicketBody>();\nbodyPtr->subject = U(\"Comments not posting on article\");\nbodyPtr->message = U(\"Submitting a comment returns 200 but it does not appear for other users\");\nbodyPtr->priority = boost::optional<utility::string_t>(U(\"low\"));\napi->createTicket(tenantId, userId, *bodyPtr)\n.then([](pplx::task<std::shared_ptr<CreateTicket_200_response>> task){\n    try {\n        auto resp = task.get();\n        if (resp) {\n            auto created = resp;\n        }\n    } catch (const std::exception& e) {\n        (void)e;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 339,
+  "completionTokens": 1525
+}

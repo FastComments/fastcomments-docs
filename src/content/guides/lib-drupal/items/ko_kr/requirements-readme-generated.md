@@ -1,3 +1,0 @@
-- Drupal 10 또는 11
-- PHP 8.1+
-- [FastComments](https://fastcomments.com) 계정

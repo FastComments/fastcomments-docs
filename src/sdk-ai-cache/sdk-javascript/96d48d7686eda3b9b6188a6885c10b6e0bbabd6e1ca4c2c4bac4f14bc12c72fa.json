@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "96d48d7686eda3b9b6188a6885c10b6e0bbabd6e1ca4c2c4bac4f14bc12c72fa",
+  "generatedAt": "2026-04-24T23:23:51.367Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme_corp_tenant_9f1a2b\";\n  const id: string = \"user_4d2a1b6c\";\n  const deleteComments: string = \"true\"; // remove user's comments as well\n  const commentDeleteMode: string = \"permanent\"; // \"permanent\" or \"soft\"\n  const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);\n  console.log(result);\n}\nrun();",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 770
+}

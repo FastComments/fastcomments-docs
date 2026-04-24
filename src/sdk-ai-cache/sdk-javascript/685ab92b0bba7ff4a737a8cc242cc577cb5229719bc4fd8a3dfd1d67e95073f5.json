@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "685ab92b0bba7ff4a737a8cc242cc577cb5229719bc4fd8a3dfd1d67e95073f5",
+  "generatedAt": "2026-04-24T23:23:46.112Z",
+  "codeExample": "const tenantId: string = \"tenant_42fa9b7c\";\nconst id: string = \"qcfg-0f8fad5b-d9cb-469f-a165-70867728950e\";\nconst result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 906
+}

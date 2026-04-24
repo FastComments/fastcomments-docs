@@ -1,0 +1,9 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "173d9f46e08fdca271ed465551c67a326f71c482bf81b84cd69eee1e36381b13",
+  "generatedAt": "2026-04-24T23:23:35.974Z",
+  "codeExample": "const tenantId: string = \"tenant_acme-corp_001\";\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  name: \"Acme Standard Package\",\n  description: \"Default package for Acme Corp comments with moderation and SSO enabled\",\n  enabled: true,\n  maxCommentsPerThread: 500,\n  voteStyle: \"thumbs\",\n  gifRating: \"PG-13\",\n  tosConfig: { enabled: true, url: \"https://acme.example.com/terms\" } // optional parameter demonstrated\n};\nconst result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 848
+}

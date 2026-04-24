@@ -1,1 +1,0 @@
-Moduł automatycznie przekazuje aktualny język witryny Drupal do wszystkich widżetów.

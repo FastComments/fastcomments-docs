@@ -7,8 +7,17 @@ a moderator:
 - **Delete** that comment
 - **Delete** that comment + **Ban the user** (Permanent or Shadow, more details later)
 - **Edit** that comment
+- **Lock** or **Unlock** that comment (more details below)
 - Mark that comment **Approved** (show it) or **Not Approved** (hide it)
 - Mark that comment as **Spam** or **Not Spam**
+
+### Locking a Comment
+
+Locking an individual comment prevents any new replies to it, and also prevents the comment itself from being edited or deleted until it is unlocked. This applies to everyone, including admins and moderators. If you need to edit or remove a locked comment, unlock it first, make the change, and re-lock it if desired.
+
+A padlock icon appears in the top-right corner of a locked comment so readers can see at a glance that the thread is closed. The Edit and Delete menu entries are hidden for locked comments in both the comment widget and the public API (`PATCH` and `DELETE` return `code: 'locked'` if called against a locked comment).
+
+Two intentional exceptions bypass the lock, because they would otherwise leave orphaned data behind: when a user deletes their entire account (their comments are cleaned up regardless of lock state), and when a moderator bans a user with the "delete all comments from this user" option (the sweep clears locks).
 
 ### Closing Comment Threads
 

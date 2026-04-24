@@ -1,0 +1,9 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "07f04deaa2260f4b9d44f967da30abf38721e9a40003229a8710f708ebdc55bd",
+  "generatedAt": "2026-04-24T23:23:47.032Z",
+  "codeExample": "const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;\nconst tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';\nconst id: string = 'qres-9f2a3b1c';\nconst response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 724
+}

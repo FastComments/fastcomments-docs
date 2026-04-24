@@ -6,6 +6,7 @@ Notes:
 
 - This API can update the comment widget "live" if desired (this increases `creditsCost` from `1` to `2`).
 - This API will delete all child comments.
+- If the target comment is locked (`isLocked: true`), the request is rejected with `code: 'locked'`. Unlock the comment first, then delete.
 
 [inline-code-attrs-start title = 'Comment DELETE cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,7 +34,7 @@ interface CommentDeleteQueryParams {
 interface CommentDeleteResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'locked'
     /** Included on failure. **/
     reason?: string
 }

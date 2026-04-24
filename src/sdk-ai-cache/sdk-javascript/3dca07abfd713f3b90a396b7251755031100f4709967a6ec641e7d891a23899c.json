@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "3dca07abfd713f3b90a396b7251755031100f4709967a6ec641e7d891a23899c",
+  "generatedAt": "2026-04-24T23:23:27.172Z",
+  "codeExample": "const tenantId: string = 'tenant_87f3b2';\nconst mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/post-123.jpg', mimeType: 'image/jpeg', width: 1200, height: 800, size: 245000 };\nconst mediaItem: FeedPostMediaItem = { id: 'media_1', type: 'image', assets: [mediaAsset], altText: 'Conference keynote stage' };\nconst link: FeedPostLink = { url: 'https://news.example.com/keynote-recap', title: 'Keynote recap' };\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: 'Product Launch Highlights',\n  content: 'Highlights from today’s product launch and roadmap updates.',\n  authorId: 'user_42',\n  mediaItems: [mediaItem],\n  links: [link],\n  tags: ['product', 'launch', 'announcement']\n};\nconst broadcastId: string = 'broadcast_20260424';\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini",
+  "promptTokens": 509,
+  "completionTokens": 1116
+}

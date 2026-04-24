@@ -1,0 +1,9 @@
+{
+  "method": "createModerator",
+  "signatureHash": "bca4951af5f75ba45976bc4d9ef32cd937721be1de03972c882de76fb5b07328",
+  "generatedAt": "2026-04-24T23:23:26.454Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3b6c\";\nconst optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };\nconst newModerator: CreateModeratorBody = {\n  email: \"lina.gomez@dailynews.com\",\n  fullName: \"Lina Gomez\",\n  role: \"senior_moderator\",\n  enabled: true,\n  notifyByEmail: true,\n  customConfig: optionalConfig\n};\nconst response: CreateModerator200Response = await createModerator(tenantId, newModerator);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 1023
+}

@@ -1,3 +1,0 @@
-- **Administrer FastComments** - Adgang til FastComments' indstillingsformular.
-- **Vis FastComments** - Påkrævet for at se kommenteringswidgeten.
-- **Skift FastComments** - Giver brugere mulighed for at aktivere/deaktivere kommentarer per entitet via feltwidgeten.

@@ -1,0 +1,9 @@
+{
+  "method": "createTicket",
+  "signatureHash": "3d15ecda011dcc66bb1d13270732f4c51441cfa67e141ab9be33d49b325a8e32",
+  "generatedAt": "2026-04-24T23:23:37.942Z",
+  "codeExample": "const tenantId: string = '7f3e9b1a-1c2d-4a5b-b6c7-d8e9f0123456';\nconst userId: string = 'd290f1ee-6c54-4b01-90e6-d701748f0851';\nconst createTicketBody: CreateTicketBody = {\n  subject: 'Unable to post comments on product update',\n  message: 'Submitting a comment returns a 504 timeout after ~10s. Reproducible in Chrome and Firefox.',\n  priority: 'high', // optional field included\n  contactEmail: 'jane.doe@acme-corp.com',\n  ccEmails: ['eng-oncall@acme-corp.com'], // optional field included\n  metadata: { page: '/blog/product-update', browser: 'Chrome 112' } // optional\n};\nconst response: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 445,
+  "completionTokens": 1242
+}

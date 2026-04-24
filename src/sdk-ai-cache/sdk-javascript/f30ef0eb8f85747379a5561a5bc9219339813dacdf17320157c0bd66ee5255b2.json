@@ -1,0 +1,9 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "f30ef0eb8f85747379a5561a5bc9219339813dacdf17320157c0bd66ee5255b2",
+  "generatedAt": "2026-04-24T23:23:45.021Z",
+  "codeExample": "const tag: string = \"spring-sale-2026\";\nconst tenantId: string = \"tenant-9876\";\nconst deleteHashTagRequest: DeleteHashTagRequest = {\n  requestedBy: \"admin@retailco.com\",\n  reason: \"Campaign ended; remove associated auto-tags\",\n  cascadeDelete: true\n};\nconst result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 803
+}

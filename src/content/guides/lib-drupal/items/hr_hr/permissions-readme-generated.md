@@ -1,3 +1,0 @@
-- **Administer FastComments** - Pristup obrascu postavki FastComments.
-- **View FastComments** - Potrebno za prikaz widgeta za komentare.
-- **Toggle FastComments** - Omogućuje korisnicima uključivanje/isključivanje komentara po entitetu putem widgeta polja.

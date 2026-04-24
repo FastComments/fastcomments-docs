@@ -1,5 +1,0 @@
----
-- Drupal 10 of 11
-- PHP 8.1+
-- Een [FastComments](https://fastcomments.com) account
----

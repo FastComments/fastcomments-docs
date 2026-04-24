@@ -1,0 +1,9 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "b67088286f7cfb91f3de0e3ad8b70f5f24304e3b5a2a44086398c2deef9300b8",
+  "generatedAt": "2026-04-24T23:23:46.829Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b2a\";\nconst webhookEventId: string = \"wh_evt_9a8c7d1234\";\nconst dryRun: boolean | undefined = undefined; // optional flag example (not required by this call)\nconst result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookEventId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 418,
+  "completionTokens": 984
+}

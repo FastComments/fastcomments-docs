@@ -1,0 +1,9 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "ec9d15f6c9926e05d63788f36672740cd70fd1515915dd1cd890462e84e2a608",
+  "generatedAt": "2026-04-24T23:23:40.020Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_01\";\nconst id: string = \"comment_5f3a2b7c\";\nconst contextUserId: string = \"user_1229\";\nconst isLive: boolean = true;\nconst response: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 596
+}

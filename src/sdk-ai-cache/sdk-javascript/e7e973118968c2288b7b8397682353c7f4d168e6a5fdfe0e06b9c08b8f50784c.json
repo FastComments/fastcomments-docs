@@ -1,0 +1,9 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "e7e973118968c2288b7b8397682353c7f4d168e6a5fdfe0e06b9c08b8f50784c",
+  "generatedAt": "2026-04-24T23:23:41.709Z",
+  "codeExample": "const tenantId: string = \"tenant_9a8b7c\";\nconst params: CreateUserBadgeParams = {\n  name: \"Top Contributor\",\n  slug: \"top-contributor\",\n  description: \"Awarded for 100 approved comments\",\n  iconUrl: \"https://cdn.fastcomments.com/badges/top-contributor.png\",\n  active: true,\n  criteria: { approvedComments: 100 },\n  customConfig: { showOnProfile: true } // optional parameter\n};\nconst result: CreateUserBadge200Response = await createUserBadge(tenantId, params);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 1218
+}

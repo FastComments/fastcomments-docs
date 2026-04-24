@@ -1,0 +1,9 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "f83ee58ec1bb075faa140512e00a9d311d8d74f153890aea7c1b5248adb30cba",
+  "generatedAt": "2026-04-24T23:23:55.430Z",
+  "codeExample": "const tenantId: string = \"tenant_7a1d2f9b\";\nconst id: string = \"email_template_42b1\";\nconst errorId: string = \"render_err_2026-04-24_7f3c\";\nconst includeStackTrace: boolean | undefined = undefined; // optional flag example\n\nconst response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);\n// If an optional options object were supported it might look like:\n// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);",
+  "model": "gpt-5-mini",
+  "promptTokens": 428,
+  "completionTokens": 1929
+}

@@ -1,0 +1,9 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "23288b0ff00df08204bc22c8330668f4ea6970c6b9e30458bac4fed070859423",
+  "generatedAt": "2026-04-24T23:23:15.499Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"agent@example.com\");\nutility::string_t id = U(\"TICKET-456\");\nauto changeBody = std::make_shared<ChangeTicketStateBody>();\nchangeBody->state = U(\"resolved\");\nchangeBody->comment = U(\"Resolved as duplicate after review\");\nchangeBody->notify = boost::optional<bool>(true);\napi->changeTicketState(tenantId, userId, id, *changeBody)\n.then([](pplx::task<std::shared_ptr<ChangeTicketState_200_response>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<ChangeTicketState_200_response>(*resp);\n        }\n    } catch (const std::exception&) {}\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 357,
+  "completionTokens": 1913
+}

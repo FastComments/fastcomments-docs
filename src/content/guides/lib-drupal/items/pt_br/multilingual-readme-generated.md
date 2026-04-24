@@ -1,1 +1,0 @@
-O módulo passa automaticamente o idioma atual do site Drupal para todos os widgets.

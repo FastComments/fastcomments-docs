@@ -1,0 +1,9 @@
+{
+  "method": "getTickets",
+  "signatureHash": "c953be315010003b052bf24d95c83a5374ae19f6fe184ce755ac84f2e4e29dbb",
+  "generatedAt": "2026-04-24T23:23:12.836Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\nboost::optional<double> state = boost::optional<double>(1.0);\nboost::optional<double> skip = boost::optional<double>(0.0);\nboost::optional<double> limit = boost::optional<double>(50.0);\napi->getTickets(tenantId, userId, state, skip, limit)\n.then([](pplx::task<std::shared_ptr<GetTickets_200_response>> t){\n    try {\n        auto resp = t.get();\n        auto copy = std::make_shared<GetTickets_200_response>(*resp);\n        std::cout << \"Retrieved tickets: \" << (resp ? \"non-null\" : \"null\") << std::endl;\n    } catch (const std::exception &e) {\n        std::cerr << \"getTickets failed: \" << e.what() << std::endl;\n    }\n});",
+  "model": "gpt-5-mini",
+  "promptTokens": 375,
+  "completionTokens": 1888
+}

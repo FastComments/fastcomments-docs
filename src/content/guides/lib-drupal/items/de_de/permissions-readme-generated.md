@@ -1,3 +1,0 @@
-- **FastComments verwalten** - Zugriff auf das Einstellungsformular von FastComments.
-- **FastComments anzeigen** - Erforderlich, um das Kommentar-Widget anzusehen.
-- **FastComments umschalten** - Ermöglicht Benutzern, Kommentare pro Entität über das Feld-Widget zu aktivieren/deaktivieren.

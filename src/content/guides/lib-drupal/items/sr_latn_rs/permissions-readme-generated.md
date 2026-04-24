@@ -1,3 +1,0 @@
-- **Administriraj FastComments** - Pristup obrascu za podešavanja FastComments.
-- **Pregled FastComments** - Potrebno za prikaz vidžeta za komentare.
-- **Uključi/isključi FastComments** - Omogućava korisnicima da po entitetu uključe ili isključe komentare putem polja vidžeta.

@@ -1,0 +1,9 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "e9504673042af4ce341893cc387b8678cfe4c0360f78cff081a7446b1fbe5b38",
+  "generatedAt": "2026-04-24T23:23:24.878Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_42\";\nconst bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {\n  questions: [\n    { questionId: \"q-001\", threadId: \"thread-1001\", questionType: \"rating\" },\n    { questionId: \"q-002\", threadId: \"thread-1002\", questionType: \"yes_no\" }\n  ],\n  timeRange: { from: \"2026-03-01T00:00:00Z\", to: \"2026-04-01T00:00:00Z\" },\n  groupBy: [\"questionId\", \"threadId\"]\n};\nconst forceRecalculate: boolean = true;\nconst result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);",
+  "model": "gpt-5-mini",
+  "promptTokens": 468,
+  "completionTokens": 890
+}

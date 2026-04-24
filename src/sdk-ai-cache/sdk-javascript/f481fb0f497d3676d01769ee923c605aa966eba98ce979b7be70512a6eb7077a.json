@@ -1,0 +1,9 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "f481fb0f497d3676d01769ee923c605aa966eba98ce979b7be70512a6eb7077a",
+  "generatedAt": "2026-04-24T23:23:33.005Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant-123\";\nconst createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {\n  userId: \"user_98765\",\n  planId: \"pro_monthly\",\n  paymentMethod: { type: \"card\", cardId: \"card_abc123\" },\n  autoRenew: true,\n  trialDays: 14, // optional parameter demonstrated\n  metadata: { campaign: \"spring_launch\" } // optional parameter demonstrated\n};\nconst result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);",
+  "model": "gpt-5-mini",
+  "promptTokens": 275,
+  "completionTokens": 774
+}

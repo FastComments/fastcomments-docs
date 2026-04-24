@@ -1,1 +1,0 @@
-Modül, mevcut Drupal site dilini tüm widget'lara otomatik olarak aktarır.

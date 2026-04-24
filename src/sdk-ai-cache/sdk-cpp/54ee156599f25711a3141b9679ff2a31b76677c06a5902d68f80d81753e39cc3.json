@@ -1,0 +1,9 @@
+{
+  "method": "updateSubscription",
+  "signatureHash": "54ee156599f25711a3141b9679ff2a31b76677c06a5902d68f80d81753e39cc3",
+  "generatedAt": "2026-04-24T23:23:08.535Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t subscriptionId = U(\"sub-456\");\nUpdateAPIUserSubscriptionData updateData{};\nboost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U(\"user-789\"));\napi->updateSubscription(tenantId, subscriptionId, updateData, userId)\n.then([](pplx::task<std::shared_ptr<UpdateSubscriptionAPIResponse>> t){\n    try {\n        auto resp = t.get();\n        if (resp) {\n            auto copy = std::make_shared<UpdateSubscriptionAPIResponse>(*resp);\n        }\n    } catch (const std::exception&) {}\n}).wait();",
+  "model": "gpt-5-mini",
+  "promptTokens": 355,
+  "completionTokens": 1500
+}

@@ -1,0 +1,9 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "a9060b14f53ed6f3fc5c1e6ba9610e31ffe2abd1a61ae79e1c3da828d4a0bb73",
+  "generatedAt": "2026-04-24T23:23:24.010Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b2c9a\";\nconst userId: string = \"user_5a1d9fb2\";\nconst id: string = \"ticket_3e8a1b6f\";\nconst changeTicketStateBody: ChangeTicketStateBody = {\n  state: \"closed\",\n  reason: \"Fixed in backend release 2.4.1\",\n  notifyUsers: true,\n  metadata: { resolutionOwner: \"agent_12\", priority: \"high\" } // optional fields demonstrated\n};\nconst result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 459,
+  "completionTokens": 727
+}

@@ -1,0 +1,9 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "7545eb217afc8ba5d550a14915f5fd5f39e037b88534f2bf76b928fa5d3ecce6",
+  "generatedAt": "2026-04-24T23:23:52.165Z",
+  "codeExample": "const tenantId: string = 'tenant_42c9f1';\nconst id: string = 'flag_9a7b3c';\nconst sure: string = 'confirm-delete';\nconst result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);",
+  "model": "gpt-5-mini",
+  "promptTokens": 424,
+  "completionTokens": 1028
+}

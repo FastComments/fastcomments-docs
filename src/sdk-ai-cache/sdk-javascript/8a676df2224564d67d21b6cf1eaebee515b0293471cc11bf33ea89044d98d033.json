@@ -1,0 +1,9 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "8a676df2224564d67d21b6cf1eaebee515b0293471cc11bf33ea89044d98d033",
+  "generatedAt": "2026-04-24T23:23:28.242Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp_01';\nconst bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n  tags: [\n    { name: 'feature-request', slug: 'feature-request', description: 'Requests for new capabilities', isActive: true, customConfig: { visibility: 'public' } as unknown as CustomConfigParameters }\n  ]\n};\nconst addHashTagsResponse: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);\n\nconst bulkCreateHashTagsBodyNoTenant: BulkCreateHashTagsBody = {\n  tags: [\n    { name: 'ux-feedback', slug: 'ux-feedback', description: 'User experience suggestions', isActive: true }\n  ]\n};\nconst addHashTagsResponseNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBodyNoTenant);",
+  "model": "gpt-5-mini",
+  "promptTokens": 322,
+  "completionTokens": 1284
+}

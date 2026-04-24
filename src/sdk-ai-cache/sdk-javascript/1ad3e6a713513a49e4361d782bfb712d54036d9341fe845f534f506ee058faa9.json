@@ -1,0 +1,9 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "1ad3e6a713513a49e4361d782bfb712d54036d9341fe845f534f506ee058faa9",
+  "generatedAt": "2026-04-24T23:23:32.802Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_9f4a2b';\n  const createEmailTemplateBody: CreateEmailTemplateBody = {\n    name: 'Weekly Digest',\n    subject: 'Your weekly discussion highlights',\n    html: '<!doctype html><body><h1>Hello {{user.name}}</h1><p>Top comments this week...</p></body>',\n    fromAddress: 'no-reply@fastcomments-example.com',\n    replyTo: 'moderation@fastcomments-example.com',\n    isDefault: false\n  };\n  const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1754
+}

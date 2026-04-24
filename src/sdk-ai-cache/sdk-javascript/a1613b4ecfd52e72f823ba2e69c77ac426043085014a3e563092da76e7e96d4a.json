@@ -1,0 +1,9 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "a1613b4ecfd52e72f823ba2e69c77ac426043085014a3e563092da76e7e96d4a",
+  "generatedAt": "2026-04-24T23:23:36.035Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_01\";\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  title: \"Post-purchase feedback\",\n  description: \"Quick survey about your recent order\",\n  required: true,\n  renderingType: \"single_choice\",\n  options: [\n    { label: \"Very dissatisfied\", value: \"1\" },\n    { label: \"Dissatisfied\", value: \"2\" },\n    { label: \"Neutral\", value: \"3\" },\n    { label: \"Satisfied\", value: \"4\" },\n    { label: \"Very satisfied\", value: \"5\" }\n  ] as QuestionConfigCustomOptionsInner[]\n} as CreateQuestionConfigBody;\nconst result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 452,
+  "completionTokens": 1202
+}

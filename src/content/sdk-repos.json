@@ -328,16 +328,6 @@
       "language": "php",
       "docGenerators": ["readme"],
       "description": "A Laravel package that wraps the FastComments PHP SDK and SSO library, providing Blade components, SSO integration, and full API access."
-    },
-    {
-      "id": "lib-drupal",
-      "name": "Drupal Module",
-      "pageHeader": "Add Comments to Your Drupal Site",
-      "repo": "https://github.com/FastComments/fastcomments-drupal",
-      "branch": "main",
-      "language": "php",
-      "docGenerators": ["readme"],
-      "description": "A Drupal module that integrates FastComments with Drupal 10/11, providing widget blocks, entity field integration, SSO, and granular permissions."
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",

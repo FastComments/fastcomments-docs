@@ -1,3 +1,0 @@
-- **Administer FastComments** - Dostop do obrazca z nastavitvami FastComments.
-- **View FastComments** - Potrebno za ogled pripomočka za komentiranje.
-- **Toggle FastComments** - Uporabnikom omogoča vklop ali izklop komentarjev za posamezno entiteto prek pripomočka polja.

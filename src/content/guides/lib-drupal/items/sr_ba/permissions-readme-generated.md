@@ -1,3 +1,0 @@
-- **Upravljanje FastComments** - Pristup obrascu za podešavanja FastComments.
-- **Pregled FastComments** - Potrebno za prikaz widgeta za komentare.
-- **Uključivanje/isključivanje FastComments** - Omogućava korisnicima da po entitetu uključe ili isključe komentare putem polja widgeta.

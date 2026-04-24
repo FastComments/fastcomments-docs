@@ -1,5 +1,0 @@
----
-- Drupal 10 または 11
-- PHP 8.1以上
-- [FastComments](https://fastcomments.com) のアカウント
----

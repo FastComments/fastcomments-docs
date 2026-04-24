@@ -1,3 +1,0 @@
-- **Administer FastComments** - Access to the FastComments settings form.
-- **View FastComments** - Required to view the commenting widget.
-- **Toggle FastComments** - Allows users to enable or disable comments per entity via the field widget.

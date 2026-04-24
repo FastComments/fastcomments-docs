@@ -1,0 +1,9 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "39c303bb671d6f2e7f75a0148f0a5ef5c1009d64f927f27617032fcee0738602",
+  "generatedAt": "2026-04-24T23:23:23.994Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst id: string = 'comment_7f3b2a9c';\nconst blockFromCommentParams: BlockFromCommentParams = {\n  reason: 'Repeated abusive language and targeted harassment',\n  durationDays: 90,\n  preventReposting: true\n};\nconst userId: string = 'user_12345';\nconst anonUserId: string = 'anon_98765';\n\nconst result: BlockFromCommentPublic200Response = await blockUserFromComment(\n  tenantId,\n  id,\n  blockFromCommentParams,\n  userId,\n  anonUserId\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 780
+}

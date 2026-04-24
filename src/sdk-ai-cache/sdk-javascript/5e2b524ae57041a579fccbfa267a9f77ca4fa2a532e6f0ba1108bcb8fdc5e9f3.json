@@ -1,0 +1,9 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "5e2b524ae57041a579fccbfa267a9f77ca4fa2a532e6f0ba1108bcb8fdc5e9f3",
+  "generatedAt": "2026-04-24T23:23:55.020Z",
+  "codeExample": "const tenantId: string = 'tenant_9a8b7c';\nconst limit: number = 100;\nconst skip: number = 0;\nconst after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago\nconst before: number = Date.now();\nconst auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 940
+}

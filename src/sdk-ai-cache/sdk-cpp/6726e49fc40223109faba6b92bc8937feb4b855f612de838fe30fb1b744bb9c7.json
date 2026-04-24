@@ -1,0 +1,9 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "6726e49fc40223109faba6b92bc8937feb4b855f612de838fe30fb1b744bb9c7",
+  "generatedAt": "2026-04-24T23:23:10.789Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"/articles/2026/fast-comments-integration\");\nboost::optional<utility::string_t> usernameStartsWith = boost::optional<utility::string_t>(U(\"alex\"));\nstd::vector<utility::string_t> groupsVec = { U(\"editors\"), U(\"contributors\") };\nboost::optional<std::vector<utility::string_t>> mentionGroupIds = boost::optional<std::vector<utility::string_t>>(groupsVec);\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"sso-user-456\"));\nboost::optional<utility::string_t> searchSection = boost::optional<utility::string_t>(U(\"discussion\"));\n\napi->searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection)\n    .then([](pplx::task<std::shared_ptr<SearchUsers_200_response>> task) {\n        try {\n            auto resp = task.get();\n            auto respCopy = std::make_shared<SearchUsers_200_response>(*resp);\n            (void)respCopy;\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "gpt-5-mini",
+  "promptTokens": 390,
+  "completionTokens": 1681
+}

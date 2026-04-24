@@ -14,6 +14,7 @@ Notes:
   - If you define both `comment` and `commentHTML` we will not automatically generate the HTML.
   - If the user adds mentions or hashtags in their new text, it will still be processed like the `POST` API.
 - When updating `commenterEmail` on a comment, it is best to also specify `userId`. Otherwise, you must ensure the user with this email belongs to your tenant, or the request will fail.  
+- If the target comment is locked (`isLocked: true`), the request is rejected with `code: 'locked'`. Unlock the comment first, update it, then re-lock if desired.
 
 
 [inline-code-attrs-start title = 'Minimum Comment PATCH cURL Example'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
@@ -46,7 +47,7 @@ interface CommentPatchQueryParams {
 interface CommentPatchResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found' | 'locked'
     /** Included on failure. **/
     reason?: string
 }

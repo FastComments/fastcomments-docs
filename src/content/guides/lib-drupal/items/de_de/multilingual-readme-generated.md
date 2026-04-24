@@ -1,1 +1,0 @@
-Das Modul übergibt automatisch die aktuelle Drupal-Website-Sprache an alle Widgets.

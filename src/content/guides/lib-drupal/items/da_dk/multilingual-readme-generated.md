@@ -1,1 +1,0 @@
-Modulet videresender automatisk det aktuelle sprog på Drupal-webstedet til alle widgets.

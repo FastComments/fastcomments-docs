@@ -1,3 +1,0 @@
-- **Administer FastComments** - FastComments 설정 양식에 접근합니다.
-- **View FastComments** - 댓글 위젯을 보기 위해 필요합니다.
-- **Toggle FastComments** - 필드 위젯을 통해 사용자가 엔터티별로 댓글을 활성화/비활성화할 수 있게 합니다.
