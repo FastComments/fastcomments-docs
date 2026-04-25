@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantPackageBody | CreateTenantPackageBody | Da |  |
@@ -11,22 +11,17 @@ Vrne: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'createTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // neobvezni parameter je podan
-  // izpuščena neobvezna polja: npr. napredna pravila moderiranja, prilagojeni CSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // ilustrativna vrednost; uporablja obliko CustomConfigParameters
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // prikazan izbirni parameter
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
-
----

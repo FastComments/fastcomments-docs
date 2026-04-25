@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createModeratorBody | CreateModeratorBody | 是 |  |
@@ -13,16 +13,17 @@
 
 [inline-code-attrs-start title = 'createModerator 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7d9f2b4a';
-const customConfig: CustomConfigParameters = { timezone: 'UTC', moderationQueueEnabled: true };
-const createModeratorBody: CreateModeratorBody = {
-  email: 'jane.martin@publisher.com',
-  displayName: 'Jane Martin',
-  roles: ['moderator'],
-  sendWelcomeEmail: true,
-  customConfig
+const tenantId: string = "tenant_8f3b6c";
+const optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };
+const newModerator: CreateModeratorBody = {
+  email: "lina.gomez@dailynews.com",
+  fullName: "Lina Gomez",
+  role: "senior_moderator",
+  enabled: true,
+  notifyByEmail: true,
+  customConfig: optionalConfig
 };
-const response: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+const response: CreateModerator200Response = await createModerator(tenantId, newModerator);
 [inline-code-end]
 
 ---

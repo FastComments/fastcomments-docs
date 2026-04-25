@@ -1,6 +1,7 @@
+---
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createQuestionResultBody | CreateQuestionResultBody | Да |  |
@@ -13,15 +14,15 @@
 
 [inline-code-attrs-start title = 'Пример createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-72b1f4";
-const meta: MetaItem[] = [{ key: "platform", value: "web" }];
+const tenantId: string = 'fastcomments-tenant-01';
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "question-83472",
-  commenterId: "user-5521",
-  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
-  meta, // необязательные метаданные
-  note: "Follow-up requested" // демонстрация необязательного параметра
-};
+  questionId: 'q-34567',
+  respondentId: 'user-8923',
+  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
+  score: 5,
+  meta: [{ key: 'platform', value: 'web' }],
+  notifyModerators: false // необязательный параметр
+} as CreateQuestionResultBody;
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

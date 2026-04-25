@@ -1,4 +1,4 @@
-Et `Comment`-objekt repræsenterer en kommentar efterladt af en bruger.
+Et `Comment` objekt repræsenterer en kommentar efterladt af en bruger.
 
 Forholdet mellem forældre- og underkommentarer defineres via `parentId`.
 
@@ -7,157 +7,155 @@ Strukturen for Comment-objektet er som følger:
 [inline-code-attrs-start title = 'Kommentarstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** KUN LÆS: Sættes til true hvis spam-motoren vurderede kommentaren som spam. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** Om kommentaren er godkendt til visning. Sættes til true ved lagring af kommentaren, ellers skjules den. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** Brugerens avatar. **/
     avatarSrc?: string
-    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    /** Underkommentarer. Ikke udfyldt i alle scenarier. Bruges når asTree er sat til true via API'et. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** Kommentatorens rå kommentar. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** KUN LÆS: Kommentatorens kommentar parseret til HTML. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** Kommentatorens e-mail. Kræves hvis anonym kommentering er slået fra. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** Kommentatorens link (fx deres blog). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** Kommentatorens navn. Altid påkrævet. Hvis ikke tilgængeligt, sæt til noget som "Anonymous". **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** Datoen kommentaren blev efterladt, i UTC epoch. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** "Display label" for kommentaren - for eksempel "Admin", "Moderator", eller noget som "VIP User". **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** Domænet kommentaren blev postet på. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** KUN LÆS: Antallet af gange kommentaren er blevet rapporteret. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** De #hashtags skrevet i kommentaren, som blev succesfuldt parset. Du kan også manuelt tilføje hashtags til forespørgsler, men de vil ikke automatisk vises i kommentarens tekst. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** KUN LÆS: Indeholder kommentaren billeder? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** KUN LÆS: Indeholder kommentaren links? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** KUN LÆS: Den unikke kommentar id. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** Kun ved oprettelse! Dette hashes til lagring. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** KUN LÆS: Har den aktuelle bruger blokeret brugeren der skrev denne kommentar? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** KUN LÆS: Er kommentaren af en admin? Sættes automatisk baseret på userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** KUN LÆS: Er kommentaren af en moderator? Sættes automatisk baseret på userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Sættes til true hvis kommentaren blev blødt slettet (en pladsholder måtte bevares pga. anden konfiguration). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Sættes til true hvis brugerens konto blev slettet og kommentaren måtte bevares. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** KUN LÆS: Er kommentaren markeret af den nuværende loggede bruger (contextUserId)? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** Er kommentaren fastgjort? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Er kommentaren låst? Når true, kan ingen (inkl. moderatorer) svare, redigere eller slette den, indtil den låses op. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** Er kommentaren spam? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** KUN LÆS: Er kommentaren nedstemt af den aktuelle bruger (contextUserId)? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** KUN LÆS: Er kommentaren opstemmet af den aktuelle bruger (contextUserId)? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** Den locale kommentaren er i. Hvis ikke angivet, vil den blive udledt fra 'Accept-Language' HTTP-headeren. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** KUN LÆS: De @mentions skrevet i kommentaren, som blev succesfuldt parset. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Valgfri metadata associeret med kommentaren. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Den valgfrie liste af moderationsgruppe-id'er associeret med denne kommentar. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** KUN LÆS: Id'et på vote-objektet som svarer til stemmen fra den aktuelle bruger (contextUserId) på denne kommentar. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Om notifikationer blev sendt for denne kommentar til kommentatorer. For at forhindre notifikationer ved import, sæt denne til true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Om notifikationer blev sendt for denne kommentar til tenant-brugere. For at forhindre notifikationer ved import, sæt denne til true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** Titlen på siden kommentaren var på. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Hvis vi svarer på en kommentar, er dette ID'et vi svarer til. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Om kommentaren er markeret som gennemset (reviewed). **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** Tenant-id'et som kommentaren hører til. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** Brugeren der skrev kommentaren. Oprettes automatisk ved lagring af en kommentar med navn/e-mail. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** URL'en til stedet hvor denne kommentar er synlig, fx et blogindlæg. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** En "renset" version af den urlId du sendte os. Ved lagring specificerer du dette felt, men når du henter kommentaren tilbage, bliver dette "renset" og din oprindelige værdi flyttet til "urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** KUN LÆS: Den oprindelige urlId du sendte os. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** Er brugeren og denne kommentar verificeret? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Antal up-stemmer. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Antal ned-stemmer. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** Kommentarens "karma" (= votes up - votes down). **/
     votes?: number
 }
 [inline-code-end]
 
-Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+Nogle af disse felter er markeret `READONLY` - disse returneres af API'et, men kan ikke sættes.
 
-### Comment Text Structure
+### Kommentarens tekststruktur
 
-Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
+Kommentarer skrives i en FastComments-variant af markdown, som er markdown plus traditionelle `bbcode`-lignende tags til billeder, fx `[img]path[/img]`.
 
-Text is stored in two fields. The text the user entered is stored unmodified in the `comment` field. This is rendered and stored in the `commentHTML` field.
+Tekst gemmes i to felter. Teksten brugeren skrev gemmes uændret i feltet `comment`. Denne renderes og gemmes i feltet `commentHTML`.
 
-The allowed HTML tags are `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
+De tilladte HTML-tags er `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-It's recommended to render the HTML, since it is a very small subset of HTML, building a renderer is pretty straightforward. There are multiple libraries for React Native and Flutter, for instance, to help with this
+Det anbefales at rendre HTML'en, da det er et meget lille udsnit af HTML, og det er forholdsvis ligetil at bygge en renderer. Der findes flere biblioteker til blandt andet React Native og Flutter, som kan hjælpe med dette.
 
-You may choose to render the un-normalized value of the `comment` field. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Du kan vælge at rendre den ikke-normaliserede værdi af feltet `comment`. [Et eksempel på en parser findes her.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
+Eksempelparseren kan også justeres til at arbejde med HTML og transformere HTML-tags til de forventede elementer der skal rendres på din platform. 
 
-### Tagging
+### Mærkning
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Når brugere bliver tagget i en kommentar, gemmes informationen i en liste kaldet `mentions`. Hvert objekt i den liste har følgende struktur.
 
-[inline-code-attrs-start title = 'Objektet for kommentaromtaler'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objektet for kommentar-omtaler'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Bruger-id. For SSO-brugere vil dette have dit tenant-id som præfiks. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Den endelige @mention-tag tekst, inkl. @-symbolet. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Den oprindelige @mention-tag tekst, inkl. @-symbolet. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Hvilken type bruger blev tagget. user = FastComments.com-konto. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Hvis brugeren fravælger notifikationer, vil dette stadig blive sat til true. **/
     sent: boolean
 }
 [inline-code-end]
 
-### HashTags
+### Hashtags
 
-When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
-has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
+Når hashtags bruges og succesfuldt parses, gemmes informationen i en liste kaldet `hashTags`. Hvert objekt i den liste har følgende struktur. Hashtags kan også manuelt tilføjes til kommentarens `hashTags`-array for forespørgsler, hvis `retain` er sat.
 
 [inline-code-attrs-start title = 'Objektet for kommentar-hashtags'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** Hashtag-id. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** Den endelige #hashtag-tag tekst, inkl. #-symbolet. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Hvis hashtaggen er associeret med en brugerdefineret URL, vil dette være defineret. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Hvis vi skal bevare hashtaggen, selvom den ikke findes i kommentarens tekst, når kommentaren opdateres. Nyttigt for at tagge kommentarer uden at ændre kommentarens tekst. **/
     retain?: boolean
 }
 [inline-code-end]

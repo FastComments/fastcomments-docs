@@ -1,8 +1,7 @@
----
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | createQuestionResultBody | CreateQuestionResultBody | Sì |  |
 
@@ -14,15 +13,15 @@ Restituisce: [`CreateQuestionResult200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Esempio di createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-72b1f4";
-const meta: MetaItem[] = [{ key: "platform", value: "web" }];
+const tenantId: string = 'fastcomments-tenant-01';
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "question-83472",
-  commenterId: "user-5521",
-  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
-  meta, // metadati opzionali
-  note: "Follow-up requested" // parametro opzionale dimostrato
-};
+  questionId: 'q-34567',
+  respondentId: 'user-8923',
+  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
+  score: 5,
+  meta: [{ key: 'platform', value: 'web' }],
+  notifyModerators: false // parametro opzionale
+} as CreateQuestionResultBody;
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

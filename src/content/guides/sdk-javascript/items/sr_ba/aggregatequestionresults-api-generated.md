@@ -1,33 +1,33 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| questionId | string | No |  |
-| questionIds | Array<string> | No |  |
-| urlId | string | No |  |
-| timeBucket | AggregateTimeBucket | No |  |
-| startDate | Date | No |  |
-| forceRecalculate | boolean | No |  |
+| tenantId | string | Da |  |
+| questionId | string | Ne |  |
+| questionIds | Array<string> | Ne |  |
+| urlId | string | Ne |  |
+| timeBucket | AggregateTimeBucket | Ne |  |
+| startDate | Date | Ne |  |
+| forceRecalculate | boolean | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResults200Response.ts)
+Vraća: [`AggregateQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResults200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'aggregateQuestionResults Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer aggregateQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_98765';
-const questionIds: Array<string> = ['q-102', 'q-103'];
-const urlId: string = 'url_55b3';
-const timeBucket: AggregateTimeBucket = { unit: 'day', size: 7 };
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
+const tenantId: string = "tenant_acme_001";
+const questionIds: string[] = ["q-2026-sales", "q-2026-support"];
+const urlId: string = "url_7f2c";
+const timeBucket: AggregateTimeBucket = { unit: "week", size: 1 };
+const startDate: Date = new Date("2026-01-01T00:00:00Z");
 const forceRecalculate: boolean = true;
 
 const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
   tenantId,
-  undefined, // questionId изостављен, користи се questionIds уместо тога
+  undefined,
   questionIds,
   urlId,
   timeBucket,
@@ -35,5 +35,3 @@ const result: AggregateQuestionResults200Response = await aggregateQuestionResul
   forceRecalculate
 );
 [inline-code-end]
-
----

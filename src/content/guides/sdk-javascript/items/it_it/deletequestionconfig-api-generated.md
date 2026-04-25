@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 
@@ -13,10 +13,9 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-01";
-const idOptional: string | undefined = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
-const id: string = idOptional ?? "11111111-1111-1111-1111-111111111111";
-const response: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
+const tenantId: string = "tenant_42fa9b7c";
+const id: string = "qcfg-0f8fad5b-d9cb-469f-a165-70867728950e";
+const result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);
 [inline-code-end]
 
 ---

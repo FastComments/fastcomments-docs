@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -13,9 +13,8 @@
 
 [inline-code-attrs-start title = 'deleteNotificationCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantSuffix: string | undefined = undefined;
-const tenantId: string = tenantSuffix ? `tenant-${tenantSuffix}` : 'tenant-9142a7';
-const id: string = '3f9b2a44-1c2e-4d3b-9f6a-8e7c6d5b2a1f';
+const tenantId: string = "org-72a8f1b9";
+const id: string = "notif-8f9c2e4a";
 const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, id);
 console.log(result);
 [inline-code-end]

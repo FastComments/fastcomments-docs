@@ -1,9 +1,9 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
+| tenantId | string | はい |  |
+| createTenantPackageBody | CreateTenantPackageBody | はい |  |
 
 ## レスポンス
 
@@ -13,20 +13,17 @@
 
 [inline-code-attrs-start title = 'createTenantPackage の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // オプションのパラメータが指定されています
-  // オプションのフィールドは省略されています: 例: 高度なモデレーションルール、カスタムCSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // 説明用の値。CustomConfigParameters 形式を使用します
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // オプションパラメータの例を示す
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
 
 ---

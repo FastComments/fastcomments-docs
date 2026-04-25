@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tag | string | はい |  |
 | tenantId | string | いいえ |  |
@@ -14,10 +14,14 @@
 
 [inline-code-attrs-start title = 'deleteHashTag の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_12345";
-const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
+const tag: string = "spring-sale-2026";
+const tenantId: string = "tenant-9876";
+const deleteHashTagRequest: DeleteHashTagRequest = {
+  requestedBy: "admin@retailco.com",
+  reason: "Campaign ended; remove associated auto-tags",
+  cascadeDelete: true
+};
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]
 
 ---

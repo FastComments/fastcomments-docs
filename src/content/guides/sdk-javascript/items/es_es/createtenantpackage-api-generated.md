@@ -13,20 +13,15 @@ Devuelve: [`CreateTenantPackage200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Ejemplo de createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // parámetro opcional proporcionado
-  // campos opcionales omitidos: p. ej., advanced moderation rules, custom CSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // valor ilustrativo; utiliza la forma CustomConfigParameters
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // parámetro opcional demostrado
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
-
----

@@ -1,22 +1,23 @@
 [api-resource-header-start name = 'Comment'; route = 'PATCH /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-Цей кінцевий пункт API надає можливість оновити один коментар.
+Цей API-ендпоінт надає можливість оновити один коментар.
 
 Notes:
 
-- Цей API може оновлювати віджет коментарів "live", якщо потрібно (це збільшує базовий `creditsCost` з `1` до `2`).
-  - Це дозволяє робити міграцію коментарів між сторінками "live" (зміна `urlId`).
-  - Міграції коштують додаткових `2` кредити, оскільки сторінки попередньо обчислюються і це інтенсивно використовує CPU.
-- На відміну від API створення, цей API НЕ буде автоматично створювати об'єкти користувача в нашій системі, якщо надано email.
+- Цей API може оновлювати віджет коментарів "live" якщо бажано (це збільшує базове `creditsCost` з `1` до `2`).
+  - Це може зробити міграцію коментарів між сторінками "live" (зміна `urlId`).
+  - Міграції коштують додаткові `2` кредити, оскільки сторінки попередньо обчислюються і це інтенсивно використовує CPU.
+- На відміну від API створення, цей API НЕ автоматично створюватиме об'єкти користувачів у нашій системі, якщо вказано email.
 - Коментарі, оновлені через цей API, все ще можуть перевірятися на спам за бажанням.
-- Налаштування, такі як максимальна довжина коментаря, якщо вони налаштовані через сторінку адміністратора Customization Rule, застосовуватимуться тут.
+- Конфігурація, така як максимальна довжина коментаря, якщо налаштована через сторінку адміністрування Customization Rule, застосовуватиметься тут.
 - Щоб дозволити користувачам оновлювати текст свого коментаря, ви можете просто вказати `comment` у тілі запиту. Ми згенеруємо відповідний `commentHTML`.
-  - Якщо ви визначите і `comment`, і `commentHTML`, ми не будемо автоматично генерувати HTML.
-  - Якщо користувач додасть згадки або хештеги у свій новий текст, вони все одно будуть оброблені так само, як у `POST` API.
-- Під час оновлення `commenterEmail` у коментарі найкраще також вказати `userId`. Інакше ви повинні переконатися, що користувач з цим email належить вашому tenant, інакше запит зазнає невдачі.  
+  - Якщо ви зазначите і `comment`, і `commentHTML`, ми не будемо автоматично генерувати HTML.
+  - Якщо користувач додає згадки або хештеги у свій новий текст, вони все одно будуть оброблені так само, як у `POST` API.
+- При оновленні `commenterEmail` у коментарі, краще також вказати `userId`. В іншому випадку потрібно переконатися, що користувач з цим email належить до вашого тенанта, інакше запит не пройде.  
+- Якщо цільовий коментар заблоковано (`isLocked: true`), запит відхиляється з `code: 'locked'`. Спочатку розблокуйте коментар, оновіть його, потім знову заблокуйте за потреби.
 
 
-[inline-code-attrs-start title = 'Мінімальний приклад PATCH-запиту cURL для коментаря'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Мінімальний приклад cURL для PATCH коментаря'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
@@ -26,16 +27,16 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура PATCH-запиту коментаря'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура PATCH-запиту для коментаря'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentPatchQueryParams {
     tenantId: string
     API_KEY: string
-	/** Користувач, який виконує оновлення. За потреби може використовуватися для перевірки, чи може він редагувати коментар.  **/
+	/** Користувач, який виконує оновлення. За потреби можна використовувати для перевірки, чи має він право редагувати коментар.  **/
     contextUserId?: string
-	/** Потрібно перевіряти, чи новий коментар схожий на спам?  **/
+	/** Чи потрібно перевіряти, чи новий коментар виглядає як спам?  **/
     doSpamCheck?: 'true' | 'false'
-	/** Чи має коментар з'являтися "live" для користувачів, які переглядають екземпляри віджета коментарів з тим самим urlId. ПРИМІТКА: Подвоює вартість у кредитах з 1 до 2. **/
+	/** Чи повинен коментар відображатися "live" для користувачів, які переглядають екземпляри віджета коментарів з тим самим urlId. NOTE: Подвоює вартість в кредитах з 1 до 2. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
@@ -45,11 +46,9 @@ interface CommentPatchQueryParams {
 
 interface CommentPatchResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found'
-    /** Included on failure. **/
+    /** Додається у випадку невдачі. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found' | 'locked'
+    /** Додається у випадку невдачі. **/
     reason?: string
 }
 [inline-code-end]
-
----

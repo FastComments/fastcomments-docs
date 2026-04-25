@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
@@ -13,11 +13,12 @@ Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteTenantPackage Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_corp_987';
-const packageId: string = 'pkg_pro_2026_01';
-type DeleteOptions = { force?: boolean; notify?: boolean };
-const options: DeleteOptions = { force: true }; // optional parameters demonstrated
-const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
+(async () => {
+  const tenantId: string = "tenant_8f3a2b4c9d01";
+  const packageId: string = "pkg_2026-04-security-patch";
+  const result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

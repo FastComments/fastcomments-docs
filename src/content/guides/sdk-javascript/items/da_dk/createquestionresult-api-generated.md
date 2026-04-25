@@ -1,28 +1,26 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
+| tenantId | string | Ja |  |
+| createQuestionResultBody | CreateQuestionResultBody | Ja |  |
 
-## Svar
+## Respons
 
 Returnerer: [`CreateQuestionResult200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResult200Response.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'createQuestionResult Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-72b1f4";
-const meta: MetaItem[] = [{ key: "platform", value: "web" }];
+const tenantId: string = 'fastcomments-tenant-01';
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "question-83472",
-  commenterId: "user-5521",
-  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
-  meta, // valgfri metadata
-  note: "Follow-up requested" // valgfri parameter demonstreret
-};
+  questionId: 'q-34567',
+  respondentId: 'user-8923',
+  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
+  score: 5,
+  meta: [{ key: 'platform', value: 'web' }],
+  notifyModerators: false // valgfri parameter
+} as CreateQuestionResultBody;
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
-
----

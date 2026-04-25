@@ -2,35 +2,33 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| state | double | No |  |
-| skip | double | No |  |
-| limit | double | No |  |
+| tenantId | string | Oui |  |
+| userId | string | Non |  |
+| state | double | Non |  |
+| skip | double | Non |  |
+| limit | double | Non |  |
 
 ## Réponse
 
-Retourne : [`GetTickets_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTickets_200_response.h)
+Retourne: [`GetTickets_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTickets_200_response.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getTickets'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getTickets'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = U("user@example.com");
-boost::optional<double> state = 1.0;
-boost::optional<double> skip = 0.0;
-boost::optional<double> limit = 50.0;
-pplx::task<std::shared_ptr<GetTickets_200_response>> t = api->getTickets(tenantId, userId, state, skip, limit)
-.then([](pplx::task<std::shared_ptr<GetTickets_200_response>> prev){
+boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
+boost::optional<double> state = boost::optional<double>(1.0);
+boost::optional<double> skip = boost::optional<double>(0.0);
+boost::optional<double> limit = boost::optional<double>(50.0);
+api->getTickets(tenantId, userId, state, skip, limit)
+.then([](pplx::task<std::shared_ptr<GetTickets_200_response>> t){
     try {
-        auto resp = prev.get();
-        if(!resp) resp = std::make_shared<GetTickets_200_response>();
-        std::cout << "Got tickets response: " << (resp ? "received" : "none") << std::endl;
+        auto resp = t.get();
+        auto copy = std::make_shared<GetTickets_200_response>(*resp);
+        std::cout << "Retrieved tickets: " << (resp ? "non-null" : "null") << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "getTickets failed: " << e.what() << std::endl;
     }
 });
 [inline-code-end]
-
----

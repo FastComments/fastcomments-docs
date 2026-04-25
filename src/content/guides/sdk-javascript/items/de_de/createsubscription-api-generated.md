@@ -13,16 +13,16 @@ Gibt zurück: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'createSubscription Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
-  trialDays: 14, // optionaler Parameter demonstriert
-  metadata: { source: "marketing-email" } // optionaler Parameter demonstriert
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
+  trialDays: 14, // optionaler Parameter zur Demonstration
+  metadata: { campaign: "spring_launch" } // optionaler Parameter zur Demonstration
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
 
 ---

@@ -1,13 +1,14 @@
 [api-resource-header-start name = 'Comment'; route = 'DELETE /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-Этот конечный пункт API позволяет удалить комментарий.
+Этот эндпоинт API позволяет удалить комментарий.
 
 Примечания:
 
-- Этот API может обновлять виджет комментариев "live", если требуется (это увеличивает `creditsCost` с `1` до `2`).
+- Этот API может обновлять виджет комментариев «в реальном времени», если требуется (это увеличивает `creditsCost` с `1` до `2`).
 - Этот API удалит все дочерние комментарии.
+- Если целевой комментарий заблокирован (`isLocked: true`), запрос отклоняется с `code: 'locked'`. Сначала разблокируйте комментарий, затем удалите.
 
-[inline-code-attrs-start title = 'Пример cURL-запроса для удаления комментария'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL-запроса удаления комментария'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request DELETE \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -20,9 +21,9 @@ curl --request DELETE \
 interface CommentDeleteQueryParams {
     tenantId: string
     API_KEY: string
-	/** Пользователь, выполняющий обновление. При необходимости может использоваться для проверки права удалить комментарий.  **/
+	/** Пользователь, выполняющий обновление. При необходимости можно использовать для проверки, может ли он удалить комментарий.  **/
     contextUserId?: string
-	/** Указывает, следует ли удалить комментарий "live" у пользователей, просматривающих экземпляры виджета комментариев с тем же urlId. NOTE: Удваивает стоимость в кредите с 1 до 2. **/
+	/** Будет ли комментарий удален "в реальном времени" для пользователей, просматривающих экземпляры виджета комментариев с тем же urlId. ПРИМЕЧАНИЕ: Удваивает стоимость в кредитах с 1 до 2. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
@@ -33,7 +34,7 @@ interface CommentDeleteQueryParams {
 interface CommentDeleteResponse {
     status: 'success' | 'failed'
     /** Указывается при ошибке. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'locked'
     /** Указывается при ошибке. **/
     reason?: string
 }

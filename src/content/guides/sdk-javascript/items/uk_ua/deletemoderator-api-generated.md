@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
@@ -12,12 +13,12 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deleteModerator Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2d4a6c';
-const moderatorId: string = 'moderator_84a1b9c2';
+const tenantId: string = 'tenant_9f8b7c6d';
+const id: string = 'mod_4a3e11ec9d1f0242ac120003';
 const sendEmail: string = 'true';
-const result: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);
+const result: FlagCommentPublic200Response = await deleteModerator(tenantId, id, sendEmail);
 [inline-code-end]
 
 ---

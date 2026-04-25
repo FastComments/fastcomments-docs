@@ -13,19 +13,15 @@
 
 [inline-code-attrs-start title = 'Пример createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const createUserBadgeParams: CreateUserBadgeParams = {
-  name: 'Top Contributor',
-  slug: 'top-contributor',
-  imageUrl: 'https://assets.fastcomments.com/badges/top-contributor.png',
-  description: 'Awarded for 100 helpful comments',
+const tenantId: string = "tenant_9a8b7c";
+const params: CreateUserBadgeParams = {
+  name: "Top Contributor",
+  slug: "top-contributor",
+  description: "Awarded for 100 approved comments",
+  iconUrl: "https://cdn.fastcomments.com/badges/top-contributor.png",
   active: true,
-  criteria: { commentsCount: 100 }, // необязательные критерии
-  displayOrder: 10,
-  metadata: { featured: true } // необязательные метаданные
+  criteria: { approvedComments: 100 },
+  customConfig: { showOnProfile: true } // необязательный параметр
 };
-const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
-console.log(result);
+const result: CreateUserBadge200Response = await createUserBadge(tenantId, params);
 [inline-code-end]
-
----

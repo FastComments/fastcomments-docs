@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 否 |  |
 | createHashTagBody | CreateHashTagBody | 否 |  |
@@ -13,15 +13,16 @@
 
 [inline-code-attrs-start title = 'addHashTag 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
+const tenantId: string | undefined = undefined;
 const createHashTagBody: CreateHashTagBody = {
-  name: 'feature-request',
-  label: 'Feature Request',
-  color: '#FF5722',
-  enabled: true
+  name: 'release-2026',
+  description: 'Feedback and bug reports for the April 2026 product release',
+  synonyms: ['v2-release', 'launch-2026'],
+  color: '#1d72b8',
+  isActive: true,
+  createdBy: 'product.manager@acme-corp.com'
 };
-const response: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
-const responseWithoutTenant: AddHashTag200Response = await addHashTag(undefined, createHashTagBody);
+const result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
 [inline-code-end]
 
 ---

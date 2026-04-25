@@ -1,163 +1,165 @@
 Un objeto `Comment` representa un comentario dejado por un usuario.
 
-La relación entre comentarios padre e hijo se define a través de `parentId`.
+La relación entre comentarios padre e hijo se define mediante `parentId`.
 
-La estructura para el objeto Comment es la siguiente:
+La estructura del objeto Comment es la siguiente:
 
 [inline-code-attrs-start title = 'Estructura de Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** SOLO LECTURA: Establecido en true si el motor de spam determinó que el comentario era spam. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** Indica si el comentario está aprobado para mostrarse. Se establece en true al guardar el comentario; de lo contrario quedará oculto. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** El avatar del usuario. **/
     avatarSrc?: string
-    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    /** Comentarios hijos. No se pueblan en todos los escenarios. Se usan cuando asTree se establece en true vía la API. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** El comentario sin procesar del autor. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** SOLO LECTURA: El comentario del autor parseado a HTML. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** El correo electrónico del autor. Requerido si la posibilidad de comentar de forma anónima está desactivada. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** El enlace del autor (por ejemplo, su blog). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** El nombre del autor del comentario. Siempre requerido. Si no está disponible, poner algo como "Anonymous". **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** La fecha en que se dejó el comentario, en epoch UTC. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** La "etiqueta de visualización" del comentario - por ejemplo "Admin", "Moderator", o algo como "VIP User". **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** El dominio en el que se publicó el comentario. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** SOLO LECTURA: El número de veces que el comentario fue marcado. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** Los #hashtags escritos en el comentario que se analizaron correctamente. También puedes añadir hashtags manualmente para consultas, pero no se mostrarán automáticamente en el texto del comentario. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** SOLO LECTURA: ¿El comentario contiene imágenes? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** SOLO LECTURA: ¿El comentario contiene enlaces? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** SOLO LECTURA: El id único del comentario. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** ¡Sólo al crear! Esto se hashea para almacenamiento. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** SOLO LECTURA: ¿El usuario actual bloqueó al autor de este comentario? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** SOLO LECTURA: ¿El comentario es de un admin? Se establece automáticamente según userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** SOLO LECTURA: ¿El comentario es de un moderador? Se establece automáticamente según userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Se establece en true si el comentario fue eliminado de forma suave (se dejó un marcador debido a alguna otra configuración). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Se establece en true si la cuenta del usuario fue eliminada y el comentario tuvo que conservarse. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** SOLO LECTURA: ¿Está marcado por el usuario actualmente conectado (contextUserId)? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** ¿Está el comentario fijado? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** ¿Está el comentario bloqueado? Cuando es true, nadie (incluidos los moderadores) puede responder, editar ni eliminarlo hasta que se desbloquee. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** ¿Es el comentario spam? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** SOLO LECTURA: ¿El comentario fue votado en contra por el usuario actual (contextUserId)? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** SOLO LECTURA: ¿El comentario fue votado a favor por el usuario actual (contextUserId)? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** La configuración regional (locale) del comentario. Si no se proporciona, se derivará de la cabecera HTTP accept-language. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** SOLO LECTURA: Las @menciones escritas en el comentario que se analizaron correctamente. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Metadatos opcionales asociados con el comentario. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** La lista opcional de ids de grupos de moderación asociados con este comentario. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** SOLO LECTURA: El id del objeto de voto que corresponde al voto del usuario actual (contextUserId) sobre este comentario. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Indica si se enviaron notificaciones para este comentario a los comentaristas. Para evitar que se envíen notificaciones en importaciones, establece esto en true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Indica si se enviaron notificaciones para este comentario a los usuarios del tenant. Para evitar que se envíen notificaciones en importaciones, establece esto en true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** El título de la página en la que estuvo este comentario. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Si estamos respondiendo a un comentario, este es el ID al que respondemos. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Indica si el comentario está marcado como revisado. **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** El id del tenant al que pertenece el comentario. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** El usuario que escribió el comentario. Creado automáticamente al guardar un comentario con nombre/email. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** La URL de la ubicación donde este comentario es visible, como una entrada de blog. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** Una versión "limpia" del urlId que nos pasaste. Al guardar, especificas este campo, pero cuando recuperes el comentario éste será "limpiado" y tu valor original movido a "urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** SOLO LECTURA: El urlId original que nos pasaste. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** ¿El usuario y este comentario están verificados? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Número de votos a favor. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Número de votos en contra. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** El "karma" del comentario (= votos a favor - votos en contra). **/
     votes?: number
 }
 [inline-code-end]
 
-Algunos de estos campos están marcados como `READONLY` - estos son devueltos por la API pero no pueden ser establecidos.
+Algunos de estos campos están marcados `READONLY` - estos son devueltos por la API pero no se pueden establecer.
 
-### Estructura del Texto del Comentario
+### Estructura del texto del comentario
 
-Los comentarios se escriben en un sabor de markdown de FastComments, que es simplemente markdown más etiquetas tradicionales estilo `bbcode` para imágenes, como `[img]ruta[/img]`.
+Los comentarios se escriben en una variante de markdown de FastComments, que es simplemente markdown más etiquetas de estilo `bbcode` tradicionales para imágenes, como `[img]path[/img]`.
 
-El texto se almacena en dos campos. El texto que el usuario ingresó se almacena sin modificar en el campo `comment`. Esto se renderiza y almacena en el campo `commentHTML`.
+El texto se almacena en dos campos. El texto que ingresó el usuario se almacena sin modificar en el campo `comment`. Esto se renderiza y almacena en el campo `commentHTML`.
 
-Las etiquetas HTML permitidas son `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, y br`.
+Las etiquetas HTML permitidas son `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-Se recomienda renderizar el HTML, ya que es un subconjunto muy pequeño de HTML, construir un renderizador es bastante sencillo. Hay múltiples bibliotecas para React Native y Flutter, por ejemplo, para ayudar con esto.
+Se recomienda renderizar el HTML, ya que es un subconjunto muy pequeño de HTML; construir un renderizador es bastante sencillo. Por ejemplo, hay múltiples librerías para React Native y Flutter para ayudar con esto
 
-Puede elegir renderizar el valor no normalizado del campo `comment`. [Un ejemplo de analizador está aquí.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Puedes optar por renderizar el valor no normalizado del campo `comment`. [Un parser de ejemplo está aquí.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-El ejemplo de analizador también podría ajustarse para trabajar con HTML, y transformar las etiquetas HTML en elementos esperados para renderizar para su plataforma.
+El parser de ejemplo también puede ajustarse para trabajar con HTML y transformar las etiquetas HTML en los elementos esperados para renderizar en tu plataforma. 
 
 ### Etiquetado
 
 Cuando los usuarios son etiquetados en un comentario, la información se almacena en una lista llamada `mentions`. Cada objeto en esa lista
 tiene la siguiente estructura.
 
-[inline-code-attrs-start title = 'El Objeto de Menciones de Comentario'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'El objeto de menciones de Comment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** El id del usuario. Para usuarios SSO, esto tendrá prefijado tu id de tenant. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** El texto final de la etiqueta @mention, incluyendo el símbolo @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** El texto original de la etiqueta @mention, incluyendo el símbolo @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Qué tipo de usuario fue etiquetado. user = cuenta de FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Si el usuario opta por no recibir notificaciones, esto aún se establecerá en true. **/
     sent: boolean
 }
 [inline-code-end]
 
 ### HashTags
 
-Cuando se usan hashtags y se analizan con éxito, la información se almacena en una lista llamada `hashTags`. Cada objeto en esa lista
-tiene la siguiente estructura. Los hashtags también pueden agregarse manualmente al array `hashTags` del comentario para consultas, si se establece `retain`.
+Cuando se usan hashtags y se analizan correctamente, la información se almacena en una lista llamada `hashTags`. Cada objeto en esa lista
+tiene la siguiente estructura. Los hashtags también pueden añadirse manualmente al array `hashTags` del comentario para consultas, si se establece `retain`.
 
-[inline-code-attrs-start title = 'El Objeto HashTag de Comentario'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'El objeto HashTag de Comment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** El id del hashtag. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** El texto final de la etiqueta #hashtag, incluyendo el símbolo #. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Si el hashtag está asociado con una URL personalizada, esto estará definido. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Si debemos conservar el hashtag, incluso si no existe en el texto del comentario, cuando el comentario se actualice. Útil para etiquetar comentarios sin cambiar el texto del comentario. **/
     retain?: boolean
 }
 [inline-code-end]
+
+---

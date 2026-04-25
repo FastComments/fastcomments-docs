@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
-| tenantId | string | Sim |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Sim |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## Resposta
 
@@ -13,16 +13,20 @@ Retorna: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Exemplo de createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b2c";
-const option: QuestionConfigCustomOptionsInner = { id: "opt_yes", label: "Yes, helpful", value: "yes" };
+const tenantId: string = "tenant_acme_01";
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Article usefulness",
-  prompt: "Was this article helpful?",
-  type: "singleChoice",
-  required: false, // parâmetro opcional demonstrado
-  options: [option],
-  saveBehavior: "immediate"
-};
+  title: "Post-purchase feedback",
+  description: "Quick survey about your recent order",
+  required: true,
+  renderingType: "single_choice",
+  options: [
+    { label: "Very dissatisfied", value: "1" },
+    { label: "Dissatisfied", value: "2" },
+    { label: "Neutral", value: "3" },
+    { label: "Satisfied", value: "4" },
+    { label: "Very satisfied", value: "5" }
+  ] as QuestionConfigCustomOptionsInner[]
+} as CreateQuestionConfigBody;
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]
 

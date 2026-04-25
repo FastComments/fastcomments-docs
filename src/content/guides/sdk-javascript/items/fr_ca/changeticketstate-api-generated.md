@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Oui |  |
@@ -9,19 +9,20 @@
 
 ## Réponse
 
-Retourne: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketState200Response.ts)
+Renvoie: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketState200Response.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_82f9b3';
-const userId: string = 'user_9472';
-const id: string = 'ticket_550e8400-e29b-41d4-a716-446655440000';
+const tenantId: string = "tenant_7f3b2c9a";
+const userId: string = "user_5a1d9fb2";
+const id: string = "ticket_3e8a1b6f";
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: 'resolved',
-  comment: 'Confirmed fix deployed to production; closing ticket.',
-  notifySubscribers: true
+  state: "closed",
+  reason: "Fixed in backend release 2.4.1",
+  notifyUsers: true,
+  metadata: { resolutionOwner: "agent_12", priority: "high" } // champs optionnels démontrés
 };
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]

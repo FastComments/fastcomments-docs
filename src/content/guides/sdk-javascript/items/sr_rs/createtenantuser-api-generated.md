@@ -2,8 +2,8 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createTenantUserBody | CreateTenantUserBody | Да |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
 ## Одговор
 
@@ -13,12 +13,13 @@
 
 [inline-code-attrs-start title = 'Пример за createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6f4b2c';
+const tenantId: string = "tenant_74b3a9f4b";
 const createTenantUserBody: CreateTenantUserBody = {
-  email: 'sara.kim@example.com',
-  displayName: 'Sara Kim',
-  role: 'moderator',
-  notifyOnMentions: true
+  email: "jane.doe@acmecorp.com",
+  displayName: "Jane Doe",
+  role: "moderator",
+  sendWelcomeEmail: true, // опциони параметар демонстриран
+  metadata: { department: "Customer Support" }
 };
 const result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);
 [inline-code-end]

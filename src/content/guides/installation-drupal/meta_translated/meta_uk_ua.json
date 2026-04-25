@@ -1,0 +1,62 @@
+{
+  "name": "Встановлення Drupal",
+  "pageHeader": "Додайте живе коментування до сайтів Drupal",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Швидкий старт",
+      "file": "drupal-quick-start.md",
+      "subCat": "Коротко"
+    },
+    {
+      "name": "Встановлення",
+      "file": "drupal-installation.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Налаштування",
+      "file": "drupal-configuration.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Блоки віджетів",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Поля типу вмісту",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Єдиний вхід (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Дозволи",
+      "file": "drupal-permissions.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Багатомовність",
+      "file": "drupal-multilingual.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Зберігання даних у ЄС",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Налаштування",
+      "file": "drupal-customize.md",
+      "subCat": "Встановлення Drupal"
+    },
+    {
+      "name": "Вимоги",
+      "file": "drupal-requirements.md",
+      "subCat": "Встановлення Drupal"
+    }
+  ]
+}

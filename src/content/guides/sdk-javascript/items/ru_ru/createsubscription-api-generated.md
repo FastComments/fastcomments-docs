@@ -1,28 +1,29 @@
-## Parameters
+---
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Да |  |
 
-## Response
+## Ответ
 
 Возвращает: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример createSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
   trialDays: 14, // необязательный параметр (продемонстрировано)
-  metadata: { source: "marketing-email" } // необязательный параметр (продемонстрировано)
+  metadata: { campaign: "spring_launch" } // необязательный параметр (продемонстрировано)
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
 
 ---

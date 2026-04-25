@@ -1,30 +1,29 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantPackageBody | CreateTenantPackageBody | Ja |  |
 
 ## Respons
 
-Geeft terug: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
+Retourneert: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createTenantPackage Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // optionele parameter opgegeven
-  // optionele velden weggelaten: bijv. geavanceerde moderatieregels, aangepaste CSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // illustratieve waarde; gebruikt CustomConfigParameters-vorm
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // optionele parameter ter demonstratie
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
+
+---

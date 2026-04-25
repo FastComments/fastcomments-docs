@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
 | errorId | string | Sì |  |
@@ -14,12 +14,12 @@ Restituisce: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b4c2a';
-const templateEnvironment: string | undefined = 'production'; // selettore di ambiente opzionale
-const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
-const errorId: string = 'err_5a9d2f1c';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-console.log(result);
-[inline-code-end]
+const tenantId: string = "tenant_7a1d2f9b";
+const id: string = "email_template_42b1";
+const errorId: string = "render_err_2026-04-24_7f3c";
+const includeStackTrace: boolean | undefined = undefined; // esempio di flag opzionale
 
----
+const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+// Se fosse supportato un oggetto options opzionale, potrebbe apparire così:
+// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
+[inline-code-end]

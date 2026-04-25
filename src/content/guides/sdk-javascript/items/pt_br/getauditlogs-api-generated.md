@@ -2,12 +2,12 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | Sim |  |
+| limit | number | Não |  |
+| skip | number | Não |  |
+| order | SORTDIR | Não |  |
+| after | number | Não |  |
+| before | number | Não |  |
 
 ## Resposta
 
@@ -17,14 +17,10 @@ Retorna: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Exemplo de getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const tenantId: string = 'tenant_9b8f6c';
-  const limit: number = 50;
-  const skip: number = 0;
-  const order: SORTDIR = 'desc';
-  const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after);
-  console.log(response);
-}
-main();
+const tenantId: string = 'tenant_9a8b7c';
+const limit: number = 100;
+const skip: number = 0;
+const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 dias atrás
+const before: number = Date.now();
+const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
 [inline-code-end]

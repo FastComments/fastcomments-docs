@@ -1,11 +1,11 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | createUserBadgeParams | CreateUserBadgeParams | Sì |  |
 
-## Risposta
+## Response
 
 Restituisce: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadge200Response.ts)
 
@@ -13,17 +13,17 @@ Restituisce: [`CreateUserBadge200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'Esempio di createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const createUserBadgeParams: CreateUserBadgeParams = {
-  name: 'Top Contributor',
-  slug: 'top-contributor',
-  imageUrl: 'https://assets.fastcomments.com/badges/top-contributor.png',
-  description: 'Awarded for 100 helpful comments',
+const tenantId: string = "tenant_9a8b7c";
+const params: CreateUserBadgeParams = {
+  name: "Top Contributor",
+  slug: "top-contributor",
+  description: "Awarded for 100 approved comments",
+  iconUrl: "https://cdn.fastcomments.com/badges/top-contributor.png",
   active: true,
-  criteria: { commentsCount: 100 }, // criteri opzionali
-  displayOrder: 10,
-  metadata: { featured: true } // metadati opzionali
+  criteria: { approvedComments: 100 },
+  customConfig: { showOnProfile: true } // parametro opzionale
 };
-const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
-console.log(result);
+const result: CreateUserBadge200Response = await createUserBadge(tenantId, params);
 [inline-code-end]
+
+---

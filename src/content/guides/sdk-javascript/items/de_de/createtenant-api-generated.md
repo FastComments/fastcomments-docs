@@ -1,8 +1,7 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|-----|--------------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantBody | CreateTenantBody | Ja |  |
 
@@ -14,14 +13,14 @@ Gibt zurück: [`CreateTenant200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'createTenant Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-001";
+const tenantId: string = 'acme-corp-001';
 const createTenantBody: CreateTenantBody = {
-  name: "Acme Corporation",
-  domain: "comments.acme.com",
-  adminContact: { name: "Jane Doe", email: "jane.doe@acme.com" },
-  billingInfo: { planId: "pro-monthly", billingContactEmail: "billing@acme.com" },
-  importedSite: { siteId: "site-123", siteName: "Acme Blog" } // optionale importierte Website
-};
+  name: 'Acme Corporation',
+  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,
+  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo
+  // optionale Felder wie ssoConfig oder customConfig wurden absichtlich weggelassen
+} as CreateTenantBody;
+
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
 

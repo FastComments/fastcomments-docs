@@ -1,0 +1,62 @@
+{
+  "name": "Drupal Installation",
+  "pageHeader": "Add Live Commenting to Drupal Sites",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Quick Start",
+      "file": "drupal-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "Installation",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Configuration",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Widget Blocks",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Content Type Fields",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Permissions",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Multilingual",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "EU Data Residency",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Customization",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Requirements",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal Installation"
+    }
+  ]
+}

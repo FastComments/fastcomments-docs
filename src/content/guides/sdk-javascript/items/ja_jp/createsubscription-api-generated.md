@@ -1,9 +1,9 @@
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | はい |  |
+| tenantId | string | Yes |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Yes |  |
 
 ## レスポンス
 
@@ -13,16 +13,16 @@
 
 [inline-code-attrs-start title = 'createSubscription の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
-  trialDays: 14, // 任意パラメータの例を示しています
-  metadata: { source: "marketing-email" } // 任意パラメータの例を示しています
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
+  trialDays: 14, // オプションのパラメーターの例
+  metadata: { campaign: "spring_launch" } // オプションのパラメーターの例
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
 
 ---

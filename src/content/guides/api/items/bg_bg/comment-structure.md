@@ -1,37 +1,37 @@
-Обектът `Comment` представлява коментар, оставен от потребител.
+A `Comment` object represents a comment left by a user.
 
-Връзката между родителски и дъщерни коментари се определя чрез `parentId`.
+The relationship between parent and child comments is defined via `parentId`.
 
-Структурата на обекта Comment е следната:
+The structure for the Comment object is as follows:
 
-[inline-code-attrs-start title = 'Структура на Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на обекта Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** READONLY: Задава се на true ако механизмът за разпознаване на спам определи, че коментарът е спам. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** Дали коментарът е одобрен за показване. Задава се на true при записване на коментара, иначе ще бъде скрит. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** Аватарът на потребителя. **/
     avatarSrc?: string
-    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    /** Детски коментари. Не е попълнено във всички сценарии. Използва се когато asTree е зададено на true чрез API-то. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** Оригиналният коментар на потребителя. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** READONLY: Коментарът на потребителя, преобразуван в HTML. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** Имейлът на коментатора. Задължителен ако анонимното коментиране е изключено. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** Линкът на коментатора (например техният блог). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** Името на коментатора. Винаги е задължително. Ако не е налично, задайте нещо като "Anonymous". **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** Дата/време на оставяне на коментара, в UTC epoch. **/
     date: number
     /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** Домейнът, на който е публикуван коментарът. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** READONLY: Броят пъти, в които коментарът е бил маркиран. **/
     flagCount?: number
     /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
     hashTags?: CommentHashTag[]
@@ -57,7 +57,7 @@ interface Comment {
     isFlagged?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Is the comment locked? When true, no one (including moderators) can reply, edit, or delete it until it is unlocked. **/
     isLocked?: boolean
     /** Is the comment spam? **/
     isSpam?: boolean
@@ -106,28 +106,28 @@ interface Comment {
 }
 [inline-code-end]
 
-Някои от тези полета са маркирани като `READONLY` - те се връщат от API, но не могат да бъдат зададени.
+Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
 
 ### Структура на текста на коментара
 
-Коментарите се пишат във FastComments вариант на markdown, който е просто markdown плюс традиционни `bbcode` стилови тагове за изображения, като `[img]path[/img]`.
+Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
 
-Текстът се съхранява в две полета. Текстът, въведен от потребителя, се съхранява непроменен в полето `comment`. Той се обработва и съхранява в полето `commentHTML`.
+Text is stored in two fields. The text the user entered is stored unmodified in the `comment` field. This is rendered and stored in the `commentHTML` field.
 
-Позволените HTML тагове са `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, и br`.
+The allowed HTML tags are `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-Препоръчително е да визуализирате HTML, тъй като е много малко подмножество от HTML, изграждането на визуализатор е доста лесно. Има множество библиотеки за React Native и Flutter, например, които да помогнат с това.
+It's recommended to render the HTML, since it is a very small subset of HTML, building a renderer is pretty straightforward. There are multiple libraries for React Native and Flutter, for instance, to help with this
 
-Можете да изберете да визуализирате ненормализираната стойност на полето `comment`. [Примерен парсер е тук.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+You may choose to render the un-normalized value of the `comment` field. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-Примерният парсер може също да бъде адаптиран да работи с HTML и да трансформира HTML таговете в очакваните елементи за визуализация за вашата платформа.
+The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
 
-### Отбелязване
+### Тагване
 
-Когато потребителите са отбелязани в коментар, информацията се съхранява в списък, наречен `mentions`. Всеки обект в този списък
-има следната структура.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
-[inline-code-attrs-start title = 'Обектът Comment Mentions'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Обект за упоменаване в коментар'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -143,12 +143,12 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-### Хаштагове
+### Хештагове
 
-Когато се използват хаштагове и са успешно обработени, информацията се съхранява в списък, наречен `hashTags`. Всеки обект в този списък
-има следната структура. Хаштаговете могат също да бъдат ръчно добавени към масива `hashTags` на коментара за заявки, ако `retain` е зададен.
+When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
+has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
 
-[inline-code-attrs-start title = 'Обектът Comment HashTag'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Обектът на хаштаг в коментара'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
     /** The hashtag id. **/
@@ -161,3 +161,5 @@ interface CommentHashTag {
     retain?: boolean
 }
 [inline-code-end]
+
+---

@@ -1,27 +1,28 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Не |  |
-| createHashTagBody | CreateHashTagBody | Не |  |
+| tenantId | string | Ne |  |
+| createHashTagBody | CreateHashTagBody | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTag200Response.ts)
+Vraća: [`AddHashTag200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTag200Response.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'addHashTag Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za addHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
+const tenantId: string | undefined = undefined;
 const createHashTagBody: CreateHashTagBody = {
-  name: 'feature-request',
-  label: 'Feature Request',
-  color: '#FF5722',
-  enabled: true
+  name: 'release-2026',
+  description: 'Feedback and bug reports for the April 2026 product release',
+  synonyms: ['v2-release', 'launch-2026'],
+  color: '#1d72b8',
+  isActive: true,
+  createdBy: 'product.manager@acme-corp.com'
 };
-const response: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
-const responseWithoutTenant: AddHashTag200Response = await addHashTag(undefined, createHashTagBody);
+const result: AddHashTag200Response = await addHashTag(tenantId, createHashTagBody);
 [inline-code-end]
 
 ---

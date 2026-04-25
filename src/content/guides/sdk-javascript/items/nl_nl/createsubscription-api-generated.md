@@ -1,7 +1,7 @@
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|---------|-------------|
 | tenantId | string | Ja |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Ja |  |
 
@@ -13,14 +13,16 @@ Retourneert: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'createSubscription Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
-  trialDays: 14, // optionele parameter ter demonstratie
-  metadata: { source: "marketing-email" } // optionele parameter ter demonstratie
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
+  trialDays: 14, // optionele parameter gedemonstreerd
+  metadata: { campaign: "spring_launch" } // optionele parameter gedemonstreerd
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
+
+---

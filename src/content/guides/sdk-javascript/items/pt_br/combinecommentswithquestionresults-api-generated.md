@@ -1,7 +1,7 @@
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | questionId | string | Não |  |
 | questionIds | Array<string> | Não |  |
@@ -12,7 +12,7 @@
 | maxValue | number | Não |  |
 | limit | number | Não |  |
 
-## Resposta
+## Response
 
 Retorna: [`CombineCommentsWithQuestionResults200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineCommentsWithQuestionResults200Response.ts)
 
@@ -20,17 +20,18 @@ Retorna: [`CombineCommentsWithQuestionResults200Response`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'Exemplo de combineCommentsWithQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3a2';
-const questionIds: string[] = ['question-42', 'question-43'];
-const urlId: string = 'url_5d7b';
-const startDate: Date = new Date('2026-02-01T00:00:00Z');
-const forceRecalculate: boolean = true;
-const minValue: number = 1;
-const maxValue: number = 5;
-const limit: number = 50;
+const tenantId: string = 'tenant-acme-001';
+const questionId: string | undefined = 'q-analytics-42';
+const questionIds: string[] | undefined = ['q-analytics-42', 'q-feedback-17'];
+const urlId: string | undefined = 'url-987654';
+const startDate: Date | undefined = new Date('2026-01-01T00:00:00Z');
+const forceRecalculate: boolean | undefined = true;
+const minValue: number | undefined = 1;
+const maxValue: number | undefined = 5;
+const limit: number | undefined = 250;
 const result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults(
   tenantId,
-  undefined,
+  questionId,
   questionIds,
   urlId,
   startDate,

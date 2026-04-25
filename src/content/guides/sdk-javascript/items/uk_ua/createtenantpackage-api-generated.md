@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | createTenantPackageBody | CreateTenantPackageBody | Так |  |
@@ -13,18 +13,15 @@
 
 [inline-code-attrs-start title = 'Приклад createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // необов'язковий параметр, наданий
-  // необов'язкові поля опущені: наприклад, розширені правила модерації, власний CSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // ілюстративне значення; використовує формат CustomConfigParameters
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // демонстрація необов'язкового параметра
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]

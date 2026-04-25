@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|----------|-------------|
 | tag | string | Sim |  |
 | tenantId | string | Não |  |
 | deleteHashTagRequest | DeleteHashTagRequest | Não |  |
@@ -14,10 +14,14 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemplo de deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_12345";
-const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
+const tag: string = "spring-sale-2026";
+const tenantId: string = "tenant-9876";
+const deleteHashTagRequest: DeleteHashTagRequest = {
+  requestedBy: "admin@retailco.com",
+  reason: "Campaign ended; remove associated auto-tags",
+  cascadeDelete: true
+};
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]
 
 ---

@@ -14,12 +14,14 @@
 
 [inline-code-attrs-start title = 'Приклад deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b4c2a';
-const templateEnvironment: string | undefined = 'production'; // необов'язковий селектор середовища
-const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
-const errorId: string = 'err_5a9d2f1c';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-console.log(result);
+const tenantId: string = "tenant_7a1d2f9b";
+const id: string = "email_template_42b1";
+const errorId: string = "render_err_2026-04-24_7f3c";
+const includeStackTrace: boolean | undefined = undefined; // приклад необов'язкового прапорця
+
+const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+// Якби підтримувався необов'язковий об'єкт опцій, це могло б виглядати так:
+// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
 [inline-code-end]
 
 ---

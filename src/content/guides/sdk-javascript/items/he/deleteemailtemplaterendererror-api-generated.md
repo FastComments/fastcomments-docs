@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -12,14 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b4c2a';
-const templateEnvironment: string | undefined = 'production'; // בורר סביבה אופציונלי
-const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
-const errorId: string = 'err_5a9d2f1c';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-console.log(result);
+const tenantId: string = "tenant_7a1d2f9b";
+const id: string = "email_template_42b1";
+const errorId: string = "render_err_2026-04-24_7f3c";
+const includeStackTrace: boolean | undefined = undefined; // דוגמה לדגל אופציונלי
+
+const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+// אם אובייקט אפשרויות אופציונלי היה נתמך, זה עשוי להיראות כך:
+// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
 [inline-code-end]
 
 ---

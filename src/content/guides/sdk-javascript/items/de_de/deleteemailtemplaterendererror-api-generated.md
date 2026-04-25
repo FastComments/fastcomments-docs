@@ -14,12 +14,14 @@ Gibt zurück: [`FlagCommentPublic200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b4c2a';
-const templateEnvironment: string | undefined = 'production'; // optionaler Umgebungsselektor
-const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
-const errorId: string = 'err_5a9d2f1c';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-console.log(result);
+const tenantId: string = "tenant_7a1d2f9b";
+const id: string = "email_template_42b1";
+const errorId: string = "render_err_2026-04-24_7f3c";
+const includeStackTrace: boolean | undefined = undefined; // optionales Flag-Beispiel
+
+const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+// Wenn ein optionales Optionsobjekt unterstützt würde, könnte es so aussehen:
+// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
 [inline-code-end]
 
 ---

@@ -1,22 +1,23 @@
 [api-resource-header-start name = 'Comment'; route = 'PATCH /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-Ова крајња тачка API-ја омогућава ажурирање појединачног коментара.
+Ovaj API endpoint omogućava ažuriranje jednog komentara.
 
-Напомене:
+Napomene:
 
-- Овај API може, по жељи, ажурирати видгет коментара у реалном времену (ово повећава основни `creditsCost` са `1` на `2`).
-  - Ово може омогућити миграцију коментара између страница у реалном времену (промена `urlId`).
-  - Миграције коштају додатна `2` кредита јер се странице претходно израчунавају и то је захтјевно за CPU.
-- За разлику од API-ја за креирање, овај API НЕће аутоматски креирати корисничке објекте у нашем систему ако је наведена е-пошта.
-- Коментари ажурирани преко овог API-ја и даље могу бити провјерени на спам, по жељи.
-- Конфигурације као што је максимална дужина коментара, ако су постављене преко странице администрације правила прилагођавања, примјењиваће се овдје.
-- Да бисте омогућили корисницима да ажурирају текст свог коментара, можете једноставно навести `comment` у тијелу захтјева. Ми ћемо генерисати резултујући `commentHTML`.
-  - Ако дефинишете и `comment` и `commentHTML`, нећемо аутоматски генерисати HTML.
-  - Ако корисник дода помињања или хештегове у новом тексту, они ће се и даље обрађивати као код `POST` API-ја.
-- Када ажурирате `commenterEmail` на коментару, најбоље је такође навести `userId`. У супротном, морате осигурати да корисник са том е-поштом припада вашем tenant-у, иначе ће захтјев пропасти.  
+- Ovaj API može ažurirati widget komentara "uživo" ako se želi (ovo povećava osnovni `creditsCost` sa `1` na `2`).
+  - Ovo može omogućiti da migracije komentara između stranica budu "uživo" (promjena `urlId`).
+  - Migracije koštaju dodatna `2` kredita jer se stranice prethodno izračunavaju i to je CPU-intenzivno.
+- Za razliku od API-ja za kreiranje, ovaj API NEĆE automatski kreirati korisničke objekte u našem sistemu ako je email naveden.
+- Komentari ažurirani putem ovog API-ja i dalje mogu biti provjereni na spam ako se želi.
+- Konfiguracije poput maksimalne dužine komentara, ako su konfigurirane putem admin stranice Customization Rule, primjenjuju se ovdje.
+- Da biste korisnicima omogućili ažuriranje teksta komentara, možete jednostavno navesti `comment` u telu zahtjeva. Mi ćemo generisati rezultirajući `commentHTML`.
+  - Ako definišete oba `comment` i `commentHTML`, mi nećemo automatski generisati HTML.
+  - Ako korisnik doda pominjanja ili heštagove u svom novom tekstu, oni će se i dalje obraditi kao kod `POST` API-ja.
+- Prilikom ažuriranja `commenterEmail` na komentaru, najbolje je takođe navesti `userId`. U suprotnom, morate osigurati da korisnik s tim emailom pripada vašem tenantu, inače će zahtjev biti odbijen.  
+- Ako je ciljani komentar zaključan (`isLocked: true`), zahtjev se odbija sa `code: 'locked'`. Prvo otključajte komentar, ažurirajte ga, a zatim ga ponovo zaključajte ako želite.
 
 
-[inline-code-attrs-start title = 'Минимални cURL примјер за PATCH коментара'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Minimalni cURL primer za PATCH komentara'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
@@ -26,28 +27,30 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура захтјева за PATCH коментара'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura PATCH zahteva za komentar'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentPatchQueryParams {
     tenantId: string
     API_KEY: string
-	/** Корисник који врши ажурирање. По потреби се може користити за провјеру да ли могу уређивати коментар.  **/
+	/** Korisnik koji vrši ažuriranje. Po želji se može koristiti za proveru da li može urediti komentar.  **/
     contextUserId?: string
-	/** Да ли да провјеримо да ли нови коментар изгледа као спам?  **/
+	/** Da li treba proveriti da li novi komentar izgleda kao spam?  **/
     doSpamCheck?: 'true' | 'false'
-	/** Да ли коментар треба да се појави у реалном времену корисницима који гледају инстанце видгета коментара са истим urlId-ом. НАПОМЕНА: Повећава трошак кредита са 1 на 2. **/
+	/** Da li komentar treba da se prikazuje "uživo" korisnicima koji gledaju instance widgeta komentara sa istim urlId. NAPOMENA: Udvaja trošak kredita sa 1 na 2. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура одговора за PATCH коментара'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora PATCH zahteva za komentar'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface CommentPatchResponse {
     status: 'success' | 'failed'
-    /** Укључено у случају неуспјеха. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found'
-    /** Укључено у случају неуспјеха. **/
+    /** Uključeno u slučaju neuspjeha. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found' | 'locked'
+    /** Uključeno u slučaju neuspjeha. **/
     reason?: string
 }
 [inline-code-end]
+
+---

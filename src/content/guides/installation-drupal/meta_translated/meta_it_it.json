@@ -1,0 +1,62 @@
+{
+  "name": "Installazione di Drupal",
+  "pageHeader": "Aggiungi commenti in tempo reale ai siti Drupal",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Avvio rapido",
+      "file": "drupal-quick-start.md",
+      "subCat": "In breve"
+    },
+    {
+      "name": "Installazione",
+      "file": "drupal-installation.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Configurazione",
+      "file": "drupal-configuration.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Blocchi widget",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Campi del tipo di contenuto",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Permessi",
+      "file": "drupal-permissions.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Multilingue",
+      "file": "drupal-multilingual.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Residenza dei dati nell'UE",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Personalizzazione",
+      "file": "drupal-customize.md",
+      "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Requisiti",
+      "file": "drupal-requirements.md",
+      "subCat": "Installazione di Drupal"
+    }
+  ]
+}

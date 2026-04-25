@@ -1,7 +1,7 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+|------|------|------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 | errorId | string | 예 |  |
@@ -14,12 +14,14 @@
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b4c2a';
-const templateEnvironment: string | undefined = 'production'; // 선택적 환경 선택기
-const id: string = `emailTemplates/${templateEnvironment ?? 'staging'}/welcome_v2`;
-const errorId: string = 'err_5a9d2f1c';
-const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
-console.log(result);
+const tenantId: string = "tenant_7a1d2f9b";
+const id: string = "email_template_42b1";
+const errorId: string = "render_err_2026-04-24_7f3c";
+const includeStackTrace: boolean | undefined = undefined; // 선택적 플래그 예시
+
+const response: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
+// 선택적 옵션 객체가 지원된다면 다음과 같을 수 있습니다:
+// await deleteEmailTemplateRenderError(tenantId, id, errorId /*, { includeStackTrace } */);
 [inline-code-end]
 
 ---

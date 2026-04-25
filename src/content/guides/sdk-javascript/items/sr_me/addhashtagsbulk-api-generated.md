@@ -1,43 +1,30 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Не |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Не |  |
+| tenantId | string | Ne |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulk200Response.ts)
+Vraća: [`AddHashTagsBulk200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulk200Response.ts)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'Примјер addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Креирај идентификатор тенанта (опционо)
-const tenantId: string = "tenant_9f8c2b7a";
-
-// Припреми појединачне уносе ознака
-const tag1: BulkCreateHashTagsBodyTagsInner = {
-  name: "product-feedback",
-  label: "Product Feedback",
-  color: "#1f8a70",
-  description: "User suggestions and enhancement requests",
-  isActive: true
-};
-
-const tag2: BulkCreateHashTagsBodyTagsInner = {
-  name: "bug-report",
-  label: "Bug Report",
-  color: "#d64545",
-  description: "User-reported defects and issues",
-  isActive: true
-};
-
-// Тијело за масовно креирање (опционо)
+const tenantId: string = 'tenant_acme_corp_01';
 const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-  tags: [tag1, tag2]
+  tags: [
+    { name: 'feature-request', slug: 'feature-request', description: 'Requests for new capabilities', isActive: true, customConfig: { visibility: 'public' } as unknown as CustomConfigParameters }
+  ]
 };
+const addHashTagsResponse: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
 
-// Позови глобалну асинхрону функцију и додјели типизовани резултат
-const result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
+const bulkCreateHashTagsBodyNoTenant: BulkCreateHashTagsBody = {
+  tags: [
+    { name: 'ux-feedback', slug: 'ux-feedback', description: 'User experience suggestions', isActive: true }
+  ]
+};
+const addHashTagsResponseNoTenant: AddHashTagsBulk200Response = await addHashTagsBulk(undefined, bulkCreateHashTagsBodyNoTenant);
 [inline-code-end]

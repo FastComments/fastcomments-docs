@@ -57,7 +57,7 @@ interface Comment {
     isFlagged?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Is the comment locked? When true, no one (including moderators) can reply, edit, or delete it until it is unlocked. **/
     isLocked?: boolean
     /** Is the comment spam? **/
     isSpam?: boolean

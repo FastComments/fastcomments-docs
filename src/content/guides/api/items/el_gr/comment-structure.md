@@ -1,163 +1,163 @@
-Ένα αντικείμενο `Comment` αντιπροσωπεύει ένα σχόλιο που αφήνει ένας χρήστης.
+Ένα `Comment` αντικείμενο αντιπροσωπεύει ένα σχόλιο που άφησε ένας χρήστης.
 
-Η σχέση μεταξύ γονικών και θυγατρικών σχολίων ορίζεται μέσω του `parentId`.
+Η σχέση μεταξύ γονικού και παιδικού σχολίου ορίζεται μέσω του `parentId`.
 
-Η δομή του αντικειμένου Comment είναι η ακόλουθη:
+Η δομή για το αντικείμενο Comment έχει ως εξής:
 
-[inline-code-attrs-start title = 'Δομή Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή Σχολίου'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** READONLY: Οριστείτε σε true εάν η μηχανή spam προσδιόρισε ότι το σχόλιο ήταν spam. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** Εάν το σχόλιο έχει εγκριθεί για εμφάνιση. Ορίζεται σε true όταν αποθηκεύεται το σχόλιο, αλλιώς θα είναι κρυφό. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** Το avatar του χρήστη. **/
     avatarSrc?: string
-    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    /** Τα παιδικά σχόλια. Δεν γεμίζει σε όλα τα σενάρια. Χρησιμοποιείται όταν το asTree είναι ορισμένο σε true μέσω του API. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** Το ακατέργαστο σχόλιο του χρήστη. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** READONLY: Το σχόλιο του χρήστη μεταγλωττισμένο σε HTML. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** Το email του σχολιαστή. Απαιτείται αν το ανώνυμο σχολιασμό είναι απενεργοποιημένο. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** Ο σύνδεσμος του σχολιαστή (π.χ. το blog του). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** Το όνομα του σχολιαστή. Πάντα απαιτούμενο. Αν δεν είναι διαθέσιμο, ορίστε κάτι όπως "Anonymous". **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** Η ημερομηνία που αφήθηκε το σχόλιο, σε UTC epoch. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** Η "ετικέτα εμφάνισης" για το σχόλιο - για παράδειγμα "Admin", "Moderator", ή κάτι σαν "VIP User". **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** Το domain στο οποίο δημοσιεύτηκε το σχόλιο. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** READONLY: Ο αριθμός των φορών που το σχόλιο έχει επισημανθεί. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** Τα #hashtags που γράφτηκαν στο σχόλιο και αναλύθηκαν επιτυχώς. Μπορείτε επίσης να προσθέσετε χειροκίνητα hashtags για ερωτήματα, αλλά δεν θα εμφανίζονται αυτόματα στο κείμενο του σχολίου. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** READONLY: Περιέχει το σχόλιο εικόνες; **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** READONLY: Περιέχει το σχόλιο συνδέσμους; **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** READONLY: Το μοναδικό id του σχολίου. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** Μόνο κατά τη δημιουργία! Αυτό γίνεται hash για αποθήκευση. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** READONLY: Ο τρέχων χρήστης εμπόδισε τον χρήστη που έγραψε αυτό το σχόλιο; **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** READONLY: Είναι το σχόλιο από admin; Ορίζεται αυτόματα με βάση το userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** READONLY: Είναι το σχόλιο από moderator; Ορίζεται αυτόματα με βάση το userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Οριστείτε σε true αν το σχόλιο διαγράφηκε χαλαρά (έπρεπε να μείνει κρατητήρα λόγω κάποιου άλλου ρυθμιστικού). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Οριστείτε σε true αν ο λογαριασμός του χρήστη διαγράφηκε και το σχόλιο έπρεπε να διατηρηθεί. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** READONLY: Έχει επισημανθεί από τον τρέχοντα συνδεδεμένο χρήστη (contextUserId); **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** Είναι το σχόλιο καρφιτσωμένο; **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Είναι το σχόλιο κλειδωμένο; Όταν είναι true, κανείς (συμπεριλαμβανομένων των moderator) δεν μπορεί να απαντήσει, να επεξεργαστεί ή να διαγράψει μέχρι να ξεκλειδωθεί. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** Είναι το σχόλιο spam; **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** READONLY: Έχει το σχόλιο ψηφιστεί κατά για τον τρέχοντα χρήστη (contextUserId); **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** READONLY: Έχει το σχόλιο ψηφιστεί υπέρ για τον τρέχοντα χρήστη (contextUserId); **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** Η γλώσσα/τοποθεσία στην οποία είναι το σχόλιο. Αν δεν παρέχεται, θα προκύψει από το HTTP header accept-language. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** READONLY: Οι @αναφορές που γράφτηκαν στο σχόλιο και αναλύθηκαν επιτυχώς. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Προαιρετικά μεταδεδομένα συσχετισμένα με το σχόλιο. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Η προαιρετική λίστα με ids ομάδων moderation που σχετίζονται με αυτό το σχόλιο. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** READONLY: Το id του αντικειμένου ψήφου που αντιστοιχεί στην ψήφο του τρέχοντος χρήστη (contextUserId) σε αυτό το σχόλιο. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Εάν στάλθηκαν ειδοποιήσεις για αυτό το σχόλιο στους σχολιαστές. Για να αποτραπούν ειδοποιήσεις κατά τις εισαγωγές, ορίστε αυτό σε true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Εάν στάλθηκαν ειδοποιήσεις για αυτό το σχόλιο στους χρήστες του tenant. Για να αποτραπούν ειδοποιήσεις κατά τις εισαγωγές, ορίστε αυτό σε true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** Ο τίτλος της σελίδας στην οποία βρισκόταν αυτό το σχόλιο. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Αν απαντάμε σε ένα σχόλιο, αυτό είναι το ID στο οποίο απαντάμε. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Εάν το σχόλιο έχει σημειωθεί ως αναθεωρημένο. **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** Το tenant id στο οποίο ανήκει το σχόλιο. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** Ο χρήστης που έγραψε το σχόλιο. Δημιουργείται αυτόματα όταν αποθηκεύετε ένα σχόλιο με όνομα/email. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** Το URL προς το σημείο όπου είναι ορατό αυτό το σχόλιο, όπως μια ανάρτηση blog. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** Μια "καθαρισμένη" έκδοση του urlId που μας δώσατε. Κατά την αποθήκευση, προσδιορίζετε αυτό το πεδίο, αλλά όταν ανακτάτε ξανά το σχόλιο αυτό θα είναι "καθαρισμένο" και η αρχική σας τιμή θα μετακινηθεί σε "urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** READONLY: Το αρχικό urlId που μας δώσατε. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** Είναι ο χρήστης και αυτό το σχόλιο επαληθευμένο; **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Αριθμός θετικών ψήφων. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Αριθμός αρνητικών ψήφων. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** Το "karma" του σχολίου (= ψήφοι θετικοί - ψήφοι αρνητικοί). **/
     votes?: number
 }
 [inline-code-end]
 
-Ορισμένα από αυτά τα πεδία είναι σημειωμένα ως `READONLY` - αυτά επιστρέφονται από το API αλλά δεν μπορούν να οριστούν.
+Κάποια από αυτά τα πεδία είναι επισημασμένα ως `READONLY` - αυτά επιστρέφονται από το API αλλά δεν μπορούν να οριστούν.
 
 ### Δομή Κειμένου Σχολίου
 
-Τα σχόλια γράφονται σε μια FastComments εκδοχή του markdown, που είναι απλώς markdown συν παραδοσιακές ετικέτες στυλ `bbcode` για εικόνες, όπως `[img]path[/img]`.
+Τα σχόλια γράφονται σε μια παραλλαγή markdown της FastComments, η οποία είναι απλώς markdown συν παραδοσιακές bbcode στυλ ετικέτες για εικόνες, όπως `[img]path[/img]`.
 
-Το κείμενο αποθηκεύεται σε δύο πεδία. Το κείμενο που εισήγαγε ο χρήστης αποθηκεύεται αμετάβλητο στο πεδίο `comment`. Αυτό αναλύεται και αποθηκεύεται στο πεδίο `commentHTML`.
+Το κείμενο αποθηκεύεται σε δύο πεδία. Το κείμενο που εισήγαγε ο χρήστης αποθηκεύεται αμετάβλητο στο πεδίο `comment`. Αυτό αποδίδεται και αποθηκεύεται στο πεδίο `commentHTML`.
 
-Οι επιτρεπόμενες HTML ετικέτες είναι `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, και br`.
+Οι επιτρεπόμενες ετικέτες HTML είναι `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-Συνιστάται να αναλύσετε το HTML, αφού είναι ένα πολύ μικρό υποσύνολο HTML, η κατασκευή ενός αναλυτή είναι αρκετά απλή. Υπάρχουν πολλαπλές βιβλιοθήκες για React Native και Flutter, για παράδειγμα, για να βοηθήσουν με αυτό
+Συνιστάται να αποδώσετε το HTML, καθώς είναι ένα πολύ μικρό υποσύνολο του HTML, οπότε η δημιουργία ενός renderer είναι αρκετά απλή. Υπάρχουν πολλαπλές βιβλιοθήκες για React Native και Flutter, για παράδειγμα, που μπορούν να βοηθήσουν με αυτό.
 
-Μπορείτε να επιλέξετε να αναλύσετε τη μη κανονικοποιημένη τιμή του πεδίου `comment`. [Ένα παράδειγμα αναλυτή είναι εδώ.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Μπορείτε να επιλέξετε να αποδώσετε την μη-κανονικοποιημένη τιμή του πεδίου `comment`. [Ένας παράδειγμα parser βρίσκεται εδώ.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-Ο παράδειγμα αναλυτής θα μπορούσε επίσης να προσαρμοστεί για να λειτουργεί με HTML, και να μετατρέπει τις HTML ετικέτες σε αναμενόμενα στοιχεία για απόδοση για την πλατφόρμα σας.
+Ο παράδειγμα parser θα μπορούσε επίσης να προσαρμοστεί για να λειτουργεί με HTML, και να μετασχηματίζει τις HTML ετικέτες σε αναμενόμενα στοιχεία για απόδοση στην πλατφόρμα σας.
 
-### Tagging
+### Επισήμανση (Tagging)
 
-Όταν οι χρήστες επισημαίνονται σε ένα σχόλιο, οι πληροφορίες αποθηκεύονται σε μια λίστα που ονομάζεται `mentions`. Κάθε αντικείμενο σε αυτή τη λίστα
+Όταν χρήστες επισημαίνονται σε ένα σχόλιο, οι πληροφορίες αποθηκεύονται σε μια λίστα που ονομάζεται `mentions`. Κάθε αντικείμενο σε εκείνη τη λίστα
 έχει την ακόλουθη δομή.
 
-[inline-code-attrs-start title = 'Το Αντικείμενο Mentions Σχολίου'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Αντικείμενο αναφορών σχολίου'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Το id του χρήστη. Για χρήστες SSO, αυτό θα έχει προθεματισμένο το tenant id σας. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Το τελικό κείμενο του @mention, συμπεριλαμβανομένου του συμβόλου @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Το αρχικό κείμενο του @mention, συμπεριλαμβανομένου του συμβόλου @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Τι τύπος χρήστη επισημάνθηκε. user = λογαριασμός FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Εάν ο χρήστης απενεργοποιήσει τις ειδοποιήσεις, αυτό θα εξακολουθεί να ορίζεται σε true. **/
     sent: boolean
 }
 [inline-code-end]
 
 ### HashTags
 
-Όταν χρησιμοποιούνται hashtags και αναλύονται επιτυχώς, οι πληροφορίες αποθηκεύονται σε μια λίστα που ονομάζεται `hashTags`. Κάθε αντικείμενο σε αυτή τη λίστα
-έχει την ακόλουθη δομή. Τα Hashtags μπορούν επίσης να προστεθούν χειροκίνητα στον πίνακα `hashTags` του σχολίου για αναζήτηση, αν οριστεί `retain`.
+Όταν χρησιμοποιούνται hashtags και αναλύονται επιτυχώς, οι πληροφορίες αποθηκεύονται σε μια λίστα που ονομάζεται `hashTags`. Κάθε αντικείμενο σε εκείνη τη λίστα
+έχει την ακόλουθη δομή. Τα hashtags μπορούν επίσης να προστεθούν χειροκίνητα στον πίνακα `hashTags` του σχολίου για ερωτήματα, αν το `retain` είναι ορισμένο.
 
-[inline-code-attrs-start title = 'Το Αντικείμενο HashTag Σχολίου'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Αντικείμενο Hashtag Σχολίου'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** Το id του hashtag. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** Το τελικό κείμενο του #hashtag, συμπεριλαμβανομένου του συμβόλου #. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Εάν το hashtag συνδέεται με προσαρμοσμένο URL, αυτό θα οριστεί. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Εάν πρέπει να διατηρηθεί το hashtag, ακόμη και αν δεν υπάρχει στο κείμενο του σχολίου όταν το σχόλιο ενημερώνεται. Χρήσιμο για ετικετοποίηση σχολίων χωρίς να αλλάζει το κείμενο του σχολίου. **/
     retain?: boolean
 }
 [inline-code-end]

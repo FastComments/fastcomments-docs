@@ -1,0 +1,62 @@
+{
+  "name": "Instalacja Drupala",
+  "pageHeader": "Dodaj komentowanie na żywo na stronach Drupala",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Szybki start",
+      "file": "drupal-quick-start.md",
+      "subCat": "W skrócie"
+    },
+    {
+      "name": "Instalacja",
+      "file": "drupal-installation.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Konfiguracja",
+      "file": "drupal-configuration.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Bloki widżetów",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Pola typu treści",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Logowanie jednokrotne (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Uprawnienia",
+      "file": "drupal-permissions.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Wielojęzyczność",
+      "file": "drupal-multilingual.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Przechowywanie danych w UE",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Dostosowywanie",
+      "file": "drupal-customize.md",
+      "subCat": "Instalacja Drupala"
+    },
+    {
+      "name": "Wymagania",
+      "file": "drupal-requirements.md",
+      "subCat": "Instalacja Drupala"
+    }
+  ]
+}

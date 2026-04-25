@@ -1,9 +1,9 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必要 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createQuestionResultBody | CreateQuestionResultBody | 是 |  |
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
 ## 回應
 
@@ -13,15 +13,15 @@
 
 [inline-code-attrs-start title = 'createQuestionResult 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-72b1f4";
-const meta: MetaItem[] = [{ key: "platform", value: "web" }];
+const tenantId: string = 'fastcomments-tenant-01';
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "question-83472",
-  commenterId: "user-5521",
-  answers: [{ subQuestionId: "sq-1", value: "Yes" }],
-  meta, // 可選的 metadata
-  note: "Follow-up requested" // 示範的可選參數
-};
+  questionId: 'q-34567',
+  respondentId: 'user-8923',
+  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
+  score: 5,
+  meta: [{ key: 'platform', value: 'web' }],
+  notifyModerators: false // 可選參數
+} as CreateQuestionResultBody;
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
 

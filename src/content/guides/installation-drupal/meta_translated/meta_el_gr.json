@@ -1,0 +1,62 @@
+{
+  "name": "Εγκατάσταση Drupal",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστοτόπους Drupal",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Γρήγορη Εκκίνηση",
+      "file": "drupal-quick-start.md",
+      "subCat": "Συνοπτικά"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "drupal-installation.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Διαμόρφωση",
+      "file": "drupal-configuration.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Μπλοκ widget",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Πεδία τύπου περιεχομένου",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Ενιαία σύνδεση (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Δικαιώματα",
+      "file": "drupal-permissions.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Πολυγλωσσικότητα",
+      "file": "drupal-multilingual.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Αποθήκευση δεδομένων στην ΕΕ",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Προσαρμογή",
+      "file": "drupal-customize.md",
+      "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Απαιτήσεις",
+      "file": "drupal-requirements.md",
+      "subCat": "Εγκατάσταση Drupal"
+    }
+  ]
+}

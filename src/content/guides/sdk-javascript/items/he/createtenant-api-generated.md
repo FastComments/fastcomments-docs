@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createTenantBody | CreateTenantBody | כן |  |
@@ -13,14 +14,14 @@
 
 [inline-code-attrs-start title = 'דוגמה ל-createTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-001";
+const tenantId: string = 'acme-corp-001';
 const createTenantBody: CreateTenantBody = {
-  name: "Acme Corporation",
-  domain: "comments.acme.com",
-  adminContact: { name: "Jane Doe", email: "jane.doe@acme.com" },
-  billingInfo: { planId: "pro-monthly", billingContactEmail: "billing@acme.com" },
-  importedSite: { siteId: "site-123", siteName: "Acme Blog" } // אתר מיובא אופציונלי
-};
+  name: 'Acme Corporation',
+  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,
+  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo
+  // שדות אופציונליים כמו ssoConfig או customConfig הושמטו בכוונה
+} as CreateTenantBody;
+
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
 

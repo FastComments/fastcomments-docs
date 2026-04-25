@@ -13,11 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4c9d1e';
-const templateId: string = 'tmpl_welcome_2024-03';
-const notifyAdmin: boolean | undefined = true; // приклад необов'язкового параметра
-
+const tenantId: string = "acme-corp-42";
+const idSuffix: string | undefined = "-archived";
+const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
 const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
 [inline-code-end]
-
----

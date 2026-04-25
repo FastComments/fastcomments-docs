@@ -2,8 +2,8 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Sim |  |
+| id | string | Sim |  |
 
 ## Resposta
 
@@ -13,13 +13,10 @@ Retorna: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Exemplo de deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_42f7c9b1';
-  const id: string = 'pending_webhook_ev_8f3b9a2d';
-  const reason?: string = undefined; // exemplo de parâmetro opcional (não exigido pela função)
-  const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
-  console.log(result);
-})();
+const tenantId: string = "tenant_7f3b2a";
+const webhookEventId: string = "wh_evt_9a8c7d1234";
+const dryRun: boolean | undefined = undefined; // exemplo de flag opcional (não exigido por esta chamada)
+const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookEventId);
 [inline-code-end]
 
 ---

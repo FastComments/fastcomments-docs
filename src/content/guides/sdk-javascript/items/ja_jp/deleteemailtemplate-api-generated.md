@@ -2,8 +2,8 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## レスポンス
 
@@ -13,10 +13,9 @@
 
 [inline-code-attrs-start title = 'deleteEmailTemplate の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4c9d1e';
-const templateId: string = 'tmpl_welcome_2024-03';
-const notifyAdmin: boolean | undefined = true; // オプションのパラメータの例
-
+const tenantId: string = "acme-corp-42";
+const idSuffix: string | undefined = "-archived";
+const templateId: string = "email_tmpl_6a1b2c" + (idSuffix ?? "");
 const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
 [inline-code-end]
 

@@ -1,6 +1,7 @@
+---
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Да |  |
@@ -13,16 +14,16 @@
 
 [inline-code-attrs-start title = 'createSubscription Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
-  trialDays: 14, // необавезни параметар (демонстрирано)
-  metadata: { source: "marketing-email" } // необавезни параметар (демонстрирано)
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
+  trialDays: 14, // опционални параметар демонстриран
+  metadata: { campaign: "spring_launch" } // опционални параметар демонстриран
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
 
 ---

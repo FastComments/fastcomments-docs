@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tag | string | 예 |  |
 | tenantId | string | 아니오 |  |
@@ -14,10 +14,14 @@
 
 [inline-code-attrs-start title = 'deleteHashTag 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_12345";
-const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
+const tag: string = "spring-sale-2026";
+const tenantId: string = "tenant-9876";
+const deleteHashTagRequest: DeleteHashTagRequest = {
+  requestedBy: "admin@retailco.com",
+  reason: "Campaign ended; remove associated auto-tags",
+  cascadeDelete: true
+};
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]
 
 ---

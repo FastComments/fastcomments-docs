@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tag | string | Evet |  |
 | tenantId | string | Hayır |  |
 | deleteHashTagRequest | DeleteHashTagRequest | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
@@ -14,10 +14,14 @@ Döndürür: [`FlagCommentPublic200Response`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteHashTag Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "breaking-news";
-const tenantId: string = "tenant_12345";
-const deleteRequest: DeleteHashTagRequest = { initiatedBy: "moderator@newsorg.com", purgeAllOccurrences: true };
-const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteRequest);
+const tag: string = "spring-sale-2026";
+const tenantId: string = "tenant-9876";
+const deleteHashTagRequest: DeleteHashTagRequest = {
+  requestedBy: "admin@retailco.com",
+  reason: "Campaign ended; remove associated auto-tags",
+  cascadeDelete: true
+};
+const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);
 [inline-code-end]
 
 ---

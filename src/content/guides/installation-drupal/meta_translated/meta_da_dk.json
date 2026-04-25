@@ -1,0 +1,62 @@
+{
+  "name": "Drupal-installation",
+  "pageHeader": "Tilføj live-kommentarer til Drupal-sider",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Hurtig start",
+      "file": "drupal-quick-start.md",
+      "subCat": "Kort fortalt"
+    },
+    {
+      "name": "Installation",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Widget-blokke",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Felter for indholdstyper",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Tilladelser",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Flersproget",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "EU-dataopbevaring",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Tilpasning",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal-installation"
+    },
+    {
+      "name": "Krav",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal-installation"
+    }
+  ]
+}

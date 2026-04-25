@@ -1,0 +1,62 @@
+{
+  "name": "Drupal Kurulumu",
+  "pageHeader": "Drupal Sitelerine Canlı Yorum Ekleme",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "drupal-quick-start.md",
+      "subCat": "Özet"
+    },
+    {
+      "name": "Kurulum",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Yapılandırma",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Widget Blokları",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "İçerik Türü Alanları",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Tek Oturum Açma (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "İzinler",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Çok Dilli",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "AB Veri Yerleşimi",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Özelleştirme",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal Kurulumu"
+    },
+    {
+      "name": "Gereksinimler",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal Kurulumu"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createFeedPostParams | CreateFeedPostParams | Да |  |
@@ -17,24 +17,20 @@
 
 [inline-code-attrs-start title = 'Пример за createFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3b9a";
+const tenantId: string = 'tenant_87f3b2';
+const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/post-123.jpg', mimeType: 'image/jpeg', width: 1200, height: 800, size: 245000 };
+const mediaItem: FeedPostMediaItem = { id: 'media_1', type: 'image', assets: [mediaAsset], altText: 'Conference keynote stage' };
+const link: FeedPostLink = { url: 'https://news.example.com/keynote-recap', title: 'Keynote recap' };
 const createFeedPostParams: CreateFeedPostParams = {
-  title: "Weekly Product Update — March 2026",
-  body: "We've shipped performance improvements and bug fixes across the web client. See the release notes for details.",
-  authorId: "user_86fa2b",
-  allowComments: true,
-  media: [
-    {
-      url: "https://cdn.example.com/images/update-march.png",
-      mimeType: "image/png",
-      caption: "Performance graph",
-      assets: [{ url: "https://cdn.example.com/images/update-march@2x.png", width: 1600, height: 900 }]
-    }
-  ],
-  links: [{ url: "https://www.example.com/release-notes/march-2026", title: "Release notes" }]
+  title: 'Product Launch Highlights',
+  content: 'Highlights from today’s product launch and roadmap updates.',
+  authorId: 'user_42',
+  mediaItems: [mediaItem],
+  links: [link],
+  tags: ['product', 'launch', 'announcement']
 };
-const broadcastId: string = "broadcast_prod_updates_202603";
-const isLive: boolean = false;
+const broadcastId: string = 'broadcast_20260424';
+const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const skipDupCheck: boolean = false;
 const result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);

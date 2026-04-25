@@ -3,12 +3,12 @@
 | 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
-| questionId | string | 否 |  |
-| questionIds | Array<string> | 否 |  |
-| urlId | string | 否 |  |
-| timeBucket | AggregateTimeBucket | 否 |  |
-| startDate | Date | 否 |  |
-| forceRecalculate | boolean | 否 |  |
+| questionId | string | No |  |
+| questionIds | Array<string> | No |  |
+| urlId | string | No |  |
+| timeBucket | AggregateTimeBucket | No |  |
+| startDate | Date | No |  |
+| forceRecalculate | boolean | No |  |
 
 ## 响应
 
@@ -18,16 +18,16 @@
 
 [inline-code-attrs-start title = 'aggregateQuestionResults 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_98765';
-const questionIds: Array<string> = ['q-102', 'q-103'];
-const urlId: string = 'url_55b3';
-const timeBucket: AggregateTimeBucket = { unit: 'day', size: 7 };
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
+const tenantId: string = "tenant_acme_001";
+const questionIds: string[] = ["q-2026-sales", "q-2026-support"];
+const urlId: string = "url_7f2c";
+const timeBucket: AggregateTimeBucket = { unit: "week", size: 1 };
+const startDate: Date = new Date("2026-01-01T00:00:00Z");
 const forceRecalculate: boolean = true;
 
 const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
   tenantId,
-  undefined, // 省略 questionId，改用 questionIds
+  undefined,
   questionIds,
   urlId,
   timeBucket,
@@ -35,5 +35,3 @@ const result: AggregateQuestionResults200Response = await aggregateQuestionResul
   forceRecalculate
 );
 [inline-code-end]
-
----

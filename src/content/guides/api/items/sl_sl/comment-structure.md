@@ -1,161 +1,163 @@
 Objekt `Comment` predstavlja komentar, ki ga je pustil uporabnik.
 
-Razmerje med nadrejenimi in potomskimi komentarji je določeno z `parentId`.
+Razmerje med starševskimi in otroškimi komentarji je določeno prek `parentId`.
 
 Struktura objekta Comment je naslednja:
 
 [inline-code-attrs-start title = 'Struktura komentarja'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Nastavljeno na true, če je protivspamski mehanizem ocenil, da je komentar spam. **/
+    /** SAMO ZA BRANJE: Nastavite na true, če je sistem za zaznavanje neželene pošte označil komentar kot spam. **/
     aiDeterminedSpam?: boolean
-    /** Ali je komentar odobren za prikaz. Ob shranjevanju komentarja nastavljeno na true, sicer bo skrit. **/
+    /** Ali je komentar odobren za prikaz. Pri shranjevanju komentarja nastavite na true, drugače bo skrit. **/
     approved?: boolean
     /** Avatar uporabnika. **/
     avatarSrc?: string
-    /** Potomski komentarji. V vseh scenarijih niso vedno napolnjeni. Uporablja se, ko je preko API-ja asTree nastavljen na true. **/
+    /** Otroški komentarji. Ni vedno napolnjeno v vseh scenarijih. Uporablja se, ko je preko API nastavljen asTree na true. **/
     children: Comment[]
-    /** Izviren komentar avtorja. **/
+    /** Izvirni komentar avtorja. **/
     comment: string
-    /** READONLY: Komentar avtorja, pretvorjen v HTML. **/
+    /** SAMO ZA BRANJE: Komentar avtorja pretvorjen v HTML. **/
     commentHTML?: string
-    /** E-pošta avtorja. Obvezna, če je anonimno komentiranje onemogočeno. **/
+    /** E-pošta avtorja. Obvezno, če so anonimni komentarji onemogočeni. **/
     commenterEmail?: string
-    /** Povezava avtorja (npr. njihov blog). **/
+    /** Povezava avtorja (na primer njihov blog). **/
     commenterLink?: string
-    /** Ime avtorja komentarja. Vedno zahtevano. Če ni na voljo, nastavite nekaj, kot je "Anonymous". **/
+    /** Ime avtorja komentarja. Vedno obvezno. Če ni na voljo, nastavite nekaj, na primer "Anonimno". **/
     commenterName: string
-    /** Datum, kdaj je bil komentar objavljen, v UTC epoch obliki. **/
+    /** Datum, ko je bil komentar oddan, v UTC epohi. **/
     date: number
-    /** "Prikazna oznaka" za komentar - na primer "Admin", "Moderator", ali nekaj kot "VIP User". **/
+    /** Prikazna oznaka za komentar - na primer "Admin", "Moderator", ali nekaj kot "VIP User". **/
     displayLabel?: string
     /** Domena, na kateri je bil komentar objavljen. **/
     domain?: string
-    /** READONLY: Število krat, ko je bil komentar prijavljen (flag). **/
+    /** SAMO ZA BRANJE: Številokrat, ko je bil komentar prijavljen. **/
     flagCount?: number
-    /** #hashtag-i zapisani v komentarju, ki so bili uspešno razčlenjeni. Hashtage lahko tudi ročno dodate za poizvedovanje, vendar se ti ne bodo samodejno prikazali v besedilu komentarja. **/
+    /** Hashtagi, zapisani v komentarju, ki so bili uspešno razčlenjeni. Lahko tudi ročno dodate hashtage za poizvedovanje, vendar se ti ne bodo samodejno prikazali v besedilu komentarja. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Ali komentar vsebuje slike? **/
+    /** SAMO ZA BRANJE: Ali komentar vsebuje slike? **/
     hasImages?: boolean
-    /** READONLY: Ali komentar vsebuje povezave? **/
+    /** SAMO ZA BRANJE: Ali komentar vsebuje povezave? **/
     hasLinks?: boolean
-    /** READONLY: Edinstveni id komentarja. **/
+    /** SAMO ZA BRANJE: Unikatni id komentarja. **/
     id: string
-    /** Samo ob ustvarjanju! To je zgoščeno (hashed) za shranjevanje. **/
+    /** Samo ob ustvarjanju! Za shranjevanje se zabeleži kot hash. **/
     ip?: string
-    /** READONLY: Ali je trenutni uporabnik blokiral uporabnika, ki je napisal ta komentar? **/
+    /** SAMO ZA BRANJE: Ali je trenutni uporabnik blokiral uporabnika, ki je napisal ta komentar? **/
     isBlocked?: boolean
-    /** READONLY: Ali je komentar avtorjev admin? Samodejno nastavljeno glede na userId. **/
+    /** SAMO ZA BRANJE: Ali je komentar napisal administrator? Samodejno nastavljeno na podlagi userId. **/
     isByAdmin?: boolean
-    /** READONLY: Ali je komentar avtorjev moderator? Samodejno nastavljeno glede na userId. **/
+    /** SAMO ZA BRANJE: Ali je komentar napisal moderator? Samodejno nastavljeno na podlagi userId. **/
     isByModerator?: boolean
-    /** Nastavljeno na true, če je bil komentar mehko izbrisan (mora ostati priponka zaradi določene konfiguracije). **/
+    /** Nastavite na true, če je bil komentar mehko izbrisan (zaradi druge konfiguracije je bilo treba pustiti nadomestni zapis). **/
     isDeleted?: boolean
-    /** Nastavljeno na true, če je bil uporabniški račun izbrisan in je bilo treba komentar obdržati. **/
+    /** Nastavite na true, če je bil račun uporabnika izbrisan in je bilo treba komentar obdržati. **/
     isDeletedUser?: boolean
-    /** READONLY: Ali je komentar prijavljen (flag) s strani trenutno prijavljenega uporabnika (contextUserId)? **/
+    /** SAMO ZA BRANJE: Ali ga je trenutno prijavljeni uporabnik (contextUserId) označil? **/
     isFlagged?: boolean
-    /** Ali je komentar pripet (pinned)? **/
+    /** Ali je komentar pripet? **/
     isPinned?: boolean
-    /** Ali je komentar zaklenjen za nove odgovore (moderatorji lahko še vedno odgovarjajo)? **/
+    /** Ali je komentar zaklenjen? Če je true, nihče (tudi moderatorji) nanj ne more odgovoriti, urejati ali izbrisati, dokler ni odklenjen. **/
     isLocked?: boolean
     /** Ali je komentar spam? **/
     isSpam?: boolean
-    /** READONLY: Ali je komentar za trenutnega uporabnika (contextUserId) ocenjeno navzdol? **/
+    /** SAMO ZA BRANJE: Ali je komentar ocenjen negativno za trenutnega uporabnika (contextUserId)? **/
     isVotedDown?: boolean
-    /** READONLY: Ali je komentar za trenutnega uporabnika (contextUserId) ocenjeno navzgor? **/
+    /** SAMO ZA BRANJE: Ali je komentar ocenjen pozitivno za trenutnega uporabnika (contextUserId)? **/
     isVotedUp?: boolean
-    /** Jeziki komentarja. Če ni podano, bo izpeljano iz HTTP glave language accept. **/
+    /** Lokalizacija (locale), v kateri je komentar. Če ni navedena, bo izpeljana iz HTTP glave Accept-Language. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: @omembe, zapisane v komentarju, ki so bile uspešno razčlenjene. **/
+    /** SAMO ZA BRANJE: @omembe, zapisane v komentarju, ki so bile uspešno razčlenjene. **/
     mentions?: CommentUserMention[]
-    /** Neobvezni metapodatki povezani s komentarjem. **/
+    /** Dodatni metapodatki, povezani s komentarjem. **/
     meta?: Record<string, string | number | boolean>
-    /** Neobvezni seznam id-jev moderacijskih skupin, povezanih s tem komentarjem. **/
+    /** Neobvezni seznam id-jev skupin moderiranja, povezanih s tem komentarjem. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: Id objekta glasovanja, ki ustreza glasu trenutnega uporabnika (contextUserId) za ta komentar. **/
+    /** SAMO ZA BRANJE: ID objekta glasovanja, ki ustreza glasu trenutnega uporabnika (contextUserId) za ta komentar. **/
     myVoteId?: string
-    /** Ali so bila za ta komentar poslana obvestila komentatorjem. Da preprečite pošiljanje obvestil pri uvozih, nastavite na true. **/
+    /** Ali so bila za ta komentar poslana obvestila avtorjem komentarjev. Če želite preprečiti pošiljanje obvestil pri uvozih, nastavite to na true. **/
     notificationSentForParent?: boolean
-    /** Ali so bila za ta komentar poslana obvestila uporabnikom najemnika. Da preprečite pošiljanje obvestil pri uvozih, nastavite na true. **/
+    /** Ali so bila za ta komentar poslana obvestila uporabnikom najemnika (tenant). Če želite preprečiti pošiljanje obvestil pri uvozih, nastavite to na true. **/
     notificationSentForParentTenant?: boolean
-    /** Naslov strani, na kateri je bil komentar. **/
+    /** Naslov strani, na kateri je bil ta komentar. **/
     pageTitle?: string
     /** Če odgovarjamo na komentar, je to ID komentarja, na katerega odgovarjamo. **/
     parentId?: string|null
     /** Ali je komentar označen kot pregledan. **/
     reviewed: boolean
-    /** Id najemnika (tenant), kjer komentar pripada. **/
+    /** ID najemnika (tenant), kateremu komentar pripada. **/
     tenantId: string
-    /** Uporabnik, ki je napisal komentar. Ustvarjen samodejno ob shranjevanju komentarja z imenom/e-pošto. **/
+    /** Uporabnik, ki je napisal komentar. Ustvari se samodejno ob shranjevanju komentarja z imenom/e-pošto. **/
     userId?: string|null
     /** URL lokacije, kjer je komentar viden, na primer objava na blogu. **/
     url: string
-    /** "Očiščena" različica urlId, ki ste jo poslali. Pri shranjevanju določite to polje, a ko pridobite komentar nazaj, bo to "očiščeno" in vaša originalna vrednost premaknjena v "urlIdRaw". **/
+    /** "Očiščena" različica urlId, ki ste ga poslali. Pri shranjevanju določite to polje, ob vračanju komentarja pa bo to polje "očiščeno" in vaša izvirna vrednost premaknjena v "urlIdRaw". **/
     urlId: string
-    /** READONLY: Izvirni urlId, ki ste nam ga poslali. **/
+    /** SAMO ZA BRANJE: Izvirni urlId, ki ste ga poslali. **/
     urlIdRaw?: string
     /** Ali sta uporabnik in ta komentar preverjena? **/
     verified: boolean
-    /** Število glasov za. **/
+    /** Število pozitivnih glasov. **/
     votesUp?: number
-    /** Število glasov proti. **/
+    /** Število negativnih glasov. **/
     votesDown?: number
-    /** "Karma" komentarja (= votes up - votes down). **/
+    /** "Karma" komentarja (= pozitivni glasovi - negativni glasovi). **/
     votes?: number
 }
 [inline-code-end]
 
-Nekatera od teh polj so označena kot `READONLY` - ta so vrnjena s strani API-ja, vendar jih ni mogoče nastaviti.
+Nekatera od teh polj so označena kot `READONLY` - vrne jih API, vendar jih ni mogoče nastaviti.
 
 ### Struktura besedila komentarja
 
-Komentarji so napisani v FastComments različici markdowna, kar je preprosto markdown plus tradicionalne `bbcode` sloga oznake za slike, na primer `[img]path[/img]`.
+Komentarji so napisani v FastComments različici markdowna, ki je navaden markdown plus tradicionalne oznake v stilu `bbcode` za slike, na primer `[img]path[/img]`.
 
-Besedilo se shranjuje v dveh poljih. Besedilo, ki ga je uporabnik vnesel, je shranjeno nespremenjeno v polju `comment`. To se upodobi in shrani v polju `commentHTML`.
+Besedilo se shranjuje v dveh poljih. Besedilo, ki ga je vnesel uporabnik, se shrani nespremenjeno v polju `comment`. To se izriše in shrani v polju `commentHTML`.
 
 Dovoljene HTML oznake so `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-Priporočeno je upodabljanje HTML-ja, saj gre za zelo majhen podnabor HTML-ja, zato je izgradnja rendererja precej preprosta. Na voljo je več knjižnic za React Native in Flutter, na primer, ki pri tem pomagajo.
+Priporočamo, da prikažete HTML, saj gre za zelo majhen podnabor HTML, zato je izdelava rendererja precej enostavna. Na primer, za to obstaja več knjižnic za React Native in Flutter.
 
-Lahko se odločite tudi za upodabljanje ne-normalizirane vrednosti polja `comment`. [Primer parserja je tukaj.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Lahko se odločite prikazati ne-normalizirano vrednost polja `comment`. [Primer parserja je tukaj.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-Primer parserja bi lahko prilagodili tudi za delo s HTML-jem in pretvorbo HTML oznak v pričakovane elemente za upodabljanje na vaši platformi. 
+Primer parserja je mogoče prilagoditi tudi za delo z HTML in pretvorbo HTML oznak v pričakovane elemente za prikaz na vaši platformi. 
 
 ### Označevanje
 
-Ko so uporabniki označeni v komentarju, je informacija shranjena v seznamu imenovanem `mentions`. Vsak objekt v tem seznamu ima naslednjo strukturo.
+Ko so uporabniki označeni v komentarju, se informacije shranijo v seznam z imenom `mentions`. Vsak objekt v tem seznamu
+ima naslednjo strukturo.
 
 [inline-code-attrs-start title = 'Objekt omemb komentarja'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Id uporabnika. Pri SSO uporabnikih bo temu predponan vaš tenant id. **/
+    /** ID uporabnika. Pri SSO uporabnikih bo temu predhodil vaš tenant id. **/
     id: string
-    /** Končni @mention tag besedila, vključno z znakom @. **/
+    /** Končno besedilo @omenjevalne oznake, vključno z znakom @. **/
     tag: string
-    /** Izvirni @mention tag besedila, vključno z znakom @. **/
+    /** Izvirno besedilo @omenjevalne oznake, vključno z znakom @. **/
     rawTag: string
-    /** Kakšen tip uporabnika je bil označen. user = FastComments.com račun. sso = SSOUser. **/
+    /** Kakšne vrste uporabnik je bil označen. user = račun na FastComments.com. sso = SSO uporabnik. **/
     type: 'user'|'sso'
-    /** Če se uporabnik odjavi od obvestil, bo to še vedno nastavljeno na true. **/
+    /** Če se uporabnik odjavi od obvestil, bo to kljub temu nastavljeno na true. **/
     sent: boolean
 }
 [inline-code-end]
 
 ### Hashtagi
 
-Ko so hashtagi uporabljeni in uspešno razčlenjeni, je informacija shranjena v seznamu imenovanem `hashTags`. Vsak objekt v tem seznamu ima naslednjo strukturo. Hashtage je mogoče tudi ročno dodati v polje `hashTags` komentarja za poizvedovanje, če je `retain` nastavljen.
+Ko so hashtagi uporabljeni in uspešno razčlenjeni, se informacije shranijo v seznam z imenom `hashTags`. Vsak objekt v tem seznamu
+ima naslednjo strukturo. Hashtage je mogoče tudi ročno dodati v polje `hashTags` komentarja za poizvedovanje, če je `retain` nastavljen.
 
-[inline-code-attrs-start title = 'Objekt hash-tagov komentarja'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objekt hashtagov komentarja'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** Id hashtaga. **/
+    /** ID hashtaga. **/
     id: string
-    /** Končni #hashtag tag besedila, vključno z znakom #. **/
+    /** Končno besedilo #hashtag oznake, vključno z znakom #. **/
     tag: string
     /** Če je hashtag povezan z lastnim URL-jem, bo to definirano. **/
     url?: string
-    /** Če naj hashtag obdržimo, tudi če ob posodobitvi komentarja ni prisoten v besedilu. Uporabno za označevanje komentarjev brez spreminjanja besedila komentarja. **/
+    /** Če naj hashtag obdržimo, tudi če ne obstaja v besedilu komentarja, ko je komentar posodobljen. Uporabno za označevanje komentarjev brez spreminjanja besedila komentarja. **/
     retain?: boolean
 }
 [inline-code-end]

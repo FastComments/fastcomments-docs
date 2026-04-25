@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | limit | number | No |  |
@@ -15,16 +15,14 @@ Devuelve: [`GetAuditLogs200Response`](https://github.com/FastComments/fastcommen
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const tenantId: string = 'tenant_9b8f6c';
-  const limit: number = 50;
-  const skip: number = 0;
-  const order: SORTDIR = 'desc';
-  const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after);
-  console.log(response);
-}
-main();
+const tenantId: string = 'tenant_9a8b7c';
+const limit: number = 100;
+const skip: number = 0;
+const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // hace 30 días
+const before: number = Date.now();
+const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
 [inline-code-end]
+
+---

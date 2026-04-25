@@ -1,0 +1,62 @@
+{
+  "name": "Drupal のインストール",
+  "pageHeader": "Drupal サイトにライブコメントを追加する",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "クイックスタート",
+      "file": "drupal-quick-start.md",
+      "subCat": "要点"
+    },
+    {
+      "name": "インストール",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "設定",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "ウィジェットブロック",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "コンテンツタイプのフィールド",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "シングルサインオン (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "権限",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "多言語対応",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "EU内データ保管",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "カスタマイズ",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal のインストール"
+    },
+    {
+      "name": "要件",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal のインストール"
+    }
+  ]
+}

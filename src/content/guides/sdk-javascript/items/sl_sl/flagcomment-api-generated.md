@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -13,13 +13,12 @@ Vrne: [`FlagComment200Response`](https://github.com/FastComments/fastcomments-sd
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer flagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
-const id: string = 'comment_7f3a2b9e';
-const userId: string = 'user_jdoe_1001';
-const anonUserId: string = 'anon_3f2b_visitor';
-const result: FlagComment200Response = await flagComment(tenantId, id, userId, anonUserId);
+const tenantId: string = 'tenant_7f3b21';
+const commentId: string = 'cmt_9a2b4';
+const userId: string = 'user_1024';
+const result: FlagComment200Response = await flagComment(tenantId, commentId, userId);
 [inline-code-end]
 
 ---

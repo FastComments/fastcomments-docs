@@ -1,163 +1,161 @@
-Objekat `Comment` predstavlja komentar koji je ostavio korisnik.
+Објекат `Comment` представља коментар који је оставио корисник.
 
-Veza između roditeljskih i podkomentara definiše se preko `parentId`.
+Однос између родитељских и подређених коментара дефинисан је преко `parentId`.
 
-Struktura objekta Comment je sljedeća:
+Структура за Comment објекат је следећа:
 
-[inline-code-attrs-start title = 'Struktura komentara'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура коментара'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Postavljeno na true ako spam mehanizam odredi da je komentar spam. **/
+    /** САМО ЗА ЧИТАЊЕ: Поставити на true ако је спам механизам одредио да је коментар спам. **/
     aiDeterminedSpam?: boolean
-    /** Da li je komentar odobren za prikaz. Postavi se na true prilikom čuvanja komentara, inače će biti skriven. **/
+    /** Да ли је коментар одобрен за приказ. Поставити на true при чувању коментара, иначе ће бити скривен. **/
     approved?: boolean
-    /** Avatar korisnika. **/
+    /** Корисников аватар. **/
     avatarSrc?: string
-    /** Podkomentari. Nisu popunjeni u svim scenarijima. Koristi se kada je asTree postavljeno na true preko API-ja. **/
+    /** Подређени коментари. Нису попуњени у свим сценаријима. Користи се када је asTree постављено на true преко API-ја. **/
     children: Comment[]
-    /** Neobrađeni komentar koji je ostavio korisnik. **/
+    /** Изворни текст коментара. **/
     comment: string
-    /** READONLY: Komentar korisnika parsiran u HTML. **/
+    /** САМО ЗА ЧИТАЊЕ: Коментар парсиран у HTML. **/
     commentHTML?: string
-    /** Email komentatora. Obavezan ako je anonimno komentarisanje isključeno. **/
+    /** Е-пошта аутора коментара. Обавезна ако је анонимно коментарисање искључено. **/
     commenterEmail?: string
-    /** Link komentatora (npr. njihov blog). **/
+    /** Линк аутора коментара (на пример, њихов блог). **/
     commenterLink?: string
-    /** Ime komentatora. Uvijek obavezno. Ako nije dostupno, postavite npr. "Anonymous". **/
+    /** Име аутора коментара. Увек је обавезно. Ако није доступно, поставите нешто попут "Anonymous". **/
     commenterName: string
-    /** Datum ostavljanja komentara, u UTC epoch formatu. **/
+    /** Датум када је коментар остављен, у UTC епохи. **/
     date: number
-    /** 'Prikazna oznaka' za komentar – npr. "Admin", "Moderator" ili nešto poput "VIP User". **/
+    /** Етикета за приказ коментара - на пример "Admin", "Moderator", или нешто као "VIP User". **/
     displayLabel?: string
-    /** Domen na kojem je komentar objavljen. **/
+    /** Домен на којем је коментар постављен. **/
     domain?: string
-    /** READONLY: Broj puta koliko je komentar prijavljen/označen. **/
+    /** САМО ЗА ЧИТАЊЕ: Број пута колико је коментар пријављен. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** #хештегови написани у коментару који су успешно парсирани. Можете и ручно додати хештегове за упите, али се они неће аутоматски приказати у тексту коментара. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли коментар садржи слике? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли коментар садржи линкове? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** САМО ЗА ЧИТАЊЕ: Јединствени коментар ид. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** Само приликом креирања! Ово је хеширано за складиштење. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је тренутни корисник блокирао корисника који је написао овај коментар? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је коментар од администратора? Аутоматски се поставља на основу userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је коментар од модератора? Аутоматски се поставља на основу userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Поставити на true ако је коментар меко обрисан (плејсхолдер је морао бити остављен због неке друге конфигурације). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Поставити на true ако је налог корисника избрисан и коментар је морао бити сачуван. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је пријављен од стране тренутно пријављеног корисника (contextUserId)? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** Да ли је коментар причвршћен (pinned)? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Да ли је коментар закључан? Када је true, нико (укључујући модераторе) не може одговорити, уредити или обрисати га док се не откључа. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** Да ли је коментар спам? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је коментар за овај тренутни корисник (contextUserId) гласан негативно? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** САМО ЗА ЧИТАЊЕ: Да ли је коментар за овај тренутни корисник (contextUserId) гласан позитивно? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** Локал у којем је коментар. Ако није наведен, изведен ће бити из HTTP заглавља Accept-Language. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** САМО ЗА ЧИТАЊЕ: @помене написане у коментару које су успешно парсиране. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Опционални метаподаци повезани са коментаром. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Опционална листа id-јева група модерације повезаних са овим коментаром. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** САМО ЗА ЧИТАЊЕ: ИД објекта гласа који одговара гласу тренутног корисника (contextUserId) на овом коментару. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Да ли су обавијести послате за овај коментар коментаторима. Да бисте спречили слање обавјештења приликом увоза, поставите ово на true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Да ли су обавијести послате за овај коментар корисницима тенанта. Да бисте спречили слање обавештења приликом увоза, поставите ово на true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** Наслов странице на којој се налазио овај коментар. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Ако одговарамо на коментар, ово је ID на који одговарамо. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Да ли је коментар означен као прегледан. **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** ИД тенанта коме коментар припада. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** Корисник који је написао коментар. Креира се аутоматски при чувању коментара са именом/е-поштом. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** URL локације на којој је овај коментар видљив, као што је блог-пост. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** "Очишћена" верзија urlId коју сте нам послали. При чувању, ви назначите ово поље, али када повучете коментар назад ово ће бити "очишћено" и ваша оригинална вриједност премјештена у "urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** САМО ЗА ЧИТАЊЕ: Оригинални urlId који сте нам послали. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** Да ли је корисник и овај коментар верификован? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Број позитивних гласова. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Број негативних гласова. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** "Карма" коментара (= позитивни гласови - негативни гласови). **/
     votes?: number
 }
 [inline-code-end]
 
-Neka od ovih polja su označena kao `READONLY` - ta polja vraća API, ali ih nije moguće postaviti.
+Нека поља су означена као `READONLY` - она се враћају од стране API-ја али се не могу поставити.
 
-### Comment Text Structure
+### Структура текста коментара
 
-Komentari se pišu u FastComments varijanti markdown-a, što je u suštini markdown plus tradicionalne `bbcode` oznake za slike, poput `[img]path[/img]`.
+Коментари су написани у FastComments варијанти markdown-а, који је само markdown плус традиционалне `bbcode` стилске тагове за слике, као што су `[img]path[/img]`.
 
-Tekst se čuva u dva polja. Tekst koji je korisnik unio čuva se neizmijenjen u polju `comment`. Ovaj tekst se renduje i sprema u polje `commentHTML`.
+Текст се чува у два поља. Текст који је корисник унео чува се непромијењен у пољу `comment`. Ово се рендерује и чува у пољу `commentHTML`.
 
-Dozvoljene HTML oznake su `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
+Дозвољени HTML тагови су `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-Preporučuje se renderovanje HTML-a, pošto je to vrlo mali podskup HTML-a i izgradnja renderer-a je prilično jednostavna. Postoji više biblioteka za React Native i Flutter, na primjer, koje u tome pomažu
+Препоручује се рендеровање HTML-а, јер је то веома мали подскуп HTML-а, тако да је израда рендера прилично једноставна. Постоји више библиотека за React Native и Flutter, на примјер, које могу помоћи у томе
 
-Možete izabrati da renderujete nenormalizovanu vrijednost polja `comment`. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Можете изабрати да рендерујете ненормализовану вриједност поља `comment`. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-Primjer parsera se također može prilagoditi da radi sa HTML-om i transformiše HTML oznake u očekivane elemente za renderovanje na vašoj platformi. 
+Пример парсера се такође може прилагодити да ради са HTML-ом и трансформише HTML тагове у очекиване елементе за рендеровање на вашој платформи. 
 
-### Tagging
+### Означавање
 
-Kada su korisnici označeni u komentaru, informacije se čuvaju u listi nazvanoj `mentions`. Svaki objekat u toj listi
-has the following structure.
+Када су корисници означени у коментару, информација се чува у листи званој `mentions`. Сваки објекат у тој листи има сљедећу структуру.
 
-[inline-code-attrs-start title = 'Objekat spominjanja u komentaru'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура помена у коментару'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** ID korisnika. Za SSO korisnike, biće prefiksiran vašim tenant ID-jem. **/
+    /** ИД корисника. За SSO кориснике, ово ће имати ваш tenant id као префикс. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Коначни @mention текст тега, укључујући @ симбол. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Оригинални @mention текст тега, укључујући @ симбол. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Који тип корисника је означен. user = FastComments.com налог. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Ако се корисник одјави са обавијести, ово ће и даље бити постављено на true. **/
     sent: boolean
 }
 [inline-code-end]
 
-### HashTags
+### Хештегови
 
-Kada se koriste hashtagovi i uspješno se parsiraju, informacije se čuvaju u listi nazvanoj `hashTags`. Svaki objekat u toj listi
-has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
+Када се хештегови користе и успјешно парсирају, информација се чува у листи званој `hashTags`. Сваки објекат у тој листи има сљедећу структуру. Хештегови се такође могу ручно додати у `hashTags` низ коментара за упите, ако је `retain` постављен.
 
-[inline-code-attrs-start title = 'Objekat hashtag-a komentara'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура хештега коментара'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** ИД хештега. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** Коначни #hashtag текст тега, укључујући # симбол. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Ако је хештег повезан са прилагођеним URL-ом, ово ће бити дефинисано. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Да ли треба задржати хештег, чак и ако не постоји у тексту коментара, када се коментар ажурира. Корисно за означавање коментара без мијењања текста коментара. **/
     retain?: boolean
 }
 [inline-code-end]

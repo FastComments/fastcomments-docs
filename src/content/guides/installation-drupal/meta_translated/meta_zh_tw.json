@@ -1,0 +1,62 @@
+{
+  "name": "Drupal 安裝",
+  "pageHeader": "在 Drupal 網站新增即時留言",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "快速開始",
+      "file": "drupal-quick-start.md",
+      "subCat": "重點摘要"
+    },
+    {
+      "name": "安裝",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "設定",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "小工具區塊",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "內容類型欄位",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "單一登入 (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "權限",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "多語系",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "歐盟資料駐留",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "自訂",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal 安裝"
+    },
+    {
+      "name": "系統需求",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal 安裝"
+    }
+  ]
+}

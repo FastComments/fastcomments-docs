@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | questionId | string | 否 |  |
@@ -18,16 +18,16 @@
 
 [inline-code-attrs-start title = 'aggregateQuestionResults 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_98765';
-const questionIds: Array<string> = ['q-102', 'q-103'];
-const urlId: string = 'url_55b3';
-const timeBucket: AggregateTimeBucket = { unit: 'day', size: 7 };
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
+const tenantId: string = "tenant_acme_001";
+const questionIds: string[] = ["q-2026-sales", "q-2026-support"];
+const urlId: string = "url_7f2c";
+const timeBucket: AggregateTimeBucket = { unit: "week", size: 1 };
+const startDate: Date = new Date("2026-01-01T00:00:00Z");
 const forceRecalculate: boolean = true;
 
 const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
   tenantId,
-  undefined, // 已省略 questionId，改用 questionIds
+  undefined,
   questionIds,
   urlId,
   timeBucket,

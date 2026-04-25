@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -12,13 +12,12 @@ Returnerer: [`DeleteCommentVote200Response`](https://github.com/FastComments/fas
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'deleteVote Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7c3f2b4a";
-const voteId: string = "vote_4f8d9a11";
-const editKey: string = "edit_2b9f8c";
-const resultWithoutKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId);
-const resultWithKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId, editKey);
-[inline-code-end]
+const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+const id: string = 'vote-7a1b2c3d-9f8e-4b6a-8123-abcdef012345';
+const editKey: string = 'editKey_4f3e2d1c';
 
----
+const resultWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);
+const resultWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);
+[inline-code-end]

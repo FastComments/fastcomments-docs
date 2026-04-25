@@ -4,8 +4,9 @@ Bu API uç noktası bir yorumu silme yeteneği sağlar.
 
 Notlar:
 
-- İstenirse bu API yorum bileşenini "live" olarak güncelleyebilir (bu, `creditsCost` değerini `1`'den `2`'ye çıkarır).
-- Bu API tüm alt yorumları siler.
+- Bu API istenirse yorum bileşenini "canlı" olarak güncelleyebilir (bu `creditsCost`'u `1`'den `2`'ye çıkarır).
+- Bu API tüm alt yorumları silecektir.
+- Hedef yorum kilitliyse (`isLocked: true`), istek `code: 'locked'` ile reddedilir. Önce yorumu kilidini açın, sonra silin.
 
 [inline-code-attrs-start title = 'Yorum Silme cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,9 +21,9 @@ curl --request DELETE \
 interface CommentDeleteQueryParams {
     tenantId: string
     API_KEY: string
-	/** Güncellemeyi yapan kullanıcı. İstenirse bu, kullanıcının yorumu silebileceğini kontrol etmek için kullanılabilir.  **/
+	/** Güncellemeyi yapan kullanıcı. İstenirse, yorumı silme yetkisine sahip olup olmadığını kontrol etmek için kullanılabilir.  **/
     contextUserId?: string
-	/** Yorumun aynı urlId'ye sahip yorum bileşeni örneklerini görüntüleyen kullanıcılara "live" olarak silinip silinmeyeceği. NOT: Kredi maliyetini 1'den 2'ye iki katına çıkarır. **/
+	/** Yorumun aynı urlId ile yorum bileşeninin örneklerini görüntüleyen kullanıcılara "canlı" olarak silinip silinmeyeceği. NOT: Kredi maliyetini `1`'den `2`'ye katlar. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
@@ -33,10 +34,8 @@ interface CommentDeleteQueryParams {
 interface CommentDeleteResponse {
     status: 'success' | 'failed'
     /** Başarısızlık durumunda dahil edilir. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'locked'
     /** Başarısızlık durumunda dahil edilir. **/
     reason?: string
 }
 [inline-code-end]
-
----

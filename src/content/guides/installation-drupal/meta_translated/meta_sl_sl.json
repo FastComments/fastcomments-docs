@@ -1,0 +1,62 @@
+{
+  "name": "Namestitev Drupala",
+  "pageHeader": "Dodajte komentiranje v živo na Drupal spletna mesta",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Hiter začetek",
+      "file": "drupal-quick-start.md",
+      "subCat": "Povzetek"
+    },
+    {
+      "name": "Namestitev",
+      "file": "drupal-installation.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Konfiguracija",
+      "file": "drupal-configuration.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Bloki pripomočkov",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Polja tipov vsebine",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Enotna prijava (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Dovoljenja",
+      "file": "drupal-permissions.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Večjezičnost",
+      "file": "drupal-multilingual.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Lokacija podatkov v EU",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Prilagoditev",
+      "file": "drupal-customize.md",
+      "subCat": "Namestitev Drupala"
+    },
+    {
+      "name": "Zahteve",
+      "file": "drupal-requirements.md",
+      "subCat": "Namestitev Drupala"
+    }
+  ]
+}

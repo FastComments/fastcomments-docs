@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantBody | CreateTenantBody | Ja |  |
@@ -11,15 +11,17 @@ Returnerer: [`CreateTenant200Response`](https://github.com/FastComments/fastcomm
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på createTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-001";
+const tenantId: string = 'acme-corp-001';
 const createTenantBody: CreateTenantBody = {
-  name: "Acme Corporation",
-  domain: "comments.acme.com",
-  adminContact: { name: "Jane Doe", email: "jane.doe@acme.com" },
-  billingInfo: { planId: "pro-monthly", billingContactEmail: "billing@acme.com" },
-  importedSite: { siteId: "site-123", siteName: "Acme Blog" } // valgfrit importeret site
-};
+  name: 'Acme Corporation',
+  domainConfiguration: { primaryDomain: 'comments.acme.com', enforceHttps: true } as APIDomainConfiguration,
+  billingInfo: { planId: 'enterprise', contactEmail: 'billing@acme.com' } as BillingInfo
+  // valgfri felter som ssoConfig eller customConfig er med vilje udeladt
+} as CreateTenantBody;
+
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]
+
+---

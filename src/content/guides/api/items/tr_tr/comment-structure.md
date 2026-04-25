@@ -57,7 +57,7 @@ interface Comment {
     isFlagged?: boolean
     /** Is the comment pinned? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** Is the comment locked? When true, no one (including moderators) can reply, edit, or delete it until it is unlocked. **/
     isLocked?: boolean
     /** Is the comment spam? **/
     isSpam?: boolean
@@ -108,7 +108,7 @@ interface Comment {
 
 Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
 
-### Comment Text Structure
+### Yorum Metni Yapısı
 
 Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
 
@@ -122,12 +122,12 @@ You may choose to render the un-normalized value of the `comment` field. [An exa
 
 The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
 
-### Tagging
+### Etiketleme
 
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
-[inline-code-attrs-start title = 'Yorumdaki Kullanıcı Etiketi Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorum Etiketleme Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -148,7 +148,7 @@ interface CommentUserMention {
 When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
 has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
 
-[inline-code-attrs-start title = 'Yorum Hashtag Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorum HashTag Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
     /** The hashtag id. **/
@@ -161,5 +161,3 @@ interface CommentHashTag {
     retain?: boolean
 }
 [inline-code-end]
-
----

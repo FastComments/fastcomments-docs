@@ -1,0 +1,62 @@
+{
+  "name": "התקנת דרופל",
+  "pageHeader": "הוספת תגובות חיות לאתרי דרופל",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "התחלה מהירה",
+      "file": "drupal-quick-start.md",
+      "subCat": "תקציר"
+    },
+    {
+      "name": "התקנה",
+      "file": "drupal-installation.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "תצורה",
+      "file": "drupal-configuration.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "בלוקי ווידג'ט",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "שדות סוג תוכן",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "כניסה יחידה (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "הרשאות",
+      "file": "drupal-permissions.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "רב-לשוני",
+      "file": "drupal-multilingual.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "אחסון נתונים באיחוד האירופי",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "התאמה אישית",
+      "file": "drupal-customize.md",
+      "subCat": "התקנת דרופל"
+    },
+    {
+      "name": "דרישות",
+      "file": "drupal-requirements.md",
+      "subCat": "התקנת דרופל"
+    }
+  ]
+}

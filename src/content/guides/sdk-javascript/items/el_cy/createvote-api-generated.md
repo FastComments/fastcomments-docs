@@ -1,12 +1,13 @@
+---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| direction | CreateVoteDirectionEnum | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Ναι |  |
+| commentId | string | Ναι |  |
+| direction | CreateVoteDirectionEnum | Ναι |  |
+| userId | string | Όχι |  |
+| anonUserId | string | Όχι |  |
 
 ## Απόκριση
 
@@ -16,11 +17,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b6a';
-const commentId: string = 'comment_3b7d2e';
+const tenantId: string = 'tenant_5f2a9b';
+const commentId: string = 'cmt_3b7e21';
 const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Up;
-const anonUserId: string = 'anon_4c2a1f';
-
+const anonUserId: string = 'anon_9x7k2p';
 const voteResult: VoteComment200Response = await createVote(tenantId, commentId, direction, undefined, anonUserId);
 [inline-code-end]
 

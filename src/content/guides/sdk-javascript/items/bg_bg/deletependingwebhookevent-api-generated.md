@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -11,15 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePendingWebhookEvent Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_42f7c9b1';
-  const id: string = 'pending_webhook_ev_8f3b9a2d';
-  const reason?: string = undefined; // пример за незадължителен параметър (не е задължителен за функцията)
-  const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);
-  console.log(result);
-})();
+const tenantId: string = "tenant_7f3b2a";
+const webhookEventId: string = "wh_evt_9a8c7d1234";
+const dryRun: boolean | undefined = undefined; // пример за опционален флаг (не е задължителен за това извикване)
+const result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, webhookEventId);
 [inline-code-end]
 
 ---

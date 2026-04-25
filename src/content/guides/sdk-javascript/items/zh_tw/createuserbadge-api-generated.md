@@ -1,9 +1,9 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
+| tenantId | string | 是 |  |
+| createUserBadgeParams | CreateUserBadgeParams | 是 |  |
 
 ## 回應
 
@@ -13,17 +13,15 @@
 
 [inline-code-attrs-start title = 'createUserBadge 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const createUserBadgeParams: CreateUserBadgeParams = {
-  name: 'Top Contributor',
-  slug: 'top-contributor',
-  imageUrl: 'https://assets.fastcomments.com/badges/top-contributor.png',
-  description: 'Awarded for 100 helpful comments',
+const tenantId: string = "tenant_9a8b7c";
+const params: CreateUserBadgeParams = {
+  name: "Top Contributor",
+  slug: "top-contributor",
+  description: "Awarded for 100 approved comments",
+  iconUrl: "https://cdn.fastcomments.com/badges/top-contributor.png",
   active: true,
-  criteria: { commentsCount: 100 }, // 選用的 criteria
-  displayOrder: 10,
-  metadata: { featured: true } // 選用的 metadata
+  criteria: { approvedComments: 100 },
+  customConfig: { showOnProfile: true } // 可選參數
 };
-const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
-console.log(result);
+const result: CreateUserBadge200Response = await createUserBadge(tenantId, params);
 [inline-code-end]

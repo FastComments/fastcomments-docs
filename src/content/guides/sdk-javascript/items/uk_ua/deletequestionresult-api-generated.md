@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Так |  |
+| id | string | Так |  |
 
 ## Відповідь
 
@@ -13,11 +13,10 @@
 
 [inline-code-attrs-start title = 'Приклад deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-82479";
-const questionId: string = "q-6a3d2e1f";
-const includeArchived?: boolean = false; // необов'язковий параметр, що демонструє альтернативний вибір цілі
-const targetId: string = includeArchived ? "q-archived-112233" : questionId;
-const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, targetId);
+const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;
+const tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';
+const id: string = 'qres-9f2a3b1c';
+const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
 [inline-code-end]
 
 ---

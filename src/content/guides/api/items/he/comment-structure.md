@@ -1,163 +1,165 @@
-אובייקט `Comment` מייצג תגובה שהושארה על ידי משתמש.
+אובייקט `Comment` מייצג תגובה שהשאיר משתמש.
 
-היחס בין תגובות הורה וילד מוגדר באמצעות `parentId`.
+הקשר בין תגובות אב וצאצא מוגדר באמצעות `parentId`.
 
-המבנה עבור אובייקט Comment הוא כדלקמן:
+המבנה של אובייקט Comment הוא כדלקמן:
 
 [inline-code-attrs-start title = 'מבנה תגובה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** לקריאה בלבד: יוגדר ל-true אם מנוע הספאם קבע שהתגובה היא ספאם. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** האם התגובה מאושרת להצגה. תוגדר ל-true בעת שמירת התגובה; אחרת היא תוסתר. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** האווטאר של המשתמש. **/
     avatarSrc?: string
     /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** הטקסט הגולמי של התגובה. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** לקריאה בלבד: הטקסט של התגובה לאחר פירוס ל-HTML. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** האימייל של הכותב. נדרש אם תגובות אנונימיות כבויות. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** הקישור של הכותב (למשל הבלוג שלו). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** השם של הכותב. תמיד נדרש. אם לא זמין, קבע ערך כמו "Anonymous". **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** התאריך שבו נכתבה התגובה, ביחידת זמן epoch UTC. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** התווית לתצוגה של התגובה - לדוגמה "Admin", "Moderator", או משהו כמו "VIP User". **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** הדומיין שבו פורסמה התגובה. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** לקריאה בלבד: מספר הפעמים שהתגובה סומנה. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** ההאשטאגים (#) שנכתבו בתגובה ופוענחו בהצלחה. ניתן גם להוסיף האשטאגים ידנית לצורך שאילתות, אך הם לא יוצגו אוטומטית בטקסט התגובה. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** לקריאה בלבד: האם התגובה מכילה תמונות? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** לקריאה בלבד: האם התגובה מכילה קישורים? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** לקריאה בלבד: המזהה הייחודי של התגובה. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** רק בעת יצירה! ערך זה מעובד ב-hash לצורך אחסון. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** לקריאה בלבד: האם המשתמש הנוכחי חסם את מי שכתב את התגובה? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** לקריאה בלבד: האם התגובה נכתבה על ידי אדמין? מוגדר אוטומטית על בסיס userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** לקריאה בלבד: האם התגובה נכתבה על ידי מודראטור? מוגדר אוטומטית על בסיס userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** יוגדר ל-true אם התגובה נמחקה באופן רך (soft deleted) — הושאר ממלא מקום בשל קונפיגורציה אחרת. **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** יוגדר ל-true אם חשבון המשתמש נמחק והתגובה נדרשה להישאר. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** לקריאה בלבד: האם התגובה סומנה על ידי המשתמש המחובר כרגע (contextUserId)? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** האם התגובה מוצמדת (pinned)? **/
     isPinned?: boolean
-    /** Is the comment locked for new replies (moderators still can reply)? **/
+    /** האם התגובה נעולה? כאשר true, אף אחד (כולל מודראטורים) לא יכול להשיב, לערוך או למחוק אותה עד שתיפתח. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** האם התגובה היא ספאם? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** לקריאה בלבד: האם המשתמש הנוכחי (contextUserId) הצביע נגד התגובה? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** לקריאה בלבד: האם המשתמש הנוכחי (contextUserId) הצביע בעד התגובה? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** השפה/לוקל של התגובה. אם לא סופק, היא נגזרת מכותרת ה-HTTP שמציינת את שפות ההעדפה. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** לקריאה בלבד: ה-@mentions שנכתבו בתגובה ופוענחו בהצלחה. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** מטה-נתונים אופציונליים המשויכים לתגובה. **/
     meta?: Record<string, string | number | boolean>
     /** The optional list of moderation group ids associated with this comment. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** לקריאה בלבד: המזהה של אובייקט ההצבעה המתאים להצבעת המשתמש הנוכחי (contextUserId) על תגובה זו. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** האם נשלחו התראות על תגובה זו למגיבים. כדי למנוע שליחת התראות בייבוא, קבע ערך זה ל-true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** האם נשלחו התראות על תגובה זו למשתמשי ה-tenant. כדי למנוע שליחת התראות בייבוא, קבע ל-true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** הכותרת של העמוד שבו הופיעה התגובה. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** אם אנו משיבים לתגובה, זהו המזהה שאליו משיבים. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** האם התגובה מסומנת כנגועה בבדיקה (reviewed). **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** מזהה ה-tenant שאליו שייכת התגובה. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** המשתמש שכתב את התגובה. נוצר אוטומטית כאשר שומרים תגובה שכוללת שם/אימייל. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** ה-URL למיקום שבו התגובה נראית, לדוגמה פוסט בבלוג. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** גרסה "נוקה" של ה-urlId שסיפקת. בעת שמירה, אתה מציין שדה זה, אך כאשר משחזרים את התגובה הוא יעובד והערך המקורי יועבר ל-"urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** לקריאה בלבד: ה-urlId המקורי שסיפקת. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** האם המשתמש והתגובה מאומתים? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** מספר ההצבעות בעד. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** מספר ההצבעות נגד. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** "הקרמה" של התגובה (= votes up - votes down). **/
     votes?: number
 }
 [inline-code-end]
 
-חלק מהשדות הללו מסומנים כ-`READONLY` - אלה מוחזרים על ידי ה-API אבל לא ניתן להגדיר אותם.
+חלק מהשדות הללו מסומנים כ-`READONLY` - אלה מוחזרים על ידי ה-API אך לא יכולים להיות מוגדרים.
 
-### מבנה טקסט התגובה
+### Comment Text Structure
 
-תגובות נכתבות בגרסת FastComments של markdown, שהיא פשוט markdown בתוספת תגיות בסגנון `bbcode` מסורתי לתמונות, כמו `[img]path[/img]`.
+תגובות נכתבות בגירסה של Markdown שמותאמת ל-FastComments, שהיא Markdown בתוספת תגים בסגנון `bbcode` עבור תמונות, כמו `[img]path[/img]`.
 
-הטקסט מאוחסן בשני שדות. הטקסט שהמשתמש הזין מאוחסן ללא שינוי בשדה `comment`. זה מרונדר ומאוחסן בשדה `commentHTML`.
+הטקסט נשמר בשני שדות. הטקסט שהמשתמש הזין נשמר ללא שינוי בשדה `comment`. זה מורנדר ונשמר בשדה `commentHTML`.
 
-תגיות ה-HTML המותרות הן `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, ו-br`.
+תגי ה-HTML המותרים הם `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-מומלץ לרנדר את ה-HTML, מכיוון שזו תת-קבוצה קטנה מאוד של HTML, בניית רנדרר היא די פשוטה. ישנן מספר ספריות ל-React Native ו-Flutter, לדוגמה, שעוזרות בכך.
+מומלץ להציג את ה-HTML, מכיוון שמדובר בתת-קבוצה מאוד קטנה של HTML, ובניית מנרדרר היא יחסית פשוטה. קיימות ספריות רבות עבור React Native ו-Flutter, למשל, שעוזרות בכך.
 
-אתה יכול לבחור לרנדר את הערך הלא-מנורמל של שדה `comment`. [דוגמת פרסר נמצאת כאן.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+אתה רשאי לבחור להציג את הערך הלא-נורמליזציוני של השדה `comment`. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-ניתן גם להתאים את דוגמת הפרסר לעבודה עם HTML, ולהמיר את תגיות ה-HTML לאלמנטים צפויים לרנדור עבור הפלטפורמה שלך.
+ניתן גם להתאים את מפענח הדוגמה לעבודה עם HTML, ולהמיר את תווי ה-HTML לאלמנטים הצפויים להצגה בפלטפורמה שלך.
 
-### תיוג
+### Tagging
 
-כאשר משתמשים מתויגים בתגובה, המידע מאוחסן ברשימה בשם `mentions`. לכל אובייקט ברשימה זו
+כאשר משתמשים מסומנים בתגובה, המידע מאוחסן ברשימה שנקראת `mentions`. כל אובייקט ברשימה זו
 יש את המבנה הבא.
 
-[inline-code-attrs-start title = 'אובייקט אזכורי תגובה'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט אזכורי התגובה'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** מזהה המשתמש. עבור משתמשי SSO, יהיה עם קידומת של מזהה ה-tenant שלכם. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** הטקסט הסופי של תגית ה-@mention, כולל הסימן @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** הטקסט המקורי של ה-@mention, כולל הסימן @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** סוג המשתמש שהוזכר. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** גם אם המשתמש מבטל קבלת התראות, ערך זה עדיין יהיה true. **/
     sent: boolean
 }
 [inline-code-end]
 
-### האשטאגים
+### HashTags
 
-כאשר האשטאגים משמשים ומפורסרים בהצלחה, המידע מאוחסן ברשימה בשם `hashTags`. לכל אובייקט ברשימה זו
-יש את המבנה הבא. ניתן גם להוסיף האשטאגים באופן ידני למערך `hashTags` של התגובה לשאילתות, אם `retain` מוגדר.
+כאשר משתמשים בהאשטאגים והם פוענחו בהצלחה, המידע מאוחסן ברשימה שנקראת `hashTags`. כל אובייקט ברשימה זו
+יש את המבנה הבא. ניתן גם להוסיף האשטאגים ידנית למערך `hashTags` של התגובה לצורך שאילתות, אם `retain` מוגדר.
 
-[inline-code-attrs-start title = 'אובייקט האשטאג תגובה'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט האשטאג של התגובה'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** המזהה של ההאשטאג. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** הטקסט הסופי של תגית ה-#hashtag, כולל הסימן #. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** אם לאשטאג מקושר ל-URL מותאם אישית, זה יהיה מוגדר. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** האם לשמור את ההאשטאג גם אם הוא לא קיים בטקסט התגובה כאשר התגובה מעודכנת. שימושי לתיוג תגובות מבלי לשנות את טקסט התגובה. **/
     retain?: boolean
 }
 [inline-code-end]
+
+---

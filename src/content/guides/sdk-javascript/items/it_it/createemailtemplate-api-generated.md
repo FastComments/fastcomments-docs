@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Sì |  |
 
@@ -13,20 +13,19 @@ Restituisce: [`CreateEmailTemplate200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'Esempio di createEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a9f3c2b";
-const customConfig: CustomConfigParameters = { smtpHost: "smtp.fastmail.com", smtpPort: 587, useTLS: true };
-const createEmailTemplateBody: CreateEmailTemplateBody = {
-  name: "Account Notification",
-  subject: "Your ACME account was updated",
-  fromEmail: "no-reply@acme-corp.com",
-  replyTo: "support@acme-corp.com",
-  html: "<p>Hi \{{user.firstName}}, your account settings were changed.</p>",
-  text: "Hi \{{user.firstName}}, your account settings were changed.",
-  isActive: true,
-  description: "Used for transactional account update emails",
-  customConfig
-};
-const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
+(async () => {
+  const tenantId: string = 'tenant_9f4a2b';
+  const createEmailTemplateBody: CreateEmailTemplateBody = {
+    name: 'Weekly Digest',
+    subject: 'Your weekly discussion highlights',
+    html: '<!doctype html><body><h1>Hello \{{user.name}}</h1><p>Top comments this week...</p></body>',
+    fromAddress: 'no-reply@fastcomments-example.com',
+    replyTo: 'moderation@fastcomments-example.com',
+    isDefault: false
+  };
+  const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'Comment'; route = 'PATCH /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-Este endpoint da API fornece a capacidade de atualizar um único comentário.
+This API endpoint provides the ability to update a single comment.
 
 Notes:
 
@@ -14,9 +14,10 @@ Notes:
   - If you define both `comment` and `commentHTML` we will not automatically generate the HTML.
   - If the user adds mentions or hashtags in their new text, it will still be processed like the `POST` API.
 - When updating `commenterEmail` on a comment, it is best to also specify `userId`. Otherwise, you must ensure the user with this email belongs to your tenant, or the request will fail.  
+- If the target comment is locked (`isLocked: true`), the request is rejected with `code: 'locked'`. Unlock the comment first, update it, then re-lock if desired.
 
 
-[inline-code-attrs-start title = 'Exemplo mínimo de cURL PATCH de Comentário'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo mínimo de PATCH cURL para comentário'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
@@ -26,12 +27,12 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estrutura da Requisição PATCH de Comentário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estrutura da requisição PATCH de comentário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentPatchQueryParams {
     tenantId: string
     API_KEY: string
-	/** O usuário que está fazendo a atualização. Se desejado, pode ser usado para verificar que ele pode editar o comentário.  **/
+	/** O usuário realizando a atualização. Se desejado, pode ser usado para verificar se ele pode editar o comentário.  **/
     contextUserId?: string
 	/** Devemos verificar se o novo comentário parece spam?  **/
     doSpamCheck?: 'true' | 'false'
@@ -40,13 +41,13 @@ interface CommentPatchQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estrutura da Resposta PATCH de Comentário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estrutura da resposta PATCH de comentário'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface CommentPatchResponse {
     status: 'success' | 'failed'
     /** Incluído em caso de falha. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-comment' | 'comment-too-big' | 'hash-tags-readonly' | 'mentions-readonly' | 'invalid-user' | 'unauthorized' | 'invalid-date' | 'invalid-name' | 'invalid-name-is-email' | 'banned' | 'invalid-email' | 'invalid-input' | 'missing-id' | 'not-found' | 'locked'
     /** Incluído em caso de falha. **/
     reason?: string
 }

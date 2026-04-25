@@ -2,13 +2,13 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| questionId | string | Nein |  |
-| questionIds | Array<string> | Nein |  |
-| urlId | string | Nein |  |
-| timeBucket | AggregateTimeBucket | Nein |  |
-| startDate | Date | Nein |  |
-| forceRecalculate | boolean | Nein |  |
+| tenantId | string | Yes |  |
+| questionId | string | No |  |
+| questionIds | Array<string> | No |  |
+| urlId | string | No |  |
+| timeBucket | AggregateTimeBucket | No |  |
+| startDate | Date | No |  |
+| forceRecalculate | boolean | No |  |
 
 ## Antwort
 
@@ -16,18 +16,18 @@ Gibt zurück: [`AggregateQuestionResults200Response`](https://github.com/FastCom
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für aggregateQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_98765';
-const questionIds: Array<string> = ['q-102', 'q-103'];
-const urlId: string = 'url_55b3';
-const timeBucket: AggregateTimeBucket = { unit: 'day', size: 7 };
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
+const tenantId: string = "tenant_acme_001";
+const questionIds: string[] = ["q-2026-sales", "q-2026-support"];
+const urlId: string = "url_7f2c";
+const timeBucket: AggregateTimeBucket = { unit: "week", size: 1 };
+const startDate: Date = new Date("2026-01-01T00:00:00Z");
 const forceRecalculate: boolean = true;
 
 const result: AggregateQuestionResults200Response = await aggregateQuestionResults(
   tenantId,
-  undefined, // questionId weggelassen, stattdessen questionIds verwendet
+  undefined,
   questionIds,
   urlId,
   timeBucket,

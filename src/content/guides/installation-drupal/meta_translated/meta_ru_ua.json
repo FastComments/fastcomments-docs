@@ -1,0 +1,62 @@
+{
+  "name": "Установка Drupal",
+  "pageHeader": "Добавление живых комментариев на сайты Drupal",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Быстрый старт",
+      "file": "drupal-quick-start.md",
+      "subCat": "Кратко"
+    },
+    {
+      "name": "Установка",
+      "file": "drupal-installation.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Настройка",
+      "file": "drupal-configuration.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Блоки виджетов",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Поля типов контента",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Единый вход (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Права доступа",
+      "file": "drupal-permissions.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Многоязычность",
+      "file": "drupal-multilingual.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Хранение данных в ЕС",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Кастомизация",
+      "file": "drupal-customize.md",
+      "subCat": "Установка Drupal"
+    },
+    {
+      "name": "Требования",
+      "file": "drupal-requirements.md",
+      "subCat": "Установка Drupal"
+    }
+  ]
+}

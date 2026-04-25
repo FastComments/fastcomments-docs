@@ -1,0 +1,62 @@
+{
+  "name": "Инсталација Drupal-а",
+  "pageHeader": "Додајте коментарисање уживо на Drupal сајтовима",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Брзи почетак",
+      "file": "drupal-quick-start.md",
+      "subCat": "Сажетак"
+    },
+    {
+      "name": "Инсталација",
+      "file": "drupal-installation.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Конфигурација",
+      "file": "drupal-configuration.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Видгет блокови",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Поља типа садржаја",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Једнократно пријављивање (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Дозволе",
+      "file": "drupal-permissions.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Вишезичност",
+      "file": "drupal-multilingual.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Резиденција података у ЕУ",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "drupal-customize.md",
+      "subCat": "Инсталација Drupal-а"
+    },
+    {
+      "name": "Захтеви",
+      "file": "drupal-requirements.md",
+      "subCat": "Инсталација Drupal-а"
+    }
+  ]
+}

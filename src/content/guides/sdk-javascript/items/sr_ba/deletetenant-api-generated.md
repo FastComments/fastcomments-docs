@@ -1,25 +1,23 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| sure | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| sure | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
+Враћа: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublic200Response.ts)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'deleteTenant Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3d2c";
-const id: string = "flag_8392b1a7";
-const sure: string = "confirmed";
-
-const responseWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
-const responseWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
+const tenantId: string = 'tenant_42c9f1';
+const id: string = 'flag_9a7b3c';
+const sure: string = 'confirm-delete';
+const result: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
 [inline-code-end]
 
 ---

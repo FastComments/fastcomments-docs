@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | createUserBadgeParams | CreateUserBadgeParams | Так |  |
@@ -13,17 +13,17 @@
 
 [inline-code-attrs-start title = 'Приклад createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f3b2';
-const createUserBadgeParams: CreateUserBadgeParams = {
-  name: 'Top Contributor',
-  slug: 'top-contributor',
-  imageUrl: 'https://assets.fastcomments.com/badges/top-contributor.png',
-  description: 'Awarded for 100 helpful comments',
+const tenantId: string = "tenant_9a8b7c";
+const params: CreateUserBadgeParams = {
+  name: "Top Contributor",
+  slug: "top-contributor",
+  description: "Awarded for 100 approved comments",
+  iconUrl: "https://cdn.fastcomments.com/badges/top-contributor.png",
   active: true,
-  criteria: { commentsCount: 100 }, // необов'язкові критерії
-  displayOrder: 10,
-  metadata: { featured: true } // необов'язкові метадані
+  criteria: { approvedComments: 100 },
+  customConfig: { showOnProfile: true } // необов'язковий параметр
 };
-const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
-console.log(result);
+const result: CreateUserBadge200Response = await createUserBadge(tenantId, params);
 [inline-code-end]
+
+---

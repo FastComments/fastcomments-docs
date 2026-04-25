@@ -2,8 +2,8 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Одговор
 
@@ -11,13 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-82479";
-const questionId: string = "q-6a3d2e1f";
-const includeArchived?: boolean = false; // опциони параметар који демонстрира избор алтернативног циља
-const targetId: string = includeArchived ? "q-archived-112233" : questionId;
-const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, targetId);
+const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;
+const tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';
+const id: string = 'qres-9f2a3b1c';
+const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
 [inline-code-end]
 
 ---

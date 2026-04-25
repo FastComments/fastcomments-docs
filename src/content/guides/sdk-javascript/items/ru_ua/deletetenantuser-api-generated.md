@@ -1,7 +1,6 @@
----
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -16,11 +15,15 @@
 
 [inline-code-attrs-start title = 'Пример deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = '4f3a9b2e-1c6a-4f7b-9e2a-0b8d6f1c2a3e';
-const userId: string = '9d2f7b3a-5c4e-48a2-b1f0-6c7d8e9f0a12';
-const deleteComments: string = 'true';
-const commentDeleteMode: string = 'permanent';
-const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, userId, deleteComments, commentDeleteMode);
+async function run(): Promise<void> {
+  const tenantId: string = "acme_corp_tenant_9f1a2b";
+  const id: string = "user_4d2a1b6c";
+  const deleteComments: string = "true"; // также удалить комментарии пользователя
+  const commentDeleteMode: string = "permanent"; // "permanent" или "soft"
+  const result: FlagCommentPublic200Response = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+  console.log(result);
+}
+run();
 [inline-code-end]
 
 ---

@@ -1,0 +1,62 @@
+{
+  "name": "Drupal 安装",
+  "pageHeader": "向 Drupal 站点添加实时评论",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "快速开始",
+      "file": "drupal-quick-start.md",
+      "subCat": "简要说明"
+    },
+    {
+      "name": "安装",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "配置",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "小部件区块",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "内容类型字段",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "单点登录（SSO）",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "权限",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "多语言",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "欧盟数据驻留",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "自定义",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal 安装"
+    },
+    {
+      "name": "要求",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal 安装"
+    }
+  ]
+}

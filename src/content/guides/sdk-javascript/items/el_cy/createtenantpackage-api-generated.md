@@ -1,3 +1,4 @@
+---
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -5,7 +6,7 @@
 | tenantId | string | Ναι |  |
 | createTenantPackageBody | CreateTenantPackageBody | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateTenantPackage200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackage200Response.ts)
 
@@ -13,20 +14,17 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_acme-corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  packageName: 'Standard Moderation',
-  description: 'Suitable for small-to-medium sites: basic moderation, spam rules, and analytics',
-  maxCommentsPerMinute: 50,
-  allowAnonymousComments: false, // προαιρετική παράμετρος που παρέχεται
-  // προαιρετικά πεδία παραλείπονται: π.χ. προηγμένοι κανόνες διαχείρισης σχολίων, προσαρμοσμένο CSS
-  customConfigParameters: {
-    enableProfanityFilter: true,
-    imageContentProfanityLevel: 'medium' // ενδεικτική τιμή· χρησιμοποιεί το σχήμα CustomConfigParameters
-  }
+  name: "Acme Standard Package",
+  description: "Default package for Acme Corp comments with moderation and SSO enabled",
+  enabled: true,
+  maxCommentsPerThread: 500,
+  voteStyle: "thumbs",
+  gifRating: "PG-13",
+  tosConfig: { enabled: true, url: "https://acme.example.com/terms" } // προαιρετική παράμετρος
 };
-const response: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
-console.log(response);
+const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]
 
 ---

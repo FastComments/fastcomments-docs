@@ -7,8 +7,17 @@ a moderator:
 - **Delete** that comment
 - **Delete** that comment + **Ban the user** (Permanent or Shadow, more details later)
 - **Edit** that comment
+- **Lock** or **Unlock** that comment (more details below)
 - Mark that comment **Approved** (show it) or **Not Approved** (hide it)
 - Mark that comment as **Spam** or **Not Spam**
+
+### Locking a Comment
+
+Locking an individual comment prevents any new replies to it, and also prevents the comment itself from being edited or deleted until it is unlocked. This applies to everyone, including admins and moderators. If you need to edit or remove a locked comment, unlock it first, make the change, and re-lock it if desired.
+
+A padlock icon appears in the top-right corner of a locked comment so readers can see at a glance that the thread is closed. The Edit and Delete menu entries are hidden for locked comments in both the comment widget and the public API (`PATCH` and `DELETE` return `code: 'locked'` if called against a locked comment).
+
+Two intentional exceptions bypass the lock, because they would otherwise leave orphaned data behind: when a user deletes their entire account (their comments are cleaned up regardless of lock state), and when a moderator bans a user with the "delete all comments from this user" option (the sweep clears locks).
 
 ### Closing Comment Threads
 
@@ -17,16 +26,16 @@ of the comment area, if they are logged in. They can select `Re-Open Thread` lat
 
 Closing a comment thread prevents new comments, but still allows voting, and for users to delete their comments if desired.
 
-Closing and reopening comment threads instantly affects all users viewing the thread.
+Closing and re-opening comment threads instantly affects all users viewing the thread.
 
-You can also mark a thread read-only, which removes vote and delete options as well, by creating a customization rule specifically for that page.
+You can also mark a thread read-only which removes vote and delete options as well, by creating a customization rule specifically for that page.
 
 ### Updated Live
 
 All of these actions will update the comment threads of other users right away without them having to
 reload the page. However, the moderator actions like hiding a comment or marking it as spam, do not
-remove the comment from **the moderator's** screen so that if needed they can quickly undo the action. To indicate that the comment
-is hidden, it will be highlighted in comparison to the other comments (the highlighting color depending on the reason for removal).
+remove the comment from **the moderator's** screen so that if needed they can quickly undo the action. To indicate that comment
+is hidden it will be highlighted in comparison to the other comments (the highlighting color depending on the reason for removal).
 
 For example, given users `A (commenter)`, `B (Moderator 1)`, and `C (Moderator 2)`.
 
@@ -36,5 +45,3 @@ For example, given users `A (commenter)`, `B (Moderator 1)`, and `C (Moderator 2
 2. For `User A (commenter)` that comment is immediately hidden.
 3. For `User C (Moderator 2)` that comment is immediately hidden.
 4. For the user that made the change, `User B (Moderator 1)`, the comment remains on their screen, but is highlighted as removed. They have the option to undo their action, in which case the other users will see the update, live, again.
-
----

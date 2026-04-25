@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Oui |  |
@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`CreateTicket_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicket_200_response.h)
+Renvoie: [`CreateTicket_200_response`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicket_200_response.h)
 
 ## Exemple
 
@@ -16,19 +16,19 @@ Renvoie : [`CreateTicket_200_response`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t userId = U("user@example.com");
-CreateTicketBody body;
-body.subject = U("Checkout failure for order #A123");
-body.description = U("Payment declined at gateway for card ending 4242");
-body.requesterEmail = userId;
-body.priority = boost::optional<int>(2);
-body.metadata = boost::optional<utility::string_t>(U("order:A123"));
-api->createTicket(tenantId, userId, body).then([](pplx::task<std::shared_ptr<CreateTicket_200_response>> t){
+auto bodyPtr = std::make_shared<CreateTicketBody>();
+bodyPtr->subject = U("Comments not posting on article");
+bodyPtr->message = U("Submitting a comment returns 200 but it does not appear for other users");
+bodyPtr->priority = boost::optional<utility::string_t>(U("low"));
+api->createTicket(tenantId, userId, *bodyPtr)
+.then([](pplx::task<std::shared_ptr<CreateTicket_200_response>> task){
     try {
-        auto resp = t.get();
-        if (resp) std::cout << "Created ticket id: " << (resp->id.empty() ? U("unknown") : resp->id) << std::endl;
+        auto resp = task.get();
+        if (resp) {
+            auto created = resp;
+        }
     } catch (const std::exception& e) {
-        auto fallback = std::make_shared<CreateTicket_200_response>();
-        std::cout << "Failed to create ticket: " << e.what() << std::endl;
+        (void)e;
     }
 });
 [inline-code-end]

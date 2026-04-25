@@ -1,11 +1,12 @@
 [api-resource-header-start name = 'Comment'; route = 'DELETE /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-Ова крајња тачка API‑ја омогућава брисање коментара.
+Овај API ендпоинт омогућава брисање коментара.
 
 Напомене:
 
-- Ова крајња тачка API‑ја може, по жељи, ажурирати виджет коментара "уживо" (ово повећава `creditsCost` са `1` на `2`).
-- Овај API ће обрисати све подкоментаре.
+- Овај API може ажурирати видгет за коментаре "у реалном времену" ако се жели (ово повећава `creditsCost` са `1` на `2`).
+- Овај API ће избрисати све подређене коментаре.
+- Ако је циљни коментар закључан (`isLocked: true`), захтев се одбацује са `code: 'locked'`. Прво откључајте коментар, па га обришите.
 
 [inline-code-attrs-start title = 'Пример cURL захтева за брисање коментара'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,9 +21,9 @@ curl --request DELETE \
 interface CommentDeleteQueryParams {
     tenantId: string
     API_KEY: string
-	/** Корисник који врши ажурирање. По потреби се може користити за проверу да ли може обрисати коментар.  **/
+	/** Корисник који врши ажурирање. По потреби може бити коришћен да се провери да ли има право да обрише коментар.  **/
     contextUserId?: string
-	/** Да ли коментар треба бити обрисан "уживо" за кориснике који гледају инстанце видгета коментара са истим urlId. НАПОМЕНА: Удвостручује трошак у кредитима са 1 на 2. **/
+	/** Да ли коментар треба бити обрисан "у реалном времену" за кориснике који гледају инстанце видгета за коментаре са истим urlId. НАПОМЕНА: Повећава број кредита са 1 на 2. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
@@ -33,7 +34,7 @@ interface CommentDeleteQueryParams {
 interface CommentDeleteResponse {
     status: 'success' | 'failed'
     /** Укључено у случају неуспеха. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'locked'
     /** Укључено у случају неуспеха. **/
     reason?: string
 }

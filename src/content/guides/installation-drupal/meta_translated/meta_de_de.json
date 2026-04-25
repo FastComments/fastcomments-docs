@@ -1,0 +1,62 @@
+{
+  "name": "Drupal-Installation",
+  "pageHeader": "Live-Kommentare zu Drupal-Websites hinzufügen",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Schnellstart",
+      "file": "drupal-quick-start.md",
+      "subCat": "Kurzfassung"
+    },
+    {
+      "name": "Installation",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Konfiguration",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Widget-Blöcke",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Felder des Inhaltstyps",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Einmalanmeldung (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Berechtigungen",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Mehrsprachig",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "EU-Datenresidenz",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Anpassung",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal-Installation"
+    },
+    {
+      "name": "Anforderungen",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal-Installation"
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | 예 |  |
+| limit | number | 아니요 |  |
+| skip | number | 아니요 |  |
+| order | SORTDIR | 아니요 |  |
+| after | number | 아니요 |  |
+| before | number | 아니요 |  |
 
 ## 응답
 
@@ -17,16 +17,12 @@
 
 [inline-code-attrs-start title = 'getAuditLogs 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const tenantId: string = 'tenant_9b8f6c';
-  const limit: number = 50;
-  const skip: number = 0;
-  const order: SORTDIR = 'desc';
-  const after: number = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after);
-  console.log(response);
-}
-main();
+const tenantId: string = 'tenant_9a8b7c';
+const limit: number = 100;
+const skip: number = 0;
+const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30일 전
+const before: number = Date.now();
+const auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);
 [inline-code-end]
 
 ---

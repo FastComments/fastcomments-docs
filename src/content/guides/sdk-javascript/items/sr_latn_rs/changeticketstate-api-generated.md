@@ -2,10 +2,10 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Da |  |
-| id | string | Da |  |
-| changeTicketStateBody | ChangeTicketStateBody | Da |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| id | string | Yes |  |
+| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
 
 ## Odgovor
 
@@ -13,17 +13,16 @@ Vraća: [`ChangeTicketState200Response`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_82f9b3';
-const userId: string = 'user_9472';
-const id: string = 'ticket_550e8400-e29b-41d4-a716-446655440000';
+const tenantId: string = "tenant_7f3b2c9a";
+const userId: string = "user_5a1d9fb2";
+const id: string = "ticket_3e8a1b6f";
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: 'resolved',
-  comment: 'Confirmed fix deployed to production; closing ticket.',
-  notifySubscribers: true
+  state: "closed",
+  reason: "Fixed in backend release 2.4.1",
+  notifyUsers: true,
+  metadata: { resolutionOwner: "agent_12", priority: "high" } // prikazana opciona polja
 };
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]
-
----

@@ -1,28 +1,29 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 型別 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createModeratorBody | CreateModeratorBody | 是 |  |
 
 ## 回應
 
-回傳: [`CreateModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModerator200Response.ts)
+回傳：[`CreateModerator200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModerator200Response.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createModerator 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7d9f2b4a';
-const customConfig: CustomConfigParameters = { timezone: 'UTC', moderationQueueEnabled: true };
-const createModeratorBody: CreateModeratorBody = {
-  email: 'jane.martin@publisher.com',
-  displayName: 'Jane Martin',
-  roles: ['moderator'],
-  sendWelcomeEmail: true,
-  customConfig
+const tenantId: string = "tenant_8f3b6c";
+const optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };
+const newModerator: CreateModeratorBody = {
+  email: "lina.gomez@dailynews.com",
+  fullName: "Lina Gomez",
+  role: "senior_moderator",
+  enabled: true,
+  notifyByEmail: true,
+  customConfig: optionalConfig
 };
-const response: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
+const response: CreateModerator200Response = await createModerator(tenantId, newModerator);
 [inline-code-end]
 
 ---

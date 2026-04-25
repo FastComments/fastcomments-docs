@@ -1,0 +1,62 @@
+{
+  "name": "Drupal 설치",
+  "pageHeader": "Drupal 사이트에 실시간 댓글 추가",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "빠른 시작",
+      "file": "drupal-quick-start.md",
+      "subCat": "요약"
+    },
+    {
+      "name": "설치",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "구성",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "위젯 블록",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "콘텐츠 유형 필드",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "싱글 사인온(SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "권한",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "다국어",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "EU 데이터 저장 위치",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "맞춤화",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal 설치"
+    },
+    {
+      "name": "요구 사항",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal 설치"
+    }
+  ]
+}

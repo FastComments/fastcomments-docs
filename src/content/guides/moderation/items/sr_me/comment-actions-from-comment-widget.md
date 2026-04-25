@@ -1,33 +1,42 @@
-Podskup akcija moderacije može se izvršiti direktno iz niti komentara, bez potrebe da idete na stranicu za moderaciju komentara.
+Део модераторских акција може се извршити директно из нити коментара, без потребе да одете на страницу за Модерацију Коментара.
 
-Kada ste prijavljeni, kliknite dugme za uređivanje u gornjem desnom uglu komentara. Kao moderator trebali biste imati sljedeće opcije:
+Када сте пријављени, кликните дугме за уређивање у горњем десном углу коментара. Као модератор требало би да имате следеће опције:
 
-- **Pričvrsti** taj komentar
-- **Obriši** taj komentar
-- **Obriši** taj komentar + **Zabrani korisniku** (Trajno ili Shadow, više detalja kasnije)
-- **Uredi** taj komentar
-- Označi taj komentar kao **Odobren** (prikaži ga) ili **Nije odobren** (sakrij ga)
-- Označi taj komentar kao **Spam** ili **Nije spam**
+- **Прикачити** тај коментар
+- **Обрисати** тај коментар
+- **Обрисати** тај коментар + **Забранити корисника** (перманентна или Shadow (скривена) забрана, више детаља касније)
+- **Уредити** тај коментар
+- **Закључати** или **Откључати** тај коментар (више детаља доле)
+- Означити тај коментар као **Одобрен** (приказати га) или **Неодобрен** (сакрити га)
+- Означити тај коментар као **Спам** или **Не Спам**
 
-### Zatvaranje komentarskih niti
+### Закључавање коментара
 
-Moderatori i administratori mogu zaključati, odnosno zatvoriti, komentarske niti tako što će izabrati `Close Thread` u meniju sa tri tačkice na vrhu komentarske sekcije, ako su prijavljeni. Kasnije, u bilo kojem trenutku, mogu izabrati `Re-Open Thread` da ponovo omoguće komentarisanje.
+Закључавање појединачног коментара спречава нове одговоре на њега, и такође спречава да се сам коментар уређује или брише док је закључан. Ово важи за све, укључујући администраторе и модераторе. Ако треба да уредите или уклоните закључан коментар, прво га откључајте, направите измену, и по жељи га поново закључајте.
 
-Zatvaranje komentarske niti sprečava nove komentare, ali i dalje omogućava glasanje i korisnicima da obrišu svoje komentare ako žele.
+Икона катанца се појављује у горњем десном углу закључаног коментара тако да читаоци одмах виде да је нит затворена. Ставке менија Уреди и Избриши су скривене за закључане коментаре и у виџету коментара и у јавном API-ју (`PATCH` и `DELETE` враћају `code: 'locked'` ако се позову на закључан коментар).
 
-Zatvaranje i ponovo otvaranje komentarskih niti odmah utiče na sve korisnike koji pregledaju nit.
+Постоје два намерна изузетка која заобилазе закључавање, јер би у супротном оставила напуштене податке: када корисник избрише цео свој налог (његови коментари се очисте без обзира на стање закључавања), и када модератор забрани корисника са опцијом "обрисати све коментаре овог корисника" (операција чишћења уклања закључавања).
 
-Takođe možete označiti nit kao samo za čitanje, što uklanja opcije glasanja i brisanja, kreiranjem pravila prilagođavanja posebno za tu stranicu.
+### Затварање нити коментара
 
-### Ažurirano uživo
+Модератори и администратори могу закључати, односно затворити, нити коментара тако што ће изабрати `Close Thread` у менију са три тачке на врху подручја за коментаре, ако су пријављени. Касније, у било ком тренутку, могу изабрати `Re-Open Thread` да поново отврате могућност коментара.
 
-Sve ove akcije će odmah ažurirati komentarske niti drugih korisnika bez potrebe da oni osvježavaju stranicu. Međutim, akcije moderatora kao što su skrivanje komentara ili označavanje kao spam, ne uklanjaju komentar sa **moderatorovog** ekrana kako bi, po potrebi, mogli brzo opozvati akciju. Da bi se naznačilo da je komentar skriven, biće istaknut u poređenju sa ostalim komentarima (boja isticanja zavisi od razloga uklanjanja).
+Затварање нити коментара спречава нове коментаре, али и даље дозвољава гласање, као и корисницима да обришу своје коментаре ако то желе.
 
-Na primjer, uzimajući korisnike `A (commenter)`, `B (Moderator 1)`, i `C (Moderator 2)`.
+Затварање и поновно отварање нити коментара одмах утиче на све кориснике који гледају ту нит.
 
-...i sljedeći scenarij:
+Такође можете означити нит као само-за-читaње што уклања опције гласања и брисања, креирањем правилa прилагођавања посебно за ту страницу.
 
-1. `User B (Moderator 1)` sakriva komentar.
-2. Za `User A (commenter)` taj komentar je odmah skriven.
-3. Za `User C (Moderator 2)` taj komentar je odmah skriven.
-4. Za korisnika koji je napravio promjenu, `User B (Moderator 1)`, komentar ostaje na svom ekranu, ali je istaknut kao uklonjen. Imaju opciju da opozovu svoju akciju, u kom slučaju će ostali korisnici ponovo vidjeti ažuriranje uživo.
+### Ажурирано у реалном времену
+
+Све ове радње ће одмах ажурирати нити коментара других корисника без потребе да они освежавају страницу. Међутим, модераторске радње попут сакривања коментара или означавања као спам не уклањају коментар са екрана **модератора** тако да у случају потребе могу брзо да понисте радњу. Да би се назначило да је коментар сакривен, он ће бити истакнут у односу на остале коментаре (боја истицања зависи од разлога уклањања).
+
+На пример, имајући кориснике `A (commenter)`, `B (Moderator 1)`, и `C (Moderator 2)`.
+
+...и следећи сценарио:
+
+1. `User B (Moderator 1)` сакрива коментар.
+2. За `User A (commenter)` тај коментар је одмах скривен.
+3. За `User C (Moderator 2)` тај коментар је одмах скривен.
+4. За корисника који је извршио измену, `User B (Moderator 1)`, коментар остаје на њиховом екрану, али је истиакнут као уклоњен. Имају опцију да понисте своју радњу, у ком случају ће други корисници поново видети ажурирање уживо.

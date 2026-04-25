@@ -1,6 +1,6 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Ja |  |
@@ -11,18 +11,16 @@ Returnerer: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fa
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på createSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createSubscription Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
+const tenantId: string = "acme-corp-tenant-123";
 const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "u_987654",
+  userId: "user_98765",
   planId: "pro_monthly",
-  startDate: new Date().toISOString(),
-  trialDays: 14, // valgfrit parameter vist
-  metadata: { source: "marketing-email" } // valgfrit parameter vist
+  paymentMethod: { type: "card", cardId: "card_abc123" },
+  autoRenew: true,
+  trialDays: 14, // valgfrit parameter demonstreret
+  metadata: { campaign: "spring_launch" } // valgfrit parameter demonstreret
 };
 const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-const subscription: APIUserSubscription = result.subscription;
 [inline-code-end]
-
----

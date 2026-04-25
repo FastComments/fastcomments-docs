@@ -1,0 +1,62 @@
+{
+  "name": "Instalacija Drupala",
+  "pageHeader": "Omogućite komentare uživo na Drupal stranicama",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Brzi početak",
+      "file": "drupal-quick-start.md",
+      "subCat": "Ukratko"
+    },
+    {
+      "name": "Instalacija",
+      "file": "drupal-installation.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Konfiguracija",
+      "file": "drupal-configuration.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Blokovi widgeta",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Polja tipa sadržaja",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Jedinstvena prijava (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Dozvole",
+      "file": "drupal-permissions.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Višejezično",
+      "file": "drupal-multilingual.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Pohrana podataka u EU",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Prilagodba",
+      "file": "drupal-customize.md",
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Zahtjevi",
+      "file": "drupal-requirements.md",
+      "subCat": "Instalacija Drupala"
+    }
+  ]
+}

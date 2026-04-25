@@ -1,0 +1,62 @@
+{
+  "name": "Drupal-installatie",
+  "pageHeader": "Voeg live reacties toe aan Drupal-sites",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Snel aan de slag",
+      "file": "drupal-quick-start.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Installatie",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Configuratie",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Widgetblokken",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Velden voor inhoudstypen",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Machtigingen",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Meertalig",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "EU-gegevensresidentie",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Aanpassingen",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal-installatie"
+    },
+    {
+      "name": "Vereisten",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal-installatie"
+    }
+  ]
+}

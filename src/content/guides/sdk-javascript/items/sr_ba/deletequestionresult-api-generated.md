@@ -11,13 +11,12 @@ Vraća: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'deleteQuestionResult Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-82479";
-const questionId: string = "q-6a3d2e1f";
-const includeArchived?: boolean = false; // opcionalni parametar koji demonstrira odabir alternativnog cilja
-const targetId: string = includeArchived ? "q-archived-112233" : questionId;
-const result: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, targetId);
+const tenantIdEnv: string | undefined = process.env.FASTCOMMENTS_TENANT_ID;
+const tenantId: string = tenantIdEnv ?? 'tenant_78b3f2';
+const id: string = 'qres-9f2a3b1c';
+const response: FlagCommentPublic200Response = await deleteQuestionResult(tenantId, id);
 [inline-code-end]
 
 ---

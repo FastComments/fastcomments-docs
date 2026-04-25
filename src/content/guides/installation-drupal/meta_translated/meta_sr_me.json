@@ -1,0 +1,62 @@
+{
+  "name": "Инсталација Drupala",
+  "pageHeader": "Додајте коментарисање уживо на Drupal сајтове",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Брзи почетак",
+      "file": "drupal-quick-start.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Инсталација",
+      "file": "drupal-installation.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Подешавање",
+      "file": "drupal-configuration.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Блокови виџета",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Поља типова садржаја",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Једнократно пријављивање (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Дозволе",
+      "file": "drupal-permissions.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Вишејезично",
+      "file": "drupal-multilingual.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Резиденција података у ЕУ",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Прилагођавање",
+      "file": "drupal-customize.md",
+      "subCat": "Инсталација Drupala"
+    },
+    {
+      "name": "Захтјеви",
+      "file": "drupal-requirements.md",
+      "subCat": "Инсталација Drupala"
+    }
+  ]
+}

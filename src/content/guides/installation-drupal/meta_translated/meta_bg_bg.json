@@ -1,0 +1,62 @@
+{
+  "name": "Инсталиране на Drupal",
+  "pageHeader": "Добавяне на живо коментиране към сайтове на Drupal",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "Бърз старт",
+      "file": "drupal-quick-start.md",
+      "subCat": "Накратко"
+    },
+    {
+      "name": "Инсталация",
+      "file": "drupal-installation.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Конфигурация",
+      "file": "drupal-configuration.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Уиджет блокове",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Полета на типа съдържание",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Единно влизане (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Разрешения",
+      "file": "drupal-permissions.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Многоезичност",
+      "file": "drupal-multilingual.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Съхранение на данни в ЕС",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Персонализиране",
+      "file": "drupal-customize.md",
+      "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Изисквания",
+      "file": "drupal-requirements.md",
+      "subCat": "Инсталиране на Drupal"
+    }
+  ]
+}
