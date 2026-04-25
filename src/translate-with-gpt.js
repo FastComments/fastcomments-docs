@@ -36,6 +36,31 @@ const {
 
 const { hashContent } = require('./translation-snapshot');
 
+/**
+ * Fix unescaped apostrophes inside single-quoted attribute values within
+ * [inline-code-attrs-start ... inline-code-attrs-end] blocks. Required because
+ * the attrs body is later parsed as JavaScript (vm.runInContext), so a literal
+ * apostrophe like `title = 'Exemple d'utilisation'` breaks the build.
+ */
+function sanitizeInlineCodeAttrs(text) {
+    if (!text) return text;
+    return text.replace(/\[inline-code-attrs-start ([\s\S]*?) inline-code-attrs-end\]/g, (match, body) => {
+        const tokens = body.split('; ');
+        const fixed = tokens.map(tok => {
+            const m = tok.match(/^(\s*\w+\s*=\s*)'([\s\S]*)'(\s*)$/);
+            if (!m) return tok;
+            const [, prefix, value, suffix] = m;
+            // Replace unescaped ' with \', leaving already-escaped \' untouched.
+            const escaped = value
+                .replace(/\\'/g, '\x00')
+                .replace(/'/g, "\\'")
+                .replace(/\x00/g, "\\'");
+            return `${prefix}'${escaped}'${suffix}`;
+        });
+        return `[inline-code-attrs-start ${fixed.join('; ')} inline-code-attrs-end]`;
+    });
+}
+
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5-mini';
 const ALTERNATE_MODELS = ['gpt-4.1', 'gpt-5.2']; // Fallback models for large files
@@ -150,6 +175,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         lines.push('');
         lines.push('The title attributes in [inline-code-attrs-start] tags SHOULD be translated.');
         lines.push('For example: title = \'Example cURL Request\' should become title = \'Exemple de requête cURL\' in French.');
+        lines.push('If a translated title contains an apostrophe inside the single-quoted value, escape it with a backslash. For example, French d\'utilisation must be written as title = \'Exemple d\\\'utilisation\' (the attrs body is parsed as JavaScript and an unescaped apostrophe will break the build).');
         lines.push('');
         lines.push('SOURCE CONTENT:');
         lines.push('---');
@@ -230,7 +256,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
                     const modelSuffix = currentModel !== this.model ? ` [${currentModel}]` : '';
                     console.log(`  [translated] ${filename} (${data.usage?.total_tokens || 0} tokens)${modelSuffix}`);
 
-                    return translation;
+                    return sanitizeInlineCodeAttrs(translation);
                 } catch (error) {
                     const isLastAttempt = attempt === maxRetries;
                     const isLengthError = error.message.includes('Finish reason: length');

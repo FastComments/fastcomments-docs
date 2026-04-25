@@ -11,7 +11,7 @@ Renvoie : [`CreateModerator200Response`](https://github.com/FastComments/fastcom
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d'utilisation de createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple d\'utilisation de createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_8f3b6c";
 const optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };
