@@ -1,64 +1,65 @@
-Sekcija **Context** na formi za izmenu kontroliše koliko informacija agent dobija pri svakom pokretanju. Više konteksta omogućava bolje odluke, ali povećava trošak u tokenima po pokretanju, pa želite samo ono što je agentu zaista potrebno.
+Секција **Контекст** на формулару за уређивање контролише колико информација агент добија при сваком покретању. Више контекста доводи до бољих одлука али повећава трошак у токенима по покретању, па желите само оно што агент заправо треба.
 
-### Šta je uvek uključeno
+### Шта је увијек укључено
 
-Čak i kada su sve kućice (checkbox) odčekirane, poruka konteksta agenta uključuje:
+Чак и када су сва поља за означавање неозначена, контекстна порука агента садржи:
 
-- Tip događaja koji je pokrenuo (npr. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- URL stranice i ID URL-a (kada su poznati).
-- Komentar koji je pokrenuo izvršavanje, ako postoji — ID, ID autora, prikazno ime autora, tekst komentara, brojevi glasova, broj prijava, spam/odobreno/pregledano zastavice, ID roditelja. E-mail autora se **nikada** ne šalje LLM provajderu (minimizacija PII).
-- Prethodni tekst komentara za okidače `COMMENT_EDIT` (tako da agent može da uporedi pre/posle).
-- Smer glasanja za okidače `COMMENT_VOTE_THRESHOLD`.
-- ID korisnika koji je pokrenuo događaj i ID značke (badge) (za okidače vezane za moderator značke).
+- Тип догађаја који покреће (нпр. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- **URL странице** и ID URL-а (када се зна).
+- **коментар** који је покренуо извршавање, ако постоји - ID, ID аутора, приказано име аутора, текст коментара, број гласова, број означавања, ознаке за spam/approved/reviewed, родитељски ID. Е-пошта аутора **никада** није послата провајдеру LLM (минимизација PII).
+- Претходни текст коментара за `COMMENT_EDIT` тригере (да агент може упоредити прије/послије).
+- **смјер гласања** за `COMMENT_VOTE_THRESHOLD` тригере.
+- **ID корисника који је покренуо** и **ID значке** (за тригере значки модератора).
+- Каталог **значки** вашег тенанта (назив, прикажни назив, опис) када је агенту дозвољено да додјељује значке, тако да агент може одабрати одговарајућу без да ви морате навођити значке у упиту.
 
-Sav nepouzdan tekst — tela komentara, imena autora, naslovi stranica, sam dokument sa smernicama — je **označen ograničivačima** u poruci konteksta markerima kao što su `<<<COMMENT_TEXT>>> ... <<<END>>>`. Sistemski prompt platforme nalaže modelu da nikada ne izvršava instrukcije unutar tih ograda. Ovo je platformina odbrana od prompt-injekcija; ne treba da ponavljate to u svom promptu.
+Сви непоуздани текстови — тела коментара, имена аутора, наслови страница, сам документ смерница — ограђени су у контекстној поруци маркерима као `<<<COMMENT_TEXT>>> ... <<<END>>>`. System prompt платформе упућује модел да никада не прати инструкције унутар тих ограда. Ово је платформаска одбрана од prompt-injection; не морате то понављати у вашем упиту.
 
-### Tri kućice (checkbox)
+### Три поља за означавање
 
-#### Include parent comment and prior replies in the same thread
+#### Укључи родитељски коментар и претходне одговоре у истој нити
 
-Dodaje:
-- **Parent comment** — ID, autor, tekst.
-- **Sibling replies** — prethodne odgovore na istog roditelja u istoj niti.
+Додаје:
+- **родитељски коментар** - ID, аутор, текст.
+- **сусједни одговори** - претходни одговори на истог родитеља у истој нити.
 
-Koristan za: bilo koji agent koji odgovara na komentar u kontekstu (pozdravljači, sumatornici niti, moderatori koji čitaju odgovore u razgovoru).
+Корисно за: било који агент који одговара на коментар у контексту (агенти за поздрав, резимирачи нити, модератори који читају одговоре у разговорима).
 
-Trošak: mali do srednji. Ograničeno brojem srodnih odgovora koji postoje u datoj niti.
+Трошак: мали до средњи. Ограничен бројем сусједних одговора у тој нити.
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### Укључи фактор повјерења коментатора, старост налога, историју забрана и недавне коментаре
 
-Dodaje blok **AUTHOR_HISTORY**:
+Додаје блок **AUTHOR_HISTORY**:
 
-- **Starost naloga u danima** od momenta registracije.
-- **Trust factor (0-100)** — FastComments skor koji sumira koliko je korisnik poverljiv na ovom sajtu. Pogledajte stranicu [Otkrivanje spama](/guide-moderation.html#spam-detection) u vodiču za moderaciju.
-- **Broj prethodnih zabrana.**
-- **Ukupan broj komentara na ovom sajtu.**
-- **Broj dupliranog sadržaja** — ako je korisnik nedavno postavljao identičan tekst (signal protiv spama).
-- **Signal deljenja IP adrese među nalozima** — broj komentara sa iste IP adrese pod drugim nalozima (signal za alternativne naloge). Sam hash IP adrese se nikada ne šalje LLM-u.
-- **Najnoviji komentari** — do 5 najnovijih komentara korisnika, svaki skraćen na 300 karaktera i označen markerima kao nepouzdan tekst.
+- **Старост налога у данима** од регистрације.
+- **Фактор повјерења (0-100)** — FastComments резултат који сумира колико је корисник повјерен на овом сајту. Погледајте страницу [Откривање спама](/guide-moderation.html#spam-detection) у водичу за модерирање.
+- **Број претходних забрана.**
+- **Укупно коментара на овом сајту.**
+- **Број дупликата садржаја** - ако је корисник недавно објавио идентичан текст (сигнал против спама).
+- **Сигнал истог IP преко више налога** - број коментара са истог IP-а преко других налога (сигнал о алтернативним налозима). Хеш IP-а се никада не шаље LLM-у.
+- **Недавни коментари** - до 5 најновијих коментара корисника, сваки скраћен на 300 карактера, ограђени као непоуздан текст.
 
-Koristan za: bilo kog moderatora. Bez ovoga, model pogrešno zabranjuje nove naloge i dugogodišnje korisnike koji deluju dobronamerno.
+Корисно за: било који агент за модерирање. Без овога модел може забрањивати нове налоге и дугогодишње добронамјерне кориснике који имају исто понашање.
 
-Trošak: srednji. Najnoviji komentari dodaju najviše tokena.
+Трошак: средњи. Недавни коментари додају највише токена.
 
-#### Include page title, subtitle, description, and meta tags
+#### Укључи наслов странице, поднаслов, опис и мета тагове
 
-Dodaje blok **PAGE_CONTEXT** — naslov, podnaslov, opis i bilo koje meta tagove koje je FastComments prikupio za stranicu.
+Додаје блок **PAGE_CONTEXT** - наслов, поднаслов, опис и било које мета тагове које је FastComments забележио за страницу.
 
-Koristan za: pozdravljače i sumatornike niti, gde poznavanje o čemu se stranica radi značajno poboljšava kvalitet izlaza.
+Корисно за: агенте за поздрав и резимираче нити, гдје познавање о чему страница говори значајно побољшава квалитет излаза.
 
-Trošak: mali.
+Трошак: мали.
 
-### Smernice zajednice
+### Смернице за заједницу
 
-Četvrvo polje, **Community guidelines**, je polje sa slobodnim tekstom politike koje se uključuje u poruku konteksta sa korisničkom ulogom pri svakom pokretanju, označeno kao nepouzdan tekst na isti način kao i tela komentara i drugi sadržaji koje korisnici dostavljaju. Agent ga čita kao tekst politike, ali platforma ga ne tretira kao sistemsku instrukciju. Pogledajte [Community Guidelines](#community-guidelines) za ono što treba staviti u njega.
+Четврто поље, **Смернице за заједницу**, је поље политике слободног текста укључено у контекстну поруку за улогу корисника при сваком покретању, ограђено као непоуздан текст на исти начин као и тела коментара и други садржаји које корисник доставља. Агент га чита као текст политике, али платформа га не третира као системску инструкцију. Погледајте [Смернице за заједницу](#community-guidelines) за то шта треба у њему навести.
 
-### Selektivno dodavanje konteksta
+### Селективно додавање контекста
 
-Ove kućice (checkbox) se primenjuju po agentu, ne globalno. Čest obrazac:
+Ова поља за означавање важе по агенту, не глобално. Уобичајени узорак:
 
-- Agent za pozdravljanje: page context **on**, thread context **off**, user history **off**.
-- Moderator: thread context **off**, user history **on**, page context **off**.
-- Agent za sažimanje niti: thread context **on**, page context **on**, user history **off**.
+- Агент за поздрав: контекст странице **укључен**, контекст нити **искључен**, историја корисника **искључена**.
+- Модератор: контекст нити **искључен**, историја корисника **укључена**, контекст странице **искључен**.
+- Резимирач нити: контекст нити **укључен**, контекст странице **укључен**, историја корисника **искључена**.
 
-Ciljajte na minimalni kontekst koji agentu treba da bi tačno obavio pozive koje zaista pravi — dodatni kontekst naplaćuje tokene pri svakom pokretanju, čak i kada ga agent ne koristi.
+Користите минимални контекст који агенту треба да буде тачан у позивима које заправо обавља — додатни контекст кошта токене при сваком покретању, чак и када га агент не користи.

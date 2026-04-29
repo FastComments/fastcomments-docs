@@ -1,64 +1,65 @@
-Die **Kontext**-Sektion im Bearbeitungsformular steuert, wie viele Informationen der Agent bei jedem Lauf erhält. Mehr Kontext führt zu besseren Entscheidungen, erhöht aber die Token-Kosten pro Lauf, daher sollten Sie nur das einschließen, was der Agent tatsächlich benötigt.
+Der **Kontext**-Abschnitt im Bearbeitungsformular steuert, wie viele Informationen der Agent bei jedem Lauf erhält. Mehr Kontext führt zu besseren Entscheidungen, erhöht aber die Token-Kosten pro Lauf, daher sollten Sie nur das bereitstellen, was der Agent tatsächlich benötigt.
 
 ### Was immer enthalten ist
 
-Selbst wenn alle Checkboxen deaktiviert sind, enthält die Kontextnachricht des Agenten:
+Selbst wenn alle Kontrollkästchen deaktiviert sind, enthält die Kontextnachricht des Agents:
 
-- Den **Trigger-Ereignistyp** (z. B. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- Die **Seiten-URL und die URL-ID** (wenn bekannt).
-- Den **Kommentar**, der den Lauf ausgelöst hat, falls vorhanden - ID, Autor-User-ID, Anzeigename des Autors, Kommentartext, Abstimmungszahlen, Flag-Anzahl, Spam/zugelassen/geprüft-Flags, Parent-ID. Die E-Mail des Autors wird aus Gründen der PII-Minimierung **niemals** an den LLM-Anbieter gesendet.
+- Den **Auslöseereignistyp** (z. B. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- Die **Seiten-URL und URL-ID** (wenn bekannt).
+- Den **Kommentar**, der den Lauf ausgelöst hat, falls vorhanden – ID, Autor-Benutzer-ID, Anzeige name des Autors, Kommentartext, Abstimmungszahlen, Flag-Anzahl, Spam/zugelassen/überprüft-Flags, Parent-ID. Die E-Mail-Adresse des Autors wird **niemals** an den LLM-Anbieter gesendet (PII-Minimierung).
 - Den **vorherigen Kommentartext** für `COMMENT_EDIT`-Trigger (damit der Agent Vorher/Nachher vergleichen kann).
-- Die **Richtungsinformation der Stimme** für `COMMENT_VOTE_THRESHOLD`-Trigger.
-- Die **auslösende User-ID** und **badge ID** (für Moderator-Badge-Trigger).
+- Die **Richtung der Abstimmung** für `COMMENT_VOTE_THRESHOLD`-Trigger.
+- Die **auslösende Benutzer-ID** und **Badge-ID** (für Moderator-Badge-Trigger).
+- Den **Badge-Katalog Ihres Mandanten** (Name, Anzeigeetikett, Beschreibung), wenn der Agent berechtigt ist, Badges zu vergeben, damit der Agent eine passende auswählen kann, ohne dass Sie die Badges im Prompt ausschreiben müssen.
 
-Alle unzuverlässigen Texte - Kommentartexte, Autorennamen, Seitentitel, das Guidelines-Dokument selbst - werden in der Kontextnachricht mit Markierungen wie `<<<COMMENT_TEXT>>> ... <<<END>>>` **abgegrenzt**. Das Systemprompt der Plattform weist das Modell an, Anweisungen innerhalb dieser Markierungen niemals zu befolgen. Dies ist die Prompt-Injection-Abwehr der Plattform; Sie müssen dies nicht in Ihrem Prompt wiederholen.
+Alle nicht vertrauenswürdigen Texte – Kommentar-Inhalte, Autorennamen, Seitentitel, das Richtliniendokument selbst – werden in der Kontextnachricht mit Markern wie `<<<COMMENT_TEXT>>> ... <<<END>>>` abgegrenzt. Das System-Prompt der Plattform weist das Modell an, Anweisungen innerhalb dieser Abgrenzungen niemals zu befolgen. Dies ist die Prompt-Injection-Abwehr der Plattform; Sie müssen dies nicht in Ihrem Prompt wiederholen.
 
 ### Die drei Kontrollkästchen
 
-#### Parent-Kommentar und frühere Antworten im selben Thread einbeziehen
+#### Elternkommentar und vorherige Antworten im selben Thread einbeziehen
 
 Fügt hinzu:
-- Den **Parent-Kommentar** - ID, Autor, Text.
-- **Geschwister-Antworten** - die vorherigen Antworten auf denselben Parent im selben Thread.
+- Den **Elternkommentar** – ID, Autor, Text.
+- **Geschwister-Antworten** – die vorherigen Antworten auf denselben Parent im selben Thread.
 
-Nützlich für: jeden Agenten, der auf einen Kommentar kontextbezogen antwortet (Begrüßungsagenten, Thread-Zusammenfasser, Moderatoren, die Antworten in Konversationen lesen).
+Nützlich für: jeden Agenten, der auf einen Kommentar im Kontext antwortet (Begrüßungsagenten, Thread-Zusammenfasser, Moderatoren, die Antworten in Konversationen lesen).
 
-Kosten: klein bis mittel. Begrenzung durch die Anzahl der Geschwister in einem bestimmten Thread.
+Kosten: gering bis mittel. Begrenzt durch die Anzahl der Geschwister in einem Thread.
 
-#### Vertrauensfaktor des Kommentierenden, Kontostand, Bann-Historie und kürzliche Kommentare einbeziehen
+#### Vertrauensfaktor, Kontoalter, Sperrhistorie und aktuelle Kommentare des Kommentierenden einbeziehen
 
-Fügt den **AUTHOR_HISTORY**-Block hinzu:
+Fügt den AUTHOR_HISTORY-Block hinzu:
 
-- **Kontodauer in Tagen** seit der Anmeldung.
-- **Trust-Faktor (0–100)** - der FastComments-Score, der zusammenfasst, wie vertrauenswürdig der Nutzer auf dieser Seite ist. Siehe die Seite [Spam Detection](/guide-moderation.html#spam-detection) im Moderationsleitfaden.
-- **Anzahl vorheriger Banns.**
+- **Kontoalter in Tagen** seit der Anmeldung.
+- **Vertrauensfaktor (0–100)** – der FastComments-Score, der zusammenfasst, wie vertrauenswürdig der Nutzer auf dieser Seite ist. Siehe die [Spam-Erkennung](/guide-moderation.html#spam-detection)-Seite im Moderationshandbuch.
+- **Anzahl vorheriger Sperren.**
 - **Gesamtanzahl der Kommentare** auf dieser Seite.
-- **Anzahl duplizierter Inhalte** - wenn der Nutzer kürzlich identischen Text gepostet hat (Anti-Spam-Signal).
-- **Same-IP Cross-Account-Signal** - Anzahl der Kommentare von derselben IP unter anderen Konten (Alt-Account-Signal). Der IP-Hash selbst wird niemals an das LLM gesendet.
-- **Kürzliche Kommentare** - bis zu 5 der zuletzt verfassten Kommentare des Nutzers, jeweils auf 300 Zeichen gekürzt, als unzuverlässiger Text abgegrenzt.
+- **Anzahl doppelter Inhalte** – falls der Nutzer kürzlich identischen Text gepostet hat (Anti-Spam-Signal).
+- **Same-IP-Cross-Account-Signal** – Anzahl der Kommentare von derselben IP unter anderen Accounts (Signal für Mehrfachaccounts). Der IP-Hash selbst wird niemals an das LLM gesendet.
+- **Aktuelle Kommentare** – bis zu 5 der jüngsten Kommentare des Nutzers, jeweils auf 300 Zeichen gekürzt, als nicht vertrauenswürdiger Text abgegrenzt.
 
-Nützlich für: jeden Moderationsagenten. Ohne diese Informationen sperrt das Modell neue Konten und langjährige vertrauenswürdige Nutzer mit derselben Haltung.
+Nützlich für: jeden Moderationsagenten. Ohne diese Informationen neigt das Modell dazu, neue Accounts und langjährige vertrauenswürdige Nutzer gleichermaßen zu sperren.
 
-Kosten: mittel. Kürzliche Kommentare tragen am meisten zu den Tokens bei.
+Kosten: mittel. Die aktuellen Kommentare verursachen die meisten Tokens.
 
 #### Seitentitel, Untertitel, Beschreibung und Meta-Tags einbeziehen
 
-Fügt den **PAGE_CONTEXT**-Block hinzu - Titel, Untertitel, Beschreibung und alle Meta-Tags, die FastComments für die Seite erfasst hat.
+Fügt den PAGE_CONTEXT-Block hinzu – Titel, Untertitel, Beschreibung und alle Meta-Tags, die FastComments für die Seite erfasst hat.
 
-Nützlich für: Begrüßungsagenten und Thread-Zusammenfasser, bei denen das Wissen über den Seiteninhalt die Ausgabequalität erheblich verbessert.
+Nützlich für: Begrüßungsagenten und Thread-Zusammenfasser, bei denen das Wissen, worum es auf der Seite geht, die Qualität der Ausgabe deutlich verbessert.
 
 Kosten: gering.
 
-### Community guidelines
+### Community-Richtlinien
 
-Das vierte Feld, **Community guidelines**, ist ein Freitext-Policy-Block, der in der Benutzer-Rollen-Kontextnachricht bei jedem Lauf enthalten ist und auf die gleiche Weise wie Kommentartexte und andere vom Benutzer bereitgestellte Inhalte als unzuverlässiger Text abgegrenzt wird. Der Agent liest ihn als Policy-Text, aber die Plattform behandelt ihn nicht als Systemanweisung. Siehe [Community Guidelines](#community-guidelines) für Hinweise, was dort stehen sollte.
+Das vierte Feld, **Community guidelines**, ist ein Freitext-Policy-Block, der bei jedem Lauf in der Kontextnachricht der Benutzerrolle enthalten ist und auf die gleiche Weise als nicht vertrauenswürdiger Text abgegrenzt wird wie Kommentar-Inhalte und andere vom Nutzer bereitgestellte Inhalte. Der Agent liest ihn als Richtlinientext, aber die Plattform behandelt ihn nicht als Systemanweisung. Siehe [Community-Richtlinien](#community-guidelines) für Hinweise, was Sie dort eintragen sollten.
 
 ### Kontext selektiv hinzufügen
 
-Diese Checkboxen gelten pro Agent, nicht global. Ein gängiges Muster:
+Diese Kontrollkästchen gelten pro Agent, nicht global. Ein gängiges Muster:
 
-- Begrüßungsagent: Seitenkontext **an**, Thread-Kontext **aus**, Nutzerhistorie **aus**.
-- Moderator: Thread-Kontext **aus**, Nutzerhistorie **an**, Seitenkontext **aus**.
-- Thread-Zusammenfasser: Thread-Kontext **an**, Seitenkontext **an**, Nutzerhistorie **aus**.
+- Begrüßungsagent: Seitenkontext **an**, Thread-Kontext **aus**, Benutzerverlauf **aus**.
+- Moderator: Thread-Kontext **aus**, Benutzerverlauf **an**, Seitenkontext **aus**.
+- Thread-Zusammenfasser: Thread-Kontext **an**, Seitenkontext **an**, Benutzerverlauf **aus**.
 
-Streben Sie nach dem minimalen Kontext, den ein Agent benötigt, um die Aufrufe, die er tatsächlich macht, korrekt auszuführen – zusätzlicher Kontext kostet bei jedem Lauf Tokens, auch wenn der Agent ihn nicht nutzt.
+Streben Sie das minimale Maß an Kontext an, das ein Agent benötigt, um die tatsächlich ausgeführten Aufrufe korrekt auszuführen – zusätzlicher Kontext kostet bei jedem Lauf Tokens, selbst wenn der Agent ihn nicht nutzt.

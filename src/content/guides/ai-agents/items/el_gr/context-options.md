@@ -1,64 +1,65 @@
-Η ενότητα **Context** στη φόρμα επεξεργασίας ελέγχει πόσες πληροφορίες λαμβάνει ο πράκτορας σε κάθε εκτέλεση. Περισσότερο πλαίσιο παράγει καλύτερες αποφάσεις αλλά αυξάνει το κόστος σε tokens ανά εκτέλεση, οπότε θέλετε μόνο ό,τι χρειάζεται πραγματικά ο πράκτορας.
+The **Context** section on the edit form controls how much information the agent receives on each run. More context produces better decisions but raises token cost per run, so you only want what the agent actually needs.
 
 ### Τι περιλαμβάνεται πάντα
 
-Ακόμα και με όλα τα πλαίσια επιλογής αποεπιλεγμένα, το μήνυμα πλαισίου του πράκτορα περιλαμβάνει:
+Even with every checkbox unchecked, the agent's context message includes:
 
-- Τον **τύπο συμβάντος που ενεργοποιεί** (π.χ. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- Τη **διεύθυνση σελίδας (URL) και το URL ID** (όταν είναι γνωστά).
-- Το **σχόλιο** που προκάλεσε την εκτέλεση, αν υπάρχει - ID, αναγνωριστικό χρήστη του συντάκτη, εμφανιζόμενο όνομα συντάκτη, κείμενο σχολίου, πλήθος ψήφων, πλήθος σημαιών (flags), σημαίες spam/approved/reviewed, parent ID. Το email του συντάκτη **ποτέ** δεν αποστέλλεται στον πάροχο LLM (ελαχιστοποίηση PII).
-- Το **προηγούμενο κείμενο σχολίου** για ενεργοποιήσεις `COMMENT_EDIT` (ώστε ο πράκτορας να μπορεί να συγκρίνει πριν/μετά).
-- Η **κατεύθυνση ψήφου** για ενεργοποιήσεις `COMMENT_VOTE_THRESHOLD`.
-- Το **αναγνωριστικό χρήστη που ενεργοποίησε** και το **αναγνωριστικό badge** (για ενεργοποιήσεις διακριτικών moderator).
+- The **trigger event type** (e.g. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- The **page URL and URL ID** (when known).
+- The **comment** that triggered the run, if there is one - ID, author user ID, author display name, comment text, vote counts, flag count, spam/approved/reviewed flags, parent ID. The author's email is **never** sent to the LLM provider (ελαχιστοποίηση αποστολής PII).
+- The **previous comment text** for `COMMENT_EDIT` triggers (so the agent can compare before/after).
+- The **vote direction** for `COMMENT_VOTE_THRESHOLD` triggers.
+- The **triggering user ID** and **badge ID** (for moderator badge triggers).
+- Your tenant's **badge catalog** (name, display label, description) when the agent is allowed to award badges, so the agent can choose an appropriate one without you having to spell the badges out in the prompt.
 
-Όλο το μη αξιόπιστο κείμενο - σώματα σχολίων, ονόματα συντακτών, τίτλοι σελίδων, το ίδιο το έγγραφο οδηγιών - περικλείεται στο μήνυμα πλαισίου με δείκτες όπως `<<<COMMENT_TEXT>>> ... <<<END>>>`. Η προτροπή συστήματος της πλατφόρμας δίνει οδηγία στο μοντέλο να μην ακολουθεί ποτέ εντολές μέσα σε αυτά τα περιθώρια. Αυτή είναι η άμυνα της πλατφόρμας κατά της εισαγωγής προτροπών (prompt-injection); δεν χρειάζεται να την επαναλάβετε στην προτροπή σας.
+All untrusted text - comment bodies, author names, page titles, the guidelines doc itself - is **fenced** in the context message with markers like `<<<COMMENT_TEXT>>> ... <<<END>>>`. The platform's system prompt instructs the model to never follow instructions inside those fences. This is the platform's prompt-injection defense; you do not need to repeat it in your prompt.
 
 ### Τα τρία πλαίσια επιλογής
 
-#### Συμπερίληψη του γονικού σχολίου και προηγούμενων απαντήσεων στην ίδια συζήτηση
+#### Include parent comment and prior replies in the same thread
 
-Προσθέτει:
-- Το **γονικό σχόλιο** - ID, συντάκτης, κείμενο.
-- **Συνομήλικες απαντήσεις** - οι προηγούμενες απαντήσεις στον ίδιο γονέα στην ίδια συζήτηση.
+Adds:
+- The **parent comment** - ID, author, text.
+- **Sibling replies** - the prior replies to the same parent in the same thread.
 
-Χρήσιμο για: οποιονδήποτε πράκτορα που απαντά σε ένα σχόλιο με πλαίσιο (π.χ. χαιρετιστές καλωσορίσματος, συνόψιση νημάτων, moderators που διαβάζουν απαντήσεις σε συζητήσεις).
+Useful for: any agent that responds to a comment in context (welcome greeters, thread summarizers, moderators reading replies in conversations).
 
-Κόστος: μικρό έως μέτριο. Περιορίζεται από τον αριθμό των συνομηλίκων που υπάρχουν σε μια δεδομένη συζήτηση.
+Cost: small to medium. Bounded by how many siblings exist on a given thread.
 
-#### Συμπερίληψη του δείκτη εμπιστοσύνης του σχολιαστή, ηλικίας λογαριασμού, ιστορικού αποκλεισμών και πρόσφατων σχολίων
+#### Include commenter's trust factor, account age, ban history, and recent comments
 
-Προσθέτει το μπλοκ **AUTHOR_HISTORY**:
+Adds the **AUTHOR_HISTORY** block:
 
-- **Ηλικία λογαριασμού σε ημέρες** από την εγγραφή.
-- **Δείκτης εμπιστοσύνης (0-100)** - το σκορ FastComments που συνοψίζει πόσο αξιόπιστος είναι ο χρήστης σε αυτόν τον ιστότοπο. Δείτε τη σελίδα [Ανίχνευση spam](/guide-moderation.html#spam-detection) στον οδηγό διαχείρισης.
-- **Προηγούμενος αριθμός αποκλεισμών.**
-- **Συνολικά σχόλια σε αυτόν τον ιστότοπο.**
-- **Αριθμός διπλού περιεχομένου** - αν ο χρήστης έχει δημοσιεύσει πανομοιότυπο κείμενο πρόσφατα (σήμα κατά του spam).
-- **Σήμα δια-λογαριασμών από την ίδια IP** - αριθμός σχολίων από την ίδια IP υπό άλλους λογαριασμούς (σήμα εναλλακτικού λογαριασμού). Το hash της IP δεν αποστέλλεται ποτέ στο LLM.
-- **Πρόσφατα σχόλια** - έως 5 από τα πιο πρόσφατα σχόλια του χρήστη, το καθένα περικομμένο στα 300 χαρακτήρες, περικλεισμένα ως μη αξιόπιστο κείμενο.
+- **Account age in days** since signup.
+- **Trust factor (0-100)** - the FastComments score that summarizes how trusted the user is on this site. See the [Ανίχνευση Spam](/guide-moderation.html#spam-detection) page in the moderation guide.
+- **Prior ban count.**
+- **Total comments on this site.**
+- **Duplicate-content count** - if the user has posted identical text recently (anti-spam signal).
+- **Same-IP cross-account signal** - count of comments from the same IP under other accounts (alt-account signal). The IP hash itself is never sent to the LLM.
+- **Recent comments** - up to 5 of the user's most recent comments, each truncated to 300 characters, fenced as untrusted text.
 
-Χρήσιμο για: οποιονδήποτε πράκτορα διαχείρισης. Χωρίς αυτό, το μοντέλο αποκλείει νέους λογαριασμούς και μακροχρόνιους χρήστες καλόπιστα με παρόμοια συμπεριφορά.
+Useful for: any moderation agent. Without this, the model bans new accounts and long-time good-faith users with the same posture.
 
-Κόστος: μέτριο. Τα πρόσφατα σχόλια προσθέτουν τα περισσότερα tokens.
+Cost: medium. Recent comments add the most tokens.
 
-#### Συμπερίληψη τίτλου σελίδας, υπότιτλου, περιγραφής και meta tags
+#### Include page title, subtitle, description, and meta tags
 
-Προσθέτει το μπλοκ **PAGE_CONTEXT** - τίτλο, υπότιτλο, περιγραφή και τυχόν meta tags που έχει συλλέξει το FastComments για τη σελίδα.
+Adds the **PAGE_CONTEXT** block - title, subtitle, description, and any meta tags FastComments has captured for the page.
 
-Χρήσιμο για: χαιρετιστές καλωσορίσματος και εργαλεία σύνοψης νημάτων, όπου η γνώση του θέματος της σελίδας βελτιώνει σημαντικά την ποιότητα του αποτελέσματος.
+Useful for: welcome greeters and thread summarizers, where knowing what the page is about substantially improves output quality.
 
-Κόστος: μικρό.
+Cost: small.
 
 ### Οδηγίες κοινότητας
 
-Το τέταρτο πεδίο, **Οδηγίες κοινότητας**, είναι ένα μπλοκ πολιτικής ελεύθερου κειμένου που συμπεριλαμβάνεται στο μήνυμα πλαισίου ρόλου χρήστη σε κάθε εκτέλεση, περικλειόμενο ως μη αξιόπιστο κείμενο με τον ίδιο τρόπο που περικλείονται τα σώματα σχολίων και άλλο περιεχόμενο που παρέχει ο χρήστης. Ο πράκτορας το διαβάζει ως κείμενο πολιτικής αλλά η πλατφόρμα δεν το αντιμετωπίζει ως εντολή συστήματος. Δείτε τις [Οδηγίες κοινότητας](#community-guidelines) για το τι να βάλετε σε αυτές.
+The fourth field, **Community guidelines**, is a free-text policy block included in the user-role context message on every run, fenced as untrusted text the same way comment bodies and other user-supplied content are fenced. The agent reads it as policy text but the platform does not treat it as a system instruction. See [Οδηγίες κοινότητας](#community-guidelines) for what to put in it.
 
-### Επιλεκτική προσθήκη πλαισίου
+### Προσθήκη context επιλεκτικά
 
-Αυτά τα πλαίσια επιλογής εφαρμόζονται ανά πράκτορα, όχι παγκοσμίως. Ένα κοινό μοτίβο:
+These checkboxes apply per agent, not globally. A common pattern:
 
-- Χαιρετιστής καλωσορίσματος: περιεχόμενο σελίδας **ενεργό**, περιεχόμενο νήματος **ανενεργό**, ιστορικό χρήστη **ανενεργό**.
-- Moderator: περιεχόμενο νήματος **ανενεργό**, ιστορικό χρήστη **ενεργό**, περιεχόμενο σελίδας **ανενεργό**.
-- Συνοψιστής νημάτων: περιεχόμενο νήματος **ενεργό**, περιεχόμενο σελίδας **ενεργό**, ιστορικό χρήστη **ανενεργό**.
+- Welcome greeter: page context **on**, thread context **off**, user history **off**.
+- Moderator: thread context **off**, user history **on**, page context **off**.
+- Thread summarizer: thread context **on**, page context **on**, user history **off**.
 
-Χρησιμοποιήστε το ελάχιστο πλαίσιο που χρειάζεται ένας πράκτορας για να είναι σωστός στις κλήσεις που πραγματοποιεί — το επιπλέον πλαίσιο κοστίζει tokens σε κάθε εκτέλεση, ακόμη και όταν ο πράκτορας δεν το χρησιμοποιεί.
+Reach for the minimum context an agent needs to be correct on the calls it actually makes - extra context costs tokens on every run, even when the agent does not use it.

@@ -1,71 +1,73 @@
-En agents **værktøjer** er de handlinger, den kan udføre. Agentens redigeringsformular har en sektion **Allowed tool calls**, hvor du sætter flueben ved de værktøjer, denne agent må bruge, og en sektion **Approvals**, hvor du sætter flueben ved de handlinger, der skal kræve menneskelig godkendelse, før de træder i kraft.
+En agents **værktøjer** er de handlinger, den kan udføre. Agentens redigeringsformular har en sektion **Allowed tool calls**, hvor du afkrydser de værktøjer, denne agent må bruge, og en sektion **Approvals**, hvor du afkrydser de handlinger, der skal kræve en menneskelig godkendelse, før de træder i kraft.
 
 Der er tre niveauer for ethvert værktøj:
 
 - **Disallowed** - agenten kan ikke se eller bruge det.
-- **Allowed, no approval** - agenten bruger det direkte. Registreres i kørselsloggen.
-- **Allowed, with approval** - agentens kald sættes i kø til menneskelig gennemgang og kører kun, når et menneske godkender det.
+- **Allowed, no approval** - agenten bruger det direkte. Registreres i run history.
+- **Allowed, with approval** - agentens kald sættes i kø til menneskelig gennemgang og kører kun, når en person godkender det.
 
-Disallowed-værktøjer er stille: agenten kan ikke bede om dem, og platformen afviser dem uden yderligere besked. Værktøjer, der kræver godkendelse, går altid gennem [godkendelsesindbakke](#approval-workflow).
+Disallowed-værktøjer er tavse: agenten kan ikke bede om dem, og platformen afviser dem direkte. Værktøjer, der kræver godkendelse, går altid gennem [godkendelsesindbakke](#approval-workflow).
 
-### Revisionsspor for hver handling
+### Audit trail on every action
 
-Hver handling, agenten foretager, bliver registreret med en kort begrundelse (1–2 sætninger, der forklarer hvorfor) og en tillids-score (0.0–1.0). Begge vises i [Visning af kørselsdetaljer](#run-detail-view) og på enhver [godkendelse](#approval-workflow). Søgning i hukommelsen er den ene skrivebeskyttede undtagelse: det bliver ikke registreret som en handling og er altid tilgængeligt uanset allowlist.
+Hver handling, agenten udfører, registreres med en kort begrundelse (1–2 sætninger, der forklarer hvorfor) og en tillids-score (0.0–1.0). Begge vises i [Visning af kørselsdetaljer](#run-detail-view) og på hver [godkendelse](#approval-workflow). Søgning i hukommelsen er det ene læse-only-undtagelse: det registreres ikke som en handling og er altid tilgængeligt uanset allowlist.
 
-### Værktøjsreference
+### Tool reference
 
-#### Udstationering af kommentarer
+#### Posting comments
 
-Lader agenten poste en kommentar som sig selv. Kommentaren vises offentligt under agentens visningsnavn. Bruges af velkomst- og opsummeringsagenter. Kan omgøres - enhver moderator kan fjerne en dårlig kommentar. Normalt tilladt uden godkendelse; sæt det bag en godkendelse, hvis dit fællesskab kræver, at alle offentlige beskeder gennemgås af mennesker.
+Lader agenten poste en kommentar som sig selv. Kommentaren vises offentligt under agentens visningsnavn. Bruges af greeter- og summarizer-agenter. Reversibel - enhver moderator kan fjerne en dårlig kommentar. Normalt tilladt uden godkendelse; sæt det bag en godkendelse, hvis dit fællesskab kræver, at alle offentligt rettede beskeder skal gennemgås af et menneske.
 
-#### Redigering af en kommentar
+#### Editing a comment
 
-Lader agenten omskrive teksten i en kommentar inden for scope. Den oprindelige tekst bevares i kommentarens revisionslog. Forbehold til snævre tilfælde - slette PII en bruger lækkede, eller rette agentens eget tidligere svar. Ikke til omskrivning af holdninger eller blødgøring af tone. **Overvej kraftigt at sætte dette bag en godkendelse.** Se [Rediger kommentar](#tool-edit-comment) for hele siden.
+Lader agenten omskrive teksten i en kommentar, der er indeholdt af omfanget. Den oprindelige tekst bevares i kommentarens revisionslog. Reserver til snævre tilfælde - redigering af PII, som en bruger har lækket, eller rettelse af agentens eget tidligere svar. Ikke til omskrivning af holdninger eller udjævning af tone. **Overvej kraftigt at placere det bag en godkendelse.** Se [Edit comment](#tool-edit-comment) for hele siden.
 
-#### Afstemning på kommentarer
+#### Voting on comments
 
-Lader agenten stemme op eller ned på en kommentar. Stemmen tæller mod kommentarens samlede stemmetal som enhver anden stemme. De fleste fællesskaber foretrækker ikke bots, der stemmer; ikke aktiveret i nogen startskabelon. Hvis du tillader det, kan afstemningen omgøres.
+Lader agenten stemme op eller ned på en kommentar. Stemmen tæller med i kommentarens stemmetal som enhver anden stemme. De fleste fællesskaber foretrækker ikke, at bots stemmer; ikke aktiveret i nogen startskabelon. Hvis du tillader det, er stemmer reversible.
 
-#### Fastgør / fjern fastgørelse af en kommentar
+#### Pin / unpin a comment
 
-Lader agenten fastgøre en kommentar øverst på siden eller fjerne fastgørelsen af en, der allerede er fastgjort. Platformen håndhæver ikke en regel om én fastgørelse per tråd, så en pin-agent bør instrueres i først at fjerne den tidligere fastgjorte kommentar. Bruges af Top Comment Pinner template. Omgøres; normalt tilladt uden godkendelse.
+Lader agenten fastgøre en kommentar til toppen af siden eller fjerne fastgørelsen af en, der allerede er fastgjort. Platformen håndhæver ikke en én-faste pr. tråd-regel, så en pin-agent bør instrueres i først at fjerne den tidligere fastgjorte kommentar. Bruges af Top Comment Pinner template. Reversibel; normalt tilladt uden godkendelse.
 
-#### Luk / genåbn en kommentar
+#### Lock / unlock a comment
 
-Lader agenten forhindre yderligere svar under en kommentar eller genåbne muligheden for svar. Den låste kommentar forbliver synlig. Nyttigt til køling af ophedede tråde, ofte kombineret med en udsat genåbning. Omgøres, men synligt for dit fællesskab; overvej at sætte det bag godkendelse i vigtige fællesskaber.
+Lader agenten forhindre yderligere svar under en kommentar eller gendanne svar. Den låste kommentar forbliver synlig. Nyttigt til nedkøling af ophedede tråde, kombineret med en forsinket oplåsning. Reversibel men synlig for dit fællesskab; overvej at placere det bag en godkendelse i højrisikofællesskaber.
 
-#### Marker / fjern markering af spam
+#### Mark / unmark spam
 
-Lader agenten markere en kommentar som spam (skjuler den for læsere og fodrer spam-klassifikatoren) eller fjerne flaget. Det grundlæggende værktøj for enhver moderationsagent. Omgøres. Overvej kraftigt at kræve godkendelse i de første uger, mens du opbygger tillid til agenten.
+Lader agenten markere en kommentar som spam (skjuler den for læsere og fodrer spamklassifikatoren) eller fjerne dette flag. Basisværktøjet for enhver moderationsagent. Reversibel. Overvej kraftigt at kræve godkendelse de første uger, mens du opbygger tillid til agenten.
 
-#### Godkend / fjern godkendelse af en kommentar
+#### Approve / un-approve a comment
 
-Lader agenten vise en tilbageholdt kommentar for læsere eller skjule en allerede synlig. Mest nyttigt for lejere, der tilbageholder nye kommentarer til moderatorgennemgang. Høje indsatser ved at fjerne godkendelsen af en synlig kommentar - overvej at sætte det bag godkendelse.
+Lader agenten vise en tilbageholdt kommentar for læsere eller skjule en allerede synlig. Mest nyttigt på tenants, der tilbageholder nye kommentarer til moderatorgennemgang. Høj risiko ved at af-approve en synlig kommentar - overvej at kræve godkendelse.
 
-#### Marker en kommentar som gennemset
+#### Mark a comment reviewed
 
-Et kø-tilstands-værktøj: markerer en kommentar som "en moderator (eller agent) har kigget på dette." Ændrer ikke synlighed. Lav risiko; sjældent sat bag godkendelse.
+Et kø-tilstandsværktøj: markerer en kommentar som "en moderator (eller agent) har set på dette." Ændrer ikke synligheden. Lav risiko; sjældent påkrævet godkendelse.
 
-#### Tilkendegiv et badge
+#### Award a badge
 
-Lader agenten give en bruger et badge fra din tenants badge-konfiguration. Kan omgøres af en moderator. Sjældent sat bag godkendelse. Agenten skal kende badge-ID'et, så medtag de relevante ID'er i dine [fællesskabets retningslinjer](#community-guidelines) eller dit [startprompt](#personality-prompt).
+Lader agenten give en bruger et badge, du har konfigureret for din tenant. Reversibel af en moderator. Sjældent gated. Når dette værktøj er aktiveret, kan agenten se dine tenants badges og vælge det rigtige af sig selv, så du ikke behøver at indsætte badge-identifikatorer i dine fællesskabsretningslinjer eller i den indledende prompt. Hvis du vil styre, hvilket badge der tildeles for hvilken adfærd, referer til badges ved deres **Display Label** i prompten.
 
-#### Send e-mail
+#### Send email
 
-Lader agenten sende en almindelig tekst-e-mail fra `noreply@fastcomments.com` til en adresse den vælger. Brug sparsommelig - e-mail er det mest omkostningsfulde værktøj, og dårlige e-mails er svære at fortryde. Overvej kraftigt at kræve godkendelse, og send godkendelses-e-mails til den person, der ejer den indbakke, agenten kommer til at sende til.
+Lader agenten sende en almindelig tekst-e-mail til forfatteren af en kommentar inden for triggerens omfang. Agenten ser aldrig modtagerens e-mailadresse - den vælger en kommentar, og platformen leverer til den adresse, den kommentator angav, da de postede. Fra-adressen er din tenants brandede afsender (med DKIM), når kommentarens domæne matcher et konfigureret domæne, ellers platformens standard. Brug sparsomt - e-mail er det mest indgribende værktøj, og dårlige e-mails er svære at fortryde. Overvej kraftigt at placere det bag en godkendelse, og rout godkendelses-e-mails til den person, der ejer den indbakke, agenten vil komme til at sende fra.
 
-#### Gem / søg agent-hukommelse
+#### Save / search agent memory
 
-To parrede værktøjer, der læser og skriver til en delt notes-pool om den bruger, en trigger blev affyret for. Hukommelsen deles på tværs af alle agenter i din tenant, så en triage-agents noter informerer en moderatoragents beslutninger. Søgning er skrivebeskyttet og altid tilgængelig; gemning sættes sjældent bag godkendelse. Se [Agent-hukommelsessystem](#agent-memory-system) for det fulde design.
+To sammenkoblede værktøjer, der læser og skriver i en delt note-pool om den bruger, en trigger blev affyret for. Hukommelsen deles på tværs af alle agenter i din tenant, så noterne fra en triage-agent informerer en moderatoragents beslutninger. Search er read-only og altid tilgængelig; saving er sjældent gated. Se [Agent-hukommelsessystem](#agent-memory-system) for det fulde design.
 
-#### Advar en bruger
+#### Warn a user
 
-Sender en privat DM-advarsel til en bruger om en specifik kommentar og registrerer advarslen atomisk i agent-hukommelsen. Platformens eskaleringspolitik er bygget omkring dette værktøj - advar først, udeluk kun hvis brugeren gentager overtrædelsen. Mindre ofte sat bag godkendelse end `ban_user`, men overvej at kræve godkendelse i agentens første uger. Se [Advar bruger](#tool-warn-user) for hele siden.
+Sender en privat DM-advarsel til en bruger om en specifik kommentar og gemmer atomisk advarslen i agenthukommelsen. Platformens eskalationspolitik er bygget omkring dette værktøj - advar først, udeluk kun ved gentagelse. Mindre ofte gated end `ban_user`, men overvej gating i de første uger af en agents levetid. Se [Warn user](#tool-warn-user) for hele siden.
 
-#### Forbyd en bruger
+#### Ban a user
 
-Det mest konsekvensfulde værktøj, en agent kan kalde. Udelukker en bruger i en fast varighed, eventuelt som en shadow ban, eventuelt også forbyde IP, eventuelt også slette alle brugerens kommentarer. De to destruktive muligheder (IP, delete-all) er sat bag ekstra opt-ins på redigeringsformularen. I EU-regionen kræver alle udelukkelser menneskelig godkendelse (se [EU DSA Artikel 17-overholdelse](#eu-dsa-compliance)). Overvej kraftigt at sætte dette bag godkendelse overalt. Se [Forbyd bruger](#tool-ban-user) for hele siden.
+Det mest afgørende værktøj, en agent kan kalde. Udelukker en bruger i en fastsat periode, eventuelt som en shadow ban, eventuelt også udelukkelse efter IP, eventuelt også sletning af alle brugerens kommentarer. De to destruktive muligheder (IP, delete-all) er gated bag ekstra opt-ins på redigeringsformularen. I EU-regionen kræver alle udelukkelser menneskelig godkendelse (se [EU DSA Article 17 Compliance](#eu-dsa-compliance)). Overvej kraftigt at placere det bag en godkendelse overalt. Se [Ban user](#tool-ban-user) for hele siden.
 
-### Undervalg for Ban-værktøjet
+### Ban-tool sub-options
 
-Ban-værktøjet eksponerer to destruktive muligheder - delete-all-comments og ban-by-IP - som er skjult for modellen helt, indtil du aktiverer dem via sektionen **Ban options** på redigeringsformularen. Selv hvis modellen hallucinerer parameteren, afviser platformen værdier, du ikke har optet dig ind i. Se [Forbyd bruger](#tool-ban-user).
+Ban-værktøjet eksponerer to destruktive muligheder - delete-all-comments og ban-by-IP - som er skjult for modellen helt, indtil du aktiverer dem via sektionen **Ban options** på redigeringsformularen. Selv hvis modellen hallucinere parameteren, afviser platformen værdier, du ikke har optet ind i. Se [Ban user](#tool-ban-user).
+
+---

@@ -1,71 +1,71 @@
-Narzędzia agenta (**tools**) to akcje, które może wykonać. Formularz edycji agenta zawiera sekcję **Allowed tool calls**, w której zaznaczasz narzędzia, których agent może używać, oraz sekcję **Approvals**, w której zaznaczasz akcje, które powinny wymagać zatwierdzenia przez człowieka, zanim wejdą w życie.
+Narzędzia agenta (**tools**) to akcje, które może on podjąć. Formularz edycji agenta ma sekcję **Dozwolone wywołania narzędzi** (Allowed tool calls), w której zaznaczasz narzędzia, z których agent może korzystać, oraz sekcję **Zatwierdzenia** (Approvals), w której zaznaczasz działania wymagające zatwierdzenia przez człowieka przed ich wejściem w życie.
 
-Istnieją trzy poziomy dla dowolnego narzędzia:
+Są trzy poziomy dla każdego narzędzia:
 
-- **Disallowed** - agent nie może go zobaczyć ani używać.
-- **Allowed, no approval** - agent używa go bezpośrednio. Zapisuje się w historii uruchomień.
-- **Allowed, with approval** - wywołanie agenta trafia do kolejki do przeglądu przez człowieka i uruchamia się dopiero po jego zatwierdzeniu.
+- **Zabronione** - agent nie może go zobaczyć ani użyć.
+- **Dozwolone, bez zatwierdzenia** - agent używa go bezpośrednio. Rejestrowane w historii uruchomień.
+- **Dozwolone, z zatwierdzeniem** - wywołanie agenta jest umieszczane w kolejce do przeglądu przez człowieka i uruchamiane tylko po jego zatwierdzeniu.
 
-Narzędzia oznaczone jako Disallowed są ciche: agent nie może o nie prosić, a platforma odrzuca takie żądania wprost. Narzędzia wymagające zatwierdzenia zawsze przechodzą przez [approvals inbox](#approval-workflow).
+Zabronione narzędzia są ciche: agent nie może o nie prosić, a platforma odrzuca je wprost. Narzędzia wymagające zatwierdzenia zawsze przechodzą przez [skrzynkę zatwierdzeń](#approval-workflow).
 
-### Ślad audytu przy każdej akcji
+### Ścieżka audytu dla każdej akcji
 
-Każda akcja wykonana przez agenta jest rejestrowana z krótkim uzasadnieniem (1–2 zdania wyjaśniające dlaczego) oraz oceną pewności (0.0–1.0). Oba te elementy pojawiają się w [Run Detail View](#run-detail-view) i przy każdym [approval](#approval-workflow). Wyszukiwanie w pamięci jest jedynym wyjątkiem tylko do odczytu: nie jest rejestrowane jako akcja i jest zawsze dostępne bez względu na allowlist.
+Każde działanie agenta jest rejestrowane z krótkim uzasadnieniem (1–2 zdania wyjaśniające dlaczego) oraz oceną pewności (0.0–1.0). Oba elementy pojawiają się w [Widoku szczegółów uruchomienia](#run-detail-view) i przy każdym [zatwierdzeniu](#approval-workflow). Przeszukiwanie pamięci jest jedynym wyjątkiem tylko do odczytu: nie jest rejestrowane jako działanie i jest zawsze dostępne niezależnie od listy dozwolonych narzędzi.
 
-### Referencja narzędzi
+### Opis narzędzi
 
-#### Posting comments
+#### Dodawanie komentarzy
 
-Pozwala agentowi opublikować komentarz jako on sam. Komentarz jest publicznie widoczny pod nazwą wyświetlaną agenta. Używane przez agentów typu greeter i summarizer. Cofalne — każdy moderator może usunąć zły komentarz. Zazwyczaj dozwolone bez zatwierdzenia; jeśli twoja społeczność wymaga, aby każda publiczna wiadomość była sprawdzana przez człowieka, zabezpiecz to zatwierdzeniem.
+Pozwala agentowi dodać komentarz jako on sam. Komentarz jest pokazywany publicznie pod nazwą wyświetlaną agenta. Używane przez agentów powitalnych i podsumowujących. Odwracalne - każdy moderator może usunąć nieodpowiedni komentarz. Zazwyczaj dozwolone bez zatwierdzenia; wymuś zatwierdzenie, jeśli Twoja społeczność potrzebuje, aby każda publiczna wiadomość była sprawdzana przez człowieka.
 
-#### Editing a comment
+#### Edytowanie komentarza
 
-Pozwala agentowi przepisać tekst komentarza objętego zakresem. Oryginalny tekst jest zachowany w dzienniku audytu komentarza. Zarezerwuj na wąskie przypadki — zaciemnianie PII ujawnionego przez użytkownika lub poprawianie poprzedniej odpowiedzi agenta. Nie do przepisywania opinii czy łagodzenia tonu. **Zdecydowanie rozważ zabezpieczenie tego za pomocą zatwierdzenia.** Zobacz stronę [Edit comment](#tool-edit-comment) po pełne informacje.
+Pozwala agentowi przepisać tekst komentarza objętego zakresem. Oryginalny tekst jest zachowany w logu audytu komentarza. Stosuj tylko w wąskich przypadkach — redagowanie PII ujawnionego przez użytkownika lub poprawianie wcześniejszej odpowiedzi agenta. Nie do przepisywania opinii ani łagodzenia tonu. **Zdecydowanie rozważ objęcie tego wymogiem zatwierdzenia.** Zobacz [Edytuj komentarz](#tool-edit-comment) po pełne informacje.
 
-#### Voting on comments
+#### Głosowanie na komentarzach
 
-Pozwala agentowi głosować za lub przeciw komentarzowi. Głos liczy się do sumy głosów komentarza jak każdy inny głos. Większość społeczności woli, aby boty nie głosowały; nie jest to włączone w żadnym starterowym szablonie. Jeśli jednak na to pozwolisz, głosowanie jest cofane.
+Pozwala agentowi głosować za lub przeciw komentarzowi. Głos liczy się do łącznej liczby głosów komentarza jak każdy inny głos. Większość społeczności woli, aby boty nie głosowały; nie jest to włączone w żadnym szablonie startowym. Jeśli to pozwolisz, głosowanie jest odwracalne.
 
-#### Pin / unpin a comment
+#### Przypinanie / odpinanie komentarza
 
-Pozwala agentowi przypiąć komentarz na górze strony lub odpiąć już przypięty. Platforma nie wymusza zasady jednego przypięcia na wątek, więc agenta przypinającego należy poinstruować, aby najpierw odpiął poprzednio przypięty komentarz. Używane przez szablon Top Comment Pinner. Cofalne; zwykle dozwolone bez zatwierdzenia.
+Pozwala agentowi przypiąć komentarz na górze strony lub odpiąć już przypięty. Platforma nie egzekwuje zasady jednego przypięcia na wątek, więc agent przypinający powinien najpierw odpiąć poprzedni przypięty komentarz. Używane przez Top Comment Pinner template. Odwracalne; zwykle dozwolone bez zatwierdzenia.
 
-#### Lock / unlock a comment
+#### Blokowanie / odblokowywanie komentarza
 
-Pozwala agentowi zablokować możliwość dalszych odpowiedzi pod komentarzem lub przywrócić odpowiedzi. Zablokowany komentarz pozostaje widoczny. Przydatne do schładzania gorących wątków, w połączeniu z odroczonym odblokowaniem. Cofalne, ale widoczne dla twojej społeczności; rozważ zabezpieczenie zatwierdzeniem w społecznościach o wysokiej stawce.
+Pozwala agentowi uniemożliwić dalsze odpowiedzi pod komentarzem lub przywrócić możliwość odpowiadania. Zablokowany komentarz pozostaje widoczny. Przydatne do ostudzenia rozpalonych wątków, w połączeniu z odroczonym odblokowaniem. Odwracalne, ale widoczne dla Twojej społeczności; rozważ objęcie zatwierdzeniem na społecznościach o dużym ryzyku.
 
-#### Mark / unmark spam
+#### Oznacz / usuń oznaczenie spamu
 
-Pozwala agentowi oznaczyć komentarz jako spam (ukrywając go przed czytelnikami i przekazując do klasyfikatora spamu) lub usunąć ten znacznik. Podstawowe narzędzie dla każdego agenta moderacyjnego. Cofalne. Zdecydowanie rozważ zabezpieczenie zatwierdzeniem w pierwszych tygodniach, dopóki nie zbudujesz zaufania do agenta.
+Pozwala agentowi oznaczyć komentarz jako spam (ukrywając go przed czytelnikami i dostarczając go do klasyfikatora spamu) lub usunąć to oznaczenie. Podstawowe narzędzie dla każdego agenta moderującego. Odwracalne. Zdecydowanie rozważ objęcie zatwierdzeniem w pierwszych tygodniach, gdy budujesz zaufanie do agenta.
 
-#### Approve / un-approve a comment
+#### Zatwierdź / cofnij zatwierdzenie komentarza
 
-Pozwala agentowi pokazać wstrzymany komentarz czytelnikom lub ukryć już widoczny. Najbardziej użyteczne w tenantach, które wstrzymują nowe komentarze do przeglądu moderatora. Wysokie ryzyko przy cofnięciu zatwierdzenia widocznego komentarza — rozważ zabezpieczenie zatwierdzeniem.
+Pozwala agentowi pokazać wstrzymany komentarz czytelnikom lub ukryć już widoczny. Najbardziej przydatne w tenantach, które wstrzymują nowe komentarze do przeglądu moderatora. Duże ryzyko przy cofaniu zatwierdzenia widocznego komentarza — rozważ objęcie tego zatwierdzeniem.
 
-#### Mark a comment reviewed
+#### Oznacz komentarz jako sprawdzony
 
-Narzędzie stanu kolejki: oznacza komentarz jako „moderator (lub agent) przyjrzał się temu”. Nie zmienia widoczności. Niskie ryzyko; rzadko zabezpieczane.
+Narzędzie stanu kolejki: oznacza komentarz jako „moderator (lub agent) przyjrzał się temu”. Nie zmienia widoczności. Niskie ryzyko; rzadko objęte zatwierdzeniem.
 
-#### Award a badge
+#### Przyznaj odznakę
 
-Pozwala agentowi przyznać użytkownikowi odznakę z konfiguracji odznak tenant'a. Cofalne przez moderatora. Rzadko zabezpieczane. Agent musi znać ID odznaki, więc dołącz odpowiednie ID w swoich [community guidelines](#community-guidelines) lub [initial prompt](#personality-prompt).
+Pozwala agentowi przyznać użytkownikowi odznakę skonfigurowaną dla Twojego tenanta. Odwracalne przez moderatora. Rzadko objęte zatwierdzeniem. Gdy to narzędzie jest włączone, agent widzi odznaki Twojego tenanta i sam wybiera odpowiednią, więc nie musisz wklejać identyfikatorów odznak do wytycznych społeczności ani do początkowego promptu. Jeśli chcesz wskazać, która odznaka jest przyznawana za jakie zachowanie, odwołuj się do odznak przez ich **Etykietę wyświetlaną** w promptcie.
 
-#### Send email
+#### Wysyłanie e-maili
 
-Pozwala agentowi wysłać wiadomość e-mail w zwykłym tekście z `noreply@fastcomments.com` na adres, który wybierze. Używaj oszczędnie — e-mail to narzędzie o najwyższej barierze i złe e-maile trudno cofnąć. Zdecydowanie rozważ zabezpieczenie zatwierdzeniem i kieruj e-maile zatwierdzające do osób, które zarządzają skrzynką, na którą agent będzie wysyłać wiadomości.
+Pozwala agentowi wysłać e-mail w formacie plain-text do autora komentarza w zakresie triggera. Agent nigdy nie widzi adresu e-mail odbiorcy — wybiera komentarz, a platforma dostarcza wiadomość na adres podany przez komentującego podczas publikacji. Adres nadawcy to brandowany nadawca Twojego tenanta (z DKIM), gdy domena komentarza pasuje do skonfigurowanej domeny, w przeciwnym razie używany jest domyślny nadawca platformy. Używaj oszczędnie — e-mail to narzędzie o najwyższej tarciwości, a złe e-maile trudno cofnąć. Zdecydowanie rozważ objęcie zatwierdzeniem i kieruj e-maile zatwierdzające do osoby odpowiedzialnej za skrzynkę, na którą agent ostatecznie będzie wysyłał wiadomości.
 
-#### Save / search agent memory
+#### Zapisz / przeszukaj pamięć agenta
 
-Dwa powiązane narzędzia, które odczytują i zapisują wspólną pulę notatek o użytkowniku, dla którego wywołano trigger. Pamięć jest współdzielona między wszystkimi agentami w twoim tenant, więc notatki agenta triage wpływają na decyzje agenta moderatora. Search jest tylko do odczytu i zawsze dostępne; saving rzadko jest zabezpieczane. Zobacz [Agent Memory System](#agent-memory-system) po pełny opis.
+Dwa powiązane narzędzia, które odczytują i zapisują wspólną pulę notatek o użytkowniku, dla którego uruchomił się trigger. Pamięć jest współdzielona między wszystkimi agentami w Twoim tenancie, więc notatki agenta triage wpływają na decyzje agenta moderatora. Wyszukiwanie jest tylko do odczytu i zawsze dostępne; zapisywanie rzadko jest objęte zatwierdzeniem. Zobacz [System pamięci agenta](#agent-memory-system) po pełny opis.
 
-#### Warn a user
+#### Ostrzeż użytkownika
 
-Wysyła prywatną wiadomość DM ostrzegającą użytkownika o konkretnym komentarzu i atomowo zapisuje ostrzeżenie w pamięci agenta. Polityka eskalacji platformy opiera się na tym narzędziu — najpierw ostrzeżenie, ban tylko jeśli użytkownik naruszy ponownie. Mniej często zabezpieczane niż `ban_user`, ale rozważ zabezpieczenie w pierwszych tygodniach życia agenta. Zobacz stronę [Warn user](#tool-warn-user) po pełne informacje.
+Wysyła prywatne DM ostrzegające użytkownika o konkretnym komentarzu i atomowo zapisuje ostrzeżenie w pamięci agenta. Polityka eskalacji platformy opiera się na tym narzędziu — najpierw ostrzegaj, blokuj tylko w razie ponownego przewinienia. Mniej powszechnie objęte zatwierdzeniem niż `ban_user`, ale rozważ objęcie zatwierdzeniem w pierwszych tygodniach życia agenta. Zobacz [Ostrzeż użytkownika](#tool-warn-user) po pełne informacje.
 
-#### Ban a user
+#### Zablokuj użytkownika
 
-Najpoważniejsze narzędzie, jakie agent może wywołać. Banuje użytkownika na określony czas, opcjonalnie jako shadow ban, opcjonalnie także blokując IP, opcjonalnie także usuwając wszystkie komentarze użytkownika. Dwie destrukcyjne opcje (IP, delete-all) są zabezpieczone dodatkowymi zgodami na formularzu edycji. W regionie UE wszystkie bany wymagają zatwierdzenia przez człowieka (zobacz [EU DSA Article 17 Compliance](#eu-dsa-compliance)). Zdecydowanie rozważ zabezpieczenie zatwierdzeniem wszędzie. Zobacz stronę [Ban user](#tool-ban-user) po pełne informacje.
+Najbardziej doniosłe narzędzie, które agent może wywołać. Zbanuje użytkownika na określony czas, opcjonalnie jako shadow ban, opcjonalnie również blokując IP, opcjonalnie również usuwając wszystkie komentarze użytkownika. Dwie destrukcyjne opcje (IP, usunięcie wszystkich) są dostępne tylko po dodatkowym włączeniu ich na formularzu edycji. W regionie UE wszystkie bany wymagają zatwierdzenia przez człowieka (zobacz [Zgodność z artykułem 17 DSA UE](#eu-dsa-compliance)). Zdecydowanie rozważ objęcie wymogiem zatwierdzenia wszędzie. Zobacz [Zablokuj użytkownika](#tool-ban-user) po pełne informacje.
 
-### Podopcje narzędzia Ban
+### Podopcje narzędzia blokowania
 
-Narzędzie Ban udostępnia dwie destrukcyjne opcje — delete-all-comments i ban-by-IP — które są ukryte przed modelem całkowicie, dopóki nie włączysz ich przez sekcję **Ban options** w formularzu edycji. Nawet jeśli model zhalucynuje parametr, platforma odrzuci wartości, których nie włączyłeś. Zobacz [Ban user](#tool-ban-user).
+Narzędzie blokowania udostępnia dwie destrukcyjne opcje — delete-all-comments i ban-by-IP — które są całkowicie ukryte przed modelem, dopóki nie włączysz ich w sekcji **Opcje blokowania** na formularzu edycji. Nawet jeśli model zmyśli parametr, platforma odrzuci wartości, których nie włączyłeś. Zobacz [Zablokuj użytkownika](#tool-ban-user).

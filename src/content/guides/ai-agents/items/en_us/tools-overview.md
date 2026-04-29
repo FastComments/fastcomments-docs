@@ -48,11 +48,11 @@ A queue-state tool: marks a comment as "a moderator (or agent) has looked at thi
 
 #### Award a badge
 
-Lets the agent give a user a badge from your tenant's badge configuration. Reversible by a moderator. Rarely gated. The agent must know the badge ID, so include the relevant IDs in your [community guidelines](#community-guidelines) or [initial prompt](#personality-prompt).
+Lets the agent give a user a badge you have configured for your tenant. Reversible by a moderator. Rarely gated. When this tool is enabled, the agent can see your tenant's badges and pick the right one on its own, so you do not need to paste badge identifiers into your community guidelines or initial prompt. If you want to steer which badge gets awarded for what behavior, refer to the badges by their **Display Label** in the prompt.
 
 #### Send email
 
-Lets the agent send a plain-text email from `noreply@fastcomments.com` to an address it picks. Use sparingly - email is the highest-friction tool and bad emails are hard to undo. Strongly consider gating behind approval, and route approval emails to whoever owns the inbox the agent will end up emailing.
+Lets the agent send a plain-text email to the author of a comment in the trigger's scope. The agent never sees the recipient's email address - it picks a comment and the platform delivers to whatever address that commenter left when they posted. The from-address is your tenant's branded sender (with DKIM) when the comment's domain matches a configured domain, otherwise the platform default. Use sparingly - email is the highest-friction tool and bad emails are hard to undo. Strongly consider gating behind approval, and route approval emails to whoever owns the inbox the agent will end up emailing.
 
 #### Save / search agent memory
 

@@ -1,71 +1,71 @@
-Bir ajanın **tools**'ı alabileceği eylemlerdir. Ajan düzenleme formunda bu ajanın kullanmasına izin verdiğiniz araçları işaretlediğiniz bir **Allowed tool calls** bölümü ve yürürlüğe girmeden önce bir insanın onaylaması gereken eylemleri işaretlediğiniz bir **Approvals** bölümü vardır.
+Bir agent'ın **araçları**, kullanabileceği eylemlerdir. Agent düzenleme formunda bu agent'ın kullanmasına izin verdiğiniz araçları işaretlediğiniz bir **İzin Verilen araç çağrıları** bölümü ve etkili olmadan önce insan onayı gerektirmesi gereken eylemleri işaretlediğiniz bir **Onaylar** bölümü vardır.
 
 Her araç için üç seviye vardır:
 
-- **Disallowed** - ajan bunu göremez veya kullanamaz.
-- **Allowed, no approval** - ajan bunu doğrudan kullanır. Çalıştırma geçmişine kaydedilir.
-- **Allowed, with approval** - ajanın çağrısı insan incelemesi için sıraya alınır ve yalnızca bir insan onayladığında çalışır.
+- **İzin verilmedi** - agent bunu göremez veya kullanamaz.
+- **İzinli, onaysız** - agent doğrudan kullanır. Çalıştırma geçmişine kaydedilir.
+- **İzinli, onaylı** - agent çağrısı insan incelemesi için kuyruklanır ve sadece bir insan onayladığında çalışır.
 
-Disallowed araçlar sessizdir: ajan bunları isteyemez ve platform bunları doğrudan reddeder. Onayla sınırlandırılmış araçlar her zaman [approvals inbox](#approval-workflow) üzerinden gider.
+İzin verilmeyen araçlar sessizdir: agent bunları talep edemez ve platform bunları açıkça reddeder. Onayla sınırlanan araçlar her zaman [onay gelen kutusu](#approval-workflow) üzerinden gider.
 
-### Her eylem için denetim kaydı
+### Her eylemde denetim izi
 
-Ajanın yaptığı her eylem kısa bir gerekçe (nedenini açıklayan 1-2 cümle) ve bir güven skoru (0.0-1.0) ile kaydedilir. Her ikisi de [Run Detail View](#run-detail-view) ve her [approval](#approval-workflow) üzerinde görünür. Bellek araması tek salt okunur istisnadır: bir eylem olarak kaydedilmez ve izin listesine bakılmaksızın her zaman kullanılabilir.
+Agent'ın yaptığı her eylem kısa bir gerekçe (neden olduğunu açıklayan 1-2 cümle) ve bir güven puanı (0.0-1.0) ile kaydedilir. Her ikisi de [Çalıştırma Detayı Görünümü](#run-detail-view) ve her [onay](#approval-workflow) üzerinde görünür. Bellekte arama, tek yazma-okuma olmayan istisnadır: bir eylem olarak kaydedilmez ve izin listesine bakılmaksızın her zaman kullanılabilir.
 
 ### Araç referansı
 
 #### Yorum gönderme
 
-Ajanın kendi adıyla bir yorum göndermesine izin verir. Yorum, ajanın gösterim adı altında kamuya açık şekilde gösterilir. Karşılama ve özetleme ajanları tarafından kullanılır. Geri alınabilir - herhangi bir moderatör kötü bir yorumu kaldırabilir. Genellikle onay olmadan izin verilir; topluluğunuz her kamuya açık mesajın insan tarafından incelenmesini gerektiriyorsa bunu onaya bağlayın.
+Agent'ın kendisi olarak bir yorum göndermesini sağlar. Yorum agent'ın görüntüleme adı altında herkese açık gösterilir. Karşılama ve özetleyici agent'lar tarafından kullanılır. Geri alınabilir - herhangi bir moderatör kötü bir yorumu kaldırabilir. Genellikle onaysız izin verilir; topluluğunuz her halka açık mesajın insan tarafından incelenmesini gerektiriyorsa bunu onayla sınırlandırın.
 
 #### Bir yorumu düzenleme
 
-Ajanın kapsam içi bir yorumun metnini yeniden yazmasına izin verir. Orijinal metin yorumun denetim kaydında korunur. Dar durumlar için ayırın - bir kullanıcının sızdırdığı kişisel tanımlayıcı bilgileri (PII) gizlemek ya da ajanın kendi önceki yanıtını düzeltmek gibi. Görüşleri yeniden yazmak veya üslubu yumuşatmak için kullanılmaz. **Onayı zorunlu kılmayı şiddetle düşünün.** Tam sayfa için [Edit comment](#tool-edit-comment) bölümüne bakın.
+Agent'ın kapsam içindeki bir yorumun metnini yeniden yazmasını sağlar. Orijinal metin yorumun denetim günlüğünde korunur. Dar vakalar için ayırın - bir kullanıcının sızdırdığı KİŞİSEL BİLGİLERİ gizleme veya agent'ın kendi önceki yanıtını düzeltme gibi. Görüşleri yeniden yazmak veya üslubu yumuşatmak için değildir. **Onay arkasına almayı kuvvetle düşünün.** Tam sayfa için bkz. [Edit comment](#tool-edit-comment).
 
 #### Yorumlara oy verme
 
-Ajanın bir yoruma olumlu veya olumsuz oy vermesini sağlar. Oy, diğer tüm oylar gibi yorumun oy toplamına eklenir. Çoğu topluluk botların oy kullanmasını tercih etmez; hiçbir başlangıç şablonunda etkin değildir. İzin verirseniz, oylar geri alınabilir.
+Agent'ın bir yoruma yukarı veya aşağı oy vermesini sağlar. Oy, diğer oylar gibi yorumun oy toplamına katkıda bulunur. Çoğu topluluk botların oy kullanmasını tercih etmez; hiçbir başlangıç şablonunda etkin değildir. İzin verirseniz, oy verme geri alınabilirdir.
 
-#### Yorumu sabitle / sabitlemeyi kaldır
+#### Bir yorumu sabitle / sabitlemeyi kaldır
 
-Ajanın bir yorumu sayfanın üstüne sabitlemesine veya zaten sabitlenmiş bir yorumu serbest bırakmasına izin verir. Platform bir başlık başına tek sabitleme kuralını zorlamaz, bu yüzden bir sabitleme ajanına önce önceki sabitlenmiş yorumu kaldırması talimatı verilmelidir. Top Comment Pinner şablonu tarafından kullanılır. Geri alınabilir; genellikle onay olmadan izin verilir.
+Agent'ın bir yorumu sayfanın üstüne sabitlemesini veya zaten sabitlenmiş bir yorumun sabitlemesini kaldırmasını sağlar. Platform bir konu başına bir sabitleme kuralını uygulamaz, bu yüzden sabitleme agent'ına önce önceki sabitlenmiş yorumu kaldırması talimatı verilmelidir. Top Comment Pinner şablonu tarafından kullanılır. Geri alınabilir; genellikle onaysız izin verilir.
 
-#### Yorumu kilitle / kilidini aç
+#### Bir yorumu kilitle / kilidi aç
 
-Ajanın bir yorum altındaki daha fazla yanıtı engellemesine veya yanıtları geri getirmesine izin verir. Kilitli yorum görünür kalır. Kızışmış başlıklarda soğuma süreleri için kullanışlıdır; ertelemeli kilit açma ile eşleştirildiğinde etkilidir. Geri alınabilir ancak topluluğunuza görünür; yüksek riskli topluluklarda onaya bağlamayı düşünün.
+Agent'ın bir yorumun altındaki daha fazla yanıtı engellemesini veya yanıtları geri yüklemesini sağlar. Kilitli yorum görünür kalır. Tartışmalı konularda soğuma süresi için yararlıdır, gecikmeli bir kilidin açılması ile eşleştirilebilir. Geri alınabilir ama topluluğunuz tarafından görünür; yüksek riskli topluluklarda onay arkasına almayı düşünün.
 
-#### Spam olarak işaretle / işaretini kaldır
+#### Spam olarak işaretle / işareti kaldır
 
-Ajanın bir yorumu spam olarak işaretlemesine (okuyuculardan gizleyip spam sınıflandırıcısına besleyerek) veya bu bayrağı temizlemesine izin verir. Her moderasyon ajanı için temel araçtır. Geri alınabilir. Ajana güven oluştururken ilk haftalarda onaya bağlamayı şiddetle düşünün.
+Agent'ın bir yorumu spam olarak işaretlemesini (okuyuculardan gizleyip spam sınıflandırıcıya besleyerek) veya bu bayrağı temizlemesini sağlar. Her moderasyon agent'ı için temel araç. Geri alınabilir. Agent'a güven inşa ederken ilk haftalarda onay arkasına almayı kuvvetle düşünün.
 
-#### Bir yorumu onayla / onayını kaldır
+#### Bir yorumu onayla / onayı kaldır
 
-Ajanın beklemede olan bir yorumu okuyuculara göstermesine veya zaten görünür olanı gizlemesine izin verir. Yeni yorumları moderatör incelemesi için tutan kiracılarda en faydalıdır. Görünür bir yorumun onayını kaldırmak yüksek risklidir - onaya bağlamayı düşünün.
+Agent'ın beklemede olan bir yorumu okuyuculara göstermesini veya zaten görünür olan bir yorumu gizlemesini sağlar. Yeni yorumları moderatör incelemesi için bekleten tenant'larda en kullanışlı olandır. Görünür bir yorumun onayını kaldırmak yüksek risklidir - her yerde onay arkasına almayı düşünün.
 
 #### Bir yorumu incelendi olarak işaretle
 
-Bir kuyruk-durumu aracı: bir yorumu "bir moderatörün (veya ajanın) bunu incelediğini" olarak işaretler. Görünürlüğü değiştirmez. Düşük risklidir; nadiren onaya bağlanır.
+Bir kuyruk durumu aracı: bir yorumu "bir moderatör (veya agent) bunu inceledi" olarak işaretler. Görünürlüğü değiştirmez. Düşük riskli; nadiren onaya tabi tutulur.
 
-#### Rozet verme
+#### Bir rozet ver
 
-Ajanın kiracınızın rozet yapılandırmasından bir kullanıcıya rozet vermesine izin verir. Moderatör tarafından geri alınabilir. Nadiren onaya bağlanır. Ajanın rozet kimliğini bilmesi gerekir, bu yüzden ilgili kimlikleri [community guidelines](#community-guidelines) veya [initial prompt](#personality-prompt) içinde belirtin.
+Agent'ın tenant'ınız için yapılandırdığınız bir kullanıcıya rozet vermesini sağlar. Bir moderatör tarafından geri alınabilir. Nadiren onaya tabi. Bu araç etkinleştirildiğinde agent, tenant'ınızın rozetlerini görebilir ve doğru olanı kendi başına seçebilir, bu yüzden rozet tanımlayıcılarını topluluk yönergelerinize veya başlangıç isteminize yapıştırmanıza gerek yoktur. Hangi davranış için hangi rozetin verileceğini yönlendirmek isterseniz, rozetlere istemde **Görüntü Etiketi** ile referans verin.
 
-#### E-posta gönderme
+#### E-posta gönder
 
-Ajanın `noreply@fastcomments.com` adresinden seçtiği bir adrese düz metin e-posta göndermesine izin verir. İhtiyatlı kullanın - e-posta en yüksek sürtünmeli araçtır ve kötü e-postaları geri almak zordur. Onaya bağlamayı güçlü şekilde düşünün ve onay e-postalarını ajanın e-posta göndereceği gelen kutusunun sahibine yönlendirin.
+Agent'ın tetikleyicinin kapsamındaki bir yorumun yazarıyla düz metin e-posta göndermesini sağlar. Agent asla alıcının e-posta adresini görmez - bir yorumu seçer ve platform, o yorumcunun gönderdiği adrese teslim eder. Gönderen adresi, yorumun alanı yapılandırılmış bir alanla eşleşiyorsa tenant'ınızın markalı göndericisi (DKIM ile) olur, aksi takdirde platform varsayılanıdır. Seyrek kullanın - e-posta en yüksek sürtünmeli araçtır ve kötü e-postaları geri almak zordur. Onay arkasına almayı kuvvetle düşünün ve onay e-postalarını agent'ın e-posta göndereceği gelen kutusunun sahibine yönlendirin.
 
-#### Ajan belleğini kaydet / ara
+#### Agent belleğini kaydet / ara
 
-Tetiklenen kullanıcı hakkında paylaşılan not havuzunu okuyan ve yazan iki eşleşmiş araçtır. Bellek kiracınızdaki tüm ajanlar arasında paylaşılır, bu nedenle bir triyaj ajanın notları bir moderatör ajanın kararlarını bilgilendirir. Arama salt okunurdur ve her zaman kullanılabilir; kaydetme nadiren onaya bağlanır. Tam tasarım için [Agent Memory System](#agent-memory-system) bölümüne bakın.
+Tetikleyicinin tetiklendiği kullanıcı hakkında paylaşılan bir not havuzunu okuyan ve yazan eşleşen iki araç. Bellek tenant'ınızdaki tüm agent'lar arasında paylaşılır, bu yüzden bir triage agent'ının notları bir moderatör agent'ının kararlarını bilgilendirir. Arama salt okunurdur ve her zaman erişilebilir; kaydetme nadiren onaya tabi tutulur. Tam tasarım için bkz. [Agent Memory System](#agent-memory-system).
 
 #### Bir kullanıcıyı uyar
 
-Belirli bir yorum hakkında bir kullanıcıya özel bir DM uyarısı gönderir ve uyarıyı atomik olarak ajan belleğine kaydeder. Platformun yükseltme politikası bu araç etrafında kuruludur - önce uyarın, kullanıcı yeniden ihlal ederse yalnızca o zaman yasaklayın. `ban_user`'dan daha az sıklıkla onaya bağlanır, ancak bir ajanın yaşamının ilk haftalarında onaya bağlamayı düşünün. Tam sayfa için [Warn user](#tool-warn-user) bölümüne bakın.
+Bir kullanıcıya belirli bir yorum hakkında özel bir DM uyarısı gönderir ve uyarıyı atomik olarak agent belleğine kaydeder. Platformun yükseltme politikası bu araç etrafında kuruludur - önce uyar, kullanıcı yeniden suç işlerse banla. `ban_user` aracına göre daha az sıklıkta onaya tabi tutulur, ancak bir agent'ın yaşamının ilk haftalarında onay arkasına almayı düşünün. Tam sayfa için bkz. [Warn user](#tool-warn-user).
 
-#### Bir kullanıcıyı yasakla
+#### Bir kullanıcıyı banla
 
-Ajanın çağırabileceği en sonuç doğurucu araç. Bir kullanıcıyı sabit süreli olarak yasaklar; isteğe bağlı olarak gölge yasaklama, isteğe bağlı olarak IP yasaklama ve isteğe bağlı olarak kullanıcının tüm yorumlarını silme seçenekleri vardır. İki yıkıcı seçenek (IP, delete-all-comments) düzenleme formundaki ekstra onay tercihleri arkasında saklanır. Model parametreyi uydarsa bile platform etkinleştirmediğiniz değerlere izin vermez. [Ban user](#tool-ban-user) bölümüne bakın.
+Agent'ın çağırabileceği en sonuç doğurucu araç. Bir kullanıcıyı sabit süreyle banlar, isteğe bağlı olarak bir shadow ban olarak, isteğe bağlı olarak IP'yi de banlayarak, isteğe bağlı olarak da kullanıcının tüm yorumlarını silerek. İki yıkıcı seçenek (IP, tümünü sil) düzenleme formundaki ekstra onaylarla opt-in yapılana kadar modelden tamamen gizlenir. AB bölgesinde, tüm banlar insan onayı gerektirir (bkz. [AB DSA Madde 17 Uyumluluğu](#eu-dsa-compliance)). Her yerde onay arkasına almayı kuvvetle düşünün. Tam sayfa için bkz. [Ban user](#tool-ban-user).
 
-### Yasaklama aracının alt-seçenekleri
+### Ban-aracı alt-seçenekleri
 
-Ban aracı iki yıkıcı seçeneği açığa çıkarır - delete-all-comments ve ban-by-IP - bunlar, düzenleme formundaki **Ban options** bölümünden etkinleştirene kadar modelden tamamen gizlidir. Model parametreyi uydarsa bile platform, etkinleştirmediğiniz değerlere izin vermez. Bkz. [Ban user](#tool-ban-user).
+Ban aracı iki yıkıcı seçenek sunar - `delete-all-comments` ve `ban-by-IP` - bunlar düzenleme formunda **Ban options** bölümünde onaylamadığınız sürece modelden tamamen gizlenir. Model parametreyi uydursa bile, platform düzenleme formunda etkinleştirmediğiniz değerleri reddeder. Bkz. [Ban user](#tool-ban-user).

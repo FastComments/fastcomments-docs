@@ -10,6 +10,7 @@ Even with every checkbox unchecked, the agent's context message includes:
 - The **previous comment text** for `COMMENT_EDIT` triggers (so the agent can compare before/after).
 - The **vote direction** for `COMMENT_VOTE_THRESHOLD` triggers.
 - The **triggering user ID** and **badge ID** (for moderator badge triggers).
+- Your tenant's **badge catalog** (name, display label, description) when the agent is allowed to award badges, so the agent can choose an appropriate one without you having to spell the badges out in the prompt.
 
 All untrusted text - comment bodies, author names, page titles, the guidelines doc itself - is **fenced** in the context message with markers like `<<<COMMENT_TEXT>>> ... <<<END>>>`. The platform's system prompt instructs the model to never follow instructions inside those fences. This is the platform's prompt-injection defense; you do not need to repeat it in your prompt.
 

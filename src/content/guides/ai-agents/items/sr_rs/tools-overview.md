@@ -1,71 +1,71 @@
-Agentovi **alati** su akcije koje može preduzeti. Obrazac za uređivanje agenta ima odeljak **Dozvoljeni pozivi alata** gde štiklirate alate koje je agentu dozvoljeno da koristi, i odeljak **Odobrenja** gde štiklirate akcije koje bi morale da budu odobrene od strane čoveka pre nego što stupe na snagu.
+Агентови **алати** су акције које може предузети. Формулар за уређивање агента има одељак **Allowed tool calls** у ком означавате које алате овај агент сме да користи, и одељак **Approvals** у ком означавате које акције треба да захтевају људско одобрење пре него што ступе на снагу.
 
-Postoje tri nivoa za bilo koji alat:
+Постоје три нивоа за било који алат:
 
-- **Zabranjeno** - agent ga ne može videti niti koristiti.
-- **Dozvoljeno, bez odobrenja** - agent ga koristi direktno. Zabeleženo je u istoriji izvršavanja.
-- **Dozvoljeno, uz odobrenje** - poziv agenta je stavljen u red za ljudsku reviziju i izvršava se samo kada ga čovek odobri.
+- **Disallowed** - агент не може да га види или користи.
+- **Allowed, no approval** - агент га користи директно. Бележи се у историји извршавања.
+- **Allowed, with approval** - позив агента је стављен у ред за људски преглед и извршава се само када га човек одобри.
 
-Zabranjeni alati su nevidljivi: agent ih ne može tražiti i platforma ih odmah odbacuje. Alati koji zahtevaju odobrenje uvek prolaze kroz [inbox za odobrenja](#approval-workflow).
+Disallowed алати су тиши: агент их не може затражити и платформа их одмах одбија. Алатима који захтевају одобрење увек се приступа преко [approvals inbox](#approval-workflow).
 
-### Revizorski zapis za svaku akciju
+### Аудит траил за сваку акцију
 
-Svaka akcija koju agent preduzme se beleži sa kratkim opravdanjem (1–2 rečenice koje objašnjavaju zašto) i skorom poverenja (0.0–1.0). Obe informacije se pojavljuju u [Pregledu detalja izvršavanja](#run-detail-view) i na svakom [odobrenju](#approval-workflow). Pretraživanje memorije je jedini izuzetak koji je samo za čitanje: ono se ne beleži kao akcija i uvek je dostupno bez obzira na listu dozvoljenih.
+Свака акција коју агент предузме се бележи са кратким оправдањем (1–2 реченице које објашњавају зашто) и оценом поузданости (0.0–1.0). Обоје се појављује у [Run Detail View](#run-detail-view) и на сваком [approval](#approval-workflow). Претрага меморије је једини изузетак који је само за читање: она се не бележи као акција и увек је доступна без обзира на allowlist.
 
-### Referenca alata
+### Референца алата
 
-#### Objavljivanje komentara
+#### Објављивање коментара
 
-Dozvoljava agentu da objavi komentar kao on sam. Komentar se javno prikazuje pod prikazanim imenom agenta. Koristi ga agenti za pozdravljanje i za sažimanje. Moguće opozvati — bilo koji moderator može ukloniti loš komentar. Obično se dozvoljava bez odobrenja; zahtevajte odobrenje ako vaša zajednica zahteva da svaka javna poruka bude pregledana od strane čoveka.
+Омогућава агенту да објави коментар као он сам. Коментар се приказује јавно под приказним именом агента. Користе га агенти за поздрављање и резимирање. Повратно је - било који модератор може да уклони лош коментар. Обично се дозвољава без одобрења; оградите га ако ваша заједница захтева да сваки јавни садржај буде прегледан од стране човека.
 
-#### Izmena komentara
+#### Уређивање коментара
 
-Dozvoljava agentu da prepiše tekst komentara koji je u opsegu. Originalni tekst se čuva u revizorskom zapisu komentara. Ostavite za uske slučajeve — brisanje otkrivenih PII koje je korisnik otkrio, ili ispravka prethodnog odgovora agenta. Nije za prepravljanje stavova ili ublažavanje tona. **Snažno razmislite o stavljanju iza odobrenja.** Pogledajte [Uredi komentar](#tool-edit-comment) za celu stranicu.
+Омогућава агенту да препише текст коментара који је у домету. Оригинални текст се чува у аудиту коментара. Резервишите за уске случајеве - брисање PII које је корисник открио или исправка агентовог претходног одговора. Није за преписивање мишљења или омекшавање тона. **Снажно размислите о стављању иза одобрења.** Погледајте [Edit comment](#tool-edit-comment) за целокупну страницу.
 
-#### Glasanje na komentarima
+#### Гласање о коментару
 
-Dozvoljava agentu da glasа za ili protiv komentara. Glas se računa u ukupan broj glasova komentara kao i svaki drugi glas. Većina zajednica ne preferira da botovi glasaju; nije omogućeno ni u jednom početnom šablonu. Ako to dozvolite, glasanje se može opozvati.
+Омогућава агенту да гласа за или против коментара. Глас се рачуна у укупни број гласова коментара као и сваки други глас. Већина заједница преферира да ботови не гласају; није омогућено ни у једном стартном шаблону. Ако дозволите, гласање је повратно.
 
-#### Pinovanje / uklanjanje pinovanja komentara
+#### Зakaчи / одкачи коментар
 
-Dozvoljava agentu da pinuje komentar na vrh stranice ili da ukloni pin sa već pinovanog komentara. Platforma ne nameće pravilo jedan-pin-po-niti, tako da agent za pinovanje treba da bude uputstvo da prvo ukloni prethodno pinovani komentar. Koristi ga šablon Top Comment Pinner. Moguće opozvati; obično dozvoljeno bez odobrenja.
+Омогућава агенту да закачи коментар на врх странице или да одкачи онај који је већ закачен. Платформа не спроводи правило један-закључак-по-теми, тако да агент који закачи треба да буде упућен да прво одкачи претходни закачени коментар. Користи се у Top Comment Pinner шаблону. Повратно; обично дозвољено без одобрења.
 
-#### Zaključavanje / otključavanje komentara
+#### Закључај / откључај коментар
 
-Dozvoljava agentu da onemogući dalja odgovaranja ispod komentara ili da obnovi mogućnost odgovaranja. Zaključani komentar ostaje vidljiv. Korisno za hlađenje žustrih niti, u paru sa odloženim otključavanjem. Moguće opozvati, ali vidljivo vašoj zajednici; razmotrite zahtev za odobrenje u zajednicama sa visokim ulozima.
+Омогућава агенту да спречи даље одговоре испод коментара или да врати могућност одговора. Закључани коментар остаје видљив. Корисно за хлађење расправа у оживелим темама, у пару са одложеним откључавањем. Повратно али видљиво вашој заједници; размислите о стављању иза одобрења у заједницама са високим улогом.
 
-#### Označi / ukloni oznaku spam
+#### Означи / уклони ознаку за спам
 
-Dozvoljava agentu da označi komentar kao spam (sakriva ga od čitaoca i daje podsticaj klasifikatoru spama) ili da ukloni tu oznaku. Osnovni alat za bilo kog agenta za moderaciju. Moguće opozvati. Snažno razmislite o zahtevanju odobrenja tokom prvih nedelja dok ne izgradite poverenje u agenta.
+Омогућава агенту да означи коментар као спам (скривајући га од читаоца и хранећи класификатор спама) или да уклони ту ознаку. Основни алат за било ког модерацијског агента. Повратно. Снажно размислите о стављању иза одобрења првих неколико недеља док не изградите поверење у агента.
 
-#### Odobri / opozovi odobrenje komentara
+#### Одобри / поништи одобрење коментара
 
-Dozvoljava agentu da prikaže zadržani komentar čitaocima ili da sakrije već vidljiv komentar. Najkorisnije na tenantima koji zadržavaju nove komentare na pregled moderatora. Visok rizik kada se opozove odobrenje već vidljivog komentara — razmotrite zahtev za odobrenje.
+Омогућава агенту да прикаже задржан коментар читаоцима или да сакрије већ видљив. Најкорисније на tenant-има који држе нове коментаре за преглед од стране модератора. Велики улог када се поништава одобрење видљивог коментара - размислите о стављању иза одобрења.
 
-#### Označi komentar kao pregledan
+#### Означи коментар као прегледан
 
-Alat za stanje reda: označava komentar kao „moderator (ili agent) je pogledao ovo“. Ne menja vidljivost. Mali rizik; retko se stavlja iza odobrenja.
+Алат за стање у реду: означава коментар као „модератор (или агент) је погледао ово.“ Не мења видљивост. Низак улог; ретко се ставља иза одобрења.
 
-#### Dodeli značku
+#### Додели значку
 
-Dozvoljava agentu da dodeli korisniku značku iz konfiguracije značaka vašeg tenanta. Moguće opozvati od strane moderatora. Retko se stavlja iza odobrenja. Agent mora znati ID značke, zato uključite relevantne ID-e u vaše [smernice zajednice](#community-guidelines) ili [početni prompt](#personality-prompt).
+Омогућава агенту да додели кориснику значку коју сте конфигурисали за ваш tenant. Повратно од стране модератора. Ретко се ставља иза одобрења. Када је овај алат омогућен, агент може видети значке вашег tenant-а и самостално одабрати праву, тако да не морате да налепљујете идентификаторе значки у смерницама за заједницу или почетном промпту. Ако желите да усмерите која значка се додељује за које понашање, позовите се на значке по њиховој **Display Label** у промпту.
 
-#### Slanje e-pošte
+#### Слање е-поште
 
-Dozvoljava agentu da pošalje običan tekstualni e-mail sa `noreply@fastcomments.com` na adresu koju odabere. Koristite štedljivo — e-pošta je alat sa najvećim trenjem i loše poslate poruke je teško poništiti. Snažno razmislite o zahtevanju odobrenja, i usmerite odobrenja za e-mail ka osobi koja poseduje inbox na koji će agent slati poruke.
+Омогућава агенту да пошаље plain-text е-поруку аутору коментара који је у домету тригера. Агент никада не види адресу примаоца — он изабере коментар, а платформа доставља на адресу коју је тај коментатор оставио при објављивању. From-адреса је брендовани пошиљаоц вашег tenant-а (са DKIM) када домен коментара одговара конфигурисаном домену, иначе је подразумевано на платформи. Користите штедљиво — е-пошта је алат са највећим трењем и лоше послате поруке је тешко опозвати. Снажно размислите о стављању иза одобрења и усмерите захтеве за одобрење е-порука на оног ко управља сандучетом које ће агент користити.
 
-#### Čuvanje / pretraga memorije agenta
+#### Сачувај / претражи agent memory
 
-Dva uparena alata koja čitaju i pišu zajednički bazen beleški o korisniku za koga je okidač aktiviran. Memorija je deljena između svih agenata u vašem tenant-u, tako da beleške agenta za trijažu utiču na odluke agenta-moderatora. Pretraga je samo za čitanje i uvek dostupna; čuvanje se retko stavlja iza odobrenja. Pogledajte [Sistem memorije agenata](#agent-memory-system) za kompletan dizajn.
+Два повезана алата која читају и пишу заједнички фонд белешки о кориснику за кога је тригер активиран. Меморија се дели између свих агената у вашем tenant-у, тако да белешке тријажног агента утичу на одлуке модераторског агента. Претраживање је само за читање и увек доступно; чување се ретко ставља иза одобрења. Погледајте [Agent Memory System](#agent-memory-system) за целокупан дизајн.
 
-#### Upozori korisnika
+#### Упозори корисника
 
-Šalje privatnu direktnu poruku upozorenja korisniku u vezi sa određenim komentarom, i atomarno beleži upozorenje u memoriji agenta. Politika eskalacije platforme je izgrađena oko ovog alata — prvo upozorite, banovanje samo ako korisnik ponovi prestup. Ređe se stavlja iza odobrenja nego `ban_user`, ali razmotrite stavljanje iza odobrenja tokom prvih nedelja rada agenta. Pogledajte [Upozori korisnika](#tool-warn-user) za celu stranicu.
+Шаље приватну директну поруку кориснику са упозорењем у вези специфичног коментара, и атомски бележи упозорење у agent memory. Политика ескалације платформе је изградјена око овог алата - прво упозори, забрани само ако корисник поново прекрши правила. Мање се ставља иза одобрења него `ban_user`, али размислите о ограничавању током првих недеља живота агента. Погледајте [Warn user](#tool-warn-user) за целу страницу.
 
-#### Zabrani korisnika
+#### Забрани корисника
 
-Najjači alat koji agent može pozvati. Zabrani korisnika na fiksno vreme, opciono kao shadow ban, opciono i banovanjem IP-a, opciono i brisanjem svih korisnikovih komentara. Dve destruktivne opcije (IP, delete-all-comments) su zaključane iza dodatnih opcija koje morate ručno uključiti na obrascu za uređivanje. U regionu EU, sva banovanja zahtevaju ljudsko odobrenje (pogledajte [Usklađenost sa članom 17 EU DSA](#eu-dsa-compliance)). Snažno razmislite o zahtevanju odobrenja svuda. Pogledajte [Zabrani korisnika](#tool-ban-user) za celu stranicu.
+Најмисленији алат који агент може да позове. Забрањује корисника на фиксни период, опционално као shadow ban, опционално такође забрањујући IP, опционално и бришући све корисникове коментаре. Две деструктивне опције (IP, delete-all) су доступне само ако се посебно укључе у edit формулар. У ЕУ региону, све забране захтевају људско одобрење (види [EU DSA Article 17 Compliance](#eu-dsa-compliance)). Снажно размислите о стављању иза одобрења свуда. Погледајте [Ban user](#tool-ban-user) за целокупну страницу.
 
-### Podopcije alata za banovanje
+### Под-опције алата за забрану
 
-Alat Ban izlaže dve destruktivne opcije - delete-all-comments i ban-by-IP - koje su potpuno skrivene modelu dok ih vi ne uključite putem sekcije **Ban options** na obrascu za uređivanje. Čak i ako model halucinira parametar, platforma odbija vrednosti koje niste eksplicitno uključili. Pogledajte [Zabrani korisnika](#tool-ban-user).
+Алат за забрану приказује две деструктивне опције - delete-all-comments и ban-by-IP - које су моделу у потпуности скривене док их ви не укључите преко секције **Ban options** у формулару за уређивање. Чак и ако модел халуцинира параметар, платформа одбија вредности које нисте укључили. Погледајте [Ban user](#tool-ban-user).

@@ -1,64 +1,68 @@
-The **Context** セクションは編集フォーム上で、エージェントが各実行で受け取る情報量を制御します。コンテキストが多いほどより良い判断が可能になりますが、実行ごとのトークンコストが上がるため、エージェントが実際に必要とするものだけにするべきです。
+---
+編集フォームの**コンテキスト**セクションは、エージェントが各実行で受け取る情報量を制御します。コンテキストが多いほど判断は良くなりますが、実行ごとのトークンコストが上がるため、エージェントが実際に必要とするものだけを含めるのが望ましいです。
 
 ### 常に含まれるもの
 
-すべてのチェックボックスがオフの場合でも、エージェントのコンテキストメッセージには以下が含まれます:
+すべてのチェックボックスがオフでも、エージェントのコンテキストメッセージには次が含まれます:
 
-- The **trigger event type** (e.g. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- The **page URL and URL ID** (when known).
-- The **comment** that triggered the run, if there is one - ID, author user ID, author display name, comment text, vote counts, flag count, spam/approved/reviewed flags, parent ID. The author's email is **never** sent to the LLM provider (PII minimization).
-- The **previous comment text** for `COMMENT_EDIT` triggers (so the agent can compare before/after).
-- The **vote direction** for `COMMENT_VOTE_THRESHOLD` triggers.
-- The **triggering user ID** and **badge ID** (for moderator badge triggers).
+- トリガーイベントの種類（例: `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`）。
+- ページの URL と URL ID（判明している場合）。
+- 実行をトリガーした**コメント**がある場合の情報 - ID、投稿者のユーザーID、表示名、コメント本文、投票数、フラグ数、スパム/承認/レビュー済みフラグ、親コメントID。投稿者のメールアドレスは LLM プロバイダに対して**決して**送信されません（個人識別情報の最小化）。
+- `COMMENT_EDIT` トリガーの場合の**編集前のコメント本文**（エージェントが前後を比較できるようにするため）。
+- `COMMENT_VOTE_THRESHOLD` トリガーの場合の**投票方向**。
+- **トリガーしたユーザーID** と **バッジID**（モデレーターバッジのトリガーの場合）。
+- エージェントがバッジを授与できる場合、エージェントがプロンプト内でバッジを列挙せずに適切なものを選べるように、テナントの**バッジカタログ**（名前、表示ラベル、説明）。
 
-すべての信頼されていないテキスト — コメント本文、著者名、ページタイトル、ガイドライン文書そのもの — はコンテキストメッセージ内で `<<<COMMENT_TEXT>>> ... <<<END>>>` のようなマーカーでフェンス処理されます。プラットフォームのシステムプロンプトはモデルに対してこれらのフェンス内の指示に従わないよう指示しています。これはプロンプト注入攻撃に対する防御であり、プロンプト内でこれを繰り返す必要はありません。
+すべての信頼できないテキスト - コメント本文、投稿者名、ページタイトル、ガイドライン文書自体 - はコンテキストメッセージ内で `<<<COMMENT_TEXT>>> ... <<<END>>>` のようなマーカーで**フェンス**されます。プラットフォームのシステムプロンプトはモデルに対してこれらのフェンス内の指示に従わないよう指示しています。これはプラットフォームによるプロンプトインジェクション防御であり、あなたがプロンプトでこれを繰り返す必要はありません。
 
-### The three checkboxes
+### 3つのチェックボックス
 
-#### Include parent comment and prior replies in the same thread
+#### 同じスレッド内の親コメントと以前の返信を含める
 
 追加されるもの:
-- The **parent comment** - ID, author, text.
-- **Sibling replies** - the prior replies to the same parent in the same thread.
+- **親コメント** - ID、投稿者、本文。
+- **兄弟返信** - 同じ親に対する、同じスレッド内の以前の返信。
 
-用途: コメントに文脈付きで応答するエージェント全般（歓迎メッセージを出すボット、スレッド要約者、会話内の返信を読むモデレーターなど）。
+用途: コメントに文脈付きで応答するエージェント全般（歓迎メッセージを出すエージェント、スレッド要約器、会話内の返信を読むモデレーターなど）。
 
-コスト: 小〜中。あるスレッド内に存在する兄弟返信の数によって上限があります。
+コスト: 小〜中。スレッド内に存在する兄弟の数により上限あり。
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### 投稿者のトラストファクター、アカウント年齢、停止履歴、最近のコメントを含める
 
-追加される **AUTHOR_HISTORY** ブロック:
+**AUTHOR_HISTORY** ブロックを追加します:
 
-- **Account age in days** since signup.
-- **Trust factor (0-100)** - the FastComments score that summarizes how trusted the user is on this site. See the [スパム検出](/guide-moderation.html#spam-detection) page in the moderation guide.
-- **Prior ban count.**
-- **Total comments on this site.**
-- **Duplicate-content count** - if the user has posted identical text recently (anti-spam signal).
-- **Same-IP cross-account signal** - count of comments from the same IP under other accounts (alt-account signal). The IP hash itself is never sent to the LLM.
-- **Recent comments** - up to 5 of the user's most recent comments, each truncated to 300 characters, fenced as untrusted text.
+- 登録からの経過日数（アカウント年齢）。
+- トラストファクター（0-100） - このサイトにおけるユーザーの信頼度を要約した FastComments のスコア。モデレーションガイドの [スパム検出](/guide-moderation.html#spam-detection) ページを参照してください。
+- 過去の停止回数。
+- 当サイトでの総コメント数。
+- 重複コンテンツのカウント - ユーザーが最近同一のテキストを投稿しているかどうか（スパム対策のシグナル）。
+- 同一 IP のクロスアカウントシグナル - 他のアカウントで同じ IP からのコメント数（別アカウントのシグナル）。IP ハッシュ自体は決して LLM に送信されません。
+- 最近のコメント - ユーザーの最新コメント最大5件、それぞれ300文字に切り詰められ、信頼できないテキストとしてフェンスされます。
 
-用途: すべてのモデレーションエージェント。これがないとモデルは新しいアカウントと長年の善意のユーザーを同じ姿勢で禁止してしまいます。
+用途: すべてのモデレーションエージェント。これがないと、モデルは新規アカウントと長年真摯に活動している良好なユーザーを同じように扱い、停止してしまいます。
 
-コスト: 中。最近のコメントが最も多くのトークンを追加します。
+コスト: 中。最近のコメントが最もトークンを増やします。
 
-#### Include page title, subtitle, description, and meta tags
+#### ページタイトル、サブタイトル、説明、メタタグを含める
 
-追加される **PAGE_CONTEXT** ブロック - title, subtitle, description, および FastComments がページから取得したメタタグ。
+**PAGE_CONTEXT** ブロックを追加します - タイトル、サブタイトル、説明、および FastComments がページから取得した任意のメタタグ。
 
-用途: ウェルカムグリーティングやスレッド要約など、ページの内容を知ることで出力品質が大幅に向上する場合に有用です。
+用途: ウェルカムグリーティングやスレッド要約器など、ページの内容を知ることで出力品質が大幅に向上するケース。
 
 コスト: 小。
 
-### Community guidelines
+### コミュニティガイドライン
 
-4番目のフィールド、**Community guidelines** はフリーテキストのポリシーブロックで、各実行時にユーザーロールのコンテキストメッセージに含まれます。コメント本文やその他のユーザー提供コンテンツと同様に信頼されていないテキストとしてフェンス処理されます。エージェントはこれをポリシーテキストとして読みますが、プラットフォームはこれをシステム命令として扱いません。[コミュニティガイドライン](#community-guidelines) を参照して、ここに何を記載すべきか確認してください。
+4つ目のフィールドである**コミュニティガイドライン**は、ユーザーロールのコンテキストメッセージに毎回含まれる自由記述のポリシーブロックで、コメント本文やその他のユーザー提供コンテンツと同様に信頼できないテキストとしてフェンスされます。エージェントはこれをポリシー文として読みますが、プラットフォームはこれをシステム指示としては扱いません。何を記載すべきかは [コミュニティガイドライン](#community-guidelines) を参照してください。
 
-### Adding context selectively
+### コンテキストを選択的に追加する
 
-これらのチェックボックスはエージェントごとに適用され、グローバル設定ではありません。一般的なパターン:
+これらのチェックボックスはグローバルではなくエージェントごとに適用されます。一般的なパターン:
 
-- Welcome greeter: page context **on**, thread context **off**, user history **off**.
-- Moderator: thread context **off**, user history **on**, page context **off**.
-- Thread summarizer: thread context **on**, page context **on**, user history **off**.
+- ウェルカムグリーティング: ページコンテキスト **オン**, スレッドコンテキスト **オフ**, ユーザー履歴 **オフ**。
+- モデレーター: スレッドコンテキスト **オフ**, ユーザー履歴 **オン**, ページコンテキスト **オフ**。
+- スレッド要約器: スレッドコンテキスト **オン**, ページコンテキスト **オン**, ユーザー履歴 **オフ**。
 
-エージェントが実際に行うコールで正確に動作するために必要な最小限のコンテキストを選んでください — 余分なコンテキストは、エージェントが使用しない場合でも各実行でトークンを消費します。
+エージェントが実際に行う呼び出しで正しく動作するために必要な最小限のコンテキストを選んでください。余分なコンテキストは、エージェントがそれを使用しない場合でも実行ごとにトークンコストを増やします。
+
+---

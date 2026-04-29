@@ -1,71 +1,71 @@
-De **hulpmiddelen** van een agent zijn de acties die deze kan uitvoeren. Het bewerkingsformulier van de agent heeft een **Toegestane tool-aanroepen**-sectie waar je de tools aanvinkt die deze agent mag gebruiken, en een **Goedkeuringen**-sectie waar je de acties aanvinkt die een menselijke goedkeuring moeten krijgen voordat ze van kracht worden.
+De "tools" van een agent zijn de acties die deze kan uitvoeren. Het bewerkingsformulier voor een agent heeft een sectie **Allowed tool calls** waar je de tools aanvinkt die deze agent mag gebruiken, en een sectie **Approvals** waar je de acties aanvinkt die door een mens goedgekeurd moeten worden voordat ze effect hebben.
 
-There are three levels for any tool:
+Er zijn drie niveaus voor elke tool:
 
-- **Niet toegestaan** - de agent kan het niet zien of gebruiken.
-- **Toegestaan, geen goedkeuring** - de agent gebruikt het direct. Vastgelegd in de rungeschiedenis.
-- **Toegestaan, met goedkeuring** - de aanroep van de agent wordt in de wachtrij gezet voor menselijke beoordeling en wordt pas uitgevoerd wanneer een mens goedkeurt.
+- **Disallowed** - de agent kan deze niet zien of gebruiken.
+- **Allowed, no approval** - de agent gebruikt deze direct. Geregistreerd in de uitvoeringsgeschiedenis.
+- **Allowed, with approval** - de oproep van de agent wordt in de wachtrij geplaatst voor menselijke beoordeling en wordt alleen uitgevoerd als een mens goedkeurt.
 
-Niet-toegestane tools zijn stil: de agent kan er niet om vragen en het platform weigert ze zonder meer. Tools die gebonden zijn aan goedkeuring gaan altijd door de [inbox voor goedkeuringen](#approval-workflow).
+Niet-toegestane tools zijn stil: de agent kan er niet om vragen en het platform wijst ze resoluut af. Tools die goedkeuring vereisen gaan altijd via de [inbox voor goedkeuringen](#approval-workflow).
 
-### Auditspoor bij elke actie
+### Audit trail on every action
 
-Elke actie die de agent uitvoert wordt vastgelegd met een korte rechtvaardiging (1–2 zinnen waarin wordt uitgelegd waarom) en een betrouwbaarheidscore (0.0–1.0). Beide verschijnen in de [Weergave van rundetails](#run-detail-view) en bij elke [goedkeuring](#approval-workflow). Het doorzoeken van het geheugen is de enige lees-only uitzondering: het wordt niet vastgelegd als een actie en is altijd beschikbaar ongeacht de toegestane lijst.
+Elke actie die de agent onderneemt wordt vastgelegd met een korte rechtvaardiging (1–2 zinnen die uitleggen waarom) en een vertrouwensscore (0.0–1.0). Beide verschijnen in de [Weergave van rundetails](#run-detail-view) en bij elke [goedkeuring](#approval-workflow). Het doorzoeken van geheugen is de enige lees-only uitzondering: het wordt niet vastgelegd als een actie en is altijd beschikbaar ongeacht de allowlist.
 
-### Toolreferentie
+### Tool reference
 
-#### Reacties plaatsen
+#### Posting comments
 
-Staat de agent toe een reactie namens zichzelf te plaatsen. De reactie wordt publiekelijk getoond onder de weergavenaam van de agent. Gebruikt door welkom- en samenvattingsagenten. Omkeerbaar - elke moderator kan een slechte reactie verwijderen. Meestal toegestaan zonder goedkeuring; schakel goedkeuring in als je gemeenschap wil dat elk openbaar bericht door een mens wordt gecontroleerd.
+Staat de agent toe een opmerking als zichzelf te plaatsen. De opmerking wordt publiekelijk getoond onder de weergavenaam van de agent. Wordt gebruikt door verwelkomings- en samenvattingsagents. Omkeerbaar - elke moderator kan een slechte opmerking verwijderen. Meestal toegestaan zonder goedkeuring; schakel goedkeuring in als jouw community wil dat elk publiek bericht door een mens wordt beoordeeld.
 
-#### Reactie bewerken
+#### Editing a comment
 
-Staat de agent toe de tekst van een in-scope reactie te herschrijven. De originele tekst wordt bewaard in het auditlog van de reactie. Houd dit beperkt tot smalle gevallen - het redigeren van door een gebruiker gelekte PII, of het aanpassen van een eerdere reactie van de agent zelf. Niet bedoeld om meningen te herschrijven of de toon te verzachten. **Overweeg sterk om dit achter goedkeuring te plaatsen.** Zie [Reactie bewerken](#tool-edit-comment) voor de volledige pagina.
+Staat de agent toe de tekst van een opmerking binnen scope te herschrijven. De originele tekst wordt bewaard in het auditlog van de opmerking. Reserveer voor beperkte gevallen - het redigeren van PII die een gebruiker heeft gelekt, of het aanpassen van de eerdere reactie van de agent zelf. Niet bedoeld voor het herschrijven van meningen of het verzachten van toon. **Overweeg sterk om dit achter goedkeuring te plaatsen.** Zie [Opmerking bewerken](#tool-edit-comment) voor de volledige pagina.
 
-#### Stemmen op reacties
+#### Voting on comments
 
-Staat de agent toe omhoog of omlaag te stemmen op een reactie. De stem telt mee voor het totaal van de reactie zoals elke andere stem. De meeste communities geven er de voorkeur niet aan dat bots stemmen; niet ingeschakeld in enige starter-sjabloon. Als je het wel toestaat, is stemmen omkeerbaar.
+Staat de agent toe een opmerking omhoog of omlaag te stemmen. De stem telt mee voor het stemtotaal van de opmerking zoals elke andere stem. De meeste communities geven er de voorkeur aan dat bots niet stemmen; niet ingeschakeld in een startersjabloon. Als je het toestaat, is stemmen omkeerbaar.
 
-#### Reactie vastpinnen / losmaken
+#### Pin / unpin a comment
 
-Staat de agent toe een reactie bovenaan de pagina vast te pinnen of een reeds vastgepinde reactie los te maken. Het platform handhaaft geen regel van één pin per thread, dus een pin-agent moet geïnstrueerd worden eerst de eerder vastgepinde reactie los te maken. Gebruikt door het Top Comment Pinner-sjabloon. Omkeerbaar; meestal toegestaan zonder goedkeuring.
+Staat de agent toe een opmerking bovenaan de pagina vast te zetten of een reeds vastgezette opmerking los te maken. Het platform handhaaft geen regel van één pin per thread, dus een pinning-agent moet geïnstrueerd worden eerst de eerder vastgezette opmerking los te maken. Wordt gebruikt door het Top Comment Pinner-sjabloon. Omkeerbaar; meestal toegestaan zonder goedkeuring.
 
-#### Reactie vergrendelen / ontgrendelen
+#### Lock / unlock a comment
 
-Staat de agent toe verdere reacties onder een reactie te blokkeren, of reacties te herstellen. De vergrendelde reactie blijft zichtbaar. Handig voor afkoelingsperiodes in verhitte threads, te combineren met een vertraagde ontgrendeling. Omkeerbaar maar zichtbaar voor je community; overweeg goedkeuring voor communities met veel inzet.
+Staat de agent toe verdere antwoorden onder een opmerking te voorkomen of antwoorden te herstellen. De vergrendelde opmerking blijft zichtbaar. Handig voor afkoelperioden bij verhitte discussies, te combineren met een uitgestelde ontgrendeling. Omkeerbaar maar zichtbaar voor je community; overweeg goedkeuring op hoog-risico communities.
 
-#### Spam markeren / ontmarkeren
+#### Mark / unmark spam
 
-Staat de agent toe een reactie als spam te markeren (waardoor deze voor lezers verborgen wordt en het spamclassificatiesysteem gevoed wordt) of die vlag te verwijderen. De basis-tool voor elke moderatie-agent. Omkeerbaar. Overweeg sterk om dit in de eerste weken achter goedkeuring te plaatsen terwijl je vertrouwen in de agent opbouwt.
+Staat de agent toe een opmerking als spam te markeren (zodat deze voor lezers wordt verborgen en de spamclassifier wordt gevoed) of die vlag te verwijderen. De belangrijkste tool voor elke moderatie-agent. Omkeerbaar. Overweeg sterk om dit in de eerste weken achter goedkeuring te plaatsen terwijl je vertrouwen in de agent opbouwt.
 
-#### Een reactie goedkeuren / goedkeuring intrekken
+#### Approve / un-approve a comment
 
-Staat de agent toe een vastgehouden reactie zichtbaar te maken voor lezers, of een al zichtbare reactie te verbergen. Het meest nuttig voor tenants die nieuwe reacties vasthouden voor moderatorbeoordeling. Hoge inzet bij het intrekken van de goedkeuring van een zichtbare reactie - overweeg goedkeuring.
+Staat de agent toe een vastgehouden opmerking aan lezers te tonen, of een reeds zichtbare opmerking te verbergen. Meest nuttig voor tenants die nieuwe opmerkingen vasthouden voor moderatoreview. Hoog risico bij het de-publiceren van een zichtbare opmerking - overweeg overal goedkeuring.
 
-#### Een reactie als beoordeeld markeren
+#### Mark a comment reviewed
 
-Een wachtrij-status tool: markeert een reactie als "een moderator (of agent) heeft dit bekeken." Verandert de zichtbaarheid niet. Lage inzet; zelden achter goedkeuring.
+Een wachtrij-status-tool: markeert een opmerking als "een moderator (of agent) heeft dit bekeken." Verandert de zichtbaarheid niet. Weinig risicovol; zelden afgezet achter goedkeuring.
 
-#### Een badge toekennen
+#### Award a badge
 
-Staat de agent toe een gebruiker een badge te geven uit de badge-configuratie van je tenant. Omkeerbaar door een moderator. Zelden achter goedkeuring. De agent moet het badge-ID kennen, dus neem de relevante ID's op in je [gemeenschapsrichtlijnen](#community-guidelines) of [initiële prompt](#personality-prompt).
+Staat de agent toe een gebruiker een badge te geven die je voor je tenant hebt geconfigureerd. Ongedaan te maken door een moderator. Zelden afgezet. Wanneer deze tool is ingeschakeld, kan de agent de badges van je tenant zien en zelf de juiste kiezen, dus je hoeft geen badge-identificatoren in je communityrichtlijnen of initiële prompt te plakken. Als je wilt sturen welke badge voor welk gedrag wordt toegekend, verwijs dan naar de badges met hun **Display Label** in de prompt.
 
-#### E-mail verzenden
+#### Send email
 
-Staat de agent toe een platte-tekst e-mail te sturen vanaf `noreply@fastcomments.com` naar een adres dat hij kiest. Gebruik spaarzaam - e-mail is de tool met de meeste frictie en slechte e-mails zijn moeilijk ongedaan te maken. Overweeg sterk om dit achter goedkeuring te plaatsen, en routeer goedkeurings-e-mails naar degene die de inbox bezit waar de agent uiteindelijk naartoe zal mailen.
+Staat de agent toe een platte-tekst e-mail te sturen naar de auteur van een opmerking binnen de scope van de trigger. De agent ziet nooit het e-mailadres van de ontvanger - hij kiest een opmerking en het platform levert af naar het adres dat die commenter heeft achtergelaten bij het plaatsen. Het from-adres is de merkafzender van je tenant (met DKIM) wanneer het domein van de opmerking overeenkomt met een geconfigureerd domein, anders het platformstandaardadres. Gebruik spaarzaam - e-mail is de tool met de hoogste frictie en slechte e-mails zijn moeilijk ongedaan te maken. Overweeg sterk om dit achter goedkeuring te plaatsen en routeer goedkeurings-e-mails naar degene die eigenaar is van de inbox die de agent uiteindelijk zal e-mailen.
 
-#### Agentgeheugen opslaan / doorzoeken
+#### Save / search agent memory
 
-Twee gekoppelde tools die een gedeeld notitie-pool over de gebruiker lezen en schrijven waarvoor een trigger is afgevuurd. Geheugen wordt gedeeld tussen alle agents in je tenant, dus de aantekeningen van een triage-agent beïnvloeden de beslissingen van een moderator-agent. Doorzoeken is alleen-lezen en altijd beschikbaar; opslaan wordt zelden achter goedkeuring geplaatst. Zie [Agentgeheugensysteem](#agent-memory-system) voor het volledige ontwerp.
+Twee gekoppelde tools die een gedeelde notitiepool lezen en schrijven over de gebruiker waarvoor een trigger werd geactiveerd. Geheugen wordt gedeeld tussen alle agents in je tenant, dus de notities van een triage-agent informeren de beslissingen van een moderator-agent. Search is read-only en altijd beschikbaar; saving wordt zelden afgezet achter goedkeuring. Zie [Systeem voor agentgeheugen](#agent-memory-system) voor het volledige ontwerp.
 
-#### Een gebruiker waarschuwen
+#### Warn a user
 
-Stuurt een privé-DM waarschuwing naar een gebruiker over een specifieke reactie, en legt atomair de waarschuwing vast in agentgeheugen. Het escalatiebeleid van het platform is opgebouwd rond deze tool - eerst waarschuwen, alleen verbannen als de gebruiker opnieuw de fout maakt. Minder vaak achter goedkeuring dan `ban_user`, maar overweeg het in de eerste weken van het bestaan van een agent. Zie [Waarschuw gebruiker](#tool-warn-user) voor de volledige pagina.
+Stuurt een private DM-waarschuwing naar een gebruiker over een specifieke opmerking, en legt atomair de waarschuwing vast in het agentgeheugen. Het escalatiebeleid van het platform is rond deze tool opgebouwd - eerst waarschuwen, pas verbannen als de gebruiker opnieuw in de fout gaat. Minder vaak afgezet dan `ban_user`, maar overweeg het af te zetten in de eerste weken van het leven van een agent. Zie [Gebruiker waarschuwen](#tool-warn-user) voor de volledige pagina.
 
-#### Een gebruiker verbannen
+#### Ban a user
 
-De meest ingrijpende tool die een agent kan aanroepen. Verbannt een gebruiker met een vaste duur, optioneel als een shadow ban, optioneel ook het IP verbannend, optioneel ook alle reacties van de gebruiker verwijderend. De twee destructieve opties (IP, delete-all) zijn achter extra opt-ins op het bewerkingsformulier verborgen. In de EU-regio vereisen alle bans menselijke goedkeuring (zie [EU DSA Artikel 17-naleving](#eu-dsa-compliance)). Overweeg sterk om dit overal achter goedkeuring te plaatsen. Zie [Een gebruiker verbannen](#tool-ban-user) voor de volledige pagina.
+De meest ingrijpende tool die een agent kan aanroepen. Verban een gebruiker voor een vaste duur, eventueel als een shadow ban, optioneel ook het IP verbannen, optioneel ook alle opmerkingen van de gebruiker verwijderen. De twee destructieve opties (IP, delete-all-comments) zijn achter extra opt-ins op het bewerkingsformulier verborgen. In de EU-regio vereisen alle bans menselijke goedkeuring (zie [Naleving EU DSA Artikel 17](#eu-dsa-compliance)). Overweeg sterk om dit overal achter goedkeuring te plaatsen. Zie [Gebruiker verbannen](#tool-ban-user) voor de volledige pagina.
 
-### Subopties van de Ban-tool
+### Ban-tool sub-options
 
-De Ban-tool biedt twee destructieve opties - delete-all-comments en ban-by-IP - die volledig verborgen zijn voor het model totdat je ze via de **Ban-opties**-sectie op het bewerkingsformulier inschakelt. Zelfs als het model de parameter hallucineert, weigert het platform waarden die je niet hebt ingeschakeld. Zie [Een gebruiker verbannen](#tool-ban-user).
+De Ban-tool biedt twee destructieve opties - delete-all-comments en ban-by-IP - die volledig voor het model verborgen zijn totdat je ze via de sectie **Ban options** op het bewerkingsformulier inschakelt. Zelfs als het model de parameter hallicineert, weigert het platform waarden die je niet hebt ingeschakeld. Zie [Gebruiker verbannen](#tool-ban-user).
