@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const CSS_URL = 'https://fastcomments.com/js/shared/css-v2.js';
+const CSS_URL = 'https://fastcomments.com/js/css-v2-source.js';
 const GUIDE_DIR = path.join(__dirname, 'content', 'guides', 'custom-styling');
 const ITEMS_DIR = path.join(GUIDE_DIR, 'items');
 const GENERATED_DIR = path.join(ITEMS_DIR, 'generated');
