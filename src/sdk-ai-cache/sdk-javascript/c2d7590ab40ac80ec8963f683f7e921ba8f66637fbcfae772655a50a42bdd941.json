@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "c2d7590ab40ac80ec8963f683f7e921ba8f66637fbcfae772655a50a42bdd941",
+  "generatedAt": "2026-03-25T05:51:25.662Z",
+  "codeExample": "const tenantId: string = 'tenant_eu-west_01';\nconst urlId: string = 'https://www.financialtimes.com/articles/2026/market-update-q1';\nconst response: GetCommentsPublic200Response = await getCommentsPublic(\n  tenantId,\n  urlId,\n  2,\n  undefined,\n  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.tokenPayload.signature',\n  undefined,\n  0,\n  50,\n  5,\n  true,\n  undefined,\n  true,\n  false,\n  true,\n  'en-US',\n  'reactions,moderation',\n  false,\n  true,\n  true,\n  3,\n  false,\n  undefined,\n  'performance',\n  ['feature','fastcomments'],\n  'user_9876',\n  undefined,\n  undefined,\n  undefined\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 688,
+  "completionTokens": 1604
+}

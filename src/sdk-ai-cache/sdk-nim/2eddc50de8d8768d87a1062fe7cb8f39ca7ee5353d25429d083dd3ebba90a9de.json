@@ -1,0 +1,9 @@
+{
+  "method": "getTickets",
+  "signatureHash": "2eddc50de8d8768d87a1062fe7cb8f39ca7ee5353d25429d083dd3ebba90a9de",
+  "generatedAt": "2026-03-25T05:52:04.549Z",
+  "codeExample": "let (response, httpResponse) = client.getTickets(tenantId = \"my-tenant-123\", userId = \"user-456\", state = 1.0, skip = 0.0, limit = 50.0)\nif response.isSome:\n  let tickets = response.get()\n  echo tickets\nelse:\n  echo \"No tickets returned\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 1237
+}

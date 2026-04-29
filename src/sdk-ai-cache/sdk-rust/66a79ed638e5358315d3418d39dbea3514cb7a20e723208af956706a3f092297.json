@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badges",
+  "signatureHash": "66a79ed638e5358315d3418d39dbea3514cb7a20e723208af956706a3f092297",
+  "generatedAt": "2026-03-25T05:53:53.163Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetUserBadgesParams = GetUserBadgesParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        user_id: Some(String::from(\"user-9876\")),\n        badge_id: Some(String::from(\"top-reviewer\")),\n        displayed_on_comments: Some(true),\n        limit: Some(50.0),\n        skip: Some(0.0),\n    };\n    let response: GetUserBadges200Response = get_user_badges(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 491,
+  "completionTokens": 771
+}

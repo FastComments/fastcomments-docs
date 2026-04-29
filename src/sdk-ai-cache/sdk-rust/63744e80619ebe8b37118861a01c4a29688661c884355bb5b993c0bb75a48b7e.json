@@ -1,0 +1,9 @@
+{
+  "method": "pin_comment",
+  "signatureHash": "63744e80619ebe8b37118861a01c4a29688661c884355bb5b993c0bb75a48b7e",
+  "generatedAt": "2026-03-25T05:55:13.472Z",
+  "codeExample": "let params: PinCommentParams = PinCommentParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    comment_id: \"cmt-987654321\".to_string(),\n    broadcast_id: \"news/article/2026-03-25\".to_string(),\n    sso: Some(\"user-12345-ssotoken\".to_string()),\n};\nlet response: PinComment200Response = pin_comment(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 1001
+}

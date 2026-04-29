@@ -1,0 +1,9 @@
+{
+  "method": "get_question_results",
+  "signatureHash": "6752a3f68c769dfbc6d976b221f4eb77d340178241848339772c54d9cf85c8b4",
+  "generatedAt": "2026-03-25T05:53:30.160Z",
+  "codeExample": "async fn run() -> Result<GetQuestionResults200Response, Error> {\n    let params: GetQuestionResultsParams = GetQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        url_id: Some(\"news/local/2026/03/25\".to_owned()),\n        user_id: Some(\"user_12345\".to_owned()),\n        start_date: Some(\"2026-01-01T00:00:00Z\".to_owned()),\n        question_id: Some(\"q_789\".to_owned()),\n        question_ids: Some(\"q_789,q_790\".to_owned()),\n        skip: Some(10.0),\n    };\n    let response: GetQuestionResults200Response = get_question_results(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 497,
+  "completionTokens": 1006
+}

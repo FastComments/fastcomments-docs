@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "978bb5cb88851668a3e71a49f9d53528069a14dd6631fe03238c7a7e219f9caa",
+  "generatedAt": "2026-03-25T05:50:50.853Z",
+  "codeExample": "const tenantId: string = \"tenant_8f3b2a9d\";\nconst id: string = \"user_52c9f1ab\";\nconst updateTenantUserBody: UpdateTenantUserBody = {\n  email: \"jane.doe@example.com\",\n  displayName: \"Jane Doe\",\n  roles: [\"moderator\"],\n  isActive: true,\n  metadata: { signupSource: \"sso\", locale: \"en-US\" }\n};\nconst updateComments: string = \"Promoted to moderator and updated display name\";\nconst result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 724
+}

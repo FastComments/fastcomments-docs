@@ -1,0 +1,9 @@
+{
+  "method": "get_question_config",
+  "signatureHash": "a20748ab0562f545e7efc4a9c5c17127e9d3802d2bcb8bfb18c47299d751754a",
+  "generatedAt": "2026-03-25T05:53:42.105Z",
+  "codeExample": "async fn run_get_question_config() -> Result<GetQuestionConfig200Response, Error> {\n    let tenant: Option<String> = Some(\"acme-corp-tenant\".to_string());\n    let params: GetQuestionConfigParams = GetQuestionConfigParams {\n        tenant_id: tenant.unwrap(),\n        id: \"news/article/2026/03/25/space-launch\".to_string(),\n    };\n    let response: GetQuestionConfig200Response = get_question_config(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 1779
+}

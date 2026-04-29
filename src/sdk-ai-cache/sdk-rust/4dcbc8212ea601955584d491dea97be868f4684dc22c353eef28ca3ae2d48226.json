@@ -1,0 +1,9 @@
+{
+  "method": "un_block_comment_public",
+  "signatureHash": "4dcbc8212ea601955584d491dea97be868f4684dc22c353eef28ca3ae2d48226",
+  "generatedAt": "2026-03-25T05:55:21.411Z",
+  "codeExample": "async fn run() -> Result<UnBlockCommentPublic200Response, Error> {\n    let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/2026-03-25/comment-98765\".to_string(),\n        public_block_from_comment_params: models::PublicBlockFromCommentParams {\n            unblocked_by: \"moderator@acme.com\".to_string(),\n            reason: \"Reviewed and determined not to be spam\".to_string(),\n        },\n        sso: Some(\"sso-session-token-abc123\".to_string()),\n    };\n    let response: UnBlockCommentPublic200Response = un_block_comment_public(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 1070
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "b22aa5d62568e9d4a4b43f9f993ce02c04585a63f521fd3cb260fec6ea8bd896",
+  "generatedAt": "2026-03-25T05:50:22.915Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_01\";\nconst id: string = \"badge_8c7d2f\";\nconst response: GetUserBadge200Response = await getUserBadge(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 1592
+}

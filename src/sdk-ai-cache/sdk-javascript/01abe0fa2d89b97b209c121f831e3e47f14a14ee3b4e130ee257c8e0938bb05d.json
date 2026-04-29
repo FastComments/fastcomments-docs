@@ -1,0 +1,9 @@
+{
+  "method": "updateSubscription",
+  "signatureHash": "01abe0fa2d89b97b209c121f831e3e47f14a14ee3b4e130ee257c8e0938bb05d",
+  "generatedAt": "2026-03-25T05:50:48.317Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2c';\nconst subscriptionId: string = 'sub_7641a2b3';\nconst updateData: UpdateAPIUserSubscriptionData = {\n  status: 'active',\n  planId: 'pro_annual',\n  autoRenew: true,\n  renewalDate: '2026-04-15T00:00:00Z',\n  metadata: { upgradedBy: 'billing-team' }\n};\nconst userId: string = 'user_215';\nconst result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, subscriptionId, updateData, userId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 292,
+  "completionTokens": 652
+}

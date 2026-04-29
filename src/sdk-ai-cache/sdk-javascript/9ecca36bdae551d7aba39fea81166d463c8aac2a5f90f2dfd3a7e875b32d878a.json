@@ -1,0 +1,9 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "9ecca36bdae551d7aba39fea81166d463c8aac2a5f90f2dfd3a7e875b32d878a",
+  "generatedAt": "2026-03-25T05:51:06.436Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst commentId: string = 'cmt_7890b';\nconst editKey: string = 'edit_4f2d9b7c';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst result: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 752
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "eb0d32b94a934b9131029ebf8fefe2832be13fe8aefa486ec6d5e530c0446663",
+  "generatedAt": "2026-03-25T05:49:38.055Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-42';\n  const id: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';\n  const skip: number = 20;\n  const result: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, id, skip);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 869
+}

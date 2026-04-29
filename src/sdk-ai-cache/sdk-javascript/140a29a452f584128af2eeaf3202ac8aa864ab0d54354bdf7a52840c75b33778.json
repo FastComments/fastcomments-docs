@@ -1,0 +1,9 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "140a29a452f584128af2eeaf3202ac8aa864ab0d54354bdf7a52840c75b33778",
+  "generatedAt": "2026-03-25T05:51:04.554Z",
+  "codeExample": "const tenantId: string = \"tenant_987654321\";\nconst asset: FeedPostMediaItemAsset = { url: \"https://cdn.fastcomments.com/uploads/team-photo.jpg\", mimeType: \"image/jpeg\", sizeBytes: 324512 };\nconst mediaItem: FeedPostMediaItem = { type: \"image\", assets: [asset], caption: \"Team launch day\" };\nconst link: FeedPostLink = { url: \"https://www.example.com/blog/product-update-march-2026\", title: \"Product update — March 2026\" };\nconst createFeedPostParams: CreateFeedPostParams = {\n  title: \"Product update — March 2026\",\n  content: \"<p>We shipped performance improvements and two new integrations.</p>\",\n  media: [mediaItem],\n  link,\n  visibility: \"public\",\n  tags: [\"product\",\"release\",\"march-2026\"],\n  customConfig: { allowComments: true, requireTOS: false }\n};\nconst broadcastId: string = \"broadcast_2026_03_25_live\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsImlhdCI6MTY5MDI0MDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 492,
+  "completionTokens": 1054
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_tickets",
+  "signatureHash": "2febbc0284d6c1e323e099fafc6b4e6495ee9f88e25faf7ffb6d20b15bf08808",
+  "generatedAt": "2026-03-25T05:53:46.239Z",
+  "codeExample": "async fn example_get_tickets() -> Result<(), Error> {\n    let params: GetTicketsParams = GetTicketsParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        user_id: Some(\"user-9876\".to_owned()),\n        state: Some(1.0),\n        skip: Some(0.0),\n        limit: Some(25.0),\n    };\n    let tickets: GetTickets200Response = get_tickets(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 818
+}

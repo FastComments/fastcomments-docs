@@ -1,0 +1,9 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "16e90e8cf3d9049b2ab0fbd6d22f1aff2a7bdf2a88c79b62074f6366060ecd7f",
+  "generatedAt": "2026-03-25T05:50:36.859Z",
+  "codeExample": "const tenantId: string = \"tenant_76a4b2\";\nconst id: string = \"template_9f3c1e\";\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: \"Comment Flag Notification\",\n  subject: \"A comment was flagged on your-site.com\",\n  bodyHtml: \"<p>Admin,</p><p>User {{commenterName}} flagged a comment: “{{commentText}}”</p>\",\n  isEnabled: true,\n  description: \"Email sent to moderators when a comment is flagged (optional field included)\"\n};\nconst result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 921
+}

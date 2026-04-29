@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "5dbfeb24cae953059a1c5a6aaa7b2fdee1b1ce5c8e6b7f63cc6f5c9adebf0123",
+  "generatedAt": "2026-03-25T05:50:00.624Z",
+  "codeExample": "const tenantId: string = 'tenant_prod_8a3f2c';\nconst skip: number = 50;\nconst usersWithSkip: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);\nconst usersNoSkip: GetTenantUsers200Response = await getTenantUsers(tenantId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 522
+}

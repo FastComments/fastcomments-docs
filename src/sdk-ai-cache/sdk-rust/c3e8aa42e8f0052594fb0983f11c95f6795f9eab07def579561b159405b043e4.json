@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts_stats",
+  "signatureHash": "c3e8aa42e8f0052594fb0983f11c95f6795f9eab07def579561b159405b043e4",
+  "generatedAt": "2026-03-25T05:55:00.811Z",
+  "codeExample": "async fn fetch_feed_stats() -> Result<(), Error> {\n    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: vec![\n            \"news/article/2026/03/25/product-launch\".to_string(),\n            \"blog/product-updates/q1-2026\".to_string(),\n        ],\n        sso: Some(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.examplepayload.signature\".to_string()),\n    };\n    let stats: GetFeedPostsStats200Response = get_feed_posts_stats(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 670
+}

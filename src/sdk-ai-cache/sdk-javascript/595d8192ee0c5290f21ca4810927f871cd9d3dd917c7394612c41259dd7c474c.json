@@ -1,0 +1,9 @@
+{
+  "method": "getModerators",
+  "signatureHash": "595d8192ee0c5290f21ca4810927f871cd9d3dd917c7394612c41259dd7c474c",
+  "generatedAt": "2026-03-25T05:49:46.107Z",
+  "codeExample": "const tenantId: string = 'tenant-12345-prod';\nconst moderatorsPage1: GetModerators200Response = await getModerators(tenantId);\nconst moderatorsPage2: GetModerators200Response = await getModerators(tenantId, 50);",
+  "model": "gpt-5-mini",
+  "promptTokens": 424,
+  "completionTokens": 639
+}

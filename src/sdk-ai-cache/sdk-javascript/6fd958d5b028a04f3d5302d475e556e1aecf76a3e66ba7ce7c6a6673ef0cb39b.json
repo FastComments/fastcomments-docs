@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "6fd958d5b028a04f3d5302d475e556e1aecf76a3e66ba7ce7c6a6673ef0cb39b",
+  "generatedAt": "2026-03-25T05:49:44.865Z",
+  "codeExample": "const tenantId: string = \"acme-marketing-042\";\nconst templateId: string = \"tpl_welcome_2026\";\nconst result: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);\nconst template: CustomEmailTemplate | undefined = result.template;\nconst subject: string | undefined = template?.subject;\nconst customParams: CustomConfigParameters | undefined = template?.customConfigParameters;",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 1568
+}

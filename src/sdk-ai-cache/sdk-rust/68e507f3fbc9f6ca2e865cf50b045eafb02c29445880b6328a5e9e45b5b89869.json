@@ -1,0 +1,9 @@
+{
+  "method": "delete_tenant",
+  "signatureHash": "68e507f3fbc9f6ca2e865cf50b045eafb02c29445880b6328a5e9e45b5b89869",
+  "generatedAt": "2026-03-25T05:52:49.814Z",
+  "codeExample": "let params: DeleteTenantParams = DeleteTenantParams {\n    tenant_id: String::from(\"acme-corp-tenant\"),\n    id: String::from(\"acme-corp-tenant-001\"),\n    sure: Some(String::from(\"confirm-delete\")),\n};\nlet response: FlagCommentPublic200Response = delete_tenant(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 432,
+  "completionTokens": 723
+}

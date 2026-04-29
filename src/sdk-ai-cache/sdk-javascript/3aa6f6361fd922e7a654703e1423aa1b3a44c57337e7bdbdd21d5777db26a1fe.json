@@ -1,0 +1,9 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "3aa6f6361fd922e7a654703e1423aa1b3a44c57337e7bdbdd21d5777db26a1fe",
+  "generatedAt": "2026-03-25T05:50:34.314Z",
+  "codeExample": "const tenantId: string = \"tenant_12a9f3b7\";\nconst id: string = \"user_84b2c7d1\";\nconst redirectURL: string = \"https://app.mycompany.com/welcome?ref=login_email\";\nconst resultWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);\nconst resultWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 620
+}

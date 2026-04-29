@@ -1,0 +1,9 @@
+{
+  "method": "send_login_link",
+  "signatureHash": "9c7a079d54793b07af062009ffd2954f9c0adba01ba396ab559b768e14186313",
+  "generatedAt": "2026-03-25T05:54:13.090Z",
+  "codeExample": "async fn send_login_example() -> Result<FlagCommentPublic200Response, Error> {\n    let params: SendLoginLinkParams = SendLoginLinkParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"user-98765\"),\n        redirect_url: Some(String::from(\"https://acme.example.com/dashboard\")),\n    };\n    let response: FlagCommentPublic200Response = send_login_link(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 1008
+}

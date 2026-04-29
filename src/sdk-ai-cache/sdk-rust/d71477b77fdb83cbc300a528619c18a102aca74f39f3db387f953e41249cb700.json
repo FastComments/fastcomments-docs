@@ -1,0 +1,9 @@
+{
+  "method": "create_email_template",
+  "signatureHash": "d71477b77fdb83cbc300a528619c18a102aca74f39f3db387f953e41249cb700",
+  "generatedAt": "2026-03-25T05:52:21.865Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateEmailTemplateParams = CreateEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        create_email_template_body: models::CreateEmailTemplateBody {\n            name: \"Article Comment Notification\".into(),\n            subject: \"New comment on your article\".into(),\n            body_html: \"<p>Hi {{recipient_name}},</p><p>{{comment_author}} left a comment on your article \\\"{{article_title}}\\\".</p>\".into(),\n            from_name: Some(\"Acme News\".into()),\n            from_email: Some(\"notifications@acme.example\".into()),\n            reply_to: Some(\"no-reply@acme.example\".into()),\n            enabled: Some(true),\n            tags: Some(vec![\"comments\".into(), \"notifications\".into()]),\n        },\n    };\n    let response: CreateEmailTemplate200Response = create_email_template(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 1235
+}

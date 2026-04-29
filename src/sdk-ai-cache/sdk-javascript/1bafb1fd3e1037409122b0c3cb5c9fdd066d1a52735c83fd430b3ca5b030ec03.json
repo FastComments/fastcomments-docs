@@ -1,0 +1,9 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "1bafb1fd3e1037409122b0c3cb5c9fdd066d1a52735c83fd430b3ca5b030ec03",
+  "generatedAt": "2026-03-25T05:50:07.096Z",
+  "codeExample": "const tenantId: string = 'tenant_fc5a9b2c';\nconst userId: string = 'user_0a12b3';\nconst result: GetTenantUser200Response = await getTenantUser(tenantId, userId);\nconst user: User | undefined = (result as any).user; // accessing payload\nconst userEmail: string | undefined = user?.email;\nconsole.log('Fetched user email:', userEmail);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 1124
+}

@@ -1,0 +1,9 @@
+{
+  "method": "patch_hash_tag",
+  "signatureHash": "eab8b0ed97a829bf8d11766a95571efb4db8d5cf928684521345fb419af2bc1c",
+  "generatedAt": "2026-03-25T05:54:02.099Z",
+  "codeExample": "let params: PatchHashTagParams = PatchHashTagParams {\n    tag: \"news/article\".to_string(),\n    tenant_id: Some(\"acme-corp-tenant\".to_string()),\n    update_hash_tag_body: Some(models::UpdateHashTagBody {\n        label: Some(\"World News\".to_string()),\n        description: Some(\"Articles related to world events.\".to_string()),\n        enabled: Some(true),\n    }),\n};\n\nlet response: PatchHashTag200Response = patch_hash_tag(&configuration, params).await?",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 1139
+}

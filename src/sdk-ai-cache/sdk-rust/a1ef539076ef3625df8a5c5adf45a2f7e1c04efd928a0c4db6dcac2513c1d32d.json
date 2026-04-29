@@ -1,0 +1,9 @@
+{
+  "method": "un_block_user_from_comment",
+  "signatureHash": "a1ef539076ef3625df8a5c5adf45a2f7e1c04efd928a0c4db6dcac2513c1d32d",
+  "generatedAt": "2026-03-25T05:54:17.245Z",
+  "codeExample": "async fn run_unblock() -> Result<UnBlockCommentPublic200Response, Error> {\n    let unblock_body: models::UnBlockFromCommentParams = models::UnBlockFromCommentParams {\n        reason: Some(String::from(\"False positive - reviewed by moderator\")),\n        moderator_id: Some(String::from(\"moderator-42\")),\n    };\n    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article/comments/abc123\"),\n        un_block_from_comment_params: unblock_body,\n        user_id: Some(String::from(\"user-9876\")),\n        anon_user_id: Some(String::from(\"anon-5f4d\")),\n    };\n    let result: UnBlockCommentPublic200Response = un_block_user_from_comment(&configuration, params).await?;\n    Ok(result)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 486,
+  "completionTokens": 1222
+}

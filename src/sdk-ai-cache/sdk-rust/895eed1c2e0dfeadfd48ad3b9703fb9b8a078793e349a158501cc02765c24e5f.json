@@ -1,0 +1,9 @@
+{
+  "method": "get_user_presence_statuses",
+  "signatureHash": "895eed1c2e0dfeadfd48ad3b9703fb9b8a078793e349a158501cc02765c24e5f",
+  "generatedAt": "2026-03-25T05:55:10.745Z",
+  "codeExample": "async fn run() -> Result<GetUserPresenceStatuses200Response, Error> {\n    let tenant_id: String = \"acme-corp-tenant\".to_string();\n    let url_id_ws: String = \"news/article\".to_string();\n    let user_ids_opt: Option<String> = Some(\"user123,user456,user789\".to_string());\n    let params = GetUserPresenceStatusesParams {\n        tenant_id,\n        url_id_ws,\n        user_ids: user_ids_opt.unwrap(),\n    };\n    let presence: GetUserPresenceStatuses200Response = get_user_presence_statuses(&configuration, params).await?;\n    Ok(presence)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 1612
+}

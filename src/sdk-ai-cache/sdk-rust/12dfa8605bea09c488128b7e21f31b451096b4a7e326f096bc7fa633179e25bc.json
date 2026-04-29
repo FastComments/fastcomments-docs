@@ -1,0 +1,9 @@
+{
+  "method": "create_moderator",
+  "signatureHash": "12dfa8605bea09c488128b7e21f31b451096b4a7e326f096bc7fa633179e25bc",
+  "generatedAt": "2026-03-25T05:52:21.104Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateModeratorParams = CreateModeratorParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        create_moderator_body: models::CreateModeratorBody {\n            username: String::from(\"jane.moderator\"),\n            email: String::from(\"jane.moderator@acme.com\"),\n            display_name: Some(String::from(\"Jane Moderator\")),\n            sections: Some(vec![String::from(\"news/article\"), String::from(\"forums/general\")]),\n            active: Some(true),\n            notes: Some(String::from(\"Senior moderator, PST timezone\")),\n        },\n    };\n    let response: CreateModerator200Response = create_moderator(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 1194
+}

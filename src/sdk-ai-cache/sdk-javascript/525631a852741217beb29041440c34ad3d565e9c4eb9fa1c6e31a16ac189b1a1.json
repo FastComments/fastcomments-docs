@@ -1,0 +1,9 @@
+{
+  "method": "voteComment",
+  "signatureHash": "525631a852741217beb29041440c34ad3d565e9c4eb9fa1c6e31a16ac189b1a1",
+  "generatedAt": "2026-03-25T05:51:45.413Z",
+  "codeExample": "const tenantId: string = 'tenant_9f8b7c';\nconst commentId: string = 'cmt_42f3a1';\nconst urlId: string = 'articles/ai-trends-2026';\nconst broadcastId: string = 'web';\nconst voteBodyParams: VoteBodyParams = { vote: 1, reason: 'Insightful and on-topic' };\nconst sessionId: string = 'sess_6d2b4c9e';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 481,
+  "completionTokens": 943
+}

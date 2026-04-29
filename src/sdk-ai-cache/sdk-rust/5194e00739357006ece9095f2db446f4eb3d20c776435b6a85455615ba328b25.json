@@ -1,0 +1,9 @@
+{
+  "method": "update_question_result",
+  "signatureHash": "5194e00739357006ece9095f2db446f4eb3d20c776435b6a85455615ba328b25",
+  "generatedAt": "2026-03-25T05:54:29.246Z",
+  "codeExample": "async fn run_update_question_result() -> Result<(), Error> {\n    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article/2026/03/25/12345\".to_string(),\n        update_question_result_body: models::UpdateQuestionResultBody {\n            question_id: Some(\"q-987\".to_string()),\n            result: Some(true),\n            reviewer_id: Some(\"moderator-7\".to_string()),\n            notes: Some(\"Marked as resolved after editorial review\".to_string()),\n        },\n    };\n    let response: FlagCommentPublic200Response = update_question_result(&configuration, params).await?;\n    println!(\"update result: {:?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 447,
+  "completionTokens": 1257
+}

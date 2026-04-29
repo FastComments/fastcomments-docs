@@ -1,0 +1,9 @@
+{
+  "method": "get_subscriptions",
+  "signatureHash": "d6a1b4b4679dd3e9bd893bfb680c7c85229c5213d5a4fb1fd69237aabfe1ea3d",
+  "generatedAt": "2026-03-25T05:53:30.404Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetSubscriptionsParams = GetSubscriptionsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-42@example.com\".to_string()),\n    };\n    let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;\n    let _ = subscriptions;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 301,
+  "completionTokens": 732
+}

@@ -1,0 +1,9 @@
+{
+  "method": "delete_pending_webhook_event",
+  "signatureHash": "7eef53e454116af2e9083d8ddc51558ec7ed17458906c843a9d3e3c15ff7bad9",
+  "generatedAt": "2026-03-25T05:53:01.809Z",
+  "codeExample": "async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {\n    let audit_note: Option<String> = Some(\"removed duplicate webhook event\".to_string());\n    let params: DeletePendingWebhookEventParams = DeletePendingWebhookEventParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"9f8b7a6c-1234-4b8d-9c3a-0e1f2d3c4b5a\".to_string(),\n    };\n    let response: FlagCommentPublic200Response = delete_pending_webhook_event(&configuration, params).await?;\n    let _ = audit_note;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 1370
+}

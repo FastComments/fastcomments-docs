@@ -1,0 +1,9 @@
+{
+  "method": "create_subscription",
+  "signatureHash": "79242254526a0d8ff2dca18aa7206c4278210800561f56dfaa118f52cb39e516",
+  "generatedAt": "2026-03-25T05:52:33.703Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateSubscriptionParams = CreateSubscriptionParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_api_user_subscription_data: models::CreateApiUserSubscriptionData {\n            api_user_id: \"api_user_9843\".to_string(),\n            resource: \"news/article\".to_string(),\n            plan: Some(\"pro\".to_string()),\n            start_at: Some(\"2026-03-01T12:00:00Z\".to_string()),\n            metadata: Some(std::collections::HashMap::from([\n                (\"source\".to_string(), \"signup_form\".to_string()),\n                (\"utm_campaign\".to_string(), \"spring_launch\".to_string()),\n            ])),\n            active: Some(true),\n        },\n    };\n\n    let subscription_response: CreateSubscriptionApiResponse =\n        create_subscription(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 315,
+  "completionTokens": 1222
+}

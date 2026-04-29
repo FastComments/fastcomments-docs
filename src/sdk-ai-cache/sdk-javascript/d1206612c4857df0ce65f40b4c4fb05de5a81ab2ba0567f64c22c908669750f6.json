@@ -1,0 +1,9 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "d1206612c4857df0ce65f40b4c4fb05de5a81ab2ba0567f64c22c908669750f6",
+  "generatedAt": "2026-03-25T05:49:38.978Z",
+  "codeExample": "const initialPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', undefined, 20, ['sports', 'local']);\nconst nextPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', 'post_abc123', 20, ['sports', 'local']);",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 787
+}

@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post_public",
+  "signatureHash": "4b29e58dd4922677b2ab54c6b843081abbe98bae48b2c1e827c415b796afa9b7",
+  "generatedAt": "2026-03-25T05:54:48.132Z",
+  "codeExample": "let create_feed_post_params: models::CreateFeedPostParams = models::CreateFeedPostParams {\n    title: \"Acme Product Launch\".to_string(),\n    body: \"We're excited to announce our new product line that will change the way teams collaborate.\".to_string(),\n    slug: \"news/product-launch\".to_string(),\n    links: Some(vec![models::FeedPostLink { url: \"https://acme.com/launch\".to_string(), title: Some(\"Launch details\".to_string()) }]),\n    media: Some(vec![models::FeedPostMediaItem { assets: Some(vec![models::FeedPostMediaItemAsset { url: \"https://cdn.acme.com/images/launch.jpg\".to_string(), mime_type: Some(\"image/jpeg\".to_string()) }]), caption: Some(\"Hero image\".to_string()) }]),\n    tags: Some(vec![\"announcement\".to_string(), \"product\".to_string()]),\n};\n\nlet params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_feed_post_params,\n    broadcast_id: Some(\"broadcast-2026-03-25\".to_string()),\n    sso: Some(\"sso-token-xyz789\".to_string()),\n};\n\nlet response: CreateFeedPostPublic200Response = create_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 507,
+  "completionTokens": 1382
+}

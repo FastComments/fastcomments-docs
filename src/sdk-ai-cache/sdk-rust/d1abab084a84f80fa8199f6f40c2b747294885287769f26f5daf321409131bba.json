@@ -1,0 +1,9 @@
+{
+  "method": "bulk_aggregate_question_results",
+  "signatureHash": "d1abab084a84f80fa8199f6f40c2b747294885287769f26f5daf321409131bba",
+  "generatedAt": "2026-03-25T05:52:21.538Z",
+  "codeExample": "let params: BulkAggregateQuestionResultsParams = BulkAggregateQuestionResultsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    bulk_aggregate_question_results_request: models::BulkAggregateQuestionResultsRequest {\n        questions: vec![\n            models::BulkAggregateQuestionItem {\n                question_id: \"news/article-2026-03-24-comments\".to_string(),\n                include_subquestions: Some(true),\n                top_n: Some(5),\n            }\n        ],\n        time_bucket: models::AggregateTimeBucket::Daily,\n        start_time: \"2026-03-01T00:00:00Z\".to_string(),\n        end_time: \"2026-03-24T23:59:59Z\".to_string(),\n    },\n    force_recalculate: Some(true),\n};\nlet response: BulkAggregateQuestionResults200Response = bulk_aggregate_question_results(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 484,
+  "completionTokens": 1350
+}

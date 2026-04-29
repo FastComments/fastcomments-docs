@@ -1,0 +1,9 @@
+{
+  "method": "updateSubscription",
+  "signatureHash": "c0a3d833f5620398e6bd7f69a54cb4401cc739cf1a82fe7ac8253227825624be",
+  "generatedAt": "2026-03-25T05:51:59.273Z",
+  "codeExample": "let (response, httpResponse) = client.updateSubscription(\n  tenantId = \"my-tenant-123\",\n  id = \"sub-456\",\n  updateAPIUserSubscriptionData = UpdateAPIUserSubscriptionData(\n    subscribed = true,\n    channels = @[\"email\", \"push\"]\n  ),\n  userId = \"user-789\"\n)\n\nif response.isSome:\n  let updated = response.get()\n  echo \"Subscription updated:\", updated\nelse:\n  echo \"Update failed, HTTP response:\", httpResponse",
+  "model": "gpt-5-mini",
+  "promptTokens": 407,
+  "completionTokens": 1073
+}

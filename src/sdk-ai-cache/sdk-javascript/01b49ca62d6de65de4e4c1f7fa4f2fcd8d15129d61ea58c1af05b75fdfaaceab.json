@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "01b49ca62d6de65de4e4c1f7fa4f2fcd8d15129d61ea58c1af05b75fdfaaceab",
+  "generatedAt": "2026-03-25T05:49:41.018Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = 'tenant_5f3a9c2b';\n  const templates: GetEmailTemplates200Response = await getEmailTemplates(tenantId);\n  const skip: number = 20;\n  const pagedTemplates: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);\n  console.log(templates, pagedTemplates);\n}\nmain();",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 674
+}

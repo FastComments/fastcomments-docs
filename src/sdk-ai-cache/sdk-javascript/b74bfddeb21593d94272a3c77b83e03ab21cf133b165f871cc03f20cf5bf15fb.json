@@ -1,0 +1,9 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "b74bfddeb21593d94272a3c77b83e03ab21cf133b165f871cc03f20cf5bf15fb",
+  "generatedAt": "2026-03-25T05:51:42.927Z",
+  "codeExample": "const tenantId: string = \"tenant_9f4b2\";\nconst postId: string = \"post_21a8e\";\nconst updateFeedPostParams: UpdateFeedPostParams = {\n  title: \"Quarterly product update\",\n  body: \"Major performance improvements and bug fixes deployed today. See release notes and schedule.\",\n  links: [{ url: \"https://status.example.com/release-notes\", title: \"Release notes\" }],\n  media: [\n    {\n      type: \"image\",\n      assets: [{ url: \"https://cdn.example.com/updates/q2.png\", mimeType: \"image/png\", width: 1200, height: 628 }]\n    }\n  ]\n};\nconst broadcastId: string = \"broadcast_live_202603\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature\";\nconst result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 501,
+  "completionTokens": 1195
+}

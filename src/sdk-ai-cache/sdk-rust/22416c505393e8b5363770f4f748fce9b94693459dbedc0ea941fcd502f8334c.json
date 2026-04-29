@@ -1,0 +1,9 @@
+{
+  "method": "get_pending_webhook_event_count",
+  "signatureHash": "22416c505393e8b5363770f4f748fce9b94693459dbedc0ea941fcd502f8334c",
+  "generatedAt": "2026-03-25T05:53:23.512Z",
+  "codeExample": "async fn fetch_pending_webhook_count(configuration: &configuration::Configuration) -> Result<GetPendingWebhookEventCount200Response, Error> {\n    let params: GetPendingWebhookEventCountParams = GetPendingWebhookEventCountParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: Some(String::from(\"cmt-12345\")),\n        external_id: Some(String::from(\"ext-67890\")),\n        event_type: Some(String::from(\"comment_posted\")),\n        domain: Some(String::from(\"news.example.com\")),\n        attempt_count_gt: Some(3.0),\n    };\n    let response: GetPendingWebhookEventCount200Response = get_pending_webhook_event_count(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 491,
+  "completionTokens": 997
+}

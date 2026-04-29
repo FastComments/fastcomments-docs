@@ -1,0 +1,9 @@
+{
+  "method": "update_subscription",
+  "signatureHash": "34ee466cc7b9ef3d9d0d8bb599d0492025a40479202e51e3ebda05387fe89643",
+  "generatedAt": "2026-03-25T05:54:30.912Z",
+  "codeExample": "async fn example_update_subscription() -> Result<(), Error> {\n    let params: UpdateSubscriptionParams = UpdateSubscriptionParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"sub_8f9a2b\".to_string(),\n        update_api_user_subscription_data: models::UpdateApiUserSubscriptionData {\n            plan: \"newsletter-weekly\".to_string(),\n            active: true,\n            renewal_period_days: Some(30),\n        },\n        user_id: Some(\"user_42\".to_string()),\n    };\n    let response: UpdateSubscriptionApiResponse = update_subscription(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 338,
+  "completionTokens": 975
+}

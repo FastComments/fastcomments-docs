@@ -1,0 +1,9 @@
+{
+  "method": "get_user",
+  "signatureHash": "5c9288eeedadac1603e97661187413991e4573b29c6eaf0732f2faf1626430aa",
+  "generatedAt": "2026-03-25T05:53:56.717Z",
+  "codeExample": "pub async fn run_get_user_example() -> Result<(), Error> {\n    let tenant: Option<String> = Some(\"acme-corp-tenant\".to_string());\n    let params: GetUserParams = GetUserParams {\n        tenant_id: tenant.unwrap(),\n        id: \"user-9f8b3c\".to_string(),\n    };\n    let user: GetUser200Response = get_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1638
+}

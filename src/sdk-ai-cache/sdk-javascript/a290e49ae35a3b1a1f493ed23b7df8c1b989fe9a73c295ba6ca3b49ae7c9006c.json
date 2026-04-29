@@ -1,0 +1,9 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "a290e49ae35a3b1a1f493ed23b7df8c1b989fe9a73c295ba6ca3b49ae7c9006c",
+  "generatedAt": "2026-03-25T05:49:50.807Z",
+  "codeExample": "const tenantId: string = \"tenant_84b3f2\";\nconst userId: string = \"user_1279\";\nconst urlId: string = \"https://www.example.com/articles/2026/03/25/new-feature\";\nconst fromCommentId: string = \"cmt_5421\";\nconst viewed: boolean = false;\nconst type: string = \"mention\";\nconst skip: number = 0;\nconst notifications: GetNotifications200Response = await getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 483,
+  "completionTokens": 831
+}

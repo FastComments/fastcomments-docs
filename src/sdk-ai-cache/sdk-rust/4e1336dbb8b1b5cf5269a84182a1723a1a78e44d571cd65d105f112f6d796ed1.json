@@ -1,0 +1,9 @@
+{
+  "method": "set_comment_text",
+  "signatureHash": "4e1336dbb8b1b5cf5269a84182a1723a1a78e44d571cd65d105f112f6d796ed1",
+  "generatedAt": "2026-03-25T05:55:26.364Z",
+  "codeExample": "async fn update_comment_text() -> Result<(), Error> {\n    let params: SetCommentTextParams = SetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/2026-03-25/comment-6789\".to_string(),\n        broadcast_id: \"comments-broadcast-main\".to_string(),\n        comment_text_update_request: models::CommentTextUpdateRequest {\n            text: \"Updated comment: thank you @jane_doe — here's an update about #rustlang\".to_string(),\n            ..Default::default()\n        },\n        edit_key: Some(\"editkey-9f8e7d6c\".to_string()),\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let result: SetCommentText200Response = set_comment_text(configuration, params).await?;\n    println!(\"set_comment_text result: {:?}\", result);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 514,
+  "completionTokens": 1613
+}

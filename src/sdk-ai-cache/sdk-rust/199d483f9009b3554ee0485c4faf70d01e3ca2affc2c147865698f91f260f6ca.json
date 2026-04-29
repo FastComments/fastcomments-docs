@@ -1,0 +1,9 @@
+{
+  "method": "delete_email_template",
+  "signatureHash": "199d483f9009b3554ee0485c4faf70d01e3ca2affc2c147865698f91f260f6ca",
+  "generatedAt": "2026-03-25T05:52:52.858Z",
+  "codeExample": "async fn run_delete_template() -> Result<(), Error> {\n    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email-template\".to_string(),\n    };\n    let confirm_deletion: Option<bool> = Some(true);\n    let response: FlagCommentPublic200Response = delete_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1380
+}

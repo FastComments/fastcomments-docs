@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts_public",
+  "signatureHash": "302459d6367606a4ee99b6c0c77f6aec07d9d489b5c001adec3d782430f5e363",
+  "generatedAt": "2026-03-25T05:54:59.540Z",
+  "codeExample": "async fn example() -> Result<GetFeedPostsPublic200Response, Error> {\n    let params: GetFeedPostsPublicParams = GetFeedPostsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"post_987654\".to_string()),\n        limit: Some(25),\n        tags: Some(vec![\"news\".to_string(), \"technology\".to_string()]),\n        sso: Some(\"sso-token-abc123\".to_string()),\n        is_crawler: Some(false),\n        include_user_info: Some(true),\n    };\n    let response: GetFeedPostsPublic200Response = get_feed_posts_public(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 525,
+  "completionTokens": 1053
+}

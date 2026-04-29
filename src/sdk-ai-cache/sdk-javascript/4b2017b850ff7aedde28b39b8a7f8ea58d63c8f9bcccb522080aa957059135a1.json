@@ -1,0 +1,9 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "4b2017b850ff7aedde28b39b8a7f8ea58d63c8f9bcccb522080aa957059135a1",
+  "generatedAt": "2026-03-25T05:49:41.576Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst id: string = 'user_00012345';\nconst includeUnreadOnly: boolean | undefined = true; // optional parameter flag (demonstrated)\nconst result: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1355
+}

@@ -1,0 +1,9 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "6b98efbd7125a37e1520d3939abca946e5ac989f420bf6593b3ea6432c67973c",
+  "generatedAt": "2026-03-25T05:50:35.249Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-001';\nconst commentId: string = 'cmt_9f8e7d6c';\nconst userId: string = 'user_72b4a1c9';\nconst anonUserId: string = 'anon_3d2c1b0a';\nconst response: FlagComment200Response = await unFlagComment(tenantId, commentId, userId, anonUserId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 680
+}

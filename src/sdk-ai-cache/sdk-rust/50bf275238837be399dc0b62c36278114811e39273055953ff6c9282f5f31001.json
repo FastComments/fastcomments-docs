@@ -1,0 +1,9 @@
+{
+  "method": "change_ticket_state",
+  "signatureHash": "50bf275238837be399dc0b62c36278114811e39273055953ff6c9282f5f31001",
+  "generatedAt": "2026-03-25T05:52:20.209Z",
+  "codeExample": "async fn run() -> Result<ChangeTicketState200Response, Error> {\n    let params: ChangeTicketStateParams = ChangeTicketStateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"agent_jdoe\".to_string(),\n        id: \"ticket-2026-03-25-001\".to_string(),\n        change_ticket_state_body: models::ChangeTicketStateBody {\n            state: \"closed\".to_string(),\n            note: Some(\"Issue resolved after patch deployment\".to_string()),\n            assignee_id: Some(\"agent_jdoe\".to_string()),\n            priority: Some(\"low\".to_string()),\n        },\n    };\n    let response: ChangeTicketState200Response = change_ticket_state(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 1199
+}

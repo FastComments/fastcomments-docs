@@ -1,0 +1,9 @@
+{
+  "method": "get_notifications",
+  "signatureHash": "4f47d7e2960be92dfc0afd53aeb5609ac798455f677c101bf5f852f36730ad70",
+  "generatedAt": "2026-03-25T05:53:26.489Z",
+  "codeExample": "async fn fetch_notifications() -> Result<(), Error> {\n    let params: GetNotificationsParams = GetNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        user_id: Some(\"user-12345\".to_owned()),\n        url_id: Some(\"news/article/2026/03/25/major-update\".to_owned()),\n        from_comment_id: Some(\"cmt-98765\".to_owned()),\n        viewed: Some(false),\n        skip: Some(0.0),\n    };\n    let notifications: GetNotifications200Response = get_notifications(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 487,
+  "completionTokens": 1034
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "c01b467b91245fbd09c7f6c174454e0d827c89785ed7296efb99a0519daa1727",
+  "generatedAt": "2026-03-25T05:50:41.823Z",
+  "codeExample": "const tenantId: string = 'tenant_prod_8f4b2c';\nconst id: string = 'notification_61a2e9';\nconst userId: string = 'moderator_107';\nconst updateNotificationBody: UpdateNotificationBody = {\n  name: 'Flagged Comment Notification',\n  enabled: true,\n  channels: ['email', 'inbox'],\n  templateId: 'tmpl_mod_alerts_01',\n  severity: 'high'\n};\nconst result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 446,
+  "completionTokens": 642
+}

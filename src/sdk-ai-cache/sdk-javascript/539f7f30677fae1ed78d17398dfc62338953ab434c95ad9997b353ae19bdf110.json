@@ -1,0 +1,9 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "539f7f30677fae1ed78d17398dfc62338953ab434c95ad9997b353ae19bdf110",
+  "generatedAt": "2026-03-25T05:49:50.924Z",
+  "codeExample": "const tenantId: string = 'tenant_abc123';\nconst userId: string = 'user_987654321';\nconst urlId: string = 'https://example.com/news/2026/new-features';\nconst viewed: boolean = false;\nconst type: string = 'reply';\nconst notificationCountResponse: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, undefined, viewed, type);",
+  "model": "gpt-5-mini",
+  "promptTokens": 453,
+  "completionTokens": 867
+}

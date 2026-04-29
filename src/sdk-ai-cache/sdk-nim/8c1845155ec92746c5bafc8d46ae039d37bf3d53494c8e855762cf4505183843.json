@@ -1,0 +1,9 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "8c1845155ec92746c5bafc8d46ae039d37bf3d53494c8e855762cf4505183843",
+  "generatedAt": "2026-03-25T05:51:58.154Z",
+  "codeExample": "let (response, httpResponse) = client.changeTicketState(\n  tenantId = \"my-tenant-123\",\n  userId = \"user-456\",\n  id = \"ticket-789\",\n  changeTicketStateBody = ChangeTicketStateBody(\n    state = \"closed\",\n    message = \"Issue resolved by support\",\n    notify = true,\n    tags = @[\"support\", \"resolved\"]\n  )\n)\nif response.isSome:\n  let result = response.get()\n  echo \"Changed ticket:\", result.state, \" (id: \", result.id, \")\"",
+  "model": "gpt-5-mini",
+  "promptTokens": 414,
+  "completionTokens": 956
+}

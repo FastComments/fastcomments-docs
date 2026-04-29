@@ -1,0 +1,9 @@
+{
+  "method": "create_vote",
+  "signatureHash": "76517cf9e5a367fc2ab02dc5b418a4acf1c7f98a8310dc67d78d5228f6432d01",
+  "generatedAt": "2026-03-25T05:52:36.122Z",
+  "codeExample": "async fn example_create_vote() -> Result<(), Error> {\n    let params: CreateVoteParams = CreateVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345\".to_string(),\n        direction: \"up\".to_string(),\n        user_id: Some(\"user-9876\".to_string()),\n        anon_user_id: Some(\"anon-01-abcdef\".to_string()),\n    };\n\n    let response: VoteComment200Response = create_vote(&configuration, params).await?;\n    println!(\"{:?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 460,
+  "completionTokens": 772
+}

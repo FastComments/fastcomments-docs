@@ -1,0 +1,9 @@
+{
+  "method": "create_tenant",
+  "signatureHash": "6225feaceb9f32c4c90f1d3f1bc8ec4f0587f325714ff974e60e2365132cd9f1",
+  "generatedAt": "2026-03-25T05:52:41.464Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateTenantParams = CreateTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_body: models::CreateTenantBody {\n            name: \"Acme Corporation\".to_string(),\n            primary_domain: Some(\"acme.example.com\".to_string()),\n            admin_email: Some(\"admin@acme.example.com\".to_string()),\n            api_domain_configuration: Some(models::ApiDomainConfiguration {\n                primary_domain: Some(\"acme.example.com\".to_string()),\n                allowed_origins: Some(vec![\n                    \"https://acme.example.com\".to_string(),\n                    \"https://www.acme.com\".to_string()\n                ]),\n                ..Default::default()\n            }),\n            billing_info: Some(models::BillingInfo {\n                plan: \"business\".to_string(),\n                company_name: Some(\"Acme Corporation\".to_string()),\n                contact_email: Some(\"billing@acme.example.com\".to_string()),\n                ..Default::default()\n            }),\n            imported_sites: Some(vec![models::ImportedSiteType {\n                site_id: \"news/site-1\".to_string(),\n                origin: Some(\"https://news.acme.com\".to_string()),\n                ..Default::default()\n            }]),\n            ..Default::default()\n        },\n    };\n    let response: CreateTenant200Response = create_tenant(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 465,
+  "completionTokens": 1651
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_global_event_log",
+  "signatureHash": "8fbc17187f95d98eea3a39ff8eaead1717501289b197e470fba81fb0091f2f1a",
+  "generatedAt": "2026-03-25T05:55:15.442Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let include_deleted: Option<bool> = Some(false);\n    let params: GetGlobalEventLogParams = GetGlobalEventLogParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article-123\".to_string(),\n        user_id_ws: \"user-789-ws\".to_string(),\n        start_time: 1711411200i64,\n        end_time: 1711497599i64,\n    };\n    let response: GetEventLog200Response = get_global_event_log(&configuration, params).await?;\n    let _include_deleted = include_deleted;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 462,
+  "completionTokens": 1686
+}

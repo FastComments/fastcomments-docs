@@ -1,0 +1,9 @@
+{
+  "method": "lockComment",
+  "signatureHash": "ca3a72bc2a1c00450369b98ef45a6c52c53092a7eade5fab2dd389d4ad389605",
+  "generatedAt": "2026-03-25T05:51:24.066Z",
+  "codeExample": "const tenantId: string = \"tenant_prod_8f3a2b\";\nconst commentId: string = \"cmt_5d7e9a92\";\nconst broadcastId: string = \"broadcast_2026_03_25_1400\";\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature\";\nconst resultWithSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId, ssoToken);\nconst resultWithoutSso: LockComment200Response = await lockComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 854
+}

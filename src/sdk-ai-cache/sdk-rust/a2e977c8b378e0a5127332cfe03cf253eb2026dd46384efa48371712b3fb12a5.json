@@ -1,0 +1,9 @@
+{
+  "method": "replace_tenant_user",
+  "signatureHash": "a2e977c8b378e0a5127332cfe03cf253eb2026dd46384efa48371712b3fb12a5",
+  "generatedAt": "2026-03-25T05:54:05.616Z",
+  "codeExample": "let params: ReplaceTenantUserParams = ReplaceTenantUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"user-42\".to_string(),\n    replace_tenant_user_body: models::ReplaceTenantUserBody {\n        user_id: \"user-42\".to_string(),\n        display_name: \"Jane Doe\".to_string(),\n        email: \"jane.doe@acme.com\".to_string(),\n        roles: vec![\"moderator\".to_string()],\n    },\n    update_comments: Some(\"true\".to_string()),\n};\nlet response: FlagCommentPublic200Response = replace_tenant_user(&configuration, params).await?",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 979
+}

@@ -1,0 +1,9 @@
+{
+  "method": "combine_comments_with_question_results",
+  "signatureHash": "6380d2e1d007c8d5d09f843047454b7c9cd0bbf0a3127fb3251c1eabcbe20c73",
+  "generatedAt": "2026-03-25T05:52:17.484Z",
+  "codeExample": "async fn run() -> Result<CombineCommentsWithQuestionResults200Response, Error> {\n    let params: CombineCommentsWithQuestionResultsParams = CombineCommentsWithQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        question_id: Some(\"q-2026-product-satisfaction\".to_string()),\n        question_ids: Some(vec![\n            \"q-2026-product-satisfaction\".to_string(),\n            \"q-2026-support-rating\".to_string(),\n        ]),\n        url_id: Some(\"news/product/launch-2026\".to_string()),\n        start_date: Some(\"2026-03-01T00:00:00Z\".to_string()),\n        force_recalculate: Some(true),\n        min_value: Some(1.0),\n        max_value: Some(5.0),\n        limit: Some(100.0),\n    };\n    let response: CombineCommentsWithQuestionResults200Response =\n        combine_comments_with_question_results(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 556,
+  "completionTokens": 989
+}

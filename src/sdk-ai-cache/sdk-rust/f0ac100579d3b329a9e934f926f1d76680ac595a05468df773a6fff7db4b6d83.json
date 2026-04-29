@@ -1,0 +1,9 @@
+{
+  "method": "get_comment",
+  "signatureHash": "f0ac100579d3b329a9e934f926f1d76680ac595a05468df773a6fff7db4b6d83",
+  "generatedAt": "2026-03-25T05:53:09.867Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetCommentParams = GetCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-12345/comment-6789\".to_string(),\n    };\n    let _response: GetComment200Response = get_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 442,
+  "completionTokens": 1240
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "0a13caacdc0f734695614b3e502e0257ba53a563647b078df4abfb731c5619cd",
+  "generatedAt": "2026-03-25T05:51:00.716Z",
+  "codeExample": "const tenantId: string = \"tenant_4821\";\nconst id: string = \"flag_7b9e\";\nconst billingInfo: BillingInfo | undefined = undefined; // optional, omit to keep current billing\nconst updateTenantBody: UpdateTenantBody = {\n  name: \"Acme News Comments\",\n  defaultDomain: \"comments.acme.com\",\n  ...(billingInfo ? { billingInfo } : {})\n};\nconst result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 464,
+  "completionTokens": 1461
+}

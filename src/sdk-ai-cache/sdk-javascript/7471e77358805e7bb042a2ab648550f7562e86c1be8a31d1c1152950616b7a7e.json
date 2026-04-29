@@ -1,0 +1,9 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "7471e77358805e7bb042a2ab648550f7562e86c1be8a31d1c1152950616b7a7e",
+  "generatedAt": "2026-03-25T05:51:44.557Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst urlId: string = 'blog-launch-2026';\nconst url: string = 'https://acme.example.com/blog/launch-march-2026';\nconst pageTitle: string = 'Acme Product Launch — March 2026';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\nconst sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst response: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 472,
+  "completionTokens": 1017
+}

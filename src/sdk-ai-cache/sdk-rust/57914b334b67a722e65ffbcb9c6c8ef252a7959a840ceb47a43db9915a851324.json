@@ -1,0 +1,9 @@
+{
+  "method": "delete_notification_count",
+  "signatureHash": "57914b334b67a722e65ffbcb9c6c8ef252a7959a840ceb47a43db9915a851324",
+  "generatedAt": "2026-03-25T05:52:51.140Z",
+  "codeExample": "async fn run() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteNotificationCountParams = DeleteNotificationCountParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"notification-9876\"),\n        user_id: Some(String::from(\"user-1234\")),\n    };\n    let response: FlagCommentPublic200Response = delete_notification_count(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1066
+}

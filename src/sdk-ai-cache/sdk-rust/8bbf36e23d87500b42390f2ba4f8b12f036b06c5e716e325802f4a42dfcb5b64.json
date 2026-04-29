@@ -1,0 +1,9 @@
+{
+  "method": "create_question_result",
+  "signatureHash": "8bbf36e23d87500b42390f2ba4f8b12f036b06c5e716e325802f4a42dfcb5b64",
+  "generatedAt": "2026-03-25T05:52:34.832Z",
+  "codeExample": "async fn run_create_question_result() -> Result<(), Error> {\n    let params: CreateQuestionResultParams = CreateQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_question_result_body: models::CreateQuestionResultBody {\n            question_id: \"article-123-comment-rating\".to_string(),\n            user_id: Some(\"reader-456\".to_string()),\n            result: Some(\"helpful\".to_string()),\n            context: Some(\"news/article\".to_string()),\n            submitted_at: Some(\"2026-03-25T12:34:56Z\".to_string()),\n        },\n    };\n\n    let response: CreateQuestionResult200Response = create_question_result(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 445,
+  "completionTokens": 1317
+}

@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "f0480fd51a76ced0ef3ef571017c688b7e2f944fea0409b223f85ba2f44b008a",
+  "generatedAt": "2026-03-25T05:49:58.213Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_001\";\nconst urlId: string = \"articles/product-launch-2026\";\nconst userId: string = \"user_2048\";\nconst startDate: string = \"2026-03-01T00:00:00Z\";\nconst questionId: string | undefined = undefined;\nconst questionIds: string | undefined = \"q_101,q_102\";\nconst skip: number | undefined = 0;\n\nconst result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 779
+}

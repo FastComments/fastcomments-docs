@@ -1,0 +1,9 @@
+{
+  "method": "getTickets",
+  "signatureHash": "d8ca4ce845abdf6a6ea58ff777ea453e467770d37695b075dad925b9ed168ccc",
+  "generatedAt": "2026-03-25T05:50:10.687Z",
+  "codeExample": "const tenantId: string = \"tenant_92f3b4c1\";\nconst userId: string = \"user_742a9f3e\";\nconst state: number = 1;\nconst skip: number = 0;\nconst limit: number = 25;\nconst ticketsFull: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);\nconst ticketsMinimal: GetTickets200Response = await getTickets(\"tenant_92f3b4c1\");",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 946
+}

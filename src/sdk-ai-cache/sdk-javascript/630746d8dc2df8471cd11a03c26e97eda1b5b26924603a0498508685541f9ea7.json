@@ -1,0 +1,9 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "630746d8dc2df8471cd11a03c26e97eda1b5b26924603a0498508685541f9ea7",
+  "generatedAt": "2026-03-25T05:50:25.276Z",
+  "codeExample": "const tenantId: string = 'tenant_b6f3c2';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'comment-notification',\n  recipient: { name: 'Ava Thompson', email: 'ava.thompson@publisher.com' },\n  context: {\n    siteName: 'City Gazette',\n    commentText: 'Thanks for the in-depth coverage — very helpful.',\n    articleTitle: 'Downtown Redevelopment Plan Advances',\n    threadUrl: 'https://citygazette.example/articles/2026/redevelopment#comments'\n  }\n};\nconst locale: string = 'en-US';\nconst result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 867
+}

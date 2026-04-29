@@ -1,0 +1,9 @@
+{
+  "method": "add_hash_tag",
+  "signatureHash": "21561096f3faed31fdc8d6781434d7d953e62ed3386bf847701ebced4140e998",
+  "generatedAt": "2026-03-25T05:52:18.237Z",
+  "codeExample": "let params: AddHashTagParams = AddHashTagParams {\n    tenant_id: Some(\"acme-corp-tenant\".to_string()),\n    create_hash_tag_body: Some(models::CreateHashTagBody {\n        tag: \"breaking-news\".to_string(),\n        display_name: Some(\"Breaking News\".to_string()),\n        description: Some(\"Articles covering breaking news events\".to_string()),\n        enabled: Some(true),\n    }),\n};\n\nlet response: AddHashTag200Response = add_hash_tag(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 456,
+  "completionTokens": 1077
+}

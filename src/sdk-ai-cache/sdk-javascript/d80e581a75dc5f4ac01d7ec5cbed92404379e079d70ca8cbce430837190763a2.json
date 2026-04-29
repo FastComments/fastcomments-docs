@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "d80e581a75dc5f4ac01d7ec5cbed92404379e079d70ca8cbce430837190763a2",
+  "generatedAt": "2026-03-25T05:50:12.207Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst userId: string = 'user_5f4d3c2a';\nconst badgeId: string = 'badge_top_contributor';\nconst type: number = 1;\nconst displayedOnComments: boolean = true;\nconst limit: number = 50;\nconst skip: number = 0;\n\nconst result: GetUserBadges200Response = await getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 472,
+  "completionTokens": 632
+}

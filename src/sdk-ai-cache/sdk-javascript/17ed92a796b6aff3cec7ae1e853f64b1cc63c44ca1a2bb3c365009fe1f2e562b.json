@@ -1,0 +1,9 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "17ed92a796b6aff3cec7ae1e853f64b1cc63c44ca1a2bb3c365009fe1f2e562b",
+  "generatedAt": "2026-03-25T05:51:41.793Z",
+  "codeExample": "const tenantId: string = 'tenant_6721f4';\nconst commentId: string = 'cmt_9a3b2d';\nconst broadcastId: string = 'live_2026_03_25';\nconst editKey: string = 'edit_k_4f7b9';\nconst sso: string = 'sso_tok_eyJhbGciOiJIUzI1';\nconst commentTextUpdateRequest: CommentTextUpdateRequest = {\n  text: 'Updated to clarify the timeline and link the relevant docs.',\n  mentions: [{ userId: 'user_102', displayName: 'Alex Rivera' }],\n  hashtags: [{ tag: 'product-update' }]\n};\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 500,
+  "completionTokens": 1403
+}

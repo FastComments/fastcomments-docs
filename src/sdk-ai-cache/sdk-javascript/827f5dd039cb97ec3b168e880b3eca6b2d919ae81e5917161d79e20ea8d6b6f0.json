@@ -1,0 +1,9 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "827f5dd039cb97ec3b168e880b3eca6b2d919ae81e5917161d79e20ea8d6b6f0",
+  "generatedAt": "2026-03-25T05:50:39.150Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-42\";\nconst id: string = \"moderator_517\";\nconst updateModeratorBody: UpdateModeratorBody = {\n  displayName: \"Sofia Martinez\",\n  email: \"sofia.martinez@acme.com\",\n  permissions: [\"approve_comments\", \"flag_spam\", \"suspend_users\"],\n  active: true,\n  avatarUrl: \"https://cdn.acme.com/avatars/sofia.jpg\" // optional field demonstrated\n};\nconst result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 583
+}

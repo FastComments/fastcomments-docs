@@ -1,0 +1,9 @@
+{
+  "method": "update_tenant_package",
+  "signatureHash": "e56390eb625eb7855c823a63ef9c412e61fc9d638ae78286a80131631cb6d5e3",
+  "generatedAt": "2026-03-25T05:54:43.254Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: UpdateTenantPackageParams = UpdateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"pkg-professional-2026\".to_string(),\n        update_tenant_package_body: models::UpdateTenantPackageBody {\n            name: \"Acme Professional\".to_string(),\n            plan: \"professional\".to_string(),\n            enabled: Some(true),\n            api_status: Some(ApiStatus::Enabled),\n            custom_config: Some(CustomConfigParameters {\n                moderation_webhook: Some(\"https://acme.example.com/hooks/moderation\".to_string()),\n                sso_security_level: Some(SsoSecurityLevel::Strict),\n            }),\n            tos_config: Some(TosConfig {\n                enabled: Some(true),\n                url: Some(\"https://acme.example.com/terms\".to_string()),\n            }),\n        },\n    };\n    let response: FlagCommentPublic200Response = update_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 1885
+}

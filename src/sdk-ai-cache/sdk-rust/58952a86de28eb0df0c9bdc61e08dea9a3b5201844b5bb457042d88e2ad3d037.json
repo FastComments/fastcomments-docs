@@ -1,0 +1,9 @@
+{
+  "method": "un_flag_comment",
+  "signatureHash": "58952a86de28eb0df0c9bdc61e08dea9a3b5201844b5bb457042d88e2ad3d037",
+  "generatedAt": "2026-03-25T05:54:10.870Z",
+  "codeExample": "async fn example_unflag_comment() -> Result<FlagComment200Response, Error> {\n    let params = UnFlagCommentParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        id: String::from(\"news/article/comment-12345\"),\n        user_id: Some(String::from(\"reader-987\")),\n        anon_user_id: None,\n    };\n    let response: FlagComment200Response = un_flag_comment(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 445,
+  "completionTokens": 559
+}

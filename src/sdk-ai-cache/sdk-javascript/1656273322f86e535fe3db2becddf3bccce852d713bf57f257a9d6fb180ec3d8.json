@@ -1,0 +1,9 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "1656273322f86e535fe3db2becddf3bccce852d713bf57f257a9d6fb180ec3d8",
+  "generatedAt": "2026-03-25T05:51:35.668Z",
+  "codeExample": "const tenantId: string = 'tenant_8392';\nconst urlId: string = 'articles/2026/03/25/fastcomments-release';\nconst usernameStartsWith: string = 'jo';\nconst mentionGroupIds: Array<string> = ['editors', 'senior-writers'];\nconst sso: string = 'sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.ALL;\nconst result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);",
+  "model": "gpt-5-mini",
+  "promptTokens": 487,
+  "completionTokens": 988
+}

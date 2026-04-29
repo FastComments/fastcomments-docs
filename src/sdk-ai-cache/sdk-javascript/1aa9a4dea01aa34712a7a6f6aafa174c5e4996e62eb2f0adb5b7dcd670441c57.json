@@ -1,0 +1,9 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "1aa9a4dea01aa34712a7a6f6aafa174c5e4996e62eb2f0adb5b7dcd670441c57",
+  "generatedAt": "2026-03-25T05:49:51.162Z",
+  "codeExample": "const tenantId: string = \"tenant_8d3b7a2f\";\nconst commentId: string | undefined = \"comment_79a2b\";\nconst eventType: string | undefined = \"comment.created\";\nconst domain: string | undefined = \"forum.acme-corp.com\";\nconst attemptCountGT: number | undefined = 1;\nconst result: GetPendingWebhookEventCount200Response = await getPendingWebhookEventCount(\n  tenantId,\n  commentId,\n  undefined,\n  eventType,\n  undefined,\n  domain,\n  attemptCountGT\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 468,
+  "completionTokens": 959
+}

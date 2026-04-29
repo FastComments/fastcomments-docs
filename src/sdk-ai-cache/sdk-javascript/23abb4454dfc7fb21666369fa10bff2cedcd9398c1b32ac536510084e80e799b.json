@@ -1,0 +1,9 @@
+{
+  "method": "getComments",
+  "signatureHash": "23abb4454dfc7fb21666369fa10bff2cedcd9398c1b32ac536510084e80e799b",
+  "generatedAt": "2026-03-25T05:49:43.850Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_42';\nconst response: GetComments200Response = await getComments(\n  tenantId,\n  1, // page\n  20, // limit\n  0, // skip\n  true, // asTree\n  1, // skipChildren\n  3, // limitChildren\n  4, // maxTreeDepth\n  'articles/2026/new-product-launch', // urlId\n  'user_7890', // userId\n  'anon_4f3b2', // anonUserId\n  undefined, // contextUserId\n  '#launch', // hashTag\n  undefined // parentId\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 581,
+  "completionTokens": 1498
+}

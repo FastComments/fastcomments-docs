@@ -1,0 +1,9 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "3837eb867649874fa61fbc08fa17433b3b71ad18a03d429e1c3bf3c1593b707e",
+  "generatedAt": "2026-03-25T05:50:09.796Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3b2c8';\nconst packageId: string = 'pkg_standard_2026';\nconst requestOptions: { includeConfig?: boolean } = { includeConfig: true };\nconst packageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 425,
+  "completionTokens": 1357
+}

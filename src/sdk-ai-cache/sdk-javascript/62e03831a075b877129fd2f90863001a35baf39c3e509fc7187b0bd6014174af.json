@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "62e03831a075b877129fd2f90863001a35baf39c3e509fc7187b0bd6014174af",
+  "generatedAt": "2026-03-25T05:49:52.317Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_9876\";\nconst configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);\nconst configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 704
+}

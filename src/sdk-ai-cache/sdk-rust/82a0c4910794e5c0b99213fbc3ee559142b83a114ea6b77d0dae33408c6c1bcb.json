@@ -1,0 +1,9 @@
+{
+  "method": "get_moderators",
+  "signatureHash": "82a0c4910794e5c0b99213fbc3ee559142b83a114ea6b77d0dae33408c6c1bcb",
+  "generatedAt": "2026-03-25T05:53:21.804Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetModeratorsParams = GetModeratorsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10.0),\n    };\n    let _moderators: GetModerators200Response = get_moderators(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 854
+}

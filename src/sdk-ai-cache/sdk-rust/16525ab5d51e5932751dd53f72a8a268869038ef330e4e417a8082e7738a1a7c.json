@@ -1,0 +1,9 @@
+{
+  "method": "lock_comment",
+  "signatureHash": "16525ab5d51e5932751dd53f72a8a268869038ef330e4e417a8082e7738a1a7c",
+  "generatedAt": "2026-03-25T05:55:06.331Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: LockCommentParams = LockCommentParams {\n        tenant_id: String::from(\"acme-news-tenant\"),\n        comment_id: String::from(\"cmt-20260325-789\"),\n        broadcast_id: String::from(\"live/politics-debate-2026-03-25\"),\n        sso: Some(String::from(\"sso-user-0a1b2c3d4e\")),\n    };\n    let response: LockComment200Response = lock_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 438,
+  "completionTokens": 773
+}

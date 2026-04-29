@@ -1,0 +1,9 @@
+{
+  "method": "create_ticket",
+  "signatureHash": "af810eed66a05dbc1ecd1450c20518c17df284260f2ee0bffb16f19c53e450d8",
+  "generatedAt": "2026-03-25T05:52:38.647Z",
+  "codeExample": "async fn create_ticket_example() -> Result<CreateTicket200Response, Error> {\n    let params = CreateTicketParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"user-12345\".to_string(),\n        create_ticket_body: models::CreateTicketBody {\n            subject: \"Moderation request: abusive comments\".to_string(),\n            description: \"Several abusive comments reported on the article 'Election 2026: Key Races'\".to_string(),\n            priority: Some(\"high\".to_string()),\n            tags: Some(vec![\"moderation\".to_string(), \"priority-high\".to_string()]),\n            reporter_email: Some(\"editor@news.example.com\".to_string()),\n            source_url: Some(\"https://news.example.com/articles/election-2026-key-races\".to_string()),\n            custom_fields: Some(std::collections::HashMap::from([\n                (\"article_id\".to_string(), \"news-20260324-001\".to_string())\n            ])),\n        },\n    };\n    let response: CreateTicket200Response = create_ticket(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 445,
+  "completionTokens": 1333
+}

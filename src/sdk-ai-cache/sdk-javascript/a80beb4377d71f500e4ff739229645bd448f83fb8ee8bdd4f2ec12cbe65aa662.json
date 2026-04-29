@@ -1,0 +1,9 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "a80beb4377d71f500e4ff739229645bd448f83fb8ee8bdd4f2ec12cbe65aa662",
+  "generatedAt": "2026-03-25T05:51:02.207Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_acme_987';\n  const id: string = 'badge_top_contributor_42';\n  const updateUserBadgeParams: UpdateUserBadgeParams = {\n    title: 'Top Contributor',\n    description: 'Awarded for reaching 100 high-quality comments',\n    color: '#FFD700',\n    iconUrl: 'https://cdn.acme.com/badges/top-contributor.svg',\n    active: true,\n    notifyUsers: true\n  } as UpdateUserBadgeParams;\n  const result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 1623
+}

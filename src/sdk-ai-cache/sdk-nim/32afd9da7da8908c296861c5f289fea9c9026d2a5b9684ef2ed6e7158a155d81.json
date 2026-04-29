@@ -1,0 +1,9 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "32afd9da7da8908c296861c5f289fea9c9026d2a5b9684ef2ed6e7158a155d81",
+  "generatedAt": "2026-03-25T05:51:58.824Z",
+  "codeExample": "let (response, httpResponse) = client.searchUsers(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/2026/ai-product-launch\",\n  usernameStartsWith = \"\",\n  mentionGroupIds = @[],\n  sso = \"\",\n  searchSection = \"\"\n)\nif response.isSome:\n  let users = response.get()\n  echo \"Received users:\", users.toString()",
+  "model": "gpt-5-mini",
+  "promptTokens": 427,
+  "completionTokens": 988
+}

@@ -1,0 +1,9 @@
+{
+  "method": "update_tenant",
+  "signatureHash": "0ac70c1b220661792bf9434a4f9d76afb8ed8a8c1daaa6972262138d43d09e76",
+  "generatedAt": "2026-03-25T05:54:41.365Z",
+  "codeExample": "let params: UpdateTenantParams = UpdateTenantParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"site-42\".to_string(),\n    update_tenant_body: models::UpdateTenantBody {\n        name: Some(\"Acme Corporation\".to_string()),\n        api_domain_configuration: Some(models::ApiDomainConfiguration {\n            primary_domain: Some(\"comments.acme.com\".to_string()),\n            allowed_domains: Some(vec![\"acme.com\".to_string(), \"www.acme.com\".to_string()]),\n        }),\n        billing_info: Some(models::BillingInfo {\n            plan: Some(\"business\".to_string()),\n            billing_contact_email: Some(\"billing@acme.com\".to_string()),\n        }),\n        sso_security_level: Some(models::SsoSecurityLevel::Strict),\n        custom_config_parameters: Some(models::CustomConfigParameters {\n            max_comment_length: Some(2000),\n            enable_moderation_queue: Some(true),\n        }),\n    },\n};\nlet response: FlagCommentPublic200Response = update_tenant(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 470,
+  "completionTokens": 1514
+}

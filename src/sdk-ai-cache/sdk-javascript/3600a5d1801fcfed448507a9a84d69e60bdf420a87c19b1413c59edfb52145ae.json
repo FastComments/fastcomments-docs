@@ -1,0 +1,9 @@
+{
+  "method": "getTenant",
+  "signatureHash": "3600a5d1801fcfed448507a9a84d69e60bdf420a87c19b1413c59edfb52145ae",
+  "generatedAt": "2026-03-25T05:50:03.685Z",
+  "codeExample": "const tenantId: string = \"tenant_9f4b2c1a\";\nconst idOverride: string | undefined = undefined; // optional override, if available\nconst id: string = idOverride ?? \"site_3e7a6b2f\";\nconst response: GetTenant200Response = await getTenant(tenantId, id);\nconsole.log(response);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 853
+}

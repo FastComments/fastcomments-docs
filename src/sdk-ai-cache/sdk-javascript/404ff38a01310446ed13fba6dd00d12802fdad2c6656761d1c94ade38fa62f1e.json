@@ -1,0 +1,9 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "404ff38a01310446ed13fba6dd00d12802fdad2c6656761d1c94ade38fa62f1e",
+  "generatedAt": "2026-03-25T05:50:58.411Z",
+  "codeExample": "const tenantId: string = 'tenant_prod_42';\nconst urlId: string = 'article-2026-03-25-tech-deep-dive';\nconst broadcastId: string = 'live-broadcast-001';\nconst sessionId: string = 'sess_9f8e7d6a3b';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';\nconst commentData: CommentData = {\n  content: 'Great reporting — appreciated the depth on performance tradeoffs.',\n  authorName: 'Jordan M.',\n  language: 'en-US',\n  metadata: { client: 'web' }\n};\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 511,
+  "completionTokens": 766
+}

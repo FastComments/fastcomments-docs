@@ -1,0 +1,9 @@
+{
+  "method": "update_email_template",
+  "signatureHash": "fea42cc58788fce710d551bf65b5f23e6c9ef33ba618d97cbbe0282b19aef800",
+  "generatedAt": "2026-03-25T05:54:23.059Z",
+  "codeExample": "async fn example_update_email_template() -> Result<FlagCommentPublic200Response, Error> {\n    let params: UpdateEmailTemplateParams = UpdateEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email-template\".to_string(),\n        update_email_template_body: models::UpdateEmailTemplateBody {\n            subject: \"Welcome to Acme News\".to_string(),\n            html_body: \"<h1>Welcome, {{user_name}}</h1><p>Thanks for joining Acme.</p>\".to_string(),\n            plain_body: Some(\"Welcome, {{user_name}}!\\nThanks for joining Acme.\".to_string()),\n            enabled: Some(true),\n            from_name: Some(\"Acme Support <support@acme.com>\".to_string()),\n        },\n    };\n    let response: FlagCommentPublic200Response = update_email_template(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 447,
+  "completionTokens": 1097
+}

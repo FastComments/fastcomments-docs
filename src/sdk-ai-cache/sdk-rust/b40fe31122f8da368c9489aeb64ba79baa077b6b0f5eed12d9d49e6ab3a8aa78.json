@@ -1,0 +1,9 @@
+{
+  "method": "send_invite",
+  "signatureHash": "b40fe31122f8da368c9489aeb64ba79baa077b6b0f5eed12d9d49e6ab3a8aa78",
+  "generatedAt": "2026-03-25T05:54:12.357Z",
+  "codeExample": "async fn send_invite_example() -> Result<FlagCommentPublic200Response, Error> {\n    let params: SendInviteParams = SendInviteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-2026-03-25-modern-rust\".to_string(),\n        from_name: \"Acme Newsroom\".to_string(),\n        message: Some(\"Please join the discussion on this article.\".to_string()),\n    };\n    let response: FlagCommentPublic200Response = send_invite(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 1283
+}

@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post_public",
+  "signatureHash": "ce415122c72b0b1f338c440e73efe49adb9873793b9584eacc20ee831f37a067",
+  "generatedAt": "2026-03-25T05:55:31.140Z",
+  "codeExample": "let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/article-2026-03-25\".to_string(),\n    update_feed_post_params: models::UpdateFeedPostParams {\n        title: \"Acme Widget Launch\".to_string(),\n        body: \"Acme today launched the next-generation Widget with improved performance and battery life.\".to_string(),\n        tags: vec![\"product\".to_string(), \"launch\".to_string()],\n        media: vec![\n            models::FeedPostMediaItem {\n                url: \"https://cdn.acme.com/images/widget-launch.jpg\".to_string(),\n                asset: Some(models::FeedPostMediaItemAsset {\n                    mime_type: \"image/jpeg\".to_string(),\n                    size: Some(142000),\n                }),\n            }\n        ],\n        links: vec![\n            models::FeedPostLink {\n                url: \"https://acme.com/blog/widget-launch\".to_string(),\n                title: Some(\"Read the full announcement\".to_string()),\n            }\n        ],\n    },\n    broadcast_id: Some(\"broadcast-2026-03\".to_string()),\n    sso: Some(\"sso-token-9f8e7d\".to_string()),\n};\n\nlet response: CreateFeedPostPublic200Response = update_feed_post_public(configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 516,
+  "completionTokens": 1448
+}

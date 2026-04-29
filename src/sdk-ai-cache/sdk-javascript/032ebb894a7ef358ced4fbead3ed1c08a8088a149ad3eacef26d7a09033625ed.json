@@ -1,0 +1,9 @@
+{
+  "method": "getUser",
+  "signatureHash": "032ebb894a7ef358ced4fbead3ed1c08a8088a149ad3eacef26d7a09033625ed",
+  "generatedAt": "2026-03-25T05:50:11.650Z",
+  "codeExample": "const tenantId: string = 'tenant_7b3f42';\nconst id: string = 'user_9c4d2a';\nconst userResponse: GetUser200Response = await getUser(tenantId, id);\nconsole.log(userResponse);",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 830
+}

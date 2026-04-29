@@ -1,0 +1,9 @@
+{
+  "method": "getVotes",
+  "signatureHash": "35659ccb105f4ef8e6050807885e6ec011b7251cd567a62f409b6583f4d4dc10",
+  "generatedAt": "2026-03-25T05:50:25.977Z",
+  "codeExample": "const tenantId: string = 'acme-corp-8f3b';\nconst refCampaign: string | undefined = 'newsletter-march2026'; // optional query parameter\nconst urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;\n\nconst votes: GetVotes200Response = await getVotes(tenantId, urlId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 1575
+}

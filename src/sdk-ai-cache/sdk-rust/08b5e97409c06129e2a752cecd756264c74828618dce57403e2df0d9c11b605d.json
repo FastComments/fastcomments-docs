@@ -1,0 +1,9 @@
+{
+  "method": "update_comment",
+  "signatureHash": "08b5e97409c06129e2a752cecd756264c74828618dce57403e2df0d9c11b605d",
+  "generatedAt": "2026-03-25T05:54:22.023Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let tenant_id: String = \"acme-corp-tenant\".into();\n    let comment_id: String = \"news/article/12345-6789\".into();\n    let context_user_id: String = \"reader-42\".into();\n\n    let updatable: models::UpdatableCommentParams = models::UpdatableCommentParams {\n        body: Some(\"Updated comment: I appreciate the clarification on this report.\".into()),\n        is_edited: Some(true),\n        tags: Some(vec![\"clarification\".into(), \"follow-up\".into()]),\n    };\n\n    let params: UpdateCommentParams = UpdateCommentParams {\n        tenant_id,\n        id: comment_id,\n        updatable_comment_params: updatable,\n        context_user_id: Some(context_user_id),\n        do_spam_check: Some(true),\n        is_live: Some(false),\n    };\n\n    let response: FlagCommentPublic200Response = update_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 486,
+  "completionTokens": 1370
+}

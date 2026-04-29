@@ -1,0 +1,9 @@
+{
+  "method": "update_feed_post",
+  "signatureHash": "13e9da4f0db55f1d89ee78c2ab94ed1620e540e0cca860bc869fd2aa50a5b78c",
+  "generatedAt": "2026-03-25T05:54:27.788Z",
+  "codeExample": "async fn update_post_example() -> Result<(), Error> {\n    let params: UpdateFeedPostParams = UpdateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/rocket-launch-2026\".to_string(),\n        feed_post: models::FeedPost {\n            title: Some(\"Rocket Launch Successful\".to_string()),\n            body: Some(\"Acme Rockets launched the Atlas X at 10:00 UTC with no anomalies.\".to_string()),\n            author: Some(\"Acme Newsroom\".to_string()),\n            media: Some(vec![\n                models::FeedPostMediaItem {\n                    url: Some(\"https://cdn.acme.com/images/launch.jpg\".to_string()),\n                    caption: Some(\"Moments before liftoff\".to_string()),\n                    asset: None\n                }\n            ]),\n            links: Some(vec![\n                models::FeedPostLink {\n                    title: Some(\"Detailed Coverage\".to_string()),\n                    url: Some(\"https://news.acme.com/coverage/atlas-x-launch\".to_string())\n                }\n            ]),\n            published: Some(true)\n        }\n    };\n    let response: FlagCommentPublic200Response = update_feed_post(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 471,
+  "completionTokens": 1674
+}

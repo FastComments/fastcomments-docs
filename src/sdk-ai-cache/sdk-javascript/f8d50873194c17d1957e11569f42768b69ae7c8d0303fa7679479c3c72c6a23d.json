@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "f8d50873194c17d1957e11569f42768b69ae7c8d0303fa7679479c3c72c6a23d",
+  "generatedAt": "2026-03-25T05:50:14.277Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_4f8c2b9d';\n  const userId: string = 'user_9a7e215c';\n  const limit: number = 25;\n  const skip: number = 0;\n  const resultMinimal: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId);\n  const resultFull: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);\n  console.log(resultMinimal, resultFull);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 449,
+  "completionTokens": 834
+}

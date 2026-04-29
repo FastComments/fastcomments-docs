@@ -1,0 +1,9 @@
+{
+  "method": "delete_tenant_package",
+  "signatureHash": "240941409ec0a4aeb81dc5d74c41ca4ce8815e2e3ddd5819dcc74f5fe7ab6246",
+  "generatedAt": "2026-03-25T05:53:02.647Z",
+  "codeExample": "async fn run_delete() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteTenantPackageParams = DeleteTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-comments-package-2026-03\".to_string(),\n    };\n    let response: FlagCommentPublic200Response = delete_tenant_package(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 423,
+  "completionTokens": 1508
+}

@@ -1,0 +1,9 @@
+{
+  "method": "get_email_templates",
+  "signatureHash": "43f82f7f5acb3c8783ec089a31a1aaef9d426c4285426392af6a7f1b93e389eb",
+  "generatedAt": "2026-03-25T05:53:13.181Z",
+  "codeExample": "async fn fetch_email_templates() -> Result<GetEmailTemplates200Response, Error> {\n    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10.0),\n    };\n    let templates: GetEmailTemplates200Response = get_email_templates(&configuration, params).await?;\n    Ok(templates)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 924
+}

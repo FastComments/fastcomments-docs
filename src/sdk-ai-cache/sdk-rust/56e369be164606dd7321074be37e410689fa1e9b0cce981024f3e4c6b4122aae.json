@@ -1,0 +1,9 @@
+{
+  "method": "create_feed_post",
+  "signatureHash": "56e369be164606dd7321074be37e410689fa1e9b0cce981024f3e4c6b4122aae",
+  "generatedAt": "2026-03-25T05:52:33.504Z",
+  "codeExample": "async fn create_post_example() -> Result<CreateFeedPost200Response, Error> {\n    let params = CreateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_feed_post_params: models::CreateFeedPostParams {\n            title: Some(\"Downtown Datacenter Outage\".to_string()),\n            body: Some(\"Investigating a partial outage affecting login and API endpoints.\".to_string()),\n            author_id: Some(\"ops-team\".to_string()),\n            ..Default::default()\n        },\n        broadcast_id: Some(\"status-broadcast-2026-03-25\".to_string()),\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        skip_dup_check: Some(false),\n    };\n    let response: CreateFeedPost200Response = create_feed_post(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 530,
+  "completionTokens": 2364
+}

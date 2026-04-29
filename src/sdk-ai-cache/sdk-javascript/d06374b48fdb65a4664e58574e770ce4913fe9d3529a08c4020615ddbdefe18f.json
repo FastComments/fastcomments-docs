@@ -1,0 +1,9 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "d06374b48fdb65a4664e58574e770ce4913fe9d3529a08c4020615ddbdefe18f",
+  "generatedAt": "2026-03-25T05:51:23.244Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3a2b';\nconst urlIdWS: string = 'articles/2026/03/25/fastcomments-integration';\nconst maybeUserIds: string | undefined = 'user_123,user_456'; // optional source\nconst userIds: string = maybeUserIds ?? 'user_123';\nconst presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);",
+  "model": "gpt-5-mini",
+  "promptTokens": 431,
+  "completionTokens": 1005
+}

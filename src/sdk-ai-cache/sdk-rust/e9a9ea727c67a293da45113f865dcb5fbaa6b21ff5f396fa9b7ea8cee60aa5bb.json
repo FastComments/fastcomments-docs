@@ -1,0 +1,9 @@
+{
+  "method": "create_comment_public",
+  "signatureHash": "e9a9ea727c67a293da45113f865dcb5fbaa6b21ff5f396fa9b7ea8cee60aa5bb",
+  "generatedAt": "2026-03-25T05:54:45.303Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateCommentPublicParams = CreateCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/politics/2026-election-coverage\".to_string(),\n        broadcast_id: \"live-coverage-2026-03-25\".to_string(),\n        comment_data: models::CommentData {\n            content: \"Insightful piece — appreciate the depth of reporting.\".to_string(),\n            author_name: Some(\"Jane Doe\".to_string()),\n            author_email: Some(\"jane.doe@acme.com\".to_string()),\n            is_anonymous: Some(false),\n            parent_id: None,\n            metadata: None,\n        },\n        session_id: Some(\"sess_6f7e8d9c\".to_string()),\n        sso: Some(\"sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\".to_string()),\n    };\n    let resp: CreateCommentPublic200Response = create_comment_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 523,
+  "completionTokens": 1400
+}

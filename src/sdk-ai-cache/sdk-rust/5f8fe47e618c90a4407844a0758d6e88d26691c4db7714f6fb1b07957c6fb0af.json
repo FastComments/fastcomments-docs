@@ -1,0 +1,9 @@
+{
+  "method": "get_comments",
+  "signatureHash": "5f8fe47e618c90a4407844a0758d6e88d26691c4db7714f6fb1b07957c6fb0af",
+  "generatedAt": "2026-03-25T05:53:14.630Z",
+  "codeExample": "async fn run_get_comments() -> Result<(), Error> {\n    let params: GetCommentsParams = GetCommentsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        page: Some(1),\n        limit: Some(25),\n        skip: Some(0),\n        as_tree: Some(true),\n        skip_children: Some(0),\n        limit_children: Some(5),\n        max_tree_depth: Some(3),\n        url_id: Some(\"news/article/technology/ai-ethics\".to_string()),\n        user_id: Some(\"user_98765\".to_string()),\n        anon_user_id: Some(\"anon_abc123\".to_string()),\n        context_user_id: Some(\"moderator_12\".to_string()),\n        hash_tag: Some(\"aiethics\".to_string()),\n        parent_id: Some(\"comment_456\".to_string()),\n        direction: None,\n    };\n    let comments: GetComments200Response = get_comments(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 632,
+  "completionTokens": 1499
+}

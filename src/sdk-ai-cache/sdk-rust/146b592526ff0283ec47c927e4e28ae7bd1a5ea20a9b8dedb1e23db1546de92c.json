@@ -1,0 +1,9 @@
+{
+  "method": "create_question_config",
+  "signatureHash": "146b592526ff0283ec47c927e4e28ae7bd1a5ea20a9b8dedb1e23db1546de92c",
+  "generatedAt": "2026-03-25T05:52:40.678Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateQuestionConfigParams = CreateQuestionConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_question_config_body: models::CreateQuestionConfigBody {\n            slug: \"news/article\".to_string(),\n            title: \"Reader satisfaction\".to_string(),\n            description: Some(\"How satisfied are you with this article?\".to_string()),\n            required: Some(false),\n            rendering_type: Some(QuestionRenderingType::Inline),\n            custom_options: Some(vec![\n                models::QuestionConfigCustomOptionsInner { value: \"very_satisfied\".to_string(), label: Some(\"Very satisfied\".to_string()) },\n                models::QuestionConfigCustomOptionsInner { value: \"unsatisfied\".to_string(), label: Some(\"Unsatisfied\".to_string()) },\n            ]),\n        },\n    };\n    let response: CreateQuestionConfig200Response = create_question_config(configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 456,
+  "completionTokens": 1875
+}

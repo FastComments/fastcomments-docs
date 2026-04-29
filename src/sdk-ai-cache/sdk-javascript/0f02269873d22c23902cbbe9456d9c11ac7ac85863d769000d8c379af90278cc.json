@@ -1,0 +1,9 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "0f02269873d22c23902cbbe9456d9c11ac7ac85863d769000d8c379af90278cc",
+  "generatedAt": "2026-03-25T05:51:36.006Z",
+  "codeExample": "const tenantId: string = 'tenant_42e8a1';\nconst commentId: string = 'cmt_9b3f2d';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'abusive_language',\n  blockedByModeratorId: 'mod_17',\n  note: 'Targeted harassment; review complete',\n  unblockRequestedAt: new Date().toISOString()\n};\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';\nconst result: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 457,
+  "completionTokens": 866
+}

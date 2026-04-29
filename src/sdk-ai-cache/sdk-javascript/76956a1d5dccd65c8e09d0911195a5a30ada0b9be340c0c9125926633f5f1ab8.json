@@ -1,0 +1,9 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "76956a1d5dccd65c8e09d0911195a5a30ada0b9be340c0c9125926633f5f1ab8",
+  "generatedAt": "2026-03-25T05:49:42.141Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_eu_01';\nconst templates: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);\nconsole.log('Email template definitions loaded for', tenantId, templates);",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1337
+}

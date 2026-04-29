@@ -1,0 +1,9 @@
+{
+  "method": "get_votes",
+  "signatureHash": "8c24e584968d5c9ca80da51da332ae9d3566d1a3ac7cb0e58f4ee0fdf84575ed",
+  "generatedAt": "2026-03-25T05:54:04.690Z",
+  "codeExample": "async fn fetch_votes() -> Result<GetVotes200Response, Error> {\n    let params: GetVotesParams = GetVotesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article/2026/03/25/breaking-story\".to_string(),\n        include_replies: Some(true),\n    };\n    let votes: GetVotes200Response = get_votes(&configuration, params).await?;\n    Ok(votes)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 422,
+  "completionTokens": 1579
+}

@@ -1,0 +1,9 @@
+{
+  "method": "reset_user_notification_count",
+  "signatureHash": "c12b1635825f7e9ce4c0cb997c538f42f25fcfec69aa5cca6adec0610f821286",
+  "generatedAt": "2026-03-25T05:55:12.090Z",
+  "codeExample": "async fn run_reset_user_notification_count() -> Result<ResetUserNotifications200Response, Error> {\n    let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {\n        tenant_id: \"acme-news-tenant\".to_string(),\n        sso: Some(\"user-9876-token\".to_string()),\n    };\n    let response: ResetUserNotifications200Response = reset_user_notification_count(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 429,
+  "completionTokens": 678
+}

@@ -1,0 +1,9 @@
+{
+  "method": "updateComment",
+  "signatureHash": "73f0db9b90a3f24d48016ed6c895d024abf24fbfb6e1e24274eeb99e7be91625",
+  "generatedAt": "2026-03-25T05:50:33.409Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_corp_01\";\nconst id: string = \"comment_20260325_4592\";\nconst updatableCommentParams: UpdatableCommentParams = {\n  body: \"Updated the response to include a link to the RFC and fixed a typo in the second paragraph.\",\n  editedByUserId: \"user_8721\",\n  isVisible: true\n};\nconst contextUserId: string = \"user_8721\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = true;\nconst result: FlagCommentPublic200Response = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);",
+  "model": "gpt-5-mini",
+  "promptTokens": 479,
+  "completionTokens": 669
+}

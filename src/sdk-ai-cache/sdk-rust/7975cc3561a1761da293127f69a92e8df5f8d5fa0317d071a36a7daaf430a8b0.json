@@ -1,0 +1,9 @@
+{
+  "method": "delete_comment_public",
+  "signatureHash": "7975cc3561a1761da293127f69a92e8df5f8d5fa0317d071a36a7daaf430a8b0",
+  "generatedAt": "2026-03-25T05:54:46.667Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteCommentPublicParams = DeleteCommentPublicParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        comment_id: String::from(\"news/article/2026/03/interesting-story#cmt-67890\"),\n        broadcast_id: String::from(\"news-article-12345\"),\n        edit_key: Some(String::from(\"editkey-3f2b9a\")),\n        sso: Some(String::from(\"sso-jwt-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\")),\n    };\n    let response: DeleteCommentPublic200Response = delete_comment_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 1069
+}

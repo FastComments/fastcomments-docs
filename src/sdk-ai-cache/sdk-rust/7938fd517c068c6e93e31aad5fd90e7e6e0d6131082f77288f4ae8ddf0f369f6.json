@@ -1,0 +1,9 @@
+{
+  "method": "create_tenant_package",
+  "signatureHash": "7938fd517c068c6e93e31aad5fd90e7e6e0d6131082f77288f4ae8ddf0f369f6",
+  "generatedAt": "2026-03-25T05:52:39.149Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateTenantPackageParams = CreateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_package_body: models::CreateTenantPackageBody {\n            name: \"Acme Standard Moderation\".to_string(),\n            description: Some(\"Standard moderation package for news and blog sites\".to_string()),\n            enabled: Some(true),\n            custom_config: Some(CustomConfigParameters { max_comment_length: Some(1000), require_moderation: Some(true) }),\n            gif_rating: Some(GifRating::PG13),\n            image_content_profanity_level: Some(ImageContentProfanityLevel::Moderate),\n            tos: Some(TosConfig { require_acceptance: Some(true), tos_url: Some(\"https://acme.example.com/terms\".to_string()) }),\n        },\n    };\n    let response: CreateTenantPackage200Response = create_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 1433
+}

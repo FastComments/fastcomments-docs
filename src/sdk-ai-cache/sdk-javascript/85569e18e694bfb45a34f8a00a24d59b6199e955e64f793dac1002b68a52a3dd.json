@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "85569e18e694bfb45a34f8a00a24d59b6199e955e64f793dac1002b68a52a3dd",
+  "generatedAt": "2026-03-25T05:50:56.405Z",
+  "codeExample": "const tenantId: string = 'tenant_7f8b3c';\nconst id: string = 'questionResult_4621';\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  questionId: 'q_1024',\n  result: 'flagged',\n  score: 0.92,\n  notes: 'Automated moderation flagged for review',\n  meta: [{ key: 'source', value: 'ai-moderator' }] as MetaItem[], // optional metadata\n  status: { code: 'review_pending' } as APIStatus\n} as UpdateQuestionResultBody;\nconst result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 449,
+  "completionTokens": 1309
+}

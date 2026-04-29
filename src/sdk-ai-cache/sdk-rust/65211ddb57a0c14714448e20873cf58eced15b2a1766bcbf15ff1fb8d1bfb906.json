@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_comment_subscription_status",
+  "signatureHash": "65211ddb57a0c14714448e20873cf58eced15b2a1766bcbf15ff1fb8d1bfb906",
+  "generatedAt": "2026-03-25T05:55:28.306Z",
+  "codeExample": "async fn example_update_user_notification_comment_subscription_status() -> Result<(), Error> {\n    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        notification_id: \"notif-2026-03-25-4f2b\".to_string(),\n        opted_in_or_out: \"opted_out\".to_string(),\n        comment_id: \"cmt-98a7b6c5d4\".to_string(),\n        sso: Some(\"sso-token-abc123\".to_string()),\n    };\n    let response: UpdateUserNotificationStatus200Response =\n        update_user_notification_comment_subscription_status(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 1252
+}

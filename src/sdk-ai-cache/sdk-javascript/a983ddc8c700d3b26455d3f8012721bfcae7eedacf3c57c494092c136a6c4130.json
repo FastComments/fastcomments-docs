@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "a983ddc8c700d3b26455d3f8012721bfcae7eedacf3c57c494092c136a6c4130",
+  "generatedAt": "2026-03-25T05:49:58.795Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-92';\nconst id: string = 'question-2026-07-42';\nconst response: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);\n\nfunction summarize(cfg: GetQuestionConfig200Response, includeDetails?: boolean): string {\n  return includeDetails ? 'Question config (detailed)' : 'Question config (summary)';\n}\n\nconst summary: string = summarize(response);",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 1446
+}

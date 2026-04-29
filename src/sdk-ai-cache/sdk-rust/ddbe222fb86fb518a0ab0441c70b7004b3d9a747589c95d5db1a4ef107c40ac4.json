@@ -1,0 +1,9 @@
+{
+  "method": "un_lock_comment",
+  "signatureHash": "ddbe222fb86fb518a0ab0441c70b7004b3d9a747589c95d5db1a4ef107c40ac4",
+  "generatedAt": "2026-03-25T05:55:20.831Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: UnLockCommentParams = UnLockCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-987654321\".to_string(),\n        broadcast_id: \"news/world-update-2026-04-25\".to_string(),\n        sso: Some(\"sso-token-abcdef123456\".to_string()),\n    };\n    let response: LockComment200Response = un_lock_comment(&configuration, params).await?;\n    let _ = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 578
+}

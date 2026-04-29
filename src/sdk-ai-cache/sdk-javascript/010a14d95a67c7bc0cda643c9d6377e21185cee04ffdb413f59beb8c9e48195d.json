@@ -1,0 +1,9 @@
+{
+  "method": "getTicket",
+  "signatureHash": "010a14d95a67c7bc0cda643c9d6377e21185cee04ffdb413f59beb8c9e48195d",
+  "generatedAt": "2026-03-25T05:50:04.146Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-01';\nconst ticketId: string = 'tkt-20260325-42';\nconst userId: string = 'user-8452';\n\nconst ticketResponseWithUser: GetTicket200Response = await getTicket(tenantId, ticketId, userId);\nconst ticketResponseWithoutUser: GetTicket200Response = await getTicket(tenantId, ticketId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 443,
+  "completionTokens": 674
+}

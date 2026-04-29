@@ -1,0 +1,9 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "b3b8160ff97078debcf03772c053f0be564a8227f5e5e356c1cb7d361a2cfd80",
+  "generatedAt": "2026-03-25T05:51:03.334Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-87e4fd';\nconst commentId: string = 'cmt-9a12b3f4';\nconst voteId: string = 'vote-4f6d21b9';\nconst urlId: string = 'https://www.acme.com/articles/2026/03/25/how-to-test';\nconst broadcastId: string = 'broadcast-20260325-01';\nconst editKey: string = 'editkey-6b7c8d9e';\nconst sso: string = 'sso-jwt-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst response: DeleteCommentVote200Response = await deleteCommentVote(\n  tenantId,\n  commentId,\n  voteId,\n  urlId,\n  broadcastId,\n  editKey,\n  sso\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 840
+}

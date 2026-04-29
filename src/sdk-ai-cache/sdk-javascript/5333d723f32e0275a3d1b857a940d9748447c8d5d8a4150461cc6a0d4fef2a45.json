@@ -1,0 +1,9 @@
+{
+  "method": "pinComment",
+  "signatureHash": "5333d723f32e0275a3d1b857a940d9748447c8d5d8a4150461cc6a0d4fef2a45",
+  "generatedAt": "2026-03-25T05:51:23.905Z",
+  "codeExample": "const tenantId: string = \"tenant_4f2b9a\";\nconst commentId: string = \"cmt_9f8e7d6c\";\nconst broadcastId: string = \"brd_live_concert_2026-03-25\";\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload_signature\";\n\nconst result: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 636
+}

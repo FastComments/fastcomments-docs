@@ -1,0 +1,9 @@
+{
+  "method": "get_notification_count",
+  "signatureHash": "325e534054b588f667961925ce7ff70747e67324315ba57d3a94465d04432da4",
+  "generatedAt": "2026-03-25T05:53:22.079Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params: GetNotificationCountParams = GetNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-67890\".to_string()),\n        url_id: Some(\"news/2026/03/25/election-updates\".to_string()),\n        from_comment_id: Some(\"cmt_42\".to_string()),\n        viewed: Some(false),\n    };\n    let response: GetNotificationCount200Response = get_notification_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 463,
+  "completionTokens": 899
+}

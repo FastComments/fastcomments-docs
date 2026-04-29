@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "8067ded1d277cc614018ce0801b8a47dd490c3b4d886c51568db324110c69170",
+  "generatedAt": "2026-03-25T05:50:23.793Z",
+  "codeExample": "const optionalTenantSuffix: string | undefined = undefined;\nconst tenantId: string = `5f8d0d55-1234-4ab1-9e2a-3f2b5c6d7e8f${optionalTenantSuffix ?? ''}`;\nconst id: string = '3a2b1c4d-5678-4ef0-9abc-def123456789';\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1336
+}

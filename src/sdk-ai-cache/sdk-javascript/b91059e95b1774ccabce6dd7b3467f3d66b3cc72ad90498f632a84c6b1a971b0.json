@@ -1,0 +1,9 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "b91059e95b1774ccabce6dd7b3467f3d66b3cc72ad90498f632a84c6b1a971b0",
+  "generatedAt": "2026-03-25T05:50:50.182Z",
+  "codeExample": "const tenantId: string = 'tenant_42e8b';\nconst id: string = 'question_9f4a2';\nconst updateQuestionConfigBody: UpdateQuestionConfigBody = {\n  questionText: 'How helpful was this article?',\n  description: 'Shown to users below the question (optional)',\n  required: true,\n  renderingType: 'Likert' as QuestionRenderingType,\n  customOptions: [\n    { label: 'Very helpful', value: '5' } as QuestionConfigCustomOptionsInner,\n    { label: 'Somewhat helpful', value: '3' } as QuestionConfigCustomOptionsInner,\n    { label: 'Not helpful', value: '1' } as QuestionConfigCustomOptionsInner\n  ],\n  whenSave: 'notify' as QuestionWhenSave\n};\nconst result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 452,
+  "completionTokens": 1223
+}

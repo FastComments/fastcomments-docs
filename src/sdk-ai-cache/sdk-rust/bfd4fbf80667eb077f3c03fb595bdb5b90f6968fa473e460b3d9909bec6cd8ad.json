@@ -1,0 +1,9 @@
+{
+  "method": "update_user_badge",
+  "signatureHash": "bfd4fbf80667eb077f3c03fb595bdb5b90f6968fa473e460b3d9909bec6cd8ad",
+  "generatedAt": "2026-03-25T05:54:33.707Z",
+  "codeExample": "let params: UpdateUserBadgeParams = UpdateUserBadgeParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"badge-verified-001\".to_string(),\n    update_user_badge_params: models::UpdateUserBadgeParams {\n        name: Some(\"Verified Contributor\".to_string()),\n        description: Some(\"Awarded for consistent, high-quality contributions\".to_string()),\n        icon_url: Some(\"https://assets.acme.com/badges/verified.png\".to_string()),\n        color_hex: Some(\"#1E90FF\".to_string()),\n        min_posts: Some(100u32),\n        active: Some(true),\n    },\n};\nlet response: UpdateUserBadge200Response = update_user_badge(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 808
+}

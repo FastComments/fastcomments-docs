@@ -1,0 +1,9 @@
+{
+  "method": "createTicket",
+  "signatureHash": "578a4c0ae0e43082e130e6e8864f7a25cb9bbb6f6f4efaab53e1f17788d4c15f",
+  "generatedAt": "2026-03-25T05:51:58.594Z",
+  "codeExample": "let createBody = CreateTicketBody(\n  title = \"Unable to post comment\",\n  description = \"HTTP 500 when submitting comment on article 'world/my-latest-report'\",\n  contactEmail = \"jane.doe@example.com\",\n  tags = @[\"comments\", \"backend\"],\n  urgent = false\n)\nlet (response, httpResponse) = client.createTicket(tenantId = \"my-tenant-123\", userId = \"user-9876\", createTicketBody = createBody)\nif response.isSome:\n  let ticket = response.get()\n  echo \"Created ticket ID: \", $ticket",
+  "model": "gpt-5-mini",
+  "promptTokens": 399,
+  "completionTokens": 1029
+}

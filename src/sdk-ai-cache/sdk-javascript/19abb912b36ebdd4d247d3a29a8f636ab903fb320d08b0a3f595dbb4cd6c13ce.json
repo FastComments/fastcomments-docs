@@ -1,0 +1,9 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "19abb912b36ebdd4d247d3a29a8f636ab903fb320d08b0a3f595dbb4cd6c13ce",
+  "generatedAt": "2026-03-25T05:50:36.543Z",
+  "codeExample": "const tenantId: string = 'tenant_87f3e1';\nconst id: string = 'comment_9b2a4f';\nconst unBlockFromCommentParams: UnBlockFromCommentParams = {\n  reason: 'Reviewed by moderation team — reinstated',\n  moderatorId: 'mod_21',\n  unblockedAt: new Date().toISOString()\n};\nconst userId: string = 'user_42';\nconst anonUserId: string = 'anon_e7f9';\nconst result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId, anonUserId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 467,
+  "completionTokens": 786
+}

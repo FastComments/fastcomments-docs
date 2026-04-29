@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "9f5ac112455799000000d5bc5db7648880b463b365ce09b576a8e9c55eef6f8f",
+  "generatedAt": "2026-03-25T05:50:31.062Z",
+  "codeExample": "const tenantId: string = \"tenant-9f3c2a\";\nconst id: string = \"pkg_4f8b21\";\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = {\n  packageName: \"Premium Moderation Pack\",\n  enabled: true,\n  apiStatus: { mode: \"active\" } as APIStatus,\n  customConfigParameters: { maxFlagsBeforeReview: 5 } as CustomConfigParameters,\n  voteStyle: \"thumbs\" as VoteStyle,\n  tosConfig: { requireAcceptance: true } as TOSConfig\n};\nconst result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 1304
+}

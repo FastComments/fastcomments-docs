@@ -1,0 +1,9 @@
+{
+  "method": "add_hash_tags_bulk",
+  "signatureHash": "4916a3b2aa4243298209e30595d03fe9d713743bef60637fd5ecf3dbfad762f2",
+  "generatedAt": "2026-03-25T05:52:24.252Z",
+  "codeExample": "async fn add_tags_example() -> Result<(), Error> {\n    let body = BulkCreateHashTagsBody {\n        tags: vec![\n            BulkCreateHashTagsBodyTagsInner {\n                tag: \"news/article\".to_string(),\n                path: \"site/news\".to_string(),\n                description: Some(\"Articles and press releases\".to_string()),\n                is_active: Some(true),\n                custom_config: Some(CustomConfigParameters { score: Some(0.85) }),\n            },\n            BulkCreateHashTagsBodyTagsInner {\n                tag: \"product/launch\".to_string(),\n                path: \"site/products\".to_string(),\n                description: Some(\"New product launches\".to_string()),\n                is_active: Some(true),\n                custom_config: Some(CustomConfigParameters { score: Some(0.95) }),\n            },\n        ],\n    };\n    let params: AddHashTagsBulkParams = AddHashTagsBulkParams {\n        tenant_id: Some(\"acme-corp-tenant\".to_string()),\n        bulk_create_hash_tags_body: Some(body),\n    };\n    let response: AddHashTagsBulk200Response = add_hash_tags_bulk(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 378,
+  "completionTokens": 1401
+}

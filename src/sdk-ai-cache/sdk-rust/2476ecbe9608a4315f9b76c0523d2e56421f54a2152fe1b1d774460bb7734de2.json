@@ -1,0 +1,9 @@
+{
+  "method": "create_tenant_user",
+  "signatureHash": "2476ecbe9608a4315f9b76c0523d2e56421f54a2152fe1b1d774460bb7734de2",
+  "generatedAt": "2026-03-25T05:52:38.731Z",
+  "codeExample": "let params: CreateTenantUserParams = CreateTenantUserParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_tenant_user_body: models::CreateTenantUserBody {\n        username: \"jane.doe\".to_string(),\n        email: \"jane.doe@acme.com\".to_string(),\n        display_name: Some(\"Jane Doe\".to_string()),\n        roles: Some(vec![\"reader\".to_string(), \"commenter\".to_string()]),\n        locale: Some(\"en-US\".to_string()),\n        is_verified: Some(true),\n    },\n};\n\nlet response: CreateTenantUser200Response = create_tenant_user(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 456,
+  "completionTokens": 1433
+}

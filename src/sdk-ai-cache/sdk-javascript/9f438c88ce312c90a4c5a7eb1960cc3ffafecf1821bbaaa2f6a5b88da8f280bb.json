@@ -1,0 +1,9 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "9f438c88ce312c90a4c5a7eb1960cc3ffafecf1821bbaaa2f6a5b88da8f280bb",
+  "generatedAt": "2026-03-25T05:49:39.299Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst pageNumber: number = 2;\nconst responseWithPage: GetHashTags200Response = await getHashTags(tenantId, pageNumber);\nconst responseWithoutPage: GetHashTags200Response = await getHashTags(tenantId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 426,
+  "completionTokens": 649
+}

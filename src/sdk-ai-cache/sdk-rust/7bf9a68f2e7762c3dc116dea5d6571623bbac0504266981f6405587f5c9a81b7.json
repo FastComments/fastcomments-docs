@@ -1,0 +1,9 @@
+{
+  "method": "get_user_badge_progress_by_id",
+  "signatureHash": "7bf9a68f2e7762c3dc116dea5d6571623bbac0504266981f6405587f5c9a81b7",
+  "generatedAt": "2026-03-25T05:53:57.913Z",
+  "codeExample": "async fn example_get_badge_progress() -> Result<GetUserBadgeProgressById200Response, Error> {\n    let cfg: &configuration::Configuration = &configuration;\n    let params = GetUserBadgeProgressByIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-007-community-builder\".to_string(),\n    };\n    let response: GetUserBadgeProgressById200Response = get_user_badge_progress_by_id(cfg, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 1396
+}

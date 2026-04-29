@@ -1,0 +1,9 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "1e4910a335d214a6b62189f4bff1df18ed1af2b1671c26b4bd273ba12d454368",
+  "generatedAt": "2026-03-25T05:51:01.813Z",
+  "codeExample": "const tenantId: string = \"tenant_3b7f9d-prod\";\nconst id: string = \"pkg_enterprise_2026\";\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  name: \"Enterprise Plus\",\n  isActive: true,\n  // optional fields omitted intentionally (e.g., description, limits)\n} as UpdateTenantPackageBody;\nconst result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 441,
+  "completionTokens": 1709
+}

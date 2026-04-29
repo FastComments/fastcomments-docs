@@ -1,0 +1,9 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "9eeabef4da03c00e6f6bec28ebad8b6283973b1a733263b126fec6633433c211",
+  "generatedAt": "2026-03-25T05:50:21.594Z",
+  "codeExample": "(async (): Promise<void> => {\n  const tenantId: string = \"local-news-ny\";\n  const urlId: string = \"articles/2026-03-25/ev-infrastructure-update\";\n  const userId: string = \"user_78b6f3d9\";\n  const anonUserId: string = \"anon_9c3f7a1b\";\n  const result: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId, anonUserId);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 448,
+  "completionTokens": 1085
+}

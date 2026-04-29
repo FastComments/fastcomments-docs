@@ -1,0 +1,9 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "48579c16a34d5dcf0b1cf232630f20195de104f9cf67309253b5bdc2a248950e",
+  "generatedAt": "2026-03-25T05:51:30.935Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_9f3b2c4a\";\n  const ssoToken: string | undefined = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9._sample_payload_.signature\";\n  const responseWithSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);\n  const responseWithoutSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);\n  console.log(responseWithSSO, responseWithoutSSO);\n})();",
+  "model": "gpt-5-mini",
+  "promptTokens": 419,
+  "completionTokens": 839
+}

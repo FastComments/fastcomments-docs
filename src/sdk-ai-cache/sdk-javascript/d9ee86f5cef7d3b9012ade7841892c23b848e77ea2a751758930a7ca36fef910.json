@@ -1,0 +1,9 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "d9ee86f5cef7d3b9012ade7841892c23b848e77ea2a751758930a7ca36fef910",
+  "generatedAt": "2026-03-25T05:50:40.116Z",
+  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst mentions1: CommentUserMentionInfo[] = [{ userId: 'user-123', displayName: 'Jane Doe' }];\nconst hashtags1: CommentUserHashTagInfo[] = [{ tag: 'typescript' }];\nconst createCommentParams: CreateCommentParams[] = [\n  {\n    content: 'Great insights on async/await patterns.',\n    authorName: 'John Smith',\n    authorEmail: 'john.smith@acme.com',\n    externalId: 'comment-001',\n    createdAt: '2026-03-25T10:15:00Z',\n    userMentions: mentions1,\n    userHashTags: hashtags1\n  },\n  {\n    content: 'I prefer using Promise.all for bulk ops.',\n    authorName: 'Emily Turner',\n    authorEmail: 'emily.turner@acme.com',\n    externalId: 'comment-002',\n    createdAt: '2026-03-25T10:20:00Z'\n  }\n];\nconst result: SaveComment200Response[] = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);",
+  "model": "gpt-5-mini",
+  "promptTokens": 313,
+  "completionTokens": 1345
+}

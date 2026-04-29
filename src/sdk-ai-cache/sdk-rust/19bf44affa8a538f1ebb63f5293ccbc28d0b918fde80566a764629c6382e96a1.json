@@ -1,0 +1,9 @@
+{
+  "method": "delete_email_template_render_error",
+  "signatureHash": "19bf44affa8a538f1ebb63f5293ccbc28d0b918fde80566a764629c6382e96a1",
+  "generatedAt": "2026-03-25T05:52:48.057Z",
+  "codeExample": "let error_id_opt: Option<String> = Some(\"render-failure-9f3b\".to_string());\nlet params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"welcome-email\".to_string(),\n    error_id: error_id_opt.unwrap(),\n};\nlet response: FlagCommentPublic200Response = delete_email_template_render_error(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 436,
+  "completionTokens": 1066
+}

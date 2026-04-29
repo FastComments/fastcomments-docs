@@ -1,0 +1,9 @@
+{
+  "method": "getTenants",
+  "signatureHash": "e816d91fd1c53e2c7a1ba1b58b2b5b9c0ba50faa33396dc674a3ab404c29b34d",
+  "generatedAt": "2026-03-25T05:50:04.437Z",
+  "codeExample": "const tenantId: string = 'tenant_8421e7';\nconst meta: string = 'include=domains,billing,customConfig';\nconst skip: number = 20;\n\nconst tenantsBasic: GetTenants200Response = await getTenants(tenantId);\nconst tenantsWithOptions: GetTenants200Response = await getTenants(tenantId, meta, skip);",
+  "model": "gpt-5-mini",
+  "promptTokens": 452,
+  "completionTokens": 791
+}

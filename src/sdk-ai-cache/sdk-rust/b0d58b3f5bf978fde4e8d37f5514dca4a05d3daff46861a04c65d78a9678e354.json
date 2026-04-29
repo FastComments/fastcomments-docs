@@ -1,0 +1,9 @@
+{
+  "method": "delete_question_config",
+  "signatureHash": "b0d58b3f5bf978fde4e8d37f5514dca4a05d3daff46861a04c65d78a9678e354",
+  "generatedAt": "2026-03-25T05:52:57.268Z",
+  "codeExample": "pub async fn run_delete_question_config() -> Result<FlagCommentPublic200Response, Error> {\n    let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"question-config-8742\".to_string(),\n    };\n    let response: FlagCommentPublic200Response = delete_question_config(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1570
+}

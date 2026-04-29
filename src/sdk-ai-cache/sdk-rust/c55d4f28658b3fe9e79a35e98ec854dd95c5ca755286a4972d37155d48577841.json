@@ -1,0 +1,9 @@
+{
+  "method": "get_votes_for_user",
+  "signatureHash": "c55d4f28658b3fe9e79a35e98ec854dd95c5ca755286a4972d37155d48577841",
+  "generatedAt": "2026-03-25T05:54:00.767Z",
+  "codeExample": "async fn example_get_votes_for_user() -> Result<(), Error> {\n    let params: GetVotesForUserParams = GetVotesForUserParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/article-2026-03-fastcomments-launch\"),\n        user_id: Some(String::from(\"user_12345\")),\n        anon_user_id: Some(String::from(\"anon_9f2e7b\")),\n    };\n    let votes: GetVotesForUser200Response = get_votes_for_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 461,
+  "completionTokens": 1158
+}

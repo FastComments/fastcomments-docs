@@ -1,0 +1,9 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "329c8eaaf5037ca236db54eb97d537ba825fb9fce4ea9a83f58828f8bf8bab6e",
+  "generatedAt": "2026-03-25T05:49:53.588Z",
+  "codeExample": "const post: { title: string; questionId?: string } = { title: 'Product feedback' };\nconst tenantId: string = 'acme-corp-tenant-01';\nconst id: string = post.questionId ?? 'q-8f3a7b2c4d9e';\nconst result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 433,
+  "completionTokens": 731
+}

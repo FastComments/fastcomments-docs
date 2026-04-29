@@ -1,0 +1,9 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "3e3af6cee36ee86ff672c383ee9908ee822ddefe0b26c0c9551e0f4923619774",
+  "generatedAt": "2026-03-25T05:50:20.010Z",
+  "codeExample": "const tenantId: string = 'tenant_7f9c2d3b';\nconst maybeUserId: string | undefined = 'user_4b8e1f9a'; // optional source (could be undefined)\nconst userId: string = maybeUserId ?? 'user_fallback0001';\nconst result: GetUserBadgeProgressById200Response = await getUserBadgeProgressByUserId(tenantId, userId);\nconsole.log(result);",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 1064
+}

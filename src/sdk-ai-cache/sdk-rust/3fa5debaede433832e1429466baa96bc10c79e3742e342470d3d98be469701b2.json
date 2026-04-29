@@ -1,0 +1,9 @@
+{
+  "method": "get_cached_notification_count",
+  "signatureHash": "3fa5debaede433832e1429466baa96bc10c79e3742e342470d3d98be469701b2",
+  "generatedAt": "2026-03-25T05:53:11.439Z",
+  "codeExample": "pub async fn example_get_cached_notification_count(configuration: &configuration::Configuration) -> Result<GetCachedNotificationCount200Response, Error> {\n    let params: GetCachedNotificationCountParams = GetCachedNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-12345\".to_string(),\n    };\n    let response: GetCachedNotificationCount200Response = get_cached_notification_count(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 1516
+}

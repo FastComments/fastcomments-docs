@@ -1,0 +1,9 @@
+{
+  "method": "vote_comment",
+  "signatureHash": "4f23c4423d6c926d6d282cadba9bb3c995ba69b153999be0fc3b78bf2f1188e8",
+  "generatedAt": "2026-03-25T05:55:34.936Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: VoteCommentParams = VoteCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-12345\".to_string(),\n        url_id: \"news/politics/2026-election\".to_string(),\n        broadcast_id: \"broadcast-nytimes-001\".to_string(),\n        vote_body_params: models::VoteBodyParams { ..Default::default() },\n        session_id: Some(\"sess-9f8e7d\".to_string()),\n        sso: Some(\"user-42@example.com\".to_string()),\n    };\n    let response: VoteComment200Response = vote_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 492,
+  "completionTokens": 1126
+}

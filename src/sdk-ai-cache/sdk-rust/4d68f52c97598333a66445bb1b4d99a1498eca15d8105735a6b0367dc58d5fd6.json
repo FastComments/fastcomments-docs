@@ -1,0 +1,9 @@
+{
+  "method": "get_user_notification_count",
+  "signatureHash": "4d68f52c97598333a66445bb1b4d99a1498eca15d8105735a6b0367dc58d5fd6",
+  "generatedAt": "2026-03-25T05:55:02.647Z",
+  "codeExample": "async fn example_user_notification_count() -> Result<(), Error> {\n    let params: GetUserNotificationCountParams = GetUserNotificationCountParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        sso: Some(String::from(\"sso-jwt-abc123\")),\n    };\n    let _response: GetUserNotificationCount200Response =\n        get_user_notification_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 430,
+  "completionTokens": 805
+}

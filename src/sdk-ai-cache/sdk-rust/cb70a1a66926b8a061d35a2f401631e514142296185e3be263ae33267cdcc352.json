@@ -1,0 +1,9 @@
+{
+  "method": "delete_hash_tag",
+  "signatureHash": "cb70a1a66926b8a061d35a2f401631e514142296185e3be263ae33267cdcc352",
+  "generatedAt": "2026-03-25T05:52:48.726Z",
+  "codeExample": "async fn run_delete_tag(configuration: &configuration::Configuration) -> Result<FlagCommentPublic200Response, Error> {\n    let params = DeleteHashTagParams {\n        tag: \"news/world-climate\".to_owned(),\n        tenant_id: Some(\"acme-corp-tenant\".to_owned()),\n        delete_hash_tag_request: None,\n    };\n    let response: FlagCommentPublic200Response = delete_hash_tag(configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 455,
+  "completionTokens": 1064
+}

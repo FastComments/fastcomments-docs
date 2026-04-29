@@ -1,0 +1,9 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "241f04eba27f1fd348369876a4387c44a264a20844ab7ec1be6f6e57ffe6ee46",
+  "generatedAt": "2026-03-25T05:50:22.811Z",
+  "codeExample": "const tag: string = \"feature-ux-refresh\";\nconst tenantId: string = \"tenant_4f92c1\";\nconst updateHashTagBody: UpdateHashTagBody = {\n  label: \"UX Refresh\",\n  description: \"Track comments related to the 2026 UX redesign\",\n  isActive: true,\n  metadata: { owner: \"product-design\", rolloutPhase: \"phase-2\" }\n};\nconst response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 694
+}

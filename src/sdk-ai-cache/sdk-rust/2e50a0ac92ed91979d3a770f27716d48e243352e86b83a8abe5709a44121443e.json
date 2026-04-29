@@ -1,0 +1,9 @@
+{
+  "method": "update_user_notification_page_subscription_status",
+  "signatureHash": "2e50a0ac92ed91979d3a770f27716d48e243352e86b83a8abe5709a44121443e",
+  "generatedAt": "2026-03-25T05:55:25.141Z",
+  "codeExample": "async fn run() -> Result<UpdateUserNotificationStatus200Response, Error> {\n    let params = UpdateUserNotificationPageSubscriptionStatusParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"article-12345\"),\n        url: String::from(\"https://news.acme.com/articles/2026/03/25/advances-in-ai\"),\n        page_title: String::from(\"Advances in AI: What to Expect in 2026\"),\n        subscribed_or_unsubscribed: String::from(\"subscribed\"),\n        sso: Some(String::from(\"user-jwt-xyz123\")),\n    };\n    let response = update_user_notification_page_subscription_status(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 476,
+  "completionTokens": 936
+}

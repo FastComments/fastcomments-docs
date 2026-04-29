@@ -1,0 +1,9 @@
+{
+  "method": "get_tenant",
+  "signatureHash": "6f53eae07f2a9119b0bedfdff98761ee2bf95e9a6cae0194c3d7c8b49f1673f0",
+  "generatedAt": "2026-03-25T05:53:47.610Z",
+  "codeExample": "async fn run_get_tenant() -> Result<GetTenant200Response, Error> {\n    let params: GetTenantParams = GetTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/site-42\".to_string(),\n        expand: Some(vec![\"domains\".to_string(), \"billing\".to_string()]),\n    };\n    let tenant: GetTenant200Response = get_tenant(&configuration, params).await?;\n    Ok(tenant)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 440,
+  "completionTokens": 2031
+}

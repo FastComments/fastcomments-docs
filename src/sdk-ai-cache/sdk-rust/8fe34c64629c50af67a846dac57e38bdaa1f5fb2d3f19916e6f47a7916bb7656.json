@@ -1,0 +1,9 @@
+{
+  "method": "render_email_template",
+  "signatureHash": "8fe34c64629c50af67a846dac57e38bdaa1f5fb2d3f19916e6f47a7916bb7656",
+  "generatedAt": "2026-03-25T05:54:05.430Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<RenderEmailTemplate200Response, Error> {\n    let body = models::RenderEmailTemplateBody {\n        template_key: \"welcome_email\".to_string(),\n        subject: \"Welcome to Acme News\".to_string(),\n        from_address: \"noreply@acme.com\".to_string(),\n        placeholders: std::collections::HashMap::from([\n            (\"user_name\".to_string(), \"Jane Doe\".to_string()),\n            (\"article_title\".to_string(), \"Breaking News: Rust Adoption Soars\".to_string()),\n        ]),\n    };\n    let params = RenderEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        render_email_template_body: body,\n        locale: Some(\"en-US\".to_string()),\n    };\n    let rendered: RenderEmailTemplate200Response = render_email_template(configuration, params).await?;\n    Ok(rendered)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 451,
+  "completionTokens": 1355
+}

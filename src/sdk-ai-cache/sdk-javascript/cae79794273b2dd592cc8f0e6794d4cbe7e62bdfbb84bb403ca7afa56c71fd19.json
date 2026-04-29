@@ -1,0 +1,9 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "cae79794273b2dd592cc8f0e6794d4cbe7e62bdfbb84bb403ca7afa56c71fd19",
+  "generatedAt": "2026-03-25T05:51:26.240Z",
+  "codeExample": "const tenantId: string = 'fastcomments-tenant-01';\nconst urlId: string = 'article-2026-03-25';\nconst userIdWS: string | undefined = undefined; // optional upstream value\nconst startTime: number = Date.parse('2026-03-01T00:00:00Z');\nconst endTime: number = Date.parse('2026-03-25T23:59:59Z');\n\nconst eventLogResponse: GetEventLog200Response = await getEventLog(\n  tenantId,\n  urlId,\n  userIdWS ?? 'ws_user_8b1f',\n  startTime,\n  endTime\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 455,
+  "completionTokens": 1684
+}

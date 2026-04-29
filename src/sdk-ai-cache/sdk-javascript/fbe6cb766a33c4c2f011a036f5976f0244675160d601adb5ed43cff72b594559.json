@@ -1,0 +1,9 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "fbe6cb766a33c4c2f011a036f5976f0244675160d601adb5ed43cff72b594559",
+  "generatedAt": "2026-03-25T05:49:55.445Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp_01';\nconst userId: string = 'user_76a3b9f2';\nconst subscriptionsForUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);\nconst subscriptionsForTenant: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);",
+  "model": "gpt-5-mini",
+  "promptTokens": 257,
+  "completionTokens": 654
+}

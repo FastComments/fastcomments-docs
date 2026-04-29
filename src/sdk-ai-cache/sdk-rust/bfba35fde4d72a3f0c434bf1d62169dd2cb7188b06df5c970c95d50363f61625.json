@@ -1,0 +1,9 @@
+{
+  "method": "get_tenant_user",
+  "signatureHash": "bfba35fde4d72a3f0c434bf1d62169dd2cb7188b06df5c970c95d50363f61625",
+  "generatedAt": "2026-03-25T05:53:41.672Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetTenantUserParams = GetTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-9a4f2e\".to_string(),\n        expand: Some(vec![\"roles\".to_string(), \"preferences\".to_string()]),\n    };\n    let user_response: GetTenantUser200Response = get_tenant_user(&configuration, params).await?;\n    println!(\"{:#?}\", user_response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 437,
+  "completionTokens": 1144
+}

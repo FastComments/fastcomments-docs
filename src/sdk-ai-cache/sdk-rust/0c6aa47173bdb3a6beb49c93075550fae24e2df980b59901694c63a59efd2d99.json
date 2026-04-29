@@ -1,0 +1,9 @@
+{
+  "method": "react_feed_post_public",
+  "signatureHash": "0c6aa47173bdb3a6beb49c93075550fae24e2df980b59901694c63a59efd2d99",
+  "generatedAt": "2026-03-25T05:55:13.613Z",
+  "codeExample": "let params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    post_id: \"news/world/2026-election\".to_string(),\n    react_body_params: models::ReactBodyParams { reaction: \"like\".to_string() },\n    is_undo: Some(false),\n    broadcast_id: Some(\"broadcast-2026-03-25\".to_string()),\n    sso: Some(\"sso-token-6f4e2b\".to_string()),\n};\n\nlet response: ReactFeedPostPublic200Response = react_feed_post_public(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 491,
+  "completionTokens": 719
+}

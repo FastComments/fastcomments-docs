@@ -1,0 +1,9 @@
+{
+  "method": "get_feed_posts",
+  "signatureHash": "4a5a30278c6b9aaae687f23c1b22726930dc62b422fb3640ba766a58f79acc63",
+  "generatedAt": "2026-03-25T05:53:14.851Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: GetFeedPostsParams = GetFeedPostsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"post_98765\".to_string()),\n        limit: Some(20),\n        tags: Some(vec![\"news\".to_string(), \"technology\".to_string()]),\n    };\n    let feed: GetFeedPosts200Response = get_feed_posts(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 946
+}

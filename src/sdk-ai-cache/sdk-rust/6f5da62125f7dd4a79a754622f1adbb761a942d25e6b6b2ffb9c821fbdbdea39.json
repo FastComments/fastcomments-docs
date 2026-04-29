@@ -1,0 +1,9 @@
+{
+  "method": "update_notification",
+  "signatureHash": "6f5da62125f7dd4a79a754622f1adbb761a942d25e6b6b2ffb9c821fbdbdea39",
+  "generatedAt": "2026-03-25T05:54:25.926Z",
+  "codeExample": "let params: UpdateNotificationParams = UpdateNotificationParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"notif-12345\".to_string(),\n    update_notification_body: models::UpdateNotificationBody {\n        name: \"Article Comments Webhook\".to_string(),\n        url: \"https://hooks.acme-corp.com/article-comments\".to_string(),\n        enabled: true,\n        events: vec![\"comment.created\".to_string(), \"comment.flagged\".to_string()],\n    },\n    user_id: Some(\"moderator-42\".to_string()),\n};\n\nlet response: FlagCommentPublic200Response = update_notification(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 454,
+  "completionTokens": 1109
+}

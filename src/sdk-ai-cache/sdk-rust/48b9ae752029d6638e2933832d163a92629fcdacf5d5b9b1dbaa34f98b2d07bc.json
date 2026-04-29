@@ -1,0 +1,9 @@
+{
+  "method": "search_users",
+  "signatureHash": "48b9ae752029d6638e2933832d163a92629fcdacf5d5b9b1dbaa34f98b2d07bc",
+  "generatedAt": "2026-03-25T05:55:17.694Z",
+  "codeExample": "async fn run_search() -> Result<SearchUsers200Response, Error> {\n    let params: SearchUsersParams = SearchUsersParams {\n        tenant_id: String::from(\"acme-corp-tenant\"),\n        url_id: String::from(\"news/article-2026-03-25-launch\"),\n        username_starts_with: Some(String::from(\"alex\")),\n        mention_group_ids: Some(vec![String::from(\"team-marketing\"), String::from(\"team-product\")]),\n        sso: Some(String::from(\"okta\")),\n        search_section: Some(String::from(\"comments\")),\n    };\n    let search_result: SearchUsers200Response = search_users(&configuration, params).await?;\n    Ok(search_result)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 499,
+  "completionTokens": 925
+}

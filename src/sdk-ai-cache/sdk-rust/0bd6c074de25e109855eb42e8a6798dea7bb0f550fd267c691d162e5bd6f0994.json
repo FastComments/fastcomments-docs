@@ -1,0 +1,9 @@
+{
+  "method": "update_question_config",
+  "signatureHash": "0bd6c074de25e109855eb42e8a6798dea7bb0f550fd267c691d162e5bd6f0994",
+  "generatedAt": "2026-03-25T05:54:34.873Z",
+  "codeExample": "let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    id: \"news/article-2026-03-readability\".to_string(),\n    update_question_config_body: models::UpdateQuestionConfigBody {\n        question_text: Some(\"Was this article helpful?\".to_string()),\n        required: Some(true),\n        rendering_type: Some(models::QuestionRenderingType::Inline),\n        custom_options: Some(vec![\n            models::QuestionConfigCustomOptionsInner { label: \"Very helpful\".to_string(), value: \"very_helpful\".to_string() },\n            models::QuestionConfigCustomOptionsInner { label: \"Somewhat helpful\".to_string(), value: \"somewhat_helpful\".to_string() },\n            models::QuestionConfigCustomOptionsInner { label: \"Not helpful\".to_string(), value: \"not_helpful\".to_string() },\n        ]),\n        when_save: Some(models::QuestionWhenSave::AskOnSave),\n        ..Default::default()\n    },\n};\nlet response: FlagCommentPublic200Response = update_question_config(&configuration, params).await?;",
+  "model": "gpt-5-mini",
+  "promptTokens": 458,
+  "completionTokens": 1587
+}

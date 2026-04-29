@@ -1,0 +1,9 @@
+{
+  "method": "replace_tenant_package",
+  "signatureHash": "6c79b317aaa93e991cb5803361f36492d7d59378f974d834a1d08ccfaff16201",
+  "generatedAt": "2026-03-25T05:54:19.609Z",
+  "codeExample": "async fn run_replace_package() -> Result<FlagCommentPublic200Response, Error> {\n    let params: ReplaceTenantPackageParams = ReplaceTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"enterprise-package-2026\".to_string(),\n        replace_tenant_package_body: models::ReplaceTenantPackageBody {\n            name: \"Acme Enterprise\".to_string(),\n            plan: \"enterprise\".to_string(),\n            seats: Some(50),\n            allowed_domains: Some(vec![\n                \"acme.com\".to_string(),\n                \"news.acme.com\".to_string(),\n            ]),\n        },\n    };\n\n    let response: FlagCommentPublic200Response = replace_tenant_package(&configuration, params).await?;\n    Ok(response)\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 1833
+}

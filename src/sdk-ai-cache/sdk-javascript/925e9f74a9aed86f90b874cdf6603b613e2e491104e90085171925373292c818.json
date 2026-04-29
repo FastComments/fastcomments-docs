@@ -1,0 +1,9 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "925e9f74a9aed86f90b874cdf6603b613e2e491104e90085171925373292c818",
+  "generatedAt": "2026-03-25T05:50:23.228Z",
+  "codeExample": "const tenantId: string = 'tenant_9d8f4b2c';\nconst id: string = 'user_f47ac10b';\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  externalId: 'ext-5234',\n  email: 'jane.doe@acme.com',\n  displayName: 'Jane Doe',\n  roles: ['moderator'],\n  metadata: { department: 'product', region: 'us-east-1' }\n};\nconst updateComments: string = 'propagate-display-name-to-comments';\n\nconst result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini",
+  "promptTokens": 450,
+  "completionTokens": 726
+}

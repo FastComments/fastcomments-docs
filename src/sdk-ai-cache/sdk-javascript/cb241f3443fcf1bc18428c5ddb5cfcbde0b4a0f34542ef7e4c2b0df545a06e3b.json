@@ -1,0 +1,9 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "cb241f3443fcf1bc18428c5ddb5cfcbde0b4a0f34542ef7e4c2b0df545a06e3b",
+  "generatedAt": "2026-03-25T05:51:30.244Z",
+  "codeExample": "const tenantId: string = \"acme-tenant-8a4d2c\";\nconst postIds: string[] = [\"post-645a2f\", \"post-645a30\"];\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY2MTYwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\nconst result: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 435,
+  "completionTokens": 1324
+}

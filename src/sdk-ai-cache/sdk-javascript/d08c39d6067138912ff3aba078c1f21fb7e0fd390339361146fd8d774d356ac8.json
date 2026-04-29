@@ -1,0 +1,9 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "d08c39d6067138912ff3aba078c1f21fb7e0fd390339361146fd8d774d356ac8",
+  "generatedAt": "2026-03-25T05:51:35.610Z",
+  "codeExample": "const tenantId: string = 'tenant_7f9d2a3b';\nconst commentId: string = 'comment_842b9c1f';\nconst broadcastId: string = 'bcast_frontpage_202603';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';\n\nconst result: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 434,
+  "completionTokens": 693
+}

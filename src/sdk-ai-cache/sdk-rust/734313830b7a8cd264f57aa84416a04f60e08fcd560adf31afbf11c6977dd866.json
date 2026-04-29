@@ -1,0 +1,9 @@
+{
+  "method": "block_from_comment_public",
+  "signatureHash": "734313830b7a8cd264f57aa84416a04f60e08fcd560adf31afbf11c6977dd866",
+  "generatedAt": "2026-03-25T05:54:43.654Z",
+  "codeExample": "pub async fn run_block_example() -> Result<(), Error> {\n    let params: BlockFromCommentPublicParams = BlockFromCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/2026-03-25-12345\".to_string(),\n        public_block_from_comment_params: models::PublicBlockFromCommentParams {\n            reason: \"Repeated promotional links\".to_string(),\n            reporter_id: Some(\"reader-2048\".to_string()),\n            permanent: Some(false),\n        },\n        sso: Some(\"sso:user:acme:2048\".to_string()),\n    };\n    let response: BlockFromCommentPublic200Response = block_from_comment_public(&configuration, params).await?;\n    println!(\"{:#?}\", response);\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 468,
+  "completionTokens": 1521
+}

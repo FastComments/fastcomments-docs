@@ -1,0 +1,9 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "769fde4f27dfd624a7e8d30eed42cd129b19861a0b3476bf17a6d1db796452f1",
+  "generatedAt": "2026-03-25T05:49:29.468Z",
+  "codeExample": "type DeleteOptions = { notifyModerators?: boolean };\n\nconst tenantId: string = 'tenant_8a3f21';\nconst id: string = 'badge_71f2b';\nconst options: DeleteOptions = { notifyModerators: true };\n\nconst result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);",
+  "model": "gpt-5-mini",
+  "promptTokens": 417,
+  "completionTokens": 1040
+}

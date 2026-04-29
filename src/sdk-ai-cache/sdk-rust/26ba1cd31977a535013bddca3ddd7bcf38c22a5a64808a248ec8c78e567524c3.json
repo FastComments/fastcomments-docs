@@ -1,0 +1,9 @@
+{
+  "method": "delete_question_result",
+  "signatureHash": "26ba1cd31977a535013bddca3ddd7bcf38c22a5a64808a248ec8c78e567524c3",
+  "generatedAt": "2026-03-25T05:52:54.681Z",
+  "codeExample": "async fn run_delete_question_result() -> Result<(), Error> {\n    let params: DeleteQuestionResultParams = DeleteQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"qres-news/article-2026-03-25-9a8b7c\".to_string(),\n    };\n    let response: FlagCommentPublic200Response = delete_question_result(&configuration, params).await?;\n    let _response = response;\n    Ok(())\n}",
+  "model": "gpt-5-mini",
+  "promptTokens": 421,
+  "completionTokens": 1198
+}
