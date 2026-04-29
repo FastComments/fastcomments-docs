@@ -33,6 +33,23 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
   echo "SDK documentation generation complete."
 
+  if [ -n "$(git status --porcelain src/sdk-ai-cache 2>/dev/null)" ]; then
+    echo "Committing SDK AI cache changes..."
+    git add -A src/sdk-ai-cache
+    if ! git commit -m "Automated SDK AI cache update"; then
+      echo "ERROR: SDK AI cache commit failed"
+      exit 1
+    fi
+    echo "Pushing SDK AI cache changes..."
+    if ! git push; then
+      echo "ERROR: SDK AI cache push failed"
+      exit 1
+    fi
+    echo "SDK AI cache changes pushed."
+  else
+    echo "No SDK AI cache changes to commit."
+  fi
+
   echo "Generating custom styling guide..."
   if ! node src/custom-styling-guide-generator.js; then
     echo "ERROR: Custom styling guide generation failed"

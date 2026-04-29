@@ -40,6 +40,7 @@
     {"name": "Tools Reference", "file": "tools-overview.md", "subCat": "Allowed Tool Calls"},
     {"name": "Ban user", "file": "tool-ban-user.md", "subCat": "Allowed Tool Calls"},
     {"name": "Warn user", "file": "tool-warn-user.md", "subCat": "Allowed Tool Calls"},
+    {"name": "Edit comment", "file": "tool-edit-comment.md", "subCat": "Allowed Tool Calls"},
 
     {"name": "Status States", "file": "status-states.md", "subCat": "Safety and Oversight"},
     {"name": "Dry-Run Mode", "file": "dry-run-mode.md", "subCat": "Safety and Oversight"},

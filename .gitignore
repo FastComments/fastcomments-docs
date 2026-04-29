@@ -114,3 +114,8 @@ src/content/sdks-checkout/
 
 # Search index databases
 db/
+
+# CI runner artifacts
+buildEnv
+env
+out.txt
