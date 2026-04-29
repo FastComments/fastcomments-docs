@@ -18,7 +18,7 @@
       "subCat": "Uvod"
     },
     {
-      "name": "Kreiranje agenta",
+      "name": "Izrada agenta",
       "file": "creating-an-agent.md",
       "subCat": "Kreiranje agenata"
     },
@@ -38,7 +38,7 @@
       "subCat": "Kreiranje agenata"
     },
     {
-      "name": "Predložak: Pričvrstivač najpopularnijih komentara",
+      "name": "Predložak: Pribadač istaknutog komentara",
       "file": "template-top-comment-pinner.md",
       "subCat": "Kreiranje agenata"
     },
@@ -68,7 +68,7 @@
       "subCat": "Osobnost i kontekst"
     },
     {
-      "name": "Opseg: URL i filtri lokaliteta",
+      "name": "Opseg: filtri za URL i lokalitet",
       "file": "scope-url-locale.md",
       "subCat": "Osobnost i kontekst"
     },
@@ -83,32 +83,32 @@
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Uređen komentar",
+      "name": "Okidač: Komentar uređen",
       "file": "trigger-comment-edit.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Izbrisan komentar",
+      "name": "Okidač: Komentar izbrisan",
       "file": "trigger-comment-delete.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Prikvačen komentar",
+      "name": "Okidač: Komentar prikvačen",
       "file": "trigger-comment-pin.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Komentar odznačen",
+      "name": "Okidač: Komentar odkvačen",
       "file": "trigger-comment-unpin.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Zaključan komentar",
+      "name": "Okidač: Komentar zaključan",
       "file": "trigger-comment-lock.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Otključan komentar",
+      "name": "Okidač: Komentar otključan",
       "file": "trigger-comment-unlock.md",
       "subCat": "Okidački događaji"
     },
@@ -138,12 +138,12 @@
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Komentar odobren od strane moderatora",
+      "name": "Okidač: Komentar odobren od moderatora",
       "file": "trigger-moderator-approved.md",
       "subCat": "Okidački događaji"
     },
     {
-      "name": "Okidač: Moderator označio kao spam",
+      "name": "Okidač: Moderator označio komentar kao spam",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Okidački događaji"
     },
@@ -160,20 +160,25 @@
     {
       "name": "Referenca alata",
       "file": "tools-overview.md",
-      "subCat": "Dozvoleni pozivi alata"
+      "subCat": "Dopušteni pozivi alata"
     },
     {
-      "name": "Zabrani korisnika",
+      "name": "Blokiraj korisnika",
       "file": "tool-ban-user.md",
-      "subCat": "Dozvoleni pozivi alata"
+      "subCat": "Dopušteni pozivi alata"
     },
     {
       "name": "Upozori korisnika",
       "file": "tool-warn-user.md",
-      "subCat": "Dozvoleni pozivi alata"
+      "subCat": "Dopušteni pozivi alata"
     },
     {
-      "name": "Statusna stanja",
+      "name": "Uredi komentar",
+      "file": "tool-edit-comment.md",
+      "subCat": "Dopušteni pozivi alata"
+    },
+    {
+      "name": "Stanja statusa",
       "file": "status-states.md",
       "subCat": "Sigurnost i nadzor"
     },
@@ -183,7 +188,7 @@
       "subCat": "Sigurnost i nadzor"
     },
     {
-      "name": "Tijek odobravanja",
+      "name": "Proces odobravanja",
       "file": "approval-workflow.md",
       "subCat": "Sigurnost i nadzor"
     },
@@ -193,7 +198,7 @@
       "subCat": "Sigurnost i nadzor"
     },
     {
-      "name": "Usklađenost s EU DSA člankom 17",
+      "name": "Usklađenost s člankom 17. EU DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sigurnost i nadzor"
     },
@@ -225,27 +230,27 @@
     {
       "name": "Povijest izvršavanja",
       "file": "run-history.md",
-      "subCat": "Nadzor i podešavanje"
+      "subCat": "Praćenje i podešavanje"
     },
     {
       "name": "Prikaz detalja izvršavanja",
       "file": "run-detail-view.md",
-      "subCat": "Nadzor i podešavanje"
+      "subCat": "Praćenje i podešavanje"
     },
     {
       "name": "Stranica analitike",
       "file": "analytics-page.md",
-      "subCat": "Nadzor i podešavanje"
+      "subCat": "Praćenje i podešavanje"
     },
     {
       "name": "Testna pokretanja (reprodukcije)",
       "file": "test-runs-replays.md",
-      "subCat": "Nadzor i podešavanje"
+      "subCat": "Praćenje i podešavanje"
     },
     {
       "name": "Usavršavanje upita",
       "file": "refining-prompts.md",
-      "subCat": "Nadzor i podešavanje"
+      "subCat": "Praćenje i podešavanje"
     },
     {
       "name": "Pregled webhookova",
@@ -258,7 +263,7 @@
       "subCat": "Webhookovi"
     },
     {
-      "name": "Podaci webhooka",
+      "name": "Sadržaji webhooka",
       "file": "webhook-payloads.md",
       "subCat": "Webhookovi"
     },
@@ -268,12 +273,12 @@
       "subCat": "Webhookovi"
     },
     {
-      "name": "Pokušaji ponovnog slanja webhooka",
+      "name": "Ponovna slanja webhooka",
       "file": "webhook-retries.md",
       "subCat": "Webhookovi"
     },
     {
-      "name": "Dnevnici isporuke webhooka",
+      "name": "Dnevnici dostave webhooka",
       "file": "webhook-logs.md",
       "subCat": "Webhookovi"
     }

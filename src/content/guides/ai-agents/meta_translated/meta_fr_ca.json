@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Qu'est-ce que les agents d'IA ?",
+      "name": "Qu'est-ce qu'un agent d'IA ?",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduction"
     },
@@ -43,7 +43,7 @@
       "subCat": "Création d'agents"
     },
     {
-      "name": "Modèle : Résumeur de discussion",
+      "name": "Modèle : Résumeur de fil de discussion",
       "file": "template-thread-summarizer.md",
       "subCat": "Création d'agents"
     },
@@ -53,7 +53,7 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Personnalité et l'invite initiale",
+      "name": "Personnalité et invite initiale",
       "file": "personality-prompt.md",
       "subCat": "Personnalité et contexte"
     },
@@ -63,12 +63,12 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Lignes directrices de la communauté",
+      "name": "Règles de la communauté",
       "file": "community-guidelines.md",
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Portée : filtres d'URL et de région",
+      "name": "Portée : filtres d'URL et de paramètres régionaux",
       "file": "scope-url-locale.md",
       "subCat": "Personnalité et contexte"
     },
@@ -173,6 +173,11 @@
       "subCat": "Appels d'outils autorisés"
     },
     {
+      "name": "Modifier le commentaire",
+      "file": "tool-edit-comment.md",
+      "subCat": "Appels d'outils autorisés"
+    },
+    {
       "name": "États de statut",
       "file": "status-states.md",
       "subCat": "Sécurité et supervision"
@@ -228,7 +233,7 @@
       "subCat": "Surveillance et réglage"
     },
     {
-      "name": "Vue détaillée d'une exécution",
+      "name": "Vue détaillée de l'exécution",
       "file": "run-detail-view.md",
       "subCat": "Surveillance et réglage"
     },
@@ -238,7 +243,7 @@
       "subCat": "Surveillance et réglage"
     },
     {
-      "name": "Exécutions de test (replays)",
+      "name": "Exécutions de test (relectures)",
       "file": "test-runs-replays.md",
       "subCat": "Surveillance et réglage"
     },
@@ -253,7 +258,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Événements de webhook",
+      "name": "Événements webhook",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },
@@ -268,7 +273,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Réessais de webhook",
+      "name": "Réessais des webhooks",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },

@@ -5,17 +5,17 @@
     {
       "name": "什么是 AI 代理",
       "file": "what-are-ai-agents.md",
-      "subCat": "介绍"
+      "subCat": "简介"
     },
     {
       "name": "计划与资格",
       "file": "plans-and-eligibility.md",
-      "subCat": "介绍"
+      "subCat": "简介"
     },
     {
       "name": "快速入门",
       "file": "quickstart.md",
-      "subCat": "介绍"
+      "subCat": "简介"
     },
     {
       "name": "创建代理",
@@ -38,7 +38,7 @@
       "subCat": "创建代理"
     },
     {
-      "name": "模板：置顶热门评论",
+      "name": "模板：置顶评论助手",
       "file": "template-top-comment-pinner.md",
       "subCat": "创建代理"
     },
@@ -48,7 +48,7 @@
       "subCat": "创建代理"
     },
     {
-      "name": "模型选择",
+      "name": "选择模型",
       "file": "choosing-a-model.md",
       "subCat": "个性与上下文"
     },
@@ -63,12 +63,12 @@
       "subCat": "个性与上下文"
     },
     {
-      "name": "社区准则",
+      "name": "社区指南",
       "file": "community-guidelines.md",
       "subCat": "个性与上下文"
     },
     {
-      "name": "范围：URL 和地域筛选",
+      "name": "范围：URL 与地域过滤器",
       "file": "scope-url-locale.md",
       "subCat": "个性与上下文"
     },
@@ -83,12 +83,12 @@
       "subCat": "触发事件"
     },
     {
-      "name": "触发：评论编辑",
+      "name": "触发：编辑评论",
       "file": "trigger-comment-edit.md",
       "subCat": "触发事件"
     },
     {
-      "name": "触发：评论删除",
+      "name": "触发：删除评论",
       "file": "trigger-comment-delete.md",
       "subCat": "触发事件"
     },
@@ -98,7 +98,7 @@
       "subCat": "触发事件"
     },
     {
-      "name": "触发：取消置顶评论",
+      "name": "触发：评论取消置顶",
       "file": "trigger-comment-unpin.md",
       "subCat": "触发事件"
     },
@@ -128,7 +128,7 @@
       "subCat": "触发事件"
     },
     {
-      "name": "触发：自动标记为垃圾的评论",
+      "name": "触发：自动判定为垃圾评论",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "触发事件"
     },
@@ -138,7 +138,7 @@
       "subCat": "触发事件"
     },
     {
-      "name": "触发：版主批准的评论",
+      "name": "触发：版主批准评论",
       "file": "trigger-moderator-approved.md",
       "subCat": "触发事件"
     },
@@ -173,12 +173,17 @@
       "subCat": "允许的工具调用"
     },
     {
-      "name": "状态说明",
+      "name": "编辑评论",
+      "file": "tool-edit-comment.md",
+      "subCat": "允许的工具调用"
+    },
+    {
+      "name": "状态类型",
       "file": "status-states.md",
       "subCat": "安全与监管"
     },
     {
-      "name": "模拟运行模式",
+      "name": "演练模式",
       "file": "dry-run-mode.md",
       "subCat": "安全与监管"
     },
@@ -193,7 +198,7 @@
       "subCat": "安全与监管"
     },
     {
-      "name": "欧盟 DSA 第17条合规",
+      "name": "欧盟 DSA 第17条合规性",
       "file": "eu-dsa-compliance.md",
       "subCat": "安全与监管"
     },
@@ -208,12 +213,12 @@
       "subCat": "预算与费用"
     },
     {
-      "name": "预算警报",
+      "name": "预算告警",
       "file": "budget-alerts.md",
       "subCat": "预算与费用"
     },
     {
-      "name": "费用模型",
+      "name": "成本模型",
       "file": "cost-model.md",
       "subCat": "预算与费用"
     },
@@ -238,44 +243,44 @@
       "subCat": "监控与调优"
     },
     {
-      "name": "测试运行（回放）",
+      "name": "测试运行（重放）",
       "file": "test-runs-replays.md",
       "subCat": "监控与调优"
     },
     {
-      "name": "提示词优化",
+      "name": "精炼提示词",
       "file": "refining-prompts.md",
       "subCat": "监控与调优"
     },
     {
-      "name": "Webhook 概览",
+      "name": "Webhook（回调）概览",
       "file": "webhooks-overview.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     },
     {
       "name": "Webhook 事件",
       "file": "webhook-events.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     },
     {
-      "name": "Webhook 负载",
+      "name": "Webhook 有效载荷",
       "file": "webhook-payloads.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     },
     {
       "name": "Webhook 签名",
       "file": "webhook-signing.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     },
     {
       "name": "Webhook 重试",
       "file": "webhook-retries.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     },
     {
       "name": "Webhook 传递日志",
       "file": "webhook-logs.md",
-      "subCat": "Webhook"
+      "subCat": "Webhook（回调）"
     }
   ]
 }

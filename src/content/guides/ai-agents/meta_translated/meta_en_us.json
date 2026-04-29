@@ -173,6 +173,11 @@
       "subCat": "Allowed Tool Calls"
     },
     {
+      "name": "Edit comment",
+      "file": "tool-edit-comment.md",
+      "subCat": "Allowed Tool Calls"
+    },
+    {
       "name": "Status States",
       "file": "status-states.md",
       "subCat": "Safety and Oversight"

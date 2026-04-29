@@ -13,12 +13,12 @@
       "subCat": "Introduktion"
     },
     {
-      "name": "Hurtigstart",
+      "name": "Hurtig start",
       "file": "quickstart.md",
       "subCat": "Introduktion"
     },
     {
-      "name": "Opret en agent",
+      "name": "Oprettelse af agent",
       "file": "creating-an-agent.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -33,7 +33,7 @@
       "subCat": "Oprettelse af agenter"
     },
     {
-      "name": "Skabelon: Velkomsthilsen",
+      "name": "Skabelon: Velkomstagent",
       "file": "template-welcome-greeter.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -43,7 +43,7 @@
       "subCat": "Oprettelse af agenter"
     },
     {
-      "name": "Skabelon: Trådopsummering",
+      "name": "Skabelon: Trådsammendrag",
       "file": "template-thread-summarizer.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -58,12 +58,12 @@
       "subCat": "Personlighed og kontekst"
     },
     {
-      "name": "Kontekstmuligheder",
+      "name": "Kontekstindstillinger",
       "file": "context-options.md",
       "subCat": "Personlighed og kontekst"
     },
     {
-      "name": "Fællesskabsretningslinjer",
+      "name": "Retningslinjer for fællesskabet",
       "file": "community-guidelines.md",
       "subCat": "Personlighed og kontekst"
     },
@@ -73,89 +73,89 @@
       "subCat": "Personlighed og kontekst"
     },
     {
-      "name": "Oversigt over udløsende hændelser",
+      "name": "Oversigt over udløserhændelser",
       "file": "triggers-overview.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar tilføjet",
       "file": "trigger-comment-add.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar redigeret",
       "file": "trigger-comment-edit.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar slettet",
       "file": "trigger-comment-delete.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar fastgjort",
       "file": "trigger-comment-pin.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar fjernet fra fastgørelse",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar låst",
       "file": "trigger-comment-lock.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Kommentar låst op",
+      "name": "Udløser: Kommentar oplåst",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Stemmetærskel",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Rapporttærskel",
+      "name": "Udløser: Flagtærskel",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Ny brugers første kommentar",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Kommentar markeret som automatisk spam",
+      "name": "Udløser: Automatisk spam-kommentar",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar gennemgået af moderator",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar godkendt af moderator",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Kommentar markeret som spam af moderator",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udløser: Moderator tildelte badge",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Udskudte udløsere",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Udløsende hændelser"
+      "subCat": "Udløserhændelser"
     },
     {
       "name": "Værktøjsreference",
@@ -173,12 +173,17 @@
       "subCat": "Tilladte værktøjskald"
     },
     {
-      "name": "Status-tilstande",
+      "name": "Rediger kommentar",
+      "file": "tool-edit-comment.md",
+      "subCat": "Tilladte værktøjskald"
+    },
+    {
+      "name": "Statustilstande",
       "file": "status-states.md",
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Tørkørselstilstand",
+      "name": "Testkørsel",
       "file": "dry-run-mode.md",
       "subCat": "Sikkerhed og tilsyn"
     },
@@ -198,7 +203,7 @@
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Agenthukommelsessystem",
+      "name": "Agentens hukommelsessystem",
       "file": "agent-memory-system.md",
       "subCat": "Sikkerhed og tilsyn"
     },
@@ -208,7 +213,7 @@
       "subCat": "Budgetter og omkostninger"
     },
     {
-      "name": "Budgetadvarsler",
+      "name": "Budgetalarmer",
       "file": "budget-alerts.md",
       "subCat": "Budgetter og omkostninger"
     },
@@ -225,27 +230,27 @@
     {
       "name": "Kørselshistorik",
       "file": "run-history.md",
-      "subCat": "Overvågning og justering"
+      "subCat": "Overvågning og tuning"
     },
     {
-      "name": "Detaljevisning af kørsel",
+      "name": "Visning af kørselsdetaljer",
       "file": "run-detail-view.md",
-      "subCat": "Overvågning og justering"
+      "subCat": "Overvågning og tuning"
     },
     {
-      "name": "Analyseside",
+      "name": "Analyser-side",
       "file": "analytics-page.md",
-      "subCat": "Overvågning og justering"
+      "subCat": "Overvågning og tuning"
     },
     {
-      "name": "Testkørsler (genafspilninger)",
+      "name": "Testkørsler (afspilninger)",
       "file": "test-runs-replays.md",
-      "subCat": "Overvågning og justering"
+      "subCat": "Overvågning og tuning"
     },
     {
       "name": "Forfining af prompts",
       "file": "refining-prompts.md",
-      "subCat": "Overvågning og justering"
+      "subCat": "Overvågning og tuning"
     },
     {
       "name": "Oversigt over webhooks",
@@ -268,12 +273,12 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-genforsøg",
+      "name": "Webhook-omforsøg",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-leveringslog",
+      "name": "Webhook-leveringslogs",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

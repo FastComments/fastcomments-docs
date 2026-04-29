@@ -28,22 +28,22 @@
       "subCat": "Ustvarjanje agentov"
     },
     {
-      "name": "Predloga: moderator",
+      "name": "Predloga: Moderator",
       "file": "template-moderator.md",
       "subCat": "Ustvarjanje agentov"
     },
     {
-      "name": "Predloga: pozdravitelj",
+      "name": "Predloga: Pozdravitelj dobrodošlice",
       "file": "template-welcome-greeter.md",
       "subCat": "Ustvarjanje agentov"
     },
     {
-      "name": "Predloga: pripenjanje najboljših komentarjev",
+      "name": "Predloga: Pripenjanje najboljšega komentarja",
       "file": "template-top-comment-pinner.md",
       "subCat": "Ustvarjanje agentov"
     },
     {
-      "name": "Predloga: povzetek niti",
+      "name": "Predloga: Povzetek razprave",
       "file": "template-thread-summarizer.md",
       "subCat": "Ustvarjanje agentov"
     },
@@ -53,7 +53,7 @@
       "subCat": "Osebnost in kontekst"
     },
     {
-      "name": "Osebnost in začetni poziv",
+      "name": "Osebnost in začetno navodilo",
       "file": "personality-prompt.md",
       "subCat": "Osebnost in kontekst"
     },
@@ -68,7 +68,7 @@
       "subCat": "Osebnost in kontekst"
     },
     {
-      "name": "Obseg: filtri URL in lokalizacije",
+      "name": "Obseg: filtri URL-jev in lokalizacije",
       "file": "scope-url-locale.md",
       "subCat": "Osebnost in kontekst"
     },
@@ -78,77 +78,77 @@
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar dodan",
+      "name": "Sprožilec: Dodan komentar",
       "file": "trigger-comment-add.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar urejen",
+      "name": "Sprožilec: Urejen komentar",
       "file": "trigger-comment-edit.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar izbrisan",
+      "name": "Sprožilec: Izbrisan komentar",
       "file": "trigger-comment-delete.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar pritrjen",
+      "name": "Sprožilec: Pripet komentar",
       "file": "trigger-comment-pin.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar odpet",
+      "name": "Sprožilec: Odpet komentar",
       "file": "trigger-comment-unpin.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar zaklenjen",
+      "name": "Sprožilec: Zaklenjen komentar",
       "file": "trigger-comment-lock.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar odklenjen",
+      "name": "Sprožilec: Odklenjen komentar",
       "file": "trigger-comment-unlock.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: prag glasov",
+      "name": "Sprožilec: Prag glasov",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: prag prijav",
+      "name": "Sprožilec: Prag prijav",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: prvi komentar novega uporabnika",
+      "name": "Sprožilec: Prvi komentar novega uporabnika",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar samodejno označen kot spam",
+      "name": "Sprožilec: Komentar samodejno označen kot neželena pošta",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar pregledan s strani moderatorja",
+      "name": "Sprožilec: Komentar pregledal moderator",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: komentar odobril moderator",
+      "name": "Sprožilec: Komentar odobril moderator",
       "file": "trigger-moderator-approved.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: moderator označil kot spam",
+      "name": "Sprožilec: Moderator označil komentar kot neželeno pošto",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Sprožilni dogodki"
     },
     {
-      "name": "Sprožilec: moderator dodelil značko",
+      "name": "Sprožilec: Moderator podelil značko",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Sprožilni dogodki"
     },
@@ -173,7 +173,12 @@
       "subCat": "Dovoljeni klici orodij"
     },
     {
-      "name": "Stanja statusov",
+      "name": "Uredi komentar",
+      "file": "tool-edit-comment.md",
+      "subCat": "Dovoljeni klici orodij"
+    },
+    {
+      "name": "Stanja",
       "file": "status-states.md",
       "subCat": "Varnost in nadzor"
     },
@@ -183,7 +188,7 @@
       "subCat": "Varnost in nadzor"
     },
     {
-      "name": "Postopek odobritve",
+      "name": "Potek odobritve",
       "file": "approval-workflow.md",
       "subCat": "Varnost in nadzor"
     },
@@ -193,7 +198,7 @@
       "subCat": "Varnost in nadzor"
     },
     {
-      "name": "Skladnost z 17. členom DSA (EU)",
+      "name": "Skladnost z 17. členom EU DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "Varnost in nadzor"
     },
@@ -218,34 +223,34 @@
       "subCat": "Proračuni in stroški"
     },
     {
-      "name": "Razlogi za opustitev",
+      "name": "Razlogi za zavrnitev",
       "file": "drop-reasons.md",
       "subCat": "Proračuni in stroški"
     },
     {
       "name": "Zgodovina zagonov",
       "file": "run-history.md",
-      "subCat": "Nadzor in prilagajanje"
+      "subCat": "Nadzor in optimizacija"
     },
     {
-      "name": "Pogled podrobnosti zagona",
+      "name": "Podrobni pogled zagona",
       "file": "run-detail-view.md",
-      "subCat": "Nadzor in prilagajanje"
+      "subCat": "Nadzor in optimizacija"
     },
     {
-      "name": "Stran z analitiko",
+      "name": "Stran analitike",
       "file": "analytics-page.md",
-      "subCat": "Nadzor in prilagajanje"
+      "subCat": "Nadzor in optimizacija"
     },
     {
-      "name": "Testni zagoni (ponovitve)",
+      "name": "Testni zagon (ponovitve)",
       "file": "test-runs-replays.md",
-      "subCat": "Nadzor in prilagajanje"
+      "subCat": "Nadzor in optimizacija"
     },
     {
       "name": "Izboljševanje navodil",
       "file": "refining-prompts.md",
-      "subCat": "Nadzor in prilagajanje"
+      "subCat": "Nadzor in optimizacija"
     },
     {
       "name": "Pregled webhookov",
@@ -268,7 +273,7 @@
       "subCat": "Webhooki"
     },
     {
-      "name": "Ponovni poskusi webhookov",
+      "name": "Ponovitve webhookov",
       "file": "webhook-retries.md",
       "subCat": "Webhooki"
     },

@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "AI 에이전트란?",
+      "name": "AI 에이전트란 무엇인가",
       "file": "what-are-ai-agents.md",
       "subCat": "소개"
     },
@@ -38,39 +38,39 @@
       "subCat": "에이전트 생성"
     },
     {
-      "name": "템플릿: 인기 댓글 고정",
+      "name": "템플릿: 상위 댓글 고정",
       "file": "template-top-comment-pinner.md",
       "subCat": "에이전트 생성"
     },
     {
-      "name": "템플릿: 스레드 요약기",
+      "name": "템플릿: 스레드 요약",
       "file": "template-thread-summarizer.md",
       "subCat": "에이전트 생성"
     },
     {
-      "name": "모델 선택하기",
+      "name": "모델 선택",
       "file": "choosing-a-model.md",
-      "subCat": "퍼소나 및 컨텍스트"
+      "subCat": "퍼스널리티 및 컨텍스트"
     },
     {
-      "name": "퍼소나 및 초기 프롬프트",
+      "name": "퍼스널리티와 초기 프롬프트",
       "file": "personality-prompt.md",
-      "subCat": "퍼소나 및 컨텍스트"
+      "subCat": "퍼스널리티 및 컨텍스트"
     },
     {
       "name": "컨텍스트 옵션",
       "file": "context-options.md",
-      "subCat": "퍼소나 및 컨텍스트"
+      "subCat": "퍼스널리티 및 컨텍스트"
     },
     {
       "name": "커뮤니티 가이드라인",
       "file": "community-guidelines.md",
-      "subCat": "퍼소나 및 컨텍스트"
+      "subCat": "퍼스널리티 및 컨텍스트"
     },
     {
-      "name": "범위: URL 및 로케일 필터",
+      "name": "범위: URL 및 지역 필터",
       "file": "scope-url-locale.md",
-      "subCat": "퍼소나 및 컨텍스트"
+      "subCat": "퍼스널리티 및 컨텍스트"
     },
     {
       "name": "트리거 이벤트 개요",
@@ -83,7 +83,7 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 편집됨",
+      "name": "트리거: 댓글 수정됨",
       "file": "trigger-comment-edit.md",
       "subCat": "트리거 이벤트"
     },
@@ -123,7 +123,7 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 신규 사용자의 첫 댓글",
+      "name": "트리거: 신규 사용자 첫 댓글",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "트리거 이벤트"
     },
@@ -148,17 +148,17 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 배지를 수여함",
+      "name": "트리거: 모더레이터가 배지 수여",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "지연된 트리거",
+      "name": "연기된 트리거",
       "file": "trigger-deferred-delay.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "도구 참조",
+      "name": "도구 레퍼런스",
       "file": "tools-overview.md",
       "subCat": "허용된 도구 호출"
     },
@@ -173,12 +173,17 @@
       "subCat": "허용된 도구 호출"
     },
     {
-      "name": "상태 유형",
+      "name": "댓글 편집",
+      "file": "tool-edit-comment.md",
+      "subCat": "허용된 도구 호출"
+    },
+    {
+      "name": "상태",
       "file": "status-states.md",
       "subCat": "안전 및 감독"
     },
     {
-      "name": "드라이런 모드",
+      "name": "모의 실행 모드",
       "file": "dry-run-mode.md",
       "subCat": "안전 및 감독"
     },
@@ -208,7 +213,7 @@
       "subCat": "예산 및 비용"
     },
     {
-      "name": "예산 경고",
+      "name": "예산 알림",
       "file": "budget-alerts.md",
       "subCat": "예산 및 비용"
     },
@@ -225,27 +230,27 @@
     {
       "name": "실행 기록",
       "file": "run-history.md",
-      "subCat": "모니터링 및 조정"
+      "subCat": "모니터링 및 튜닝"
     },
     {
       "name": "실행 상세 보기",
       "file": "run-detail-view.md",
-      "subCat": "모니터링 및 조정"
+      "subCat": "모니터링 및 튜닝"
     },
     {
       "name": "분석 페이지",
       "file": "analytics-page.md",
-      "subCat": "모니터링 및 조정"
+      "subCat": "모니터링 및 튜닝"
     },
     {
       "name": "테스트 실행(재생)",
       "file": "test-runs-replays.md",
-      "subCat": "모니터링 및 조정"
+      "subCat": "모니터링 및 튜닝"
     },
     {
-      "name": "프롬프트 다듬기",
+      "name": "프롬프트 개선",
       "file": "refining-prompts.md",
-      "subCat": "모니터링 및 조정"
+      "subCat": "모니터링 및 튜닝"
     },
     {
       "name": "웹훅 개요",
@@ -273,7 +278,7 @@
       "subCat": "웹훅"
     },
     {
-      "name": "웹훅 전달 로그",
+      "name": "웹훅 전송 로그",
       "file": "webhook-logs.md",
       "subCat": "웹훅"
     }

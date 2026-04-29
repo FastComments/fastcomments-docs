@@ -38,12 +38,12 @@
       "subCat": "Creación de agentes"
     },
     {
-      "name": "Plantilla: Fijador de comentarios destacados",
+      "name": "Plantilla: Anclador de comentarios destacados",
       "file": "template-top-comment-pinner.md",
       "subCat": "Creación de agentes"
     },
     {
-      "name": "Plantilla: Resumen de hilo",
+      "name": "Plantilla: Resumidor de hilos",
       "file": "template-thread-summarizer.md",
       "subCat": "Creación de agentes"
     },
@@ -53,7 +53,7 @@
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Personalidad y el mensaje inicial",
+      "name": "Personalidad y el prompt inicial",
       "file": "personality-prompt.md",
       "subCat": "Personalidad y contexto"
     },
@@ -63,114 +63,119 @@
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Normas de la comunidad",
+      "name": "Directrices de la comunidad",
       "file": "community-guidelines.md",
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Ámbito: filtros de URL y localización",
+      "name": "Alcance: filtros de URL y de localización",
       "file": "scope-url-locale.md",
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Visión general de eventos desencadenantes",
+      "name": "Resumen de eventos desencadenantes",
       "file": "triggers-overview.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario añadido",
+      "name": "Desencadenante: comentario añadido",
       "file": "trigger-comment-add.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario editado",
+      "name": "Desencadenante: comentario editado",
       "file": "trigger-comment-edit.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario eliminado",
+      "name": "Desencadenante: comentario eliminado",
       "file": "trigger-comment-delete.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario fijado",
+      "name": "Desencadenante: comentario anclado",
       "file": "trigger-comment-pin.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario desafijado",
+      "name": "Desencadenante: comentario desanclado",
       "file": "trigger-comment-unpin.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario bloqueado",
+      "name": "Desencadenante: comentario bloqueado",
       "file": "trigger-comment-lock.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario desbloqueado",
+      "name": "Desencadenante: comentario desbloqueado",
       "file": "trigger-comment-unlock.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: umbral de votos",
+      "name": "Desencadenante: umbral de votos",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: umbral de reportes",
+      "name": "Desencadenante: umbral de reportes",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: primer comentario de usuario nuevo",
+      "name": "Desencadenante: primer comentario de nuevo usuario",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario marcado automáticamente como spam",
+      "name": "Desencadenante: comentario marcado automáticamente como spam",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario revisado por moderador",
+      "name": "Desencadenante: comentario revisado por moderador",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario aprobado por moderador",
+      "name": "Desencadenante: comentario aprobado por moderador",
       "file": "trigger-moderator-approved.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: comentario marcado como spam por moderador",
+      "name": "Desencadenante: comentario marcado como spam por moderador",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparador: moderador otorgó insignia",
+      "name": "Desencadenante: moderador otorgó una insignia",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Disparadores diferidos",
+      "name": "Desencadenantes diferidos",
       "file": "trigger-deferred-delay.md",
       "subCat": "Eventos desencadenantes"
     },
     {
       "name": "Referencia de herramientas",
       "file": "tools-overview.md",
-      "subCat": "Llamadas de herramientas permitidas"
+      "subCat": "Llamadas a herramientas permitidas"
     },
     {
       "name": "Prohibir usuario",
       "file": "tool-ban-user.md",
-      "subCat": "Llamadas de herramientas permitidas"
+      "subCat": "Llamadas a herramientas permitidas"
     },
     {
       "name": "Advertir usuario",
       "file": "tool-warn-user.md",
-      "subCat": "Llamadas de herramientas permitidas"
+      "subCat": "Llamadas a herramientas permitidas"
+    },
+    {
+      "name": "Editar comentario",
+      "file": "tool-edit-comment.md",
+      "subCat": "Llamadas a herramientas permitidas"
     },
     {
       "name": "Estados de estatus",
@@ -178,7 +183,7 @@
       "subCat": "Seguridad y supervisión"
     },
     {
-      "name": "Modo de prueba",
+      "name": "Modo de simulación",
       "file": "dry-run-mode.md",
       "subCat": "Seguridad y supervisión"
     },
@@ -225,27 +230,27 @@
     {
       "name": "Historial de ejecuciones",
       "file": "run-history.md",
-      "subCat": "Monitorización y ajuste"
+      "subCat": "Supervisión y ajuste"
     },
     {
-      "name": "Vista de detalle de la ejecución",
+      "name": "Vista detallada de la ejecución",
       "file": "run-detail-view.md",
-      "subCat": "Monitorización y ajuste"
+      "subCat": "Supervisión y ajuste"
     },
     {
       "name": "Página de análisis",
       "file": "analytics-page.md",
-      "subCat": "Monitorización y ajuste"
+      "subCat": "Supervisión y ajuste"
     },
     {
       "name": "Ejecuciones de prueba (repeticiones)",
       "file": "test-runs-replays.md",
-      "subCat": "Monitorización y ajuste"
+      "subCat": "Supervisión y ajuste"
     },
     {
-      "name": "Refinar indicaciones",
+      "name": "Refinar prompts",
       "file": "refining-prompts.md",
-      "subCat": "Monitorización y ajuste"
+      "subCat": "Supervisión y ajuste"
     },
     {
       "name": "Resumen de webhooks",
@@ -253,12 +258,12 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Eventos de webhooks",
+      "name": "Eventos de webhook",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Cargas útiles de webhooks",
+      "name": "Cargas útiles de webhook",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },
@@ -268,7 +273,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Reintentos de webhooks",
+      "name": "Reintentos de webhook",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },

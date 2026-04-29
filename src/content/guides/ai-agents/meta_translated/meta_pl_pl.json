@@ -3,12 +3,12 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Czym są Agenci AI",
+      "name": "Czym są agenci AI",
       "file": "what-are-ai-agents.md",
       "subCat": "Wprowadzenie"
     },
     {
-      "name": "Plany i uprawnienia",
+      "name": "Plany i kwalifikowalność",
       "file": "plans-and-eligibility.md",
       "subCat": "Wprowadzenie"
     },
@@ -38,7 +38,7 @@
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Przypinacz najpopularniejszych komentarzy",
+      "name": "Szablon: Przypinacz najlepszych komentarzy",
       "file": "template-top-comment-pinner.md",
       "subCat": "Tworzenie agentów"
     },
@@ -53,7 +53,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Osobowość i początkowe polecenie",
+      "name": "Osobowość i polecenie początkowe",
       "file": "personality-prompt.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -68,7 +68,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Zakres: filtry adresów URL i lokalizacji",
+      "name": "Zakres: filtry URL i lokalizacji",
       "file": "scope-url-locale.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -98,7 +98,7 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Usunięto przypięcie komentarza",
+      "name": "Wyzwalacz: Odpięto komentarz",
       "file": "trigger-comment-unpin.md",
       "subCat": "Zdarzenia wyzwalające"
     },
@@ -128,17 +128,17 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz automatycznie oznaczony jako spam",
+      "name": "Wyzwalacz: Komentarz automatycznie uznany za spam",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz sprawdzony przez moderatora",
+      "name": "Wyzwalacz: Komentarz przejrzany przez moderatora",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Moderator zatwierdził komentarz",
+      "name": "Wyzwalacz: Komentarz zatwierdzony przez moderatora",
       "file": "trigger-moderator-approved.md",
       "subCat": "Zdarzenia wyzwalające"
     },
@@ -158,7 +158,7 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Referencja narzędzi",
+      "name": "Dokumentacja narzędzi",
       "file": "tools-overview.md",
       "subCat": "Dozwolone wywołania narzędzi"
     },
@@ -173,12 +173,17 @@
       "subCat": "Dozwolone wywołania narzędzi"
     },
     {
+      "name": "Edytuj komentarz",
+      "file": "tool-edit-comment.md",
+      "subCat": "Dozwolone wywołania narzędzi"
+    },
+    {
       "name": "Stany statusu",
       "file": "status-states.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Tryb symulacji (dry-run)",
+      "name": "Tryb testowy",
       "file": "dry-run-mode.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -193,7 +198,7 @@
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Zgodność z art. 17 DSA UE",
+      "name": "Zgodność z artykułem 17 DSA UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -218,34 +223,34 @@
       "subCat": "Budżety i koszty"
     },
     {
-      "name": "Powody odrzuceń",
+      "name": "Powody odrzucenia",
       "file": "drop-reasons.md",
       "subCat": "Budżety i koszty"
     },
     {
       "name": "Historia uruchomień",
       "file": "run-history.md",
-      "subCat": "Monitorowanie i strojenie"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Szczegóły uruchomienia",
+      "name": "Widok szczegółów uruchomienia",
       "file": "run-detail-view.md",
-      "subCat": "Monitorowanie i strojenie"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Panel analityczny",
+      "name": "Strona z analizami",
       "file": "analytics-page.md",
-      "subCat": "Monitorowanie i strojenie"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
       "name": "Uruchomienia testowe (powtórki)",
       "file": "test-runs-replays.md",
-      "subCat": "Monitorowanie i strojenie"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
       "name": "Udoskonalanie poleceń",
       "file": "refining-prompts.md",
-      "subCat": "Monitorowanie i strojenie"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
       "name": "Przegląd webhooków",

@@ -20,32 +20,32 @@
     {
       "name": "Criando um Agente",
       "file": "creating-an-agent.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
       "name": "Modelos Iniciais",
       "file": "starter-templates.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
       "name": "Modelo: Moderador",
       "file": "template-moderator.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Saudador de Boas-Vindas",
+      "name": "Modelo: Agente de Boas-vindas",
       "file": "template-welcome-greeter.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
       "name": "Modelo: Fixador de Comentários Principais",
       "file": "template-top-comment-pinner.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
       "name": "Modelo: Resumidor de Tópicos",
       "file": "template-thread-summarizer.md",
-      "subCat": "Criação de Agentes"
+      "subCat": "Criando Agentes"
     },
     {
       "name": "Escolhendo um Modelo",
@@ -73,89 +73,89 @@
       "subCat": "Personalidade e Contexto"
     },
     {
-      "name": "Visão Geral dos Eventos de Gatilho",
+      "name": "Visão Geral de Eventos Acionadores",
       "file": "triggers-overview.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Adicionado",
       "file": "trigger-comment-add.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Editado",
       "file": "trigger-comment-edit.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Excluído",
       "file": "trigger-comment-delete.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Fixado",
       "file": "trigger-comment-pin.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Desfixado",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Bloqueado",
       "file": "trigger-comment-lock.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Desbloqueado",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Limite de Votos",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Limite de Sinalizações",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Primeiro Comentário de Novo Usuário",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
-      "name": "Gatilho: Comentário Marcado como Spam Automaticamente",
+      "name": "Gatilho: Comentário Marcado Automaticamente como Spam",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
-      "name": "Gatilho: Comentário Revisado por Moderador",
+      "name": "Gatilho: Comentário Revisado pelo Moderador",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilho: Comentário Aprovado pelo Moderador",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
-      "name": "Gatilho: Moderador Marcou como Spam",
+      "name": "Gatilho: Comentário Marcado como Spam pelo Moderador",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
-      "name": "Gatilho: Moderador Concedeu Emblema",
+      "name": "Gatilho: Moderador Concedeu Insígnia",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Gatilhos Diferidos",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Eventos de Gatilho"
+      "subCat": "Eventos Acionadores"
     },
     {
       "name": "Referência de Ferramentas",
@@ -163,13 +163,18 @@
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
-      "name": "Banir usuário",
+      "name": "Banir Usuário",
       "file": "tool-ban-user.md",
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
-      "name": "Avisar usuário",
+      "name": "Avisar Usuário",
       "file": "tool-warn-user.md",
+      "subCat": "Chamadas de Ferramentas Permitidas"
+    },
+    {
+      "name": "Editar Comentário",
+      "file": "tool-edit-comment.md",
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
@@ -213,12 +218,12 @@
       "subCat": "Orçamentos e Custos"
     },
     {
-      "name": "Modelo de Custos",
+      "name": "Modelo de Custo",
       "file": "cost-model.md",
       "subCat": "Orçamentos e Custos"
     },
     {
-      "name": "Motivos de Rejeição",
+      "name": "Motivos de Descarte",
       "file": "drop-reasons.md",
       "subCat": "Orçamentos e Custos"
     },
@@ -228,7 +233,7 @@
       "subCat": "Monitoramento e Ajustes"
     },
     {
-      "name": "Visualização de Detalhes da Execução",
+      "name": "Visualização de Detalhe da Execução",
       "file": "run-detail-view.md",
       "subCat": "Monitoramento e Ajustes"
     },
@@ -238,12 +243,12 @@
       "subCat": "Monitoramento e Ajustes"
     },
     {
-      "name": "Execuções de Teste (Repetições)",
+      "name": "Execuções de Teste (Replays)",
       "file": "test-runs-replays.md",
       "subCat": "Monitoramento e Ajustes"
     },
     {
-      "name": "Refinando Prompts",
+      "name": "Aprimorando Prompts",
       "file": "refining-prompts.md",
       "subCat": "Monitoramento e Ajustes"
     },
@@ -273,7 +278,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Logs de Entrega de Webhook",
+      "name": "Registros de Entrega de Webhook",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

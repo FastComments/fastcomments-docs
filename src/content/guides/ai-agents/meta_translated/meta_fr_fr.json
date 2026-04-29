@@ -1,9 +1,9 @@
 {
-  "name": "Agents d'IA",
+  "name": "Agents IA",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Que sont les agents d'IA",
+      "name": "Que sont les agents IA ?",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduction"
     },
@@ -33,7 +33,7 @@
       "subCat": "Création d'agents"
     },
     {
-      "name": "Modèle : Message de bienvenue",
+      "name": "Modèle : Accueil",
       "file": "template-welcome-greeter.md",
       "subCat": "Création d'agents"
     },
@@ -43,12 +43,12 @@
       "subCat": "Création d'agents"
     },
     {
-      "name": "Modèle : Résumeur de discussion",
+      "name": "Modèle : Résumé de fil",
       "file": "template-thread-summarizer.md",
       "subCat": "Création d'agents"
     },
     {
-      "name": "Choix d'un modèle",
+      "name": "Choisir un modèle",
       "file": "choosing-a-model.md",
       "subCat": "Personnalité et contexte"
     },
@@ -78,77 +78,77 @@
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire ajouté",
+      "name": "Déclencheur : commentaire ajouté",
       "file": "trigger-comment-add.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire modifié",
+      "name": "Déclencheur : commentaire modifié",
       "file": "trigger-comment-edit.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire supprimé",
+      "name": "Déclencheur : commentaire supprimé",
       "file": "trigger-comment-delete.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire épinglé",
+      "name": "Déclencheur : commentaire épinglé",
       "file": "trigger-comment-pin.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire désépinglé",
+      "name": "Déclencheur : commentaire désépinglé",
       "file": "trigger-comment-unpin.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire verrouillé",
+      "name": "Déclencheur : commentaire verrouillé",
       "file": "trigger-comment-lock.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire déverrouillé",
+      "name": "Déclencheur : commentaire déverrouillé",
       "file": "trigger-comment-unlock.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Seuil de votes",
+      "name": "Déclencheur : seuil de votes",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Seuil de signalements",
+      "name": "Déclencheur : seuil de signalements",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Premier commentaire d'un nouvel utilisateur",
+      "name": "Déclencheur : premier commentaire d'un nouvel utilisateur",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire automatiquement marqué comme spam",
+      "name": "Déclencheur : commentaire automatiquement identifié comme spam",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire examiné par un modérateur",
+      "name": "Déclencheur : commentaire examiné par un modérateur",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire approuvé par un modérateur",
+      "name": "Déclencheur : commentaire approuvé par un modérateur",
       "file": "trigger-moderator-approved.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Commentaire marqué comme spam par un modérateur",
+      "name": "Déclencheur : commentaire marqué comme spam par un modérateur",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : Badge attribué par un modérateur",
+      "name": "Déclencheur : badge attribué par un modérateur",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Événements déclencheurs"
     },
@@ -163,13 +163,18 @@
       "subCat": "Appels d'outils autorisés"
     },
     {
-      "name": "Bannir l'utilisateur",
+      "name": "Bannir un utilisateur",
       "file": "tool-ban-user.md",
       "subCat": "Appels d'outils autorisés"
     },
     {
-      "name": "Avertir l'utilisateur",
+      "name": "Avertir un utilisateur",
       "file": "tool-warn-user.md",
+      "subCat": "Appels d'outils autorisés"
+    },
+    {
+      "name": "Modifier un commentaire",
+      "file": "tool-edit-comment.md",
       "subCat": "Appels d'outils autorisés"
     },
     {
@@ -208,22 +213,22 @@
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Alertes budgétaires",
+      "name": "Alertes de budget",
       "file": "budget-alerts.md",
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Modèle de coûts",
+      "name": "Modèle de coût",
       "file": "cost-model.md",
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Raisons de rejet",
+      "name": "Motifs d'abandon",
       "file": "drop-reasons.md",
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Historique des exécutions",
+      "name": "Historique d'exécution",
       "file": "run-history.md",
       "subCat": "Surveillance et optimisation"
     },
@@ -243,7 +248,7 @@
       "subCat": "Surveillance et optimisation"
     },
     {
-      "name": "Affinement des invites",
+      "name": "Affiner les invites",
       "file": "refining-prompts.md",
       "subCat": "Surveillance et optimisation"
     },

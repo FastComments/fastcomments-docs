@@ -18,7 +18,7 @@
       "subCat": "Einführung"
     },
     {
-      "name": "Agent erstellen",
+      "name": "Erstellen eines Agenten",
       "file": "creating-an-agent.md",
       "subCat": "Agenten erstellen"
     },
@@ -33,27 +33,27 @@
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Begrüßungsagent",
+      "name": "Vorlage: Begrüßungsassistent",
       "file": "template-welcome-greeter.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Top-Kommentar anpinnen",
+      "name": "Vorlage: Top-Kommentar anheften",
       "file": "template-top-comment-pinner.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Thread-Zusammenfassung",
+      "name": "Vorlage: Thread-Zusammenfasser",
       "file": "template-thread-summarizer.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Modellwahl",
+      "name": "Auswahl eines Modells",
       "file": "choosing-a-model.md",
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Persönlichkeit und Anfangsprompt",
+      "name": "Persönlichkeit und die anfängliche Eingabeaufforderung",
       "file": "personality-prompt.md",
       "subCat": "Persönlichkeit und Kontext"
     },
@@ -68,12 +68,12 @@
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Bereich: URL- und Lokalisierungsfilter",
+      "name": "Geltungsbereich: URL- und Gebietsschema-Filter",
       "file": "scope-url-locale.md",
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Übersicht zu Auslöserereignissen",
+      "name": "Übersicht zu Auslöser-Ereignissen",
       "file": "triggers-overview.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -98,7 +98,7 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Kommentar gelöst (Entpinnen)",
+      "name": "Auslöser: Kommentar entpinnt",
       "file": "trigger-comment-unpin.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -113,7 +113,7 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Abstimmungs-Schwellenwert",
+      "name": "Auslöser: Stimmen-Schwellenwert",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -123,7 +123,7 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Erstkommentar eines neuen Nutzers",
+      "name": "Auslöser: Erster Kommentar eines neuen Nutzers",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -133,17 +133,17 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Moderator hat Kommentar überprüft",
+      "name": "Auslöser: Von einem Moderator überprüfter Kommentar",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Moderator hat Kommentar genehmigt",
+      "name": "Auslöser: Kommentar vom Moderator genehmigt",
       "file": "trigger-moderator-approved.md",
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Moderator hat Kommentar als Spam markiert",
+      "name": "Auslöser: Vom Moderator als Spam markiert",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -158,19 +158,24 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Werkzeugreferenz",
+      "name": "Tools-Referenz",
       "file": "tools-overview.md",
-      "subCat": "Erlaubte Werkzeugaufrufe"
+      "subCat": "Zugelassene Tool-Aufrufe"
     },
     {
-      "name": "Benutzer sperren",
+      "name": "Nutzer sperren",
       "file": "tool-ban-user.md",
-      "subCat": "Erlaubte Werkzeugaufrufe"
+      "subCat": "Zugelassene Tool-Aufrufe"
     },
     {
-      "name": "Benutzer warnen",
+      "name": "Nutzer verwarnen",
       "file": "tool-warn-user.md",
-      "subCat": "Erlaubte Werkzeugaufrufe"
+      "subCat": "Zugelassene Tool-Aufrufe"
+    },
+    {
+      "name": "Kommentar bearbeiten",
+      "file": "tool-edit-comment.md",
+      "subCat": "Zugelassene Tool-Aufrufe"
     },
     {
       "name": "Statuszustände",
@@ -178,7 +183,7 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Trockenlauf-Modus",
+      "name": "Trockenlaufmodus",
       "file": "dry-run-mode.md",
       "subCat": "Sicherheit und Aufsicht"
     },
@@ -193,7 +198,7 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Konformität mit Artikel 17 der EU-DSA",
+      "name": "Einhaltung von Artikel 17 der EU-DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sicherheit und Aufsicht"
     },
@@ -218,7 +223,7 @@
       "subCat": "Budgets und Kosten"
     },
     {
-      "name": "Gründe für Abbrüche",
+      "name": "Abbruchgründe",
       "file": "drop-reasons.md",
       "subCat": "Budgets und Kosten"
     },
@@ -228,12 +233,12 @@
       "subCat": "Überwachung und Feinabstimmung"
     },
     {
-      "name": "Ausführungsdetailansicht",
+      "name": "Detailansicht der Ausführung",
       "file": "run-detail-view.md",
       "subCat": "Überwachung und Feinabstimmung"
     },
     {
-      "name": "Analyse-Seite",
+      "name": "Analytics-Seite",
       "file": "analytics-page.md",
       "subCat": "Überwachung und Feinabstimmung"
     },

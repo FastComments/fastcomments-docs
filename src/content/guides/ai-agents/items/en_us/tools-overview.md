@@ -18,6 +18,10 @@ Every action the agent takes is recorded with a short justification (1-2 sentenc
 
 Lets the agent post a comment as itself. The comment is shown publicly under the agent's display name. Used by greeter and summarizer agents. Reversible - any moderator can remove a bad comment. Usually allowed without approval; gate it if your community needs every public-facing message to be human-reviewed.
 
+#### Editing a comment
+
+Lets the agent rewrite the text of an in-scope comment. The original text is preserved in the comment's audit log. Reserve for narrow cases - redacting PII a user leaked, or amending the agent's own prior reply. Not for rewriting opinions or softening tone. **Strongly consider gating behind approval.** See [Edit comment](#tool-edit-comment) for the full page.
+
 #### Voting on comments
 
 Lets the agent vote up or down on a comment. The vote counts toward the comment's vote total like any other vote. Most communities prefer not to have bots voting; not enabled in any starter template. If you do allow it, voting is reversible.
