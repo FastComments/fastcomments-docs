@@ -1,40 +1,33 @@
-**Template ID:** `tos_enforcer`
+**ID predloška:** `tos_enforcer`
 
-The Moderator template is the recommended starting point if your goal is reducing manual moderation load. It reviews new and flagged comments and applies your community rules.
+Predložak Moderator je preporučena polazna točka ako vam je cilj smanjiti opterećenje ručnog moderiranja. Pregledava nove i označene komentare te primjenjuje pravila vaše zajednice.
 
-### Ugrađeni početni prompt
-
-[inline-code-attrs-start title = 'Početni prompt predloška moderatora'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a terms-of-service enforcement agent. Review each new comment against the community guidelines. Mark clear spam or policy violations. Issue warnings for first-offense borderline content. Escalate ban decisions only for repeat or severe violations. If a comment is clearly within the rules, approve it so it becomes visible (relevant for pre-moderation tenants). Stay out of political or subjective debates, focus on the rules as written.
-[inline-code-end]
-
-You will almost always want to **augment this prompt** with concrete examples of what your site does and does not allow. The platform's own escalation policy (warn before ban, search memory before banning) is already baked into the system prompt the agent receives, so you do not need to repeat it.
+Gotovo uvijek ćete htjeti **nadograditi ugrađeni prompt** konkretnim primjerima što vaš sajt dopušta, a što ne. Sama platforma ima ugrađenu politiku eskalacije (upozoriti prije zabrane, pretražiti memoriju prije zabrane) koja je već uključena u sistemski prompt koji agent prima, tako da je ne morate ponavljati.
 
 ### Okidači
 
-- **New comment posted** (`COMMENT_ADD`) - the agent looks at every new comment.
-- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - the agent re-evaluates a comment that other users have flagged.
+- **New comment posted** (`COMMENT_ADD`) - agent pregleda svaki novi komentar.
+- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, zadani prag: 3) - agent ponovo evaluira komentar koji su drugi korisnici prijavili.
 
 ### Dozvoljeni alati
 
-- [`mark_comment_approved`](#tools-overview) - useful for pre-moderation tenants where the agent releases clean comments and hides the rest.
+- [`mark_comment_approved`](#tools-overview) - korisno za zakupce koji koriste pre-moderaciju gdje agent objavljuje čiste komentare i skriva ostale.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-It cannot post comments, vote, pin, lock, award badges, or send email - the prompt is intentionally narrow.
+Ne može objavljivati komentare, glasovati, prikvačiti, zaključavati, dodjeljivati značke ili slati e-poštu - prompt je namjerno ograničen.
 
-### Preporučeni dodaci prije objave
+### Preporučeni dodaci prije puštanja uživo
 
-- **Set [Community Guidelines](#community-guidelines).** A few sentences of written policy is enough; the agent applies it on every run.
-- **Gate `ban_user` behind [approval](#approval-workflow).** This is on by default in the EU region (see [EU DSA Article 17 Compliance](#eu-dsa-compliance)) and recommended everywhere.
-- **Consider also gating `mark_comment_spam` behind approval** if you have low-volume but high-stakes content.
-- **Gate `mark_comment_approved` behind approval if you run pre-moderation.** Approving a bad comment puts it in front of readers; gate it until the agent has earned trust through dry-run.
-- **Tick "Include commenter's trust factor, account age, ban history, and recent comments"** in [Context Options](#context-options). The model will warn far less aggressively when it can see that someone is a long-time good-faith user.
+- **Postavite [Smjernice zajednice](#community-guidelines).** Dovoljno je nekoliko rečenica pisane politike; agent ih primjenjuje pri svakom izvršavanju.
+- **Zahtijevajte odobrenje za `ban_user` putem [odobrenja](#approval-workflow).** Ovo je prema zadanim postavkama uključeno u EU regiji (vidi [Usklađenost s člankom 17. EU DSA](#eu-dsa-compliance)) i preporučuje se svugdje.
+- **Razmotrite i zahtijevanje odobrenja za `mark_comment_spam`** ako imate malo prometa, ali visokorizičan sadržaj.
+- **Zahtijevajte odobrenje za `mark_comment_approved` ako koristite pre-moderaciju.** Odobravanje lošeg komentara izlaže ga čitateljima; zahtijevajte odobrenje dok agent ne stekne povjerenje kroz probni način.
+- **Označite "Uključi faktor povjerenja komentatora, starost računa, povijest zabrana i nedavne komentare"** u [Opcijama konteksta](#context-options). Model će upozoravati puno manje agresivno kad može vidjeti da je netko dugogodišnji korisnik u dobroj vjeri.
 
-### Preporučeni prozor za dry-run
+### Preporučeni probni period
 
-Run this template in [dry-run](#dry-run-mode) for at least a week against your real traffic before flipping to Enabled. Use [Test Runs (Replays)](#test-runs-replays) to also preview against the previous 30 days.
+Pokrenite ovaj predložak u [probnom načinu](#dry-run-mode) najmanje tjedan dana na stvarnom prometu prije nego što ga uključite. Upotrijebite [Testna pokretanja (Replays)](#test-runs-replays) da biste također pregledali prethodnih 30 dana.
 
 ---

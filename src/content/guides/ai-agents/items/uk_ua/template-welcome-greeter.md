@@ -1,32 +1,27 @@
-**Template ID:** `welcome_greeter`
+**Ідентифікатор шаблону:** `welcome_greeter`
 
-The Welcome Greeter replies warmly to first-time commenters. It is the lowest-risk template (no destructive tools) and a good first agent to ship live.
+Welcome Greeter ввічливо відповідає тим, хто коментує вперше. Це шаблон із найменшим рівнем ризику (без руйнівних інструментів) і хороший перший агент для випуску в реальний режим.
 
-### Built-in initial prompt
+### Тригери
 
-[inline-code-attrs-start title = 'Початковий запит шаблону Welcome Greeter'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
+- **Новий користувач публікує свій перший коментар на цьому сайті** (`NEW_USER_FIRST_COMMENT`).
 
-### Triggers
+Ця подія спрацьовує рівно один раз для кожного користувача, тому агент не може зациклитися. Див. [Тригер: Перший коментар нового користувача](#trigger-new-user-first-comment).
 
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
-
-This event fires exactly once per user, so the agent cannot loop. See [Trigger: New User First Comment](#trigger-new-user-first-comment).
-
-### Allowed tools
+### Дозволені інструменти
 
 - [`write_comment`](#tools-overview)
 
-That is the only tool - the agent literally cannot moderate, vote, ban, or DM.
+Це єдиний інструмент — агент буквально не може модерувати, голосувати, блокувати або надсилати приватні повідомлення (DM).
 
-### Recommended additions before going live
+### Рекомендовані доповнення перед запуском у реальному режимі
 
-- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.
-- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.
-- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [Scope: URL and Locale Filters](#scope-url-locale).
+- **Встановіть Display name** на щось привітне — "Community Bot", талісман вашого сайту або назва бренду. Display name бачать читачі поруч із вітальною відповіддю.
+- **Відмітьте "Include page title, subtitle, description, and meta tags"** у [Context Options](#context-options). Відповіді привітальника помітно покращуються, коли він може посилатися на те, про що насправді сторінка.
+- **Розгляньте обмеження локалі**, якщо ви працюєте кількома мовами. Вітальна відповідь неправильною мовою виглядає більш дискомфортно, ніж пропущена відповідь. Див. [Обсяг: Фільтри URL і локалі](#scope-url-locale).
 
-### Why no approvals are needed
+### Чому погодження не потрібні
 
-The agent only writes new comments and only on a one-shot trigger. Worst case: an awkward greeting. There is no destructive action to gate. Most operators run this one with no approvals at all once dry-run looks clean.
+Агент лише створює нові коментарі й лише за одноразового триґера. У гіршому разі — незграбне привітання. Немає руйнівної дії, яку потрібно б обмежувати. Більшість операторів запускають цей шаблон без будь-яких погоджень, щойно тестовий прогін виглядає чистим.
+
+---

@@ -1,38 +1,28 @@
----
-**Şablon Kimliği:** `top_comment_pinner`
+**Template ID:** `top_comment_pinner`
 
-Top Comment Pinner, oy eşiğini aşan üst düzey yorumları izler ve onları sabitler - aynı konuda daha önce sabitlenmiş olanı değiştirir.
+The Top Comment Pinner, oy eşiğini geçen en üst düzey yorumları izler ve bunları sabitler - aynı dizide daha önce sabitlenmiş olanın yerini alır.
 
-### Yerleşik başlangıç istemi
+Yerleşik istem, ajana yanıtları atlamasını (sabitleme dizilerde çalıştığından, bir yanıta sabitlemek nadiren yararlıdır) ve tanıtıcı içeriği filtrelemesini söyler (ajanın popüler bağlantı-spam'ini desteklememesi için).
 
-[inline-code-attrs-start title = 'Top Comment Pinner Şablonu Başlangıç İstemi'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You pin the best top-level comments on a thread. When a comment reaches the vote threshold, pin it if the content is substantive and non-promotional. Unpin any previously pinned comment on the same thread first. Do not pin replies, only top-level comments.
-[inline-code-end]
+### Triggers
 
-"Yanıtları sabitleme" talimatı önemlidir: sabitleme işlemi konu başlıklarında çalışır, bu yüzden bir yanıtı sabitlemek nadiren kullanışlıdır. "Reklam amaçlı olmayan" filtresi, ajanın popüler link-spam bir yorumu güçlendirmesini engeller.
+- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
 
-### Tetikleyiciler
+Tetikleyici, yorumun net oyları (`up - down`) yapılandırılmış eşiğe ulaştığında çalışır. Düzenleme formundaki sayıyı, dizilerinizin ne kadar aktif olduğuna göre ayarlayın - 10, orta düzeyde aktif siteler için makul bir varsayılandır.
 
-- **Bir yorum oy eşiğini aşar** (`COMMENT_VOTE_THRESHOLD`, varsayılan oy eşiği: 10).
-
-Tetik, yorumun net oyları (`up - down`) yapılandırılmış eşiğe ulaştığında tetiklenir. Bu sayıyı düzenleme formunda konu başlıklarınızın ne kadar aktif olduğuna göre ayarlayın - orta düzeyde aktif siteler için 10 makul bir varsayılandır.
-
-### İzin verilen araçlar
+### Allowed tools
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-Sabitleme yıkıcı değildir - anında geri alınabilir - bu yüzden bu şablon genellikle onay gerektirmeden çalıştırılır.
+Sabitleme yıkıcı değildir - anında geri alınabilir - bu yüzden bu şablon genellikle onay gerektirmeden çalışır.
 
-### Canlıya almadan önce önerilen eklemeler
+### Recommended additions before going live
 
-- **[Context Options](#context-options) içinde "Include parent comment and prior replies in the same thread" seçeneğini işaretleyin.** Konu bağlamı olmadan ajan, zaten sabitlenmiş bir yorumu açıp açamayacağını güvenilir şekilde söyleyemez.
-- **Oy eşiğini sitenize göre ayarlayın.** Yoğun konularda 10 çok sık olabilir; sakin konularda 10 hiç olmayabilir.
-- **Sadece belirli site bölümlerinde sabitlenmiş yorum istiyorsanız URL'e göre kapsam belirlemeyi düşünün** - örneğin haber konuları için, duyuru konuları için değil.
+- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). Diziyi bağlamı olmadan ajan, zaten sabitlenmiş bir yorum olup olmadığını güvenilir şekilde söyleyemez.
+- **Adjust the vote threshold** sitenize göre ayarlayın. Yoğun dizilerde 10 çok sık gerçekleşir; sessiz dizilerde 10 hiç olmayabilir.
+- **Consider scoping by URL** yalnızca sitenizin belirli bölümlerinde sabitlenmiş yorumlar istiyorsanız - örneğin haber dizileri, fakat duyuru dizileri değil.
 
-### Çift sabitleme hakkında not
+### Note on duplicate pinning
 
-Ajanın istemi önce sabitlemeyi kaldırmasını, sonra sabitlemesini söyler, ancak model bu adımı kaçırırsa platform kendi başına konu başlığı başına tek bir sabitliğe izin veren bir kural uygulamaz (birden fazla olabilir). Sitenizde çift sabitleme sorun oluşturuyorsa, `pin_comment`'i onay sürecine bağlayın ve her birini gözden geçirin - veya daha sıkı bir istem yazın.
-
----
+Ajana öncelikle sabitlemeyi kaldırması gerektiği öğütlenir, fakat model o adımı kaçırırsa platform kendisi dizide bir tane-sabitli-kuralını uygulamaz (birden fazla olabilir). Eğer sitenizde yinelenen sabitleme bir sorun teşkil ediyorsa, `pin_comment`'i onay arkasına alın ve her birini inceleyin - veya daha sıkı bir istem yazın.

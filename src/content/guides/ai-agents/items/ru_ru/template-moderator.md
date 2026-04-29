@@ -1,40 +1,34 @@
-**Template ID:** `tos_enforcer`
+---
+**Идентификатор шаблона:** `tos_enforcer`
 
-Шаблон модератора — рекомендуемая отправная точка, если ваша цель — уменьшить ручную модерацию. Он проверяет новые и отмеченные флаги комментарии и применяет правила вашего сообщества.
+Шаблон Moderator — рекомендованная отправная точка, если ваша цель — снизить ручную модерацию. Он проверяет новые и отмеченные флаги комментарии и применяет правила вашего сообщества.
 
-### Встроенный начальный запрос
+Вы почти всегда захотите **дополнить встроенный prompt** конкретными примерами того, что на вашем сайте разрешено и что нет. Политика эскалации платформы (предупреждение перед баном, поиск в памяти перед блокировкой) уже включена в системный prompt, который получает агент, поэтому её повторять не нужно.
 
-[inline-code-attrs-start title = 'Начальный запрос шаблона модератора'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a terms-of-service enforcement agent. Review each new comment against the community guidelines. Mark clear spam or policy violations. Issue warnings for first-offense borderline content. Escalate ban decisions only for repeat or severe violations. If a comment is clearly within the rules, approve it so it becomes visible (relevant for pre-moderation tenants). Stay out of political or subjective debates, focus on the rules as written.
-[inline-code-end]
+### Triggers
 
-Вы почти всегда захотите **дополнить этот запрос** конкретными примерами того, что на вашем сайте разрешено и что нет. Собственная политика эскалации платформы (предупреждать перед баном, искать в памяти перед блокировкой) уже учтена в системном запросе, который получает агент, поэтому повторять её не нужно.
+- **New comment posted** (`COMMENT_ADD`) - агент просматривает каждый новый комментарий.
+- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - агент повторно оценивает комментарий, который отметили другие пользователи.
 
-### Триггеры
+### Allowed tools
 
-- **New comment posted** (`COMMENT_ADD`) - агент проверяет каждый новый комментарий.
-- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - агент повторно оценивает комментарий, который другие пользователи пометили.
-
-### Разрешённые инструменты
-
-- [`mark_comment_approved`](#tools-overview) - полезно для тенантов с предмодерацией, где агент публикует чистые комментарии и скрывает остальные.
+- [`mark_comment_approved`](#tools-overview) - полезно для арендаторов с премодерацией, когда агент публикует чистые комментарии и скрывает остальные.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-Он не может публиковать комментарии, голосовать, прикреплять, блокировать, присваивать значки или отправлять электронную почту — запрос намеренно ограничен.
+Он не может публиковать комментарии, голосовать, закреплять, блокировать, присуждать бейджи или отправлять электронную почту — prompt намеренно ограничен.
 
-### Рекомендуемые дополнения перед запуском
+### Recommended additions before going live
 
-- **Set [Community Guidelines](#community-guidelines).** Нескольких предложений письменной политики достаточно; агент применяет её при каждом запуске.
-- **Gate `ban_user` behind [approval](#approval-workflow).** Эта опция включена по умолчанию в регионе ЕС (см. [EU DSA Article 17 Compliance](#eu-dsa-compliance)) и рекомендуется везде.
-- **Consider also gating `mark_comment_spam` behind approval** если у вас низкий объём, но высокие ставки контента.
-- **Gate `mark_comment_approved` behind approval if you run pre-moderation.** Одобрение плохого комментария ставит его перед читателями; ограничьте эту возможность, пока агент не заслужит доверие в режиме "сухого запуска".
-- **Tick "Include commenter's trust factor, account age, ban history, and recent comments"** в [Context Options](#context-options). Модель будет реже давать излишние предупреждения, когда сможет видеть, что пользователь — давний добросовестный участник.
+- **Установите [Community Guidelines](#community-guidelines).** Несколько предложений письменной политики достаточно; агент применяет её при каждом запуске.
+- **Ограничьте `ban_user` через [approval](#approval-workflow).** Это включено по умолчанию в регионе ЕС (см. [EU DSA Article 17 Compliance](#eu-dsa-compliance)) и рекомендуется повсюду.
+- **Рассмотрите также ограничение `mark_comment_spam` через approval**, если у вас малый объём, но высокие риски.
+- **Ограничьте `mark_comment_approved` через approval, если вы используете премодерацию.** Одобрение плохого комментария выводит его перед читателями; ограничьте эту возможность до тех пор, пока агент не заслужит доверие в режиме dry-run.
+- **Отметьте "Включить коэффициент доверия комментатора, возраст аккаунта, историю блокировок и последние комментарии"** в [Context Options](#context-options). Модель будет реже выдавать слишком резкие предупреждения, когда увидит, что пользователь действует добросовестно долгое время.
 
-### Рекомендуемое окно для dry-run
+### Recommended dry-run window
 
-Запускайте этот шаблон в режиме [dry-run](#dry-run-mode) как минимум в течение недели на реальном трафике перед включением. Используйте [Test Runs (Replays)](#test-runs-replays), чтобы также просмотреть результаты за предыдущие 30 дней.
+Запустите этот шаблон в [dry-run](#dry-run-mode) минимум на неделю против вашего реального трафика, прежде чем переключить в Enabled. Используйте [Test Runs (Replays)](#test-runs-replays), чтобы также просмотреть результаты за предыдущие 30 дней.
 
 ---

@@ -1,35 +1,28 @@
 **Template ID:** `top_comment_pinner`
 
-The Top Comment Pinner watches for top-level comments that cross a vote threshold and pins them - replacing whatever was pinned previously on the same thread.
+Шаблон Top Comment Pinner отслеживает верхнеуровневые комментарии, которые превышают порог голосов, и закрепляет их — заменяя любое ранее закреплённое сообщение в той же ветке.
 
-### Built-in initial prompt
+Встроенная подсказка инструктирует агента пропускать ответы (закрепление работает на ветках, поэтому закреплять ответ редко бывает полезно) и фильтровать рекламный контент (чтобы агент не продвигал популярный спам со ссылками).
 
-[inline-code-attrs-start title = 'Начальный промпт шаблона закрепления лучшего комментария'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Вы закрепляете лучшие комментарии верхнего уровня в треде. Когда комментарий достигает порога голосов, закрепляйте его, если содержание содержательное и не носит рекламного характера. Сначала открепляйте любой ранее закреплённый комментарий в том же треде. Не закрепляйте ответы, только комментарии верхнего уровня.
-[inline-code-end]
+### Триггеры
 
-The "do not pin replies" instruction matters: pinning works on threads, so pinning a reply is rarely useful. The "non-promotional" filter keeps the agent from boosting a popular link-spam comment.
+- **Комментарий достигает порога голосов** (`COMMENT_VOTE_THRESHOLD`, порог по умолчанию: 10).
 
-### Triggers
+Триггер срабатывает, когда чистые голоса комментария (`up - down`) достигают настроенного порога. Настройте это число в форме редактирования в зависимости от активности ваших веток — 10 является разумным значением по умолчанию для умеренно активных сайтов.
 
-- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
-
-The trigger fires when the comment's net votes (`up - down`) reaches the configured threshold. Tune the number on the edit form based on how active your threads are - 10 is a sensible default for moderately active sites.
-
-### Allowed tools
+### Разрешённые инструменты
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-Pinning is non-destructive - it can be reversed instantly - so this template usually runs without approvals.
+Закрепление не разрушительно — его можно мгновенно отменить — поэтому этот шаблон обычно работает без одобрений.
 
-### Recommended additions before going live
+### Рекомендуемые дополнения перед запуском
 
-- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). Without thread context the agent cannot reliably tell if there is already a pinned comment to unpin.
-- **Adjust the vote threshold** to your site. On busy threads 10 happens too often; on quiet threads 10 may never happen.
-- **Consider scoping by URL** if you only want pinned comments on certain sections of your site - news threads, say, but not announcement threads.
+- **Отметьте "Include parent comment and prior replies in the same thread"** в [Параметры контекста](#context-options). Без контекста ветки агент не сможет надёжно определить, есть ли уже закреплённый комментарий для открепления.
+- **Отрегулируйте порог голосов** под ваш сайт. На загруженных ветках 10 случается слишком часто; в спокойных ветках 10 может никогда не наступить.
+- **Рассмотрите возможность ограничения по URL**, если вы хотите закреплять комментарии только в определённых разделах сайта — например, в новостных ветках, но не в ветках объявлений.
 
-### Note on duplicate pinning
+### Примечание о дублирующемся закреплении
 
-The agent's prompt instructs it to unpin first before pinning, but if the model misses that step the platform itself does not enforce a one-pinned-per-thread rule (you can have multiple). If duplicate pinning is a problem on your site, gate `pin_comment` behind approval and review each one - or write a tighter prompt.
+В подсказке агенту указано сначала откреплять, а затем закреплять, но если модель пропустит этот шаг, платформа сама по себе не принуждает правило одного закрепления на ветку (можно иметь несколько). Если дублирующее закрепление является проблемой на вашем сайте, поместите `pin_comment` за требованием одобрения и просматривайте каждое — или составьте более строгую подсказку.

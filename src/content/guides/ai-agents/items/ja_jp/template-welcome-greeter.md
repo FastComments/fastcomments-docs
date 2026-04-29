@@ -1,34 +1,28 @@
-**Template ID:** `welcome_greeter`
+---
+**テンプレート ID:** `welcome_greeter`
 
-The Welcome Greeter replies warmly to first-time commenters. It is the lowest-risk template (no destructive tools) and a good first agent to ship live.
+Welcome Greeter は初めてコメントするユーザーに温かく返信します。破壊的なツールがない最もリスクの低いテンプレートであり、本番に出す最初のエージェントとして適しています。
 
-### Built-in initial prompt
+### トリガー
 
-[inline-code-attrs-start title = 'Welcome Greeter テンプレートの初期プロンプト'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
+- **新しいユーザーがこのサイトに最初のコメントを投稿したとき** (`NEW_USER_FIRST_COMMENT`).
 
-### Triggers
+このイベントはユーザーごとに正確に一度だけ発生するため、エージェントはループできません。詳しくは [トリガー: 新しいユーザーの最初のコメント](#trigger-new-user-first-comment) を参照してください。
 
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
-
-This event fires exactly once per user, so the agent cannot loop. See [トリガー: 新規ユーザーの最初のコメント](#trigger-new-user-first-comment).
-
-### Allowed tools
+### 使用可能なツール
 
 - [`write_comment`](#tools-overview)
 
-That is the only tool - the agent literally cannot moderate, vote, ban, or DM.
+それが唯一のツールです - エージェントは実際にモデレート、投票、禁止、またはDMを行うことはできません。
 
-### Recommended additions before going live
+### 本番公開前に推奨される追加設定
 
-- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.
-- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.
-- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [スコープ: URL とロケールフィルター](#scope-url-locale).
+- **表示名を設定**して、人を招くような名前にしてください — "Community Bot"、サイトのマスコット、またはブランド名など。表示名は読者が歓迎の返信に表示される名前です。
+- **[コンテキストオプション](#context-options) で「ページタイトル、サブタイトル、説明、およびメタタグを含める」をチェックしてください。** ページの内容を参照できると、グリーターの返信が明らかに良くなります。
+- **ロケール制限を検討してください**（複数言語で運営している場合）。間違った言語での歓迎返信は、返信がなかったことよりも違和感が大きくなります。詳しくは [スコープ: URL とロケールフィルター](#scope-url-locale) を参照してください。
 
-### Why no approvals are needed
+### 承認が不要な理由
 
-The agent only writes new comments and only on a one-shot trigger. Worst case: an awkward greeting. There is no destructive action to gate. Most operators run this one with no approvals at all once dry-run looks clean.
+このエージェントは新しいコメントのみを書き、かつ一度きりのトリガーでのみ動作します。最悪でもぎこちない挨拶が返るだけです。破壊的な操作を制限する必要はありません。多くの運営者は、ドライランで問題がなければ承認なしでこれを運用しています。
 
 ---

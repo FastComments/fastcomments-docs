@@ -1,40 +1,33 @@
 **ID predloge:** `tos_enforcer`
 
-Predloga Moderator je priporočeno izhodišče, če je vaš cilj zmanjšati obremenitev ročnega moderiranja. Pregleduje nove in označene komentarje ter uporablja pravila vaše skupnosti.
+Predloga Moderator je priporočeno izhodišče, če je vaš cilj zmanjšati ročno obremenitev moderiranja. Pregleduje nove in označene komentarje ter uveljavlja pravila vaše skupnosti.
 
-### Vgrajen začetni poziv
-
-[inline-code-attrs-start title = 'Začetni poziv predloge Moderator'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a terms-of-service enforcement agent. Review each new comment against the community guidelines. Mark clear spam or policy violations. Issue warnings for first-offense borderline content. Escalate ban decisions only for repeat or severe violations. If a comment is clearly within the rules, approve it so it becomes visible (relevant for pre-moderation tenants). Stay out of political or subjective debates, focus on the rules as written.
-[inline-code-end]
-
-Skoraj vedno boste želeli ta poziv **razširiti** s konkretnimi primeri, kaj vaša stran dovoljuje in česa ne. Platformina politika za eskalacijo (opozorilo pred prepovedjo, iskanje v spominu pred prepovedjo) je že vključena v sistemski poziv, ki ga agent prejme, zato je ni treba ponavljati.
+Skoraj vedno boste želeli **dopolniti vgrajen poziv (prompt)** s konkretnimi primeri, kaj vaš splet naredi in ne dovoli. Platformina lastna politika eskalacije (opozori pred začasno prepovedjo, preveri spomin pred prepovedjo) je že vgrajena v sistemski poziv, ki ga agent prejme, zato je ni treba ponavljati.
 
 ### Sprožilci
 
-- **Objavljen nov komentar** (`COMMENT_ADD`) - agent pregleda vsak nov komentar.
-- **Komentar preseže prag označitev** (`COMMENT_FLAG_THRESHOLD`, privzeti prag: 3) - agent znova oceni komentar, ki so ga označili drugi uporabniki.
+- **New comment posted** (`COMMENT_ADD`) - agent pregleda vsak nov komentar.
+- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - agent ponovno ovrednoti komentar, ki so ga označili drugi uporabniki.
 
 ### Dovoljena orodja
 
-- [`mark_comment_approved`](#tools-overview) - koristno za najemnike s pred-moderiranjem, kjer agent objavi čiste komentarje in skrije ostale.
+- [`mark_comment_approved`](#tools-overview) - uporabno za najemnike s predmoderacijo, kjer agent sprosti čiste komentarje in skrije preostale.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-Ne more objavljati komentarjev, glasovati, pripenjati, zakleniti, podeljevati značk ali pošiljati e-pošte - poziv je namerno ozko omejen.
+Ne more objavljati komentarjev, glasovati, pripenjati, zaklepati, podeljevati značk ali pošiljati e-pošte - poziv je namerno omejen.
 
-### Priporočene dopolnitve pred objavo
+### Priporočene dopolnitve pred prehodom v živo
 
-- **Določite [Smernice skupnosti](#community-guidelines).** Zadoščajo nekaj stavkov pisne politike; agent jih uporablja pri vsakem zagonu.
-- **Omejite `ban_user` z [odobritvijo](#approval-workflow).** To je privzeto vključeno v regiji EU (glejte [Skladnost z EU DSA člen 17](#eu-dsa-compliance)) in je priporočeno povsod.
-- **Razmislite tudi o omejitvi `mark_comment_spam` z odobritvijo**, če imate vsebino z nizkim volumnom, vendar visokim tveganjem.
-- **Omejite `mark_comment_approved` z odobritvijo, če uporabljate pred-moderiranje.** Potrditev slabega komentarja ga postavi pred bralce; omejite to možnost, dokler agent s preizkusnim zagonom ne pridobi zaupanja.
-- **Označite "Vključi faktor zaupanja komentatorja, starost računa, zgodovino prepovedi in nedavne komentarje"** v [Možnosti konteksta](#context-options). Model bo veliko manj agresivno opozarjal, ko bo videl, da je nekdo dolgoletni uporabnik v dobri veri.
+- **Nastavite [Pravila skupnosti (Community Guidelines)](#community-guidelines).** Zadostuje nekaj povedi pisane politike; agent jo upošteva ob vsakem zagonu.
+- **Omejite `ban_user` z [odobritvijo](#approval-workflow).** To je privzeto vklopljeno v regiji EU (glejte [EU DSA Article 17 Compliance](#eu-dsa-compliance)) in je priporočljivo povsod.
+- **Razmislite tudi o omejitvi `mark_comment_spam` z odobritvijo**, če imate majhen obseg, a visok tveganje vsebine.
+- **Omejite `mark_comment_approved` z odobritvijo, če uporabljate predmoderacijo.** Odobritev slabega komentarja ga prikaže bralcem; omejite to možnost, dokler agent ne pridobi zaupanja skozi suhi zagon.
+- **Označite "Vključi faktor zaupanja avtorja komentarja, starost računa, zgodovino prepovedi in nedavne komentarje"** v [Možnosti konteksta (Context Options)](#context-options). Model bo opozarjal veliko manj agresivno, ko bo videl, da je nekdo dolgoletni uporabnik dobre vere.
 
-### Priporočeno obdobje preizkusnega zagona
+### Priporočeno obdobje suhega zagona
 
-Zaženite to predlogo v [dry-run](#dry-run-mode) vsaj en teden na dejanskem prometu, preden jo preklopite na Omogočeno. Uporabite [Test Runs (Replays)](#test-runs-replays) tudi za predogled za zadnjih 30 dni.
+Zaženite to predlogo v [dry-run](#dry-run-mode) vsaj en teden na vašem resničnem prometu, preden preklopite na Omogočeno. Uporabite [Test Runs (Replays)](#test-runs-replays) za predogled tudi na podatkih iz prejšnjih 30 dni.
 
 ---

@@ -1,38 +1,34 @@
-**模板 ID:** `tos_enforcer`
+---
+**模板 ID：** `tos_enforcer`
 
-The Moderator template is the recommended starting point if your goal is reducing manual moderation load. It reviews new and flagged comments and applies your community rules.
+Moderator 模板是如果您的目标是减少人工审核工作量时推荐的起点。它会审查新的和被标记的评论并应用您的社区规则。
 
-### Built-in initial prompt
+您几乎总是需要用有关您网站允许与不允许内容的具体示例来**扩展内置提示**。平台自身的升级策略（在封禁前先警告，在封禁前先检查记忆）已经写入代理接收的系统提示中，因此您无需重复它。
 
-[inline-code-attrs-start title = '版主模板初始提示'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a terms-of-service enforcement agent. Review each new comment against the community guidelines. Mark clear spam or policy violations. Issue warnings for first-offense borderline content. Escalate ban decisions only for repeat or severe violations. If a comment is clearly within the rules, approve it so it becomes visible (relevant for pre-moderation tenants). Stay out of political or subjective debates, focus on the rules as written.
-[inline-code-end]
+### 触发器
 
-You will almost always want to **augment this prompt** with concrete examples of what your site does and does not allow. The platform's own escalation policy (warn before ban, search memory before banning) is already baked into the system prompt the agent receives, so you do not need to repeat it.
+- **New comment posted** (`COMMENT_ADD`) - 代理会查看每一条新评论。
+- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, 默认阈值：3) - 代理会重新评估被其他用户标记的评论。
 
-### Triggers
+### 允许的工具
 
-- **新评论发布** (`COMMENT_ADD`) - 代理会查看每条新评论。
-- **评论达到标记阈值** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - 当其他用户标记的评论达到阈值时，代理会重新评估该评论。
-
-### Allowed tools
-
-- [`mark_comment_approved`](#tools-overview) - 对于预审核租户，代理可以释放干净的评论并隐藏其余内容。
+- [`mark_comment_approved`](#tools-overview) - 对于采用预审的租户很有用，代理会发布合规的评论并隐藏其余评论。
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-它不能发布评论、投票、置顶、锁定、授予徽章或发送电子邮件 —— 该提示刻意设置为较窄的权限。
+它不能发布评论、投票、置顶、锁定、授予徽章或发送电子邮件——提示故意被限定得很窄。
 
-### Recommended additions before going live
+### 上线前推荐补充
 
-- **设置[社区准则](#community-guidelines)。** 几句书面的政策说明就足够；代理会在每次运行时应用它。
-- **将 `ban_user` 操作置于[批准](#approval-workflow)之后。** 这在欧盟地区默认开启（参见[欧盟 DSA 第 17 条合规](#eu-dsa-compliance)），并且在所有地区都推荐启用。
-- **如果您拥有低流量但高风险的内容，考虑也将 `mark_comment_spam` 操作置于批准流程后。**
-- **如果您运行预审核（pre-moderation），将 `mark_comment_approved` 置于批准流程后。** 批准不良评论会将其展示给读者；在代理通过干运行赢得信任之前请将其置于审核保护下。
-- **在[上下文选项](#context-options)中勾选“包含评论者的信任因子、账户年龄、封禁历史和近期评论”。** 当模型能够看到某人是长期良好信誉的用户时，它会减少强烈的警告。
+- **设置[社区准则](#community-guidelines)。** 几句书面政策就足够；代理在每次运行时都会应用它。
+- **将 `ban_user` 放在[审批](#approval-workflow)之后。** 在欧盟地区默认启用（参见 [欧盟 DSA 第17条合规](#eu-dsa-compliance)），在所有地区都推荐这样做。
+- **如果您的内容量低但影响重大，考虑也将 `mark_comment_spam` 放在审批之后。**
+- **如果您采用预审，请将 `mark_comment_approved` 放在审批之后。** 批准错误的评论会将其呈现给读者；在代理通过干运行赢得信任之前，应对其进行审批。
+- 在[上下文选项](#context-options)中勾选“包含评论者的信任因子、账户时长、封禁历史和近期评论”。当模型看到某人是长期诚信用户时，它会减少过度警告。
 
-### Recommended dry-run window
+### 推荐的干运行周期
 
-在将其切换为“启用”之前，至少对真实流量以[干运行](#dry-run-mode)模式运行该模板一周。使用[Test Runs (Replays)](#test-runs-replays)也可以预览过去 30 天的数据。
+在将此模板切换为启用之前，至少在真实流量下以 [干运行](#dry-run-mode) 模式运行一周。使用 [测试运行（重放）](#test-runs-replays) 还可以对过去 30 天进行预览。
+
+---

@@ -1,35 +1,30 @@
-**Vorlagen-ID:** `top_comment_pinner`
+**Template ID:** `top_comment_pinner`
 
-Der Top-Comment-Pinner überwacht Top-Level-Kommentare, die einen Stimmen-Schwellenwert überschreiten, und pinnt sie – wobei er das zuvor im selben Thread Gepinnte ersetzt.
+Der Top Comment Pinner beobachtet oberste Kommentare, die eine Stimmen-Schwelle überschreiten, und pinnt sie – wodurch das zuvor im selben Thread angepinnte Element ersetzt wird.
 
-### Eingebaute initiale Eingabeaufforderung
+Die eingebaute Prompt weist den Agenten an, Antworten zu überspringen (Anpinnen funktioniert auf Threads, daher ist das Anpinnen einer Antwort selten nützlich) und werbliche Inhalte herauszufiltern (damit der Agent beliebten Link-Spam nicht fördert).
 
-[inline-code-attrs-start title = 'Initiale Eingabeaufforderung der Top-Comment-Pinner-Vorlage'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Du pinnst die besten Top-Level-Kommentare in einem Thread. Wenn ein Kommentar den Stimmenschwellenwert erreicht, pinne ihn, sofern der Inhalt substanziell und nicht werblich ist. Entpinne zuerst jeden zuvor gepinnten Kommentar im selben Thread. Pinne keine Antworten, nur Top-Level-Kommentare.
-[inline-code-end]
+### Triggers
 
-Die Anweisung „pinne keine Antworten“ ist wichtig: Pinnen wirkt auf Threads, daher ist das Pinnen einer Antwort selten sinnvoll. Der Filter „nicht werblich“ verhindert, dass der Agent einen populären Link-Spam-Kommentar pusht.
+- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
 
-### Auslöser
+Der Trigger wird ausgelöst, wenn die Nettostimmen des Kommentars (`up - down`) die konfigurierte Schwelle erreichen. Passen Sie die Zahl im Bearbeitungsformular an, je nachdem wie aktiv Ihre Threads sind – 10 ist ein sinnvoller Standardwert für mäßig aktive Websites.
 
-- **Ein Kommentar überschreitet einen Stimmen-Schwellenwert** (`COMMENT_VOTE_THRESHOLD`, Standard-Stimmenschwellenwert: 10).
-
-Der Auslöser feuert, wenn die Nettostimmen des Kommentars (`up - down`) den konfigurierten Schwellenwert erreichen. Passe die Zahl im Bearbeitungsformular an, je nachdem, wie aktiv deine Threads sind – 10 ist ein sinnvoller Standard für mäßig aktive Seiten.
-
-### Zulässige Tools
+### Allowed tools
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-Pinnen ist nicht-destruktiv – es kann sofort rückgängig gemacht werden – daher läuft diese Vorlage normalerweise ohne Genehmigungen.
+Pinning ist nicht-destruktiv – es kann sofort rückgängig gemacht werden – daher läuft diese Vorlage in der Regel ohne Genehmigungen.
 
-### Empfohlene Ergänzungen vor dem Livegang
+### Recommended additions before going live
 
-- **Aktiviere "Elternkommentar und vorherige Antworten im selben Thread einbeziehen"** in [Context Options](#context-options). Ohne Thread-Kontext kann der Agent nicht zuverlässig feststellen, ob bereits ein Kommentar gepinnt ist, den er entpinnen müsste.
-- **Passe den Stimmen-Schwellenwert** an deine Seite an. Bei stark frequentierten Threads passiert 10 zu oft; bei ruhigen Threads kann 10 vielleicht nie erreicht werden.
-- **Ziehe in Betracht, die URL einzuschränken**, wenn du nur in bestimmten Bereichen deiner Seite gepinnte Kommentare möchtest – z. B. in Nachrichtenthreads, aber nicht in Ankündigungs-Threads.
+- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). Ohne Thread-Kontext kann der Agent nicht zuverlässig erkennen, ob bereits ein angepinnter Kommentar vorhanden ist, den es zu lösen gilt.
+- **Adjust the vote threshold** to your site. On busy threads 10 happens too often; on quiet threads 10 may never happen.
+- **Consider scoping by URL** if you only want pinned comments on certain sections of your site - news threads, say, but not announcement threads.
 
-### Hinweis zum doppelten Pinnen
+### Note on duplicate pinning
 
-Die Aufforderung im Prompt des Agents weist ihn an, zuerst zu entpinnen, bevor er pinnt, aber wenn das Modell diesen Schritt übersieht, erzwingt die Plattform selbst keine Regel von einem Gepinnten pro Thread (du kannst mehrere haben). Wenn doppeltes Pinnen auf deiner Seite ein Problem darstellt, stelle `pin_comment` hinter eine Genehmigung und prüfe jedes einzelne – oder schreibe eine präzisere Aufforderung.
+The agent's prompt instructs it to unpin first before pinning, but if the model misses that step the platform itself does not enforce a one-pinned-per-thread rule (you can have multiple). If duplicate pinning is a problem on your site, gate `pin_comment` behind approval and review each one - or write a tighter prompt.
+
+---

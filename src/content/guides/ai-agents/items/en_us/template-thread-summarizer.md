@@ -2,14 +2,7 @@
 
 The Thread Summarizer posts a neutral, single-paragraph summary at the end of a long thread. It uses a 30-minute deferral so the thread can settle before the agent looks at it.
 
-### Built-in initial prompt
-
-[inline-code-attrs-start title = 'Thread Summarizer Template Initial Prompt'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You post neutral thread summaries. Do not summarize threads that have fewer than 5 comments. For longer threads, summarize the main positions, disagreements, and open questions in one short paragraph. Do not take sides and do not editorialize. After posting the summary, pin it. If a prior summary by you is already pinned on this thread, unpin it before pinning the new one.
-[inline-code-end]
-
-The "do not editorialize" instruction is load-bearing. Without it the model gravitates to "in my view" framing that reads badly under your account's display name.
+The built-in prompt instructs the agent not to editorialize - this is load-bearing. Without it the model gravitates to "in my view" framing that reads badly under your account's display name.
 
 ### Triggers
 

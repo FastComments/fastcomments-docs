@@ -1,34 +1,27 @@
-**ID de plantilla:** `welcome_greeter`
+**Template ID:** `welcome_greeter`
 
-El Welcome Greeter responde calurosamente a quienes comentan por primera vez. Es la plantilla de menor riesgo (sin herramientas destructivas) y un buen primer agente para poner en producción.
+El Salutador de Bienvenida responde con calidez a los comentaristas primerizos. Es la plantilla de menor riesgo (sin herramientas destructivas) y un buen primer agente para poner en producción.
 
-### Prompt inicial incorporado
+### Triggers
 
-[inline-code-attrs-start title = 'Prompt inicial de la plantilla Welcome Greeter'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Eres un cordial anfitrión de la comunidad. Responde a quienes comentan por primera vez con una bienvenida breve y personal. Menciona una cosa específica de su comentario para que no parezca una plantilla. Limita las respuestas a 1-2 frases. Nunca respondas a cuentas con más de 24 horas de antigüedad.
-[inline-code-end]
+- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
 
-### Desencadenantes
+Este evento se activa exactamente una vez por usuario, por lo que el agente no puede entrar en bucle. Vea [Disparador: Nuevo Usuario Primer Comentario](#trigger-new-user-first-comment).
 
-- **Un nuevo usuario publica su primer comentario en este sitio** (`NEW_USER_FIRST_COMMENT`).
-
-Este evento se dispara exactamente una vez por usuario, por lo que el agente no puede entrar en un bucle. Ver [Disparador: Primer comentario de nuevo usuario](#trigger-new-user-first-comment).
-
-### Herramientas permitidas
+### Allowed tools
 
 - [`write_comment`](#tools-overview)
 
-Esa es la única herramienta: el agente literalmente no puede moderar, votar, banear, o enviar mensajes directos.
+Esa es la única herramienta: el agente literalmente no puede moderar, votar, prohibir ni enviar mensajes directos.
 
-### Recomendaciones antes de ponerlo en producción
+### Recommended additions before going live
 
-- **Configura el nombre para mostrar** a algo acogedor - "Community Bot", la mascota de tu sitio, o el nombre de tu marca. El nombre para mostrar es lo que los lectores ven junto a la respuesta de bienvenida.
-- **Marca "Incluir título de la página, subtítulo, descripción y meta etiquetas"** en [Opciones de contexto](#context-options). Las respuestas del greeter mejoran notablemente cuando puede referenciar de qué trata la página.
-- **Considera restricciones de localización** si operas en varios idiomas. Una respuesta de bienvenida en el idioma equivocado resulta más chocante que una respuesta perdida. Ver [Ámbito: Filtros de URL y Localización](#scope-url-locale).
+- **Set the Display name** a algo acogedor: "Community Bot", la mascota de su sitio o el nombre de su marca. El nombre que se muestra es lo que los lectores ven adjunto a la respuesta de bienvenida.
+- **Tick "Include page title, subtitle, description, and meta tags"** en [Opciones de contexto](#context-options). Las respuestas del saludador mejoran notablemente cuando puede hacer referencia a lo que realmente trata la página.
+- **Consider locale restrictions** si opera en varios idiomas. Una respuesta de bienvenida en el idioma equivocado resulta más chocante que una respuesta omitida. Véase [Alcance: Filtros de URL y de configuración regional](#scope-url-locale).
 
-### Por qué no se necesitan aprobaciones
+### Why no approvals are needed
 
-El agente solo escribe nuevos comentarios y solo ante un desencadenante de única vez. En el peor de los casos: un saludo incómodo. No hay ninguna acción destructiva que restringir. La mayoría de los operadores ejecutan esto sin aprobaciones una vez que la ejecución de prueba (dry-run) parece correcta.
+El agente solo escribe nuevos comentarios y solo ante un disparador de una sola vez. En el peor de los casos: un saludo incómodo. No hay ninguna acción destructiva que requiera autorización. La mayoría de los operadores ejecutan este agente sin aprobaciones una vez que la ejecución en modo de prueba parece correcta.
 
 ---

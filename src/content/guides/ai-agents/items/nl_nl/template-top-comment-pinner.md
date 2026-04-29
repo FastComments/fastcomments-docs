@@ -1,37 +1,28 @@
-**Sjabloon-ID:** `top_comment_pinner`
+**Template-ID:** `top_comment_pinner`
 
-De Top Comment Pinner houdt top-level opmerkingen in de gaten die een stemdrempel overschrijden en zet ze vast — waarbij eventuele eerder vastgezette opmerkingen in dezelfde thread worden vervangen.
+De Top Comment Pinner houdt top-level reacties in de gaten die een stemdrempel overschrijden en zet ze vast, waarbij iets dat eerder in dezelfde discussiedraad was gepind wordt vervangen.
 
-### Ingebouwde initiële prompt
-
-[inline-code-attrs-start title = 'Top Comment Pinner-sjabloon initiële prompt'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You pin the best top-level comments on a thread. When a comment reaches the vote threshold, pin it if the content is substantive and non-promotional. Unpin any previously pinned comment on the same thread first. Do not pin replies, only top-level comments.
-[inline-code-end]
-
-De instructie "do not pin replies" is belangrijk: pinnen werkt op threads, dus het pinnen van een reply is zelden nuttig. De filter "non-promotional" voorkomt dat de agent een populaire link-spamopmerking extra promoot.
+De ingebouwde prompt instrueert de agent om replies over te slaan (vastzetten werkt op discussiedraden, dus het vastzetten van een reply is zelden nuttig) en om promotionele content te filteren (zodat de agent geen populaire link-spam groter maakt).
 
 ### Triggers
 
-- **Een opmerking overschrijdt een stemdrempel** (`COMMENT_VOTE_THRESHOLD`, standaard stemdrempel: 10).
+- **Een reactie overschrijdt een stemdrempel** (`COMMENT_VOTE_THRESHOLD`, standaard stemdrempel: 10).
 
-De trigger wordt geactiveerd wanneer de netto stemmen van de opmerking (`up - down`) de geconfigureerde drempel bereiken. Pas het getal aan op het bewerkingsformulier op basis van hoe actief uw threads zijn — 10 is een redelijke standaard voor matig actieve sites.
+De trigger gaat af wanneer de netto stemmen van de reactie (`up - down`) de geconfigureerde drempel bereiken. Pas het getal aan op het bewerkformulier op basis van hoe actief je discussiedraden zijn — 10 is een verstandige standaard voor matig actieve sites.
 
 ### Toegestane tools
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-Pinnen is niet-destructief — het kan onmiddellijk ongedaan worden gemaakt — dus dit sjabloon wordt meestal uitgevoerd zonder goedkeuringen.
+Vastzetten is niet-destructief — het kan onmiddellijk ongedaan worden gemaakt — dus deze template draait meestal zonder goedkeuringen.
 
 ### Aanbevolen aanvullingen voordat u live gaat
 
-- **Vink "Include parent comment and prior replies in the same thread" aan** in [Context Options](#context-options). Zonder threadcontext kan de agent niet betrouwbaar bepalen of er al een vastgezette opmerking is om te ontpinnen.
-- **Pas de stemdrempel aan** voor uw site. Bij drukke threads gebeurt 10 te vaak; bij rustige threads gebeurt 10 mogelijk nooit.
-- **Overweeg afbakening per URL** als u alleen gepinde opmerkingen op bepaalde secties van uw site wilt — bijvoorbeeld nieuwsdiscussies, maar niet aankondigingsdiscussies.
+- **Vink "Inclusief ouderreactie en eerdere antwoorden in dezelfde thread" aan** in [Contextopties](#context-options). Zonder context van de discussiedraad kan de agent niet betrouwbaar bepalen of er al een gepinde reactie is om te ontpinnen.
+- **Pas de stemdrempel aan** op jouw site. In drukke discussiedraden gebeurt 10 te vaak; in rustige discussiedraden gebeurt 10 misschien nooit.
+- **Overweeg te beperken op basis van URL** als je alleen gepinde reacties wilt in bepaalde secties van je site — bijvoorbeeld nieuwsdiscussies, maar niet aankondigingsdiscussies.
 
-### Opmerking over dubbele pinning
+### Opmerking over dubbele pinningen
 
-De prompt van de agent geeft opdracht eerst te ontpinnen voordat er wordt vastgezet, maar als het model die stap mist, handhaaft het platform zelf geen regel van één vastgezette opmerking per thread (u kunt er meerdere hebben). Als dubbele pinning een probleem is op uw site, plaats `pin_comment` achter een goedkeuringsstap en controleer elk geval — of schrijf een striktere prompt.
-
----
+De prompt van de agent instrueert om eerst te ontpinnen voordat er gepind wordt, maar als het model die stap mist handhaaft het platform zelf geen regel van één gepinde reactie per discussiedraad (je kunt er meerdere hebben). Als dubbele pinningen een probleem zijn op je site, zet `pin_comment` achter goedkeuring en beoordeel elke pin — of schrijf een striktere prompt.

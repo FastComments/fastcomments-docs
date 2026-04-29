@@ -1,34 +1,27 @@
-**Template ID:** `welcome_greeter`
+**範本 ID：** `welcome_greeter`
 
-歡迎迎賓器會以熱情的方式回覆首次留言者。這是風險最低的範本（沒有破壞性工具），也是一個適合首發上線的代理人。
-
-### 內建初始提示
-
-[inline-code-attrs-start title = '歡迎迎賓範本初始提示'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
+歡迎致詞者會熱情地回覆首次留言的使用者。這是風險最低的範本（沒有破壞性工具），也是首次上線部署的良好代理。
 
 ### 觸發條件
 
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
+- **新使用者在本網站發表第一則留言** (`NEW_USER_FIRST_COMMENT`).
 
-此事件對每個使用者只會觸發一次，因此代理人無法迴圈重複執行。詳見 [Trigger: New User First Comment](#trigger-new-user-first-comment)。
+此事件每位使用者只會觸發一次，因此代理無法循環。參見 [觸發：新使用者第一則留言](#trigger-new-user-first-comment)。
 
 ### 允許的工具
 
 - [`write_comment`](#tools-overview)
 
-這是唯一可用的工具——代理人實際上無法進行審核、投票、封鎖或私訊。
+這是唯一的工具 - 代理實際上無法審查、投票、封鎖或私訊。
 
-### 上線前的建議補充
+### 上線前建議加入的項目
 
-- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.
-- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.
-- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [Scope: URL and Locale Filters](#scope-url-locale).
+- **設定顯示名稱** 為吸引人的名稱 - "Community Bot", 你網站的吉祥物，或你的品牌名稱。顯示名稱是讀者看到附在歡迎回覆上的名稱。
+- **勾選「包含頁面標題、副標題、描述，與 meta 標籤」** 於 [內容選項](#context-options)。當歡迎致詞者能參照頁面實際內容時，回覆會明顯更好。
+- **考慮語系限制** 如果你經營多語言站點。用錯語言的歡迎回覆比沒有回覆更令人不適。參見 [範圍：URL 與語系過濾](#scope-url-locale)。
 
-### 為何不需要審批
+### 為何不需要審核
 
-此代理人僅撰寫新留言，且僅在一次性觸發時執行。最糟情況也只是一次尷尬的問候。沒有需要把關的破壞性行為。大多數運營者在測試運行（dry-run）看起來正常後，便完全不設審批就運行它。
+該代理僅會撰寫新的留言，且只在一次性觸發時執行。最糟情況：一則尷尬的問候。沒有需要把關的破壞性動作。大多數營運者在試跑看起來沒問題後，就會完全不要求任何審核。
 
 ---

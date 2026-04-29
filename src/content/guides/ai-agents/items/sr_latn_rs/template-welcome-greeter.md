@@ -1,32 +1,28 @@
+---
 **ID šablona:** `welcome_greeter`
 
-The Welcome Greeter replies warmly to first-time commenters. It is the lowest-risk template (no destructive tools) and a good first agent to ship live.
-
-### Ugrađeni početni prompt
-
-[inline-code-attrs-start title = 'Početni prompt šablona Welcome Greeter'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Ti si srdačan pozdravljač zajednice. Odgovaraj korisnicima koji prvi put komentarišu kratkom, ličnom porukom dobrodošlice. Pomenu jednu konkretnu stvar iz njihovog komentara, kako ne bi zvučalo kao šablon. Ograniči odgovore na 1-2 rečenice. Nikada ne odgovaraj nalozima starijim od 24 sata.
-[inline-code-end]
+Welcome Greeter srdačno odgovara korisnicima koji prvi put komentarišu. To je najmanje rizičan šablon (bez destruktivnih alata) i dobar prvi agent za puštanje uživo.
 
 ### Okidači
 
-- **Novi korisnik objavi svoj prvi komentar na ovom sajtu** (`NEW_USER_FIRST_COMMENT`).
+- **Novi korisnik ostavi svoj prvi komentar na ovom sajtu** (`NEW_USER_FIRST_COMMENT`).
 
-Ovaj događaj se pokreće tačno jednom po korisniku, tako da agent ne može ući u petlju. Vidi [Trigger: New User First Comment](#trigger-new-user-first-comment).
+Ovaj događaj se aktivira tačno jednom po korisniku, tako da agent ne može da uđe u petlju. Pogledajte [Okidač: Novi korisnik - prvi komentar](#trigger-new-user-first-comment).
 
 ### Dozvoljeni alati
 
 - [`write_comment`](#tools-overview)
 
-To je jedini alat - agent bukvalno ne može da moderira, glasa, zabrani korisnike ili šalje DM.
+To je jedini alat — agent bukvalno ne može da moderira, glasa, blokira ili šalje DM.
 
 ### Preporučene dopune pre puštanja uživo
 
-- **Podesi prikazano ime** na nešto pozivajuće - "Community Bot", maskota vašeg sajta, ili naziv vašeg brenda. Prikazano ime je ono što čitaoci vide uz odgovor dobrodošlice.
-- **Označi "Include page title, subtitle, description, and meta tags"** u [Context Options](#context-options). Odgovori greetera postaju primetno bolji kada može da se pozove na to o čemu stranica zapravo govori.
-- **Razmotrite ograničenja lokala** ako poslujete na više jezika. Poruka dobrodošlice na pogrešnom jeziku je neprijatnija od propuštenog odgovora. Vidi [Scope: URL and Locale Filters](#scope-url-locale).
+- **Podesite prikazano ime** na nešto pozivajuće — "Community Bot", maskota vašeg sajta, ili ime vašeg brenda. Prikazano ime je ono što čitaoci vide uz odgovor dobrodošlice.
+- **Označite "Uključi naslov stranice, podnaslov, opis i meta tagove"** u [Context Options](#context-options). Odgovori pozdravljača postaju primetno bolji kada može da se pozove na to o čemu stranica zapravo govori.
+- **Razmotrite ograničenja lokalizacije** ako poslujete na više jezika. Odgovor dobrodošlice na pogrešnom jeziku je neprijatniji od propuštenog odgovora. Pogledajte [Scope: URL and Locale Filters](#scope-url-locale).
 
 ### Zašto odobrenja nisu potrebna
 
-Agent piše samo nove komentare i aktivira se samo na jednokratni okidač. U najgorem slučaju: nezgrapan pozdrav. Ne postoji destruktivna radnja koju treba kontrolisati. Većina operatora pokreće ovog agenta bez ikakvih odobrenja čim probni rad izgleda uredno.
+Agent samo piše nove komentare i to samo na jednokratni okidač. Najgori slučaj: neprijatan pozdrav. Ne postoji destruktivna akcija koju treba ograničiti. Većina operatera pokreće ovaj šablon bez ikakvih odobrenja nakon što rezultati u probnom režimu deluju čisto.
+
+---

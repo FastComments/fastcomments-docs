@@ -1,42 +1,35 @@
 **Template ID:** `thread_summarizer`
 
-The Thread Summarizer posts a neutral, single-paragraph summary at the end of a long thread. It uses a 30-minute deferral so the thread can settle before the agent looks at it.
+Thread Summarizer 會在長篇討論串結尾發布中性、單段落的摘要。它使用 30 分鐘的延遲，以便討論串穩定後再由代理檢視。
 
-### Built-in initial prompt
-
-[inline-code-attrs-start title = '討論串摘要器範本初始提示'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You post neutral thread summaries. Do not summarize threads that have fewer than 5 comments. For longer threads, summarize the main positions, disagreements, and open questions in one short paragraph. Do not take sides and do not editorialize. After posting the summary, pin it. If a prior summary by you is already pinned on this thread, unpin it before pinning the new one.
-[inline-code-end]
-
-The "do not editorialize" instruction is load-bearing. Without it the model gravitates to "in my view" framing that reads badly under your account's display name.
+內建提示指示代理不要加入編輯性意見——這一點很重要。若沒有它，模型會傾向使用「在我看來」之類的表述，這在以您的帳戶顯示名稱發布時讀起來效果很差。
 
 ### Triggers
 
-- **New comment posted** (`COMMENT_ADD`).
-- **Trigger delay**: 30 minutes (1800 seconds). See [Deferred Triggers](#trigger-deferred-delay).
+- **New comment posted** (`COMMENT_ADD`)。
+- **Trigger delay**: 30 minutes (1800 seconds)。參閱 [Deferred Triggers](#trigger-deferred-delay)。
 
-The 30-minute delay means the agent runs once, half an hour after a comment lands, against whatever the thread looks like at that moment. It is not "summarize on every reply" - the deferred-trigger queue coalesces multiple new-comment events on the same thread, but does not de-duplicate them across separate windows. You will likely want to **add a custom rule in your prompt** like "do not post a new summary if the agent has already summarized this thread in the last 24 hours" and rely on context plus the agent's [memory tools](#tools-overview) to enforce it.
+30 分鐘的延遲表示代理在評論發佈後半小時執行一次，根據當時討論串的狀態進行摘要。這並非「對每則回覆都摘要」——延遲觸發佇列會將同一討論串上的多個新評論事件合併，但不會跨不同時間窗去重複它們。您可能會想在提示中**加入自訂規則**，例如「如果代理在過去 24 小時內已經為此討論串撰寫過摘要，則不要發佈新的摘要」，並依靠上下文以及代理的 [memory tools](#tools-overview) 來執行該規則。
 
 ### Allowed tools
 
-- [`write_comment`](#tools-overview) - posts the summary itself.
-- [`pin_comment`](#tools-overview) - pins the summary so readers see it at the top of the thread.
-- [`unpin_comment`](#tools-overview) - unpins a prior summary by the same agent before pinning the new one.
+- [`write_comment`](#tools-overview) - 發佈摘要本身。
+- [`pin_comment`](#tools-overview) - 將摘要釘選，讓讀者在討論串頂端看到它。
+- [`unpin_comment`](#tools-overview) - 在釘選新摘要之前，取消釘選該代理先前的摘要。
 
-The summarizer cannot moderate or interact with users.
+摘要器無法進行審核或與使用者互動。
 
 ### Pinning the summary
 
-The agent posts a new comment with `write_comment`, then calls `pin_comment` with the returned comment ID. On subsequent runs against the same thread, the prompt instructs it to call `unpin_comment` on its prior summary first - the platform itself does **not** enforce a single-pinned-comment rule per thread, so leaving the previous summary pinned will result in two pinned summaries side by side. Tick "Include parent comment and prior replies in the same thread" in [Context Options](#context-options) so the agent can see the prior pinned summary.
+代理使用 `write_comment` 發佈新評論，然後以回傳的評論 ID 呼叫 `pin_comment`。在對同一討論串的後續執行中，提示指示代理先對其先前的摘要呼叫 `unpin_comment`——平台本身並不強制每個討論串只能有一則釘選評論，因此如果保留先前摘要的釘選，會導致兩則針對同一討論串的釘選摘要並列出現。於 [Context Options](#context-options) 中勾選「Include parent comment and prior replies in the same thread」，以便代理能看到先前已釘選的摘要。
 
 ### Recommended additions before going live
 
-- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). A summarizer with no thread context is useless.
-- **Tune the minimum-thread-size rule.** "Fewer than 5 comments" is the prompt's default, but in busy communities 10-20 is more appropriate. Edit the prompt directly.
-- **Restrict to specific URL patterns** if you only want summaries on long-form pages, not announcements or product pages. See [Scope: URL and Locale Filters](#scope-url-locale).
-- **Watch costs.** Summarization is the most token-heavy template because it reads the whole thread on every run. Set a tight [daily budget](#budgets-overview) before flipping to Enabled.
+- **在 [Context Options](#context-options) 勾選「Include parent comment and prior replies in the same thread」**。沒有討論串上下文的摘要器毫無用處。
+- **調整最低討論串大小規則。** 提示預設為「Fewer than 5 comments」，但在活躍社群中 10–20 則較為合適。直接編輯提示。
+- **限制特定 URL 模式**，如果您只想在長文頁面上產生摘要，而非在公告或產品頁面上。參閱 [Scope: URL and Locale Filters](#scope-url-locale)。
+- **注意成本。** 摘要模板是最耗費 token 的，因為每次執行都會讀取整個討論串。在切換為啟用之前，先設定一個嚴格的 [daily budget](#budgets-overview)。
 
 ### Avoiding repeat summaries
 
-The agent has access to [`save_memory`](#tools-overview) and [`search_memory`](#tools-overview) - you can extend the prompt to instruct it to record "summarized {thread urlId}" notes and check for them before posting again. Memory is shared across all agents in your tenant.
+代理可以使用 [`save_memory`](#tools-overview) 和 [`search_memory`](#tools-overview)——您可以擴充提示，指示代理記錄「summarized {thread urlId}」的備註，並在再次發佈前檢查這些備註。記憶在您租戶中的所有代理之間共享。

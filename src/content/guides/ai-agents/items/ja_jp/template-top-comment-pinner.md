@@ -1,37 +1,28 @@
-**テンプレートID:** `top_comment_pinner`
+**Template ID:** `top_comment_pinner`
 
-Top Comment Pinner は、投票閾値を超えたトップレベルのコメントを監視してピンし、同じスレッドで以前にピンされていたものを置き換えます。
+The Top Comment Pinner watches for top-level comments that cross a vote threshold and pins them - replacing whatever was pinned previously on the same thread.
 
-### 組み込みの初期プロンプト
+The built-in prompt instructs the agent to skip replies (pinning works on threads, so pinning a reply is rarely useful) and to filter out promotional content (so the agent does not boost popular link-spam).
 
-[inline-code-attrs-start title = 'トップコメントピンナー テンプレート 初期プロンプト'; type='text' inline-code-attrs-end]
-[inline-code-start]
-スレッドの中で最も優れたトップレベルのコメントをピンします。コメントが投票閾値に達したとき、内容が有意義でプロモーション目的でない場合にピンしてください。同じスレッドで以前にピンされているコメントがあれば、まずそれをアンピンしてください。返信はピンせず、トップレベルのコメントのみをピンしてください。
-[inline-code-end]
+### Triggers
 
-「返信をピンしない」という指示は重要です: ピンはスレッド単位で機能するため、返信をピンすることはほとんど有益ではありません。「非プロモーション」のフィルターは、エージェントが人気のリンクスパムコメントを助長するのを防ぎます。
+- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
 
-### トリガー
+The trigger fires when the comment's net votes (`up - down`) reaches the configured threshold. Tune the number on the edit form based on how active your threads are - 10 is a sensible default for moderately active sites.
 
-- **コメントが投票閾値を超える** (`COMMENT_VOTE_THRESHOLD`, デフォルトの投票閾値: 10)。
-
-トリガーは、コメントの純投票数（`up - down`）が設定された閾値に達したときに発動します。スレッドの活発さに応じて編集フォームでその数値を調整してください — 中程度に活発なサイトでは10が妥当なデフォルトです。
-
-### 使用可能なツール
+### Allowed tools
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-ピンは非破壊的です — 即座に元に戻せるため、このテンプレートは通常承認なしで実行されます。
+Pinning is non-destructive - it can be reversed instantly - so this template usually runs without approvals.
 
-### 本番公開前に推奨される追加設定
+### Recommended additions before going live
 
-- **[Context Options](#context-options)で「親コメントおよび同スレッド内の以前の返信を含める」をチェックしてください。** スレッドのコンテキストがなければ、エージェントは既にピンされているコメントをアンピンする必要があるかどうかを確実に判断できません。
-- **投票閾値をサイトに合わせて調整してください。** 活発なスレッドでは10だと頻繁に発動しますし、静かなスレッドでは10が一度も発生しないかもしれません。
-- **特定のサイトセクション（例: ニューススレッドは対象、発表スレッドは対象外）だけでピンを許可したい場合は、URLでスコープを限定することを検討してください。**
+- **[Context Options](#context-options)で「親コメントと同じスレッド内の以前の返信を含める」にチェックを入れてください。** スレッドのコンテキストがないとエージェントは既にピンされているコメントをアンピンすべきかどうかを確実に判断できません。
+- **投票閾値を調整する** — サイトに合わせて調整してください。活発なスレッドでは10は頻繁に起こりすぎますし、静かなスレッドでは10は一度も達成されないかもしれません。
+- **URLでスコープを限定することを検討してください** — サイトの特定のセクション（例えばニューススレッド）だけにピンを適用し、告知スレッドには適用しない、など。
 
-### 重複ピンについての注意
+### Note on duplicate pinning
 
-エージェントのプロンプトは、ピンする前にまずアンピンするよう指示していますが、モデルがその手順を見落とした場合、プラットフォーム自体はスレッドに対して一つだけピンするルールを強制しません（複数存在する可能性があります）。サイトでピンの重複が問題になる場合は、`pin_comment` を承認の背後に置き、各ピンをレビューするか、より厳密なプロンプトを作成してください。
-
----
+The agent's prompt instructs it to unpin first before pinning, but if the model misses that step the platform itself does not enforce a one-pinned-per-thread rule (you can have multiple). If duplicate pinning is a problem on your site, gate `pin_comment` behind approval and review each one - or write a tighter prompt.

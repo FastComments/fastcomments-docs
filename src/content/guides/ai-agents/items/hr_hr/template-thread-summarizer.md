@@ -1,42 +1,35 @@
 **ID predloška:** `thread_summarizer`
 
-Thread Summarizer objavljuje neutralan, jednoparagrafski sažetak na kraju duge niti. Koristi odgodu od 30 minuta kako bi se nit smirila prije nego što je agent pregleda.
+Sažimatelj niti objavljuje neutralan, jednogodišnji sažetak u jednom odlomku na kraju duge niti. Koristi odgodu od 30 minuta kako bi se nit smirila prije nego što je agent pregleda.
 
-### Ugrađeni početni prompt
-
-[inline-code-attrs-start title = 'Početni prompt predloška Sažimač niti'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You post neutral thread summaries. Do not summarize threads that have fewer than 5 comments. For longer threads, summarize the main positions, disagreements, and open questions in one short paragraph. Do not take sides and do not editorialize. After posting the summary, pin it. If a prior summary by you is already pinned on this thread, unpin it before pinning the new one.
-[inline-code-end]
-
-Uputa "do not editorialize" je ključna. Bez nje model teži formulacijama tipa "in my view" koje loše zvuče pod prikaznim imenom vašeg računa.
+Ugrađeni prompt upućuje agenta da ne uređuje tekst (ne bude urednički) — to je ključna uputa. Bez nje model teži formulacijama poput "in my view" koje loše zvuče pod prikazanim imenom vašeg računa.
 
 ### Okidači
 
-- **Novi komentar objavljen** (`COMMENT_ADD`).
-- **Kašnjenje okidača**: 30 minuta (1800 sekundi). Vidi [Deferred Triggers](#trigger-deferred-delay).
+- **Objavljen novi komentar** (`COMMENT_ADD`).
+- **Odgoda okidača**: 30 minuta (1800 sekundi). Vidi [Odgođeni okidači](#trigger-deferred-delay).
 
-Odgoda od 30 minuta znači da agent radi jednom, pola sata nakon što stigne komentar, na temelju stanja niti u tom trenutku. To nije "sažmi pri svakom odgovoru" — red za odgođene okidače koalescira više događaja novog komentara na istoj niti, ali ih ne deduplikira preko zasebnih prozora. Vjerojatno ćete htjeti **dodati prilagoavljeno pravilo u svom promptu** kao što je "ne objavljuj novi sažetak ako je agent već sažeo ovu nit u zadnjih 24 sata" i osloniti se na kontekst plus agentove [alate za memoriju](#tools-overview) da to provjeri.
+Odgoda od 30 minuta znači da se agent pokreće jednom, pola sata nakon što komentar stigne, koristeći stanje niti u tom trenutku. To nije "sažmi na svaki odgovor" — red odgođenih okidača spaja više događaja "novi komentar" na istoj niti, ali ih ne uklanja kao duplikate preko zasebnih vremenskih prozora. Vjerojatno ćete htjeti **dodati prilagođeno pravilo u vaš prompt** poput "ne objavljuj novi sažetak ako je agent već sažeo ovu nit u posljednjih 24 sata" i osloniti se na kontekst plus agentove [alate za memoriju](#tools-overview) da to provede.
 
-### Dopušteni alati
+### Dozvoljeni alati
 
 - [`write_comment`](#tools-overview) - objavljuje sam sažetak.
 - [`pin_comment`](#tools-overview) - prikvači sažetak tako da ga čitatelji vide na vrhu niti.
-- [`unpin_comment`](#tools-overview) - ukloni prikvačeni prethodni sažetak istog agenta prije prikvačivanja novog.
+- [`unpin_comment`](#tools-overview) - uklanja prikvačeni status prethodnog sažetka istog agenta prije prikvačenja novog.
 
-Sažimač ne može moderirati niti komunicirati s korisnicima.
+Sažimatelj ne može moderirati niti komunicirati s korisnicima.
 
 ### Prikvačivanje sažetka
 
-Agent objavi novi komentar pomoću `write_comment`, zatim pozove `pin_comment` s vraćenim ID-jem komentara. Kod narednih pokretanja na istoj niti, prompt ga upućuje da prvo pozove `unpin_comment` za svoj prethodni sažetak — platforma sama po sebi ne provodi pravilo o samo jednom prikvačenom komentaru po niti, pa će ostavljanje prethodnog sažetka prikvačenog rezultirati dvama prikvačenim sažecima jedan uz drugoga. Označite "Include parent comment and prior replies in the same thread" u [Context Options](#context-options) kako bi agent mogao vidjeti prethodni prikvačeni sažetak.
+Agent objavljuje novi komentar pomoću `write_comment`, zatim poziva `pin_comment` s vraćenim ID-om komentara. Pri naknadnim pokretanjima za istu nit, prompt ga upućuje da prvo pozove `unpin_comment` za svoj prethodni sažetak — sama platforma NE provodi pravilo o jednom prikvačenom komentaru po niti, pa ostavljanje prethodnog sažetka prikvačenog rezultira dvama prikvačenim sažecima jedan do drugoga. Označite "Uključi roditeljski komentar i prethodne odgovore u istoj niti" u [Opcijama konteksta](#context-options) kako bi agent mogao vidjeti prethodni prikvačeni sažetak.
 
-### Preporučene dopune prije pokretanja
+### Preporučene dopune prije puštanja u rad
 
-- **Označite "Include parent comment and prior replies in the same thread"** u [Context Options](#context-options). Sažimač bez konteksta niti je beskoristan.
-- **Prilagodite pravilo o minimalnoj veličini niti.** "Fewer than 5 comments" je zadana vrijednost u promptu, ali u prometnijim zajednicama prikladnije je 10–20. Uredite prompt izravno.
-- **Ograničite na određene obrasce URL-a** ako želite sažetke samo na stranicama dugog oblika, a ne na objavama ili stranicama proizvoda. Vidi [Scope: URL and Locale Filters](#scope-url-locale).
-- **Pazite na troškove.** Sažimanje troši najviše tokena jer čita cijelu nit pri svakom pokretanju. Postavite strogi [dnevni proračun](#budgets-overview) prije nego što prebacite na Omogućeno.
+- **Označite "Uključi roditeljski komentar i prethodne odgovore u istoj niti"** u [Opcijama konteksta](#context-options). Sažimatelj bez konteksta niti je beskoristan.
+- **Prilagodite pravilo o minimalnoj veličini niti.** 'Manje od 5 komentara' je zadana vrijednost prompta, ali u prometnim zajednicama prikladnije je 10–20. Uredite prompt izravno.
+- **Ograničite na određene uzorke URL-a** ako želite sažetke samo na stranicama dugog oblikа, a ne na objavama ili stranicama proizvoda. Vidi [Opseg: filteri URL-a i lokaliteta](#scope-url-locale).
+- **Pazite na troškove.** Sažimanje je najzahtjevniji predložak po tokenima jer čita cijelu nit pri svakom pokretanju. Postavite strogi [dnevni budžet](#budgets-overview) prije nego što ga postavite na Omogućeno.
 
 ### Izbjegavanje ponovljenih sažetaka
 
-Agent ima pristup [`save_memory`](#tools-overview) i [`search_memory`](#tools-overview) - možete proširiti prompt da ga uputite da zapiše bilješke poput "sažeto {thread urlId}" i provjeri ih prije ponovnog objavljivanja. Memorija je dijeljena među svim agentima u vašem tenant-u.
+Agent ima pristup [`save_memory`](#tools-overview) i [`search_memory`](#tools-overview) — možete proširiti prompt da ga uputite da zabilježi bilješke "summarized {thread urlId}" i provjeri ih prije ponovne objave. Memorija je dijeljena među svim agentima u vašem tenantu.

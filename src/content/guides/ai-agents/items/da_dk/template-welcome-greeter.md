@@ -1,32 +1,27 @@
-**Template ID:** `welcome_greeter`
+**Skabelon-ID:** `welcome_greeter`
 
-Welcome Greeter svarer varmt til brugere, der kommenterer for første gang. Det er den laveste risikoskabelon (ingen destruktive værktøjer) og en god første agent at sætte i drift.
-
-### Indbygget startprompt
-
-[inline-code-attrs-start title = 'Startprompt for Welcome Greeter-skabelon'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
+Welcome Greeter svarer varmt på førstegangs-kommentatorer. Det er den lavrisiko-skabelon (ingen destruktive værktøjer) og en god første agent at sætte i produktion.
 
 ### Udløsere
 
-- **Ny bruger poster deres første kommentar på dette site** (`NEW_USER_FIRST_COMMENT`).
+- **Ny bruger poster sin første kommentar på dette site** (`NEW_USER_FIRST_COMMENT`).
 
-Denne begivenhed udløses præcis én gang per bruger, så agenten ikke kan køre i en løkke. Se [Trigger: New User First Comment](#trigger-new-user-first-comment).
+Denne hændelse affyres præcis én gang per bruger, så agenten kan ikke gå i loop. Se [Udløser: Ny brugers første kommentar](#trigger-new-user-first-comment).
 
 ### Tilladte værktøjer
 
 - [`write_comment`](#tools-overview)
 
-Det er det eneste værktøj - agenten kan bogstaveligt talt ikke moderere, stemme, udelukke eller sende private beskeder.
+Det er det eneste værktøj - agenten kan bogstaveligt talt ikke moderere, stemme, bannlyse eller sende private beskeder (DM).
 
-### Anbefalede tilføjelser før du går live
+### Anbefalede tilføjelser inden live-sætning
 
-- **Indstil visningsnavnet** til noget indbydende - "Community Bot", dit sites maskot, eller dit brandnavn. Visningsnavnet er det, læsere ser sammen med velkomstsvaret.
-- **Sæt flueben ved "Inkluder sidetitel, undertitel, beskrivelse og meta-tags"** i [Context Options](#context-options). Greeterens svar bliver mærkbart bedre, når den kan referere til, hvad siden faktisk handler om.
-- **Overvej lokalitetsbegrænsninger** hvis du opererer på flere sprog. Et velkomstsvar på det forkerte sprog er mere forstyrrende end et manglende svar. Se [Scope: URL and Locale Filters](#scope-url-locale).
+- **Sæt Visningsnavnet** til noget indbydende - "Fællesskabsbot", jeres site-maskot eller jeres brandnavn. Visningsnavnet er det, læsere ser knyttet til velkomstsvaret.
+- **Sæt flueben ved "Inkluder sidens titel, undertitel, beskrivelse og meta-tags"** i [Kontekstindstillinger](#context-options). Greeterens svar bliver mærkbart bedre, når den kan referere til, hvad siden faktisk handler om.
+- **Overvej lokalitetsbegrænsninger** hvis I opererer på flere sprog. Et velkomstsvar på det forkerte sprog er mere forstyrrende end et manglende svar. Se [Omfang: URL- og sprogfiltre](#scope-url-locale).
 
 ### Hvorfor der ikke er behov for godkendelser
 
-Agenten skriver kun nye kommentarer og kun ved en éngangs-udløsning. I værste fald: en akavet hilsen. Der er ingen destruktiv handling at kontrollere. De fleste operatører kører denne uden godkendelser, så snart testkørslen ser ren ud.
+Agenten skriver kun nye kommentarer og kun på en engangsudløser. I værste fald: en akavet hilsen. Der er ingen destruktiv handling at spærrre for. De fleste operatører kører denne uden godkendelser, når testkørslen ser ren ud.
+
+---

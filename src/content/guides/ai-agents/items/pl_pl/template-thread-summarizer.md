@@ -1,45 +1,38 @@
 ---
-**Template ID:** `thread_summarizer`
+**ID szablonu:** `thread_summarizer`
 
-The Thread Summarizer publikuje neutralne, jednoakapitowe podsumowanie na końcu długiego wątku. Używa 30-minutowego opóźnienia, aby wątek mógł się ustabilizować zanim agent go przejrzy.
+Podsumowujący wątek publikuje neutralne, jednoakapitowe podsumowanie na końcu długiego wątku. Używa 30-minutowego opóźnienia, aby wątek mógł się uspokoić, zanim agent go przejrzy.
 
-### Built-in initial prompt
+Wbudowane polecenie instruuje agenta, aby nie dodawał subiektywnego komentarza — to jest kluczowe. Bez niego model ma skłonność do formułowania się w stylu "moim zdaniem", co źle wygląda pod nazwą wyświetlaną konta.
 
-[inline-code-attrs-start title = 'Wstępny prompt szablonu podsumowania wątku'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Publikujesz neutralne podsumowania wątków. Nie podsumowuj wątków, które mają mniej niż 5 komentarzy. W przypadku dłuższych wątków podsumuj główne stanowiska, niezgodności i otwarte pytania w jednym krótkim akapicie. Nie zajmuj strony i nie formułuj opinii. Po opublikowaniu podsumowania przypnij je. Jeśli wcześniejsze podsumowanie autorstwa Ciebie jest już przypięte w tym wątku, odprzypnij je przed przypięciem nowego.
-[inline-code-end]
+### Wyzwalacze
 
-Instrukcja „nie formułuj opinii” jest kluczowa. Bez niej model skłania się do sformułowań typu „moim zdaniem”, które źle wyglądają pod nazwą wyświetlaną Twojego konta.
+- **Nowy komentarz dodany** (`COMMENT_ADD`).
+- **Opóźnienie wyzwalacza**: 30 minut (1800 sekund). Zobacz [Wyzwalacze z opóźnieniem](#trigger-deferred-delay).
 
-### Triggers
+Opóźnienie 30 minut oznacza, że agent uruchamia się raz, pół godziny po pojawieniu się komentarza, działając na podstawie stanu wątku w tym momencie. To nie jest "podsumowuj przy każdej odpowiedzi" — kolejka wyzwalaczy z opóźnieniem łączy wiele zdarzeń nowego komentarza w tym samym wątku, ale nie usuwa duplikatów pomiędzy oddzielnymi oknami. Prawdopodobnie będziesz chciał **dodać niestandardową regułę w swoim promptcie** typu "nie publikuj nowego podsumowania, jeśli agent już podsumował ten wątek w ciągu ostatnich 24 godzin" i polegać na kontekście oraz [narzędziach pamięci](#tools-overview) agenta, aby to egzekwować.
 
-- **New comment posted** (`COMMENT_ADD`).
-- **Trigger delay**: 30 minutes (1800 seconds). See [Wyzwalacze z opóźnieniem](#trigger-deferred-delay).
-
-30-minutowe opóźnienie oznacza, że agent uruchamia się raz, pół godziny po dodaniu komentarza, i działa na tym, jak wygląda wątek w tym momencie. To nie jest „podsumowuj przy każdej odpowiedzi” — kolejka wyzwalaczy z opóźnieniem scala wiele zdarzeń dodania komentarza w tym samym wątku, ale nie deduplikuje ich w oddzielnych oknach czasowych. Prawdopodobnie zechcesz **dodać regułę w swoim promptcie** typu „nie publikuj nowego podsumowania jeśli agent już podsumował ten wątek w ciągu ostatnich 24 godzin” i polegać na kontekście oraz [narzędziach pamięci](#tools-overview) agenta, aby to egzekwować.
-
-### Allowed tools
+### Dozwolone narzędzia
 
 - [`write_comment`](#tools-overview) - publikuje samo podsumowanie.
 - [`pin_comment`](#tools-overview) - przypina podsumowanie, aby czytelnicy widzieli je na górze wątku.
-- [`unpin_comment`](#tools-overview) - odprzypina wcześniejsze podsumowanie tego samego agenta przed przypięciem nowego.
+- [`unpin_comment`](#tools-overview) - odpina wcześniejsze podsumowanie tego samego agenta przed przypięciem nowego.
 
-Agent podsumowujący nie może moderować ani wchodzić w interakcję z użytkownikami.
+Podsumowujący nie może moderować ani wchodzić w interakcję z użytkownikami.
 
-### Pinning the summary
+### Przypinanie podsumowania
 
-Agent publikuje nowy komentarz za pomocą `write_comment`, a następnie wywołuje `pin_comment` z zwróconym ID komentarza. Przy kolejnych uruchomieniach dla tego samego wątku prompt instruuje go, aby najpierw wywołał `unpin_comment` dla swojego wcześniejszego podsumowania — sama platforma **nie** wymusza zasady jednego przypiętego komentarza na wątek, więc pozostawienie poprzedniego podsumowania przypiętego skutkować będzie dwoma przypiętymi podsumowaniami obok siebie. Zaznacz "Include parent comment and prior replies in the same thread" w [Opcjach kontekstu](#context-options), aby agent mógł zobaczyć wcześniejsze przypięte podsumowanie.
+Agent publikuje nowy komentarz za pomocą `write_comment`, a następnie wywołuje `pin_comment` z zwróconym ID komentarza. Przy kolejnych uruchomieniach dla tego samego wątku polecenie instruuje go, aby najpierw wywołał `unpin_comment` na swoim wcześniejszym podsumowaniu — sama platforma **nie** narzuca reguły jednego przypiętego komentarza na wątek, więc pozostawienie poprzedniego podsumowania przypiętego spowoduje obok siebie dwa przypięte podsumowania. Zaznacz "Dołącz komentarz nadrzędny i wcześniejsze odpowiedzi w tym samym wątku" w [Opcjach kontekstu](#context-options), aby agent mógł zobaczyć wcześniejsze przypięte podsumowanie.
 
-### Recommended additions before going live
+### Zalecane uzupełnienia przed uruchomieniem
 
-- **Zaznacz "Include parent comment and prior replies in the same thread"** w [Opcjach kontekstu](#context-options). Podsumowujący bez kontekstu wątku jest bezużyteczny.
-- **Dopasuj regułę minimalnego rozmiaru wątku.** "Fewer than 5 comments" to domyślne ustawienie promptu, ale w ruchliwych społecznościach bardziej odpowiednie są wartości 10–20. Edytuj prompt bezpośrednio.
-- **Ogranicz do określonych wzorców URL**, jeśli chcesz podsumowania tylko na stronach długiej formy, a nie na ogłoszeniach czy stronach produktowych. Zobacz [Zakres: filtry URL i lokalizacji](#scope-url-locale).
-- **Kontroluj koszty.** Podsumowywanie zużywa najwięcej tokenów, ponieważ przy każdym uruchomieniu czyta cały wątek. Ustaw rygorystyczny [dzienny budżet](#budgets-overview) przed przełączeniem na Włączone.
+- **Zaznacz "Dołącz komentarz nadrzędny i wcześniejsze odpowiedzi w tym samym wątku"** w [Opcjach kontekstu](#context-options). Podsumowujący bez kontekstu wątku jest bezużyteczny.
+- **Dostosuj regułę minimalnego rozmiaru wątku.** "Mniej niż 5 komentarzy" to domyślne ustawienie promptu, ale w zatłoczonych społecznościach 10–20 jest bardziej odpowiednie. Edytuj prompt bezpośrednio.
+- **Ogranicz do określonych wzorców URL** jeśli chcesz podsumowania tylko na stronach długich, a nie na ogłoszeniach lub stronach produktów. Zobacz [Zakres: Filtry adresów URL i lokalizacji](#scope-url-locale).
+- **Kontroluj koszty.** Podsumowywanie to szablon zużywający najwięcej tokenów, ponieważ czyta cały wątek przy każdym uruchomieniu. Ustaw ścisły [dzienny budżet](#budgets-overview) przed przełączeniem na Włączone.
 
-### Avoiding repeat summaries
+### Unikanie powtarzających się podsumowań
 
-Agent ma dostęp do [`save_memory`](#tools-overview) i [`search_memory`](#tools-overview) - możesz rozszerzyć prompt, aby instruować go, by zapisywał notatki „podsumowano {thread urlId}” i sprawdzał je przed ponownym publikowaniem. Pamięć jest współdzielona przez wszystkich agentów w Twoim tenantcie.
+Agent ma dostęp do [`save_memory`](#tools-overview) oraz [`search_memory`](#tools-overview) - możesz rozszerzyć prompt, aby nakazać mu zapisywanie notatek "podsumowano {thread urlId}" i sprawdzanie ich przed ponownym opublikowaniem. Pamięć jest współdzielona ze wszystkimi agentami w Twoim tenancie.
 
 ---

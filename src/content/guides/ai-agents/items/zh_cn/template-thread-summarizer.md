@@ -1,45 +1,37 @@
----
 **Template ID:** `thread_summarizer`
 
-线程摘要器会在长帖的末尾发布一个中立的单段摘要。它使用 30 分钟的延迟，以便在代理查看之前让讨论线程稳定下来。
+The Thread Summarizer posts a neutral, single-paragraph summary at the end of a long thread. It uses a 30-minute deferral so the thread can settle before the agent looks at it.
 
-### Built-in initial prompt
-
-[inline-code-attrs-start title = '线程摘要模板初始提示'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You post neutral thread summaries. Do not summarize threads that have fewer than 5 comments. For longer threads, summarize the main positions, disagreements, and open questions in one short paragraph. Do not take sides and do not editorialize. After posting the summary, pin it. If a prior summary by you is already pinned on this thread, unpin it before pinning the new one.
-[inline-code-end]
-
-“不要加入主观评论”这一指示是关键的。没有它，模型会倾向于使用“在我看来”的表述，这在以你的账户显示名称发布时读起来效果不好。
+内置提示指示代理不要加入主观看法 —— 这是关键要求。否则模型会倾向使用“在我看来”之类的表述，这在以您的账户显示名发布时读起来很别扭。
 
 ### Triggers
 
-- **New comment posted** (`COMMENT_ADD`)。
-- **Trigger delay**：30 分钟（1800 秒）。参见 [Deferred Triggers](#trigger-deferred-delay)。
+- **New comment posted** (`COMMENT_ADD`).
+- **Trigger delay**: 30 minutes (1800 seconds). See [延迟触发器](#trigger-deferred-delay).
 
-30 分钟的延迟意味着代理会在评论发布后半小时运行一次，基于届时该线程的状态进行操作。它并不是“在每条回复时都进行摘要”——延迟触发队列会将同一线程上的多个新评论事件合并，但不会跨不同时间窗去重。你很可能想要在提示中**添加自定义规则**，例如“如果代理在过去 24 小时内已对该线程进行过摘要，则不要发布新的摘要”，并依赖上下文以及代理的 [memory tools](#tools-overview) 来执行该规则。
+30分钟的延迟意味着代理只会运行一次，在评论发布后半小时对当时线程的状态进行处理。它并不是“对每次回复都做摘要”——延迟触发队列会将同一线程上的多个新评论事件合并，但不会在不同时间窗口中对它们去重。您很可能需要**在提示中添加自定义规则**，例如“如果代理在过去24小时内已对该线程做过摘要，则不要发布新的摘要”，并依赖上下文以及代理的[内存工具](#tools-overview)来强制执行该规则。
 
 ### Allowed tools
 
 - [`write_comment`](#tools-overview) - 发布摘要本身。
-- [`pin_comment`](#tools-overview) - 将摘要置顶，以便读者在该线程顶部看到它。
-- [`unpin_comment`](#tools-overview) - 在置顶新摘要之前，取消置顶同一代理先前的摘要。
+- [`pin_comment`](#tools-overview) - 将摘要置顶，以便读者在主题顶部看到它。
+- [`unpin_comment`](#tools-overview) - 在置顶新摘要之前，取消置顶该代理之前的摘要。
 
-摘要器不能对用户进行管理或互动。
+该摘要器无法进行审核或与用户互动。
 
 ### Pinning the summary
 
-代理使用 `write_comment` 发布一条新评论，然后使用返回的评论 ID 调用 `pin_comment`。在随后针对同一线程的运行中，提示指示代理先对其先前的摘要调用 `unpin_comment` —— 平台本身并不强制每个线程只有一条置顶评论，因此如果保留先前的摘要为置顶状态，将会导致并列出现两条置顶摘要。请在 [Context Options](#context-options) 中勾选 “Include parent comment and prior replies in the same thread”，以便代理可以看到先前置顶的摘要。
+代理使用 `write_comment` 发布新评论，然后用返回的评论 ID 调用 `pin_comment`。在后续针对同一线程的运行中，提示会指示代理先对其先前的摘要调用 `unpin_comment` —— 平台本身并**不**强制每个线程只有一个置顶评论，所以如果保留先前的摘要为置顶，将会出现并列的两个置顶摘要。在[上下文选项](#context-options)中勾选 "Include parent comment and prior replies in the same thread"，以便代理能够看到之前被置顶的摘要。
 
 ### Recommended additions before going live
 
-- **在 [Context Options](#context-options) 中勾选 “Include parent comment and prior replies in the same thread”。** 没有线程上下文的摘要器是无用的。
-- **调优最小线程大小规则。** “少于 5 条评论”是提示的默认值，但在活跃社区中 10–20 条更为合适。直接编辑提示。
-- **限制到特定 URL 模式**，如果你只希望在长篇页面上生成摘要，而不是在公告或产品页面上。参见 [Scope: URL and Locale Filters](#scope-url-locale)。
-- **注意成本。** 摘要是令牌消耗最多的模板，因为它每次运行都会读取整个线程。在启用之前为其设置严格的 [daily budget](#budgets-overview)。
+- **在[上下文选项](#context-options)中勾选 "Include parent comment and prior replies in the same thread"。** 没有线程上下文的摘要器没有意义。
+- **调整最小线程大小规则。** 提示默认是“少于 5 条评论”，但在活跃社区中 10–20 条更合适。直接编辑提示。
+- **限制到特定的 URL 模式**，如果您只想在长文章页面上进行摘要，而不是在公告或产品页面上。见 [范围：URL 和区域筛选](#scope-url-locale)。
+- **注意费用。** 摘要是最耗费 token 的模板，因为它每次运行都会读取整个线程。在启用之前，请在[每日预算](#budgets-overview)中设置严格的上限。
 
 ### Avoiding repeat summaries
 
-代理可以使用 [`save_memory`](#tools-overview) 和 [`search_memory`](#tools-overview) —— 你可以扩展提示，指示其记录 “summarized {thread urlId}” 的笔记，并在再次发布前进行检查。内存在线下租户的所有代理之间共享。
+代理可以使用 [`save_memory`](#tools-overview) 和 [`search_memory`](#tools-overview) —— 您可以扩展提示，指示其记录“summarized {thread urlId}”的笔记，并在再次发布前检查这些笔记。记忆在您租户的所有代理之间共享。
 
 ---

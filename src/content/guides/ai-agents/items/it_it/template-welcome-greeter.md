@@ -1,34 +1,28 @@
-**Template ID:** `welcome_greeter`
+---
+**ID del template:** `welcome_greeter`
 
-Il Welcome Greeter risponde calorosamente ai commentatori alla prima esperienza. È il modello a più basso rischio (nessuno strumento distruttivo) e un buon primo agente da mettere in produzione.
+Il Welcome Greeter risponde calorosamente agli utenti che commentano per la prima volta. È il template a rischio più basso (nessuno strumento distruttivo) ed è un buon primo agente da mettere in produzione.
 
-### Prompt iniziale integrato
+### Eventi
 
-[inline-code-attrs-start title = 'Prompt iniziale del modello Welcome Greeter'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
+- **Un nuovo utente pubblica il suo primo commento su questo sito** (`NEW_USER_FIRST_COMMENT`).
 
-### Trigger
-
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
-
-Questo evento si attiva esattamente una sola volta per utente, quindi l'agente non può andare in loop. Vedi [Trigger: New User First Comment](#trigger-new-user-first-comment).
+Questo evento viene attivato esattamente una volta per utente, quindi l'agente non può andare in loop. Vedi [Trigger: Primo commento del nuovo utente](#trigger-new-user-first-comment).
 
 ### Strumenti consentiti
 
 - [`write_comment`](#tools-overview)
 
-Quello è l'unico strumento - l'agente letteralmente non può moderare, votare, bannare o inviare DM.
+Questo è l'unico strumento: l'agente letteralmente non può moderare, votare, bannare o inviare messaggi diretti (DM).
 
-### Aggiunte consigliate prima di andare in produzione
+### Aggiunte consigliate prima di andare live
 
-- **Imposta il nome visualizzato** su qualcosa di invitante - "Community Bot", la mascotte del tuo sito o il nome del tuo brand. Il nome visualizzato è ciò che i lettori vedono associato alla risposta di benvenuto.
-- **Seleziona "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). Le risposte del greeter migliorano notevolmente quando può fare riferimento al reale contenuto della pagina.
-- **Considera restrizioni di lingua/locale** se operi in più lingue. Una risposta di benvenuto nella lingua sbagliata è più stonata di una risposta mancata. Vedi [Scope: URL and Locale Filters](#scope-url-locale).
+- **Imposta il Display name** su qualcosa di invitante - "Community Bot", la mascotte del tuo sito, o il nome del tuo brand. Il display name è ciò che i lettori vedono associato alla risposta di benvenuto.
+- **Seleziona "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). Le risposte del greeter migliorano notevolmente quando può riferirsi a ciò di cui parla effettivamente la pagina.
+- **Valuta restrizioni di localizzazione** se operi in più lingue. Una risposta di benvenuto nella lingua sbagliata è più sconcertante di una risposta mancata. Vedi [Scope: URL and Locale Filters](#scope-url-locale).
 
 ### Perché non sono necessarie approvazioni
 
-L'agente scrive solo nuovi commenti e solo su un trigger one-shot. Nel peggiore dei casi: un saluto imbarazzante. Non c'è alcuna azione distruttiva da limitare. La maggior parte degli operatori fa girare questo modello senza alcuna approvazione una volta che l'esecuzione di prova risulta pulita.
+L'agente scrive solo nuovi commenti e solo su un trigger one-shot. Nel peggiore dei casi: un saluto imbarazzante. Non ci sono azioni distruttive da limitare. La maggior parte degli operatori esegue questo agente senza alcuna approvazione una volta che la prova a secco (dry-run) risulta pulita.
 
 ---

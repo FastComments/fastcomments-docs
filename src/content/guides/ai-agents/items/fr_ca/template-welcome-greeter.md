@@ -1,34 +1,28 @@
-**Template ID:** `welcome_greeter`
+---
+**ID du modèle:** `welcome_greeter`
 
-Le Welcome Greeter répond chaleureusement aux commentateurs qui publient leur premier commentaire. C'est le modèle le moins risqué (aucun outil destructeur) et un bon premier agent à déployer en production.
+Le Welcome Greeter répond chaleureusement aux personnes qui commentent pour la première fois. C'est le modèle le moins risqué (aucun outil destructeur) et un bon premier agent à déployer en production.
 
-### Built-in initial prompt
+### Déclencheurs
 
-[inline-code-attrs-start title = 'Invite initiale du modèle Welcome Greeter'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Vous êtes un agent d'accueil chaleureux pour la communauté. Répondez aux commentateurs qui publient leur premier commentaire par un court message de bienvenue et personnalisé. Mentionnez une chose précise de leur commentaire afin que cela ne ressemble pas à un modèle. Limitez les réponses à 1 ou 2 phrases. Ne répondez jamais aux comptes âgés de plus de 24 heures.
-[inline-code-end]
+- **Un nouvel utilisateur publie son premier commentaire sur ce site** (`NEW_USER_FIRST_COMMENT`).
 
-### Triggers
+Cet événement se déclenche exactement une fois par utilisateur, donc l'agent ne peut pas boucler. Voir [Déclencheur : Premier commentaire d'un nouvel utilisateur](#trigger-new-user-first-comment).
 
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
-
-This event fires exactly once per user, so the agent cannot loop. See [Trigger: New User First Comment](#trigger-new-user-first-comment).
-
-### Allowed tools
+### Outils autorisés
 
 - [`write_comment`](#tools-overview)
 
-That is the only tool - the agent literally cannot moderate, vote, ban, or DM.
+C'est le seul outil — l'agent ne peut littéralement pas modérer, voter, bannir ou envoyer un message direct (DM).
 
-### Recommended additions before going live
+### Ajouts recommandés avant la mise en ligne
 
-- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.
-- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.
-- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [Scope: URL and Locale Filters](#scope-url-locale).
+- **Définissez le nom affiché** sur quelque chose d'invitant — "Community Bot", la mascotte de votre site, ou le nom de votre marque. Le nom affiché est ce que les lecteurs voient attaché à la réponse de bienvenue.
+- **Cochez "Inclure le titre de la page, le sous-titre, la description et les balises méta"** dans [Options de contexte](#context-options). Les réponses du greeter s'améliorent nettement lorsqu'il peut faire référence à ce dont la page parle réellement.
+- **Envisagez des restrictions de paramètres régionaux** si vous opérez dans plusieurs langues. Une réponse de bienvenue dans la mauvaise langue est plus gênante qu'une réponse manquée. Voir [Portée : filtres d'URL et de paramètres régionaux](#scope-url-locale).
 
-### Why no approvals are needed
+### Pourquoi aucune approbation n'est nécessaire
 
-The agent only writes new comments and only on a one-shot trigger. Worst case: an awkward greeting. There is no destructive action to gate. Most operators run this one with no approvals at all once dry-run looks clean.
+L'agent n'écrit que de nouveaux commentaires et seulement en réaction à un déclencheur ponctuel. Dans le pire des cas : un accueil maladroit. Il n'y a aucune action destructive à contrôler. La plupart des opérateurs exécutent celui-ci sans aucune approbation une fois que l'exécution en simulation semble satisfaisante.
 
 ---

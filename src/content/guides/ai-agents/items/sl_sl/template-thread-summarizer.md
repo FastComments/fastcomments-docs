@@ -1,42 +1,37 @@
-**Template ID:** `thread_summarizer`
+---
+**ID predloge:** `thread_summarizer`
 
-The Thread Summarizer posts a neutral, single-paragraph summary at the end of a long thread. It uses a 30-minute deferral so the thread can settle before the agent looks at it.
+Povzemalnik nití objavi nevtralen povzetek v enem odstavku na koncu dolge niti. Uporablja 30-minutni odlog, da se nit umiri, preden agent nanjo pogleda.
 
-### Built-in initial prompt
+Vgrajeni poziv agentu natančno naroča, naj ne ureja besedila po svoje — to je ključno. Brez tega se model nagiba k okvirjenju z "po mojem mnenju", kar pri prikazu pod imenom vašega računa slabo izpade.
 
-[inline-code-attrs-start title = 'Začetni poziv predloge za povzemanje niti'; type='text' inline-code-attrs-end]
-[inline-code-start]
-Objavljate nevtralne povzetke niti. Ne povzemajte niti, ki imajo manj kot 5 komentarjev. Za daljše niti povzemi glavna stališča, nestrinjanja in odprta vprašanja v enem kratkem odstavku. Ne zavzemajte strani in ne dodajajte uredniških komentarjev. Po objavi povzetka ga pripnite. Če je vaš prejšnji povzetek na tej niti že pripet, ga najprej odpnite, preden pripnete novega.
-[inline-code-end]
+### Sprožilci
 
-Navodilo "ne dodajajte uredniških komentarjev" je ključnega pomena. Brez njega se model nagiba k formulacijam, kot je "po mojem mnenju", kar pod prikaznim imenom vašega računa zveni slabo.
+- **Nov komentar objavljen** (`COMMENT_ADD`).
+- **Zamuda sprožilca**: 30 minut (1800 sekund). Glejte [Odloženi sprožilci](#trigger-deferred-delay).
 
-### Triggers
+30-minutna zamuda pomeni, da agent deluje enkrat, pol ure po pristanku komentarja, glede na stanje niti v tistem trenutku. Ne pomeni "povzemaj ob vsakem odgovoru" — čakalna vrsta odloženih sprožilcev združi več dogodkov novega komentarja na isti niti, vendar jih ne deduplikira čez ločena časovna okna. Verjetno boste želeli **dodati lastno pravilo v vaš poziv** kot npr. "ne objavljajte novega povzetka, če je agent že povzel to nit v zadnjih 24 urah" in se zanašati na kontekst ter agentova [orodja za pomnilnik](#tools-overview), da to uveljavi.
 
-- **New comment posted** (`COMMENT_ADD`).
-- **Trigger delay**: 30 minutes (1800 seconds). See [Deferred Triggers](#trigger-deferred-delay).
+### Dovoljena orodja
 
-The 30-minute delay means the agent runs once, half an hour after a comment lands, against whatever the thread looks like at that moment. It is not "summarize on every reply" - the deferred-trigger queue coalesces multiple new-comment events on the same thread, but does not de-duplicate them across separate windows. You will likely want to **add a custom rule in your prompt** like "do not post a new summary if the agent has already summarized this thread in the last 24 hours" and rely on context plus the agent's [memory tools](#tools-overview) to enforce it.
-
-### Allowed tools
-
-- [`write_comment`](#tools-overview) - objavi povzetek.
+- [`write_comment`](#tools-overview) - objavi sam povzetek.
 - [`pin_comment`](#tools-overview) - pripne povzetek, da ga bralci vidijo na vrhu niti.
-- [`unpin_comment`](#tools-overview) - odpne predhodni povzetek istega agenta, preden pripne novega.
+- [`unpin_comment`](#tools-overview) - odpnese prejšnji povzetek istega agenta pred pripenjanjem novega.
 
-Povzemalec ne more moderirati ali komunicirati z uporabniki.
+Povzemalnik ne more moderirati ali sodelovati z uporabniki.
 
-### Pinning the summary
+### Pripenjanje povzetka
 
-Agent objavi nov komentar z `write_comment`, nato pokliče `pin_comment` z ID-jem vrnjenega komentarja. Pri ponovnem zagonu za isto nit poziv navede, naj najprej pokliče `unpin_comment` za svoj predhodni povzetek — platforma sama **ne** izvaja pravila o enem pripetem komentarju na nit, zato bo ob puščanju prejšnjega povzetka pripetega nastalo dva pripeta povzetka drug ob drugem. Označite "Vključi nadrejeni komentar in prejšnje odgovore v isti niti" v [Context Options](#context-options), da agent vidi prejšnji pripeti povzetek.
+Agent najprej objavi nov komentar z `write_comment`, nato pokliče `pin_comment` s pridobljenim ID-jem komentarja. Pri naslednjih izvedbah na isti niti poziv naroča, naj najprej pokliče `unpin_comment` za svoj prejšnji povzetek — platforma sama ne uveljavlja pravila enega samega pripetega komentarja na nit, zato bo puščanje prejšnjega povzetka pripetega povzročilo dva pripeta povzetka drug ob drugem. V [Možnostih konteksta](#context-options) obkljukajte "Include parent comment and prior replies in the same thread", da bo agent videl prejšnji pripeti povzetek.
 
-### Recommended additions before going live
+### Priporočene dodatke pred vklopom v živo
 
-- **Označite "Vključi nadrejeni komentar in prejšnje odgovore v isti niti"** v [Context Options](#context-options). Povzemalec brez konteksta niti je neuporaben.
-- **Prilagodite pravilo minimalne velikosti niti.** "Manj kot 5 komentarjev" je privzeta nastavitev v pozivu, vendar je v živahnih skupnostih primernejše 10–20. Uredite poziv neposredno.
-- **Omejite na določene vzorce URL-jev** če želite povzetke le na dolgotrajnih straneh, ne na obvestilih ali straneh izdelkov. Oglejte si [Scope: URL and Locale Filters](#scope-url-locale).
-- **Spremljajte stroške.** Povzemanje porabi največ žetonov, ker ob vsakem zagonu prebere celotno nit. Pred preklopom na Enabled nastavite strog [dnevni proračun](#budgets-overview).
+- **Obkljukajte "Include parent comment and prior replies in the same thread"** v [Možnostih konteksta](#context-options). Povzemalnik brez konteksta niti je neuporaben.
+- **Prilagodite pravilo o minimalni velikosti niti.** Privzeto je v pozivu "Fewer than 5 comments", vendar je v zaposlenih skupnostih bolj primerno 10–20. Uredite poziv neposredno.
+- **Omejite na določene vzorce URL-jev**, če želite povzetke le na straneh z dolgimi vsebinami, ne pa na obvestilih ali produktnih straneh. Glejte [Obseg: filtri URL in lokalizacije](#scope-url-locale).
+- **Spremljajte stroške.** Povzemanje porabi največ žetonov, ker ob vsakem zagonu prebere celotno nit. Pred preklopom na Omogočeno nastavite strogo [dnevno proračun](#budgets-overview).
 
-### Avoiding repeat summaries
+### Izogibanje ponavljajočim se povzetkom
 
-The agent has access to [`save_memory`](#tools-overview) and [`search_memory`](#tools-overview) - you can extend the prompt to instruct it to record "summarized {thread urlId}" notes and check for them before posting again. Memory is shared across all agents in your tenant.
+Agent ima dostop do [`save_memory`](#tools-overview) in [`search_memory`](#tools-overview) - v poziv lahko dodate navodilo, naj zapiše opombe "summarized {thread urlId}" in jih preveri, preden ponovno objavi. Pomnilnik je deljen med vsemi agenti v vašem najemu.
+---
