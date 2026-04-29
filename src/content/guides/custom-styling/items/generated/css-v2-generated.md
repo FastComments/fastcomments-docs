@@ -4,8 +4,14 @@ body { margin: 0; padding: 0; }
     d { display: block }
     @keyframes pop-in { 0% { transform: scale(0.3); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
     @keyframes placeHolderShimmer { 0% { background-position: 0 0 } 100% { background-position: 100% 0 } }
+    /* shimmer skeleton for in-flight saves and lazy avatar loads. To restyle the loading state, target .animated-background. */
     .comment-reply .comment-input.animated-background, .comment-reply input.animated-background, .animated-background { animation-duration: 1s; animation-iteration-count: infinite; animation-name: placeHolderShimmer; background: #f6f7f8; background: linear-gradient(to right, #eee 8%, #dddddd 18%, #eee 33%); background-size: 50% 50%; }
+    .comment-reply .tos-checkbox { display: flex; align-items: center; gap: 8px; margin: 8px 0; cursor: pointer }
+    .comment-reply .tos-checkbox a { color: inherit }
+    .comment-reply > .tos-checkbox { margin: 8px }
+    .comment-reply .tos-checkbox input[type=checkbox] { margin: 0; width: auto; box-shadow: none }
     @keyframes backgroundToNormal { from { background: lightblue } to { background: inherit } }
+    /* widget root. Scope custom rules under .fast-comments. Config-driven modifier classes also land here: .readonly, .hide-avatars, .disable-image-redirect, .single-line-comment-input, .vote-style-1, .new-to-bottom -- use them as conditional ancestors. */
     .fast-comments { position: relative; width: 100%; font-size: 13px }
     .hidden { display: none }
     .invisible { visibility: hidden }
@@ -21,6 +27,7 @@ body { margin: 0; padding: 0; }
     .icon.down { background: url("${FC_CDN}/images/svg/v2/thumbs_down_light.svg") no-repeat center; background-size: 12px 12px; }
     .icon.down.active, .icon.down:hover { background: url("${FC_CDN}/images/svg/v2/thumbs_down_dark.svg") no-repeat center; background-size: 12px 12px; }
     .icon.pin-small { background: url("${FC_CDN}/images/svg/v2/pin.svg") no-repeat center; background-size: 15px 15px; }
+    .icon.lock-small { background: url("${FC_CDN}/images/padlock.svg") no-repeat center; background-size: 15px 15px; }
     .icon.logo { width: 27px; height: 33px; background: url("${FC_CDN}/images/svg/v2/logo.svg") no-repeat center; background-size: 22px;  }
     .icon.edit-small { background: url("${FC_CDN}/images/svg/menu.svg") no-repeat center; background-size: 17px 17px; }
     .icon.edit-big { background: url("${FC_CDN}/images/svg/v2/edit.svg") no-repeat center; background-size: 22px 22px; }
@@ -72,6 +79,7 @@ body { margin: 0; padding: 0; }
     .sso-login-wrapper .sso-login.clickable { cursor: pointer; }
     .comment .sso-login-wrapper { padding: 7px 0; text-align: left }
     .comment .sso-login-wrapper .sso-login { font-size: 16px }
+    /* Toolbar, auth fields, and cancel button carry .default-hidden -- they're collapsed (height:0, opacity:0) until the user focuses the input, which adds .show-default-hidden to the .comment-reply form. When styling these elements, account for the collapsed state. */
     .default-hidden { transition-duration: 300ms }
     .comment-input:not(.show-default-hidden) .default-hidden { height: 0; margin: 0 !important; opacity: 0; pointer-events: none; transition-duration: 200ms }
     .loading .pagination { opacity: 0.5; pointer-events: none; }
@@ -82,8 +90,10 @@ body { margin: 0; padding: 0; }
     textarea:focus::placeholder { color: transparent }
     .fc-red { display: inline-block; margin: 5px; color: #ff0000 }
     .comment-error { padding: 10px }
+    /* Brand shape: square top-left, rounded other 3 corners (border-radius: 0 N N N). Match this when adding new buttons/inputs/cards to stay on-theme. */
     input, textarea { padding: 12px 20px; border: 1px solid #bfbfbf; border-radius: 0 11px 11px 11px; box-sizing: border-box; outline: none; background: transparent; }
     input { padding: 9px 12px; border-radius: 0 6px 6px 6px; }
+    /* Focus state must be applied to BOTH the textarea border and the sibling .horizontal-border-wrapper (faux border around .comment-input -- see below). Override both selectors when changing focus color. */
     input:focus, textarea:focus, textarea:focus + .horizontal-border-wrapper, .comment-input textarea:focus { border-color: #555 } /* .comment-reply textarea:focus for ssr */
     .pagination { margin-top: 50px; line-height: 19px; text-align: center; user-select: none; }
     .pagination > * { display: inline-block; cursor: pointer; font-weight: 700; }
@@ -135,12 +145,17 @@ body { margin: 0; padding: 0; }
     .comment-reply .auth-input input, .comment-vote-auth.auth-input input { width: 100%; margin-top: 10px; padding: 9px 12px; border-radius: 0 6px 6px 6px; font-size: 14px; border: 1px solid #a2a2a2; }
     .comment-reply .auth-input .solicitation-info, .comment-vote-auth.auth-input .solicitation-info { margin-top: 10px; }
     .comment-reply .auth-input .fast-comments-reply { margin-top: 10px; padding: 10px 45px; border-radius: 5px 0 5px 5px; background: #333; color: #fff; border: none; }
+    /* padding-bottom reserves space for the absolute toolbar/submit button. Don't remove it without also repositioning those elements. */
     .comment-input, .comment-edit { position: relative; padding-bottom: 30px; border-radius: 0 11px 11px 11px; }
+    /* The textarea has no bottom border or bottom radius -- the bottom edge is drawn by .horizontal-border-bottom-* divs. To restyle the bottom of the input, target those, not the textarea. */
     .comment-input textarea { display: block; width: 100%; height: 130px; padding: 15px 25px 15px 15px; resize: none; font-size: 16px; border-bottom: none; border-radius: 0 11px 0 0; }
     .comment-input textarea::placeholder { font-size: 16px; font-weight: 400; }
     .comment-input input { display: block; width: 100%; font-size: 14px; }
     .comment-input .fastcomments-message-wrapper { border: 1px solid #bfbfbf; border-bottom: none; border-radius: 0 11px 0 0; }
     .comment-input input[name=fastcomments-link] { display: block; width: 100%; margin: 10px 0; }
+    /*
+     * COMMENT INPUT BORDER: drawn by 6 absolutely-positioned divs inside .horizontal-border-wrapper (top-left, top-right, left, right, bottom-left, bottom-right), NOT by the textarea's border. To change the input's border color, width, or radius, target .horizontal-border-wrapper (sets border-color, inherited by all 6 pieces) and the individual .horizontal-border-* rules. The bottom-center is intentionally open so the submit button can overlap it. Top pieces are display:none on the root reply box and re-shown only for nested reply boxes (rule near end of block).
+     */
     .comment-input .horizontal-border-wrapper { pointer-events: none; border-color: #bfbfbf; }
     .comment-input .horizontal-border { position: absolute; height: 20px; border-bottom: 1px solid; border-color: inherit; }
     .comment-input .horizontal-border-left { bottom: 0; left: 0; border-radius: 0 0 0 11px; }
@@ -150,10 +165,13 @@ body { margin: 0; padding: 0; }
     .comment-input .horizontal-border-top-left { top: 0; left: 0; }
     .comment-input .horizontal-border-bottom-left { position: absolute; height: 30px; width: 15px; left: 0; bottom: 0; border-color: inherit; border-left-width: 1px; border-left-style: solid; border-radius: 0 0 0 11px; }
     .comment-input .horizontal-border-bottom-right { position: absolute; height: 30px; width: 15px; right: 0; bottom: 0; border-color: inherit; border-right-width: 1px; border-right-style: solid; border-radius: 0 0 11px 0; }
+    /* Re-shows top border pieces for nested reply boxes (input rendered inside a .comment) so the input gets a full frame. */
     .comment .comment-input .horizontal-border-top-left, .comment .comment-input .horizontal-border-top-right { display: block }
     @media(max-width: 500px) { .comment-input textarea, .comment-input .fastcomments-message-wrapper { height: 130px;  } }
+    /* Submit button. Sits in the gap between the .horizontal-border-bottom-left/right pieces -- if you change the input's bottom border layout, retune top/right here too. */
     .comment .reply-button-wrapper { position: relative; float: right; top: -19px; right: 26px; border-radius: 0 7px 7px 7px; }
     .comment .fast-comments-reply, .comment .edit-save { padding: 10px 27px; border-radius: 0 7px 7px 7px; background: #333; color: #fff; text-decoration: none; }
+    /* X cancel button. Only rendered for nested replies, not the root reply box. */
     .comment .cancel-button-wrapper { position: absolute; top: 9px; right: 25px; border-radius: 4px; }
     .comment .comment-edit .cancel-button-wrapper { top: -13px }
     .comment .fast-comments-reply-cancel { margin-bottom: 0; padding: 1px 1px; border-radius: 4px; }
@@ -169,6 +187,16 @@ body { margin: 0; padding: 0; }
     .comment .comment-text .inline-image { display: block; max-width: 500px; margin: 3px 0 3px 0 } /* must not select inline-image in wysiwyg */
     .comment .comment-text .inline-image img { max-width: 100%; max-height: 400px } /* must not select inline-image in wysiwyg */
     .disable-image-redirect .comment .inline-image { cursor: default; }
+    /*
+     * Comment state classes on .comment -- target these to restyle moderation/state visuals:
+     *   .is-live       newly streamed-in comment (flash animation)
+     *   .is-unread     not yet seen by current user (avatar glow)
+     *   .unverified    commenter hasn't clicked email confirmation (dimmed)
+     *   .is-spam       flagged as spam (red border)
+     *   .is-unapproved awaiting moderation (orange border)
+     *   .is-blocked    from a blocked user (text truncated to 40px)
+     *   .is-deleted, .is-admin, .is-own, .24hr, .readonly are also added but not styled by default.
+     */
     .comment.is-live > .inner { animation: backgroundToNormal 1.5s }
     .comment.is-unread > .inner .avatar-wrapper { box-shadow: 0 0 20px #89f796; }
     .comment.unverified > .commenter-name, .comment.unverified > .comment-content .commenter-name { opacity: 0.7 }
@@ -180,6 +208,7 @@ body { margin: 0; padding: 0; }
     .comment > .inner > .spam-notice { margin: 0 0 10px 0; font-size: 12px; color: red }
     @media(max-width: 500px) { .comment > .inner > .spam-notice { margin-top: 18px; } }
     .comment .avatar-wrapper { position: relative; display: inline-block; width: 56px; height: 56px; overflow: hidden; box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.10); border-radius: 15px 0 15px 15px; vertical-align: top; }
+    /* .anon = placeholder avatar (no custom default configured + anonymous user). Style this to change how unidentified commenters appear. */
     .comment .avatar-wrapper.anon { border: 1px solid #3f3f3f; }
     .comment .avatar-wrapper .open-profile { cursor: pointer; }
     .comment .avatar-wrapper.animated-background img { opacity: 0.1; }
@@ -223,6 +252,7 @@ body { margin: 0; padding: 0; }
     .children .comment > .inner > .comment-bottom { margin-left: 28px; }
     @media(max-width: 500px) { .children .comment > .inner > .comment-bottom { margin-left: 21px; } }
     @media(min-width: 500px) { .hide-avatars .children .comment > .inner > .comment-bottom { margin-left: 33px; } }
+    /* min-height reserves space for the absolutely-positioned reply button (.comment-toolbar-reply, top:-4px below). */
     .comment > .inner > .comment-bottom > .comment-bottom-toolbar { position: relative; min-height: 36px; }
     .comment > .inner > .comment-bottom .comment-vote-options .votes-up, .comment > .inner > .comment-bottom .comment-vote-options .votes-down { position: relative; top: 1px; vertical-align: middle; font-size: 12px; font-weight: 500; }
     .comment > .inner > .comment-bottom .comment-vote-options .votes-up { margin-right: 5px; }
@@ -258,6 +288,7 @@ body { margin: 0; padding: 0; }
     @media(max-width: 500px) { .comment .prompt { padding: 5px } }
     @media(max-width: 500px) { .comment .prompt p { margin: 0 0 .4em 0 } }
     .comment > .inner > .requires-verification-approval, .comment > .inner > .awaiting-approval-notice { margin: 15px 0; }
+    /* Date + flag/pin/lock icons + menu (3-dot/edit). On hover, z-index jumps so the open menu can overlap sibling comments. Match this when styling custom menu overlays. */
     .comment .top-right { position: absolute; top: 0; right: 0; z-index: 2; }
     .comment .top-right:hover { z-index: 9001; }
     .comment .jump-link { padding-right: 5px; vertical-align: baseline; font-size: 12px; text-decoration: none; color: #4f4f4f }
@@ -270,6 +301,7 @@ body { margin: 0; padding: 0; }
     .comment .menu { position: relative; padding: 10px 10px 10px 0; user-select: none }
     .comment .menu .menu-btn { cursor: pointer }
     .comment .menu .menu-btn i { display: inline-block; width: 4px; height: 4px; margin: 2px; background: #333; border-radius: 10px }
+    /* .menu.empty rendered when no actions are available -- kept in DOM to preserve layout, dimmed and non-clickable. */
     .comment .menu.empty .menu-btn { cursor: default; opacity: 0.5; }
     .menu-content { position: absolute; width: 130px; min-width: max-content; padding: 20px; background-color: #fff; box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.10); border-radius: 10px 0 10px 10px; z-index: 9001; }
     .menu-content div { padding: 3px; font-weight: 700; cursor: pointer; font-size: 13px }
@@ -280,11 +312,13 @@ body { margin: 0; padding: 0; }
     .menu-content.corner-bottom-right { border-radius: 10px 10px 0 10px; }
     @media(max-width: 500px) { .comment .menu { padding: 10px 5px 10px 0; } } /* if top is too low, will go above highlighting for admin actions */
     .comment > .children { margin: 15px 0 0 15px }
-    .footer { height: 65px; margin-top: 25px; padding-top: 20px; text-align: center; font-size: 12px; } 
-    .footer:not(.empty) { border-top: 1px solid #ccc } 
+    /* "Powered by FastComments" footer. White-labeled tenants get .empty (no content, no border). To restyle/hide the footer for white-label, scope via .footer.empty. */
+    .footer { height: 65px; margin-top: 25px; padding-top: 20px; text-align: center; font-size: 12px; }
+    .footer:not(.empty) { border-top: 1px solid #ccc }
     .footer a, .footer .logo { vertical-align: top; text-decoration: none; color: #201600; font-weight: bold; font-size: 14px } 
     .footer .logo { margin-top: -2px; padding-right: 2px; } 
     .comment.readonly .comment-vote-options { display: none }
+    /* Autocomplete dropdown for @mentions and #hashtags inside the comment input. Anchored relative to .comment-input. */
     .search-list { position: absolute; z-index: 4; width: 100%; margin-top: -9px; box-sizing: border-box; border-radius: 0 0 11px 11px; background: #fff; border: 1px solid #bfbfbf; }
     .search-list .cross { position: absolute; top: -11px; right: 0; width: 20px; height: 20px; background-color: #fff; border: 1px solid #bfbfbf; border-right: 0; border-radius: 16px 0 0 16px; cursor: pointer; }
     .search-list .search-entry { padding: 5px 10px; cursor: pointer; }
@@ -292,6 +326,9 @@ body { margin: 0; padding: 0; }
     .search-list .search-entry img { width: 20px; height: 20px; margin-right: 3px; vertical-align: middle; border-radius: 20px; }
     .search-list .search-entry > * { pointer-events: none; }
     .search-list .search-entry:hover, .search-list .search-entry.kb-select, .search-list .cross:hover { background-color: #eee; }
+    .search-list .search-section-header { padding: 4px 10px; font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; pointer-events: none; user-select: none; }
+    .search-list .search-section-loading { padding: 4px 10px; font-size: 11px; color: #888; font-style: italic; pointer-events: none; user-select: none; }
+    /* .search-list-open is added to .comment-input while the @/# autocomplete is showing -- hides the submit button so it doesn't collide with the dropdown. */
     .comment-input.search-list-open .reply-button-wrapper { display: none; }
     .avatar-wrapper .activity-icon { position: absolute; top: 4px; right: 4px; }
     .activity-icon { width: 8px; height: 8px; border-radius: 10px; }
