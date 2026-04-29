@@ -53,7 +53,7 @@
       "subCat": "Flujo de trabajo de moderación"
     },
     {
-      "name": "Visor del hilo de comentarios",
+      "name": "Visor de hilos de comentarios",
       "file": "comment-thread-viewer.md",
       "subCat": "Flujo de trabajo de moderación"
     },
@@ -103,7 +103,7 @@
       "subCat": "Grupos de moderación"
     },
     {
-      "name": "Configuración de moderación",
+      "name": "Ajustes de moderación",
       "file": "moderation-settings.md",
       "subCat": "Configuración"
     },
@@ -125,6 +125,11 @@
     {
       "name": "Atajos de teclado",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Agentes de IA",
+      "file": "ai-agents-pointer.md",
       "subCat": "Flujo de trabajo de moderación"
     }
   ]

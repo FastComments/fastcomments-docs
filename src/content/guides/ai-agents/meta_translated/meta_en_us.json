@@ -1,0 +1,281 @@
+{
+  "name": "AI Agents",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "What Are AI Agents",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Plans and Eligibility",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Quickstart",
+      "file": "quickstart.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Creating an Agent",
+      "file": "creating-an-agent.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Starter Templates",
+      "file": "starter-templates.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Template: Moderator",
+      "file": "template-moderator.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Template: Welcome Greeter",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Template: Top Comment Pinner",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Template: Thread Summarizer",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Creating Agents"
+    },
+    {
+      "name": "Choosing a Model",
+      "file": "choosing-a-model.md",
+      "subCat": "Personality and Context"
+    },
+    {
+      "name": "Personality and the Initial Prompt",
+      "file": "personality-prompt.md",
+      "subCat": "Personality and Context"
+    },
+    {
+      "name": "Context Options",
+      "file": "context-options.md",
+      "subCat": "Personality and Context"
+    },
+    {
+      "name": "Community Guidelines",
+      "file": "community-guidelines.md",
+      "subCat": "Personality and Context"
+    },
+    {
+      "name": "Scope: URL and Locale Filters",
+      "file": "scope-url-locale.md",
+      "subCat": "Personality and Context"
+    },
+    {
+      "name": "Trigger Events Overview",
+      "file": "triggers-overview.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Added",
+      "file": "trigger-comment-add.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Edited",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Deleted",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Pinned",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Unpinned",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Locked",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Comment Unlocked",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Vote Threshold",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Flag Threshold",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: New User First Comment",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Auto-Spammed Comment",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Moderator Reviewed Comment",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Moderator Approved Comment",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Moderator Marked Spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Trigger: Moderator Awarded Badge",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Deferred Triggers",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Trigger Events"
+    },
+    {
+      "name": "Tools Reference",
+      "file": "tools-overview.md",
+      "subCat": "Allowed Tool Calls"
+    },
+    {
+      "name": "Ban user",
+      "file": "tool-ban-user.md",
+      "subCat": "Allowed Tool Calls"
+    },
+    {
+      "name": "Warn user",
+      "file": "tool-warn-user.md",
+      "subCat": "Allowed Tool Calls"
+    },
+    {
+      "name": "Status States",
+      "file": "status-states.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "Dry-Run Mode",
+      "file": "dry-run-mode.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "Approval Workflow",
+      "file": "approval-workflow.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "Approval Notifications",
+      "file": "approval-notifications.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "EU DSA Article 17 Compliance",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "Agent Memory System",
+      "file": "agent-memory-system.md",
+      "subCat": "Safety and Oversight"
+    },
+    {
+      "name": "Budgets Overview",
+      "file": "budgets-overview.md",
+      "subCat": "Budgets and Costs"
+    },
+    {
+      "name": "Budget Alerts",
+      "file": "budget-alerts.md",
+      "subCat": "Budgets and Costs"
+    },
+    {
+      "name": "Cost Model",
+      "file": "cost-model.md",
+      "subCat": "Budgets and Costs"
+    },
+    {
+      "name": "Drop Reasons",
+      "file": "drop-reasons.md",
+      "subCat": "Budgets and Costs"
+    },
+    {
+      "name": "Run History",
+      "file": "run-history.md",
+      "subCat": "Monitoring and Tuning"
+    },
+    {
+      "name": "Run Detail View",
+      "file": "run-detail-view.md",
+      "subCat": "Monitoring and Tuning"
+    },
+    {
+      "name": "Analytics Page",
+      "file": "analytics-page.md",
+      "subCat": "Monitoring and Tuning"
+    },
+    {
+      "name": "Test Runs (Replays)",
+      "file": "test-runs-replays.md",
+      "subCat": "Monitoring and Tuning"
+    },
+    {
+      "name": "Refining Prompts",
+      "file": "refining-prompts.md",
+      "subCat": "Monitoring and Tuning"
+    },
+    {
+      "name": "Webhooks Overview",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook Events",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook Payloads",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook Signing",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook Retries",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook Delivery Logs",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

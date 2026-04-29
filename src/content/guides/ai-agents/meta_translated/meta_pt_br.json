@@ -1,0 +1,281 @@
+{
+  "name": "Agentes de IA",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "O que são Agentes de IA",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Introdução"
+    },
+    {
+      "name": "Planos e Elegibilidade",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Introdução"
+    },
+    {
+      "name": "Início Rápido",
+      "file": "quickstart.md",
+      "subCat": "Introdução"
+    },
+    {
+      "name": "Criando um Agente",
+      "file": "creating-an-agent.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Modelos Iniciais",
+      "file": "starter-templates.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Modelo: Moderador",
+      "file": "template-moderator.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Modelo: Saudador de Boas-Vindas",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Modelo: Fixador de Comentários Principais",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Modelo: Resumidor de Tópicos",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Criação de Agentes"
+    },
+    {
+      "name": "Escolhendo um Modelo",
+      "file": "choosing-a-model.md",
+      "subCat": "Personalidade e Contexto"
+    },
+    {
+      "name": "Personalidade e o Prompt Inicial",
+      "file": "personality-prompt.md",
+      "subCat": "Personalidade e Contexto"
+    },
+    {
+      "name": "Opções de Contexto",
+      "file": "context-options.md",
+      "subCat": "Personalidade e Contexto"
+    },
+    {
+      "name": "Diretrizes da Comunidade",
+      "file": "community-guidelines.md",
+      "subCat": "Personalidade e Contexto"
+    },
+    {
+      "name": "Escopo: Filtros de URL e Localidade",
+      "file": "scope-url-locale.md",
+      "subCat": "Personalidade e Contexto"
+    },
+    {
+      "name": "Visão Geral dos Eventos de Gatilho",
+      "file": "triggers-overview.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Adicionado",
+      "file": "trigger-comment-add.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Editado",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Excluído",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Fixado",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Desfixado",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Bloqueado",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Desbloqueado",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Limite de Votos",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Limite de Sinalizações",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Primeiro Comentário de Novo Usuário",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Marcado como Spam Automaticamente",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Revisado por Moderador",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Comentário Aprovado pelo Moderador",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Moderador Marcou como Spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilho: Moderador Concedeu Emblema",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Gatilhos Diferidos",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Eventos de Gatilho"
+    },
+    {
+      "name": "Referência de Ferramentas",
+      "file": "tools-overview.md",
+      "subCat": "Chamadas de Ferramentas Permitidas"
+    },
+    {
+      "name": "Banir usuário",
+      "file": "tool-ban-user.md",
+      "subCat": "Chamadas de Ferramentas Permitidas"
+    },
+    {
+      "name": "Avisar usuário",
+      "file": "tool-warn-user.md",
+      "subCat": "Chamadas de Ferramentas Permitidas"
+    },
+    {
+      "name": "Estados de Status",
+      "file": "status-states.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Modo de Simulação",
+      "file": "dry-run-mode.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Fluxo de Aprovação",
+      "file": "approval-workflow.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Notificações de Aprovação",
+      "file": "approval-notifications.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Conformidade com o Artigo 17 do DSA da UE",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Sistema de Memória do Agente",
+      "file": "agent-memory-system.md",
+      "subCat": "Segurança e Supervisão"
+    },
+    {
+      "name": "Visão Geral de Orçamentos",
+      "file": "budgets-overview.md",
+      "subCat": "Orçamentos e Custos"
+    },
+    {
+      "name": "Alertas de Orçamento",
+      "file": "budget-alerts.md",
+      "subCat": "Orçamentos e Custos"
+    },
+    {
+      "name": "Modelo de Custos",
+      "file": "cost-model.md",
+      "subCat": "Orçamentos e Custos"
+    },
+    {
+      "name": "Motivos de Rejeição",
+      "file": "drop-reasons.md",
+      "subCat": "Orçamentos e Custos"
+    },
+    {
+      "name": "Histórico de Execuções",
+      "file": "run-history.md",
+      "subCat": "Monitoramento e Ajustes"
+    },
+    {
+      "name": "Visualização de Detalhes da Execução",
+      "file": "run-detail-view.md",
+      "subCat": "Monitoramento e Ajustes"
+    },
+    {
+      "name": "Página de Análises",
+      "file": "analytics-page.md",
+      "subCat": "Monitoramento e Ajustes"
+    },
+    {
+      "name": "Execuções de Teste (Repetições)",
+      "file": "test-runs-replays.md",
+      "subCat": "Monitoramento e Ajustes"
+    },
+    {
+      "name": "Refinando Prompts",
+      "file": "refining-prompts.md",
+      "subCat": "Monitoramento e Ajustes"
+    },
+    {
+      "name": "Visão Geral de Webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Eventos de Webhook",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Payloads de Webhook",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Assinatura de Webhook",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Retentativas de Webhook",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Logs de Entrega de Webhook",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "name": "ИИ агенти",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Какво представляват ИИ агентите",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Въведение"
+    },
+    {
+      "name": "Планове и допустимост",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Въведение"
+    },
+    {
+      "name": "Бърз старт",
+      "file": "quickstart.md",
+      "subCat": "Въведение"
+    },
+    {
+      "name": "Създаване на агент",
+      "file": "creating-an-agent.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Начални шаблони",
+      "file": "starter-templates.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Шаблон: Модератор",
+      "file": "template-moderator.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Шаблон: Посрещач",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Шаблон: Закрепване на най-добър коментар",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Шаблон: Обобщител на нишка",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Създаване на агенти"
+    },
+    {
+      "name": "Избор на модел",
+      "file": "choosing-a-model.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Личност и начална подсказка",
+      "file": "personality-prompt.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Опции за контекст",
+      "file": "context-options.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Правила на общността",
+      "file": "community-guidelines.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Обхват: Филтри за URL и локал",
+      "file": "scope-url-locale.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Преглед на задействащи събития",
+      "file": "triggers-overview.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Добавен коментар",
+      "file": "trigger-comment-add.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Редактиран коментар",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Изтрит коментар",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментарът е закрепен",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментарът е открепен",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментарът е заключен",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментарът е отключен",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Праг на гласове",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Праг на докладвания",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Първи коментар на нов потребител",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментар, автоматично маркиран като спам",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментар, прегледан от модератор",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Коментар, одобрен от модератор",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Модераторът маркира като спам",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Тригер: Модератор присъди значка",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Отложени тригери",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Задействащи събития"
+    },
+    {
+      "name": "Справочник за инструменти",
+      "file": "tools-overview.md",
+      "subCat": "Разрешени повиквания на инструменти"
+    },
+    {
+      "name": "Блокиране на потребител",
+      "file": "tool-ban-user.md",
+      "subCat": "Разрешени повиквания на инструменти"
+    },
+    {
+      "name": "Предупреждение на потребител",
+      "file": "tool-warn-user.md",
+      "subCat": "Разрешени повиквания на инструменти"
+    },
+    {
+      "name": "Статусни състояния",
+      "file": "status-states.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Режим на пробно изпълнение",
+      "file": "dry-run-mode.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Работен процес за одобрение",
+      "file": "approval-workflow.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Известия за одобрение",
+      "file": "approval-notifications.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Съответствие с член 17 от DSA на ЕС",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Система за памет на агента",
+      "file": "agent-memory-system.md",
+      "subCat": "Безопасност и надзор"
+    },
+    {
+      "name": "Преглед на бюджетите",
+      "file": "budgets-overview.md",
+      "subCat": "Бюджети и разходи"
+    },
+    {
+      "name": "Известия за бюджет",
+      "file": "budget-alerts.md",
+      "subCat": "Бюджети и разходи"
+    },
+    {
+      "name": "Модел на разходите",
+      "file": "cost-model.md",
+      "subCat": "Бюджети и разходи"
+    },
+    {
+      "name": "Причини за отпадане",
+      "file": "drop-reasons.md",
+      "subCat": "Бюджети и разходи"
+    },
+    {
+      "name": "История на изпълненията",
+      "file": "run-history.md",
+      "subCat": "Наблюдение и настройка"
+    },
+    {
+      "name": "Подробен изглед на изпълнение",
+      "file": "run-detail-view.md",
+      "subCat": "Наблюдение и настройка"
+    },
+    {
+      "name": "Страница с анализи",
+      "file": "analytics-page.md",
+      "subCat": "Наблюдение и настройка"
+    },
+    {
+      "name": "Тестови изпълнения (повторения)",
+      "file": "test-runs-replays.md",
+      "subCat": "Наблюдение и настройка"
+    },
+    {
+      "name": "Усъвършенстване на подсказките",
+      "file": "refining-prompts.md",
+      "subCat": "Наблюдение и настройка"
+    },
+    {
+      "name": "Преглед на уебхукове",
+      "file": "webhooks-overview.md",
+      "subCat": "Уебхукове"
+    },
+    {
+      "name": "Събития на уебхукове",
+      "file": "webhook-events.md",
+      "subCat": "Уебхукове"
+    },
+    {
+      "name": "Данни на уебхуковете",
+      "file": "webhook-payloads.md",
+      "subCat": "Уебхукове"
+    },
+    {
+      "name": "Подписване на уебхукове",
+      "file": "webhook-signing.md",
+      "subCat": "Уебхукове"
+    },
+    {
+      "name": "Повторни опити за уебхукове",
+      "file": "webhook-retries.md",
+      "subCat": "Уебхукове"
+    },
+    {
+      "name": "Дневници за доставка на уебхукове",
+      "file": "webhook-logs.md",
+      "subCat": "Уебхукове"
+    }
+  ]
+}

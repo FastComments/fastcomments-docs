@@ -126,6 +126,11 @@
       "name": "Keyboard Shortcuts",
       "file": "keyboard-shortcuts.md",
       "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "AI Agents",
+      "file": "ai-agents-pointer.md",
+      "subCat": "Moderation Workflow"
     }
   ]
 }

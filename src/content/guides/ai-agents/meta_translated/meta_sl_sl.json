@@ -1,0 +1,281 @@
+{
+  "name": "AI agenti",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Kaj so AI agenti",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Uvod"
+    },
+    {
+      "name": "Načrti in upravičenost",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Uvod"
+    },
+    {
+      "name": "Hitri začetek",
+      "file": "quickstart.md",
+      "subCat": "Uvod"
+    },
+    {
+      "name": "Ustvarjanje agenta",
+      "file": "creating-an-agent.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Začetne predloge",
+      "file": "starter-templates.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Predloga: moderator",
+      "file": "template-moderator.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Predloga: pozdravitelj",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Predloga: pripenjanje najboljših komentarjev",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Predloga: povzetek niti",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Ustvarjanje agentov"
+    },
+    {
+      "name": "Izbira modela",
+      "file": "choosing-a-model.md",
+      "subCat": "Osebnost in kontekst"
+    },
+    {
+      "name": "Osebnost in začetni poziv",
+      "file": "personality-prompt.md",
+      "subCat": "Osebnost in kontekst"
+    },
+    {
+      "name": "Možnosti konteksta",
+      "file": "context-options.md",
+      "subCat": "Osebnost in kontekst"
+    },
+    {
+      "name": "Smernice skupnosti",
+      "file": "community-guidelines.md",
+      "subCat": "Osebnost in kontekst"
+    },
+    {
+      "name": "Obseg: filtri URL in lokalizacije",
+      "file": "scope-url-locale.md",
+      "subCat": "Osebnost in kontekst"
+    },
+    {
+      "name": "Pregled sprožilnih dogodkov",
+      "file": "triggers-overview.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar dodan",
+      "file": "trigger-comment-add.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar urejen",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar izbrisan",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar pritrjen",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar odpet",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar zaklenjen",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar odklenjen",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: prag glasov",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: prag prijav",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: prvi komentar novega uporabnika",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar samodejno označen kot spam",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar pregledan s strani moderatorja",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: komentar odobril moderator",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: moderator označil kot spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Sprožilec: moderator dodelil značko",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Odloženi sprožilci",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Sprožilni dogodki"
+    },
+    {
+      "name": "Referenca orodij",
+      "file": "tools-overview.md",
+      "subCat": "Dovoljeni klici orodij"
+    },
+    {
+      "name": "Prepovej uporabnika",
+      "file": "tool-ban-user.md",
+      "subCat": "Dovoljeni klici orodij"
+    },
+    {
+      "name": "Opozori uporabnika",
+      "file": "tool-warn-user.md",
+      "subCat": "Dovoljeni klici orodij"
+    },
+    {
+      "name": "Stanja statusov",
+      "file": "status-states.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Preizkusni način",
+      "file": "dry-run-mode.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Postopek odobritve",
+      "file": "approval-workflow.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Obvestila o odobritvi",
+      "file": "approval-notifications.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Skladnost z 17. členom DSA (EU)",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Sistem spomina agenta",
+      "file": "agent-memory-system.md",
+      "subCat": "Varnost in nadzor"
+    },
+    {
+      "name": "Pregled proračunov",
+      "file": "budgets-overview.md",
+      "subCat": "Proračuni in stroški"
+    },
+    {
+      "name": "Opozorila o proračunu",
+      "file": "budget-alerts.md",
+      "subCat": "Proračuni in stroški"
+    },
+    {
+      "name": "Model stroškov",
+      "file": "cost-model.md",
+      "subCat": "Proračuni in stroški"
+    },
+    {
+      "name": "Razlogi za opustitev",
+      "file": "drop-reasons.md",
+      "subCat": "Proračuni in stroški"
+    },
+    {
+      "name": "Zgodovina zagonov",
+      "file": "run-history.md",
+      "subCat": "Nadzor in prilagajanje"
+    },
+    {
+      "name": "Pogled podrobnosti zagona",
+      "file": "run-detail-view.md",
+      "subCat": "Nadzor in prilagajanje"
+    },
+    {
+      "name": "Stran z analitiko",
+      "file": "analytics-page.md",
+      "subCat": "Nadzor in prilagajanje"
+    },
+    {
+      "name": "Testni zagoni (ponovitve)",
+      "file": "test-runs-replays.md",
+      "subCat": "Nadzor in prilagajanje"
+    },
+    {
+      "name": "Izboljševanje navodil",
+      "file": "refining-prompts.md",
+      "subCat": "Nadzor in prilagajanje"
+    },
+    {
+      "name": "Pregled webhookov",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Dogodki webhookov",
+      "file": "webhook-events.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Vsebina webhookov",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Podpisovanje webhookov",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Ponovni poskusi webhookov",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Dnevniki dostave webhookov",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooki"
+    }
+  ]
+}

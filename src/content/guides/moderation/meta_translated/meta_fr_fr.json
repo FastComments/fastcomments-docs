@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "La page de modération des commentaires",
+      "name": "Page de modération des commentaires",
       "file": "moderate-comments-page.md",
       "subCat": "Introduction"
     },
@@ -13,7 +13,7 @@
       "subCat": "Modérateurs"
     },
     {
-      "name": "Ajouter des modérateurs",
+      "name": "Ajout de modérateurs",
       "file": "moderators-adding.md",
       "subCat": "Modérateurs"
     },
@@ -23,79 +23,79 @@
       "subCat": "Modérateurs"
     },
     {
-      "name": "Retirer des modérateurs",
+      "name": "Suppression de modérateurs",
       "file": "moderators-removing.md",
       "subCat": "Modérateurs"
     },
     {
-      "name": "Fonctionnement des approbations",
+      "name": "Comment fonctionnent les approbations",
       "file": "moderation-approvals.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Modération par e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Filtrage",
       "file": "filters.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Recherche",
       "file": "search.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Partage des liens de modération",
+      "name": "Partage de liens de modération",
       "file": "sharing-moderation-links.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Visionneuse du fil de commentaires",
       "file": "comment-thread-viewer.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Actions de modération",
       "file": "comment-actions.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Suppression de commentaires",
       "file": "deleting-comments.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Actions de modération depuis le widget de commentaire",
+      "name": "Actions de modération depuis le widget de commentaires",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
-      "name": "Modération en direct",
+      "name": "Modération en temps réel",
       "file": "comment-actions-live.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Bannir des utilisateurs",
       "file": "banning-users.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Bannir des utilisateurs avec des caractères génériques",
       "file": "banning-users-wildcards.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Signalement",
       "file": "flagging.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Actions en masse",
       "file": "bulk-actions.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Groupes de modération",
@@ -118,14 +118,19 @@
       "subCat": "Spam et grossièretés"
     },
     {
-      "name": "Historique des commentaires",
+      "name": "Journaux des commentaires",
       "file": "comment-logs.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
     },
     {
       "name": "Raccourcis clavier",
       "file": "keyboard-shortcuts.md",
-      "subCat": "Flux de modération"
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Agents IA",
+      "file": "ai-agents-pointer.md",
+      "subCat": "Processus de modération"
     }
   ]
 }

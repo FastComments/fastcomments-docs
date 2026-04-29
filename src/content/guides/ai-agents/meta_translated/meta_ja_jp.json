@@ -1,0 +1,281 @@
+{
+  "name": "AI エージェント",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "AIエージェントとは",
+      "file": "what-are-ai-agents.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "プランと利用条件",
+      "file": "plans-and-eligibility.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quickstart.md",
+      "subCat": "はじめに"
+    },
+    {
+      "name": "エージェントの作成",
+      "file": "creating-an-agent.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "スターターテンプレート",
+      "file": "starter-templates.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "テンプレート：モデレーター",
+      "file": "template-moderator.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "テンプレート：ウェルカムグリーター",
+      "file": "template-welcome-greeter.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "テンプレート：トップコメントピン留め",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "テンプレート：スレッド要約",
+      "file": "template-thread-summarizer.md",
+      "subCat": "エージェントの作成"
+    },
+    {
+      "name": "モデルの選択",
+      "file": "choosing-a-model.md",
+      "subCat": "パーソナリティとコンテキスト"
+    },
+    {
+      "name": "パーソナリティと初期プロンプト",
+      "file": "personality-prompt.md",
+      "subCat": "パーソナリティとコンテキスト"
+    },
+    {
+      "name": "コンテキストオプション",
+      "file": "context-options.md",
+      "subCat": "パーソナリティとコンテキスト"
+    },
+    {
+      "name": "コミュニティガイドライン",
+      "file": "community-guidelines.md",
+      "subCat": "パーソナリティとコンテキスト"
+    },
+    {
+      "name": "適用範囲：URLとロケールフィルター",
+      "file": "scope-url-locale.md",
+      "subCat": "パーソナリティとコンテキスト"
+    },
+    {
+      "name": "トリガーイベントの概要",
+      "file": "triggers-overview.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントの追加",
+      "file": "trigger-comment-add.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントの編集",
+      "file": "trigger-comment-edit.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントの削除",
+      "file": "trigger-comment-delete.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントのピン留め",
+      "file": "trigger-comment-pin.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントのピン解除",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントのロック",
+      "file": "trigger-comment-lock.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：コメントのロック解除",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：投票閾値",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：フラグ閾値",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：新規ユーザーの最初のコメント",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：自動スパム判定されたコメント",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：モデレーターが確認したコメント",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：モデレーターが承認したコメント",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：モデレーターがスパムと判定",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "トリガー：モデレーターがバッジを授与",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "遅延トリガー",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "トリガーイベント"
+    },
+    {
+      "name": "ツールリファレンス",
+      "file": "tools-overview.md",
+      "subCat": "許可されたツール呼び出し"
+    },
+    {
+      "name": "ユーザーを禁止する",
+      "file": "tool-ban-user.md",
+      "subCat": "許可されたツール呼び出し"
+    },
+    {
+      "name": "ユーザーに警告する",
+      "file": "tool-warn-user.md",
+      "subCat": "許可されたツール呼び出し"
+    },
+    {
+      "name": "ステータス状態",
+      "file": "status-states.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "ドライランモード",
+      "file": "dry-run-mode.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "承認ワークフロー",
+      "file": "approval-workflow.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "承認通知",
+      "file": "approval-notifications.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "EU DSA 第17条の遵守",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "エージェントメモリシステム",
+      "file": "agent-memory-system.md",
+      "subCat": "安全性と監視"
+    },
+    {
+      "name": "予算の概要",
+      "file": "budgets-overview.md",
+      "subCat": "予算とコスト"
+    },
+    {
+      "name": "予算アラート",
+      "file": "budget-alerts.md",
+      "subCat": "予算とコスト"
+    },
+    {
+      "name": "コストモデル",
+      "file": "cost-model.md",
+      "subCat": "予算とコスト"
+    },
+    {
+      "name": "ドロップ理由",
+      "file": "drop-reasons.md",
+      "subCat": "予算とコスト"
+    },
+    {
+      "name": "実行履歴",
+      "file": "run-history.md",
+      "subCat": "モニタリングとチューニング"
+    },
+    {
+      "name": "実行詳細ビュー",
+      "file": "run-detail-view.md",
+      "subCat": "モニタリングとチューニング"
+    },
+    {
+      "name": "分析ページ",
+      "file": "analytics-page.md",
+      "subCat": "モニタリングとチューニング"
+    },
+    {
+      "name": "テスト実行（リプレイ）",
+      "file": "test-runs-replays.md",
+      "subCat": "モニタリングとチューニング"
+    },
+    {
+      "name": "プロンプトの改善",
+      "file": "refining-prompts.md",
+      "subCat": "モニタリングとチューニング"
+    },
+    {
+      "name": "Webhookの概要",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhookイベント",
+      "file": "webhook-events.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhookペイロード",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook署名",
+      "file": "webhook-signing.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhookのリトライ",
+      "file": "webhook-retries.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook配信ログ",
+      "file": "webhook-logs.md",
+      "subCat": "Webhook"
+    }
+  ]
+}

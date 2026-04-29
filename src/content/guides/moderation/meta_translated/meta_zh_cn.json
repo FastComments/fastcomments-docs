@@ -1,5 +1,5 @@
 {
-  "name": "审核",
+  "name": "内容审核",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -28,12 +28,12 @@
       "subCat": "审核员"
     },
     {
-      "name": "批准流程",
+      "name": "批准的工作原理",
       "file": "moderation-approvals.md",
       "subCat": "审核工作流程"
     },
     {
-      "name": "通过电子邮件进行审核",
+      "name": "通过邮件审核",
       "file": "moderation-via-email.md",
       "subCat": "审核工作流程"
     },
@@ -68,7 +68,7 @@
       "subCat": "审核工作流程"
     },
     {
-      "name": "评论小部件的审核操作",
+      "name": "来自评论组件的审核操作",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "审核工作流程"
     },
@@ -125,6 +125,11 @@
     {
       "name": "键盘快捷键",
       "file": "keyboard-shortcuts.md",
+      "subCat": "审核工作流程"
+    },
+    {
+      "name": "AI 代理",
+      "file": "ai-agents-pointer.md",
       "subCat": "审核工作流程"
     }
   ]

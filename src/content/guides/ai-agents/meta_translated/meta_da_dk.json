@@ -1,0 +1,281 @@
+{
+  "name": "AI-agenter",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er AI-agenter",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Introduktion"
+    },
+    {
+      "name": "Planer og berettigelse",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Introduktion"
+    },
+    {
+      "name": "Hurtigstart",
+      "file": "quickstart.md",
+      "subCat": "Introduktion"
+    },
+    {
+      "name": "Opret en agent",
+      "file": "creating-an-agent.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Startskabeloner",
+      "file": "starter-templates.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Skabelon: Moderator",
+      "file": "template-moderator.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Skabelon: Velkomsthilsen",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Skabelon: Fastgør topkommentar",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Skabelon: Trådopsummering",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Valg af model",
+      "file": "choosing-a-model.md",
+      "subCat": "Personlighed og kontekst"
+    },
+    {
+      "name": "Personlighed og den indledende prompt",
+      "file": "personality-prompt.md",
+      "subCat": "Personlighed og kontekst"
+    },
+    {
+      "name": "Kontekstmuligheder",
+      "file": "context-options.md",
+      "subCat": "Personlighed og kontekst"
+    },
+    {
+      "name": "Fællesskabsretningslinjer",
+      "file": "community-guidelines.md",
+      "subCat": "Personlighed og kontekst"
+    },
+    {
+      "name": "Omfang: URL- og lokalefiltre",
+      "file": "scope-url-locale.md",
+      "subCat": "Personlighed og kontekst"
+    },
+    {
+      "name": "Oversigt over udløsende hændelser",
+      "file": "triggers-overview.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar tilføjet",
+      "file": "trigger-comment-add.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar redigeret",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar slettet",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar fastgjort",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar fjernet fra fastgørelse",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar låst",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar låst op",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Stemmetærskel",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Rapporttærskel",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Ny brugers første kommentar",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar markeret som automatisk spam",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar gennemgået af moderator",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar godkendt af moderator",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Kommentar markeret som spam af moderator",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udløser: Moderator tildelte badge",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Udskudte udløsere",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Udløsende hændelser"
+    },
+    {
+      "name": "Værktøjsreference",
+      "file": "tools-overview.md",
+      "subCat": "Tilladte værktøjskald"
+    },
+    {
+      "name": "Udeluk bruger",
+      "file": "tool-ban-user.md",
+      "subCat": "Tilladte værktøjskald"
+    },
+    {
+      "name": "Advar bruger",
+      "file": "tool-warn-user.md",
+      "subCat": "Tilladte værktøjskald"
+    },
+    {
+      "name": "Status-tilstande",
+      "file": "status-states.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Tørkørselstilstand",
+      "file": "dry-run-mode.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Godkendelsesarbejdsgang",
+      "file": "approval-workflow.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Godkendelsesmeddelelser",
+      "file": "approval-notifications.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Overholdelse af EU DSA artikel 17",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Agenthukommelsessystem",
+      "file": "agent-memory-system.md",
+      "subCat": "Sikkerhed og tilsyn"
+    },
+    {
+      "name": "Oversigt over budgetter",
+      "file": "budgets-overview.md",
+      "subCat": "Budgetter og omkostninger"
+    },
+    {
+      "name": "Budgetadvarsler",
+      "file": "budget-alerts.md",
+      "subCat": "Budgetter og omkostninger"
+    },
+    {
+      "name": "Omkostningsmodel",
+      "file": "cost-model.md",
+      "subCat": "Budgetter og omkostninger"
+    },
+    {
+      "name": "Årsager til afvisning",
+      "file": "drop-reasons.md",
+      "subCat": "Budgetter og omkostninger"
+    },
+    {
+      "name": "Kørselshistorik",
+      "file": "run-history.md",
+      "subCat": "Overvågning og justering"
+    },
+    {
+      "name": "Detaljevisning af kørsel",
+      "file": "run-detail-view.md",
+      "subCat": "Overvågning og justering"
+    },
+    {
+      "name": "Analyseside",
+      "file": "analytics-page.md",
+      "subCat": "Overvågning og justering"
+    },
+    {
+      "name": "Testkørsler (genafspilninger)",
+      "file": "test-runs-replays.md",
+      "subCat": "Overvågning og justering"
+    },
+    {
+      "name": "Forfining af prompts",
+      "file": "refining-prompts.md",
+      "subCat": "Overvågning og justering"
+    },
+    {
+      "name": "Oversigt over webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-hændelser",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-payloads",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-signering",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-genforsøg",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-leveringslog",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

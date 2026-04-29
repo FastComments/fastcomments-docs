@@ -1,11 +1,11 @@
 {
-  "name": "מודרציה",
+  "name": "פיקוח על תוכן",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "דף ניהול תגובות",
+      "name": "דף ניהול התגובות",
       "file": "moderate-comments-page.md",
-      "subCat": "הקדמה"
+      "subCat": "מבוא"
     },
     {
       "name": "ממונים",
@@ -28,104 +28,109 @@
       "subCat": "ממונים"
     },
     {
-      "name": "כיצד עובדות אישורים",
+      "name": "כיצד מתבצעים אישורים",
       "file": "moderation-approvals.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "מודרציה באמצעות דוא\"ל",
+      "name": "פיקוח באמצעות דואר אלקטרוני",
       "file": "moderation-via-email.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "סינון",
       "file": "filters.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "חיפוש",
       "file": "search.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "שיתוף קישורי מודרציה",
+      "name": "שיתוף קישורי ניהול",
       "file": "sharing-moderation-links.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "צפיית שרשור תגובות",
+      "name": "מציג שרשור התגובות",
       "file": "comment-thread-viewer.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "פעולות מודרציה",
+      "name": "פעולות פיקוח",
       "file": "comment-actions.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "מחיקת תגובות",
       "file": "deleting-comments.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "פעולות מודרציה מווידג'ט התגובות",
+      "name": "פעולות פיקוח מווידג'ט התגובה",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "מודרציה בזמן אמת",
+      "name": "פיקוח בזמן אמת",
       "file": "comment-actions-live.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "חסימת משתמשים",
       "file": "banning-users.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "חסימת משתמשים באמצעות תווים כלליים",
       "file": "banning-users-wildcards.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "דיווח",
       "file": "flagging.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "פעולות קבוצתיות",
+      "name": "פעולות גורפות",
       "file": "bulk-actions.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
-      "name": "קבוצות מודרציה",
+      "name": "קבוצות פיקוח",
       "file": "moderation-groups.md",
-      "subCat": "קבוצות מודרציה"
+      "subCat": "קבוצות פיקוח"
     },
     {
-      "name": "הגדרות מודרציה",
+      "name": "הגדרות פיקוח",
       "file": "moderation-settings.md",
-      "subCat": "הגדרות"
+      "subCat": "תצורה"
     },
     {
-      "name": "זיהוי ספאם",
+      "name": "זיהוי דואר זבל",
       "file": "spam-detection.md",
-      "subCat": "ספאם וגסויות"
+      "subCat": "דואר זבל וגסויות"
     },
     {
       "name": "הסתרת גסויות",
       "file": "profanity-mask.md",
-      "subCat": "ספאם וגסויות"
+      "subCat": "דואר זבל וגסויות"
     },
     {
       "name": "יומני תגובות",
       "file": "comment-logs.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
     },
     {
       "name": "קיצורי מקלדת",
       "file": "keyboard-shortcuts.md",
-      "subCat": "תהליך המודרציה"
+      "subCat": "זרימת עבודה לפיקוח"
+    },
+    {
+      "name": "סוכני בינה מלאכותית",
+      "file": "ai-agents-pointer.md",
+      "subCat": "זרימת עבודה לפיקוח"
     }
   ]
 }

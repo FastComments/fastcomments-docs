@@ -1,0 +1,281 @@
+{
+  "name": "Πράκτορες Τεχνητής Νοημοσύνης",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Τι είναι οι Πράκτορες Τεχνητής Νοημοσύνης",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Εισαγωγή"
+    },
+    {
+      "name": "Σχέδια και Επιλεξιμότητα",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Εισαγωγή"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "quickstart.md",
+      "subCat": "Εισαγωγή"
+    },
+    {
+      "name": "Δημιουργία Πράκτορα",
+      "file": "creating-an-agent.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Πρότυπα εκκίνησης",
+      "file": "starter-templates.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Πρότυπο: Συντονιστής",
+      "file": "template-moderator.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Πρότυπο: Χαιρετισμός καλωσορίσματος",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Πρότυπο: Καρφίτσωμα κορυφαίου σχολίου",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Πρότυπο: Συνοψιστής νήματος",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Δημιουργία Πρακτόρων"
+    },
+    {
+      "name": "Επιλογή Μοντέλου",
+      "file": "choosing-a-model.md",
+      "subCat": "Προσωπικότητα και Πλαίσιο"
+    },
+    {
+      "name": "Προσωπικότητα και η Αρχική Προτροπή",
+      "file": "personality-prompt.md",
+      "subCat": "Προσωπικότητα και Πλαίσιο"
+    },
+    {
+      "name": "Επιλογές Πλαισίου",
+      "file": "context-options.md",
+      "subCat": "Προσωπικότητα και Πλαίσιο"
+    },
+    {
+      "name": "Κατευθυντήριες Οδηγίες Κοινότητας",
+      "file": "community-guidelines.md",
+      "subCat": "Προσωπικότητα και Πλαίσιο"
+    },
+    {
+      "name": "Πεδίο: Φίλτρα URL και Τοπικής Ρύθμισης",
+      "file": "scope-url-locale.md",
+      "subCat": "Προσωπικότητα και Πλαίσιο"
+    },
+    {
+      "name": "Επισκόπηση Συμβάντων Ενεργοποίησης",
+      "file": "triggers-overview.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Προστέθηκε σχόλιο",
+      "file": "trigger-comment-add.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Επεξεργάστηκε σχόλιο",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Διαγράφηκε σχόλιο",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Καρφώθηκε σχόλιο",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Ξεκαρφώθηκε σχόλιο",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Κλειδώθηκε σχόλιο",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Ξεκλειδώθηκε σχόλιο",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Κατώφλι ψήφων",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Κατώφλι αναφορών",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Πρώτο σχόλιο νέου χρήστη",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Αυτόματα χαρακτηρισμένο spam σχόλιο",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Σχόλιο ελεγχθέν από συντονιστή",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Σχόλιο εγκεκριμένο από συντονιστή",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Συντονιστής σήμανε ως spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Ενεργοποίηση: Συντονιστής απένειμε διάκριση",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Αναβαλλόμενες Ενεργοποιήσεις",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Ενεργοποίηση Συμβάντων"
+    },
+    {
+      "name": "Αναφορά Εργαλείων",
+      "file": "tools-overview.md",
+      "subCat": "Επιτρεπτές Κλήσεις Εργαλείων"
+    },
+    {
+      "name": "Απαγόρευση χρήστη",
+      "file": "tool-ban-user.md",
+      "subCat": "Επιτρεπτές Κλήσεις Εργαλείων"
+    },
+    {
+      "name": "Προειδοποίηση χρήστη",
+      "file": "tool-warn-user.md",
+      "subCat": "Επιτρεπτές Κλήσεις Εργαλείων"
+    },
+    {
+      "name": "Καταστάσεις",
+      "file": "status-states.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Λειτουργία δοκιμής",
+      "file": "dry-run-mode.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Διαδικασία έγκρισης",
+      "file": "approval-workflow.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Ειδοποιήσεις έγκρισης",
+      "file": "approval-notifications.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Συμμόρφωση με το Άρθρο 17 του DSA της ΕΕ",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Σύστημα μνήμης πράκτορα",
+      "file": "agent-memory-system.md",
+      "subCat": "Ασφάλεια και Εποπτεία"
+    },
+    {
+      "name": "Επισκόπηση προϋπολογισμών",
+      "file": "budgets-overview.md",
+      "subCat": "Προϋπολογισμοί και Κόστη"
+    },
+    {
+      "name": "Ειδοποιήσεις προϋπολογισμού",
+      "file": "budget-alerts.md",
+      "subCat": "Προϋπολογισμοί και Κόστη"
+    },
+    {
+      "name": "Μοντέλο κόστους",
+      "file": "cost-model.md",
+      "subCat": "Προϋπολογισμοί και Κόστη"
+    },
+    {
+      "name": "Λόγοι απόρριψης",
+      "file": "drop-reasons.md",
+      "subCat": "Προϋπολογισμοί και Κόστη"
+    },
+    {
+      "name": "Ιστορικό εκτελέσεων",
+      "file": "run-history.md",
+      "subCat": "Παρακολούθηση και Βελτιστοποίηση"
+    },
+    {
+      "name": "Προβολή λεπτομερειών εκτέλεσης",
+      "file": "run-detail-view.md",
+      "subCat": "Παρακολούθηση και Βελτιστοποίηση"
+    },
+    {
+      "name": "Σελίδα αναλυτικών στοιχείων",
+      "file": "analytics-page.md",
+      "subCat": "Παρακολούθηση και Βελτιστοποίηση"
+    },
+    {
+      "name": "Δοκιμαστικές εκτελέσεις (αναπαραγωγές)",
+      "file": "test-runs-replays.md",
+      "subCat": "Παρακολούθηση και Βελτιστοποίηση"
+    },
+    {
+      "name": "Βελτίωση προτροπών",
+      "file": "refining-prompts.md",
+      "subCat": "Παρακολούθηση και Βελτιστοποίηση"
+    },
+    {
+      "name": "Επισκόπηση Webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Συμβάντα Webhook",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Φορτία δεδομένων Webhook",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Υπογραφή Webhook",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Επαναπροσπάθειες Webhook",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Καταγραφές παράδοσης Webhook",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

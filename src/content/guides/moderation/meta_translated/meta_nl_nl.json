@@ -30,72 +30,72 @@
     {
       "name": "Hoe goedkeuringen werken",
       "file": "moderation-approvals.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Moderatie via e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Filteren",
       "file": "filters.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Zoeken",
       "file": "search.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
-      "name": "Delen van moderatielinks",
+      "name": "Moderatie-links delen",
       "file": "sharing-moderation-links.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
-      "name": "Reactiedraadweergave",
+      "name": "De weergave van reactiedraden",
       "file": "comment-thread-viewer.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Moderatieacties",
       "file": "comment-actions.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Reacties verwijderen",
       "file": "deleting-comments.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Moderatieacties vanuit de reactie-widget",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
-      "name": "Live modereren",
+      "name": "Live moderatie",
       "file": "comment-actions-live.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Gebruikers verbannen",
       "file": "banning-users.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Gebruikers verbannen met jokertekens",
       "file": "banning-users-wildcards.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
-      "name": "Rapporteren",
+      "name": "Melden",
       "file": "flagging.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Bulkacties",
       "file": "bulk-actions.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Moderatiegroepen",
@@ -110,22 +110,27 @@
     {
       "name": "Spamdetectie",
       "file": "spam-detection.md",
-      "subCat": "Spam en grove taal"
+      "subCat": "Spam & Scheldwoorden"
     },
     {
-      "name": "Maskeren van grove taal",
+      "name": "Scheldwoorden maskeren",
       "file": "profanity-mask.md",
-      "subCat": "Spam en grove taal"
+      "subCat": "Spam & Scheldwoorden"
     },
     {
-      "name": "Reactielogboeken",
+      "name": "Reactielogs",
       "file": "comment-logs.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
     },
     {
       "name": "Sneltoetsen",
       "file": "keyboard-shortcuts.md",
-      "subCat": "Moderatieproces"
+      "subCat": "Moderatieworkflow"
+    },
+    {
+      "name": "AI-agenten",
+      "file": "ai-agents-pointer.md",
+      "subCat": "Moderatieworkflow"
     }
   ]
 }

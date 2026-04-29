@@ -1,0 +1,281 @@
+{
+  "name": "Агенти ШІ",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Що таке агенти ШІ",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Вступ"
+    },
+    {
+      "name": "Плани та умови доступу",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Вступ"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quickstart.md",
+      "subCat": "Вступ"
+    },
+    {
+      "name": "Створення агента",
+      "file": "creating-an-agent.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Початкові шаблони",
+      "file": "starter-templates.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Шаблон: Модератор",
+      "file": "template-moderator.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Шаблон: Вітальний агент",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Шаблон: Закріплювач найкращих коментарів",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Шаблон: Підсумовувач треду",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Створення агентів"
+    },
+    {
+      "name": "Вибір моделі",
+      "file": "choosing-a-model.md",
+      "subCat": "Особистість і контекст"
+    },
+    {
+      "name": "Особистість і початкова підказка",
+      "file": "personality-prompt.md",
+      "subCat": "Особистість і контекст"
+    },
+    {
+      "name": "Параметри контексту",
+      "file": "context-options.md",
+      "subCat": "Особистість і контекст"
+    },
+    {
+      "name": "Правила спільноти",
+      "file": "community-guidelines.md",
+      "subCat": "Особистість і контекст"
+    },
+    {
+      "name": "Область дії: фільтри URL та локалі",
+      "file": "scope-url-locale.md",
+      "subCat": "Особистість і контекст"
+    },
+    {
+      "name": "Огляд тригерних подій",
+      "file": "triggers-overview.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Додано коментар",
+      "file": "trigger-comment-add.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар відредаговано",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар видалено",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар закріплено",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар відкріплено",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар заблоковано",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар розблоковано",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Поріг голосів",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Поріг позначок",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Перший коментар нового користувача",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар автоматично позначено як спам",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар переглянуто модератором",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Коментар схвалено модератором",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Модератор позначив як спам",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Тригер: Модератор присвоїв значок",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Відкладені тригери",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Тригерні події"
+    },
+    {
+      "name": "Довідник інструментів",
+      "file": "tools-overview.md",
+      "subCat": "Дозволені виклики інструментів"
+    },
+    {
+      "name": "Забанити користувача",
+      "file": "tool-ban-user.md",
+      "subCat": "Дозволені виклики інструментів"
+    },
+    {
+      "name": "Попередити користувача",
+      "file": "tool-warn-user.md",
+      "subCat": "Дозволені виклики інструментів"
+    },
+    {
+      "name": "Стани статусу",
+      "file": "status-states.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Тестовий режим",
+      "file": "dry-run-mode.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Процес затвердження",
+      "file": "approval-workflow.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Сповіщення про затвердження",
+      "file": "approval-notifications.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Відповідність статті 17 DSA (ЄС)",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Система пам'яті агента",
+      "file": "agent-memory-system.md",
+      "subCat": "Безпека та нагляд"
+    },
+    {
+      "name": "Огляд бюджетів",
+      "file": "budgets-overview.md",
+      "subCat": "Бюджети та витрати"
+    },
+    {
+      "name": "Сповіщення про бюджет",
+      "file": "budget-alerts.md",
+      "subCat": "Бюджети та витрати"
+    },
+    {
+      "name": "Модель витрат",
+      "file": "cost-model.md",
+      "subCat": "Бюджети та витрати"
+    },
+    {
+      "name": "Причини відхилення",
+      "file": "drop-reasons.md",
+      "subCat": "Бюджети та витрати"
+    },
+    {
+      "name": "Історія запусків",
+      "file": "run-history.md",
+      "subCat": "Моніторинг та налаштування"
+    },
+    {
+      "name": "Перегляд деталей запуску",
+      "file": "run-detail-view.md",
+      "subCat": "Моніторинг та налаштування"
+    },
+    {
+      "name": "Сторінка аналітики",
+      "file": "analytics-page.md",
+      "subCat": "Моніторинг та налаштування"
+    },
+    {
+      "name": "Тестові прогони (повтори)",
+      "file": "test-runs-replays.md",
+      "subCat": "Моніторинг та налаштування"
+    },
+    {
+      "name": "Уточнення підказок",
+      "file": "refining-prompts.md",
+      "subCat": "Моніторинг та налаштування"
+    },
+    {
+      "name": "Огляд вебхуків",
+      "file": "webhooks-overview.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Події вебхуків",
+      "file": "webhook-events.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Корисне навантаження вебхуків",
+      "file": "webhook-payloads.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Підписування вебхуків",
+      "file": "webhook-signing.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Повторні спроби вебхуків",
+      "file": "webhook-retries.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Журнали доставки вебхуків",
+      "file": "webhook-logs.md",
+      "subCat": "Вебхуки"
+    }
+  ]
+}

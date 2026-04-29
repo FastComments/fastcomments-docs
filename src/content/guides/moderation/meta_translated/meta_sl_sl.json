@@ -1,5 +1,5 @@
 {
-  "name": "Moderiranje",
+  "name": "Moderacija",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -18,7 +18,7 @@
       "subCat": "Moderatorji"
     },
     {
-      "name": "Statistika moderatorjev",
+      "name": "Statistike moderatorjev",
       "file": "moderator-stats.md",
       "subCat": "Moderatorji"
     },
@@ -53,12 +53,12 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Pregled nitk komentarjev",
+      "name": "Pregledovalnik niti komentarjev",
       "file": "comment-thread-viewer.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Ukrepi moderiranja",
+      "name": "Dejanja moderiranja",
       "file": "comment-actions.md",
       "subCat": "Potek moderiranja"
     },
@@ -68,12 +68,12 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Ukrepi moderiranja iz pripomočka za komentarje",
+      "name": "Dejanja moderiranja v gradniku za komentarje",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Sprotno moderiranje",
+      "name": "Moderiranje v živo",
       "file": "comment-actions-live.md",
       "subCat": "Potek moderiranja"
     },
@@ -98,9 +98,9 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Skupine za moderiranje",
+      "name": "Skupine moderacije",
       "file": "moderation-groups.md",
-      "subCat": "Skupine za moderiranje"
+      "subCat": "Skupine moderacije"
     },
     {
       "name": "Nastavitve moderiranja",
@@ -110,12 +110,12 @@
     {
       "name": "Zaznavanje spama",
       "file": "spam-detection.md",
-      "subCat": "Spam in žaljivosti"
+      "subCat": "Spam in vulgarizmi"
     },
     {
-      "name": "Prikrivanje žaljivosti",
+      "name": "Skrivanje žaljivih besed",
       "file": "profanity-mask.md",
-      "subCat": "Spam in žaljivosti"
+      "subCat": "Spam in vulgarizmi"
     },
     {
       "name": "Dnevniki komentarjev",
@@ -123,8 +123,13 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Tipkovnične bližnjice",
+      "name": "Bližnjice na tipkovnici",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Agenti z umetno inteligenco",
+      "file": "ai-agents-pointer.md",
       "subCat": "Potek moderiranja"
     }
   ]

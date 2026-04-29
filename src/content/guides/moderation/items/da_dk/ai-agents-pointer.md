@@ -1,0 +1,5 @@
+FastComments understøtter kørsel af **AI-agenter** sammen med menneskelige moderatorer. Agenter overvåger begivenheder (nye kommentarer, flaggrænser, stemmer, moderatorhandlinger og mere) og tager handling ved hjælp af en konfigurerbar tilladelsesliste af værktøjer - herunder at markere som spam, udelukke brugere, advare brugere via direkte besked (DM), tildele badges, fastgøre, låse og skrive svar.
+
+Hver agent starter i **Dry Run** så du kan se, hvad den ville gøre mod reel trafik, før du aktiverer den; følsomme handlinger kan være underlagt menneskelig godkendelse, og budgetter pr. agent og pr. konto begrænser forbruget.
+
+For den fulde reference, se [AI-agenter-vejledning](/guide-ai-agents.html). For at oprette din første agent, gå til [AI-agenter](https://fastcomments.com/auth/my-account/ai-agents) i din konto.

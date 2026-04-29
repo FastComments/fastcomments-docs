@@ -1,0 +1,281 @@
+{
+  "name": "AI-agenten",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn AI-agenten",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Inleiding"
+    },
+    {
+      "name": "Plannen en geschiktheid",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Inleiding"
+    },
+    {
+      "name": "Snelstart",
+      "file": "quickstart.md",
+      "subCat": "Inleiding"
+    },
+    {
+      "name": "Een agent aanmaken",
+      "file": "creating-an-agent.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Startsjablonen",
+      "file": "starter-templates.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Sjabloon: Moderator",
+      "file": "template-moderator.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Sjabloon: Welkomstontvanger",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Sjabloon: Vastpinner van topreacties",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Sjabloon: Discussiesamenvatter",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Agenten aanmaken"
+    },
+    {
+      "name": "Een model kiezen",
+      "file": "choosing-a-model.md",
+      "subCat": "Persoonlijkheid en context"
+    },
+    {
+      "name": "Persoonlijkheid en de initiële prompt",
+      "file": "personality-prompt.md",
+      "subCat": "Persoonlijkheid en context"
+    },
+    {
+      "name": "Contextopties",
+      "file": "context-options.md",
+      "subCat": "Persoonlijkheid en context"
+    },
+    {
+      "name": "Communityrichtlijnen",
+      "file": "community-guidelines.md",
+      "subCat": "Persoonlijkheid en context"
+    },
+    {
+      "name": "Bereik: URL- en locatiefilters",
+      "file": "scope-url-locale.md",
+      "subCat": "Persoonlijkheid en context"
+    },
+    {
+      "name": "Overzicht van triggergebeurtenissen",
+      "file": "triggers-overview.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking toegevoegd",
+      "file": "trigger-comment-add.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking bewerkt",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking verwijderd",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking vastgezet",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking losgezet",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking vergrendeld",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Opmerking ontgrendeld",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Stemdrempel",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Meldingsdrempel",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Eerste opmerking van nieuwe gebruiker",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Automatisch als spam gemarkeerde opmerking",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Door moderator beoordeelde opmerking",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Door moderator goedgekeurde opmerking",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Door moderator als spam gemarkeerd",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Trigger: Door moderator toegekende badge",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Uitgestelde triggers",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Triggergebeurtenissen"
+    },
+    {
+      "name": "Toolreferentie",
+      "file": "tools-overview.md",
+      "subCat": "Toegestane tool-aanroepen"
+    },
+    {
+      "name": "Gebruiker verbannen",
+      "file": "tool-ban-user.md",
+      "subCat": "Toegestane tool-aanroepen"
+    },
+    {
+      "name": "Gebruiker waarschuwen",
+      "file": "tool-warn-user.md",
+      "subCat": "Toegestane tool-aanroepen"
+    },
+    {
+      "name": "Statussen",
+      "file": "status-states.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Simulatiemodus",
+      "file": "dry-run-mode.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Goedkeuringsworkflow",
+      "file": "approval-workflow.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Goedkeuringsmeldingen",
+      "file": "approval-notifications.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Naleving EU DSA artikel 17",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Geheugensysteem voor agenten",
+      "file": "agent-memory-system.md",
+      "subCat": "Veiligheid en toezicht"
+    },
+    {
+      "name": "Overzicht budgetten",
+      "file": "budgets-overview.md",
+      "subCat": "Budgetten en kosten"
+    },
+    {
+      "name": "Budgetwaarschuwingen",
+      "file": "budget-alerts.md",
+      "subCat": "Budgetten en kosten"
+    },
+    {
+      "name": "Kostenmodel",
+      "file": "cost-model.md",
+      "subCat": "Budgetten en kosten"
+    },
+    {
+      "name": "Redenen voor wegval",
+      "file": "drop-reasons.md",
+      "subCat": "Budgetten en kosten"
+    },
+    {
+      "name": "Uitvoeringsgeschiedenis",
+      "file": "run-history.md",
+      "subCat": "Monitoring en afstemming"
+    },
+    {
+      "name": "Detailweergave uitvoering",
+      "file": "run-detail-view.md",
+      "subCat": "Monitoring en afstemming"
+    },
+    {
+      "name": "Analysepagina",
+      "file": "analytics-page.md",
+      "subCat": "Monitoring en afstemming"
+    },
+    {
+      "name": "Testruns (herhalingen)",
+      "file": "test-runs-replays.md",
+      "subCat": "Monitoring en afstemming"
+    },
+    {
+      "name": "Prompts verfijnen",
+      "file": "refining-prompts.md",
+      "subCat": "Monitoring en afstemming"
+    },
+    {
+      "name": "Overzicht webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhookgebeurtenissen",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-payloads",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Ondertekening van webhooks",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook-herpogingen",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Webhook afleveringslogboeken",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

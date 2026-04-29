@@ -28,7 +28,7 @@
       "subCat": "Moderatorzy"
     },
     {
-      "name": "Jak działają zatwierdzenia",
+      "name": "Jak działa zatwierdzanie",
       "file": "moderation-approvals.md",
       "subCat": "Proces moderacji"
     },
@@ -53,12 +53,12 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Przeglądarka wątków komentarzy",
+      "name": "Podgląd wątku komentarzy",
       "file": "comment-thread-viewer.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Akcje moderacyjne",
+      "name": "Działania moderacyjne",
       "file": "comment-actions.md",
       "subCat": "Proces moderacji"
     },
@@ -68,7 +68,7 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Akcje moderacyjne z widżetu komentarzy",
+      "name": "Działania moderacyjne w widżecie komentarza",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Proces moderacji"
     },
@@ -83,7 +83,7 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Blokowanie użytkowników z użyciem symboli wieloznacznych",
+      "name": "Blokowanie użytkowników za pomocą znaków wieloznacznych",
       "file": "banning-users-wildcards.md",
       "subCat": "Proces moderacji"
     },
@@ -125,6 +125,11 @@
     {
       "name": "Skróty klawiszowe",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Agenci AI",
+      "file": "ai-agents-pointer.md",
       "subCat": "Proces moderacji"
     }
   ]

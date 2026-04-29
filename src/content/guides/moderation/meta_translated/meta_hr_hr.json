@@ -1,5 +1,5 @@
 {
-  "name": "Moderiranje",
+  "name": "Moderacija",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -28,74 +28,74 @@
       "subCat": "Moderatori"
     },
     {
-      "name": "Kako funkcioniraju odobrenja",
+      "name": "Kako funkcionira odobravanje",
       "file": "moderation-approvals.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Moderiranje putem e-pošte",
       "file": "moderation-via-email.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Filtriranje",
       "file": "filters.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Pretraživanje",
       "file": "search.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Dijeljenje poveznica za moderiranje",
       "file": "sharing-moderation-links.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
-      "name": "Preglednik niti komentara",
+      "name": "Pregled niti komentara",
       "file": "comment-thread-viewer.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Radnje moderiranja",
       "file": "comment-actions.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Brisanje komentara",
       "file": "deleting-comments.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Radnje moderiranja iz widgeta za komentare",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
-      "name": "Uživo moderiranje",
+      "name": "Moderiranje uživo",
       "file": "comment-actions-live.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Blokiranje korisnika",
       "file": "banning-users.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Blokiranje korisnika pomoću zamjenskih znakova",
       "file": "banning-users-wildcards.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
-      "name": "Označavanje",
+      "name": "Prijavljivanje",
       "file": "flagging.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Masovne radnje",
       "file": "bulk-actions.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
       "name": "Grupe za moderiranje",
@@ -110,22 +110,27 @@
     {
       "name": "Otkrivanje spama",
       "file": "spam-detection.md",
-      "subCat": "Spam i psovke"
+      "subCat": "Spam i nepristojan jezik"
     },
     {
       "name": "Maskiranje psovki",
       "file": "profanity-mask.md",
-      "subCat": "Spam i psovke"
+      "subCat": "Spam i nepristojan jezik"
     },
     {
-      "name": "Zapisi o komentarima",
+      "name": "Zapisi komentara",
       "file": "comment-logs.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
     },
     {
-      "name": "Tipkovnički prečaci",
+      "name": "Prečaci na tipkovnici",
       "file": "keyboard-shortcuts.md",
-      "subCat": "Tijek moderiranja"
+      "subCat": "Proces moderiranja"
+    },
+    {
+      "name": "AI agenti",
+      "file": "ai-agents-pointer.md",
+      "subCat": "Proces moderiranja"
     }
   ]
 }

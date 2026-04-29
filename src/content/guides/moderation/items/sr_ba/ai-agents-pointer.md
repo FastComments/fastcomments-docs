@@ -1,0 +1,5 @@
+FastComments podržava pokretanje **AI agenata** uz ljudske moderatore. Agenti nadgledaju događaje (novi komentar, pragovi označavanja, glasovi, moderatorove akcije i više) i preduzimaju radnje koristeći konfigurabilnu listu dozvoljenih alata - uključujući označavanje spama, banovanje, upozoravanje korisnika putem DM, dodjeljivanje znački, pinovanje, zaključavanje i pisanje odgovora.
+
+Svaki agent počinje u režimu **Dry Run** tako da možete vidjeti šta bi uradio na stvarnom prometu prije nego što ga uključite, osjetljive radnje mogu biti ograničene zahtjevom za ljudsko odobrenje, a budžeti po agentu i po nalogu ograničavaju potrošnju.
+
+Za potpuni referentni materijal, pogledajte [Vodič za AI agente](/guide-ai-agents.html). Da biste kreirali svog prvog agenta, idite na [AI agente](https://fastcomments.com/auth/my-account/ai-agents) u vašem nalogu.

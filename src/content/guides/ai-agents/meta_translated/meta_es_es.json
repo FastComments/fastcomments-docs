@@ -1,0 +1,281 @@
+{
+  "name": "Agentes de IA",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Qué son los agentes de IA",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Introducción"
+    },
+    {
+      "name": "Planes y elegibilidad",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Introducción"
+    },
+    {
+      "name": "Inicio rápido",
+      "file": "quickstart.md",
+      "subCat": "Introducción"
+    },
+    {
+      "name": "Crear un agente",
+      "file": "creating-an-agent.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Plantillas iniciales",
+      "file": "starter-templates.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Plantilla: Moderador",
+      "file": "template-moderator.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Plantilla: Saludo de bienvenida",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Plantilla: Fijador de comentarios destacados",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Plantilla: Resumen de hilo",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Elegir un modelo",
+      "file": "choosing-a-model.md",
+      "subCat": "Personalidad y contexto"
+    },
+    {
+      "name": "Personalidad y el mensaje inicial",
+      "file": "personality-prompt.md",
+      "subCat": "Personalidad y contexto"
+    },
+    {
+      "name": "Opciones de contexto",
+      "file": "context-options.md",
+      "subCat": "Personalidad y contexto"
+    },
+    {
+      "name": "Normas de la comunidad",
+      "file": "community-guidelines.md",
+      "subCat": "Personalidad y contexto"
+    },
+    {
+      "name": "Ámbito: filtros de URL y localización",
+      "file": "scope-url-locale.md",
+      "subCat": "Personalidad y contexto"
+    },
+    {
+      "name": "Visión general de eventos desencadenantes",
+      "file": "triggers-overview.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario añadido",
+      "file": "trigger-comment-add.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario editado",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario eliminado",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario fijado",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario desafijado",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario bloqueado",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario desbloqueado",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: umbral de votos",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: umbral de reportes",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: primer comentario de usuario nuevo",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario marcado automáticamente como spam",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario revisado por moderador",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario aprobado por moderador",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: comentario marcado como spam por moderador",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparador: moderador otorgó insignia",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Disparadores diferidos",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Eventos desencadenantes"
+    },
+    {
+      "name": "Referencia de herramientas",
+      "file": "tools-overview.md",
+      "subCat": "Llamadas de herramientas permitidas"
+    },
+    {
+      "name": "Prohibir usuario",
+      "file": "tool-ban-user.md",
+      "subCat": "Llamadas de herramientas permitidas"
+    },
+    {
+      "name": "Advertir usuario",
+      "file": "tool-warn-user.md",
+      "subCat": "Llamadas de herramientas permitidas"
+    },
+    {
+      "name": "Estados de estatus",
+      "file": "status-states.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Modo de prueba",
+      "file": "dry-run-mode.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Flujo de aprobación",
+      "file": "approval-workflow.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Notificaciones de aprobación",
+      "file": "approval-notifications.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Cumplimiento del artículo 17 de la DSA de la UE",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Sistema de memoria del agente",
+      "file": "agent-memory-system.md",
+      "subCat": "Seguridad y supervisión"
+    },
+    {
+      "name": "Resumen de presupuestos",
+      "file": "budgets-overview.md",
+      "subCat": "Presupuestos y costes"
+    },
+    {
+      "name": "Alertas de presupuesto",
+      "file": "budget-alerts.md",
+      "subCat": "Presupuestos y costes"
+    },
+    {
+      "name": "Modelo de costes",
+      "file": "cost-model.md",
+      "subCat": "Presupuestos y costes"
+    },
+    {
+      "name": "Razones de descarte",
+      "file": "drop-reasons.md",
+      "subCat": "Presupuestos y costes"
+    },
+    {
+      "name": "Historial de ejecuciones",
+      "file": "run-history.md",
+      "subCat": "Monitorización y ajuste"
+    },
+    {
+      "name": "Vista de detalle de la ejecución",
+      "file": "run-detail-view.md",
+      "subCat": "Monitorización y ajuste"
+    },
+    {
+      "name": "Página de análisis",
+      "file": "analytics-page.md",
+      "subCat": "Monitorización y ajuste"
+    },
+    {
+      "name": "Ejecuciones de prueba (repeticiones)",
+      "file": "test-runs-replays.md",
+      "subCat": "Monitorización y ajuste"
+    },
+    {
+      "name": "Refinar indicaciones",
+      "file": "refining-prompts.md",
+      "subCat": "Monitorización y ajuste"
+    },
+    {
+      "name": "Resumen de webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Eventos de webhooks",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Cargas útiles de webhooks",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Firma de webhooks",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Reintentos de webhooks",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Registros de entrega de webhooks",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

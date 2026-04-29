@@ -1,0 +1,281 @@
+{
+  "name": "Агенты ИИ",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Что такое агенты ИИ",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Введение"
+    },
+    {
+      "name": "Тарифы и право на доступ",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Введение"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quickstart.md",
+      "subCat": "Введение"
+    },
+    {
+      "name": "Создание агента",
+      "file": "creating-an-agent.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Стартовые шаблоны",
+      "file": "starter-templates.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Шаблон: Модератор",
+      "file": "template-moderator.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Шаблон: Приветствие",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Шаблон: Автозакрепление лучшего комментария",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Шаблон: Сводка обсуждения",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Создание агентов"
+    },
+    {
+      "name": "Выбор модели",
+      "file": "choosing-a-model.md",
+      "subCat": "Личность и контекст"
+    },
+    {
+      "name": "Личность и начальная подсказка",
+      "file": "personality-prompt.md",
+      "subCat": "Личность и контекст"
+    },
+    {
+      "name": "Параметры контекста",
+      "file": "context-options.md",
+      "subCat": "Личность и контекст"
+    },
+    {
+      "name": "Правила сообщества",
+      "file": "community-guidelines.md",
+      "subCat": "Личность и контекст"
+    },
+    {
+      "name": "Область действия: фильтры URL и локали",
+      "file": "scope-url-locale.md",
+      "subCat": "Личность и контекст"
+    },
+    {
+      "name": "Обзор триггерных событий",
+      "file": "triggers-overview.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий добавлен",
+      "file": "trigger-comment-add.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий отредактирован",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий удалён",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий закреплён",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий откреплён",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий заблокирован",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий разблокирован",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: порог голосов",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: порог жалоб",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: первый комментарий нового пользователя",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий автоматически помечен как спам",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: комментарий проверен модератором",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: модератор одобрил комментарий",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: модератор пометил как спам",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Триггер: модератор присвоил значок",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Отложенные триггеры",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Триггерные события"
+    },
+    {
+      "name": "Справочник по инструментам",
+      "file": "tools-overview.md",
+      "subCat": "Разрешённые вызовы инструментов"
+    },
+    {
+      "name": "Заблокировать пользователя",
+      "file": "tool-ban-user.md",
+      "subCat": "Разрешённые вызовы инструментов"
+    },
+    {
+      "name": "Предупредить пользователя",
+      "file": "tool-warn-user.md",
+      "subCat": "Разрешённые вызовы инструментов"
+    },
+    {
+      "name": "Статусы",
+      "file": "status-states.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Режим пробного запуска",
+      "file": "dry-run-mode.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Процесс утверждения",
+      "file": "approval-workflow.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Уведомления об утверждении",
+      "file": "approval-notifications.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Соответствие статье 17 DSA ЕС",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Система памяти агента",
+      "file": "agent-memory-system.md",
+      "subCat": "Безопасность и надзор"
+    },
+    {
+      "name": "Обзор бюджетов",
+      "file": "budgets-overview.md",
+      "subCat": "Бюджеты и расходы"
+    },
+    {
+      "name": "Оповещения по бюджету",
+      "file": "budget-alerts.md",
+      "subCat": "Бюджеты и расходы"
+    },
+    {
+      "name": "Модель затрат",
+      "file": "cost-model.md",
+      "subCat": "Бюджеты и расходы"
+    },
+    {
+      "name": "Причины отклонения",
+      "file": "drop-reasons.md",
+      "subCat": "Бюджеты и расходы"
+    },
+    {
+      "name": "История запусков",
+      "file": "run-history.md",
+      "subCat": "Мониторинг и настройка"
+    },
+    {
+      "name": "Детальный просмотр запуска",
+      "file": "run-detail-view.md",
+      "subCat": "Мониторинг и настройка"
+    },
+    {
+      "name": "Страница аналитики",
+      "file": "analytics-page.md",
+      "subCat": "Мониторинг и настройка"
+    },
+    {
+      "name": "Тестовые прогоны (повторы)",
+      "file": "test-runs-replays.md",
+      "subCat": "Мониторинг и настройка"
+    },
+    {
+      "name": "Уточнение подсказок",
+      "file": "refining-prompts.md",
+      "subCat": "Мониторинг и настройка"
+    },
+    {
+      "name": "Обзор вебхуков",
+      "file": "webhooks-overview.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "События вебхуков",
+      "file": "webhook-events.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Полезная нагрузка вебхуков",
+      "file": "webhook-payloads.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Подпись вебхуков",
+      "file": "webhook-signing.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Повторные попытки вебхуков",
+      "file": "webhook-retries.md",
+      "subCat": "Вебхуки"
+    },
+    {
+      "name": "Журналы доставки вебхуков",
+      "file": "webhook-logs.md",
+      "subCat": "Вебхуки"
+    }
+  ]
+}

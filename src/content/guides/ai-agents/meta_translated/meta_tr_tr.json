@@ -1,0 +1,281 @@
+{
+  "name": "Yapay Zeka Ajanları",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Yapay Zeka Ajanları Nedir",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Giriş"
+    },
+    {
+      "name": "Planlar ve Uygunluk",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Giriş"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "quickstart.md",
+      "subCat": "Giriş"
+    },
+    {
+      "name": "Ajan Oluşturma",
+      "file": "creating-an-agent.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Başlangıç Şablonları",
+      "file": "starter-templates.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Şablon: Moderatör",
+      "file": "template-moderator.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Şablon: Karşılama Görevlisi",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Şablon: En Popüler Yorumu Sabitleyici",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Şablon: Konu Özeti Oluşturucu",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Model Seçimi",
+      "file": "choosing-a-model.md",
+      "subCat": "Kişilik ve Bağlam"
+    },
+    {
+      "name": "Kişilik ve Başlangıç İstemi",
+      "file": "personality-prompt.md",
+      "subCat": "Kişilik ve Bağlam"
+    },
+    {
+      "name": "Bağlam Seçenekleri",
+      "file": "context-options.md",
+      "subCat": "Kişilik ve Bağlam"
+    },
+    {
+      "name": "Topluluk Yönergeleri",
+      "file": "community-guidelines.md",
+      "subCat": "Kişilik ve Bağlam"
+    },
+    {
+      "name": "Kapsam: URL ve Yerel Ayar Filtreleri",
+      "file": "scope-url-locale.md",
+      "subCat": "Kişilik ve Bağlam"
+    },
+    {
+      "name": "Tetikleyici Olaylara Genel Bakış",
+      "file": "triggers-overview.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Eklendi",
+      "file": "trigger-comment-add.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Düzenlendi",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Silindi",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Sabitlendi",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Sabitleme Kaldırıldı",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Kilitlendi",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yorum Kilidi Açıldı",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Oy Eşiği",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: İşaretleme Eşiği",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Yeni Kullanıcının İlk Yorumu",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Otomatik Spam Olarak İşaretlenen Yorum",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Moderatörün İncelediği Yorum",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Moderatörün Onayladığı Yorum",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Moderatörün Spam Olarak İşaretlediği Yorum",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Tetikleme: Moderatörün Rozet Verdiği Olay",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Ertelenmiş Tetikleyiciler",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Tetikleyici Olaylar"
+    },
+    {
+      "name": "Araçlar Referansı",
+      "file": "tools-overview.md",
+      "subCat": "İzin Verilen Araç Çağrıları"
+    },
+    {
+      "name": "Kullanıcıyı Yasakla",
+      "file": "tool-ban-user.md",
+      "subCat": "İzin Verilen Araç Çağrıları"
+    },
+    {
+      "name": "Kullanıcıyı Uyar",
+      "file": "tool-warn-user.md",
+      "subCat": "İzin Verilen Araç Çağrıları"
+    },
+    {
+      "name": "Durumlar",
+      "file": "status-states.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "Kuru Çalıştırma Modu",
+      "file": "dry-run-mode.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "Onay İş Akışı",
+      "file": "approval-workflow.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "Onay Bildirimleri",
+      "file": "approval-notifications.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "AB DSA Madde 17 Uyumluluğu",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "Ajan Bellek Sistemi",
+      "file": "agent-memory-system.md",
+      "subCat": "Güvenlik ve Denetim"
+    },
+    {
+      "name": "Bütçelere Genel Bakış",
+      "file": "budgets-overview.md",
+      "subCat": "Bütçeler ve Maliyetler"
+    },
+    {
+      "name": "Bütçe Uyarıları",
+      "file": "budget-alerts.md",
+      "subCat": "Bütçeler ve Maliyetler"
+    },
+    {
+      "name": "Maliyet Modeli",
+      "file": "cost-model.md",
+      "subCat": "Bütçeler ve Maliyetler"
+    },
+    {
+      "name": "Düşürme Nedenleri",
+      "file": "drop-reasons.md",
+      "subCat": "Bütçeler ve Maliyetler"
+    },
+    {
+      "name": "Çalıştırma Geçmişi",
+      "file": "run-history.md",
+      "subCat": "İzleme ve Ayarlama"
+    },
+    {
+      "name": "Çalıştırma Ayrıntı Görünümü",
+      "file": "run-detail-view.md",
+      "subCat": "İzleme ve Ayarlama"
+    },
+    {
+      "name": "Analitik Sayfası",
+      "file": "analytics-page.md",
+      "subCat": "İzleme ve Ayarlama"
+    },
+    {
+      "name": "Test Çalıştırmaları (Tekrar Oynatma)",
+      "file": "test-runs-replays.md",
+      "subCat": "İzleme ve Ayarlama"
+    },
+    {
+      "name": "İstemleri İyileştirme",
+      "file": "refining-prompts.md",
+      "subCat": "İzleme ve Ayarlama"
+    },
+    {
+      "name": "Webhook'lara Genel Bakış",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhook'lar"
+    },
+    {
+      "name": "Webhook Olayları",
+      "file": "webhook-events.md",
+      "subCat": "Webhook'lar"
+    },
+    {
+      "name": "Webhook Veri Yükleri",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhook'lar"
+    },
+    {
+      "name": "Webhook İmzalama",
+      "file": "webhook-signing.md",
+      "subCat": "Webhook'lar"
+    },
+    {
+      "name": "Webhook Tekrar Denemeleri",
+      "file": "webhook-retries.md",
+      "subCat": "Webhook'lar"
+    },
+    {
+      "name": "Webhook Teslimat Kayıtları",
+      "file": "webhook-logs.md",
+      "subCat": "Webhook'lar"
+    }
+  ]
+}

@@ -23,12 +23,12 @@
       "subCat": "Moderatörler"
     },
     {
-      "name": "Moderatör Kaldırma",
+      "name": "Moderatörleri Kaldırma",
       "file": "moderators-removing.md",
       "subCat": "Moderatörler"
     },
     {
-      "name": "Onaylar Nasıl Çalışır",
+      "name": "Onaylama İşleyişi",
       "file": "moderation-approvals.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -63,7 +63,7 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Yorumları Silme",
+      "name": "Yorum Silme",
       "file": "deleting-comments.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -83,12 +83,12 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Yıldız Karakterle Kullanıcı Yasaklama",
+      "name": "Joker Karakterlerle Kullanıcı Yasaklama",
       "file": "banning-users-wildcards.md",
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Bayraklama",
+      "name": "İşaretleme",
       "file": "flagging.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -125,6 +125,11 @@
     {
       "name": "Klavye Kısayolları",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "Yapay Zeka Ajanları",
+      "file": "ai-agents-pointer.md",
       "subCat": "Moderasyon İş Akışı"
     }
   ]

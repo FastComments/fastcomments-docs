@@ -1,0 +1,281 @@
+{
+  "name": "AI агенти",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Шта су AI агенти",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Увод"
+    },
+    {
+      "name": "Планови и подобност",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Увод"
+    },
+    {
+      "name": "Брзи почетак",
+      "file": "quickstart.md",
+      "subCat": "Увод"
+    },
+    {
+      "name": "Креирање агента",
+      "file": "creating-an-agent.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Почетни шаблони",
+      "file": "starter-templates.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Шаблон: Модератор",
+      "file": "template-moderator.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Шаблон: Поздрављач",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Шаблон: Прикачивач најбољих коментара",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Шаблон: Сажимач нити",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Избор модела",
+      "file": "choosing-a-model.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Личност и почетни упит",
+      "file": "personality-prompt.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Опције контекста",
+      "file": "context-options.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Правила заједнице",
+      "file": "community-guidelines.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Обим: филтери за URL и локале",
+      "file": "scope-url-locale.md",
+      "subCat": "Личност и контекст"
+    },
+    {
+      "name": "Преглед покретачких догађаја",
+      "file": "triggers-overview.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Додат коментар",
+      "file": "trigger-comment-add.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Измењен коментар",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Обрисан коментар",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар закачен",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар одкачен",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар закључан",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар откључан",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Праг гласова",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Праг пријава",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Први коментар новог корисника",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар аутоматски означен као спам",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Коментар прегледан од модератора",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Модератор одобрио коментар",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Модератор означио као спам",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Покретач: Модератор доделио значку",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Одложени покретачи",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Покретачки догађаји"
+    },
+    {
+      "name": "Референца алата",
+      "file": "tools-overview.md",
+      "subCat": "Дозвољени позиви алата"
+    },
+    {
+      "name": "Забрани корисника",
+      "file": "tool-ban-user.md",
+      "subCat": "Дозвољени позиви алата"
+    },
+    {
+      "name": "Упозори корисника",
+      "file": "tool-warn-user.md",
+      "subCat": "Дозвољени позиви алата"
+    },
+    {
+      "name": "Статуси стања",
+      "file": "status-states.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Пробни режим",
+      "file": "dry-run-mode.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Процес одобравања",
+      "file": "approval-workflow.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Обавјештења о одобрењу",
+      "file": "approval-notifications.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Усклађеност са чланом 17 EU DSA",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Систем памћења агента",
+      "file": "agent-memory-system.md",
+      "subCat": "Сигурност и надзор"
+    },
+    {
+      "name": "Преглед буџета",
+      "file": "budgets-overview.md",
+      "subCat": "Буџети и трошкови"
+    },
+    {
+      "name": "Упозорења о буџету",
+      "file": "budget-alerts.md",
+      "subCat": "Буџети и трошкови"
+    },
+    {
+      "name": "Модел трошкова",
+      "file": "cost-model.md",
+      "subCat": "Буџети и трошкови"
+    },
+    {
+      "name": "Разлози одбацивања",
+      "file": "drop-reasons.md",
+      "subCat": "Буџети и трошкови"
+    },
+    {
+      "name": "Историја извршавања",
+      "file": "run-history.md",
+      "subCat": "Мониторинг и подешавање"
+    },
+    {
+      "name": "Преглед детаља извршавања",
+      "file": "run-detail-view.md",
+      "subCat": "Мониторинг и подешавање"
+    },
+    {
+      "name": "Страница аналитике",
+      "file": "analytics-page.md",
+      "subCat": "Мониторинг и подешавање"
+    },
+    {
+      "name": "Тест покретања (поновна извршавања)",
+      "file": "test-runs-replays.md",
+      "subCat": "Мониторинг и подешавање"
+    },
+    {
+      "name": "Унапређивање упита",
+      "file": "refining-prompts.md",
+      "subCat": "Мониторинг и подешавање"
+    },
+    {
+      "name": "Преглед вебхукова",
+      "file": "webhooks-overview.md",
+      "subCat": "Вебхукови"
+    },
+    {
+      "name": "Догађаји вебхука",
+      "file": "webhook-events.md",
+      "subCat": "Вебхукови"
+    },
+    {
+      "name": "Подаци вебхука",
+      "file": "webhook-payloads.md",
+      "subCat": "Вебхукови"
+    },
+    {
+      "name": "Потписивање вебхука",
+      "file": "webhook-signing.md",
+      "subCat": "Вебхукови"
+    },
+    {
+      "name": "Поновни покушаји вебхука",
+      "file": "webhook-retries.md",
+      "subCat": "Вебхукови"
+    },
+    {
+      "name": "Дневници испоруке вебхука",
+      "file": "webhook-logs.md",
+      "subCat": "Вебхукови"
+    }
+  ]
+}

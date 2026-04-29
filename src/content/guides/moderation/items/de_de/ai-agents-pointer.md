@@ -1,0 +1,5 @@
+FastComments unterstützt den Einsatz von **KI-Agenten** parallel zu menschlichen Moderatoren. Agenten überwachen Ereignisse (neuer Kommentar, Meldeschwellenwerte, Abstimmungen, Moderatorenaktionen und mehr) und führen Aktionen mithilfe einer konfigurierbaren Zulassungsliste von Werkzeugen aus - einschließlich der Kennzeichnung als Spam, Sperren von Nutzern, Warnen von Nutzern per Direktnachricht (DM), Vergeben von Abzeichen, Anpinnen, Sperren und Verfassen von Antworten.
+
+Jeder Agent startet im **Testlauf**, sodass Sie beobachten können, was er im Live-Traffic tun würde, bevor Sie ihn aktivieren; sensible Aktionen können der menschlichen Genehmigung unterstellt werden, und Budgets pro Agent sowie pro Konto begrenzen die Ausgaben.
+
+Für die vollständige Referenz siehe den [Leitfaden zu KI-Agenten](/guide-ai-agents.html). Um Ihren ersten Agenten zu erstellen, gehen Sie in Ihrem Konto zu [KI-Agenten](https://fastcomments.com/auth/my-account/ai-agents).

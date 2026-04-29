@@ -1,0 +1,5 @@
+FastComments prend en charge l'exécution d'**AI Agents** parallèlement aux modérateurs humains. Les agents surveillent les événements (nouveau commentaire, seuils de signalement, votes, actions des modérateurs, et plus encore) et prennent des mesures en utilisant une liste blanche d'outils configurable - incluant marquer comme spam, bannir, avertir les utilisateurs via DM, attribuer des badges, épingler, verrouiller et rédiger des réponses.
+
+Every agent starts in **Dry Run** so you can watch what it would do against real traffic before flipping it on, sensitive actions can be gated behind human approval, and per-agent and per-account budgets cap spend.
+
+Pour la référence complète, voir le [guide des AI Agents](/guide-ai-agents.html). Pour créer votre premier agent, rendez-vous dans [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) dans votre compte.

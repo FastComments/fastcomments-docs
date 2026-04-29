@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Die Seite zur Moderation von Kommentaren",
+      "name": "Seite zum Moderieren von Kommentaren",
       "file": "moderate-comments-page.md",
       "subCat": "Einführung"
     },
@@ -18,7 +18,7 @@
       "subCat": "Moderatoren"
     },
     {
-      "name": "Moderatorenstatistiken",
+      "name": "Statistiken der Moderatoren",
       "file": "moderator-stats.md",
       "subCat": "Moderatoren"
     },
@@ -53,12 +53,12 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Der Kommentar-Thread-Betrachter",
+      "name": "Anzeige des Kommentar-Threads",
       "file": "comment-thread-viewer.md",
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Moderationsaktionen",
+      "name": "Moderationsmaßnahmen",
       "file": "comment-actions.md",
       "subCat": "Moderationsablauf"
     },
@@ -73,7 +73,7 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Live-Moderation",
+      "name": "Echtzeit-Moderation",
       "file": "comment-actions-live.md",
       "subCat": "Moderationsablauf"
     },
@@ -110,12 +110,12 @@
     {
       "name": "Spam-Erkennung",
       "file": "spam-detection.md",
-      "subCat": "Spam & beleidigende Sprache"
+      "subCat": "Spam & beleidigende Inhalte"
     },
     {
-      "name": "Maskierung von Beleidigungen",
+      "name": "Beleidigungen maskieren",
       "file": "profanity-mask.md",
-      "subCat": "Spam & beleidigende Sprache"
+      "subCat": "Spam & beleidigende Inhalte"
     },
     {
       "name": "Kommentarprotokolle",
@@ -123,8 +123,13 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Tastenkombinationen",
+      "name": "Tastenkürzel",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "KI-Agenten",
+      "file": "ai-agents-pointer.md",
       "subCat": "Moderationsablauf"
     }
   ]

@@ -1,0 +1,281 @@
+{
+  "name": "AI 代理人",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "什麼是 AI 代理人",
+      "file": "what-are-ai-agents.md",
+      "subCat": "介紹"
+    },
+    {
+      "name": "方案與資格",
+      "file": "plans-and-eligibility.md",
+      "subCat": "介紹"
+    },
+    {
+      "name": "快速入門",
+      "file": "quickstart.md",
+      "subCat": "介紹"
+    },
+    {
+      "name": "建立代理人",
+      "file": "creating-an-agent.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "入門範本",
+      "file": "starter-templates.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "範本：版主",
+      "file": "template-moderator.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "範本：歡迎接待者",
+      "file": "template-welcome-greeter.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "範本：熱門留言置頂者",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "範本：討論串摘要器",
+      "file": "template-thread-summarizer.md",
+      "subCat": "建立代理人"
+    },
+    {
+      "name": "選擇模型",
+      "file": "choosing-a-model.md",
+      "subCat": "個性與上下文"
+    },
+    {
+      "name": "個性與初始提示",
+      "file": "personality-prompt.md",
+      "subCat": "個性與上下文"
+    },
+    {
+      "name": "上下文選項",
+      "file": "context-options.md",
+      "subCat": "個性與上下文"
+    },
+    {
+      "name": "社群準則",
+      "file": "community-guidelines.md",
+      "subCat": "個性與上下文"
+    },
+    {
+      "name": "範圍：URL 與地區過濾",
+      "file": "scope-url-locale.md",
+      "subCat": "個性與上下文"
+    },
+    {
+      "name": "觸發事件總覽",
+      "file": "triggers-overview.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：新增留言",
+      "file": "trigger-comment-add.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言編輯",
+      "file": "trigger-comment-edit.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言刪除",
+      "file": "trigger-comment-delete.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言置頂",
+      "file": "trigger-comment-pin.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言取消置頂",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言鎖定",
+      "file": "trigger-comment-lock.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：留言解除鎖定",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：投票門檻",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：檢舉門檻",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：新用戶首則留言",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：自動判定為垃圾留言",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：版主審查留言",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：版主核准留言",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：版主標記為垃圾留言",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "觸發：版主授予徽章",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "延遲觸發",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "觸發事件"
+    },
+    {
+      "name": "工具參考",
+      "file": "tools-overview.md",
+      "subCat": "允許的工具呼叫"
+    },
+    {
+      "name": "封鎖使用者",
+      "file": "tool-ban-user.md",
+      "subCat": "允許的工具呼叫"
+    },
+    {
+      "name": "警告使用者",
+      "file": "tool-warn-user.md",
+      "subCat": "允許的工具呼叫"
+    },
+    {
+      "name": "狀態",
+      "file": "status-states.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "模擬執行模式",
+      "file": "dry-run-mode.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "核准工作流程",
+      "file": "approval-workflow.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "核准通知",
+      "file": "approval-notifications.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "歐盟 DSA 第17條合規性",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "代理人記憶系統",
+      "file": "agent-memory-system.md",
+      "subCat": "安全與監督"
+    },
+    {
+      "name": "預算總覽",
+      "file": "budgets-overview.md",
+      "subCat": "預算與成本"
+    },
+    {
+      "name": "預算警示",
+      "file": "budget-alerts.md",
+      "subCat": "預算與成本"
+    },
+    {
+      "name": "成本模型",
+      "file": "cost-model.md",
+      "subCat": "預算與成本"
+    },
+    {
+      "name": "中止原因",
+      "file": "drop-reasons.md",
+      "subCat": "預算與成本"
+    },
+    {
+      "name": "執行歷史",
+      "file": "run-history.md",
+      "subCat": "監控與調校"
+    },
+    {
+      "name": "執行詳細檢視",
+      "file": "run-detail-view.md",
+      "subCat": "監控與調校"
+    },
+    {
+      "name": "分析頁面",
+      "file": "analytics-page.md",
+      "subCat": "監控與調校"
+    },
+    {
+      "name": "測試執行（重播）",
+      "file": "test-runs-replays.md",
+      "subCat": "監控與調校"
+    },
+    {
+      "name": "精煉提示詞",
+      "file": "refining-prompts.md",
+      "subCat": "監控與調校"
+    },
+    {
+      "name": "Webhook 總覽",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook 事件",
+      "file": "webhook-events.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook 傳送內容",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook 簽名驗證",
+      "file": "webhook-signing.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook 重試",
+      "file": "webhook-retries.md",
+      "subCat": "Webhook"
+    },
+    {
+      "name": "Webhook 傳送日誌",
+      "file": "webhook-logs.md",
+      "subCat": "Webhook"
+    }
+  ]
+}

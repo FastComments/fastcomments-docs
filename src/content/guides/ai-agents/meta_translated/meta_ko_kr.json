@@ -1,0 +1,281 @@
+{
+  "name": "AI 에이전트",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "AI 에이전트란?",
+      "file": "what-are-ai-agents.md",
+      "subCat": "소개"
+    },
+    {
+      "name": "요금제 및 이용 자격",
+      "file": "plans-and-eligibility.md",
+      "subCat": "소개"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "quickstart.md",
+      "subCat": "소개"
+    },
+    {
+      "name": "에이전트 만들기",
+      "file": "creating-an-agent.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "시작 템플릿",
+      "file": "starter-templates.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "템플릿: 모더레이터",
+      "file": "template-moderator.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "템플릿: 환영 인사",
+      "file": "template-welcome-greeter.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "템플릿: 인기 댓글 고정",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "템플릿: 스레드 요약기",
+      "file": "template-thread-summarizer.md",
+      "subCat": "에이전트 생성"
+    },
+    {
+      "name": "모델 선택하기",
+      "file": "choosing-a-model.md",
+      "subCat": "퍼소나 및 컨텍스트"
+    },
+    {
+      "name": "퍼소나 및 초기 프롬프트",
+      "file": "personality-prompt.md",
+      "subCat": "퍼소나 및 컨텍스트"
+    },
+    {
+      "name": "컨텍스트 옵션",
+      "file": "context-options.md",
+      "subCat": "퍼소나 및 컨텍스트"
+    },
+    {
+      "name": "커뮤니티 가이드라인",
+      "file": "community-guidelines.md",
+      "subCat": "퍼소나 및 컨텍스트"
+    },
+    {
+      "name": "범위: URL 및 로케일 필터",
+      "file": "scope-url-locale.md",
+      "subCat": "퍼소나 및 컨텍스트"
+    },
+    {
+      "name": "트리거 이벤트 개요",
+      "file": "triggers-overview.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 추가됨",
+      "file": "trigger-comment-add.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 편집됨",
+      "file": "trigger-comment-edit.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 삭제됨",
+      "file": "trigger-comment-delete.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 고정됨",
+      "file": "trigger-comment-pin.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 고정 해제됨",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 잠김",
+      "file": "trigger-comment-lock.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 댓글 잠금 해제됨",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 투표 임계값",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 신고 임계값",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 신규 사용자의 첫 댓글",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 자동 스팸 처리된 댓글",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 모더레이터가 검토한 댓글",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 모더레이터가 승인한 댓글",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 모더레이터가 스팸으로 표시함",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "트리거: 모더레이터가 배지를 수여함",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "지연된 트리거",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "트리거 이벤트"
+    },
+    {
+      "name": "도구 참조",
+      "file": "tools-overview.md",
+      "subCat": "허용된 도구 호출"
+    },
+    {
+      "name": "사용자 차단",
+      "file": "tool-ban-user.md",
+      "subCat": "허용된 도구 호출"
+    },
+    {
+      "name": "사용자 경고",
+      "file": "tool-warn-user.md",
+      "subCat": "허용된 도구 호출"
+    },
+    {
+      "name": "상태 유형",
+      "file": "status-states.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "드라이런 모드",
+      "file": "dry-run-mode.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "승인 워크플로우",
+      "file": "approval-workflow.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "승인 알림",
+      "file": "approval-notifications.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "EU DSA 제17조 준수",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "에이전트 메모리 시스템",
+      "file": "agent-memory-system.md",
+      "subCat": "안전 및 감독"
+    },
+    {
+      "name": "예산 개요",
+      "file": "budgets-overview.md",
+      "subCat": "예산 및 비용"
+    },
+    {
+      "name": "예산 경고",
+      "file": "budget-alerts.md",
+      "subCat": "예산 및 비용"
+    },
+    {
+      "name": "비용 모델",
+      "file": "cost-model.md",
+      "subCat": "예산 및 비용"
+    },
+    {
+      "name": "중단 사유",
+      "file": "drop-reasons.md",
+      "subCat": "예산 및 비용"
+    },
+    {
+      "name": "실행 기록",
+      "file": "run-history.md",
+      "subCat": "모니터링 및 조정"
+    },
+    {
+      "name": "실행 상세 보기",
+      "file": "run-detail-view.md",
+      "subCat": "모니터링 및 조정"
+    },
+    {
+      "name": "분석 페이지",
+      "file": "analytics-page.md",
+      "subCat": "모니터링 및 조정"
+    },
+    {
+      "name": "테스트 실행(재생)",
+      "file": "test-runs-replays.md",
+      "subCat": "모니터링 및 조정"
+    },
+    {
+      "name": "프롬프트 다듬기",
+      "file": "refining-prompts.md",
+      "subCat": "모니터링 및 조정"
+    },
+    {
+      "name": "웹훅 개요",
+      "file": "webhooks-overview.md",
+      "subCat": "웹훅"
+    },
+    {
+      "name": "웹훅 이벤트",
+      "file": "webhook-events.md",
+      "subCat": "웹훅"
+    },
+    {
+      "name": "웹훅 페이로드",
+      "file": "webhook-payloads.md",
+      "subCat": "웹훅"
+    },
+    {
+      "name": "웹훅 서명",
+      "file": "webhook-signing.md",
+      "subCat": "웹훅"
+    },
+    {
+      "name": "웹훅 재시도",
+      "file": "webhook-retries.md",
+      "subCat": "웹훅"
+    },
+    {
+      "name": "웹훅 전달 로그",
+      "file": "webhook-logs.md",
+      "subCat": "웹훅"
+    }
+  ]
+}

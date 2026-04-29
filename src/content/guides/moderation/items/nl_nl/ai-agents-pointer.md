@@ -1,0 +1,5 @@
+FastComments ondersteunt het draaien van **AI Agents** naast menselijke moderators. Agents letten op gebeurtenissen (nieuwe reactie, drempels voor flags, stemmen, moderatorenacties en meer) en ondernemen acties met behulp van een configureerbare allowlist van tools - waaronder het markeren als spam, verbannen, gebruikers via DM waarschuwen, het toekennen van badges, vastpinnen, vergrendelen en het schrijven van reacties.
+
+Elke agent begint in **Dry Run** zodat je kunt zien wat hij zou doen met echt verkeer voordat je hem inschakelt, gevoelige acties kunnen worden onderworpen aan menselijke goedkeuring, en budgetten per agent en per account beperken de uitgaven.
+
+Voor de volledige referentie, zie de [AI Agents-gids](/guide-ai-agents.html). Om je eerste agent te maken, ga naar [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) in je account.

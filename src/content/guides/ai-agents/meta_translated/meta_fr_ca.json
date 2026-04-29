@@ -1,0 +1,281 @@
+{
+  "name": "Agents d'IA",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce que les agents d'IA ?",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Forfaits et admissibilité",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Démarrage rapide",
+      "file": "quickstart.md",
+      "subCat": "Introduction"
+    },
+    {
+      "name": "Créer un agent",
+      "file": "creating-an-agent.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèles de démarrage",
+      "file": "starter-templates.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Modérateur",
+      "file": "template-moderator.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Agent d'accueil",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Épingleur des meilleurs commentaires",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Résumeur de discussion",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Choisir un modèle",
+      "file": "choosing-a-model.md",
+      "subCat": "Personnalité et contexte"
+    },
+    {
+      "name": "Personnalité et l'invite initiale",
+      "file": "personality-prompt.md",
+      "subCat": "Personnalité et contexte"
+    },
+    {
+      "name": "Options de contexte",
+      "file": "context-options.md",
+      "subCat": "Personnalité et contexte"
+    },
+    {
+      "name": "Lignes directrices de la communauté",
+      "file": "community-guidelines.md",
+      "subCat": "Personnalité et contexte"
+    },
+    {
+      "name": "Portée : filtres d'URL et de région",
+      "file": "scope-url-locale.md",
+      "subCat": "Personnalité et contexte"
+    },
+    {
+      "name": "Aperçu des événements déclencheurs",
+      "file": "triggers-overview.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire ajouté",
+      "file": "trigger-comment-add.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire modifié",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire supprimé",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire épinglé",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire désépinglé",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire verrouillé",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire déverrouillé",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : seuil de votes",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : seuil de signalements",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : premier commentaire d'un nouvel utilisateur",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire automatiquement marqué comme spam",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire examiné par un modérateur",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : commentaire approuvé par un modérateur",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : modérateur a marqué comme spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheur : modérateur a attribué un badge",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Déclencheurs différés",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Événements déclencheurs"
+    },
+    {
+      "name": "Référence des outils",
+      "file": "tools-overview.md",
+      "subCat": "Appels d'outils autorisés"
+    },
+    {
+      "name": "Bannir l'utilisateur",
+      "file": "tool-ban-user.md",
+      "subCat": "Appels d'outils autorisés"
+    },
+    {
+      "name": "Avertir l'utilisateur",
+      "file": "tool-warn-user.md",
+      "subCat": "Appels d'outils autorisés"
+    },
+    {
+      "name": "États de statut",
+      "file": "status-states.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Mode simulation",
+      "file": "dry-run-mode.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Flux d'approbation",
+      "file": "approval-workflow.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Notifications d'approbation",
+      "file": "approval-notifications.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Conformité à l'article 17 du DSA de l'UE",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Système de mémoire de l'agent",
+      "file": "agent-memory-system.md",
+      "subCat": "Sécurité et supervision"
+    },
+    {
+      "name": "Aperçu des budgets",
+      "file": "budgets-overview.md",
+      "subCat": "Budgets et coûts"
+    },
+    {
+      "name": "Alertes de budget",
+      "file": "budget-alerts.md",
+      "subCat": "Budgets et coûts"
+    },
+    {
+      "name": "Modèle de coûts",
+      "file": "cost-model.md",
+      "subCat": "Budgets et coûts"
+    },
+    {
+      "name": "Raisons d'abandon",
+      "file": "drop-reasons.md",
+      "subCat": "Budgets et coûts"
+    },
+    {
+      "name": "Historique des exécutions",
+      "file": "run-history.md",
+      "subCat": "Surveillance et réglage"
+    },
+    {
+      "name": "Vue détaillée d'une exécution",
+      "file": "run-detail-view.md",
+      "subCat": "Surveillance et réglage"
+    },
+    {
+      "name": "Page d'analyses",
+      "file": "analytics-page.md",
+      "subCat": "Surveillance et réglage"
+    },
+    {
+      "name": "Exécutions de test (replays)",
+      "file": "test-runs-replays.md",
+      "subCat": "Surveillance et réglage"
+    },
+    {
+      "name": "Affiner les invites",
+      "file": "refining-prompts.md",
+      "subCat": "Surveillance et réglage"
+    },
+    {
+      "name": "Aperçu des webhooks",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Événements de webhook",
+      "file": "webhook-events.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Charges utiles des webhooks",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Signature des webhooks",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Réessais de webhook",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooks"
+    },
+    {
+      "name": "Journaux de livraison des webhooks",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooks"
+    }
+  ]
+}

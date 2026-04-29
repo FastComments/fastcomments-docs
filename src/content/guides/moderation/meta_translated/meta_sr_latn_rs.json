@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Stranica za moderaciju komentara",
+      "name": "Stranica za moderisanje komentara",
       "file": "moderate-comments-page.md",
       "subCat": "Uvod"
     },
@@ -30,102 +30,107 @@
     {
       "name": "Kako funkcionišu odobrenja",
       "file": "moderation-approvals.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Moderacija putem e-pošte",
       "file": "moderation-via-email.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Filtriranje",
       "file": "filters.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Pretraživanje",
+      "name": "Pretraga",
       "file": "search.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Deljenje linkova za moderaciju",
       "file": "sharing-moderation-links.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Pregledač niti komentara",
       "file": "comment-thread-viewer.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Radnje moderacije",
+      "name": "Akcije moderacije",
       "file": "comment-actions.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Brisanje komentara",
       "file": "deleting-comments.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Radnje moderacije iz komentarskog vidžeta",
+      "name": "Akcije moderacije iz vidžeta za komentare",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Uživo moderisanje",
+      "name": "Moderacija uživo",
       "file": "comment-actions-live.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Blokiranje korisnika",
       "file": "banning-users.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Blokiranje korisnika pomoću džoker znakova",
       "file": "banning-users-wildcards.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Označavanje",
       "file": "flagging.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Masovne radnje",
+      "name": "Masovne akcije",
       "file": "bulk-actions.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
-      "name": "Grupe moderacije",
+      "name": "Grupe za moderaciju",
       "file": "moderation-groups.md",
-      "subCat": "Grupe moderacije"
+      "subCat": "Grupe za moderaciju"
     },
     {
-      "name": "Podešavanja moderacije",
+      "name": "Postavke moderacije",
       "file": "moderation-settings.md",
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Otkrivanje spama",
+      "name": "Detekcija spama",
       "file": "spam-detection.md",
       "subCat": "Spam i uvredljiv sadržaj"
     },
     {
-      "name": "Maskiranje psovki",
+      "name": "Maskiranje uvredljivog sadržaja",
       "file": "profanity-mask.md",
       "subCat": "Spam i uvredljiv sadržaj"
     },
     {
-      "name": "Zapisi o komentarima",
+      "name": "Zapisi komentara",
       "file": "comment-logs.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
     },
     {
       "name": "Prečice na tastaturi",
       "file": "keyboard-shortcuts.md",
-      "subCat": "Tok moderacije"
+      "subCat": "Tok rada moderacije"
+    },
+    {
+      "name": "AI agenti",
+      "file": "ai-agents-pointer.md",
+      "subCat": "Tok rada moderacije"
     }
   ]
 }

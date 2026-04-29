@@ -1,0 +1,281 @@
+{
+  "name": "Agenci AI",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "Czym są Agenci AI",
+      "file": "what-are-ai-agents.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Plany i uprawnienia",
+      "file": "plans-and-eligibility.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Szybki start",
+      "file": "quickstart.md",
+      "subCat": "Wprowadzenie"
+    },
+    {
+      "name": "Tworzenie agenta",
+      "file": "creating-an-agent.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablony startowe",
+      "file": "starter-templates.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablon: Moderator",
+      "file": "template-moderator.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablon: Powitanie",
+      "file": "template-welcome-greeter.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablon: Przypinacz najpopularniejszych komentarzy",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablon: Podsumowanie wątku",
+      "file": "template-thread-summarizer.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Wybór modelu",
+      "file": "choosing-a-model.md",
+      "subCat": "Osobowość i kontekst"
+    },
+    {
+      "name": "Osobowość i początkowe polecenie",
+      "file": "personality-prompt.md",
+      "subCat": "Osobowość i kontekst"
+    },
+    {
+      "name": "Opcje kontekstu",
+      "file": "context-options.md",
+      "subCat": "Osobowość i kontekst"
+    },
+    {
+      "name": "Zasady społeczności",
+      "file": "community-guidelines.md",
+      "subCat": "Osobowość i kontekst"
+    },
+    {
+      "name": "Zakres: filtry adresów URL i lokalizacji",
+      "file": "scope-url-locale.md",
+      "subCat": "Osobowość i kontekst"
+    },
+    {
+      "name": "Przegląd zdarzeń wyzwalających",
+      "file": "triggers-overview.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Dodano komentarz",
+      "file": "trigger-comment-add.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Edytowano komentarz",
+      "file": "trigger-comment-edit.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Usunięto komentarz",
+      "file": "trigger-comment-delete.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Przypięto komentarz",
+      "file": "trigger-comment-pin.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Usunięto przypięcie komentarza",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Zablokowano komentarz",
+      "file": "trigger-comment-lock.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Odblokowano komentarz",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Próg głosów",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Próg zgłoszeń",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Pierwszy komentarz nowego użytkownika",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Komentarz automatycznie oznaczony jako spam",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Komentarz sprawdzony przez moderatora",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Moderator zatwierdził komentarz",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Moderator oznaczył jako spam",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Wyzwalacz: Moderator przyznał odznakę",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Odroczone wyzwalacze",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "Zdarzenia wyzwalające"
+    },
+    {
+      "name": "Referencja narzędzi",
+      "file": "tools-overview.md",
+      "subCat": "Dozwolone wywołania narzędzi"
+    },
+    {
+      "name": "Zablokuj użytkownika",
+      "file": "tool-ban-user.md",
+      "subCat": "Dozwolone wywołania narzędzi"
+    },
+    {
+      "name": "Ostrzeż użytkownika",
+      "file": "tool-warn-user.md",
+      "subCat": "Dozwolone wywołania narzędzi"
+    },
+    {
+      "name": "Stany statusu",
+      "file": "status-states.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "Tryb symulacji (dry-run)",
+      "file": "dry-run-mode.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "Proces zatwierdzania",
+      "file": "approval-workflow.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "Powiadomienia o zatwierdzeniu",
+      "file": "approval-notifications.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "Zgodność z art. 17 DSA UE",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "System pamięci agenta",
+      "file": "agent-memory-system.md",
+      "subCat": "Bezpieczeństwo i nadzór"
+    },
+    {
+      "name": "Przegląd budżetów",
+      "file": "budgets-overview.md",
+      "subCat": "Budżety i koszty"
+    },
+    {
+      "name": "Alerty budżetowe",
+      "file": "budget-alerts.md",
+      "subCat": "Budżety i koszty"
+    },
+    {
+      "name": "Model kosztów",
+      "file": "cost-model.md",
+      "subCat": "Budżety i koszty"
+    },
+    {
+      "name": "Powody odrzuceń",
+      "file": "drop-reasons.md",
+      "subCat": "Budżety i koszty"
+    },
+    {
+      "name": "Historia uruchomień",
+      "file": "run-history.md",
+      "subCat": "Monitorowanie i strojenie"
+    },
+    {
+      "name": "Szczegóły uruchomienia",
+      "file": "run-detail-view.md",
+      "subCat": "Monitorowanie i strojenie"
+    },
+    {
+      "name": "Panel analityczny",
+      "file": "analytics-page.md",
+      "subCat": "Monitorowanie i strojenie"
+    },
+    {
+      "name": "Uruchomienia testowe (powtórki)",
+      "file": "test-runs-replays.md",
+      "subCat": "Monitorowanie i strojenie"
+    },
+    {
+      "name": "Udoskonalanie poleceń",
+      "file": "refining-prompts.md",
+      "subCat": "Monitorowanie i strojenie"
+    },
+    {
+      "name": "Przegląd webhooków",
+      "file": "webhooks-overview.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Zdarzenia webhooków",
+      "file": "webhook-events.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Dane webhooków",
+      "file": "webhook-payloads.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Podpisywanie webhooków",
+      "file": "webhook-signing.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Ponowienia webhooków",
+      "file": "webhook-retries.md",
+      "subCat": "Webhooki"
+    },
+    {
+      "name": "Logi dostarczania webhooków",
+      "file": "webhook-logs.md",
+      "subCat": "Webhooki"
+    }
+  ]
+}

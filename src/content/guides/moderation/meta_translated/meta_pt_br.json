@@ -18,7 +18,7 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Estatísticas de Moderadores",
+      "name": "Estatísticas dos Moderadores",
       "file": "moderator-stats.md",
       "subCat": "Moderadores"
     },
@@ -53,7 +53,7 @@
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Visualizador de Tópicos de Comentários",
+      "name": "Visualizador do Encadeamento de Comentários",
       "file": "comment-thread-viewer.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
@@ -93,7 +93,7 @@
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações em massa",
+      "name": "Ações em Massa",
       "file": "bulk-actions.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
@@ -110,12 +110,12 @@
     {
       "name": "Detecção de Spam",
       "file": "spam-detection.md",
-      "subCat": "Spam e Linguagem Ofensiva"
+      "subCat": "Spam e Profanidade"
     },
     {
-      "name": "Mascarando Profanidade",
+      "name": "Mascaramento de Palavrões",
       "file": "profanity-mask.md",
-      "subCat": "Spam e Linguagem Ofensiva"
+      "subCat": "Spam e Profanidade"
     },
     {
       "name": "Registros de Comentários",
@@ -125,6 +125,11 @@
     {
       "name": "Atalhos de Teclado",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Fluxo de Trabalho de Moderação"
+    },
+    {
+      "name": "Agentes de IA",
+      "file": "ai-agents-pointer.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     }
   ]

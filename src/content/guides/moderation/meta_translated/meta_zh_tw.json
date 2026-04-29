@@ -1,5 +1,5 @@
 {
-  "name": "內容審核",
+  "name": "審核",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -8,94 +8,94 @@
       "subCat": "簡介"
     },
     {
-      "name": "審核者",
+      "name": "管理員",
       "file": "moderators.md",
-      "subCat": "審核者"
+      "subCat": "管理員"
     },
     {
-      "name": "新增審核者",
+      "name": "新增管理員",
       "file": "moderators-adding.md",
-      "subCat": "審核者"
+      "subCat": "管理員"
     },
     {
-      "name": "審核者統計",
+      "name": "管理員統計",
       "file": "moderator-stats.md",
-      "subCat": "審核者"
+      "subCat": "管理員"
     },
     {
-      "name": "移除審核者",
+      "name": "移除管理員",
       "file": "moderators-removing.md",
-      "subCat": "審核者"
+      "subCat": "管理員"
     },
     {
-      "name": "核准流程",
+      "name": "核准機制",
       "file": "moderation-approvals.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "透過電子郵件審核",
       "file": "moderation-via-email.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "過濾",
       "file": "filters.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "搜尋",
       "file": "search.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
-      "name": "共享審核連結",
+      "name": "分享審核連結",
       "file": "sharing-moderation-links.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "評論串檢視器",
       "file": "comment-thread-viewer.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "審核操作",
       "file": "comment-actions.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "刪除評論",
       "file": "deleting-comments.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
-      "name": "評論小工具中的審核操作",
+      "name": "從評論元件執行的審核操作",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "即時審核",
       "file": "comment-actions-live.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "封鎖使用者",
       "file": "banning-users.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "使用萬用字元封鎖使用者",
       "file": "banning-users-wildcards.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "檢舉",
       "file": "flagging.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "批次操作",
       "file": "bulk-actions.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
       "name": "審核群組",
@@ -108,24 +108,29 @@
       "subCat": "設定"
     },
     {
-      "name": "垃圾偵測",
+      "name": "垃圾訊息偵測",
       "file": "spam-detection.md",
-      "subCat": "垃圾與不雅用語"
+      "subCat": "垃圾訊息與髒話"
     },
     {
-      "name": "遮蔽不雅用語",
+      "name": "遮蔽髒話",
       "file": "profanity-mask.md",
-      "subCat": "垃圾與不雅用語"
+      "subCat": "垃圾訊息與髒話"
     },
     {
-      "name": "評論記錄",
+      "name": "評論紀錄",
       "file": "comment-logs.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
     },
     {
-      "name": "鍵盤快捷鍵",
+      "name": "鍵盤捷徑",
       "file": "keyboard-shortcuts.md",
-      "subCat": "審核流程"
+      "subCat": "審核工作流程"
+    },
+    {
+      "name": "AI 代理人",
+      "file": "ai-agents-pointer.md",
+      "subCat": "審核工作流程"
     }
   ]
 }

@@ -28,7 +28,7 @@
       "subCat": "Modérateurs"
     },
     {
-      "name": "Fonctionnement des approbations",
+      "name": "Comment fonctionnent les approbations",
       "file": "moderation-approvals.md",
       "subCat": "Processus de modération"
     },
@@ -48,7 +48,7 @@
       "subCat": "Processus de modération"
     },
     {
-      "name": "Partage des liens de modération",
+      "name": "Partage de liens de modération",
       "file": "sharing-moderation-links.md",
       "subCat": "Processus de modération"
     },
@@ -78,12 +78,12 @@
       "subCat": "Processus de modération"
     },
     {
-      "name": "Interdire des utilisateurs",
+      "name": "Bannir des utilisateurs",
       "file": "banning-users.md",
       "subCat": "Processus de modération"
     },
     {
-      "name": "Interdire des utilisateurs avec des caractères génériques",
+      "name": "Bannir des utilisateurs avec des caractères génériques",
       "file": "banning-users-wildcards.md",
       "subCat": "Processus de modération"
     },
@@ -93,7 +93,7 @@
       "subCat": "Processus de modération"
     },
     {
-      "name": "Actions groupées",
+      "name": "Actions en masse",
       "file": "bulk-actions.md",
       "subCat": "Processus de modération"
     },
@@ -125,6 +125,11 @@
     {
       "name": "Raccourcis clavier",
       "file": "keyboard-shortcuts.md",
+      "subCat": "Processus de modération"
+    },
+    {
+      "name": "Agents d'IA",
+      "file": "ai-agents-pointer.md",
       "subCat": "Processus de modération"
     }
   ]

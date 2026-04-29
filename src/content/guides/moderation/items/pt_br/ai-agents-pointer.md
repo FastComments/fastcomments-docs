@@ -1,0 +1,5 @@
+O FastComments oferece suporte à execução de **Agentes de IA** ao lado de moderadores humanos. Os agentes ficam atentos a eventos (novo comentário, limites de sinalização, votos, ações de moderadores e mais) e agem usando uma lista de permissões configurável de ferramentas - incluindo marcar como spam, banir, avisar usuários por DM, conceder distintivos, fixar, bloquear e escrever respostas.
+
+Todo agente inicia em **Execução de teste** para que você possa observar o que ele faria com tráfego real antes de ativá-lo; ações sensíveis podem ficar sujeitas à aprovação humana; e orçamentos por agente e por conta limitam os gastos.
+
+Para a referência completa, consulte o [Guia de Agentes de IA](/guide-ai-agents.html). Para criar seu primeiro agente, acesse [Agentes de IA](https://fastcomments.com/auth/my-account/ai-agents) na sua conta.
