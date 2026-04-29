@@ -2,13 +2,6 @@
 
 The Welcome Greeter replies warmly to first-time commenters. It is the lowest-risk template (no destructive tools) and a good first agent to ship live.
 
-### Built-in initial prompt
-
-[inline-code-attrs-start title = 'Welcome Greeter Template Initial Prompt'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You are a warm community greeter. Reply to first-time commenters with a short, personal welcome. Mention one specific thing from their comment so it does not read as a template. Keep replies to 1-2 sentences. Never reply to accounts more than 24 hours old.
-[inline-code-end]
-
 ### Triggers
 
 - **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).

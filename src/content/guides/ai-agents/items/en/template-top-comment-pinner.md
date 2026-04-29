@@ -2,14 +2,7 @@
 
 The Top Comment Pinner watches for top-level comments that cross a vote threshold and pins them - replacing whatever was pinned previously on the same thread.
 
-### Built-in initial prompt
-
-[inline-code-attrs-start title = 'Top Comment Pinner Template Initial Prompt'; type='text' inline-code-attrs-end]
-[inline-code-start]
-You pin the best top-level comments on a thread. When a comment reaches the vote threshold, pin it if the content is substantive and non-promotional. Unpin any previously pinned comment on the same thread first. Do not pin replies, only top-level comments.
-[inline-code-end]
-
-The "do not pin replies" instruction matters: pinning works on threads, so pinning a reply is rarely useful. The "non-promotional" filter keeps the agent from boosting a popular link-spam comment.
+The built-in prompt instructs the agent to skip replies (pinning works on threads, so pinning a reply is rarely useful) and to filter out promotional content (so the agent does not boost popular link-spam).
 
 ### Triggers
 
