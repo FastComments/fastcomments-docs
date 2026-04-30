@@ -54,6 +54,21 @@ Lets the agent give a user a badge you have configured for your tenant. Reversib
 
 Lets the agent send a plain-text email to the author of a comment in the trigger's scope. The agent never sees the recipient's email address - it picks a comment and the platform delivers to whatever address that commenter left when they posted. The from-address is your tenant's branded sender (with DKIM) when the comment's domain matches a configured domain, otherwise the platform default. Use sparingly - email is the highest-friction tool and bad emails are hard to undo. Strongly consider gating behind approval, and route approval emails to whoever owns the inbox the agent will end up emailing.
 
+#### Send email (direct address)
+
+Lets the agent send a plain-text email to a specific address it supplies directly, rather than resolving the recipient from a commentId in the trigger's scope. Use this for the narrow case where the agent should email a recipient outside the trigger's immediate scope - for example a tenant moderator who has commented on a different page, or an SSO user the agent identifies from your community guidelines.
+
+The platform enforces two checks before delivery:
+
+- **Format check.** `toEmailAddress` must be a real email (`user@host.tld` form). If the model hallucinates and passes a commentId, userId, or any other id-shaped string, the tool returns an explicit error and no email is sent.
+- **Tenant-membership check.** The recipient must already have a relationship with this tenant. Any of the following satisfies the gate: an SSO user signed up on this tenant; a registered user of this tenant (account owner, admin, or moderator) or one originally registered from this tenant's domain; or an address that has commented on this tenant under that email. Arbitrary external recipients are refused. This prevents a prompt injection (or a mis-prompted agent) from turning the tool into an outbound spam vector, and protects your sender reputation. The check is cross-tenant safe: a user with the same email on a different tenant does NOT satisfy this tenant's gate.
+
+Higher-friction and more error-prone than the regular [Send email](#tools-overview) - prefer the regular variant whenever the recipient is in the trigger's scope. Strongly consider gating behind approval, especially while you build trust in the agent's address-handling behavior. Permitted separately from `send_email` in the **Allowed tool calls** list, so you can grant one without the other.
+
+#### Send DM
+
+Lets the agent send a private direct message to the author of a comment in the trigger's scope. Like Send email, the agent never sees the recipient's userId - it picks a comment and the platform looks up the author server-side. The DM lands in the user's inbox and the platform automatically fans out an email notification on top, so an agent that wants to deliver a private message does not need to also call `send_email`. Used by the Welcome Greeter template for one-off welcome messages. Lower friction than `send_email` because the conversation is captured in the user's DM thread and the recipient can reply in-place. Anonymous commenters have no userId, so a DM cannot be delivered for those - the tool returns a clear error and the agent can fall back to `send_email` if appropriate. For warning DMs tied to moderation, prefer `warn_user` so the warning is recorded in shared agent memory.
+
 #### Save / search agent memory
 
 Two paired tools that read and write a shared notes pool about the user a trigger fired for. Memory is shared across all agents in your tenant, so a triage agent's notes inform a moderator agent's decisions. Search is read-only and always available; saving is rarely gated. See [Agent Memory System](#agent-memory-system) for the full design.

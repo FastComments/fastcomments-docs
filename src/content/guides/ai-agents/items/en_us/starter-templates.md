@@ -10,7 +10,7 @@ When you pick a template:
 
 - **[Moderator](#template-moderator)** - reviews new and flagged comments, warns first-time offenders, escalates to ban only after a warning. Triggers on new comments and on flag-threshold crossings (default flag threshold: 3). Allowed tools: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Welcome Greeter](#template-welcome-greeter)** - replies warmly to first-time commenters with a short, personal welcome. Triggers on new-user-first-comment. Allowed tool: `write_comment`.
+- **[Welcome Greeter](#template-welcome-greeter)** - sends a warm private DM to first-time commenters with a short, personal welcome. Triggers on new-user-first-comment. Allowed tool: `send_dm` (the platform automatically delivers an email notification on top of the DM).
 
 - **[Top Comment Pinner](#template-top-comment-pinner)** - pins substantive top-level comments once they cross a vote threshold (default: 10), unpinning the previously pinned comment first. Triggers on vote-threshold crossings. Allowed tools: `pin_comment`, `unpin_comment`.
 

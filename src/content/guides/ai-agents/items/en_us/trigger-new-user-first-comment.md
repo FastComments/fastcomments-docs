@@ -15,6 +15,6 @@ When user history context is on, the user's recent comments list will of course 
 
 ### Common uses
 
-- **Welcome greeting** - the [Welcome Greeter template](#template-welcome-greeter) is built around this trigger.
-- **Onboarding** - send a [DM warning](#tool-warn-user) (used here as a friendly heads-up rather than a warning) pointing the user at the community guidelines.
+- **Welcome greeting** - the [Welcome Greeter template](#template-welcome-greeter) is built around this trigger and uses [`send_dm`](#tools-overview) to deliver a private welcome.
+- **Onboarding** - send a friendly DM with [`send_dm`](#tools-overview) pointing the user at the community guidelines. The platform fans out an email notification on top of the DM, so a single tool call reaches the user in both inboxes.
 - **Reviewer notification** - if you want a human to look at every new commenter's first post, [`mark_comment_reviewed`](#tools-overview) can flag them for review.
