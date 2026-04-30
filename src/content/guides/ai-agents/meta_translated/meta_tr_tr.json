@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Yapay Zeka Ajanları Nedir",
+      "name": "Ajanlar Nedir",
       "file": "what-are-ai-agents.md",
       "subCat": "Giriş"
     },
@@ -33,18 +33,23 @@
       "subCat": "Ajan Oluşturma"
     },
     {
-      "name": "Şablon: Karşılama Görevlisi",
+      "name": "Şablon: Karşılama Karşılayıcısı",
       "file": "template-welcome-greeter.md",
       "subCat": "Ajan Oluşturma"
     },
     {
-      "name": "Şablon: En İyi Yorum Sabitleyici",
+      "name": "Şablon: En Popüler Yorumu Sabitleyici",
       "file": "template-top-comment-pinner.md",
       "subCat": "Ajan Oluşturma"
     },
     {
-      "name": "Şablon: Konu Özeti Oluşturucu",
+      "name": "Şablon: Konuyu Özetleyici",
       "file": "template-thread-summarizer.md",
+      "subCat": "Ajan Oluşturma"
+    },
+    {
+      "name": "Şablon: Gaslighting Algılayıcı",
+      "file": "template-gaslight-detector.md",
       "subCat": "Ajan Oluşturma"
     },
     {
@@ -68,12 +73,12 @@
       "subCat": "Kişilik ve Bağlam"
     },
     {
-      "name": "Kapsam: URL ve Yerel Filtreleri",
+      "name": "Kapsam: URL ve Yerel Filtreler",
       "file": "scope-url-locale.md",
       "subCat": "Kişilik ve Bağlam"
     },
     {
-      "name": "Tetikleyici Olaylara Genel Bakış",
+      "name": "Tetikleyici Olaylar Genel Bakış",
       "file": "triggers-overview.md",
       "subCat": "Tetikleyici Olaylar"
     },
@@ -98,7 +103,7 @@
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Yorum Sabitlemesi Kaldırıldı",
+      "name": "Tetikleyici: Yorumun Sabitlemesi Kaldırıldı",
       "file": "trigger-comment-unpin.md",
       "subCat": "Tetikleyici Olaylar"
     },
@@ -108,7 +113,7 @@
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Yorum Kilidi Açıldı",
+      "name": "Tetikleyici: Yorumun Kilidi Kaldırıldı",
       "file": "trigger-comment-unlock.md",
       "subCat": "Tetikleyici Olaylar"
     },
@@ -118,7 +123,7 @@
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Bildirme Eşiği",
+      "name": "Tetikleyici: İşaret Eşiği",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Tetikleyici Olaylar"
     },
@@ -133,22 +138,22 @@
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Moderatör Tarafından İncelenen Yorum",
+      "name": "Tetikleyici: Moderatörün İncelediği Yorum",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Moderatör Tarafından Onaylanan Yorum",
+      "name": "Tetikleyici: Moderatörün Onayladığı Yorum",
       "file": "trigger-moderator-approved.md",
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Moderatör Spam Olarak İşaretledi",
+      "name": "Tetikleyici: Moderatörün Spam Olarak İşaretlediği Yorum",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Tetikleyici Olaylar"
     },
     {
-      "name": "Tetikleyici: Moderatör Tarafından Rozet Verildi",
+      "name": "Tetikleyici: Moderatörün Rozet Verdiği",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Tetikleyici Olaylar"
     },
@@ -163,7 +168,7 @@
       "subCat": "İzin Verilen Araç Çağrıları"
     },
     {
-      "name": "Kullanıcıyı Yasakla",
+      "name": "Kullanıcıyı Engelle",
       "file": "tool-ban-user.md",
       "subCat": "İzin Verilen Araç Çağrıları"
     },
@@ -198,7 +203,7 @@
       "subCat": "Güvenlik ve Gözetim"
     },
     {
-      "name": "AB DSA Madde 17 Uyumluluğu",
+      "name": "AB DSA Madde 17 Uyumluğu",
       "file": "eu-dsa-compliance.md",
       "subCat": "Güvenlik ve Gözetim"
     },
@@ -208,7 +213,7 @@
       "subCat": "Güvenlik ve Gözetim"
     },
     {
-      "name": "Bütçelere Genel Bakış",
+      "name": "Bütçeler Genel Bakış",
       "file": "budgets-overview.md",
       "subCat": "Bütçeler ve Maliyetler"
     },
@@ -223,7 +228,7 @@
       "subCat": "Bütçeler ve Maliyetler"
     },
     {
-      "name": "Reddetme Nedenleri",
+      "name": "Düşürme Nedenleri",
       "file": "drop-reasons.md",
       "subCat": "Bütçeler ve Maliyetler"
     },
@@ -263,7 +268,7 @@
       "subCat": "Webhook'lar"
     },
     {
-      "name": "Webhook Veri Paketleri",
+      "name": "Webhook Yükleri",
       "file": "webhook-payloads.md",
       "subCat": "Webhook'lar"
     },
@@ -273,7 +278,7 @@
       "subCat": "Webhook'lar"
     },
     {
-      "name": "Webhook Tekrar Denemeleri",
+      "name": "Webhook Yeniden Denemeleri",
       "file": "webhook-retries.md",
       "subCat": "Webhook'lar"
     },

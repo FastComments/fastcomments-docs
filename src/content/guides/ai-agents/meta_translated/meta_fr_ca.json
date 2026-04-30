@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Qu'est-ce qu'un agent d'IA ?",
+      "name": "Qu'est-ce que les agents d'IA ?",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduction"
     },
@@ -33,7 +33,7 @@
       "subCat": "Création d'agents"
     },
     {
-      "name": "Modèle : Agent d'accueil",
+      "name": "Modèle : Accueillant",
       "file": "template-welcome-greeter.md",
       "subCat": "Création d'agents"
     },
@@ -45,6 +45,11 @@
     {
       "name": "Modèle : Résumeur de fil de discussion",
       "file": "template-thread-summarizer.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Détecteur de gaslighting",
+      "file": "template-gaslight-detector.md",
       "subCat": "Création d'agents"
     },
     {
@@ -63,7 +68,7 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Règles de la communauté",
+      "name": "Lignes directrices de la communauté",
       "file": "community-guidelines.md",
       "subCat": "Personnalité et contexte"
     },
@@ -73,7 +78,7 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Aperçu des événements déclencheurs",
+      "name": "Vue d'ensemble des événements déclencheurs",
       "file": "triggers-overview.md",
       "subCat": "Événements déclencheurs"
     },
@@ -160,22 +165,22 @@
     {
       "name": "Référence des outils",
       "file": "tools-overview.md",
-      "subCat": "Appels d'outils autorisés"
+      "subCat": "Appels d'outil autorisés"
     },
     {
       "name": "Bannir l'utilisateur",
       "file": "tool-ban-user.md",
-      "subCat": "Appels d'outils autorisés"
+      "subCat": "Appels d'outil autorisés"
     },
     {
       "name": "Avertir l'utilisateur",
       "file": "tool-warn-user.md",
-      "subCat": "Appels d'outils autorisés"
+      "subCat": "Appels d'outil autorisés"
     },
     {
       "name": "Modifier le commentaire",
       "file": "tool-edit-comment.md",
-      "subCat": "Appels d'outils autorisés"
+      "subCat": "Appels d'outil autorisés"
     },
     {
       "name": "États de statut",
@@ -188,7 +193,7 @@
       "subCat": "Sécurité et supervision"
     },
     {
-      "name": "Flux d'approbation",
+      "name": "Processus d'approbation",
       "file": "approval-workflow.md",
       "subCat": "Sécurité et supervision"
     },
@@ -213,7 +218,7 @@
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Alertes de budget",
+      "name": "Alertes budgétaires",
       "file": "budget-alerts.md",
       "subCat": "Budgets et coûts"
     },
@@ -223,34 +228,34 @@
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Raisons d'abandon",
+      "name": "Motifs d'abandon",
       "file": "drop-reasons.md",
       "subCat": "Budgets et coûts"
     },
     {
       "name": "Historique des exécutions",
       "file": "run-history.md",
-      "subCat": "Surveillance et réglage"
+      "subCat": "Surveillance et ajustement"
     },
     {
       "name": "Vue détaillée de l'exécution",
       "file": "run-detail-view.md",
-      "subCat": "Surveillance et réglage"
+      "subCat": "Surveillance et ajustement"
     },
     {
-      "name": "Page d'analyses",
+      "name": "Page d'analytique",
       "file": "analytics-page.md",
-      "subCat": "Surveillance et réglage"
+      "subCat": "Surveillance et ajustement"
     },
     {
-      "name": "Exécutions de test (relectures)",
+      "name": "Exécutions de test (replays)",
       "file": "test-runs-replays.md",
-      "subCat": "Surveillance et réglage"
+      "subCat": "Surveillance et ajustement"
     },
     {
-      "name": "Affiner les invites",
+      "name": "Affinage des invites",
       "file": "refining-prompts.md",
-      "subCat": "Surveillance et réglage"
+      "subCat": "Surveillance et ajustement"
     },
     {
       "name": "Aperçu des webhooks",
@@ -258,7 +263,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Événements webhook",
+      "name": "Événements de webhook",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },

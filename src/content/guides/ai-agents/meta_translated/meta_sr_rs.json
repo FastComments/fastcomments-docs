@@ -1,9 +1,9 @@
 {
-  "name": "АИ агенти",
+  "name": "AI агенти",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Шта су АИ агенти",
+      "name": "Шта су AI агенти",
       "file": "what-are-ai-agents.md",
       "subCat": "Увод"
     },
@@ -33,18 +33,23 @@
       "subCat": "Креирање агената"
     },
     {
-      "name": "Шаблон: Добродошлица",
+      "name": "Шаблон: Поздрављач",
       "file": "template-welcome-greeter.md",
       "subCat": "Креирање агената"
     },
     {
-      "name": "Шаблон: Прикачивач најбољих коментара",
+      "name": "Шаблон: Прикачи најбољи коментар",
       "file": "template-top-comment-pinner.md",
       "subCat": "Креирање агената"
     },
     {
       "name": "Шаблон: Сажимач нити",
       "file": "template-thread-summarizer.md",
+      "subCat": "Креирање агената"
+    },
+    {
+      "name": "Шаблон: Детектор газлајтинга",
+      "file": "template-gaslight-detector.md",
       "subCat": "Креирање агената"
     },
     {
@@ -63,99 +68,99 @@
       "subCat": "Личност и контекст"
     },
     {
-      "name": "Смернице за заједницу",
+      "name": "Правила заједнице",
       "file": "community-guidelines.md",
       "subCat": "Личност и контекст"
     },
     {
-      "name": "Опсег: филтери URL-а и локала",
+      "name": "Обим: Филтри за URL и локалитет",
       "file": "scope-url-locale.md",
       "subCat": "Личност и контекст"
     },
     {
-      "name": "Преглед покретачких догађаја",
+      "name": "Преглед догађаја покретања",
       "file": "triggers-overview.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Додат коментар",
       "file": "trigger-comment-add.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Измењен коментар",
       "file": "trigger-comment-edit.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Обрисан коментар",
       "file": "trigger-comment-delete.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Коментар закачен",
+      "name": "Покретач: Закачен коментар",
       "file": "trigger-comment-pin.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Коментар одкачен",
+      "name": "Покретач: Откачен коментар",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Коментар закључан",
+      "name": "Покретач: Закључан коментар",
       "file": "trigger-comment-lock.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Коментар откључан",
+      "name": "Покретач: Откључан коментар",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Праг гласова",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Праг пријављивања",
+      "name": "Покретач: Праг пријава",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Први коментар новог корисника",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Коментар аутоматски означен као спам",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
-      "name": "Покретач: Коментар прегледан од стране модератора",
+      "name": "Покретач: Коментар прегледао модератор",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Модератор одобрио коментар",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Модератор означио као спам",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Покретач: Модератор доделио значку",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Одложени покретачи",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Покретачки догађаји"
+      "subCat": "Догађаји покретања"
     },
     {
       "name": "Референца алата",
@@ -173,39 +178,39 @@
       "subCat": "Дозвољени позиви алата"
     },
     {
-      "name": "Измени коментар",
+      "name": "Уреди коментар",
       "file": "tool-edit-comment.md",
       "subCat": "Дозвољени позиви алата"
     },
     {
       "name": "Статуси стања",
       "file": "status-states.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
       "name": "Пробни режим",
       "file": "dry-run-mode.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
-      "name": "Ток одобравања",
+      "name": "Процес одобравања",
       "file": "approval-workflow.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
       "name": "Обавештења о одобравању",
       "file": "approval-notifications.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
-      "name": "Усклађеност са чланом 17 DSA (ЕУ)",
+      "name": "Усклађеност са чланом 17 ДСА (ЕУ)",
       "file": "eu-dsa-compliance.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
       "name": "Систем меморије агента",
       "file": "agent-memory-system.md",
-      "subCat": "Безбедност и надзор"
+      "subCat": "Сигурност и надзор"
     },
     {
       "name": "Преглед буџета",
@@ -233,7 +238,7 @@
       "subCat": "Надгледање и подешавање"
     },
     {
-      "name": "Преглед детаља извршавања",
+      "name": "Детаљан приказ извршавања",
       "file": "run-detail-view.md",
       "subCat": "Надгледање и подешавање"
     },
@@ -243,44 +248,44 @@
       "subCat": "Надгледање и подешавање"
     },
     {
-      "name": "Тест покретања (реплеји)",
+      "name": "Тестови извршавања (реплеји)",
       "file": "test-runs-replays.md",
       "subCat": "Надгледање и подешавање"
     },
     {
-      "name": "Прецизирање упита",
+      "name": "Унапређивање упита",
       "file": "refining-prompts.md",
       "subCat": "Надгледање и подешавање"
     },
     {
       "name": "Преглед вебхукова",
       "file": "webhooks-overview.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     },
     {
       "name": "Догађаји вебхукова",
       "file": "webhook-events.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     },
     {
       "name": "Подаци вебхукова",
       "file": "webhook-payloads.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     },
     {
       "name": "Потписивање вебхукова",
       "file": "webhook-signing.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     },
     {
-      "name": "Поновни покушаји вебхукова",
+      "name": "Понављања вебхукова",
       "file": "webhook-retries.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     },
     {
-      "name": "Логови испоруке вебхукова",
+      "name": "Логови доставе вебхукова",
       "file": "webhook-logs.md",
-      "subCat": "Webhook-ови"
+      "subCat": "Вебхукови"
     }
   ]
 }

@@ -48,6 +48,11 @@
       "subCat": "Creating Agents"
     },
     {
+      "name": "Template: Gaslight Detector",
+      "file": "template-gaslight-detector.md",
+      "subCat": "Creating Agents"
+    },
+    {
       "name": "Choosing a Model",
       "file": "choosing-a-model.md",
       "subCat": "Personality and Context"

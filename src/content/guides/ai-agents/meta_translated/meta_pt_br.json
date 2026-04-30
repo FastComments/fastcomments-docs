@@ -33,18 +33,23 @@
       "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Agente de Boas-vindas",
+      "name": "Modelo: Recepcionista de Boas-Vindas",
       "file": "template-welcome-greeter.md",
       "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Fixador de Comentários Principais",
+      "name": "Modelo: Fixador de Comentário em Destaque",
       "file": "template-top-comment-pinner.md",
       "subCat": "Criando Agentes"
     },
     {
       "name": "Modelo: Resumidor de Tópicos",
       "file": "template-thread-summarizer.md",
+      "subCat": "Criando Agentes"
+    },
+    {
+      "name": "Modelo: Detector de Gaslighting",
+      "file": "template-gaslight-detector.md",
       "subCat": "Criando Agentes"
     },
     {
@@ -73,89 +78,89 @@
       "subCat": "Personalidade e Contexto"
     },
     {
-      "name": "Visão Geral de Eventos Acionadores",
+      "name": "Visão Geral dos Eventos de Gatilho",
       "file": "triggers-overview.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Adicionado",
       "file": "trigger-comment-add.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Editado",
       "file": "trigger-comment-edit.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Excluído",
       "file": "trigger-comment-delete.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Fixado",
       "file": "trigger-comment-pin.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Desfixado",
+      "name": "Gatilho: Comentário Desafixado",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Bloqueado",
       "file": "trigger-comment-lock.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Desbloqueado",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Limite de Votos",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Limite de Sinalizações",
+      "name": "Gatilho: Limite de Denúncias",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Primeiro Comentário de Novo Usuário",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Marcado Automaticamente como Spam",
+      "name": "Gatilho: Comentário Automaticamente Marcado como Spam",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Revisado pelo Moderador",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilho: Comentário Aprovado pelo Moderador",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Marcado como Spam pelo Moderador",
+      "name": "Gatilho: Moderador Marcou como Spam",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Moderador Concedeu Insígnia",
+      "name": "Gatilho: Moderador Concedeu Distintivo",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Gatilhos Diferidos",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Eventos Acionadores"
+      "subCat": "Eventos de Gatilho"
     },
     {
       "name": "Referência de Ferramentas",
@@ -163,17 +168,17 @@
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
-      "name": "Banir Usuário",
+      "name": "Banir usuário",
       "file": "tool-ban-user.md",
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
-      "name": "Avisar Usuário",
+      "name": "Avisar usuário",
       "file": "tool-warn-user.md",
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
     {
-      "name": "Editar Comentário",
+      "name": "Editar comentário",
       "file": "tool-edit-comment.md",
       "subCat": "Chamadas de Ferramentas Permitidas"
     },
@@ -198,7 +203,7 @@
       "subCat": "Segurança e Supervisão"
     },
     {
-      "name": "Conformidade com o Artigo 17 do DSA da UE",
+      "name": "Conformidade com o Artigo 17 da DSA da UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Segurança e Supervisão"
     },
@@ -208,7 +213,7 @@
       "subCat": "Segurança e Supervisão"
     },
     {
-      "name": "Visão Geral de Orçamentos",
+      "name": "Visão Geral dos Orçamentos",
       "file": "budgets-overview.md",
       "subCat": "Orçamentos e Custos"
     },
@@ -218,7 +223,7 @@
       "subCat": "Orçamentos e Custos"
     },
     {
-      "name": "Modelo de Custo",
+      "name": "Modelo de Custos",
       "file": "cost-model.md",
       "subCat": "Orçamentos e Custos"
     },
@@ -230,27 +235,27 @@
     {
       "name": "Histórico de Execuções",
       "file": "run-history.md",
-      "subCat": "Monitoramento e Ajustes"
+      "subCat": "Monitoramento e Ajuste"
     },
     {
-      "name": "Visualização de Detalhe da Execução",
+      "name": "Visualização de Detalhes da Execução",
       "file": "run-detail-view.md",
-      "subCat": "Monitoramento e Ajustes"
+      "subCat": "Monitoramento e Ajuste"
     },
     {
       "name": "Página de Análises",
       "file": "analytics-page.md",
-      "subCat": "Monitoramento e Ajustes"
+      "subCat": "Monitoramento e Ajuste"
     },
     {
       "name": "Execuções de Teste (Replays)",
       "file": "test-runs-replays.md",
-      "subCat": "Monitoramento e Ajustes"
+      "subCat": "Monitoramento e Ajuste"
     },
     {
-      "name": "Aprimorando Prompts",
+      "name": "Refinando Prompts",
       "file": "refining-prompts.md",
-      "subCat": "Monitoramento e Ajustes"
+      "subCat": "Monitoramento e Ajuste"
     },
     {
       "name": "Visão Geral de Webhooks",
@@ -278,7 +283,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Registros de Entrega de Webhook",
+      "name": "Logs de Entrega de Webhook",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

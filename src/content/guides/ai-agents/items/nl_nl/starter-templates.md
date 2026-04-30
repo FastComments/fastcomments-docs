@@ -1,29 +1,31 @@
-FastComments levert vier starttemplates zodat je niet vanaf nul een werkende agent hoeft te schrijven. Ze zijn bereikbaar vanaf de [AI Agents-pagina](https://fastcomments.com/auth/my-account/ai-agents) door te klikken op **Bekijk sjablonen**.
+FastComments levert vijf start-sjablonen zodat je niet vanaf nul een werkende agent hoeft te schrijven. Ze zijn bereikbaar vanaf de [AI Agents-pagina](https://fastcomments.com/auth/my-account/ai-agents) door te klikken op **Sjablonen bekijken**.
 
-When you pick a template:
+Wanneer je een sjabloon kiest:
 
-1. The agent is created with **Status: Dry Run** and an internal name based on the template (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`). If that name is taken on your tenant, a numeric suffix is added.
-2. You land directly on the edit form with everything pre-filled - prompt, triggers, allowed actions, and any thresholds. A banner across the top reads "Gemaakt vanaf het {templateName}-sjabloon. Controleer de instellingen hieronder en zet de status op Enabled wanneer je klaar bent."
-3. Nothing is enabled yet. The agent will not act until you save and either keep dry-run on (to observe) or flip to Enabled.
+1. De agent wordt aangemaakt met **Status: Dry Run** en een interne naam gebaseerd op het sjabloon (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). Als die naam al bestaat op jouw tenant, wordt er een numerieke suffix toegevoegd.
+2. Je komt direct op het bewerkformulier terecht met alles vooraf ingevuld - prompt, triggers, toegestane acties en eventuele drempelwaarden. Een banner bovenaan geeft weer "Gemaakt vanuit het {templateName}-sjabloon. Controleer de instellingen hieronder, en zet de status op Enabled wanneer je klaar bent."
+3. Nog niets is ingeschakeld. De agent zal niet handelen totdat je opslaat en ofwel dry-run aanhoudt (om te observeren) of overschakelt naar Enabled.
 
-### The four templates
+### De vijf sjablonen
 
-- **[Moderator](#template-moderator)** - beoordeelt nieuwe en gemarkeerde reacties, waarschuwt overtreders die voor het eerst de fout in gaan, en escaleert naar verbanning alleen nadat er een waarschuwing is gegeven. Triggert bij nieuwe reacties en wanneer de meldingsdrempel wordt overschreden (standaard meldingsdrempel: 3). Toegestane tools: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
+- **[Moderator](#template-moderator)** - beoordeelt nieuwe en gemarkeerde opmerkingen, waarschuwt beginnende overtreders bij de eerste keer en escaleert naar een ban pas na een waarschuwing. Triggert bij nieuwe opmerkingen en bij flag-threshold crossings (default flag threshold: 3). Toegestane tools: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Welcome Greeter](#template-welcome-greeter)** - reageert hartelijk op eerste reacties van gebruikers met een korte, persoonlijke welkomstboodschap. Triggert bij new-user-first-comment. Toegestane tool: `write_comment`.
+- **[Welcome Greeter](#template-welcome-greeter)** - reageert hartelijk naar eerstegangsreactoren met een korte, persoonlijke welkomstboodschap. Triggert op new-user-first-comment. Toegestane tool: `write_comment`.
 
-- **[Top Comment Pinner](#template-top-comment-pinner)** - zet inhoudelijke top-level reacties vast zodra ze een stemdrempel overschrijden (standaard: 10), en haalt eerst de eerder vastgezette reactie los. Triggert bij overschrijden van een stemdrempel. Toegestane tools: `pin_comment`, `unpin_comment`.
+- **[Top Comment Pinner](#template-top-comment-pinner)** - zet inhoudelijke top-level reacties vast zodra ze een vote threshold overschrijden (default: 10), waarbij eerst de eerder vastgezette reactie wordt losgezet. Triggert op vote-threshold crossings. Toegestane tools: `pin_comment`, `unpin_comment`.
 
-- **[Thread Summarizer](#template-thread-summarizer)** - plaatst een neutrale, eendelige samenvatting in één alinea op lange threads na een vertraging, en zet deze daarna vast. Triggert bij nieuwe reacties met een uitstel van 30 minuten zodat de thread kan bedaren voordat er samengevat wordt. Toegestane tools: `write_comment`, `pin_comment`, `unpin_comment`.
+- **[Thread Summarizer](#template-thread-summarizer)** - plaatst een neutrale, eén-paragraafsamenvatting in lange threads na een vertraging en zet deze daarna vast. Triggert op nieuwe opmerkingen met een uitstel van 30 minuten zodat de thread tot rust komt voordat deze wordt samengevat. Toegestane tools: `write_comment`, `pin_comment`, `unpin_comment`.
 
-### Customizing a template
+- **[Gaslight Detector](#template-gaslight-detector)** - houdt bewerkingen van opmerkingen in de gaten voor herschrijvingen midden in een thread die reacties vervormen, herstelt de originele tekst en stuurt de auteur een DM. Triggert op comment edits. Toegestane tools: `edit_comment`, `warn_user`, `send_dm`.
 
-Templates zijn beginpunten, geen contracten. Van je wordt verwacht dat je:
+### Een sjabloon aanpassen
+
+Sjablonen zijn beginpunten, geen contracten. Van jou wordt verwacht dat je:
 
 - Pas de **Initial prompt** aan zodat deze past bij de toon van je community.
-- Voeg **Triggers** toe of verwijder ze om te bepalen hoe vaak de agent moet draaien.
-- Voeg **Approvals** toe voor gevoelige acties - we raden sterk aan om `ban_user` achter goedkeuring te zetten voor moderator-achtige templates.
-- Voeg **Gemeenschapsrichtlijnen** toe zodat de agent je geschreven beleid consistent toepast. Zie [Community Guidelines](#community-guidelines).
-- Stel per-agent **Budgets** in die passen bij het aantal triggers dat je verwacht.
+- Voeg of verwijder **Triggers** om te bepalen hoe vaak de agent moet draaien.
+- Voeg **Approvals** toe voor gevoelige acties - we raden sterk aan om `ban_user` achter een goedkeuring te plaatsen voor moderator-achtige sjablonen.
+- Voeg **Community guidelines** toe zodat de agent je geschreven beleid consequent toepast. Zie [Gemeenschapsrichtlijnen](#community-guidelines).
+- Stel per-agent **Budgets** in die passen bij het verwachte aantal triggers.
 
-Het template is slechts een voertuig dat verstandige standaardwaarden invult; zodra je het opslaat is de agent van jou.
+Het sjabloon is slechts een middel dat zinnige standaardwaarden vooraf invult; eenmaal opgeslagen is de agent van jou.

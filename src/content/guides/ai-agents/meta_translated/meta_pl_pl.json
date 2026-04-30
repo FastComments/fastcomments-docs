@@ -8,7 +8,7 @@
       "subCat": "Wprowadzenie"
     },
     {
-      "name": "Plany i kwalifikowalność",
+      "name": "Plany i uprawnienia",
       "file": "plans-and-eligibility.md",
       "subCat": "Wprowadzenie"
     },
@@ -33,18 +33,23 @@
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Powitanie",
+      "name": "Szablon: Osoba witająca",
       "file": "template-welcome-greeter.md",
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Przypinacz najlepszych komentarzy",
+      "name": "Szablon: Przypinacz najważniejszych komentarzy",
       "file": "template-top-comment-pinner.md",
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Podsumowanie wątku",
+      "name": "Szablon: Podsumowywacz wątku",
       "file": "template-thread-summarizer.md",
+      "subCat": "Tworzenie agentów"
+    },
+    {
+      "name": "Szablon: Wykrywacz gaslightingu",
+      "file": "template-gaslight-detector.md",
       "subCat": "Tworzenie agentów"
     },
     {
@@ -53,7 +58,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Osobowość i polecenie początkowe",
+      "name": "Osobowość i początkowe polecenie",
       "file": "personality-prompt.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -63,7 +68,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Zasady społeczności",
+      "name": "Wytyczne społeczności",
       "file": "community-guidelines.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -128,7 +133,7 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz automatycznie uznany za spam",
+      "name": "Wyzwalacz: Komentarz oznaczony automatycznie jako spam",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Zdarzenia wyzwalające"
     },
@@ -158,7 +163,7 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Dokumentacja narzędzi",
+      "name": "Referencje narzędzi",
       "file": "tools-overview.md",
       "subCat": "Dozwolone wywołania narzędzi"
     },
@@ -178,12 +183,12 @@
       "subCat": "Dozwolone wywołania narzędzi"
     },
     {
-      "name": "Stany statusu",
+      "name": "Statusy",
       "file": "status-states.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Tryb testowy",
+      "name": "Tryb symulacji",
       "file": "dry-run-mode.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -193,12 +198,12 @@
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Powiadomienia o zatwierdzeniu",
+      "name": "Powiadomienia o zatwierdzeniach",
       "file": "approval-notifications.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Zgodność z artykułem 17 DSA UE",
+      "name": "Zgodność z art. 17 DSA UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -223,34 +228,34 @@
       "subCat": "Budżety i koszty"
     },
     {
-      "name": "Powody odrzucenia",
+      "name": "Powody odrzuceń",
       "file": "drop-reasons.md",
       "subCat": "Budżety i koszty"
     },
     {
       "name": "Historia uruchomień",
       "file": "run-history.md",
-      "subCat": "Monitorowanie i dostrajanie"
+      "subCat": "Monitorowanie i optymalizacja"
     },
     {
-      "name": "Widok szczegółów uruchomienia",
+      "name": "Szczegóły uruchomienia",
       "file": "run-detail-view.md",
-      "subCat": "Monitorowanie i dostrajanie"
+      "subCat": "Monitorowanie i optymalizacja"
     },
     {
-      "name": "Strona z analizami",
+      "name": "Panel analityczny",
       "file": "analytics-page.md",
-      "subCat": "Monitorowanie i dostrajanie"
+      "subCat": "Monitorowanie i optymalizacja"
     },
     {
-      "name": "Uruchomienia testowe (powtórki)",
+      "name": "Testowe uruchomienia (odtworzenia)",
       "file": "test-runs-replays.md",
-      "subCat": "Monitorowanie i dostrajanie"
+      "subCat": "Monitorowanie i optymalizacja"
     },
     {
       "name": "Udoskonalanie poleceń",
       "file": "refining-prompts.md",
-      "subCat": "Monitorowanie i dostrajanie"
+      "subCat": "Monitorowanie i optymalizacja"
     },
     {
       "name": "Przegląd webhooków",
@@ -273,12 +278,12 @@
       "subCat": "Webhooki"
     },
     {
-      "name": "Ponowienia webhooków",
+      "name": "Ponawianie webhooków",
       "file": "webhook-retries.md",
       "subCat": "Webhooki"
     },
     {
-      "name": "Logi dostarczania webhooków",
+      "name": "Dzienniki dostarczania webhooków",
       "file": "webhook-logs.md",
       "subCat": "Webhooki"
     }

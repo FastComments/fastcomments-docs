@@ -1,14 +1,14 @@
 {
-  "name": "Agents IA",
+  "name": "Agents d'IA",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Que sont les agents IA ?",
+      "name": "Que sont les agents d'IA",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduction"
     },
     {
-      "name": "Plans et éligibilité",
+      "name": "Forfaits et admissibilité",
       "file": "plans-and-eligibility.md",
       "subCat": "Introduction"
     },
@@ -43,8 +43,13 @@
       "subCat": "Création d'agents"
     },
     {
-      "name": "Modèle : Résumé de fil",
+      "name": "Modèle : Résumeur de fil de discussion",
       "file": "template-thread-summarizer.md",
+      "subCat": "Création d'agents"
+    },
+    {
+      "name": "Modèle : Détecteur de gaslighting",
+      "file": "template-gaslight-detector.md",
       "subCat": "Création d'agents"
     },
     {
@@ -63,7 +68,7 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Règles de la communauté",
+      "name": "Directives communautaires",
       "file": "community-guidelines.md",
       "subCat": "Personnalité et contexte"
     },
@@ -73,7 +78,7 @@
       "subCat": "Personnalité et contexte"
     },
     {
-      "name": "Aperçu des événements déclencheurs",
+      "name": "Présentation des événements déclencheurs",
       "file": "triggers-overview.md",
       "subCat": "Événements déclencheurs"
     },
@@ -128,7 +133,7 @@
       "subCat": "Événements déclencheurs"
     },
     {
-      "name": "Déclencheur : commentaire automatiquement identifié comme spam",
+      "name": "Déclencheur : commentaire marqué comme spam automatiquement",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Événements déclencheurs"
     },
@@ -173,7 +178,7 @@
       "subCat": "Appels d'outils autorisés"
     },
     {
-      "name": "Modifier un commentaire",
+      "name": "Modifier le commentaire",
       "file": "tool-edit-comment.md",
       "subCat": "Appels d'outils autorisés"
     },
@@ -198,7 +203,7 @@
       "subCat": "Sécurité et supervision"
     },
     {
-      "name": "Conformité à l'article 17 du DSA (UE)",
+      "name": "Conformité à l'article 17 du DSA de l'UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sécurité et supervision"
     },
@@ -208,7 +213,7 @@
       "subCat": "Sécurité et supervision"
     },
     {
-      "name": "Aperçu des budgets",
+      "name": "Présentation des budgets",
       "file": "budgets-overview.md",
       "subCat": "Budgets et coûts"
     },
@@ -228,7 +233,7 @@
       "subCat": "Budgets et coûts"
     },
     {
-      "name": "Historique d'exécution",
+      "name": "Historique des exécutions",
       "file": "run-history.md",
       "subCat": "Surveillance et optimisation"
     },
@@ -243,7 +248,7 @@
       "subCat": "Surveillance et optimisation"
     },
     {
-      "name": "Exécutions de test (replays)",
+      "name": "Exécutions de test (relectures)",
       "file": "test-runs-replays.md",
       "subCat": "Surveillance et optimisation"
     },
@@ -253,7 +258,7 @@
       "subCat": "Surveillance et optimisation"
     },
     {
-      "name": "Aperçu des webhooks",
+      "name": "Présentation des webhooks",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },

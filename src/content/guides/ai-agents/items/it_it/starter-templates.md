@@ -1,29 +1,31 @@
-FastComments include quattro template starter così non devi scrivere un agente funzionante da zero. Sono raggiungibili dalla [pagina Agenti AI](https://fastcomments.com/auth/my-account/ai-agents) cliccando **Sfoglia template**.
+FastComments ships five starter templates so you do not have to write a working agent from scratch. They are reachable from the [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents) by clicking **Browse templates**.
 
-Quando scegli un template:
+When you pick a template:
 
-1. L'agente viene creato con **Status: Dry Run** e un nome interno basato sul template (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`). Se quel nome è già usato nel tuo tenant, viene aggiunto un suffisso numerico.
-2. Arrivi direttamente al modulo di modifica con tutto precompilato - prompt, triggers, azioni consentite e eventuali soglie. Un banner nella parte superiore recita "Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready."
-3. Niente è ancora abilitato. L'agente non agirà finché non salvi e mantieni il dry-run attivo (per osservare) o non lo cambi in Enabled.
+1. The agent is created with **Status: Dry Run** and an internal name based on the template (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). If that name is taken on your tenant, a numeric suffix is added.
+2. You land directly on the edit form with everything pre-filled - prompt, triggers, allowed actions, and any thresholds. A banner across the top reads "Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready."
+3. Nothing is enabled yet. The agent will not act until you save and either keep dry-run on (to observe) or flip to Enabled.
 
-### I quattro template
+### I cinque template
 
-- **[Moderatore](#template-moderator)** - esamina commenti nuovi e segnalati, avverte i trasgressori alla prima infrazione e scala al ban solo dopo un avvertimento. Si attiva su nuovi commenti e su flag-threshold crossings (default flag threshold: 3). Strumenti consentiti: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
+- **[Moderatore](#template-moderator)** - esamina i commenti nuovi e quelli segnalati, avverte i trasgressori alla prima infrazione ed escale al ban solo dopo un avviso. Si attiva su nuovi commenti e quando viene superata la soglia di segnalazioni (soglia predefinita: 3). Strumenti consentiti: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Saluto di benvenuto](#template-welcome-greeter)** - risponde calorosamente ai commentatori alla prima esperienza con un breve e personale messaggio di benvenuto. Si attiva su new-user-first-comment. Strumento consentito: `write_comment`.
+- **[Accoglienza di benvenuto](#template-welcome-greeter)** - risponde calorosamente ai commentatori alla prima partecipazione con un breve messaggio di benvenuto personale. Si attiva su new-user-first-comment. Strumento consentito: `write_comment`.
 
-- **[Fissatore dei commenti migliori](#template-top-comment-pinner)** - fissa i commenti substantivi di livello superiore una volta che superano una soglia di voti (predefinita: 10), rimuovendo prima il commento precedentemente fissato. Si attiva su vote-threshold crossings. Strumenti consentiti: `pin_comment`, `unpin_comment`.
+- **[Pin dei commenti in evidenza](#template-top-comment-pinner)** - fissa i commenti di livello superiore sostanziali quando superano una soglia di voti (predefinita: 10), rimuovendo prima il pin dal commento precedentemente fissato. Si attiva al superamento della soglia di voti. Strumenti consentiti: `pin_comment`, `unpin_comment`.
 
-- **[Riassuntore del thread](#template-thread-summarizer)** - pubblica un riassunto neutro di un solo paragrafo nelle discussioni lunghe dopo un ritardo, quindi lo fissa. Si attiva su nuovi commenti con un differimento di 30 minuti in modo che la discussione si stabilizzi prima di essere riassunta. Strumenti consentiti: `write_comment`, `pin_comment`, `unpin_comment`.
+- **[Riepilogatore del thread](#template-thread-summarizer)** - pubblica un riepilogo neutro, in un unico paragrafo, per thread lunghi dopo un ritardo, quindi lo fissa. Si attiva sui nuovi commenti con una differenza di 30 minuti in modo che la discussione si stabilizzi prima del riepilogo. Strumenti consentiti: `write_comment`, `pin_comment`, `unpin_comment`.
+
+- **[Rilevatore di gaslighting](#template-gaslight-detector)** - monitora le modifiche ai commenti per riscritture nel corso della discussione che distorcono le risposte, ripristina il testo originale e invia un DM all'autore. Si attiva sulle modifiche ai commenti. Strumenti consentiti: `edit_comment`, `warn_user`, `send_dm`.
 
 ### Personalizzare un template
 
-I template sono punti di partenza, non contratti. È previsto che tu:
+I template sono punti di partenza, non contratti. Si prevede che tu:
 
-- Modifichi il **Prompt iniziale** per adattarlo alla voce della tua community.
-- Aggiunga o rimuova **Triggers** per adeguare la frequenza con cui l'agente dovrebbe eseguire.
-- Aggiunga **Approvazioni** per qualsiasi azione sensibile - raccomandiamo vivamente di mettere `ban_user` dietro approvazione per i template in stile moderatore.
-- Aggiunga le **Linee guida della community** in modo che l'agente applichi la tua policy scritta in modo coerente. Vedi [Linee guida della community](#community-guidelines).
-- Imposti per agente i **Budget** appropriati in base al numero di trigger che prevedi.
+- Modifichi il **Initial prompt** per adattarlo alla voce della tua community.
+- Aggiunga o rimuova **Triggers** per regolare la frequenza con cui l'agente deve eseguirsi.
+- Aggiunga **Approvals** per qualsiasi azione sensibile - raccomandiamo fortemente di mettere `ban_user` dietro approvazione per i template in stile moderatore.
+- Aggiunga le **Community guidelines** in modo che l'agente applichi consistentemente la tua policy scritta. Vedi [Community Guidelines](#community-guidelines).
+- Imposti per agente dei **Budgets** appropriati al numero di trigger che prevedi.
 
 Il template è solo un veicolo che precompila valori predefiniti sensati; una volta salvato, l'agente è tuo.

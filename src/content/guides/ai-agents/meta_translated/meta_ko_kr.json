@@ -20,57 +20,62 @@
     {
       "name": "에이전트 만들기",
       "file": "creating-an-agent.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
     },
     {
       "name": "시작 템플릿",
       "file": "starter-templates.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
     },
     {
       "name": "템플릿: 모더레이터",
       "file": "template-moderator.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
     },
     {
       "name": "템플릿: 환영 인사",
       "file": "template-welcome-greeter.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
     },
     {
       "name": "템플릿: 상위 댓글 고정",
       "file": "template-top-comment-pinner.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
     },
     {
-      "name": "템플릿: 스레드 요약",
+      "name": "템플릿: 스레드 요약기",
       "file": "template-thread-summarizer.md",
-      "subCat": "에이전트 생성"
+      "subCat": "에이전트 만들기"
+    },
+    {
+      "name": "템플릿: 가스라이팅 탐지기",
+      "file": "template-gaslight-detector.md",
+      "subCat": "에이전트 만들기"
     },
     {
       "name": "모델 선택",
       "file": "choosing-a-model.md",
-      "subCat": "퍼스널리티 및 컨텍스트"
+      "subCat": "페르소나 및 맥락"
     },
     {
-      "name": "퍼스널리티와 초기 프롬프트",
+      "name": "페르소나 및 초기 프롬프트",
       "file": "personality-prompt.md",
-      "subCat": "퍼스널리티 및 컨텍스트"
+      "subCat": "페르소나 및 맥락"
     },
     {
-      "name": "컨텍스트 옵션",
+      "name": "맥락 옵션",
       "file": "context-options.md",
-      "subCat": "퍼스널리티 및 컨텍스트"
+      "subCat": "페르소나 및 맥락"
     },
     {
       "name": "커뮤니티 가이드라인",
       "file": "community-guidelines.md",
-      "subCat": "퍼스널리티 및 컨텍스트"
+      "subCat": "페르소나 및 맥락"
     },
     {
-      "name": "범위: URL 및 지역 필터",
+      "name": "범위: URL 및 로케일 필터",
       "file": "scope-url-locale.md",
-      "subCat": "퍼스널리티 및 컨텍스트"
+      "subCat": "페르소나 및 맥락"
     },
     {
       "name": "트리거 이벤트 개요",
@@ -128,7 +133,7 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 자동 스팸 처리된 댓글",
+      "name": "트리거: 자동 스팸 댓글",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "트리거 이벤트"
     },
@@ -143,7 +148,7 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 스팸으로 표시함",
+      "name": "트리거: 모더레이터가 스팸으로 표시한 댓글",
       "file": "trigger-moderator-spammed.md",
       "subCat": "트리거 이벤트"
     },
@@ -153,12 +158,12 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "연기된 트리거",
+      "name": "지연된 트리거",
       "file": "trigger-deferred-delay.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "도구 레퍼런스",
+      "name": "도구 참조",
       "file": "tools-overview.md",
       "subCat": "허용된 도구 호출"
     },
@@ -243,7 +248,7 @@
       "subCat": "모니터링 및 튜닝"
     },
     {
-      "name": "테스트 실행(재생)",
+      "name": "테스트 실행(리플레이)",
       "file": "test-runs-replays.md",
       "subCat": "모니터링 및 튜닝"
     },
@@ -278,7 +283,7 @@
       "subCat": "웹훅"
     },
     {
-      "name": "웹훅 전송 로그",
+      "name": "웹훅 전달 로그",
       "file": "webhook-logs.md",
       "subCat": "웹훅"
     }

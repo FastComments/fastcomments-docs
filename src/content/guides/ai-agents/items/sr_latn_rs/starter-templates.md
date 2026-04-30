@@ -1,29 +1,31 @@
-FastComments dolazi sa četiri početna šablona tako da ne morate pisati funkcionalnog agenta od nule. Možete im pristupiti sa [Stranica AI agenata](https://fastcomments.com/auth/my-account/ai-agents) klikom na **Browse templates**.
+FastComments dolazi sa pet početnih šablona tako da ne morate pisati funkcionalnog agenta od nule. Do njih se može doći sa [stranice AI agenata](https://fastcomments.com/auth/my-account/ai-agents) klikom na **Pregled šablona**.
 
-Kada odaberete šablon:
+Kada izaberete šablon:
 
-1. Agent se kreira sa **Status: Dry Run** i internim imenom zasnovanim na šablonu (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`). Ako je to ime već zauzeto na vašem tenant-u, dodeli se numerički sufiks.
-2. Dolazite direktno na obrazac za uređivanje sa svime unapred popunjenim - prompt, okidači, dozvoljene radnje i svi pragovi. Baner na vrhu glasi "Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready."
-3. Ništa još nije omogućeno. Agent neće delovati dok ne sačuvate i ili ostavite dry-run uključen (za posmatranje) ili ga prebacite na Enabled.
+1. Agent se kreira sa **Status: Dry Run** i internim imenom zasnovanim na šablonu (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). Ako je to ime zauzeto na vašem tenantu, dodaće se numerički sufiks.
+2. Bićete prebačeni direktno na obrazac za uređivanje sa svime unapred popunjenim - promptom, okidačima, dozvoljenim akcijama i eventualnim pragovima. Baner preko vrha prikazuje "Kreirano iz šablona {templateName}. Pregledajte podešavanja ispod, a zatim promenite status u Enabled kada budete spremni."
+3. Još ništa nije omogućeno. Agent neće delovati dok ne sačuvate i ili ostavite Dry Run uključen (da posmatrate) ili prebacite na Enabled.
 
-### The four templates
+### Pet šablona
 
-- **[Moderator](#template-moderator)** - pregledava nove i prijavljene komentare, upozorava prekršioce koji prvi put greše, eskalira do banovanja samo nakon upozorenja. Aktivira se na nove komentare i na prelazak praga prijava (default flag threshold: 3). Dozvoljeni alati: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
+- **[Moderator](#template-moderator)** - pregledava nove i prijavljene komentare, upozorava korisnike koji prvi put prekrše pravila, eskalira do banovanja samo nakon upozorenja. Okidači: novi komentari i prelazak praga prijavljivanja (podrazumevani prag prijavljivanja: 3). Dozvoljeni alati: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Welcome Greeter](#template-welcome-greeter)** - srdačno odgovara korisnicima koji prvi put komentarišu kratkom, ličnom porukom dobrodošlice. Aktivira se na new-user-first-comment. Dozvoljeni alat: `write_comment`.
+- **[Welcome Greeter](#template-welcome-greeter)** - odgovara srdačno prvim komentatorima sa kratkom, ličnom dobrodošlicom. Okida na new-user-first-comment. Dozvoljen alat: `write_comment`.
 
-- **[Top Comment Pinner](#template-top-comment-pinner)** - zakači značajne komentare vršnog nivoa kada pređu prag glasova (podrazumevani prag: 10), prethodno otkačivši ranije zakačeni komentar. Aktivira se na prelazak praga glasova. Dozvoljeni alati: `pin_comment`, `unpin_comment`.
+- **[Top Comment Pinner](#template-top-comment-pinner)** - zakači značajne komentare prvog nivoa kada pređu prag glasova (podrazumevano: 10), pri čemu prvo otkači prethodno zakačeni komentar. Okida na prelazak praga glasova. Dozvoljeni alati: `pin_comment`, `unpin_comment`.
 
-- **[Thread Summarizer](#template-thread-summarizer)** - postavlja neutralan, jednoparagrafni rezime na dugim temama nakon odlaganja, zatim ga zakači. Aktivira se na nove komentare sa odlaganjem od 30 minuta kako bi se tema slegla pre sumiranja. Dozvoljeni alati: `write_comment`, `pin_comment`, `unpin_comment`.
+- **[Thread Summarizer](#template-thread-summarizer)** - objavljuje neutralan, jednoparagrafski rezime na dugim nitima nakon odlaganja, a zatim ga zakači. Okida na nove komentare sa odlaganjem od 30 minuta kako bi se nit smirila pre sažimanja. Dozvoljeni alati: `write_comment`, `pin_comment`, `unpin_comment`.
 
-### Customizing a template
+- **[Gaslight Detector](#template-gaslight-detector)** - prati izmene komentara zbog prepravki u toku diskusije koje iskrivljuju odgovore, vraća originalni tekst i šalje DM autoru. Okida na izmene komentara. Dozvoljeni alati: `edit_comment`, `warn_user`, `send_dm`.
 
-Šabloni su polazne tačke, a ne ugovori. Od vas se očekuje da:
+### Prilagođavanje šablona
 
-- Doradite **Initial prompt** da odgovara glasu vaše zajednice.
-- Dodate ili uklonite **Triggers** kako bi odgovaralo koliko često agent treba da radi.
-- Dodate **Approvals** za svaku osetljivu radnju - snažno preporučujemo da postavite `ban_user` iza odobrenja za šablone u stilu moderatora.
-- Dodate **Community guidelines** tako da agent dosledno primenjuje vašu pisanu politiku. Pogledajte [Community Guidelines](#community-guidelines).
-- Podesite po-agentne **Budžete** u skladu sa očekivanim brojem okidača.
+Šabloni su početne tačke, a ne ugovori. Očekuje se da ćete:
 
-Šablon je samo sredstvo koje predpopunjava smisleno podrazumevana podešavanja; kada ga sačuvate, agent je vaš.
+- Podesite **Initial prompt** tako da odgovara glasu vaše zajednice.
+- Dodajte ili uklonite **Triggers** da odgovaraju učestalosti pokretanja agenta.
+- Dodajte **Approvals** za bilo koju osetljivu akciju - toplo preporučujemo da `ban_user` stavite iza odobrenja za šablone u stilu moderatora.
+- Dodajte **Community guidelines** tako da agent dosledno primenjuje vašu pisanu politiku. Pogledajte [Smernice zajednice](#community-guidelines).
+- Podesite po-agentu **Budgets** odgovarajuće očekivanom broju okidača.
+
+Šablon je samo sredstvo koje unapred popunjava razumna podrazumevana podešavanja; nakon što ga sačuvate, agent je vaš.
