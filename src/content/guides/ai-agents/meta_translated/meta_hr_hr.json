@@ -1,5 +1,5 @@
 {
-  "name": "AI agenti",
+  "name": "AI Agenti",
   "icon": "ai.png",
   "itemsOrdered": [
     {
@@ -20,32 +20,37 @@
     {
       "name": "Izrada agenta",
       "file": "creating-an-agent.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
     },
     {
       "name": "Početni predlošci",
       "file": "starter-templates.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
     },
     {
       "name": "Predložak: Moderator",
       "file": "template-moderator.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
     },
     {
-      "name": "Predložak: Pozdravitelj dobrodošlice",
+      "name": "Predložak: Agent za dobrodošlicu",
       "file": "template-welcome-greeter.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
     },
     {
-      "name": "Predložak: Pribadač istaknutog komentara",
+      "name": "Predložak: Pričvršćivač najboljih komentara",
       "file": "template-top-comment-pinner.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
     },
     {
-      "name": "Predložak: Sažimač rasprave",
+      "name": "Predložak: Sažetak niti",
       "file": "template-thread-summarizer.md",
-      "subCat": "Kreiranje agenata"
+      "subCat": "Izrada agenata"
+    },
+    {
+      "name": "Predložak: Detektor gaslightinga",
+      "file": "template-gaslight-detector.md",
+      "subCat": "Izrada agenata"
     },
     {
       "name": "Odabir modela",
@@ -68,117 +73,117 @@
       "subCat": "Osobnost i kontekst"
     },
     {
-      "name": "Opseg: filtri za URL i lokalitet",
+      "name": "Opseg: filtri URL-a i lokaliteta",
       "file": "scope-url-locale.md",
       "subCat": "Osobnost i kontekst"
     },
     {
-      "name": "Pregled okidačkih događaja",
+      "name": "Pregled okidača",
       "file": "triggers-overview.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Dodan komentar",
       "file": "trigger-comment-add.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
-      "name": "Okidač: Komentar uređen",
+      "name": "Okidač: Uređen komentar",
       "file": "trigger-comment-edit.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
-      "name": "Okidač: Komentar izbrisan",
+      "name": "Okidač: Izbrisan komentar",
       "file": "trigger-comment-delete.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
-      "name": "Okidač: Komentar prikvačen",
+      "name": "Okidač: Pričvršćen komentar",
       "file": "trigger-comment-pin.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
-      "name": "Okidač: Komentar odkvačen",
+      "name": "Okidač: Komentar više nije istaknut",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Komentar zaključan",
       "file": "trigger-comment-lock.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Komentar otključan",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Prag glasova",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Prag prijava",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Prvi komentar novog korisnika",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Komentar automatski označen kao spam",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Komentar pregledan od moderatora",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Komentar odobren od moderatora",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
-      "name": "Okidač: Moderator označio komentar kao spam",
+      "name": "Okidač: Moderator označio kao spam",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Okidač: Moderator dodijelio značku",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Odgođeni okidači",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Okidački događaji"
+      "subCat": "Okidači događaja"
     },
     {
       "name": "Referenca alata",
       "file": "tools-overview.md",
-      "subCat": "Dopušteni pozivi alata"
+      "subCat": "Dozvoljeni pozivi alata"
     },
     {
       "name": "Blokiraj korisnika",
       "file": "tool-ban-user.md",
-      "subCat": "Dopušteni pozivi alata"
+      "subCat": "Dozvoljeni pozivi alata"
     },
     {
       "name": "Upozori korisnika",
       "file": "tool-warn-user.md",
-      "subCat": "Dopušteni pozivi alata"
+      "subCat": "Dozvoljeni pozivi alata"
     },
     {
       "name": "Uredi komentar",
       "file": "tool-edit-comment.md",
-      "subCat": "Dopušteni pozivi alata"
+      "subCat": "Dozvoljeni pozivi alata"
     },
     {
-      "name": "Stanja statusa",
+      "name": "Statusi",
       "file": "status-states.md",
       "subCat": "Sigurnost i nadzor"
     },
@@ -198,7 +203,7 @@
       "subCat": "Sigurnost i nadzor"
     },
     {
-      "name": "Usklađenost s člankom 17. EU DSA",
+      "name": "Sukladnost s člankom 17. EU DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sigurnost i nadzor"
     },
@@ -208,24 +213,24 @@
       "subCat": "Sigurnost i nadzor"
     },
     {
-      "name": "Pregled proračuna",
+      "name": "Pregled budžeta",
       "file": "budgets-overview.md",
-      "subCat": "Proračuni i troškovi"
+      "subCat": "Budžeti i troškovi"
     },
     {
-      "name": "Upozorenja o proračunu",
+      "name": "Upozorenja o budžetu",
       "file": "budget-alerts.md",
-      "subCat": "Proračuni i troškovi"
+      "subCat": "Budžeti i troškovi"
     },
     {
       "name": "Model troškova",
       "file": "cost-model.md",
-      "subCat": "Proračuni i troškovi"
+      "subCat": "Budžeti i troškovi"
     },
     {
       "name": "Razlozi odbacivanja",
       "file": "drop-reasons.md",
-      "subCat": "Proračuni i troškovi"
+      "subCat": "Budžeti i troškovi"
     },
     {
       "name": "Povijest izvršavanja",
@@ -243,7 +248,7 @@
       "subCat": "Praćenje i podešavanje"
     },
     {
-      "name": "Testna pokretanja (reprodukcije)",
+      "name": "Testna pokretanja (ponovna reprodukcija)",
       "file": "test-runs-replays.md",
       "subCat": "Praćenje i podešavanje"
     },
@@ -263,7 +268,7 @@
       "subCat": "Webhookovi"
     },
     {
-      "name": "Sadržaji webhooka",
+      "name": "Podaci webhooka",
       "file": "webhook-payloads.md",
       "subCat": "Webhookovi"
     },
@@ -273,12 +278,12 @@
       "subCat": "Webhookovi"
     },
     {
-      "name": "Ponovna slanja webhooka",
+      "name": "Pokušaji ponovnog slanja webhooka",
       "file": "webhook-retries.md",
       "subCat": "Webhookovi"
     },
     {
-      "name": "Dnevnici dostave webhooka",
+      "name": "Zapisi isporuke webhooka",
       "file": "webhook-logs.md",
       "subCat": "Webhookovi"
     }

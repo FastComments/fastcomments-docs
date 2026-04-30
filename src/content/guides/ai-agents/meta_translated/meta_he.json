@@ -33,18 +33,23 @@
       "subCat": "יצירת סוכנים"
     },
     {
-      "name": "תבנית: מקבל פנים",
+      "name": "תבנית: מארח קבלת פנים",
       "file": "template-welcome-greeter.md",
       "subCat": "יצירת סוכנים"
     },
     {
-      "name": "תבנית: נעץ תגובה מובילה",
+      "name": "תבנית: מצמיד תגובות מובילות",
       "file": "template-top-comment-pinner.md",
       "subCat": "יצירת סוכנים"
     },
     {
       "name": "תבנית: מסכם שרשור",
       "file": "template-thread-summarizer.md",
+      "subCat": "יצירת סוכנים"
+    },
+    {
+      "name": "תבנית: גלאי גזלייטינג",
+      "file": "template-gaslight-detector.md",
       "subCat": "יצירת סוכנים"
     },
     {
@@ -63,52 +68,52 @@
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "קווים מנחים לקהילה",
+      "name": "הנחיות הקהילה",
       "file": "community-guidelines.md",
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "היקף: מסנני URL ואזור",
+      "name": "טווח: מסנני URL ואזור",
       "file": "scope-url-locale.md",
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "סקירת אירועי טריגר",
+      "name": "סקירה כללית של אירועי טריגר",
       "file": "triggers-overview.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: הוספת תגובה",
+      "name": "טריגר: תגובה נוספה",
       "file": "trigger-comment-add.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: עריכת תגובה",
+      "name": "טריגר: תגובה נערכה",
       "file": "trigger-comment-edit.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: מחיקת תגובה",
+      "name": "טריגר: תגובה נמחקה",
       "file": "trigger-comment-delete.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: נעיצת תגובה",
+      "name": "טריגר: תגובה הוצמדה",
       "file": "trigger-comment-pin.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: הסרת נעיצת תגובה",
+      "name": "טריגר: תגובה הוסרה מהצמדה",
       "file": "trigger-comment-unpin.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: נעילת תגובה",
+      "name": "טריגר: תגובה נעולה",
       "file": "trigger-comment-lock.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: ביטול נעילת תגובה",
+      "name": "טריגר: תגובה נפתחה",
       "file": "trigger-comment-unlock.md",
       "subCat": "אירועי טריגר"
     },
@@ -123,12 +128,12 @@
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובה ראשונה של משתמש חדש",
+      "name": "טריגר: תגובת המשתמש החדש הראשונה",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובת ספאם אוטומטית",
+      "name": "טריגר: תגובה שנסומנה כספאם אוטומטית",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "אירועי טריגר"
     },
@@ -153,29 +158,29 @@
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגרים מושהים",
+      "name": "טריגרים נדחים",
       "file": "trigger-deferred-delay.md",
       "subCat": "אירועי טריגר"
     },
     {
       "name": "מדריך כלים",
       "file": "tools-overview.md",
-      "subCat": "קריאות כלי מורשות"
+      "subCat": "קריאות כלים מותרות"
     },
     {
-      "name": "לחסום משתמש",
+      "name": "חסום משתמש",
       "file": "tool-ban-user.md",
-      "subCat": "קריאות כלי מורשות"
+      "subCat": "קריאות כלים מותרות"
     },
     {
-      "name": "להזהיר משתמש",
+      "name": "הזהר את המשתמש",
       "file": "tool-warn-user.md",
-      "subCat": "קריאות כלי מורשות"
+      "subCat": "קריאות כלים מותרות"
     },
     {
-      "name": "לערוך תגובה",
+      "name": "ערוך תגובה",
       "file": "tool-edit-comment.md",
-      "subCat": "קריאות כלי מורשות"
+      "subCat": "קריאות כלים מותרות"
     },
     {
       "name": "מצבי סטטוס",
@@ -183,22 +188,22 @@
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "מצב ניסוי",
+      "name": "מצב הרצה מדומה",
       "file": "dry-run-mode.md",
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "זרימת עבודה לאישור",
+      "name": "תהליך אישור",
       "file": "approval-workflow.md",
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "הודעות אישור",
+      "name": "התראות אישור",
       "file": "approval-notifications.md",
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "ציות לסעיף 17 של DSA (האיחוד האירופי)",
+      "name": "ציות לסעיף 17 של ה-EU DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "בטיחות ופיקוח"
     },
@@ -213,7 +218,7 @@
       "subCat": "תקציבים ועלויות"
     },
     {
-      "name": "התראות תקציב",
+      "name": "התרעות תקציב",
       "file": "budget-alerts.md",
       "subCat": "תקציבים ועלויות"
     },
@@ -230,30 +235,30 @@
     {
       "name": "היסטוריית הרצות",
       "file": "run-history.md",
-      "subCat": "ניטור וכיוונון"
+      "subCat": "ניטור וכיול"
     },
     {
       "name": "תצוגת פרטי הרצה",
       "file": "run-detail-view.md",
-      "subCat": "ניטור וכיוונון"
+      "subCat": "ניטור וכיול"
     },
     {
       "name": "דף אנליטיקה",
       "file": "analytics-page.md",
-      "subCat": "ניטור וכיוונון"
+      "subCat": "ניטור וכיול"
     },
     {
-      "name": "הרצות בדיקה (חזרות)",
+      "name": "הרצות בדיקה (השמעות חוזרות)",
       "file": "test-runs-replays.md",
-      "subCat": "ניטור וכיוונון"
+      "subCat": "ניטור וכיול"
     },
     {
       "name": "שיפור ההנחיות",
       "file": "refining-prompts.md",
-      "subCat": "ניטור וכיוונון"
+      "subCat": "ניטור וכיול"
     },
     {
-      "name": "סקירת Webhooks",
+      "name": "סקירה כללית של Webhooks",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
@@ -278,7 +283,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "יומני מסירת Webhook",
+      "name": "יומני משלוח Webhook",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

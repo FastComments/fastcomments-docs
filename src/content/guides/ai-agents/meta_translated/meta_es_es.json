@@ -18,7 +18,7 @@
       "subCat": "Introducción"
     },
     {
-      "name": "Crear un agente",
+      "name": "Creación de un agente",
       "file": "creating-an-agent.md",
       "subCat": "Creación de agentes"
     },
@@ -38,7 +38,7 @@
       "subCat": "Creación de agentes"
     },
     {
-      "name": "Plantilla: Anclador de comentarios destacados",
+      "name": "Plantilla: Fijador de comentarios destacados",
       "file": "template-top-comment-pinner.md",
       "subCat": "Creación de agentes"
     },
@@ -48,12 +48,17 @@
       "subCat": "Creación de agentes"
     },
     {
-      "name": "Elegir un modelo",
+      "name": "Plantilla: Detector de gaslighting",
+      "file": "template-gaslight-detector.md",
+      "subCat": "Creación de agentes"
+    },
+    {
+      "name": "Elección de modelo",
       "file": "choosing-a-model.md",
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Personalidad y el prompt inicial",
+      "name": "Personalidad y el mensaje inicial",
       "file": "personality-prompt.md",
       "subCat": "Personalidad y contexto"
     },
@@ -63,92 +68,92 @@
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Directrices de la comunidad",
+      "name": "Normas de la comunidad",
       "file": "community-guidelines.md",
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Alcance: filtros de URL y de localización",
+      "name": "Ámbito: filtros de URL y de localidad",
       "file": "scope-url-locale.md",
       "subCat": "Personalidad y contexto"
     },
     {
-      "name": "Resumen de eventos desencadenantes",
+      "name": "Descripción general de eventos desencadenantes",
       "file": "triggers-overview.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario añadido",
+      "name": "Desencadenante: Comentario añadido",
       "file": "trigger-comment-add.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario editado",
+      "name": "Desencadenante: Comentario editado",
       "file": "trigger-comment-edit.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario eliminado",
+      "name": "Desencadenante: Comentario eliminado",
       "file": "trigger-comment-delete.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario anclado",
+      "name": "Desencadenante: Comentario anclado",
       "file": "trigger-comment-pin.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario desanclado",
+      "name": "Desencadenante: Comentario desanclado",
       "file": "trigger-comment-unpin.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario bloqueado",
+      "name": "Desencadenante: Comentario bloqueado",
       "file": "trigger-comment-lock.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario desbloqueado",
+      "name": "Desencadenante: Comentario desbloqueado",
       "file": "trigger-comment-unlock.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: umbral de votos",
+      "name": "Desencadenante: Umbral de votos",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: umbral de reportes",
+      "name": "Desencadenante: Umbral de reportes",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: primer comentario de nuevo usuario",
+      "name": "Desencadenante: Primer comentario de un usuario nuevo",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario marcado automáticamente como spam",
+      "name": "Desencadenante: Comentario marcado como spam automático",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario revisado por moderador",
+      "name": "Desencadenante: Comentario revisado por moderador",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario aprobado por moderador",
+      "name": "Desencadenante: Comentario aprobado por moderador",
       "file": "trigger-moderator-approved.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: comentario marcado como spam por moderador",
+      "name": "Desencadenante: Moderador marcó como spam",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Eventos desencadenantes"
     },
     {
-      "name": "Desencadenante: moderador otorgó una insignia",
+      "name": "Desencadenante: Moderador otorgó una insignia",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Eventos desencadenantes"
     },
@@ -160,22 +165,22 @@
     {
       "name": "Referencia de herramientas",
       "file": "tools-overview.md",
-      "subCat": "Llamadas a herramientas permitidas"
+      "subCat": "Llamadas de herramientas permitidas"
     },
     {
-      "name": "Prohibir usuario",
+      "name": "Bloquear usuario",
       "file": "tool-ban-user.md",
-      "subCat": "Llamadas a herramientas permitidas"
+      "subCat": "Llamadas de herramientas permitidas"
     },
     {
       "name": "Advertir usuario",
       "file": "tool-warn-user.md",
-      "subCat": "Llamadas a herramientas permitidas"
+      "subCat": "Llamadas de herramientas permitidas"
     },
     {
       "name": "Editar comentario",
       "file": "tool-edit-comment.md",
-      "subCat": "Llamadas a herramientas permitidas"
+      "subCat": "Llamadas de herramientas permitidas"
     },
     {
       "name": "Estados de estatus",
@@ -198,7 +203,7 @@
       "subCat": "Seguridad y supervisión"
     },
     {
-      "name": "Cumplimiento del artículo 17 de la DSA de la UE",
+      "name": "Cumplimiento del artículo 17 del DSA de la UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Seguridad y supervisión"
     },
@@ -223,7 +228,7 @@
       "subCat": "Presupuestos y costes"
     },
     {
-      "name": "Razones de descarte",
+      "name": "Motivos de descarte",
       "file": "drop-reasons.md",
       "subCat": "Presupuestos y costes"
     },
@@ -233,7 +238,7 @@
       "subCat": "Supervisión y ajuste"
     },
     {
-      "name": "Vista detallada de la ejecución",
+      "name": "Vista detallada de ejecución",
       "file": "run-detail-view.md",
       "subCat": "Supervisión y ajuste"
     },
@@ -248,7 +253,7 @@
       "subCat": "Supervisión y ajuste"
     },
     {
-      "name": "Refinar prompts",
+      "name": "Refinamiento de prompts",
       "file": "refining-prompts.md",
       "subCat": "Supervisión y ajuste"
     },
@@ -268,7 +273,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Firma de webhooks",
+      "name": "Firmado de webhooks",
       "file": "webhook-signing.md",
       "subCat": "Webhooks"
     },

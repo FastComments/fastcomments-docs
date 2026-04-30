@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Was sind KI-Agenten",
+      "name": "Was sind KI-Agenten?",
       "file": "what-are-ai-agents.md",
       "subCat": "Einführung"
     },
@@ -18,7 +18,7 @@
       "subCat": "Einführung"
     },
     {
-      "name": "Erstellen eines Agenten",
+      "name": "Einen Agenten erstellen",
       "file": "creating-an-agent.md",
       "subCat": "Agenten erstellen"
     },
@@ -33,12 +33,12 @@
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Begrüßungsassistent",
+      "name": "Vorlage: Begrüßungs-Bot",
       "file": "template-welcome-greeter.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Top-Kommentar anheften",
+      "name": "Vorlage: Top-Kommentar-Pinner",
       "file": "template-top-comment-pinner.md",
       "subCat": "Agenten erstellen"
     },
@@ -48,12 +48,17 @@
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Auswahl eines Modells",
+      "name": "Vorlage: Gaslighting-Erkenner",
+      "file": "template-gaslight-detector.md",
+      "subCat": "Agenten erstellen"
+    },
+    {
+      "name": "Modell auswählen",
       "file": "choosing-a-model.md",
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Persönlichkeit und die anfängliche Eingabeaufforderung",
+      "name": "Persönlichkeit und der Anfangsprompt",
       "file": "personality-prompt.md",
       "subCat": "Persönlichkeit und Kontext"
     },
@@ -73,7 +78,7 @@
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Übersicht zu Auslöser-Ereignissen",
+      "name": "Übersicht zu Auslöseereignissen",
       "file": "triggers-overview.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -113,17 +118,17 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Stimmen-Schwellenwert",
+      "name": "Auslöser: Abstimmungs-Schwellenwert",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Melde-Schwellenwert",
+      "name": "Auslöser: Meldeschwellenwert",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Erster Kommentar eines neuen Nutzers",
+      "name": "Auslöser: Erstkommentar eines neuen Nutzers",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -133,12 +138,12 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Von einem Moderator überprüfter Kommentar",
+      "name": "Auslöser: Vom Moderator überprüfter Kommentar",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Kommentar vom Moderator genehmigt",
+      "name": "Auslöser: Vom Moderator genehmigter Kommentar",
       "file": "trigger-moderator-approved.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -148,7 +153,7 @@
       "subCat": "Auslöser-Ereignisse"
     },
     {
-      "name": "Auslöser: Moderator hat Abzeichen vergeben",
+      "name": "Auslöser: Vom Moderator vergebenes Abzeichen",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Auslöser-Ereignisse"
     },
@@ -188,7 +193,7 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Genehmigungs-Workflow",
+      "name": "Genehmigungsworkflow",
       "file": "approval-workflow.md",
       "subCat": "Sicherheit und Aufsicht"
     },
@@ -198,7 +203,7 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Einhaltung von Artikel 17 der EU-DSA",
+      "name": "EU-DSA Artikel 17 Konformität",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sicherheit und Aufsicht"
     },
@@ -230,30 +235,30 @@
     {
       "name": "Ausführungsverlauf",
       "file": "run-history.md",
-      "subCat": "Überwachung und Feinabstimmung"
+      "subCat": "Überwachung und Optimierung"
     },
     {
       "name": "Detailansicht der Ausführung",
       "file": "run-detail-view.md",
-      "subCat": "Überwachung und Feinabstimmung"
+      "subCat": "Überwachung und Optimierung"
     },
     {
-      "name": "Analytics-Seite",
+      "name": "Analyse-Seite",
       "file": "analytics-page.md",
-      "subCat": "Überwachung und Feinabstimmung"
+      "subCat": "Überwachung und Optimierung"
     },
     {
       "name": "Testläufe (Wiedergaben)",
       "file": "test-runs-replays.md",
-      "subCat": "Überwachung und Feinabstimmung"
+      "subCat": "Überwachung und Optimierung"
     },
     {
-      "name": "Prompts verfeinern",
+      "name": "Eingabeaufforderungen verfeinern",
       "file": "refining-prompts.md",
-      "subCat": "Überwachung und Feinabstimmung"
+      "subCat": "Überwachung und Optimierung"
     },
     {
-      "name": "Webhooks-Übersicht",
+      "name": "Webhook-Übersicht",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
@@ -263,7 +268,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-Payloads",
+      "name": "Webhook-Nutzlasten",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },

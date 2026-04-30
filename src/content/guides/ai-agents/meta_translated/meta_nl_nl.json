@@ -5,17 +5,17 @@
     {
       "name": "Wat zijn AI-agenten",
       "file": "what-are-ai-agents.md",
-      "subCat": "Introductie"
+      "subCat": "Inleiding"
     },
     {
       "name": "Plannen en geschiktheid",
       "file": "plans-and-eligibility.md",
-      "subCat": "Introductie"
+      "subCat": "Inleiding"
     },
     {
       "name": "Snelstart",
       "file": "quickstart.md",
-      "subCat": "Introductie"
+      "subCat": "Inleiding"
     },
     {
       "name": "Een agent maken",
@@ -38,13 +38,18 @@
       "subCat": "Agenten maken"
     },
     {
-      "name": "Sjabloon: Topreactie vastzetter",
+      "name": "Sjabloon: Topreactie vastzetten",
       "file": "template-top-comment-pinner.md",
       "subCat": "Agenten maken"
     },
     {
-      "name": "Sjabloon: Samenvatter van discussiedraad",
+      "name": "Sjabloon: Samenvatter van discussiedraden",
       "file": "template-thread-summarizer.md",
+      "subCat": "Agenten maken"
+    },
+    {
+      "name": "Sjabloon: Gaslight-detector",
+      "file": "template-gaslight-detector.md",
       "subCat": "Agenten maken"
     },
     {
@@ -63,17 +68,17 @@
       "subCat": "Persoonlijkheid en context"
     },
     {
-      "name": "Communityrichtlijnen",
+      "name": "Richtlijnen voor de community",
       "file": "community-guidelines.md",
       "subCat": "Persoonlijkheid en context"
     },
     {
-      "name": "Omvang: URL- en regiofilters",
+      "name": "Bereik: URL- en locatiefilters",
       "file": "scope-url-locale.md",
       "subCat": "Persoonlijkheid en context"
     },
     {
-      "name": "Triggergebeurtenissen: overzicht",
+      "name": "Overzicht van triggergebeurtenissen",
       "file": "triggers-overview.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -98,7 +103,7 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Reactie losgezet",
+      "name": "Trigger: Reactie losgemaakt",
       "file": "trigger-comment-unpin.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -118,7 +123,7 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Rapporteerdrempel",
+      "name": "Trigger: Meldingsdrempel",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -133,12 +138,12 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Reactie beoordeeld door moderator",
+      "name": "Trigger: Door moderator beoordeelde reactie",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Reactie goedgekeurd door moderator",
+      "name": "Trigger: Door moderator goedgekeurde reactie",
       "file": "trigger-moderator-approved.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -148,7 +153,7 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Door moderator toegekende badge",
+      "name": "Trigger: Door moderator toegekend badge",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -158,7 +163,7 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Gereedschapsreferentie",
+      "name": "Hulpmiddelenreferentie",
       "file": "tools-overview.md",
       "subCat": "Toegestane tool-aanroepen"
     },
@@ -198,12 +203,12 @@
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Naleving van EU DSA artikel 17",
+      "name": "Naleving van EU DSA Artikel 17",
       "file": "eu-dsa-compliance.md",
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Geheugensysteem van agent",
+      "name": "Geheugensysteem voor agenten",
       "file": "agent-memory-system.md",
       "subCat": "Veiligheid en toezicht"
     },
@@ -223,7 +228,7 @@
       "subCat": "Budgetten en kosten"
     },
     {
-      "name": "Afwijzingsredenen",
+      "name": "Redenen voor afwijzing",
       "file": "drop-reasons.md",
       "subCat": "Budgetten en kosten"
     },
@@ -233,7 +238,7 @@
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Detailweergave van uitvoering",
+      "name": "Gedetailleerde uitvoeringsweergave",
       "file": "run-detail-view.md",
       "subCat": "Monitoring en afstemming"
     },
@@ -243,7 +248,7 @@
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Testruns (herhalingen)",
+      "name": "Testuitvoeringen (herhalingen)",
       "file": "test-runs-replays.md",
       "subCat": "Monitoring en afstemming"
     },
@@ -253,12 +258,12 @@
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Webhooksoverzicht",
+      "name": "Webhook-overzicht",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhookgebeurtenissen",
+      "name": "Webhook-gebeurtenissen",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },
@@ -268,7 +273,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhookondertekening",
+      "name": "Webhook-ondertekening",
       "file": "webhook-signing.md",
       "subCat": "Webhooks"
     },
@@ -278,7 +283,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook afleveringslogboeken",
+      "name": "Webhook-bezorgingslogboeken",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

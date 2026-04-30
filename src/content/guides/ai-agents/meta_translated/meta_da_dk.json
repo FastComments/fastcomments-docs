@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Hvad er AI-agenter",
+      "name": "Hvad er AI‑agenter",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduktion"
     },
@@ -13,12 +13,12 @@
       "subCat": "Introduktion"
     },
     {
-      "name": "Hurtig start",
+      "name": "Hurtigstart",
       "file": "quickstart.md",
       "subCat": "Introduktion"
     },
     {
-      "name": "Oprettelse af agent",
+      "name": "Oprettelse af en agent",
       "file": "creating-an-agent.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -33,7 +33,7 @@
       "subCat": "Oprettelse af agenter"
     },
     {
-      "name": "Skabelon: Velkomstagent",
+      "name": "Skabelon: Velkomsthilsen",
       "file": "template-welcome-greeter.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -43,8 +43,13 @@
       "subCat": "Oprettelse af agenter"
     },
     {
-      "name": "Skabelon: Trådsammendrag",
+      "name": "Skabelon: Trådopsummering",
       "file": "template-thread-summarizer.md",
+      "subCat": "Oprettelse af agenter"
+    },
+    {
+      "name": "Skabelon: Gaslight-detektor",
+      "file": "template-gaslight-detector.md",
       "subCat": "Oprettelse af agenter"
     },
     {
@@ -63,7 +68,7 @@
       "subCat": "Personlighed og kontekst"
     },
     {
-      "name": "Retningslinjer for fællesskabet",
+      "name": "Fællesskabsretningslinjer",
       "file": "community-guidelines.md",
       "subCat": "Personlighed og kontekst"
     },
@@ -118,7 +123,7 @@
       "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Flagtærskel",
+      "name": "Udløser: Markeringstærskel",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Udløserhændelser"
     },
@@ -143,12 +148,12 @@
       "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Kommentar markeret som spam af moderator",
+      "name": "Udløser: Moderator markerede som spam",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Udløserhændelser"
     },
     {
-      "name": "Udløser: Moderator tildelte badge",
+      "name": "Udløser: Moderator tildelte mærke",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Udløserhændelser"
     },
@@ -183,7 +188,7 @@
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Testkørsel",
+      "name": "Prøvekørselstilstand",
       "file": "dry-run-mode.md",
       "subCat": "Sikkerhed og tilsyn"
     },
@@ -193,7 +198,7 @@
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Godkendelsesmeddelelser",
+      "name": "Notifikationer om godkendelse",
       "file": "approval-notifications.md",
       "subCat": "Sikkerhed og tilsyn"
     },
@@ -213,7 +218,7 @@
       "subCat": "Budgetter og omkostninger"
     },
     {
-      "name": "Budgetalarmer",
+      "name": "Budgetadvarsler",
       "file": "budget-alerts.md",
       "subCat": "Budgetter og omkostninger"
     },
@@ -230,27 +235,27 @@
     {
       "name": "Kørselshistorik",
       "file": "run-history.md",
-      "subCat": "Overvågning og tuning"
+      "subCat": "Overvågning og finjustering"
     },
     {
-      "name": "Visning af kørselsdetaljer",
+      "name": "Detaljevisning af kørsel",
       "file": "run-detail-view.md",
-      "subCat": "Overvågning og tuning"
+      "subCat": "Overvågning og finjustering"
     },
     {
       "name": "Analyser-side",
       "file": "analytics-page.md",
-      "subCat": "Overvågning og tuning"
+      "subCat": "Overvågning og finjustering"
     },
     {
       "name": "Testkørsler (afspilninger)",
       "file": "test-runs-replays.md",
-      "subCat": "Overvågning og tuning"
+      "subCat": "Overvågning og finjustering"
     },
     {
       "name": "Forfining af prompts",
       "file": "refining-prompts.md",
-      "subCat": "Overvågning og tuning"
+      "subCat": "Overvågning og finjustering"
     },
     {
       "name": "Oversigt over webhooks",
@@ -263,7 +268,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-payloads",
+      "name": "Webhook-nyttelaster",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },
@@ -273,7 +278,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-omforsøg",
+      "name": "Webhook-genforsøg",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },
