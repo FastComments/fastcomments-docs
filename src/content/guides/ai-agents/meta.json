@@ -12,6 +12,7 @@
     {"name": "Template: Welcome Greeter", "file": "template-welcome-greeter.md", "subCat": "Creating Agents"},
     {"name": "Template: Top Comment Pinner", "file": "template-top-comment-pinner.md", "subCat": "Creating Agents"},
     {"name": "Template: Thread Summarizer", "file": "template-thread-summarizer.md", "subCat": "Creating Agents"},
+    {"name": "Template: Gaslight Detector", "file": "template-gaslight-detector.md", "subCat": "Creating Agents"},
 
     {"name": "Choosing a Model", "file": "choosing-a-model.md", "subCat": "Personality and Context"},
     {"name": "Personality and the Initial Prompt", "file": "personality-prompt.md", "subCat": "Personality and Context"},
