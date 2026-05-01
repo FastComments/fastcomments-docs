@@ -29,7 +29,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Strony dostępne tylko dla członków (SSO)",
+      "name": "Strony tylko dla członków (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -39,7 +39,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Niestandardowe motywy",
+      "name": "Własne motywy",
       "file": "wordpress-custom-themes.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Komunikacja instalacji WordPress z serwerem FastComment",
+      "name": "Komunikacja między WordPressem a serwerem FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -64,7 +64,22 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Dezaktywacja vs odinstalowanie wtyczki",
+      "name": "Widżet najnowszych komentarzy",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Inne widżety"
+    },
+    {
+      "name": "Widżet najnowszych dyskusji",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Inne widżety"
+    },
+    {
+      "name": "Widżet najpopularniejszych stron",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Inne widżety"
+    },
+    {
+      "name": "Dezaktywacja a odinstalowanie wtyczki",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Usuwanie wtyczki"
     }

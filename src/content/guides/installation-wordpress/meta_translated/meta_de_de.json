@@ -29,7 +29,7 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Seiten nur für Mitglieder (SSO)",
+      "name": "Nur-Mitgliederseiten (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress-Installation"
     },
@@ -39,12 +39,12 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Benutzerdefinierte Themes",
+      "name": "Eigene Themes",
       "file": "wordpress-custom-themes.md",
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Zurück nach WordPress synchronisieren",
+      "name": "Zurück zu WordPress synchronisieren",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress-Installation"
     },
@@ -54,7 +54,7 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Kommunikation zwischen WordPress-Installation und FastComment-Server",
+      "name": "WordPress-Installation <> FastComment-Server-Kommunikation",
       "file": "wordpress-server-communication.md",
       "subCat": "WordPress-Installation"
     },
@@ -62,6 +62,21 @@
       "name": "Domain-Fehler",
       "file": "wordpress-domain-errors.md",
       "subCat": "WordPress-Installation"
+    },
+    {
+      "name": "Widget für neueste Kommentare",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Andere Widgets"
+    },
+    {
+      "name": "Widget für aktuelle Diskussionen",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Andere Widgets"
+    },
+    {
+      "name": "Top-Seiten-Widget",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Andere Widgets"
     },
     {
       "name": "Deaktivieren vs. Deinstallieren des Plugins",

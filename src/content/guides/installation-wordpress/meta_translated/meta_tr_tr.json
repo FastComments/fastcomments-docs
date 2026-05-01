@@ -6,7 +6,7 @@
     {
       "name": "Hızlı Başlangıç",
       "file": "wordpress-quick-start.md",
-      "subCat": "Kısa Özet"
+      "subCat": "Özet"
     },
     {
       "name": "Kurulum",
@@ -64,7 +64,22 @@
       "subCat": "WordPress Kurulumu"
     },
     {
-      "name": "Eklentiyi Devre Dışı Bırakma ile Kaldırma",
+      "name": "Son Yorumlar Bileşeni",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Diğer Bileşenler"
+    },
+    {
+      "name": "Son Tartışmalar Bileşeni",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Diğer Bileşenler"
+    },
+    {
+      "name": "En Popüler Sayfalar Bileşeni",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Diğer Bileşenler"
+    },
+    {
+      "name": "Eklentiyi Devre Dışı Bırakma vs Kaldırma",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Eklenti Kaldırma"
     }

@@ -1,10 +1,10 @@
 {
   "name": "WordPress-installatie",
-  "pageHeader": "Voeg live reacties toe aan WordPress-sites",
+  "pageHeader": "Live reacties toevoegen aan WordPress-sites",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Snel aan de slag",
+      "name": "Snelstart",
       "file": "wordpress-quick-start.md",
       "subCat": "Kort samengevat"
     },
@@ -44,7 +44,7 @@
       "subCat": "WordPress-installatie"
     },
     {
-      "name": "Terug synchroniseren naar WordPress",
+      "name": "Terug synchroniseren met WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress-installatie"
     },
@@ -64,9 +64,24 @@
       "subCat": "WordPress-installatie"
     },
     {
-      "name": "Deactiveren versus verwijderen van de plug-in",
+      "name": "Widget voor recente reacties",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Andere widgets"
+    },
+    {
+      "name": "Widget voor recente discussies",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Andere widgets"
+    },
+    {
+      "name": "Widget voor populairste pagina's",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Andere widgets"
+    },
+    {
+      "name": "Deactiveren versus verwijderen van de plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Plug-in verwijderen"
+      "subCat": "Plugin verwijderen"
     }
   ]
 }

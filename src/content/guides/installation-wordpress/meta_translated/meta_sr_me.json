@@ -1,6 +1,6 @@
 {
   "name": "Инсталација WordPress-а",
-  "pageHeader": "Додајте коментарисање уживо на WordPress сајтове",
+  "pageHeader": "Додавање живог коментарисања на WordPress сајтове",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -59,12 +59,27 @@
       "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Грешке везане за домен",
+      "name": "Грешке домена",
       "file": "wordpress-domain-errors.md",
       "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Деактивација у односу на деинсталирање додатка",
+      "name": "Видгет за најновије коментаре",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Остали видгети"
+    },
+    {
+      "name": "Видгет за најновије дискусије",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Остали видгети"
+    },
+    {
+      "name": "Видгет за најпосећеније странице",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Остали видгети"
+    },
+    {
+      "name": "Деактивација у односу на деинсталацију додатка",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Уклањање додатка"
     }

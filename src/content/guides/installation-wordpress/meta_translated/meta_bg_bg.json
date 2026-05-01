@@ -1,6 +1,6 @@
 {
-  "name": "Инсталиране на WordPress",
-  "pageHeader": "Добавяне на коментари в реално време към WordPress сайтове",
+  "name": "Инсталация на WordPress",
+  "pageHeader": "Добавяне на живо коментиране към WordPress сайтове",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -11,62 +11,77 @@
     {
       "name": "Инсталация",
       "file": "wordpress-installation.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Персонализиране",
       "file": "wordpress-customize.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Модерация",
+      "name": "Модериране",
       "file": "wordpress-moderation.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Потребители, модератори и администратори",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Сайтове само за членове (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Известия",
       "file": "wordpress-notifications.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Персонализирани теми",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Синхронизация обратно към WordPress",
+      "name": "Синхронизиране обратно към WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
       "name": "Брой коментари",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Комуникация между инсталацията на WordPress и сървъра FastComment",
+      "name": "Комуникация между инсталацията на WordPress и сървъра на FastComment",
       "file": "wordpress-server-communication.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Грешки в домейна",
+      "name": "Грешки с домейна",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Инсталиране на WordPress"
+      "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Деактивиране срещу деинсталиране на плъгина",
+      "name": "Уиджет за последни коментари",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Други уиджети"
+    },
+    {
+      "name": "Уиджет за последни дискусии",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Други уиджети"
+    },
+    {
+      "name": "Уиджет за най-посещавани страници",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Други уиджети"
+    },
+    {
+      "name": "Деактивиране срещу деинсталиране на приставката",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Премахване на плъгина"
+      "subCat": "Премахване на приставката"
     }
   ]
 }

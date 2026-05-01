@@ -6,7 +6,7 @@
     {
       "name": "התחלה מהירה",
       "file": "wordpress-quick-start.md",
-      "subCat": "תקציר"
+      "subCat": "בקצרה"
     },
     {
       "name": "התקנה",
@@ -54,17 +54,32 @@
       "subCat": "התקנת וורדפרס"
     },
     {
-      "name": "תקשורת בין וורדפרס לשרת FastComment",
+      "name": "תקשורת בין התקנת וורדפרס לשרת FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "התקנת וורדפרס"
     },
     {
-      "name": "שגיאות דומיין",
+      "name": "שגיאות בדומיין",
       "file": "wordpress-domain-errors.md",
       "subCat": "התקנת וורדפרס"
     },
     {
-      "name": "השבתה לעומת הסרת התוסף",
+      "name": "ווידג'ט תגובות אחרונות",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "ווידג'טים אחרים"
+    },
+    {
+      "name": "ווידג'ט דיונים אחרונים",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "ווידג'טים אחרים"
+    },
+    {
+      "name": "ווידג'ט הדפים המובילים",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "ווידג'טים אחרים"
+    },
+    {
+      "name": "השבתה לעומת הסרה של התוסף",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "הסרת תוסף"
     }

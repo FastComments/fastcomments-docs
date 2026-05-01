@@ -1,12 +1,12 @@
 {
   "name": "WordPress 安装",
-  "pageHeader": "向 WordPress 站点添加实时评论",
+  "pageHeader": "为 WordPress 网站添加实时评论",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "快速开始",
       "file": "wordpress-quick-start.md",
-      "subCat": "简要"
+      "subCat": "快速概览"
     },
     {
       "name": "安装",
@@ -29,7 +29,7 @@
       "subCat": "WordPress 安装"
     },
     {
-      "name": "仅限会员站点（单点登录）",
+      "name": "会员专属站点（SSO）",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress 安装"
     },
@@ -54,7 +54,7 @@
       "subCat": "WordPress 安装"
     },
     {
-      "name": "WordPress 安装 <> FastComment 服务器通信",
+      "name": "WordPress 安装与 FastComment 服务器通信",
       "file": "wordpress-server-communication.md",
       "subCat": "WordPress 安装"
     },
@@ -62,6 +62,21 @@
       "name": "域名错误",
       "file": "wordpress-domain-errors.md",
       "subCat": "WordPress 安装"
+    },
+    {
+      "name": "最新评论小工具",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "其他小工具"
+    },
+    {
+      "name": "最近讨论小工具",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "其他小工具"
+    },
+    {
+      "name": "热门页面小工具",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "其他小工具"
     },
     {
       "name": "停用与卸载插件的区别",

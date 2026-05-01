@@ -44,7 +44,7 @@
       "subCat": "Installation de WordPress"
     },
     {
-      "name": "Synchronisation vers WordPress",
+      "name": "Synchronisation avec WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Installation de WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Installation de WordPress"
     },
     {
-      "name": "Communication entre WordPress et le serveur FastComment",
+      "name": "Communication entre l'installation WordPress et le serveur FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Installation de WordPress"
     },
@@ -64,7 +64,22 @@
       "subCat": "Installation de WordPress"
     },
     {
-      "name": "Désactivation vs désinstallation du plugin",
+      "name": "Widget des commentaires récents",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Autres widgets"
+    },
+    {
+      "name": "Widget des discussions récentes",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Autres widgets"
+    },
+    {
+      "name": "Widget des pages les plus populaires",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Autres widgets"
+    },
+    {
+      "name": "Désactiver vs désinstaller le plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Suppression du plugin"
     }

@@ -1,12 +1,12 @@
 {
   "name": "Εγκατάσταση WordPress",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους WordPress",
+  "pageHeader": "Προσθήκη σχολίων σε πραγματικό χρόνο σε ιστότοπους WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Γρήγορη Εκκίνηση",
+      "name": "Γρήγορη εκκίνηση",
       "file": "wordpress-quick-start.md",
-      "subCat": "Σύνοψη"
+      "subCat": "Συνοπτικά"
     },
     {
       "name": "Εγκατάσταση",
@@ -19,7 +19,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Διαχείριση σχολίων",
+      "name": "Επιμέλεια",
       "file": "wordpress-moderation.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -39,7 +39,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Προσαρμοσμένα θέματα",
+      "name": "Προσαρμοσμένα Θέματα",
       "file": "wordpress-custom-themes.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -49,12 +49,12 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Αριθμοί σχολίων",
+      "name": "Αριθμός σχολίων",
       "file": "wordpress-comment-counts.md",
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Επικοινωνία Εγκατάστασης WordPress <> Διακομιστή FastComment",
+      "name": "Επικοινωνία μεταξύ Εγκατάστασης WordPress και Διακομιστή FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -64,7 +64,22 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Απενεργοποίηση vs Απεγκατάσταση του πρόσθετου",
+      "name": "Widget Πρόσφατων Σχολίων",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Άλλα Widgets"
+    },
+    {
+      "name": "Widget Πρόσφατων Συζητήσεων",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Άλλα Widgets"
+    },
+    {
+      "name": "Widget Κορυφαίων Σελίδων",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Άλλα Widgets"
+    },
+    {
+      "name": "Απενεργοποίηση έναντι Απεγκατάστασης του πρόσθετου",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Αφαίρεση πρόσθετου"
     }

@@ -19,17 +19,17 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "留言審核",
+      "name": "審核",
       "file": "wordpress-moderation.md",
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "使用者、審核員與管理員",
+      "name": "使用者、版主與管理員",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "僅限會員網站（SSO）",
+      "name": "僅限會員的網站（SSO）",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress 安裝"
     },
@@ -49,7 +49,7 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "留言計數",
+      "name": "評論數量",
       "file": "wordpress-comment-counts.md",
       "subCat": "WordPress 安裝"
     },
@@ -64,7 +64,22 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "停用與解除安裝外掛的差異",
+      "name": "最新評論小工具",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "其他小工具"
+    },
+    {
+      "name": "最新討論小工具",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "其他小工具"
+    },
+    {
+      "name": "熱門頁面小工具",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "其他小工具"
+    },
+    {
+      "name": "停用與解除安裝外掛",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "移除外掛"
     }

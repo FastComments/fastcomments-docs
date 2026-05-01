@@ -1,12 +1,12 @@
 {
   "name": "Instalacija WordPressa",
-  "pageHeader": "Dodajte komentare uživo na WordPress stranice",
+  "pageHeader": "Dodajte komentiranje uživo na WordPress stranice",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "wordpress-quick-start.md",
-      "subCat": "Sažetak"
+      "subCat": "Ukratko"
     },
     {
       "name": "Instalacija",
@@ -14,7 +14,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Prilagodba",
+      "name": "Prilagođavanje",
       "file": "wordpress-customize.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Samo za članove (SSO)",
+      "name": "Stranice samo za članove (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -54,17 +54,32 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Komunikacija između instalacije WordPressa i FastComment poslužitelja",
+      "name": "Komunikacija između instalacije WordPressa i FastComment servera",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Pogreške s domenom",
       "file": "wordpress-domain-errors.md",
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Deaktivacija naspram deinstalacije dodatka",
+      "name": "Widget za nedavne komentare",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Ostali widgeti"
+    },
+    {
+      "name": "Widget za nedavne rasprave",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Ostali widgeti"
+    },
+    {
+      "name": "Widget najposjećenijih stranica",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Ostali widgeti"
+    },
+    {
+      "name": "Deaktivacija nasuprot deinstalaciji dodatka",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Uklanjanje dodatka"
     }

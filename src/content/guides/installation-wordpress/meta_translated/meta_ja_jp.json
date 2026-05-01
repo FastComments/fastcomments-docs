@@ -1,12 +1,12 @@
 {
   "name": "WordPress のインストール",
-  "pageHeader": "WordPressサイトにライブコメントを追加する",
+  "pageHeader": "WordPress サイトにライブコメントを追加する",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "クイックスタート",
       "file": "wordpress-quick-start.md",
-      "subCat": "要約"
+      "subCat": "要点"
     },
     {
       "name": "インストール",
@@ -44,7 +44,7 @@
       "subCat": "WordPress のインストール"
     },
     {
-      "name": "WordPressへの同期",
+      "name": "WordPress への同期",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress のインストール"
     },
@@ -54,7 +54,7 @@
       "subCat": "WordPress のインストール"
     },
     {
-      "name": "WordPress のインストールと FastComment サーバー間の通信",
+      "name": "WordPress と FastComment サーバーの通信",
       "file": "wordpress-server-communication.md",
       "subCat": "WordPress のインストール"
     },
@@ -62,6 +62,21 @@
       "name": "ドメインエラー",
       "file": "wordpress-domain-errors.md",
       "subCat": "WordPress のインストール"
+    },
+    {
+      "name": "最近のコメントウィジェット",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "その他のウィジェット"
+    },
+    {
+      "name": "最近のディスカッションウィジェット",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "その他のウィジェット"
+    },
+    {
+      "name": "人気ページウィジェット",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "その他のウィジェット"
     },
     {
       "name": "プラグインの無効化とアンインストールの違い",

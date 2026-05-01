@@ -19,17 +19,17 @@
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "댓글 관리",
+      "name": "중재",
       "file": "wordpress-moderation.md",
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "사용자, 모더레이터 및 관리자",
+      "name": "사용자, 중재자 및 관리자",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "회원 전용 사이트 (SSO)",
+      "name": "회원 전용 사이트(SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "워드프레스 설치"
     },
@@ -44,7 +44,7 @@
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "워드프레스로 동기화",
+      "name": "워드프레스에 동기화",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "워드프레스 설치"
     },
@@ -64,7 +64,22 @@
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "플러그인 비활성화와 제거의 차이",
+      "name": "최근 댓글 위젯",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "기타 위젯"
+    },
+    {
+      "name": "최근 토론 위젯",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "기타 위젯"
+    },
+    {
+      "name": "인기 페이지 위젯",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "기타 위젯"
+    },
+    {
+      "name": "플러그인 비활성화 vs 삭제",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "플러그인 제거"
     }

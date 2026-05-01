@@ -1,6 +1,6 @@
 {
-  "name": "Instalacija WordPressa",
-  "pageHeader": "Dodajte komentarisanje uživo na WordPress sajtove",
+  "name": "Instalacija WordPress-a",
+  "pageHeader": "Dodavanje komentara uživo na WordPress sajtove",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -11,57 +11,72 @@
     {
       "name": "Instalacija",
       "file": "wordpress-installation.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Prilagođavanje",
       "file": "wordpress-customize.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Moderacija",
       "file": "wordpress-moderation.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Korisnici, moderatori i administratori",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Sajtovi samo za članove (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Obaveštenja",
       "file": "wordpress-notifications.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Prilagođene teme",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Sinhronizacija nazad u WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Broj komentara",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Komunikacija između instalacije WordPressa i FastComment servera",
+      "name": "Komunikacija između instalacije WordPress-a i FastComment servera",
       "file": "wordpress-server-communication.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
     },
     {
       "name": "Greške domena",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Instalacija WordPressa"
+      "subCat": "Instalacija WordPress-a"
+    },
+    {
+      "name": "Widget za najnovije komentare",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Ostali vidžeti"
+    },
+    {
+      "name": "Widget za najnovije diskusije",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Ostali vidžeti"
+    },
+    {
+      "name": "Widget za najposećenije stranice",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Ostali vidžeti"
     },
     {
       "name": "Deaktiviranje naspram deinstalacije dodatka",

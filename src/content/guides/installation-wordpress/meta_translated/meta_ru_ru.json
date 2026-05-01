@@ -1,6 +1,6 @@
 {
   "name": "Установка WordPress",
-  "pageHeader": "Добавьте живые комментарии на сайты WordPress",
+  "pageHeader": "Добавление живых комментариев на сайты WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -54,7 +54,7 @@
       "subCat": "Установка WordPress"
     },
     {
-      "name": "Связь между WordPress и сервером FastComment",
+      "name": "Связь между установкой WordPress и сервером FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Установка WordPress"
     },
@@ -64,7 +64,22 @@
       "subCat": "Установка WordPress"
     },
     {
-      "name": "Отключение и удаление плагина",
+      "name": "Виджет последних комментариев",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Другие виджеты"
+    },
+    {
+      "name": "Виджет недавних обсуждений",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Другие виджеты"
+    },
+    {
+      "name": "Виджет популярных страниц",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Другие виджеты"
+    },
+    {
+      "name": "Деактивация против удаления плагина",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Удаление плагина"
     }

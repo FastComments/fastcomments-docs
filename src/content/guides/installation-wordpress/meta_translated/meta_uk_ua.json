@@ -1,6 +1,6 @@
 {
   "name": "Встановлення WordPress",
-  "pageHeader": "Додати живі коментарі на сайти WordPress",
+  "pageHeader": "Додати живе коментування на сайти WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -29,7 +29,7 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Сайти лише для учасників (SSO)",
+      "name": "Сайти лише для членів (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Встановлення WordPress"
     },
@@ -44,7 +44,7 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Синхронізація з WordPress",
+      "name": "Синхронізація назад у WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Встановлення WordPress"
     },
@@ -64,7 +64,22 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Деактивація проти видалення плагіна",
+      "name": "Віджет останніх коментарів",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Інші віджети"
+    },
+    {
+      "name": "Віджет останніх обговорень",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Інші віджети"
+    },
+    {
+      "name": "Віджет найпопулярніших сторінок",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Інші віджети"
+    },
+    {
+      "name": "Відключення проти видалення плагіна",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Видалення плагіна"
     }

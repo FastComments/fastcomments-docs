@@ -1,6 +1,6 @@
 {
   "name": "Instalación de WordPress",
-  "pageHeader": "Añadir comentarios en vivo a sitios de WordPress",
+  "pageHeader": "Agregar comentarios en vivo a sitios de WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -54,7 +54,7 @@
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Comunicación entre la instalación de WordPress y el servidor FastComment",
+      "name": "Comunicación entre la instalación de WordPress y el servidor de FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalación de WordPress"
     },
@@ -62,6 +62,21 @@
       "name": "Errores de dominio",
       "file": "wordpress-domain-errors.md",
       "subCat": "Instalación de WordPress"
+    },
+    {
+      "name": "Widget de comentarios recientes",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Otros widgets"
+    },
+    {
+      "name": "Widget de discusiones recientes",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Otros widgets"
+    },
+    {
+      "name": "Widget de páginas más populares",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Otros widgets"
     },
     {
       "name": "Desactivar vs desinstalar el plugin",
