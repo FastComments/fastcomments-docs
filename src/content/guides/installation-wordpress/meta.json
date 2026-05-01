@@ -64,6 +64,21 @@
       "subCat": "WordPress Installation"
     },
     {
+      "name": "Recent Comments Widget",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "Other Widgets"
+    },
+    {
+      "name": "Recent Discussions Widget",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "Other Widgets"
+    },
+    {
+      "name": "Top Pages Widget",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "Other Widgets"
+    },
+    {
       "name": "Deactivating vs Uninstalling The Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Plugin Removal"
