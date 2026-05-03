@@ -1,11 +1,9 @@
-Ово је званична Next.js библиотека за FastComments.
+Ovo je službena Next.js biblioteka za FastComments.
 
-Уградите видгете за коментаре уживо, ћаскање и рецензије у вашу Next.js апликацију.
+Ugradi widgete za komentare u stvarnom vremenu, chat i recenzije u svoju Next.js aplikaciju.
 
-## Репозиториј
+## Repozitorij
 
-[Погледајте на GitHub](https://github.com/FastComments/fastcomments-nextjs)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-nextjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-nextjs)
+[Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-nextjs)
 
 ---

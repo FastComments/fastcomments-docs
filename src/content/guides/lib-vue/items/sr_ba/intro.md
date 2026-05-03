@@ -1,11 +1,9 @@
 Ово је званична Vue 2 библиотека за FastComments.
 
-Уградите видџете за коментарисање уживо, ћаскање и рецензије у вашу Vue 2 апликацију.
+Уградите видгете за коментарисање уживо, ћаскање и рецензије у вашу Vue 2 апликацију.
 
 ## Репозиторијум
 
 [Погледајте на GitHub](https://github.com/FastComments/fastcomments-vue)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-vue?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue)
 
 ---

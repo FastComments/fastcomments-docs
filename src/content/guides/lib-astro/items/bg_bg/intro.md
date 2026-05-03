@@ -1,11 +1,10 @@
-Това е официалната библиотека Astro на FastComments.
+---
+Това е официалната библиотека Astro за FastComments.
 
-Вградете уиджети за живи коментари, чат и рецензии в сайта си на Astro.
+Вградете джаджи за живи коментари, чат и ревюта във вашия сайт на Astro.
 
-## Репозитория
+## Хранилище
 
-[Вижте на GitHub](https://github.com/FastComments/fastcomments-astro)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-astro?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-astro)
+[Вижте в GitHub](https://github.com/FastComments/fastcomments-astro)
 
 ---

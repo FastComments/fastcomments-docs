@@ -1,12 +1,9 @@
----
-Това е официалната библиотека за Next.js на FastComments.
+Това е официалната библиотека на FastComments за Next.js.
 
-Вградете уиджети за коментари в реално време, чат и ревюта във вашето Next.js приложение.
+Вграждайте джаджове за коментари в реално време, чат и ревю във вашето Next.js приложение.
 
-## Репозитория
+## Хранилище
 
 [Вижте в GitHub](https://github.com/FastComments/fastcomments-nextjs)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-nextjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-nextjs)
 
 ---

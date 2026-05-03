@@ -1,11 +1,10 @@
-Ово је званична библиотека SolidJS за FastComments.
+---
+Ово је званична SolidJS библиотека за FastComments.
 
-Интегришите видгете за коментарисање уживо, ћаскање и рецензије у вашу SolidJS апликацију.
+Уградите видгете за коментарисање уживо, ћаскање и рецензије у вашу SolidJS апликацију.
 
 ## Репозиторијум
 
-[Погледајте на GitHub](https://github.com/FastComments/fastcomments-solidjs)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
+[Погледајте на GitHub-у](https://github.com/FastComments/fastcomments-solidjs)
 
 ---

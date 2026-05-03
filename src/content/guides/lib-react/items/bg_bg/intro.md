@@ -1,11 +1,10 @@
-Това е официалната React библиотека за FastComments.
+---
+Това е официалната библиотека за React на FastComments.
 
-Вградете уиджети за живо коментиране, чат и прегледи във вашето React приложение.
+Вградете джаджи за коментари в реално време, чат и прегледи във вашето React приложение.
 
-## Хранилище
+## Репозитория
 
-[Вижте в GitHub](https://github.com/FastComments/fastcomments-react)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-react?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-react)
+[Вижте на GitHub](https://github.com/FastComments/fastcomments-react)
 
 ---

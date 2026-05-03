@@ -1,11 +1,10 @@
-Bu, FastComments için resmi Eleventy (11ty) kütüphanesidir.
+---
+Bu, FastComments için resmi Eleventy (11ty) Kütüphanesidir.
 
-Eleventy (11ty) sitenize canlı yorum, sohbet ve inceleme bileşenlerini gömün.
+Eleventy (11ty) sitenize canlı yorum, sohbet ve inceleme bileşenlerini ekleyin.
 
 ## Depo
 
-[GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-11ty)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-11ty?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-11ty)
+[GitHub'da görüntüle](https://github.com/FastComments/fastcomments-11ty)
 
 ---

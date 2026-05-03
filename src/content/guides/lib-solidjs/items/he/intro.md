@@ -1,11 +1,10 @@
-זוהי הספרייה הרשמית של FastComments ל-SolidJS.
+---
+זו ספריית SolidJS הרשמית של FastComments.
 
-הטמעו ווידג'טים של תגובות בזמן אמת, צ'אט וביקורת באפליקציית SolidJS שלכם.
+הטמע ווידג'טים של תגובות חיות, צ'אט וסקירה באפליקציית SolidJS שלך.
 
 ## מאגר
 
 [צפה ב-GitHub](https://github.com/FastComments/fastcomments-solidjs)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
 
 ---

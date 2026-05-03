@@ -1,12 +1,10 @@
 ---
-זוהי ספריית React הרשמית של FastComments.
+זו ספריית React הרשמית של FastComments.
 
-הטמיעו ווידג'טים של תגובות בזמן אמת, צ'אט וביקורות באפליקציית React שלכם.
+הטמע ווידג'טים של הערות חיות, צ'אט וביקורות באפליקציית React שלך.
 
-## מאגר
+## Repository
 
 [צפה ב-GitHub](https://github.com/FastComments/fastcomments-react)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-react?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-react)
 
 ---

@@ -1,11 +1,10 @@
+---
 זוהי הספרייה הרשמית של Vue 3 עבור FastComments.
 
-הטמע ווידג'טים של תגובות חיות, צ'אט וסקירה באפליקציית Vue שלך.
+הטמעו ווידג'טים של תגובות בזמן אמת, צ'אט וביקורות באפליקציית Vue שלכם.
 
 ## מאגר
 
 [צפה ב-GitHub](https://github.com/FastComments/fastcomments-vue-next)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-vue-next?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue-next)
 
 ---

@@ -1,11 +1,9 @@
 これは FastComments の公式 Next.js ライブラリです。
 
-Next.js アプリにライブコメント、チャット、レビュー用のウィジェットを埋め込めます。
+Next.js アプリにライブコメント、チャット、およびレビューウィジェットを埋め込むことができます。
 
 ## リポジトリ
 
-[GitHubで表示](https://github.com/FastComments/fastcomments-nextjs)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-nextjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-nextjs)
+[GitHub で見る](https://github.com/FastComments/fastcomments-nextjs)
 
 ---

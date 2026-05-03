@@ -1,11 +1,10 @@
+---
 Αυτή είναι η επίσημη βιβλιοθήκη Angular για το FastComments.
 
-Ενσωματώστε ζωντανά σχόλια, συνομιλία και εργαλεία αξιολόγησης στην εφαρμογή Angular σας.
+Ενσωματώστε widgets για ζωντανά σχόλια, συνομιλία και αξιολογήσεις στην εφαρμογή Angular σας.
 
 ## Αποθετήριο
 
-[Προβολή στο GitHub](https://github.com/FastComments/fastcomments-angular)
-
-[![npm](https://img.shields.io/npm/v/ngx-fastcomments?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/ngx-fastcomments)
+[Δείτε στο GitHub](https://github.com/FastComments/fastcomments-angular)
 
 ---

@@ -1,11 +1,9 @@
-Ово је званична Svelte библиотека за FastComments.
+Ovo je zvanična Svelte biblioteka za FastComments.
 
-Уградите видгете за коментаре уживо, чет и рецензије у вашу Svelte апликацију.
+Ugradite vidžete za komentarisanje uživo, chat i recenzije u vašu Svelte aplikaciju.
 
-## Репозиторијум
+## Repozitorijum
 
-[Погледајте на GitHub](https://github.com/FastComments/fastcomments-svelte)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-svelte?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-svelte)
+[Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-svelte)
 
 ---

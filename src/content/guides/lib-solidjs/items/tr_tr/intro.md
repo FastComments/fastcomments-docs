@@ -1,9 +1,10 @@
-Bu, FastComments için resmi SolidJS kütüphanesidir.
+---
+Bu, FastComments için resmi SolidJS Kütüphanesidir.
 
-SolidJS uygulamanıza canlı yorum, sohbet ve inceleme widget'ları yerleştirin.
+SolidJS uygulamanıza canlı yorum, sohbet ve inceleme widget'larını gömün.
 
 ## Depo
 
-[GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-solidjs)
+[GitHub'da görüntüle](https://github.com/FastComments/fastcomments-solidjs)
 
-[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
+---

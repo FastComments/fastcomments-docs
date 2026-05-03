@@ -1,11 +1,9 @@
 Це офіційна бібліотека Astro для FastComments.
 
-Вбудовуйте віджети живих коментарів, чату та відгуків у свій сайт на Astro.
+Вбудуйте віджети для живих коментарів, чату та оглядів у свій сайт на Astro.
 
 ## Репозиторій
 
 [Переглянути на GitHub](https://github.com/FastComments/fastcomments-astro)
-
-[![npm](https://img.shields.io/npm/v/fastcomments-astro?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-astro)
 
 ---
