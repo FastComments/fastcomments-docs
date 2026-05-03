@@ -36,3 +36,13 @@ You can also [invoke the API](/guide-api.html#domain-config-structure) to set DK
 ### Unsubscribe Links
 
 When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+
+### Email Link Obfuscation
+
+If your site's domain reputation is causing notification emails to land in spam, you can route the "view comment" buttons through `fastcomments.com` instead of linking directly to your page. Mailbox providers score every link in the email body against the destination's reputation, so when your domain is being flagged the bare links contribute to the spam score regardless of how clean your sending setup is.
+
+Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obfuscation" section. The setting is per-domain.
+
+When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
+
+The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.
