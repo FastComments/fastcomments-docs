@@ -233,6 +233,9 @@ class ReadmeDocGenerator extends BaseDocGenerator {
      * @returns {string}
      */
     generateIntro() {
+        const npmLink = this.sdk.npmPackage
+            ? `\n[![npm](https://img.shields.io/npm/v/${this.sdk.npmPackage}?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/${this.sdk.npmPackage})\n`
+            : '';
         return `This is the official ${this.sdk.name} for FastComments.
 
 ${this.sdk.description || ''}
@@ -240,7 +243,7 @@ ${this.sdk.description || ''}
 ## Repository
 
 [View on GitHub](${this.sdk.repo})
-`;
+${npmLink}`;
     }
 
     /**
