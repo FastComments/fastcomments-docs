@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Встановлення",
+      "file": "install-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
       "name": "Швидкий старт",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документація",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус підтримки",
+      "name": "Стан підтримки",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

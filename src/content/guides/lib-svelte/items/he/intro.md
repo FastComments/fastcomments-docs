@@ -1,9 +1,11 @@
-זוהי ספריית Svelte הרשמית עבור FastComments.
+זוהי ספריית Svelte הרשמית של FastComments.
 
-ווידג'טים לתגובות של FastComments עבור Svelte
+הטמע ווידג'טים של הערות בזמן אמת, צ'אט וביקורת באפליקציית Svelte שלך.
 
 ## מאגר
 
-[הצג ב-GitHub](https://github.com/FastComments/fastcomments-svelte)
+[צפה ב-GitHub](https://github.com/FastComments/fastcomments-svelte)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-svelte?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-svelte)
 
 ---

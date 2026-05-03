@@ -1,11 +1,17 @@
 {
   "name": "Svelte Kütüphanesi",
-  "pageHeader": "Svelte Uygulamanıza Yorum Ekleyin",
+  "pageHeader": "Svelte Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
     {
       "name": "Canlı Demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Kurulum",
+      "file": "install-readme-generated.md",
+      "subCat": "Başlarken",
       "type": "readme"
     },
     {

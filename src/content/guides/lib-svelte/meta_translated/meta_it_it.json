@@ -3,9 +3,15 @@
   "pageHeader": "Aggiungi commenti alla tua app Svelte",
   "itemsOrdered": [
     {
-      "name": "Demo live",
+      "name": "Demo dal vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Installazione",
+      "file": "install-readme-generated.md",
+      "subCat": "Primi passi",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Creazione",
+      "name": "Compilazione",
       "file": "building-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

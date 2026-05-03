@@ -1,11 +1,17 @@
 {
   "name": "Biblioteca de Angular",
-  "pageHeader": "Añadir comentarios a tu aplicación Angular",
+  "pageHeader": "Agregar comentarios a tu aplicación Angular",
   "itemsOrdered": [
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Instalación",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {

@@ -9,7 +9,13 @@
       "type": "readme"
     },
     {
-      "name": "Início Rápido",
+      "name": "Instalação",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Início rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Construção",
+      "name": "Compilação",
       "file": "building-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

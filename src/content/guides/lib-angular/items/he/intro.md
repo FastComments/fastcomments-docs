@@ -1,9 +1,11 @@
-זוהי הספרייה הרשמית של Angular עבור FastComments.
+זוהי ספריית Angular הרשמית של FastComments.
 
-ווידג'טים לתגובות של FastComments עבור Angular
+הטמע ווידג'טים של תגובות בזמן אמת, צ'אט וביקורות באפליקציית Angular שלך.
 
 ## מאגר
 
-[צפה ב-GitHub](https://github.com/FastComments/fastcomments-angular)
+[הצג ב-GitHub](https://github.com/FastComments/fastcomments-angular)
+
+[![npm](https://img.shields.io/npm/v/ngx-fastcomments?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/ngx-fastcomments)
 
 ---

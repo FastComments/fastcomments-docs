@@ -1,10 +1,12 @@
 ---
-Ovo je službena Vue 3 biblioteka za FastComments.
+Ovo je službena Vue 3 knjižnica za FastComments.
 
-FastComments widgeti za komentiranje za Vue 3
+Umetnite widgete za komentiranje uživo, chat i recenzije u vašu Vue aplikaciju.
 
 ## Repozitorij
 
-[Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-vue-next)
+[Prikaži na GitHubu](https://github.com/FastComments/fastcomments-vue-next)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-vue-next?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue-next)
 
 ---

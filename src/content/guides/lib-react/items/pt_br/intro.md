@@ -1,9 +1,11 @@
-Esta é a biblioteca oficial React para FastComments.
+Esta é a biblioteca oficial em React da FastComments.
 
-Widgets de comentários do FastComments para React
+Incorpore widgets de comentários ao vivo, chat e revisão no seu aplicativo React.
 
-## Repository
+## Repositório
 
 [Ver no GitHub](https://github.com/FastComments/fastcomments-react)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-react?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-react)
 
 ---

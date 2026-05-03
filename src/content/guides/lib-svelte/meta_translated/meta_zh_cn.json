@@ -9,13 +9,19 @@
       "type": "readme"
     },
     {
+      "name": "安装",
+      "file": "install-readme-generated.md",
+      "subCat": "入门",
+      "type": "readme"
+    },
+    {
       "name": "快速开始",
       "file": "quick-start-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "小部件",
+      "name": "组件",
       "file": "widgets-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

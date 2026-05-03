@@ -3,49 +3,49 @@
   "pageHeader": "FastComments SDK za JavaScript/TypeScript",
   "itemsOrdered": [
     {
-      "name": "Installation",
+      "name": "Namestitev",
       "file": "installation-readme-generated.md",
       "subCat": "Začetek",
       "type": "readme"
     },
     {
-      "name": "API Documentation",
+      "name": "Dokumentacija API",
       "file": "api-documentation-readme-generated.md",
       "subCat": "API referenca",
       "type": "readme"
     },
     {
-      "name": "Browser vs Server Compatibility",
+      "name": "Združljivost brskalnika in strežnika",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Usage",
+      "name": "Uporaba",
       "file": "usage-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "Javni in zavarovani API-ji",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API referenca",
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On) Integration",
+      "name": "Integracija SSO (enotna prijava)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Common Use Cases",
+      "name": "Pogosti primeri uporabe",
       "file": "common-use-cases-readme-generated.md",
-      "subCat": "Pogosti primeri uporabe",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Live Events (Real-time Updates)",
+      "name": "Dogodki v živo (posodobitve v realnem času)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Error Handling",
+      "name": "Ravnanje z napakami",
       "file": "error-handling-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -65,31 +65,31 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregat",
+      "subCat": "Agregacija",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Revizijski zapisi",
+      "subCat": "Revizijski dnevniki",
       "type": "api"
     },
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokiranje komentarja",
+      "subCat": "Blokiranje iz komentarja",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokiranje komentarja",
+      "subCat": "Blokiranje iz komentarja",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Preverjanje blokiranih komentarjev",
+      "subCat": "Preveri blokirane komentarje",
       "type": "api"
     },
     {
@@ -225,39 +225,45 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Komentarji za uporabnika",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Konfiguracije domene",
+      "subCat": "Konfiguracije domen",
       "type": "api"
     },
     {
@@ -329,67 +335,85 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Objave vira",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označevanje komentarjev",
+      "subCat": "Označi komentar",
+      "type": "api"
+    },
+    {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF-i",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF-i",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF-i",
       "type": "api"
     },
     {
@@ -539,31 +563,31 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Nastavitve vprašanj",
+      "subCat": "Konfiguracije vprašanj",
       "type": "api"
     },
     {
@@ -797,25 +821,31 @@
     {
       "name": "changeTicketState",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "Tiketi",
+      "subCat": "Vstopnice",
       "type": "api"
     },
     {
       "name": "createTicket",
       "file": "createticket-api-generated.md",
-      "subCat": "Tiketi",
+      "subCat": "Vstopnice",
       "type": "api"
     },
     {
       "name": "getTicket",
       "file": "getticket-api-generated.md",
-      "subCat": "Tiketi",
+      "subCat": "Vstopnice",
       "type": "api"
     },
     {
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "Tiketi",
+      "subCat": "Vstopnice",
+      "type": "api"
+    },
+    {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Prevodi",
       "type": "api"
     },
     {
@@ -827,97 +857,97 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredek uporabniške značke",
+      "subCat": "Napredek značke uporabnika",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Uporabniške značke",
+      "subCat": "Značke uporabnikov",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Uporabniške značke",
+      "subCat": "Značke uporabnikov",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Uporabniške značke",
+      "subCat": "Značke uporabnikov",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Uporabniške značke",
+      "subCat": "Značke uporabnikov",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Uporabniške značke",
+      "subCat": "Značke uporabnikov",
       "type": "api"
     },
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Obvestila uporabnika",
+      "subCat": "Uporabniška obvestila",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Status prisotnosti uporabnika",
+      "subCat": "Stanja prisotnosti uporabnika",
       "type": "api"
     },
     {

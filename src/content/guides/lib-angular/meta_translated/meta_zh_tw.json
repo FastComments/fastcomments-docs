@@ -1,11 +1,17 @@
 {
   "name": "Angular 函式庫",
-  "pageHeader": "為你的 Angular 應用新增留言功能",
+  "pageHeader": "在您的 Angular 應用程式中新增評論",
   "itemsOrdered": [
     {
-      "name": "即時示範",
+      "name": "線上示範",
       "file": "live-demo-readme-generated.md",
       "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "快速上手",
       "type": "readme"
     },
     {

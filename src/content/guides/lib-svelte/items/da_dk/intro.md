@@ -1,9 +1,9 @@
-Dette er det officielle Svelte-bibliotek for FastComments.
+Dette er det officielle Svelte-bibliotek til FastComments.
 
-FastComments kommenterings-widgets til Svelte
+Integrer widgets til live-kommentarer, chat og anmeldelser i din Svelte-app.
 
-## Repositorium
+## Repository
 
-[Vis på GitHub](https://github.com/FastComments/fastcomments-svelte)
+[Se på GitHub](https://github.com/FastComments/fastcomments-svelte)
 
----
+[![npm](https://img.shields.io/npm/v/fastcomments-svelte?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-svelte)

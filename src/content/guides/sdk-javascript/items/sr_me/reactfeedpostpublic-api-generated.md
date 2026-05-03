@@ -1,29 +1,33 @@
+---
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| isUndo | boolean | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| postId | string | Да |  |
+| reactBodyParams | ReactBodyParams | Да |  |
+| isUndo | boolean | Не |  |
+| broadcastId | string | Не |  |
+| urlId | string | Не |  |
+| sso | string | Не |  |
 
 ## Одговор
 
 Враћа: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublic200Response.ts)
 
-## Пример
+## Примјер
 
-[inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd290f1ee-6c54-4b01-90e6-d701748f0851';
-const postId: string = 'c1a2b3d4-5678-90ab-cdef-1234567890ab';
-const reactBodyParams: ReactBodyParams = { reaction: 'like', emoji: '👍', source: 'web' };
+const tenantId: string = 'tenant_84f2b1';
+const postId: string = 'post_12ac9e';
+const reactBodyParams: ReactBodyParams = { emoji: 'thumbs_up', intensity: 1 };
 const isUndo: boolean = false;
-const broadcastId: string = 'broadcast-2026-03-25-001';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso);
+const broadcastId: string = 'broadcast_20260503_01';
+const urlId: string = 'article-4527';
+const sso: string = 'sso_token_7f3b2c';
+
+const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
 [inline-code-end]
 
 ---

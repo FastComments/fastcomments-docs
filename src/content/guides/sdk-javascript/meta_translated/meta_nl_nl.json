@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Browser- vs Server-compatibiliteit",
+      "name": "Compatibiliteit browser vs server",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Openbare vs beveiligde API's",
+      "name": "Publieke vs beveiligde API's",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API-referentie",
       "type": "readme"
@@ -39,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Veelvoorkomende gebruiksgevallen",
+      "name": "Veelvoorkomende gebruikssituaties",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Live-evenementen (Realtime-updates)",
+      "name": "Live-evenementen (realtime-updates)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -77,19 +77,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren van reactie",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren van opmerking",
+      "subCat": "Blokkeren van reactie",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Controleren op geblokkeerde opmerkingen",
+      "subCat": "Controle geblokkeerde reacties",
       "type": "api"
     },
     {
@@ -225,6 +225,12 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Reacties voor gebruiker",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Domeinconfiguraties",
@@ -329,67 +335,85 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feed-berichten",
+      "subCat": "Feedberichten",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Opmerking markeren",
+      "subCat": "Reactie vlaggen",
+      "type": "api"
+    },
+    {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF's",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF's",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF's",
       "type": "api"
     },
     {
@@ -425,37 +449,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
@@ -521,19 +545,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Wachtende webhook-evenementen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Wachtende webhook-evenementen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Wachtende webhook-gebeurtenissen",
+      "subCat": "Wachtende webhook-evenementen",
       "type": "api"
     },
     {
@@ -683,7 +707,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dagelijks gebruik per tenant",
+      "subCat": "Dagelijks gebruik van tenant",
       "type": "api"
     },
     {
@@ -819,6 +843,12 @@
       "type": "api"
     },
     {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Vertalingen",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Afbeelding uploaden",
@@ -839,7 +869,7 @@
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Lijst voortgang gebruikersbadge",
       "type": "api"
     },
     {
@@ -917,13 +947,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatussen",
+      "subCat": "Gebruikersaanwezigheidsstatus",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Gebruikers zoeken",
+      "subCat": "Gebruiker zoeken",
       "type": "api"
     },
     {

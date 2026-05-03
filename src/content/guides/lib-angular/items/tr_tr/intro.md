@@ -1,10 +1,11 @@
----
 Bu, FastComments için resmi Angular Kütüphanesidir.
 
-Angular için FastComments yorum bileşenleri
+Angular uygulamanıza canlı yorum, sohbet ve inceleme bileşenleri gömün.
 
 ## Depo
 
-[GitHub'da görüntüle](https://github.com/FastComments/fastcomments-angular)
+[GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-angular)
+
+[![npm](https://img.shields.io/npm/v/ngx-fastcomments?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/ngx-fastcomments)
 
 ---

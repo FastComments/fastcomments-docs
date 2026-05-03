@@ -1,11 +1,17 @@
 {
   "name": "ספריית Svelte",
-  "pageHeader": "הוסף תגובות לאפליקציית Svelte שלך",
+  "pageHeader": "הוספת תגובות לאפליקציית Svelte שלך",
   "itemsOrdered": [
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
       "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "install-readme-generated.md",
+      "subCat": "התחלה מהירה",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "סטטוס תחזוקה",
+      "name": "מצב תחזוקה",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

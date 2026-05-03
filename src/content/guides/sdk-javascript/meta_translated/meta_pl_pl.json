@@ -1,6 +1,6 @@
 {
-  "name": "SDK JavaScript/TypeScript",
-  "pageHeader": "FastComments - SDK JavaScript/TypeScript",
+  "name": "JavaScript/TypeScript SDK",
+  "pageHeader": "FastComments JavaScript/TypeScript SDK",
   "itemsOrdered": [
     {
       "name": "Instalacja",
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Zgodność przeglądarki i serwera",
+      "name": "Zgodność przeglądarek i serwerów",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "API publiczne vs zabezpieczone",
+      "name": "Publiczne i zabezpieczone API",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Referencja API",
       "type": "readme"
@@ -51,9 +51,9 @@
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "Identyfikatory transmisji",
       "file": "broadcast-ids-readme-generated.md",
-      "subCat": "Identyfikatory transmisji",
+      "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
@@ -77,19 +77,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokowanie komentarzy",
+      "subCat": "Blokuj z komentarza",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokowanie komentarzy",
+      "subCat": "Blokuj z komentarza",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Sprawdzanie zablokowanych komentarzy",
+      "subCat": "Sprawdź zablokowane komentarze",
       "type": "api"
     },
     {
@@ -222,6 +222,12 @@
       "name": "voteComment",
       "file": "votecomment-api-generated.md",
       "subCat": "Komentarze",
+      "type": "api"
+    },
+    {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Komentarze użytkownika",
       "type": "api"
     },
     {
@@ -389,7 +395,25 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Zgłaszanie komentarza",
+      "subCat": "Zgłoś komentarz",
+      "type": "api"
+    },
+    {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gify",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gify",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gify",
       "type": "api"
     },
     {
@@ -683,115 +707,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dzienne użycie tenantów",
+      "subCat": "Dzienne użycie najemcy",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Pakiety tenantów",
+      "subCat": "Pakiety najemcy",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Użytkownicy tenantów",
+      "subCat": "Użytkownicy najemcy",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Tenanty",
+      "subCat": "Najemcy",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Tenanty",
+      "subCat": "Najemcy",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Tenanty",
+      "subCat": "Najemcy",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Tenanty",
+      "subCat": "Najemcy",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Tenanty",
+      "subCat": "Najemcy",
       "type": "api"
     },
     {
@@ -819,57 +843,63 @@
       "type": "api"
     },
     {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Tłumaczenia",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Przesyłanie obrazu",
+      "subCat": "Prześlij obraz",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Postęp odznak użytkownika",
+      "subCat": "Postęp odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Postęp odznak użytkownika",
+      "subCat": "Postęp odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Postęp odznak użytkownika",
+      "subCat": "Postęp odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Odznaki użytkowników",
+      "subCat": "Odznaki użytkownika",
       "type": "api"
     },
     {

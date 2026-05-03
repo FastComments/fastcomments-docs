@@ -1,10 +1,11 @@
----
 これは FastComments の公式 JavaScript/TypeScript SDK です。
 
-FastComments API の公式 JavaScript/TypeScript SDK
+Node.js またはブラウザからコメント、ユーザー、SSO、およびモデレーションを管理できます。
 
 ## リポジトリ
 
-[GitHubで表示](https://github.com/FastComments/fastcomments-sdk-js)
+[GitHub で見る](https://github.com/FastComments/fastcomments-sdk-js)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-sdk?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-sdk)
 
 ---

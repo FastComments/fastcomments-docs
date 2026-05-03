@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "安裝",
+      "file": "install-readme-generated.md",
+      "subCat": "開始使用",
+      "type": "readme"
+    },
+    {
       "name": "快速開始",
       "file": "quick-start-readme-generated.md",
       "subCat": "文件",

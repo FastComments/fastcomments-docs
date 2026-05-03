@@ -1,11 +1,17 @@
 {
   "name": "Βιβλιοθήκη Angular",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Angular σας",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Angular σας",
   "itemsOrdered": [
     {
       "name": "Ζωντανή επίδειξη",
       "file": "live-demo-readme-generated.md",
       "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {

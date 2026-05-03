@@ -1,0 +1,27 @@
+## Parametreler
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Evet |  |
+| locale | string | Hayır |  |
+| rating | string | Hayır |  |
+| page | number | Hayır |  |
+
+## Yanıt
+
+Döndürür: [`GifSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifSearchResponse.ts)
+
+## Örnek
+
+[inline-code-attrs-start title = 'getGifsTrending Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-tenant-01";
+const trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);
+
+const locale: string = "en-GB";
+const rating: string = "pg";
+const page: number = 1;
+const trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);
+[inline-code-end]
+
+---

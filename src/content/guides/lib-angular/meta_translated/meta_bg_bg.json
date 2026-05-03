@@ -1,11 +1,17 @@
 {
-  "name": "Angular библиотека",
-  "pageHeader": "Добавяне на коментари към вашето Angular приложение",
+  "name": "Библиотека за Angular",
+  "pageHeader": "Добавяне на коментари към вашето приложение на Angular",
   "itemsOrdered": [
     {
       "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталация",
+      "file": "installation-readme-generated.md",
+      "subCat": "Първи стъпки",
       "type": "readme"
     },
     {

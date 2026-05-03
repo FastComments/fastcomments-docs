@@ -1,11 +1,17 @@
 {
   "name": "Biblioteca de Svelte",
-  "pageHeader": "Añadir comentarios a tu aplicación Svelte",
+  "pageHeader": "Agregar comentarios a tu aplicación Svelte",
   "itemsOrdered": [
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Instalar",
+      "file": "install-readme-generated.md",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {

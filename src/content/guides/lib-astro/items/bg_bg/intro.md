@@ -1,9 +1,11 @@
-Това е официалната библиотека Astro за FastComments.
+Това е официалната библиотека Astro на FastComments.
 
-Уиджети за коментари на FastComments за Astro
+Вградете уиджети за живи коментари, чат и рецензии в сайта си на Astro.
 
 ## Репозитория
 
-[Вижте в GitHub](https://github.com/FastComments/fastcomments-astro)
+[Вижте на GitHub](https://github.com/FastComments/fastcomments-astro)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-astro?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-astro)
 
 ---

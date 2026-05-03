@@ -1,9 +1,11 @@
 Bu, FastComments için resmi Svelte Kütüphanesidir.
 
-Svelte için FastComments yorum bileşenleri
+Svelte uygulamanıza canlı yorum, sohbet ve inceleme widget'ları yerleştirin.
 
-## Repository
+## Depo
 
-[GitHub'da görüntüle](https://github.com/FastComments/fastcomments-svelte)
+[GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-svelte)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-svelte?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-svelte)
 
 ---

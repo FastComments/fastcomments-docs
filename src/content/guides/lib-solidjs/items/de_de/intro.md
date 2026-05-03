@@ -1,9 +1,11 @@
 Dies ist die offizielle SolidJS-Bibliothek für FastComments.
 
-Binde Live-Kommentare, Chat- und Review-Widgets in Ihre SolidJS-App ein.
+Integrieren Sie Live-Kommentare, Chat- und Bewertungs-Widgets in Ihre SolidJS-App.
 
 ## Repository
 
 [Auf GitHub ansehen](https://github.com/FastComments/fastcomments-solidjs)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
 
 ---

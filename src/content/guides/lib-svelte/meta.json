@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Install",
+      "file": "install-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
       "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentation",

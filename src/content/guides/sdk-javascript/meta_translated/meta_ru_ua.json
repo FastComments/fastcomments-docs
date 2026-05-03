@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Публичные и защищённые API",
+      "name": "Публичные и защищенные API",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Справочник API",
       "type": "readme"
@@ -39,19 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Типичные сценарии использования",
+      "name": "Распространенные сценарии использования",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "События в реальном времени (Live Events)",
+      "name": "События в реальном времени (обновления)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "ID трансляции",
+      "name": "Идентификаторы трансляции",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -225,6 +225,12 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Комментарии пользователя",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Конфигурации домена",
@@ -393,33 +399,51 @@
       "type": "api"
     },
     {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Гифы",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Гифы",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Гифы",
+      "type": "api"
+    },
+    {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Хештеги",
+      "subCat": "Хэштеги",
       "type": "api"
     },
     {
@@ -461,13 +485,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Счётчик уведомлений",
+      "subCat": "Количество уведомлений",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Счётчик уведомлений",
+      "subCat": "Количество уведомлений",
       "type": "api"
     },
     {
@@ -539,31 +563,31 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Настройки вопросов",
+      "subCat": "Конфигурации вопросов",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Настройки вопросов",
+      "subCat": "Конфигурации вопросов",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Настройки вопросов",
+      "subCat": "Конфигурации вопросов",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Настройки вопросов",
+      "subCat": "Конфигурации вопросов",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Настройки вопросов",
+      "subCat": "Конфигурации вопросов",
       "type": "api"
     },
     {
@@ -683,115 +707,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Ежедневное использование арендатора",
+      "subCat": "Ежедневное использование тенанта",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Пакеты арендатора",
+      "subCat": "Пакеты тенанта",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Пользователи арендатора",
+      "subCat": "Пользователи тенанта",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Арендаторы",
+      "subCat": "Тенанты",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Арендаторы",
+      "subCat": "Тенанты",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Арендаторы",
+      "subCat": "Тенанты",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Арендаторы",
+      "subCat": "Тенанты",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Арендаторы",
+      "subCat": "Тенанты",
       "type": "api"
     },
     {
@@ -819,9 +843,15 @@
       "type": "api"
     },
     {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Переводы",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Загрузка изображения",
+      "subCat": "Загрузить изображение",
       "type": "api"
     },
     {
@@ -845,31 +875,31 @@
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Значки пользователей",
+      "subCat": "Значки пользователя",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Значки пользователей",
+      "subCat": "Значки пользователя",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Значки пользователей",
+      "subCat": "Значки пользователя",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Значки пользователей",
+      "subCat": "Значки пользователя",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Значки пользователей",
+      "subCat": "Значки пользователя",
       "type": "api"
     },
     {
@@ -917,7 +947,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статусы присутствия пользователей",
+      "subCat": "Статусы присутствия пользователя",
       "type": "api"
     },
     {
@@ -953,7 +983,7 @@
     {
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
-      "subCat": "Голоса",
+      "subCat": "Голоса пользователя",
       "type": "api"
     }
   ]

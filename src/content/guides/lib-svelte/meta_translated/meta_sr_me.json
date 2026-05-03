@@ -1,11 +1,17 @@
 {
   "name": "Svelte библиотека",
-  "pageHeader": "Додајте коментаре у вашу Svelte апликацију",
+  "pageHeader": "Додавање коментара у вашу Svelte апликацију",
   "itemsOrdered": [
     {
-      "name": "Демо уживо",
+      "name": "Демонстрација уживо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "install-readme-generated.md",
+      "subCat": "Почетак рада",
       "type": "readme"
     },
     {
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Видџети",
+      "name": "Видгети",
       "file": "widgets-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

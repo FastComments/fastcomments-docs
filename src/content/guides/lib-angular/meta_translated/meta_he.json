@@ -1,11 +1,17 @@
 {
-  "name": "ספריית Angular",
-  "pageHeader": "הוסף תגובות לאפליקציית Angular שלך",
+  "name": "ספריית אנגולר",
+  "pageHeader": "הוספת הערות לאפליקציית אנגולר שלך",
   "itemsOrdered": [
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
       "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלת העבודה",
       "type": "readme"
     },
     {

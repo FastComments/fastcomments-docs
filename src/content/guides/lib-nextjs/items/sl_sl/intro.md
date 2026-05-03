@@ -1,7 +1,11 @@
-To je uradna Next.js knjižnica za FastComments.
+To je uradna knjižnica Next.js za FastComments.
 
-Vdelajte pripomočke za sprotno komentiranje, klepet in ocene v svojo aplikacijo Next.js.
+Vdelajte v vašo aplikacijo Next.js pripomočke za komentiranje v živo, klepet in ocenjevanje.
 
 ## Repozitorij
 
-[Oglejte si na GitHubu](https://github.com/FastComments/fastcomments-nextjs)
+[Poglej na GitHubu](https://github.com/FastComments/fastcomments-nextjs)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-nextjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-nextjs)
+
+---

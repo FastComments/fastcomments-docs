@@ -1,9 +1,12 @@
+---
 これは FastComments の公式 SolidJS ライブラリです。
 
-SolidJS アプリにライブコメント、チャット、レビューウィジェットを埋め込みます。
+あなたの SolidJS アプリにライブコメント、チャット、レビューウィジェットを埋め込むことができます。
 
 ## リポジトリ
 
-[GitHub で表示](https://github.com/FastComments/fastcomments-solidjs)
+[GitHubで表示](https://github.com/FastComments/fastcomments-solidjs)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
 
 ---

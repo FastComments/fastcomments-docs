@@ -1,10 +1,11 @@
----
-Bu, FastComments için resmi Astro Kitaplığıdır.
+Bu, FastComments için resmi Astro kütüphanesidir.
 
-Astro için FastComments yorum widget'ları
+Canlı yorum, sohbet ve inceleme widget'larını Astro sitenize gömün.
 
 ## Depo
 
 [GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-astro)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-astro?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-astro)
 
 ---

@@ -1,9 +1,9 @@
-Αυτό είναι το επίσημο React Native SDK για το FastComments.
+Αυτό είναι το επίσημο SDK για React Native της FastComments.
 
-FastComments SDK για εφαρμογές React Native
+Πρόσβαση στο API της FastComments απευθείας από την εφαρμογή React Native σας.
 
 ## Αποθετήριο
 
-[Δείτε στο GitHub](https://github.com/FastComments/fastcomments-react-native-sdk)
+[Προβολή στο GitHub](https://github.com/FastComments/fastcomments-react-native-sdk)
 
----
+[![npm](https://img.shields.io/npm/v/fastcomments-react-native-sdk?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-react-native-sdk)

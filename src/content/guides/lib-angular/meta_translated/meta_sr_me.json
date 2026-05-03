@@ -3,9 +3,15 @@
   "pageHeader": "Додајте коментаре у вашу Angular апликацију",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "Демо уживо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталација",
+      "file": "installation-readme-generated.md",
+      "subCat": "Почетак рада",
       "type": "readme"
     },
     {

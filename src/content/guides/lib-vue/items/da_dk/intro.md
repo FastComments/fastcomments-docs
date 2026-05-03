@@ -1,9 +1,11 @@
-Dette er det officielle Vue 2-bibliotek for FastComments.
+Dette er det officielle Vue 2-bibliotek til FastComments.
 
-FastComments' kommenterings-widgets til Vue 2
+Integrer live-kommentarer, chat og anmeldelses-widgets i din Vue 2-app.
 
 ## Repository
 
-[Se på GitHub](https://github.com/FastComments/fastcomments-vue)
+[View on GitHub](https://github.com/FastComments/fastcomments-vue)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-vue?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue)
 
 ---

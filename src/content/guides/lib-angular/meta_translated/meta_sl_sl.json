@@ -1,11 +1,17 @@
 {
-  "name": "Angularova knjižnica",
-  "pageHeader": "Dodajte komentarje v svojo Angular aplikacijo",
+  "name": "Knjižnica za Angular",
+  "pageHeader": "Dodajte komentarje v vašo Angular aplikacijo",
   "itemsOrdered": [
     {
-      "name": "Predstavitev v živo",
+      "name": "Živa predstavitev",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {

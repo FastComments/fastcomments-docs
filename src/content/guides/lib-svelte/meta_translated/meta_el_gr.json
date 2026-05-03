@@ -1,11 +1,17 @@
 {
   "name": "Βιβλιοθήκη Svelte",
-  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Svelte σας",
+  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Svelte σας",
   "itemsOrdered": [
     {
       "name": "Ζωντανή επίδειξη",
       "file": "live-demo-readme-generated.md",
       "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "install-readme-generated.md",
+      "subCat": "Πρώτα βήματα",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Δημιουργία",
+      "name": "Κατασκευή",
       "file": "building-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

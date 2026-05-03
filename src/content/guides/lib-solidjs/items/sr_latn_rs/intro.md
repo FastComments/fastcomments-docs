@@ -1,7 +1,11 @@
 Ovo je zvanična SolidJS biblioteka za FastComments.
 
-Ugradite widget-e za komentare uživo, chat i recenzije u vašu SolidJS aplikaciju.
+Ugradi komentare uživo, chat i review vidžete u svoju SolidJS aplikaciju.
 
 ## Repozitorijum
 
-[Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-solidjs)
+[Pogledajte na GitHub](https://github.com/FastComments/fastcomments-solidjs)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-solidjs?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-solidjs)
+
+---

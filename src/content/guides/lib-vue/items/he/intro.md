@@ -1,10 +1,12 @@
 ---
-זוהי ספריית Vue 2 הרשמית של FastComments.
+זו ספריית Vue 2 הרשמית עבור FastComments.
 
-ווידג'טים של תגובות FastComments עבור Vue 2
+הטמע ווידג'טים של תגובות חיות, צ'אט וביקורת באפליקציית Vue 2 שלך.
 
 ## מאגר
 
-[צפה ב-GitHub](https://github.com/FastComments/fastcomments-vue)
+[הצג ב-GitHub](https://github.com/FastComments/fastcomments-vue)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-vue?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue)
 
 ---

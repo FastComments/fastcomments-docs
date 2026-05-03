@@ -225,6 +225,12 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Comments For User",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Domain Configs",
@@ -390,6 +396,24 @@
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Flag Comment",
+      "type": "api"
+    },
+    {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gifs",
       "type": "api"
     },
     {
@@ -816,6 +840,12 @@
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
       "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Translations",
       "type": "api"
     },
     {

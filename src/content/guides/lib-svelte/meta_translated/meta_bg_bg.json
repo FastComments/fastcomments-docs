@@ -1,11 +1,17 @@
 {
-  "name": "Библиотека за Svelte",
-  "pageHeader": "Добавяне на коментари към вашето Svelte приложение",
+  "name": "Svelte библиотека",
+  "pageHeader": "Добавете коментари към вашето Svelte приложение",
   "itemsOrdered": [
     {
-      "name": "Демо на живо",
+      "name": "Живо демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталиране",
+      "file": "install-readme-generated.md",
+      "subCat": "Първи стъпки",
       "type": "readme"
     },
     {

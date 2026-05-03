@@ -1,9 +1,11 @@
-Ово је званична Astro библиотека за FastComments.
+Ovo je službena Astro biblioteka za FastComments.
 
-FastComments коментарски видџети за Astro
+Ugradite komentare uživo, chat i widgete za recenzije na vašem Astro sajtu.
 
-## Репозиторијум
+## Repozitorij
 
-[Погледајте на GitHub](https://github.com/FastComments/fastcomments-astro)
+[Pogledaj na GitHubu](https://github.com/FastComments/fastcomments-astro)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-astro?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-astro)
 
 ---

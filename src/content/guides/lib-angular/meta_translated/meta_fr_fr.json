@@ -3,9 +3,15 @@
   "pageHeader": "Ajouter des commentaires à votre application Angular",
   "itemsOrdered": [
     {
-      "name": "Démo en direct",
+      "name": "Démonstration en direct",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prise en main",
       "type": "readme"
     },
     {

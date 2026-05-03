@@ -5,59 +5,59 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
-      "name": "API Documentation",
+      "name": "Documentation de l'API",
       "file": "api-documentation-readme-generated.md",
       "subCat": "Référence de l'API",
       "type": "readme"
     },
     {
-      "name": "Browser vs Server Compatibility",
+      "name": "Compatibilité navigateur et serveur",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Usage",
+      "name": "Utilisation",
       "file": "usage-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "API publiques vs sécurisées",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Référence de l'API",
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On) Integration",
+      "name": "Intégration SSO (Single Sign-On)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Common Use Cases",
+      "name": "Cas d'utilisation courants",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Live Events (Real-time Updates)",
+      "name": "Événements en direct (Mises à jour en temps réel)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "ID de diffusion",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Error Handling",
+      "name": "Gestion des erreurs",
       "file": "error-handling-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -77,13 +77,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocage du commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocage du commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
@@ -225,6 +225,12 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Commentaires pour l'utilisateur",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Configurations de domaine",
@@ -263,55 +269,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Modèles d'e-mail",
+      "subCat": "Modèles de courriel",
       "type": "api"
     },
     {
@@ -329,61 +335,61 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications",
       "type": "api"
     },
     {
@@ -393,33 +399,51 @@
       "type": "api"
     },
     {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gifs",
+      "type": "api"
+    },
+    {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Mots-clics",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Mots-clics",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Mots-clics",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Mots-clics",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Mots-clics",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
@@ -539,31 +563,31 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurations de question",
+      "subCat": "Configurations de questions",
       "type": "api"
     },
     {
@@ -816,6 +840,12 @@
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
       "subCat": "Tickets",
+      "type": "api"
+    },
+    {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Traductions",
       "type": "api"
     },
     {

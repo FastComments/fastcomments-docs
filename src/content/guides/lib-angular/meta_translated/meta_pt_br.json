@@ -9,13 +9,19 @@
       "type": "readme"
     },
     {
-      "name": "Estrutura do Projeto",
+      "name": "Instalação",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeiros passos",
+      "type": "readme"
+    },
+    {
+      "name": "Estrutura do projeto",
       "file": "project-structure-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Status de Manutenção",
+      "name": "Status de manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

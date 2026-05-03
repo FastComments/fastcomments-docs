@@ -1,10 +1,11 @@
----
-To oficjalna biblioteka Svelte dla FastComments.
+To jest oficjalna biblioteka Svelte dla FastComments.
 
-Widżety komentarzy FastComments dla Svelte
+Osadź widżety do komentowania na żywo, czatu i recenzji w swojej aplikacji Svelte.
 
 ## Repozytorium
 
-[Zobacz na GitHub](https://github.com/FastComments/fastcomments-svelte)
+[View on GitHub](https://github.com/FastComments/fastcomments-svelte)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-svelte?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-svelte)
 
 ---

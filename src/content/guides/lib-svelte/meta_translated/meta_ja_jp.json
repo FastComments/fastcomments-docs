@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "インストール",
+      "file": "install-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
       "name": "クイックスタート",
       "file": "quick-start-readme-generated.md",
       "subCat": "ドキュメント",

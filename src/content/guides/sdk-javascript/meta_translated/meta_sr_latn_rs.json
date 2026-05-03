@@ -45,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Događaji uživo (ažuriranja u realnom vremenu)",
+      "name": "Uživo događaji (ažuriranja u realnom vremenu)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -71,7 +71,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Audit logovi",
+      "subCat": "Revizijski zapisi",
       "type": "api"
     },
     {
@@ -225,6 +225,12 @@
       "type": "api"
     },
     {
+      "name": "getCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "Komentari za korisnika",
+      "type": "api"
+    },
+    {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Konfiguracije domena",
@@ -317,79 +323,97 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Dnevnik događaja",
+      "subCat": "Dnevnici događaja",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Dnevnik događaja",
+      "subCat": "Dnevnici događaja",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Objave",
+      "subCat": "Feed objave",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Prijava komentara",
+      "subCat": "Označi komentar",
+      "type": "api"
+    },
+    {
+      "name": "getGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "Gifovi",
+      "type": "api"
+    },
+    {
+      "name": "getGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "Gifovi",
+      "type": "api"
+    },
+    {
+      "name": "getGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "Gifovi",
       "type": "api"
     },
     {
@@ -461,31 +485,31 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Brojač obaveštenja",
+      "subCat": "Broj notifikacija",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Brojač obaveštenja",
+      "subCat": "Broj notifikacija",
       "type": "api"
     },
     {
       "name": "getNotificationCount",
       "file": "getnotificationcount-api-generated.md",
-      "subCat": "Obaveštenja",
+      "subCat": "Notifikacije",
       "type": "api"
     },
     {
       "name": "getNotifications",
       "file": "getnotifications-api-generated.md",
-      "subCat": "Obaveštenja",
+      "subCat": "Notifikacije",
       "type": "api"
     },
     {
       "name": "updateNotification",
       "file": "updatenotification-api-generated.md",
-      "subCat": "Obaveštenja",
+      "subCat": "Notifikacije",
       "type": "api"
     },
     {
@@ -683,85 +707,85 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna upotreba tenanta",
+      "subCat": "Dnevna upotreba tenant-a",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paketi tenanta",
+      "subCat": "Paketi tenant-a",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Korisnici tenanta",
+      "subCat": "Korisnici tenant-a",
       "type": "api"
     },
     {
@@ -819,6 +843,12 @@
       "type": "api"
     },
     {
+      "name": "getTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "Prevodi",
+      "type": "api"
+    },
+    {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
       "subCat": "Otpremanje slike",
@@ -827,97 +857,97 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak korisničkog bedža",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak korisničkog bedža",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak korisničkog bedža",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Korisničke značke",
+      "subCat": "Korisnički bedževi",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Korisničke značke",
+      "subCat": "Korisnički bedževi",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Korisničke značke",
+      "subCat": "Korisnički bedževi",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Korisničke značke",
+      "subCat": "Korisnički bedževi",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Korisničke značke",
+      "subCat": "Korisnički bedževi",
       "type": "api"
     },
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Korisnička obaveštenja",
+      "subCat": "Korisničke notifikacije",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Status prisustva korisnika",
+      "subCat": "Status prisutnosti korisnika",
       "type": "api"
     },
     {

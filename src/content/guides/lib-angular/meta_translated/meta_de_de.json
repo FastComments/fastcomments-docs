@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
       "name": "Projektstruktur",
       "file": "project-structure-readme-generated.md",
       "subCat": "Dokumentation",

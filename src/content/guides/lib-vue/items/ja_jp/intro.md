@@ -1,10 +1,11 @@
----
 これは FastComments の公式 Vue 2 ライブラリです。
 
-Vue 2 向け FastComments のコメントウィジェット
+Vue 2 アプリにライブコメント、チャット、レビューウィジェットを埋め込めます。
 
 ## リポジトリ
 
-[GitHub 上で表示](https://github.com/FastComments/fastcomments-vue)
+[GitHubで見る](https://github.com/FastComments/fastcomments-vue)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-vue?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-vue)
 
 ---

@@ -1,9 +1,11 @@
 Αυτή είναι η επίσημη βιβλιοθήκη React Native για το FastComments.
 
-Widgets σχολιασμού FastComments για το React Native
+Ενσωματώστε widgets για ζωντανά σχόλια, συνομιλία και κριτικές στην εφαρμογή React Native σας.
 
 ## Αποθετήριο
 
-[Δείτε στο GitHub](https://github.com/FastComments/fastcomments-react-native)
+[Προβολή στο GitHub](https://github.com/FastComments/fastcomments-react-native)
+
+[![npm](https://img.shields.io/npm/v/fastcomments-react-native?logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/fastcomments-react-native)
 
 ---

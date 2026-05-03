@@ -21,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "使用方法",
+      "name": "用法",
       "file": "usage-readme-generated.md",
-      "subCat": "使用方法",
+      "subCat": "用法",
       "type": "readme"
     },
     {
-      "name": "公开 API 与受保护 API",
+      "name": "公开与受保护的 API",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API 参考",
       "type": "readme"
@@ -75,25 +75,25 @@
       "type": "api"
     },
     {
-      "name": "从公开评论屏蔽",
+      "name": "从公开评论中屏蔽",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "从评论屏蔽",
+      "subCat": "从评论中屏蔽",
       "type": "api"
     },
     {
       "name": "取消公开评论屏蔽",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "从评论屏蔽",
+      "subCat": "从评论中屏蔽",
       "type": "api"
     },
     {
       "name": "检查被屏蔽的评论",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "检查被屏蔽评论",
+      "subCat": "检查被屏蔽的评论",
       "type": "api"
     },
     {
-      "name": "从评论屏蔽用户",
+      "name": "从评论中屏蔽用户",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -153,7 +153,7 @@
       "type": "api"
     },
     {
-      "name": "获取评论投票用户名",
+      "name": "获取评论投票用户名称",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -189,7 +189,7 @@
       "type": "api"
     },
     {
-      "name": "取消对评论的用户屏蔽",
+      "name": "从评论中取消屏蔽用户",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "评论",
       "type": "api"
@@ -222,6 +222,12 @@
       "name": "对评论投票",
       "file": "votecomment-api-generated.md",
       "subCat": "评论",
+      "type": "api"
+    },
+    {
+      "name": "获取用户的评论",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "用户的评论",
       "type": "api"
     },
     {
@@ -369,7 +375,7 @@
       "type": "api"
     },
     {
-      "name": "对公开动态帖子做出反应",
+      "name": "对公开动态帖子反应",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "动态帖子",
       "type": "api"
@@ -390,6 +396,24 @@
       "name": "公开标记评论",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "标记评论",
+      "type": "api"
+    },
+    {
+      "name": "获取大尺寸 GIF",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF",
+      "type": "api"
+    },
+    {
+      "name": "搜索 GIF",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF",
+      "type": "api"
+    },
+    {
+      "name": "获取热门 GIF",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -519,21 +543,21 @@
       "type": "api"
     },
     {
-      "name": "删除待处理的 Webhook 事件",
+      "name": "删除待处理的 webhook 事件",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "待处理 Webhook 事件",
+      "subCat": "待处理的 webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理 Webhook 事件计数",
+      "name": "获取待处理 webhook 事件计数",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "待处理 Webhook 事件",
+      "subCat": "待处理的 webhook 事件",
       "type": "api"
     },
     {
-      "name": "获取待处理的 Webhook 事件",
+      "name": "获取待处理的 webhook 事件",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "待处理 Webhook 事件",
+      "subCat": "待处理的 webhook 事件",
       "type": "api"
     },
     {
@@ -816,6 +840,12 @@
       "name": "获取工单列表",
       "file": "gettickets-api-generated.md",
       "subCat": "工单",
+      "type": "api"
+    },
+    {
+      "name": "获取翻译",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "翻译",
       "type": "api"
     },
     {

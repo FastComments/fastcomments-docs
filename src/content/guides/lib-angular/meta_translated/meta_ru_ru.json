@@ -9,6 +9,12 @@
       "type": "readme"
     },
     {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
       "name": "Структура проекта",
       "file": "project-structure-readme-generated.md",
       "subCat": "Документация",

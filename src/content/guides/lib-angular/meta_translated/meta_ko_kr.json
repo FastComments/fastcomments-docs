@@ -1,11 +1,17 @@
 {
-  "name": "앵귤러 라이브러리",
-  "pageHeader": "앵귤러 앱에 댓글 추가하기",
+  "name": "Angular 라이브러리",
+  "pageHeader": "Angular 앱에 댓글 추가",
   "itemsOrdered": [
     {
       "name": "라이브 데모",
       "file": "live-demo-readme-generated.md",
       "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
       "type": "readme"
     },
     {
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "유지 관리 상태",
+      "name": "유지보수 상태",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
