@@ -1,0 +1,9 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "79d940b123d0931d0e264e34d1175f63a0cc5dbd1803f26b508f2e7eeda6e8cd",
+  "generatedAt": "2026-05-03T09:33:25.515Z",
+  "codeExample": "const tenantId: string = 'tenant_84f2b1';\nconst postId: string = 'post_12ac9e';\nconst reactBodyParams: ReactBodyParams = { emoji: 'thumbs_up', intensity: 1 };\nconst isUndo: boolean = false;\nconst broadcastId: string = 'broadcast_20260503_01';\nconst urlId: string = 'article-4527';\nconst sso: string = 'sso_token_7f3b2c';\n\nconst result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);",
+  "model": "gpt-5-mini",
+  "promptTokens": 478,
+  "completionTokens": 855
+}

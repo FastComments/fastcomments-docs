@@ -1,0 +1,9 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "34f053e508139b0a403a1b7cc82f38762a4b4752cca28fa63d6227a4e78ae96f",
+  "generatedAt": "2026-05-03T09:33:22.609Z",
+  "codeExample": "const tenantId: string = \"tenant_fcm_42\";\nconst search: string = \"funny golden retriever\";\nconst locale: string = \"en-US\";\nconst rating: string = \"pg\";\nconst page: number = 2;\nconst result: GifSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);",
+  "model": "gpt-5-mini",
+  "promptTokens": 279,
+  "completionTokens": 659
+}

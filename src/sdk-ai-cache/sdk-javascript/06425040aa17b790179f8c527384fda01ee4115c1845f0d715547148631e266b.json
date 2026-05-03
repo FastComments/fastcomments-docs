@@ -1,0 +1,9 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "06425040aa17b790179f8c527384fda01ee4115c1845f0d715547148631e266b",
+  "generatedAt": "2026-05-03T09:33:24.723Z",
+  "codeExample": "const tenantId: string = \"acme-tenant-01\";\nconst trendingBasic: GifSearchResponse = await getGifsTrending(tenantId);\n\nconst locale: string = \"en-GB\";\nconst rating: string = \"pg\";\nconst page: number = 1;\nconst trendingWithOptions: GifSearchResponse = await getGifsTrending(tenantId, locale, rating, page);",
+  "model": "gpt-5-mini",
+  "promptTokens": 271,
+  "completionTokens": 858
+}

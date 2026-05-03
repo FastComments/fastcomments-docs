@@ -1,0 +1,9 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "3378b9f989711096a6cbe6310fe83196ab08711eab43e327b1615cdb66907a59",
+  "generatedAt": "2026-05-03T09:33:39.973Z",
+  "codeExample": "const tenantId: string = 'acme_marketing_tenant_7';\nconst largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';\nconst includePreview: boolean | undefined = undefined; // optional flag a caller might use\nconst result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);\nconsole.log(result, includePreview);",
+  "model": "gpt-5-mini",
+  "promptTokens": 260,
+  "completionTokens": 1832
+}

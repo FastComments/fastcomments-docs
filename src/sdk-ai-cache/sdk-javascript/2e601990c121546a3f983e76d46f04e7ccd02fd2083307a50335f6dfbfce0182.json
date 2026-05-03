@@ -1,0 +1,9 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "2e601990c121546a3f983e76d46f04e7ccd02fd2083307a50335f6dfbfce0182",
+  "generatedAt": "2026-05-03T09:33:36.093Z",
+  "codeExample": "const userId: string = \"user_92b7f4\";\nconst tenantId: string = \"news-tenant-uk\";\nconst urlId: string = \"https://news.example.co.uk/articles/2026/05/01/local-election\";\nconst page: number = 1;\nconst lastGenDate: number = Date.now() - 24 * 60 * 60 * 1000;\nconst fetchPageForCommentId: string = \"c_987654321\";\nconst includei10n: boolean = true;\nconst locale: string = \"en-GB\";\nconst includeConfig: boolean = true;\nconst includeNotificationCount: boolean = false;\nconst result: GetCommentsForUserResponse = await getCommentsForUser(\n  userId,\n  tenantId,\n  urlId,\n  page,\n  undefined,\n  lastGenDate,\n  undefined,\n  fetchPageForCommentId,\n  includei10n,\n  false,\n  locale,\n  includeConfig,\n  includeNotificationCount,\n  false,\n  undefined\n);",
+  "model": "gpt-5-mini",
+  "promptTokens": 564,
+  "completionTokens": 1438
+}

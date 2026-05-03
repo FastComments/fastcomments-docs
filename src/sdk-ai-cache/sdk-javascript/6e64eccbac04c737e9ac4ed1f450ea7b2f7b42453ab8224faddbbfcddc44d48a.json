@@ -1,0 +1,9 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "6e64eccbac04c737e9ac4ed1f450ea7b2f7b42453ab8224faddbbfcddc44d48a",
+  "generatedAt": "2026-05-03T09:33:26.447Z",
+  "codeExample": "const translationsBase: GetTranslationsResponse = await getTranslations(\"acme-site-482\", \"commentThread\");\nconst translationsSpanishFullIds: GetTranslationsResponse = await getTranslations(\"acme-site-482\", \"commentThread\", \"es-ES\", true);",
+  "model": "gpt-5-mini",
+  "promptTokens": 271,
+  "completionTokens": 958
+}
