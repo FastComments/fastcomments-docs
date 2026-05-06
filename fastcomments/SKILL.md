@@ -320,7 +320,7 @@ Full type definitions: https://github.com/FastComments/fastcomments-typescript/b
 | C++ | [fastcomments-cpp](https://github.com/FastComments/fastcomments-cpp) | CMake |
 | Swift | [fastcomments-swift](https://github.com/FastComments/fastcomments-swift) | Swift Package Manager |
 | Nim | [fastcomments-nim](https://github.com/FastComments/fastcomments-nim) | Nimble |
-| PHP SSO | [fastcomments-php-sso](https://github.com/FastComments/fastcomments-php-sso) | `composer require fastcomments/fastcomments-sso` |
+| PHP SSO | [fastcomments-php-sso](https://github.com/FastComments/fastcomments-php-sso) | `composer require fastcomments/sso` |
 
 All SDKs are generated from the same OpenAPI spec and provide typed access to every API endpoint.
 
