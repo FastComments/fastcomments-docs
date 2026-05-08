@@ -416,6 +416,11 @@
       "name": "Show Badges in Top Bar",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Look and Feel"
+    },
+    {
+      "name": "Show Online Users List",
+      "file": "users-list.md",
+      "subCat": "Look and Feel"
     }
   ]
 }
