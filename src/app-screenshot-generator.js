@@ -246,7 +246,12 @@ async function getTemplate(url, linkUrl, width, actions, clickSelectors, selecto
                         await page.waitForSelector(action.selector);
                         await page.bringToFront();
                         await page.evaluate((selector, value) => {
-                            document.querySelector(selector).value = value;
+                            const el = document.querySelector(selector);
+                            el.value = value;
+                            // Dispatch input + change so any listeners (e.g. dependent fields that
+                            // show/hide based on the selected value) actually run.
+                            el.dispatchEvent(new Event('input', {bubbles: true}));
+                            el.dispatchEvent(new Event('change', {bubbles: true}));
                         }, action.selector, action.value);
                         break;
                     default:
