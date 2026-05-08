@@ -46,6 +46,7 @@ body { margin: 0; padding: 0; }
     .icon.return { background: url("${FC_CDN}/images/svg/return.svg") no-repeat center; background-size: 22px; margin-left: 6px; }
     .icon.gif { width: auto; height: auto; font-size: 0; }
     .icon.gif::before { content: "GIF"; font-size: 12px; }
+    .icon.spoiler { font-size: 12px; }
     .icon.gif::before, .t-btn.txt { display: inline-block; width: auto; height: auto; margin-right: 3px; text-align: center; vertical-align: middle; font-weight: 500; }
     .icon.bell { background: url("${FC_CDN}/images/svg/v2/bell.svg") no-repeat center; background-size: 22px; }
     .icon.bell-red { background: url("${FC_CDN}/images/svg/v2/bell-red.svg") no-repeat center; background-size: 22px; }
