@@ -10,6 +10,7 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - WordPress (via the plugin)
+- AnyComment (Via WordPress Import/Export)
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
