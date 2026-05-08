@@ -8,12 +8,12 @@
       "subCat": "基礎"
     },
     {
-      "name": "評論如何關聯至頁面與文章",
+      "name": "評論如何與頁面及文章關聯",
       "file": "url-id.md",
       "subCat": "基礎"
     },
     {
-      "name": "在不同頁面呈現相同評論",
+      "name": "在不同頁面呈現相同的評論",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "基礎"
     },
@@ -33,7 +33,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "支援深色背景（深色模式）",
+      "name": "支援深色背景（暗色模式）",
       "file": "has-dark-background.md",
       "subCat": "外觀與風格"
     },
@@ -63,7 +63,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "從評論連結到頁面",
+      "name": "從評論連結至頁面",
       "file": "url.md",
       "subCat": "外觀與風格"
     },
@@ -73,7 +73,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "啟用所見即所得（WYSIWYG）",
+      "name": "啟用所見即所得編輯器",
       "file": "enable-wysiwyg.md",
       "subCat": "外觀與風格"
     },
@@ -93,27 +93,27 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "在不重新載入頁面下切換評論串",
+      "name": "不重新載入頁面即可切換評論串",
       "file": "switching-comment-threads.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "絕對日期（停用人性化時間標記）",
+      "name": "絕對日期（停用友善時間顯示）",
       "file": "absolute-dates.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "同時顯示絕對與相對日期",
+      "name": "同時顯示絕對與相對時間",
       "file": "absolute-and-relative-dates.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "新增標題文字",
+      "name": "新增標頭文字",
       "file": "header-html.md",
       "subCat": "外觀與風格"
     },
     {
-      "name": "將連結呈現為文字",
+      "name": "以文字顯示連結",
       "file": "render-links-as-text.md",
       "subCat": "外觀與風格"
     },
@@ -123,7 +123,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "自訂評論數量文字",
+      "name": "自訂評論數文字",
       "file": "comment-count-format.md",
       "subCat": "外觀與風格"
     },
@@ -138,7 +138,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "停用通知鈴鐺",
+      "name": "停用通知鈴",
       "file": "disable-notification-bell.md",
       "subCat": "外觀與風格"
     },
@@ -153,7 +153,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "停用個人檔案私訊",
+      "name": "停用個人檔案直接訊息",
       "file": "disable-profile-direct-messages.md",
       "subCat": "外觀與風格"
     },
@@ -163,7 +163,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "變更 GIF 的內容分級",
+      "name": "更改 GIF 的內容分級",
       "file": "gif-rating.md",
       "subCat": "外觀與風格"
     },
@@ -173,7 +173,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "變更投票樣式",
+      "name": "更改投票樣式",
       "file": "vote-style.md",
       "subCat": "外觀與風格"
     },
@@ -188,7 +188,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "突顯新評論",
+      "name": "標示新評論",
       "file": "highlighting-new-comments.md",
       "subCat": "外觀與風格"
     },
@@ -223,7 +223,7 @@
       "subCat": "外觀與風格"
     },
     {
-      "name": "啟用評論檢視計數",
+      "name": "啟用評論瀏覽次數",
       "file": "enable-comment-view-counts.md",
       "subCat": "外觀與風格"
     },
@@ -238,22 +238,22 @@
       "subCat": "即時評論"
     },
     {
-      "name": "將新即時評論置於底部",
+      "name": "新即時評論置於底部",
       "file": "new-comments-to-bottom.md",
       "subCat": "即時評論"
     },
     {
-      "name": "啟用無限滾動",
+      "name": "啟用無限捲動",
       "file": "enable-infinite-scrolling.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "變更預設排序方向",
+      "name": "更改預設排序方向",
       "file": "default-sort-direction.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "一次呈現所有評論 - 停用分頁",
+      "name": "一次呈現所有評論（停用分頁）",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分頁與排序"
     },
@@ -293,34 +293,34 @@
       "subCat": "回覆框"
     },
     {
-      "name": "單一登入 (SSO) 概覽",
+      "name": "單一登入（SSO）概覽",
       "file": "sso.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
-      "name": "自訂整合 - 安全單一登入 (SSO)",
+      "name": "自訂整合 - 安全單一登入（SSO）",
       "file": "sso-secure.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
-      "name": "自訂整合 - 簡易單一登入 (SSO)",
+      "name": "自訂整合 - 簡易單一登入（SSO）",
       "file": "sso-simple.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
       "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "單一登入 (SSO)"
+      "subCat": "SSO（單一登入）"
     },
     {
       "name": "允許匿名評論",
@@ -333,12 +333,12 @@
       "subCat": "匿名評論"
     },
     {
-      "name": "停用電子郵件輸入欄位",
+      "name": "停用電子郵件輸入",
       "file": "disable-email-inputs.md",
       "subCat": "匿名評論"
     },
     {
-      "name": "停用「未驗證」標籤",
+      "name": "停用未驗證標籤",
       "file": "disable-unverified-label.md",
       "subCat": "匿名評論"
     },
@@ -353,12 +353,12 @@
       "subCat": "匿名評論"
     },
     {
-      "name": "回呼",
+      "name": "回呼（Callbacks）",
       "file": "callbacks.md",
       "subCat": "其他"
     },
     {
-      "name": "手動定義使用者的語系",
+      "name": "手動定義使用者語系",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -373,7 +373,7 @@
       "subCat": "其他"
     },
     {
-      "name": "阻止新增回覆並停用投票",
+      "name": "禁止新增回覆並停用投票",
       "file": "readonly.md",
       "subCat": "其他"
     },
@@ -383,7 +383,7 @@
       "subCat": "其他"
     },
     {
-      "name": "評論數量與計算所有巢狀回覆",
+      "name": "評論數量與包含所有巢狀回覆",
       "file": "count-all.md",
       "subCat": "其他"
     },
@@ -408,13 +408,18 @@
       "subCat": "其他"
     },
     {
-      "name": "刪除含有回覆的評論",
+      "name": "刪除有回覆的評論",
       "file": "deleting-comments-with-replies.md",
       "subCat": "其他"
     },
     {
-      "name": "在頂端工具列顯示徽章",
+      "name": "在頂部列顯示徽章",
       "file": "show-badges-in-top-bar.md",
+      "subCat": "外觀與風格"
+    },
+    {
+      "name": "顯示線上使用者清單",
+      "file": "users-list.md",
       "subCat": "外觀與風格"
     }
   ]

@@ -5,20 +5,20 @@
     {
       "name": "Identifier votre compte",
       "file": "tenant-id.md",
-      "subCat": "Notions de base"
+      "subCat": "Les bases"
     },
     {
-      "name": "Comment les commentaires sont liés aux pages et aux articles",
+      "name": "Comment les commentaires sont associés aux pages et aux articles",
       "file": "url-id.md",
-      "subCat": "Notions de base"
+      "subCat": "Les bases"
     },
     {
-      "name": "Afficher les mêmes commentaires sur différentes pages",
+      "name": "Afficher les mêmes commentaires sur plusieurs pages",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Notions de base"
+      "subCat": "Les bases"
     },
     {
-      "name": "Style personnalisé",
+      "name": "Styles personnalisés",
       "file": "custom-css.md",
       "subCat": "Apparence"
     },
@@ -33,7 +33,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Prise en charge des fonds sombres (mode sombre)",
+      "name": "Prise en charge des arrière-plans sombres (mode sombre)",
       "file": "has-dark-background.md",
       "subCat": "Apparence"
     },
@@ -48,7 +48,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Modifier l'avatar par défaut",
+      "name": "Changer l'avatar par défaut",
       "file": "default-avatar-src.md",
       "subCat": "Apparence"
     },
@@ -63,7 +63,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Créer des liens depuis les commentaires vers les pages",
+      "name": "Créer des liens des commentaires vers les pages",
       "file": "url.md",
       "subCat": "Apparence"
     },
@@ -88,7 +88,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Déterminer quelle page afficher",
+      "name": "Déterminer la page à afficher",
       "file": "starting-page.md",
       "subCat": "Apparence"
     },
@@ -98,7 +98,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Dates absolues (désactiver les horodatages relatifs)",
+      "name": "Dates absolues (désactiver les horodatages lisibles)",
       "file": "absolute-dates.md",
       "subCat": "Apparence"
     },
@@ -108,17 +108,17 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Ajouter du texte d'en-tête",
+      "name": "Ajouter un texte d'en-tête",
       "file": "header-html.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Afficher les liens comme du texte",
+      "name": "Afficher les liens en tant que texte",
       "file": "render-links-as-text.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Basculer les commentaires avec un bouton",
+      "name": "Afficher/masquer les commentaires avec un bouton",
       "file": "use-show-comments-toggle.md",
       "subCat": "Apparence"
     },
@@ -148,12 +148,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver les commentaires sur les profils",
+      "name": "Désactiver les commentaires de profil",
       "file": "disable-profile-comments.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver les messages directs sur les profils",
+      "name": "Désactiver les messages directs de profil",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Apparence"
     },
@@ -163,7 +163,7 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Modifier la classification de contenu des GIFs",
+      "name": "Modifier la classification des GIFs",
       "file": "gif-rating.md",
       "subCat": "Apparence"
     },
@@ -193,12 +193,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Tailles de page",
+      "name": "Taille des pages",
       "file": "page-size.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Modèles d'e-mails",
+      "name": "Modèles d'e-mail",
       "file": "email-templates.md",
       "subCat": "Apparence"
     },
@@ -208,12 +208,12 @@
       "subCat": "Apparence"
     },
     {
-      "name": "Désactiver le téléversement d'images",
+      "name": "Désactiver le téléchargement d'images",
       "file": "no-image-uploads.md",
       "subCat": "Apparence"
     },
     {
-      "name": "Activer la boîte de recherche",
+      "name": "Activer la zone de recherche",
       "file": "enable-search.md",
       "subCat": "Apparence"
     },
@@ -253,57 +253,57 @@
       "subCat": "Pagination et tri"
     },
     {
-      "name": "Afficher tous les commentaires d'un coup - désactiver la pagination",
+      "name": "Afficher tous les commentaires en une fois - désactiver la pagination",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Pagination et tri"
     },
     {
-      "name": "Déplacer la zone de réponse après les commentaires",
+      "name": "Déplacer la boîte de réponse après les commentaires",
       "file": "input-after-comments.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
       "name": "Limiter la longueur des commentaires",
       "file": "max-comment-character-length.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
-      "name": "Désactiver les commentaires sur plusieurs lignes",
+      "name": "Désactiver les commentaires multi-lignes",
       "file": "use-single-line-comment-input.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
       "name": "Limiter le volume de commentaires par utilisateur",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
-      "name": "Empêcher la création de nouveaux commentaires de niveau supérieur",
+      "name": "Empêcher les nouveaux commentaires de premier niveau",
       "file": "no-new-root-comments.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
       "name": "Profondeur maximale des réponses",
       "file": "max-reply-depth.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
       "name": "Exiger l'acceptation des conditions d'utilisation",
       "file": "terms-of-service.md",
-      "subCat": "La zone de réponse"
+      "subCat": "Boîte de réponse"
     },
     {
-      "name": "Présentation de l'authentification unique (SSO)",
+      "name": "Présentation du Single Sign-On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Authentification unique sécurisée (SSO)",
+      "name": "Intégrations personnalisées - Single Sign-On sécurisé (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Authentification unique simple (SSO)",
+      "name": "Intégrations personnalisées - Single Sign-On simple (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -318,7 +318,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protéger les fils de commentaires avec l'authentification unique",
+      "name": "Protéger les fils de commentaires avec le Single Sign-On (SSO)",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -333,12 +333,12 @@
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Désactiver les champs e-mail",
+      "name": "Désactiver les champs d'e-mail",
       "file": "disable-email-inputs.md",
       "subCat": "Commentaires anonymes"
     },
     {
-      "name": "Désactiver le label non vérifié",
+      "name": "Désactiver le libellé 'non vérifié'",
       "file": "disable-unverified-label.md",
       "subCat": "Commentaires anonymes"
     },
@@ -373,7 +373,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Empêcher de nouvelles réponses et désactiver les votes",
+      "name": "Empêcher les nouvelles réponses et désactiver les votes",
       "file": "readonly.md",
       "subCat": "Divers"
     },
@@ -383,7 +383,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Le nombre de commentaires et le comptage de toutes les réponses imbriquées",
+      "name": "Le compteur de commentaires et le comptage de toutes les réponses imbriquées",
       "file": "count-all.md",
       "subCat": "Divers"
     },
@@ -398,7 +398,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Identifiants des groupes de mention",
+      "name": "Identifiants de groupe pour mentions",
       "file": "mention-group-ids.md",
       "subCat": "Divers"
     },
@@ -408,13 +408,18 @@
       "subCat": "Divers"
     },
     {
-      "name": "Suppression de commentaires ayant des réponses",
+      "name": "Suppression de commentaires avec réponses",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Divers"
     },
     {
       "name": "Afficher les badges dans la barre supérieure",
       "file": "show-badges-in-top-bar.md",
+      "subCat": "Apparence"
+    },
+    {
+      "name": "Afficher la liste des utilisateurs en ligne",
+      "file": "users-list.md",
       "subCat": "Apparence"
     }
   ]

@@ -1,9 +1,9 @@
 {
-  "name": "Personalizaciones y Configuración",
+  "name": "Personalizaciones y configuración",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identificando su cuenta",
+      "name": "Identificar tu cuenta",
       "file": "tenant-id.md",
       "subCat": "Conceptos básicos"
     },
@@ -33,7 +33,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Soporte para fondos oscuros (modo oscuro)",
+      "name": "Compatibilidad con fondos oscuros (modo oscuro)",
       "file": "has-dark-background.md",
       "subCat": "Apariencia"
     },
@@ -63,7 +63,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Enlazar comentarios con páginas",
+      "name": "Vincular comentarios con páginas",
       "file": "url.md",
       "subCat": "Apariencia"
     },
@@ -73,7 +73,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar editor WYSIWYG",
+      "name": "Habilitar WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Apariencia"
     },
@@ -98,12 +98,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Fechas absolutas (desactivar marcas de tiempo legibles)",
+      "name": "Fechas absolutas (desactivar marcas de tiempo amigables)",
       "file": "absolute-dates.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Mostrar tanto fechas absolutas como relativas",
+      "name": "Mostrar fechas absolutas y relativas",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Apariencia"
     },
@@ -148,12 +148,12 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Desactivar comentarios en perfiles",
+      "name": "Desactivar comentarios de perfil",
       "file": "disable-profile-comments.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Desactivar mensajes directos en perfiles",
+      "name": "Desactivar mensajes directos de perfil",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Apariencia"
     },
@@ -188,7 +188,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Resaltar nuevos comentarios",
+      "name": "Resaltar comentarios nuevos",
       "file": "highlighting-new-comments.md",
       "subCat": "Apariencia"
     },
@@ -208,7 +208,7 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Desactivar cargas de imágenes",
+      "name": "Desactivar subida de imágenes",
       "file": "no-image-uploads.md",
       "subCat": "Apariencia"
     },
@@ -223,24 +223,24 @@
       "subCat": "Apariencia"
     },
     {
-      "name": "Habilitar contador de vistas de comentarios",
+      "name": "Habilitar recuento de vistas de comentarios",
       "file": "enable-comment-view-counts.md",
       "subCat": "Apariencia"
     },
     {
-      "name": "Mostrar comentarios en vivo de inmediato",
+      "name": "Mostrar comentarios en directo de inmediato",
       "file": "show-live-right-away.md",
-      "subCat": "Comentarios en vivo"
+      "subCat": "Comentarios en directo"
     },
     {
-      "name": "Desactivar comentarios en vivo",
+      "name": "Desactivar comentarios en directo",
       "file": "disable-live-commenting.md",
-      "subCat": "Comentarios en vivo"
+      "subCat": "Comentarios en directo"
     },
     {
-      "name": "Colocar nuevos comentarios en vivo al final",
+      "name": "Mostrar nuevos comentarios en directo al final",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Comentarios en vivo"
+      "subCat": "Comentarios en directo"
     },
     {
       "name": "Habilitar desplazamiento infinito",
@@ -260,65 +260,65 @@
     {
       "name": "Mover el cuadro de respuesta después de los comentarios",
       "file": "input-after-comments.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
       "name": "Limitar la longitud del comentario",
       "file": "max-comment-character-length.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
       "name": "Desactivar comentarios multilínea",
       "file": "use-single-line-comment-input.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
-      "name": "Limitar la cantidad de comentarios por usuario",
+      "name": "Limitar el número de comentarios por usuario",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
       "name": "Impedir nuevos comentarios de primer nivel",
       "file": "no-new-root-comments.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
       "name": "Profundidad máxima de respuestas",
       "file": "max-reply-depth.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
       "name": "Requerir aceptación de los términos de servicio",
       "file": "terms-of-service.md",
-      "subCat": "El cuadro de respuesta"
+      "subCat": "Cuadro de respuesta"
     },
     {
-      "name": "Resumen de inicio de sesión único (SSO)",
+      "name": "Descripción general de Single Sign-On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - inicio de sesión único seguro (SSO)",
+      "name": "Integraciones personalizadas - Single Sign-On (SSO) seguro",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - inicio de sesión único simple (SSO)",
+      "name": "Integraciones personalizadas - Single Sign-On (SSO) simple",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - migración desde Disqus SSO",
+      "name": "Integraciones personalizadas - Migración desde Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integraciones personalizadas - migración desde Commento SSO",
+      "name": "Integraciones personalizadas - Migración desde Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
     {
-      "name": "Proteger hilos de comentarios con inicio de sesión único",
+      "name": "Proteger hilos de comentarios con Single Sign-On (SSO)",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -328,7 +328,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Evitar que los comentarios anónimos caduquen",
+      "name": "Evitar que los comentarios anónimos expiren",
       "file": "allow-anon-retain-comments.md",
       "subCat": "Comentarios anónimos"
     },
@@ -343,7 +343,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Permitir votación anónima",
+      "name": "Permitir votos anónimos",
       "file": "allow-anon-votes.md",
       "subCat": "Comentarios anónimos"
     },
@@ -363,7 +363,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Limitar los idiomas permitidos",
+      "name": "Limitar idiomas permitidos",
       "file": "allowed-languages.md",
       "subCat": "Varios"
     },
@@ -383,7 +383,7 @@
       "subCat": "Varios"
     },
     {
-      "name": "Recuento de comentarios y conteo de todas las respuestas anidadas",
+      "name": "El recuento de comentarios y el conteo de todas las respuestas anidadas",
       "file": "count-all.md",
       "subCat": "Varios"
     },
@@ -398,12 +398,12 @@
       "subCat": "Varios"
     },
     {
-      "name": "Mencionar IDs de grupo",
+      "name": "Identificadores de grupo para menciones",
       "file": "mention-group-ids.md",
       "subCat": "Varios"
     },
     {
-      "name": "Eludir cookies de terceros",
+      "name": "Omisión de cookies de terceros",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Varios"
     },
@@ -415,6 +415,11 @@
     {
       "name": "Mostrar insignias en la barra superior",
       "file": "show-badges-in-top-bar.md",
+      "subCat": "Apariencia"
+    },
+    {
+      "name": "Mostrar lista de usuarios en línea",
+      "file": "users-list.md",
       "subCat": "Apariencia"
     }
   ]

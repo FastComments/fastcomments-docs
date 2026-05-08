@@ -13,219 +13,219 @@
       "subCat": "Grundlæggende"
     },
     {
-      "name": "Visning af de samme kommentarer på forskellige sider",
+      "name": "Gengivelse af de samme kommentarer på forskellige sider",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "Grundlæggende"
     },
     {
       "name": "Brugerdefineret styling",
       "file": "custom-css.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Brugerdefinerede skrifttyper",
       "file": "custom-fonts.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Fjernelse af branding",
       "file": "remove-branding.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Understøttelse af mørke baggrunde (mørk tilstand)",
       "file": "has-dark-background.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Skifte mørk tilstand",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Overskrive tekst",
       "file": "translations.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Skifte standardavatar",
+      "name": "Ændre standardavatar",
       "file": "default-avatar-src.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere avatarer",
       "file": "hide-avatars.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere alle standardstilarter",
       "file": "no-styles.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Linke fra kommentarer til sider",
       "file": "url.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Fold svar sammen som standard",
+      "name": "Skjul svar som standard",
       "file": "collapse-replies.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Aktivere WYSIWYG",
+      "name": "Aktivér WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere værktøjslinjen",
       "file": "disable-toolbar.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere blokering",
       "file": "disable-blocking.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Bestemme hvilken side der skal vises",
+      "name": "Bestemme, hvilken side der skal gengives",
       "file": "starting-page.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Skifte kommentartråde uden at genindlæse siden",
       "file": "switching-comment-threads.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Absolutte datoer (deaktivér menneskevenlige tidsangivelser)",
+      "name": "Absolutte datoer (deaktiver menneskevenlige tidsangivelser)",
       "file": "absolute-dates.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Vis både absolutte og relative datoer",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Tilføje overskriftstekst",
       "file": "header-html.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Vis links som tekst",
       "file": "render-links-as-text.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Skifte visning af kommentarer med en knap",
+      "name": "Skifte kommentarer med en knap",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Tilpasse tekst for kommentarantallet",
+      "name": "Tilpasse teksten for kommentartællingen",
       "file": "comment-count-format.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere billedomdirigering",
       "file": "disable-image-redirect.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere automatisk oprettelse af hashtags",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere notifikationsklokke",
       "file": "disable-notification-bell.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere profiler",
       "file": "disable-profiles.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere profilkommentarer",
       "file": "disable-profile-comments.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere direkte beskeder på profiler",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere succesbesked",
       "file": "disable-success-message.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Ændre indholdsbedømmelse for GIF'er",
+      "name": "Ændre indholdsvurdering af GIF'er",
       "file": "gif-rating.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Moderering af billedindhold",
       "file": "image-content-moderation.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Ændre stemmestil",
+      "name": "Ændre afstemningsstil",
       "file": "vote-style.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere sletning",
       "file": "disable-deleting.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Deaktivere redigering",
       "file": "disable-editing.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Fremhæve nye kommentarer",
       "file": "highlighting-new-comments.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Sidestørrelser",
       "file": "page-size.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "E-mail-skabeloner",
       "file": "email-templates.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Brugernavneformater",
+      "name": "Format for brugernavne",
       "file": "user-name-formats.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Deaktivere billeduploads",
+      "name": "Deaktivere upload af billeder",
       "file": "no-image-uploads.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Aktivere søgefelt",
+      "name": "Aktivér søgefelt",
       "file": "enable-search.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Aktivere spoilere",
+      "name": "Aktivér spoilere",
       "file": "enable-spoilers.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
-      "name": "Aktivere visningstællere for kommentarer",
+      "name": "Aktivér visningstællinger for kommentarer",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
     },
     {
       "name": "Vis live-kommentarer med det samme",
@@ -238,12 +238,12 @@
       "subCat": "Live-kommentering"
     },
     {
-      "name": "Vis nye live-kommentarer nederst",
+      "name": "Nye live-kommentarer nederst",
       "file": "new-comments-to-bottom.md",
       "subCat": "Live-kommentering"
     },
     {
-      "name": "Aktivere uendelig rulning",
+      "name": "Aktivér uendelig rulning",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Sideinddeling og sortering"
     },
@@ -253,44 +253,44 @@
       "subCat": "Sideinddeling og sortering"
     },
     {
-      "name": "Vis alle kommentarer på én gang - deaktiver paginering",
+      "name": "Gengive alle kommentarer på én gang - deaktiver sideinddeling",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Sideinddeling og sortering"
     },
     {
-      "name": "Flytte svarboksen til efter kommentarerne",
+      "name": "Flytte svarfeltet efter kommentarerne",
       "file": "input-after-comments.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
       "name": "Begrænse kommentarens længde",
       "file": "max-comment-character-length.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
       "name": "Deaktivere kommentarer på flere linjer",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
-      "name": "Begrænse antal kommentarer pr. bruger",
+      "name": "Begræns antal kommentarer per bruger",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
-      "name": "Forhindre nye kommentarer på topniveau",
+      "name": "Forhindre nye topniveau-kommentarer",
       "file": "no-new-root-comments.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
       "name": "Maksimal svardybde",
       "file": "max-reply-depth.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
-      "name": "Kræv accept af brugsvilkår",
+      "name": "Krav om accept af servicevilkår",
       "file": "terms-of-service.md",
-      "subCat": "Svarboks"
+      "subCat": "Svarfeltet"
     },
     {
       "name": "Oversigt over Single Sign-On (SSO)",
@@ -298,67 +298,67 @@
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - Sikker Single Sign-On (SSO)",
+      "name": "Tilpassede integrationer - sikker Single Sign-On (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - Simpel Single Sign-On (SSO)",
+      "name": "Tilpassede integrationer - enkel Single Sign-On (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - Migrering fra Disqus SSO",
+      "name": "Tilpassede integrationer - migrering fra Disqus SSO",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tilpassede integrationer - Migrering fra Commento SSO",
+      "name": "Tilpassede integrationer - migrering fra Commento SSO",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
     {
-      "name": "Beskytte kommentartråde med Single Sign-On",
+      "name": "Beskytte kommentertråde med Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
-      "name": "Tillad anonyme kommentarer",
+      "name": "Tillad anonym kommentering",
       "file": "allow-anon.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
-      "name": "Forhindre at anonyme kommentarer udløber",
+      "name": "Forhindre, at anonyme kommentarer udløber",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
       "name": "Deaktivere e-mailfelter",
       "file": "disable-email-inputs.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
-      "name": "Deaktivere mærket 'Uverificeret'",
+      "name": "Deaktivere uverificeret-mærkat",
       "file": "disable-unverified-label.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
       "name": "Tillad anonym afstemning",
       "file": "allow-anon-votes.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
-      "name": "Indstille et standardbrugernavn",
+      "name": "Indstille standardbrugernavn",
       "file": "default-username.md",
-      "subCat": "Anonyme kommentarer"
+      "subCat": "Anonym kommentering"
     },
     {
-      "name": "Callbacks",
+      "name": "Callback-funktioner",
       "file": "callbacks.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Manuelt definere brugerens lokalitet",
+      "name": "Manuel angivelse af brugerens lokalitet",
       "file": "locale.md",
       "subCat": "Diverse"
     },
@@ -383,22 +383,22 @@
       "subCat": "Diverse"
     },
     {
-      "name": "Antal kommentarer og tælling af alle indlejrede svar",
+      "name": "Kommentartælling og optælling af alle indlejrede svar",
       "file": "count-all.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Aktivere links til kommentatorer",
+      "name": "Aktivere kommentatorlinks",
       "file": "enable-commenter-links.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Moderationsgrupper",
+      "name": "Moderatorgrupper",
       "file": "moderation-group-ids.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Nævn gruppe-id'er",
+      "name": "Gruppe-id'er til omtaler",
       "file": "mention-group-ids.md",
       "subCat": "Diverse"
     },
@@ -415,7 +415,12 @@
     {
       "name": "Vis badges i topbjælken",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Udseende og funktionalitet"
+      "subCat": "Udseende"
+    },
+    {
+      "name": "Vis liste over onlinebrugere",
+      "file": "users-list.md",
+      "subCat": "Udseende"
     }
   ]
 }

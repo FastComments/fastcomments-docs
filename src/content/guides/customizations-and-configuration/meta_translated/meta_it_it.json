@@ -3,7 +3,7 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identificare il tuo account",
+      "name": "Identificazione dell'account",
       "file": "tenant-id.md",
       "subCat": "Nozioni di base"
     },
@@ -18,7 +18,7 @@
       "subCat": "Nozioni di base"
     },
     {
-      "name": "Stile personalizzato",
+      "name": "Stili personalizzati",
       "file": "custom-css.md",
       "subCat": "Aspetto e stile"
     },
@@ -38,7 +38,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Commutare la modalità scura",
+      "name": "Attivazione della Modalità scura",
       "file": "has-dark-background-toggle.md",
       "subCat": "Aspetto e stile"
     },
@@ -68,7 +68,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Comprimi automaticamente le risposte",
+      "name": "Comprimere le risposte per impostazione predefinita",
       "file": "collapse-replies.md",
       "subCat": "Aspetto e stile"
     },
@@ -93,22 +93,22 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Passare tra thread di commenti senza ricaricare la pagina",
+      "name": "Passare tra i thread di commento senza ricaricare la pagina",
       "file": "switching-comment-threads.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Date assolute (disattiva i timestamp leggibili)",
+      "name": "Date assolute (disabilitare i timestamp in formato relativo)",
       "file": "absolute-dates.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Mostrare sia date assolute che relative",
+      "name": "Mostrare sia le date assolute che quelle relative",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Aggiungere testo all'intestazione",
+      "name": "Aggiungere testo dell'intestazione",
       "file": "header-html.md",
       "subCat": "Aspetto e stile"
     },
@@ -118,7 +118,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Mostrare/nascondere i commenti con un pulsante",
+      "name": "Attivare/disattivare i commenti con un pulsante",
       "file": "use-show-comments-toggle.md",
       "subCat": "Aspetto e stile"
     },
@@ -128,37 +128,37 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita il reindirizzamento delle immagini",
+      "name": "Disabilitare il reindirizzamento delle immagini",
       "file": "disable-image-redirect.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita la creazione automatica degli hashtag",
+      "name": "Disabilitare la creazione automatica degli hashtag",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita la campanella delle notifiche",
+      "name": "Disabilitare la campanella delle notifiche",
       "file": "disable-notification-bell.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita i profili",
+      "name": "Disabilitare i profili",
       "file": "disable-profiles.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita i commenti del profilo",
+      "name": "Disabilitare i commenti sul profilo",
       "file": "disable-profile-comments.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita i messaggi diretti del profilo",
+      "name": "Disabilitare i messaggi diretti del profilo",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita il messaggio di successo",
+      "name": "Disabilitare il messaggio di successo",
       "file": "disable-success-message.md",
       "subCat": "Aspetto e stile"
     },
@@ -178,12 +178,12 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita l'eliminazione",
+      "name": "Disabilitare l'eliminazione",
       "file": "disable-deleting.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Disabilita la modifica",
+      "name": "Disabilitare la modifica",
       "file": "disable-editing.md",
       "subCat": "Aspetto e stile"
     },
@@ -193,7 +193,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Dimensioni delle pagine",
+      "name": "Dimensioni della pagina",
       "file": "page-size.md",
       "subCat": "Aspetto e stile"
     },
@@ -203,7 +203,7 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Formati dei nomi utente",
+      "name": "Formati del nome utente",
       "file": "user-name-formats.md",
       "subCat": "Aspetto e stile"
     },
@@ -213,22 +213,22 @@
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilita la casella di ricerca",
+      "name": "Abilitare la casella di ricerca",
       "file": "enable-search.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilita gli spoiler",
+      "name": "Abilitare gli spoiler",
       "file": "enable-spoilers.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Abilita il conteggio delle visualizzazioni dei commenti",
+      "name": "Abilitare il conteggio delle visualizzazioni dei commenti",
       "file": "enable-comment-view-counts.md",
       "subCat": "Aspetto e stile"
     },
     {
-      "name": "Mostra subito i commenti in tempo reale",
+      "name": "Mostrare immediatamente i commenti in tempo reale",
       "file": "show-live-right-away.md",
       "subCat": "Commenti in tempo reale"
     },
@@ -238,12 +238,12 @@
       "subCat": "Commenti in tempo reale"
     },
     {
-      "name": "Visualizzare i nuovi commenti in tempo reale in fondo",
+      "name": "Posizionare i nuovi commenti in tempo reale in fondo",
       "file": "new-comments-to-bottom.md",
       "subCat": "Commenti in tempo reale"
     },
     {
-      "name": "Abilita lo scorrimento infinito",
+      "name": "Abilitare lo scorrimento infinito",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Paginazione e ordinamento"
     },
@@ -263,12 +263,12 @@
       "subCat": "Casella di risposta"
     },
     {
-      "name": "Limitare la lunghezza del commento",
+      "name": "Limitare la lunghezza dei commenti",
       "file": "max-comment-character-length.md",
       "subCat": "Casella di risposta"
     },
     {
-      "name": "Disabilita i commenti multilinea",
+      "name": "Disabilitare i commenti su più righe",
       "file": "use-single-line-comment-input.md",
       "subCat": "Casella di risposta"
     },
@@ -288,22 +288,22 @@
       "subCat": "Casella di risposta"
     },
     {
-      "name": "Richiedere l'accettazione dei Termini di Servizio",
+      "name": "Richiedere l'accettazione dei termini di servizio",
       "file": "terms-of-service.md",
       "subCat": "Casella di risposta"
     },
     {
-      "name": "Panoramica Single Sign On (SSO)",
+      "name": "Panoramica sul Single Sign-On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign On sicuro (SSO)",
+      "name": "Integrazioni personalizzate - Single Sign-On sicuro (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign On semplice (SSO)",
+      "name": "Integrazioni personalizzate - Single Sign-On semplice (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -318,7 +318,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Proteggere i thread di commenti con Single Sign-On (SSO)",
+      "name": "Proteggere i thread dei commenti con Single Sign-On (SSO)",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -333,12 +333,12 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilita l'inserimento dell'email",
+      "name": "Disabilitare i campi email",
       "file": "disable-email-inputs.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilita l'etichetta 'Non verificato'",
+      "name": "Disabilitare l'etichetta 'Non verificato'",
       "file": "disable-unverified-label.md",
       "subCat": "Commenti anonimi"
     },
@@ -358,7 +358,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Definire manualmente la localizzazione dell'utente",
+      "name": "Definire manualmente la locale dell'utente",
       "file": "locale.md",
       "subCat": "Varie"
     },
@@ -383,7 +383,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Conteggio dei commenti e inclusione di tutte le risposte annidate",
+      "name": "Conteggio dei commenti e conteggio di tutte le risposte nidificate",
       "file": "count-all.md",
       "subCat": "Varie"
     },
@@ -415,6 +415,11 @@
     {
       "name": "Mostrare i badge nella barra superiore",
       "file": "show-badges-in-top-bar.md",
+      "subCat": "Aspetto e stile"
+    },
+    {
+      "name": "Mostrare l'elenco degli utenti online",
+      "file": "users-list.md",
       "subCat": "Aspetto e stile"
     }
   ]
