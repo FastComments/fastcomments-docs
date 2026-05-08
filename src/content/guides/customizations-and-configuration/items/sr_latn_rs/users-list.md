@@ -3,26 +3,28 @@
 
 Podrazumevano, FastComments ne prikazuje listu korisnika na stranici.
 
-Možete prikazati listu osoba koje trenutno gledaju stranicu, pored komentarskog widgeta. Lista se ažurira uživo kako korisnici ulaze i napuštaju stranicu i prikazuje njihovo ime, avatar i indikator da su online.
+Možete prikazati listu ljudi koji trenutno gledaju stranicu, pored widgeta za komentare. Lista se ažurira u realnom vremenu kako korisnici ulaze i izlaze, i prikazuje njihovo ime, avatar i indikator prisutnosti.
 
 Postoje tri opcije rasporeda:
 
-- `1` - Top: horizontalni red preklapajućih avatara prikazan iznad komentara.
-- `2` - Left: bočna traka sa imenima i tačkicama koje označavaju online status prikazana levo od widgeta.
-- `3` - Right: ista bočna traka prikazana desno od widgeta.
+- `1` - Gore: horizontalni red preklapajućih avatara prikazan iznad komentara.
+- `2` - Levo: bočna traka sa imenima i online tačkicama prikazana levo od widgeta.
+- `3` - Desno: ista bočna traka prikazana desno od widgeta.
 
-Podesite **usersListLocation** zastavicu da omogućite ovu funkciju:
+Podesite zastavicu **usersListLocation** da omogućite funkciju:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Prikaži listu korisnika na desnoj strani'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
 
-Podrazumevano lista prikazuje samo korisnike koji su trenutno online. Da biste uključili i ljude koji su ranije komentarisali stranicu (ali trenutno je ne gledaju), podesite **usersListIncludeOffline** na true:
+Podrazumevano lista prikazuje samo korisnike koji su trenutno online. Da biste uključili i ljude koji su prethodno komentarisali stranicu (ali trenutno je ne gledaju), podesite **usersListIncludeOffline** na true:
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Uključi prethodne komentatore'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
 
-Prethodni komentatori se prikazuju bez zelene tačkice koja označava da su online, tako da je jasno ko je sada prisutan.
+Prethodni komentatori se prikazuju bez zelene tačkice za online status, kako bi bilo jasno ko je trenutno prisutan.
 
-Korisnici sa privatnim profilima prikazuju se sa generičkim avatarom i oznakom "Privatan profil", tako da broj ostaje tačan bez otkrivanja identiteta.
+Korisnici sa privatnim profilima prikazuju se sa generičkim avatarom i oznakom "Privatan profil" tako da broj korisnika ostane tačan bez otkrivanja identiteta.
 
-Ovo se takođe može podesiti bez koda. Na stranici za prilagođavanje widgeta pogledajte opciju "Users List Location". Kada je lokacija postavljena na bilo šta drugo osim Off, ispod nje se pojavljuje čekboks "Include past commenters".
+Ovo se takođe može podesiti bez koda. Na stranici za prilagođavanje widgeta, pogledajte opciju "Lokacija liste korisnika". Kada je lokacija postavljena na bilo šta osim "Isključeno", ispod se pojavljuje polje za potvrdu "Uključi prethodne komentatore".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Podešavanja liste korisnika'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+
+Kada ima više od 500 aktivnih korisnika, lista može zaostajati do 30 sekundi.

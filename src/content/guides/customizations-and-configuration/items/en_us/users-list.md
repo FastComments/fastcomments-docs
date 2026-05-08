@@ -26,3 +26,5 @@ Users with private profiles are shown with a generic avatar and a "Private Profi
 This can also be configured without code. In the widget customization page, see the "Users List Location" option. When the location is set to anything other than Off, an "Include past commenters" checkbox appears below it.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+
+Past 500 live users, the list is up to 30 seconds out of date.
