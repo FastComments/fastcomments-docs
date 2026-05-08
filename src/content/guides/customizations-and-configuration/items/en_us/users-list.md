@@ -23,10 +23,6 @@ Past commenters are rendered without the green online dot so it is clear who is 
 
 Users with private profiles are shown with a generic avatar and a "Private Profile" label so the count remains accurate without revealing identities.
 
-This can also be configured without code. In the widget customization page, see the "Users List Location" option:
+This can also be configured without code. In the widget customization page, see the "Users List Location" option. When the location is set to anything other than Off, an "Include past commenters" checkbox appears below it.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-location'; title='Users List Location' app-screenshot-end]
-
-When the location is set to anything other than Off, the "Include past commenters" checkbox is shown below it:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-include-offline'; title='Include Past Commenters' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]

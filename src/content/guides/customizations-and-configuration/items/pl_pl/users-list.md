@@ -3,30 +3,26 @@
 
 Domyślnie FastComments nie wyświetla listy użytkowników na stronie.
 
-Możesz wyświetlić listę osób, które aktualnie przeglądają stronę, obok widgetu komentarzy. Lista aktualizuje się na żywo w miarę dołączania i opuszczania strony przez użytkowników i pokazuje ich nazwę, awatar oraz wskaźnik obecności online.
+Możesz wyrenderować listę osób, które aktualnie oglądają stronę, obok widżetu komentarzy. Lista aktualizuje się na żywo w miarę dołączania i opuszczania użytkowników oraz pokazuje ich imię, avatar i wskaźnik online.
 
-Dostępne są trzy opcje układu:
+Istnieją trzy opcje układu:
 
-- `1` - U góry: poziomy rząd nachodzących na siebie avatarów wyświetlany nad komentarzami.
-- `2` - Po lewej: pasek boczny z nazwami i kropkami oznaczającymi obecność online wyświetlany po lewej stronie widgetu.
-- `3` - Po prawej: ten sam pasek boczny wyświetlany po prawej stronie widgetu.
+- `1` - Top: poziomy rząd nakładających się avatarów wyświetlany nad komentarzami.
+- `2` - Left: pasek boczny z nazwami i wskaźnikami online wyświetlany po lewej stronie widżetu.
+- `3` - Right: ten sam pasek boczny wyświetlany po prawej stronie widżetu.
 
-Ustaw flagę **usersListLocation**, aby włączyć tę funkcję:
+Ustaw flagę **usersListLocation**, aby włączyć funkcję:
 
 [code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
 
-Domyślnie lista pokazuje tylko użytkowników aktualnie online. Aby również uwzględnić osoby, które komentowały stronę w przeszłości (ale obecnie jej nie oglądają), ustaw **usersListIncludeOffline** na true:
+Domyślnie lista pokazuje tylko użytkowników aktualnie online. Aby również uwzględnić osoby, które komentowały stronę w przeszłości (ale nie oglądają jej obecnie), ustaw **usersListIncludeOffline** na true:
 
 [code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
 
-Byli komentatorzy są wyświetlani bez zielonej kropki oznaczającej obecność, dzięki czemu widać, kto jest aktualnie obecny.
+Osoby, które komentowały wcześniej, są renderowane bez zielonej kropki online, aby było jasne, kto jest obecny teraz.
 
-Użytkownicy z prywatnymi profilami są wyświetlani z ogólnym awatarem i etykietą "Profil prywatny", dzięki czemu liczba użytkowników pozostaje dokładna bez ujawniania tożsamości.
+Użytkownicy z prywatnymi profilami są pokazywani z ogólnym awatarem i etykietą "Prywatny profil", dzięki czemu liczba pozostaje dokładna bez ujawniania tożsamości.
 
-To można też skonfigurować bez kodu. Na stronie personalizacji widgetu zobacz opcję "Lokalizacja listy użytkowników":
+Można to również skonfigurować bez użycia kodu. Na stronie dostosowywania widżetu zobacz opcję "Lokalizacja listy użytkowników". Gdy lokalizacja jest ustawiona na wartość inną niż Wyłączone, poniżej pojawia się pole wyboru "Uwzględnij poprzednich komentatorów".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-location'; title='Users List Location' app-screenshot-end]
-
-Kiedy lokalizacja jest ustawiona na inną wartość niż Off, poniżej pojawia się pole wyboru "Uwzględnij poprzednich komentujących":
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-include-offline'; title='Include Past Commenters' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]

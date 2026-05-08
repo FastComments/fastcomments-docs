@@ -1,32 +1,28 @@
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
-Подразумевано, FastComments не приказује листу корисника на страници.
+Po defaultu, FastComments ne prikazuje listu korisnika na stranici.
 
-Можете приказати листу особа које тренутно прегледају страницу, заједно са видгетом за коментаре. Листа се ажурира уживо док корисници долазе и одлазе, и приказује њихово име, аватар и индикатор да су онлајн.
+Možete prikazati listu ljudi koji trenutno gledaju stranicu, pored widgeta za komentare. Lista se ažurira uživo dok se korisnici priključuju i odlaze, i prikazuje njihovo ime, avatar i indikator prisutnosti.
 
-Постоје три опције распореда:
+Postoje tri opcije rasporeda:
 
-- `1` - На врху: хоризонтални ред преклапајућих се аватара приказан изнад коментара.
-- `2` - Лево: бочна трака са именима и онлајн тачкицама приказана лево од видгета.
-- `3` - Десно: иста бочна трака приказана десно од видгета.
+- `1` - Gore: horizontalni red preklapajućih avatara prikazan iznad komentara.
+- `2` - Levo: bočna traka sa imenima i tačkicama koje označavaju prisutnost prikazana sa leve strane widgeta.
+- `3` - Desno: ista bočna traka prikazana sa desne strane widgeta.
 
-Поставите заставицу **usersListLocation** да омогућите функцију:
+Postavite zastavicu **usersListLocation** da omogućite ovu funkciju:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Prikaži listu korisnika s desne strane'; code-example-end]
 
-Подразумевано листа приказује само кориснике који су тренутно онлајн. Да бисте укључили и људе који су раније коментарисали на страници (али тренутно нису присутни), поставите **usersListIncludeOffline** на true:
+Po defaultu lista prikazuje samo korisnike koji su trenutno online. Da biste uključili i ljude koji su ranije komentarisali na stranici (ali trenutno je ne gledaju), postavite **usersListIncludeOffline** na true:
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Uključi prethodne komentatore'; code-example-end]
 
-Ранији коментатори се приказују без зелене онлајн тачкице како би било јасно ко је тренутно присутан.
+Prethodni komentatori se prikazuju bez zelene tačkice koja označava prisutnost, tako da je jasno ko je trenutno prisutan.
 
-Корисници са приватним профилима се приказују са општим аватаром и ознаком "Private Profile" тако да број остаје тачан без откривања идентитета.
+Korisnici sa privatnim profilima prikazuju se sa generičkim avatarom i oznakom "Privatni profil", tako da broj ostaje tačan bez otkrivanja identiteta.
 
-Ово се може подесити и без кода. На страници за прилагођавање видгета, погледајте опцију "Локација листе корисника":
+Ovo se takođe može podesiti bez koda. Na stranici za prilagođavanje widgeta pogledajte opciju "Lokacija liste korisnika". Kada je lokacija postavljena na bilo šta osim Isključeno, ispod se pojavljuje potvrdni okvir "Uključi prethodne komentatore".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-location'; title='Users List Location' app-screenshot-end]
-
-Када је локација постављена на било шта осим Искључено, испод ње се приказује поље за потврду "Укључи претходне коментаторе":
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-include-offline'; title='Include Past Commenters' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Podešavanja liste korisnika'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]

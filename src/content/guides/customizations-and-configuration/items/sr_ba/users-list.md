@@ -1,34 +1,28 @@
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
-По подразумевано, FastComments не приказује листу корисника на страници.
+По подразумевању FastComments не приказује списак корисника на страници.
 
-Можете приказати листу људи који тренутно прегледају страницу, уз видгет за коментаре. Листа се ажурира уживо када се корисници прикључују или одлазе, и показује њихово име, аватар и индикатор да су на мрежи.
+Можете приказати списак особа које тренутно гледају страницу, поред виджета за коментаре. Списак се ажурира уживо док корисници долазе и одлазе, и приказује њихово име, аватар и индикатор да су на мрежи.
 
 Постоје три опције распореда:
 
-- `1` - Горње: хоризонтални ред преклапајућих аватара приказан изнад коментара.
-- `2` - Лево: бочна трака са именима и тачкама које означавају да су на мрежи, приказана лево од видгета.
-- `3` - Десно: иста бочна трака приказана десно од видгета.
+- `1` - Горњи: хоризонтални низ преклапајућих аватара приказан изнад коментара.
+- `2` - Леви: бочна трака са именима и онлајн тачкама приказана лево од виджета.
+- `3` - Десни: иста бочна трака приказана десно од виджета.
 
-Поставите параметар **usersListLocation** да омогућите ову функцију:
+Поставите **usersListLocation** флаг да омогућите ову функцију:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Прикажи листу корисника са десне стране'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
 
-По подразумеваној поставци листа приказује само кориснике који су тренутно на мрежи. Да бисте такође укључили људе који су раније коментарисали на страници (али тренутно не прегледају страницу), поставите **usersListIncludeOffline** на true:
+По подразумевању списак приказује само кориснике који су тренутно на мрежи. Да бисте укључили и људе који су раније коментарисали на страници (али тренутно не гледају), поставите **usersListIncludeOffline** на true:
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Укључи претходне коментаторе'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
 
-Ранији коментатори се приказују без зелене тачке која означава да је корисник на мрежи, тако да је јасно ко је тренутно присутан.
+Ранији коментатори се приказују без зелене онлајн тачке тако да је јасно ко је тренутно присутан.
 
-Корисници са приватним профилима се приказују са општим аватаром и ознаком "Приватни профил" тако да број остаје тачан без откривања идентитета.
+Корисници са приватним профилима приказани су са општим аватаром и ознаком "Private Profile" па број остаје тачан без разоткривања идентитета.
 
-Ово се може подесити и без кода. На страници за прилагођавање видгета, погледајте опцију "Положај листе корисника":
+Ово се такође може подесити без кода. На страници за прилагођавање виджета погледајте опцију "Users List Location". Када је локација постављена на било шта осим Искључено, испод ње се појављује поље за потврду "Include past commenters".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-location'; title='Положај листе корисника' app-screenshot-end]
-
-Када је положај подешен на било шта осим "Искључено", поље за потврду "Укључи претходне коментаторе" се приказује испод:
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-include-offline'; title='Укључи претходне коментаторе' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
