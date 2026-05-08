@@ -1,7 +1,7 @@
-Bien que le support FastComments puisse aider pour les migrations, la plupart peuvent être effectuées et surveillées facilement sans
-l'intervention du personnel de support.
+Bien que l'assistance FastComments puisse aider lors des migrations, la plupart peuvent être effectuées et surveillées facilement sans aucune intervention
+du personnel d'assistance.
 
-Nous prenons en charge en natif l'importation des exports des fournisseurs suivants :
+Nous prenons en charge nativement l'importation d'exports depuis les fournisseurs suivants :
 
 - Commento
 - Disqus
@@ -10,31 +10,29 @@ Nous prenons en charge en natif l'importation des exports des fournisseurs suiva
 - IntenseDebate
 - Just-Comments
 - WordPress (via le plugin)
+- AnyComment (Via WordPress Import/Export)
 
-En vous rendant [ici](https://fastcomments.com/auth/my-account/manage-data/import) nous pouvons télécharger le fichier contenant les données à migrer.
+En naviguant [ici](https://fastcomments.com/auth/my-account/manage-data/import) nous pouvons téléverser le fichier contenant les données à migrer.
 
 [app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
 
-### Surveillance des imports
+### Monitoring Imports
 
-FastComments utilise un système de traitement par jobs pour traiter les imports et exports. Une fois que le système a pris en charge votre job, il
-fera périodiquement remonter le statut du job dans l'interface d'import ou d'export.
+FastComments utilise un système de traitement par tâches pour traiter les importations et exportations. Une fois que le système a pris en charge votre tâche, il rapportera périodiquement l'état de la tâche dans l'interface d'importation ou d'exportation.
 
 [app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
 
-Notez que le statut des imports et des exports est consultable par tous les administrateurs du compte.
+Notez que le statut des importations et des exportations est consultable par tous les administrateurs du compte.
 
-Si votre job échoue, il ne sera pas automatiquement relancé. L'import devra être tenté à nouveau. Si un import ou un export échoue,
+Si votre tâche échoue, elle ne sera pas relancée automatiquement. L'importation devra être tentée à nouveau. Si une importation ou une exportation échoue,
 nos administrateurs système sont automatiquement notifiés. Si nous identifions un problème, nous vous contacterons pour voir si nous pouvons aider.
 
-### Relancer l'import
+### Re-Running The Import
 
-Lors de certaines migrations, il est nécessaire d'exécuter l'import plusieurs fois. Par exemple, il est courant d'effectuer une première passe
-de migration pour les tests, puis de relancer l'import avec les dernières données avant de basculer.
+Lors de certaines migrations, il est nécessaire d'exécuter l'importation plusieurs fois. Par exemple, il est courant d'effectuer une première migration de test, puis de relancer l'importation avec les données les plus récentes avant de basculer.
 
 La réimportation du même contenu **ne créera pas de doublons**.
 
-### Sécurité des données et expiration
+### Data Security and Expiration
 
-Les fichiers d'import ne sont accessibles d'aucune manière via des requêtes externes, et les fichiers d'import sont supprimés de notre système dès que
-l'import est terminé.
+Les fichiers d'importation ne sont accessibles d'aucune manière via des requêtes externes, et ils sont supprimés de notre système dès que l'importation est terminée.
