@@ -18,6 +18,11 @@
       "subCat": "Background"
     },
     {
+      "name": "Guided Helper",
+      "file": "guided-helper.md",
+      "subCat": "Setup"
+    },
+    {
       "name": "Choose a Display Type",
       "file": "choose-display-type.md",
       "subCat": "Setup"
