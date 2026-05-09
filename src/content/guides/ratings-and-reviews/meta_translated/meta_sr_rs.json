@@ -8,7 +8,7 @@
       "subCat": "Позадина"
     },
     {
-      "name": "Ко га добија",
+      "name": "Ко има приступ",
       "file": "who-gets-it.md",
       "subCat": "Позадина"
     },
@@ -16,6 +16,11 @@
       "name": "Цене",
       "file": "pricing.md",
       "subCat": "Позадина"
+    },
+    {
+      "name": "Вођени помоћник",
+      "file": "guided-helper.md",
+      "subCat": "Подешавање"
     },
     {
       "name": "Изаберите тип приказа",
@@ -33,7 +38,7 @@
       "subCat": "Подешавање"
     },
     {
-      "name": "Виџет за резиме",
+      "name": "Виџет за сажетак",
       "file": "summary-widget-installation.md",
       "subCat": "Подешавање"
     },
@@ -43,14 +48,14 @@
       "subCat": "Извештавање"
     },
     {
-      "name": "Интеграција преко АПИ-ја",
+      "name": "Интеграција преко API-ја",
       "file": "integrating-via-the-api.md",
       "subCat": "Извештавање"
     },
     {
-      "name": "Демо резимеа",
+      "name": "Демо сажетка",
       "file": "summary-demo.md",
-      "subCat": "Демо резимеа"
+      "subCat": "Демо сажетка"
     }
   ]
 }

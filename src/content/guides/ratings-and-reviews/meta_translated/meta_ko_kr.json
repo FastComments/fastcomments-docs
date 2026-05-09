@@ -18,6 +18,11 @@
       "subCat": "배경"
     },
     {
+      "name": "가이드 도우미",
+      "file": "guided-helper.md",
+      "subCat": "설정"
+    },
+    {
       "name": "표시 유형 선택",
       "file": "choose-display-type.md",
       "subCat": "설정"
@@ -28,7 +33,7 @@
       "subCat": "설정"
     },
     {
-      "name": "구성 작동 방식",
+      "name": "구성이 작동하는 방식",
       "file": "how-configuration-works.md",
       "subCat": "설정"
     },

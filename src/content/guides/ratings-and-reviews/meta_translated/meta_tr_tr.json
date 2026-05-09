@@ -1,5 +1,5 @@
 {
-  "name": "Puanlar ve İncelemeler",
+  "name": "Derecelendirmeler ve Yorumlar",
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
@@ -8,7 +8,7 @@
       "subCat": "Arka Plan"
     },
     {
-      "name": "Kimler Alır",
+      "name": "Kimler Erişir",
       "file": "who-gets-it.md",
       "subCat": "Arka Plan"
     },
@@ -18,12 +18,17 @@
       "subCat": "Arka Plan"
     },
     {
-      "name": "Görüntüleme Türü Seçin",
+      "name": "Yönlendirmeli Yardımcı",
+      "file": "guided-helper.md",
+      "subCat": "Kurulum"
+    },
+    {
+      "name": "Bir Görüntüleme Türü Seçin",
       "file": "choose-display-type.md",
       "subCat": "Kurulum"
     },
     {
-      "name": "Sorularınızı Tanımlayın",
+      "name": "Sorularınızı Belirleyin",
       "file": "define-your-questions.md",
       "subCat": "Kurulum"
     },
@@ -33,17 +38,17 @@
       "subCat": "Kurulum"
     },
     {
-      "name": "Özet Bileşeni",
+      "name": "Özet Widget'ı",
       "file": "summary-widget-installation.md",
       "subCat": "Kurulum"
     },
     {
-      "name": "Puanları Görüntüleme",
+      "name": "Derecelendirmeleri Görüntüleme",
       "file": "viewing-ratings.md",
       "subCat": "Raporlama"
     },
     {
-      "name": "API Üzerinden Entegrasyon",
+      "name": "API ile Entegrasyon",
       "file": "integrating-via-the-api.md",
       "subCat": "Raporlama"
     },

@@ -3,7 +3,7 @@
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
-      "name": "מאפיינים",
+      "name": "תכונות",
       "file": "features.md",
       "subCat": "רקע"
     },
@@ -18,6 +18,11 @@
       "subCat": "רקע"
     },
     {
+      "name": "עוזר מונחה",
+      "file": "guided-helper.md",
+      "subCat": "הגדרה"
+    },
+    {
       "name": "בחר סוג תצוגה",
       "file": "choose-display-type.md",
       "subCat": "הגדרה"
@@ -28,7 +33,7 @@
       "subCat": "הגדרה"
     },
     {
-      "name": "כיצד עובדת התצורה",
+      "name": "כיצד ההגדרה פועלת",
       "file": "how-configuration-works.md",
       "subCat": "הגדרה"
     },

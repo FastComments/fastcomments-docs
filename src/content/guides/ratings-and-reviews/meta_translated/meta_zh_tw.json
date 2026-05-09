@@ -13,9 +13,14 @@
       "subCat": "背景"
     },
     {
-      "name": "定價",
+      "name": "價格",
       "file": "pricing.md",
       "subCat": "背景"
+    },
+    {
+      "name": "引導助手",
+      "file": "guided-helper.md",
+      "subCat": "設定"
     },
     {
       "name": "選擇顯示類型",
@@ -38,7 +43,7 @@
       "subCat": "設定"
     },
     {
-      "name": "查看評分",
+      "name": "檢視評分",
       "file": "viewing-ratings.md",
       "subCat": "報告"
     },

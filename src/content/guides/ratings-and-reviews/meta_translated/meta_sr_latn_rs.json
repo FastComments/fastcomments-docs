@@ -18,6 +18,11 @@
       "subCat": "Pozadina"
     },
     {
+      "name": "Vođeni pomoćnik",
+      "file": "guided-helper.md",
+      "subCat": "Podešavanje"
+    },
+    {
       "name": "Izaberite tip prikaza",
       "file": "choose-display-type.md",
       "subCat": "Podešavanje"
@@ -28,7 +33,7 @@
       "subCat": "Podešavanje"
     },
     {
-      "name": "Kako radi konfiguracija",
+      "name": "Kako funkcioniše konfiguracija",
       "file": "how-configuration-works.md",
       "subCat": "Podešavanje"
     },

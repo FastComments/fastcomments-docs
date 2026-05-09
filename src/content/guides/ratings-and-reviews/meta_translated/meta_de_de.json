@@ -8,7 +8,7 @@
       "subCat": "Hintergrund"
     },
     {
-      "name": "Wer erhält es",
+      "name": "Wer bekommt es",
       "file": "who-gets-it.md",
       "subCat": "Hintergrund"
     },
@@ -16,6 +16,11 @@
       "name": "Preisgestaltung",
       "file": "pricing.md",
       "subCat": "Hintergrund"
+    },
+    {
+      "name": "Geführter Assistent",
+      "file": "guided-helper.md",
+      "subCat": "Einrichtung"
     },
     {
       "name": "Anzeigetyp auswählen",
@@ -33,7 +38,7 @@
       "subCat": "Einrichtung"
     },
     {
-      "name": "Das Zusammenfassungs-Widget",
+      "name": "Übersichts-Widget",
       "file": "summary-widget-installation.md",
       "subCat": "Einrichtung"
     },
@@ -48,9 +53,9 @@
       "subCat": "Berichterstattung"
     },
     {
-      "name": "Zusammenfassungsdemo",
+      "name": "Zusammenfassungs-Demo",
       "file": "summary-demo.md",
-      "subCat": "Zusammenfassungsdemo"
+      "subCat": "Zusammenfassungs-Demo"
     }
   ]
 }

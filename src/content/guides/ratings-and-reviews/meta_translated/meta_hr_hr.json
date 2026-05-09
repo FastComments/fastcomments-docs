@@ -18,6 +18,11 @@
       "subCat": "Pozadina"
     },
     {
+      "name": "Vođeni pomoćnik",
+      "file": "guided-helper.md",
+      "subCat": "Postavljanje"
+    },
+    {
       "name": "Odaberite vrstu prikaza",
       "file": "choose-display-type.md",
       "subCat": "Postavljanje"
@@ -33,12 +38,12 @@
       "subCat": "Postavljanje"
     },
     {
-      "name": "Widget sažetka",
+      "name": "Sažetak widgeta",
       "file": "summary-widget-installation.md",
       "subCat": "Postavljanje"
     },
     {
-      "name": "Pregled ocjena",
+      "name": "Prikaz ocjena",
       "file": "viewing-ratings.md",
       "subCat": "Izvještavanje"
     },

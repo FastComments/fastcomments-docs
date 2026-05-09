@@ -5,25 +5,30 @@
     {
       "name": "機能",
       "file": "features.md",
-      "subCat": "背景"
+      "subCat": "概要"
     },
     {
       "name": "対象者",
       "file": "who-gets-it.md",
-      "subCat": "背景"
+      "subCat": "概要"
     },
     {
-      "name": "料金",
+      "name": "価格",
       "file": "pricing.md",
-      "subCat": "背景"
+      "subCat": "概要"
     },
     {
-      "name": "表示形式の選択",
+      "name": "ガイド付きヘルパー",
+      "file": "guided-helper.md",
+      "subCat": "設定"
+    },
+    {
+      "name": "表示形式を選択",
       "file": "choose-display-type.md",
       "subCat": "設定"
     },
     {
-      "name": "質問の定義",
+      "name": "質問を定義する",
       "file": "define-your-questions.md",
       "subCat": "設定"
     },
@@ -40,12 +45,12 @@
     {
       "name": "評価の表示",
       "file": "viewing-ratings.md",
-      "subCat": "レポート"
+      "subCat": "レポーティング"
     },
     {
-      "name": "API経由での統合",
+      "name": "APIによる統合",
       "file": "integrating-via-the-api.md",
-      "subCat": "レポート"
+      "subCat": "レポーティング"
     },
     {
       "name": "サマリーのデモ",

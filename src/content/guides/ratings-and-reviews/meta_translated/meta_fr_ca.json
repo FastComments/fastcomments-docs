@@ -8,7 +8,7 @@
       "subCat": "Contexte"
     },
     {
-      "name": "Qui y a droit",
+      "name": "Qui en bénéficie",
       "file": "who-gets-it.md",
       "subCat": "Contexte"
     },
@@ -16,6 +16,11 @@
       "name": "Tarification",
       "file": "pricing.md",
       "subCat": "Contexte"
+    },
+    {
+      "name": "Assistant guidé",
+      "file": "guided-helper.md",
+      "subCat": "Configuration"
     },
     {
       "name": "Choisir un type d'affichage",
@@ -28,7 +33,7 @@
       "subCat": "Configuration"
     },
     {
-      "name": "Fonctionnement de la configuration",
+      "name": "Comment fonctionne la configuration",
       "file": "how-configuration-works.md",
       "subCat": "Configuration"
     },

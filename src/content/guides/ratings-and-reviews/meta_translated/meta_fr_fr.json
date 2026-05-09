@@ -8,7 +8,7 @@
       "subCat": "Contexte"
     },
     {
-      "name": "Qui y a accès",
+      "name": "Qui en bénéficie",
       "file": "who-gets-it.md",
       "subCat": "Contexte"
     },
@@ -16,6 +16,11 @@
       "name": "Tarification",
       "file": "pricing.md",
       "subCat": "Contexte"
+    },
+    {
+      "name": "Assistant guidé",
+      "file": "guided-helper.md",
+      "subCat": "Configuration"
     },
     {
       "name": "Choisir un type d'affichage",
@@ -38,7 +43,7 @@
       "subCat": "Configuration"
     },
     {
-      "name": "Consultation des évaluations",
+      "name": "Consulter les notes",
       "file": "viewing-ratings.md",
       "subCat": "Rapports"
     },
@@ -48,9 +53,9 @@
       "subCat": "Rapports"
     },
     {
-      "name": "Démo récapitulative",
+      "name": "Démo du résumé",
       "file": "summary-demo.md",
-      "subCat": "Démo récapitulative"
+      "subCat": "Démo du résumé"
     }
   ]
 }

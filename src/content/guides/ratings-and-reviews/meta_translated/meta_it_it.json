@@ -1,5 +1,5 @@
 {
-  "name": "Valutazioni e Recensioni",
+  "name": "Valutazioni e recensioni",
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
@@ -8,7 +8,7 @@
       "subCat": "Contesto"
     },
     {
-      "name": "A chi è rivolto",
+      "name": "A chi è destinato",
       "file": "who-gets-it.md",
       "subCat": "Contesto"
     },
@@ -16,6 +16,11 @@
       "name": "Prezzi",
       "file": "pricing.md",
       "subCat": "Contesto"
+    },
+    {
+      "name": "Assistente guidato",
+      "file": "guided-helper.md",
+      "subCat": "Configurazione"
     },
     {
       "name": "Scegli un tipo di visualizzazione",
@@ -38,12 +43,12 @@
       "subCat": "Configurazione"
     },
     {
-      "name": "Visualizzazione delle valutazioni",
+      "name": "Visualizzare le valutazioni",
       "file": "viewing-ratings.md",
       "subCat": "Reportistica"
     },
     {
-      "name": "Integrazione tramite API",
+      "name": "Integrazione tramite l'API",
       "file": "integrating-via-the-api.md",
       "subCat": "Reportistica"
     },

@@ -8,7 +8,7 @@
       "subCat": "Achtergrond"
     },
     {
-      "name": "Wie het krijgt",
+      "name": "Wie krijgt het",
       "file": "who-gets-it.md",
       "subCat": "Achtergrond"
     },
@@ -16,6 +16,11 @@
       "name": "Prijzen",
       "file": "pricing.md",
       "subCat": "Achtergrond"
+    },
+    {
+      "name": "Geleide assistent",
+      "file": "guided-helper.md",
+      "subCat": "Configuratie"
     },
     {
       "name": "Kies een weergavetype",

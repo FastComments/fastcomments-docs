@@ -3,7 +3,7 @@
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
-      "name": "Особливості",
+      "name": "Функції",
       "file": "features.md",
       "subCat": "Загальні відомості"
     },
@@ -16,6 +16,11 @@
       "name": "Ціноутворення",
       "file": "pricing.md",
       "subCat": "Загальні відомості"
+    },
+    {
+      "name": "Покроковий помічник",
+      "file": "guided-helper.md",
+      "subCat": "Налаштування"
     },
     {
       "name": "Виберіть тип відображення",
@@ -33,24 +38,24 @@
       "subCat": "Налаштування"
     },
     {
-      "name": "Віджет підсумків",
+      "name": "Віджет зведення",
       "file": "summary-widget-installation.md",
       "subCat": "Налаштування"
     },
     {
       "name": "Перегляд оцінок",
       "file": "viewing-ratings.md",
-      "subCat": "Звітність"
+      "subCat": "Звітування"
     },
     {
       "name": "Інтеграція через API",
       "file": "integrating-via-the-api.md",
-      "subCat": "Звітність"
+      "subCat": "Звітування"
     },
     {
-      "name": "Демонстрація підсумків",
+      "name": "Демонстрація зведення",
       "file": "summary-demo.md",
-      "subCat": "Демонстрація підсумків"
+      "subCat": "Демонстрація зведення"
     }
   ]
 }

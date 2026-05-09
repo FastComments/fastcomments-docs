@@ -1,21 +1,26 @@
 {
-  "name": "Рейтинги и отзывы",
+  "name": "Оценки и отзывы",
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
-      "name": "Функции",
+      "name": "Особенности",
       "file": "features.md",
-      "subCat": "Общие сведения"
+      "subCat": "Обзор"
     },
     {
-      "name": "Кто получает",
+      "name": "Кому доступно",
       "file": "who-gets-it.md",
-      "subCat": "Общие сведения"
+      "subCat": "Обзор"
     },
     {
       "name": "Ценообразование",
       "file": "pricing.md",
-      "subCat": "Общие сведения"
+      "subCat": "Обзор"
+    },
+    {
+      "name": "Пошаговый помощник",
+      "file": "guided-helper.md",
+      "subCat": "Настройка"
     },
     {
       "name": "Выберите тип отображения",
@@ -23,7 +28,7 @@
       "subCat": "Настройка"
     },
     {
-      "name": "Определите вопросы",
+      "name": "Сформулируйте вопросы",
       "file": "define-your-questions.md",
       "subCat": "Настройка"
     },
@@ -38,7 +43,7 @@
       "subCat": "Настройка"
     },
     {
-      "name": "Просмотр рейтингов",
+      "name": "Просмотр оценок",
       "file": "viewing-ratings.md",
       "subCat": "Отчёты"
     },

@@ -13,9 +13,14 @@
       "subCat": "Ozadje"
     },
     {
-      "name": "Cenik",
+      "name": "Cene",
       "file": "pricing.md",
       "subCat": "Ozadje"
+    },
+    {
+      "name": "Vodeni pomočnik",
+      "file": "guided-helper.md",
+      "subCat": "Nastavitev"
     },
     {
       "name": "Izberite vrsto prikaza",
@@ -23,7 +28,7 @@
       "subCat": "Nastavitev"
     },
     {
-      "name": "Določite vprašanja",
+      "name": "Opredelite svoja vprašanja",
       "file": "define-your-questions.md",
       "subCat": "Nastavitev"
     },
@@ -33,7 +38,7 @@
       "subCat": "Nastavitev"
     },
     {
-      "name": "Povzetni pripomoček",
+      "name": "Pripomoček s povzetkom",
       "file": "summary-widget-installation.md",
       "subCat": "Nastavitev"
     },
@@ -48,9 +53,9 @@
       "subCat": "Poročanje"
     },
     {
-      "name": "Demo povzetka",
+      "name": "Predstavitev povzetka",
       "file": "summary-demo.md",
-      "subCat": "Demo povzetka"
+      "subCat": "Predstavitev povzetka"
     }
   ]
 }

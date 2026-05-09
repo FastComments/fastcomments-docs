@@ -8,7 +8,7 @@
       "subCat": "背景"
     },
     {
-      "name": "适用对象",
+      "name": "谁可以获得",
       "file": "who-gets-it.md",
       "subCat": "背景"
     },
@@ -16,6 +16,11 @@
       "name": "定价",
       "file": "pricing.md",
       "subCat": "背景"
+    },
+    {
+      "name": "引导助手",
+      "file": "guided-helper.md",
+      "subCat": "设置"
     },
     {
       "name": "选择显示类型",
@@ -28,7 +33,7 @@
       "subCat": "设置"
     },
     {
-      "name": "配置工作原理",
+      "name": "配置的工作原理",
       "file": "how-configuration-works.md",
       "subCat": "设置"
     },

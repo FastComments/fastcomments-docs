@@ -1,24 +1,29 @@
 {
-  "name": "Βαθμολογίες και Κριτικές",
+  "name": "Αξιολογήσεις και Κριτικές",
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
       "name": "Χαρακτηριστικά",
       "file": "features.md",
-      "subCat": "Υπόβαθρο"
+      "subCat": "Επισκόπηση"
     },
     {
-      "name": "Ποιοι το λαμβάνουν",
+      "name": "Ποιος το λαμβάνει",
       "file": "who-gets-it.md",
-      "subCat": "Υπόβαθρο"
+      "subCat": "Επισκόπηση"
     },
     {
       "name": "Τιμολόγηση",
       "file": "pricing.md",
-      "subCat": "Υπόβαθρο"
+      "subCat": "Επισκόπηση"
     },
     {
-      "name": "Επιλέξτε τύπο εμφάνισης",
+      "name": "Καθοδηγούμενος Βοηθός",
+      "file": "guided-helper.md",
+      "subCat": "Ρύθμιση"
+    },
+    {
+      "name": "Επιλογή τύπου εμφάνισης",
       "file": "choose-display-type.md",
       "subCat": "Ρύθμιση"
     },
@@ -28,7 +33,7 @@
       "subCat": "Ρύθμιση"
     },
     {
-      "name": "Πώς λειτουργεί η διαμόρφωση",
+      "name": "Πώς λειτουργεί η ρύθμιση",
       "file": "how-configuration-works.md",
       "subCat": "Ρύθμιση"
     },
@@ -38,7 +43,7 @@
       "subCat": "Ρύθμιση"
     },
     {
-      "name": "Προβολή βαθμολογιών",
+      "name": "Προβολή αξιολογήσεων",
       "file": "viewing-ratings.md",
       "subCat": "Αναφορές"
     },

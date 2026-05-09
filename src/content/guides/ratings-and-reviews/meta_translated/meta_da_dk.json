@@ -18,6 +18,11 @@
       "subCat": "Baggrund"
     },
     {
+      "name": "Guidet assistent",
+      "file": "guided-helper.md",
+      "subCat": "Opsætning"
+    },
+    {
       "name": "Vælg en visningstype",
       "file": "choose-display-type.md",
       "subCat": "Opsætning"
@@ -28,12 +33,12 @@
       "subCat": "Opsætning"
     },
     {
-      "name": "Hvordan konfigurationen fungerer",
+      "name": "Sådan fungerer konfigurationen",
       "file": "how-configuration-works.md",
       "subCat": "Opsætning"
     },
     {
-      "name": "Oversigtswidget",
+      "name": "Sammendrag-widget",
       "file": "summary-widget-installation.md",
       "subCat": "Opsætning"
     },
@@ -48,9 +53,9 @@
       "subCat": "Rapportering"
     },
     {
-      "name": "Oversigtsdemo",
+      "name": "Sammendrag-demo",
       "file": "summary-demo.md",
-      "subCat": "Oversigtsdemo"
+      "subCat": "Sammendrag-demo"
     }
   ]
 }

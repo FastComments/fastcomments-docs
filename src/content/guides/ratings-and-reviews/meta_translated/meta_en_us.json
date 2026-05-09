@@ -18,6 +18,11 @@
       "subCat": "Background"
     },
     {
+      "name": "Guided Helper",
+      "file": "guided-helper.md",
+      "subCat": "Setup"
+    },
+    {
       "name": "Choose a Display Type",
       "file": "choose-display-type.md",
       "subCat": "Setup"
@@ -43,7 +48,7 @@
       "subCat": "Reporting"
     },
     {
-      "name": "Integrating via the API",
+      "name": "Integrating via The API",
       "file": "integrating-via-the-api.md",
       "subCat": "Reporting"
     },

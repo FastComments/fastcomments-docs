@@ -18,24 +18,29 @@
       "subCat": "Позадина"
     },
     {
-      "name": "Одаберите тип приказа",
+      "name": "Вођени помоћник",
+      "file": "guided-helper.md",
+      "subCat": "Подешавање"
+    },
+    {
+      "name": "Изаберите тип приказа",
       "file": "choose-display-type.md",
-      "subCat": "Постављање"
+      "subCat": "Подешавање"
     },
     {
       "name": "Дефинишите своја питања",
       "file": "define-your-questions.md",
-      "subCat": "Постављање"
+      "subCat": "Подешавање"
     },
     {
-      "name": "Како конфигурација функционише",
+      "name": "Како функционише конфигурација",
       "file": "how-configuration-works.md",
-      "subCat": "Постављање"
+      "subCat": "Подешавање"
     },
     {
-      "name": "Видџет сажетка",
+      "name": "Виџет за сажетак",
       "file": "summary-widget-installation.md",
-      "subCat": "Постављање"
+      "subCat": "Подешавање"
     },
     {
       "name": "Преглед оцјена",
@@ -48,9 +53,9 @@
       "subCat": "Извјештавање"
     },
     {
-      "name": "Демо сажетка",
+      "name": "Демо резиме",
       "file": "summary-demo.md",
-      "subCat": "Демо сажетка"
+      "subCat": "Демо резиме"
     }
   ]
 }

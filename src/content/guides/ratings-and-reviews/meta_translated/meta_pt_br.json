@@ -8,7 +8,7 @@
       "subCat": "Contexto"
     },
     {
-      "name": "Quem Recebe",
+      "name": "Quem recebe",
       "file": "who-gets-it.md",
       "subCat": "Contexto"
     },
@@ -18,27 +18,32 @@
       "subCat": "Contexto"
     },
     {
-      "name": "Escolha um Tipo de Exibição",
+      "name": "Assistente guiado",
+      "file": "guided-helper.md",
+      "subCat": "Configuração"
+    },
+    {
+      "name": "Escolha um tipo de exibição",
       "file": "choose-display-type.md",
       "subCat": "Configuração"
     },
     {
-      "name": "Defina suas Perguntas",
+      "name": "Defina suas perguntas",
       "file": "define-your-questions.md",
       "subCat": "Configuração"
     },
     {
-      "name": "Como a Configuração Funciona",
+      "name": "Como a configuração funciona",
       "file": "how-configuration-works.md",
       "subCat": "Configuração"
     },
     {
-      "name": "O Widget de Resumo",
+      "name": "Widget de resumo",
       "file": "summary-widget-installation.md",
       "subCat": "Configuração"
     },
     {
-      "name": "Visualizando Avaliações",
+      "name": "Visualizando avaliações",
       "file": "viewing-ratings.md",
       "subCat": "Relatórios"
     },
@@ -48,9 +53,9 @@
       "subCat": "Relatórios"
     },
     {
-      "name": "Demonstração do Resumo",
+      "name": "Demonstração do resumo",
       "file": "summary-demo.md",
-      "subCat": "Demonstração do Resumo"
+      "subCat": "Demonstração do resumo"
     }
   ]
 }

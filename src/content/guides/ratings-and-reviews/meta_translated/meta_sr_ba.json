@@ -1,5 +1,5 @@
 {
-  "name": "Оцјене и рецензије",
+  "name": "Оцене и рецензије",
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
@@ -13,9 +13,14 @@
       "subCat": "Позадина"
     },
     {
-      "name": "Цијене",
+      "name": "Цене",
       "file": "pricing.md",
       "subCat": "Позадина"
+    },
+    {
+      "name": "Вођени помоћник",
+      "file": "guided-helper.md",
+      "subCat": "Подешавање"
     },
     {
       "name": "Одаберите тип приказа",
@@ -33,12 +38,12 @@
       "subCat": "Подешавање"
     },
     {
-      "name": "Сажетак виџета",
+      "name": "Виџет за сажетак",
       "file": "summary-widget-installation.md",
       "subCat": "Подешавање"
     },
     {
-      "name": "Преглед оцјена",
+      "name": "Преглед оцена",
       "file": "viewing-ratings.md",
       "subCat": "Извјештавање"
     },
@@ -48,9 +53,9 @@
       "subCat": "Извјештавање"
     },
     {
-      "name": "Демо сажетка",
+      "name": "Демонстрација сажетка",
       "file": "summary-demo.md",
-      "subCat": "Демо сажетка"
+      "subCat": "Демонстрација сажетка"
     }
   ]
 }

@@ -3,27 +3,32 @@
   "icon": "ratings-and-reviews.png",
   "itemsOrdered": [
     {
-      "name": "Функции",
+      "name": "Характеристики",
       "file": "features.md",
-      "subCat": "Контекст"
+      "subCat": "Обща информация"
     },
     {
       "name": "Кой го получава",
       "file": "who-gets-it.md",
-      "subCat": "Контекст"
+      "subCat": "Обща информация"
     },
     {
-      "name": "Ценообразуване",
+      "name": "Цени",
       "file": "pricing.md",
-      "subCat": "Контекст"
+      "subCat": "Обща информация"
     },
     {
-      "name": "Изберете тип на визуализация",
+      "name": "Воден помощник",
+      "file": "guided-helper.md",
+      "subCat": "Настройка"
+    },
+    {
+      "name": "Изберете тип показване",
       "file": "choose-display-type.md",
       "subCat": "Настройка"
     },
     {
-      "name": "Определете въпросите си",
+      "name": "Задайте въпросите си",
       "file": "define-your-questions.md",
       "subCat": "Настройка"
     },
@@ -48,9 +53,9 @@
       "subCat": "Отчитане"
     },
     {
-      "name": "Демо на обобщение",
+      "name": "Демонстрация на обобщение",
       "file": "summary-demo.md",
-      "subCat": "Демо на обобщение"
+      "subCat": "Демонстрация на обобщение"
     }
   ]
 }

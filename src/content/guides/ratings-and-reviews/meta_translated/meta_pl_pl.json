@@ -18,6 +18,11 @@
       "subCat": "Tło"
     },
     {
+      "name": "Asystent z przewodnikiem",
+      "file": "guided-helper.md",
+      "subCat": "Konfiguracja"
+    },
+    {
       "name": "Wybierz typ wyświetlania",
       "file": "choose-display-type.md",
       "subCat": "Konfiguracja"
