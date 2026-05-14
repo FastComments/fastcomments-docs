@@ -7,7 +7,7 @@ Moodle 4.0+ supports LTI 1.3 Dynamic Registration through the External Tool plug
 
 #### Paste the URL
 
-You'll see a card labeled **Tool URL**. Paste the FastComments registration URL into the text field and click **Add LTI Advantage**.
+You'll see a card labeled **Tool URL**. Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) into the text field and click **Add LTI Advantage**.
 
 Moodle opens a registration screen showing the tool's identity and the permissions it's requesting. Review and click **Activate** (or **Register**, depending on Moodle version).
 

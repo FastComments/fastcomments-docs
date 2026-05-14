@@ -10,7 +10,7 @@ If you only see "Register LTI 1.1 Provider", your Blackboard version doesn't sup
 
 #### Paste the URL
 
-Paste the FastComments registration URL into the **Client ID** / **Registration URL** field (Blackboard's labeling varies by version). Submit.
+Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) into the **Client ID** / **Registration URL** field (Blackboard's labeling varies by version). Submit.
 
 Blackboard performs the registration handshake with FastComments and shows you a confirmation screen.
 

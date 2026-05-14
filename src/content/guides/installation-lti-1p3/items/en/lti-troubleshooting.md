@@ -1,6 +1,6 @@
 #### "Registration token not found, expired, or already used"
 
-The token in your registration URL is valid for 30 minutes and can only be used once. If your LMS took longer than that, or if the registration was retried after succeeding, the token will be rejected. Generate a fresh URL in the FastComments LTI 1.3 Configuration page and start over.
+The token in your registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) is valid for 30 minutes and can only be used once. If your LMS took longer than that, or if the registration was retried after succeeding, the token will be rejected. Generate a fresh URL in the FastComments LTI 1.3 Configuration page and start over.
 
 #### "Platform rejected registration"
 
