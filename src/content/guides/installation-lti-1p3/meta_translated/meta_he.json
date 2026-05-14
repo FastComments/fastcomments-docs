@@ -1,6 +1,6 @@
 {
   "name": "התקנת LMS (LTI 1.3)",
-  "pageHeader": "הוספת תגובות ל-LMS שלך באמצעות LTI 1.3",
+  "pageHeader": "הוסף הערות ל-LMS שלך באמצעות LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -19,34 +19,49 @@
       "subCat": "תקציר"
     },
     {
-      "name": "יצירת כתובת URL לרישום",
+      "name": "יצירת כתובת רישום",
       "file": "lti-generate-url.md",
       "subCat": "הגדרת FastComments"
     },
     {
-      "name": "רישום ב-D2L Brightspace",
+      "name": "הרשמה ב-D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Moodle",
+      "name": "הרשמה ב-Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Blackboard Learn",
+      "name": "הרשמה ב-Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Sakai או Schoology",
+      "name": "הרשמה ב-Sakai או Schoology",
       "file": "lti-register-other.md",
       "subCat": "הרשמת הכלי"
     },
     {
-      "name": "הוספה לקורס",
-      "file": "lti-add-to-course.md",
-      "subCat": "שימוש בכלי"
+      "name": "הוספה לתוכן הקורס ב-D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "הוספה לקורס"
+    },
+    {
+      "name": "הוספה לתוכן הקורס ב-Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "הוספה לקורס"
+    },
+    {
+      "name": "הוספה לתוכן הקורס ב-Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "הוספה לקורס"
+    },
+    {
+      "name": "הוספה לתוכן הקורס ב-Sakai או Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "הוספה לקורס"
     },
     {
       "name": "פתרון בעיות",

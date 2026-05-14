@@ -1,22 +1,22 @@
 {
   "name": "Instalacija LMS-a (LTI 1.3)",
-  "pageHeader": "Dodajte komentare u svoj LMS putem LTI 1.3",
+  "pageHeader": "Dodavanje komentara u vaš LMS putem LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Cijene",
       "file": "lti-plans.md",
-      "subCat": "Ukratko"
+      "subCat": "Sažetak"
     },
     {
       "name": "Brzi početak",
       "file": "lti-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "Sažetak"
     },
     {
       "name": "Podržane platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Ukratko"
+      "subCat": "Sažetak"
     },
     {
       "name": "Generiranje URL-a za registraciju",
@@ -29,7 +29,7 @@
       "subCat": "Registracija alata"
     },
     {
-      "name": "Registracija u Moodlu",
+      "name": "Registracija u Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Registracija alata"
     },
@@ -44,9 +44,24 @@
       "subCat": "Registracija alata"
     },
     {
-      "name": "Dodavanje u kolegij",
-      "file": "lti-add-to-course.md",
-      "subCat": "Korištenje alata"
+      "name": "Dodavanje u sadržaj kolegija (D2L)",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Dodavanje u kolegij"
+    },
+    {
+      "name": "Dodavanje u sadržaj kolegija (Moodle)",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Dodavanje u kolegij"
+    },
+    {
+      "name": "Dodavanje u sadržaj kolegija (Blackboard)",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Dodavanje u kolegij"
+    },
+    {
+      "name": "Dodavanje u sadržaj kolegija (Sakai ili Schoology)",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Dodavanje u kolegij"
     },
     {
       "name": "Rješavanje problema",

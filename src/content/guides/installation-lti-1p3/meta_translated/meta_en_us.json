@@ -44,9 +44,24 @@
       "subCat": "Register the Tool"
     },
     {
-      "name": "Add to a Course",
-      "file": "lti-add-to-course.md",
-      "subCat": "Use the Tool"
+      "name": "Add to D2L Course Content",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Add to a Course"
+    },
+    {
+      "name": "Add to Moodle Course Content",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Add to a Course"
+    },
+    {
+      "name": "Add to Blackboard Course Content",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Add to a Course"
+    },
+    {
+      "name": "Add to Sakai or Schoology Course Content",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Add to a Course"
     },
     {
       "name": "Troubleshooting",

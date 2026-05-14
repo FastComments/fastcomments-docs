@@ -6,17 +6,17 @@
     {
       "name": "Cenik",
       "file": "lti-plans.md",
-      "subCat": "Povzetek"
+      "subCat": "Na kratko"
     },
     {
-      "name": "Hiter začetek",
+      "name": "Hitri začetek",
       "file": "lti-quick-start.md",
-      "subCat": "Povzetek"
+      "subCat": "Na kratko"
     },
     {
       "name": "Podprte platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Povzetek"
+      "subCat": "Na kratko"
     },
     {
       "name": "Ustvari URL za registracijo",
@@ -44,14 +44,29 @@
       "subCat": "Registrirajte orodje"
     },
     {
-      "name": "Dodaj v predmet",
-      "file": "lti-add-to-course.md",
-      "subCat": "Uporabite orodje"
+      "name": "Dodaj v vsebino predmeta v D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Dodaj v predmet"
+    },
+    {
+      "name": "Dodaj v vsebino predmeta v Moodlu",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Dodaj v predmet"
+    },
+    {
+      "name": "Dodaj v vsebino predmeta v Blackboard Learn",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Dodaj v predmet"
+    },
+    {
+      "name": "Dodaj v vsebino predmeta v Sakai ali Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Dodaj v predmet"
     },
     {
       "name": "Odpravljanje težav",
       "file": "lti-troubleshooting.md",
-      "subCat": "Uporabite orodje"
+      "subCat": "Uporaba orodja"
     }
   ]
 }

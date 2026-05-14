@@ -19,39 +19,54 @@
       "subCat": "En bref"
     },
     {
-      "name": "Générer l’URL d’enregistrement",
+      "name": "Générer l'URL d'enregistrement",
       "file": "lti-generate-url.md",
       "subCat": "Configuration FastComments"
     },
     {
-      "name": "Enregistrer sur D2L Brightspace",
+      "name": "Enregistrer dans D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Enregistrer l’outil"
+      "subCat": "Enregistrer l'outil"
     },
     {
-      "name": "Enregistrer sur Moodle",
+      "name": "Enregistrer dans Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Enregistrer l’outil"
+      "subCat": "Enregistrer l'outil"
     },
     {
-      "name": "Enregistrer sur Blackboard Learn",
+      "name": "Enregistrer dans Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Enregistrer l’outil"
+      "subCat": "Enregistrer l'outil"
     },
     {
-      "name": "Enregistrer sur Sakai ou Schoology",
+      "name": "Enregistrer dans Sakai ou Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Enregistrer l’outil"
+      "subCat": "Enregistrer l'outil"
     },
     {
-      "name": "Ajouter à un cours",
-      "file": "lti-add-to-course.md",
-      "subCat": "Utiliser l’outil"
+      "name": "Ajouter au contenu du cours D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Ajouter à un cours"
+    },
+    {
+      "name": "Ajouter au contenu du cours Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Ajouter à un cours"
+    },
+    {
+      "name": "Ajouter au contenu du cours Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Ajouter à un cours"
+    },
+    {
+      "name": "Ajouter au contenu du cours Sakai ou Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Ajouter à un cours"
     },
     {
       "name": "Dépannage",
       "file": "lti-troubleshooting.md",
-      "subCat": "Utiliser l’outil"
+      "subCat": "Utiliser l'outil"
     }
   ]
 }

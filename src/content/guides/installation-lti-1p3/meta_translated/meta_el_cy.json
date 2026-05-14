@@ -6,17 +6,17 @@
     {
       "name": "Τιμολόγηση",
       "file": "lti-plans.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύντομη περίληψη"
     },
     {
       "name": "Γρήγορη εκκίνηση",
       "file": "lti-quick-start.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύντομη περίληψη"
     },
     {
       "name": "Υποστηριζόμενες πλατφόρμες",
       "file": "lti-supported-platforms.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύντομη περίληψη"
     },
     {
       "name": "Δημιουργία URL εγγραφής",
@@ -24,29 +24,44 @@
       "subCat": "Ρύθμιση FastComments"
     },
     {
-      "name": "Εγγραφή στο D2L Brightspace",
+      "name": "Καταχώριση στο D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Καταχώριση του εργαλείου"
+      "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Εγγραφή στο Moodle",
+      "name": "Καταχώριση στο Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Καταχώριση του εργαλείου"
+      "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Εγγραφή στο Blackboard Learn",
+      "name": "Καταχώριση στο Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Καταχώριση του εργαλείου"
+      "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Εγγραφή σε Sakai ή Schoology",
+      "name": "Καταχώριση στο Sakai ή το Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Καταχώριση του εργαλείου"
+      "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Προσθήκη σε μάθημα",
-      "file": "lti-add-to-course.md",
-      "subCat": "Χρήση του εργαλείου"
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Προσθήκη σε μάθημα"
+    },
+    {
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Προσθήκη σε μάθημα"
+    },
+    {
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Προσθήκη σε μάθημα"
+    },
+    {
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Sakai ή Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Προσθήκη σε μάθημα"
     },
     {
       "name": "Αντιμετώπιση προβλημάτων",

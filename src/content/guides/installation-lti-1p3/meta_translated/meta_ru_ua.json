@@ -1,6 +1,6 @@
 {
   "name": "Установка LMS (LTI 1.3)",
-  "pageHeader": "Добавление комментариев в LMS через LTI 1.3",
+  "pageHeader": "Добавление комментариев в вашу LMS через LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -19,39 +19,54 @@
       "subCat": "Кратко"
     },
     {
-      "name": "Создать URL регистрации",
+      "name": "Сгенерировать URL-адрес регистрации",
       "file": "lti-generate-url.md",
       "subCat": "Настройка FastComments"
     },
     {
-      "name": "Зарегистрировать в D2L Brightspace",
+      "name": "Регистрация в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Зарегистрировать инструмент"
+      "subCat": "Регистрация инструмента"
     },
     {
-      "name": "Зарегистрировать в Moodle",
+      "name": "Регистрация в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Зарегистрировать инструмент"
+      "subCat": "Регистрация инструмента"
     },
     {
-      "name": "Зарегистрировать в Blackboard Learn",
+      "name": "Регистрация в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Зарегистрировать инструмент"
+      "subCat": "Регистрация инструмента"
     },
     {
-      "name": "Зарегистрировать в Sakai или Schoology",
+      "name": "Регистрация в Sakai или Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Зарегистрировать инструмент"
+      "subCat": "Регистрация инструмента"
     },
     {
-      "name": "Добавить в курс",
-      "file": "lti-add-to-course.md",
-      "subCat": "Использовать инструмент"
+      "name": "Добавить в содержимое курса D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Добавить в курс"
+    },
+    {
+      "name": "Добавить в содержимое курса Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Добавить в курс"
+    },
+    {
+      "name": "Добавить в содержимое курса Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Добавить в курс"
+    },
+    {
+      "name": "Добавить в содержимое курса Sakai или Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Добавить в курс"
     },
     {
       "name": "Устранение неполадок",
       "file": "lti-troubleshooting.md",
-      "subCat": "Использовать инструмент"
+      "subCat": "Использование инструмента"
     }
   ]
 }

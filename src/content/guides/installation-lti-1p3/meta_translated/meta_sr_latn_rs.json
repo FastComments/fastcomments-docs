@@ -24,34 +24,49 @@
       "subCat": "Podešavanje FastComments"
     },
     {
-      "name": "Registrujte alat u D2L Brightspace",
+      "name": "Registracija u D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registrujte alat"
+      "subCat": "Registracija alata"
     },
     {
-      "name": "Registrujte alat u Moodle",
+      "name": "Registracija u Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Registrujte alat"
+      "subCat": "Registracija alata"
     },
     {
-      "name": "Registrujte alat u Blackboard Learn",
+      "name": "Registracija u Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registrujte alat"
+      "subCat": "Registracija alata"
     },
     {
-      "name": "Registrujte alat u Sakai ili Schoology",
+      "name": "Registracija u Sakai ili Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registrujte alat"
+      "subCat": "Registracija alata"
     },
     {
-      "name": "Dodajte u kurs",
-      "file": "lti-add-to-course.md",
-      "subCat": "Koristite alat"
+      "name": "Dodavanje u sadržaj kursa u D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Dodavanje u kurs"
     },
     {
-      "name": "Otklanjanje problema",
+      "name": "Dodavanje u sadržaj kursa u Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Dodavanje u kurs"
+    },
+    {
+      "name": "Dodavanje u sadržaj kursa u Blackboard Learn",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Dodavanje u kurs"
+    },
+    {
+      "name": "Dodavanje u sadržaj kursa u Sakai ili Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Dodavanje u kurs"
+    },
+    {
+      "name": "Rešavanje problema",
       "file": "lti-troubleshooting.md",
-      "subCat": "Koristite alat"
+      "subCat": "Korišćenje alata"
     }
   ]
 }

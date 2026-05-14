@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Prissætning",
+      "name": "Priser",
       "file": "lti-plans.md",
       "subCat": "Kort fortalt"
     },
@@ -21,7 +21,7 @@
     {
       "name": "Generer registrerings-URL",
       "file": "lti-generate-url.md",
-      "subCat": "FastComments-opsætning"
+      "subCat": "Opsætning af FastComments"
     },
     {
       "name": "Registrer i D2L Brightspace",
@@ -44,9 +44,24 @@
       "subCat": "Registrer værktøjet"
     },
     {
-      "name": "Tilføj til et kursus",
-      "file": "lti-add-to-course.md",
-      "subCat": "Brug værktøjet"
+      "name": "Tilføj til D2L-kursusindhold",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Tilføj til et kursus"
+    },
+    {
+      "name": "Tilføj til Moodle-kursusindhold",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Tilføj til et kursus"
+    },
+    {
+      "name": "Tilføj til Blackboard-kursusindhold",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Tilføj til et kursus"
+    },
+    {
+      "name": "Tilføj til Sakai- eller Schoology-kursusindhold",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Tilføj til et kursus"
     },
     {
       "name": "Fejlfinding",

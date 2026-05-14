@@ -1,6 +1,6 @@
 {
   "name": "Instalación del LMS (LTI 1.3)",
-  "pageHeader": "Añadir comentarios a tu LMS mediante LTI 1.3",
+  "pageHeader": "Agregar comentarios a su LMS mediante LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -44,12 +44,27 @@
       "subCat": "Registrar la herramienta"
     },
     {
-      "name": "Añadir a un curso",
-      "file": "lti-add-to-course.md",
-      "subCat": "Usar la herramienta"
+      "name": "Agregar al contenido del curso en D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Agregar a un curso"
     },
     {
-      "name": "Solución de problemas",
+      "name": "Agregar al contenido del curso en Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Agregar a un curso"
+    },
+    {
+      "name": "Agregar al contenido del curso en Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Agregar a un curso"
+    },
+    {
+      "name": "Agregar al contenido del curso en Sakai o Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Agregar a un curso"
+    },
+    {
+      "name": "Resolución de problemas",
       "file": "lti-troubleshooting.md",
       "subCat": "Usar la herramienta"
     }

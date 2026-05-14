@@ -1,6 +1,6 @@
 {
   "name": "Instalacja LMS (LTI 1.3)",
-  "pageHeader": "Dodaj komentarze do swojego LMS przy użyciu LTI 1.3",
+  "pageHeader": "Dodawanie komentarzy do LMS za pomocą LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -24,34 +24,49 @@
       "subCat": "Konfiguracja FastComments"
     },
     {
-      "name": "Zarejestruj w D2L Brightspace",
+      "name": "Rejestracja w D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Moodle",
+      "name": "Rejestracja w Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Blackboard Learn",
+      "name": "Rejestracja w Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Sakai lub Schoology",
+      "name": "Rejestracja w Sakai lub Schoology",
       "file": "lti-register-other.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Dodaj do kursu",
-      "file": "lti-add-to-course.md",
-      "subCat": "Użyj narzędzia"
+      "name": "Dodaj do zawartości kursu D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Dodaj do kursu"
+    },
+    {
+      "name": "Dodaj do zawartości kursu w Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Dodaj do kursu"
+    },
+    {
+      "name": "Dodaj do zawartości kursu w Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Dodaj do kursu"
+    },
+    {
+      "name": "Dodaj do zawartości kursu w Sakai lub Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Dodaj do kursu"
     },
     {
       "name": "Rozwiązywanie problemów",
       "file": "lti-troubleshooting.md",
-      "subCat": "Użyj narzędzia"
+      "subCat": "Korzystanie z narzędzia"
     }
   ]
 }

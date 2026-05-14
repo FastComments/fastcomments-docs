@@ -19,7 +19,7 @@
       "subCat": "In breve"
     },
     {
-      "name": "Genera URL di registrazione",
+      "name": "Genera l'URL di registrazione",
       "file": "lti-generate-url.md",
       "subCat": "Configurazione FastComments"
     },
@@ -44,9 +44,24 @@
       "subCat": "Registra lo strumento"
     },
     {
-      "name": "Aggiungi a un corso",
-      "file": "lti-add-to-course.md",
-      "subCat": "Usa lo strumento"
+      "name": "Aggiungi ai contenuti del corso in D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Aggiungi a un corso"
+    },
+    {
+      "name": "Aggiungi ai contenuti del corso in Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Aggiungi a un corso"
+    },
+    {
+      "name": "Aggiungi ai contenuti del corso in Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Aggiungi a un corso"
+    },
+    {
+      "name": "Aggiungi ai contenuti del corso in Sakai o Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Aggiungi a un corso"
     },
     {
       "name": "Risoluzione dei problemi",

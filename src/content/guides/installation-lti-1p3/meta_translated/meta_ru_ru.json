@@ -1,6 +1,6 @@
 {
   "name": "Установка LMS (LTI 1.3)",
-  "pageHeader": "Добавление комментариев в вашу LMS через LTI 1.3",
+  "pageHeader": "Добавление комментариев в LMS через LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -44,9 +44,24 @@
       "subCat": "Регистрация инструмента"
     },
     {
-      "name": "Добавление в курс",
-      "file": "lti-add-to-course.md",
-      "subCat": "Использование инструмента"
+      "name": "Добавление в содержимое курса D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Добавление в курс"
+    },
+    {
+      "name": "Добавление в содержимое курса Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Добавление в курс"
+    },
+    {
+      "name": "Добавление в содержимое курса Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Добавление в курс"
+    },
+    {
+      "name": "Добавление в содержимое курса Sakai или Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Добавление в курс"
     },
     {
       "name": "Устранение неполадок",

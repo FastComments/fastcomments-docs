@@ -1,6 +1,6 @@
 {
   "name": "Инсталација LMS-а (LTI 1.3)",
-  "pageHeader": "Додајте коментаре у свој LMS преко LTI 1.3",
+  "pageHeader": "Додајте коментаре у ваш LMS преко LTI 1.3",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -19,39 +19,54 @@
       "subCat": "Укратко"
     },
     {
-      "name": "Генерисање URL-а за регистрацију",
+      "name": "Генеришите URL за регистрацију",
       "file": "lti-generate-url.md",
       "subCat": "Подешавање FastComments"
     },
     {
       "name": "Регистрација у D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Регистрација алата"
+      "subCat": "Региструјте алатку"
     },
     {
       "name": "Регистрација у Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Регистрација алата"
+      "subCat": "Региструјте алатку"
     },
     {
       "name": "Регистрација у Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Регистрација алата"
+      "subCat": "Региструјте алатку"
     },
     {
       "name": "Регистрација у Sakai или Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Регистрација алата"
+      "subCat": "Региструјте алатку"
     },
     {
-      "name": "Додавање у курс",
-      "file": "lti-add-to-course.md",
-      "subCat": "Коришћење алата"
+      "name": "Додајте у садржај курса у D2L",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "Додајте у курс"
+    },
+    {
+      "name": "Додајте у садржај курса у Moodle",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "Додајте у курс"
+    },
+    {
+      "name": "Додајте у садржај курса у Blackboard",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "Додајте у курс"
+    },
+    {
+      "name": "Додајте у садржај курса у Sakai или Schoology",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "Додајте у курс"
     },
     {
       "name": "Решавање проблема",
       "file": "lti-troubleshooting.md",
-      "subCat": "Коришћење алата"
+      "subCat": "Коришћење алатке"
     }
   ]
 }

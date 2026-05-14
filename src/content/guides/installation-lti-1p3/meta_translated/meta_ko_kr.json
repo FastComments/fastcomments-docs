@@ -1,10 +1,10 @@
 {
   "name": "LMS 설치 (LTI 1.3)",
-  "pageHeader": "LTI 1.3을 통해 LMS에 댓글 추가",
+  "pageHeader": "LTI 1.3로 LMS에 댓글 추가",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "요금",
+      "name": "가격",
       "file": "lti-plans.md",
       "subCat": "요약"
     },
@@ -44,9 +44,24 @@
       "subCat": "도구 등록"
     },
     {
-      "name": "강좌에 추가",
-      "file": "lti-add-to-course.md",
-      "subCat": "도구 사용"
+      "name": "D2L 코스 콘텐츠에 추가",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "코스에 추가"
+    },
+    {
+      "name": "Moodle 코스 콘텐츠에 추가",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "코스에 추가"
+    },
+    {
+      "name": "Blackboard 코스 콘텐츠에 추가",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "코스에 추가"
+    },
+    {
+      "name": "Sakai 또는 Schoology 코스 콘텐츠에 추가",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "코스에 추가"
     },
     {
       "name": "문제 해결",
