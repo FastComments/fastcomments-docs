@@ -1,5 +1,10 @@
 This page covers adding FastComments to a Brightspace course after an administrator has registered the tool and created a deployment. If the tool is not registered yet, see the D2L registration guide first.
 
+<div class="screenshot white-bg">
+    <div class="title">FastComments embedded as a unit topic in Brightspace</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments running inside a Brightspace unit, showing threaded comments and an @-mention picker" />
+</div>
+
 Brightspace ships two content authoring experiences: **Classic Content** and the **New Content Experience** (also called **Lessons**). Both expose FastComments, but the menu paths differ. Each section below covers both where they diverge.
 
 #### Locate the FastComments Tool
