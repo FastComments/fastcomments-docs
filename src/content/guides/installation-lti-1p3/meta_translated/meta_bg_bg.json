@@ -1,10 +1,10 @@
 {
   "name": "Инсталиране на LMS (LTI 1.3)",
   "pageHeader": "Добавяне на коментари в LMS чрез LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Ценообразуване",
+      "name": "Цени",
       "file": "lti-plans.md",
       "subCat": "Накратко"
     },
@@ -26,45 +26,45 @@
     {
       "name": "Регистриране в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Регистриране на инструмента"
+      "subCat": "Регистрация на инструмента"
     },
     {
       "name": "Регистриране в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Регистриране на инструмента"
+      "subCat": "Регистрация на инструмента"
     },
     {
       "name": "Регистриране в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Регистриране на инструмента"
+      "subCat": "Регистрация на инструмента"
     },
     {
       "name": "Регистриране в Sakai или Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Регистриране на инструмента"
+      "subCat": "Регистрация на инструмента"
     },
     {
-      "name": "Добавяне към съдържанието на курса в D2L",
+      "name": "Добавяне към съдържанието на курс в D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Добавяне към курс"
     },
     {
-      "name": "Добавяне към съдържанието на курса в Moodle",
+      "name": "Добавяне към съдържанието на курс в Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Добавяне към курс"
     },
     {
-      "name": "Добавяне към съдържанието на курса в Blackboard",
+      "name": "Добавяне към съдържанието на курс в Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Добавяне към курс"
     },
     {
-      "name": "Добавяне към съдържанието на курса в Sakai или Schoology",
+      "name": "Добавяне към съдържанието на курс в Sakai или Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Добавяне към курс"
     },
     {
-      "name": "Отстраняване на проблеми",
+      "name": "Отстраняване на неизправности",
       "file": "lti-troubleshooting.md",
       "subCat": "Използване на инструмента"
     }

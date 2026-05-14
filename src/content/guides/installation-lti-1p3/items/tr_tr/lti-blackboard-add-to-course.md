@@ -1,101 +1,101 @@
-Bir yönetici FastComments'ı bir LTI 1.3 Advantage aracı olarak kaydedip kurum politikalarını onayladıktan sonra, öğretim üyeleri standart Blackboard yerleştirme noktaları aracılığıyla bunu derslere ekler. Tam adımlar Ultra Course View ile Original Course View arasında farklılık gösterdiğinden her ikisi de aşağıda ele alınmıştır.
+Once an administrator has registered FastComments as an LTI 1.3 Advantage tool and approved the institution policies, instructors add it to courses through the standard Blackboard placement points. The exact steps differ between Ultra Course View and Original Course View, so both are covered below.
 
-#### Ultra Kurs Görünümü
+#### Ultra Course View
 
-Ultra Kurs Görünümü, 2026 itibarıyla Blackboard Learn SaaS'ta varsayılandır.
+Ultra Course View is the default in Blackboard Learn SaaS as of 2026.
 
-1. Dersi açın ve **Course Content** sayfasına gidin.
-2. Anahattaki yorum dizgisinin yerleşmesini istediğiniz yere fareyle gelin veya dokunun ve mor **+** (İçerik ekle) düğmesine tıklayın.
-3. **Content Market** öğesini seçin. Content Market paneli kurumunuz için onaylanmış her LTI aracını ve Building Block yerleşimini listeler.
-4. **FastComments** kutucuğunu bulun ve tıklayın. Blackboard, **+** menüsünü açtığınız konumda bir içerik öğesi oluşturur.
-5. Öğenin anahatta varsayılan olarak "Visible to students" girdisi olarak yerleşir; bu, kişisel varsayılanı olarak **Hide from students** kapalı olan eğitmenler içindir. Varsayılanınız **Hidden** ise öğe gizli oluşturulur ve hazır olduğunuzda öğe satırındaki görünürlük seçicisini açarsınız.
-6. Öğeyi yeniden adlandırmak için anahattaki başlığa tıklayın ve yeni bir etiket yazın. Öğrencilerin anahatta gördüğü başlık, FastComments dizgi tanımlayıcısından bağımsızdır; bu nedenle yeniden adlandırma her zaman güvenlidir.
+1. Open the course and go to the **Course Content** page.
+2. Hover or tap where you want the comment thread to land in the outline and click the purple **+** (Add content) button.
+3. Choose **Content Market**. The Content Market panel lists every approved LTI tool and Building Block placement for your institution.
+4. Find the **FastComments** tile and click it. Blackboard creates a content item at the position where you opened the **+** menu.
+5. The item lands in the outline as a "Visible to students" entry by default for instructors who have **Hide from students** off as their personal default. If your default is **Hidden**, the item is created hidden and you flip the visibility selector on the item row when you're ready.
+6. To rename the item, click the title in the outline and type a new label. The title students see in the outline is independent of the FastComments thread identifier, so renaming is safe at any time.
 
-**Content Market** seçeneğini görmüyorsanız, kurumunuz yerleşimi gizlemiş demektir. Aynı seçim aracına aynı **+** menüsündeki **More tools** altında **LTI Tools** grubundan da ulaşabilirsiniz.
+If you don't see **Content Market** as an option, your institution has the placement hidden. You also reach the same picker through **More tools** in the same **+** menu under the **LTI Tools** group.
 
-#### Orijinal Kurs Görünümü
+#### Original Course View
 
-Orijinal Kurs Görünümü, Learn SaaS'ta hâlâ desteklenmektedir ve Q4 2024 CU sürüm hattındaki kendi sunucusunda barındırılan Learn 9.1 siteleri için birincil deneyim olmaya devam etmektedir.
+Original Course View is still supported in Learn SaaS and remains the primary experience for self-hosted Learn 9.1 sites on the Q4 2024 CU release line.
 
-1. Dersi açın ve bir **Content Area** içine girin (örneğin, ders menüsündeki varsayılan **Information** veya **Content** alanı).
-2. Sayfanın sağ üst köşesindeki anahtarla **Edit Mode**'u açın.
-3. Eylem çubuğunda **Build Content** öğesine tıklayın.
-4. **Learning Tools** alt menüsünde **FastComments**'a tıklayın. Learning Tools alt menüsü, bir yönetici aracı kaydettikten sonra LTI 1.3 araç yerleşimlerinden doldurulur. Görmüyorsanız, aşağıdaki dikkat edilmesi gerekenlere bakın.
-5. **Create FastComments** formunda şunları ayarlayın:
-   - **Name**: içerik alanında öğrencilerin göreceği etiket.
-   - **Description**: gömülü dizginin üstünde gösterilen isteğe bağlı metin.
-   - **Permit Users to View this Content**: Evet/Hayır erişilebilirlik anahtarı.
-   - **Track Number of Views**: Blackboard'un öğe başına görüntüleme istatistiklerini istiyorsanız etkinleştirin. FastComments kendi analizlerini bağımsız olarak çalıştırır.
-   - **Date and Time Restrictions**: isteğe bağlı **Display After** / **Display Until** pencereleri.
-6. Gönderin. Araç içerik alanında tıklanabilir bir öğe olarak görünür.
+1. Open the course and enter a **Content Area** (for example, the default **Information** or **Content** area in the course menu).
+2. Turn **Edit Mode** on with the toggle in the top-right of the page.
+3. Click **Build Content** in the action bar.
+4. Under the **Learning Tools** submenu, click **FastComments**. The Learning Tools submenu is populated from LTI 1.3 tool placements after an administrator registers the tool. If you don't see it, see the gotchas section below.
+5. On the **Create FastComments** form, set:
+   - **Name**: the label students see in the content area.
+   - **Description**: optional text shown above the embedded thread.
+   - **Permit Users to View this Content**: Yes/No availability toggle.
+   - **Track Number of Views**: enable if you want Blackboard's per-item view statistics. FastComments runs its own analytics independently.
+   - **Date and Time Restrictions**: optional **Display After** / **Display Until** windows.
+6. Submit. The tool appears as a clickable item in the content area.
 
-#### Bir Öğenin veya Belgenin İçine Gömme
+#### Embedding Inside an Item or Document
 
-Her iki kurs görünümünde de öğretim üyeleri Content Editor'deki LTI Advantage düğmesi aracılığıyla FastComments'ı bir Öğenin, Belgenin veya herhangi bir zengin metin alanının gövdesine satır içi olarak gömerler.
+In both course views, instructors embed FastComments inline inside the body of an Item, Document, or any rich-text field through the Content Editor's LTI Advantage button.
 
-Ultra Kurs Görünümü:
+Ultra Course View:
 
-1. Bir **Document** oluşturun veya düzenleyin.
-2. Dizginin görünmesini istediğiniz yerde belgenin gövdesinde **Add content**'e tıklayın.
-3. Editör araç çubuğunda **Insert content** menüsünü açın ve **Content Market**'e tıklayın (LTI Advantage / Deep Linking giriş noktası).
-4. **FastComments**'ı seçin. FastComments bir derin-bağlantı yükü (deep-link payload) döndürür ve Blackboard, belge gövdesinde imleç konumuna gömülü bir blok ekler.
-5. Belgeyi kaydedin. Öğrenciler belgeyi kaydırırken dizgiyi satır içinde render edilmiş olarak görürler.
+1. Create or edit a **Document**.
+2. Click **Add content** inside the document body where you want the thread to appear.
+3. In the editor toolbar, open the **Insert content** menu and click **Content Market** (the LTI Advantage / Deep Linking entry point).
+4. Pick **FastComments**. FastComments returns a deep-link payload and Blackboard inserts an embedded block in the document body at the cursor position.
+5. Save the document. Students see the thread rendered inline as they scroll past it.
 
-Orijinal Kurs Görünümü:
+Original Course View:
 
-1. Zengin metin gövdeli herhangi bir öğeyi düzenleyin.
-2. Content Editor araç çubuğunda **Add Content** artı simgesine tıklayın ve **Content Market**'i seçin (eski Q4 2024 CU'larda **Add Content from External Tool** olarak etiketlenir).
-3. **FastComments**'ı seçin. Editör, derin-bağlanan kaynağa referans veren bir yer tutucu blok ekler.
-4. Öğeyi gönderin.
+1. Edit any item with a rich-text body.
+2. In the Content Editor toolbar, click the **Add Content** plus icon and choose **Content Market** (labeled **Add Content from External Tool** in older Q4 2024 CUs).
+3. Pick **FastComments**. The editor inserts a placeholder block referencing the deep-linked resource.
+4. Submit the item.
 
-Her derin-bağlantı gömme kendi FastComments dizgisini üretir; bu nedenle içinde iki gömülü FastComments bloğu olan bir Öğenin iki bağımsız yorum akışı olur.
+Each deep-link embed produces its own FastComments thread, so an Item with two embedded FastComments blocks has two independent comment streams.
 
-#### Görünürlük, Yayınlama Koşulları ve Grup Kısıtlamaları
+#### Visibility, Release Conditions, and Group Restrictions
 
-FastComments içerik öğeleri, üzerinde katmanlanmış erişim kontrol kuralları açısından diğer Blackboard içerik öğeleri gibi davranır.
+FastComments content items behave like any other Blackboard content item for the access control rules layered on top of them.
 
-- Ultra: satırdaki görünürlük seçicisine tıklayın (**Visible to students**, **Hidden from students**, **Conditional availability**). Koşullu erişilebilirlik tarih/saat pencerelerini, not defteri öğelerine karşı performans kurallarını ve ders gruplarına karşı üye kurallarını destekler.
-- Original: öğenin bağlam menüsünü açın ve aracı tarih, üyelik, not veya inceleme durumuna göre sınırlandırmak için **Adaptive Release** veya **Adaptive Release: Advanced**'i seçin. Öğeyi belirli ders gruplarıyla kısıtlamak için öğede **Set Group Availability**'i kullanın.
+- Ultra: click the visibility selector on the row (**Visible to students**, **Hidden from students**, **Conditional availability**). Conditional availability supports date/time windows, performance rules against gradebook items, and member rules against course groups.
+- Original: open the item's context menu and choose **Adaptive Release** or **Adaptive Release: Advanced** to gate the tool by date, membership, grade, or review status. Use **Set Group Availability** on the item to restrict to specific course groups.
 
-FastComments, Blackboard'un hangi kapıyı etkinleştirdiğini esas alır. Blackboard öğeyi bir öğrenciden gizlerse, o öğrenci için LTI başlatması hiç gerçekleşmez ve moderator görünümünde görünmezler.
+FastComments respects whatever Blackboard's gate decides. If Blackboard hides the item from a student, the LTI launch never happens for that student and they don't appear in the moderator view.
 
-#### Not Defteri (Gradebook) Davranışı
+#### Gradebook Behavior
 
-FastComments, LTI Advantage Assignment and Grade Services üzerinden not bildirmez. FastComments içerik öğeleri için otomatik olarak bir not sütunu oluşturulmaz.
+FastComments does not report grades back over LTI Advantage Assignment and Grade Services. No grade column is auto-created for FastComments content items.
 
-Eğer Blackboard kiracınız her yeni içerik öğesi için derecelendirme meta verisinden bağımsız olarak bir not defteri sütunu otomatik oluşturacak şekilde yapılandırıldıysa, yine boş bir sütun görünür. Gizlemek için:
+If your Blackboard tenant is configured to auto-create a gradebook column for every new content item regardless of grading metadata, an empty column appears anyway. To hide it:
 
-- Ultra: **Gradebook**'u açın, sütun başlığına tıklayın, **Edit**'i seçin ve **Show to students** ile **Include in calculations**'ı kapatın. Ya da kurumunuz notlandırılmamış öğeler için sütun silmeyi izin veriyorsa **Delete** kullanın.
-- Original: **Grade Center**'ı açın, sütunun üçgenine tıklayın, **Hide from Users (on/off)**'u seçin ve gerekirse **Column Organization** altında **Hide from Instructor View**'u seçin.
+- Ultra: open the **Gradebook**, click the column header, choose **Edit**, and turn off **Show to students** plus **Include in calculations**. Or use **Delete** if your institution permits column deletion for ungraded items.
+- Original: open the **Grade Center**, click the column's chevron, choose **Hide from Users (on/off)**, and optionally **Hide from Instructor View** under **Column Organization**.
 
-#### Öğrencilerin Gördüğü Şey
+#### What Students See
 
-Bir öğrenci FastComments öğesini açtığında veya gömülü bloğa kaydırdığında:
+When a student opens the FastComments item or scrolls to an embedded block:
 
-1. Blackboard, FastComments'a LTI 1.3 mesajını başlatır. Öğrenci, giriş formu görmeden Blackboard kimliği (isim, e-posta, avatar, rol) kullanılarak SSO ile oturum açmış olur.
-2. Yorum dizgisi iframe içinde render edilir. Dizileme, yanıtlar, bahsetmeler ve tepkiler, FastComments içinde yapılandırılmış yorum widget ayarlarına bağlı olarak kullanılabilir.
-3. Yorumları Blackboard hesaplarına atfedilir. Öğrenci daha sonra Blackboard'da adını veya fotoğrafını düzenlerse, bir sonraki başlatma FastComments profilini günceller.
+1. Blackboard launches the LTI 1.3 message to FastComments. The student is signed in via SSO using their Blackboard identity (isim, e-posta, avatar, rol) without seeing a login form.
+2. The comment thread renders in the iframe. Threading, replies, mentions, and reactions are all available based on the comment widget settings configured in FastComments.
+3. Their comments are attributed to their Blackboard account. If the student edits their name or photo in Blackboard later, the next launch updates the FastComments profile.
 
-Blackboard'dan FastComments'a rol eşlemesi:
+Role mapping from Blackboard to FastComments:
 
-- **System Administrator** ve **Course Builder**, FastComments **admin** rolüne eşlenir.
-- **Instructor** ve **Teaching Assistant**, FastComments **moderator** rolüne eşlenir.
-- **Student**, **Guest** ve **Observer**, FastComments **commenter** rolüne eşlenir.
+- **Sistem Yöneticisi** ve **Course Builder** FastComments içinde **admin** ile eşleştirilir.
+- **Eğitmen** ve **Öğretim Asistanı** FastComments içinde **moderator** ile eşleştirilir.
+- **Öğrenci**, **Misafir** ve **Gözlemci** FastComments içinde **commenter** ile eşleştirilir.
 
-Moderatörler, dizgideki her yorumun yanında yer alan moderasyon kontrollerini (pinleme, gizleme, ban, silme) görürler.
+Moderators see moderation controls (pin, hide, ban, delete) inline on every comment in the thread.
 
-#### Dizgi Kapsamlandırma
+#### Thread Scoping
 
-FastComments her dizgiyi **(Blackboard host, course ID, resource link ID)** ile kapsar. Aynı derste iki FastComments öğesi iki dizgi üretir. Aynı öğe iki ders kabuğuna kopyalandığında (örneğin, ders kopyasıyla) iki dizgi oluşur, çünkü Blackboard kopyalama sırasında yeni bir resource link ID verir. Ders kopyaları arasında paylaşılan bir dizgi tutmak için, kopyalamadan önce FastComments içinde açık bir dizgi URN'si ile Derin Bağlama (Deep Linking) kullanın.
+FastComments scopes each thread by **(Blackboard host, course ID, resource link ID)**. Two FastComments items in the same course produce two threads. The same item copied across two course shells (for example, through course copy) produces two threads, because Blackboard issues a fresh resource link ID during the copy. To keep a shared thread across course copies, use Deep Linking with an explicit thread URN configured in FastComments before launching the copy.
 
-#### Blackboard'a Özgü Dikkat Edilmesi Gerekenler
+#### Blackboard-Specific Gotchas
 
-**FastComments kutucuğu Build Content menüsünde (Orijinal) veya Content Market'te (Ultra) yok.** Yönetici aracı onayladı ama ilgili yerleşimi engelleyen bir kurum politikası bırakmış. **Administrator Panel** > **Integrations** > **LTI Tool Providers** yoluna gidin, FastComments girişini düzenleyin ve hem **Course Content Tool** (Original) hem de **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) yerleşimlerinin etkinleştirildiğini doğrulayın. Kaydedin ve ders sayfasını yenileyin.
+**FastComments tile missing from the Build Content menu (Original) or Content Market (Ultra).** The administrator approved the tool but left an institution policy blocking the relevant placement. Go to **Administrator Panel** > **Integrations** > **LTI Tool Providers**, edit the FastComments entry, and confirm both **Course Content Tool** (Original) and **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) placements are enabled. Save and refresh the course page.
 
-**Başlatmada "Tool not configured for this context" veya "Tool is not deployed" hatası.** Dinamik kayıt sırasında kaydedilen dağıtım kapsamı, dersin ait olduğu kurum bağlamıyla eşleşmiyor. Blackboard'daki araç sağlayıcı girdisinde **Deployment ID**'nin bu kiracı için FastComments'ın LTI 1.3 Yapılandırma sayfasında gösterdiğiyle eşleştiğini doğrulayın. Eğer farklıysa, yerleşimi silin ve taze bir kayıt URL'sinden dinamik kaydı yeniden çalıştırın.
+**"Tool not configured for this context" or "Tool is not deployed" error on launch.** The deployment scope registered during dynamic registration doesn't match the institution context the course belongs to. In Blackboard's tool provider entry, verify the **Deployment ID** matches what FastComments shows on its LTI 1.3 Configuration page for this tenant. If they differ, delete the placement and re-run dynamic registration from a fresh registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan edinin</a>).
 
-**Iframe yüksekliği sabit görünüyor veya içerik kesiliyor.** Bazı Blackboard kiracıları, varsayılan LTI iframe yeniden boyutlandırma postMessage'ını engelleyen katı bir Content Security Policy ile gönderilir. FastComments uyumluluğu maksimize etmek için hem Canvas tarzı `lti.frameResize` mesajını hem de IMS spesifikasyon formu `org.imsglobal.lti.frameResize` mesajını gönderir, ancak kiracı düzeyindeki bir CSP üstbilgisi üst dinleyiciyi engelliyor olabilir. Yöneticinizden `*.fastcomments.com`'un LTI araç izinli listesinde olduğunu ve hiçbir özel CSP üstbilgisinin postMessage olaylarını kesmediğini doğrulamasını isteyin. Böylece yeniden boyutlandırma ek yapılandırma olmadan çalışır.
+**Iframe height looks fixed or content gets cut off.** Some Blackboard tenants ship with a strict Content Security Policy that blocks the default LTI iframe-resize postMessage. FastComments emits both the Canvas-style `lti.frameResize` message and the IMS spec-form `org.imsglobal.lti.frameResize` message to maximize compatibility, but a tenant-level CSP override blocks the parent listener. Ask your administrator to confirm that `*.fastcomments.com` is on the LTI tool allowlist and that no custom CSP header is stripping postMessage events. Resize then works without further configuration.
 
-**Ders kopyası dizgileri çoğaltıyor.** Blackboard ders kopyası LTI yerleşimleri için yeni resource link ID'leri verir, bu nedenle kopyalanan dersler boş dizgilerle başlar. Bu beklenen bir davranıştır. Kopyalanan dersin orijinal dizgiyi devralmasını istiyorsanız, kopyalamadan önce açık bir dizgi URN'si ile Derin Bağlama kurun veya toplu olarak dizgi kimliklerini yeniden eşleme için FastComments destek ile iletişime geçin.
+**Course copy duplicates threads.** Blackboard course copy issues new resource link IDs for LTI placements, so copied courses start with empty threads. This is expected. If you need the copied course to inherit the original thread, set up Deep Linking with an explicit thread URN before copying, or contact FastComments support to remap thread IDs in bulk.
 
-**Öğrenci başlatmada genel bir Blackboard hatası görüyor.** Bunun nedeni eksik veya eski bir `email` iddiasıdır (claim). FastComments için kurum politikasında **User Fields to Send** altında **Role**, **Name** ve **Email Address**'in etkinleştirildiğini doğrulayın. Kaydedin, ardından taze bir tarayıcı oturumunda tekrar başlatın.
+**Student sees a generic Blackboard error on launch.** The cause is a missing or stale `email` claim. Confirm the institution policy for FastComments has **Role**, **Name**, and **Email Address** enabled under **User Fields to Send**. Save, then launch again in a fresh browser session.

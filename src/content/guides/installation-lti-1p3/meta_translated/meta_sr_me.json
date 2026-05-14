@@ -1,7 +1,7 @@
 {
   "name": "Инсталација LMS-а (LTI 1.3)",
-  "pageHeader": "Додајте коментаре у свој LMS преко LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Додајте коментаре у ваш LMS путем LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Цијене",
@@ -19,7 +19,7 @@
       "subCat": "Укратко"
     },
     {
-      "name": "Генерисање URL-а за регистрацију",
+      "name": "Генеришите URL за регистрацију",
       "file": "lti-generate-url.md",
       "subCat": "Подешавање FastComments"
     },
@@ -44,27 +44,27 @@
       "subCat": "Регистрација алата"
     },
     {
-      "name": "Додавање у садржај курса (D2L)",
+      "name": "Додајте у садржај курса (D2L)",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса (Moodle)",
+      "name": "Додајте у садржај курса (Moodle)",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса (Blackboard)",
+      "name": "Додајте у садржај курса (Blackboard)",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса (Sakai или Schoology)",
+      "name": "Додајте у садржај курса (Sakai или Schoology)",
       "file": "lti-other-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Рјешавање проблема",
+      "name": "Решавање проблема",
       "file": "lti-troubleshooting.md",
       "subCat": "Коришћење алата"
     }

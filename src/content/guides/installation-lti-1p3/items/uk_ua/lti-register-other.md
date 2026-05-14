@@ -1,31 +1,29 @@
----
 #### Sakai
 
-Sakai підтримує динамічну реєстрацію LTI 1.3 у випусках з LTI Advantage. У Робочій області адміністратора:
+Sakai підтримує динамічну реєстрацію LTI 1.3 у випусках з LTI Advantage. З **Administration Workspace**:
 
-1. Увійдіть як адміністратор Sakai і відкрийте **Робочу область адміністратора**.
-2. Виберіть **Зовнішні інструменти** > **Встановити інструмент LTI 1.3**.
-3. Вставте URL реєстрації FastComments і надішліть.
-4. Підтвердіть інструмент, коли завершиться рукопотискання.
+1. Увійдіть як адміністратор Sakai і відкрийте **Administration Workspace**.
+2. Виберіть **External Tools** > **Install LTI 1.3 Tool**.
+3. Вставте URL реєстрації FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">отримайте його тут</a>) і надішліть.
+4. Підтвердіть інструмент, коли рукопотискання буде завершено.
 
-Інструмент з’явиться в розділі **Зовнішні інструменти** і може бути доданий до сайтів їхніми адміністраторами.
+Після цього інструмент з’явиться в **External Tools** і його можна додати на сайти їхніми адміністраторами.
 
 #### Schoology
 
-Інсталяції Schoology Enterprise підтримують LTI 1.3, але доступність динамічної реєстрації залежить від розгортання. Зв’яжіться зі своїм менеджером облікового запису Schoology.
+Інсталяції Schoology Enterprise підтримують LTI 1.3, але наявність Dynamic Registration залежить від розгортання. Зверніться до вашого менеджера облікового запису Schoology.
 
-Якщо динамічна реєстрація недоступна у вашій інстанції Schoology, вам потрібно налаштувати інтеграцію вручну, використовуючи ці кінцеві точки:
+Якщо Dynamic Registration недоступна у вашій інсталяції Schoology, вам потрібно буде налаштувати інтеграцію вручну, використовуючи ці кінцеві точки:
 
 - **OIDC Login URL**: `https://fastcomments.com/lti/v1p3/login`
 - **Target Link URL**: `https://fastcomments.com/lti/v1p3/launch`
 - **Public Keyset URL (JWKS)**: `https://fastcomments.com/lti/v1p3/jwks`
 - **Redirect URLs**: `https://fastcomments.com/lti/v1p3/launch`
 
-Після того як Schoology надасть вам Client ID та Deployment ID, зв’яжіться зі службою підтримки FastComments, щоб зареєструвати конфігурацію у вашому tenant.
+Після того як Schoology надасть вам Client ID і Deployment ID, зв’яжіться зі службою підтримки FastComments, щоб зареєструвати конфігурацію на вашому тенанті.
 
-#### Інші платформи LTI 1.3
+#### Other LTI 1.3 Platforms
 
-Будь-яка LMS, яка дотримується специфікації IMS LTI 1.3 Advantage, повинна працювати з тією ж URL-адресою реєстрації. Шукайте налаштування з позначенням "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint" або подібне.
+Будь-яка LMS, яка дотримується специфікації IMS LTI 1.3 Advantage, повинна працювати з тим же URL реєстрації (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">отримайте його тут</a>). Шукайте налаштування з позначенням "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint" або подібне.
 
-Якщо ваша платформа підтримує лише ручне налаштування LTI 1.3, використовуйте чотири кінцеві точки, наведені в розділі Schoology вище, і зв'яжіться зі службою підтримки для завершення.
----
+Якщо ваша платформа підтримує лише ручне налаштування LTI 1.3, використовуйте ті самі чотири кінцеві точки, перелічені в розділі Schoology вище, і зв’яжіться зі службою підтримки для завершення налаштування.

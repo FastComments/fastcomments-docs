@@ -1,24 +1,26 @@
+**Uporabljate Moodle?** Prav tako izdajamo namenski Moodle vtičnik za FastComments z bolj tesno integracijo kot LTI 1.3 (sprožilci sinhronizacije ocen, poglobljeno poročanje o dejavnostih, nativni uporabniški vmesnik za nastavitve Moodla). Oglejte si <a href="/guide-installation-moodle.html" target="_blank">navodila za namestitev Moodle vtičnika</a>. Spodnji postopek LTI 1.3 je prava izbira, če želite eno registracijo, ki pokriva tudi druge LMS-e, ali če vaš skrbnik Moodla ne bo namestil vtičnikov tretjih oseb.
+
 Moodle 4.0+ podpira dinamično registracijo LTI 1.3 prek vtičnika External Tool.
 
-#### Open the Tool Management Screen
+#### Odprite zaslon za upravljanje orodij
 
 1. Prijavite se v Moodle kot skrbnik spletnega mesta.
-2. Pojdite na **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools**.
+2. Pojdite na **Administracija spletnega mesta** > **Vtičniki** > **Moduli dejavnosti** > **External tool** > **Upravljaj orodja**.
 
-#### Paste the URL
+#### Prilepite URL
 
-Videli boste kartico z oznako **Tool URL**. Prilepite FastComments registracijski URL v besedilno polje in kliknite **Add LTI Advantage**.
+Videli boste kartico z oznako **URL orodja**. Prilepite URL za registracijo FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">dobite ga tukaj</a>) v besedilno polje in kliknite **Add LTI Advantage**.
 
-Moodle odpre zaslon za registracijo, ki prikazuje identiteto orodja in dovoljenja, ki jih zahteva. Preglejte jih in kliknite **Activate** (ali **Register**, odvisno od različice Moodla).
+Moodle odpre zaslon za registracijo, ki prikazuje identiteto orodja in dovoljenja, ki jih zahteva. Preverite in kliknite **Aktiviraj** (ali **Registriraj**, odvisno od različice Moodla).
 
-Ko je registracija končana, se pojavna okno zapre; novo orodje FastComments se prikaže na seznamu **Tools** s statusom **Active**.
+Pojavno okno se zapre, ko je registracija zaključena; novo orodje FastComments se prikaže na seznamu **Orodja** z statusom **Aktivno**.
 
-#### Make It Available
+#### Omogočite
 
-Privzeto Moodle doda nova orodja na seznam "Course tools", vendar jih ne prikaže v izbirniku dejavnosti. Če želite FastComments narediti vidnega v celotnem tečaju:
+Privzeto Moodle doda nova orodja na seznam "Course tools", vendar jih ne prikaže v izbirniku dejavnosti. Če želite FastComments omogočiti za celoten predmet:
 
-1. Kliknite ikono zobnika na ploščici FastComments.
-2. Pod **Tool configuration usage** izberite **Show in activity chooser and as a preconfigured tool**.
+1. Kliknite ikono zobnika na kartici FastComments.
+2. Pod **Uporaba konfiguracije orodja**, izberite **Prikaži v izbirniku dejavnosti in kot vnaprej konfigurirano orodje**.
 3. Shrani.
 
-Inštruktorji lahko zdaj dodajo FastComments v katerikoli tečaj prek **Add an activity or resource** > **FastComments**.
+Učitelji lahko zdaj dodajo FastComments v kateri koli predmet preko **Dodaj dejavnost ali vir** > **FastComments**.

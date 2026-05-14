@@ -1,121 +1,121 @@
-דף זה מכסה את הוספת FastComments לקורס Brightspace לאחר שמנהל המערכת רשם את הכלי ויצר פריסה. אם הכלי עדיין לא נרשם, ראו תחילה את מדריך הרישום של D2L.
+עמוד זה מכסה הוספת FastComments לקורס ב‑Brightspace לאחר שמנהל רשם את הכלי ויצר פריסה. אם הכלי עדיין לא נרשם, עיין תחילה במדריך הרישום של D2L.
 
 <div class="screenshot white-bg">
-    <div class="title">FastComments embedded as a unit topic in Brightspace</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments running inside a Brightspace unit, showing threaded comments and an @-mention picker" />
+    <div class="title">FastComments מוטמע כנושא יחידה ב‑Brightspace</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments פועל בתוך יחידת Brightspace, מציג תגובות מקוננות ובורר אזכורים @ " />
 </div>
 
-Brightspace מספקת שתי חוויות יצירת תוכן: **Classic Content** ו-**New Content Experience** (נקראת גם **Lessons**). שתיהן מציעות את FastComments, אך נתיבי התפריטים שונים. כל קטע למטה מכסה את שתי האפשרויות כאשר הן שונות.
+Brightspace מספקת שתי חוויות עריכת תוכן: **תוכן קלאסי** ו**חוויית התוכן החדשה** (נקראת גם **Lessons**). שתי החוויות מאפשרות שימוש ב‑FastComments, אך מסלולי התפריטים שונים. כל סעיף למטה מתאר את שתי האפשרויות כשיש הבדלים.
 
-#### Locate the FastComments Tool
+#### איתור כלי FastComments
 
-כלי FastComments מופיע בשני מקומות בתוך עורך התוכן של הקורס:
+כלי FastComments מופיע בשני אזורים בתוך עורך התוכן של הקורס:
 
-1. ב-picker של הפעילויות, הנגיש מתוך כפתור **Add Existing** של מודול/יחידה (מוסמן כ-**Add Existing Activities** בגרסאות Brightspace ישנות יותר). בגרסאות הנוכחיות של Brightspace FastComments מופיע ישירות ב-picker; בגרסאות ישנות יותר הוא מקונן תחת תפריט משנה **External Learning Tools**. כל נתיב מוסיף את FastComments כנושא עצמאי.
-2. בדיאלוג **Insert Stuff** בתוך עורך ה-HTML, תחת **LTI Advantage**. זה משלב את FastComments בתוך נושא HTML באמצעות זרימת deep linking של LTI.
+1. ב‑activity picker, הנמצא דרך כפתור **הוספה של פריט קיים** של מודול/יחידה (בגרסאות ישנות של Brightspace התווית היא **Add Existing Activities**). בגרסאות עדכניות FastComments מופיע ישירות בבורר; בגרסאות ישנות הוא מקונן תחת תפריט משנה **External Learning Tools**. בכל אחת מהדרכים מוסיפים את FastComments כנושא עצמאי.
+2. בדיאלוג **Insert Stuff** שבתוך עורך ה‑HTML, תחת **LTI Advantage**. זה מאפשר להטמיע את FastComments במקביל בתוך נושא HTML באמצעות זרימת deep linking של LTI.
 
-אם FastComments לא מופיע באף picker, הפריסה (deployment) לא מאופשרת עבור יחידת הארגון (org unit) שמכילה את הקורס. בקשו ממנהל Brightspace לפתוח **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments**, לפתוח את הפריסה, ולהוסיף את יחידת הארגון של הקורס (או יחידת אב) תחת **Org Units**.
+אם FastComments לא מופיע באף אחד מהבוררים, הפריסה לא מופעלת ל‑org unit שמכיל את הקורס. בקש ממנהל ה‑Brightspace לפתוח **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > כלי FastComments > **View Deployments**, לפתוח את הפריסה ולהוסיף את יחידת הארגון של הקורס (או יחידת על) תחת **Org Units**.
 
-#### Add FastComments as a Topic in a Module
+#### הוספת FastComments כנושא במודול
 
-Classic Content:
+תוכן קלאסי:
 
-1. פתחו את הקורס ולחצו **Content** בסרגל הניווט.
-2. בחרו את המודול שיורכב ממנו הדיון (או צרו אחד דרך **Add a module**).
-3. לחצו **Add Existing** (Brightspace ישן: **Add Existing Activities** > **External Learning Tools**).
-4. ב-picker לחצו **FastComments**. Brightspace ייצור נושא במודול ויחזיר אתכם לתצוגת התוכן.
-5. לחצו על הנושא החדש. שנו את שמו למשהו מתאר כמו `FastComments Discussion` באמצעות עורך הכותרת הפנימי.
+1. פתח את הקורס ולחץ על **תוכן** בסרגל הניווט.
+2. בחר את המודול שצריך להכיל את הדיון (או צור אחד דרך **הוסף מודול**).
+3. לחץ **הוסף קיים** (Brightspace ישן: **Add Existing Activities** > **External Learning Tools**).
+4. בבורר, לחץ על **FastComments**. Brightspace יוצר נושא במודול ומחזיר אותך לתצוגת התוכן.
+5. לחץ על הנושא החדש. שנה את שמו למשהו תיאורי כמו `FastComments Discussion` באמצעות עורך הכותרת המובנה.
 
-New Content Experience (Lessons):
+חוויית התוכן החדשה (Lessons):
 
-1. פתחו את הקורס ולחצו **Content**.
-2. פתחו את היחידה והלקסון (lesson) שיורכב מהם הדיון.
-3. לחצו **Add** > **Existing Activity** ובחרו **FastComments** (Brightspace ישן: מקונן תחת **External Learning Tools**).
-4. הפעילות תתווסף ללקסון.
-5. לחצו על כותרת הפעילות כדי לשנות את שמה.
+1. פתח את הקורס ולחץ על **תוכן**.
+2. פתח את היחידה והשיעור שצריכים להכיל את הדיון.
+3. לחץ **הוסף** > **פעילות קיימת** ובחר **FastComments** (Brightspace ישן: מקונן תחת **External Learning Tools**).
+4. הפעילות מתווספת לשיעור.
+5. לחץ על כותרת הפעילות כדי לשנות את שמה.
 
-בפעם הראשונה שמשתמש (מרצה או סטודנט) פותח את הנושא, FastComments מאתחל את השרשור עבור אותו resource link. השרשור קשור ל-resource link ID, כך ששינוי שם או העברת הנושא לא ישנו את השרשור שנטען.
+בפעם הראשונה שמשתמש (מרצה או סטודנט) פותח את הנושא, FastComments מאתחלת את השרשור עבור אותו resource link. השרשור קשור ל‑resource link ID, כך שהחלפת שם או העברת הנושא לא תשנה את השרשור שנטען.
 
-#### Embed FastComments Inline in an HTML Topic
+#### הטמעת FastComments בתוך נושא HTML
 
-השתמשו בזרימה זו כאשר אתם רוצים שהתגובות יופיעו מתחת לקריאה, וידאו או תוכן אחר בתוך אותו דף נושא במקום כנושא נפרד.
+השתמש בזרימה זו כשאתה רוצה שהתגובות יופיעו מתחת לטקסט קריאה, וידאו או תוכן אחר באותו דף נושא ולא כנושא נפרד.
 
-1. פתחו או צרו נושא HTML במודול/לקסון.
-2. לחצו **Edit HTML** כדי לפתוח את עורך ה-HTML של Brightspace.
-3. מקמו את הסמן במקום שבו שרשור התגובות אמור להופיע.
-4. לחצו על כפתור **Insert Stuff** (אייקון פאזל בסרגל הכלים של העורך).
-5. בדיאלוג Insert Stuff גללו ל-**LTI Advantage** ולחצו **FastComments**.
-6. FastComments יפתח picker של deep linking. אשרו את המיקום (ההגדרות המבוררות עובדות עבור דיוני תוכן); לחצו **Insert** או **Continue**.
-7. Brightspace יחזור לעורך ה-HTML עם בלוק בעל מציין מקום המייצג את ה-launch של LTI. לחצו **Save and Close** על הנושא.
+1. פתח או צור נושא HTML במודול/שיעור.
+2. לחץ **ערוך HTML** כדי לפתוח את עורך ה‑HTML של Brightspace.
+3. מקם את הסמן במקום שבו שרשור התגובות צריך להופיע.
+4. לחץ על כפתור **Insert Stuff** (אייקון פאזל בסרגל הכלים של העורך).
+5. בדיאלוג Insert Stuff, גלול ל‑**LTI Advantage** ולחץ **FastComments**.
+6. FastComments פותח בורר deep linking. אשר את המיקום (ההגדרות כברירת מחדל מתאימות לדיוני תוכן); לחץ **Insert** או **Continue**.
+7. Brightspace חוזר לעורך ה‑HTML עם בלוק מציין מקום המייצג את ההפעלה של ה‑LTI. לחץ **שמור וסגור** על הנושא.
 
-כשהנושא נטען, Brightspace מחליף את מציין המקום ב-iframe שמבצע auto-launch ל-FastComments דרך LTI. סטודנטים יראו את שרשור הדיון באופן משולב בתוך הדף.
+כאשר הנושא נטען, Brightspace מחליף את המציין במקום ב‑iframe שמבצע הפעלה אוטומטית של FastComments דרך LTI. הסטודנטים רואים את שרשור הדיון בתוך הדף.
 
-נושא HTML אחד יכול להכיל מספר embed-ים של FastComments שנוצרו ב-deep link. לכל embed יש שרשור משלו כי לכל deep link נוצר resource link ID נפרד.
+נושא HTML אחד יכול להכיל מספר הטמעות deep-linked של FastComments. כל הטמעה מקבלת שרשור משלה כיוון שכל deep link מייצר resource link ID נפרד.
 
-#### Module Topic vs Inline Quicklink
+#### נושא מודול מול קישור מהיר מוטמע בדף
 
-בחרו בגישת ה-**module topic** כאשר:
+בחר בגישת **נושא במודול** כאשר:
 
-- הדיון הוא הפעילות העיקרית של הצעד במודול.
-- אתם רוצים שהנושא יופיע בטבלת התוכן של Brightspace, במעקב השלמה (completion tracking), וב-Class Progress.
+- הדיון הוא הפעילות העיקרית עבור השלב במודול.
+- אתה רוצה שהנושא יופיע בטבלת התוכן של Brightspace, במעקב ההשלמה וב‑Class Progress.
 
-בחרו בגישת ה-**inline embed** כאשר:
+בחר בגישת **הטמעה בתוך הדף** כאשר:
 
-- התגובות אמורות לשבת מתחת לתוכן אחר באותו דף.
-- אינכם רוצים פריט נפרד שניתן לעקוב אחריו להשלמה בטבלת התוכן.
+- התגובות צריכות להופיע מתחת לתוכן אחר באותו דף.
+- אינך רוצה פריט נפרד הניתן למעקב השלמה בטבלת התוכן.
 
-#### Visibility, Draft, and Release Conditions
+#### נראות, מצב טיוטה ותנאי שחרור
 
-נושא FastComments חדש גלוי לסטודנטים כברירת מחדל. כדי להסתירו בזמן ההגדרה:
+נושא FastComments חדש נראה לסטודנטים כברירת מחדל. כדי להסתיר אותו בזמן ההגדרה:
 
-1. בעורך התוכן לחצו על כותרת הנושא (Classic) או על תפריט שלוש הנקודות בפעילות (New Content Experience).
-2. קבעו סטטוס ל-**Draft** (Classic) או כבה את **Visibility** (New Content Experience).
+1. בעורך התוכן, לחץ על כותרת הנושא (תוכן קלאסי) או על תפריט שלוש הנקודות בפעילות (חוויית התוכן החדשה).
+2. הגדר סטטוס ל‑**טיוטה** (תוכן קלאסי) או כבה את **נראות** (חוויית התוכן החדשה).
 
-נושאי Draft אינם נראים לסטודנטים. מרצים ועוזרים (TAs) עדיין יראו אותם עם תגית "Draft".
+נושאי טיוטה אינם נראים לסטודנטים. מרצים ועוזרי הוראה עדיין רואים אותם עם תג "טיוטה".
 
-כדי להגביל את הנושא לקבוצה או חלק מסוים (section):
+כדי להגביל את הנושא לקבוצה או לסקשן ספציפי:
 
-1. פתחו את הנושא.
-2. לחצו על תפריט כותרת הנושא > **Edit Properties In-place** (Classic) או **Edit** > **Restrictions** (New Content Experience).
-3. תחת **Release Conditions**, לחצו **Create**.
-4. בחרו **Group enrollment** או **Section enrollment**, בחרו את הקבוצה/החלק ושמרו.
+1. פתח את הנושא.
+2. לחץ בתפריט כותרת הנושא > **ערוך מאפיינים במקום** (תוכן קלאסי) או **ערוך** > **מגבלות** (חוויית התוכן החדשה).
+3. תחת **תנאי שחרור**, לחץ **צור**.
+4. בחר **הרשמה לקבוצה** או **הרשמה לקטע**, בחר את הקבוצה/הקטע ושמור.
 
-תנאי שחרור מצטברים עם מיפוי התפקידים של FastComments עצמו. סטודנטים שאינם יכולים לראות את הנושא לא יקבלו LTI launch.
+תנאי שחרור מצטברים עם מיפוי התפקידים של FastComments. סטודנטים שאינם רואים את הנושא לא יקבלו הפעלת LTI.
 
-#### What Students See on First Launch
+#### מה הסטודנטים רואים בהפעלה הראשונה
 
-כאשר סטודנט לוחץ על הנושא (או טוען נושא HTML עם embed):
+כאשר סטודנט לוחץ על הנושא (או טוען נושא HTML עם הטמעה):
 
-1. Brightspace מבצע את ה-LTI 1.3 launch ברקע.
-2. FastComments מקבל את שם הסטודנט, אימייל, כתובת ה-avatar שלו ותפקיד ב-LMS, ומתחבר אותו אוטומטית. אין בקשת התחברות ל-FastComments.
-3. שרשור התגובות עבור אותו resource link מוצג בתוך ה-iframe של Brightspace.
+1. Brightspace מבצע את השיגור LTI 1.3 ברקע.
+2. FastComments מקבלת את שם הסטודנט, אימייל, כתובת URL לאוואטר ותפקיד ב‑LMS, ומתחברת אותו אוטומטית. אין דרישת התחברות ל‑FastComments.
+3. שרשור התגובות עבור אותו resource link מוצג בתוך ה‑iframe של Brightspace.
 
-מיפוי תפקידים בעת ה-launch:
+מיפוי תפקידים בזמן השיגור:
 
-- Brightspace `Administrator` הופך ל-FastComments **מנהל** עבור השרשור (כל הזכויות למודרציה, מחיקה, חסימה וגישה להגדרות).
-- Brightspace `Instructor` הופך ל-FastComments **מנחה** (הצמדה, הסתרה, מחיקה, חסימה).
-- כל שאר התפקידים (`Learner`, `TeachingAssistant`, וכו') הופכים ל-מגיבים רגילים.
+- Brightspace `Administrator` הופך ל‑FastComments **admin** עבור השרשור (גישה מלאה למתן פריטים, מחיקה, חסימה והגדרות).
+- Brightspace `Instructor` הופך ל‑FastComments **moderator** (נעיצה, הסתרה, מחיקה, חסימה).
+- כל שאר התפקידים (`Learner`, `TeachingAssistant`, וכו') הופכים למגיבים רגילים.
 
-תגובות משויכות לחשבון Brightspace של הסטודנט. אם הסטודנט משנה את שמו או את ה-avatar ב-Brightspace, ה-launch הבא יסנכרן את השינוי.
+תגובות מתויגות לחשבון ה‑Brightspace של הסטודנט. אם הסטודנט מעדכן את שמו או את האוואטר ב‑Brightspace, ההשקה הבאה של LTI מסנכרנת את השינוי.
 
-#### Iframe Height and Resize
+#### גובה ה‑Iframe ושינוי גודל
 
-FastComments משדר את ההודעה postMessage `org.imsglobal.lti.frameResize` בכל רינדור של השרשור ובשינויים בתוכן (תגובה חדשה, פתיחת תשובות). Brightspace מאזין להודעה זו ומכוונן את גובה ה-iframe כך שהשרשור לא ייחתך ולא יופיע פס גלילה פנימי.
+FastComments משדר את הודעת ה‑postMessage של `org.imsglobal.lti.frameResize` בכל רינדור של השרשור ובשינויים בתוכן (תגובה חדשה, פתיחת תשובות). Brightspace מאזין להודעה זו ומתאים את גובה ה‑iframe כדי שהשרשור לא יהיה גזור ולא יציג פס גלילה פנימי.
 
-אם ה-iframe נשאר בגובה קבוע וקצר:
+אם ה‑iframe נשאר בגובה קבוע וקצר:
 
-- ודאו שהקורס נטען דרך HTTPS. מאזין ה-postMessage של Brightspace דוחה iframes בתוכן מעורב (mixed-content).
-- ודאו שאף תוסף דפדפן אינו חוסם את ערוץ ה-postMessage.
-- עבור embeds inline בתוך נושא HTML, ה-HTML המקיף לא אמור לעטוף את ה-iframe במיכל בעל גובה קבוע. הסירו כל inline `style="height: ..."` מהאלמנט ההורי.
+- ודא שהקורס נטען דרך HTTPS. מאזין ה‑postMessage של Brightspace דוחה frames בתוכן מעורב.
+- ודא שאין תוסף דפדפן שחוסם את ערוץ ה‑postMessage.
+- להטמעות בתוך נושא HTML, ה‑HTML המקיף לא צריך לעטוף את ה‑iframe במיכל בגובה קבוע. הסר כל inline `style="height: ..."` מהרכיב ההורה.
 
-#### Brightspace-Specific Gotchas
+#### נקודות רגישות ספציפיות ל‑Brightspace
 
-**Tool not showing in the Add Existing picker.** הפריסה לא מאופשרת ל-unit של הקורס הזה. מנהל צריך להוסיף את יחידת הארגון (או יחידת אב) לרשימת **Org Units** של הפריסה. רישום הכלי לא מספיק; הפריסה קובעת אילו קורסים רואים את הכלי.
+**הכלי לא מופיע בבורר Add Existing.** הפריסה לא מופעלת עבור יחידת הארגון של הקורס. מנהל צריך להוסיף את יחידת הארגון (או יחידת על) לרשימת ה‑Org Units של הפריסה. רישום הכלי לבדו אינו מספיק; הפריסה קובעת אילו קורסים רואים את הכלי.
 
-**`deployment_id` mismatch on launch.** FastComments TOFU-pins את ה-`deployment_id` הראשון שהוא רואה עבור רישום. אם מנהל מוחק את הפריסה המקורית ויוצר פריסה חדשה, השקות מהפריסה החדשה נענשות בשגיאת חוסר התאמה של הפריסה. התיקון הוא לרשום מחדש את FastComments (ליצור URL רישום חדש ולהריץ Dynamic Registration שוב); רשומת התצורה הישנה תוחלף.
+**התאמת `deployment_id` משיכה בהשקה.** FastComments קושרת (TOFU) את ה‑`deployment_id` הראשון שהיא רואה עבור רישום. אם מנהל מוחק את הפריסה המקורית ויוצר חדשה, השיגורים מהפריסה החדשה נדחים עם שגיאת חוסר התאמה של פריסה. התיקון הוא לרשום את FastComments מחדש (לייצר URL רישום חדש (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">השג אותו כאן</a>) ולהריץ Dynamic Registration שוב); רשומת התצורה הישנה מוחלפת.
 
-**Tool launches but shows "Invalid LTI launch".** הקורס נמצא במבנה tenant/ארגון שונה ממה שהפריסה מכסה, או שהפריסה נכבתה לאחר הרישום. בדקו שוב **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > מתג **Enabled** וודאו את רשימת יחידות הארגון של הפריסה.
+**הכלי נטען אך מציג "Invalid LTI launch".** הקורס נמצא במבנה טננט/ארגון שונה ממה שהפריסה מכסה, או שהפריסה הושבתה לאחר הרישום. בדוק שוב **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > מתג **Enabled** ואת רשימת יחידות הארגון של הפריסה.
 
-**Names and roles missing inside FastComments.** Brightspace שולחת שיגורי LTI עם טענות Names and Role Provisioning Services (NRPS). אם הקורס שודרג מקישור LTI 1.1 ישן, ה-launch חסר את טענות ה-`name` ו-`email`. הוסיפו מחדש את נושא FastComments דרך **Add Existing** (אל תנווטו את הקישור הישן) כדי שה-launch ישתמש ב-LTI 1.3.
+**שמות ותפקידים חסרים בתוך FastComments.** Brightspace שולחת השקות LTI עם טענות NRPS (Names and Role Provisioning Services). אם קורס שודרג מקישור LTI 1.1 ישן, בהשקה עשויים להיעדר טענות `name` ו‑`email`. הוסף מחדש את נושא FastComments דרך **הוספה של פריט קיים** (אל תבצע המרה של הקישור הישן) כדי שההשקה תשתמש ב‑LTI 1.3.
 
-**Embed shows a login screen instead of auto-SSO.** נושא ה-HTML הוכנס כ-iframe פשוט שמצביע ל-FastComments במקום דרך **Insert Stuff** > **LTI Advantage**. iframes פשוטים מדלגים על ה-LTI launch ומביאים משתמשים לדף הציבורי של FastComments. מחקו את ה-iframe והכניסו מחדש דרך זרימת Insert Stuff.
+**ההטמעה מציגה מסך התחברות במקום SSO אוטומטי.** נושא ה‑HTML הוכנס כ‑<iframe> רגיל שמצביע על FastComments במקום דרך **Insert Stuff** > **LTI Advantage**. iframes רגילים מדלגים על השיגור של LTI ומובילים משתמשים לעמוד הציבורי של FastComments. מחק את ה‑iframe והוסף מחדש דרך זרימת Insert Stuff.

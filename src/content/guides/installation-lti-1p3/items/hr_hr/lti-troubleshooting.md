@@ -1,34 +1,33 @@
----
-#### "Registracijski token nije pronađen, istekao je ili je već upotrijebljen"
+#### "Registracijski token nije pronađen, istekao ili je već upotrijebljen"
 
-Token u vašem URL‑u za registraciju vrijedi 30 minuta i može se upotrijebiti samo jednom. Ako je vaš LMS trebao više vremena, ili je registracija ponovno pokušana nakon što je već uspjela, token će biti odbijen. Generirajte novi URL na stranici konfiguracije FastComments LTI 1.3 i počnite ispočetka.
+Token u vašem registracijskom URL-u (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">preuzmite ga ovdje</a>) vrijedi 30 minuta i može se koristiti samo jednom. Ako je vaš LMS trebao više vremena od toga, ili je registracija pokušana ponovno nakon uspjeha, token će biti odbijen. Generirajte novi URL na FastComments LTI 1.3 Configuration stranici i počnite ispočetka.
 
-#### "Platforma je odbila registraciju"
+#### "Platform rejected registration"
 
-Vaš LMS je odbio postupak rukovanja registracijom. Najčešći uzroci:
+Vaš LMS je odbio registracijski handshake. Najčešći uzroci:
 
-- **Alat je već registriran s istim imenom klijenta.** Neke platforme (osobito D2L) odbijaju drugu registraciju "FastComments" dok se prethodna ne obriše. Uklonite stari alat u svom LMS‑u, a zatim pokušajte ponovno.
-- **Pogrešno polje u LMS‑u.** Provjerite jeste li zalijepili URL u polje **registration / tool initiation registration endpoint**, a ne u polje launch URL ili login URL.
-- **LMS zapravo ne podržava Dynamic Registration.** Starije verzije Moodlea i Blackboarda oglašavaju LTI 1.3, ali dopuštaju samo ručnu konfiguraciju. Pogledajte dokumentaciju svoje platforme.
+- **Tool already registered with the same client name.** Neke platforme (posebice D2L) odbijaju drugu registraciju "FastComments" dok prethodna nije izbrisana. Uklonite stari alat u vašem LMS-u, pa pokušajte ponovno.
+- **Wrong field in the LMS.** Uvjerite se da ste zalijepili URL u polje **registration / tool initiation registration endpoint**, a ne u polje launch URL ili login URL.
+- **The LMS doesn't actually support Dynamic Registration.** Starije verzije Moodla i Blackboarda oglašavaju LTI 1.3, ali dopuštaju samo ručnu konfiguraciju. Provjerite dokumentaciju vaše platforme.
 
-#### "Neuspjelo dohvaćanje konfiguracije platforme"
+#### "Failed to fetch platform configuration"
 
-FastComments nije uspio pročitati openid-configuration dokument vašeg LMS‑a. To je rijetko i obično znači da je LMS dao nepravilno oblikovan ili nedostupan discovery URL. Obratite se podršci vašeg LMS‑a.
+FastComments nije mogao pročitati openid-configuration dokument vašeg LMS-a. To je rijetko i obično znači da je LMS dao neispravan ili nedostupan discovery URL. Obratite se podršci vašeg LMS-a.
 
 #### Launch shows "Configuration not found"
 
-Ili je konfiguracija u FastComments izbrisana, ili je pokretanje stiglo iz `iss`/`client_id` para koji ne prepoznajemo. Ako ste izbrisali i ponovno registrirali, uputite svoj LMS da ukloni i ponovo doda FastComments alat kako bi dobio novi client_id.
+Ili je konfiguracija u FastComments izbrisana, ili je pokretanje došlo s `iss`/`client_id` parom kojeg ne prepoznajemo. Ako ste izbrisali i ponovno registrirali, uputite vaš LMS da ukloni i ponovo doda alat FastComments kako bi dobio novi client_id.
 
 #### Launch shows "Deployment not registered"
 
-Pokrenuli ste FastComments iz Brightspace/Moodle/Blackboard deploymenta različitog od onog u kojem je prvi put pokrenut. FastComments pri prvom pokretanju „pin‑a” `deployment_id` kao sigurnosnu provjeru. Da biste dodali novi deployment pod istim clientom, kontaktirajte podršku — mi ćemo dodati deployment ID u konfiguraciju.
+Pokrenuli ste FastComments iz Brightspace/Moodle/Blackboard deploymenta različitog od onog u kojem je prvobitno pokrenut. FastComments "pins" the `deployment_id` on first launch as a security check. Za dodavanje nove implementacije pod istim klijentom, kontaktirajte podršku — mi ćemo dodati deployment ID u konfiguraciju.
 
 #### Launch shows "Unsupported message_type"
 
-LMS je poslao LTI poruku koju FastComments ne obrađuje (npr. `LtiSubmissionReviewRequest`). FastComments podržava samo standardne resource-link launch i deep-linking tokove. Obratite nam se ako trebate dodati određeni tip poruke.
+LMS je poslao LTI poruku koju FastComments ne obrađuje (npr. `LtiSubmissionReviewRequest`). FastComments podržava samo standardno resource-link pokretanje i deep-linking tokove. Obratite nam se ako trebate da se doda određeni tip poruke.
 
-#### Iframe se ne mijenja veličina
+#### Iframe doesn't resize
 
-Većina LMS‑ova automatski prilagođava veličinu LTI iframeova. Ako vaš to ne radi, provjerite dopuštaju li postavke pokretanja LMS‑a alatu slanje postMessage događaja prema roditeljskom okviru. FastComments emitira i Canvas‑stil (`lti.frameResize`) i IMS‑spec (`org.imsglobal.lti.frameResize`) poruke za promjenu veličine.
+Većina LMS-a automatski prilagođava veličinu LTI iframeova. Ako to vaš ne radi, provjerite dopuštaju li postavke pokretanja LMS-a da alat šalje postMessage događaje roditeljskom okviru. FastComments emitira resize poruke u oba formata: Canvas-style (`lti.frameResize`) i IMS-spec (`org.imsglobal.lti.frameResize`).
 
 ---

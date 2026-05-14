@@ -1,7 +1,7 @@
 {
   "name": "Installation du LMS (LTI 1.3)",
   "pageHeader": "Ajouter des commentaires à votre LMS via LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Tarification",

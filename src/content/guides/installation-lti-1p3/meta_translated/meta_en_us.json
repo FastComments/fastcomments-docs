@@ -1,7 +1,7 @@
 {
   "name": "LMS Installation (LTI 1.3)",
   "pageHeader": "Add Comments to Your LMS via LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Pricing",

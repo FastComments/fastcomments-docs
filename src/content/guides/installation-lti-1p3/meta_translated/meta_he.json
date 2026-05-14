@@ -1,7 +1,7 @@
 {
   "name": "התקנת LMS (LTI 1.3)",
-  "pageHeader": "הוסף הערות ל-LMS שלך באמצעות LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "הוספת תגובות ל-LMS שלך באמצעות LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "תמחור",
@@ -19,29 +19,29 @@
       "subCat": "תקציר"
     },
     {
-      "name": "יצירת כתובת רישום",
+      "name": "צור כתובת URL לרישום",
       "file": "lti-generate-url.md",
       "subCat": "הגדרת FastComments"
     },
     {
-      "name": "הרשמה ב-D2L Brightspace",
+      "name": "רישום ב-D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "הרשמת הכלי"
+      "subCat": "רישום הכלי"
     },
     {
-      "name": "הרשמה ב-Moodle",
+      "name": "רישום ב-Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "הרשמת הכלי"
+      "subCat": "רישום הכלי"
     },
     {
-      "name": "הרשמה ב-Blackboard Learn",
+      "name": "רישום ב-Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "הרשמת הכלי"
+      "subCat": "רישום הכלי"
     },
     {
-      "name": "הרשמה ב-Sakai או Schoology",
+      "name": "רישום ב-Sakai או Schoology",
       "file": "lti-register-other.md",
-      "subCat": "הרשמת הכלי"
+      "subCat": "רישום הכלי"
     },
     {
       "name": "הוספה לתוכן הקורס ב-D2L",

@@ -1,24 +1,26 @@
-Moodle 4.0+ podržava LTI 1.3 dinamičku registraciju putem dodatka Spoljni alat.
+**Користите Moodle?** Такође објављујемо посебан Moodle додатак за FastComments са чвршћом интеграцијом него LTI 1.3 (hook-ови за синхронизацију оцена, дубље извештавање активности, нативни кориснички интерфејс за подешавања у Moodle-у). Погледајте <a href="/guide-installation-moodle.html" target="_blank">водич за инсталацију Moodle додатка</a>. LTI 1.3 ток приказан испод је прави избор ако желите једну регистрацију која покрива и друге LMS-ове, или ако ваш Moodle администратор неће инсталирати додатке трећих страна.
 
-#### Otvorite ekran za upravljanje alatima
+Moodle 4.0+ подржава LTI 1.3 Dynamic Registration преко додатка External Tool.
 
-1. Prijavite se u Moodle kao administrator sajta.
-2. Navigirajte do **Administracija sajta** > **Dodaci** > **Moduli aktivnosti** > **Spoljni alat** > **Upravljanje alatima**.
+#### Отворите екран за управљање алаткама
 
-#### Zalijepite URL
+1. Пријавите се у Moodle као администратор сајта.
+2. Идите на **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools**.
 
-Videćete karticu označenu **Tool URL**. Zalijepite adresu za registraciju FastComments u polje za tekst i kliknite **Add LTI Advantage**.
+#### Налепите URL
 
-Moodle otvara ekran za registraciju koji prikazuje identitet alata i dozvole koje traži. Pregledajte i kliknite **Activate** (ili **Register**, zavisno od verzije Moodla).
+Видећете картицу означену **Tool URL**. Налепите FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">добијте га овде</a>) у поље за текст и кликните **Add LTI Advantage**.
 
-Iskakajući prozor se zatvara kada se registracija završi; novi FastComments alat pojavljuje se na listi **Alati** sa statusom **Aktivan**.
+Moodle отвори екран за регистрацију који приказује идентитет алата и дозволе које тражи. Прегледајте и кликните **Activate** (или **Register**, у зависности од верзије Moodle-а).
 
-#### Učinite ga dostupnim
+Поп-ап се затвара када се регистрација заврши; нови FastComments алат се појављује у листи **Tools** са статусом **Active**.
 
-Po defaultu Moodle dodaje nove alate na listu **Alati kursa**, ali ih ne prikazuje u biraču aktivnosti. Da biste omogućili FastComments na nivou kursa:
+#### Учините га доступним
 
-1. Kliknite ikonu zupčanika na FastComments pločici.
-2. U okviru **Korišćenje konfiguracije alata**, izaberite **Prikaži u biraču aktivnosti i kao unaprijed konfigurisan alat**.
-3. Sačuvaj.
+По подразумевaњу Moodle додаје нове алатке у листу "Course tools" али их не приказује у изборнику активности. Да бисте омогућили FastComments широм курса:
 
-Nastavnici sada mogu dodati FastComments u bilo koji kurs preko **Dodaj aktivnost ili resurs** > **FastComments**.
+1. Кликните икону зупчаника на FastComments плочици.
+2. Под **Tool configuration usage**, одаберите **Show in activity chooser and as a preconfigured tool**.
+3. Сачувајте.
+
+Наставници сада могу додати FastComments у било који курс преко **Add an activity or resource** > **FastComments**.

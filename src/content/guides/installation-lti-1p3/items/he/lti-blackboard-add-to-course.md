@@ -1,101 +1,101 @@
-Once an administrator has registered FastComments as an LTI 1.3 Advantage tool and approved the institution policies, instructors add it to courses through the standard Blackboard placement points. The exact steps differ between Ultra Course View and Original Course View, so both are covered below.
+ברגע שמנהל רשם את FastComments ככלי LTI 1.3 Advantage ואישר את מדיניות המוסד, מרצים מוסיפים אותו לקורסים דרך נקודות המיקום הסטנדרטיות ב-Blackboard. השלבים המדויקים שונים בין Ultra Course View ו-Original Course View, לכן שניהם מכוסים למטה.
 
 #### Ultra Course View
 
-Ultra Course View is the default in Blackboard Learn SaaS as of 2026.
+Ultra Course View הוא ברירת המחדל ב-Blackboard Learn SaaS מאז 2026.
 
-1. Open the course and go to the **Course Content** page.
-2. Hover or tap where you want the comment thread to land in the outline and click the purple **+** (Add content) button.
-3. Choose **Content Market**. The Content Market panel lists every approved LTI tool and Building Block placement for your institution.
-4. Find the **FastComments** tile and click it. Blackboard creates a content item at the position where you opened the **+** menu.
-5. The item lands in the outline as a "Visible to students" entry by default for instructors who have **Hide from students** off as their personal default. If your default is **Hidden**, the item is created hidden and you flip the visibility selector on the item row when you're ready.
-6. To rename the item, click the title in the outline and type a new label. The title students see in the outline is independent of the FastComments thread identifier, so renaming is safe at any time.
+1. פתח את הקורס ועבור לדף **Course Content**.
+2. הרחף או הקש במקום שבו ברצונך שהשרשור של ההערות יופיע במבנה ולחץ על הכפתור הסגול **+** (Add content).
+3. בחר **Content Market**. פאנל ה-Content Market מציג את כל כלי ה-LTI המאושרים ואת מיקומי ה-Building Block עבור המוסד שלך.
+4. מצא את ה-Tile של **FastComments** ולחץ עליו. Blackboard יוצר פריט תוכן במיקום שבו פתחת את התפריט **+**.
+5. הפריט נוצר במבנה כברירת מחדל ככניסה "Visible to students" עבור מרצים שההגדרה האישית שלהם היא **Hide from students** כבוי. אם ברירת המחדל שלך היא **Hidden**, הפריט נוצר כמוסתר ותוכל להפוך את בורר הנראות בשורת הפריט כשהיה מתאים.
+6. כדי לשנות את שם הפריט, לחץ על הכותרת במבנה והקלד תגית חדשה. הכותרת שהסטודנטים רואים במבנה היא בלתי תלויה במזהה השרשור של FastComments, לכן שינוי שם הוא בטוח בכל עת.
 
-If you don't see **Content Market** as an option, your institution has the placement hidden. You also reach the same picker through **More tools** in the same **+** menu under the **LTI Tools** group.
+אם אינך רואה את **Content Market** כאפשרות, המוסד חסם את המיקום. ניתן גם להגיע לאותו בורר דרך **More tools** באותו תפריט **+** תחת קבוצת **LTI Tools**.
 
 #### Original Course View
 
-Original Course View is still supported in Learn SaaS and remains the primary experience for self-hosted Learn 9.1 sites on the Q4 2024 CU release line.
+Original Course View עדיין נתמך ב-Learn SaaS ונשאר החוויה העיקרית עבור אתרי Learn 9.1 self-hosted בשורת ה-CU של Q4 2024.
 
-1. Open the course and enter a **Content Area** (for example, the default **Information** or **Content** area in the course menu).
-2. Turn **Edit Mode** on with the toggle in the top-right of the page.
-3. Click **Build Content** in the action bar.
-4. Under the **Learning Tools** submenu, click **FastComments**. The Learning Tools submenu is populated from LTI 1.3 tool placements after an administrator registers the tool. If you don't see it, see the gotchas section below.
-5. On the **Create FastComments** form, set:
-   - **Name**: the label students see in the content area.
-   - **Description**: optional text shown above the embedded thread.
-   - **Permit Users to View this Content**: Yes/No availability toggle.
-   - **Track Number of Views**: enable if you want Blackboard's per-item view statistics. FastComments runs its own analytics independently.
-   - **Date and Time Restrictions**: optional **Display After** / **Display Until** windows.
-6. Submit. The tool appears as a clickable item in the content area.
+1. פתח את הקורס והיכנס ל-**Content Area** (לדוגמה, אזור ברירת המחדל **Information** או **Content** בתפריט הקורס).
+2. הפעל את **Edit Mode** באמצעות המתג בפינה העליונה-ימנית של הדף.
+3. לחץ על **Build Content** בסרגל הפעולות.
+4. תחת תפריט המשנה **Learning Tools**, לחץ על **FastComments**. תפריט המשנה של Learning Tools מתמלא ממיקומי כלי LTI 1.3 אחרי שמנהל רשם את הכלי. אם אינך רואה אותו, ראה את סעיף ה-gotchas למטה.
+5. בטופס **Create FastComments**, הגדר:
+   - **Name**: התווית שהסטודנטים רואים באזור התוכן.
+   - **Description**: טקסט אופציונלי שיוצג מעל השרשור המוטמע.
+   - **Permit Users to View this Content**: מתג זמינות כן/לא.
+   - **Track Number of Views**: הפעל אם ברצונך את סטטיסטיקת הצפיות לפריט של Blackboard. ל-FastComments יש אנליטיקס משלו שפועלים באופן עצמאי.
+   - **Date and Time Restrictions**: חלונות אופציונליים **Display After** / **Display Until**.
+6. שלח. הכלי מופיע כפריט קליקבילי באזור התוכן.
 
 #### Embedding Inside an Item or Document
 
-In both course views, instructors embed FastComments inline inside the body of an Item, Document, or any rich-text field through the Content Editor's LTI Advantage button.
+בשתי תצורות הקורס, מרצים מטמיעים את FastComments בקו בתוך גוף של Item, Document, או כל שדה טקסט עשיר דרך כפתור ה-LTI Advantage בעורך התוכן.
 
 Ultra Course View:
 
-1. Create or edit a **Document**.
-2. Click **Add content** inside the document body where you want the thread to appear.
-3. In the editor toolbar, open the **Insert content** menu and click **Content Market** (the LTI Advantage / Deep Linking entry point).
-4. Pick **FastComments**. FastComments returns a deep-link payload and Blackboard inserts an embedded block in the document body at the cursor position.
-5. Save the document. Students see the thread rendered inline as they scroll past it.
+1. צור או ערוך **Document**.
+2. לחץ על **Add content** בתוך גוף המסמך במקום שבו תרצה שהשרשור יופיע.
+3. בסרגל הכלים של העורך, פתח את התפריט **Insert content** ולחץ על **Content Market** (נקודת הכניסה של LTI Advantage / Deep Linking).
+4. בחר **FastComments**. FastComments מחזיר payload של deep-link ו-Blackboard מכניס בלוק מוטמע בגוף המסמך במיקום הסמן.
+5. שמור את המסמך. הסטודנטים יראו את השרשור מוטמע כשהם גוללים אליו.
 
 Original Course View:
 
-1. Edit any item with a rich-text body.
-2. In the Content Editor toolbar, click the **Add Content** plus icon and choose **Content Market** (labeled **Add Content from External Tool** in older Q4 2024 CUs).
-3. Pick **FastComments**. The editor inserts a placeholder block referencing the deep-linked resource.
-4. Submit the item.
+1. ערוך כל פריט שיש לו גוף טקסט עשיר.
+2. בסרגל הכלים של Content Editor, לחץ על סמל ה-Plus של **Add Content** ובחר **Content Market** (מתויג **Add Content from External Tool** ב-CUs ישנים של Q4 2024).
+3. בחר **FastComments**. העורך מכניס בלוק מייצג שמפנה למשאב ה-deep-linked.
+4. שלח את הפריט.
 
-Each deep-link embed produces its own FastComments thread, so an Item with two embedded FastComments blocks has two independent comment streams.
+כל הטמעת deep-link מייצרת שרשור FastComments עצמאי, כך שפריט עם שני בלוקי FastComments מוטמעים יכיל שני סטרימים של הערות נפרדים.
 
 #### Visibility, Release Conditions, and Group Restrictions
 
-FastComments content items behave like any other Blackboard content item for the access control rules layered on top of them.
+פריטי תוכן של FastComments מתנהגים כמו כל פריט תוכן אחר ב-Blackboard מבחינת חוקי בקרת גישה שמונחים עליהם.
 
-- Ultra: click the visibility selector on the row (**Visible to students**, **Hidden from students**, **Conditional availability**). Conditional availability supports date/time windows, performance rules against gradebook items, and member rules against course groups.
-- Original: open the item's context menu and choose **Adaptive Release** or **Adaptive Release: Advanced** to gate the tool by date, membership, grade, or review status. Use **Set Group Availability** on the item to restrict to specific course groups.
+- Ultra: לחץ על בורר הנראות בשורה (**Visible to students**, **Hidden from students**, **Conditional availability**). זמיןויות מותנות תומכות בחלונות תאריכים/זמנים, כללי ביצועים מול פריטי ציון, וכללי חברות כנגד קבוצות קורס.
+- Original: פתח את תפריט ההקשר של הפריט ובחר **Adaptive Release** או **Adaptive Release: Advanced** כדי להגביל את הכלי לפי תאריך, חברות, ציון, או מצב סקירה. השתמש ב-**Set Group Availability** על הפריט כדי להגביל לקבוצות קורס ספציפיות.
 
-FastComments respects whatever Blackboard's gate decides. If Blackboard hides the item from a student, the LTI launch never happens for that student and they don't appear in the moderator view.
+FastComments מכבד את מה שהשער של Blackboard קובע. אם Blackboard מסתיר את הפריט מתלמיד, ההשקה של ה-LTI לעולם לא מתבצעת בשביל אותו תלמיד והם לא מופיעים בממשק המנהלים.
 
 #### Gradebook Behavior
 
-FastComments does not report grades back over LTI Advantage Assignment and Grade Services. No grade column is auto-created for FastComments content items.
+FastComments איננו מדווח ציונים חזרה דרך LTI Advantage Assignment and Grade Services. לא נוצרת עמודת ציון אוטומטית עבור פריטי תוכן של FastComments.
 
-If your Blackboard tenant is configured to auto-create a gradebook column for every new content item regardless of grading metadata, an empty column appears anyway. To hide it:
+אם השוכר (tenant) של Blackboard שלך מוגדר ליצור אוטומטית עמודת ציון עבור כל פריט תוכן חדש ללא קשר למטה-נתוני הניקוד, תופיע עמודה ריקה בכל זאת. כדי להסתיר אותה:
 
-- Ultra: open the **Gradebook**, click the column header, choose **Edit**, and turn off **Show to students** plus **Include in calculations**. Or use **Delete** if your institution permits column deletion for ungraded items.
-- Original: open the **Grade Center**, click the column's chevron, choose **Hide from Users (on/off)**, and optionally **Hide from Instructor View** under **Column Organization**.
+- Ultra: פתח את ה-**Gradebook**, לחץ על כותרת העמודה, בחר **Edit**, וכבה את **Show to students** בנוסף ל-**Include in calculations**. או השתמש ב-**Delete** אם המוסד שלך מאפשר מחיקה של עמודות לפריטים ללא דירוג.
+- Original: פתח את ה-**Grade Center**, לחץ על ה-chevron של העמודה, בחר **Hide from Users (on/off)**, ואופציונלית **Hide from Instructor View** תחת **Column Organization**.
 
 #### What Students See
 
-When a student opens the FastComments item or scrolls to an embedded block:
+כאשר סטודנט פותח את פריט FastComments או גולל לבלוק מוטמע:
 
-1. Blackboard launches the LTI 1.3 message to FastComments. The student is signed in via SSO using their Blackboard identity (name, email, avatar, role) without seeing a login form.
-2. The comment thread renders in the iframe. Threading, replies, mentions, and reactions are all available based on the comment widget settings configured in FastComments.
-3. Their comments are attributed to their Blackboard account. If the student edits their name or photo in Blackboard later, the next launch updates the FastComments profile.
+1. Blackboard משגר את הודעת ה-LTI 1.3 ל-FastComments. הסטודנט נכנס דרך SSO באמצעות זהות ה-Blackboard שלו (שם, אימייל, אוואטר, תפקיד) מבלי לראות טופס כניסה.
+2. שרשור ההערות מצויר ב-iframe. תיוג שרשורים, תגובות, אזכורים, וריאקציות זמינים בהתאם להגדרות ווידג'ט ההערות המוגדרות ב-FastComments.
+3. ההערות שלהם משויכות לחשבון ה-Blackboard שלהם. אם הסטודנט מעדכן את שמו או התמונה ב-Blackboard מאוחר יותר, ההשקה הבאה תעדכן את הפרופיל ב-FastComments.
 
-Role mapping from Blackboard to FastComments:
+מיפוי תפקידים מ-Blackboard ל-FastComments:
 
-- **System Administrator** and **Course Builder** map to FastComments **admin**.
-- **Instructor** and **Teaching Assistant** map to FastComments **moderator**.
-- **Student**, **Guest**, and **Observer** map to FastComments **commenter**.
+- **System Administrator** ו-**Course Builder** ממופים ל-FastComments כ-**admin**.
+- **Instructor** ו-**Teaching Assistant** ממופים ל-FastComments כ-**moderator**.
+- **Student**, **Guest**, ו-**Observer** ממופים ל-FastComments כ-**commenter**.
 
-Moderators see moderation controls (pin, hide, ban, delete) inline on every comment in the thread.
+מנחים רואים את כלי המודרציה (הצמדה, הסתרה, חסימה, מחיקה) בשורה על כל תגובה בשרשור.
 
 #### Thread Scoping
 
-FastComments scopes each thread by **(Blackboard host, course ID, resource link ID)**. Two FastComments items in the same course produce two threads. The same item copied across two course shells (for example, through course copy) produces two threads, because Blackboard issues a fresh resource link ID during the copy. To keep a shared thread across course copies, use Deep Linking with an explicit thread URN configured in FastComments before launching the copy.
+FastComments מגדיר את ההיקף של כל שרשור על פי **(Blackboard host, course ID, resource link ID)**. שני פריטי FastComments באותו קורס מייצרים שני שרשורים. אותו פריט המועתק דרך שתי מעטפות קורס (למשל, דרך העתקת קורס) מייצר שני שרשורים, מכיוון ש-Blackboard מוציאה מזהה resource link חדש במהלך ההעתקה. כדי לשמור על שרשור משותף בחצאי קורסים שעוברים העתקה, השתמש ב-Deep Linking עם URN של שרשור מפורש המוגדר ב-FastComments לפני הרצת ההעתקה.
 
 #### Blackboard-Specific Gotchas
 
-**FastComments tile missing from the Build Content menu (Original) or Content Market (Ultra).** The administrator approved the tool but left an institution policy blocking the relevant placement. Go to **Administrator Panel** > **Integrations** > **LTI Tool Providers**, edit the FastComments entry, and confirm both **Course Content Tool** (Original) and **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) placements are enabled. Save and refresh the course page.
+**FastComments tile חסר מתפריט Build Content (Original) או Content Market (Ultra).** המנהל אישר את הכלי אך השאיר מדיניות מוסד שחוסמת את המיקום הרלוונטי. עבור אל **Administrator Panel** > **Integrations** > **LTI Tool Providers**, ערוך את הערך של FastComments, ואשר ששני המיקומים **Course Content Tool** (Original) ו-**Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) מופעלים. שמור ורענן את דף הקורס.
 
-**"Tool not configured for this context" or "Tool is not deployed" error on launch.** The deployment scope registered during dynamic registration doesn't match the institution context the course belongs to. In Blackboard's tool provider entry, verify the **Deployment ID** matches what FastComments shows on its LTI 1.3 Configuration page for this tenant. If they differ, delete the placement and re-run dynamic registration from a fresh registration URL.
+**שגיאה "Tool not configured for this context" או "Tool is not deployed" בהשקה.** היקף ההטמעה שנרשם במהלך הרישום הדינמי אינו תואם להקשר המוסדי שהקורס שייך אליו. ברשומת ספק הכלי של Blackboard, אמת שה-**Deployment ID** תואם למה ש-FastComments מציג בדף ה-LTI 1.3 Configuration עבור ה-tenant הזה. אם הם שונים, מחק את המיקום והריץ מחדש רישום דינמי מתוך כתובת רישום חדשה (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">קבל/י אותו כאן</a>).
 
-**Iframe height looks fixed or content gets cut off.** Some Blackboard tenants ship with a strict Content Security Policy that blocks the default LTI iframe-resize postMessage. FastComments emits both the Canvas-style `lti.frameResize` message and the IMS spec-form `org.imsglobal.lti.frameResize` message to maximize compatibility, but a tenant-level CSP override blocks the parent listener. Ask your administrator to confirm that `*.fastcomments.com` is on the LTI tool allowlist and that no custom CSP header is stripping postMessage events. Resize then works without further configuration.
+**גובה ה-iframe נראה קבוע או שהתוכן נחתך.** כמה שוכרים של Blackboard מציעים מדיניות אבטחה של תוכן (Content Security Policy) נוקשה שחוסמת את ברירת המחדל של שינוי גובה ה-iframe דרך postMessage של LTI. FastComments משדר גם את הודעת סגנון Canvas `lti.frameResize` וגם את הודעת המפרט של IMS `org.imsglobal.lti.frameResize` כדי למקסם תאימות, אך גזירת CSP ברמת ה-tenant חוסמת את המאזין בהורה. בקש מהמנהל שלך לאשר ש-*.fastcomments.com מופיע ברשימת ההרשאה של כלי ה-LTI ושאין כותרת CSP מותאמת שמסירה אירועי postMessage. לאחר מכן שינוי הגודל יעבוד ללא תצורה נוספת.
 
-**Course copy duplicates threads.** Blackboard course copy issues new resource link IDs for LTI placements, so copied courses start with empty threads. This is expected. If you need the copied course to inherit the original thread, set up Deep Linking with an explicit thread URN before copying, or contact FastComments support to remap thread IDs in bulk.
+**העתקת קורס משכפלת שרשורים.** העתקת קורס ב-Blackboard מנפיקה מזהי resource link חדשים עבור מיקומי LTI, לכן קורסים שהועתקו מתחילים עם שרשורים ריקים. זה צפוי. אם אתה צריך שהקורס שהועתק ירש את השרשור המקורי, הגדר Deep Linking עם URN של שרשור מפורש לפני ההעתקה, או פנה לתמיכת FastComments כדי למפות מחדש מזהי שרשורים בכמות גדולה.
 
-**Student sees a generic Blackboard error on launch.** The cause is a missing or stale `email` claim. Confirm the institution policy for FastComments has **Role**, **Name**, and **Email Address** enabled under **User Fields to Send**. Save, then launch again in a fresh browser session.
+**סטודנט רואה שגיאה גנרית של Blackboard בהשקה.** הגורם הוא claim של `email` חסר או לא עדכני. אמת את מדיניות המוסד ל-FastComments שיש בה אפשרויות **Role**, **Name**, ו-**Email Address** מופעלות תחת **User Fields to Send**. שמור, ואז השקה שוב בסשן דפדפן חדש.

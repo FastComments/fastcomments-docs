@@ -112,7 +112,7 @@ If the iframe stays at a fixed short height:
 
 **Tool not showing in the Add Existing picker.** The deployment is not enabled for this course's org unit. An administrator needs to add the org unit (or a parent) to the deployment's **Org Units** list. Tool registration alone is not enough; the deployment scopes which courses see the tool.
 
-**`deployment_id` mismatch on launch.** FastComments TOFU-pins the first `deployment_id` it sees for a registration. If an administrator deletes the original deployment and creates a new one, launches from the new deployment are rejected with a deployment mismatch error. The fix is to re-register FastComments (generate a new registration URL and run Dynamic Registration again); the old configuration record is replaced.
+**`deployment_id` mismatch on launch.** FastComments TOFU-pins the first `deployment_id` it sees for a registration. If an administrator deletes the original deployment and creates a new one, launches from the new deployment are rejected with a deployment mismatch error. The fix is to re-register FastComments (generate a new registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) and run Dynamic Registration again); the old configuration record is replaced.
 
 **Tool launches but shows "Invalid LTI launch".** The course is in a different tenant/org structure than the deployment covers, or the deployment was disabled after registration. Re-check **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > **Enabled** toggle and the deployment's org unit list.
 

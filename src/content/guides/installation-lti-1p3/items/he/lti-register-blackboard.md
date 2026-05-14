@@ -1,26 +1,26 @@
 Blackboard Learn SaaS ו-Ultra תומכים ברישום דינמי של LTI 1.3.
 
-#### פתח את מסך ספק הכלים
+#### פתח את מסך ספק הכלי
 
 1. היכנס ל-Blackboard כמנהל מערכת.
-2. נווט אל **לוח המנהל** > **אינטגרציות** > **ספקי כלים LTI**.
-3. לחץ על **הרשמה לכלי LTI 1.3 / LTI Advantage**.
+2. נווט אל **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
+3. לחץ על **Register LTI 1.3 / LTI Advantage Tool**.
 
-אם אתה רואה רק "Register LTI 1.1 Provider", גרסת ה-Blackboard שלך עדיין לא תומכת ב-LTI 1.3 - שדרג או פנה לתמיכה של Blackboard.
+אם אתה רואה רק "Register LTI 1.1 Provider", גרסת Blackboard שלך עדיין לא תומכת ב-LTI 1.3 — שדרג או פנה לתמיכת Blackboard.
 
 #### הדבק את ה-URL
 
-הדבק את כתובת ההרשמה של FastComments לשדה **Client ID** / **Registration URL** (התווית של Blackboard משתנה לפי גרסה). הגש.
+הדבק את כתובת ההרשמה של FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">השג אותה כאן</a>) אל שדה **Client ID** / **Registration URL** (תוויות ב-Blackboard משתנות בין גרסאות). שלח.
 
-Blackboard מבצע את תהליך ההרשמה עם FastComments ומציג מסך אישור.
+Blackboard מבצע את תהליך ה-handshake של ההרשמה עם FastComments ומציג מסך אישור.
 
-#### אישור והפעלה
+#### אשר והפעל
 
-Blackboard מסמן כלים שנרשמו כעת כברירת מחדל כ- **מאושר אך מוחרג**:
+Blackboard מסמן כלים שנרשמו זה עתה כברירת מחדל כ-**Approved but excluded**:
 
-1. מצא את רשומת FastComments ברשימת ספקי הכלים.
-2. פתח את התפריט ובחר **ערוך**.
-3. הגדר את **מצב הכלי** ל-**מאושר**.
-4. תחת **מדיניות המוסד**, בדוק אילו נתוני משתמש נשלחים (שם, דוא"ל, תפקיד). שמור.
+1. מצא את הרשומה של FastComments ברשימת ספקי הכלים.
+2. פתח את התפריט ובחר **Edit**.
+3. הגדר את **Tool Status** ל-**Approved**.
+4. תחת **Institution Policies**, עיין אילו נתוני משתמש נשלחים (שם, דוא"ל, תפקיד). שמור.
 
-הכלי זמין כעת למרצים כאשר הם מוסיפים תוכן לקורסים.
+הכלי כעת זמין למרצים כאשר הם מוסיפים תוכן לקורסים.

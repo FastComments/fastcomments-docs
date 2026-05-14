@@ -4,7 +4,7 @@ Sakai supports LTI 1.3 Dynamic Registration on releases with LTI Advantage. From
 
 1. Sign in as a Sakai admin and open the **Administration Workspace**.
 2. Choose **External Tools** > **Install LTI 1.3 Tool**.
-3. Paste the FastComments registration URL and submit.
+3. Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) and submit.
 4. Approve the tool when the handshake completes.
 
 The tool then appears under **External Tools** and can be added to sites by their maintainers.
@@ -24,6 +24,6 @@ After Schoology gives you a Client ID and Deployment ID, contact FastComments su
 
 #### Other LTI 1.3 Platforms
 
-Any LMS that follows the IMS LTI 1.3 Advantage spec should work with the same registration URL. Look for a setting labeled "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint", or similar.
+Any LMS that follows the IMS LTI 1.3 Advantage spec should work with the same registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>). Look for a setting labeled "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint", or similar.
 
 If your platform only supports manual LTI 1.3 setup, use the four endpoints listed in the Schoology section above and contact support to finalize.
