@@ -1,3 +1,5 @@
+**Using Moodle?** We also publish a dedicated Moodle plugin for FastComments with a tighter integration than LTI 1.3 (grade sync hooks, deeper activity reporting, native Moodle settings UI). See the <a href="/guide-installation-moodle.html" target="_blank">Moodle plugin installation guide</a>. The LTI 1.3 flow below is the right choice if you want a single registration that also covers other LMSes, or if your Moodle admin won't install third-party plugins.
+
 Moodle 4.0+ supports LTI 1.3 Dynamic Registration through the External Tool plugin.
 
 #### Open the Tool Management Screen
