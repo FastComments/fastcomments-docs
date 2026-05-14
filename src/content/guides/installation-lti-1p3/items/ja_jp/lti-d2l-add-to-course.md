@@ -1,116 +1,121 @@
-This page covers adding FastComments to a Brightspace course after an administrator has registered the tool and created a deployment. If the tool is not registered yet, see the D2L registration guide first.
+このページでは、管理者がツールを登録してデプロイメントを作成した後に、Brightspace コースへ FastComments を追加する方法を説明します。ツールがまだ登録されていない場合は、最初に D2L 登録ガイドを参照してください。
 
-Brightspace ships two content authoring experiences: **Classic Content** and the **New Content Experience** (also called **Lessons**). Both expose FastComments, but the menu paths differ. Each section below covers both where they diverge.
+<div class="screenshot white-bg">
+    <div class="title">Brightspace のユニットトピックに埋め込まれた FastComments</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="Brightspace ユニット内で動作する FastComments。スレッド化されたコメントと @メンションピッカーを表示しています" />
+</div>
 
-#### Locate the FastComments Tool
+Brightspace には 2 つのコンテンツ作成体験が搭載されています：**Classic Content** と **New Content Experience**（**Lessons** とも呼ばれます）。どちらも FastComments を公開していますが、メニュー経路が異なります。以下の各セクションは、分岐する箇所で両方を取り上げます。
 
-The FastComments tool appears in two places inside a course content editor:
+#### FastComments ツールを見つける
 
-1. The activity picker, reached from a module/unit's **Add Existing** button (labeled **Add Existing Activities** in older Brightspace versions). FastComments shows up directly in the picker in current Brightspace builds; older versions nest it under an **External Learning Tools** submenu. Either path adds FastComments as a standalone topic.
-2. The **Insert Stuff** dialog inside the HTML editor, under **LTI Advantage**. This embeds FastComments inline in an HTML topic via the LTI deep linking flow.
+FastComments ツールは、コースのコンテンツエディタ内で次の 2 か所に表示されます：
 
-If FastComments does not appear in either picker, the deployment is not enabled for the org unit holding the course. Ask your Brightspace administrator to open **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments**, open the deployment, and add the course's org unit (or a parent org unit) under **Org Units**.
+1. モジュール／ユニットの **Add Existing** ボタン（古い Brightspace では **Add Existing Activities** と表示）からアクセスするアクティビティピッカー。最新の Brightspace では FastComments はピッカーに直接表示されます。古いバージョンでは **External Learning Tools** サブメニューの下にネストされています。どちらの経路でも FastComments を単独のトピックとして追加します。
+2. HTML エディタ内の **Insert Stuff** ダイアログの **LTI Advantage** の下。これは LTI ディープリンクフローを通じて FastComments を HTML トピック内にインラインで埋め込みます。
 
-#### Add FastComments as a Topic in a Module
+FastComments がどちらのピッカーにも表示されない場合、そのコースを含む組織ユニットに対してデプロイメントが有効になっていません。Brightspace 管理者に依頼して **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments** を開き、デプロイメントを開いて **Org Units** の下にコースの org unit（または親の org unit）を追加してもらってください。
+
+#### モジュールにトピックとして FastComments を追加する
 
 Classic Content:
 
-1. Open the course and click **Content** in the navbar.
-2. Select the module that should hold the discussion (or create one via **Add a module**).
-3. Click **Add Existing** (older Brightspace: **Add Existing Activities** > **External Learning Tools**).
-4. In the picker, click **FastComments**. Brightspace creates a topic in the module and returns you to the content view.
-5. Click the new topic. Rename it to something descriptive like `FastComments Discussion` using the inline title editor.
+1. コースを開き、ナビバーの **Content** をクリックします。
+2. ディスカッションを含めるモジュールを選択する（または **Add a module** で作成）。
+3. **Add Existing** をクリックします（古い Brightspace：**Add Existing Activities** > **External Learning Tools**）。
+4. ピッカーで **FastComments** をクリックします。Brightspace がモジュール内にトピックを作成し、コンテンツビューに戻ります。
+5. 新しいトピックをクリックし、インラインタイトルエディタで説明的な名前（例：`FastComments Discussion`）に変更します。
 
 New Content Experience (Lessons):
 
-1. Open the course and click **Content**.
-2. Open the unit and lesson that should hold the discussion.
-3. Click **Add** > **Existing Activity** and select **FastComments** (older Brightspace: nested under **External Learning Tools**).
-4. The activity is added to the lesson.
-5. Click the activity title to rename it.
+1. コースを開き、**Content** をクリックします。
+2. ディスカッションを含めるユニットとレッスンを開きます。
+3. **Add** > **Existing Activity** をクリックし、**FastComments** を選択します（古い Brightspace：**External Learning Tools** の下にネスト）。
+4. アクティビティがレッスンに追加されます。
+5. アクティビティのタイトルをクリックして名称を変更します。
 
-The first time any user (instructor or student) opens the topic, FastComments initializes the thread for that resource link. The thread is bound to the resource link ID, so renaming or moving the topic does not change which thread is loaded.
+初めてユーザー（講師または学生を問わず）がトピックを開くと、FastComments がそのリソースリンクのスレッドを初期化します。スレッドはリソースリンク ID に紐付けられるため、トピックの名前変更や移動は読み込まれるスレッドを変更しません。
 
-#### Embed FastComments Inline in an HTML Topic
+#### HTML トピックに FastComments をインラインで埋め込む
 
-Use this flow when you want comments to appear below a reading, video, or other content inside the same topic page rather than as a separate topic.
+読み物、ビデオ、その他のコンテンツの下に同じトピックページ内でコメントを表示したい場合は、このフローを使用します。別トピックとしてではなく、同一ページ内に表示されます。
 
-1. Open or create an HTML topic in the module/lesson.
-2. Click **Edit HTML** to open the Brightspace HTML editor.
-3. Place the cursor where the comment thread should appear.
-4. Click the **Insert Stuff** button (puzzle-piece icon in the editor toolbar).
-5. In the Insert Stuff dialog, scroll to **LTI Advantage** and click **FastComments**.
-6. FastComments opens a deep linking picker. Confirm the placement (the default options work for content discussions); click **Insert** or **Continue**.
-7. Brightspace returns to the HTML editor with a placeholder block representing the LTI launch. Click **Save and Close** on the topic.
+1. モジュール／レッスンで HTML トピックを開くか作成します。
+2. **Edit HTML** をクリックして Brightspace の HTML エディタを開きます。
+3. コメントスレッドを表示したい箇所にカーソルを置きます。
+4. エディタツールバーの **Insert Stuff** ボタン（パズルピースアイコン）をクリックします。
+5. Insert Stuff ダイアログで **LTI Advantage** をスクロールして **FastComments** をクリックします。
+6. FastComments がディープリンクピッカーを開きます。配置を確認します（コンテンツ用ディスカッションではデフォルトオプションで問題ありません）；**Insert** または **Continue** をクリックします。
+7. Brightspace はプレースホルダーブロックを伴って HTML エディタに戻します（LTI 起動を表す）。トピックで **Save and Close** をクリックします。
 
-When the topic loads, Brightspace replaces the placeholder with an iframe that auto-launches FastComments via LTI. Students see the discussion thread inline.
+トピックが読み込まれると、Brightspace はプレースホルダーを iframe に置き換え、LTI 経由で FastComments を自動起動します。学生はディスカッションスレッドをインラインで見ます。
 
-A single HTML topic holds multiple deep-linked FastComments embeds. Each embed gets its own thread because each deep link produces a distinct resource link ID.
+1 つの HTML トピックには複数のディープリンクされた FastComments 埋め込みを保持できます。各埋め込みは別個のリソースリンク ID を生成するため、それぞれに独自のスレッドが割り当てられます。
 
-#### Module Topic vs Inline Quicklink
+#### モジュールトピックとインラインクイックリンクの使い分け
 
-Pick the **module topic** approach when:
+次の場合は**モジュールトピック**方式を選んでください：
 
-- The discussion is the primary activity for that step in the module.
-- You want the topic to appear in Brightspace's table of contents, completion tracking, and Class Progress.
+- そのモジュールのステップにおける主要なアクティビティがディスカッションである場合。
+- Brightspace の目次、完了トラッキング、Class Progress にトピックを表示したい場合。
 
-Pick the **inline embed** approach when:
+次の場合は**インライン埋め込み**方式を選んでください：
 
-- Comments should sit below other content on the same page.
-- You do not want a separate completion-trackable item in the table of contents.
+- コメントを同一ページ上の他のコンテンツの下に置きたい場合。
+- 目次に別項目として表示される完了トラッキング対象アイテムを望まない場合。
 
-#### Visibility, Draft, and Release Conditions
+#### 表示、下書き、リリース条件
 
-A new FastComments topic is visible to students by default. To hide it while you set it up:
+新しい FastComments トピックはデフォルトで学生に表示されます。セットアップ中に非表示にするには：
 
-1. In the content editor, click the topic title (Classic) or the three-dot menu on the activity (New Content Experience).
-2. Set status to **Draft** (Classic) or toggle **Visibility** off (New Content Experience).
+1. コンテンツエディタでトピックタイトル（Classic）またはアクティビティの三点メニュー（New Content Experience）をクリックします。
+2. ステータスを **Draft** に設定する（Classic）か、**Visibility** をオフに切り替える（New Content Experience）。
 
-Draft topics are invisible to students. Instructors and TAs still see them with a "Draft" badge.
+下書きトピックは学生には見えません。講師と TA は「Draft」バッジ付きでそれらを引き続き見ることができます。
 
-To restrict the topic to a specific group or section:
+トピックを特定のグループやセクションに限定するには：
 
-1. Open the topic.
-2. Click the topic title menu > **Edit Properties In-place** (Classic) or **Edit** > **Restrictions** (New Content Experience).
-3. Under **Release Conditions**, click **Create**.
-4. Pick **Group enrollment** or **Section enrollment**, select the group/section, and save.
+1. トピックを開きます。
+2. トピックタイトルメニュー > **Edit Properties In-place**（Classic）または **Edit** > **Restrictions**（New Content Experience）をクリックします。
+3. **Release Conditions** の下で **Create** をクリックします。
+4. **Group enrollment** または **Section enrollment** を選び、グループ／セクションを選択して保存します。
 
-Release conditions stack with FastComments's own role mapping. Students who cannot see the topic do not get an LTI launch.
+リリース条件は FastComments の独自のロールマッピングと組み合わされます。トピックを表示できない学生は LTI 起動を受けません。
 
-#### What Students See on First Launch
+#### 学生が最初に起動したときに見るもの
 
-When a student clicks the topic (or loads an HTML topic with an embed):
+学生がトピックをクリックしたとき（または埋め込みのある HTML トピックを読み込んだとき）：
 
-1. Brightspace performs the LTI 1.3 launch in the background.
-2. FastComments receives the student's name, email, avatar URL, and LMS role, and signs them in automatically. There is no FastComments login prompt.
-3. The comment thread for that resource link renders inside the Brightspace iframe.
+1. Brightspace がバックグラウンドで LTI 1.3 起動を実行します。
+2. FastComments は学生の名前、メール、アバター URL、および LMS のロールを受け取り、自動的にサインインさせます。FastComments のログイン画面は表示されません。
+3. そのリソースリンクのコメントスレッドが Brightspace の iframe 内にレンダリングされます。
 
-Role mapping at launch:
+起動時のロールマッピング：
 
-- Brightspace `Administrator` becomes a FastComments **admin** for the thread (full moderation, delete, ban, and configuration access).
-- Brightspace `Instructor` becomes a FastComments **moderator** (pin, hide, delete, ban).
-- All other roles (`Learner`, `TeachingAssistant`, etc.) become standard commenters.
+- Brightspace `Administrator` はスレッドの FastComments の管理者（admin）になります（完全なモデレーション、削除、禁止、設定へのアクセス）。
+- Brightspace `Instructor` は FastComments のモデレーター（moderator）になります（ピン、非表示、削除、禁止）。
+- その他すべてのロール（`Learner`、`TeachingAssistant` など）は通常のコメント投稿者になります。
 
-Comments are attributed to the student's Brightspace account. If the student edits their name or avatar in Brightspace, the next LTI launch syncs the change.
+コメントは学生の Brightspace アカウントに紐付けられます。学生が Brightspace 側で名前やアバターを編集すると、次回の LTI 起動で変更が同期されます。
 
-#### Iframe Height and Resize
+#### iframe の高さとリサイズ
 
-FastComments emits the `org.imsglobal.lti.frameResize` postMessage on every thread render and on content changes (new comment, expand replies). Brightspace listens for this message and adjusts the iframe height so the thread is not clipped and does not show an inner scrollbar.
+FastComments はスレッドのレンダリングごとおよびコンテンツの変更時（新しいコメント、返信の展開など）に `org.imsglobal.lti.frameResize` の postMessage を送信します。Brightspace はこのメッセージをリッスンし、スレッドが切り取られず内部スクロールバーが表示されないように iframe の高さを調整します。
 
-If the iframe stays at a fixed short height:
+iframe が固定で短い高さのままになる場合：
 
-- Confirm the course is loaded over HTTPS. Brightspace's postMessage listener rejects mixed-content frames.
-- Confirm no browser extension is blocking the postMessage channel.
-- For inline embeds in an HTML topic, the surrounding HTML must not wrap the iframe in a fixed-height container. Remove any inline `style="height: ..."` from the parent element.
+- コースが HTTPS 経由で読み込まれていることを確認してください。Brightspace の postMessage リスナーは混在コンテンツのフレームを拒否します。
+- ブラウザ拡張機能が postMessage チャネルをブロックしていないことを確認してください。
+- HTML トピック内のインライン埋め込みの場合、周囲の HTML が iframe を固定高さのコンテナでラップしていないことを確認してください。親要素の inline な style="height: ..." を削除してください。
 
-#### Brightspace-Specific Gotchas
+#### Brightspace 固有の注意点
 
-**Tool not showing in the Add Existing picker.** The deployment is not enabled for this course's org unit. An administrator needs to add the org unit (or a parent) to the deployment's **Org Units** list. Tool registration alone is not enough; the deployment scopes which courses see the tool.
+**Add Existing ピッカーにツールが表示されない。** デプロイメントがこのコースの org unit に対して有効になっていません。管理者がデプロイメントの **Org Units** リストに org unit（または親）を追加する必要があります。ツールの登録だけでは不十分で、デプロイメントがどのコースにツールを見せるかを決定します。
 
-**`deployment_id` mismatch on launch.** FastComments TOFU-pins the first `deployment_id` it sees for a registration. If an administrator deletes the original deployment and creates a new one, launches from the new deployment are rejected with a deployment mismatch error. The fix is to re-register FastComments (generate a new registration URL and run Dynamic Registration again); the old configuration record is replaced.
+**`deployment_id` の不一致による起動エラー。** FastComments は登録時に最初に見た `deployment_id` を TOFU（初回見たら固定）します。管理者が元のデプロイメントを削除して新しいものを作成した場合、新しいデプロイメントからの起動はデプロイメント不一致エラーで拒否されます。対処法は FastComments を再登録することです（新しい登録 URL を生成して動的登録を再実行してください）；古い設定レコードは置き換えられます。
 
-**Tool launches but shows "Invalid LTI launch".** The course is in a different tenant/org structure than the deployment covers, or the deployment was disabled after registration. Re-check **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > **Enabled** toggle and the deployment's org unit list.
+**ツールは起動するが「Invalid LTI launch」と表示される。** コースがデプロイメントがカバーするテナント／組織構造と異なるか、登録後にデプロイメントが無効化された可能性があります。**Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > **Enabled** トグルと、デプロイメントの org unit リストを再確認してください。
 
-**Names and roles missing inside FastComments.** Brightspace ships LTI launches with Names and Role Provisioning Services (NRPS) claims. If a course was upgraded from an older LTI 1.1 link, the launch lacks `name` and `email` claims. Re-add the FastComments topic via **Add Existing** (do not migrate the old link) so the launch uses LTI 1.3.
+**FastComments 内で名前やロールが欠落している。** Brightspace は Names and Role Provisioning Services (NRPS) クレーム付きで LTI 起動を送付します。コースが古い LTI 1.1 リンクからアップグレードされた場合、起動に `name` および `email` クレームが欠けていることがあります。FastComments トピックを **Add Existing** で再追加してください（古いリンクを移行しない）；そうすることで起動が LTI 1.3 を使用するようになります。
 
-**Embed shows a login screen instead of auto-SSO.** The HTML topic was inserted as a plain `<iframe>` pointing at FastComments rather than via **Insert Stuff** > **LTI Advantage**. Plain iframes skip the LTI launch and land users on the public-facing FastComments page. Delete the iframe and re-insert via the Insert Stuff flow.
+**埋め込みが自動 SSO ではなくログイン画面を表示する。** HTML トピックが **Insert Stuff** > **LTI Advantage** を使わずに FastComments を指す単純な `<iframe>` として挿入されている可能性があります。単純な iframe は LTI 起動をスキップし、ユーザーを公開向けの FastComments ページに誘導します。iframe を削除し、Insert Stuff のフローで再挿入してください。
