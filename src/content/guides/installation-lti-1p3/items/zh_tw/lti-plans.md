@@ -1,0 +1,1 @@
+FastComments 的 LTI 1.3 整合已包含在 Flex 與 Pro 方案中，無需額外費用。它可與任何支援 IMS LTI 1.3 Advantage spec 的 LMS 一起運作，包括 Dynamic Registration。

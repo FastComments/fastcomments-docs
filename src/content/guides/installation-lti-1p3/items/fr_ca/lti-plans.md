@@ -1,0 +1,1 @@
+L'intégration FastComments LTI 1.3 est incluse dans les plans Flex et Pro sans frais supplémentaires. Elle fonctionne avec tout LMS qui prend en charge la spécification IMS LTI 1.3 Advantage, y compris l'enregistrement dynamique.

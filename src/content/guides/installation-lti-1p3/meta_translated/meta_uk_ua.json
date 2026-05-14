@@ -1,0 +1,57 @@
+{
+  "name": "Встановлення LMS (LTI 1.3)",
+  "pageHeader": "Додавання коментарів у LMS через LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Ціни",
+      "file": "lti-plans.md",
+      "subCat": "Коротко"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "lti-quick-start.md",
+      "subCat": "Коротко"
+    },
+    {
+      "name": "Підтримувані платформи",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Коротко"
+    },
+    {
+      "name": "Створити URL для реєстрації",
+      "file": "lti-generate-url.md",
+      "subCat": "Налаштування FastComments"
+    },
+    {
+      "name": "Реєстрація в D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Реєстрація інструменту"
+    },
+    {
+      "name": "Реєстрація в Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Реєстрація інструменту"
+    },
+    {
+      "name": "Реєстрація в Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Реєстрація інструменту"
+    },
+    {
+      "name": "Реєстрація в Sakai або Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Реєстрація інструменту"
+    },
+    {
+      "name": "Додати до курсу",
+      "file": "lti-add-to-course.md",
+      "subCat": "Використання інструменту"
+    },
+    {
+      "name": "Усунення неполадок",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Використання інструменту"
+    }
+  ]
+}

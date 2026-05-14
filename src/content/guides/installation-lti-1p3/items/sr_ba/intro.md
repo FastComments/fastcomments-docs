@@ -1,0 +1,3 @@
+FastComments se integriše sa bilo kojim LMS-om koji je u skladu sa LTI 1.3 - D2L Brightspace, Moodle, Blackboard Learn, Sakai, Schoology, i drugima - putem IMS LTI Dynamic Registration standarda. Jedan URL, zalijepljen u ekran za registraciju vašeg LMS-a, povezuje cijelu integraciju: SSO, kontekst kursa, mapiranje uloga, i postavljanje sadržaja. Nema potrebe za instaliranjem plugina na vaš server. (Canvas LMS ima vlastiti vodič jer je njegov tok registracije drugačiji.)
+
+Nakon registracije, FastComments se pojavljuje kao alat za učenje unutar vaših kurseva. Studenti vide komentare u nitima i saradnički chat pored sadržaja kursa, i automatski su prijavljeni svojim LMS nalogom.

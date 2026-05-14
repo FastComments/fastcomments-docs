@@ -1,0 +1,57 @@
+{
+  "name": "LMS-installation (LTI 1.3)",
+  "pageHeader": "Tilføj kommentarer til dit LMS via LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Prissætning",
+      "file": "lti-plans.md",
+      "subCat": "Kort fortalt"
+    },
+    {
+      "name": "Hurtig start",
+      "file": "lti-quick-start.md",
+      "subCat": "Kort fortalt"
+    },
+    {
+      "name": "Understøttede platforme",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Kort fortalt"
+    },
+    {
+      "name": "Generer registrerings-URL",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments-opsætning"
+    },
+    {
+      "name": "Registrer i D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Registrer værktøjet"
+    },
+    {
+      "name": "Registrer i Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Registrer værktøjet"
+    },
+    {
+      "name": "Registrer i Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Registrer værktøjet"
+    },
+    {
+      "name": "Registrer i Sakai eller Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Registrer værktøjet"
+    },
+    {
+      "name": "Tilføj til et kursus",
+      "file": "lti-add-to-course.md",
+      "subCat": "Brug værktøjet"
+    },
+    {
+      "name": "Fejlfinding",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Brug værktøjet"
+    }
+  ]
+}

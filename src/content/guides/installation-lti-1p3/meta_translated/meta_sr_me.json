@@ -1,0 +1,57 @@
+{
+  "name": "Инсталација LMS-а (LTI 1.3)",
+  "pageHeader": "Додајте коментаре у ваш LMS помоћу LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Цијене",
+      "file": "lti-plans.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Брзи почетак",
+      "file": "lti-quick-start.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Подржане платформе",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Укратко"
+    },
+    {
+      "name": "Генеришите URL за регистрацију",
+      "file": "lti-generate-url.md",
+      "subCat": "Подешавање FastComments-а"
+    },
+    {
+      "name": "Регистрација у D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Регистрација алатке"
+    },
+    {
+      "name": "Регистрација у Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Регистрација алатке"
+    },
+    {
+      "name": "Регистрација у Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Регистрација алатке"
+    },
+    {
+      "name": "Регистрација у Sakai или Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Регистрација алатке"
+    },
+    {
+      "name": "Додавање у курс",
+      "file": "lti-add-to-course.md",
+      "subCat": "Коришћење алатке"
+    },
+    {
+      "name": "Решавање проблема",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Коришћење алатке"
+    }
+  ]
+}

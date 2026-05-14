@@ -1,0 +1,1 @@
+FastCommentsのLTI 1.3統合は、FlexおよびProプランに追加料金なしで含まれます。IMS LTI 1.3 Advantage仕様（Dynamic Registrationを含む）をサポートする任意のLMSで動作します。

@@ -1,0 +1,57 @@
+{
+  "name": "Εγκατάσταση LMS (LTI 1.3)",
+  "pageHeader": "Προσθέστε σχόλια στο LMS σας μέσω LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Τιμολόγηση",
+      "file": "lti-plans.md",
+      "subCat": "Συνοπτικά"
+    },
+    {
+      "name": "Γρήγορη εκκίνηση",
+      "file": "lti-quick-start.md",
+      "subCat": "Συνοπτικά"
+    },
+    {
+      "name": "Υποστηριζόμενες πλατφόρμες",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Συνοπτικά"
+    },
+    {
+      "name": "Δημιουργία URL εγγραφής",
+      "file": "lti-generate-url.md",
+      "subCat": "Ρύθμιση FastComments"
+    },
+    {
+      "name": "Εγγραφή στο D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Καταχώριση του εργαλείου"
+    },
+    {
+      "name": "Εγγραφή στο Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Καταχώριση του εργαλείου"
+    },
+    {
+      "name": "Εγγραφή στο Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Καταχώριση του εργαλείου"
+    },
+    {
+      "name": "Εγγραφή σε Sakai ή Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Καταχώριση του εργαλείου"
+    },
+    {
+      "name": "Προσθήκη σε μάθημα",
+      "file": "lti-add-to-course.md",
+      "subCat": "Χρήση του εργαλείου"
+    },
+    {
+      "name": "Αντιμετώπιση προβλημάτων",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Χρήση του εργαλείου"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "LMS 安装（LTI 1.3）",
+  "pageHeader": "通过 LTI 1.3 在您的 LMS 中添加评论",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "定价",
+      "file": "lti-plans.md",
+      "subCat": "简要"
+    },
+    {
+      "name": "快速开始",
+      "file": "lti-quick-start.md",
+      "subCat": "简要"
+    },
+    {
+      "name": "支持的平台",
+      "file": "lti-supported-platforms.md",
+      "subCat": "简要"
+    },
+    {
+      "name": "生成注册 URL",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments 设置"
+    },
+    {
+      "name": "在 D2L Brightspace 中注册",
+      "file": "lti-register-d2l.md",
+      "subCat": "注册工具"
+    },
+    {
+      "name": "在 Moodle 中注册",
+      "file": "lti-register-moodle.md",
+      "subCat": "注册工具"
+    },
+    {
+      "name": "在 Blackboard Learn 中注册",
+      "file": "lti-register-blackboard.md",
+      "subCat": "注册工具"
+    },
+    {
+      "name": "在 Sakai 或 Schoology 中注册",
+      "file": "lti-register-other.md",
+      "subCat": "注册工具"
+    },
+    {
+      "name": "添加到课程",
+      "file": "lti-add-to-course.md",
+      "subCat": "使用该工具"
+    },
+    {
+      "name": "故障排除",
+      "file": "lti-troubleshooting.md",
+      "subCat": "使用该工具"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+FastComments se integra con cualquier LMS compatible con LTI 1.3 - D2L Brightspace, Moodle, Blackboard Learn, Sakai, Schoology y otros - a través del estándar IMS LTI Dynamic Registration. Una URL, pegada en la pantalla de registro de su LMS, configura toda la integración: SSO, contexto del curso, mapeo de roles y colocación de contenido. No hay ningún plugin que instalar en su servidor. (Canvas LMS tiene su propia guía dedicada porque su flujo de registro es diferente.)
+
+Una vez registrado, FastComments aparece como una herramienta de aprendizaje dentro de sus cursos. Los estudiantes ven comentarios en hilos y chat colaborativo junto al contenido del curso, y inician sesión automáticamente con su cuenta del LMS.

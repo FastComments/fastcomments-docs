@@ -1,0 +1,57 @@
+{
+  "name": "LMS Installation (LTI 1.3)",
+  "pageHeader": "Add Comments to Your LMS via LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Pricing",
+      "file": "lti-plans.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "Quick Start",
+      "file": "lti-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "Supported Platforms",
+      "file": "lti-supported-platforms.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "Generate Registration URL",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments Setup"
+    },
+    {
+      "name": "Register in D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Register the Tool"
+    },
+    {
+      "name": "Register in Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Register the Tool"
+    },
+    {
+      "name": "Register in Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Register the Tool"
+    },
+    {
+      "name": "Register in Sakai or Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Register the Tool"
+    },
+    {
+      "name": "Add to a Course",
+      "file": "lti-add-to-course.md",
+      "subCat": "Use the Tool"
+    },
+    {
+      "name": "Troubleshooting",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Use the Tool"
+    }
+  ]
+}

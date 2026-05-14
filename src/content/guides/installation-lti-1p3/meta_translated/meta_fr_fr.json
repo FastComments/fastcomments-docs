@@ -1,0 +1,57 @@
+{
+  "name": "Installation du LMS (LTI 1.3)",
+  "pageHeader": "Ajouter des commentaires à votre LMS via LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Tarification",
+      "file": "lti-plans.md",
+      "subCat": "En bref"
+    },
+    {
+      "name": "Démarrage rapide",
+      "file": "lti-quick-start.md",
+      "subCat": "En bref"
+    },
+    {
+      "name": "Plateformes prises en charge",
+      "file": "lti-supported-platforms.md",
+      "subCat": "En bref"
+    },
+    {
+      "name": "Générer l’URL d’enregistrement",
+      "file": "lti-generate-url.md",
+      "subCat": "Configuration FastComments"
+    },
+    {
+      "name": "Enregistrer sur D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Enregistrer l’outil"
+    },
+    {
+      "name": "Enregistrer sur Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Enregistrer l’outil"
+    },
+    {
+      "name": "Enregistrer sur Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Enregistrer l’outil"
+    },
+    {
+      "name": "Enregistrer sur Sakai ou Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Enregistrer l’outil"
+    },
+    {
+      "name": "Ajouter à un cours",
+      "file": "lti-add-to-course.md",
+      "subCat": "Utiliser l’outil"
+    },
+    {
+      "name": "Dépannage",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Utiliser l’outil"
+    }
+  ]
+}

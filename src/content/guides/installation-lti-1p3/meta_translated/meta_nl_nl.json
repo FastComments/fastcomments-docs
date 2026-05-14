@@ -1,0 +1,57 @@
+{
+  "name": "LMS-installatie (LTI 1.3)",
+  "pageHeader": "Voeg opmerkingen toe aan uw LMS via LTI 1.3",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Prijzen",
+      "file": "lti-plans.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Snel aan de slag",
+      "file": "lti-quick-start.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Ondersteunde platforms",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Kort samengevat"
+    },
+    {
+      "name": "Genereer registratie-URL",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments-configuratie"
+    },
+    {
+      "name": "Registreren in D2L Brightspace",
+      "file": "lti-register-d2l.md",
+      "subCat": "Registreer de tool"
+    },
+    {
+      "name": "Registreren in Moodle",
+      "file": "lti-register-moodle.md",
+      "subCat": "Registreer de tool"
+    },
+    {
+      "name": "Registreren in Blackboard Learn",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Registreer de tool"
+    },
+    {
+      "name": "Registreren in Sakai of Schoology",
+      "file": "lti-register-other.md",
+      "subCat": "Registreer de tool"
+    },
+    {
+      "name": "Aan een cursus toevoegen",
+      "file": "lti-add-to-course.md",
+      "subCat": "De tool gebruiken"
+    },
+    {
+      "name": "Probleemoplossing",
+      "file": "lti-troubleshooting.md",
+      "subCat": "De tool gebruiken"
+    }
+  ]
+}

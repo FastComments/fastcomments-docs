@@ -1,0 +1,57 @@
+{
+  "name": "LMS 설치 (LTI 1.3)",
+  "pageHeader": "LTI 1.3을 통해 LMS에 댓글 추가",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "요금",
+      "file": "lti-plans.md",
+      "subCat": "요약"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "lti-quick-start.md",
+      "subCat": "요약"
+    },
+    {
+      "name": "지원 플랫폼",
+      "file": "lti-supported-platforms.md",
+      "subCat": "요약"
+    },
+    {
+      "name": "등록 URL 생성",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments 설정"
+    },
+    {
+      "name": "D2L Brightspace에 등록",
+      "file": "lti-register-d2l.md",
+      "subCat": "도구 등록"
+    },
+    {
+      "name": "Moodle에 등록",
+      "file": "lti-register-moodle.md",
+      "subCat": "도구 등록"
+    },
+    {
+      "name": "Blackboard Learn에 등록",
+      "file": "lti-register-blackboard.md",
+      "subCat": "도구 등록"
+    },
+    {
+      "name": "Sakai 또는 Schoology에 등록",
+      "file": "lti-register-other.md",
+      "subCat": "도구 등록"
+    },
+    {
+      "name": "강좌에 추가",
+      "file": "lti-add-to-course.md",
+      "subCat": "도구 사용"
+    },
+    {
+      "name": "문제 해결",
+      "file": "lti-troubleshooting.md",
+      "subCat": "도구 사용"
+    }
+  ]
+}

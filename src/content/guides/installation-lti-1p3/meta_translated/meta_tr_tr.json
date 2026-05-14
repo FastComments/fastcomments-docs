@@ -1,0 +1,57 @@
+{
+  "name": "LMS Kurulumu (LTI 1.3)",
+  "pageHeader": "LTI 1.3 aracılığıyla LMS'inize Yorum Ekleyin",
+  "icon": "3rd-party-products/moodle.png",
+  "itemsOrdered": [
+    {
+      "name": "Fiyatlandırma",
+      "file": "lti-plans.md",
+      "subCat": "Özet"
+    },
+    {
+      "name": "Hızlı Başlangıç",
+      "file": "lti-quick-start.md",
+      "subCat": "Özet"
+    },
+    {
+      "name": "Desteklenen Platformlar",
+      "file": "lti-supported-platforms.md",
+      "subCat": "Özet"
+    },
+    {
+      "name": "Kayıt URL'si Oluştur",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments Kurulumu"
+    },
+    {
+      "name": "D2L Brightspace'te Kaydetme",
+      "file": "lti-register-d2l.md",
+      "subCat": "Aracı Kaydetme"
+    },
+    {
+      "name": "Moodle'da Kaydetme",
+      "file": "lti-register-moodle.md",
+      "subCat": "Aracı Kaydetme"
+    },
+    {
+      "name": "Blackboard Learn'de Kaydetme",
+      "file": "lti-register-blackboard.md",
+      "subCat": "Aracı Kaydetme"
+    },
+    {
+      "name": "Sakai veya Schoology'de Kaydetme",
+      "file": "lti-register-other.md",
+      "subCat": "Aracı Kaydetme"
+    },
+    {
+      "name": "Bir Derse Ekle",
+      "file": "lti-add-to-course.md",
+      "subCat": "Aracı Kullanma"
+    },
+    {
+      "name": "Sorun Giderme",
+      "file": "lti-troubleshooting.md",
+      "subCat": "Aracı Kullanma"
+    }
+  ]
+}
