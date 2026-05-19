@@ -2,120 +2,128 @@
 
 <div class="screenshot white-bg">
     <div class="title">FastComments embedded as a unit topic in Brightspace</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments, запущенный внутри Brightspace unit, показывающий древовидные комментарии и @-mention picker" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments running inside a Brightspace unit, showing threaded comments and an @-mention picker" />
 </div>
 
-Brightspace поставляется с двумя способами создания контента: **Classic Content** и **New Content Experience** (также называемая **Lessons**). Оба поддерживают FastComments, но пути в меню различаются. Каждая секция ниже охватывает оба варианта там, где они расходятся.
+Brightspace поставляется с двумя сценариями создания контента: **Classic Content** и **New Content Experience** (также называемый **Lessons**). Оба предоставляют доступ к FastComments, но пути в меню различаются. В каждом разделе ниже указаны оба варианта там, где они расходятся.
 
-#### Locate the FastComments Tool
+#### Найдите инструмент FastComments
 
-Инструмент FastComments появляется в двух местах внутри редактора содержимого курса:
+Инструмент FastComments появляется в двух местах внутри редактора контента курса:
 
-1. В activity picker, доступном через кнопку **Add Existing** модуля/юнита (в старых версиях Brightspace помечена как **Add Existing Activities**). В текущих сборках FastComments отображается непосредственно в picker; в старых версиях он находится в подменю **External Learning Tools**. Любой из путей добавляет FastComments как отдельную тему.
-2. В диалоге **Insert Stuff** внутри HTML-редактора, в разделе **LTI Advantage**. Это встраивает FastComments внутри HTML-темы через LTI deep linking flow.
+1. В выборе активности, доступном через кнопку **Add Existing** модуля/юнита (в старых версиях Brightspace помечено как **Add Existing Activities**). В текущих сборках Brightspace FastComments отображается прямо в выборе; в старых версиях он вложен в подпункт **External Learning Tools**. Любой из путей добавляет FastComments как отдельную тему.
+2. В диалоге **Insert Stuff** внутри HTML-редактора, в разделе **LTI Advantage**. Это встраивает FastComments inline в HTML-тему через поток LTI deep linking.
 
-Если FastComments не появляется ни в одном picker, deployment не включён для org unit, в котором находится курс. Попросите администратора Brightspace открыть **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments**, открыть deployment и добавить org unit курса (или родительский org unit) в раздел **Org Units**.
+Если FastComments не появляется ни в одном из выборщиков, deployment не включён для организационной единицы (org unit), в которой находится курс. Попросите вашего администратора Brightspace открыть меню «Администрирование» > **Manage Extensibility** > **LTI Advantage** > инструмент FastComments > **View Deployments**, открыть deployment и добавить организационную единицу курса (или родительскую org unit) в раздел **Org Units**.
 
-#### Add FastComments as a Topic in a Module
+#### Добавление FastComments как темы в модуль
 
 Classic Content:
 
 1. Откройте курс и нажмите **Content** в навигационной панели.
-2. Выберите модуль, который должен содержать обсуждение (или создайте его через **Add a module**).
-3. Нажмите **Add Existing** (в старых версиях Brightspace: **Add Existing Activities** > **External Learning Tools**).
-4. В picker нажмите **FastComments**. Brightspace создаст тему в модуле и вернёт вас в просмотр содержимого.
-5. Нажмите новую тему. Переименуйте её в что-то описательное, например `FastComments Discussion` с помощью inline title editor.
+2. Выберите модуль, в котором должна быть дискуссия (или создайте его через **Add a module**).
+3. Нажмите **Add Existing** (в старом Brightspace: **Add Existing Activities** > **External Learning Tools**).
+4. В выборщике нажмите **FastComments**. Brightspace создаст тему в модуле и вернёт вас в представление контента.
+5. Нажмите новую тему. Переименуйте её в нечто описательное, например `FastComments Discussion`, используя встроенный редактор заголовка.
 
 New Content Experience (Lessons):
 
 1. Откройте курс и нажмите **Content**.
-2. Откройте unit и lesson, которые должны содержать обсуждение.
-3. Нажмите **Add** > **Existing Activity** и выберите **FastComments** (в старых версиях Brightspace: вложено в **External Learning Tools**).
-4. Активность будет добавлена в lesson.
-5. Нажмите название активности, чтобы переименовать её.
+2. Откройте юнит и lesson, в котором должна быть дискуссия.
+3. Нажмите **Add** > **Existing Activity** и выберите **FastComments** (в старом Brightspace: вложено в **External Learning Tools**).
+4. Активность добавляется в lesson.
+5. Нажмите на название активности, чтобы переименовать её.
 
-Впервые, когда любой пользователь (инструктор или студент) откроет тему, FastComments инициализирует thread для этой resource link. Thread привязан к resource link ID, поэтому переименование или перемещение темы не меняет загружаемый thread.
+Впервые, когда любой пользователь (преподаватель или студент) откроет тему, FastComments инициализирует поток для этой resource link. Поток привязан к ID resource link, поэтому переименование или перемещение темы не изменяет загружаемый поток.
 
-#### Embed FastComments Inline in an HTML Topic
+#### Встраивание FastComments внутри HTML-темы
 
-Используйте этот поток, когда вы хотите, чтобы комментарии отображались под текстом, видео или другим содержимым внутри той же страницы темы, а не как отдельная тема.
+Используйте этот поток, когда вы хотите, чтобы комментарии отображались под чтением, видео или другим контентом на той же странице темы, а не как отдельная тема.
 
 1. Откройте или создайте HTML-тему в модуле/lesson.
 2. Нажмите **Edit HTML**, чтобы открыть HTML-редактор Brightspace.
-3. Поместите курсор в то место, где должен появиться поток комментариев.
-4. Нажмите кнопку **Insert Stuff** (иконка паззла в панели редактора).
-5. В диалоге Insert Stuff пролистайте до **LTI Advantage** и нажмите **FastComments**.
-6. FastComments откроет deep linking picker. Подтвердите размещение (опции по умолчанию подходят для обсуждений контента); нажмите **Insert** или **Continue**.
-7. Brightspace вернётся в HTML-редактор с плейсхолдер-блоком, представляющим LTI launch. Нажмите **Save and Close** в теме.
+3. Поместите курсор туда, где должен появиться поток комментариев.
+4. Нажмите кнопку **Insert Stuff** (иконка пазла на панели инструментов редактора).
+5. В диалоге Insert Stuff прокрутите до **LTI Advantage** и нажмите **FastComments**.
+6. FastComments откроет deep linking выборщик. Подтвердите размещение (стандартные параметры подходят для дискуссий по контенту); нажмите **Insert** или **Continue**.
+7. Brightspace вернётся в HTML-редактор с блоком-заполнителем, представляющим LTI launch. Нажмите **Save and Close** в теме.
 
-Когда тема загружается, Brightspace заменяет плейсхолдер на iframe, который автоматически запускает FastComments через LTI. Студенты увидят поток обсуждения встроенным на странице.
+Когда тема загрузится, Brightspace заменит заполнитель на iframe, который автоматически запустит FastComments через LTI. Студенты увидят поток обсуждения inline.
 
-Одна HTML-тема может содержать несколько deep-linked FastComments embed'ов. Каждый embed получает свой собственный thread, потому что каждая deep link создаёт уникальный resource link ID.
+Одна HTML-тема может содержать несколько deep-linked встраиваний FastComments. Каждое встраивание получает собственный поток, потому что каждая deep link создаёт отдельный resource link ID.
 
-#### Module Topic vs Inline Quicklink
+#### Тема модуля против встроенной ссылки
 
-Выбирайте подход с **module topic**, когда:
+Выберите подход «тема модуля», когда:
 
-- Обсуждение является основной активностью на этом шаге модуля.
-- Вы хотите, чтобы тема отображалась в оглавлении Brightspace, в отслеживании выполнения и в Class Progress.
+- Дискуссия является основной активностью на этом шаге модуля.
+- Вы хотите, чтобы тема отображалась в оглавлении Brightspace, отслеживании выполнения и Class Progress.
 
-Выбирайте подход с **inline embed**, когда:
+Выберите подход «встраивание inline», когда:
 
 - Комментарии должны располагаться под другим контентом на той же странице.
-- Вы не хотите отдельный элемент, отслеживаемый для выполнения, в оглавлении.
+- Вы не хотите отдельный элемент в оглавлении, отслеживаемый по выполнению.
 
-#### Visibility, Draft, and Release Conditions
+#### Видимость, черновик и условия выпуска
 
-Новая тема FastComments по умолчанию видна студентам. Чтобы скрыть её пока вы настраиваете:
+Новая тема FastComments по умолчанию видна студентам. Чтобы скрыть её во время настройки:
 
-1. В редакторе контента нажмите название темы (Classic) или меню с тремя точками на активности (New Content Experience).
-2. Установите статус **Draft** (Classic) или выключите **Visibility** (New Content Experience).
+1. В редакторе контента нажмите заголовок темы (Classic) или меню с тремя точками у активности (New Content Experience).
+2. Установите статус в **Draft** (Classic) или переключите **Visibility** в положение «выключено» (New Content Experience).
 
-Draft-темы невидимы студентам. Инструкторы и TA по-прежнему видят их с бейджем "Draft".
+Темы в состоянии Draft невидимы студентам. Преподаватели и TAs по-прежнему видят их с бейджем «Draft».
 
-Чтобы ограничить тему для определённой группы или секции:
+Чтобы ограничить доступ к теме для конкретной группы или секции:
 
 1. Откройте тему.
-2. Нажмите меню названия темы > **Edit Properties In-place** (Classic) или **Edit** > **Restrictions** (New Content Experience).
+2. Нажмите меню заголовка темы > **Edit Properties In-place** (Classic) или **Edit** > **Restrictions** (New Content Experience).
 3. В разделе **Release Conditions** нажмите **Create**.
-4. Выберите **Group enrollment** или **Section enrollment**, выберите группу/секцию и сохраните.
+4. Выберите **Group enrollment** или **Section enrollment**, укажите группу/секцию и сохраните.
 
-Условия выпуска работают вместе с собственной системой сопоставления ролей FastComments. Студенты, которые не видят тему, не получают LTI launch.
+Условия выпуска накладываются на собственное отображение ролей FastComments. Студенты, которые не видят тему, не получат LTI launch.
 
-#### What Students See on First Launch
+#### Что видят студенты при первом запуске
 
-Когда студент нажимает тему (или загружает HTML-тему с embed):
+Когда студент нажимает тему (или загружает HTML-тему с встраиванием):
 
-1. Brightspace выполняет LTI 1.3 launch в фоне.
-2. FastComments получает имя студента, email, URL аватара и роль LMS и автоматически авторизует их. Запроса на вход в FastComments не будет.
-3. Поток комментариев для этого resource link отображается внутри Brightspace iframe.
+1. Brightspace выполняет LTI 1.3 launch в фоновом режиме.
+2. FastComments получает имя студента, email, URL аватара и роль в LMS и автоматически авторизует его. Окна входа FastComments не показываются.
+3. Поток комментариев для этого resource link отображается внутри iframe Brightspace.
 
 Сопоставление ролей при запуске:
 
-- Brightspace `Administrator` становится в FastComments администратором (admin) для thread (полный доступ к модерации, удалению, бану и настройкам).
-- Brightspace `Instructor` становится в FastComments модератором (moderator) (pin, hide, delete, ban).
-- Все остальные роли (`Learner`, `TeachingAssistant`, и т. д.) становятся стандартными комментаторами.
+- Brightspace `Administrator` становится в FastComments **admin** для потока (полный доступ к модерации, удалению, бану и конфигурации).
+- Brightspace `Instructor` становится в FastComments **moderator** (pin, hide, delete, ban).
+- Все остальные роли (`Learner`, `TeachingAssistant` и т.д.) становятся стандартными участниками для комментирования.
 
-Комментарии приписываются к учётной записи студента в Brightspace. Если студент изменит своё имя или аватар в Brightspace, при следующем LTI launch изменения синхронизируются.
+Комментарии атрибутируются к учётной записи студента в Brightspace. Если студент изменит своё имя или аватар в Brightspace, при следующем LTI launch изменения синхронизируются.
 
-#### Iframe Height and Resize
+#### Ограничьте публичный доступ (рекомендуется)
 
-FastComments отправляет postMessage `org.imsglobal.lti.frameResize` при каждом рендере thread и при изменениях контента (новый комментарий, разворачивание ответов). Brightspace слушает это сообщение и регулирует высоту iframe, чтобы поток не обрезался и внутри не появлялась полоса прокрутки.
+По умолчанию данные комментариев FastComments доступны для публичного чтения. Любой, кто сможет угадать URL потока или API endpoint, может просмотреть комментарии, даже вне Brightspace. Для курсовых обсуждений почти всегда следует ограничить просмотр только зарегистрированными слушателями.
 
-Если iframe остаётся фиксированной маленькой высоты:
+Откройте вашу <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страницу настройки виджета</a> и создайте правило с включённой опцией **Require SSO To View Comments**, затем установите уровень безопасности в **Secure SSO**, чтобы потоки могли загружаться только через подписанный LTI launch.
 
-- Убедитесь, что курс загружается по HTTPS. Слушатель postMessage Brightspace отклоняет фреймы с mixed-content.
+См. [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) для полного пошагового руководства, включая настройку области действия правила для одного домена или страницы.
+
+#### Высота iframe и изменение размера
+
+FastComments отправляет postMessage `org.imsglobal.lti.frameResize` при каждом рендере потока и при изменениях контента (новый комментарий, разворачивание ответов). Brightspace слушает это сообщение и подстраивает высоту iframe, чтобы поток не обрезался и внутри не появлялась полоса прокрутки.
+
+Если iframe остаётся с фиксированной малой высотой:
+
+- Убедитесь, что курс загружен по HTTPS. Слушатель postMessage Brightspace отклоняет фреймы со смешанным содержимым.
 - Убедитесь, что никакое расширение браузера не блокирует канал postMessage.
-- Для inline embed в HTML-теме окружающая HTML-разметка не должна оборачивать iframe в контейнер с фиксированной высотой. Уберите любой inline `style="height: ..."` у родительского элемента.
+- Для встроенных в HTML тем убедитесь, что окружающий HTML не оборачивает iframe в контейнер с фиксированной высотой. Уберите любые inline-стили вида `style="height: ..."` у родительского элемента.
 
-#### Brightspace-Specific Gotchas
+#### Особенности Brightspace (Gotchas)
 
-**Tool not showing in the Add Existing picker.** Deployment не включён для org unit этого курса. Администратору нужно добавить org unit (или родительский) в список **Org Units** деплоя. Регистрация инструмента сама по себе недостаточна; scope deployment определяет, в каких курсах инструмент видим.
+**Инструмент не отображается в выборщике Add Existing.** Deployment не включён для org unit этого курса. Администратору нужно добавить org unit (или родительскую) в список Org Units у deployment. Регистрация инструмента сама по себе недостаточна; именно deployment определяет, какие курсы видят инструмент.
 
-**`deployment_id` mismatch on launch.** FastComments использует TOFU и фиксирует первый `deployment_id`, который он увидел при регистрации. Если администратор удаляет исходный deployment и создаёт новый, запуски из нового deployment отклоняются с ошибкой несовпадения deployment. Решение — перерегистрировать FastComments (сгенерировать новый registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) и снова выполнить Dynamic Registration); старая запись конфигурации будет заменена.
+**Несоответствие `deployment_id` при запуске.** FastComments закрепляет (TOFU-pins) первый увиденный `deployment_id` для регистрации. Если администратор удалит исходный deployment и создаст новый, запуски из нового deployment будут отклоняться с ошибкой несоответствия deployment. Исправление — повторно зарегистрировать FastComments (сгенерировать новый registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">получить его здесь</a>) и снова выполнить Dynamic Registration); старая запись конфигурации будет заменена.
 
-**Tool launches but shows "Invalid LTI launch".** Курс находится в другой структуре tenant/org, чем покрывает deployment, или deployment был отключён после регистрации. Проверьте **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > переключатель **Enabled** и список org unit в deployment.
+**Инструмент запускается, но показывает «Invalid LTI launch».** Курс находится в другой структуре арендатора/организации, чем покрывает deployment, или deployment был отключён после регистрации. Повторно проверьте меню «Администрирование» > **Manage Extensibility** > **LTI Advantage** > FastComments > переключатель **Enabled** и список org units deployment.
 
-**Names and roles missing inside FastComments.** Brightspace отправляет LTI-запуски с Names and Role Provisioning Services (NRPS) claims. Если курс был обновлён из старой LTI 1.1 ссылки, в launch отсутствуют `name` и `email` claims. Пере-добавьте тему FastComments через **Add Existing** (не мигрируйте старую ссылку), чтобы запуск использовал LTI 1.3.
+**Имена и роли отсутствуют внутри FastComments.** Brightspace отправляет LTI запуски с утверждениями Names and Role Provisioning Services (NRPS). Если курс был обновлён с более старой ссылки LTI 1.1, в запуске могут отсутствовать утверждения `name` и `email`. Повторно добавьте тему FastComments через **Add Existing** (не мигрируйте старую ссылку), чтобы запуск использовал LTI 1.3.
 
-**Embed shows a login screen instead of auto-SSO.** HTML-тема была вставлена как обычный `<iframe>`, указывающий на FastComments, а не через **Insert Stuff** > **LTI Advantage**. Обычные iframe пропускают LTI launch и попадают пользователей на публичную страницу FastComments. Удалите iframe и вставьте заново через поток Insert Stuff.
+**Встраивание показывает экран входа вместо авто-SSO.** HTML-тема была вставлена как обычный `<iframe>`, указывающий на FastComments, а не через **Insert Stuff** > **LTI Advantage**. Простые iframe пропускают LTI launch и попадают на общедоступную страницу FastComments. Удалите iframe и вставьте снова через поток Insert Stuff.

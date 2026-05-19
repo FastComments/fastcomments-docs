@@ -84,6 +84,14 @@ Role mapping from Blackboard to FastComments:
 
 Moderators see moderation controls (pin, hide, ban, delete) inline on every comment in the thread.
 
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Blackboard. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+
 #### Thread Scoping
 
 FastComments scopes each thread by **(Blackboard host, course ID, resource link ID)**. Two FastComments items in the same course produce two threads. The same item copied across two course shells (for example, through course copy) produces two threads, because Blackboard issues a fresh resource link ID during the copy. To keep a shared thread across course copies, use Deep Linking with an explicit thread URN configured in FastComments before launching the copy.

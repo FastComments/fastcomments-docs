@@ -9,7 +9,7 @@
       "subCat": "入门"
     },
     {
-      "name": "评论小部件样式参考（v2，最新版）",
+      "name": "评论小部件自定义 CSS 参考（v2，最新版）",
       "file": "generated/css-v2-generated.md",
       "subCat": "小部件样式"
     },
@@ -19,7 +19,7 @@
       "subCat": "小部件样式"
     },
     {
-      "name": "最受讨论页面小部件样式",
+      "name": "讨论最多页面小部件样式",
       "file": "top-pages-widget.md",
       "subCat": "小部件样式"
     },

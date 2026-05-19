@@ -1,24 +1,32 @@
-#### How Comments Appear in Your Courses
+#### Како се коментари приказују у вашим курсевима
 
-Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
+Када је интеграција LTI омогућена и External App инсталиран, FastComments ради аутоматски на основу поставки које сте конфигурисали:
 
 #### Assignment View
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Ако је укључено место за постављање **Assignment View**, коментари се аутоматски појављују испод сваког задатка у курсу. Студенти и инструктори виде нит коментара са темењем када прегледају задатак — није потребно додатно подешавање по задатку.
 
-Each assignment gets its own separate comment thread.
+Сваки задатак добија своју одвојену нит коментара.
 
 #### Rich Content Editor Button
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+Ако је укључено место за постављање **Editor Button**, инструктори могу да уграде FastComments у било који садржај који користи Rich Content Editor:
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+1. Уредите **Page**, **Quiz**, или **Announcement**.
+2. У траци са алаткама Rich Content Editora, кликните на **FastComments** дугме.
+3. FastComments се аутоматски уграђује у садржај.
+4. Сачувајте страницу.
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+Када студенти прегледају страницу, уграђени FastComments видгет се учитава са нити коментара јединственом за ту страницу.
 
 #### Automatic SSO
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.
+У оба места за постављање, студенти се аутоматски пријављују преко свог Canvas налога. Имена, имејлови и аватари се синхронизују преко LTI покретања, није потребна посебна пријава.
+
+#### Lock Down Public Access (Recommended)
+
+Према подразумеваним подешавањима, подаци коментара FastComments-а су јавно читљиви. Сваки ко може погодити URL нити или API endpoint може видети њене коментаре, чак и ван Canvas-а. За дискусије у оквиру курса, готово сигурно ћете желети да ограничите преглед само на уписане студенте.
+
+Отворите вашу <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страницу за прилагођавање видгета</a> и креирајте правило са укљученим **Require SSO To View Comments**, затим подесите ниво безбедности на **Secure SSO** тако да се нити могу учитавати само путем потписаног LTI покретања.
+
+Погледајте [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за комплетан водич, укључујући како да ограничите правило на један домен или страницу.

@@ -1,6 +1,6 @@
 {
-  "name": "맞춤 스타일",
-  "pageHeader": "맞춤 스타일 가이드",
+  "name": "사용자 지정 스타일",
+  "pageHeader": "사용자 지정 스타일 가이드",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "시작하기"
     },
     {
-      "name": "댓글 위젯 스타일 참조 (v2, 최신)",
+      "name": "댓글 위젯 사용자 정의 CSS 참조 (v2, 최신)",
       "file": "generated/css-v2-generated.md",
       "subCat": "위젯 스타일링"
     },
@@ -29,9 +29,9 @@
       "subCat": "위젯 스타일링"
     },
     {
-      "name": "기타 프런트엔드 라이브러리",
+      "name": "기타 프론트엔드 라이브러리",
       "file": "other-frontend-libraries.md",
-      "subCat": "기타 프런트엔드 라이브러리"
+      "subCat": "기타 프론트엔드 라이브러리"
     }
   ]
 }

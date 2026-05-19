@@ -1,121 +1,131 @@
-Ta stran opisuje dodajanje FastComments v tečaj Brightspace potem, ko je skrbnik registriral orodje in ustvaril deployment. Če orodje še ni registrirano, si najprej oglejte D2L registration guide.
+Ta stran pokriva dodajanje FastComments v tečaj Brightspace potem, ko je skrbnik registriral orodje in ustvaril nameščanje (deployment). Če orodje še ni registrirano, si najprej oglejte vodnik za registracijo D2L.
 
 <div class="screenshot white-bg">
-    <div class="title">FastComments embedded as a unit topic in Brightspace</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments deluje znotraj Brightspace enote, prikazuje niti komentarjev in izbirnik @-omenjanja" />
+    <div class="title">FastComments vgrajen kot tema enote v Brightspace</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments running inside a Brightspace unit, showing threaded comments and an @-mention picker" />
 </div>
 
-Brightspace ponuja dva načina ustvarjanja vsebin: **Classic Content** in **New Content Experience** (imenovano tudi **Lessons**). Oba izpostavljata FastComments, vendar se poti v menijih razlikujejo. Vsak spodnji razdelek pokriva obe različici tam, kjer se razlikujeta.
+Brightspace ponuja dve izkušnji ustvarjanja vsebine: **Klasična vsebina** in **Nova izkušnja vsebine** (imenovana tudi **Lessons**). Oba omogočata FastComments, vendar se poti v meniju razlikujejo. Vsak razdelek spodaj obravnava obe, kjer se razlikujeta.
 
-#### Locate the FastComments Tool
+#### Poiščite orodje FastComments
 
-Orodje FastComments se v urejevalniku vsebin tečaja pojavi na dveh mestih:
+Orodje FastComments se prikaže na dveh mestih v urejevalniku vsebine tečaja:
 
-1. V izbirniku aktivnosti, dostopnem iz gumba **Add Existing** v modulu/enoti (v starejših različicah Brightspace označeno kot **Add Existing Activities**). V novejših različicah Brightspace se FastComments prikaže neposredno v izbirniku; v starejših različicah je v podmeniju **External Learning Tools**. Obe poti dodata FastComments kot samostojno temo.
-2. V pogovornem oknu **Insert Stuff** znotraj HTML urejevalnika, pod **LTI Advantage**. To vgradi FastComments inline v HTML temo preko LTI deep linking toka.
+1. Izbirnik dejavnosti, do katerega pridete iz gumba **Dodaj obstoječe** modula/enote (v starejših različicah Brightspace označeno kot **Add Existing Activities**). FastComments se v novejših gradah Brightspace prikaže neposredno v izbirniku; v starejših različicah je v podmeniju **External Learning Tools**. Vsaka pot doda FastComments kot samostojno temo.
+2. Pogovorno okno **Vstavi vsebino** znotraj HTML urejevalnika, pod **LTI Advantage**. To vgradi FastComments inline v HTML temo preko LTI deep linking toka.
 
-Če FastComments ni v nobenem izbirniku, deployment ni omogočen za org unit, ki hrani tečaj. Prosite svojega Brightspace skrbnika, naj odpre **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments**, odpre deployment in doda org unit tečaja (ali nadrejeni org unit) pod **Org Units**.
+Če se FastComments ne prikaže v nobenem izbirniku, nameščanje ni omogočeno za org enoto, ki drži tečaj. Prosite svojega skrbnika Brightspace, naj odpre **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments tool > **View Deployments**, odpre deployment in doda org enoto tečaja (ali nadrejeno org enoto) pod **Org Units**.
 
-#### Add FastComments as a Topic in a Module
+#### Dodajte FastComments kot temo v modul
 
-Classic Content:
+Klasična vsebina:
 
-1. Odprite tečaj in kliknite **Content** v navigacijski vrstici.
-2. Izberite modul, ki naj vsebuje razpravo (ali ga ustvarite z **Add a module**).
-3. Kliknite **Add Existing** (starejši Brightspace: **Add Existing Activities** > **External Learning Tools**).
-4. V izbirniku kliknite **FastComments**. Brightspace ustvari temo v modulu in vas vrne v pogled vsebin.
-5. Kliknite novo temo. Preimenujte jo v nekaj opisnega, na primer `FastComments Discussion`, z uporabo inline urejevalnika naslova.
+1. Odprite tečaj in kliknite **Vsebina** v navigacijski vrstici.
+2. Izberite modul, ki naj vsebuje razpravo (ali ga ustvarite preko **Dodaj modul**).
+3. Kliknite **Dodaj obstoječe** (starejši Brightspace: **Add Existing Activities** > **External Learning Tools**).
+4. V izbirniku kliknite **FastComments**. Brightspace ustvari temo v modulu in vas vrne v pogled vsebine.
+5. Kliknite novo temo. Preimenujte jo v nekaj opisnega, na primer `FastComments Discussion` z uporabo urejevalnika naslova v vrstici.
 
-New Content Experience (Lessons):
+Nova izkušnja vsebine (Lessons):
 
-1. Odprite tečaj in kliknite **Content**.
+1. Odprite tečaj in kliknite **Vsebina**.
 2. Odprite enoto in lekcijo, ki naj vsebujeta razpravo.
-3. Kliknite **Add** > **Existing Activity** in izberite **FastComments** (v starejših različicah Brightspace: gnezdi se pod **External Learning Tools**).
-4. Aktivnost je dodana v lekcijo.
-5. Kliknite naslov aktivnosti, da ga preimenujete.
+3. Kliknite **Dodaj** > **Obstoječa dejavnost** in izberite **FastComments** (starejši Brightspace: gnezdi se pod **External Learning Tools**).
+4. Dejavnost se doda v lekcijo.
+5. Kliknite naslov dejavnosti, da jo preimenujete.
 
-Prvič, ko katerikoli uporabnik (inštruktor ali študent) odpre temo, FastComments inicializira nit za ta resource link. Nit je vezana na resource link ID, zato preimenovanje ali premikanje teme ne spremeni, katera nit se naloži.
+Prvič, ko kateri koli uporabnik (inštruktor ali študent) odpre temo, FastComments inicializira nit za to povezavo vira. Nit je vezana na ID resource link, zato preimenovanje ali premikanje teme ne spremeni, katera nit se naloži.
 
-#### Embed FastComments Inline in an HTML Topic
+#### Vgradite FastComments inline v HTML temo
 
-Uporabite ta pot, ko želite, da se komentarji pojavijo pod besedilom, videom ali drugo vsebino znotraj iste strani teme, namesto kot ločena tema.
+Uporabite ta pot, ko želite, da se komentarji prikažejo pod besedilom, videom ali drugo vsebino znotraj iste strani teme namesto kot ločena tema.
 
 1. Odprite ali ustvarite HTML temo v modulu/lekciji.
-2. Kliknite **Edit HTML**, da odprete Brightspace HTML urejevalnik.
-3. Postavite kurzor, kjer naj se pojavi nit komentarjev.
-4. Kliknite gumb **Insert Stuff** (ikona sestavljanke v orodni vrstici urejevalnika).
-5. V pogovornem oknu Insert Stuff se pomaknite do **LTI Advantage** in kliknite **FastComments**.
-6. FastComments odpre deep linking izbirnik. Potrdite postavitev (privzete možnosti delujejo za razprave o vsebinah); kliknite **Insert** ali **Continue**.
-7. Brightspace vas vrne v HTML urejevalnik s pripono, ki predstavlja LTI zagon. Kliknite **Save and Close** na temi.
+2. Kliknite **Uredi HTML**, da odprete Brightspace HTML urejevalnik.
+3. Postavite kurzor na mesto, kjer naj se prikaže nit komentarjev.
+4. Kliknite gumb **Vstavi vsebino** (ikonica sestavljanke v orodni vrstici urejevalnika).
+5. V pogovornem oknu Vstavi vsebino se pomaknite do **LTI Advantage** in kliknite **FastComments**.
+6. FastComments odpre picker za deep linking. Potrdite položaj (privzete možnosti delujejo za razprave o vsebini); kliknite **Vstavi** ali **Nadaljuj**.
+7. Brightspace se vrne v HTML urejevalnik s prikaznim blokom, ki predstavlja LTI zagon. Kliknite **Shrani in zapri** na temi.
 
-Ko se tema naloži, Brightspace zamenja pripono z iframe-om, ki samodejno sproži FastComments preko LTI. Študenti vidijo nit razprave inline.
+Ko se tema naloži, Brightspace nadomesti prikazni blok z iframe-om, ki samodejno zažene FastComments preko LTI. Študenti vidijo nit razprave inline.
 
-En HTML tema lahko vsebuje več deep-linked FastComments vnosov. Vsak vnos dobi svojo nit, ker vsak deep link ustvari ločen resource link ID.
+Ena HTML tema lahko vsebuje več deep-linked FastComments vgraditev. Vsaka vgraditev dobi svojo nit, ker vsak deep link ustvarja ločen resource link ID.
 
-#### Module Topic vs Inline Quicklink
+#### Tema modula proti inline hitri povezavi
 
-Izberite pristop **module topic**, kadar:
+Izberite pristop **tema modula**, kadar:
 
-- je razprava primarna dejavnost za ta korak v modulu.
-- želite, da se tema pojavi v Brightspace-ovem seznamu vsebin, spremljanju dokončanosti in Class Progress.
+- Je razprava glavna dejavnost za ta korak v modulu.
+- Želite, da se tema prikaže v kazalu vsebine Brightspace, pri sledenju dokončanja in v Class Progress.
 
-Izberite pristop **inline embed**, kadar:
+Izberite pristop **inline vgradnje**, kadar:
 
-- naj komentarji stojijo pod drugo vsebino na isti strani.
-- ne želite ločene postavke, sledljive v tabeli vsebin.
+- Naj bodo komentarji pod drugo vsebino na isti strani.
+- Ne želite ločene postavke, sledljive v kazalu vsebine.
 
-#### Visibility, Draft, and Release Conditions
+#### Vidnost, osnutek in pogoji sprostitve
 
-Nova FastComments tema je privzeto vidna študentom. Če jo želite skriti med urejanjem:
+Nova tema FastComments je privzeto vidna študentom. Če jo želite skriti med nastavljanjem:
 
-1. V urejevalniku vsebin kliknite naslov teme (Classic) ali meni s tremi pikami na aktivnosti (New Content Experience).
-2. Nastavite status na **Draft** (Classic) ali izklopite **Visibility** (New Content Experience).
+1. V urejevalniku vsebine kliknite naslov teme (Klasično) ali meni s tremi pikami na dejavnosti (Nova izkušnja vsebine).
+2. Nastavite status na **Osnutek** (Klasično) ali izklopite preklopnik **Vidnost** (Nova izkušnja vsebine).
 
-Draft teme so nevidne študentom. Inštruktorji in asistenti jih še vedno vidijo z značko "Draft".
+Osnutke teme študenti ne vidijo. Inštruktorji in asistenti jih še vedno vidijo z značko "Osnutek".
 
-Če želite omejiti temo na določeno skupino ali oddelek:
+Za omejitev teme na določeno skupino ali oddelek:
 
 1. Odprite temo.
-2. Kliknite meni naslova teme > **Edit Properties In-place** (Classic) ali **Edit** > **Restrictions** (New Content Experience).
-3. Pod **Release Conditions** kliknite **Create**.
-4. Izberite **Group enrollment** ali **Section enrollment**, izberite skupino/oddelek in shranite.
+2. Kliknite meni naslova teme > **Uredi lastnosti na mestu** (Klasično) ali **Uredi** > **Omejitve** (Nova izkušnja vsebine).
+3. Pod **Pogoji sprostitve** kliknite **Ustvari**.
+4. Izberite **Group enrollment** ali **Section enrollment**, izberite skupino/sekcijo in shranite.
 
-Pogoji sprostitve se seštevajo s FastComments-ovim lastnim preslikavanjem vlog. Študenti, ki ne morejo videti teme, ne prejmejo LTI zagona.
+Pogoji sprostitve se seštevajo s FastComments-ovim lastnim preslikavanjem vlog. Študenti, ki ne morejo videti teme, ne dobijo LTI zagona.
 
-#### What Students See on First Launch
+#### Kaj študent vidi ob prvem zagonu
 
-Ko študent klikne temo (ali naloži HTML temo z vgrajenim vnosom):
+Ko študent klikne temo (ali naloži HTML temo z vgradnjo):
 
-1. Brightspace izvede LTI 1.3 launch v ozadju.
-2. FastComments prejme študentovo ime, `email`, URL avatarja in LMS vlogo ter ga samodejno prijavi. Ni poziva za prijavo v FastComments.
-3. Nit komentarjev za ta resource link se prikaže znotraj Brightspace iframe-a.
+1. Brightspace izvede LTI 1.3 zagon v ozadju.
+2. FastComments prejme študentovo ime, e-pošto, URL avatarja in vlogo v LMS ter ga samodejno prijavi. Ni poziva za prijavo v FastComments.
+3. Nit komentarjev za to povezavo vira se prikaže znotraj Brightspace iframe-a.
 
-Preslikava vlog pri zagonu:
+Preslikava vlog ob zagonu:
 
-- Brightspace `Administrator` postane FastComments **admin** za nit (polno moderiranje, brisanje, blokiranje in dostop do nastavitev).
-- Brightspace `Instructor` postane FastComments **moderator** (pin, skrij, izbriši, blokiraj).
-- Vse ostale vloge (`Learner`, `TeachingAssistant`, itd.) postanejo standardni komentatorji.
+- Brightspace `Administrator` postane FastComments **admin** za nit (polno moderiranje, brisanje, prepoved in dostop do konfiguracije).
+- Brightspace `Instructor` postane FastComments **moderator** (pripni, skrij, izbriši, prepovej).
+- Vse druge vloge (`Learner`, `TeachingAssistant`, itd.) postanejo običajni komentatorji.
 
 Komentarji so pripisani študentovemu Brightspace računu. Če študent spremeni svoje ime ali avatar v Brightspace, naslednji LTI zagon sinhronizira spremembo.
 
-#### Iframe Height and Resize
+#### Omejite javni dostop (priporočeno)
 
-FastComments po vsakem prikazu niti in pri spremembah vsebine (nov komentar, razširi odgovore) pošilja postMessage `org.imsglobal.lti.frameResize`. Brightspace posluša to sporočilo in prilagodi višino iframe-a, da nit ne bo odrezana in da se ne prikaže notranji drsnik.
+Privzeto so podatki komentarjev FastComments javno berljivi. Vsak, ki lahko uganiti URL niti ali API končno točko, lahko vidi komentarje, tudi zunaj Brightspace. Za razprave v tečaju skoraj zagotovo želite omejiti ogled samo na vpisane udeležence.
+
+Odprite svojo <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">stran za prilagajanje vtičnika</a> in ustvarite pravilo z omogočeno možnostjo **Require SSO To View Comments**, nato nastavite raven varnosti na **Secure SSO**, da se niti lahko naložijo le preko podpisanega LTI zagona.
+
+Oglejte si [Zaščita nitk komentarjev z enotno prijavo (SSO)](/guide-customizations-and-configuration.html#sso-require-to-view-comments) za celoten vodič, vključno s tem, kako omejiti pravilo na en sam domeno ali stran.
+
+#### Višina iframe-a in spreminjanje velikosti
+
+FastComments pošlje postMessage `org.imsglobal.lti.frameResize` ob vsakem renderiranju nitke in ob spremembah vsebine (nov komentar, razširi odgovore). Brightspace posluša to sporočilo in prilagodi višino iframe-a, da nit ni odrezana in da se ne prikaže notranji drsnik.
 
 Če iframe ostane na fiksni nizki višini:
 
-- Potrdite, da je tečaj naložen preko HTTPS. Brightspace-ov poslušalec postMessage zavrne mešane vsebine.
-- Potrdite, da nobena razširitev brskalnika ne blokira postMessage kanala.
-- Za inline vgradnje v HTML temi ne smejo biti iframe oviti v starševski element s fiksno višino. Odstranite morebitni inline `style="height: ..."` iz nadrejenega elementa.
+- Potrdite, da je tečaj naložen preko HTTPS. Poslušalec postMessage v Brightspace zavrne iframe-e z mešano vsebino.
+- Potrdite, da nobeno razširitev brskalnika ne blokira kanala postMessage.
+- Za inline vgradnje v HTML temi ne sme biti nadrejenega elementa, ki zavije iframe v vsebnik s fiksno višino. Odstranite kakršen koli inline `style="height: ..."` iz nadrejenega elementa.
 
-#### Brightspace-Specific Gotchas
+#### Brightspace-specifične pasti
 
-**Tool not showing in the Add Existing picker.** Deployment ni omogočen za org unit tega tečaja. Skrbnik mora dodati org unit (ali nadrejenega) na seznam Org Units v deploymentu. Sama registracija orodja ni dovolj; deployment omejuje, kateri tečaji vidijo orodje.
+**Orodje se ne prikaže v izbirniku Dodaj obstoječe.** Nameščanje ni omogočeno za org enoto tega tečaja. Skrbnik mora dodati org enoto (ali nadrejeno) na seznam Org Units nameščanja. Sama registracija orodja ni dovolj; deployment določa, kateri tečaji vidijo orodje.
 
-**`deployment_id` mismatch on launch.** FastComments TOFU-pins prvo `deployment_id`, ki ga vidi za registracijo. Če skrbnik izbriše izvorni deployment in ustvari novega, se zagoni iz novega deploymenta zavrnejo z napako neskladja deploymenta. Rešitev je ponovno registrirati FastComments (ustvarite nov registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) in ponovno zaženite Dynamic Registration); stari zapis konfiguracije se zamenja.
+**`deployment_id` ne ustreza ob zagonu.** FastComments TOFU-pripne prvi `deployment_id`, ki ga zazna za registracijo. Če skrbnik izbriše izvorno deployment in ustvari novega, se zagoni iz novega deploymenta zavrnejo z napako neusklajenosti deploymenta. Rešitev je ponovno registrirati FastComments (ustvarite nov URL za registracijo (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">pridobite ga tukaj</a>) in znova zaženite dinamično registracijo); stari zapis konfiguracije se nadomesti.
 
-**Tool launches but shows "Invalid LTI launch".** Tečaj je v drugačni strukturi najemnika/organizacije, kot jo pokriva deployment, ali je bil deployment onemogočen po registraciji. Preverite **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > preklop **Enabled** in seznam org unitov v deploymentu.
+**Orodje se zažene, vendar prikaže "Invalid LTI launch".** Tečaj je v drugi strukturi najemnika/org, kot jo pokriva deployment, ali pa je bil deployment onemogočen po registraciji. Ponovno preverite **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > preklopnik **Enabled** in seznam org enot deploymenta.
 
-**Names and roles missing inside FastComments.** Brightspace pošlje LTI zagone z Names and Role Provisioning Services (NRPS) trditvami. Če je bil tečaj nadgrajen iz starejše LTI 1.1 povezave, zagon ne vsebuje trditev `name` in `email`. Ponovno dodajte FastComments temo preko **Add Existing** (ne migrirajte stare povezave), da zagon uporablja LTI 1.3.
+**Imena in vloge manjkajo znotraj FastComments.** Brightspace pošilja LTI zagone z zahtevki Names and Role Provisioning Services (NRPS). Če je bil tečaj nadgrajen iz starejše LTI 1.1 povezave, zagoni nimajo zahtevkov `name` in `email`. Ponovno dodajte FastComments temo preko **Dodaj obstoječe** (ne migrirajte stare povezave), da zagoni uporabljajo LTI 1.3.
 
-**Embed shows a login screen instead of auto-SSO.** HTML tema je bila vstavljena kot navaden `<iframe>`, ki kaže na FastComments, namesto preko **Insert Stuff** > **LTI Advantage**. Navadni iframe-i preskočijo LTI zagon in uporabnike peljejo na javno stran FastComments. Izbrišite iframe in ga ponovno vstavite preko toka Insert Stuff.
+**Vgradnja prikaže zaslon za prijavo namesto samodejne SSO.** HTML tema je bila vstavljena kot običajen `<iframe>`, ki kaže na FastComments, namesto preko **Vstavi vsebino** > **LTI Advantage**. Običajni iframe-i preskočijo LTI zagon in uporabnike usmerijo na javno stran FastComments. Izbrišite iframe in ga ponovno vstavite preko toka Vstavi vsebino.
+
+---

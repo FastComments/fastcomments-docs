@@ -1,26 +1,32 @@
-#### Kurslarınızda Yorumlar Nasıl Görünür
+#### How Comments Appear in Your Courses
 
-LTI entegrasyonu etkinleştirildiğinde ve Dış Uygulama yüklendiğinde, FastComments yapılandırdığınız yerleştirmelere göre otomatik olarak çalışır:
+Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
 
-#### Ödev Görünümü
+#### Assignment View
 
-Eğer **Ödev Görünümü** yerleştirmesi etkinleştirilmişse, yorumlar dersin her ödevinin altında otomatik olarak görünür. Öğrenciler ve eğitmenler bir ödevi görüntülediklerinde konu bazlı (threaded) bir yorum bölümü görürler — her ödev için ekstra bir kurulum gerekmez.
+If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
 
-Her ödevin kendine ait ayrı bir yorum dizisi olur.
+Each assignment gets its own separate comment thread.
 
-#### Zengin İçerik Düzenleyici Düğmesi
+#### Rich Content Editor Button
 
-Eğer **Düzenleyici Düğmesi** yerleştirmesi etkinse, eğitmenler Zengin İçerik Düzenleyiciyi kullanan herhangi bir içeriğe FastComments gömebilirler:
+If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
 
-1. Bir **Sayfa**, **Test** veya **Duyuru** düzenleyin.
-2. Zengin İçerik Düzenleyici araç çubuğunda **FastComments** düğmesine tıklayın.
-3. FastComments içeriğe otomatik olarak gömülür.
-4. Sayfayı kaydedin.
+1. Edit a **Page**, **Quiz**, or **Announcement**.
+2. In the Rich Content Editor toolbar, click the **FastComments** button.
+3. FastComments is automatically embedded into the content.
+4. Save the page.
 
-Öğrenciler sayfayı görüntülediğinde, gömülü FastComments bileşeni o sayfaya özgü bir yorum dizisiyle yüklenir.
+When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
 
-#### Otomatik SSO
+#### Automatic SSO
 
-Her iki yerleştirmede de öğrenciler Canvas hesapları üzerinden otomatik olarak oturum açmış olur. İsimler, e-posta adresleri ve avatarlar LTI başlatması aracılığıyla senkronize edilir — ayrı bir giriş gerekmez.
+In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch, no separate login is needed.
 
----
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Canvas. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.

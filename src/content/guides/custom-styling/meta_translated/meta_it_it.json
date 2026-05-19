@@ -1,6 +1,6 @@
 {
-  "name": "Stili personalizzati",
-  "pageHeader": "Guida agli stili personalizzati",
+  "name": "Stile personalizzato",
+  "pageHeader": "Guida allo stile personalizzato",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -9,24 +9,24 @@
       "subCat": "Primi passi"
     },
     {
-      "name": "Riferimento per lo stile del widget Commenti (v2, ultima versione)",
+      "name": "Riferimento CSS personalizzato per il widget Commenti (v2, ultima versione)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Stile dei widget"
+      "subCat": "Stilizzazione del widget"
     },
     {
-      "name": "Stile del widget Commenti recenti",
+      "name": "Stilizzazione del widget Commenti recenti",
       "file": "recent-comments-widget.md",
-      "subCat": "Stile dei widget"
+      "subCat": "Stilizzazione del widget"
     },
     {
-      "name": "Stile del widget Pagine più discusse",
+      "name": "Stilizzazione del widget Pagine più discusse",
       "file": "top-pages-widget.md",
-      "subCat": "Stile dei widget"
+      "subCat": "Stilizzazione del widget"
     },
     {
-      "name": "Stile del widget Discussioni recenti",
+      "name": "Stilizzazione del widget Discussioni recenti",
       "file": "recent-discussions-widget.md",
-      "subCat": "Stile dei widget"
+      "subCat": "Stilizzazione del widget"
     },
     {
       "name": "Altre librerie frontend",

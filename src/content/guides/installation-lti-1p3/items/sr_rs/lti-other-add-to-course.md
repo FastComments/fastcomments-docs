@@ -1,4 +1,12 @@
-Once FastComments is registered with the platform, instructors add it to course content using the platform's standard external tool flows. This page covers Sakai 23.x and Schoology Enterprise.
+Када се FastComments региструје на платформи, инструктори га додају у садржај курса користећи стандардне токове за спољне алате платформе. Ова страница покрива Sakai 23.x и Schoology Enterprise.
+
+#### Lock Down Public Access (Recommended)
+
+Пo подразумеваној вредности, FastComments подаци коментара су јавно читљиви на обе платформе. Сваки ко може да погоди URL нити или њен API ендпоинт може да види коментаре, чак и изван Sakai или Schoology. За дискусије у курсу готово сигурно желите да ограничите преглед само на уписане студенте.
+
+Отворите вашу <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> и креирајте правило са омогућеним **Require SSO To View Comments**, затим подесите ниво безбедности на **Secure SSO** тако да се нитови могу учитавати само кроз потписано LTI покретање.
+
+Погледајте [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за потпун водич, укључујући како да ограничите правило на један домен или страницу.
 
 #### Sakai
 

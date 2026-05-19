@@ -1,4 +1,4 @@
-Това ръководство описва добавянето на FastComments в курс на Moodle 4.x след като администраторът на сайта е регистрирал инструмента и го е настроил да се показва в избора на активност. Ако FastComments все още не е регистриран, първо вижте ръководството за регистрация на Moodle.
+This guide covers adding FastComments to a Moodle 4.x course after a site administrator has registered the tool and set it to show in the activity chooser. If FastComments is not yet registered, see the Moodle registration guide first.
 
 #### Open the Course in Edit Mode
 
@@ -6,7 +6,7 @@
 2. Open the course.
 3. Toggle **Edit mode** on using the switch in the top-right corner of the course header.
 
-Moodle 4.x заместя стария падащ списък "Add an activity or resource", използван в 3.x, с диалог за избор на активност на цял екран. Moodle 4.5 запазва същия избор, но добавя ред със звезди/предпочитани в горната част, така че закрепването на FastComments веднъж улеснява достъпа до него в по-късни секции.
+Moodle 4.x replaced the legacy "Add an activity or resource" dropdown that 3.x used with a full-screen activity chooser dialog. Moodle 4.5 keeps the same chooser but adds a starred/favorites row at the top, so pinning FastComments once makes it faster to reach in later sections.
 
 #### Add the FastComments Activity
 
@@ -55,7 +55,7 @@ FastComments reads the LTI `roles` claim that Moodle sends on every launch and m
 - Moodle **Manager** or **Site administrator** -> FastComments **admin**
 - Moodle **Editing teacher** or **Non-editing teacher** -> FastComments **moderator**
 - Moodle **Student** -> FastComments **commenter**
-- Moodle **Guest** -> read-only
+- Moodle **Guest** -> само за четене
 
 Admins can delete any comment, ban users, and edit thread settings. Moderators can delete and approve comments inside the thread they launched into. Custom Moodle roles inherit the mapping of the archetype they were cloned from.
 
@@ -67,6 +67,14 @@ Students click the FastComments activity (or scroll to the embedded block inside
 - Their display name, email, and avatar come from Moodle.
 - The thread is scoped to `(Moodle site, course, resource link ID)`, so the same activity duplicated into another course gets a fresh thread.
 - Threaded replies, voting, and notifications work the same as a standalone FastComments thread.
+
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Moodle. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страницата за персонализиране на уиджета</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
 
 #### Moodle Gotchas
 

@@ -1,15 +1,15 @@
 {
-  "name": "Prilagođeno stilizovanje",
-  "pageHeader": "Vodič za prilagođeno stilizovanje",
+  "name": "Prilagođeni stilovi",
+  "pageHeader": "Vodič za prilagođene stilove",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Kako prilagoditi stilove",
       "file": "comment-widget-instructions.md",
-      "subCat": "Početak"
+      "subCat": "Početak rada"
     },
     {
-      "name": "Referenca za stilizovanje komentarskog widgeta (v2, najnovije)",
+      "name": "Referenca za prilagođeni CSS widgeta za komentare (v2, najnovije)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Stilizovanje widgeta"
     },

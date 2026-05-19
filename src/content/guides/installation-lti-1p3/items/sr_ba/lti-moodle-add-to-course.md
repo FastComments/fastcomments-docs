@@ -1,81 +1,89 @@
-Ovaj vodič objašnjava dodavanje FastComments u Moodle 4.x kurs nakon što je administrator sajta registrovao alat i postavio da se prikazuje u izboru aktivnosti. Ako FastComments još nije registrovan, prvo pogledajte vodič za registraciju u Moodleu.
+Овај водич обухвата додавање FastComments у Moodle 4.x курс након што је администратор сајта регистровао алат и поставио да се приказује у изборнику активности. Ако FastComments још није регистрован, прво погледајте водич за регистрацију Moodle-а.
 
-#### Otvorite kurs u režimu uređivanja
+#### Отворите курс у режиму уређивања
 
-1. Prijavite se u Moodle kao Nastavnik sa pravom uređivanja (ili viši) za taj kurs.
-2. Otvorite kurs.
-3. Uključite **Režim uređivanja** koristeći prekidač u gornjem desnom uglu zaglavlja kursa.
+1. Пријавите се у Moodle као наставник који уређује (или виши) за тај курс.
+2. Отворите курс.
+3. Укључите **Edit mode** користећи прекидач у горњем десном углу заглавља курса.
 
-Moodle 4.x je zamijenio stari padajući izbornik "Add an activity or resource" koji je koristio 3.x sa fullscreen dijalogom za izbor aktivnosti. Moodle 4.5 zadržava isti izbor, ali dodaje red sa označenim/favoritima na vrhu, pa će zakačivanje FastComments jednom olakšati pristup u kasnijim odjeljcima.
+Moodle 4.x је заменио наслеђени падајући мени "Add an activity or resource" који је користио 3.x пуно-екранским дијалогом за избор активности. Moodle 4.5 задржава исти изборник али додаје ред са омиљеним означеним звездицом на врху, па чување FastComments као омиљеног убрзава његово дохватање у наредним секцијама.
 
-#### Dodavanje FastComments aktivnosti
+#### Додавање FastComments активности
 
-1. Skrolajte do odjeljka kursa (teme ili sedmice) gdje pripada diskusija.
-2. Kliknite **Add an activity or resource** na dnu tog odjeljka.
-3. U dijalogu za izbor, izaberite **FastComments**. Ako ga ne vidite, preskočite do odjeljka o problemima ispod.
+1. Скролните до секције курса (топик или недеља) у коју припада дискусија.
+2. Кликните **Add an activity or resource** на дну те секције.
+3. У дијалогу за избор активности изаберите **FastComments**. Ако га не видите, прескочите до секције о проблемима у наставку.
 
-Otvori se obrazac za postavke aktivnosti. Polja koja su važna:
+Отвара се формулар подешавања активности. Поља која су важна:
 
-- **Naziv aktivnosti** (obavezno). Prikazuje se na stranici kursa i u knjizi ocjena. Primjer: `Week 3 Discussion`.
-- **Opis aktivnosti**. Opcioni uvodni tekst koji se prikazuje iznad niti komentara.
-- **Prikaži opis na stranici kursa**. Označite ovo ako želite da opis bude vidljiv bez klika na aktivnost.
-- **Preconfigured tool**. Postavljeno na `FastComments` (automatski odabrano kada se pokrene iz izbornika). Ne mijenjajte.
-- **Launch container**. Postavite na **Novi prozor**. Pogledajte odjeljak o problemima zašto "Isti prozor" puca u nekim Moodle instalacijama.
-- **Tool URL**, **Public key**, **Shared secret**, **Custom parameters**. Ostavite prazno. Dinamička registracija je ovo riješila na nivou sajta.
+- **Activity name** (обавезно). Приказује се на страници курса и у бележници оцена. Пример: `Week 3 Discussion`.
+- **Activity description**. Опционални уводни текст који се приказује изнад нити коментара.
+- **Show description on course page**. Ознаците ако желите да опис буде видљив без клика у саму активност.
+- **Preconfigured tool**. Постављено на `FastComments` (аутоматски изабрано када се покрене из изборника). Немојте мењати.
+- **Launch container**. Поставите на **New window**. Погледајте одељак о проблемима да бисте сазнали зашто „Same window“ код неких Moodle инсталација не ради.
+- **Tool URL**, **Public key**, **Shared secret**, **Custom parameters**. Оставите празно. Dynamic Registration је то подесио на нивоу сајта.
 
-Skrolajte do dna i kliknite **Save and return to course** (ili **Save and display** da odmah otvorite aktivnost).
+Скролујте до дна и кликните **Save and return to course** (или **Save and display** да одмах отворите активност).
 
-Aktivnost se pojavljuje kao red u odjeljku sa FastComments ikonom. Studenti kliknu na red da otvore nit komentara.
+Активност се појављује као ред у секцији са иконцом FastComments. Студенти кликом отварају нит коментара.
 
-#### Umetanje FastComments inline u editor
+#### Уградња FastComments уредником у текст
 
-Za nit unutar Page, Book poglavlja, Lesson, ili bilo kojeg drugog resursa koji koristi Atto ili TinyMCE editor:
+За нит унутар Page, Book chapter, Lesson или било ког другог ресурса који користи Atto или TinyMCE уредник:
 
-1. Otvorite resurs u režimu uređivanja.
-2. Postavite kursor na mjesto gdje nit treba da se pojavi.
-3. Na traci alata editora kliknite dugme **LTI** / **External tool**. U Atto je označeno "Insert LTI Advantage content". U TinyMCE (zadano u Moodle 4.3+) nalazi se pod menijem **More** kao **External tools**.
-4. Iz liste alata izaberite **FastComments**.
-5. FastComments otvara picker za deep-linking. Potvrdite naslov niti i kliknite **Embed**.
-6. Editor umeće placeholder LTI bloka. Sačuvajte resurs.
+1. Отворите ресурс у режиму уређивања.
+2. Поставите курсор на место где треба да се појави нит.
+3. У траци алата уредника кликните дугме **LTI** / **External tool**. У Atto-у је означено као "Insert LTI Advantage content". У TinyMCE-у (подразумевано у Moodle 4.3+) налази се у менију **More** као **External tools**.
+4. Из листе алата одаберите **FastComments**.
+5. FastComments ће отворити изборник за deep-linking. Потврдите наслов нити и кликните **Embed**.
+6. Уредник ће убацити LTI плейсхолдер блок. Сачувајте ресурс.
 
-Svaka ugrađena instanca je posebna nit vezana za deep-link content item ID, pa Page sa tri FastComments ugradnje dobija tri nezavisne niti.
+Свака уграђена инстанца је посебна нит кључована по deep-link content item ID, тако да Page са три FastComments уградње добија три независне нити.
 
-#### Ograničavanje pristupa i podešavanja grupa
+#### Ограничавање приступа и подешавања група
 
-Standardne Moodle postavke aktivnosti primjenjuju se na FastComments aktivnosti:
+Стандардна Moodle подешавања модула важе и за FastComments активности:
 
-- **Common module settings** > **Group mode**. Postavljanje na **Separate groups** ili **Visible groups** samo po sebi neće razdvojiti FastComments u niti po grupama. Moodle-ov način rada s grupama samo filtrira knjigu ocjena i listu članova. Da biste imali zasebnu nit po grupi, dodajte po jednu FastComments aktivnost za svaku grupu i koristite **Restrict access** da ograničite svaku od njih.
-- **Restrict access** > **Add restriction**. Podržava standardne Moodle uslove: **Date**, **Grade**, **Group**, **Grouping**, **User profile**, i ugniježdene skupove ograničenja. Koristite **Group** da zaključate FastComments aktivnost za jednu grupu.
-- **Activity completion**. Postavite na **Students must view this activity to complete it** ako želite praćenje završetka aktivnosti. FastComments trenutno ne šalje događaj završetka natrag u Moodle izvan samog pokretanja.
+- **Common module settings** > **Group mode**. Постављање на **Separate groups** или **Visible groups** само по себи не дели FastComments на нити по групама. Moodle-ов режим група само филтрира бележницу оцена и листу чланова. Да бисте имали појединачну нит по групи, додајте по једну FastComments активност за сваку групу и користите **Restrict access** да обухватите сваку појединачно.
+- **Restrict access** > **Add restriction**. Подржава стандардне Moodle услове: **Date**, **Grade**, **Group**, **Grouping**, **User profile**, и унутрашње скупове ограничења. Користите **Group** да закључате FastComments активност на једну групу.
+- **Activity completion**. Поставите на **Students must view this activity to complete it** ако желите праћење завршетка. FastComments тренутно не шаље Moodle-у означу завршетка осим лансирања.
 
-#### Mapiranje uloga
+#### Мапирање улога
 
-FastComments čita LTI `roles` claim koji Moodle šalje pri svakom pokretanju i mapira ga na sljedeći način:
+FastComments чита LTI `roles` клауза које Moodle шаље при сваком лансирању и мапира их на следећи начин:
 
-- Moodle **Manager** ili **Site administrator** -> FastComments **admin**
-- Moodle **Editing teacher** ili **Non-editing teacher** -> FastComments **moderator**
+- Moodle **Manager** или **Site administrator** -> FastComments **admin**
+- Moodle **Editing teacher** или **Non-editing teacher** -> FastComments **moderator**
 - Moodle **Student** -> FastComments **commenter**
-- Moodle **Guest** -> samo za čitanje
+- Moodle **Guest** -> само за читање
 
-Administratori mogu brisati bilo koji komentar, zabranjivati korisnike i uređivati postavke niti. Moderatori mogu brisati i odobravati komentare unutar niti u koju su ušli. Prilagođene Moodle uloge nasljeđuju mapiranje arhetipa od kojeg su klonirane.
+Администратори могу брисати било који коментар, забрањивати кориснике и уређивати подешавања нити. Модератори могу брисати и одобравати коментаре унутар нити у коју су ушли. Прилагођене Moodle улоге наследе мапирање од архетипа из кога су клониране.
 
-#### Šta studenti vide
+#### Шта студенти виде
 
-Studenti kliknu FastComments aktivnost (ili skrolaju do ugrađenog bloka unutar Page ili Book). Moodle šalje njihov identitet FastComments putem LTI pokretanja:
+Студенти кликају FastComments активност (или скролују до уграђеног блока у Page или Book). Moodle шаље њихов идентитет FastComments-у путем LTI лансирања:
 
-- Nema ekrana za prijavu. FastComments ih prijavljuje koristeći Moodle nalog.
-- Njihovo prikazano ime, email i avatar dolaze iz Moodla.
-- Nit je ograničena na (Moodle sajt, kurs, resource link ID), pa ista aktivnost duplicirana u drugom kursu dobija novu nit.
-- Ugniježđeni odgovori, glasanje i notifikacije rade isto kao i u samostalnoj FastComments niti.
+- Нема екрана за пријаву. FastComments их аутоматски пријављује користећи Moodle налог.
+- Име за приказ, е-пошта и аватар долазе из Moodle-а.
+- Нит је ограничена на (Moodle сајт, курс, resource link ID), тако да иста активност дупликована у другом курсу добија нову нит.
+- ОDGOVОРИ у нити, гласање и обавештења раде исто као у самосталној FastComments нити.
 
-#### Moodle problemi (gotchas)
+#### Закључавање јавног приступа (препоручено)
 
-**FastComments nedostaje u izboru aktivnosti.** Administrator sajta je registrovao alat ali nije podesio **Tool configuration usage** na **Show in activity chooser and as a preconfigured tool**. Ispravite ovo pod **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > ikona zupčanika na FastComments pločici.
+По подразумеваној вредности, подаци о коментарима у FastComments-у су јавно читљиви. Свако ко може погодити URL нити или API ендпоинт може видети њене коментаре, чак и изван Moodle-а. За дискусије у курсу готово сигурно желите ограничити преглед само на уписане студенте.
 
-**Pokretanje ne uspijeva ili prikazuje prazan okvir kada je postavljeno na "Isti prozor".** Moodle-ove session kolačiće po defaultu koriste `SameSite=Lax`, i neki browseri ih uklanjaju pri cross-site POST-u koji LTI 1.3 koristi za povratak iz FastComments. Postavite **Launch container** na **Novi prozor** za aktivnost. Ovo je strogo zahtijevanje za ugrađeni FastComments unutar Page ili Book, budući da put pokretanja iz editora uvijek otvara novi prozor.
+Отворите вашу <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> и креирајте правило са омогућеним **Require SSO To View Comments**, затим поставите ниво безбедности на **Secure SSO** тако да се нити могу учитавати само кроз потписано LTI лансирање.
 
-**`iss` claim je URL Moodle sajta, a ne tenant ID.** FastComments koristi Moodle URL sajta (vrijednost konfiguracije `wwwroot`) kao LTI issuer. Ako se vaša Moodle instanca preseli na novi domen ili promijenite `wwwroot`, postojeće FastComments niti ostaju vezane za stari issuer i neće se poklapati sa novim pokretanjima. Ponovo registrujte alat za novi URL i, ako je potrebno, migrirajte niti kroz FastComments administraciju.
+Погледајте [Заштита нити коментара помоћу Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за потпун корак-по-корак водич, укључујући како да ограничите правило на један домен или страницу.
 
-**Backup i restore aktivnosti.** Pravljenje backup-a kursa i njegovo vraćanje u novi kurs stvara nove resource link ID-ove, tako da vraćene FastComments aktivnosti počinju sa praznim nitima. Originalni kurs zadržava originalne niti. Ovo je namjeravano ponašanje, a ne greška.
+#### Moodle проблеми (gotchas)
 
-**Moodle 4.5 TinyMCE po defaultu.** Moodle 4.5 dolazi sa TinyMCE kao zadanim editorom za nove instalacije. Dugme External tool se nalazi pod menijem **More** (`...`) umjesto na glavnoj traci alata. Stariji sajtovi koji su nadograđeni sa 4.1 zadržavaju Atto osim ako administrator nije promijenio zadano.
+**FastComments недостаје у изборнику активности.** Администратор сајта је регистровао алат али није подесио **Tool configuration usage** на **Show in activity chooser and as a preconfigured tool**. Поправите ово у **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > иконица зупчаника на FastComments плочици.
+
+**Лансирање не успева или приказује празан фрејм када је постављено на "Same window".** Moodle-ове сесионе колачиће подразумевано користе `SameSite=Lax`, а неки претраживачи их уклањају код cross-site POST захтева које LTI 1.3 користи приликом повратка са FastComments-а. Поставите **Launch container** на **New window** у подешавањима активности. Ово је тврд захтев за уграђени FastComments унутар Page или Book, јер пут лансирања из уредника увек отвара нови прозор.
+
+**`iss` клауза је URL Moodle сајта, а не tenant ID.** FastComments користи Moodle site URL (вредност конфигурације `wwwroot`) као LTI issuer. Ако ваш Moodle премести на нови домен или промените `wwwroot`, постојеће FastComments нити остају везане за стари issuer и неће се поклапати са новим лансирањима. Поново региструјте алат за нови URL и по потреби мигрирајте нити преко FastComments админ интерфејса.
+
+**Бекап и враћање активности.** Бекаповање курса и враћање у нови курс ствара нове resource link ID-еве, тако да враћене FastComments активности почињу са празним нитима. Оригинални курс задржава оригиналне нити. Ово је намењено понашање, а не грешка.
+
+**Moodle 4.5 TinyMCE подразумевано.** Moodle 4.5 долази са TinyMCE као подразумеваним уредником за нове инсталације. Локација дугмета External tool је у менију **More** (`...`) уместо главне траке алата. Старији сајтови који су надоградили са 4.1 задржавају Atto осим ако администратор није променио подразумевано.

@@ -72,17 +72,25 @@ If your Blackboard tenant is configured to auto-create a gradebook column for ev
 
 When a student opens the FastComments item or scrolls to an embedded block:
 
-1. Blackboard launches the LTI 1.3 message to FastComments. The student is signed in via SSO using their Blackboard identity (isim, e-posta, avatar, rol) without seeing a login form.
+1. Blackboard launches the LTI 1.3 message to FastComments. The student is signed in via SSO using their Blackboard identity (name, email, avatar, role) without seeing a login form.
 2. The comment thread renders in the iframe. Threading, replies, mentions, and reactions are all available based on the comment widget settings configured in FastComments.
 3. Their comments are attributed to their Blackboard account. If the student edits their name or photo in Blackboard later, the next launch updates the FastComments profile.
 
 Role mapping from Blackboard to FastComments:
 
-- **Sistem Yöneticisi** ve **Course Builder** FastComments içinde **admin** ile eşleştirilir.
-- **Eğitmen** ve **Öğretim Asistanı** FastComments içinde **moderator** ile eşleştirilir.
-- **Öğrenci**, **Misafir** ve **Gözlemci** FastComments içinde **commenter** ile eşleştirilir.
+- **System Administrator** and **Course Builder** map to FastComments **admin**.
+- **Instructor** and **Teaching Assistant** map to FastComments **moderator**.
+- **Student**, **Guest**, and **Observer** map to FastComments **commenter**.
 
 Moderators see moderation controls (pin, hide, ban, delete) inline on every comment in the thread.
+
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Blackboard. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
 
 #### Thread Scoping
 
@@ -92,7 +100,7 @@ FastComments scopes each thread by **(Blackboard host, course ID, resource link 
 
 **FastComments tile missing from the Build Content menu (Original) or Content Market (Ultra).** The administrator approved the tool but left an institution policy blocking the relevant placement. Go to **Administrator Panel** > **Integrations** > **LTI Tool Providers**, edit the FastComments entry, and confirm both **Course Content Tool** (Original) and **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) placements are enabled. Save and refresh the course page.
 
-**"Tool not configured for this context" or "Tool is not deployed" error on launch.** The deployment scope registered during dynamic registration doesn't match the institution context the course belongs to. In Blackboard's tool provider entry, verify the **Deployment ID** matches what FastComments shows on its LTI 1.3 Configuration page for this tenant. If they differ, delete the placement and re-run dynamic registration from a fresh registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan edinin</a>).
+**"Tool not configured for this context" or "Tool is not deployed" error on launch.** The deployment scope registered during dynamic registration doesn't match the institution context the course belongs to. In Blackboard's tool provider entry, verify the **Deployment ID** matches what FastComments shows on its LTI 1.3 Configuration page for this tenant. If they differ, delete the placement and re-run dynamic registration from a fresh registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>).
 
 **Iframe height looks fixed or content gets cut off.** Some Blackboard tenants ship with a strict Content Security Policy that blocks the default LTI iframe-resize postMessage. FastComments emits both the Canvas-style `lti.frameResize` message and the IMS spec-form `org.imsglobal.lti.frameResize` message to maximize compatibility, but a tenant-level CSP override blocks the parent listener. Ask your administrator to confirm that `*.fastcomments.com` is on the LTI tool allowlist and that no custom CSP header is stripping postMessage events. Resize then works without further configuration.
 

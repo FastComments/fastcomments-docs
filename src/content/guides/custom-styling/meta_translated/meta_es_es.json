@@ -1,6 +1,6 @@
 {
   "name": "Estilos personalizados",
-  "pageHeader": "Guía de estilos personalizados",
+  "pageHeader": "Guía de Estilos Personalizados",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Primeros pasos"
     },
     {
-      "name": "Referencia de estilos del widget de comentarios (v2, más reciente)",
+      "name": "Referencia de CSS personalizado para el widget de comentarios (v2, última)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Estilos del widget"
     },
@@ -19,7 +19,7 @@
       "subCat": "Estilos del widget"
     },
     {
-      "name": "Estilos del widget de páginas más discutidas",
+      "name": "Estilos del widget de páginas más comentadas",
       "file": "top-pages-widget.md",
       "subCat": "Estilos del widget"
     },

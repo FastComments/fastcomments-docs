@@ -1,5 +1,13 @@
 Once FastComments is registered with the platform, instructors add it to course content using the platform's standard external tool flows. This page covers Sakai 23.x and Schoology Enterprise.
 
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable on either platform. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Sakai or Schoology. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+
 #### Sakai
 
 **1. Add FastComments to a site**

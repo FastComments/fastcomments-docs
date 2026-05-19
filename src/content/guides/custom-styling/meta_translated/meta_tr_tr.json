@@ -1,37 +1,37 @@
 {
-  "name": "Özel Stil",
-  "pageHeader": "Özel Stil Kılavuzu",
+  "name": "Özel Stiller",
+  "pageHeader": "Özel Stil Rehberi",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Stiller Nasıl Özelleştirilir",
+      "name": "Stilleri Nasıl Özelleştirirsiniz",
       "file": "comment-widget-instructions.md",
       "subCat": "Başlarken"
     },
     {
-      "name": "Yorum Widget Stil Referansı (v2, en son)",
+      "name": "Yorum Bileşeni Özel CSS Referansı (v2, en son)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Widget Stilleri"
+      "subCat": "Bileşen Stilleme"
     },
     {
-      "name": "Son Yorumlar Widget Stilleri",
+      "name": "Son Yorumlar Bileşeni Stilleme",
       "file": "recent-comments-widget.md",
-      "subCat": "Widget Stilleri"
+      "subCat": "Bileşen Stilleme"
     },
     {
-      "name": "En Çok Tartışılan Sayfalar Widget Stilleri",
+      "name": "En Çok Tartışılan Sayfalar Bileşeni Stilleme",
       "file": "top-pages-widget.md",
-      "subCat": "Widget Stilleri"
+      "subCat": "Bileşen Stilleme"
     },
     {
-      "name": "Son Tartışmalar Widget Stilleri",
+      "name": "Son Tartışmalar Bileşeni Stilleme",
       "file": "recent-discussions-widget.md",
-      "subCat": "Widget Stilleri"
+      "subCat": "Bileşen Stilleme"
     },
     {
-      "name": "Diğer Ön Uç Kütüphaneler",
+      "name": "Diğer Önyüz Kütüphaneleri",
       "file": "other-frontend-libraries.md",
-      "subCat": "Diğer Ön Uç Kütüphaneler"
+      "subCat": "Diğer Önyüz Kütüphaneleri"
     }
   ]
 }

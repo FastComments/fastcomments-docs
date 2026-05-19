@@ -9,24 +9,24 @@
       "subCat": "入門"
     },
     {
-      "name": "評論元件樣式參考 (v2, 最新)",
+      "name": "評論小工具自訂 CSS 參考（v2，最新）",
       "file": "generated/css-v2-generated.md",
-      "subCat": "元件樣式"
+      "subCat": "小工具樣式"
     },
     {
-      "name": "最近評論元件樣式",
+      "name": "近期評論小工具樣式",
       "file": "recent-comments-widget.md",
-      "subCat": "元件樣式"
+      "subCat": "小工具樣式"
     },
     {
-      "name": "討論最多頁面元件樣式",
+      "name": "討論最多頁面小工具樣式",
       "file": "top-pages-widget.md",
-      "subCat": "元件樣式"
+      "subCat": "小工具樣式"
     },
     {
-      "name": "最近討論元件樣式",
+      "name": "近期討論小工具樣式",
       "file": "recent-discussions-widget.md",
-      "subCat": "元件樣式"
+      "subCat": "小工具樣式"
     },
     {
       "name": "其他前端函式庫",

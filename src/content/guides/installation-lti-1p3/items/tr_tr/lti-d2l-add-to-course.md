@@ -1,121 +1,129 @@
-Bu sayfa, bir yönetici aracı kaydettikten ve bir dağıtım oluşturduktan sonra FastComments'ın Brightspace dersine nasıl ekleneceğini açıklar. Araç henüz kaydedilmediyse önce D2L kayıt kılavuzuna bakın.
+Bu sayfa, bir yönetici aracı kaydettikten ve bir dağıtım oluşturduktan sonra FastComments'ın bir Brightspace dersine nasıl ekleneceğini açıklar. Araç henüz kaydedilmediyse önce D2L kayıt kılavuzuna bakın.
 
 <div class="screenshot white-bg">
-    <div class="title">Brightspace içinde bir ünite konusu olarak gömülü FastComments</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments running inside a Brightspace unit, showing threaded comments and an @-mention picker" />
+    <div class="title">Brightspace'te bir birim konusu olarak gömülü FastComments</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-d2l-comments-in-unit.png" alt="FastComments Brightspace birimi içinde çalışıyor, dizili yorumları ve bir @-mention seçiciyi gösteriyor" />
 </div>
 
-Brightspace iki içerik oluşturma deneyimi sunar: **Classic Content** ve **New Content Experience** (diğer adıyla **Lessons**). Her ikisi de FastComments'ı sağlar, ancak menü yolları farklıdır. Aşağıdaki her bölüm, ayrıldıkları yerlerde her ikisini de kapsar.
+Brightspace iki içerik oluşturma deneyimi sunar: **Classic Content** ve **New Content Experience** (aynı zamanda **Lessons** olarak da adlandırılır). Her ikisi de FastComments'ı sunar, ancak menü yolları farklıdır. Aşağıdaki her bölüm, farklılaştıkları yerleri kapsar.
 
-#### FastComments Araçını Bulun
+#### FastComments Araç öğesini Bulma
 
-FastComments aracı, ders içerik düzenleyicisinde iki yerde görünür:
+FastComments aracı, ders içerik düzenleyicisinin içinde iki yerde görünür:
 
-1. Bir modül/ünitenin **Add Existing** düğmesinden (eski Brightspace sürümlerinde **Add Existing Activities** olarak etiketlenir) erişilen etkinlik seçicisinde. FastComments, mevcut Brightspace derlemelerinde seçicide doğrudan görünür; eski sürümlerde **External Learning Tools** alt menüsü altında yer alır. Her iki yol da FastComments'ı bağımsız bir konu olarak ekler.
-2. HTML düzenleyicisi içindeki **Insert Stuff** iletişim kutusunda, **LTI Advantage** altında. Bu, LTI derin bağlantı akışıyla FastComments'ı bir HTML konusu içinde satır içi olarak gömer.
+1. Bir modül/birimdeki **Add Existing** düğmesinden (eski Brightspace sürümlerinde **Add Existing Activities** olarak etiketlenir) erişilen etkinlik seçicisinde. Güncel Brightspace sürümlerinde FastComments doğrudan seçicide görünür; eski sürümlerde **External Learning Tools** alt menüsünün altında yer alır. Her iki yol da FastComments'ı bağımsız bir konu olarak ekler.
+2. HTML editörü içindeki **Insert Stuff** iletişim kutusunda, **LTI Advantage** altında. Bu, LTI derin bağlantı akışı ile FastComments'ı bir HTML konusu içinde satır içi olarak gömer.
 
-FastComments her iki seçim kutusunda da görünmüyorsa, dağıtım kursu barındıran organizasyon birimi için etkinleştirilmemiş demektir. Brightspace yöneticinizden **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments aracı > **View Deployments** öğesini açmasını, dağıtımı açmasını ve kursun organizasyon birimini (veya üst bir org birimini) **Org Units** altında eklemesini isteyin.
+FastComments her iki seçicide de görünmüyorsa, dağıtım dersi barındıran örgüt birimi için etkinleştirilmemiş demektir. Brightspace yöneticinize **Yönetici Araçları** > **Uzantıları Yönet** > **LTI Advantage** > FastComments aracı > **Dağıtımları Görüntüle** yolunu açmasını, dağıtımı açmasını ve dersin org birimini (veya bir üst org birimini) **Org Units** altında eklemesini isteyin.
 
-#### FastComments'ı Bir Modüle Konu Olarak Ekleme
+#### Bir Modüle FastComments Konusu Ekleme
 
 Classic Content:
 
-1. Dersi açın ve gezinti çubuğunda **Content**'e tıklayın.
-2. Tartışmanın yer alacağı modülü seçin (veya **Add a module** ile oluşturun).
-3. **Add Existing**'e tıklayın (eski Brightspace: **Add Existing Activities** > **External Learning Tools**).
-4. Seçicide **FastComments**'a tıklayın. Brightspace modülde bir konu oluşturur ve sizi içerik görünümüne geri götürür.
+1. Dersi açın ve gezinme çubuğunda **Content** öğesine tıklayın.
+2. Tartışmanın yer alacağı modülü seçin (veya **Add a module** ile bir tane oluşturun).
+3. **Add Existing** (eski Brightspace: **Add Existing Activities** > **External Learning Tools**) öğesine tıklayın.
+4. Seçicide **FastComments**'a tıklayın. Brightspace modülde bir konu oluşturur ve sizi içerik görünümüne geri getirir.
 5. Yeni konuya tıklayın. Satır içi başlık düzenleyicisini kullanarak adını `FastComments Discussion` gibi açıklayıcı bir şeyle değiştirin.
 
 New Content Experience (Lessons):
 
-1. Dersi açın ve **Content**'e tıklayın.
-2. Tartışmanın yer alacağı ünite ve dersi açın.
-3. **Add** > **Existing Activity**'ye tıklayın ve **FastComments**'ı seçin (eski Brightspace: **External Learning Tools** altında iç içe).
+1. Dersi açın ve **Content** öğesine tıklayın.
+2. Tartışmanın yer alacağı birimi ve dersi açın.
+3. **Add** > **Existing Activity** öğesine tıklayın ve **FastComments**'ı seçin (eski Brightspace: **External Learning Tools** altında iç içe).
 4. Etkinlik derse eklenir.
 5. Etkinlik başlığına tıklayarak yeniden adlandırın.
 
-Herhangi bir kullanıcı (eğitmen veya öğrenci) konuyu ilk açtığında, FastComments o kaynak bağlantısı için konuyu başlatır. Konu, kaynak bağlantısı kimliğiyle bağlanır, bu nedenle konunun adını değiştirmek veya taşımak hangi konunun yüklendiğini değiştirmez.
+Herhangi bir kullanıcı (öğretim üyesi veya öğrenci) konuyu ilk açtığında, FastComments kaynağa ait bağlantı için tartışma dizisini başlatır. Diziler kaynak bağlantı kimliğine bağlıdır, bu yüzden konunun adını değiştirmek veya taşımak hangi dizinin yüklendiğini etkilemez.
 
-#### FastComments'ı Bir HTML Konusunda Satır İçi Gömme
+#### Bir HTML Konusunda FastComments'ı Satır İçi Gömme
 
-Yorumların ayrı bir konu olarak değil, aynı konu sayfasındaki bir okuma, video veya diğer içeriğin altında görünmesini istediğinizde bu akışı kullanın.
+Okumanın, videonun veya diğer içeriğin altında yorumların aynı konu sayfasında, ayrı bir konu olarak değil de görünmesini istediğinizde bu akışı kullanın.
 
-1. Modülde/ders içinde bir HTML konusu açın veya oluşturun.
-2. Brightspace HTML düzenleyicisini açmak için **Edit HTML**'e tıklayın.
-3. Yorum konusunun görünmesini istediğiniz yere imleci yerleştirin.
-4. **Insert Stuff** düğmesine tıklayın (düzenleyici araç çubuğundaki yapboz parçası simgesi).
-5. Insert Stuff iletişim kutusunda **LTI Advantage**'a kadar kaydırın ve **FastComments**'a tıklayın.
+1. Modülde/derste bir HTML konusu açın veya oluşturun.
+2. Brightspace HTML editörünü açmak için **Edit HTML**'ye tıklayın.
+3. Yorum dizisinin görünmesini istediğiniz yere imleci yerleştirin.
+4. **Insert Stuff** düğmesine (editör araç çubuğundaki puzzle-parça simgesi) tıklayın.
+5. Insert Stuff iletişim kutusunda **LTI Advantage** bölümüne kadar kaydırın ve **FastComments**'a tıklayın.
 6. FastComments bir derin bağlantı seçici açar. Yerleşimi onaylayın (varsayılan seçenekler içerik tartışmaları için uygundur); **Insert** veya **Continue**'a tıklayın.
-7. Brightspace, HTML düzenleyicisine bir LTI başlatmayı temsil eden bir yer tutucu blok ile geri döner. Konuda **Save and Close**'a tıklayın.
+7. Brightspace, LTI başlatmasını temsil eden bir yer tutucu bloğu ile HTML editörüne geri döner. Konu üzerinde **Save and Close**'a tıklayın.
 
-Konu yüklendiğinde, Brightspace yer tutucuyu bir iframe ile değiştirir ve iframe LTI aracılığıyla FastComments'ı otomatik başlatır. Öğrenciler tartışma konusunu satır içi olarak görür.
+Konu yüklendiğinde, Brightspace yer tutucuyu bir iframe ile değiştirir ve iframe LTI aracılığıyla FastComments'ı otomatik başlatır. Öğrenciler tartışma dizisini satır içinde görür.
 
-Tek bir HTML konu, birden fazla derin bağlantılı FastComments gömmesi barındırabilir. Her gömme kendi konusunu alır çünkü her derin bağlantı ayrı bir kaynak bağlantısı kimliği üretir.
+Tek bir HTML konu birden fazla derin bağlı FastComments gömmesini barındırabilir. Her gömme kendi dizisini alır çünkü her derin bağlantı ayrı bir kaynak bağlantı kimliği üretir.
 
 #### Modül Konusu vs Satır İçi Hızlı Bağlantı
 
 Aşağıdaki durumlarda **modül konusu** yaklaşımını seçin:
 
 - Tartışma, modüldeki adım için birincil etkinlikse.
-- Konunun Brightspace içerik tablosunda, tamamlama takibinde ve Class Progress içinde görünmesini istiyorsunuz.
+- Konunun Brightspace içindekiler tablosunda, tamamlanma takibinde ve Sınıf İlerlemesinde görünmesini istiyorsanız.
 
 Aşağıdaki durumlarda **satır içi gömme** yaklaşımını seçin:
 
-- Yorumların aynı sayfadaki diğer içeriklerin altında yer almasını istiyorsunuz.
-- İçindekiler tablosunda ayrı, tamamlanma izlemeli bir öğe olmasını istemiyorsunuz.
+- Yorumların aynı sayfadaki diğer içeriğin altında yer almasını istiyorsanız.
+- İçindekiler tablosunda ayrı, tamamlanma takibi yapılabilen bir öğe istemiyorsanız.
 
-#### Görünürlük, Taslak ve Yayınlama Koşulları
+#### Görünürlük, Taslak ve Serbest Bırakma Koşulları
 
-Yeni bir FastComments konusu varsayılan olarak öğrencilere görünür. Kurulum yaparken gizlemek için:
+Yeni bir FastComments konusu varsayılan olarak öğrencilere görünür. Kurulum sırasında gizlemek için:
 
-1. İçerik düzenleyicisinde konu başlığına tıklayın (Classic) veya etkinlikteki üç nokta menüsüne tıklayın (New Content Experience).
-2. Durumu **Draft** olarak ayarlayın (Classic) veya **Visibility**'yi kapatın (New Content Experience).
+1. İçerik düzenleyicisinde konu başlığına (Classic) veya etkinlikteki üç nokta menüsüne (New Content Experience) tıklayın.
+2. Durumu Classic için **Draft** olarak ayarlayın veya New Content Experience için **Visibility**'yi kapatın.
 
-Taslak konular öğrenciler için görünmez. Eğitmenler ve yardımcı öğretim elemanları yine de bunları "Draft" rozeti ile görür.
+Taslak konular öğrencilere görünmez. Öğretim üyeleri ve asistanlar onları "Draft" rozeti ile görmeye devam eder.
 
-Konuyu belirli bir gruba veya bölüme sınırlamak için:
+Konuyu belirli bir grup veya bölüme sınırlamak için:
 
 1. Konuyu açın.
-2. Konu başlığı menüsüne tıklayın > **Edit Properties In-place** (Classic) veya **Edit** > **Restrictions** (New Content Experience).
+2. Konu başlığı menüsü > **Edit Properties In-place** (Classic) veya **Edit** > **Restrictions** (New Content Experience) öğesine tıklayın.
 3. **Release Conditions** altında **Create**'a tıklayın.
-4. **Group enrollment** veya **Section enrollment** seçin, grup/bölümü seçin ve kaydedin.
+4. **Group enrollment** veya **Section enrollment**'ı seçin, grup/bölümü seçin ve kaydedin.
 
-Yayın koşulları FastComments'ın kendi rol eşlemesiyle birlikte uygulanır. Konuyu göremeyen öğrenciler LTI başlatması almaz.
+Serbest bırakma koşulları, FastComments'ın kendi rol eşlemesi ile üst üste biner. Konuyu göremeyen öğrenciler LTI başlatması almaz.
 
 #### Öğrencilerin İlk Başlatmada Gördükleri
 
-Bir öğrenci konuya tıkladığında (veya gömme içeren bir HTML konusunu yüklediğinde):
+Bir öğrenci konuya tıkladığında (veya bir gömme içeren bir HTML konusu yüklendiğinde):
 
 1. Brightspace arka planda LTI 1.3 başlatmasını gerçekleştirir.
-2. FastComments, öğrencinin adını, e-posta adresini, avatar URL'sini ve LMS rolünü alır ve onları otomatik olarak oturum açtırır. FastComments için bir oturum açma istemi yoktur.
-3. O kaynak bağlantısı için yorum konusu Brightspace iframe'i içinde görüntülenir.
+2. FastComments öğrencinin adını, e-postasını, avatar URL'sini ve LMS rolünü alır ve onları otomatik olarak oturum açtırır. FastComments giriş istemi olmaz.
+3. O kaynağa ait yorum dizisi Brightspace iframe'i içinde görüntülenir.
 
 Başlatmadaki rol eşlemesi:
 
-- Brightspace `Administrator` o konu için FastComments içinde bir **admin** olur (tam moderasyon, silme, engelleme ve yapılandırma erişimi).
-- Brightspace `Instructor` FastComments içinde bir **moderator** olur (sabitleme, gizleme, silme, engelleme).
-- Diğer tüm roller (`Learner`, `TeachingAssistant`, vb.) normal yorumcu olur.
+- Brightspace `Administrator` dizide FastComments üzerinde tam yönetim (tam moderasyon, silme, engelleme ve yapılandırma erişimi) sağlayan bir FastComments **admin** olur.
+- Brightspace `Instructor` FastComments'ta bir **moderator** olur (pin, gizle, sil, engelle).
+- Diğer tüm roller (`Learner`, `TeachingAssistant`, vb.) standart yorumcu olurlar.
 
-Yorumlar öğrencinin Brightspace hesabına atfedilir. Öğrenci Brightspace'te adını veya avatarını düzenlerse, sonraki LTI başlatması değişikliği senkronize eder.
+Yorumlar öğrencinin Brightspace hesabına atfedilir. Öğrenci Brightspace'te adını veya avatarını düzenlerse, bir sonraki LTI başlatması bu değişikliği senkronize eder.
+
+#### Genel Erişimi Kapatma (Önerilir)
+
+Varsayılan olarak, FastComments yorum verileri genel olarak okunabilir. Birisi bir dizinin URL'sini veya API uç noktasını tahmin edebilirse, Brightspace dışında bile yorumlarını görebilir. Ders tartışmaları için neredeyse kesinlikle görüntülemeyi yalnızca kayıtlı öğrencilerle sınırlandırmak istersiniz.
+
+<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget özelleştirme sayfanızı</a> açın ve **Require SSO To View Comments** etkin olan bir kural oluşturun, ardından güvenlik düzeyini **Secure SSO** olarak ayarlayın, böylece diziler yalnızca imzalı LTI başlatması aracılığıyla yüklenebilir.
+
+Tam yürütme için, bir kuralı tek bir alan adı veya sayfayla nasıl sınırlandıracağınızı da içeren [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) bölümüne bakın.
 
 #### Iframe Yüksekliği ve Yeniden Boyutlandırma
 
-FastComments her konu render'ında ve içerik değişikliklerinde (yeni yorum, yanıtların açılması) `org.imsglobal.lti.frameResize` postMessage'ını gönderir. Brightspace bu mesajı dinler ve iframe yüksekliğini ayarlar, böylece konu kesilmez ve iç kaydırma çubuğu görünmez.
+FastComments her dizin render'ında ve içerik değişikliklerinde (yeni yorum, cevapları genişletme) `org.imsglobal.lti.frameResize` postMessage'ını yayınlar. Brightspace bu mesajı dinler ve iframe yüksekliğini ayarlar, böylece dizi kesilmez ve iç kaydırma çubuğu göstermez.
 
-Iframe sabit ve kısa kalıyorsa:
+Iframe sabit kısa bir yükseklikte kalıyorsa:
 
-- Kursun HTTPS üzerinden yüklendiğini doğrulayın. Brightspace'in postMessage dinleyicisi karışık içerikli frame'leri reddeder.
+- Dersin HTTPS üzerinden yüklendiğini doğrulayın. Brightspace'in postMessage dinleyicisi karışık içerikli frameleri reddeder.
 - Hiçbir tarayıcı uzantısının postMessage kanalını engellemediğini doğrulayın.
-- HTML konuda satır içi gömmeler için, çevreleyen HTML iframe'i sabit yüksekliğe sahip bir konteynerle sarmamalıdır. Üst öğeden herhangi bir inline `style="height: ..."` kaldırın.
+- Bir HTML konusundaki satır içi gömmeler için, çevreleyen HTML iframe'i sabit yükseklikte bir kapsayıcı içine sarmamalıdır. Ebeveyn öğeden herhangi bir inline `style="height: ..."` ifadesini kaldırın.
 
-#### Brightspace'e Özgü Sorunlar
+#### Brightspace'e Özgü Dikkat Edilmesi Gerekenler
 
-**Araç Add Existing seçicisinde görünmüyor.** Dağıtım bu kursun organizasyon birimi için etkinleştirilmemiş. Bir yönetici dağıtımın **Org Units** listesine organizasyon birimini (veya üst bir org birimini) eklemelidir. Araç kaydı tek başına yeterli değildir; dağıtım hangi kursların aracı gördüğünü belirler.
+**Araç Add Existing seçicisinde görünmüyor.** Dağıtım bu dersin org birimi için etkinleştirilmemiştir. Bir yönetici dağıtımın **Org Units** listesine org birimini (veya bir üstünü) eklemelidir. Araç kaydı tek başına yeterli değildir; dağıtım hangi derslerin aracı gördüğünü sınırlar.
 
-**Başlatmada `deployment_id` uyumsuzluğu.** FastComments, bir kayıt için gördüğü ilk `deployment_id`'yi TOFU (Trust On First Use) ile sabitler. Bir yönetici orijinal dağıtımı silip yeni bir tane oluşturursa, yeni dağıtımdan yapılan başlatmalar dağıtım uyumsuzluğu hatası ile reddedilir. Çözüm, FastComments'ı yeniden kaydetmektir (yeni bir kayıt URL'si oluşturun (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan edinin</a>) ve Dinamik Kaydı tekrar çalıştırın); eski yapılandırma kaydı değiştirilir.
+**Başlatmada `deployment_id` uyuşmazlığı.** FastComments bir kayıt için gördüğü ilk `deployment_id`'yi TOFU (Trust On First Use) ile sabitler. Bir yönetici orijinal dağıtımı silip yenisini oluşturursa, yeni dağıtımdan yapılan başlatmalar dağıtım uyuşmazlığı hatasıyla reddedilir. Düzeltme, FastComments'ı yeniden kaydetmektir (yeni kayıt URL'si oluşturun (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan edinin</a>) ve Dinamik Kaydı tekrar çalıştırın); eski yapılandırma kaydı yeni olanla değiştirilir.
 
-**Araç başlıyor ama "Invalid LTI launch" gösteriyor.** Kurs, dağıtımın kapsadığı tenant/organizasyon yapısının dışında olabilir veya dağıtım kayıttan sonra devre dışı bırakılmış olabilir. **Admin Tools** > **Manage Extensibility** > **LTI Advantage** > FastComments > **Enabled** geçişini ve dağıtımın org birimi listesini yeniden kontrol edin.
+**Araç başlatılıyor ama "Invalid LTI launch" gösteriyor.** Ders, dağıtımın kapsadığı kiracı/örgüt yapısının dışında veya dağıtım kayıt sonrası devre dışı bırakılmış olabilir. **Yönetici Araçları** > **Uzantıları Yönet** > **LTI Advantage** > FastComments > **Enabled** geçişini ve dağıtımın org birimi listesini tekrar kontrol edin.
 
-**FastComments içinde isimler ve roller eksik.** Brightspace LTI başlatmalarını Names and Role Provisioning Services (NRPS) iddiaları ile gönderir. Bir kurs eski bir LTI 1.1 bağlantısından yükseltildiyse, başlatma `name` ve `email` iddialarından yoksun olabilir. FastComments konusunu **Add Existing** ile yeniden ekleyin (eski bağlantıyı taşımayın) böylece başlatma LTI 1.3 kullanır.
+**FastComments içinde isimler ve roller eksik.** Brightspace, NRPS (Names and Role Provisioning Services) iddialarıyla LTI başlatmaları gönderir. Bir ders daha eski bir LTI 1.1 bağlantısından yükseltildiyse, başlatma `name` ve `email` iddialarından yoksun olabilir. FastComments konusunu **Add Existing** ile yeniden ekleyin (eski bağlantıyı migrate etmeyin) ki başlatma LTI 1.3 kullansın.
 
-**Gömme, otomatik SSO yerine bir giriş ekranı gösteriyor.** HTML konusu, **Insert Stuff** > **LTI Advantage** yerine FastComments'a işaret eden düz bir `<iframe>` olarak eklenmiş olabilir. Düz iframe'ler LTI başlatmasını atlar ve kullanıcıları genel FastComments sayfasına götürür. Iframe'i silin ve Insert Stuff akışıyla yeniden ekleyin.
+**Gömme, otomatik SSO yerine bir giriş ekranı gösteriyor.** HTML konusu, **Insert Stuff** > **LTI Advantage** yoluyla değil de doğrudan FastComments'a işaret eden düz bir `<iframe>` olarak eklenmiş olabilir. Düz iframeler LTI başlatmasını atlar ve kullanıcıları halka açık FastComments sayfasına götürür. Iframe'i silin ve Insert Stuff akışı ile yeniden ekleyin.

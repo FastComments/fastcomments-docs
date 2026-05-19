@@ -1,6 +1,6 @@
 {
-  "name": "Prilagajanje slogov",
-  "pageHeader": "Vodnik za prilagajanje slogov",
+  "name": "Prilagojeno oblikovanje",
+  "pageHeader": "Vodnik za prilagojeno oblikovanje",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -9,24 +9,24 @@
       "subCat": "Začetek"
     },
     {
-      "name": "Referenca oblikovanja pripomočka za komentarje (v2, najnovejše)",
+      "name": "Referenca za prilagojen CSS komentarskega gradnika (v2, najnovejše)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Oblikovanje pripomočka"
+      "subCat": "Oblikovanje gradnikov"
     },
     {
-      "name": "Oblikovanje pripomočka za nedavne komentarje",
+      "name": "Oblikovanje gradnika za nedavne komentarje",
       "file": "recent-comments-widget.md",
-      "subCat": "Oblikovanje pripomočka"
+      "subCat": "Oblikovanje gradnikov"
     },
     {
-      "name": "Oblikovanje pripomočka za strani z največ razprav",
+      "name": "Oblikovanje gradnika za najbolj razpravljane strani",
       "file": "top-pages-widget.md",
-      "subCat": "Oblikovanje pripomočka"
+      "subCat": "Oblikovanje gradnikov"
     },
     {
-      "name": "Oblikovanje pripomočka za nedavne razprave",
+      "name": "Oblikovanje gradnika za nedavne razprave",
       "file": "recent-discussions-widget.md",
-      "subCat": "Oblikovanje pripomočka"
+      "subCat": "Oblikovanje gradnikov"
     },
     {
       "name": "Druge knjižnice za frontend",

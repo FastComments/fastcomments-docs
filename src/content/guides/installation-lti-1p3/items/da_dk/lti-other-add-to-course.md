@@ -1,118 +1,126 @@
-Once FastComments is registered with the platform, instructors add it to course content using the platform's standard external tool flows. This page covers Sakai 23.x and Schoology Enterprise.
+Når FastComments er registreret med platformen, tilføjer undervisere det til kursusindhold ved hjælp af platformens standard flows for eksterne værktøjer. Denne side dækker Sakai 23.x og Schoology Enterprise.
+
+#### Lås offentlig adgang (anbefalet)
+
+Som standard er FastComments-kommentardata offentligt læsbare på begge platforme. Enhver, der kan gætte en tråds URL eller API-endpoint, kan se dens kommentarer, selv uden for Sakai eller Schoology. For kursusdiskussioner vil du næsten altid begrænse visningen til kun indskrevne studerende.
+
+Åbn din <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget-tilpasningsside</a> og opret en regel med **Require SSO To View Comments** aktiveret, og sæt derefter sikkerhedsniveauet til **Secure SSO**, så tråde kun kan indlæses gennem den signerede LTI-start.
+
+Se [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for den fulde gennemgang, inklusive hvordan du kan afgrænse reglen til et enkelt domæne eller en side.
 
 #### Sakai
 
-**1. Add FastComments to a site**
+**1. Tilføj FastComments til et site**
 
-The site maintainer enables the tool on a per-site basis:
+Site-vedligeholderen aktiverer værktøjet på en per-site basis:
 
-1. Open the site and click **Site Info** in the left navigation.
-2. Click **Manage Tools**.
-3. Scroll to the **External Tools** list and toggle **FastComments** on.
-4. Click **Continue**, review the tool list, then click **Finish**.
+1. Åbn sitet og klik på **Site Info** i venstre navigation.
+2. Klik **Manage Tools**.
+3. Rul til listen **External Tools** og slå **FastComments** til.
+4. Klik **Continue**, gennemgå værktøjslisten, og klik derefter **Finish**.
 
-FastComments now appears as a left-nav item in the site.
+FastComments vises nu som et punkt i venstre navigation på sitet.
 
-**2. Reorder the left-nav entry**
+**2. Omarranger venstre navigation-posten**
 
-Go to **Site Info** > **Tool Order**. Drag **FastComments** to the desired position and click **Save**. You can also rename the nav label and hide it from students from this screen.
+Gå til **Site Info** > **Tool Order**. Træk **FastComments** til den ønskede position og klik **Save**. Du kan også omdøbe navigationsetiketten og skjule den for studerende fra denne skærm.
 
-**3. Embed inline in a Lessons page**
+**3. Indlejring inline på en Lessons-side**
 
-To place FastComments directly inside a Lessons page rather than as a standalone left-nav tool:
+For at placere FastComments direkte inde i en Lessons-side i stedet for som et selvstændigt venstre-nav værktøj:
 
-1. Open the **Lessons** tool in the site.
-2. Click **Add Content** > **Add External Tool**.
-3. Select **FastComments** from the list.
-4. If FastComments advertised Deep Linking during registration, Sakai opens the tool's content selector so you can pick or label the thread. If Deep Linking wasn't advertised, Sakai inserts a default launch link.
-5. Save the Lessons item.
+1. Åbn værktøjet **Lessons** i sitet.
+2. Klik **Add Content** > **Add External Tool**.
+3. Vælg **FastComments** fra listen.
+4. Hvis FastComments annoncerede Deep Linking under registreringen, åbner Sakai værktøjets indholdsselector, så du kan vælge eller mærke tråden. Hvis Deep Linking ikke blev annonceret, indsætter Sakai et standard launch-link.
+5. Gem Lessons-elementet.
 
-Each embedded instance gets its own thread, scoped to that resource link.
+Hver indlejret instans får sin egen tråd, afgrænset til det pågældende ressource-link.
 
-**4. Permission tweaks for student access**
+**4. Rettighedsjusteringer for studerendes adgang**
 
-Sakai gates external tool launches through Realms. To confirm students can launch FastComments:
+Sakai styrer lanceringer af eksterne værktøjer gennem Realms. For at bekræfte, at studerende kan starte FastComments:
 
-1. Sign in as a Sakai admin and open **Administration Workspace** > **Realms**.
-2. Open the relevant realm (for example, `!site.template.course` or the specific site realm).
-3. Confirm the `access` role has `lti.launch` enabled and that the role permissions in the **external.tools** group are granted.
-4. Save the realm.
+1. Log ind som Sakai-admin og åbn **Administration Workspace** > **Realms**.
+2. Åbn den relevante realm (for eksempel `!site.template.course` eller den specifikke site-realm).
+3. Bekræft, at rollen `access` har `lti.launch` aktiveret, og at rolle-tilladelserne i gruppen **external.tools** er givet.
+4. Gem realmen.
 
-For site-level overrides, the maintainer can adjust per-role tool visibility from **Site Info** > **Tool Order** by hiding or showing FastComments per role.
+For site-niveau overskrivninger kan vedligeholderen justere værktøjsynlighed per rolle fra **Site Info** > **Tool Order** ved at skjule eller vise FastComments per rolle.
 
-**5. What students see**
+**5. Hvad studerende ser**
 
-Students click the FastComments left-nav item (or scroll to the embedded Lessons block) and land directly in the threaded comment view. SSO is automatic: Sakai sends the user's identity in the LTI launch and FastComments signs them in under their Sakai account.
+Studerende klikker på FastComments-posten i venstre navigation (eller ruller til det indlejrede Lessons-blok) og lander direkte i den trådede kommentarside. SSO er automatisk: Sakai sender brugerens identitet i LTI-launchen, og FastComments logger dem ind under deres Sakai-konto.
 
-Role mapping:
+Rollekortlægning:
 
 - Sakai `Instructor` -> FastComments moderator
-- Sakai `Admin` (admin in Administration Workspace) -> FastComments admin
+- Sakai `Admin` (admin i Administration Workspace) -> FastComments admin
 - Sakai `Student` / `access` -> FastComments commenter
 
-**6. Sakai gotchas**
+**6. Sakai-faldgruber**
 
-- **Tool not visible in Manage Tools.** If FastComments doesn't appear in the External Tools list, the Sakai admin needs to open the tool registry (**Administration Workspace** > **External Tools** > **FastComments**) and set **Stealthed** to `false`. Stealthed tools are hidden from the per-site Manage Tools picker.
-- **Launches breaking in shared-session browsers.** Sakai's portal CSRF token is bound to the browser session. If a student is signed in to two Sakai sites in different tabs or has a stale session, the launch returns a 403. Fix: close other Sakai tabs, sign out, sign back in, and relaunch. Admins can also raise `sakai.csrf.token.cache.ttl` if this happens cluster-wide.
-- **Frame embedding.** Confirm `lti.frameheight` in `sakai.properties` is large enough (600 or higher) so the comment thread isn't clipped inside a Lessons page.
+- **Værktøjet er ikke synligt i Manage Tools.** Hvis FastComments ikke vises i External Tools-listen, skal Sakai-admin åbne værktøjsregistret (**Administration Workspace** > **External Tools** > **FastComments**) og sætte **Stealthed** til `false`. Stealthed værktøjer er skjult i den per-site Manage Tools-picker.
+- **Lanceringer fejler i browsere med delt session.** Sakais portal CSRF-token er bundet til browsersessionen. Hvis en studerende er logget ind på to Sakai-sites i forskellige faner eller har en forældet session, returnerer launchen en 403. Løsning: luk andre Sakai-faner, log ud, log ind igen og start på ny. Administratorer kan også hæve `sakai.csrf.token.cache.ttl`, hvis dette sker på tværs af klyngen.
+- **Indlejring i iframe.** Bekræft, at `lti.frameheight` i `sakai.properties` er stor nok (600 eller højere), så kommentarsamtalen ikke bliver afskåret inde i en Lessons-side.
 
 #### Schoology
 
-Schoology Enterprise has two installation scenarios. Confirm which one applies before adding the tool to a course.
+Schoology Enterprise har to installationsscenarier. Bekræft hvilket der gælder, før du tilføjer værktøjet til et kursus.
 
-**1. Two installation scenarios**
+**1. To installationsscenarier**
 
-- **(a) Enterprise-level install.** The Schoology System Administrator installed FastComments at the organization level and assigned it to all courses or to specific course templates. Instructors skip installation and go straight to "Add Materials".
-- **(b) Instructor self-install.** The instructor installs the tool into a single course from **Course Options** > **External Tools** > **Install LTI Apps**. Self-install requires the System Administrator to have approved the FastComments app at the org level first.
+- **(a) Enterprise-level installation.** Schoology System Administrator installerede FastComments på organisationsniveau og tildelte det til alle kurser eller til specifikke kursskabeloner. Undervisere springer installationen over og går direkte til "Add Materials".
+- **(b) Underviser self-install.** Underviseren installerer værktøjet i et enkelt kursus fra **Course Options** > **External Tools** > **Install LTI Apps**. Self-install kræver, at System Administrator først har godkendt FastComments-app'en på organisationsniveau.
 
-**2. Add FastComments as a course material**
+**2. Tilføj FastComments som kursusmateriale**
 
-Inside the course:
+Inde i kurset:
 
-1. Open the course and go to **Materials**.
-2. Click **Add Materials** > **Add File/Link/External Tool**.
-3. Choose **External Tool**.
-4. Select **FastComments** from the registered tools list.
-5. Set a **Name** (this is what students see in the materials list) and an optional **Description**.
-6. Leave **Enable Grading** (grade passback) **OFF**. FastComments does not report grades back to Schoology, so enabling grade passback creates an empty gradebook column.
-7. Click **Submit**.
+1. Åbn kurset og gå til **Materials**.
+2. Klik **Add Materials** > **Add File/Link/External Tool**.
+3. Vælg **External Tool**.
+4. Vælg **FastComments** fra listen over registrerede værktøjer.
+5. Sæt et **Name** (dette er, hvad studerende ser i materialelisten) og en valgfri **Description**.
+6. Lad **Enable Grading** (grade passback) være **OFF**. FastComments rapporterer ikke karakterer tilbage til Schoology, så aktivering af grade passback opretter en tom karakterkolonne.
+7. Klik **Submit**.
 
-The material now appears in the course materials list and opens the FastComments thread when clicked.
+Materialet vises nu i kursets materialeliste og åbner FastComments-tråden, når det klikkes.
 
-**3. Inline embedding via the Rich Text editor**
+**3. Inline-indlejring via Rich Text-editoren**
 
-If the System Administrator enabled Deep Linking placement for FastComments during registration, instructors can embed the comment thread inside any Rich Text field (assignment instructions, page bodies, discussion prompts):
+Hvis System Administrator aktiverede Deep Linking-placering for FastComments under registreringen, kan undervisere indlejre kommentartråden inde i enhver Rich Text-field (opgaveinstruktioner, sideindhold, diskussionsopslag):
 
-1. Open the Rich Text editor on the target page.
-2. Click the **External Tool** (puzzle piece) icon in the toolbar.
-3. Choose **FastComments**.
-4. Configure the embed in the deep-linking dialog and click **Insert**.
-5. Save the page.
+1. Åbn Rich Text-editoren på målsiden.
+2. Klik på ikonet **External Tool** (puslespilsbrik) i værktøjslinien.
+3. Vælg **FastComments**.
+4. Konfigurer indlejringen i deep-linking-dialogen og klik **Insert**.
+5. Gem siden.
 
-If the External Tool button doesn't appear in the Rich Text editor, Deep Linking is disabled for this tool on this tenant. See the gotchas below.
+Hvis knappen External Tool ikke vises i Rich Text-editoren, er Deep Linking deaktiveret for dette værktøj på denne tenant. Se faldgruberne nedenfor.
 
-**4. Visibility and section assignments**
+**4. Synlighed og sektionstildelinger**
 
-Schoology scopes tool availability per section through Course Options:
+Schoology styrer værktøjets tilgængelighed per sektion gennem Course Options:
 
-1. From the course, click **Course Options** > **External Tools**.
-2. For each installed LTI app, you control whether it's available to all sections in the course or to specific sections.
-3. To restrict FastComments to certain sections, uncheck the sections that should not see the tool.
-4. Section-level access also gates which sections see the **Add Materials** > **External Tool** entry for FastComments.
+1. Fra kurset klik **Course Options** > **External Tools**.
+2. For hver installeret LTI-app kontrollerer du, om den er tilgængelig for alle sektioner i kurset eller kun for specifikke sektioner.
+3. For at begrænse FastComments til bestemte sektioner, fjern markeringen af de sektioner, som ikke skal se værktøjet.
+4. Sektion-niveau adgang styrer også hvilke sektioner, der ser posten **Add Materials** > **External Tool** for FastComments.
 
-**5. What students see**
+**5. Hvad studerende ser**
 
-Students click the FastComments material (or scroll to the inline embed) and land in the threaded discussion. SSO is automatic via the Schoology LTI launch under their Schoology account.
+Studerende klikker på FastComments-materialet (eller ruller til den indlejrede inline) og lander i den trådede diskussion. SSO er automatisk via Schoology LTI-launch under deres Schoology-konto.
 
-Role mapping:
+Rollekortlægning:
 
 - Schoology `Administrator` -> FastComments admin
 - Schoology `Instructor` -> FastComments moderator
 - Schoology `Student` -> FastComments commenter
 
-**6. Schoology gotchas**
+**6. Schoology-faldgruber**
 
-- **Enterprise-only.** Personal and free Schoology accounts cannot install LTI 1.3 tools. If your tenant is on the free tier, the **External Tools** option is absent from Course Options. Upgrade to Schoology Enterprise to use FastComments.
-- **Deep Linking disabled by tenant default.** Some Schoology tenants restrict Deep Linking placement at the org level. When this is the case, instructors see only the **Add Materials** > **External Tool** flow and not the External Tool button in the Rich Text editor. To enable inline embedding, the System Administrator goes to **System Settings** > **Integration** > **LTI 1.3** > **FastComments** and enables the **Content Item / Deep Linking** placement, then saves.
-- **Per-section assignment override.** If FastComments is assigned at the enterprise level but the instructor cannot see it in **Add Materials**, the course's section is excluded in the org-level assignment. Ask the System Administrator to add the section to the FastComments app assignment.
-- **Material name vs. thread identity.** Renaming the material in Schoology does not move the comment thread. Threads are keyed on the LTI resource link ID, so a rename keeps the same thread; deleting and recreating the material creates a new, empty thread.
+- **Kun Enterprise.** Personlige og gratis Schoology-konti kan ikke installere LTI 1.3-værktøjer. Hvis din tenant er på gratisniveau, er valgmuligheden **External Tools** fraværende i Course Options. Opgrader til Schoology Enterprise for at bruge FastComments.
+- **Deep Linking deaktiveret som standard af tenant.** Nogle Schoology-tenants begrænser Deep Linking-placering på organisationsniveau. Når dette er tilfældet, ser undervisere kun flowet **Add Materials** > **External Tool** og ikke External Tool-knappen i Rich Text-editoren. For at aktivere inline-indlejring går System Administrator til **System Settings** > **Integration** > **LTI 1.3** > **FastComments** og aktiverer placeringen **Content Item / Deep Linking**, og gemmer derefter.
+- **Sektionstildelings-override.** Hvis FastComments er tildelt på enterprise-niveau, men underviseren ikke kan se det i **Add Materials**, er kursets sektion udelukket i org-niveau tildelingen. Bed System Administrator om at tilføje sektionen til FastComments-app-tildelingen.
+- **Materialenavn vs. trådidentitet.** Omdøbning af materialet i Schoology flytter ikke kommentartråden. Tråde er nøglede på LTI resource link ID, så en omdøbning bevarer den samme tråd; sletning og genoprettelse af materialet opretter en ny, tom tråd.

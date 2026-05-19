@@ -1,24 +1,32 @@
-#### How Comments Appear in Your Courses
+#### Comment les commentaires apparaissent dans vos cours
 
-Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
+Une fois l’intégration LTI activée et l’application externe installée, FastComments fonctionne automatiquement en fonction des emplacements que vous avez configurés :
 
-#### Assignment View
+#### Vue des devoirs
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Si l’emplacement **Vue des devoirs** est activé, les commentaires apparaissent automatiquement sous chaque devoir du cours. Les étudiants et les enseignants voient une section de commentaires en fil lorsqu’ils consultent un devoir — aucune configuration supplémentaire par devoir n’est nécessaire.
 
-Each assignment gets its own separate comment thread.
+Chaque devoir dispose de son propre fil de commentaires.
 
-#### Rich Content Editor Button
+#### Bouton de l’éditeur de contenu riche
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+Si l’emplacement **Bouton de l’éditeur** est activé, les enseignants peuvent intégrer FastComments dans tout contenu utilisant l’éditeur de contenu riche :
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+1. Modifiez une **Page**, un **Quiz**, ou une **Annonce**.
+2. Dans la barre d’outils de l’éditeur de contenu riche, cliquez sur le bouton **FastComments**.
+3. FastComments est automatiquement intégré dans le contenu.
+4. Enregistrez la page.
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+Lorsque les étudiants consultent la page, le widget FastComments intégré se charge avec un fil de commentaires unique pour cette page.
 
-#### Automatic SSO
+#### SSO automatique
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.
+Dans les deux emplacements, les étudiants sont connectés automatiquement via leur compte Canvas. Les noms, adresses e-mail et avatars sont synchronisés via le lancement LTI, aucune connexion séparée n’est nécessaire.
+
+#### Verrouiller l’accès public (recommandé)
+
+Par défaut, les données de commentaire FastComments sont lisibles publiquement. Toute personne capable de deviner l’URL d’un fil ou un point de terminaison API peut voir ses commentaires, même en dehors de Canvas. Pour les discussions de cours, vous souhaiterez très probablement restreindre la visualisation aux étudiants inscrits uniquement.
+
+Ouvrez votre <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">page de personnalisation du widget</a> et créez une règle avec **Exiger la SSO pour afficher les commentaires** activée, puis définissez le niveau de sécurité sur **SSO sécurisé** afin que les fils ne puissent être chargés que via le lancement LTI signé.
+
+Voir [Protéger les fils de commentaires avec l’authentification unique](/guide-customizations-and-configuration.html#sso-require-to-view-comments) pour le guide complet, y compris comment limiter la règle à un seul domaine ou une seule page.

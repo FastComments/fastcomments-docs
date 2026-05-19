@@ -1,32 +1,32 @@
 {
-  "name": "Προσαρμοσμένο Στυλ",
-  "pageHeader": "Οδηγός Προσαρμοσμένου Στυλ",
+  "name": "Προσαρμογή Στυλ",
+  "pageHeader": "Οδηγός Προσαρμογής Στυλ",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Πώς να προσαρμόσετε τα στυλ",
       "file": "comment-widget-instructions.md",
-      "subCat": "Εισαγωγή"
+      "subCat": "Ξεκινώντας"
     },
     {
-      "name": "Αναφορά Στυλ Widget Σχολίων (v2, πιο πρόσφατη έκδοση)",
+      "name": "Αναφορά προσαρμοσμένου CSS για το widget σχολίων (v2, τελευταία έκδοση)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Στυλ Widget"
+      "subCat": "Στυλ widget"
     },
     {
-      "name": "Στυλ Widget για Πρόσφατα Σχόλια",
+      "name": "Στυλ widget πρόσφατων σχολίων",
       "file": "recent-comments-widget.md",
-      "subCat": "Στυλ Widget"
+      "subCat": "Στυλ widget"
     },
     {
-      "name": "Στυλ Widget για τις Πιο Συζητημένες Σελίδες",
+      "name": "Στυλ widget πιο συζητημένων σελίδων",
       "file": "top-pages-widget.md",
-      "subCat": "Στυλ Widget"
+      "subCat": "Στυλ widget"
     },
     {
-      "name": "Στυλ Widget για Πρόσφατες Συζητήσεις",
+      "name": "Στυλ widget πρόσφατων συζητήσεων",
       "file": "recent-discussions-widget.md",
-      "subCat": "Στυλ Widget"
+      "subCat": "Στυλ widget"
     },
     {
       "name": "Άλλες βιβλιοθήκες frontend",

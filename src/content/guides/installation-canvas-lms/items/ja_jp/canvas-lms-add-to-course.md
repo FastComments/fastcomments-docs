@@ -1,24 +1,32 @@
-#### コース内のコメントの表示方法
+#### コース内でのコメントの表示方法
 
-LTI 統合が有効になり External App がインストールされると、FastComments は設定した配置に基づいて自動的に動作します：
+LTI 統合が有効化され、External App がインストールされると、FastComments はあなたが設定した配置に基づいて自動的に動作します:
 
-#### Assignment View
+#### 課題ビュー
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+**課題ビュー** 配置が有効な場合、コース内の各課題の下に自動的にコメントが表示されます。学生と教員は課題を表示するとスレッド型のコメントセクションが表示されます — 各課題ごとの追加設定は不要です。
 
-Each assignment gets its own separate comment thread.
+各課題にはそれぞれ別個のコメントスレッドが作成されます。
 
-#### Rich Content Editor Button
+#### リッチコンテンツエディタボタン
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+**エディタボタン** 配置が有効な場合、教員はリッチコンテンツエディタを使用する任意のコンテンツに FastComments を埋め込むことができます:
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+1. **ページ**、**クイズ**、または **お知らせ** を編集します。
+2. リッチコンテンツエディタのツールバーで **FastComments** ボタンをクリックします。
+3. FastComments がコンテンツ内に自動的に埋め込まれます。
+4. ページを保存します。
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+学生がページを表示すると、そのページ固有のコメントスレッドを持つ埋め込み FastComments ウィジェットが読み込まれます。
 
-#### Automatic SSO
+#### 自動 SSO
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch — no separate login is needed.
+両方の配置において、学生は自動的に Canvas アカウントでサインインされます。名前、メール、アバターは LTI ランチで同期されるため、別途ログインは必要ありません。
+
+#### 公開アクセスを制限する（推奨）
+
+デフォルトでは、FastComments のコメントデータは公開読み取り可能になっています。スレッドの URL や API エンドポイントを推測できる人は Canvas 外でもそのコメントを閲覧できます。コースのディスカッションでは、受講生のみ閲覧を制限することを強くおすすめします。
+
+<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">ウィジェットのカスタマイズページ</a>を開き、**Require SSO To View Comments** を有効にしたルールを作成し、セキュリティレベルを **Secure SSO** に設定してください。これによりスレッドは署名された LTI ランチを通じてのみ読み込まれるようになります。
+
+フルの手順については、[Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) を参照してください。

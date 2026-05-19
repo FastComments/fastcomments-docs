@@ -1,37 +1,37 @@
 {
-  "name": "Estilização Personalizada",
+  "name": "Estilização personalizada",
   "pageHeader": "Guia de Estilização Personalizada",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Como Personalizar Estilos",
+      "name": "Como personalizar estilos",
       "file": "comment-widget-instructions.md",
-      "subCat": "Primeiros Passos"
+      "subCat": "Primeiros passos"
     },
     {
-      "name": "Referência de Estilização do Widget de Comentários (v2, mais recente)",
+      "name": "Referência de CSS personalizado do Widget de Comentários (v2, mais recente)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Estilização do Widget"
+      "subCat": "Estilização do widget"
     },
     {
-      "name": "Estilização do Widget de Comentários Recentes",
+      "name": "Estilização do widget de comentários recentes",
       "file": "recent-comments-widget.md",
-      "subCat": "Estilização do Widget"
+      "subCat": "Estilização do widget"
     },
     {
-      "name": "Estilização do Widget de Páginas Mais Discutidas",
+      "name": "Estilização do widget de páginas mais discutidas",
       "file": "top-pages-widget.md",
-      "subCat": "Estilização do Widget"
+      "subCat": "Estilização do widget"
     },
     {
-      "name": "Estilização do Widget de Discussões Recentes",
+      "name": "Estilização do widget de discussões recentes",
       "file": "recent-discussions-widget.md",
-      "subCat": "Estilização do Widget"
+      "subCat": "Estilização do widget"
     },
     {
-      "name": "Outras Bibliotecas de Frontend",
+      "name": "Outras bibliotecas de frontend",
       "file": "other-frontend-libraries.md",
-      "subCat": "Outras Bibliotecas de Frontend"
+      "subCat": "Outras bibliotecas de frontend"
     }
   ]
 }

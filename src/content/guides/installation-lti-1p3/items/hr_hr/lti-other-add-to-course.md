@@ -1,118 +1,126 @@
-Kad je FastComments registriran na platformi, instruktori ga dodaju u sadržaj kolegija koristeći standardne tijekove za vanjske alate platforme. Ova stranica obuhvaća Sakai 23.x i Schoology Enterprise.
+Nakon što je FastComments registriran na platformi, instruktori ga dodaju u sadržaj tečaja koristeći standardne tokove platforme za vanjske alate. Ova stranica pokriva Sakai 23.x i Schoology Enterprise.
+
+#### Onemogućite javni pristup (Preporučeno)
+
+Po zadanim postavkama, podaci komentara FastComments-a su javno čitljivi na obje platforme. Bilo tko tko može pogoditi URL niti ili API endpoint može vidjeti komentare, čak i izvan Sakai-a ili Schoology-a. Za rasprave u tečaju gotovo sigurno želite ograničiti pregled samo na upisane studente.
+
+Otvorite svoju <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">stranicu za prilagodbu widgeta</a> i stvorite pravilo s omogućenom opcijom **Require SSO To View Comments**, zatim postavite razinu sigurnosti na **Secure SSO** tako da se niti mogu učitavati samo kroz potpisani LTI launch.
+
+Pogledajte [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) za potpun vodič, uključujući kako opseg pravila ograničiti na jednu domenu ili stranicu.
 
 #### Sakai
 
-**1. Dodavanje FastComments na stranicu**
+**1. Dodajte FastComments na lokaciju**
 
-Održavatelj stranice omogućuje alat za svaku stranicu posebno:
+Održavatelj lokacije omogućuje alat na razini pojedine lokacije:
 
-1. Otvorite stranicu i u lijevoj navigaciji kliknite **Informacije o stranici**.
-2. Kliknite **Upravljanje alatima**.
-3. Pomaknite se do popisa **Vanjski alati** i uključite **FastComments**.
-4. Kliknite **Nastavi**, pregledajte popis alata, zatim kliknite **Završi**.
+1. Otvorite lokaciju i kliknite **Site Info** u lijevom navigacijskom izborniku.
+2. Kliknite **Manage Tools**.
+3. Pomaknite se do popisa **External Tools** i uključite **FastComments**.
+4. Kliknite **Continue**, pregledajte popis alata, zatim kliknite **Finish**.
 
-FastComments se sada pojavljuje kao stavka u lijevoj navigaciji stranice.
+FastComments se sada pojavljuje kao stavka u lijevom izborniku na lokaciji.
 
-**2. Promjena redoslijeda stavke u lijevoj navigaciji**
+**2. Promijenite redoslijed stavke u lijevom izborniku**
 
-Idite na **Informacije o stranici** > **Redoslijed alata**. Povucite **FastComments** na željeno mjesto i kliknite **Spremi**. S ovog zaslona možete također preimenovati oznaku u navigaciji i sakriti je od studenata.
+Idite na **Site Info** > **Tool Order**. Povucite **FastComments** na željenu poziciju i kliknite **Save**. Također možete preimenovati naljepnicu izbornika i sakriti je od studenata s ovog zaslona.
 
-**3. Ugradnja unutar stranice Lessons**
+**3. Ugradnja inline u Lessons stranicu**
 
-Da biste postavili FastComments izravno unutar stranice Lessons, umjesto kao samostalan alat u lijevoj navigaciji:
+Da biste postavili FastComments izravno unutar Lessons stranice umjesto kao samostalni alat u lijevom izborniku:
 
-1. Otvorite alat **Lessons** na stranici.
-2. Kliknite **Dodaj sadržaj** > **Dodaj vanjski alat**.
+1. Otvorite alat **Lessons** na lokaciji.
+2. Kliknite **Add Content** > **Add External Tool**.
 3. Odaberite **FastComments** s popisa.
-4. Ako je FastComments tijekom registracije oglasio Deep Linking, Sakai otvara selektor sadržaja alata tako da možete odabrati ili označiti thread. Ako Deep Linking nije oglašen, Sakai umeće zadanu poveznicu za pokretanje.
+4. Ako je FastComments prilikom registracije oglašavao Deep Linking, Sakai otvara selektor sadržaja alata tako da možete odabrati ili označiti nit. Ako Deep Linking nije bio oglašen, Sakai umeće zadanu launch poveznicu.
 5. Spremite stavku Lessons.
 
-Svaki ugrađeni primjer dobiva vlastiti thread, ograničen na tu resursnu poveznicu.
+Svaka ugrađena instanca dobiva svoju nit, ograničenu na taj resursni link.
 
-**4. Podešavanje dopuštenja za pristup studenata**
+**4. Podešavanja dozvola za pristup studentima**
 
-Sakai kontrolira pokretanja vanjskih alata preko Realmova. Da potvrdite da studenti mogu pokretati FastComments:
+Sakai kontrolira pokretanja vanjskih alata kroz Realms. Da potvrdite da studenti mogu pokrenuti FastComments:
 
-1. Prijavite se kao Sakai administrator i otvorite **Radni prostor administracije** > **Realms**.
-2. Otvorite odgovarajući realm (na primjer, `!site.template.course` ili specifični realm stranice).
-3. Potvrdite da je ulozi `access` omogućeno `lti.launch` i da su dozvole u grupi **external.tools** dodijeljene.
+1. Prijavite se kao Sakai admin i otvorite **Administration Workspace** > **Realms**.
+2. Otvorite odgovarajući realm (na primjer, `!site.template.course` ili specifični realm lokacije).
+3. Potvrdite da `access` uloga ima omogućeno `lti.launch` i da su dopuštenja u grupi **external.tools** dodijeljena.
 4. Spremite realm.
 
-Za preklapanja na razini stranice, održavatelj može prilagoditi vidljivost alata po ulozi u **Informacije o stranici** > **Redoslijed alata** skrivajući ili pokazujući FastComments po ulozi.
+Za nadjačavanja na razini lokacije, održavatelj može prilagoditi vidljivost alata po ulozi iz **Site Info** > **Tool Order** skrivajući ili prikazujući FastComments po ulozi.
 
 **5. Što studenti vide**
 
-Studenti kliknu stavku FastComments u lijevoj navigaciji (ili se pomaknu do ugrađenog bloka u Lessons) i dolaze izravno u prikaz threaded komentara. SSO je automatski: Sakai šalje identitet korisnika u LTI pokretanju i FastComments ih prijavljuje pod njihovim Sakai računom.
+Studenti kliknu stavku FastComments u lijevom izborniku (ili se pomaknu do ugrađenog bloka u Lessons) i izravno dolaze u prikaz niti s komentarima. SSO je automatski: Sakai šalje identitet korisnika u LTI launch i FastComments ih prijavljuje pod njihovim Sakai računom.
 
-Mapiranje uloga:
+Preslikavanje uloga:
 
 - Sakai `Instructor` -> FastComments moderator
-- Sakai `Admin` (admin u Radnom prostoru administracije) -> FastComments admin
+- Sakai `Admin` (admin u Administration Workspace) -> FastComments admin
 - Sakai `Student` / `access` -> FastComments commenter
 
-**6. Sakai napomene (gotchas)**
+**6. Sakai zamke**
 
-- **Alat nije vidljiv u Upravljanju alatima.** Ako se FastComments ne pojavljuje na popisu Vanjskih alata, Sakai administrator treba otvoriti registar alata (**Radni prostor administracije** > **Vanjski alati** > **FastComments**) i postaviti **Stealthed** na `false`. Stealthed alati su skriveni iz selektora Upravljanja alatima po stranici.
-- **Pokretanja se zbog zajedničkih sesija u pregledniku vraćaju s greškom.** Portalni CSRF token Sakaija vezan je za sesiju preglednika. Ako je student prijavljen na dvije Sakai stranice u različitim karticama ili ima zastarjelu sesiju, pokretanje vraća 403. Rješenje: zatvorite druge Sakai kartice, odjavite se, ponovno se prijavite i pokrenite ponovno. Administratori također mogu povećati `sakai.csrf.token.cache.ttl` ako se ovo događa u cijelom klasteru.
-- **Ugradnja u frame.** Potvrdite da je `lti.frameheight` u `sakai.properties` dovoljno velik (600 ili više) kako thread komentara ne bi bio odsječen unutar stranice Lessons.
+- **Alat nije vidljiv u Manage Tools.** Ako se FastComments ne pojavljuje u popisu External Tools, Sakai admin treba otvoriti registar alata (**Administration Workspace** > **External Tools** > **FastComments**) i postaviti **Stealthed** na `false`. Stealthed alati su skriveni iz birača Manage Tools po lokaciji.
+- **Pokretanja se ruše u preglednicima sa zajedničkom sesijom.** Sakai-jev portal CSRF token vezan je uz sesiju preglednika. Ako je student prijavljen u dvije Sakai lokacije u različitim karticama ili ima zastarjelu sesiju, launch vraća 403. Rješenje: zatvorite druge Sakai kartice, odjavite se, ponovo se prijavite i ponovno pokrenite. Admini također mogu povećati `sakai.csrf.token.cache.ttl` ako se ovo događa na cijelom klasteru.
+- **Ugradnja u iframe.** Potvrdite da je `lti.frameheight` u `sakai.properties` dovoljno velik (600 ili više) kako nit komentara ne bi bila odrezana unutar Lessons stranice.
 
 #### Schoology
 
-Schoology Enterprise ima dva scenarija instalacije. Potvrdite koji se primjenjuje prije dodavanja alata u kolegij.
+Schoology Enterprise ima dva scenarija instalacije. Potvrdite koji se primjenjuje prije dodavanja alata u tečaj.
 
 **1. Dva scenarija instalacije**
 
-- **(a) Instalacija na razini Enterprisea.** System Administrator Schoologyja instalirao je FastComments na razini organizacije i dodijelio ga svim kolegijima ili određenim predlošcima kolegija. Instruktori preskaču instalaciju i idu izravno na "Dodavanje materijala".
-- **(b) Samostalna instalacija od strane instruktora.** Instruktor instalira alat u pojedinačni kolegij iz **Opcije kolegija** > **Vanjski alati** > **Instaliraj LTI aplikacije**. Samostalna instalacija zahtijeva da je System Administrator prethodno odobrio FastComments aplikaciju na razini organizacije.
+- **(a) Instalacija na razini organizacije.** System Administrator Schoology-a instalirao je FastComments na razini organizacije i dodijelio ga svim tečajevima ili određenim predlošcima tečajeva. Instruktori preskaču instalaciju i idu izravno na "Add Materials".
+- **(b) Instruktor samoinstalacija.** Instruktor instalira alat u pojedinačni tečaj iz **Course Options** > **External Tools** > **Install LTI Apps**. Samoinstalacija zahtijeva da je System Administrator prethodno odobrio FastComments aplikaciju na razini organizacije.
 
-**2. Dodavanje FastComments kao materijal kolegija**
+**2. Dodajte FastComments kao materijal tečaja**
 
-Unutar kolegija:
+Unutar tečaja:
 
-1. Otvorite kolegij i idite na **Materijali**.
-2. Kliknite **Dodaj materijale** > **Dodaj datoteku/poveznicu/vanjski alat**.
-3. Odaberite **Vanjski alat**.
+1. Otvorite tečaj i idite na **Materials**.
+2. Kliknite **Add Materials** > **Add File/Link/External Tool**.
+3. Odaberite **External Tool**.
 4. Odaberite **FastComments** s popisa registriranih alata.
-5. Postavite **Naziv** (to je ono što studenti vide na popisu materijala) i opcionalno **Opis**.
-6. Ostavite **Omogući ocjenjivanje** (grade passback) ISKLJUČENIM. FastComments ne prijavljuje ocjene natrag u Schoology, pa uključivanje prijenosa ocjena stvara praznu kolonu u dnevniku ocjena.
-7. Kliknite **Pošalji**.
+5. Postavite **Name** (to je ono što studenti vide na popisu materijala) i opcionalni **Description**.
+6. Ostavite **Enable Grading** (grade passback) **OFF**. FastComments ne vraća ocjene u Schoology, pa uključivanje povratka ocjena stvara prazan stupac ocjenika.
+7. Kliknite **Submit**.
 
-Materijal se sada pojavljuje na popisu materijala kolegija i otvara FastComments thread kada se klikne.
+Materijal se sada pojavljuje na popisu materijala tečaja i otvara FastComments nit kada se klikne.
 
-**3. Ugradnja unutar Rich Text urednika**
+**3. Inline ugradnja putem Rich Text editora**
 
-Ako je System Administrator tijekom registracije omogućio Deep Linking postavljanje za FastComments, instruktori mogu ugraditi thread komentara unutar bilo kojeg Rich Text polja (upute za zadatke, tijela stranica, poticaji za raspravu):
+Ako je System Administrator omogućio Deep Linking placement za FastComments tijekom registracije, instruktori mogu ugraditi nit komentara unutar bilo kojeg polja Rich Text editora (upute za zadatak, tijela stranica, poticaji za raspravu):
 
-1. Otvorite Rich Text urednik na ciljanoj stranici.
-2. Kliknite ikonu **Vanjski alat** (ikona slagalice) u alatnoj traci.
+1. Otvorite Rich Text editor na ciljnoj stranici.
+2. Kliknite ikonu **External Tool** (komadić slagalice) u alatnoj traci.
 3. Odaberite **FastComments**.
-4. Konfigurirajte ugradnju u dijaloškom prozoru za deep-linking i kliknite **Umetni**.
+4. Konfigurirajte ugradnju u dijalogu za deep-linking i kliknite **Insert**.
 5. Spremite stranicu.
 
-Ako gumb Vanjski alat ne postoji u Rich Text uredniku, Deep Linking je onemogućen za ovaj alat na ovom tenant-u. Pogledajte napomene u nastavku.
+Ako gumb External Tool ne pojavljuje u Rich Text editoru, Deep Linking je onemogućen za ovaj alat na ovom tenant-u. Pogledajte zamke u nastavku.
 
 **4. Vidljivost i dodjela po sekcijama**
 
-Schoology određuje dostupnost alata po sekciji kroz Opcije kolegija:
+Schoology ograničava dostupnost alata po sekciji kroz Course Options:
 
-1. Iz kolegija kliknite **Opcije kolegija** > **Vanjski alati**.
-2. Za svaku instaliranu LTI aplikaciju kontrolirate je li dostupna svim sekcijama u kolegiju ili samo određenim sekcijama.
-3. Da biste ograničili FastComments na određene sekcije, poništite sekcije koje ne bi trebale vidjeti alat.
-4. Pristup po sekcijama također upravlja koje sekcije vide stavku **Dodaj materijale** > **Vanjski alat** za FastComments.
+1. Iz tečaja kliknite **Course Options** > **External Tools**.
+2. Za svaku instaliranu LTI aplikaciju kontrolirate je li dostupna svim sekcijama u tečaju ili samo određenim sekcijama.
+3. Da biste ograničili FastComments određenim sekcijama, poništite odabir sekcija koje ne bi trebale vidjeti alat.
+4. Pristup po sekcijama također kontrolira koje sekcije vide unos **Add Materials** > **External Tool** za FastComments.
 
 **5. Što studenti vide**
 
-Studenti kliknu FastComments materijal (ili se pomaknu do ugrađenog sadržaja) i dolaze u threaded raspravu. SSO je automatski putem Schoology LTI pokretanja pod njihovim Schoology računom.
+Studenti kliknu FastComments materijal (ili se pomaknu do inline ugradnje) i dolaze u nit rasprave. SSO je automatski putem Schoology LTI launcha pod njihovim Schoology računom.
 
-Mapiranje uloga:
+Preslikavanje uloga:
 
 - Schoology `Administrator` -> FastComments admin
 - Schoology `Instructor` -> FastComments moderator
 - Schoology `Student` -> FastComments commenter
 
-**6. Schoology napomene (gotchas)**
+**6. Schoology zamke**
 
-- **Samo za Enterprise.** Osobni i besplatni Schoology računi ne mogu instalirati LTI 1.3 alate. Ako je vaš tenant na besplatnom nivou, opcija **Vanjski alati** nije dostupna u Opcijama kolegija. Nadogradite na Schoology Enterprise da biste koristili FastComments.
-- **Deep Linking onemogućen prema zadanim postavkama tenant-a.** Neki Schoology tenant-i ograničavaju Deep Linking postavljanje na razini organizacije. Kad je to slučaj, instruktori vide samo tijek **Dodaj materijale** > **Vanjski alat**, a ne gumb Vanjski alat u Rich Text uredniku. Da bi omogućili ugradnju unutar sadržaja, System Administrator ide na **Postavke sustava** > **Integracija** > **LTI 1.3** > **FastComments** i omogućuje postavljanje **Content Item / Deep Linking**, zatim sprema.
-- **Preklapanje dodjele po sekcijama.** Ako je FastComments dodijeljen na razini enterprisea, ali instruktor ga ne vidi u **Dodaj materijale**, sekcija kolegija je isključena u dodjeli na razini organizacije. Zamolite System Administrator-a da doda sekciju u dodjelu FastComments aplikacije.
-- **Naziv materijala naspram identiteta threada.** Preimenovanje materijala u Schoologyju ne premješta thread komentara. Threadovi su ključani na ID-u resursne poveznice LTI, pa preimenovanje zadržava isti thread; brisanje i ponovno stvaranje materijala stvara novi, prazan thread.
+- **Samo za Enterprise.** Osobni i besplatni Schoology računi ne mogu instalirati LTI 1.3 alate. Ako je vaš tenant na besplatnom planu, opcija **External Tools** nedostaje u Course Options. Nadogradite na Schoology Enterprise da biste koristili FastComments.
+- **Deep Linking onemogućen prema zadanoj postavci tenant-a.** Neki Schoology tenant-i ograničavaju Deep Linking placement na razini organizacije. U tom slučaju instruktori vide samo tok **Add Materials** > **External Tool**, a ne gumb External Tool u Rich Text editoru. Da biste omogućili inline ugradnju, System Administrator ide na **System Settings** > **Integration** > **LTI 1.3** > **FastComments** i omogućava **Content Item / Deep Linking** placement, zatim sprema.
+- **Nadjačavanje dodjele po sekcijama.** Ako je FastComments dodijeljen na razini organizacije, ali instruktor ga ne može vidjeti u **Add Materials**, sekcija tečaja isključena je u dodjeli na razini organizacije. Zamolite System Administratora da doda sekciju u dodjelu FastComments aplikacije.
+- **Ime materijala naspram identiteta niti.** Preimenovanje materijala u Schoology-u ne premješta nit komentara. Niti su ključane prema LTI resource link ID-u, pa preimenovanje zadržava istu nit; brisanje i ponovna izrada materijala stvara novu, praznu nit.

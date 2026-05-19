@@ -1,118 +1,126 @@
-FastComments platforma kaydedildikten sonra, eğitmenler platformun standart harici araç iş akışlarını kullanarak bunu ders içeriğine ekler. Bu sayfa Sakai 23.x ve Schoology Enterprise için adımları kapsar.
+FastComments platforma kaydedildikten sonra eğitmenler, platformun standart dış araç akışlarını kullanarak onu ders içeriğine ekler. Bu sayfa Sakai 23.x ve Schoology Enterprise'ı kapsar.
+
+#### Genel Erişimi Kısıtlayın (Önerilen)
+
+Varsayılan olarak, FastComments yorum verileri her iki platformda da herkese açık okunabilir durumdadır. Bir kişi bir konunun URL’sini veya API uç noktasını tahmin edebilirse, Sakai veya Schoology dışında olsalar bile yorumları görebilirler. Ders tartışmaları için görüntülemeyi büyük olasılıkla yalnızca derse kayıtlı öğrencilerle sınırlamak istersiniz.
+
+<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">Widget özelleştirme sayfanızı</a> açın ve **Yorumları Görmek İçin SSO Gerekli** etkin olan bir kural oluşturun, ardından güvenlik düzeyini **Güvenli SSO** olarak ayarlayın, böylece konular yalnızca imzalı LTI başlatmasıyla yüklenebilir.
+
+Tam adım adım kılavuz için, kuralı tek bir alan adına veya sayfaya nasıl sınırlayacağınızı da içeren [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) sayfasına bakın.
 
 #### Sakai
 
-**1. Bir siteye FastComments ekleyin**
+**1. FastComments'i bir siteye ekleyin**
 
-Site bakımcısı aracı site bazında etkinleştirir:
+Site yöneticisi aracı site bazında etkinleştirir:
 
-1. Siteyi açın ve sol gezinmede **Site Info** öğesine tıklayın.
-2. **Manage Tools** öğesine tıklayın.
-3. **External Tools** listesini aşağı kaydırın ve **FastComments** öğesini açın.
-4. **Continue** öğesine tıklayın, araç listesini gözden geçirin, ardından **Finish** öğesine tıklayın.
+1. Siteyi açın ve sol gezinti menüsünde **Site Info**'ya tıklayın.
+2. **Manage Tools**'a tıklayın.
+3. **External Tools** listesini kaydırın ve **FastComments**'i açık duruma getirin.
+4. **Continue**'a tıklayın, araç listesini gözden geçirin, ardından **Finish**'e tıklayın.
 
-FastComments artık sitede sol gezinme öğesi olarak görünür.
+FastComments artık sitede sol gezinti öğesi olarak görünür.
 
-**2. Sol gezinme girişinin sırasını değiştirin**
+**2. Sol gezinme girişinin sırasını değiştirme**
 
-**Site Info** > **Tool Order** bölümüne gidin. **FastComments** öğesini istenen konuma sürükleyin ve **Save** öğesine tıklayın. Bu ekranda gezinme etiketini yeniden adlandırabilir ve öğrencilere görünmesini gizleyebilirsiniz.
+**Site Info** > **Tool Order** bölümüne gidin. **FastComments**'i istediğiniz konuma sürükleyin ve **Save**'e tıklayın. Bu ekranda gezinme etiketinin adını da değiştirebilir ve öğrencilerden gizleyebilirsiniz.
 
 **3. Lessons sayfasına satır içi gömme**
 
-FastComments'i bağımsız bir sol-nav aracı olarak değil de bir Lessons sayfasının içine doğrudan yerleştirmek için:
+FastComments'i bağımsız bir sol gezinme aracı olarak değil, Lessons sayfasının içine doğrudan yerleştirmek için:
 
 1. Sitede **Lessons** aracını açın.
-2. **Add Content** > **Add External Tool** öğelerine tıklayın.
-3. Listeden **FastComments** öğesini seçin.
-4. FastComments kayıt sırasında Deep Linking duyurduysa, Sakai araç içerik seçicisini açar ve iş parçacığını seçebilir veya etiketleyebilirsiniz. Deep Linking duyurulmadıysa, Sakai varsayılan bir başlatma bağlantısı ekler.
+2. **Add Content** > **Add External Tool**'a tıklayın.
+3. Listeden **FastComments**'i seçin.
+4. FastComments kayıt sırasında Deep Linking'i duyurduysa, Sakai aracın içerik seçicisini açar ve konuyu seçmenize veya etiketlemenize olanak tanır. Deep Linking duyurulmadıysa, Sakai varsayılan bir başlatma bağlantısı ekler.
 5. Lessons öğesini kaydedin.
 
-Her gömülü örneğin kendi kaynak bağlantısına göre sınırlandırılmış ayrı bir iş parçacığı olur.
+Her gömülü örnek, o kaynak bağlantısına yönelik kendi konusu ile ayrı bir konu alır.
 
 **4. Öğrenci erişimi için izin ayarları**
 
-Sakai harici araç başlatmalarını Realms üzerinden sınırlar. Öğrencilerin FastComments başlatabildiğini doğrulamak için:
+Sakai, dış araç başlatmalarını Realms üzerinden sınırlar. Öğrencilerin FastComments'i başlatabildiğini doğrulamak için:
 
-1. Bir Sakai yöneticisi olarak oturum açın ve **Administration Workspace** > **Realms** öğesini açın.
-2. İlgili realm'i açın (örneğin, `!site.template.course` veya belirli site realm'i).
+1. Sakai yöneticisi olarak oturum açın ve **Administration Workspace** > **Realms**'i açın.
+2. İlgili realm'i açın (örneğin `!site.template.course` veya belirli site realm'i).
 3. `access` rolünün `lti.launch` etkinleştirildiğini ve **external.tools** grubundaki rol izinlerinin verildiğini onaylayın.
 4. Realm'i kaydedin.
 
-Site düzeyindeki geçersiz kılmalar için, bakımcı **Site Info** > **Tool Order** bölümünden rol başına araç görünürlüğünü FastComments'i gizleyerek veya göstererek ayarlayabilir.
+Site düzeyinde geçersiz kılmalar için, site yöneticisi **Site Info** > **Tool Order** üzerinden rol başına araç görünürlüğünü FastComments'i gizleyerek veya göstererek ayarlayabilir.
 
-**5. Öğrencilerin gördüğü şey**
+**5. Öğrencilerin gördükleri**
 
-Öğrenciler FastComments sol-nav öğesine tıklar (veya gömülü Lessons bloğuna kaydırır) ve doğrudan sıralı yorum görünümüne gelir. SSO otomatik çalışır: Sakai LTI başlatmasında kullanıcının kimliğini gönderir ve FastComments onları Sakai hesapları ile oturum açtırır.
+Öğrenciler FastComments sol gezinme öğesine tıklar (veya gömülü Lessons bloğuna kaydırırlar) ve doğrudan dizili yorum görünümüne gelirler. SSO otomatiktir: Sakai, kullanıcının kimliğini LTI başlatmasında gönderir ve FastComments onları Sakai hesaplarıyla oturum açmış şekilde tanımlar.
 
 Rol eşlemesi:
 
-- Sakai `Instructor` -> FastComments moderatörü
-- Sakai `Admin` (Administration Workspace içindeki admin) -> FastComments yönetici
-- Sakai `Student` / `access` -> FastComments yorumcu
+- Sakai `Instructor` -> FastComments moderator
+- Sakai `Admin` (Administration Workspace yöneticisi) -> FastComments admin
+- Sakai `Student` / `access` -> FastComments commenter
 
-**6. Sakai tuzakları**
+**6. Sakai ile ilgili sorunlar**
 
-- **Manage Tools içinde araç görünmüyor.** Eğer FastComments External Tools listesinde görünmüyorsa, Sakai yöneticisi araç kayıt defterini açmalı (**Administration Workspace** > **External Tools** > **FastComments**) ve **Stealthed** değerini `false` olarak ayarlamalıdır. Stealthed araçlar site bazındaki Manage Tools seçicisinden gizlenir.
-- **Paylaşılan oturumlu tarayıcılarda başlatmaların kırılması.** Sakai'nın portal CSRF belirteci tarayıcı oturumuna bağlıdır. Eğer bir öğrenci farklı sekmelerde iki Sakai sitesine kayıtlıysa veya oturum süresi dolmuşsa, başlatma 403 döndürebilir. Çözüm: diğer Sakai sekmelerini kapatın, çıkış yapın, tekrar giriş yapın ve yeniden başlatın. Yöneticiler bunun küme genelinde olması durumunda `sakai.csrf.token.cache.ttl` değerini yükseltebilir.
-- **Çerçeve içinde gömme.** Yorum iş parçacığının Lessons sayfası içinde kırpılmaması için `sakai.properties` içindeki `lti.frameheight` değerinin yeterince büyük (600 veya üzerinde) olduğunu doğrulayın.
+- **Manage Tools içinde araç görünmüyor.** FastComments External Tools listesinde görünmüyorsa, Sakai yöneticisi araç kaydını açmalı (**Administration Workspace** > **External Tools** > **FastComments**) ve **Stealthed**'i `false` olarak ayarlamalıdır. Stealthed yapılan araçlar site bazlı Manage Tools seçicisinden gizlenir.
+- **Paylaşılan oturumlu tarayıcılarda başlatmaların bozulması.** Sakai portal CSRF belirteci tarayıcı oturumuna bağlıdır. Bir öğrenci farklı sekmelerde iki Sakai sitesine aynı anda oturum açmışsa veya oturum süresi dolmuşsa, başlatma 403 döndürebilir. Çözüm: diğer Sakai sekmelerini kapatın, çıkış yapın, tekrar giriş yapın ve yeniden başlatın. Yöneticiler, bu durum küme genelinde oluyorsa `sakai.csrf.token.cache.ttl` değerini artırabilir.
+- **Çerçeve (frame) gömme.** Yorum konusunun Lessons sayfası içinde kırpılmaması için `sakai.properties` içindeki `lti.frameheight` değerinin yeterince büyük (600 veya daha yüksek) olduğundan emin olun.
 
 #### Schoology
 
-Schoology Enterprise'ın iki kurulum senaryosu vardır. Aracı bir derse eklemeden önce hangi senaryonun geçerli olduğunu doğrulayın.
+Schoology Enterprise için iki kurulum senaryosu vardır. Araca eklemeden önce hangisinin geçerli olduğunu doğrulayın.
 
 **1. İki kurulum senaryosu**
 
-- **(a) Kurumsal düzey kurulum.** Schoology Sistem Yöneticisi FastComments'i kuruluş düzeyinde yüklemiş ve tüm derslere veya belirli ders şablonlarına atamıştır. Eğitmenler kurulumu atlar ve doğrudan "Add Materials" işlemine gider.
-- **(b) Eğitmen tarafından kendi kurulum.** Eğitmen aracı tek bir derse **Course Options** > **External Tools** > **Install LTI Apps** üzerinden yükler. Kendi kurulum, Sistem Yöneticisinin önce FastComments uygulamasını organizasyon düzeyinde onaylamasını gerektirir.
+- **(a) Kurum düzeyinde kurulum.** Schoology Sistem Yöneticisi FastComments'i kuruluş düzeyinde kurdu ve tüm kurslara veya belirli kurs şablonlarına atadı. Eğitmenler kurulumu atlayıp doğrudan "Add Materials" bölümüne geçer.
+- **(b) Eğitmenin kendi kendine yüklemesi.** Eğitmen, aracı tek bir kursa **Course Options** > **External Tools** > **Install LTI Apps** üzerinden kurar. Kendi kendine yükleme, önce Sistem Yöneticisinin FastComments uygulamasını kuruluş düzeyinde onaylamış olmasını gerektirir.
 
-**2. FastComments'i ders materyali olarak ekleyin**
+**2. FastComments'i kurs materyali olarak ekleme**
 
-Ders içinde:
+Kurs içinde:
 
-1. Dersi açın ve **Materials** bölümüne gidin.
-2. **Add Materials** > **Add File/Link/External Tool** öğesine tıklayın.
-3. **External Tool** seçeneğini seçin.
-4. Kayıtlı araçlar listesinden **FastComments** öğesini seçin.
-5. Bir **Name** belirleyin (öğrencilerin materyaller listesinde gördükleri isim budur) ve isteğe bağlı bir **Description** girin.
-6. **Enable Grading** (grade passback) seçeneğini KAPALI bırakın. FastComments notları Schoology'ye geri raporlamaz, bu yüzden not geri bildirimini etkinleştirmek boş bir not defteri sütunu oluşturur.
-7. **Submit** öğesine tıklayın.
+1. Kursu açın ve **Materials**'a gidin.
+2. **Add Materials** > **Add File/Link/External Tool**'a tıklayın.
+3. **External Tool**'u seçin.
+4. Kayıtlı araçlar listesinden **FastComments**'i seçin.
+5. Bir **Name** belirleyin (öğrencilerin materyal listesinde gördüğü ad) ve isteğe bağlı bir **Description** ekleyin.
+6. **Enable Grading**'i (not geri bildirimi) KAPALI bırakın. FastComments notları Schoology'ye raporlamaz, bu yüzden not geri bildirimi etkinleştirmek boş bir not defteri sütunu oluşturur.
+7. **Submit**'e tıklayın.
 
-Materyal artık ders materyalleri listesinde görünür ve tıklanınca FastComments iş parçacığını açar.
+Materyal şimdi kurs materyalleri listesinde görünür ve tıklanınca FastComments konusunu açar.
 
-**3. Zengin Metin düzenleyici aracılığıyla satır içi yerleştirme**
+**3. Zengin Metin düzenleyici ile satır içi gömme**
 
-Sistem Yöneticisi kayıt sırasında FastComments için Deep Linking yerleştirmesini etkinleştirdiyse, eğitmenler herhangi bir Zengin Metin alanının (ödev talimatları, sayfa gövdeleri, tartışma yönlendirmeleri) içine yorum iş parçacığını yerleştirebilir:
+Sistem Yöneticisi kayıt sırasında FastComments için Deep Linking yerleşimini etkinleştirdiyse, eğitmenler yorum konusunu herhangi bir Zengin Metin alanına (ödev talimatları, sayfa gövdeleri, tartışma yönlendirmeleri) gömebilir:
 
 1. Hedef sayfadaki Zengin Metin düzenleyicisini açın.
-2. Araç çubuğundaki **External Tool** (yapboz parçası) simgesine tıklayın.
-3. **FastComments** öğesini seçin.
-4. Derin bağlama iletişim kutusunda gömmeyi yapılandırın ve **Insert** öğesine tıklayın.
+2. Araç çubuğunda **External Tool** (yapboz parçası) simgesine tıklayın.
+3. **FastComments**'i seçin.
+4. Deep-linking iletişim kutusunda gömmeyi yapılandırın ve **Insert**'e tıklayın.
 5. Sayfayı kaydedin.
 
-Eğer Zengin Metin düzenleyicisinde External Tool düğmesi görünmüyorsa, bu araç için tenant üzerinde Deep Linking devre dışıdır. Aşağıdaki tuzaklara bakın.
+Eğer External Tool düğmesi Zengin Metin düzenleyicisinde görünmüyorsa, bu tenant için Deep Linking devre dışı bırakılmış demektir. Aşağıdaki sorun giderme bölümüne bakın.
 
 **4. Görünürlük ve bölüm atamaları**
 
-Schoology, Course Options aracılığıyla aracın kullanılabilirliğini bölüm bazında sınırlar:
+Schoology, araç kullanılabilirliğini Kurs Seçenekleri üzerinden bölüm bazında sınırlar:
 
-1. Dersten **Course Options** > **External Tools** öğesine tıklayın.
-2. Yüklü her LTI uygulaması için, uygulamanın dersteki tüm bölümlere mi yoksa belirli bölümlere mi açık olduğunu kontrol edersiniz.
-3. FastComments'i belirli bölümlere sınırlamak için aracı görmemesi gereken bölümlerin işaretini kaldırın.
-4. Bölüm düzeyindeki erişim ayrıca hangi bölümlerin **Add Materials** > **External Tool** girdisini göreceğini belirler.
+1. Kurstan **Course Options** > **External Tools**'a tıklayın.
+2. Kurulu her LTI uygulaması için, uygulamanın kurstaki tüm bölümlere mi yoksa belirli bölümlere mi açık olacağını kontrol edersiniz.
+3. FastComments'i belirli bölümlere sınırlamak için, aracı görmemesi gereken bölümlerin seçimlerini kaldırın.
+4. Bölüm düzeyindeki erişim ayrıca hangi bölümlerin **Add Materials** > **External Tool** girişini görmesini de sınırlar.
 
-**5. Öğrencilerin gördüğü şey**
+**5. Öğrencilerin gördükleri**
 
-Öğrenciler FastComments materyaline tıklar (veya satır içi gömülene kaydırır) ve sıralı tartışma içinde açılırlar. SSO, Schoology LTI başlatması aracılığıyla ve kendi Schoology hesaplarıyla otomatik olarak gerçekleşir.
+Öğrenciler FastComments materyaline tıklar (veya satır içi gömülmüş alana kaydırır) ve dizili tartışmaya gelirler. SSO, Schoology LTI başlatması ile onların Schoology hesapları üzerinden otomatik olarak gerçekleştirilir.
 
 Rol eşlemesi:
 
-- Schoology `Administrator` -> FastComments yönetici
-- Schoology `Instructor` -> FastComments moderatörü
-- Schoology `Student` -> FastComments yorumcu
+- Schoology `Administrator` -> FastComments admin
+- Schoology `Instructor` -> FastComments moderator
+- Schoology `Student` -> FastComments commenter
 
-**6. Schoology tuzakları**
+**6. Schoology ile ilgili sorunlar**
 
-- **Sadece Kurumsal.** Kişisel ve ücretsiz Schoology hesapları LTI 1.3 araçlarını kuramaz. Eğer tenant'ınız ücretsiz düzeydeyse, Course Options içinde **External Tools** seçeneği yoktur. FastComments kullanmak için Schoology Enterprise'a yükseltin.
-- **Tenant varsayılanı olarak Deep Linking devre dışı.** Bazı Schoology tenant'ları Deep Linking yerleştirmesini organizasyon düzeyinde kısıtlar. Bu durumda eğitmenler yalnızca **Add Materials** > **External Tool** akışını görür; Zengin Metin düzenleyicisinde External Tool düğmesi görünmez. Satır içi gömme etkinleştirmek için Sistem Yöneticisi **System Settings** > **Integration** > **LTI 1.3** > **FastComments** yolunu izler ve **Content Item / Deep Linking** yerleştirmesini etkinleştirip kaydeder.
-- **Bölüm bazında atama geçersiz kılma.** FastComments kurumsal düzeyde atanmışsa fakat eğitmen **Add Materials** içinde göremiyorsa, dersin bölümü organizasyon düzeyindeki atamada hariç tutulmuştur. Sistem Yöneticisinden bölümü FastComments uygulaması atamasına eklemesini isteyin.
-- **Materyal adı ile iş parçacığı kimliği farkı.** Schoology'de materyalin adını yeniden adlandırmak yorum iş parçacığını taşımaz. İş parçacıkları LTI kaynak bağlantı kimliğine göre anahtarlanır, bu yüzden yeniden adlandırma aynı iş parçacığını korur; materyali silip yeniden oluşturmak yeni ve boş bir iş parçacığı oluşturur.
+- **Sadece Enterprise.** Kişisel ve ücretsiz Schoology hesapları LTI 1.3 araçlarını yükleyemez. Tenantınız ücretsiz plandaysa, **External Tools** seçeneği Course Options içinde bulunmaz. FastComments kullanmak için Schoology Enterprise'a geçin.
+- **Tenant varsayılanı olarak Deep Linking devre dışı.** Bazı Schoology tenant’ları kuruluş düzeyinde Deep Linking yerleştirmesini kısıtlar. Bu durumda eğitmenler sadece **Add Materials** > **External Tool** akışını görür ve Zengin Metin düzenleyicisinde External Tool düğmesini görmezler. Satır içi gömme etkinleştirmek için Sistem Yöneticisi **System Settings** > **Integration** > **LTI 1.3** > **FastComments** bölümüne gidip **Content Item / Deep Linking** yerleşimini etkinleştirip kaydeder.
+- **Bölüm bazlı atama geçersiz kılma.** FastComments kurum düzeyinde atanmışsa ancak eğitmen **Add Materials** içinde göremiyorsa, kursun bölümü kuruluş düzeyindeki atamada hariç tutulmuştur. Sistem Yöneticisinden FastComments uygulaması atamasına bölümü eklemesini isteyin.
+- **Materyal adı ile konu kimliği arasındaki fark.** Schoology'de materyalin adını değiştirmek yorum konusunu taşımaz. Konular LTI kaynak bağlantı kimliğine göre anahtarlanır, bu nedenle yeniden adlandırma aynı konuyu korur; materyali silip yeniden oluşturmak yeni, boş bir konu oluşturur.
