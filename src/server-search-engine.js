@@ -245,6 +245,9 @@ function search(locale, query, limit = 15) {
     }
 
     try {
+        // BM25 column weights: doc_id=0, title=50, parent_title=10, url=0, parent_url=0, icon=0, search_text=1.
+        // Heavy title boost so short-titled pages aren't drowned out by very long body content
+        // (e.g. the generated CSS reference, which is 31KB and gets length-normalized hard).
         const stmt = db.prepare(`
             SELECT
                 doc_id,
@@ -254,10 +257,10 @@ function search(locale, query, limit = 15) {
                 parent_url,
                 icon,
                 search_text,
-                bm25(search_index) as score
+                bm25(search_index, 0, 50, 10, 0, 0, 0, 1) as score
             FROM search_index
             WHERE search_index MATCH ?
-            ORDER BY bm25(search_index)
+            ORDER BY bm25(search_index, 0, 50, 10, 0, 0, 0, 1)
             LIMIT ?
         `);
 
