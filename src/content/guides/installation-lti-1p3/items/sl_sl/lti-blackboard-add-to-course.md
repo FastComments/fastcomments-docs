@@ -1,101 +1,101 @@
-Ko administrator registrira FastComments kot orodje LTI 1.3 Advantage in potrdi institucijske politike, ga inštruktorji dodajo v predmete preko standardnih mest za umeščanje v Blackboardu. Natančni koraki se razlikujejo med Ultra Course View in Original Course View, zato sta obe različici opisani spodaj.
+Once an administrator has registered FastComments as an LTI 1.3 Advantage tool and approved the institution policies, instructors add it to courses through the standard Blackboard placement points. The exact steps differ between Ultra Course View and Original Course View, so both are covered below.
 
 #### Ultra Course View
 
-Ultra Course View je privzeta možnost v Blackboard Learn SaaS od leta 2026.
+Ultra Course View is the default in Blackboard Learn SaaS as of 2026.
 
-1. Odprite predmet in pojdite na stran **Course Content**.
-2. Premaknite kurzor ali tapnite mesto, kamor želite vstaviti nit komentarjev v orisu, in kliknite vijolični gumb **+** (Add content).
-3. Izberite **Content Market**. Plošča Content Market navaja vsa odobrena LTI orodja in Building Block umestitve za vašo institucijo.
-4. Poiščite ploščico **FastComments** in kliknite nanjo. Blackboard ustvari vsebinski element na mestu, kjer ste odprli meni **+**.
-5. Element se privzeto prikaže v orisu kot vnos "Visible to students" za inštruktorje, ki imajo kot osebno privzeto nastavljeno **Hide from students** izklopljeno. Če je vaša privzeta nastavitev **Hidden**, se element ustvari skrit in vidnost preklopite na vrstici predmeta, ko ste pripravljeni.
-6. Če želite spremeniti ime elementa, kliknite naslov v orisu in vnesite nov naziv. Naslov, ki ga študenti vidijo v orisu, je neodvisen od identifikatorja niti v FastComments, zato je preimenovanje varno kadarkoli.
+1. Open the course and go to the **Course Content** page.
+2. Hover or tap where you want the comment thread to land in the outline and click the purple **+** (Add content) button.
+3. Choose **Content Market**. The Content Market panel lists every approved LTI tool and Building Block placement for your institution.
+4. Find the **FastComments** tile and click it. Blackboard creates a content item at the position where you opened the **+** menu.
+5. The item lands in the outline as a "Visible to students" entry by default for instructors who have **Hide from students** off as their personal default. If your default is **Hidden**, the item is created hidden and you flip the visibility selector on the item row when you're ready.
+6. To rename the item, click the title in the outline and type a new label. The title students see in the outline is independent of the FastComments thread identifier, so renaming is safe at any time.
 
-Če ne vidite **Content Market** kot možnosti, ima vaša institucija to umestitev skrito. Enak izbirnik dosežete tudi preko **More tools** v istem meniju **+** pod skupino **LTI Tools**.
+If you don't see **Content Market** as an option, your institution has the placement hidden. You also reach the same picker through **More tools** in the same **+** menu under the **LTI Tools** group.
 
 #### Original Course View
 
-Original Course View je še vedno podprt v Learn SaaS in ostaja primarna izkušnja za samostojno gostovane Learn 9.1 strani na liniji izdaje Q4 2024 CU.
+Original Course View is still supported in Learn SaaS and remains the primary experience for self-hosted Learn 9.1 sites on the Q4 2024 CU release line.
 
-1. Odprite predmet in vstopite v **Content Area** (na primer privzeta področja **Information** ali **Content** v meniju predmeta).
-2. V zgornjem desnem kotu strani vključite **Edit Mode** z drsnikom.
-3. V vrstici dejanj kliknite **Build Content**.
-4. Pod podmenijem **Learning Tools** kliknite **FastComments**. Podmenij Learning Tools se napolni iz LTI 1.3 umestitev orodij potem, ko administrator registrira orodje. Če ga ne vidite, glejte spodnji razdelek s pogostimi težavami.
-5. Na obrazcu **Create FastComments** nastavite:
-   - **Name**: oznaka, ki jo študenti vidijo v območju vsebine.
-   - **Description**: izbirno besedilo, prikazano nad vdelano nitjo.
-   - **Permit Users to View this Content**: preklop za razpoložljivost Da/Ne.
-   - **Track Number of Views**: omogočite, če želite Blackboardove statistike ogledov za posamezen element. FastComments vodi lastno analitiko neodvisno.
-   - **Date and Time Restrictions**: izbirni okviri **Display After** / **Display Until**.
-6. Pošljite obrazec. Orodje se prikaže kot klikabilen element v območju vsebine.
+1. Open the course and enter a **Content Area** (for example, the default **Information** or **Content** area in the course menu).
+2. Turn **Edit Mode** on with the toggle in the top-right of the page.
+3. Click **Build Content** in the action bar.
+4. Under the **Learning Tools** submenu, click **FastComments**. The Learning Tools submenu is populated from LTI 1.3 tool placements after an administrator registers the tool. If you don't see it, see the gotchas section below.
+5. On the **Create FastComments** form, set:
+   - **Name**: the label students see in the content area.
+   - **Description**: optional text shown above the embedded thread.
+   - **Permit Users to View this Content**: Yes/No availability toggle.
+   - **Track Number of Views**: enable if you want Blackboard's per-item view statistics. FastComments runs its own analytics independently.
+   - **Date and Time Restrictions**: optional **Display After** / **Display Until** windows.
+6. Submit. The tool appears as a clickable item in the content area.
 
 #### Embedding Inside an Item or Document
 
-V obeh pogledih predmeta inštruktorji vdelajo FastComments inline znotraj telesa Itema, Documenta ali katerega koli polja z bogatim besedilom preko gumba LTI Advantage v Content Editorju.
+In both course views, instructors embed FastComments inline inside the body of an Item, Document, or any rich-text field through the Content Editor's LTI Advantage button.
 
 Ultra Course View:
 
-1. Ustvarite ali uredite **Document**.
-2. Kliknite **Add content** znotraj telesa dokumenta na mestu, kjer želite, da se nit pojavi.
-3. V orodni vrstici urejevalnika odprite meni **Insert content** in kliknite **Content Market** (vstopna točka LTI Advantage / Deep Linking).
-4. Izberite **FastComments**. FastComments vrne deep-link podatkovno vsebino in Blackboard vstavi vdelan blok v telo dokumenta na mesto kurzorja.
-5. Shrani dokument. Študenti vidijo nit upodobljeno inline, ko se srolajo mimo nje.
+1. Create or edit a **Document**.
+2. Click **Add content** inside the document body where you want the thread to appear.
+3. In the editor toolbar, open the **Insert content** menu and click **Content Market** (the LTI Advantage / Deep Linking entry point).
+4. Pick **FastComments**. FastComments returns a deep-link payload and Blackboard inserts an embedded block in the document body at the cursor position.
+5. Save the document. Students see the thread rendered inline as they scroll past it.
 
 Original Course View:
 
-1. Uredite kateri koli element z bogatim besedilom.
-2. V orodni vrstici Content Editorja kliknite ikono plus **Add Content** in izberite **Content Market** (v starejših Q4 2024 CU označeno kot **Add Content from External Tool**).
-3. Izberite **FastComments**. Urejevalnik vstavi začasni blok, ki se sklicuje na deep-linked vir.
-4. Pošljite element.
+1. Edit any item with a rich-text body.
+2. In the Content Editor toolbar, click the **Add Content** plus icon and choose **Content Market** (labeled **Add Content from External Tool** in older Q4 2024 CUs).
+3. Pick **FastComments**. The editor inserts a placeholder block referencing the deep-linked resource.
+4. Submit the item.
 
-Vsaka deep-link vdelava ustvari svojo lastno nit FastComments, zato ima element z dvema vdelanima FastComments blokoma dva neodvisna toka komentarjev.
+Each deep-link embed produces its own FastComments thread, so an Item with two embedded FastComments blocks has two independent comment streams.
 
 #### Visibility, Release Conditions, and Group Restrictions
 
-Vsebine FastComments se obnašajo kot kateri koli drugi Blackboard vsebinski elementi glede pravil upravljanja dostopa, ki se nanašajo nanje.
+FastComments content items behave like any other Blackboard content item for the access control rules layered on top of them.
 
-- Ultra: kliknite izbirnik vidnosti na vrstici (**Visible to students**, **Hidden from students**, **Conditional availability**). Conditional availability podpira datumsko/časovna okna, pravila glede uspešnosti proti elementom v ocenjevalnici in pravila članstva v primerjavi s skupinami predmeta.
-- Original: odprite kontekstni meni elementa in izberite **Adaptive Release** ali **Adaptive Release: Advanced** za omejitev orodja po datumu, članstvu, oceni ali statusu pregleda. Uporabite **Set Group Availability** na elementu za omejitev na določene skupine predmeta.
+- Ultra: click the visibility selector on the row (**Visible to students**, **Hidden from students**, **Conditional availability**). Conditional availability supports date/time windows, performance rules against gradebook items, and member rules against course groups.
+- Original: open the item's context menu and choose **Adaptive Release** or **Adaptive Release: Advanced** to gate the tool by date, membership, grade, or review status. Use **Set Group Availability** on the item to restrict to specific course groups.
 
-FastComments spoštuje, kar odloči Blackboardov vrata. Če Blackboard skrije element pred študentom, se zanj LTI zagon nikoli ne zgodi in se ne pojavijo v moderatorjevem pogledu.
+FastComments respects whatever Blackboard's gate decides. If Blackboard hides the item from a student, the LTI launch never happens for that student and they don't appear in the moderator view.
 
 #### Gradebook Behavior
 
-FastComments ne poroča ocen nazaj preko LTI Advantage Assignment and Grade Services. Za FastComments vsebine se ne ustvari samodejno stolpec ocen.
+FastComments does not report grades back over LTI Advantage Assignment and Grade Services. No grade column is auto-created for FastComments content items.
 
-Če je vaš Blackboard najemnik nastavljen tako, da samodejno ustvari stolpec v gradebooku za vsak nov vsebinski element ne glede na metapodatke o ocenjevanju, se vseeno prikaže prazen stolpec. Da ga skrijete:
+If your Blackboard tenant is configured to auto-create a gradebook column for every new content item regardless of grading metadata, an empty column appears anyway. To hide it:
 
-- Ultra: odprite **Gradebook**, kliknite glavo stolpca, izberite **Edit**, in izklopite **Show to students** ter **Include in calculations**. Ali uporabite **Delete**, če vaša institucija dovoljuje brisanje stolpcev za neocenjene elemente.
-- Original: odprite **Grade Center**, kliknite chevron stolpca, izberite **Hide from Users (on/off)**, in po potrebi **Hide from Instructor View** pod **Column Organization**.
+- Ultra: open the **Gradebook**, click the column header, choose **Edit**, and turn off **Show to students** plus **Include in calculations**. Or use **Delete** if your institution permits column deletion for ungraded items.
+- Original: open the **Grade Center**, click the column's chevron, choose **Hide from Users (on/off)**, and optionally **Hide from Instructor View** under **Column Organization**.
 
 #### What Students See
 
-Ko študent odpre FastComments element ali se pomakne do vdelanega bloka:
+When a student opens the FastComments item or scrolls to an embedded block:
 
-1. Blackboard zažene LTI 1.3 sporočilo proti FastComments. Študent je prijavljen preko SSO z uporabo svoje Blackboard identitete (ime, e-pošta, avatar, vloga) brez prikaza obrazca za prijavo.
-2. Nit komentarjev se izriše v iframeu. Opozorila, odgovori, omembe in reakcije so na voljo glede na nastavitve komentarnega pripomočka, konfigurirane v FastComments.
-3. Njihovi komentarji so pripisani njihovi Blackboardov račun. Če študent kasneje uredi svoje ime ali fotografijo v Blackboardu, naslednji zagon posodobi profil v FastComments.
+1. Blackboard launches the LTI 1.3 message to FastComments. The student is signed in via SSO using their Blackboard identity (name, email, avatar, role) without seeing a login form.
+2. The comment thread renders in the iframe. Threading, replies, mentions, and reactions are all available based on the comment widget settings configured in FastComments.
+3. Their comments are attributed to their Blackboard account. If the student edits their name or photo in Blackboard later, the next launch updates the FastComments profile.
 
-Preslikava vlog iz Blackboarda v FastComments:
+Role mapping from Blackboard to FastComments:
 
-- **System Administrator** in **Course Builder** se preslikata v FastComments **admin**.
-- **Instructor** in **Teaching Assistant** se preslikata v FastComments **moderator**.
-- **Student**, **Guest**, in **Observer** se preslikajo v FastComments **commenter**.
+- **System Administrator** and **Course Builder** map to FastComments **admin**.
+- **Instructor** and **Teaching Assistant** map to FastComments **moderator**.
+- **Student**, **Guest**, and **Observer** map to FastComments **commenter**.
 
-Moderatorji vidijo kontrolnike moderacije (pin, hide, ban, delete) inline pri vsakem komentarju v niti.
+Moderators see moderation controls (pin, hide, ban, delete) inline on every comment in the thread.
 
 #### Thread Scoping
 
-FastComments omeji vsako nit z **(Blackboard host, course ID, resource link ID)**. Dva FastComments elementa v istem predmetu ustvarita dve nitki. Enak element kopiran med dvema predmetnima lupinama (na primer preko kopije predmeta) ustvari dve nitki, ker Blackboard izda novo resource link ID med kopiranjem. Če želite ohraniti deljeno nit preko kopij predmeta, uporabite Deep Linking z eksplicitnim thread URN, konfiguriranim v FastComments pred zagonom kopije.
+FastComments scopes each thread by **(Blackboard host, course ID, resource link ID)**. Two FastComments items in the same course produce two threads. The same item copied across two course shells (for example, through course copy) produces two threads, because Blackboard issues a fresh resource link ID during the copy. To keep a shared thread across course copies, use Deep Linking with an explicit thread URN configured in FastComments before launching the copy.
 
 #### Blackboard-Specific Gotchas
 
-**FastComments tile missing from the Build Content menu (Original) or Content Market (Ultra).** Administrator je orodje odobril, vendar je pustil institucijsko politiko, ki blokira ustrezno umestitev. Pojdite v **Administrator Panel** > **Integrations** > **LTI Tool Providers**, uredite vnos FastComments in potrdite, da sta omogočeni umestitvi **Course Content Tool** (Original) in **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra). Shrani in osvežite stran predmeta.
+**FastComments tile missing from the Build Content menu (Original) or Content Market (Ultra).** The administrator approved the tool but left an institution policy blocking the relevant placement. Go to **Administrator Panel** > **Integrations** > **LTI Tool Providers**, edit the FastComments entry, and confirm both **Course Content Tool** (Original) and **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra) placements are enabled. Save and refresh the course page.
 
-**"Tool not configured for this context" ali "Tool is not deployed" napaka pri zagonu.** Območje namestitve, registrirano med dinamično registracijo, se ne ujema z institucijskim kontekstom, kateremu predmet pripada. V Blackboardovem vnosu ponudnika orodij preverite, ali se **Deployment ID** ujema s tem, kar FastComments prikazuje na svoji strani LTI 1.3 Configuration za tega najemnika. Če se razlikujeta, izbrišite umestitev in ponovno zaženite dinamično registracijo iz svežega registracijskega URL-ja.
+**"Tool not configured for this context" or "Tool is not deployed" error on launch.** The deployment scope registered during dynamic registration doesn't match the institution context the course belongs to. In Blackboard's tool provider entry, verify the **Deployment ID** matches what FastComments shows on its LTI 1.3 Configuration page for this tenant. If they differ, delete the placement and re-run dynamic registration from a fresh registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">pridobite jo tukaj</a>).
 
-**Višina iframea izgleda fiksna ali se vsebina prikaže odrezana.** Nekateri Blackboard najemniki vključujejo strogo Content Security Policy, ki blokira privzeto LTI iframe-resize postMessage. FastComments pošilja tako Canvas-slog `lti.frameResize` sporočilo kot IMS specifikacijsko `org.imsglobal.lti.frameResize` sporočilo za maksimalno združljivost, vendar najemniški nivo CSP preklic blokira poslušalca v nadrejenem oknu. Prosite administratorja, naj potrdi, da je `*.fastcomments.com` na LTI allowlisti orodij in da noben po meri dodan CSP header ne odstranjuje postMessage dogodkov. Nato se spreminjanje velikosti deluje brez nadaljnje konfiguracije.
+**Iframe height looks fixed or content gets cut off.** Some Blackboard tenants ship with a strict Content Security Policy that blocks the default LTI iframe-resize postMessage. FastComments emits both the Canvas-style `lti.frameResize` message and the IMS spec-form `org.imsglobal.lti.frameResize` message to maximize compatibility, but a tenant-level CSP override blocks the parent listener. Ask your administrator to confirm that `*.fastcomments.com` is on the LTI tool allowlist and that no custom CSP header is stripping postMessage events. Resize then works without further configuration.
 
-**Course copy duplicates threads.** Blackboard kopija predmeta izda nove resource link ID za LTI umestitve, zato kopirani predmeti začnejo s praznimi nitmi. To je pričakovano. Če želite, da kopirani predmet podeduje izvorno nit, nastavite Deep Linking z eksplicitnim thread URN pred kopiranjem ali se obrnite na FastComments podporo za množično ponastavitev ID-jev nitk.
+**Course copy duplicates threads.** Blackboard course copy issues new resource link IDs for LTI placements, so copied courses start with empty threads. This is expected. If you need the copied course to inherit the original thread, set up Deep Linking with an explicit thread URN before copying, or contact FastComments support to remap thread IDs in bulk.
 
-**Študent vidi generično Blackboard napako pri zagonu.** Vzrok je manjkajoča ali zastarela `email` claim. Potrdite institucijsko politiko za FastComments, da so pod **User Fields to Send** omogočeni **Role**, **Name**, in **Email Address**. Shrani in nato znova zaženite v novem brskalniškem seji.
+**Student sees a generic Blackboard error on launch.** The cause is a missing or stale `email` claim. Confirm the institution policy for FastComments has **Role**, **Name**, and **Email Address** enabled under **User Fields to Send**. Save, then launch again in a fresh browser session.

@@ -10,7 +10,7 @@ D2L Brightspace exposes Dynamic Registration through the LTI Advantage admin int
 
 You'll see a registration form. The key field is **Tool initiation registration endpoint** (some Brightspace versions label it "Tool Initiation Registration URL").
 
-Paste the FastComments registration URL into that field. Leave the other fields blank - they're auto-populated by FastComments during the registration handshake.
+Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) into that field. Leave the other fields blank - they're auto-populated by FastComments during the registration handshake.
 
 Click **Register**.
 

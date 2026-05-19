@@ -1,17 +1,19 @@
-Moodle 4.0+ ondersteunt LTI 1.3 Dynamic Registration via de plugin External Tool.
+**Gebruik je Moodle?** We publiceren ook een speciale Moodle-plug-in voor FastComments met een nauwere integratie dan LTI 1.3 (hooks voor synchronisatie van cijfers, uitgebreidere activiteitrapportage, native Moodle-instellingen-UI). Zie de <a href="/guide-installation-moodle.html" target="_blank">Moodle plug-in installatiehandleiding</a>. De LTI 1.3 flow hieronder is de juiste keuze als je een enkele registratie wilt die ook andere LMSes dekt, of als je Moodle-beheerder geen plug-ins van derden wil installeren.
 
-#### Open het scherm Toolbeheer
+Moodle 4.0+ ondersteunt LTI 1.3 Dynamic Registration via de External Tool-plug-in.
 
-1. Meld u aan bij Moodle als sitebeheerder.
-2. Navigeer naar **Sitebeheer** > **Plugins** > **Activiteitsmodules** > **Externe tool** > **Tools beheren**.
+#### Open het Toolbeheer-scherm
+
+1. Meld je aan bij Moodle als sitebeheerder.
+2. Navigeer naar **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools**.
 
 #### Plak de URL
 
-U ziet een kaart met het label **Tool URL**. Plak de FastComments-registratie-URL in het tekstveld en klik op **Add LTI Advantage**.
+Je ziet een kaart met het label **Tool URL**. Plak de FastComments-registratie-URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) in het tekstveld en klik op **Add LTI Advantage**.
 
-Moodle opent een registratiescherm waarin de identiteit van de tool en de gevraagde machtigingen worden weergegeven. Controleer deze en klik op **Activeren** (of **Registreren**, afhankelijk van de Moodle-versie).
+Moodle opent een registratiescherm waarin de identiteit van de tool en de gevraagde machtigingen worden weergegeven. Controleer dit en klik op **Activate** (of **Register**, afhankelijk van de Moodle-versie).
 
-De popup sluit wanneer de registratie is voltooid; de nieuwe FastComments-tool verschijnt in de **Tools**-lijst met de status **Actief**.
+De popup sluit zodra de registratie is voltooid; de nieuwe FastComments-tool verschijnt in de lijst **Tools** met de status **Active**.
 
 #### Maak het beschikbaar
 

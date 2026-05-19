@@ -1,25 +1,25 @@
 {
-  "name": "Namestitev LMS-a (LTI 1.3)",
+  "name": "Namestitev LMS (LTI 1.3)",
   "pageHeader": "Dodajte komentarje v svoj LMS prek LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Cenik",
       "file": "lti-plans.md",
-      "subCat": "Na kratko"
+      "subCat": "Povzetek"
     },
     {
       "name": "Hitri začetek",
       "file": "lti-quick-start.md",
-      "subCat": "Na kratko"
+      "subCat": "Povzetek"
     },
     {
       "name": "Podprte platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Na kratko"
+      "subCat": "Povzetek"
     },
     {
-      "name": "Ustvari URL za registracijo",
+      "name": "Ustvari registracijski URL",
       "file": "lti-generate-url.md",
       "subCat": "Nastavitev FastComments"
     },
@@ -29,7 +29,7 @@
       "subCat": "Registrirajte orodje"
     },
     {
-      "name": "Registracija v Moodlu",
+      "name": "Registracija v Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Registrirajte orodje"
     },
@@ -44,24 +44,24 @@
       "subCat": "Registrirajte orodje"
     },
     {
-      "name": "Dodaj v vsebino predmeta v D2L",
+      "name": "Dodajte v vsebino predmeta v D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodaj v predmet"
+      "subCat": "Dodajte v predmet"
     },
     {
-      "name": "Dodaj v vsebino predmeta v Moodlu",
+      "name": "Dodajte v vsebino predmeta v Moodlu",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodaj v predmet"
+      "subCat": "Dodajte v predmet"
     },
     {
-      "name": "Dodaj v vsebino predmeta v Blackboard Learn",
+      "name": "Dodajte v vsebino predmeta v Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodaj v predmet"
+      "subCat": "Dodajte v predmet"
     },
     {
-      "name": "Dodaj v vsebino predmeta v Sakai ali Schoology",
+      "name": "Dodajte v vsebino predmeta v Sakai ali Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodaj v predmet"
+      "subCat": "Dodajte v predmet"
     },
     {
       "name": "Odpravljanje težav",

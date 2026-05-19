@@ -1,24 +1,26 @@
-Moodle 4.0+ understøtter LTI 1.3 dynamisk registrering via External Tool-pluginet.
+**Using Moodle?** Vi udgiver også et dedikeret Moodle-plugin for FastComments med en tættere integration end LTI 1.3 (grade sync hooks, dybere aktivitetsrapportering, indbygget Moodle-indstillings-UI). Se <a href="/guide-installation-moodle.html" target="_blank">Moodle plugin installation guide</a>. LTI 1.3-flowet nedenfor er det rigtige valg, hvis du ønsker en enkelt registrering, der også dækker andre LMS'er, eller hvis din Moodle-admin ikke vil installere tredjeparts-plugins.
 
-#### Åbn skærmen til værktøjsadministration
+Moodle 4.0+ understøtter LTI 1.3 Dynamic Registration gennem External Tool-plugin'et.
 
-1. Log ind på Moodle som webstedsadministrator.
-2. Naviger til **Webstedsadministration** > **Plugins** > **Aktivitetsmoduler** > **Eksternt værktøj** > **Administrer værktøjer**.
+#### Open the Tool Management Screen
 
-#### Indsæt URL'en
+1. Sign in to Moodle as a site administrator.
+2. Navigate to **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools**.
 
-Du vil se et kort mærket **Værktøjs-URL**. Indsæt FastComments-registrerings-URL'en i tekstfeltet og klik **Tilføj LTI Advantage**.
+#### Paste the URL
 
-Moodle åbner en registreringsskærm, der viser værktøjets identitet og de tilladelser, det anmoder om. Gennemgå og klik **Aktiver** (eller **Registrer**, afhængigt af Moodle-version).
+You'll see a card labeled **Tool URL**. Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">get it here</a>) into the text field and click **Add LTI Advantage**.
 
-Popup-vinduet lukkes, når registreringen er fuldført; det nye FastComments-værktøj vises i listen **Værktøjer** med status **Aktiv**.
+Moodle opens a registration screen showing the tool's identity and the permissions it's requesting. Review and click **Activate** (or **Register**, depending on Moodle version).
 
-#### Gør det tilgængeligt
+The popup closes when registration completes; the new FastComments tool appears in the **Tools** list with the status **Active**.
 
-Som standard tilføjer Moodle nye værktøjer til listen "Kursusværktøjer", men viser dem ikke i aktivitetsvælgeren. For at gøre FastComments synligt i hele kurset:
+#### Make It Available
 
-1. Klik på tandhjulsikonet på FastComments-kortet.
-2. Under **Brug af værktøjskonfiguration**, vælg **Vis i aktivitetsvælgeren og som et forudkonfigureret værktøj**.
-3. Gem.
+By default Moodle adds new tools to the "Course tools" list but doesn't show them in the activity picker. To expose FastComments course-wide:
 
-Undervisere kan nu tilføje FastComments til ethvert kursus via **Tilføj en aktivitet eller ressource** > **FastComments**.
+1. Click the gear icon on the FastComments tile.
+2. Under **Tool configuration usage**, choose **Show in activity chooser and as a preconfigured tool**.
+3. Save.
+
+Instructors can now add FastComments to any course through **Add an activity or resource** > **FastComments**.

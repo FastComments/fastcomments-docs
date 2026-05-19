@@ -1,101 +1,101 @@
-Када администратор региструје FastComments као LTI 1.3 Advantage алат и одобри политике институције, наставници га додају у курсеве кроз стандардне тачке постављања у Blackboard-у. Тачни кораци се разликују између Ultra Course View и Original Course View режима, па су оба описа наведена у наставку.
+Once an administrator has registered FastComments as an LTI 1.3 Advantage tool and approved the institution policies, instructors add it to courses through the standard Blackboard placement points. The exact steps differ between Ultra Course View and Original Course View, so both are covered below.
 
 #### Ultra Course View
 
-Ultra Course View је подразумевани приказ у Blackboard Learn SaaS од 2026.
+Ultra Course View je podrazumijevano u Blackboard Learn SaaS od 2026.
 
-1. Отворите курс и идите на страницу **Sadržaj kursa**.
-2. Пребаците показивач или додирните место где желите да нит коментара буде у оквиру и кликните љубичасти **+** (Додај садржај) тастер.
-3. Изаберите **Тржиште садржаја**. Панел Тржиште садржаја листа све одобрене LTI алате и поставке Building Block-а за вашу институцију.
-4. Пронађите плочицу **FastComments** и кликните је. Blackboard креира ставку садржаја на позицији где сте отворили мени **+**.
-5. Ставка по подразумеваној поставци пада у оквиру као унос „Видљиво студентима“ за предаваче који имају као лични подразумевани избор искључено **Сакриј од студената**. Ако је ваш подразумевани избор **Сакривено**, ставка се креира као скривена и ви преокренете селектор видљивости на реду ставке када будете спремни.
-6. Да преименујете ставку, кликните на наслов у оквиру и откуцајте нови назив. Наслов који студенти виде у оквиру је независан од FastComments идентификатора нити, па је преименовање безбедно у било којем тренутку.
+1. Otvorite kurs i idite na stranicu **Sadržaj kursa**.
+2. Zadržite pokazivač ili dodirnite mjesto u okviru outline-a gdje želite da se pojavi nit komentara i kliknite ljubičasto **+** (Dodaj sadržaj).
+3. Izaberite **Tržište sadržaja**. Panel Tržišta sadržaja navodi svaki odobren LTI alat i Building Block postavljanje za vašu ustanovu.
+4. Pronađite pločicu **FastComments** i kliknite je. Blackboard kreira stavku sadržaja na poziciji gdje ste otvorili **+** meni.
+5. Stavka se po defaultu pojavljuje u outline-u kao unos "Vidljivo studentima" za instruktore koji imaju **Sakrij od studenata** isključen kao svoj lični default. Ako je vaš default **Skriveno**, stavka se kreira skrivena i uključite selektor vidljivosti na redu stavke kada budete spremni.
+6. Da preimenujete stavku, kliknite naslov u outline-u i upišite novu oznaku. Naslov koji studenti vide u outline-u je nezavistan od identifikatora FastComments niti, pa je preimenovanje sigurno u bilo kojem trenutku.
 
-Ако не видите опцију **Тржиште садржаја**, ваша институција је сакрила ту поставку. Иста функција је доступна и кроз **Још алата** у истом **+** менију под групом **LTI алати**.
+Ako ne vidite **Tržište sadržaja** kao opciju, vaša ustanova je sakrila to postavljanje. Isti izbornik možete otvoriti i kroz **Više alata** u istom **+** meniju pod grupom **LTI Alati**.
 
 #### Original Course View
 
-Original Course View је и даље подржан у Learn SaaS и остаје примарно искуство за само-хостоване Learn 9.1 сајтове на Q4 2024 CU линији издања.
+Original Course View je i dalje podržan u Learn SaaS i ostaje primarno iskustvo za self-hosted Learn 9.1 sajtove na Q4 2024 CU liniji izdanja.
 
-1. Отворите курс и уђите у **Область садржаја** (на пример, подразумевана **Информације** или **Садржај** област у менију курса).
-2. Укључите **Режим уређивања** помоћу тастера у горњем десном углу странице.
-3. Кликните **Креирај садржај** у траци акција.
-4. У подменију **Алатке за учење**, кликните **FastComments**. Подменијум Алатке за учење попуњава се из LTI 1.3 поставки алата након што администратор региструје алат. Ако га не видите, погледајте одељак о проблемима у наставку.
-5. На формулару **Креирај FastComments**, подесите:
-   - **Назив**: ознака коју студенти виде у области садржаја.
-   - **Опис**: опционални текст који се приказује изнад уграђене нити.
-   - **Дозволи корисницима да виде овај садржај**: укључивање/искључивање доступности.
-   - **Праћење броја прегледа**: омогућите ако желите BlackBoard статистику прегледа по ставци. FastComments води своју аналитику независно.
-   - **Ограничења по датуму и времену**: опционалне прозоре **Прикажи након** / **Прикажи до**.
-6. Пошаљите. Алат се појављује као кликабилна ставка у области садржаја.
+1. Otvorite kurs i uđite u **Područje sadržaja** (na primjer, podrazumijevano **Information** ili **Content** područje u meniju kursa).
+2. Uključite **Režim uređivanja** koristeći prekidač u gornjem desnom uglu stranice.
+3. Kliknite **Kreiraj sadržaj** u traci sa akcijama.
+4. U podmeniju **Alati za učenje**, kliknite **FastComments**. Podmeni Alata za učenje popunjava se iz LTI 1.3 postavljanja alata nakon što administrator registruje alat. Ako ga ne vidite, pogledajte odjeljak sa problemima u nastavku.
+5. Na formularu **Kreiraj FastComments**, podesite:
+   - **Name**: oznaka koju studenti vide u području sadržaja.
+   - **Description**: opcioni tekst koji se prikazuje iznad ugrađene niti.
+   - **Permit Users to View this Content**: prekidač za dostupnost Da/Ne.
+   - **Track Number of Views**: omogućite ako želite Blackboard-ovu statistiku pregleda po stavci. FastComments vodi vlastitu analitiku nezavisno.
+   - **Date and Time Restrictions**: opciona polja **Display After** / **Display Until**.
+6. Pošaljite. Alat se pojavljuje kao klikabilna stavka u području sadržaja.
 
-#### Уграђивање унутар ставке или документа
+#### Ugradnja unutar stavke ili dokumenta
 
-У оба приказа курса, наставници уграђују FastComments у линији текста унутар тела ставке, документа или било ког rich-text поља кроз LTI Advantage тастер у Уређивачу садржаја.
+U oba prikaza kursa, instruktori ugrađuju FastComments inline unutar tijela stavke, dokumenta, ili bilo kojeg polja sa bogatim tekstom putem LTI Advantage dugmeta u Uređivaču sadržaja.
 
 Ultra Course View:
 
-1. Креирајте или уредите **Документ**.
-2. Кликните **Додај садржај** унутар тела документа на месту где желите да нит буде.
-3. У траци алата уређивача, отворите мени **Уметни садржај** и кликните **Тржиште садржаја** (почетна тачка за LTI Advantage / Deep Linking).
-4. Изаберите **FastComments**. FastComments враћа deep-link payload и Blackboard убацује уграђени блок у тело документа на позицији курсора.
-5. Сачувајте документ. Студенти виде нит приказану у линији како пролазе поред ње.
+1. Kreirajte ili uredite **Dokument**.
+2. Kliknite **Dodaj sadržaj** unutar tijela dokumenta tamo gdje želite da nit bude prikazana.
+3. U alatnoj traci urednika otvorite meni **Umetni sadržaj** i kliknite **Tržište sadržaja** (ulazna tačka za LTI Advantage / Deep Linking).
+4. Odaberite **FastComments**. FastComments vraća deep-link payload i Blackboard ubacuje ugrađeni blok u tijelo dokumenta na poziciju kursora.
+5. Sačuvajte dokument. Studenti vide nit renderovanu inline dok skrolaju pored nje.
 
 Original Course View:
 
-1. Уредите било коју ставку са rich-text телом.
-2. У траци алата Content Editor-а, кликните на плус икону **Додај садржај** и изаберите **Тржиште садржаја** (означено као **Додај садржај из спољног алата** у старијим Q4 2024 CU издањима).
-3. Изаберите **FastComments**. Уређивач убацује резервисани блок који референцира deep-linked ресурс.
-4. Пошаљите ставку.
+1. Uredite bilo koju stavku koja ima tijelo sa bogatim tekstom.
+2. U alatnoj traci Uređivača sadržaja kliknite plus ikonu **Dodaj sadržaj** i izaberite **Tržište sadržaja** (označeno **Dodaj sadržaj iz eksternog alata** u starijim Q4 2024 CU verzijama).
+3. Odaberite **FastComments**. Urednik umeće placeholder blok koji referencira deep-linked resurs.
+4. Pošaljite stavku.
 
-Сваки deep-link уграђени блок производи своју FastComments нит, па ставка са два уграђена FastComments блока има два независна тока коментара.
+Svaki deep-link embed proizvodi vlastitu FastComments nit, tako da stavka sa dva ugrađena FastComments bloka ima dva nezavisna toka komentara.
 
-#### Видљивост, услови објављивања и ограничења група
+#### Vidljivost, uslovi objavljivanja i ograničenja grupa
 
-FastComments ставке садржаја понашају се као било која друга Blackboard ставка садржаја у погледу правила контроле приступа која се примењују на њих.
+Stavke sadržaja FastComments ponašaju se kao i svaka druga Blackboard stavka u pogledu pravila pristupa koja se primjenjuju na njih.
 
-- Ultra: кликните селектор видљивости на реду (**Видљиво студентима**, **Сакривено од студената**, **Условна доступност**). Условна доступност подржава прозоре по датуму/времену, правила перформанси у односу на ставке у дневнику оцена и правила чланства у односу на курсне групе.
-- Original: отворите контекст мени ставке и изаберите **Adaptive Release** или **Adaptive Release: Advanced** да бисте ограничили приступ алату по датуму, чланству, оцјени или статусу прегледа. Користите **Set Group Availability** на ставци да огранчите приступ специфичним курсним групама.
+- Ultra: kliknite selektor vidljivosti na redu (**Vidljivo studentima**, **Skriveno od studenata**, **Uslovna dostupnost**). Uslovna dostupnost podržava vremenske prozore, pravila performansi protiv stavki dnevnika ocjena i pravila članstva protiv grupa kursa.
+- Original: otvorite kontekst meni stavke i izaberite **Adaptive Release** ili **Adaptive Release: Advanced** da ograničite alat po datumu, članstvu, ocjeni ili statusu pregleda. Koristite **Set Group Availability** na stavci da ograničite na specifične grupe kursa.
 
-FastComments поштује одлуку Blackboard-ове контроле. Ако Blackboard сакрије ставку од студента, LTI покретање се никада не дешава за тог студента и он се не појављује у модераторском приказу.
+FastComments poštuje šta god Blackboard-ova kontrola odluči. Ako Blackboard sakrije stavku od studenta, LTI pokretanje se nikada ne dešava za tog studenta i on se ne pojavljuje u moderator prikazu.
 
-#### Понашање у дневнику оцјена
+#### Ponašanje u dnevniku ocjena
 
-FastComments не шаље оцјене назад преко LTI Advantage Assignment and Grade Services. Није аутоматски креиран колона у дневнику оцјена за FastComments ставке садржаја.
+FastComments ne šalje ocjene nazad putem LTI Advantage Assignment and Grade Services. Ne stvara se automatski kolona ocjena za FastComments stavke.
 
-Ако је ваш Blackboard систем конфигурисан да аутоматски креира колону у дневнику оцјена за сваку нову ставку без обзира на метаподаци о оцењивању, појавит ће се празна колона у сваком случају. Да бисте је сакрили:
+Ako je vaš Blackboard tenant konfigurisan da automatski kreira kolonu dnevnika ocjena za svaku novu stavku sadržaja bez obzira na metapodatke ocjenjivanja, prazna kolona će se i dalje pojaviti. Da je sakrijete:
 
-- Ultra: отворите **Дневник оцјена**, кликните на заглавље колоне, изаберите **Уреди**, и искључите **Прикажи студентима** као и **Уклучи у прорачуне**. Или користите **Обриши** ако ваша институција дозвољава брисање колона за непроцјењиване ставке.
-- Original: отворите **Центар оцјена**, кликните на стрелицу код колоне, изаберите **Сакриј корисницима (укљ/искл)**, и опционално **Сакриј за приказ наставника** под **Организација колона**.
+- Ultra: otvorite **Dnevnik ocjena**, kliknite zaglavlje kolone, izaberite **Uredi**, i isključite **Pokaži studentima** i **Uključi u kalkulacije**. Ili koristite **Obriši** ako vaša ustanova dozvoljava brisanje kolona za neocjenjene stavke.
+- Original: otvorite **Centar ocjena**, kliknite na strelicu kolone, izaberite **Sakrij od korisnika (uklj./isklj.)**, i po želji **Sakrij iz prikaza instruktora** unutar **Organizacija kolona**.
 
-#### Шта студенти виде
+#### Šta studenti vide
 
-Када студент отвори FastComments ставку или скролује до уграђеног блока:
+Kada student otvori FastComments stavku ili skroluje do ugrađenog bloka:
 
-1. Blackboard покреће LTI 1.3 поруку ка FastComments. Студент је пријављен преко SSO користећи свој Blackboard идентитет (име, е-пошта, аватар, улога) без видљивог формулара за пријаву.
-2. Нит коментара се рендерује у iframe-у. Нумерација нити, одговори, помињања и реакције су доступни у зависности од подешавања видгета за коментаре у FastComments.
-3. Њихови коментари су приписани њиховом Blackboard налогу. Ако студент касније измени име или слику у Blackboard-у, следеће покретање ажурира FastComments профил.
+1. Blackboard pokreće LTI 1.3 poruku ka FastComments. Student je prijavljen putem SSO koristeći svoj Blackboard identitet (ime, email, avatar, uloga) bez da vidi obrazac za prijavu.
+2. Nit komentara se prikazuje unutar iframe-a. Threading, odgovori, spominjanja i reakcije su dostupni u zavisnosti od podešavanja widgeta za komentare konfigurisanih u FastComments.
+3. Njihovi komentari su pridruženi njihovom Blackboard nalogu. Ako student kasnije izmijeni svoje ime ili fotografiju u Blackboard-u, naredno pokretanje ažurira FastComments profil.
 
-Mapирање улога из Blackboard-а у FastComments:
+Mapiranje uloga iz Blackboar-da u FastComments:
 
-- **System Administrator** и **Course Builder** се мапирају на FastComments **admin**.
-- **Instructor** и **Teaching Assistant** се мапирају на FastComments **moderator**.
-- **Student**, **Guest**, и **Observer** се мапирају на FastComments **commenter**.
+- **System Administrator** i **Course Builder** mapiraju se na FastComments **admin**.
+- **Instructor** i **Teaching Assistant** mapiraju se na FastComments **moderator**.
+- **Student**, **Guest**, i **Observer** mapiraju se na FastComments **commenter**.
 
-Moderatori виде контроле модерације (забодавање, скривање, забрана, брисање) у линији на сваком коментару у нити.
+Moderatori vide kontrolе moderacije (pin, sakrij, zabrani, obriši) inline na svakom komentaru u niti.
 
-#### Ограничење нити по опсегу
+#### Opseg niti
 
-FastComments ограничава сваку нит по **(Blackboard host, course ID, resource link ID)**. Две FastComments ставке у истом курсу производе две нити. Иста ставка копирана преко два курса (на пример, кроз копију курса) производи две нити, јер Blackboard издаје нови resource link ID током копирања. Да бисте задржали заједничку нит преко копија курса, користите Deep Linking са експлицитним thread URN конфигурисаним у FastComments пре покретања копије.
+FastComments definira opseg svake niti po **(Blackboard host, course ID, resource link ID)**. Dvije FastComments stavke u istom kursu proizvode dvije niti. Ista stavka kopirana u dvije ljuske kursa (na primjer, putem kopije kursa) proizvodi dvije niti, jer Blackboard dodjeljuje novi resource link ID tokom kopiranja. Da biste zadržali zajedničku nit kroz kopije kursa, koristite Deep Linking sa eksplicitnim thread URN konfiguriranim u FastComments prije pokretanja kopije.
 
-#### Специфични проблеми у Blackboard-у
+#### Blackboard-specifični problemi
 
-**Недостаје FastComments плочица у менију Креирај садржај (Original) или у Тржишту садржаја (Ultra).** Администратор је одобрио алат али је оставио политику институције која блокира релевантну поставку. Идите на **Administrator Panel** > **Integrations** > **LTI Tool Providers**, уредите FastComments унос и потврдите да су омогућене и поставке **Course Content Tool** (Original) и **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra). Сачувајте и освежите страницу курса.
+**FastComments pločica nedostaje u meniju Kreiraj sadržaj (Original) ili Tržištu sadržaja (Ultra).** Administrator je odobrio alat ali ostavio politiku ustanove koja blokira relevantno postavljanje. Idite na **Administrator Panel** > **Integrations** > **LTI Tool Providers**, uredite FastComments unos i potvrdite da su omogućena postavljanja **Course Content Tool** (Original) i **Course Content Tool - allow students** / **Deep Linking content tool** (Ultra). Sačuvajte i osvježite stranicu kursa.
 
-**Грешка „Tool not configured for this context“ или „Tool is not deployed“ при покретању.** Област примене (deployment scope) регистрована током динамичке регистрације не одговара контексту институције којој курс припада. У Blackboard-овом уносу провајдера алата, проверите да ли се **Deployment ID** поклапа са тим што FastComments показује на својој LTI 1.3 Configuration страници за овај tenant. Ако се разликују, обришите поставку и поново покрените динамичку регистрацију са свежим URL-ом за регистрацију.
+**"Tool not configured for this context" or "Tool is not deployed" error on launch.** Deployment scope registrovan tokom dinamičke registracije ne odgovara kontekstu ustanove kojem kurs pripada. U Blackboard-ovom unosu provajdera alata, provjerite da li **Deployment ID** odgovara onome što FastComments prikazuje na svojoj stranici LTI 1.3 Configuration za ovog tenanta. Ako se razlikuju, izbrišite postavljanje i ponovo pokrenite dinamičku registraciju iz svježeg URL-a za registraciju (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">preuzmite ga ovdje</a>).
 
-**Висина iframe-а изгледа фиксна или се садржај одсече.** Неке Blackboard инстанце долазе са строгом Content Security Policy која блокира подразумевани LTI iframe-resize postMessage. FastComments емитује и Canvas-стил `lti.frameResize` поруку и IMS спецификацијом `org.imsglobal.lti.frameResize` поруку ради максималне компатибилности, али обавезни CSP на нивоу tenant-а може блокирати слушаоца у parent прозору. Замолите администратора да потврди да је `*.fastcomments.com` на листи дозвољених LTI алата и да ниједан прилагођени CSP хедер не уклања postMessage догађаје. Након тога величина ће се мењати без додатне конфигурације.
+**Visina iframe-a izgleda fiksno ili se sadržaj odsjeca.** Neki Blackboard tenant-i dolaze sa strogo definiranim Content Security Policy koji blokira podrazumijevano LTI iframe-resize postMessage. FastComments emituje i Canvas-stil `lti.frameResize` poruku i IMS spec-formu `org.imsglobal.lti.frameResize` poruku da maksimizuje kompatibilnost, ali tenant-level CSP override može blokirati parent listener. Zamolite administratora da potvrdi da je `*.fastcomments.com` na allowlisti LTI alata i da nijedan custom CSP header ne uklanja postMessage događaje. Nakon toga promjena veličine radi bez dodatne konfiguracije.
 
-**Копија курса дуплира нити.** Копирање курса у Blackboard-у издаје нове resource link ID-еве за LTI поставке, па копирани курсеви почињу са празним нитима. Ово је очекивано. Ако желите да копирани курс наслеђује оригиналну нит, подесите Deep Linking са експлицитним thread URN пре копирања, или контактирајте FastComments подршку да масовно премапирају ID-еве нити.
+**Kopija kursa duplicira niti.** Blackboard kopija kursa izdaje nove resource link ID-jeve za LTI postavke, tako da kopirani kursevi počinju sa praznim nitima. Ovo je očekivano. Ako želite da kopirani kurs naslijedi originalnu nit, podesite Deep Linking sa eksplicitnim thread URN prije kopiranja, ili kontaktirajte FastComments podršku da remapira ID-jeve niti u bulk-u.
 
-**Студент види општу Blackboard грешку при покретању.** Узрок је изостала или застарела `email` изјава (claim). Потврдите да политика институције за FastComments има омогућене податке **Role**, **Name**, и **Email Address** под **User Fields to Send**. Сачувајте, па покрените поново у свежој сесији прегледача.
+**Student vidi generičku Blackboard grešku prilikom pokretanja.** Uzrok je nedostajući ili zastarjeli `email` claim. Potvrdite da politika ustanove za FastComments ima omogućeno **Role**, **Name**, i **Email Address** pod **User Fields to Send**. Sačuvajte, pa ponovo pokrenite u novoj browser sesiji.

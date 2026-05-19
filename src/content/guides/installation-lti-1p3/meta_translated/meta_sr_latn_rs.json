@@ -1,7 +1,7 @@
 {
   "name": "Instalacija LMS-a (LTI 1.3)",
-  "pageHeader": "Dodajte komentare u svoj LMS putem LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Dodajte komentare u vaš LMS putem LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Cene",
@@ -26,45 +26,45 @@
     {
       "name": "Registracija u D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
       "name": "Registracija u Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
       "name": "Registracija u Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
       "name": "Registracija u Sakai ili Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
-      "name": "Dodavanje u sadržaj kursa u D2L",
+      "name": "Dodajte u sadržaj kursa u D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa u Moodle",
+      "name": "Dodajte u sadržaj kursa u Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa u Blackboard Learn",
+      "name": "Dodajte u sadržaj kursa u Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa u Sakai ili Schoology",
+      "name": "Dodajte u sadržaj kursa u Sakai ili Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Rešavanje problema",
+      "name": "Otklanjanje problema",
       "file": "lti-troubleshooting.md",
       "subCat": "Korišćenje alata"
     }

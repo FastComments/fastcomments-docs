@@ -1,4 +1,5 @@
-D2L Brightspace exposes Dynamic Registration through the LTI Advantage admin interface. Вам потребуется доступ администратора.
+---
+D2L Brightspace предоставляет Динамическую регистрацию через интерфейс администратора LTI Advantage. Потребуется доступ администратора.
 
 #### Open the Registration Screen
 
@@ -8,24 +9,26 @@ D2L Brightspace exposes Dynamic Registration through the LTI Advantage admin int
 
 #### Paste the URL
 
-Откроется форма регистрации. Ключевое поле — **Tool initiation registration endpoint** (в некоторых версиях Brightspace оно помечено как "Tool Initiation Registration URL").
+You'll see a registration form. The key field is **Tool initiation registration endpoint** (some Brightspace versions label it "Tool Initiation Registration URL").
 
-Вставьте URL регистрации FastComments в это поле. Оставьте остальные поля пустыми — они будут автоматически заполнены FastComments в ходе рукопожатия при регистрации.
+Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">получите его здесь</a>) into that field. Leave the other fields blank - they're auto-populated by FastComments during the registration handshake.
 
 Click **Register**.
 
 #### Approve the Tool
 
-Brightspace откроет всплывающее окно, которое обменяется данными с FastComments, обменяет ключи и покажет экран подтверждения. Всплывающее окно закроется автоматически по завершении регистрации.
+Brightspace opens a popup that talks to FastComments, exchanges keys, and shows a confirmation screen. The popup closes itself when registration completes.
 
-Новый инструмент появится в списке инструментов LTI Advantage. По умолчанию Brightspace помечает новые инструменты как **disabled** — включите переключатель в положение **enabled**, чтобы ваши курсы могли им пользоваться.
+The new tool appears in your LTI Advantage tool list. By default Brightspace marks new tools as **disabled** - flip the toggle to **enabled** so your courses can use it.
 
 #### Add a Deployment
 
-В Brightspace LTI-инструментам требуется **deployment** прежде чем их можно будет использовать в курсах:
+In Brightspace, LTI tools need a **deployment** before they can be used in courses:
 
 1. Open the newly-registered FastComments tool.
 2. Click **View Deployments** > **New Deployment**.
 3. Give the deployment a name (e.g. "FastComments - All Courses"), pick the org units it should be available in, and save.
 
 After the first launch through this deployment, FastComments pins the `deployment_id` to its configuration record - subsequent launches from a different deployment under the same client will be rejected unless you re-register.
+
+---

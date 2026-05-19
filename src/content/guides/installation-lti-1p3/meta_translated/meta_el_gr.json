@@ -1,22 +1,22 @@
 {
   "name": "Εγκατάσταση LMS (LTI 1.3)",
   "pageHeader": "Προσθέστε σχόλια στο LMS σας μέσω LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Τιμολόγηση",
       "file": "lti-plans.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύνοψη"
     },
     {
-      "name": "Γρήγορη εκκίνηση",
+      "name": "Γρήγορη Εκκίνηση",
       "file": "lti-quick-start.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύνοψη"
     },
     {
       "name": "Υποστηριζόμενες πλατφόρμες",
       "file": "lti-supported-platforms.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "Σύνοψη"
     },
     {
       "name": "Δημιουργία URL εγγραφής",
@@ -24,42 +24,42 @@
       "subCat": "Ρύθμιση FastComments"
     },
     {
-      "name": "Καταχώρηση στο D2L Brightspace",
+      "name": "Εγγραφή στο D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Καταχώρηση στο Moodle",
+      "name": "Εγγραφή στο Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Καταχώρηση στο Blackboard Learn",
+      "name": "Εγγραφή στο Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Καταχώρηση στο Sakai ή Schoology",
+      "name": "Εγγραφή στο Sakai ή στο Schoology",
       "file": "lti-register-other.md",
       "subCat": "Καταχώρηση του εργαλείου"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος D2L",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος του D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος Moodle",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος του Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος Blackboard",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος του Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος Sakai ή Schoology",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος του Sakai ή του Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },

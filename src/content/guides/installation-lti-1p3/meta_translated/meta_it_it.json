@@ -1,7 +1,7 @@
 {
   "name": "Installazione LMS (LTI 1.3)",
   "pageHeader": "Aggiungi commenti al tuo LMS tramite LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Prezzi",
@@ -19,7 +19,7 @@
       "subCat": "In breve"
     },
     {
-      "name": "Genera l'URL di registrazione",
+      "name": "Genera URL di registrazione",
       "file": "lti-generate-url.md",
       "subCat": "Configurazione FastComments"
     },
@@ -44,22 +44,22 @@
       "subCat": "Registra lo strumento"
     },
     {
-      "name": "Aggiungi ai contenuti del corso in D2L",
+      "name": "Aggiungi al contenuto del corso in D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Aggiungi a un corso"
     },
     {
-      "name": "Aggiungi ai contenuti del corso in Moodle",
+      "name": "Aggiungi al contenuto del corso in Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Aggiungi a un corso"
     },
     {
-      "name": "Aggiungi ai contenuti del corso in Blackboard",
+      "name": "Aggiungi al contenuto del corso in Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Aggiungi a un corso"
     },
     {
-      "name": "Aggiungi ai contenuti del corso in Sakai o Schoology",
+      "name": "Aggiungi al contenuto del corso in Sakai o Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Aggiungi a un corso"
     },

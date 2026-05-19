@@ -1,7 +1,7 @@
 {
   "name": "Встановлення LMS (LTI 1.3)",
-  "pageHeader": "Додайте коментарі до вашої LMS через LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Додавання коментарів до вашої LMS через LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Ціни",
@@ -19,54 +19,54 @@
       "subCat": "Коротко"
     },
     {
-      "name": "Згенерувати URL для реєстрації",
+      "name": "Згенерувати URL реєстрації",
       "file": "lti-generate-url.md",
       "subCat": "Налаштування FastComments"
     },
     {
       "name": "Зареєструвати в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
       "name": "Зареєструвати в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
       "name": "Зареєструвати в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
       "name": "Зареєструвати в Sakai або Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
-      "name": "Додати до вмісту курсу D2L",
+      "name": "Додати до вмісту курсу в D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу Moodle",
+      "name": "Додати до вмісту курсу в Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу Blackboard",
+      "name": "Додати до вмісту курсу в Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу Sakai або Schoology",
+      "name": "Додати до вмісту курсу в Sakai або Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
       "name": "Усунення неполадок",
       "file": "lti-troubleshooting.md",
-      "subCat": "Використання інструмента"
+      "subCat": "Використання інструменту"
     }
   ]
 }

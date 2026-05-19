@@ -1,7 +1,7 @@
 {
   "name": "Instalacija LMS-a (LTI 1.3)",
-  "pageHeader": "Dodavanje komentara u vaš LMS putem LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Dodajte komentare u svoj LMS putem LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Cijene",
@@ -19,54 +19,54 @@
       "subCat": "Sažetak"
     },
     {
-      "name": "Generiranje URL-a za registraciju",
+      "name": "Generirajte URL za registraciju",
       "file": "lti-generate-url.md",
       "subCat": "Postavljanje FastComments"
     },
     {
-      "name": "Registracija u D2L Brightspace",
+      "name": "Registrirajte u D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registracija u Moodle",
+      "name": "Registrirajte u Moodleu",
       "file": "lti-register-moodle.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registracija u Blackboard Learn",
+      "name": "Registrirajte u Blackboard Learnu",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registracija u Sakai ili Schoology",
+      "name": "Registrirajte u Sakai ili Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrirajte alat"
     },
     {
-      "name": "Dodavanje u sadržaj kolegija (D2L)",
+      "name": "Dodajte u sadržaj kolegija u D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodavanje u kolegij"
+      "subCat": "Dodajte u kolegij"
     },
     {
-      "name": "Dodavanje u sadržaj kolegija (Moodle)",
+      "name": "Dodajte u sadržaj kolegija u Moodleu",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodavanje u kolegij"
+      "subCat": "Dodajte u kolegij"
     },
     {
-      "name": "Dodavanje u sadržaj kolegija (Blackboard)",
+      "name": "Dodajte u sadržaj kolegija u Blackboard Learnu",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodavanje u kolegij"
+      "subCat": "Dodajte u kolegij"
     },
     {
-      "name": "Dodavanje u sadržaj kolegija (Sakai ili Schoology)",
+      "name": "Dodajte u sadržaj kolegija u Sakai ili Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodavanje u kolegij"
+      "subCat": "Dodajte u kolegij"
     },
     {
       "name": "Rješavanje problema",
       "file": "lti-troubleshooting.md",
-      "subCat": "Korištenje alata"
+      "subCat": "Koristite alat"
     }
   ]
 }

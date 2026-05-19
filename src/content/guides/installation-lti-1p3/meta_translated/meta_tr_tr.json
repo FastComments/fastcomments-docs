@@ -1,7 +1,7 @@
 {
   "name": "LMS Kurulumu (LTI 1.3)",
   "pageHeader": "LTI 1.3 ile LMS'inize Yorum Ekleme",
-  "icon": "3rd-party-products/moodle.png",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Fiyatlandırma",
@@ -24,44 +24,44 @@
       "subCat": "FastComments Kurulumu"
     },
     {
-      "name": "D2L Brightspace'e Kaydet",
+      "name": "D2L Brightspace'e Kayıt",
       "file": "lti-register-d2l.md",
       "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Moodle'a Kaydet",
+      "name": "Moodle'a Kayıt",
       "file": "lti-register-moodle.md",
       "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Blackboard Learn'e Kaydet",
+      "name": "Blackboard Learn'e Kayıt",
       "file": "lti-register-blackboard.md",
       "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Sakai veya Schoology'ye Kaydet",
+      "name": "Sakai veya Schoology'ye Kayıt",
       "file": "lti-register-other.md",
       "subCat": "Aracı Kaydet"
     },
     {
-      "name": "D2L Kurs İçeriğine Ekle",
+      "name": "D2L Ders İçeriğine Ekle",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Bir Kursa Ekle"
+      "subCat": "Bir Derse Ekle"
     },
     {
-      "name": "Moodle Kurs İçeriğine Ekle",
+      "name": "Moodle Ders İçeriğine Ekle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Bir Kursa Ekle"
+      "subCat": "Bir Derse Ekle"
     },
     {
-      "name": "Blackboard Kurs İçeriğine Ekle",
+      "name": "Blackboard Ders İçeriğine Ekle",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Bir Kursa Ekle"
+      "subCat": "Bir Derse Ekle"
     },
     {
-      "name": "Sakai veya Schoology Kurs İçeriğine Ekle",
+      "name": "Sakai veya Schoology Ders İçeriğine Ekle",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Bir Kursa Ekle"
+      "subCat": "Bir Derse Ekle"
     },
     {
       "name": "Sorun Giderme",

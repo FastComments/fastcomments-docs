@@ -1,7 +1,7 @@
 {
   "name": "LMS-Installation (LTI 1.3)",
-  "pageHeader": "Fügen Sie Kommentare zu Ihrem LMS über LTI 1.3 hinzu",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Kommentare zu Ihrem LMS über LTI 1.3 hinzufügen",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Preise",
@@ -21,7 +21,7 @@
     {
       "name": "Registrierungs-URL generieren",
       "file": "lti-generate-url.md",
-      "subCat": "FastComments-Einrichtung"
+      "subCat": "FastComments einrichten"
     },
     {
       "name": "In D2L Brightspace registrieren",
@@ -44,29 +44,29 @@
       "subCat": "Tool registrieren"
     },
     {
-      "name": "Zum D2L-Kursinhalt hinzufügen",
+      "name": "Zu D2L-Kursinhalten hinzufügen",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zum Moodle-Kursinhalt hinzufügen",
+      "name": "Zu Moodle-Kursinhalten hinzufügen",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zum Blackboard-Kursinhalt hinzufügen",
+      "name": "Zu Blackboard-Kursinhalten hinzufügen",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zum Kursinhalt in Sakai oder Schoology hinzufügen",
+      "name": "Zu Sakai- oder Schoology-Kursinhalten hinzufügen",
       "file": "lti-other-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
       "name": "Fehlerbehebung",
       "file": "lti-troubleshooting.md",
-      "subCat": "Das Tool verwenden"
+      "subCat": "Tool verwenden"
     }
   ]
 }

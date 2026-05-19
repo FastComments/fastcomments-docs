@@ -1,19 +1,19 @@
 #### Sakai
 
-Sakai podpira dinamično registracijo LTI 1.3 v izdajah z LTI Advantage. Iz **Delovnega prostora administracije**:
+Sakai podpira LTI 1.3 Dynamic Registration v izdajah z LTI Advantage. V Administracijskem delovnem prostoru:
 
-1. Prijavite se kot skrbnik Sakai in odprite **Delovni prostor administracije**.
-2. Izberite **Zunanji pripomočki** > **Namesti orodje LTI 1.3**.
-3. Prilepite URL za registracijo FastComments in pošljite.
-4. Potrdite orodje, ko se izmenjava roke (handshake) zaključi.
+1. Prijavite se kot skrbnik Sakai in odprite **Administration Workspace**.
+2. Izberite **External Tools** > **Install LTI 1.3 Tool**.
+3. Prilepite FastComments URL za registracijo (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">pridobite ga tukaj</a>) in potrdite.
+4. Potrdite orodje, ko se handshake zaključi.
 
-Orodje se nato pojavi pod **Zunanji pripomočki** in ga lahko vzdrževalci spletnih mest dodajo na strani.
+Orodje se nato pojavi pod **External Tools** in ga lahko vzdrževalci strani dodajo na spletna mesta.
 
 #### Schoology
 
-Instance Schoology Enterprise podpirajo LTI 1.3, vendar se razpoložljivost dinamične registracije razlikuje glede na namestitev. Posvetujte se z vašim upraviteljem računa Schoology.
+Primere Schoology Enterprise podpirajo LTI 1.3, vendar se razpoložljivost Dynamic Registration razlikuje glede na namestitev. Posvetujte se z upraviteljem vašega Schoology računa.
 
-Če dinamična registracija ni na voljo na vaši instanci Schoology, boste morali integracijo konfigurirati ročno z uporabo naslednjih končnih točk:
+Če Dynamic Registration ni na voljo v vaši Schoology namestitvi, boste morali integracijo konfigurirati ročno z uporabo teh končnih točk:
 
 - **OIDC Login URL**: `https://fastcomments.com/lti/v1p3/login`
 - **Target Link URL**: `https://fastcomments.com/lti/v1p3/launch`
@@ -22,8 +22,8 @@ Instance Schoology Enterprise podpirajo LTI 1.3, vendar se razpoložljivost dina
 
 Ko vam Schoology dodeli Client ID in Deployment ID, se obrnite na podporo FastComments, da konfiguracijo registrirajo na vašem najemniku.
 
-#### Druge platforme LTI 1.3
+#### Other LTI 1.3 Platforms
 
-Kateri koli LMS, ki sledi specifikaciji IMS LTI 1.3 Advantage, bi moral delovati z istim URL-jem za registracijo. Poiščite nastavitev z oznako "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint" ali podobno.
+Kateri koli LMS, ki sledi specifikaciji IMS LTI 1.3 Advantage, bi moral delovati z enakim URL-jem za registracijo (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">pridobite ga tukaj</a>). Poiščite nastavitev z oznako "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint" ali podobno.
 
-Če vaša platforma podpira le ročno nastavitev LTI 1.3, uporabite štiri končne točke, navedene v razdelku Schoology zgoraj, in se obrnite na podporo, da dokončate postopek.
+Če vaša platforma podpira samo ročno nastavitev LTI 1.3, uporabite štiri končne točke, navedene v razdelku Schoology zgoraj, in se obrnite na podporo za dokončanje.

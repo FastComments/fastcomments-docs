@@ -1,31 +1,31 @@
-D2L Brightspace izlaže Dynamic Registration preko LTI Advantage administratorskog interfejsa. Trebaće vam administratorski pristup.
+D2L Brightspace омогућава Динамичку регистрацију преко LTI Advantage административног интерфејса. Биће вам потребан администраторски приступ.
 
-#### Open the Registration Screen
+#### Отворите екран за регистрацију
 
-1. Prijavite se u svoju Brightspace instancu kao admin.
-2. Navigirajte do **Admin Tools** > **Manage Extensibility** > **LTI Advantage**.
-3. Kliknite **Register Tool**. (Direktan URL je `https://<your-brightspace-host>/d2l/le/ltiadvantage/registrations/create`.)
+1. Пријавите се у ваш Brightspace као администратор.
+2. Идите на **Admin Tools** > **Manage Extensibility** > **LTI Advantage**.
+3. Кликните **Register Tool**. (Директан URL је `https://<your-brightspace-host>/d2l/le/ltiadvantage/registrations/create`.)
 
-#### Paste the URL
+#### Налепите URL
 
-Videćete formular za registraciju. Ključno polje je **Tool initiation registration endpoint** (neke verzije Brightspace-a ga nazivaju "Tool Initiation Registration URL").
+Видео ћете форму за регистрацију. Кључно поље је **Tool initiation registration endpoint** (неке верзије Brightspace-а га означавају као "Tool Initiation Registration URL").
 
-Zalijepite FastComments registration URL u to polje. Ostavite ostala polja prazna - FastComments ih popunjava automatski tokom handshake procesa registracije.
+Налепите FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">преузмите га овдје</a>) у то поље. Оставите остала поља празна - FastComments ће их аутоматски попунити током регистрационог руковања.
 
-Kliknite **Register**.
+Кликните **Register**.
 
-#### Approve the Tool
+#### Одобрите алатку
 
-Brightspace otvara popup koji komunicira sa FastComments, razmjenjuje ključeve i prikazuje ekran za potvrdu. Popup se zatvara sam kada je registracija završena.
+Brightspace отвара појавни прозор који комуницира са FastComments-ом, размењује кључеве и приказује екран за потврду. Појавни прозор се затвара кад регистрација буде завршена.
 
-Novi alat će se pojaviti na listi vaših LTI Advantage alata. Po defaultu Brightspace označava nove alate kao **disabled** - prebacite prekidač na **enabled** da bi vaši kursevi mogli da ga koriste.
+Нова алатка ће се појавити на листи LTI Advantage алатки. По подразумеваној вредности Brightspace означава нове алатке као **disabled** - пребаците тастер на **enabled** тако да ваши курсеви могу да је користе.
 
-#### Add a Deployment
+#### Додајте распоређивање
 
-U Brightspace-u, LTI alati trebaju imati **deployment** prije nego što mogu biti korišćeni u kursevima:
+У Brightspace-у, LTI алатима је потребно **распоређивање** пре него што могу да се користе у курсевима:
 
-1. Otvorite novoregistrovani FastComments alat.
-2. Kliknite **View Deployments** > **New Deployment**.
-3. Dajte deploymentu ime (npr. "FastComments - All Courses"), izaberite org jedinice u kojima treba da bude dostupan i sačuvajte.
+1. Отворите ново-регистровану FastComments алатку.
+2. Кликните **View Deployments** > **New Deployment**.
+3. Дајте распоређивању име (нпр. "FastComments - All Courses"), изаберите организационе јединице у којима треба да буде доступно, и сачувајте.
 
-Nakon prvog pokretanja kroz ovaj deployment, FastComments pričvršćuje `deployment_id` za svoj konfigurisani zapis - naredna pokretanja iz drugog deploymenta pod istim klientom biće odbijena osim ako ponovo ne registrujete.
+Након првог покретања кроз ово распоређивање, FastComments ће закачити `deployment_id` у свој запис конфигурације - даљa покретања из другог распоређивања под истим клијентом ће бити одбијена осим ако поново не региструјете.

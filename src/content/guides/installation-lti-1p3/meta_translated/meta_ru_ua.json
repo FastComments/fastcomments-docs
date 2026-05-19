@@ -1,7 +1,7 @@
 {
   "name": "Установка LMS (LTI 1.3)",
-  "pageHeader": "Добавление комментариев в вашу LMS через LTI 1.3",
-  "icon": "3rd-party-products/moodle.png",
+  "pageHeader": "Добавление комментариев в LMS через LTI 1.3",
+  "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Цены",
@@ -19,7 +19,7 @@
       "subCat": "Кратко"
     },
     {
-      "name": "Сгенерировать URL-адрес регистрации",
+      "name": "Создать URL регистрации",
       "file": "lti-generate-url.md",
       "subCat": "Настройка FastComments"
     },
@@ -46,22 +46,22 @@
     {
       "name": "Добавить в содержимое курса D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Добавить в курс"
+      "subCat": "Добавление в курс"
     },
     {
       "name": "Добавить в содержимое курса Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Добавить в курс"
+      "subCat": "Добавление в курс"
     },
     {
       "name": "Добавить в содержимое курса Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Добавить в курс"
+      "subCat": "Добавление в курс"
     },
     {
       "name": "Добавить в содержимое курса Sakai или Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Добавить в курс"
+      "subCat": "Добавление в курс"
     },
     {
       "name": "Устранение неполадок",

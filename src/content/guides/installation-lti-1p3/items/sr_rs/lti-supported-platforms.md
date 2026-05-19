@@ -1,11 +1,11 @@
-FastComments LTI 1.3 је тестиран на следећим платформама:
+FastComments LTI 1.3 je testiran na:
 
-- **D2L Brightspace** (било која верзија са LTI Advantage)
+- **D2L Brightspace** (bilo koja verzija sa LTI Advantage)
 - **Moodle 4.0+** (External Tool plugin, LTI Advantage)
-- **Blackboard Learn** (SaaS и Ultra)
-- **Sakai** (верзије које подржавају LTI Advantage)
-- **Schoology** (Enterprise, Dynamic Registration где је доступно)
+- **Blackboard Learn** (SaaS i Ultra)
+- **Sakai** (verzije koje podržavaju LTI Advantage)
+- **Schoology** (Enterprise, Dynamic Registration gde je dostupno)
 
-Било који други LMS који имплементира IMS LTI 1.3 Advantage спецификацију са Dynamic Registration такође би требало да ради - изаберите **Друга LTI 1.3 платформа** из падајућег менија платформе када генеришете ваш URL за регистрацију.
+Bilo koji drugi LMS koji implementira IMS LTI 1.3 Advantage specifikaciju sa Dynamic Registration takođe bi trebalo da radi - izaberite **Other LTI 1.3 platform** iz padajućeg menija platformi prilikom generisanja vašeg URL-a za registraciju (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">nabavite ga ovde</a>).
 
-Canvas LMS користи другачији ток подешавања (per-developer-key configuration JSON уместо Dynamic Registration). Погледајте посебан водич за инсталацију Canvas LMS-а.
+Canvas LMS koristi drugačiji tok podešavanja (per-developer-key configuration JSON umesto Dynamic Registration). Pogledajte poseban vodič za instalaciju Canvas LMS-a.

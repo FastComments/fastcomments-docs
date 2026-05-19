@@ -1,26 +1,26 @@
-Blackboard Learn SaaS et Ultra prennent en charge l'enregistrement dynamique LTI 1.3.
+Blackboard Learn SaaS and Ultra support LTI 1.3 Dynamic Registration.
 
-#### Ouvrir l'écran du fournisseur d'outils
+#### Open the Tool Provider Screen
 
 1. Connectez-vous à Blackboard en tant qu'administrateur système.
-2. Accédez à **Panneau d'administration** > **Intégrations** > **Fournisseurs d'outils LTI**.
-3. Cliquez sur **Register LTI 1.3 / LTI Advantage Tool**.
+2. Navigate to **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
+3. Click **Register LTI 1.3 / LTI Advantage Tool**.
 
 If you only see "Register LTI 1.1 Provider", your Blackboard version doesn't support LTI 1.3 yet - upgrade or contact Blackboard support.
 
-#### Coller l'URL
+#### Paste the URL
 
-Collez l'URL d'enregistrement FastComments dans le champ **Client ID** / **Registration URL** (la dénomination varie selon la version de Blackboard). Soumettez.
+Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">obtenez-la ici</a>) into the **Client ID** / **Registration URL** field (Blackboard's labeling varies by version). Submit.
 
-Blackboard effectue l'échange d'enregistrement (handshake) avec FastComments et affiche un écran de confirmation.
+Blackboard performs the registration handshake with FastComments and shows you a confirmation screen.
 
-#### Approuver et activer
+#### Approve and Enable
 
-Par défaut, Blackboard marque les outils nouvellement enregistrés comme **Approved but excluded** :
+Blackboard marks newly-registered tools as **Approved but excluded** by default:
 
-1. Trouvez l'entrée FastComments dans la liste des fournisseurs d'outils.
-2. Ouvrez le menu et choisissez **Edit**.
-3. Définissez **Tool Status** sur **Approved**.
-4. Sous **Institution Policies**, vérifiez les données utilisateur envoyées (nom, email, rôle). Enregistrez.
+1. Find the FastComments entry in the tool provider list.
+2. Open the menu and choose **Edit**.
+3. Set **Tool Status** to **Approved**.
+4. Under **Institution Policies**, review what user data is sent (name, email, role). Save.
 
-L'outil est désormais disponible pour les enseignants lorsqu'ils ajoutent du contenu aux cours.
+The tool is now available to instructors when they add content to courses.
