@@ -98,6 +98,14 @@ Role mapping at launch:
 
 Comments are attributed to the student's Brightspace account. If the student edits their name or avatar in Brightspace, the next LTI launch syncs the change.
 
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Brightspace. For course discussions you almost certainly want to restrict viewing to enrolled learners only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+
 #### Iframe Height and Resize
 
 FastComments emits the `org.imsglobal.lti.frameResize` postMessage on every thread render and on content changes (new comment, expand replies). Brightspace listens for this message and adjusts the iframe height so the thread is not clipped and does not show an inner scrollbar.

@@ -68,6 +68,14 @@ Students click the FastComments activity (or scroll to the embedded block inside
 - The thread is scoped to `(Moodle site, course, resource link ID)`, so the same activity duplicated into another course gets a fresh thread.
 - Threaded replies, voting, and notifications work the same as a standalone FastComments thread.
 
+#### Lock Down Public Access (Recommended)
+
+By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Moodle. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+
+Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+
+See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+
 #### Moodle Gotchas
 
 **FastComments missing from the activity chooser.** The site administrator registered the tool but didn't set **Tool configuration usage** to **Show in activity chooser and as a preconfigured tool**. Fix this under **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > gear icon on the FastComments tile.
