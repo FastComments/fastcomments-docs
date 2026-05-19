@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Tarifs",
+      "name": "Tarification",
       "file": "lti-plans.md",
       "subCat": "En bref"
     },
@@ -21,7 +21,7 @@
     {
       "name": "Générer l'URL d'enregistrement",
       "file": "lti-generate-url.md",
-      "subCat": "Configuration FastComments"
+      "subCat": "Configuration de FastComments"
     },
     {
       "name": "Enregistrer dans D2L Brightspace",
@@ -67,6 +67,11 @@
       "name": "Dépannage",
       "file": "lti-troubleshooting.md",
       "subCat": "Utiliser l'outil"
+    },
+    {
+      "name": "Moindre privilège et minimisation des données",
+      "file": "lti-least-privilege.md",
+      "subCat": "Sécurité et conformité"
     }
   ]
 }

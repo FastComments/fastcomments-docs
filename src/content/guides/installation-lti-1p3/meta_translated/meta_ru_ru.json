@@ -1,5 +1,5 @@
 {
-  "name": "Установка LMS (LTI 1.3)",
+  "name": "Установка в LMS (LTI 1.3)",
   "pageHeader": "Добавление комментариев в LMS через LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
@@ -19,29 +19,29 @@
       "subCat": "Кратко"
     },
     {
-      "name": "Создать URL регистрации",
+      "name": "Создать URL для регистрации",
       "file": "lti-generate-url.md",
       "subCat": "Настройка FastComments"
     },
     {
       "name": "Регистрация в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Регистрация инструмента"
+      "subCat": "Зарегистрировать инструмент"
     },
     {
       "name": "Регистрация в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Регистрация инструмента"
+      "subCat": "Зарегистрировать инструмент"
     },
     {
       "name": "Регистрация в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Регистрация инструмента"
+      "subCat": "Зарегистрировать инструмент"
     },
     {
       "name": "Регистрация в Sakai или Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Регистрация инструмента"
+      "subCat": "Зарегистрировать инструмент"
     },
     {
       "name": "Добавить в содержимое курса D2L",
@@ -67,6 +67,11 @@
       "name": "Устранение неполадок",
       "file": "lti-troubleshooting.md",
       "subCat": "Использование инструмента"
+    },
+    {
+      "name": "Наименьшие привилегии и минимизация данных",
+      "file": "lti-least-privilege.md",
+      "subCat": "Безопасность и соответствие"
     }
   ]
 }

@@ -67,6 +67,11 @@
       "name": "Dépannage",
       "file": "lti-troubleshooting.md",
       "subCat": "Utiliser l'outil"
+    },
+    {
+      "name": "Moindre privilège et minimisation des données",
+      "file": "lti-least-privilege.md",
+      "subCat": "Sécurité et conformité"
     }
   ]
 }

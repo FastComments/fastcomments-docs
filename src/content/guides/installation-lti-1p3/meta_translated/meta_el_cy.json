@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Τιμές",
+      "name": "Τιμολόγηση",
       "file": "lti-plans.md",
       "subCat": "Σύντομη περίληψη"
     },
     {
-      "name": "Γρήγορη Εκκίνηση",
+      "name": "Γρήγορη εκκίνηση",
       "file": "lti-quick-start.md",
       "subCat": "Σύντομη περίληψη"
     },
     {
-      "name": "Υποστηριζόμενες Πλατφόρμες",
+      "name": "Υποστηριζόμενες πλατφόρμες",
       "file": "lti-supported-platforms.md",
       "subCat": "Σύντομη περίληψη"
     },
@@ -44,29 +44,34 @@
       "subCat": "Καταχώριση του εργαλείου"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος στο D2L",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος στο Moodle",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος στο Blackboard",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Προσθήκη στο περιεχόμενο μαθήματος στο Sakai ή Schoology",
+      "name": "Προσθήκη στο περιεχόμενο μαθήματος Sakai ή Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Προσθήκη σε μάθημα"
     },
     {
-      "name": "Επίλυση προβλημάτων",
+      "name": "Αντιμετώπιση προβλημάτων",
       "file": "lti-troubleshooting.md",
       "subCat": "Χρήση του εργαλείου"
+    },
+    {
+      "name": "Ελάχιστα δικαιώματα & Ελαχιστοποίηση δεδομένων",
+      "file": "lti-least-privilege.md",
+      "subCat": "Ασφάλεια & Συμμόρφωση"
     }
   ]
 }

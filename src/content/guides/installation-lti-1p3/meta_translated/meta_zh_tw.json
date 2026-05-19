@@ -1,10 +1,10 @@
 {
-  "name": "LMS 安裝（LTI 1.3）",
-  "pageHeader": "透過 LTI 1.3 在您的 LMS 中新增評論",
+  "name": "LMS 安裝 (LTI 1.3)",
+  "pageHeader": "透過 LTI 1.3 將評論新增至您的 LMS",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "價格",
+      "name": "定價",
       "file": "lti-plans.md",
       "subCat": "重點摘要"
     },
@@ -14,7 +14,7 @@
       "subCat": "重點摘要"
     },
     {
-      "name": "支援的平台",
+      "name": "支援平台",
       "file": "lti-supported-platforms.md",
       "subCat": "重點摘要"
     },
@@ -24,49 +24,54 @@
       "subCat": "FastComments 設定"
     },
     {
-      "name": "在 D2L Brightspace 中註冊",
+      "name": "在 D2L Brightspace 註冊",
       "file": "lti-register-d2l.md",
-      "subCat": "註冊工具"
+      "subCat": "註冊該工具"
     },
     {
-      "name": "在 Moodle 中註冊",
+      "name": "在 Moodle 註冊",
       "file": "lti-register-moodle.md",
-      "subCat": "註冊工具"
+      "subCat": "註冊該工具"
     },
     {
-      "name": "在 Blackboard Learn 中註冊",
+      "name": "在 Blackboard Learn 註冊",
       "file": "lti-register-blackboard.md",
-      "subCat": "註冊工具"
+      "subCat": "註冊該工具"
     },
     {
-      "name": "在 Sakai 或 Schoology 中註冊",
+      "name": "在 Sakai 或 Schoology 註冊",
       "file": "lti-register-other.md",
-      "subCat": "註冊工具"
+      "subCat": "註冊該工具"
     },
     {
-      "name": "新增到 D2L 課程內容",
+      "name": "加入至 D2L 課程內容",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "加入至課程"
+      "subCat": "加入課程"
     },
     {
-      "name": "新增到 Moodle 課程內容",
+      "name": "加入至 Moodle 課程內容",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "加入至課程"
+      "subCat": "加入課程"
     },
     {
-      "name": "新增到 Blackboard 課程內容",
+      "name": "加入至 Blackboard 課程內容",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "加入至課程"
+      "subCat": "加入課程"
     },
     {
-      "name": "新增到 Sakai 或 Schoology 課程內容",
+      "name": "加入至 Sakai 或 Schoology 課程內容",
       "file": "lti-other-add-to-course.md",
-      "subCat": "加入至課程"
+      "subCat": "加入課程"
     },
     {
       "name": "疑難排解",
       "file": "lti-troubleshooting.md",
       "subCat": "使用該工具"
+    },
+    {
+      "name": "最小權限與資料最小化",
+      "file": "lti-least-privilege.md",
+      "subCat": "安全性與合規性"
     }
   ]
 }

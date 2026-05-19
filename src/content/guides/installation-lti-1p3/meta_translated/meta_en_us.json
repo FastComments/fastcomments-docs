@@ -67,6 +67,11 @@
       "name": "Troubleshooting",
       "file": "lti-troubleshooting.md",
       "subCat": "Use the Tool"
+    },
+    {
+      "name": "Least Privilege & Data Minimization",
+      "file": "lti-least-privilege.md",
+      "subCat": "Security & Compliance"
     }
   ]
 }
