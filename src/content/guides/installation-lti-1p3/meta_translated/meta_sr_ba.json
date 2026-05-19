@@ -1,10 +1,10 @@
 {
   "name": "Инсталација LMS-а (LTI 1.3)",
-  "pageHeader": "Додајте коментаре у ваш LMS преко LTI 1.3",
+  "pageHeader": "Додајте коментаре у ваш LMS помоћу LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Цијене",
+      "name": "Цене",
       "file": "lti-plans.md",
       "subCat": "Укратко"
     },
@@ -21,52 +21,57 @@
     {
       "name": "Генеришите URL за регистрацију",
       "file": "lti-generate-url.md",
-      "subCat": "Подешавање FastComments-а"
+      "subCat": "Подешавање FastComments"
     },
     {
       "name": "Регистрација у D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Региструјте алатку"
+      "subCat": "Регистрација алатке"
     },
     {
       "name": "Регистрација у Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Региструјте алатку"
+      "subCat": "Регистрација алатке"
     },
     {
       "name": "Регистрација у Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Региструјте алатку"
+      "subCat": "Регистрација алатке"
     },
     {
       "name": "Регистрација у Sakai или Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Региструјте алатку"
+      "subCat": "Регистрација алатке"
     },
     {
-      "name": "Додајте у садржај курса у D2L",
+      "name": "Додајте у садржај курса на D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Додајте у курс"
+      "subCat": "Додавање у курс"
     },
     {
-      "name": "Додајте у садржај курса у Moodle",
+      "name": "Додајте у садржај курса на Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Додајте у курс"
+      "subCat": "Додавање у курс"
     },
     {
-      "name": "Додајте у садржај курса у Blackboard",
+      "name": "Додајте у садржај курса на Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Додајте у курс"
+      "subCat": "Додавање у курс"
     },
     {
-      "name": "Додајте у садржај курса у Sakai или Schoology",
+      "name": "Додајте у садржај курса на Sakai или Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Додајте у курс"
+      "subCat": "Додавање у курс"
     },
     {
       "name": "Решавање проблема",
       "file": "lti-troubleshooting.md",
-      "subCat": "Користите алатку"
+      "subCat": "Коришћење алатке"
+    },
+    {
+      "name": "Принцип најмањих привилегија и минимизација података",
+      "file": "lti-least-privilege.md",
+      "subCat": "Безбедност и усклађеност"
     }
   ]
 }

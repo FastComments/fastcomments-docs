@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "가격",
+      "name": "요금",
       "file": "lti-plans.md",
       "subCat": "요약"
     },
@@ -67,6 +67,11 @@
       "name": "문제 해결",
       "file": "lti-troubleshooting.md",
       "subCat": "도구 사용"
+    },
+    {
+      "name": "최소 권한 및 데이터 최소화",
+      "file": "lti-least-privilege.md",
+      "subCat": "보안 및 규정 준수"
     }
   ]
 }

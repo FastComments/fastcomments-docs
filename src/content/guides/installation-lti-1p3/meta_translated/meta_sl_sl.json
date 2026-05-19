@@ -1,5 +1,5 @@
 {
-  "name": "Namestitev LMS (LTI 1.3)",
+  "name": "Namestitev LMS-a (LTI 1.3)",
   "pageHeader": "Dodajte komentarje v svoj LMS prek LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
@@ -19,54 +19,59 @@
       "subCat": "Povzetek"
     },
     {
-      "name": "Ustvari registracijski URL",
+      "name": "Ustvari URL za registracijo",
       "file": "lti-generate-url.md",
       "subCat": "Nastavitev FastComments"
     },
     {
       "name": "Registracija v D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registrirajte orodje"
+      "subCat": "Registracija orodja"
     },
     {
       "name": "Registracija v Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Registrirajte orodje"
+      "subCat": "Registracija orodja"
     },
     {
       "name": "Registracija v Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registrirajte orodje"
+      "subCat": "Registracija orodja"
     },
     {
       "name": "Registracija v Sakai ali Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registrirajte orodje"
+      "subCat": "Registracija orodja"
     },
     {
       "name": "Dodajte v vsebino predmeta v D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodajte v predmet"
+      "subCat": "Dodaj v predmet"
     },
     {
-      "name": "Dodajte v vsebino predmeta v Moodlu",
+      "name": "Dodajte v vsebino predmeta v Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodajte v predmet"
+      "subCat": "Dodaj v predmet"
     },
     {
       "name": "Dodajte v vsebino predmeta v Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodajte v predmet"
+      "subCat": "Dodaj v predmet"
     },
     {
       "name": "Dodajte v vsebino predmeta v Sakai ali Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodajte v predmet"
+      "subCat": "Dodaj v predmet"
     },
     {
       "name": "Odpravljanje težav",
       "file": "lti-troubleshooting.md",
       "subCat": "Uporaba orodja"
+    },
+    {
+      "name": "Najmanjše privilegije in minimizacija podatkov",
+      "file": "lti-least-privilege.md",
+      "subCat": "Varnost in skladnost"
     }
   ]
 }

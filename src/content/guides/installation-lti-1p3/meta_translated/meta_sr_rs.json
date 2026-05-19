@@ -19,7 +19,7 @@
       "subCat": "Укратко"
     },
     {
-      "name": "Генеришите URL за регистрацију",
+      "name": "Генерисање URL-а за регистрацију",
       "file": "lti-generate-url.md",
       "subCat": "Подешавање FastComments"
     },
@@ -44,22 +44,22 @@
       "subCat": "Регистрација алата"
     },
     {
-      "name": "Додавање у садржај курса у D2L",
+      "name": "Додавање у садржај курса (D2L)",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса у Moodle",
+      "name": "Додавање у садржај курса (Moodle)",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса у Blackboard",
+      "name": "Додавање у садржај курса (Blackboard)",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Додавање у курс"
     },
     {
-      "name": "Додавање у садржај курса у Sakai или Schoology",
+      "name": "Додавање у садржај курса (Sakai или Schoology)",
       "file": "lti-other-add-to-course.md",
       "subCat": "Додавање у курс"
     },
@@ -67,6 +67,11 @@
       "name": "Решавање проблема",
       "file": "lti-troubleshooting.md",
       "subCat": "Коришћење алата"
+    },
+    {
+      "name": "Принцип најмањих привилегија и минимизација података",
+      "file": "lti-least-privilege.md",
+      "subCat": "Безбедност и усаглашеност"
     }
   ]
 }

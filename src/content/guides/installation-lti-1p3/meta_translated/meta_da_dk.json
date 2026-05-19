@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Prissætning",
+      "name": "Priser",
       "file": "lti-plans.md",
       "subCat": "Kort fortalt"
     },
     {
-      "name": "Hurtig start",
+      "name": "Kom godt i gang",
       "file": "lti-quick-start.md",
       "subCat": "Kort fortalt"
     },
@@ -67,6 +67,11 @@
       "name": "Fejlfinding",
       "file": "lti-troubleshooting.md",
       "subCat": "Brug værktøjet"
+    },
+    {
+      "name": "Mindste privilegium og dataminimering",
+      "file": "lti-least-privilege.md",
+      "subCat": "Sikkerhed og overholdelse"
     }
   ]
 }

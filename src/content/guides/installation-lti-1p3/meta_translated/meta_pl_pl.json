@@ -24,22 +24,22 @@
       "subCat": "Konfiguracja FastComments"
     },
     {
-      "name": "Zarejestruj w D2L Brightspace",
+      "name": "Rejestracja w D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Moodle",
+      "name": "Rejestracja w Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Blackboard Learn",
+      "name": "Rejestracja w Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Zarejestruj w Sakai lub Schoology",
+      "name": "Rejestracja w Sakai lub Schoology",
       "file": "lti-register-other.md",
       "subCat": "Zarejestruj narzędzie"
     },
@@ -67,6 +67,11 @@
       "name": "Rozwiązywanie problemów",
       "file": "lti-troubleshooting.md",
       "subCat": "Korzystanie z narzędzia"
+    },
+    {
+      "name": "Zasada najmniejszych uprawnień i minimalizacja danych",
+      "file": "lti-least-privilege.md",
+      "subCat": "Bezpieczeństwo i zgodność"
     }
   ]
 }

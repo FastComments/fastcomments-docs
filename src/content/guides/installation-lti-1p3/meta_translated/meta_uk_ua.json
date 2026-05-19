@@ -1,22 +1,22 @@
 {
   "name": "Встановлення LMS (LTI 1.3)",
-  "pageHeader": "Додавання коментарів до вашої LMS через LTI 1.3",
+  "pageHeader": "Додайте коментарі у ваш LMS через LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Ціни",
       "file": "lti-plans.md",
-      "subCat": "Коротко"
+      "subCat": "Стисло"
     },
     {
       "name": "Швидкий старт",
       "file": "lti-quick-start.md",
-      "subCat": "Коротко"
+      "subCat": "Стисло"
     },
     {
       "name": "Підтримувані платформи",
       "file": "lti-supported-platforms.md",
-      "subCat": "Коротко"
+      "subCat": "Стисло"
     },
     {
       "name": "Згенерувати URL реєстрації",
@@ -26,22 +26,22 @@
     {
       "name": "Зареєструвати в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Реєстрація інструменту"
+      "subCat": "Зареєструвати інструмент"
     },
     {
       "name": "Зареєструвати в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Реєстрація інструменту"
+      "subCat": "Зареєструвати інструмент"
     },
     {
       "name": "Зареєструвати в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Реєстрація інструменту"
+      "subCat": "Зареєструвати інструмент"
     },
     {
       "name": "Зареєструвати в Sakai або Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Реєстрація інструменту"
+      "subCat": "Зареєструвати інструмент"
     },
     {
       "name": "Додати до вмісту курсу в D2L",
@@ -64,9 +64,14 @@
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Усунення неполадок",
+      "name": "Усунення несправностей",
       "file": "lti-troubleshooting.md",
       "subCat": "Використання інструменту"
+    },
+    {
+      "name": "Принцип найменших привілеїв і мінімізації даних",
+      "file": "lti-least-privilege.md",
+      "subCat": "Безпека та відповідність"
     }
   ]
 }

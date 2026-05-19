@@ -1,6 +1,6 @@
 {
   "name": "LMS 安装（LTI 1.3）",
-  "pageHeader": "通过 LTI 1.3 在您的 LMS 中添加评论",
+  "pageHeader": "通过 LTI 1.3 将评论添加到您的 LMS",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "简要"
     },
     {
-      "name": "快速入门",
+      "name": "快速开始",
       "file": "lti-quick-start.md",
       "subCat": "简要"
     },
@@ -67,6 +67,11 @@
       "name": "故障排除",
       "file": "lti-troubleshooting.md",
       "subCat": "使用该工具"
+    },
+    {
+      "name": "最小权限与数据最小化",
+      "file": "lti-least-privilege.md",
+      "subCat": "安全与合规"
     }
   ]
 }

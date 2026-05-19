@@ -1,6 +1,6 @@
 {
-  "name": "Instalación del LMS (LTI 1.3)",
-  "pageHeader": "Añadir comentarios a tu LMS mediante LTI 1.3",
+  "name": "Instalación de LMS (LTI 1.3)",
+  "pageHeader": "Añadir comentarios a su LMS mediante LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
@@ -67,6 +67,11 @@
       "name": "Resolución de problemas",
       "file": "lti-troubleshooting.md",
       "subCat": "Usar la herramienta"
+    },
+    {
+      "name": "Menor privilegio y minimización de datos",
+      "file": "lti-least-privilege.md",
+      "subCat": "Seguridad y cumplimiento"
     }
   ]
 }

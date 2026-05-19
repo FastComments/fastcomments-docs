@@ -1,6 +1,6 @@
 {
   "name": "התקנת LMS (LTI 1.3)",
-  "pageHeader": "הוספת תגובות ל-LMS שלך באמצעות LTI 1.3",
+  "pageHeader": "הוסף תגובות ל-LMS שלך באמצעות LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
@@ -24,24 +24,24 @@
       "subCat": "הגדרת FastComments"
     },
     {
-      "name": "רישום ב-D2L Brightspace",
+      "name": "הרשמה ב-D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "רישום הכלי"
+      "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Moodle",
+      "name": "הרשמה ב-Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "רישום הכלי"
+      "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Blackboard Learn",
+      "name": "הרשמה ב-Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "רישום הכלי"
+      "subCat": "הרשמת הכלי"
     },
     {
-      "name": "רישום ב-Sakai או Schoology",
+      "name": "הרשמה ב-Sakai או Schoology",
       "file": "lti-register-other.md",
-      "subCat": "רישום הכלי"
+      "subCat": "הרשמת הכלי"
     },
     {
       "name": "הוספה לתוכן הקורס ב-D2L",
@@ -67,6 +67,11 @@
       "name": "פתרון בעיות",
       "file": "lti-troubleshooting.md",
       "subCat": "שימוש בכלי"
+    },
+    {
+      "name": "הרשאות מינימליות ומזעור נתונים",
+      "file": "lti-least-privilege.md",
+      "subCat": "אבטחה וציות"
     }
   ]
 }
