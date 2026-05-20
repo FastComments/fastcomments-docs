@@ -22,7 +22,8 @@ use tantivy::schema::{
     IndexRecordOption, Schema, SchemaBuilder, TextFieldIndexing, TextOptions, STORED, STRING,
 };
 use tantivy::tokenizer::{
-    Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer, TextAnalyzer,
+    AsciiFoldingFilter, Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer,
+    TextAnalyzer,
 };
 use tantivy::{Index, TantivyDocument};
 use tokio::sync::Semaphore;
@@ -409,9 +410,19 @@ fn build_schema() -> Schema {
 /// bugs (queries tokenize one way; indexed terms another). Keep both
 /// arms in sync.
 fn register_tokenizers(index: &Index, _locale: &str) {
+    // Chain: SimpleTokenizer -> RemoveLong -> LowerCaser -> AsciiFolding
+    //         -> EnglishPorter. AsciiFolding mirrors SQLite FTS5's
+    //         `unicode61` default `remove_diacritics=1` setting; without
+    //         it French/German users searching ASCII forms ("cafe",
+    //         "uber") silently missed accented terms that Node matched.
+    //         Folding goes before the stemmer so the Porter rules
+    //         (ASCII-only) operate on the same shape they saw in Node.
+    //         The same chain lives in
+    //         rust/server/src/main.rs::build_docs_text_analyzer.
     let analyzer: TextAnalyzer = TextAnalyzer::builder(SimpleTokenizer::default())
         .filter(RemoveLongFilter::limit(40))
         .filter(LowerCaser)
+        .filter(AsciiFoldingFilter)
         .filter(Stemmer::new(Language::English))
         .build();
     index.tokenizers().register("docs_text", analyzer);

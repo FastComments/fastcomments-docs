@@ -509,17 +509,31 @@ fn get_locale_slot(state: &AppState, locale: &str) -> Result<LocaleSlot> {
 /// drift between the two would cause asymmetric tokenization and
 /// recall holes.
 ///
+/// Chain (in order):
+///   SimpleTokenizer → RemoveLongFilter(40) → LowerCaser →
+///   AsciiFoldingFilter → Stemmer(English)
+///
+/// AsciiFoldingFilter mirrors SQLite FTS5's `unicode61` default
+/// `remove_diacritics=1` setting — Node indexed "café" as "cafe" and
+/// a query for either form hit. Tantivy's SimpleTokenizer + LowerCaser
+/// alone kept the diacritic, so French/German users searching ASCII
+/// forms ("cafe", "uber") silently missed accented terms in the
+/// content. Fold goes BEFORE the stemmer so the Porter rules (written
+/// against ASCII) operate on the same shape they saw in Node.
+///
 /// English Porter applied to EVERY locale (including non-English),
 /// matching Node's `tokenize='porter unicode61'` at
 /// `src/build-search-index-worker.js:70`. See the longer rationale
 /// in the indexer's register_tokenizers doc-comment.
 fn build_docs_text_analyzer(_locale: &str) -> tantivy::tokenizer::TextAnalyzer {
     use tantivy::tokenizer::{
-        Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer, TextAnalyzer,
+        AsciiFoldingFilter, Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer,
+        TextAnalyzer,
     };
     TextAnalyzer::builder(SimpleTokenizer::default())
         .filter(RemoveLongFilter::limit(40))
         .filter(LowerCaser)
+        .filter(AsciiFoldingFilter)
         .filter(Stemmer::new(Language::English))
         .build()
 }
@@ -836,6 +850,58 @@ mod fallback_tests {
         let results = run_search(&state, "en", "installation").unwrap();
         assert_eq!(results.len(), 1);
         assert_eq!(results[0].id, "guide-install>quickstart");
+    }
+
+    /// SQLite FTS5's `unicode61` tokenizer defaults to
+    /// `remove_diacritics=1`, so Node indexed "café" as "cafe" and a
+    /// query for either form matched. Tantivy's SimpleTokenizer +
+    /// LowerCaser alone preserved the diacritic, so an ASCII query
+    /// ("cafe") missed the accented term in the content. Without
+    /// AsciiFoldingFilter in the analyzer chain this test fails.
+    #[test]
+    fn diacritics_fold_to_ascii_for_node_parity() {
+        let tmp = tempfile::tempdir().unwrap();
+        let index_dir = tmp.path().to_path_buf();
+        let dir = index_dir.join("fr_fr");
+        std::fs::create_dir_all(&dir).unwrap();
+        let schema = build_test_schema();
+        let index = Index::create_in_dir(&dir, schema.clone()).unwrap();
+        index
+            .tokenizers()
+            .register("docs_text", build_docs_text_analyzer("fr_fr"));
+        let mut writer = index.writer(50_000_000).unwrap();
+        let title = schema.get_field("title").unwrap();
+        let url = schema.get_field("url").unwrap();
+        let search_text = schema.get_field("search_text").unwrap();
+        let doc_id = schema.get_field("doc_id").unwrap();
+        writer
+            .add_document(doc!(
+                doc_id => "guide-cafe>menu",
+                title => "Café configuration",
+                url => "/guide-cafe.html#menu",
+                // Multiple diacritic shapes — fold should normalize each.
+                search_text => "Café résumé über naïve façade soufflé.",
+            ))
+            .unwrap();
+        writer.commit().unwrap();
+        let state = fake_state(index_dir);
+
+        // Query without the accent — should still hit thanks to
+        // AsciiFoldingFilter applied symmetrically on both index AND
+        // query sides.
+        for q in &["cafe", "resume", "uber", "naive", "facade", "souffle"] {
+            let results = run_search(&state, "fr_fr", q).unwrap();
+            assert!(
+                !results.is_empty(),
+                "ASCII query {q:?} missed an accented document — \
+                 AsciiFoldingFilter regression vs Node's unicode61 default."
+            );
+            assert_eq!(results[0].id, "guide-cafe>menu");
+        }
+
+        // Symmetry sanity: the accented query should also hit.
+        let results = run_search(&state, "fr_fr", "café").unwrap();
+        assert!(!results.is_empty(), "accented query missed its own document");
     }
 
     /// Pins parity with Node's `tokenize='porter unicode61'` setting
