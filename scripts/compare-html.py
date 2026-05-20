@@ -42,6 +42,19 @@ BUILD_ID_RE = re.compile(r"build-id[^\"]*\"\?v=[A-Za-z0-9_-]+\"|\?v=[A-Za-z0-9_-
 LAST_UPDATE_RE = re.compile(
     r"Documentation Last Updated [A-Za-z0-9/:., ]+(?=</div>)"
 )
+# Per src/guides.js:283 every guide page (default or translated)
+# declares its canonical as the *default-locale* URL — never the
+# locale-suffixed one. Locale-suffixed canonicals would tell crawlers
+# each translation is a distinct primary document and tank the i18n
+# SEO model. This regex extracts the canonical href so we can assert it.
+CANONICAL_RE = re.compile(
+    r'<link\s+rel="canonical"\s+href="https://docs\.fastcomments\.com/([^"]+)"'
+)
+# Guide IDs can themselves contain hyphens (`installation-canvas-lms`,
+# `sdk-php-sso`), so we can't tell where the id ends and the locale
+# begins from the filename alone. The canonical audit consults
+# locales.json to recognize valid locale suffixes instead.
+LOCALES_JSON_PATH = "src/locales.json"
 
 
 def normalize(html: str) -> str:
@@ -169,7 +182,78 @@ def diff(args) -> int:
         print("\nFirst 20 differing files:")
         for d in differing[:20]:
             print(f"  ~ {d}")
+
+    canonical_violations = audit_canonical(RUST_SNAPSHOT)
+    if canonical_violations:
+        print(
+            f"\n=== CANONICAL DRIFT: {len(canonical_violations)} file(s) point canonical "
+            "at the locale-suffixed URL instead of the default-locale URL ==="
+        )
+        for rel, found in canonical_violations[:20]:
+            print(f"  ~ {rel}  canonical={found!r}")
+        return 1
+
     return 0 if (len(only_node) == 0 and len(differing) == 0) else 1
+
+
+def load_locales() -> set[str]:
+    """Read src/locales.json and return the set of locale keys. Used by
+    audit_canonical to recognize valid locale suffixes (since guide IDs
+    can themselves contain hyphens, e.g. `installation-canvas-lms`)."""
+    import json
+    path = REPO / LOCALES_JSON_PATH
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    # locales.json shape: {"defaultLocale": "...", "locales": {key: {...}}}
+    return set(data.get("locales", {}).keys())
+
+
+def audit_canonical(root: Path) -> list[tuple[Path, str]]:
+    """Per-file assertion that catches the i18n-canonical bug Node had at
+    src/guides.js:283. For every `guide-<id>-<locale>.html` we expect the
+    `<link rel="canonical">` href to end in `/guide-<id>.html` (no locale
+    suffix). For default-locale `guide-<id>.html` we just expect the
+    canonical to match itself.
+
+    Runs against the snapshot dir rather than diffing Node vs Rust so it
+    catches the regression even when only one builder ran (CI, dev
+    iteration, etc.).
+    """
+    out: list[tuple[Path, str]] = []
+    if not root.exists():
+        return out
+    locales = load_locales()
+    for p in root.glob("guide-*.html"):
+        name = p.name
+        if not name.startswith("guide-") or not name.endswith(".html"):
+            continue
+        stem = name[len("guide-") : -len(".html")]
+        # Strip a recognized-locale suffix off the right edge if present.
+        # `stem` is e.g. `installation` (default) or
+        # `installation-fr_fr` (translated) or
+        # `installation-canvas-lms` (compound id, no locale) or
+        # `installation-canvas-lms-fr_fr` (compound id + locale).
+        guide_id = stem
+        for loc in locales:
+            suffix = f"-{loc}"
+            if stem.endswith(suffix) and len(stem) > len(suffix):
+                guide_id = stem[: -len(suffix)]
+                break
+        expected = f"guide-{guide_id}.html"
+        try:
+            html = p.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        c = CANONICAL_RE.search(html)
+        if c is None:
+            # Page didn't render a canonical at all — skip; if that's a
+            # real problem the byte-diff already catches it.
+            continue
+        if c.group(1) != expected:
+            out.append((p.relative_to(root), c.group(1)))
+    return out
 
 
 def show_diff(rel: Path, node_text: str, rust_text: str):
