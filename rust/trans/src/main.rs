@@ -11,6 +11,7 @@
 
 mod check;
 mod cleanup;
+mod run;
 mod snapshot;
 
 use anyhow::Result;
@@ -28,14 +29,7 @@ async fn main() -> Result<()> {
     match cmd.as_str() {
         "check" => check::run().await,
         "cleanup" => cleanup::run().await,
-        "run" => {
-            tracing::warn!(
-                "`trans run` is a framework stub; the prompt + batching layer of \
-                 translate-with-gpt.js is a phase-4 follow-up. \
-                 In the meantime, the Node script remains the authority."
-            );
-            anyhow::bail!("`trans run` not yet implemented; use `node src/translate-with-gpt.js`")
-        }
+        "run" => run::run().await,
         other => anyhow::bail!("unknown subcommand: {other}"),
     }
 }

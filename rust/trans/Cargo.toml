@@ -24,3 +24,5 @@ git2 = { workspace = true }
 walkdir = { workspace = true }
 regex = { workspace = true }
 once_cell = { workspace = true }
+reqwest = { workspace = true }
+indexmap = { workspace = true }
