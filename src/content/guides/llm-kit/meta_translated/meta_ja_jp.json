@@ -6,6 +6,11 @@
       "name": "LLMキットを入手する",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM統合"
+    },
+    {
+      "name": "MCPサーバー",
+      "file": "mcp-server.md",
+      "subCat": "MCPサーバー"
     }
   ]
 }

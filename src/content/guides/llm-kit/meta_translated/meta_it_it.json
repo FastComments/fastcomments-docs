@@ -6,6 +6,11 @@
       "name": "Ottieni il Kit LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Integrazione LLM"
+    },
+    {
+      "name": "Server MCP",
+      "file": "mcp-server.md",
+      "subCat": "Server MCP"
     }
   ]
 }

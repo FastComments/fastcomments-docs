@@ -1,11 +1,16 @@
 {
-  "name": "Πακέτο LLM",
+  "name": "Σετ εργαλείων LLM",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Αποκτήστε το Πακέτο LLM",
+      "name": "Αποκτήστε το Σετ εργαλείων LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Ενσωμάτωση LLM"
+    },
+    {
+      "name": "Διακομιστής MCP",
+      "file": "mcp-server.md",
+      "subCat": "Διακομιστής MCP"
     }
   ]
 }

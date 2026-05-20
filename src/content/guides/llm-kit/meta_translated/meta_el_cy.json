@@ -3,9 +3,14 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Απόκτησε το Σετ LLM",
+      "name": "Λήψη του Σετ LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Ενσωμάτωση LLM"
+    },
+    {
+      "name": "Διακομιστής MCP",
+      "file": "mcp-server.md",
+      "subCat": "Διακομιστής MCP"
     }
   ]
 }

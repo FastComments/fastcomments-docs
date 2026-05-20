@@ -6,6 +6,11 @@
       "name": "LLM Kitini Edinin",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM Entegrasyonu"
+    },
+    {
+      "name": "MCP Sunucusu",
+      "file": "mcp-server.md",
+      "subCat": "MCP Sunucusu"
     }
   ]
 }

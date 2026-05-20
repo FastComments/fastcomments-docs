@@ -6,6 +6,11 @@
       "name": "השג את ערכת ה-LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "אינטגרציה של LLM"
+    },
+    {
+      "name": "שרת MCP",
+      "file": "mcp-server.md",
+      "subCat": "שרת MCP"
     }
   ]
 }

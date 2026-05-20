@@ -1,11 +1,16 @@
 {
-  "name": "LLM-kit",
+  "name": "LLM Kit",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Haal de LLM-kit",
+      "name": "Haal de LLM Kit",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM-integratie"
+    },
+    {
+      "name": "MCP-server",
+      "file": "mcp-server.md",
+      "subCat": "MCP-server"
     }
   ]
 }

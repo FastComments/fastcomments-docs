@@ -1,11 +1,16 @@
 {
-  "name": "LLM комплет",
+  "name": "LLM Кит",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Набавите LLM комплет",
+      "name": "Преузмите LLM Кит",
       "file": "llm-kit-snippet.md",
       "subCat": "Интеграција LLM-а"
+    },
+    {
+      "name": "MCP Сервер",
+      "file": "mcp-server.md",
+      "subCat": "MCP Сервер"
     }
   ]
 }

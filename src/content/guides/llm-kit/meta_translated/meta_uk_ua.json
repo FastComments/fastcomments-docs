@@ -6,6 +6,11 @@
       "name": "Отримати набір LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Інтеграція LLM"
+    },
+    {
+      "name": "Сервер MCP",
+      "file": "mcp-server.md",
+      "subCat": "Сервер MCP"
     }
   ]
 }

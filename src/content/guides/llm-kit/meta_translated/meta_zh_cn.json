@@ -6,6 +6,11 @@
       "name": "获取 LLM 工具包",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM 集成"
+    },
+    {
+      "name": "MCP 服务器",
+      "file": "mcp-server.md",
+      "subCat": "MCP 服务器"
     }
   ]
 }

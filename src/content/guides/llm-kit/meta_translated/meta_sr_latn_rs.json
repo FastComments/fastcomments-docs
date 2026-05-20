@@ -6,6 +6,11 @@
       "name": "Preuzmite LLM komplet",
       "file": "llm-kit-snippet.md",
       "subCat": "Integracija LLM-a"
+    },
+    {
+      "name": "MCP Server",
+      "file": "mcp-server.md",
+      "subCat": "MCP Server"
     }
   ]
 }

@@ -3,9 +3,14 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Obtenir le Kit LLM",
+      "name": "Obtenir le kit LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Intégration LLM"
+    },
+    {
+      "name": "Serveur MCP",
+      "file": "mcp-server.md",
+      "subCat": "Serveur MCP"
     }
   ]
 }

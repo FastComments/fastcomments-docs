@@ -5,7 +5,12 @@
     {
       "name": "Pobierz Zestaw LLM",
       "file": "llm-kit-snippet.md",
-      "subCat": "Integracja z LLM"
+      "subCat": "Integracja LLM"
+    },
+    {
+      "name": "Serwer MCP",
+      "file": "mcp-server.md",
+      "subCat": "Serwer MCP"
     }
   ]
 }

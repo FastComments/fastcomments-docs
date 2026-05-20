@@ -1,11 +1,16 @@
 {
-  "name": "Kit LLM",
+  "name": "Kit de LLM",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Obtén el Kit LLM",
+      "name": "Obtener el Kit de LLM",
       "file": "llm-kit-snippet.md",
-      "subCat": "Integración con LLM"
+      "subCat": "Integración de LLM"
+    },
+    {
+      "name": "Servidor MCP",
+      "file": "mcp-server.md",
+      "subCat": "Servidor MCP"
     }
   ]
 }

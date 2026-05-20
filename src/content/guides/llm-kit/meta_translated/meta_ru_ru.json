@@ -3,9 +3,14 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Получите набор LLM",
+      "name": "Получить набор LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Интеграция LLM"
+    },
+    {
+      "name": "Сервер MCP",
+      "file": "mcp-server.md",
+      "subCat": "Сервер MCP"
     }
   ]
 }

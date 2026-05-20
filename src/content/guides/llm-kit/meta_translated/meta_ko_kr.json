@@ -6,6 +6,11 @@
       "name": "LLM 키트 받기",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM 통합"
+    },
+    {
+      "name": "MCP 서버",
+      "file": "mcp-server.md",
+      "subCat": "MCP 서버"
     }
   ]
 }

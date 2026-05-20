@@ -5,7 +5,12 @@
     {
       "name": "Набавите LLM комплет",
       "file": "llm-kit-snippet.md",
-      "subCat": "Интеграција LLM"
+      "subCat": "Интеграција LLM-а"
+    },
+    {
+      "name": "MCP сервер",
+      "file": "mcp-server.md",
+      "subCat": "MCP сервер"
     }
   ]
 }

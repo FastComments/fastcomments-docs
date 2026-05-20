@@ -3,9 +3,14 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Få LLM-sættet",
+      "name": "Hent LLM-sættet",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM-integration"
+    },
+    {
+      "name": "MCP-server",
+      "file": "mcp-server.md",
+      "subCat": "MCP-server"
     }
   ]
 }
