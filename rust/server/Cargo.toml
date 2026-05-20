@@ -27,3 +27,7 @@ reqwest = { workspace = true }
 regex = { workspace = true }
 futures = { workspace = true }
 urlencoding = "2"
+
+[dev-dependencies]
+tempfile = { workspace = true }
+indexmap = { workspace = true }

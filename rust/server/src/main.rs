@@ -453,34 +453,31 @@ fn get_locale_slot(state: &AppState, locale: &str) -> Result<LocaleSlot> {
     if let Some(slot) = state.cache.get(locale) {
         return Ok(slot.clone());
     }
-    let dir = state.index_dir.join(locale);
-    let dir = if dir.exists() {
-        dir
+    // Compute the EFFECTIVE locale ONCE and use it for both the on-disk
+    // index dir and the analyzer choice. The previous code keyed the
+    // analyzer off the requested locale even when we'd just fallen back
+    // to default — so a request for `fr_fr` (no fr_fr index) would open
+    // `index/en/` (English Porter-stemmer corpus) and register a
+    // *non*-stemming analyzer for "docs_text", because `fr_fr` isn't en
+    // or en_us. Query "installation" then tokenized to "installation"
+    // and missed the "install"-stemmed terms in the index. Silent recall
+    // degradation for every fallback locale.
+    let requested_dir = state.index_dir.join(locale);
+    let (effective_locale, dir) = if requested_dir.exists() {
+        (locale.to_string(), requested_dir)
     } else {
         warn!(locale, "no index for locale, falling back to default");
-        state.index_dir.join(&state.locales.default_locale)
+        (
+            state.locales.default_locale.clone(),
+            state.index_dir.join(&state.locales.default_locale),
+        )
     };
     let index = Index::open_in_dir(&dir).with_context(|| format!("open index {dir:?}"))?;
-    // Register the same tokenizer name expected by the schema.
-    let analyzer = if locale == "en" || locale == "en_us" {
-        tantivy::tokenizer::TextAnalyzer::builder(
-            tantivy::tokenizer::SimpleTokenizer::default(),
-        )
-        .filter(tantivy::tokenizer::RemoveLongFilter::limit(40))
-        .filter(tantivy::tokenizer::LowerCaser)
-        .filter(tantivy::tokenizer::Stemmer::new(
-            tantivy::tokenizer::Language::English,
-        ))
-        .build()
-    } else {
-        tantivy::tokenizer::TextAnalyzer::builder(
-            tantivy::tokenizer::SimpleTokenizer::default(),
-        )
-        .filter(tantivy::tokenizer::RemoveLongFilter::limit(40))
-        .filter(tantivy::tokenizer::LowerCaser)
-        .build()
-    };
-    index.tokenizers().register("docs_text", analyzer);
+    // Use the effective-locale's analyzer so query tokenization matches
+    // the analyzer the indexer used when it wrote this dir.
+    index
+        .tokenizers()
+        .register("docs_text", build_docs_text_analyzer(&effective_locale));
     let reader = index
         .reader_builder()
         .reload_policy(ReloadPolicy::OnCommitWithDelay)
@@ -497,8 +494,37 @@ fn get_locale_slot(state: &AppState, locale: &str) -> Result<LocaleSlot> {
         index: Arc::new(index),
         reader: Arc::new(reader),
     };
+    // Cache under the requested key (cheap hit path) AND under the
+    // effective key (so the next request for the default locale doesn't
+    // re-open + re-register).
     state.cache.insert(locale.to_string(), slot.clone());
+    if effective_locale != locale {
+        state.cache.insert(effective_locale, slot.clone());
+    }
     Ok(slot)
+}
+
+/// Pick the `docs_text` analyzer for a locale's index. Must mirror the
+/// indexer's `register_tokenizers` in `rust/indexer/src/main.rs` —
+/// drift between the two would cause asymmetric tokenization and
+/// recall holes. Today: English Porter stemmer for en / en_us, no
+/// stemmer for the rest.
+fn build_docs_text_analyzer(locale: &str) -> tantivy::tokenizer::TextAnalyzer {
+    use tantivy::tokenizer::{
+        LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer, TextAnalyzer,
+    };
+    if locale == "en" || locale == "en_us" {
+        TextAnalyzer::builder(SimpleTokenizer::default())
+            .filter(RemoveLongFilter::limit(40))
+            .filter(LowerCaser)
+            .filter(Stemmer::new(tantivy::tokenizer::Language::English))
+            .build()
+    } else {
+        TextAnalyzer::builder(SimpleTokenizer::default())
+            .filter(RemoveLongFilter::limit(40))
+            .filter(LowerCaser)
+            .build()
+    }
 }
 
 /// Mirrors src/server-search-engine.js:234-241.
@@ -677,6 +703,142 @@ fn repo_root() -> Result<PathBuf> {
             Some(p) => cur = p,
             None => anyhow::bail!("could not locate repo root from {:?}", cwd),
         }
+    }
+}
+
+#[cfg(test)]
+mod fallback_tests {
+    //! End-to-end test that pins the locale-fallback analyzer choice.
+    //! Builds a minimal en index with stem-able content, requests a
+    //! search for a fr_fr locale (no fr_fr dir on disk), and asserts
+    //! the English-stemmer analyzer is registered against the
+    //! default-locale index so query "installation" still hits a
+    //! document containing "install".
+
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+    use tantivy::doc;
+    use tantivy::schema::{
+        IndexRecordOption, Schema, TextFieldIndexing, TextOptions, STORED, STRING,
+    };
+
+    fn build_test_schema() -> Schema {
+        // Must match what the indexer writes (see rust/indexer/src/main.rs
+        // build_schema). Drift here would mean the test indexes a doc
+        // the server can't read.
+        let mut b = Schema::builder();
+        b.add_text_field("doc_id", STRING | STORED);
+        let text_idx = TextFieldIndexing::default()
+            .set_tokenizer("docs_text")
+            .set_index_option(IndexRecordOption::WithFreqsAndPositions);
+        let text_opts = TextOptions::default()
+            .set_indexing_options(text_idx)
+            .set_stored();
+        b.add_text_field("title", text_opts.clone());
+        b.add_text_field("parent_title", text_opts.clone());
+        b.add_text_field("url", text_opts.clone());
+        b.add_text_field("parent_url", text_opts.clone());
+        b.add_text_field("icon", STRING | STORED);
+        b.add_text_field("search_text", text_opts);
+        b.build()
+    }
+
+    fn write_en_index_with_install_doc(en_dir: &std::path::Path) {
+        std::fs::create_dir_all(en_dir).unwrap();
+        let schema = build_test_schema();
+        let index = Index::create_in_dir(en_dir, schema.clone()).unwrap();
+        // Use the same analyzer the indexer would have registered when
+        // writing en/.
+        index
+            .tokenizers()
+            .register("docs_text", build_docs_text_analyzer("en"));
+        let mut writer = index.writer(50_000_000).unwrap();
+        let title = schema.get_field("title").unwrap();
+        let url = schema.get_field("url").unwrap();
+        let search_text = schema.get_field("search_text").unwrap();
+        let doc_id = schema.get_field("doc_id").unwrap();
+        writer
+            .add_document(doc!(
+                doc_id => "guide-install>quickstart",
+                title => "Install FastComments",
+                url => "/guide-install.html#quickstart",
+                search_text => "How to install FastComments on your site quickly.",
+            ))
+            .unwrap();
+        writer.commit().unwrap();
+    }
+
+    fn fake_state(index_dir: PathBuf) -> AppState {
+        // Minimal locales with en as default + fr_fr defined but with
+        // no on-disk index dir, so the fallback path fires.
+        let mut locales_map: IndexMap<String, Locale> = IndexMap::new();
+        locales_map.insert(
+            "en".into(),
+            Locale {
+                name: "English".into(),
+                native_name: "English".into(),
+                hreflang: "en".into(),
+                flag: Some("🇬🇧".into()),
+            },
+        );
+        locales_map.insert(
+            "fr_fr".into(),
+            Locale {
+                name: "French".into(),
+                native_name: "Français".into(),
+                hreflang: "fr-FR".into(),
+                flag: Some("🇫🇷".into()),
+            },
+        );
+        let locales = Arc::new(Locales {
+            default_locale: "en".into(),
+            locales: locales_map,
+        });
+        AppState {
+            locales,
+            index_dir: Arc::new(index_dir),
+            cache: Arc::new(DashMap::new()),
+            telemetry: Arc::new(Mutex::new(telemetry::Collector::default())),
+            openai_api_key: None,
+            openai_model: Arc::new("test".into()),
+            search_api_key: None,
+            http: reqwest::Client::new(),
+            limiter: Arc::new(RateLimiter::new(1000.0, 1000.0)),
+        }
+    }
+
+    #[test]
+    fn fallback_to_default_uses_default_locale_analyzer() {
+        let tmp = tempfile::tempdir().unwrap();
+        let index_dir = tmp.path().to_path_buf();
+        // Only en/ exists; fr_fr/ is intentionally missing.
+        write_en_index_with_install_doc(&index_dir.join("en"));
+
+        let state = fake_state(index_dir);
+
+        // Request fr_fr (no index dir) -> server must open en/ AND
+        // register the en analyzer. Without that, "installation" tokenizes
+        // unstemmed and misses the "install"-stemmed term in the index.
+        let results = run_search(&state, "fr_fr", "installation").unwrap();
+        assert!(
+            !results.is_empty(),
+            "fallback path missed a document the English-stemmed index should match \
+             (analyzer drift between index and query)"
+        );
+        assert_eq!(results[0].id, "guide-install>quickstart");
+    }
+
+    #[test]
+    fn requested_locale_with_index_uses_its_own_analyzer() {
+        // Sanity check the non-fallback path still works.
+        let tmp = tempfile::tempdir().unwrap();
+        let index_dir = tmp.path().to_path_buf();
+        write_en_index_with_install_doc(&index_dir.join("en"));
+        let state = fake_state(index_dir);
+        let results = run_search(&state, "en", "installation").unwrap();
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].id, "guide-install>quickstart");
     }
 }
 
