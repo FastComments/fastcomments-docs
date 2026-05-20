@@ -57,11 +57,28 @@ CANONICAL_RE = re.compile(
 LOCALES_JSON_PATH = "src/locales.json"
 
 
+# A real build_id is a short [A-Za-z0-9_-] token containing at least
+# one digit. The Rust sitegen guarantees the digit by prefixing the id
+# with hex(epoch_seconds); Node's shortid output also reliably contains
+# digits in practice. Critically we DON'T match plain identifier-shaped
+# tokens like "BUILD_ID_PLACEHOLDER" — if that ever shows up the diff
+# harness should flag it loudly, not paper over it.
+BUILD_ID_TOKEN_RE = re.compile(
+    r"\?v=(?=[A-Za-z0-9_-]*[0-9])[A-Za-z0-9_-]{6,30}\b"
+)
+# Used by audit_build_id_placeholder: any `?v=...` that doesn't
+# match BUILD_ID_TOKEN_RE is reported. The placeholder
+# "BUILD_ID_PLACEHOLDER" is the specific regression we already hit.
+BUILD_ID_ANY_RE = re.compile(r"\?v=([A-Za-z0-9_-]+)")
+
+
 def normalize(html: str) -> str:
     """Normalize away values that are expected to differ between runs."""
     # Random build-id appended to script src URLs and the version-check
-    # comparator.
-    html = re.sub(r"\?v=[A-Za-z0-9_-]+", "?v=BUILDID", html)
+    # comparator. Only normalize tokens that *look* like a build id;
+    # leave non-build-id values (including the literal placeholder) so
+    # the diff catches them.
+    html = BUILD_ID_TOKEN_RE.sub("?v=BUILDID", html)
     # `lastUpdateDate` is a wall-clock timestamp.
     html = re.sub(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", "TIMESTAMP", html)
     # Node's `new Date().toLocaleString()` may use locale-ish format
@@ -193,7 +210,50 @@ def diff(args) -> int:
             print(f"  ~ {rel}  canonical={found!r}")
         return 1
 
+    placeholder_files = audit_build_id_placeholder(RUST_SNAPSHOT)
+    if placeholder_files:
+        print(
+            f"\n=== BUILD ID PLACEHOLDER: {len(placeholder_files)} file(s) bake "
+            "a literal placeholder instead of a real build id ==="
+        )
+        for rel, tokens in placeholder_files[:20]:
+            sample = ", ".join(sorted(set(tokens))[:3])
+            print(f"  ~ {rel}  ?v={sample}")
+        return 1
+
     return 0 if (len(only_node) == 0 and len(differing) == 0) else 1
+
+
+def audit_build_id_placeholder(root: Path) -> list[tuple[Path, list[str]]]:
+    """Catches the regression where index pages render
+    `?v=BUILD_ID_PLACEHOLDER` (or any other identifier-shaped value)
+    instead of the per-build random short id. Real build ids match
+    BUILD_ID_TOKEN_RE; anything else flagged here is suspicious.
+
+    Returns (file, list-of-offending-?v-values) pairs.
+    """
+    out: list[tuple[Path, list[str]]] = []
+    if not root.exists():
+        return out
+    # Index pages are the only files that bake `?v={{buildId}}`.
+    targets = sorted(root.glob("index*.html"))
+    for p in targets:
+        try:
+            html = p.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        bad: list[str] = []
+        for m in BUILD_ID_ANY_RE.finditer(html):
+            tok = m.group(1)
+            # Real ids match BUILD_ID_TOKEN_RE (must contain a digit).
+            # Pure-identifier tokens like `BUILD_ID_PLACEHOLDER` fall
+            # through to the bad list.
+            if BUILD_ID_TOKEN_RE.fullmatch(f"?v={tok}"):
+                continue
+            bad.append(tok)
+        if bad:
+            out.append((p.relative_to(root), bad))
+    return out
 
 
 def load_locales() -> set[str]:

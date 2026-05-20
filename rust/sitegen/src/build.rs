@@ -210,6 +210,31 @@ pub async fn run(args: Vec<String>) -> Result<()> {
         }
     }
 
+    // Build-id (random short id). Mirrors Node app.js:64 where the id is
+    // generated ONCE per build and passed into every per-locale index
+    // template render as `{{buildId}}` (the index template embeds it as
+    // `?v={{buildId}}` on get-session-info.js, search.js, and
+    // version-check.js). The same id is also written to the `build-id`
+    // file at the end of the build, which version-check.js polls to
+    // detect new deploys.
+    //
+    // Critically: build_id must be computed BEFORE the index loop, not
+    // after it. Previously this was generated after the loop and the
+    // index template baked the literal string "BUILD_ID_PLACEHOLDER"
+    // into every page — JS cache never busted and version-check.js
+    // always saw a constant value.
+    //
+    // Format: hex(seconds-since-epoch) + 4-char nanoid. Always contains
+    // digits, monotonically increasing across builds, ~12 chars total.
+    // scripts/compare-html.py's BUILD_ID_TOKEN_RE relies on the digit
+    // guarantee to distinguish a real id from a literal placeholder
+    // like "BUILD_ID_PLACEHOLDER".
+    let build_id = format!(
+        "{:x}{}",
+        chrono::Utc::now().timestamp(),
+        nanoid::nanoid!(4)
+    );
+
     // Index pages per locale (cheap; serial is fine).
     for locale in &locale_keys {
         if let Err(e) = build_index_page(
@@ -220,13 +245,12 @@ pub async fn run(args: Vec<String>) -> Result<()> {
             &templates,
             &guide_order,
             &static_generated_dir,
+            &build_id,
         ) {
             warn!(locale, error = %format!("{e:#}"), "skipping index page");
         }
     }
 
-    // Build-id (random short id; consumed by version-check.js).
-    let build_id = nanoid::nanoid!(9);
     std::fs::write(static_generated_dir.join("build-id"), &build_id)?;
 
     // Sitemap.
@@ -753,6 +777,7 @@ pub fn guide_link(id: &str, locale: &str, default_locale: &str) -> String {
     }
 }
 
+#[allow(clippy::too_many_arguments)]
 fn build_index_page(
     locale: &str,
     root: &GuidesRoot,
@@ -761,6 +786,7 @@ fn build_index_page(
     templates: &TemplateRegistry,
     guide_order: &[String],
     static_generated_dir: &Path,
+    build_id: &str,
 ) -> Result<()> {
     let guides = root.walk(locale)?;
     let t = translations.for_locale(locale);
@@ -834,7 +860,7 @@ fn build_index_page(
         "sdkGuides": localize(&sdk),
         "gettingStartedGuides": localize(&getting_started_sorted),
         "lastUpdateDate": last_update_date,
-        "buildId": "BUILD_ID_PLACEHOLDER",
+        "buildId": build_id,
         "locale": locale,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
         "availableLocales": available_locales,
