@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "462bff858541e95717f7c86b79b20c444225632c43a32837c1bcbd52008be2f3",
+  "generatedAt": "2026-05-20T06:45:24.430Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant-9f8b7c6d';\n  const id: string = 'user-84';\n  const redirectURL: string = 'https://app.acmeinc.com/welcome';\n  const responseWithRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id, redirectURL);\n  const responseWithoutRedirect: FlagCommentPublic200Response = await sendLoginLink(tenantId, id);\n  console.log(responseWithRedirect, responseWithoutRedirect);\n})();",
+  "model": "gpt-5-mini"
+}

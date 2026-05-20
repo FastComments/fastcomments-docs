@@ -15,13 +15,13 @@ Returns: [`GetUserBadgeProgressList200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_4f8c2b9d';
-  const userId: string = 'user_9a7e215c';
+async function fetchBadgeProgress(): Promise<void> {
+  const tenantId: string = 'tenant_7f3b2a';
+  const userId: string = 'user_4c9d21';
   const limit: number = 25;
   const skip: number = 0;
-  const resultMinimal: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId);
-  const resultFull: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(resultMinimal, resultFull);
-})();
+  const result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);
+  console.log(result);
+}
+fetchBadgeProgress();
 [inline-code-end]

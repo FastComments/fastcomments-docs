@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "d0d6e57eac186ebb78b9e6ae334540f3f76c75ef7995ca1e3618d78188e5c557",
+  "generatedAt": "2026-05-20T06:51:09.827Z",
+  "codeExample": "const tenantId: string = 'tenant-58b2';\nconst urlIdWS: string = 'wss://ws.prod.acme-corp.com/presence/conn-9f7a';\nconst userIds: string | undefined = 'u1001,u1002,u1003';\nconst presence: GetUserPresenceStatuses200Response = await getUserPresenceStatuses(tenantId, urlIdWS, userIds ?? 'u1001');\nconsole.log(presence);",
+  "model": "gpt-5-mini"
+}

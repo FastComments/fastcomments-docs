@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "f869fc647187033a2d07df5564858fbe123755efc8a2e656852605731041d788",
+  "generatedAt": "2026-05-20T06:50:46.480Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-tenant-582\";\n  const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NzgiLCJpYXQiOjE2MTYyMzkwMjJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";\n  const resultWithoutSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId);\n  const resultWithSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId, ssoToken);\n  console.log(resultWithoutSSO, resultWithSSO);\n})();",
+  "model": "gpt-5-mini"
+}

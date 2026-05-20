@@ -18,13 +18,20 @@ Returns: [`ReactFeedPostPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_84f2b1';
-const postId: string = 'post_12ac9e';
-const reactBodyParams: ReactBodyParams = { emoji: 'thumbs_up', intensity: 1 };
+const tenantId: string = 'tenant_company42';
+const postId: string = 'post_2026-05-20_0012';
+const reactBodyParams: ReactBodyParams = { reaction: 'like', emoji: '👍' } as ReactBodyParams;
 const isUndo: boolean = false;
-const broadcastId: string = 'broadcast_20260503_01';
-const urlId: string = 'article-4527';
-const sso: string = 'sso_token_7f3b2c';
-
-const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, urlId, sso);
+const broadcastId: string = 'broadcast_84';
+const urlId: string = 'url_9f8b';
+const sso: string = 'sso_jwt_eyJhbGciOiJIUzI1Ni';
+const result: ReactFeedPostPublic200Response = await reactFeedPostPublic(
+  tenantId,
+  postId,
+  reactBodyParams,
+  isUndo,
+  broadcastId,
+  urlId,
+  sso
+);
 [inline-code-end]

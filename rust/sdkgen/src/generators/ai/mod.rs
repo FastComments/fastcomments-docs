@@ -15,9 +15,18 @@
 //! - `src/sdk-doc-generators/nim-ai-generator.js`
 //! - `src/sdk-doc-generators/openai-client.js`
 
-pub mod prompts;
-pub mod typescript_parser;
-pub mod typescript;
 pub mod common;
+pub mod cpp;
+pub mod cpp_parser;
+pub mod nim;
+pub mod nim_parser;
+pub mod prompts;
+pub mod rust;
+pub mod rust_parser;
+pub mod typescript;
+pub mod typescript_parser;
 
+pub use cpp::CppAiGenerator;
+pub use nim::NimAiGenerator;
+pub use rust::RustAiGenerator;
 pub use typescript::TypescriptAiGenerator;

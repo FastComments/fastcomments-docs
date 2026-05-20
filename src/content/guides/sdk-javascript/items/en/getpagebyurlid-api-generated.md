@@ -13,9 +13,8 @@ Returns: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getPageByURLId Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-742';
-const urlId: string = 'blog-article-9f4b2c';
-const response: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);
-const page: APIPage | undefined = response.page;
-const pageId: string | undefined = page?.id
+const tenantId: string = 'acme-corp-842';
+const urlId: string = 'home-landing';
+const pageResponse: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);
+const page: APIPage | undefined = (pageResponse as unknown as { page?: APIPage }).page;
 [inline-code-end]

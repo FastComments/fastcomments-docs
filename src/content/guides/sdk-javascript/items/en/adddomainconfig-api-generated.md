@@ -13,12 +13,12 @@ Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'addDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_6a9f8b2c';
-const params: AddDomainConfigParams = {
-  domain: 'comments.myproduct.io',
-  allowedOrigins: ['https://www.myproduct.io', 'https://app.myproduct.io'],
-  enforceHttps: true, // optional parameter
-  description: 'Comments subdomain for product site'
+const tenantId: string = "org-3fa9d8b2";
+const addDomainConfigParams: AddDomainConfigParams = {
+  domainName: "login.acme-corp.com",
+  isPrimary: true,
+  verification: { method: "dns", token: "verify-9c3b" },
+  dnsRecords: [{ type: "TXT", name: "_acme", value: "v=spf1 include:_spf.example.com ~all" }] // optional parameter included
 };
-const response: AddDomainConfig200Response = await addDomainConfig(tenantId, params);
+const result: AddDomainConfig200Response = await addDomainConfig(tenantId, addDomainConfigParams);
 [inline-code-end]

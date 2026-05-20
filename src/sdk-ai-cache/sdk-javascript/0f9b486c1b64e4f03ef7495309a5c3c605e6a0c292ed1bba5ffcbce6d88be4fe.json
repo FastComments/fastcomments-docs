@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "0f9b486c1b64e4f03ef7495309a5c3c605e6a0c292ed1bba5ffcbce6d88be4fe",
+  "generatedAt": "2026-05-20T06:44:47.874Z",
+  "codeExample": "const tenantId: string = 'tenant_8f9d4c';\nconst id: string = 'pkg_42b7e1';\nconst minimalBody: ReplaceTenantPackageBody = { name: 'Community Moderation Core' };\nconst fullBody: ReplaceTenantPackageBody = {\n  name: 'Community Moderation Core',\n  description: 'Enables standard moderation rules and default thresholds.'\n};\nconst replaceTenantPackageBody: ReplaceTenantPackageBody = fullBody;\nconst result: FlagCommentPublic200Response = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

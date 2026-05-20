@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "ed54bb14a2a59f80f57fae23ca8e537b0048bdd94a31d5d689e547811e139e1d",
+  "generatedAt": "2026-05-20T06:52:35.128Z",
+  "codeExample": "const tenantId: string = 'tenant_42a7';\nconst commentId: string = 'cmt_9f3e2';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = { unblockReason: 'Mistaken block', notifyUsers: true };\nconst sso: string | undefined = 'sso_token_AbC123';\nconst response: UnBlockCommentPublic200Response = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "af27b50891daa6937ea1b61a7c5c98c665d6d33e2746df585a72fcc7629e76ab",
+  "generatedAt": "2026-05-20T06:49:55.026Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst postIds: string[] = [\"b9f1e5d2-8c3a-4a0f-9c1b-1234567890ab\", \"a1b2c3d4-e5f6-7890-abcd-ef0123456789\"];\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMiLCJpYXQiOjE2MDA5NDU2Nzh9.signature\";\nconst result: GetFeedPostsStats200Response = await getFeedPostsStats(tenantId, postIds, sso);",
+  "model": "gpt-5-mini"
+}

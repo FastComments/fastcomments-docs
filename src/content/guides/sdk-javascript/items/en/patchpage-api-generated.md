@@ -14,13 +14,12 @@ Returns: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'patchPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f3b2a4c';
-const pageId: string = 'page_9c1d8f7';
-const updateAPIPageData: UpdateAPIPageData = {
-  title: 'How to use FastComments with TypeScript',
-  path: '/guides/fastcomments-typescript',
-  isPublished: true,
-  metadata: { author: 'Alex Martinez', tags: ['comments', 'typescript'] } // optional field included
+const tenantId: string = 'acme-enterprises';
+const id: string = 'pg_6f4c2b1a';
+const updateAPIPageData: UpdateAPIPageData & { notifyTeam?: boolean } = {
+  title: 'Q3 Product Roadmap',
+  content: '<p>Finalize feature set and schedule beta releases.</p>',
+  notifyTeam: true
 };
-const result: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateAPIPageData);
+const result: PatchPageAPIResponse = await patchPage(tenantId, id, updateAPIPageData);
 [inline-code-end]

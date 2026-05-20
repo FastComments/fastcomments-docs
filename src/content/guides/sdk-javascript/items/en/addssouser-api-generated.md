@@ -13,14 +13,15 @@ Returns: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addSSOUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-7f8c2d4b';
-const createAPISSOUserData: CreateAPISSOUserData = {
-  externalId: 'okta|00u1abcd2345EfGH',
+const tenantId: string = 'acme-corp-001';
+const createData: CreateAPISSOUserData = {
   email: 'jane.doe@acme-corp.com',
-  displayName: 'Jane Doe',
-  avatarUrl: 'https://cdn.acme-corp.com/avatars/jane.jpg',
-  sendWelcomeEmail: true,
-  metadata: { department: 'Engineering', employeeId: 'E12345' }
+  givenName: 'Jane',
+  familyName: 'Doe',
+  externalId: 'acme|jdoe',
+  roles: ['admin'],
+  phoneNumber: '+1-415-555-0123'
 };
-const result: AddSSOUserAPIResponse = await addSSOUser(tenantId, createAPISSOUserData);
+const result: AddSSOUserAPIResponse = await addSSOUser(tenantId, createData);
+const createdUser: APISSOUser | undefined = result?.user;
 [inline-code-end]

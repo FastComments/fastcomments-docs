@@ -13,7 +13,11 @@ Returns: [`GetQuestionConfigs200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getQuestionConfigs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_9876";
-const configsWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
-const configsWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, 20);
+async function run(): Promise<void> {
+  const tenantId: string = "acme-corp-987";
+  const skip: number = 20;
+  const resultWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);
+  const resultWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);
+}
+run();
 [inline-code-end]

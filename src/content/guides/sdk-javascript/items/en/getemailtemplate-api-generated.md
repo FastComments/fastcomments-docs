@@ -13,10 +13,9 @@ Returns: [`GetEmailTemplate200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-marketing-042";
-const templateId: string = "tpl_welcome_2026";
-const result: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
-const template: CustomEmailTemplate | undefined = result.template;
-const subject: string | undefined = template?.subject;
-const customParams: CustomConfigParameters | undefined = template?.customConfigParameters;
+const tenantId: string = 'tenant_9b3f2a';
+const templateId: string = 'tpl_4f8c7a2';
+let preferredLocale: string | undefined = 'en-US';
+const emailTemplate: GetEmailTemplate200Response = await getEmailTemplate(tenantId, templateId);
+const localeToUse: string = preferredLocale ?? 'en-US';
 [inline-code-end]

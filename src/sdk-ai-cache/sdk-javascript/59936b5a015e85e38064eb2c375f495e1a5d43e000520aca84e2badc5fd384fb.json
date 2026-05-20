@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "59936b5a015e85e38064eb2c375f495e1a5d43e000520aca84e2badc5fd384fb",
+  "generatedAt": "2026-05-20T06:46:25.772Z",
+  "codeExample": "const tenantId: string = 'tenant_9a7b6c';\nconst id: string = 'notification_4f3e2d';\nconst userId: string | undefined = 'user_42';\nconst updateNotificationBody: UpdateNotificationBody = {\n  flagged: true,\n  reason: 'inappropriate content',\n  notes: 'Repeated violations of community guidelines'\n};\nconst result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);",
+  "model": "gpt-5-mini"
+}

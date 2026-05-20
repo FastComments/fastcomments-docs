@@ -13,12 +13,10 @@ Returns: [`GetEmailTemplates200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getEmailTemplates Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const tenantId: string = 'tenant_5f3a9c2b';
-  const templates: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
-  const skip: number = 20;
-  const pagedTemplates: GetEmailTemplates200Response = await getEmailTemplates(tenantId, skip);
-  console.log(templates, pagedTemplates);
-}
-main();
+(async () => {
+  const tenantId: string = "tenant-4f7c2b9a";
+  const templatesDefault: GetEmailTemplates200Response = await getEmailTemplates(tenantId);
+  const templatesWithSkip: GetEmailTemplates200Response = await getEmailTemplates(tenantId, 25);
+  console.log(templatesDefault, templatesWithSkip);
+})();
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "4c70198aa6688feb5d4d1d444cbe0c70b2bdec5e794394c7f086c8882c3553d5",
+  "generatedAt": "2026-05-20T06:48:16.053Z",
+  "codeExample": "const tenantId: string = 'tenant_12345';\nconst mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/team.jpg', mimeType: 'image/jpeg', size: 153600 };\nconst mediaItem: FeedPostMediaItem = { type: 'image', assets: [mediaAsset], caption: 'Team outing in April' };\nconst createFeedPostParams: CreateFeedPostParams = { title: 'Quarterly Results', body: 'We exceeded our Q1 targets across all regions.', authorId: 'user_98765', media: [mediaItem] };\nconst broadcastId: string = 'broadcast_2026_q1';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';\nconst result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);",
+  "model": "gpt-5-mini"
+}

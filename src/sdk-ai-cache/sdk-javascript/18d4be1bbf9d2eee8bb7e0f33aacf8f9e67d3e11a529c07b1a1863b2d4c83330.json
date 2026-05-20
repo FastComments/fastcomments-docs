@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "18d4be1bbf9d2eee8bb7e0f33aacf8f9e67d3e11a529c07b1a1863b2d4c83330",
+  "generatedAt": "2026-05-20T06:53:52.735Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-corp-tenant-01';\n  const notificationId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\n  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n  const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, UpdateUserNotificationStatusNewStatusEnum.Read, sso);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

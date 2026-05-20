@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "ca4d11c71a80803a9cc79f916eb8df24dffeaadf5b472003c131ca6f7be8fa49",
+  "generatedAt": "2026-05-20T06:54:18.960Z",
+  "codeExample": "const tenantId: string = \"acme_corp\";\nconst commentId: string = \"cmt-9f2b7a1e\";\nconst urlId: string = \"products/widget-42\";\nconst broadcastId: string = \"bcast-20260520-001\";\nconst voteBodyParams: VoteBodyParams = { vote: 1 };\nconst sessionId: string | undefined = \"sess-7d4f1c\";\nconst sso: string | undefined = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\";\nconst result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);",
+  "model": "gpt-5-mini"
+}

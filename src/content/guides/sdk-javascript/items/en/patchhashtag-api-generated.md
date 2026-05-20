@@ -14,13 +14,15 @@ Returns: [`PatchHashTag200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'patchHashTag Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "feature-ux-refresh";
-const tenantId: string = "tenant_4f92c1";
-const updateHashTagBody: UpdateHashTagBody = {
-  label: "UX Refresh",
-  description: "Track comments related to the 2026 UX redesign",
-  isActive: true,
-  metadata: { owner: "product-design", rolloutPhase: "phase-2" }
-};
-const response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
+(async (): Promise<void> => {
+  const tag: string = "product-feedback";
+  const tenantId: string = "acme-tenant-42";
+  const updateHashTagBody: UpdateHashTagBody = {
+    displayName: "Product Feedback",
+    description: "Collects user feedback about products",
+    isActive: true
+  };
+  const result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);
+  console.log(result);
+})();
 [inline-code-end]

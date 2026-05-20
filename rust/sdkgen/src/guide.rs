@@ -10,7 +10,7 @@ use tracing::{info, warn};
 
 use crate::checkout::{Checkout, CheckoutManager};
 use crate::config::{self, SdkConfig};
-use crate::generators::ai::TypescriptAiGenerator;
+use crate::generators::ai::{CppAiGenerator, NimAiGenerator, RustAiGenerator, TypescriptAiGenerator};
 use crate::generators::base::{DocGenerator, DocSection, GeneratorCtx};
 use crate::generators::openapi::OpenApiGenerator;
 use crate::generators::readme::{self, ReadmeGenerator};
@@ -72,18 +72,9 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
             "readme" => Box::new(ReadmeGenerator),
             "openapi" => Box::new(OpenApiGenerator),
             "typescript-ai" => Box::new(TypescriptAiGenerator),
-            "rust-ai" => {
-                tracing::warn!(sdk = %checkout.sdk.id, "rust-ai generator not yet ported — falling back to Node-generated content");
-                continue;
-            }
-            "cpp-ai" => {
-                tracing::warn!(sdk = %checkout.sdk.id, "cpp-ai generator not yet ported — falling back to Node-generated content");
-                continue;
-            }
-            "nim-ai" => {
-                tracing::warn!(sdk = %checkout.sdk.id, "nim-ai generator not yet ported — falling back to Node-generated content");
-                continue;
-            }
+            "rust-ai" => Box::new(RustAiGenerator),
+            "cpp-ai" => Box::new(CppAiGenerator),
+            "nim-ai" => Box::new(NimAiGenerator),
             other => {
                 warn!(generator = %other, "unknown generator type — skipping");
                 continue;

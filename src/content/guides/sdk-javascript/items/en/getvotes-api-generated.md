@@ -13,9 +13,11 @@ Returns: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'getVotes Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-8f3b';
-const refCampaign: string | undefined = 'newsletter-march2026'; // optional query parameter
-const urlId: string = `https://www.example.com/articles/2026/03/25/fastcomments-integration${refCampaign ? `?ref=${refCampaign}` : ''}`;
-
-const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+async function loadVotes(): Promise<void> {
+  const tenantId: string = 'acme-enterprises';
+  const urlIdSuffix: string | undefined = 'q2-promo';
+  const urlId: string = urlIdSuffix ? `promo-${urlIdSuffix}` : 'promo-default';
+  const votes: GetVotes200Response = await getVotes(tenantId, urlId);
+  void votes;
+}
 [inline-code-end]

@@ -19,23 +19,11 @@ Returns: [`GetPendingWebhookEvents200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b3f7c';
-const commentId: string | undefined = undefined;
-const externalId: string | undefined = 'external-572a';
-const eventType: string | undefined = 'comment.updated';
-const type: string | undefined = 'outbound';
+const tenantId: string = 'tenant_12345';
+const commentId: string | undefined = 'cmt-98765';
+const eventType: string | undefined = 'comment.created';
 const domain: string | undefined = 'reviews.example.com';
-const attemptCountGT: number | undefined = 1;
-const skip: number | undefined = 20;
-
-const result: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const attemptCountGT: number | undefined = 2;
+const skip: number | undefined = 0;
+const response: GetPendingWebhookEvents200Response = await getPendingWebhookEvents(tenantId, commentId, undefined, eventType, undefined, domain, attemptCountGT, skip);
 [inline-code-end]

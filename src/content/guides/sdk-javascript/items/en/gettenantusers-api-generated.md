@@ -13,8 +13,11 @@ Returns: [`GetTenantUsers200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getTenantUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_prod_8a3f2c';
-const skip: number = 50;
-const usersWithSkip: GetTenantUsers200Response = await getTenantUsers(tenantId, skip);
-const usersNoSkip: GetTenantUsers200Response = await getTenantUsers(tenantId);
+async function main(): Promise<void> {
+  const tenantId: string = "d1f3a8b0-7c2e-4f9a-9b8e-123456789abc";
+  const responseWithoutSkip: GetTenantUsers200Response = await getTenantUsers(tenantId);
+  const responseWithSkip: GetTenantUsers200Response = await getTenantUsers(tenantId, 20);
+  console.log(responseWithoutSkip, responseWithSkip);
+}
+main();
 [inline-code-end]

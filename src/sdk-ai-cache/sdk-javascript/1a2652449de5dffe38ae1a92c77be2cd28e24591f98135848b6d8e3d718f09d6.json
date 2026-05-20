@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "1a2652449de5dffe38ae1a92c77be2cd28e24591f98135848b6d8e3d718f09d6",
+  "generatedAt": "2026-05-20T06:47:20.856Z",
+  "codeExample": "const tenantId: string = 'tenant-4b2c9f2';\nconst id: string = 'pkg-71f3c9a';\nconst updateTenantPackageBody: UpdateTenantPackageBody = {\n  name: 'Enterprise Moderation',\n  enabled: true,\n  // optional parameter provided\n  customConfigParameters: { imageProfanityThreshold: 1 }\n};\nconst result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);",
+  "model": "gpt-5-mini"
+}

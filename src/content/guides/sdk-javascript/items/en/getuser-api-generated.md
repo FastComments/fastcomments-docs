@@ -13,8 +13,8 @@ Returns: [`GetUser200Response`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'getUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b3f42';
-const id: string = 'user_9c4d2a';
-const userResponse: GetUser200Response = await getUser(tenantId, id);
-console.log(userResponse);
+const tenantOverride: string | undefined = undefined;
+const tenantId: string = tenantOverride ?? 'tenant_9a4f';
+const userId: string = 'u_7b3c';
+const result: GetUser200Response = await getUser(tenantId, userId);
 [inline-code-end]

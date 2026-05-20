@@ -13,7 +13,8 @@ Returns: [`GetModerator200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-123';
-const id: string = 'mod-987654321';
-const moderatorResponse: GetModerator200Response = await getModerator(tenantId, id);
+const tenantId: string = "acme-corp-8421";
+const id: string = "mod-7f3b2a9d";
+const includeArchivedModerators: boolean | undefined = undefined; // optional parameter example
+const result: GetModerator200Response = await getModerator(tenantId, id);
 [inline-code-end]

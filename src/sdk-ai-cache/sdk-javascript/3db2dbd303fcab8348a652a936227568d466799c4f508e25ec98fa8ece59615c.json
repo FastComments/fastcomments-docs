@@ -1,0 +1,7 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "3db2dbd303fcab8348a652a936227568d466799c4f508e25ec98fa8ece59615c",
+  "generatedAt": "2026-05-20T06:49:35.618Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst urlId: string = 'url_d3f1';\nconst userIdWS: string = 'ws_user_501';\nconst startTime: number = Date.now() - 3600_000; // 1 hour ago\nconst endTime: number = Date.now();\nconst result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);",
+  "model": "gpt-5-mini"
+}

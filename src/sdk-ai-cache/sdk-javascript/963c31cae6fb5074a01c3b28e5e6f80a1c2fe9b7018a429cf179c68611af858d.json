@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "963c31cae6fb5074a01c3b28e5e6f80a1c2fe9b7018a429cf179c68611af858d",
+  "generatedAt": "2026-05-20T06:47:10.454Z",
+  "codeExample": "const tenantId: string = \"tenant_8f1b2\";\nconst id: string = \"site_4c9d\";\nconst updateTenantBody: UpdateTenantBody = {\n  billingInfo: { planId: \"enterprise\", contactEmail: \"billing@acme.com\" } as BillingInfo,\n  apiDomainConfiguration: { domain: \"acme-app.prod\", allowedOrigins: [\"https://app.acme.com\"] } as APIDomainConfiguration\n} as UpdateTenantBody;\nconst result: FlagCommentPublic200Response = await updateTenant(tenantId, id, updateTenantBody);",
+  "model": "gpt-5-mini"
+}

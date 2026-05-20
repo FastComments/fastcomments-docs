@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "ddd1fa2698a1ae0dd9e45b76e28d3eeb479498d2fec29a0f6e53ce8ca2fa6a38",
+  "generatedAt": "2026-05-20T06:53:39.751Z",
+  "codeExample": "const tenantId: string = 'contoso-tenant-123';\nconst urlId: string = 'newsletter-weekly-2026';\nconst url: string = 'https://www.contoso.com/blog/new-feature';\nconst pageTitle: string = 'Contoso Blog — New Feature Launch';\nconst subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.SUBSCRIBED;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst resultWithSso: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);\nconst resultWithoutSso: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed);",
+  "model": "gpt-5-mini"
+}

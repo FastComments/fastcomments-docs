@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "767ebe24b24049ed61463fd459ebdd79daceab7e950ebe6d1db023ecf357f940",
+  "generatedAt": "2026-05-20T06:45:16.475Z",
+  "codeExample": "const tenantId: string = \"org-5821\";\nconst id: string = \"flag-9c4b\";\nconst fromName: string = \"Aisha Patel\";\nconst optionalNote: string | undefined = \"Please review this flagged comment when you have a moment\";\nconst result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, optionalNote);",
+  "model": "gpt-5-mini"
+}

@@ -14,17 +14,11 @@ Returns: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'renderEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_b6f3c2';
+const tenantId: string = 'acme-tenant-01';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'comment-notification',
-  recipient: { name: 'Ava Thompson', email: 'ava.thompson@publisher.com' },
-  context: {
-    siteName: 'City Gazette',
-    commentText: 'Thanks for the in-depth coverage — very helpful.',
-    articleTitle: 'Downtown Redevelopment Plan Advances',
-    threadUrl: 'https://citygazette.example/articles/2026/redevelopment#comments'
-  }
+  templateId: 'account_welcome_v2',
+  templateData: { firstName: 'Jordan', accountUrl: 'https://app.acme.com/settings' },
+  options: { includeUnsubscribe: true }
 };
-const locale: string = 'en-US';
-const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
+const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, 'en-US');
 [inline-code-end]

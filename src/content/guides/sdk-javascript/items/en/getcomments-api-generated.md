@@ -26,21 +26,31 @@ Returns: [`GetComments200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getComments Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const response: GetComments200Response = await getComments(
+const tenantId: string = "tenant_987";
+const page: number = 1;
+const limit: number = 20;
+const skip: number = 0;
+const asTree: boolean = true;
+const skipChildren: number = 0;
+const limitChildren: number = 10;
+const maxTreeDepth: number = 2;
+const urlId: string | undefined = "/news/article-2026-05";
+const userId: string | undefined = "user_42";
+const hashTag: string | undefined = "product-release";
+
+const result: GetComments200Response = await getComments(
   tenantId,
-  1, // page
-  20, // limit
-  0, // skip
-  true, // asTree
-  1, // skipChildren
-  3, // limitChildren
-  4, // maxTreeDepth
-  'articles/2026/new-product-launch', // urlId
-  'user_7890', // userId
-  'anon_4f3b2', // anonUserId
-  undefined, // contextUserId
-  '#launch', // hashTag
-  undefined // parentId
+  page,
+  limit,
+  skip,
+  asTree,
+  skipChildren,
+  limitChildren,
+  maxTreeDepth,
+  urlId,
+  userId,
+  undefined,
+  undefined,
+  hashTag
 );
 [inline-code-end]

@@ -15,6 +15,12 @@ Returns: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getTranslations Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsBase: GetTranslationsResponse = await getTranslations("acme-site-482", "commentThread");
-const translationsSpanishFullIds: GetTranslationsResponse = await getTranslations("acme-site-482", "commentThread", "es-ES", true);
+(async () => {
+  const namespace: string = 'user-management';
+  const component: string = 'profile-settings';
+  const locale: string = 'en-GB';
+  const useFullTranslationIds: boolean = true;
+  const resultWithLocale: GetTranslationsResponse = await getTranslations(namespace, component, locale, useFullTranslationIds);
+  const resultDefault: GetTranslationsResponse = await getTranslations(namespace, component);
+})();
 [inline-code-end]

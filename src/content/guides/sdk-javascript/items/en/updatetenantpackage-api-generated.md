@@ -14,12 +14,13 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateTenantPackage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3b7f9d-prod";
-const id: string = "pkg_enterprise_2026";
+const tenantId: string = 'tenant-4b2c9f2';
+const id: string = 'pkg-71f3c9a';
 const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: "Enterprise Plus",
-  isActive: true,
-  // optional fields omitted intentionally (e.g., description, limits)
-} as UpdateTenantPackageBody;
+  name: 'Enterprise Moderation',
+  enabled: true,
+  // optional parameter provided
+  customConfigParameters: { imageProfanityThreshold: 1 }
+};
 const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
 [inline-code-end]

@@ -89,3 +89,208 @@ pub fn fmt_param(name: &str, info: &ParamInfo) -> String {
 pub fn fmt_nested(name: &str, type_def: &NestedType) -> String {
     format!("  {name}: {}", type_def.summary)
 }
+
+// ------------------------------------------------------------------
+// Rust prompt
+// ------------------------------------------------------------------
+
+pub fn rust_prompt(method: &super::rust_parser::Method) -> String {
+    let mut lines: Vec<String> = Vec::new();
+    lines.push(format!(
+        "Create an idiomatic Rust code example that calls the async function \"{}\".",
+        method.name
+    ));
+    lines.push(String::new());
+    lines.push("The function signature is:".to_string());
+    lines.push(format!(
+        "pub async fn {}(configuration: &configuration::Configuration, params: {}) -> Result<{}, Error>",
+        method.name, method.params_type, method.response_type
+    ));
+    lines.push(String::new());
+    lines.push("Function Parameters (inside the params struct):".to_string());
+    if method.parameters.is_empty() {
+        lines.push("  (none)".to_string());
+    } else {
+        for (name, info) in &method.parameters {
+            let required = if info.required {
+                "required".to_string()
+            } else {
+                "optional (Option<T>)".to_string()
+            };
+            lines.push(format!(
+                "  - {name}: {ty} ({required})",
+                ty = info.type_
+            ));
+        }
+    }
+    lines.push(String::new());
+    let rt = if method.response_type.is_empty() {
+        "unit".to_string()
+    } else {
+        method.response_type.clone()
+    };
+    lines.push(format!("Return Type: Result<{rt}, Error>"));
+    if !method.nested_types.is_empty() {
+        lines.push(String::new());
+        lines.push("Type Definitions:".to_string());
+        for (type_name, _td) in &method.nested_types {
+            // Node's `${typeDef}` -> `[object Object]` again.
+            lines.push(format!("  {type_name}: [object Object]"));
+        }
+    }
+    lines.push(String::new());
+    lines.push("Requirements:".to_string());
+    lines.push("1. Do NOT include any use statements or imports".to_string());
+    lines.push("2. Assume configuration and all types are already in scope".to_string());
+    lines.push("3. Create a params struct instance with realistic values".to_string());
+    lines.push("4. Use realistic parameter values (not \"example_string\" - use actual realistic values like \"acme-corp-tenant\", \"news/article\", etc.)".to_string());
+    lines.push("5. Call the function with .await and use ? operator to unwrap the Result".to_string());
+    lines.push("6. Use proper Rust type annotations and ownership semantics".to_string());
+    lines.push("7. Demonstrate optional parameters with Some(...) where relevant".to_string());
+    lines.push("8. Keep example very concise (< 25 lines)".to_string());
+    lines.push("9. Use idiomatic Rust style (snake_case, proper formatting)".to_string());
+    lines.push("10. Do NOT add any comments or explanations in the code".to_string());
+    lines.push(String::new());
+    lines.push("Return only the Rust code, no explanations or markdown formatting.".to_string());
+    lines.join("\n")
+}
+
+// ------------------------------------------------------------------
+// C++ prompt
+// ------------------------------------------------------------------
+
+pub fn cpp_prompt(method: &super::cpp_parser::Method) -> String {
+    let mut lines: Vec<String> = Vec::new();
+    let rt = if method.response_type.is_empty() {
+        "void".to_string()
+    } else {
+        method.response_type.clone()
+    };
+    lines.push(format!(
+        "Create an idiomatic C++ code example that calls the async method \"{}\" from the FastComments C++ SDK.",
+        method.name
+    ));
+    lines.push(String::new());
+    lines.push("The method returns:".to_string());
+    lines.push(format!("pplx::task<std::shared_ptr<{rt}>>"));
+    lines.push(String::new());
+    lines.push("Function Parameters:".to_string());
+    if method.parameters.is_empty() {
+        lines.push("  (none)".to_string());
+    } else {
+        for (name, info) in &method.parameters {
+            let required = if info.required {
+                "required".to_string()
+            } else {
+                "optional (boost::optional<T>)".to_string()
+            };
+            lines.push(format!(
+                "  - {name}: {ty} ({required})",
+                ty = info.type_
+            ));
+        }
+    }
+    lines.push(String::new());
+    lines.push(format!("Return Type: pplx::task<std::shared_ptr<{rt}>>"));
+    if !method.nested_types.is_empty() {
+        lines.push(String::new());
+        lines.push("Type Definitions:".to_string());
+        for (type_name, td) in &method.nested_types {
+            let summary = if td.summary.is_empty() {
+                "Type definition".to_string()
+            } else {
+                td.summary.clone()
+            };
+            lines.push(format!("  {type_name}: {summary}"));
+        }
+    }
+    lines.push(String::new());
+    lines.push("Requirements:".to_string());
+    lines.push("1. Do NOT include any #include statements or namespace declarations".to_string());
+    lines.push("2. Assume an API client instance named \"api\" is already created and in scope".to_string());
+    lines.push("3. Use realistic parameter values (not \"example_string\" - use actual realistic values like \"my-tenant-123\", \"user@example.com\", etc.)".to_string());
+    lines.push(format!(
+        "4. Call the method using api->{}(...) and chain with .then() to handle the result",
+        method.name
+    ));
+    lines.push("5. Use proper C++ types: utility::string_t for strings, std::make_shared for shared pointers".to_string());
+    lines.push("6. Demonstrate optional parameters with boost::optional where relevant".to_string());
+    lines.push("7. Keep example very concise (< 25 lines)".to_string());
+    lines.push("8. Use idiomatic C++ style and proper formatting".to_string());
+    lines.push("9. Do NOT add any comments or explanations in the code".to_string());
+    lines.push("10. The SDK uses cpprest (Microsoft C++ REST SDK), so use utility::string_t for strings".to_string());
+    lines.push(String::new());
+    lines.push("Return only the C++ code, no explanations or markdown formatting.".to_string());
+    lines.join("\n")
+}
+
+// ------------------------------------------------------------------
+// Nim prompt
+// ------------------------------------------------------------------
+
+pub fn nim_prompt(method: &super::nim_parser::Method) -> String {
+    let mut lines: Vec<String> = Vec::new();
+    let rt = if method.response_type.is_empty() {
+        "void".to_string()
+    } else {
+        method.response_type.clone()
+    };
+    lines.push(format!(
+        "Create an idiomatic Nim code example that calls the function \"{}\" from the FastComments Nim SDK.",
+        method.name
+    ));
+    lines.push(String::new());
+    lines.push("The function returns:".to_string());
+    lines.push(format!("(Option[{rt}], Response)"));
+    lines.push(String::new());
+    lines.push("Function Parameters:".to_string());
+    if method.parameters.is_empty() {
+        lines.push("  (none)".to_string());
+    } else {
+        for (name, info) in &method.parameters {
+            // Skip the httpClient parameter (matches
+            // openai-client.js:322).
+            if name == "httpClient" {
+                continue;
+            }
+            let required = if info.required { "required" } else { "optional" };
+            lines.push(format!(
+                "  - {name}: {ty} ({required})",
+                ty = info.type_
+            ));
+        }
+    }
+    lines.push(String::new());
+    lines.push(format!("Return Type: (Option[{rt}], Response)"));
+    if !method.nested_types.is_empty() {
+        lines.push(String::new());
+        lines.push("Type Definitions:".to_string());
+        for (type_name, td) in &method.nested_types {
+            let summary = if td.summary.is_empty() {
+                "Type definition".to_string()
+            } else {
+                td.summary.clone()
+            };
+            lines.push(format!("  {type_name}: {summary}"));
+        }
+    }
+    lines.push(String::new());
+    lines.push("Requirements:".to_string());
+    lines.push("1. Do NOT include any import statements".to_string());
+    lines.push("2. Assume an HttpClient instance named \"client\" is already created and in scope".to_string());
+    lines.push("3. CRITICAL: You MUST use named arguments for ALL function parameters (e.g., client.getCommentsPublic(tenantId = \"...\", urlId = \"...\", page = 0, ...))".to_string());
+    lines.push("4. Use realistic parameter values (not \"example_string\" - use actual realistic values like \"my-tenant-123\", \"news/article-title\", etc.)".to_string());
+    // Note: Node leaves the literal `${method.name}` text in the
+    // prompt string (it's NOT a template literal inside that string).
+    lines.push("5. Call the function and destructure the result tuple like: let (response, httpResponse) = client.${method.name}(...)".to_string());
+    lines.push("6. Check if response.isSome and access the value with response.get()".to_string());
+    lines.push("7. Use proper Nim types: string, int, bool, seq[string] for arrays".to_string());
+    lines.push("8. For optional/default parameters, pass appropriate default values (0 for int, \"\" for string, false for bool, @[] for seq, etc.)".to_string());
+    lines.push("9. Keep example very concise (< 30 lines)".to_string());
+    lines.push("10. Use idiomatic Nim style (camelCase for variables, proper indentation with 2 spaces)".to_string());
+    lines.push("11. Do NOT add any comments or explanations in the code".to_string());
+    lines.push("12. IMPORTANT: ALWAYS use named arguments like paramName = value for every parameter".to_string());
+    lines.push(String::new());
+    lines.push("Return only the Nim code, no explanations or markdown formatting.".to_string());
+    lines.join("\n")
+}

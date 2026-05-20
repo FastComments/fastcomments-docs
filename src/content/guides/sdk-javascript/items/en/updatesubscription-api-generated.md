@@ -15,15 +15,20 @@ Returns: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'updateSubscription Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2c';
-const subscriptionId: string = 'sub_7641a2b3';
-const updateData: UpdateAPIUserSubscriptionData = {
-  status: 'active',
-  planId: 'pro_annual',
-  autoRenew: true,
-  renewalDate: '2026-04-15T00:00:00Z',
-  metadata: { upgradedBy: 'billing-team' }
-};
-const userId: string = 'user_215';
-const result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, subscriptionId, updateData, userId);
+(async () => {
+  const tenantId: string = 'acme-corp-117';
+  const id: string = 'sub_7f3b21';
+  const userId: string = 'user_jdoe';
+  const updateAPIUserSubscriptionData: UpdateAPIUserSubscriptionData = {
+    planId: 'pro-monthly',
+    status: 'active',
+    startDate: '2026-05-01',
+    seats: 10,
+    autoRenew: true,
+    billingCycle: 'monthly',
+    metadata: { source: 'self-serve' }
+  };
+  const result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, id, updateAPIUserSubscriptionData, userId);
+  console.log(result);
+})();
 [inline-code-end]

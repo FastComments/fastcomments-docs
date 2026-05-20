@@ -22,17 +22,11 @@ Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getEventLog Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
-const urlId: string = 'article-2026-03-25';
-const userIdWS: string | undefined = undefined; // optional upstream value
-const startTime: number = Date.parse('2026-03-01T00:00:00Z');
-const endTime: number = Date.parse('2026-03-25T23:59:59Z');
-
-const eventLogResponse: GetEventLog200Response = await getEventLog(
-  tenantId,
-  urlId,
-  userIdWS ?? 'ws_user_8b1f',
-  startTime,
-  endTime
-);
+const tenantId: string = "tenant_acme_01";
+const urlId: string = "url_742";
+const userIdWS: string = "ws_user_97";
+const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
+const optionalEndTime: number | undefined = undefined;
+const endTime: number = optionalEndTime ?? Date.now();
+const result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
 [inline-code-end]

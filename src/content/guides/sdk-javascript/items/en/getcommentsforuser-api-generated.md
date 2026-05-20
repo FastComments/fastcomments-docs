@@ -26,31 +26,9 @@ Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getCommentsForUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = "user_92b7f4";
-const tenantId: string = "news-tenant-uk";
-const urlId: string = "https://news.example.co.uk/articles/2026/05/01/local-election";
-const page: number = 1;
-const lastGenDate: number = Date.now() - 24 * 60 * 60 * 1000;
-const fetchPageForCommentId: string = "c_987654321";
-const includei10n: boolean = true;
-const locale: string = "en-GB";
-const includeConfig: boolean = true;
-const includeNotificationCount: boolean = false;
-const result: GetCommentsForUserResponse = await getCommentsForUser(
-  userId,
-  tenantId,
-  urlId,
-  page,
-  undefined,
-  lastGenDate,
-  undefined,
-  fetchPageForCommentId,
-  includei10n,
-  false,
-  locale,
-  includeConfig,
-  includeNotificationCount,
-  false,
-  undefined
-);
+const userId: string = 'user_12345', tenantId: string = 'tenant_acme', urlId: string = 'https://news.example.com/article/987';
+const page: number = 1, lastGenDate: number = Date.now() - 60 * 60 * 1000;
+const includei10n: boolean = true, useFullTranslationIds: boolean = false, locale: string = 'en-US';
+const includeConfig: boolean = true, includeNotificationCount: boolean = false, countAll: boolean = false, sso: string = 'sso-token-abc123';
+const response: GetCommentsForUserResponse = await getCommentsForUser(userId, tenantId, urlId, page, undefined, lastGenDate, undefined, undefined, includei10n, useFullTranslationIds, locale, includeConfig, includeNotificationCount, countAll, sso);
 [inline-code-end]

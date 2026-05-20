@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "97782441bcb94941cdef573a825d2ec06afbd8bd4c62d994f1f1bf87e1576baa",
+  "generatedAt": "2026-05-20T06:46:06.106Z",
+  "codeExample": "const tenantId: string = 'tenant_00123';\nconst id: string = 'tmpl_4f2a9b';\nconst customConfig: CustomConfigParameters = { maxRetries: 2, sendDelayMinutes: 0 };\nconst updateEmailTemplateBody: UpdateEmailTemplateBody = {\n  name: 'Account Settings Update',\n  subject: 'Your account settings were changed',\n  htmlBody: '<p>Your account settings were successfully updated.</p>',\n  isActive: true,\n  senderName: 'Customer Support',\n  replyTo: 'support@company.com',\n  customConfig\n};\nconst result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);",
+  "model": "gpt-5-mini"
+}
