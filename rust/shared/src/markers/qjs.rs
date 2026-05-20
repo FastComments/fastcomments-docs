@@ -83,16 +83,9 @@ pub fn eval_marker_sync(kind: MarkerKind, config_source: &str) -> Result<JsonVal
     })
 }
 
-/// Async wrapper so callers' `.await` chains keep compiling unchanged.
-/// QuickJS eval is sync but very fast (microseconds for our configs); no
-/// need to spawn_blocking.
-pub async fn eval_marker(
-    _sidecar: &crate::sidecar::SidecarClient,
-    kind: MarkerKind,
-    config_source: &str,
-) -> Result<JsonValue> {
-    eval_marker_sync(kind, config_source)
-}
+// (Async wrapper removed — pipelines now call eval_marker_sync directly
+// inside their async funcs. QuickJS eval is microseconds for our
+// configs; no spawn_blocking warranted.)
 
 fn collect_own_keys(obj: &Object<'_>) -> Result<HashSet<String>> {
     let mut out = HashSet::new();

@@ -1,18 +1,17 @@
 /**
- * Build-time HTTP sidecar consumed by the Rust indexer.
+ * Build-time HTTP sidecar consumed by the Rust indexer and sitegen.
  *
- * Owns the two pieces of behavior we cannot run from Rust without embedding a
- * JS runtime:
+ * Only owns one piece of behavior: highlight.js syntax highlighting,
+ * which we keep in Node to preserve byte-exact compatibility with the
+ * existing rendered code blocks. The marker config evaluator
+ * (vm.runInContext) was previously here but moved in-process to
+ * Rust via QuickJS — see rust/shared/src/markers/qjs.rs.
  *
- *   POST /highlight    -> wraps highlight.js (matches src/guides.js:26-33).
- *   POST /eval-marker  -> wraps vm.runInContext for inline-code,
- *                         code-example, and api-resource-header marker
- *                         configs (see src/inline-code-generator.js,
- *                         src/code-example-generator.js,
- *                         src/api-resource-header-generator.js).
+ *   POST /highlight  -> wraps highlight.js (matches src/guides.js:26-33).
+ *   GET  /health     -> liveness check used by Rust supervisors.
  *
- * The Rust indexer auto-starts this process, reads the port from
- * `.content-sidecar-port`, then issues HTTP requests during indexing. The
+ * The Rust indexer/sitegen auto-starts this process, reads the port from
+ * `.content-sidecar-port`, then issues HTTP requests during builds. The
  * production search server never talks to this sidecar.
  *
  * Run manually:
@@ -20,7 +19,6 @@
  */
 
 const express = require('express');
-const vm = require('vm');
 const hljs = require('highlight.js');
 const fs = require('fs');
 const path = require('path');
@@ -52,49 +50,9 @@ app.post('/highlight', (req, res) => {
     }
 });
 
-app.post('/eval-marker', (req, res) => {
-    const body = req.body || {};
-    const kind = body.kind;
-    const configSource = body.config_source;
-    if (typeof configSource !== 'string') {
-        return res.status(400).send({ error: 'config_source is required (string)' });
-    }
-    if (
-        kind !== 'inline-code' &&
-        kind !== 'code-example' &&
-        kind !== 'api-resource-header' &&
-        kind !== 'related-parameter'
-    ) {
-        return res.status(400).send({ error: `unknown marker kind: ${kind}` });
-    }
-
-    const args = {};
-    vm.createContext(args);
-    try {
-        if (kind === 'inline-code') {
-            args.globals = {};
-        }
-        vm.runInContext(configSource, args);
-    } catch (e) {
-        return res.status(400).send({
-            error: `eval failed: ${e.message}`,
-            input: configSource,
-        });
-    }
-    if (kind === 'inline-code') {
-        delete args.globals;
-    }
-
-    let plain;
-    try {
-        plain = JSON.parse(JSON.stringify(args));
-    } catch (e) {
-        return res.status(500).send({
-            error: `marker result not json-serializable: ${e.message}`,
-        });
-    }
-    res.send(plain);
-});
+// /eval-marker was removed once the Rust pipeline embedded QuickJS
+// (rust/shared/src/markers/qjs.rs). The Node sidecar now only carries
+// the highlight.js binding.
 
 const requestedPort = parseInt(process.env.CONTENT_SIDECAR_PORT || '0', 10);
 const portFile = process.env.CONTENT_SIDECAR_PORT_FILE

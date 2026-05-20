@@ -31,6 +31,7 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use scraper::{Html, Node, Selector};
 
+use crate::markers::qjs;
 use crate::sidecar::{MarkerKind, SidecarClient};
 
 /// Hardcoded demo tenant matching `ExampleTenantId` in `src/utils.js`.
@@ -160,10 +161,8 @@ async fn expand_related_parameter(input: &str, sidecar: &SidecarClient) -> Resul
             anyhow::bail!("related-parameter end before start");
         }
         let config_source = &current[start_idx + RELATED_PARAM_START.len()..end_idx];
-        let parsed = sidecar
-            .eval_marker(MarkerKind::RelatedParameter, config_source)
-            .await
-            .context("parse related-parameter config via sidecar")?;
+        let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
+            .context("parse related-parameter config via qjs")?;
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
         let type_ = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("");
         // Mirrors src/related-parameter-generator.js:7-16. We skip the
@@ -206,10 +205,8 @@ async fn expand_inline_code(input: &str, sidecar: &SidecarClient) -> Result<Stri
         };
         let attrs_source = &current[attrs_start + INLINE_CODE_ATTRS_START.len()..attrs_end];
 
-        let parsed = sidecar
-            .eval_marker(MarkerKind::InlineCode, attrs_source)
-            .await
-            .context("parse inline-code attrs via sidecar")?;
+        let parsed = qjs::eval_marker_sync(MarkerKind::InlineCode, attrs_source)
+            .context("parse inline-code attrs via qjs")?;
         let title = parsed
             .get("title")
             .and_then(|v| v.as_str())
@@ -288,10 +285,8 @@ async fn expand_code_example(input: &str, sidecar: &SidecarClient) -> Result<Str
         }
         let config_source = &current[start_idx + CODE_EXAMPLE_START.len()..end_idx];
 
-        let parsed = sidecar
-            .eval_marker(MarkerKind::CodeExample, config_source)
-            .await
-            .context("parse code-example config via sidecar")?;
+        let parsed = qjs::eval_marker_sync(MarkerKind::CodeExample, config_source)
+            .context("parse code-example config via qjs")?;
         let title = parsed
             .get("title")
             .and_then(|v| v.as_str())
@@ -359,10 +354,8 @@ async fn expand_api_resource_header(input: &str, sidecar: &SidecarClient) -> Res
             anyhow::bail!("api-resource-header end before start");
         }
         let config_source = &current[start_idx + API_RES_START.len()..end_idx];
-        let parsed = sidecar
-            .eval_marker(MarkerKind::ApiResourceHeader, config_source)
-            .await
-            .context("parse api-resource-header config via sidecar")?;
+        let parsed = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
+            .context("parse api-resource-header config via qjs")?;
 
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
         let route = parsed.get("route").and_then(|v| v.as_str()).unwrap_or("");

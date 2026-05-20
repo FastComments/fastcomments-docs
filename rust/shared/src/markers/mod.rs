@@ -9,4 +9,4 @@
 
 pub mod qjs;
 
-pub use qjs::eval_marker;
+pub use qjs::eval_marker_sync;

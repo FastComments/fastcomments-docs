@@ -5,11 +5,15 @@ use serde::{Deserialize, Serialize};
 
 /// HTTP client for the Node content sidecar (`src/content-sidecar.js`).
 ///
-/// The sidecar owns two pieces of behavior we cannot easily reproduce in Rust:
+/// The sidecar now owns exactly one piece of behavior:
 ///
-/// - **highlight.js** syntax highlighting (matching the existing build output).
-/// - **`vm.runInContext`** parsing of the JS object literals embedded in marker
-///   tags like `[inline-code-attrs-start ... inline-code-attrs-end]`.
+/// - **highlight.js** syntax highlighting (matching the existing build
+///   output byte-for-byte).
+///
+/// Previously also hosted `/eval-marker` for `vm.runInContext` — that's
+/// now in-process Rust via QuickJS (see `markers::qjs`). The
+/// `MarkerKind` enum stays here as a free-standing type because both
+/// QuickJS and the (removed) sidecar path key off it.
 #[derive(Clone)]
 pub struct SidecarClient {
     base_url: String,
@@ -29,12 +33,10 @@ pub struct HighlightResponse {
     pub language: Option<String>,
 }
 
-#[derive(Debug, Serialize)]
-pub struct EvalMarkerRequest<'a> {
-    pub kind: MarkerKind,
-    pub config_source: &'a str,
-}
-
+/// Identifier for which marker shape a config block is. Used by
+/// `markers::qjs::eval_marker_sync` to apply per-kind preset logic
+/// (currently only `InlineCode` pre-sets a `globals = {}` so scripts
+/// can reference `globals.foo`).
 #[derive(Debug, Serialize, Deserialize, Clone, Copy)]
 #[serde(rename_all = "kebab-case")]
 pub enum MarkerKind {
@@ -69,27 +71,6 @@ impl SidecarClient {
             let status = resp.status();
             let body = resp.text().await.unwrap_or_default();
             anyhow::bail!("sidecar /highlight returned {status}: {body}");
-        }
-        Ok(resp.json().await?)
-    }
-
-    pub async fn eval_marker(
-        &self,
-        kind: MarkerKind,
-        config_source: &str,
-    ) -> Result<serde_json::Value> {
-        let url = format!("{}/eval-marker", self.base_url);
-        let resp = self
-            .http
-            .post(&url)
-            .json(&EvalMarkerRequest { kind, config_source })
-            .send()
-            .await
-            .with_context(|| format!("POST {url}"))?;
-        if !resp.status().is_success() {
-            let status = resp.status();
-            let body = resp.text().await.unwrap_or_default();
-            anyhow::bail!("sidecar /eval-marker returned {status}: {body}");
         }
         Ok(resp.json().await?)
     }
