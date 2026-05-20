@@ -32,6 +32,7 @@ use serde::{Deserialize, Serialize};
 use tokio::sync::Mutex;
 use tracing::{info, warn};
 
+use crate::discover::default_locale_files;
 use crate::meta_json;
 use crate::openai::JsonTranslator;
 use crate::snapshot::hash_content;
@@ -445,14 +446,18 @@ async fn process_one_task(
         );
         return Ok(Outcome::Skipped);
     }
-    let source_path = guides_dir
-        .join(&task.guide_id)
-        .join("items")
-        .join(&locales.default_locale)
-        .join(&task.filename);
-    let source = tokio::fs::read_to_string(&source_path)
+    // task.source_path was recorded at discovery time. For
+    // root-level intro.md / conclusion.md it points at the guide
+    // root, not items/<default_locale>/. Re-constructing the path
+    // here from (guide_id, filename) would silently re-introduce the
+    // "intro.md missing from items/<default_locale>/" bug — read
+    // would fail and the task would be marked failed even though
+    // discovery saw the file at the root.
+    let _ = guides_dir; // retained in signature for symmetry
+    let _ = locales;    // ditto
+    let source = tokio::fs::read_to_string(&task.source_path)
         .await
-        .with_context(|| format!("read source {source_path:?}"))?;
+        .with_context(|| format!("read source {:?}", task.source_path))?;
 
     if source.trim().len() < 10 {
         info!(
@@ -556,6 +561,12 @@ struct Task {
     locale: String,
     filename: String,
     source_hash: String,
+    /// Absolute path of the source-locale file. Usually
+    /// `<guide>/items/<default_locale>/<filename>`, but for root-level
+    /// intro.md / conclusion.md (per Node check-translations.js:147-158)
+    /// it points at the guide root. The translated output always
+    /// lands under `items/<locale>/<filename>` regardless.
+    source_path: PathBuf,
 }
 
 /// Filtered task discovery. Mirrors translate-with-gpt.js::buildTaskList
@@ -586,25 +597,19 @@ fn build_task_list_filtered(
                 continue;
             }
         }
-        let items_path = entry.path().join("items");
-        if !items_path.exists() {
+        let guide_path = entry.path();
+        let items_path = guide_path.join("items");
+        // discover::default_locale_files handles the root-level
+        // intro.md / conclusion.md fallback that Node's
+        // getDefaultLocaleFiles applies (check-translations.js:141-161).
+        // Without that, ~157 root-level intro/conclusion files were
+        // silently excluded from every translation run.
+        let default_files = default_locale_files(&guide_path, &locales.default_locale);
+        if default_files.is_empty() {
             continue;
         }
-        let default_items = items_path.join(&locales.default_locale);
-        if !default_items.exists() {
-            continue;
-        }
-        for src_entry in std::fs::read_dir(&default_items)?.flatten() {
-            let p = src_entry.path();
-            if p.extension().and_then(|s| s.to_str()) != Some("md") {
-                continue;
-            }
-            let filename = p
-                .file_name()
-                .and_then(|s| s.to_str())
-                .unwrap_or_default()
-                .to_string();
-            let Ok(content) = std::fs::read_to_string(&p) else {
+        for src in default_files {
+            let Ok(content) = std::fs::read_to_string(&src.source_path) else {
                 continue;
             };
             let source_hash = hash_content(&content);
@@ -618,8 +623,8 @@ fn build_task_list_filtered(
                         continue;
                     }
                 }
-                let target = items_path.join(locale).join(&filename);
-                let cache_key = cache_key(&guide_id, locale, &filename);
+                let target = items_path.join(locale).join(&src.filename);
+                let cache_key = cache_key(&guide_id, locale, &src.filename);
                 let cached_hash = cache.get(&cache_key);
                 let needs = force
                     || !target.exists()
@@ -628,8 +633,9 @@ fn build_task_list_filtered(
                     tasks.push(Task {
                         guide_id: guide_id.clone(),
                         locale: locale.clone(),
-                        filename: filename.clone(),
+                        filename: src.filename.clone(),
                         source_hash: source_hash.clone(),
+                        source_path: src.source_path.clone(),
                     });
                 }
             }
@@ -849,6 +855,7 @@ mod tests {
             locale: "fr_fr".into(),
             filename: "f.md".into(),
             source_hash: "abc".into(),
+            source_path: PathBuf::from("/tmp/unused"),
         };
         record_cache(&cache, &dirty, &task).await;
         assert!(dirty.load(Ordering::Acquire));
@@ -869,6 +876,7 @@ mod tests {
             locale: "fr_fr".into(),
             filename: "f.md".into(),
             source_hash: "abc".into(),
+            source_path: PathBuf::from("/tmp/unused"),
         };
         record_cache(&cache, &dirty, &task).await;
 
@@ -906,6 +914,7 @@ mod tests {
                 locale: "fr_fr".into(),
                 filename: format!("f{i}.md"),
                 source_hash: format!("h{i}"),
+                source_path: PathBuf::from("/tmp/unused"),
             };
             record_cache(&cache, &dirty, &task).await;
         }
@@ -1047,6 +1056,41 @@ mod cli_tests {
         .unwrap();
         assert_eq!(only_a.len(), 2); // x.md × 2 non-default locales
         assert!(only_a.iter().all(|t| t.guide_id == "guide-a"));
+    }
+
+    #[test]
+    fn build_task_list_picks_up_root_level_intro_and_conclusion() {
+        // Regression: ~157 root-level intro.md/conclusion.md files
+        // across ~80 guides were silently excluded from the previous
+        // walk because it only scanned items/<default>/. Discovery
+        // must surface them so they hit the cache + translation path.
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write_md(g, "g", "en", "howto.md", "Body content for howto.");
+        // intro.md at guide ROOT (mirrors src/content/guides/<id>/intro.md).
+        std::fs::write(g.join("g").join("intro.md"), "Welcome to the guide.").unwrap();
+        std::fs::write(g.join("g").join("conclusion.md"), "Thanks for reading.").unwrap();
+
+        let cache = CacheMap::new();
+        let tasks =
+            build_task_list_filtered(g, &locales_en_fr_de(), &cache, None, None, false).unwrap();
+        // 3 source files (howto + intro + conclusion) × 2 non-default locales = 6 tasks
+        assert_eq!(tasks.len(), 6, "tasks: {tasks:#?}");
+        let names: std::collections::HashSet<&str> =
+            tasks.iter().map(|t| t.filename.as_str()).collect();
+        assert!(names.contains("intro.md"), "intro.md missing from tasks");
+        assert!(names.contains("conclusion.md"));
+
+        // For the root-level files, source_path MUST point at the
+        // guide root (not items/en/), otherwise process_one_task can't
+        // read the source.
+        let intro = tasks.iter().find(|t| t.filename == "intro.md").unwrap();
+        assert_eq!(intro.source_path, g.join("g").join("intro.md"));
+        let conclusion = tasks.iter().find(|t| t.filename == "conclusion.md").unwrap();
+        assert_eq!(conclusion.source_path, g.join("g").join("conclusion.md"));
+        // And for the regular item, source_path stays under items/en/.
+        let howto = tasks.iter().find(|t| t.filename == "howto.md").unwrap();
+        assert_eq!(howto.source_path, g.join("g/items/en/howto.md"));
     }
 
     #[test]

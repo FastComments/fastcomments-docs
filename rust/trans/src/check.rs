@@ -14,11 +14,12 @@ use fcdocs_shared::locales::Locales;
 use serde::{Deserialize, Serialize};
 use tracing::{info, warn};
 
+use crate::discover::default_locale_files;
 use crate::snapshot::hash_content;
 
-#[derive(Debug, Default, Serialize, Deserialize)]
-#[serde(transparent)]
-struct CacheMap(BTreeMap<String, String>);
+// Same shape as run::CacheMap. BTreeMap serializes to a JSON object
+// matching translation-cache.json's on-disk layout.
+type CacheMap = BTreeMap<String, String>;
 
 pub async fn run() -> Result<()> {
     let repo = repo_root()?;
@@ -70,27 +71,27 @@ pub async fn run() -> Result<()> {
             continue;
         }
         let default_items = items_path.join(&locales.default_locale);
-        if !default_items.exists() {
-            // Pre-locale flat structure — needs `migrate-to-locale-structure.js`.
+        if !default_items.exists()
+            && !entry.path().join("intro.md").exists()
+            && !entry.path().join("conclusion.md").exists()
+        {
+            // No locale-structured items and no root-level
+            // intro/conclusion either — pre-locale flat structure
+            // needing `migrate-to-locale-structure.js`.
             needs_migration.push(guide_id);
             continue;
         }
-        // For each .md in the default locale, check every non-default locale.
-        let default_files: Vec<PathBuf> = std::fs::read_dir(&default_items)?
-            .flatten()
-            .map(|e| e.path())
-            .filter(|p| p.extension().and_then(|s| s.to_str()) == Some("md"))
-            .collect();
-
-        for src_path in &default_files {
-            let filename = src_path
-                .file_name()
-                .and_then(|s| s.to_str())
-                .unwrap_or_default()
-                .to_string();
-            let raw = std::fs::read_to_string(src_path)?;
+        // Use the same discovery helper Node's getDefaultLocaleFiles
+        // mirrors (check-translations.js:141-161). It picks up every
+        // .md under items/<defaultLocale>/ AND falls back to root-level
+        // intro.md / conclusion.md when items/<defaultLocale>/ lacks
+        // them. Without that fallback, ~157 root-level files across
+        // ~80 guides were silently excluded from both staleness checks
+        // and translation runs.
+        for src in default_locale_files(&entry.path(), &locales.default_locale) {
+            let filename = src.filename.clone();
+            let raw = std::fs::read_to_string(&src.source_path)?;
             let source_hash = hash_content(&raw);
-
             let default_counts = count_inline_code(&raw);
 
             for (locale_key, _) in &locales.locales {
@@ -99,7 +100,7 @@ pub async fn run() -> Result<()> {
                 }
                 let target = items_path.join(locale_key).join(&filename);
                 let cache_key = format!("{guide_id}/{locale_key}/{filename}");
-                let cached_hash = cache.0.get(&cache_key);
+                let cached_hash = cache.get(&cache_key);
                 let needs = !target.exists() || cached_hash != Some(&source_hash);
                 if needs {
                     gaps += 1;
@@ -252,7 +253,6 @@ fn audit_ui_translations(
                     let expected = hash_content(src_str);
                     let cache_key = format!("{locale_key}/{default_key}");
                     let fresh = ui_cache
-                        .0
                         .get(&cache_key)
                         .map(|cached| cached == &expected)
                         .unwrap_or(false);
@@ -351,7 +351,6 @@ fn audit_meta_translations(
             };
             let cache_key = format!("{guide_id}/{locale_key}/meta.json");
             let fresh = cache
-                .0
                 .get(&cache_key)
                 .map(|cached| cached == expected)
                 .unwrap_or(false);
@@ -428,7 +427,7 @@ mod ui_audit_tests {
         for (k, v) in entries {
             b.insert(k.into(), v.into());
         }
-        CacheMap(b)
+        b
     }
 
     #[test]
@@ -576,7 +575,7 @@ mod meta_audit_tests {
         for (k, v) in entries {
             b.insert(k, v);
         }
-        CacheMap(b)
+        b
     }
 
     #[test]
