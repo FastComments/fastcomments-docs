@@ -507,24 +507,21 @@ fn get_locale_slot(state: &AppState, locale: &str) -> Result<LocaleSlot> {
 /// Pick the `docs_text` analyzer for a locale's index. Must mirror the
 /// indexer's `register_tokenizers` in `rust/indexer/src/main.rs` —
 /// drift between the two would cause asymmetric tokenization and
-/// recall holes. Today: English Porter stemmer for en / en_us, no
-/// stemmer for the rest.
-fn build_docs_text_analyzer(locale: &str) -> tantivy::tokenizer::TextAnalyzer {
+/// recall holes.
+///
+/// English Porter applied to EVERY locale (including non-English),
+/// matching Node's `tokenize='porter unicode61'` at
+/// `src/build-search-index-worker.js:70`. See the longer rationale
+/// in the indexer's register_tokenizers doc-comment.
+fn build_docs_text_analyzer(_locale: &str) -> tantivy::tokenizer::TextAnalyzer {
     use tantivy::tokenizer::{
-        LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer, TextAnalyzer,
+        Language, LowerCaser, RemoveLongFilter, SimpleTokenizer, Stemmer, TextAnalyzer,
     };
-    if locale == "en" || locale == "en_us" {
-        TextAnalyzer::builder(SimpleTokenizer::default())
-            .filter(RemoveLongFilter::limit(40))
-            .filter(LowerCaser)
-            .filter(Stemmer::new(tantivy::tokenizer::Language::English))
-            .build()
-    } else {
-        TextAnalyzer::builder(SimpleTokenizer::default())
-            .filter(RemoveLongFilter::limit(40))
-            .filter(LowerCaser)
-            .build()
-    }
+    TextAnalyzer::builder(SimpleTokenizer::default())
+        .filter(RemoveLongFilter::limit(40))
+        .filter(LowerCaser)
+        .filter(Stemmer::new(Language::English))
+        .build()
 }
 
 /// Mirrors src/server-search-engine.js:234-241.
@@ -839,6 +836,54 @@ mod fallback_tests {
         let results = run_search(&state, "en", "installation").unwrap();
         assert_eq!(results.len(), 1);
         assert_eq!(results[0].id, "guide-install>quickstart");
+    }
+
+    /// Pins parity with Node's `tokenize='porter unicode61'` setting
+    /// applied to EVERY locale. A fr_fr index containing "installing"
+    /// must match a fr_fr query for "installation" because both
+    /// stem to "instal" via English Porter. Before this fix,
+    /// non-English locales registered a no-stemmer analyzer and the
+    /// match would silently miss — the existing search-regression.js
+    /// harness only tested en, so the drift hid behind a green CI.
+    #[test]
+    fn non_english_locale_still_stems_per_node_parity() {
+        let tmp = tempfile::tempdir().unwrap();
+        let index_dir = tmp.path().to_path_buf();
+        let fr_dir = index_dir.join("fr_fr");
+        std::fs::create_dir_all(&fr_dir).unwrap();
+        let schema = build_test_schema();
+        let index = Index::create_in_dir(&fr_dir, schema.clone()).unwrap();
+        // Indexer would have registered the (now-Porter-everywhere)
+        // analyzer for fr_fr. We mirror that here.
+        index
+            .tokenizers()
+            .register("docs_text", build_docs_text_analyzer("fr_fr"));
+        let mut writer = index.writer(50_000_000).unwrap();
+        let title = schema.get_field("title").unwrap();
+        let url = schema.get_field("url").unwrap();
+        let search_text = schema.get_field("search_text").unwrap();
+        let doc_id = schema.get_field("doc_id").unwrap();
+        writer
+            .add_document(doc!(
+                doc_id => "guide-fr>quickstart",
+                title => "Installing FastComments",
+                url => "/guide-fr.html#quickstart",
+                search_text => "How to start installing FastComments on your site.",
+            ))
+            .unwrap();
+        writer.commit().unwrap();
+
+        let state = fake_state(index_dir);
+        // Query for a different surface form of "install" — only matches
+        // when the indexer + query analyzer both stem.
+        let results = run_search(&state, "fr_fr", "installation").unwrap();
+        assert!(
+            !results.is_empty(),
+            "fr_fr query 'installation' missed a doc indexed as 'installing' — \
+             non-English locales need the same Porter stemmer Node applied via \
+             tokenize='porter unicode61'."
+        );
+        assert_eq!(results[0].id, "guide-fr>quickstart");
     }
 }
 

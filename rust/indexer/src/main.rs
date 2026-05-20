@@ -387,27 +387,33 @@ fn build_schema() -> Schema {
 
 /// Register the per-locale tokenizer named `docs_text`.
 ///
-/// English-family locales get Porter stemming + lowercasing, matching the
-/// FTS5 `tokenize='porter unicode61'` setting in
-/// `src/build-search-index-worker.js:70`. Other locales get lowercasing
-/// without stemming (safer default — CJK locales may want a dedicated
-/// tokenizer like lindera/jieba in a follow-up).
-fn register_tokenizers(index: &Index, locale: &str) {
-    let analyzer: TextAnalyzer = if locale == "en" || locale == "en_us" {
-        TextAnalyzer::builder(SimpleTokenizer::default())
-            .filter(RemoveLongFilter::limit(40))
-            .filter(LowerCaser)
-            .filter(Stemmer::new(Language::English))
-            .build()
-    } else {
-        // Future: extend with per-locale stemmers (Russian, German, etc.) once
-        // we've validated they don't regress the FTS5 result set.
-        TextAnalyzer::builder(SimpleTokenizer::default())
-            .filter(RemoveLongFilter::limit(40))
-            .filter(LowerCaser)
-            .build()
-    };
-
+/// Register the `docs_text` analyzer for `locale`.
+///
+/// Matches Node's `tokenize='porter unicode61'` setting at
+/// `src/build-search-index-worker.js:70`, which applied the *English*
+/// Porter stemmer to every locale — including non-English ones. That
+/// isn't linguistically correct (German "Komment-" doesn't share
+/// suffixes with English), but it's the baseline behavior the existing
+/// SQLite indexes were built with, and what every fixture query was
+/// scored against. Using locale-aware stemmers here would drift result
+/// sets and rankings away from the Node baseline silently — the
+/// scripts/search-regression.js harness only tests en today so the
+/// drift wouldn't have surfaced.
+///
+/// Switching to per-locale Snowball stemmers is a deliberate future
+/// change that would need re-baselined fixtures + queries in each
+/// affected locale. Until then: parity wins.
+///
+/// The SAME logic lives in `rust/server/src/main.rs::build_docs_text_analyzer`.
+/// Drift between the two re-introduces the analyzer-mismatch class of
+/// bugs (queries tokenize one way; indexed terms another). Keep both
+/// arms in sync.
+fn register_tokenizers(index: &Index, _locale: &str) {
+    let analyzer: TextAnalyzer = TextAnalyzer::builder(SimpleTokenizer::default())
+        .filter(RemoveLongFilter::limit(40))
+        .filter(LowerCaser)
+        .filter(Stemmer::new(Language::English))
+        .build();
     index.tokenizers().register("docs_text", analyzer);
 }
 

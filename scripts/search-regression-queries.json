@@ -50,6 +50,22 @@
     {"query": "comments getting started", "locale": "en"},
     {"query": "ratings", "locale": "en"},
     {"query": "polls", "locale": "en"},
-    {"query": "private comments", "locale": "en"}
+    {"query": "private comments", "locale": "en"},
+
+    {"_comment": "Non-English locale coverage. Until per-locale Snowball stemmers land, every locale uses the English Porter stemmer (parity with Node's tokenize='porter unicode61' setting). These queries pick technical terms / brand names that survive translation, so they should still hit content in the localized indexes — and they exercise the analyzer registration path for non-en locales, which had silent recall drift before the parity fix."},
+    {"query": "installation", "locale": "fr_fr"},
+    {"query": "wordpress", "locale": "fr_fr"},
+    {"query": "react", "locale": "fr_fr"},
+    {"query": "sso", "locale": "fr_fr"},
+    {"query": "api", "locale": "fr_fr"},
+    {"query": "installation", "locale": "de_de"},
+    {"query": "wordpress", "locale": "de_de"},
+    {"query": "react", "locale": "de_de"},
+    {"query": "installation", "locale": "ja_jp"},
+    {"query": "wordpress", "locale": "ja_jp"},
+    {"query": "installation", "locale": "es_es"},
+    {"query": "react", "locale": "es_es"},
+    {"query": "installation", "locale": "zh_cn"},
+    {"query": "react", "locale": "ru_ru"}
   ]
 }
