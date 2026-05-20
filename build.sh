@@ -13,7 +13,12 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   mkdir -p src/static/csv
   mkdir -p src/static/images
   mkdir -p src/static/js
+  # `db/` is the legacy SQLite path used by src/server-search-engine.js.
+  # Production now runs the Rust server which reads Tantivy from
+  # `index/<locale>/`; the dir is still created so the legacy Node
+  # server can be started in dev if anyone needs it for comparison.
   mkdir -p db
+  mkdir -p index
 
   echo "Installing dependencies..."
   if ! npm install; then
@@ -21,6 +26,9 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
+  # better-sqlite3 is only used by the legacy Node search server +
+  # legacy indexer scripts. Production search no longer touches it,
+  # but `npm install` may still need a native rebuild for dev users.
   echo "Rebuilding native modules..."
   npm rebuild better-sqlite3
 
@@ -29,6 +37,25 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "ERROR: Rust build failed. Install rustup from https://rustup.rs/ if missing."
     exit 1
   fi
+  # Sanity check: run.sh and rust/target/release/indexer reference the
+  # default cargo target dir. If a dev has CARGO_TARGET_DIR set, copy
+  # the binaries into the expected location so the rest of build.sh +
+  # the service entrypoint still find them.
+  CARGO_TARGET="${CARGO_TARGET_DIR:-rust/target}"
+  if [ "$CARGO_TARGET" != "rust/target" ]; then
+    mkdir -p rust/target/release
+    cp -f "$CARGO_TARGET/release/server"  rust/target/release/server
+    cp -f "$CARGO_TARGET/release/indexer" rust/target/release/indexer
+    cp -f "$CARGO_TARGET/release/sitegen" rust/target/release/sitegen 2>/dev/null || true
+    cp -f "$CARGO_TARGET/release/sdkgen"  rust/target/release/sdkgen  2>/dev/null || true
+    cp -f "$CARGO_TARGET/release/trans"   rust/target/release/trans   2>/dev/null || true
+  fi
+  for bin in server indexer; do
+    if [ ! -x "rust/target/release/$bin" ]; then
+      echo "ERROR: rust/target/release/$bin missing after cargo build"
+      exit 1
+    fi
+  done
   echo "Rust build complete."
 
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
@@ -124,8 +151,11 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
   echo "Static build complete."
 
+  # Search indexes. Use the prebuilt binary directly so we don't pay
+  # cargo's resolve+check cost on every prod run. The Rust server in
+  # run.sh reads exactly these `index/<locale>/` dirs.
   echo "Building search indexes (Rust)..."
-  if ! npm run build-search-index-rs; then
+  if ! ./rust/target/release/indexer; then
     echo "ERROR: Search index build failed"
     exit 1
   fi
