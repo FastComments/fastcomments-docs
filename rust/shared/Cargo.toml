@@ -26,6 +26,7 @@ tracing = { workspace = true }
 once_cell = { workspace = true }
 rquickjs = { workspace = true }
 indexmap = { workspace = true }
+fcdocs-browser = { path = "../browser" }
 
 [dev-dependencies]
 tempfile = { workspace = true }

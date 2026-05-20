@@ -24,6 +24,13 @@ pub struct SidecarClient {
 pub struct HighlightRequest<'a> {
     pub code: &'a str,
     pub lang: Option<&'a str>,
+    /// Whether the sidecar should trim leading/trailing whitespace
+    /// before highlighting. Defaults to true for parity with the
+    /// marked highlight callback at `src/guides.js:26-33`. Marker
+    /// callers (`inline-code`, `code-example`) pass false so leading
+    /// `\n` is preserved (Node's inline-code-generator passes the raw
+    /// input straight to hljs without trimming).
+    pub trim: bool,
 }
 
 #[derive(Debug, Deserialize)]
@@ -59,11 +66,20 @@ impl SidecarClient {
     }
 
     pub async fn highlight(&self, code: &str, lang: Option<&str>) -> Result<HighlightResponse> {
+        self.highlight_with(code, lang, true).await
+    }
+
+    pub async fn highlight_with(
+        &self,
+        code: &str,
+        lang: Option<&str>,
+        trim: bool,
+    ) -> Result<HighlightResponse> {
         let url = format!("{}/highlight", self.base_url);
         let resp = self
             .http
             .post(&url)
-            .json(&HighlightRequest { code, lang })
+            .json(&HighlightRequest { code, lang, trim })
             .send()
             .await
             .with_context(|| format!("POST {url}"))?;

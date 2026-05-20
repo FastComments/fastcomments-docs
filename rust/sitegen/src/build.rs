@@ -231,9 +231,29 @@ async fn build_one_guide(
         "locale": locale,
         "availableLocales": available_locales,
         "t": serde_json::to_value(&t)?,
-        "stableUrlId": format!("/{}", guide_link(&guide.id, &locales.default_locale, &locales.default_locale)),
+        // stableUrlId intentionally NOT passed to guide-layout — Node
+        // omits it from the layout context (`src/guides.js:238-248`),
+        // so the `{{#if stableUrlId}}` block in guide-layout.html always
+        // takes the `else` branch.
     });
     let guide_html = templates.render("guide-layout", &layout_ctx)?;
+    // If the guide has an `index.md.html`, wrap the layout HTML through
+    // it. Mirrors src/guides.js:249-252 — Node runs the file through
+    // marked() (which wraps `{{{content}}}` in `<p>{{{content}}}</p>`)
+    // then handlebars-compiles the result with content = guide_html.
+    let guide_root_html = {
+        let index_path = root.guides_dir.join(&guide.id).join("index.md.html");
+        if index_path.exists() {
+            let raw = std::fs::read_to_string(&index_path)?;
+            let after_marked = render_inline_markdown(&raw);
+            // handlebars-render the result with {{{content}}}.
+            let mut hb = handlebars::Handlebars::new();
+            hb.register_template_string("idx", &after_marked)?;
+            hb.render("idx", &serde_json::json!({"content": &guide_html}))?
+        } else {
+            guide_html.clone()
+        }
+    };
 
     // Render page.html.
     let canonical_url = guide_link(&guide.id, locale, &locales.default_locale);
@@ -241,7 +261,7 @@ async fn build_one_guide(
     let faq_json_ld = build_faq_json_ld(&meta);
     let page_ctx = json!({
         "title": meta.page_header.clone().unwrap_or_else(|| meta.name.clone().unwrap_or_default()),
-        "content": guide_html,
+        "content": guide_root_html,
         "ExampleTenantId": full::EXAMPLE_TENANT_ID,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
         "locale": locale,
@@ -317,13 +337,17 @@ async fn build_one_item(
 }
 
 async fn process_screenshots(
-    mut html: String,
+    html: String,
     placeholders: &[ScreenshotPlaceholder],
     static_generated_dir: &Path,
 ) -> Result<String> {
     if placeholders.is_empty() {
         return Ok(html);
     }
+    // The pipeline already inlined the `<div class="screenshot">` markup
+    // (so pulldown-cmark sees it as block HTML, not text). All this
+    // function does is capture/refresh the underlying PNG when the
+    // image cache is stale.
     use fcdocs_browser::{cache::ImageCache, screenshot, ScreenshotArgs, ScreenshotHost};
     let host = ScreenshotHost::default();
     let images_dir = static_generated_dir.join("images");
@@ -335,26 +359,15 @@ async fn process_screenshots(
             Ok(a) => a,
             Err(e) => {
                 warn!(error = %e, "skip malformed app-screenshot config");
-                html = html.replace(&ph.token, "");
                 continue;
             }
         };
         let file_name = screenshot::target_file_name(&args.url, &args.selector, &args.title);
         let target_path = images_dir.join(&file_name);
-        // Build the cacheKey object with the exact field shape +
-        // insertion order Node uses at
-        // src/app-screenshot-generator.js:202. Same JSON string ->
-        // same hash -> cache hit. Skip the screenshot entirely when
-        // CHROME_BIN isn't available rather than re-running every time.
         let args_json = build_cache_key_json(&ph.config);
-        let template = screenshot::render_template(&args, &file_name, &host.host);
-
         if !cache.is_stale(&args_json, &target_path, &file_name) {
-            html = html.replace(&ph.token, &template);
             continue;
         }
-
-        // Cache miss: launch a chromium and capture.
         match screenshot_one(&args, &target_path, &host).await {
             Ok(()) => {
                 if let Err(e) = cache.update(&args_json, &file_name) {
@@ -362,10 +375,9 @@ async fn process_screenshots(
                 }
             }
             Err(e) => {
-                warn!(url = %args.url, error = %format!("{e:#}"), "screenshot failed; leaving placeholder removed");
+                warn!(url = %args.url, error = %format!("{e:#}"), "screenshot failed; HTML still references the (possibly missing) image");
             }
         }
-        html = html.replace(&ph.token, &template);
     }
     Ok(html)
 }
@@ -435,7 +447,10 @@ async fn read_optional_markdown(
         .file_stem()
         .and_then(|s| s.to_str())
         .unwrap_or("intro");
-    let processed = full::process_markdown(&raw, basename, cfg, sidecar).await?;
+    // No hljs style block for intro/conclusion — Node calls marked()
+    // directly for those at src/guides.js:204 / 214 without the
+    // post-item style append.
+    let processed = full::process_markdown_with(&raw, basename, cfg, sidecar, false).await?;
     let html = process_screenshots(processed.html, &processed.screenshots, static_generated_dir).await?;
     Ok(html)
 }
@@ -770,6 +785,18 @@ fn parse_locale_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>
         }
     }
     None
+}
+
+/// Run pulldown-cmark on the input. Used for `index.md.html` files
+/// which are typically a single `{{{content}}}` token that marked wraps
+/// in `<p>...</p>`. Matches Node's `marked()` default behavior.
+fn render_inline_markdown(input: &str) -> String {
+    use pulldown_cmark::{html, Options, Parser};
+    let opts = Options::ENABLE_TABLES;
+    let parser = Parser::new_ext(input, opts);
+    let mut out = String::with_capacity(input.len() + 16);
+    html::push_html(&mut out, parser);
+    out
 }
 
 pub fn repo_root() -> Result<PathBuf> {

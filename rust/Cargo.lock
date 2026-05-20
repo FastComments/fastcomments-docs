@@ -705,6 +705,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "ego-tree",
+ "fcdocs-browser",
  "handlebars",
  "html-escape",
  "indexmap",

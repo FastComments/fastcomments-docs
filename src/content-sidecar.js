@@ -34,15 +34,22 @@ app.post('/highlight', (req, res) => {
     const body = req.body || {};
     const code = body.code;
     const lang = body.lang;
+    // `trim` defaults to true to match the marked highlight callback at
+    // src/guides.js:26-33 (used for fenced markdown code blocks).
+    // inline-code and code-example callers pass trim=false so leading/
+    // trailing whitespace is preserved (Node passes the raw inlineCode
+    // straight to hljs.highlight without trimming).
+    const shouldTrim = body.trim !== false;
     if (typeof code !== 'string') {
         return res.status(400).send({ error: 'code is required (string)' });
     }
     try {
+        const input = shouldTrim ? code.trim() : code;
         let result;
         if (lang && hljs.getLanguage(lang)) {
-            result = hljs.highlight(code.trim(), { language: lang });
+            result = hljs.highlight(input, { language: lang });
         } else {
-            result = hljs.highlightAuto(code.trim());
+            result = hljs.highlightAuto(input);
         }
         res.send({ html: result.value, language: result.language || null });
     } catch (e) {

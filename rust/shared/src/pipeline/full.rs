@@ -82,6 +82,20 @@ pub async fn process_markdown(
     cfg: &FullPipelineConfig,
     sidecar: &SidecarClient,
 ) -> Result<FullProcessed> {
+    process_markdown_with(raw_markdown, markdown_file_basename, cfg, sidecar, true).await
+}
+
+/// Variant that controls whether the inlined highlight.js stylesheet is
+/// appended. Items get it (mirrors `src/guides.js:152`); intro and
+/// conclusion don't (Node calls `marked()` directly for those without
+/// the append).
+pub async fn process_markdown_with(
+    raw_markdown: &str,
+    markdown_file_basename: &str,
+    cfg: &FullPipelineConfig,
+    sidecar: &SidecarClient,
+    append_hljs_style: bool,
+) -> Result<FullProcessed> {
     let s1 = apply_handlebars(raw_markdown);
 
     // Marker order mirrors the chain in
@@ -96,10 +110,168 @@ pub async fn process_markdown(
     let s7 = expand_related_parameter(&s6).await?;
 
     let html = markdown_to_html_with_highlight(&s7, sidecar).await?;
+    let html = post_process_marked_compat(&html);
     let html = expand_snippets(&html, &cfg.snippets_dir);
-    let html = format!("{html}<style>{HLJS_STYLE_CSS}</style>");
+    let html = if append_hljs_style {
+        format!("{html}<style>{HLJS_STYLE_CSS}</style>")
+    } else {
+        html
+    };
 
     Ok(FullProcessed { html, screenshots })
+}
+
+/// Bring pulldown-cmark output closer to marked's output for parity:
+///
+/// 1. Auto-generate id attributes on `<h1>` / `<h2>` headings from the
+///    slugified text content (marked's GFM behavior).
+/// 2. Encode `'` -> `&#39;` in text nodes (marked encodes apostrophes by
+///    default; pulldown-cmark doesn't).
+///
+/// Implemented as a string-level transform so we don't pay for full DOM
+/// parsing on every guide item. Acceptable because the transformations
+/// are narrow and self-contained.
+fn post_process_marked_compat(html: &str) -> String {
+    // Step 1: add id attributes to H1/H2/H3 elements that lack them.
+    // Rust regex doesn't support backreferences, so handle each tag
+    // separately. Mirrors marked's GFM heading-slug behavior.
+    static H1_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h1>([^<]+)</h1>").expect("regex"));
+    static H2_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h2>([^<]+)</h2>").expect("regex"));
+    static H3_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h3>([^<]+)</h3>").expect("regex"));
+    static H4_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h4>([^<]+)</h4>").expect("regex"));
+    static H5_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h5>([^<]+)</h5>").expect("regex"));
+    static H6_RE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"<h6>([^<]+)</h6>").expect("regex"));
+    let mut with_ids = html.to_string();
+    for (re, tag) in [
+        (&*H1_RE, "h1"),
+        (&*H2_RE, "h2"),
+        (&*H3_RE, "h3"),
+        (&*H4_RE, "h4"),
+        (&*H5_RE, "h5"),
+        (&*H6_RE, "h6"),
+    ] {
+        with_ids = re
+            .replace_all(&with_ids, |caps: &regex::Captures| {
+                let text = &caps[1];
+                let slug = slugify_for_heading(text);
+                format!("<{tag} id=\"{slug}\">{text}</{tag}>")
+            })
+            .into_owned();
+    }
+
+    // marked's GFM auto-link wraps bare URLs in `<a>` tags. We don't
+    // do it here because a naive HTML-level autolink also wraps URLs
+    // inside `<line-content>` / `<code>` (the highlighted code blocks
+    // that already contain URLs in `hljs-string` spans), which causes
+    // worse divergence than leaving the URLs as plain text. Tracked as
+    // a known cosmetic parity gap.
+
+    // Step 2: encode apostrophes and double quotes outside of HTML tags.
+    encode_apostrophes(&with_ids)
+}
+
+fn autolink_urls_in_text(html: &str) -> String {
+    static URL_RE: Lazy<Regex> = Lazy::new(|| {
+        // URLs in text: protocol + non-whitespace chars, stopping at
+        // common sentence-ending punctuation that's likely not part
+        // of the URL.
+        Regex::new(r"https?://[A-Za-z0-9\-._~:/?#\[\]@!$&'*+,;=%]+")
+            .expect("regex")
+    });
+    let mut out = String::with_capacity(html.len() + 64);
+    let mut depth = 0i32;
+    let mut text_start = 0usize;
+    let chars: Vec<(usize, char)> = html.char_indices().collect();
+    let mut i = 0;
+    while i < chars.len() {
+        let (byte_idx, c) = chars[i];
+        if c == '<' {
+            if depth == 0 && byte_idx > text_start {
+                // We were in text; flush text with autolinks applied.
+                let chunk = &html[text_start..byte_idx];
+                out.push_str(&autolink_text_chunk(&URL_RE, chunk));
+            }
+            depth += 1;
+            out.push(c);
+            text_start = byte_idx + c.len_utf8();
+        } else if c == '>' {
+            depth = (depth - 1).max(0);
+            out.push(c);
+            text_start = byte_idx + c.len_utf8();
+        } else if depth > 0 {
+            out.push(c);
+            text_start = byte_idx + c.len_utf8();
+        }
+        i += 1;
+    }
+    if text_start < html.len() && depth == 0 {
+        let chunk = &html[text_start..];
+        out.push_str(&autolink_text_chunk(&URL_RE, chunk));
+    }
+    out
+}
+
+fn autolink_text_chunk(re: &Regex, chunk: &str) -> String {
+    re.replace_all(chunk, |caps: &regex::Captures| {
+        let url = &caps[0];
+        // Don't wrap if URL is followed by an already-closing tag in
+        // its containing string — too risky to detect here, but we
+        // already skip everything inside tags above.
+        format!("<a href=\"{url}\">{url}</a>")
+    })
+    .into_owned()
+}
+
+fn slugify_for_heading(text: &str) -> String {
+    // GitHub/marked-style slug:
+    //   - lowercase
+    //   - whitespace chars -> `-` (one dash per whitespace char)
+    //   - keep ASCII alphanumeric and `-` literally
+    //   - drop other punctuation entirely
+    // This preserves runs like "One - Headers" -> "one---headers"
+    // (1 dash for the space + 1 literal `-` + 1 dash for the space).
+    let mut out = String::with_capacity(text.len());
+    for c in text.chars() {
+        if c.is_ascii_alphanumeric() {
+            for lower in c.to_lowercase() {
+                out.push(lower);
+            }
+        } else if c == '-' || c.is_whitespace() {
+            out.push('-');
+        }
+        // other chars (punctuation, accented letters, etc.) are dropped
+    }
+    out.trim_matches('-').to_string()
+}
+
+fn encode_apostrophes(html: &str) -> String {
+    let mut out = String::with_capacity(html.len());
+    let mut depth = 0i32;
+    for c in html.chars() {
+        match c {
+            '<' => {
+                depth += 1;
+                out.push(c);
+            }
+            '>' => {
+                depth = (depth - 1).max(0);
+                out.push(c);
+            }
+            // Encode `'` and `"` only in text content (outside element
+            // tags). Marked's default escape behavior produces &#39;
+            // and &quot; in text nodes; pulldown-cmark doesn't.
+            '\'' if depth == 0 => out.push_str("&#39;"),
+            '"' if depth == 0 => out.push_str("&quot;"),
+            _ => out.push(c),
+        }
+    }
+    out
 }
 
 // ------------------------------------------------------------------
@@ -107,8 +279,13 @@ pub async fn process_markdown(
 // ------------------------------------------------------------------
 
 fn apply_handlebars(input: &str) -> String {
-    static RE: Lazy<Regex> =
-        Lazy::new(|| Regex::new(r"\{\{\s*ExampleTenantId\s*\}\}").expect("regex"));
+    // Match both `{{ExampleTenantId}}` (escaped) and
+    // `{{{ExampleTenantId}}}` (unescaped/raw). Handlebars uses the same
+    // value for both — only escaping differs, and our context value
+    // has no HTML-special chars anyway.
+    static RE: Lazy<Regex> = Lazy::new(|| {
+        Regex::new(r"\{\{\{?\s*ExampleTenantId\s*\}?\}\}").expect("regex")
+    });
     RE.replace_all(input, EXAMPLE_TENANT_ID).into_owned()
 }
 
@@ -122,9 +299,9 @@ const APP_SCREENSHOT_END: &str = "app-screenshot-end]";
 fn extract_app_screenshot_placeholders(
     input: &str,
 ) -> Result<(String, Vec<ScreenshotPlaceholder>)> {
+    use fcdocs_browser::screenshot;
     let mut current = input.to_string();
     let mut out = Vec::new();
-    let mut idx = 0usize;
     loop {
         let Some(s) = current.find(APP_SCREENSHOT_START) else {
             break;
@@ -134,18 +311,28 @@ fn extract_app_screenshot_placeholders(
         };
         let block_end = s + e + APP_SCREENSHOT_END.len();
         let config_source = &current[s + APP_SCREENSHOT_START.len()..s + e];
-        // Use the same QuickJS evaluator we use for the other markers.
-        // app-screenshot configs are JS object literals just like the
-        // others; they include `url`, `selector`, `title`, etc.
         let config = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
             .context("eval app-screenshot config")?;
-        let token = format!("__FCDOCS_APP_SCREENSHOT_{idx}__");
+
+        // Emit the screenshot HTML INLINE so pulldown-cmark treats it
+        // as block HTML (no `<p>` wrap). The actual image capture
+        // happens after pipeline processing, but the markup is fixed
+        // now — it just references `/images/<md5>.png`. Mirrors
+        // src/app-screenshot-generator.js:209-213 which also emits
+        // the template before/regardless of capture.
+        let args: screenshot::ScreenshotArgs =
+            serde_json::from_value(config.clone()).context("screenshot args")?;
+        let file_name =
+            screenshot::target_file_name(&args.url, &args.selector, &args.title);
+        let template = screenshot::render_template(&args, &file_name, screenshot::HOST);
+        // Use a token in the returned placeholder shape so sitegen
+        // knows what to capture, even though the HTML is already
+        // substituted.
         out.push(ScreenshotPlaceholder {
-            token: token.clone(),
+            token: file_name.clone(),
             config,
         });
-        current = format!("{}{token}{}", &current[..s], &current[block_end..]);
-        idx += 1;
+        current = format!("{}{template}{}", &current[..s], &current[block_end..]);
     }
     Ok((current, out))
 }
@@ -232,11 +419,18 @@ async fn expand_code_example(
             )?;
         }
 
+        // No trim — Node's code-example-generator passes raw codeHTML
+        // (with leading `\n`) straight to hljs.highlight, preserving the
+        // leading empty line that becomes the first `<div class="line">`.
         let highlighted = sidecar
-            .highlight(&code_html, Some("html"))
+            .highlight_with(&code_html, Some("html"), false)
             .await
             .context("sidecar /highlight for code-example")?;
-        let body = render_inline_lines(&highlighted.html, &lines_to_highlight, true);
+        // Pass `use_demo_tenant=false` — Node's code-example-generator
+        // always adds the `has-tenant-id` class when a line contains
+        // `tenantId`, regardless of any flag (it doesn't even read
+        // useDemoTenant). Only inline-code-generator honors the flag.
+        let body = render_inline_lines(&highlighted.html, &lines_to_highlight, false);
 
         let replacement = wrap_code_block(
             title,
@@ -310,8 +504,11 @@ async fn expand_inline_code(
             write_code_snippet_page(cfg, &body, &title, &snippet_page_file_name, &[])?;
         }
 
+        // No trim — Node's inline-code-generator passes raw inlineCode
+        // directly to hljs.highlight (no .trim()), preserving leading
+        // whitespace in the rendered code block.
         let highlighted = sidecar
-            .highlight(&body, Some(&lang))
+            .highlight_with(&body, Some(&lang), false)
             .await
             .context("sidecar /highlight for inline-code")?;
         let body_html = render_inline_lines(&highlighted.html, &[], use_demo_tenant);
@@ -500,12 +697,13 @@ async fn markdown_to_html_with_highlight(input: &str, sidecar: &SidecarClient) -
             .highlight(code, if lang.is_empty() { None } else { Some(lang) })
             .await
             .context("sidecar /highlight for markdown code block")?;
-        let language = resp.language.unwrap_or_else(|| lang.clone());
-        let body = format!(
-            "<pre><code class=\"hljs language-{lang}\">{body}</code></pre>",
-            lang = html_escape::encode_double_quoted_attribute(&language),
-            body = resp.html,
-        );
+        let _ = resp.language;
+        // Marked 0.6.2 with a custom highlight callback emits
+        // `<pre><code>{HIGHLIGHTED}</code></pre>` WITHOUT the
+        // language class when the callback returns HTML directly
+        // (the default class-injection path runs only when the
+        // callback returns null/undefined). Match that.
+        let body = format!("<pre><code>{}</code></pre>", resp.html);
         html = html.replace(&placeholder, &body);
     }
     Ok(html)
