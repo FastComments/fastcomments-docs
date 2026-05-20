@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "d32f9935bb1a431846b5aa1580c1473fa1fbfa497b9e8df6f2552bfc53e449c2",
+  "generatedAt": "2026-05-20T06:38:33.979Z",
+  "codeExample": "const tenantId: string = 'tenant_7b2f';\nconst userId: string = 'user_42';\nconst urlId: string = '/articles/ai-updates-2026';\nconst fromCommentId: string = 'cmt_8910';\nconst viewed: boolean = false;\nconst type: string = 'mention';\n\n(async () => {\n  const result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

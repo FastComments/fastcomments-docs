@@ -17,26 +17,23 @@ Returns: `Array<SaveComment200Response`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-01';
-const mentions1: CommentUserMentionInfo[] = [{ userId: 'user-123', displayName: 'Jane Doe' }];
-const hashtags1: CommentUserHashTagInfo[] = [{ tag: 'typescript' }];
+const tenantId: string = "acme_enterprises_01";
 const createCommentParams: CreateCommentParams[] = [
   {
-    content: 'Great insights on async/await patterns.',
-    authorName: 'John Smith',
-    authorEmail: 'john.smith@acme.com',
-    externalId: 'comment-001',
-    createdAt: '2026-03-25T10:15:00Z',
-    userMentions: mentions1,
-    userHashTags: hashtags1
-  },
-  {
-    content: 'I prefer using Promise.all for bulk ops.',
-    authorName: 'Emily Turner',
-    authorEmail: 'emily.turner@acme.com',
-    externalId: 'comment-002',
-    createdAt: '2026-03-25T10:20:00Z'
-  }
+    content: "Thanks — this patch fixes the memory leak observed in staging.",
+    authorId: "dev_482",
+    postId: "issue_904",
+    mentions: [{ userId: "lead_12", start: 8, end: 17 } as CommentUserMentionInfo],
+    hashtags: [{ tag: "bugfix", indices: [60, 66] } as CommentUserHashTagInfo],
+    createdAt: "2026-05-20T10:15:00Z"
+  } as CreateCommentParams
 ];
-const result: SaveComment200Response[] = await saveCommentsBulk(tenantId, createCommentParams, true, true, false, true);
+const result: Array<SaveComment200Response> = await saveCommentsBulk(
+  tenantId,
+  createCommentParams,
+  true,   // isLive
+  true,   // doSpamCheck
+  false,  // sendEmails
+  true    // populateNotifications
+);
 [inline-code-end]

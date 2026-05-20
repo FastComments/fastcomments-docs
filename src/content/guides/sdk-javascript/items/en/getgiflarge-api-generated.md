@@ -13,9 +13,9 @@ Returns: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'getGifLarge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_marketing_tenant_7';
-const largeInternalURLSanitized: string = 'https://cdn.acmeinc.com/gifs/promo-spring-2026_large_sanitized.gif';
-const includePreview: boolean | undefined = undefined; // optional flag a caller might use
+const tenantId: string = 'acme-tenant-42';
+const largeInternalURLSanitized: string = 'https://internal.cdn.acme-corp.com/gifs/promo-2026_large.gif';
 const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-console.log(result, includePreview);
+const status: APIStatus | undefined = result.status;
+const statusCode: number | undefined = status?.code;
 [inline-code-end]

@@ -18,13 +18,21 @@ Returns: [`GetQuestionResults200Response`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_001";
-const urlId: string = "articles/product-launch-2026";
-const userId: string = "user_2048";
-const startDate: string = "2026-03-01T00:00:00Z";
+const tenantId: string = 'acme-tenant-72';
+const urlId: string = 'survey-2025-03';
+const userId: string | undefined = undefined;
+const startDate: string = '2024-01-01T00:00:00Z';
 const questionId: string | undefined = undefined;
-const questionIds: string | undefined = "q_101,q_102";
-const skip: number | undefined = 0;
+const questionIds: string = 'Q-718,Q-719';
+const skip: number = 20;
 
-const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);
+const result: GetQuestionResults200Response = await getQuestionResults(
+  tenantId,
+  urlId,
+  userId,
+  startDate,
+  questionId,
+  questionIds,
+  skip
+);
 [inline-code-end]

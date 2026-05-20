@@ -1,0 +1,7 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "78142c9311495bee59123c3a03751d31701f57bdefcd2a592f09f7a068865f78",
+  "generatedAt": "2026-05-20T06:35:23.325Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-01';\nconst id: string = 'sso_8a3d4f2b';\nconst deleteComments: boolean = true;\nconst commentDeleteMode: string = 'permanent';\nconst result: DeleteSSOUserAPIResponse = await deleteSSOUser(tenantId, id, deleteComments, commentDeleteMode);",
+  "model": "gpt-5-mini"
+}

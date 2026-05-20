@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "276ed2d3c146fc1334e8bd17469170230d6a8d78b015d2cd8089d64520c76d10",
+  "generatedAt": "2026-05-20T06:52:54.804Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3a2b';\nconst commentId: string = 'cmt_4a9f1d';\nconst broadcastId: string = 'bcast_22b8c0';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwiaWF0IjoxNjA9456789f';\nconst responseWithSso: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);\nconst responseWithoutSso: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini"
+}

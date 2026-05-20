@@ -17,13 +17,14 @@ Returns: [`SaveComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'saveComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
+const tenantId: string = "tenant_omega_42";
 const createCommentParams: CreateCommentParams = {
-  content: 'Great article — helped me fix a production issue in minutes.',
-  url: 'https://app.acme.com/blog/performance-tips',
-  author: { name: 'Maya Chen', email: 'maya.chen@acme.com' },
-  metadata: { locale: 'en-US', appVersion: '4.2.1' }
-} as CreateCommentParams;
+  threadId: "article-2026-05-news",
+  content: "Insightful perspective — I especially appreciated the data about usage patterns.",
+  authorId: "user_98765",
+  authorName: "Alex Morgan",
+  email: "alex.morgan@example.org"
+};
 const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const sendEmails: boolean = false;

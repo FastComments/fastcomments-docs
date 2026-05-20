@@ -15,16 +15,15 @@ Returns: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'patchSSOUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_01';
-  const id: string = 'ssouser_0a1b2c3d';
-  const updateData: UpdateAPISSOUserData = {
-    email: 'jane.doe@acme-corp.com',
-    name: 'Jane Doe',
-    provider: 'saml',
-    externalId: 'CN=Jane Doe,OU=Users,DC=acme,DC=com'
-  };
-  const updateComments: boolean = true;
-  const result: PatchSSOUserAPIResponse = await patchSSOUser(tenantId, id, updateData, updateComments);
-})();
+const tenantId: string = 'acme-enterprises';
+const id: string = 'user-0a1b2c3d';
+const updateAPISSOUserData: UpdateAPISSOUserData = {
+  email: 'jane.doe@acme.com',
+  displayName: 'Jane Doe',
+  jobTitle: 'Engineering Manager',
+  roles: ['admin', 'sso_user'],
+  isActive: true
+};
+const updateComments: boolean = true;
+const result: PatchSSOUserAPIResponse = await patchSSOUser(tenantId, id, updateAPISSOUserData, updateComments);
 [inline-code-end]

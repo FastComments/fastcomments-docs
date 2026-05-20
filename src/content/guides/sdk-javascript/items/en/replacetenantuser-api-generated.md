@@ -15,16 +15,14 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'replaceTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9d8f4b2c';
-const id: string = 'user_f47ac10b';
+const tenantId: string = 'tenant-42';
+const id: string = 'user-8a3f';
 const replaceTenantUserBody: ReplaceTenantUserBody = {
-  externalId: 'ext-5234',
-  email: 'jane.doe@acme.com',
+  email: 'jane.doe@acmecorp.com',
   displayName: 'Jane Doe',
-  roles: ['moderator'],
-  metadata: { department: 'product', region: 'us-east-1' }
+  roles: ['editor'],
+  active: true
 };
-const updateComments: string = 'propagate-display-name-to-comments';
-
+const updateComments: string = 'Migrated user profile and updated roles';
 const result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
 [inline-code-end]

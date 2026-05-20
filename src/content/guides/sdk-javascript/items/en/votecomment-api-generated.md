@@ -18,12 +18,12 @@ Returns: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'voteComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c';
-const commentId: string = 'cmt_42f3a1';
-const urlId: string = 'articles/ai-trends-2026';
-const broadcastId: string = 'web';
-const voteBodyParams: VoteBodyParams = { vote: 1, reason: 'Insightful and on-topic' };
-const sessionId: string = 'sess_6d2b4c9e';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const tenantId: string = "acme_corp";
+const commentId: string = "cmt-9f2b7a1e";
+const urlId: string = "products/widget-42";
+const broadcastId: string = "bcast-20260520-001";
+const voteBodyParams: VoteBodyParams = { vote: 1 };
+const sessionId: string | undefined = "sess-7d4f1c";
+const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
 const result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);
 [inline-code-end]

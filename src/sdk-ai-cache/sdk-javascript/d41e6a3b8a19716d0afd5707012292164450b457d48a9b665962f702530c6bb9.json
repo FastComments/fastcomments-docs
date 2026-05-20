@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "d41e6a3b8a19716d0afd5707012292164450b457d48a9b665962f702530c6bb9",
+  "generatedAt": "2026-05-20T06:41:46.215Z",
+  "codeExample": "const primaryTenantResponse: GetTenants200Response = await getTenants('tenant-0f8fad5b-d9cb-469f-a165-70867728950e');\nconst pagedTenantResponse: GetTenants200Response = await getTenants('tenant-0f8fad5b-d9cb-469f-a165-70867728950e', 'include=domains,settings', 20);",
+  "model": "gpt-5-mini"
+}

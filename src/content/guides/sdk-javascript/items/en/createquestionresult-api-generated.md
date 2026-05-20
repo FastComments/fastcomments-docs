@@ -13,14 +13,13 @@ Returns: [`CreateQuestionResult200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createQuestionResult Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-01';
+const tenantId: string = 'tenant_acme_corp_2026';
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: 'q-34567',
-  respondentId: 'user-8923',
-  answers: [{ optionId: 'opt_A', text: 'Agree', count: 1 }],
-  score: 5,
-  meta: [{ key: 'platform', value: 'web' }],
-  notifyModerators: false // optional parameter
-} as CreateQuestionResultBody;
+  questionId: 'q_98765',
+  userId: 'user_12345',
+  score: 4,
+  comment: 'Clear explanation, helped resolve issue.',
+  meta: [{ key: 'source', value: 'web' }] // optional metadata
+};
 const result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]

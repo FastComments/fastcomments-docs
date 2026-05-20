@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "b7bb7eeb36cea4c7e2523e41976200d64d8bd21f0a8ebd52e02dd1b4d016dc09",
+  "generatedAt": "2026-05-20T06:33:40.017Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme_corp\";\n  const id: string = \"comment_7429\";\n  const contextUserId: string = \"moderator_12\";\n  const isLive: boolean = false;\n  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);\n  console.log(result);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

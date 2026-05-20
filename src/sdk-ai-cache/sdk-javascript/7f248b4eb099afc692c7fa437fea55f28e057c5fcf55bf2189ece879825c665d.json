@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "7f248b4eb099afc692c7fa437fea55f28e057c5fcf55bf2189ece879825c665d",
+  "generatedAt": "2026-05-20T06:31:51.551Z",
+  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst createModeratorBody: CreateModeratorBody = {\n  username: 'janedoe',\n  email: 'jane.doe@acme-corp.com',\n  displayName: 'Jane Doe',\n  permissions: ['moderate_comments', 'review_reports'],\n  notes: 'Primary moderator for product support channels' // optional parameter demonstrated\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
+  "model": "gpt-5-mini"
+}

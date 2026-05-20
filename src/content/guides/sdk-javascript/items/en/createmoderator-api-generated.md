@@ -13,15 +13,13 @@ Returns: [`CreateModerator200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'createModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b6c";
-const optionalConfig: CustomConfigParameters = { moderationThreshold: 5, escalateOnRepeatedOffenses: true };
-const newModerator: CreateModeratorBody = {
-  email: "lina.gomez@dailynews.com",
-  fullName: "Lina Gomez",
-  role: "senior_moderator",
-  enabled: true,
-  notifyByEmail: true,
-  customConfig: optionalConfig
+const tenantId: string = 'acme-corp-01';
+const createModeratorBody: CreateModeratorBody = {
+  username: 'janedoe',
+  email: 'jane.doe@acme-corp.com',
+  displayName: 'Jane Doe',
+  permissions: ['moderate_comments', 'review_reports'],
+  notes: 'Primary moderator for product support channels' // optional parameter demonstrated
 };
-const response: CreateModerator200Response = await createModerator(tenantId, newModerator);
+const result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);
 [inline-code-end]

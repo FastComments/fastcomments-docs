@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "07bcd36915d56cf0b624bfe61f4382c079a16bb4f00df3200f8d2faacb7f010a",
+  "generatedAt": "2026-05-20T06:31:40.105Z",
+  "codeExample": "const tenantId: string = \"tenant_42_acme_corp\";\nconst assets: FeedPostMediaItemAsset[] = [{ url: \"https://cdn.acme.com/images/launch.jpg\", mimeType: \"image/jpeg\" }];\nconst mediaItems: FeedPostMediaItem[] = [{ type: \"image\", caption: \"Launch hero image\", assets }];\nconst links: FeedPostLink[] = [{ url: \"https://acme.com/products/new\", title: \"Product details\" }];\nconst createFeedPostParams: CreateFeedPostParams = {\n  authorId: \"user_987\",\n  content: \"We're live with the new product release. Join the demo stream.\",\n  media: mediaItems,\n  links\n};\nconst broadcastId: string = \"broadcast_20260520_01\";\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst skipDupCheck: boolean = false;\nconst result: CreateFeedPost200Response = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);",
+  "model": "gpt-5-mini"
+}

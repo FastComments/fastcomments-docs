@@ -12,7 +12,8 @@ Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getDomainConfigs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// getDomainConfigs only requires tenantId; there are no optional parameters for this call
-const tenantId: string = "acme-corp-001";
-const domainConfigs: GetDomainConfigs200Response = await getDomainConfigs(tenantId);
+const providedTenantId: string | undefined = 'tenant_4f9c2b-8a1';
+const tenantId: string = providedTenantId ?? 'tenant_00001-xyz';
+const result: GetDomainConfigs200Response = await getDomainConfigs(tenantId);
+console.log(result);
 [inline-code-end]

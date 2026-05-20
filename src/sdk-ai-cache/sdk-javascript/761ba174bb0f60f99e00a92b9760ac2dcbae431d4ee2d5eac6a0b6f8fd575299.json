@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "761ba174bb0f60f99e00a92b9760ac2dcbae431d4ee2d5eac6a0b6f8fd575299",
+  "generatedAt": "2026-05-20T06:51:50.889Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-enterprises-42\";\n  const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.Kd3xYp1QeXl9Z8V7a2rNf4\";\n  const resultWithoutSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId);\n  const resultWithSSO: ResetUserNotifications200Response = await resetUserNotificationCount(tenantId, ssoToken);\n  console.log(resultWithoutSSO, resultWithSSO);\n})();",
+  "model": "gpt-5-mini"
+}

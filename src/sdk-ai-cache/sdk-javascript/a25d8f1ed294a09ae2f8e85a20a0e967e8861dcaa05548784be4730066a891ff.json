@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "a25d8f1ed294a09ae2f8e85a20a0e967e8861dcaa05548784be4730066a891ff",
+  "generatedAt": "2026-05-20T06:44:42.957Z",
+  "codeExample": "const tenantId: string = 'tenant-42';\nconst id: string = 'user-8a3f';\nconst replaceTenantUserBody: ReplaceTenantUserBody = {\n  email: 'jane.doe@acmecorp.com',\n  displayName: 'Jane Doe',\n  roles: ['editor'],\n  active: true\n};\nconst updateComments: string = 'Migrated user profile and updated roles';\nconst result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);",
+  "model": "gpt-5-mini"
+}

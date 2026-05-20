@@ -24,8 +24,20 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   echo "Rebuilding native modules..."
   npm rebuild better-sqlite3
 
+  echo "Building Rust workspace (indexer + server)..."
+  if ! cargo build --release --manifest-path rust/Cargo.toml; then
+    echo "ERROR: Rust build failed. Install rustup from https://rustup.rs/ if missing."
+    exit 1
+  fi
+  echo "Rust build complete."
+
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
+  # SDK documentation: README content goes through the Rust sdkgen
+  # framework; the existing Node generator continues to fill in
+  # OpenAPI + AI-generated sections until those generators are fully
+  # ported. Running Node second so its richer content wins for the SDKs
+  # that need it.
   echo "Generating SDK documentation..."
   if ! node src/sdk-guide-generator.js; then
     echo "ERROR: SDK documentation generation failed"
@@ -50,16 +62,18 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "No SDK AI cache changes to commit."
   fi
 
-  echo "Generating custom styling guide..."
-  if ! node src/custom-styling-guide-generator.js; then
+  echo "Generating custom styling guide (Rust)..."
+  if ! "$HOME/.cache/cargo-target/release/sitegen" custom-styling \
+       && ! ./rust/target/release/sitegen custom-styling; then
     echo "ERROR: Custom styling guide generation failed"
     exit 1
   fi
   echo "Custom styling guide generation complete."
 
-  # Check for missing translations
+  # Check for missing translations (Rust replaces node src/check-translations.js)
   echo "Checking for missing translations..."
-  node src/check-translations.js
+  "$HOME/.cache/cargo-target/release/trans" check 2>/dev/null \
+    || ./rust/target/release/trans check
   translation_check_result=$?
   if [ $translation_check_result -ne 0 ]; then
     echo "Missing translations detected. Running automated translation..."
@@ -101,15 +115,17 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
   echo "Content build complete."
 
-  echo "Building static..."
-  if ! npm run build-static; then
+  # Static file copies (Rust replaces bash build-static.sh).
+  echo "Building static (Rust)..."
+  if ! "$HOME/.cache/cargo-target/release/sitegen" build-static \
+       && ! ./rust/target/release/sitegen build-static; then
     echo "ERROR: Static build failed"
     exit 1
   fi
   echo "Static build complete."
 
-  echo "Building search indexes..."
-  if ! npm run build-search-index; then
+  echo "Building search indexes (Rust)..."
+  if ! npm run build-search-index-rs; then
     echo "ERROR: Search index build failed"
     exit 1
   fi

@@ -14,10 +14,11 @@ Returns: [`GetTenants200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'getTenants Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8421e7';
-const meta: string = 'include=domains,billing,customConfig';
-const skip: number = 20;
-
-const tenantsBasic: GetTenants200Response = await getTenants(tenantId);
-const tenantsWithOptions: GetTenants200Response = await getTenants(tenantId, meta, skip);
+(async () => {
+  const tenantId: string = "acme-corp-987";
+  const basicResult: GetTenants200Response = await getTenants(tenantId);
+  const meta: string = "include=domains,billing";
+  const pagedResult: GetTenants200Response = await getTenants(tenantId, meta, 50);
+  console.log(basicResult, pagedResult);
+})();
 [inline-code-end]

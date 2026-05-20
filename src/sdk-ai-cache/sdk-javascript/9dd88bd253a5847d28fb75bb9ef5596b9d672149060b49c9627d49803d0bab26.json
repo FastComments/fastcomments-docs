@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "9dd88bd253a5847d28fb75bb9ef5596b9d672149060b49c9627d49803d0bab26",
+  "generatedAt": "2026-05-20T06:29:59.123Z",
+  "codeExample": "const tenantId: string | undefined = undefined;\nconst bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n  tags: [\n    { name: 'marketing', color: '#FF6A00', externalId: 'mk-2026' },\n    { name: 'customer-support', color: '#0057D9', externalId: 'cs-2026' }\n  ]\n};\nconst result: AddHashTagsBulk200Response = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "671544ab2751f64d8adf55756c2a43c779a30f79c9484dee9b4de356bd6c62ac",
+  "generatedAt": "2026-05-20T06:48:14.228Z",
+  "codeExample": "const tenantId: string = 'acme-media-tenant-001';\nconst commentId: string = 'cmt_9f3e2a7b';\nconst broadcastId: string = 'bcast_nyc_live_20260520';\nconst editKey: string = 'edit_7ZxK9';\nconst result: DeleteCommentPublic200Response = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey);",
+  "model": "gpt-5-mini"
+}

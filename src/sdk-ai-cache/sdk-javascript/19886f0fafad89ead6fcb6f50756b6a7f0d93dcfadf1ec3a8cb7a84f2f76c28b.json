@@ -1,0 +1,7 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "19886f0fafad89ead6fcb6f50756b6a7f0d93dcfadf1ec3a8cb7a84f2f76c28b",
+  "generatedAt": "2026-05-20T06:48:33.666Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises';\n  const postId: string = 'post_8f3b2a';\n  const broadcastId: string = 'broadcast_202605';\n  const result: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId);\n})();",
+  "model": "gpt-5-mini"
+}

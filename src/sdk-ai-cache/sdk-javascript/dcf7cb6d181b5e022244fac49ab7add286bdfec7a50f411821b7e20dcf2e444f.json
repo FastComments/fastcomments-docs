@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "dcf7cb6d181b5e022244fac49ab7add286bdfec7a50f411821b7e20dcf2e444f",
+  "generatedAt": "2026-05-20T06:34:36.412Z",
+  "codeExample": "const tenantId: string = 'b3f8e4c2-7a1f-4c1d-9b2e-18f9a7d3c6e4';\nlet notificationId: string | undefined = 'notif-823456789';\nif (notificationId) {\n  const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, notificationId);\n}",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "e8279f291abd5bf0dc8b3664ee73be862d2ade364e8eab5b620f19a07e6eefd2",
+  "generatedAt": "2026-05-20T06:42:28.915Z",
+  "codeExample": "const tenantId: string = 'acme_corp_001';\nconst id: string = 'user-98765';\nconst userBadgeProgress: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);\nasync function getBadgeProgressIf(includeDetails?: boolean): Promise<GetUserBadgeProgressById200Response | undefined> {\n  if (!includeDetails) return undefined;\n  const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);\n  return result;\n}",
+  "model": "gpt-5-mini"
+}

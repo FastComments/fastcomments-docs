@@ -13,17 +13,13 @@ Returns: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_9f4a2b';
-  const createEmailTemplateBody: CreateEmailTemplateBody = {
-    name: 'Weekly Digest',
-    subject: 'Your weekly discussion highlights',
-    html: '<!doctype html><body><h1>Hello \{{user.name}}</h1><p>Top comments this week...</p></body>',
-    fromAddress: 'no-reply@fastcomments-example.com',
-    replyTo: 'moderation@fastcomments-example.com',
-    isDefault: false
-  };
-  const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
-  console.log(result);
-})();
+const tenantId: string = "tenant_9b3f2a";
+const createEmailTemplateBody: CreateEmailTemplateBody = {
+  name: "Welcome to Redwood Co.",
+  subject: "Welcome aboard — getting started with your account",
+  htmlContent: "<p>Hi \{{firstName}},</p><p>Welcome to Redwood Co. We're glad you're here.</p>",
+  isActive: true,
+  description: "Customer onboarding welcome email" // optional field demonstrated
+};
+const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
 [inline-code-end]

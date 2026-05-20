@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "bacf558e435e2116e0abb4937342d98dce0ac1b919092f214d3a88c059536adb",
+  "generatedAt": "2026-05-20T06:32:05.501Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-789\";\n\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  title: \"Post-purchase feedback\",\n  enabled: true,\n  customOptions: [{ key: \"include_product_sku\", label: \"Include SKU\" } as QuestionConfigCustomOptionsInner],\n  tosConfig: undefined // optional parameter demonstrated\n} as CreateQuestionConfigBody;\n\nconst result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);",
+  "model": "gpt-5-mini"
+}

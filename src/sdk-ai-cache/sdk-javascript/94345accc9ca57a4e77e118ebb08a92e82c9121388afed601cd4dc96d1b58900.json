@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "94345accc9ca57a4e77e118ebb08a92e82c9121388afed601cd4dc96d1b58900",
+  "generatedAt": "2026-05-20T06:37:27.425Z",
+  "codeExample": "const tenantId: string = \"acme-corp-73a9\";\nconst domainConfigs: GetDomainConfigs202Response | GetDomainConfigs200Response = await getDomainConfigs(tenantId);\nconsole.log(domainConfigs);",
+  "model": "gpt-5-mini"
+}

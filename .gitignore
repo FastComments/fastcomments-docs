@@ -119,3 +119,10 @@ db/
 buildEnv
 env
 out.txt
+
+# Rust build artifacts and Tantivy indexes
+rust/target/
+index/
+
+# Content sidecar runtime state
+.content-sidecar-port

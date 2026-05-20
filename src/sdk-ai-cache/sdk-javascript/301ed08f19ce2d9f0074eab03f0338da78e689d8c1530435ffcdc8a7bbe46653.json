@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "301ed08f19ce2d9f0074eab03f0338da78e689d8c1530435ffcdc8a7bbe46653",
+  "generatedAt": "2026-05-20T06:40:32.998Z",
+  "codeExample": "const tenantId: string = 'd3f9a8b2-6e11-4c2b-9a7f-5b2e1c3d4f6a';\nconst id: string = '55a3c9e2-1b44-4f3a-9b8c-2d7e6f1a9b0c';\nconst ssoResponse: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, id);\nlet apiUser: APISSOUser | undefined = undefined;\nasync function fetchSSOOptional(tenantId: string, id?: string): Promise<GetSSOUserByIdAPIResponse | undefined> {\n  if (!id) return undefined;\n  const res: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, id);\n  return res;\n}\nconst maybeResponse: GetSSOUserByIdAPIResponse | undefined = await fetchSSOOptional(tenantId, undefined);",
+  "model": "gpt-5-mini"
+}

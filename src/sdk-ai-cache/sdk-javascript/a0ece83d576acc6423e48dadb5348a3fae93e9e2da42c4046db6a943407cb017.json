@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "a0ece83d576acc6423e48dadb5348a3fae93e9e2da42c4046db6a943407cb017",
+  "generatedAt": "2026-05-20T06:46:47.580Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst id: string = \"qresult_98765\";\nconst meta: MetaItem[] = [{ key: \"source\", value: \"knowledge_base\" }];\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  reviewerId: \"user_2468\",\n  passed: true,\n  score: 0.92,\n  comment: \"Reviewed and confirmed accuracy\",\n  meta,                // optional metadata included\n  notifyFollowers: false // optional flag demonstrated\n};\nconst result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "model": "gpt-5-mini"
+}

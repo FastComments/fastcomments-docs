@@ -1,0 +1,20 @@
+[package]
+name = "fcdocs-watcher"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "watcher"
+path = "src/main.rs"
+
+[dependencies]
+fcdocs-shared = { path = "../shared" }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+notify = { workspace = true }
+notify-debouncer-mini = { workspace = true }

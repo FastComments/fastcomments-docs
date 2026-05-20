@@ -20,6 +20,9 @@ Returns: [`GetFeedPosts200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getFeedPosts Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const initialPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', undefined, 20, ['sports', 'local']);
-const nextPage: GetFeedPosts200Response = await getFeedPosts('tenant_9f1b3d', 'post_abc123', 20, ['sports', 'local']);
+const tenantId: string = 'tenant_acme_corp';
+const afterId: string = 'post_20260510_7f3b';
+const limit: number = 25;
+const tags: Array<string> = ['release-notes', 'security'];
+const result: GetFeedPosts200Response = await getFeedPosts(tenantId, afterId, limit, tags);
 [inline-code-end]

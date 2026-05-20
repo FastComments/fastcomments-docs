@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "1552d4dea8aba699c13b4275e1d481664d89d5c31dff410e60cd99cc95d9ac97",
+  "generatedAt": "2026-05-20T06:43:39.571Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tag: string = 'release-notes';\n  const tenantId: string = 'acme-inc';\n  const updateHashTagBody: UpdateHashTagBody = {\n    displayName: 'Release Notes',\n    description: 'Tags for documenting product releases and changelogs',\n    enabled: true\n  };\n  const response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);\n  console.log(response);\n}\nmain();",
+  "model": "gpt-5-mini"
+}

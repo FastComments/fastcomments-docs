@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "71c6de4caa648ec1f881a9eb1a954d98f3ff8f914a82f499b8aefca743321f3f",
+  "generatedAt": "2026-05-20T06:49:20.157Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_42';\n  const urlId: string = 'article-2026-05-20';\n  const page: number = 2;\n  const direction: SortDirections = 'desc';\n  const limit: number = 50;\n  const includeConfig: boolean = true;\n  const includei10n: boolean = true;\n  const locale: string = 'en-US';\n  const result: GetCommentsPublic200Response = await getCommentsPublic(\n    tenantId,\n    urlId,\n    page,\n    direction,\n    undefined,\n    undefined,\n    undefined,\n    limit,\n    undefined,\n    undefined,\n    undefined,\n    includeConfig,\n    undefined,\n    includei10n,\n    locale\n  );\n})();",
+  "model": "gpt-5-mini"
+}

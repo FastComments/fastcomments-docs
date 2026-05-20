@@ -15,9 +15,13 @@ Returns: [`DeleteComment200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'deleteComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
-const id: string = "comment_5f3a2b7c";
-const contextUserId: string = "user_1229";
-const isLive: boolean = true;
-const response: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);
+async function run(): Promise<void> {
+  const tenantId: string = "acme_corp";
+  const id: string = "comment_7429";
+  const contextUserId: string = "moderator_12";
+  const isLive: boolean = false;
+  const result: DeleteComment200Response = await deleteComment(tenantId, id, contextUserId, isLive);
+  console.log(result);
+}
+run();
 [inline-code-end]

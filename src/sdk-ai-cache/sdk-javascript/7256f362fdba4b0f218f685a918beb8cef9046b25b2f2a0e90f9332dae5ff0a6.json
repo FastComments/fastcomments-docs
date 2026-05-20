@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "7256f362fdba4b0f218f685a918beb8cef9046b25b2f2a0e90f9332dae5ff0a6",
+  "generatedAt": "2026-05-20T06:47:54.446Z",
+  "codeExample": "async function demo(): Promise<void> {\n  const tenantId: string = 'tenant-6778';\n  const commentIds: string = '5698,5700,5701';\n  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTQyMiJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';\n  const resultWithSso: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);\n  const resultWithoutSso: CheckedCommentsForBlocked200Response = await checkedCommentsForBlocked(tenantId, commentIds);\n  console.log(resultWithSso, resultWithoutSso);\n}\ndemo();",
+  "model": "gpt-5-mini"
+}

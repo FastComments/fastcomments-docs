@@ -14,10 +14,9 @@ Returns: [`GetUserNotificationCount200Response`](https://github.com/FastComments
 [inline-code-attrs-start title = 'getUserNotificationCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = '9f1e2d3c-4b5a-6d7e-8f90-123456789abc';
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  const resultWithSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId, ssoToken);
+  const tenantId: string = 'acme-corp-7f3b';
   const resultWithoutSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId);
-  console.log(resultWithSSO, resultWithoutSSO);
+  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYyMzQ1Njc4OX0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+  const resultWithSSO: GetUserNotificationCount200Response = await getUserNotificationCount(tenantId, sso);
 })();
 [inline-code-end]

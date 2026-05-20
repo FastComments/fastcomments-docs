@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "d9da720fedb0ea5f9d941dcb20138ed1b969cd2936ac224f0f14e5c0621b4ce9",
+  "generatedAt": "2026-05-20T06:52:44.855Z",
+  "codeExample": "const tenantId: string = 'tenant_8f3b1a2c';\nconst commentId: string = 'cmt_1024';\nconst broadcastId: string = 'brdcst_20260520';\nconst ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';\n\nconst resultWithSso: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId, ssoToken);\nconst resultWithoutSso: LockComment200Response = await unLockComment(tenantId, commentId, broadcastId);",
+  "model": "gpt-5-mini"
+}

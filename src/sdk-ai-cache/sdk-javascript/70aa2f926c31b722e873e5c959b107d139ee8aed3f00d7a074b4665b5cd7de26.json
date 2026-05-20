@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "70aa2f926c31b722e873e5c959b107d139ee8aed3f00d7a074b4665b5cd7de26",
+  "generatedAt": "2026-05-20T06:42:38.848Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst userId: string = 'user_9f7b2';\nconst includeHistory: boolean | undefined = true; // optional parameter example (not required by function)\nconst result: GetUserBadgeProgressByUserId200Response = await getUserBadgeProgressByUserId(tenantId, userId);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

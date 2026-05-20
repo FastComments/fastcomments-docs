@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "219d4fb3ddf36a992901cff9f8a49868b595098bc3e6a3d41c50009d85acbe20",
+  "generatedAt": "2026-05-20T06:50:02.510Z",
+  "codeExample": "const detailedResult: GifSearchResponse = await getGifsSearch(\"tenant_12345\", \"funny dachshund\", \"en-GB\", \"g\", 2);\nconst minimalResult: GifSearchResponse = await getGifsSearch(\"tenant_12345\", \"dancing toddler\");",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getPages",
+  "signatureHash": "499f6ec094ef7252649d6f10fc016e0b970000f2be389e9e193445bb59e779fa",
+  "generatedAt": "2026-05-20T06:39:11.590Z",
+  "codeExample": "const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\ntype PagesOptions = { includeDrafts?: boolean; pageSize?: number };\nconst options: PagesOptions = { includeDrafts: true }; // pageSize is optional and omitted\nconst pages: GetPagesAPIResponse = await getPages(tenantId, options);",
+  "model": "gpt-5-mini"
+}

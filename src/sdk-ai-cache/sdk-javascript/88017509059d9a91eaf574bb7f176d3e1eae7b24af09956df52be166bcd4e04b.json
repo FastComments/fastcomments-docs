@@ -1,0 +1,7 @@
+{
+  "method": "patchPage",
+  "signatureHash": "88017509059d9a91eaf574bb7f176d3e1eae7b24af09956df52be166bcd4e04b",
+  "generatedAt": "2026-05-20T06:43:52.371Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"d9f7c3a1-4b2e-41a0-9c3f-ef2b7a6d8c10\";\n  const id: string = \"page_6f1e2d3c4b5a\";\n  const updateData: UpdateAPIPageData = {\n    title: \"Billing Overview\",\n    content: \"<p>Updated payment provider and invoice schedule.</p>\",\n    tags: [\"billing\", \"finance\"] // optional metadata\n  };\n  const result: PatchPageAPIResponse = await patchPage(tenantId, id, updateData);\n  void result;\n})();",
+  "model": "gpt-5-mini"
+}

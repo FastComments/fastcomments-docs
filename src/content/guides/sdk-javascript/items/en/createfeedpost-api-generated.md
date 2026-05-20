@@ -17,19 +17,17 @@ Returns: [`CreateFeedPost200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_87f3b2';
-const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.example.com/images/post-123.jpg', mimeType: 'image/jpeg', width: 1200, height: 800, size: 245000 };
-const mediaItem: FeedPostMediaItem = { id: 'media_1', type: 'image', assets: [mediaAsset], altText: 'Conference keynote stage' };
-const link: FeedPostLink = { url: 'https://news.example.com/keynote-recap', title: 'Keynote recap' };
+const tenantId: string = "tenant_42_acme_corp";
+const assets: FeedPostMediaItemAsset[] = [{ url: "https://cdn.acme.com/images/launch.jpg", mimeType: "image/jpeg" }];
+const mediaItems: FeedPostMediaItem[] = [{ type: "image", caption: "Launch hero image", assets }];
+const links: FeedPostLink[] = [{ url: "https://acme.com/products/new", title: "Product details" }];
 const createFeedPostParams: CreateFeedPostParams = {
-  title: 'Product Launch Highlights',
-  content: 'Highlights from today’s product launch and roadmap updates.',
-  authorId: 'user_42',
-  mediaItems: [mediaItem],
-  links: [link],
-  tags: ['product', 'launch', 'announcement']
+  authorId: "user_987",
+  content: "We're live with the new product release. Join the demo stream.",
+  media: mediaItems,
+  links
 };
-const broadcastId: string = 'broadcast_20260424';
+const broadcastId: string = "broadcast_20260520_01";
 const isLive: boolean = true;
 const doSpamCheck: boolean = true;
 const skipDupCheck: boolean = false;

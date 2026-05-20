@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "e0ce5e365b91b52c508e12c1c76e34702aeafd18f957c9e02ab22b495e69b801",
+  "generatedAt": "2026-05-20T06:52:09.321Z",
+  "codeExample": "const tenantId: string = 'tenant_12345';\nconst afterCreatedAt: number = Math.floor(Date.now() / 1000) - 3600;\nconst response: ResetUserNotifications200Response = await resetUserNotifications(\n  tenantId,\n  'notif_98765',\n  afterCreatedAt,\n  true,\n  undefined,\n  undefined,\n  'sso-token-4f3b'\n);",
+  "model": "gpt-5-mini"
+}

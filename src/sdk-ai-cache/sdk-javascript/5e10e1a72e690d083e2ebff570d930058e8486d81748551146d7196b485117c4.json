@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "5e10e1a72e690d083e2ebff570d930058e8486d81748551146d7196b485117c4",
+  "generatedAt": "2026-05-20T06:38:09.330Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-8421';\nconst response: GetHashTags200Response = await getHashTags(tenantId);\nconst responsePage2: GetHashTags200Response = await getHashTags(tenantId, 2);",
+  "model": "gpt-5-mini"
+}

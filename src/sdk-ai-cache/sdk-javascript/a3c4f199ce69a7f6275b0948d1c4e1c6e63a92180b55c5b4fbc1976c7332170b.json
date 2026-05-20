@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "a3c4f199ce69a7f6275b0948d1c4e1c6e63a92180b55c5b4fbc1976c7332170b",
+  "generatedAt": "2026-05-20T06:30:49.611Z",
+  "codeExample": "const tenantId: string = 'tenant-521a';\nconst id: string = 'comment-8a2f4c';\nconst blockFromCommentParams: BlockFromCommentParams = {\n  durationDays: 30,\n  reason: 'Repeated harassment and profanity',\n  notifyUser: true\n};\nconst userId: string = 'user-73d2';\nconst anonUserId: string = 'anon-9b4';\nconst result: BlockFromCommentPublic200Response = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId, anonUserId);",
+  "model": "gpt-5-mini"
+}

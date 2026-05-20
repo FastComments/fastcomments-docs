@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "dc029efea5e834503fb76f5f187c8a101f1e1f8adc416aa9138b68e400030124",
+  "generatedAt": "2026-05-20T06:37:48.414Z",
+  "codeExample": "const tenantId: string = 'acme-corp-tenant-001';\nconst templateId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst errorsNoSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, templateId);\nconst errorsWithSkip: GetEmailTemplateRenderErrors200Response = await getEmailTemplateRenderErrors(tenantId, templateId, 25);",
+  "model": "gpt-5-mini"
+}

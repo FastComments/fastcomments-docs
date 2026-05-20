@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "d6c65bfe2b4b3f81c24043c7855850e0d49aeb49da1897f61a71f9923dc0c7ad",
+  "generatedAt": "2026-05-20T06:44:56.679Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst createCommentParams: CreateCommentParams = {\n  content: \"Thanks — this clarified the migration steps and saved me time.\",\n  threadId: \"article_67890\",\n  authorId: \"user_2468\"\n};\nconst result: SaveComment200Response = await saveComment(tenantId, createCommentParams, true, false, true, true);",
+  "model": "gpt-5-mini"
+}

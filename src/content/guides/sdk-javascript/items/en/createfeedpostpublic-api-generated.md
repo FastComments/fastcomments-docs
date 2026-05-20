@@ -15,20 +15,23 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_987654321";
-const asset: FeedPostMediaItemAsset = { url: "https://cdn.fastcomments.com/uploads/team-photo.jpg", mimeType: "image/jpeg", sizeBytes: 324512 };
-const mediaItem: FeedPostMediaItem = { type: "image", assets: [asset], caption: "Team launch day" };
-const link: FeedPostLink = { url: "https://www.example.com/blog/product-update-march-2026", title: "Product update — March 2026" };
-const createFeedPostParams: CreateFeedPostParams = {
-  title: "Product update — March 2026",
-  content: "<p>We shipped performance improvements and two new integrations.</p>",
-  media: [mediaItem],
-  link,
-  visibility: "public",
-  tags: ["product","release","march-2026"],
-  customConfig: { allowComments: true, requireTOS: false }
-};
-const broadcastId: string = "broadcast_2026_03_25_live";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsImlhdCI6MTY5MDI0MDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
+(async () => {
+  const tenantId: string = "acme-enterprises";
+  const createFeedPostParams: CreateFeedPostParams = {
+    title: "April Product Launch",
+    content: "We launched the new Acme Turbo widget — features, pricing, and availability inside.",
+    media: [
+      {
+        type: "image",
+        caption: "Product hero",
+        asset: { url: "https://cdn.acme.com/images/turbo-hero.jpg", mimeType: "image/jpeg", size: 128000 }
+      }
+    ],
+    links: [{ url: "https://acme.com/products/turbo", text: "Product page" }]
+  };
+  const broadcastId: string = "broadcast-2026-04-15";
+  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+  const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
+  console.log(result);
+})();
 [inline-code-end]

@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "2472f040445d6ce73fffef37f2550ca253531df28ff177b5f42a65fa59ebab3c",
+  "generatedAt": "2026-05-20T06:44:07.527Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-78\";\nconst domainToUpdate: string = \"billing.acme-enterprises.com\";\nconst updateDomainConfigParams: UpdateDomainConfigParams = {\n  enabled: true,\n  ttlSeconds: 300,           // optional parameter example\n  cnameTargets: [\"edge1.acme-cdn.net\"]\n};\nconst updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);",
+  "model": "gpt-5-mini"
+}

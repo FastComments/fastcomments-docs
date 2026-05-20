@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "9944882a6a8b764990bceb2711c85f762947c167368990ed943fdd78f9e746d8",
+  "generatedAt": "2026-05-20T06:34:08.382Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_987\";\nconst id: string = \"tmpl_5b7c2f\";\nconst errorId: string = \"err_20260518_01\";\nconst includeAuditLog: boolean | undefined = true; // optional flag (may be omitted)\nconst result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);",
+  "model": "gpt-5-mini"
+}

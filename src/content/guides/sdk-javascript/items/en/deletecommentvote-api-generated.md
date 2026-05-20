@@ -18,21 +18,12 @@ Returns: [`DeleteCommentVote200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteCommentVote Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-87e4fd';
-const commentId: string = 'cmt-9a12b3f4';
-const voteId: string = 'vote-4f6d21b9';
-const urlId: string = 'https://www.acme.com/articles/2026/03/25/how-to-test';
-const broadcastId: string = 'broadcast-20260325-01';
-const editKey: string = 'editkey-6b7c8d9e';
-const sso: string = 'sso-jwt-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-
-const response: DeleteCommentVote200Response = await deleteCommentVote(
-  tenantId,
-  commentId,
-  voteId,
-  urlId,
-  broadcastId,
-  editKey,
-  sso
-);
+const tenantId: string = 'tenant-84a7';
+const commentId: string = 'comment-9f3b';
+const voteId: string = 'vote-5c2d';
+const urlId: string = 'url-73b1';
+const broadcastId: string = 'broadcast-2026-05-20';
+const editKey: string | undefined = 'edit_12ab34';
+const sso: string | undefined = 'sso_tok_9f8e7d';
+const result: DeleteCommentVote200Response = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);
 [inline-code-end]
