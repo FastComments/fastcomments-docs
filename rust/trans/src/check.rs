@@ -131,10 +131,17 @@ pub async fn run() -> Result<()> {
     let ui_stale = ui_audit.stale_count;
     let stale_sample = ui_audit.stale_sample;
 
+    // meta.json gap check. See audit_meta_translations.
+    let meta_audit = audit_meta_translations(&guides_dir, &cache, &locales);
+    let meta_missing = meta_audit.missing_count;
+    let meta_stale = meta_audit.stale_count;
+
     info!(
         missing_translations = gaps,
         missing_ui_strings = ui_missing,
         stale_ui_strings = ui_stale,
+        missing_meta_json = meta_missing,
+        stale_meta_json = meta_stale,
         inline_code_mismatches = inline_code_errors.len(),
     );
     if !stale_sample.is_empty() {
@@ -143,8 +150,21 @@ pub async fn run() -> Result<()> {
             info!("  {l}/{k}");
         }
     }
+    if !meta_audit.missing_sample.is_empty() {
+        info!("first 10 missing meta.json translations:");
+        for (g, l) in &meta_audit.missing_sample {
+            info!("  {g}/{l}");
+        }
+    }
+    if !meta_audit.stale_sample.is_empty() {
+        info!("first 10 stale meta.json translations (source edited):");
+        for (g, l) in &meta_audit.stale_sample {
+            info!("  {g}/{l}");
+        }
+    }
     // Combine for the final exit gate. Both classes block the build.
     let ui_gaps = ui_missing + ui_stale;
+    let meta_gaps = meta_missing + meta_stale;
     if !inline_code_errors.is_empty() {
         info!("first 10 inline-code mismatches:");
         for (g, l, f, (es, ee), (as_, ae)) in inline_code_errors.iter().take(10) {
@@ -165,7 +185,12 @@ pub async fn run() -> Result<()> {
             info!("  {g}/{l}/{f}");
         }
     }
-    if gaps > 0 || ui_gaps > 0 || !needs_migration.is_empty() || !inline_code_errors.is_empty() {
+    if gaps > 0
+        || ui_gaps > 0
+        || meta_gaps > 0
+        || !needs_migration.is_empty()
+        || !inline_code_errors.is_empty()
+    {
         std::process::exit(1);
     }
     info!("all translations up to date");
@@ -243,6 +268,104 @@ fn audit_ui_translations(
     }
     UiAudit {
         missing,
+        stale_count,
+        stale_sample,
+    }
+}
+
+/// Outcome of a meta.json translation audit. `missing_count` covers
+/// the case Node's check-translations.js:226-244 catches (no
+/// `meta_translated/meta_<locale>.json` file at all). `stale_count`
+/// extends that with hash-based staleness — the same check
+/// `translate-with-gpt.js:842` (`isCached`) uses to decide whether
+/// `trans run` would re-translate. Surfacing it here means `trans
+/// check` exits non-zero so build.sh branches into the translator,
+/// instead of reporting "all translations up to date" while
+/// meta.json edits go untranslated.
+///
+/// The cache key matches `getCacheKey(guideId, locale, "meta.json")`
+/// in Node — `{guideId}/{locale}/meta.json` — so the existing
+/// `src/translation-cache.json` entries remain valid hits.
+struct MetaAudit {
+    missing_count: usize,
+    missing_sample: Vec<(String, String)>, // (guide_id, locale)
+    stale_count: usize,
+    stale_sample: Vec<(String, String)>,
+}
+
+fn audit_meta_translations(
+    guides_dir: &Path,
+    cache: &CacheMap,
+    locales: &Locales,
+) -> MetaAudit {
+    const SAMPLE_CAP: usize = 10;
+    let mut missing_count = 0usize;
+    let mut missing_sample: Vec<(String, String)> = Vec::new();
+    let mut stale_count = 0usize;
+    let mut stale_sample: Vec<(String, String)> = Vec::new();
+
+    let Ok(entries) = std::fs::read_dir(guides_dir) else {
+        return MetaAudit {
+            missing_count,
+            missing_sample,
+            stale_count,
+            stale_sample,
+        };
+    };
+
+    for entry in entries.flatten() {
+        let Ok(ft) = entry.file_type() else { continue };
+        if !ft.is_dir() {
+            continue;
+        }
+        let guide_id = entry.file_name().to_string_lossy().into_owned();
+        let meta_path = entry.path().join("meta.json");
+        if !meta_path.exists() {
+            continue;
+        }
+        // Hash the source meta.json once per guide. Mirrors
+        // translate-with-gpt.js:833-834.
+        let source_hash = match std::fs::read_to_string(&meta_path) {
+            Ok(s) => Some(hash_content(&s)),
+            Err(_) => None,
+        };
+        for (locale_key, _) in &locales.locales {
+            if locale_key == &locales.default_locale {
+                continue;
+            }
+            let translated = entry
+                .path()
+                .join("meta_translated")
+                .join(format!("meta_{locale_key}.json"));
+            if !translated.exists() {
+                missing_count += 1;
+                if missing_sample.len() < SAMPLE_CAP {
+                    missing_sample.push((guide_id.clone(), locale_key.clone()));
+                }
+                continue;
+            }
+            // File present. Compare cache entry against current source
+            // hash — same shape as translate-with-gpt.js's isCached.
+            let Some(expected) = source_hash.as_deref() else {
+                continue;
+            };
+            let cache_key = format!("{guide_id}/{locale_key}/meta.json");
+            let fresh = cache
+                .0
+                .get(&cache_key)
+                .map(|cached| cached == expected)
+                .unwrap_or(false);
+            if !fresh {
+                stale_count += 1;
+                if stale_sample.len() < SAMPLE_CAP {
+                    stale_sample.push((guide_id.clone(), locale_key.clone()));
+                }
+            }
+        }
+    }
+    MetaAudit {
+        missing_count,
+        missing_sample,
         stale_count,
         stale_sample,
     }
@@ -402,5 +525,156 @@ mod ui_audit_tests {
         assert_eq!(r.missing, 0);
         assert_eq!(r.stale_count, 12);
         assert_eq!(r.stale_sample.len(), 10);
+    }
+}
+
+#[cfg(test)]
+mod meta_audit_tests {
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+
+    fn locales_en_fr_de() -> Locales {
+        let mut m: IndexMap<String, Locale> = IndexMap::new();
+        for k in ["en", "fr_fr", "de_de"] {
+            m.insert(
+                k.to_string(),
+                Locale {
+                    name: k.into(),
+                    native_name: k.into(),
+                    hreflang: k.into(),
+                    flag: None,
+                },
+            );
+        }
+        Locales {
+            default_locale: "en".into(),
+            locales: m,
+        }
+    }
+
+    fn make_guide_with_meta(
+        guides_dir: &Path,
+        guide_id: &str,
+        meta_body: &str,
+        translated: &[(&str, &str)],
+    ) {
+        let g = guides_dir.join(guide_id);
+        std::fs::create_dir_all(&g).unwrap();
+        std::fs::write(g.join("meta.json"), meta_body).unwrap();
+        if !translated.is_empty() {
+            let td = g.join("meta_translated");
+            std::fs::create_dir_all(&td).unwrap();
+            for (locale, body) in translated {
+                std::fs::write(td.join(format!("meta_{locale}.json")), body).unwrap();
+            }
+        }
+    }
+
+    fn cache_with<I: IntoIterator<Item = (String, String)>>(entries: I) -> CacheMap {
+        let mut b = BTreeMap::new();
+        for (k, v) in entries {
+            b.insert(k, v);
+        }
+        CacheMap(b)
+    }
+
+    #[test]
+    fn missing_meta_translated_file_is_flagged() {
+        let tmp = tempfile::tempdir().unwrap();
+        // Source meta.json exists; neither locale has a translated copy.
+        make_guide_with_meta(tmp.path(), "guide-a", "{\"name\":\"A\"}", &[]);
+        let r = audit_meta_translations(tmp.path(), &cache_with([]), &locales_en_fr_de());
+        assert_eq!(r.missing_count, 2, "fr_fr + de_de both missing");
+        assert_eq!(r.stale_count, 0);
+        assert!(r.missing_sample.iter().any(|(g, l)| g == "guide-a" && l == "fr_fr"));
+        assert!(r.missing_sample.iter().any(|(g, l)| g == "guide-a" && l == "de_de"));
+    }
+
+    #[test]
+    fn fresh_meta_translation_is_not_flagged() {
+        let tmp = tempfile::tempdir().unwrap();
+        let body = "{\"name\":\"A\"}";
+        make_guide_with_meta(
+            tmp.path(),
+            "guide-a",
+            body,
+            &[
+                ("fr_fr", "{\"name\":\"Le A\"}"),
+                ("de_de", "{\"name\":\"Das A\"}"),
+            ],
+        );
+        let h = hash_content(body);
+        let cache = cache_with([
+            ("guide-a/fr_fr/meta.json".into(), h.clone()),
+            ("guide-a/de_de/meta.json".into(), h.clone()),
+        ]);
+        let r = audit_meta_translations(tmp.path(), &cache, &locales_en_fr_de());
+        assert_eq!(r.missing_count, 0);
+        assert_eq!(r.stale_count, 0);
+    }
+
+    #[test]
+    fn stale_meta_translation_is_flagged() {
+        // Source has been edited since the translation was cached.
+        let tmp = tempfile::tempdir().unwrap();
+        make_guide_with_meta(
+            tmp.path(),
+            "guide-a",
+            "{\"name\":\"Edited A\"}",
+            &[
+                ("fr_fr", "{\"name\":\"Le A\"}"),
+                ("de_de", "{\"name\":\"Das A\"}"),
+            ],
+        );
+        let old_hash = hash_content("{\"name\":\"A\"}");
+        let cache = cache_with([
+            ("guide-a/fr_fr/meta.json".into(), old_hash.clone()),
+            ("guide-a/de_de/meta.json".into(), old_hash),
+        ]);
+        let r = audit_meta_translations(tmp.path(), &cache, &locales_en_fr_de());
+        assert_eq!(r.missing_count, 0);
+        assert_eq!(r.stale_count, 2);
+    }
+
+    #[test]
+    fn translation_present_without_cache_entry_is_stale() {
+        // File written by hand, no cache entry — matches Node's
+        // isCached semantics (no entry means treat as needing
+        // translation).
+        let tmp = tempfile::tempdir().unwrap();
+        make_guide_with_meta(
+            tmp.path(),
+            "guide-a",
+            "{\"name\":\"A\"}",
+            &[("fr_fr", "{\"name\":\"Le A\"}")],
+        );
+        let r = audit_meta_translations(tmp.path(), &cache_with([]), &locales_en_fr_de());
+        // de_de missing (no file), fr_fr present-but-no-cache -> stale.
+        assert_eq!(r.missing_count, 1);
+        assert_eq!(r.stale_count, 1);
+    }
+
+    #[test]
+    fn guide_without_source_meta_is_ignored() {
+        // Some directories under guides/ are empty / unrelated; if
+        // there's no meta.json we shouldn't fabricate gaps.
+        let tmp = tempfile::tempdir().unwrap();
+        std::fs::create_dir_all(tmp.path().join("guide-empty")).unwrap();
+        let r = audit_meta_translations(tmp.path(), &cache_with([]), &locales_en_fr_de());
+        assert_eq!(r.missing_count, 0);
+        assert_eq!(r.stale_count, 0);
+    }
+
+    #[test]
+    fn nonexistent_guides_dir_returns_zero() {
+        // Defensive — early call before scaffolding shouldn't panic.
+        let r = audit_meta_translations(
+            Path::new("/definitely/does/not/exist/nowhere"),
+            &cache_with([]),
+            &locales_en_fr_de(),
+        );
+        assert_eq!(r.missing_count, 0);
+        assert_eq!(r.stale_count, 0);
     }
 }
