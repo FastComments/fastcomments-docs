@@ -227,10 +227,26 @@ impl LlmClient {
     }
 
     async fn call_openai(&self, api_key: &str, model: &str, prompt: &str) -> Result<String> {
+        // Three things to keep in lockstep with Node
+        // (src/sdk-doc-generators/openai-client.js:115-126, 386-416):
+        //
+        // 1. Send a language-specific system persona, not just the user
+        //    prompt. The persona materially affects the LLM's tone and
+        //    idiomaticity — without it, code examples drift to
+        //    generic-style output that doesn't match Node's cache.
+        // 2. max_completion_tokens = 8000 (Node), not 4000. Halving the
+        //    budget truncates longer snippets mid-function.
+        // 3. Strip the leading/trailing markdown code fence the model
+        //    sometimes wraps the answer in (```typescript / ```rust /
+        //    plain ```). Otherwise the cached output starts with a
+        //    fence that the rendered markdown will display literally.
         let body = json!({
             "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "max_completion_tokens": 4000,
+            "messages": [
+                {"role": "system", "content": self.system_message()},
+                {"role": "user", "content": prompt},
+            ],
+            "max_completion_tokens": 8000,
         });
         let resp = self
             .http
@@ -250,13 +266,51 @@ impl LlmClient {
             .into());
         }
         let value: Value = resp.json().await.context("parse OpenAI response")?;
-        let text = value
+        let raw = value
             .pointer("/choices/0/message/content")
             .and_then(|v| v.as_str())
-            .ok_or(LlmError::BadResponse)?
-            .to_string();
-        Ok(text)
+            .ok_or(LlmError::BadResponse)?;
+        Ok(strip_code_fences(raw))
     }
+
+    /// Mirrors Node's `getSystemMessage` at openai-client.js:115-126.
+    /// Language-specific persona; falls back to TypeScript for any
+    /// language we haven't seen (matches Node's else branch).
+    fn system_message(&self) -> &'static str {
+        match self.language.as_str() {
+            "rust" => {
+                "You are an expert Rust developer generating realistic, idiomatic API usage examples for the FastComments API."
+            }
+            "cpp" => {
+                "You are an expert C++ developer generating realistic, idiomatic API usage examples for the FastComments API."
+            }
+            "nim" => {
+                "You are an expert Nim developer generating realistic, idiomatic API usage examples for the FastComments API."
+            }
+            _ => {
+                "You are an expert TypeScript developer generating realistic API usage examples for the FastComments API."
+            }
+        }
+    }
+}
+
+/// Strip leading ` ```typescript\n` / ` ```ts\n` / ` ```rust\n` / ` ```\n`
+/// and trailing `\n``` ` from the model's reply, matching Node's
+/// `cleanCode` chain at openai-client.js:411-416. Also `.trim()`s,
+/// which Node does up-front on line 408.
+fn strip_code_fences(s: &str) -> String {
+    let trimmed = s.trim();
+    let mut body = trimmed;
+    for prefix in ["```typescript\n", "```ts\n", "```rust\n", "```cpp\n", "```nim\n", "```\n"] {
+        if let Some(rest) = body.strip_prefix(prefix) {
+            body = rest;
+            break;
+        }
+    }
+    if let Some(rest) = body.strip_suffix("\n```") {
+        body = rest;
+    }
+    body.to_string()
 }
 
 fn is_transient(err: &anyhow::Error) -> bool {
@@ -451,6 +505,43 @@ mod cache_key_tests {
             client.cache_key(&absent, "p"),
             client.cache_key(&null_present, "p"),
             "absent must hash differently from explicit-null (matches Node)"
+        );
+    }
+
+    #[test]
+    fn system_message_per_language() {
+        let mut c = make_client();
+        c.language = "typescript".into();
+        assert!(c.system_message().starts_with("You are an expert TypeScript"));
+        c.language = "rust".into();
+        assert!(c.system_message().starts_with("You are an expert Rust"));
+        c.language = "cpp".into();
+        assert!(c.system_message().starts_with("You are an expert C++"));
+        c.language = "nim".into();
+        assert!(c.system_message().starts_with("You are an expert Nim"));
+        // Unknown language falls back to TypeScript persona (matches
+        // Node's else branch at openai-client.js:125).
+        c.language = "haskell".into();
+        assert!(c.system_message().starts_with("You are an expert TypeScript"));
+    }
+
+    #[test]
+    fn strip_code_fences_handles_node_variants() {
+        // Mirrors src/sdk-doc-generators/openai-client.js:411-416.
+        // Each prefix appears at start, paired with the closing ```.
+        assert_eq!(strip_code_fences("```typescript\nfoo\n```"), "foo");
+        assert_eq!(strip_code_fences("```ts\nfoo\n```"), "foo");
+        assert_eq!(strip_code_fences("```rust\nlet x = 1;\n```"), "let x = 1;");
+        assert_eq!(strip_code_fences("```\nbar\n```"), "bar");
+        // .trim() up-front mirrors Node's codeExample.trim().
+        assert_eq!(strip_code_fences("  \n```\nbar\n```\n  "), "bar");
+        // No fences: returned as-is (after trim).
+        assert_eq!(strip_code_fences("naked code"), "naked code");
+        // Only the leading-most fence is stripped; embedded fences in
+        // mid-snippet are left alone.
+        assert_eq!(
+            strip_code_fences("```typescript\nlet a = `\\`\\``;\n```"),
+            "let a = `\\`\\``;"
         );
     }
 }
