@@ -344,6 +344,9 @@ async fn process_screenshots(
     if placeholders.is_empty() {
         return Ok(html);
     }
+    if std::env::var("SKIP_SCREENSHOTS").map(|v| v == "1").unwrap_or(false) {
+        return Ok(html);
+    }
     // The pipeline already inlined the `<div class="screenshot">` markup
     // (so pulldown-cmark sees it as block HTML, not text). All this
     // function does is capture/refresh the underlying PNG when the
