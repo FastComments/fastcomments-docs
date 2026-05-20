@@ -18,7 +18,13 @@ impl DocGenerator for ReadmeGenerator {
         // README parsing.
         if let Some(readme_path) = find_readme(&ctx.repo_path) {
             let content = std::fs::read_to_string(&readme_path)?;
-            sections.extend(parse_readme(&content, &ctx.sdk.repo, &ctx.sdk.branch));
+            sections.extend(parse_readme(
+                &content,
+                &ctx.sdk.repo,
+                &ctx.sdk.branch,
+                &ctx.sdk.id,
+                &ctx.repo_path,
+            ));
         } else {
             tracing::warn!(sdk = %ctx.sdk.id, "no README found");
         }
@@ -26,7 +32,13 @@ impl DocGenerator for ReadmeGenerator {
         // Additional docs/ markdown files.
         let docs_dir = ctx.repo_path.join("docs");
         if docs_dir.exists() {
-            sections.extend(parse_docs_dir(&docs_dir, &ctx.sdk.repo, &ctx.sdk.branch));
+            sections.extend(parse_docs_dir(
+                &docs_dir,
+                &ctx.sdk.repo,
+                &ctx.sdk.branch,
+                &ctx.sdk.id,
+                &ctx.repo_path,
+            ));
         }
 
         let intro = Some(generate_intro(&ctx.sdk));
@@ -54,14 +66,21 @@ fn find_readme(repo: &std::path::Path) -> Option<std::path::PathBuf> {
     None
 }
 
-fn parse_readme(content: &str, repo_url: &str, branch: &str) -> Vec<DocSection> {
+fn parse_readme(
+    content: &str,
+    repo_url: &str,
+    branch: &str,
+    sdk_id: &str,
+    repo_path: &std::path::Path,
+) -> Vec<DocSection> {
     let content = remove_front_matter(content);
     let mut out = Vec::new();
     // Split by `^## TITLE$`.
     static H2: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?m)^##\s+(.+)$").expect("regex"));
     let matches: Vec<_> = H2.find_iter(&content).collect();
     if matches.is_empty() {
-        let converted = convert_relative_links(&content, repo_url, branch, "");
+        let converted =
+            convert_relative_links_for_sdk(&content, repo_url, branch, "", Some(sdk_id), Some(repo_path));
         out.push(DocSection {
             name: "Overview".to_string(),
             file: Some("overview-readme-generated.md".to_string()),
@@ -90,7 +109,8 @@ fn parse_readme(content: &str, repo_url: &str, branch: &str) -> Vec<DocSection> 
         // section name). Matches `^##\s+.+\n` in readme-generator.js:104.
         let body = H2.replace(raw, "").trim_start_matches('\n').to_string();
         let body = body.trim().to_string();
-        let body = convert_relative_links(&body, repo_url, branch, "");
+        let body =
+            convert_relative_links_for_sdk(&body, repo_url, branch, "", Some(sdk_id), Some(repo_path));
         let sub_cat = categorize(&title);
         if should_skip_section(&title) {
             continue;
@@ -107,7 +127,13 @@ fn parse_readme(content: &str, repo_url: &str, branch: &str) -> Vec<DocSection> 
     out
 }
 
-fn parse_docs_dir(dir: &std::path::Path, repo_url: &str, branch: &str) -> Vec<DocSection> {
+fn parse_docs_dir(
+    dir: &std::path::Path,
+    repo_url: &str,
+    branch: &str,
+    sdk_id: &str,
+    repo_path: &std::path::Path,
+) -> Vec<DocSection> {
     let mut out = Vec::new();
     let Ok(entries) = std::fs::read_dir(dir) else {
         return out;
@@ -119,14 +145,23 @@ fn parse_docs_dir(dir: &std::path::Path, repo_url: &str, branch: &str) -> Vec<Do
         }
         let Ok(content) = std::fs::read_to_string(&p) else { continue };
         let content = remove_front_matter(&content);
-        let converted = convert_relative_links(&content, repo_url, branch, "docs/");
+        let converted = convert_relative_links_for_sdk(
+            &content,
+            repo_url,
+            branch,
+            "docs/",
+            Some(sdk_id),
+            Some(repo_path),
+        );
         let title = extract_title(&converted).unwrap_or_else(|| {
             p.file_stem()
                 .map(|s| s.to_string_lossy().replace('-', " "))
                 .unwrap_or_default()
         });
-        // Strip leading H1.
-        static H1: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?m)^#\s+.+\n").expect("regex"));
+        // Strip leading H1. Mirror Node's `content.replace(/^#\s+.+\n/, '')`
+        // — NO multiline flag, so leading whitespace (e.g. left over from
+        // removed front matter) prevents the strip. Then trim.
+        static H1: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A#\s+.+\n").expect("regex"));
         let body = H1.replace(&converted, "").trim().to_string();
         out.push(DocSection {
             name: title.clone(),
@@ -141,40 +176,130 @@ fn parse_docs_dir(dir: &std::path::Path, repo_url: &str, branch: &str) -> Vec<Do
 }
 
 fn remove_front_matter(content: &str) -> String {
-    static FM: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?s)\A---\s*\n.*?\n---\s*\n").expect("regex"));
+    // Mirror Node's `/^---\n[\s\S]*?\n---\n/` at base-generator.js:74.
+    // Use literal `\n` (not `\s*\n`) so we don't consume the blank line
+    // after the closing `---` — that blank line is what prevents the
+    // following H1 from being stripped by `\A#\s+.+\n`.
+    static FM: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?s)\A---\n.*?\n---\n").expect("regex"));
     FM.replace(content, "").into_owned()
 }
 
 fn convert_relative_links(content: &str, repo_url: &str, branch: &str, prefix: &str) -> String {
-    // Convert `[label](relative/path)` -> `[label](repo/blob/BRANCH/PREFIX/relative/path)`.
-    // Skip absolute URLs and anchor-only links.
+    convert_relative_links_for_sdk(content, repo_url, branch, prefix, None, None)
+}
+
+/// Full port of `convertRelativeLinks` in
+/// src/sdk-doc-generators/base-generator.js:155-206. When `sdk_id` and
+/// `repo_path` are provided, image links get copied to
+/// `src/static/generated/images/sdk-images/` (mirrors `copyImageToStatic`).
+pub fn convert_relative_links_for_sdk(
+    content: &str,
+    repo_url: &str,
+    branch: &str,
+    base_path: &str,
+    sdk_id: Option<&str>,
+    repo_path: Option<&std::path::Path>,
+) -> String {
     static LINK: Lazy<Regex> =
-        Lazy::new(|| Regex::new(r"\[([^\]]*)\]\(([^)]+)\)").expect("regex"));
+        Lazy::new(|| Regex::new(r"(!?)\[([^\]]+)\]\(([^)]+)\)").expect("regex"));
     LINK.replace_all(content, |caps: &regex::Captures| {
-        let text = &caps[1];
-        let href = &caps[2];
-        if href.starts_with("http://")
-            || href.starts_with("https://")
-            || href.starts_with("mailto:")
-            || href.starts_with('#')
-        {
+        let is_image = &caps[1];
+        let text = &caps[2];
+        let href = &caps[3];
+
+        if href.starts_with("http://") || href.starts_with("https://") {
             return caps[0].to_string();
         }
-        let path = if let Some(p) = href.strip_prefix("./") {
-            p.to_string()
+        // Anchor links: sanitize + append `-readme-generated`.
+        if let Some(anchor) = href.strip_prefix('#') {
+            let sanitized = format!("{}-readme-generated", sanitize_filename(anchor));
+            return format!("{is_image}[{text}](#{sanitized})");
+        }
+
+        // Resolve to a repo-root-relative path.
+        let resolved = if let Some(rest) = href.strip_prefix('/') {
+            rest.to_string()
         } else {
-            href.to_string()
+            posix_join(base_path, href)
         };
-        // Build raw GitHub link.
+        let normalized = posix_normalize(&resolved);
         let repo_clean = repo_url.trim_end_matches(".git").trim_end_matches('/');
-        let new_href = if prefix.is_empty() {
-            format!("{repo_clean}/blob/{branch}/{path}")
-        } else {
-            format!("{repo_clean}/blob/{branch}/{prefix}{path}")
-        };
-        format!("[{text}]({new_href})")
+
+        if !is_image.is_empty() {
+            if let (Some(id), Some(rp)) = (sdk_id, repo_path) {
+                if let Some(local) = copy_image_to_static(id, rp, &normalized) {
+                    return format!("![{text}]({local})");
+                }
+            }
+            // Fallback to raw.githubusercontent.com.
+            let raw_url = repo_clean.replace("https://github.com/", "https://raw.githubusercontent.com/");
+            return format!("![{text}]({raw_url}/{branch}/{normalized})");
+        }
+
+        format!("[{text}]({repo_clean}/blob/{branch}/{normalized})")
     })
     .into_owned()
+}
+
+fn posix_join(a: &str, b: &str) -> String {
+    if a.is_empty() {
+        return b.to_string();
+    }
+    let trimmed_a = a.trim_end_matches('/');
+    let trimmed_b = b.trim_start_matches("./");
+    format!("{trimmed_a}/{trimmed_b}")
+}
+
+/// Best-effort posix path normalization: resolves `.` and `..` segments.
+fn posix_normalize(path: &str) -> String {
+    let mut out: Vec<&str> = Vec::new();
+    for seg in path.split('/') {
+        match seg {
+            "" | "." => {}
+            ".." => {
+                if !out.is_empty() && out.last() != Some(&"..") {
+                    out.pop();
+                } else {
+                    out.push("..");
+                }
+            }
+            s => out.push(s),
+        }
+    }
+    let joined = out.join("/");
+    if path.ends_with('/') && !joined.ends_with('/') {
+        format!("{joined}/")
+    } else {
+        joined
+    }
+}
+
+/// Mirrors `copyImageToStatic` in src/sdk-doc-generators/base-generator.js:213-231.
+fn copy_image_to_static(
+    sdk_id: &str,
+    repo_path: &std::path::Path,
+    repo_relative_path: &str,
+) -> Option<String> {
+    let src = repo_path.join(repo_relative_path);
+    if !src.exists() {
+        tracing::warn!(path = %src.display(), "image not found in repo checkout");
+        return None;
+    }
+    // Resolve the destination relative to the workspace static dir.
+    // The Node code uses `__dirname/../static/generated/images/sdk-images`.
+    // We resolve via repo_root() from the build module (the SDK repo
+    // checkout is always under <repo_root>/src/content/sdks-checkout/).
+    let repo_root = src
+        .ancestors()
+        .find(|p| p.join("src").join("locales.json").exists())?;
+    let flat_name = format!("{sdk_id}--{}", repo_relative_path.replace('/', "-"));
+    let dest_dir = repo_root.join("src/static/generated/images/sdk-images");
+    if !dest_dir.exists() {
+        std::fs::create_dir_all(&dest_dir).ok()?;
+    }
+    let dest = dest_dir.join(&flat_name);
+    std::fs::copy(&src, &dest).ok()?;
+    Some(format!("images/sdk-images/{flat_name}"))
 }
 
 fn extract_title(content: &str) -> Option<String> {

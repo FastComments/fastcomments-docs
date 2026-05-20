@@ -1,7 +1,7 @@
-use std::collections::BTreeMap;
 use std::path::Path;
 
 use anyhow::{Context, Result};
+use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -18,7 +18,10 @@ pub struct Locale {
 pub struct Locales {
     #[serde(rename = "defaultLocale")]
     pub default_locale: String,
-    pub locales: BTreeMap<String, Locale>,
+    /// Insertion-ordered to preserve `src/locales.json`'s original
+    /// declaration order — used by alternate-hreflang link emission to
+    /// match Node's `Object.keys(locales)` ordering.
+    pub locales: IndexMap<String, Locale>,
 }
 
 impl Locales {

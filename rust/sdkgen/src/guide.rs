@@ -151,12 +151,17 @@ fn build_meta(sdk: &SdkConfig, sections: &[DocSection]) -> serde_json::Value {
         .iter()
         .filter(|s| s.type_.as_deref() == Some("api"))
         .collect();
+    // Sort matches src/sdk-guide-generator.js:106-126 — uses
+    // localeCompare which is case-insensitive for ASCII. We replicate
+    // with `to_lowercase` keys so PascalCase methods order naturally.
     api.sort_by(|a, b| {
         let ca = a.sub_cat.as_deref().unwrap_or("Documentation");
         let cb = b.sub_cat.as_deref().unwrap_or("Documentation");
         let pa = category_priority(ca);
         let pb = category_priority(cb);
-        pa.cmp(&pb).then(ca.cmp(cb)).then(a.name.cmp(&b.name))
+        pa.cmp(&pb)
+            .then_with(|| ca.to_lowercase().cmp(&cb.to_lowercase()))
+            .then_with(|| a.name.to_lowercase().cmp(&b.name.to_lowercase()))
     });
 
     let mut items: Vec<serde_json::Value> = Vec::with_capacity(sections.len());
@@ -182,12 +187,21 @@ fn build_meta(sdk: &SdkConfig, sections: &[DocSection]) -> serde_json::Value {
         items.push(serde_json::Value::Object(obj));
     }
 
-    json!({
-        "name": sdk.name,
-        "pageHeader": sdk.page_header.clone().unwrap_or_else(|| sdk.name.clone()),
-        "icon": sdk.icon,
-        "itemsOrdered": items,
-    })
+    // Build the meta object with explicit insertion order so JSON.stringify
+    // parity matches Node: name, pageHeader, [icon], itemsOrdered. Omit
+    // `icon` entirely when the SDK has none (Node's JSON.stringify drops
+    // undefined fields).
+    let mut meta = serde_json::Map::new();
+    meta.insert("name".into(), json!(sdk.name));
+    meta.insert(
+        "pageHeader".into(),
+        json!(sdk.page_header.clone().unwrap_or_else(|| sdk.name.clone())),
+    );
+    if let Some(icon) = &sdk.icon {
+        meta.insert("icon".into(), json!(icon));
+    }
+    meta.insert("itemsOrdered".into(), serde_json::Value::Array(items));
+    serde_json::Value::Object(meta)
 }
 
 fn repo_root() -> Result<PathBuf> {

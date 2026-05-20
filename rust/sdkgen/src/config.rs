@@ -25,6 +25,10 @@ pub struct SdkConfig {
     pub doc_generators: Option<Vec<String>>,
     #[serde(default)]
     pub description: Option<String>,
+    /// Captures fields like `openApiConfig` and anything else not
+    /// explicitly typed above. Used by the OpenAPI generator.
+    #[serde(flatten)]
+    pub extra: Option<serde_json::Map<String, serde_json::Value>>,
 }
 
 impl SdkConfig {

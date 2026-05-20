@@ -69,8 +69,16 @@ pub struct FullProcessed {
 /// Run the pipeline up through markdown + snippets + style, but leave
 /// `[app-screenshot-...]` as placeholders. The caller (sitegen) is
 /// responsible for capturing the screenshots and substituting back.
+///
+/// `markdown_file_basename` should be the markdown file's basename
+/// without the `.md` extension (e.g. `wordpress` for `wordpress.md`).
+/// Used to build code-snippet IDs that match Node's pattern
+/// `code-${basename}-${TitleNoSpace}.html` at
+/// `src/inline-code-generator.js:84` and
+/// `src/code-example-generator.js:81`.
 pub async fn process_markdown(
     raw_markdown: &str,
+    markdown_file_basename: &str,
     cfg: &FullPipelineConfig,
     sidecar: &SidecarClient,
 ) -> Result<FullProcessed> {
@@ -82,8 +90,8 @@ pub async fn process_markdown(
     // a browser.
     let (s2, screenshots) = extract_app_screenshot_placeholders(&s1)?;
     let s3 = strip_flow_diagram(&s2);
-    let s4 = expand_code_example(&s3, sidecar, cfg).await?;
-    let s5 = expand_inline_code(&s4, sidecar, cfg).await?;
+    let s4 = expand_code_example(&s3, markdown_file_basename, sidecar, cfg).await?;
+    let s5 = expand_inline_code(&s4, markdown_file_basename, sidecar, cfg).await?;
     let s6 = expand_api_resource_header(&s5).await?;
     let s7 = expand_related_parameter(&s6).await?;
 
@@ -167,6 +175,7 @@ const CODE_EXAMPLE_END: &str = "code-example-end]";
 
 async fn expand_code_example(
     input: &str,
+    file_basename: &str,
     sidecar: &SidecarClient,
     cfg: &FullPipelineConfig,
 ) -> Result<String> {
@@ -210,7 +219,7 @@ async fn expand_code_example(
             format!("{code_html}\n{additional_demo_code}")
         };
 
-        let code_snippet_name = code_snippet_id("code-example", title);
+        let code_snippet_name = code_snippet_id(file_basename, title);
         let snippet_page_file_name = format!("{code_snippet_name}.html");
 
         if is_functional {
@@ -254,6 +263,7 @@ const INLINE_CODE_ATTRS_END: &str = "inline-code-attrs-end]";
 
 async fn expand_inline_code(
     input: &str,
+    file_basename: &str,
     sidecar: &SidecarClient,
     cfg: &FullPipelineConfig,
 ) -> Result<String> {
@@ -293,7 +303,7 @@ async fn expand_inline_code(
             .and_then(|v| v.as_bool())
             .unwrap_or(false);
 
-        let code_snippet_name = code_snippet_id("inline-code", &title);
+        let code_snippet_name = code_snippet_id(file_basename, &title);
         let snippet_page_file_name = format!("{code_snippet_name}.html");
 
         if is_functional {
@@ -747,16 +757,10 @@ fn reindent_to_four_spaces(s: &str) -> String {
     out
 }
 
-fn code_snippet_id(prefix: &str, title: &str) -> String {
-    // Mirrors src/inline-code-generator.js:84:
+fn code_snippet_id(file_basename: &str, title: &str) -> String {
+    // Mirrors src/inline-code-generator.js:84 and code-example-generator.js:81:
     //   `code-${path.basename(filePath).replace('.md','')}-${args.title.replace(/ /g,'')}`
-    // We don't have the file basename plumbed in yet; use a prefix instead.
-    // The snippet_page_file_name is mostly opaque to the rendered template
-    // (only the link href cares), so any unique string works.
-    format!(
-        "{prefix}-{}",
-        title.replace(' ', "")
-    )
+    format!("code-{file_basename}-{}", title.replace(' ', ""))
 }
 
 fn write_code_snippet_page(

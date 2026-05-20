@@ -280,7 +280,8 @@ async fn build_one_item(
         anyhow::bail!("required file not found: {path:?}");
     }
     let raw = std::fs::read_to_string(&path)?;
-    let processed = full::process_markdown(&raw, cfg, sidecar).await?;
+    let basename = meta_item.file.trim_end_matches(".md");
+    let processed = full::process_markdown(&raw, basename, cfg, sidecar).await?;
 
     // For each screenshot placeholder, capture the screenshot via
     // fcdocs-browser and replace the placeholder in the HTML.
@@ -340,7 +341,12 @@ async fn process_screenshots(
         };
         let file_name = screenshot::target_file_name(&args.url, &args.selector, &args.title);
         let target_path = images_dir.join(&file_name);
-        let args_json = serde_json::to_string(&ph.config).unwrap_or_default();
+        // Build the cacheKey object with the exact field shape +
+        // insertion order Node uses at
+        // src/app-screenshot-generator.js:202. Same JSON string ->
+        // same hash -> cache hit. Skip the screenshot entirely when
+        // CHROME_BIN isn't available rather than re-running every time.
+        let args_json = build_cache_key_json(&ph.config);
         let template = screenshot::render_template(&args, &file_name, &host.host);
 
         if !cache.is_stale(&args_json, &target_path, &file_name) {
@@ -362,6 +368,33 @@ async fn process_screenshots(
         html = html.replace(&ph.token, &template);
     }
     Ok(html)
+}
+
+/// Build the exact JSON shape Node uses for its image-cache key
+/// (`{url, linkUrl, width, actions, clickSelectors, selector, title,
+/// addProxySelect, cacheBuster}`), in the same insertion order, with
+/// fields the script didn't set dropped entirely (mirrors V8 shorthand
+/// destructuring → `undefined` → `JSON.stringify` omits the key).
+fn build_cache_key_json(parsed: &serde_json::Value) -> String {
+    use serde_json::Value;
+    let mut map = serde_json::Map::new();
+    let order = [
+        "url",
+        "linkUrl",
+        "width",
+        "actions",
+        "clickSelectors",
+        "selector",
+        "title",
+        "addProxySelect",
+        "cacheBuster",
+    ];
+    for key in order {
+        if let Some(v) = parsed.get(key) {
+            map.insert(key.to_string(), v.clone());
+        }
+    }
+    serde_json::to_string(&Value::Object(map)).unwrap_or_default()
 }
 
 async fn screenshot_one(
@@ -395,7 +428,14 @@ async fn read_optional_markdown(
 ) -> Result<String> {
     let Some(p) = path else { return Ok(String::new()) };
     let raw = std::fs::read_to_string(p)?;
-    let processed = full::process_markdown(&raw, cfg, sidecar).await?;
+    // For intro/conclusion the basename comes from the file (e.g.
+    // `intro.md` -> `intro`). Markers in intro/conclusion are rare but
+    // possible; this keeps snippet IDs unique per file.
+    let basename = p
+        .file_stem()
+        .and_then(|s| s.to_str())
+        .unwrap_or("intro");
+    let processed = full::process_markdown(&raw, basename, cfg, sidecar).await?;
     let html = process_screenshots(processed.html, &processed.screenshots, static_generated_dir).await?;
     Ok(html)
 }

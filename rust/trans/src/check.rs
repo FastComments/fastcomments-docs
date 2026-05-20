@@ -42,6 +42,8 @@ pub async fn run() -> Result<()> {
     let mut gaps = 0usize;
     let mut needs_migration = Vec::new();
     let mut missing_files: Vec<(String, String, String)> = Vec::new(); // (guide, locale, file)
+    let mut inline_code_errors: Vec<(String, String, String, (usize, usize), (usize, usize))> =
+        Vec::new(); // (guide, locale, file, expected_start_end, actual_start_end)
 
     for entry in std::fs::read_dir(&guides_dir)? {
         let entry = entry?;
@@ -79,6 +81,8 @@ pub async fn run() -> Result<()> {
             let raw = std::fs::read_to_string(src_path)?;
             let source_hash = hash_content(&raw);
 
+            let default_counts = count_inline_code(&raw);
+
             for (locale_key, _) in &locales.locales {
                 if locale_key == &locales.default_locale {
                     continue;
@@ -90,6 +94,22 @@ pub async fn run() -> Result<()> {
                 if needs {
                     gaps += 1;
                     missing_files.push((guide_id.clone(), locale_key.clone(), filename.clone()));
+                    continue;
+                }
+                // File exists and source hash matches cache — also verify
+                // inline-code token counts match the source. Mirrors
+                // src/check-translations.js:442-464.
+                if let Ok(translated) = std::fs::read_to_string(&target) {
+                    let locale_counts = count_inline_code(&translated);
+                    if locale_counts != default_counts {
+                        inline_code_errors.push((
+                            guide_id.clone(),
+                            locale_key.clone(),
+                            filename.clone(),
+                            default_counts,
+                            locale_counts,
+                        ));
+                    }
                 }
             }
         }
@@ -119,7 +139,19 @@ pub async fn run() -> Result<()> {
         }
     }
 
-    info!(missing_translations = gaps, missing_ui_strings = ui_gaps);
+    info!(
+        missing_translations = gaps,
+        missing_ui_strings = ui_gaps,
+        inline_code_mismatches = inline_code_errors.len(),
+    );
+    if !inline_code_errors.is_empty() {
+        info!("first 10 inline-code mismatches:");
+        for (g, l, f, (es, ee), (as_, ae)) in inline_code_errors.iter().take(10) {
+            info!(
+                "  {g}/{l}/{f}  expected {es} start / {ee} end, actual {as_} start / {ae} end"
+            );
+        }
+    }
     if !needs_migration.is_empty() {
         warn!(
             count = needs_migration.len(),
@@ -132,11 +164,18 @@ pub async fn run() -> Result<()> {
             info!("  {g}/{l}/{f}");
         }
     }
-    if gaps > 0 || ui_gaps > 0 || !needs_migration.is_empty() {
+    if gaps > 0 || ui_gaps > 0 || !needs_migration.is_empty() || !inline_code_errors.is_empty() {
         std::process::exit(1);
     }
     info!("all translations up to date");
     Ok(())
+}
+
+fn count_inline_code(content: &str) -> (usize, usize) {
+    // Mirrors `countInlineCode` in src/check-translations.js:72-76.
+    let start = content.matches("[inline-code-start]").count();
+    let end = content.matches("[inline-code-end]").count();
+    (start, end)
 }
 
 fn repo_root() -> Result<PathBuf> {
