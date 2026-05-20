@@ -1130,3 +1130,108 @@ mod cli_tests {
         assert_eq!(forced.len(), 2, "--force re-includes every (file × locale)");
     }
 }
+
+#[cfg(test)]
+mod prompt_parity_tests {
+    //! Byte-for-byte parity between Rust system_message/build_prompt
+    //! and Node translate-with-gpt.js's getSystemMessage/buildPrompt.
+    //!
+    //! Lives inside run.rs (not tests/) so it imports the real
+    //! `system_message` and `build_prompt` instead of re-implementing
+    //! them — the previous tests/prompt_parity.rs duplicated both
+    //! function bodies, so any divergence in run.rs went undetected.
+    //!
+    //! The expected outputs are captured from the actual live Node
+    //! `TranslationClient` (`src/translate-with-gpt.js`) and embedded
+    //! via include_str! — no /tmp fixture files, no silent skips.
+    //! Regenerate when the Node prompt shape genuinely changes:
+    //!
+    //!     node rust/trans/tests/fixtures/regenerate-node-prompts.js \
+    //!         > rust/trans/src/node_prompts_fixture.json
+    //!
+    //! The regenerator reads the SAME .md inputs from
+    //! rust/trans/tests/fixtures/ that fixtures() below loads, so
+    //! both sides see byte-identical input. Treat any diff in the
+    //! resulting fixture file as a real prompt change.
+    //!
+    //! Test cases cover non-trivial inputs the old `"Hello world."`
+    //! single-case test never exercised: inline-code blocks,
+    //! inline-code-attrs, escaped apostrophes, fenced code, and
+    //! api-resource-header tags.
+    use super::{build_prompt, system_message};
+    use fcdocs_shared::locales::Locales;
+    use serde_json::Value;
+    use std::path::PathBuf;
+
+    /// Captured by running the real TranslationClient in
+    /// src/translate-with-gpt.js against the inputs returned by
+    /// fixtures(). Re-captured whenever the Node prompts change.
+    const NODE_FIXTURES: &str = include_str!("node_prompts_fixture.json");
+
+    fn locales() -> Locales {
+        let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("..")
+            .join("..")
+            .join("src/locales.json");
+        Locales::load_from(&path).expect("load locales.json")
+    }
+
+    /// (name, content) — must stay in sync with the input set in the
+    /// regenerator (top-of-file doc comment). Adding a case here
+    /// without re-capturing fails the test loudly (fixture lookup
+    /// returns None).
+    fn fixtures() -> Vec<(&'static str, &'static str)> {
+        vec![
+            ("hello", "Hello world."),
+            ("markdown_with_inline_code", include_str!("../tests/fixtures/markdown_with_inline_code.md")),
+            ("apostrophe_in_attrs", include_str!("../tests/fixtures/apostrophe_in_attrs.md")),
+            ("fenced_code", include_str!("../tests/fixtures/fenced_code.md")),
+            ("api_resource_header", include_str!("../tests/fixtures/api_resource_header.md")),
+        ]
+    }
+
+    fn node_data() -> Value {
+        serde_json::from_str(NODE_FIXTURES).expect("parse node_prompts_fixture.json")
+    }
+
+    #[test]
+    fn system_message_matches_node_for_all_locales() {
+        let locales = locales();
+        let node = node_data();
+        for loc in ["fr_fr", "de_de", "ja_jp"] {
+            let rust = system_message(loc, &locales);
+            let expected = node
+                .get(loc)
+                .and_then(|v| v.get("system"))
+                .and_then(|v| v.as_str())
+                .unwrap_or_else(|| panic!("missing fixture: {loc}/system"));
+            assert_eq!(
+                rust, expected,
+                "system_message diverged from Node for locale={loc}"
+            );
+        }
+    }
+
+    #[test]
+    fn build_prompt_matches_node_across_input_corpus() {
+        let locales = locales();
+        let node = node_data();
+        for loc in ["fr_fr", "de_de", "ja_jp"] {
+            for (name, content) in fixtures() {
+                let rust = build_prompt(content, loc, &locales);
+                let expected = node
+                    .get(loc)
+                    .and_then(|v| v.get("prompts"))
+                    .and_then(|v| v.get(name))
+                    .and_then(|v| v.as_str())
+                    .unwrap_or_else(|| {
+                        panic!("missing fixture: {loc}/prompts/{name}")
+                    });
+                assert_eq!(
+                    rust, expected,
+                    "build_prompt diverged from Node for locale={loc} fixture={name}"
+                );
+            }
+        }
+    }
+}
