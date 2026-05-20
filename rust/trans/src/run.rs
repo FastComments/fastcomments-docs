@@ -19,6 +19,7 @@
 
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 use std::time::Duration;
 
@@ -37,6 +38,11 @@ const DEFAULT_MODEL: &str = "gpt-5-mini";
 
 /// Matches Node's translate-with-gpt.js concurrency=5 default.
 const DEFAULT_CONCURRENCY: usize = 5;
+
+/// How often the background flusher writes a dirty cache to disk.
+/// Bounded data loss on crash; total I/O is O(run_duration / interval)
+/// instead of O(tasks).
+const CACHE_FLUSH_INTERVAL: Duration = Duration::from_secs(15);
 
 #[derive(Debug, Default, Serialize, Deserialize)]
 #[serde(transparent)]
@@ -83,6 +89,27 @@ pub async fn run() -> Result<()> {
     );
     let api_key = Arc::new(api_key.unwrap());
     let cache = Arc::new(Mutex::new(cache_initial));
+    let dirty = Arc::new(AtomicBool::new(false));
+
+    // Background cache flusher. Writes the cache JSON at most once per
+    // CACHE_FLUSH_INTERVAL, and only when entries have been added since
+    // the last write. Used to be: full-file rewrite after every
+    // successful task, which made cache I/O O(N^2) for N tasks.
+    let flusher_handle = {
+        let cache = cache.clone();
+        let dirty = dirty.clone();
+        let cache_path = cache_path.clone();
+        tokio::spawn(async move {
+            let mut ticker = tokio::time::interval(CACHE_FLUSH_INTERVAL);
+            ticker.tick().await; // skip first immediate tick
+            loop {
+                ticker.tick().await;
+                if let Err(e) = flush_cache_if_dirty(&cache, &dirty, &cache_path).await {
+                    warn!(error = %format!("{e:#}"), "cache flush failed (will retry on next tick)");
+                }
+            }
+        })
+    };
 
     let concurrency: usize = std::env::var("TRANS_CONCURRENCY")
         .ok()
@@ -100,8 +127,8 @@ pub async fn run() -> Result<()> {
 
     let drive = |task: Task, in_flight: &mut FuturesUnordered<_>| {
         let guides_dir = guides_dir.clone();
-        let cache_path = cache_path.clone();
         let cache = cache.clone();
+        let dirty = dirty.clone();
         let locales = locales.clone();
         let client = client.clone();
         let api_key = api_key.clone();
@@ -113,8 +140,8 @@ pub async fn run() -> Result<()> {
             let res = process_one_task(
                 &task,
                 &guides_dir,
-                &cache_path,
                 &cache,
+                &dirty,
                 &locales,
                 &client,
                 &api_key,
@@ -153,6 +180,15 @@ pub async fn run() -> Result<()> {
         }
     }
 
+    // Stop the periodic flusher and do one final write so the cache
+    // reflects every successful task even if the last flush tick
+    // hadn't fired yet.
+    flusher_handle.abort();
+    let _ = flusher_handle.await; // ignore JoinError(Cancelled)
+    if let Err(e) = flush_cache_if_dirty(&cache, &dirty, &cache_path).await {
+        warn!(error = %format!("{e:#}"), "final cache flush failed");
+    }
+
     let s = success.load(std::sync::atomic::Ordering::Relaxed);
     let f = failed.load(std::sync::atomic::Ordering::Relaxed);
     let k = skipped.load(std::sync::atomic::Ordering::Relaxed);
@@ -172,8 +208,8 @@ enum Outcome {
 async fn process_one_task(
     task: &Task,
     guides_dir: &Path,
-    cache_path: &Path,
     cache: &Mutex<CacheMap>,
+    dirty: &AtomicBool,
     locales: &Locales,
     client: &reqwest::Client,
     api_key: &str,
@@ -193,7 +229,7 @@ async fn process_one_task(
             "[skipped] {}/{}/{} (too small)",
             task.guide_id, task.locale, task.filename
         );
-        record_cache_and_flush(cache, cache_path, task).await?;
+        record_cache(cache, dirty, task).await;
         return Ok(Outcome::Skipped);
     }
 
@@ -233,26 +269,54 @@ async fn process_one_task(
         .await
         .with_context(|| format!("write {target_path:?}"))?;
 
-    record_cache_and_flush(cache, cache_path, task).await?;
+    record_cache(cache, dirty, task).await;
     Ok(Outcome::Success)
 }
 
-async fn record_cache_and_flush(
+/// Mark a task as cached in memory. The background flusher
+/// (`flush_cache_if_dirty`) will write to disk on its next tick. The
+/// final flush at end-of-run guarantees no data loss when the process
+/// exits normally; a crash mid-run loses at most one CACHE_FLUSH_INTERVAL
+/// worth of completions, which the next run will redo.
+async fn record_cache(cache: &Mutex<CacheMap>, dirty: &AtomicBool, task: &Task) {
+    let mut c = cache.lock().await;
+    c.0.insert(
+        cache_key(&task.guide_id, &task.locale, &task.filename),
+        task.source_hash.clone(),
+    );
+    dirty.store(true, Ordering::Release);
+}
+
+/// Snapshot + atomically write the cache, but only if anything is
+/// dirty. Atomic via tmp file + rename so a crash mid-write doesn't
+/// leave a half-written JSON that fails to parse on the next run.
+async fn flush_cache_if_dirty(
     cache: &Mutex<CacheMap>,
+    dirty: &AtomicBool,
     cache_path: &Path,
-    task: &Task,
 ) -> Result<()> {
+    // Cheap check first to avoid taking the lock when there's nothing
+    // to do (common case on a fully-cached run).
+    if !dirty.load(Ordering::Acquire) {
+        return Ok(());
+    }
     let bytes = {
-        let mut c = cache.lock().await;
-        c.0.insert(
-            cache_key(&task.guide_id, &task.locale, &task.filename),
-            task.source_hash.clone(),
-        );
+        let c = cache.lock().await;
+        // Clear the flag while we still hold the lock — any writer who
+        // sneaks in *after* this point will set it again, so we'll
+        // write again on the next tick. Without the lock, a writer
+        // could set dirty=true and we'd clear it without persisting
+        // their change.
+        dirty.store(false, Ordering::Release);
         serde_json::to_vec_pretty(&c.0)?
     };
-    tokio::fs::write(cache_path, bytes)
+    let tmp = cache_path.with_extension("json.tmp");
+    tokio::fs::write(&tmp, &bytes)
         .await
-        .with_context(|| format!("write {cache_path:?}"))?;
+        .with_context(|| format!("write tmp {tmp:?}"))?;
+    tokio::fs::rename(&tmp, cache_path)
+        .await
+        .with_context(|| format!("rename {tmp:?} -> {cache_path:?}"))?;
     Ok(())
 }
 
@@ -519,5 +583,82 @@ mod tests {
         };
         let sm = system_message("fr_fr", &locales);
         assert!(sm.contains("Français (France) (fr_fr)"));
+    }
+
+    #[tokio::test]
+    async fn record_cache_marks_dirty_without_writing() {
+        let tmp = tempfile::NamedTempFile::new().unwrap();
+        let cache_path = tmp.path().to_path_buf();
+        let cache = Mutex::new(CacheMap::default());
+        let dirty = AtomicBool::new(false);
+        let task = Task {
+            guide_id: "g".into(),
+            locale: "fr_fr".into(),
+            filename: "f.md".into(),
+            source_hash: "abc".into(),
+        };
+        record_cache(&cache, &dirty, &task).await;
+        assert!(dirty.load(Ordering::Acquire));
+        // The file on disk hasn't been touched yet — record_cache only
+        // marks dirty.
+        let on_disk = tokio::fs::read_to_string(&cache_path).await.unwrap();
+        assert_eq!(on_disk, "");
+    }
+
+    #[tokio::test]
+    async fn flush_writes_and_clears_dirty() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache_path = dir.path().join("cache.json");
+        let cache = Mutex::new(CacheMap::default());
+        let dirty = AtomicBool::new(false);
+        let task = Task {
+            guide_id: "g".into(),
+            locale: "fr_fr".into(),
+            filename: "f.md".into(),
+            source_hash: "abc".into(),
+        };
+        record_cache(&cache, &dirty, &task).await;
+
+        flush_cache_if_dirty(&cache, &dirty, &cache_path).await.unwrap();
+        assert!(!dirty.load(Ordering::Acquire));
+        let on_disk: serde_json::Value =
+            serde_json::from_slice(&tokio::fs::read(&cache_path).await.unwrap()).unwrap();
+        assert_eq!(on_disk["g/fr_fr/f.md"], "abc");
+    }
+
+    #[tokio::test]
+    async fn flush_is_noop_when_clean() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache_path = dir.path().join("cache.json");
+        let cache = Mutex::new(CacheMap::default());
+        let dirty = AtomicBool::new(false);
+        // No record_cache call → still clean. Flush must not create the
+        // file, so a fresh `trans run` with no work doesn't truncate an
+        // existing on-disk cache to `{}`.
+        flush_cache_if_dirty(&cache, &dirty, &cache_path).await.unwrap();
+        assert!(!cache_path.exists());
+    }
+
+    #[tokio::test]
+    async fn many_records_one_flush() {
+        // The whole point of the refactor: 100 records + 1 flush = 1
+        // file write, not 100.
+        let dir = tempfile::tempdir().unwrap();
+        let cache_path = dir.path().join("cache.json");
+        let cache = Mutex::new(CacheMap::default());
+        let dirty = AtomicBool::new(false);
+        for i in 0..100 {
+            let task = Task {
+                guide_id: format!("g{i}"),
+                locale: "fr_fr".into(),
+                filename: format!("f{i}.md"),
+                source_hash: format!("h{i}"),
+            };
+            record_cache(&cache, &dirty, &task).await;
+        }
+        flush_cache_if_dirty(&cache, &dirty, &cache_path).await.unwrap();
+        let on_disk: serde_json::Value =
+            serde_json::from_slice(&tokio::fs::read(&cache_path).await.unwrap()).unwrap();
+        assert_eq!(on_disk.as_object().unwrap().len(), 100);
     }
 }
