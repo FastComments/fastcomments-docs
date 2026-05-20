@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "673912dbbab9a6c9e525b795e03c7e355e44ced2ed3ca6ae558a43b1e20ed6a4",
+  "generatedAt": "2026-05-20T06:38:20.389Z",
+  "codeExample": "const tenantId: string = 'acme_enterprises_001';\nconst moderatorId: string = 'mod_007';\nconst result: GetModerator200Response = await getModerator(tenantId, moderatorId);\nconst moderator: Moderator | undefined = result.moderator;\nconst apiStatus: APIStatus | undefined = result.status;",
+  "model": "gpt-5-mini"
+}

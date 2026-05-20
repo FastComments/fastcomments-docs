@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "4672c899dd2012e181f147a8d4725c63831766208c1cd44699932090a9458790",
+  "generatedAt": "2026-05-20T06:34:21.386Z",
+  "codeExample": "(async () => {\n  const tag: string = \"spam-account\";\n  const tenantId: string = \"tenant_7b2f\";\n  const deleteHashTagRequest: DeleteHashTagRequest = ({ notifyUsers: true }) as DeleteHashTagRequest;\n  const result: FlagCommentPublic200Response = await deleteHashTag(tag, tenantId, deleteHashTagRequest);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "b9391523b65db97e9af0e2d267d93bd293cd70bfa42c263e3831d9e8742b0ab1",
+  "generatedAt": "2026-05-20T06:40:19.378Z",
+  "codeExample": "(async () => {\n  const tenantId: string | undefined = 'acme-tenant-7b3f';\n  const email: string = 'sara.miller@acmecorp.com';\n  const result: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId!, email);\n  console.log(result);\n})();",
+  "model": "gpt-5-mini"
+}

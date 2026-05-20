@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "24e1f9a3c3c30233a4e91c995fd58e2edb96ff7df52a46160aa5e617828504d7",
+  "generatedAt": "2026-05-20T06:35:06.034Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-us';\nconst id: string = 'qst-92b7f4';\nlet dryRun: boolean | undefined = undefined;\nconst result: FlagCommentPublic200Response = await deleteQuestionConfig(tenantId, id);\nresult",
+  "model": "gpt-5-mini"
+}

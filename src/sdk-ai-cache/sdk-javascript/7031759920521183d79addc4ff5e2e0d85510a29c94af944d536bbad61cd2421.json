@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "7031759920521183d79addc4ff5e2e0d85510a29c94af944d536bbad61cd2421",
+  "generatedAt": "2026-05-20T06:41:21.843Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-123';\nconst skip: number = 25;\n\nconst packagesFirstPage: GetTenantPackages200Response = await getTenantPackages(tenantId);\nconst packagesNextPage: GetTenantPackages200Response = await getTenantPackages(tenantId, skip);",
+  "model": "gpt-5-mini"
+}

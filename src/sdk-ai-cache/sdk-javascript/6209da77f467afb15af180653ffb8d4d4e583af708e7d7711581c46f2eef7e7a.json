@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "6209da77f467afb15af180653ffb8d4d4e583af708e7d7711581c46f2eef7e7a",
+  "generatedAt": "2026-05-20T06:39:50.911Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme-corp-987\";\n  const skip: number = 20;\n  const resultWithSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId, skip);\n  const resultWithoutSkip: GetQuestionConfigs200Response = await getQuestionConfigs(tenantId);\n}\nrun();",
+  "model": "gpt-5-mini"
+}

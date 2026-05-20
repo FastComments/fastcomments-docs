@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "35d3113c98304726a5b023bd240c89b1baced13c69f874182347a0c98f50dc6a",
+  "generatedAt": "2026-05-20T06:41:46.418Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises-12';\n  const id: string = 'TICKET-2026-000123';\n  const userId: string = 'user-82f4';\n  const resultWithUser: GetTicket200Response = await getTicket(tenantId, id, userId);\n  const resultWithoutUser: GetTicket200Response = await getTicket(tenantId, id);\n  console.log(resultWithUser, resultWithoutUser);\n})();",
+  "model": "gpt-5-mini"
+}

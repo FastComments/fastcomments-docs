@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "f0ef0cbc1ceeea4bc3c2c2f666518f84822f1927d45ba155ce30a9fae7ea5922",
+  "generatedAt": "2026-05-20T06:43:27.386Z",
+  "codeExample": "const tenantId: string = 'tenant_9f3b2a4c-6b2e';\nconst domainToUpdate: string = 'payments.company-example.com';\nconst optionalRedirectUrl: string | undefined = 'https://portal.company-example.com';\nconst patchDomainConfigParams: PatchDomainConfigParams = {\n  enableHttps: true,\n  redirectUrl: optionalRedirectUrl\n} as PatchDomainConfigParams;\nconst result: GetDomainConfig200Response = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);",
+  "model": "gpt-5-mini"
+}

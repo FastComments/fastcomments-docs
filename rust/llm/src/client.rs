@@ -69,11 +69,9 @@ impl LlmClient {
         })
     }
 
-    /// Generate a completion, with cache lookup keyed by
-    /// SHA256(stable_stringify({ method, prompt, model })).
-    /// `method_meta` should mirror the Node call site at
-    /// `src/sdk-doc-generators/openai-client.js:58-72`.
-    pub async fn generate(&self, method_meta: &Value, prompt: &str) -> Result<LlmResponse> {
+    /// Compute the cache key for a (method, prompt, model) tuple,
+    /// matching Node's `openai-client.js:58-72`.
+    pub fn cache_key(&self, method_meta: &Value, prompt: &str) -> String {
         let key_value = json!({
             "methodName": method_meta.get("name"),
             "parameters": method_meta.get("parameters"),
@@ -82,9 +80,27 @@ impl LlmClient {
             "httpMethod": method_meta.get("httpMethod"),
             "path": method_meta.get("path"),
             "prompt": prompt,
-            "model": self.model,
+            "model": self.model.clone(),
         });
-        let cache_key = sha256_hex(&key_value);
+        sha256_hex(&key_value)
+    }
+
+    /// Cache-only lookup. Returns `Some(code_example)` if the cache
+    /// file exists, else `None`. Use this when an API key isn't
+    /// available (parity validation, CI, etc.) to surface only the
+    /// cache hits.
+    pub fn get_cached(&self, method_meta: &Value, prompt: &str) -> Option<String> {
+        let key = self.cache_key(method_meta, prompt);
+        let path = self.cache_dir.join(format!("{key}.json"));
+        read_cache(&path).map(|c| c.code_example)
+    }
+
+    /// Generate a completion, with cache lookup keyed by
+    /// SHA256(stable_stringify({ method, prompt, model })).
+    /// `method_meta` should mirror the Node call site at
+    /// `src/sdk-doc-generators/openai-client.js:58-72`.
+    pub async fn generate(&self, method_meta: &Value, prompt: &str) -> Result<LlmResponse> {
+        let cache_key = self.cache_key(method_meta, prompt);
         let cache_file = self.cache_dir.join(format!("{cache_key}.json"));
 
         if let Some(cached) = read_cache(&cache_file) {
@@ -113,9 +129,12 @@ impl LlmClient {
                                 .and_then(|v| v.as_str())
                                 .unwrap_or("")
                                 .to_string(),
+                            signature_hash: cache_key.clone(),
+                            generated_at: now_iso8601(),
                             code_example: text.clone(),
-                            timestamp: chrono_now_millis(),
                             model: Some(model.clone()),
+                            prompt_tokens: None,
+                            completion_tokens: None,
                         },
                     );
                     return Ok(LlmResponse {
@@ -179,14 +198,35 @@ fn default_fallbacks(primary: &str) -> Vec<String> {
     out
 }
 
+/// Matches the on-disk cache shape written by
+/// `src/sdk-doc-generators/openai-client.js:419-427`:
+///
+/// ```json
+/// {
+///   "method": "...",
+///   "signatureHash": "...",
+///   "generatedAt": "ISO-8601 timestamp",
+///   "codeExample": "...",
+///   "model": "...",
+///   "promptTokens": N,
+///   "completionTokens": N
+/// }
+/// ```
 #[derive(Debug, Serialize, Deserialize)]
 struct CacheRecord {
     method: String,
+    #[serde(rename = "signatureHash", default)]
+    signature_hash: String,
+    #[serde(rename = "generatedAt", default)]
+    generated_at: String,
     #[serde(rename = "codeExample")]
     code_example: String,
-    timestamp: i64,
     #[serde(default)]
     model: Option<String>,
+    #[serde(rename = "promptTokens", default, skip_serializing_if = "Option::is_none")]
+    prompt_tokens: Option<u64>,
+    #[serde(rename = "completionTokens", default, skip_serializing_if = "Option::is_none")]
+    completion_tokens: Option<u64>,
 }
 
 fn read_cache(path: &Path) -> Option<CacheRecord> {
@@ -200,10 +240,16 @@ fn write_cache(path: &Path, record: &CacheRecord) -> Result<()> {
     Ok(())
 }
 
-fn chrono_now_millis() -> i64 {
+fn now_iso8601() -> String {
+    // Matches `new Date().toISOString()` in Node (YYYY-MM-DDTHH:MM:SS.sssZ).
     use std::time::{SystemTime, UNIX_EPOCH};
-    SystemTime::now()
+    let ts_millis = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|d| d.as_millis() as i64)
-        .unwrap_or(0)
+        .unwrap_or(0);
+    let secs = ts_millis / 1000;
+    let millis = ts_millis % 1000;
+    let tm = chrono::DateTime::<chrono::Utc>::from_timestamp(secs, (millis as u32) * 1_000_000)
+        .unwrap_or_else(chrono::Utc::now);
+    tm.format("%Y-%m-%dT%H:%M:%S%.3fZ").to_string()
 }

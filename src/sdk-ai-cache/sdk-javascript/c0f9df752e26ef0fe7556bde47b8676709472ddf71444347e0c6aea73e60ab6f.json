@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "c0f9df752e26ef0fe7556bde47b8676709472ddf71444347e0c6aea73e60ab6f",
+  "generatedAt": "2026-05-20T06:40:57.120Z",
+  "codeExample": "const tenantId: string = \"org-9271\";\nconst id: string = \"tnt_6f3a2b9\";\nconst tenantResponse: GetTenant200Response = await getTenant(tenantId, id);\nconst billingInfo: BillingInfo | undefined = undefined",
+  "model": "gpt-5-mini"
+}

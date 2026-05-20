@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "d3c2811bd0f37bd7eef7072818a70678e1b1493a4758db85672b916d4a9f45c2",
+  "generatedAt": "2026-05-20T06:34:55.977Z",
+  "codeExample": "const tenantId: string = 'tenant-acme-corp';\nconst id: string = 'wh_evt_0a1b2c3d';\nconst result: FlagCommentPublic200Response = await deletePendingWebhookEvent(tenantId, id);\nconsole.log(result);",
+  "model": "gpt-5-mini"
+}

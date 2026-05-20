@@ -1,0 +1,7 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "4227da483da1a32d0583a9c73ab6c7f39e08dc9b7e0d0869baa4f53b17ce7fb2",
+  "generatedAt": "2026-05-20T06:40:45.593Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-72\";\nconst userId: string = \"user-83b2f\";\nconst subscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);\nconst userSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);",
+  "model": "gpt-5-mini"
+}

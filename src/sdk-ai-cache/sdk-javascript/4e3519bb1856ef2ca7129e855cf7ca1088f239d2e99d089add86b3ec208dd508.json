@@ -1,0 +1,7 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "4e3519bb1856ef2ca7129e855cf7ca1088f239d2e99d089add86b3ec208dd508",
+  "generatedAt": "2026-05-20T06:38:57.948Z",
+  "codeExample": "const tenantId: string = 'acme-corp-842';\nconst urlId: string = 'home-landing';\nconst pageResponse: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\nconst page: APIPage | undefined = (pageResponse as unknown as { page?: APIPage }).page;",
+  "model": "gpt-5-mini"
+}

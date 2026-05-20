@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "a752f7b21a570afd9e88ac845ae06450c242e44c5f61dfc6d5c1d8f20c9100cf",
+  "generatedAt": "2026-05-20T06:38:42.726Z",
+  "codeExample": "const tenantId: string = 'acme-corp';\nconst userId: string | undefined = 'user_742';\nconst viewed: boolean | undefined = false;\nconst type: string | undefined = 'reply';\nconst skip: number | undefined = 25;\nconst notifications: GetNotifications200Response = await getNotifications(tenantId, userId, undefined, undefined, viewed, type, skip);",
+  "model": "gpt-5-mini"
+}

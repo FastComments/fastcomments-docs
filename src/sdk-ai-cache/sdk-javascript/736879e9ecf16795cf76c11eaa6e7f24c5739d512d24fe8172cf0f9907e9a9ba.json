@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "736879e9ecf16795cf76c11eaa6e7f24c5739d512d24fe8172cf0f9907e9a9ba",
+  "generatedAt": "2026-05-20T06:35:57.330Z",
+  "codeExample": "const tenantId: string = 'tenant-9c3b7f2a';\nconst packageId: string = 'pkg-4821';\nconst result: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, packageId);\n\nasync function deleteWithConfirmation(tenantId: string, id: string, confirm?: boolean): Promise<FlagCommentPublic200Response | null> {\n  if (!confirm) return null;\n  const response: FlagCommentPublic200Response = await deleteTenantPackage(tenantId, id);\n  return response;\n}",
+  "model": "gpt-5-mini"
+}

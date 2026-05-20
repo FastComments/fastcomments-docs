@@ -646,6 +646,7 @@ name = "fcdocs-llm"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "chrono",
  "once_cell",
  "reqwest",
  "serde",
@@ -665,6 +666,7 @@ dependencies = [
  "fcdocs-llm",
  "fcdocs-shared",
  "git2",
+ "indexmap",
  "once_cell",
  "openapiv3",
  "regex",

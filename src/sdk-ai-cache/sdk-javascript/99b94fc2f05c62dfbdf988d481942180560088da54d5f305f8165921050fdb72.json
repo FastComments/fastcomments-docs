@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "99b94fc2f05c62dfbdf988d481942180560088da54d5f305f8165921050fdb72",
+  "generatedAt": "2026-05-20T06:39:58.898Z",
+  "codeExample": "(async (): Promise<void> => {\n  const tenantId: string = 'acme-corp-01';\n  const id: string = 'e7b3f9a2-4c1d-4a2b-9f6e-1234567890ab';\n  const result: GetQuestionResult200Response = await getQuestionResult(tenantId, id);\n  function handleMeta(meta?: MetaItem): void {\n    const hasMeta: boolean = meta !== undefined;\n  }\n  handleMeta(undefined);\n})();",
+  "model": "gpt-5-mini"
+}

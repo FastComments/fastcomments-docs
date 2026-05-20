@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "398a58ea1c59f0704b41cf7eaa2869740d3606e1edd50685bd6a3ecda6771c71",
+  "generatedAt": "2026-05-20T06:33:32.444Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_01';\nconst commentId: string = 'comment_6f3b2';\nconst direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;\nconst userId: string = 'user_9342';\nconst voteResult: VoteComment200Response = await createVote(tenantId, commentId, direction, userId);",
+  "model": "gpt-5-mini"
+}

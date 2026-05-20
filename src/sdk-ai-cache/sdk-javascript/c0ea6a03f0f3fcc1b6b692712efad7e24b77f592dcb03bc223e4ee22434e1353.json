@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "c0ea6a03f0f3fcc1b6b692712efad7e24b77f592dcb03bc223e4ee22434e1353",
+  "generatedAt": "2026-05-20T06:41:16.957Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8f3b2c9e-01';\n  const packageId: string = 'pkg-47a9d2b1';\n  const includeRelated: boolean | undefined = true;\n  const tenantPackageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);\n  console.log(tenantPackageResponse);\n})();",
+  "model": "gpt-5-mini"
+}
