@@ -36,8 +36,13 @@ use crate::snapshot::hash_content;
 
 const DEFAULT_MODEL: &str = "gpt-5-mini";
 
-/// Matches Node's translate-with-gpt.js concurrency=5 default.
-const DEFAULT_CONCURRENCY: usize = 5;
+/// Matches Node's translate-with-gpt.js CLI default
+/// (`parseArgs() options.concurrency = 20` at line 1001). The
+/// in-process function defaults (lines 322, 858) are 5, but the
+/// CLI overrides them when called via `node src/translate-with-gpt.js`,
+/// which is what build.sh invokes. Mirroring the CLI default so a
+/// production trans run finishes in the same wall time.
+const DEFAULT_CONCURRENCY: usize = 20;
 
 /// How often the background flusher writes a dirty cache to disk.
 /// Bounded data loss on crash; total I/O is O(run_duration / interval)
