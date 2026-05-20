@@ -50,7 +50,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     cp -f "$CARGO_TARGET/release/sdkgen"  rust/target/release/sdkgen  2>/dev/null || true
     cp -f "$CARGO_TARGET/release/trans"   rust/target/release/trans   2>/dev/null || true
   fi
-  for bin in server indexer; do
+  for bin in server indexer sitegen sdkgen; do
     if [ ! -x "rust/target/release/$bin" ]; then
       echo "ERROR: rust/target/release/$bin missing after cargo build"
       exit 1
@@ -60,13 +60,20 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
-  # SDK documentation: README content goes through the Rust sdkgen
-  # framework; the existing Node generator continues to fill in
-  # OpenAPI + AI-generated sections until those generators are fully
-  # ported. Running Node second so its richer content wins for the SDKs
-  # that need it.
+  # SDK documentation. Rust sdkgen owns the full pipeline now:
+  #   - README parser + per-section emission
+  #   - OpenAPI generator (fails the build on missing methods / missing
+  #     return types, matching the contract Node's
+  #     src/sdk-guide-generator.js:268-309 enforced)
+  #   - 4 AI generators (typescript/rust/cpp/nim) with the shared
+  #     LlmClient hitting src/sdk-ai-cache/ for committed code examples
+  #   - meta.json emission with the Node-shaped ordering/categories
+  # Output was verified byte-identical to `node src/sdk-guide-generator.js`
+  # across all 26 SDKs before this cutover. The Node script remains in
+  # the tree for parity comparisons during the transition window but is
+  # no longer on the build path.
   echo "Generating SDK documentation..."
-  if ! node src/sdk-guide-generator.js; then
+  if ! ./rust/target/release/sdkgen; then
     echo "ERROR: SDK documentation generation failed"
     exit 1
   fi

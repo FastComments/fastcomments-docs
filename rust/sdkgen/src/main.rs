@@ -1,12 +1,23 @@
 //! Replaces `src/sdk-guide-generator.js` + `src/sdk-checkout-manager.js`
-//! + `src/sdk-doc-generators/*`.
+//! + `src/sdk-doc-generators/*`. Production build pipeline
+//! (`build.sh`) calls this binary directly; the Node script is kept
+//! in the tree only as a parity reference during the transition.
 //!
-//! Current scope: full README generator, full checkout manager, full
-//! meta.json generation. OpenAPI and the four AI generators (typescript,
-//! rust, cpp, nim) compile-link through the framework but their content
-//! emission is stubbed — they write a single placeholder section and log
-//! a warning. The framework calls them in the correct chain so once they
-//! land they just slot in.
+//! Current scope:
+//!   - Full checkout manager (git clone/fetch/reset, with
+//!     SDKGEN_NO_FETCH=1 escape hatch for offline iteration).
+//!   - Full README generator.
+//!   - Full OpenAPI generator with fail-fast validation (missing
+//!     methods and unextractable return types collect per-SDK and
+//!     bail the build at end-of-run; matches Node's
+//!     src/sdk-guide-generator.js:268-309 contract).
+//!   - Four AI generators (typescript, rust, cpp, nim) parallelized
+//!     across methods, sharing the `fcdocs-llm` cache (byte-identical
+//!     SHA256 keys vs Node so existing src/sdk-ai-cache/ entries hit).
+//!   - meta.json emission with Node-shaped category ordering.
+//!
+//! SDK-level fan-out is parallel up to SDKGEN_PARALLEL (default 8).
+//! `--sdk <id>` restricts to one SDK for dev iteration.
 
 mod checkout;
 mod config;
