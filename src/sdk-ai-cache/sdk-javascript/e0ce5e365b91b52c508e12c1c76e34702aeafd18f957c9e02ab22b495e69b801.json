@@ -1,7 +1,7 @@
 {
   "method": "resetUserNotifications",
   "signatureHash": "e0ce5e365b91b52c508e12c1c76e34702aeafd18f957c9e02ab22b495e69b801",
-  "generatedAt": "2026-05-20T06:52:09.321Z",
-  "codeExample": "const tenantId: string = 'tenant_12345';\nconst afterCreatedAt: number = Math.floor(Date.now() / 1000) - 3600;\nconst response: ResetUserNotifications200Response = await resetUserNotifications(\n  tenantId,\n  'notif_98765',\n  afterCreatedAt,\n  true,\n  undefined,\n  undefined,\n  'sso-token-4f3b'\n);",
+  "generatedAt": "2026-05-20T18:33:24.389Z",
+  "codeExample": "const params: {\n  tenantId: string;\n  afterId?: string;\n  afterCreatedAt?: number;\n  unreadOnly?: boolean;\n  dmOnly?: boolean;\n  noDm?: boolean;\n  sso?: string;\n} = {\n  tenantId: 'tenant_7f3b9c',\n  afterId: 'notif_20260520_01',\n  afterCreatedAt: Date.now() - 3_600_000,\n  unreadOnly: true,\n  sso: 'sso_session_xyz'\n};\nconst result: ResetUserNotifications200Response = await resetUserNotifications(params);",
   "model": "gpt-5-mini"
 }

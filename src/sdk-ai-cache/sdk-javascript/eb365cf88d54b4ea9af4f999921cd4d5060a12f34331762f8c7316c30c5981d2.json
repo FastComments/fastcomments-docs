@@ -1,7 +1,7 @@
 {
   "method": "renderEmailTemplate",
   "signatureHash": "eb365cf88d54b4ea9af4f999921cd4d5060a12f34331762f8c7316c30c5981d2",
-  "generatedAt": "2026-05-20T06:44:26.676Z",
-  "codeExample": "const tenantId: string = 'acme-corp';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'onboarding-welcome',\n  subject: 'Welcome to Acme Corp, Maria!',\n  recipient: { name: 'Maria Gonzalez', email: 'maria.gonzalez@acme.com' },\n  personalization: { plan: 'Pro', startDate: '2026-06-01' }\n};\nconst locale: string = 'en-US';\nconst result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
+  "generatedAt": "2026-05-20T18:33:22.390Z",
+  "codeExample": "const tenantId: string = 'acme-corp-987';\nconst renderEmailTemplateBody: RenderEmailTemplateBody = {\n  templateId: 'user-invite',\n  subject: \"You're invited to Acme\",\n  placeholders: { firstName: 'Alex' },\n  metadata: { source: 'signup-flow' }\n};\nconst locale: string = 'en-US';\nconst result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);",
   "model": "gpt-5-mini"
 }

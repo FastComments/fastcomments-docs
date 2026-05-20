@@ -12,7 +12,6 @@ Returns: [`GetEmailTemplateDefinitions200Response`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprise-47';
-const response: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId);
-const firstTemplate: EmailTemplateDefinition | undefined = (response as unknown as {templates?: EmailTemplateDefinition[]}).templates?.[0];
+const tenantId: string = "acme-corp-78";
+const response: GetEmailTemplateDefinitions200Response = await getEmailTemplateDefinitions(tenantId, undefined);
 [inline-code-end]

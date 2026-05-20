@@ -13,10 +13,8 @@ Returns: [`GetSSOUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getSSOUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-tenant-4582';
-  const usersFirstPage: GetSSOUsers200Response = await getSSOUsers(tenantId);
-  const usersSecondPage: GetSSOUsers200Response = await getSSOUsers(tenantId, 50);
-  console.log(usersFirstPage, usersSecondPage);
-})();
+const tenantId: string = 'acme-corp-001';
+const skip: number = 25;
+const response: GetSSOUsers200Response = await getSSOUsers(tenantId);
+const responseWithSkip: GetSSOUsers200Response = await getSSOUsers(tenantId, skip);
 [inline-code-end]

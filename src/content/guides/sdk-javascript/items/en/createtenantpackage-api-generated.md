@@ -13,14 +13,16 @@ Returns: [`CreateTenantPackage200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createTenantPackage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
-const tosConfig: TOSConfig | undefined = undefined;
+const tenantId: string = "tenant_acme_corp_001";
 const createTenantPackageBody: CreateTenantPackageBody = {
-  companyName: 'Acme Corporation',
-  administratorEmail: 'it-admin@acme.com',
-  enabled: true,
-  defaultVoteStyle: 'updown' as unknown as VoteStyle,
-  tosConfig
-};
+  packageName: "Acme Moderation Pack",
+  version: "1.2.0",
+  description: "Moderation settings tailored for Acme forums",
+  allowGuestPosting: false,
+  customConfig: {
+    profanityLevel: "medium",
+    imageMaxMb: 8
+  }
+} as CreateTenantPackageBody;
 const result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);
 [inline-code-end]

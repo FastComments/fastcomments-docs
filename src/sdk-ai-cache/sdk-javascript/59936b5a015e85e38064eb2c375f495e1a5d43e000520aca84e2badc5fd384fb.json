@@ -1,7 +1,7 @@
 {
   "method": "updateNotification",
   "signatureHash": "59936b5a015e85e38064eb2c375f495e1a5d43e000520aca84e2badc5fd384fb",
-  "generatedAt": "2026-05-20T06:46:25.772Z",
-  "codeExample": "const tenantId: string = 'tenant_9a7b6c';\nconst id: string = 'notification_4f3e2d';\nconst userId: string | undefined = 'user_42';\nconst updateNotificationBody: UpdateNotificationBody = {\n  flagged: true,\n  reason: 'inappropriate content',\n  notes: 'Repeated violations of community guidelines'\n};\nconst result: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);",
+  "generatedAt": "2026-05-20T18:33:23.388Z",
+  "codeExample": "const tenantId: string = 'acme-inc';\nconst id: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst updateNotificationBody: UpdateNotificationBody = { resolved: true, reason: 'Offensive language detected', notes: 'Marked by moderator' };\nconst userId: string = 'user_1024';\nconst resultWithUser: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody, userId);\nconst resultWithoutUser: FlagCommentPublic200Response = await updateNotification(tenantId, id, updateNotificationBody);",
   "model": "gpt-5-mini"
 }

@@ -1,7 +1,7 @@
 {
   "method": "createTenantPackage",
   "signatureHash": "d7164f2625bbef1d52646238c7c9b42a7a03fc578f153da81350381c17e8db30",
-  "generatedAt": "2026-05-20T06:32:45.028Z",
-  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst tosConfig: TOSConfig | undefined = undefined;\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  companyName: 'Acme Corporation',\n  administratorEmail: 'it-admin@acme.com',\n  enabled: true,\n  defaultVoteStyle: 'updown' as unknown as VoteStyle,\n  tosConfig\n};\nconst result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);",
+  "generatedAt": "2026-05-20T18:33:36.112Z",
+  "codeExample": "const tenantId: string = \"tenant_acme_corp_001\";\nconst createTenantPackageBody: CreateTenantPackageBody = {\n  packageName: \"Acme Moderation Pack\",\n  version: \"1.2.0\",\n  description: \"Moderation settings tailored for Acme forums\",\n  allowGuestPosting: false,\n  customConfig: {\n    profanityLevel: \"medium\",\n    imageMaxMb: 8\n  }\n} as CreateTenantPackageBody;\nconst result: CreateTenantPackage200Response = await createTenantPackage(tenantId, createTenantPackageBody);",
   "model": "gpt-5-mini"
 }

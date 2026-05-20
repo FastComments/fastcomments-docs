@@ -14,11 +14,13 @@ Returns: [`RenderEmailTemplate200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'renderEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
+const tenantId: string = 'acme-corp-987';
 const renderEmailTemplateBody: RenderEmailTemplateBody = {
-  templateId: 'account_welcome_v2',
-  templateData: { firstName: 'Jordan', accountUrl: 'https://app.acme.com/settings' },
-  options: { includeUnsubscribe: true }
+  templateId: 'user-invite',
+  subject: "You're invited to Acme",
+  placeholders: { firstName: 'Alex' },
+  metadata: { source: 'signup-flow' }
 };
-const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, 'en-US');
+const locale: string = 'en-US';
+const result: RenderEmailTemplate200Response = await renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
 [inline-code-end]

@@ -14,19 +14,14 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-media";
-const id: string = "qc-20260520-01";
-
+const tenantId: string = 'acme-corp-927';
+const id: string = 'questionCfg-4f1d';
+const customOption: QuestionConfigCustomOptionsInner = { label: 'Mobile app', value: 'mobile_users' } as QuestionConfigCustomOptionsInner;
 const updateQuestionConfigBody: UpdateQuestionConfigBody = {
-  title: "Article Feedback",
+  title: 'Post-purchase satisfaction',
   enabled: true,
-  renderingType: "single" as QuestionRenderingType,
-  whenSave: "immediate" as QuestionWhenSave,
-  customOptions: [
-    { id: "opt_yes", label: "Helpful" } as QuestionConfigCustomOptionsInner,
-    { id: "opt_no", label: "Not Helpful" } as QuestionConfigCustomOptionsInner
-  ]
-};
-
+  customOptions: [customOption],
+  description: 'Collect quick feedback after checkout'
+} as UpdateQuestionConfigBody;
 const result: FlagCommentPublic200Response = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);
 [inline-code-end]

@@ -16,9 +16,9 @@ Returns: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'createVote Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const commentId: string = 'comment_6f3b2';
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
-const userId: string = 'user_9342';
-const voteResult: VoteComment200Response = await createVote(tenantId, commentId, direction, userId);
+const tenantId: string = 'tenant_6a1b2c';
+const commentId: string = 'cmt_d4e5f6';
+const direction: CreateVoteDirectionEnum = 'UP' as CreateVoteDirectionEnum;
+const userId: string = 'user_93b7a1';
+const result: VoteComment200Response = await createVote(tenantId, commentId, direction, userId);
 [inline-code-end]

@@ -1,7 +1,7 @@
 {
   "method": "deleteSubscription",
   "signatureHash": "5a952fe988ec8a216858eeb532dc30266ab4b67a40a38d12ff891430ac2724fc",
-  "generatedAt": "2026-05-20T06:35:43.721Z",
-  "codeExample": "(async () => {\n  const tenantId: string = \"a3f1c9e2-7b4d-4c2f-8a9e-0b1c2d3e4f5a\";\n  const subscriptionId: string = \"4b6d2a3e-9f1b-45c7-8d2e-6a7b8c9d0e1f\";\n  const userId: string = \"f47ac10b-58cc-4372-a567-0e02b2c3d479\";\n  const resultWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);\n  const resultWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId, userId);\n})();",
+  "generatedAt": "2026-05-20T18:33:17.918Z",
+  "codeExample": "const tenantId: string = \"acme-corp-84\";\nconst id: string = \"sub_92f1b3a7\";\nconst responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, id);\n\nconst userId: string = \"user-2983\";\nconst responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, id, userId);",
   "model": "gpt-5-mini"
 }

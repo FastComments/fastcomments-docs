@@ -1,7 +1,7 @@
 {
   "method": "combineCommentsWithQuestionResults",
   "signatureHash": "73659051def84c5be7451d9fe36b9074282bb9b7687ee66d371a43f30a33af73",
-  "generatedAt": "2026-05-20T06:31:18.603Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_3f9b2a';\n  const questionId: string = 'q_1024';\n  const questionIds: string[] = ['q_1024', 'q_2048'];\n  const urlId: string = 'url_77';\n  const startDate: Date = new Date('2026-01-01T00:00:00Z');\n  const forceRecalculate: boolean = true;\n  const minValue: number = 0;\n  const maxValue: number = 5;\n  const limit: number = 50;\n  const result: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults(\n    tenantId,\n    questionId,\n    questionIds,\n    urlId,\n    startDate,\n    forceRecalculate,\n    minValue,\n    maxValue,\n    limit\n  );\n  console.log(result);\n})();",
+  "generatedAt": "2026-05-20T18:33:26.158Z",
+  "codeExample": "const tenantId: string = 'tenant_12345';\nconst questionIds: string[] = ['q-101', 'q-102'];\nconst urlId: string = 'url_789';\nconst startDate: Date = new Date('2026-01-01T00:00:00Z');\nconst forceRecalculate: boolean = true;\nconst minValue: number = 1;\nconst maxValue: number = 5;\nconst limit: number = 100;\nconst combined: CombineCommentsWithQuestionResults200Response = await combineCommentsWithQuestionResults({\n  tenantId,\n  questionIds,\n  urlId,\n  startDate,\n  forceRecalculate,\n  minValue,\n  maxValue,\n  limit\n});",
   "model": "gpt-5-mini"
 }

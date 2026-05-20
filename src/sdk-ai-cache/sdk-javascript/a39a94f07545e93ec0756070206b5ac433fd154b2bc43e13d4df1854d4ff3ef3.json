@@ -1,7 +1,7 @@
 {
   "method": "getUserNotifications",
   "signatureHash": "a39a94f07545e93ec0756070206b5ac433fd154b2bc43e13d4df1854d4ff3ef3",
-  "generatedAt": "2026-05-20T06:50:58.460Z",
-  "codeExample": "const tenantId: string = \"acme-corp-42\";\nconst pageSize: number = 50;\nconst afterId: string = \"notif_20260519_1123\";\nconst includeContext: boolean = true;\nconst afterCreatedAt: number = Date.now() - 7 * 24 * 60 * 60 * 1000;\nconst unreadOnly: boolean = false;\nconst includeTranslations: boolean = true;\nconst sso: string = \"sso-token-9b7f\";\n\nconst notifications: GetUserNotifications200Response = await getUserNotifications(\n  tenantId,\n  pageSize,\n  afterId,\n  includeContext,\n  afterCreatedAt,\n  unreadOnly,\n  undefined,\n  undefined,\n  includeTranslations,\n  sso\n);",
+  "generatedAt": "2026-05-20T18:33:27.231Z",
+  "codeExample": "const response: GetUserNotifications200Response = await getUserNotifications(\n  'tenant_8f3a12',\n  25,\n  'notif_4b2d1',\n  true,\n  Date.now() - 7 * 24 * 60 * 60 * 1000,\n  true,\n  undefined,\n  undefined,\n  true,\n  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY4MDAwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'\n);",
   "model": "gpt-5-mini"
 }

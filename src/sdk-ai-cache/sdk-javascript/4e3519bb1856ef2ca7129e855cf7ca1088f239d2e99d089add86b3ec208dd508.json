@@ -1,7 +1,7 @@
 {
   "method": "getPageByURLId",
   "signatureHash": "4e3519bb1856ef2ca7129e855cf7ca1088f239d2e99d089add86b3ec208dd508",
-  "generatedAt": "2026-05-20T06:38:57.948Z",
-  "codeExample": "const tenantId: string = 'acme-corp-842';\nconst urlId: string = 'home-landing';\nconst pageResponse: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\nconst page: APIPage | undefined = (pageResponse as unknown as { page?: APIPage }).page;",
+  "generatedAt": "2026-05-20T18:33:27.188Z",
+  "codeExample": "interface APIPage { id: string; title: string; content?: string; published: boolean }\ninterface GetPageByURLIdAPIResponse { page: APIPage; retrievedAt?: string }\n\nconst tenantId: string = 'acme-enterprises';\nconst urlId: string = '6f1e2d3c-4b5a-6789-abcd-1234567890ef';\n\nconst result: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\n\nconst pageTitle: string = result.page.title;\nconst contentPreview: string | undefined = result.page.content?.slice(0, 120);",
   "model": "gpt-5-mini"
 }

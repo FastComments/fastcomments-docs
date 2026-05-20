@@ -1,7 +1,7 @@
 {
   "method": "getVotesForUser",
   "signatureHash": "02688362f9a9ce666dcfedcf4254d9a6a0ff250c9d3ee64c01c1b60a8e5d07cd",
-  "generatedAt": "2026-05-20T06:43:11.998Z",
-  "codeExample": "const tenantId: string = 'tenant_acmeCorp_01';\nconst urlId: string = 'post-2026-05-20-new-feature';\nconst userId: string | undefined = 'user_9742';\nconst votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId);",
+  "generatedAt": "2026-05-20T18:33:20.534Z",
+  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst urlId: string = 'release-notes';\nconst userId: string = 'user_10293';\nconst votes: GetVotesForUser200Response = await getVotesForUser(tenantId, urlId, userId);",
   "model": "gpt-5-mini"
 }

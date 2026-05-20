@@ -1,7 +1,7 @@
 {
   "method": "createTicket",
   "signatureHash": "074c0f2f9dec2315d7e04a5d2ccaa60f08716531fff11e859eccf8f98995d9a9",
-  "generatedAt": "2026-05-20T06:33:06.439Z",
-  "codeExample": "const tenantId: string = \"acme-enterprises-01\";\nconst userId: string = \"u_84f3b2\";\nconst createTicketBody: CreateTicketBody = {\n  subject: \"Unable to access invoices\",\n  description: \"After SSO migration I receive a 403 error when opening the Invoices page.\",\n  priority: \"high\",\n  tags: [\"billing\", \"sso\"],\n  assigneeId: \"agent_210\" // optional parameter demonstrated\n};\nconst response: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);",
+  "generatedAt": "2026-05-20T18:33:27.291Z",
+  "codeExample": "const tenantId: string = 'acme-company-001';\nconst userId: string = 'u_78f4b2';\nconst createTicketBody: CreateTicketBody = {\n  title: 'Unable to access project dashboard',\n  description: 'Receiving 403 when accessing /dashboard for project X',\n  priority: 'high',\n  tags: ['dashboard', 'access'] // optional field demonstrated\n};\nconst result: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);",
   "model": "gpt-5-mini"
 }

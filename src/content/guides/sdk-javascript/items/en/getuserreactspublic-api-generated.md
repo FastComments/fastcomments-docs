@@ -14,9 +14,10 @@ Returns: [`GetUserReactsPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getUserReactsPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-01a9f3b6";
-const postIds: Array<string> = ["post-8f3d2c1e", "post-4b2e9a7d"];
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature";
-const responseWithPosts: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
+const tenantId: string = 'acme-corp-01';
+const postIds: string[] = ['6f1e2d3c-4b5a-6789-0abc-def123456789', '9a8b7c6d-5e4f-3210-0fed-cba987654321'];
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature';
+
 const responseMinimal: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId);
+const responseWithOptions: GetUserReactsPublic200Response = await getUserReactsPublic(tenantId, postIds, sso);
 [inline-code-end]

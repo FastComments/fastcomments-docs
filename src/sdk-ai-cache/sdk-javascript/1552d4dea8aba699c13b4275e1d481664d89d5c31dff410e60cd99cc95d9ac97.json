@@ -1,7 +1,7 @@
 {
   "method": "patchHashTag",
   "signatureHash": "1552d4dea8aba699c13b4275e1d481664d89d5c31dff410e60cd99cc95d9ac97",
-  "generatedAt": "2026-05-20T06:43:39.571Z",
-  "codeExample": "async function main(): Promise<void> {\n  const tag: string = 'release-notes';\n  const tenantId: string = 'acme-inc';\n  const updateHashTagBody: UpdateHashTagBody = {\n    displayName: 'Release Notes',\n    description: 'Tags for documenting product releases and changelogs',\n    enabled: true\n  };\n  const response: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);\n  console.log(response);\n}\nmain();",
+  "generatedAt": "2026-05-20T18:33:24.754Z",
+  "codeExample": "const tag: string = \"release-2026\";\nconst tenantId: string = \"tenant_7b3f\";\nconst updateHashTagBody: UpdateHashTagBody = {\n  label: \"Release 2026\",\n  description: \"Tag used to group issues and features for the 2026 product launch\",\n  isActive: true\n};\nconst result: PatchHashTag200Response = await patchHashTag(tag, tenantId, updateHashTagBody);",
   "model": "gpt-5-mini"
 }

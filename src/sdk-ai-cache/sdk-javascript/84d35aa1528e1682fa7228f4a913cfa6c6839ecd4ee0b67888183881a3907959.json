@@ -1,7 +1,7 @@
 {
   "method": "getTranslations",
   "signatureHash": "84d35aa1528e1682fa7228f4a913cfa6c6839ecd4ee0b67888183881a3907959",
-  "generatedAt": "2026-05-20T06:50:36.435Z",
-  "codeExample": "(async () => {\n  const namespace: string = 'payments'\n  const component: string = 'invoicing'\n  const locale: string = 'fr-CA'\n  const useFullTranslationIds: boolean = true\n  const translations: GetTranslationsResponse = await getTranslations(namespace, component, locale, useFullTranslationIds)\n  const translationsDefaultLocale: GetTranslationsResponse = await getTranslations('auth', 'login')\n})()",
+  "generatedAt": "2026-05-20T18:33:22.749Z",
+  "codeExample": "const translationsDefault: GetTranslationsResponse = await getTranslations(\"payments\", \"checkout\");\nconst translationsFrenchDetailed: GetTranslationsResponse = await getTranslations(\"payments\", \"checkout\", \"fr-FR\", true);",
   "model": "gpt-5-mini"
 }

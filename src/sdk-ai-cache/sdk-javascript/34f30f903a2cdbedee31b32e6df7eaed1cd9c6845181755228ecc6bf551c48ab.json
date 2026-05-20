@@ -1,7 +1,7 @@
 {
   "method": "createTenant",
   "signatureHash": "34f30f903a2cdbedee31b32e6df7eaed1cd9c6845181755228ecc6bf551c48ab",
-  "generatedAt": "2026-05-20T06:32:36.017Z",
-  "codeExample": "const tenantId: string = 'tenant-2026-nyc';\n\nconst createTenantBody: CreateTenantBody = {\n  displayName: 'Acme Corporation',\n  primaryDomain: 'acme.com',\n  billingInfo: { plan: 'enterprise', billingContactEmail: 'billing@acme.com' },\n  importedSites: [{ siteId: 'site-001', url: 'https://blog.acme.com' }] // optional field included; other optional fields omitted\n} as CreateTenantBody;\n\nconst result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);",
+  "generatedAt": "2026-05-20T18:33:28.248Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-001\";\nconst domainConfig: APIDomainConfiguration = { primaryDomain: \"acme-enterprises.com\", redirectToPrimary: true };\nconst billingInfo: BillingInfo = { planId: \"business-monthly\", billingContactEmail: \"finance@acme-enterprises.com\" };\nconst initialSite: ImportedSiteType = { siteName: \"Main Site\", siteUrl: \"https://acme-enterprises.com\" };\nconst tosConfig: TOSConfig = { required: true, url: \"https://acme-enterprises.com/terms\" };\n\nconst createTenantBody: CreateTenantBody = {\n  name: \"Acme Enterprises\",\n  description: \"Primary tenant for Acme Enterprises\",\n  domainConfiguration: domainConfig,\n  billingInfo,\n  initialSite, // optional parameter demonstrated\n  tosConfig\n};\n\nconst result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);",
   "model": "gpt-5-mini"
 }

@@ -13,14 +13,20 @@ Returns: [`CreateTenant200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'createTenant Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-2026-nyc';
+const tenantId: string = "acme-enterprises-001";
+const domainConfig: APIDomainConfiguration = { primaryDomain: "acme-enterprises.com", redirectToPrimary: true };
+const billingInfo: BillingInfo = { planId: "business-monthly", billingContactEmail: "finance@acme-enterprises.com" };
+const initialSite: ImportedSiteType = { siteName: "Main Site", siteUrl: "https://acme-enterprises.com" };
+const tosConfig: TOSConfig = { required: true, url: "https://acme-enterprises.com/terms" };
 
 const createTenantBody: CreateTenantBody = {
-  displayName: 'Acme Corporation',
-  primaryDomain: 'acme.com',
-  billingInfo: { plan: 'enterprise', billingContactEmail: 'billing@acme.com' },
-  importedSites: [{ siteId: 'site-001', url: 'https://blog.acme.com' }] // optional field included; other optional fields omitted
-} as CreateTenantBody;
+  name: "Acme Enterprises",
+  description: "Primary tenant for Acme Enterprises",
+  domainConfiguration: domainConfig,
+  billingInfo,
+  initialSite, // optional parameter demonstrated
+  tosConfig
+};
 
 const result: CreateTenant200Response = await createTenant(tenantId, createTenantBody);
 [inline-code-end]

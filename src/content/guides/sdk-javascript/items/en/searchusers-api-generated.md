@@ -17,13 +17,10 @@ Returns: [`SearchUsers200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'searchUsers Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp";
-  const urlId: string = "acme-community";
-  const usernameStartsWith: string | undefined = "jo";
-  const mentionGroupIds: Array<string> | undefined = ["engineering", "customer-success"];
-  const sso: string | undefined = "saml";
-  const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);
-  console.log(result);
-})();
+const tenantId: string = 'acme-corp';
+const urlId: string = 'site-2026';
+const usernameStartsWith: string = 'mar';
+const mentionGroupIds: Array<string> = ['engineering', 'product-design'];
+const sso: string = 'saml';
+const result: SearchUsers200Response = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso);
 [inline-code-end]

@@ -1,7 +1,7 @@
 {
   "method": "getUserBadge",
   "signatureHash": "b3554229645ff92ef6ae6f11f3429557ad291354354e1862593c6d8ca68fb173",
-  "generatedAt": "2026-05-20T06:42:25.126Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'acme-inc-2026';\n  const id: string = 'badge_987654321';\n  const includeMetadata: boolean | undefined = true;\n  const badge: GetUserBadge200Response = await getUserBadge(tenantId, id);\n  console.log(badge, includeMetadata);\n})();",
+  "generatedAt": "2026-05-20T18:33:23.416Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-01';\nconst id: string = 'badge_8f3d2c';\nconst userBadgeResponse: GetUserBadge200Response = await getUserBadge(tenantId, id);",
   "model": "gpt-5-mini"
 }

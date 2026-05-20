@@ -1,7 +1,7 @@
 {
   "method": "getTenantPackage",
   "signatureHash": "c0ea6a03f0f3fcc1b6b692712efad7e24b77f592dcb03bc223e4ee22434e1353",
-  "generatedAt": "2026-05-20T06:41:16.957Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_8f3b2c9e-01';\n  const packageId: string = 'pkg-47a9d2b1';\n  const includeRelated: boolean | undefined = true;\n  const tenantPackageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);\n  console.log(tenantPackageResponse);\n})();",
+  "generatedAt": "2026-05-20T18:33:27.197Z",
+  "codeExample": "const tenantId: string = 'org-6412';\nconst id: string = 'pkg-7f3b1c4a-9a2d-4e3b-b8c2-1a2b3c4d5e6f';\nconst includePreview: boolean | undefined = undefined; // optional parameter example\nconst packageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, id);",
   "model": "gpt-5-mini"
 }

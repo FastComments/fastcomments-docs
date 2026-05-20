@@ -1,7 +1,7 @@
 {
   "method": "addDomainConfig",
   "signatureHash": "dd8c856b720b143e206731fc89cf6a92f97b7d85256dc7d187eadef65a30b49b",
-  "generatedAt": "2026-05-20T06:29:36.304Z",
-  "codeExample": "const tenantId: string = \"org-3fa9d8b2\";\nconst addDomainConfigParams: AddDomainConfigParams = {\n  domainName: \"login.acme-corp.com\",\n  isPrimary: true,\n  verification: { method: \"dns\", token: \"verify-9c3b\" },\n  dnsRecords: [{ type: \"TXT\", name: \"_acme\", value: \"v=spf1 include:_spf.example.com ~all\" }] // optional parameter included\n};\nconst result: AddDomainConfig200Response = await addDomainConfig(tenantId, addDomainConfigParams);",
+  "generatedAt": "2026-05-20T18:33:21.123Z",
+  "codeExample": "const tenantId: string = \"tenant_7f3b2a1c9\";\nconst addDomainConfigParams: AddDomainConfigParams = {\n  domain: \"payments.mybusiness.com\",\n  primary: true,\n  validateDns: true\n};\nconst result: AddDomainConfig200Response = await addDomainConfig(tenantId, addDomainConfigParams);",
   "model": "gpt-5-mini"
 }

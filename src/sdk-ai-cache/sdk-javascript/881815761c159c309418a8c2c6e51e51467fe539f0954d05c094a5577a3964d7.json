@@ -1,7 +1,7 @@
 {
   "method": "getUserBadgeProgressList",
   "signatureHash": "881815761c159c309418a8c2c6e51e51467fe539f0954d05c094a5577a3964d7",
-  "generatedAt": "2026-05-20T06:42:46.528Z",
-  "codeExample": "const tenantId: string = 'acme_corp_01';\nconst userId: string = 'user_98765';\nconst limit: number = 25;\nconst badgeProgress: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit);",
+  "generatedAt": "2026-05-20T18:33:23.363Z",
+  "codeExample": "const tenantId: string = 'tenant_7f1a2b3c';\nconst userId: string = 'user_9f8e7d6c';\nconst limit: number = 25;\nconst skip: number = 0;\nconst result: GetUserBadgeProgressList200Response = await getUserBadgeProgressList(tenantId, userId, limit, skip);",
   "model": "gpt-5-mini"
 }

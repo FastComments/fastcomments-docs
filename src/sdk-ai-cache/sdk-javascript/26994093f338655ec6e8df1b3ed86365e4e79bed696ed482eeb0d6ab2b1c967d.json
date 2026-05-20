@@ -1,7 +1,7 @@
 {
   "method": "createQuestionResult",
   "signatureHash": "26994093f338655ec6e8df1b3ed86365e4e79bed696ed482eeb0d6ab2b1c967d",
-  "generatedAt": "2026-05-20T06:32:13.386Z",
-  "codeExample": "const tenantId: string = 'tenant_acme_corp_2026';\nconst createQuestionResultBody: CreateQuestionResultBody = {\n  questionId: 'q_98765',\n  userId: 'user_12345',\n  score: 4,\n  comment: 'Clear explanation, helped resolve issue.',\n  meta: [{ key: 'source', value: 'web' }] // optional metadata\n};\nconst result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);",
+  "generatedAt": "2026-05-20T18:33:29.826Z",
+  "codeExample": "const tenantId: string = 'tenant_7f3a2b';\nconst createQuestionResultBody: CreateQuestionResultBody = {\n  questionId: 'q_92a1',\n  respondentId: 'user_71c',\n  answers: [{ subQuestionId: 'sq1', value: 'Yes' }],\n  meta: [{ key: 'source', value: 'web' }] // optional metadata\n};\nconst result: CreateQuestionResult200Response = await createQuestionResult(tenantId, createQuestionResultBody);",
   "model": "gpt-5-mini"
 }

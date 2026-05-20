@@ -1,7 +1,7 @@
 {
   "method": "getComment",
   "signatureHash": "071ae416786ea20561b84a433eb8ea28ec4fe5fb90b183732649afc864a6b483",
-  "generatedAt": "2026-05-20T06:36:54.578Z",
-  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = \"acme_corp_tenant_01\";\n  const id: string = \"cmt_8f4d2a\";\n  const includeReplies: boolean | undefined = true; // optional parameter example\n  const result: GetComment200Response = await getComment(tenantId, id);\n  console.log(result);\n}\nvoid main();",
+  "generatedAt": "2026-05-20T18:33:30.646Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst id: string = 'e7b6f3a2-4d1a-4b9e-9a2f-1c3d4e5f6a7b';\nconst includeDeleted: boolean | undefined = undefined;\nconst result: GetComment200Response = await getComment(tenantId, id);",
   "model": "gpt-5-mini"
 }

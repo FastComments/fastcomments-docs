@@ -1,7 +1,7 @@
 {
   "method": "updateUserBadge",
   "signatureHash": "58aaa9523d790ad5e578ff86d37fc6316d17a593d9b498a39816349df6d84f99",
-  "generatedAt": "2026-05-20T06:47:35.298Z",
-  "codeExample": "const tenantId: string = \"acme-tenant-42\";\nconst id: string = \"user-9b3f7c\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  badgeId: \"top-contributor\",\n  reason: \"Recognized for sustained exceptional contributions\",\n  notifyRecipients: true\n};\nconst result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
+  "generatedAt": "2026-05-20T18:33:37.103Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant-01\";\nconst id: string = \"user_81234\";\nconst updateUserBadgeParams: UpdateUserBadgeParams = {\n  badgeId: \"top_contributor\",\n  title: \"Top Contributor\",\n  description: \"Awarded for sustained high-quality community contributions\",\n  expiresAt: \"2026-12-31T23:59:59Z\" // optional parameter demonstrated\n} as UpdateUserBadgeParams;\nconst result: UpdateUserBadge200Response = await updateUserBadge(tenantId, id, updateUserBadgeParams);",
   "model": "gpt-5-mini"
 }

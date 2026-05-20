@@ -1,7 +1,7 @@
 {
   "method": "getQuestionResults",
   "signatureHash": "7a7c713da2da4540b277acebe1b1adf7e889d4251d58e407d94804433a137b0a",
-  "generatedAt": "2026-05-20T06:40:07.799Z",
-  "codeExample": "const tenantId: string = 'tenant_4b2f7c';\nconst urlId: string = 'https://app.acme-surveys.com/s/yg7';\nconst userId: string = 'user_99234';\nconst startDate: string = '2026-05-01T00:00:00Z';\nconst questionId: string | undefined = undefined;\nconst questionIds: string | undefined = 'q_12,q_15';\nconst skip: number | undefined = 20;\nconst result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip);",
+  "generatedAt": "2026-05-20T18:33:24.091Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_9b3f\";\n  const urlId: string = \"survey-2026-spring\";\n  const userId: string = \"user_00123\";\n  const startDate: string = \"2026-04-01T00:00:00Z\";\n  const questionIds: string = \"q_42,q_43\";\n  const skip: number = 0;\n  const result: GetQuestionResults200Response = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);\n  console.log(result);\n})();",
   "model": "gpt-5-mini"
 }

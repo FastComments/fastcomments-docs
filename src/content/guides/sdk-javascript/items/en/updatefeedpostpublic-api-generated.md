@@ -16,18 +16,22 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_prod';
-const postId: string = 'post_20260520_01';
-const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.acme.com/images/maintenance.png', mimeType: 'image/png' };
-const mediaItem: FeedPostMediaItem = { asset: mediaAsset };
-const link: FeedPostLink = { url: 'https://status.acme.com/incidents/54321', title: 'Incident details' };
+const tenantId: string = 'acme-corp';
+const postId: string = 'post_9f2b4a';
 const updateFeedPostParams: UpdateFeedPostParams = {
-  title: 'Scheduled maintenance',
-  content: 'Maintenance on June 30, 02:00–04:00 UTC. Brief service interruptions possible.',
-  mediaItems: [mediaItem],
-  links: [link]
+  title: 'Q2 Release Notes',
+  body: 'We rolled out feature X, fixed critical bugs, and improved load times.',
+  mediaItems: [
+    {
+      id: 'media_123',
+      type: 'image',
+      assets: [{ url: 'https://cdn.acme.com/images/release.png', mimeType: 'image/png' }]
+    }
+  ],
+  links: [{ url: 'https://acme.com/releases/q2', title: 'Full release notes' }],
+  isPublished: true
 };
-const broadcastId: string | undefined = 'broadcast_9988';
-const sso: string | undefined = 'sso_jwt_token_eyJhbGci';
+const broadcastId: string = 'broadcast_20260520';
+const sso: string = 'sso_token_ab12cd34';
 const result: CreateFeedPostPublic200Response = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
 [inline-code-end]

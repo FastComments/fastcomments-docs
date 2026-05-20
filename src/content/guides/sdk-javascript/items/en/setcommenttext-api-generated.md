@@ -17,14 +17,15 @@ Returns: [`SetCommentText200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'setCommentText Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_7a9f3";
-  const commentId: string = "comment_4821";
-  const broadcastId: string = "broadcast_2026_05_20";
-  const commentTextUpdateRequest: CommentTextUpdateRequest = { text: "Thanks for the update — I added more detail to clarify next steps." };
-  const editKey: string | undefined = "editkey_6b2c";
-  const sso: string | undefined = "sso_token_eyJhbGci";
-  const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);
-  console.log(result);
-})();
+const tenantId: string = 'tenant-42';
+const commentId: string = 'cmt-8932';
+const broadcastId: string = 'brd-2023-07';
+const updateRequest: CommentTextUpdateRequest = {
+  text: 'Updated comment text for the product launch — congrats team!',
+  mentions: [{ userId: 'user-17', displayName: 'Ava Nguyen' }] as CommentUserMentionInfo[],
+  hashtags: [{ tag: 'ProductLaunch' }] as CommentUserHashTagInfo[]
+};
+const editKey: string = 'edtk-9f7b';
+const sso: string = 'sso-token-abc123';
+const result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, updateRequest, editKey, sso);
 [inline-code-end]

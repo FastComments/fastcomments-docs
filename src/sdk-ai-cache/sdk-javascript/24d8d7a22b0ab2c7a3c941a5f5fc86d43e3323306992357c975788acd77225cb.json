@@ -1,7 +1,7 @@
 {
   "method": "aggregate",
   "signatureHash": "24d8d7a22b0ab2c7a3c941a5f5fc86d43e3323306992357c975788acd77225cb",
-  "generatedAt": "2026-05-20T06:30:31.190Z",
-  "codeExample": "const tenantId: string = \"tenant_001\";\nconst parentTenantId: string = \"enterprise_7\";\nconst aggregationRequest: AggregationRequest = {\n  query: { field: \"country\", operator: \"eq\", value: \"US\" },\n  operations: [{ type: \"COUNT\", field: \"customerId\" }],\n  sort: [{ field: \"createdAt\", direction: \"desc\" }],\n  limit: 500\n};\nconst includeStats: boolean = true;\nconst result: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);",
+  "generatedAt": "2026-05-20T18:33:25.423Z",
+  "codeExample": "const tenantId: string = \"acme_corp_123\";\nconst parentTenantId: string = \"global_acme_1\";\nconst includeStats: boolean = true;\n\nconst predicateValue: QueryPredicateValue = { stringValue: \"active\" };\nconst predicate: QueryPredicate = { field: \"status\", operator: \"EQ\", value: predicateValue };\nconst operation: AggregationOperation = { type: \"COUNT\", field: \"id\", alias: \"total\" };\nconst sort: AggregationRequestSort = { field: \"total\", direction: \"DESC\" };\n\nconst aggregationRequest: AggregationRequest = {\n  query: { predicates: [predicate] },\n  operations: [operation],\n  sort: [sort],\n  limit: 100\n};\n\nconst response: AggregationResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, includeStats);",
   "model": "gpt-5-mini"
 }

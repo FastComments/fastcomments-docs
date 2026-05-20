@@ -14,17 +14,12 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_00123';
-const id: string = 'tmpl_4f2a9b';
-const customConfig: CustomConfigParameters = { maxRetries: 2, sendDelayMinutes: 0 };
+const tenantId: string = 'tenant_acme_42';
+const id: string = 'emailTemplate_pwd_reset_9f3c';
 const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  name: 'Account Settings Update',
-  subject: 'Your account settings were changed',
-  htmlBody: '<p>Your account settings were successfully updated.</p>',
-  isActive: true,
-  senderName: 'Customer Support',
-  replyTo: 'support@company.com',
-  customConfig
-};
+  name: 'Password Reset Notification',
+  subject: 'Reset your ACME password',
+  html: '<p>Click <a href="\{{reset_link}}">here</a> to reset your password.</p>'
+} as UpdateEmailTemplateBody;
 const result: FlagCommentPublic200Response = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
 [inline-code-end]

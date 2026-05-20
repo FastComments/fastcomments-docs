@@ -1,7 +1,7 @@
 {
   "method": "getAuditLogs",
   "signatureHash": "ffb60b0b71f0e96d237ab5f52bf42bf995b94df1c87660ced6d4f2a2af1af0df",
-  "generatedAt": "2026-05-20T06:36:36.415Z",
-  "codeExample": "const tenantId: string = 'tenant_8a7f3b2c';\nconst limit: number = 100;\nconst skip: number = 0;\nconst after: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago\nconst before: number = Date.now();\nconst auditLogs: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, undefined, after, before);",
+  "generatedAt": "2026-05-20T18:33:24.091Z",
+  "codeExample": "const tenantId: string = 'tenant_9f1b3c';\nconst limit: number = 50;\nconst skip: number = 0;\nconst order: SORTDIR = SORTDIR.DESC;\nconst after: number = Date.now() - 1000 * 60 * 60 * 24;\nconst before: number = Date.now();\nconst response: GetAuditLogs200Response = await getAuditLogs(tenantId, limit, skip, order, after, before);",
   "model": "gpt-5-mini"
 }

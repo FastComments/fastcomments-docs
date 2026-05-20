@@ -13,11 +13,8 @@ Returns: [`GetTenantPackage200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getTenantPackage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8f3b2c9e-01';
-  const packageId: string = 'pkg-47a9d2b1';
-  const includeRelated: boolean | undefined = true;
-  const tenantPackageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, packageId);
-  console.log(tenantPackageResponse);
-})();
+const tenantId: string = 'org-6412';
+const id: string = 'pkg-7f3b1c4a-9a2d-4e3b-b8c2-1a2b3c4d5e6f';
+const includePreview: boolean | undefined = undefined; // optional parameter example
+const packageResponse: GetTenantPackage200Response = await getTenantPackage(tenantId, id);
 [inline-code-end]

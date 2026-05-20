@@ -1,7 +1,7 @@
 {
   "method": "createCommentPublic",
   "signatureHash": "0a5cc4f3e014ea124cfa49085e4b05d4129a652649a873a753075468ed3bec93",
-  "generatedAt": "2026-05-20T06:48:03.964Z",
-  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst urlId: string = 'news/2026/05/19-global-summit';\nconst broadcastId: string = 'broadcast-20260519-01';\nconst sessionId: string = 'session_7f3b2c9a';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_example_token';\nconst commentData: CommentData = {\n  text: 'Insightful piece — appreciate the deep analysis and sources.',\n  authorId: 'user_4820',\n  mentions: [{ userId: 'user_102', displayName: 'Sam Lee' } as CommentUserMentionInfo],\n  hashtags: [{ tag: 'analysis' } as CommentUserHashTagInfo]\n};\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
+  "generatedAt": "2026-05-20T18:33:24.838Z",
+  "codeExample": "const tenantId: string = 'tenant_9812';\nconst urlId: string = 'prod-launch-20260520';\nconst broadcastId: string = 'broadcast_20260520_01';\nconst commentData: CommentData = {\n  content: 'Amazing launch — congrats to the whole team!',\n  authorName: 'Alex Morgan',\n  mentions: [] as CommentUserMentionInfo[],\n  hashtags: [] as CommentUserHashTagInfo[]\n};\nconst sessionId: string | undefined = 'sess_9f7b3c';\nconst sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);",
   "model": "gpt-5-mini"
 }

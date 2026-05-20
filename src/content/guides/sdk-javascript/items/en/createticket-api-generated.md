@@ -14,14 +14,13 @@ Returns: [`CreateTicket200Response`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'createTicket Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-01";
-const userId: string = "u_84f3b2";
+const tenantId: string = 'acme-company-001';
+const userId: string = 'u_78f4b2';
 const createTicketBody: CreateTicketBody = {
-  subject: "Unable to access invoices",
-  description: "After SSO migration I receive a 403 error when opening the Invoices page.",
-  priority: "high",
-  tags: ["billing", "sso"],
-  assigneeId: "agent_210" // optional parameter demonstrated
+  title: 'Unable to access project dashboard',
+  description: 'Receiving 403 when accessing /dashboard for project X',
+  priority: 'high',
+  tags: ['dashboard', 'access'] // optional field demonstrated
 };
-const response: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
+const result: CreateTicket200Response = await createTicket(tenantId, userId, createTicketBody);
 [inline-code-end]

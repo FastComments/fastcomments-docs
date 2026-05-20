@@ -1,7 +1,7 @@
 {
   "method": "pinComment",
   "signatureHash": "ac1b0d7583514aa8e7d10a64413562bb143245048f565b092ea5c8fe11f2fedd",
-  "generatedAt": "2026-05-20T06:51:33.221Z",
-  "codeExample": "const tenantId: string = 'tenant_72f9';\nconst commentId: string = 'cmt_1a2b3c';\nconst broadcastId: string = 'live-2026-05-20-19';\nconst ssoToken: string = 'sso_tok_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\nconst result: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, ssoToken)",
+  "generatedAt": "2026-05-20T18:33:19.730Z",
+  "codeExample": "const tenantId: string = 'tenant_4472';\nconst commentId: string = 'cmt_8a9f3b';\nconst broadcastId: string = 'broadcast_2026-05-20_01';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.signature';\nconst result: PinComment200Response = await pinComment(tenantId, commentId, broadcastId, sso);",
   "model": "gpt-5-mini"
 }

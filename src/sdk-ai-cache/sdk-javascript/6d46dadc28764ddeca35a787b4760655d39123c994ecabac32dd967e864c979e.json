@@ -1,7 +1,7 @@
 {
   "method": "getCommentText",
   "signatureHash": "6d46dadc28764ddeca35a787b4760655d39123c994ecabac32dd967e864c979e",
-  "generatedAt": "2026-05-20T06:48:52.610Z",
-  "codeExample": "const tenantId: string = 'tenant-42';\nconst commentId: string = 'cmt-8f3a2b1c';\nconst editKey: string = 'a3f9d2e4-6b7c-4d1e-9f0a-112233445566';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.fakeSig';\nconst response: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);",
+  "generatedAt": "2026-05-20T18:33:24.914Z",
+  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst commentId: string = 'cmt_987654321';\nconst editKey: string = 'edk_abc123def';\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';\n\nconst resultWithOptional: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);\nconst resultRequiredOnly: GetCommentText200Response = await getCommentText(tenantId, commentId);",
   "model": "gpt-5-mini"
 }

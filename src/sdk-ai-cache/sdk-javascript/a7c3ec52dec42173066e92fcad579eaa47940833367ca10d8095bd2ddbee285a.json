@@ -1,7 +1,7 @@
 {
   "method": "getQuestionConfig",
   "signatureHash": "a7c3ec52dec42173066e92fcad579eaa47940833367ca10d8095bd2ddbee285a",
-  "generatedAt": "2026-05-20T06:39:45.074Z",
-  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst id: string = 'q-7f3a2b9c';\nconst options: { includeRelated?: boolean } = { includeRelated: true };\nconst result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);",
+  "generatedAt": "2026-05-20T18:33:22.802Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises';\n  const id: string = 'question-987654321';\n  const config: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);\n  console.log(config);\n})();",
   "model": "gpt-5-mini"
 }

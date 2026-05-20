@@ -1,7 +1,7 @@
 {
   "method": "deleteTenant",
   "signatureHash": "2bfc30d72c36ffb497711fb63ebd22f9c729495f8e1911f7c1fed115c2200740",
-  "generatedAt": "2026-05-20T06:35:40.849Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'acme-tenant-48';\n  const id: string = 'flag-9001';\n  const sure: string = 'confirm-delete';\n  const resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);\n  const resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);\n  console.log(resultWithSure, resultWithoutSure);\n})();",
+  "generatedAt": "2026-05-20T18:33:17.846Z",
+  "codeExample": "const tenantId: string = 'tenant-84f2';\nconst id: string = 'delete-9b3f7a';\nconst resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);\nconst resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, 'confirm-deletion');",
   "model": "gpt-5-mini"
 }

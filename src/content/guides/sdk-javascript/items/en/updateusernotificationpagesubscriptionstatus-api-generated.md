@@ -20,13 +20,14 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'contoso-tenant-123';
-const urlId: string = 'newsletter-weekly-2026';
-const url: string = 'https://www.contoso.com/blog/new-feature';
-const pageTitle: string = 'Contoso Blog — New Feature Launch';
-const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum = UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.SUBSCRIBED;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const tenantId: string = 'acme-tenant-001';
+const urlId: string = 'kb-article-421';
+const url: string = 'https://support.acme.com/kb/configuring-single-sign-on';
+const pageTitle: string = 'Configuring Single Sign-On for Support Portal';
+const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
+  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
+const sso: string = 'saml:acme-tenant-001';
 
-const resultWithSso: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
-const resultWithoutSso: UpdateUserNotificationStatus200Response = await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed);
+const result: UpdateUserNotificationStatus200Response =
+  await updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
 [inline-code-end]

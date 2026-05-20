@@ -13,7 +13,8 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42b1a9';
-const id: string = 'tpl_9a7f6c2d';
-const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);
+const maybeSuffix: string | undefined = "-prod";
+const tenantId: string = `acme-corp${maybeSuffix ?? ""}`;
+const templateId: string = "6f1e2d3c-4b5a-6789-0abc-def123456789";
+const result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);
 [inline-code-end]

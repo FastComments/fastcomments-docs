@@ -14,10 +14,9 @@ Returns: [`GetQuestionConfig200Response`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'getQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'tenant-8a3f';
-  const id: string = 'question-5b7c9';
-  const region: string | undefined = 'eu-west-1'; // optional parameter example
-  const result: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
-  console.log(result);
+  const tenantId: string = 'acme-enterprises';
+  const id: string = 'question-987654321';
+  const config: GetQuestionConfig200Response = await getQuestionConfig(tenantId, id);
+  console.log(config);
 })();
 [inline-code-end]

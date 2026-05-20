@@ -1,7 +1,7 @@
 {
   "method": "getComments",
   "signatureHash": "e904c247642914cc7a7d5c967ddd3dee98f5c0634988b3030f61605e3c8628fb",
-  "generatedAt": "2026-05-20T06:37:06.865Z",
-  "codeExample": "const tenantId: string = 'tenant_98765';\nconst page: number = 1;\nconst limit: number = 25;\nconst skip: number = 0;\nconst asTree: boolean = true;\nconst skipChildren: number = 0;\nconst limitChildren: number = 5;\nconst maxTreeDepth: number = 3;\nconst urlId: string = 'article-2026-05-20';\nconst userId: string = 'user_42';\nconst anonUserId: string = 'anon_9f3b';\nconst contextUserId: string = 'moderator_7';\nconst hashTag: string = 'release';\nconst parentId: string = 'comment_1001';\n\nconst response: GetComments200Response = await getComments(\n  tenantId,\n  page,\n  limit,\n  skip,\n  asTree,\n  skipChildren,\n  limitChildren,\n  maxTreeDepth,\n  urlId,\n  userId,\n  anonUserId,\n  contextUserId,\n  hashTag,\n  parentId\n);",
+  "generatedAt": "2026-05-20T18:33:24.967Z",
+  "codeExample": "const tenantId: string = \"tenant_5f2b9a\";\nconst page: number = 1;\nconst limit: number = 20;\nconst asTree: boolean = true;\nconst maxTreeDepth: number = 2;\nconst urlId: string = \"news/2026/05/20/new-feature\";\nconst userId: string = \"user_8d34\";\nconst result: GetComments200Response = await getComments(\n  tenantId,\n  page,\n  limit,\n  undefined,\n  asTree,\n  undefined,\n  undefined,\n  maxTreeDepth,\n  urlId,\n  userId\n);",
   "model": "gpt-5-mini"
 }

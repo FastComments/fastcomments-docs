@@ -1,7 +1,7 @@
 {
   "method": "getTenantUser",
   "signatureHash": "66f2aaa54892038f5be37c596d45debd86712269f9854820195e6f8f24c81d70",
-  "generatedAt": "2026-05-20T06:41:32.082Z",
-  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst id: string = '3fa85f64-5717-4562-b3fc-2c963f66afa6';\nconst includeProfileImage: boolean | undefined = true;\nconst result: GetTenantUser200Response = await getTenantUser(tenantId, id);",
+  "generatedAt": "2026-05-20T18:33:27.470Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_acme_01';\n  const id: string = 'user_4b7f9c';\n  const result: GetTenantUser200Response = await getTenantUser(tenantId, id);\n  const primaryEmail: string | undefined = result.user?.email;\n  console.log(primaryEmail);\n})();",
   "model": "gpt-5-mini"
 }

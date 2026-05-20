@@ -14,18 +14,16 @@ Returns: [`BulkAggregateQuestionResults200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_acme_001';
-  const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = {
-    items: [
-      {
-        questionId: 'q_1001',
-        buckets: [{ start: '2026-05-01T00:00:00Z', end: '2026-05-19T23:59:59Z' }]
-      } as BulkAggregateQuestionItem
-    ]
-  };
-  const forceRecalculate: boolean = true;
-  const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_8b3d72';
+const request: BulkAggregateQuestionResultsRequest = {
+  items: [
+    {
+      questionId: 'q-00123',
+      includeSubQuestions: true,
+      timeRange: { start: '2025-01-01T00:00:00Z', end: '2025-01-31T23:59:59Z' }
+    }
+  ],
+  bucket: { interval: 'day' }
+} as BulkAggregateQuestionResultsRequest;
+const result: BulkAggregateQuestionResults200Response = await bulkAggregateQuestionResults(tenantId, request, true);
 [inline-code-end]

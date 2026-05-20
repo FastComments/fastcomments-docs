@@ -1,7 +1,7 @@
 {
   "method": "getTickets",
   "signatureHash": "00d10c1ea5416fa38f54a09036a33ad3852b8187db7cad3fb6935ae4fc58b468",
-  "generatedAt": "2026-05-20T06:41:54.304Z",
-  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst userId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst state: number = 1;\nconst tickets: GetTickets200Response = await getTickets(tenantId, userId, state);",
+  "generatedAt": "2026-05-20T18:33:20.419Z",
+  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst userId: string | undefined = 'user-42';\nconst state: number | undefined = 2;\nconst skip: number | undefined = 0;\nconst limit: number | undefined = 50;\nconst tickets: GetTickets200Response = await getTickets(tenantId, userId, state, skip, limit);",
   "model": "gpt-5-mini"
 }

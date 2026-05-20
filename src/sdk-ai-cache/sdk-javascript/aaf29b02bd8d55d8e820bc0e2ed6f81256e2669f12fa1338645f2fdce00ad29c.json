@@ -1,7 +1,7 @@
 {
   "method": "getGifLarge",
   "signatureHash": "aaf29b02bd8d55d8e820bc0e2ed6f81256e2669f12fa1338645f2fdce00ad29c",
-  "generatedAt": "2026-05-20T06:49:54.972Z",
-  "codeExample": "const tenantId: string = 'acme-tenant-42';\nconst largeInternalURLSanitized: string = 'https://internal.cdn.acme-corp.com/gifs/promo-2026_large.gif';\nconst result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);\nconst status: APIStatus | undefined = result.status;\nconst statusCode: number | undefined = status?.code;",
+  "generatedAt": "2026-05-20T18:33:18.470Z",
+  "codeExample": "const tenantId: string = 'tenant_8a92f4';\nconst largeInternalURLSanitized: string = 'https://cdn.streamingco.com/gifs/product-demo-large.gif';\nlet maybeStatus: APIStatus | undefined = undefined; // optional metadata when available\nconst response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);",
   "model": "gpt-5-mini"
 }

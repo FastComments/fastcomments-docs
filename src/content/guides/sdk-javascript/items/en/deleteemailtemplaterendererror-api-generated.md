@@ -14,9 +14,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_987";
-const id: string = "tmpl_5b7c2f";
-const errorId: string = "err_20260518_01";
-const includeAuditLog: boolean | undefined = true; // optional flag (may be omitted)
+const tenantId: string = 'tenant_acme_corp_01';
+const id: string = 'welcome_email_template_2025';
+const errorId: string = 'render_error_9001';
+let note: string | undefined = 'stale renderer failure'; // optional metadata example
 const result: FlagCommentPublic200Response = await deleteEmailTemplateRenderError(tenantId, id, errorId);
 [inline-code-end]

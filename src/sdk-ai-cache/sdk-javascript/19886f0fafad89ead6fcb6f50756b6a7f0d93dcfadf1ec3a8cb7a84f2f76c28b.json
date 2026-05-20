@@ -1,7 +1,7 @@
 {
   "method": "deleteFeedPostPublic",
   "signatureHash": "19886f0fafad89ead6fcb6f50756b6a7f0d93dcfadf1ec3a8cb7a84f2f76c28b",
-  "generatedAt": "2026-05-20T06:48:33.666Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises';\n  const postId: string = 'post_8f3b2a';\n  const broadcastId: string = 'broadcast_202605';\n  const result: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId);\n})();",
+  "generatedAt": "2026-05-20T18:33:20.763Z",
+  "codeExample": "const tenantId: string = \"greenwood-enterprises\";\nconst postId: string = \"post_84f3a2b7-9d6c-4e3a-8b2f\";\nconst broadcastId: string = \"broadcast-20260520-01\";\nconst sso: string = \"sso-token-7f9b3c\";\nconst result: DeleteFeedPostPublic200Response = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);",
   "model": "gpt-5-mini"
 }

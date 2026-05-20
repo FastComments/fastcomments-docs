@@ -15,11 +15,9 @@ Returns: [`UpdateUserNotificationStatus200Response`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-corp-tenant-01';
-  const notificationId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, UpdateUserNotificationStatusNewStatusEnum.Read, sso);
-  console.log(result);
-})();
+const tenantId: string = 'd8f4a2b0-6b3e-4c9a-9f1a-1234567890ab';
+const notificationId: string = 'notif-20260520-001';
+const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Read;
+const sso: string = 'sso-token-7f3b9c';
+const result: UpdateUserNotificationStatus200Response = await updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
 [inline-code-end]

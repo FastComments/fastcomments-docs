@@ -13,8 +13,10 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteNotificationCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f8b2a';
-const idSuffix: string | undefined = undefined; // optional fragment (may be omitted)
-const id: string = `notif_9c3d7e-${idSuffix ?? 'web'}`;
-const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, id);
+(async function() {
+  const tenantId: string = 'tenant_0a1b2c3d';
+  const id: string = 'notification-9f8e7d6c';
+  const result: FlagCommentPublic200Response = await deleteNotificationCount(tenantId, id);
+  console.log(result);
+})();
 [inline-code-end]

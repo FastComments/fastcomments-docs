@@ -86,18 +86,43 @@ impl LlmClient {
 
     /// Compute the cache key for a (method, prompt, model) tuple,
     /// matching Node's `openai-client.js:58-72`.
+    ///
+    /// Critical detail: Node does
+    ///     const data = { methodName: method.name, ..., httpMethod: method.httpMethod, ... };
+    /// then `JSON.stringify(sortObjectKeys(data))`. When `method.httpMethod`
+    /// is `undefined`, `JSON.stringify` drops the key entirely. The previous
+    /// Rust port serialized `Option::None` as `Value::Null`, so we hashed
+    /// `{"httpMethod":null,...}` while Node hashed `{...}` without the key.
+    /// That produced two different SHA256s for the same logical input and
+    /// missed every Node-shaped cache file — every cache-cold method was
+    /// re-generated against the LLM, often with different (sometimes wrong)
+    /// output than the cached Node version.
+    ///
+    /// We restore parity by building the JSON object manually and skipping
+    /// any field where `method_meta.get(...)` returns `None`.
     pub fn cache_key(&self, method_meta: &Value, prompt: &str) -> String {
-        let key_value = json!({
-            "methodName": method_meta.get("name"),
-            "parameters": method_meta.get("parameters"),
-            "responseType": method_meta.get("responseType"),
-            "nestedTypes": method_meta.get("nestedTypes"),
-            "httpMethod": method_meta.get("httpMethod"),
-            "path": method_meta.get("path"),
-            "prompt": prompt,
-            "model": self.model.clone(),
-        });
-        sha256_hex(&key_value)
+        let mut data = serde_json::Map::with_capacity(8);
+        // (out_key, source_key) — out_key is the JSON property the cache
+        // key sees; source_key matches whatever `to_value(&method)` produced
+        // (Method struct uses #[serde(rename = ...)]).
+        for (out_key, src_key) in [
+            ("methodName", "name"),
+            ("parameters", "parameters"),
+            ("responseType", "responseType"),
+            ("nestedTypes", "nestedTypes"),
+            ("httpMethod", "httpMethod"),
+            ("path", "path"),
+        ] {
+            if let Some(v) = method_meta.get(src_key) {
+                // Node note: an explicit JSON null in method_meta is
+                // preserved as `"key":null` by JSON.stringify. We mirror
+                // that — only true `undefined` / missing keys drop out.
+                data.insert(out_key.to_string(), v.clone());
+            }
+        }
+        data.insert("prompt".to_string(), Value::String(prompt.to_string()));
+        data.insert("model".to_string(), Value::String(self.model.clone()));
+        sha256_hex(&Value::Object(data))
     }
 
     /// Cache-only lookup. Returns `Some(code_example)` if the cache
@@ -328,4 +353,104 @@ fn now_iso8601() -> String {
     let tm = chrono::DateTime::<chrono::Utc>::from_timestamp(secs, (millis as u32) * 1_000_000)
         .unwrap_or_else(chrono::Utc::now);
     tm.format("%Y-%m-%dT%H:%M:%S%.3fZ").to_string()
+}
+
+#[cfg(test)]
+mod cache_key_tests {
+    //! These tests pin the cache-key construction byte-for-byte against
+    //! Node's behavior in `src/sdk-doc-generators/openai-client.js`.
+    //!
+    //! Regenerate the expected hashes with the snippet at the top of
+    //! `client.rs`'s `cache_key` docstring if Node's `generateCacheKey`
+    //! ever changes — but treat any drift as a real incident, because
+    //! it invalidates every committed cache file under
+    //! `src/sdk-ai-cache/`.
+    use super::*;
+
+    fn make_client() -> LlmClient {
+        let tmp = std::env::temp_dir().join("fcdocs-cache-key-tests");
+        let _ = std::fs::create_dir_all(&tmp);
+        LlmClient {
+            cache_dir: tmp,
+            api_key: None,
+            model: "gpt-5-mini".to_string(),
+            language: "typescript".to_string(),
+            http: reqwest::Client::new(),
+            fallback_models: vec!["gpt-5-mini".to_string()],
+        }
+    }
+
+    #[test]
+    fn matches_node_when_http_method_present() {
+        let client = make_client();
+        let method = json!({
+            "name": "addDomainConfig",
+            "parameters": {"tenantId": {"type": "string", "required": true}},
+            "responseType": "DomainConfig",
+            "nestedTypes": {},
+            "httpMethod": "POST",
+            "path": "/api/v1/domain-config",
+        });
+        assert_eq!(
+            client.cache_key(&method, "TEST PROMPT"),
+            "5febcc618c0d8ef55592f33ef320532a0554f336a98325e83b30e3664b05b311"
+        );
+    }
+
+    #[test]
+    fn matches_node_when_http_method_absent() {
+        // This is the regression: Method has #[serde(skip_serializing_if =
+        // "Option::is_none")] on http_method, so to_value omits the key.
+        // Node's JSON.stringify drops undefined; ours must too.
+        let client = make_client();
+        let method = json!({
+            "name": "addDomainConfig",
+            "parameters": {"tenantId": {"type": "string", "required": true}},
+            "responseType": "DomainConfig",
+            "nestedTypes": {},
+            // no httpMethod, no path
+        });
+        assert_eq!(
+            client.cache_key(&method, "TEST PROMPT"),
+            "c6faa321a52fc23cd8abc9373c1079e7e3f16fb8a662da5a1192f7a3b2af1ae6"
+        );
+    }
+
+    #[test]
+    fn matches_node_when_http_method_is_explicit_null() {
+        // Defensive case: if some upstream emits an explicit null
+        // (rather than skip-serializing), it should hash differently
+        // from `absent` and match Node's behavior with `httpMethod:
+        // null` left in the object.
+        let client = make_client();
+        let method = json!({
+            "name": "addDomainConfig",
+            "parameters": {"tenantId": {"type": "string", "required": true}},
+            "responseType": "DomainConfig",
+            "nestedTypes": {},
+            "httpMethod": null,
+            "path": null,
+        });
+        assert_eq!(
+            client.cache_key(&method, "TEST PROMPT"),
+            "f78cedb63356648c100ea7de881e1ffb5a63296cc1df267c82c8502aea590276"
+        );
+    }
+
+    #[test]
+    fn absent_and_null_hash_differently() {
+        let client = make_client();
+        let absent = json!({
+            "name": "x", "parameters": {}, "responseType": "T", "nestedTypes": {}
+        });
+        let null_present = json!({
+            "name": "x", "parameters": {}, "responseType": "T", "nestedTypes": {},
+            "httpMethod": null, "path": null
+        });
+        assert_ne!(
+            client.cache_key(&absent, "p"),
+            client.cache_key(&null_present, "p"),
+            "absent must hash differently from explicit-null (matches Node)"
+        );
+    }
 }

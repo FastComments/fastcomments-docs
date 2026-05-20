@@ -13,8 +13,11 @@ Returns: [`GetTenantUser200Response`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'getTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const regionSuffix: string | undefined = '-west';
-const tenantId: string = `acme-corp${regionSuffix ?? ''}`;
-const userId: string = 'u-82b7f3c9';
-const result: GetTenantUser200Response = await getTenantUser(tenantId, userId);
+(async () => {
+  const tenantId: string = 'tenant_acme_01';
+  const id: string = 'user_4b7f9c';
+  const result: GetTenantUser200Response = await getTenantUser(tenantId, id);
+  const primaryEmail: string | undefined = result.user?.email;
+  console.log(primaryEmail);
+})();
 [inline-code-end]

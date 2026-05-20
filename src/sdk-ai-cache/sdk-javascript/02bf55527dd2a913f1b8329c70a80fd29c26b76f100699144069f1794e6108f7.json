@@ -1,7 +1,7 @@
 {
   "method": "unBlockUserFromComment",
   "signatureHash": "02bf55527dd2a913f1b8329c70a80fd29c26b76f100699144069f1794e6108f7",
-  "generatedAt": "2026-05-20T06:45:35.079Z",
-  "codeExample": "const tenantId: string = 'tenant_42';\nconst id: string = 'comment_8a3f';\nconst unBlockFromCommentParams: UnBlockFromCommentParams = {\n  reason: 'Reinstated after manual review',\n  notify: true,\n  moderatorId: 'mod_12'\n};\nconst userId: string | undefined = 'user_5592';\nconst result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);",
+  "generatedAt": "2026-05-20T18:33:23.219Z",
+  "codeExample": "const tenantId: string = 'tenant_acme_corp';\nconst id: string = 'comment_9f3b2a';\nconst unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted after review', notifyUser: true };\nconst userId: string = 'user_84b7';\nconst result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);",
   "model": "gpt-5-mini"
 }

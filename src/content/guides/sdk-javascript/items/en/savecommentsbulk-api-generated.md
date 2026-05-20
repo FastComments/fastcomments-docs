@@ -17,20 +17,18 @@ Returns: `Array<SaveComment200Response`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme_enterprises_01";
-const createCommentParams: CreateCommentParams[] = [
+const tenantId: string = "tenant_12345";
+const createParams: CreateCommentParams[] = [
   {
-    content: "Thanks — this patch fixes the memory leak observed in staging.",
-    authorId: "dev_482",
-    postId: "issue_904",
-    mentions: [{ userId: "lead_12", start: 8, end: 17 } as CommentUserMentionInfo],
-    hashtags: [{ tag: "bugfix", indices: [60, 66] } as CommentUserHashTagInfo],
-    createdAt: "2026-05-20T10:15:00Z"
+    content: "Finished the draft for the Q2 report, please review.",
+    authorId: "user_789",
+    mentions: [{ userId: "user_456", startIndex: 34, length: 4 } as CommentUserMentionInfo],
+    hashtags: [{ tag: "Q2", indices: [28, 30] } as CommentUserHashTagInfo]
   } as CreateCommentParams
 ];
-const result: Array<SaveComment200Response> = await saveCommentsBulk(
+const saveResult: SaveComment200Response[] = await saveCommentsBulk(
   tenantId,
-  createCommentParams,
+  createParams,
   true,   // isLive
   true,   // doSpamCheck
   false,  // sendEmails

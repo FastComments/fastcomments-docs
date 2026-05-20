@@ -14,9 +14,9 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'sendInvite Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-5821";
-const id: string = "flag-9c4b";
-const fromName: string = "Aisha Patel";
-const optionalNote: string | undefined = "Please review this flagged comment when you have a moment";
-const result: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName, optionalNote);
+const tenantId: string = 'acme-corp-128';
+const id: string = 'comment-8421f';
+const fromName: string = 'Marcus Lindström';
+const note: string | undefined = undefined; // optional parameter example
+const response: FlagCommentPublic200Response = await sendInvite(tenantId, id, fromName);
 [inline-code-end]

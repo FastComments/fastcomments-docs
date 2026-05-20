@@ -15,14 +15,14 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-542a1";
-const id: string = "user-9b3f2";
+const tenantId: string = "tenant_4b72a1";
+const id: string = "user_7f8d2c";
 const updateTenantUserBody: UpdateTenantUserBody = {
-  email: "maria.lopez@acme.co",
-  displayName: "María López",
+  email: "jane.doe@acmecorp.com",
+  displayName: "Jane Doe",
   roles: ["editor"],
   isActive: true
 };
-const updateComments: string = "Updated role to editor for content moderation duties";
+const updateComments: string = "Promoted to editor after Q2 review";
 const result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
 [inline-code-end]

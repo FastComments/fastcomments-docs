@@ -14,8 +14,12 @@ Returns: [`GetFeedPostsStats200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getFeedPostsStats Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f7b9c2a';
-const postIds: string[] = ['post_91a2b3c4', 'post_8d7e6f5a'];
-const ssoToken: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';
-const stats: GetFeedPostsStats200Response = await getFeedPostsStats(tenantId, postIds, ssoToken);
+async function fetchStats(): Promise<void> {
+  const tenantId: string = 'tenant-4c2b1a';
+  const postIds: string[] = ['post_7f1e3a', 'post_9b2c6d'];
+  const sso: string | undefined = 'sso_tok_9XyZ123';
+  const result: GetFeedPostsStats200Response = await getFeedPostsStats(tenantId, postIds, sso);
+  console.log(result);
+}
+fetchStats();
 [inline-code-end]

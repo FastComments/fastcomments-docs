@@ -1,7 +1,7 @@
 {
   "method": "putSSOUser",
   "signatureHash": "9d359de9c53213054fec232816d049b721575b943f825e2d0c929c490f94ba10",
-  "generatedAt": "2026-05-20T06:44:17.038Z",
-  "codeExample": "const tenantId: string = 'acme-corp-001';\nconst id: string = 'user-8421';\nconst updateAPISSOUserData: UpdateAPISSOUserData = {\n  email: 'maria.gonzalez@acme-corp.com',\n  givenName: 'María',\n  familyName: 'González',\n  displayName: 'María González',\n  active: true,\n  roles: ['admin', 'editor']\n};\nconst result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);",
+  "generatedAt": "2026-05-20T18:33:20.668Z",
+  "codeExample": "const tenantId: string = 'acme-enterprises-42';\nconst id: string = 'usr-73a1b2';\nconst updateAPISSOUserData: UpdateAPISSOUserData = {\n  email: 'marcus.ingram@acme.com',\n  givenName: 'Marcus',\n  familyName: 'Ingram',\n  roles: ['editor', 'project_owner'],\n  enabled: true\n};\nconst result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);",
   "model": "gpt-5-mini"
 }

@@ -1,7 +1,7 @@
 {
   "method": "deleteEmailTemplate",
   "signatureHash": "5bd3f0fa77cf7e24e4f36d32f87d85739cbb47c5dd7439bc6fc67be41edd96cc",
-  "generatedAt": "2026-05-20T06:34:00.415Z",
-  "codeExample": "const tenantId: string = 'tenant_42b1a9';\nconst id: string = 'tpl_9a7f6c2d';\nconst result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, id);",
+  "generatedAt": "2026-05-20T18:33:24.469Z",
+  "codeExample": "const maybeSuffix: string | undefined = \"-prod\";\nconst tenantId: string = `acme-corp${maybeSuffix ?? \"\"}`;\nconst templateId: string = \"6f1e2d3c-4b5a-6789-0abc-def123456789\";\nconst result: FlagCommentPublic200Response = await deleteEmailTemplate(tenantId, templateId);",
   "model": "gpt-5-mini"
 }

@@ -14,12 +14,8 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteTenant Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-tenant-48';
-  const id: string = 'flag-9001';
-  const sure: string = 'confirm-delete';
-  const resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, sure);
-  const resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
-  console.log(resultWithSure, resultWithoutSure);
-})();
+const tenantId: string = 'tenant-84f2';
+const id: string = 'delete-9b3f7a';
+const resultWithoutSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id);
+const resultWithSure: FlagCommentPublic200Response = await deleteTenant(tenantId, id, 'confirm-deletion');
 [inline-code-end]

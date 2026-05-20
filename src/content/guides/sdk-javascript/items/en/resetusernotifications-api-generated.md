@@ -18,15 +18,20 @@ Returns: [`ResetUserNotifications200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'resetUserNotifications Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_12345';
-const afterCreatedAt: number = Math.floor(Date.now() / 1000) - 3600;
-const response: ResetUserNotifications200Response = await resetUserNotifications(
-  tenantId,
-  'notif_98765',
-  afterCreatedAt,
-  true,
-  undefined,
-  undefined,
-  'sso-token-4f3b'
-);
+const params: {
+  tenantId: string;
+  afterId?: string;
+  afterCreatedAt?: number;
+  unreadOnly?: boolean;
+  dmOnly?: boolean;
+  noDm?: boolean;
+  sso?: string;
+} = {
+  tenantId: 'tenant_7f3b9c',
+  afterId: 'notif_20260520_01',
+  afterCreatedAt: Date.now() - 3_600_000,
+  unreadOnly: true,
+  sso: 'sso_session_xyz'
+};
+const result: ResetUserNotifications200Response = await resetUserNotifications(params);
 [inline-code-end]

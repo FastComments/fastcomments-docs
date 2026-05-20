@@ -1,7 +1,7 @@
 {
   "method": "deleteDomainConfig",
   "signatureHash": "c3677ab418542e5a64ddec078a89ba0f2b121c6969344deda55865c460a817fd",
-  "generatedAt": "2026-05-20T06:33:49.947Z",
-  "codeExample": "(async () => {\n  const tenantId: string = 'acme-enterprises-842';\n  const stagingDomain: string | undefined = undefined;\n  const domain: string = stagingDomain ?? 'accounts.acme.com';\n  const result: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId, domain);\n  console.log(result);\n})();",
+  "generatedAt": "2026-05-20T18:33:27.690Z",
+  "codeExample": "const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';\nconst domain: string = 'auth.acmecorp.io';\nconst options: { notifyAdmin?: boolean } = { notifyAdmin: true };\nconst result: DeleteDomainConfig200Response = await deleteDomainConfig(tenantId, domain);",
   "model": "gpt-5-mini"
 }

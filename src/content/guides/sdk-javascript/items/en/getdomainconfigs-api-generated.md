@@ -12,8 +12,10 @@ Returns: [`GetDomainConfigs200Response`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getDomainConfigs Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const providedTenantId: string | undefined = 'tenant_4f9c2b-8a1';
-const tenantId: string = providedTenantId ?? 'tenant_00001-xyz';
-const result: GetDomainConfigs200Response = await getDomainConfigs(tenantId);
-console.log(result);
+(async function run(): Promise<void> {
+  const tenantId: string = 'd4f8c9e0-3b1a-4f2a-8c9d-1e2f3a4b5c6d';
+  const options: { includeInactive?: boolean } = { includeInactive: true };
+  const result: GetDomainConfigs200Response = await getDomainConfigs(tenantId, options);
+  console.log(result);
+})();
 [inline-code-end]

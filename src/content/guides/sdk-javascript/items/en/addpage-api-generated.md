@@ -13,14 +13,14 @@ Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-01';
-const newPageData: CreateAPIPageData = {
-  title: 'Customer Support',
-  slug: '/support',
-  contentHtml: '<p>Contact support at support@acme.com or call +1-555-0100.</p>',
-  authorId: 'user-782',
-  tags: ['support', 'customer-care'],
-  publishAt: undefined // optional field demonstrated
+const tenantId: string = 'tenant_9b3f2c1a';
+const createData: CreateAPIPageData = {
+  title: 'Q3 Product Roadmap',
+  slug: 'q3-product-roadmap',
+  content: '<h1>Goals</h1><p>Focus on performance and reliability improvements.</p>',
+  authorId: 'user_84c2',
+  published: false,            // optional flag demonstrated
+  tags: ['product', 'roadmap'] // optional metadata demonstrated
 };
-const response: AddPageAPIResponse = await addPage(tenantId, newPageData);
+const result: AddPageAPIResponse = await addPage(tenantId, createData);
 [inline-code-end]

@@ -15,13 +15,14 @@ Returns: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'putSSOUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
-const userId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
-const updateData: UpdateAPISSOUserData = {
-  email: 'jane.doe@acme.com',
-  displayName: 'Jane Doe',
-  roles: ['admin'],
-  isActive: true
+const tenantId: string = 'acme-enterprises-42';
+const id: string = 'usr-73a1b2';
+const updateAPISSOUserData: UpdateAPISSOUserData = {
+  email: 'marcus.ingram@acme.com',
+  givenName: 'Marcus',
+  familyName: 'Ingram',
+  roles: ['editor', 'project_owner'],
+  enabled: true
 };
-const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
+const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);
 [inline-code-end]

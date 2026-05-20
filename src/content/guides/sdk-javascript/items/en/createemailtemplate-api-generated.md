@@ -13,13 +13,15 @@ Returns: [`CreateEmailTemplate200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b3f2a";
+const tenantId: string = "acme-corp-42";
 const createEmailTemplateBody: CreateEmailTemplateBody = {
-  name: "Welcome to Redwood Co.",
-  subject: "Welcome aboard — getting started with your account",
-  htmlContent: "<p>Hi \{{firstName}},</p><p>Welcome to Redwood Co. We're glad you're here.</p>",
+  templateId: "welcome_v1",
+  name: "New User Welcome",
+  subject: "Welcome to Acme Corp — next steps",
+  htmlBody: "<p>Hi \{{firstName}}, welcome to Acme Corp! Use code <strong>GETSTARTED</strong>.</p>",
+  description: "Onboarding welcome email for newly registered users", // optional parameter demonstrated
   isActive: true,
-  description: "Customer onboarding welcome email" // optional field demonstrated
+  previewText: "Start using your Acme account today" // another optional field
 };
 const result: CreateEmailTemplate200Response = await createEmailTemplate(tenantId, createEmailTemplateBody);
 [inline-code-end]

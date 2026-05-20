@@ -14,13 +14,16 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateTenantPackage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-4b2c9f2';
-const id: string = 'pkg-71f3c9a';
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  name: 'Enterprise Moderation',
-  enabled: true,
-  // optional parameter provided
-  customConfigParameters: { imageProfanityThreshold: 1 }
-};
-const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+(async () => {
+  const tenantId: string = "tenant_sf_001";
+  const id: string = "pkg-premium-v2";
+  const updateTenantPackageBody: UpdateTenantPackageBody = {
+    name: "San Francisco Premium",
+    enabled: true,
+    customConfig: { maxComments: 500 },
+    tosConfig: { required: true } // optional fields demonstrated by presence; others omitted
+  } as UpdateTenantPackageBody;
+  const result: FlagCommentPublic200Response = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+  console.log(result);
+})();
 [inline-code-end]

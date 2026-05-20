@@ -15,9 +15,9 @@ Returns: [`PinComment200Response`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'unPinComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "a3f9c6e2-1d5b-4f2a-9c8e-2b7ef0c3a1d4";
-const commentId: string = "cmt-987654321";
-const broadcastId: string = "bcast-2026-05-20-01";
-const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSJ9.signature";
-const response: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);
+const tenantId: string = 'tenant_acme_corp';
+const commentId: string = 'comment_8f3b2a';
+const broadcastId: string = 'live_20260520_1800';
+const sso: string | undefined = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.signed.part';
+const result: PinComment200Response = await unPinComment(tenantId, commentId, broadcastId, sso);
 [inline-code-end]

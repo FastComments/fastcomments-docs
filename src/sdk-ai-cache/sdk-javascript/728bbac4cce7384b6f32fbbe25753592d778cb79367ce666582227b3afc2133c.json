@@ -1,7 +1,7 @@
 {
   "method": "setCommentText",
   "signatureHash": "728bbac4cce7384b6f32fbbe25753592d778cb79367ce666582227b3afc2133c",
-  "generatedAt": "2026-05-20T06:52:45.745Z",
-  "codeExample": "const tenantId: string = \"tenant_72c9f3\";\nconst commentId: string = \"cmt_9a1b2\";\nconst broadcastId: string = \"brd_45d6e\";\nconst mention: CommentUserMentionInfo = { userId: \"user_77\", displayName: \"Jane Doe\", startIndex: 29, length: 5 };\nconst commentTextUpdateRequest: CommentTextUpdateRequest = { text: \"Updated comment text mentioning @Jane Doe\", mentions: [mention] };\nconst editKey: string = \"edit-KEY-9\";\nconst sso: string = \"sso-token-abc\";\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso);",
+  "generatedAt": "2026-05-20T18:33:24.195Z",
+  "codeExample": "const tenantId: string = 'tenant-42';\nconst commentId: string = 'cmt-8932';\nconst broadcastId: string = 'brd-2023-07';\nconst updateRequest: CommentTextUpdateRequest = {\n  text: 'Updated comment text for the product launch — congrats team!',\n  mentions: [{ userId: 'user-17', displayName: 'Ava Nguyen' }] as CommentUserMentionInfo[],\n  hashtags: [{ tag: 'ProductLaunch' }] as CommentUserHashTagInfo[]\n};\nconst editKey: string = 'edtk-9f7b';\nconst sso: string = 'sso-token-abc123';\nconst result: SetCommentText200Response = await setCommentText(tenantId, commentId, broadcastId, updateRequest, editKey, sso);",
   "model": "gpt-5-mini"
 }

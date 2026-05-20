@@ -15,23 +15,21 @@ Returns: [`CreateFeedPostPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createFeedPostPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-enterprises";
-  const createFeedPostParams: CreateFeedPostParams = {
-    title: "April Product Launch",
-    content: "We launched the new Acme Turbo widget — features, pricing, and availability inside.",
-    media: [
-      {
-        type: "image",
-        caption: "Product hero",
-        asset: { url: "https://cdn.acme.com/images/turbo-hero.jpg", mimeType: "image/jpeg", size: 128000 }
-      }
-    ],
-    links: [{ url: "https://acme.com/products/turbo", text: "Product page" }]
-  };
-  const broadcastId: string = "broadcast-2026-04-15";
-  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
-  const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
-  console.log(result);
-})();
+const tenantId: string = 'tenant_98765';
+const createFeedPostParams: CreateFeedPostParams = {
+  title: 'Weekly Product Update',
+  body: 'Released performance improvements and bug fixes across the mobile app.',
+  media: [
+    {
+      url: 'https://cdn.example.com/images/update-2026-05-20.jpg',
+      type: 'image',
+      assets: [{ url: 'https://cdn.example.com/images/update-2026-05-20.jpg', mimeType: 'image/jpeg' }]
+    } as FeedPostMediaItem
+  ],
+  links: [{ url: 'https://example.com/release-notes/2026-05-20', title: 'Full release notes' } as FeedPostLink],
+  tags: ['release', 'mobile', 'performance']
+};
+const broadcastId: string = 'broadcast_20260520';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const result: CreateFeedPostPublic200Response = await createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso);
 [inline-code-end]

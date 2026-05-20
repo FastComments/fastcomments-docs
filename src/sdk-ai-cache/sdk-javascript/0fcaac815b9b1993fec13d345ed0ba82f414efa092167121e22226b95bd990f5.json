@@ -1,7 +1,7 @@
 {
   "method": "uploadImage",
   "signatureHash": "0fcaac815b9b1993fec13d345ed0ba82f414efa092167121e22226b95bd990f5",
-  "generatedAt": "2026-05-20T06:54:05.341Z",
-  "codeExample": "const tenantId: string = \"acme-corp-907\";\nconst file: Blob = new Blob([Uint8Array.from([0x89, 0x50, 0x4E, 0x47])], { type: \"image/png\" });\nconst sizePreset: SizePreset = { width: 1200, height: 800, fit: \"cover\" };\nconst urlId: string = \"homepage-hero-2026\";\nconst result: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId);",
+  "generatedAt": "2026-05-20T18:33:21.478Z",
+  "codeExample": "const tenantId: string = 'tenant-acme-42';\nconst file: Blob = new Blob([Uint8Array.from([137, 80, 78, 71, 13, 10])], { type: 'image/png' });\nconst sizePreset: SizePreset = { name: 'hero-lg', maxWidth: 1920, maxHeight: 1080 };\nconst urlId: string = 'homepage-hero-2026';\nconst result: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId);",
   "model": "gpt-5-mini"
 }

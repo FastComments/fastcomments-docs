@@ -1,7 +1,7 @@
 {
   "method": "blockFromCommentPublic",
   "signatureHash": "2ca12e47a6595cb9f7948abb6d7660de02f4ce28b44b10d6b0bcc02cdf4a5762",
-  "generatedAt": "2026-05-20T06:47:44.514Z",
-  "codeExample": "const tenantId: string = 'tenant_4f9a2b9e';\nconst commentId: string = 'cmt_9b7f3a1d';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'Harassment and hate speech',\n  moderatorId: 'mod_02a7c4',\n  notifyUser: true,\n  blockDurationMinutes: 1440\n} as PublicBlockFromCommentParams;\nconst sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';\nconst result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
+  "generatedAt": "2026-05-20T18:33:24.604Z",
+  "codeExample": "const tenantId: string = 'tenant_6f1a2b9c';\nconst commentId: string = 'comment_b3d92f47';\nconst publicBlockFromCommentParams: PublicBlockFromCommentParams = {\n  reason: 'abusive language',\n  durationMinutes: 1440,\n  notifyAuthor: false\n};\nconst sso: string = 'sso_tok_eyJhbGciOiJIUzI1Ni';\nconst result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);",
   "model": "gpt-5-mini"
 }

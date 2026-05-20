@@ -13,14 +13,15 @@ Returns: [`CreateQuestionConfig200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createQuestionConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-789";
-
+const tenantId: string = "acme-enterprises";
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  title: "Post-purchase feedback",
-  enabled: true,
-  customOptions: [{ key: "include_product_sku", label: "Include SKU" } as QuestionConfigCustomOptionsInner],
-  tosConfig: undefined // optional parameter demonstrated
-} as CreateQuestionConfigBody;
-
+  title: "Product Satisfaction",
+  description: "Quarterly feedback on overall product experience",
+  isActive: true,
+  customOptions: [
+    { label: "Very satisfied", value: "5" },
+    { label: "Somewhat satisfied", value: "4" }
+  ] // optional fields like description are shown; others omitted
+};
 const result: CreateQuestionConfig200Response = await createQuestionConfig(tenantId, createQuestionConfigBody);
 [inline-code-end]

@@ -15,14 +15,13 @@ Returns: [`BlockFromCommentPublic200Response`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'blockFromCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f9a2b9e';
-const commentId: string = 'cmt_9b7f3a1d';
+const tenantId: string = 'tenant_6f1a2b9c';
+const commentId: string = 'comment_b3d92f47';
 const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: 'Harassment and hate speech',
-  moderatorId: 'mod_02a7c4',
-  notifyUser: true,
-  blockDurationMinutes: 1440
-} as PublicBlockFromCommentParams;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';
+  reason: 'abusive language',
+  durationMinutes: 1440,
+  notifyAuthor: false
+};
+const sso: string = 'sso_tok_eyJhbGciOiJIUzI1Ni';
 const result: BlockFromCommentPublic200Response = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
 [inline-code-end]

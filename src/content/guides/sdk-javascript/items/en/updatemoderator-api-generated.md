@@ -14,13 +14,8 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8213";
-const id: string = "moderator_4021";
-const updateModeratorBody: UpdateModeratorBody = {
-  displayName: "Ava Johnson",
-  email: "ava.johnson@acme.com",
-  roles: ["community_moderator", "content_reviewer"],
-  active: true
-};
+const tenantId: string = "acme_corp_tenant_42";
+const id: string = "moderator_9f3b";
+const updateModeratorBody: UpdateModeratorBody = { role: "lead_moderator" } as UpdateModeratorBody;
 const result: FlagCommentPublic200Response = await updateModerator(tenantId, id, updateModeratorBody);
 [inline-code-end]

@@ -1,7 +1,7 @@
 {
   "method": "createTenantUser",
   "signatureHash": "d663b47ae1e0255b78cf582b892305f2141c4b9aa3842d7f2645d4f9f2108de6",
-  "generatedAt": "2026-05-20T06:33:00.263Z",
-  "codeExample": "const tenantId: string = \"tenant_92c7b4\";\nconst createTenantUserBody: CreateTenantUserBody = {\n  email: \"alice.wong@acme-corp.com\",\n  firstName: \"Alice\",\n  lastName: \"Wong\"\n};\nconst createTenantUserBodyWithOptional: CreateTenantUserBody = {\n  ...createTenantUserBody,\n  isActive: true\n};\nconst result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBodyWithOptional);",
+  "generatedAt": "2026-05-20T18:33:20.008Z",
+  "codeExample": "const tenantId: string = 'tenant-54b2';\nconst createTenantUserBody: CreateTenantUserBody = {\n  email: 'jane.doe@acme.com',\n  displayName: 'Jane Doe',\n  role: 'editor',\n  sendInvite: true\n};\nconst result: CreateTenantUser200Response = await createTenantUser(tenantId, createTenantUserBody);",
   "model": "gpt-5-mini"
 }

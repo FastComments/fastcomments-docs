@@ -18,12 +18,12 @@ Returns: [`VoteComment200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'voteComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme_corp";
-const commentId: string = "cmt-9f2b7a1e";
-const urlId: string = "products/widget-42";
-const broadcastId: string = "bcast-20260520-001";
-const voteBodyParams: VoteBodyParams = { vote: 1 };
-const sessionId: string | undefined = "sess-7d4f1c";
-const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+const tenantId: string = 'tenant_acme';
+const commentId: string = 'cmt_123456789';
+const urlId: string = 'https://www.acme-news.com/articles/ai-update-2026';
+const broadcastId: string = 'broadcast_live_20260520';
+const voteBodyParams: VoteBodyParams = { value: 1, reason: 'Insightful contribution' };
+const sessionId: string = 'sess_9b8f7a6c';
+const sso: string = 'sso_token_eyJhbGciOiJIUzI1Ni';
 const result: VoteComment200Response = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso);
 [inline-code-end]

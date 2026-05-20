@@ -1,7 +1,7 @@
 {
   "method": "getVotes",
   "signatureHash": "e187567ab74d54980002c0fb9c8a0f583e0169696f7f92b3ba6aff84b01159f4",
-  "generatedAt": "2026-05-20T06:43:12.742Z",
-  "codeExample": "const tenantId: string = 'tenant-4f9a2';\nconst urlId: string = 'articles/launch-2026';\nconst includeArchived: boolean | undefined = undefined; // optional parameter example\nconst votes: GetVotes200Response = await getVotes(tenantId, urlId);",
+  "generatedAt": "2026-05-20T18:33:21.839Z",
+  "codeExample": "const tenantId: string = 'tenant-42c-eu';\nconst urlId: string = 'article-7f9b';\nconst includeMetadata: boolean | undefined = true;\nconst votes: GetVotes200Response = await getVotes(tenantId, urlId);",
   "model": "gpt-5-mini"
 }

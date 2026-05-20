@@ -22,11 +22,12 @@ Returns: [`GetEventLog200Response`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getEventLog Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_01";
-const urlId: string = "url_742";
-const userIdWS: string = "ws_user_97";
+const tenantId: string = "acme-corp";
+const urlId: string = "url_4b7f";
+const userIdWS: string = "john.doe@acme.com";
 const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
-const optionalEndTime: number | undefined = undefined;
-const endTime: number = optionalEndTime ?? Date.now();
+const endTime: number = Date.now();
+interface OptionalParams { includeMetadata?: boolean; maxItems?: number; }
+const opts: OptionalParams = { includeMetadata: true };
 const result: GetEventLog200Response = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
 [inline-code-end]

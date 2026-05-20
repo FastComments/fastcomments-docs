@@ -15,10 +15,11 @@ Returns: [`GetCommentText200Response`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getCommentText Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
-const commentId: string = 'cmt_9f8b7a3e';
-const editKey: string | undefined = 'edk_a1b2c3d4e5f6';
-const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.token.signature';
+const tenantId: string = 'acme-corp-01';
+const commentId: string = 'cmt_987654321';
+const editKey: string = 'edk_abc123def';
+const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
 
-const commentText: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);
+const resultWithOptional: GetCommentText200Response = await getCommentText(tenantId, commentId, editKey, sso);
+const resultRequiredOnly: GetCommentText200Response = await getCommentText(tenantId, commentId);
 [inline-code-end]

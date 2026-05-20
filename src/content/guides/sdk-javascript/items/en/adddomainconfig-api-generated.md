@@ -13,12 +13,11 @@ Returns: [`AddDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'addDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-3fa9d8b2";
+const tenantId: string = "tenant_7f3b2a1c9";
 const addDomainConfigParams: AddDomainConfigParams = {
-  domainName: "login.acme-corp.com",
-  isPrimary: true,
-  verification: { method: "dns", token: "verify-9c3b" },
-  dnsRecords: [{ type: "TXT", name: "_acme", value: "v=spf1 include:_spf.example.com ~all" }] // optional parameter included
+  domain: "payments.mybusiness.com",
+  primary: true,
+  validateDns: true
 };
 const result: AddDomainConfig200Response = await addDomainConfig(tenantId, addDomainConfigParams);
 [inline-code-end]

@@ -13,11 +13,8 @@ Returns: [`GetVotes200Response`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'getVotes Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadVotes(): Promise<void> {
-  const tenantId: string = 'acme-enterprises';
-  const urlIdSuffix: string | undefined = 'q2-promo';
-  const urlId: string = urlIdSuffix ? `promo-${urlIdSuffix}` : 'promo-default';
-  const votes: GetVotes200Response = await getVotes(tenantId, urlId);
-  void votes;
-}
+const tenantId: string = 'tenant-42c-eu';
+const urlId: string = 'article-7f9b';
+const includeMetadata: boolean | undefined = true;
+const votes: GetVotes200Response = await getVotes(tenantId, urlId);
 [inline-code-end]

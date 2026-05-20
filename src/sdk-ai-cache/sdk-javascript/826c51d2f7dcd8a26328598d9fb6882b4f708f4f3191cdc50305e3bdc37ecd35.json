@@ -1,7 +1,7 @@
 {
   "method": "deleteVote",
   "signatureHash": "826c51d2f7dcd8a26328598d9fb6882b4f708f4f3191cdc50305e3bdc37ecd35",
-  "generatedAt": "2026-05-20T06:36:22.117Z",
-  "codeExample": "const tenantId: string = 'acme-enterprise-01';\nconst voteId: string = '3fa85f64-5717-4562-b3fc-2c963f66afa6';\nconst editKey: string = 'edit_9d8f7a6b';\n\nconst responseWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId, editKey);\nconst responseWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, voteId);",
+  "generatedAt": "2026-05-20T18:33:19.575Z",
+  "codeExample": "const tenantId: string = 'tenant_8b3f2a9c';\nconst id: string = 'comment-4721';\nconst editKey: string = 'edk_4f2a9b7c';\nconst responseWithEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id, editKey);\nconst responseWithoutEditKey: DeleteCommentVote200Response = await deleteVote(tenantId, id);",
   "model": "gpt-5-mini"
 }

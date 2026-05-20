@@ -1,7 +1,7 @@
 {
   "method": "deleteModerator",
   "signatureHash": "348c4e0de58d244b7bd16fde63c85da087938b4ab5ce84d0525b8a69d5957e88",
-  "generatedAt": "2026-05-20T06:34:27.941Z",
-  "codeExample": "const tenantId: string = 'tenant_acme_001';\nconst moderatorId: string = 'mod_84021';\nconst sendEmail: string = 'notifications@acme-corp.com';\nconst resultWithEmail: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);\nconst resultWithoutEmail: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId);",
+  "generatedAt": "2026-05-20T18:33:22.847Z",
+  "codeExample": "const tenantId: string = 'acme-corp-42';\nconst moderatorId: string = 'mod_9374';\nconst sendEmail: string | undefined = 'notifications@acme-corp.com';\nconst result: FlagCommentPublic200Response = await deleteModerator(tenantId, moderatorId, sendEmail);\n",
   "model": "gpt-5-mini"
 }

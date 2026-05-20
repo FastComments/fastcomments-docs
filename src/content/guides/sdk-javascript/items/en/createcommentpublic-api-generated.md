@@ -17,15 +17,16 @@ Returns: [`CreateCommentPublic200Response`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createCommentPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_42north";
-const urlId: string = "news/2026/05/20/live-event";
-const broadcastId: string = "brdcst_7f3d9c";
+const tenantId: string = 'tenant_9812';
+const urlId: string = 'prod-launch-20260520';
+const broadcastId: string = 'broadcast_20260520_01';
 const commentData: CommentData = {
-  body: "Great analysis — appreciated the insights on market trends.",
-  userMentions: [{ userId: "user_102", displayName: "Jamie" }],
-  hashtags: ["market", "analysis"]
-} as CommentData;
-const sessionId: string | undefined = "sess_ab12cd34";
-const sso: string | undefined = "sso-token-98b7";
+  content: 'Amazing launch — congrats to the whole team!',
+  authorName: 'Alex Morgan',
+  mentions: [] as CommentUserMentionInfo[],
+  hashtags: [] as CommentUserHashTagInfo[]
+};
+const sessionId: string | undefined = 'sess_9f7b3c';
+const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
 const result: CreateCommentPublic200Response = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);
 [inline-code-end]

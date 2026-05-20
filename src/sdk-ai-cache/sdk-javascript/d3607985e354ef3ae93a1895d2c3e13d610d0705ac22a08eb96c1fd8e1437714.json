@@ -1,7 +1,7 @@
 {
   "method": "addPage",
   "signatureHash": "d3607985e354ef3ae93a1895d2c3e13d610d0705ac22a08eb96c1fd8e1437714",
-  "generatedAt": "2026-05-20T06:30:09.072Z",
-  "codeExample": "const tenantId: string = 'acme-enterprises-01';\nconst newPageData: CreateAPIPageData = {\n  title: 'Customer Support',\n  slug: '/support',\n  contentHtml: '<p>Contact support at support@acme.com or call +1-555-0100.</p>',\n  authorId: 'user-782',\n  tags: ['support', 'customer-care'],\n  publishAt: undefined // optional field demonstrated\n};\nconst response: AddPageAPIResponse = await addPage(tenantId, newPageData);",
+  "generatedAt": "2026-05-20T18:33:23.426Z",
+  "codeExample": "const tenantId: string = 'tenant_9b3f2c1a';\nconst createData: CreateAPIPageData = {\n  title: 'Q3 Product Roadmap',\n  slug: 'q3-product-roadmap',\n  content: '<h1>Goals</h1><p>Focus on performance and reliability improvements.</p>',\n  authorId: 'user_84c2',\n  published: false,            // optional flag demonstrated\n  tags: ['product', 'roadmap'] // optional metadata demonstrated\n};\nconst result: AddPageAPIResponse = await addPage(tenantId, createData);",
   "model": "gpt-5-mini"
 }

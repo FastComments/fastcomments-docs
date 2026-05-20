@@ -17,10 +17,11 @@ Returns: [`GetNotificationCount200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getNotificationCount Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprise';
-const userId: string = 'user-72a1';
-const urlId: string = '8f14e45f-ea10-4f3d-9a11-abcdef123456';
-const viewed: boolean = false;
-const typeParam: string = 'mention';
-const result: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, undefined, viewed, typeParam);
+const tenantId: string = 'tenant_42';
+const userId: string | undefined = 'user_7';
+const urlId: string | undefined = undefined;
+const fromCommentId: string | undefined = undefined;
+const viewed: boolean | undefined = true;
+const type: string | undefined = 'mention';
+const notificationCount: GetNotificationCount200Response = await getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type);
 [inline-code-end]

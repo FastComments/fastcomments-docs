@@ -1,7 +1,7 @@
 {
   "method": "updateTenantUser",
   "signatureHash": "f4ac4366fa64af197406f6147055ca0ef33b0a418d01471887cde3788f46e5ba",
-  "generatedAt": "2026-05-20T06:47:27.926Z",
-  "codeExample": "const tenantId: string = \"tenant-542a1\";\nconst id: string = \"user-9b3f2\";\nconst updateTenantUserBody: UpdateTenantUserBody = {\n  email: \"maria.lopez@acme.co\",\n  displayName: \"María López\",\n  roles: [\"editor\"],\n  isActive: true\n};\nconst updateComments: string = \"Updated role to editor for content moderation duties\";\nconst result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);",
+  "generatedAt": "2026-05-20T18:33:21.367Z",
+  "codeExample": "const tenantId: string = \"tenant_4b72a1\";\nconst id: string = \"user_7f8d2c\";\nconst updateTenantUserBody: UpdateTenantUserBody = {\n  email: \"jane.doe@acmecorp.com\",\n  displayName: \"Jane Doe\",\n  roles: [\"editor\"],\n  isActive: true\n};\nconst updateComments: string = \"Promoted to editor after Q2 review\";\nconst result: FlagCommentPublic200Response = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);",
   "model": "gpt-5-mini"
 }

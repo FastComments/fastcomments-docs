@@ -14,13 +14,14 @@ Returns: [`GetDomainConfig200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'putDomainConfig Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b3f21";
-const domainToUpdate: string = "payments.acme-corp.com";
+const tenantId: string = 'tenant_88a2b7';
+const domainToUpdate: string = 'login.enterprise-acme.com';
 const updateDomainConfigParams: UpdateDomainConfigParams = {
-  enableHttps: true,
-  certificateId: "cert_7a2d55", // optional parameter supplied
-  ttl: 3600,
-  redirects: [{ from: "/legacy-checkout", to: "/checkout", statusCode: 301 }]
+  enabled: true,
+  ttlSeconds: 3600,
+  redirectToHttps: true,
+  aliases: ['login.acme-staging.com'], // optional parameter demonstrated
+  metadata: { owner: 'platform-team', environment: 'production' }
 };
-const result: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
+const updatedConfig: GetDomainConfig200Response = await putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams);
 [inline-code-end]

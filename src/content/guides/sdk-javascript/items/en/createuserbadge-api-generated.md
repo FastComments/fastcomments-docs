@@ -13,14 +13,15 @@ Returns: [`CreateUserBadge200Response`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'createUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-001";
+const tenantId: string = "tenant_7f9b3";
 const createUserBadgeParams: CreateUserBadgeParams = {
-  badgeId: "bronze-contributor",
-  title: "Bronze Contributor",
-  description: "Awarded for first 10 contributions",
-  imageUrl: "https://cdn.acme.com/badges/bronze.png",
-  isActive: true, // optional parameter example
-  metadata: { awardedBy: "community-team" } // optional parameter example
-};
+  userId: "user_8421",
+  badge: {
+    id: "badge_12",
+    title: "Expert Contributor",
+    description: "Awarded for 100 helpful answers"
+  },
+  notify: true
+} as CreateUserBadgeParams;
 const result: CreateUserBadge200Response = await createUserBadge(tenantId, createUserBadgeParams);
 [inline-code-end]

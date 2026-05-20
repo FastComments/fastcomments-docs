@@ -14,11 +14,10 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateFeedPost Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4821';
-const id: string = 'post_9b34c';
-const mediaAsset: FeedPostMediaItemAsset = { url: 'https://cdn.company.com/assets/launch.jpg', mimeType: 'image/jpeg' };
-const mediaItem: FeedPostMediaItem = { url: 'https://cdn.company.com/assets/launch.jpg', type: 'image', assets: [mediaAsset], caption: 'Product launch hero image' };
-const link: FeedPostLink = { url: 'https://company.com/blog/product-launch', title: 'Read full announcement' };
-const feedPost: FeedPost = { title: 'Product Launch', content: 'We are excited to announce the new version of our product with enhanced performance and security.', media: [mediaItem], links: [link] };
+const tenantId: string = 'acme-tenant-01';
+const id: string = 'feedpost-2026-0001';
+const mediaAsset: FeedPostMediaItemAsset = { assetId: 'asset-9876', url: 'https://cdn.acme.com/assets/asset-9876.jpg' } as FeedPostMediaItemAsset;
+const mediaItem: FeedPostMediaItem = { id: 'media-1', type: 'image', asset: mediaAsset } as FeedPostMediaItem;
+const feedPost: FeedPost = { title: 'Product Launch', body: 'We launched the new product today.', media: [mediaItem], isPinned: true } as FeedPost;
 const result: FlagCommentPublic200Response = await updateFeedPost(tenantId, id, feedPost);
 [inline-code-end]

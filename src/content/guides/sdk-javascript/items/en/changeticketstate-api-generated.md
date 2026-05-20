@@ -15,13 +15,13 @@ Returns: [`ChangeTicketState200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'changeTicketState Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const userId: string = 'agent_204';
-const id: string = 'TCKT-2026-047';
+const tenantId: string = "acme-corp-001";
+const userId: string = "user_8742";
+const id: string = "TCK-2026-00042";
 const changeTicketStateBody: ChangeTicketStateBody = {
-  state: 'resolved',
-  comment: 'Fixed in release 1.4.2; verifying with customer before closing',
-  notifySubscribers: true, // optional parameter example
-};
+  state: "closed",
+  comment: "Fixed in backend service; verified by QA",
+  notifyFollowers: false
+} as ChangeTicketStateBody;
 const result: ChangeTicketState200Response = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
 [inline-code-end]

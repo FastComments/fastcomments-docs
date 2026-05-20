@@ -15,14 +15,15 @@ Returns: [`FlagCommentPublic200Response`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'replaceTenantUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-42';
-const id: string = 'user-8a3f';
+const tenantId: string = "tenant_acmeCorp";
+const id: string = "user_84b2";
 const replaceTenantUserBody: ReplaceTenantUserBody = {
-  email: 'jane.doe@acmecorp.com',
-  displayName: 'Jane Doe',
-  roles: ['editor'],
-  active: true
-};
-const updateComments: string = 'Migrated user profile and updated roles';
+  email: "alice.jenkins@acmecorp.com",
+  displayName: "Alice Jenkins",
+  roles: ["moderator", "editor"],
+  disabled: false
+} as ReplaceTenantUserBody;
+const updateComments: string = "Migrated user account and reattributed historical comments";
+
 const result: FlagCommentPublic200Response = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
 [inline-code-end]

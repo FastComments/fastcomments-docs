@@ -1,7 +1,7 @@
 {
   "method": "createModerator",
   "signatureHash": "7f248b4eb099afc692c7fa437fea55f28e057c5fcf55bf2189ece879825c665d",
-  "generatedAt": "2026-05-20T06:31:51.551Z",
-  "codeExample": "const tenantId: string = 'acme-corp-01';\nconst createModeratorBody: CreateModeratorBody = {\n  username: 'janedoe',\n  email: 'jane.doe@acme-corp.com',\n  displayName: 'Jane Doe',\n  permissions: ['moderate_comments', 'review_reports'],\n  notes: 'Primary moderator for product support channels' // optional parameter demonstrated\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
+  "generatedAt": "2026-05-20T18:33:23.691Z",
+  "codeExample": "const tenantId: string = 'tenant_acmecorp_001';\nconst createModeratorBody: CreateModeratorBody = {\n  userId: 'mod-982',\n  displayName: 'Ava Johnson',\n  email: 'ava.johnson@acme.com',\n  roles: ['global_moderator'],\n  customConfig: { enableNotifications: true, maxDailyActions: 500 } as CustomConfigParameters\n};\nconst result: CreateModerator200Response = await createModerator(tenantId, createModeratorBody);",
   "model": "gpt-5-mini"
 }

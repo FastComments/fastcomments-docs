@@ -16,9 +16,9 @@ Returns: [`UnBlockCommentPublic200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'unBlockUserFromComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-acme-001';
-const id: string = 'comment_778899';
-const unBlockFromCommentParams: UnBlockFromCommentParams = {} as UnBlockFromCommentParams;
-const userId: string = 'moderator_jane';
+const tenantId: string = 'tenant_acme_corp';
+const id: string = 'comment_9f3b2a';
+const unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted after review', notifyUser: true };
+const userId: string = 'user_84b7';
 const result: UnBlockCommentPublic200Response = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
 [inline-code-end]

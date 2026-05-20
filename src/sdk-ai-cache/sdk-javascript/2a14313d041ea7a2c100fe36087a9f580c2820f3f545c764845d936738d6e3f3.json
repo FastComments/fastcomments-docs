@@ -1,7 +1,7 @@
 {
   "method": "createSubscription",
   "signatureHash": "2a14313d041ea7a2c100fe36087a9f580c2820f3f545c764845d936738d6e3f3",
-  "generatedAt": "2026-05-20T06:32:22.704Z",
-  "codeExample": "const tenantId: string = \"tenant_9f7b3c2a\";\nconst couponCode: string | undefined = undefined;\n\nconst subscriptionData: CreateAPIUserSubscriptionData = {\n  userId: \"user_81a2b4\",\n  planId: \"pro_monthly\",\n  startDate: \"2026-06-01\",\n  quantity: 1,\n  metadata: { source: \"website\" },\n  ...(couponCode ? { couponCode } : {})\n};\n\nconst response: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);",
+  "generatedAt": "2026-05-20T18:33:24.749Z",
+  "codeExample": "const tenantId: string = \"acme-enterprises-987\";\nconst createData: CreateAPIUserSubscriptionData = {\n  apiUserId: \"user_72f4a1\",\n  planId: \"enterprise_annual\",\n  startDate: \"2026-06-01T00:00:00Z\",\n  autoRenew: true,\n  trialPeriodDays: 30\n};\nconst result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createData);",
   "model": "gpt-5-mini"
 }

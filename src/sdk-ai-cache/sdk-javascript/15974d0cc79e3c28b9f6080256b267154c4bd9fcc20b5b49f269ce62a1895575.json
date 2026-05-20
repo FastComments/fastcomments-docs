@@ -1,7 +1,7 @@
 {
   "method": "deleteUserBadge",
   "signatureHash": "15974d0cc79e3c28b9f6080256b267154c4bd9fcc20b5b49f269ce62a1895575",
-  "generatedAt": "2026-05-20T06:36:14.852Z",
-  "codeExample": "async function removeBadge(tenantId: string, id: string, notify?: boolean): Promise<UpdateUserBadge200Response> {\n  const result: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);\n  if (notify) {\n    // send optional notification\n  }\n  return result;\n}\nconst tenantId: string = 'tenant_4f3b2a7d';\nconst badgeId: string = 'badge_9f02a1e3';\nconst response: UpdateUserBadge200Response = await removeBadge(tenantId, badgeId, true);",
+  "generatedAt": "2026-05-20T18:33:25.919Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'olympus_inc';\n  const id: string = 'badge-73a9b2';\n  const includeDetails: boolean | undefined = true;\n  const response: UpdateUserBadge200Response = await deleteUserBadge(tenantId, id);\n  console.log(response);\n})();",
   "model": "gpt-5-mini"
 }

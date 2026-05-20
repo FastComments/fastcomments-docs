@@ -1,7 +1,7 @@
 {
   "method": "updateQuestionResult",
   "signatureHash": "a0ece83d576acc6423e48dadb5348a3fae93e9e2da42c4046db6a943407cb017",
-  "generatedAt": "2026-05-20T06:46:47.580Z",
-  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst id: string = \"qresult_98765\";\nconst meta: MetaItem[] = [{ key: \"source\", value: \"knowledge_base\" }];\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  reviewerId: \"user_2468\",\n  passed: true,\n  score: 0.92,\n  comment: \"Reviewed and confirmed accuracy\",\n  meta,                // optional metadata included\n  notifyFollowers: false // optional flag demonstrated\n};\nconst result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);",
+  "generatedAt": "2026-05-20T18:33:40.240Z",
+  "codeExample": "const tenantId: string = \"acme-marketing\";\nconst id: string = \"7f3a2c1e-4b6d-4c9f-8a2e-0d9b6f1c2e3a\";\nconst updateQuestionResultBody: UpdateQuestionResultBody = {\n  verdict: \"correct\",\n  note: \"Peer-reviewed and confirmed\",\n  meta: [] as MetaItem[] // optional metadata omitted/empty\n} as UpdateQuestionResultBody;\nconst result: FlagCommentPublic200Response = await updateQuestionResult(tenantId, id, updateQuestionResultBody);\n",
   "model": "gpt-5-mini"
 }

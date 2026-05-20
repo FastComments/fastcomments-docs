@@ -13,14 +13,8 @@ Returns: [`GetUserBadgeProgressById200Response`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "u-55213";
-
-async function fetchUserBadge(tenant: string, id: string, includeHistory?: boolean): Promise<GetUserBadgeProgressById200Response> {
-  const progress: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenant, id);
-  if (includeHistory) { /* optionally process historical entries */ }
-  return progress;
-}
-
-const badgeProgress: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, userId);
+const tenantId: string = 'acme-corp';
+const id: string = 'user-6f3a2b';
+const includeHistory: boolean | undefined = true; // optional parameter example
+const result: GetUserBadgeProgressById200Response = await getUserBadgeProgressById(tenantId, id);
 [inline-code-end]

@@ -21,15 +21,16 @@ Returns: [`GetUserNotifications200Response`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getUserNotifications Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const notifications: GetUserNotifications200Response = await getUserNotifications({
-  tenantId: "tenant_01a9f3",
-  pageSize: 25,
-  afterId: "notif_987654321",
-  includeContext: true,
-  afterCreatedAt: Date.now() - 3600_000,
-  unreadOnly: true,
-  dmOnly: false,
-  includeTranslations: true,
-  sso: "sso-token-abcdef123456"
-});
+const response: GetUserNotifications200Response = await getUserNotifications(
+  'tenant_8f3a12',
+  25,
+  'notif_4b2d1',
+  true,
+  Date.now() - 7 * 24 * 60 * 60 * 1000,
+  true,
+  undefined,
+  undefined,
+  true,
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImlhdCI6MTY4MDAwMDAwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+);
 [inline-code-end]

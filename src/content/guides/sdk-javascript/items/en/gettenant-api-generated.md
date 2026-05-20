@@ -13,8 +13,10 @@ Returns: [`GetTenant200Response`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'getTenant Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2c';
-const id: string = 'org-84f7e2b1';
-const optionalBillingInfo: BillingInfo | undefined = undefined;
-const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+(async () => {
+  const tenantId: string = 'tenant-4f2b';
+  const id: string = 'site-91a7';
+  const tenantResponse: GetTenant200Response = await getTenant(tenantId, id);
+  const billingInfo: BillingInfo | undefined = (tenantResponse as unknown as { billing?: BillingInfo }).billing;
+})();
 [inline-code-end]

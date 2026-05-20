@@ -1,7 +1,7 @@
 {
   "method": "getCachedNotificationCount",
   "signatureHash": "ec838814b7e4589e7b6c3b5c55fa75406c01560ff8e08b9c2abd1582c4f1524f",
-  "generatedAt": "2026-05-20T06:36:46.817Z",
-  "codeExample": "async function fetchNotification(tenantId: string, id?: string): Promise<GetCachedNotificationCount200Response> {\n  const resolvedId: string = id ?? 'user_1024';\n  const response: GetCachedNotificationCount200Response = await getCachedNotificationCount(tenantId, resolvedId);\n  return response;\n}\nconst result: GetCachedNotificationCount200Response = await fetchNotification('tenant_acme', 'user_2048');",
+  "generatedAt": "2026-05-20T18:33:18.893Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst userId: string = \"user-1024\";\nconst tenantOverride: string | undefined = undefined; // optional override\nconst effectiveTenantId: string = tenantOverride ?? tenantId;\nconst notificationCount: GetCachedNotificationCount200Response = await getCachedNotificationCount(effectiveTenantId, userId);",
   "model": "gpt-5-mini"
 }

@@ -13,11 +13,12 @@ Returns: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'deletePage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-42';
-const pageId: string = 'f4d2c8b1-77e3-4a9f';
-async function removePage(tenantIdParam: string, idParam: string, purge?: boolean): Promise<DeletePageAPIResponse> {
-  const response: DeletePageAPIResponse = await deletePage(tenantIdParam, idParam);
-  return response;
+async function run(deleteImmediately?: boolean): Promise<void> {
+  const tenantId: string = 'acme_corp_tenant_01';
+  const id: string = 'page_5f8b3a9e';
+  const result: DeletePageAPIResponse = await deletePage(tenantId, id);
+  const logAction: boolean = deleteImmediately ?? false;
+  if (logAction) console.log('Deleted page', id, result);
 }
-const deleted: DeletePageAPIResponse = await removePage(tenantId, pageId, true);
+run();
 [inline-code-end]

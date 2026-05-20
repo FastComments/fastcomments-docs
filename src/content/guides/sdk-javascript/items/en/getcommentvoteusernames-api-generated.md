@@ -15,13 +15,11 @@ Returns: [`GetCommentVoteUserNames200Response`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42';
-const commentId: string = 'cmt_987654321';
+const tenantId: string = 'tenant_7f4b3d2a';
+const commentId: string = 'cmt_9a8b7c6d';
 const dir: number = -1;
-const sso: string | undefined = 'sso:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
 
-(async () => {
-  const result: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, sso);
-  console.log(result);
-})();
+const resultWithSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
+const resultWithoutSSO: GetCommentVoteUserNames200Response = await getCommentVoteUserNames(tenantId, commentId, dir);
 [inline-code-end]
