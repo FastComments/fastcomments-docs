@@ -85,7 +85,15 @@ pub async fn run(args: Vec<String>) -> Result<()> {
 
     // Pre-walk default-locale guides for sitemap + ordering metadata.
     let default_guides = root.walk(&locales.default_locale)?;
-    register_link_anchors(&default_guides);
+    // Build the link validator BEFORE any per-guide tasks run, so every
+    // guide's item set is registered when validate() fires. Mirrors
+    // src/guides.js:322 (`linkValidator.registerGuideItems(...)` walked
+    // before the per-guide build loop).
+    let link_validator = Arc::new(build_link_validator(&default_guides));
+    // Shared bag of broken-link errors. Built across all parallel
+    // default-locale workers and drained at end-of-run.
+    let link_errors: Arc<std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>> =
+        Arc::new(std::sync::Mutex::new(Vec::new()));
     let default_guides = Arc::new(default_guides);
 
     // Shared browser pool for screenshot capture. Lazily launches the
@@ -128,6 +136,8 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 guide_order.clone(),
                 static_generated_dir.clone(),
                 browser_pool.clone(),
+                link_validator.clone(),
+                link_errors.clone(),
             ));
         }
         while let Some(joined) = tasks.next().await {
@@ -149,6 +159,8 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                     guide_order.clone(),
                     static_generated_dir.clone(),
                     browser_pool.clone(),
+                    link_validator.clone(),
+                    link_errors.clone(),
                 ));
             }
         }
@@ -184,6 +196,8 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 guide_order.clone(),
                 static_generated_dir.clone(),
                 browser_pool.clone(),
+                link_validator.clone(),
+                link_errors.clone(),
             ));
         }
         while let Some(joined) = tasks.next().await {
@@ -205,6 +219,8 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                     guide_order.clone(),
                     static_generated_dir.clone(),
                     browser_pool.clone(),
+                    link_validator.clone(),
+                    link_errors.clone(),
                 ));
             }
         }
@@ -263,9 +279,28 @@ pub async fn run(args: Vec<String>) -> Result<()> {
         elapsed = ?started.elapsed(),
         "sitegen build complete"
     );
+
+    // Drain accumulated link-validation errors. Node throws on the
+    // first broken anchor (src/link-validator.js:73); we collect across
+    // the build so the developer sees every broken link in one pass,
+    // then bail non-zero. Matches the sdkgen openapi pattern.
+    let errors = std::mem::take(&mut *link_errors.lock().expect("link_errors mutex"));
+    if !errors.is_empty() {
+        eprintln!();
+        for e in &errors {
+            eprintln!("{e}");
+        }
+        eprintln!(
+            "=== BUILD FAILED: {n} broken link(s) in default-locale content ===",
+            n = errors.len()
+        );
+        anyhow::bail!("sitegen: {n} broken link(s)", n = errors.len());
+    }
+
     Ok(())
 }
 
+#[allow(clippy::too_many_arguments)]
 #[allow(clippy::too_many_arguments)]
 fn spawn_guide_task(
     guide: Guide,
@@ -279,6 +314,8 @@ fn spawn_guide_task(
     guide_order: Arc<Vec<String>>,
     static_generated_dir: Arc<PathBuf>,
     browser_pool: Arc<BrowserPool>,
+    link_validator: Arc<fcdocs_shared::link_validator::LinkValidator>,
+    link_errors: Arc<std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>>,
 ) -> tokio::task::JoinHandle<Result<()>> {
     tokio::spawn(async move {
         build_one_guide(
@@ -293,6 +330,8 @@ fn spawn_guide_task(
             &guide_order,
             &static_generated_dir,
             &browser_pool,
+            &link_validator,
+            &link_errors,
         )
         .await
     })
@@ -311,9 +350,18 @@ async fn build_one_guide(
     guide_order: &[String],
     static_generated_dir: &Path,
     browser_pool: &BrowserPool,
+    link_validator: &fcdocs_shared::link_validator::LinkValidator,
+    link_errors: &std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>,
 ) -> Result<()> {
     // Load meta — prefer locale-translated meta.
     let meta = load_meta_for_locale(root, &guide.id, locale)?;
+
+    // Link validation runs only on the default locale (matches
+    // src/guides.js:137). Non-default locales would either re-flag the
+    // same broken anchors against the inherited default-locale content
+    // or false-positive against locale-specific translations of the
+    // file basenames.
+    let validate_links = locale == root.default_locale;
 
     // Build items in order.
     let mut items: Vec<Value> = Vec::new();
@@ -328,6 +376,7 @@ async fn build_one_guide(
             sidecar,
             static_generated_dir,
             browser_pool,
+            validate_links.then_some((link_validator, link_errors)),
         )
         .await
         {
@@ -457,6 +506,7 @@ async fn build_one_guide(
     Ok(())
 }
 
+#[allow(clippy::too_many_arguments)]
 async fn build_one_item(
     guide_id: &str,
     meta_item: &MetaItem,
@@ -466,6 +516,10 @@ async fn build_one_item(
     sidecar: &SidecarClient,
     static_generated_dir: &Path,
     browser_pool: &BrowserPool,
+    link_check: Option<(
+        &fcdocs_shared::link_validator::LinkValidator,
+        &std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>,
+    )>,
 ) -> Result<(Value, bool)> {
     let (path, fallback) = root.resolve_item_path(guide_id, &meta_item.file, locale);
     if !path.exists() {
@@ -476,6 +530,19 @@ async fn build_one_item(
         anyhow::bail!("required file not found: {path:?}");
     }
     let raw = std::fs::read_to_string(&path)?;
+
+    // Validate links on raw markdown BEFORE marker / handlebars
+    // substitution — same point Node's pipeline runs the check
+    // (src/guides.js:138). Errors are collected, not thrown, so the
+    // build surfaces every broken anchor in one pass at end-of-run.
+    if let Some((validator, errors)) = link_check {
+        let path_for_msg = path.to_string_lossy().into_owned();
+        let new_errs = validator.validate(&raw, &path_for_msg, guide_id);
+        if !new_errs.is_empty() {
+            errors.lock().expect("link_errors mutex").extend(new_errs);
+        }
+    }
+
     let basename = meta_item.file.trim_end_matches(".md");
     let processed = full::process_markdown(&raw, basename, cfg, sidecar).await?;
 
@@ -940,9 +1007,19 @@ fn write_sitemap(
     Ok(())
 }
 
-fn register_link_anchors(_guides: &[Guide]) {
-    // Placeholder — full link-validator wiring lands in a follow-up once
-    // we decide whether to enforce or just warn during sitegen runs.
+/// Build a `LinkValidator` from the registered guides, mirroring Node's
+/// `linkValidator.registerGuideItems(guide.id, meta.itemsOrdered)` loop
+/// at src/guides.js:320-323.
+///
+/// Each item is keyed by its filename minus `.md` — link validation in
+/// the validator compares those keys against `[text](#foo)` /
+/// `[text](./foo.md)` / `[text](/guide-X.html#foo)` link components.
+fn build_link_validator(guides: &[Guide]) -> fcdocs_shared::link_validator::LinkValidator {
+    let mut v = fcdocs_shared::link_validator::LinkValidator::new();
+    for g in guides {
+        v.register_guide_items(&g.id, g.meta.items_ordered.iter().map(|it| it.file.as_str()));
+    }
+    v
 }
 
 fn parse_locale_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>> {
