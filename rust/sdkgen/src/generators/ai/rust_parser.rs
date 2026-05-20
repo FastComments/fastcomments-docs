@@ -121,7 +121,16 @@ impl RustParser {
                 auth_type: None,
                 description: None,
             };
-            if let Some(s) = self.extract_struct(&params_type, &content) {
+            // Mirror Node's two-function shape: parameters use
+            // extractParamsStruct (pure type-based), nested types use
+            // extractStruct (combined check). Using the combined-check
+            // extractor for both — as we did before — diverged from
+            // Node on any params struct whose fields had a
+            // `#[serde(skip_serializing_if = "Option::is_none")]`
+            // attribute. Different `required` flags propagate into the
+            // cache key + the prompt, so the next cache miss
+            // re-generates with a subtly different signature.
+            if let Some(s) = self.extract_params_struct(&params_type, &content) {
                 method.parameters = s.fields.clone();
                 self.resolve_nested_types(&s.fields, &mut method.nested_types, 0, 3);
             }
@@ -142,33 +151,56 @@ impl RustParser {
         out
     }
 
-    fn extract_struct(&self, name: &str, content: &str) -> Option<StructDef> {
-        let re = Regex::new(&format!(
-            r"pub\s+struct\s+{}\s*\{{",
-            regex::escape(name)
-        ))
-        .ok()?;
-        let m = re.find(content)?;
-        let start = m.end();
-        let bytes = content.as_bytes();
-        let mut depth = 1i32;
-        let mut end = start;
-        let mut i = start;
-        while i < bytes.len() {
-            match bytes[i] {
-                b'{' => depth += 1,
-                b'}' => {
-                    depth -= 1;
-                    if depth == 0 {
-                        end = i;
-                        break;
-                    }
-                }
-                _ => {}
-            }
-            i += 1;
+    /// Extract a method's params struct using Node's
+    /// `extractParamsStruct` semantics (line 83-142 of rust-parser.js):
+    /// `required` is set purely from whether the field type starts
+    /// with `Option<`. Serde attributes are NOT consulted.
+    ///
+    /// This differs from `extract_struct` (which mirrors Node
+    /// `extractStruct` at line 291-362) by NOT carrying forward
+    /// `#[serde(skip_serializing_if = "Option::is_none")]` from a
+    /// preceding line. Using extract_struct for parameters silently
+    /// diverged from Node on any params struct whose fields were
+    /// annotated, which would have produced different cache hashes
+    /// and prompts on regeneration.
+    fn extract_params_struct(&self, name: &str, content: &str) -> Option<StructDef> {
+        let body = extract_struct_body(name, content)?;
+        // Node uses /pub\s+(\w+):\s*([^,\n]+)/g — note the \n in the
+        // negation, so each field is captured per-line. Mirror that
+        // exactly so multi-line declarations behave the same as Node.
+        static FIELD_RE: Lazy<Regex> =
+            Lazy::new(|| Regex::new(r"pub\s+(\w+):\s*([^,\n]+)").expect("regex"));
+        let mut fields: indexmap::IndexMap<String, ParamInfo> = indexmap::IndexMap::new();
+        for cap in FIELD_RE.captures_iter(&body) {
+            let field_name = cap[1].to_string();
+            let clean = cap[2].trim().to_string();
+            let type_is_option = clean.starts_with("Option<");
+            let actual = if type_is_option {
+                Regex::new(r"Option<(.+)>")
+                    .ok()
+                    .and_then(|r| r.captures(&clean))
+                    .map(|c| c[1].to_string())
+                    .unwrap_or_else(|| clean.clone())
+            } else {
+                clean
+            };
+            fields.insert(
+                field_name,
+                ParamInfo {
+                    type_: actual,
+                    // Pure type-based; no skip_serializing_if check.
+                    required: !type_is_option,
+                },
+            );
         }
-        let body = &content[start..end];
+        Some(StructDef {
+            name: name.to_string(),
+            fields,
+        })
+    }
+
+    fn extract_struct(&self, name: &str, content: &str) -> Option<StructDef> {
+        let body = extract_struct_body(name, content)?;
         let mut fields: indexmap::IndexMap<String, ParamInfo> = indexmap::IndexMap::new();
         let mut is_optional = false;
         for line in body.split('\n') {
@@ -390,6 +422,39 @@ struct StructDef {
     fields: indexmap::IndexMap<String, ParamInfo>,
 }
 
+/// Locate `pub struct <name> { ... }` in `content` and return the
+/// brace-balanced body. Shared by both `extract_params_struct` and
+/// `extract_struct` — they only differ in how they interpret the
+/// body, not in how they slice it.
+fn extract_struct_body<'a>(name: &str, content: &'a str) -> Option<&'a str> {
+    let re = Regex::new(&format!(
+        r"pub\s+struct\s+{}\s*\{{",
+        regex::escape(name)
+    ))
+    .ok()?;
+    let m = re.find(content)?;
+    let start = m.end();
+    let bytes = content.as_bytes();
+    let mut depth = 1i32;
+    let mut end = start;
+    let mut i = start;
+    while i < bytes.len() {
+        match bytes[i] {
+            b'{' => depth += 1,
+            b'}' => {
+                depth -= 1;
+                if depth == 0 {
+                    end = i;
+                    break;
+                }
+            }
+            _ => {}
+        }
+        i += 1;
+    }
+    Some(&content[start..end])
+}
+
 /// snake_case -> camelCase with acronym handling for OpenAPI name
 /// matching. Mirrors `rust-ai-generator.js:357-401`.
 pub fn snake_to_camel_case(s: &str) -> String {
@@ -445,4 +510,115 @@ pub fn snake_to_camel_case(s: &str) -> String {
         }
     }
     out
+}
+
+#[cfg(test)]
+mod tests {
+    //! Pins the params-vs-nested-type divergence Node has at
+    //! src/sdk-doc-generators/rust-parser.js — extractParamsStruct
+    //! (line 83-142) is pure type-based; extractStruct (line 291-362)
+    //! also carries forward `skip_serializing_if = "Option::is_none"`
+    //! from the preceding line. The Rust port used the combined
+    //! extractor for BOTH, so params silently picked up the carry-
+    //! forward behavior and produced different `required` flags than
+    //! Node — invalidating cache hits and changing prompt content.
+    use super::*;
+    use std::path::PathBuf;
+
+    fn parser() -> RustParser {
+        // models_path doesn't matter for the in-memory body tests
+        // below; load_type_definition is what touches disk.
+        RustParser::new(PathBuf::from("/tmp"), "client/src/models/")
+    }
+
+    #[test]
+    fn params_struct_ignores_serde_skip_attribute() {
+        // The exact divergence shape Node + Rust differ on:
+        // a `#[serde(skip_serializing_if = "Option::is_none")]` line
+        // followed by a NON-Option field. Node extractParamsStruct
+        // ignores serde attrs entirely -> required = true. Old Rust
+        // extract_struct carried the attr forward -> required = false.
+        let source = r#"
+pub struct AddDomainConfigParams {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tenant_id: String,
+    pub add_domain_config_params: models::AddDomainConfigParams
+}
+"#;
+        let s = parser()
+            .extract_params_struct("AddDomainConfigParams", source)
+            .expect("struct present");
+        let tenant = s.fields.get("tenant_id").expect("tenant_id field");
+        assert!(
+            tenant.required,
+            "params extractor must ignore #[serde(skip_serializing_if=…)]; \
+             Node marks this field required=true (line 83-142 pure type-based)"
+        );
+    }
+
+    #[test]
+    fn params_struct_marks_option_fields_optional() {
+        // Normal case (which Node + the old combined extractor agreed
+        // on) — keep it locked so refactors don't drift back.
+        let source = r#"
+pub struct GetTicketsParams {
+    pub tenant_id: Option<String>,
+    pub status: String,
+}
+"#;
+        let s = parser()
+            .extract_params_struct("GetTicketsParams", source)
+            .expect("struct present");
+        assert_eq!(
+            s.fields.get("tenant_id").map(|p| p.required),
+            Some(false),
+            "Option<T> -> required=false"
+        );
+        assert_eq!(
+            s.fields.get("status").map(|p| p.required),
+            Some(true),
+            "non-Option -> required=true"
+        );
+    }
+
+    #[test]
+    fn params_unwraps_option_inner_type() {
+        let source = r#"
+pub struct P {
+    pub a: Option<MyType>,
+    pub b: Option<Vec<u8>>,
+}
+"#;
+        let s = parser().extract_params_struct("P", source).unwrap();
+        assert_eq!(s.fields.get("a").map(|p| p.type_.as_str()), Some("MyType"));
+        assert_eq!(s.fields.get("b").map(|p| p.type_.as_str()), Some("Vec<u8>"));
+    }
+
+    /// extract_struct (used for nested types) is the one that DOES
+    /// match Node's combined check at extractStruct line 291-362.
+    /// Pin that semantics so the split doesn't accidentally flip
+    /// the nested-type extractor too.
+    #[test]
+    fn nested_struct_extractor_keeps_combined_check() {
+        let source = r#"
+pub struct ResponseModel {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub maybe_field: Option<String>,
+    pub required_field: String,
+}
+"#;
+        let s = parser()
+            .extract_struct("ResponseModel", source)
+            .expect("struct present");
+        // maybe_field: both attr AND Option<...> -> required=false
+        assert_eq!(
+            s.fields.get("maybe_field").map(|p| p.required),
+            Some(false)
+        );
+        // required_field: no attr, no Option -> required=true
+        assert_eq!(
+            s.fields.get("required_field").map(|p| p.required),
+            Some(true)
+        );
+    }
 }
