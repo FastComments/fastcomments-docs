@@ -267,8 +267,20 @@ impl TypescriptParser {
             .into_owned();
         s = s.trim().to_string();
 
-        // Array<T> -> recurse on T.
-        if let Some(c) = Regex::new(r"Array<(.+)>").unwrap().captures(&s) {
+        // Array<T> -> recurse on T. MUST match Node lazily (`[^>]+`),
+        // NOT greedily (`.+`). For nested generics like
+        // `Array<Array<X>>`:
+        //   - Node (lazy)  captures `Array<X`  — stops at the first
+        //     `>`, recurses on a broken fragment that no model file
+        //     resolves; the inner X is never added to nestedTypes.
+        //   - Rust (greedy) would capture `Array<X>` — stops at the
+        //     last `>`, recurses, and eventually finds X. nestedTypes
+        //     would gain an entry Node doesn't have.
+        // Both behaviors are arguably broken in different ways, but
+        // matching Node's broken behavior is mandatory for cache-key
+        // parity (nestedTypes is part of the SHA256). The "right"
+        // fix lives outside this parity port.
+        if let Some(c) = Regex::new(r"Array<([^>]+)>").unwrap().captures(&s) {
             return self.extract_type_names(&c[1]);
         }
         // Union types Type1 | Type2.
@@ -382,3 +394,91 @@ struct InterfaceDef {
 
 /// Cargo-local re-export used by per-language modules.
 pub(crate) use indexmap;
+
+#[cfg(test)]
+mod tests {
+    //! Pin the type-name extraction to Node's exact shape — the
+    //! captured names propagate into method.nestedTypes which is
+    //! part of the cache SHA256, so even arguably-broken corner
+    //! cases must match Node bit-for-bit.
+    use super::*;
+    use std::path::PathBuf;
+
+    fn p() -> TypescriptParser {
+        TypescriptParser::new(PathBuf::from("/tmp"), "src/generated/src/models/")
+    }
+
+    fn names(t: &str) -> Vec<String> {
+        p().extract_type_names(t)
+    }
+
+    /// Pins the regression. Real source has this exact shape:
+    ///   `images?: Array<Array<any>>;` (GifSearchResponse.ts)
+    /// Node lazily captures `Array<X` from the outer match (`[^>]+`
+    /// stops at the FIRST `>`), then recurses on the broken fragment
+    /// — net nestedTypes contribution = empty. Rust greedily would
+    /// have captured `Array<X>` and recursed further, eventually
+    /// adding the inner type to nestedTypes. Different nestedTypes
+    /// -> different cache SHA256.
+    #[test]
+    fn nested_array_matches_node_lazy_capture() {
+        // With a real inner type the divergence would have been a
+        // single nestedTypes entry — verify Rust no longer adds it.
+        // (TypescriptParser only adds non-primitive names; the broken
+        // fragment `Array<X` is never primitive but also doesn't
+        // resolve to any model file, so it's effectively dropped at
+        // load time. We pin the EXTRACTION step here — the same step
+        // Node does.)
+        let got = names("Array<Array<MyType>>");
+        // Node's broken-fragment behavior: outer match captures the
+        // inner `Array<MyType`, that recursion finds no Array match,
+        // no `|`, no dict, and the fragment isn't a primitive, so it
+        // ends up as the "type name". Match exactly.
+        assert_eq!(got, vec!["Array<MyType".to_string()]);
+    }
+
+    #[test]
+    fn simple_array_unchanged() {
+        // `Array<MyType>` → `MyType`. Both regexes agree on this.
+        let got = names("Array<MyType>");
+        assert_eq!(got, vec!["MyType".to_string()]);
+    }
+
+    #[test]
+    fn array_with_primitive_inner_returns_empty() {
+        // `Array<any>` -> recurse on `any` -> primitive -> filtered.
+        let got = names("Array<any>");
+        assert!(got.is_empty(), "got: {got:?}");
+        // The real-source case: `Array<Array<any>>` -> outer captures
+        // `Array<any` (broken). It's not a primitive, so it would
+        // leak as a "name" — but the loader never finds a matching
+        // model file so it doesn't bloat nestedTypes. Pin the
+        // extraction shape anyway.
+        let got = names("Array<Array<any>>");
+        assert_eq!(got, vec!["Array<any".to_string()]);
+    }
+
+    #[test]
+    fn union_with_array_arm_matches_node_first_match_semantic() {
+        // Node `.match` returns the FIRST match only. Pre-fix Rust
+        // greedy would have eaten across the union boundary, then
+        // tripped the `|` branch with garbage. Lazy regex stops at
+        // the first `>`, so we recurse on just the array inner.
+        let got = names("Array<First> | Second");
+        // The wrapper-removal pass only strips `| null` / `| undefined`,
+        // not arbitrary unions, so this input reaches the Array branch
+        // intact. Lazy captures `First`, recurses, returns `[First]`.
+        // The `| Second` half is dropped — same as Node.
+        assert_eq!(got, vec!["First".to_string()]);
+    }
+
+    #[test]
+    fn null_undefined_wrappers_stripped_before_array_match() {
+        // Wrappers are removed at the top of the fn. After:
+        //   `Array<MyType> | null` -> `Array<MyType>` -> `[MyType]`
+        let got = names("Array<MyType> | null");
+        assert_eq!(got, vec!["MyType".to_string()]);
+        let got = names("Array<MyType> | undefined");
+        assert_eq!(got, vec!["MyType".to_string()]);
+    }
+}
