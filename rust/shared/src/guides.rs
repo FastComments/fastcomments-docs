@@ -31,6 +31,10 @@ pub struct GuideMeta {
     pub url: Option<String>,
     #[serde(default, rename = "itemsOrdered")]
     pub items_ordered: Vec<MetaItem>,
+    /// Catch-all for fields like `description`, `faq`, etc. that we don't
+    /// type-check from Rust.
+    #[serde(flatten)]
+    pub extra: serde_json::Map<String, serde_json::Value>,
 }
 
 /// A discovered guide directory, plus the locale-resolved meta for it.

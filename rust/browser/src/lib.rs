@@ -1,15 +1,10 @@
 //! chromiumoxide wrapper used by `fcdocs-sitegen` for `[app-screenshot-*]`
 //! and `[flow-diagram-*]` markers. Replaces puppeteer.
 //!
-//! Mirrors `src/app-screenshot-generator.js` behavior:
-//! - Single browser per call (pooling intentionally disabled, same as
-//!   the Node version at lines 121-156).
-//! - Login-as-demo flow before each screenshot.
-//! - JSON sidecar cache (`<file>.json`) with version 2, 1-week TTL, args hash.
-//!
-//! Stub: real implementation lands as part of task #15.
+//! Behavior parity reference: `src/app-screenshot-generator.js`.
 
 pub mod cache;
+pub mod screenshot;
 
 use std::path::PathBuf;
 
@@ -22,11 +17,22 @@ pub fn chrome_binary() -> Option<PathBuf> {
             return Some(pb);
         }
     }
-    let pup = PathBuf::from(
+    // Common puppeteer cache locations on Linux.
+    let candidates = [
         "node_modules/puppeteer/.local-chromium/linux-848005/chrome-linux/chrome",
-    );
-    if pup.exists() {
-        return Some(pup);
+        "node_modules/puppeteer/.cache/chrome/linux-stable/chrome",
+        "/usr/bin/chromium-browser",
+        "/usr/bin/chromium",
+        "/usr/bin/google-chrome",
+    ];
+    for c in candidates {
+        let pb = PathBuf::from(c);
+        if pb.exists() {
+            return Some(pb);
+        }
     }
     None
 }
+
+pub use cache::{CacheRecord, ImageCache};
+pub use screenshot::{Action, ScreenshotArgs, ScreenshotHost};
