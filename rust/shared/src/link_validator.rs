@@ -62,18 +62,33 @@ impl LinkValidator {
     /// Validate every markdown link in `content`. Returns the list of
     /// problems found (empty == OK). Mirrors `validateContent` in
     /// src/link-validator.js:19-41.
+    ///
+    /// Performance: walks the original `content` directly (no
+    /// allocated copy unless a code block is actually present) and
+    /// uses a precomputed line index for O(log lines) line-number
+    /// lookups per match — old impl was O(links × lines × line_len).
     pub fn validate(&self, content: &str, file_path: &str, guide_id: &str) -> Vec<LinkError> {
         let mut errors = Vec::new();
-        let without_code = CODE_BLOCK.replace_all(content, "").to_string();
-        let lines: Vec<&str> = content.split('\n').collect();
+        // Precompute code-block byte ranges so we can skip matches that
+        // sit inside them without paying for an owned String of the
+        // code-stripped content.
+        let code_ranges: Vec<std::ops::Range<usize>> = CODE_BLOCK
+            .find_iter(content)
+            .map(|m| m.start()..m.end())
+            .collect();
+        let line_starts = compute_line_starts(content);
 
-        for cap in MD_LINK.captures_iter(&without_code) {
+        for cap in MD_LINK.captures_iter(content) {
+            let full = cap.get(0).unwrap();
+            if in_any_range(full.start(), &code_ranges) {
+                continue;
+            }
             let text = cap.get(1).map(|m| m.as_str()).unwrap_or("");
             let href = cap.get(2).map(|m| m.as_str()).unwrap_or("");
             if should_skip(href) {
                 continue;
             }
-            let line = find_line_number(&lines, cap.get(0).unwrap().as_str());
+            let line = line_of(full.start(), &line_starts);
             let (path, anchor) = parse_link(href);
 
             if path.is_none() && anchor.is_some() {
@@ -232,13 +247,39 @@ fn parse_link(href: &str) -> (Option<String>, Option<String>) {
     (Some(href.to_string()), None)
 }
 
-fn find_line_number(lines: &[&str], match_text: &str) -> usize {
-    for (i, line) in lines.iter().enumerate() {
-        if line.contains(match_text) {
-            return i + 1;
+/// Byte offset of the first byte of each line. `line_starts[0] = 0`;
+/// `line_starts[i]` is the byte right after the `\n` that ends line i-1.
+fn compute_line_starts(content: &str) -> Vec<usize> {
+    let mut out = Vec::with_capacity(content.len() / 32 + 1);
+    out.push(0);
+    for (i, b) in content.bytes().enumerate() {
+        if b == b'\n' {
+            out.push(i + 1);
         }
     }
-    1
+    out
+}
+
+/// 1-based line number for a byte offset, via binary search of the
+/// precomputed line index.
+fn line_of(offset: usize, line_starts: &[usize]) -> usize {
+    match line_starts.binary_search(&offset) {
+        Ok(idx) => idx + 1,
+        Err(idx) => idx, // insertion point: lines are 1-based
+    }
+}
+
+fn in_any_range(offset: usize, ranges: &[std::ops::Range<usize>]) -> bool {
+    // ranges from `find_iter` are non-overlapping + sorted by start.
+    let idx = match ranges.binary_search_by_key(&offset, |r| r.start) {
+        Ok(i) => i,
+        Err(0) => return false,
+        Err(i) => i - 1,
+    };
+    ranges
+        .get(idx)
+        .map(|r| offset < r.end)
+        .unwrap_or(false)
 }
 
 fn format_available(items: Option<&HashSet<String>>) -> String {

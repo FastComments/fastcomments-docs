@@ -5,9 +5,12 @@
 //! info, looks up the existing cache file for the (method, prompt,
 //! model) tuple, and emits a markdown section.
 
+use std::sync::Arc;
+
 use anyhow::Result;
 use async_trait::async_trait;
 use fcdocs_llm::LlmClient;
+use futures::stream::{FuturesUnordered, StreamExt};
 use serde_json::json;
 
 use super::common;
@@ -85,41 +88,63 @@ impl DocGenerator for TypescriptAiGenerator {
             }
         }
 
-        // Resolve cache + emit sections.
-        let mut sections: Vec<DocSection> = Vec::new();
-        let mut cache_misses = 0usize;
-        for method in &all_methods {
-            let meta_value = serde_json::to_value(method)?;
-            let prompt = prompts::typescript_prompt(method);
-            let code_example = match llm.get_cached(&meta_value, &prompt).await {
-                Some(code) => code,
-                None => {
-                    // No cache hit and no OpenAI key → skip with warning.
-                    if llm.api_key.is_none() {
-                        cache_misses += 1;
-                        tracing::warn!(method = %method.name, "ai cache miss + no OPENAI_API_KEY; skip");
-                        continue;
+        // Resolve cache + emit sections, in parallel across methods. The
+        // cache lookups dominate, but on cache-cold builds the OpenAI
+        // calls are the bottleneck — both benefit from parallelism.
+        let llm = Arc::new(llm);
+        let sdk = Arc::new(ctx.sdk.clone());
+        let models_path_owned: String = models_path.to_string();
+        let pairs: Vec<(usize, Method)> =
+            all_methods.into_iter().enumerate().collect();
+        let mut tasks = FuturesUnordered::new();
+        for (idx, method) in pairs {
+            let llm = llm.clone();
+            let sdk = sdk.clone();
+            let models_path = models_path_owned.clone();
+            tasks.push(tokio::spawn(async move {
+                let meta_value = match serde_json::to_value(&method) {
+                    Ok(v) => v,
+                    Err(e) => {
+                        return (
+                            idx,
+                            Err(anyhow::anyhow!("serialize method: {e}")),
+                        );
                     }
-                    // Try OpenAI directly.
-                    match llm.generate(&meta_value, &prompt).await {
-                        Ok(r) => r.text,
-                        Err(e) => {
-                            cache_misses += 1;
-                            tracing::warn!(method = %method.name, error = %e, "ai gen failed; skip");
-                            continue;
+                };
+                let prompt = prompts::typescript_prompt(&method);
+                let code = match llm.get_cached(&meta_value, &prompt).await {
+                    Some(c) => c,
+                    None => {
+                        if llm.api_key.is_none() {
+                            return (idx, Ok(None));
+                        }
+                        match llm.generate(&meta_value, &prompt).await {
+                            Ok(r) => r.text,
+                            Err(e) => return (idx, Err(e)),
                         }
                     }
+                };
+                let section = build_method_section(&method, &code, &sdk, &models_path);
+                (idx, Ok(section))
+            }));
+        }
+        let mut indexed: Vec<(usize, Option<DocSection>)> = Vec::new();
+        let mut cache_misses = 0usize;
+        while let Some(joined) = tasks.next().await {
+            match joined {
+                Ok((idx, Ok(maybe))) => indexed.push((idx, maybe)),
+                Ok((idx, Err(e))) => {
+                    cache_misses += 1;
+                    tracing::warn!(idx, error = %e, "ai gen failed; skip");
                 }
-            };
-            if let Some(section) = build_method_section(
-                method,
-                &code_example,
-                &ctx.sdk,
-                models_path,
-            ) {
-                sections.push(section);
+                Err(e) => {
+                    cache_misses += 1;
+                    tracing::warn!(error = %e, "ai task panicked; skip");
+                }
             }
         }
+        indexed.sort_by_key(|(i, _)| *i);
+        let sections: Vec<DocSection> = indexed.into_iter().filter_map(|(_, s)| s).collect();
         if cache_misses > 0 {
             tracing::warn!(cache_misses, sdk = %ctx.sdk.id, "AI cache misses");
         }

@@ -372,7 +372,7 @@ async fn build_one_guide(
         "isFallback": any_fallback,
         "locale": locale,
         "availableLocales": available_locales,
-        "t": serde_json::to_value(&t)?,
+        "t": (*t.value).clone(),
         // stableUrlId intentionally NOT passed to guide-layout — Node
         // omits it from the layout context (`src/guides.js:238-248`),
         // so the `{{#if stableUrlId}}` block in guide-layout.html always
@@ -669,14 +669,19 @@ fn build_faq_json_ld(meta: &GuideMeta) -> Option<String> {
             }))
         })
         .collect();
-    Some(
-        json!({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": main_entity,
-        })
-        .to_string(),
-    )
+    let json = json!({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": main_entity,
+    })
+    .to_string();
+    // The page template embeds this string raw inside
+    // `<script type="application/ld+json">`. Replace `</` with `<\/`
+    // and `<!--` with `<\!--` so a question or answer that contains
+    // literal `</script>` (or HTML comment markers) can't break out
+    // of the script context. Both are valid JSON escapes — the JSON
+    // parser unescapes them transparently.
+    Some(json.replace("</", "<\\/").replace("<!--", "<\\!--"))
 }
 
 struct PrevNext {
@@ -824,7 +829,7 @@ fn build_index_page(
         "locale": locale,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
         "availableLocales": available_locales,
-        "t": serde_json::to_value(&t)?,
+        "t": (*t.value).clone(),
     });
     let html = templates.render("index", &ctx)?;
     let filename = if locale == locales.default_locale {
@@ -906,25 +911,43 @@ fn register_link_anchors(_guides: &[Guide]) {
 }
 
 fn parse_locale_filter(args: impl Iterator<Item = String>) -> Option<Vec<String>> {
-    let mut iter = args.peekable();
-    while let Some(arg) = iter.next() {
-        if arg == "--locale" || arg == "--locales" {
-            return iter.next().map(|v| {
-                v.split(',')
-                    .map(|s| s.trim().to_string())
-                    .filter(|s| !s.is_empty())
-                    .collect()
-            });
-        } else if let Some(rest) = arg.strip_prefix("--locale=") {
-            return Some(
-                rest.split(',')
-                    .map(|s| s.trim().to_string())
-                    .filter(|s| !s.is_empty())
-                    .collect(),
-            );
+    let raw: Option<Vec<String>> = {
+        let mut iter = args.peekable();
+        let mut out = None;
+        while let Some(arg) = iter.next() {
+            if arg == "--locale" || arg == "--locales" {
+                out = iter.next().map(|v| {
+                    v.split(',')
+                        .map(|s| s.trim().to_string())
+                        .filter(|s| !s.is_empty())
+                        .collect()
+                });
+                break;
+            } else if let Some(rest) = arg.strip_prefix("--locale=") {
+                out = Some(
+                    rest.split(',')
+                        .map(|s| s.trim().to_string())
+                        .filter(|s| !s.is_empty())
+                        .collect(),
+                );
+                break;
+            }
         }
-    }
-    None
+        out
+    };
+    // Validate each provided locale flows into Path::join in many sites
+    // — reject anything outside the locale-id allowlist before we reach
+    // the filesystem. Drop invalid entries with a warning so a typo
+    // doesn't accidentally widen the build to everything (which
+    // returning `None` would do).
+    raw.map(|locales| {
+        let (ok, bad): (Vec<String>, Vec<String>) =
+            locales.into_iter().partition(|l| fcdocs_shared::guides::is_valid_id(l));
+        for b in &bad {
+            warn!(locale = %b, "ignoring --locale entry: invalid id");
+        }
+        ok
+    })
 }
 
 /// Run pulldown-cmark on the input. Used for `index.md.html` files

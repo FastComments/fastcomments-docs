@@ -1,7 +1,31 @@
 use std::path::{Path, PathBuf};
+use std::sync::Mutex;
 
 use anyhow::{Context, Result};
+use dashmap::DashMap;
+use once_cell::sync::Lazy;
+use regex::Regex;
 use serde::{Deserialize, Serialize};
+
+/// Locale + guide-id allowlist. Both are filesystem path components and
+/// flow into `Path::join` in many places, so we reject anything outside
+/// `[A-Za-z0-9_-]+`. This is more restrictive than the actual
+/// filesystem accepts, intentionally — it stops `..`, slashes, NULs,
+/// and weird unicode that could confuse downstream code.
+static ID_OK: Lazy<Regex> = Lazy::new(|| Regex::new(r"^[A-Za-z0-9_-]+$").expect("regex"));
+
+pub fn is_valid_id(s: &str) -> bool {
+    !s.is_empty() && s.len() <= 128 && ID_OK.is_match(s)
+}
+
+fn check_id(field: &str, value: &str) -> Result<()> {
+    if !is_valid_id(value) {
+        anyhow::bail!(
+            "invalid {field}: {value:?} (allowed: ^[A-Za-z0-9_-]+$, max 128 chars)"
+        );
+    }
+    Ok(())
+}
 
 /// Mirrors the meta.json `itemsOrdered[]` entry shape used by `src/guides.js`.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -59,6 +83,13 @@ pub struct GuideItem {
 pub struct GuidesRoot {
     pub guides_dir: PathBuf,
     pub default_locale: String,
+    /// Per-(guide_id, meta_path) parsed-meta cache. Avoids re-reading
+    /// + re-parsing the same meta.json once per locale (28+ times per
+    /// full build).
+    meta_cache: DashMap<PathBuf, GuideMeta>,
+    /// One-shot warning so we don't spam logs when an upstream caller
+    /// repeatedly hands us a bad id.
+    warned_ids: Mutex<std::collections::HashSet<String>>,
 }
 
 impl GuidesRoot {
@@ -66,7 +97,38 @@ impl GuidesRoot {
         Self {
             guides_dir: guides_dir.into(),
             default_locale: default_locale.into(),
+            meta_cache: DashMap::new(),
+            warned_ids: Mutex::new(std::collections::HashSet::new()),
         }
+    }
+
+    fn validate_id(&self, field: &str, value: &str) -> bool {
+        if is_valid_id(value) {
+            return true;
+        }
+        // Warn once per offending value so debug logs stay readable.
+        let key = format!("{field}={value}");
+        let mut seen = self.warned_ids.lock().unwrap();
+        if seen.insert(key) {
+            tracing::warn!(
+                field,
+                value,
+                "rejecting invalid id (must match ^[A-Za-z0-9_-]+$)"
+            );
+        }
+        false
+    }
+
+    fn load_meta(&self, meta_path: &Path) -> Result<GuideMeta> {
+        if let Some(hit) = self.meta_cache.get(meta_path) {
+            return Ok(hit.clone());
+        }
+        let bytes = std::fs::read(meta_path)
+            .with_context(|| format!("read meta json {meta_path:?}"))?;
+        let meta: GuideMeta = serde_json::from_slice(&bytes)
+            .with_context(|| format!("parse meta json {meta_path:?}"))?;
+        self.meta_cache.insert(meta_path.to_path_buf(), meta.clone());
+        Ok(meta)
     }
 
     /// Walk every guide directory and load its locale-resolved meta.
@@ -105,10 +167,7 @@ impl GuidesRoot {
                 default_meta_path
             };
 
-            let meta_bytes = std::fs::read(&meta_path)
-                .with_context(|| format!("read meta json {meta_path:?}"))?;
-            let meta: GuideMeta = serde_json::from_slice(&meta_bytes)
-                .with_context(|| format!("parse meta json {meta_path:?}"))?;
+            let meta = self.load_meta(&meta_path)?;
 
             let has_items = !meta.items_ordered.is_empty() || meta.url.is_some();
             if !has_items {
@@ -123,8 +182,13 @@ impl GuidesRoot {
     }
 
     /// Build the URL slug for a guide page. Mirrors `createGuideLink` in
-    /// `src/guides.js:290-295`.
+    /// `src/guides.js:290-295`. `id` and `locale` are filename
+    /// components; if either fails validation we return a sentinel
+    /// "invalid-id" link so we never write `guide-../-foo.html`.
     pub fn guide_link(&self, id: &str, locale: &str) -> String {
+        if !self.validate_id("guide_id", id) || !self.validate_id("locale", locale) {
+            return "guide-invalid-id.html".to_string();
+        }
         if locale == self.default_locale {
             format!("guide-{id}.html")
         } else {
@@ -135,7 +199,15 @@ impl GuidesRoot {
     /// Resolve the markdown file path for a meta item, applying the 3-tier
     /// fallback used by `buildGuideItemForMeta` in `src/guides.js:108-132`:
     /// locale-specific -> default locale -> non-localized root.
+    ///
+    /// `guide_id`, `locale`, and `file` flow into Path::join. We
+    /// validate the first two against the id allowlist; `file` is left
+    /// to per-pipeline checks (it comes from meta.json + may include
+    /// `.md` suffix).
     pub fn resolve_item_path(&self, guide_id: &str, file: &str, locale: &str) -> (PathBuf, bool) {
+        if !self.validate_id("guide_id", guide_id) || !self.validate_id("locale", locale) {
+            return (self.guides_dir.join("_invalid"), false);
+        }
         let base = self.guides_dir.join(guide_id).join("items");
 
         let localized = base.join(locale).join(file);
@@ -156,6 +228,9 @@ impl GuidesRoot {
     /// Check whether a locale has any translated content for a guide.
     /// Mirrors `hasLocaleContent` check in `src/build-search-index-worker.js:88-93`.
     pub fn has_locale_content(&self, guide_id: &str, locale: &str) -> bool {
+        if !self.validate_id("guide_id", guide_id) || !self.validate_id("locale", locale) {
+            return false;
+        }
         let dir = self.guides_dir.join(guide_id).join("items").join(locale);
         let Ok(mut rd) = std::fs::read_dir(&dir) else {
             return false;
@@ -164,6 +239,9 @@ impl GuidesRoot {
     }
 
     pub fn intro_path(&self, guide_id: &str, locale: &str) -> Option<PathBuf> {
+        if !self.validate_id("guide_id", guide_id) || !self.validate_id("locale", locale) {
+            return None;
+        }
         let candidates = [
             self.guides_dir
                 .join(guide_id)

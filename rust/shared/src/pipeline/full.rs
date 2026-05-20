@@ -784,11 +784,53 @@ fn expand_snippets(html: &str, snippets_dir: &Path) -> String {
     static RE: Lazy<Regex> = Lazy::new(|| {
         Regex::new(r#"\[snippet\s+id=(?:&quot;|")([^"&]+)(?:&quot;|")\]"#).expect("regex")
     });
+    // Memoize per-snippet file contents for this pipeline invocation.
+    // A doc that references the same snippet 30 times shouldn't read +
+    // re-read the file 30 times. The cache lives for the call only —
+    // snippet edits in dev mode are still picked up on the next build.
+    let cache: std::cell::RefCell<std::collections::HashMap<String, String>> =
+        std::cell::RefCell::new(std::collections::HashMap::new());
     RE.replace_all(html, |caps: &regex::Captures| {
         let id = &caps[1];
+        // Traversal guard: snippet IDs are written into a Path::join.
+        // Reject anything with non-Normal components (.. / absolute /
+        // empty) before reading.
+        let id_path = std::path::Path::new(id);
+        let safe = id_path.components().all(|c| {
+            matches!(c, std::path::Component::Normal(_))
+        }) && !id.is_empty();
+        if !safe {
+            tracing::warn!(snippet_id = %id, "rejecting snippet id with unsafe path");
+            return format!(
+                "<div style=\"color: red; border: 1px solid red; padding: 10px;\">Error: Could not load snippet '{}'</div>",
+                html_escape::encode_text(id),
+            );
+        }
+        if let Some(hit) = cache.borrow().get(id) {
+            return hit.clone();
+        }
         let path: PathBuf = snippets_dir.join(format!("{id}.html"));
+        // Defense-in-depth canonicalize: if the snippet ID somehow
+        // squeaks past the component check (e.g. via a hand-crafted
+        // OS-specific path char), make sure the final path still
+        // resolves under snippets_dir. We only check when the file
+        // exists; nonexistent paths fall through to the warn branch.
+        if let Ok(parent_canon) = path.parent().unwrap_or(snippets_dir).canonicalize() {
+            if let Ok(base_canon) = snippets_dir.canonicalize() {
+                if !parent_canon.starts_with(&base_canon) {
+                    tracing::warn!(snippet_id = %id, "snippet path escapes snippets_dir");
+                    return format!(
+                        "<div style=\"color: red; border: 1px solid red; padding: 10px;\">Error: Could not load snippet '{}'</div>",
+                        html_escape::encode_text(id),
+                    );
+                }
+            }
+        }
         match std::fs::read_to_string(&path) {
-            Ok(s) => s,
+            Ok(s) => {
+                cache.borrow_mut().insert(id.to_string(), s.clone());
+                s
+            }
             Err(e) => {
                 tracing::warn!(snippet_id = %id, error = %e, "snippet load failed");
                 format!(
@@ -928,6 +970,25 @@ fn code_snippet_id(file_basename: &str, title: &str) -> String {
 static SNIPPET_WRITTEN: once_cell::sync::Lazy<dashmap::DashSet<String>> =
     once_cell::sync::Lazy::new(dashmap::DashSet::new);
 
+/// Shared, lazily-built handlebars instance for the `code.html`
+/// snippet template. Building Handlebars + registering the template
+/// each time was ~ms per call × thousands of snippets per build.
+static CODE_TEMPLATE_HB: once_cell::sync::OnceCell<
+    std::sync::Mutex<handlebars::Handlebars<'static>>,
+> = once_cell::sync::OnceCell::new();
+
+fn ensure_code_template(template_dir: &Path) -> Result<&'static std::sync::Mutex<handlebars::Handlebars<'static>>> {
+    CODE_TEMPLATE_HB.get_or_try_init(|| {
+        let template_path = template_dir.join("code.html");
+        let tpl = std::fs::read_to_string(&template_path)
+            .with_context(|| format!("read code template {template_path:?}"))?;
+        let mut hb = handlebars::Handlebars::new();
+        hb.register_template_string("code", &tpl)
+            .context("register code template")?;
+        Ok(std::sync::Mutex::new(hb))
+    })
+}
+
 fn write_code_snippet_page(
     cfg: &FullPipelineConfig,
     code_html: &str,
@@ -935,7 +996,6 @@ fn write_code_snippet_page(
     target_file_name: &str,
     lines_to_highlight: &[usize],
 ) -> Result<()> {
-    use handlebars::Handlebars;
     // Sitegen sets `write_snippets = true` only on the default-locale
     // pass; non-default passes skip writing so parallel locale workers
     // can't race on the same target_file_name.
@@ -945,12 +1005,21 @@ fn write_code_snippet_page(
     if !SNIPPET_WRITTEN.insert(target_file_name.to_string()) {
         return Ok(());
     }
-    let template_path = cfg.template_dir.join("code.html");
-    let tpl = std::fs::read_to_string(&template_path)
-        .with_context(|| format!("read code template {template_path:?}"))?;
-    let mut hb = Handlebars::new();
-    hb.register_template_string("code", &tpl)
-        .context("register code template")?;
+    // Traversal guard: target_file_name comes from `code_snippet_id`,
+    // which interpolates a (translated) title. Reject anything with
+    // non-Normal path components — we never want to write outside
+    // static_generated_dir.
+    let candidate = Path::new(target_file_name);
+    let safe = candidate.components().all(|c| {
+        matches!(c, std::path::Component::Normal(_))
+    }) && !target_file_name.is_empty();
+    if !safe {
+        anyhow::bail!(
+            "rejecting snippet target_file_name with unsafe path: {target_file_name:?}"
+        );
+    }
+
+    let hb = ensure_code_template(&cfg.template_dir)?;
     let highlight_from = lines_to_highlight.first().copied().unwrap_or(0);
     let highlight_to = lines_to_highlight.last().copied().unwrap_or(0);
     let ctx = serde_json::json!({
@@ -961,7 +1030,10 @@ fn write_code_snippet_page(
         "ExampleTenantId": EXAMPLE_TENANT_ID,
         "lang": "en",
     });
-    let rendered = hb.render("code", &ctx).context("render code template")?;
+    let rendered = {
+        let guard = hb.lock().expect("code template mutex poisoned");
+        guard.render("code", &ctx).context("render code template")?
+    };
     std::fs::create_dir_all(&cfg.static_generated_dir)?;
     let out_path = cfg.static_generated_dir.join(target_file_name);
     std::fs::write(&out_path, rendered)

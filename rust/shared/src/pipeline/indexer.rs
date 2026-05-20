@@ -390,11 +390,45 @@ fn expand_snippets(html: &str, snippets_dir: &Path) -> String {
     static RE: Lazy<Regex> = Lazy::new(|| {
         Regex::new(r#"\[snippet\s+id=(?:&quot;|")([^"&]+)(?:&quot;|")\]"#).expect("regex")
     });
+    // Per-call memo so a doc that references the same snippet 30 times
+    // reads the file once.
+    let cache: std::cell::RefCell<std::collections::HashMap<String, String>> =
+        std::cell::RefCell::new(std::collections::HashMap::new());
     RE.replace_all(html, |caps: &regex::Captures| {
         let id = &caps[1];
+        // Traversal guard: snippet IDs are written into a Path::join.
+        let id_path = std::path::Path::new(id);
+        let safe = id_path
+            .components()
+            .all(|c| matches!(c, std::path::Component::Normal(_)))
+            && !id.is_empty();
+        if !safe {
+            tracing::warn!(snippet_id = %id, "rejecting snippet id with unsafe path");
+            return format!(
+                "<div style=\"color: red; border: 1px solid red; padding: 10px;\">Error: Could not load snippet '{}'</div>",
+                html_escape::encode_text(id),
+            );
+        }
+        if let Some(hit) = cache.borrow().get(id) {
+            return hit.clone();
+        }
         let path: PathBuf = snippets_dir.join(format!("{id}.html"));
+        if let Ok(parent_canon) = path.parent().unwrap_or(snippets_dir).canonicalize() {
+            if let Ok(base_canon) = snippets_dir.canonicalize() {
+                if !parent_canon.starts_with(&base_canon) {
+                    tracing::warn!(snippet_id = %id, "snippet path escapes snippets_dir");
+                    return format!(
+                        "<div style=\"color: red; border: 1px solid red; padding: 10px;\">Error: Could not load snippet '{}'</div>",
+                        html_escape::encode_text(id),
+                    );
+                }
+            }
+        }
         match std::fs::read_to_string(&path) {
-            Ok(s) => s,
+            Ok(s) => {
+                cache.borrow_mut().insert(id.to_string(), s.clone());
+                s
+            }
             Err(e) => {
                 tracing::warn!(snippet_id = %id, error = %e, "snippet load failed");
                 format!(
@@ -415,13 +449,6 @@ static STYLE_HLJS: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"(?s)<style>pre code\.hljs\{.*?</style>").expect("regex")
 });
 
-static SKIP_SELECTORS: Lazy<Vec<Selector>> = Lazy::new(|| {
-    [".line-number", ".copy", ".top-right", "img", "style", "script"]
-        .iter()
-        .map(|s| Selector::parse(s).expect("valid selector"))
-        .collect()
-});
-
 /// HTML -> indexable plain text. Mirrors the behavior of `cleanSearchText`
 /// plus the html-to-text v9 defaults configured at
 /// `src/build-search-index-worker.js:39-51`.
@@ -433,17 +460,51 @@ fn html_to_text(html: &str) -> String {
     let stripped = STYLE_HLJS.replace_all(html, "").into_owned();
 
     let doc = Html::parse_fragment(&stripped);
+    // Old impl: doc.select(s) per selector = 6 separate DOM walks. We
+    // walk once and dispatch on tag/class/attr against the same intent.
+    // The selector list is fixed and tiny (.line-number, .copy,
+    // .top-right, img, style, script), so an inline matcher is both
+    // faster and easier to read than rebuilding the SKIP_SELECTORS
+    // vector.
     let mut skip_node_ids: std::collections::HashSet<ego_tree::NodeId> =
         std::collections::HashSet::new();
-    for sel in SKIP_SELECTORS.iter() {
-        for el in doc.select(sel) {
-            mark_subtree(&doc, el.id(), &mut skip_node_ids);
-        }
-    }
+    collect_skip_subtrees(&doc, doc.tree.root().id(), &mut skip_node_ids);
 
     let mut buf = String::new();
     walk(&doc, doc.tree.root().id(), &skip_node_ids, &mut buf, false);
     normalize_whitespace(&buf)
+}
+
+fn matches_skip_intent(el: &scraper::node::Element) -> bool {
+    let tag = el.name();
+    if tag == "img" || tag == "style" || tag == "script" {
+        return true;
+    }
+    if let Some(class) = el.attr("class") {
+        for c in class.split_ascii_whitespace() {
+            if c == "line-number" || c == "copy" || c == "top-right" {
+                return true;
+            }
+        }
+    }
+    false
+}
+
+fn collect_skip_subtrees(
+    doc: &Html,
+    id: ego_tree::NodeId,
+    out: &mut std::collections::HashSet<ego_tree::NodeId>,
+) {
+    let node = doc.tree.get(id).expect("node exists");
+    if let Some(el) = node.value().as_element() {
+        if matches_skip_intent(el) {
+            mark_subtree(doc, id, out);
+            return;
+        }
+    }
+    for child in node.children() {
+        collect_skip_subtrees(doc, child.id(), out);
+    }
 }
 
 fn mark_subtree(

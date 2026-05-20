@@ -665,6 +665,7 @@ dependencies = [
  "async-trait",
  "fcdocs-llm",
  "fcdocs-shared",
+ "futures",
  "git2",
  "indexmap",
  "once_cell",

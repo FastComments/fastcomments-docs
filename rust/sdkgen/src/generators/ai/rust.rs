@@ -71,33 +71,52 @@ impl DocGenerator for RustAiGenerator {
             }
         }
 
-        let mut sections: Vec<DocSection> = Vec::new();
-        let mut cache_misses = 0usize;
-        for method in &all_methods {
-            let meta_value = serde_json::to_value(method)?;
-            let prompt = prompts::rust_prompt(method);
-            let code_example = match llm.get_cached(&meta_value, &prompt).await {
-                Some(code) => code,
-                None => {
-                    if llm.api_key.is_none() {
-                        cache_misses += 1;
-                        tracing::warn!(method = %method.name, "ai cache miss + no OPENAI_API_KEY; skip");
-                        continue;
-                    }
-                    match llm.generate(&meta_value, &prompt).await {
-                        Ok(r) => r.text,
-                        Err(e) => {
-                            cache_misses += 1;
-                            tracing::warn!(method = %method.name, error = %e, "ai gen failed; skip");
-                            continue;
+        let llm = std::sync::Arc::new(llm);
+        let sdk = std::sync::Arc::new(ctx.sdk.clone());
+        let models_path_owned: String = models_path.to_string();
+        let mut tasks = futures::stream::FuturesUnordered::new();
+        for (idx, method) in all_methods.into_iter().enumerate() {
+            let llm = llm.clone();
+            let sdk = sdk.clone();
+            let models_path = models_path_owned.clone();
+            tasks.push(tokio::spawn(async move {
+                let meta_value = match serde_json::to_value(&method) {
+                    Ok(v) => v,
+                    Err(e) => return (idx, Err(anyhow::anyhow!("serialize method: {e}"))),
+                };
+                let prompt = prompts::rust_prompt(&method);
+                let code = match llm.get_cached(&meta_value, &prompt).await {
+                    Some(c) => c,
+                    None => {
+                        if llm.api_key.is_none() {
+                            return (idx, Ok(None));
+                        }
+                        match llm.generate(&meta_value, &prompt).await {
+                            Ok(r) => r.text,
+                            Err(e) => return (idx, Err(e)),
                         }
                     }
+                };
+                (idx, Ok(build_method_section(&method, &code, &sdk, &models_path)))
+            }));
+        }
+        let mut indexed: Vec<(usize, Option<DocSection>)> = Vec::new();
+        let mut cache_misses = 0usize;
+        while let Some(joined) = futures::stream::StreamExt::next(&mut tasks).await {
+            match joined {
+                Ok((idx, Ok(maybe))) => indexed.push((idx, maybe)),
+                Ok((idx, Err(e))) => {
+                    cache_misses += 1;
+                    tracing::warn!(idx, error = %e, "ai gen failed; skip");
                 }
-            };
-            if let Some(section) = build_method_section(method, &code_example, &ctx.sdk, models_path) {
-                sections.push(section);
+                Err(e) => {
+                    cache_misses += 1;
+                    tracing::warn!(error = %e, "ai task panicked; skip");
+                }
             }
         }
+        indexed.sort_by_key(|(i, _)| *i);
+        let sections: Vec<DocSection> = indexed.into_iter().filter_map(|(_, s)| s).collect();
         if cache_misses > 0 {
             tracing::warn!(cache_misses, sdk = %ctx.sdk.id, "AI cache misses");
         }

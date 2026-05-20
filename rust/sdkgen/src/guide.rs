@@ -2,9 +2,11 @@
 //! per-section markdown + meta.json. Mirrors
 //! `src/sdk-guide-generator.js:60-244`.
 
-use std::path::{Path, PathBuf};
+use std::path::{Component, Path, PathBuf};
+use std::sync::Arc;
 
 use anyhow::{Context, Result};
+use futures::stream::{FuturesUnordered, StreamExt};
 use serde_json::json;
 use tracing::{info, warn};
 
@@ -15,6 +17,12 @@ use crate::generators::base::{DocGenerator, DocSection, GeneratorCtx};
 use crate::generators::openapi::OpenApiGenerator;
 use crate::generators::readme::{self, ReadmeGenerator};
 
+/// Concurrency cap for SDK-level fan-out. SDK generation is mostly
+/// network/IO-bound (git checkouts, OpenAI calls), so the default
+/// runs all SDKs in parallel up to a cap. Override with
+/// `SDKGEN_PARALLEL`.
+const DEFAULT_SDK_PARALLELISM: usize = 8;
+
 pub async fn generate_all(sdk_filter: Option<&str>) -> Result<()> {
     let repo_root = repo_root()?;
     let cfg_path = config::default_config_path(&repo_root);
@@ -24,11 +32,11 @@ pub async fn generate_all(sdk_filter: Option<&str>) -> Result<()> {
             .clone()
             .unwrap_or_else(|| "src/content/sdks-checkout".to_string()),
     );
-    let guides_dir = repo_root.join(
+    let guides_dir = Arc::new(repo_root.join(
         cfg.guides_directory
             .clone()
             .unwrap_or_else(|| "src/content/guides".to_string()),
-    );
+    ));
 
     let checkout_mgr = CheckoutManager::new(checkout_dir)?;
 
@@ -43,13 +51,40 @@ pub async fn generate_all(sdk_filter: Option<&str>) -> Result<()> {
 
     let checkouts = checkout_mgr.checkout_all(&sdks);
 
-    for co in &checkouts {
-        if let Err(e) = generate_one(co, &guides_dir).await {
-            warn!(sdk = %co.sdk.id, error = %format!("{e:#}"), "skipping SDK");
+    let parallelism: usize = std::env::var("SDKGEN_PARALLEL")
+        .ok()
+        .and_then(|s| s.parse().ok())
+        .filter(|n: &usize| *n > 0)
+        .unwrap_or(DEFAULT_SDK_PARALLELISM);
+    info!(parallelism, "sdkgen parallelism");
+
+    let mut tasks = FuturesUnordered::new();
+    let mut iter = checkouts.into_iter();
+    while tasks.len() < parallelism {
+        let Some(co) = iter.next() else { break };
+        tasks.push(spawn_sdk(co, guides_dir.clone()));
+    }
+    let mut total = 0usize;
+    while let Some(joined) = tasks.next().await {
+        total += 1;
+        match joined {
+            Ok(Ok(())) => {}
+            Ok(Err(e)) => warn!(error = %format!("{e:#}"), "SDK gen failed"),
+            Err(e) => warn!(error = %e, "SDK gen task panicked"),
+        }
+        if let Some(co) = iter.next() {
+            tasks.push(spawn_sdk(co, guides_dir.clone()));
         }
     }
-    info!(count = checkouts.len(), "sdkgen done");
+    info!(count = total, "sdkgen done");
     Ok(())
+}
+
+fn spawn_sdk(
+    co: Checkout,
+    guides_dir: Arc<PathBuf>,
+) -> tokio::task::JoinHandle<Result<()>> {
+    tokio::spawn(async move { generate_one(&co, &guides_dir).await })
 }
 
 async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
@@ -102,7 +137,10 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
         std::fs::write(en_dir.join("conclusion.md"), conclusion)?;
     }
 
-    // Write each section.
+    // Write each section. Traversal guard: section.file comes from the
+    // generator's output. A buggy or compromised upstream could produce
+    // `../../etc/passwd.md`; reject anything that escapes en_dir or has
+    // non-Normal components.
     for section in &mut all_sections {
         let mut filename = section
             .file
@@ -112,7 +150,35 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
         if let Some(rest) = filename.strip_prefix("generated/") {
             filename = rest.to_string();
         }
-        let file_path = en_dir.join(&filename);
+        let candidate = Path::new(&filename);
+        if !is_safe_relative_path(candidate) {
+            warn!(
+                section = %section.name,
+                file = %filename,
+                "rejecting section.file with unsafe path components"
+            );
+            continue;
+        }
+        let file_path = en_dir.join(candidate);
+        // After lexically joining, canonicalize the parent and confirm
+        // it stays under en_dir's canonical path. en_dir exists already
+        // (we created it above); the file parent may need creation
+        // first if filename contains a subdirectory.
+        if let Some(parent) = file_path.parent() {
+            std::fs::create_dir_all(parent)?;
+            let en_canon = en_dir.canonicalize().context("canonicalize en_dir")?;
+            let parent_canon = parent
+                .canonicalize()
+                .with_context(|| format!("canonicalize {parent:?}"))?;
+            if !parent_canon.starts_with(&en_canon) {
+                warn!(
+                    section = %section.name,
+                    file = %filename,
+                    "rejecting section.file: resolves outside en_dir"
+                );
+                continue;
+            }
+        }
         // Escape Handlebars-like `{{` so the templating step doesn't try
         // to interpret e.g. Blade syntax. Mirrors
         // src/sdk-guide-generator.js:229.
@@ -202,6 +268,19 @@ fn build_meta(sdk: &SdkConfig, sections: &[DocSection]) -> serde_json::Value {
     }
     meta.insert("itemsOrdered".into(), serde_json::Value::Array(items));
     serde_json::Value::Object(meta)
+}
+
+/// Accept only relative paths made of `Normal` components. Rejects
+/// absolute paths, parent (`..`), Windows prefixes, and empty paths.
+fn is_safe_relative_path(p: &Path) -> bool {
+    let mut saw_any = false;
+    for c in p.components() {
+        match c {
+            Component::Normal(_) => saw_any = true,
+            _ => return false,
+        }
+    }
+    saw_any
 }
 
 fn repo_root() -> Result<PathBuf> {
