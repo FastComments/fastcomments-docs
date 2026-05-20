@@ -57,6 +57,12 @@ impl DocGenerator for OpenApiGenerator {
         let grouped = group_operations(&spec);
 
         let mut sections = Vec::new();
+        // Validation errors: missing methods + un-extractable return types.
+        // Mirrors Node's behavior at openapi-generator.js:172-182 +
+        // sdk-guide-generator.js:268-309 — we capture every such defect
+        // (rather than bailing on the first) so the build log lists all
+        // of them at once, then `guide::generate_all` aborts the run.
+        let mut validation_errors: Vec<String> = Vec::new();
         for (resource, operations) in &grouped {
             for op in operations {
                 match generate_operation_section(
@@ -72,12 +78,16 @@ impl DocGenerator for OpenApiGenerator {
                     Ok(Some(s)) => sections.push(s),
                     Ok(None) => {}
                     Err(e) => {
-                        tracing::warn!(
-                            sdk = %ctx.sdk.id,
-                            operation = %op.method_path(),
-                            error = %e,
-                            "skip operation"
+                        // Format the error consistently across SDKs so
+                        // the aggregated build report at end-of-run
+                        // groups them cleanly.
+                        let msg = format!(
+                            "sdk={} operation={} : {e:#}",
+                            ctx.sdk.id,
+                            op.method_path()
                         );
+                        tracing::error!(error = %msg, "openapi validation error");
+                        validation_errors.push(msg);
                     }
                 }
             }
@@ -87,6 +97,7 @@ impl DocGenerator for OpenApiGenerator {
             intro: None,
             conclusion: None,
             sections,
+            validation_errors,
         })
     }
 }

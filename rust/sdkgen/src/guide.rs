@@ -65,29 +65,113 @@ pub async fn generate_all(sdk_filter: Option<&str>) -> Result<()> {
         tasks.push(spawn_sdk(co, guides_dir.clone()));
     }
     let mut total = 0usize;
+    // Aggregate outcomes across all SDKs. Per Node's
+    // sdk-guide-generator.js:268-309 contract: run every SDK to
+    // completion, collect every validation defect, print a
+    // BUILD FAILED summary at the end, then exit non-zero.
+    let mut all_outcomes: Vec<SdkOutcome> = Vec::new();
     while let Some(joined) = tasks.next().await {
         total += 1;
         match joined {
-            Ok(Ok(())) => {}
-            Ok(Err(e)) => warn!(error = %format!("{e:#}"), "SDK gen failed"),
-            Err(e) => warn!(error = %e, "SDK gen task panicked"),
+            Ok(Ok(outcome)) => all_outcomes.push(outcome),
+            Ok(Err(e)) => {
+                // generate_one itself failed (couldn't create en_dir,
+                // couldn't write meta.json, etc.). Record under a
+                // synthetic outcome so the end-of-run report shows it.
+                all_outcomes.push(SdkOutcome {
+                    sdk_id: "<unknown>".into(),
+                    validation_errors: Vec::new(),
+                    failures: vec![format!("generate_one bailed: {e:#}")],
+                });
+            }
+            Err(e) => {
+                all_outcomes.push(SdkOutcome {
+                    sdk_id: "<panic>".into(),
+                    validation_errors: Vec::new(),
+                    failures: vec![format!("SDK task panicked: {e}")],
+                });
+            }
         }
         if let Some(co) = iter.next() {
             tasks.push(spawn_sdk(co, guides_dir.clone()));
         }
     }
     info!(count = total, "sdkgen done");
-    Ok(())
+
+    // Build the aggregated failure report. Both classes of error gate
+    // the build: validation_errors (missing methods, unextractable
+    // return types) and failures (generator crashed or generate_one
+    // bailed). Print SDK-grouped sections matching the Node format.
+    let mut total_validation = 0usize;
+    let mut total_failures = 0usize;
+    for o in &all_outcomes {
+        total_validation += o.validation_errors.len();
+        total_failures += o.failures.len();
+    }
+    if total_validation == 0 && total_failures == 0 {
+        return Ok(());
+    }
+
+    eprintln!();
+    for o in &all_outcomes {
+        if o.validation_errors.is_empty() && o.failures.is_empty() {
+            continue;
+        }
+        eprintln!("{sdk}:", sdk = o.sdk_id);
+        if !o.failures.is_empty() {
+            eprintln!(
+                "  {n} generator failure(s):",
+                n = o.failures.len()
+            );
+            for f in &o.failures {
+                eprintln!("    - {f}");
+            }
+        }
+        if !o.validation_errors.is_empty() {
+            eprintln!(
+                "  {n} validation error(s):",
+                n = o.validation_errors.len()
+            );
+            for v in &o.validation_errors {
+                eprintln!("    - {v}");
+            }
+        }
+        eprintln!();
+    }
+    eprintln!(
+        "=== BUILD FAILED: {validation} validation error(s), {fail} generator failure(s) across {sdk_count} SDK(s) ===",
+        validation = total_validation,
+        fail = total_failures,
+        sdk_count = all_outcomes.iter().filter(|o| !o.validation_errors.is_empty() || !o.failures.is_empty()).count()
+    );
+    anyhow::bail!(
+        "sdkgen: {validation} validation error(s), {fail} generator failure(s)",
+        validation = total_validation,
+        fail = total_failures,
+    )
 }
 
 fn spawn_sdk(
     co: Checkout,
     guides_dir: Arc<PathBuf>,
-) -> tokio::task::JoinHandle<Result<()>> {
+) -> tokio::task::JoinHandle<Result<SdkOutcome>> {
     tokio::spawn(async move { generate_one(&co, &guides_dir).await })
 }
 
-async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
+/// Result of running every generator for one SDK. Per-generator hard
+/// failures (the generator didn't even return) become entries in
+/// `failures`; per-operation defects (missing methods, missing return
+/// types) accumulate as entries in `validation_errors`. `generate_all`
+/// aggregates both across SDKs and exits non-zero if either is
+/// non-empty, mirroring src/sdk-guide-generator.js:268-309.
+#[derive(Debug, Default)]
+struct SdkOutcome {
+    sdk_id: String,
+    validation_errors: Vec<String>,
+    failures: Vec<String>,
+}
+
+async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<SdkOutcome> {
     let guide_dir = guides_dir.join(&checkout.sdk.id);
     let items_dir = guide_dir.join("items");
     let en_dir = items_dir.join("en");
@@ -101,6 +185,10 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
     let mut merged_intro: Option<String> = None;
     let mut merged_conclusion: Option<String> = None;
     let mut all_sections: Vec<DocSection> = Vec::new();
+    let mut outcome = SdkOutcome {
+        sdk_id: checkout.sdk.id.clone(),
+        ..Default::default()
+    };
 
     for kind in checkout.sdk.generators() {
         let generator: Box<dyn DocGenerator> = match kind.as_str() {
@@ -124,8 +212,20 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
                     merged_conclusion = docs.conclusion;
                 }
                 all_sections.extend(docs.sections);
+                outcome.validation_errors.extend(docs.validation_errors);
             }
-            Err(e) => warn!(generator = %kind, error = %e, "generator failed"),
+            Err(e) => {
+                // The generator itself crashed (config missing, parse
+                // error, etc.). Node would have process.exit(1)'d on a
+                // throw inside generateAll; mirror that by collecting
+                // the failure and letting generate_all bail at the end.
+                let msg = format!(
+                    "sdk={} generator={kind} : {e:#}",
+                    checkout.sdk.id
+                );
+                tracing::error!(error = %msg, "generator failed");
+                outcome.failures.push(msg);
+            }
         }
     }
 
@@ -194,8 +294,14 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<()> {
     std::fs::write(&meta_path, serde_json::to_string_pretty(&meta)?)
         .with_context(|| format!("write {meta_path:?}"))?;
 
-    info!(sdk = %checkout.sdk.id, sections = all_sections.len(), "generated");
-    Ok(())
+    info!(
+        sdk = %checkout.sdk.id,
+        sections = all_sections.len(),
+        validation_errors = outcome.validation_errors.len(),
+        failures = outcome.failures.len(),
+        "generated"
+    );
+    Ok(outcome)
 }
 
 fn build_meta(sdk: &SdkConfig, sections: &[DocSection]) -> serde_json::Value {

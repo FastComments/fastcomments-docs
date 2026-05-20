@@ -134,6 +134,7 @@ impl DocGenerator for CppAiGenerator {
             intro: None,
             conclusion: None,
             sections,
+            validation_errors: Vec::new(),
         })
     }
 }

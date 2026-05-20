@@ -45,6 +45,14 @@ impl CheckoutManager {
 
     fn ensure_checkout(&self, sdk: &SdkConfig, target: &Path) -> Result<()> {
         if target.join(".git").exists() {
+            // `SDKGEN_NO_FETCH=1` lets dev iterate offline / test the
+            // build with locally-mutated SDK trees (useful for
+            // simulating "method missing in SDK" scenarios end-to-end).
+            // It does NOT skip the checkout existence check.
+            if std::env::var("SDKGEN_NO_FETCH").map(|v| v == "1").unwrap_or(false) {
+                info!(sdk = %sdk.id, "SDKGEN_NO_FETCH=1; skipping fetch+reset");
+                return Ok(());
+            }
             info!(sdk = %sdk.id, "updating existing checkout");
             run_git(target, &["fetch", "origin", &sdk.branch])
                 .with_context(|| format!("git fetch {} in {target:?}", sdk.branch))?;

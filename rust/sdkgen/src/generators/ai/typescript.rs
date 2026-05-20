@@ -152,6 +152,7 @@ impl DocGenerator for TypescriptAiGenerator {
             intro: None,
             conclusion: None,
             sections,
+            validation_errors: Vec::new(),
         })
     }
 }

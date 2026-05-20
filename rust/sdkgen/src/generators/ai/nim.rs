@@ -133,6 +133,7 @@ impl DocGenerator for NimAiGenerator {
             intro: None,
             conclusion: None,
             sections,
+            validation_errors: Vec::new(),
         })
     }
 }

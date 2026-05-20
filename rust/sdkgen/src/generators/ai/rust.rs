@@ -124,6 +124,7 @@ impl DocGenerator for RustAiGenerator {
             intro: None,
             conclusion: None,
             sections,
+            validation_errors: Vec::new(),
         })
     }
 }

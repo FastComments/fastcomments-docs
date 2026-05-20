@@ -52,6 +52,7 @@ impl DocGenerator for ReadmeGenerator {
             intro,
             conclusion,
             sections,
+            validation_errors: Vec::new(),
         })
     }
 }
