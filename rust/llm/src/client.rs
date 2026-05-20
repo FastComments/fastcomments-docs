@@ -16,6 +16,17 @@ use thiserror::Error;
 
 use crate::cache_key::sha256_hex;
 
+/// Per-request read timeout. Node's default was 600s, which mostly
+/// papered over hung connections. 120s is generous for OpenAI chat
+/// completions but fails fast when the network melts.
+const REQUEST_TIMEOUT: Duration = Duration::from_secs(120);
+const CONNECT_TIMEOUT: Duration = Duration::from_secs(10);
+/// How many times to retry the SAME model on transient failure (429,
+/// 5xx, connection error) before moving to the next fallback.
+const RETRIES_PER_MODEL: u32 = 3;
+const RETRY_BASE_DELAY: Duration = Duration::from_millis(500);
+const RETRY_MAX_DELAY: Duration = Duration::from_secs(30);
+
 #[derive(Debug, Error)]
 pub enum LlmError {
     #[error("OpenAI API returned status {status}: {body}")]
@@ -51,6 +62,9 @@ impl LlmClient {
         language: impl Into<String>,
     ) -> Result<Self> {
         let cache_dir = cache_dir.into();
+        // Cache dir creation is rare (called from sync builder); leave
+        // as std::fs since the alternative is an async constructor and
+        // the callers all live in async fn already.
         std::fs::create_dir_all(&cache_dir)
             .with_context(|| format!("create cache dir {cache_dir:?}"))?;
         let model = model.into();
@@ -62,7 +76,8 @@ impl LlmClient {
             model,
             language,
             http: reqwest::Client::builder()
-                .timeout(Duration::from_secs(600))
+                .connect_timeout(CONNECT_TIMEOUT)
+                .timeout(REQUEST_TIMEOUT)
                 .build()
                 .expect("reqwest client"),
             fallback_models,
@@ -89,10 +104,10 @@ impl LlmClient {
     /// file exists, else `None`. Use this when an API key isn't
     /// available (parity validation, CI, etc.) to surface only the
     /// cache hits.
-    pub fn get_cached(&self, method_meta: &Value, prompt: &str) -> Option<String> {
+    pub async fn get_cached(&self, method_meta: &Value, prompt: &str) -> Option<String> {
         let key = self.cache_key(method_meta, prompt);
         let path = self.cache_dir.join(format!("{key}.json"));
-        read_cache(&path).map(|c| c.code_example)
+        read_cache(&path).await.map(|c| c.code_example)
     }
 
     /// Generate a completion, with cache lookup keyed by
@@ -103,7 +118,7 @@ impl LlmClient {
         let cache_key = self.cache_key(method_meta, prompt);
         let cache_file = self.cache_dir.join(format!("{cache_key}.json"));
 
-        if let Some(cached) = read_cache(&cache_file) {
+        if let Some(cached) = read_cache(&cache_file).await {
             tracing::debug!(method = ?method_meta.get("name"), "llm cache hit");
             return Ok(LlmResponse {
                 text: cached.code_example,
@@ -119,7 +134,7 @@ impl LlmClient {
 
         let mut last_err: Option<anyhow::Error> = None;
         for model in &self.fallback_models {
-            match self.call_openai(api_key, model, prompt).await {
+            match self.call_openai_retrying(api_key, model, prompt).await {
                 Ok(text) => {
                     let _ = write_cache(
                         &cache_file,
@@ -136,7 +151,8 @@ impl LlmClient {
                             prompt_tokens: None,
                             completion_tokens: None,
                         },
-                    );
+                    )
+                    .await;
                     return Ok(LlmResponse {
                         text,
                         model_used: model.clone(),
@@ -150,6 +166,39 @@ impl LlmClient {
             }
         }
         Err(last_err.unwrap_or_else(|| anyhow::anyhow!("no models attempted")))
+    }
+
+    /// Retry the same `model` on transient errors before bubbling up
+    /// to the fallback chain. Without this, a single 429 immediately
+    /// promotes to the (more expensive) next-tier model.
+    async fn call_openai_retrying(
+        &self,
+        api_key: &str,
+        model: &str,
+        prompt: &str,
+    ) -> Result<String> {
+        let mut last_err: Option<anyhow::Error> = None;
+        for attempt in 0..RETRIES_PER_MODEL {
+            match self.call_openai(api_key, model, prompt).await {
+                Ok(text) => return Ok(text),
+                Err(e) => {
+                    if !is_transient(&e) || attempt == RETRIES_PER_MODEL - 1 {
+                        return Err(e);
+                    }
+                    let delay = backoff_for(attempt);
+                    tracing::warn!(
+                        model,
+                        attempt = attempt + 1,
+                        delay_ms = delay.as_millis() as u64,
+                        error = %e,
+                        "transient OpenAI failure; backing off"
+                    );
+                    last_err = Some(e);
+                    tokio::time::sleep(delay).await;
+                }
+            }
+        }
+        Err(last_err.unwrap_or_else(|| anyhow::anyhow!("retry loop fell through")))
     }
 
     async fn call_openai(&self, api_key: &str, model: &str, prompt: &str) -> Result<String> {
@@ -183,6 +232,33 @@ impl LlmClient {
             .to_string();
         Ok(text)
     }
+}
+
+fn is_transient(err: &anyhow::Error) -> bool {
+    if let Some(api) = err.downcast_ref::<LlmError>() {
+        return matches!(api, LlmError::Api { status, .. } if *status == 429 || (*status >= 500 && *status < 600));
+    }
+    // reqwest connection / timeout errors land here.
+    if let Some(re) = err.downcast_ref::<reqwest::Error>() {
+        return re.is_timeout() || re.is_connect() || re.is_request();
+    }
+    false
+}
+
+fn backoff_for(attempt: u32) -> Duration {
+    // Exponential backoff with jitter: 500ms, 1s, 2s, 4s, ... capped at
+    // RETRY_MAX_DELAY. Jitter (±25%) avoids thundering-herd on shared
+    // 429s.
+    let base = RETRY_BASE_DELAY.as_millis() as u64;
+    let pow = 1u64 << attempt.min(10);
+    let raw = base.saturating_mul(pow).min(RETRY_MAX_DELAY.as_millis() as u64);
+    // Cheap deterministic jitter from monotonic clock; no rand crate.
+    let now_nanos = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.subsec_nanos() as u64)
+        .unwrap_or(0);
+    let jitter = (now_nanos % (raw / 2 + 1)) as i64 - (raw as i64 / 4);
+    Duration::from_millis((raw as i64 + jitter).max(1) as u64)
 }
 
 fn default_fallbacks(primary: &str) -> Vec<String> {
@@ -229,14 +305,14 @@ struct CacheRecord {
     completion_tokens: Option<u64>,
 }
 
-fn read_cache(path: &Path) -> Option<CacheRecord> {
-    let bytes = std::fs::read(path).ok()?;
+async fn read_cache(path: &Path) -> Option<CacheRecord> {
+    let bytes = tokio::fs::read(path).await.ok()?;
     serde_json::from_slice(&bytes).ok()
 }
 
-fn write_cache(path: &Path, record: &CacheRecord) -> Result<()> {
+async fn write_cache(path: &Path, record: &CacheRecord) -> Result<()> {
     let bytes = serde_json::to_vec_pretty(record)?;
-    std::fs::write(path, bytes)?;
+    tokio::fs::write(path, bytes).await?;
     Ok(())
 }
 

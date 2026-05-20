@@ -28,7 +28,7 @@ use tantivy::{Index, TantivyDocument};
 use tokio::sync::Semaphore;
 use tracing::{info, warn};
 
-mod sidecar_supervisor;
+use fcdocs_shared::sidecar_supervisor::Sidecar;
 
 const DEFAULT_INDEX_DIR: &str = "index";
 const DEFAULT_GUIDES_DIR: &str = "src/content/guides";
@@ -91,10 +91,9 @@ async fn main() -> Result<()> {
     );
 
     // Spawn the Node sidecar and wait for it to be ready.
-    let (sidecar_child, sidecar_url) =
-        sidecar_supervisor::spawn(&repo_root, &repo_root.join(SIDECAR_SCRIPT)).await?;
-    info!(url = %sidecar_url, "content sidecar up");
-    let sidecar = Arc::new(SidecarClient::new(sidecar_url));
+    let sidecar_proc = Sidecar::spawn(&repo_root, &repo_root.join(SIDECAR_SCRIPT)).await?;
+    info!(url = %sidecar_proc.url, "content sidecar up");
+    let sidecar = Arc::new(SidecarClient::new(sidecar_proc.url.clone()));
 
     let root = Arc::new(GuidesRoot::new(guides_dir, default_locale));
     let snippets_dir = Arc::new(snippets_dir);
@@ -164,7 +163,7 @@ async fn main() -> Result<()> {
 
     // Shut down the sidecar.
     drop(sidecar);
-    sidecar_supervisor::shutdown(sidecar_child).await;
+    sidecar_proc.shutdown().await;
 
     if failed > 0 {
         anyhow::bail!("{} locale(s) failed", failed);
@@ -455,7 +454,7 @@ fn repo_root() -> Result<PathBuf> {
     let cwd = std::env::current_dir()?;
     let mut cur: &Path = cwd.as_path();
     loop {
-        if cur.join("package.json").exists() && cur.join("src").join("locales.js").exists() {
+        if cur.join("package.json").exists() && cur.join("src").join("locales.json").exists() {
             return Ok(cur.to_path_buf());
         }
         match cur.parent() {

@@ -6,7 +6,6 @@
 
 mod build;
 mod custom_styling;
-mod sidecar_supervisor;
 mod static_build;
 
 use anyhow::Result;

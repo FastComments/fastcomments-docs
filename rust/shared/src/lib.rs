@@ -11,6 +11,7 @@ pub mod pipeline;
 pub mod markers;
 pub mod translations;
 pub mod link_validator;
+pub mod sidecar_supervisor;
 pub mod templates;
 
 pub use locales::{Locale, Locales};

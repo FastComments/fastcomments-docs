@@ -8,12 +8,19 @@
 //! few hundred ms per locale.
 
 use std::path::PathBuf;
-use std::process::Command;
+use std::sync::Arc;
 use std::time::Duration;
 
 use anyhow::{Context, Result};
 use notify_debouncer_mini::{new_debouncer, notify::RecursiveMode};
+use tokio::process::Command;
+use tokio::sync::Mutex;
 use tracing::{info, warn};
+
+/// Cap how many pending change batches we buffer behind the debouncer.
+/// Above this, we drop the oldest — the rebuild that runs next will
+/// process the latest state anyway.
+const EVENT_CHANNEL_CAP: usize = 32;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -25,13 +32,17 @@ async fn main() -> Result<()> {
         .init();
 
     let repo = repo_root()?;
-    let sitegen = sitegen_path()
-        .with_context(|| "no compiled sitegen binary; run `cargo build --release`")?;
+    let sitegen = resolve_sitegen()
+        .context("no compiled sitegen binary; run `cargo build --release` or set FCDOCS_SITEGEN_BIN")?;
     info!(sitegen = %sitegen.display(), repo = %repo.display(), "watcher starting");
 
-    let (tx, mut rx) = tokio::sync::mpsc::unbounded_channel();
+    // Bounded channel so a flaky filesystem can't OOM us.
+    let (tx, mut rx) = tokio::sync::mpsc::channel(EVENT_CHANNEL_CAP);
     let mut debouncer = new_debouncer(Duration::from_millis(200), move |res| {
-        let _ = tx.send(res);
+        // try_send drops on backpressure — exactly what we want for a
+        // batch-rebuild loop. The next rebuild we DO trigger will see
+        // the up-to-date filesystem anyway.
+        let _ = tx.try_send(res);
     })?;
 
     // Watch the directories most likely to trigger a rebuild.
@@ -62,15 +73,18 @@ async fn main() -> Result<()> {
 
     info!("watching (press Ctrl-C to stop)");
 
+    // Hold a handle to the running build so a new batch can cancel the
+    // outgoing one — no point finishing a rebuild whose inputs already
+    // changed.
+    let running: Arc<Mutex<Option<tokio::process::Child>>> = Arc::new(Mutex::new(None));
+
     while let Some(events) = rx.recv().await {
         match events {
             Ok(evs) => {
                 if evs.is_empty() {
                     continue;
                 }
-                // Categorize the change.
-                let mut paths: Vec<PathBuf> =
-                    evs.into_iter().map(|e| e.path).collect();
+                let mut paths: Vec<PathBuf> = evs.into_iter().map(|e| e.path).collect();
                 paths.sort();
                 paths.dedup();
                 let mut only_static = true;
@@ -92,34 +106,93 @@ async fn main() -> Result<()> {
                     info!("change detected — running sitegen build");
                     "build"
                 };
-                let status = Command::new(&sitegen)
+
+                // Cancel any running build first.
+                {
+                    let mut guard = running.lock().await;
+                    if let Some(mut prev) = guard.take() {
+                        let _ = prev.start_kill();
+                    }
+                }
+
+                let mut child = match Command::new(&sitegen)
                     .arg(cmd)
                     .current_dir(&repo)
-                    .status();
-                match status {
-                    Ok(s) if s.success() => info!("rebuild done"),
-                    Ok(s) => warn!("sitegen exited with status {s}"),
-                    Err(e) => warn!("failed to spawn sitegen: {e}"),
+                    .kill_on_drop(true)
+                    .spawn()
+                {
+                    Ok(c) => c,
+                    Err(e) => {
+                        warn!("failed to spawn sitegen: {e}");
+                        continue;
+                    }
+                };
+                let pid = child.id();
+                let stored = running.clone();
+                // Wait in a separate task so the next event can preempt.
+                let log_pid = pid;
+                let new_handle = child;
+                {
+                    let mut guard = stored.lock().await;
+                    *guard = Some(new_handle);
                 }
+                let stored2 = stored.clone();
+                tokio::spawn(async move {
+                    // Take ownership of the child for waiting.
+                    let mut child_opt = stored2.lock().await.take();
+                    if let Some(child) = &mut child_opt {
+                        match child.wait().await {
+                            Ok(s) if s.success() => info!(pid = ?log_pid, "rebuild done"),
+                            Ok(s) => warn!(pid = ?log_pid, "sitegen exited with status {s}"),
+                            Err(e) => warn!(pid = ?log_pid, "sitegen wait: {e}"),
+                        }
+                    }
+                });
             }
             Err(e) => {
-                warn!("watch error: {e}");
+                warn!("watch error: {e:?}");
             }
         }
     }
     Ok(())
 }
 
-fn sitegen_path() -> Option<PathBuf> {
-    let candidates = [
-        dirs_home().map(|h| h.join(".cache/cargo-target/release/sitegen")),
-        Some(PathBuf::from("rust/target/release/sitegen")),
-    ];
-    candidates.into_iter().flatten().find(|p| p.exists())
-}
-
-fn dirs_home() -> Option<PathBuf> {
-    std::env::var("HOME").ok().map(PathBuf::from)
+/// Resolve the sitegen binary:
+///
+/// 1. `FCDOCS_SITEGEN_BIN` env var (explicit override).
+/// 2. Same directory as the running watcher binary
+///    (`current_exe()/../sitegen`). This is the normal install layout
+///    and the only one that's safe against PATH spoofing.
+/// 3. Workspace target dir variants used during development.
+///
+/// We do *not* prepend `~/.cache/cargo-target` blindly — if the user
+/// has stale binaries there from a different checkout they could end
+/// up running the wrong code.
+fn resolve_sitegen() -> Option<PathBuf> {
+    if let Ok(p) = std::env::var("FCDOCS_SITEGEN_BIN") {
+        let pb = PathBuf::from(p);
+        if pb.exists() {
+            return Some(pb);
+        }
+    }
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let cand = dir.join("sitegen");
+            if cand.exists() && cand != exe {
+                return Some(cand);
+            }
+        }
+    }
+    for cand in [
+        "rust/target/release/sitegen",
+        "target/release/sitegen",
+    ] {
+        let pb = PathBuf::from(cand);
+        if pb.exists() {
+            return Some(pb);
+        }
+    }
+    None
 }
 
 fn repo_root() -> Result<PathBuf> {

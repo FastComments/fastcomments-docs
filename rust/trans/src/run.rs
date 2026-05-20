@@ -19,17 +19,24 @@
 
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
+use std::sync::Arc;
+use std::time::Duration;
 
 use anyhow::{Context, Result};
 use fcdocs_shared::locales::Locales;
+use futures::stream::{FuturesUnordered, StreamExt};
 use once_cell::sync::Lazy;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+use tokio::sync::Mutex;
 use tracing::{info, warn};
 
 use crate::snapshot::hash_content;
 
 const DEFAULT_MODEL: &str = "gpt-5-mini";
+
+/// Matches Node's translate-with-gpt.js concurrency=5 default.
+const DEFAULT_CONCURRENCY: usize = 5;
 
 #[derive(Debug, Default, Serialize, Deserialize)]
 #[serde(transparent)]
@@ -37,17 +44,17 @@ struct CacheMap(BTreeMap<String, String>);
 
 pub async fn run() -> Result<()> {
     let repo = repo_root()?;
-    let guides_dir = repo.join("src/content/guides");
-    let cache_path = repo.join("src/translation-cache.json");
+    let guides_dir = Arc::new(repo.join("src/content/guides"));
+    let cache_path = Arc::new(repo.join("src/translation-cache.json"));
     let locales_path = repo.join("src/locales.json");
-    let locales = Locales::load_from(&locales_path)?;
-    let mut cache: CacheMap = if cache_path.exists() {
-        serde_json::from_slice(&std::fs::read(&cache_path)?).unwrap_or_default()
+    let locales = Arc::new(Locales::load_from(&locales_path)?);
+    let cache_initial: CacheMap = if cache_path.exists() {
+        serde_json::from_slice(&tokio::fs::read(&*cache_path).await?).unwrap_or_default()
     } else {
         CacheMap::default()
     };
 
-    let tasks = build_task_list(&guides_dir, &locales, &cache)?;
+    let tasks = build_task_list(&guides_dir, &locales, &cache_initial)?;
     info!(count = tasks.len(), "missing translation tasks");
     if tasks.is_empty() {
         info!("nothing to translate");
@@ -64,99 +71,188 @@ pub async fn run() -> Result<()> {
         anyhow::bail!("OPENAI_API_KEY required");
     }
 
-    let model = std::env::var("OPENAI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string());
-    let client = reqwest::Client::builder()
-        .timeout(std::time::Duration::from_secs(600))
-        .build()?;
-    let api_key = api_key.unwrap();
+    let model = Arc::new(std::env::var("OPENAI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string()));
+    // 120s per request is generous for chat/completions (Node default
+    // was 600s, but that just hides hung connections). Connect timeout
+    // is shorter so we fail fast on routing problems.
+    let client = Arc::new(
+        reqwest::Client::builder()
+            .connect_timeout(Duration::from_secs(10))
+            .timeout(Duration::from_secs(120))
+            .build()?,
+    );
+    let api_key = Arc::new(api_key.unwrap());
+    let cache = Arc::new(Mutex::new(cache_initial));
 
-    let mut success = 0usize;
-    let mut failed = 0usize;
-    let mut skipped = 0usize;
+    let concurrency: usize = std::env::var("TRANS_CONCURRENCY")
+        .ok()
+        .and_then(|s| s.parse().ok())
+        .filter(|n: &usize| *n > 0)
+        .unwrap_or(DEFAULT_CONCURRENCY);
+    info!(concurrency, "translation concurrency");
 
-    // Serial worker — Node uses concurrency 5 by default; we run
-    // sequentially to keep error handling simple. If throughput is
-    // ever an issue, swap for a tokio JoinSet with a semaphore.
-    for task in &tasks {
-        let source_path = guides_dir
-            .join(&task.guide_id)
-            .join("items")
-            .join(&locales.default_locale)
-            .join(&task.filename);
-        let Ok(source) = std::fs::read_to_string(&source_path) else {
-            warn!(path = %source_path.display(), "source missing");
-            failed += 1;
-            continue;
-        };
+    let success = Arc::new(std::sync::atomic::AtomicUsize::new(0));
+    let failed = Arc::new(std::sync::atomic::AtomicUsize::new(0));
+    let skipped = Arc::new(std::sync::atomic::AtomicUsize::new(0));
 
-        if source.trim().len() < 10 {
-            info!(
-                "[skipped] {}/{}/{} (too small)",
-                task.guide_id, task.locale, task.filename
-            );
-            cache.0.insert(
-                cache_key(&task.guide_id, &task.locale, &task.filename),
-                task.source_hash.clone(),
-            );
-            save_cache(&cache_path, &cache)?;
-            skipped += 1;
-            continue;
-        }
+    let mut in_flight = FuturesUnordered::new();
+    let mut iter = tasks.into_iter();
 
-        // en_us special-case: copy source verbatim. Mirrors
-        // translate-with-gpt.js:362-366.
-        let translation = if task.locale == "en_us" {
-            source.clone()
-        } else {
-            let prompt = build_prompt(&source, &task.locale, &locales);
-            let system = system_message(&task.locale, &locales);
-            match call_openai(&client, &api_key, &model, &system, &prompt, &task.filename).await {
-                Ok(t) => sanitize_inline_code_attrs(&t),
+    let drive = |task: Task, in_flight: &mut FuturesUnordered<_>| {
+        let guides_dir = guides_dir.clone();
+        let cache_path = cache_path.clone();
+        let cache = cache.clone();
+        let locales = locales.clone();
+        let client = client.clone();
+        let api_key = api_key.clone();
+        let model = model.clone();
+        let success = success.clone();
+        let failed = failed.clone();
+        let skipped = skipped.clone();
+        in_flight.push(tokio::spawn(async move {
+            let res = process_one_task(
+                &task,
+                &guides_dir,
+                &cache_path,
+                &cache,
+                &locales,
+                &client,
+                &api_key,
+                &model,
+            )
+            .await;
+            match res {
+                Ok(Outcome::Success) => {
+                    success.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                }
+                Ok(Outcome::Skipped) => {
+                    skipped.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                }
                 Err(e) => {
                     warn!(
-                        "[error] {}/{}/{}: {}",
-                        task.guide_id, task.locale, task.filename, e
+                        "[error] {}/{}/{}: {e:#}",
+                        task.guide_id, task.locale, task.filename
                     );
-                    failed += 1;
-                    continue;
+                    failed.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
                 }
             }
-        };
+        }));
+    };
 
-        // Validate inline-code count parity. Mirrors translate-with-gpt.js:299-311.
-        if task.locale != "en_us" {
-            let src_counts = count_inline_code(&source);
-            let tr_counts = count_inline_code(&translation);
-            if src_counts != tr_counts {
-                warn!(
-                    "[warning] inline-code mismatch in {}/{}/{}: expected {:?}, got {:?}",
-                    task.guide_id, task.locale, task.filename, src_counts, tr_counts
-                );
-            }
+    while in_flight.len() < concurrency {
+        let Some(t) = iter.next() else { break };
+        drive(t, &mut in_flight);
+    }
+    while let Some(joined) = in_flight.next().await {
+        if let Err(e) = joined {
+            warn!(error = %e, "translation task panicked");
+            failed.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
         }
+        if let Some(t) = iter.next() {
+            drive(t, &mut in_flight);
+        }
+    }
 
-        // Save translated file.
-        let target_dir = guides_dir
-            .join(&task.guide_id)
-            .join("items")
-            .join(&task.locale);
-        std::fs::create_dir_all(&target_dir)?;
-        let target_path = target_dir.join(&task.filename);
-        std::fs::write(&target_path, &translation)
-            .with_context(|| format!("write {target_path:?}"))?;
+    let s = success.load(std::sync::atomic::Ordering::Relaxed);
+    let f = failed.load(std::sync::atomic::Ordering::Relaxed);
+    let k = skipped.load(std::sync::atomic::Ordering::Relaxed);
+    info!(success = s, failed = f, skipped = k, "trans run complete");
+    if f > 0 {
+        anyhow::bail!("{f} translation task(s) failed");
+    }
+    Ok(())
+}
 
-        cache.0.insert(
+enum Outcome {
+    Success,
+    Skipped,
+}
+
+#[allow(clippy::too_many_arguments)]
+async fn process_one_task(
+    task: &Task,
+    guides_dir: &Path,
+    cache_path: &Path,
+    cache: &Mutex<CacheMap>,
+    locales: &Locales,
+    client: &reqwest::Client,
+    api_key: &str,
+    model: &str,
+) -> Result<Outcome> {
+    let source_path = guides_dir
+        .join(&task.guide_id)
+        .join("items")
+        .join(&locales.default_locale)
+        .join(&task.filename);
+    let source = tokio::fs::read_to_string(&source_path)
+        .await
+        .with_context(|| format!("read source {source_path:?}"))?;
+
+    if source.trim().len() < 10 {
+        info!(
+            "[skipped] {}/{}/{} (too small)",
+            task.guide_id, task.locale, task.filename
+        );
+        record_cache_and_flush(cache, cache_path, task).await?;
+        return Ok(Outcome::Skipped);
+    }
+
+    // en_us special-case: copy source verbatim. Mirrors
+    // translate-with-gpt.js:362-366.
+    let translation = if task.locale == "en_us" {
+        source.clone()
+    } else {
+        let prompt = build_prompt(&source, &task.locale, locales);
+        let system = system_message(&task.locale, locales);
+        let raw = call_openai(client, api_key, model, &system, &prompt, &task.filename)
+            .await
+            .context("OpenAI call")?;
+        sanitize_inline_code_attrs(&raw)
+    };
+
+    // Validate inline-code count parity. Mirrors translate-with-gpt.js:299-311.
+    if task.locale != "en_us" {
+        let src_counts = count_inline_code(&source);
+        let tr_counts = count_inline_code(&translation);
+        if src_counts != tr_counts {
+            warn!(
+                "[warning] inline-code mismatch in {}/{}/{}: expected {:?}, got {:?}",
+                task.guide_id, task.locale, task.filename, src_counts, tr_counts
+            );
+        }
+    }
+
+    // Save translated file.
+    let target_dir = guides_dir
+        .join(&task.guide_id)
+        .join("items")
+        .join(&task.locale);
+    tokio::fs::create_dir_all(&target_dir).await?;
+    let target_path = target_dir.join(&task.filename);
+    tokio::fs::write(&target_path, &translation)
+        .await
+        .with_context(|| format!("write {target_path:?}"))?;
+
+    record_cache_and_flush(cache, cache_path, task).await?;
+    Ok(Outcome::Success)
+}
+
+async fn record_cache_and_flush(
+    cache: &Mutex<CacheMap>,
+    cache_path: &Path,
+    task: &Task,
+) -> Result<()> {
+    let bytes = {
+        let mut c = cache.lock().await;
+        c.0.insert(
             cache_key(&task.guide_id, &task.locale, &task.filename),
             task.source_hash.clone(),
         );
-        save_cache(&cache_path, &cache)?;
-        success += 1;
-    }
-
-    info!(success, failed, skipped, "trans run complete");
-    if failed > 0 {
-        anyhow::bail!("{failed} translation task(s) failed");
-    }
+        serde_json::to_vec_pretty(&c.0)?
+    };
+    tokio::fs::write(cache_path, bytes)
+        .await
+        .with_context(|| format!("write {cache_path:?}"))?;
     Ok(())
 }
 
@@ -227,12 +323,6 @@ fn build_task_list(
 
 fn cache_key(guide_id: &str, locale: &str, filename: &str) -> String {
     format!("{guide_id}/{locale}/{filename}")
-}
-
-fn save_cache(path: &Path, cache: &CacheMap) -> Result<()> {
-    let bytes = serde_json::to_vec_pretty(&cache.0)?;
-    std::fs::write(path, bytes).with_context(|| format!("write {path:?}"))?;
-    Ok(())
 }
 
 /// Verbatim port of `getSystemMessage` at translate-with-gpt.js:139-148.

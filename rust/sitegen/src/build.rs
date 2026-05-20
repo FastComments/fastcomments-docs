@@ -17,13 +17,13 @@ use fcdocs_shared::pipeline::full::{
     self, FullPipelineConfig, ScreenshotPlaceholder,
 };
 use fcdocs_shared::sidecar::SidecarClient;
+use fcdocs_shared::sidecar_supervisor::Sidecar;
 use fcdocs_shared::templates::TemplateRegistry;
 use fcdocs_shared::translations::Translations;
 use futures::stream::{FuturesUnordered, StreamExt};
 use serde_json::{json, Value};
 use tracing::{info, warn};
 
-use crate::sidecar_supervisor;
 
 pub async fn run(args: Vec<String>) -> Result<()> {
     let repo = repo_root()?;
@@ -61,10 +61,9 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     // is handled in-process by rquickjs but still served by the sidecar
     // until phase 6 cleanup).
     let sidecar_script = repo.join("src/content-sidecar.js");
-    let (sidecar_child, sidecar_url) =
-        sidecar_supervisor::spawn(&repo, &sidecar_script).await?;
-    info!(url = %sidecar_url, "content sidecar up");
-    let sidecar = Arc::new(SidecarClient::new(sidecar_url));
+    let sidecar_proc = Sidecar::spawn(&repo, &sidecar_script).await?;
+    info!(url = %sidecar_proc.url, "content sidecar up");
+    let sidecar = Arc::new(SidecarClient::new(sidecar_proc.url.clone()));
 
     // Two pipeline configs — same shape but `write_snippets` flips per
     // locale. Sitegen does default locale first (sequentially writes all
@@ -234,7 +233,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     write_sitemap(&static_generated_dir, &default_guides, &locales)?;
 
     browser_pool.shutdown().await;
-    sidecar_supervisor::shutdown(sidecar_child).await;
+    sidecar_proc.shutdown().await;
     info!(
         pages = total_pages,
         elapsed = ?started.elapsed(),

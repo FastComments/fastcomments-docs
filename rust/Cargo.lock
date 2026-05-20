@@ -761,6 +761,7 @@ dependencies = [
  "anyhow",
  "fcdocs-llm",
  "fcdocs-shared",
+ "futures",
  "git2",
  "indexmap",
  "md-5",

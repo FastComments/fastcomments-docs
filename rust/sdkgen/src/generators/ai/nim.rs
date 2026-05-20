@@ -85,7 +85,7 @@ impl DocGenerator for NimAiGenerator {
         for method in &all_methods {
             let meta_value = serde_json::to_value(method)?;
             let prompt = prompts::nim_prompt(method);
-            let code_example = match llm.get_cached(&meta_value, &prompt) {
+            let code_example = match llm.get_cached(&meta_value, &prompt).await {
                 Some(code) => code,
                 None => {
                     if llm.api_key.is_none() {
