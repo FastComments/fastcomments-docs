@@ -14,7 +14,17 @@
 //! against the snapshot and serializing the additions as JSON. Inline-code
 //! markers pre-set `globals = {}` (and then drop it from the result),
 //! mirroring `src/inline-code-generator.js:73-82`.
+//!
+//! ## Pooling
+//!
+//! Creating a Runtime+Context per eval costs ~ms each, and a typical build
+//! evaluates thousands of markers. We keep a `thread_local!` Runtime per
+//! executor thread and *clean up* after each eval (delete every global
+//! property added by the script) so the next caller sees a baseline
+//! identical to a fresh context. The baseline is captured once on first
+//! use and reused.
 
+use std::cell::RefCell;
 use std::collections::HashSet;
 
 use anyhow::{Context as _, Result};
@@ -24,68 +34,105 @@ use serde_json::Value as JsonValue;
 
 use crate::sidecar::MarkerKind;
 
+struct PooledQjs {
+    rt: Runtime,
+    ctx: Context,
+    baseline: HashSet<String>,
+}
+
+impl PooledQjs {
+    fn new() -> Result<Self> {
+        let rt = Runtime::new().context("create QuickJS runtime")?;
+        let ctx = Context::full(&rt).context("create QuickJS context")?;
+        let baseline = ctx.with(|c| -> Result<HashSet<String>> {
+            collect_own_keys(&c.globals())
+        })?;
+        Ok(Self { rt, ctx, baseline })
+    }
+}
+
+thread_local! {
+    static QJS: RefCell<Option<PooledQjs>> = const { RefCell::new(None) };
+}
+
 /// Evaluate a marker config block and return the resulting JSON object —
 /// the same shape the Node sidecar's `/eval-marker` returned.
 pub fn eval_marker_sync(kind: MarkerKind, config_source: &str) -> Result<JsonValue> {
-    let rt = Runtime::new().context("create QuickJS runtime")?;
-    let ctx = Context::full(&rt).context("create QuickJS context")?;
-    ctx.with(|ctx| -> Result<JsonValue> {
-        let globals = ctx.globals();
-
-        // Snapshot the set of preexisting global property names so we can
-        // diff against them after evaluation. QuickJS preloads things like
-        // Object, Array, Math, JSON, etc. — we want only the script's
-        // additions.
-        let before: HashSet<String> = collect_own_keys(&globals)?;
-
-        // Inline-code markers pre-set `globals = {}` (see
-        // src/inline-code-generator.js:73-74).
-        if matches!(kind, MarkerKind::InlineCode) {
-            let empty = Object::new(ctx.clone()).context("alloc inline-code globals")?;
-            globals
-                .set("globals", empty)
-                .context("set globals = {} for inline-code")?;
+    QJS.with(|slot| {
+        let mut slot = slot.borrow_mut();
+        if slot.is_none() {
+            *slot = Some(PooledQjs::new()?);
         }
+        let pooled = slot.as_ref().unwrap();
+        let baseline = pooled.baseline.clone();
+        let rt_ref = &pooled.rt;
+        let ctx_ref = &pooled.ctx;
+        // Hold a runtime reference so the borrow checker is happy across
+        // the closure boundary.
+        let _ = rt_ref;
+        ctx_ref.with(|ctx| -> Result<JsonValue> {
+            let globals = ctx.globals();
 
-        // Run the script. Use non-strict global eval so bare assignments
-        // become implicit globals, matching V8's `vm.runInContext` behavior.
-        // (rquickjs's default EvalOptions is strict-mode, which would
-        // reject `title = 'x'` with a ReferenceError.)
-        let mut opts = EvalOptions::default();
-        opts.global = true;
-        opts.strict = false;
-        if let Err(e) = ctx.eval_with_options::<(), _>(config_source, opts) {
-            let detail = match &e {
-                rquickjs::Error::Exception => {
-                    let exc = ctx.catch();
-                    format!("{e}: {exc:?}")
-                }
-                other => format!("{other}"),
-            };
-            anyhow::bail!("marker eval failed: {detail}\n--- source ---\n{config_source}");
-        }
-
-        // Now compute the diff and serialize.
-        let after: HashSet<String> = collect_own_keys(&globals)?;
-        let mut out = serde_json::Map::new();
-        for key in after.difference(&before) {
-            // Strip the `globals` preset for inline-code (matches
-            // `delete args.globals;` at inline-code-generator.js:82).
-            if matches!(kind, MarkerKind::InlineCode) && key == "globals" {
-                continue;
+            // Inline-code markers pre-set `globals = {}` (see
+            // src/inline-code-generator.js:73-74).
+            if matches!(kind, MarkerKind::InlineCode) {
+                let empty = Object::new(ctx.clone()).context("alloc inline-code globals")?;
+                globals
+                    .set("globals", empty)
+                    .context("set globals = {} for inline-code")?;
             }
-            let v: Value = globals
-                .get(key.as_str())
-                .map_err(|e| anyhow::anyhow!("read global {key}: {e}"))?;
-            out.insert(key.clone(), js_value_to_json(v)?);
-        }
-        Ok(JsonValue::Object(out))
+
+            // Run the script. Use non-strict global eval so bare assignments
+            // become implicit globals, matching V8's `vm.runInContext`
+            // behavior. (rquickjs's default EvalOptions is strict-mode,
+            // which would reject `title = 'x'` with a ReferenceError.)
+            let mut opts = EvalOptions::default();
+            opts.global = true;
+            opts.strict = false;
+            let eval_res = ctx.eval_with_options::<(), _>(config_source, opts);
+
+            // Always run cleanup, even on error, so a bad config doesn't
+            // poison the next caller's baseline.
+            let cleanup_res = (|| -> Result<JsonValue> {
+                eval_res.map_err(|e| {
+                    let detail = match &e {
+                        rquickjs::Error::Exception => {
+                            let exc = ctx.catch();
+                            format!("{e}: {exc:?}")
+                        }
+                        other => format!("{other}"),
+                    };
+                    anyhow::anyhow!(
+                        "marker eval failed: {detail}\n--- source ---\n{config_source}"
+                    )
+                })?;
+
+                let after: HashSet<String> = collect_own_keys(&globals)?;
+                let mut out = serde_json::Map::new();
+                for key in after.difference(&baseline) {
+                    if matches!(kind, MarkerKind::InlineCode) && key == "globals" {
+                        continue;
+                    }
+                    let v: Value = globals
+                        .get(key.as_str())
+                        .map_err(|e| anyhow::anyhow!("read global {key}: {e}"))?;
+                    out.insert(key.clone(), js_value_to_json(v)?);
+                }
+                Ok(JsonValue::Object(out))
+            })();
+
+            // Reset: delete every property the script added (including
+            // failed-eval partial assignments) so the next call starts
+            // clean.
+            let after: HashSet<String> = collect_own_keys(&globals).unwrap_or_default();
+            for key in after.difference(&baseline) {
+                let _ = globals.remove::<_>(key.as_str());
+            }
+
+            cleanup_res
+        })
     })
 }
-
-// (Async wrapper removed — pipelines now call eval_marker_sync directly
-// inside their async funcs. QuickJS eval is microseconds for our
-// configs; no spawn_blocking warranted.)
 
 fn collect_own_keys(obj: &Object<'_>) -> Result<HashSet<String>> {
     let mut out = HashSet::new();
@@ -233,5 +280,38 @@ mod tests {
         )
         .unwrap();
         assert_eq!(out["linesToHighlight"], serde_json::json!([1, 3, 5]));
+    }
+
+    #[test]
+    fn pool_reuse_isolates_calls() {
+        // First call sets several globals. Cleanup must wipe them so the
+        // second call doesn't see leftover values.
+        let a = eval_marker_sync(
+            MarkerKind::InlineCode,
+            "title = 'first'; extra = 'leak-target';",
+        )
+        .unwrap();
+        assert_eq!(a["title"], "first");
+        assert_eq!(a["extra"], "leak-target");
+
+        let b = eval_marker_sync(MarkerKind::InlineCode, "title = 'second';").unwrap();
+        assert_eq!(b["title"], "second");
+        // `extra` from the previous eval must not survive into this one.
+        assert!(b.get("extra").is_none());
+    }
+
+    #[test]
+    fn failed_eval_does_not_poison_pool() {
+        // Force a runtime error mid-script. Subsequent calls should still
+        // succeed and not see leaked state.
+        let bad = eval_marker_sync(
+            MarkerKind::InlineCode,
+            "title = 'before-throw'; throw new Error('boom');",
+        );
+        assert!(bad.is_err());
+
+        let ok = eval_marker_sync(MarkerKind::InlineCode, "title = 'after';").unwrap();
+        assert_eq!(ok["title"], "after");
+        assert!(ok.get("before-throw").is_none());
     }
 }

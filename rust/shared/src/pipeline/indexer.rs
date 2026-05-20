@@ -133,34 +133,17 @@ async fn expand_markers(input: &str, sidecar: &SidecarClient) -> Result<String> 
 /// for indexing purposes (screenshots emit images that html-to-text drops
 /// anyway).
 fn strip_marker_block(input: &str, start_token: &str, end_token: &str, replacement: &str) -> String {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(start_token) else { break };
-        let Some(end_idx) = current.find(end_token) else { break };
-        if end_idx < start_idx {
-            break;
-        }
-        current = format!(
-            "{prefix}{replacement}{suffix}",
-            prefix = &current[..start_idx],
-            replacement = replacement,
-            suffix = &current[end_idx + end_token.len()..],
-        );
-    }
-    current
+    super::rewrite_blocks_sync(input, start_token, end_token, |_body| {
+        Ok(replacement.to_string())
+    })
+    // Both expand sites in the indexer accepted a missing end token by
+    // breaking the loop; preserve that lenient behavior for stripped
+    // markers (some legacy source files have orphan tokens).
+    .unwrap_or_else(|_| input.to_string())
 }
 
-async fn expand_related_parameter(input: &str, sidecar: &SidecarClient) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(RELATED_PARAM_START) else { break };
-        let Some(end_idx) = current.find(RELATED_PARAM_END) else {
-            anyhow::bail!("related-parameter start without end");
-        };
-        if end_idx < start_idx {
-            anyhow::bail!("related-parameter end before start");
-        }
-        let config_source = &current[start_idx + RELATED_PARAM_START.len()..end_idx];
+async fn expand_related_parameter(input: &str, _sidecar: &SidecarClient) -> Result<String> {
+    super::rewrite_blocks_sync(input, RELATED_PARAM_START, RELATED_PARAM_END, |config_source| {
         let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
             .context("parse related-parameter config via qjs")?;
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
@@ -168,82 +151,107 @@ async fn expand_related_parameter(input: &str, sidecar: &SidecarClient) -> Resul
         // Mirrors src/related-parameter-generator.js:7-16. We skip the
         // optional <a href=typeLink> wrapping because text content is
         // identical with or without the anchor.
-        let replacement = format!(
+        Ok(format!(
             "<div class=\"related-parameter\">Related Parameter in Code: <span>{name}</span> <span class=\"as\">as</span> <span>{type_}</span></div>",
             name = html_escape::encode_text(name),
             type_ = html_escape::encode_text(type_),
-        );
-        current = format!(
-            "{prefix}{repl}{suffix}",
-            prefix = &current[..start_idx],
-            repl = replacement,
-            suffix = &current[end_idx + RELATED_PARAM_END.len()..],
-        );
-    }
-    Ok(current)
+        ))
+    })
 }
 
-async fn expand_inline_code(input: &str, sidecar: &SidecarClient) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(INLINE_CODE_START) else { break };
-        let Some(end_idx) = current.find(INLINE_CODE_END) else {
-            anyhow::bail!("inline-code start token without matching end");
-        };
-        if end_idx < start_idx {
-            anyhow::bail!("inline-code end token appears before start");
-        }
-        let code_body = &current[start_idx + INLINE_CODE_START.len()..end_idx];
+async fn expand_inline_code(input: &str, _sidecar: &SidecarClient) -> Result<String> {
+    // Inline-code is a 2-block marker: a [inline-code-start]...[inline-code-end]
+    // body, paired with the next [inline-code-attrs-start ...
+    // inline-code-attrs-end] block in source order (matches the Node
+    // implementation at src/inline-code-generator.js:67-68, which find()s
+    // both from index 0 of the current string).
+    //
+    // The old impl re-allocated the whole document on every iteration; this
+    // version collects all spans in one scan, evaluates each pair, then
+    // stitches the result in a single linear pass.
+    expand_inline_code_blocks(input, |title, lang, code| {
+        render_inline_code(title, lang, code)
+    })
+}
 
-        // Locate the matching attrs block (the Node generator just searches
-        // from index 0, see src/inline-code-generator.js:67-68).
-        let Some(attrs_start) = current.find(INLINE_CODE_ATTRS_START) else {
-            anyhow::bail!("inline-code body without attrs block");
-        };
-        let Some(attrs_end) = current.find(INLINE_CODE_ATTRS_END) else {
-            anyhow::bail!("inline-code attrs block without end token");
-        };
-        let attrs_source = &current[attrs_start + INLINE_CODE_ATTRS_START.len()..attrs_end];
+/// Shared single-pass scanner used by both indexer + full pipelines so the
+/// pairing rules stay in sync. `render(title, lang, body)` returns the
+/// replacement for the body span; the attrs span is always deleted.
+pub(crate) fn expand_inline_code_blocks(
+    input: &str,
+    mut render: impl FnMut(&str, &str, &str) -> String,
+) -> Result<String> {
+    // Pair body N with attrs N in source-position order (the same order
+    // Node's `String.prototype.indexOf` produces under the iterate-and-splice
+    // pattern).
+    let bodies = find_balanced_spans(input, INLINE_CODE_START, INLINE_CODE_END)?;
+    let attrs = find_balanced_spans(input, INLINE_CODE_ATTRS_START, INLINE_CODE_ATTRS_END)?;
+    if bodies.len() != attrs.len() {
+        anyhow::bail!(
+            "inline-code: {} body block(s) vs {} attrs block(s)",
+            bodies.len(),
+            attrs.len()
+        );
+    }
+    if bodies.is_empty() {
+        return Ok(input.to_string());
+    }
 
+    // Build a sorted list of edits: each body span is replaced with the
+    // rendered HTML; each attrs span is deleted.
+    let mut edits: Vec<(usize, usize, String)> = Vec::with_capacity(bodies.len() * 2);
+    for (body, attrs) in bodies.iter().zip(attrs.iter()) {
+        let attrs_source = &input[attrs.body_start..attrs.body_end];
         let parsed = qjs::eval_marker_sync(MarkerKind::InlineCode, attrs_source)
             .context("parse inline-code attrs via qjs")?;
-        let title = parsed
-            .get("title")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
-        let lang = parsed
-            .get("type")
-            .and_then(|v| v.as_str())
-            .unwrap_or("html");
-
-        let replacement = render_inline_code(title, lang, code_body);
-
-        // Splice replacement in for the body, then strip the attrs block.
-        let new_body = format!(
-            "{prefix}{repl}{suffix}",
-            prefix = &current[..start_idx],
-            repl = replacement,
-            suffix = &current[end_idx + INLINE_CODE_END.len()..],
-        );
-        let after_body = new_body;
-
-        // Now strip attrs (positions may have shifted; re-find).
-        let stripped = if let Some(as_idx) = after_body.find(INLINE_CODE_ATTRS_START) {
-            if let Some(ae_idx) = after_body.find(INLINE_CODE_ATTRS_END) {
-                format!(
-                    "{}{}",
-                    &after_body[..as_idx],
-                    &after_body[ae_idx + INLINE_CODE_ATTRS_END.len()..]
-                )
-            } else {
-                after_body
-            }
-        } else {
-            after_body
-        };
-        current = stripped;
+        let title = parsed.get("title").and_then(|v| v.as_str()).unwrap_or("");
+        let lang = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("html");
+        let body_text = &input[body.body_start..body.body_end];
+        let replacement = render(title, lang, body_text);
+        edits.push((body.outer_start, body.outer_end, replacement));
+        edits.push((attrs.outer_start, attrs.outer_end, String::new()));
     }
-    Ok(current)
+    edits.sort_by_key(|e| e.0);
+
+    let mut out = String::with_capacity(input.len());
+    let mut cursor = 0;
+    for (start, end, repl) in edits {
+        out.push_str(&input[cursor..start]);
+        out.push_str(&repl);
+        cursor = end;
+    }
+    out.push_str(&input[cursor..]);
+    Ok(out)
+}
+
+#[derive(Debug)]
+pub(crate) struct Span {
+    pub outer_start: usize,
+    pub outer_end: usize,
+    pub body_start: usize,
+    pub body_end: usize,
+}
+
+pub(crate) fn find_balanced_spans(input: &str, start: &str, end: &str) -> Result<Vec<Span>> {
+    let mut out = Vec::new();
+    let mut cursor = 0;
+    while let Some(rel_s) = input[cursor..].find(start) {
+        let s = cursor + rel_s;
+        let body_start = s + start.len();
+        let Some(rel_e) = input[body_start..].find(end) else {
+            anyhow::bail!("'{start}' without matching '{end}'");
+        };
+        let body_end = body_start + rel_e;
+        let outer_end = body_end + end.len();
+        out.push(Span {
+            outer_start: s,
+            outer_end,
+            body_start,
+            body_end,
+        });
+        cursor = outer_end;
+    }
+    Ok(out)
 }
 
 fn render_inline_code(title: &str, lang: &str, code: &str) -> String {
@@ -273,38 +281,17 @@ fn render_inline_code(title: &str, lang: &str, code: &str) -> String {
     out
 }
 
-async fn expand_code_example(input: &str, sidecar: &SidecarClient) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(CODE_EXAMPLE_START) else { break };
-        let Some(end_idx) = current.find(CODE_EXAMPLE_END) else {
-            anyhow::bail!("code-example start token without matching end");
-        };
-        if end_idx < start_idx {
-            anyhow::bail!("code-example end before start");
-        }
-        let config_source = &current[start_idx + CODE_EXAMPLE_START.len()..end_idx];
-
+async fn expand_code_example(input: &str, _sidecar: &SidecarClient) -> Result<String> {
+    super::rewrite_blocks_sync(input, CODE_EXAMPLE_START, CODE_EXAMPLE_END, |config_source| {
         let parsed = qjs::eval_marker_sync(MarkerKind::CodeExample, config_source)
             .context("parse code-example config via qjs")?;
-        let title = parsed
-            .get("title")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
+        let title = parsed.get("title").and_then(|v| v.as_str()).unwrap_or("");
         let config = parsed
             .get("config")
             .cloned()
             .unwrap_or(serde_json::Value::Null);
-
-        let replacement = render_code_example(title, &config);
-        current = format!(
-            "{prefix}{repl}{suffix}",
-            prefix = &current[..start_idx],
-            repl = replacement,
-            suffix = &current[end_idx + CODE_EXAMPLE_END.len()..],
-        );
-    }
-    Ok(current)
+        Ok(render_code_example(title, &config))
+    })
 }
 
 fn render_code_example(title: &str, config: &serde_json::Value) -> String {
@@ -343,41 +330,22 @@ fn render_code_example(title: &str, config: &serde_json::Value) -> String {
     out
 }
 
-async fn expand_api_resource_header(input: &str, sidecar: &SidecarClient) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(API_RES_START) else { break };
-        let Some(end_idx) = current.find(API_RES_END) else {
-            anyhow::bail!("api-resource-header start without end");
-        };
-        if end_idx < start_idx {
-            anyhow::bail!("api-resource-header end before start");
-        }
-        let config_source = &current[start_idx + API_RES_START.len()..end_idx];
+async fn expand_api_resource_header(input: &str, _sidecar: &SidecarClient) -> Result<String> {
+    super::rewrite_blocks_sync(input, API_RES_START, API_RES_END, |config_source| {
         let parsed = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
             .context("parse api-resource-header config via qjs")?;
-
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
         let route = parsed.get("route").and_then(|v| v.as_str()).unwrap_or("");
         let credits = parsed.get("creditsCost").and_then(|v| v.as_i64()).unwrap_or(0);
         // Match Number(x).toLocaleString() formatting (en-US default in Node).
         let credits_str = format_with_commas(credits);
-
-        let replacement = format!(
+        Ok(format!(
             "<div class=\"api-resource-header\">Resource: <span>{name}</span> <span class=\"as\">as</span> <span>{route}</span> Credit Cost: <span>{credits_str}</span></div>",
             name = html_escape::encode_text(name),
             route = html_escape::encode_text(route),
             credits_str = credits_str,
-        );
-
-        current = format!(
-            "{prefix}{repl}{suffix}",
-            prefix = &current[..start_idx],
-            repl = replacement,
-            suffix = &current[end_idx + API_RES_END.len()..],
-        );
-    }
-    Ok(current)
+        ))
+    })
 }
 
 fn format_with_commas(n: i64) -> String {

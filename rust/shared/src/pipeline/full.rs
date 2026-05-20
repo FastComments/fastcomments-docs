@@ -300,57 +300,45 @@ fn extract_app_screenshot_placeholders(
     input: &str,
 ) -> Result<(String, Vec<ScreenshotPlaceholder>)> {
     use fcdocs_browser::screenshot;
-    let mut current = input.to_string();
-    let mut out = Vec::new();
-    loop {
-        let Some(s) = current.find(APP_SCREENSHOT_START) else {
-            break;
-        };
-        let Some(e) = current[s..].find(APP_SCREENSHOT_END) else {
-            anyhow::bail!("app-screenshot start without matching end");
-        };
-        let block_end = s + e + APP_SCREENSHOT_END.len();
-        let config_source = &current[s + APP_SCREENSHOT_START.len()..s + e];
-        let config = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
-            .context("eval app-screenshot config")?;
-
-        // Emit the screenshot HTML INLINE so pulldown-cmark treats it
-        // as block HTML (no `<p>` wrap). The actual image capture
-        // happens after pipeline processing, but the markup is fixed
-        // now — it just references `/images/<md5>.png`. Mirrors
-        // src/app-screenshot-generator.js:209-213 which also emits
-        // the template before/regardless of capture.
-        let args: screenshot::ScreenshotArgs =
-            serde_json::from_value(config.clone()).context("screenshot args")?;
-        let file_name =
-            screenshot::target_file_name(&args.url, &args.selector, &args.title);
-        let template = screenshot::render_template(&args, &file_name, screenshot::HOST);
-        // Use a token in the returned placeholder shape so sitegen
-        // knows what to capture, even though the HTML is already
-        // substituted.
-        out.push(ScreenshotPlaceholder {
-            token: file_name.clone(),
-            config,
-        });
-        current = format!("{}{template}{}", &current[..s], &current[block_end..]);
-    }
-    Ok((current, out))
+    let mut out_placeholders = Vec::new();
+    let rewritten = super::rewrite_blocks_sync(
+        input,
+        APP_SCREENSHOT_START,
+        APP_SCREENSHOT_END,
+        |config_source| {
+            let config = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
+                .context("eval app-screenshot config")?;
+            // Emit the screenshot HTML INLINE so pulldown-cmark treats it
+            // as block HTML (no `<p>` wrap). The actual image capture
+            // happens after pipeline processing, but the markup is fixed
+            // now — it just references `/images/<md5>.png`. Mirrors
+            // src/app-screenshot-generator.js:209-213 which also emits
+            // the template before/regardless of capture.
+            let args: screenshot::ScreenshotArgs =
+                serde_json::from_value(config.clone()).context("screenshot args")?;
+            let file_name =
+                screenshot::target_file_name(&args.url, &args.selector, &args.title);
+            let template = screenshot::render_template(&args, &file_name, screenshot::HOST);
+            out_placeholders.push(ScreenshotPlaceholder {
+                token: file_name.clone(),
+                config,
+            });
+            Ok(template)
+        },
+    )?;
+    Ok((rewritten, out_placeholders))
 }
 
 const FLOW_DIAGRAM_START: &str = "[flow-diagram-start";
 const FLOW_DIAGRAM_END: &str = "flow-diagram-end]";
 
 fn strip_flow_diagram(input: &str) -> String {
-    let mut current = input.to_string();
-    loop {
-        let Some(s) = current.find(FLOW_DIAGRAM_START) else { break };
-        let Some(e) = current[s..].find(FLOW_DIAGRAM_END) else {
-            break;
-        };
-        let block_end = s + e + FLOW_DIAGRAM_END.len();
-        current = format!("{}{}", &current[..s], &current[block_end..]);
-    }
-    current
+    // Lenient (matches prior behavior): if an end token is missing, just
+    // return input unchanged rather than failing the build for an orphan.
+    super::rewrite_blocks_sync(input, FLOW_DIAGRAM_START, FLOW_DIAGRAM_END, |_| {
+        Ok(String::new())
+    })
+    .unwrap_or_else(|_| input.to_string())
 }
 
 // ------------------------------------------------------------------
@@ -366,15 +354,8 @@ async fn expand_code_example(
     sidecar: &SidecarClient,
     cfg: &FullPipelineConfig,
 ) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(s) = current.find(CODE_EXAMPLE_START) else { break };
-        let Some(e) = current[s..].find(CODE_EXAMPLE_END) else {
-            anyhow::bail!("code-example start without matching end");
-        };
-        let block_end = s + e + CODE_EXAMPLE_END.len();
-        let config_source = &current[s + CODE_EXAMPLE_START.len()..s + e];
-        let parsed = qjs::eval_marker_sync(MarkerKind::CodeExample, config_source)
+    super::rewrite_blocks_async(input, CODE_EXAMPLE_START, CODE_EXAMPLE_END, |config_source| async move {
+        let parsed = qjs::eval_marker_sync(MarkerKind::CodeExample, &config_source)
             .context("eval code-example config")?;
         let title = parsed.get("title").and_then(|v| v.as_str()).unwrap_or("");
         let config = parsed.get("config").cloned().unwrap_or(serde_json::Value::Null);
@@ -432,7 +413,7 @@ async fn expand_code_example(
         // useDemoTenant). Only inline-code-generator honors the flag.
         let body = render_inline_lines(&highlighted.html, &lines_to_highlight, false);
 
-        let replacement = wrap_code_block(
+        Ok(wrap_code_block(
             title,
             None,
             &code_snippet_name,
@@ -440,10 +421,9 @@ async fn expand_code_example(
             &snippet_page_file_name,
             &body,
             true,
-        );
-        current = format!("{}{}{}", &current[..s], replacement, &current[block_end..]);
-    }
-    Ok(current)
+        ))
+    })
+    .await
 }
 
 // ------------------------------------------------------------------
@@ -461,33 +441,40 @@ async fn expand_inline_code(
     sidecar: &SidecarClient,
     cfg: &FullPipelineConfig,
 ) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(start_idx) = current.find(INLINE_CODE_START) else { break };
-        let Some(end_idx) = current.find(INLINE_CODE_END) else {
-            anyhow::bail!("inline-code start without end");
-        };
-        if end_idx < start_idx {
-            anyhow::bail!("inline-code end before start");
-        }
-        let body = current[start_idx + INLINE_CODE_START.len()..end_idx].to_string();
+    // Pair body N with attrs N in source-position order (matches Node's
+    // index-from-zero find pattern at src/inline-code-generator.js:67-68).
+    let bodies = super::indexer::find_balanced_spans(input, INLINE_CODE_START, INLINE_CODE_END)?;
+    let attrs = super::indexer::find_balanced_spans(
+        input,
+        INLINE_CODE_ATTRS_START,
+        INLINE_CODE_ATTRS_END,
+    )?;
+    if bodies.len() != attrs.len() {
+        anyhow::bail!(
+            "inline-code: {} body block(s) vs {} attrs block(s)",
+            bodies.len(),
+            attrs.len()
+        );
+    }
+    if bodies.is_empty() {
+        return Ok(input.to_string());
+    }
 
-        // Like the Node generator, we just search from index 0 for the
-        // attrs block (src/inline-code-generator.js:67-68).
-        let attrs_start = current
-            .find(INLINE_CODE_ATTRS_START)
-            .context("inline-code body without attrs block")?;
-        let attrs_end = current
-            .find(INLINE_CODE_ATTRS_END)
-            .context("inline-code attrs without end token")?;
-        let attrs_source = current
-            [attrs_start + INLINE_CODE_ATTRS_START.len()..attrs_end]
-            .to_string();
-
-        let parsed = qjs::eval_marker_sync(MarkerKind::InlineCode, &attrs_source)
+    let mut edits: Vec<(usize, usize, String)> = Vec::with_capacity(bodies.len() * 2);
+    for (body, attrs) in bodies.iter().zip(attrs.iter()) {
+        let attrs_source = &input[attrs.body_start..attrs.body_end];
+        let parsed = qjs::eval_marker_sync(MarkerKind::InlineCode, attrs_source)
             .context("eval inline-code attrs")?;
-        let title = parsed.get("title").and_then(|v| v.as_str()).unwrap_or("").to_string();
-        let lang = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("html").to_string();
+        let title = parsed
+            .get("title")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .to_string();
+        let lang = parsed
+            .get("type")
+            .and_then(|v| v.as_str())
+            .unwrap_or("html")
+            .to_string();
         let is_functional = parsed
             .get("isFunctional")
             .and_then(|v| v.as_bool())
@@ -496,19 +483,17 @@ async fn expand_inline_code(
             .get("useDemoTenant")
             .and_then(|v| v.as_bool())
             .unwrap_or(false);
+        let body_text = input[body.body_start..body.body_end].to_string();
 
         let code_snippet_name = code_snippet_id(file_basename, &title);
         let snippet_page_file_name = format!("{code_snippet_name}.html");
 
         if is_functional {
-            write_code_snippet_page(cfg, &body, &title, &snippet_page_file_name, &[])?;
+            write_code_snippet_page(cfg, &body_text, &title, &snippet_page_file_name, &[])?;
         }
 
-        // No trim — Node's inline-code-generator passes raw inlineCode
-        // directly to hljs.highlight (no .trim()), preserving leading
-        // whitespace in the rendered code block.
         let highlighted = sidecar
-            .highlight_with(&body, Some(&lang), false)
+            .highlight_with(&body_text, Some(&lang), false)
             .await
             .context("sidecar /highlight for inline-code")?;
         let body_html = render_inline_lines(&highlighted.html, &[], use_demo_tenant);
@@ -522,31 +507,20 @@ async fn expand_inline_code(
             &body_html,
             false,
         );
-
-        // Splice in the replacement for the body, then strip the attrs
-        // block (positions shifted; re-find).
-        let after_body = format!(
-            "{}{}{}",
-            &current[..start_idx],
-            replacement,
-            &current[end_idx + INLINE_CODE_END.len()..]
-        );
-        let stripped = if let Some(as_idx) = after_body.find(INLINE_CODE_ATTRS_START) {
-            if let Some(ae_idx) = after_body.find(INLINE_CODE_ATTRS_END) {
-                format!(
-                    "{}{}",
-                    &after_body[..as_idx],
-                    &after_body[ae_idx + INLINE_CODE_ATTRS_END.len()..]
-                )
-            } else {
-                after_body
-            }
-        } else {
-            after_body
-        };
-        current = stripped;
+        edits.push((body.outer_start, body.outer_end, replacement));
+        edits.push((attrs.outer_start, attrs.outer_end, String::new()));
     }
-    Ok(current)
+    edits.sort_by_key(|e| e.0);
+
+    let mut out = String::with_capacity(input.len());
+    let mut cursor = 0;
+    for (start, end, repl) in edits {
+        out.push_str(&input[cursor..start]);
+        out.push_str(&repl);
+        cursor = end;
+    }
+    out.push_str(&input[cursor..]);
+    Ok(out)
 }
 
 // ------------------------------------------------------------------
@@ -559,14 +533,7 @@ const RELATED_PARAM_START: &str = "[related-parameter-start";
 const RELATED_PARAM_END: &str = "related-parameter-end]";
 
 async fn expand_api_resource_header(input: &str) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(s) = current.find(API_RES_START) else { break };
-        let Some(e) = current[s..].find(API_RES_END) else {
-            anyhow::bail!("api-resource-header start without end");
-        };
-        let block_end = s + e + API_RES_END.len();
-        let config_source = &current[s + API_RES_START.len()..s + e];
+    super::rewrite_blocks_sync(input, API_RES_START, API_RES_END, |config_source| {
         let parsed = qjs::eval_marker_sync(MarkerKind::ApiResourceHeader, config_source)
             .context("eval api-resource-header config")?;
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
@@ -578,26 +545,17 @@ async fn expand_api_resource_header(input: &str) -> Result<String> {
         // Number(x).toLocaleString() with en-US default produces "10,000".
         let credits_str = format_with_commas(credits);
         // Mirrors src/api-resource-header-generator.js:7.
-        let replacement = format!(
+        Ok(format!(
             "<div class=\"api-resource-header\">Resource: <span>{name}</span> <span class=\"as\">as</span> <span>{route}</span> Credit Cost: <span>{credits_str}</span></div>",
             name = html_escape::encode_text(name),
             route = html_escape::encode_text(route),
             credits_str = credits_str,
-        );
-        current = format!("{}{}{}", &current[..s], replacement, &current[block_end..]);
-    }
-    Ok(current)
+        ))
+    })
 }
 
 async fn expand_related_parameter(input: &str) -> Result<String> {
-    let mut current = input.to_string();
-    loop {
-        let Some(s) = current.find(RELATED_PARAM_START) else { break };
-        let Some(e) = current[s..].find(RELATED_PARAM_END) else {
-            anyhow::bail!("related-parameter start without end");
-        };
-        let block_end = s + e + RELATED_PARAM_END.len();
-        let config_source = &current[s + RELATED_PARAM_START.len()..s + e];
+    super::rewrite_blocks_sync(input, RELATED_PARAM_START, RELATED_PARAM_END, |config_source| {
         let parsed = qjs::eval_marker_sync(MarkerKind::RelatedParameter, config_source)
             .context("eval related-parameter config")?;
         let name = parsed.get("name").and_then(|v| v.as_str()).unwrap_or("");
@@ -611,13 +569,11 @@ async fn expand_related_parameter(input: &str) -> Result<String> {
             ),
             _ => html_escape::encode_text(type_).to_string(),
         };
-        let replacement = format!(
+        Ok(format!(
             "<div class=\"related-parameter\">Related Parameter in Code: <span>{name}</span> <span class=\"as\">as</span> <span>{type_html}</span></div>",
             name = html_escape::encode_text(name),
-        );
-        current = format!("{}{}{}", &current[..s], replacement, &current[block_end..]);
-    }
-    Ok(current)
+        ))
+    })
 }
 
 fn format_with_commas(n: i64) -> String {
