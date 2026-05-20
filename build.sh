@@ -50,7 +50,7 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     cp -f "$CARGO_TARGET/release/sdkgen"  rust/target/release/sdkgen  2>/dev/null || true
     cp -f "$CARGO_TARGET/release/trans"   rust/target/release/trans   2>/dev/null || true
   fi
-  for bin in server indexer sitegen sdkgen; do
+  for bin in server indexer sitegen sdkgen trans; do
     if [ ! -x "rust/target/release/$bin" ]; then
       echo "ERROR: rust/target/release/$bin missing after cargo build"
       exit 1
@@ -104,25 +104,32 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
   echo "Custom styling guide generation complete."
 
-  # Check for missing translations (Rust replaces node src/check-translations.js)
+  # Translation pipeline. Rust trans owns all three phases now
+  # (markdown items, UI strings, meta.json — see rust/trans/src/main.rs).
+  # `trans check` flags any gap as a non-zero exit; on miss we branch
+  # into `trans run` which translates+writes back. The Node script
+  # src/translate-with-gpt.js remains in tree as a parity reference
+  # but is no longer on the build path.
   echo "Checking for missing translations..."
-  "$HOME/.cache/cargo-target/release/trans" check 2>/dev/null \
-    || ./rust/target/release/trans check
+  ./rust/target/release/trans check
   translation_check_result=$?
   if [ $translation_check_result -ne 0 ]; then
     echo "Missing translations detected. Running automated translation..."
-
-    # Run translation
-    if ! node src/translate-with-gpt.js; then
+    if ! ./rust/target/release/trans run; then
       echo "ERROR: Translation failed"
       exit 1
     fi
 
-    # Check if there are changes to commit
-    if [ -n "$(git status --porcelain src/content src/translation-cache.json 2>/dev/null)" ]; then
+    # Check if there are changes to commit. translate covers
+    # src/content (markdown items + meta_translated/), src/translations.json
+    # (UI strings), src/translation-cache.json (markdown + meta hashes),
+    # and src/ui-translation-cache.json (UI hashes).
+    if [ -n "$(git status --porcelain src/content src/translations.json src/translation-cache.json src/ui-translation-cache.json 2>/dev/null)" ]; then
       echo "Committing translation changes..."
       git add -A src/content
+      git add src/translations.json
       git add src/translation-cache.json
+      git add src/ui-translation-cache.json
       if ! git commit -m "Automated translation update"; then
         echo "ERROR: Git commit failed"
         exit 1

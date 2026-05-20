@@ -32,7 +32,10 @@ use serde::{Deserialize, Serialize};
 use tokio::sync::Mutex;
 use tracing::{info, warn};
 
+use crate::meta_json;
+use crate::openai::JsonTranslator;
 use crate::snapshot::hash_content;
+use crate::ui;
 
 const DEFAULT_MODEL: &str = "gpt-5-mini";
 
@@ -49,9 +52,12 @@ const DEFAULT_CONCURRENCY: usize = 20;
 /// instead of O(tasks).
 const CACHE_FLUSH_INTERVAL: Duration = Duration::from_secs(15);
 
-#[derive(Debug, Default, Serialize, Deserialize)]
-#[serde(transparent)]
-struct CacheMap(BTreeMap<String, String>);
+// Cache shape on disk: { "guideId/locale/filename": "md5hex", ... }.
+// BTreeMap serializes directly to a sorted-key JSON object via
+// serde_json, matching Node's translation-cache.json layout. Shared by
+// the markdown items path AND the meta.json path (Node's
+// translate-with-gpt.js uses one cache for both, keyed differently).
+type CacheMap = BTreeMap<String, String>;
 
 pub async fn run() -> Result<()> {
     let repo = repo_root()?;
@@ -66,19 +72,11 @@ pub async fn run() -> Result<()> {
     };
 
     let tasks = build_task_list(&guides_dir, &locales, &cache_initial)?;
-    info!(count = tasks.len(), "missing translation tasks");
-    if tasks.is_empty() {
-        info!("nothing to translate");
-        return Ok(());
-    }
+    info!(count = tasks.len(), "missing markdown translation tasks");
 
     let api_key = std::env::var("OPENAI_API_KEY").ok();
     if api_key.is_none() {
-        warn!(
-            "OPENAI_API_KEY not set — `trans run` cannot call OpenAI. \
-             Run with the key set, or use `node src/translate-with-gpt.js` \
-             which has the same behavior."
-        );
+        warn!("OPENAI_API_KEY not set — `trans run` cannot call OpenAI.");
         anyhow::bail!("OPENAI_API_KEY required");
     }
 
@@ -185,21 +183,74 @@ pub async fn run() -> Result<()> {
         }
     }
 
+    let s = success.load(std::sync::atomic::Ordering::Relaxed);
+    let f = failed.load(std::sync::atomic::Ordering::Relaxed);
+    let k = skipped.load(std::sync::atomic::Ordering::Relaxed);
+    info!(success = s, failed = f, skipped = k, "markdown items phase complete");
+
+    // Phase 2: UI strings. Per-locale batches, sequential
+    // (translate-with-gpt.js processes them with a single for-of loop
+    // at line 590). Has its own cache (src/ui-translation-cache.json).
+    let translator = Arc::new(JsonTranslator {
+        client: client.clone(),
+        api_key: api_key.clone(),
+        primary_model: (*model).clone(),
+    });
+    let ui_stats = ui::process_all(translator.clone(), &repo, &locales).await?;
+    info!(
+        success = ui_stats.success,
+        failed = ui_stats.failed,
+        skipped = ui_stats.skipped,
+        "UI strings phase complete"
+    );
+
+    // Phase 3: meta.json. Parallel up to `concurrency`; shares the
+    // markdown cache file (translation-cache.json) keyed by
+    // `{guideId}/{locale}/meta.json`, so the existing flusher persists
+    // updates without extra plumbing.
+    let meta_stats = meta_json::process_all(
+        translator,
+        &repo,
+        locales.clone(),
+        cache.clone(),
+        dirty.clone(),
+        concurrency,
+    )
+    .await?;
+    info!(
+        success = meta_stats.success,
+        failed = meta_stats.failed,
+        skipped = meta_stats.skipped,
+        "meta.json phase complete"
+    );
+
     // Stop the periodic flusher and do one final write so the cache
-    // reflects every successful task even if the last flush tick
-    // hadn't fired yet.
+    // reflects every successful task (markdown + meta) even if the
+    // last flush tick hadn't fired yet. UI writes go through ui.rs's
+    // own atomic-rename path, not this flusher.
     flusher_handle.abort();
     let _ = flusher_handle.await; // ignore JoinError(Cancelled)
     if let Err(e) = flush_cache_if_dirty(&cache, &dirty, &cache_path).await {
         warn!(error = %format!("{e:#}"), "final cache flush failed");
     }
 
-    let s = success.load(std::sync::atomic::Ordering::Relaxed);
-    let f = failed.load(std::sync::atomic::Ordering::Relaxed);
-    let k = skipped.load(std::sync::atomic::Ordering::Relaxed);
-    info!(success = s, failed = f, skipped = k, "trans run complete");
-    if f > 0 {
-        anyhow::bail!("{f} translation task(s) failed");
+    let total_failed = f + ui_stats.failed + meta_stats.failed;
+    info!(
+        markdown_success = s,
+        markdown_failed = f,
+        markdown_skipped = k,
+        ui_success = ui_stats.success,
+        ui_failed = ui_stats.failed,
+        meta_success = meta_stats.success,
+        meta_failed = meta_stats.failed,
+        "trans run complete"
+    );
+    if total_failed > 0 {
+        anyhow::bail!(
+            "{total_failed} translation task(s) failed (markdown={f}, ui={ui_f}, meta={meta_f})",
+            ui_f = ui_stats.failed,
+            meta_f = meta_stats.failed,
+        );
     }
     Ok(())
 }
@@ -285,7 +336,7 @@ async fn process_one_task(
 /// worth of completions, which the next run will redo.
 async fn record_cache(cache: &Mutex<CacheMap>, dirty: &AtomicBool, task: &Task) {
     let mut c = cache.lock().await;
-    c.0.insert(
+    c.insert(
         cache_key(&task.guide_id, &task.locale, &task.filename),
         task.source_hash.clone(),
     );
@@ -313,7 +364,7 @@ async fn flush_cache_if_dirty(
         // could set dirty=true and we'd clear it without persisting
         // their change.
         dirty.store(false, Ordering::Release);
-        serde_json::to_vec_pretty(&c.0)?
+        serde_json::to_vec_pretty(&*c)?
     };
     let tmp = cache_path.with_extension("json.tmp");
     tokio::fs::write(&tmp, &bytes)
@@ -374,7 +425,7 @@ fn build_task_list(
                 }
                 let target = items_path.join(locale).join(&filename);
                 let cache_key = cache_key(&guide_id, locale, &filename);
-                let cached_hash = cache.0.get(&cache_key);
+                let cached_hash = cache.get(&cache_key);
                 let needs = !target.exists() || cached_hash != Some(&source_hash);
                 if needs {
                     tasks.push(Task {

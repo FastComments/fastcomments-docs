@@ -1,18 +1,24 @@
 //! Replaces `src/check-translations.js` + `src/translate-with-gpt.js` +
 //! `src/translation-snapshot.js` + cleanup utilities.
 //!
-//! Current scope: `trans check` and `trans cleanup` fully ported.
-//! `trans run` (the LLM-driven actual-translation pipeline, 1259 LOC of
-//! Node code with custom prompts + model fallback + git commit) is a
-//! framework stub that calls into the shared `fcdocs-llm` crate (already
-//! verified for OpenAI cache key parity) but the prompt set + per-batch
-//! orchestration is a TODO follow-up. The Node script remains the
-//! authority for actually generating new translations until that lands.
+//! Subcommands:
+//!   `check`   - audits markdown items, UI strings, meta.json, and
+//!               inline-code parity. Exits non-zero on any gap so
+//!               build.sh branches into `run`.
+//!   `run`     - translates everything `check` would flag. Three
+//!               phases in order: markdown items, UI strings,
+//!               meta.json. All three share the same on-disk caches
+//!               and prompt shapes as Node's translate-with-gpt.js.
+//!   `cleanup` - empties stale translation files matching Node's
+//!               cleanup-empty-translations.js + cleanup-empty-generated.js.
 
 mod check;
 mod cleanup;
+mod meta_json;
+mod openai;
 mod run;
 mod snapshot;
+mod ui;
 
 use anyhow::Result;
 
