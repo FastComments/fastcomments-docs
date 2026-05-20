@@ -1,5 +1,17 @@
-//! Replaces `src/check-translations.js` + `src/translate-with-gpt.js`.
-//! Subcommands: `check`, `run`, `cleanup`. Stub. Real impl: task #21.
+//! Replaces `src/check-translations.js` + `src/translate-with-gpt.js` +
+//! `src/translation-snapshot.js` + cleanup utilities.
+//!
+//! Current scope: `trans check` and `trans cleanup` fully ported.
+//! `trans run` (the LLM-driven actual-translation pipeline, 1259 LOC of
+//! Node code with custom prompts + model fallback + git commit) is a
+//! framework stub that calls into the shared `fcdocs-llm` crate (already
+//! verified for OpenAI cache key parity) but the prompt set + per-batch
+//! orchestration is a TODO follow-up. The Node script remains the
+//! authority for actually generating new translations until that lands.
+
+mod check;
+mod cleanup;
+mod snapshot;
 
 use anyhow::Result;
 
@@ -11,12 +23,19 @@ async fn main() -> Result<()> {
                 .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
         )
         .init();
+
     let cmd = std::env::args().nth(1).unwrap_or_else(|| "check".to_string());
     match cmd.as_str() {
-        "check" => tracing::info!("trans check — not yet implemented"),
-        "run" => tracing::info!("trans run — not yet implemented"),
-        "cleanup" => tracing::info!("trans cleanup — not yet implemented"),
+        "check" => check::run().await,
+        "cleanup" => cleanup::run().await,
+        "run" => {
+            tracing::warn!(
+                "`trans run` is a framework stub; the prompt + batching layer of \
+                 translate-with-gpt.js is a phase-4 follow-up. \
+                 In the meantime, the Node script remains the authority."
+            );
+            anyhow::bail!("`trans run` not yet implemented; use `node src/translate-with-gpt.js`")
+        }
         other => anyhow::bail!("unknown subcommand: {other}"),
     }
-    Ok(())
 }

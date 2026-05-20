@@ -661,6 +661,7 @@ name = "fcdocs-sdkgen"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-trait",
  "fcdocs-llm",
  "fcdocs-shared",
  "git2",
