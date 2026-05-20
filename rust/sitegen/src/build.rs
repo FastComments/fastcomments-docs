@@ -890,10 +890,29 @@ fn build_index_page(
         })
     }
 
+    // Per src/guides.js:337 a guide with no itemsOrdered uses meta.url
+    // (verbatim) as its homepage card link. The intent is "this card
+    // redirects users to a section inside another guide" — e.g. SSO's
+    // meta.url is `/guide-customizations-and-configuration.html#sso`.
+    // Without this, Rust always emitted `guide-sso.html` which still
+    // exists as a near-empty page but skips the cross-reference target
+    // that Node intentionally pointed at.
+    //
+    // Node does not interpolate the locale into meta.url (the field is
+    // a literal path); we match that, even though it means non-default
+    // locales also link at the default-locale URL. Changing that is a
+    // separate design decision that would diverge from Node parity.
     let localize = |guides: &[&Guide]| -> Vec<Value> {
         guides
             .iter()
-            .map(|g| guide_to_value(g, guide_link(&g.id, locale, &locales.default_locale)))
+            .map(|g| {
+                let url = if g.meta.items_ordered.is_empty() {
+                    g.meta.url.clone().unwrap_or_else(|| "#".to_string())
+                } else {
+                    guide_link(&g.id, locale, &locales.default_locale)
+                };
+                guide_to_value(g, url)
+            })
             .collect()
     };
 
