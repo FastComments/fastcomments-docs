@@ -19,13 +19,15 @@
 //!   `src/server-search-engine.js:301-353`.
 
 use std::collections::{HashMap, HashSet};
+use std::net::IpAddr;
 use std::path::PathBuf;
 use std::sync::Arc;
+use std::time::Duration;
 
 use anyhow::{Context, Result};
 use axum::{
-    extract::{Query, State},
-    http::{HeaderMap, HeaderValue, StatusCode},
+    extract::{ConnectInfo, Query, State},
+    http::{HeaderMap, StatusCode},
     response::IntoResponse,
     routing::get,
     Json, Router,
@@ -42,7 +44,10 @@ use tantivy::{Index, IndexReader, ReloadPolicy, TantivyDocument};
 use tokio::sync::Mutex;
 use tracing::{error, info, warn};
 
+mod ratelimit;
 mod telemetry;
+
+use ratelimit::RateLimiter;
 
 const DEFAULT_PORT: u16 = 5001;
 const TELEMETRY_FLUSH_SECS: u64 = 10;
@@ -50,6 +55,14 @@ const TOP_K: usize = 15;
 const BOOST_TITLE: f32 = 50.0;
 const BOOST_PARENT_TITLE: f32 = 10.0;
 const BOOST_SEARCH_TEXT: f32 = 1.0;
+
+/// Hard cap on the `query` string. Anything longer is rejected at the
+/// edge: it can't help recall, but it can drive OpenAI tokens and CPU.
+const MAX_QUERY_LEN: usize = 256;
+/// Tokens-per-second + burst, per remote IP. Matches "a human typing
+/// search queries" rather than a scraper.
+const RATE_PER_SEC: f64 = 5.0;
+const RATE_BURST: f64 = 20.0;
 
 #[derive(Clone)]
 struct AppState {
@@ -60,6 +73,8 @@ struct AppState {
     openai_api_key: Option<Arc<String>>,
     openai_model: Arc<String>,
     search_api_key: Option<Arc<String>>,
+    http: reqwest::Client,
+    limiter: Arc<RateLimiter>,
 }
 
 #[derive(Clone)]
@@ -172,6 +187,13 @@ async fn main() -> Result<()> {
         "starting search server"
     );
 
+    let http = reqwest::Client::builder()
+        .connect_timeout(Duration::from_secs(5))
+        .timeout(Duration::from_secs(20))
+        .pool_idle_timeout(Duration::from_secs(60))
+        .build()
+        .context("build shared reqwest client")?;
+
     let state = AppState {
         locales,
         index_dir: Arc::new(index_dir),
@@ -182,6 +204,8 @@ async fn main() -> Result<()> {
             std::env::var("OPENAI_MODEL").unwrap_or_else(|_| "gpt-5-mini".to_string()),
         ),
         search_api_key: std::env::var("SEARCH_API_KEY").ok().map(Arc::new),
+        http,
+        limiter: Arc::new(RateLimiter::new(RATE_PER_SEC, RATE_BURST)),
     };
 
     // Background telemetry flusher.
@@ -191,7 +215,21 @@ async fn main() -> Result<()> {
             telemetry::flush_loop(st).await;
         });
     }
+    // Background limiter GC so idle IPs don't pin memory.
+    {
+        let limiter = state.limiter.clone();
+        tokio::spawn(async move {
+            let mut ticker = tokio::time::interval(Duration::from_secs(60));
+            ticker.tick().await;
+            loop {
+                ticker.tick().await;
+                limiter.gc(Duration::from_secs(600));
+            }
+        });
+    }
 
+    // CORS: docs site is public, no credentials are exchanged. Allow any
+    // origin for GET/OPTIONS, never set Access-Control-Allow-Credentials.
     let cors = tower_http::cors::CorsLayer::new()
         .allow_origin(tower_http::cors::Any)
         .allow_methods([axum::http::Method::GET, axum::http::Method::OPTIONS])
@@ -206,20 +244,48 @@ async fn main() -> Result<()> {
     let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
     let listener = tokio::net::TcpListener::bind(addr).await?;
     info!(%addr, "search server listening");
-    axum::serve(listener, app)
-        .with_graceful_shutdown(shutdown_signal())
-        .await?;
+    axum::serve(
+        listener,
+        app.into_make_service_with_connect_info::<std::net::SocketAddr>(),
+    )
+    .with_graceful_shutdown(shutdown_signal())
+    .await?;
     Ok(())
 }
 
 async fn handle_options() -> impl IntoResponse {
-    (StatusCode::OK, cors_headers(), "")
+    StatusCode::OK
 }
 
 async fn handle_search(
     State(state): State<AppState>,
+    ConnectInfo(addr): ConnectInfo<std::net::SocketAddr>,
+    headers: HeaderMap,
     Query(params): Query<SearchParams>,
 ) -> impl IntoResponse {
+    let ip = client_ip(&headers, addr.ip());
+    if !state.limiter.allow(ip) {
+        return (
+            StatusCode::TOO_MANY_REQUESTS,
+            Json(serde_json::to_value(ErrorResponse {
+                status: "failed",
+                error: "rate limit exceeded".into(),
+            })
+            .unwrap()),
+        );
+    }
+
+    if params.query.len() > MAX_QUERY_LEN {
+        return (
+            StatusCode::BAD_REQUEST,
+            Json(serde_json::to_value(ErrorResponse {
+                status: "failed",
+                error: format!("query exceeds {MAX_QUERY_LEN}-char limit"),
+            })
+            .unwrap()),
+        );
+    }
+
     let locale = hreflang_to_locale_key(params.locale.as_deref(), &state.locales.default_locale);
     let query = params.query;
     info!(query = %query, locale = %locale, "search");
@@ -230,7 +296,6 @@ async fn handle_search(
             error!("search error: {e:#}");
             return (
                 StatusCode::INTERNAL_SERVER_ERROR,
-                cors_headers(),
                 Json(serde_json::to_value(ErrorResponse {
                     status: "failed",
                     error: e.to_string(),
@@ -244,7 +309,14 @@ async fn handle_search(
 
     if !params.nollm {
         if let Some(key) = state.openai_api_key.clone() {
-            results = reorder_with_openai(&query, results, &key, &state.openai_model).await;
+            results = reorder_with_openai(
+                &state.http,
+                &query,
+                results,
+                &key,
+                &state.openai_model,
+            )
+            .await;
         }
     }
 
@@ -264,33 +336,30 @@ async fn handle_search(
         results,
     };
 
-    // Record telemetry.
+    // Record telemetry (capped + length-truncated in record()).
     let tenant_id = params.tenant_id.unwrap_or_else(|| "default".to_string());
     {
         let mut t = state.telemetry.lock().await;
         t.record(tenant_id, query);
     }
 
-    (
-        StatusCode::OK,
-        cors_headers(),
-        Json(serde_json::to_value(body).unwrap()),
-    )
+    (StatusCode::OK, Json(serde_json::to_value(body).unwrap()))
 }
 
-fn cors_headers() -> HeaderMap {
-    let mut h = HeaderMap::new();
-    h.insert("Access-Control-Allow-Origin", HeaderValue::from_static("*"));
-    h.insert(
-        "Access-Control-Allow-Credentials",
-        HeaderValue::from_static("true"),
-    );
-    h.insert(
-        "Access-Control-Allow-Headers",
-        HeaderValue::from_static("content-type"),
-    );
-    h
+/// Prefer the first X-Forwarded-For hop if we're behind a reverse proxy;
+/// fall back to the socket peer. Mainly so rate-limiting works correctly
+/// when the server sits behind nginx/cloudflare.
+fn client_ip(headers: &HeaderMap, peer: IpAddr) -> IpAddr {
+    if let Some(xff) = headers.get("x-forwarded-for").and_then(|v| v.to_str().ok()) {
+        if let Some(first) = xff.split(',').next() {
+            if let Ok(ip) = first.trim().parse::<IpAddr>() {
+                return ip;
+            }
+        }
+    }
+    peer
 }
+
 
 fn run_search(state: &AppState, locale: &str, query: &str) -> Result<Vec<SearchResult>> {
     let slot = get_locale_slot(state, locale)?;
@@ -472,6 +541,7 @@ fn contains_prompt_injection(text: &str) -> bool {
 /// Port of reorderResultsWithOpenAI from
 /// src/server-search-engine.js:37-130.
 async fn reorder_with_openai(
+    client: &reqwest::Client,
     query: &str,
     results: Vec<SearchResult>,
     api_key: &str,
@@ -505,7 +575,6 @@ async fn reorder_with_openai(
     });
 
     info!(model, n = results.len(), "OpenAI reranking");
-    let client = reqwest::Client::new();
     let resp = match client
         .post("https://api.openai.com/v1/chat/completions")
         .bearer_auth(api_key)
