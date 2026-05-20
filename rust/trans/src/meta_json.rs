@@ -35,6 +35,16 @@ pub struct MetaStats {
     pub skipped: usize,
 }
 
+/// CLI-derived options for the meta.json phase. Mirrors the subset of
+/// trans::Options that applies to per-guide meta translation.
+#[derive(Debug, Default, Clone)]
+pub struct Options {
+    pub filter_locale: Option<String>,
+    pub filter_guide: Option<String>,
+    pub dry_run: bool,
+    pub force: bool,
+}
+
 #[derive(Debug, Clone)]
 struct Task {
     guide_id: String,
@@ -50,13 +60,31 @@ pub async fn process_all(
     cache: Arc<Mutex<BTreeMap<String, String>>>,
     dirty: Arc<AtomicBool>,
     concurrency: usize,
+    opts: Options,
 ) -> Result<MetaStats> {
     let guides_dir = Arc::new(repo.join("src/content/guides"));
-    let tasks = build_task_list(&guides_dir, &locales, &*cache.lock().await).await;
+    let tasks = build_task_list(
+        &guides_dir,
+        &locales,
+        &*cache.lock().await,
+        opts.filter_locale.as_deref(),
+        opts.filter_guide.as_deref(),
+        opts.force,
+    )
+    .await;
     if tasks.is_empty() {
         return Ok(MetaStats::default());
     }
-    info!(count = tasks.len(), concurrency, "meta.json translation batch");
+    info!(
+        count = tasks.len(),
+        concurrency,
+        force = opts.force,
+        dry_run = opts.dry_run,
+        locale = opts.filter_locale.as_deref().unwrap_or("*"),
+        guide = opts.filter_guide.as_deref().unwrap_or("*"),
+        "meta.json translation batch"
+    );
+    let dry_run = opts.dry_run;
 
     let success = Arc::new(std::sync::atomic::AtomicUsize::new(0));
     let failed = Arc::new(std::sync::atomic::AtomicUsize::new(0));
@@ -75,7 +103,17 @@ pub async fn process_all(
         let failed = failed.clone();
         let skipped = skipped.clone();
         in_flight.push(tokio::spawn(async move {
-            match process_one(&task, &guides_dir, &locales, &translator, &cache, &dirty).await {
+            match process_one(
+                &task,
+                &guides_dir,
+                &locales,
+                &translator,
+                &cache,
+                &dirty,
+                dry_run,
+            )
+            .await
+            {
                 Ok(Outcome::Translated) => {
                     success.fetch_add(1, Ordering::Relaxed);
                 }
@@ -121,6 +159,7 @@ enum Outcome {
     Skipped,
 }
 
+#[allow(clippy::too_many_arguments)]
 async fn process_one(
     task: &Task,
     guides_dir: &Path,
@@ -128,7 +167,17 @@ async fn process_one(
     translator: &JsonTranslator,
     cache: &Mutex<BTreeMap<String, String>>,
     dirty: &AtomicBool,
+    dry_run: bool,
 ) -> Result<Outcome> {
+    if dry_run {
+        // Matches Node line 890-894 — log + skip + don't touch cache.
+        info!(
+            guide = %task.guide_id,
+            locale = %task.locale,
+            "[dry-run] would translate meta.json"
+        );
+        return Ok(Outcome::Skipped);
+    }
     let meta_path = guides_dir.join(&task.guide_id).join("meta.json");
     let meta_bytes = tokio::fs::read(&meta_path)
         .await
@@ -182,6 +231,9 @@ async fn build_task_list(
     guides_dir: &Path,
     locales: &Locales,
     cache: &BTreeMap<String, String>,
+    filter_locale: Option<&str>,
+    filter_guide: Option<&str>,
+    force: bool,
 ) -> Vec<Task> {
     let mut out = Vec::new();
     let Ok(entries) = std::fs::read_dir(guides_dir) else {
@@ -193,6 +245,11 @@ async fn build_task_list(
             continue;
         }
         let guide_id = entry.file_name().to_string_lossy().into_owned();
+        if let Some(filter) = filter_guide {
+            if guide_id != filter {
+                continue;
+            }
+        }
         let meta_path = entry.path().join("meta.json");
         let Ok(meta_str) = std::fs::read_to_string(&meta_path) else {
             continue;
@@ -202,9 +259,14 @@ async fn build_task_list(
             if locale_key == &locales.default_locale {
                 continue;
             }
+            if let Some(filter) = filter_locale {
+                if locale_key != filter {
+                    continue;
+                }
+            }
             let cache_key = format!("{guide_id}/{locale_key}/meta.json");
             let cached = cache.get(&cache_key);
-            if cached != Some(&source_hash) {
+            if force || cached != Some(&source_hash) {
                 out.push(Task {
                     guide_id: guide_id.clone(),
                     locale: locale_key.clone(),
@@ -421,5 +483,103 @@ mod tests {
             default_locale: "en".into(),
             locales: m,
         }
+    }
+
+    // --- filter + force behavior on build_task_list ---
+
+    fn write_guide(root: &Path, guide_id: &str, body: &str) {
+        let g = root.join(guide_id);
+        std::fs::create_dir_all(&g).unwrap();
+        std::fs::write(g.join("meta.json"), body).unwrap();
+    }
+
+    fn locales_en_fr_de() -> Locales {
+        use fcdocs_shared::locales::Locale;
+        use indexmap::IndexMap;
+        let mut m: IndexMap<String, Locale> = IndexMap::new();
+        for (k, n) in [
+            ("en", "English"),
+            ("fr_fr", "Français (France)"),
+            ("de_de", "Deutsch"),
+        ] {
+            m.insert(
+                k.into(),
+                Locale {
+                    name: k.into(),
+                    native_name: n.into(),
+                    hreflang: k.into(),
+                    flag: None,
+                },
+            );
+        }
+        Locales {
+            default_locale: "en".into(),
+            locales: m,
+        }
+    }
+
+    #[tokio::test]
+    async fn build_task_list_no_filter_yields_all_locales() {
+        let tmp = tempfile::tempdir().unwrap();
+        write_guide(tmp.path(), "g", "{\"name\":\"G\"}");
+        let cache = BTreeMap::new();
+        let tasks = build_task_list(tmp.path(), &locales_en_fr_de(), &cache, None, None, false).await;
+        assert_eq!(tasks.len(), 2); // fr_fr + de_de
+    }
+
+    #[tokio::test]
+    async fn build_task_list_locale_filter() {
+        let tmp = tempfile::tempdir().unwrap();
+        write_guide(tmp.path(), "g", "{\"name\":\"G\"}");
+        let cache = BTreeMap::new();
+        let tasks = build_task_list(
+            tmp.path(),
+            &locales_en_fr_de(),
+            &cache,
+            Some("fr_fr"),
+            None,
+            false,
+        )
+        .await;
+        assert_eq!(tasks.len(), 1);
+        assert_eq!(tasks[0].locale, "fr_fr");
+    }
+
+    #[tokio::test]
+    async fn build_task_list_guide_filter() {
+        let tmp = tempfile::tempdir().unwrap();
+        write_guide(tmp.path(), "guide-a", "{\"name\":\"A\"}");
+        write_guide(tmp.path(), "guide-b", "{\"name\":\"B\"}");
+        let cache = BTreeMap::new();
+        let tasks = build_task_list(
+            tmp.path(),
+            &locales_en_fr_de(),
+            &cache,
+            None,
+            Some("guide-a"),
+            false,
+        )
+        .await;
+        assert_eq!(tasks.len(), 2);
+        assert!(tasks.iter().all(|t| t.guide_id == "guide-a"));
+    }
+
+    #[tokio::test]
+    async fn build_task_list_force_ignores_cache() {
+        let tmp = tempfile::tempdir().unwrap();
+        let body = "{\"name\":\"G\"}";
+        write_guide(tmp.path(), "g", body);
+        let h = hash_content(body);
+        let mut cache = BTreeMap::new();
+        cache.insert("g/fr_fr/meta.json".into(), h.clone());
+        cache.insert("g/de_de/meta.json".into(), h);
+
+        let normal =
+            build_task_list(tmp.path(), &locales_en_fr_de(), &cache, None, None, false).await;
+        assert_eq!(normal.len(), 0, "cache is fresh for both locales");
+
+        let forced =
+            build_task_list(tmp.path(), &locales_en_fr_de(), &cache, None, None, true).await;
+        assert_eq!(forced.len(), 2, "--force re-includes every (guide × locale)");
     }
 }

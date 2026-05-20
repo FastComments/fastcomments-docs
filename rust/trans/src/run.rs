@@ -59,7 +59,105 @@ const CACHE_FLUSH_INTERVAL: Duration = Duration::from_secs(15);
 // translate-with-gpt.js uses one cache for both, keyed differently).
 type CacheMap = BTreeMap<String, String>;
 
-pub async fn run() -> Result<()> {
+/// CLI options for `trans run`. Mirror of Node parseArgs() at
+/// src/translate-with-gpt.js:996-1024.
+#[derive(Debug, Default, Clone)]
+pub struct Options {
+    /// `--locale <code>`: limit to one locale across all three phases.
+    pub locale: Option<String>,
+    /// `--guide <id>`: limit to one guide for markdown items + meta.json.
+    /// UI strings aren't per-guide so this filter has no effect there.
+    pub guide: Option<String>,
+    /// `--concurrency <n>`: caps both markdown and meta.json fan-out.
+    /// UI strings remain sequential per-locale (matches Node).
+    pub concurrency: Option<usize>,
+    /// `--dry-run`: skip OpenAI calls + skip writes; just log what
+    /// would happen. Useful for verifying scope before paying tokens.
+    pub dry_run: bool,
+    /// `--force`: re-translate even when the cache says fresh.
+    /// Useful when the prompt template or system message changed
+    /// and the existing translations no longer reflect intent.
+    pub force: bool,
+}
+
+/// Parse CLI args after the `run` subcommand. Mirrors Node parseArgs()
+/// at src/translate-with-gpt.js:996-1024 byte-for-byte: same flag
+/// names, same `--help` text shape, same defaults.
+pub fn parse_options<I: IntoIterator<Item = String>>(args: I) -> Result<Options> {
+    let mut opts = Options::default();
+    let mut iter = args.into_iter().peekable();
+    while let Some(arg) = iter.next() {
+        match arg.as_str() {
+            "--locale" => {
+                opts.locale = Some(
+                    iter.next()
+                        .context("--locale requires a value (e.g. --locale fr_fr)")?,
+                );
+            }
+            "--guide" => {
+                opts.guide = Some(
+                    iter.next()
+                        .context("--guide requires a value (e.g. --guide api)")?,
+                );
+            }
+            "--concurrency" => {
+                let v = iter
+                    .next()
+                    .context("--concurrency requires a value (e.g. --concurrency 20)")?;
+                let n: usize = v
+                    .parse()
+                    .with_context(|| format!("--concurrency must be a positive integer, got {v:?}"))?;
+                if n == 0 {
+                    anyhow::bail!("--concurrency must be > 0");
+                }
+                opts.concurrency = Some(n);
+            }
+            "--dry-run" => opts.dry_run = true,
+            "--force" => opts.force = true,
+            "--help" | "-h" => {
+                print_help();
+                std::process::exit(0);
+            }
+            other => anyhow::bail!("unknown arg: {other:?} (try --help)"),
+        }
+    }
+    Ok(opts)
+}
+
+fn print_help() {
+    // Indent column 25 (after "  --concurrency <n>  ") for clean
+    // continuation alignment. Written as discrete lines instead of one
+    // long multi-line string so the column doesn't drift under refactor.
+    let lines: &[&str] = &[
+        "Usage: trans run [options]",
+        "",
+        "Options:",
+        "  --locale <code>        Only translate for this locale (e.g. fr_fr).",
+        "  --guide <id>           Only translate for this guide. Applies to markdown",
+        "                         items + meta.json; UI strings are global, so the",
+        "                         filter has no effect there.",
+        "  --concurrency <n>      Concurrent OpenAI calls. Also overridable via the",
+        "                         TRANS_CONCURRENCY env var.",
+        "  --dry-run              Report what would translate; do NOT call OpenAI or",
+        "                         write files. Skips the OPENAI_API_KEY requirement",
+        "                         so it's safe for scope-check runs in CI.",
+        "  --force                Re-translate even when the cache says fresh (e.g.",
+        "                         after a prompt or system-message edit).",
+        "  --help, -h             Show this message.",
+        "",
+        "Environment:",
+        "  OPENAI_API_KEY         Required unless --dry-run.",
+        "  OPENAI_MODEL           Model to use.",
+        "  TRANS_CONCURRENCY      Default concurrency (see --concurrency).",
+    ];
+    for l in lines {
+        println!("{l}");
+    }
+    println!();
+    println!("Defaults: concurrency = {DEFAULT_CONCURRENCY}, model = {DEFAULT_MODEL}");
+}
+
+pub async fn run_with(opts: Options) -> Result<()> {
     let repo = repo_root()?;
     let guides_dir = Arc::new(repo.join("src/content/guides"));
     let cache_path = Arc::new(repo.join("src/translation-cache.json"));
@@ -71,12 +169,51 @@ pub async fn run() -> Result<()> {
         CacheMap::default()
     };
 
-    let tasks = build_task_list(&guides_dir, &locales, &cache_initial)?;
-    info!(count = tasks.len(), "missing markdown translation tasks");
+    // Validate --locale early so a typo doesn't silently translate zero
+    // files (which would look like success).
+    if let Some(loc) = &opts.locale {
+        if !locales.locales.contains_key(loc) {
+            anyhow::bail!(
+                "--locale {loc:?} is not a known locale. \
+                 Known: {known}",
+                known = locales
+                    .locales
+                    .keys()
+                    .cloned()
+                    .collect::<Vec<_>>()
+                    .join(", ")
+            );
+        }
+        if loc == &locales.default_locale {
+            anyhow::bail!(
+                "--locale {loc:?} is the default locale; nothing to translate."
+            );
+        }
+    }
 
+    let tasks = build_task_list_filtered(
+        &guides_dir,
+        &locales,
+        &cache_initial,
+        opts.locale.as_deref(),
+        opts.guide.as_deref(),
+        opts.force,
+    )?;
+    info!(
+        count = tasks.len(),
+        force = opts.force,
+        dry_run = opts.dry_run,
+        locale = opts.locale.as_deref().unwrap_or("*"),
+        guide = opts.guide.as_deref().unwrap_or("*"),
+        "markdown translation tasks"
+    );
+
+    // OPENAI_API_KEY only required when we'll actually call out. Dry
+    // runs (Node line 891: `if (dryRun) { skip }`) need to work
+    // unattended in CI even without the secret.
     let api_key = std::env::var("OPENAI_API_KEY").ok();
-    if api_key.is_none() {
-        warn!("OPENAI_API_KEY not set — `trans run` cannot call OpenAI.");
+    if api_key.is_none() && !opts.dry_run {
+        warn!("OPENAI_API_KEY not set — `trans run` cannot call OpenAI (use --dry-run to scope-check without a key).");
         anyhow::bail!("OPENAI_API_KEY required");
     }
 
@@ -90,7 +227,9 @@ pub async fn run() -> Result<()> {
             .timeout(Duration::from_secs(120))
             .build()?,
     );
-    let api_key = Arc::new(api_key.unwrap());
+    // Empty string is fine for dry-run — the markdown path's
+    // process_one_task short-circuits before consulting it.
+    let api_key = Arc::new(api_key.unwrap_or_default());
     let cache = Arc::new(Mutex::new(cache_initial));
     let dirty = Arc::new(AtomicBool::new(false));
 
@@ -114,10 +253,15 @@ pub async fn run() -> Result<()> {
         })
     };
 
-    let concurrency: usize = std::env::var("TRANS_CONCURRENCY")
-        .ok()
-        .and_then(|s| s.parse().ok())
-        .filter(|n: &usize| *n > 0)
+    // Priority: --concurrency flag > TRANS_CONCURRENCY env > DEFAULT.
+    let concurrency: usize = opts
+        .concurrency
+        .or_else(|| {
+            std::env::var("TRANS_CONCURRENCY")
+                .ok()
+                .and_then(|s| s.parse().ok())
+                .filter(|n: &usize| *n > 0)
+        })
         .unwrap_or(DEFAULT_CONCURRENCY);
     info!(concurrency, "translation concurrency");
 
@@ -128,6 +272,7 @@ pub async fn run() -> Result<()> {
     let mut in_flight = FuturesUnordered::new();
     let mut iter = tasks.into_iter();
 
+    let dry_run = opts.dry_run;
     let drive = |task: Task, in_flight: &mut FuturesUnordered<_>| {
         let guides_dir = guides_dir.clone();
         let cache = cache.clone();
@@ -149,6 +294,7 @@ pub async fn run() -> Result<()> {
                 &client,
                 &api_key,
                 &model,
+                dry_run,
             )
             .await;
             match res {
@@ -196,7 +342,17 @@ pub async fn run() -> Result<()> {
         api_key: api_key.clone(),
         primary_model: (*model).clone(),
     });
-    let ui_stats = ui::process_all(translator.clone(), &repo, &locales).await?;
+    let ui_stats = ui::process_all(
+        translator.clone(),
+        &repo,
+        &locales,
+        ui::Options {
+            filter_locale: opts.locale.clone(),
+            dry_run: opts.dry_run,
+            force: opts.force,
+        },
+    )
+    .await?;
     info!(
         success = ui_stats.success,
         failed = ui_stats.failed,
@@ -215,6 +371,12 @@ pub async fn run() -> Result<()> {
         cache.clone(),
         dirty.clone(),
         concurrency,
+        meta_json::Options {
+            filter_locale: opts.locale.clone(),
+            filter_guide: opts.guide.clone(),
+            dry_run: opts.dry_run,
+            force: opts.force,
+        },
     )
     .await?;
     info!(
@@ -270,7 +432,19 @@ async fn process_one_task(
     client: &reqwest::Client,
     api_key: &str,
     model: &str,
+    dry_run: bool,
 ) -> Result<Outcome> {
+    if dry_run {
+        // Matches Node's processTranslations dry-run branch (it logs
+        // "Would translate ..." and increments skipped). We log + skip
+        // without touching the cache so a subsequent real run still
+        // sees the same gap.
+        info!(
+            "[dry-run] would translate {}/{}/{}",
+            task.guide_id, task.locale, task.filename
+        );
+        return Ok(Outcome::Skipped);
+    }
     let source_path = guides_dir
         .join(&task.guide_id)
         .join("items")
@@ -384,10 +558,21 @@ struct Task {
     source_hash: String,
 }
 
-fn build_task_list(
+/// Filtered task discovery. Mirrors translate-with-gpt.js::buildTaskList
+/// (line 950-994):
+///   - `filter_locale = Some(loc)` restricts to that locale.
+///   - `filter_guide = Some(id)` restricts to that guide.
+///   - `force = true` includes every (guide, locale, file), ignoring
+///     the cache freshness check. The file-exists check is also
+///     bypassed so a real `--force` regenerates even files already on
+///     disk with the correct content.
+fn build_task_list_filtered(
     guides_dir: &Path,
     locales: &Locales,
     cache: &CacheMap,
+    filter_locale: Option<&str>,
+    filter_guide: Option<&str>,
+    force: bool,
 ) -> Result<Vec<Task>> {
     let mut tasks = Vec::new();
     for entry in std::fs::read_dir(guides_dir)? {
@@ -396,6 +581,11 @@ fn build_task_list(
             continue;
         }
         let guide_id = entry.file_name().to_string_lossy().into_owned();
+        if let Some(filter) = filter_guide {
+            if guide_id != filter {
+                continue;
+            }
+        }
         let items_path = entry.path().join("items");
         if !items_path.exists() {
             continue;
@@ -423,10 +613,17 @@ fn build_task_list(
                 if locale == &locales.default_locale {
                     continue;
                 }
+                if let Some(filter) = filter_locale {
+                    if locale != filter {
+                        continue;
+                    }
+                }
                 let target = items_path.join(locale).join(&filename);
                 let cache_key = cache_key(&guide_id, locale, &filename);
                 let cached_hash = cache.get(&cache_key);
-                let needs = !target.exists() || cached_hash != Some(&source_hash);
+                let needs = force
+                    || !target.exists()
+                    || cached_hash != Some(&source_hash);
                 if needs {
                     tasks.push(Task {
                         guide_id: guide_id.clone(),
@@ -716,5 +913,176 @@ mod tests {
         let on_disk: serde_json::Value =
             serde_json::from_slice(&tokio::fs::read(&cache_path).await.unwrap()).unwrap();
         assert_eq!(on_disk.as_object().unwrap().len(), 100);
+    }
+}
+
+#[cfg(test)]
+mod cli_tests {
+    //! Argument parsing + filter wiring for `trans run`. The Node CLI
+    //! contract at src/translate-with-gpt.js:996-1024 is the spec.
+
+    use super::*;
+    use fcdocs_shared::locales::Locale;
+    use indexmap::IndexMap;
+
+    fn locales_en_fr_de() -> Locales {
+        let mut m: IndexMap<String, Locale> = IndexMap::new();
+        for k in ["en", "fr_fr", "de_de"] {
+            m.insert(
+                k.into(),
+                Locale {
+                    name: k.into(),
+                    native_name: k.into(),
+                    hreflang: k.into(),
+                    flag: None,
+                },
+            );
+        }
+        Locales {
+            default_locale: "en".into(),
+            locales: m,
+        }
+    }
+
+    fn args(items: &[&str]) -> Vec<String> {
+        items.iter().map(|s| s.to_string()).collect()
+    }
+
+    #[test]
+    fn defaults_when_no_flags() {
+        let o = parse_options(args(&[])).unwrap();
+        assert_eq!(o.locale, None);
+        assert_eq!(o.guide, None);
+        assert_eq!(o.concurrency, None);
+        assert!(!o.dry_run);
+        assert!(!o.force);
+    }
+
+    #[test]
+    fn all_flags_parse() {
+        let o = parse_options(args(&[
+            "--locale",
+            "fr_fr",
+            "--guide",
+            "api",
+            "--concurrency",
+            "8",
+            "--dry-run",
+            "--force",
+        ]))
+        .unwrap();
+        assert_eq!(o.locale.as_deref(), Some("fr_fr"));
+        assert_eq!(o.guide.as_deref(), Some("api"));
+        assert_eq!(o.concurrency, Some(8));
+        assert!(o.dry_run);
+        assert!(o.force);
+    }
+
+    #[test]
+    fn locale_requires_value() {
+        let e = parse_options(args(&["--locale"])).unwrap_err();
+        assert!(e.to_string().contains("--locale requires a value"));
+    }
+
+    #[test]
+    fn concurrency_must_be_positive_integer() {
+        assert!(parse_options(args(&["--concurrency", "0"])).is_err());
+        assert!(parse_options(args(&["--concurrency", "abc"])).is_err());
+    }
+
+    #[test]
+    fn unknown_arg_rejected() {
+        let e = parse_options(args(&["--frobnicate"])).unwrap_err();
+        assert!(e.to_string().contains("unknown arg"));
+    }
+
+    // --- filter behavior on build_task_list_filtered ---
+
+    fn write_md(root: &Path, guide: &str, locale: &str, name: &str, body: &str) {
+        let dir = root.join(guide).join("items").join(locale);
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join(name), body).unwrap();
+    }
+
+    #[test]
+    fn build_task_list_locale_filter() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        // Source files exist in en/; no fr_fr or de_de translations.
+        write_md(g, "a", "en", "x.md", "Source content for X file translation.");
+        write_md(g, "a", "en", "y.md", "Source content for Y file translation.");
+        let cache = CacheMap::new();
+        let all = build_task_list_filtered(g, &locales_en_fr_de(), &cache, None, None, false)
+            .unwrap();
+        // 2 files * 2 non-default locales = 4 tasks
+        assert_eq!(all.len(), 4);
+        let only_fr = build_task_list_filtered(
+            g,
+            &locales_en_fr_de(),
+            &cache,
+            Some("fr_fr"),
+            None,
+            false,
+        )
+        .unwrap();
+        assert_eq!(only_fr.len(), 2);
+        assert!(only_fr.iter().all(|t| t.locale == "fr_fr"));
+    }
+
+    #[test]
+    fn build_task_list_guide_filter() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write_md(g, "guide-a", "en", "x.md", "Source content for X file translation.");
+        write_md(g, "guide-b", "en", "y.md", "Source content for Y file translation.");
+        let cache = CacheMap::new();
+        let only_a = build_task_list_filtered(
+            g,
+            &locales_en_fr_de(),
+            &cache,
+            None,
+            Some("guide-a"),
+            false,
+        )
+        .unwrap();
+        assert_eq!(only_a.len(), 2); // x.md × 2 non-default locales
+        assert!(only_a.iter().all(|t| t.guide_id == "guide-a"));
+    }
+
+    #[test]
+    fn build_task_list_force_ignores_cache() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write_md(g, "g", "en", "x.md", "Source content for X file translation.");
+        // Translation already exists for fr_fr AND the cache says it's
+        // fresh — no work needed in normal mode.
+        write_md(g, "g", "fr_fr", "x.md", "Contenu source pour la traduction du fichier X.");
+        let hash = hash_content("Source content for X file translation.");
+        let mut cache = CacheMap::new();
+        cache.insert("g/fr_fr/x.md".into(), hash.clone());
+        cache.insert("g/de_de/x.md".into(), hash.clone()); // de_de also fresh
+        write_md(g, "g", "de_de", "x.md", "Quelle für die Übersetzung der X-Datei.");
+
+        let normal = build_task_list_filtered(
+            g,
+            &locales_en_fr_de(),
+            &cache,
+            None,
+            None,
+            false,
+        )
+        .unwrap();
+        assert_eq!(normal.len(), 0, "everything is fresh");
+
+        let forced = build_task_list_filtered(
+            g,
+            &locales_en_fr_de(),
+            &cache,
+            None,
+            None,
+            true,
+        )
+        .unwrap();
+        assert_eq!(forced.len(), 2, "--force re-includes every (file × locale)");
     }
 }

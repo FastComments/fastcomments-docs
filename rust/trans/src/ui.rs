@@ -32,10 +32,20 @@ pub struct UiStats {
     pub skipped: usize,
 }
 
+/// CLI-derived options for the UI phase. `--guide` doesn't apply
+/// (UI strings live in src/translations.json, not per-guide).
+#[derive(Debug, Default, Clone)]
+pub struct Options {
+    pub filter_locale: Option<String>,
+    pub dry_run: bool,
+    pub force: bool,
+}
+
 pub async fn process_all(
     translator: Arc<JsonTranslator>,
     repo: &Path,
     locales: &Locales,
+    opts: Options,
 ) -> Result<UiStats> {
     let translations_path = repo.join("src/translations.json");
     let ui_cache_path = repo.join("src/ui-translation-cache.json");
@@ -64,7 +74,18 @@ pub async fn process_all(
         if locale_key == &locales.default_locale {
             continue;
         }
-        let needs = compute_needs(&source_strings, &translations, &ui_cache, locale_key);
+        if let Some(filter) = &opts.filter_locale {
+            if locale_key != filter {
+                continue;
+            }
+        }
+        let needs = compute_needs(
+            &source_strings,
+            &translations,
+            &ui_cache,
+            locale_key,
+            opts.force,
+        );
         if needs.is_empty() {
             continue;
         }
@@ -73,6 +94,16 @@ pub async fn process_all(
             .filter(|n| n.kind == NeedKind::Missing)
             .count();
         let n_stale = needs.len() - n_missing;
+        if opts.dry_run {
+            info!(
+                locale = %locale_key,
+                missing = n_missing,
+                stale = n_stale,
+                "[dry-run] would translate UI batch"
+            );
+            stats.skipped += 1;
+            continue;
+        }
         info!(
             locale = %locale_key,
             missing = n_missing,
@@ -167,6 +198,7 @@ fn compute_needs(
     translations: &Value,
     ui_cache: &BTreeMap<String, String>,
     locale: &str,
+    force: bool,
 ) -> Vec<UiNeed> {
     let locale_obj = translations.get(locale).and_then(|v| v.as_object());
     let mut out = Vec::new();
@@ -175,6 +207,16 @@ fn compute_needs(
             out.push(UiNeed {
                 key: k.clone(),
                 kind: NeedKind::Missing,
+            });
+            continue;
+        }
+        if force {
+            // --force re-translates every existing key. Mirrors Node
+            // check-translations.js:297-304 (`if (!force) {...} else
+            // {mark all as stale}`).
+            out.push(UiNeed {
+                key: k.clone(),
+                kind: NeedKind::Stale,
             });
             continue;
         }
@@ -300,11 +342,40 @@ mod tests {
         let mut cache = BTreeMap::new();
         cache.insert("fr_fr/B".into(), hash_content("World"));
         cache.insert("fr_fr/C".into(), hash_content("OldValue")); // mismatch
-        let needs = compute_needs(&src, &t, &cache, "fr_fr");
+        let needs = compute_needs(&src, &t, &cache, "fr_fr", false);
         let keys: Vec<&str> = needs.iter().map(|n| n.key.as_str()).collect();
         assert!(keys.contains(&"A"));
         assert!(keys.contains(&"C"));
         assert!(!keys.contains(&"B"), "fresh B should not be in needs");
+    }
+
+    #[test]
+    fn force_marks_every_existing_key_as_stale() {
+        // Mirrors Node check-translations.js:297-304 (`if (force) { mark
+        // all existing keys as stale }`). Even when the cache hash
+        // matches the source, --force pushes the key into the needs list.
+        let mut src = serde_json::Map::new();
+        src.insert("A".into(), json!("Hello"));
+        src.insert("B".into(), json!("World"));
+        let t = json!({
+            "en": src.clone(),
+            "fr_fr": {
+                "A": "Salut",
+                "B": "Monde"
+            }
+        });
+        let mut cache = BTreeMap::new();
+        cache.insert("fr_fr/A".into(), hash_content("Hello"));
+        cache.insert("fr_fr/B".into(), hash_content("World"));
+
+        // Without --force: cache is fresh, no work.
+        let normal = compute_needs(&src, &t, &cache, "fr_fr", false);
+        assert!(normal.is_empty());
+
+        // With --force: every key marked stale (matches Node).
+        let forced = compute_needs(&src, &t, &cache, "fr_fr", true);
+        assert_eq!(forced.len(), 2);
+        assert!(forced.iter().all(|n| n.kind == NeedKind::Stale));
     }
 
     #[test]

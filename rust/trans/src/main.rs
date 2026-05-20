@@ -31,11 +31,15 @@ async fn main() -> Result<()> {
         )
         .init();
 
-    let cmd = std::env::args().nth(1).unwrap_or_else(|| "check".to_string());
+    let mut args = std::env::args().skip(1);
+    let cmd = args.next().unwrap_or_else(|| "check".to_string());
     match cmd.as_str() {
         "check" => check::run().await,
         "cleanup" => cleanup::run().await,
-        "run" => run::run().await,
+        "run" => {
+            let opts = run::parse_options(args)?;
+            run::run_with(opts).await
+        }
         other => anyhow::bail!("unknown subcommand: {other}"),
     }
 }
