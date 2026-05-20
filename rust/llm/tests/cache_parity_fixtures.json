@@ -1,0 +1,62 @@
+[
+  {
+    "name": "ts_get_comment",
+    "payload": {
+      "methodName": "getComment",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "responseType": "Comment",
+      "nestedTypes": null,
+      "httpMethod": "GET",
+      "path": "/api/v1/comments/:id",
+      "prompt": "Generate a TypeScript example for getComment.",
+      "model": "gpt-5-mini"
+    },
+    "expected_sha256": "0ea006b1a907274d80cba25568135ee4ac40be52374757389358ae2666a90999"
+  },
+  {
+    "name": "rust_post_comment",
+    "payload": {
+      "methodName": "postComment",
+      "parameters": [
+        {
+          "name": "body",
+          "type": "String"
+        },
+        {
+          "name": "url_id",
+          "type": "String"
+        }
+      ],
+      "responseType": "Comment",
+      "nestedTypes": {
+        "User": {
+          "id": "String"
+        }
+      },
+      "httpMethod": "POST",
+      "path": "/api/v1/comments",
+      "prompt": "Generate a Rust example for postComment.",
+      "model": "gpt-5-mini"
+    },
+    "expected_sha256": "3862e3bb5d56b6b67d28ed7583e51d354fb4b18376c08d570342935cf8d3351c"
+  },
+  {
+    "name": "empty_nested",
+    "payload": {
+      "methodName": "noop",
+      "parameters": [],
+      "responseType": null,
+      "nestedTypes": null,
+      "httpMethod": "GET",
+      "path": "/",
+      "prompt": "",
+      "model": "gpt-4.1"
+    },
+    "expected_sha256": "b5c230c946938729013da31432e099754950ed3f4cf970edc376980f7a4b4106"
+  }
+]

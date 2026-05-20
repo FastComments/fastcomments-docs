@@ -8,6 +8,10 @@ pub mod locales;
 pub mod guides;
 pub mod sidecar;
 pub mod pipeline;
+pub mod markers;
+pub mod translations;
+pub mod link_validator;
+pub mod templates;
 
 pub use locales::{Locale, Locales};
 pub use guides::{Guide, MetaItem, GuideItem};

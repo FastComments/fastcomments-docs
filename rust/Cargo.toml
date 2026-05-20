@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["shared", "indexer", "server"]
+members = ["shared", "indexer", "server", "llm", "browser", "sitegen", "sdkgen", "trans", "watcher"]
 
 [workspace.package]
 edition = "2021"
@@ -31,6 +31,21 @@ axum = "0.7"
 tower-http = { version = "0.6", features = ["cors"] }
 futures = "0.3"
 tempfile = "3"
+# New for Phase 2
+rquickjs = { version = "0.6", features = ["loader", "macro"] }
+chromiumoxide = { version = "0.7", default-features = false, features = ["tokio-runtime"] }
+notify = "7"
+notify-debouncer-mini = "0.4"
+git2 = { version = "0.19", default-features = false, features = ["https", "vendored-libgit2"] }
+md-5 = "0.10"
+sha2 = "0.10"
+nanoid = "0.4"
+openapiv3 = "2"
+walkdir = "2"
+quick-xml = { version = "0.36", features = ["serialize"] }
+serde_yaml = "0.9"
+urlencoding = "2"
+pulldown-cmark-escape = "0.11"
 
 [profile.release]
 opt-level = 3
