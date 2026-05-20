@@ -24,6 +24,13 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   echo "Rebuilding native modules..."
   npm rebuild better-sqlite3
 
+  echo "Building Rust workspace (indexer + server)..."
+  if ! cargo build --release --manifest-path rust/Cargo.toml; then
+    echo "ERROR: Rust build failed. Install rustup from https://rustup.rs/ if missing."
+    exit 1
+  fi
+  echo "Rust build complete."
+
   rm -f src/static/generated/*.* # when reusing workspaces on the build server, don't let generated index nodes build up over time. -f flag to ignore errors.
 
   echo "Generating SDK documentation..."
@@ -108,8 +115,8 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
   fi
   echo "Static build complete."
 
-  echo "Building search indexes..."
-  if ! npm run build-search-index; then
+  echo "Building search indexes (Rust)..."
+  if ! npm run build-search-index-rs; then
     echo "ERROR: Search index build failed"
     exit 1
   fi
